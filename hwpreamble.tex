@@ -1,0 +1,39 @@
+% packages
+
+\usepackage{graphicx} % Required for images
+\usepackage[spanish]{babel}
+\usepackage{mdframed}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+% for math environments
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Teorema}
+\newtheorem{definition}{Definición}
+\newtheorem{ej}{Ejercicio}
+\newtheorem{sol}{Solución}
+
+% for headers and footers
+
+\pagestyle{fancy}
+
+\fancyhead[R]{Victoria Eugenia Torroja}
+% Store the title in a custom command
+\newcommand{\mytitle}{}
+
+% Redefine \title to store the title in \mytitle
+\let\oldtitle\title
+\renewcommand{\title}[1]{\oldtitle{#1}\renewcommand{\mytitle}{#1}}
+
+% Set the center header to the title
+\lhead{\mytitle}
+
+% Custom commands
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+
+

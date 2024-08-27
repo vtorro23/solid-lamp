@@ -1,0 +1,37 @@
+%packages
+
+\usepackage{graphicx} % Required for inserting images
+\usepackage[spanish]{babel} % Required for automatic text to be in spanish
+\usepackage{mdframed} % Required for boxed theorems and definitions
+\usepackage{amsthm} % For theorem environment
+\usepackage{amssymb} % For math symbols
+\usepackage{fancyhdr} % For headers and footers
+
+% Headers and footers configuration
+\pagestyle{fancy}
+
+\fancyhead[L]{Victoria Eugenia Torroja}
+\fancyhead[R]{\rightmark}
+\fancyfoot[C]{\leftmark}
+\fancyfoot[R]{\thepage}
+
+% Math environments
+\newtheorem{definition}{Definición}[section]
+\newenvironment{fdefinition}
+{\begin{mdframed}\begin{definition}}{\end{definition}\end{mdframed}}
+
+\newtheorem{theorem}{Teorema}[section]
+\newenvironment{ftheorem}
+{\begin{mdframed}\begin{theorem}}{\end{theorem}\end{mdframed}}
+
+\newtheorem{eg}{Ejemplo}
+\newenvironment{feg}
+{\begin{mdframed}\begin{eg}}{\end{eg}\end{mdframed}}
+
+% Custom commands
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+
+
