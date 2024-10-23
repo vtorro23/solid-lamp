@@ -1,0 +1,390 @@
+\chapter{Espacios Vectoriales}
+
+Consideramos un cuerpo conmutativo con característica distinta de 2, es decir, $\displaystyle 1 + 1 \neq 0 $. A este cuerpo lo llamaremos $\displaystyle \K $. 
+
+\begin{fdefinition}[ $\displaystyle \K $-Espacio vectorial]
+\normalfont Un conjunto $\displaystyle V \neq \emptyset $ es un $\displaystyle \K $-\textbf{espacio vectorial} si se tienen definidas dos aplicaciones 
+\[
+\begin{split}
+& + : V \times V \to V \\ 
+& \left(\vec{x}, \vec{y}\right) \to \vec{x} + \vec{y} \\
+& \cdot : \K \times V \to V \\
+& \left(a, \vec{x}\right) \to a \cdot \vec{x},
+\end{split}
+\]
+tales que verifican que
+\begin{description}
+\item[(1)] $\displaystyle \left(V, +\right) $ es un cuerpo abeliano.
+	\subitem[Commutatividad.] $\displaystyle \forall \vec{x}, \vec{y}\in V, \; \vec{x} + \vec{y} = \vec{y} + \vec{x}$.
+	\subitem[Asociatividad.] $\displaystyle \forall \vec{x}, \vec{y}, \vec{z} \in V, \; \left(\vec{x} + \vec{y}\right) + \vec{z} = \vec{x} + \left(\vec{y} + \vec{z}\right). $ 
+	\subitem[Existencia del elemento neutro.] $\displaystyle \exists \vec{0} \in V, \forall \vec{x} \in V, \; \vec{0} + \vec{x} = \vec{x} $.
+	\subitem[Existencia del opuesto.] $\displaystyle \forall \vec{x}\in V, \exists -\vec{x} \in V, \; \vec{x} + \left(-\vec{x}\right) = \vec{0}. $ 
+	\footnote{En la propiedad del elemento neutro y del opuesto, como la conmutatividad es un requisito no hay que especificar que el elemento neutro funciona por ambos lados, al igual que el opuesto.} 
+\item[(2)] $\displaystyle \forall \vec{x}, \vec{y} \in V, \forall a \in \K, \; a \cdot \left(\vec{x} + \vec{y}\right) = a \cdot \vec{x} + a \cdot \vec{y}. $ 
+\item[(3)] $\displaystyle \forall \vec{x} \in V, \forall a,b \in \K, \; \left(a + b\right) \cdot \vec{x} = a \cdot \vec{x} + b \cdot \vec{x}. $ 
+\item[(4)] $\displaystyle \forall \vec{x} \in V, \forall a,b \in \K, \; \left(a \cdot b\right) \cdot \vec{x} = a \cdot \left(b \cdot \vec{x}\right). $ 
+\item[(5)] $\displaystyle \forall \vec{x}\in V, \; 1 \cdot \vec{x}=\vec{x}. $ 
+\end{description}
+\end{fdefinition}
+
+Si considero a $\displaystyle \R $ como un cuerpo, tenemos que $\displaystyle \C $ es un $\displaystyle \R $-espacio vectorial (dimensión 2) y un $\displaystyle \C$-espacio vectorial (dimensión 1). 
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle V $  un $\displaystyle \K $-espacio vectorial, entonces se verifica que:
+\begin{description}
+\item[(a)] $\displaystyle \forall \vec{x} \in V, \; 0 \cdot \vec{x} = \vec{0}. $ 
+\item[(b)] $\displaystyle \forall \vec{x} \in V, \forall a \in \K, \; \left(-a\right) \cdot \vec{x} = - a \cdot \vec{x}. $ 
+\item[(c)] $\displaystyle \forall a \in \K, \; a \cdot \vec{0} = \vec{0}. $ 
+\item[(d)] $\displaystyle a \cdot \vec{x} = \vec{0} \Rightarrow \vec{x}=\vec{0} \lor a = 0 $.
+\end{description}
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(a)]
+	\[
+	\begin{split}
+	& \vec{x} = \left(1 + 0\right) \cdot \vec{x} = 1 \cdot \vec{x} + 0 \cdot \vec{x} = \vec{x} + 0 \cdot \vec{x} \\
+	\iff & - \vec{x} + \vec{x} = - \vec{x} + \vec{x} + 0 \cdot \vec{x} \\
+	\iff & 0 = 0 \cdot \vec{x}.
+	\end{split}
+	\]
+Se puede hacer de otra manera:
+\[0 \cdot \vec{x} = \left(0 + 0\right) \cdot \vec{x} = 0 \cdot \vec{x} + 0 \cdot \vec{x} \iff 0 = 0 \cdot \vec{x} .\]
+\item[(b)] 
+	\[
+	\begin{split}
+	& 0 \cdot \vec{x} = \left(a + \left( - a\right)\right) \cdot \vec{x} = a \cdot \vec{x} + \left(-a\right) \cdot \vec{x} \\
+	\iff & - a \cdot \vec{x} = - a \cdot \vec{x} + a \cdot \vec{ x} + \left(- a \right) \cdot \vec{x} \\
+	\iff & - a \cdot \vec{x} = \left(- a \right) \cdot x.
+	\end{split}
+	\]
+\item[(c)] 
+	\[ a \cdot \vec{x} = a \cdot \left(\vec{x} + \vec{0}\right) = a \cdot \vec{x} + a \cdot \vec{0} \iff - a \cdot \vec{x} + a \cdot \vec{x} = - a \cdot \vec{x} + a \cdot \vec{x} + a \cdot \vec{0} .\]
+	\[\therefore \vec{0} = a \cdot \vec{0} .\]
+También se puede hacer de la siguiente manera:
+\[a \cdot \vec{0} = a \cdot \left(\vec{0} + \vec{0}\right) = a \cdot \vec{0} + a \cdot \vec{0} \iff0 = a \cdot \vec{0} .\]
+\item[(d)] Si $\displaystyle a = 0 $, hemos ganado. Si $\displaystyle a \neq 0 $, $\displaystyle \exists \frac{1}{a} \in \K $. Por tanto, 
+	\[\vec{0} = \frac{1}{a} \cdot \vec{0} = \frac{1}{a} \cdot \left(a \cdot \vec{x}\right) = \left(\frac{1}{a} \cdot a\right) \cdot \vec{x} = \vec{x} .\]
+\end{description}
+\end{proof}
+
+\section{Subespacios vectoriales}
+
+\begin{fdefinition}[Subespacio vectorial]
+\normalfont Un conjunto $\displaystyle L \neq \emptyset $ y $\displaystyle L \subset V $ es \textbf{parte estable} si 
+\begin{description}
+\item[(i)] $\displaystyle \forall \vec{x}, \vec{y} \in L, \; \vec{x} + \vec{y} \in L $.
+\item[(ii)] $\displaystyle \forall a \in \K, \forall \vec{x} \in V, \; a \cdot \vec{x} \in L. $ 
+\end{description}
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle L \neq \emptyset $ y $\displaystyle L \subset V $, entonces $\displaystyle L $  es parte estable si y sólo si $\displaystyle L $ es subespacio vectorial.
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Si $\displaystyle L $ es un subespacio vectorial es trivial.
+\item[(ii)] Si $\displaystyle L $ es parte estable, tenemos que para $\displaystyle \vec{x} \in L $ se verifica la propiedad conmutativa, asociativa, etc, dado que $\displaystyle L \subset V $. Además, dado que $\displaystyle \cdot : \K \cdot L \to L $ y $\displaystyle \left(-1\right) \cdot \vec{x} = - \vec{x} $, tenemos que si $\displaystyle \vec{x} \in L $ entonces $\displaystyle - \vec{x} \in L $. Además, $\displaystyle \vec{x} + \left(- \vec{x}\right) = \vec{0} \in L $. El resto de propiedades se derivan de que $\displaystyle L \subset V $.
+\end{description}
+\end{proof}
+
+\begin{fdefinition}[Combinación lineal]
+\normalfont $\displaystyle \vec{x} \in V $ es la \textbf{combinación lineal} de $\displaystyle \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p} $ con coeficientes $\displaystyle a^{1}, a^{2}, \ldots, a^{p} $ si existen $\displaystyle \vec{x}_{i} \in V $ y $\displaystyle a ^{i} \in \K $, con $\displaystyle p \in \N $ ($\displaystyle 1 \leq i \leq p $) tales que:
+\[\vec{x} = a^{1} \cdot \vec{x}_{1} + a^{2} \cdot \vec{x}_{2} + \cdots + a ^{p} \cdot \vec{x}_{p} .\]
+\footnote{Los $\displaystyle a^{i} $ no denotan exponente sino que se trata de una forma de numeración.} 
+\end{fdefinition}
+
+\textbf{Nota.} Podemos apreciar que, dadas las condiciones del subespacio vectorial, cualquier combinación lineal de vectores $\displaystyle \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\in L $ es un vector de $\displaystyle L $.
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle H \subset V $ con $\displaystyle H \neq \emptyset $. Definimos $\displaystyle L\left(H\right) $  como el conjunto de todas las combinaciones lineales finitas de $\displaystyle H $, es decir:
+\[L\left(H\right) = \left\{  a^{1}\vec{x}_{1} + a^{2}\vec{x}_{2} + \cdots + a^{p}\vec{x}_{p}\; : \; p \in \N, \vec{x}_{i}\in H, a^{i} \in \K\right\}  .\]
+Se verifica que 
+\begin{description}
+\item[(1)] $\displaystyle H \subset L\left(H\right). $ 
+\item[(2)] $\displaystyle L\left(H\right) $ es un espacio vectorial sobre $\displaystyle \K $. 
+\item[(3)] $\displaystyle L\left(H\right) $ es el menor subespacio vectorial que contiene a $\displaystyle H $. Es decir, si $\displaystyle L $ es un subespacio vectorial y $\displaystyle H \subset L $, entonces $\displaystyle L\left(H\right) \subset L $.
+\end{description}
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(1)] Tenemos que si $\displaystyle \vec{x} \in H $ entonces
+	\[ \vec{x} = \underbrace{1 \cdot \vec{x}}_{\text{combinación lineal}} \in L\left(H\right) .\]
+\item[(2)] Sean $\displaystyle \vec{x}, \vec{y} \in L\left(H\right) $, queremos ver que $\displaystyle \vec{x} + \vec{y} \in L\left(H\right) $. Dado que $\displaystyle \vec{x}, \vec{y} \in L\left(H\right) $, se pueden expresar como combinación lineal de otros vectores en $\displaystyle H $. 
+	\[\exists p \in \N,\; \exists \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p} \in H, \;\exists a^{1}, a ^{2}, \ldots, a^{p} \in \K ,\]
+	tales que 
+	\[\vec{x} = a^{1}\vec{x}_{1} + a ^{2}\vec{x}_{2} + \cdots + a^{p}\vec{x}_{p} .\]
+De manera similar, como $\displaystyle \vec{y}\in L\left(H\right) $, 
+	\[\exists q \in \N,\; \exists \vec{y}_{1}, \vec{y}_{2}, \ldots, \vec{y}_{q} \in H,\; \exists b^{1}, b ^{2}, \ldots, b^{p} \in \K ,\]
+	tales que
+	\[\vec{y} = b^{1}\vec{y}_{1} + b^{2}\vec{y}_{2} + \cdots + b^{q}\vec{y}_{q} .\]
+Entonces, 
+\[\vec{x} + \vec{y} = \left(a^{1}\vec{x}_{1} + a ^{2}\vec{x}_{2} + \cdots + a^{p}\vec{x}_{p}\right)+ \left(b^{1}\vec{y}_{1} + b^{2}\vec{y}_{2} + \cdots + b^{q}\vec{y}_{q} \right) .\]
+Como $\displaystyle \forall \vec{x}_{i}, \vec{y}_{i} \in H $, tenemos que $\displaystyle \vec{x} + \vec{y} \in L\left(H\right) $. \\ \\
+A continuación, demostramos que si $\displaystyle \vec{x} \in L\left(H\right) $ entonces $\displaystyle a \cdot \vec{x} \in L\left(H\right) $. Como $\displaystyle \vec{x} \in L\left(H\right) $, 
+\[\exists p \in \N,\; \exists \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p} \in H, \;\exists a^{1}, a ^{2}, \ldots, a^{p} \in \K ,\]
+tales que 
+\[\vec{x} = a^{1}\vec{x}_{1} + a ^{2}\vec{x}_{2} + \cdots + a^{p}\vec{x}_{p} .\]
+Por tanto, 
+\[
+\begin{split}
+	a \cdot \vec{x} = & a \cdot \left(a^{1}\vec{x}_{1} + a ^{2}\vec{x}_{2} + \cdots + a^{p}\vec{x}_{p}\right) \\
+	= & a \cdot \left(a^{1}\vec{x}_{1}\right) + a \cdot \left(a^{2}\vec{x}_{2}\right) + \cdots + a \cdot \left(a^{p}\vec{x}_{p}\right) \\
+	= & \left(a \cdot a^{1}\right) \cdot \vec{x}_{1} + \left(a \cdot a^{2}\right) \cdot \vec{x}_{2} + \cdots + \left(a \cdot a ^{p}\right) \cdot \vec{x}_{p}  .
+\end{split}
+\]
+Aprovechamos las propiedades de $\displaystyle V $ como espacio vectorial y el hecho de que $\displaystyle H \subset V $ (hemos utilizado la propiedad distributiva). Como $\displaystyle \forall a \cdot a^{i}\in\K $ y $\displaystyle \vec{x}_{i} \in H $, $\displaystyle a \cdot \vec{x} $ se trata de una combinación lineal y, por tanto, $\displaystyle a \cdot \vec{x} \in L\left(H\right) $.
+\item[(3)] Si $\displaystyle \vec{x} \in L\left(H\right) $, tenemos que $\displaystyle \exists p \in \N, \; \exists \vec{x}_{i}\in H, \; \exists a ^{i} \in \K $ con $\displaystyle 1 \leq i \leq p $, tales que 
+	\[ \vec{x} = a^{1}\vec{x}_{1}+a^{2}\vec{x}_{2} + \cdots + a^{p}\vec{x}_{p} .\]
+Como $\displaystyle H \subset L $, $\displaystyle x_{i} \in L $ y, como $\displaystyle L $ es un subespacio vectorial, tenemos que $\displaystyle  a^{1}\vec{x}_{1}+a^{2}\vec{x}_{2} + \cdots + a^{p}\vec{x}_{p} \in L  $, por lo que $\displaystyle \vec{x}\in L $.
+\end{description}
+\end{proof}
+
+\begin{fdefinition}[]
+\normalfont $\displaystyle L\left(H\right) $ es el subespacio generado por $\displaystyle H $ o $\displaystyle H $ es un sistema de generadores de de $\displaystyle L\left(H\right) $. Si $\displaystyle L\left(H\right) = V $ diremos que $\displaystyle H $ es sistema de generadores.
+\end{fdefinition}
+
+\section{Bases de un espacio vectorial}
+
+\begin{fdefinition}[]
+\normalfont $\displaystyle V $ es \textbf{finito generado} si existe un sistema de generadores formado por un número finito de vectores. Es decir, si $\displaystyle \exists \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\} = H $ tal que $\displaystyle V = L\left(H\right) $, es decir, $\displaystyle \exists \{\vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\} \subset V $ tales que $\displaystyle \forall \vec{x}\in V, \exists a^{1}, a^{2}, \ldots, a^{p} \in \K $ tales que
+\[\vec{x} = a^{1}\vec{x}_{1} + a^{2}\vec{x}_{2} + \cdots + a^{p}\vec{x}_{p} .\]
+\end{fdefinition}
+
+\begin{fdefinition}[]
+\normalfont Una familia de vectores  $\displaystyle\left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\} $ es \textbf{linealmente dependiente} si uno de ellos es combinación lineal de los otros. 
+\[\exists i = 1, 2, \ldots, p, \; \vec{x}_{L} \in L\left(\left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\}\right)  .\]
+Es decir, 
+\[
+\begin{split}
+& \exists i = 1, 2, \ldots, p,\; \exists a^{1}, a^{2}, \ldots, a^{i-1}, a^{i+1}, \ldots, a^{p} \in \K \\
+& \vec{x}_{i} = a^{1}\vec{x}_{1} + \cdots + a^{i-1}\vec{x}_{i-1} + a^{i+1}\vec{x}_{i+1} + \cdots + a^{p}\vec{x}_{p}..
+\end{split}
+\]
+
+Es decir, si $\displaystyle \vec{x}_{j} = \vec{0} $, $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\} $ es dependiente, pues 
+\[\vec{0} = 0 \cdot \vec{x}_{1} + \cdots + 0 \cdot \vec{x}_{j-1} + 0 \cdot \vec{x}_{j+1} + \cdots + 0 \cdot \vec{x}_{p}  .\]
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\} \subset V $. Son linealmente dependientes si y solo si $\displaystyle \exists a^{1}, a^{2}, \ldots, a^{p} \in \K $ no todos nulos tales que 
+\[\vec{0} = a^{1}\vec{x}_{1} + a^{2}\vec{x}_{2} + \cdots + a^{p}\vec{x}_{p} .\]
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Supongamos que la familia es linealmente dependiente. Por tanto, $\displaystyle \exists i = 1, \ldots, p $ tal que $\displaystyle \vec{x}_{i} \in L\left(\left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{i-1}, \vec{x}_{i+1}, \ldots, \vec{x}_{p}\right\}\right) $. Por tanto, existen $\displaystyle a^{i}\in\K $ tales que 
+	\[\vec{x}_{i} = a^{1}\vec{x}_{1} + \cdots + a^{i-1}\vec{x}_{i-1} + a^{i+1}\vec{x}_{i+1} + \cdots + a^{p}\vec{x}_{p} .\]
+Si sumamos el opuesto a ambos lados tenemos que 
+\[ \vec{0} = \vec{x}_{i} - \vec{x}_{i} = a^{1}\vec{x}_{1} + \cdots + a^{i-1}\vec{x}_{i-1} +\left(-1\right)\vec{x}_{1} + a^{i+1}\vec{x}_{i+1} + \cdots + a^{p}\vec{x}_{p} .\]
+\item[(ii)] Suponemos que $\displaystyle \exists a^{1}, a^{2}, \ldots, a^{p} \in \K $ no todos nulos tales que 
+	\[a^{1}\vec{x}_{1} + a^{2}\vec{x}_{2} + \cdots + a^{p}\vec{x}_{p} = \vec{0} .\]
+Como no todos los escalares son nulos, podemos encontrar $\displaystyle a^{i} \neq 0 $, y $\displaystyle a^{i} $ tiene inversa. 
+\[\therefore \left(-1\right)a^{i}\vec{x}_{i} = a^{1}\vec{x}_{1} + a^{2}\vec{x}_{2} + \cdots + a^{i-1}\vec{x}_{i-1}+a^{i+1}\vec{x}_{i+1} + \cdots + a^{p}\vec{x}_{p} .\]
+Aprovechando las propiedades:
+\[
+\begin{split}
+\vec{x}_{i} & = \frac{-a^{1}}{a^{i}}\vec{x}_{1} + \cdots + \frac{-a^{i-1}}{a^{i}}\vec{x}_{i-1}+  \frac{-a^{i+1}}{a^{i}}\vec{x}_{i+1} + \cdots + \frac{-a^{p}}{a^{i}}\vec{x}_{p}.
+\end{split}
+\]
+\end{description}
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont La familia de vectores $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\} \subset V  $ es \textbf{linealmente independiente} si y solamente si 
+\[a^{1}\vec{x}_{1} + a^{2}\vec{x}_{2} + \cdots + a^{p}\vec{x}_{p} = \vec{0} \Rightarrow a^{1} = a^{2}= \cdots = a^{p} = 0 .\]
+\end{fcolorary}
+
+
+\begin{ftheorem}[]
+\normalfont Una familia de vectores $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\}  $ es linealmente independiente si y solamente si $\displaystyle \forall \vec{x} \in L\left(\left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\} \right), \exists! a^{1}, a^{2}, \ldots, a^{p} \in \K $ tales que 
+\[\vec{x} = a^{1}\vec{x}_{1} + a^{2}\vec{x}_{2} + \cdots + a^{p}\vec{x}_{p} .\]
+\end{ftheorem}
+
+\begin{proof} 
+\begin{description}
+\item[(i)] Si $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\}  $ es linealmente independiente y sea $\displaystyle \vec{x} \in L\left(\left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\} \right) $. Supongamos que existen otros escalares $\displaystyle b^{1}, b^{2}, \ldots, b^{p} \in \K $ tales que 
+\[\vec{x} = b^{1}\vec{x}_{1} + \cdots + b^{p}\vec{x}_{p} .\]
+Tenemos que 
+\[
+\begin{split}
+\vec{0} = & \vec{x} - \vec{x} = \left(a^{1} \vec{x}_{1} + \cdots a^{p} \vec{x}_{p}\right) - \left(b^{1} + \cdots + b^{p}\vec{x}_{p}\right) \\
+= & \left(a^{1} - b^{1}\right)\vec{x}_{1} + \cdots + \left(a^{p} -b^{p}\right)\vec{x}_{p} .
+\end{split}
+\]
+Como se trata de una familia linealmente independiente, tenemos que $\displaystyle \forall i, \; 1\leq i \leq p $, 
+\[a^{i} - b^{i} = 0 \iff a^{i} = b^{i} .\]
+\item[(ii)] Recíprocamente, tenemos que si $\displaystyle a^{1}, a^{2}, \ldots, a^{p} \in \K $ tales que 
+	\[a^{1}\vec{x}_{1} + \cdots + a^{p}\vec{x}_{p}= \vec{0} .\]
+Esto puede pasar si $\displaystyle a^{1} = a^{2} = \cdots = a^{p} = 0 $. Como $\displaystyle a^{i} $ son únicos, tenemos que si hay alguno no nulo, la combinación lineal no va a ser nula. Por tanto, será linealmente independiente.
+\end{description}
+\end{proof}
+
+\begin{fdefinition}[Base]
+\normalfont Una \textbf{base} de un espacio vectorial $\displaystyle V $ es un sistema de generadores linealmente independientes.
+\end{fdefinition}
+
+\begin{fcolorary}[]
+\normalfont Una familia de vectores $\displaystyle B \subset V$ es una base de $\displaystyle E $ si y solo si $\displaystyle \forall \vec{x}\in V $ se expresa de manera única como combinación lineal de elementos de $\displaystyle B $.
+\end{fcolorary}
+
+\begin{ftheorem}[]
+	\normalfont Si $\displaystyle V \neq \left\{ 0\right\}  $, es finitamente generado, entonces $\displaystyle \exists \left\{ \vec{u}_{1}, \vec{u}_{2}, \ldots, \vec{u}_{n}\right\}  $ es base de $\displaystyle V $. Es decir, todo espacio vectorial $\displaystyle V \neq \left\{ 0\right\}  $ generado por un número finito de vectores tiene una base finita. 
+\end{ftheorem}
+
+\begin{proof}
+	Sea $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\}  $ un sistema de generadores de $\displaystyle V $. Si $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\} $ son linealmente independientes, forman una base (hemos ganado). Sino, uno se puede expresar como combinación lineal de los otros, por lo que $\displaystyle \exists i = 1, 2, \ldots, p $ tal que $\displaystyle \vec{x}_{i} \in L \left(\left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{i-1}, \vec{x}_{i+1}, \ldots, \vec{x}_{p}\right\}\right) $, por lo que $\displaystyle \exists b^{1}, b^{2}, \ldots, b^{p} \in \K $ 
+	\[\vec{x}_{i} = b^{1}\vec{x}_{1} + b^{2}\vec{x}_{2} + \cdots + b^{i-1}\vec{x}_{i-1} +b^{i+1}\vec{x}_{i+1} + \cdots + b^{p}\vec{x}_{p}  .\]
+Dado que $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\} $ es un sistema de generadores de $\displaystyle V $, $\displaystyle \forall \vec{x}\in V, \exists a^{1}, a^{2}, \ldots, a^{p} \in \K $ tales que 
+\[
+\begin{split}
+	\vec{x}  = & a^{1}\vec{x}_{1} + a^{2}\vec{x}_{2} + \cdots + a^{p}\vec{x}_{p}  \\
+	= & a^{1}\vec{x}_{1} + \cdots + a^{i-1}\vec{x}_{i-1} + a^{i} \left(b^{1}\vec{x}_{1} + b^{2}\vec{x}_{2} + \cdots + b^{i-1}\vec{x}_{i-1} +b^{i+1}\vec{x}_{i+1} + \cdots + b^{p}\vec{x}_{p}\right)+a^{i+1}\vec{x}_{i+1} + \cdots + a^{p}\vec{x}_{p} \\
+	= & \left(a^{1} + a^{i}b^{1}\right) \vec{x}_{1} + \cdots + \left(a^{i-1} + a^{i}b^{i-1}\right) \vec{x}_{i-1} + \left(a^{i}b^{i+1}+a^{i+1}\right)\vec{x}_{i+1}+\cdots+\left(a^{i}b^{p}+a^{p}\right)\vec{x}_{p}.
+\end{split}
+\]
+Por tanto, el conjunto $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\}- \left\{ x_{i}\right\}  $ también es un sistema de generadores de $\displaystyle V $. Si $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{i-1}, \vec{x}_{i+1}, \vec{x}_{p}\right\}  $ es linealmente independiente, es un sistema de generadores de $\displaystyle V $. Si es linealmente dependiente repetimos el proceso hasta tener $\displaystyle \left\{ \vec{x}_{i}\right\}  $, que no puede ser 0, porque $\displaystyle V \neq 0 $, y $\displaystyle \left\{ x_{i}\right\}  $ es linealmente independiente.
+\end{proof}
+
+\textbf{Observación.} De esto podemos concluir que todo sistema de generadores contiene una base.
+
+\begin{ftheorem}[Teorema de Steinitz]
+\normalfont Sea $\displaystyle \left\{ \vec{y}_{1}, \vec{y}_{2}, \ldots, \vec{y}_{p}\right\} \subset V $ una base de $\displaystyle V $ y sea $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{q}\right\} \subset V $ linealmente independiente, entonces $\displaystyle q \leq p $ y se puede obtener una nueva base sustituyendo $\displaystyle q $ de los vectores $\displaystyle \vec{y}_{i} $ por $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\}  $.
+\end{ftheorem}
+
+\begin{proof}
+	Se trata de introducir uno por uno los vectores $\displaystyle \left\{ \vec{y}_{1}, \ldots, \vec{y}_{p}\right\}  $ por los vectores de la base dada. 
+Sea $\displaystyle \vec{x}_{1} \in V $, entonces $\displaystyle \exists a^{1}, a^{2}, \ldots, a^{p}\in \K $ tales que
+\[\vec{x}_{1} = a^{1}\vec{y}_{1} + a^{2}\vec{y}_{2} + \cdots + a^{p}\vec{y}_{p} = \sum^{p}_{i=1}a^{i}\vec{y}_{i} .\]
+Existe al menos un $\displaystyle a^{i} \neq 0 $ (porque $\displaystyle \vec{x}_{1} $ no es nulo). Sea $\displaystyle a^{1} \neq 0 $. 
+\[
+\begin{split}
+	\vec{y}_{1} = \left(a^{1}\right)^{-1}\vec{x}_{1} - \sum^{p}_{i=2}\left(a^{1}\right)^{-1}a^{i}\vec{y}_{i}
+\end{split}
+\]
+Entonces, $\displaystyle \forall x \in V, \exists b^{1}, b^{2}, \ldots, b^{p}\in\K $, 
+\[
+\begin{split}
+	\vec{x} = & b^{1}\vec{y}_{1} + b^{2}\vec{y}_{2} + \cdots b^{p}\vec{y}_{p} \\
+	= & b^{1} \left(\frac{1}{a^{1}}\vec{x}_{1} + \left(-\frac{a^{2}}{a^{1}}\right)\vec{y}_{2} + \cdots + \left(- \frac{a^{p}}{a^{1}}\right)\vec{y}_{p}\right) + b^{2}\vec{y}_{2} + \cdots + b^{p}\vec{y}_{p} \\
+	= & \frac{b^{1}}{a^{1}} \vec{x}_{1} + \left(b^{1}\left(-\frac{a^{2}}{b^{1}}\right)+b^{2}\right)\vec{y}_{2} + \cdots + \left(b^{1}\left(-\frac{a^{p}}{a^{1}}\right)+b^{p}\right)\vec{y}_{p}.
+\end{split}
+\]
+Hemos llegado a la conclusión de que $\displaystyle \left\{ \vec{x}_{1}, \vec{y}_{2}, \ldots, \vec{y}_{p}\right\}  $ forman un sistema de generadores de $\displaystyle V $. Además, son linealmente independientes, pues 
+\[\vec{0} = b^{1}\vec{x}_{1} + b^{2}\vec{y}_{2} + \cdots + b^{p}\vec{y}_{p} \Rightarrow b^{1}\left(\sum^{p}_{i=1}a^{i}\vec{y}_{i}\right) + b^{2}\vec{y}_{2} + \cdots + b^{p}\vec{y}_{p} = \vec{0} \]
+\[ b^{1}a^{1}\vec{y}_{1} + \sum^{p}_{i=2}\left(b^{1}a^{i} + b^{i}\right)\vec{y}_{i} = \vec{0}  \]
+\[\Rightarrow b^{1}a^{1} = 0, \; b^{1}a^{i}+b^{i}=0, \; i \geq 2 .\]
+pues $\displaystyle \left\{ \vec{y}_{1}, \vec{y}_{2}, \ldots, \vec{y}_{p}\right\} $ son una base. Como $\displaystyle a^{1} \neq 0 $, tenemos que $\displaystyle b^{1}=b^{i} =0 $. Por tanto, $\displaystyle \left\{ \vec{x}_{1}, \vec{y}_{2}, \ldots, \vec{y}_{p}\right\} $ es una base de $\displaystyle V $. \\ \\
+Supongamos que $\displaystyle i < \min\left(p,q\right) $ y que $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{i-1}, \vec{x}_{i}, \vec{y}_{i+1}, \ldots, \vec{y}_{p}\right\}  $ es sistema de generadores. Entonces, $\displaystyle \exists c^{1}, c^{2}, \ldots, c^{i}, d^{i+1}, \ldots, d^{p} \in \K $ tales que 
+\[
+\begin{split}
+	\vec{x}_{i+ 1} = & c^{1}\vec{x}_{1} + c^{2}\vec{x}_{2} + \cdots + c^{i}\vec{x}_{i} + d^{i+1}\vec{y}_{i+1} + \cdots + d^{p}\vec{y}_{p} = \sum^{i}_{j= 1}c^{j}\vec{x}_{j} + \sum^{p}_{j=i+1}d^{j}\vec{y}_{j}.
+\end{split}
+\]
+El procedimiento anterior nos asegura que podemos sustituir $\displaystyle \vec{x}_{i+1} $ por cualquier vector con coeficiente no nulo. Por tanto, tenemos que demostrar que existe un coeficiente del segundo sumatorio no nulo. Si fueran todos nulos, tendríamos que $\displaystyle \vec{x}_{i+1} $ se puede expresar como combinación lineal de los vectores $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\} $, esto contradice que sean linealmente independientes. 
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont Si el espacio vectorial $\displaystyle V $ tiene una base finita, todas las bases de $\displaystyle V $ tienen el mismo número de vectores.
+\end{fcolorary}
+
+\begin{proof}
+Sean $\displaystyle B_{1} =\left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\} $ y $\displaystyle B_{2}=\left\{ \vec{y}_{1}, \vec{y}_{2}, \ldots, \vec{y}_{q}\right\} $ dos bases de $\displaystyle V $. Como $\displaystyle B_{1} $ es una base y $\displaystyle B_{2} $ es un conjunto de vectores linealmente independientes, tenemos que todas las bases de $\displaystyle V $ han de ser finitas. Entonces, como $\displaystyle B_{1} $ y $\displaystyle B_{2} $ son bases y, consecuentemente, linealmente independientes, tenemos que $\displaystyle p \leq q $ y $\displaystyle q \leq p $, por lo que $\displaystyle p = q $.
+\end{proof}
+
+\begin{fdefinition}[Dimensión]
+\normalfont La \textbf{dimensión} de un espacio vectorial $\displaystyle V $ sobre un cuerpo $\displaystyle \K $ es el número de elementos de sus bases, si son finitas. Si no lo son, diremos que $\displaystyle V $ es de dimensión infinita.
+\end{fdefinition}
+
+\begin{fcolorary}[]
+\normalfont La dimensión de un espacio vectorial coincide con el número máximo de elementos linealmente independientes, y también con el número mínimo de generadores.
+\end{fcolorary}
+
+\begin{fcolorary}[]
+\normalfont Todo conjunto de vectores linealmente independientes puede completarse hasta obtener una base.
+\end{fcolorary}
+
+\begin{flema}[]
+	\normalfont Si $S \subset V$ es linealmente independiente y $\displaystyle \vec{x} \in V $ y $\displaystyle \vec{x} \not\in L\left(S\right) $, tenemos que la familia $\displaystyle S \cup \left\{ \vec{s}\right\}   $ es linealmente independiente. 
+\end{flema}
+
+\begin{proof}
+Sean $\displaystyle a,a^{i} \in \K $ y 
+\[a\vec{x} + a^{1}\vec{x}_{1} + \cdots + a^{p}\vec{x}_{p} = \vec{0} .\]
+Si $\displaystyle a \neq 0 $, entonces $\displaystyle \vec{x} $ se puede expresar como combinación lineal de $\displaystyle S $, pero por hipótesis esto no es posible. Por tanto, debe ser que $\displaystyle a = 0 $ y, consecuentemente, $\displaystyle \forall a^{i} = 0 $, pues $\displaystyle S $ es linealmente independiente. Por tanto, $\displaystyle S \cup \left\{ \vec{x}\right\}  $ también es linealmente independiente.
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle V $ es finitamente generado y $\displaystyle L $ es subespacio vectorial de $\displaystyle V $, entonces $\displaystyle L $ es infinitamente generado y 
+\[\dim L \leq \dim V .\]
+Además, 
+\[\dim L = \dim V \iff L = V .\]
+\end{fprop}
+
+\begin{proof}
+Si $\displaystyle L = \left\{ 0\right\}  $ no hay nada que probar (no tiene bases). En caso contrario, existe $\displaystyle \vec{x}_{1} \in L $. Si $\displaystyle L = L\left( \left\{ \vec{x}_{1}\right\} \right) $, tenemos que $\displaystyle \vec{x}_{1} $ es una base. En caso contrario, existe $\displaystyle \vec{x}_{2} \in L $ con $\displaystyle \vec{x}_{2} \not\in L \left( \left\{ \vec{x}_{1}\right\} \right) $ . Si $\displaystyle L = L\left( \left\{ \vec{x}_{1}, \vec{x}_{2}\right\} \right) $, $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}\right\}  $ forman una base. Sabemos que son linealmente independientes por el lema anterior. En algún momento llegaremos a que $\displaystyle L\left( \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{n}\right\} \right) $ forman una base, pues un corolario anterior nos dice que hay un número máximo de vectores linealmente independientes. \\ \\
+Además, si $\displaystyle \dim L = n $ y $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{n}\right\}  $ es una base de $\displaystyle L $, por el teorema de Steinitz, también es una base de $\displaystyle V $. Por tanto, 
+\[ L = L\left( \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{n}\right\} \right) = V .\]
+\end{proof}
+
+\begin{ftheorem}[Teorema de apliación de base]
+\normalfont Sea $\displaystyle L $ un suespacio vectorial de $\displaystyle V $ y sea $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\}  $ una base de $\displaystyle L $. Entonces existe $\displaystyle \left\{ \vec{u}_{p+1}, \vec{u}_{p+2}, \ldots, \vec{u}_{n}\right\} \subset V $ tales que $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}, \vec{u}_{p+1}, \vec{u}_{p+2}, \ldots, \vec{u}_{n}\right\}  $ son base de $\displaystyle V $.
+\end{ftheorem}
+
+\begin{proof}
+Si $\displaystyle \dim V = n $ tenemos que existe un número finito de generadores que forman una base de $\displaystyle V $, y consideramos que los vectores $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\}  $ forman una base de $\displaystyle L $. Entonces, $\displaystyle p \leq n $ y, por el teorema de Steinitz, se puede obtener una nueva base sustituyendo $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\}  $ por $\displaystyle p $ vectores de $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \ldots, \vec{u}_{n}\right\}  $.
+\end{proof}
+
+\section{Suma directa de subespacios.}
+
+\textbf{Notación. } 
+\[\mathcal{P}\left(V\right) = \left\{ A \; : \; A \subset V\right\}  .\]
+\[\mathcal{L}\left(V\right) = \left\{ L \in \mathcal{P}\left(V\right) \; : \; L \; \text{es subespacio vectorial de $\displaystyle V $ }\right\}  .\]
+Por tanto, 
+\[\mathcal{L}\left(V\right) \subset \mathcal{P}\left(V\right) .\]
+
+\begin{ftheorem}[]
+	\normalfont $\displaystyle \forall I $ conjunto, $\displaystyle \forall i \in I $, si $\displaystyle L_{i} \in \mathcal{L}\left(V\right) $ entonces
+	\[\bigcap_{i \in I}L_{i} \in \mathcal{L}\left(V\right) .\]
+Es decir, la intersección de espacios vectoriales es un espacio vectorial.
+\end{ftheorem}
+
+\begin{proof}
+$\displaystyle \forall \vec{x}, \vec{y} \in \bigcap_{i \in I} L_{i} $ implica que $\displaystyle \vec{x}, \vec{y} \in L_{i}, \forall i \in I $.Como $\displaystyle L_{i} $ son subespacios vectoriales:
+\[\vec{x}+\vec{y} \in L_{i}, \forall i \in I\; \Rightarrow \; \vec{x} + \vec{y} \in \bigcap_{i \in I}L_{i} .\]
+Similarmente, si $\displaystyle \vec{x} \in \bigcap_{i \in I}L_{i} $ y $\displaystyle a \in \K $, tenemos que $\displaystyle \vec{x} \in L_{i}, \forall i \in I $. Como $\displaystyle L_{i} $ son subespacios vectoriales, son parte estable, por lo que 
+\[a \cdot \vec{x} \in L_{i}, \forall i \in I \; \Rightarrow \; a \cdot \vec{x} \in \bigcap_{i \in I}L_{i} .\]
+\end{proof}
+
+\textbf{Observación. }Sin embargo, no tiene que cumplirse necesariamente que $\displaystyle L_{1} \cup L_{2} \in \mathcal{L}\left(V\right) $ si $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $.
+
+\begin{eg}
+	\normalfont Sean $\displaystyle \left\{ \vec{u}, \vec{v}\right\} \subset V $ linealmente independientes y $\displaystyle L_{1} = L\left( \left\{ \vec{u}\right\} \right) $ y $\displaystyle L_{2} = L\left( \left\{ \vec{v}\right\} \right) $ las rectas que generan. Asumamos que $\displaystyle \vec{u} + \vec{v} \in L_{1} \cup L_{2} $. Sin pérdida de generalidad, $\displaystyle \vec{u} + \vec{v} \in L_{1} $. Por tanto, $\displaystyle \exists a \in \K $ tal que $\displaystyle \vec{u} + \vec{v} = a \vec{u} $. De esta manera, 
+	\[\left(a-1\right) \vec{u} + \vec{v} = \vec{0} .\]
+Esto es absurdo, pues hemos dicho que estos vectores son linealmente independientes.
+\end{eg}
+
+\begin{fdefinition}[]
+	\normalfont Si $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $, definimos $\displaystyle L_{1}+L_{2} $ al menor subespacio vectorial generado por la unión.
+	\[L_{1}+L_{2} = L\left(L_{1} \cup L_{2}\right) .\]
+\end{fdefinition}
+
+\begin{ftheorem}[]
+	\normalfont Sean $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $ y sea $\displaystyle L' = \left\{ \vec{x}_{1} + \vec{x}_{2} \; : \; \vec{x}_{1} \in L_{1}, \vec{x}_{2} \in L_{2}\right\}  $. Tenemos que $\displaystyle L' = L_{1} + L_{2} $.
+\end{ftheorem}
+
+\begin{proof}
+Si $\displaystyle \vec{x}_{1}\in L_{1} $, tenemos que $\displaystyle \vec{x}_{1} = \vec{x}_{1} + \vec{0} \in L' $, pues $\displaystyle \vec{x}_{1}\in L_{1} $ y $\displaystyle \vec{0} \in L_{2} $. Por tanto, $\displaystyle L_{1}\subset L' $. Similarmente, $\displaystyle L_{2} \subset L' $. Consecuentemente, $\displaystyle L_{1}\cup L_{2} \subset L' $. \\ \\
+Además, tenemos que $\displaystyle L' \in \mathcal{L}\left(V\right) $, pues $\displaystyle \forall \vec{x}, \vec{y} \in L' $ tenemos que $\displaystyle \exists \vec{x}_{1},\vec{y}_{1}\in L_{1} $ y $\displaystyle \exists \vec{x}_{2}, \vec{y}_{2} \in L_{2} $. 
+\[\vec{x} + \vec{y} = \left(\vec{x}_{1} + \vec{x}_{2}\right) + \left(\vec{y}_{1}+ \vec{y}_{2}\right) = \underbrace{\left(\vec{x}_{1} + \vec{y}_{1}\right)}_{\in L_{1}} + \underbrace{\left(\vec{x}_{2} + \vec{y}_{2}\right)}_{\in L_{2}} .\]
+Por tanto, $\displaystyle \vec{x} + \vec{y} \in L' $. Similarmente, si $\displaystyle a \in \K $ y $\displaystyle \vec{x} \in L' $ tenemos que existen $\displaystyle \vec{x}_{1} \in L_{1} $ y $\displaystyle \vec{x}_{2} \in L_{2} $ tales que 
+\[a \cdot \vec{x} = a \cdot \left(\vec{x}_{1} + \vec{x}_{2}\right) = \underbrace{a\vec{x}_{1}}_{\in L_{1}}+\underbrace{a\vec{x}_{2}}_{\in L_{2}} .\]
+Por tanto, $\displaystyle a \cdot \vec{x} \in L' $. Por tanto, $\displaystyle L' \in \mathcal{L}\left(V\right) $. \\\\
+A continuación demostramos que si $\displaystyle L \in \mathcal{L}\left(V\right) $ y $\displaystyle L_{1}\cup L_{2}\subset L $, entonces $\displaystyle L' \subset L $.  Tenemos que $\displaystyle \forall\vec{x}\in L' $ existen $\displaystyle \vec{x}_{1}\in L_{1} $ y $\displaystyle \vec{x}_{2}\in L_{2} $ tales que $\displaystyle \vec{x} = \vec{x}_{1}+\vec{x}_{2} $. Por tanto, $\displaystyle \vec{x} \in L $.
+\[\therefore L ' \subset L .\]
+Por todo ello, $\displaystyle L' = L_{1}+L_{2} $.
+\end{proof}
+

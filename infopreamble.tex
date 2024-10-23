@@ -1,0 +1,72 @@
+% packages
+
+\usepackage{graphicx} % Required for images
+\usepackage[spanish]{babel}
+\usepackage{mdframed}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{geometry}[margin=1in]
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% for math environments
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Teorema}
+\newtheorem{definition}{Definición}
+\newtheorem{ej}{Ejercicio}[section]
+\newtheorem{sol}{Solución}[section]
+
+% for headers and footers
+
+\pagestyle{fancy}
+
+\fancyhead[R]{Victoria Eugenia Torroja}
+% Store the title in a custom command
+\newcommand{\mytitle}{}
+
+% Redefine \title to store the title in \mytitle
+\let\oldtitle\title
+\renewcommand{\title}[1]{\oldtitle{#1}\renewcommand{\mytitle}{#1}}
+
+% Set the center header to the title
+\lhead{\mytitle}
+
+% Custom commands
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\K}{\mathbb{K}}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}

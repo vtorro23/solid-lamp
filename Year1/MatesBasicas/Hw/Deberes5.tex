@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Matemáticas Básicas - Deberes 5}
+\author{Victoria Eugenia Torroja Rubio}
+\date{7/10/24}
+
+\maketitle
+
+\begin{ej}
+Sean $\displaystyle p $ y $\displaystyle q $ primos impares consecutivos. Probar que $\displaystyle p + q $ tiene al menos tres factores primos, no necesariamente distintos. Dar un ejemplo en el que el número de factores primos distintos sea uno, otro en el que sea dos y otro en el que sea tres.
+\end{ej}
+
+\begin{sol}
+Dado que $\displaystyle p $ y $\displaystyle q $ son primos impares, tenemos que su suma será un número par, por lo que 
+\[p+q = 2k ,\]
+con $\displaystyle k\in\N $. Además, tenemos que $\displaystyle \frac{p+q}{2} $ no es primo, pues (si $\displaystyle p < q $ )
+\[ p < \frac{p+q}{2}<q,\]
+y no existe ningún número primo entre $\displaystyle p $ y $\displaystyle q $, dado que son primos consecutivos. Por tanto $\displaystyle \frac{p+q}{2} $ es compuesto. Utilizando el Teorema Fundamental de la Aritmética:
+\[\frac{p+q}{2}=\prod^{n}_{i=1}a_{i}, \quad \text{con $\displaystyle a_{j} $ primo} .\]
+Dado que $\displaystyle \frac{p+q}{2} $ es compuesto, tiene al menos dos factores primos (los números primos tienen solo un factor primo, si mismos). Por tanto, ya hemos encontrado tres factores primos de $\displaystyle p+q $ no necesariamente distintos. \\ \\
+Un ejemplo en el que el número de factores primos es uno es cuando $\displaystyle p = 3 $ y $\displaystyle q = 5 $, pues 
+\[p+q = 3+5 = 8 = 2^{3} .\]
+Si $\displaystyle p = 11 $ y $\displaystyle q = 13 $, tenemos que $\displaystyle p + q $ tiene dos factores primos distintos:
+\[p+q=11+13=24 = 2^{3}\cdot3 .\]
+Si $\displaystyle p = 29 $ y $\displaystyle q = 31 $, tenemos que $\displaystyle p+q $ tiene tres factores primos distintos, pues
+\[p+q=29+31 =60 = 2^{2}\cdot3\cdot5 .\]
+\end{sol}
+
+\begin{ej}
+¿Cuántas palabras se pueden formar con todas las letras de la palabra 'Discreta'? ¿Cuántas de ellas tienen las tres vocales juntas?
+\end{ej}
+
+\begin{sol}
+	En primer lugar, el número de palabras que podemos formar con las letras del conjunto $\displaystyle L =\left\{ d, i, s, c, r, e, t, a\right\}  $ es igual al número de listas (importa el orden) de cinco elementos cuyas entradas están formadas por los elementos del conjunto $\displaystyle L $ y no se repiten. 
+	\[\left(\Box, \Box, \Box, \Box, \Box, \Box, \Box, \Box\right) \]
+La primera caja la pueden rellenar 8 elementos, la segunda 7, la tercera 6, etc. Por el Prinipio de la Multiplicación, el número de palabras que podemos formar es $\displaystyle P $, 
+\[P = 8 \cdot 7\cdot 6 \cdots 1 = 8!=40320 .\]
+Si queremos que las vocales estén juntas, podemos reducir todas las vocales a un único elemento $\displaystyle A $. Consecuentemente, tenemos que averiguar el número de listas compuestas por 6 elementos que no se repiten. Esto lo podemos hacer utilizando el Principio de la Multiplicación como hicimos anteriormente. Por tanto tenemos $\displaystyle 6! $ listas posibles. Para cada una de estas listas, las vocales que están dentro del bloque $\displaystyle A $ se pueden organizar de $\displaystyle 3! $ maneras posibles (se trata de una lista de tres elementos que no se repiten). Por tanto, el número de palabras formadas por los elementos del conjunto $\displaystyle L $ y que tiene las vocales juntas será:
+\[6!\cdot3!=4320 .\]
+\end{sol}
+
+\begin{ej}
+Sean $\displaystyle n $ un número entero positivo y $\displaystyle S $ un conjunto formado por $\displaystyle n+1 $ números enteros positivos, todos menores que $\displaystyle 2n+1 $. Demostrar que existen $\displaystyle x,y\in S $ distintos tales que $\displaystyle \frac{x}{y} $ es potencia de 2.
+\end{ej}
+
+\begin{sol}
+Consideramos un conjunto $\displaystyle S $ formado por $\displaystyle n + 1 $ números enteros positivos, todos menores que $\displaystyle 2n+1 $. \\ \\
+Todos número natural $\displaystyle a $  se pueden escribir de la forma
+\[a = 2^{k}\cdot b ,\]
+donde $\displaystyle k \in \Z^{+} $, $\displaystyle b \in \N $, $\displaystyle 2^{k} $ es la máxima potencia de 2 que divide a $\displaystyle a $ y $\displaystyle b $ es un número impar. Si $\displaystyle a \in S $, entonces $\displaystyle a < 2n + 1 $ y $\displaystyle b < a < 2n+1 $. Además, tenemos que hay $\displaystyle \left\lfloor \frac{2n+1}{2} \right\rfloor=n $ números impares menores que $\displaystyle 2n+1 $. Por tanto, podemos crear $\displaystyle n $ agrupaciones de números: aquellos que se pueden expresar como $\displaystyle 2^{k}\cdot1 $, $\displaystyle 2^{k}\cdot 3 $, $\displaystyle 2^{k}\cdot5 $, $\displaystyle \ldots $, hasta $\displaystyle 2^{k}\cdot\left(2n-1\right) $. \\
+\\
+Dado que $\displaystyle \left|S\right|=n+1 $, por el Principio del Palomar, tenemos que hay al menos dos elementos en $\displaystyle S $ que comparten la misma parte impar. Es decir, existen $\displaystyle x,y \in S $ tales que $\displaystyle x = 2^{k_{j}}\cdot b_{j} $ y $\displaystyle y = 2^{k_{i}}\cdot b_{i} $, tales que $\displaystyle b_{j}=b_{i} $ . Por tanto, tenemos que si $\displaystyle x > y $, 
+\[\frac{x}{y}=\frac{2^{k_{j}}\cdot b_{j}}{2^{k_{i}}\cdot b_{i}} = 2^{k_{j}-k_{i}}  .\]
+Dado que $\displaystyle x>y $, comparten la misma parte impar y $\displaystyle 2^{k_{h}}\in\N$ para todo $\displaystyle h \in \N $ , $\displaystyle k_{j}>k_{i} $. Por tanto, $\displaystyle k_{j}-k_{i}\in\Z^{+} $ y $\displaystyle \frac{x}{y} $ es potencia de dos.
+\end{sol}
+
+\end{document}

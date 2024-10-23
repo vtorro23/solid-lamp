@@ -1,0 +1,74 @@
+\documentclass{article}
+
+\input{~/University/infopreamble.tex}
+
+\begin{document}
+
+\title{Informática - Entrega 1}
+\author{Victoria Eugenia Torroja Rubio}
+\date{19/10/2024}
+
+\maketitle
+
+\begin{ej}
+Debido a la escasez de agua se pretende implantar un sistema de tarifas que penalice el consumo excesivo de este recurso, de acuerdo con la siguiente tabla:
+\begin{center}
+\begin{tabular}{c c}
+	Consumo (m3) & euros/m3 \\
+	Primeros 100 & 0.15 \\
+	De 100 a 500 & 0.20 \\
+	De 500 a 1000 & 0.35 \\
+	A partir de 1000 & 0.80
+\end{tabular}
+\end{center}
+ Implementar una función que tenga como parámetro el consumo de agua en m3 y calcule la factura de acuerdo con la tabla anterior.
+\end{ej}
+
+\begin{sol} La solución del ejercicio es:
+\begin{lstlisting}[language = Python]
+consumo = float(input("Consumo de agua en m3: "))
+    
+#incorporamos el caso "consumo < 0" para que el "else" final se corresponda con el caso "consumo >= 1000"
+
+if consumo < 0:
+  factura = "Error, no se pueden registrar valores negativos del consumo"
+  
+elif consumo <= 100:
+    factura = 0.15 * consumo
+    
+elif consumo > 100 and consumo <= 500:
+    factura = 0.20 * consumo
+    
+elif consumo > 500 and consumo < 1000:
+    factura = 0.35 * consumo
+    
+else:
+    factura = 0.8 * consumo
+    
+print("Su factura en euros es de:", factura)
+\end{lstlisting}
+\end{sol}
+
+Esta es mejor solución (malinterpreté mal el enunciado).
+\begin{lstlisting}[language = Python]
+consumo = float(input("Consumo de agua: "))
+
+if consumo < 0:
+	print("Error. El consumo no puede ser negativo")
+
+elif consumo <= 100:
+	factura = consumo * 0.15
+	print(factura)
+
+elif consumo <= 500:
+	factura = 15 + (consumo - 100) * 0.20
+	print(factura)
+
+elif consumo < 1000:
+	factura = 15 + 80 + (consumo - 500) * 0.35	
+	print(factura)
+
+else:
+	factura = 15 + 80 + 175 + (consumo - 1000) * 0.8
+\end{lstlisting}
+\end{document}

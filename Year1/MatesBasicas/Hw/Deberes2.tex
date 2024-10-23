@@ -1,0 +1,85 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Matemáticas Básicas - Deberes 2}
+\author{Victoria Eugenia Torroja Rubio}
+\date{19/9/24}
+
+\maketitle
+
+\section{Tipo 1}
+\section{Tipo 2}
+\section{Tipo 3}
+
+\begin{ej}
+Demuestra que para todo número real positivo $\displaystyle x $ se tiene que 
+\[x + \frac{1}{4x} \geq 1 .\]
+\end{ej}
+
+\begin{sol}
+Asumimos que $\displaystyle x \in \R^{+} $, donde $\displaystyle \R^{+}= \left\{x \in \R : x \geq 0\right\} $. 
+\[
+\begin{split}
+x + \frac{1}{4x} - 1 = \frac{x^{2}+\frac{1}{4}-x}{x} = \frac{1}{4x}\left(4x^{2} - 4x + 1\right) = \frac{\left(2x-1\right)^{2}}{4x} .
+\end{split}
+\]
+Como $\displaystyle \left(2x-1\right)^{2}\geq 0 $ y $\displaystyle x \geq 0 $, tenemos que 
+\[
+\begin{split}
+& \frac{\left(2x-1\right)^{2}}{4x}\geq0 \\
+\Rightarrow \; & x + \frac{1}{4x}-1 \geq 0 \\
+\Rightarrow \; & x + \frac{1}{4x} \geq 1 .
+\end{split}
+\]
+\end{sol}
+
+\begin{ej}
+Prueba que si $\displaystyle n \geq 1 $ es un entero y $\displaystyle x_{1}, \; x_{2}, \; \ldots, \; x_{n} $ son números reales en el intervalo $\displaystyle (-1,0] $, entonces
+\[\prod^{n}_{k=1}\left(1+x_{k}\right) \geq 1 + \sum^{n}_{k=1}x_{k} .\]
+\end{ej}
+
+\begin{sol}
+\begin{description}
+\item[(i)] Si $\displaystyle n = 1 $, 
+\end{description}
+\[
+\begin{split}
+& \prod^{1}_{k=1}\left(1+x_{k}\right) = 1 + x_{1} \\
+& 1 + \sum^{1}_{k=1}x_{k} = 1 + x_{1} \\
+& \therefore \prod^{1}_{k=1}\left(1+x_{k}\right) \geq 1 + \sum^{1}_{k=1}x_{k}.
+\end{split}
+\]
+\begin{description}
+\item[(ii)] Asumimos que la inecuación se sostiene para $\displaystyle n = h $, por lo que
+\[\prod^{h}_{k=1}\left(1+x_{k}\right) \geq 1 + \sum^{h}_{k=1}x_{k} .\]
+Si $\displaystyle n = h+1 $, 
+\[
+\begin{split}
+& \underbrace{\left(1 + x_{1}\right)\cdot\left(1+x_{2}\right)\cdots\left(1+x_{h}\right)}_{\text{Hipótesis de inducción}}\cdot\left(1+x_{h+1}\right) \\
+\geq & \left(1 + \sum^{h}_{k=1}x_{k}\right)\left(1+x_{h+1}\right) \\
+= & 1 + x_{h+1} + \sum^{h}_{k=1}x_{k} + x_{h+1}\sum^{h}_{k=1}x_{k}.
+\end{split}
+\]
+Como $\displaystyle x_{i} \in (-1,0] \; \left(1 \leq i \leq h+1\right)$ tenemos que 
+\[x_{h+1}\sum^{h}_{k=1}x_{k} \geq 0 .\]
+Por tanto, 
+\[
+\begin{split}
+ \prod^{h+1}_{k=1}\left(1+x_{k}\right) 
+ \geq &  1 + x_{h+1} + \sum^{h}_{k=1}x_{k} + x_{h+1}\sum^{h}_{k=1}x_{k} 
+ =  1 + \sum^{h+1}_{k=1}x_{k} + x_{h+1}\sum^{h}_{k=1}x_{k} \\
+\geq & 1 + \sum^{h+1}_{k=1}x_{k} .
+\end{split}
+\]
+
+\end{description}
+
+\end{sol}
+
+
+\section{Tipo 4}
+
+\end{document}

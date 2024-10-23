@@ -1,0 +1,767 @@
+\chapter{El cuerpo de los números reales}
+\section{El cuerpo de los números reales.}
+\begin{fdefinition}[Cuerpo]
+\normalfont Se define $\displaystyle \R $ como un \textbf{cuerpo abeliano}:
+\begin{description}
+\item[(i)] Existen dos operaciones en $\displaystyle \R $: $\displaystyle + $ (suma) y $\displaystyle \cdot $ (producto). 
+	\[
+	\begin{split}
+	& + : \R \times \R \to \R \\
+	& \left(x,y\right) \to x + y \\
+	& \cdot : \R \times \R \to \R \\
+	& \left(x,y\right) \to x \cdot y.
+	\end{split}
+	\]
+\item[(ii)] La suma es conmutativa:
+	\[\forall x, y \in \R, \; x+y=y+x .\]
+\item[(iii)] La suma es asociativa:
+	\[\forall x,y,z \in \R\; \left(x+y\right)+z=x+\left(y+z\right) .\]
+\item[(iv)] Existencia del elemento neutro de la suma \footnote{no estamos afirmando que sea único} :
+	\[\exists 0 \in \R, \; 0 + x = x + 0 = x, \; \forall x \in \R.\]
+\item[(v)] Existencia del elemento opuesto:
+	\[\forall x \in \R, \; \exists -x \footnote{el menos no significa nada, no sabemos lo que es restar todavía} \in\R\;,\;  x + \left(-x\right) = \left(-x\right)+x=0.\]
+\item[(vi)] El producto es conmutativo:
+	\[\forall x, y \in \R, \; x \cdot y = y \cdot x .\]
+\item[(vii)] La multiplicación es asociativa:
+	\[\forall x,y,z \in \R, \; \left(x \cdot y\right) \cdot z = x \cdot \left(y \cdot z\right) .\]
+\item[(viii)] Existencia del elemento neutro del producto:
+	\[\exists 1\in \R, \forall x \in \R, \; 1 \cdot x = x \cdot 1 = x .\]
+\item[(ix)] Existencia del opuesto en el producto:
+	\[\forall x \in \R^{*}, \exists \frac{1}{x} \footnote{Como en a, esto es notación, no sabemos dividir}  \in \R, \; x \cdot \frac{1}{x}= \frac{1}{x} \cdot x = 1 .\]
+\item[(x)] El producto es distributivo respecto a la suma \footnote{no hay que especificar distributiva por la izquierda y por la derecha por la propiedad de conmutatividad del producto} :
+	\[\forall x, y , z \in \R, \; \left(x+y\right) \cdot z = x \cdot z + y \cdot z .\]
+\end{description}
+\end{fdefinition}
+
+Los racionales ($\displaystyle  \Q $) cumplen estos requisitos por lo que son un cuerpo, sin embargo $\displaystyle \Z $ y $\displaystyle \N $ no lo son porque no cumplen con todos los requisitos.Algunos cuerpos interesantes son las clases de equivalencia de la forma $\displaystyle \Z_{n} $ . $\displaystyle \R $ también tiene la propiedad de que existe un orden como en $\displaystyle \Q $. 
+
+\begin{ftheorem}[]
+\normalfont En $\displaystyle \left(\R, +, \cdot\right) $:
+\begin{description}
+\item[(a)] El elemento neutro de la suma es único. 
+\item[(b)] El elemento neutro del producto es único. 
+\item[(c)] $\displaystyle \forall x \in \R: \; x \cdot 0 = 0 $. 
+\end{description}
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(a)] Suponemos que existe otro elemento $\displaystyle 0'\in\R $, además de $\displaystyle 0 \in \R $  que cumple que es el elemento neutro de la suma. Tenemos que 
+	\[
+	\begin{split}
+		0 + 0' \underbrace{=}_{\left(iv\right)} 0' \underbrace{=}_{\left(ii\right)}  0' + 0 \underbrace{=}_{\left(iii\right)} 0.
+	\end{split}
+	\]
+Por tanto, $\displaystyle 0 = 0' $. 
+\item[(b)] Suponemos que existen $\displaystyle 1, 1' \in \R $ que son elementos neutros para el producto. Aplicamos lo mismo que en la demostración anterior. 
+	\[
+	\begin{split}
+	1 \cdot 1' = 1' = 1' \cdot 1 = 1 .
+	\end{split}
+	\]
+Por tanto, $\displaystyle 1 = 1' $. 
+\item[(c)] 
+\[x \cdot 0 = x \cdot \left(0 + 0\right) = x \cdot 0 + x \cdot 0.\]
+Sumamos el opuesto a ambos lados:
+\[
+\begin{split}
+& x \cdot 0 + \left(-x \cdot 0\right) = \left(- x \cdot 0\right) + x \cdot 0 + x \cdot 0 \\
+& 0 = 0 + x \cdot 0 \\
+& 0 = x \cdot 0.
+\end{split}
+\]
+También se puede demostrar de la siguiente forma:
+\[a + a \cdot 0 = a \cdot 1 + a \cdot 0 = a \cdot\left(1 + 0\right) = a \cdot 1 = a .\]
+Si sumamos $\displaystyle -a $ en ambos lados tenemos que $\displaystyle a \cdot 0 = 0 $.
+\end{description}
+\end{proof}
+
+\begin{flema}[]
+\normalfont $\displaystyle \forall x \in \R $, se cumple que 
+\[\left(-x\right)= \left(-1\right) \cdot x .\]
+\end{flema}
+
+\begin{proof}
+	Aplicamos la parte \textbf{(c)} del teorema anterior. 
+\[
+\begin{split}
+	\left(-1\right) \cdot x + x = \left(-1\right) \cdot x + 1 \cdot x =\left(\left(-1\right) + 1\right) \cdot x = 0 \cdot x = 0 .
+\end{split}
+\]
+
+\end{proof}
+
+
+\begin{ftheorem}[]
+\normalfont 
+\begin{description}
+\item[(a)] $\displaystyle x \neq 0, \; y \in \R, \; x \cdot y = 1 $, entonces $\displaystyle y = \frac{1}{x} $. 
+\item[(b)] Si $\displaystyle x \cdot y = 0 $ entonces $\displaystyle x = 0 $ o $\displaystyle y = 0 $. 
+\end{description}
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(a)] 
+	\[y = 1 \cdot y = \frac{1}{x} \cdot x \cdot y = \frac{1}{x} \cdot \left(x \cdot y\right) = \frac{1}{x} \cdot 1 = \frac{1}{x}.\]
+\item[(b)] Si $\displaystyle x = 0 $ hemos ganado. Si $\displaystyle x \neq 0 $, 
+	\[x \cdot y = 0 .\]
+Multiplicamos ambos lados por el inverso, 
+\[ \frac{1}{x} \cdot x \cdot y = \frac{1}{x} \cdot 0 = 0 \Rightarrow 1 \cdot y = 0 \Rightarrow y = 0 .\]
+\end{description}
+\end{proof}
+
+\textbf{Notaciones:} $\displaystyle x, y \in \R $ 
+\begin{itemize}
+\item Definimos resta como: $\displaystyle x - y = x + \left(-y\right) $ 
+\item Si $\displaystyle y \neq 0 $, definimos la división como 
+	\[\frac{x}{y}= x \cdot \frac{1}{y} .\]
+\item Si $\displaystyle x \neq 0 $, $\displaystyle x^{0} = 1 $.
+\item $\displaystyle x ^{1} = x $. 
+\item Si $\displaystyle n \in \N $, $\displaystyle x^{n} = x \cdot x ^{n-1} $. 
+\item Si $\displaystyle x \neq 0 $, $\displaystyle x^{-1}=\frac{1}{x} $.
+\item $\displaystyle x^{-2}= x^{-1} \cdot x^{-1} = \frac{1}{x} \cdot \frac{1}{x} \footnote{No hemos demostrado que $\displaystyle x^{-2} = \left(\frac{1}{x}\right)^{2} $ }  $.
+\item Si $\displaystyle n \in \N $, $\displaystyle x^{-n}=x^{-1} \cdot x^{-\left(n-1\right)} $. 
+\end{itemize}
+
+Definimos los naturales como la suma de la unidad (elemento neutro del producto) y los enteros negativos como la suma del opuesto de la unidad.
+
+\begin{fdefinition}[]
+\normalfont Si $\displaystyle n, m \in \Z $ y $\displaystyle m \neq 0 $, definimos $\displaystyle \Q $ como 
+\[ \Q = \left\{ \frac{n}{m}\; : \; n,m \in \Z, \; m\neq0 \right\}  .\]
+Definimos el complementario de los números racionales como los números irracionales:
+\[\R/\Q .\]
+Sabemos que $\displaystyle \R/\Q \neq \emptyset $ porque sabemos que existe $\displaystyle x \in \R/\Q $ tal que $\displaystyle x^{2}=2 $.
+\end{fdefinition}
+
+\begin{fdefinition}[Grupo]
+\normalfont Un grupo es un conjunto con una operación (+) que cumple las condiciones de la suma.
+\end{fdefinition}
+ \begin{fdefinition}[Anillo]
+ \normalfont Un anillo es un conjunto con dos operaciones (+, $\displaystyle \cdot $ ) que cumple todas las condiciones menos la existencia de la inversa en el producto.
+ \end{fdefinition}
+
+\begin{eg}
+\normalfont 
+$\displaystyle \Z $ es un anillo. 
+\end{eg}
+
+\begin{fdefinition}[Propiedades de cuerpo ordenado de $\displaystyle \R $ ]
+\normalfont Asumimos que existe $\displaystyle P \subset \R $ (\textbf{números reales positivos}), con $\displaystyle P \neq \emptyset $, tal que 
+\begin{description}
+\item[(i)] Conjunto cerrado por la suma:
+	\[\forall x, y \in P, \; x+y \in P  .\]
+\item[(ii)] Conjunto cerrado por el producto:
+	\[\forall x, y \in P, \; x \cdot y \in P.\]
+\item[(iii)] $\displaystyle \forall x \in \R $ se cumple sólo una de las siguientes cosas:
+	\[ x\in P, \; \text{o}\; x = 0\; \text{o}\; -x\in P.\]
+A los números tales que $\displaystyle -x \in P $ los llamaremos \textbf{números negativos}. 
+\end{description}
+\end{fdefinition}
+
+\textbf{Notaciones} 
+\begin{itemize}
+\item Si $\displaystyle x \in P $, decimos que $\displaystyle x>0 $. 
+\item Si $\displaystyle x>0 $ o $\displaystyle x = 0 $, decimos que $\displaystyle x \geq 0 $.
+\item Si $\displaystyle -x \in P $, decimos que $\displaystyle -x >0 $ o $\displaystyle x <0 $ . 
+\item Si $\displaystyle x<0 $ o $\displaystyle x = 0 $ decimos que $\displaystyle x \leq 0 $.
+\end{itemize}
+
+\begin{fdefinition}[]
+\normalfont $\displaystyle \forall x,y \in \R $, 
+\begin{description}
+\item[(i)] $\displaystyle x>y $ o $\displaystyle y<x $ si $\displaystyle x-y>0 $. 
+\item[(ii)] $\displaystyle x \geq y $ o $\displaystyle y \leq x $ si $\displaystyle x>y $ o $\displaystyle x = y $.
+\end{description}
+\end{fdefinition}
+
+Tenemos que $\displaystyle \Q $ también es un cuerpo ordenado.
+
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle x,y,z\in \R $. 
+\begin{description}
+\item[(a)] \textbf{Propiedad transitiva:} Si $\displaystyle x>y $ y $\displaystyle y > z $, entonces $\displaystyle x >z $. 
+\item[(b)] Si $\displaystyle x>y $, entonces $\displaystyle x + z > y + z $. 
+\item[(c)] Si $\displaystyle x>y $ y $\displaystyle z>0 $, entonces $\displaystyle x \cdot z > y \cdot z $. 
+\end{description}
+\end{ftheorem}
+
+\begin{proof}
+\begin{description} 
+\item[(a)] Si $\displaystyle x>y $ entonces $\displaystyle x-y>0 $. Similarmente, $\displaystyle y-z>0 $. Por tanto, $\displaystyle x - y \in P $ y $\displaystyle y - z \in P $. Por las propiedades de $\displaystyle P $ tenemos que:
+	\[\left(x-y\right)+\left(y-z\right) \in P \Rightarrow x - z \in P .\]
+Consecuentemente, $\displaystyle x - z >0 $ y $\displaystyle x > z $. 
+\item[(b)] 
+	\[\left(x+z\right)-\left(y+z\right) = x - y \in P .\]
+\item[(c)] 
+	\[x \cdot z - y \cdot z = \left(x - y\right) \cdot z .\]
+Como $\displaystyle x - y \in P $ y $\displaystyle z \in P $, tenemos que $\displaystyle \left(x - y\right) \cdot z \in P $. 
+\end{description}
+\end{proof}
+
+\begin{ftheorem}[]
+\normalfont 
+\begin{description}
+\item[(a)] Si $\displaystyle x \in \R $ y $\displaystyle x \neq 0 $, entonces $\displaystyle x^{2}>0 $. 
+\item[(b)] $\displaystyle 1>0 $.
+\item[(c)] Los números naturales son positivos.
+\end{description}
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(a)] Si $\displaystyle x \neq 0 $, $\displaystyle x $ puede ser positivo o negativo. Si $\displaystyle x>0 $, $\displaystyle x \in P $ y $\displaystyle x \cdot x = x^{2} \in P $. Si $\displaystyle x<0 $, $\displaystyle -x \in P $, por tanto $\displaystyle \left(-x\right) \cdot \left(- x\right)\in P $. Además, 
+	\[\left(-x\right)\left(-x\right) = \left(-1\right)^{2}x^{2}>0 .\]
+Tenemos que demostrar que $\displaystyle \left(-1\right)^{2} $ es $\displaystyle 1 $. Sabemos que
+\[\left(-1\right)\left(-1\right) = -\left(-1\right) .\]
+Además, 
+\[\left(-1\right) + 1 = 0 \Rightarrow -\left(-1\right)+\left(-1\right)+1 = -\left(-1\right)+0 \Rightarrow -\left(-1\right) = 1 .\]
+Por tanto, 
+\[1 \cdot x^{2} = x^{2} > 0 .\]
+
+\item[(b)] Sabemos que $\displaystyle 1 \neq 0 $. Aplicamos lo demostrado en \textbf{(a)}:
+	\[1 = 1 \cdot 1 = 1^{2} >0 .\]
+\item[(c)] Definimos un número natural $\displaystyle n $ como la suma de 1, $\displaystyle n $ veces. Tenemos que 
+	\[1 = 1 .\]
+Además, 
+\[1 + 1 = 2 .\]
+Sabemos que $\displaystyle 2>1 $ porque $\displaystyle 1+1-1 = 1 > 0 $. Asumimos que esto se sostiene para $\displaystyle n = k $, entonces
+\[\underbrace{1+1+\cdots+1}_{k}>\underbrace{1 + 1 + \cdots + 1}_{k-1} .\]
+Entonces, si $\displaystyle n = k+1 $, 
+\[k + 1 = \underbrace{\left(1 + 1+ \cdots + 1\right)}_{k} + 1 .\]
+Por tanto, para obtener $\displaystyle k+1 $ estamos sumando $\displaystyle 1 $ un total de $\displaystyle k+ 1 $ veces. De manera similar, tenemos que 
+\[k + 1 - k = 1 > 0.\]
+Además, por hipótesis de inducción
+\[k+1-1 = k > 0 .\]
+Por lo que, dado que $\displaystyle k \geq 1 $ tenemos que $\displaystyle k \in P $ (por la propiedad transitiva). 
+\end{description}
+\end{proof}
+
+\begin{proof}
+\footnote{Vamos a usar hechos que no hemos comprobado (la inversa de un positivo es positiva y la mitad de un número positivo es menor que ese número). 
+}\end{proof}
+
+\begin{eg}
+	\normalfont Consideramos el conjunto $\displaystyle \Z_{3} =  \left\{ 0, 1, 2\right\}  $. Tenemos que 
+	\[1 + 2 \mod 3 = 3 \mod 3 = 0 .\]
+Tenemos que este conjunto no es un cuerpo ordenado, pues si $\displaystyle 1 > 0 $, tenemos que $\displaystyle 1 \in P $ y, consecuentemente, $\displaystyle 1 + 1 \in P $. Sin embargo, 
+\[1 + 1 = 2 = -1 .\]
+Como $\displaystyle 1 \in P $, tenemos que $\displaystyle -1 <0 $. 
+\end{eg}
+
+\begin{flema}[]
+\normalfont Si $\displaystyle x \in \R $ y $\displaystyle x > 0 $, entonces $\displaystyle \frac{1}{x} > 0 $. 
+\end{flema}
+
+\begin{proof}
+Si $\displaystyle \frac{1}{x} $ no es mayor que 0, tenemos que o bien, es 0 o es negativo. No puede ser 0, porque cualquier cosa por 0 es 0. Por tanto, ha de ser negativo. Entonces, el opuesto del inverso ha de ser positivo:
+\[-\frac{1}{x} > 0 \Rightarrow x \cdot \left(-\frac{1}{x}\right) > 0 .\]
+Consecuentemente, $\displaystyle -1 > 0 $, que es una contradicción (en un teorema anterior quedó demostrado que $\displaystyle 1 >0 $).
+\end{proof}
+
+\begin{flema}[]
+\normalfont 
+\[1 - \frac{1}{2} = \frac{1}{2} .\]
+\end{flema}
+
+\begin{proof}
+Decimos que
+\[1 - \frac{1}{2} = \frac{1}{2} \iff 2\left(1 - \frac{1}{2}\right) = 2 \cdot \frac{1}{2} \iff 2 - 1 = \left(1 + 1\right) - 1 = 1 = 2 \cdot \frac{1}{2} = 1 .\]
+\end{proof}
+
+\begin{ftheorem}[Aproximación]
+\normalfont Si $\displaystyle x \in \R $, satisface que $\displaystyle 0 \leq x < \epsilon  $, $\displaystyle \forall \epsilon >0 $, entonces, $\displaystyle x = 0 $. 
+\end{ftheorem}
+
+\begin{proof}
+Suponemos que $\displaystyle x \neq 0$. Sabemos, por hipótesis, que es positivo, i.e. $\displaystyle x>0 $. Tomamos $\displaystyle \epsilon = \frac{x}{2}>0 $ (por el lema anterior). Entonces
+\[x < \frac{x}{2} \iff x - \frac{x}{2} < 0 \iff x \cdot \left(1 - \frac{1}{2}\right) = x \cdot \frac{1}{2}<0 .\]
+Esto nos da una contradicción. \\ \\
+Otra posible demostración es decir $\displaystyle \epsilon = x $ (contradicción porque es imposible que $\displaystyle x < x $, pues daría que 0 es un número negativo).
+\end{proof}
+
+\begin{fdefinition}[Valor absoluto]
+\normalfont Sea $\displaystyle x \in \R $, se define $\displaystyle \left|x\right| $ de la siguiente manera
+\[ \left|x\right| = 
+\begin{cases}
+& x, \quad x > 0 \\
+& 0, \quad x = 0 \\
+& -x, \quad x < 0
+\end{cases}
+.\]
+
+\end{fdefinition}
+
+\begin{fprop}[]
+\normalfont 
+\begin{description}
+\item[(i)] $\displaystyle \left|x \cdot y\right| = \left|x\right| \cdot \left|y\right| $ 
+\item[(ii)] $\displaystyle \left|x\right|^{2} = x^{2} $ 
+\item[(iii)] Si $\displaystyle y \geq 0 $:
+	\[ \left|x\right|\leq y \iff -y \leq x \leq y .\]
+\item[(iv)] $\displaystyle - \left|x\right|\leq x \leq \left|x\right| $ 
+\end{description}
+\end{fprop}
+ \begin{proof}
+ \begin{description}
+ \item[(i)] Si $\displaystyle x \cdot y>0 $, entonces $\displaystyle \left|x \cdot y\right| = x \cdot y $. Además, $\displaystyle x \cdot y > 0 \iff x>0 \land y >0 $ o $\displaystyle x < 0 \land y <0$. Si los dos son positivos
+	 \[ \left|x \cdot y\right| = \left|x\right| \cdot \left|y\right| = x \cdot y .\]
+Si los dos son negativos, 
+\[|x| \cdot \left|y\right| =\left(-x\right) \cdot \left(- y\right) = x \cdot y .\]
+Por tanto, 
+\[|x \cdot y|= \left|x\right| \cdot \left|y\right| .\]
+Si $\displaystyle x \cdot y<0 $, sin pérdida de generalidad, sea $\displaystyle x<0 $. Entonces $\displaystyle \left|x\right| = -x $ y $\displaystyle \left|y\right| = y $. Además, 
+\[ \left|x \cdot y\right| = - x \cdot y .\]
+Por otro lado, 
+\[ \left|x\right| \cdot \left|y\right| = - x \cdot y .\]
+Si $\displaystyle x \cdot y = 0 $, o $\displaystyle x = 0$ o $\displaystyle y = 0 $. Sin pérdida de generalidad, sea $\displaystyle x = 0 $, entonces $\displaystyle \left|x\right|=0 $ y $\displaystyle |x \cdot y| = 0 $. 
+Además, 
+\[|x| \cdot \left|y\right| = 0 \cdot \left|y\right| = 0 .\]
+\item[(ii)] Sabemos que $\displaystyle \forall x \in \R $ se cumple que $\displaystyle x^{2}\geq0$. Entonces, tenemos que 
+	\[x^{2} = \left|x^{2}\right| = \left|x\right| \cdot \left|x\right| = \left|x\right|^{2} .\]
+	
+\item[(iii)] Cogemos $\displaystyle y \in \R^{*} $ y $\displaystyle \left|x\right|\leq y $. Analizamos todos los casos. Si $\displaystyle x<0 $, $\displaystyle \left|x\right| = - x $ y $\displaystyle - x > 0 $. Por tanto, $\displaystyle x < 0 \leq y $. Por tanto, 
+	\[x < y \Rightarrow x \leq y .\]
+Por tanto, 
+\[ \left|x\right|\leq y \Rightarrow - x \leq y \Rightarrow - y \leq x .\]
+Si $\displaystyle x = 0 $ tenemso que $\displaystyle \left|x\right|=0 $. Además, $\displaystyle 0 \leq y $ y $\displaystyle - y < 0 $.
+Si $\displaystyle x>0 $, tenemos que $\displaystyle \left|x\right| = x \leq y $. Además, 
+\[ - y \leq 0 < x \Rightarrow - y \leq x.\]
+\item[(iv)] Lo podemos demostrar de dos formas. En primer lugar, podemos considerar los posibles valores de $\displaystyle x $. Si $\displaystyle x = 0 $ es trivial. Si $\displaystyle x>0 $, tenemos que $\displaystyle \left|x\right| = x $. Por tanto, $\displaystyle x \leq \left|x\right| $. Además, $\displaystyle -|x| = -x < 0 $ y, por tanto, 
+	\[-x < 0 \leq x \leq \left|x\right| \Rightarrow -|x|\leq x \leq \left|x\right|.\]
+Si $\displaystyle x < 0 $ tenemos que $\displaystyle \left|x\right| = - x $. Entonces, $\displaystyle - \left|x\right| = x \leq x $ y $\displaystyle \left|x\right| > 0 $, por tanto, 
+\[- \left|x\right| \leq x \leq \left|x\right| .\]
+Otra manera de hacerlo es utilizando el apartado anterior y afirmar que $\displaystyle \forall x \in \R $, $\displaystyle \left|x\right| \geq x $.
+\end{description}
+\end{proof}
+
+\begin{ftheorem}[Desigualdad triangular]
+\normalfont Para $\displaystyle \forall x, y \in \R $, 
+\[ \left|x + y\right|\leq \left|x\right| + \left|y\right| .\]
+\end{ftheorem}
+
+\begin{proof}
+Utilizamos el apartado \textbf{(iii)} del teorema anterior. Tenemos que:
+\[ \left|x + y\right| \leq \left|x\right|+ \left|y\right| \iff - \left|x\right| - \left|y\right| \leq x + y \leq \left|x\right| + \left|y\right| .\]
+Utilizando \textbf{(iv)}, sabemos que $\displaystyle - \left|x\right| \leq x \leq \left|x\right|$ y, similarmente, $\displaystyle -|y| \leq y \leq \left|y\right| $. Por tanto, al sumar estas igualdades obtenemos que 
+\[- \left|x\right| - \left|y\right| \leq x + y \leq \left|x\right| + \left|y\right| .\]
+Esto es lo que queríamos demostrar.
+\end{proof}
+
+\begin{fcolorary}[Desigualdad triangular al revés]
+\normalfont Para $\displaystyle \forall x, y \in \R $, 
+\[ \left|x - y\right| \geq \left|\left|x\right| - \left|y\right|\right| .\]
+\end{fcolorary}
+
+\begin{proof}
+Este enunciado es equivalente a (utilizando \textbf{(iii)})
+\[- \left|x - y\right| \leq \left|x\right| - \left|y\right| \leq \left|x - y\right| .\]
+Además, 
+\[- \left|x - y\right|\leq \left|x\right| - \left|y\right| \iff \left|y\right| \leq  \left|x - y\right| + \left|x\right| .\]
+Entonces, utilizando el teorema anterior
+\[ \left|y\right| = \left|y - x + x\right| \leq \left|y - x\right| + \left|x\right| = \left|x - y\right|+ \left|x\right| .\]
+Por el otro lado, tenemos que 
+\[ \left|x\right| - \left|y\right| \leq \left|x - y\right| \iff \left|x\right| \leq \left|x - y\right| + \left|y\right| .\]
+Por tanto, sabemos que 
+\[ \left|x\right| = \left|x - y + y\right| \leq \left|x - y\right| + \left|y\right| .\]
+Por lo que 
+\[ - \left|x - y\right| \leq \left|x\right| - \left|y\right| \leq \left|x - y\right| \iff |x - y| \geq \left| \left|x\right| - \left|y\right|\right| .\]
+\end{proof}
+
+\begin{fdefinition}[Distancia Euclídea]
+\normalfont La distancia en $\displaystyle \R $ se define como 
+\[d\left(x,y\right) = \left|x - y\right| .\]
+\end{fdefinition}
+
+\textbf{Nota.} A $\displaystyle \R $ se le llama \textbf{espacio euclídeo} de dimensión 1.
+
+\begin{fprop}[]
+\normalfont 
+\begin{description}
+\item[(i)] $\displaystyle d\left(x,y\right)\geq 0 \land d\left(x,y\right) = 0 \iff x = y $ 
+\item[(ii)] $\displaystyle d\left(x,y\right) = d\left(y,x\right) $ 
+\item[(iii)] $\displaystyle d\left(x,y\right) \leq d\left(x,z\right) + d\left(z,y\right) $ 
+\end{description}
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Trivial
+\item[(ii)] Trivial
+\item[(iii)] Utilizamos la desigualdad triangular.
+	\[d\left(x,y\right) = \left|x - y\right| = \left|x - z + z - y\right| \leq \left|x - z\right|+ \left|z - y\right| = d\left(x,z\right) + d\left(z,y\right) .\]
+\end{description}
+\end{proof}
+
+\begin{fdefinition}[]
+\normalfont Dado $\displaystyle x \in \R $ y $\displaystyle \epsilon > 0 $, definimos el \textbf{entorno de $\displaystyle x $} con radio $\displaystyle \epsilon  $
+\[\footnote{También se usa la $\displaystyle V $ } B \left(x,\epsilon \right) = \left\{ y \in \R\; : \; \left|x - y\right|<\epsilon \right\}  = \left(x - \epsilon , x + \epsilon\right) .\]
+\end{fdefinition}
+
+\textbf{Observación.} $\displaystyle \left|x-y\right| < \epsilon \iff - \epsilon < x - y < \epsilon \iff x - \epsilon < y < x + \epsilon \iff y - \epsilon < x < y + \epsilon $. \\ \\
+\textbf{Notaciones.} Si $\displaystyle a,b \in \R $ y $\displaystyle a<b $, 
+\begin{itemize}
+	\item $\displaystyle \left(a,b\right) = \left\{ x \in \R \; : \; a < x < b\right\}  $ 
+	\item $\displaystyle (a,b] = \left\{ x \in \R \; : \; a < x \leq b\right\}  $ 
+	\item $\displaystyle [a,b) = \left\{ x \in \R \; : \; a \leq x < b\right\}  $ 
+	\item $\displaystyle \left[a,b\right]  = \left\{ x \in \R \; : \; a \leq x \leq b\right\}  $ 
+\end{itemize}
+
+\begin{fcolorary}[]
+\normalfont $\displaystyle x = a \iff \forall \epsilon >0,\; x \in B\left(a, \epsilon \right) $  
+\end{fcolorary}
+
+\begin{proof}
+Sabemos que $\displaystyle y = 0 \iff 0 \leq y < \epsilon, \; \forall \epsilon >0 $. Sea $\displaystyle y = \left|x - a\right| $. Ya sabemos que $\displaystyle \left|x - a\right| \geq 0 $. La hipótesis me dice que 
+\[\forall \epsilon > 0, \left|x - a\right| < \epsilon \Rightarrow \left|x - a \right| = 0 \iff x = a .\]
+Por el otro lado, es trivial que si $\displaystyle x = a $, $\displaystyle \forall \epsilon > 0, \; x \in B\left(a, \epsilon \right) $.
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont Para $\displaystyle \forall a \in \R $, 
+\[\bigcap_{\epsilon > 0} B\left(a, \epsilon\right) = \left\{ a\right\} .\]
+\footnote{Este colorario significa lo mismo que el anterior.} 
+\end{fcolorary}
+
+\section{Completitud de $\displaystyle \R $ }
+
+Sabemos que $\displaystyle \forall x\in \Q, \; x^{2} \neq 2 $. \\
+De momento sabemos que $\displaystyle \R $ es un cuerpo abeliano totalmente ordenado. $\displaystyle \C $ no tiene un orden porque no se cumple la condición de que si $\displaystyle z \in \C $ entonces $\displaystyle z^{2}\geq0 $. 
+
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle S \subset \R $ con $\displaystyle S \neq \emptyset $. Se dice que $\displaystyle a \in \R$ es una \textbf{cota superior} de $\displaystyle S $ si 
+\[\forall s \in S, \; s \leq a .\]
+Decimos que $\displaystyle S $ está \textbf{acotado superiormente} si tiene una cota superior. \\ \\
+Similarmente, se dice que $\displaystyle a \in \R $ es una \textbf{cota inferior} de $\displaystyle S $ si
+\[\forall s \in S, \; a \leq s .\]
+Si tiene una cota inferior decimos que $\displaystyle S $ está \textbf{acotado inferiormente}. \\ \\
+Si está acotado superiormente e inferiormente decimos que está acotado.
+\end{fdefinition}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] El conjunto $\displaystyle S = \left\{ x \in \R \; : \; x<1\right\}  $ está acotado superiormente pero no inferiormente, por lo que no es un conjunto acotado.
+\item[(ii)] $\displaystyle S $ está acotado si y solo si $\displaystyle \exists c >0 $ tal que $\displaystyle \forall s \in S, \;\left|s\right| \leq c $. Es decir, 
+	\[\exists c>0, \forall s \in S, \; -c \leq s \leq c .\]
+\end{description}
+\end{eg}
+
+\textbf{Nota.} Podemos asumir que el conjunto vacío está acotado (no tenemos nada que comprobar).
+
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle S \neq \emptyset $. Se dice que $\displaystyle u \in \R $ es el \textbf{supremo} de $\displaystyle S $ si 
+\begin{description}
+\item[(i)] $\displaystyle u $ es cota superior de $\displaystyle S $. Es decir, $\displaystyle \forall s \in S, \; u \geq s $. 
+\item[(ii)] Si $\displaystyle v \geq s, \forall s \in S $ entonces $\displaystyle v \geq u $. Es decir, es la menor cota superior. 
+\end{description}
+Analogamente, se dice que $\displaystyle u \in \R $ es el \textbf{ínfimo} de $\displaystyle S $ si
+\begin{description}
+\item[(i)] $\displaystyle \forall s \in S, u \leq s $.
+\item[(ii)] Si $\displaystyle \forall s \in S, \; v \leq s $, entonces $\displaystyle v \leq u $. Es decir, es la mayor cota inferior.
+\end{description}
+\end{fdefinition}
+
+\begin{fdefinition}[]
+\normalfont Si $\displaystyle u = \sup\left(S\right) $ y $\displaystyle u \in S $, diremos que $\displaystyle u $ es el \textbf{máximo}  de $\displaystyle S $. \\ \\
+Similarmente, si $\displaystyle u = \inf\left(S\right) $ y $\displaystyle u \in S $, diremos que $\displaystyle u $ es el \textbf{mínimo}  de $\displaystyle S $.
+\end{fdefinition}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+	\item[(i)] Si $\displaystyle S = (0,1] = \left\{ x \in \R \; : \; 0 < x \leq 1\right\} $. Tenemos que $\displaystyle 1 = \sup\left(S\right) $ y como $\displaystyle 1 \in S $, 1 ha de ser el máximo. Además, $\displaystyle \inf\left(S\right) = 0 $ y como $\displaystyle 0 \not\in S $, no existe el mínimo en $\displaystyle S $.
+	\item[(ii)] Considera el conjunto $\displaystyle S = \left\{ x \in \R \; : \; x <1\right\}  $. Tenemos que $\displaystyle \sup\left(S\right) = 1 $ y como $\displaystyle 1 \not\in S $ tenemos que $\displaystyle S $ no tiene máximo. Además, no tiene cotas inferiores, por lo que el ínfimo no existe. Si no existe lo denotamos de la siguiente manera: $\displaystyle \inf = -\infty $.
+\end{description}
+\end{eg}
+
+\begin{faxiom}[Axioma del supremo]
+\normalfont Para todo conjunto $\displaystyle S \subset \R $ con $\displaystyle S \neq 0 $, si $\displaystyle S $ está acotado superiormente, entonces existe $\displaystyle \sup\left(S\right) $.
+\end{faxiom}
+
+\textbf{Observaciones.} Tenemos que $\displaystyle \Q $ es un cuerpo abeliano ordenado, pero no se cumple el axioma del supremo. Considera el conjunto 
+\[S = \left\{ x \in \Q \; : \; x^{2} \leq 2\right\}  .\]
+Este conjunto está acotado superiormente pero no tiene supremo ($\displaystyle \sup\left(S\right)\not\in S $) porque no existe $\displaystyle x \in \Q $ tal que $\displaystyle x^{2} = 2 $. \\ \\
+\textbf{Notación.} Si se satisface el axioma del supremo diremos que el cuerpo abeliano, totalmente ordenado, es \textbf{completo} \footnote{No es completo en el sentido algebraico, pues no hay $\displaystyle x \in \R $ tal que $\displaystyle x^{2}=-1 $, es completo en el sentido de que no tiene agujeros}. 
+
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle S \subset \R $  con $\displaystyle S \neq \emptyset $. Supongamos que $\displaystyle S $ está acotado inferiormente. Sea $\displaystyle - S = \left\{ - s \; : \; s \in S\right\}  $. Entonces $\displaystyle -S $ está acotado superiormente y, por el axioma del supremo, tiene supremo. Entonces, 
+	\[\sup\left(-S\right) = - \inf\left(S\right) .\]
+Es decir, el ínfimo existe y es el opuesto del supremo de $\displaystyle - S $.
+\end{ftheorem}
+
+\begin{proof}
+Sea $\displaystyle v \leq s, \; \forall s \in S$. Sabemos que $\displaystyle v $ existe por la hipótesis del teorema. Entonces, $\displaystyle \forall s \in S, \; - s \leq - v $. Por tanto, $\displaystyle - v $ es una cota superior de $\displaystyle -S $. Por el axioma del supremo, tenemos que $\displaystyle \exists u = \sup\left(- S\right) $. 
+\begin{description}
+\item[(i)] Demostramos que $\displaystyle -u $ es una cota inferior. Sabemos que $\displaystyle u \geq - s, \; \forall s \in S $. Consecuentemente, $\displaystyle - u \leq s, \; \forall s \in S $. 
+\item[(ii)] Si $\displaystyle \forall s \in S, \; v \leq s $. Entonces, $\displaystyle -s \leq - v $, por lo que $\displaystyle -v $ es cota superior de $\displaystyle -S $. Por tanto, $\displaystyle u \leq - v $ y, consecuentemente, $\displaystyle - u \geq v $.
+\end{description}
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Sea $\displaystyle \emptyset \neq S \subset \R $. 
+\begin{description}
+\item[(i)] Si $\displaystyle S $ está acotado superiormente
+	\[u = \sup\left(S\right) \iff (\forall s \in S, u \geq s) \land (\forall \epsilon > 0, \exists s \in S, \; u - \epsilon < s)  .\]
+\item[(ii)] Si $\displaystyle S $ está acotado inferiormente, 
+	\[u = \inf\left(S\right) \iff \left(\forall s \in S, \; u \leq s\right) \land \left(\forall \epsilon>0, \exists s \in S, \; s < u + \epsilon\right) .\]
+\end{description}
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Sea $\displaystyle u = \sup S $, entonces $\displaystyle \forall s \in S, \; u \geq s $.Sea $\displaystyle  \epsilon>0 $ y consideremos el punto $\displaystyle u - \epsilon $. Si $\displaystyle u - \epsilon \geq s, \forall s \in S $. Entonces $\displaystyle u-\epsilon  $ es cota superior de $\displaystyle S $. Además, tenemos que $\displaystyle u - \epsilon < u $, pero como $\displaystyle \sup S = u $ tenemos que $\displaystyle u \leq u - \epsilon  $. Esto es una contradicción. 
+\item[(ii)] Recíprocamente, si $\displaystyle u $ es una cota superior y $\displaystyle \forall \epsilon>0, \exists s \in S, \; u - \epsilon < s $. Si $\displaystyle u $ no fuera supremo, existe $\displaystyle v \geq s, \forall s \in S $ tal que $\displaystyle v < u $. Si tomamos $\displaystyle \epsilon = u - v > 0 $, tenemos que existe $\displaystyle s \in S $ tal que $\displaystyle s > u - \epsilon $, entonces,
+\[ u - \epsilon = v < s .\]
+Esto es una contradicción.
+\end{description}
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle A, B \subset \R $ con $\displaystyle A, B \neq \emptyset $, tales que $\displaystyle \forall a \in A, \forall b \in B $ se verifica que $\displaystyle a\leq b $, entonces, $\displaystyle \sup A \leq \inf B $ (existen $\displaystyle \sup A $ y $\displaystyle \inf B $).
+\end{fprop}
+
+\begin{proof}
+Tenemos que $\displaystyle \forall b \in B, \forall a \in A, \; b \geq a $. Por tanto, $\displaystyle A $ está acotado superiormente y, por el axioma de completitud, existe $\displaystyle \sup A $ y que $\displaystyle \sup A \leq b, \forall b \in B $. Por tanto, $\displaystyle \sup A $ es una cota inferior de $\displaystyle B $ y, por tanto, 
+\[\sup A \leq \inf B .\]
+\end{proof}
+
+\begin{ftheorem}[Propiedad Arquimediana de $\displaystyle \R $ ]
+\normalfont Para todo $\displaystyle x \in \R, \exists n_{x} \in \N $ tal que $\displaystyle x < n_{x} $.
+\end{ftheorem}
+
+\begin{proof}
+Asumimos que $\displaystyle \exists x \in \R $ tal que $\displaystyle \forall n \in \N $, $\displaystyle n \leq x $. Por lo que $\displaystyle \N $ está acotado superiormente. Entonces, por el axioma de completitud tenemos que $\displaystyle \exists \sup\N \leq x $. Sabemos que $\displaystyle u = \sup\N \in \R $. Como $\displaystyle u - 1 < u $, tenemos que $\displaystyle \exists m \in \N $ tal que $\displaystyle u - 1 < m \leq u $. Entonces, $\displaystyle u < m + 1 $. Sin embargo, $\displaystyle m + 1 \in \N $ y tenemos que hay un número natural mayor que el supremo de todos los números naturales. Esto es una contradicción.
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont 
+\[\inf \left\{ \frac{1}{n}\; : \; n \in \N\right\} = 0 .\]
+\end{fcolorary}
+
+\begin{proof}
+Sea $\displaystyle S = \left\{ \frac{1}{n}\; : \; n \in \N\right\} $ Como el inverso de un número positivo es positivo, tenemos que el conjunto está acotado inferiormente por 0. Dado $\displaystyle \epsilon > 0 $. Como $\displaystyle \N $ no está acotado superiormente, si tomamos $\displaystyle x = \frac{1}{\epsilon } $, podemos encontrar $\displaystyle n_{\epsilon } \in \N $ tal que 
+\[\frac{1}{\epsilon } < n_{\epsilon } .\]
+Por tanto, 
+\[0 \leq \inf S \leq \frac{1}{n_{\epsilon}} < \epsilon .\]
+Por tanto, como $\displaystyle \forall \epsilon > 0, 0 \leq \inf S < \epsilon  $, tenemos que $\displaystyle \inf S = 0 $.
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont $\displaystyle \forall a > 0 $, 
+\[ \inf \left\{ \frac{a}{n}\; : \; n \in \N\right\} = 0 .\]
+\end{fcolorary}
+
+\textbf{Observación.} $\displaystyle \R $ es el cuerpo abeliano, ordenado, completo y arquimediano.Es el único conjunto que satisface esto (si hay otro conjunto que también lo cumple, es esencialmente el mismo).
+
+\begin{flema}[]
+\normalfont Si $\displaystyle a,b > 0 $ entonces
+\[a < b \iff a^{2} < b^{2} .\]
+\end{flema}
+
+\begin{proof}
+\[a^{2}<b^{2} \iff b^{2} - a^{2} > 0 \iff \left(b + a\right)\left(b - a\right) > 0 .\]
+Sabemos que $\displaystyle a,b>0 $, por tanto $\displaystyle b + a > 0 $, por tanto $\displaystyle b - a $ tiene que ser positivo y, por tanto, $\displaystyle b > a $.
+\end{proof}
+
+\begin{ftheorem}[]
+\normalfont Existe $\displaystyle x \in \R $, tal que $\displaystyle x^{2} = 2 $.
+\end{ftheorem}
+
+\begin{proof}
+Sea $\displaystyle S = \left\{ s \in \R \; : \; 0 \leq s \; \land \; s^{2} < 2 \right\}  $. Sabemos que $\displaystyle S \neq \emptyset $  porque $\displaystyle 1 \in S $. Demostramos que está acotado superiormente. Si $\displaystyle s \in S $, entonces, $\displaystyle s^{2} < 2 < 4 $. Por el lema anterior, 
+\[s < 2 .\]
+Por tanto, $\displaystyle S $ está acotado superiormente por $\displaystyle 2 $. Por el axioma de la completitud, $\displaystyle \exists u = \sup S $. Sabemos que 
+\[1 \leq u \leq 2 .\]
+Supongamos que $\displaystyle u^{2} \neq 2 $:
+\begin{description}
+\item[(i)] Si $\displaystyle u^{2} < 2 $, sea $\displaystyle n \in \N $, 
+	\[
+	\begin{split}
+		\left(u + \frac{1}{n}\right)^{2} & = u^{2} + \frac{2u}{n} + \frac{1}{n^{2}} \\
+						 & < u^{2} + \frac{2u}{n} + \frac{1}{n} \\
+						 & = u^{2} + \frac{2u + 1}{n}.
+	\end{split}
+	\]
+Para demostrar que $\displaystyle u^{2} + \frac{2u +1}{n} <2 $ tenemos que demostrar que $\displaystyle \frac{2u+1}{n} < 2 - u^{2} $. Como $\displaystyle 2u+1 > 0 $, tenemos que por el colorario anterior que, 
+\[ \inf \left\{ \frac{2u+1}{n}\; : \; n \in \N\right\} = 0 .\]
+Por tanto, $\displaystyle \forall \epsilon > 0, \exists n_{\epsilon } \in \N $ tal que $\displaystyle \frac{2u + 1}{n_{\epsilon }} < \epsilon  $ \footnote{En este paso puedes utilizar directamente la propiedad arquimediana y decir que puedes encontrar un $\displaystyle n\in\N $ lo suficientemente grande.} . Si tomamos $\displaystyle \epsilon = 2 - u^{2} $, $\displaystyle \exists n_{\epsilon } \in \N $ tal que 
+\[\frac{2u+1}{n_{\epsilon }}  < 2 - u^{2}= \epsilon \iff \left(u + \frac{1}{n_{\epsilon }}\right)^{2} < u^{2} + \frac{2u+1}{n_{\epsilon }} < 2 - u^{2} + u^{2} = 2 .\]
+Por tanto, $\displaystyle u = \sup S < u + \frac{1}{n_{\epsilon }} \in S $. Esto es una contradicción. 
+\item[(ii)] Si $\displaystyle u^{2} > 2 $, sea $\displaystyle m \in \N $. 
+\[
+\begin{split}
+	\left(u - \frac{1}{m}\right)^{2} & = u^{2} - \frac{2u}{m} + \frac{1}{m^{2}} \\
+					 & > u^{2} - \frac{2u}{m}.
+\end{split}
+\]
+Queremos decir que $\displaystyle u^{2} - \frac{2u}{m} > 2 $. Cogemos $\displaystyle \epsilon = u^{2}-2 > \frac{2u}{m} $. Usamos el colorario de la propiedad arquimediana. Tenemos que $\displaystyle 2u > 0 $. Además, 
+\[\inf \left\{ \frac{2u}{m} \; : \; m \in \N\right\} = 0 .\]
+Por tanto, $\displaystyle \exists m_{\epsilon } \in \N $ tal que $\displaystyle \frac{2u}{m_{\epsilon }} < \epsilon  $.
+\[u^{2} - \frac{2u}{m_{\epsilon }} > u^{2} - \epsilon = u^{2} - \left(u^{2} - 2\right) = 2 .\]
+Así, hemos llegado a la conclusión de que $\displaystyle \left(u - \frac{1}{m_{\epsilon }}\right)^{2} > 2 > s^{2}, \forall s \in S $. Por el lema anterior, 
+\[u - \frac{1}{m_{\epsilon }} > s, \forall s \in S .\]
+Entonces, $\displaystyle u - \frac{1}{m_{\epsilon }} $ es una cota superior de $\displaystyle S $ que a su vez es menor que $\displaystyle u = \sup S $. Es decir
+\[u - \frac{1}{m_{\epsilon }} < u \quad \text{y} \quad u - \frac{1}{m_{\epsilon }} \geq u .\]
+Esto es una contradicción.
+\end{description}
+Por tanto, no puede ser que $\displaystyle u^{2}>2 $ ni $\displaystyle u^{2} <2 $. Por tanto, debe ser que $\displaystyle u^{2} = 2 $. 
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont Para todo $\displaystyle a > 0 $, y para tod $\displaystyle n \in \N $, existe $\displaystyle x > 0 $ tal que 
+\[x^{n} = a .\]
+\end{fcolorary}
+
+\textbf{Notación.} En las condiciones del corolario, 
+\[x = a ^{\frac{1}{n}} = \sqrt[n]{a} .\]
+
+\begin{fdefinition}[]
+\normalfont Si $\displaystyle n \in \N $, $\displaystyle a > 0 $, 
+\[a ^{- \frac{1}{n}} = \left(\frac{1}{a}\right)^{\frac{1}{n}} = \sqrt[n]{\frac{1}{a}} .\]
+\end{fdefinition}
+
+\begin{fdefinition}[]
+\normalfont $\displaystyle a > 0 $, $\displaystyle \frac{m}{n} \in \Q $, 
+\[a^{\frac{m}{n}} = \left(a^{\frac{1}{n}}\right)^{m} .\]
+\end{fdefinition}
+
+\begin{fprop}[Principio de la buena ordenación]
+\normalfont Si $\displaystyle A \subset \N $ con $\displaystyle A \neq \emptyset $, entonces existe $\displaystyle n \in A $ tal que 
+\[\forall m \in A, \; n \leq m .\]
+\end{fprop}
+
+\begin{fdefinition}[]
+\normalfont Un conjunto $\displaystyle A $ con un orden $\displaystyle \leg $ se dice que está \textbf{bien ordenado} si contiene un primer elemento:
+\[\exists x \in A, \forall y < x \Rightarrow y \not\in A .\]
+
+\end{fdefinition}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] Todo conjunto finito de $\displaystyle \R $ está bien ordenado.
+\item[(ii)] El intervalo $\displaystyle [0, \infty) $ está bien ordenado. 
+\end{description}
+\end{eg}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle A \subset \N $ con $\displaystyle A \neq\emptyset $, entonces $\displaystyle A $ está bien ordenado.
+\end{ftheorem}
+
+\begin{proof}
+	Suponemos lo contrario, es decir, existe $\displaystyle \exists A \subset \N $ que no tiene un primer elemento. Queremos ver que $\displaystyle \forall n \in \N $, el conjunto $\displaystyle \left\{ 1, \ldots, n\right\} \cap A = \emptyset $. Si $\displaystyle n = 1 $, $\displaystyle \left\{ 1\right\} \cap A = \emptyset $, porque sino 1 sería el primer elemento. \\ \\
+	Asumimos que $\displaystyle \left\{ 1, 2, \ldots, n\right\} \cap A = \emptyset $. Entonces tenemos que en el caso de $\displaystyle n + 1 $:
+	\[ \left\{ 1, \ldots, n+1\right\} \cap A = \left( \left\{ 1, \ldots, n\right\} \cup \left\{ n+ 1\right\} \right) \cap A = \left( \left\{ 1, \ldots, n\right\} \cap A\right) \cup \left( \left\{ n+1\right\} \cap A\right) = \left\{ n+1\right\} \cap A .\]
+	Esto puede ser vacío, o que $\displaystyle \left\{ n+1\right\} \cap A = \left\{ n+1\right\}  $. Si pasase esto último, $\displaystyle n + 1 $ sería el menor elemento de A, que romple con nuestra hipótesis inicial. Por lo tanto, tenemos que $\displaystyle A = \emptyset $. Esto rompe con nuestra hipótesis del teorema.
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont Si $\displaystyle x \geq 0 $, entonces $\displaystyle \exists n \in \N $ tal que $\displaystyle n-1\leq x < n $.
+\end{fcolorary}
+
+\begin{proof}
+	Sea $\displaystyle A = \left\{ m \in \N\; : \; m > x\right\} \neq \emptyset $ (por la propiedad arquimediana). Sea $\displaystyle n $ el primer elemento de $\displaystyle A $. Tenemos que como $\displaystyle n \in A $, $\displaystyle n > x $. Además, $\displaystyle n-1 \not\in A $, por lo que $\displaystyle n-1 \leq x $. Por tanto:
+	\[n-1\leq x < n .\]
+\footnote{En el caso de números negativos, coges que $\displaystyle - x > 0 $ y repites la demostración.} 
+\end{proof}
+
+\textbf{Notación.} $\displaystyle \left\lfloor x \right\rfloor $ es la parte entera de $\displaystyle x   $ tal que $\displaystyle \left\lfloor x \right\rfloor \in \N \cup \left\{ 0\right\}  $ y
+\[\left\lfloor x \right\rfloor \leq x < \left\lfloor x \right\rfloor +1 .\]
+
+\begin{ftheorem}[Densidad de $\displaystyle \Q $ en $\displaystyle \R $ ]
+\normalfont Si $\displaystyle x,y \in \R $ con $\displaystyle x < y $, entonces existe $\displaystyle r \in \Q $ tal que $\displaystyle x < r < y $. 
+\end{ftheorem}
+
+\begin{proof}
+Sin pérdida de generalidad, suponemos que $\displaystyle 0 \leq x < y $ \footnote{Si fuesen negativos, cambiamos el signo y repetimos la demostración.}. Sabemos, etonces, que $\displaystyle y - x > 0 $. Por tanto, podemos encontrar un $\displaystyle n \in \N $ suficientemente grande tal que 
+\[y - x > \frac{1}{n} > 0 .\]
+Entonces, sabemos que 
+\[ny > nx \geq 0.\]
+Por el corolario anterior, $\displaystyle \exists m \in \N $ tal que 
+\[m-1\leq nx < m .\]
+Entonces, tenemos que $\displaystyle x < \frac{m}{n} = r \in \Q $. Combinando las ecuaciones anteriores:
+\[ny > n \left(\frac{1}{n} + x\right) = 1 + xn \geq 1 + m - 1 = m \Rightarrow y > \frac{m}{n}=r>x .\]
+Por tanto, 
+\[x < r < y .\]
+\end{proof}
+
+\textbf{Notación.} Los intervalos no acotados los definimos de la siguiente manera:
+\begin{itemize}
+	\item $\displaystyle [a,\infty) = \left\{ x \in \R \; : \; a \leq x\right\}  $ 
+	\item $\displaystyle \left(a, \infty\right) = \left\{ x \in \R \; : \; a < x\right\}  $ 
+	\item $\displaystyle (-\infty, b]  = \left\{ x \in \R\; : \; x \leq b\right\} $  
+	\item $\displaystyle \left(-\infty, b\right) = \left\{ x \in \R \; : \; x < b\right\}  $ 
+	\item $\displaystyle \left(- \infty, \infty\right) = \R $ 
+\end{itemize}
+
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle S \subset \R $ con $\displaystyle S \neq \emptyset $, tal que $\displaystyle \forall x, y \in S, \; x < y $ se verifica que $\displaystyle \left[x,y\right]  \subset S $. Entonces, $\displaystyle S $ es un \textbf{intervalo} \footnote{Es uno de los casos de intervalos que hemos visto anteriormente (acotado y no acotado).} .
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+	\item[(i)] Supongamos que $\displaystyle S $ está acotado, sea $\displaystyle a = \inf S $ y $\displaystyle b = \sup S $. Si consideramos el intervalo $\displaystyle \left[a,b\right]  $ tenemos que como $\displaystyle a = \inf S $, $\displaystyle \forall s \in S, \; s \geq a $. Por el mismo razonamiento, $\displaystyle \forall s \in S, \; b \geq s $. Por tanto, 
+	\[\forall s \in S, \; a\leq s \leq b \Rightarrow S \subset \left[a,b\right]  .\]
+	Sea $\displaystyle z \in \left(a,b\right) $, queremos decir que $\displaystyle z \in S $. Como $\displaystyle a = \inf S $, tenemos que $\displaystyle \exists s \in S $ tal que $\displaystyle a < s < z $. Similarmente, como $\displaystyle b = \sup S $, $\displaystyle \exists s' \in S $ tal que $\displaystyle z < s' < b $. Por tanto, por la hipótesis del teorema tenemos que $\displaystyle s < s' $, por lo que $\displaystyle \left[s,s'\right] \subset S $ y $\displaystyle z \in [s, s'] $ por lo que $\displaystyle z \in S $. 
+	\[\therefore \left(a,b\right) \subset S .\]
+Ahora hay que valorar los posibles casos de si $\displaystyle a,b \in S $, para determinar de qué tipo de intervalo acotado se trata.
+\item[(ii)] Supongamos que $\displaystyle S $ está acotado inferiormente pero no superiormente. Entonces tenemos que si $\displaystyle x \in S $ y $\displaystyle a = \inf S $, $\displaystyle a \leq s, \forall s \in S $. Por tanto, 
+	\[\forall s \in S, a \leq s \Rightarrow S \subset [a, \infty) .\]
+Si $\displaystyle z \in \left(a, \infty\right) $, tenemos que $\displaystyle a < z $. Si cogemos $\displaystyle \epsilon > 0 $ tal que $\displaystyle a + \epsilon = z $, podemos encontrar $\displaystyle s \in S $ tal que 
+\[a \leq s < z .\]
+Dado que $\displaystyle S $ no está acotado superiormente, podemos encontrar $\displaystyle s' $ tal que $\displaystyle s < z < s' $. Por tanto, $\displaystyle s < s' $ y por hipótesis, $\displaystyle \left[s,s'\right] \subset S $, por lo que $\displaystyle z \in \left[s, s'\right]  $ y $\displaystyle z \in S $.
+\[\therefore \left(a, \infty\right) \subset S .\]
+\item[(iii)] El caso en el que $\displaystyle S $ está acotado superiormente pero no inferiormente se demuestra igual. 
+\item[(iv)] Si $\displaystyle S $ no está acotado, tenemos que $\displaystyle S \subset \R $. Si $\displaystyle z \in \R $, como $\displaystyle S $ no está acotado, podemos encontrar $\displaystyle s, s' \in S $ tales que $\displaystyle s < z < s' $. Por tanto, $\displaystyle \left[s,s'\right] \subset S $ y $\displaystyle z \in \left[s,s'\right]  $, por lo que $\displaystyle z \in S $. De esta manera, 
+	\[ (S \subset \R) \land (\R \subset S) \Rightarrow S = \R = \left(- \infty, \infty\right) .\]
+\end{description}
+\end{proof}
+
+\begin{ftheorem}[Teorema de los intervalos encajados]
+	\normalfont Sean $\displaystyle a_{n}, b_{n} \in \R $, con $\displaystyle n \in \N $ tales que $\displaystyle a_{n}\leq a_{n+1} < b_{n+1} \leq b_{n}$. Sea $\displaystyle I_{n} = \left[a_{n}, b_{n}\right]  $. Esto no puede ser un punto, porque $\displaystyle a_{n} < b_{n} $. Entonces $\displaystyle I_{n+1}\subset I_{n} $. Entonces, 
+	\[\bigcap_{n \in \N} I_{n} \neq \emptyset .\]
+\footnote{Si el intervalo estuviera abierto, tenemos que la intersección sería el conjunto vacío. Esto se puede demostrar por reducción al absurdo.} 
+\end{ftheorem}
+
+\begin{proof}
+Sean $\displaystyle m,n \in \N $, tenemos que $\displaystyle a_{m} < b_{n} $. En efecto, si $\displaystyle m \leq n $, entonces, $\displaystyle a_{m} \leq a_{n} < b_{n} \leq b_{m}$. Si $\displaystyle m > n $, 
+\[a_{m} < b_{m} \leq b_{n}.\]
+Así, demostramos que todos los $\displaystyle a_{i} $ están a la iquierda y los $\displaystyle b_{i} $ a la derecha. Entonces, $\displaystyle b_{n} $ es una cota superior de $\displaystyle a_{m} $, y existe $\displaystyle a = \sup \left\{ a_{m} \; : \; m \in \N\right\} \leq b_{n}, \forall n \in \N $. Similarmente, $\displaystyle a \leq \inf \left\{ b_{n} \; : \; n\in \N\right\} = b $. Entonces
+\[a_{n}\leq a \leq b \leq b_{n} .\]
+Por lo que $\displaystyle [a,b] \subset I_{n}, \forall n \in \N $. Consecuentemente, 
+\[\emptyset \neq [a,b] \subset \bigcap_{n \in \N} I _{n} .\]
+\end{proof}
+
+\begin{fcolorary}[]
+	\normalfont En las condiciones del teorema de los intervalos encajados, si $\displaystyle \inf \left\{ b_{n}-a_{n}\right\} =0 $ entonces $\displaystyle \bigcap_{n \in \N} I _{n} $ se reduce a un punto.
+\end{fcolorary}
+
+\begin{proof}
+	Si $\displaystyle \inf \left\{ b_{n}-a_{n} \; : \; n \in \N\right\} = 0 $, entonces para $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle m \in \N $ tal que 
+	\[0 \leq b - a \leq b_{m}-a_{m} < \epsilon .\]
+Como esto se cumple para todo $\displaystyle \epsilon > 0 $, tenemos que $\displaystyle b - a = 0 $ y, por tanto, $\displaystyle b = a \in I_{n}, \forall n \in \N$. 
+\end{proof}
+
+\begin{ftheorem}[]
+\normalfont $\displaystyle \R $ no es numerable. 
+\end{ftheorem}
+
+\begin{proof}
+	Basta probar que el intervalo $\displaystyle I =\left[0,1\right]  $ no es numerable \footnote{Hay que tener en cuenta que existe una biyección entre $\displaystyle \R $ y $\displaystyle \left[0,1\right]  $.}. Supongamos que es numerable, es decir, $\displaystyle \exists \varphi : \N \to \left[0,1\right]  $ biyectiva. Así, $\displaystyle \forall x \in \left[0,1\right], \exists! n \in \N, \; \varphi\left(n\right) =x $. Sea $\displaystyle x_{n}=\varphi\left(n\right) $. Entonces, $\displaystyle I = \left\{ x_{n} \; : \; n \in \N\right\}  $. Sea $\displaystyle n = 1 $ y $\displaystyle x_{1} \in [0,1] $ . Sea $\displaystyle I_{1} \subset \left[0,1\right]  $ tal que $\displaystyle x_{1} \not\in I_{1} $. Si $\displaystyle x_{2} \in I_{1} $, sea $\displaystyle I_{2}\subset I_{1} $ tal que $\displaystyle x_{2} \not\in I_{2} $. Iterando, sean $\displaystyle I_{1}, \ldots, I_{n} $ intervalos cerrados y encajados tales que $\displaystyle x_{n} \not\in I_{n} $ \footnote{Estamos asumiendo que estos intervalos cumplen con los requisitos del teorema de los intervalos encajados, es decir, son intervalos cerrados.} .
+	\[I \subset I_{1} \subset \cdots \subset I_{n} .\]
+Por el teorema de los intervalos encajados, podemos asegurar que 
+\[\emptyset\neq\bigcap_{n\in \N} I_{n} \subset I = \left[0,1\right]  .\]
+Sea $\displaystyle x \in \bigcap_{n\in \N}I_{n} $. Entonces, $\displaystyle x \neq x_{1}$, pues $x \in I_{1} $. Por la misma razón, $\displaystyle x \neq 2 $, y $\displaystyle x \neq x_{n} $. Por tanto, $\displaystyle \forall n \in \N, x \neq x_{n} $, por lo que $\displaystyle x \not\in I $, lo que es una contradicción. Por tanto, $\displaystyle I $ no es numerable y, consecuentemente, $\displaystyle \R $ tampoco lo es.
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont Los números irracionales, $\displaystyle \R/\Q $ no es un conjunto numerable.
+\end{fcolorary}
+
+\begin{proof}
+Asumimos que $\displaystyle \R/\Q $ es numerable. Entonces, tenemos que 
+\[\left(\R/\Q\right)\cup\Q = \R .\]
+Sabemos que la unión de dos conjuntos numerables será numerable, pero $\displaystyle \R $ no es numerable, esto es una contradicción. Por tanto, debe ser que $\displaystyle \R/\Q $ no es numerable.
+\end{proof}
+

@@ -1,0 +1,144 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Matemáticas Básicas - Deberes 4}
+\author{Victoria Eugenia Torroja Rubio}
+\date{2/10/24}
+
+\maketitle
+
+\begin{ej}
+Encontrar dos números complejos cuyo cuadrado sea
+\[z_{0} := -8+6i .\]
+\end{ej}
+
+\begin{sol}
+Sea $\displaystyle z\in\C $ tal que $\displaystyle z^{2}=z_{0} $, entonces:
+\[z = \sqrt{z_{0}} = \sqrt{-8+6i} = \sqrt{10_{\arctan\frac{6}{-8}}}
+.\]
+Existen dos posibles soluciones:
+\[
+\begin{split}
+& \sqrt{10}_{\arctan\frac{6}{-8}\cdot\frac{1}{2}}=1+3i\\
+& \sqrt{10}_{\arctan\frac{6}{-8}\cdot\frac{1}{2}+180}=-1-3i
+\end{split}
+\]
+\end{sol}
+
+\begin{ej}
+Se define la transformación $\displaystyle T:\C \to \C $ como $\displaystyle T\left(z\right)=z^{2} $. Calcula la imagen por $\displaystyle T $ de las rectas $\displaystyle y = x $, $\displaystyle y = -x $ y $\displaystyle x = 1 $. Representa gráficamente las rectas anteriores y sus imágenes por $\displaystyle T $. Encuentra un subconjunto de $\displaystyle \C $ cuya imagen sea una circunferencia.
+\end{ej}
+
+\begin{sol}
+Sea $\displaystyle f \subset \C $ la recta $\displaystyle y = x $. Consideramos la recta $\displaystyle y = x $ y $\displaystyle z\in\C $ perteneciente a esta recta. Tenemos que $\displaystyle z = x + xi $, por tanto:
+\[T\left(z\right)=\left(x+xi\right)^{2} = 2x^{2}i .\]
+Dado que $\displaystyle x^{2}\geq0 $ , la imagen de esta recta es el conjunto $\displaystyle \left\{ z \; : \; z = xi, \; x\geq0\right\}  $. \\
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines = middle,
+    title = {Transformación de $\displaystyle f $ },
+    ymin=-3, ymax=3,
+    xmin=-3, xmax=3,
+    domain=-3:3,
+    samples=100,
+    legend pos=north west,
+    every axis plot/.append style={ultra thick},
+    xtick=\empty,  % Remove x-axis numbering
+    ytick=\empty   % Remove y-axis numbering
+  ]
+    % Plot y = x, label it "f"
+    \addplot[blue] {x};
+    \addlegendentry{$f$};
+    
+    % Plot x = 0 (vertical line), label it "T(f)"
+    \addplot[red, thick] coordinates {(0,0) (0,3)};
+    \addlegendentry{$T(f)$};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Sea $\displaystyle g \subset \C $ la recta $\displaystyle y = -x $. Consideramos la recta $\displaystyle y = -x $, entonces tenemos $\displaystyle z \in \C $ tal que $\displaystyle z = x - xi $, por tanto
+\[T\left(z\right) = z^{2} = \left(x-xi\right)^{2} = -2x^{2}i .\]
+Como $\displaystyle x^{2}\geq0 $, tenemos que la imagen de la recta $\displaystyle y = -x $ será el conjunto $\displaystyle \left\{ z \in \C \; : \; z = xi, \; x\leq 0\right\}  $. \\ 
+
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines = middle,
+    title = {Transformación de $\displaystyle g$ },
+    ymin=-3, ymax=3,
+    xmin=-3, xmax=3,
+    domain=-3:3,
+    samples=100,
+    legend pos=north east,
+    every axis plot/.append style={ultra thick},
+    xtick=\empty,  % Remove x-axis numbering
+    ytick=\empty   % Remove y-axis numbering
+  ]
+    % Plot y = x, label it "f"
+    \addplot[blue] {-x};
+    \addlegendentry{$g$};
+    
+    % Plot x = 0 (vertical line), label it "T(f)"
+    \addplot[red, thick] coordinates {(0,0) (0,-3)};
+    \addlegendentry{$T(g)$};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
+A continuación, sea $\displaystyle h \subset \C $ la recta $\displaystyle x=1 $. Consideramos la recta $\displaystyle x = 1 $ y $\displaystyle z \in \C $ tal que $\displaystyle z $ pertenece a la recta mencionada. Por tanto, $\displaystyle z = 1 + yi $ y 
+\[T\left(z\right) = \left(1+yi\right)^{2} = \left(1-y^{2}\right) + 2yi .\]
+Si $\displaystyle w $ pertenece a la transformación de $\displaystyle x = 1 $, tenemos que $\displaystyle w = a + bi = \left(1-y^{2}\right) + 2yi $. Por todo ello,
+\[
+\begin{split}
+& a = 1 - y^{2} \\
+& b = 2y.
+\end{split}
+\]
+De esto concluimos que:
+\[
+\begin{split}
+& a = 1 - \left(\frac{b}{2}\right)^{2} \\
+\therefore & b = 2\sqrt{1-a}.
+\end{split}
+\]
+Como $\displaystyle a,b \in \R $, tenemos que $\displaystyle a \leq 1 $. \\ 
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines = middle,
+    title = {Transformación de $\displaystyle h $ },
+    ymin=-3, ymax=3,
+    xmin=-3, xmax=3,
+    domain=-3:3,
+    samples=100,
+    every axis plot/.append style={ultra thick},
+    xtick=\empty,  % Remove x-axis numbering
+    ytick=\empty   % Remove y-axis numbering
+  ]
+    % Plot T(h) (red curves)
+    \addplot[red] {2*sqrt(1-x)};
+    \addplot[red] {-2*sqrt(1-x)};
+    
+    % Plot h (blue vertical line)
+    \addplot[blue, thick] coordinates {(1,-3) (1,3)};
+    
+    % Label T(h)
+    \node at (axis cs:0.5,2.5)  {$T(h)$};
+    
+    % Label h
+    \node at (axis cs:1.2,2)  {$h$};
+    
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+En cuanto al último apartado, consideremos el conjunto $\displaystyle S =\left\{ z \in \C \; : \; \left|z\right| = a \; (a \in \R^{+})\right\}\subset \C $. Si $\displaystyle w \in S $, tenemos que su transformación será:
+\[T\left(w\right) = w ^{2} = \left(|w|_{\theta}\right)^{2}= \left|w\right|^{2}_{2\theta}=a^{2}_{2\theta} .\]
+Como $\displaystyle \theta \in \left[0,2\pi\right]  $, tenemos que $\displaystyle 2\theta \in \left[0,2\pi\right]  $ (los ángulos superiores a $\displaystyle 2\pi $ los reducimos a otros que estén en el intervalo $\displaystyle \left[0,2\pi\right]  $). Por tanto, la imagen de $\displaystyle S $ será la circunferencia con centro $\displaystyle \left(0,0\right) $ y radio $\displaystyle a^{2} \in \R $.  
+\end{sol}
+
+\end{document}

@@ -1,0 +1,172 @@
+\section{Introducción}
+
+El cuerpo de los números reales cumple los siguientes requisitos:\\ \\
+$\displaystyle \left(\R, +\right) $ es un grupo abeliano:\\ 
+Definimos suma y producto como
+\[
+\begin{split}
+	+ : \R^{2} &\to \R \\
+	\left(a,b\right)&\to a+b \\
+	\cdot : \R^{2} &\to\R \\
+	\left(a,b\right)&\to a \cdot b.
+\end{split}
+\]
+\begin{enumerate}
+\item La suma es asociativa
+	\[\forall a,b,c \in \R, \; \left(a+b\right)+c = a+ \left(b+c\right) .\]
+\item Existe un elemento neutro
+	\[\exists!0 \in \R, \; \forall a \in \R, \; 0+a=a+0=a .\]
+\item Existe el opuesto
+	\[\forall a \in \R, \; \exists -a \in \R, \; a + \left(-a\right) = \left(-a\right)+a = 0 .\]
+\item La suma es conmutativa
+	\[\forall a,b\in \R, \; a+b = b+a .\]
+\item El producto es asociativo, 
+	\[\forall a,b,c\in \R, \; a\cdot\left(b\cdot c\right)=\left(a\cdot b\right)\cdot c .\]
+\item El producto es distributivo con respecto a la suma (distributivo por la izquierda y por la derecha),
+	\[\forall a,b,c \in \R, \; a\cdot\left(b+c\right)=a\cdot b+ a \cdot c .\]
+\item Existe la unidad,
+	\[\exists! 1 \in \R, \forall a \in \R, 1\cdot a = a \cdot 1 = a .\]
+\item Existe la inversa, 
+	\[\forall a \in \R-\{0\} \footnote{Utilizamos la notación $\displaystyle \R^{*} $  por sencillez para denotar $\displaystyle \R- \left\{ 0\right\}  $} , \exists a^{-1}\in \R, a\cdot a^{-1}=a^{-1}\cdot a = 1 .\]
+\end{enumerate}
+
+\begin{fdefinition}[Anillo]
+\normalfont Se denomina \textbf{anillo} a un conjunto y dos operaciones $\displaystyle \left(R, +, \cdot\right) $ que verifica las propiedades (1)-(6). Si se verifica también (7), se llama \textbf{anillo con unidad}. 
+\end{fdefinition}
+
+\begin{fdefinition}[Cuerpo]
+\normalfont Se denomina \textbf{cuerpo} a un conjunto con al menos dos elementos ($\displaystyle 1 \neq0 $) y dos operaciones $\displaystyle \left(R, +, \cdot\right) $ que cumple las propiedades (1)-(8). Si también se verifica que la multiplicación es commutativa, decimos que se trata de un \textbf{cuerpo abeliano}. 
+\end{fdefinition}
+
+\begin{fdefinition}[]
+\normalfont Un conjunto $\displaystyle V \neq \emptyset $ es un $\displaystyle \R $-espacio vectorial si existen dos operaciones 
+\[
+\begin{split}
+	& +: V\times V \to V, \; \left(\vec{x},\vec{y}\right)\to \vec{x} + \vec{y} \\ 
+	& \cdot : \R \times V \to V, \; \left(a, \vec{x}\right) \to a \cdot \vec{x}
+\end{split}
+\]
+que verifican que
+\begin{description}
+\item[(i)] $\displaystyle \left(V, +\right) $ es un grupo abeliano.
+\item[(ii)] Se cumple la propiedad distributiva, 
+	\[\forall a \in \R, \forall \vec{x}, \vec{y} \in V, \; a\left(\vec{x}+\vec{y}\right) = a\vec{x}+a\vec{y} .\]
+\item[(iii)] Se cumple otra propiedad distributiva, 
+	\[\forall a, b \in \R, \; \vec{x}\in V, \; \left(a+b\right)\vec{x} = a\vec{x} + b\vec{x}.\]\item[(iv)] Se cumple la propiedad asociativa,
+	\[\forall a,b \in \R, \; \vec{x} \in V, \; a\left(b\vec{x}\right) = \left(a\cdot b\right)\vec{x} .\]
+\item[(v)] $\displaystyle \exists 1 \in \R, \forall \vec{x} \in V, \; 1 \cdot \vec{x} = \vec{x} $. 
+\end{description}
+\end{fdefinition}
+
+\begin{fdefinition}[]
+\normalfont Se define $\displaystyle \R^{n} $, con $\displaystyle n \in \N $, como
+\[\R^{n}= \left\{ \left(x_{1},x_{2}, \ldots, x_{n}\right) : \; x_{i}\in\R\right\}  .\]
+\end{fdefinition}
+
+\begin{fdefinition}[]
+\normalfont Se define la suma $\displaystyle + $ en $\displaystyle \R^{n} $ de la siguiente manera:
+\[\forall \vec{x}, \vec{y}, \; \vec{x} + \vec{y} = \left(x_{1}+y_{1}, x_{2}+y_{2}, \ldots, x_{n}+y_{n}\right) .\]
+\end{fdefinition}
+
+Utilizamos las propiedades de $\displaystyle \R $ como cuerpo abeliano para justificar que $\displaystyle \left(\R^{n}, +\right) $ es un grupo abeliano. 
+
+\begin{fdefinition}[]
+\normalfont Definimos el producto escalar en $\displaystyle \R^{n} $ de la siguiente manera,
+\[\forall a \in \R, \forall \vec{x} \in \R^{n}, \; a \cdot \vec{x} = \left(a\cdot x_{1}, a\cdot x_{2}, \ldots, a\cdot x_{n}\right) .\]
+\end{fdefinition}
+
+Una consecuencia clara de esto es que para todo $\displaystyle \vec{x}\in \R^{n} $ se cumple que 
+\[0 \cdot \vec{x} = \vec{0} .\]
+Al igual que antes, podemos utilizar las propiedades de $\displaystyle \left(\R, +, \cdot\right) $ como cuerpo abeliano para justificar que $\displaystyle \R^{n} $ es un $\displaystyle \R $-espacio vectorial. \\ \\
+Por las definiciones anteriores tenemos que para todo $\displaystyle \vec{x} \in \R^{n} $, 
+\[
+\begin{split}
+ \vec{x} & = \left(x_{1}, x_{2}, \ldots, x_{n}\right) \\
+& = \left(x_{1}, 0, \ldots, 0\right)+\left(0, x_{2}, \ldots, 0\right) + \cdots + \left(0, \ldots, x_{n}\right) \\
+& = x_{1}\left(1, 0, \ldots, 0\right)+x_{2}\left(0,1, \ldots, 0\right) + \cdots + x_{n}\left(0, \ldots, 1\right)..
+\end{split}
+\]
+
+Además, podemos concluir que si 
+\[x_{1}\left(1, \ldots, 0\right)+x_{2}\left(0,1, \ldots,0\right)+\cdots+x_{n}\left(0, \ldots , 1\right) = y_{1}\left(1, \ldots, 0\right)+y_{2}\left(0,1, \ldots,0\right)+\cdots+y_{n}\left(0, \ldots , 1\right) ,\]
+entonces $\displaystyle \forall i, 1\leq i \leq n $, $\displaystyle x_{i}=y_{i} $. 
+
+\begin{fdefinition}[Sistema de ecuaciones homogéneo]
+\normalfont Sea $\displaystyle H $ un sistema de ecuaciones homogéneo:
+\[
+\begin{split}
+& a_{1}^{1}x_{1}+a_{2}^{1}x_{2}+\cdots+a_{n}^{1}x_{n}=0 \\
+& \vdots \\
+& a^{m}_{1}x_{1}+a^{m}_{2}+\cdots+a^{m}_{n}x^{n}=0. 
+\end{split}
+\]
+donde $\displaystyle m,n \in \N $ y $\displaystyle a^{j}_{i}\in\R $. Definimos $\displaystyle L $ como el conjunto de soluciones de $\displaystyle H $:
+\[L = \left\{  \left(x_{0}^{1}, x_{0}^{2}, \ldots, x^{n}_{0}\right)\; : \; x_{0}^{1}, x^{2}_{0}, \ldots, x^{n}_{0}\; \text{es solución de $\displaystyle H $ }\right\} \subset \R^{n} .\]
+\footnote{ $\displaystyle a^{i}_{j}  $ no es exponente sino una forma de numeración.} 
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle \vec{x_{0}}, \vec{y_{0}}\in L $, se cumple que 
+\[\vec{x_{0}}+\vec{y_{0}}\in L .\]
+\end{ftheorem}
+
+\begin{proof}
+Tenemos que $\displaystyle \forall i, \; 1 \leq i \leq m $, 
+\[
+\begin{split}
+& a^{i}_{1}\left(x_{0}^{1}+y_{0}^{1}\right) + \cdots + a^{i}_{n}\left(x^{n}_{0}+y^{n}_{0}\right) \\
+= & a^{i}_{1}x^{1}_{0}+a^{i}_{1}y^{1}_{0}+\cdots+a^{i}_{n}x^{n}_{0}+a^{i}_{n}y^{n}_{0} \\
+= & \underbrace{\left(a^{i}_{1}x_{0}^{1}+a^{i}_{2}x^{2}_{0}+\cdots+a^{i}_{n}x^{n}_{0}\right)}_{0} + \underbrace{(a^{i}_{1}y^{1}_{0}+a^{i}_{2}y^{2}_{0}+\cdots+a^{i}_{n}y^{n}_{0})}_{0}\\
+= & 0 .
+\end{split}
+\]
+\end{proof}
+
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle \vec{x_{0}}\in L $ y $\displaystyle a \in \R $, se cumple que 
+\[a \vec{x_{0}}=\left(ax_{0}^{1}, ax^{2}_{0}, \ldots, a x^{n}_{0}\right) \in L .\]
+\end{ftheorem}
+
+\begin{proof}
+Tenemos que para $\displaystyle \forall i, \; 1 \leq i \leq m $, 
+\[
+\begin{split}
+& a^{i}_{1}\left(ax^{1}_{0}\right)+a^{i}_{2}\left(ax^{2}_{0}\right)+\cdots+a^{i}_{n}\left(ax^{n}_{0}\right) \\
+= & a \underbrace{(a^{i}_{1}x^{1}_{0}+a^{i}_{2}x^{2}_{0}+\cdots+a^{i}_{n}x^{n}_{0})}_{0} \\
+= & a \cdot 0 \\
+= & 0 .
+\end{split}
+\]
+\end{proof}
+
+\begin{ftheorem}[]
+\normalfont Por lo visto anteriormente, $\displaystyle L \subset \R^{n} $ es un \textbf{subespacio vectorial} sobre $\displaystyle \R $. 
+\end{ftheorem}
+
+\begin{proof}
+Muchas de las propiedades de un espacio vectorial automáticamente se heredan a un subespacio vectorial. Las únicas excepciones son la definición de la suma, del producto y la existencia del elemento neutro $\displaystyle 0 $. En este caso, hemos comprobado que la suma está definida en $\displaystyle L $ y que existe la multiplicación $\displaystyle \cdot:\R\times L \to L  $ definida en $\displaystyle L $. Además, $\displaystyle \vec{0}\in L $ es una solución trivial.
+\end{proof}
+
+Consideramos un sistema de ecuaciones no homogéneo $\displaystyle S $:
+\[
+\begin{split}
+& a_{1}^{1}x_{1}+a_{2}^{1}x_{2}+\cdots+a_{n}^{1}x_{n}=b^{1} \\
+& \vdots \\
+& a^{m}_{1}x_{1}+a^{m}_{2}+\cdots+a^{m}_{n}x^{n}=b^{m}. 
+\end{split}
+\]
+Consideramos que $\displaystyle \mathcal{L}\subset \R^{n} $ es el conjunto de las soluciones. 
+\[\mathcal{L} = \left\{ \left(x^{1}_{0}, x^{2}_{0}, \ldots, x^{n}_{0}\right)\; : \; x^{1}_{0}, x^{2}_{0}, \ldots, x^{n}_{0}\; \text{es solución de $\displaystyle S $ }\right\}  .\]
+
+Entonces, ya no se cumple necesariamente que la suma de dos soluciones también es solución. Si $\displaystyle \vec{x_{0}}, \vec{y_{0}}\in\mathcal{L} $, $\displaystyle \forall j, \; 1\leq j \leq m$, 
+\[
+\begin{split}
+&a^{j}_{1}\left(x^{1}_{0}+y^{1}_{0}\right) + a^{j}_{2}\left(x^{2}_{0}+y^{2}_{0}\right)+\cdots + a^{j}_{0}\left(x^{n}_{0}+y^{n}_{0}\right)\\
+= & \left(a^{j}_{1}x^{1}_{0}+a^{j}_{2}x^{2}_{0}+\cdots+a^{j}_{n}x^{n}_{0}\right) + \left(a^{j}_{1}y^{1}_{0}+a^{j}_{2}y^{2}_{0}+\cdots+a^{j}_{n}y^{n}_{0}\right) \\
+= & b^{j}+b^{j} = 2 b^{j} \neq b^{j}.
+\end{split}
+\]
+
+Si $\displaystyle \vec{X_{0}}\in L $ y $\displaystyle \vec{x_{0}}\in\mathcal{L} $, tenemos que 
+\[\vec{X_{0}}+\vec{x_{0}} = b^{j}\in\mathcal{L} .\]
+

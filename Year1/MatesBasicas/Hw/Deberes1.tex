@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Matemáticas Básicas - Deberes 1}
+\author{Victoria Eugenia Torroja Rubio}
+\date{12/9/24}
+
+\maketitle
+
+\begin{ej}
+Escribe con cuantificadores las siguientes afirmaciones definiendo adecuadamente los mismos conjuntos para todas ellas. Luego escribe su negación con cuantificadores y sin ellos. 
+\begin{description}
+\item[A:] /Los hospitales tienen médicos expertos en todas las especialidades/.
+\item[B:] /No existe especialidad en los hospitales que no tenga ningún médico experto en ella/.
+\item[C:] /Hay médicos en todos los hospitales que no son expertos en todas las especialidades/.
+\end{description}
+\end{ej}
+
+\begin{sol}
+Definimos $\displaystyle H $ como el conjunto de todos los hospitales, $\displaystyle M $ como el conjunto de todos los médicos y $\displaystyle E $ como el conjunto de todas las especialidades. \\ \\
+El enunciado \textbf{A} puede tener varias interpretaciones. En primer lugar, puede significar que en los hospitales existen médicos expertos en todas las especialidades, es decir, que existe al menos un individuo que se ha especializado en todas las especialidades. Entonces, \textbf{A} se puede reescribir de la siguiente manera:
+\begin{description}
+\item[A:] $\displaystyle \forall h \in H,\; \exists m \in M,\; \forall e \in E $ : $\displaystyle h $ tiene a $\displaystyle m $ experto en $\displaystyle e $. 
+\end{description}
+Por otro lado, el enunciado \textbf{A} también se puede interpretar como si todas las especialidades tienen al menos un médico experto en ella. En este caso, el enunciado \textbf{A} es equivalente al enunciado \textbf{B} y, por tanto, las soluciones del ejercicio se podrán encontrar a continuación. \\ \\
+El enunciado \textbf{B} se puede reescribir de la siguiente manera:
+\begin{description}
+\item[B:] $\displaystyle \forall h \in H,\; \forall e \in E,\; \exists m \in M $ : $\displaystyle h $ tiene a $\displaystyle m $ experto en $\displaystyle e $. 
+\end{description}
+Es decir, todas las especialidades tienen al menos un experto en ella, y esto se cumple para todos los hospitales. \\ \\
+El enunciado \textbf{C} se puede reescribir de la siguiente manera:
+\begin{description}
+\item[C:] $\displaystyle \forall h \in H,\; \exists m \in M,\; \exists e \in E $ : $\displaystyle h $ tiene a $\displaystyle m $ no experto en $\displaystyle e $. 
+\end{description}
+Es decir, en todos los hospitales existe al menos un médico que no es experto en todas las especialidades. \\ \\
+A continuación, procedemos a negar las afirmaciones \textbf{A}, \textbf{B} y \textbf{C}. Recordamos que la afirmación \textbf{A} se podía interpretar de varias maneras, por lo que haremos la negación de la primera y no de la segunda, pues hemos dicho que esta era equivalente a \textbf{B}. 
+\begin{description}
+\item[Negación de A:] $\displaystyle \exists h \in H,\; \forall m \in M,\; \exists e\in E $ : $\displaystyle h $ no tiene a $\displaystyle m $ en $\displaystyle e $. 
+\item[] En algún hospital ningún médico es experto en todas las especialidades. 
+\item[Negación de B:] $\displaystyle \exists h \in H,\; \exists e \in E, \; \forall m \in M $ : $\displaystyle h $ no tiene a $\displaystyle m $ experto en $\displaystyle e $. 
+\item[] En algún hospital existe al menos una especialidad que no tiene ningún médico experto en ella.
+\item[Negación de C:] $\displaystyle \exists h \in H,\; \forall m \in M,\; \forall e \in E $ : $\displaystyle h $ tiene a $\displaystyle m $ experto en $\displaystyle e $. 
+\item[] Existe al menos un hospital en el que todos los médicos son expertos en todas las especialidades.
+\end{description}
+
+\end{sol}
+
+
+\begin{ej}
+Consideramos los siguientes conjuntos:
+\[A := \left\{n\in\N \; | \; n \;\text{es múltiplo de 35}\right\} \quad \text{y} \quad B:= \left\{n\in\N\; |\; n \; \text{es múltiplo de 14}\right\}.\]
+Establece una condición necesaria y suficiente, simplificada, para que un elemento pertenezca a $\displaystyle A $ y a $\displaystyle B $. ¿La afirmación '$\displaystyle \exists n \in A $ y $\displaystyle \exists m\in B $ tal que el producto $\displaystyle nm $ es múltiplo de $\displaystyle 140 $ ' es verdadera o falsa?
+\end{ej}
+
+\begin{sol}
+Un elemento $\displaystyle n \in \N $ pertenece a $\displaystyle A \cap \displaystyle B $ si y solo si $\displaystyle n $ es múltiplo de 70. De esta manera,
+\[ n = 70\cdot k = 7\cdot 5\cdot 2 \cdot k = \underbrace{35 \cdot \left(2 \cdot k\right)}_{n \in A} = \underbrace{14 \cdot \left(5 \cdot k\right)}_{n \in B} .\]
+Por otro lado, si $n \in A \cap B$ se cumple que $n$ es múltiplo de 35 y de 14, por lo que:
+\[n = 35 \cdot k_1 = 14 \cdot k_2\]
+Como $n$ es múltiplo de 14, sabemos que es par, por lo que podemos decir que $k_1 = 2 \cdot k_3$:
+\[n = 35 \cdot 2\cdot k_3 = 70 \cdot k_3\]
+Por lo que si $n\in A \cap B$, entonces $n$ es múltiplo de 70.
+La afirmación '$\displaystyle \exists n \in A $ y $\displaystyle \exists m\in B $ tal que el producto $\displaystyle nm $ es múltiplo de $\displaystyle 140$' es verdadera. Consideramos el ejemplo de $\displaystyle n = 70 $ y $\displaystyle m = 14 $. Tenemos que 
+\[n \cdot m = 70 \cdot 14 = 70 \cdot 2 \cdot 7 = 140 \cdot 7 .\]
+\end{sol}
+\textbf{Nota.} En el ejercicio 2 se definen $k$, $k_1$, $k_2$ y $k_3$ como números naturales. 
+\end{document}

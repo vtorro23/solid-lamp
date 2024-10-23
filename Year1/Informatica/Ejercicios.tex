@@ -1,0 +1,392 @@
+\documentclass{article}
+
+\input{~/University/infopreamble.tex}
+
+\begin{document}
+
+\title{Informática}
+\author{Victoria Eugenia Torroja Rubio}
+\date{9/10/2024 - }
+
+\maketitle
+
+\section{Tema 1}
+
+\subsection{Hoja 1}
+
+\begin{ej}
+Escribe un programa en Python que nos diga cuál es el volumen de un cono con un radio de la base de 14,5 y una altura de 26,79. La fórmula que debes usar es:
+\[\frac{\pi \times radio^2 \times altura}{3} .\]
+Recuerda que el valor (aproximado) de $\displaystyle \pi $  es 3,141592.
+\end{ej}
+
+\begin{sol}
+La solución es:
+\begin{lstlisting}[language = Python]
+pi = 3.14159
+
+volume = (pi * 14.5 * 26.79) / 3
+
+print("El volumen (u3) es: ", volume)
+\end{lstlisting}
+\end{sol}
+
+\begin{ej}
+Modifica el programa anterior para que use tres variables: radio, altura y volumen. Las dos primeras se inicializarán a 14,5 y 26,79 respectivamente. La tercera obtendrá el resultado de la fórmula.
+\end{ej}
+
+\begin{sol}
+La solución es:
+\begin{lstlisting}[language = Python]
+pi = 3.14159
+
+radius = 14.5
+
+height = 26.79
+
+volume = (pi * radius * height) / 3
+
+print("El volumen(u3) es: ", volume)
+\end{lstlisting}
+\end{sol}
+
+\begin{ej}
+Escribe un programa en Python que lea del teclado un número (float) de grados Fahrenheit y lo convierta a Celsius mostrando el resultado en la pantalla.
+\[C = \frac{5}{9} \cdot \left(F - 32\right) .\]
+\end{ej}
+
+\begin{sol}
+La solución es:
+\begin{lstlisting}[language = Python]
+fahrenheit = float(input("Introduzca una temperatura en fahrenheit: "))
+
+celsius = 5 / 9 * (fahrenheit - 32)
+
+print("La temperatura en celsius es: ", celsius)
+\end{lstlisting}
+\end{sol}
+
+\begin{ej}
+Escribe un programa que lea del teclado un tiempo transcurrido en segundos y muestre en la pantalla las horas, los minutos y los segundos equivalentes.
+\end{ej}
+
+\begin{sol}
+La solución es:
+\begin{lstlisting}[language = Python]
+tiempo = int(input("Tiempo en segundos: "))
+
+hora = int(tiempo / 3600)
+minuto = int((float(tiempo/3600) - hora) * 60)
+segundo = int(((float(tiempo/3600) - hora) * 60 - minuto) * 60)
+
+print("Hora: ", hora, "Minutos: ", minuto, "Segundos: ", segundo)
+\end{lstlisting}
+\end{sol}
+
+\begin{ej}
+El área de un triángulo se puede calcular mediante la ley del seno: si se conocen dos lados del triángulo, lado1 y lado2, y el ángulo a existente entre ellos. Dicha ley establece que
+\[A = \frac{1}{2} \times \text{lado1} \times \text{lado2} \times \sin\alpha .\]
+Implementa un programa que calcule el área de un triángulo de esta manera. El programa deberá solicitar al usuario los dos lados y el ángulo que estos forman (en grados). Ten en cuenta que la función sin() espera que el ángulo se proporcione en radianes. Ángulo en radianes = Ángulo en grados x $\displaystyle \pi $  / 180.
+\end{ej}
+
+\begin{sol}
+La solución es la siguiente.
+\begin{lstlisting}[language = Python]
+import math
+
+pi = 3.14159
+
+lado_1 = float(input("Inserte la longitud del primer lado: "))
+lado_2 = float(input("Inserte la longitud del segundo lado: "))
+alpha = float(input("Inserte el valor del angulo que forman el primer y el segundo lado en grados: "))
+
+#cambiamos los grados a radianes
+alpha = alpha * pi / 180
+
+area = 1 / 2 * lado_1 * lado_2 * math.sin(alpha)
+
+print("El area es:", area)
+\end{lstlisting}
+\end{sol}
+
+\begin{ej}
+Escribe un programa en Python que pida al usuario el valor de dos variables reales $\displaystyle x $ e $\displaystyle y $, y a continuación muestre el resultado de aplicarles la siguiente fórmula:
+\[f\left(x,y\right) = \sqrt{1,531^{\left(x+y\right)} + \frac{ \left|e^{x}-e^{y}\right|\times\left(\sin\left(x\right)-\tan\left(y\right)\right)}{\log_{10}\left(y\right)\times3,141592^{x}}} .\]
+Declara constantes para los valores fijos.
+\end{ej}
+
+\begin{sol}
+La solución es la siguiente.
+\begin{lstlisting}[language = Python]
+import math
+
+x = float(input("Valor de x: "))
+y = float(input("Valor de y: "))
+
+z = 1.531
+pi = 3.141592
+
+w = math.sqrt(z ** (x + y) + (abs(math.exp(x) - math.exp(y)) * (math.sin(x) - math.tan(y))) / (math.log10(y) * (pi ** x)))
+
+print("f(x,y) = ", w)
+\end{lstlisting}
+\end{sol}
+
+\begin{ej}
+Escribe un programa en Python que pida al usuario los datos de un préstamo hipotecario (capital prestado, interés anual y años que dura el préstamo) y le muestre la cuota mensual que habrá de pagar y el total de lo pagado una vez terminado el plazo, distinguiendo la cantidad de amortización y la de intereses. \\ \\
+La fórmula que nos da la cuota mensual es:
+\[\text{cuota} = \frac{\text{capital} \times \text{ratio}}{100 \times \left(1 - \left(1 + \frac{\text{ratio}}{100}\right)^{-\text{plazo}}\right)} .\]
+Donde el ratio es el interés mensual y el plazo está indicado en meses. La cantidad de amortización es el capital prestado; el resto son intereses.
+\end{ej}
+
+\begin{sol}
+La solución es la siguiente.
+\begin{lstlisting}[language = Python]
+cap_prestado = float(input("Capital prestado en euros: "))
+ratio = float(input("Interes anual: "))
+plazo = float(input("Tiempo que dura el prestamo en meses: "))
+
+cuota = (cap_prestado * ratio) / (100 * (1-(1 + ratio / 100)**(- plazo)))
+
+print("La cuota es:", cuota)
+\end{lstlisting}
+\end{sol}
+
+\begin{ej}
+Trabajando con triángulos. Dadas tres cantidades reales positivas, escribe funciones para dilucidar las siguientes situaciones:
+\begin{description}
+\item[(a)] ¿Es un triángulo? Si los valores de dichas cantidades pueden corresponder a las longitudes de los lados de un triángulo. Para ello, tenga en cuenta, el teorema de desigualdad triangular de la geometría euclidiana.
+\item[(b)] ¿Es escaleno? En el caso de que las medidas puedan corresponder a las longitudes de los lados de un triángulo, si dicho triángulo es escaleno.
+\item[(c)] ¿Es equilátero? En el caso de que las medidas puedan corresponder a las longitudes de los lados de un triángulo, si dicho triángulo es equilátero.
+\item[(d)] ¿Es isósceles? En el caso de que las medidas puedan corresponder a las longitudes de los lados de un triángulo, si dicho triángulo es isósceles.
+\item[(e)] ¿Es rectángulo? En el caso de que las medidas puedan corresponder a las longitudes de los lados de un triángulo, si dicho triángulo es rectángulo.
+\end{description}
+\end{ej}
+
+\begin{sol}
+La solución es la siguiente.
+\begin{lstlisting}[language = Python]
+lado_1 = float(input("Lado 1 (numero real positivo): "))
+lado_2 = float(input("Lado 2 (numero real positivo): "))
+lado_3 = float(input("Lado 3 (numero real positivo): "))
+
+# apartado (a)
+
+if lado_1 + lado_2 >= lado_3 and lado_1 + lado_3 >= lado_2 and lado_2 + lado_3 >= lado_1:
+  triangle = True
+  print("Es un triangulo")
+else:
+  triangle = False
+  print("No es un triangulo")
+
+# apartado (b)
+
+if triangle == True:
+  if lado_1 == lado_2 or lado_2 == lado_3 or lado_1 == lado_3:
+    print("No es escaleno")
+  else:
+    print("Es escaleno")
+else:
+  print("No se trata de un triangulo")
+
+# apartado (c)
+
+if triangle == False:
+  print("No se trata de un triangulo")
+elif lado_1 == lado_2 and lado_2 == lado_3:
+  print("Es un triangulo equilatero")
+else: 
+  print("No es un triangulo equilatero")
+
+# apartado (d)
+
+if triangle == False:
+  print("No se trata de un triangulo")
+elif lado_1 == lado_2 or lado_2 == lado_3 or lado_1 == lado_3:
+  print("Es un triangulo isosceles")
+else: 
+  print("No es un triangulo isosceles")
+
+# apartado (e)
+a = lado_2 ** 2 + lado_3 ** 2
+b = lado_1 ** 2 + lado_3 ** 2
+c = lado_1 ** 2 + lado_2 ** 2
+
+if triangle == False:
+  print("No se trata de un triangulo")
+elif lado_1 ** 2 == a or lado_2 ** 2 == b or lado_3 ** 2 == c:
+  print("Es un triangulo rectangulo")
+else: 
+  print("No es un triangulo rectangulo")
+\end{lstlisting}
+\end{sol}
+
+\subsection{Hoja 2}
+
+\begin{ej}
+Escribe un programa en Python que pida al usuario tres valores enteros y los muestrede menor a mayor separados por comas. Por ejemplo, si el usuario introduce 10, 4 y 6, el resultado será: 4,6,10.
+\end{ej}
+
+\begin{sol} La solución es:
+\begin{lstlisting}[language = Python]
+val_1 = int(input("Inserte un numero entero: "))
+val_2 = int(input("Inserte un numero entero: "))
+val_3 = int(input("Inserte un numero entero: "))
+
+if val_1 <= val_2 and val_2 <= val_3:
+	print(val_1, ",", val_2, ",", val_3)
+
+elif val_2 <= val_1 and val_1 <= val_3:
+	print(val_2, ",", val_1, ",", val_3)
+
+elif val_3 <= val_1 and val_1 <= val_2:
+	print(val_3, ",", val_1, ",", val_2)
+
+elif val_3 <= val_2 and val_2 <= val_1:
+	print(val_3, ",", val_2, ",", val_1)
+
+elif val_1 <= val_3 and val_3 <= val_2:
+	print(val_1, ",", val_3, ",", val_2)
+
+else:
+	print(val_2, ",", val_3, ",", val_1)
+\end{lstlisting}
+También se puede hacer de esta manera:
+\begin{lstlisting}[language = Python]
+# Pedir tres valores enteros al usuario
+a = int(input("Introduce el primer valor: "))
+b = int(input("Introduce el segundo valor: "))
+c = int(input("Introduce el tercer valor: "))
+
+# Comparaciones para encontrar el orden de los tres numeros
+if a <= b and a <= c:
+    if b <= c:
+        print(f"{a},{b},{c}")
+    else:
+        print(f"{a},{c},{b}")
+
+elif b <= a and b <= c:
+    if a <= c:
+        print(f"{b},{a},{c}")
+    else:
+        print(f"{b},{c},{a}")
+
+else:  # c es el menor
+    if a <= b:
+        print(f"{c},{a},{b}")
+    else:
+        print(f"{c},{b},{a}")
+\end{lstlisting}
+\footnote{Esta segunda manera está hecha por el ChatGPT, cuando pone print(), hay que ponerlo como en la primera manera.} 
+\end{sol}
+
+\begin{ej}
+Escribe una función que permita calcular las soluciones a una ecuación de segundo $\displaystyle Ax^{2} + Bx + C = 0 $.
+\end{ej}
+
+\begin{sol}
+La solución es la siguiente.
+\begin{lstlisting}[language = Python]
+import math
+
+A = float(input("Inserte el primer valor: "))
+B = float(input("Inserte el segundo valor: "))
+C = float(input("Inserte el tercer valor: "))
+
+# definimos el discriminante para averiguar si la ecuacion va a tener solucion o no
+D = B ** 2 - 4 * A * C
+
+if A == 0:
+	print("El primer valor no puede ser nulo.")
+
+elif D == 0:
+	sol = - B / (2 * A)
+	print("Tenemos que x es igual a: ", sol)
+
+elif D > 0:
+	sol_1 = (- B + math.sqrt(B ** 2 - 4 * A * C)) / (2 * A)
+	sol_2 = (- B - math.sqrt(B ** 2 - 4 * A * C)) / (2 * A)
+	print("Tenemos que las soluciones de la ecuacion son ", sol_1, sol_2)
+
+else: # D < 0
+	print("Esta ecuacion no tiene soluciones reales.")
+\end{lstlisting}
+\end{sol}
+
+\begin{ej}
+Debido a la escasez de agua se pretende implantar un sistema de tarifas que penalice el consumo excesivo de este recurso, de acuerdo con la siguiente tabla:
+\begin{center}
+\begin{tabular}{c c}
+	Consumo (m3) & euros/m3 \\
+	Primeros 100 & 0.15 \\
+	De 100 a 500 & 0.20 \\
+	De 500 a 1000 & 0.35 \\
+	A partir de 1000 & 0.80
+\end{tabular}
+\end{center}
+ Implementar una función que tenga como parámetro el consumo de agua en m3 y calcule la factura de acuerdo con la tabla anterior.
+\end{ej}
+
+\begin{sol}
+Entrega 1.
+\end{sol}
+
+\begin{ej}
+Dados dos números enteros n y m, escribe una función en Python que calcule el signo de su producto (+ si el producto es positivo, - si el producto es negativo y 0 si el producto es cero) sin llegar a calcular dicho producto.
+\end{ej}
+
+\begin{sol}
+La solución es la siguiente.
+\begin{lstlisting}[language = Python]
+a = int(input("Insert whole number here: "))
+b = int(input("Insert another whole number here: "))
+
+if a == 0 or b == 0: 
+	valor = "0"
+
+elif (a > 0 and b > 0) or (a < 0 and b < 0):
+	valor = "positivo"
+
+else:
+	valor = "negativo"
+
+print("El producto es", valor)
+\end{lstlisting}
+\end{sol}
+
+\begin{ej}
+Escribe una función que, dada una temperatura, indique la actividad más apropiada para dicha temperatura teniendo en cuenta los siguientes criterios.
+\begin{center}
+\begin{tabular}{c c}
+	Actividad & Temperatura idónea \\
+	Natación & temp $\displaystyle > $  30 \\
+	Tenis & 20 $\displaystyle < $  temp $\displaystyle \leq 30 $  \\
+	Golf & 10 $\displaystyle < $  temp $\displaystyle \leq 20 $  \\
+	Esquí & 5 $\displaystyle < $  temp $\displaystyle \leq 10 $ \\
+	Parchís & temp $\displaystyle \leq 5 $ 
+\end{tabular}
+\end{center}
+\end{ej}
+
+\begin{sol}
+La solución es la siguiente.
+\begin{lstlisting}[language = Python]
+temp = float(input("Temperature in degrees celcius: "))
+
+if temp < 0: 
+	activity = "Error. Can't have negative temperature."
+elif temp <= 5: 
+	activity = "Parchis"
+elif temp <= 10:
+	activity = "Esqui"
+elif temp <= 20: 
+	activity = "Golf"
+elif temp <= 30:
+	activity = "Tenis"
+else:
+	activity = "Natacion"
+print("Your recommended activity is:", activity)
+\end{lstlisting}
+\end{sol}
+
+\end{document}

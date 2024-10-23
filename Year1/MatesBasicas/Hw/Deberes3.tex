@@ -1,0 +1,84 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Matemáticas Básicas - Deberes 3}
+\author{Victoria Eugenia Torroja Rubio}
+\date{25/9/24}
+
+\maketitle
+
+\begin{ej}
+Sean $\displaystyle f $ y $\displaystyle g $ $\displaystyle : \R \to \R $ las funciones definidas por $\displaystyle f\left(x\right) = x^{2} $ y $\displaystyle g\left(x\right) = x^{2}-1 $. Hallar las funciones $\displaystyle f\circ f $, $\displaystyle f \circ g $, $\displaystyle g\circ f $ y $\displaystyle g \circ g $ y determinar el conjunto
+\[ \left \{ x \in \R \; : \left(f \circ g\right)\left(x\right)=\left(g\circ f\right)\left(x\right)\right \}  .\]
+\end{ej}
+
+\begin{sol}
+Calculamos las funciones compuestas que nos pide el enunciado:
+\[
+\begin{split}
+& f\left(f\left(x\right)\right) = \left(x^{2}\right)^{2} = x^{4},\quad \quad f\left(g\left(x\right)\right) = \left(x^{2}-1\right)^{2} \\
+& g\left(f\left(x\right)\right) = \left(x^{2}\right)^{2}-1 = x^{4}- 1,\quad \quad g\left(g\left(x\right)\right)= \left(x^{2}-1\right)^{2}-1 = x^{4} - 2x^{2}=x^{2}\left(x^{2}-2\right).
+\end{split}
+\]
+A continuación, resolvemos el siguiente apartado. Si $\displaystyle \left(f\circ g\right)\left(x\right) = \left(g\circ f\right)\left(x\right) $, entonces tenemos que 
+\[
+\begin{split}
+& \left(x^{2}-1\right)^{2} = x^{4}-1 \\
+\Rightarrow & x^{4} -2x^{2} + 1 = x^{4}-1 \\
+\Rightarrow & 2x^{2} = 2 \\
+\Rightarrow & x = \pm 1.
+\end{split}
+\]
+Por tanto, 
+\[ \left \{ x \in \R \; : \left(f \circ g\right)\left(x\right)=\left(g\circ f\right)\left(x\right)\right \} = \left \{ 1, \; -1\right \}  .\]
+
+\end{sol}
+
+
+\begin{ej}
+	Se define en $\displaystyle \R^{2} $ la relación $\displaystyle \left(x,y\right)\mathcal{R}\left(a,b\right) $ si y solo si $\displaystyle y-b = x^{2}-a^{2} $. Demuestra que $\displaystyle \mathcal{R} $ es una relación de equivalencia. Describe las clases de equivalencia $\displaystyle \left[\left(0,0\right)\right]  $, $\displaystyle \left[\left(0,2\right)\right]  $ y $\displaystyle \left[\left(1,1\right)\right]  $. Describe la clase de un punto cualquiera $\displaystyle \left(a,b\right)\in\R^{2} $. Describe el conjunto cociente $\displaystyle \R^{2}/\mathcal{R} $. 
+\end{ej}
+
+\begin{sol}
+	En primer lugar, demostramos que la relación $\displaystyle \mathcal{R} \subset \R^{2} $ es una relación de equivalencia:
+	\begin{description}
+		\item[(i)] Tenemos que es reflexiva, pues $\displaystyle \forall\left(x,y\right)\in\R^{2}\; , \left(x,y\right)\mathcal{R}\left(x,y\right) $:
+			\[\forall x,y \in \R, \quad y - y = x^{2} - x^{2} \quad \Rightarrow \quad 0=0  .\]
+		\item[(ii)] Si $\displaystyle \left(x,y\right)\mathcal{R}\left(w,z\right) $, 
+			\[y - z = x^{2}-w^{2}, \; \text{multiplicamos ambos lados por $\displaystyle -1 $ }, \; z-y = w^{2} - x^{2} .\]
+			Por tanto, $\displaystyle \left(x,y\right)\mathcal{R}\left(w,z\right) \Rightarrow \left(w,z\right)\mathcal{R}\left(x,y\right) $ y $\displaystyle \mathcal{R} $ es simétrica. 
+		\item[(iii)] Si $\displaystyle \left(a,b\right)\mathcal{R}\left(c,d\right) $ y $\displaystyle \left(c,d\right)\mathcal{R}\left(e,f\right) $, entonces
+			\[
+			\begin{split}
+			& b-d = a^{2}-c^{2} \\
+			& d-f = c^{2}-e^{2} \\
+			\therefore & b - f = a^{2}-e^{2} .
+			\end{split}
+			\]
+			Por tanto, $\displaystyle \mathcal{R} $ es transitiva. 
+	\end{description}
+	En conclusión, $\displaystyle \mathcal{R} $ es una relación de equivalencia. \\ \\
+	A continuación, encontramos las clases de equivalencia que nos pide el enunciado. Para ello, sustituimos los puntos que nos dan ((0,0), (0,2) y (1,1)) y encontramos los puntos $\displaystyle \left(x,y\right) $ que satisfacen dicha condición. Mostramos como ejemplo el caso de $\displaystyle \left[\left(1,1\right)\right]  $:
+	\[1-y = 1- x^{2} \quad \Rightarrow y = x^{2} .\]
+	Por lo que los pares $\displaystyle \left(x,y\right) $ que componen la clase de equivalencia de $\displaystyle \left[\left(1,1\right)\right]  $ son $\displaystyle \left(x,x^{2}\right) $ con $\displaystyle x\in\R $. \\ \\
+	Las otras clases de equivalencia se obtienen de la misma manera.
+	\[
+	\begin{split}
+	& \left[\left(0,0\right)\right] = \left \{ \left(x,y\right)\in \R^{2}\; : \; \left(0,0\right)\mathcal{R}\left(x,y\right)\right \} = \left \{ \left(x, x^{2}\right)\; : \; x\in \R\right \} \\
+	 & \left[\left(1,1\right)\right] = \left \{ \left(x,y\right)\in \R^{2}\; : \; \left(1,1\right)\mathcal{R}\left(x,y\right)\right \} = \left \{ \left(x, x^{2}\right)\; : \; x\in \R\right \}\\
+	 & \left[\left(0,2\right)\right] = \left \{ \left(x,y\right)\in \R^{2}\; : \; \left(0,2\right)\mathcal{R}\left(x,y\right)\right \} = \left \{ \left(x, x^{2}+2\right)\; : \; x\in \R\right \} .
+	\end{split}
+	\]
+	En general, la clase de un punto $\displaystyle \left(a,b\right)\in\R^{2} $ será el conjunto de puntos $\displaystyle \left(x,y\right)\in\R^{2} $ tales que $\displaystyle \left(a,b\right)\mathcal{R} \left(x,y\right) $:
+	\[b-y = a^{2}-x^{2} \; \Rightarrow y = x^{2} - \left(a^{2}-b\right) .\]
+Es decir,
+\[\left[\left(a,b\right)\right] = \left \{ \left(x,x^{2}-\left(a^{2}-b\right)\right) \; : \; x \in \R\right \} = \left[\left(0,b-a^{2}\right)\right]   .\]
+Por tanto, todas las clases de equivalencia de los puntos $\displaystyle \left(a,b\right) $ con $\displaystyle a\neq0 $ se pueden expresar como la clase de equivalencia de $\displaystyle \left(0,k\right) $ con $\displaystyle k \in \R $. Consecuentemente, el conjunto cociente $\displaystyle \R^{2}/\mathcal{R} $ será el conjunto de todas las parábolas de la forma $\displaystyle y = x^{2}+c $ con $\displaystyle c\in\R $. 
+\[\R^{2}/\mathcal{R} = \left \{ \left[\left(0,a\right)\right] \; : \; a \in \R\right \}  .\]
+\end{sol}
+
+
+\end{document}

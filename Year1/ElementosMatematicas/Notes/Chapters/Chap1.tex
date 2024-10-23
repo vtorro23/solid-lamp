@@ -1,0 +1,494 @@
+\chapter{Teoría de Números}
+\begin{fdefinition}[]
+	\normalfont $\displaystyle R $ es una relación de orden sobre un conjunto $\displaystyle E $ si:
+	\begin{description}
+	\item[(i)] $\displaystyle R $ es reflexiva. 
+		\[\forall x \in E, \; x R x .\]
+	\item[(ii)] $\displaystyle R $ es transitiva. 
+		\[\forall x,y,z \in E, \; x R y \land y R z \Rightarrow x R z .\]
+	\item[(iii)] $\displaystyle R $ es antisimétrica. 
+		\[\forall x,y \in E \; xRy \land y Rx \Rightarrow x = y .\]
+	\end{description}
+\end{fdefinition}
+
+\begin{fdefinition}[]
+\normalfont $\displaystyle R $ es una relación de orden total si $\displaystyle R $ es una relación de orden y
+\[\forall x,y \in E, \; xRy \lor yRx .\]
+\end{fdefinition}
+
+\begin{ftheorem}[Principio de la buena ordenación]
+\normalfont Todo subconjunto no vacío $\displaystyle S \subset \N $ contiene un primer elemento, i.e. 
+\[\exists a\in \N, a \in S, \forall b \in S, \; a \leq b.\]
+\end{ftheorem}
+
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle  R $ una relación de orden sobre $\displaystyle  E $. Decimos que $\displaystyle  R $ es una \textbf{buena ordenación} si para cada subconjunto no vacío $\displaystyle X $ de $\displaystyle E $ existe un elemento $\displaystyle a\in X $ tal que $\displaystyle a $ está relacionado con todos los elementos de $\displaystyle Y $. 
+\end{fdefinition}
+Es decir, la relación en $\displaystyle \N $ definida como $\displaystyle a \leq b $ es una buena ordenación (por el Principio de la buena ordenación). Sin embargo, esto no se cumple en $\displaystyle \Z $, pues puedo tomar subconjuntos en el que no exista un menor número (el subconjunto de los números negativos). Sin embargo, se cumple que
+\[\forall a \in \Z, \; \left\{ m \in \Z\; : a \leq m\right\}  \]
+está bien ordenado con la relación definida anteriormente.
+\begin{ftheorem}[]
+\normalfont Todo buen orden es total.
+\end{ftheorem}
+
+\begin{fdefinition}[Relación de divisibilidad]
+\normalfont Si $\displaystyle m, n \in \Z $, decimos que $\displaystyle m $ divide a $\displaystyle n $, es decir, $\displaystyle  m|n $, si existe un número entero $\displaystyle d $ tal que $\displaystyle n = m\cdot d $. 
+\end{fdefinition}
+
+La relación de divisibilidad en $\displaystyle \N $ es una relación de orden \textbf{no total} (Considera dos números primos distintos, por ejemplo 3 y 5, 3 no divide a 5 y 5 no divide a 3). En $\displaystyle  \Z $ no es una relación de orden, pues no se cumple la condición antisimétrica. Para demostrar esto, considera $\displaystyle a\in \Z $ y $\displaystyle -a \in \Z $, entonces tenemos que $\displaystyle a|-a $ y $\displaystyle -a|a $, pero $\displaystyle a \neq -a $ si $\displaystyle a\neq 0 $. 
+
+\section{División Euclídea}
+
+\begin{ftheorem}[División Euclídea]
+\normalfont Seam $\displaystyle  m,n \in \Z $, con $\displaystyle m \neq0 $. Entonces existen $\displaystyle  q, r \in \Z $ únicos tales que 
+\[n = mq + r, \quad 0 \leq r < \left|m\right| .\]
+Denominamos a $\displaystyle q $ el cociente y a $\displaystyle r $ el resto.
+\end{ftheorem}
+
+\begin{proof}
+Primero demostraremos la existencia. \\
+\begin{description}
+\item[(i)] Sea $\displaystyle m>0 $. \\ \\
+	Sea $\displaystyle S = \left\{ mx-n\; : \; x \in \Z\right\}  $. $\displaystyle S $ tiene números positivos, por lo que existe un mínimo $\displaystyle mt-n>0 $. Entonces tenemos que
+	\[m\left(t-1\right)-n \leq0 \Rightarrow 0 \leq n - m\left(t-1\right) .\]
+	Por tanto, 
+	\[0 \leq n - m\left(t-1\right) = \underbrace{n - mt}_{<0} + m < m .\]
+Sea $\displaystyle  q = t - 1 $ y $\displaystyle  r = n - m\left(t- 1\right) $, entonces:
+\[n = m\left(t-1\right)+n-m\left(t-1\right)=mq +r .\]
+Esto también se puede demostrar por reducción al absurdo. Nos tenemos que dar cuenta de que para cualquier $\displaystyle q \in \Z $ tenemos que 
+\[n = mq + \left(n - mq\right) .\]
+La idea es encontrar un $\displaystyle q \in \Z $ que satisfazca la hipótesis para $\displaystyle r $. \\ \\
+Si consideramos el conjunto $\displaystyle S_{0}=\{n-mx: \; x \in \Z \land n-mx \geq 0\} $. Dado que $\displaystyle S_{0} \subset \N $ y $\displaystyle S_{0} \neq \emptyset $, podemos encontrar un menor elemento $\displaystyle r = n - mq $ con $\displaystyle q \in \Z $. Entonces, está claro que $\displaystyle  r \geq 0 $ dado que $\displaystyle r \in S_{0} $. Si $\displaystyle r \geq m $ tenemos que:
+\[0\leq r - m = n - mq - m = n - m \left(q + 1\right) = r - m < r .\]
+Por tanto, $\displaystyle n - m\left(q+1\right) $ sería un elemento de $\displaystyle S_{0} $ menor que $\displaystyle r $, lo cual es una contradicción. 
+\item[(ii)] Si $\displaystyle m < 0 $, entonces $\displaystyle  -m >0 $ y aplicamos el razonamiento anterior. 
+\end{description}
+Ahora demostramos la unicidad. Suponemos que hay dos cocientes y dos restos, 
+\[n = mq_{1}+r_{1}= mq_{2}+r_{2} .\]
+Además, suponemos que $\displaystyle q_{1}\neq q_{2} $, por lo que $\displaystyle \left|q_{1}-q_{2}\right|\geq 1 $. También sabemos que 
+\[|m\left(q_{1}-q_{2}\right)| = \left|m\right| \left|q_{1}-q_{2}\right| \geq \left|m\right| .\]
+Por otra parte, 
+\[|m\left(q_{1}-q_{2}\right)|=|r_{1}-r_{2}| < \left|m\right| .\]
+Por tanto tenemos una contradicción, y debe ser que $\displaystyle q_{1}=q_{2} $ y, consecuentemente, $\displaystyle r_{1}=r_{2} $.
+\end{proof}
+
+\section{Máximo Común Divisor}
+
+\begin{fdefinition}[Máximo Común Divisor]
+\normalfont Sean $\displaystyle n,m \in \Z $, con $\displaystyle n, m \neq 0 $, tenemos que $\displaystyle d = \mcd\left(m,n\right) $ ($\displaystyle d>0 $) si 
+\begin{itemize}
+\item $\displaystyle d $ divida a $\displaystyle a $ y $\displaystyle b $ 
+\item cualquier otro divisor común de $\displaystyle a $ y $\displaystyle b $ divide a $\displaystyle d $  
+\end{itemize}
+\end{fdefinition}
+ \begin{ftheorem}[]
+ \normalfont Si $\displaystyle m,n \neq0 $ y $\displaystyle m,n \in \Z $, entonces:
+ \begin{description}
+ \item[(i)] Existe algún $\displaystyle \mcd\left(m,n\right)=d $ 
+\item[(ii)] El máximo común divisor es único
+\item[(iii)] \textbf{Identidad de Bézout} 
+	\[\exists u,v \in \Z, \; d = mu + nv .\]
+ \end{description}
+ \end{ftheorem}
+
+ \begin{proof}
+ \begin{description}
+ \item[(i)] Esto queda demostrado en la primera parte de la demostración para el Teorema 1.5. 
+\item[(ii)] Si existen dos máximos comunes divisores, $\displaystyle d_{1} $ y $\displaystyle d_{2} $, tenemos que $\displaystyle d_{1}|d_{2} $ y $\displaystyle d_{2}|d_{1} $. Por tanto, al tratarse de dos números positivos que se dividen mutuamente ha de ser el caso que $\displaystyle d_{1}=d_{2} $.
+\item[(iii)] En primer lugar, es obvio que $\displaystyle r_{1}=n - mq_{1}$. Similarmente, $\displaystyle r_{2} = m - r_{1}q_{2}= m - \left(n-mq_{1}\right)q_{2}=-q_{2}n+m\left(1+q_{1}q_{2}\right) $. Este proceso lo podemos repetir hasta $\displaystyle r_{t} $.
+ \end{description}
+ 
+ \end{proof}
+
+ \begin{ftheorem}[Algoritmo de Euclides]
+ \normalfont Tenemos $\displaystyle m,n \neq 0 $ y $\displaystyle m,n \in \Z $. Si $\displaystyle n>m $, por el Teorema 1.3 tenemos que existen $\displaystyle q_{1},r_{1}\in\Z $ tales que
+ \[n = mq_{1}+r_{1}, \quad 0 \leq r_{1}< \left|m\right| .\]
+ También podemos poner:
+ \[m = r_{1}q_{2}+r_{2}, \quad 0<r_{2}<r_{1} .\]
+ En la posición $\displaystyle i $:
+ \[ r_{i} = r_{i+1}q_{i+2}+r_{i+2}, \quad 0<r_{i+2}<r_{i+1}.\]
+ En algún momento vamos a tener:
+ \[
+ \begin{split}
+ & r_{t-2}=r_{t-1}q_{t}+r_{t}, \quad 0<r_{t}<r_{t-1} \\
+ & r_{t-1} = r_{t}q_{t+1}+0.
+ \end{split}
+ \]
+ Entonces, $\displaystyle \mcd\left(m,n\right)=r_{t} $. 
+ \end{ftheorem} 
+
+ \begin{proof}
+Tenemos que cada resto siempre va a ser menor que el módulo del divisor y, además, cada resto va a ser menor que el anterior. Por está razón, llegará un momento en el que el resto sea 0 (en, como mucho, $\displaystyle \left|m\right| $ etapas). \\ \\
+Vamos a comprobar que $\displaystyle r_{t} $ es el máximo común divisor. De la última ecuación tenemos que $\displaystyle r_{t}|r_{t-1} $. De manera similar, $\displaystyle r_{t-1}|r_{t-2} $, y así sucesivamente hasta llegar a concluir que $\displaystyle r_{t} $ divide a $\displaystyle n $ y a $\displaystyle m $. Suponemos que $\displaystyle j $ también divide a $\displaystyle m $ y $\displaystyle n $. Entonces, de la primera ecuación obtenemos que $\displaystyle j $ divide a $\displaystyle r_{1} $, de la segunda obtenemos que $\displaystyle j $ divide a $\displaystyle r_{2} $ y así sucesivamente hasta llegar al hecho de que $\displaystyle j $ divide a $\displaystyle r_{t} $.
+ \end{proof}
+
+ \begin{flema}[]
+ \normalfont Si $\displaystyle a,b \in \Z $ son no nulos y $\displaystyle a > b $ tenemos que
+ \[a = b c + r .\]
+ Cualquier divisor común de $\displaystyle a $ y $\displaystyle b $ es también divisor de $\displaystyle r $ y cualquier divisor común de $\displaystyle b $ y $\displaystyle r $ lo es también de $\displaystyle a $. \\ \\
+ Además, si $\displaystyle r \geq 1 $, se cumple que $\displaystyle \mcd\left(a,b\right) = \mcd\left(b,r\right) $.
+ \end{flema}
+ \footnote{Esto está demostrado en los ejercicios de Matemáticas Básicas y nos ayuda a demostrar el Algoritmo de Euclídes.} 
+
+ \begin{eg}
+\normalfont
+ Hallamos el máximo común divisor de 26 y 382. Tenemos que:
+ \[
+ \begin{split}
+ & 382 = 26 \cdot 14 + 18 \\
+ & 26 = 18 \cdot 1 + 8 \\
+ & 18 = 8 \cdot 2 + 2 \\
+ & 8 = 2 \cdot 4 + 0.
+ \end{split}
+ \]
+ Por tanto, el primer resto no nulo es $\displaystyle 2 $ y el máximo común divisor de $\displaystyle 26 $ y $\displaystyle 382 $ es $\displaystyle 2 $. \\ \\
+ Calculamos la identidad de Bézout para estos dos números:
+ \[
+ \begin{split}
+ &2 = 18 - 2 \cdot 8 \\
+ = & 18 - \left(2 \cdot \left(26-18\right)\right)\\
+ = & \left(382-26 \cdot14\right) -\left(2 \cdot \left(26 -18\right)\right) \\
+ = & 3 \cdot 382 - 44 \cdot 26.
+ \end{split}
+ \]
+ Aquí nos podemos dar cuenta de que \textbf{la Identidad de Bézout no es única}, pues podemos escribir:
+\[
+\begin{split}
+	2 = & 3 \cdot 382 + \left(-44\right) \cdot 26 \\
+	= & 3 \cdot 382 + 382 \cdot 26 \cdot k - 382 \cdot 26 \cdot k + \left(-44\right) \cdot 26\\
+	= & 382 \cdot \left(3 + 26k\right) + 26 \cdot \left(-44 -382k\right).
+\end{split}
+\]
+ \end{eg}
+
+ \begin{fdefinition}[Mímimo Común Múlitplo]
+ \normalfont Consideramos $\displaystyle m,n \in \Z $ no nulos. Decimos que $\displaystyle l = \mcm\left(m,n\right) $, o $\displaystyle l $ es el mímimo común múltiplo de $\displaystyle m $ y $\displaystyle n $ si:
+ \begin{itemize}
+ \item ambos lo dividen.
+	 \[m | l \quad \text{y} \quad n | l .\]
+\item divide a cualquier entero $\displaystyle t $ al que $\displaystyle m $ y $\displaystyle n $ dividen. 
+	\[m | t \; \land \; n | t \;\Rightarrow l | t .\]
+ \end{itemize}
+ \end{fdefinition}
+ 
+ \begin{ftheorem}[]
+ \normalfont Si $\displaystyle a,b \in \Z $ no nulos,
+ \[\mcd\left(a,b\right) \cdot \mcm\left(a,b\right) = \left|a \cdot b\right| .\]
+ \end{ftheorem}
+
+\section{Números Primos}
+
+\begin{fdefinition}[]
+\normalfont Un \textbf{número primo} es todo entero $\displaystyle p > 1 $ cuyos únicos divisores son 1 y $\displaystyle  p $. A los números no primos se les llama \textbf{compuestos}.
+\end{fdefinition}
+
+\begin{fprop}[]
+\normalfont Todo número natural $\displaystyle n>1 $ tiene algún divisor primo.
+\end{fprop}
+
+\begin{proof}
+Lo demostramos por inducción sobre $\displaystyle n $. Esto claramente se cumple para $\displaystyle n=2 $, pues $\displaystyle 2 | 2 $. Si $\displaystyle n >2 $, asumimos que $\displaystyle \forall k, \; k \leq n - 1 $ tiene algún divisor primo. Si $\displaystyle n $ es primo, hemos ganado. Si $\displaystyle n $ es compuesto, es divisible por $\displaystyle t \in \N $ con $\displaystyle t \neq 1 $ y $\displaystyle t \neq n $. Por tanto, como $\displaystyle t < n $, $\displaystyle t $ tiene algún divisor primo, que será también divisor de $\displaystyle n $.
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Todo número natural $\displaystyle n>1 $ se puede expresar como producto de primos.
+\end{fprop}
+
+ \begin{proof}
+ Lo hacemos por reducción al absurdo. Asumimos que existe algún $\displaystyle n\in \N $ que no es producto de primos. Definimos
+\[\displaystyle S = \left\{ x \in \N\; : \; \text{ $\displaystyle x $ no es producto de primos} \right\} \subset \N. \]
+Asumimos que $\displaystyle k $ es el elemento más pequeño en $\displaystyle S $. Entonces $\displaystyle k $ se puede expresar como $\displaystyle k = a \cdot b $ con $\displaystyle a,b \neq k $ y $\displaystyle a, b < k $. Entonces, como $\displaystyle a $ y $\displaystyle b $ son menores que $\displaystyle k $ tenemos que $\displaystyle a $ y $\displaystyle b $ son producto de primos, esto nos da una contradicción. \\ \\
+También se puede demostrar por inducción. Sabemos que se cumple para $\displaystyle n = 2 $  pues $\displaystyle 2 = 2 \cdot 1 $. Si $\displaystyle n >2 $ y asumimos que se cumple para todos los números $\displaystyle k \leq n - 1 $. Si $\displaystyle n $ es primo hemos ganado. Si $\displaystyle n $ no es primo, tenemos que $\displaystyle n $ es compuesto y, consecuentemente, $\displaystyle n = a \cdot b $ con $\displaystyle a,b \neq n $ y $\displaystyle a,b <n $. Por tanto, $\displaystyle a$ y $\displaystyle b $ se puede expresar como producto de primos porque son menores que $\displaystyle n $ y, consecuentemente, $\displaystyle n $ se puede expresar como producto de primos.
+ \end{proof}
+ 
+\begin{ftheorem}[Teorema de Euclides]
+\normalfont El conjunto de números primos es infinito.
+\end{ftheorem}
+
+\begin{proof}
+Supongamos que el conjunto de números primos fuera finito, es decir,
+\[P = \left\{ p_{1}, p_{2}, \ldots, p_{n}\right\}  .\]
+Entonces tomamos $\displaystyle k = 1 + p_{1} \cdot p_{2} \cdots p_{n} $. Ningún $\displaystyle p_{i} \in P $ divide a $\displaystyle k $, pero $\displaystyle k $ tiene que tener algún divisor primo, por tanto tiene que ser alguno que no está en $\displaystyle P $.
+\end{proof}
+
+\begin{ftheorem}[]
+	\normalfont Si $\displaystyle a,b \in \Z - \left\{ 0\right\}  $  y $\displaystyle m \in \Z - \left\{ 0\right\}  $ primo con $\displaystyle a $. Si $\displaystyle m $ divide a $\displaystyle a \cdot b $ entonces $\displaystyle m $ divide a $\displaystyle b $.
+\end{ftheorem}
+
+\begin{proof}
+Tenemos que como $\displaystyle m $ es primo con $\displaystyle a $, entonces $\displaystyle \mcd\left(a,m\right) = 1 $. Aplicando la identidad de Bézout, sabemos que $\displaystyle \exists u, v \in \Z $ tales que 
+\[1 = mu + av .\]
+Además, si multiplicamos por $\displaystyle b $ tenemos que
+\[b = bmu + abv .\]
+Como $\displaystyle m|m $ y $\displaystyle m|ab $, tenemos que $\displaystyle m|b $. 
+\end{proof}
+
+\begin{ftheorem}[]
+\normalfont Sean $\displaystyle a,b \in \Z $ y $\displaystyle p $ un número primo. Si $\displaystyle p $ divide a $\displaystyle a \cdot b $ entonces $\displaystyle p |a $ o $\displaystyle p |b $. 
+\end{ftheorem}
+
+\begin{proof}
+Si $\displaystyle p|a $ hemos ganado. Sin pérdida de generalidad, si $\displaystyle p $ no divide a $\displaystyle a $, tenemos que $\displaystyle \mcd\left(p,a\right) = 1 $. Por el teorema anterior, debe darse que $\displaystyle p|b $.
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont Sean $\displaystyle a_{1}, a_{2}, \ldots, a_{n} \in \Z $ y $\displaystyle p $ primo, tal que 
+\[p | \prod^{n}_{i = 1} a_{i} .\]
+Entonces $\displaystyle p | a_{i} $ para algún $\displaystyle i $.
+\end{fcolorary}
+
+\begin{proof}
+Esto se puede demostrar por inducción fuerte. El caso inicial es el teorema anterior. Asumimos que si esto se sostiene para $\displaystyle k\leq n-1 $. Si cogemos el producto de $\displaystyle n $ números que es divisible entre $\displaystyle p $, tenemos que 
+\[ \prod^{n}_{i=1}a_{i} = a_{n} \cdot \prod^{n-1}_{i=1}a_{i} .\]
+Por la hipótesis de inducción, tenemos que $\displaystyle p $ divide a $\displaystyle a_{n} $ o $\displaystyle p $ divide a $\displaystyle a_{n-1} \cdot a_{n-2} \cdots a_{1} $. Por la hipótesis de inducción, $\displaystyle p $ divide a algún $\displaystyle a_{i} $.
+\end{proof}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle n > 1 $ y $\displaystyle n \in \Z $. La expresión de $\displaystyle n $ como producto de primos es única (salvo el orden).
+\end{ftheorem}
+
+\begin{proof}
+Sabemos que el teorema es cierto para $\displaystyle n=2 $. Asumimos que $\displaystyle n $ es el número más pequeño para el que hay factorizaciones distintas en números primos. Entonces, 
+\[n = a_{1} \cdot a_{2} \cdots a_{k} = p_{1} \cdot p_{2} \cdots p_{l} .\]
+Sabemos que $\displaystyle p_{1}|n $. Por el teorema anterior tenemos que $\displaystyle p_{1}|\left(a_{1} \cdot a_{2} \cdots a_{k}\right) $, y por tanto, $\displaystyle p_{1} | a_{i} $. Como $\displaystyle a_{i} $ también es primo, tenemos que $\displaystyle a_{i} = p_{1} $. Si dividimos entre ambos números nos quedamos con
+\[p_{2} \cdot p_{3} \cdots p_{l} = a_{1} \cdot a_{2} \cdots a_{i-1} \cdot a_{i+1} \cdots a_{k} .\]
+Entonces, estas dos factorizaciones son distintas, pero $\displaystyle p_{2} \cdot p_{3} \cdots p_{l} <n $, que contradice nuestra hipótesis inicial de que $\displaystyle n $ era el número más pequeño con factorizaciones distintas.
+\end{proof}
+
+\begin{fdefinition}[]
+\normalfont Se dice que $\displaystyle m,n \in \Z $ no nulos son \textbf{primos entre sí} cuando $\displaystyle \mcd\left(m,n\right)=1 $.
+\end{fdefinition}
+
+\begin{fcolorary}[]
+\normalfont \normalfont Si $\displaystyle m $ y $\displaystyle n $ son coprimos, tenemos que 
+\[\mcm\left(m,n\right) = \left|m \cdot n\right| .\]
+\end{fcolorary}
+
+Sabemos que todo número entero se puede escribir como una factorización de primos. Es decir, si $\displaystyle n \in \Z $, 
+\[n = p_{1}^{\alpha_{1}} \cdot p_{2}^{\alpha_{2}} \cdots p_{r}^{\alpha_{r}}, \quad p _{1}< p_{2} < \cdots<p_{r} .\]
+Para otro $\displaystyle m\in\Z $,
+\[m = p_{1}^{\beta_{1}} \cdot p_{2}\beta_{2} \cdots p_{r}^{\beta_{r}}.\]
+Con $\displaystyle \alpha_{i}, \beta_{i} \geq 0 $. Para cada $\displaystyle i \in \left\{ 1, 2, \ldots, r\right\}  $ denotamos:
+\[ \gamma_{i} = \min{\alpha_{i}, \beta_{i}} \quad \text{y} \quad \delta_{i} = \max \left\{ \alpha_{i}, \beta_{i}\right\}  .\]
+Vamos a calcular el máximo común divisor y el mínimo común múlitplo. 
+\begin{itemize}
+\item $\displaystyle \mcd\left(m,n\right) = p_{1}^{\gamma_{1}} \cdots p_{r}^{\gamma_{r}} $
+\item $\displaystyle \mcm\left(m,n\right) = p^{\delta_{1}}_{1} \cdots p _{r}^{\delta_{r}} $ 
+\end{itemize}
+ Además sabemos que $\displaystyle \delta_{i} + \gamma _{i} = \alpha_{i}+\beta_{i} $. 
+ \[
+	 \begin{split}
+		 m \cdot n & = \left(p_{1}^{\alpha_{1}} \cdot p_{2}^{\alpha_{2}} \cdots p_{r}^{\alpha_{r}}\right) \cdot \left(p_{1}^{\beta_{1}} \cdot p_{2}^{\beta_{2}} \cdots p_{r}^{\beta_{r}}\right) 
+		     \\ \\ & = p_{1}^{\alpha_{1}+\beta_{1}} \cdots p_{r}^{\alpha_{r}+\beta_{r}} = p_{1}^{\delta_{1}+\gamma_{1}} \cdots p_{r}^{\delta_{r}+\gamma_{r}} \\ \\ &= \left(p_{1}^{\gamma_{1}} \cdots p_{r}^{\gamma_{r}}\right) \cdot \left(p_{1}^{\delta_{1}} \cdots p_{r}^{\delta_{r}}\right) =\mcd\left(m,n\right) \cdot \mcm\left(m,n\right) .
+	 \end{split}\] \footnote{Estamos asumiendo, sin pérdida de generalidad, que $\displaystyle n,m \in \N $, o que son enteros positivos.} 
+\begin{fdefinition}[Función de Euler]
+\normalfont Sea $\displaystyle n \in \Z $  con $\displaystyle n \neq 0 $. 
+\[\varphi \left(n\right) = \left| \left\{ t \in \N \; : \; 1 \leq t \leq n, \; \mcd\left(n,t\right) = 1\right\} \right| .\]
+\end{fdefinition}
+
+\begin{eg}
+\normalfont Tenemos que $\displaystyle \varphi\left(1\right) = 1 $, además $\displaystyle \varphi\left(2\right) = 1 $. Para $\displaystyle \varphi\left(3\right) $, tenemos que 1 y 2 son coprimos con 3, por lo que $\displaystyle \varphi\left(3\right) = 2 $. $\displaystyle \varphi\left(4\right) = 2 $, $\displaystyle \varphi\left(5\right) = 4 $. 
+\end{eg}
+
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle p $ es primo y $\displaystyle k \in \Z^{+} $. Entonces, 
+\[\varphi\left(p^{k}\right) = p ^{ k} - p ^{k - 1} .\]
+\end{ftheorem}
+
+\begin{eg}
+\normalfont 
+\[\varphi\left(5^{3}\right) = 5^{3} - 5^{2} .\]
+\end{eg}
+
+\section{Congruencias}
+
+\begin{fdefinition}[Relación de equivalencia]
+\normalfont Una relación $\displaystyle R $  en un conjunto $\displaystyle E $ es una relación que verifica: 
+\begin{description}
+\item[(i)] $\displaystyle R $ es reflexiva.
+	\[\forall x \in E, \; x R x .\]
+\item[(ii)] $\displaystyle R $ es simétrica. 
+	\[\forall x, y \in R, \; x R y \Rightarrow y R x .\]
+\item[(iii)] $\displaystyle R $ es transitiva.
+	\[\forall x,y,z \in R, \; x R y \land y R z \Rightarrow x R z .\]
+\end{description}
+\end{fdefinition}
+
+\begin{fdefinition}[Relación de congruencia módulo $\displaystyle n $ ]
+\normalfont Si $\displaystyle m \in \Z^{+} $ decimos que $\displaystyle a $ y $\displaystyle b $ están relacionados por una relación de equivalencia módulo $\displaystyle m $ 
+\[a \equiv b \mod m  ,\]
+si y solo si $\displaystyle a-b $ es múltiplo de $\displaystyle n $. Es decir, $\displaystyle a $ y $\displaystyle b $ tienen el mismo resto al dividirlas por $\displaystyle m $.
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont La relación de congruencia es una relación de equivalencia en $\displaystyle \Z $. Las clases de equivalencia son los restos al dividir por $\displaystyle m $.
+\end{ftheorem}
+\begin{proof}
+Queda demostrado con las primeras tres propiedades de la siguiente proposición.
+\end{proof}
+
+\begin{fprop}[Propiedades de las congruencias]
+\normalfont Si $\displaystyle n > 1 $, $\displaystyle n \in \N $ y $\displaystyle a,b,c,d,k \in \Z $. 
+\begin{description}
+\item[(i)] $\displaystyle a \equiv a \mod n $.
+\item[(ii)] Si $\displaystyle a \equiv b \mod n $, entonces $\displaystyle b \equiv a \mod n $.
+\item[(iii)] Si $\displaystyle a\equiv b \mod n $ y $\displaystyle b \equiv c \mod n $, entonces, $\displaystyle a \equiv c \mod n $.
+\item[(iv)] Si $\displaystyle a \equiv b \mod n $ y $\displaystyle c \equiv d\mod n $, entonces
+	\[a + c \equiv b + d \mod n \quad \text{y} \quad a \cdot c \equiv b \cdot d \mod n .\]
+\item[(v)] Si $\displaystyle a \equiv b \mod n $, entonces
+	\[a + k \equiv b + k \mod n \quad y \quad a \cdot k \equiv b \cdot k \mod n .\]
+\item[(vi)] Si $\displaystyle a \equiv b \mod n $, entonces $\displaystyle a^{m} \equiv b^{m} \mod n $ con $\displaystyle m \in \Z^{+} $.
+\end{description}
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Tenemos que $\displaystyle a - a = 0 = 0 \cdot n $ para $\displaystyle \forall n \in \N $. Por tanto, $\displaystyle a \equiv a \mod n $.
+\item[(ii)] Si $\displaystyle a \equiv b \mod n $, tenemos que $\displaystyle a - b = n\lambda $ con $\displaystyle \lambda \in \Z $, entonces, $\displaystyle b - a = - n \lambda = \left(-\lambda\right)n $. Tenemos que $\displaystyle -\lambda \in \Z $, por lo que $\displaystyle b \equiv a \mod n $.
+\item[(iii)] Si $\displaystyle a \equiv b \mod n $ y $\displaystyle b \equiv c \mod n $, tenemos que
+\[
+\begin{split}
+a - b = n\lambda_{1} \quad \text{y} \quad b - c = n \lambda_{2}.
+\end{split}
+\]
+Por tanto, 
+\[a - c = n\left(\lambda_{1}+\lambda_{2}\right) .\]
+Como $\displaystyle \lambda_{1}+\lambda_{2} \in \Z $, tenemos que $\displaystyle a \equiv c \mod n $.
+\item[(iv)] Si $\displaystyle a \equiv b \mod n $ y $\displaystyle c \equiv d \mod n $, tenemos que
+\[a - b = \lambda_{1}n \quad \text{y} \quad c - d = \lambda_{2}n .\]
+Por tanto, 
+\[a + c - \left(b + d\right) = n \left(\lambda_{1} + \lambda_{2}\right) .\]
+Consecuentemente, $\displaystyle a + c \equiv b + d \mod n $. \\ \\
+Similarmente, 
+\[
+\begin{split}
+	ac  = & \left(\lambda_{1}n +b\right)\left(\lambda_{2}n + d\right) \\
+	= & \lambda_{1}\lambda_{2}n^{2}+\lambda_{1}dn+\lambda_{2}bn+bd \\
+	\iff & ac - bd = n\left(\lambda_{1}\lambda_{2}n + \lambda_{1}d + \lambda_{2}b\right) .
+\end{split}
+\]
+Por tanto, $\displaystyle ac \equiv bd \mod n $.
+\item[(v)] Si $\displaystyle a \equiv b \mod n $, tenemos que
+	\[a - b = \lambda n \iff \left(a + k\right) - \left(b + k\right) = \lambda n .\]
+Por tanto, $\displaystyle a + k \equiv b + k \mod n $. \\ \\
+Similarmente, 
+\[a - b = \lambda n \iff k\left(a - b\right) = k (\lambda n) \iff a \cdot k - b \cdot k = \left(k\lambda\right) n \iff a \cdot k \equiv b \cdot k \mod n.\]
+\item[(vi)] Si $\displaystyle a \equiv b \mod n $, 
+	\[a^{m} - b^{m} = \left(a - b\right)\left(a^{m-1} + a^{m-2}b+\cdots+b^{m-1}\right) = \lambda n \cdot \left(a^{m-1} + a^{m-2}b+\cdots+b^{m-1}\right) .\]
+	Por tanto, $\displaystyle a^{m} \equiv b^{m} \mod n $. 
+\end{description}
+\end{proof}
+
+
+\begin{fdefinition}[Congruencia lineal]
+\normalfont Si $\displaystyle a,b,m \in \Z $ con $\displaystyle m >0 $, tenemos una congruencia lineal si:
+\[a x \equiv b \mod m .\]
+Donde $\displaystyle a $, $\displaystyle b $ y $\displaystyle m $ están dados. \footnote{Tenemos que ver si la congruencia tiene solución, cuántas tiene y dónde están.} 
+\end{fdefinition}
+
+\begin{fprop}[]
+\normalfont Si tenemos una congruencia lineal $\displaystyle ax \equiv b \mod m $. Si $\displaystyle \alpha  $ es una solución de la misma, entonces todo $\displaystyle \beta \equiv \alpha \mod m $ es también solución de la congruencia. \footnote{Esto nos permite reducir las posibles soluciones a los elementos de $\displaystyle \Z_{m}. $ } 
+\end{fprop}
+
+\begin{proof}
+Sea $\displaystyle \alpha  $ una solución de la congruencia lineal $\displaystyle ax \equiv b \mod m $. Por definición, 
+\[\exists \lambda \in \Z, \; a \alpha - b = \lambda m .\]
+Por otra parte, si $\displaystyle \beta \equiv \alpha\mod m $, tenemos que 
+\[\exists \mu \in \Z, \; \beta - \alpha = \mu m \Rightarrow \alpha = \beta - \mu m .\]
+Entonces, 
+\[\alpha a - b = a\left(\beta - \mu m\right) - b = \lambda m .\]
+Por otro lado, 
+\[a \beta - b = \lambda m + a \mu m = \left(\lambda + a \mu\right) m .\]
+Entonces, $\displaystyle \beta  $ es solución de la congruencia lineal $\displaystyle ax \equiv b \mod m $.
+\end{proof}
+
+\begin{fdefinition}[]
+\normalfont 
+Definimos el conjunto de las clases de equivalencia $\displaystyle a \equiv b \mod n $como $\displaystyle \Z_{n} $. 
+\[\Z_{n} = \left\{ [0], [1], [2], \ldots, [n-1] \right\} = \left\{ 0, 1, 2, \ldots, n-1\right\}   .\]
+\end{fdefinition}
+
+\begin{eg}
+\normalfont $\displaystyle 2x \equiv 1 \mod4 $. Esta congruencia lineal no tiene soluciones porque 
+\[2x - 1 = 4k \]
+es imposible, pues $\displaystyle \forall x \in \Z, \; 2x-1 $ es impar. Las posibles soluciones son $\displaystyle \Z_{4} = \left\{ 0,1,2,3\right\}  $. Si comprobamos con $\displaystyle x \in \Z_{4} $, ningún valor funciona. Por tanto, no tiene solución.
+\end{eg}
+\begin{eg}
+\normalfont $\displaystyle 2x \equiv 2 \mod8 $. Comprobamos con las posibles soluciones, que están en el conjunto $\displaystyle \Z_{8} $. Tenemos que 1 y 5 son soluciones pues
+\[2 \cdot 1 - 2 = 0 \cdot 8 \quad \text{y} \quad 2 \cdot 5 - 2 = 1 \cdot 8 .\]
+\end{eg}
+\begin{eg}
+\normalfont $\displaystyle 4x \equiv 4\mod8 $. Comprobamos con los elementos de $\displaystyle \Z_{8} $. Funcionan el 1, 3, 5 y el 7. 
+\end{eg}
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(a)] $\displaystyle 12427 \mod 10 $. Sabemos que 
+	\[12427 = 7 + 2 \cdot 10 + 4 \cdot 10^{2} + 2 \cdot 10^{3} + 1 \cdot 10^{4} .\]
+Entonces, el resto de esta división entre 10 será 7, por lo que $\displaystyle 12427  \equiv 7 \mod10 $.
+\item[(b)] $\displaystyle 12112 \times 347 \mod 3 $. Sabemos que $\displaystyle 12112  \equiv 1 \mod 3 $ y $\displaystyle 347  \equiv 2 \mod 3 $. Por tanto, 
+	\[ 12112 \times 347 \mod 3 \Rightarrow  12112 \times 347 \equiv 2\mod 3   .\]
+Por lo que $\displaystyle 12112 \times347 \equiv 2 \mod 3 $.	
+\item[(c)] $\displaystyle 22^{1327} \mod21 $. Sabemos que $\displaystyle 22 \equiv 1\mod21 $, entonces,
+	\[22^{1327} \equiv 1^{1327} = 1 \mod21 .\]
+\item[(d)] $\displaystyle 10^{123} \mod8 $. Sabemos que $\displaystyle 10 \equiv 2 \mod 8 $, entonces
+	\[10^{123} \equiv 2^{123} = \left(2^{3}\right)^{41} = 8^{41} \mod8 .\]
+\[\therefore 10^{123} \equiv 0 \mod8 .\]	
+\end{description}
+\end{eg}
+
+\begin{ftheorem}[]
+\normalfont Sean $\displaystyle a,b,m \in \Z $ con $\displaystyle m > 0 $, y sea $\displaystyle d = \mcd\left(a,m\right) $. Entonces, la congruencia lineal: $\displaystyle ax\equiv b \mod m $ tiene solución si y solo si $\displaystyle d | b $ y, en este caso, el número de soluciones $\displaystyle \Z_{m} $ es $\displaystyle d $. 
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Suponemos que $\displaystyle d = \mcd\left(a,m\right) | b $, es decir, $\displaystyle \exists k \in \Z $ tal que $\displaystyle b = dk $. Como $\displaystyle d = \mcd\left(a,m\right) $ sabemos que $\displaystyle \exists u,v \in \Z $ tales que 
+	\[d = au + mv \quad \text{Identidad de Bézout} .\]
+Entonces, tenemos que
+\[b = dk = \left(au + mv\right)k = auk + mvk \Rightarrow b - a uk = mvk .\]
+Es decir, $\displaystyle b \equiv auk \mod m $. Por la propiedad simétrica, $\displaystyle auk \equiv b \mod n $. Si $\displaystyle x = uk $, es solución de la congruencia.
+\item[(ii)] Asumimos que existe una solución $\displaystyle \alpha  $, por lo que $\displaystyle \exists \lambda \in \Z $ tal que $\displaystyle a \alpha - b = \lambda m $. Por tanto
+	\[b = a \alpha - \lambda m .\]
+Como $\displaystyle d = \mcd\left(a,m\right) $, $\displaystyle d | a $ y $\displaystyle d | m $. Entonces, $\displaystyle d | b $ (por la ecuación anterior).
+\end{description}
+En cuanto al número de soluciones, si $\displaystyle d = 1 = \mcd\left(a,m\right) $, vamos a asumir que existen dos soluciones, $\displaystyle \alpha, \beta \in \Z $. Tenemos que $\displaystyle a \alpha \equiv  b \mod m $, por lo que $\displaystyle a \alpha - b $ es múltiplo de $\displaystyle m $ y $\displaystyle a \beta - b $ también. Si restamos las dos ecuaciones, tenemos que 
+\[a \alpha - a \beta = a \left(\alpha - \beta \right) \quad \text{múltiplo de $\displaystyle m $ } .\]
+Además, como $\displaystyle d = 1 $, tenemos que $\displaystyle a $ es primo con $\displaystyle m $, tenemos que $\displaystyle \alpha - \beta  $ es múltiplo de $\displaystyle m $. Es decir, $\displaystyle m | \alpha - \beta  $. Sin embargo, $\displaystyle \alpha - \beta \in \Z_{m} $. Por tanto, $\displaystyle \alpha - \beta = 0 $ y $\displaystyle \alpha = \beta  $. \\ \\
+Si $\displaystyle d > 1 $ y $\displaystyle d | b $, tenemos que $\displaystyle a = a_{1}d $, $\displaystyle b = b_{1}d $ y $\displaystyle m = m_{1}d $. Entonces, sabemos que 
+\[a_{1}dx \equiv b_{1}d \mod m_{1}d .\]
+Por tanto, 
+\[a_{1}dx - b_{1}d = km_{1}d .\]
+Por tanto, 
+\[a_{1}x - b_{1} = km_{1} \iff a_{1}x \equiv b_{1} \mod m_{1} .\]
+Además, sabemos que $\displaystyle \mcd\left(a_{1},m_{1}\right) = 1 $. Por tanto, estamos en el caso anterior, que nos dice que $\displaystyle \exists \alpha \in \Z_{m_{1}} $ que es única. Las soluciones serán, 
+\[\alpha, \; \alpha + m_{1}, \; \alpha + 2m_{1}, \; \ldots .\]
+Es decir, las soluciones tienen la forma $\displaystyle \alpha + \left(d - 1\right)m_{1} $.
+\end{proof}
+
+\begin{eg}
+\normalfont $\displaystyle 51x \equiv 27 \mod 123 $ 
+\begin{description}
+\item[(1)] $\displaystyle \mcd\left(51,123\right) = 3 $. Además, $\displaystyle 3 | 27 $, por lo que tiene solución y, en concreto, tiene 3 soluciones. 
+\item[(2)] Construimos la congruencia auxiliar: $\displaystyle 17 x \equiv 9 \mod 41 $. Sabemos que esta congruencia tiene solución única. Sea $\displaystyle a_{1} = 17 $ y $\displaystyle m_{1} = 41 $. Encontramos la identidad de Bézout para ellos:
+	\[ 1 = 41 \cdot 5 + 17 \cdot \left(-12\right) .\]
+Multiplicamos todo por 9, 
+\[9 = 9 \cdot 5 \cdot 41 - 9 \cdot 12 \cdot 17 .\]
+Tomamos módulo 41, 
+\[9 \equiv -9 \cdot 12 \cdot 17 \mod 41 \iff 17 \left(-9 \cdot 12\right) \equiv  9 \mod 41 .\]
+Es decir, $\displaystyle x \equiv - 9 \cdot 12 = 108 \mod 41 $. Otra solución será, 
+\[x \equiv -108 + 3 \cdot 41 \equiv 15 \mod 41 .\]
+A partir de aquí, podemos deducir el resto de soluciones:
+\[\alpha_{1} = 15 \quad \text{o} \quad \alpha \equiv 15 \mod 41 .\]
+\[\alpha _{2} = 15 + 41 = 56 .\]
+\[\alpha_{3} = 15 + 2 \cdot 41 = 97 .\]
+\end{description}
+\end{eg}
+\begin{eg}
+\normalfont $\displaystyle 17 x \equiv 5 \mod 15 $ 
+\end{eg}
+
+\begin{eg}
+\normalfont $\displaystyle 66x \equiv 42 \mod 168 $ 
+\end{eg}
+

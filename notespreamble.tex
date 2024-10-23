@@ -7,6 +7,7 @@
 \usepackage{amssymb} % For math symbols
 \usepackage{fancyhdr} % For headers and footers
 \usepackage{amsmath}
+\usepackage{geometry}[margin=1in]
 
 % Headers and footers configuration
 \pagestyle{fancy}
@@ -17,17 +18,33 @@
 \fancyfoot[R]{\thepage}
 
 % Math environments
-\newtheorem{definition}{Definición}[section]
+\newtheorem{definition}{Definición}[chapter]
 \newenvironment{fdefinition}
 {\begin{mdframed}\begin{definition}}{\end{definition}\end{mdframed}}
 
-\newtheorem{theorem}{Teorema}[section]
+\newtheorem{theorem}{Teorema}[chapter]
 \newenvironment{ftheorem}
 {\begin{mdframed}\begin{theorem}}{\end{theorem}\end{mdframed}}
 
 \newtheorem{eg}{Ejemplo}
 \newenvironment{feg}
 {\begin{mdframed}\begin{eg}}{\end{eg}\end{mdframed}}
+
+\newtheorem{lema}{Lema}[chapter]
+\newenvironment{flema}
+{\begin{mdframed}\begin{lema}}{\end{lema}\end{mdframed}}
+
+\newtheorem{prop}{Proposición}[chapter]
+\newenvironment{fprop}
+{\begin{mdframed}\begin{prop}}{\end{prop}\end{mdframed}}
+
+\newtheorem{colorary}{Corolario}[chapter]
+\newenvironment{fcolorary}
+{\begin{mdframed}\begin{colorary}}{\end{colorary}\end{mdframed}}
+
+\newtheorem{axiom}{Axioma}[]
+\newenvironment{faxiom}
+{\begin{mdframed}\begin{axiom}}{\end{axiom}\end{mdframed}}
 
 % Custom commands
 
@@ -37,4 +54,10 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\mcd}{\text{mcd}}
+\newcommand{\mcm}{\text{mcm}}
+
+\setlength{\headheight}{13.07225pt}
+\addtolength{\topmargin}{-1.07225pt}
 
