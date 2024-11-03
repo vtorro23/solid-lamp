@@ -1,0 +1,40 @@
+\documentclass{article}
+
+\input{~/University/infopreamble.tex}
+
+\begin{document}
+
+\title{Informática - Deberes 2}
+\author{Victoria Eugenia Torroja Rubio}
+\date{28/10/2024}
+
+\maketitle
+
+\begin{ej}
+Si depositamos una cantidad C en un banco a un interés del I \% anual, al cabo de un mes el banco nos debe una cantidad igual a C · i/100. Ten cuidado porque, por defecto, el banco habla del interés anual y a la hora de hacer el cálculo debemos usar el interés mensual i = I/12.
+Escribe una función que dados un capital C, un interés I y un número de meses n, calcule el dinero que tendremos al cabo de los n meses. Ten en cuenta que, cada mes, la cantidad abonada en concepto de intereses queda depositada en la cuenta.
+\end{ej}
+
+\begin{sol}
+La solución será la siguiente. 
+\begin{lstlisting}[language = Python]
+def ej1(C : float, I : float, n : int) -> float:
+    i = I / 12
+    r = 1 + ( i / 100 )
+    resultado = C * (r ** n)
+    return resultado
+
+control1 = ej1(1, 10, 10)
+control2 = ej1(1, 10, 20)
+control3 = ej1(1, 10, 30)
+
+print(control1, control2, control3)
+\end{lstlisting}
+\end{sol}
+
+\begin{ej}
+Supón que eres muy ahorrador y aportas cada mes una cantidad constante $\displaystyle c $ a tu cuenta. Al final del primer mes tendrás $\displaystyle c + c \cdot i / 100 $, la cantidad $\displaystyle c $ que aportas al principio más los intereses de ese mes. No deberías tener dificultad en saber que al final del segundo mes tendrías $\displaystyle \left(c \cdot \left(1 + i / 100\right)+c\right) \cdot \left(1 + i / 100\right) $. Escribe una función que calcule el dinero que tendrás al cabo de $\displaystyle n $ meses.
+\end{ej}
+
+
+\end{document}

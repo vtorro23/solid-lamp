@@ -1,0 +1,391 @@
+\chapter{Sucesiones y límites}
+
+\begin{fdefinition}[]
+	\normalfont Se dice que $\displaystyle \left\{ x_{n}\right\}_{n\in\N}  $ es una \textbf{sucesión} de números reales si existe una función
+\[
+\begin{split}
+	\varphi: &\N \to \R\\
+& n \to \varphi\left(n\right) = x_{n}.
+\end{split}
+\]
+\end{fdefinition}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] $\displaystyle \varphi\left(n\right) = \frac{1}{n} $.
+\item[(ii)] Sucesión de Fibonacci.
+	\[\varphi\left(1\right) = 1, \; \varphi\left(2\right) = 1, \; \varphi\left(n\right) = \varphi\left(n-1\right) + \varphi\left(n-2\right) .\]
+\end{description}
+\end{eg}
+
+\begin{fdefinition}[]
+	\normalfont Se dice que una sucesión $\displaystyle \left\{ x_{n}\right\}_{n\in \N} $ \textbf{converge} a $\displaystyle x \in \R $, y lo escribiremos de esta manera
+	\[\lim_{n \to \infty}x_{n}=x ,\]
+si
+\[\forall \epsilon > 0, \; \exists n_{0}\in \N,\;  \left|x - x_{n}\right|<\epsilon, \; \forall n \geq n_{0}  .\]
+\end{fdefinition}
+
+\begin{fprop}[]
+	\normalfont Si $\displaystyle x_{n}= \frac{1}{n} $, entonces $\displaystyle \lim_{n \to \infty}\frac{1}{n} = 0 $.
+\end{fprop}
+
+\begin{proof}
+Sea $\displaystyle \epsilon > 0 $, tomamos $\displaystyle x = 0 $, tenemos que 
+\[ \left|x - x_{n}\right| = \left|0 - \frac{1}{n}\right| = \frac{1}{n} .\]
+Entonces, queremos probar que 
+\[\frac{1}{n}<\epsilon, \; n \geq n_{0} .\]
+Como sabemos que $\displaystyle \inf \left\{ \frac{1}{n} \; : \; n \in \N\right\} = 0 $, tenemos que $\displaystyle \forall \epsilon > 0 $ 
+\[0 \leq \frac{1}{n_{0}} < 0 + \epsilon ,\]
+para algún $\displaystyle n_{0} \in \N $. Si $\displaystyle n \geq n_{0} $, tenemos que
+\[n \geq n_{0} \iff \frac{1}{n} \leq \frac{1}{n_{0}}<\epsilon .\]
+Por tanto, hemos encontrado $\displaystyle n_{0}\in \N $ tal que $\displaystyle \forall n \geq n_{0} $, 
+\[ \left|x - x_{n}\right| \leq \epsilon  .\]
+\end{proof}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] Cogemos $\displaystyle x_{n} = \frac{\left(-1\right)^{n}}{n} $. Vamos a ver que $\displaystyle \lim_{n \to \infty}x_{n} = 0 $, mientras que $\displaystyle \sup x_{n} \neq \inf x_{n} \neq 0 $. 
+	\[ \left|x_{n}-0\right| = \frac{1}{n} .\]
+$\displaystyle \forall \epsilon > 0, \exists n_{0} \in \N $ tales que $\displaystyle  \forall n\geq n_{0} $, 
+\[ \left|x_{n} -0\right| = \frac{1}{n} < \epsilon .\]
+Por lo que
+\[\lim_{n \to \infty} x_{n} = \lim_{n \to \infty} \frac{\left(-1\right)^{n}}{n} = 0 .\]
+\item[(ii)] $\displaystyle x_{n} = \left(-1\right)^{n} $. Esta sucesión no converge, pues oscila. Tenemos que ver que $\displaystyle \forall x, \exists \epsilon > 0, \forall n_{0}\in \N, \exists n\geq n_{0} $ tal que $\displaystyle \left|x-x_{n}\right| \geq \epsilon  $. Supongamos que $\displaystyle x > 1 $ y tomamos $\displaystyle \epsilon = 2 $ y $\displaystyle n_{0} \in \N $. Sea $\displaystyle n \geq n_{0} $ impar. Entonces 
+	\[ \left|x_{n}-x\right| = \left|-1-x\right| = 2 + x -1 = 1 + x > 2 = \epsilon  .\]
+Si $\displaystyle x < -1 $, tenemos que $\displaystyle -x>1 $. Tomamos $\displaystyle \epsilon = 2 $. Podemos encontrar $\displaystyle n_{0} \in \N $ tal que $\displaystyle n \geq n_{0} $ y $\displaystyle n $ es par. 
+\[ \left|x - 1\right| = 2 + \left(-1-x\right) = 1 - x \geq 2 = \epsilon.\]
+Finalmente, si $\displaystyle -1\leq x \leq 1 $, tomamos $\displaystyle \epsilon = 1 $. Si $\displaystyle x = 0 $, tenemos que 
+\[ \left|1 - 0\right| = \left|0 - 1\right| = 1 \geq 1 = \epsilon  .\]
+Si $\displaystyle x > 0 $, tenemos que si $\displaystyle n_{0} \in \N $ podemos encontrar $\displaystyle n \geq n_{0} $ impar, tal que
+\[ \left|x - \left(-1\right)\right| = x + 1 \geq 1 = \epsilon .\]
+Similarmente, si $\displaystyle x < 0 $ ($\displaystyle -x > 0 $) y $\displaystyle n_{0} \in \N $ podemos encontrar $\displaystyle  $ tal que $\displaystyle n $ sea par:
+\[ \left|1 - x\right| = 1 - x \geq 1 = \epsilon  .\]
+\end{description}
+\end{eg}
+
+\begin{fprop}[]
+	\normalfont Si una sucesión $\displaystyle \left\{ x_{n}\right\}_{n \in \N} $ converge, entonces el límite es único. 
+\end{fprop}
+
+\begin{proof}
+	Supongamos que existen $\displaystyle x, x' \in \R $ con $\displaystyle x \neq x' $ tales que $\displaystyle \forall \epsilon > 0, \exists n_{0}, n'_{0} \in \N $ tales que si $\displaystyle n \geq n_{0}$ y $ n \geq n_{0} $, $\displaystyle \left|x_{n}-x\right| < \epsilon  $ y $\displaystyle \left|x_{n}-x\right|<\epsilon  $. Sea $\displaystyle \epsilon = \frac{ \left|x - x'\right|}{3} $. Entonces, podemos encontrar $\displaystyle n_{0} \in \N $ tal que $\displaystyle  \left|x_{n}-x\right| < \epsilon  $ si $\displaystyle n \geq n_{0} $. Lo mismo sucede con $\displaystyle n'_{0} \in \N $. Tenemos que $\displaystyle \left|x-x'\right| = 3 \epsilon $. Sea $\displaystyle n \geq \max \left\{ n_{0}, n'_{0}\right\}  $, 
+	\[ 3 \epsilon = \left|x - x_{n} + x_{n}-x'\right| \leq \left|x - x_{n}\right| + \left|x_{n}-x'\right| < 2\epsilon .\]
+	Esto es una contradicción, por lo que $\displaystyle x = x' $. \\ \\
+Otra demostración consiste en asumir que existen dos límites de la sucesión, $\displaystyle x $ y $\displaystyle x' $. Tenemos que si $\displaystyle \epsilon > 0 $, existe $\displaystyle n_{1} \in \N $ tal que si $\displaystyle n \geq n_{1} $ 
+\[ \left|x_{n}-x\right| < \frac{\epsilon }{2} .\]
+Similarmente, existe $\displaystyle n_{2}\in\N $ tal que si $\displaystyle n \geq n_{2} $, entonces 
+\[ \left|x_{n}-x'\right| < \frac{\epsilon }{2} .\]
+Entonces, si cogemos $\displaystyle n_{0} = \max \left\{ n_{1}, n_{2}\right\}  $ y $\displaystyle n \geq n_{0} $, tenemos que 
+\[ \left|x - x'\right| = \left|x - x_{n} + x_{n}- x'\right| \leq \left|x - x_{n}\right| + \left|x_{n}-x'\right| < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon  .\]
+Por tanto, $\displaystyle x' = x $.
+\end{proof}
+
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle \left\{ x_{n}\right\}_{n\in\N} \subset \R$. 
+\begin{description}
+\item[(i)] Diremos que la sucesión diverge a $\displaystyle \infty $, es decir, $\displaystyle \lim_{n \to \infty}x_{n} = \infty $, si 
+	\[\forall c>0, \exists n_{0} \in \N, \forall n \geq n_{0}, \; x_{n} \geq c .\]
+\item[(ii)] Diremos que la suciesión diverge a $\displaystyle -\infty $, es decir, $\displaystyle \lim_{n \to \infty}x_{n} = - \infty $ si 
+	\[\forall c < 0, \exists n_{0} \in \N, \forall n \geq n_{0}, \; x\leq c .\]
+\end{description}
+\end{fdefinition}
+
+\begin{observation}
+\normalfont Existen sucesiones que convergen y las que no convergen. Dentro de las que no convergen están las que divergen (a $\displaystyle \infty $ y $\displaystyle -\infty $) y las que no divergen ($\displaystyle \left(-1\right)^{n} $).
+\end{observation}
+
+\begin{eg}
+\normalfont Tenemos que $\displaystyle x_{n} = n $ satisface que $\displaystyle \lim_{n \to \infty}x_{n} = \infty $.
+\end{eg}
+
+\begin{eg}
+\normalfont Consideremos $\displaystyle x_{n} = \frac{2n}{n+1} $, $\displaystyle n \in \N $. Demostramos que $\displaystyle \lim_{n \to \infty}x_{n} = 2 $. \\ \\
+Queremos decir que $\displaystyle \forall \epsilon > 0, \exists n_{0} \in \N, \forall n\geq n_{0}, \; \left|x_{n}-2\right| < \epsilon  $. Tenemos que
+\[ \left|\frac{2n}{n+1} -2\right| = \left|\frac{2n-2n-2}{n+1}\right| = \frac{2}{n+1} .\]
+\[\frac{2}{n_{0}+1} < \epsilon \iff \frac{2}{\epsilon }-1 < n_{0} .\]
+Por la propiedad arquimediana, existe $\displaystyle n_{0} \in \N $. Si $\displaystyle n \geq n_{0} $, tenemos que 
+\[\frac{2}{n+1} < \epsilon  .\]
+\end{eg}
+
+\begin{fprop}[]
+	\normalfont Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset\R $ y sea $\displaystyle m \in \N $. Sea $\displaystyle y_{n} = x_{n+m} $. Entonces, 
+	\[\lim_{n \to \infty}x_{n} = x \iff \lim_{n \to \infty}y_{n} = x .\]
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Asumimos que $\displaystyle \lim_{n \to \infty}x_{n} = x $. Entonces tenemos que 
+	\[\forall \epsilon > 0, \exists n_{0} \in \N, \forall n \geq n_{0}, \; \left|x - x_{n}\right| < \epsilon  .\]
+Como $\displaystyle m \in \N $, tenemos que $\displaystyle m + n_{0} > n_{0} $, por lo que, si $\displaystyle n \geq n_{0} $, $\displaystyle \left|x - x_{m+n}\right|< \epsilon  $. Es decir, 
+\[\forall \epsilon > 0, \exists n_{0} \in \N, \forall n \geq n_{0}, \left|x - y_{n}\right| < \epsilon  .\]
+\item[(ii)] Recíprocamente, si $\displaystyle \lim_{n \to \infty}y_{n} = x $, tenemos que 
+	\[\forall \epsilon > 0, \exists n_{0} \in \N, \forall n \geq n_{0}, \; \left|x - y_{n}\right| < \epsilon  .\]
+Es decir, 
+	\[\forall \epsilon > 0, \exists n_{0}+m \in \N, \forall n \geq n_{0}, \; \left|x - x_{m+n}\right| < \epsilon  .\]
+Si cogemos $\displaystyle n'_{0} = m + n_{0}$, tenemos que 
+\[\forall \epsilon > 0, \exists n'_{0}, \forall n\geq n'_{0}, \left|x - x_{n}\right| < \epsilon  .\]
+\end{description}
+\end{proof}
+
+\begin{ftheorem}[Regla del bocadillo]
+	\normalfont Sean $\displaystyle \left\{ x_{n}\right\}_{n\in\N} $, $\displaystyle \left\{ y_{n}\right\} _{n\in\N}, \left\{ z_{n}\right\} _{n\in\N}\subset\R $ con 
+	\[\forall n \in \N, \; y_{n} \leq z_{n} \leq x_{n} .\]
+Supongamos que $\displaystyle \lim_{n \to \infty}y_{n} = \lim_{n \to \infty}x_{n} = x $. Entonces, $\displaystyle \lim_{n \to \infty}z_{n} =x $.
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle \epsilon > 0 $. Cogemos $\displaystyle n_{1} \in \N $ tal que $\displaystyle \forall n \geq n_{1} $ 
+	\[ \left|y_{n}-x\right| < \frac{\epsilon }{4} .\]
+Similarmente, sea $\displaystyle n_{2} \in \N $ tal que $\displaystyle \forall n\geq n_{2} $, 
+\[ \left|x_{n} - x\right|< \frac{\epsilon }{6} .\]
+Sea $\displaystyle n_{0} = \max \left\{ n_{1}, n_{2}\right\}  $. Sea $\displaystyle n \geq n_{0} $,
+\[
+\begin{split}
+	\left|z_{n} - x\right| & = \left|z_{n}-y_{n}+y_{n}-x_{n}+x_{n}-x\right| \\
+			       &\leq \left|z_{n}-y_{n}\right| + \left|y_{n}-x_{n}\right| + \left|x_{n}-x\right|\\
+			       &= z_{n}-y_{n}+x_{n}-y_{n}+ \left|x_{n}-x\right| \\
+			       & \leq x_{n}-y_{n} + x_{n}-y_{n} + \left|x_{n}-x\right| \\
+			       & = 2\left(x_{n}-y_{n}\right) + \left|x_{n}-x\right| .
+\end{split}
+\]
+\begin{observation}
+\normalfont Tenemos que
+\[ \left|x_{n}-y_{n}\right| = \left|x_{n}-x + x - y_{n}\right| \leq \left|x_{n}-x\right|+ \left|y_{n}-x\right| .\]
+\end{observation}
+Por tanto, 
+\[2\left(x_{n}-y_{n}\right) + \left|x_{n}-x\right| \leq 3 \left|x_{n}-x\right| + 2 \left|x - y_{n}\right| < 3 \cdot \frac{\epsilon }{6} + 2 \cdot \frac{\epsilon }{4} = \epsilon .\]
+Una demostración alternativa es decir que existen $\displaystyle n_{1}, n_{2} \in \N $ tales que si $\displaystyle \epsilon > 0 $, tenemos que 
+\[
+\begin{split}
+& \forall n \geq n_{1}, \; \left|x_{n} - x\right| < \epsilon \iff -\epsilon < x_{n}-x < \epsilon  \iff -\epsilon + x < x_{n}< \epsilon + x\\
+& \forall n \geq n_{2}, \; \left|y_{n}-x\right| < \epsilon \iff - \epsilon < y_{n}-x < \epsilon\iff -\epsilon + x < y_{n} < \epsilon + x.
+\end{split}
+\]
+Sea $\displaystyle n > \max \left\{ n_{1}, n_{2}\right\}  $, por hipótesis tenemos que 
+\[-\epsilon + x < x_{n} < z_{n} < y_{n} < \epsilon + x .\]
+\[\therefore \left|z_{n}-x\right|<\epsilon  .\]
+\end{proof}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] $\displaystyle \forall k \in \N $, 
+	\[\lim_{n \to \infty}\frac{1}{n^{k}} =0 .\]
+Como $\displaystyle n^{k} \geq n $, tenemos que $\displaystyle n^{k-1} \geq 1 $. Además, podemos deducir que 
+\[0 \leq \frac{1}{n^{k}} \leq \frac{1}{n} .\]
+La primera sucesión converge a 0 y la segunda también converge a 0 (propiedad arquimediana), por lo que $\displaystyle \frac{1}{n^{k}} \to 0 $.
+\item[(ii)] Si $\displaystyle k \in \N $, 
+	\[\lim_{n \to \infty}\frac{\sin n}{n^{k}} .\]
+Tenemos que
+\[ 0 \leq \left|\frac{\sin n}{n^{k}}\right| \leq \frac{1}{n^{k}} .\]
+Como $\displaystyle 0 \to 0 $ y $\displaystyle \frac{1}{n^{k}} \to 0 $, tenemos que $\displaystyle \frac{\sin n}{n^{k}} \to 0 $.
+\end{description}
+\end{eg}
+
+\begin{observation}
+\normalfont En la regla del bocadillo, basta que las estimaciones sean ciertas a partir de un cierto valor. Es decir, si $\displaystyle y_{n} \leq z_{n} \leq x_{n}, \; n\geq n_{0} $, si $\displaystyle y_{n}, x_{n} \to x $, tenemos que $\displaystyle z_{n} \to x $.
+\end{observation}
+
+\begin{eg}
+\normalfont La sucesión $\displaystyle \frac{n}{2^{n}} \to 0$. Esto lo demostramos diciendo que $\displaystyle \frac{n}{2^{n}} \leq \frac{1}{n} $. En el caso $\displaystyle n = 3 $ esto no se cumple, porque se cumple en $\displaystyle n\geq 4 $. 
+\end{eg}
+
+\begin{fdefinition}[]
+	\normalfont Se dice que $\displaystyle \left\{ x_{n}\right\}_{n\in\N}  \subset \R$ está acotada si existe $\displaystyle c > 0 $, tal que 
+	\[ \left|x_{n}\right| \leq c, \; \forall n \in \N .\]
+\footnote{Es decir, $\displaystyle -c \leq x_{n} \leq c $, o sea, está acotado superior e inferiormente.} 
+\end{fdefinition}
+
+\begin{ftheorem}[]
+	\normalfont Si existe $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset \R $ converge, entonces está acotada. 
+\end{ftheorem}
+
+\begin{proof}
+Sea $\displaystyle \epsilon = 1 $, entonces existe $\displaystyle n_{0}\in \N $ tal que para $\displaystyle n \geq n_{0} $
+\[ \left|x_{n}-x\right| < 1 .\]
+Además, $\displaystyle x = \lim_{n \to \infty}x_{n} $. Tenemos que si $\displaystyle n \geq n_{0} $:
+\[
+\begin{split}
+	\left|x_{n}\right| & = \left|x_{n}-x+x\right| \\
+			   & \leq \left|x_{n}-x\right| + \left|x\right| \\
+			   & \leq 1 + \left|x\right|.
+\end{split}
+\]
+Sea $\displaystyle c = \max \left\{ 1+ \left|x\right|, \left|x_{n}\right|\; : \; n \leq n_{0}\right\}  $. Entonces tenemos que 
+\[ \left|x_{n}\right| \leq c, \; \forall n \in \N .\]
+\end{proof}
+
+\begin{observation}
+\normalfont El recíproco del teorema anterior no es cierto en general. Considera $\displaystyle \left(-1\right)^{n} $ que está acotada por 1 pero no converge.
+\end{observation}
+
+\begin{eg}
+	\normalfont Si $\displaystyle  x \in \R $, existe $\displaystyle a_{0 } \in \Z $ y existen $\displaystyle a_{n}\in \left\{ 0, \ldots, 9\right\}  $ tales que 
+	\[\underbrace{a _{0} + \frac{a_{1}}{10} + \cdots + \frac{a_{n}}{10^{n}}}_{x_{n}} \leq x \leq a_{0} + \frac{a_{1}}{10} + \cdots + \frac{a_{n}+1}{10^{n}} .\]
+Vamos a demostrar que $\displaystyle \lim_{n \to \infty}x_{n} = x $. En efecto, 
+\[x_{n} \leq x < x_{n} + \frac{1}{10^{n}} .\]
+Entonces, tenemos que
+\[0 \leq \left|x - x_{n}\right| \leq \frac{1}{10^{n}} .\]
+Tenemos que $\displaystyle 0 \to 0 $ y $\displaystyle \frac{1}{10^{n}} \to 0 $, por lo que $\displaystyle \left|x-x_{n}\right| \to 0 $, por lo que $\displaystyle x_{n} \to x $. 
+\end{eg}
+
+\begin{ftheorem}[]
+	\normalfont Sean $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ x_{n}\right\} _{n\in\N}\subset\R $, tales que $\displaystyle x_{n} \to x $ y $\displaystyle y_{n}\to y $. 
+	\begin{description}
+	\item[(i)] $\displaystyle x_{n} + y _{n} \to x+y \iff \lim_{n \to \infty}\left(x_{n}+y_{n}\right) = \lim_{n \to \infty}x_{n} + \lim_{n \to \infty}y_{n}$.
+	\item[(ii)] $\displaystyle x_{n}y_{n} \to xy \iff \lim_{n \to \infty}x_{n}y_{n} = \left(\lim_{n \to \infty}x_{n}\right)\left(\lim_{n \to \infty}y_{n}\right)$.
+	\item[(iii)] Si $\displaystyle y_{n}\neq 0 $, $\displaystyle y\neq 0 $, 
+		\[\frac{x_{n}}{y_{n}} \to \frac{x}{y} \iff \lim_{n \to \infty}\frac{x_{n}}{y_{n}} = \frac{\lim_{n \to \infty}x_{n}}{\lim_{n \to \infty}y_{n}} .\]
+	\item[(iv)] $\displaystyle \left|x - x_{n}\right| \to 0 $.
+	\end{description}
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+	\item[(i)] Si $\displaystyle \epsilon > 0 $, $\displaystyle \exists n_{1} \in \N, \forall n \geq n_{1}, \; \left|x_{n}-x\right|<\frac{\epsilon }{2} $. Similarmente, existe $\displaystyle n_{2}\in\N, \forall n \geq n_{2}, \; \left|y_{n}-y\right|< \frac{\epsilon }{2} $. Tomamos $\displaystyle n_{0} = \max \left\{ n_{1}, n_{2}\right\}  $. 
+\[
+\begin{split}
+ \left|x_{n}+y_{n} - \left(x+ y\right)\right| = \left|\left(x_{n}-x\right) + \left(y_{n}-y\right)\right| \leq \left|x_{n}-x\right| + \left|y_{n}-y\right| < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon .
+\end{split}
+\]
+\item[(ii)] 
+	\[ \left|x_{n}y_{n} - xy\right| = \left|x_{n}y_{n} - x_{n}y + x_{n}y - xy\right| = \left|x_{n}\left(y_{n}-y\right) + y \left(x_{n}-x\right)\right| \leq \left|x_{n}\right| \left|y_{n}-y\right| + \left|y\right| \left|x_{n}-x\right| .\]
+Cogemos $\displaystyle n_{1} \in \N $ tal que $\displaystyle \forall n \geq n_{1}, \; \left|x_{n}-x\right| < \left|x\right| $,
+\[ \left|x_{n}\right| = \left|x_{n} - x + x\right| \leq \left|x_{n}-x\right| + \left|x\right| < 2 \left|x\right| .\]
+Así, 
+\[ \left|x_{n}y_{n} - xy\right| \leq 2 \left|x\right| \left|y_{n}-y\right| + \left|y\right| \left|x_{n}-x\right|.\]
+Cogemos $\displaystyle n_{2}, n_{3} \in \N $ tales que $\displaystyle \forall n \geq n_{2} $ y $\displaystyle \forall n \geq n_{3} $, 
+\[ \left|x_{n}-x\right| < \frac{ \epsilon}{2 \left|y\right| } \quad \text{y} \quad \left|y_{n}-y\right|<\frac{\epsilon }{4 \left|x\right|} .\]
+Entonces, si cogemos $\displaystyle n_{0} = \max \left\{ n_{1}, n_{2}, n_{3}\right\}  $, tenemos que $\displaystyle \forall n \geq n_{0} $, 
+\[ \left|x_{n}y_{n} - xy\right| \leq 2 \left|x\right| \left|y_{n}-y\right| + \left|y\right| \left|x_{n}-x\right| < \frac{\epsilon }{2} + \frac{\epsilon }{2 }=\epsilon  .\]
+
+\item[(iii)] 
+\[
+\begin{split}
+	\left|\frac{x_{n}}{y_{n}} - \frac{x}{y}\right|  = & \left| \frac{x_{n}y-xy_{n}}{y_{n}y}\right| = \left|\frac{y \left(x_{n}-x\right) - x \left(y_{n}-y\right)}{y_{n}y}\right|\\
+	\leq & \frac{1}{ \left|y_{n}\right|} \frac{ \left|x_{n}-x\right|}{|y_{n}|} + \frac{1}{ \left|y_{n}\right|} \left|\frac{x}{y}\right| \left|y_{n}-y\right|.
+\end{split}
+\]
+Si cogemos $\displaystyle n_{1} \in \N $ tal que $\displaystyle \forall n\geq n_{1} $, $\displaystyle \left|y_{n}-y\right| < \frac{ \left|y\right|}{2} $. Entonces tenemos que
+\[ \left|y_{n}\right| = \left|y_{n}-y+y\right| \geq \left|y\right| - \left|y_{n}-y\right|> \frac{ \left|y\right|}{2} .\]
+Entonces, 
+\[ \left|\frac{x_{n}}{y_{n}} - \frac{x}{y}\right| \leq \frac{1}{ \left|y_{n}\right|} \frac{ \left|x_{n}-x\right|}{|y_{n}|} + \frac{1}{ \left|y_{n}\right|} \left|\frac{x}{y}\right| \left|y_{n}-y\right| < \frac{2}{ \left|y\right|} \left|x_{n}-x\right| + \left|\frac{2x}{y^{2}}\right| \left|y_{n}-y\right|.\]
+Cogemos $\displaystyle n_{2}, n_{3}\in\N $ tal que $\displaystyle \forall n\geq n_{2} $ y $\displaystyle \forall n\geq n_{3} $ tenemos que 
+\[ \left|x_{n}-x\right| < \frac{\epsilon \left|y\right|}{4} \quad \text{y} \quad \left|y_{n}-y\right| < \epsilon \left|\frac{y^{2}}{4x}\right| .\]
+Si cogemos $\displaystyle n_{0} = \max \left\{ n_{1}, n_{2}, n_{3}\right\}  $, tenemos que $\displaystyle \forall n\geq n_{0} $, 
+\[\left|\frac{x_{n}}{y_{n}} - \frac{x}{y}\right| \leq \frac{1}{ \left|y_{n}\right|} \frac{ \left|x_{n}-x\right|}{|y_{n}|} + \frac{1}{ \left|y_{n}\right|} \left|\frac{x}{y}\right| \left|y_{n}-y\right| < \frac{2}{ \left|y\right|} \left|x_{n}-x\right| + \left|\frac{2x}{y^{2}}\right| \left|y_{n}-y\right|<\frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon .\]
+
+\item[(iv)] Decir que $\displaystyle \left|x -x_{n}\right|\to 0 $ es lo mismo que decir que $\displaystyle \lim_{n \to \infty}x_{n} = 0 $. En efecto, si $\displaystyle \left|x -x_{n}\right|\to 0 $, tenemos que
+\[\forall \epsilon > 0, \exists n_{0}\in\N, \forall n \geq n_{0}, \; \left|x_{n}-x\right|<\epsilon  .\]
+Esta es la definición de $\displaystyle \lim_{n \to \infty}x_{n}=n $.
+
+\end{description}
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont 
+\begin{description}
+\item[(i)] Si cada una de estas sucesiones converge \footnote{Si la suma converge, las sucesiones individuales no tienen por qué converger. Considera $\displaystyle x_{n} = n $ y $\displaystyle y _{n} = -n $.} :
+	\[\lim_{n \to \infty}\left(a_{n} + b_{n} + \cdots + z_{n}\right) = \lim_{n \to \infty}a_{n} + \cdots + \lim_{n \to \infty}z_{n} .\]
+\item[(ii)] Si $\displaystyle k\in \N $,
+	\[\lim_{n \to \infty} a_{n}^{k} = \left(\lim_{n \to \infty}a_{n}\right)^{k} .\]
+\end{description}
+\end{fcolorary}
+
+\begin{ftheorem}[]
+	\normalfont Si $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset\R $, con $\displaystyle x_{n}\geq 0 $ y $\displaystyle \lim_{n \to \infty}x_{n} = x $, entonces, $\displaystyle x \geq 0 $. 
+\end{ftheorem}
+
+\begin{proof}
+Supongamos que $\displaystyle x < 0 $. Sea $\displaystyle \epsilon = \frac{ \left|x\right|}{2} > 0 $. Sea $\displaystyle n_{0}\in\N $ tal que $\displaystyle \forall n \geq n_{0} $, $\displaystyle \left|x_{n}-x\right| < \epsilon  $.
+Tenemos que
+\[ \left|x_{n}-x\right| = x_{n}-x<\epsilon = \frac{ \left|x\right|}{2} = \frac{-x}{2} \Rightarrow x_{n} < \frac{x}{2} \iff x_{n}<\frac{x}{2} < 0 \iff x_{n} < 0, \forall n \geq n_{0} .\]
+ Esto es una contradicción.
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont Si $\displaystyle x_{n} \leq y_{n} $, $\displaystyle x_{n} \to x $ y $\displaystyle y_{n} \to y $. Entonces, $\displaystyle x \leq y $.
+\end{fcolorary}
+
+\begin{proof}
+Si $\displaystyle y_{n}-x_{n}\geq 0 $, entonces $\displaystyle y_{n}-x_{n} \to y-x $. Por el teorema anterior tenemos que 
+\[y - x \geq 0 \iff y \geq x .\]
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont Si $\displaystyle x_{n}\to x $. Entonces, $\displaystyle \left|x_{n}\right|\to \left|x\right| $.\footnote{El recíproco no se cumple, comprueba $\displaystyle \left(-1\right)^{n} $.} 
+
+\end{fcolorary}
+
+\begin{proof}
+Tenemos que 
+\[0 \leq \left| \left|x_{n}\right| - \left|x\right|\right| \leq \underbrace{\left|x_{n}-x\right|}_{\to0} .\]
+Entonces, $\displaystyle \left| \left|x_{n}\right| - \left|x\right|\right| \to 0 $.
+\end{proof}
+
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset \R^{+} \footnote{ $\displaystyle \R^{+} = \left(0, \infty\right) $.}  $, y supongamos que $\displaystyle x_{n}\to x $ y $\displaystyle x > 0 $. Sea $\displaystyle m \in \N $, entonces 
+	\[x_{n}^{\frac{1}{m}} \to x^{\frac{1}{m}} \iff \lim_{n \to \infty}x_{n}^{\frac{1}{m}} = \left(\lim_{n \to \infty}x_{n}\right)^{\frac{1}{m}}.\]
+\footnote{Si aplicamos esta propiedad junto a la del exponente, lo podemos demostrar para $\displaystyle q \in \Q $.} 	
+\end{ftheorem}
+
+\begin{proof}
+Sea $\displaystyle a = x^{\frac{1}{m}} \iff a^{m} = x $ y $\displaystyle a_{n} = x_{n}^{\frac{1}{m}} \iff a_{n}^{m} = x_{n} $. Sabemos que 
+\[a^{m}-a_{n}^{m} = \left(a-a_{n}\right)\left(a^{m-1} + \cdots + a^{m-1}_{n}\right) .\]
+\[ \Rightarrow \frac{a^{m}-a_{n}^{m}}{a^{m-1} + \cdots + a^{m-1}_{n}} = a - a_{n} .\]
+Entonces tenemos que 
+\[ \frac{ \left|a^{m}-a^{m}_{n}\right|}{a^{m-1}}\geq \frac{ \left|a^{m}-a_{n}^{m}\right|}{ \left|a^{m-1} + \cdots + a^{m-1}_{n}\right|} = \left|a-a_{n}\right| .\]
+Por tanto, 
+\[0 \leq \left|x^{\frac{1}{m}}-x_{n}^{\frac{1}{m}}\right|\leq \underbrace{\frac{1}{a^{m-1}} \left|x-x_{n}\right|}_{\to 0} .\]
+Entonces, $\displaystyle \left|x^{\frac{1}{m}}-x_{n}^{\frac{1}{m}}\right| \to 0 $.
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle 0 < r < 1 $, entonces $\displaystyle r^{n} \to 0 $.
+\end{fprop}
+
+\begin{proof}
+Sea $\displaystyle R = \frac{1}{r} > 1 $. Queremos ver que $\displaystyle R^{n} \to \infty $. Como $\displaystyle R > 0 $, por la desigualdad de Bernouilli tenemos que
+\[ R^{n} = \left(1 + x\right)^{n} \geq 1 + nx .\]
+Por tanto, 
+\[0 < r^{n} = \frac{1}{R^{n}} = \frac{1}{\left(1 +x\right)^{n}} \leq \frac{1}{1 + nx} < \frac{1}{nx} .\]
+Como $\displaystyle \frac{1}{x} \to \frac{1}{x} $ y $\displaystyle \frac{1}{n} \to 0 $, tenemos que $\displaystyle \frac{1}{nx} \to 0 $. Entonces, $\displaystyle r^{n} \to 0 $.
+\end{proof}
+
+\begin{observation}
+\normalfont En la demostración anterior hemos dicho que $\displaystyle r^{n} \to 0 $ es equivalente a decir que $\displaystyle R^{n} \to \infty $. Esto es porque la definición de la segunda será:
+\[\forall c > 0, \exists n_{0}\in\N, \forall n \geq n_{0}, R^{n} > c .\]
+Si $\displaystyle R^{n} > c $ tenemos que 
+\[\frac{1}{r^{n}} > c \iff \frac{1}{r^{n}} < c .\]
+Por tanto, se trata de la misma definición, solo que cambiamos $\displaystyle \epsilon  $  por $\displaystyle c $.
+\end{observation}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] Si $\displaystyle c > 0 $, tenemos que $\displaystyle \lim_{n \to \infty}c^{\frac{1}{n}}=1 $. Si $\displaystyle c = 1 $ el resultado es trivial. Si $\displaystyle c > 1 $, tenemos que, $\displaystyle c^{\frac{1}{n}} > 1 $ (problema 18 de la hoja 2). Entonces, podemos encontrar $\displaystyle x_{n} \in \R $ tal que 
+	\[ c^{\frac{1}{n}} = 1 + x_{n} \iff x_{n} = c^{\frac{1}{n}}-1 .\]
+Entonces, utilizando la desigualdad de Bernuilli:
+\[c = \left(1 + x_{n}\right)^{n} \geq 1 + nx_{n} \iff x_{n} \leq \frac{c-1}{n} .\]
+Por tanto, tenemos que
+\[ 0 < \left|c^{\frac{1}{n}}-1\right| = x_{n} \leq \frac{c-1}{n} .\]
+Como $\displaystyle \frac{1}{n} \to 0 $ y $\displaystyle c-1 \to c-1 $, por el teorema 2.3 tenemos que $\displaystyle \frac{c-1}{n} \to 0 $. Entonces, 
+\[ \left|c^{\frac{1}{n}}-1\right| \to 0 \iff c^{\frac{1}{n}} \to 1 .\]
+Si $\displaystyle 0 < c < 1 $, tenemos que $\displaystyle c^{\frac{1}{n}} < 1 $. Entonces existe $\displaystyle x_{n} \in \R $ tal que 
+\[ c^{\frac{1}{n}} = \frac{1}{1 + x_{n}} .\]
+Utilizando la identidad de Bernuilli:
+\[ c = \frac{1}{\left(1 + x_{n}\right)^{n}} \leq \frac{1}{1 + nx_{n}} < \frac{1}{nx_{n}} .\]
+Entonces tenemos que, 
+\[ \left|c^{\frac{1}{n}}-1\right| = \frac{x_{n}}{1 + x_{n}} < x_{n} < \left(\frac{1}{c}\right)\frac{1}{n} .\]
+Utilizando el teorema 2.3, tenemos que $\displaystyle \frac{1}{nc} \to 0 $ y, consecuentemente, $\displaystyle c^{\frac{1}{n}} \to 1 $.
+\item[(ii)] Similarmente, se tiene que $\displaystyle \lim_{n \to \infty}n^{\frac{1}{n}} = 1 $. Sabemos que $\displaystyle n^{\frac{1}{n}} > 1 $ para $\displaystyle n > 1 $. Entonces podemos escribir
+	\[n^{\frac{1}{n}} = 1 + x_{n} .\]
+Entonces, aplicando el teorema del binomio tenemos que 
+\[n = \left(1 + x_{n}\right)^{n} = 1 + nk_{n}+\frac{1}{2}n\left(n-1\right)x_{n}^{2} + \cdots \geq 1 + \frac{1}{2}n\left(n-1\right)x_{n}^{2} .\]
+Por tanto, tenemos que $\displaystyle x_{n}^{2} \leq \frac{2}{n} $. Entonces podemos decir que
+\[ 0 < \left|n^{\frac{1}{n}}-1\right| = x_{n} \leq \left(\frac{2}{n}\right)^{\frac{1}{2}} .\]
+Por el teorema 2.5 tenemos que $\displaystyle \left(\frac{1}{n}\right)^{\frac{1}{2}} \to 0^{\frac{1}{2}} = 0 $. Entonces, $\displaystyle \left(\frac{2}{n}\right)^{\frac{1}{2}} \to 0 $ y $\displaystyle n^{\frac{1}{n}} \to 1 $.
+\end{description}
+\end{eg}
+

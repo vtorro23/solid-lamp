@@ -90,3 +90,67 @@ from math import exp as my_exp #le cambias el nombre a la función
 def ejemplo():
     #codigo del ejemplo
 ejemplo() #así se ejecuta el ejemplo
+
+def hoja2_ej1_sol1():
+    n1 = int(input("Introduce un numero"))
+    n2 = int(input("Introduce un numero"))
+    n3 = int(input("Introduce un numero"))
+
+    if n1 <= n2 <= n3:
+        minimo, medio, maximo = n1, n2, n3
+    elif n1 <= n2 <= n3:
+        # ...
+    #hacemos todos los casos posibles
+    print(minmo, ",", medio, ",", maximo)
+
+def hoja2_ej1_sol2():
+    n1 = int(input("Introduce un numero"))
+    n2 = int(input("Introduce un numero"))
+    n3 = int(input("Introduce un numero"))
+
+    if n1 >= n2 and n1 >=n3:
+        maximo = n1
+        
+def hoja2_ej6():
+    number = int(input("Introduce an integer: "))
+    while number != 0:
+       decimal = number / 2 - int(number / 2)
+       if number > 0:
+           if decimal == 0:
+               print("Your number is even.")
+           else:
+               print("Your number is odd.")
+       number = int(input("Introduce an integer: "))
+
+def hoja2_ej7():
+    number = int(input("Introduce an integer: "))
+    while 0<= numer and number > 100:
+        number = int(input("Introduce an integer: "))
+    for i in range (1, 10):
+        multiplication = i * number
+        print(f"{i} * {number} = {multiplication}")
+
+def suma(x,y):
+    resultado = x + y
+    return resultado 
+print(resultado) #esto da error porque la variable resultado esta solo dentro de la definicion
+#podemos ejecutar el programa de la siguiente manera
+print(suma(2,3))
+
+def suma(x,y):
+    x = 1
+    y = 2
+    resultado = x + y
+    return resultado
+#esta funcion va a dar siempre 3, independientemente de los números que metas
+
+def suma(): #en este caso no tiene sentido tenerlo como parámetro
+    x = float(input("blah blah blah"))
+    y = float(input("blah blah blah"))
+    resultado = x + y
+
+#para especificar el type que quieres de tus parametros, sin embargo esto es solo una especificacion, pues puedes meter un string y tambien va a funcionar
+def suma(x : float, y : float) -> float:
+    #aqui se puede especificar como funciona la función, son comentarios
+    resultado = x + y
+    return resultado

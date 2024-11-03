@@ -8,6 +8,7 @@
 \usepackage{fancyhdr} % For headers and footers
 \usepackage{amsmath}
 \usepackage{geometry}[margin=1in]
+\usepackage{pgfplots}
 
 % Headers and footers configuration
 \pagestyle{fancy}
@@ -46,6 +47,10 @@
 \newenvironment{faxiom}
 {\begin{mdframed}\begin{axiom}}{\end{axiom}\end{mdframed}}
 
+\newtheorem{notation}{Notación}[chapter]
+
+\newtheorem{observation}{Observación}[chapter]
+
 % Custom commands
 
 \newcommand{\R}{\mathbb{R}}
@@ -57,6 +62,8 @@
 \newcommand{\K}{\mathbb{K}}
 \newcommand{\mcd}{\text{mcd}}
 \newcommand{\mcm}{\text{mcm}}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Imagen}{Im}
 
 \setlength{\headheight}{13.07225pt}
 \addtolength{\topmargin}{-1.07225pt}

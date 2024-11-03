@@ -237,10 +237,6 @@ Por lo que, dado que $\displaystyle k \geq 1 $ tenemos que $\displaystyle k \in 
 \end{description}
 \end{proof}
 
-\begin{proof}
-\footnote{Vamos a usar hechos que no hemos comprobado (la inversa de un positivo es positiva y la mitad de un número positivo es menor que ese número). 
-}\end{proof}
-
 \begin{eg}
 	\normalfont Consideramos el conjunto $\displaystyle \Z_{3} =  \left\{ 0, 1, 2\right\}  $. Tenemos que 
 	\[1 + 2 \mod 3 = 3 \mod 3 = 0 .\]
@@ -476,7 +472,7 @@ Similarmente, si $\displaystyle u = \inf\left(S\right) $ y $\displaystyle u \in 
 \end{eg}
 
 \begin{faxiom}[Axioma del supremo]
-\normalfont Para todo conjunto $\displaystyle S \subset \R $ con $\displaystyle S \neq 0 $, si $\displaystyle S $ está acotado superiormente, entonces existe $\displaystyle \sup\left(S\right) $.
+\normalfont Para todo conjunto $\displaystyle S \subset \R $ con $\displaystyle S \neq \emptyset $, si $\displaystyle S $ está acotado superiormente, entonces existe $\displaystyle \sup\left(S\right) $.
 \end{faxiom}
 
 \textbf{Observaciones.} Tenemos que $\displaystyle \Q $ es un cuerpo abeliano ordenado, pero no se cumple el axioma del supremo. Considera el conjunto 
@@ -510,7 +506,7 @@ Sea $\displaystyle v \leq s, \; \forall s \in S$. Sabemos que $\displaystyle v $
 
 \begin{proof}
 \begin{description}
-\item[(i)] Sea $\displaystyle u = \sup S $, entonces $\displaystyle \forall s \in S, \; u \geq s $.Sea $\displaystyle  \epsilon>0 $ y consideremos el punto $\displaystyle u - \epsilon $. Si $\displaystyle u - \epsilon \geq s, \forall s \in S $. Entonces $\displaystyle u-\epsilon  $ es cota superior de $\displaystyle S $. Además, tenemos que $\displaystyle u - \epsilon < u $, pero como $\displaystyle \sup S = u $ tenemos que $\displaystyle u \leq u - \epsilon  $. Esto es una contradicción. 
+\item[(i)] Sea $\displaystyle u = \sup S $, entonces $\displaystyle \forall s \in S, \; u \geq s $. Sea $\displaystyle  \epsilon>0 $ y consideremos el punto $\displaystyle u - \epsilon $. Si $\displaystyle u - \epsilon \geq s, \forall s \in S $. Entonces $\displaystyle u-\epsilon  $ es cota superior de $\displaystyle S $. Además, tenemos que $\displaystyle u - \epsilon < u $, pero como $\displaystyle \sup S = u $ tenemos que $\displaystyle u \leq u - \epsilon  $. Esto es una contradicción. 
 \item[(ii)] Recíprocamente, si $\displaystyle u $ es una cota superior y $\displaystyle \forall \epsilon>0, \exists s \in S, \; u - \epsilon < s $. Si $\displaystyle u $ no fuera supremo, existe $\displaystyle v \geq s, \forall s \in S $ tal que $\displaystyle v < u $. Si tomamos $\displaystyle \epsilon = u - v > 0 $, tenemos que existe $\displaystyle s \in S $ tal que $\displaystyle s > u - \epsilon $, entonces,
 \[ u - \epsilon = v < s .\]
 Esto es una contradicción.
@@ -721,7 +717,7 @@ Dado que $\displaystyle S $ no está acotado superiormente, podemos encontrar $\
 \begin{ftheorem}[Teorema de los intervalos encajados]
 	\normalfont Sean $\displaystyle a_{n}, b_{n} \in \R $, con $\displaystyle n \in \N $ tales que $\displaystyle a_{n}\leq a_{n+1} < b_{n+1} \leq b_{n}$. Sea $\displaystyle I_{n} = \left[a_{n}, b_{n}\right]  $. Esto no puede ser un punto, porque $\displaystyle a_{n} < b_{n} $. Entonces $\displaystyle I_{n+1}\subset I_{n} $. Entonces, 
 	\[\bigcap_{n \in \N} I_{n} \neq \emptyset .\]
-\footnote{Si el intervalo estuviera abierto, tenemos que la intersección sería el conjunto vacío. Esto se puede demostrar por reducción al absurdo.} 
+\footnote{Si el intervalo estuviera abierto, este teorema no tiene por qué cumplirse.} 
 \end{ftheorem}
 
 \begin{proof}
@@ -764,4 +760,124 @@ Asumimos que $\displaystyle \R/\Q $ es numerable. Entonces, tenemos que
 \[\left(\R/\Q\right)\cup\Q = \R .\]
 Sabemos que la unión de dos conjuntos numerables será numerable, pero $\displaystyle \R $ no es numerable, esto es una contradicción. Por tanto, debe ser que $\displaystyle \R/\Q $ no es numerable.
 \end{proof}
+
+\section{Expresión decimal de los números reales}
+
+\underline{Expresión en base $\displaystyle m \in \N $ con $\displaystyle m \geq 2 $ de los números reales}. \\ \\
+\normalfont Sea $\displaystyle m = 2 $ y sea $\displaystyle x \in \R $. Definimos 
+\[\left\lfloor x \right\rfloor = \max \left\{ n \in \Z \; : \; n\leq x\right\}  \]
+parte entero. Sea $\displaystyle a = x - \left\lfloor x \right\rfloor $, claramente tenemos que $\displaystyle a \in [0,1) $. Tenemos que $\displaystyle a $ es la parte decimal.  
+\begin{description}
+\item[(i)] Tomamos como convenio que el intervalo que tomamos está cerrado por la izquierda. Vamos a dividir el intervalo $\displaystyle [0,1) $ en $\displaystyle m $ partes iguales (en este caso $\displaystyle m = 2 $). El primer intervalo desde la izquierda lo denomino 0 y el segundo 1 (en el caso $\displaystyle m $ lo hacemos desde 0 hasta $\displaystyle m -1 $). Si $\displaystyle a $ está en el primer intervalo tomamos $\displaystyle j_{1} = 0 $, si estuviera en el segundo tomaríamos $\displaystyle j_{1} = 1 $. Definimos $\displaystyle a_{1} = j_{1} $. Tenemos que 
+	\[\frac{j_{1}}{2}\leq a < \frac{j_{1}+1}{2} \Rightarrow a \in \left[\frac{j_{1}}{2}, \frac{j_{1}+1}{2}\right).\]
+\item[(ii)] Repetimos el caso anterior pero con este último intervalo, por lo que lo dividimos en $\displaystyle m $ trozos. El punto medio será
+	\[\frac{j_{1}}{2} + \frac{1}{4} = \frac{2j_{1}+1}{4} .\]
+	El primer grupo lo denominamos $\displaystyle 0 $ y el segundo $\displaystyle 1 $ (en el caso $\displaystyle m $ iría de $\displaystyle 0 $ a $\displaystyle m -1 $). Entonces, $\displaystyle j_{2}\in \left\{ 0,1\right\}  $. Tenemos que $\displaystyle a_{2}=j_{2} $. Así pues, 
+	\[\frac{j_{1}}{2}+\frac{j_{2}}{4} \leq a < \frac{j_{1}}{2} + \frac{j_{2}+1}{4} .\]
+\item[(iii)] Paso $\displaystyle n $-ésimo. Reptimos el mismo procedimiento hasta elegir $\displaystyle j_{m}\in \left\{ 0,1\right\}  $ (en el caso $\displaystyle m=2 $) para obtener
+	\[\underbrace{\frac{j_{1}}{2}+\frac{j_{2}}{2^{2}} + \cdots + \frac{j_{n}}{2^{n}}}_{i_{n}}\leq a < \underbrace{\frac{j_{1}}{2} + \frac{j_{2}}{2^{2}}+ \cdots +\frac{j_{n}+1}{2^{n}}}_{s_{n}} .\]
+	Tenemos que $\displaystyle a \in [i_{n}, s_{n}) $ y 
+\[0 \leq \displaystyle \inf \left\{ s_{n}- i_{n}\right\} = \inf_{n \in \N} \frac{1}{2^{n}} \leq \inf_{n\in\N} \frac{1}{n} = 0 .\]
+Por tanto, $\displaystyle a_{n}= j_{n} $.
+\end{description}
+
+\begin{notation}
+\normalfont Sea $\displaystyle m \geq 2 $, $\displaystyle x \in \R $.
+\[x = \left\lfloor x \right\rfloor + a = \left\lfloor x \right\rfloor + \left( \cdot a_{1}a_{2} \cdots a_{n} \cdots \right)_{m} .\]
+\end{notation}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] Sea $\displaystyle m = 10 $ y $\displaystyle x = \pi  $. 
+\[\left\lfloor x \right\rfloor = 3 .\]
+Tenemos que $\displaystyle a = \pi - 3 $. $\displaystyle a $ tendrá una expresión de la forma $\displaystyle a = \left( \cdot 1415 \cdots\right)_{10} $. \footnote{Ambos puntos y comas en los decimales son aceptados.}  
+\item[(ii)] Sea $\displaystyle m = 2 $ y $\displaystyle x = \frac{1}{2} $. Tenemos que $\displaystyle \left\lfloor x \right\rfloor = 0 $, por lo que $\displaystyle a = x $. Tenemos que en el primer paso, está en el intervalo de la derecha. Por tanto, $\displaystyle a_{1} = 1 $. En el segundo paso se encuentra en la izquierda, por tanto, $\displaystyle a_{2} = 0 $. Desde aquí, siempre va a estar en el lado izquierdo, por tanto $\displaystyle a_{n} = 0, n \geq 2 $. 
+	\[\therefore \frac{1}{2} = \left( \cdot 10 \cdots 0 \cdots \right)_{2} .\]
+\item[(iii)] Cómo escribir 13 en base 2:
+	\[13 = 8 + 4 + 1 = 2^{3} + 2^{2} + 0 \cdot 2^{1}+ 2^{0} \Rightarrow (13)_{10} = \left(1101\right)_{2} .\]
+\item[(iv)] En general, si $\displaystyle a_{j}\in \left\{ 0, 1, \ldots, m - 1 \right\}  $, 
+	\[\left(a_{n} \cdots a_{1}\right)_{m} = a_{n}m^{n-1} + \cdots + a_{2}m^{1}+a_{1}m^{0} .\]
+\end{description}
+\end{eg}
+
+\begin{observation}
+\normalfont Tenemos que $\displaystyle x \in \Q $ si y solo si la parte decimal es periódica. La primera implicación se puede demostrar utilizando una sucesión geométrica. Recíprocamente, si $\displaystyle x = \frac{p}{q} $, tenemos que los restos están entre 0 y $\displaystyle q -1 $.
+\end{observation}
+
+Expresión decimal en base $\displaystyle m \geq 2 $. 
+\[\forall x \in \left[0,1\right], \exists a_{1}, a_{2}, \ldots, a_{j}, \ldots \in \left\{ 0,1, \ldots, m -1 \right\}  \]
+tales que
+\[\frac{a_{1}}{m} + \frac{a_{2}}{m^{2}} + \cdots + \frac{a_{j}}{m^{j}} \leq x < \frac{a_{1}}{m} + \cdots + \frac{a_{j}+1}{m^{j}} .\]
+Recíprocamente, dadas $\displaystyle a_{1}, \ldots, a_{j}\in \left\{ 0,1, \ldots, m -1\right\}  $ por el teorema de los intervalos encajados, $\displaystyle \exists! x \in [0,1) $ tal que 
+\[\forall j \in \N, \frac{a_{1}}{m} + \frac{a_{2}}{m^{2}} + \cdots + \frac{a_{j}}{m^{j}} \leq x < \frac{a_{1}}{m} + \cdots + \frac{a_{j}+1}{m^{j}}  .\]
+
+\begin{observation}
+\normalfont Representamos $\displaystyle \R $ como una recta infinita sin huecos.
+\end{observation}
+
+\section{Números Complejos}
+
+Sabemos que $\displaystyle \C = \R \times \R = \R^{2} $, es decir, si $\displaystyle \left(x,y\right)\in \C $ tenemos que $\displaystyle x, y \in \R $. Definimos $\displaystyle i = \left(0,1\right) $ y si $\displaystyle x \in \C $ podemos expresar $\displaystyle x $ de la siguiente manera:
+\[\left(x,y\right) = x \cdot \left(1,0\right) + y \cdot \left(0,1\right) .\]
+
+\begin{fdefinition}[]
+\normalfont En $\displaystyle \C $ se definen la suma y el producto:
+\begin{description}
+\item[(a)] Suma.
+	\[\left(x_{1} + iy_{1}\right) + \left(x_{2} + i y _{2}\right) = \left(x_{1} + x_{2}\right) + i \left(y_{1} + y_{2}\right) .\]
+\item[(b)] Producto. 
+	\[\left(x_{1} + i y_{1}\right) \cdot \left(x_{2} + i y_{2}\right) = \left(x_{1}x_{2}-y_{1}y_{2}\right) + i \left(x_{1}y_{2} + x_{2}y_{1}\right) .\]
+\end{description}
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont $\displaystyle \left(\C, +, \cdot\right) $ es un cuerpo abeliano.
+\end{ftheorem}
+
+\begin{observation}
+\normalfont Tenemos que, según nuestra definición de producto:
+\[i^{2} = -1 .\]
+Es decir, en este cuerpo abeliano no existe un orden total. \footnote{Para que el orden sea total, el cuadrado de cualquier número debe ser positivo.} 
+\end{observation}
+\begin{observation}
+\normalfont Existe una inyección de $\displaystyle \R $ a $\displaystyle \C $:
+\[
+\begin{split}
+& \R \to \C \\
+& x \to x + i \cdot 0.
+\end{split}
+\]
+Decimos que $\displaystyle \R $ hereda de $\displaystyle \C $ las propiedades de la suma, producto, etc. Además, $\displaystyle \R \subset \C $.
+\end{observation}
+
+\begin{ftheorem}[Teorema Fundamental del Álgebra]
+\normalfont Si $\displaystyle P\left(z\right) = z^{n} + a_{n-1}z^{n-1}+\cdots +a_{1}z + a_{0} $, con $\displaystyle z = x + iy \in \C $. $\displaystyle P\left(z\right) $ es un polinomio de grado $\displaystyle n  \in \N$ con $\displaystyle a_{j}\in \C $. Entonces, existe $\displaystyle w \in \C $ tal que $\displaystyle P\left(w\right) = 0 $. En particular, podemos encontrar $\displaystyle \alpha_{1}, \ldots, \alpha_{m}\in \N $ ($\displaystyle 1 \leq m \leq n $) y existen $\displaystyle w_{1}, \ldots, w_{m}\in \C $ tales que 
+\[P\left(z\right) = \left(z-w_{1}\right)^{\alpha_{1}} \cdots \left(z-w_{m}\right)^{\alpha_{m}}, \;\; \alpha_{1} + \cdots + \alpha_{m} = n.\]
+\footnote{Este teorema nos dice que $\displaystyle \C $ es algebraicamente completo.} 
+\end{ftheorem}
+
+\begin{eg}
+\normalfont Sea $\displaystyle P\left(z\right) = z^{4} + 2z^{2} +1, \; z\in \C $. Tenemos que:
+\[P\left(z\right) = \left(z^{2} + 1\right)^{2} = \left(z+i\right)^{2}\left(z-i\right)^{2} .\]
+\end{eg}
+
+\subsection{Representación polar}
+
+\begin{fdefinition}[]
+\normalfont \textbf{Norma} de $\displaystyle z = x + iy $ es:
+\[ \left|z\right| = \sqrt{x^{2}+y^{2}} .\]
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle z \in \C^{*} $, 
+\[ \left| \frac{z}{ \left|z\right|}\right| = \frac{ \left|z\right|}{ \left|z\right|} = 1 .\]
+\end{ftheorem}
+
+\begin{fdefinition}[]
+\normalfont Podemos representar $\displaystyle z \in \C $ como:
+\[z = \left|z\right|_{\theta}, \; \theta \in [0,2\pi) .\]
+Si $\displaystyle x,y > 0 $ tenemos que:
+\[\theta = \arctan\frac{y}{x} .\]
+\end{fdefinition}
 

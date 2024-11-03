@@ -485,10 +485,211 @@ A partir de aquí, podemos deducir el resto de soluciones:
 \end{description}
 \end{eg}
 \begin{eg}
-\normalfont $\displaystyle 17 x \equiv 5 \mod 15 $ 
+\normalfont $\displaystyle 17 x \equiv 5 \mod 13 $. Tenemos que $\displaystyle \mcd\left(17, 13\right) = 1 $, por lo que tendremos sólo una solución. Encontramos la identidad de Bézout:
+\[1 = \left(-3\right) \cdot 17 + 4 \cdot 13 .\]
+\[\therefore 5 = \left(-15\right) \cdot 17 + 20 \cdot 13 .\]
+Por tanto, tenemos que $\displaystyle 17 \cdot \left(-15\right) \equiv 5 \mod 13 $, por lo que la solución será $\displaystyle x \equiv -15 \equiv 11 \mod 13 $.
 \end{eg}
 
 \begin{eg}
-\normalfont $\displaystyle 66x \equiv 42 \mod 168 $ 
+\normalfont $\displaystyle 66x \equiv 42 \mod 168 $. Tenemos que $\displaystyle d = \mcd\left(66, 168\right) = 6 $, y $\displaystyle 6|42 $, por lo que esta congruencia lineal va a tener 6 soluciones en $\displaystyle \Z_{168} $. Encontramos la congruencia auxiliar:
+\[11x \equiv 7 \mod 28 .\]
+Hallamos la identidad de Bézout para $\displaystyle \mcd\left(11, 28\right) = 1 $:
+\[ 1 = 2 \cdot 28 + \left(-5\right) \cdot 11 .\]
+\[\therefore 7 = 14 \cdot 28 + \left(-35\right) \cdot 11 .\]
+Por todo ello, tenemos que $\displaystyle 11 \cdot \left(-35\right) \equiv 7 \mod 28 $, por lo que las soluciones serán, 
+\[x \equiv -35 \mod 28 \Rightarrow x \equiv 21 \mod 168 .\]
+Sumamos múltiplos de 28 hasta obtener 6 soluciones.
 \end{eg}
+
+\begin{fprop}[]
+	\normalfont Si $\displaystyle m $ y $\displaystyle n $ son primos entre sí, entonces $\displaystyle \left[x\right]_{m} \cap \left[x\right] _{n} = \left[x\right] _{mn} $.
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(i)] Si $\displaystyle x \in \Z $ y $\displaystyle m,n \in \N $ siempre tenemos la inclusión 
+	\[\left[x\right] _{mn} \subset \left[x\right]_{m} \cap \left[x\right] _{n} .\]
+	En efecto, si $\displaystyle y \in \left[x\right] _{mn} $, tenemos que existe $\displaystyle \lambda \in \Z $ tal que 
+	\[ y - x = \lambda mn .\]
+Por tanto, tenemos que $\displaystyle y $ es congruente con $\displaystyle x $ módulo $\displaystyle n $ y módulo $\displaystyle m $.
+\item[(ii)] Si $\displaystyle m,n $ son primos entre sí y $\displaystyle y \in \left[x\right]_{m} \cap \left[x\right] _{n} $, tenemos que existen $\displaystyle \lambda, \mu \in \Z $ tales que
+	\[y - x = \lambda m = \mu n .\]
+Como $\displaystyle \mcd\left(m,n\right) = 1 $, tenemos que $\displaystyle n | \lambda $, por lo que $\displaystyle \lambda = \lambda_{1} n $. Por tanto, 
+\[y - x = \lambda m = \lambda_{1}mn .\]
+Por tanto, $\displaystyle y \in \left[x\right] _{mn} $.
+\end{description}
+
+\end{proof}
+
+\begin{observation}
+\normalfont Si $\displaystyle a_{1}x \equiv b_{1} \mod m $ y $\displaystyle a_{2}x\equiv b_{2} \mod n $, y $\displaystyle \alpha  $ es solución de cada una de las congruencias, cada $\displaystyle \beta \in \left[\alpha \right] _{mn} $ es también solución. 
+\end{observation}
+
+\begin{ftheorem}[]
+\normalfont Sean $\displaystyle m  $ y $\displaystyle n $ primos entre sí, con $\displaystyle m,n \in \Z $. Si cada una de las congruencias lineales:
+\[
+\begin{split}
+a_{1}x \equiv b \mod m \quad \text{y} \quad a_{2}x\equiv b_{2} \mod n,
+\end{split}
+\]
+tiene solución, existe una solución común a las dos congruencias en $\displaystyle \Z_{mn} $. Además, si $\displaystyle \mcd\left(a_{1}, m\right) = \mcd\left(a_{2}, n\right)=1 $, tenemos que la solución es única en $\displaystyle \Z_{mn} $.
+\end{ftheorem}
+
+\begin{proof}
+Consideramos dos soluciones, $\displaystyle \alpha_{1} $ y $\displaystyle \alpha_{2} $. Consideramos $\displaystyle x \equiv \alpha_{1} \mod m $ y $\displaystyle x \equiv \alpha_{2} \mod n $. Vamos a ver que tienen soludión común en $\displaystyle \Z_{mn} $. Sabemos que $\displaystyle \mcd\left(m,n\right) = 1 $. Por tanto, $\displaystyle \exists u,v \in \Z $ tales que 
+\[mu + nv = 1 .\]
+Tomamos módulos en esta expresión:
+\[nv \equiv 1 \mod m \quad \text{y} \quad mu \equiv 1 \mod n .\]
+Vamos a ver que $\displaystyle \alpha_{1}nv + \alpha_{2}mu $ es una solución para cada una de las congruencias. Consideramos 
+\[\alpha_{1}nv + \alpha_{2}mu = \alpha_{1}nv + \alpha_{2}\left(1-nv\right) = \alpha_{2} + n\left(\alpha_{1}v-\alpha_{2}v\right) .\]
+Si hacemos módulo $\displaystyle n $, tenemos que
+\[\alpha_{1}nv + \alpha_{2}mu \equiv \alpha_{2} \mod n .\]
+Por tanto, va a ser una solución de la segunda congruencia. Similarmente, 
+\[\alpha_{1}nv + \alpha_{2}mu = \alpha_{1}\left(1-mu\right)+\alpha_{2}mu = \alpha_{1}+m\left(\alpha_{2}u-\alpha_{1}u\right) .\]
+\[\therefore \alpha_{1}nv + \alpha_{2}mu \equiv \alpha_{1} \mod m .\]
+Por tanto, $\displaystyle \alpha_{1}nv + \alpha_{2}mu $ es solución de ambos sistemas. Como $\displaystyle \left[\alpha \right] _{n} \cap \left[\alpha \right] _{m} = \left[\alpha \right] _{mn} $, tenemos que $\displaystyle \beta \in \left[\alpha \right] _{mn} $ es solución del sistema. \\ \\
+Ahora demostramos la unicidad. Sean $\displaystyle \alpha, \beta \in \Z_{mn} $ son soluciones del sistema de congruencias. Por ser soluciones de la primera, y tener está única solución en $\displaystyle Z_{m} $, $\displaystyle \alpha  $ y $\displaystyle \beta  $ son congruentes módulo $\displaystyle m $. Por la transitividad tenemos que 
+\[\alpha \equiv \beta \mod m .\]
+Similarmente, 
+\[\alpha \equiv \beta \mod n .\]
+Por tanto, tenemos que $\displaystyle \alpha \in \left[\beta \right] _{m}\cap\left[\beta \right] _{n} = \left[\beta \right] _{mn} $. Por tanto, $\displaystyle \alpha = \beta  $, por se ambos números elementos de $\displaystyle \Z_{mn} $.
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont Tenemos $\displaystyle m,n \in \Z $ y $\displaystyle m,n $ primos entre sí. Entonces las congruencias
+\[x \equiv b_{1} \mod m \quad \text{y} \quad x \equiv b_{2} \mod n \]
+tiene solución única en $\displaystyle \Z_{mn} $.
+\end{fcolorary}
+
+\begin{eg}
+\normalfont $\displaystyle x \equiv 4 \mod 8 $ y $\displaystyle x \equiv -1 \mod 15 $. Tenemos que $\displaystyle \mcd\left(8,15\right) = 1 $. La identidad Bézout es:
+\[1 = 2 \cdot 8 + \left(-1\right) \cdot 15 .\]
+La solución común estará en $\displaystyle \Z_{120} $. Tenemos que la solución será 
+\[\alpha = \alpha_{1} \cdot 2 \cdot 8 + \alpha_{2} \cdot \left(-1\right) \cdot 15 = \left(-1\right) \cdot 2 \cdot 8 + 4 \cdot \left(-1\right) \cdot 15 = -76 .\]
+Para que sea positiva le sumamos múltiplos de 120, es decir, $\displaystyle \alpha \equiv 44 \mod 120 $.
+\end{eg}
+
+\begin{ftheorem}[Teorema Chino del resto]
+\normalfont Sean $\displaystyle n_{1}, \ldots, n_{k}\in\Z^{+} $, primos entre sí 2 a 2. Si cada una de las congruencias lineales $\displaystyle a_{i}x \equiv b_{i} \mod n_{i} $ tiene solución, entonces existe una solución común a todas ellas en $\displaystyle \Z_{n_{1} \cdots n_{k}} $.
+\end{ftheorem}
+\begin{proof}
+Ya hemos demostrado el caso $\displaystyle n = 2 $. Asumimos que es cierto para $\displaystyle n-1 $ congruencias, entonces las primeras $\displaystyle n-1 $ congruencias tendrán solución común, a la que llamaremos $\displaystyle \alpha  $. También cualquier solución de la congruencia
+\[ x \equiv \alpha \mod m_{1} \cdots m_{n-1} ,\]
+es solución de las primeras $\displaystyle n-1 $ congruencias. Ahora podemos considerar el siguiente sistema de congruencias:
+\[
+\begin{cases}
+x \equiv \alpha \mod m_{1}\cdots m_{n-1} \\
+a_{n}x \equiv b_{n} \mod m_{n}
+\end{cases}
+.\]
+Como $\displaystyle m_{1} \cdots m_{n-1} $ y $\displaystyle m_{n} $ son primos entre sí, el sistema de congruencias tiene solución común, que es de todo el sistema. La unicidad de las soluciones en el caso de que $\displaystyle \mcd\left(a_{i}, m_{i}\right) = 1, \; \forall i = 1, 2, \ldots, n $ se puede demostrar también por inducción de la siguiente manera: la solución $\displaystyle \alpha  $ de las $\displaystyle n-1 $ primeras congruencias del sistema es única, como la de la $\displaystyle n $-ésima también lo es. 
+\end{proof}
+
+
+\begin{eg}
+\normalfont 
+\[
+\begin{cases}
+5x \equiv 6 \mod 12 \\
+2x \equiv 5 \mod 7 \\
+3x \equiv 1 \mod 5
+\end{cases}
+.\]
+Primero tenemos que ver que los módulos son primos entre sí dos a dos. 
+\[\mcd\left(12,7\right) = \mcd\left(5,7\right)=\mcd\left(12,5\right) = 1 .\]
+Cada congruencia tiene solución. 
+\[
+\begin{cases}
+x \equiv \alpha_{1} \mod 12 \\
+x \equiv \alpha_{2} \mod 7 \\
+x \equiv \alpha_{3} \mod 5
+\end{cases}
+.\]
+Cogemos dos congruencias y las resolvemos para obtener $\displaystyle x \equiv \alpha \mod 12 \cdot 7 $. Cogemos la anterior y una de las otras dos restantes para obtener $\displaystyle x \equiv \beta \mod 12 \cdot 7 \cdot 5 $. Obtenemos las siguientes soluciones:
+\[
+\begin{cases}
+x \equiv 6 \mod 12 \\
+x \equiv 6 \mod 7 \\
+x \equiv 2 \mod 5
+\end{cases}
+.\]
+
+Cogemos las dos primeras congruencias: 
+\[1 = 3 \cdot 12 + \left(-5\right) \cdot 7 .\]
+Sabemos que la solución será de la forma:
+\[\alpha \equiv 6 \cdot 3 \cdot 12 + 6 \cdot \left(-5\right) \cdot 7 \equiv 6 \mod 84 .\]
+Ahora resolvemos el siguiente sistema de congruencias:
+\[
+\begin{cases}
+x \equiv 2 \mod 5 \\
+x \equiv 6 \mod 84
+\end{cases}
+.\]
+Tenemos que 
+\[1 = 17 \cdot 5 - 84 .\]
+Por tanto, la solución tendrá la forma:
+\[\beta \equiv 6 \cdot 17 \cdot 5 - 2 \cdot 84 \equiv -334 \equiv 342 \mod 420 .\]
+\footnote{En la solución de un sistema de dos congruencias, se multiplica la solución de cada congruencia de forma cruzada, es decir, si $\displaystyle \alpha_{1} $ es solución de $\displaystyle a_{1} \equiv b_{1} \mod m_{1} $ y $\displaystyle \alpha_{2} $ es solución de la congruencia $\displaystyle a_{2} x \equiv b_{2} \mod m_{2} $, entonces la solución de ambas congruencias será $\displaystyle \alpha \equiv \alpha_{2}um_{1} + \alpha_{1}vm_{2} \mod m_{1} \cdot m_{2} $ ($\displaystyle u $ y $\displaystyle v $ proceden de la Identidad de Bézout).}
+\end{eg}
+
+\begin{fdefinition}[Función de Euler]
+\normalfont Si $\displaystyle n\in \Z $, 
+\[\varphi\left(n\right) = \left|t \in \N, \; 1 \leq t \leq n, \; \mcd\left(t,n\right) = 1\right| .\]
+\end{fdefinition}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle p $ es primo, tenemos que 
+\[\varphi\left(p\right) = p-1 .\]
+\end{fprop}
+\begin{proof}
+Es trivial, pues todos los números menores a $\displaystyle p $ serán coprimos con $\displaystyle p $, pues $\displaystyle p $ es primo. 
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle p $ es primo y $\displaystyle k > 1 $, 
+\[\varphi\left(p^{k}\right) = p^{k}-p^{k-1} .\]
+\end{fprop}
+\begin{proof}
+Tenemos que el número de números de $\displaystyle 1 $  a $\displaystyle p^{k} $ que tienen a $\displaystyle p $ como divisor serán $\displaystyle \frac{p^{k}}{p} $. Por tanto, el número de números que no tienen a $\displaystyle p $ como divisor será:
+\[p^{k} - p^{k-1} .\]
+\end{proof}
+
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle a $ y $\displaystyle b $ son primos entre sí, entonces
+\[\varphi\left(a \cdot b\right) = \varphi\left(a\right) \cdot \varphi\left(b\right) .\]
+\end{ftheorem}
+
+\begin{fcolorary}[]
+\normalfont Si $\displaystyle n_{1}, \ldots, n_{k} \in \Z^{+} $ y primos entre sí (2 a 2), entonces
+\[\varphi\left(n_{1} \cdots n_{k}\right) = \varphi\left(n_{1}\right) \cdots \varphi\left(n_{k}\right) .\]
+\end{fcolorary}
+
+\begin{fcolorary}[]
+\normalfont Si $\displaystyle n > 2 $ con $\displaystyle n \in \Z $ y $\displaystyle n = p_{1}^{\alpha_{1}}\cdots p_{k}^{\alpha_{k}} $ ($\displaystyle p_{1}, \ldots, p_{k}  $ primos). Entonces tenemos que
+\[\varphi\left(n\right) = n\left(1 - \frac{1}{p_{1}}\right) \cdots \left(1 -\frac{1}{p_{k}}\right) .\]
+\end{fcolorary}
+
+\begin{proof}
+Por una proposición anterior, tenemos que 
+\[\varphi\left(p_{i}^{\alpha_{i}}\right) = p_{i}^{\alpha_{i}}-p_{i}^{\alpha_{i}-1} = p_{i}^{\alpha_{i}}\left(1-\frac{1}{p_{i}}\right) .\]
+Aplicando el corolario anterior:
+\[\varphi\left(n\right) = \varphi\left(p_{1}^{\alpha_{1}} \cdots p_{k}^{\alpha_{k}}\right) = \varphi\left(p_{1}^{\alpha_{1}}\right)\cdots\varphi\left(p_{k}^{\alpha_{k}}\right) .\]
+Entonces tenemos que, 
+\[\varphi\left(n\right) = p_{1}^{\alpha_{1}}\left(1 - \frac{1}{p_{1}}\right) \cdots p_{k}^{\alpha_{k}}\left(1 - \frac{1}{p_{k}}\right) = n \left(1-\frac{1}{p_{1}}\right)\cdots\left(1 - \frac{1}{p_{k}}\right) .\]
+\end{proof}
+
+\begin{eg}
+\normalfont $\displaystyle \varphi\left(151200\right) $. Si factorizamos $\displaystyle 151200 $ en sus factores primos tenemos que:
+\[151200 = 2^{5} \cdot 3^{3} \cdot 5^{2} \cdot 7 .\]
+Entonces:
+\[\varphi\left(151200\right) = 151200 \cdot \left(1-\frac{1}{2}\right)\left(1-\frac{1}{3}\right)\left(1-\frac{1}{5}\right)\left(1-\frac{1}{7}\right) =2^{5} \cdot 3^{3} \cdot 5^{2} \cdot 7 \cdot \frac{1}{2} \cdot \frac{2}{3} \cdot \frac{4}{5} \cdot \frac{6}{7} = 2^{8} \cdot 3^{3} \cdot 5 = 34560.\]
+\end{eg}
+
+\begin{ftheorem}[Teorema de Euler]
+\normalfont Si $\displaystyle a $ y $\displaystyle n $ son primos entre sí, entonces $\displaystyle a^{\varphi\left(n\right)} \equiv 1 \mod n $. 
+\end{ftheorem}
+
+\begin{fcolorary}[Pequeño Teorema de Fermat]
+\normalfont Si $\displaystyle p $ es primo y $\displaystyle a $ no es múltiplo de $\displaystyle p $, entonces $\displaystyle a^{p-1} \equiv 1 \mod p $.
+\end{fcolorary}
 

@@ -1,7 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1729699412.90571 "main.tex" "main.pdf" "main" 1729699414.39727 2
-  "/Users/victoriatorroja/University/Year1/AnalisisReal/Notes/Chapters/Chap1.tex" 1729699412.57786 48372 b6db34e2e9ce93baad892c350c2efa83 ""
-  "/Users/victoriatorroja/University/notespreamble.tex" 1729504586.41474 1797 ab3874bb0d45a2baa427d732dd841ffd ""
+["pdflatex"] 1730645292.68777 "main.tex" "main.pdf" "main" 1730645294.20642 2
+  "/Users/victoriatorroja/University/Year1/AnalisisReal/Notes/Chapters/Chap1.tex" 1730104347.80054 56398 ac94a1664bbb3ffafa8ea002eb3fc4bf ""
+  "/Users/victoriatorroja/University/Year1/AnalisisReal/Notes/Chapters/Chap2.tex" 1730645290.68235 26184 993b7e4813b1635e60d7396702278d7f ""
+  "/Users/victoriatorroja/University/notespreamble.tex" 1730301380.27035 1937 48d12dc61837fe041708ef5562e0a48d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -31,6 +32,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
@@ -104,9 +106,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724666679.39075 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "main.aux" 1729699414.19344 684 e07334c8693c1ad0941220da32bd2c07 "pdflatex"
-  "main.tex" 1729325863.09113 967 044cbb867845a701230076ddd59b3cc8 ""
-  "main.toc" 1729699414.19537 284 31a3ffa7f4ce2e31b40b0c913f771adb "pdflatex"
+  "main.aux" 1730645294.02293 1228 904b340d5d10c2d45acfb1f3768b4a58 "pdflatex"
+  "main.tex" 1729934625.44622 1032 1627b3a9de2256c8fd6935ededae5f85 ""
+  "main.toc" 1730645294.02472 588 19a25a2b8fd53c05405a461cc47ecac0 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

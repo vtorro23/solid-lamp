@@ -1,0 +1,238 @@
+\chapter{Aplicaciones Lineales}
+
+\begin{fdefinition}[Aplicación Lineal]
+\normalfont Sean $\displaystyle V $ y $\displaystyle V' $ son espacios vectoriales sobre $\displaystyle \K $.Una aplicación $\displaystyle f: V \to V' $ es lineal si
+\begin{description}
+\item[(a)] $\displaystyle f\left(\vec{x} + \vec{y}\right) = f\left(\vec{x}\right) + f\left(\vec{y}\right), \; \forall \vec{x}, \vec{y} \in V$.
+\item[(b)] $\displaystyle f\left(a\vec{x}\right) = a f\left(\vec{x}\right), \; \forall a \in \K, \forall \vec{x} \in V $.
+\end{description}
+\end{fdefinition}
+
+\begin{fdefinition}[]
+\normalfont Un \textbf{monomorfismo} de $\displaystyle V $ en $\displaystyle V' $ es una aplicación lineal inyectiva. Un \textbf{epimorfismo} es una aplicación lineal sobreyectiva. Un \textbf{isomorfismo} es una aplicación lineal biyectiva (es homomorfismo y epimorfismo a la vez).
+\end{fdefinition}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(a)]Tenemos que $\displaystyle L \in \mathcal{L}\left(V\right) $, 
+\[
+\begin{split}
+	i & : L \to V \\
+	  & \vec{x} \to \vec{x}.
+\end{split}
+\]
+Esta aplicación es un monomorfismo.
+\item[(b)] Si $\displaystyle L \in \mathcal{L}\left(V\right),  $ la aplicación 
+	\[
+	\begin{split}
+		p & : V \to V/L \\
+		  & \vec{x} \to \vec{x} + L
+	\end{split}
+	\]
+Es un epimorfismo.
+\item[(c)] Sean $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ una base de $\displaystyle V $, la aplicación
+	\[
+	\begin{split}
+		f & : V \to \K^{n} \\
+		  & \vec{x} \to \left(a^{1}, \ldots, a^{n}\right).
+	\end{split}
+	\]
+Donde, $\displaystyle \vec{x} = a^{1}\vec{u}_{1} + \cdots + a^{n}\vec{u}_{n} $. Entonces $\displaystyle f $ es un isomorfismo. 
+\end{description}
+\end{eg}
+
+\begin{fprop}[]
+\normalfont Sea $\displaystyle f : V \to V' $ una aplicación lineal. 
+\begin{description}
+\item[(a)] Si $\displaystyle L \in \mathcal{L}\left(V\right) $
+	\[f\left(L\right) = \left\{ f\left(\vec{x}\right)\in V' \; : \; \vec{x} \in L\right\} \in \mathcal{L}\left(V'\right) .\]
+\item[(b)] $\displaystyle f\left(\vec{0}\right) = \vec{0} $ y $\displaystyle f\left(-\vec{x}\right)=-f\left(\vec{x}\right) $.
+\item[(c)] Si $\displaystyle L' \in \mathcal{L}\left(V'\right) $,
+	\[f^{-1}\left(L'\right) = \left\{ \vec{x} \in V \; : \; f\left(\vec{x}\right) \in L'\right\} \in \mathcal{L}\left(V\right) .\]
+\item[(d)] $\displaystyle 0 : V \to V' $ tal que $\displaystyle \vec{x} \to \vec{0} $ es una aplicación lineal.
+\end{description}
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(a)] Queremos ver que $\displaystyle \forall \vec{x}', \vec{y}' \in f\left(L\right) \Rightarrow \exists\vec{x}, \vec{y} \in L, \; f\left(\vec{x}\right) = \vec{x'}$ y $\displaystyle f\left(\vec{y}\right) = \vec{y'} $. Tenemos que ver que la suma y el producto por escalares está bien definidas.  
+	\[\vec{x'} + \vec{y'} = f\left(\vec{x}\right) + f\left(\vec{y}\right) = f\left(\vec{x} + \vec{y}\right) \in f\left(L\right) .\]
+Similarmente, para el producto por escalares, si $\displaystyle a \in \K $,
+\[a \vec{x'} = af\left(\vec{x}\right) = f\left(a\vec{x}\right) \in f\left(L\right).\]
+\item[(b)] Tenemos que $\displaystyle f\left(\vec{0}\right) = f\left(0 \cdot \vec{x}\right) = 0 f\left(\vec{x}\right) = \vec{0} $. Similarmente, 
+	\[f\left(-\vec{x}\right) =  f\left(\left(-1\right)\vec{x}\right) = - f\left(\vec{x}\right) .\]
+Otra demostración es:
+\[f\left(\vec{x}\right) + f\left(-\vec{x}\right) = f\left(\vec{x} + \left(-\vec{x}\right)\right) = f\left(\vec{0}\right) = \vec{0} .\]
+\item[(c)] Sean $\displaystyle \vec{x}, \vec{y} \in f^{-1}\left(L'\right) $, entonces $\displaystyle f\left(\vec{x}\right), f\left(\vec{y}\right) \in L' $. Como $\displaystyle L' $ es subespacio vectorial, 
+	\[f\left(\vec{x}\right) + f\left(\vec{y}\right) \in L' .\]
+Por tanto, 
+\[f\left(\vec{x} + \vec{y}\right) \in L' \Rightarrow \vec{x} + \vec{y} \in f^{-1}\left(L'\right) .\]
+Para el producto por escalares, si $\displaystyle a\in\K $, $\displaystyle \vec{x} \in f^{-1}\left(L'\right) $, 
+\[f\left(\vec{x}\right)\in L' \Rightarrow a f\left(\vec{x}\right) = f\left(a\vec{x}\right) \in L' \Rightarrow a\vec{x} \in f^{-1}\left(L\right) .\]
+\end{description}
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont 
+\begin{description}
+	\item[(a)] Imagen. $\displaystyle \Imagen\left(f\right) = f\left(V\right) = \left\{ f\left(\vec{x}\right)\; :\; \vec{x} \in V\right\}\in \mathcal{L}\left(V'\right)  $.
+		\item[(b)] Núcleo. $\displaystyle \Ker\left(f\right) = f^{-1}\left(\{\vec{0}\}\right) = \left\{ \vec{x}\in V\; : \; f\left(\vec{x}\right) = \vec{0}\right\} \in \mathcal{L}\left(V\right) $.
+\end{description}
+\end{fcolorary}
+\begin{proof}
+	Como $\displaystyle V $ y $\displaystyle \left\{ \vec{0}\right\}  $ son subespacios vectoriales su imagen y preimagen, respectivamente, también serán subespacios vectoriales por la proposición 2.1. 
+\end{proof}
+
+
+\begin{fprop}[]
+\normalfont Sea $\displaystyle f: V \to V' $ una aplicación lineal, entonces:
+\begin{description}
+\item[(a)] $\displaystyle f $ es epimorfismo $\displaystyle \iff  $ $\displaystyle \Imagen\left(f\right) = V' $.
+\item[(b)] $\displaystyle f $ es monomorfismo $\displaystyle \iff  $ $\displaystyle \Ker\left(f\right) = \left\{ \vec{0}\right\}  $.
+\end{description}
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(a)] Es la definición de sobreyectividad.
+	\item[(b)] Primera implicación. Tenemos que $\displaystyle f\left(\vec{0}\right) = \vec{0} $. Si $\displaystyle f\left(\vec{x}\right)=\vec{0} $, tenemos que $\displaystyle \vec{x} = \vec{0} $ (porque $\displaystyle f $ es inyectiva). Segunda implicación. Supongo que $\displaystyle \Ker\left(f\right) = \left\{ \vec{0}\right\}  $, entonces
+		\[f\left(\vec{x}\right) = f\left(\vec{y}\right) \Rightarrow f\left(\vec{x}\right)-f\left(\vec{y}\right) = f\left(\vec{x}-\vec{y}\right)= \vec{0} \Rightarrow \vec{x}-\vec{y} \in \Ker\left(f\right) \Rightarrow \vec{x}=\vec{y} .\]
+\end{description}
+\end{proof}
+
+\begin{fprop}[]
+	\normalfont Sea $\displaystyle f: V \to V' $ una aplicación lineal y sea $\displaystyle \left\{ \vec{x}_{1}, \ldots, \vec{x}_{p}\right\}  $ un sistema de generadores de $\displaystyle L \in \mathcal{L}\left(V\right) $. Entonces $\displaystyle \left\{ f\left(\vec{x}_{1}\right), \ldots, f\left(\vec{x}_{p}\right)\right\}  $ es un sistema de generadores de $\displaystyle f\left(L\right) $.
+\footnote{La independencia lineal no se conserva en una aplicación lineal en general.} 
+\end{fprop}
+
+\begin{proof}
+	Sea $\displaystyle \vec{x'} \in f\left(L\right) $, existe $\displaystyle \vec{x} \in L $ tal que $\displaystyle f\left(\vec{x}\right) = \vec{x'} $. Como $\displaystyle \left\{ \vec{x}_{1}, \ldots, \vec{x}_{p}\right\}  $ es un sistema de generadores de $\displaystyle L $, existen $\displaystyle a^{i}\in\K $ escalares tales que 
+	\[\vec{x} = a^{1}\vec{x}_{1} + \cdots + a^{p}\vec{x}_{p}.\]
+Entonces, 
+\[\vec{x'} = f\left(a^{1}\vec{x}_{1} + \cdots + a^{p}\vec{x}_{p}\right) = a^{1}f\left(\vec{x}_{1}\right) + \cdots + a^{p}f\left(\vec{x}_{p}\right) .\]
+\end{proof}
+
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle f : V \to V' $ una aplicación lineal. Entonces, $\displaystyle f $ es un monomorfismo si y solo si $\displaystyle \forall p \in \N, \forall \left\{ \vec{u}_{1}, \ldots, \vec{u}_{p}\right\} \subset V $ linealmente independientes, implica que $\displaystyle \left\{ f\left(\vec{u}_{1}\right), \ldots, f\left(\vec{u}_{p}\right)\right\}  $ son linealmente independientes.
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+	\item[(i)] Si $\displaystyle f $ es un monomorfismo y sea $\displaystyle p \in \N $, con $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{p}\right\} \subset V $ linealmente independientes. Cogemos $\displaystyle a^{i}\in\K $ tales que 
+		\[a^{1}f\left(\vec{u}_{1}\right) + \cdots + a^{p}f\left(\vec{u}_{p}\right) = \vec{0} .\]
+Como $\displaystyle f $ es una aplicación lineal, 
+\[
+\begin{split}
+	& a^{1}f\left(\vec{u}_{1}\right) + \cdots + a^{p}f\left(\vec{u}_{p}\right) \\
+	=& f\left(a^{1}\vec{u}_{1}+ \cdots + a^{p}\vec{u}_{p}\right) \\
+	=&\vec{0} .
+\end{split}
+\]
+Como $\displaystyle f $ es monomorfismo, tenemos que 
+\[a^{1}\vec{u}_{1}+ \cdots + a^{p}\vec{u}_{p} = \vec{0} .\]
+Como estos vectores forman una base, tenemos que $\displaystyle a^{1} = \cdots = a^{p} = 0 $.
+\item[(ii)] Lo hacemos por contraposición. Suponemos que $\displaystyle f $ no es inyectiva (no es monomorfismo), por lo que existe $\displaystyle \vec{x} \neq \vec{0} $ tal que $\displaystyle \vec{x} \in \Ker\left(f\right) $. Entonces, $\displaystyle \left\{ \vec{x}\right\}  $ es linealmente independiente y $\displaystyle \left\{ f\left(\vec{x}\right)\right\}  = \left\{ \vec{0}\right\}  $ es linealmente dependiente.
+\end{description}
+\end{proof}
+
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle f: V \to V' $ una aplicación lineal. Entonces $\displaystyle f $ es epimorfismo si y solo si para cada sistema de generadores $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ de $\displaystyle V $, $\displaystyle \left\{ f\left(\vec{u}_{1}\right), \ldots, f\left(\vec{u}_{n}\right)\right\}  $ es sistema de generadores de $\displaystyle V' $.
+\end{ftheorem}
+
+\begin{proof}
+	Sabemos que si $\displaystyle \left\{ \vec{u}_{1}, \ldots , \vec{u}_{n}\right\}  $ es sistema de generadores en $\displaystyle V $, entonces $\displaystyle \left\{f\left(\vec{u}_{1}\right), \ldots, f\left(\vec{u}_{n}\right) \right\}  $ será sistema de generadores de $\displaystyle \Imagen (f)  $. Si $\displaystyle f $ es epimorfismo, entonces será base de $\displaystyle V' $ y, si es base de $\displaystyle V' $ es porque $\displaystyle \Imagen\left(f\right)= V' $, por lo que es epimorfismo.
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Sean $\displaystyle f: V \to V' $ y $\displaystyle g: V' \to V '' $ aplicaciones lineales. Entonces, la composición $\displaystyle g \circ f $ también es lineal. 
+\end{fprop}
+
+\begin{proof}
+Sean $\displaystyle \vec{x}, \vec{y} \in V $, tenemos que  
+\[ g \left( f \left(\vec{x}+\vec{y}\right)\right) = g \left(f\left(\vec{x}+\vec{y}\right)\right) = g\left(f\left(\vec{x}\right) + f\left(\vec{y}\right)\right) = g\left(f\left(\vec{x}\right)\right) + g\left(f\left(\vec{y}\right)\right) .\]
+Entonces, $\displaystyle g \circ f $ es lineal respecto a la suma. Similarmente, si $\displaystyle a \in \K, \vec{x} \in V $ tenemos que
+\[ g\left(f\left(a\vec{x}\right)\right) = g\left(af\left(\vec{x}\right)\right) = ag\left(f\left(\vec{x}\right)\right) .\]
+Por tanto, $\displaystyle g\circ f $ es una aplicación lineal. 
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Sea $\displaystyle f: V \to V' $ un isomorfismo (lineal y biyectiva) \footnote{Una función es biyectiva si y sólo si tiene inversa.} . Sabemos que existe $\displaystyle f^{-1}:V'\to V $. Entonces, $\displaystyle f^{-1} $ es isomorfismo.
+\end{fprop}
+
+\begin{proof}
+Solo tenemos que demostrar que es aplicación lineal, porque inversa de una biyección también es biyección. Si $\displaystyle \forall \vec{x'}, \vec{y'} \in V' $, como $\displaystyle f $ es biyectiva, $\displaystyle \exists! \vec{x}, \vec{y} \in V $ tales que $\displaystyle \vec{x'} = f\left(\vec{x}\right) \iff \vec{x} = f^{-1}\left(\vec{x'}\right) $ y $\displaystyle \vec{y'} = f\left(\vec{y}\right) \iff \vec{y} = f^{-1}\left(\vec{y'}\right) $. Entonces, 
+\[f^{-1}\left(\vec{x'} + \vec{y'}\right) = f^{-1}\left(f\left(\vec{x}\right)+f\left(\vec{y}\right)\right) = f^{-1}\left(f\left(\vec{x}+\vec{y}\right)\right) = \vec{x}+\vec{y} = f^{-1}\left(\vec{x'}\right) + f^{-1}\left(\vec{y'}\right) .\]
+Similarmente, si $\displaystyle a \in \K $ y $\displaystyle \vec{x'}\in V' $, $\displaystyle \exists! \vec{x} \in V $ tal que $\displaystyle f\left(\vec{x}\right) = \vec{x'} \iff f^{-1}\left(\vec{x'}\right) = \vec{x}$. Entonces tenemos que, 
+\[f^{-1}\left(a\vec{x'}\right) = f^{-1}\left(af\left(\vec{x}\right)\right) = f^{-1}\left(f\left(a\vec{x}\right)\right) = a\vec{x} = a f^{-1}\left(\vec{x'}\right) .\]
+\end{proof}
+
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ una base de $\displaystyle V $ y sean $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\} \subset V' $. Entonces, $\displaystyle \exists! f : V \to V' $ lineal tal que $\displaystyle f\left(\vec{u}_{i}\right) = \vec{v}_{i} $.
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Primero demostramos la unicidad, es decir, asumimos que existe y demostramos que debe ser única. Entonces, asumimos que existe $\displaystyle f : V \to V' $ linal tal que $\displaystyle f\left(\vec{u}_{i}\right) = \vec{v}_{i}, \; \forall i = 1, \ldots, n $. Sea $\displaystyle \vec{x}\in V $, entonces existen $\displaystyle a^{i} \in \K $ únicos tales que 
+	\[\vec{x} = a^{1}\vec{u}_{1} + \cdots + a^{n}\vec{u}_{n} .\]
+Entonces, 
+\[f\left(\vec{x}\right) = f\left(a^{1}\vec{u}_{1} + \cdots + a^{n}\vec{u}_{n}\right) = a^{1}f\left(\vec{u}_{1}\right) + \cdots + a^{n}f\left(\vec{u}_{n}\right) = a^{1}\vec{v}_{1} + \cdots + a^{n}\vec{v}_{n}.\]
+Si exsistese otra función $\displaystyle g : V \to V' $ tal que $\displaystyle g\left(\vec{u}_{i}\right) = \vec{v}_{i}, \; \forall i = 1, \ldots, n $, tendríamos que $\displaystyle f\left(\vec{x}\right) = g\left(\vec{x}\right), \; \forall \vec{x} \in V $.
+\item[(ii)] Ahora demostramos la existencia. Sea $\displaystyle f : V \to V' $ la aplicación $\displaystyle f\left(\vec{x}\right) = x^{1}\vec{v}_{1} + \cdots + x^{n}\vec{v}_{n} $, donde $\displaystyle \vec{x} = x^{1}\vec{u}_{n} + \cdots + x^{n}\vec{u}_{n} $. Tenemos que demostrar que esta aplicación es lineal. Si $\displaystyle \vec{x}, \vec{y} \in V $ queremos ver que $\displaystyle f\left(\vec{x}+\vec{y}\right) = f\left(\vec{x}\right) + f\left(\vec{y}\right) $. Tenemos que
+\[
+\begin{split}
+	f\left(\vec{x}+\vec{y}\right) = & f\left(\left(x^{1}\vec{u}_{n} + \cdots + x^{n}\vec{u}_{n}\right) + \left(y^{1}\vec{u}_{n} + \cdots + y^{n}\vec{u}_{n}\right)\right) \\
+	= & f\left(\left(x^{1}+y^{1}\right)\vec{u}_{1} + \cdots + \left(x^{n}+y^{n}\right)\vec{u}_{n}\right) \\
+	= & \left(x^{1}+y^{1}\right)\vec{v}_{1} + \cdots + \left(x^{n} + y^{n}\right) \vec{v}_{n} \\
+	= & \left(x^{1}\vec{v}_{1} + \cdots + x^{n}\vec{v}_{n}\right) + \left(y^{1}\vec{v}_{1} + \cdots + y^{n}\vec{v}_{n}\right) \\
+	= & f\left(\vec{x}\right) + f\left(\vec{y}\right).
+\end{split}
+\]
+Similarmente, 
+\[f\left(a\vec{x}\right) = f\left(a\left(x^{1}\vec{u}_{n} + \cdots + x^{n}\vec{u}_{n}\right)\right)= f\left(ax^{1}\vec{u}_{1} + \cdots + ax^{n}\vec{u}_{n}\right) = a f\left(\vec{x}\right) .\]
+\end{description}
+\end{proof}
+
+Podemos ver que
+\[f\left(\vec{u}_{i}\right) = f\left(0 \cdot \vec{u}_{1} + \cdots + 0 \cdot \vec{u}_{i-1}+ + 1 \cdot \vec{u}_{i} + 0 \cdot \vec{u}_{i+1} + \cdots + 0 \cdot \vec{u}_{n}\right) = 0 \cdot \vec{v}_{1} + \cdots + 1 \cdot \vec{v}_{i} + \cdots + 0 \cdot \vec{v}_{n} = \vec{v}_{i} .\]
+
+\begin{fcolorary}[]
+	\normalfont Sea $\displaystyle f: V \to V' $ lineal y $\displaystyle f\left(\vec{u}_{i}\right) = g\left(\vec{u_{i}}\right), \forall i = 1, \ldots, n $ donde $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es base, entonces $\displaystyle f = g $.
+\end{fcolorary}
+
+\begin{fdefinition}[]
+\normalfont Dos espacios vectoriales $\displaystyle V $ y $\displaystyle V' $ son isomorfos si existe $\displaystyle f: V \to V' $ isomorfismo. Lo expresaremos como $\displaystyle V \approx V' $.
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f: V \to V' $ una aplicación lineal. Entonces son equivalentes:
+\begin{description}
+\item[(a)] $\displaystyle f $ es isomorfismo.
+\item[(b)] $\displaystyle \forall \vec{u}_{1}, \ldots, \vec{u}_{n} $ base de $\displaystyle V $, $\displaystyle \left\{ f\left(\vec{u}_{1}\right), \ldots, f\left(\vec{u}_{n}\right)\right\}  $ es base de $\displaystyle V' $.
+\item[(c)] $\displaystyle \exists \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $ tal que $\displaystyle \left\{ f\left(\vec{u}_{1}\right), \ldots, f\left(\vec{u}_{n}\right)\right\}  $ es base de $\displaystyle V' $ .
+\end{description}
+\end{ftheorem}
+
+\begin{proof} Vamos a ver que (a) $\displaystyle \Rightarrow $ (b), que (b) $\displaystyle \Rightarrow $ (c) y que (c) $\displaystyle \Rightarrow $ (a). 
+\begin{description}
+	\item[(a) $\displaystyle \Rightarrow $ (b) ] Suponemos que $\displaystyle f $ es un isomorfismo y sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $. Entonces este conjunto es sistema de generadores y son linealmente independientes. Entonces $\displaystyle \left\{ f\left(\vec{u}_{1}\right), \ldots , f\left(\vec{u}_{n}\right)\right\}  $ es sistema de generadores de $\displaystyle V' $. Además, como son linealmente independientes, $\displaystyle \left\{ f\left(\vec{u}_{1}\right), \ldots, f\left(\vec{u}_{n}\right)\right\}  $ también son linealmente independientes. 
+	\item[(b) $\displaystyle \Rightarrow $ (c)] Evidente.
+	\item[(c) $\displaystyle \Rightarrow $ (a)] Sea $\displaystyle f : V \to V' $ lineal, entonces $\displaystyle \exists \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $, entonces tenemos que $\displaystyle \left\{ f\left(\vec{u}_{1}\right), \ldots, f\left(\vec{u}_{n}\right)\right\}  $ es base de $\displaystyle V' $. Sea $\displaystyle g : V' \to V $, tal que $\displaystyle g = f^{-1} $, la única aplicación lineal tal que $\displaystyle g\left(f\left(\vec{u}_{i}\right)\right) = \vec{u}_{i}, \forall i = 1, \ldots, n$. Entonces, tenemos que $\displaystyle f $ tiene inversa, por lo que es biyectiva y, además, como es aplicación lineal, es isomorfismo.
+\end{description}
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont $\displaystyle V \approx V' \iff \dim V = \dim V' $ 
+\end{fcolorary}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Si $\displaystyle V \approx V' $, existe un isomorfismo entre ellos, y podemos encontrar una base con el mismo número de elementos en $\displaystyle V' $ .
+\item[(ii)]  Supongamos que $\displaystyle \dim V = \dim V' $. Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $ y $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\}  $ base de $\displaystyle V' $ y $\displaystyle f: V \to V' $ la única aplicación lineal tal que $\displaystyle f\left(\vec{u}_{i}\right) = \vec{v}_{i}, \forall i = 1, \ldots, n $. Como es una aplicación lineal que lleva bases en bases es un isomorfismo. 
+\end{description}
+\end{proof}
+
+\begin{observation}
+\normalfont Si consideramos la relación de equivalencia de que dos espacios vectoriales sean isomorfos, tenemos que el conjunto cociente tiene tantos elementos como biyecciones.
+\end{observation}
+

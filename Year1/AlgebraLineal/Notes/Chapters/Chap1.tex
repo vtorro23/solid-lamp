@@ -308,7 +308,7 @@ Sean $\displaystyle B_{1} =\left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}
 \end{fcolorary}
 
 \begin{flema}[]
-	\normalfont Si $S \subset V$ es linealmente independiente y $\displaystyle \vec{x} \in V $ y $\displaystyle \vec{x} \not\in L\left(S\right) $, tenemos que la familia $\displaystyle S \cup \left\{ \vec{s}\right\}   $ es linealmente independiente. 
+	\normalfont Si $S \subset V$ es linealmente independiente y $\displaystyle \vec{x} \in V $ y $\displaystyle \vec{x} \not\in L\left(S\right) $, tenemos que la familia $\displaystyle S \cup \left\{ \vec{x}\right\}   $ es linealmente independiente. 
 \end{flema}
 
 \begin{proof}
@@ -331,7 +331,7 @@ Además, si $\displaystyle \dim L = n $ y $\displaystyle \left\{ \vec{x}_{1}, \v
 \end{proof}
 
 \begin{ftheorem}[Teorema de apliación de base]
-\normalfont Sea $\displaystyle L $ un suespacio vectorial de $\displaystyle V $ y sea $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\}  $ una base de $\displaystyle L $. Entonces existe $\displaystyle \left\{ \vec{u}_{p+1}, \vec{u}_{p+2}, \ldots, \vec{u}_{n}\right\} \subset V $ tales que $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}, \vec{u}_{p+1}, \vec{u}_{p+2}, \ldots, \vec{u}_{n}\right\}  $ son base de $\displaystyle V $.
+\normalfont Sea $\displaystyle L $ un subespacio vectorial de $\displaystyle V $ y sea $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}\right\}  $ una base de $\displaystyle L $. Entonces existe $\displaystyle \left\{ \vec{u}_{p+1}, \vec{u}_{p+2}, \ldots, \vec{u}_{n}\right\} \subset V $ tales que $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}, \ldots, \vec{x}_{p}, \vec{u}_{p+1}, \vec{u}_{p+2}, \ldots, \vec{u}_{n}\right\}  $ son base de $\displaystyle V $.
 \end{ftheorem}
 
 \begin{proof}
@@ -387,4 +387,224 @@ A continuación demostramos que si $\displaystyle L \in \mathcal{L}\left(V\right
 \[\therefore L ' \subset L .\]
 Por todo ello, $\displaystyle L' = L_{1}+L_{2} $.
 \end{proof}
+
+\begin{ftheorem}[Fórmula de Grassmann]
+\normalfont Supongamos que $\displaystyle V $ es de dimensión finita, por lo que todos los conjuntos que vamos a tratar a continuación son de dimensión finita.
+\[\dim \left(L_{1} + L_{2}\right) = \dim L_{1} + \dim L_{2} - \dim \left(L_{1} \cap L_{2}\right) .\]
+\end{ftheorem}
+
+\begin{proof}
+	Sea $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \ldots, \vec{u}_{m}\right\}  $ una base de $\displaystyle L_{1} \cap L_{2} $, y sea $\displaystyle v = \dim \left(L_{1} \cap L_{2}\right) $. Podemos ampliar esta base hasta obtener una base de $\displaystyle L_{1} $ y $\displaystyle L_{2} $. Sea $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \ldots, \vec{u}_{m}, \vec{u}_{m+1} \ldots, \vec{u}_{r}\right\} $ una base de $\displaystyle L_{1} $. Sea $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \ldots, \vec{u}_{m}, \vec{v}_{m+1}, \ldots, \vec{v}_{s}\right\} $ base de $\displaystyle L_{2} $ . Queremos ver que $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \ldots, \vec{u}_{m}, \ldots, \vec{u}_{m+1}, \ldots,\vec{u}_{r}, \vec{v}_{m+1}, \ldots, \vec{v}_{s}\right\} $  es base de $\displaystyle L_{1}+L_{2} $. Primero queremos ver que es sistema de generadores. Sea $\displaystyle \vec{x} \in L_{1}+L_{2} $. Entonces, existen $\displaystyle \vec{x}_{1}\in L_{1} $ y $\displaystyle \vec{x}_{2}\in L_{2} $ tales que $\displaystyle \vec{x} = \vec{x}_{1} + \vec{x}_{2} $. Como anteriormente hemos definido bases para $\displaystyle L_{1} $ y $\displaystyle L_{2} $, tenemos que existen $\displaystyle a^{i}\in\K $ tales que 
+	\[\vec{x}_{1} = a^{1}\vec{u}_{1} + a^{2}\vec{u}_{2} + \cdots + a^{r}\vec{u}_{r} .\]
+Similarmente, existen $\displaystyle b^{i}\in \K $ tales que
+\[\vec{x}_{2} = b^{1}\vec{u}_{1} + \cdots + b^{m}\vec{u}_{m}+b^{r+1}\vec{v}_{r+1} + \cdots + b^{s}\vec{v}_{s} .\]
+Por tanto, tenemos que $\displaystyle \vec{x} $ se puede expresar como combinación lineal de $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{m}, \vec{u}_{m+1}, \ldots, \vec{u}_{r}, \vec{v}_{m+1}, \ldots, \vec{v}_{s}\right\}  $. 
+\[\vec{x} = \vec{x}_{1} + \vec{x}_{2} = \sum^{r}_{i=1}a^{i}\vec{u}_{i} + \sum^{m}_{i=1}b^{1}\vec{u}_{i} + \sum^{s}_{i = m+1}b^{i}\vec{v}_{i} .\]
+Por tanto, es sistema de generadores, ahora tenemos que ver que son linealmente independientes. Sean $\displaystyle a^{i}, b^{j} \in \K $ tales que 
+\[
+\begin{split}
+  a^{1}\vec{u}_{1} + a^{2}\vec{u}_{2} + \cdots +a^{m}\vec{u}_{m} + \cdots + a^{r}\vec{u}_{r+1} + \cdots + \cdots + b^{m+1}\vec{v}_{m+1} + \cdots + b^{s}\vec{v}_{s} = \vec{0}  
+\end{split}
+\]
+\[ \sum^{r}_{i=1}a^{i}\vec{u}_{i} + \sum^{s}_{i = m+1}b^{i}\vec{v}_{i} = \vec{0}. \]
+
+Sea $\displaystyle \vec{y} = \sum^{r}_{i = 1} a^{i}\vec{u}_{i}$ por lo que $\displaystyle \vec{y} \in L_{1} $. Entonces, 
+\[-\vec{y} = \sum^{s}_{i = m+1}b^{i}\vec{v}_{i} \in L_{2} .\]
+Por tanto, $\displaystyle \vec{y} \in L_{1}\cap L_{2} $. Entonces, $\displaystyle \vec{y} $ se puede expresar como combinación lineal de los vectores de la base de la intersección. Es decir, existen $\displaystyle c^{i} \in \K $ tales que 
+\[\vec{y} = c^{1}\vec{u}_{1} + c^{2}\vec{u}_{2} + \cdots + c^{m}\vec{u}_{m} .\]
+Entonces, 
+\[\vec{0} = \vec{y} - \vec{y} = \sum^{m}_{j=1}c^{j}\vec{u}_{j} + \sum^{s}_{i = m+1}b^{i}\vec{v}_{i} = \vec{0} .\]
+Como la base de $\displaystyle L_{2} $ es linealmente independiente (porque es una base), tenemos que $\displaystyle c^{1} = c^{2} = \cdots = c^{r} = b^{1} = \cdots = b^{q} = 0 $. Consecuentemente, $\displaystyle \sum^{r}_{i=1}a^{i}\vec{u}_{i} = \vec{0} $ y, dado que $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r}\right\}  $ es base de $\displaystyle L_{1} $, tenemos que $\displaystyle a^{i}=0, \forall i = 1, \ldots, r $. Por tanto, hemos visto que el conjunto que estábamos estudiando es base. \\ \\
+Esta base tiene dimensión $\displaystyle r + s = r + \left(s + m\right) - m$.
+\end{proof}
+
+Si $\displaystyle L_{1}\cap L_{2} = \left\{ \vec{0}\right\}  $, tenemos que $\displaystyle \dim L_{1} + \dim L_{2} = \dim \left(L_{1} + L_{2}\right) $.
+
+\begin{fdefinition}[]
+	\normalfont Sean $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $ su suma es directa si $\displaystyle L_{1} \cap L_{2} = \left\{ \vec{0}\right\}  $ y se escribe de la siguiente manera:
+	\[L_{1} \oplus L_{2}.\]
+\end{fdefinition}
+
+\begin{fprop}[]
+	\normalfont Sean $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $. Entonces
+	\[L_{1} \oplus L_{2} \iff \forall \vec{x}\in L_{1} + L_{2}, \; \exists!\vec{x}_{1} \in L_{1}, \vec{x}_{2} \in L_{2}, \; \vec{x} = \vec{x}_{1} + \vec{x}_{2} .\]
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Supongamos que $\displaystyle L_{1} \oplus L_{2} $. Asumimos que existen, $\displaystyle \vec{x}_{1}, \vec{y}_{1} \in L_{1} $ y $\displaystyle \vec{x}_{2}, \vec{y}_{2} \in L_{2} $ tales que si $\displaystyle \vec{x} \in L_{1} + L_{2} $ tenemos que 
+	\[\vec{x} = \vec{x}_{1} + \vec{x}_{2} = \vec{y}_{1} + \vec{y}_{2} .\]
+Entonces, 
+\[
+\begin{split}
+& \vec{0} = \left(\vec{x}_{1} - \vec{y}_{1}\right) + \left(\vec{x}_{2} - \vec{y}_{2}\right) .\\ 
+\Rightarrow & \vec{x}_{1} - \vec{y}_{1} = \vec{y}_{2} - \vec{x}_{2}
+\end{split}
+\]
+Consecuentemente, $\displaystyle \vec{x}_{1} - \vec{y}_{1}, \vec{y}_{2} - \vec{x}_{2} \in L_{1} \cap L_{2} $, por tanto, $\displaystyle \vec{x}_{1}-\vec{y}_{1} = \vec{0} \iff \vec{x}_{1} = \vec{y}_{1} $. Similarmente, $\displaystyle \vec{y}_{2} = \vec{x}_{2} $.
+\item[(ii)] Suponemos que $\displaystyle \forall \vec{x}\in L_{1} + L_{2}, \; \exists!\vec{x}_{1} \in L_{1}, \vec{x}_{2} \in L_{2}, \; \vec{x} = \vec{x}_{1} + \vec{x}_{2} $. Queremos ver que $\displaystyle L_{1}\cap L_{2} = \left\{ \vec{0}\right\}  $. Sea $\displaystyle \vec{x} \in L_{1} \cap L_{2} $. Tenemos que $\displaystyle \vec{x} = \vec{x} + \vec{0} = \vec{0} + \vec{x} $. Tenemos que $\displaystyle \vec{0} \in L_{1} \cap L_{2} $. Como la expresión de $\displaystyle \vec{x} $ ha de ser única, tenemos que $\displaystyle \vec{x} = \vec{0} $, por lo que $\displaystyle L_{1}\cap L_{2} = \left\{ \vec{0}\right\}  $.
+\end{description}
+\end{proof}
+
+Tenemos que si $\displaystyle L_{1}, L_{2}, \ldots, L_{k} \in \mathcal{L}\left(V\right) $, 
+\[\left(L_{1} + L_{2}\right) + L_{3} = \left\{ \left(\vec{x}_{1} + \vec{x}_{2}\right) + \vec{x}_{3}\; : \; \vec{x}_{1} \in L_{1}, \vec{x}_{2} \in L_{2}, \vec{x}_{3} \in L_{3}\right\} = L_{1}+\left(L_{2} + L_{3}\right) .\]
+Generalmente, esta suma es asociativa, es decir se puede escribir
+\[L_{1} + L_{2} + \cdots + L_{k} = \left\{ \vec{x}_{1} + \vec{x}_{2} + \cdots + \vec{x}_{k} \; : \; \vec{x}_{i} \in L_{i}\right\}  .\]
+
+\begin{fdefinition}[]
+\normalfont Diremos que la suma $\displaystyle L_{1} + L_{2} + \cdots + L_{k}$ es directa si $\displaystyle \forall \vec{x} \in L_{1} + L_{2} + \cdots + L_{k}, \exists! \vec{x}_{i} \in L_{i} $ tales que $\displaystyle \vec{x} = \sum^{k}_{i=1}\vec{x}_{i} $. Esto se denotará de la siguiente manera:
+\[L_{1} \oplus L_{2} \oplus \cdots \oplus L_{k}.\]
+\end{fdefinition}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle L_{1}, \ldots, L_{k} $, entonces $\displaystyle L_{1} \oplus \cdots \oplus L_{k} $ si y solo si $\displaystyle \forall i = 1, \ldots, k $, 
+\[L_{i} \cap \left(L_{1} + L_{2} + \cdots + L_{i-1} + L_{i+1} + \cdots + L_{k}\right) = \left\{ \vec{0}\right\}  .\]
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Demostramos la primera implicación. Supongamos que $\displaystyle \forall i = 1, \ldots, k $, y sea $\displaystyle \vec{x} \in L_{i} \cap \left(L_{1} + \cdots + L_{i-1} + L_{i+1} + \cdots + L_{k}\right) $. Queremos decir que $\displaystyle \vec{x} = \vec{0} $. Tenemos que, dado que $\displaystyle \vec{x}\in L_{i} $:
+	\[\vec{x} = \vec{0} + \cdots + \vec{0} + \vec{x}_{i} + \vec{0} + \cdots + \vec{0} .\]
+Como $\displaystyle \vec{x} \in L_{i} \cap \left(L_{1} + \cdots + L_{i-1} + L_{i+1} + \cdots + L_{k}\right) $, tenemos que $\displaystyle \vec{x}\in L_{1} + \cdots + L_{i-1}+L_{i+1}+\cdots + L_{k} $ :
+\[\vec{x} = \vec{x}_{1} + \cdots + \vec{x}_{i-1} + \vec{x}_{i+1} + \cdots + \vec{x}_{k} .\]
+Como $\displaystyle L_{1} \oplus \cdots \oplus L_{k} $, tenemos que la expresión de $\displaystyle \vec{x} $ es única, por lo que $\displaystyle \vec{x}=\vec{0} $.
+\item[(ii)] Demostramos la siguiente implicación. Asumimos que 
+	\[\displaystyle \forall i = 1, \ldots, k; \; L_{i} \cap \left(L_{1} + L_{2} + \cdots + L_{i-1} + L_{i+1} +\cdots + L_{k}\right) = \left\{ \vec{0}\right\}.\] 
+Sea 
+	\[\vec{x} = \sum^{k}_{i=1}\vec{x}_{i} = \sum^{k}_{i=1}\vec{y}_{i} .\]
+Con $\displaystyle \vec{x}_{i}, \vec{y}_{i} \in L_{i} $, tenemos que 
+\[\vec{0} = \left(\vec{x}_{1}-\vec{y}_{1}\right) + \cdots + \left(\vec{x}_{i} + \vec{y}_{i}\right) + \cdots + (\vec{x}_{k}+\vec{y}_{k}) .\]
+\[\therefore \vec{y}_{i}-\vec{x}_{i} = \left(\vec{x}_{1} - \vec{y}_{1}\right) + \cdots + \left(\vec{x}_{i-1}-\vec{y}_{i-1}\right) + \left(\vec{x}_{i+1} - \vec{y}_{i+1}\right) + \cdots + \left(\vec{x}_{k} - \vec{y}_{k}\right) .\]
+Por lo que $\displaystyle \vec{y}_{i} - \vec{x}_{i} = \vec{0}, \forall i = 1, \ldots, k $. Si esto no fuera cierto para algún $\displaystyle \vec{x}_{j}- \vec{y}_{j} $, podríamos despejarlo y tendríamos que está en la intersección pero a la vez no es $\displaystyle \vec{0} $, lo cual contradice nuestra hipótesis.
+\end{description}
+\end{proof}
+
+\begin{fdefinition}[]
+	\normalfont $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $ son \textbf{complementarios} si $\displaystyle L_{1} \oplus L_{2} $ y $\displaystyle V = L_{1} \oplus L_{2} $. 
+	\[L_{1}\oplus L_{2} = V \iff \forall\vec{x}\in V, \exists! \vec{x}_{1}\in L_{1}, \vec{x}_{2}\in L_{2}, \; \vec{x} = \vec{x}_{1} + \vec{x}_{2} .\]	
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle L \in \mathcal{L}\left(V\right) $, entonces existe $\displaystyle L' \in \mathcal{L}\left(V\right) $ tal que $\displaystyle L \oplus L' = V $.
+\end{ftheorem}
+
+\begin{proof}
+	Sea $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \ldots, \vec{u}_{r}\right\}  $ una base de $\displaystyle L $ y sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r}, \vec{u}_{r+1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $. La manera de ampliar una base no es única. Sea $\displaystyle L' $ el subespacio generado por los vectores que he añadido a la base de $\displaystyle L $ para formar la base de $\displaystyle V $, es decir, 
+	\[L' = L(\left\{ \vec{u}_{r+1}, \ldots, \vec{u}_{n}\right\})  .\]
+Tenemos que $\displaystyle \forall \vec{x}\in V $, existen $\displaystyle a^{i}\in\K $ tales que 
+\[\vec{x} = a^{1}\vec{u}_{1}+ \cdots + a^{r}\vec{u}_{r} + a^{r+1}\vec{u}_{r+1} +\cdots + a^{n}\vec{u}_{n} .\]
+Sea $\displaystyle \vec{x}_{1} = a^{1}\vec{u}_{1}+ \cdots + a^{r}\vec{u}_{r} \in L $ y $\displaystyle \vec{x}_{2} = a^{r+1}\vec{u}_{r+1} +\cdots + a^{n} \in L' $. Vamos a ver que $\displaystyle L \cap L' = \left\{ \vec{0}\right\}  $. Sabemos que $\displaystyle \left\{ \vec{0}\right\} \subset L \cap L' $. Si $\displaystyle \vec{x}\in L\cap L' $. Entonces existen $\displaystyle a^{i}\in\K $ tales que
+\[\vec{x} = a^{1}\vec{u}_{1} + \cdots + a^{r}\vec{u}_{r} .\]
+Como $\displaystyle \vec{x}\in L' $, existen $\displaystyle a^{j} \in \K $ tales que 
+\[\vec{x} = a^{r+1} \vec{u}_{r+1} + \cdots + a^{n}\vec{u}_{n} .\]
+Entonces, 
+\[\vec{0} = \left(a^{1}\vec{u}_{1} + \cdots + a^{r}\vec{u}_{r}\right) - \left(a^{r+1} \vec{u}_{r+1} + \cdots + a^{n}\vec{u}_{n}\right) .\]
+Esto es una combinación lineal de los elementos de una base que me da el vector nulo. Como las bases son linealmente independientes, tenemos que 
+\[a^{1} = \cdots = a^{r} = a^{r+1} = \cdots = a^{n} = 0 .\]
+Por tanto, $\displaystyle \vec{x} = \vec{0} $. Consecuentemente, la suma es directa. 
+\end{proof}
+
+\section{Espacio vectorial cociente}
+
+\begin{fdefinition}[]
+\normalfont Definimos la relación de equivalencia:
+\[\vec{x} \mathcal{R} \vec{y} \iff \vec{y}-\vec{x} \in L .\]
+Si $\displaystyle \vec{x}\in V $,
+\[\displaystyle \left[\vec{x}\right] = \left\{ \vec{y} \in V \; : \; \vec{y}-\vec{x} \in L\right\} = \left\{ \vec{y} \in V \; : \; \vec{y}-\vec{x} = \vec{l}\right\}  = \left\{ \vec{x} + \vec{l} \; : \; \vec{l}\in L\right\}  = \vec{x} + L  \]
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle V $ un $\displaystyle \K $-espacio vectorial. Si $\displaystyle \vec{x}, \vec{y} \in V $ decimos que $\displaystyle \vec{x} R \vec{y} $ si $\displaystyle \vec{x} - \vec{y} \in L $, donde $\displaystyle L \in \mathcal{L}\left(V\right) $. Tenemos que $\displaystyle R $ es una relación de equivalencia en $\displaystyle V $.
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Reflexiva. Si $\displaystyle \vec{x} \in V $, tenemos que 
+	\[\vec{x}-\vec{x} \in \vec{0} \in L .\]
+\item[(ii)] Simétrica. Si $\displaystyle \vec{x}, \vec{y} \in V $ tal que $\displaystyle \vec{x} R \vec{y} $, tenemos que 
+	\[\vec{x} - \vec{y} \in L \iff \vec{y} - \vec{x} \in L .\]
+Pues $\displaystyle \vec{y}-\vec{x} = \left(-1\right)\left(\vec{x}-\vec{y}\right) \in L $. 
+\item[(iii)] Transitiva. Si $\displaystyle \vec{x} R \vec{y} $ y $\displaystyle \vec{y} R \vec{z} $, tenemos que $\displaystyle \vec{x}-\vec{y} \in L $ y $\displaystyle \vec{y}-\vec{z} \in L $. Como $\displaystyle L $ es espacio vectorial tenemos que:
+	\[\left(\vec{x}-\vec{y}\right)+\left(\vec{y}-\vec{z}\right) = \vec{x}-\vec{z} \in L .\]
+\end{description}
+\end{proof}
+
+Si $\displaystyle \vec{x} \in V $, tenemos que 
+\[ \left[\vec{x}\right]  = \left\{ \vec{y} \in V \; : \; \vec{y}R\vec{x}\right\} = \left\{ \vec{y}\in V\; : \; \vec{y}-\vec{x} \in L\right\} = \left\{ \vec{y} \in V \; : \; \exists \vec{l}\in L, \; \vec{y}-\vec{x} = \vec{l}\right\} = \left\{ \vec{x}+\vec{l} \; : \; \vec{l}\in L\right\} = \vec{x} + L  .\]
+\begin{fdefinition}[Espacio cociente]
+\normalfont 
+\[V / R = V / L = \left\{ \vec{x} + L \; : \; \vec{x} \in V\right\}  .\]
+\end{fdefinition}
+
+En $\displaystyle V / L $ defino una suma y un producto por escalares:
+\[
+\begin{split}
++ : & V/L \times V/L \to V/L \\
+    & \left(\vec{x} + L, \vec{y} + L\right) \to \left(\vec{x} + L\right) + \left(\vec{y}+L\right) = \left(\vec{x}+\vec{y}\right) + L.
+\end{split}
+\]
+Si $\displaystyle \vec{x} + L  = \vec{x'} + L$ y $\displaystyle \vec{y}+L = \vec{y'}+ L $. Tenemos que ver que si $\displaystyle \vec{x} + L = \vec{y} + L $, entonces $\displaystyle \vec{x'} + L = \vec{y'} + L $. \footnote{El objetivo, tanto en la suma como en el producto por escalares, es ver que realmente se trata de una aplicación, es decir, si cojo $\displaystyle [\vec{x}] = [\vec{x'}]$ y $\displaystyle [\vec{y}] = [\vec{y'}] $, me tiene que dar que $\displaystyle [\vec{x} + \vec{y}] = [\vec{x'} + \vec{y'}] $.}  Tenemos que 
+\[\vec{x'} = \vec{x} + \vec{l} \quad \text{y} \quad \vec{y'} = \vec{y} + \vec{l'}, \quad \text{con}\; \vec{l}, \vec{l'}\in L .\]
+\[\vec{x'} + \vec{y'} = \left(\vec{x}+ \vec{l}\right) + \left(\vec{y}+\vec{l'}\right) = \left(\vec{x} + \vec{y}\right) + \left(\vec{l} + \vec{l'}\right) .\]
+Entonces, 
+\[\left(\vec{x'}+ \vec{y'}\right)-\left(\vec{x}+\vec{y}\right) = \vec{l}+\vec{l'}\in L .\]
+Entonces, $\displaystyle \left(\vec{x}+\vec{y}\right)R\left(\vec{x'}+\vec{y'}\right) $, por lo que sus clases de equivalencia son iguales. 
+\begin{ftheorem}[]
+\normalfont $\displaystyle \left(V/L, +\right) $ es un grupo abeliano. 
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(i)] $\displaystyle \forall\vec{x}, \vec{y} \in V $, 
+	\[\left(\vec{x} + L\right) + \left(\vec{y} + L\right) = \left(\vec{x} + \vec{y}\right) + L = \left(\vec{y}+\vec{x}\right)+L .\]
+\item[(ii)] $\displaystyle \forall \vec{x}, \vec{y}, \vec{z} \in V $,
+	\[\left(\left(\vec{x}+L\right)+\left(\vec{y}+L\right)\right)+\left(\vec{z}+L\right) = \left(\left(\vec{x}+\vec{y}\right)+L\right)+\left(\vec{z}+L\right) = \left(\left(\vec{x}+\vec{y}\right)+\vec{z}\right)+L = \left(\vec{x}+L\right)+\left(\left(\vec{y}+L\right)+\left(\vec{z}+L\right)\right) .\]
+\item[(iii)] Si consideramos la clase $\displaystyle \vec{0}+L $, tenemos que $\displaystyle \forall \vec{x} \in V $, 
+	\[\left(\vec{0}+L\right)+\left(\vec{x}+L\right) = \left(\vec{0}+\vec{x}\right) + L =\vec{x}+ L .\]
+\item[(iv)] Si $\displaystyle \vec{x} \in V $, el opuesto será, $\displaystyle -\left(\vec{x}+L\right) = \left(-\vec{x}\right) + L $.
+	\[\left(\vec{x} + L\right) + \left(-\left(\vec{x}+L\right)\right)=\left(\vec{x} + L\right)+\left(\left(-\vec{x}\right)+L\right) = \left(\vec{x}-\vec{x}\right)+L = \vec{0} + L .\]
+\end{description}
+\end{proof}
+
+El producto por escalares está definido así:
+\[
+\begin{split}
+	\cdot & \K \times V/L \to V/L \\
+	    \forall a \in \K, \forall \vec{x} \in V  & a \cdot \left(\vec{x} + L\right) = \left(a\vec{x}\right)+ L.
+\end{split}
+\]
+Queremos ver que se trata de una aplicación. Si $\displaystyle \vec{x'}+L = \vec{x}+L $, queremos ver que $\displaystyle \left(a\vec{x'} \right)+ L = \left(a\vec{x} \right)+ L $. Tenemos que $\displaystyle \vec{x'} - \vec{x} \in L $, por lo que $\displaystyle a\vec{x}'-a\vec{x} \in L $. Por tanto, 
+\[\left(a\vec{x}\right)+ L = \left(a\vec{x'}\right)+L .\]
+
+\begin{observation}
+\normalfont Estas operaciones hacen $\displaystyle V/L $ un espacio vectorial sobre $\displaystyle \K $.
+\end{observation}
+
+\begin{ftheorem}[]
+\normalfont La dimensión del espacio vectorial $\displaystyle V/L $ se puede expresar como:
+\[ \dim\left(V/L\right) = \dim\left(V\right) - \dim\left(L\right) .\]
+\end{ftheorem}
+
+\begin{proof}
+	Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r}\right\}  $ base de $\displaystyle L $ y sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r}, \ldots, \vec{u}_{n}\right\}  $ una base de $\displaystyle V $. Si $\displaystyle i = 1, \ldots, r $, tenemos que 
+	\[\vec{u}_{i} = \vec{u}_{i} - \vec{0} \in L \Rightarrow \vec{u}_{i}+L = \vec{0} + L .\]
+	Vamos a demostrar que $\displaystyle \left\{ \vec{u}_{r+1}+L, \ldots, \vec{u}_{n}+L\right\}  $ base de $\displaystyle V/L $. Primero vemos que es un sistema de generadores. Si $\displaystyle \vec{x} \in V $, queremos ver que la clase de $\displaystyle \vec{x} $ se puede expresar como combinación lineal de estas clases. Existen $\displaystyle a^{j}\in\K $ tales que:
+	\[ \vec{x} = \underbrace{ a^{1}\vec{u}_{1}+ \cdots + a^{r}\vec{u}_{r}}_{\in L}+ a^{r+1}\vec{u}_{r+1}+\cdots+a^{n}\vec{u}_{n}  .\]
+	Entonces, $\displaystyle \vec{x} $ está relacionado con $\displaystyle a^{r+1}\vec{u}_{r+1}+\cdots+a^{n}\vec{u}_{n} $. Por tanto, 
+	\[\vec{x} + L = \left(a^{r+1}\vec{u}_{r+1} + \cdots + a^{n}\vec{u}_{n} \right)+L = a^{r+1}\left(\vec{u}_{r+1}+L\right)+\cdots+a^{n}\left(\vec{u}_{n}+L\right).\]
+	Por tanto, $\displaystyle \left\{ \vec{u}_{r+1} + L, \ldots, \vec{u}_{n}+ L\right\}  $ es un sistema de generadores de $\displaystyle V/L $. Ahora tenemos que ver que son linealmente independientes. 
+	\[b^{r+1}\left(\vec{u}_{r+1}+L\right) + \cdots + b^{n}\left(\vec{u}_{n}+L\right) = \vec{0} + L.\]
+Tenemos que
+\[(b^{r+1}\vec{u}_{r+1}+ \cdots + b^{n}\vec{u}_{n}) + L = \vec{0} + L .\]
+Entonces, 
+\[b^{r+1}\vec{u}_{r+1} + \cdots + b^{n}\vec{u}_{n} - \vec{0} \in L .\]
+Entonces, podemos escribir la expresión anterior como combinación lineal de la base de $\displaystyle L $: 
+\[b^{r+1}\vec{u}_{r+1}+\cdots +b^{n}\vec{u}_{n} = b^{1}\vec{u}_{1} + \cdots + b^{r}\vec{u}_{r} .\]
+\[\Rightarrow \left(-b^{1}\right)\vec{u}_{1} + \left(-b^{2}\right)\vec{u}_{2} + \cdots + \left(-b^{r}\right)\vec{u}_{r} + \cdots + b^{n}\vec{u}_{n} = \vec{0} .\]
+Dado que $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r}, \ldots, \vec{u}_{n}\right\}  $ es una base de $\displaystyle V $ , $\displaystyle b^{1} = b^{2} = \cdots = b^{r} = \cdots = b^{n} = 0 $.
+\end{proof}
+
+\begin{observation}
+\normalfont Podemos formar la base de un espacio cociente $\displaystyle V/L $ a partir de la expansión de la base de $\displaystyle L $ para obtener una base de $\displaystyle V $.
+\end{observation}
 
