@@ -198,7 +198,7 @@ Como $\displaystyle 0 \to 0 $ y $\displaystyle \frac{1}{n^{k}} \to 0 $, tenemos 
 \end{fdefinition}
 
 \begin{ftheorem}[]
-	\normalfont Si existe $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset \R $ converge, entonces está acotada. 
+	\normalfont Si $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset \R $ converge, entonces está acotada. 
 \end{ftheorem}
 
 \begin{proof}
@@ -341,6 +341,8 @@ Por tanto,
 Entonces, $\displaystyle \left|x^{\frac{1}{m}}-x_{n}^{\frac{1}{m}}\right| \to 0 $.
 \end{proof}
 
+\section{Criterios de Convergencia}
+
 \begin{fprop}[]
 \normalfont Si $\displaystyle 0 < r < 1 $, entonces $\displaystyle r^{n} \to 0 $.
 \end{fprop}
@@ -387,5 +389,354 @@ Por tanto, tenemos que $\displaystyle x_{n}^{2} \leq \frac{2}{n} $. Entonces pod
 \[ 0 < \left|n^{\frac{1}{n}}-1\right| = x_{n} \leq \left(\frac{2}{n}\right)^{\frac{1}{2}} .\]
 Por el teorema 2.5 tenemos que $\displaystyle \left(\frac{1}{n}\right)^{\frac{1}{2}} \to 0^{\frac{1}{2}} = 0 $. Entonces, $\displaystyle \left(\frac{2}{n}\right)^{\frac{1}{2}} \to 0 $ y $\displaystyle n^{\frac{1}{n}} \to 1 $.
 \end{description}
+\end{eg}
+
+\begin{ftheorem}[Regla del cociente]
+	\normalfont Si $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset \left(0 , \infty\right)$ y existe $\displaystyle \lim_{n \to \infty} \frac{x_{n+1}}{x_{n}} < 1 $. Entonces, $\displaystyle \lim_{n \to \infty} x_{n} = 0  $. 
+\end{ftheorem}
+
+\begin{proof}
+Sea $\displaystyle l = \lim_{n \to \infty}\frac{x_{n+1}}{x_{n}} $. Como se trata de una sucesión de términos positivos, tenemos que $\displaystyle l \in \left[0,1\right) $ \footnote{Los límites no conservan estrictamente las desigualdades. Considera la sucesión $\displaystyle x_{n} = \frac{1}{n} $. Tenemos que cada elemento es mayor que 0 pero el límite es 0.}. Sea $\displaystyle \epsilon > 0 $, entonces existe $\displaystyle n_{0}\in\N $ tal que si $\displaystyle n \geq n_{0} $ 
+\[ \left|\frac{x_{n+1}}{x_{n}}-l\right| < \epsilon \iff -\epsilon + l< \frac{x_{n+1}}{x_{n}} < \epsilon + l .\]
+Por lo tanto, 
+\[x_{n+1} < \left(l + \epsilon \right)x_{n} .\]
+Consecuentemente, 
+\[ x_{n+1} < \left(l + \epsilon \right)x_{n} < \left(l+\epsilon \right)^{2}x_{n-1} < \cdots < \left(l+\epsilon \right)^{n+1-n_{0}}x_{n_{0}}.\]
+Sea $\displaystyle \epsilon > 0 $ tal que $\displaystyle l + \epsilon < 1 $, por ejemplo, cogemos $\displaystyle \epsilon = \frac{1 - l}{2}$. Tomamos $\displaystyle r = l + \epsilon < 1 $ y obtenemos que si $\displaystyle n \geq n_{0} $ 
+\[ x_{n+1} < r^{n+1}\frac{x_{n_{0}}}{r^{n_{0}}} .\]
+Por la proposición 2.4 tenemos que $\displaystyle r^{n+1} \to 0 $, por lo que $\displaystyle x_{n+1} \to 0 $ (aplicando la regla del bocadillo).
+\end{proof}
+
+\begin{observation}
+\normalfont Si $\displaystyle l = 1 $ el resutlado puede ser falso, considera el caso $\displaystyle x_{n} = n $. Tenemos que
+\[\frac{x_{n+1}}{x}=\frac{n+1}{n} = 1 + \frac{1}{n} \to 1 , \]
+pero 
+\[ \lim_{n \to \infty} n = \infty .\]
+\end{observation}
+
+\begin{eg}
+\normalfont Consideramos la sucesión $\displaystyle x_{n} = \frac{n}{2^{n}} $. Aplicamos la regla del cociente. 
+\[ \frac{x_{n+1}}{x_{n}} = \frac{\frac{n+1}{2^{n+1}}}{\frac{n}{2^{n}}} = \frac{n+1}{n} \cdot \frac{1}{2} \to \frac{1}{2} < 1 .\]
+Entonces, $\displaystyle x_{n} \to 0 $.
+\end{eg}
+
+\begin{fdefinition}[Monotonía]
+	\normalfont Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset \R$. Se dice que 
+	\begin{description}
+		\item[(i)] $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es \textbf{creciente} si $\displaystyle x_{n} \leq x_{n+1} $ \footnote{Es estrictamente creciente si $\displaystyle x_{n} < x_{n+1} $. También funciona así si es estrictamente decreciente.} .
+		\item[(ii)] $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es \textbf{decreciente} si $\displaystyle x_{n}\geq x_{n+1} $.
+		\item[(iii)] $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es \textbf{monótona} si es creciente o decreciente.
+	\end{description}
+\end{fdefinition}
+
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset \R$. 
+	\begin{description}
+		\item[(i)] Si $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es creciente y está acotada superiormente, entonces 
+			\[\lim_{n \to \infty}x_{n} = \sup \left\{ x_{n}\right\} _{n\in\N} .\]
+		\item[(ii)] Si $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es decreciente y está acotada inferiormente, entonces
+			\[\lim_{n \to \infty}x_{n} = \inf \left\{ x_{n}\right\} _{n\in\N} .\]	
+	\end{description}
+\footnote{Lo importante de este teorema es que si una sucesión está acotada y es monótona, entonces existe el límite.} 
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+	\item[(i)] Sea $\displaystyle s = \sup \left\{ x_{n}\right\} _{n\in\N} < \infty $. Sea $\displaystyle \epsilon > 0 $, queremos ver que existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle s - x_{n} < \epsilon, \forall n\geq n_{0} $. Como $\displaystyle s = \sup \left\{ x_{n}\right\} _{n\in\N} $, existe $\displaystyle n_{0} \in \N $ tal que 
+		\[s - \epsilon < x_{n_{0}} .\]
+Además, como se trata de una sucesión creciente, tenemos que si $\displaystyle n \geq n_{0} $, 
+\[ x_{n} \geq x_{n_{0}} > s - \epsilon \iff s-x_{n} < \epsilon  .\]
+\item[(ii)] Se puede demostrar de dos formas: una es similar a la anterior, mientras que la otra se parece a la demostración de la existencia del ínfimo en casos de la existencia de una cota inferior. Comenzamos con la primera. Sea $\displaystyle i = \inf \left\{ x_{n}\right\} _{n\in\N} $. Como $\displaystyle i $ es el ínfimo, sabemos que si $\displaystyle \epsilon > 0 $, existe un $\displaystyle n_{0} \in \N $ tal que 
+	\[x_{n_{0}} < i + \epsilon  .\]
+Además, como la sucesión es decreciente tenemos que si $\displaystyle n \geq 0 $ 
+\[x_{n} < x_{n_{0}} < i + \epsilon  .\]
+Entonces, si $\displaystyle n \geq n_{0} $ tenemos que
+\[ x_{n}-i < \epsilon  .\]
+Por tanto, $\displaystyle \lim_{n \to \infty}x_{n} = \inf \left\{ x_{n}\right\} _{n\in\N} $. \\ \\
+La otra demostración comienza diciendo que si $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es una sucesión decreciente acotada inferiormente, entonces la sucesión $\displaystyle \left\{ -x_{n}\right\} _{n\in\N} $ es una sucesión creciente acotada superiormente. Por un teorema que vimos en el capítulo anterior, sabemos que $\displaystyle \sup \left\{ -x_{n}\right\} _{n\in\N} = -\inf \left\{ x_{n}\right\} _{n\in\N} $. Aplicando el apartado anterior tenemos que 
+\[\lim_{n \to \infty} x_{n} =- \lim_{n \to \infty}\left(-x_{n}\right) = \inf \left\{ x_{n}\right\} _{n\in\N} .\]
+
+\end{description}
+\end{proof}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] 
+	\[\frac{n+1}{n} = 1 + \frac{1}{n} .\]
+Esta sucesión decrece. Además, $\displaystyle 1+ \frac{1}{n} \geq 1 $, es decir, está acotada inferiormente. Entonces, 
+\[\lim_{n \to \infty} \left(1 + \frac{1}{n}\right) = \inf \left\{ 1 + \frac{1}{n}\right\}_{n\in\N} = 1 + \inf \left\{ \frac{1}{n}\right\}_{n\in\N} = 1 .\]
+\item[(ii)] $\displaystyle x_{1} = \frac{1}{2} $, $\displaystyle x_{n} = x_{n-1} + \frac{1}{2^{n}}, \; n\geq 2$. La sucesión va a ser de la forma
+	\[\frac{1}{2}, \; \frac{3}{4}, \; \frac{7}{8}, \; \ldots .\]
+Tenemos que el término genera será $\displaystyle x_{n} = \frac{1}{2} + \cdots + \frac{1}{2^{n}} = \frac{\frac{1}{2}-\frac{1}{2^{n+1}}}{1-\frac{1}{2}} \to 1 $, pues $\displaystyle \frac{1}{2^{n+1}}\to 0 $. 
+\begin{observation}
+\normalfont Si $\displaystyle r > 0 $ y $\displaystyle m > n $, 
+\[\sum^{m}_{j=n}r^{j} = \frac{r^{n}-r^{m+1}}{1-r} .\]
+\end{observation}
+\item[(iii)] $\displaystyle x_{n} = 1 + \frac{1}{2} + \cdots + \frac{1}{n} $. Esta serie diverge. Sabemos que $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es creciente. Si $\displaystyle \lim_{n \to \infty}x_{n} $ existe, entonces estaría acotada superioremnte. Nos vamos a fijar en los términos $\displaystyle x_{2^{n}} $. Tenemos que 
+	\[x_{2^{n}} = 1 + \frac{1}{2} + \left(\frac{1}{3} + \frac{1}{4}\right) + \cdots + \left(\frac{1}{2^{n-1}+1} + \cdots + \frac{1}{2^{n}}\right) .\]
+Tenemos que en el último paréntesis hay $\displaystyle 2^{n}-\left(2^{n-1}+1\right) + 1 = 2^{n-1} $ elementos. Entonces tenemos que
+\[ x_{2^{n}} > 1 + \frac{1}{2} + 2 \cdot \frac{1}{4} + 4 \cdot \frac{1}{8} + \cdots + 2^{n-1} \cdot \frac{1}{2^{n}} = 1 + \frac{1}{2} + \frac{1}{2} + \cdots + \frac{1}{2} = 1 + \frac{n}{2} \to \infty .\]
+Entonces, esta sucesión diverge y, por tanto, $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ no puede estar acotada superiormente. Entonces, la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es divergente.
+\item[(iv)] Número de Euler. 
+	\[e_{n} = \left(1 + \frac{1}{n}\right)^{n} .\]
+Vamos a demostrar que es creciente y que está acotada superiormente. En efecto, 
+\[e_{n} = \left(1 + \frac{1}{n}\right)^{n} = \sum^{n}_{i = 0}\begin{pmatrix} n \\ i \end{pmatrix} \frac{1}{n^{i}}.\]
+\begin{observation}
+\normalfont 
+\[
+\begin{split}
+	\begin{pmatrix} n \\ i \end{pmatrix} \frac{1}{n^{i}} & = \frac{n\left(n-1\right) \cdots 1}{i ! \left(n-i\right)! n^{i}} 
+							     = \frac{n\left(n-1\right) \cdots \left(n-i+1\right)}{i!n^{i}} 
+							     = \frac{1}{i!} \cdot 1 \cdot \frac{n-1}{n} \cdots \frac{n-i+1}{n}\\
+							     &= \frac{1}{i!} \left(1-\frac{1}{n}\right)\left(1 - \frac{2}{n}\right) \cdots \left(1-\frac{i-1}{n}\right) .
+\end{split}
+\]
+\end{observation}
+A partir de la observación 2.8, podemos ver que 
+\[\begin{pmatrix} n \\ i \end{pmatrix} \frac{1}{n^{i}} = \frac{1}{i!} \left(1-\frac{1}{n}\right) \cdots \left(1 - \frac{i-1}{n}\right) < \frac{1}{i!}\left(1-\frac{1}{n+1}\right) \cdots \left(1 - \frac{i-1}{n+1}\right) .\]
+Por lo tanto, 
+\[e_{n+1} = \sum^{n+1}_{i = 0}\begin{pmatrix} n+1 \\ i \end{pmatrix} \frac{1}{\left(n+1\right)^{i}} = \sum^{n}_{i=0}\begin{pmatrix} n+1 \\ i \end{pmatrix}\frac{1}{\left(n+1\right)^{i}} + \frac{1}{\left(n+1\right)^{n+1}} > \sum^{n}_{i=0}\begin{pmatrix} n \\ i \end{pmatrix}\frac{1}{n^{i}} = e_{n}.\]
+Por tanto, $\displaystyle e_{n} < e_{n+1} $, por lo que la sucesión $\displaystyle e_{n} $ es creciente. Ahora tenemos que ver que está acotada, en concreto, que $\displaystyle \forall n \in \N $, $\displaystyle e_{n} \leq 3 $. Usamos que $\displaystyle 2^{j-1} \leq j! $. Partiendo de la observación 2.8, tenemos que 
+\[
+\begin{split}
+\begin{pmatrix} n \\ i \end{pmatrix} \frac{1}{n^{i}} < \frac{1}{i!} \leq \frac{1}{2^{i-1}} .
+\end{split}
+\]
+De esta manera, 
+\[e_{n} \leq 1 + \sum^{n}_{i = 1} \frac{1}{2^{i-1}} = 1 + \sum^{n-1}_{i = 0}\frac{1}{2^{i}}\leq 1 + 2 = 3 .\]
+Por tanto, la sucesión va a converger a $\displaystyle e $, es decir, 
+\[e = \lim_{n \to \infty}\left(1 + \frac{1}{n}\right)^{n} .\]
+\end{description}
+\end{eg}
+
+
+\begin{eg}
+\normalfont Si $\displaystyle r > 0 $ y $\displaystyle x_{n} = r^{\frac{1}{n}} $ entonces $\displaystyle x_{n}\to 1 $. Consideramos varios casos. Si $\displaystyle r = 1 $, es trivial. Si $\displaystyle r > 1 $, entonces vamos a ver si es creciente o decreciente. Tenemos que
+\[ r > 1 \iff r^{n+1} > r^{n} \iff r^{\frac{1}{n}} > r^{\frac{1}{n+1}} .\]
+Es decir, la sucesión decrece y, por tanto, decrece. Como $\displaystyle r > 1 $, entonces, $\displaystyle x_{n} = r > 1 $. Entonces la sucesión decreciente $\displaystyle \left\{ x_{n}\right\} _{n\in\N}$ está acotada inferiormente por 1. Consecuentemente, la sucesión converge. Vamos a demostrar que el límite es 1. Sea $\displaystyle x = \lim_{n \to \infty}r^{\frac{1}{n}} $. Como, $\displaystyle x_{n} > 1 $, tenemos que $\displaystyle x \geq 1 $. Supongamos que $\displaystyle x > 1 $. Tenemos que
+\[x_{n} = r^{\frac{1}{n}} \geq x \Rightarrow r \geq x^{n} .\]
+Si $\displaystyle n \to \infty $ tenemos que $\displaystyle x^{n} $ diverge, por lo que $\displaystyle r  = \infty $. Esto es una contradicción, por lo que debe ser que $\displaystyle \lim_{n \to \infty}x_{n} = 1 $. Ahora, supongamos que $\displaystyle 0 < r < 1 $.
+\end{eg}
+
+\section{Subsucesiones y Teorema de Bolzano-Weiestrass}
+
+\begin{fdefinition}[]
+	\normalfont Dada una sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset \R $ y una sucesión creciente estrictamente de números naturales: $\displaystyle n_{1} < n_{2} < \ldots < n_{j}< n_{j+1} < \cdots  $. Se dice que $\displaystyle \left\{ x_{n_{j}}\right\} _{j\in\N} $ es una \textbf{subsucesión} (o \textbf{parcial}) de $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $.
+\end{fdefinition}
+
+\begin{eg}
+\normalfont Si $\displaystyle x_{n} = \left(-1\right)^{n} $. Una subsucesión sería $\displaystyle x_{2n} = 1 $ y otra sería $\displaystyle x_{2n -1} = -1 $.
+\end{eg}
+
+\begin{ftheorem}[]
+	\normalfont Si $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset\R $ sucesión convergente con $\displaystyle x = \lim_{n \to \infty}x_{n} $, y $\displaystyle \left\{ x_{n_{j}}\right\}_{j\in\N}  $ es una subsucesión, entonces $\displaystyle \lim_{j \to \infty}x_{n_{j}} = x $. 
+\end{ftheorem}
+
+\begin{proof}
+Sea $\displaystyle \epsilon > 0 $, existe $\displaystyle n_{0} \in \N $ tal que si $\displaystyle n \geq n_{0} $ entonces $\displaystyle \left|x_{n}-x\right| < \epsilon  $. Si $\displaystyle n_{j} \geq n_{0} $ entonces $\displaystyle \left|x_{n_{j}}-x\right| < \epsilon  $.
+\end{proof}
+
+\begin{observation}
+\normalfont El teorema anterior sirve para ver que algo no converge. 
+\end{observation}
+
+\begin{eg}
+\normalfont 
+\[x_{n} = 
+\begin{cases}
+0, \; n \; \text{par}\\
+n, \; n \; \text{impar}
+\end{cases}
+.\]
+Tenemos que $\displaystyle x_{2n-1} = 2n-1 $ no converge, por lo que $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ no converge.
+\end{eg}
+
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset\R $. Son equivalentes:
+	\begin{description}
+		\item[(i)] $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ no converge a $\displaystyle x $.
+		\item[(ii)] $\displaystyle \exists \epsilon > 0, \forall n_{0} \in \N, \exists n\geq n_{0}, \; \left|x_{n}-x\right| \geq \epsilon  $.
+		\item[(iii)] $\displaystyle \exists \epsilon > 0 $ y $\displaystyle \exists \left\{ x_{n_{j}}\right\} _{j\in\N}\subset \left\{ x_{n}\right\} _{n\in\N} $ tal que $\displaystyle \left|x_{n_{j}}-x\right| \geq \epsilon , \; \forall j \in \N $.
+	\end{description}
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Tenemos que \textbf{(i)} $\displaystyle  \iff  $ \textbf{(ii)} son equivalentes por definición. 
+\item[(ii)] Vamos a ver que \textbf{(iii)} $\displaystyle \Rightarrow  $ \textbf{(i)}. Como $\displaystyle \left\{ x_{n_{j}}\right\} _{j\in\N} $ no converge a $\displaystyle x $, tenemos que la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ no converge a $\displaystyle x $.
+\item[(iii)] Vamos a ver que \textbf{(ii)} $\displaystyle  \Rightarrow  $ \textbf{(iii)}. Dado $\displaystyle \epsilon > 0 $ de \textbf{(ii)}, sea $\displaystyle n_{1} \geq n_{0} $  tal que $\displaystyle \left|x_{n_{1}}-x\right| \geq \epsilon  $. Tomamos ahora $\displaystyle n_{2} \geq n_{1}+1 > n_{1} $ tal que $\displaystyle \left|x_{n_{2}}-x\right| \geq \epsilon  $. Iterando, obtenemos una colección de índices estrictamente crecientes: $\displaystyle n_{1} < n_{2} < \cdots < n_{j} < \cdots  $, de manera que, 
+	\[ \left| x_{n_{j}} - x\right| \geq \epsilon  .\]
+\end{description}
+\end{proof}
+
+\begin{eg}
+	\normalfont Sea $\displaystyle x_{n} = \sin n $. Vamos a demostrar que no existe el límite. Supongamos que $\displaystyle x \in \bigcup_{k=0}^{\infty}\left[2k\pi, \left(2k+1\right)\pi\right]  $. Entonces $\displaystyle \sin x \geq 0 $. Como la longitud de los intervalos es mayor que uno, sabemos que hay un natural. Por tanto podemos decir que 
+	\[n_{k} \in \left[2k\pi, \left(2k+1\right)\pi\right], \; n_{k} \in \N  .\]
+	Como los intervalos son disjuntos, tenemos que $\displaystyle n_{1} < n_{2} < \cdots < n_{k} < \cdots  $. Si $\displaystyle \lim_{n \to \infty}\sin n = l$, existe $\displaystyle \lim_{k \to \infty} \sin n_{k} = l \geq 0 $. Ahora consideramos el caso $\displaystyle x < 0 $, para ello, tomamos $\displaystyle 0 < \epsilon < \frac{1}{2} $. Sea $\displaystyle I_{\epsilon } = \left[\pi+\epsilon, 2\pi-\epsilon \right]  $. Si $\displaystyle x \in I_{\epsilon } $, tenemos que 
+\[\displaystyle \left|\sin x\right| \geq \left|\sin (\pi + \epsilon)\right| > 0. \]
+	Entonces, la longitud del intervalo es estrictamente mayor que 1. Por tanto, 
+\[\displaystyle \forall k \in \N, \exists m_{k} \in  \left[\left(2k+1\right)-\epsilon, \left(2k+2\right)\pi-\epsilon\right]  \]
+	tal que $\displaystyle \sin m_{k} \leq \sin [\left(2k+1\right)\pi+\epsilon] $. Si $\displaystyle \exists \lim_{n \to \infty}\sin n $, existe el límite de esta subsucesión, es decir, $\displaystyle \exists l =\lim_{k \to \infty}\sin m_{k} \leq \sin \left(\epsilon + \pi\right) < 0 $. Por tanto, tenemos que $\displaystyle l \geq 0$ y $\displaystyle l < 0 $. Esto es una contradicción. 
+\end{eg}
+
+\begin{ftheorem}[Teorema de la sucesión monótona]
+	\normalfont Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset\R $. Entonces $\displaystyle \exists \left\{ x_{n_{j}}\right\}_{j\in\N}\subset \left\{ x_{n}\right\} _{n\in\N} $ que es monótona.
+\end{ftheorem}
+
+\begin{proof}
+	Diremos que $\displaystyle x_{m} $ es un \textbf{pico} de la sucesión si $\displaystyle x_{m} \geq x_{n} $, $\displaystyle \forall n \geq m $. Supongamos que en $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ hay infinitos picos. Entonces podemos crear una subsucesión descreciente (monótona), $\displaystyle \left\{ x_{m_{j}}\right\} _{j\in\N} $ con los picos:
+	\[x_{m_{1}} < x_{m_{2}} < \ldots < x_{m_{j}} < \cdots .\]
+	Si hay un número finito de picos, podemos ir hasta el último pico tal que a partir de este no hay más picos. Supongamos que no hay picos. Es decir, sea $\displaystyle x_{n_{1}} \in \left\{ x_{n}\right\} _{n\in\N} $ tal que $\displaystyle \forall n \geq n_{1} $, $\displaystyle x_{n} $ no es un pico. Por tanto, $\displaystyle \exists n_{2} > n_{1} $ tal que $\displaystyle x_{n_{2}} > x_{n_{1}} $. Iterando, 
+	\[\exists n_{1} < n_{2} < \cdots < n_{j} < \cdots, \]
+tales que
+\[x_{n_{1}} < x_{n_{2}} < \cdots < x_{n_{j}} < \cdots .\]
+Por tanto, la subsucesión $\displaystyle \left\{ x_{n_{j}}\right\} _{j\in\N} $ es creciente y, por tanto, monótona. 
+\end{proof}
+
+\begin{ftheorem}[Teorema de Bolzano-Weiestrass]
+	\normalfont Dada $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset\R $ acotada entonces $\displaystyle \exists \left\{ x_{n_{j}}\right\} _{j\in\N} $ subsucesión convergente.
+\end{ftheorem}
+
+\begin{proof}
+	Por el teorema de la sucesión monótona, sabemos que existe $\displaystyle \left\{ x_{n_{j}}\right\} _{j\in\N} $ subsucesión es monótona. Además, como la sucesión está acotada, la subsucesión también lo está y, por tanto, $\displaystyle \exists \lim_{n \to \infty}x_{n_{j}} $.
+\end{proof}
+
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset\R $ sucesión acotada y $\displaystyle x \in \R $. Si para toda $\displaystyle \left\{ x_{n_{j}}\right\} _{j\in\N} $ subsucesión que converge, lo hace a $\displaystyle x $, entonces $\displaystyle \lim_{n \to \infty}x_{n} = x $.
+\end{ftheorem}
+
+\begin{proof}
+	Sea $\displaystyle \left|x_{n}\right| \leq M, \; \forall n \in \N $ y supongamos que para esta sucesión no existe el límite (por lo que no es igual a $\displaystyle x $). Así, $\displaystyle \exists \epsilon > 0 $ tal que $\displaystyle \exists \left\{ x_{n_{j}}\right\}_{j\in\N}  $ con $\displaystyle \left|x_{n_{j}}-x\right|\geq \epsilon, \forall j \in \N  $. Por hipótesis esta subsucesión esta acotada. Aplicando el teorema de Bolzano-Weiestrass, $\displaystyle \exists \left\{ y_{l}\right\} _{l\in\N} \subset \left\{ x_{n_{j}}\right\} _{j\in\N}$ subsucesión convergente. Entonces tenemos que esta subsucesión converge a $\displaystyle x $. Sin embargo, tenemos que 
+	\[ \left|y_{l}-x\right| \geq \epsilon, \; l \geq l_{0} .\]
+Esto implica que $\displaystyle y_{l} $ no converge a $\displaystyle x $. Esto es una contradicción, por lo que debe ser que $\displaystyle \lim_{n \to \infty}x_{n} = x $.
+\end{proof}
+
+\begin{eg}
+	\normalfont Considera
+\[x_{n} = 
+\begin{cases}
+n, \; n \; \text{par} \\
+0, \; n \; \text{impar} 
+\end{cases}
+.\]
+Satisface que toda subsucesión convergente tiene como límite $\displaystyle 0 $ pero la sucesión no converge (observamos que no es una sucesión acotada).
+\end{eg}
+
+\begin{eg}
+\normalfont Estudiamos la convergencia de $\displaystyle x_{n} = n^{\frac{1}{n}} $. Vamos a ver que es decreciente (monótona). Tenemos que
+\[x_{n+1} = \left(n+1\right)^{\frac{1}{n+1}} < x_{n} = n^{\frac{1}{n}} \iff \left(n+1\right)^{n} < n^{n+1} = n \cdot n^{n} \iff \left(\frac{n+1}{n}\right)^{n} = \left(1+\frac{1}{n}\right)^{n} < n .\]
+Tenemos que
+\[ \left(1 + \frac{1}{n}\right)^{n} < e \leq 3 .\]
+Entonces tenemos que si $\displaystyle n\geq 4 $ (recordamos que no nos importan los primeros términos de la sucesión),
+\[ \left(1 +\frac{1}{n}\right)^{n} < n .\]
+Por tanto, si $\displaystyle n\geq 4 $ la sucesión es decreciente. Además, tenemos que está acotada inferioremnte por 1. Por tanto, la sucesión converge. Tenemos que
+\[n^{\frac{1}{n}} \to l \geq 1 .\]
+Como esta sucesión converge, sabemos que todas las subsucesiones han de converger al mismo límite, por lo que basta con calcular la convergencia de una subsucesión. Vamos a ver que
+\[x_{2n} = \left(2n\right)^{\frac{1}{2n}} \to 1.\]
+Tenemos que
+\[x_{2n} = \left(2n\right)^{\frac{1}{2n}} = 2^{\frac{1}{2n}} \cdot n^{\frac{1}{2n}} = \left(\sqrt{2}\right)^{\frac{1}{n}} \cdot \left(n^{\frac{1}{n}}\right)^{\frac{1}{2}} .\]
+Sabemos que $\displaystyle \left(\sqrt{2}\right)^{\frac{1}{n}} \to 1 $ y $\displaystyle \left(n^{\frac{1}{n}}\right)^{\frac{1}{2}} \to \sqrt{l} $. Entonces tenemos que, 
+\[l = \sqrt{l} \iff l^{2} = l \iff l \in \left\{ 0,1\right\}  .\]
+Podemos descartar 0 porque $\displaystyle l \geq 1 $, por tanto, $\displaystyle l = 1 $.
+\end{eg}
+
+\section{Sucesiones Cauchy}
+
+\begin{fdefinition}[Sucesión de Cauchy]
+	\normalfont Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset \R $. Se dice que $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es una sucesión de \textbf{Cauchy} si $\displaystyle \forall \epsilon > 0, \exists n_{0} \in \N $ tal que $\displaystyle \left|x_{n}-x_{m}\right|<\epsilon  $, con $\displaystyle n,m \geq n_{0} $.
+\end{fdefinition}
+
+\begin{fprop}[]
+	\normalfont Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset\R $. 
+\begin{description}
+	\item[(i)] Si $\displaystyle \lim_{n \to \infty}x_{n} = l $, entonces $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es de Cauchy.
+	\item[(ii)] Si $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es de Cauchy entonces es una sucesión acotada.
+\end{description}
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Sabemos que $\displaystyle \forall \epsilon > 0, \exists n_{0} \in \N $  tal que $\displaystyle \left|x_{n}-l\right| < \frac{\epsilon }{2} $. Así, cogemos $\displaystyle m,n \geq n_{0} $. Entonces, 
+	\[ \left|x_{n} - l\right|<\frac{\epsilon }{2}.\]
+	\[ \left|x_{m}-l\right| < \frac{\epsilon }{2} .\]
+Finalmente, 
+\[
+\begin{split}
+	\left|x_{n}-x_{m}\right| = & \left|x_{n}-l+x_{m}-l\right| \\
+	\leq & \left|x_{n}-l\right| + \left|l-x_{m}\right| \\
+	< & \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon .
+\end{split}
+\]
+\item[(ii)] Cogemos $\displaystyle \epsilon = 1 $, entonces existe $\displaystyle n_{0} \in \N $ tal que si $\displaystyle m,n \geq n_{0} $, $\displaystyle \left|x_{n}-x_{m}\right| < 1 $. Cogemos $\displaystyle m = n_{0} $ y $\displaystyle n\geq n_{0} $. Tenemos que
+	\[ \left|x_{n}-x_{n_{0}}\right| < 1 .\]
+Entonces, 
+\[ \left|x_{n}\right| = \left|x_{n}-x_{n_{0}}+x_{n_{0}}\right| \leq \left|x_{n}-x_{n_{0}}\right| + \left|x_{n_{0}}\right| < 1 + \left|x_{n_{0}}\right| .\]
+Si $\displaystyle n\geq n_{0} $, la sucesión está acotada por $\displaystyle 1 + \left|x_{n_{0}}\right| $, nos queda por acotar los $\displaystyle n < n_{0} $. 
+\[ \left|x_{n}\right| \leq \max \left\{ \max \left\{ \left|x_{k}\right|\; : \; 1 \leq k\leq n_{0}\right\}, 1 + \left|x_{n_{0}}\right| \right\}  .\]
+\end{description}
+\end{proof}
+
+\begin{observation}
+\normalfont Vamos a concluir que ser de Cauchy es equivalente a converger. Esto se cumple en $\displaystyle \R $ pero no en $\displaystyle \Q $! Entonces, podemos pensar que este hecho está relacionado con el axioma de completitud.
+\end{observation}
+
+\begin{ftheorem}[Criterio de convergencia de Cauchy]
+	\normalfont Una sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset \R$ converge si y solo si $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es de Cauchy.
+\end{ftheorem}
+
+\begin{proof}
+	Basta probar que si $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset \R$ es de Cauchy, entonces converge. Por el teorema de Bolzano-Weiestrass, como es una sucesión de Cauchy está acotada, por lo que existe $\displaystyle \left\{ x_{n_{k}}\right\} _{k\in\N} \subset \left\{ x_{n}\right\} _{n\in\N} $ convergente a $\displaystyle l $. Sabemos que $\displaystyle \forall \epsilon > 0, \exists n_{1} \in \N $ tal que si $\displaystyle n, m \geq n_{1} $,
+	\[ \left|x_{n}-x_{m}\right| < \frac{\epsilon }{2} .\]
+Además, $\displaystyle \exists n_{2} \in \N $ tal que si $\displaystyle n_{k} \geq n_{2} $,
+\[ \left|x_{n_{2}}-l\right| < \frac{\epsilon }{2} .\]
+Sea $\displaystyle n_{0} = \max \left\{ n_{1}, n_{2}\right\}  $, si $\displaystyle n \geq n_{0} $, queremos ver que
+\[ \left|x_{n}-l\right|<\epsilon.\]
+Sea $\displaystyle n_{k} \geq n_{0} $ y $\displaystyle n \geq n_{0} $,
+\[ \left|x_{n}-l\right| = \left|x_{n}-x_{n_{k}}+x_{n_{k}}-l\right| \leq \left|x_{n}-x_{n_{k}}\right| + \left|x_{n_{k}}-l\right| < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon .\]
+\end{proof}
+
+\begin{eg}
+\normalfont $\displaystyle x_{1} = 1 $, $\displaystyle x_{2} = 2 $, 
+\[x_{n} = \frac{x_{n-1}+x_{n-2}}{2}, \; n\geq 3 .\]
+Tenemos que la distancia entre dos puntos sucesivos será:
+\[ \left|x_{n+1}-x_{n}\right| = \frac{1}{2^{n-1}}.\]
+Entonces, 
+\[
+\begin{split}
+	\left|x_{m}-x_{n}\right| = & \left|x_{m}-x_{m -1} + x_{m -1} + \cdots + x_{n+1} + x_{n}\right| \\
+	\leq & \left|x_{m}-x_{m -1}\right| + \left|x_{m -1} - x_{m -2}\right| + \cdots + \left|x_{n+1}-x_{n}\right| \\
+	= & \frac{1}{2^{m -2}} + \frac{1}{2^{m -3}}+ \cdots + \frac{1}{2^{n-1}} \\
+	= & \frac{\frac{1}{2^{n-1}}-\frac{1}{2^{m -1}}}{1 - \frac{1}{2}} \to 0, \; \text{si} \; n,m \to \infty.
+\end{split}
+\]
+Así, $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es de Cauchy. En efecto, $\displaystyle x_{n} \to \frac{5}{3} $.
+\end{eg}
+
+\begin{observation}
+\normalfont 
+\begin{itemize} Si $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N}\subset\R $,
+\item Recordamos que $\displaystyle \lim_{n \to \infty}x_{n} = \infty $ si $\displaystyle \forall c > 0, \exists n_{0} \in \N, \forall n\geq n_{0}$ tal que $\displaystyle x_{n} > c $. 
+\item Si $\displaystyle x_{n} \leq y_{n} $ y $\displaystyle \lim_{n \to \infty}x_{n} = \infty $, entonces $\displaystyle \lim_{n \to \infty}y_{n} = \infty $. 
+\item Si $\displaystyle x_{n} \leq y_{n} $ y $\displaystyle \lim_{n \to \infty} y_{n} = - \infty $, entonces $\displaystyle \lim_{n \to \infty}x_{n} = - \infty $.
+\end{itemize}
+\end{observation}
+
+\begin{fcolorary}[]
+	\normalfont Si $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N} \subset \R $ tales que $\displaystyle \lim_{n \to \infty}\frac{x_{n}}{y_{n}} = L \in \left(0, \infty\right) $ y $\displaystyle \lim_{n \to \infty}x_{n} = \infty  $, entonces, $\displaystyle \lim_{n \to \infty} y_{n} =\infty  $.
+\end{fcolorary}
+
+\begin{proof}
+Dado $\displaystyle \epsilon = 1 $, tenemos que existe $\displaystyle n_{1} \in \N $ tal que si $\displaystyle n \geq n_{1} $ 
+\[ \left|\frac{x_{n}}{y_{n}}-L\right|<1 .\]
+Podemos suponer sin pérdida de generalidad que $\displaystyle x_{n}, y_{n} > 0 $. Entonces, tenemos que
+\[ - 1 < \frac{x_{n}}{y_{n}} - L < 1 \iff -y_{n} < x_{n} - y_{n}L < y_{n} .\]
+Así, $\displaystyle x_{n} < y_{n}\left(1 + L\right) $. Tenemos que $\displaystyle x_{n} \to \infty $, por lo que $\displaystyle y_{n}\left(1+L\right) \to \infty $ por lo que $\displaystyle y_{n} \to \infty $.
+\end{proof}
+
+\begin{eg}
+\normalfont 
+\[\lim_{n \to \infty}\frac{3n^{2}+5n}{n^{2}+1} = 3 .\]
+Como $\displaystyle n^{2} + 1 \to \infty $ tenemos que $\displaystyle 3n^{2} + 5n \to \infty $ y viceversa. 
 \end{eg}
 

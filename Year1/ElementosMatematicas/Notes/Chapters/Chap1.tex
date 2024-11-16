@@ -693,3 +693,75 @@ Entonces:
 \normalfont Si $\displaystyle p $ es primo y $\displaystyle a $ no es múltiplo de $\displaystyle p $, entonces $\displaystyle a^{p-1} \equiv 1 \mod p $.
 \end{fcolorary}
 
+\begin{ftheorem}[Inversa módulo $\displaystyle n $ ]
+\normalfont Si $\displaystyle 1 \leq a \leq n $ y $\displaystyle \mcd\left(a,n\right) = 1 $, entonces $\displaystyle a  $ tiene inverso módulo $\displaystyle n $. Es decir, 
+\[\exists c, \; a \cdot c = 1 \mod n, \quad 1 \leq c < n .\]
+Si $\displaystyle \mcd\left(a,n\right) \neq 1 $, $\displaystyle a $ no tiene inversa módulo $\displaystyle n $. Para averiguar la inversa tenemos que resolver esta congruencia: 
+\[ac \equiv 1 \mod n
+\begin{cases}
+a^{-1} \equiv c \mod n \\
+\mcd\left(a,n\right) = 1
+\end{cases}
+.\]
+\end{ftheorem}
+
+\begin{eg}
+\normalfont $\displaystyle 777^{-1} \mod 1009 $. Queremos resolver la congruencia $\displaystyle 777x \equiv 1 \mod 1009 $. Calculamos la identidad de Bézout para obtener:
+\[ 1 = -274 \cdot 777 + 211 \cdot 1009 \Rightarrow x \equiv -274 \equiv 735 \mod 1009 .\]
+\end{eg}
+
+\begin{eg}
+\normalfont Calculamos $\displaystyle 5^{28575} \mod 17 $. En primer lugar, intentamos aplicar el teorema de Euler. Vemos que $\displaystyle \mcd\left(5,17\right) = 1 $, por lo que lo podemos aplicar. Entonces, tenemos que
+\[\varphi\left(17\right) = 16 .\]
+Además, tenemos que 
+\[ 5^{28575} \equiv 5^{16 \cdot 1785 + 15} \equiv 5^{15} \mod 17 .\]
+Por otro lado tenemos que 
+\[5^{16} \equiv 5^{15} \cdot 5 \equiv 1 \mod 17 .\]
+Por tanto, 
+\[5 ^{15 }\equiv 5^{-1} \mod 17 .\]
+Para calcular $\displaystyle 5^{-1}\mod17 $ tenemos que resolver la congruencia $\displaystyle 5x \equiv 1 \mod 17 $. Para ello hacemos la identidad de Bézout:
+\[1 = 7 \cdot 5 - 2 \cdot 17 \Rightarrow x \equiv 5^{-1} \equiv 7 \mod 17 .\]
+\[\therefore 5^{28575} \equiv 7 \mod 17 .\]
+\end{eg}
+
+\begin{ftheorem}[Propiedad exponencial de las congruencias]
+\normalfont Si $\displaystyle a\equiv b \mod n $ con $\displaystyle k \in \N $, entonces $\displaystyle a^{k}\equiv b^{k} \mod n $.
+\end{ftheorem}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] Para calcular $\displaystyle 41^{5} \mod 43 $, tenemos en cuenta que $\displaystyle 41 \equiv -2 \mod43 $, por tanto, 
+	\[41^{5} \equiv \left(-2\right)^{5} \equiv -32 \equiv 11 \mod43 .\]
+\item[(ii)] Calculamos $\displaystyle 11^{13} \mod 85 $. Iteramos:
+\[
+\begin{split}
+& 11^{2}\equiv 121 \equiv 36 \mod 85 \\
+& 11^{3} \equiv 11^{2} \cdot 11 \equiv 36 \cdot 11\equiv 56 \mod 85 \\
+& 11^{4} \equiv 11^{3} \cdot 11 \equiv 56 \cdot 11 \equiv 21 \mod 85 \\
+& 11^{5} \equiv 11^{4} \cdot 11 \equiv 21 \cdot 11 \equiv 61 \mod 85 \\
+& 11^{6} \equiv 11^{5} \cdot 11 \equiv 61 \cdot 11 \equiv 76 \mod 85.
+\end{split}
+\]
+\end{description}
+Entonces tenemos que 
+\[11^{13}\equiv11^{6} \cdot 11^{6} \cdot 11 \equiv 76 \cdot 76 \cdot 11 \equiv 63536 \equiv 41 \mod 85 .\]
+\end{eg}
+
+\begin{ftheorem}[Procedimiento sistemático]
+\normalfont Sea $\displaystyle k\in\N $ suma de potencias de 2. Es decir, 
+\[
+\begin{split}
+& a^{4} \equiv \left(a^{2}\right)^{2} \mod n \\
+& a^{8} \equiv \left(a^{4}\right)^{2} \mod n \\
+& a^{16} \equiv \left(a^{8}\right)^{2} \mod n \\
+& a^{32} \equiv \left(a^{16}\right)^{2} \mod n.
+\end{split}
+\]
+\end{ftheorem}
+
+\begin{eg}
+\normalfont En el ejemplo anterior sería:
+\[11^{13} = 11^{8} \cdot 11^{4} \cdot 11 = \left(11^{4}\right)^{2} \cdot 11^{4} \cdot 11 .\]
+\end{eg}
+

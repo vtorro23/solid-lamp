@@ -236,3 +236,698 @@ Podemos ver que
 \normalfont Si consideramos la relación de equivalencia de que dos espacios vectoriales sean isomorfos, tenemos que el conjunto cociente tiene tantos elementos como biyecciones.
 \end{observation}
 
+\begin{ftheorem}[]
+\normalfont 
+\[\dim V = \dim \Ker\left(f\right) + \dim \Imagen\left(f\right) .\]
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r}\right\}  $ base de $\displaystyle \Ker\left(f\right) $ y sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r}, \vec{u}_{r+1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $. Entonces $\displaystyle \dim V = n $ y $\displaystyle \dim \Ker\left(f\right) = r $. Vamos a ver que $\displaystyle \left\{ f\left(\vec{u}_{r+1}\right), \ldots, f\left(\vec{u}_{n}\right)\right\}  $ es base de $\displaystyle \Imagen\left(f\right) $. Primero tenemos que ver que son sistema de generadores. Sea $\displaystyle \vec{x'} \in \Imagen\left(f\right) $, entonces existe $\displaystyle \vec{x} \in V $ tal que $\displaystyle f\left(\vec{x}\right) = \vec{x'} $. Como $\displaystyle \vec{x}\in V $, existen $\displaystyle a^{i}\in\K $ tales que
+	\[ \vec{x} = a^{1}\vec{u}_{1} + \cdots + a^{n}\vec{u}_{n}.\]
+Entonces tenemos que
+\[\vec{x'} = f\left(\vec{x}\right) = f\left(a^{1}\vec{u}_{1} + \cdots + a^{n}\vec{u}_{n}\right) = fa^{1}\left(\vec{u}_{1}\right) + \cdots + a^{r}f\left(\vec{u}_{r}\right) + a^{r+1}f(\vec{u}_{r+1}) + \cdots + a^{n} f\left(\vec{u}_{n}\right) .\]
+Tenemos que como $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r}\right\}  $ es una base de $\displaystyle \Ker\left(f\right) $, $\displaystyle f\left(\vec{u}_{i}\right) = \vec{0}, \forall i = 1, \ldots, r $:
+\[\vec{x'} = a^{r+1}f\left(\vec{u}_{r+1}\right) + \cdots + a^{n}f\left(\vec{u}_{n}\right) .\]
+Entonces, $\displaystyle \left\{ \vec{u}_{r+1}, \ldots, \vec{u}_{n}\right\}  $ es sistema de generadores. Ahora vamos a ver que son linealmente independientes. Sean $\displaystyle b^{i} \in \K $ tal es que 
+\[
+\begin{split}
+  & b^{r+1}f\left(\vec{u}_{r+1}\right) + \cdots + b^{n}f\left(\vec{u}_{n}\right) = \vec{0} \\
+ \therefore & f\left(b^{r+1}\vec{u}_{r+1} + \cdots + b^{n}\vec{u}_{n}\right) = \vec{0}
+\end{split}
+\]
+Por tanto, $\displaystyle b^{r+1}\vec{u}_{r+1} + \cdots + b^{n}\vec{u}_{n} \in \Ker\left(f\right) $ y lo podemos poner como combinación lineal de su base (existen $\displaystyle b^{i}\in\K $ tales que):
+\[b^{r+1}\vec{u}_{r+1} + \cdots + b^{n}\vec{u}_{n} = b^{1}\vec{u}_{1} + \cdots + b^{r}\vec{u}_{r} .\]
+\[\therefore -b^{1}\vec{u}_{1} - \cdots - b^{r}\vec{u}_{r} + b^{r+1}\vec{u}_{r+1} + \cdots + b^{n}\vec{u}_{n} = \vec{0} .\]
+Como se trata de una base de $\displaystyle V $, tenemos que son linealmente independientes y $\displaystyle b^{1} = \cdots = b^{r+1} = \cdots = b^{n} = 0 $. Por lo que todos los coeficientes son nulos, $\displaystyle \left\{ f\left(\vec{u}_{r+1}\right), \ldots, f\left(\vec{u}_{n}\right)\right\}  $ son linealmente independientes y forman una base de $\displaystyle \Imagen\left(f\right) $.
+\end{proof}
+
+\begin{observation}
+\normalfont Si $\displaystyle \dim V = \dim V' $ entonces, $\displaystyle f $ es monomorfismo por lo que $\displaystyle \dim \Ker\left(f\right) = \vec{0} $. Entonces, $\displaystyle \dim V = \dim V'= \dim \Imagen\left(f\right) \iff \Imagen\left(f\right) = V' $. Es decir, monomorfismo si y solo si epimorfismo si y solo si isomorfismo, es decir, para demostrar que es un isomorfismo solo hay que demostrar que es un monomorfismo!
+\end{observation}
+
+\begin{fdefinition}[Endomorfismo]
+\normalfont Un \textbf{endomorfismo} de $\displaystyle V $ es una aplicación lineal $\displaystyle f: V \to V $. 
+\end{fdefinition}
+
+\begin{fdefinition}[Automorfismo]
+\normalfont Un \textbf{automorfismo}  de $\displaystyle V $ es un endomorfismo biyectivo de $\displaystyle V $.
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f: V \to V' $ lineal, entonces $\displaystyle p : V \to V/\Ker\left(f\right) $ tal que $\displaystyle \vec{x} \to \vec{x} + \Ker\left(f\right) $ es un epimorfismo. Sea $\displaystyle i : \Imagen\left(f\right) \to V' $ tal que $\displaystyle \vec{x'} \to \vec{x'} $  es monomorfismo. Entonces, $\displaystyle \exists! b : V/\Ker\left(f\right) \to \Imagen\left(f\right) $ tal que 
+\[i \circ b \circ p = f: V \to V' .\]
+Además, $\displaystyle b $ es isomorfismo.
+\end{ftheorem}
+
+\begin{proof}
+Definimos $\displaystyle b\left(\vec{x}+\Ker\left(f\right)\right) = f\left(\vec{x}\right) $. \\ \\
+\textbf{Unicidad.} Suponemos que existe $\displaystyle b $, $\displaystyle \forall\vec{x} \in V $ tal que $\displaystyle b\left(\vec{x} + \Ker\left(f\right)\right) = f\left(\vec{x}\right) $. \\ \\
+\textbf{Vemos que $\displaystyle b $ está bien definida.} Si $\displaystyle \vec{y} \in V $, con $\displaystyle \vec{x} + \Ker\left(f\right) = \vec{y} + \Ker\left(f\right) $, tenemos que
+	\[\vec{x}-\vec{y} \in \Ker\left(f\right) \Rightarrow f\left(\vec{x}-\vec{y}\right) = \vec{0} .\]
+Entonces, 
+\[ f\left(\vec{x}-\vec{y}\right) = f\left(\vec{x}\right)-f\left(\vec{y}\right) = \vec{0} \iff f(\vec{x}) = f(\vec{y}) .\]
+Entonces, 
+\[b\left(\vec{x}+\Ker\left(f\right)\right) = b\left(\vec{y}+\Ker\left(f\right)\right) .\]
+ \textbf{Comprobamos que $\displaystyle b $ es lineal.} Comenzamos con la suma. Si $\displaystyle \vec{x}, \vec{y} \in V $, 
+\[
+\begin{split}
+	b \left(\left(\vec{x}+\Ker\left(f\right)\right) + \left(\vec{y}+\Ker\left(f\right)\right)\right)   = & b \left(\left(\vec{x}+\vec{y}\right)+\Ker\left(f\right)\right) \\
+	= & f\left(\vec{x}+\vec{y}\right) = f\left(\vec{x}\right) + f\left(\vec{y}\right) \\
+	= & b\left(\vec{x} + \Ker\left(f\right)\right) + b\left(\vec{y} + \Ker\left(f\right)\right) .
+\end{split}
+\]
+Ahora comprobamos el producto por escalares. Sea $\displaystyle a \in \K $ y $\displaystyle \vec{x} \in V $, 
+\[
+\begin{split}
+	b\left(a\left(\vec{x}+\Ker\left(f\right)\right)\right) = & b\left(a\vec{x}+\Ker\left(f\right)\right) \\
+	= & f\left(a\vec{x}\right) = af\left(\vec{x}\right) = a\left(b\left(\vec{x}+\Ker\left(f\right)\right)\right) .
+\end{split}
+\]
+ \textbf{Comprobamos que $\displaystyle b $ es un epimorfismo.} 
+	\[\forall \vec{x'} \in \Imagen\left(f\right) \Rightarrow \exists \vec{x} \in V, \; f\left(\vec{x}\right) = \vec{x'} .\]
+Por tanto, $\displaystyle f\left(\vec{x}\right) = b\left(\vec{x}+ \Ker\left(f\right)\right) = \vec{x'} $. Entonces, $\displaystyle \vec{x'} \in \Imagen\left(b\right) $. \\ \\
+ \textbf{Comprobamos que $\displaystyle b $ es un monomorfismo.} Sea $\displaystyle \vec{x} + \Ker\left(f\right) \in \Ker\left(b\right) $, entonces $\displaystyle f\left(\vec{x}\right) = \vec{0} $ por lo que $\displaystyle \vec{x} \in \Ker\left(f\right) $. Concluimos que
+	\[\vec{x}+\Ker\left(f\right) = \vec{0} + \Ker\left(f\right) .\]
+\end{proof}
+\begin{observation}
+\normalfont Lo que nos interesa concluir con este teorema es que si $\displaystyle f: V \to V' $ es lineal, entonces
+\[\Imagen\left(f\right) \approx V/\Ker\left(f\right) .\]
+\end{observation}
+
+\begin{fprop}[]
+\normalfont Sea $\displaystyle L $ el complementario vectorial de $\displaystyle \Ker\left(f\right) $ en $\displaystyle V $, es decir, 
+\[L \oplus \Ker\left(f\right) = V \Rightarrow  \dim L + \dim \Ker\left(f\right) = \dim V .\]
+La aplicación 
+\[f_{L}: L \to \Imagen\left(f\right) \]
+\[\vec{x} \to f\left(\vec{x}\right) ,\]
+es un isomorfismo.
+\end{fprop}
+
+\begin{proof}
+Tenemos que $\displaystyle f_{L} $ es lineal. Además, 
+\[\Ker\left(f_{L}\right) = \left\{ \vec{x} \in L\; : \; f\left(\vec{x}\right)=\vec{0}\right\} = L \cap \Ker\left(f\right) = \left\{ \vec{0}\right\}  .\]
+Entonces tenemos que es monomorfismo. Por otro lado queremos ver que, 
+\[\Imagen\left(f_{L}\right) = \Imagen\left(f\right) .\]
+Si $\displaystyle \vec{x'} \in \Imagen\left(f\right) $, existe $\displaystyle \vec{x} \in V $ tal que $\displaystyle \vec{x'} = f\left(\vec{x}\right) $. Como $\displaystyle \vec{x} \in V $, $\displaystyle \exists \vec{y} \in \Ker\left(f\right) $ y $\displaystyle \vec{z} \in L $ tales que
+\[\vec{x'} \in \Imagen\left(f_{L}\right) .\]
+Es decir, 
+\[\vec{x'} = f\left(\vec{x}\right) = f\left(\vec{y}+\vec{z}\right) = f\left(\vec{y}\right)+f\left(\vec{z}\right) = f\left(\vec{z}\right) = f_{L}\left(\vec{z}\right) .\]
+Es trivial ver que $\displaystyle \Imagen\left(f_{L}\right) \subset \Imagen\left(f\right)$. Por tanto es epimorfismo y, consecuentemente, isomorfismo. 
+\end{proof}
+
+
+\begin{fcolorary}[]
+\normalfont Si $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $, 
+\[\left(L_{1}+L_{2}\right) / L_{1} \approx L_{2} / L_{1} \cap L_{2} .\]
+\end{fcolorary}
+
+\begin{proof}
+Si $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $,
+\[\dim \left(L_{1}+L_{2}\right) - \dim L_{1} = \dim L_{2}-\dim\left(L_{1}\cap L_{2}\right) .\]
+Entonces tenemos que, 
+\[ \dim\left(L_{1}+L_{2}\right)/L_{1} = \dim L_{2} / L_{1}\cap L_{2} .\]
+
+
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont Si $\displaystyle L_{1} \subset L_{2} \in \mathcal{L}\left(V\right) $, entonces
+\[\left(V/L_{1}\right)/\left(L_{2}/L_{1}\right) \approx V/L_{2} .\]
+\end{fcolorary}
+
+\begin{ftheorem}[]
+\normalfont $\displaystyle \Hom\left(V,V'\right) $ tiene una estructura de $\displaystyle \K $-espacio vectorial.
+\end{ftheorem}
+\begin{proof}
+
+Sea $\displaystyle \Hom\left(V, V'\right) = \left\{ f: V \to V' \; : \; f \; \text{lineal}\right\}  $. En $\displaystyle \Hom\left(V, V'\right) $ definimos la suma de la siguiente manera. Si $\displaystyle f, g \in \Hom\left(V, V'\right) $ definimos 
+\[
+\begin{split}
+& f + g : V \to V' \\
+& \left(f+ g\right) \left(\vec{x}\right) = f\left(\vec{x}\right) + g\left(\vec{x}\right).
+\end{split}
+\]
+Vamos a ver que $\displaystyle f + g $ es aplicación lineal. Si $\displaystyle \vec{x}, \vec{y} \in V $, 
+\[\left(f+g\right)\left(\vec{x}+\vec{y}\right) = f\left(\vec{x} + \vec{y}\right) + g\left(\vec{x}+\vec{y}\right) = f\left(\vec{x}\right) + f\left(\vec{y}\right) + g\left(\vec{x}\right) + g\left(\vec{y}\right) = \left(f+g\right)\left(\vec{x}\right) + \left(f+g\right)\left(\vec{y}\right).\]
+Si $\displaystyle a \in \K  $ y $\displaystyle \vec{x} \in V $, 
+\[\left(f+g\right)\left(a\vec{x}\right) = f\left(a\vec{x}\right) + g\left(a\vec{x}\right) = af\left(\vec{x}\right) + a g\left(\vec{x}\right) = a \left(f+g\right)\left(\vec{x}\right) .\]
+Entonces, $\displaystyle f+g $ es aplicación lineal. Así, vamos a comprobar que $\displaystyle \left( \Hom\left(V, V'\right), +\right) $ es grupo abeliano. Comprobamos la conmutatividad. Si $\displaystyle \vec{x} \in V $, 
+\[\left(f+g\right)\left(\vec{x}\right) = f\left(\vec{x}\right) + g\left(\vec{x}\right) = g\left(\vec{x}\right) + f\left(\vec{x}\right) = \left(g+f\right)\left(\vec{x}\right) .\]
+Aplicamos la conmutatividad en $\displaystyle V' $ como espacio vectorial. Comprobamos la asociatividad. Si $\displaystyle f, g, h \in \Hom\left(V, V'\right) $, 
+\[(\left(f+g\right) + h)\left(\vec{x}\right) = \left(f+g\right)\left(\vec{x}\right)+h\left(\vec{x}\right) = f\left(\vec{x}\right) + g\left(\vec{x}\right) + h\left(\vec{x}\right) = f\left(\vec{x}\right) + \left(g+h\right)\left(\vec{x}\right) = \left(f+\left(g+h\right)\right)\left(\vec{x}\right) .\]
+Vamos a ver que $\displaystyle 0 \in \Hom\left(V, V'\right) $, definida por $\displaystyle 0\left(\vec{x}\right) = \vec{0}, \forall\vec{x} \in V $. Tenemos que si $\displaystyle \vec{x}, \vec{y} \in V $, 
+\[0 \left(\vec{x} + \vec{y}\right) = \vec{0} = 0\left(\vec{x}\right) + 0\left(\vec{y}\right) .\]
+Si $\displaystyle a \in \K, \vec{x} \in V $, 
+\[0\left(a\vec{x}\right) = \vec{0} = a \cdot 0\left(\vec{x}\right) = a \cdot \vec{0} = \vec{0} .\]
+Si $\displaystyle f \in \Hom\left(V, V'\right) $, $\displaystyle \forall \vec{x} \in V $, 
+\[ \left(f+0\right)\left(\vec{x}\right) = f\left(\vec{x}\right) + 0\left(\vec{x}\right) = f\left(\vec{x}\right) .\]
+Entonces, existe el elemento neutro. Vamos a ver la existencia del opuesto. Si $\displaystyle f \in \Hom\left(V, V'\right) $, tomamos $\displaystyle -f $ tal que $\displaystyle -f\left(\vec{x}\right) = \left(-f\right)\left(\vec{x}\right) $. Entonces tenemos que
+\[\left(f+\left(-f\right)\right)\left(\vec{x}\right) = f\left(\vec{x}\right) + \left(-f\right)\left(\vec{x}\right) = f\left(\vec{x}\right)-f\left(\vec{x}\right) = \vec{0} .\]
+Entonces, 
+\[\left(f+\left(-f\right)\right)\left(\vec{x}\right) = 0\left(\vec{x}\right) .\]
+
+Producto por escalares. Si $\displaystyle a \in \K $ y $\displaystyle f \in \Hom\left(V, V'\right) $, defino $\displaystyle \left(af\right)\left(\vec{x}\right) = af\left(\vec{x}\right) $. Vamos a ver que $\displaystyle af \in \Hom\left(V, V'\right) $.
+\[
+\begin{split}
+	\left(af\right)\left(\vec{x}+\vec{y}\right) = af\left(\vec{x}+\vec{y}\right) = af\left(\vec{x}\right) + a f\left(\vec{y}\right) = \left(af\right)\left(\vec{x}\right)+ \left(af\right)\left(\vec{y}\right)  .
+\end{split}
+\]
+Similarmente, 
+
+Si $\displaystyle b \in \K $ y $\displaystyle \vec{x} \in V $, 
+\[\left(af\right)\left(b\vec{x}\right) = af\left(b\vec{x}\right) = abf\left(\vec{x}\right) = b\left(af\left(\vec{x}\right)\right) = b\left(f\left(a\vec{x}\right)\right) .\]
+Si $\displaystyle a \in \K $ y $\displaystyle f, g \in \Hom\left(V, V'\right) $, si $\displaystyle \vec{x}\in V $, 
+\[\left(a\left(f+g\right)\right)\left(\vec{x}\right) = a\left(f+g\right)\left(\vec{x}\right) = af\left(\vec{x}\right) + a g\left(\vec{x}\right) = \left(af\right)\left(\vec{x}\right) + \left(ag\right)\left(\vec{x}\right) = \left(af+ag\right)\left(\vec{x}\right) .\]
+Además, 
+\[\left(1f\right)\left(\vec{x}\right) = 1 f\left(\vec{x}\right) = f\left(\vec{x}\right) .\]
+\end{proof}
+
+\section{Ejemplos de aplicaciones lineales}
+
+\subsection{Formas Lineales}
+
+\begin{fdefinition}[Forma lineal]
+\normalfont Una \textbf{formal lineal} definida en $\displaystyle V $ es una aplicación lineal $\displaystyle \lambda : V \to \K $ \footnote{ $\displaystyle \K $ es un espacio vectorial sobre sí mismo de dimensión 1.} .
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont  Si $\displaystyle \lambda $ es una forma lineal no nula, entonces $\displaystyle \lambda $ es sobreyectiva (epimorfismo).  
+\end{ftheorem}
+
+\begin{proof}
+Sea $\displaystyle a \in \K $. Sabemos que $\displaystyle \lambda \neq 0 $, por lo que existe $\displaystyle \vec{x}_{0} \in V $ tal que $\displaystyle \lambda\left(\vec{x}_{0}\right) = b \neq 0 $. Consideramos $\displaystyle \vec{x} = \frac{a}{b}\vec{x}_{0} \in V $, entonces
+\[\lambda\left(\vec{x}\right) = \frac{a}{b}\lambda\left(\vec{x}_{0}\right) = a .\]
+\end{proof}
+
+\begin{fdefinition}[]
+\normalfont Una \textbf{recta vectorial}  de $\displaystyle V $ es un subespacio vectorial de dimensión 1. Análogamente, un \textbf{plano vectorial}  de $\displaystyle V $ es un subespacio vectorial de dimensión 2. Un \textbf{hiperplano vectorial} de $\displaystyle V $ es un subespacio vectorial de dimensión $\displaystyle \dim V -1 $.
+\end{fdefinition}
+
+\begin{observation}
+\normalfont Los complementarios vectoriales de los hiperplanos son rectas y viceversa.
+\end{observation}
+
+Si $\displaystyle \lambda : V \to \K $ lineal no nula, 
+\[\dim \Imagen\left(\lambda\right) = 1 .\]
+Por tanto, la imagen de $\displaystyle \lambda $ es una recta en $\displaystyle \K $. Además, 
+\[\dim V = \dim \Imagen\left(\lambda\right) + \dim \Ker\left(\lambda\right) .\]
+Si $\displaystyle \lambda \neq 0 $, tenemos que $\displaystyle \Ker\left(\lambda\right) $  es un hiperplano vectorial. 
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle L \in \mathcal{L}\left(V\right)  $ es un hiperplano vectorial, existe $\displaystyle \lambda : V \to \K $ lineal no nula, tal que $\displaystyle L = \Ker\left(\lambda\right) $ \footnote{Esto nos sirve para definir los hiperplanos en dimensión infinita.} .
+\end{fprop}
+
+\begin{proof}
+	Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n-1}\right\}  $ base de $\displaystyle L $ y sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $. Definimos $\displaystyle \lambda : V \to \K $ la única aplicación lineal tal que $\displaystyle \lambda\left(\vec{u}_{i}\right) = 0, \forall i = 1, \ldots n-1 $, y cogemos $\displaystyle \lambda\left(\vec{u}_{n}\right) = 1 \footnote{Vale cualquier escalar no nulo.}$. Entonces $\displaystyle \Ker\left(\lambda\right) = L $, pues su núcleo va a ser un hiperplano vectorial y este contiene a la base de $\displaystyle L $. Un hiperplano vectorial contenido en otro hiperplano vectorial es el mismo.
+\end{proof}
+
+\subsection{Homotecias vectoriales}
+
+\begin{fdefinition}[Homotecia vectorial]
+	\normalfont Sea $\displaystyle \alpha \in \K - \left\{ \vec{0}\right\}  $. La \textbf{homotecia vectorial} de razón $\displaystyle \alpha  $ es la aplicación $\displaystyle h_{\alpha }: V \to V $ tal que $\displaystyle \vec{x} \to \alpha \vec{x} $.
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont 
+\begin{description}
+	\item[(i)] Todas las homotecias vectoriales son automorfismos. Es decir, 
+		\[ \forall \alpha \in \K - \left\{ \vec{0}\right\},  h_{\alpha } \in \Aut\left(V\right). \]
+		\item[(ii)] La aplicación $\displaystyle \K - \left\{ \vec{0}\right\} \to H\left(V\right) $ donde $\displaystyle H\left(V\right) = \left\{ h_{\alpha }: \alpha \in \K - \left\{ \vec{0}\right\} \right\}  $ con $\displaystyle \alpha \to h_{\alpha } $, es biyectiva. 
+		\item[(iii)] $\displaystyle \forall \alpha, \beta \in \K^{*} $, 
+			\[h_{\alpha \beta } = h_{\alpha }\circ h_{\beta } .\]
+\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Tenemos que demostrar que es aplicación lineal, pues está claro que es biyectiva. 
+	\[  \forall \vec{x}, \vec{y} \in V ,  h_{\alpha }\left(\vec{x} + \vec{y}\right) = \alpha \left(\vec{x}+\vec{y}\right) = \alpha \vec{x}+\alpha\vec{y} = h_{\alpha }\left(\vec{x}\right) + h_{\alpha }\left(\vec{y}\right).\]
+Si $\displaystyle a \in \K  $,
+		\[h_{\alpha }\left(a\vec{x}\right) = \alpha \left(a\vec{x}\right) = a h_{\alpha }\left(\vec{x}\right) .\]
+\item[(ii)] Está claro que la aplicación es sobreyectiva, tenemos que comprobar que es inyectiva: 
+	Si $\displaystyle h_{\alpha } = h_{\beta } $, tenemos que $\displaystyle \forall \vec{x} \in V $,
+\[\alpha \vec{x} = \beta \vec{x} .\]
+Si $\displaystyle V  $ no es nulo, podemos deducir que,
+\[\exists \vec{x} \neq \vec{0}, \; \left(\alpha - \beta \right) \vec{x} = \vec{0} \; \Rightarrow \; \alpha = \beta  .\]
+Por lo que esta aplicación es inyectiva.
+\item[(iii)]
+\[\forall \vec{x} \in V, \; h_{\beta }\circ h_{\alpha }\left(\vec{x}\right) = h_{ \beta }\left(\alpha \vec{x}\right) = \beta \alpha \vec{x} = h_{\beta \alpha}\left(\vec{x}\right).\]
+\end{description}
+\end{proof}
+
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : V \to V $ lineal. Entonces $\displaystyle f $ es una homotecia vectorial si y solo si $\displaystyle \forall L \in \mathcal{L}\left(V\right) $ recta vectorial $\displaystyle f\left(L\right) = L $.
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+	\item[(i)] Si $\displaystyle \alpha \in \K^{*} $ tal que $\displaystyle f = h_{\alpha} $ , sea $\displaystyle L \in \mathcal{L}\left(V\right) $ una recta vectorial. Entonces, existe $\displaystyle \vec{x}_{0} \in L^{*}$ tal que $\displaystyle \left\{ \vec{x}_{0}\right\}  $ es base de $\displaystyle L $. Entonces, $\displaystyle L = \left\{ a\vec{x}_{0} \; : \; a \in \K\right\}  $. Además, tenemos que 
+		\[h_{\alpha }\left(L\right) = \left\{ \alpha a \vec{x}_{0}\; : \; a \in \K \right\} = L .\]
+	\item[(ii)] Si $\displaystyle  \vec{x} \in V^{*} $, entonces $\displaystyle L\left( \left\{ \vec{x}\right\} \right)  $ es una recta vectorial. Tenemos que
+		\[f\left(L\left( \left\{ \vec{x}\right\} \right)\right) = L\left( \left\{ \vec{x}\right\} \right) .\]
+		Si $\displaystyle \vec{x} \in L\left( \left\{ \vec{x}\right\} \right) $, 
+		\[f\left(\vec{x}\right) \in L\left( \left\{ \vec{x}\right\} \right) \Rightarrow \exists \alpha_{\vec{x}} \in \K, \; f\left(\vec{x}\right) = \alpha_{\vec{x}}\vec{x} .\]
+Tenemos que ver que $\displaystyle \alpha  $ es único. Si $\displaystyle \vec{x}, \vec{y} \in V^{*} $, tenemos que ver si son linealmente dependientes o linealmente independientes. Si son linealmente dependientes, $\displaystyle \exists a \in \K^{*} $ tal que 
+\[\vec{x} = a \vec{y} .\]
+Entonces, $\displaystyle f\left(\vec{x}\right) = a f\left(\vec{y}\right) = f\left(a\vec{y}\right) = \alpha_{\vec{y}} a \vec{y} = \alpha_{\vec{y}}\vec{x} $. Tenemos que
+\[\left(\alpha_{\vec{x}}-\alpha_{\vec{y}}\right)\left(\vec{x}\right) = \vec{0} \Rightarrow \alpha_{\vec{x}}= \alpha_{\vec{y}} .\]
+Si son linealmente independientes, $\displaystyle \vec{x} + \vec{y} \neq 0 $, 
+\[f\left(\vec{x}+ \vec{y}\right) = f\left(\vec{x}\right) + f\left(\vec{y}\right) = \alpha_{\vec{x}+\vec{y}}\left(\vec{x}+\vec{y}\right) = \alpha_{\vec{x}+\vec{y}}\vec{x} + \alpha_{\vec{x}+\vec{y}}\vec{y} = \alpha_{\vec{x}}\vec{x}+\alpha_{\vec{y}}\vec{y} .\]
+Entonces tenemos que
+\[\left(\alpha_{\vec{x}+\vec{y}}-\alpha_{ \vec{x}}\right)\vec{x} = \left(\alpha_{y}-\alpha_{\vec{x}+\vec{y}}\right) \vec{y} \Rightarrow \alpha_{\vec{x}} = \alpha_{\vec{x}+\vec{y}} = \alpha_{\vec{y}} .\]
+Sea $\displaystyle \alpha = \alpha_{\vec{x}} $, con $\displaystyle \vec{x} \in V^{*} $. Entonces si $\displaystyle \vec{y} \in V^{*} $ tenemos que $\displaystyle f\left(\vec{y}\right) = \alpha\vec{y} $ y $\displaystyle \vec{0} = \alpha \vec{0} $. Por tanto, se trata de una homotecia lineal.
+\end{description}
+\end{proof}
+
+\subsection{Proyecciones}
+Supongamos que $\displaystyle L_{1}, L_{2} \in \mathcal{L} \left(V\right)$ y seam $\displaystyle L_{1} \oplus L_{2} = V $. $\displaystyle \forall \vec{x} \in V , \exists \vec{x}_{1} \in L_{1}, \exists\vec{x}_{2} \in L_{2}$, $\displaystyle \vec{x} = \vec{x}_{1}+\vec{x}_{2} $.
+\begin{fdefinition}[Proyección]
+\normalfont La \textbf{proyección} de base $\displaystyle L_{1} $ (respecto a la base $\displaystyle L_{2} $) y dirección $\displaystyle L_{2} $ (respecto a $\displaystyle L_{1} $) es la aplicación 
+\[
+\begin{split}
+& p_{1} : V \to V \\
+& \vec{x} = \vec{x}_{1}+\vec{x}_{2} \to \vec{x}_{1}.
+\end{split}
+\]
+Respecto a $\displaystyle p_{2}: V \to V $ tal que $\displaystyle \vec{x} = \vec{x}_{1}+\vec{x}_{2} \to \vec{x}_{2}$.
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont 
+\begin{description}
+\item[(i)] $\displaystyle p_{1}+p_{2} = id _{V}. $  
+\item[(ii)] $\displaystyle p_{1}\circ p_{2} = 0 $ y $\displaystyle p_{2} \circ p_{1} = 0 $.
+\item[(iii)] $\displaystyle p_{1} $ y $\displaystyle p_{2} $ son lineales.
+\item[(iv)] $\displaystyle p_{1} \circ p_{1} = p_{1} $ y $\displaystyle p_{2} \circ p_{2} = p_{2} $.
+\end{description}
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(i)] $\displaystyle \forall \vec{x}_{1} \in L_{1}, \vec{x}_{2} \in L_{2} $,
+\[\left(p_{1}+p_{2}\right)\left(\vec{x}_{1}+\vec{x}_{2}\right) = p_{1}\left(\vec{x}_{1}+\vec{x}_{2}\right) + p_{2}\left(\vec{x}_{1}+\vec{x}_{2}\right) = \vec{x}_{1}+\vec{x}_{2} .\]
+\item[(ii)] 
+\[p_{1} \circ p_{2}\left(\vec{x}_{1}+\vec{x}_{2}\right) = p_{1}\left(\vec{x}_{2}\right) = p_{1}\left(\vec{0}+\vec{x}_{2}\right) = \vec{0} .\]
+\item[(iii)] \[ p_{1}\left(\vec{x}_{1}+\vec{x}_{2} + \vec{y}_{1}+\vec{y}_{2}\right) = p_{1}\left(\left(\vec{x}_{1}+\vec{y}_{1}\right)+\left(\vec{x}_{2}+\vec{y}_{2}\right)\right) = p_{1}\left(\vec{x}_{1}+\vec{x}_{2}\right) + p_{1}\left(\vec{y}_{1}+\vec{y}_{2}\right) .\]
+\[p_{1}\left(a\vec{x}\right) = p_{1}\left(a\left(\vec{x}_{1}+\vec{x}_{2}\right)\right) = p_{1}\left(a\vec{x}_{1}+a\vec{x}_{2}\right) = a\vec{x}_{1} = ap_{1}\left(\vec{x}_{1}+\vec{x}_{2}\right) .\]
+\item[(iv)] Si $\displaystyle \vec{x} \in V $,
+	\[p_{1} \circ p_{1} \left(\vec{x}_{1}+\vec{x}_{2}\right) = p_{1}\left(\vec{x}_{1}\right) = \vec{x}_{1} .\]
+\end{description}
+\end{proof}
+
+\begin{fdefinition}[]
+\normalfont Un endomorfismo $\displaystyle  p : V \to V $ es un proyector si $\displaystyle p^{2} = p $.
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle p $ un proyector definido en $\displaystyle V $, entonces $\displaystyle \left(id_{V} - p\right) $ es un proyector y $\displaystyle V = L_{1}\oplus L_{2} $ donde $\displaystyle L_{1} = \Imagen\left(p\right) = \Ker\left(p- id _{V}\right) $ y $\displaystyle L_{2} = \Ker\left(p\right) = \Imagen\left(p-id _{V}\right) $. 
+\end{ftheorem}
+
+\begin{proof}
+$\displaystyle \forall \vec{x} \in V $,
+\[ \left(id _{V} - p\right)^{2}\left(\vec{x}\right) = \left(id _{V} - p\right)\left(\vec{x}-p\left(\vec{x}\right)\right) = \vec{x}-p\left(\vec{x}\right)-p\left(\vec{x}\right) + p^{2}\left(\vec{x}\right) = \vec{x}-p\left(\vec{x}\right) = \left(id _{V}- p\right)\left(\vec{x}\right).\]
+Vamos a ver que $\displaystyle V = L_{1} \oplus L_{2} $ donde $\displaystyle L_{1} = \Imagen\left(p\right) $ y $\displaystyle L_{2} = \Ker\left(p\right) $.
+\[\forall \vec{x} \in V, \; \vec{x} = p\left(\vec{x}\right) + \vec{x}-p\left(\vec{x}\right), \; p\left(\vec{x}-p\left(\vec{x}\right)\right) = p\left(\vec{x}\right) - p^{2}\left(\vec{x}\right) = \vec{0} .\]
+Tenemos que $\displaystyle p\left(\vec{x}\right) \in \Imagen\left(p\right) $ y $\displaystyle \left(id _{V}-p\right)\left(\vec{x}\right) \in \Ker\left(p\right) $.
+Entonces $\displaystyle V = L_{1}\oplus L_{2} $. \\ \\
+Si $\displaystyle \vec{x} \in L_{1}\cap L_{2} $, existe $\displaystyle \vec{y} \in V $ tal que $\displaystyle p\left(\vec{y}\right) = \vec{x} $ y $\displaystyle p\left(\vec{x}\right) = \vec{0} $ . Entonces, 
+\[p\left(\vec{x}\right) = \vec{0} \Rightarrow p^{2}\left(\vec{y}\right) = \vec{0} .\]
+Por tanto, $\displaystyle \vec{x} = \vec{0} $ y $\displaystyle p\left(\vec{y}\right)= \vec{x} $.\\ \\
+Vamos a comprobar que 
+\[\Imagen\left(p\right) = \Ker\left(p-id _{V}\right) .\]
+\begin{description}
+\item[(i)] $\displaystyle \vec{x} \in \Imagen\left(p\right) $, entonces $\displaystyle \exists \vec{y} \in V $ tal que $\displaystyle p\left(\vec{y}\right) = \vec{x} $. 
+	\[\left(p-id _{V}\right)\left(\vec{x}\right) = \left(p- id _{V}\right)\left(p\left(\vec{y}\right)\right) = \underbrace{p^{2} \left(\vec{y}\right)}_{p} -p\left(\vec{y}\right) = \vec{0} .\]
+	Por tanto, $\displaystyle \vec{x} \in \Ker\left(p-id _{V}\right) $.
+\item[(ii)] Si $\displaystyle \vec{x} \in \Ker\left(p- id _{V}\right) $, tenemos que
+	\[\left(p- id _{V}\right)\left(\vec{x}\right) = p\left(\vec{x}\right)- \vec{x} = \vec{0} .\]
+	Por tanto, $\displaystyle \vec{x} = p\left(\vec{x}\right) $ y, consecuentemente, $\displaystyle \vec{x} \in \Imagen\left(p\right) $.
+\end{description}
+La proposición $\displaystyle \Ker\left(p\right) = \Imagen\left(p- id _{V}\right) $ se demuestra igual.
+\end{proof}
+
+\subsection{Simetrías vectoriales}
+Asumimos que el cuerpo $\displaystyle \K $ es de característica distinta de 2. 
+\begin{fdefinition}[]
+\normalfont Un endomorfimos $\displaystyle s $ de $\displaystyle V $ es involutivo si $\displaystyle s^{2} = id _{V} $ ($\displaystyle \iff \exists s^{-1} $ y $\displaystyle s^{-1} = s $). 
+\end{fdefinition}
+
+\begin{fdefinition}[]
+\normalfont $\displaystyle s $ es la simetría vectorial de base $\displaystyle L_{1} $ y dirección $\displaystyle L_{2} $.
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle s : V \to V $ un endomorfismo involutivo. Sea $\displaystyle L_{1} = \Imagen\left(s + id _{V}\right) $ y $\displaystyle L_{2} = \Imagen\left(id _{V}-s\right) $. Entonces, $\displaystyle L_{1} \oplus L_{2} = V $ y $\displaystyle s = p_{1}- p_{2} $ ($\displaystyle p_{1}, p_{2} $ son proyecciones). Diremos que $\displaystyle s $  es la simetría de base $\displaystyle L_{1} $ y dirección $\displaystyle L_{2} $.
+\end{ftheorem}
+\[\Imagen\left(s - id _{V}\right) = \Ker\left(s+ id _{V}\right) \quad \text{y} \quad \Imagen\left(s + id _{V}\right) = \Ker\left(s - id _{V}\right) .\]
+
+\begin{proof}
+Sea $\displaystyle L_{1} = \Imagen\left(s + id _{ V}\right) $ y $\displaystyle L_{2} = \Imagen\left(id _{V}-s\right) $.
+\[\forall \vec{x} \in V, \; \vec{x} = \frac{ \vec{x} - s\left(\vec{x}\right)}{2} + \frac{ \vec{x} + s\left(\vec{x}\right)}{2} = \left(id _{V}- s\right)\left(\frac{\vec{x}}{2}\right) + \left(id _{V} + s\right)\left(\frac{\vec{x}}{2}\right) .\]
+Sea $\displaystyle \vec{x} \in L_{1} \cap L_{2} $, 
+\[\vec{x}\in L_{1}, \;\exists \vec{y} \in V, \; \left(s+ id _{V}\right)\left(\vec{y}\right) = \vec{x} \Rightarrow s\left(\vec{x}\right) = s\left(\left(s+id _{V}\right)\left(\vec{y}\right)\right) = s\left(s\left(\vec{y}\right)+\vec{y}\right) = s^{2}\left(\vec{y}\right) + s\left(\vec{y}\right) = \vec{y}+s\left(\vec{y}\right) = \vec{x}.\]
+\[\vec{x} \in L_{2}, \; \exists \vec{z} \in V, \; \left(id _{V}-s\right)\left(\vec{z}\right) = \vec{x} \Rightarrow s\left(\vec{x}\right) = s\left(\left(id _{V}-s\right)\left(\vec{z}\right)\right) = s\left(\vec{z}\right) - s^{2}\left(\vec{z}\right) = s\left(\vec{z}\right)-\vec{z} = - \vec{x} .\]
+Entonces, si $\displaystyle  \vec{x} \in L_{1} \cap L_{2} $, 
+\[ s\left(\vec{x}\right) = \vec{x} \quad \text{y} \quad s\left(\vec{x}\right) = - \vec{x} \Rightarrow \vec{x} = \vec{0} .\]
+\end{proof}
+
+\begin{observation}
+\normalfont Tenemos que $\displaystyle p_{1}\left(\vec{x}\right) = \left(id _{V}+ s\right)\left(\frac{\vec{x}}{2}\right) $, y $\displaystyle p_{2}\left(\vec{x}\right) = \left(id _{V} - s\right)\left(\frac{\vec{x}}{2}\right) $. Entonces, $\displaystyle s = p_{1}-p_{2} $. Además, diremos que $\displaystyle L_{1} = \Ker\left(s-id _{V}\right) $ y $\displaystyle L_{2} = \Ker\left(s+id _{V}\right) $. Esto se puede demostrar con ambas implicaciones: $\displaystyle L_{1} \subset \Ker\left(id _{V}-s\right) $ y viceversa.
+\end{observation}
+
+\begin{figure}
+\centering
+\includegraphics[scale = 0.5 ]{~/Desktop/Images/simetrias_vectoriales.png}
+\caption{Ejemplo de simetrías vectoriales}
+\end{figure}
+
+\section{Espacio vectorial dual}
+
+\begin{fdefinition}[Espacio dual]
+\normalfont Llamaremos \textbf{espacio dual}  de $\displaystyle V $ y lo representaremos por $\displaystyle V^{*} = \Hom\left(V, \K\right) $.
+\end{fdefinition}
+
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $, entonces las formas lineales $\displaystyle \left\{ \omega^{1}, \ldots, \omega^{n}\right\}  $ definidas por ser las únicas formas lineales tales que 
+\[
+\begin{split}
+ \omega^{i}\left(\vec{u}_{j}\right) = 
+\begin{cases}
+1, \; \text{si} \; i = j \\
+0, \; \text{si} \; i \neq j
+\end{cases}
+\end{split}
+\]
+que llamaremos base dual de $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $.
+\end{ftheorem}
+
+\begin{proof}
+	Tenemos que ver que $\displaystyle \left\{ \omega^{1}, \ldots, \omega^{n}\right\}  $ son linealmente independientes. Sean $\displaystyle a_{i} \in \K $ tales que
+\[
+\begin{split}
+a_{1}\omega^{1} + \cdots + a_{n}\omega^{n} = 0 \in V^{*} .
+\end{split}
+\]
+Tenemos que $\displaystyle \forall i = 1, \ldots, n $,
+\[
+\begin{split}
+0\left(\vec{u}_{i}\right) = 0 = \left(a_{1}\omega^{1} + \cdots + a_{n}\omega^{n}\right)\left(\vec{u}_{i}\right) = a_{1}\omega^{1}\left(\vec{u}_{i}\right)+ \cdots + a_{i}\omega^{i}\left(\vec{u}_{i}\right) + \cdots + a_{n}\omega^{n}\left(\vec{u}_{n}\right) = a_{i} .
+\end{split}
+\]
+Por tanto, $\displaystyle a_{i} = 0, \; \forall i = 1, \ldots , n $. \\ \\
+Ahora vamos a ver que son sistema de generadores. Si $\displaystyle \lambda \in V^{*} $, $\displaystyle \forall i = 1, \ldots, n $, 
+\[
+\begin{split}
+	\left(\lambda\left(\vec{u}_{1}\right)\omega^{1} + \lambda\left(\vec{u}_{2}\right)\omega^{2}+ \cdots + \lambda\left(\vec{u}_{n}\right)\omega^{n}\right)\left(\vec{u}_{i}\right) = \lambda\left(\vec{u}_{i}\right) .
+\end{split}
+\]
+Es decir, tenemos que 
+\[\lambda = \lambda\left(\vec{u}_{1}\right)\omega^{1} + \cdots + \lambda\left(\vec{u}_{n}\right)\omega^{n} .\]
+\end{proof}
+
+\begin{observation}
+\normalfont 
+\[
+\begin{split}
+& \vec{x} = a^{1} \vec{u}_{1} + \cdots + a^{n}\vec{u}_{n} \\
+& \forall i = 1, \ldots, n, \; w^{i}\left(\vec{x}\right) = w^{i}\left(a^{1}\vec{u}_{1} + \cdots + a^{n}\vec{u}_{n}\right) = a^{1}w^{i}\left(\vec{u}_{1}\right) + \cdots + a^{n}w^{i}\left(\vec{u}_{n}\right) = a^{i}.
+\end{split}
+\]
+\end{observation}
+
+\begin{fcolorary}[]
+\normalfont $\displaystyle \dim V = \dim V^{*} $.
+\end{fcolorary}
+
+\begin{observation}
+\normalfont $\displaystyle \left(V^{*}\right)^{*} = V^{**} $ bidual. $\displaystyle \forall \vec{x} \in V $, 
+\[
+\begin{split}
+	\theta_{\vec{x}}: & V^{*} \to \K\\
+& \lambda \to \theta_{\vec{x}}\left(\lambda \right) = \lambda\left(\vec{x}\right), \forall \lambda \in V^{*}.
+\end{split}
+\]
+Tenemos que, $\displaystyle \theta_{\vec{x}} \in V^{**} $, además, $\displaystyle \forall\lambda_{1}, \lambda_{2} \in V^{*} $,
+\[\theta_{\vec{x}} \left(\lambda_{1}+\lambda_{2}\right)= \left(\lambda_{1}+\lambda_{2}\right)\left(\vec{x}\right) = \left(\lambda_{1}+\lambda_{2}\right)\left(\vec{x}\right) = \lambda_{1}\left(\vec{x}\right) + \lambda_{2}\left(\vec{x}\right) = \theta_{\vec{x}}\left(\lambda_{1}\right) + \theta_{\vec{x}}\left(\lambda_{2}\right) .\]
+Además, si $\displaystyle a \in \K $, $\displaystyle \forall\lambda \in V^{*} $, 
+\[\theta_{\vec{x}}\left(a\lambda\right) = \left(a\lambda\right)\left(\vec{x}\right) = a \lambda\left(\vec{x}\right) = a \theta_{\vec{x}}\left(\vec{\lambda}\right) .\]
+Entonces tenemos que $\displaystyle \theta_{\vec{x}} $ es una aplicación lineal y, por tanto, $\displaystyle \theta_{\vec{x}} \in V^{**} $ .
+\end{observation}
+
+\begin{ftheorem}[]
+\normalfont La aplicación
+\[
+\begin{split}
+	\theta : & V \to V^{**} \\
+		 & \vec{x} \to \theta_{\vec{x}},
+\end{split}
+\]
+es lineal.
+\end{ftheorem}
+
+\begin{proof}
+Tenemos que $\displaystyle \forall \lambda \in V^{*} $,
+\[\theta_{\vec{x}+\vec{y}}\left(\lambda \right) = \lambda\left(\vec{x}+\vec{y}\right) = \lambda\left(\vec{x}\right) + \lambda\left(\vec{y}\right) = \theta_{\vec{x}}\left(\lambda \right) + \theta_{\vec{y}}\left(\lambda \right) = \left(\theta_{\vec{x}}+\theta_{\vec{y}}\right)\left(\lambda\right) .\]
+Entonces tenemos que 
+\[\theta_{\vec{x}+\vec{y}} = \theta_{\vec{x}} + \theta_{\vec{y}} \iff \theta\left(\vec{x}+\vec{y}\right) = \theta\left(\vec{x}\right) + \theta\left(\vec{y}\right) .\]
+Además, si $\displaystyle a \in \K $ y $\displaystyle \vec{x} \in V $:
+\[\theta\left(a\vec{x}\right) = \theta_{a\vec{x}} = a \theta_{\vec{x}} = a\theta\left(\vec{x}\right) .\]
+Entonces, $\displaystyle \forall \lambda \in V^{*} $,
+\[\theta_{a\vec{x}}\left(\lambda\right) = \lambda\left(a\vec{x}\right) = a\lambda\left(\vec{x}\right) = \left(a\theta_{\vec{x}}\right)\left(\lambda\right) .\]
+Por tanto,
+\[\theta_{a\vec{x}} = a\theta_{\vec{x}} \iff \theta\left(a\vec{x}\right) = a \theta\left(\vec{x}\right) .\]
+\end{proof}
+
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle V^{**} = \Hom\left(V^{*}, \K\right) $ el espacio dual de $\displaystyle V^{*} $. Entonces es el espacio \textbf{bidual} de $\displaystyle V $. Además, 
+\[\dim V^{**} = \dim V^{*} = \dim V .\]
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont $\displaystyle \theta $ es un isomorfismo de espacios vectoriales.
+\end{ftheorem}
+
+\begin{proof}
+Como tienen la misma dimensión, nos basta con demostrar que es inyectiva. Sea $\displaystyle \vec{x} \in \Ker\left(\theta \right) $, queremos ver que $\displaystyle \vec{x} = \vec{0} $. Tenemos que $\displaystyle \forall \lambda \in V^{*} $, 
+\[\theta_{\vec{x}}\left(\lambda \right) = \lambda\left(\vec{x}\right) = \vec{0} .\]
+Por tanto, tenemos que $\displaystyle \vec{x} = \vec{0} $ (porque todas las formas lineales devuelven 0 si insertas 0) y, consecuentemente, $\displaystyle \theta $ es isomorfismo.
+\end{proof}
+
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $ y sea $\displaystyle \left\{ \omega^{1}, \ldots, \omega^{n}\right\}  $ su dual. Tenemos que $\displaystyle \left\{ \theta_{\vec{u}_{1}}, \ldots, \theta_{\vec{u}_{n}}\right\}  $ es base de $\displaystyle V^{**} $. Además, $\displaystyle \forall i, j= 1, \ldots, n $, 
+	\[\theta_{\vec{u}_{i}}\left(\omega^{j}\right) = \omega^{j}\left(\vec{u}_{i}\right) =
+	\begin{cases}
+	1, \; \text{si} \; i = j \\
+	0, \; \text{si} \; i \neq j
+	\end{cases}
+	.\]
+	Es decir, tenemos que $\displaystyle \left\{ \theta_{\vec{u}_{1}}, \ldots, \theta_{\vec{u}_{n}}\right\}  $ es la base dual de $\displaystyle \left\{ \omega^{1}, \ldots, \omega^{n}\right\}  $.	
+\end{ftheorem}
+
+\begin{observation}
+\normalfont Si $\displaystyle f: V \to V' $ lineal y $\displaystyle \lambda' \in V^{'*} $, tenemos que
+\[\lambda'\circ f : V \to \K, \; \lambda'\circ f \in V^{*}.\]
+Se tiene definida una aplicación (la aplicación dual de $\displaystyle f $) 
+\[
+\begin{split}
+	f^{*} :& V^{'*} \to V^{*}\\
+	& \lambda' \to f^{*}\left(\lambda '\right) = \lambda' \circ f
+\end{split}
+\]
+\end{observation}
+
+\begin{fprop}[]
+\normalfont $\displaystyle f^{*} $ es lineal.
+\end{fprop}
+
+\begin{proof}
+Tenemos que $\displaystyle \forall \lambda'_{1}, \lambda'_{2} \in V'^{*} $, 
+\[f^{*}\left(\lambda'_{1} + \lambda'_{2}\right) = \left(\lambda'_{1} + \lambda'_{2}\right) \circ f .\]
+Además, $\displaystyle \forall\vec{x} \in V $,
+\[
+\begin{split}
+	\left(\left(\lambda_{1}+\lambda'_{2}\right)\circ f\right)\left(\vec{x}\right) = & \left(\lambda'_{1}+\lambda'_{2}\right)\left(f\left(\vec{x}\right)\right) = \lambda'_{1}\left(f\left(\vec{x}\right)\right) + \lambda'_{2}\left(f\left(\vec{x}\right)\right) = \left(\lambda'_{1}\circ f\right)\left(\vec{x}\right) + \left(\lambda'_{2}\circ f\right)\left(\vec{x}\right) \\
+	= & f^{*}\left(\lambda'_{1}\right)\left(\vec{x}\right) + f^{*}\left(\lambda'_{2}\right)\left(\vec{x}\right) = \left(f^{*}\left(\lambda'_{1}\right)+f^{*}\left(\lambda'_{2}\right)\right)\left(\vec{x}\right) .
+\end{split}
+\]
+Además, $\displaystyle \forall a \in \K, \forall \lambda'\in V'^{*} $, tenemos que 
+\[f^{*}\left(a\lambda'\right) = \left(a\lambda'\right) \circ f = a f^{*}\left(\lambda'\right) .\]
+Tenemos que $\displaystyle \forall \vec{x}\in V $, 
+\[\left(a\lambda'\right) \circ f\left(\vec{x}\right) = a\left(\lambda' \circ f\right)\left(\vec{x}\right) = a f^{*}\left(\lambda'\right)\left(\vec{x}\right) .\]
+\end{proof}
+
+\begin{ftheorem}[]
+\normalfont Se tiene definida una aplicación
+\[
+\begin{split}
+	* :  \Hom\left(V, V'\right) & \to \Hom\left(V'^{*}, V^{*}\right)\\
+	f & \to f^{*}.
+\end{split}
+\]
+Tenemos que $\displaystyle * $ es lineal.
+\end{ftheorem}
+
+\begin{proof}
+Si $\displaystyle f, g \in \Hom\left(V, V'\right) $, tenemos que $\displaystyle \forall \lambda' \in V'^{*} $, 
+\[\left(f+g\right)^{*}\left(\lambda'\right) = \lambda' \circ \left(f + g\right)= f^{*}\left(\lambda'\right) + g^{*}\left(\lambda'\right) = \left(f^{*}+g^{*}\right)\left(\lambda'\right) .\]
+Entonces tenemos que $\displaystyle \forall \vec{x}\in V $, 
+\[\lambda'\circ\left(f+g\right)\left(\vec{x}\right) = \lambda'\left(f\left(\vec{x}\right)+g\left(\vec{x}\right)\right) = \left(f^{*}\left(\lambda'\right)+g^{*}\left(\lambda'\right)\right)\left(\vec{x}\right) .\]
+Si $\displaystyle a \in \K $ y $\displaystyle f \in \Hom\left(V, V'\right) $, queremos ver que
+\[ *\left(af\right) = \left(af\right)^{*} = af^{*}.\]
+Tenemos que $\displaystyle \forall \lambda' \in V'^{*} $, 
+\[\left(af\right)^{*}\left(\lambda'\right) = \lambda' \circ \left(af\right) = a f^{*}\left(\lambda'\right) .\]
+Entonces, $\displaystyle \forall \vec{x} \in V $, 
+\[
+\begin{split}
+	\left(\lambda' \circ \left(af\right)\right)\left(\vec{x}\right) = \lambda'\left(af\left(\vec{x}\right)\right) = a \lambda'\left(f\right)\left(\vec{x}\right) = af^{*}\left(\lambda'\right)\left(\vec{x}\right) .
+\end{split}
+\]
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Sea $\displaystyle f \in \Hom\left(V, V'\right) $ y $\displaystyle g \in \Hom\left(V', V''\right) $. Se cumple que 
+\[\left(g \circ f\right)^{*} = f^{*} \circ g^{*} .\]
+\end{fprop}
+
+\begin{proof}
+Tenemos que $\displaystyle \forall \lambda''\in V''^{*} $, 
+\[\left(g\circ f\right)^{*}\left(\lambda''\right)=\lambda''\circ\left(g\circ f\right) = \left(\lambda''\circ g\right)\circ f = \left(g^{*}\left(\lambda''\right)\right)\circ f = f^{*}\left(g^{*}\left(\lambda''\right)\right) = \left(f^{*}\circ g^{*}\right)\left(\lambda''\right) .\]
+\end{proof}
+
+\begin{fprop}[]
+\normalfont 
+\[\left(id _{V}\right)^{*} = id _{V^{*}} .\]
+\end{fprop}
+
+\begin{proof}
+Tenemos que $\displaystyle \forall \lambda \in V^{*} $, 
+\[\left(id _{V}\right)^{*}\left(\lambda\right) = \lambda \circ id _{V} = id _{V^{*}}\left(\lambda\right) .\]
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle f: V \to V' $ isomorfismo, $\displaystyle f^{*} $ isomorfismo y $\displaystyle \left(f^{-1}\right)^{*} = \left(f^{*}\right)^{-1} $.
+\end{fprop}
+
+\begin{proof}
+Existe $\displaystyle f^{-1}: V' \to V $ tal que $\displaystyle f^{-1}\circ f = id _{V} $ y $\displaystyle f \circ f^{-1} = id _{V'} $. Entonces tenemos que 
+\[f^{*} \circ \left(f^{-1}\right)^{*} = \left(f^{-1}\circ f\right)^{*} = \left(id _{V}\right)^{*} = id _{V^{*}} .\]
+Similarmente, 
+\[\left(f^{-1}\right)^{*} \circ f^{*} = \left(f\circ f^{-1}\right)^{*} = \left(id _{V'}\right)^{*} = id _{V'^{*}} .\]
+\end{proof}
+
+Si $\displaystyle f \in \Hom\left(V, V'\right) $, tenemos que $\displaystyle \left(f^{*}\right)^{*} = f^{**} \in\Hom\left(V^{**}, V'^{**}\right) $. Tenemos que $\displaystyle \forall \vec{x} \in V, \theta_{\vec{x}}\in V^{**} $, entonces
+\[f^{**}\left(\theta_{\vec{x}}\right) = \theta_{\vec{x}} \circ f^{*} = \theta \circ f .\]
+\[ \forall \lambda'\in V'^{*}, \theta_{\vec{x}}\circ f^{*}\left(\lambda'\right) = \theta_{\vec{x}}\left(\lambda'\circ f\right) = \lambda'\circ f\left(\vec{x}\right) = \lambda'\left(f\left(\vec{x}\right)\right) = \theta_{f\left(\vec{x}\right)}\left(\lambda'\right) .\]
+Queremos ver que 
+\[\theta^{-1}f^{**}\theta_{\vec{x}} = f .\]
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{~/Desktop/Images/espacio_dual.png}
+\caption{Resumen del espacio dual}
+\label{ enter label$}
+\end{figure}
+
+\subsection{Anulador de un subespacio}
+
+\begin{fdefinition}[Ortogonal y anulador]
+	\normalfont Si $\displaystyle \emptyset \neq A \subset V $. Llamaremos \textbf{ortogonal} a $\displaystyle A $ y la expresaremos por:
+	\[ A^{\perp} = \left\{ \lambda \in V^{*} \; : \; \lambda\left(\vec{x}\right) = \vec{0}, \forall\vec{x} \in A\right\} = \left\{ \lambda \in V^{*} \; : \; A \subset \Ker\left(\lambda\right)\right\} .\]
+\end{fdefinition}
+
+\begin{fprop}[]
+\normalfont 
+\[A^{\perp} \in \mathcal{L}\left(V^{*}\right) .\]
+\end{fprop}
+
+\begin{proof}
+Sean $\displaystyle \lambda_{1}, \lamba_{2} \in A^{\perp} $, vamos a ver que $\displaystyle \lambda_{1} + \lambda _{2} \in A^{\perp} $:
+\[\forall\vec{x} \in A, \; \left(\lambda_{1}+\lambda_{2}\right)\left(\vec{x}\right) = \lambda_{1}\left(\vec{x}\right) + \lambda_{2}\left(\vec{x}\right) = \vec{0} .\]
+Por lo que, $\displaystyle \lambda_{1} + \lambda_{2} \in A^{\perp} $. Similarmente, si $\displaystyle \lambda \in A^{\perp} $ y $\displaystyle a \in \K $, vamos a ver que $\displaystyle a\lambda \in A^{\perp} $:
+\[\forall\vec{x} \in A, \left(a\lambda\right)\left(\vec{x}\right) = a\lambda\left(\vec{x}\right) = a \cdot \vec{0} = \vec{0} .\]
+Por lo que $\displaystyle a\lambda \in A^{\perp} $.
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle \emptyset \neq A \subset B \subset V $, entonces $\displaystyle B^{\perp} \subset A^{\perp} $.
+\end{fprop}
+
+\begin{fprop}[]
+\normalfont 
+\[A^{\perp} = L\left(A\right)^{\perp} .\]
+\end{fprop}
+
+\begin{proof}
+Si $\displaystyle A \subset L\left(A\right) $ tenemos que $\displaystyle L\left(A\right)^{\perp} \subset A^{\perp} $. Sea $\displaystyle \lambda \in A^{\perp} $, 
+\[\forall \vec{x}\in L\left(A\right), \exists p \in \N, \exists a^{1}, \ldots, a^{p} \in \K, \exists \vec{x}_{1}, \ldots, \vec{x}_{p} \in A .\]
+\[\vec{x} = a^{1}\vec{x}_{1}+\cdots + a^{p}\vec{x}_{p} .\]
+Entonces, 
+\[\lambda\left(\vec{x}\right) = \lambda\left(a^{1}\vec{x}_{1}+\cdots + a^{p}\vec{x}_{p}\right) = a^{1}\lambda\left(\vec{x}_{1}\right)+\cdots + a^{p}\lambda\left(\vec{x}_{p}\right) = \vec{0} .\]
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Sean $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $, entonces tenemos que $\displaystyle \left(L_{1}+L_{2}\right)^{\perp} = L_{1}^{\perp} \cap L_{2}^{\perp} $ y $\displaystyle \left(L_{1}\cap L_{2}\right)^{\perp} = L_{1}^{\perp} + L_{2}^{\perp} $. 
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(1.1)]  Tenemos que $\displaystyle L_{1} \subset L_{1} + L_{2} $ y $\displaystyle L_{2} \subset L_{1}+L_{2} $. Entonces sabemos que $\displaystyle \left(L_{1}+L_{2}\right)^{\perp} \subset L_{1}^{\perp} $ y $\displaystyle \left(L_{1}+L_{2}\right)^{\perp}\subset L_{2}^{\perp} $. Por tanto
+\[\left(L_{1}+L_{2}\right)^{\perp} \subset L_{1}^{\perp} \cap L_{2}^{\perp} .\]
+\item[(1.2)] Si $\displaystyle \lambda \in L_{1}^{\perp} \cap L_{2}^{\perp} $, tenemos que 
+\[
+\begin{split}
+&  \forall \vec{x} \in L_{1}^{\perp}, \lambda\left(\vec{x}\right) = \vec{0} \\
+& \forall \vec{y} \in L_{2}^{\perp}, \lambda\left(\vec{y}\right) = \vec{0}.
+\end{split}
+\]
+Tenemos que 
+\[\forall\vec{x} \in L_{1}+L_{2}, \exists\vec{x}_{1}\in L_{1}, \vec{x}_{2} \in L_{2}, \vec{x} = \vec{x}_{1} +\vec{x}_{2} .\]
+Entonces tenemos que 
+\[\lambda\left(\vec{x}\right) = \lambda\left(\vec{x}_{1}+\vec{x}_{2}\right) = \lambda\left(\vec{x}_{1}\right)+\lambda\left(\vec{x}_{2}\right) = \vec{0} + \vec{0} = \vec{0} .\]
+Por tanto, $\displaystyle \lambda \in \left(L_{1}+L_{2}\right)^{\perp} $, por lo que 
+\[L_{1}^{\perp} \cap L_{2}^{\perp} \subset \left(L_{1}+L_{2}\right)^{\perp} .\]
+\item[(2.1)] Tenemos que $\displaystyle L_{1}\cap L_{2} \subset L_{1}, L_{2} $, por lo que 
+	\[
+	\begin{split}
+	& L_{1}^{\perp}\subset \left(L_{1}\cap L_{2}\right)^{\perp} \in \mathcal{L}\left(V^{*}\right) \\
+	& L_{2}^{\perp} \subset \left(L_{1}\cap L_{2}\right)^{\perp} \in \mathcal{L}\left(V^{*}\right).
+	\end{split}
+	\]
+Entonces, 
+\[L_{1}^{\perp} + L_{2}^{\perp} \subset \left(L_{1} \cap L_{2}\right)^{\perp} .\]
+\item[(2.2)] Vamos a ver que $\displaystyle \left(L_{1}\cap L_{2}\right)^{\perp} \subset L_{1}^{\perp} + L_{2}^{\perp} $. Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r}\right\}  $ base de $\displaystyle L_{1}\cap L_{2} $ y sean $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r+p}\right\}  $ y $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r}, \vec{w}_{r+1}, \ldots, \vec{w}_{r+q}\right\}  $ bases de $\displaystyle L_{1} $ y $\displaystyle L_{2} $, respectivamente. Sea 
+	\[  \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r+p}, \vec{w}_{r+1}, \ldots, \vec{w}_{r+q}, \vec{v}_{1}, \ldots, \vec{v}_{k}\right\}, \]
+	base de $\displaystyle V $. Si $\displaystyle \lambda \in \left(L_{1}\cap L_{2}\right)^{\perp}$, tenemos que ver que existen $\displaystyle \lambda_{1} \in L_{1}^{\perp}, \lambda_{2}\in L_{2}^{\perp} $ tales que $\displaystyle \lambda = \lambda_{1} + \lambda_{2} $. Para $\displaystyle \forall i = 1, \ldots, r $ defino 
+	\[\lambda_{1}\left(\vec{u}_{i}\right) = 0 \quad \text{y} \quad \lambda_{2}\left(\vec{u}_{i}\right) = 0 .\]
+De esta manera, $\displaystyle \left(\lambda_{1}+\lambda_{2}\right)\left(\vec{u}_{i}\right) = 0 $. Para $\displaystyle L = r+1, \ldots, r+p $ y $\displaystyle \vec{u}_{L} \in L_{1} $ defino
+\[\lambda\left(\vec{u}_{L}\right) \in \K, \;  \lambda_{1}\left(\vec{u}_{L}\right) = 0, \; \lambda_{2}\left(\vec{u}_{L}\right) = \lambda\left(\vec{u}_{L}\right) .\]
+Similarmente, para $\displaystyle L = r+1, \ldots, r+q $, 
+\[\lambda\left(\vec{w}_{L}\right) \in \K, \; \lambda_{1}\left(\vec{w}_{L}\right) = \lambda\left(\vec{w}_{L}\right), \; \lambda_{2}\left(\vec{w}_{L}\right) = 0 .\]
+
+\end{description}
+\end{proof}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle L \in \mathcal{L}\left(V\right) $, entonces 
+\[\dim L^{\perp} = \dim V - \dim L .\]
+\end{ftheorem}
+
+\begin{observation}
+\normalfont Tenemos que 
+\[\left(L^{\perp}\right)^{\perp} = \theta\left(L\right) .\]
+\end{observation}
+
+\begin{proof}
+	Sea $\displaystyle \left\{\vec{u}_{1}, \ldots, \vec{u}_{r} \right\}  $ base de $\displaystyle L $, $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $ y $\displaystyle \left\{ \omega^{1}, \ldots, \omega^{n}\right\}  $ su base dual. Entonces tenemos ya que $\displaystyle \left\{ \omega^{r+1}, \ldots, \omega^{n}\right\}  $ son linealmente independientes. Vamos a ver que son sistema de generadores, 
+	\[\forall \lambda \in L^{\perp} \in \mathcal{L}\left(V\right), \exists a_{1}, \ldots, a_{n} \in \K, .\]
+	\[\lambda = a_{1}\omega^{1} + \cdots + a_{n}+\omega^{n} .\]
+Tenemos que $\displaystyle \forall i = 1, \ldots, r $, 
+\[0 = \lambda\left(\vec{u}_{i}\right) = a_{1}\omega^{1}\left(\vec{u}_{i}\right)+ \cdots + a_{i}\omega^{i}\left(\vec{u}_{i}\right) + \cdots + a_{r}\omega^{r}\left(\vec{u}_{i}\right) + \cdots + a_{n}\omega^{n}\left(\vec{u}_{i}\right) = a_{i} .\]
+Así, 
+\[\lambda = a_{r+1}\omega^{r+1} + \cdots + a_{n}\omega^{n} .\]
+\end{proof}
+
+\begin{observation}
+\normalfont Tenemos que 
+\[\dim L = \dim \theta\left(L\right) = \dim \left(L^{\perp}\right)^{\perp} .\]
+\end{observation}
+

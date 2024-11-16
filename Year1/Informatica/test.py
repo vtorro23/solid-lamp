@@ -154,3 +154,12 @@ def suma(x : float, y : float) -> float:
     #aqui se puede especificar como funciona la función, son comentarios
     resultado = x + y
     return resultado
+
+# 4/11/24
+
+#mostrar elementos del 1 al 10
+
+while i <= 10:
+    i = 1
+    print(i)
+    i += 1

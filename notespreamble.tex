@@ -8,7 +8,7 @@
 \usepackage{fancyhdr} % For headers and footers
 \usepackage{amsmath}
 \usepackage{geometry}[margin=1in]
-\usepackage{pgfplots}
+\usepackage{tikz}
 
 % Headers and footers configuration
 \pagestyle{fancy}
@@ -27,7 +27,7 @@
 \newenvironment{ftheorem}
 {\begin{mdframed}\begin{theorem}}{\end{theorem}\end{mdframed}}
 
-\newtheorem{eg}{Ejemplo}
+\newtheorem{eg}{Ejemplo}[chapter]
 \newenvironment{feg}
 {\begin{mdframed}\begin{eg}}{\end{eg}\end{mdframed}}
 
@@ -64,6 +64,8 @@
 \newcommand{\mcm}{\text{mcm}}
 \DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\Imagen}{Im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Aut}{Aut}
 
 \setlength{\headheight}{13.07225pt}
 \addtolength{\topmargin}{-1.07225pt}
