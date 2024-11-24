@@ -765,3 +765,110 @@ Entonces tenemos que
 \[11^{13} = 11^{8} \cdot 11^{4} \cdot 11 = \left(11^{4}\right)^{2} \cdot 11^{4} \cdot 11 .\]
 \end{eg}
 
+\begin{eg}
+\normalfont Este es un ejemplo de un ejercicio de examen. 
+\begin{description}
+\item[(a)] Hallar el menor número natural $\displaystyle n $ para que la congruencia $\displaystyle 329 x \equiv 729 + n \mod1222 $ tenga solución. \\ \\
+	Para que la congruencia tenga solución tiene que darse que $\displaystyle \mcd\left(329, 122\right) | 729 + n $. Tenemos que $\displaystyle \mcd\left(329, 1222\right) = 47 $. Entonces tenemos que 
+	\[729 + n \equiv 0 \mod 47 .\]
+Además, tenemos que $\displaystyle 729 \equiv 40 \mod 47 $, por lo que 
+\[n \equiv -40 \mod 47 \Rightarrow n \equiv 7 \mod 47 .\]
+\item[(b)] Resolver la congruencia para el valor de $\displaystyle n $ obtenido en \textbf{(a)}. \\ \\
+Resolvemos la congruencia $\displaystyle 329 x \equiv 799 \mod 1222 $. Hallamos la congruencia auxiliar:
+\[7x \equiv 17 \mod 26 .\]
+Con la identidad de Bézout, tenemos que $\displaystyle 1 = 3 \cdot 26 + \left(-11\right)7 $, así
+\[17 = 51 \cdot 26 + \left(-187\right)7 \Rightarrow x \equiv 21 + 26 k \mod 1222, \; 0 \leq k \leq 47 .\]
+\end{description}
+\end{eg}
+
+\section{Aplicaciones}
+
+\subsection{Dígitos de control}
+
+\begin{fdefinition}[La letra del D.N.I.]
+\normalfont La letra del D.N.I. se obtiene dividiendo el número del D.N.I. entre 23 y luego traduciendo cada uno de los 23 posibles restos a una letra predeterminada \footnote{Hay una tabla.} .
+\end{fdefinition}
+
+ \begin{eg}
+\normalfont La letra que corresponde al D.N.I. 12345678 es la Z, pues el resto de este número entre 23 es 14. 
+\end{eg}
+
+\begin{fdefinition}[Los dígitos de control.]
+\normalfont Tenemos cuatro dígitos de control. El primero es la última cifra del número que se obtiene sumando los productos de las cifras número de serie del soporte, respectivamente, por 7,3,1,7,3,1,7,3,1, una vez convertidas las tres primeras letras según la tabla. \\
+El en caso del segundo, se procede como en el caso anterior para el campo de la fecha de nacimiento. \\
+Para el tercer número se hace lo mismo solo que en este caso para la fecha de vencimiento. \\
+Para el último número, se hace lo mismo para la concatenación de los campos 3, 4, 5, 7, 8, 10 y 11 (sustituyendo las letras por números según la tabla).
+\end{fdefinition}
+
+\begin{fdefinition}[Número de registro personal de los funcionarios.]
+\normalfont Está formado por el número de su D.N.I.y dos cifras más. La primera es el resto del número anterior entre 7 (entonces estará entre 0 y 6). La segunda es este mismo resto más dos.
+\end{fdefinition}
+
+\subsection{Criptografía}
+
+Consiste en transformar un mensaje claro en otro cifrado (cifrar) y en reconvertir el mensaje cifrado en mensaje claro (descifrar). Existen varios procedimientos. 
+
+\begin{fdefinition}[Procedimiento aditivo.]
+\normalfont La clave del cifrado es un número $\displaystyle b $ que se suma a cada uno de los del mensaje. Para obtener números entre 0 y 36 se obtiene el resto módulo 37 de la suma del número original más $\displaystyle b $. El receptor debe conocer $\displaystyle b $ y no tiene más que restar $\displaystyle b $ módulo 37 para descifrar el mensaje.
+\end{fdefinition}
+
+\begin{eg}
+\normalfont Vamos a cifrar el mensaje 'EL 1 A LAS 3' con la clave aditiva $\displaystyle b = 17 $. Primero traducimos cada carácter a su valor numérico según la tabla:
+\[14 \; 21 \; 36 \; 1 \; 36 \; 10 \; 36 \; 21 \; 10 \; 28 \; 36 \; 3 .\]
+Su codificación será:
+\[31 \; 1 \; 16 \; 18 \; 16 \; 27 \; 16 \; 1 \; 27 \; 8 \; 16 \; 20 .\]
+Según la tabla, esto se traduce en 'V1GIGRG1RGK'.
+\end{eg}
+
+\begin{fdefinition}[Procedimiento multiplicativo.]
+\normalfont Es lo mismo que el anterior solo que en vez de sumar se multiplica por un factor $\displaystyle a $. Es decir, el cifrado de la conversión numérica de cada carácter será $\displaystyle ma \mod 37 $. Para que el cifrado sea biyectivo es necesario que todas las congruencias lineales $\displaystyle ax \equiv y \mod 37 $ tengan una única solución para cualquier $\displaystyle y \in \Z_{37} $. Esto ocurre sí y solo sí 
+\[\mcd\left(a, 37\right) = 1 .\]
+Para descifrar el mensaje se considera $\displaystyle a^{-1} $, inverso de $\displaystyle a $ en $\displaystyle \Z_{37} $. Así, 
+\[\left(ma\right)a^{-1} \equiv m \mod37 .\]
+\footnote{Es decir, el número buscado $\displaystyle m $ es el resto de dividir $\displaystyle \left(ma\right)a^{-1} $ entre 37.} 
+\end{fdefinition}
+
+\begin{eg}
+\normalfont Vamos a cifrar el mensaje anterior: 'El 1 A LAS 3', con la clave multiplicativa $\displaystyle a = 7 $. Su traducción venía dada en el ejemplo anterior y su codificación será:
+\[24 \; 36 \; 30 \; 7 \; 30 \; 33 \; 30 \; 36 \; 33 \; 11 \; 30 \; 21 .\]
+Esto se traduce en 'O U7UXU XBUL'. Ahora, el receptor debe multiplicar la cadena numérica por el inverso de $\displaystyle 7 $ en $\displaystyle \Z_{37} $, que es 16. Así obtenemos la cadena 
+\[384 \; 576 \; 480 \; 112 \; 480 \; 528 \; 480 \; 576 '; 528 \; 176 \; 480 \; 336 ,\]
+cuyos restos módulo 37 constituyen la cadena original.
+\end{eg}
+
+\begin{fdefinition}[Procedimiento exponencial]
+\normalfont  Se quiera cifrar un número $\displaystyle m $, se elevará este a un exponente $\displaystyle k $ y el resultado se reducirá módulo $\displaystyle n $, siendo $\displaystyle k $ y $\displaystyle n $ números naturales elegidos convenientemente. 
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont Sean $\displaystyle n, t \in \N $ tales que 
+\[t \equiv 1 \mod \left(\varphi\left(n\right)\right) .\]
+Dado $\displaystyle m \in \N $ si se verifica alguna de las siguientes hipótesis 
+\begin{itemize}
+\item $\displaystyle m $ y $\displaystyle n $  son primos entre sí.
+\item $\displaystyle n $ es primo. 
+\item $\displaystyle n $ es producto de dos primos distintos.
+\end{itemize}
+entonces, 
+\[m^{t} \equiv m \mod n .\]
+\end{ftheorem}
+
+\begin{observation}
+\normalfont Este resultado se utiliza para encriptar de la siguiente manera: se elige $\displaystyle n $ primo o producto de dos primos distintos, se calcula $\displaystyle \varphi\left(n\right) $, se toma $\displaystyle k $ primo con $\displaystyle \varphi\left(n\right) $ y se calcula $\displaystyle j $, el inverso de $\displaystyle k $ en $\displaystyle \Z_{\varphi\left(n\right)} $. De esta manera, 
+\[kj \equiv 1 \mod \varphi\left(n\right) .\]
+Suponiendo que el emisor y el receptor conocen $\displaystyle k $ y $\displaystyle j $, el emisor mandará el mensaje codificado que es $\displaystyle r $, el resto de la división de $\displaystyle k^{k} $ entre $\displaystyle n $. Para descodificar, teniendo en cuenta que 
+\[m^{kj} \equiv m \mod n ,\]
+el receptor calculará
+\[r^{j} \equiv \left(m^{k}\right)^{j} \equiv m^{jk} \equiv m \mod n .\]
+Así se recupera el mensaje original $\displaystyle m $.
+\footnote{Este procedimiento solo es válido si $\displaystyle m < n $.} 
+\end{observation}
+
+\begin{fdefinition}[Procedimiento RSA]
+\normalfont Se da un par $\displaystyle \left(n, k\right) $. Cada letra se traduce a su número correspondiente $\displaystyle a $ y se calcula $\displaystyle a^{k} \mod n $. El resultado del cifrado es un número, no se vuelve a traducir a letras. Ahora, para descifrar es necesario calcular $\displaystyle j $, el inverso de $\displaystyle k $ módulo $\displaystyle \varphi\left(n\right) $. A continuación, se eleva cada número del cifrado a $\displaystyle j $ módulo $\displaystyle n $.
+\end{fdefinition}
+
+\begin{eg}
+\normalfont Hacemos un ejemplo con la palabra 'ADN' y la clave $\displaystyle \left(n,k\right) = \left(55,3\right) $. Tenemos que los números correspondientes son $\displaystyle 10 \; 13 \; 23 $. Elevamos cada uno de los números a 3 $\displaystyle \mod 55 $ obteniendo el resultado $\displaystyle 10 \; 52 \; 12 $. Ahora, para descifrar, calculamos el inverso de $\displaystyle k = 3 $ módulo $\displaystyle \varphi\left(n\right) = \varphi\left(55\right) = 40 $. En este caso, obtenemos que $\displaystyle j=27 $. Así, elevando cada uno de los elementos del cifrado a $\displaystyle j = 27 $ módulo $\displaystyle 55 $ obtenemos la configuración inicial $\displaystyle 10 \; 13 \; 23 $, es decir, las letras 'ADN'.
+\end{eg}
+

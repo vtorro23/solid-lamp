@@ -1,0 +1,105 @@
+\chapter{Grupos de simetrías. Mosaicos.}
+
+\textbf{Objetivo:} Estudiar y clasificar todas las formas posibles de cubrir el plano con copias idénticas de una 'ficha' o 'pieza' (tesela) de manera períodica: mosaicos. \\ \\
+\textbf{Herramientas:} Estudio de los movimientos en el plano que preservan la teselación. \\ \\
+\textbf{Elementos matemáticos:} 
+\begin{itemize}
+\item Grupo - Subgrupo
+\item Grupo de movimento en el plano
+\item Simetrías
+\end{itemize}
+\textbf{Aplicaciones:}
+\begin{itemize}
+\item Retículos
+\item 17 grupos cristalográficos planos
+\end{itemize}
+
+\section{Grupos. Isomorfismos y homomorfismos de grupos.}
+
+\begin{fdefinition}[Grupo]
+\normalfont Se define como \textbf{grupo} al par ordenado $\displaystyle \left(G, \cdot\right) $ formado por un conjutno $\displaystyle G $ y una operación interna
+\[
+\begin{split}
+	\cdot : G \times G & \to G \\
+\left(a,b\right) & \to a \cdot b .
+\end{split}
+\]
+tales que
+\begin{description}
+\item[(1)] La operación es asociativa. 
+	\[\forall a, b, c \in G, \; \left(a \cdot b\right) \cdot c = a \cdot \left(b \cdot c\right) .\]
+\item[(2)] Existe un elemento neutro.
+	\[\exists e \in G, \forall a \in G, \; e \cdot a = a \cdot e = a .\]
+\item[(3)] Existe el inverso. 
+	\[\forall a \in G, \exists a^{-1} \in G\; a \cdot a^{-1} = a^{-1} \cdot a = e .\]
+Si se cumple también la propiedad conmutativa:
+\[\forall a, b \in G, \; a \cdot b = b \cdot a ,\]
+se denomina grupo conmutativo o \textbf{abeliano}.
+\end{description}
+\end{fdefinition}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(1)] $\displaystyle \left(\Z, +\right) $ es un grupo abeliano. 
+\item[(2)] $\displaystyle \left(\Q, \cdot\right) $ no es un grupo pues $\displaystyle 0 \in \Q $ no tiene inverso. 
+\item[(3)] $\displaystyle \left(\Q^{*}, \cdot\right) $ es un grupo abeliano. 
+\item[(4)] Tenemos que $\displaystyle \left(2\Z+1, +\right) $ no es un grupo, pues la suma de dos números impares es un número par. Similarmente, $\displaystyle \left(2\Z+1, \cdot \right) $ no es un grupo por la ausencia de inversos. 
+\item[(5)] El conjunto de las matrices $\displaystyle 2 \times 2 $ es un grupo abeliano con la suma. $\displaystyle \left(M_{2\times2}, +\right) $ es un grupo abeliano. 
+\item[(6)] El conjunto de las matrices $\displaystyle n \times n $ con $\displaystyle \det \neq 0 $ , $\displaystyle \left(M_{n\times n}, \cdot\right) $, es un grupo abeliano. En concreto, en el caso de las matrices $\displaystyle 2 \times 2 $, recibe el nombre de \textbf{grupo general lineal de orden 2} y se denota como $\displaystyle \GL\left(2, \R\right) $ o $\displaystyle \GL\left(2\right) $. 
+\item[(7)] El conjunto de matrices $\displaystyle 2 \times 2 $, $\displaystyle \left(M_{2\times2}, \cdot\right) $, con $\displaystyle \det = 1 $ es un grupo y se denomina \textbf{grupo especial lineal}: $\displaystyle \SL\left(2\right) $.
+\item[(8)] El conjunto de matrices ortogonales ($\displaystyle A^{T} = A^{-1} $) es un grupo al que se denomina \textbf{grupo ortogonal}: $\displaystyle \text{O}\left(2\right) $.
+\item[(9)] Las matrices ortogonales con $\displaystyle \det = 1 $ se denomina \textbf{grupo especial ortogonal}: $\displaystyle \SO\left(n\right) $.
+\item[(10)] $\displaystyle \left(\Z_{n}, +\right) $ con $\displaystyle n \in \N $ forma un grupo abeliano. 
+\item[(11)] Si $\displaystyle p $ es primo, $\displaystyle \left(\Z_{p}, \cdot \right) $ también es un grupo abeliano. 
+\end{description}
+\end{eg}
+
+\begin{fprop}\normalfont Sea $\displaystyle \left(G, \cdot \right) $ un grupo.
+\begin{description}
+\item[(1)] Propiedades cancelativas por la derecha y por la izquierda de un grupo:
+\[
+\begin{split}
+& a \cdot c = b \cdot c \Rightarrow a = b \\
+& c \cdot a = c \cdot b \Rightarrow a = b.
+\end{split}
+\]
+\item[(2)] El elemento neutro de un grupo es único.
+\item[(3)] Cada elemento de un grupo tiene un único inverso. 
+\item[(4)] Si $\displaystyle a \in G $, entonces $\displaystyle \left(a^{-1}\right)^{-1} = a $.
+\item[(5)] Si $\displaystyle a, b \in G $, $\displaystyle \left(a \cdot b\right)^{-1} = b^{-1} \cdot a ^{-1} $. 
+\item[(6)] Son equivalentes:
+	\begin{description}
+	\item[(a)] $\displaystyle \left(G, \cdot\right) $ es un grupo abeliano. 
+	\item[(b)] $\displaystyle \left(a \cdot b\right)^{-1} = a^{-1} \cdot b^{-1}, \forall a, b \in G $.
+	\end{description}
+\end{description}
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(1)] Como $\displaystyle \left(G, \cdot\right) $ es un grupo, tenemos que si $\displaystyle a, b, c \in G $, existe $\displaystyle c^{-1} \in G $ tal que 
+	\[a \cdot c = b \cdot c \iff a \cdot c \cdot c^{-1} = b \cdot c \cdot c^{-1} \iff a \cdot e = b \cdot e \iff a = b .\]
+Similarmente, 
+\[c \cdot a = c \cdot b \iff c^{-1} \cdot c \cdot a = c^{-1} \cdot c \cdot b \iff e \cdot a = e \cdot b \iff a = b .\]
+\item[(2)] Sean $\displaystyle e, e' \in G $ dos elementos neutros de $\displaystyle \left(G, \cdot\right) $. Entonces, tenemos que 
+	\[ e = e \cdot e' = e' \cdot e = e' .\]
+\item[(3)] Si $\displaystyle a \in G $, sean $\displaystyle b, c \in G $ dos inversos de $\displaystyle a $. Entonces tenemos que 
+	\[a \cdot b = a \cdot c = e .\]
+Por \textbf{(1)} tenemos que $\displaystyle b = c $. Otra manera de demostrarlo es:
+\[b = b \cdot e = b \cdot \left(a \cdot c\right) = \left(b \cdot a \right) \cdot c = e \cdot c = c .\]
+\item[(4)] 
+	\[\left(a^{-1}\right)^{-1} \cdot a^{-1} = e .\]
+Como el inverso de $\displaystyle a^{-1} $ es $\displaystyle a $ y el inverso es único, tenemos que $\displaystyle a = \left(a^{-1}\right)^{-1} $. 
+\item[(5)] Tenemos que 
+	\[\left(a \cdot b\right) \cdot \left(b^{-1} \cdot a^{-1}\right) = a \cdot \left(b^{-1} \cdot b\right) \cdot a^{-1} = a \cdot e \cdot a^{-1} = a \cdot a^{-1} = e .\]
+	Como el inverso de $\displaystyle a \cdot b $ es $\displaystyle \left(a \cdot b\right)^{-1} $, y el inverso es único, tenemos que $\displaystyle \left(a \cdot b\right)^{-1} = b^{-1} \cdot a^{-1} $.
+\item[(6)] Si es un grupo abeliano, se cumple la propiedad conmutativa y con el resultado \textbf{(5)} la demostración es trivial. Recíprocamente, si $\displaystyle \forall a, b \in G $ tenemos que 
+	\[\left(a \cdot b\right) ^{-1} = b^{-1} \cdot a^{-1} = a^{-1} \cdot b^{-1} ,\]
+tenemos que 
+\[ \left(a \cdot b\right) \cdot \left(a \cdot b\right)^{-1} = \left( b \cdot a\right) \cdot\left(a \cdot b\right)^{-1} .\]
+Por la propiedad \textbf{(1)} tenemos que $\displaystyle a \cdot b = b \cdot a $, por lo que se cumple la propiedad conmutativa y es un grupo abeliano. 
+\end{description}
+
+\end{proof}
+

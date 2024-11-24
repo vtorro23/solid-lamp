@@ -713,6 +713,8 @@ Entonces,
 Así, $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es de Cauchy. En efecto, $\displaystyle x_{n} \to \frac{5}{3} $.
 \end{eg}
 
+\section{Otros teoremas}
+
 \begin{observation}
 \normalfont 
 \begin{itemize} Si $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N}\subset\R $,
@@ -739,4 +741,460 @@ Así, $\displaystyle x_{n} < y_{n}\left(1 + L\right) $. Tenemos que $\displaysty
 \[\lim_{n \to \infty}\frac{3n^{2}+5n}{n^{2}+1} = 3 .\]
 Como $\displaystyle n^{2} + 1 \to \infty $ tenemos que $\displaystyle 3n^{2} + 5n \to \infty $ y viceversa. 
 \end{eg}
+
+\begin{ftheorem}[Criterio de Stolz]
+	\normalfont Sean $\displaystyle \left\{ a_{n}\right\} _{n\in\N}, \left\{ b_{n}\right\} _{n\in\N}\subset \R $ tales que 
+	\[b_{1} < b_{2} < \cdots < b_{n} < \cdots  ,\]
+	y supongamos que $\displaystyle \lim_{n \to \infty}b_{n}= \infty $. Si existe 
+	\[\lim_{n \to \infty}\frac{a_{n+1}-a_{n}}{b_{n+1}-b_{n}} = l , \]
+	entonces $\displaystyle \lim_{n \to \infty}\frac{a_{n}}{b_{n}} = l $.
+\end{ftheorem}
+
+\begin{proof}
+Sea $\displaystyle \epsilon > 0 $, entonces existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $, 
+\[ -\frac{\epsilon }{2} < \frac{a_{n+1}-a_{n}}{b_{n+1}-b_{n}} - l < \frac{\epsilon }{2} .\]
+\[
+\begin{split}
+ \iff\left(l  - \frac{\epsilon }{2}\right)\left(b_{n+1}-b_{n}\right) < a_{n+1}-a_{n} < \left(l + \frac{\epsilon }{2}\right)\left(b_{n+1}-b_{n}\right), \; \forall n\geq n_{0}.
+\end{split}
+\]
+Así, para $\displaystyle n_{0} $,
+\[\left(l  - \frac{\epsilon }{2}\right)\left(b_{n_{0}+1}-b_{n_{0}}\right) < a_{n_{0}+1}-a_{n_{0}} < \left(l + \frac{\epsilon }{2}\right)\left(b_{n_{0}+1}-b_{n_{0}}\right) .\]
+\[\vdots .\]
+\[\left(l-\frac{\epsilon }{2}\right)\left(b_{n_{0}+m}-b_{n_{0}+m -1}\right) < a_{n_{0}+m} - a_{n_{0}+m -1}<\left(l+\frac{\epsilon }{2}\right)\left(b_{n_{0}+m}-b_{n_{0}+m -1}\right), \; m \in \N .\]
+Si sumamos todas las desigualdades y usando la propiedad telescópica, 
+\[\left(l - \frac{\epsilon }{2}\right)\left(b_{n_{0}+m}-b_{n_{0}}\right) < a_{n_{0}+m} - a_{n_{0}}< \left(l + \frac{\epsilon }{2}\right)\left(b_{n_{0}+m}-b_{n_{0}}\right) .\]
+Dividimos todo por $\displaystyle b_{n_{0}+m} \neq 0 $ ($\displaystyle b_{n_{0}+m} > 0 $), 
+\[ \left(l-\frac{\epsilon }{2}\right)\left(1-\frac{b_{n_{0}}}{b_{n_{0}+m}}\right) < \frac{a_{n_{0}+m}}{b_{n_{0}+m}}-\frac{a_{n_{0}}}{b_{n_{0}+m}}<\left(l+\frac{\epsilon }{2}\right)\left(1 - \frac{b_{n_{0}}}{b_{n_{0}+m}}\right).\]
+Así, tenemos que 
+\[l - \frac{\epsilon }{2} = \lim_{m \to \infty}\inf\left(l-\frac{\epsilon }{2}\right)\left(1 - \frac{b_{n_{0}}}{b_{n_{0}+m}}\right) \leq \lim_{m \to \infty}\inf \frac{a_{n_{0}+m}}{b_{n_{0}+m}} - 0.\]
+Además, tenemos que 
+\[\lim_{m \to \infty}\sup \frac{a_{n_{0}+m}}{b_{n_{0}+m}} - 0 \leq \lim_{m \to \infty}\sup\left(l+\frac{\epsilon }{2}\right)\left(1-\frac{b_{n_{0}}}{b_{n_{0}+m}}\right) = l + \frac{\epsilon }{2} .\]
+Así, $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists n_{0} \in \N $ tal que $\displaystyle \forall m \in \N $, 
+\[\lim_{m \to \infty}\frac{a_{n_{0}+m}}{b_{n_{0}+m}} \leq \lim_{m \to \infty}\sup\frac{a_{n_{0}+m}}{b_{n_{0}+m}} \leq l + \frac{\epsilon }{2} .\]
+Por lo tanto, $\displaystyle \forall \epsilon > 0 $:
+\[l - \frac{\epsilon }{2} \leq \lim_{m \to \infty}\inf \frac{a_{m}}{b_{m}} \leq \lim_{m \to \infty}\sup \frac{a_{m}}{b_{m}} \leq l + \frac{\epsilon }{2}.\]
+Por lo que
+\[l \leq \lim_{m \to \infty}\inf \frac{a_{m}}{b_{m}} \leq \lim_{m \to \infty}\sup \frac{a_{m}}{b_{m}} \leq l .\]
+Por tanto tenemos que $\displaystyle \lim_{m \to \infty}\frac{a_{m}}{b_{m}} = l $.
+\end{proof}
+
+\begin{observation}
+\normalfont 
+\begin{description}
+\item[(i)] En el criterio de Stolz, si $\displaystyle l = \pm \infty $, entonces $\displaystyle \lim_{m \to \infty}\frac{a_{m}}{b_{m}} = \pm \infty $. 
+\item[Segundo criterio de Stolz.] Si tenemos $\displaystyle \left\{ a_{n}\right\} _{n\in\N}, \left\{ b_{n}\right\} _{n\in\N}\subset\R $ tales que $\displaystyle a_{n} \to 0 $ y $\displaystyle b_{n} \to 0 $ y $\displaystyle b_{n} < b_{n+1} $ \footnote{Realmente solo importa que sea monotona, no importa que sea creciente o decreciente.}, entonces, si $\displaystyle \lim_{n \to \infty}\frac{a_{n+1}-a_{n}}{b_{n+1}-b_{n}} = l $, entonces $\displaystyle \lim_{n \to \infty}\frac{a_{n}}{b_{n}} = l $.  
+\end{description}
+\end{observation}
+
+\begin{observation}
+\normalfont Propiedades de los límites superiores e inferiores:
+\begin{description}
+\item[(i)] Si $\displaystyle x_{n} \leq y_{n} $, entonces $\displaystyle \lim_{n \to \infty}\inf x_{n} \leq \lim_{n \to \infty}\inf y_{n} $ y $\displaystyle \lim_{n \to \infty}\sup x_{n} \leq \lim_{n \to \infty} \sup y_{n} $. 
+\item[(ii)] $\displaystyle \lim_{n \to \infty} \inf x_{n} = \lim_{n \to \infty}\sup x_{n} = l \iff \lim_{n \to \infty}x_{n} = l $.
+\item[(iii)] Si $\displaystyle \lim_{n \to \infty}x_{n} = l $, tenemos que 
+	\[\lim_{n \to \infty}\sup\left(x_{n}+y_{n}\right) = l + \lim_{n \to \infty}\sup y_{n} .\]
+	\[\lim_{n \to \infty}\inf\left(x_{n}+y_{n}\right) = l + \lim_{n \to \infty}\inf y_{n} .\]
+\end{description}
+\end{observation}
+
+\begin{eg}
+\normalfont Sea $\displaystyle x_{n} = \left(-1\right)^{n} $ y $\displaystyle y_{n} = \left(-1\right)^{n}+1 $, tenemos que $\displaystyle x_{n} \leq y_{n} $. Además, 
+\[\lim_{n \to \infty}\inf x_{n} = -1 \leq \lim_{n \to \infty } \inf y_{n} = 0 .\]
+Similarmente, 
+\[\lim_{n \to \infty}\sup x_{n} = 1 \leq \lim_{n \to \infty}\sup y_{n} = 2 .\]
+\end{eg}
+
+\begin{eg}
+\normalfont Sabemos que si $\displaystyle a_{n} = 1 + \frac{1}{2} + \cdots + \frac{1}{n} $, entonces $\displaystyle a_{n} \to \infty $. Veamos a qué tiende \footnote{A partir de ahora $\displaystyle \log = \ln $, no es en base 10.} 
+\[n\geq 2, \; \frac{1 + \frac{1}{2} + \cdots + \frac{1}{n}}{\log n} .\]
+Por el criterio de Stolz, basta estudiar el límite, 
+\[ \frac{a_{n+1}-a_{n}}{\log\left(n+1\right)-\log n} = \frac{\frac{1}{n+1}}{\log\left(1 + \frac{1}{n}\right)} = \frac{1}{\frac{n+1}{n}\log\left(1+\frac{1}{n}\right)^{n}} .\]
+Tenemos que $\displaystyle \log\left(1 + \frac{1}{n}\right)^{n} \to \log e = 1 $ y $\displaystyle  \frac{n+1}{n} \to 1$, por lo que 
+\[\frac{a_{n+1}-a_{n}}{\log\left(n+1\right)-\log\left(n\right)} \to 1 .\]
+Es decir, la serie armónica, en el infinito, se aproxima al logaritmo neperiano.
+\end{eg}
+
+\section{Series numéricas}
+
+\begin{fdefinition}[Suma parcial]
+\normalfont Sea $\displaystyle \left\{ a_{n}\right\} _{n\in\N}\subset\R $. Sea llama \textbf{suma parcial n-ésima} 
+\[S_{n} = a_{1} + \cdots + a_{n} .\]
+\end{fdefinition}
+
+\begin{fdefinition}[]
+	\normalfont Dada la sucesión $\displaystyle \left\{ a_{n}\right\} _{n\in\N} $, diremos que la \textbf{serie} $\displaystyle \sum_{n\in\N}a_{n} $ converge a $\displaystyle S $ si $\displaystyle \lim_{n \to \infty}S_{n} = S $.
+\end{fdefinition}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] $\displaystyle a_{n} = 2^{-n}, \; n \in \N $. Tenemos que 
+\[S_{n} = \frac{1}{2} + \frac{1}{2^{2}} + \cdots + \frac{1}{2^{n}} = \frac{\frac{1}{2}-\frac{1}{2^{n+1}}}{1 -\frac{1}{2}} .\]
+De esta manera, 
+\[\sum_{n\in\N}\frac{1}{2^{n}} = \sum^{\infty}_{n=1}\frac{1}{2^{n}} = \lim_{n \to \infty}S_{n} = 1 .\]
+\item[(ii)] $\displaystyle a_{n} = \left(-1\right)^{n} $. Tenemos que $\displaystyle S_{1} = -1 $, $\displaystyle S_{2}= 0 $, entonces, no existe el límite de $\displaystyle S_{n} $. Por tanto, la serie $\displaystyle \sum^{\infty}_{n=1}\left(-1\right)^{n} $ no converge.
+\item[(iii)] $\displaystyle a_{n} = \frac{1}{n} $. Tenemos que 
+	\[S_{n} = \frac{1}{1} + \frac{1}{2} + \cdots + \frac{1}{n} .\]
+Tenemos que $\displaystyle \lim_{n \to \infty}S_{n} = \infty $, por lo que la serie armónica es divergente.
+\item[(iv)] $\displaystyle \sum^{\infty}_{n = 1}\frac{1}{n^{2}+n} $. Tenemos que 
+	\[\frac{1}{n^{2}+n} = \frac{1}{n} -\frac{1}{n+1} .\]
+Entonces tenemos que, 
+\[
+\begin{split}
+	S_{1} & = \frac{1}{2} \\
+	S_{2} & = \frac{1}{2} + \frac{1}{6} = \left(1 - \frac{1}{2}\right) + \left(\frac{1}{2} - \frac{1}{3}\right) \\
+& \vdots \\
+	S_{n} & = \left(1 - \frac{1}{2}\right) + \left(\frac{1}{2} - \frac{1}{3}\right) + \cdots + \left(\frac{1}{n}-\frac{1}{n+1}\right) = 1 - \frac{1}{n+1}.
+\end{split}
+\]
+De esta manera, $\displaystyle \sum^{\infty}_{n = 1}\frac{1}{n^{2}+n} = \lim_{n \to \infty}S_{n} = 1 $.
+\item[(v)] $\displaystyle \sum^{\infty}_{n = 1} \frac{1}{n^{2}} = \frac{\pi^{2}}{6} $.
+\end{description}
+\end{eg}
+
+\begin{ftheorem}[]
+	\normalfont Si $\displaystyle \left\{ a_{n}\right\} _{n\in\N}\subset\R $ y la serie $\displaystyle \sum^{\infty}_{n = 1}a_{n} $ converge, entonces $\displaystyle \lim_{n \to \infty}a_{n} = 0 $.
+\end{ftheorem}
+
+\begin{proof}
+Sea $\displaystyle S_{n} = \sum^{n}_{k=1}a_{k} $. Como $\displaystyle S_{n} \to l $, entonces $\displaystyle S_{n-1} \to l $. Así, $\displaystyle S_{n}-S_{n-1} \to 0 $. Entonces tenemos que $\displaystyle S_{n}-S_{n-1} = a_{n} \to 0 $. 
+\end{proof}
+
+\begin{ftheorem}[]
+	\normalfont Si $\displaystyle \left\{ a_{n}\right\} _{n\in\N}\subset\R^{+} $, entonces $\displaystyle \sum^{\infty}_{n = 1}a_{n}  $ converge si y solo si $\displaystyle \left\{ S_{n}\right\} _{n\in\N} $ está acotada superioremente.
+\end{ftheorem}
+
+\begin{proof}
+	Como los $\displaystyle a_{n} \geq 0 $, tenemos que $\displaystyle S_{n} \leq S_{n+1} $ (es monótona creciente). Así, $\displaystyle S_{n} \to l \iff S_{n} $ está acotada superiormente.
+\end{proof}
+
+\begin{observation}
+\normalfont Si $\displaystyle \sum^{\infty}_{n = 1}a_{n} = a $ y $\displaystyle \sum^{\infty}_{n = 1}b_{n} = b $, entonces 
+\[\sum^{\infty}_{n = 1}\left(a_{n}+b_{n}\right) = a + b .\]
+Es decir, podemos extrapolar todas las propiedades de los límites a las series.
+\end{observation}
+
+\begin{ftheorem}[Criterio de comparación]
+\normalfont Si $\displaystyle \left\{ a_{n}\right\} _{n\in\N}, \left\{ b_{n}\right\} _{n\in\N} \subset \R^{+} $ tales que $\displaystyle a_{n} \leq b_{n} $ para $\displaystyle n \geq k $. Si, $\displaystyle \sum^{\infty}_{n = 1} b_{n} $ converge, entonces $\displaystyle \sum^{\infty }_{n = 1}a_{n} $ converge.
+\end{ftheorem}
+
+\begin{proof}
+Sea $\displaystyle n \geq k $, entonces
+\[\sum^{n}_{k = 1}a_{k} \leq \underbrace{a_{1} + \cdots + a_{k-1}}_{a \in \R} + \sum^{n}_{j=k}b_{j} \leq \underbrace{a + \sum^{\infty}_{n = 1}b_{n}}_{C} < \infty .\]
+Entonces, tenemos que $\displaystyle S_{n} \leq C, \; \forall n \in \N$ y, por el teorema anterior, $\displaystyle \sum^{\infty}_{n = 1}a_{n} $ converge. 
+\end{proof}
+
+\begin{eg}
+\normalfont Vamos a demostrar que $\displaystyle \sum^{\infty}_{n = 1} \frac{1}{n^{2}} $ converge. Tenemos que $\displaystyle \forall n \in \N $, 
+\[n \leq n^{2} \iff \frac{1}{n^{2}} \leq \frac{2}{n^{2}+n} .\]
+Entonces, sea $\displaystyle a_{n} = \frac{1}{n^{2}} $ y $\displaystyle b_{n} = \frac{2}{n^{2}+n} $. Entonces tenemos que $\displaystyle 0 \leq a_{n} \leq b_{n} $. De un ejemplo anterior deducimos que 
+\[\sum^{\infty}_{n=1}b_{n} = 2 \cdot 1 = 2 .\]
+Entonces, por el teorema anterior tenemos que \footnote{Si la sucesión es de términos positivos, entonces decir $\displaystyle \lim_{n \to \infty}a_{n} < \infty $ es lo equivalente a decir que converge. Si no son términos positivos no lo podemos afirmar. Considera $\displaystyle a_{n} = \left(-1\right)^{n} $.} 
+\[\sum^{\infty}_{n = 1}\frac{1}{n^{2}} < \infty .\]
+\end{eg}
+\begin{eg}
+\normalfont Si $\displaystyle p \in \R $ y $\displaystyle a_{n} = \frac{1}{n^{p}} $:
+\begin{itemize}
+\item Si $\displaystyle p \leq 0 $, tenemos que 
+	\[a_{n} \to 
+	\begin{cases}
+	\infty, \; p\neq 0 \\
+	1, \; p = 0
+	\end{cases}
+	.\]
+Así, como $\displaystyle a_{n} $ no tiende a $\displaystyle 0 $, la serie $\displaystyle \sum^{\infty}_{n = 1}\frac{1}{n^{p}} = \infty $.
+\item Si $\displaystyle 0 \leq p \leq 1 $, tenemos que $\displaystyle n^{p} \leq n $. Por tanto, 
+	\[\frac{1}{n} \leq \frac{1}{n^{p}} \Rightarrow \sum^{\infty}_{n=1}\frac{1}{n^{p}} = \infty .\]
+\item Si $\displaystyle p \geq 2 $, tenemos que $\displaystyle n^{p} \geq n^{2} $, por lo que $\displaystyle \frac{1}{n^{p}} \leq \frac{1}{n^{2}} $. Como $\displaystyle \sum^{\infty}_{n=1}\frac{1}{n^{2}} $ converge, por el criterio de comparación tenemos que 
+	\[\sum^{\infty}_{n = 1}\frac{1}{n^{p}} < \infty .\]
+\item Si $\displaystyle 1 < p < 2 $, tenemos que $\displaystyle \sum^{\infty}_{n = 1}\frac{1}{n^{p}}<\infty $ por el \textbf{criterio de la integral} (lo veremos en el segundo semestre).
+\end{itemize}
+\end{eg}
+
+\begin{observation}
+\normalfont Así, podemos concluir que 
+\[\sum^{\infty}_{n = 1}\frac{1}{n^{p}} < \infty \iff p > 1 .\]
+\end{observation}
+
+\begin{eg}
+\normalfont Demostramos que $\displaystyle \sum^{\infty}_{n = 1}\frac{1}{n^{3}+2n+1} < \infty $.
+\[\lim_{n \to \infty}\frac{\frac{1}{n^{3}}}{\frac{1}{n^{3}+2n+1}} = 1 .\]
+Así pues, 
+\[\sum^{\infty}_{n = 1}\frac{1}{n^{3}+2n+1} \approx \sum^{\infty}_{n = 1}\frac{1}{n^{3}} < \infty .\]
+\footnote{El símbolo $\displaystyle \approx $ lo utilizamos para decir que cuando $\displaystyle n \to \infty $ se comportan prácticamente igual.} 
+\end{eg}
+
+\begin{ftheorem}[]
+	\normalfont Si $\displaystyle \left\{ a_{n}\right\} _{n\in\N}, \left\{ b_{n}\right\} _{n\in\N}\subset\R^{+} $ y $\displaystyle \lim_{n \to \infty}\frac{a_{n}}{b_{n}} = l > 0 $, entonces
+	\[\sum^{\infty}_{n = 1}a_{n} < \infty \iff \sum^{\infty}_{n = 1}b_{n} < \infty .\]
+\end{ftheorem}
+
+\begin{proof}
+Sea $\displaystyle \epsilon = \frac{l}{2} > 0 $, entonces existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $, 
+\[ \left|\frac{a_{n}}{b_{n}}-l\right|<\epsilon \iff l- \epsilon < \frac{a_{n}}{b_{n}} < \epsilon + l \iff \frac{l}{2}< \frac{a_{n}}{b_{n}} < \frac{3l}{2} .\]
+Entonces, si $\displaystyle \sum^{\infty}_{n =1}a_{n} $ converge, tenemos que 
+\[\frac{l}{2}b_{n} < a_{n} ,\]
+por lo que $\displaystyle \sum^{\infty}_{n = 1}b_{n} $ también converge. Recíprocamente, si $\displaystyle \sum^{\infty}_{n = 1}b_{n} < \infty $ tenemos que $\displaystyle a_{n} < \frac{3l}{2}b_{n} $, por lo que $\displaystyle \sum^{\infty}_{n = 1}a_{n} < \infty $.
+\end{proof}
+
+\begin{ftheorem}[Criterio de la raíz]
+	\normalfont Sea $\displaystyle \left\{ a_{n}\right\} _{n\in\N}\subset\R^{+} $ y supongamos que existe $\displaystyle \lim_{n \to \infty}\sqrt[n]{a_{n}} = a \geq 0 $.
+\begin{itemize}
+\item Si $\displaystyle a < 1 $, entonces $\displaystyle \sum^{\infty}_{n =1}a_{n} $ converge.
+\item Si $\displaystyle a > 1 $, entonces $\displaystyle \sum^{\infty}_{n = 1}a_{n} $ diverge.
+\item Si $\displaystyle a = 1 $, entonces no sabemos.
+\end{itemize}
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Si $\displaystyle a <1  $, sea $\displaystyle a < r < 1 $. Sea $\displaystyle \epsilon > 0 $ tal que $\displaystyle a - \epsilon > 0 $ y $\displaystyle a+\epsilon < r $. Entonces, existe un $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $, 
+	\[ a - \epsilon < \sqrt[n]{a_{n}} < a+\epsilon < r .\]
+Entonces tenemos que si $\displaystyle n \geq n_{0} $, 
+\[\left(a-\epsilon \right)^{n} < a_{n} < \left(a+\epsilon \right)^{n} < r^{n} .\]
+Por el criterio de comparación, como 
+\[\sum^{\infty}_{n = 1}r^{n} = \frac{r}{1-r} < \infty, \; 0 \leq r < 1 ,\]
+es convergente, tenemos que $\displaystyle \sum^{\infty}_{n=1}a_{n} $ también es convergente.
+\item[(ii)] Análogamente, si $\displaystyle a > 1 $, tomamos $\displaystyle 1 < r < a $ y $\displaystyle \epsilon  $ tal que $\displaystyle r < a-\epsilon  $. Así, existe un $\displaystyle n_{0}\in\N $ tal que $\displaystyle \forall n \geq n_{0} $, 
+	\[ \left|\sqrt[n]{a_{n}}-a\right|<\epsilon \iff r < -\epsilon + a < \sqrt[n]{a_{n}}<\epsilon + a .\]
+Es decir, si $\displaystyle n \geq n_{0} $,
+\[ r^{n} < a_{n} .\]
+Como $\displaystyle r > 1 $, tenemos que 
+\[\sum^{\infty}_{n = 1}r^{n} = \lim_{n \to \infty}\frac{r-r^{n+1}}{1-r} = \infty .\]
+Por el criterio de comparación, como $\displaystyle \sum^{\infty}_{n = 1}a_{n} > \sum^{\infty}_{n=1}r^{n} = \infty $, tenemos que la serie de $\displaystyle a_{n} $ diverge.
+\end{description}
+\end{proof}
+
+\begin{eg}
+\normalfont Ejemplos del caso $\displaystyle a = 1 $. 
+\begin{description}
+\item[(i)] $\displaystyle \sum^{\infty}_{n =1}\frac{1}{n} = \infty $ y 
+	\[\lim_{n \to \infty}\sqrt[n]{\frac{1}{n}} = \lim_{n \to \infty}\frac{1}{n^{\frac{1}{n}}} = 1 .\]
+\item[(ii)] Considera $\displaystyle \sum^{\infty}_{n = 1}\frac{1}{n^{2}} $ converge y 
+	\[\lim_{n \to \infty}\sqrt[n]{\frac{1}{n^{2}}} = \lim_{n \to \infty}\frac{1}{n^{\frac{2}{n}}} = \lim_{n \to \infty}\left(\frac{1}{n^{\frac{1}{n}}}\right)^{2} = 1 .\]
+\end{description}
+\end{eg}
+
+\begin{eg}
+\normalfont \textbf{Ejercicio 76(f).} $\displaystyle \sum^{\infty}_{n = 1}\left(\frac{n+1}{n}\right)^{n^{2}}3^{-n} $. Llamamos $\displaystyle a_{n} $ al término general. Entonces, 
+\[\sqrt[n]{a_{n}} = \left(\frac{n+1}{n}\right)^{n} 3^{-1} .\]
+Si $\displaystyle n \to \infty $, tenemos que 
+\[\left(\frac{n+1}{n}\right)^{n} = \left(1+\frac{1}{n}\right)^{n} \to e .\]
+Como $\displaystyle 0< e < 3 $, tenemos que $\displaystyle \frac{e}{3} < 1 $. Por el criterio de la raíz, la serie converge.
+\end{eg}
+
+\begin{ftheorem}[Criterio del cociente]
+	\normalfont Si $\displaystyle \left\{ a_{n}\right\} _{n\in\N}\subset\R^{+} $ tal que existe $\displaystyle \lim_{n \to \infty}\frac{a_{n+1}}{a_{n}} = a $, entonces:
+\begin{itemize}
+\item Si $\displaystyle a < 1 $, tenemos que $\displaystyle \sum^{\infty}_{n = 1}a_{n} $ converge.
+\item Si $\displaystyle a > 1 $, tenemos que $\displaystyle \sum^{\infty}_{n = 1}a_{n} $ diverge.
+\item Si $\displaystyle a = 1 $, no sabemos.
+\end{itemize}
+\end{ftheorem}
+
+\begin{proof}
+Una manera de demostrarlo es ver que este criterio implica el de la raíz. Otra manera de hacerlos es recurriendo a series geométricas. 
+\begin{description}
+\item[(i)] Si $\displaystyle a < 1 $, tomamos $\displaystyle \epsilon > 0 $ tal que si $\displaystyle n \geq n_{0} $, y tomamos $\displaystyle a < r < 1 $,
+	\[ \frac{a_{n+1}}{a_{n}}<a+\epsilon < r .\]
+Entonces tenemos que si $\displaystyle n \geq n_{0} $, 
+\[a_{n+1} < ra_{n} < \cdots < r^{n+1-n_{0}}a_{n_{0}} = r^{n+1}\frac{a_{n_{0}}}{r^{n_{0}}}.\]
+Entonces, tenemos que 
+\[\sum^{\infty}_{n =1}a_{n+1} < \frac{a_{n_{0}}}{r^{n_{0}}}\sum^{\infty}_{n = 1}r^{n+1} .\]
+Como $\displaystyle r < 1 $, tenemos que 
+\[\sum^{\infty}_{n = 1}r^{n+1} <\infty .\]
+Por el criterio de comparación, tenemos que $\displaystyle \sum^{\infty}_{n = 1}a_{n} $ converge.
+\item[(ii)] Si $\displaystyle a > 1 $ es análogo.
+\end{description}
+\end{proof}
+
+\begin{eg}
+\normalfont Ejemplos de $\displaystyle a = 1 $. 
+\begin{description}
+\item[(i)] Sea $\displaystyle a_{n} = \frac{1}{n} $. Tenemos que 
+	\[\lim_{n \to \infty}\frac{a_{n+1}}{a_{n}} = \lim_{n \to \infty}\frac{n}{n+1} = 1 .\]
+\item[(ii)] Sea $\displaystyle a_{n} = \frac{1}{n^{2}} $. 
+	\[\lim_{n \to \infty}\frac{a_{n+1}}{a_{n}} = \lim_{n \to \infty}\left(\frac{n^{2}}{\left(n+1\right)^{2}}\right) = \lim_{n \to \infty}\left(\frac{n}{n+1}\right)^{2} = 1 .\]
+\item[(iii)] Sea $\displaystyle k \in \N $ y sea $\displaystyle a_{n} = \frac{n^{k}}{2^{n}} $. Usamos el criterio del cociente:
+	\[\lim_{n \to \infty}\frac{a_{n+1}}{a_{n}} = \lim_{n \to \infty}\frac{\frac{\left(n+1\right)^{k}}{2^{n+1}}}{\frac{n^{k}}{2^{n}}} = \lim_{n \to \infty} \frac{2^{n}}{2^{n+1}}\left(\frac{n+1}{n}\right)^{k} = \frac{1}{2}<1 .\]
+Por el criterio del cociente, $\displaystyle \sum^{\infty}_{n = 1}\frac{n^{k}}{2^{n}} $ converge.
+\end{description}
+\end{eg}
+
+\begin{ftheorem}[Criterio de Leibniz]
+	\normalfont Supongamos que $\displaystyle \left\{ a_{n}\right\} _{n\in\N}\subset\R^{+} $ decreciente, es decir, $\displaystyle a_{n+1} \leq a_{n} $ y tal que $\displaystyle \lim_{n \to \infty}a_{n} = 0 $. Entonces, la serie alternada converge:
+	\[\sum^{\infty}_{n = 1}\left(-1\right)^{n}a_{n} \quad \text{converge}.\]
+\end{ftheorem}
+
+\begin{eg}
+\normalfont Considera $\displaystyle a_{n} = \frac{1}{n} $. Entonces tenemos que $\displaystyle \sum^{\infty}_{n = 1} \frac{\left(-1\right)^{n}}{n} $ converge, mientras que $\displaystyle \sum^{\infty}_{n=1} \frac{1}{n} = \infty $.
+\end{eg}
+
+\begin{fdefinition}[]
+\normalfont Se dice que una serie es \textbf{absolutamente convergente} si $\displaystyle \sum^{\infty}_{n = 1} \left|a_{n}\right| < \infty $.
+\end{fdefinition}
+
+\begin{observation}
+\normalfont $\displaystyle \sum^{\infty}_{n = 1}\frac{\left(-1\right)^{n}}{n} $ no es absolutamente convergente.
+\end{observation}
+
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle \sum^{\infty}_{n = 1}a_{n} $ es absolutamente convergente (i.e. $\displaystyle \sum^{\infty}_{n = 1} \left|a_{n}\right| < \infty $), entonces $\displaystyle \sum^{\infty}_{n = 1}a_{n} $ es convergente.
+\end{ftheorem}
+
+\begin{proof}
+	Sea $\displaystyle S_{n} = \sum^{n}_{k=1}a_{k} $. Queremos ver que $\displaystyle \left\{ S_{n}\right\} _{n\in\N} $ es una sucesión convergente. Sea $\displaystyle S^{*}_{n} = \sum^{n}_{k=1} \left|a_{k}\right| $. Sabemos que $\displaystyle \left\{ S^{*}_{n}\right\} _{n\in\N} $ converge. Entonces, tenemos que $\displaystyle \left|S_{n}\right| \leq S^{*}_{n} $. Sabemos que $\displaystyle \left\{ S_{n}\right\} _{n\in\N} $ es convergente si y solo si es de Cauchy. Sea $\displaystyle m > n $, 
+	\[0\leq |S_{m} - S_{n} | = |a_{n+1}+ \cdots + a_{n}| \leq \left|a_{n+1}\right| + \cdots + \left|a_{m}\right| = S^{*}_{m}-S^{*}_{n}.\]
+Si $\displaystyle m,n \to \infty $, tenemos que $\displaystyle S^{*}_{m} - S^{*}_{n} \to 0 $. Entonces, $\displaystyle \left|S_{m}-S_{n}\right| \to 0 $, por lo que es de Cauchy y, consecuentemente, converge. 
+\end{proof}
+
+\begin{eg}
+\normalfont Estudiar la convergencia de las siguientes series.
+\begin{description}
+\item[(i)] $\displaystyle \sum^{\infty}_{n = 1}\frac{n!}{n^{n}} $. Usamos el criterio del cociente.
+	\[\frac{\frac{\left(n+1\right)!}{\left(n+1\right)^{n+1}}}{\frac{n!}{n^{n}}} = \frac{n+1}{\left(n+1\right)\left(\frac{n+1}{n}\right)^{n}} \to \frac{1}{e} < 1 .\]
+	Por tanto, la serie converge, es decir, $\displaystyle \sum^{\infty}_{n = 1}\frac{n!}{n^{n}} < \infty $.
+\item[(ii)] $\displaystyle \sum^{\infty}_{n = 1}\frac{\sin n\theta}{n^{2}} $. Tenemos que 
+	\[\sum^{\infty}_{n = 1} \frac{ \left|\sin n\theta\right|}{n^{2}} \leq \sum^{\infty}_{n = 1}\frac{1}{n^{2}} < \infty .\]
+	Por el criterio de comparación, $\displaystyle \sum^{\infty}_{n = 1}\frac{ \left|\sin n\theta\right|}{n^{2}} < \infty $. Es decir, la serie inicial converge absolutamente por lo que converge.
+\item[(iii)] $\displaystyle \sum^{\infty}_{n = 1}\frac{x^{n}}{n!} $ con $\displaystyle x \in \R $. Tomamos la serie en valor absoluto para ver que converge absolutamente. Empleamos el criterio del cociente: 
+	\[ \frac{ \frac{ \left|x\right|^{n+1}}{\left(n+1\right)!}}{\frac{ \left|x\right|^{n}}{n!}}=\frac{ \left|x\right|}{n+1} \to 0.\]
+Como $\displaystyle \sum^{\infty}_{n = 1} \frac{ \left|x\right|^{n}}{n!} < \infty $, la serie inicial converge absolutamente, por lo que converge.	
+\end{description}
+\end{eg}
+
+\begin{observation}
+\normalfont  
+\[\sum^{\infty}_{ n=1}\frac{1}{n!} = e .\]
+\end{observation}
+
+\begin{ftheorem}[Sumación por partes de Abel]
+	\normalfont Sean $\displaystyle \left\{ a_{n}\right\} _{n\in\N}, \left\{ b_{n}\right\} _{n\in\N}\subset\R $, sea $\displaystyle A_{n} = \sum^{n}_{k=1}a_{k} $ y sea $\displaystyle m > n $. Entonces, 
+	\[\sum^{m}_{k=n+1}a_{k}b_{k} = \sum^{m -1}_{k=n+1}A_{k}\left(b_{k}-b_{k+1}\right) + A_{m}b_{m}-A_{n}b_{n+1} .\]
+\end{ftheorem}
+
+\begin{proof}
+Tenemos que 
+\[
+\begin{split}
+	\sum^{m}_{k=n+1}a_{k}b_{k} = & \sum^{m}_{k=n+1}\left(A_{k}-A_{k-1}\right)b_{k} = \sum^{m}_{k=n+1}A_{k}b_{k} - \sum^{m - 1}_{k=n}A_{k}b_{k+1}\\ = &A_{m}b_{m} - A_{n}b_{n+1} + \sum^{m - 1}_{k = n + 1}A_{k}\left(b_{k}-b_{k+1}\right).
+\end{split}
+\]
+\end{proof}
+
+\begin{ftheorem}[Criterio de Dirichlet]
+	\normalfont Sean $\displaystyle \left\{ a_{n}\right\} _{n\in\N}, \left\{ b_{n}\right\} _{n\in\N} \subset \R $ tal que si $\displaystyle A_{n} = \sum^{n}_{k=1}a_{k} $ entonces $\displaystyle \left|A_{n}\right| \leq M, \; \forall n \in \N $ y $\displaystyle b_{n} $ decrece y converge a 0. Entonces, 
+	\[\sum^{\infty}_{n = 1}a_{n}b_{n} \quad \text{converge.} \]
+\end{ftheorem}
+
+\begin{proof}
+Vamos a ver que es sucesión de Cauchy, es decir, $\displaystyle \sum^{m}_{k=n+1}a_{k}b_{k} \to 0 $ si $\displaystyle m \geq n +1 $, cuando $\displaystyle n, m \to \infty $. Utilizamos el teorema anterior:
+\[
+\begin{split}
+	\left|\sum^{m}_{k=n+1}a_{k}b_{k}\right| = & \left|\sum^{m - 1}_{k=n+1}A_{k}\left(b_{k}-b_{k+1}\right)+A_{m}b_{m} - A_{n}b_{n+1}\right| .
+\end{split}
+\]
+Sea $\displaystyle \epsilon > 0 $ y sea $\displaystyle n_{0}\in\N $ tal que si $\displaystyle n \geq n_{0} $, 
+\[ \left|b_{n}\right| < \frac{\epsilon }{3M} ,\]
+y $\displaystyle \forall m > n \geq n_{0} $ tal que 
+\[ \left|b_{m}-b_{n}\right| < \frac{\epsilon }{3M} .\]
+Seguimos con lo anterior:
+\[
+\begin{split}
+	\left|\sum^{m}_{k=n+1}a_{k}b_{k}\right| = & \left|\sum^{m - 1}_{k=n+1}A_{k}\left(b_{k}-b_{k+1}\right)+A_{m}b_{m} - A_{n}b_{n+1}\right| \\
+	\leq & M \sum^{m -1}_{k = n+1} \left|b_{k}-b_{k+1}\right| + M \left|b_{m}\right| + M \left|b_{n + 1}\right| \\
+	\leq & M\sum^{m - 1}_{k = n+1}\left(b_{k}-b_{k+1}\right) + M\frac{\epsilon }{3M} + M\frac{\epsilon }{3M} = M \left(b_{n+1}-b_{m}\right) + \frac{2\epsilon }{3} \\
+	    = & M\frac{\epsilon }{3M} + \frac{2\epsilon }{3} = \epsilon.
+\end{split}
+\]
+\end{proof}
+
+\begin{ftheorem}[Criterio de Leibniz]
+	\normalfont Sea $\displaystyle \left\{ a_{n}\right\} _{n\in\N}\subset\R $ decreciente que converge a 0, entonces la serie alternada $\displaystyle \sum^{\infty}_{n = 1}\left(-1\right)^{n}a_{n} $ converge.
+\end{ftheorem}
+\begin{proof}
+Tenemos que 
+\[\sum^{n}_{k=1}\left(-1\right)^{k} = 
+\begin{cases}
+-1, \; n \; \text{impar}\\
+0, \; n \; \text{par} 
+\end{cases}
+.\]
+Entonces, las sumas parciales están acotadas superiormente por $\displaystyle M = 1 $. Por el criterio de Dirichlet, tenemos que 
+\[\sum^{\infty}_{n = 1}\left(-1\right)^{n}a_{n} ,\]
+converge \footnote{Este teorema es realmente un corolario del teorema anterior.} .
+\end{proof}
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] $\displaystyle \sum^{\infty}_{n = 1}\frac{\left(-1\right)^{n}}{n} $ converge.
+\item[(ii)] $\displaystyle \sum^{\infty}_{n = 1}\frac{\left(-1\right)^{n}}{\sqrt{n}} $ converge.
+\item[(iii)] Demostrar que (usar inducción)
+	\[ \left|\sum^{m}_{n = 1}\cos nx\right| = \left|\frac{\sin\left(m + \frac{1}{2}\right)x}{2\sin \frac{x}{2}}-\frac{1}{2}\right| .\]
+\end{description}
+\end{eg}
+
+\section{Exponentes reales.}
+Recordamos que si $\displaystyle x > 0 $ y $\displaystyle n \in \N $:
+\[x^{\frac{1}{n}} = \sup \left\{ r \in \Q \; : \; r^{n} < x\right\}  .\]
+En general, si $\displaystyle n \in \Z, \; n < 0 $, definimos $\displaystyle x^{0} = 1 $ y
+\[ x^{\frac{1}{n}} = \left(\frac{1}{x}\right)^{-\frac{1}{n}}.\]
+Pasamos al caso $\displaystyle p = \frac{m}{n}\in \Q $, 
+\[x^{p} = \left(x^{\frac{1}{n}}\right)^{m} .\]
+Queremos ver que pasa en el caso $\displaystyle x^{\alpha } $ con $\displaystyle \alpha \in \R $. 
+\begin{flema}[]
+\normalfont Dado $\displaystyle \epsilon > 0 $, existe $\displaystyle n_{0} \in \N $ tal que 
+\[ \left|x^{r}-1\right| < \epsilon, \; 0 < r < \frac{1}{n_{0}}, \; r \in \Q .\]
+\end{flema}
+
+\begin{proof}
+Sabemos que $\displaystyle x^{\frac{1}{n}} \to 1 $ si $\displaystyle n \to \infty $. Así, dado $\displaystyle \epsilon > 0 $, existe $\displaystyle n_{0} \in \N $ tal que si $\displaystyle n \geq n_{0} $, 
+\[ \left|x^{\frac{1}{n}}-1\right|< \epsilon  .\]
+Sea $\displaystyle 0 < r < \frac{1}{n_{0}}, \; r \in \Q $. Si $\displaystyle x > 1 $, tenemos que $\displaystyle  0 < x^{r}-1 < x^{\frac{1}{n_{0}}}-1<\epsilon$. Si $\displaystyle 0 < x < 1 $, tenemos que $\displaystyle x^{r} > x^{\frac{1}{n_{0}}} $ por lo que $\displaystyle 0 < 1 - x^{r} < 1 - x^{\frac{1}{n_{0}}} < \epsilon  $. El caso $\displaystyle x = 1 $ es trivial. 
+\end{proof}
+
+\begin{fcolorary}[]
+\normalfont Si $\displaystyle r_{n} \to 0 $ y $\displaystyle r_{n} \in \Q^{+} $, con $\displaystyle x > 0 $, entonces $\displaystyle x^{r_{n}} \to 1 $ si $\displaystyle n \to \infty $.
+\end{fcolorary}
+
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle x > 0 $, y $\displaystyle \alpha \in \R $, entonces
+\begin{description}
+	\item[(i)] Si $\displaystyle r_{n} \in\Q $ tales que $\displaystyle \lim_{n \to \infty}r_{n} = \alpha  $, entonces $\displaystyle \left\{ x^{r_{n}}\right\} _{n\in\N} $ converge. 
+	\item[(ii)] Si $\displaystyle s_{n} \in \Q $ tal que $\displaystyle \lim_{n \to \infty}s_{n}=\alpha  $, entonces $\displaystyle \lim_{n \to \infty}x^{s_{n}} = \lim_{n \to \infty}x^{r_{n}} $.
+\end{description}
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+	\item[(i)] Tenemos $\displaystyle r_{n}\in\Q $ con $\displaystyle \lim_{n \to \infty}r_{n}=\alpha  $. Sin pérdida de generalidad tomamos $\displaystyle \alpha > 0 $. Vamos a demostrar que es de Cauchy. Como $\displaystyle \left\{ r_{n}\right\} _{n\in\N}$ converge, entonces está acotada, por lo que existe $\displaystyle K $ tal que $\displaystyle 0 \leq r_{n} < K \in \N $ (descartamos los primeros términos negativos). Hacemos primero el caso $\displaystyle x > 1 $ (el caso $\displaystyle x < 1 $ es análogo). Supongamos que $\displaystyle r_{m} \geq r_{n} $. 
+	\[ \left|x^{r_{m}}-x^{r_{n}}\right| = \left|x^{r_{n}}\left(x^{r_{m}-r_{n}}-1\right)\right| \leq x^{K} \left|x^{r_{m}-r_{n}}-1\right| \to 0 .\]
+En el paso anterior hemos utilizado el lema y corolario anterior. Así, tenemos que $\displaystyle \lim_{n \to \infty}x^{r_{n}} $ converge. 
+\item[(ii)] Si $\displaystyle s_{n} \to \alpha  $ y $\displaystyle r_{n} \to \alpha  $, tenemos que $\displaystyle s_{n}-r_{n} \to 0 $. Supongamos que $\displaystyle r_{n} \geq s_{n} $,
+\[ x^{r_{n}}-x^{s_{n}} = x^{s_{n}}\left(x^{r_{n}-s_{n}}-1\right) .\]
+Entonces, tenemos que
+\[ \left|x^{r_{n}}-x^{s_{n}}\right| \leq x^{K} \left|x^{r_{n}-s_{n}}-1\right| \to 0 .\]
+Como la diferencia converge a 0, tenemos que $\displaystyle \lim_{n \to \infty}x^{r_{n}} = \lim_{n \to \infty}x^{s_{n}} $. \footnote{Esta afirmación solo la podemos hacer si las sucesiones convergen. Sino, no, considera $\displaystyle x_{n} = n $ y $\displaystyle y_{n} = n $.} 
+\end{description}
+\end{proof}
+
+\begin{fdefinition}[]
+\normalfont Dado $\displaystyle x > 0 $ y $\displaystyle \alpha \in\R $ se define $\displaystyle x^{\alpha } = \lim_{n \to \infty}x^{r_{n}} $ donde $\displaystyle r_{n} \in \Q\to \alpha  $.
+\end{fdefinition}
+
+\begin{fprop}[]
+	\normalfont Si $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N} \subset\R $ con $\displaystyle x_{n}, y_{n} > 0 $ , con $\displaystyle x_{n} \to x > 0 $ y $\displaystyle y_{n} \to y > 0 $, entonces
+	\[x_{n}^{y_{n}} \to x^{y} .\]
+\end{fprop}
+
+\begin{proof}
+	Dado $\displaystyle \epsilon > 0 $, sea $\displaystyle \epsilon ' = \left[\left(\frac{\epsilon }{x^{y}}+1\right)^{\frac{1}{y}}-1\right] \cdot x > 0 $. Entonces, existe $\displaystyle n_{0} \in \N $ tal que si $\displaystyle n \geq n_{0} $, $\displaystyle x_{n} < x + \epsilon ' $. Así, tenemos que 
+\[x_{n}^{y_{n}} < \left(x + \epsilon'\right)^{y_{n}} .\]
+Entonces, tenemos que 
+\[\lim_{n \to \infty}\sup x_{n}^{y_{n}} \leq \lim_{n \to \infty}\sup\left(x+\epsilon'\right)^{y_{n}}=\left(x+\epsilon'\right)^{y} = x^{y}+\epsilon, \; \forall \epsilon > 0.\]
+Así, tenemos que $\displaystyle \lim_{n \to \infty}\sup x_{n}^{y_{n}} \leq x^{y} $. Ahora, dado $\displaystyle \epsilon > 0 $, tomamos $\displaystyle \epsilon '' = x - \left(x^{y}-\epsilon \right)^{\frac{1}{y}} > 0 $. Así, obtenemos que para $\displaystyle n \geq n_{0}\in\N $, $\displaystyle x-\epsilon '' < x_{n} $:
+\[\left(x - \epsilon ''\right)^{y} = x^{y}-\epsilon \leq \lim_{n \to \infty}\inf x_{n}^{y_{n}}, \; \forall \epsilon > 0 .\]
+Así, $\displaystyle x^{y} \leq \lim_{n \to \infty}\inf x_{n}^{y_{n}} $.
+\end{proof}
 

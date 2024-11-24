@@ -840,16 +840,20 @@ Queremos ver que
 \end{fprop}
 
 \begin{proof}
-Sean $\displaystyle \lambda_{1}, \lamba_{2} \in A^{\perp} $, vamos a ver que $\displaystyle \lambda_{1} + \lambda _{2} \in A^{\perp} $:
-\[\forall\vec{x} \in A, \; \left(\lambda_{1}+\lambda_{2}\right)\left(\vec{x}\right) = \lambda_{1}\left(\vec{x}\right) + \lambda_{2}\left(\vec{x}\right) = \vec{0} .\]
+Sean $\displaystyle \lambda_{1}, \lambda_{2} \in A^{\perp} $, vamos a ver que $\displaystyle \lambda_{1} + \lambda _{2} \in A^{\perp} $:
+\[\forall\vec{x} \in A, \; \left(\lambda_{1}+\lambda_{2}\right)\left(\vec{x}\right) = \lambda_{1}\left(\vec{x}\right) + \lambda_{2}\left(\vec{x}\right) = 0 .\]
 Por lo que, $\displaystyle \lambda_{1} + \lambda_{2} \in A^{\perp} $. Similarmente, si $\displaystyle \lambda \in A^{\perp} $ y $\displaystyle a \in \K $, vamos a ver que $\displaystyle a\lambda \in A^{\perp} $:
-\[\forall\vec{x} \in A, \left(a\lambda\right)\left(\vec{x}\right) = a\lambda\left(\vec{x}\right) = a \cdot \vec{0} = \vec{0} .\]
+\[\forall\vec{x} \in A, \left(a\lambda\right)\left(\vec{x}\right) = a\lambda\left(\vec{x}\right) = a \cdot 0= 0.\]
 Por lo que $\displaystyle a\lambda \in A^{\perp} $.
 \end{proof}
 
 \begin{fprop}[]
 \normalfont Si $\displaystyle \emptyset \neq A \subset B \subset V $, entonces $\displaystyle B^{\perp} \subset A^{\perp} $.
 \end{fprop}
+
+\begin{proof}
+Si $\displaystyle \lambda \in B^{\perp} $, tenemos que $\displaystyle \forall \vec{x} \in B $, $\displaystyle \lambda\left(\vec{x}\right) = 0 $. Como $\displaystyle A \subset B $, tenemos que $\displaystyle \forall \vec{x} \in A $, $\displaystyle \lambda\left(\vec{x}\right) = 0 $, por lo que $\displaystyle \lambda \in A^{\perp} $.
+\end{proof}
 
 \begin{fprop}[]
 \normalfont 
@@ -861,7 +865,7 @@ Si $\displaystyle A \subset L\left(A\right) $ tenemos que $\displaystyle L\left(
 \[\forall \vec{x}\in L\left(A\right), \exists p \in \N, \exists a^{1}, \ldots, a^{p} \in \K, \exists \vec{x}_{1}, \ldots, \vec{x}_{p} \in A .\]
 \[\vec{x} = a^{1}\vec{x}_{1}+\cdots + a^{p}\vec{x}_{p} .\]
 Entonces, 
-\[\lambda\left(\vec{x}\right) = \lambda\left(a^{1}\vec{x}_{1}+\cdots + a^{p}\vec{x}_{p}\right) = a^{1}\lambda\left(\vec{x}_{1}\right)+\cdots + a^{p}\lambda\left(\vec{x}_{p}\right) = \vec{0} .\]
+\[\lambda\left(\vec{x}\right) = \lambda\left(a^{1}\vec{x}_{1}+\cdots + a^{p}\vec{x}_{p}\right) = a^{1}\lambda\left(\vec{x}_{1}\right)+\cdots + a^{p}\lambda\left(\vec{x}_{p}\right) = 0 .\]
 \end{proof}
 
 \begin{fprop}[]
@@ -898,11 +902,10 @@ Entonces,
 	\[  \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r+p}, \vec{w}_{r+1}, \ldots, \vec{w}_{r+q}, \vec{v}_{1}, \ldots, \vec{v}_{k}\right\}, \]
 	base de $\displaystyle V $. Si $\displaystyle \lambda \in \left(L_{1}\cap L_{2}\right)^{\perp}$, tenemos que ver que existen $\displaystyle \lambda_{1} \in L_{1}^{\perp}, \lambda_{2}\in L_{2}^{\perp} $ tales que $\displaystyle \lambda = \lambda_{1} + \lambda_{2} $. Para $\displaystyle \forall i = 1, \ldots, r $ defino 
 	\[\lambda_{1}\left(\vec{u}_{i}\right) = 0 \quad \text{y} \quad \lambda_{2}\left(\vec{u}_{i}\right) = 0 .\]
-De esta manera, $\displaystyle \left(\lambda_{1}+\lambda_{2}\right)\left(\vec{u}_{i}\right) = 0 $. Para $\displaystyle L = r+1, \ldots, r+p $ y $\displaystyle \vec{u}_{L} \in L_{1} $ defino
-\[\lambda\left(\vec{u}_{L}\right) \in \K, \;  \lambda_{1}\left(\vec{u}_{L}\right) = 0, \; \lambda_{2}\left(\vec{u}_{L}\right) = \lambda\left(\vec{u}_{L}\right) .\]
-Similarmente, para $\displaystyle L = r+1, \ldots, r+q $, 
-\[\lambda\left(\vec{w}_{L}\right) \in \K, \; \lambda_{1}\left(\vec{w}_{L}\right) = \lambda\left(\vec{w}_{L}\right), \; \lambda_{2}\left(\vec{w}_{L}\right) = 0 .\]
-
+De esta manera, $\displaystyle \left(\lambda_{1}+\lambda_{2}\right)\left(\vec{u}_{i}\right) = 0 $. Para $\displaystyle i = r+1, \ldots, r+p $ y $\displaystyle \vec{u}_{i} \in L_{1} $ defino
+\[\lambda\left(\vec{u}_{i}\right) \in \K, \;  \lambda_{1}\left(\vec{u}_{i}\right) = 0, \; \lambda_{2}\left(\vec{u}_{i}\right) = \lambda\left(\vec{u}_{i}\right) .\]
+Similarmente, para $\displaystyle i = r+1, \ldots, r+q $, 
+\[\lambda\left(\vec{w}_{i}\right) \in \K, \; \lambda_{1}\left(\vec{w}_{i}\right) = \lambda\left(\vec{w}_{i}\right), \; \lambda_{2}\left(\vec{w}_{i}\right) = 0 .\]
 \end{description}
 \end{proof}
 
@@ -919,7 +922,7 @@ Similarmente, para $\displaystyle L = r+1, \ldots, r+q $,
 \begin{proof}
 	Sea $\displaystyle \left\{\vec{u}_{1}, \ldots, \vec{u}_{r} \right\}  $ base de $\displaystyle L $, $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $ y $\displaystyle \left\{ \omega^{1}, \ldots, \omega^{n}\right\}  $ su base dual. Entonces tenemos ya que $\displaystyle \left\{ \omega^{r+1}, \ldots, \omega^{n}\right\}  $ son linealmente independientes. Vamos a ver que son sistema de generadores, 
 	\[\forall \lambda \in L^{\perp} \in \mathcal{L}\left(V\right), \exists a_{1}, \ldots, a_{n} \in \K, .\]
-	\[\lambda = a_{1}\omega^{1} + \cdots + a_{n}+\omega^{n} .\]
+	\[\lambda = a_{1}\omega^{1} + \cdots + a_{n}\omega^{n} .\]
 Tenemos que $\displaystyle \forall i = 1, \ldots, r $, 
 \[0 = \lambda\left(\vec{u}_{i}\right) = a_{1}\omega^{1}\left(\vec{u}_{i}\right)+ \cdots + a_{i}\omega^{i}\left(\vec{u}_{i}\right) + \cdots + a_{r}\omega^{r}\left(\vec{u}_{i}\right) + \cdots + a_{n}\omega^{n}\left(\vec{u}_{i}\right) = a_{i} .\]
 Así, 
@@ -930,4 +933,76 @@ Así,
 \normalfont Tenemos que 
 \[\dim L = \dim \theta\left(L\right) = \dim \left(L^{\perp}\right)^{\perp} .\]
 \end{observation}
+
+\begin{flema}[]
+\normalfont Sea $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $ tales que $\displaystyle V = L_{1}\oplus L_{2} $ y sea $\displaystyle f_{1} : L_{1} \to V' $ y $\displaystyle f_{2}: L_{2} \to V' $ aplicaciones lineales. Entonces, existe una única $\displaystyle f : V \to V' $ tal que 
+\[f|_{L_{1}} = f_{1} \quad \text{y} \quad f|_{L_{2}} = f_{2} .\]
+\footnote{ $\displaystyle f|_{L} $ es $\displaystyle f $ restringida por $\displaystyle L $, es decir, solo está definida para los vectores de $\displaystyle L $.} 
+\end{flema}
+\begin{proof}
+Tenemos que $\displaystyle \forall\vec{x}\in V $, $\displaystyle \exists! \vec{x}_{1} \in L_{1}, \vec{x}_{2} \in L_{2} $ tales que $\displaystyle \vec{x} = \vec{x}_{1}+\vec{x}_{2} $. Queremos que $\displaystyle f\left(\vec{x}\right) = f\left(\vec{x}_{1}\right)+f\left(\vec{x}_{2}\right) $:
+\[f\left(\vec{x}\right) = f\left(\vec{x}_{1}\right) + f\left(\vec{x}_{2}\right) = f|_{L_{1}}\left(\vec{x}_{1}\right) + f|_{L_{2}}\left(\vec{x}_{2}\right) = f_{1}\left(\vec{x}_{1}\right) + f_{2}\left(\vec{x}_{2}\right) .\]
+Sea $\displaystyle f: V \to V' $ la aplicación definida de esta manera: 
+\[f\left(\vec{x}_{1}+\vec{x}_{2}\right) = f_{1}\left(\vec{x}_{1}\right)+f_{2}\left(\vec{x}_{2}\right) .\]
+Queremos ver que $\displaystyle f $ es lineal:
+\[.\]
+\[
+\begin{split}
+	\forall \vec{x}, \vec{y}\in V, \; f\left(\vec{x}+\vec{y}\right) & = f\left(\left(\vec{x}_{1}+\vec{x}_{2}\right)+\left(\vec{y}_{1}+\vec{y}_{2}\right)\right)\\
+									&= f\left(\left(\vec{x}_{1}+\vec{y}_{1}\right)+\left(\vec{x}_{2}+\vec{y}_{2}\right)\right)\\
+									&= f_{1}\left(\vec{x}_{1}+\vec{y}_{1}\right) +f_{2}\left(\vec{x}_{2}+\vec{y}_{2}\right)\\
+									&= f_{1}\left(\vec{x}_{1}\right) + f_{2}\left(\vec{x}_{2}\right)+f_{1}\left(\vec{y}_{1}\right) + f_{2}\left(\vec{y}_{2}\right)\\
+									&= f\left(\vec{x}_{1}+\vec{x}_{2}\right)+f\left(\vec{y}_{1}+\vec{y}_{2}\right) \\
+									&= f\left(\vec{x}\right)+f\left(\vec{y}\right).
+\end{split}
+\]
+Similarmente, sea $\displaystyle a \in \K $ y $\displaystyle \vec{x} \in V $, 
+\[
+\begin{split}
+	f\left(a\vec{x}\right) = & f\left(a\left(\vec{x}_{1}+\vec{x}_{2}\right)\right) = f\left(a\vec{x}_{1}+a\vec{x}_{2}\right) 
+	=  f_{1}\left(a\vec{x}_{1}\right)+f_{2}\left(a\vec{x}_{2}\right) \\
+	= & a f_{1}\left(\vec{x}_{1}\right) + a f_{2}\left(\vec{x}_{2}\right) 
+	=  a \left(f_{1}\left(\vec{x}_{1}\right)+f_{2}\left(\vec{x}_{2}\right)\right) \\
+	= & a f\left(\vec{x}_{1}+\vec{x}_{2}\right)
+	=  af\left(\vec{x}\right) .
+\end{split}
+\]
+Si $\displaystyle \vec{x}_{1} \in L_{1} $, tenemos que 
+\[f|_{L_{1}}\left(\vec{x}_{1}\right) = f\left(\vec{x}_{1}+\vec{0}\right) = f_{1}\left(\vec{x}_{1}\right)+f_{2}\left(\vec{0}\right) = f_{1}\left(\vec{x}_{1}\right) .\]
+\end{proof}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f: V \to V' $ una aplicación lineal. Entonces,
+\begin{description}
+\item[(a)] $\displaystyle \Ker\left(f^{*}\right) = \Imagen\left(f\right)^{\perp } $.
+\item[(b)] $\displaystyle \Imagen\left(f^{*}\right) = \Ker\left(f\right)^{\perp } $.
+\item[(c)] $\displaystyle f $ inyectiva $\displaystyle \iff  $ $\displaystyle f^{*} $ sobreyectiva.
+\item[(d)] $\displaystyle f $ sobreyectiva $\displaystyle \iff  $ $\displaystyle f^{*} $ inyectiva.
+\item[(e)] $\displaystyle \dim \Imagen\left(f\right) = \dim \Imagen\left(f^{*}\right) $.
+\end{description}
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(a)] Tenemos que $\displaystyle \forall\lambda'\in\Ker\left(f^{*}\right) $, tenemos que 
+	\[\forall\vec{x}\in V, \; \lambda' \circ f\left(\vec{x}\right) = \vec{0} .\]
+Similarmente, 
+\[f^{*}\left(\lambda'\right) = \lambda' \circ f = 0 .\]
+En la otra dirección, 
+\[\lambda' \in \Imagen\left(f\right)^{\perp } \Rightarrow \forall \vec{x} \in V, \lambda'\left(f\left(\vec{x}\right)\right) = f^{*}\left(\lambda'\right)\left(\vec{x}\right) = 0 .\]
+Por tanto, $\displaystyle f^{*}\left(\lambda'\right) = 0 $ y $\displaystyle \lambda' \in \Ker\left(f^{*}\right) $.
+\item[(b)] Si $\displaystyle \lambda \in \Imagen\left(f^{*}\right) $. Entonces, existe $\displaystyle \lambda'\in V'^{*} $ tal que $\displaystyle \lambda = f^{*}\left(\lambda'\right) = \lambda' \circ f $. Así, $\displaystyle \forall \vec{x} \in \Ker\left(f\right) $, $\displaystyle \lambda\left(\vec{x}\right) = \lambda'\circ f\left(\vec{x}\right) = \lambda'\left(\vec{0}\right) = 0 $. \\ 
+En la otra dirección, si $\displaystyle \lambda \in \Ker\left(f\right)^{\perp } $, buscamos $\displaystyle \lambda'\in V'^{*} $ tal que $\displaystyle f^{*}\left(\lambda'\right) = \lambda' \circ f=\lambda $. Sea $\displaystyle L' \in \mathcal{L}\left(V'\right) $ tal que $\displaystyle \Imagen\left(f\right) \oplus L' = V' $ y buscamos $\displaystyle \lambda'|_{L'} = 0 $. Si $\displaystyle \vec{x'} \in \Imagen\left(f\right) $, existe un $\displaystyle \vec{x}\in V $ tal que $\displaystyle f\left(\vec{x}\right) = \vec{x'} $. Defino $\displaystyle \lambda'\left(\vec{x'}\right) = f\left(\vec{x}\right) $. Como $\displaystyle \lambda \in \Ker\left(f\right)^{\perp } $ \footnote{Ortogonal del núcleo, que no el núcleo del ortogonal.}, tenemos que si $\displaystyle f\left(\vec{x}\right) = f\left(\vec{y}\right) $, 
+\[f\left(\vec{x}\right)-f\left(\vec{y}\right) = f\left(\vec{x}-f\left(\vec{y}\right)\right) = \vec{0} \Rightarrow \vec{x}-\vec{y} \in \Ker\left(f\right) \subset \Ker\left(\lambda\right) .\]
+Asi, definimos que $\displaystyle \lambda'\left(\vec{x'}\right) = \vec{x} $ con $\displaystyle \vec{x} \in V $ tal que $\displaystyle f\left(\vec{x}\right) = \vec{x'} $.
+\item[(c)] Tenemos que $\displaystyle f $ es inyectiva si y solo si $\displaystyle \Ker\left(f\right) = \left\{ \vec{0}\right\}  $. Esto es equivalente a que $\displaystyle \Ker\left(f\right)^{\perp } = \Imagen\left(f^{*}\right) = V^{*} $, que es equivalente a que $\displaystyle f^{*} $ es sobreyectiva. 
+\item[(d)] Tenemos que $\displaystyle f $ es sobreyectiva si y solo si $\displaystyle \Imagen\left(f\right) = V' $. Esto es equivalente a decir que $\displaystyle \Imagen\left(f\right)^{\perp } = \Ker\left(f^{*}\right)= \left\{ \vec{0}\right\}  $, que es equivalente a decir que $\displaystyle f^{*} $ sea inyectiva.
+\item[(e)] 
+	\[\dim \Imagen\left(f\right) = \dim V'- \dim\Imagen \left(f^{\perp}\right) = \dim V' - \dim \Ker\left(f^{*}\right) = \dim V'^{*} - \dim \Ker\left(f^{*}\right) = \dim \Imagen\left(f^{*}\right) .\]
+\end{description}
+\end{proof}
+
+\begin{fdefinition}[]
+\normalfont Si $\displaystyle f: V \to V' $ es lineal llamaremos $\displaystyle \ran\left(f\right) $ a $\displaystyle \dim \Imagen\left(f\right) $.
+\end{fdefinition}
 

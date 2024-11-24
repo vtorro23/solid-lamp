@@ -1,0 +1,307 @@
+\chapter{Matrices}
+\section{Matriz asociada a una aplicación lineal}
+\begin{fdefinition}[Matriz]
+\normalfont Una matriz $\displaystyle A $ con coeficientes $\displaystyle \K $ de $\displaystyle m \in \N $ filas y $\displaystyle n \in \N $ columnas es una tabla 
+\[A = \begin{pmatrix} 
+	a^{1}_{1} & \cdots & a^{1}_{n} \\
+	\vdots & & \vdots \\
+	a^{m}_{1} & \cdots & a^{m}_{n}
+\end{pmatrix} .\]
+con $\displaystyle a^{j}_{i} \in \K, \; \forall i = 1, \ldots, n, \; \forall j= 1, \ldots, m  $.
+\end{fdefinition}
+
+Sean $\displaystyle V $, $\displaystyle V' $ espacios vectoriales con $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ y $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{m}\right\}  $ bases de $\displaystyle V $ y $\displaystyle V' $, respectivamente. Si $\displaystyle f \in \Hom\left(V, V'\right) $, entonces $\displaystyle f\left(\vec{u}_{1}, \ldots, \vec{u}_{n}\right) \in V' $ y existen $\displaystyle a^{j}_{i} \in \K $ tales que 
+\[
+\begin{split}
+& f\left(\vec{u}_{1}\right) = a^{1}_{1}\vec{v}_{1} + \cdots + a^{m}_{1}\vec{v}_{m} \\
+& f\left(\vec{u}_{2}\right) = a^{1}_{2}\vec{v}_{1} + \cdots + a^{m}_{2}\vec{v}_{m} \\
+& \vdots \\
+& f\left(\vec{u}_{n}\right) = a^{1}_{n}\vec{v}_{1} + \cdots + a^{m}_{n}\vec{v}_{m}.
+\end{split}
+\]
+Entonces, a $\displaystyle f $  le podemos asignar la matriz $\displaystyle A $ tal que 
+\[f \to A = \begin{pmatrix} 
+	a^{1}_{1} & \cdots & a^{1}_{n} \\
+	\vdots & & \vdots \\
+	a^{m}_{1} & \cdots & a^{m}_{n}
+\end{pmatrix}.\]
+\begin{ftheorem}[]
+\normalfont 
+Sea $\displaystyle \mathcal{M}_{m\times n}\left(\K\right) = \left\{ A \; : \; A \; \text{matriz} \; m\times n\right\}  $. Definimos 
+\[
+\begin{split}
+	\mathcal{M}_{\{\vec{u}_{i}\}\{\vec{v}_{j}\}} : \Hom\left(V, V'\right) & \to \mathcal{M}_{m \times n}\left(\K\right) \\ 
+ f & \to A.
+\end{split}
+\]
+Tenemos que $\displaystyle \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\} } $ es biyectiva.
+\end{ftheorem}
+
+\begin{proof}
+Tenemos que si $\displaystyle A \in \mathcal{M}_{m\times n}\left(\K\right) $, entonces existen unos únicos $\displaystyle \vec{w}_{1}, \ldots, \vec{w}_{n}\in V' $ tales que 
+\[
+\begin{split}
+	\vec{w}_{1} = & a^{1}_{1}\vec{v}_{1} + \cdots + a^{n}_{1}\vec{v}_{m} \\
+		      & \vdots \\
+	\vec{w}_{n}= & a^{1}_{m}\vec{v}_{1} + \cdots + a^{n}_{m}\vec{v}_{m} .
+\end{split}
+\]
+Para estos existe una única $\displaystyle f \in \Hom\left(V, V'\right) $ tal que $\displaystyle f\left(\vec{u}_{1}\right) = \vec{w}_{1} $, \ldots, $\displaystyle f\left(\vec{u}_{n}\right) = \vec{w}_{n} $.
+\end{proof}
+
+\begin{ftheorem}[]
+	\normalfont $\displaystyle \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\} } $ es isomorfismo.
+\end{ftheorem}
+
+\begin{proof}
+Sabemos que es biyectiva, ahora tenemos que ver que es una aplicación lineal. Para ello, definimos la suma de matrices de la siguiente forma: si $\displaystyle A, B \in \mathcal{M}_{m \times n}\left(\K\right) $,
+\[ A + B = \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\} }\left(\mathcal{M}^{-1}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\}}\left(A\right) + \mathcal{M}^{-1}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\}}\left(B\right)\right).\]
+Definimos el producto por escalares. Sea $\displaystyle A \in \mathcal{M}_{m \times n}\left(\K\right) $ y $\displaystyle a \in \K $, 
+\[a \cdot A = \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\} }\left(a \cdot \mathcal{M}^{-1}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\} }\left(A\right)\right) .\]
+La demostración se puede completar con la demostración del siguiente teorema.
+\end{proof}
+\begin{ftheorem}[]
+\normalfont $\displaystyle \mathcal{M}_{m \times n}\left(\K\right) $ es un $\displaystyle \K $-espacio vectorial.
+\end{ftheorem}
+
+\begin{proof}
+Tenemos las siguientes equivalencias
+\[ A = \begin{pmatrix} 
+	a^{1}_{1} & \cdots & a^{1}_{n} \\
+	\vdots & & \vdots \\
+	a^{m}_{1} & \cdots & a^{m}_{n}
+\end{pmatrix} \iff f \in \Hom\left(V, V'\right) \quad \text{y} \quad B = \begin{pmatrix} 
+	b^{1}_{1} & \cdots & b^{1}_{n} \\
+	\vdots & & \vdots \\
+	b^{m}_{1} & \cdots & b^{m}_{n}
+\end{pmatrix} \iff g \in \Hom\left(V, V'\right).\]
+Así, $\displaystyle A + B \in \mathcal{M}_{m \times n}\left(\K\right) \iff f + g \in \Hom\left(V, V'\right) $. Tenemos que 
+\[
+\begin{split}
+	f\left(\vec{u}_{i}\right)  = & a^{1}_{i}\vec{v}_{i} + \cdots + a^{m}_{i}\vec{v}_{m}, \; \forall i = 1, \ldots, n \\
+	g\left(\vec{u}_{i}\right)= & b^{1}_{i}\vec{v}_{i} + \cdots + b^{m}_{i}\vec{v}_{m}, \; \forall i = 1, \ldots, n .
+\end{split}
+\]
+Entonces, tenemos que 
+\[\left(f + g\right)\left(\vec{u}_{i}\right) = f\left(\vec{u}_{i}\right) + g\left(\vec{u}_{i}\right) = \left(a^{1}_{i}+b^{1}_{i}\right)\vec{v}_{1} + \cdots + \left(a^{m}_{i}+b^{m}_{i}\right)\vec{v}_{m}.\]
+Es decir, 
+\[A + B = \begin{pmatrix} a^{1}_{1} + b^{1}_{1} & \cdots & a^{1}_{n} + b^{1}_{n}\\
+\vdots & & \vdots \\
+a^{m}_{1}+b^{m}_{1} & \cdots & a^{m}_{n} + b^{m}_{n}\end{pmatrix} \in \mathcal{M}_{m \times n}\left(\K\right).\]
+Hacemos lo mismo con el producto por escalares. Sea $\displaystyle A \in \mathcal{M}_{m\times n}\left(\K\right) $ y $\displaystyle a \in \K $, tenemos que $\displaystyle af \in \Hom\left(V, V'\right) \iff a \cdot A \in \mathcal{M}_{m\times n}\left(\K\right) $. Tenemos que 
+\[af\left(\vec{u}_{i}\right) = a a^{1}_{i}\vec{v}_{1} + \cdots + a a^{m}_{i}\vec{v}_{m} .\]
+Es decir, 
+\[a \cdot A = \begin{pmatrix} a a^{1}_{1} & \cdots & a a^{1}_{n} \\
+\vdots & & \vdots \\
+a a ^{m}_{1} & \cdots & a a^{m}_{n}\end{pmatrix} .\]
+Tenemos que existe la matriz 0, pues $\displaystyle 0 \in \Hom\left(V, V'\right) $, por lo que 
+	\[0 = \begin{pmatrix} 0 & \cdots & 0 \\
+	\vdots & & \vdots \\
+0 & \cdots & 0\end{pmatrix} .\]
+Similarmente, la matriz opuesta se puede definir así:
+		\[-A = \left(-1\right) \cdot A = \begin{pmatrix} -a^{1}_{1} & \cdots & -a^{1}_{n} \\
+		\vdots & & \vdots \\
+	-a^{m}_{1} & \cdots & -a^{m}_{n}\end{pmatrix} .\]
+\end{proof}
+
+\section{Producto de matrices}
+
+Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $, $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{m}\right\}  $ base de $\displaystyle V' $ y $\displaystyle \left\{ \vec{w}_{1}, \ldots, \vec{w}_{p}\right\}  $ base de $\displaystyle V'' $. Entonces, podemos encontrar aplicaciones lineales tales que 
+\[ f \in \Hom\left(V, V'\right) \to A \in \mathcal{M}_{m\times n}\left(\K\right) \quad \text{y} \quad g \in \Hom\left(V', V''\right) \to B \in \mathcal{M}_{p\times m}\left(\K\right) .\]
+Tenemos que $\displaystyle g \circ f \in \Hom\left(V, V''\right) $. Definimos el producto de matrices tal que
+\[g \circ f \to B \cdot A \in \mathcal{M}_{p\times n}\left(\K\right) .\]
+Es decir, 
+\[B \cdot A = \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{w}_{k}\right\} }\left(g \circ f\right) .\]
+Tenemos que la expresión de $\displaystyle A $ y $\displaystyle B $ será:
+\[ A = \begin{pmatrix} 
+	a^{1}_{1} & \cdots & a^{1}_{n} \\
+	\vdots & & \vdots \\
+	a^{m}_{1} & \cdots & a^{m}_{n}
+\end{pmatrix} \quad \text{y} \quad B = \begin{pmatrix} 
+	b^{1}_{1} & \cdots & b^{1}_{n} \\
+	\vdots & & \vdots \\
+	b^{m}_{1} & \cdots & b^{m}_{n}
+\end{pmatrix}.\]
+Entonces, $\displaystyle \forall i = 1, \ldots, m $ y $\displaystyle \forall j = 1, \ldots, p $, 
+\[
+\begin{split}
+	f\left(\vec{u}_{i}\right) = & a^{1}_{i}\vec{v}_{1} + \cdots + a^{m}_{i}\vec{v}_{m}\\
+	g\left(\vec{v}_{j}\right)= & b^{1}_{j}\vec{w}_{1} + \cdots + b^{p}_{j}\vec{w}_{p} .
+\end{split}
+\]
+Tenemos que $\displaystyle g \circ f $ será:
+\[
+\begin{split}
+	g\left(f\left(\vec{u}_{i}\right)\right) = & g\left(a^{1}_{i}\vec{v}_{1} + \cdots +a^{m}_{i}\vec{v}_{m}\right) \\
+	= & a^{1}_{i}\left(b^{1}_{1}\vec{w}_{1} + \cdots + b^{p}_{1}\vec{w}_{p}\right) + \cdots + a^{m}_{i}\left(b^{1}_{p}\vec{w}_{1} + \cdots + b^{p}_{m}\vec{w}_{p}\right) \\
+	= & \left(a^{1}_{i}b^{1}_{1} + \cdots + a^{m}_{i}b^{i}_{m}\right)\vec{w}_{1} + \cdots + \left(a^{1}_{i}b^{p}_{1} + \cdots + a^{m}_{i}b^{p}_{m}\right)\vec{w}_{p} .
+\end{split}
+\]
+
+Así, tenemos que
+\[ B \cdot A = \begin{pmatrix} 
+	\sum^{m}_{j=1}a^{j}_{1}b^{1}_{j} & \cdots & \sum^{m}_{j=1}a^{j}_{n}b^{1}_{j} \\
+	\vdots & & \vdots \\
+	\sum^{m}_{j=1}a^{j}_{1}b^{p}_{j} & \cdots & \sum^{m}_{j = 1}a_{n}^{j}b^{p}_{j}
+\end{pmatrix} .\]
+Ahora vamos a ver como utilizamos la matriz de una transformación lineal para calcular $\displaystyle f\left(\vec{x}\right) $.\\ \\
+Sea $\displaystyle f : V \to V' $ lineal. Si $\displaystyle \vec{x} \in V $, entonces existen únicos $\displaystyle x^{1}, \ldots, x^{n} \in \K $ tales que 
+\[\vec{x} = x^{1} \vec{u}_{1} + \cdots + x^{n}\vec{u}_{n} .\]
+Entonces tenemos que $\displaystyle f\left(\vec{x}\right) \in V' $, por lo que $\displaystyle \exists! x'^{1}, \ldots, x'^{m} \in\K$ tales que
+\[
+\begin{split}
+f\left(\vec{x}\right) = x'^{1}\vec{v}_{1} + \cdots + x'^{m}\vec{v}_{m}.
+\end{split}
+\]
+Similarmente, 
+\[
+\begin{split}
+	f\left(\vec{x}\right) = & f\left(x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n}\right) 
+	=  x^{1}f\left(\vec{u}_{1}\right) + \cdots + x^{n}f\left(\vec{u}_{n}\right) \\
+	= & x^{1}\left(a^{1}_{1}\vec{v}_{1} + \cdots + a^{m}_{1}\vec{v}_{m}\right) + \cdots + x^{n}\left(a^{1}_{n}\vec{v}_{1} + \cdots + a^{m}_{n}\vec{v}_{m}\right) \\
+	= & \left(x^{1}a_{1}^{1} + \cdots + x^{1}a^{1}_{n}\right)\vec{v}_{1} + \cdots + \left(x^{1}a^{m}_{1} + \cdots + x^{n}a^{m}_{n}\right)\vec{v}_{m}.
+\end{split}
+\]
+Así, tenemos que las coordenadas de $\displaystyle f\left(\vec{x}\right) $ serán:
+\[
+\begin{cases}
+x'^{1} = x^{1}a^{1}_{1} + \cdots + x^{1}a^{1}_{n}\\
+\vdots \\
+x'^{m} = x^{1}a^{m}_{1} + \cdots + x^{n}a^{m}_{n}
+\end{cases}
+.\]
+En forma matricial tenemos que
+\[
+	A \cdot \begin{pmatrix} x^{1} \\ x^{2} \\ \vdots \\ x^{n} \end{pmatrix} = \begin{pmatrix} x'^{1} \\ x'^{2} \\ \vdots \\ x'^{m} \end{pmatrix}
+ .\]
+ A continuación, vamos a estudiar la matriz de cambio de base. Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ y $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\}  $ bases de $\displaystyle V $. Tenemos que 
+ \[
+ \begin{split}
+	 \vec{v}_{1} = & a^{1}_{1}\vec{u}_{1} + \cdots + a^{n}_{1}\vec{u}_{n} \\
+		       & \vdots \\
+	 \vec{v}_{n} = & a^{1}_{n} \vec{u}_{1} + \cdots + a^{n}_{n}\vec{u}_{n}.
+ \end{split}
+ \]
+Así, si $\displaystyle \vec{x} \in V $ existen unos únicos $\displaystyle x^{1}, \ldots, x^{n} \in \K $ tales que $\displaystyle \vec{x} = x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n} $ y existen unos únicos $\displaystyle x'^{1}, \ldots, x'^{n} \in \K $ tales que $\displaystyle \vec{x} = x'^{1}\vec{v}_{1} + \cdots + x'^{n}\vec{v}_{n} $. Entonces, tenemos que
+\[
+\begin{split}
+	\vec{x} = & x'^{1}\vec{v}_{1} + \cdots + x'^{n}\vec{v}_{n} \\
+	= & x'^{1}\left(a^{1}_{1}\vec{u}_{1} + \cdots + a^{n}_{1}\vec{u}_{n}\right) + \cdots + x'^{n}\left(a^{1}_{n}\vec{u}_{1} + \cdots + a^{n}_{n}\vec{u}_{n}\right) \\
+	= & \left(x'^{1}a^{1}_{1} + \cdots + x'^{n}a^{1}_{n}\right)\vec{u}_{1} + \cdots + \left(x'^{1}a^{n}_{1} + \cdots + x'^{n}a^{n}_{n}\right)\vec{u}_{n} .
+\end{split}
+\]
+Así, tenemos que 
+\[
+\begin{cases}
+x^{1} = x'^{1}a^{1}_{1} + \cdots + x'^{n}a^{1}_{n} \\
+\vdots \\
+x^{n} = x'^{1}a^{n}_{1} + \cdots + x'^{n}a^{n}_{n}
+\end{cases}
+\Rightarrow \underbrace{\begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n} \\
+\vdots & & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix}}_{\text{Matriz cambio de base}} \begin{pmatrix} x'^{1} \\ \vdots \\ x'^{n} \end{pmatrix} = \begin{pmatrix} x^{1} \\ \vdots \\ x^{n} \end{pmatrix}
+.\]
+
+\begin{eg}
+	\normalfont $\displaystyle id _{V}: V_{ \left\{ \vec{v}_{i}\right\} } \to V _{ \left\{ \vec{u}_{i}\right\} } $. Queremos calcular la matriz $\displaystyle \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{i}\right\} }\left(id _{V}\right) $. Tenemos que 
+	\[id _{V}\left(\vec{v}_{i}\right) = \vec{v}_{i} = a^{1}_{i}\vec{u}_{1} + \cdots +a^{n}_{i}\vec{u}_{n} .\]
+Por tanto, 
+\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{i}\right\} }\left(id _{V}\right) = \begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n}\\
+\vdots & & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix} .\]
+\end{eg}
+
+\section{Permutaciones}
+ \begin{fdefinition}[Permutación]
+	 \normalfont Sea $\displaystyle X = \left\{ 1, 2, \ldots, n\right\}  $. Una \textbf{permutación} de $\displaystyle X $ es una aplicación biyectiva $\displaystyle \sigma: X \to X $. 
+ \end{fdefinition}
+ 
+ Normalmente se escriben de la siguiente forma:
+ \[\sigma = \begin{bmatrix} 1 & 2 & \cdots & n\\
+ \sigma\left(1\right) & \sigma\left(2\right) & \cdots & \sigma\left(n\right)\end{bmatrix}  .\]
+ 
+ \begin{ftheorem}[]
+	 \normalfont Sea $\displaystyle S_{n} = \left\{ \sigma \; : \; \sigma \; \text{permutación de }\; X\right\}  $ y $\displaystyle \circ : S_{n} \times S_{n} \to S_{n} $ sea la operación de composición entre permutaciones. Entonces, $\displaystyle \left(S_{n}, \circ\right) $ es un grupo.
+ \end{ftheorem}
+ 
+ \begin{proof}
+ Tenemos que la composición de funciones biyectivas es una operación cerrada. Además, tenemos que es asociativa, existe el elemento neutro (i.e. $\displaystyle id _{X} $) y el opuesto (i.e. $\displaystyle \sigma^{-1} $, el inverso, que también es biyección).
+ \end{proof}
+
+\begin{fdefinition}[]
+\normalfont Sean $\displaystyle \left\{ a_{1}, \ldots, a_{r}\right\} \subset X $ distintos 2 a 2. el \textbf{ $\displaystyle r $-ciclo} $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $ es la permutación $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $ tal que
+\[
+\begin{split}
+	a_{1} & \to a_{2} \\
+	a_{2} & \to a_{3} \\
+	      & \vdots \\
+	a_{r} & \to a_{1}.
+\end{split}
+\]
+\end{fdefinition}
+
+\begin{fprop}[]
+\normalfont Toda permutación es composición de $\displaystyle r $-ciclos.
+\end{fprop}
+
+\begin{proof}
+Sea $\displaystyle \sigma \in S_{n} $. Si $\displaystyle \forall a \in X $, $\displaystyle \sigma\left(a\right)=a $, entonces $\displaystyle \sigma = id _{X} $, que es un $\displaystyle 1 $-ciclo. Si $\displaystyle \exists a_{1}\in X $ tal que $\displaystyle \sigma\left(a_{1}\right) = a_{2}\neq a_{1} $, defino
+\[
+\begin{split}
+	a_{3} & = \sigma^{2}\left(a_{1}\right) = \sigma\left(a_{2}\right) \in X \\
+	      & \vdots \\
+	a_{k} & = \sigma^{k-1}\left(a_{1}\right) = \sigma\left(a_{k-1}\right) \in X.
+\end{split}
+\]
+Sea $\displaystyle r \in \N $ el primer natural tal que $\displaystyle a_{r} \in \left\{ a_{1}, \ldots, a_{r-1}\right\}  $. Entonces, $\displaystyle \sigma\left(a_{r}\right) = a_{1} $. Así, tenemos que $a_{r} = \sigma^{r-1}\left(a_{1}\right)$ y $\displaystyle \sigma\left(a_{r}\right) = \sigma^{h}\left(a_{1}\right) $, con $\displaystyle h < r $. De esta manera, $\displaystyle a^{r-h} = \sigma^{r-1-h}\left(a_{1}\right) = a_{1} $. Si $\displaystyle \forall b \in X - \left\{ a_{1}, \ldots, a_{r}\right\}  $ tenemos que $\displaystyle \sigma\left(b\right) = b $ ya hemos terminado. En cambio, si existe $\displaystyle b_{1} \in X - \left\{ a_{1}, \ldots, a_{r}\right\}  $ tal que $\displaystyle \sigma\left(b_{1}\right) = b_{2} \neq b_{1} $, hacemos el mismo procedimiento de antes:
+\[
+\begin{split}
+	b_{3} & = \sigma\left(b_{2}\right) = \sigma^{2}\left(b_{1}\right) \\
+				 & \vdots \\
+	b_{k} & = \sigma\left(b_{k-1}\right) = \sigma^{k-1}\left(b_{1}\right).
+\end{split}
+\]
+Sea $\displaystyle s $ el primer natural tal que $\displaystyle \sigma\left(b_{s}\right) \in \left\{ b_{1}, \ldots, b_{s-1}\right\}  $. Entonces, $\displaystyle \sigma\left(b_{s}\right)= b_{1} $. Así, tenemos que $\displaystyle \sigma = \left(b_{1}, \ldots, b_{s}\right) \circ \left(a_{1}, \ldots, a_{r}\right) $. Repetimos este proceso hasta que se agoten los elementos de $\displaystyle X $.
+\end{proof}
+
+\begin{eg}
+\normalfont Consideremos 
+\[
+\begin{split}
+	\sigma & = \begin{bmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10  \\  9 & 8 & 10 & 2 & 1 & 3 & 4 & 6 & 5 & 7 \end{bmatrix} = \begin{bmatrix} 1 & 9 & 5 & 2 & 8 & 6 & 3 & 10 & 7 & 4\\
+9 & 5 & 1 & 8 & 6 & 3 & 10 & 7 & 4 & 2\end{bmatrix} \\
+& = \left(1, 9, 5\right) \circ \left(2, 8, 6, 3, 10, 7, 4\right)
+\end{split}
+\]
+\end{eg}
+\begin{eg}
+\normalfont 
+\[
+\begin{split}
+	\sigma = & \begin{bmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+		8 & 5 & 6 & 1 & 2 & 7 & 3 & 4 & 10 & 9\end{bmatrix} = \begin{bmatrix} 1 & 8 & 4 & 2 & 5 & 3 & 6 & 7 & 9 & 10 \\ 8 & 4 & 1 & 5 & 2 & 6 & 7 & 3 & 10 & 9\end{bmatrix} \\
+		= & \left(1,8, 4\right) \circ \left(2, 5\right) \circ \left(3, 6, 7\right) \circ \left(9, 10\right).
+\end{split}
+\]
+\end{eg}
+
+\begin{fdefinition}[]
+\normalfont Los $\displaystyle 2 $-ciclos los llamaremos \textbf{trasposiciones}.
+\end{fdefinition}
+
+Definimos 
+\[
+\begin{split}
+	\nabla =  \prod_{1 \leq i < j \leq n} \left(x_{i}-x_{j}\right) = \left(x_{1}-x_{2}\right) &\left(x_{1}-x_{3}\right) \cdots \left(x_{1}-x_{n}\right) 
+		  \left(x_{2}-x_{3}\right) \cdots \left(x_{2}-x_{n}\right) \cdots \left(x_{n-1}-x_{n}\right).
+\end{split}
+\]
+De esta manera, si $\displaystyle \sigma \in S_{n} $, 
+\[
+\begin{split}
+\nabla\sigma  = \prod_{1 \leq i < j \leq n}x_{\sigma\left(i\right)}-x_{\sigma\left(j\right)} .
+\end{split}
+\]
+Así, tenemos que 
+\[\nabla \sigma = i\left(\sigma \right)\nabla  .\]
+Un par $\displaystyle i < j $ es una inversión de $\displaystyle \sigma  $ si $\displaystyle \sigma\left(i\right) > \sigma\left(j\right)$ 
