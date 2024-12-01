@@ -1,2 +1,249 @@
 \chapter{Límites de funciones}
 
+\begin{fdefinition}[Punto de acumulación]
+\normalfont Sea $\displaystyle A \subset \R $. Se dice que $\displaystyle c $ es un \textbf{punto de acumulación} de $\displaystyle A $ si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists x \in A $ con $\displaystyle x \neq c $ tal que $\displaystyle \left|x - c\right| < \epsilon  $.
+\end{fdefinition}
+
+\begin{eg}
+\normalfont Sea $\displaystyle A = \left(0,1\right) $ y sea $\displaystyle 0 < c < 1 $. Tenemos que $\displaystyle c $ es un punto de acumulación de $\displaystyle A $. Similarmente, 0 y 1 también son puntos de acumulación de $\displaystyle A $.
+\end{eg}
+
+\begin{notation}
+	\normalfont $\displaystyle A' = \left\{ c \in \R \; : \; c \; \text{punto de acumulación de } \; A\right\}  $. Así, si $\displaystyle A = \left(0,1\right) $, entonces $\displaystyle A' = \left[0,1\right]  $.
+\end{notation}
+\begin{eg}
+	\normalfont $\displaystyle A = \left\{ 0,1\right\}  $. Tenemos que $\displaystyle A' = \emptyset $.
+\end{eg}
+
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle A\subset\R $. Entonces, $\displaystyle c \in A' $ si y solo si $\displaystyle \exists \left\{ x_{n}\right\} _{n\in\N}\subset A $ con $\displaystyle x_{n} \neq c $ tales que $\displaystyle \lim_{n \to \infty}x_{n} = c $.
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Supongamos que $\displaystyle A' \neq \emptyset $. Si $\displaystyle c \in A' $, tomamos $\displaystyle \epsilon = \frac{1}{n} $, entonces $\displaystyle \exists x_{n} \in A, \; x_{n} \neq c$ tal que $\displaystyle \left|x_{n}-c\right| < \frac{1}{n} $. Así, $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset A- \left\{ c\right\}  $ y $\displaystyle \left|x_{n}-c\right| < \frac{1}{n} \to 0 $, por lo que $\displaystyle x_{n} \to c $. 
+\item[(ii)] Recíprocamente, si $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset A- \left\{ c\right\}  $ tal que $\displaystyle x_{n} \to c $. Sea $\displaystyle \epsilon > 0 $ y $\displaystyle n \in \N $ tal que $\displaystyle \left|x_{n}-c\right| < \epsilon  $. Así, $\displaystyle x_{n} \in A - \left\{ c\right\}  $ y $\displaystyle \left|x_{n}-c\right| < \epsilon  $. Por lo que $\displaystyle c \in A' $.
+\end{description}
+\end{proof}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)]  Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset\R $ tal que $\displaystyle x_{n} \to c $ con $\displaystyle x_{n} \neq c $ y sea $\displaystyle A = \left\{ x_{n}\right\} _{n\in\N} $. Entonces, $\displaystyle A' = \left\{ c\right\}  $. Por ejemplo, si $\displaystyle A = \left\{ \frac{1}{n} \; : \; n \in \N\right\}  $, entonces $\displaystyle A' = \left\{ 0\right\} $.
+\item[(ii)] Sea $\displaystyle A = \Q $, tenemos que $\displaystyle A' = \R $, pues $\displaystyle \Q $ es denso en $\displaystyle \R $. Análogamente, si $\displaystyle A = \R/\Q $, tenemos que $\displaystyle A'=\R $.
+\end{description}
+
+\end{eg}
+
+\begin{fdefinition}[Límite]
+\normalfont Sea $\displaystyle f : A \subset \R \to \R $ y $\displaystyle c \in A' $. Se dice que $\displaystyle l $ es el límite de $\displaystyle f $ cuando $\displaystyle x $ se aproxima a $\displaystyle c $ \footnote{Por lo estudiado anteriormente, podemos calcular el límite sin que $\displaystyle c \in A $, es decir, sin que $\displaystyle f $ esté definido en $\displaystyle c $.} : 
+\[\lim_{x \to c}f\left(x\right) = l ,\]
+si $\displaystyle \forall \epsilon > 0, \; \exists \delta > 0 $ tal que si $\displaystyle x \in A - \left\{ c\right\}  $ y $\displaystyle 0< \left|x-c\right|<\delta $, entonces $\displaystyle \left|f\left(x\right)-l\right|<\epsilon $.
+\end{fdefinition}
+
+\begin{eg}
+	\normalfont Sea $\displaystyle f: (0,1] \to \R $ tal que $\displaystyle f\left(x\right) = \frac{x^{2}+x}{x} $. Si $\displaystyle A = (0,1] $, tenemos que $\displaystyle 0 \in A' = \left[0,1\right]  $. Queremos ver que $\displaystyle \lim_{x \to 0}f\left(x\right) =1 $. Sea $\displaystyle \epsilon > 0 $, quiero encontrar $\displaystyle \delta > 0 $ tal que si $\displaystyle x \in (0,1] $y $\displaystyle 0 < x < \delta  $, entonces $\displaystyle \left|\frac{x^{2}+x }{x }-1\right| < \epsilon  $. Tenemos que 
+	\[ \left|\frac{x^{2}+x }{x }-1\right| = \left|x +1 - 1\right|= x < \epsilon  .\]
+Cogemos $\displaystyle \delta = \frac{\epsilon }{2} < \epsilon  $. También podemos tomar $\displaystyle \delta = \epsilon  $. Entonces si $\displaystyle 0 < x< \delta  $, tenemos que $\displaystyle \left|f\left(x\right)-1\right| < \epsilon  $.
+\end{eg}
+
+\begin{eg}
+\normalfont $\displaystyle f : \R \to \R $ tal que $\displaystyle f\left(x\right) = x^{2} $. Tenemos que $\displaystyle 0 \in \R' = \R $. Vamos a ver que $\displaystyle \lim_{x \to 0}x^{2} =0 $. Vamos a ver que si $\displaystyle \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle 0 < \left|x-0\right|<\delta  $, entonces $\displaystyle \left|x^{2}-0\right| < \epsilon  $.
+\[ \left|x^{2}\right| < \epsilon \iff x^{2} < \epsilon  .\]
+Podemos tomar $\displaystyle \delta = \sqrt{\epsilon } $, pues entonces
+\[x < \sqrt{\epsilon } \Rightarrow x^{2} < \left(\sqrt{\epsilon }\right)^{2} = \epsilon  .\]
+\end{eg}
+
+\begin{ftheorem}[Caracterización del límite por convergencia de sucesiones]
+\normalfont Sea $\displaystyle f: A \subset\R \to \R $, $\displaystyle c \in A' $ y $\displaystyle l \in \R $. Entonces, son equivalentes los siguientes enunciados:
+\begin{description}
+\item[(i)] $\displaystyle \lim_{x \to c}f\left(x\right) = l $.
+\item[(ii)] $\displaystyle \forall \left\{ x_{n}\right\} _{n\in\N}\subset A- \left\{ c\right\}  $, $\displaystyle x_{n} \to c $ si $\displaystyle n \to \infty $, entonces $\displaystyle f\left(x_{n}\right) \to l $.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+	\item[(i) $\displaystyle \Rightarrow $ (ii)] Queremos ver que $\displaystyle \forall \epsilon > 0 $ existe un $\displaystyle n_{0} \in \N $ tal que si $\displaystyle n \geq n_{0} $, $\displaystyle \left|f\left(x_{n}\right)-l\right|<\epsilon  $. Sabemos que dado $\displaystyle \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle x \in A/ \left\{ c\right\}  $ y $\displaystyle 0 < \left|x - c\right| < \delta  $, entonces $\displaystyle \left|f\left(x\right)-l\right| < \epsilon  $. Como $\displaystyle x_{n} \to c $, dado $\displaystyle \delta > 0 $ existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $, $\displaystyle \left|x_{n}-c\right| < \delta $. Recordamos que $\displaystyle x_{n} \neq c $. Por tanto, $\displaystyle \left|f\left(x_{n}\right)-l\right|<\epsilon  $.
+	\item[(ii) $\displaystyle \Rightarrow $ (i)] Si $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset A/ \left\{ c\right\}  $ y $\displaystyle x_{n}\to c $, entonces $\displaystyle f\left(x_{n}\right) \to l $. Quiero ver que $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle 0 < \left|x-c\right| < \delta  $ con $\displaystyle x \in A/ \left\{ c\right\}  $, entonces $\displaystyle \left|f\left(x\right)-l\right|<\epsilon $. Supongamos lo contrario. Es decir, $\displaystyle \exists \epsilon > 0, \; \forall\delta>0, \exists 0 < \left|x-c\right|<\delta  $ con $\displaystyle x \in A $ tal que $\displaystyle \left|f\left(x\right)-l\right|\geq \epsilon  $. Tomamos $\displaystyle \delta = \frac{1}{n} $, entonces existe $\displaystyle x_{n} $ tal que $\displaystyle 0 < \left|x_{n}-c\right|<\frac{1}{n} $, con $\displaystyle x_{n} \in A $ tal que $\displaystyle \left|f\left(x_{n}\right)-l\right|\geq\epsilon $. Así, $\displaystyle x_{n}\to c $, $\displaystyle x_{n} \in A/ \left\{ c\right\}  $ pero tenemos que $\displaystyle f\left(x_{n}\right) $ no tiende a $\displaystyle l $, que contradice nuestra hipótesis. Por tanto, $\displaystyle \lim_{x \to c}f\left(x\right)=l $. \footnote{Cuando pasamos de sucesión a variable continua, lo solemos hacer por reducción al absurdo.} 
+\end{description}
+\end{proof}
+
+\begin{eg}
+\normalfont Consideramos la función
+\[f\left(x\right) = \sig x =
+\begin{cases}
+1, \; x > 0 \\
+0 , \; x = 0 \\
+-1, \; x < 0
+\end{cases}
+.\]
+Tenemos que $\displaystyle x_{n} = \frac{1}{n} \to 0 $ y $\displaystyle f\left(x_{n}\right) = 1 \to 1 $, pero si tomamos $\displaystyle y_{n} = -\frac{1}{n} \to 0 $, pero $\displaystyle f\left(y_{n}\right) = -1 \to -1$. Entonces, como $\displaystyle -1 \neq 1 $, tenemos que no existe $\displaystyle \lim_{x \to 0}f\left(x\right) $.
+\end{eg}
+
+\begin{eg}
+\normalfont Vamos a ver que no existe el límite $\displaystyle \lim_{x \to 0}\frac{1}{x} $ si $\displaystyle x > 0 $. Basta tomar $\displaystyle x_{n} = \frac{1}{n} \to 0 $, pero $\displaystyle \frac{1}{x_{n}} = n $ diverge, por lo que no converge a un número real finito.
+\end{eg}
+
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle f: A \subset \R \to \R $ y $\displaystyle x_{0} \in A' $. Diremos que $\displaystyle \lim_{x \to x_{0}}f\left(x\right) = \infty $ si $\displaystyle \forall C > 0 $, $\displaystyle \exists \delta > 0 $ tal que $\displaystyle 0 < \left|x - x_{0}\right| < \delta  $, $\displaystyle x \in A $, entonces $\displaystyle f\left(x\right) > C $. \\ 
+Análogamente, diremos que $\displaystyle \lim_{x \to x_{0}}f\left(x\right)=-\infty $ si $\displaystyle \forall C < 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle 0 < \left|x-x_{0}\right| < \delta  $, $\displaystyle x \in A $, entonces, $\displaystyle f\left(x\right) < C $.
+\end{fdefinition}
+
+\begin{eg}
+\normalfont Sea $\displaystyle f: \left(0, \infty\right) \to \R $ con $\displaystyle f\left(x\right) = \frac{1}{x} $. Entonces, $\displaystyle \lim_{x \to 0}f\left(x\right) = \infty $. En efecto, dada $\displaystyle C > 0 $ tomamos $\displaystyle \delta < \frac{1}{C} $ y obtenemos que 
+\[ 0 < \left|x-0\right| = x < \delta < \frac{1}{C} \Rightarrow \frac{1}{x} > \frac{1}{\delta }> C .\]
+\end{eg}
+\begin{eg}
+	\normalfont Sea $\displaystyle g: \R/ \left\{ 0\right\} \to \R $ con $\displaystyle g\left(x\right) = \frac{1}{x} $. El límite $\displaystyle \lim_{x \to 0}g\left(x\right) $ no existe. 
+\end{eg}
+
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle f: \left(a, \infty\right) \to \R $, $\displaystyle a \in \R $ y sea $\displaystyle l \in \R $. Se dice que $\displaystyle \lim_{x \to \infty}f\left(x\right) = l $ si $\displaystyle \forall \epsilon > 0, \; \exists C > 0 $ tal que si $\displaystyle x > C $ entonces $\displaystyle \left|f\left(x\right)-l\right| < \epsilon  $. \\
+Análogamente, si $\displaystyle f:\left(-\infty, a\right) \to \R$ $\displaystyle \lim_{x \to -\infty}f\left(x\right) = l $ si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists C < 0 $ tal que si $\displaystyle x < C $ entonces $\displaystyle \left|f\left(x\right)-l\right| < \epsilon  $.
+\end{fdefinition}
+
+\begin{eg}
+\normalfont Sea $\displaystyle f\left(x\right) = \frac{x+1}{x}, \; x > 0 $. Queremos ver que $\displaystyle \lim_{x \to \infty}\frac{x+1}{x}=1 $. Sea $\displaystyle \epsilon > 0 $, 
+\[ \left|\frac{x+1}{x}-1\right| = \left|\frac{x+1-x}{x}\right| =\frac{1}{x}  .\]
+Si $\displaystyle C = \frac{1}{\epsilon } $, tenemos que si $\displaystyle x > C $, 
+\[x > \frac{1}{\epsilon } \iff \frac{1}{x} < \epsilon  .\]
+\end{eg}
+
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle f: \left(a, \infty\right) \to \R $. Diremos que $\displaystyle \lim_{x \to \infty}f\left(x\right) = \infty $ si $\displaystyle \forall C > 0, \; \exists D > 0 $ tal que si $\displaystyle x > D $, con $\displaystyle x \in \left(a, \infty\right) $, entonces $\displaystyle f\left(x\right) > C $. \\
+Análogamente, $\displaystyle \lim_{x \to \infty}f\left(x\right) = -\infty $ si $\displaystyle \forall C < 0 $, $\displaystyle \exists D > 0 $ tal que si $\displaystyle x > D $, con $\displaystyle x \in \left(a, \infty\right) $, entonces $\displaystyle f\left(x\right) < C $. \\
+Análogamente, sea $\displaystyle f: \left(-\infty, a\right)\to \R $. Tenemos que $\displaystyle \lim_{x \to -\infty}f\left(x\right) = \infty $ si $\displaystyle \forall C > 0 $, $\displaystyle \exists D < 0 $ tal que si $\displaystyle x < D $, entonces $\displaystyle f\left(x\right) > C $. Finalmente, $\displaystyle \lim_{x \to -\infty}f\left(x\right)=-\infty $ si $\displaystyle \forall C < 0, \; \exists D < 0 $ tal que si $\displaystyle x < D $ entonces $\displaystyle f\left(x\right) < C $. 
+\end{fdefinition}
+
+\begin{observation}
+\normalfont Análogamente al criterio de existencia de límite por convergencia de sucesiones, se puede adaptar el mismo argumento en los restantes casos de límites. Por ejemplo, si $\displaystyle \lim_{x \to \infty}f\left(x\right) = \infty $ y sea $\displaystyle x_{n} \to \infty $ si $\displaystyle n \to \infty $. Entonces tenemos que $\displaystyle f\left(x_{n}\right)\to \infty $. Queremos ver que $\displaystyle \forall C > 0 $, $\displaystyle \exists n_{0} \in \N $ tal que si $\displaystyle n \geq n_{0} $, entonces $\displaystyle f\left(x_{n}\right) > C $. Sabemos que $\displaystyle \forall C>0 $, existe $\displaystyle D > 0 $ tal que si $\displaystyle x > D $, con $\displaystyle x \in \dom f $, entonces $\displaystyle f\left(x\right) > C $. Como $\displaystyle x_{n}\to \infty$, para $\displaystyle D > 0 $, tenemos que existe $\displaystyle n_{0}\in\N $ tal que si $\displaystyle n \geq n_{0} $, entonces $\displaystyle x_{n} > D $, por lo que $\displaystyle f\left(x_{n}\right) > C $. 
+\end{observation}
+
+\begin{eg}
+\normalfont Sea $\displaystyle f\left(x\right) = \frac{\sin x}{x}, \; x > 0 $. Queremos ver si $\displaystyle \lim_{x \to \infty}f\left(x\right)=0 $. Queremos ver que $\displaystyle \forall\epsilon > 0, \; \exists C>0 $ tal que si $\displaystyle x > C $ entonces $\displaystyle \left|\frac{\sin x}{x}\right| < \epsilon  $. Tenemos que
+\[ \left|\frac{\sin x}{x}\right| = \frac{ \left|\sin x\right|}{x} \leq \frac{1}{x} < \epsilon  .\]
+Para que esto sea cierto, cogemos $\displaystyle C = \frac{1}{\epsilon } $, así, $\displaystyle x > C \Rightarrow \frac{1}{x} < \frac{1}{C} = \epsilon  $.
+\end{eg}
+
+\begin{fdefinition}[Localmente acotada]
+\normalfont Sea $\displaystyle f: A \subset \R \to \R $, $\displaystyle x_{0} \in A' $. Se dice que $\displaystyle f $ está \textbf{localmente acotada}  en $\displaystyle x_{0} $ si $\displaystyle \exists\delta>0 $ y $\displaystyle \exists C > 0 $ tal que si $\displaystyle 0 < \left|x -x_{0}\right|<\delta  $, con $\displaystyle x \in A $, entonces $\displaystyle \left|f\left(x\right)\right| < C $. \footnote{No es necesario que $\displaystyle x_{0} $ sea punto de acumulación.} 
+\end{fdefinition}
+
+\begin{eg}
+	\normalfont Tenemos que $\displaystyle f\left(x\right) = x^{2} $ está localmente acotada en todo $\displaystyle x_{0} \in \R $. Basta tomar $\displaystyle \delta = 1 $ y $\displaystyle f\left(x_{0}+\delta \right) = \left(x_{0}+\delta \right)^{2} $ y $\displaystyle f\left(x_{0}-\delta \right)= \left(x_{0}- \delta \right)^{2} $ y tomar $\displaystyle C = \max \left\{ f\left(x_{0}+\delta \right), f\left(x_{0}-\delta \right)\right\}  $. Tenemos que $\displaystyle \left|f\left(x\right)\right| = x^{2} \leq C, \; x \in \left(x_{0}-\delta, x_{0}+\delta \right) $.
+\end{eg}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : A\subset\R \to \R $, $\displaystyle x_{0} \in A' $, $\displaystyle l \in \R $ y $\displaystyle \lim_{x \to x_{0}} = l $. Entonces, $\displaystyle f $ está localmente acotada en $\displaystyle x_{0} $.
+\end{ftheorem}
+
+\begin{proof}
+Dado $\displaystyle \epsilon = 1 $, tenemos que existe $\displaystyle \delta > 0 $ tal que si $\displaystyle 0 < \left|x -x_{0}\right| < \delta  $, entonces $\displaystyle \left|f\left(x\right)-l\right|<1 $. Entonces, tenemos que 
+\[ \left|f\left(x\right)\right| = \left|f\left(x\right)-l+l\right| \leq \left|f\left(x\right)-l\right| + \left|l\right| < 1 + \left|l\right| .\]
+Cogemos $\displaystyle C = 1 + \left|l\right| $.
+\end{proof}
+
+\begin{eg}
+\normalfont El recíproco no funciona. Cogemos, por ejemplo $\displaystyle f\left(x\right) = \sin \frac{1}{x} $ con $\displaystyle x \neq 0 $. Tenemos que está función está localmente acotada en $\displaystyle 0 $ por 1, pero $\displaystyle \lim_{x \to 0} f\left(x\right) $ no existe.  
+\end{eg}
+
+\begin{ftheorem}[]
+	\normalfont Sean $\displaystyle f, g : A \subset \R \to \R $, $\displaystyle x_{0} \in A' $, sea $\displaystyle l = \lim_{x \to x_{0}}f\left(x\right)$ y $\displaystyle m = \lim_{x \to x_{0}}g\left(x\right) $. Entonces, 
+\begin{description}
+\item[(i)] $\displaystyle \lim_{x \to x_{0}}\left(f\left(x\right)+g\left(x\right)\right) = l+m $.
+\item[(ii)] $\displaystyle \lim_{x \to x_{0}}\left(f\left(x\right)-g\left(x\right)\right) = l -m $.
+\item[(iii)] $\displaystyle \forall a \in \R $, $\displaystyle \lim_{x \to x_{0}}\left(af\left(x\right)\right) = a \cdot l $.
+\item[(iv)] $\displaystyle \lim_{x \to x_{0}}\left(f\left(x\right)g\left(x\right)\right) = l \cdot m$.
+\item[(v)] Si $\displaystyle m \neq 0 $, y $\displaystyle g\left(x\right) \neq 0 $, $\displaystyle \lim_{x \to x_{0}}\frac{f\left(x\right)}{g\left(x\right)} = \frac{l}{m} $.
+\end{description}
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Sea $\displaystyle \epsilon > 0 $ y sea $\displaystyle \delta > 0 $ tal que $\displaystyle 0 < \left|x -x_{0}\right| < \delta  $. Entonces 
+	\[ \left|f\left(x\right)-l\right| < \frac{\epsilon }{2} \quad \text{y} \quad \left|g\left(x\right)-m\right| < \frac{\epsilon }{2} .\]
+	Así, 
+	\[ \left|f\left(x\right)+g\left(x\right) -l-m\right| \leq \left|f\left(x\right)-l\right| + \left|g\left(x\right)-m\right| < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon  .\]
+si $\displaystyle 0 < \left|x - x_{0}\right| < \delta , \; x \in A $.
+\item[(ii)] La demostración es análoga a \textbf{(i)}.
+\item[(iii)] Aplicamos el criterio del límite por sucesiones. Como $\displaystyle \lim_{x \to x_{0}}f\left(x\right)=l $, tenemos que si $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset A/ \left\{ x_{0}\right\}  $ con $\displaystyle x_{n} \to x_{0}$, entonces $\displaystyle f\left(x_{n}\right) \to l $. Queremos ver que $\displaystyle \left(af\right)\left(x_{n}\right) \to al $. Tenemos que
+	\[\left(af\right)\left(x_{n}\right) = a f\left(x_{n}\right)  .\]
+Aplicando las propiedades de los límites de sucesiones, $\displaystyle a \to a $ y $\displaystyle f\left(x_{n}\right) \to l $. Por tanto, $\displaystyle \left(af\right)\left(x_{n}\right) \to al $.
+\item[(iv)] Por el criterio de límite por sucesiones, sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset A/ \left\{ x_{0}\right\}  $, con $\displaystyle x_{n} \to x_{0} $. Queremos ver que $\displaystyle \left(f \cdot g\right)\left(x_{n}\right) \to l \cdot m $. Tenemos que
+	\[\left(f \cdot g\right)\left(x_{n}\right) = f\left(x_{n}\right)g\left(x_{n}\right) .\]
+Como $\displaystyle f $ converge y $\displaystyle x_{n} \to x_{0} $, tenemos que $\displaystyle f\left(x_{n}\right) \to l $ y $\displaystyle g\left(x_{n}\right)\to m $. Aplicando las propiedades de los límites de sucesiones, 
+\[\left(f \cdot g\right)\left(x_{n}\right) = f\left(x_{n}\right)g\left(x_{n}\right) \to l \cdot m .\]
+\item[(v)] Por el criterio del límite por sucesiones, sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset A/ \left\{ x_{0}\right\}  $ con $\displaystyle x_{n} \to x_{0} $. Vamos a ver que $\displaystyle \left(\frac{f}{g}\right)\left(x_{n}\right) \to \frac{l}{m} $. Tenemos que
+	\[\left(\frac{f}{g}\right)\left(x_{n}\right) = \frac{f\left(x_{n}\right)}{g\left(x_{n}\right)} .\]
+Tenemos que $\displaystyle f\left(x_{n}\right) \to l $ y $\displaystyle g\left(x_{n}\right)\to m $, por lo que $\displaystyle \left(\frac{f}{g}\right)\left(x_{n}\right) \to \frac{l}{m} $.
+\end{description}
+\end{proof}
+
+\begin{eg}
+\normalfont Calculamos $\displaystyle \lim_{x \to 2}\left(x^{2}+5\right) $. 
+\[\lim_{x \to 2}\left(x^{2}+5\right) = \lim_{x \to 2}x^{2} + \lim_{x \to 2}5 = \left(\lim_{x \to 2}x\right)^{2} + 5 = 2^{2} + 5 = 9.\]
+\end{eg}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : A \subset \R \to \R $, $\displaystyle x_{0} \in A' $ y supongamos que $\displaystyle \exists\lim_{x \to x_{0}}f\left(x\right)=l $. Si $\displaystyle a \leq f\left(x\right) \leq b $, entonces $\displaystyle a \leq l \leq b $.
+\end{ftheorem}
+
+\begin{proof}
+Dado $\displaystyle \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle 0 < \left|x-x_{0}\right| < \delta  $, con $\displaystyle x \in A $, entonces $\displaystyle \left|f\left(x\right)-l\right| < \epsilon  $. Entonces, tenemos que 
+\[ \left|f\left(x\right)-l\right| < \epsilon \iff - \epsilon < l - f\left(x\right) < \epsilon \iff f\left(x\right)-\epsilon < l < \epsilon + f\left(x\right).\]
+Así, tenemos que
+\[a - \epsilon < l < \epsilon + b, \; \forall \epsilon > 0 .\]
+Entonces, $\displaystyle a \leq l \leq b $ \footnote{Esta demostración se puede hacer también utilizando la caracterización del límite por convergencia de sucesiones.} .
+\end{proof}
+
+\begin{ftheorem}[Regla del bocadillo]
+\normalfont Si $\displaystyle f, g, h : A\subset \R \to \R $, $\displaystyle x_{0} \in A' $. Si $\displaystyle g\left(x\right) \leq f\left(x\right) \leq h\left(x\right) $ y $\displaystyle \exists \lim_{x \to x_{0}}g\left(x\right)=\lim_{x \to x_{0}}h\left(x\right) = l $, entonces, $\displaystyle \lim_{x \to x_{0}}f\left(x\right) = l $.
+\end{ftheorem}
+
+\begin{proof}
+Sea $\displaystyle \epsilon > 0 $, buscamos un $\displaystyle \delta > 0 $ tal que si $\displaystyle x \in A $ y $\displaystyle 0 < \left|x - x_{0}\right| < \delta $, entonces $\displaystyle \left|f\left(x\right)-l\right| < \epsilon  $. Por hipótesis, sabemos que existe $\displaystyle \delta > 0 $ tal que si $\displaystyle 0 < \left|x-x_{0}\right| < \delta  $ con $\displaystyle x \in A $, 
+\[ \left|g\left(x\right)-l\right|< \epsilon \quad \text{y} \quad \left|h\left(x\right)-l\right|< \epsilon.\]
+Así, tenemos que
+\[l - \epsilon < g\left(x\right) \leq f\left(x\right) \leq h\left(x\right) < l+\epsilon .\]
+Así, tenemos que $\displaystyle \left|f\left(x\right)-l\right|<\epsilon  $.
+\end{proof}
+
+\begin{eg}
+\normalfont Vamos a ver $\displaystyle \lim_{x \to 0}\frac{x}{\sin x}=1 $. Geométricamente podemos ver que 
+\[\sin x \leq x \leq \tan x = \frac{\sin x}{\cos x} .\]
+Como estamos viendo el intervalo $\displaystyle \left(0, \frac{\pi }{2}\right] $. Entonces, podemos hacer
+\[1 \leq \frac{x}{\sin x} \leq \frac{1}{\cos x} .\]
+Como $\displaystyle 1\to1 $ y $\displaystyle \frac{1}{\cos x} \to 1 $, tenemos que $\displaystyle \frac{x}{\sin x} \to 1 $ por la regla del bocadillo.
+\end{eg}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+	\item[(i)] Sea $\displaystyle A = \left(0,1\right) \cup \left(1, \infty\right) $ y $\displaystyle f : A \to \R $ tal que $\displaystyle f\left(x\right) = \frac{x^{3}-x^{2}-x+1}{x\left(x-1\right)^{2}} $. Tenemos que $\displaystyle A' = [0, \infty) $. Si $\displaystyle x = 0 $, tenemos que $\displaystyle x_{n} = \frac{1}{n} \in A $ y $\displaystyle x_{n} \to 0 $, por lo que $\displaystyle 0 \in A' $. Hacemos lo mismo con el 1 y la sucesión $\displaystyle x_{n} = 1 +\frac{1}{n} \to 1 $.Si $\displaystyle x < 0 $, no existe $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset A $ tal que $\displaystyle x_{n} \to x $. Por lo que $\displaystyle x \not\in A' $. Vamos a ver que $\displaystyle \lim_{x \to 0}f\left(x\right)= \infty $. Si $\displaystyle x > 0 $, 
+\[\frac{x^{3}-x^{2}-x+1}{x\left(x-1\right)^{2}} = \frac{\left(x-1\right)^{2}\left(x+1\right)}{x\left(x-1\right)^{2}} = \frac{x+1}{x} = 1 + \frac{1}{x} .\]
+Queremos ver que $\displaystyle \forall C>0, \; \exists\delta>0 $ tal que si $\displaystyle 0 < \left|x-0\right| < \delta  $, $\displaystyle x \in A $, entonces $\displaystyle f\left(x\right) > C $.Tenemos que conseguir que 
+\[1 + \frac{1}{x} > C \iff \frac{1}{x} > C - 1 .\]
+Entonces, tomamos $\displaystyle \delta = \min \left\{ \frac{1}{ \left|C-1\right|}, 1\right\}  $, así, si $\displaystyle 0 < x < \delta  $, entonces $\displaystyle 1 + \frac{1}{x} = f\left(x\right) > C $. \\
+Ahora demostramos que $\displaystyle \lim_{x \to 1}f\left(x\right) = 2 $. Tenemos que 
+\[\lim_{x \to 1}f\left(x\right) = \lim_{x \to 1}\left(1+\frac{1}{x}\right) = \lim_{x \to 1}1 + \lim_{x \to 1}\frac{1}{x} = 1 + 1 = 2 .\]
+Ahora demostramos que $\displaystyle \lim_{x \to 2}f\left(x\right) $,
+\[\lim_{x \to 2}f\left(x\right) = \frac{\lim_{x \to 2}\left(x^{3}-x^{2}-x+1\right)}{\lim_{x \to 2}x\left(x-1\right)^{2}} = \frac{3}{2} .\]
+Finalmente, demostramos que $\displaystyle \lim_{x \to \infty}f\left(x\right) = 1 $. Tenemos que 
+\[\lim_{x \to \infty}f\left(x\right) = \lim_{x \to \infty}1 + \lim_{x \to \infty}\frac{1}{x} = 1 + 0 = 1.\]
+\item[(ii)] Sea $\displaystyle f : \R \to \R $ tal que $\displaystyle f\left(x+y\right) = f\left(x\right) + f\left(y\right), \; \forall x,y \in \R $, y $\displaystyle \exists\lim_{x \to 0}f\left(x\right)=l $. Vamos a demostrar que $\displaystyle l = 0 $ y $\displaystyle \forall c\in \R, \; \exists \lim_{x \to c}f\left(x\right) $. \\ 
+Tenemos que $\displaystyle 0 = x + \left(-x\right) $, por lo que $\displaystyle f\left(0\right) = f\left(x\right)+f\left(-x\right) $. Tenemos que $\displaystyle \lim_{x \to 0}f\left(x\right) = l $. Ahora queremos ver que $\displaystyle \lim_{x \to 0}f\left(-x\right) = l $. Sabemos que $\displaystyle \forall\epsilon>0, \; \exists\delta>0 $ tal que si $\displaystyle 0 < \left|x-0\right| < \delta  $, entonces $\displaystyle \left|f\left(x\right)-l\right|<\epsilon  $. Queremos ver que $\displaystyle \forall\epsilon>0, \; \exists\delta>0 $ tal que si $\displaystyle 0 < \left|x-0\right| < \delta  $, entonces $\displaystyle \left|f\left(-x\right)-l\right|<\epsilon  $. Tenemos que si $\displaystyle 0 < \left|x-0\right|<\delta  $, entonces $\displaystyle 0 < \left|-x-0\right|<\delta  $. Por tanto, tenemos que $\displaystyle f\left(-x\right)\to l $ y $\displaystyle f\left(0\right) = f\left(x\right) + f\left(-x\right) = 2l $ \footnote{Tenemos que $\displaystyle \lim_{x \to 0}f\left(0\right) = \lim_{x \to 0}f\left(x\right) + \lim_{x \to 0}f\left(-x\right) $. Como $\displaystyle f\left(0\right) $ es una constante, tenemos que $\displaystyle \lim_{x \to 0}f\left(0\right)=f\left(0\right) $.} . Tenemos que
+	\[x = 0 + x \Rightarrow f\left(x+0\right) = f\left(x\right) + f\left(0\right) = f\left(x\right) \Rightarrow f\left(0\right) = 0 \Rightarrow l=0 .\]
+Ahora vamos a ver que $\displaystyle \forall c \in \R, \; \exists \lim_{x \to c}f\left(x\right) $.
+\[f\left(x\right) = f\left(x-c+c\right)=f\left(x-c\right) + f\left(c\right) .\]
+Vamos a ver que $\displaystyle \lim_{x \to c}f\left(x-c\right) = 0 $. Sea $\displaystyle x - c = y $. Entonces, $\displaystyle \forall \epsilon > 0, \; \exists \delta > 0 $ tal que si $\displaystyle 0< \left|y\right| < \delta  $, tenemos que $\displaystyle \left|f\left(y\right)\right| < \epsilon  $. Así, 
+\[f\left(x\right) = f\left(x-c+c\right)=f\left(x-c\right) + f\left(c\right) \to f\left(c\right) .\]
+Demostramos que $\displaystyle f $ es lineal. Tenemos que
+\[f\left(x\right) = f\left(\frac{x}{n} + \cdots + \frac{x}{n}\right) = n f\left(\frac{x}{n}\right) .\]
+Similarmente, 
+\[f\left(nx\right) = f\left(x+\cdots + x\right) = nf\left(x\right) .\]
+Así, 
+\[f\left(\frac{p}{q}x\right) = \frac{p}{q}f\left(x\right) \Rightarrow f\left(\lambda x\right)= \lambda x, \; \forall \lambda \in \R .\]
+Este último paso se demuestra por continuidad y con sucesiones de racionales que tiendan a números reales (como la parte de exponentes reales). Ahora, podemos ver que $\displaystyle f $ es lineal. Para que sea lineal, tenemos que $\displaystyle f\left(x\right) = cx $. Esto es fácil, pues tenemos que $\displaystyle f\left(1\right) = c $.
+\end{description}
+\end{eg}
+

@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Elementos de Matemáticas y Aplicaciones - Entrega 1}
+\author{Victoria Eugenia Torroja Rubio}
+\date{\today}
+
+\maketitle
+
+\begin{ej}
+Establece criterios de divisibilidad entre 2, 3, 4, 5, 6, 7 y 8 de un número en función de los dígitos de su expresión en base 8. \\ 
+Por ejemplo, un número es múltiplo de 2 cuando la última cifra de su expresión en base 8 es 0, 2, 4 o 6.
+\end{ej}
+
+\begin{ej}
+El ISBN es un código numérico que identifica cada libro. 
+\begin{description}
+\item[(a)] Utilizando la aritmética modular, describe el algoritmo utilizado para calcular el dígito de control del ISBN de 13 dígitos.
+\item[(b)] Aplicar el algoritmo anterior para calcular el dígito de control de un libro en el que se ha borrado. El resto del ISBN se ve correctamente: 978-84-131-8779-*. 
+\end{description}
+\end{ej}
+
+\begin{ej}
+Como se vio en los apuntes, la letra del DNI permite detectar un fallo en su transcripción. La razón es que si por error se modifica un dígito del número la letra asociada es siempre diferente de la asociada al número correcto. Sin embargo, es imposible recuperar el número correcto porque no se puede adivinar qué dígito es el erróneo. \\ \\
+Por ejemplo, el DNI 12345617T no es válido, pero sí lo son 12345618T y 12345687T, resultado de modificar el último y el penúltimo dígito. Por tanto, no se puede saber si el error viene de la última cifra, de la penúltima o de alguna de las anteriores. \\ \\
+Ahora bien, si sabemos en qué posición se produjo el error, sí podemos corregir el error y obtener el número correcto del DNI. 
+\begin{description}
+\item[(a)] Calcula, en el ejemplo anterior, el número correcto de DNI sabiendo que el error se ha producido en la antepenúltima cifra. 
+\end{description}
+¿Qué sucede si solo sabemos que el error se localiza en una de dos posiciones dadas? En el ejemplo, aunque supiéramos que el error se ha producido en una de las dos últimas cifras, el 1 o el 7, es imposible determinar cuál de las dos es la errónea para corregirla y obtener el número correcto.
+\begin{description}
+\item[(b)] Decide razonadamente si hay algún par de posiciones tales que un único error en el DNI circunscrito a ellas siempre se puede corregir. 
+\end{description}
+Al escribir números usando un teclado los errores más habituales consisten en cambiar un dígito por el anterior o el siguiente.
+\begin{description}
+	\item[(c)] Sabiendo que se ha producido un único error \textit{de teclado}, estudia si se puede siempre identificar la posición en que se encuentra el dígito erróneo y corregir el fallo. 
+\end{description}
+\end{ej}
+
+\begin{ej}
+\begin{description}
+\item[(a)] Encriptar el mensaje: 'CARA', según el algoritmo RSA con clave pública $\displaystyle \left(n,k\right) = \left(65,5\right) $.
+\item[(b)] Comprobar que se recupera el mensaje original, desencriptando el resultado obtenido en \textbf{(a)}. 
+\end{description}
+\end{ej}
+
+\end{document}

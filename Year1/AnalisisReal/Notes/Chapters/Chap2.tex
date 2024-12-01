@@ -760,7 +760,7 @@ Sea $\displaystyle \epsilon > 0 $, entonces existe $\displaystyle n_{0} \in \N $
 \]
 Así, para $\displaystyle n_{0} $,
 \[\left(l  - \frac{\epsilon }{2}\right)\left(b_{n_{0}+1}-b_{n_{0}}\right) < a_{n_{0}+1}-a_{n_{0}} < \left(l + \frac{\epsilon }{2}\right)\left(b_{n_{0}+1}-b_{n_{0}}\right) .\]
-\[\vdots .\]
+\[\vdots \]
 \[\left(l-\frac{\epsilon }{2}\right)\left(b_{n_{0}+m}-b_{n_{0}+m -1}\right) < a_{n_{0}+m} - a_{n_{0}+m -1}<\left(l+\frac{\epsilon }{2}\right)\left(b_{n_{0}+m}-b_{n_{0}+m -1}\right), \; m \in \N .\]
 Si sumamos todas las desigualdades y usando la propiedad telescópica, 
 \[\left(l - \frac{\epsilon }{2}\right)\left(b_{n_{0}+m}-b_{n_{0}}\right) < a_{n_{0}+m} - a_{n_{0}}< \left(l + \frac{\epsilon }{2}\right)\left(b_{n_{0}+m}-b_{n_{0}}\right) .\]
@@ -1197,4 +1197,75 @@ Así, tenemos que $\displaystyle \lim_{n \to \infty}\sup x_{n}^{y_{n}} \leq x^{y
 \[\left(x - \epsilon ''\right)^{y} = x^{y}-\epsilon \leq \lim_{n \to \infty}\inf x_{n}^{y_{n}}, \; \forall \epsilon > 0 .\]
 Así, $\displaystyle x^{y} \leq \lim_{n \to \infty}\inf x_{n}^{y_{n}} $.
 \end{proof}
+
+\section{Anexo 1. Productos infinitos}
+
+Sea $\displaystyle \left\{ b_{j}\right\} _{j\in\N}\subset\left(0, \infty\right) $ y sea $\displaystyle B_{n} = \prod^{n}_{j=1}b_{j} $. Se dice que el producto infinito converge si 
+\[\prod^{\infty}_{j=1}b_{j} = \lim_{n \to \infty}B_{n} = l > 0 .\]
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] Sea $\displaystyle b_{j} = \frac{1}{j} > 0 $. Entonces, 
+\[B_{n} = \prod^{n}_{j=1}\frac{1}{j} = \frac{1}{n!} \to 0 .\]
+No converge. 
+\item[(ii)] Sea $\displaystyle b_{j}= 1 - \frac{1}{j^{2}}, \; j \geq 2 $. Tenemos que 
+	\[b_{j} = 1 - \frac{1}{j^{2}} = \frac{j^{2}-1}{j^{2}} = \frac{\left(j+1\right)\left(j-1\right)}{j^{2}} .\]
+Tenemos que, 
+\[
+\begin{split}
+	B_{3} = & \frac{1 \cdot 3}{2 \cdot 2} \cdot \frac{2 \cdot 4}{3 \cdot 3} = \frac{4}{2 \cdot 3} \\
+	B_{4} = & \frac{4}{2 \cdot 3} \cdot \frac{3 \cdot 5}{4 \cdot 4} = \frac{5}{2 \cdot 4} \\
+	\vdots & \\
+	B_{n} = & \frac{n+1}{2n} \to \frac{1}{2}.
+\end{split}
+\]
+\item[(iii)] Calcular $\displaystyle \prod^{\infty}_{j=1}\left(1 +\frac{1}{j^{2}}\right) $.
+\end{description}
+\end{eg}
+
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle b_{j} = 1 + a_{j}, \; a_{j}>0 $. Entonces, $\displaystyle \prod^{\infty}_{j=1}b_{j} $ converge si y solo si $\displaystyle \sum^{\infty}_{j=1}a_{j} < \infty $. En particular, si $\displaystyle \prod^{\infty}_{j=1}b_{j} $ converge, entonces $\displaystyle b_{j} \to 1 $.
+\end{ftheorem}
+
+\begin{proof}
+Por continuidad del logaritmo, si $\displaystyle \log\left(\prod^{\infty}_{j=1}b_{j}\right) $, lo de dentro también debe converger. Así, tenemos que
+\[\log\left(\prod^{n}_{j=1}b_{j}\right) = \sum^{n}_{j=1}\log\left(1+a_{j}\right) .\]
+Sabemos que $\displaystyle \lim_{x \to 0^{+}}\frac{\log\left(1 + x\right)}{x} = 1 $. Así,
+\[\frac{\log\left(1 + a_{j}\right)}{a_{j}}\to 1 .\]
+Por comparación, $\displaystyle \sum^{\infty}_{j=1}\log\left(1+a_{j}\right) < \infty \iff \sum^{\infty}_{j=1}a_{j} < \infty $.
+\end{proof}
+
+\begin{eg}
+\normalfont Así, tenemos que $\displaystyle \prod^{\infty}_{j=1}\left(1 + \frac{1}{j^{2}}\right) $ converge pues $\displaystyle \sum^{\infty}_{j=1}\frac{1}{j^{2}}<\infty $.
+\end{eg}
+
+\section{Anexo 2. Reordenamientos de series.}
+
+Sea $\displaystyle f: \N \to \N $ biyectiva. Dada una serie $\displaystyle \sum^{\infty}_{n = 1}a_{n} $, qué pasa con la serie $\displaystyle \sum^{\infty}_{n = 1}a_{f\left(n\right)} $?
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle \sum^{\infty}_{n = 1} \left|a_{n}\right| < \infty $, entonces $\displaystyle \sum^{\infty}_{n = 1} a_{f\left(n\right)} = \sum^{\infty}_{n = 1}a_{n} $. Sin embargo, Riemann probó que si $\displaystyle \sum^{\infty}_{n = 1}a_{n} $ no converge absolutamente y tomamos $\displaystyle c \in \R $, entonces existe $\displaystyle f : \N \to \N $ biyectiva tal que $\displaystyle \sum^{\infty}_{n = 1}a_{f\left(n\right)} = c . $ 
+\end{ftheorem}
+
+\begin{eg}
+\normalfont Considera $\displaystyle a_{n} = \left(-1\right)^{n} $, sabemos que $\displaystyle \sum^{\infty}_{n = 1}a_{n} $ no converge. 
+\[\sum^{\infty}_{n=1}\left(-1\right)^{n} = \left(-1+1\right) + \left(-1+1\right) + \cdots = 0 + 0 + \cdots .\]
+Similarmente, 
+\[\sum^{\infty}_{n = 1}\left(-1\right)^{n} = -1 + \left(1 + -1\right) + \left(-1+1\right) + \cdots = -1 .\]
+\end{eg}
+
+\section{Anexo 3. Series de potencias}
+
+Anteriormente, hemos visto series numéricas, es decir, $\displaystyle \sum^{\infty}_{n = 1}a_{n} $, con $\displaystyle a_{n} \in \R $. Ahora, queremos estudiar $\displaystyle f_{n} : I \subset \R \to \R $ tal que $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x\right), \; x \in I $. En particular, nos interesan funciones del tipo $\displaystyle f_{n}\left(x\right) = a_{n}\left(x-x_{0}\right)^{n}, \; x_{0} \in I $. Queremos ver si una $\displaystyle f $ cualquiera la puedo reescribir de la manera:
+\[f\left(x\right) = \sum^{\infty}_{ n = 0}a_{n}\left(x-x_{0}\right)^{n} .\]
+Esta es su serie de Taylor si $\displaystyle f \in \mathcal{C}^{\infty}\left(I\right) $ (se puede derivar infinitas veces) y decimos que $\displaystyle a_{n} = \frac{ f^{\left(n\right)}\left(x_{0}\right)}{n!}$.
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] $\displaystyle e^{x} = \sum^{\infty}_{n = 0}\frac{x^{n}}{n!} $.
+\item[(ii)] $\displaystyle \sin x = \sum^{\infty}_{n = 0}\left(-1\right)^{n}\frac{x^{2n+1}}{\left(2n+1\right)!} $.
+\item[(iii)] $\displaystyle \cos x = \sum^{\infty}_{ n = 0}\left(-1\right)^{n}\frac{x^{2n}}{\left(2n\right)!}$.
+\end{description}
+
+\end{eg}
 

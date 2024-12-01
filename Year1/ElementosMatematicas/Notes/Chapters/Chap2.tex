@@ -100,6 +100,149 @@ tenemos que
 \[ \left(a \cdot b\right) \cdot \left(a \cdot b\right)^{-1} = \left( b \cdot a\right) \cdot\left(a \cdot b\right)^{-1} .\]
 Por la propiedad \textbf{(1)} tenemos que $\displaystyle a \cdot b = b \cdot a $, por lo que se cumple la propiedad conmutativa y es un grupo abeliano. 
 \end{description}
-
 \end{proof}
+
+\section{Subgrupo. Grupos finitos. Orden}
+
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle \left(G, \cdot\right) $ un grupo y sea $\displaystyle H\subset G $. Se dice que $\displaystyle H $ es un subgrupo de $\displaystyle G $, y se escribe $\displaystyle H \leq G $, si $\displaystyle \left(H, \cdot\right) $ es un grupo.
+\end{fdefinition}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] Tenemos que $\displaystyle \left(2\Z, + \right) \leq \left(\Z, +\right) \leq \left(\Q, +\right) \leq \left(\R, +\right) \leq \left(\C, +\right) $. 
+\item[(ii)] $\displaystyle \SO\left(n\right) \leq \SL\left(n\right) \leq \GL\left(n\right) $.
+\end{description}
+\end{eg}
+
+\begin{fdefinition}[]
+\normalfont Si $\displaystyle x \in G $ con $\displaystyle \left(G, \cdot \right) $ grupo, $\displaystyle n \in \Z $, denotamos a 
+\[x^{n} =
+\begin{cases}
+	\underbrace{x \cdots x}_{n \; \text{veces}} \; \text{si} \; n > 0\\
+	e \; \text{si} \; n = 0 \\
+	\underbrace{x^{-1} \cdots x^{-1}}_{n \; \text{veces}} \; \text{si} \; n < 0
+\end{cases}
+.\]
+El conjunto $\displaystyle \langle x \rangle = \left\{ x^{n} \; : \; n \in \Z\right\}  $ es un subgrupo abeliano de $\displaystyle G $. Es un subgrupo generado por el elemento $\displaystyle x $. Si $\displaystyle \exists x \in G $, $\displaystyle G = \langle x \rangle $ se denomina \textbf{grupo cíclico} . 
+\end{fdefinition}
+
+\begin{fdefinition}[Orden]
+\normalfont Si $\displaystyle G $ es un grupo finito, se llama \textbf{orden} de $\displaystyle G $ a $\displaystyle \left|G\right| $, es decir, al número de elementos de $\displaystyle G $. Si $\displaystyle G $ no es un conjunto finito diremos que tiene \textbf{orden infinito}. Si $\displaystyle x \in G $, el orden de $\displaystyle x $ es: $\displaystyle \ord\left(x\right) = \left|\langle x \rangle\right| $.
+\end{fdefinition}
+
+\begin{observation}
+\normalfont El orden de un elemento $\displaystyle x $, si es finito, es el menor entero positivo $\displaystyle n $  tal que $\displaystyle x^{n} = e $.
+\end{observation}
+
+\begin{fprop}[]
+\normalfont Sea $\displaystyle H $ un subconjunto no vacío de un grupo $\displaystyle \left(G, \cdot\right) $. Entonces, $\displaystyle H \leq G $ si y solo si $\displaystyle \forall x,y\in H $ se tiene que $\displaystyle x \cdot y^{-1} \in H $.
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Es trivial, pues si $\displaystyle x, y \in H $, como $\displaystyle H \leq G $, tenemos que $\displaystyle \exists y^{-1} \in H $ y $\displaystyle x \cdot y^{-1} \in H $.
+\item[(ii)] Recíprocamente, tenemos que la operación interna está cerrada. La propiedad asociativa se cumple porque se $\displaystyle \left(G, \cdot\right) $ es un grupo. Por definición, tenemos que si $\displaystyle x, y \in H $ entonces, $\displaystyle x \cdot y^{-1} \in H $. Podemos coger $\displaystyle x \cdot x^{-1} = e \in H $. Así, $\displaystyle H $ contiene al elemento neutro. Similarmente, como $\displaystyle e,x \in H $, tenemos que $\displaystyle e \cdot x^{-1} = x^{-1} \in H $. Por lo que podemos encontrar inversos para todos los elementos de $\displaystyle H $. 
+\end{description}
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle H_{1} \leq G $ y $\displaystyle H_{2} \leq G $, entonces $\displaystyle H_{1}\cap H_{2} \leq G $.
+\end{fprop}
+
+\begin{proof}
+Tenemos que ver que $\displaystyle \forall x, y \in H_{1} \cap H_{2} \Rightarrow x \cdot y^{-1} \in H_{1} \cap H_{2} $. Si $\displaystyle x, y \in H_{1} \cap H_{2} $, tenemos que $\displaystyle x,y \in H_{1} $ y $\displaystyle x,y \in H_{2} $. Así, como $\displaystyle H_{1}, H_{2} \leq G $, tenemos que $\displaystyle y^{-1} \in H_{1} \cap H_{2} $ y $\displaystyle x \cdot y^{-1} \in H_{1}\cap H_{2} $.
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle \left(G, \cdot\right) $ es un grupo finito y $\displaystyle x \in G $, el orden de $\displaystyle x $ coincide con el menor entero positivo $\displaystyle k $ tal que $\displaystyle x^{k} = e $. Además, 
+\[\langle x \rangle = \left\{ x, x^{2}, x^{3}, \ldots, x^{k} = e\right\}  .\]
+\end{fprop}
+
+\begin{eg}
+	\normalfont Consideramos el grupo $\displaystyle \left(\Z_{6}, +\right) = \left\{ 0, 1, 2, 3, 4, 5\right\} $. Entonces, tenemos que 
+	\[
+	\begin{split}
+		\langle 0 \rangle & = \left\{ 0\right\} \Rightarrow \ord\left(0\right) = 1\\
+		\langle 1 \rangle & = \left\{ 1, 2, 3, 4, 5, 0\right\} \Rightarrow \ord\left(1\right) = 6 \\
+		\langle 2 \rangle & = \left\{ 2, 4, 0\right\} \Rightarrow \ord\left(2\right) = 3 \\
+		\langle 3 \rangle & = \left\{ 3, 0\right\} \Rightarrow \ord\left(3\right) = 2 \\
+		\langle 4 \rangle & = \left\{ 4, 2, 0\right\} \Rightarrow \ord\left(4\right) = 3\\
+		\langle 5 \rangle & = \left\{ 5, 4, 3, 2, 1, 0\right\} \Rightarrow \ord\left(5\right) = 6 .
+	\end{split}
+	\]
+\end{eg}
+
+\section{Isomorfismos de grupos}
+\begin{fdefinition}[Isomorfismo]
+\normalfont Sean $\displaystyle \left(G, \cdot \right), \left(G', *\right) $ grupos. Se dice que $\displaystyle f: G \to G' $ es un \textbf{isomorfismo} (de grupos) si es biyectiva y 
+\[\forall x, y \in G, \; f\left(x \cdot y\right) = f\left(x\right) * f\left(y\right) .\]
+Si $\displaystyle G $ es isomorfo a $\displaystyle G' $, lo escribirmos $\displaystyle G \cong G' $.
+\end{fdefinition}
+\begin{eg}
+\normalfont $\displaystyle f: \left(\R, +\right) \to \left(\R^{+}, \cdot \right) $ con $\displaystyle f : x \to e^{x} $.
+\end{eg}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle G \cong G' $, entonces
+\begin{description}
+\item[(a)] $\displaystyle G $ y $\displaystyle G' $ tienen el mismo cardinal.
+\item[(b)] Si $\displaystyle e $ y $\displaystyle e' $ son, respectivamente, los elementos neutros de $\displaystyle G $ y $\displaystyle G' $,
+	\[f\left(e\right) = e' \quad \text{y} \quad f^{-1}\left(e'\right) = e .\]
+Además, $\displaystyle f\left(x^{-1}\right) = \left(f\left(x\right)\right)^{-1} $.
+\item[(c)] Si $\displaystyle H \leq G $, $\displaystyle f\left(H\right) \leq G'$.
+\item[(d)] Si $\displaystyle x \in G $, $\displaystyle \ord\left(x\right) = \ord\left(f\left(x\right)\right) $.
+\item[(e)] Si $\displaystyle G $ es abeliano, entonces $\displaystyle G' $ también lo es.
+\end{description}
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(a)] Es trivial, puesto que tiene que un isomorfismo es biyectivo por definición.
+\item[(b)] Tenemos que $\displaystyle \forall x \in G $, 
+	\[f\left(x\right) = f\left(x \cdot e\right) = f\left(x\right) * f\left(e\right) .\]
+De esta manera, 
+\[e' = \left(f\left(x\right)\right)^{-1}*f\left(x\right) = \left(f\left(x\right)\right)^{-1}*f\left(x\right)*f\left(e\right) = e'*f\left(e\right) = f\left(e\right) .\]
+Similarmente, tenemos que 
+\[f\left(x\right)*f\left(x^{-1}\right) = f\left(x \cdot x^{-1}\right) = f\left(e\right) = e' .\]
+Así, tenemos que $\displaystyle f\left(x^{-1}\right) = \left(f\left(x\right)\right)^{-1} $. El hecho que $\displaystyle f^{-1}\left(e'\right)=e $ se deriva de que $\displaystyle f $ es una biyección.
+\item[(c)] Sea $\displaystyle H \leq G $. Entonces si $\displaystyle f\left(x\right), f\left(y\right) \in f\left(H\right) $ tenemos que 
+	\[f\left(x\right) & \left(f\left(y\right)\right)^{-1} = f\left(x \cdot y^{-1}\right) \in f\left(H\right) ,\]
+	pues $\displaystyle x \cdot y^{-1} \in H $.
+\item[(d)] Tenemos que $\displaystyle f\left(\langle x \rangle\right) \leq G'$ y además, 
+	\[f\left(x^{n}\right) = \left(f\left(x\right)\right)^{n} .\]
+Por tanto, 
+\[\ord\left(x\right) = \left|\langle x \rangle \right| = \left|f\left(\langle x \rangle\right)\right| = \left|\langle f\left(x\right)\rangle \right| = \ord\left(f\left(x\right)\right) .\]
+\item[(e)] Si $\displaystyle G $ es abeliano, $\displaystyle \forall x,y \in G $ tenemos que $\displaystyle x \cdot y = y \cdot x$. Así,
+	\[f\left(x \cdot y\right) = f\left(x\right) * f\left(y\right) \quad \text{y} \quad f\left(y \cdot x\right) = f\left(y\right) * f\left(x\right)\]
+\[\therefore f\left(x\right) * f\left(y\right) = f\left(y\right) * f\left(x\right) .\]	
+\end{description}
+\end{proof}
+
+\begin{fdefinition}[Homomorfismo]
+\normalfont Se dice que $\displaystyle \left(G, \cdot \right) \to \left(G', *\right) $ es \textbf{homomorfismo} si $\displaystyle \forall x,y \in G $, $\displaystyle f\left(x \cdot y\right) = f\left(x\right) * f\left(y\right) $.
+\end{fdefinition}
+
+\begin{eg}
+\normalfont La siguiente aplicación es homomorfismo pero no isomorfismo.
+\[
+\begin{split}
+	f : \left(\GL\left(n\right), \cdot \right) & \to \left(\R/ \left\{ 0\right\} , \cdot\right)\\
+	M_{n\times n} & \to \det\left(M_{n \times n}\right).
+\end{split}
+\]
+Si $\displaystyle A, B \in \GL\left(n\right) $, entonces $\displaystyle f\left(A \cdot B\right) = f\left(A\right) \cdot f\left(B\right) $, pues $\displaystyle \det\left(A \cdot B\right) = \det\left(A\right) \cdot \det \left(B\right) $. 
+\end{eg}
+
+\begin{fdefinition}[Núcleo e imagen]
+\normalfont Sea $\displaystyle e' $ el elemento neutro de $\displaystyle G' $. El \textbf{núcleo} de $\displaystyle f $ se define de la siguiente manera:
+\[\Ker\left(f\right) = \left\{ x \in G \; : \; f\left(x\right) = e'\right\}  .\]
+Se define \textbf{imagen} de $\displaystyle f $ al conjunto
+\[\Imagen\left(f\right) = \left(f\left(x\right) \in G'\; : \; x \in G\right) .\]
+\end{fdefinition}
+
+\begin{eg}
+	\normalfont En la aplicación del ejemplo anterior tenemos que $\displaystyle \Ker\left(f\right) = \SL\left(n\right) $ e $\displaystyle \Imagen\left(f\right)=\R/ \left\{ 0\right\}  $.
+\end{eg}
 

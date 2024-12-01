@@ -221,7 +221,7 @@ a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix} .\]
  \sigma\left(1\right) & \sigma\left(2\right) & \cdots & \sigma\left(n\right)\end{bmatrix}  .\]
  
  \begin{ftheorem}[]
-	 \normalfont Sea $\displaystyle S_{n} = \left\{ \sigma \; : \; \sigma \; \text{permutación de }\; X\right\}  $ y $\displaystyle \circ : S_{n} \times S_{n} \to S_{n} $ sea la operación de composición entre permutaciones. Entonces, $\displaystyle \left(S_{n}, \circ\right) $ es un grupo.
+	 \normalfont Sea $\displaystyle \mathcal{S}_{n} = \left\{ \sigma \; : \; \sigma \; \text{permutación de }\; X\right\}  $ y $\displaystyle \circ : \mathcal{S}_{n} \times \mathcal{S}_{n} \to \mathcal{S}_{n} $ sea la operación de composición entre permutaciones. Entonces, $\displaystyle \left(\mathcal{S}_{n}, \circ\right) $ es un grupo.
  \end{ftheorem}
  
  \begin{proof}
@@ -229,7 +229,7 @@ a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix} .\]
  \end{proof}
 
 \begin{fdefinition}[]
-\normalfont Sean $\displaystyle \left\{ a_{1}, \ldots, a_{r}\right\} \subset X $ distintos 2 a 2. el \textbf{ $\displaystyle r $-ciclo} $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $ es la permutación $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $ tal que
+\normalfont Sean $\displaystyle \left\{ a_{1}, \ldots, a_{r}\right\} \subset X $ distintos 2 a 2. El \textbf{ $\displaystyle r $-ciclo} $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $ es la permutación $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $ tal que
 \[
 \begin{split}
 	a_{1} & \to a_{2} \\
@@ -245,7 +245,7 @@ a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix} .\]
 \end{fprop}
 
 \begin{proof}
-Sea $\displaystyle \sigma \in S_{n} $. Si $\displaystyle \forall a \in X $, $\displaystyle \sigma\left(a\right)=a $, entonces $\displaystyle \sigma = id _{X} $, que es un $\displaystyle 1 $-ciclo. Si $\displaystyle \exists a_{1}\in X $ tal que $\displaystyle \sigma\left(a_{1}\right) = a_{2}\neq a_{1} $, defino
+Sea $\displaystyle \sigma \in \mathcal{S}_{n} $. Si $\displaystyle \forall a \in X $, $\displaystyle \sigma\left(a\right)=a $, entonces $\displaystyle \sigma = id _{X} $, que es un $\displaystyle 1 $-ciclo. Si $\displaystyle \exists a_{1}\in X $ tal que $\displaystyle \sigma\left(a_{1}\right) = a_{2}\neq a_{1} $, defino
 \[
 \begin{split}
 	a_{3} & = \sigma^{2}\left(a_{1}\right) = \sigma\left(a_{2}\right) \in X \\
@@ -289,19 +289,384 @@ Sea $\displaystyle s $ el primer natural tal que $\displaystyle \sigma\left(b_{s
 \normalfont Los $\displaystyle 2 $-ciclos los llamaremos \textbf{trasposiciones}.
 \end{fdefinition}
 
+\begin{fprop}[]
+\normalfont Todo ciclo es producto de trasposiciones.
+\end{fprop}
+\begin{proof}
+Tenemos que 
+\[\left(a_{1}, \ldots, a_{m}\right) = \left(a_{1}, a_{2}\right)\left(a_{2}, a_{3}\right) \cdots \left(a_{m -1}, a_{m}\right) .\]
+\end{proof}
+
 Definimos 
 \[
 \begin{split}
-	\nabla =  \prod_{1 \leq i < j \leq n} \left(x_{i}-x_{j}\right) = \left(x_{1}-x_{2}\right) &\left(x_{1}-x_{3}\right) \cdots \left(x_{1}-x_{n}\right) 
-		  \left(x_{2}-x_{3}\right) \cdots \left(x_{2}-x_{n}\right) \cdots \left(x_{n-1}-x_{n}\right).
+	\nabla =  \prod_{1 \leq i < j \leq n} \left(\vec{x}_{i}-\vec{x}_{j}\right) = \left(\vec{x}_{1}-\vec{x}_{2}\right) &\left(\vec{x}_{1}-\vec{x}_{3}\right) \cdots \left(\vec{x}_{1}-\vec{x}_{n}\right) 
+		  \left(\vec{x}_{2}-\vec{x}_{3}\right) \cdots \left(\vec{x}_{2}-\vec{x}_{n}\right) \cdots \left(\vec{x}_{n-1}-\vec{x}_{n}\right).
 \end{split}
 \]
-De esta manera, si $\displaystyle \sigma \in S_{n} $, 
+De esta manera, si $\displaystyle \sigma \in \mathcal{S}_{n} $, definimos 
 \[
 \begin{split}
-\nabla\sigma  = \prod_{1 \leq i < j \leq n}x_{\sigma\left(i\right)}-x_{\sigma\left(j\right)} .
+\nabla\sigma  = \prod_{1 \leq i < j \leq n}\vec{x}_{\sigma\left(i\right)}-\vec{x}_{\sigma\left(j\right)} .
 \end{split}
 \]
+Una permutación de $\displaystyle \sigma  $ es un par $\displaystyle i < j $ tal que $\displaystyle \sigma\left(i\right) < \sigma\left(j\right) $. Una inversión de $\displaystyle \sigma  $ es un par $\displaystyle i < j $ tal que $\displaystyle \sigma\left(j\right) < \sigma\left(i\right) $. Entonces, el número de factores de $\displaystyle \nabla  $ y $\displaystyle \nabla \sigma 	 $ es el mismo. 
 Así, tenemos que 
-\[\nabla \sigma = i\left(\sigma \right)\nabla  .\]
-Un par $\displaystyle i < j $ es una inversión de $\displaystyle \sigma  $ si $\displaystyle \sigma\left(i\right) > \sigma\left(j\right)$ 
+\[\nabla \sigma = \left(-1\right)^{\text{número de inversiones}} \nabla  .\]
+El valor de $\displaystyle -1 $ elevado al número de inversiones de $\displaystyle \sigma  $ lo llamaremos índice o signo de $\displaystyle \sigma  $ y se escribirá $\displaystyle \ind\left(\sigma \right) $ o $\displaystyle \sig\left(\sigma \right) $ \footnote{También se corresponde con el número de trasposiciones en las que se puede componer $\displaystyle \sigma  $.} . Entonces, 
+\[\nabla \sigma = \sig\left(\sigma \right) \nabla .\]
+Sea $\displaystyle \tau \in \mathcal{S}_{n} $, entonces
+\[\underbrace{\nabla \sigma \circ \tau}_{\sig\left(\sigma \circ \tau\right)\nabla } = \sig\left(\sigma \right)\nabla\tau = \sig\left(\sigma \right)\sig\left(\tau\right)\nabla .\]
+Definimos,
+\[
+\begin{split}
+	\sig : \mathcal{S}_{n} & \to \left\{ -1, 1\right\} \\
+	 \sigma & \to \sig\left(\sigma\right).
+\end{split}
+\]
+\begin{fprop}[]
+\normalfont La trasposición $\displaystyle \left(1,2\right) $ tiene signo negativo.
+\end{fprop}
+\begin{proof}
+Tenemos que 
+\[\nabla\left(1,2\right) = \left(x_{2}-x_{1}\right) \left(x_{2}-x_{3}\right) \cdots \left(x_{2}-x_{n}\right) \left(x_{1}-x_{3}\right) \cdots \left(x_{1}-x_{n}\right) \cdots \left(x_{n-1} - x_{n}\right) .\]
+Como podemos ver respecto a la primera definición de $\displaystyle \nabla  $, tenemos que todo es igual menos el primer factor, que es de signo opuesto. Así, $\displaystyle \sig\left(1,2\right) = -1 $.
+\end{proof}
+
+\begin{fprop}[]
+\normalfont La trasposición $\displaystyle \left(1,a\right) $ es negativa para $\displaystyle a \geq 2 $. 
+\end{fprop}
+
+\begin{proof}
+Tenemos que $\displaystyle \left(1, a\right) = \left(2 , a\right) \circ \left(1,2\right) \circ \left(2,a\right) $. 
+\[
+\begin{split}
+& 1 \to 1 \to 2 \to a \\
+& 2 \to a \to a \to 2 \\
+& a \to 2 \to 1 \to 1.
+\end{split}
+\]
+Entonces, 
+\[\sig\left(1,a\right) = \sig\left(2,a\right)\left(-1\right)\left(\sig\left(2,a\right)\right) = \left(\sig\left(2,a\right)\right)^{2}\left(-1\right) = -1 .\]
+\end{proof}
+
+\begin{fprop}[]
+\normalfont $\displaystyle \sig\left(a,b\right) = -1$.
+\end{fprop}
+
+\begin{proof}
+Tenemos que $\displaystyle \left(a,b\right) = \left(1, b\right) \circ \left(1,a\right) \circ \left(1,b\right) $. Así, $\displaystyle a \to b $ y $\displaystyle b \to a $, por lo que
+\[
+\begin{split}
+& 1 \to b \to b \to b \\
+& a \to a \to 1 \to b \\
+& b \to 1 \to a \to a.
+\end{split}
+\]
+Entonces, $\displaystyle \sig\left(\left(a,b\right)\right) = \sig\left(1,b\right)^{2} \cdot \sig\left(1,a\right) = -1 $.
+\end{proof}
+
+\begin{fprop}[]
+\normalfont $\displaystyle \sig\left(\left(a_{1}, \ldots, a_{r}\right)\right) = \left(-1\right)^{r-1} $.
+\end{fprop}
+
+\begin{proof}
+Tenemos que 
+\[\left(a_{1}, a_{r}\right) \circ \left(a_{1}a_{r-1}\right) \cdots \left(a_{1}a_{3}\right)\left(a_{1}a_{2}\right) .\]
+De esta manera, 
+\[
+\begin{split}
+& a_{1} \to a_{2} \to a_{2} \to \cdots \to a_{2} \to a_{2}\\
+& a_{2} \to a_{1} \to a_{3} \to \cdots \to a_{3} \to a_{3} \\
+& \vdots \\
+& a_{r-1} \to a_{r-1} \to a_{r-1} \to \cdots \to a_{1} \to a_{r} \\
+& a_{r} \to a_{r-1} \to a_{r} \to \cdots \to a_{r} \to a_{r}.
+\end{split}
+\]
+\end{proof}
+
+\begin{eg}
+\normalfont Sea
+\[
+\begin{split}
+	\sigma = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+	10 & 9 & 7 & 2 & 1 & 3 & 8 & 4 & 6 & 5\end{pmatrix} = \left(1, 10, 5\right) \circ \left(2, 9, 6, 3, 7, 8, 4\right) .
+\end{split}
+\]
+Por tanto, 
+\[\sig\left(\sigma \right) = \sig\left(1, 10, 5\right) \cdot \sig\left(2, 9, 6, 3, 7, 8, 4\right) = \left(-1\right)^{2} \cdot \left(-1\right)^{6} = 1 .\]
+\end{eg}
+
+\section{Estructura de álgebra}
+
+Sean $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $, $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{m}\right\}  $ y $\displaystyle \left\{ \vec{w}_{1}, \ldots, \vec{w}_{p}\right\}  $ bases de $\displaystyle V$, $\displaystyle V' $ y $\displaystyle V'' $ respectivamente. Si $\displaystyle f \in \Hom\left(V, V'\right) $, tenemos que 
+\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ v_{j}\right\} }\left(f\right) = \begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n} \\
+\vdots & & \vdots \\
+a^{m}_{1} & \cdots & a^{m}_{n}\end{pmatrix} = A ,\]
+donde $\displaystyle f\left(\vec{u}_{i}\right) = a^{1}_{i} \vec{v}_{1} + \cdots + a^{m}_{i}\vec{v}_{m} $. Similarmente, si $\displaystyle g \in \Hom\left(V,V'\right) $, 
+	\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\} }\left(g\right) = \begin{pmatrix} b^{1}_{1} & \cdots & b^{1}_{n} \\
+	\vdots & & \vdots \\
+b^{m}_{1} & \cdots & b^{m}_{n}\end{pmatrix} = B .\]
+Recordamos que 
+		\[A + B = \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\} }\left(f+g\right) = \begin{pmatrix} a^{1}+b^{1} & \cdots & a^{1}_{n}+b^{1}_{n} \\
+		\vdots & & \vdots \\
+	a^{m}_{1}+b^{m}_{1} & \cdots & a^{m}_{n} + b^{m}_{n}\end{pmatrix} .\]
+Similarmente, si $\displaystyle a \in \K $, 
+			\[a \cdot A = \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\} }\left(a \cdot f\right) = \begin{pmatrix} a a^{1}_{1} & \cdots & a a ^{1}_{n} \\
+				\vdots & & \vdots \\
+			a a^{m}_{1} & \cdots & a a ^{m}_{n}\end{pmatrix} .\]
+\begin{fprop}[]
+\normalfont El producto de matrices es distributivo por la izquierda y por la derecha.
+\end{fprop}
+
+	Si $\displaystyle f \in \Hom\left(V, V'\right) $ y $\displaystyle g \in \Hom\left(V', V''\right) $, tenemos que $\displaystyle \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\} }\left(f\right) = A \in \mathcal{M}_{ m \times n}\left(\K\right), \; \mathcal{M}_{ \left\{ \vec{v}_{j}\right\} \left\{ \vec{w}_{k}\right\}  }\left(g\right) = B \in \mathcal{M}_{p \times m}\left(\K\right)$. Definíamos el producto de matrices de la siguiente forma, 
+			\[ B \cdot A = \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{w}_{k}\right\}}\left(g\circ f\right).\]
+Si $\displaystyle f \in \Hom\left(V,V'\right) $, $\displaystyle g \in \Hom\left(V', V''\right) $ y $\displaystyle h \in \Hom\left(V'', V'''\right) $, tenemos que 
+\[h \circ \left(g \circ f\right) = \left(h \circ g\right) \circ f .\]
+Así, como $\displaystyle A \in \mathcal{M}_{m \times n}\left(\K\right) $, $\displaystyle B \in \mathcal{M}_{p \times m}\left(\K\right) $ y $\displaystyle C \in \mathcal{M}_{q \times p} $, tenemos que el producto de matrices es asociativo:
+\[ C \cdot \left(B \cdot A\right) = \left(C \cdot B\right) \cdot A \in \mathcal{M}_{q \times n}\left(\K\right) .\]
+Si $\displaystyle f,g \in \Hom\left(V, V'\right) $, $\displaystyle h \in \Hom\left(V', V''\right) $, tenemos que $\displaystyle \forall \vec{x} \in V $,
+\[h \circ \left(f + g\right)\left(\vec{x}\right) = h \circ \left(f\left(\vec{x}\right) + g\left(\vec{x}\right)\right) = h\left(f\left(x\right)\right) + h\left(g\left(x\right)\right) = \left(h\circ f + h\circ g\right)\left(\vec{x}\right) .\]
+Así, $\displaystyle h \circ \left(f+g\right) = h \circ f + h \circ g $. Entonces, hemos demostrado que el producto de matrices es distributivo por la izquierda. Entonces, $\displaystyle A, B \in \mathcal{M}_{m \times n} \left(\K\right)$, $\displaystyle C \in \mathcal{M}_{p\times m}\left(\K\right) $,
+\[C \cdot \left(A + B \right) = C \cdot A + C \cdot B .\]
+Sea $\displaystyle f \in \Hom\left(V,V'\right) $ y $\displaystyle g, h \in \Hom\left(V',V''\right) $. Tenemos que $\displaystyle \forall\vec{x} \in V $,
+\[\left(\left(g+h\right)\circ f\right)\left(\vec{x}\right) = \left(g+h\right)\left(f\left(\vec{x}\right)\right) = g\left(f\left(\vec{x}\right)\right)+h\left(f\left(\vec{x}\right)\right) = g\circ f\left(\vec{x}\right) + h \circ f\left(\vec{x}\right)=\left(g \circ f + h \circ f\right)\left(\vec{x}\right) .\]
+Así, concluimos que $\displaystyle \left(g+h\right)\circ f = g\circ f + h \circ f $. Por lo que el producto de matrices es distributivo por la derecha. Es decir, sean $\displaystyle A \in \mathcal{M}_{m \times n}\left(\K\right) $, $\displaystyle B,C \in \mathcal{M}_{p \times m}\left(\K\right) $, 
+\[ \left(B + C\right) \cdot A = B \cdot A + C \cdot A.\]
+\begin{fprop}[]
+\normalfont El producto de matrices no es conmutativo.
+\end{fprop}
+ Si $\displaystyle A \in \mathcal{M}_{m \times n}\left(\K\right) $ y $\displaystyle B \in \mathcal{M}_{p \times m}\left(\K\right) $. Entonces $\displaystyle B \cdot A \in \mathcal{M}_{p \times n}\left(\K\right) $, pero $\displaystyle A \cdot B $ no está definido. Si $\displaystyle A,B \in \mathcal{M}_{n \times n}\left(\K\right) $, tenemos que $\displaystyle A \cdot B, B \cdot A \in \mathcal{M}_{n \times n}\left(\K\right) $, pero no tienen por qué ser iguales. En efecto, sean 
+$ \displaystyle A = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} $ y $\displaystyle B = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}$ .Entonces
+\[A \cdot B = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} \neq B \cdot A = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} .\]
+\begin{fprop}[]
+\normalfont Existe un elemento identidad en el producto de matrices
+\end{fprop}
+Tenemos que 
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{~/Desktop/Images/matriz_inversa1.png}
+\caption{Matriz inversa respecto a $\displaystyle V $}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{~/Desktop/Images/matriz_inversa2.png}
+\caption{Matriz inversa respecto a $\displaystyle V' $}
+\label{ enter label$}
+\end{figure}
+Observando las imágenes, tenemos que 
+\[A \cdot I_{n \times n} = A \quad \text{y} \quad I_{m \times m }A = A .\]
+Entonces, si consideramos la aplicación
+\[id _{V} : V_{ \left\{ \vec{u}_{i}\right\}} \to V_{ \left\{ \vec{u}_{i}\right\} } ,\]
+tal que $\displaystyle \forall i = 1, \ldots, n $, $\displaystyle id _{V}\left(\vec{u}_{i}\right) = \vec{u}_{i} $, tenemos que su matriz será
+\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(id _{V}\right) = \begin{pmatrix} 1 & 0 & \cdots & 0\\
+0 & 1 & \cdots & 0 \\
+\vdots & \vdots & \cdots & \vdots \\
+0 & 0 & \cdots & 1\end{pmatrix} = I_{n \times n} .\]
+
+Consideremos la función, 
+\[
+\begin{split}
+	\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} } : \End\left(V\right) & \to \mathcal{M}_{n \times n}\left(\K\right) \\
+	f & \to \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right).
+\end{split}
+\]
+\begin{fprop}[]
+\normalfont Por lo demostrado anteriormente, tenemos que $\displaystyle \left(\End\left(V\right), +, \cdot _{\K}\right) $ y $\displaystyle \left( \mathcal{M}_{n \times n}, + , \cdot _{\K}\right) $ son $\displaystyle \K $-espacios vectoriales. Similarmente, $\displaystyle \left(\End\left(V\right), + ,\circ\right) $ y $\displaystyle \left(\mathcal{M}_{n \times n }\left(\K\right), +, \cdot\right) $  son anillos con unidad. 
+\end{fprop}
+
+\begin{fdefinition}[]
+\normalfont Diremos que $\displaystyle \End\left(V\right) $ y $\displaystyle \mathcal{M}_{n \times n}\left(\K\right) $ son \textbf{álgebras} con unidad.
+\end{fdefinition}
+
+Tenemos que 
+\[\Aut\left(V\right) = \left\{ f \in \End\left(V\right) \; : \; f \; \text{invertible}\right\} = \left\{ f \in \End\left(V\right) \; : \; \exists f^{-1}\right\}  .\]
+Así, $\displaystyle \left(\Aut\left(V\right), \cdot\right) $ es un grupo. En general, la suma de automorfismos no es autormorfismo. Por ejemplo, $\displaystyle id _{V} - id _{V} = 0 \not\in\Aut\left(V\right) $. Definimos 
+\[\GL_{n}\left(\K\right) = \left\{ A \in \mathcal{M}_{n \times n}\left(\K\right) \; : \; \exists A^{-1}\right\}  .\]
+Para estudiar este conjunto, introduciremos la noción de determinante.
+
+\section{Determinantes}
+\begin{fdefinition}[]
+	\normalfont Una $\displaystyle r $-\textbf{forma multilineal}  definida en $\displaystyle V $ es una aplicación $\displaystyle t : \underbrace{ V \times V \cdots \times V}_{r \; \text{veces}} \to \K $ tal que 
+\begin{description}
+\item[(a)] $\displaystyle \forall i = 1, \ldots, r, \; \forall \vec{x}_{1}, \ldots, \vec{x}_{r}, \vec{x'}_{i} \in V $,
+\[t\left(\vec{x}_{1}, \ldots, \vec{x}_{i} + \vec{x'}_{i}, \ldots, \vec{x}_{r}\right) = t\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{r}\right) + t\left(\vec{x}_{1}, \ldots, \vec{x'}_{i}, \ldots, \vec{x}_{r}\right).\]
+\item[(b)] $\displaystyle \forall i = 1, \ldots, r $, $\displaystyle \forall \vec{x}_{1}, \ldots, \vec{x}_{r} \in V, \; \forall a \in \K $,
+	\[t\left(x_{1}, \ldots, a\vec{x}_{i}, \ldots, \vec{x}_{r}\right) = a t\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{r}\right) .\]
+\end{description}
+\end{fdefinition}
+
+\begin{fdefinition}[]
+\normalfont Una $\displaystyle r $-forma multilineal es alternada si $\displaystyle \forall \sigma \in \mathcal{S}_{r} $, 
+\[t\left(\vec{x}_{\sigma\left(1\right)}, \ldots, \vec{x}_{\sigma\left(r\right)}\right) = \sig\left(\sigma \right)t\left(\vec{x}_{1}, \ldots, \vec{x}_{r}\right), \; \forall \vec{x}_{1}, \ldots, \vec{x}_{r} \in V .\]
+\end{fdefinition}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle t $ es una $\displaystyle r $-forma multilineal, $\displaystyle \forall \vec{x}_{1}, \ldots, \vec{x}_{r} \in V $,
+\[t\left(\vec{x}_{1}, \ldots, \vec{0}, \ldots, \vec{x}_{r}\right) = 0 .\]
+\end{fprop}
+\begin{proof} Tenemos que $\displaystyle \vec{0} = 0 \cdot \vec{x}_{i}  $, así, 
+\[t\left(\vec{x}_{1}, \ldots, \vec{0}, \ldots, \vec{x}_{r}\right) =0 \cdot t\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{r}\right) = 0.\]
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Sea $\displaystyle t $ una $\displaystyle r $-forma multilineal alternada. Entonces $\displaystyle \forall \vec{x}_{1}, \ldots, \vec{x}_{r} \in V $,
+\[t\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{j}, \ldots, \vec{x}_{r}\right) = -t\left(\vec{x}_{1}, \ldots, \vec{x}_{j}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{r}\right) .\]
+\end{fprop}
+
+\begin{proof}
+Tenemos que $\displaystyle \sig\left(i,j\right) = -1 $.
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle \vec{x}_{i} = \vec{x}_{j} $ y $\displaystyle t $ es una forma multilineal alternada,
+\[t\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{j}, \ldots, \vec{x}_{r}\right) = 0, \; i \neq j .\]
+\end{fprop}
+\begin{proof}
+Tenemos que 
+\[t\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{j}, \ldots, \vec{x}_{r}\right) = -t\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{j}, \ldots, \vec{x}_{r}\right) .\]
+Esto implica que $\displaystyle t\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{j}, \ldots, \vec{x}_{r}\right) = 0 $.
+\end{proof}
+
+\begin{fprop}[]
+\normalfont 
+\[t\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, a\vec{x}_{i}, \ldots, \vec{x}_{r}\right) =0 .\]
+\end{fprop}
+\begin{proof}
+Por la proposición anterior,
+\[t\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, a\vec{x}_{i}, \ldots, \vec{x}_{r}\right) = at\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{r}\right) = a \cdot 0 = 0 .\]
+\end{proof}
+
+\begin{fprop}[]
+\normalfont 
+\[t\left(\vec{x}_{1}, \ldots, \sum^{r}_{j=1}a^{j}\vec{x}_{j}, \ldots, \vec{x}_{r}\right) = 0, \; j \neq i .\]
+\end{fprop}
+\begin{proof}
+Tenemos que
+\[\sum^{r}_{j=1}a^{j}t\left(\vec{x}_{1}, \ldots, \vec{x}_{j}, \ldots, \vec{x}_{j}, \ldots, \vec{x}_{r}\right) = 0 .\]
+\end{proof}
+
+\begin{fprop}[]
+\normalfont 
+\[t\left(\vec{x}_{1}, \ldots, \vec{x}_{i} + \sum^{r}_{j=1}a^{j}\vec{x}_{j}, \ldots, \vec{x}_{r}\right) = t\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{r}\right), \; j \neq i.\]
+\end{fprop}
+	Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $, $\displaystyle t $ multilineal alternada
+\[
+\begin{split}
+	\vec{x}_{1} = & a^{1}_{1}\vec{u}_{1} + \cdots + a^{n}_{1}\vec{u}_{n} = \sum^{n}_{j=1}a^{j}_{1}\vec{u}_{j} \\
+	\vdots & \\
+	\vec{x}_{i} = & a^{1}_{i}\vec{u}_{1} + \cdots + a^{n}_{i}\vec{u}_{n} = \sum^{n}_{j=1}a^{j}_{i}\vec{u}_{j} \\
+	\vdots & \\
+	\vec{x}_{r} = & a^{1}_{r}\vec{u}_{1} + \cdots + a^{n}_{r}\vec{u}_{n} = \sum^{n}_{j=1}a^{j}_{r}\vec{u}_{j}.
+\end{split}
+\]
+Así, 
+\[
+\begin{split}
+	t\left(\vec{x}_{1}, \ldots, \vec{x}_{r}\right) = & t\left(\sum^{n}_{j=1}a^{j}_{1}\vec{u}_{j}, \ldots, \sum^{n}_{j=1}a^{j}_{r}\vec{u}_{j}\right) \\
+	= & \sum_{\left(j_{1}, \ldots, j_{r}\right)}a^{j_{1}}_{1}\cdots a^{j_{r}}_{r}t\left(\vec{u}_{j_{1}}, \ldots, \vec{u}_{j_{r}}\right) .
+\end{split}
+\]
+Se trata de $\displaystyle r $-variaciones con repetición. Tenemos que si $\displaystyle j_{i} = j_{h} $, entonces el término $\displaystyle t\left(\vec{u}_{j_{1}}, \ldots, \vec{u}_{j_{r}}\right) $ se va a anular, por lo que realmente se trata de variaciones $\displaystyle n $-arias sin repetición.
+Sea $\displaystyle \dim\left(V\right) = n $ y sea $\displaystyle t $ una $\displaystyle n $-forma multilineal alternada. Si $\displaystyle \left\{ \vec{x}_{1}, \ldots, \vec{x}_{n}\right\} \subset V $, 
+\[\begin{pmatrix} \vec{u}_{1} & \cdots & \vec{u}_{n} \end{pmatrix} \begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n} \\
+\vdots & & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix} = \begin{pmatrix} \vec{x}_{1} & \cdots & \vec{x}_{n} \end{pmatrix}.\]
+
+Son variaciones $\displaystyle n $-arias sin repetición de $\displaystyle \left(1, 2, \ldots, n\right) $.
+\[
+\begin{split}
+	t\left(\vec{x}_{1}, \ldots, \vec{x}_{r}\right) = &\sum_{\sigma \in \mathcal{S}_{n}} a^{\sigma\left(1\right)}_{1} a^{\sigma\left(2\right)}_{2} \cdots a^{\sigma \left(n\right)}_{n}t\left(\vec{u}_{\sigma\left(1\right)}, \ldots, \vec{u}_{\sigma\left(n\right)}\right) \\
+	= & \sum_{\sigma \in \mathcal{S}_{n}}a^{\sigma\left(1\right)}_{1} \cdots a^{\sigma\left(n\right)}_{n}\sig\left(\sigma \right)t\left(\vec{u}_{1}, \ldots, \vec{u}_{n}\right).
+\end{split}
+\]
+\begin{fdefinition}[Determinante]
+\normalfont Si $\displaystyle A \in \mathcal{M}_{n \times n}\left(\K\right) $, el determinante de $\displaystyle A_{\sigma \in \mathcal{S}_{n}} $ es
+\[\det A = \sum_{\sigma \in \mathcal{S}_{n}}\sig\left(\sigma \right)a^{\sigma\left(1\right)}_{1} \cdots a^{\sigma\left(n\right)}_{n} .\]
+\end{fdefinition}
+
+\begin{fdefinition}[Traspuesta]
+\normalfont Si $\displaystyle A \in \mathcal{M}_{m \times n}\left(\K\right) $, llamaremos \textbf{traspuesta} de $\displaystyle A $ a la matriz $\displaystyle A^{t} \in \mathcal{M}_{n \times m}\left(\K\right) $ que tiene por filas las columnas de $\displaystyle A $.
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont 
+\[\det A^{t} = \det A .\]
+\end{ftheorem}
+
+\begin{proof}
+Si $\displaystyle A \in \mathcal{M}_{n \times n} $, entonces
+\[\det A^{t} = \sum_{\sigma \in \mathcal{S}_{n}}\sig\left(\sigma \right)a^{1}_{\sigma\left(1\right)} \cdots a^{n}_{\sigma\left(n\right)} = \sum_{\sigma \in \mathcal{S}_{n}}\sig\left(\sigma^{-1}\right)a^{\sigma^{-1}\left(1\right)}_{1} \cdots a^{\sigma^{-1}\left(n\right)}_{n}=\sum_{\Pi\in\mathcal{S}_{n}} \sig\left(\Pi\right)a^{\Pi\left(1\right)}_{1} \cdots a^{\Pi\left(n\right)}_{n} = \det A.\]
+\end{proof}
+
+Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $ tal que $\displaystyle t\left(\vec{u}_{1}, \ldots, \vec{u}_{n}\right) = 1 $. Entonces, $\displaystyle t\left(\vec{x}_{1}, \ldots, \vec{x}_{n}\right) = \det A $ y 
+\[\begin{pmatrix} \vec{x}_{1} & \cdots & \vec{x}_{n} \end{pmatrix} = \begin{pmatrix} \vec{u}_{1} & \cdots & \vec{u}_{n} \end{pmatrix} A .\]
+
+\begin{observation}
+\normalfont 
+\[ .\]
+\[
+\begin{split}
+ \det\begin{pmatrix} a^{1}_{1} & \cdots& a^{1}_{i} + b^{1}_{i} & \cdots & a^{1}_{n} \\
+	 \vdots & \vdots & \vdots & \vdots & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{i}+b^{n}_{i} & \cdots & a^{n}_{n}\end{pmatrix} = & t\left(\vec{x}_{1}, \ldots, \vec{x}_{i} + \vec{y}_{i} , \ldots \vec{x}_{n}\right) \\
+	 = & t\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{n}\right) + t\left(\vec{x}_{1}, \ldots, \vec{y}_{i}, \ldots, \vec{x}_{n}\right) \\
+	 = & \det \begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{i} & \cdots & a^{1}_{n}\\
+	 \vdots & \vdots & \vdots & \vdots & \vdots \\
+ a^{n}_{1} & \cdots & a^{n}_{i} & \cdots & a^{n}_{n}\end{pmatrix} + \det \begin{pmatrix} a^{1}_{1} & \cdots & b^{1}_{i} & \cdots & a^{1}_{n}\\
+	 \vdots & \vdots & \vdots & \vdots & \vdots \\
+ a^{n}_{1} & \cdots & b^{n}_{i} & \cdots & a^{n}_{n} \end{pmatrix}.
+\end{split}
+\]
+\end{observation}
+
+\begin{observation}
+\normalfont 
+\[
+\begin{split}
+	\det\begin{pmatrix} a^{1}_{1} & \cdots & a a^{1}_{i} & \cdots & a^{1}_{n} \\
+	\vdots & \vdots & \vdots & \vdots & \vdots\\
+a^{n}_{1} & \cdots & a a ^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix} = & t\left(\vec{x}_{1}, \ldots,a \vec{x}_{i}, \ldots, \vec{x}_{n}\right) \\
+= & at\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{n}\right) \\
+= & a \det\begin{pmatrix} a^{1}_{1} & \cdots &  a^{1}_{i} & \cdots & a^{1}_{n} \\
+	\vdots & \vdots & \vdots & \vdots & \vdots\\
+a^{n}_{1} & \cdots &  a ^{n}_{1} & \cdots & a^{n}_{n} \end{pmatrix}.
+\end{split}
+\]
+\end{observation}
+
+\begin{observation}
+\normalfont En el caso anteriro, si $\displaystyle a = 0 $, el determinante de la matriz es 0.
+\end{observation}
+
+\begin{observation}
+\normalfont 
+\[
+\begin{split}
+	\det\begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{j} & \cdots & a^{1}_{i} & \cdots & a^{1}_{n}\\
+	\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{j} & \cdots & a^{n}_{i} & \cdots & a^{n}_{n}\end{pmatrix} = t\left(\vec{x}_{1}, \ldots, \vec{x}_{j}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{n}\right) = - t\left(\vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{j}, \ldots, \vec{x}_{n}\right) .
+\end{split}
+\]
+\end{observation}
+
+Sea 
+\[A = \begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n}\\
+\vdots & & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix} \in \mathcal{M}_{n \times n}\left(\K\right) .\]
+Tenemos que 
+\[\det\left(A\right) = \sum_{\sigma \in \mathcal{S}_{n}} \sig\left(\sigma \right)a_{1}^{\sigma\left(1\right)}\cdots a^{\sigma\left(n\right)}_{n}.\]
+Vamos a ver como calcular el determinante de una matriz aislando una única fila o columna. Seleccionamos el elemento $\displaystyle a_{1}^{1} $ y calculamos la suma de todos los sumandos donde interviene $\displaystyle a^{1}_{1} $:
+\[ \sum_{\sigma \in \mathcal{S}_{n}, \; \sigma\left(1\right) = 1} \sig\left(\sigma \right)a^{1}_{1}a^{\sigma\left(2\right)}_{2} \cdots a^{\sigma\left(n\right)}_{n} = \left(\sum_{\sigma \in \mathcal{S}_{n-1}}\sig\left(\sigma \right)a^{\sigma\left(2\right)}_{2} \cdots a^{\sigma\left(n\right)}_{n}\right) \cdot a_{1}^{1} = a^{1}_{1} \det \begin{pmatrix} a^{2}_{2} & \cdots & a^{2}_{n}\\
+\vdots & & \vdots \\
+a^{n}_{2} & \cdots & a^{n}_{n}\end{pmatrix}.\]
+Este mismo procedimiento se puede hacer para un elemento cualquiera $\displaystyle a^{i}_{j} $.
+\begin{fdefinition}[Adjunto]
+\normalfont  El menor complementario $\displaystyle \alpha^{i}_{j} $ es el determinante de la matriz $\displaystyle \left(n - 1\right) \times \left(n - 1\right) $ que se obtiene $\displaystyle A $ suprimiendo la fila $\displaystyle i $ y la columna $\displaystyle j $, y llamaremos \textbf{adjunto} a $\displaystyle A^{i}_{j} = \left(-1\right)^{i+j}\alpha^{i}_{j} $. 
+\end{fdefinition}
+
+Si cogemos la fija $\displaystyle j $, vamos a tener que 
+\[\det\left(A\right) = a^{1}_{j}A^{1}_{j}+a^{2}_{j}A^{2}_{j}+\cdots+a^{n}_{j}A^{n}_{j} .\]
+Si $\displaystyle i\neq j $ tenemos que
+\[a^{1}_{j}A^{1}_{i} + a^{2}_{j}A^{2}_{i} + \cdots + a^{n}_{j}+A^{n}_{i} = 0 .\]
+
