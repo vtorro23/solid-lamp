@@ -102,7 +102,7 @@ Por la propiedad \textbf{(1)} tenemos que $\displaystyle a \cdot b = b \cdot a $
 \end{description}
 \end{proof}
 
-\section{Subgrupo. Grupos finitos. Orden}
+\subsection{Subgrupo. Grupos finitos. Orden}
 
 \begin{fdefinition}[]
 \normalfont Sea $\displaystyle \left(G, \cdot\right) $ un grupo y sea $\displaystyle H\subset G $. Se dice que $\displaystyle H $ es un subgrupo de $\displaystyle G $, y se escribe $\displaystyle H \leq G $, si $\displaystyle \left(H, \cdot\right) $ es un grupo.
@@ -174,7 +174,7 @@ Tenemos que ver que $\displaystyle \forall x, y \in H_{1} \cap H_{2} \Rightarrow
 	\]
 \end{eg}
 
-\section{Isomorfismos de grupos}
+\subsection{Isomorfismos de grupos}
 \begin{fdefinition}[Isomorfismo]
 \normalfont Sean $\displaystyle \left(G, \cdot \right), \left(G', *\right) $ grupos. Se dice que $\displaystyle f: G \to G' $ es un \textbf{isomorfismo} (de grupos) si es biyectiva y 
 \[\forall x, y \in G, \; f\left(x \cdot y\right) = f\left(x\right) * f\left(y\right) .\]
@@ -234,15 +234,276 @@ Por tanto,
 \]
 Si $\displaystyle A, B \in \GL\left(n\right) $, entonces $\displaystyle f\left(A \cdot B\right) = f\left(A\right) \cdot f\left(B\right) $, pues $\displaystyle \det\left(A \cdot B\right) = \det\left(A\right) \cdot \det \left(B\right) $. 
 \end{eg}
+\begin{observation}
+\normalfont En la proposición anterior, \textbf{(b)} y \textbf{(c)} también se cumplen para los homomorfismos.   
+\end{observation}
 
 \begin{fdefinition}[Núcleo e imagen]
 \normalfont Sea $\displaystyle e' $ el elemento neutro de $\displaystyle G' $. El \textbf{núcleo} de $\displaystyle f $ se define de la siguiente manera:
 \[\Ker\left(f\right) = \left\{ x \in G \; : \; f\left(x\right) = e'\right\}  .\]
 Se define \textbf{imagen} de $\displaystyle f $ al conjunto
-\[\Imagen\left(f\right) = \left(f\left(x\right) \in G'\; : \; x \in G\right) .\]
+\[\Imagen\left(f\right) = f\left(G\right) = \left\{f\left(x\right) \in G'\; : \; x \in G\right\} .\]
 \end{fdefinition}
 
 \begin{eg}
 	\normalfont En la aplicación del ejemplo anterior tenemos que $\displaystyle \Ker\left(f\right) = \SL\left(n\right) $ e $\displaystyle \Imagen\left(f\right)=\R/ \left\{ 0\right\}  $.
 \end{eg}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle f $ es homomorfismo, tenemos que $\displaystyle \Ker\left(f\right) \leq G $ y $\displaystyle \Imagen\left(f\right) \leq G' $.
+\end{fprop}
+
+\begin{proof}
+Para ver que $\displaystyle \Ker\left(f\right) \leq G $ basta ver que $\displaystyle \forall x,y \in \Ker\left(f\right) $ se verifica que 
+\[f\left(xy^{-1}\right)=f\left(x\right)\left(f\left(y\right)\right)^{-1}=e^{-1} .\]
+Es decir, $\displaystyle xy^{-1} \in \Ker\left(f\right) $. Por otra parte, como los homomorfismos llevan subgrupos en subgrupos, tenemos que $\displaystyle \Imagen\left(f\right) \leq G $.
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Sea $\displaystyle f $ es homomorfismo.
+\begin{description}
+	\item[(a)]  $\displaystyle f $ es inyectiva $\displaystyle \iff  $ $\displaystyle \Ker\left(f\right) = \left\{ e\right\}  $.
+	\item[(b)] $\displaystyle f $ es sobreyectiva $\displaystyle \iff  $ $\displaystyle \Imagen\left(f\right) = G' $.
+	\item[(c)] Si $\displaystyle f $ es inyectiva y sobreyectiva es biyectiva y, por tanto, isomorfismo.
+\end{description}
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+	\item[(a)] Sea $\displaystyle f $ inyectiva. Si $\displaystyle a \in \Ker\left(f\right) $ tenemos que $\displaystyle f\left(a\right) = f\left(e\right) = e' $, por lo que $\displaystyle a = e $. Recíprocamente, si $\displaystyle \Ker\left(f\right) = \left\{ e\right\}  $, tenemos que si $\displaystyle f\left(a\right) = f\left(b\right) $ entonces
+	\[ f\left(a\right) = f\left(b\right) \iff f\left(a\right)\left(f\left(b\right)\right)^{-1} = e' \iff f\left(ab^{-1}\right) = e' .\]
+Entonces, $\displaystyle ab^{-1} \in \Ker\left(f\right) $ por lo que $\displaystyle ab^{-1} = e $, es decir, $\displaystyle a = b $. Por lo que $\displaystyle f $ es inyectiva.
+\item[(b)] Sale directamente de la definición de sobreyectividad.
+\end{description}
+
+\end{proof}
+
+\subsection{Subgrupos normales. Grupo cociente.}
+
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle H \leq G $. Definimos la relación de equivalencia $\displaystyle x \mathcal{R}_{H} y \iff x \cdot y^{-1} \in H $. Entonces, las clases de equivalencia tendrán la forma
+\[Hx = \left[x\right] _{H} = \left\{ hx \; : \; h \in H\right\}  .\]
+Cada clase de equivalencia contiene exactamente $\displaystyle \left|H\right| $ elementos.
+\end{fdefinition}
+
+\begin{ftheorem}[Teorema de Lagrange]
+\normalfont Sea $\displaystyle G $ un grupo finito y $\displaystyle H \leq G $. Entonces $\displaystyle \left|H\right| $ divide a $\displaystyle \left|G\right| $.
+\end{ftheorem}
+
+\begin{proof}
+Sea $\displaystyle G/H $ el conjunto cociente de $\displaystyle G $ por la relación de equivalencia $\displaystyle \mathcal{R}_{H} $. 
+\[G/H = \left\{ Hx \: : \: x \in G\right\}  .\]
+Dado que los $\displaystyle Hx $ son una partición de $\displaystyle G $, cada $\displaystyle Hx $ tiene $\displaystyle \left|H\right| $ elementos y, al haber $\displaystyle \left|G/H\right| $ de ellas, tenemos que $\displaystyle \left|G\right| = \left|G/H\right| \left|H\right| $.
+\end{proof}
+
+\begin{fdefinition}[Conjunto cociente]
+\normalfont Denominamos conjunto cociente al conjunto
+\[G/H = \left\{ Hx \; : \; x \in G\right\}  .\]
+\end{fdefinition}
+
+\begin{fdefinition}[Subgrupo normal]
+\normalfont Sea $\displaystyle H \leq G $. Decimos que $\displaystyle H $ es \textbf{ subgrupo normal} $\displaystyle \left(H \triangle G\right) $ si se verifica que 
+\[g \cdot h \cdot g^{-1} \in H, \; \forall g \in G, \forall h \in H .\]
+\end{fdefinition}
+
+\begin{observation}
+\normalfont Si $\displaystyle G $ es abeliano, todos sus subgrupos son normales.
+\end{observation}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle H \triangle G $, entonces $\displaystyle \left(G/H, \cdot \right) $ es grupo.
+\end{fprop}
+
+\begin{proof}
+Podemos definir el producto de clases de la siguiente manera:
+\[\left(Hx\right)\left(Hy\right) = Hxy .\]
+La definición no depende del representante elegido pues
+\[\left(hxh'y\right)\left(xy\right)^{-1} = hxh'yy^{-1}x^{-1}=hxh'x^{-1}=h\left(xh'x^{-1}\right) \in H .\]
+Esto último se cumple porque $\displaystyle H $ es normal.
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Sea $\displaystyle f: G \to G' $ homomorfismo. Entonces $\displaystyle \Ker\left(f\right) \triangle G $.
+\end{fprop}
+\begin{proof}
+Tenemos que $\displaystyle \forall x \in \Ker\left(f\right), \; \forall z \in G $, $\displaystyle \Ker\left(f\right) \leq G $. Ahora tenemos que ver que $\displaystyle z \cdot x \cdot z^{-1} \in \Ker\left(f\right) $. Es decir, $\displaystyle f\left(z xz^{-1}\right) = e' $. Como $\displaystyle f $ es homomorfismo,
+\[f\left(zxz^{-1}\right) = f\left(z\right)f\left(x\right)f\left(z^{-1}\right) = f\left(z\right)f\left(z^{-1}\right) = f\left(z\right)\left(f\left(z\right)\right)^{-1} = e' .\]
+
+\end{proof}
+\section{Isometrías del plano}
+
+\begin{fdefinition}[Isometrías del plano]
+\normalfont Aplicación biyectiva $\displaystyle f: \R^{2} \to \R^{2} $ tal que $\displaystyle d\left(f\left(x\right),f\left(y\right)\right) = d\left(x,y\right) $. Es decir, $\displaystyle \left|f\left(x\right)-f\left(y\right)\right| = \left|x-y\right| $. Las isometrías preservan los ángulos.
+\end{fdefinition}
+
+\begin{fprop}[]
+\normalfont Tenemos que $\displaystyle E_{2} $ (isometrías del plano), con la composición forman un grupo $\displaystyle \left(E_{2}, \circ\right) $.
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(i)] Tenemos que la composición de isometrías es isometría:
+\[ \left|\left(g\circ f\right)\left(x\right)-\left(g\circ f\right)\left(y\right)\right| = \left|g\left(f\left(x\right)\right)-g\left(f\left(y\right)\right)\right|= \left|f\left(x\right)-f\left(y\right)\right| = \left|x-y\right| .\]
+A partir de esto la propiedad asociativa es trivial.
+\item[(ii)] La aplicación identidad es, trivialmente una isometría.
+\item[(iii)] Si $\displaystyle f $ es una isometría, tenemos que, como es biyectiva, existe $\displaystyle f^{-1} $ que cumple que
+	\[ \left|f^{-1}\left(x\right)-f^{-1}\left(y\right)\right| = \left|f\left(f^{-1}\left(x\right)\right)-f\left(f^{-1}\left(y\right)\right)\right| = \left|x-y\right| .\]
+\end{description}
+\end{proof}
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(1)] Traslación de un vector $\displaystyle \vec{v} $. Tenemos que $\displaystyle t_{\vec{v}} : \R^{2} \to \R^{2} $ tal que $\displaystyle t_{\vec{v}}\left(x\right) = x + \vec{v} $, donde $\displaystyle x $ es un punto en $\displaystyle \R^{2} $.
+\item[(2)] Las rotaciones alrededor de un punto.
+\item[(3)] Las reflexiones respecto a una recta.
+\end{description}
+\end{eg}
+
+\begin{fdefinition}[Aplicación lineal]
+\normalfont Tenemos que $\displaystyle f: \R^{2} \to \R^{2} $ es una \textbf{aplicación lineal} si se verifica que
+\begin{description}
+\item[(1)] $\displaystyle f\left(x + y\right) = f\left(x\right) + f\left(y\right), \; \forall x,y \in \R^{2} $.
+\item[(2)] $\displaystyle f\left(\lambda x\right) = \lambda f\left(x\right), \; \forall x\in \R^{2}, \forall\lambda \in\R $.
+\end{description}
+\end{fdefinition}
+
+\begin{observation}
+\normalfont De \textbf{(1)} y \textbf{(2)} podemos formular el resultado equivalente:
+\[f\left(\alpha x + \beta y\right) = \alpha f\left(x\right) + \beta f\left(y\right), \; \forall x,y \in \R^{2},\forall\alpha, \beta \in \R .\]
+\end{observation}
+
+\begin{observation}
+	\normalfont Toda aplicación lineal $\displaystyle f: \R^{2} \to \R^{2} $ viene determinada por las imágenes de una base. Sea $\displaystyle B = \left\{e_{1} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, e_{2} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}\right\}  $ una base de $\displaystyle \R^{2} $. Entonces, si $\displaystyle f\left(e_{1}\right) = \begin{pmatrix} a \\ c \end{pmatrix} $ y $\displaystyle f\left(e_{2}\right) = \begin{pmatrix} b \\ d \end{pmatrix} $. Entonces, la matriz asociada a la aplicación lineal será
+	\[M = \begin{pmatrix} a & b \\ c & d\end{pmatrix} .\]
+\end{observation}
+
+\begin{fprop}[]
+\normalfont Las isometrías del plano que dejan fijo el origen son aplicaciones lineales.
+\end{fprop}
+
+\begin{proof}
+Sea $\displaystyle f : \R^{2} \to \R^{2} $ una isometría que verifica que $\displaystyle f\left(0\right)=0 $. Entonces
+\[ \left|f\left(y\right)\right| = \left|f\left(y\right)-f\left(0\right)\right| = \left|y-0\right|= \left|y\right|, \; \forall y \in \R^{2} .\]
+\begin{description}
+\item[(i)] Si $\displaystyle \lambda = 0 $ o $\displaystyle x = 0 $ es trivial. Si $\displaystyle x \in \R^{2} $ y $\displaystyle \lambda \in \R $, tenemos que, como $\displaystyle f $ conserva la alineación de tres puntos, entonces $\displaystyle x $, $\displaystyle f\left(x\right) $ y $\displaystyle \lambda f\left(x\right) $ están alineados. Entonces, $\displaystyle f\left(\lambda x\right) = \mu f\left(x\right) $ para algún $\displaystyle \mu \in \R $. Así,
+	\[ \left|\mu \right| \left|x\right| = \left|\mu\right| \left|f\left(x\right)\right|= \left|\mu f\left(x\right)\right| = \left|f\left(\lambda x\right)\right| = \left|\lambda x\right| = \left|\lambda \right| \left|x\right| .\]
+	Por tanto, $\displaystyle \mu = \pm \lambda  $. Si $\displaystyle f\left(\lambda x \right) = -\lambda f\left(x\right) $ tendríamos que
+	\[ \left|\lambda + 1\right| \left|x\right| = \left|\left(-\lambda-1\right)f\left(x\right)\right|= \left|f\left(\lambda x \right)-f\left(x\right)\right| = \left|\lambda x -x\right| = \left|\lambda-1\right| \left|x\right| .\]
+	Como $\displaystyle x \neq 0 $, tenemos que $\displaystyle \left|\lambda+1\right| = \left|\lambda -1\right| $, que solo puede pasar si $\displaystyle \lambda = 0 $, que es una contradicción.
+\item[(ii)] Vamos a ver que $\displaystyle \forall x,y \in \R^{2} $, $\displaystyle f\left(x+y\right) = f\left(x\right)+f\left(y\right) $. Si $\displaystyle 0 $, $\displaystyle x $ e $\displaystyle y $ están alineados tenemos que $\displaystyle y = \mu x $ y podemos aplicar el apartado anterior. En otro caso, los puntos anteriores forman el triángulo $\displaystyle x0y $, que queda transformado en el triángulo $\displaystyle f\left(x\right)0f\left(y\right) $. Similarmente, el triángulo $\displaystyle x\left(x+y\right)y $ se transforma en $\displaystyle f\left(x\right)pf\left(y\right) $ donde $\displaystyle p = f\left(x+y\right) $. Como $\displaystyle f $ es isometría y ser $\displaystyle 0, \; x, \; x+y,\;  y $ un paralelogramo, tenemos que el cuadrilátero $\displaystyle 0, \; f\left(x\right), \; p, \; f\left(y\right) $ también es un paralelogramo. Entonces, tenemos que $\displaystyle p = f\left(x\right)+f\left(y\right) $.
+\end{description}
+\end{proof}
+
+\begin{fprop}[]
+\normalfont Las únicas isometrías del plano que dejan fijo el origen son las rotaciones en torno al origen y las reflexiones con eje por el origen.
+\end{fprop}
+
+\begin{proof}
+Por la proposición anterior, las isometrías que dejan fijo el origen son aplicaciones lineales, por lo que tienen asociadas a ellas una matriz $\displaystyle M $. Dado que tienen que preservar la norma, 
+\[M^{t}M=I_{2} .\]
+Esto se puede verificar usando la igualdad
+\[x^{t}x = \left|x\right|^{2} = \left|Mx\right|^{2} = \left(Mx\right)^{t}Mx, \; x \in \R^{2} .\]
+Por ser $\displaystyle \GL\left(2\right) $ un grupo, tenemos que 
+\[M^{t} = M^{-1} \Rightarrow M^{t}M=I_{2} .\]
+Consecuentemente, si 
+\[M = \begin{pmatrix} a & b \\ c & d \end{pmatrix} ,\]
+tenemos que 
+\[\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} a & b \\ c & d \end{pmatrix}\begin{pmatrix} a & c \\ b & d \end{pmatrix} = \begin{pmatrix} a^{2}+b^{2} & ac+bd \\ ac + bd & c^{2}+d^{2} \end{pmatrix} .\]
+Por un lado, tenemos que $\displaystyle a^{2}+b^{2} = c^{2}+d^{2} = 1 $, por lo que existen $\displaystyle \theta $ y $\displaystyle \varphi $ tales que 
+\[a = \cos\varphi, \; b=\sin\varphi, \; d=\cos\theta \; \text{y} \; c = \sin \theta .\]
+Por otro lado, tenemos que $\displaystyle ac+bd=0 $, por lo que
+\[0 = \cos\varphi\sin\theta + \sin\varphi \cos\theta = \sin\left(\theta+\varphi\right) .\]
+Entonces,
+\[\theta+\varphi = 0 \quad \text{o} \quad \theta+\varphi = \pi  .\]
+\begin{description}
+\item[(i)] Si $\displaystyle \theta + \varphi = 0 $, tenemos que $\displaystyle \cos\varphi = \cos\theta  $ y $\displaystyle \sin\varphi = -\sin\theta  $. Por tanto, 
+	\[M = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix} .\]
+Esta matriz coincide con la de uan rotación de ángulo $\displaystyle \theta $ alrededor del origen, por tanto esta transformación coincide con una rotación. Además, como $\displaystyle \det\left(M\right) = 1 $ tenemos que $\displaystyle M \in \SO\left(2\right) $.
+\item[(ii)] Si $\displaystyle \theta+\varphi = \pi  $ tenemos que $\displaystyle \cos\theta = -\cos\varphi $ y $\displaystyle \sin\theta = \sin\varphi $, por lo que 
+	\[M = \begin{pmatrix} \cos\varphi & \sin\varphi \\ \sin\varphi & -\cos\varphi \end{pmatrix} .\]
+Por tanto, como esta matriz coincide con la de una reflexión de ángulo $\displaystyle \frac{\varphi}{2} $ con respecto al origen, la isometría es dicha reflexión. En este caso, $\displaystyle \det\left(M\right) = -1 $.
+\end{description}
+\end{proof}
+
+\begin{observation}
+\normalfont Tenemos que la matriz asociada a una rotación con ángulo de rotación $\displaystyle \theta  $ será
+\[A_{\theta } = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}, \; \left|A_{\theta }\right| = 1 .\]
+\end{observation}
+
+\begin{observation}
+\normalfont Tenemos que la matriz asociada a una reflexión será
+\[B_{\varphi }=\begin{pmatrix} \cos\varphi & \sin\varphi \\ \sin\varphi & -\cos\varphi  \end{pmatrix}, \; \left|B_{\varphi}\right|=-1 .\]
+\end{observation}
+
+\begin{observation}
+\normalfont Tenemos que $\displaystyle A_{\theta} $ y $\displaystyle B_{\varphi} $ son matrices ortogonales. Es decir, $\displaystyle A^{-1}_{\theta} = A^{t}_{\theta} $ y $\displaystyle B^{-1}_{\varphi} = B^{t}_{\varphi} $. Una propiedad importante de las matrices ortogonales es que $\displaystyle MM^{t}=I_{2} $, es decir, $\displaystyle \det\left(M\right)= \pm 1 $. Si $\displaystyle \det\left(M\right)=-1 $, tenemos que $\displaystyle M^{2}=I_{2} $.
+\end{observation}
+
+\begin{fprop}[]
+\normalfont Las únicas isometrías del plano son las rotaciones en torno al origen compuestas con las traslaciones y las reflexiones con eje por el orgien compuestas con traslaciones.
+\end{fprop}
+
+\begin{proof}
+Sea $\displaystyle f $ una isometría y que $\displaystyle f\left(0\right) = v $. Sea $\displaystyle t_{v} $ la traslación de vector $\displaystyle v $, se tiene que la isometría
+\[t ^{-1}_{v}\circ f = g ,\]
+fija el origen. El resultado se sigue aplicando la proposición anterior.
+\end{proof}
+Entonces, tenemos que podemos expresar cualquier isometría del plano $\displaystyle f $ en términos de una traslación $\displaystyle t_{v} $ y una transformación ortogonal $\displaystyle f_{M} $.
+\begin{description}
+\item[(1)] Traslación de vector $\displaystyle v $: $\displaystyle t_{v}\left(x\right) = v + x $.
+\item[(2)] Transformación ortogonal (rotación o reflexión): $\displaystyle f_{M} $ tal que $\displaystyle f_{M}\left(x\right)= Mx $, donde $\displaystyle M = A_{\theta}, B_{\varphi} $.
+\end{description}
+\begin{notation}
+\normalfont $\displaystyle f\left(v,M\right) = t_{v} \circ t_{M} $ tal que $\displaystyle f\left(x\right) = v + Mx $. Si $\displaystyle \det\left(M\right) = 1 $, entonces se trata de rotaciones. Si $\displaystyle \det\left(M\right) = -1 $, entonces se trata de reflexiones. Además, si $\displaystyle \det\left(M\right) = 1 $ se habla de \textbf{isometrías directas} y, si no, de \textbf{isometrías inversas}.
+\end{notation}
+ Vamos a calcular la expresión de la composición de dos isometrías. Sean $\displaystyle f=\left(v,M\right) $ y $\displaystyle g=\left(u,N\right) $ isometrías. Tenemos que
+\[
+\begin{split}
+	f\circ g\left(x\right) = & \left(v, M\right)\circ\left(u,N\right) = \left(t_{v}\circ f_{M}\right)\circ\left(t_{n}\circ f_{N}\right)\left(x\right) = v + M\left(u + Nx\right)= \left(v + Mu\right) + MNx \\
+	= & t_{v+Mu} \circ f_{MN}\left(x\right)=\left(v + Mu, MN\right).
+\end{split}
+\]
+Así,
+\[
+\boxed{\left(v,M\right)\left(u,N\right) = \left(v + Mu, MN\right)}
+\]
+
+\begin{ftheorem}[]
+\normalfont Así, los casos posibles de isometría en el plano se reducen a 
+\begin{description}
+\item[(a)] Traslaciones de vector $\displaystyle v $. Son de la forma $\displaystyle \left(v, I_{2}\right) $.
+\item[(b)] Rotaciones de centro $\displaystyle c $ y ángulo $\displaystyle \theta $. Son de la forma $\displaystyle \left(v, A_{\theta}\right) $ donde
+	\[v = c - A_{\theta }c \quad \text{y} \quad A_{\theta} = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix} .\]
+\item[(c)] Reflexiones con eje una recta $\displaystyle l $ que forma un ángulo de $\displaystyle \frac{\varphi}{2} $ con la horizontal. Son de la forma $\displaystyle \left(v, B_{\varphi}\right) $ con 
+	\[v = 2a \quad \text{y} \quad B_{\varphi} =\begin{pmatrix} \cos\varphi & \sin\varphi \\ \sin\varphi & -\cos\varphi \end{pmatrix} ,\]
+donde $\displaystyle a $ es el punto de $\displaystyle l $ más cercano al origen.
+\item[(d)] Reflexiones con deslizamiento con eje una recta $\displaystyle l $ que forma un ángulo $\displaystyle \frac{\varphi}{2} $ con la horizontal y con vector de deslizamiento $\displaystyle b $, paralelo a $\displaystyle l $. Son de la forma $\displaystyle \left(v, B_{\varphi}\right) $ con 
+	\[v = 2a+b \quad \text{y} \quad B_{\varphi} = \begin{pmatrix} \cos\varphi & \sin\varphi \\ \sin\varphi & -\cos\varphi \end{pmatrix},\]
+siendo $\displaystyle a $ el punto de $\displaystyle l $ más cercano al origen.
+\end{description}
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(a)] Trivial.
+\item[(b)] Si $\displaystyle f $ es una rotación de centro $\displaystyle c $  y ángulo $\displaystyle \theta $, tenemos que $\displaystyle f $ se puede construir como una traslación de $\displaystyle c $ al origen, el giro de ángulo $\displaystyle \theta $ respecto a este y, finalmente, la traslación del origen a $\displaystyle c $. Es decir,
+	\[f\left(x\right) = c + A_{\theta}\left(x-c\right) .\]
+Recíprocamente, toda isometría $\displaystyle f = \left(v, A_{\theta}\right) $ se corresponde con una rotación. En efecto, si fuera una rotación tendría que verificar que $\displaystyle f\left(c\right) = c $, por lo que 
+\[v + A_{\theta}c = c \Rightarrow \left(I_{2}-A_{\theta}\right)c=v .\]
+Así, $\displaystyle c $ es solución del sistema lineal
+\[\begin{pmatrix} 1-\cos\theta & \sin\theta \\ -\sin\theta & 1 - \cos\theta \end{pmatrix}\begin{pmatrix} x_{1} \\ x_{2} \end{pmatrix} = \begin{pmatrix} v_{1} \\ v_{2} \end{pmatrix} .\]
+Como el determinante de la matriz del sistema es
+\[\left(1-\cos\theta\right)^{2}+ \sin ^{2}\theta = 1 - 2 \cos\theta + \cos^{2}\theta + \sin ^{2}\theta = 2 - 2\cos\theta = 2\left(1-\cos\theta\right) \neq 0,\]
+pues $\displaystyle \theta \neq 0 $, tenemos que
+\[c = \left(I_{2}-A_{\theta}\right)^{-1}v .\]
+Sea $\displaystyle g $ la rotación de centro este valor $\displaystyle c $ y ángulo $\displaystyle \theta $. Entonces $\displaystyle f \equiv g $, pues
+\[
+\begin{split}
+	g\left(p\right) = & \left(c-A_{\theta}c\right) + A_{\theta}p = \left(I_{2}-A_{\theta}\right)c + A_{\theta}p\\
+	= & \left(I_{2}-A_{\theta}\right)\left(I_{2}-A_{\theta}\right)^{-1}v + A_{\theta}p \\
+	= & v + A_{\theta}p = f\left(p\right), \; p \in \R^{2}.
+\end{split}
+\]
+\end{description}
+\end{proof}
 
