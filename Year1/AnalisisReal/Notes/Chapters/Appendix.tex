@@ -1,0 +1,207 @@
+\chapter{Productos infinitos}
+
+Sea $\displaystyle \left\{ b_{j}\right\} _{j\in\N}\subset\left(0, \infty\right) $ y sea $\displaystyle B_{n} = \prod^{n}_{j=1}b_{j} $. Se dice que el producto infinito converge si 
+\[\prod^{\infty}_{j=1}b_{j} = \lim_{n \to \infty}B_{n} = l > 0 .\]
+
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] Sea $\displaystyle b_{j} = \frac{1}{j} > 0 $. Entonces, 
+\[B_{n} = \prod^{n}_{j=1}\frac{1}{j} = \frac{1}{n!} \to 0 .\]
+No converge. 
+\item[(ii)] Sea $\displaystyle b_{j}= 1 - \frac{1}{j^{2}}, \; j \geq 2 $. Tenemos que 
+	\[b_{j} = 1 - \frac{1}{j^{2}} = \frac{j^{2}-1}{j^{2}} = \frac{\left(j+1\right)\left(j-1\right)}{j^{2}} .\]
+Tenemos que, 
+\[
+\begin{split}
+	B_{3} = & \frac{1 \cdot 3}{2 \cdot 2} \cdot \frac{2 \cdot 4}{3 \cdot 3} = \frac{4}{2 \cdot 3} \\
+	B_{4} = & \frac{4}{2 \cdot 3} \cdot \frac{3 \cdot 5}{4 \cdot 4} = \frac{5}{2 \cdot 4} \\
+	\vdots & \\
+	B_{n} = & \frac{n+1}{2n} \to \frac{1}{2}.
+\end{split}
+\]
+\item[(iii)] Calcular $\displaystyle \prod^{\infty}_{j=1}\left(1 +\frac{1}{j^{2}}\right) $.
+\end{description}
+\end{eg}
+
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle b_{j} = 1 + a_{j}, \; a_{j}>0 $. Entonces, $\displaystyle \prod^{\infty}_{j=1}b_{j} $ converge si y solo si $\displaystyle \sum^{\infty}_{j=1}a_{j} < \infty $. En particular, si $\displaystyle \prod^{\infty}_{j=1}b_{j} $ converge, entonces $\displaystyle b_{j} \to 1 $.
+\end{ftheorem}
+
+\begin{proof}
+Por continuidad del logaritmo, si $\displaystyle \log\left(\prod^{\infty}_{j=1}b_{j}\right) $, lo de dentro también debe converger. Así, tenemos que
+\[\log\left(\prod^{n}_{j=1}b_{j}\right) = \sum^{n}_{j=1}\log\left(1+a_{j}\right) .\]
+Sabemos que $\displaystyle \lim_{x \to 0^{+}}\frac{\log\left(1 + x\right)}{x} = 1 $. Así,
+\[\frac{\log\left(1 + a_{j}\right)}{a_{j}}\to 1 .\]
+Por comparación, $\displaystyle \sum^{\infty}_{j=1}\log\left(1+a_{j}\right) < \infty \iff \sum^{\infty}_{j=1}a_{j} < \infty $.
+\end{proof}
+
+\begin{eg}
+\normalfont Así, tenemos que $\displaystyle \prod^{\infty}_{j=1}\left(1 + \frac{1}{j^{2}}\right) $ converge pues $\displaystyle \sum^{\infty}_{j=1}\frac{1}{j^{2}}<\infty $.
+\end{eg}
+
+\chapter{Reordenamiento de series}
+
+Sea $\displaystyle f: \N \to \N $ biyectiva. Dada una serie $\displaystyle \sum^{\infty}_{n = 1}a_{n} $, qué pasa con la serie $\displaystyle \sum^{\infty}_{n = 1}a_{f\left(n\right)} $?
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle \sum^{\infty}_{n = 1} \left|a_{n}\right| < \infty $, entonces $\displaystyle \sum^{\infty}_{n = 1} a_{f\left(n\right)} = \sum^{\infty}_{n = 1}a_{n} $. Sin embargo, Riemann probó que si $\displaystyle \sum^{\infty}_{n = 1}a_{n} $ no converge absolutamente y tomamos $\displaystyle c \in \R $, entonces existe $\displaystyle f : \N \to \N $ biyectiva tal que $\displaystyle \sum^{\infty}_{n = 1}a_{f\left(n\right)} = c . $ 
+\end{ftheorem}
+
+\begin{eg}
+\normalfont Considera $\displaystyle a_{n} = \left(-1\right)^{n} $, sabemos que $\displaystyle \sum^{\infty}_{n = 1}a_{n} $ no converge. 
+\[\sum^{\infty}_{n=1}\left(-1\right)^{n} = \left(-1+1\right) + \left(-1+1\right) + \cdots = 0 + 0 + \cdots .\]
+Similarmente, 
+\[\sum^{\infty}_{n = 1}\left(-1\right)^{n} = -1 + \left(1 + -1\right) + \left(-1+1\right) + \cdots = -1 .\]
+\end{eg}
+
+\chapter{Series de potencias}
+
+Anteriormente, hemos visto series numéricas, es decir, $\displaystyle \sum^{\infty}_{n = 1}a_{n} $, con $\displaystyle a_{n} \in \R $. Ahora, queremos estudiar $\displaystyle f_{n} : I \subset \R \to \R $ tal que $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x\right), \; x \in I $. En particular, nos interesan funciones del tipo $\displaystyle f_{n}\left(x\right) = a_{n}\left(x-x_{0}\right)^{n}, \; x_{0} \in I $. Queremos ver si una $\displaystyle f $ cualquiera la puedo reescribir de la manera:
+\[f\left(x\right) = \sum^{\infty}_{ n = 0}a_{n}\left(x-x_{0}\right)^{n} .\]
+Esta es su serie de Taylor si $\displaystyle f \in \mathcal{C}^{\infty}\left(I\right) $ (se puede derivar infinitas veces) y decimos que $\displaystyle a_{n} = \frac{ f^{\left(n\right)}\left(x_{0}\right)}{n!}$.
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] $\displaystyle e^{x} = \sum^{\infty}_{n = 0}\frac{x^{n}}{n!} $.
+\item[(ii)] $\displaystyle \sin x = \sum^{\infty}_{n = 0}\left(-1\right)^{n}\frac{x^{2n+1}}{\left(2n+1\right)!} $.
+\item[(iii)] $\displaystyle \cos x = \sum^{\infty}_{ n = 0}\left(-1\right)^{n}\frac{x^{2n}}{\left(2n\right)!}$.
+\end{description}
+\end{eg}
+
+\chapter{Función logarítmica}
+
+Sea $\displaystyle f\left(x\right) = e^{x} $ con $\displaystyle x \in \R $. Como $\displaystyle e > 1 $, entonces $\displaystyle \lim_{x \to \infty}f\left(x\right)=\infty $. Similarmente, sabemos que $\displaystyle \lim_{x \to -\infty}f\left(x\right) = 0 $ y $\displaystyle f\left(0\right) = 1 $. Tenemos que $\displaystyle f $ es inyectiva, pues si $\displaystyle f\left(x\right) = f\left(y\right) $, entonces
+\[e^{x-y} = 1 \Rightarrow x - y = 0 \iff x = y .\]
+Además, si $\displaystyle x < y $, 
+\[e^{x} = e^{x-y+y} = e^{x-y}e^{y} < e^{y} .\]
+Así, $\displaystyle f $ es estrictamente creciente y $\displaystyle f: \R \to \left(0, \infty\right) $ es exhaustiva. Entonces, $\displaystyle \forall y \in \left(0, \infty\right), \; \exists!x \in \R $ tal que $\displaystyle e^{x} = y $. Entonces, podemos concluir que $\displaystyle f: \R \to \left(0, \infty\right) $ es biyectiva. Por lo tanto, podemos definir la función inversa de $\displaystyle e^{x} $, que denotaremos como $\displaystyle \log x = \ln x $  \footnote{Vamos a considerar que $\displaystyle \log  $ no está en base 10 sino en base $\displaystyle e $.}. Entonces
+\[\log:\left(0,\infty\right) \to \R, \; \log\left(e^{x}\right) = x \iff e^{\log x } = x .\]
+
+\begin{observation}
+\normalfont En general, si $\displaystyle a > 0 $ y $\displaystyle a\neq 1 $, se define 
+\[\log_{a}x = y \iff a^{y} = x  .\]
+\end{observation}
+
+\begin{eg}
+\normalfont Si $\displaystyle a = \frac{1}{2} $, tenemos que $\displaystyle \lim_{x \to \infty}\log_{\frac{1}{2}}x = -\infty $. Similarmente, $\displaystyle \lim_{x \to 0}\log_{\frac{1}{2}}x= \infty $.
+\end{eg}
+
+\begin{fprop}[]
+\normalfont 
+\begin{description}
+\item[(i)] $\displaystyle \log xy = \log x + \log y $, con $\displaystyle x,y > 0 $.
+\item[(ii)] $\displaystyle \log x^{a} = a \log x $ con $\displaystyle x > 0 $ y $\displaystyle a \in \R $.
+\item[(iii)] Cambio de base. Sean $\displaystyle a,b > 0 $ con $\displaystyle a,b \neq 1 $ y $\displaystyle x > 0 $. Tenemos que
+	\[\log_{b}x = \frac{\log_{a}x}{\log_{a}b} .\]
+\item[(iv)] Si $\displaystyle a > 0 $ con $\displaystyle a \neq 1 $, y $\displaystyle x, y > 0 $,
+	\[x^{\log_{a}y} = y^{\log_{a}x} .\]
+\end{description}
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Tenemos que si $\displaystyle \log xy = a $, $\displaystyle e^{a} = xy $. Sea $\displaystyle a_{1} = \log x  $ y $\displaystyle a_{2} = \log y $. Entonces, $\displaystyle x = e^{a_{1}} $ e $\displaystyle y = e^{a_{2}} $. Entonces, tenemos que
+	\[e^{a} = xy = e^{a_{1}}e^{a_{2}} = e^{a_{1}+a_{2}} \Rightarrow a = a_{1} + a_{2} .\]
+Entonces, $\displaystyle \log xy = \log x + \log y $.
+\item[(ii)] Sea $\displaystyle \log x^{a} = b $. Entonces, $\displaystyle x^{a} = e^{b} $. Si $\displaystyle a_{1} = \log x $, $\displaystyle e^{a_{1}} = x $. Así, 
+	\[\left(e^{a_{1}}\right)^{a} = e^{a a_{1}} = e^{b} .\]
+Por tanto, $\displaystyle b = a a_{1} $ y $\displaystyle \log x^{a} = a\log x $.
+\item[(iii)] Tenemos que 
+	\[\log_{a}b \cdot \log_{b}x = \log_{a}b^{\log_{b}x} = \log_{a}x .\]
+\item[(iv)] Sea $\displaystyle x \neq 1 $,
+	\[\log_{a}y = \log_{x}y^{\log_{a}x} = \log_{a}x\log_{x}y = \log_{a}x\frac{\log_{a}y}{\log_{a}x} .\] 
+\end{description}
+\end{proof}
+
+\begin{observation}
+\normalfont Queremos ver que $\displaystyle \lim_{x \to 0}\frac{\log\left(1+x\right)}{x} = 1 $. Tenemos que
+\[\frac{\log\left(1+x\right)}{x} = \frac{1}{x}\log\left(1+x\right) = \log\left(1+x\right)^{\frac{1}{x}} .\]
+Sea $\displaystyle y = \frac{1}{x} $, si $\displaystyle x \to 0 $, $\displaystyle y \to \infty $. Así, 
+\[\log\left(1+x\right)^{\frac{1}{x}} = \log\left(1 + \frac{1}{y}\right)^{y} .\]
+Así, 
+\[\lim_{x \to 0}\frac{\log\left(1+x\right)}{x} = \lim_{x \to 0}\log\left(1+x\right)^{\frac{1}{x}} = \lim_{y \to \infty}\log\left(1+\frac{1}{y}\right)^{y} = \log e = 1 .\]
+\end{observation}
+
+\begin{eg}
+	\normalfont Sean $\displaystyle a,b > 0 $ y sea $\displaystyle x_{n} = \left(\frac{\sqrt[n]{a} + \sqrt[n]{b}}{2}\right)^{n} $. Tenemos que
+	\[ \left(\frac{\sqrt[n]{a} + \sqrt[n]{b}}{2}\right)^{n} = \left(\frac{\sqrt[n]{a} + \sqrt[n]{a}\sqrt[n]{\frac{b}{a}}}{2}\right)^{n} = a \left(\frac{1 + \sqrt[n]{\frac{b}{a}}}{2}\right)^{n} .\]
+Sea $\displaystyle r = \frac{b}{a} $,
+\[
+\begin{split}
+	 \left(\frac{1 + \sqrt[n]{\frac{b}{a}}}{2}\right)^{n} = &  \left(\frac{1 + \sqrt[n]{r}}{2}\right)^{n} = \left(1-1+\frac{1+\sqrt[n]{r}}{2}\right)^{n}= \left(1 + \frac{\sqrt[n]{r}-1}{2}\right)^{n} = \left(1 + \frac{1}{\frac{2}{\sqrt[n]{r}-1}}\right)^{n} \\
+	= & \left(1+\frac{1}{\frac{2}{\sqrt[n]{r}-1}}\right)^{\frac{2}{\sqrt[n]{r}-1}\frac{\sqrt[n]{r}-1}{2}n}.
+\end{split}
+\]
+Entonces, tenemos que calcular $\displaystyle \lim_{n \to \infty}n\frac{\sqrt[n]{r}-1}{2} $. Tenemos que
+\[ n \frac{\sqrt[n]{r}-1}{2} = \frac{n}{2}\underbrace{\frac{\sqrt[n]{r}-1}{\log\sqrt[n]{r}}}_{1}\log\sqrt[n]{r} \to \frac{1}{2}\log r.\]
+Entonces, 
+\[\lim_{n \to \infty}\left(1+\frac{1}{\frac{2}{\sqrt[n]{r}-1}}\right)^{\frac{2}{\sqrt[n]{r}-1}\frac{\sqrt[n]{r}-1}{2}n}=e^{\frac{1}{2}\log r} = \sqrt{r} .\]
+Así, 
+\[\lim_{n \to \infty}\left(\frac{\sqrt[n]{a} + \sqrt[n]{b}}{2}\right)^{n} = a \sqrt{\frac{b}{a}} = \sqrt{ab} .\]
+\end{eg}
+
+\begin{observation}
+\normalfont Sabemos que $\displaystyle \lim_{x \to 0}\frac{x}{\log\left(x+1\right)} = 1 $. Por lo tanto, si $\displaystyle x_{n} > 0 $, con $\displaystyle x_{n} \to 0 $, 
+\[\lim_{n \to \infty}\frac{x_{n}}{\log\left(x_{n}+1\right)} = 1.\]
+Tomando, $\displaystyle x_{n} = \sqrt[n]{r} - 1 \to 0 $.
+\end{observation}
+
+\begin{eg}
+\normalfont Consideremos $\displaystyle \lim_{x \to 0} \frac{\log\left(1+x\right)}{\sin x} = 1 $, pues
+\[\lim_{x \to 0}\frac{\log\left(x+1\right)}{\sin x} = \frac{\log\left(1+x\right)}{x} \cdot \frac{x}{\sin x} = 1 \cdot 1 = 1 .\]
+\end{eg}
+
+\chapter{Construcción de $\displaystyle \R $}
+
+Sabemos qué son los números naturales, $\displaystyle \N $. Con ellos definimos los números enteros, $\displaystyle \Z $, y a partir de estos se introduce $\displaystyle \Q $, el cuerpo de los números racionales. A partir de aquí, existen diversas construcciones de los números reales $\displaystyle \R $. Veamos una que está basada en la siguiente idea: vamos a interpretar un número real como una sucesión de Cauchy. \\ \\
+Sea $\displaystyle \mathcal{C} = \left\{ \left\{ x_{n}\right\} _{n\in\N}\subset\Q\; : \; \left\{ x_{n}\right\} _{n\in\N} \; \text{es de Cauchy}\right\}  $. Es decir, $\displaystyle \forall \epsilon > 0 $  con $\displaystyle \epsilon \in \Q $, $\displaystyle \exists n_{0} \in \N $ tal que si $\displaystyle m, n \geq n_{0} $, $\displaystyle \left|x_{n}-x_{m}\right|<\epsilon  $. En $\displaystyle \mathcal{C} $ se define la siguiente relación de equivalencia $\displaystyle \mathcal{R} $:
+\[ \left\{ x_{n}\right\} _{n\in\N} \mathcal{R} \left\{ y_{n}\right\} _{n\in\N} \iff \lim_{n \to \infty}\left(x_{n}-y_{n}\right)= 0 .\]
+A partir de esto, definimos 
+\[\R:= \mathcal{C}/\mathcal{R} = \left\{ [ \left\{ x_{n}\right\} _{n\in\N}] \; : \; \left\{ x_{n}\right\} _{n\in\N}\in\mathcal{C}\right\}  .\]
+
+\section{Estructura de cuerpo}
+
+En $\displaystyle \R $ definimos la suma:
+\[[ \left\{ x_{n}\right\} _{n\in\N}] + [ \left\{ y_{n}\right\} _{n\in\N}] = [ \left\{ x_{n}+y_{n}\right\} _{n\in\N}].\]
+Esta definición es coherente con $\displaystyle \mathcal{R} $, pues si $\displaystyle \left\{ x'_{n}\right\} _{n\in\N} \in [ \left\{ x_{n}\right\} _{n\in\N}] $ y $\displaystyle \left\{ y'_{n}\right\} _{n\in\N}\in[ \left\{ y_{n}\right\} _{n\in\N}]  $. Entonces tenemos que
+\[\lim_{n \to \infty}\left(x'_{n}+y'_{n} - \left(x_{n}+y_{n}\right)\right) = 0  \iff [ \left\{ x'_{n}+y'_{n}\right\}] = [ \left\{ x_{n}+y_{n}\right\}]   .\]
+Análogamente, definimos el producto de la siguiente manera:
+\[[ \left\{ x_{n}\right\}] \cdot [ \left\{ y_{n}\right\}] = [ \left\{ x_{n} y_{n}\right\}]  .\]
+Primero vamos a ver que el producto de sucesiones de Cauchy también es sucesión de Cauchy, para poder hablar de su clase de equivalencia.
+\[x_{n}y_{n}-x_{m}y_{m} = x_{n}y_{n}-x_{m}y_{m} + x_{n}y_{m}-x_{n}y_{m} = x_{n}\left(y_{n}-y_{m}\right)+y_{m}\left(x_{n}-x_{m}\right) \to 0 .\]
+Si $\displaystyle \left\{ x'_{n}\right\} \in [ \left\{ x_{n}\right\}]  $ y $\displaystyle \left\{ y'_{n}\right\} \in [ \left\{ y_{n}\right\}]  $. Queremos ver que $\displaystyle [ \left\{ x'_{n}y'_{n}\right\}]= [ \left\{ x_{n}y_{n}\right\}]  $. 
+\[x'_{n}y'_{n}-x_{n}y_{n} = x'_{n}y'_{n} - x_{n}y'_{n} + x_{n}y'_{n} - x_{n}y_{n} = y'_{n}\left(x'_{n}-x_{n}\right)+x_{n}\left(y'_{n}-y_{n}\right) \to 0 .\]
+Por tanto, el producto está bien definido. 
+\begin{fdefinition}[]
+\normalfont Tenemos que $\displaystyle \Q\subset\R $ tal que si $\displaystyle x \in \Q $, entonces  $\displaystyle x \to [ \left\{ x\right\}]  $, donde 
+\[ \left\{ x\right\} _{n\in\N} = \left\{ x, x, \ldots, x, \ldots\right\}  .\]
+\end{fdefinition}
+Así, definimos $\displaystyle 0 = [ \left\{0\right\}]  $ y $\displaystyle 1 = [ \left\{1\right\}]  $. Si $\displaystyle x \in \R $, con $\displaystyle x = [ \left\{ x_{n}\right\}]  $, definimos 
+\[-x= [ \left\{- x_{n}\right\}]  .\]
+Así, hemos definido el elemento neutro de la suma y del producto, así como el inverso de la suma. Ahora tenemos que encontrar el inverso del producto. Veamos que existe $\displaystyle \left\{ x'_{n}\right\} _{n\in\N} \in [ \left\{ x_{n}\right\}] \in \R/ \left\{ 0\right\}  $ tal que para algún $\displaystyle \epsilon \in \Q $, $\displaystyle \epsilon > 0 $, o bien $\displaystyle x'_{n} > \epsilon, \; \forall n \in \N $ o $\displaystyle x'_{n} < - \epsilon  $, $\displaystyle \forall n \in \N $. En efecto, como $\displaystyle x_{n} $ no tiende a $\displaystyle 0 $, existe $\displaystyle \epsilon > 0 $ con $\displaystyle \epsilon \in \Q $ tal que $\displaystyle \forall n_{0} \in \N $, $\displaystyle \exists n\geq n_{0} $ tal que $\displaystyle \left|x_{n}\right|>2\epsilon  $.
+Tomando $\displaystyle k \in \N $, exiset $\displaystyle n_{k} \in \N $ tal que $\displaystyle \left|x_{n_{k}}\right| > 2\epsilon  $. Como la sucesión es de Cauchy, dado $\displaystyle \epsilon > 0 $, existe $\displaystyle j \in \N $ tal que $\displaystyle \forall m,n \geq j $, $\displaystyle \left|x_{n}-x_{m}\right| < \epsilon  $. Sea $\displaystyle k \in \N $ tal que $\displaystyle n_{k} \geq j $. Por tanto, $\displaystyle \forall m \geq j $, $\displaystyle \left|x_{n_{k}}-x_{m}\right| < \epsilon  $, por lo que $\displaystyle x_{m} > \epsilon  $. Definimos ahora
+\[x'_{n} = 
+\begin{cases}
+1, \; 1 \leq n \leq j \\
+x_{n}, \; n > j
+\end{cases}
+.\]
+Así, $\displaystyle [ \left\{ x'_{n}\right\}] = [ \left\{ x_{n}\right\}]  $ y ahora podemos definir
+\[[ \left\{ x_{n}\right\}] ^{-1} = \frac{1}{[ \left\{ x_{n}\right\}] } = \left[ \left\{ \frac{1}{x'_{n}}\right\}\right]  .\]
+Entonces, claramente se cumple que $\displaystyle [ \left\{ x_{n}\right\}] \cdot [ \left\{ x_{n}\right\}] ^{-1} = 1 $. Sólamente queda ver que $\displaystyle [ \left\{ x_{n}\right\}] ^{-1} $ es sucesión de Cauchy.
+Así, podemos probar que $\displaystyle \left(\R, + \cdot\right) $ es un cuerpo abeliano.
+
+\section{Cuerpo ordenado}
+
+\begin{fdefinition}[]
+\normalfont $\displaystyle [ \left\{ x_{n}\right\}] > 0 $ si y solo si existe $\displaystyle \epsilon > 0 $ con $\displaystyle \epsilon \in \Q $, para el que existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $, 
+\[
+\begin{cases}
+x_{n} > \epsilon, \; \forall n\geq n_{0} \\
+\text{o} \\
+x_{n} < -\epsilon, \; \forall n\geq n_{0}.
+\end{cases}
+\]
+\end{fdefinition}
+
+Así, tenemos que $\displaystyle \left(\R, + , \cdot, >\right) $ es un cuerpo abeliano totalmente ordenado y arquimediano. 

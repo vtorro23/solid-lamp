@@ -32,10 +32,10 @@ tales que
 	\[\exists e \in G, \forall a \in G, \; e \cdot a = a \cdot e = a .\]
 \item[(3)] Existe el inverso. 
 	\[\forall a \in G, \exists a^{-1} \in G\; a \cdot a^{-1} = a^{-1} \cdot a = e .\]
+\end{description}
 Si se cumple también la propiedad conmutativa:
 \[\forall a, b \in G, \; a \cdot b = b \cdot a ,\]
 se denomina grupo conmutativo o \textbf{abeliano}.
-\end{description}
 \end{fdefinition}
 
 \begin{eg}
@@ -302,7 +302,7 @@ Dado que los $\displaystyle Hx $ son una partición de $\displaystyle G $, cada 
 \end{fdefinition}
 
 \begin{fdefinition}[Subgrupo normal]
-\normalfont Sea $\displaystyle H \leq G $. Decimos que $\displaystyle H $ es \textbf{ subgrupo normal} $\displaystyle \left(H \triangle G\right) $ si se verifica que 
+\normalfont Sea $\displaystyle H \leq G $. Decimos que $\displaystyle H $ es \textbf{subgrupo normal} $\displaystyle \left(H \triangle G\right) $ si se verifica que 
 \[g \cdot h \cdot g^{-1} \in H, \; \forall g \in G, \forall h \in H .\]
 \end{fdefinition}
 
@@ -504,6 +504,86 @@ Sea $\displaystyle g $ la rotación de centro este valor $\displaystyle c $ y á
 	= & v + A_{\theta}p = f\left(p\right), \; p \in \R^{2}.
 \end{split}
 \]
+\item[(c) y (d)] Sea $\displaystyle m $ la recta paralela a $\displaystyle l $ por el origen y $\displaystyle f_{B_{\varphi}} $ la reflexión respecto a $\displaystyle m $. Para construir la reflexión sobre $\displaystyle l $ con deslizamiento $\displaystyle b $ basta trasladar $\displaystyle l $ hasta $\displaystyle m $, reflejar $\displaystyle m $ mediante $\displaystyle f_{B_{\varphi}} $, sumar el vector $\displaystyle b $ y, finalmente, volver a trasladar hasta $\displaystyle l $. Es decir
+	\[f\left(x\right) = a + B_{\varphi}\left(x-a\right)+b = a + B_{\varphi}x-B_{\varphi}a+b = 2a + b + B_{\varphi}x ,\]
+pues $\displaystyle B_{\varphi}a = - a $. Recíprocamente, si $\displaystyle f $ es una isometría del tipo $\displaystyle \left(v, B_{\varphi}\right) $, consideramos
+\[b = \frac{v+B_{\varphi}v}{2} \quad \text{y} \quad a = \frac{v-B_{\varphi}v}{4} .\]
+\begin{description}
+\item[(i)] Si $\displaystyle b \neq 0 $. Como $\displaystyle B_{\varphi}^{2} = I_{2} $,
+	\[B_{\varphi}b = \frac{B_{\varphi}v+B^{2}_{\varphi}v}{2} = \frac{B_{\varphi}v + v}{2} = b .\]
+	Es decir, el vector $\displaystyle b $ queda invariante por $\displaystyle B_{\varphi} $ y, por tanto, es un vector director del eje de la reflexión $\displaystyle B_{\varphi} $ (esto es, la recta que pasa por el origen y forma un ángulo de $\displaystyle \frac{\varphi}{2} $ con la horizontal). Por otra parte, como $\displaystyle B_{\varphi}a = - a $, se verifica que $\displaystyle a $ es perpendicular a dicho eje. En efecto,
+\[
+\begin{split}
+	a^{t}b = & \frac{1}{8}\left(v-B_{\varphi}v\right)^{t}\left(v+B_{\varphi}v\right) = \frac{1}{8}\left(v^{t}v - v^{t}B^{t}_{\varphi}v + v^{t}B_{\varphi}v-v^{t}B^{t}_{\varphi}B_{\varphi}v\right)\\ 
+	= & \frac{1}{8}\left(v^{t}v - v^{t}B_{\varphi}v + v^{t}B_{\varphi}v-v^{t}I_{2}v\right) = 0.
+\end{split}
+\]
+Así pues, la recta $\displaystyle l $ de dirección $\displaystyle b $  que pasa por el punto $\displaystyle a $ tiene la propiedad de que $\displaystyle a $ es el punto de $\displaystyle l $ más cerano al origen. Si llamamos $\displaystyle g $ a la reflexión sobre $\displaystyle l $ con deslizamiento $\displaystyle b $, por lo visto anteriormente tenemos que
+\[g\left(p\right) = 2a + b + B_{\varphi}p = \frac{v-B_{\varphi}v}{2}+\frac{v+B_{\varphi}v}{2}+B_{\varphi}p = v + B_{\varphi}p = f\left(p\right), \; \forall p \in \R^{2},\]
+por lo que $\displaystyle f \equiv g $, es decir, $\displaystyle f $ es una reflexión con deslizamiento.
+\item[(ii)] Si $\displaystyle b = 0 $, entonces $\displaystyle B_{\varphi}v = - v $ y $\displaystyle a = \frac{v}{2} $. Así pues, el vector $\displaystyle v $ (y, por tanto, $\displaystyle a $) es perpendicular al eje de reflexión de $\displaystyle B_{\varphi} $. Razonando como antes, la recta $\displaystyle l $ paralela al eje de $\displaystyle B_{\varphi} $ que pasa por el punto $\displaystyle a $ tiene la propiedad de que $\displaystyle a $ es el punto de $\displaystyle l $ más cercano al origen. Ahora, si llamamos $\displaystyle g $ a la reflexión respecto a $\displaystyle l $ tenemos que
+	\[g\left(p\right) = 2a + B_{\varphi}p = v + B_{\varphi}p = f\left(p\right), \; \forall p \in \R^{2} .\]
+	Entonces, $\displaystyle g \equiv f $, es decir, $\displaystyle f $ es una reflexión.
+\end{description}
+
 \end{description}
 \end{proof}
+
+\begin{observation}
+\normalfont Dada una isometría $\displaystyle \left(v,M\right) $, el prodecimiento a seguir para clasificarla es:
+\begin{enumerate}
+\item Si $\displaystyle M = I_{2} $ entonces es traslación.
+\item Si $\displaystyle M \neq I_{2} $ y $\displaystyle \left|M\right| = 1 $ se trata de una rotación.
+\item Si $\displaystyle M \neq I_{2} $ y $\displaystyle \left|M\right|=-1 $ se trata de una reflexión. Para distinguir si es reflexión o reflexión con deslizamiento:
+\begin{enumerate}
+\item Si $\displaystyle Mv = - v $ es una reflexión.
+\item Si $\displaystyle Mv \neq - v $ es una reflexión con deslizamiento.
+\end{enumerate}
+\end{enumerate}
+\end{observation}
+
+\section{Grupo diédrico}
+
+$\displaystyle G = \langle x,y \rangle = \left\{ e, x, y, x^{2}, x^{3}, x^{-1}, xy, y^{2} \ldots\right\}  $ grupo generado por $\displaystyle x $ e $\displaystyle y $.
+\begin{fdefinition}[Grupo diédrico]
+\normalfont El \textbf{grupo diédrico}, $\displaystyle D_{n} $, es el grupo de las simetrías de un polígono regular de $\displaystyle n $ lados (esto es, las isometrías que lo dejan fijo). Tenemos que $\displaystyle \ord\left(D_{n}\right) = 2n $.
+\end{fdefinition}
+
+\begin{eg}
+\normalfont Rotaciones con respecto a su centro $\displaystyle \left(\sigma \right) $. Tenemos que 
+\[
+\begin{split}
+i \\
+\sigma \to \frac{2\pi }{n} \\
+\sigma^{2} \to \frac{4\pi }{n} \\
+\vdots \\
+\sigma^{n-1} \to \left(n-1\right)\frac{2\pi }{n}
+\end{split}
+\]
+Tenemos que $\displaystyle \sigma^{n} = i $.
+\end{eg}
+
+\begin{eg}
+\normalfont Simetría con respecto a una recta que pasa por el centro del polígono y uno de sus vértices $\displaystyle \left(\tau\right) $.
+\end{eg}
+
+El resto de movimientos se pueden obtener de la siguiente manera. Si $\displaystyle \sigma  $ es una rotación de $\displaystyle \frac{2\pi }{3} $ radianes con respecto al centro de un polígono regular de $\displaystyle n $  lados y $\displaystyle \tau $ simetría con respecto a una recta que pasa por este centro y cualquiera de los vértices del polígono, entonces las composiciones 
+\[\sigma \circ \tau, \; \sigma ^{2} \circ \tau , \; \ldots, \; \sigma^{n-1}\circ \tau ,\]
+son las simetrías que faltan.
+Entonces tenemos que 
+\[D_{n} = \left\{ i, \sigma, \sigma^{2}, \ldots, \sigma^{n-1}, \tau, \sigma\circ\tau, \sigma^{2}\circ \tau , \ldots, \sigma ^{n-1}\tau\right\}  .\]
+Por lo que $\displaystyle D_{n} = \langle \sigma, \tau \rangle  $ y $\displaystyle \sigma^{n} = i $ y $\displaystyle \tau^{2} = i $.
+\begin{eg}
+	\normalfont Tenemos que $\displaystyle D_{3} = \left\{ i, \sigma, \sigma^{2},\tau, \sigma\circ\tau, \sigma^{2}\circ\tau\right\}  $. Tenemos que $\displaystyle \sigma  $ es la rotación de ángulo $\displaystyle \frac{2\pi }{3} $ y así para el resto de rotaciones.
+\end{eg}
+
+\begin{fprop}[]
+\normalfont 
+\[\tau \circ \sigma = \sigma ^{-1}\circ \tau .\]
+\end{fprop}
+
+\begin{fprop}[]
+\normalfont 
+\[ \sigma^{n} = I_{2}, \quad \tau^{2} = I_{2}, \quad \sigma^{k}\tau=\tau\sigma^{n-k}, \; k = 1, 2, \ldots, n-1 .\]
+\end{fprop}
 

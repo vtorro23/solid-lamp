@@ -1,9 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1733070963.83948 "main.tex" "main.pdf" "main" 1733070966.46814 2
-  "/Users/victoriatorroja/University/Year1/AnalisisReal/Notes/Chapters/Chap1.tex" 1732263054.48517 56399 bc467f51799e5a6cc181fb0286e8747c ""
-  "/Users/victoriatorroja/University/Year1/AnalisisReal/Notes/Chapters/Chap2.tex" 1733070962.6518 88966 b789a9491edfaf2b94afe9bcf595d228 ""
-  "/Users/victoriatorroja/University/Year1/AnalisisReal/Notes/Chapters/Chap3.tex" 1733068225.8208 27618 e68c7f56556faed04f3ab3756972da85 ""
-  "/Users/victoriatorroja/University/notespreamble.tex" 1732731964.23864 2328 1b81da658db824edc2988e770f4b834b ""
+["pdflatex"] 1733910017.41499 "main.tex" "main.pdf" "main" 1733910019.79638 0
+  "/Users/victoriatorroja/University/Year1/AnalisisReal/Notes/Chapters/Appendix.tex" 1733907976.71541 16027 eb442165fef0abd5ca2b8d8540b20aae ""
+  "/Users/victoriatorroja/University/Year1/AnalisisReal/Notes/Chapters/Chap1.tex" 1733674116.72218 56739 74096daa1416ccca64588693b9ce31c9 ""
+  "/Users/victoriatorroja/University/Year1/AnalisisReal/Notes/Chapters/Chap2.tex" 1733673937.27484 84497 471b2997db4205e4b8ebd03eb4a56912 ""
+  "/Users/victoriatorroja/University/Year1/AnalisisReal/Notes/Chapters/Chap3.tex" 1733910016.78599 45376 5ad5d978778162062701a697fb41195f ""
+  "/Users/victoriatorroja/University/notespreamble.tex" 1733692556.63524 2377 c8d42cb1b4f49399ac9fbd838f038fe1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -164,6 +165,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgffor.sty" 1601326656 348 ee405e64380c11319f0e249fed57e6c5 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty" 1601326656 274 5ae372b7df79135d240456a1c6f2cf9a ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty" 1601326656 325 f9f16d12354225b7dd52a3321f085955 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty" 1700082560 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/zref/zref-abspage.sty" 1694723124 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/zref/zref-base.sty" 1694723124 20785 f7d1133a287929598a897c93f8f4c44b ""
@@ -171,9 +173,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724666679.39075 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "main.aux" 1733070966.12971 2460 2992e33f588f73594aec7a97ae92a95b "pdflatex"
-  "main.tex" 1732281694.09953 1097 c3d2403ed3a04028170dbe1e8b32500f ""
-  "main.toc" 1733070966.13203 1334 a51bb21569dfdcda43c6d317cfb82039 "pdflatex"
+  "main.aux" 1733910019.56086 3266 04b509fb7de3ffbabfd950843c522cc6 "pdflatex"
+  "main.tex" 1733673757.109 1175 d07c056b8dfffa12f6d9c53b121a0a29 ""
+  "main.toc" 1733910019.5629 1595 e2891efdb407f4fe5d6663d59969bee6 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

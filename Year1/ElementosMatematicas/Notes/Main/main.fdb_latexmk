@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1733569108.86327 "main.tex" "main.pdf" "main" 1733569111.00535 2
+["pdflatex"] 1734180954.69252 "main.tex" "main.pdf" "main" 1734180957.02386 2
   "/Users/victoriatorroja/University/Year1/ElementosMatematicas/Notes/Chapters/Chap1.tex" 1732470019.41528 56282 da4bf0cbc368f3157b1e3109db3156f7 ""
-  "/Users/victoriatorroja/University/Year1/ElementosMatematicas/Notes/Chapters/Chap2.tex" 1733569107.37848 35510 7dab3616049047779eb65e85b0e36a43 ""
-  "/Users/victoriatorroja/University/notespreamble.tex" 1733218724.14764 2360 5bb7866988e3dafebab43ac59813a319 ""
+  "/Users/victoriatorroja/University/Year1/ElementosMatematicas/Notes/Chapters/Chap2.tex" 1734178635.88342 41818 61beab1a4f518aa2d6246bee68ef265c ""
+  "/Users/victoriatorroja/University/notespreamble.tex" 1733692556.63524 2377 c8d42cb1b4f49399ac9fbd838f038fe1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -160,6 +160,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgffor.sty" 1601326656 348 ee405e64380c11319f0e249fed57e6c5 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty" 1601326656 274 5ae372b7df79135d240456a1c6f2cf9a ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty" 1601326656 325 f9f16d12354225b7dd52a3321f085955 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty" 1700082560 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/zref/zref-abspage.sty" 1694723124 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/zref/zref-base.sty" 1694723124 20785 f7d1133a287929598a897c93f8f4c44b ""
@@ -167,9 +168,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724666679.39075 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "main.aux" 1733569110.75363 1990 1b1d26b739eb3f98b131486a8a3bf2ea "pdflatex"
+  "main.aux" 1734180956.77343 2096 8acd026f8c29dd23d22600440098e82a "pdflatex"
   "main.tex" 1733256048.53223 421 9fcb8207d2231fab055d71d7f3b81550 ""
-  "main.toc" 1733569110.75588 1064 07ff1152678d4e6dfd455435b2a02894 "pdflatex"
+  "main.toc" 1734180956.7763 1129 384ef2d595c0274fc17f180025835bd1 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

@@ -628,7 +628,7 @@ Por tanto, no puede ser que $\displaystyle u^{2}>2 $ ni $\displaystyle u^{2} <2 
 \end{fprop}
 
 \begin{fdefinition}[]
-\normalfont Un conjunto $\displaystyle A $ con un orden $\displaystyle \leg $ se dice que está \textbf{bien ordenado} si contiene un primer elemento:
+\normalfont Un conjunto $\displaystyle A $ con un orden $\displaystyle \leq $ se dice que está \textbf{bien ordenado} si contiene un primer elemento:
 \[\exists x \in A, \forall y < x \Rightarrow y \not\in A .\]
 
 \end{fdefinition}
@@ -748,7 +748,7 @@ Como esto se cumple para todo $\displaystyle \epsilon > 0 $, tenemos que $\displ
 	\[I \subset I_{1} \subset \cdots \subset I_{n} .\]
 Por el teorema de los intervalos encajados, podemos asegurar que 
 \[\emptyset\neq\bigcap_{n\in \N} I_{n} \subset I = \left[0,1\right]  .\]
-Sea $\displaystyle x \in \bigcap_{n\in \N}I_{n} $. Entonces, $\displaystyle x \neq x_{1}$, pues $x \in I_{1} $. Por la misma razón, $\displaystyle x \neq 2 $, y $\displaystyle x \neq x_{n} $. Por tanto, $\displaystyle \forall n \in \N, x \neq x_{n} $, por lo que $\displaystyle x \not\in I $, lo que es una contradicción. Por tanto, $\displaystyle I $ no es numerable y, consecuentemente, $\displaystyle \R $ tampoco lo es.
+Sea $\displaystyle x \in \bigcap_{n\in \N}I_{n} $. Entonces, $\displaystyle x \neq x_{1}$, pues $x \in I_{1} $. Por la misma razón, $\displaystyle x \neq x_{2} $, y $\displaystyle x \neq x_{n} $. Por tanto, $\displaystyle \forall n \in \N, x \neq x_{n} $, por lo que $\displaystyle x \not\in I $, lo que es una contradicción. Por tanto, $\displaystyle I $ no es numerable y, consecuentemente, $\displaystyle \R $ tampoco lo es.
 \end{proof}
 
 \begin{fcolorary}[]
@@ -802,7 +802,7 @@ Tenemos que $\displaystyle a = \pi - 3 $. $\displaystyle a $ tendrá una expresi
 \end{eg}
 
 \begin{observation}
-\normalfont Tenemos que $\displaystyle x \in \Q $ si y solo si la parte decimal es periódica. La primera implicación se puede demostrar utilizando una sucesión geométrica. Recíprocamente, si $\displaystyle x = \frac{p}{q} $, tenemos que los restos están entre 0 y $\displaystyle q -1 $.
+\normalfont Tenemos que $\displaystyle x \in \Q $ si y solo si la parte decimal es periódica. La segunda implicación se puede demostrar utilizando una sucesión geométrica. Recíprocamente, tomamos el caso $\displaystyle p < q $. Si $\displaystyle x = \frac{p}{q} $, tenemos que los restos de dividir $\displaystyle p $ entre $\displaystyle q $ están entre 0 y $\displaystyle q -1 $ y, por tanto, después de como mucho $\displaystyle q $ pasos, algún resto se va a volver a repetir. En este punto, los dígitos del cociente empezarán a repetirse en ciclos y, consecuentemente, la representación decimal será periódica.
 \end{observation}
 
 Expresión decimal en base $\displaystyle m \geq 2 $. 

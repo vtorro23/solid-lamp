@@ -194,7 +194,7 @@ Similarmente,
 \end{proof}
 
 Podemos ver que
-\[f\left(\vec{u}_{i}\right) = f\left(0 \cdot \vec{u}_{1} + \cdots + 0 \cdot \vec{u}_{i-1}+ + 1 \cdot \vec{u}_{i} + 0 \cdot \vec{u}_{i+1} + \cdots + 0 \cdot \vec{u}_{n}\right) = 0 \cdot \vec{v}_{1} + \cdots + 1 \cdot \vec{v}_{i} + \cdots + 0 \cdot \vec{v}_{n} = \vec{v}_{i} .\]
+\[f\left(\vec{u}_{i}\right) = f\left(0 \cdot \vec{u}_{1} + \cdots + 0 \cdot \vec{u}_{i-1} + 1 \cdot \vec{u}_{i} + 0 \cdot \vec{u}_{i+1} + \cdots + 0 \cdot \vec{u}_{n}\right) = 0 \cdot \vec{v}_{1} + \cdots + 1 \cdot \vec{v}_{i} + \cdots + 0 \cdot \vec{v}_{n} = \vec{v}_{i} .\]
 
 \begin{fcolorary}[]
 	\normalfont Sea $\displaystyle f: V \to V' $ lineal y $\displaystyle f\left(\vec{u}_{i}\right) = g\left(\vec{u_{i}}\right), \forall i = 1, \ldots, n $ donde $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es base, entonces $\displaystyle f = g $.
@@ -247,7 +247,7 @@ Entonces tenemos que
 \[\vec{x'} = f\left(\vec{x}\right) = f\left(a^{1}\vec{u}_{1} + \cdots + a^{n}\vec{u}_{n}\right) = fa^{1}\left(\vec{u}_{1}\right) + \cdots + a^{r}f\left(\vec{u}_{r}\right) + a^{r+1}f(\vec{u}_{r+1}) + \cdots + a^{n} f\left(\vec{u}_{n}\right) .\]
 Tenemos que como $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r}\right\}  $ es una base de $\displaystyle \Ker\left(f\right) $, $\displaystyle f\left(\vec{u}_{i}\right) = \vec{0}, \forall i = 1, \ldots, r $:
 \[\vec{x'} = a^{r+1}f\left(\vec{u}_{r+1}\right) + \cdots + a^{n}f\left(\vec{u}_{n}\right) .\]
-Entonces, $\displaystyle \left\{ \vec{u}_{r+1}, \ldots, \vec{u}_{n}\right\}  $ es sistema de generadores. Ahora vamos a ver que son linealmente independientes. Sean $\displaystyle b^{i} \in \K $ tal es que 
+Entonces, $\displaystyle \left\{ f(\vec{u}_{r+1}), \ldots, f(\vec{u}_{n})\right\}  $ es sistema de generadores. Ahora vamos a ver que son linealmente independientes. Sean $\displaystyle b^{i} \in \K $ tal es que 
 \[
 \begin{split}
   & b^{r+1}f\left(\vec{u}_{r+1}\right) + \cdots + b^{n}f\left(\vec{u}_{n}\right) = \vec{0} \\
@@ -993,7 +993,7 @@ En la otra dirección,
 Por tanto, $\displaystyle f^{*}\left(\lambda'\right) = 0 $ y $\displaystyle \lambda' \in \Ker\left(f^{*}\right) $.
 \item[(b)] Si $\displaystyle \lambda \in \Imagen\left(f^{*}\right) $. Entonces, existe $\displaystyle \lambda'\in V'^{*} $ tal que $\displaystyle \lambda = f^{*}\left(\lambda'\right) = \lambda' \circ f $. Así, $\displaystyle \forall \vec{x} \in \Ker\left(f\right) $, $\displaystyle \lambda\left(\vec{x}\right) = \lambda'\circ f\left(\vec{x}\right) = \lambda'\left(\vec{0}\right) = 0 $. \\ 
 En la otra dirección, si $\displaystyle \lambda \in \Ker\left(f\right)^{\perp } $, buscamos $\displaystyle \lambda'\in V'^{*} $ tal que $\displaystyle f^{*}\left(\lambda'\right) = \lambda' \circ f=\lambda $. Sea $\displaystyle L' \in \mathcal{L}\left(V'\right) $ tal que $\displaystyle \Imagen\left(f\right) \oplus L' = V' $ y buscamos $\displaystyle \lambda'|_{L'} = 0 $. Si $\displaystyle \vec{x'} \in \Imagen\left(f\right) $, existe un $\displaystyle \vec{x}\in V $ tal que $\displaystyle f\left(\vec{x}\right) = \vec{x'} $. Defino $\displaystyle \lambda'\left(\vec{x'}\right) = f\left(\vec{x}\right) $. Como $\displaystyle \lambda \in \Ker\left(f\right)^{\perp } $ \footnote{Ortogonal del núcleo, que no el núcleo del ortogonal.}, tenemos que si $\displaystyle f\left(\vec{x}\right) = f\left(\vec{y}\right) $, 
-\[f\left(\vec{x}\right)-f\left(\vec{y}\right) = f\left(\vec{x}-f\left(\vec{y}\right)\right) = \vec{0} \Rightarrow \vec{x}-\vec{y} \in \Ker\left(f\right) \subset \Ker\left(\lambda\right) .\]
+\[f\left(\vec{x}\right)-f\left(\vec{y}\right) = f\left(\vec{x}-\vec{y}\right) = \vec{0} \Rightarrow \vec{x}-\vec{y} \in \Ker\left(f\right) \subset \Ker\left(\lambda\right) .\]
 Asi, definimos que $\displaystyle \lambda'\left(\vec{x'}\right) = \vec{x} $ con $\displaystyle \vec{x} \in V $ tal que $\displaystyle f\left(\vec{x}\right) = \vec{x'} $.
 \item[(c)] Tenemos que $\displaystyle f $ es inyectiva si y solo si $\displaystyle \Ker\left(f\right) = \left\{ \vec{0}\right\}  $. Esto es equivalente a que $\displaystyle \Ker\left(f\right)^{\perp } = \Imagen\left(f^{*}\right) = V^{*} $, que es equivalente a que $\displaystyle f^{*} $ es sobreyectiva. 
 \item[(d)] Tenemos que $\displaystyle f $ es sobreyectiva si y solo si $\displaystyle \Imagen\left(f\right) = V' $. Esto es equivalente a decir que $\displaystyle \Imagen\left(f\right)^{\perp } = \Ker\left(f^{*}\right)= \left\{ \vec{0}\right\}  $, que es equivalente a decir que $\displaystyle f^{*} $ sea inyectiva.

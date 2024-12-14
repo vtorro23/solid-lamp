@@ -497,7 +497,7 @@ Para estudiar este conjunto, introduciremos la noción de determinante.
 \end{fdefinition}
 
 \begin{fdefinition}[]
-\normalfont Una $\displaystyle r $-forma multilineal es alternada si $\displaystyle \forall \sigma \in \mathcal{S}_{r} $, 
+\normalfont Una $\displaystyle r $-forma multilineal es \textbf{alternada} si $\displaystyle \forall \sigma \in \mathcal{S}_{r} $, 
 \[t\left(\vec{x}_{\sigma\left(1\right)}, \ldots, \vec{x}_{\sigma\left(r\right)}\right) = \sig\left(\sigma \right)t\left(\vec{x}_{1}, \ldots, \vec{x}_{r}\right), \; \forall \vec{x}_{1}, \ldots, \vec{x}_{r} \in V .\]
 \end{fdefinition}
 
@@ -666,7 +666,441 @@ Este mismo procedimiento se puede hacer para un elemento cualquiera $\displaysty
 \end{fdefinition}
 
 Si cogemos la fija $\displaystyle j $, vamos a tener que 
-\[\det\left(A\right) = a^{1}_{j}A^{1}_{j}+a^{2}_{j}A^{2}_{j}+\cdots+a^{n}_{j}A^{n}_{j} .\]
-Si $\displaystyle i\neq j $ tenemos que
-\[a^{1}_{j}A^{1}_{i} + a^{2}_{j}A^{2}_{i} + \cdots + a^{n}_{j}+A^{n}_{i} = 0 .\]
+\[\det\left(A\right) = a^{1}_{j}A^{1}_{j}+a^{2}_{j}A^{2}_{j}+\cdots+a^{n}_{j}A^{n}_{j} = a^{i}_{1}A^{i}_{1} + a^{i}_{2}A^{i}_{2} + \cdots + a^{i}_{n}A^{i}_{n} .\]
+Si $\displaystyle i\neq k $ tenemos que
+\[a^{1}_{i}A^{1}_{k} + a^{2}_{i}A^{2}_{k} + \cdots + a^{n}_{i}A^{n}_{k} = 0 .\]
+Similarmente, si $\displaystyle j \neq k $,
+\[a^{j}_{1}A^{k}_{1} + a^{j}_{2}A^{k}_{2} + \cdots + a^{j}_{n}A^{k}_{n} = 0 .\]
+Tenemos que 
+\[\begin{pmatrix} \vec{u}_{1} & \cdots & \vec{u}_{n} \end{pmatrix} = \begin{pmatrix} \vec{u}_{1} & \cdots & \vec{u}_{n} \end{pmatrix} I_{n\times n} .\]
+Por tanto, tenemos que
+\[1 = t\left(\vec{u}_{1}, \ldots, \vec{u}_{n}\right) = \underbrace{t\left(\vec{u}_{1}, \ldots, \vec{u}_{n}\right)}_{1}\det \left(I_{n \times n}\right) \Rightarrow \det\left(I_{ n \times n}\right) = 1 .\]
 
+Recordamos que $\displaystyle \Aut\left(V\right) = \left\{ f \in \End\left(V\right) \; : \; \exists f^{-1}\right\}  $ y $\displaystyle \GL\left(n, \K\right) = \left\{ A \in \mathcal{M}_{n \times n}\left(\K\right) \; : \; \exists A^{-1}\right\}  $.
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle A \in \mathcal{M}_{ n \times n}\left(\K\right) $. Entonces, $\displaystyle A \in \GL\left(n, \K\right) \iff \det\left(A\right) \neq 0 $.
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Si $\displaystyle A \in \GL\left(n, \K\right) $, $\displaystyle \exists A^{-1} $ tal que $\displaystyle A \cdot A^{-1} = A^{-1} \cdot A = I_{n \times n} $. Así,
+	\[1 = \det\left(I_{n \times n}\right) = \det\left(A \cdot A^{-1}\right) = \det\left(A\right) \cdot \det\left(A^{-1}\right) .\]
+Por tanto, tenemos que si $\displaystyle \det\left(A\right) \neq 0 $, $\displaystyle \det\left(A^{-1}\right) = \frac{1}{\det\left(A\right)} \neq 0 $. Estrictamente tenemos que tener que $\displaystyle \det\left(A\right), \det\left(A^{-1}\right) \neq 0 $.
+\item[(ii)] Si $\displaystyle \det\left(A\right) \neq 0 $. Vamos a comprobar que $\displaystyle A^{-1} = \frac{1}{\det\left(A\right)}\Adj\left(A^{t}\right) $. Tenemos que 
+\[ 	\begin{pmatrix} \frac{A^{1}_{1}}{ \left|A\right|} & \cdots & \frac{A^{n}_{1}}{ \left|A\right|} \\
+	\vdots & & \vdots \\
+	\frac{A^{1}_{n}}{ \left|A\right|} & \cdots & \frac{A^{n}_{n}}{ \left|A\right|}\end{pmatrix} \cdot \begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n} \\
+\vdots & & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix} =\]
+	\[
+\begin{split}
+		\frac{1}{\det\left(A\right)}\begin{pmatrix} A^{1}_{1}a^{1}_{1} + \cdots + a^{n}_{1}A^{n}_{1} & \cdots & A^{1}_{n}a^{1}_{n} + \cdots + A^{n}_{1}a^{n}_{n}\\
+\vdots & & \vdots \\
+\cdots & A^{1}_{j}a^{1}_{j} + \cdots + A^{n}_{j}a^{n}_{j} & \cdots \\
+\vdots & & \vdots\end{pmatrix}
+.
+\end{split}
+\]
+Tenemos que $\displaystyle \forall i,j = 1, \ldots, n $ el coeficiente de la fila $\displaystyle j $ y la columna $\displaystyle i $ de la matriz producto. Tenemos que
+\[\frac{\sum^{n}_{k=1}A^{i}_{k}a^{j}_{k}}{ \left|A\right|} = 
+\begin{cases}
+\frac{\det\left(A\right)}{\det\left(A\right)} = 1, \; \text{si} \; j =i \\
+0, \; \text{si} \; j \neq i
+\end{cases}
+.\]
+Es decir, el producto de las dos matrices anteriores es la identidad.
+\end{description}
+\end{proof}
+
+\section{Sistemas de Cramer}
+
+\begin{fdefinition}[Sistemas de Cramer]
+\normalfont Un \textbf{sistema de Cramer} es un sistema de ecuaciones lineales
+\[
+\left(S\right) 
+\begin{cases}
+a^{1}_{1}x^{1} + \cdots + a^{1}_{n}x^{n} = b^{1} \\
+\vdots \\
+a^{n}_{1}x^{1}+\cdots + a^{n}_{n}x^{n} = b^{n}
+\end{cases}
+\text{ donde $\displaystyle a^{j}_{i} \in \K $, $\displaystyle b^{j} \in \K $, $\displaystyle \forall i, j = 1, \ldots, n $.}
+\]
+Además, 
+\[\det \begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n}\\
+\vdots & & \vdots \\
+a^{1}_{n} & \cdots & a^{n}_{n}\end{pmatrix} \neq 0 .\]
+\end{fdefinition}
+
+\begin{ftheorem}[]
+\normalfont Todo sistema de cramer tiene solución única.
+\end{ftheorem}
+
+\begin{proof}
+Primero vemos la \textbf{unicidad}. Si $\displaystyle \left(x^{1}_{0}, \ldots, x^{n}_{0}\right) $ es solución de $\displaystyle \left(S\right) $,
+\[
+\left(S\right) 
+\begin{cases}
+a^{1}_{1}x^{1}_{0} + \cdots + a^{1}_{n}x^{n}_{0} = b^{1} \\
+\vdots \\
+a^{n}_{1}x^{1}_{0}+\cdots + a^{n}_{n}x^{n}_{0} = b^{n}
+\end{cases}
+\text{ donde $\displaystyle a^{j}_{i} \in \K $, $\displaystyle b^{j} \in \K $, $\displaystyle \forall i, j = 1, \ldots, n $.}
+\]
+Entonces, 
+\[\begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n} \\
+\vdots & & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix}\begin{pmatrix} x^{1}_{0} \\ \vdots \\ x^{n}_{0}\end{pmatrix} = \begin{pmatrix} b^{1} \\ \vdots \\ b^{n} \end{pmatrix} .\]
+Como $\displaystyle \det\left(A\right)\neq 0 $, tenemos que $\displaystyle \exists!A^{-1} $. Entonces,
+\[A^{-1}A\begin{pmatrix} x^{1}_{0} \\ \vdots \\ x^{n}_{0} \end{pmatrix} = A^{-1}\begin{pmatrix} b^{1} \\ \vdots \\ b^{n} \end{pmatrix} \Rightarrow \begin{pmatrix} x^{1}_{0} \\ \vdots \\ x^{n}_{0} \end{pmatrix} = A^{-1}\begin{pmatrix} b^{1} \\ \vdots \\ b^{n} \end{pmatrix} .\]
+Ahora vamos a ver la \textbf{existencia}. Vamos a ver que el producto $\displaystyle A^{-1}\begin{pmatrix} b^{1} \\ \vdots \\ b^{n} \end{pmatrix} $ es solución de $\displaystyle S $.
+\[
+\begin{split}
+	A^{-1}\begin{pmatrix} b^{1} \\ \vdots \\ b^{n} \end{pmatrix} = & \frac{1}{\det\left(A\right)}\begin{pmatrix} A^{1}_{1} & \cdots & A^{n}_{1} \\
+\vdots & & \vdots \\
+A^{1}_{n} & \cdots & A^{n}_{n}\end{pmatrix}\begin{pmatrix} b^{1} \\ \vdots \\ b^{n} \end{pmatrix} = \frac{1}{\det\left(A\right)}\begin{pmatrix} A^{1}_{1}b^{1} + \cdots + A^{n}_{1}b^{n} \\
+\vdots \\
+A^{1}_{n}b^{1} + \cdots + A^{n}_{n}b^{n}\end{pmatrix}\\
+= & \begin{pmatrix} \frac{ \det\begin{pmatrix} b^{1} & a^{1}_{2} & \cdots & a^{1}_{n}\\
+\vdots & \vdots & \vdots & \vdots \\
+b^{n} & a^{n}_{2} & \cdots & a^{n}_{n}\end{pmatrix}}{\det\left(A\right)} \\ \vdots \\
+		\frac{ \det\begin{pmatrix} a^{1}_{1} & \cdots& a^{1}_{i-1} & b^{1} & a^{1}_{i+1} & \cdots & a^{1}_{n}\\
+\vdots & \vdots & \vdots & \vdots \\
+ a^{n}_{1} & \cdots& a^{n}_{i-1} & b^{n} & a^{n}_{i+1} & \cdots & a^{n}_{n}\end{pmatrix}}{\det\left(A\right)} \\ \vdots \\ \frac{ \det\begin{pmatrix} a^{1}_{1} & a^{1}_{2} & \cdots & b^{1}\\
+\vdots & \vdots & \vdots & \vdots \\
+a^{n}_{1} & a^{n}_{2} & \cdots & b^{n}\end{pmatrix}}{\det\left(A\right)}\end{pmatrix} \begin{pmatrix} \frac{A^{1}_{1}}{ \left|A\right|} & \cdots & \frac{A^{n}_{1}}{ \left|A\right|} \\
+\vdots & & \vdots \\
+\frac{A^{1}_{n}}{ \left|A\right|} & \cdots & \frac{A^{n}_{n}}{ \left|A\right|}\end{pmatrix}.
+\end{split}
+\]
+\end{proof}
+
+\begin{fdefinition}[Menor]
+	\normalfont Un \textbf{menor} de orden $\displaystyle r $ de $\displaystyle A $, $\displaystyle r \leq \min \left\{ m,n\right\}  $, es el determinante de una matriz $\displaystyle r \times r $ que se obtiene de $\displaystyle A $ suprimiendo $\displaystyle \left(m - r\right) $ filas y $\displaystyle \left(n - r\right) $ columnas. 
+\end{fdefinition}
+
+\begin{fdefinition}[Rango]
+\normalfont Decimos que el \textbf{rango} de $\displaystyle A $ es $\displaystyle r $ si existe un menor de orden $\displaystyle r $ de $\displaystyle A $ no nulo y todos los de orden $\displaystyle r+1 $ son nulos.
+\end{fdefinition}
+Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de un $\displaystyle \K $-espacio vectorial $\displaystyle V $ y sean $\displaystyle \left\{ \vec{x}_{1}, \ldots, \vec{x}_{m}\right\} \subset V $, tales que
+\[
+\begin{split}
+	\vec{x}_{1} = & a^{1}_{1}\vec{u}_{1} + \cdots + a^{n}_{1}\vec{u}_{n} \\
+	\vdots & \\
+	\vec{x}_{m} = & a^{1}_{m}\vec{u}_{1} + \cdots + a^{n}_{m}\vec{u}_{n}.
+\end{split}
+\]
+Entonces, en función de estos valores definimos,
+\[A = \begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{m}\\
+\vdots & & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{m}\end{pmatrix} \in \mathcal{M}_{n \times m}\left(\K\right) .\]
+\begin{ftheorem}[]
+\normalfont 
+\[\ran\left(A\right) = \dim\left(L\left( \left\{ \vec{x}_{1}, \ldots, \vec{x}_{m}\right\} \right)\right) .\]
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle r = \ran\left(A\right) $ y $\displaystyle \begin{vmatrix} a^{1}_{1} & \cdots & a^{1}_{r}\\
+	\vdots & & \vdots \\
+a^{r}_{1} & \cdots & a^{r}_{r}\end{vmatrix} \neq 0 $.
+\begin{description}
+	\item[(1)] Vamos a ver que $\displaystyle \left\{ \vec{x}_{1}, \ldots, \vec{x}_{r}\right\}  $ son linealmente independientes. \\
+	Sean $\displaystyle a^{1}, \ldots, a^{r} \in \K $. Si 
+	\[a^{1}\vec{x}_{1} + \cdots + a^{r}\vec{x}_{r} = \vec{0} .\]
+	Entonces, 
+	\[
+	\begin{split}
+		& a^{1}\left(a^{1}_{1}\vec{u}_{1} + \cdots + a^{r}_{1}\vec{u}_{r} + \cdots +a^{n}_{1}\vec{u}_{n}\right) + \cdots + a^{r}\left(a^{1}_{r}\vec{u}_{1} + \cdots+a^{r}_{r}\vec{u}_{r}+\cdots + a^{n}_{r}\vec{u}_{n}\right)  \\
+		= & \left(a^{1}a^{1}_{1} + \cdots + a^{r}a^{1}_{r}\right)\vec{u}_{1} + \cdots + \left(a^{1}a^{r}_{1} + \cdots + a^{r}a^{r}_{r}\right)\vec{u}_{r} + \cdots + \left(a^{1}a^{n}_{1}+ \cdots + a^{r}a^{n}_{r}\right)\vec{u}_{n} = \vec{0}.
+	\end{split}
+	\]
+	Así, tenemos que 
+	\[
+	\begin{split}
+		a^{1}a^{1}_{1} + \cdots + a^{r}a^{1}_{r} & = 0 \\
+							 & \vdots \\
+		a^{1}a^{r}_{1} + \cdots + a^{r}a^{r}_{r} & = 0 \\
+							 & \vdots \\
+		a^{1}a^{n}_{1}+ \cdots + a^{r}a^{n}_{r} & = 0.
+	\end{split}
+	\]
+	Entonces, $\displaystyle \left(a^{1}, \ldots, a^{r}\right) $ es solución del sistema 
+	\[
+	\begin{cases}
+	a^{1}_{1}x^{1} + \cdots + a^{1}_{r}x^{r} = 0\\
+	\vdots \\
+	a^{r}_{1}x^{1} + \cdots + a^{r}_{r}x^{r} = 0
+	\end{cases}
+	.\]
+Como es un sistema de Cramer homogéneo, tenemos que $\displaystyle a^{1} = \cdots = a^{r} = 0 $.	
+	\item[(2)] Vamos a ver que $\displaystyle \forall i = 1, \ldots, m-r $, $\displaystyle \vec{x}_{r+i} $ es linealmente dependiente de $\displaystyle \left\{ \vec{x}_{1}, \ldots, \vec{x}_{r}\right\}  $. \\
+		Sea $\displaystyle i = 1, \ldots, m - r $, queremos ver que $\displaystyle \vec{x}_{r+i} \in L\left( \left\{ \vec{x}_{1}, \ldots, \vec{x}_{r}\right\} \right) $. Queremos llegar al siguiente sistema, respecto a las coordenadas de $\displaystyle \vec{x}_{r+i} $, que es un sistema de Cramer:
+	\[ \left(S\right) =
+	\begin{cases}
+	a^{1}_{1}x^{1} + \cdots + a^{1}_{r}x^{r} = x^{1}_{r+i}\\
+	\vdots \\
+	a^{r}_{1}x^{1} + \cdots + a^{r}_{r}x^{r} = x^{r}_{r+i}
+	\end{cases}
+	.\]
+Al ser un sistema de Cramer, tenemos que $\displaystyle \exists!\left(a^{1}, \ldots, a^{r}\right) $ solución de $\displaystyle S $. Tenemos que
+\[
+\begin{split}
+	0 = & \begin{vmatrix} a^{1}_{1} & \cdots & a^{1}_{r} &  a^{1}_{r+i} \\
+\vdots & \vdots & \vdots & \vdots \\
+a^{r}_{1} & \cdots & a^{r}_{r}&  a^{r}_{r+i} \\
+a^{r+j}_{1} & \cdots & a^{r+j}_{r}&  a^{r+j}_{r+i} \end{vmatrix} \\
+		= & \begin{vmatrix} a^{1}_{1} & \cdots & a^{1}_{r} &  a^{1}_{r+i} \\
+		\vdots & \vdots & \vdots & \vdots  \\
+		a^{r}_{1} & \cdots & a^{r}_{r}&  a^{r}_{r+i} \\
+0 & \cdots & 0 & a^{r+j}_{r+i} - a^{1}a^{1}_{r+i}-\cdots-a^{r}a^{r}_{r+i}\end{vmatrix} \\
+			= & \begin{vmatrix} a^{1}_{1} & \cdots & a^{1}_{r} \\ \vdots & & \vdots \\
+			a^{r}_{1} & \cdots & a^{r}_{r}\end{vmatrix} \left(a^{r+j}_{r+i}-a^{1}a^{1}_{r+i}-\cdots -a^{r}_{r+i}\right)
+\end{split}
+.\]
+Entonces, 
+\[a^{r+j}_{r+i} = a^{1}a^{1}_{r+i} + \cdots + a^{r}a^{r}_{r+i} .\]
+\end{description}
+\end{proof}
+
+Dado el sistema 
+\[
+\left(S\right) 
+\begin{cases}
+a^{1}_{1}x^{1} + \cdots + a^{1}_{n}x^{n} = b^{1} \\
+\vdots \\
+a^{m}_{1}x^{1}+\cdots + a^{m}_{n}x^{n} = b^{m}
+\end{cases}
+\]
+Definimos las matrices
+\[A = \begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n} \\
+\vdots & & \vdots \\
+a^{m}_{1} & \cdots & a^{m}_{n}\end{pmatrix} \in \mathcal{M}_{m \times n}\left(\K\right), \quad B = \begin{pmatrix} a^{1}_{1} & a^{1}_{2} & \cdots &  a^{1}_{n} & b^{1} \\ \vdots & \cdots & \cdots & \cdots & \vdots \\ a^{m}_{1} & a^{m}_{2} & \cdots & a^{m}_{n}& b^{m}\end{pmatrix}\in\mathcal{M}_{m \times \left(n+1\right)}\left(\K\right) .\]
+
+Tenemos que $\displaystyle \ran\left(A\right) \leq \ran\left(B\right) \leq \ran\left(A\right) + 1 $.
+\begin{ftheorem}[Teorema de Rouché-Fröbenius]
+\normalfont $\displaystyle \left(S\right) $ tiene solución si y solo si $\displaystyle \ran\left(A\right) = \ran\left(B\right) $.
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Si el sistema $\displaystyle \left(S\right) $ tiene solución, existe $\displaystyle \left(x^{1}_{0}, \ldots, x^{n}_{0}\right) \in \K^{n} $ tal que 
+	\[
+	\begin{cases}
+	a^{1}_{1}x^{1}_{0} + \cdots + a^{1}_{n}x^{n}_{0} = b^{1} \\
+	\vdots \\
+	a^{m}_{1}x^{1}_{0}+\cdots + a^{m}_{n}x^{n}_{0} = b^{n}
+	\end{cases}
+	.\]
+Como la última columna de la matriz $\displaystyle B $ depende linealmente de $\displaystyle A $, tenemos que $\displaystyle \ran\left(A\right) = \ran\left(B\right) $.
+\item[(ii)] Supongamos que $\displaystyle \ran\left(A\right) = \ran\left(B\right) = r $ y que $\displaystyle \begin{vmatrix} a^{1}_{1} & \cdots & a^{1}_{r} \\
+	\vdots & & \vdots \\
+a^{r}_{1} & \cdots & a^{r}_{r}\end{vmatrix} \neq 0 $. Consideramos el sistema $\displaystyle \left(P\right) $ el sistema en el que intervienen las primeras $\displaystyle r $ ecuaciones:
+\[\left(P\right)
+\begin{cases}
+a^{1}_{1}x^{1} + \cdots + a^{1}_{r}x^{r} + \cdots + a^{1}_{n}x^{n} = b^{1} \\ 
+\vdots \\
+a^{r}_{1}x^{1} + \cdots + a^{r}_{r}x^{r} + \cdots + a^{r}_{n}x^{n} = b^{r}
+\end{cases}
+.\]
+Tenemos que toda solución de $\displaystyle \left(S\right) $ es solución de $\displaystyle \left(P\right) $. Vamos a ver que toda solución de $\displaystyle \left(P\right) $ es solución de $\displaystyle \left(S\right) $. Sea $\displaystyle \left(x^{1}_{0}, \ldots, x^{r}_{0}, \ldots, x^{n}_{0}\right) $ solución de $\displaystyle \left(P\right) $. Entonces,
+\[\begin{split}
+	a^{1}_{1} x^{1}_{0} + \cdots + a^{1}_{r}x^{r}_{0} + \cdots + a^{1}_{n}x^{n}_{0} = b^{1} \\
+\vdots \\
+a^{r}_{1}x^{1}_{0} + \cdots + a^{r}_{r}x^{r}_{0} + \cdots + a^{r}_{n}x^{n}_{0} = b^{r}.
+\end{split}\]
+Si $\displaystyle i > 1, \ldots, m - r $, queremos ver que
+\[ a^{r+i}_{1}x^{1}_{0} + \cdots + a^{r+i}_{r}x^{r}_{0} + \cdots + a^{r}_{n}x^{n}_{0} = b^{r+i}.\]
+Tenemos que existen $\displaystyle l_{1}, \ldots, l_{r}\in\K $ tales que 
+\[
+\begin{split}
+	l_{1}a^{1}_{1} + \cdots + l_{r}a^{r}_{1} & = a_{1}^{r+i} \\
+	\vdots & \\
+	l_{1}a^{1}_{r} + \cdots + l_{r}a^{r}_{r} & = a^{r+i}_{r} \\
+	\vdots & \\
+	l_{1}a^{1}_{n} + \cdots + l_{r}a^{r}_{n} & = a^{r+i}_{n}\\
+	l_{1}b^{1} + \cdots + l_{r}b^{r} & = b^{r+i}
+\end{split}
+.\]
+Entonces, tenemos que
+\[
+\begin{split}
+	a^{r+i}1x^{1}_{0} + \cdots + a^{r+i}_{r} x^{r}_{0} + \cdots + a^{r+i}_{n}x_{0}^{n} = & \left(l_{1} a^{1}_{1} + \cdots +l_{r}a^{r}_{1}\right)x^{1}_{0} + \cdots + \left(l_{1}a^{1}_{n} + \cdots +l_{r}a^{r}_{n}\right)x^{n}_{0} \\
+	= & l_{1}\left(a^{1}_{1}x^{1}_{0} + \cdots + a^{1}_{n}x^{n}_{0}\right) + \cdots + l_{r}\left(a^{r}_{1}x^{1}_{0} + \cdots + a^{r}_{n}x^{n}_{0}\right)\\
+	= & l_{1}b^{1} + \cdots + l_{r}b^{r} = b^{r+i} .
+\end{split}
+\]
+Entonces, tenemos que el sistema $\displaystyle \left(P'\right) $ 
+\[\left(P'\right)
+\begin{cases}
+	a^{1}_{1}x^{1} + \cdots + a^{1}_{r}x^{r} = b^{1}-a^{1}_{r+1}x^{r+1}-\cdots -a^{1}_{n}x^{n} \\
+	\vdots \\
+	a^{r}_{1}x^{1} + \cdots + a^{r}_{r} x^{r} = b^{r}-a^{r}_{r+1}x^{r+1}-\cdots-a^{r}_{n}x^{n}
+\end{cases}
+.\]
+Claramente, el sistema $\displaystyle \left(P'\right) $ es equivalente al sistema $\displaystyle \left(P\right) $. Si fijo $\displaystyle \left(x^{r+1}_{0}, \ldots, x^{n}_{0}\right) \in \K^{n-r} $, tenemos que el sistema 
+\[\left(P_{1}\right)
+\begin{cases}
+	a^{1}_{1}x^{1} + \cdots + a^{1}_{r}x^{r} = b^{1}-a^{1}_{r+1}x^{r+1}_{0}-\cdots -a^{1}_{n}x^{n}_{0} \\
+	\vdots \\
+	a^{r}_{1}x^{1} + \cdots + a^{r}_{r} x^{r} = b^{r}-a^{r}_{r+1}x^{r+1}_{0}-\cdots-a^{r}_{n}x^{n}_{0}
+\end{cases}
+.\]
+Al tratarse de un sistema de Cramer, existe una única solución $\displaystyle \left(x^{1}_{0}, \ldots, x^{r}_{0}\right) $ de $\displaystyle \left(P_{1}\right) $. Entonces, $\displaystyle \left(x^{1}_{0}, \ldots, x^{r}_{0}, x^{r+1}_{0}, \ldots, x^{n}_{0}\right) $ es solución de $\displaystyle \left(P\right) $. Si $\displaystyle \left(y^{r+1}_{0}, \ldots, y^{n}_{0}\right)\in\K^{n-r} $. Consideremos el sistema $\displaystyle \left(P_{2}\right) $,
+\[\left(P_{2}\right)
+\begin{cases}
+a^{1}_{1}x^{1}+\cdots + a^{1}_{r}x^{r} = b^{1}-a^{1}_{r+1}y^{r+1}_{0}-\cdots-a^{1}_{n}y^{n}_{0}\\
+\vdots \\
+a^{r}_{1}x^{1} + \cdots + a^{r}_{r}x^{r} = b^{r}-a^{r}_{r+1}y^{r+1}_{0} - \cdots - a^{r}_{n}y^{n}_{0}
+\end{cases}
+.\]
+Como es sistema de Cramer, $\displaystyle \exists!\left(y^{1}_{0}, \ldots, y^{r}_{0}\right) $ solución de $\displaystyle \left(P_{2}\right) $. Por tanto, $\displaystyle \left(y^{1}_{0}, \ldots, y^{r}_{0}, y^{r+1}_{0}, \ldots, y^{n}_{0}\right) $ es solución de $\displaystyle \left(P\right) $.
+\end{description}
+\end{proof}
+
+Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ una base de $\displaystyle V $. Sea $\displaystyle L \in \mathcal{L}\left(V\right) $ tal que $\displaystyle \dim\left(L\right)= r $ y sea $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{r}\right\}  $ una base de $\displaystyle L $. Entonces, tenemos que
+\[
+\begin{split}
+	\vec{v}_{1} = & a^{1}_{1}\vec{u}_{1} + \cdots + a^{n}_{1}\vec{u}_{n} \\
+	\vdots & \\
+	\vec{v}_{r} = & a^{1}_{r}\vec{u}_{1} + \cdots + a^{n}_{r}\vec{u}_{n}.
+\end{split}
+\]
+
+Entonces, si $\displaystyle \vec{x} \in V $ con $\displaystyle \vec{x} = x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n} $. Tenemos que $\displaystyle \vec{x} \in L $ si y solo si existen $\displaystyle \lambda^{1}, \ldots, \lambda^{r} \in \K $ tales que $\displaystyle \vec{x} = \lambda^{1}\vec{v}_{1}+\cdots+\lambda^{r}\vec{v}_{r} $ (ecuaciones paramétricas). Esto es, si y solo si
+\[
+\begin{split}
+	x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n} = & \lambda^{1}\left(a^{1}_{1}\vec{u}_{1}+\cdots +a^{n}_{1}\vec{u}_{n}\right) + \cdots + \lambda^{r}\left(a^{1}_{r}\vec{u}_{1}+\cdots+a^{n}_{r}\vec{u}_{n}\right) \\
+	= & \left(\lambda^{1}a^{1}_{1}+\cdots + \lambda^{r}a^{1}_{r}\right)\vec{u}_{1} + \cdots + \left(\lambda^{1}a^{n}_{1}+\cdots + \lambda^{r}a^{n}_{r}\right)\vec{u}_{n} .
+\end{split}
+\]
+Entonces, 
+\[
+\begin{split}
+	x^{1} = & \lambda^{1}a^{1}_{1} + \cdots + \lambda^{r}a^{1}_{r} \\
+	\vdots & \\
+	x^{n} = & \lambda^{1}a^{n}_{1} + \cdots + \lambda^{r}a^{n}_{r}.
+\end{split}
+\]
+Es decir, si y solo si el sistema anterior tiene solución. Es decir, 
+\[r = \ran\begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n} \\
+\vdots & & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix} = \ran\begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n} & x^{1} \\
+\vdots & \cdots & \vdots & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{n} & x^{n}\end{pmatrix} .\]
+Así obtenemos las ecuaciones implícitas de $\displaystyle L $. Supongamos que 
+	\[ \begin{vmatrix} a^{1}_{1} & \cdots & a^{1}_{r} \\
+	\vdots & & \vdots \\
+a^{r}_{1} & \cdots & a^{r}_{r}\end{vmatrix}= \nabla \neq 0 .\]
+Entonces, tenemos que los menores de orden $\displaystyle r+1 $ de la matriz de coeficientes que contienen al menor anterior son nulos.
+		\[\begin{vmatrix} a^{1}_{1} & \cdots & a^{1}_{r} & x^{1} \\
+		\vdots & \cdots & \vdots & \vdots \\
+	a^{r}_{1} & \cdots & a^{r}_{r} & x^{r} \\
+a^{r+1}_{1} & \cdots & a^{r+1}_{r} & x^{r+1}\end{vmatrix}  = 0 .\]
+Similarmente, $\displaystyle \forall i = 1, \ldots, n - r $,
+	\[\begin{vmatrix} a^{1}_{1} & \cdots & a^{1}_{r} & x^{1} \\
+		\vdots & \cdots & \vdots & \vdots \\
+	a^{r}_{1} & \cdots & a^{r}_{r} & x^{r} \\
+a^{r+i}_{1} & \cdots & a^{r+i}_{r} & x^{r+i}\end{vmatrix}  = 0 .\]
+Si desarrollamos este determinante por adjuntos:
+\[
+\begin{split}
+x^{1}b^{1}_{1} + x^{2}b^{1}_{2} + \cdots + x^{r}b^{1}_{r} x^{r+1} \nabla = 0.
+\end{split}
+\]
+Tenemos que $\displaystyle \forall i = 1, \ldots, n -r $, 
+\[x^{1}b^{1}_{1} + \cdots + x^{r}b^{1}_{r} + x^{r+i}\nabla = 0 .\]
+Tenemos $\displaystyle n - r $ ecuaciones donde la matriz de coeficientes será
+\[\ran \begin{pmatrix} b^{1}_{1} & \cdots & b^{1}_{r} & \nabla & 0 & \cdots & 0 \\
+b^{2}_{1} & \cdots & b^{2}_{r} & 0 & \nabla & \cdots & 0 \\
+\vdots & \cdots & \vdots & \vdots & \vdots & \cdots & \vdots \\
+b^{n-r}_{1} & \cdots & b^{n-r}_{r} & 0 & \cdots & 0 & \nabla\end{pmatrix} = n - r .\]
+Con esto hemos demostrado que todo subespacio vectorial es el conjunto de las soluciones de un sistema homogéneo. Ahora consideremos el recíproco. Consideremos el sistema homogéneo $\displaystyle \left(H\right) $:
+\[\left(H\right)
+\begin{cases}
+c^{1}_{1}x^{1} + \cdots + c^{1}_{n}x^{n} = 0 \\
+\vdots \\
+c^{n-r}_{1}x^{1} + \cdots + c^{n-r}_{n}x^{n} = 0
+\end{cases}
+.\]
+Sea $\displaystyle L = \left\{ x^{1}_{0}\vec{u}_{1} + \cdots + x^{n}_{0}\vec{u}_{n} \; : \; \left(x^{1}_{0}, \ldots, x^{n}_{0}\right) \; \text{solución de} \; \left(H\right)\right\} \in \mathcal{L}\left(V\right) $ tales que $\displaystyle \dim\left(L\right)=r $. Supongamos que 
+\[\ran\begin{pmatrix} c^{1}_{1} & \cdots & c^{1}_{n} \\ \vdots & & \vdots \\ c^{n-r}_{1} & \cdots & c^{n-r}_{n} \end{pmatrix} = n-r .\]
+En la introducción está demostrado que $\displaystyle L $ es un subespacio vectorial. Supongamos que
+\[ \begin{vmatrix} c^{1}_{1} & \cdots & c^{1}_{n-r} \\
+	\vdots & & \vdots \\
+c^{n-r}_{1} & \cdots & c^{n-r}_{n-r}\end{vmatrix} \neq 0 .\]
+Entonces
+\[
+\begin{cases}
+c^{1}_{1}x^{1} + \cdots + c^{1}_{n-r}x^{n-r} = -c^{1}_{\left(n-r\right)+1}x^{\left(n-r\right)+1} - \cdots - c^{1}_{n}x^{n} \\
+\vdots \\
+c^{n-r}_{1}x^{1}+\cdots + c^{n-r}_{n-r}x^{n-r} = -c^{n-r}_{\left(n-r\right)+1}x^{\left(n-r\right)+1} - \cdots c^{n-r}_{n}x^{n}
+\end{cases}
+.\]
+Supongamos que las siguientes tuplas son soluciones de $\displaystyle \left(H\right) $:
+\[
+\begin{cases}
+	\left(d^{1}_{1}, \ldots, d^{n-r}_{1}, 1, 0 \ldots, 0\right) \\
+	\left(d^{1}_{2}, \ldots, d^{n-r}_{2}, 0, 1, \ldots, 0\right) \\
+	\vdots \\
+	\left(d^{1}_{r}, \ldots, d^{n-r}_{r},0, \ldots,0, 1\right)
+\end{cases}
+.\]
+
+Sean 
+\[
+\begin{split}
+	\vec{v}_{1} = & d^{1}_{1}\vec{u}_{1} + \cdots + d^{n-r}_{1}\vec{u}_{n-r} + \vec{u}_{n-r+1} \in L \\
+	\vdots & \\
+	\vec{v}_{r} = & d^{1}_{r}\vec{u}_{1} + \cdots + d^{n-r}_{r}\vec{u}_{n-r} + \vec{u}_{n-r+1} \in L
+\end{split}
+\]
+Entonces, 
+\[
+\begin{split}
+	\vec{x}_{0} = & x^{1}_{0}\vec{u}_{1} + \cdots + x^{n-r}_{0}\vec{u}_{n-r}+\cdots + x^{n}_{0}\vec{u}_{n} \in L \\
+	\vec{z}_{0} = & \vec{x}_{0}-x^{n-r+1}_{0}\vec{x}_{1}-x_{0}^{n-r+2}\vec{v}_{2} - \cdots - x^{n}_{0}\vec{v}_{r} = z^{1}_{0}\vec{u}_{1} + \cdots + z^{n-r}_{0}\vec{u}_{n-r} + 0 \cdot \vec{u}_{n-r+1} + \cdots + 0 \cdot \vec{u}_{n} \in L.
+\end{split}
+\]
+Entonces tenemos que $\displaystyle \left(z^{1}_{0}, \ldots, z^{n-r}_{0}, 0, \ldots, 0\right) $ son solución de $\displaystyle \left(H\right) $. Entonces, $\displaystyle \left(z^{1}_{0}, \ldots, z^{n-r}_{0}\right) $ es solución del sistema de Cramer. 
+\[
+\begin{cases}
+c^{1}_{1}x^{1} + \cdots + c^{1}_{n-r}x^{n-r} = 0 \\
+\vdots \\
+c^{n-r}_{1}x^{1} + \cdots + c^{n-r}_{n-r}x^{n-r} = 0
+\end{cases}
+.\]
+Así, $\displaystyle \vec{z}_{0} = \vec{0} $ y 
+\[\vec{x}_{0} = x_{0}^{n-r+1}\vec{v}_{1} + x^{n}_{0}\vec{v}_{r} \Rightarrow L = L\left( \left\{ \vec{v}_{1}, \ldots, \vec{v}_{r}\right\} \right) .\]
+
+Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $ y $\displaystyle \left\{ \vec{x}_{1}, \ldots, \vec{x}_{r}\right\} \subset V $, donde 
+\[A = \begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{r} \\
+\vdots & & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{r}\end{pmatrix} \in \mathcal{M}_{n \times r}\left(\K\right).\]
+Tenemos que $\displaystyle \dim\left(L \left( \left\{ \vec{x}_{1}, \ldots, \vec{x}_{r}\right\} \right)\right) = \ran\left(A\right)$. 
+\begin{fprop}[]
+\normalfont 
+\[L\left( \left\{ \vec{x}_{1}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{j}, \ldots, \vec{x}_{r}\right\} \right) = L\left( \left\{ \vec{x}_{1}, \ldots, \vec{x}_{j}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{r}\right\} \right) .\]
+\end{fprop}
+
+\begin{fprop}[]
+	\normalfont Sea $\displaystyle a \in \K/ \left\{ 0\right\}  $, 
+	\[ L\left( \left\{ \vec{x}_{1}, \ldots, a\vec{x}_{i}, \ldots, \vec{x}_{r}\right\} \right).= L\left( \left\{ \vec{x}_{1},\ldots, \vec{x}_{i}, \ldots, \vec{x}_{r}\right\} \right)\]
+\end{fprop}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle a \in \K $, 
+\[L\left( \left\{ \vec{x}_{1}, \ldots, \vec{x}_{j}+a\vec{x}_{i} \ldots, \vec{x}_{r}\right\} \right) = L\left( \left\{ \vec{x}_{1}, \ldots, \vec{x}_{j}, \ldots, \vec{x}_{i}, \ldots, \vec{x}_{r}\right\} \right) .\]
+\end{fprop}
+
+Si $\displaystyle a^{1}_{1} \neq 0 $, a la segunda fila le resto la primera multiplicada por $\displaystyle \frac{a^{2}_{1}}{a^{1}_{1}} $. Para $\displaystyle i = 2, \ldots, n $ a la fila $\displaystyle i $  le resto la primera multiplicada por $\displaystyle \frac{a^{i}_{1}}{a^{1}_{1}} $. 
+\[\begin{pmatrix} a^{1}_{1} & a^{1}_{2} & \cdots & a^{1}_{r} \\
+0 & a^{2}_{2} & \cdots & a'^{2}_{r} \\
+\vdots & \vdots & \cdots & \vdots \\
+0 & a'^{r}_{2} & \cdots & a'^{r}_{r}\end{pmatrix} .\]
+Si $\displaystyle a^{1}_{1} = 0 $ y $\displaystyle \exists a^{i}_{1} \neq 0 $, permutamos las filas 1 e $\displaystyle i $. Supongo por hipótesis de inducción que después de $\displaystyle i $ etapas. 
+	\[\begin{pmatrix} b^{1}_{1} & * & \cdots & * \\
+	0 & b^{2}_{1} & \cdots & * \\
+0 & \cdots & b^{i}_{1} & * \\
+0 & \cdots & 0 & D\end{pmatrix} ,\]
+donde
+		\[D = \begin{pmatrix} d^{1}_{1} & \cdots & d^{1}_{t} \\
+		\vdots & & \vdots \\
+	d^{s}_{1} & \cdots & d^{t}_{r}\end{pmatrix} .\]
+El método anterior consiste en una forma de calcular el rango de una matriz usando Gauss. La forma de calcular la inversa de una matriz $\displaystyle A \in \GL\left(n, \K\right) $ consiste en utilizar combinaciones lineales hasta obtener la identidad. Si hacemos las mismas trasformaciones con $\displaystyle I_{n \times n} $, obtenemos $\displaystyle A^{-1} $.

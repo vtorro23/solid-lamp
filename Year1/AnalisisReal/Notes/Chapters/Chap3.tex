@@ -244,6 +244,203 @@ Similarmente,
 Así, 
 \[f\left(\frac{p}{q}x\right) = \frac{p}{q}f\left(x\right) \Rightarrow f\left(\lambda x\right)= \lambda x, \; \forall \lambda \in \R .\]
 Este último paso se demuestra por continuidad y con sucesiones de racionales que tiendan a números reales (como la parte de exponentes reales). Ahora, podemos ver que $\displaystyle f $ es lineal. Para que sea lineal, tenemos que $\displaystyle f\left(x\right) = cx $. Esto es fácil, pues tenemos que $\displaystyle f\left(1\right) = c $.
+\item[(iii)] Sea $\displaystyle f: A \subset \R \to \R $, $\displaystyle c \in A' $ y supongamos que $\displaystyle \exists \lim_{x \to c}f\left(x\right) = l >0 $. Entonces, $\displaystyle \exists \delta > 0 $ tal que $\displaystyle \forall x \in \left(c - \delta, c + \delta \right) \cap A $, $\displaystyle f\left(x\right) > 0 $. \\ 
+Sabemos que $\displaystyle \forall \epsilon > 0, \; \exists \delta > 0 $ tal que si $\displaystyle 0 < \left|x - c\right| < \delta  $, $\displaystyle x \in A $, entonces $\displaystyle \left|f\left(x\right)-l\right|<\epsilon  $. Tomamos $\displaystyle \epsilon = \frac{l}{2} $, tal que $\displaystyle l - \epsilon = \frac{l}{2} > 0 $. Entonces $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle x \in \left(c-\delta, c + \delta \right)\cap A $, con $\displaystyle x \neq c $, entonces:
+\[ \left|f\left(x\right)-l\right|<\epsilon \iff -\frac{l}{2} < f\left(x\right)-l<\frac{l}{2} \Rightarrow 0 < \frac{l}{2} < f\left(x\right) .\]
+\item[(iv)] Sea $\displaystyle f: \R \to \R $. Vamos a ver si $\displaystyle \exists\epsilon>0, \; \forall \delta > 0 $, $\displaystyle  \left|x - c\right| < \delta \Rightarrow \left|f\left(x\right)-f\left(c\right)\right|<\epsilon  $.\\
+Sea $\displaystyle x \in \R $ y sea $\displaystyle \delta = 2 \left|x - c\right|+1 > 0 $. Entonces
+\[ \left|x-c\right|<\delta \Rightarrow \left|f\left(x\right)-f\left(c\right)\right|<\epsilon \iff f\left(c\right)-\epsilon < f\left(x\right) < f\left(c\right)+\epsilon  .\]
+\item[(v)] Sea $\displaystyle f: \R \to \R $. El enunciado $\displaystyle \forall \delta > 0, \;\exists \epsilon > 0  $ tal que si $\displaystyle 0 < \left|x - c\right|<\epsilon \Rightarrow \left|f\left(x\right)-f\left(c\right)\right|<\delta  $ es equivalente a decir que $\displaystyle \lim_{x \to c}f\left(x\right)=f\left(c\right) $.
+\item[(vi)] 
+	\begin{description}
+	\item[(a)] $\displaystyle f\left(x\right) = \frac{1}{x}, \; x > 0 $.
+		\[\lim_{x \to 0}f\left(x\right) = \lim_{x \to 0}\frac{1}{x}=\infty .\]
+	\item[(b)] $\displaystyle f\left(x\right)=\frac{1}{x}, \; x \in \R/ \left\{ 0\right\}  $.
+		\[\not\exists\lim_{x \to 0}f\left(x\right) .\]
+	\end{description}
 \end{description}
 \end{eg}
+
+\begin{fdefinition}[Límites laterales]
+	\normalfont Sea $\displaystyle f: A \subset \R \to \R $, y sea $\displaystyle c $ un punto de acumulación de $\displaystyle A \cap \left(c, \infty\right) $. Sea $\displaystyle l \in \R $. Se dice que $\displaystyle l $ es el \textbf{límite por la derecha} de $\displaystyle f $ en $\displaystyle c $: \[\displaystyle \lim_{x \to c^{+}}f\left(x\right) = l, \] si $\displaystyle \forall \epsilon >0, \; \exists \delta > 0 $ tal que si $\displaystyle 0 < x - c < \delta  $ con $\displaystyle x \in A $, entonces $\displaystyle \left|f\left(x\right)-l\right|<\epsilon  $. \\
+Análogamente, si $\displaystyle c $ es un punto de acumulación de $\displaystyle A \cap \left(-\infty, c\right) $. Decimos que 
+\[\lim_{x \to c^{-}}f\left(x\right) = l ,\]
+si $\displaystyle \forall \epsilon > 0, \; \exists \delta > 0 $ tal que si $\displaystyle 0 < c - x < \delta$, $\displaystyle x \in A $, entonces $\displaystyle \left|f\left(x\right)-l\right|<\epsilon $. 
+\end{fdefinition}
+
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle f : A\subset\R \to \R $ y sea $\displaystyle c \in \left(A \cap \left(c, \infty\right)\right)' $. 
+\begin{itemize}
+\item $\displaystyle \lim_{x \to c^{+}}f\left(x\right) = \infty $ si $\displaystyle \forall C > 0, \; \exists \delta > 0 $ tal que si $\displaystyle 0 < x- c < \delta  $, con $\displaystyle x\in A $, entonces $\displaystyle f\left(x\right) > C $.
+\item $\displaystyle \lim_{x \to c^{+}}f\left(x\right) = -\infty $ si $\displaystyle \forall C < 0, \; \exists \delta > 0 $ tal que si $\displaystyle 0 < x - c< \delta  $ con $\displaystyle x \in A $, entonces $\displaystyle f\left(x\right) < C $.
+\end{itemize}
+Ahora consideramos $\displaystyle c \in \left(A \cap \left(-\infty, c\right)\right)' $.
+\begin{itemize}
+\item $\displaystyle \lim_{x \to c^{-}}f\left(x\right) = \infty $ si $\displaystyle \forall C > 0, \; \exists \delta > 0 $ tal que si $\displaystyle 0 < c - x < \delta  $ con $\displaystyle x \in A $, entonces $\displaystyle f\left(x\right) > C $.
+\item $\displaystyle \lim_{x \to c^{-}}f\left(x\right) = -\infty $ si $\displaystyle \forall C<0, \; \exists \delta > 0 $ tal que si $\displaystyle 0 < c - x < \delta  $ con $\displaystyle x \in A $, entonces $\displaystyle f\left(x\right) < C $. 
+\end{itemize}
+\end{fdefinition}
+
+\begin{eg}
+\normalfont En el ejemplo anterior, tenemos que si $\displaystyle f\left(x\right) = \frac{1}{x} $ con $\displaystyle x \in \R / \left\{ 0\right\} $, 
+\[\lim_{x \to 0^{+}}f\left(x\right) = \infty \quad \text{y} \quad \lim_{x \to 0^{-}}f\left(x\right) = - \infty .\]
+\end{eg}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f: A \subset \R \to \R $ y sea $\displaystyle c \in \left(A \cap \left(c, \infty\right)\right)'\cap\left(A \cap \left(-\infty, c\right)\right)' $. Entonces $\displaystyle \lim_{x \to c}f\left(x\right) = l $ si  y solo si 
+\[\lim_{x \to c^{+}}f\left(x\right) = \lim_{x \to c^{-}}f\left(x\right) = l .\]
+\end{ftheorem}
+
+\begin{proof}
+\begin{description}
+\item[(i)] Sabemos que $\displaystyle \forall \epsilon > 0, \; \exists \delta > 0 $ tal que si $\displaystyle 0<\left|x-c\right|<\delta  $ con $\displaystyle x \in A $, entonces $\displaystyle \left|f\left(x\right)-l\right|<\epsilon  $. Vamos a ver que $\displaystyle \forall \epsilon > 0, \; \exists \delta > 0 $ tal que si $\displaystyle 0 < x - c < \delta  $, entonces $\displaystyle \left|f\left(x\right)-l\right|<\epsilon  $. Es trivial, pues basta tomar el mismo $\displaystyle \delta  $ de la definición de límite. El análogo para el límite por la izquierda es también trivial.
+\item[(ii)] Dado $\displaystyle \epsilon > 0 $, $\displaystyle \exists \delta_{1} > 0 $ tal que si $\displaystyle 0 < x-c<\delta_{1} $, $\displaystyle x \in A $, entonces $\displaystyle \left|f\left(x\right)-l\right|<\epsilon  $. Similarmente, $\displaystyle \exists\delta_{2} > 0 $ tal que si $\displaystyle 0 < c - x < \delta _{2} $, con $\displaystyle x \in A $, entonces $\displaystyle \left|f\left(x\right)-l\right|<\epsilon  $. Sea $\displaystyle \delta = \min \left\{ \delta_{1}, \delta_{2}\right\} >0 $ y tengo que $\displaystyle 0 < \left|x-c\right|<\delta  $, con $\displaystyle x \in A $. Si $\displaystyle x > c $,
+	\[0 < x - c < \delta \leq \delta_{1}, \; x \in A\; \Rightarrow \left|f\left(x\right)-l\right|<\epsilon  .\]
+Si $\displaystyle x < c$,
+\[0 < c - x < \delta \leq \delta_{2}, \; x \in A\; \Rightarrow \left|f\left(x\right)-l\right|<\epsilon  .\]
+\end{description}
+\end{proof}
+
+\begin{eg}
+\normalfont Sea $\displaystyle f\left(x\right) = \sig\left(x\right), \; x \in \R $. Tenemos que 
+\[\lim_{x \to 0^{+}}f\left(x\right) = 1 \neq \lim_{x \to 0^{-}}f\left(x\right) = -1 .\]
+Por tanto, no existe $\displaystyle \lim_{x \to 0}f\left(x\right) $.
+\end{eg}
+
+\begin{eg}
+\normalfont $\displaystyle f, g : \R \to \R $. Sea $\displaystyle f\left(x\right) = x + 1 $ y 
+\[g\left(x\right) = 
+\begin{cases}
+2, \; x \neq 1 \\
+0, \; x = 1
+\end{cases}
+.\]
+\begin{description}
+\item[(a)] Calcular $\displaystyle \left(g \circ f\right)\left(x\right) $ y $\displaystyle g\left(\lim_{x \to 1}f\left(x\right)\right) $.\\
+\[\left(g \circ f\right)\left(x\right) = 
+\begin{cases}
+2, \; x \neq 0 \\
+1, \; x = 0
+\end{cases}
+.\]
+Tenemos que 
+\[\lim_{x \to 1}\left(g\circ f\right)\left(x\right) = 2 .\]
+Ahora, tenemos que $\displaystyle \lim_{x \to 1}f\left(x\right) = 2 $, entonces 
+\[g\left(\lim_{x \to 1}f\left(x\right)\right) = g\left(2\right) = 2 .\]
+\item[(b)] Calcular $\displaystyle \left(f \circ g\right)\left(x\right) $ y $\displaystyle f\left(\lim_{x \to 1}g\left(x\right)\right) $.
+\[\left(f \circ g\right)\left(x\right) = 
+\begin{cases}
+3, \; x \neq 1\\
+1, \; x = 1
+\end{cases}
+.\]
+Tenemos que 
+\[\lim_{x \to 1}\left(f\circ g\right)\left(x\right) = \lim_{x \to 1^{+}}\left(f \circ g\right) \left(x\right) = \lim_{x \to 1^{-}}\left(f \circ g\right)\left(x\right) = 3 .\]
+Ahora, tenemos que $\displaystyle \lim_{x \to 1}g\left(x\right) = 2 $, entonces 
+\[f\left(\lim_{x \to 1}g\left(x\right)\right) = f\left(2\right) = 3 .\]
+\end{description}
+\end{eg}
+
+\begin{eg}
+	\normalfont Consideremos el enunciado $\displaystyle \forall \epsilon > 0, \; \forall n_{0} \in \N, \; \exists n \geq n_{0} $ tal que $\displaystyle \left|x_{n}-l\right|<\epsilon  $. Vamos a ver si este enunciado es equivalente a que exista $\displaystyle \left\{ x_{n_{k}}\right\} _{k\in\N}\subset \left\{ x_{n}\right\} _{n\in\N} $ tal que $\displaystyle x_{n_{k}}\to l $. 
+\begin{description}
+	\item[(i)] Sea $\displaystyle \epsilon = 1 $. Sea $\displaystyle n_{0} = 1 $, entonces $\displaystyle \exists n_{1} \geq 1 $ tal que $\displaystyle \left|x_{n_{1}}-l\right|<\epsilon = 1  $. Sea $\displaystyle \epsilon = \frac{1}{2} $ y $\displaystyle n_{0} = n_{1} + 1 $. Entonces, $\displaystyle \exists n_{2} \geq n_{0} > n_{1} $ tal que $\displaystyle \left|x_{n_{2}}-l\right|<\frac{1}{2} $. Si tenemos $\displaystyle x_{n_{1}}, \ldots, x_{n_{k}} $ estrictamente creciente, tal que $\displaystyle \left|x_{n_{j}}-l\right|<\frac{1}{j}, \; j = 1, \ldots, k $. Ahora, sea $\displaystyle \epsilon = \frac{1}{k+1} $ y $\displaystyle n_{0} = n_{k} + 1 $. Entonces, $\displaystyle \exists n_{k+1}\geq n_{0} > n_{k} $ tal que $\displaystyle \left|x_{n_{k+1}}-l\right|<\frac{1}{k+1} $. Por tanto, construimos $\displaystyle \left\{ x_{n_{k}}\right\} _{k\in\N}\subset \left\{ x_{n}\right\} _{n\in\N} $ tal que 
+	\[ \left|x_{n_{k}}-l\right|<\frac{1}{k}, \; \forall k \in \N \Rightarrow \lim_{k \to \infty}x_{n_{k}} = l .\]
+\item[(ii)] Tenemos que $\displaystyle \forall \epsilon > 0, \; \exists n'_{0} \in \N  $ tal que si $\displaystyle n_{k} \geq n'_{0} $, $\displaystyle \left|x_{n_{k}}-l\right|<\epsilon  $. Dado $\displaystyle \epsilon > 0 $ y dado $\displaystyle n_{0} \in \N $, tenemos que ver que $\displaystyle \exists n\geq n_{0} $ tal que $\displaystyle \left|x_{n}-l\right|<\epsilon  $. Sea $\displaystyle n_{k} \geq \max \left\{ n_{0}, n'_{0}\right\}  $, entonces
+	\[ \left|x_{n_{k}}-l\right|<\epsilon, \; n_{k} \geq n_{0} .\]
+\end{description}
+\end{eg}
+\begin{eg}
+\normalfont Vamos a demostrar que $\displaystyle \lim_{x \to \infty}\left(1 + \frac{1}{x}\right)^{x}=e $. Sabemos que $\displaystyle \lim_{n \to \infty}\left(1 + \frac{1}{n}\right)^{n} =e $. Dado $\displaystyle x \in \R $ con $\displaystyle x \geq 1 $, entonces existen $\displaystyle n_{x} = \left\lfloor x \right\rfloor \in \N $ y $\displaystyle \alpha_{x}\in[0,\infty) $ tal que $\displaystyle x = n_{x} +\alpha_{x} $. Tenemos que $\displaystyle \lim_{x \to \infty}n_{x} = \infty $. Entonces, tenemos que
+\[\left(1 + \frac{1}{x}\right)^{x} = \left(1 + \frac{1}{n_{x}+\alpha_{x}}\right)^{n_{x}+\alpha_{x}}= \left(1 + \frac{1}{n_{x}+\alpha_{x}}\right)^{n_{x}} \left(1 + \frac{1}{n_{x}+\alpha_{x}}\right)^{\alpha_{x}}.\]
+Vamos a ver que $\displaystyle \left(1 + \frac{1}{n_{x}+\alpha_{x}}\right)^{\alpha_{x}} \to 1 $. Tenemos que
+\[1 \leq \left(1 + \frac{1}{n_{x}+\alpha_{x}}\right)^{\alpha_{x}}\leq \underbrace{ 1 + \frac{1}{n_{x}+\alpha_{x}}}_{\to1} .\]
+Ahora vamos a ver que $\displaystyle \lim_{x \to \infty}\left(1+\frac{1}{n_{x}+\alpha_{x}}\right)=e $. Tenemos que 
+\[\left(1+\frac{1}{n_{x}+1}\right)^{n_{x}}\leq\left(1 + \frac{1}{n_{x}+\alpha_{x}}\right)^{n_{x}} \leq \underbrace{\left(1 + \frac{1}{n_{x}}\right)^{n_{x}}}_{\to e} .\]
+El término de la izquierda lo cogemos y lo multiplicamos y dividimos por $\displaystyle \left(1+\frac{1}{n_{x}+1}\right) \to 1 $. Así,
+\[\left(1+\frac{1}{n_{x}+1}\right)^{n_{x}} = \left(1 + \frac{1}{n_{x}+1}\right)^{n_{x}+1}\left(1+\frac{1}{n_{x}+1}\right)^{-1} \to e .\]
+Así, $\displaystyle \left(1+\frac{1}{n_{x}+\alpha_{x}}\right)^{n_{x}} \to e $, por lo que el límite original converge a $\displaystyle e $.
+\end{eg}
+
+\begin{eg}
+\normalfont Si $\displaystyle g\left(x\right) \to \infty $ cuando $\displaystyle x \to \infty $ y $\displaystyle f\left(x\right) \to l $ si $\displaystyle x \to \infty $, entonces $\displaystyle \left(f \circ g\right)\left(x\right) \to l $. \\
+Sabemos que $\displaystyle \forall C > 0, \; \exists K > 0 $ tal que $\displaystyle \forall x > K $, $\displaystyle g\left(x\right) > C $. Similarmente, tenemos que $\displaystyle \forall \epsilon > 0, \; \exists K > 0 $ tal que si $\displaystyle x > K $ entonces $\displaystyle \left|f\left(x\right)-l\right|<\epsilon  $. Sea $\displaystyle \epsilon > 0 $, existe $\displaystyle K > 0 $ tal que cumpla los requisitos de la convergencia de $\displaystyle f $. Ahora, puedo encontrar $\displaystyle K' > 0 $ tal que si $\displaystyle x > K' $, entonces $\displaystyle g\left(x\right) > K $. Así, $\displaystyle \left|f\left(g\left(x\right)\right)-l\right|<\epsilon  $.
+\end{eg}
+\begin{fcolorary}[]
+\normalfont Sea $\displaystyle g\left(x\right) \to \infty $ cuando $\displaystyle x \to \infty $. Tenemos que $\displaystyle \lim_{x \to \infty}\left(1+\frac{1}{g\left(x\right)}\right)^{g\left(x\right)}=e. $ 
+\end{fcolorary}
+
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle A\subset\R $, $\displaystyle f, g : A \to \R $, $\displaystyle \left(a, \infty\right)\subset A $. Supongamos que $\displaystyle g\left(x\right) \neq 0 $, $\displaystyle \forall x > a $ y existe $\displaystyle L \in \R $, $\displaystyle L\neq 0 $ tal que $\displaystyle \lim_{x \to \infty}\frac{f\left(x\right)}{g\left(x\right)} = L$. Entonces
+\begin{itemize}
+\item Si $\displaystyle L > 0 $: si $\displaystyle x \to \infty $, $\displaystyle f\left(x\right) \to \infty \iff g\left(x\right) \to \infty $.
+\item Si $\displaystyle L < 0 $: si $\displaystyle x \to \infty $, $\displaystyle f\left(x\right) \to \pm \infty \iff g\left(x\right) \to \mp \infty $.
+\end{itemize}
+\end{ftheorem}
+
+\begin{proof}
+Supongamos que $\displaystyle L > 0 $ y que $\displaystyle \lim_{x \to \infty}f\left(x\right) = \infty $. Queremos ver que $\displaystyle \forall C > 0, \; \exists K > 0 $ tal que si $\displaystyle x > K $ entonces $\displaystyle f\left(x\right) > C $. Sabemos que $\displaystyle \forall C' > 0, \; \exists K' > 0 $ tal que si $\displaystyle x > K' $ entonces $\displaystyle f\left(x\right) > C' $. Similarmente, $\displaystyle \forall \epsilon > 0, \; \exists K'' > 0 $ tal que si $\displaystyle x > K'' $ entonces $\displaystyle \left|\frac{f\left(x\right)}{g\left(x\right)}-l\right|<\epsilon  $. Entonces, cogemos $\displaystyle \epsilon = \frac{L}{2} $,
+\[ \frac{L}{2}g\left(x\right)< f\left(x\right) < \frac{3}{2}Lg\left(x\right)  .\]
+Sea $\displaystyle C' = \frac{3CL}{2} > 0 $, entonces existe $\displaystyle K'>0 $ tal que si $\displaystyle x > K $, entonces $\displaystyle f\left(x\right) > C $. Sea $\displaystyle K = \max \left\{ K', K''\right\}  $, entonces si $\displaystyle x > K $ 
+\[ g\left(x\right) > \frac{2C'}{3L} = C.\]
+\end{proof}
+
+\begin{eg}
+\normalfont $\displaystyle \lim_{x \to \infty}\left(3x^{2}+x+1\right) $. Tenemos que 
+\[\lim_{x \to \infty}\frac{3x^{2}+x+1}{x^{2}} = 3 > 0 .\]
+Como $\displaystyle x^{2} \to \infty $, tenemos que $\displaystyle 3x^{2}+x+1 \to \infty$. 
+\end{eg}
+
+\begin{eg}
+\normalfont Demostrar que existe $\displaystyle f : \left(-1,1\right) \to \R $ tal que $\displaystyle \exists \lim_{x \to 0^{+}}f\left(x\right) $ y no existe $\displaystyle \lim_{x \to 0^{-}}f\left(x\right) $. Consideremso 
+\[f\left(x\right) = 
+\begin{cases}
+\sin\frac{1}{x}, \; x \in \left(-1,0\right) \\
+0, \; x \in [0,1)
+\end{cases}
+.\]
+Tenemos que el límite por la izquierda no existe pues podemos coger dos subsucesiones convergentes a 0 cuyas imágenes converjan a cosas distintas. Por ejemplo, 
+\[x_{n} = \frac{-1}{\frac{\pi }{2}+2n\pi } \to 0 \quad \text{y} \quad f\left(x_{n}\right) = 1 \to 1 .\]
+\[y_{n} = \frac{-1}{\frac{3\pi }{2} + 2n\pi } \to 0 \quad \text{y} \quad f\left(y_{n}\right) = - 1 \to - 1.\]
+\end{eg}
+
+\begin{eg}
+\normalfont Sea $\displaystyle x_{n} > 0 $ con $\displaystyle x_{n} \to 0 $. Esta sucesión no tiene por qué ser decreciente pues puede dar saltitos. Considera la sucesión
+\[x_{n} = \frac{1}{2}, \frac{2}{2}, \frac{1}{3}, \frac{2}{3}, \frac{1}{4}, \frac{2}{4}, \ldots.\]
+\end{eg}
+
+\begin{fprop}[]
+\normalfont Tenemos que $\displaystyle x_{n} \to l  $ si y solo si la subsucesión de los pares y la de los impares convergen al mismo límite.
+\end{fprop}
+
+\begin{proof}
+\begin{description}
+\item[(i)] La primera implicación es trivial, pues si $\displaystyle \lim_{n \to \infty}x_{n} = l $ cualquier subsucesión converge al mismo límite.
+\item[(ii)] Sea $\displaystyle \epsilon > 0 $, entonces existe $\displaystyle n_{1} \in \N $ tal que si $\displaystyle n \geq n_{1} $, $\displaystyle \left|x_{2n}-l\right|<\epsilon  $. Similarmente, existe $\displaystyle n_{2} \in \N $ tal que si $\displaystyle n \geq n_{2} $, $\displaystyle \left|x_{2n-1}-l\right|<\epsilon  $. Sea $\displaystyle n_{0} = \max \left\{ n_{1}, n_{2}\right\}  $. Si $\displaystyle  n\geq n_{0} $, 
+	\[
+	\begin{split}
+	\left|x_{2n}-l\right|<\epsilon \\
+	\left|x_{2n-1}-l\right|<\epsilon.
+	\end{split}
+	\]
+	Entonces, $\displaystyle x_{n}\to l $.
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont Este criterio se puede extender a cualquier partición de $\displaystyle \N $.
+\end{observation}
+
+\begin{eg}
+\normalfont Calcular $\displaystyle \sum^{\infty}_{j = 1}\frac{j}{2^{j}} $. Aplicando el criterio del cociente
+\[\frac{j+1}{2^{n+1}}\frac{2^{n}}{j} \to \frac{1}{2} < 1 .\]
+Por lo que converge. Tenemos que
+\[
+\begin{split}
+\sum^{n}_{j=1}\frac{j}{2^{j}} = \sum^{n}_{j=1}\left(\sum^{j}_{k=1}1\right)\frac{1}{2^{j}} = \sum^{n}_{k=1}\left(\sum^{n}_{j=k}\frac{1}{2^{j}}\right) = \sum^{n}_{k=1}2\left(\frac{1}{2^{k}}-\frac{1}{2^{n+1}}\right)  = 2\sum^{n}_{k=1}\frac{1}{2^{k}}-2\frac{n}{2^{n+1}} \to 2.
+\end{split}
+\]
+
+\end{eg}
+
+
 
