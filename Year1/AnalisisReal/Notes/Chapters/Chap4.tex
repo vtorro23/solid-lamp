@@ -1,0 +1,26 @@
+\chapter{Funciones continuas}
+\begin{fdefinition}[Continuidad]
+\normalfont Dada $\displaystyle f : A \subset \R \to \R $,  y $\displaystyle c \in \dom\left(f\right) $, se dice que $\displaystyle f $ es \textbf{continua} en $\displaystyle c $ si se verifican los siguientes enunciados equivalentes:
+\begin{itemize}
+\item $\displaystyle \forall \epsilon > 0, \exists \delta > 0 $ tal que si $\displaystyle 0 \leq \left|x - c\right|<\delta $, entonces $\displaystyle \left|f\left(x\right)-f\left(c\right)\right| < \epsilon  $.
+\item $\displaystyle \forall \left\{ x_{n}\right\} _{n\in \N} \subset A $ con $\displaystyle x_{n} \to c $ se tiene que $\displaystyle f\left(x_{n}\right) \to f\left(a\right) $.
+\end{itemize}
+\end{fdefinition}
+\footnote{La equivalencia de estas definiciones fue demostrada en el capítulo anterior.} 
+\begin{observation}
+\normalfont Si $\displaystyle c \in \dom\left(f\right) $ es un punto de acumulación, la definición de continuidad es equivalente a que 
+\[\lim_{x \to c}f\left(x\right) = f\left(c\right) .\]
+Si $\displaystyle c \in \dom\left(f\right) $ no fuera un punto de acumulación, entonces resulta trivial que $\displaystyle f $ es continua en $\displaystyle c $. 
+\end{observation}
+La continuidad es una propiedad local de las funciones, es decir, se debe comprobar punto a punto.
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle f : A \subset \R \to \R $ y $\displaystyle B \subset A $. Se dice que $\displaystyle f $ es continua en $\displaystyle B $ si es continua en todos los puntos de $\displaystyle B $.
+\end{fdefinition}
+\begin{eg}
+\normalfont 
+\begin{itemize}
+\item La función constante $\displaystyle f\left(x\right) = a $ es continua en todo $\displaystyle \R $. Pues, cogemos $\displaystyle \forall x,y \in \R $, se tiene que $\displaystyle \left|f\left(x\right)-f\left(y\right)\right| = \left|a - a\right| = 0 < \epsilon, \forall \epsilon > 0 $.
+\item La función identidad $\displaystyle f\left(x\right) = x $ también es continua en todo $\displaystyle \R $. En efecto, si tomamos $\displaystyle \delta = \epsilon  $, tenemos que si $\displaystyle \left|x - c\right| < \delta  $, $\displaystyle \left|f\left(x\right)-f\left(c\right)\right| = \left|x - c\right| < \epsilon  $.
+\end{itemize}
+\end{eg}
+

@@ -1,0 +1,298 @@
+\chapter{Forma de Jordan}
+Sea $\displaystyle f : V \to V' $ lineal. Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ y $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{m}\right\}  $ son bases de $\displaystyle V $ y $\displaystyle V' $, respectivamente, tenemos que $\displaystyle A =\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\} }\left(f\right) \in \mathcal{M}_{m \times n} \left(\K\right) $. Si $\displaystyle \left\{ \vec{u'}_{1}, \ldots, \vec{u'}_{n}\right\}  $, $\displaystyle \left\{ \vec{v'}_{1}, \ldots, \vec{v'}_{m}\right\}  $ son bases de $\displaystyle V $ y $\displaystyle V' $, respectivamente, con $\displaystyle B =\mathcal{M}_{ \left\{ \vec{u'}_{i}\right\} \left\{ \vec{v'}_{j}\right\} }\left(f\right) $, tenemos que
+\[
+\begin{split}
+	& \begin{pmatrix} \vec{u'}_{1} & \ldots & \vec{u'}_{n} \end{pmatrix} = \begin{pmatrix} \vec{u}_{1} & \ldots & \vec{u}_{n} \end{pmatrix} C, \; C \in \GL\left(n, \K\right) \\
+	& \begin{pmatrix} \vec{v'}_{1} & \ldots & \vec{v'}_{m} \end{pmatrix} = \begin{pmatrix} \vec{v}_{1} & \ldots & \vec{v}_{m} \end{pmatrix} D, \; D \in \GL\left(m, \K\right).
+\end{split}
+\]
+Entonces, tenemos el siguiente diagrama. 
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{~/Desktop/Images/diagonalizacion1.png}
+\caption{Semejanza de matrices}
+\label{ }
+\end{figure}
+De aquí se deduce que $\displaystyle f = id _{V'} \circ f \circ id _{V} $, que es lo mismo que
+\[B = D^{-1}AC .\]
+\begin{fdefinition}[]
+	\normalfont Dos matrices $\displaystyle A,B \in \mathcal{M}_{m \times n}\left(\K\right) $ son equivalentes si existe $\displaystyle C \in \GL\left(n, \K\right) $, $\displaystyle D \in \GL\left(m, \K\right) $ tales que $\displaystyle D^{-1}AC = B $.
+\end{fdefinition}
+
+\begin{observation}
+\normalfont Esta es una relación de equivalencia en el cojunto de matrices $\displaystyle \mathcal{M}_{m \times n}\left(\K\right) $. En concreto las matrices equivalentes tienen el mismo rango.
+\end{observation}
+
+\begin{observation}
+\normalfont Revisar el último ejercicio de aplicaciones lineales.
+\end{observation}
+
+\begin{observation}
+\normalfont Si $\displaystyle f \in \End\left(V\right) $, tenemos que $\displaystyle C = D $, por lo que $\displaystyle B = C^{-1}AC $.
+\end{observation}
+
+\begin{fdefinition}[]
+\normalfont Dos matrices $\displaystyle A, B \in \mathcal{M}_{n \times n}\left(\K\right) $ son semejantes si existe $\displaystyle C \in \GL\left(n, \K\right) $ tal que $\displaystyle B = C^{-1}AC $.
+\end{fdefinition}
+
+\begin{fdefinition}[]
+	\normalfont El vector $\displaystyle \vec{x} \in V $ es un \textbf{vector propio} de $\displaystyle f \in \End\left(V\right) $ si existe $\displaystyle \lambda \in \K $ tal que $\displaystyle f\left(\vec{x}\right) = \lambda \vec{x} $. Similarmente, se dice que $\displaystyle \lambda \in \K $ es un \textbf{valor propio} de $\displaystyle f $ si $\displaystyle \exists \vec{x} \in V/ \left\{ \vec{0}\right\}  $ tal que $\displaystyle f\left(\vec{x}\right) = \lambda \vec{x} $.
+\end{fdefinition}
+
+Si $\displaystyle \left\{ \vec{x}_{1}, \ldots, \vec{x}_{n}\right\}  $ es base de $\displaystyle V $ formada por vectores propios de $\displaystyle f $
+\[f\left(\vec{x}_{i}\right) = \lambda_{i}\vec{x}_{i} .\]
+
+\begin{eg}
+\normalfont No siempre existen los valores propios. Por ejemplo, consideremos la aplicación dada por la matriz
+\[\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix}  = \lambda\begin{pmatrix} x \\ y \end{pmatrix}.\]
+A partir de un sistema de ecuaciones obtenemos que $\displaystyle \lambda^{2} = -1 $. Si $\displaystyle \K = \R $, esta aplicación no tendría valores propios. Si $\displaystyle \K = \C $, sí que los tendría.
+\end{eg}
+
+\section{Polinomios}
+
+\begin{fdefinition}[]
+\normalfont Una \textbf{sucesión} definida en $\displaystyle \K $ es una aplicación $\displaystyle a\left(x\right) : \N \to \K $ tal que $\displaystyle n \to a_{n} $. Diremos que $\displaystyle a\left(x\right) = \left(a_{0}, a_{1}, \ldots, a_{n}, \ldots\right) $. Un \textbf{polinomio} con coeficientes en $\displaystyle \K $ es una sucesión $\displaystyle a\left(x\right) = \left(a_{0}, \ldots, a_{n}, \ldots\right) $ tal que existe $\displaystyle a_{m} \neq 0 $ y $\displaystyle a_{k} = 0, \; \forall k > m $. Diremos que $\displaystyle m $ es el \textbf{grado} del polinomio $\displaystyle a\left(x\right) $.
+\end{fdefinition}
+
+\begin{observation}
+\normalfont Por esta definición, el polinomio $\displaystyle 0 = \left(0, \ldots, 0, \ldots\right) $ no tiene grado.
+\end{observation}
+Sea $\displaystyle \K[x] = \left\{ a\left(x\right) \; : \; a\left(x\right) \; \text{polinomio con coeficientes en } \; \K\right\}  $. Así, definimos la suma de polinomios
+\[a\left(x\right) + b\left(x\right) = \left(a_{0}+b_{0}, a_{1}+b_{1}, \ldots, a_{n}+b_{n}, \ldots\right) .\]
+\begin{observation}
+	\normalfont Tenemos que con esta suma, $\displaystyle \K[x] $ es un grupo abeliano. 
+\end{observation}
+Ahora definimos el producto de polinomios:
+\[a\left(x\right) \cdot b\left(x\right) = \left(\underbrace{a_{0}b_{0}}_{c_{0}}, \underbrace{a_{1}b_{0} + a_{0}b_{1}}_{c_{1}}, \ldots, c_{n} = \sum_{i + j = n}a_{i}b_{j}, \ldots\right) .\]
+\begin{observation}
+	\normalfont Tenemos que con este producto, $\displaystyle \left( \K[x], + , \cdot\right) $ es un anillo conmutativo con unidad. La unidad será $\displaystyle \left(1, 0, \ldots, 0, \ldots\right) $.  \end{observation}
+\begin{observation}
+\normalfont Se deduce fácilmente que
+\begin{itemize}
+\item  $\displaystyle \grad\left(a\left(x\right) + b\left(x\right)\right) \leq \max\left(\grad\left(a\left(x\right)\right), \grad\left(b\left(x\right)\right)\right) $ 
+\item $\displaystyle \grad\left(a\left(x\right) \cdot b\left(x\right)\right) = \grad\left(a\left(x\right)\right) + \grad\left(b\left(x\right)\right) $.
+\end{itemize}
+\end{observation}
+
+\begin{fprop}[]
+\normalfont A partir de la segunda igualdad tenemos que
+\begin{description}
+\item[(a)] Si $\displaystyle a\left(x\right) \cdot b\left(x\right) = 0 $, $\displaystyle a\left(x\right) = 0 $ o $\displaystyle b\left(x\right)=0 $.
+\item[(b)] Si $\displaystyle a\left(x\right) \cdot b\left(x\right) = a\left(x\right) \cdot c\left(x\right) \neq 0 $, entonces $\displaystyle b\left(x\right) = c\left(x\right) $.
+\item[(c)] Los únicos elementos invertibles de $\displaystyle \K[x] $ son los de grado 0.
+\end{description}
+\end{fprop}
+Podemos definir el producto por escalares:
+\[
+\begin{split}
+	\cdot : \K \times \K[x] & \to \K[x] \\
+	\left(a, \left(a_{0}, \ldots, a_{n}, \ldots\right)\right) & \to \left(a a_{0}, \ldots, a a_{n}, \ldots\right).
+\end{split}
+\]
+\begin{observation}
+\normalfont 
+Así, $\displaystyle \K[x] $ es un $\displaystyle \K $-espacio vectorial. 
+\end{observation}
+Esto nos permite escribir
+\[
+\begin{split}
+	a\left(x\right) = & \left(a_{0}, a_{1}, \ldots, a_{n}, \ldots\right) \\
+	= & a_{0}\left(1, 0, \ldots, 0, \ldots\right) + a_{1} \left(0, 1, \ldots, 0, \ldots\right) + \cdots + a_{n}\left(0, \ldots, 1, \ldots\right) + \cdots .
+\end{split}
+\]
+Así, definimos
+\[
+\begin{split}
+& x = \left(0, 1, \ldots, 0, \ldots\right) \\
+& x^{2} = \left(0, 0, 1, \ldots, 0, \ldots\right) \\
+& x^{3} = \left(0, 1, \ldots, 0, \ldots\right) \cdot  \left(0, 0, 1, \ldots, 0, \ldots\right) = \left(0, 0, 0, 1, \ldots, 0, \ldots\right)
+\end{split}
+\]
+Supongamos que $\displaystyle x^{k -1} = \left(0, 0, \ldots, 1, \ldots , 0, \ldots\right) $. Así, para $\displaystyle x^{k} $,
+\[x^{k} = \left(0, 1, \ldots, 0, \ldots\right) \cdot \left(0, 0, \ldots, 1, \ldots, 0, \ldots\right) .\]
+Así, tenemos que si $\displaystyle a\left(x\right) \in \K[x] $,
+\[a\left(x\right) = \left(a_{0},0, \ldots, 0, \ldots\right) + a_{1}x + a_{2}x^{2} + \cdots + a_{n}x^{n} .\]
+Si a cada $\displaystyle a \in \K $ le hacemos corresponder el polinomio $\displaystyle \left(a, 0, \ldots, 0, \ldots\right) $, obtenemos una aplicación inyectiva $\displaystyle \K \to \K[x] $ que conserva las operaciones anteriores. Así, podemos sustituir $\displaystyle \left(a_{0}, 0, \ldots, 0, \ldots\right) $ por $\displaystyle a_{0} $. 
+\begin{ftheorem}[]
+	\normalfont Sean $\displaystyle a\left(x\right), b\left(x\right) \in \K[x]/ \left\{ 0\right\}  $, entonces $\displaystyle \exists!p\left(x\right), r\left(x\right) \in \K[x] $ tales que $\displaystyle a\left(x\right) = b\left(x\right)p\left(x\right)+r\left(x\right) $. Además, $\displaystyle \grad\left(r\left(x\right)\right) < \grad\left(b\left(x\right)\right) $ o $\displaystyle r\left(x\right) = 0 $. 
+\end{ftheorem}
+\begin{proof}
+Si $\displaystyle \grad\left(a\left(x\right)\right) < \grad\left(b\left(x\right)\right) $ tomamos $\displaystyle p\left(x\right) = 0 $ y $\displaystyle r\left(x\right) = a\left(x\right) $. Supongamos que $\displaystyle \grad\left(a\left(x\right)\right) \geq \grad\left(b\left(x\right)\right) $, entonces
+\[
+\begin{split}
+& a\left(x\right) = a_{0} + a_{1}x + \cdots + a_{n}x^{n}, \; a_{n} \neq 0\\
+& b\left(x\right) = b_{0} + b_{1}x + \cdots + b_{m}x^{m}, \; b_{m} \neq 0.
+\end{split}
+\]
+Tenemos que 
+\[a\left(x\right)-b\left(x\right)\frac{a_{m}}{b_{m}}\left(x^{n-m}\right) = c_{0} + c_{1}x + \cdots + c_{n_{1}}x^{n_{1}}, \; n_{1}\geq n .\]
+Si $\displaystyle n_{1} < m $,
+\[a\left(x\right) = b\left(x\right) \underbrace{\left(\frac{a_{m}}{b_{m}}\left(x^{m -n}\right)\right)}_{p\left(x\right)} + \underbrace{c\left(x\right)}_{r\left(x\right)} .\]
+Si $\displaystyle n_{1} \geq m $, 
+\[ c\left(x\right) - \frac{c_{n_{1}}}{b_{m}}\left(x^{n_{1}-m}\right) = d _{0} + d _{1}x + \cdots d _{n_{2}}x^{n_{2}}, \; n_{2} < n_{1} < n .\]
+Si $\displaystyle n_{2} < m $,
+\[a\left(x\right) = b\left(x\right)\left(\frac{a_{n}}{b_{m}}x^{n - m} + \frac{c_{n_{1}}}{b_{m}}x^{n_{1}-m}\right) + d _{n_{2}}x^{n_{2}} .\]
+Si $\displaystyle n_{2} \geq m $, $\displaystyle n_{2} < n_{1} < n $ y repetimos el paso anterior. Ahora demostramos la unicidad, $\displaystyle a\left(x\right) = b\left(x\right) p\left(x\right) + r\left(x\right) $ con $\displaystyle \grad\left(r\left(x\right)\right) < \grad\left(b\left(x\right)\right) $ o $\displaystyle r\left(x\right) = 0 $ y $\displaystyle a\left(x\right) = b\left(x\right) p'\left(x\right) + r'\left(x\right) $ con $\displaystyle \grad\left(r'\left(x\right)\right) < \grad\left(b\left(x\right)\right) $ o $\displaystyle r'\left(x\right) = 0 $. Tenemos que
+\[b\left(x\right) \left(p\left(x\right)-p'\left(x\right)\right) = r'\left(x\right) -r\left(x\right) .\]
+Si $\displaystyle r\left(x\right) \neq r'\left(x\right) $, entonces $\displaystyle \grad\left(r\left(x\right)-r'\left(x\right)\right) < \grad\left(b\left(x\right)\right) $. Así, $\displaystyle \grad\left(b\left(x\right)\left(p\left(x\right)-p'\left(x\right)\right)\right) < \grad\left(b\left(x\right)\right) $. Sin embargo, tenemos que $\displaystyle \grad\left(b\left(x\right)\left(p\left(x\right)-p'\left(x\right)\right)\right) \geq \grad\left(b\left(x\right)\right) $. Esto es una contradicción, por lo que debe ser que $\displaystyle p\left(x\right) = p'\left(x\right) $ y $\displaystyle r\left(x\right) = r'\left(x\right) $.
+\end{proof}
+
+\begin{fdefinition}[]
+\normalfont Decimos que $\displaystyle p\left(x\right) $ es el \textbf{cociente} de la división de $\displaystyle a\left(x\right) $ entre $\displaystyle b\left(x\right) $ y $\displaystyle r\left(x\right) $ es el \textbf{resto}.
+\end{fdefinition}
+
+\begin{fdefinition}[]
+\normalfont Si $\displaystyle r\left(x\right) = 0 $, decimos que $\displaystyle a\left(x\right) $ es múltiplo de $\displaystyle b\left(x\right) $ o que $\displaystyle b\left(x\right) $ divide a $\displaystyle a\left(x\right) $. Esto se escribe $\displaystyle b\left(x\right) | a\left(x\right) $.
+\end{fdefinition}
+
+\begin{fdefinition}[Ideal]
+	\normalfont Un \textbf{ideal} $\displaystyle I $ de $\displaystyle \K[x] $ es un conjunto $\displaystyle I \neq \emptyset $ y $\displaystyle I \subset \K[x] $, que verifica que
+	\begin{description}
+	\item[(a)] Si $\displaystyle a\left(x\right), b\left(x\right) \in I $, $\displaystyle a\left(x\right)+b\left(x\right)\in I $.
+	\item[(b)] Si $\displaystyle a\left(x\right) \in I $ y $\displaystyle p\left(x\right) \in \K[x] $, tenemos que $\displaystyle p\left(x\right)a\left(x\right) \in I $.
+	\end{description}
+\end{fdefinition}
+
+\begin{observation}
+\normalfont 
+Dado $\displaystyle b\left(x\right) \in \K[x] $ y sea $\displaystyle \left(b\left(x\right)\right) = \left\{ p\left(x\right)b\left(x\right)\; : \; p\left(x\right) \in \K[x]\right\}  $. Tenemos que este conjunto es un ideal. 
+\end{observation}
+\begin{fprop}[]
+	\normalfont Sea $\displaystyle I \subset \K[x] $ un ideal. Entonces, $\displaystyle \exists! b\left(x\right) \in I $ mónico, tal que $\displaystyle I = \left(b\left(x\right)\right) $.
+\end{fprop}
+\begin{proof}
+	Si $\displaystyle I = \left\{ 0\right\}  $, entonces $\displaystyle \left(0\right) = I $. Si $\displaystyle I \neq \left\{ 0\right\}  $, sea $\displaystyle b\left(x\right) \in I $ un polinomio de menor grado entre los polinomios de $\displaystyle I $. Tenemos que $\displaystyle \left(b\left(x\right)\right) \subset I $ por las propiedades del ideal. Si $\displaystyle a\left(x\right) \in I $, tenemos que existen $\displaystyle p\left(x\right), r\left(x\right) \in \K[x] $ tales que
+	\[a\left(x\right) = b\left(x\right) p\left(x\right) + r\left(x\right) .\]
+Entonces, $\displaystyle r\left(x\right) = a\left(x\right)-b\left(x\right)p\left(x\right) \in I $. Como $\displaystyle \grad\left(r\left(x\right)\right) < \grad\left(b\left(x\right)\right) $ y $\displaystyle r\left(x\right) \in I $, tenemos que $\displaystyle r\left(x\right) = 0 $.	
+\end{proof}
+
+\begin{fdefinition}[]
+	\normalfont Se dice que $\displaystyle p\left(x\right) \in \K[x] $ es \textbf{mónico} si su coeficiente de mayor grado es 1.
+\end{fdefinition}
+
+\begin{observation}
+\normalfont 
+\begin{description}
+	\item[(i)] $\displaystyle \forall k \in \K/ \left\{ 0\right\}  $, $\displaystyle \left(b\left(x\right)\right) = \left(k b\left(x\right)\right) $.
+	\item[(ii)]  $\displaystyle a\left(x\right) \in \left(a\left(x\right)\right) \subset \left(b\left(x\right)\right) $  $\displaystyle \iff $ $\displaystyle b\left(x\right) | a\left(x\right) $.
+\end{description}
+\end{observation}
+
+\begin{fprop}[]
+\normalfont Sean $\displaystyle I_{1}, \ldots, I_{i} $ ideales de $\displaystyle \K[x] $ donde $\displaystyle i \in X $, entonces $\displaystyle \bigcap_{i \in X}I_{i}  $ también es ideal.
+\end{fprop}
+
+\begin{proof}
+Si $\displaystyle a\left(x\right),b\left(x\right) \in \bigcap_{i \in X}I_{i} $, entonces $\displaystyle \forall i \in X $, $\displaystyle a\left(x\right), b\left(x\right) \in I_{i} $. Así, $ \displaystyle \forall i \in X, \; a\left(x\right) + b\left(x\right) \in I_{i} $, de esta manera $ \displaystyle a\left(x\right) + b\left(x\right) \in \bigcap_{i \in X}I_{i}$
+Similarmente, si $\displaystyle p\left(x\right)\in \K[x] $ y $\displaystyle a\left(x\right) \in \bigcap_{i \in X}I_{i} $, tenemos que $\displaystyle \forall i \in X, \; p\left(x\right)a\left(x\right) \in I_{i} $. Así, $\displaystyle p\left(x\right)a\left(x\right) \in \bigcap_{i \in X}I_{i} $.
+\end{proof}
+Sean $\displaystyle a_{1}\left(x\right), \ldots, a_{p}\left(x\right) \in \K[x]$. Entonces tenemos que 
+\[\left(a_{1}\left(x\right)\right) \cap \left(a_{2}\left(x\right)\right) \cap\cdots \cap \left(a_{p}\left(x\right)\right) ,\]
+es un ideal. Por tanto, $\displaystyle \exists!\left(m\left(x\right)\right) $ mónico tal que $\displaystyle \left(a_{1}\left(x\right)\right) \cap \left(a_{2}\left(x\right)\right) \cap\cdots \cap \left(a_{p}\left(x\right)\right) = \left(m\left(x\right)\right) $. 
+\begin{fdefinition}[Mínimo común múltiplo]
+\normalfont Decimos que $\displaystyle m\left(x\right) $ es \textbf{mínimo común múltiplo} de $\displaystyle a_{1}\left(x\right), \ldots, a_{p}\left(x\right) $.
+\end{fdefinition}
+Dados $\displaystyle a_{1}\left(x\right), \ldots, a_{q} \left(x\right) \in \K[x]$, sea 
+\[I = \left\{ p_{1}\left(x\right)a_{1}\left(x\right) + \cdots + p_{q}\left(x\right)a_{q}\left(x\right) \; : \; p_{1}\left(x\right), \ldots, p_{q}\left(x\right) \in \K[x]\right\}  .\]
+Tenemos que $\displaystyle I $ es un ideal de $\displaystyle \K[x] $. Así, $\displaystyle \exists !d\left(x\right) \in \K[x] $ mónico tal que $\displaystyle I = \left(d\left(x\right)\right) $. Así, $\displaystyle \left(a_{1}\left(x\right)\right), \ldots, \left(a_{q}\left(x\right)\right) \subset \left(d\left(x\right)\right) $. De esta manera tenemos que $\displaystyle \forall i = 1, \ldots , q $, $\displaystyle d\left(x\right) | a_{i}\left(x\right) $. 
+Si $\displaystyle q\left(x\right) \in \K[x] $ tal que $\displaystyle \forall i = 1, \ldots, q $, $\displaystyle q\left(x\right) | a_{i}\left(x\right) $, tenemos que $\displaystyle q\left(x\right) | d\left(x\right) $. 
+\begin{fdefinition}[Máximo común divisor]
+\normalfont Se dice que $\displaystyle d\left(x\right) $ es el \textbf{máximo común divisor}.
+\end{fdefinition}
+\begin{fdefinition}[]
+	\normalfont Si $\displaystyle a\left(x\right), b\left(x\right) \in \K[x] $ son \textbf{primos entre sí} si su máximo común divisor es 1. 
+\end{fdefinition}
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle \mcd\left(a\left(x\right), b\left(x\right)\right) = 1 $ y $\displaystyle a\left(x\right) | c\left(x\right)b\left(x\right) $, entonces $\displaystyle a\left(x\right) | c\left(x\right) $.
+\end{ftheorem}
+\begin{proof}
+	Tenemos que $\displaystyle \exists p\left(x\right), q\left(x\right) \in \K[x] $ tales que $\displaystyle 1 = p\left(x\right)a\left(x\right) + q\left(x\right)b\left(x\right) $. Así, 
+	\[c\left(x\right) = c\left(x\right)p\left(x\right)a\left(x\right) + c\left(x\right)q\left(x\right)b\left(x\right) \subset \left(a\left(x\right)\right).\]
+\end{proof}
+\begin{fdefinition}[]
+	\normalfont Un polinomio $\displaystyle a\left(x\right) \in \K\left[x\right] $ es \textbf{irreducible} si sus únicos divisores sean $\displaystyle k $ o $\displaystyle ka\left(x\right) $, donde $\displaystyle k \in \K/ \left\{ 0\right\}  $.
+\end{fdefinition}
+\begin{ftheorem}[]
+\normalfont Todo polinomio de grado mayor o igual que 1 es producto de polinomios irreducibles.
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle a\left(x\right) \in \K[x] $. Si $\displaystyle a\left(x\right) $ es irreducible, tenemos que $\displaystyle a\left(x\right) = a\left(x\right) \cdot 1 $. Si $\displaystyle a\left(x\right) $ no es irreducilbe, tenemos que $\displaystyle \exists p_{1}\left(x\right) \in \K[x] $ tal que $\displaystyle p_{1}\left(x\right) | a\left(x\right) $ de grado mínimo entre los divisores de $\displaystyle a\left(x\right) $. Así, $\displaystyle a\left(x\right) = p_{1}\left(x\right)a_{1}\left(x\right) $. Tenemos que $\displaystyle p_{1}\left(x\right) $ es irreducible. Si $\displaystyle a_{1}\left(x\right) $ es irreducible, hemos ganado.
+	Si $\displaystyle a_{1}\left(x\right) $ no es irreducible, tenemos que $\displaystyle \exists p_{2}\left(x\right) \in \K[x] $ tal que $\displaystyle p_{2}\left(x\right) | a_{1}\left(x\right) $ de grado mínimo entre los polinomios que dividen $\displaystyle a_{1}\left(x\right) $. Tenemos que $\displaystyle p_{2}\left(x\right) $ es irreducible. Así, $\displaystyle a_{1}\left(x\right) = p_{2}\left(x\right)a_{2}\left(x\right) $, así $\displaystyle a\left(x\right) = p_{1}\left(x\right)p_{2}\left(x\right)a_{2}\left(x\right) $.
+Después de $\displaystyle n $ etapas, tenemos que $\displaystyle a\left(x\right) = p_{1}\left(x\right)p_{2}\left(x\right) \cdots p_{n}\left(x\right)a_{n}\left(x\right) $.
+\end{proof}
+\begin{fprop}[]
+\normalfont Sea $\displaystyle p\left(x\right) = p_{1}\left(x\right) \cdots p_{n}\left(x\right) = q_{1}\left(x\right) \cdots q_{m}\left(x\right)$, donde $\displaystyle p_{i}\left(x\right), q_{j}\left(x\right) $ son irreducibles. Entonces, tenemos que $\displaystyle n = m $ y los polinomios $\displaystyle p_{i}\left(x\right), q_{j}\left(x\right) $ coinciden salvo en orden y factores escalares.
+\end{fprop}
+\begin{proof}
+Si $\displaystyle n = 1 $, tenemos que $\displaystyle p_{1} = q_{1}\left(x\right) q_{2}\left(x\right) \cdots q_{m}\left(x\right) $. Entonces, si $\displaystyle m \neq 1 $, tenemos que $\displaystyle p_{1}\left(x\right) $ no es irreducible, lo cual es una contradicción. Por tanto, debe ser que $\displaystyle m = 1 $ y $\displaystyle p_{1}\left(x\right) = q_{1}\left(x\right) $. Ahora, asumimos que es cierto para $\displaystyle n - 1 $. Tenemos que
+\[p_{1}\left(x\right) \cdots p_{n}\left(x\right) = q_{1}\left(x\right) \cdots q_{m}\left(x\right) .\]
+Así, $\displaystyle p_{n}\left(x\right) | q_{1}\left(x\right) \cdots q_{m}\left(x\right) $. Así, tenemos que $\displaystyle p_{n}\left(x\right) | q_{1}\left(x\right) $ o $\displaystyle p_{n}\left(x\right) | q_{2}\left(x\right) \cdots q_{m}\left(x\right) $. 
+\begin{itemize}
+	\item En el primer caso, tenemos que $\displaystyle \exists k \in \K/ \left\{ 0\right\}  $ tal que $\displaystyle p_{n}\left(x\right) = kq_{1}\left(x\right) $. Así, $\displaystyle p_{1}\left(x\right) \cdots p_{n-1}\left(x\right) = \frac{1}{k}\left(q_{1}\left(x\right) \cdots q_{m -1}\left(x\right)\right) $. Por hipótesis, tenemos que $\displaystyle n - 1 = m - 1 $ y $\displaystyle p_{i}\left(x\right) = q_{j}\left(x\right) $ salvo escalares no nulos.
+	\item En el segundo caso, tenemos que $\displaystyle p_{n}\left(x\right) | q_{2} \cdots q_{m} $, donde podemos iterar el paso anterior.
+\end{itemize}
+\end{proof}
+Si $\displaystyle p\left(x\right) \in \K[x] $, $\displaystyle p\left(x\right) = a_{0} + a_{1}x + \cdots + a_{n}x^{n} $, definimos la aplicación 
+\[
+\begin{split}
+	p : \K &\to \K \\
+	k &\to p\left(k\right) = a_{0} + a_{1}k + a_{2}k^{2} + \cdots + a_{n}k^{n}.
+\end{split}
+\]
+\begin{fdefinition}[]
+\normalfont Se dice que $\displaystyle k \in \K $ es una \textbf{raíz} de $\displaystyle p\left(x\right) $ si $\displaystyle p\left(k\right) = 0 $.
+\end{fdefinition}
+\begin{fprop}[]
+	\normalfont Sea $\displaystyle p\left(x\right) \in \K[x] $ de grado mayor o igual que 1, entonces $\displaystyle k \in \K $ es una raíz de $\displaystyle p\left(x\right) $ sí y sólo si $\displaystyle \left(x-k\right) | p\left(x\right) $.
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(i)] Sean $\displaystyle p\left(x\right) = q\left(x\right)\left(x-k\right) + r\left(x\right) $, donde $\displaystyle \grad\left(r\left(x\right)\right) < 1 $ o $\displaystyle r\left(x\right) = 0 $. Así, tenemos que si $\displaystyle p\left(k\right) = 0 = q\left(k\right)\left(k-k\right) + r\left(x\right) $, entonces $\displaystyle \left(x-k\right) | p\left(x\right) $. 
+\item[(ii)] Recíprocamente, si $\displaystyle p\left(x\right) = q\left(x\right)\left(x-k\right) $, tenemos que $\displaystyle p\left(k\right) = 0 $. 
+\end{description}
+\end{proof}
+\begin{fdefinition}[]
+	\normalfont Sea $\displaystyle k $ una raíz de $\displaystyle p\left(x\right) \in \K[x] $. Diremos que $\displaystyle k $ es una raíz de $\displaystyle p\left(x\right) $ de orden $\displaystyle r $ si $\displaystyle \left(x -k\right)^{r} | p\left(x\right) $ y $\displaystyle \left(x-k\right)^{r+1} \not | p\left(x\right) $. 
+\end{fdefinition}
+\begin{observation}
+\normalfont La suma de las multiplicidades de las raíces de un polinomio de grado $\displaystyle n $ es menor o igual que $\displaystyle n $.
+\end{observation}
+\section{Reducción de endomorfismos}
+Sea $\displaystyle f\in\End\left(V\right) $. Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $. Tenemos que $\displaystyle \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) = A \in \mathcal{M}_{n \times n}\left(\K\right) $. Si $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\}  $ es otra base de $\displaystyle V $. Sea $\displaystyle \mathcal{M}_{ \left\{ \vec{v}_{i}\right\} \left\{ \vec{v}_{i}\right\} }\left(f\right) = B \in \mathcal{M}_{n \times n}\left(\K\right) $. 
+Tenemos que
+\[ \left(\vec{v}_{1}, \ldots, \vec{v}_{n}\right) = \left(\vec{u}_{1}, \ldots, \vec{u}_{n}\right) C, \; C \in \GL\left(n,\K\right) .\]
+Así, tenemos que $\displaystyle B = C^{-1} A C $.
+\begin{fdefinition}[]
+	\normalfont Dos matrices $\displaystyle A, B \in \mathcal{M}_{n \times n}\left(\K\right) $ son \textbf{semejantes} si existe $\displaystyle C \in \GL\left(n, \K\right) $ tal que $\displaystyle B = C^{-1}AC $.
+\end{fdefinition}
+Sea $\displaystyle f \in \End\left(V\right) $ (o $\displaystyle A \in \mathcal{M}_{n \times n}\left(\K\right) $).
+\begin{fdefinition}[]
+	\normalfont Un vector $\displaystyle \vec{x} \in V $ es un \textbf{vector propio} o \textbf{autovector} de $\displaystyle f $ si existe $\displaystyle \lambda \in \K $ tal que $\displaystyle f\left(\vec{x}\right) = \lambda \vec{x} $. Similarmente, se dice que un escalar $\displaystyle \lambda \in \K $ es un \textbf{valor propio} o \textbf{autovalor} de $\displaystyle f $ si existe $\displaystyle \vec{x} \in V/ \left\{ \vec{0}\right\}  $ tal que $\displaystyle f\left(x\right) = \lambda \vec{x} $.
+\end{fdefinition}
+Sea $\displaystyle \lambda \in \K $ y sea $\displaystyle L_{\lambda } = \left\{ \vec{x} \in V \; : \; f\left(\vec{x}\right) = \lambda\vec{x}\right\} = \Ker\left(f - \lambda id _{V}\right) \in \mathcal{L}\left(V\right)$. Si $\displaystyle \lambda  $ no es valor propio de $\displaystyle f $, tenemos que $\displaystyle L_{\lambda } = \left\{ \vec{0}\right\}  $.
+\begin{observation}
+	\normalfont En las simetrías los únicos autovalores son $\displaystyle \left\{ -1, 1\right\}  $. En efecto, tenemos que $\displaystyle V = \Ker\left(s + id _{V}\right) \oplus \Ker\left(s - id _{V}\right) $.
+\end{observation}
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle \lambda_{1}, \ldots, \lambda_{p} \in \K $ valores propios de $\displaystyle f $ distintos 2 a 2, y sean $\displaystyle \vec{x}_{i} \in L_{\lambda_{i}} / \left\{ \vec{0}\right\}, \forall i = 1, \ldots, p $. Entonces, $\displaystyle \left\{ \vec{x}_{1}, \ldots, \vec{x}_{p}\right\}  $ son linealmente independientes.
+\end{ftheorem}
+\begin{proof}
+	Si $\displaystyle p = 1 $, tenemos que $\displaystyle \vec{x}_{1} \neq \vec{0} $, por lo que $\displaystyle \left\{ \vec{x}_{1}\right\}  $ es linealmente independiente. Ahora, consideremos el caso de $\displaystyle p = 2 $. Sean $\displaystyle a^{1}, a^{2} \in \K $ tales que $\displaystyle a^{1}\vec{x}_{1} + a^{2}\vec{x}_{2} = \vec{0} $. Así, tenemos que
+	\[\vec{0} = f\left(\vec{0}\right) = f\left(a^{1}\vec{x}_{1} + a^{2}\vec{x}_{2}\right) = a^{1}f\left(\vec{x}_{1}\right) + a^{2}f\left(\vec{x}_{2}\right) = a^{1}\lambda_{1}\vec{x}_{1} + a^{2}\lambda_{2}\vec{x}_{2} .\]
+Así, tenemos que
+\[\lambda_{1} \cdot \vec{0} = \lambda_{1}\left(a^{1}\vec{x}_{1} + a^{2}\vec{x}_{2}\right) = a^{1}\lambda_{1}\vec{x}_{1} + a^{2}\lambda_{1}\vec{x}_{2} .\]
+Así, tenemos que
+\[ \vec{0} = \left(a^{1}\lambda_{1} - a^{1}\lambda_{1}\right) \vec{x}_{1} + \left(a^{2}\lambda_{2}-a^{2}\lambda_{2}\right)\vec{x}_{2} \Rightarrow \vec{0} = a^{2}\left(\lambda_{2}-\lambda_{1}\right)\vec{x}_{2} \Rightarrow a^{2} = 0 .\]
+Así, como $\displaystyle a^{1}\vec{x}_{1} = \vec{0} $, tenemos que $\displaystyle a^{1} = 0 $. Ahora, asumimos que es cierto para $\displaystyle p - 1 $. En el caso de $\displaystyle p $, sean $\displaystyle \left\{ a^{1}, \ldots, a^{p}\right\} \subset \K $ tales que $\displaystyle a^{1}\vec{x}_{1} + \cdots + a^{p}\vec{x}_{p} = \vec{0} $. Tenemos que
+\[\vec{0} = \lambda_{1} \vec{0} = \lambda_{1}a^{1}\vec{x}_{1} + \cdots + \lambda_{1}a^{p}\vec{x}_{p} .\]
+Por otro lado tenemos que
+\[\vec{0} = f\left(\vec{0}\right) = a^{1}\lambda_{1}\vec{x}_{1} + \cdots + a^{p}\lambda_{p}\vec{x}_{p} = a^{2}\left(\lambda_{2}-\lambda_{1}\right)\vec{x}_{2} + \cdots + a^{p}\left(\lambda_{p}-\lambda_{1}\right)\vec{x}_{p} .\]
+Así, tenemos que 
+\[ a^{2}\left(\lambda_{2}-\lambda_{1}\right) = a^{3}\left(\lambda_{3}-\lambda_{1}\right) = \cdots = a^{p}\left(\lambda_{p}-\lambda_{1}\right) = 0 .\]
+Por tanto, $\displaystyle a^{2} = a^{3} = \cdots = a^{p} = 0 $ y, consecuentemente $\displaystyle a^{1}\vec{x}_{1} = \vec{0} \Rightarrow a^{1} = 0 $.
+\end{proof}
+\begin{observation}
+\normalfont Una consecuencia de este teorema es que 
+\[L_{\lambda_{1}}\oplus L_{\lambda_{2}} \oplus \cdots \oplus L_{\lambda_{p}} .\]
+\end{observation}
+

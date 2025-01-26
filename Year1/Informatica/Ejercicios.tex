@@ -428,4 +428,21 @@ hoja2_ej7()
 \end{lstlisting}
 \end{sol}
 
+\section{Hoja 3}
+\begin{ej}
+Reverso de un número. Escribe un programa que dé la vuelta a un número. Por dar la vuelta entendemos invertir las cifras. Por ejemplo: el número 17 debería mostrar 71.
+\end{ej}
+
+\begin{sol}
+\begin{lstlisting}[language = Python]
+def reverso(n : int) -> int:
+n = str(n)
+result = ""
+for i in range(len(n)):
+result += n[len(n)-1-i]
+return result
+\end{lstlisting}
+
+\end{sol}
+
 \end{document}

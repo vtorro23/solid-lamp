@@ -1,0 +1,307 @@
+\section{Introducción}
+\begin{fdefinition}[Producto cartesiano]
+\normalfont Se define
+\[A \times B = \left\{ \left(a,b\right) \; : \; a \in A, \; b \in B\right\}  .\]
+\end{fdefinition}
+Una relación $\displaystyle \mathcal{R} $ es un conjunto $\displaystyle \mathcal{R}\subset A\times A $. Si $\displaystyle \left(a,b\right) \in \mathcal{R} $ se dice que $\displaystyle a \mathcal{R}b $.
+\begin{fdefinition}[Relación de equivalencia]
+\normalfont Una relación $\displaystyle \mathcal{R} $ es de equivalencia si cumple las siguientes propiedades.
+\begin{description}
+\item[Reflexiva.] $\displaystyle \forall a \in A $, $\displaystyle a \mathcal{R}a $. 
+\item[Simétrica.] $\displaystyle a \mathcal{R}b \Rightarrow b \mathcal{R} a $.
+\item[Transitiva.] $\displaystyle \left(a \mathcal{R} b \land b \mathcal{R} c\right) \Rightarrow a \mathcal{R} c $.
+\end{description}
+\end{fdefinition}
+
+\begin{fdefinition}[Relación de orden]
+\normalfont Una relación $\displaystyle \mathcal{R} $ es de orden si cumple las siguientes propiedades.
+\begin{description}
+\item[Reflexiva.] $\displaystyle \forall a \in A $, $\displaystyle a \mathcal{R}a $. 
+\item[Antisimétrica.] $\displaystyle \left(a \mathcal{R}b \land b \mathcal{R} a\right) \Rightarrow a = b $.
+\item[Transitiva.] $\displaystyle \left(a \mathcal{R} b \land b \mathcal{R} c\right) \Rightarrow a \mathcal{R} c $.
+\end{description}
+\end{fdefinition}
+\begin{notation}
+\normalfont En una relación de orden, si $\displaystyle a \mathcal{R} b $, podemos escribir $\displaystyle a \leq b $. Además, el par ordenado $\displaystyle \left(A, \leq \right) $ es un conjunto ordenado. Se dice que es \textbf{totalmente ordenado} si $\displaystyle \forall a, b \in A $, $\displaystyle a \leq b $ o $\displaystyle b \leq a $.
+\end{notation}
+
+\begin{fdefinition}[]
+\normalfont Dado $\displaystyle \left(A, \leq \right) $ y $\displaystyle C \subset A $:
+\begin{description}
+\item[(i)] Se dice que $\displaystyle C $ está \textbf{acotado superiormente} si existe $\displaystyle M \in A $ tal que $\displaystyle \forall c \in C $, $\displaystyle c \leq M $. Se dice que $\displaystyle M $ es una \textbf{cota superior}.
+\item[(ii)] Se dice que $\displaystyle C $ está \textbf{acotado inferiormente} si existe $\displaystyle m \in A $ tal que $\displaystyle \forall c \in C $, $\displaystyle m \leq c $. Se dice que $\displaystyle m $ es una \textbf{cota inferior}.
+\item[(iii)] $\displaystyle C $ tiene \textbf{supremo} si tiene una cota superior mínima. Es decir, si $\displaystyle \alpha = \sup\left(C\right) $ si $\displaystyle \forall c \in C $, $\displaystyle \alpha \geq c $ y si $\displaystyle m $ es una cota superior, $\displaystyle \alpha \leq m $.
+\item[(iv)] La definición del \textbf{ínfimo} es análoga.
+\end{description}
+\end{fdefinition}
+
+\begin{eg}
+	\normalfont Tenemos que el conjunto $\displaystyle \left\{ x \in \Q \; : \; x^{2} < 2\right\}  $ está acotado superiormente por 2. Sin embargo, no tiene supremo en $\displaystyle \Q $, pero sí lo tiene en $\displaystyle \R $.
+\end{eg}
+
+\begin{eg}
+\normalfont Sea $\displaystyle \R^{2} $ y sea $\displaystyle C \subset \mathcal{P}\left(\R^{2}\right) $ rectas del plano. Sean $\displaystyle r_{1}, r_{2} \in C $ con $\displaystyle r_{1}\mathcal{R}r_{2} \iff r_{1} $ y $\displaystyle r_{2} $ son paralelas. Esto claramente es una relación de equivalencia. 
+\end{eg}
+
+\begin{fdefinition}[Aplicación]
+\normalfont Dado $\displaystyle C \subset A \times B $, se dice que $\displaystyle C $ es una \textbf{aplicación} si $\displaystyle \left(a,b\right), \left(a,c\right) \in C \Rightarrow b = c $.
+\end{fdefinition}
+
+\begin{notation}
+\normalfont Normalmente se escribe $\displaystyle f : A \to B $ con $\displaystyle a \to f\left(a\right) $.
+\end{notation}
+
+\begin{fdefinition}[]
+\normalfont Si $\displaystyle f : A \to B $,
+\begin{description}
+	\item[Dominio.] $\displaystyle \dom\left(f\right) = \left\{ x \in A \; : \; \exists f\left(x\right)\right\}  $.
+	\item[Imagen.] $\displaystyle \Imagen\left(f\right) = \left\{ b \in B \; : \; \exists a \in A, \; f\left(a\right) = b\right\} \subset B $.
+\end{description}
+\end{fdefinition}
+
+\begin{notation}
+	\normalfont En las funciones de variable real se denomina gráfico de $\displaystyle f $ al conjunto $\displaystyle Gra\left(f\right) = \left\{ \left(x, f\left(x\right)\right) \in \R^{2} \; : \; x \in \dom\left(f\right)\right\}  $.
+\end{notation}
+\begin{eg}
+\normalfont Consideremos la aplicación $\displaystyle f\left(x\right) = a \in \R $, la función constante. Tenemos que $\displaystyle \dom\left(f\right) = \Imagen\left(f\right) = \R $.
+\end{eg}
+
+\begin{fdefinition}[]
+\normalfont Dada $\displaystyle f : A \to B $,
+\begin{description}
+\item[(a)] Se dice que $\displaystyle f $ es \textbf{inyectiva} si $\displaystyle f\left(a\right) = f\left(b\right) \Rightarrow a = b $.
+\item[(b)] Se dice que $\displaystyle f $ es \textbf{suprayectiva} si $\displaystyle \forall b \in B $, $\displaystyle \exists a \in A $ tal que $\displaystyle f\left(a\right) = b $.
+\item[(c)] Se dice que $\displaystyle f $ es \textbf{biyectiva} si es inyectiva y suprayectiva.
+\end{description}
+\end{fdefinition}
+
+\begin{notation}
+	\normalfont Dada $\displaystyle f : A \to B $ y $\displaystyle C \subset A $, se denomina restricción de $\displaystyle f $ en $\displaystyle C $ a la aplicación $\displaystyle f |_{C} : C \to B $. Así, tenemos que $\displaystyle f\left(C\right) = \Imagen\left(f | _{C}\right) = \left\{ b \in B \; : \; \exists c \in C, \; f\left(c\right) = b\right\}  $. De manera similar, $\displaystyle f\left(A\right) = \Imagen\left(f\right) $. 
+\end{notation}
+\begin{notation}
+	\normalfont Si $\displaystyle f : A \to B $ y $\displaystyle D \subset B $, se define $\displaystyle f^{-1}\left(D\right) = \left\{ a \in A \; : \; f\left(a\right) \in D\right\}  $.
+\end{notation}
+
+\begin{eg}
+\normalfont Consideramos la aplicación $\displaystyle f : \left(0,1\right) \to \R $ tal que
+\[ f\left(x\right) =
+\begin{cases}
+\frac{1}{x}-2, \; x \in \left(0, \frac{1}{2}\right) \\
+\frac{1}{x-1}+2, \; x \in \left[\frac{1}{2},1\right)
+\end{cases}
+\]
+Tenemos que $\displaystyle f $ es biyectiva. Comprobamos la inyectividad.
+\[ \frac{1}{x}-2 = \frac{1}{y}-2 \iff x = y .\]
+\[\frac{1}{x-1} + 2 = \frac{1}{y-1}+2 \iff x = y .\]
+Ahora comprobamos la suprayectividad. Si $\displaystyle a = 0 $, cogemos $\displaystyle x = \frac{1}{2} $. Si $\displaystyle a < 0 $, cogemos $\displaystyle x = \frac{1}{a-2} \in \left(0, 1\right) $. Si $\displaystyle a > 0 $, cogemos $\displaystyle x = \frac{1}{a+2} \in \left(0, \frac{1}{2}\right)$. Así, la aplicación es biyectiva.
+\end{eg}
+
+\begin{fdefinition}[Inversa]
+\normalfont Dada $\displaystyle f : A \to \Imagen\left(f\right) $, si $\displaystyle f $ es inyectiva tenemos que $\displaystyle f $ es biyección y $\displaystyle \exists f^{-1} : \Imagen\left(f\right) \subset B \to A $ tal que $\displaystyle b \to f^{-1}\left(b\right) = a $.
+\end{fdefinition}
+
+\begin{eg}
+	\normalfont Consideremos $\displaystyle f : \R/ \left\{ 0\right\}  \to \R/ \left\{ 0\right\}  $ tal que $\displaystyle f\left(x\right) = \frac{1}{x} $, entonces $\displaystyle f^{-1}\left(x\right) = \frac{1}{x} $.
+\end{eg}
+\section{Cardinalidad}
+\begin{fdefinition}[Equipotencia]
+\normalfont Dos conjuntos $\displaystyle A $ y $\displaystyle B $ son \textbf{equipotentes} si existe una biyección $\displaystyle f : A \to B $.
+\end{fdefinition}
+
+\begin{fprop}[]
+\normalfont La relación de equipotencia es una relación de equivalencia.
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(i)] Comprobamos la propiedad reflexiva. Tenemos que la identidad $\displaystyle i : A \to A $ con $\displaystyle a \to a $ es una biyección. 
+\item[(ii)] Comprobamos la propiedad simétrica. Dada una biyección, su inversa también es una biyección.
+\item[(iii)] Comprobamos la propiedad transitiva. La composición de biyecciones es una biyección.
+\end{description}
+\end{proof}
+
+\begin{fdefinition}[Cardinal]
+\normalfont Se llama \textbf{cardinal} de un conjunto a la clase de equivalencia a la que pertenece por la relación de equipotencia.
+\end{fdefinition}
+\begin{fdefinition}[]
+\normalfont Dados $\displaystyle A $ y $\displaystyle B $, tenemos que $\displaystyle \left|A\right| \leq \left|B\right| $ si $\displaystyle \exists f : A \to B $ inyectiva. 
+\end{fdefinition}
+
+\begin{fprop}[]
+\normalfont La relación anterior es una relación de orden total.
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(i)] La identidad es inyectiva.
+\item[(ii)] Por el teorema de Cantor-Bernstein, si $\displaystyle f: A \to B $ inyectiva y $\displaystyle g : B \to A $ inyectiva, $\displaystyle \exists h : A \to B $ biyectiva.
+\item[(iii)] Si $\displaystyle f : A \to B $ inyectiva y $\displaystyle f: B \to C $ inyectiva, tenemos que $\displaystyle g \circ f : A \to C $ es inyectiva.
+\item[(iv)] Existe un teorema que dice que si $\displaystyle A $ y $\displaystyle B $ son conjuntos, o bien existe $\displaystyle f: A \to B $ inyectiva o bien existe $\displaystyle g : B \to A $ inyectiva.
+\end{description}
+\end{proof}
+
+\begin{fdefinition}[]
+\normalfont Un conjunto $\displaystyle A $ es \textbf{finito} si no existe $\displaystyle C \subsetneq A $ tal que $\displaystyle \exists g : C \to A $ biyectiva. Se dice que es \textbf{infinito} si no es finito, es decir, $\displaystyle \exists C \subsetneq A $, $\displaystyle \exists g : C \to A $ biyectiva.
+\end{fdefinition}
+
+\begin{eg}
+\normalfont Tenemos que $\displaystyle \N $ es infinito puesto que $\displaystyle \N $ tiene el mismo cardenal que el conjunto de los números pares. Similarmente, antes hemos visto que $\displaystyle \exists f : \left(0,1\right) \to \R $ biyectiva.
+\end{eg}
+
+\begin{fprop}[]
+\normalfont 
+\begin{description}
+\item[(a)] Sea $\displaystyle X $ finito e $\displaystyle Y \subset X $, entonces $\displaystyle Y $ es finito.
+\item[(b)] Si $\displaystyle X $ es finito y $\displaystyle \left|X\right|= \left|Y\right| $, entonces $\displaystyle Y $ es finito.
+\item[(c)] Si $\displaystyle X $ es infinito y $\displaystyle \left|X\right| = \left|Y\right| $, entonces $\displaystyle Y $ es infinito.
+\end{description}
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(a)] Si $\displaystyle Y = X $ es trivial. Consideremos el caso $\displaystyle Y \subsetneq X $. Asumimos que $\displaystyle X $ es finito e $\displaystyle Y $ es infinito. Como $\displaystyle Y $ es infinito, $\displaystyle \exists Z \subsetneq Y $ y $\displaystyle \exists f : Z \to Y $ biyección. Tenemos que $\displaystyle X / Y \neq \emptyset $. Consideremos la aplicación $\displaystyle g : Z \cup \left(X / Y\right) \to X $ tal que
+	\[
+	g\left(x\right) = 
+\begin{cases}
+f\left(x\right), \; x \in Z \\
+x, \; x \in X / Y
+\end{cases}
+\]
+Tenemos que $\displaystyle Z \cap \left(X / Y\right) = \emptyset $. Así, $\displaystyle x \neq y $ y $\displaystyle x, y \in Z $ tenemos que $\displaystyle f\left(x\right) \neq f\left(y\right) $. Si $\displaystyle x \in Z $ e $\displaystyle y \in X / Y $, tenemos que $\displaystyle f\left(x\right)  \in Y \Rightarrow f\left(x\right) \not\in X/Y$, así, $\displaystyle f\left(x\right) \neq y $, por lo que es inyectiva. 
+Ahora comprobamos la sobreyectividad. Si $\displaystyle x \in X $, tenemos que $\displaystyle x \in Y $ o $\displaystyle x \in X / Y $. Si $\displaystyle x \in X /Y $, cogemos $\displaystyle x = g\left(x\right) $. Si $\displaystyle x \in Y $, como $\displaystyle f $ es biyectiva, $\displaystyle \exists z \in Z $ tal que $\displaystyle f\left(z\right) = x $. Así, como $\displaystyle Z \cup \left(X /Y\right) \subsetneq X $ y hemos encontrado una biyección $\displaystyle g $ entre estos dos conjuntos, tenemos que $\displaystyle X $ es infinito. Esto es una contradicción.
+\item[(b)] Asumimos que $\displaystyle Y $ es infinito. El resto es análogo a la demostración \textbf{(c)}. 
+\item[(c)] Dado que $\displaystyle X $ es infinito, tenemos que $\displaystyle \exists Z \subsetneq X $ y $\displaystyle f : Z \to X $ biyectiva. Como $\displaystyle \left|X\right| = \left|Y\right| $, $\displaystyle \exists T : X \to Y $ biyectiva. Así, tenemos que $\displaystyle T\left(Z\right) \subsetneq Y $. Definimos $\displaystyle g = T \circ f \circ T ^{-1} : T\left(Z\right) \to Y $, que es una biyección, puesto que es una composición de biyecciones. Así, $\displaystyle Y $ es infinito.
+\end{description}
+\end{proof}
+
+\begin{observation}
+\normalfont Tenemos que $\displaystyle \left|\N\right| \leq \left|\R\right| $, puesto que $\displaystyle f : \N \to \R $ con $\displaystyle f\left(n\right) = n $ es inyectiva.
+\end{observation}
+
+\begin{fprop}[]
+\normalfont Si $\displaystyle X $ es infinito, entonces $\displaystyle \left|\N\right| \leq \left|X\right| $.
+\end{fprop}
+\begin{proof}
+	Si $\displaystyle X $ es infinito, $\displaystyle \exists a_{1} \in X $. Cogemos $\displaystyle f\left(1\right) = a_{1} $. Similarmente cogemos $\displaystyle f\left(2\right) = a_{2} \in X/ \left\{ a_{1}\right\}  $. Por inducción, $\displaystyle f\left(n\right) = a_{n} \in X/ \left\{ a_{1}, \ldots, a_{n-1}\right\}  $. Tenemos que $\displaystyle f : \N \to X $ es una inyección.
+\end{proof}
+
+\begin{fprop}[]
+\normalfont 
+\[ \left|X\right| < \left|\mathcal{P}\left(X\right)\right| .\]
+\end{fprop}
+\begin{proof}
+\begin{description}
+	\item[(i)] Si $\displaystyle X  $ es finito, $\displaystyle \left|X\right| = n < 2^{n} = \mathcal{P}\left(X\right) $.
+	\item[(ii)] Si $\displaystyle X $ es infinito, tenemos que $\displaystyle h : X \to \mathcal{P}\left(X\right) $ con $\displaystyle a \to \left\{ a\right\}  $ es inyectiva. Así, $\displaystyle \left|X\right| \leq \left|\mathcal{P}\left(X\right)\right| $. Vamos a asumir que existe una biyección $\displaystyle f : X \to \mathcal{P}\left(X\right) $. Definimos
+		\[Z = \left\{ a \in X \; : \; a \not\in f\left(x\right)\right\} \subset X .\]
+Si $\displaystyle Z = \emptyset $, tenemos que $\displaystyle \forall a \in f\left(a\right) $, por lo que $\displaystyle \emptyset \not\in \Imagen\left(f\right) $, así $\displaystyle f $ no es sobreyectiva. Si $\displaystyle Z \neq \emptyset $, tenemos que $\displaystyle \exists a \in Z $. Similarmente, como $\displaystyle Z \subset X $, $\displaystyle \exists a \in X $ con $\displaystyle Z = f\left(a\right) $. De esta manera, tenemos que si $\displaystyle a \in Z $, entonces $\displaystyle a \not\in Z $, por lo que tenemos una contradicción. Similarmente, si $\displaystyle a \not\in Z $, tenemos que $\displaystyle a \in Z $.
+\end{description}
+\end{proof}
+\begin{fprop}[]
+\normalfont 
+\[ \left|\N\right| < \left|\R\right| .\]
+\end{fprop}
+\begin{proof}
+	Sabemos que $\displaystyle \exists\varphi : \left(0,1\right) \to \R $ biyectiva. Así, vamos a buscar una biyección $\displaystyle g : \N \to \left(0,1\right) $. Sea $\displaystyle B = \left\{ \sum^{\infty}_{n = 1}\frac{a_{n}}{2^{n}} \; : \; a_{n} \in \left\{ 0,1\right\} , \exists a_{n_{0}} = 0, \exists a_{n_{1}} = 1, \forall m, \exists m' > m, a_{m'} = 1\right\} \subset \left(0,1\right) $.
+Definimos $\displaystyle g : \N \to \left(0,1\right) $ biyectiva tal que 
+\[g\left(k\right) = r_{k} = \sum^{\infty}_{n = 1}\frac{a_{k,n}}{2^{n}} .\]
+Vamos a construir $\displaystyle r \in \left(0,1\right) $ tal que $\displaystyle \forall k \in \N $, $\displaystyle r \neq r_{k} $. Sea $\displaystyle a_{n_{1}} = 1 $, así, cogemos $\displaystyle a_{n_{1}} = 0 $. Similarmente, si $\displaystyle a_{2,n_{2}}=1 $, con $\displaystyle n_{2} > n_{1} $, y decimos que $\displaystyle a_{n_{2}} = 0 $. En general, si $\displaystyle a_{k,n_{k}} = 1 $, $\displaystyle a_{n_{k}} = 0 $. En el resto de coordenadas intermedias le ponemos un 1. Así, definimos
+\[r = \sum^{\infty}_{n=1}\frac{a_{n}}{2^{n}} \neq r_{k}, \; \forall k \in \N .\]
+\footnote{Si hay un número que tiene infinitos ceros, cogemos representación decimal por la derecha.} 
+\end{proof}
+\begin{ftheorem}[]
+\normalfont 
+\[ \left|\R\right| = \left|\R \times \R\right| .\]
+\end{ftheorem}
+\begin{proof}
+Vamos a ver que $\displaystyle \left|\left(0,1\right)\right| = \left|\left(0,1\right) \times \left(0,1\right)\right| $. Cogemos $\displaystyle f : \left(0,1\right) \to \left(0,1\right) \times \left(0,1\right) $ tal que $\displaystyle r \to \left(r,a\right) $. Así, está claro que $\displaystyle \left|\left(0,1\right)\right| \leq \left|\left(0,1\right) \times \left(0,1\right)\right| $. Ahora, cogemos $\displaystyle g : \left(0,1\right) \times \left(0,1\right) \to \left(0,1\right) $ tal que 
+\[\left(r,s\right) = \left(\sum^{\infty}_{n = 1}\frac{a_{n}}{2^{n}}, \sum^{\infty}_{n = 1}\frac{b_{n}}{2^{n}}\right) \to g\left(r,s\right) = \sum^{\infty}_{n = 1}\frac{a_{n}}{2^{2n}} + \sum^{\infty}_{n = 1}\frac{b_{n}}{2^{n+1}} \in \left(0,1\right) .\]
+Tenemos que demostrar que esto es una inyección.
+\end{proof}
+\subsection{Números algebraicos}
+Sea $\displaystyle \K $ un cuerpo y $\displaystyle \K[x] = \left\{ a_{0} + a_{1}x + \cdots + a_{n}x^{n}\right\}  $.
+\begin{fprop}[]
+	\normalfont Si $\displaystyle z = a + bi \in \C $, tenemos que existe $\displaystyle p\left(x\right) \in \R[x] $ tal que $\displaystyle p\left(z\right) = 0 $.
+\end{fprop}
+\begin{proof}
+Cogemos el polinomio
+\[
+	\left(x - z\right)\left(x + z\right) = x^{2}-z^{2} = x^{2} - 2ax + a^{2} + b^{2} \in \R[x] .
+\]
+\end{proof}
+Entonces se dice que los números complejos son algebraicos sobre $\displaystyle \R $. Tenemos que $\displaystyle \R $ no es algebraico sobre $\displaystyle \Q $. Considera, por ejemplo $\displaystyle \pi  $.
+Tenemos que
+\[
+\begin{split}
+	\Q[x] = \left\{ \text{polinomios de grado 1}\right\} \cup \left\{ \text{polinomios de grado 2}\right\} \cup \cdots \cup \left\{ \text{polinomios de grado $\displaystyle n $ }\right\} \cup \cdots  .
+\end{split}
+\]
+Podemos ver que las raíces de todos los polinomios de $\displaystyle \Q[x] $ son tantas como $\displaystyle \left|\N\right| $. Por tanto, tiene que haber números reales que no son algebraicos.
+\section{Funciones de variable real}
+\subsection{Estudio de funciones}
+Las funciones pueden tener propiedades variadas. Un ejemplo es ser inyectiva, sobreyectiva (suprayectiva) o biyectiva. 
+\begin{eg}
+\normalfont Consideremos $\displaystyle f\left(x\right) = \frac{x}{\sqrt{x^{2}+1}} $. Tenemos que $\displaystyle \dom\left(f\right) = \R$. Calculamos la imagen. Tenemos que
+\[ -1 < \frac{x}{\sqrt{x^{2}+1}} < 1 .\]
+Si $\displaystyle a = \frac{x}{\sqrt{x^{2}+1}} $, tenemos que
+\[a^{2} = \frac{x^{2}}{x^{2}+1} \iff a^{2}x^{2} + a^{2} = x^{2} \iff x = \pm \frac{a}{\sqrt{1 -a^{2}}} .\]
+Así, $\displaystyle \Imagen\left(-1, 1\right) $. Así, $\displaystyle f : \R \to \left(-1, 1\right) $ es biyectiva.
+\end{eg}
+También se puede estudiar el signo de una función:
+\begin{itemize}
+	\item $\displaystyle f^{+} = \left\{ x \in \R \; : \; f\left(x\right) \geq 0\right\}  $.
+	\item $\displaystyle f^{-} = \left\{ x \in \R \; : \; f\left(x\right) < 0\right\}  $.
+\end{itemize}
+\begin{fdefinition}[Paridad]
+\normalfont $\displaystyle f $ se dice \textbf{par} si se verifica que $\displaystyle f\left(x\right) = f\left(-x\right), \forall x \in \dom\left(f\right) $. Se dice que $\displaystyle f $ es \textbf{impar} si $\displaystyle \forall x \in \dom\left(f\right), f\left(-x\right) = -f\left(x\right) $.
+\end{fdefinition}
+\begin{fdefinition}[Monotonía]
+\normalfont Se dice que $\displaystyle f : \R \to \R $ es \textbf{monótona creciente} si $\displaystyle x \leq y \Rightarrow f\left(x\right) \leq f\left(y\right) $. Similarmente, se dice que es \textbf{monótona decreciente} si $\displaystyle x \leq y \Rightarrow f\left(x\right) \geq f\left(y\right) $.
+\end{fdefinition}
+\begin{fdefinition}[Convexidad]
+	\normalfont Se dice que $\displaystyle f : \R \to \R $ es \textbf{convexa} si $\displaystyle \forall a,b \in \dom\left(f\right)$ y $\displaystyle \alpha \in [0,1] $ se cumple que 
+	\[f\left(\alpha a + \left(1-\alpha \right)b\right) \leq \alpha f\left(a\right) + \left(1-\alpha \right)f\left(b\right) .\]
+\end{fdefinition}
+Unas propiedades importantes de las funciones son sus límites. Si $\displaystyle a  $ está en la 'frontera' de $\displaystyle \dom\left(f\right) $, tenemos que $\displaystyle a = \pm \infty $ o $\displaystyle a \not\in \dom\left(f\right) $ pero existe $\displaystyle \lim_{x \to a}f\left(x\right) $. 
+\begin{fdefinition}[Continuidad]
+\normalfont Dada $\displaystyle f : \R \to \R $ y $\displaystyle a \in \dom\left(f\right) $, se dice que $\displaystyle f $ es \textbf{continua} en $\displaystyle a $ si existe $\displaystyle \lim_{x \to a}f\left(x\right) $ y $\displaystyle \lim_{x \to a}f\left(x\right) = f\left(a\right) $.
+\end{fdefinition}
+\begin{fdefinition}[Continuidad]
+\normalfont Se dice que $\displaystyle f $ es \textbf{continua} en $\displaystyle a \in \dom\left(f\right) $ si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle 0 \leq \left|x - a\right| < \delta  $ se tiene que $\displaystyle \left|f\left(x\right) - f\left(a\right)\right| < \epsilon  $.
+\end{fdefinition}
+\begin{fdefinition}[Continuidad]
+	\normalfont Se dice que $\displaystyle f $ es \textbf{continua} en $\displaystyle a \in \dom\left(f\right) $ si $\displaystyle \forall \left\{ x_{n}\right\} _{n\in\N} \to a $ se tiene que $\displaystyle \lim_{n \to \infty}f\left(x_{n}\right) = f\left(a\right) $.
+\end{fdefinition}
+\begin{eg}
+\normalfont 
+\begin{itemize}
+\item Dado $\displaystyle f = a $ tenemos que es continua en todo $\displaystyle x_{0} \in \R $.
+\item Consideremos la función $\displaystyle f\left(x\right) = x $. Cogemos $\displaystyle \delta = \epsilon  $, entonces si $\displaystyle 0 \leq \left|x - x_{0}\right| < \delta  $, tenemos que $\displaystyle \left|x - x_{0}\right| < \epsilon  $. Así, esta función es continua en todo $\displaystyle \R $.
+\end{itemize}
+\end{eg}
+\subsection{Métodos para generar funciones}
+ Dadas $\displaystyle f, g : \R \to \R $ con $\displaystyle \dom\left(f\right) \cap \dom\left(g\right) \neq \emptyset $, tenemos que si $\displaystyle x \in \dom\left(f\right) \cap \dom\left(g\right) $,
+\begin{itemize}
+\item $\displaystyle \left(f+g\right)\left(x\right) = f\left(x\right) + g\left(x\right) $.
+\item $\displaystyle \left(fg\right)\left(x\right) = f\left(x\right)g\left(x\right) $.
+\item Si $\displaystyle \lambda \in \R $, $\displaystyle \lambda f\left(x\right) $.
+\item Si $\displaystyle x \in \dom\left(f\right) \cap \dom\left(g\right) $ y $\displaystyle g\left(x\right) \neq 0 $, $\displaystyle \frac{f}{g}\left(x\right) = \frac{f\left(x\right)}{g\left(x\right)} $.
+\end{itemize}
+\begin{observation}
+\normalfont Podemos observar que los polinomios se forman a través de estas trasformaciones elementales.
+\end{observation}
+Similarmente, las funciones racionales se forman a partir de polinomios y de su división.
+\[\frac{P\left(x\right)}{Q\left(x\right)} = \frac{a_{n}x^{n} + \cdots + a_{0}}{b_{m}x^{m} + \cdots + b_{0}} .\]
+Cuando una función es \textbf{inyectiva}, podemos definir su inversa. Esta es otra forma de generar funciones. Dada una función inyectiva, se define su inversa $\displaystyle f^{-1} $ por
+\[
+\begin{split}
+	f^{-1} : \Imagen\left(f\right) \to & \R \\
+	y \to & f^{-1}\left(y\right) = x.
+\end{split}
+\]
+donde $\displaystyle x \in \dom\left(f\right) $ es el único elemento en $\displaystyle \dom\left(f\right) $ tal que $\displaystyle f\left(x\right) =y $.
+\begin{eg}
+\normalfont La función $\displaystyle f\left(x\right) = \sqrt{x} $ se genera a partir de la inversa de $\displaystyle f\left(x\right) = x^{2} $.
+\end{eg}
+Dadas $\displaystyle f : \R \to \R $ y $\displaystyle g : \R \to \R $, con $\displaystyle \Imagen\left(f\right) \subset \dom\left(g\right) $, se define $\displaystyle f $ compuesta con $\displaystyle g $ así: $\displaystyle g \circ f : \Imagen\left(f\right) \to \R $. Más adelante demostraremos que la composición de funciones conserva la continuidad. También podemos definir funciones con series de potencias.
+\begin{eg}
+\normalfont Dada $\displaystyle f\left(x\right) = \sum^{\infty}_{n = 1}\frac{3x^{n}}{n!} $. El dominio son los valores $\displaystyle x \in \R $ tales que la serie es convergente.
+\end{eg}
+

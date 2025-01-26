@@ -667,10 +667,20 @@ Este mismo procedimiento se puede hacer para un elemento cualquiera $\displaysty
 
 Si cogemos la fija $\displaystyle j $, vamos a tener que 
 \[\det\left(A\right) = a^{1}_{j}A^{1}_{j}+a^{2}_{j}A^{2}_{j}+\cdots+a^{n}_{j}A^{n}_{j} = a^{i}_{1}A^{i}_{1} + a^{i}_{2}A^{i}_{2} + \cdots + a^{i}_{n}A^{i}_{n} .\]
+\begin{fprop}[]
+\normalfont 
 Si $\displaystyle i\neq k $ tenemos que
 \[a^{1}_{i}A^{1}_{k} + a^{2}_{i}A^{2}_{k} + \cdots + a^{n}_{i}A^{n}_{k} = 0 .\]
 Similarmente, si $\displaystyle j \neq k $,
 \[a^{j}_{1}A^{k}_{1} + a^{j}_{2}A^{k}_{2} + \cdots + a^{j}_{n}A^{k}_{n} = 0 .\]
+\end{fprop}
+
+\begin{proof}
+Sea $\displaystyle \overline{A} $ una matriz con las mismas columnas que $\displaystyle A $, salvo la columna $\displaystyle k $, donde vuelve a aparecer la columna $\displaystyle i $. Claramente tenemos que $\displaystyle \det\left( \overline{A}\right) = 0 $. Ahora, si desarrollamos $\displaystyle \overline{A} $ por los términos de la columna $\displaystyle k $, tenemos que
+\[0 = \det\left( \overline{A}\right) = \sum^{n}_{j=1}\overline{a}^{j}_{k} \overline{A}^{j}_{k} .\]
+Sin embargo, tal y como hemos definido $\displaystyle \overline{A} $, tenemos que $\displaystyle \overline{a}^{j}_{k} = a^{j}_{i} $ y $\displaystyle \overline{A}^{j}_{k} = A^{j}_{k} $.
+\end{proof}
+
 Tenemos que 
 \[\begin{pmatrix} \vec{u}_{1} & \cdots & \vec{u}_{n} \end{pmatrix} = \begin{pmatrix} \vec{u}_{1} & \cdots & \vec{u}_{n} \end{pmatrix} I_{n\times n} .\]
 Por tanto, tenemos que
@@ -686,7 +696,7 @@ Recordamos que $\displaystyle \Aut\left(V\right) = \left\{ f \in \End\left(V\rig
 \item[(i)] Si $\displaystyle A \in \GL\left(n, \K\right) $, $\displaystyle \exists A^{-1} $ tal que $\displaystyle A \cdot A^{-1} = A^{-1} \cdot A = I_{n \times n} $. Así,
 	\[1 = \det\left(I_{n \times n}\right) = \det\left(A \cdot A^{-1}\right) = \det\left(A\right) \cdot \det\left(A^{-1}\right) .\]
 Por tanto, tenemos que si $\displaystyle \det\left(A\right) \neq 0 $, $\displaystyle \det\left(A^{-1}\right) = \frac{1}{\det\left(A\right)} \neq 0 $. Estrictamente tenemos que tener que $\displaystyle \det\left(A\right), \det\left(A^{-1}\right) \neq 0 $.
-\item[(ii)] Si $\displaystyle \det\left(A\right) \neq 0 $. Vamos a comprobar que $\displaystyle A^{-1} = \frac{1}{\det\left(A\right)}\Adj\left(A^{t}\right) $. Tenemos que 
+\item[(ii)] Si $\displaystyle \det\left(A\right) \neq 0 $. Vamos a comprobar que $\displaystyle A^{-1} = \frac{1}{\det\left(A\right)}\left(\Adj\left(A\right)\right)^{t} $. Tenemos que 
 \[ 	\begin{pmatrix} \frac{A^{1}_{1}}{ \left|A\right|} & \cdots & \frac{A^{n}_{1}}{ \left|A\right|} \\
 	\vdots & & \vdots \\
 	\frac{A^{1}_{n}}{ \left|A\right|} & \cdots & \frac{A^{n}_{n}}{ \left|A\right|}\end{pmatrix} \cdot \begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n} \\

@@ -1006,3 +1006,25 @@ Asi, definimos que $\displaystyle \lambda'\left(\vec{x'}\right) = \vec{x} $ con 
 \normalfont Si $\displaystyle f: V \to V' $ es lineal llamaremos $\displaystyle \ran\left(f\right) $ a $\displaystyle \dim \Imagen\left(f\right) $.
 \end{fdefinition}
 
+\subsection{Matriz de $\displaystyle f^{*} $ }
+\begin{ftheorem}[]
+\normalfont 
+\[\mathcal{M}_{ \left\{ \sigma^{j}\right\} \left\{ \omega^{i}\right\} }\left(f^{*}\right) = \left(\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\} }\left(f\right)\right)^{t} .\]
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle f : V \to V' $ lineal y $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ una base de $\displaystyle V $ y $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{m}\right\}  $ una base de $\displaystyle V' $. Entonces, tenemos que $\displaystyle \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\} }\left(f\right) = A \in \mathcal{M}_{m \times n}\left(\K\right) $ es la matriz asociada a $\displaystyle f $. Sea 
+	\[A = \begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n} \\
+	\vdots & & \vdots \\
+a^{m}_{1} & \cdots & a^{m}_{n}\end{pmatrix} .\]
+Así, la dual de $\displaystyle f $ está definida de la siguiente manera
+\[
+\begin{split}
+	f^{*} : V'^{*} & \to V^{*} \\
+	\lambda & \to \lambda \circ f.
+\end{split}
+\]
+Así, si $\displaystyle \left\{ \omega^{1}, \ldots, \omega^{n}\right\}  $ es la base dual de $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ y $\displaystyle \left\{ \sigma^{1}, \ldots, \sigma^{m}\right\} $ es la base dual de $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{m}\right\}  $, entonces $\displaystyle \mathcal{M}_{ \left\{ \vec{\sigma}^{i}\right\} \left\{ \vec{\omega}^{j}\right\} }\left(f^{*}\right) = B \in \mathcal{M}_{n \times m}\left(\K\right) $ es la matriz que corresponde a $\displaystyle f^{*} $. Las columnas de $\displaystyle B $ son las coordenadas de $\displaystyle f^{*}\left(\sigma^{j}\right) $ en la base $\displaystyle \left\{ \omega^{1}, \ldots, \omega^{n}\right\}  $. Así,
+\[f^{*}\left(\sigma^{j}\right)\left(\vec{u}_{i}\right) = \sigma^{j}\left(f\left(\vec{u}_{i}\right)\right) = \sigma^{j}\left(a^{1}_{i}\vec{v}_{i} + \cdots + a^{j}_{i}\vec{v}_{j} + \cdots + a^{m}_{i}\vec{v}_{m}\right) = a^{j}_{i} .\]
+Así, $\displaystyle B = A^{t} $.
+\end{proof}
+

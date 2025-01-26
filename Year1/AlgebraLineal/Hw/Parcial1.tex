@@ -1,0 +1,118 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Álgebra Lineal - Parcial 1 Soluciones}
+\author{Victoria Eugenia Torroja Rubio}
+\date{21/1/2025}
+
+\maketitle
+
+\begin{sol}
+Dos matrices que funcionan son $\displaystyle A $ y la propia identidad, $\displaystyle I $. Ahora vamos a demostrar que 
+\[L = \left\{ X \in \mathcal{M}_{2\times2}\left(\K\right) \; : \; AX = XA\right\} \]
+es un subespacio vectorial. Para ello, vemos que es parte estable. Si $\displaystyle X,Y \in L $,
+\[ \left(X + Y\right) A = XA + YA = AX + AY = A \left(X + Y\right) .\]
+Así, $\displaystyle X + Y \in L $. Similarmente, si $\displaystyle a \in \K $ y $\displaystyle X \in L $,
+\[ \left(aA\right)X = a A X = a X A = X \left(aA\right) .\]
+Así, $\displaystyle aA \in L $. Ahora vamos a calcular la dimensión de $\displaystyle L $. Sea $\displaystyle X = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in L $ con $\displaystyle a,b,c,d \in \K $. Entonces, tenemos que
+\[\begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} 2 & 1 & -2 & 0 \end{pmatrix} = \begin{pmatrix} 2a-2b & a \\ 2c - 2d & c \end{pmatrix} .\]
+\[  \begin{pmatrix} 2 & 1 & -2 & 0 \end{pmatrix}\begin{pmatrix} a & b \\ c & d \end{pmatrix} = \begin{pmatrix} 2a + c & 2b + d \\ -2a & - 2b \end{pmatrix}.\]
+Como $\displaystyle AX = XA $, hacemos un sistema de ecuaciones y obtenemos que las ecuaciones de $\displaystyle L $ son:
+\[
+\begin{cases}
+c = -2b \\
+a = 2b + d
+\end{cases}
+.\]
+Así, un sistema de generadores de $\displaystyle L $ será $\displaystyle \left\{ \begin{pmatrix} 2 & 1 \\ - 2 & 0 \end{pmatrix}, \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}\right\}  $. Como son liniealmente independientes, forman una base de $\displaystyle L $, por lo que $\displaystyle \dim\left(L\right) = 2 $.
+\end{sol}
+
+\begin{sol}
+\begin{description}
+\item[(i)] Sin pérdida de generalidad, si $\displaystyle L_{1} \subset L_{2} $, entonces $\displaystyle L_{1}\cup L_{2} = L_{2} \in \mathcal{L}\left(V\right) $.
+\item[(ii)] Supongamos que $\displaystyle L_{1} \not \subset L_{2} $ y $\displaystyle L_{2} \not \subset L_{1} $. Entonces, existe $\displaystyle \vec{x} \in L_{1} $ con $\displaystyle \vec{x} \not\in L_{2} $ e $\displaystyle \vec{y} \in L_{2} $ con $\displaystyle \vec{y}\not\in L_{1} $. Así, $\displaystyle \vec{x}, \vec{y} \in L_{1}\cup L_{2} $. Si $\displaystyle \vec{x}+\vec{y} \in L_{1}\cup L_{2} $:
+\begin{itemize}
+\item Si $\displaystyle \vec{x}+\vec{y} = \vec{l} \in L_{1} $, entonces $\displaystyle \vec{y} \in L_{1} $. Esto es una contradicción.
+\item Si $\displaystyle \vec{x}+\vec{y} = \vec{l} \in L_{2} $, entonces $\displaystyle \vec{x} \in L_{2} $. Esto es una contradicción. 
+\end{itemize}
+Así, debe ser que $\displaystyle L_{1} \subset L_{2} $ o $\displaystyle L_{2}\subset L_{1} $.
+\end{description}
+\end{sol}
+
+\begin{sol}
+Tenemos la aplicación 
+\[f\left(x,y,z\right) = \left(x - 2y - 2z, -x + z, x - y - 2z\right) .\]
+Vamos a comprobar que es lineal. Si $\displaystyle \vec{x}, \vec{y} \in \R^{3} $,
+\[
+\begin{split}
+	f\left(\vec{x}+\vec{y}\right) = & f\left(x_{1}+y_{1}, x_{2}+y_{2}, x_{3}+y_{3}\right) \\
+	= &  \left(\left(x_{1}+y_{1}\right)-2\left(x_{2}+y_{2}\right)-2\left(x_{3}+y_{3}\right), -\left(x_{1}+y_{1}\right) + \left(x_{3}+y_{3}\right), \left(x_{1}+y_{1}\right)-\left(x_{2}+y_{2}\right)-2\left(x_{3}+y_{3}\right)\right) \\
+	= & f\left(\vec{x}\right)+f\left(\vec{y}\right) .
+\end{split}
+\]
+Similarmente, si $\displaystyle a \in \R $ y $\displaystyle \vec{x}\in \R^{3} $,
+\[
+\begin{split}
+	f\left(a\vec{x}\right) = & f\left(ax_{1}, ax_{2}, ax_{3}\right) \\
+	= & \left(ax_{1}-2ax_{2}-2ax_{3}, -ax_{1}+ax_{3}, ax_{1}-ax_{2}-2ax_{3}\right)\\
+	= & af\left(\vec{x}\right).
+\end{split}
+\]
+Para ver que es simetría, basta con ver que $\displaystyle f^{2} = id _{V} $. Esto se puede demostrar comprobando que $\displaystyle A^{2} = I $. Para calcular la base y dirección, se puede hacer con matrices o con la fórmula de la aplicación. Sea $\displaystyle L_{1} $ la base y $\displaystyle L_{2} $ la dirección. Tenemos que
+\[L_{1} = \Imagen\left(f + id _{V}\right), \quad L_{2} = \Ker\left(f+id _{V}\right) .\]
+Además, 
+\[
+\begin{split}
+	\left(f + id _{V}\right)\left(\vec{x}\right) = & \left(2x-2y-2z,-x +y + z, x -y-z\right) \\
+	= & x\left(2, -1, 1\right) + y\left(-2, 1, -1\right) + z\left(-2, 1, -1\right).
+\end{split}
+\]
+Así tenemos que un sistema de generadores de $\displaystyle L_{1} $ será $\displaystyle \left\{ \left(2, - 1, 1\right)\right\}  $. Por tanto, es base y $\displaystyle \dim\left(L_{1}\right) = 1 $.
+Para calcular $\displaystyle L_{2} $, tenemos el sistema de ecuaciones
+\[ 
+\begin{cases}
+2x-2y-2z = 0 \\
+-x+y+z = 0 \\
+x -y-z = 0
+\end{cases}
+\Rightarrow \; x -y-z = 0
+.\]
+Si $\displaystyle \vec{x} \in L_{2} $,
+\[\left(x,y,z\right) = \left(x, y, x -y\right) = x\left(1,0,1\right) + y\left(0,1,-1\right) .\]
+Así, un sistema de generadores de $\displaystyle L_{2} $ será $\displaystyle \left\{ \left(1,0,1\right), \left(0, 1, -1\right)\right\}  $. Como son linealmente independientes, se trata de una base. Tenemos que $\displaystyle L_{1} \oplus L_{2} = \R^{3} $. Así, la unión de las bases que hemos calculado antes forma una base de $\displaystyle \R^{3} $. Además, si $\displaystyle L_{1} = L\left( \left\{ \vec{u}_{1}\right\} \right) $ y $\displaystyle L_{2} = L\left( \left\{ \vec{u}_{2}, \vec{u}_{3}\right\} \right) $, tenemos que 
+\[f\left(\vec{u}_{1}\right) = \vec{u}_{1}, \quad f\left(\vec{u}_{2}\right) = -\vec{u}_{2}, \quad f\left(\vec{u}_{3}\right) = -\vec{u}_{3} .\]
+Este apartado también se puede hacer con sistema de ecuaciones.
+\end{sol}
+
+\begin{sol}
+Tenemos que 
+\[\lambda_{1}\left(p\left(x\right)\right) = \int^{1}_{0} p\left(x\right) \; dx, \quad \lambda_{2}\left(p\left(x\right)\right) = \int^{2}_{0} p\left(x\right) \; dx .\]
+Vamos a calcular las coordenadas de $\displaystyle \left\{ \lambda_{1}, \lambda_{2}\right\}  $ en la base dual de la canónica $\displaystyle B^{*} = \left\{ \sigma_{1}, \sigma_{2}\right\}  $. Tenemos que
+\[
+\begin{split}
+& \lambda_{1}\left(1\right) = \int^{1}_{0}  \; dx = 1, \quad \lambda_{1}\left(x\right) = \int^{1}_{0} x \; dx = \frac{1}{2} \\
+& \lambda_{2}\left(1\right) = \int^{2}_{0}  \; dx = 2, \quad \lambda_{2}\left(x\right) = \int^{2}_{0} x \; dx = 2.
+\end{split}
+\]
+Tenemos que $\displaystyle \lambda_{1} = \left(1, \frac{1}{2}\right)_{B^{*}} $ y $\displaystyle \lambda_{2} = \left(2,2\right)_{B^{*}} $. Como $\displaystyle \dim\left(V\right) = \dim\left(V^{*}\right) = 2 $ y se trata de dos vectores linealmente independientes, forman una base de $\displaystyle V^{*} $. Ahora vamos a calcular la base de la que es dual. Sea $\displaystyle p_{1}\left(x\right)= a + bx $ tal que 
+\[
+\begin{split}
+	& \lambda_{1}\left(p_{1}\left(x\right)\right) = \int^{1}_{0} p_{1}\left(x\right) \; dx = a + \frac{b}{2} = 1 \\
+	& \lambda_{2}\left(p_{1}\left(x\right)\right) = \int^{2}_{0} p_{1}\left(x\right) \; dx = \int^{2}_{0} p_{1}\left(x\right)\; dx = 2a + 2b = 0.
+\end{split}
+\]
+Así, tenemos que $\displaystyle b = -2 $ y $\displaystyle a = 2 $. Similarmente, sea $\displaystyle p_{2}\left(x\right) = a + bx $ tal que 
+\[
+\begin{split}
+	& \lambda_{1}\left(p_{2}\left(x\right)\right) = \int^{1}_{0} p_{2}\left(x\right) \; dx = a + \frac{b}{2} = 0 \\
+	& \lambda_{2}\left(p_{2}\left(x\right)\right) = \int^{2}_{0} p_{2}\left(x\right) \; dx = \int^{2}_{0} p_{1}\left(x\right)\; dx = 2a + 2b = 1.
+\end{split}
+\]
+Así, tenemos que $\displaystyle b = 1 $ y $\displaystyle a = -\frac{1}{2} $. Así, tenemos que 
+\[p_{1}\left(x\right) = 2 - 2x, \quad p_{1}\left(x\right) = -\frac{1}{2} + x .\]
+\end{sol}
+
+\end{document}

@@ -264,17 +264,17 @@ Entonces, si cogemos $\displaystyle n_{0} = \max \left\{ n_{1}, n_{2}, n_{3}\rig
 \[
 \begin{split}
 	\left|\frac{x_{n}}{y_{n}} - \frac{x}{y}\right|  = & \left| \frac{x_{n}y-xy_{n}}{y_{n}y}\right| = \left|\frac{y \left(x_{n}-x\right) - x \left(y_{n}-y\right)}{y_{n}y}\right|\\
-	\leq & \frac{1}{ \left|y_{n}\right|} \frac{ \left|x_{n}-x\right|}{|y_{n}|} + \frac{1}{ \left|y_{n}\right|} \left|\frac{x}{y}\right| \left|y_{n}-y\right|.
+	\leq & \frac{1}{ \left|y_{n}\right|}  \left|x_{n}-x\right| + \frac{1}{ \left|y_{n}\right|} \left|\frac{x}{y}\right| \left|y_{n}-y\right|.
 \end{split}
 \]
 Si cogemos $\displaystyle n_{1} \in \N $ tal que $\displaystyle \forall n\geq n_{1} $, $\displaystyle \left|y_{n}-y\right| < \frac{ \left|y\right|}{2} $. Entonces tenemos que
 \[ \left|y_{n}\right| = \left|y_{n}-y+y\right| \geq \left|y\right| - \left|y_{n}-y\right|> \frac{ \left|y\right|}{2} .\]
 Entonces, 
-\[ \left|\frac{x_{n}}{y_{n}} - \frac{x}{y}\right| \leq \frac{1}{ \left|y_{n}\right|} \frac{ \left|x_{n}-x\right|}{|y_{n}|} + \frac{1}{ \left|y_{n}\right|} \left|\frac{x}{y}\right| \left|y_{n}-y\right| < \frac{2}{ \left|y\right|} \left|x_{n}-x\right| + \left|\frac{2x}{y^{2}}\right| \left|y_{n}-y\right|.\]
+\[ \left|\frac{x_{n}}{y_{n}} - \frac{x}{y}\right| \leq \frac{1}{ \left|y_{n}\right|}  \left|x_{n}-x\right| + \frac{1}{ \left|y_{n}\right|} \left|\frac{x}{y}\right| \left|y_{n}-y\right| < \frac{2}{ \left|y\right|} \left|x_{n}-x\right| + \left|\frac{2x}{y^{2}}\right| \left|y_{n}-y\right|.\]
 Cogemos $\displaystyle n_{2}, n_{3}\in\N $ tal que $\displaystyle \forall n\geq n_{2} $ y $\displaystyle \forall n\geq n_{3} $ tenemos que 
 \[ \left|x_{n}-x\right| < \frac{\epsilon \left|y\right|}{4} \quad \text{y} \quad \left|y_{n}-y\right| < \epsilon \left|\frac{y^{2}}{4x}\right| .\]
 Si cogemos $\displaystyle n_{0} = \max \left\{ n_{1}, n_{2}, n_{3}\right\}  $, tenemos que $\displaystyle \forall n\geq n_{0} $, 
-\[\left|\frac{x_{n}}{y_{n}} - \frac{x}{y}\right| \leq \frac{1}{ \left|y_{n}\right|} \frac{ \left|x_{n}-x\right|}{|y_{n}|} + \frac{1}{ \left|y_{n}\right|} \left|\frac{x}{y}\right| \left|y_{n}-y\right| < \frac{2}{ \left|y\right|} \left|x_{n}-x\right| + \left|\frac{2x}{y^{2}}\right| \left|y_{n}-y\right|<\frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon .\]
+\[\left|\frac{x_{n}}{y_{n}} - \frac{x}{y}\right| \leq \frac{1}{ \left|y_{n}\right|}  \left|x_{n}-x\right| + \frac{1}{ \left|y_{n}\right|} \left|\frac{x}{y}\right| \left|y_{n}-y\right| < \frac{2}{ \left|y\right|} \left|x_{n}-x\right| + \left|\frac{2x}{y^{2}}\right| \left|y_{n}-y\right|<\frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon .\]
 
 \item[(iv)] Decir que $\displaystyle \left|x -x_{n}\right|\to 0 $ es lo mismo que decir que $\displaystyle \lim_{n \to \infty}x_{n} = 0 $. En efecto, si $\displaystyle \left|x -x_{n}\right|\to 0 $, tenemos que
 \[\forall \epsilon > 0, \exists n_{0}\in\N, \forall n \geq n_{0}, \; \left|x_{n}-x\right|<\epsilon  .\]
@@ -359,7 +359,7 @@ Como $\displaystyle \frac{1}{x} \to \frac{1}{x} $ y $\displaystyle \frac{1}{n} \
 \normalfont En la demostración anterior hemos dicho que $\displaystyle r^{n} \to 0 $ es equivalente a decir que $\displaystyle R^{n} \to \infty $. Esto es porque la definición de la segunda será:
 \[\forall c > 0, \exists n_{0}\in\N, \forall n \geq n_{0}, R^{n} > c .\]
 Si $\displaystyle R^{n} > c $ tenemos que 
-\[\frac{1}{r^{n}} > c \iff \frac{1}{r^{n}} < c .\]
+\[\frac{1}{r^{n}} > c \iff r^{n} < c .\]
 Por tanto, se trata de la misma definición, solo que cambiamos $\displaystyle \epsilon  $  por $\displaystyle c $.
 \end{observation}
 
@@ -586,7 +586,7 @@ Tenemos que $\displaystyle x_{2n-1} = 2n-1 $ no converge, por lo que $\displayst
 
 \begin{proof}
 	Diremos que $\displaystyle x_{m} $ es un \textbf{pico} de la sucesión si $\displaystyle x_{m} \geq x_{n} $, $\displaystyle \forall n \geq m $. Supongamos que en $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ hay infinitos picos. Entonces podemos crear una subsucesión descreciente (monótona), $\displaystyle \left\{ x_{m_{j}}\right\} _{j\in\N} $ con los picos:
-	\[x_{m_{1}} < x_{m_{2}} < \ldots < x_{m_{j}} < \cdots .\]
+	\[x_{m_{1}} > x_{m_{2}} > \cdots > x_{m_{j}} > \cdots .\]
 	Si hay un número finito de picos, podemos ir hasta el último pico tal que a partir de este no hay más picos. Supongamos que no hay picos. Es decir, sea $\displaystyle x_{n_{1}} \in \left\{ x_{n}\right\} _{n\in\N} $ tal que $\displaystyle \forall n \geq n_{1} $, $\displaystyle x_{n} $ no es un pico. Por tanto, $\displaystyle \exists n_{2} > n_{1} $ tal que $\displaystyle x_{n_{2}} > x_{n_{1}} $. Iterando, 
 	\[\exists n_{1} < n_{2} < \cdots < n_{j} < \cdots, \]
 tales que

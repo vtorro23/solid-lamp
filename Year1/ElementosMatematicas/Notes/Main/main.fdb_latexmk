@@ -1,8 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1734180954.69252 "main.tex" "main.pdf" "main" 1734180957.02386 2
+["pdflatex"] 1737805499.17614 "main.tex" "main.pdf" "main" 1737805501.47615 2
   "/Users/victoriatorroja/University/Year1/ElementosMatematicas/Notes/Chapters/Chap1.tex" 1732470019.41528 56282 da4bf0cbc368f3157b1e3109db3156f7 ""
   "/Users/victoriatorroja/University/Year1/ElementosMatematicas/Notes/Chapters/Chap2.tex" 1734178635.88342 41818 61beab1a4f518aa2d6246bee68ef265c ""
-  "/Users/victoriatorroja/University/notespreamble.tex" 1733692556.63524 2377 c8d42cb1b4f49399ac9fbd838f038fe1 ""
+  "/Users/victoriatorroja/University/Year1/ElementosMatematicas/Notes/Chapters/Chap3.tex" 1737805497.53881 75 ee5f692944b387be0513d8b5fed3738e ""
+  "/Users/victoriatorroja/University/notespreamble.tex" 1737542384.80574 2411 162a5b18fa75a46668c4f7c05c859d35 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -168,9 +169,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724666679.39075 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "main.aux" 1734180956.77343 2096 8acd026f8c29dd23d22600440098e82a "pdflatex"
-  "main.tex" 1733256048.53223 421 9fcb8207d2231fab055d71d7f3b81550 ""
-  "main.toc" 1734180956.7763 1129 384ef2d595c0274fc17f180025835bd1 "pdflatex"
+  "main.aux" 1737805501.1929 2404 615eb9d6d462f3061f10f168833ae1e4 "pdflatex"
+  "main.tex" 1737805174.44294 494 72ccbdd95dde7d3e01e10a12c96c505a ""
+  "main.toc" 1737805501.19563 1279 7c95b6a9e83b8df7a0698f38afe5bedd "pdflatex"
   (generated)
   "main.aux"
   "main.log"

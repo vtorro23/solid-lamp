@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Análisis - Parcial 1 Solución}
+\author{Victoria Eugenia Torroja Rubio}
+\date{21/1/2025}
+
+\maketitle
+
+\begin{sol}
+Visto en clase.
+\end{sol}
+
+\begin{sol}
+\begin{description}
+\item[(a)] Aplicamos el criterio del cociente para sucesiones
+\[ \frac{x_{n+1}}{x_{n}} = \frac{\left(n+1\right)!}{3 \cdot 5 \cdots \left(2n+3\right)} \cdot \frac{3 \cdot 5 \cdots \left(2n+1\right)}{n!} = \frac{n+1}{2n+3} \to \frac{1}{2} < 1 .\]
+Por tanto, la sucesión converge a 0.
+\item[(b)] Tenemos que
+\[
+\begin{split}
+	\left(\frac{n^{3}+n^{2}+1}{n^{3}+n}\right)^{\frac{\left(n+1\right)^{n}}{n^{n-1}}} = & \left(1 + \frac{n^{2}-n+1}{n^{3}+n}\right)^{\frac{\left(n+1\right)^{n}}{n^{n-1}}} = \left(1 + \frac{1}{\frac{n^{3}+n}{n^{2}-n+1}}\right)^{\frac{\left(n+1\right)^{n}}{n^{n-1}}}  \\ = & 
+	\left[\left(1 + \frac{1}{\frac{n^{3}+n}{n^{2}-n+1}}\right)^{\frac{n^{3}+n}{n^{2}-n+1}}\right]^{\frac{\left(n+1\right)^{n}}{n^{n-1}} \cdot \frac{n^{2}-n+1}{n^{3}+n}} .
+\end{split}
+\]
+Sea $\displaystyle C\left(n\right) = \left(1 + \frac{1}{\frac{n^{3}+n}{n^{2}-n+1}}\right)^{\frac{n^{3}+n}{n^{2}-n+1}} $. Entonces tenemos que 
+\[x_{n} = C\left(n\right)^{\frac{\left(n+1\right)^{n}}{n^{n-1}} \cdot \frac{n^{2}-n+1}{n^{3}+n}} .\]
+Tenemos que $\displaystyle C\left(n\right) \to e $ y
+\[
+\begin{split}
+	\frac{\left(n+1\right)^{n}}{n^{n-1}} \cdot \frac{n^{2}-n+1}{n^{3}+n} = & \frac{1}{\left(1 + \frac{1}{n}\right)^{n}} \cdot \frac{n^{3}-n^{2} +1}{n^{3}+n} \to e \cdot 1 = e	.
+\end{split}
+\]
+Así, $\displaystyle x_{n} \to e^{e} $.
+\end{description}
+\end{sol}
+
+\begin{sol}
+\begin{description}
+\item[(a)] Tenemos que 
+	\[\lim_{x \to x_{0}}f\left(x\right) = \lim_{x \to x_{0}} \frac{f\left(x\right)}{g\left(x\right)}g\left(x\right) = \lim_{x \to x_{0}}\frac{f\left(x\right)}{g\left(x\right)}\lim_{x \to x_{0}}g\left(x\right) = 1 \cdot 0 = 0 .\]
+\item[(b)] Consideremos la función
+\[f\left(x\right) =
+\begin{cases}
+\sin\left(\frac{1}{x}\right), \; x \neq 0 \\
+0, \; x = 0
+\end{cases}
+.\]
+Existen sucesiones $\displaystyle x_{n} = \frac{1}{\frac{\pi }{2} + 2\pi n} $ e $\displaystyle y_{n} = \frac{1}{\pi n} $, que convergen a $\displaystyle 0 $ y son estrictamente positivas, pero sus imágenes convergen a cosas distintas.
+\item[(c)] 
+\[\lim_{x \to \infty}\left(\sqrt{x + \sqrt{x}}-\sqrt{x}\right) = \lim_{x \to \infty}\frac{\sqrt{x}}{\sqrt{x + \sqrt{x}}+\sqrt{x}} = \lim_{x \to \infty} \frac{1}{\sqrt{1+\frac{1}{\sqrt{x}}}+1} = \frac{1}{2} .\]
+\end{description}
+\end{sol}
+
+\begin{sol}
+\begin{description}
+\item[(a)] Visto en clase.
+\item[(b)] 
+	\begin{description}
+	\item[(i)] Vamos a ver que converge absolutamente. Tenemos que
+	\[ \left|\frac{\left(-1\right)^{n}4^{2n}}{\left(2n\right)!} + \frac{1}{n\left(\log\left(n\right)\right)^{2}}\right| \leq \frac{4^{2n}}{\left(2n\right)!} + \frac{1}{n\left(\log\left(n\right)\right)^{2}}.\]
+Para el primero, aplicamos la regla del cociente.
+\[\frac{4^{2n+2}}{\left(2n+2\right)!}\frac{\left(2n\right)!}{4^{2n}} = \frac{16}{\left(2n+1\right)\left(2n+2\right)}\to 0 < 1 .\]
+Por tanto converge. Para la segunda aplicamos el criterio de condensación de Cauchy.
+\[\sum^{\infty}_{n = 2}\frac{1}{n\left(\log\left(n\right)\right)^{2}} \approx \sum^{\infty}_{n=2}\frac{2^{n}}{2^{n}\left(n\log2\right)^{2}} \approx \sum^{\infty}_{n=2}\frac{1}{n^{2}} < \infty .\]
+Por tanto, la segunda serie converge. Por el criterio de comparación, la serie original converge absolutamente, por lo que converge.
+\item[(ii)] Vamos a ver que no converge absolutamente.
+\[
+\begin{split}
+\left|\frac{\cos\left(n\pi \right)n^{n-1}}{\left(n+1\right)^{n}}\right| = \frac{n^{n-1}}{\left(n+1\right)^{n}} = \frac{1}{\left(1+\frac{1}{n}\right)^{n}} \frac{1}{n} \geq  \frac{1}{3n} .
+\end{split}
+\]
+Así, la serie no converge absolutamente. Vamos a ver si converge. Para ello aplicamos el criterio de Leibniz, que nos dice que sí converge. Podemos usar el criterio de Leibniz puesto que $\displaystyle \sum^{n}_{j = 1}\left(-1\right)^{j} $ está acotada y el otro término es estrictamente decreciente y converge a 0.
+	\end{description}
+\end{description}
+\end{sol}
+\end{document}
