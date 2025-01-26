@@ -125,14 +125,14 @@ Si $\displaystyle \grad\left(a\left(x\right)\right) < \grad\left(b\left(x\right)
 \end{split}
 \]
 Tenemos que 
-\[a\left(x\right)-b\left(x\right)\frac{a_{m}}{b_{m}}\left(x^{n-m}\right) = c_{0} + c_{1}x + \cdots + c_{n_{1}}x^{n_{1}}, \; n_{1}\geq n .\]
+\[a\left(x\right)-b\left(x\right)\frac{a_{n}}{b_{m}}\left(x^{n-m}\right) = c_{0} + c_{1}x + \cdots + c_{n_{1}}x^{n_{1}}, \; n_{1}\geq n .\]
 Si $\displaystyle n_{1} < m $,
 \[a\left(x\right) = b\left(x\right) \underbrace{\left(\frac{a_{m}}{b_{m}}\left(x^{m -n}\right)\right)}_{p\left(x\right)} + \underbrace{c\left(x\right)}_{r\left(x\right)} .\]
 Si $\displaystyle n_{1} \geq m $, 
 \[ c\left(x\right) - \frac{c_{n_{1}}}{b_{m}}\left(x^{n_{1}-m}\right) = d _{0} + d _{1}x + \cdots d _{n_{2}}x^{n_{2}}, \; n_{2} < n_{1} < n .\]
 Si $\displaystyle n_{2} < m $,
 \[a\left(x\right) = b\left(x\right)\left(\frac{a_{n}}{b_{m}}x^{n - m} + \frac{c_{n_{1}}}{b_{m}}x^{n_{1}-m}\right) + d _{n_{2}}x^{n_{2}} .\]
-Si $\displaystyle n_{2} \geq m $, $\displaystyle n_{2} < n_{1} < n $ y repetimos el paso anterior. Ahora demostramos la unicidad, $\displaystyle a\left(x\right) = b\left(x\right) p\left(x\right) + r\left(x\right) $ con $\displaystyle \grad\left(r\left(x\right)\right) < \grad\left(b\left(x\right)\right) $ o $\displaystyle r\left(x\right) = 0 $ y $\displaystyle a\left(x\right) = b\left(x\right) p'\left(x\right) + r'\left(x\right) $ con $\displaystyle \grad\left(r'\left(x\right)\right) < \grad\left(b\left(x\right)\right) $ o $\displaystyle r'\left(x\right) = 0 $. Tenemos que
+Si $\displaystyle n_{2} \geq m $, $\displaystyle n_{2} < n_{1} < n $ y repetimos el paso anterior. Después de un número finito de pasos, obtendremos un polinomio resto que tenga grado 0 o cuyo grado sea menor que $\displaystyle m $. Ahora demostramos la unicidad, $\displaystyle a\left(x\right) = b\left(x\right) p\left(x\right) + r\left(x\right) $ con $\displaystyle \grad\left(r\left(x\right)\right) < \grad\left(b\left(x\right)\right) $ o $\displaystyle r\left(x\right) = 0 $ y $\displaystyle a\left(x\right) = b\left(x\right) p'\left(x\right) + r'\left(x\right) $ con $\displaystyle \grad\left(r'\left(x\right)\right) < \grad\left(b\left(x\right)\right) $ o $\displaystyle r'\left(x\right) = 0 $. Tenemos que
 \[b\left(x\right) \left(p\left(x\right)-p'\left(x\right)\right) = r'\left(x\right) -r\left(x\right) .\]
 Si $\displaystyle r\left(x\right) \neq r'\left(x\right) $, entonces $\displaystyle \grad\left(r\left(x\right)-r'\left(x\right)\right) < \grad\left(b\left(x\right)\right) $. Así, $\displaystyle \grad\left(b\left(x\right)\left(p\left(x\right)-p'\left(x\right)\right)\right) < \grad\left(b\left(x\right)\right) $. Sin embargo, tenemos que $\displaystyle \grad\left(b\left(x\right)\left(p\left(x\right)-p'\left(x\right)\right)\right) \geq \grad\left(b\left(x\right)\right) $. Esto es una contradicción, por lo que debe ser que $\displaystyle p\left(x\right) = p'\left(x\right) $ y $\displaystyle r\left(x\right) = r'\left(x\right) $.
 \end{proof}
@@ -163,7 +163,7 @@ Dado $\displaystyle b\left(x\right) \in \K[x] $ y sea $\displaystyle \left(b\lef
 \begin{proof}
 	Si $\displaystyle I = \left\{ 0\right\}  $, entonces $\displaystyle \left(0\right) = I $. Si $\displaystyle I \neq \left\{ 0\right\}  $, sea $\displaystyle b\left(x\right) \in I $ un polinomio de menor grado entre los polinomios de $\displaystyle I $. Tenemos que $\displaystyle \left(b\left(x\right)\right) \subset I $ por las propiedades del ideal. Si $\displaystyle a\left(x\right) \in I $, tenemos que existen $\displaystyle p\left(x\right), r\left(x\right) \in \K[x] $ tales que
 	\[a\left(x\right) = b\left(x\right) p\left(x\right) + r\left(x\right) .\]
-Entonces, $\displaystyle r\left(x\right) = a\left(x\right)-b\left(x\right)p\left(x\right) \in I $. Como $\displaystyle \grad\left(r\left(x\right)\right) < \grad\left(b\left(x\right)\right) $ y $\displaystyle r\left(x\right) \in I $, tenemos que $\displaystyle r\left(x\right) = 0 $.	
+Entonces, $\displaystyle r\left(x\right) = a\left(x\right)-b\left(x\right)p\left(x\right) \in I $. Como $\displaystyle \grad\left(r\left(x\right)\right) < \grad\left(b\left(x\right)\right) $ y $\displaystyle r\left(x\right) \in I $, tenemos que $\displaystyle r\left(x\right) = 0 $. Así, tenemos que $\displaystyle I \subset \left(b\left(x\right)\right) $, por lo que tenemos que $\displaystyle I = \left(b\left(x\right)\right) $.	
 \end{proof}
 
 \begin{fdefinition}[]
@@ -175,6 +175,7 @@ Entonces, $\displaystyle r\left(x\right) = a\left(x\right)-b\left(x\right)p\left
 \begin{description}
 	\item[(i)] $\displaystyle \forall k \in \K/ \left\{ 0\right\}  $, $\displaystyle \left(b\left(x\right)\right) = \left(k b\left(x\right)\right) $.
 	\item[(ii)]  $\displaystyle a\left(x\right) \in \left(a\left(x\right)\right) \subset \left(b\left(x\right)\right) $  $\displaystyle \iff $ $\displaystyle b\left(x\right) | a\left(x\right) $.
+	\item[(iii)] Si $\displaystyle \left(a\left(x\right)\right) = \left(b\left(x\right)\right) $, entonces $\displaystyle a\left(x\right) = kb\left(x\right) $ con $\displaystyle k \in \K $.
 \end{description}
 \end{observation}
 
@@ -216,9 +217,9 @@ Si $\displaystyle q\left(x\right) \in \K[x] $ tal que $\displaystyle \forall i =
 \normalfont Todo polinomio de grado mayor o igual que 1 es producto de polinomios irreducibles.
 \end{ftheorem}
 \begin{proof}
-	Sea $\displaystyle a\left(x\right) \in \K[x] $. Si $\displaystyle a\left(x\right) $ es irreducible, tenemos que $\displaystyle a\left(x\right) = a\left(x\right) \cdot 1 $. Si $\displaystyle a\left(x\right) $ no es irreducilbe, tenemos que $\displaystyle \exists p_{1}\left(x\right) \in \K[x] $ tal que $\displaystyle p_{1}\left(x\right) | a\left(x\right) $ de grado mínimo entre los divisores de $\displaystyle a\left(x\right) $. Así, $\displaystyle a\left(x\right) = p_{1}\left(x\right)a_{1}\left(x\right) $. Tenemos que $\displaystyle p_{1}\left(x\right) $ es irreducible. Si $\displaystyle a_{1}\left(x\right) $ es irreducible, hemos ganado.
+	Sea $\displaystyle a\left(x\right) \in \K[x] $. Si $\displaystyle a\left(x\right) $ es irreducible, tenemos que $\displaystyle a\left(x\right) = a\left(x\right) \cdot 1 $. Si $\displaystyle a\left(x\right) $ no es irreducible, tenemos que $\displaystyle \exists p_{1}\left(x\right) \in \K[x] $ tal que $\displaystyle p_{1}\left(x\right) | a\left(x\right) $ de grado mínimo entre los divisores de $\displaystyle a\left(x\right) $. Así, $\displaystyle a\left(x\right) = p_{1}\left(x\right)a_{1}\left(x\right) $. Tenemos que $\displaystyle p_{1}\left(x\right) $ es irreducible. Si $\displaystyle a_{1}\left(x\right) $ es irreducible, hemos ganado.
 	Si $\displaystyle a_{1}\left(x\right) $ no es irreducible, tenemos que $\displaystyle \exists p_{2}\left(x\right) \in \K[x] $ tal que $\displaystyle p_{2}\left(x\right) | a_{1}\left(x\right) $ de grado mínimo entre los polinomios que dividen $\displaystyle a_{1}\left(x\right) $. Tenemos que $\displaystyle p_{2}\left(x\right) $ es irreducible. Así, $\displaystyle a_{1}\left(x\right) = p_{2}\left(x\right)a_{2}\left(x\right) $, así $\displaystyle a\left(x\right) = p_{1}\left(x\right)p_{2}\left(x\right)a_{2}\left(x\right) $.
-Después de $\displaystyle n $ etapas, tenemos que $\displaystyle a\left(x\right) = p_{1}\left(x\right)p_{2}\left(x\right) \cdots p_{n}\left(x\right)a_{n}\left(x\right) $.
+Después de $\displaystyle n $ etapas, tenemos que $\displaystyle a\left(x\right) = p_{1}\left(x\right)p_{2}\left(x\right) \cdots p_{n}\left(x\right)a_{n}\left(x\right) $, donde $\displaystyle a_{n}\left(x\right) $ será irreducible.
 \end{proof}
 \begin{fprop}[]
 \normalfont Sea $\displaystyle p\left(x\right) = p_{1}\left(x\right) \cdots p_{n}\left(x\right) = q_{1}\left(x\right) \cdots q_{m}\left(x\right)$, donde $\displaystyle p_{i}\left(x\right), q_{j}\left(x\right) $ son irreducibles. Entonces, tenemos que $\displaystyle n = m $ y los polinomios $\displaystyle p_{i}\left(x\right), q_{j}\left(x\right) $ coinciden salvo en orden y factores escalares.
@@ -231,6 +232,7 @@ Así, $\displaystyle p_{n}\left(x\right) | q_{1}\left(x\right) \cdots q_{m}\left
 	\item En el primer caso, tenemos que $\displaystyle \exists k \in \K/ \left\{ 0\right\}  $ tal que $\displaystyle p_{n}\left(x\right) = kq_{1}\left(x\right) $. Así, $\displaystyle p_{1}\left(x\right) \cdots p_{n-1}\left(x\right) = \frac{1}{k}\left(q_{1}\left(x\right) \cdots q_{m -1}\left(x\right)\right) $. Por hipótesis, tenemos que $\displaystyle n - 1 = m - 1 $ y $\displaystyle p_{i}\left(x\right) = q_{j}\left(x\right) $ salvo escalares no nulos.
 	\item En el segundo caso, tenemos que $\displaystyle p_{n}\left(x\right) | q_{2} \cdots q_{m} $, donde podemos iterar el paso anterior.
 \end{itemize}
+Llegaremos a un $\displaystyle q_{j}\left(x\right) $ tal que $\displaystyle p_{n}\left(x\right) = kq_{j}\left(x\right) $. Así, solo nos quedan $\displaystyle n - 1 $ factores, que podemos reducir a la hipótesis de inducción, y se concluye que $\displaystyle n - 1 = m - 1 $, por lo que $\displaystyle n = m $. 
 \end{proof}
 Si $\displaystyle p\left(x\right) \in \K[x] $, $\displaystyle p\left(x\right) = a_{0} + a_{1}x + \cdots + a_{n}x^{n} $, definimos la aplicación 
 \[
