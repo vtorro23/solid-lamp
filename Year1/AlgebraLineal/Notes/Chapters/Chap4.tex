@@ -1,4 +1,4 @@
-\chapter{Forma de Jordan}
+\chapter{Reducción de Endomorfismos}
 Sea $\displaystyle f : V \to V' $ lineal. Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ y $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{m}\right\}  $ son bases de $\displaystyle V $ y $\displaystyle V' $, respectivamente, tenemos que $\displaystyle A =\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\} }\left(f\right) \in \mathcal{M}_{m \times n} \left(\K\right) $. Si $\displaystyle \left\{ \vec{u'}_{1}, \ldots, \vec{u'}_{n}\right\}  $, $\displaystyle \left\{ \vec{v'}_{1}, \ldots, \vec{v'}_{m}\right\}  $ son bases de $\displaystyle V $ y $\displaystyle V' $, respectivamente, con $\displaystyle B =\mathcal{M}_{ \left\{ \vec{u'}_{i}\right\} \left\{ \vec{v'}_{j}\right\} }\left(f\right) $, tenemos que
 \[
 \begin{split}
@@ -259,7 +259,7 @@ Si $\displaystyle p\left(x\right) \in \K[x] $, $\displaystyle p\left(x\right) = 
 \begin{observation}
 \normalfont La suma de las multiplicidades de las raíces de un polinomio de grado $\displaystyle n $ es menor o igual que $\displaystyle n $.
 \end{observation}
-\section{Reducción de endomorfismos}
+\section{Vectores y valores propios}
 Sea $\displaystyle f\in\End\left(V\right) $. Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $. Tenemos que $\displaystyle \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) = A \in \mathcal{M}_{n \times n}\left(\K\right) $. Si $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\}  $ es otra base de $\displaystyle V $. Sea $\displaystyle \mathcal{M}_{ \left\{ \vec{v}_{i}\right\} \left\{ \vec{v}_{i}\right\} }\left(f\right) = B \in \mathcal{M}_{n \times n}\left(\K\right) $. 
 Tenemos que
 \[ \left(\vec{v}_{1}, \ldots, \vec{v}_{n}\right) = \left(\vec{u}_{1}, \ldots, \vec{u}_{n}\right) C, \; C \in \GL\left(n,\K\right) .\]
@@ -283,13 +283,13 @@ Sea $\displaystyle \lambda \in \K $ y sea $\displaystyle L_{\lambda } = \left\{ 
 	\[\vec{0} = f\left(\vec{0}\right) = f\left(a^{1}\vec{x}_{1} + a^{2}\vec{x}_{2}\right) = a^{1}f\left(\vec{x}_{1}\right) + a^{2}f\left(\vec{x}_{2}\right) = a^{1}\lambda_{1}\vec{x}_{1} + a^{2}\lambda_{2}\vec{x}_{2} .\]
 Así, tenemos que
 \[\lambda_{1} \cdot \vec{0} = \lambda_{1}\left(a^{1}\vec{x}_{1} + a^{2}\vec{x}_{2}\right) = a^{1}\lambda_{1}\vec{x}_{1} + a^{2}\lambda_{1}\vec{x}_{2} .\]
-Así, tenemos que
-\[ \vec{0} = \left(a^{1}\lambda_{1} - a^{1}\lambda_{1}\right) \vec{x}_{1} + \left(a^{2}\lambda_{2}-a^{2}\lambda_{2}\right)\vec{x}_{2} \Rightarrow \vec{0} = a^{2}\left(\lambda_{2}-\lambda_{1}\right)\vec{x}_{2} \Rightarrow a^{2} = 0 .\]
+Así, restando las dos ecuaciones anteriores tenemos que
+\[ \vec{0} = \left(a^{1}\lambda_{1} - a^{1}\lambda_{1}\right) \vec{x}_{1} + \left(a^{2}\lambda_{2}-a^{2}\lambda_{1}\right)\vec{x}_{2} \Rightarrow \vec{0} = a^{2}\left(\lambda_{2}-\lambda_{1}\right)\vec{x}_{2} \Rightarrow a^{2} = 0 .\]
 Así, como $\displaystyle a^{1}\vec{x}_{1} = \vec{0} $, tenemos que $\displaystyle a^{1} = 0 $. Ahora, asumimos que es cierto para $\displaystyle p - 1 $. En el caso de $\displaystyle p $, sean $\displaystyle \left\{ a^{1}, \ldots, a^{p}\right\} \subset \K $ tales que $\displaystyle a^{1}\vec{x}_{1} + \cdots + a^{p}\vec{x}_{p} = \vec{0} $. Tenemos que
 \[\vec{0} = \lambda_{1} \vec{0} = \lambda_{1}a^{1}\vec{x}_{1} + \cdots + \lambda_{1}a^{p}\vec{x}_{p} .\]
 Por otro lado tenemos que
-\[\vec{0} = f\left(\vec{0}\right) = a^{1}\lambda_{1}\vec{x}_{1} + \cdots + a^{p}\lambda_{p}\vec{x}_{p} = a^{2}\left(\lambda_{2}-\lambda_{1}\right)\vec{x}_{2} + \cdots + a^{p}\left(\lambda_{p}-\lambda_{1}\right)\vec{x}_{p} .\]
-Así, tenemos que 
+\[\vec{0} = f\left(\vec{0}\right) = a^{1}\lambda_{1}\vec{x}_{1} + \cdots + a^{p}\lambda_{p}\vec{x}_{p} \Rightarrow a^{2}\left(\lambda_{2}-\lambda_{1}\right)\vec{x}_{2} + \cdots + a^{p}\left(\lambda_{p}-\lambda_{1}\right)\vec{x}_{p} .\]
+Por hipótesis de inducción tenemos que 
 \[ a^{2}\left(\lambda_{2}-\lambda_{1}\right) = a^{3}\left(\lambda_{3}-\lambda_{1}\right) = \cdots = a^{p}\left(\lambda_{p}-\lambda_{1}\right) = 0 .\]
 Por tanto, $\displaystyle a^{2} = a^{3} = \cdots = a^{p} = 0 $ y, consecuentemente $\displaystyle a^{1}\vec{x}_{1} = \vec{0} \Rightarrow a^{1} = 0 $.
 \end{proof}
@@ -297,4 +297,291 @@ Por tanto, $\displaystyle a^{2} = a^{3} = \cdots = a^{p} = 0 $ y, consecuentemen
 \normalfont Una consecuencia de este teorema es que 
 \[L_{\lambda_{1}}\oplus L_{\lambda_{2}} \oplus \cdots \oplus L_{\lambda_{p}} .\]
 \end{observation}
+\begin{observation}
+\normalfont Otra consecuencia interesante es que si $\displaystyle \dim\left(V\right) = n $ y $\displaystyle f \in \End\left(V\right) $, entonces no puede haber más de $\displaystyle n $ valores propios.
+\end{observation}
+\section{Polinomio característico}
+Tenemos que $\displaystyle \K \subset \K[x] \subset \K\left(x\right) $, donde $\displaystyle \K\left(x\right)$ denota el cuerpo de las fracciones racionales. Podemos definir la relación de divisibilidad, que es una relación de equivalencia:
+\[\forall p\left(x\right), p'\left(x\right) \in \K[x], \; \left( p\left(x\right), q\left(x\right)\right) \mathcal{R}\left( p'\left(x\right), q'\left(x\right)\right) \iff p\left(x\right)q'\left(x\right) = q\left(x\right) p'\left(x\right).\]
+Sea $\displaystyle A \in \mathcal{M}_{n \times n}\left(\K\right) $, tenemos que 
+\[\det\left(A - x I_{n \times n}\right) = \begin{vmatrix} a_{1}^{1}-x & a^{1}_{2} & \cdots & a^{1}_{j} & \cdots & a^{1}_{i} & \cdots & a^{1}_{n} \\
+a^{2}_{1} & a^{2}_{2} - x & \cdots & a^{2}_{j} & \cdots & a^{2}_{i} & \cdots & a^{2}_{n}\\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+a^{j}_{1} & a^{j}_{2} & \cdots & a^{j}_{j}-x & \cdots & a^{j}_{i} & \cdots & a^{j}_{n} \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+a^{i}_{1} & a^{i}_{2} & \cdots & a^{i}_{j} & \cdots & a^{i}_{i} - x & \cdots & a^{i}_{n} \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+a^{n}_{1} & a^{n}_{2} & \cdots & a^{n}_{j} & \cdots & a^{n}_{i} & \cdots & a^{n}_{n} - x
+\end{vmatrix}  .\]
+Así, tenemos que el valor del determinante será:
+\[ \det\left(A - x I_{n \times n}\right) = \left(a^{1}_{1} - x\right)\cdots\left(a^{n}_{n}-x\right)+ q\left(x\right) = \left(-1\right)^{n}x^{n} + \left(-1\right)^{n-1}\left(a^{1}_{1}+ \cdots + a^{n}_{n}\right)x^{n-1} + q\left(x\right), \; \grad\left(q\left(x\right)\right) \leq n - 2 .\]
+Dado que el término independiente será $\displaystyle \det\left(A\right) $,
+\[\det\left(A - xI_{n \times n}\right) = \left(-1\right)^{n}x^{n} + \left(-1\right)^{n - 1}\left(a^{1}_{1} + \cdots + a^{n}_{n}\right)x^{n-1} + \cdots + \det\left(A\right) .\]
+Sea $\displaystyle B \in \mathcal{M}_{n \times n}\left(\K\right) $ semejante a $\displaystyle A \in \mathcal{M}_{n \times n}\left(\K\right) $. Entonces, existe $\displaystyle C \in \GL\left(n, \K\right) $ tal que $\displaystyle B = C^{-1}AC $. Así, tenemos que 
+\[
+\begin{split}
+	\det\left(B - x I_{n\times n}\right) = & \det\left(C^{-1}AC - xC^{-1}C\right) = \det\left(C^{-1}AC - C^{-1} x C\right) = \det\left(C^{-1}\left(A - x I_{n \times n}\right)C\right) \\
+	= & \det\left(C^{-1}\right)\det\left(A - x I_{n \times n}\right) \det \left(C\right) = \det\left(A - x I_{n \times n}\right).
+\end{split}
+\]
+\begin{fdefinition}[Polinomio característico]
+\normalfont Decimos que $\displaystyle \det\left(A - xI_{n \times n}\right) $ es el \textbf{polinomio característico} de $\displaystyle A $. Si $\displaystyle f \in \End\left(V\right) $, el polinomio característico de $\displaystyle f $ es el polinomio característico de $\displaystyle A $, donde $\displaystyle A $ es la matriz de $\displaystyle f $ en una base. \footnote{Normalmente se designa como $\displaystyle P_{cf} $ o $\displaystyle P_{cf}\left(x\right) $. }.
+\end{fdefinition}
+\begin{observation}
+\normalfont Dado que el polinomio característico no depende de la base, la suma de los elementos de la diagonal principal de la matriz de un endomorfismo es invariante. 
+\end{observation}
+\begin{fdefinition}[]
+\normalfont Llamaremos \textbf{traza} de $\displaystyle f $ a $\displaystyle a^{1}_{1} + \cdots + a^{n}_{n} = \traz\left(f\right) $ 
+\end{fdefinition}
+\begin{observation}
+\normalfont Tenemos que 
+\[
+\begin{split}
+	\traz : \End\left(V\right)  & \to \K \\
+	f & \to \traz\left(f\right),
+\end{split}
+\]
+es lineal. Además, $\displaystyle \traz\left(f \circ g\right) = \traz\left(g \circ f\right) $.
+\end{observation}
+\begin{observation}
+\normalfont Tenemos que si $\displaystyle \lambda \in \K $ es valor propio de $\displaystyle f $, $\displaystyle \det\left(A - x I _{n \times n}\right) = 0 $.
+\end{observation}
+\begin{ftheorem}[]
+\normalfont $\displaystyle \lambda \in \K $ es un valor propio de $\displaystyle f $ si y solo si $\displaystyle \lambda  $ es raíz de $\displaystyle P_{cf}\left(x\right) $. Además, si $\displaystyle \lambda  $ es un valor propio, $\displaystyle \dim\left(L_{\lambda }\right)  $ es menor o igual que la multiplicidad de $\displaystyle \lambda  $ como raíz de $\displaystyle P_{cf}\left(x\right) $.
+\end{ftheorem}
+\begin{proof}
+	Tenemos que $\displaystyle \lambda  $ es valor propio de $\displaystyle f $ si y solo si existe $\displaystyle \vec{x} \in V/ \left\{ \vec{0}\right\}  $ tal que $\displaystyle \left(f - \lambda id _{V}\right)\left(\vec{x}\right) = \vec{0} $, si y solo si $\displaystyle \Ker\left(f - \lambda id _{V}\right) \neq \left\{ \vec{0}\right\}  $, si y solo si $\displaystyle f - \lambda id _{V} $ no es inyectiva, si y solo si $\displaystyle \det\left(A - \lambda I_{n \times n}\right) = 0 $, si y solo si $\displaystyle \lambda  $ es raíz de $\displaystyle P_{cf}\left(x\right) $.
+	Sea $\displaystyle \lambda \in \K $ valor propio de $\displaystyle f $ y $\displaystyle L_{\lambda } = \left\{ \vec{x} \in V \; : \; f\left(\vec{x}\right) = \lambda \vec{x}\right\}  $. Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{k}\right\}  $ base de $\displaystyle L_{\lambda } $ y $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $.
+Tenemos que $\displaystyle \forall i = 1, \ldots, k $, $\displaystyle f\left(\vec{u}_{i}\right) = \lambda \vec{u}_{i} $. Así,
+\[
+	\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) = 
+	\begin{pmatrix} \lambda & 0 & \cdots & 0\\
+	0 & \lambda & \cdots & 0 \\
+\vdots & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & \lambda  & A\\
+\vdots & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & 0\end{pmatrix} = \begin{pmatrix} \lambda & 0 & \cdots & 0\\
+	0 & \lambda & \cdots & 0 \\
+	\vdots & \vdots & \vdots & \vdots & A_{1} \\
+0 & 0 & \cdots & \lambda  \\
+\vdots & \vdots & \vdots & \vdots & A_{2} \\
+0 & 0 & \cdots & 0\end{pmatrix}
+.\]
+Tenemos que $\displaystyle A $ está formada por los componentes de las imágenes de los restantes vectores de la base. Si formásemos la matriz de la ecuación característica y desarrollásemos el determinante, está claro que en el polinomio característico aparece un factor de $\displaystyle \left(\lambda - x\right)^{k} $, por lo que $\displaystyle k $ no supera la multiplicidad de la raíz $\displaystyle \lambda  $ en el polinomio característico. También se puede ver de la siguiente forma:
+\[P_{cf}\left(x\right) = \begin{vmatrix} \lambda - x & 0 & \cdots & 0\\
+	0 & \lambda - x& \cdots & 0  \\
+	\vdots & \vdots & \vdots & \vdots & A_{1} \\
+0 & 0 & \cdots & \lambda  - x \\ \hline \\
+\vdots & \vdots & \vdots & \vdots & A_{2} - x I_{\left(n - k\right)\times\left(n - k\right)}  \\
+0 & 0 & \cdots & 0\end{vmatrix} = \left(\lambda - x\right)^{k} \left|A_{2} - I_{\left(n - k\right) \times \left(n - k\right)}\right|
+ .\]
+\end{proof}
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle \lambda  $ un valor propio de $\displaystyle f $. La \textbf{multiplicidad geométrica} de $\displaystyle \lambda  $ como valor propio de $\displaystyle f $ es $\displaystyle \dim\left(L_{\lambda }\right) $. Similarmente, la \textbf{multiplicidad algebraica}  de $\displaystyle \lambda  $ como valor propio de $\displaystyle f $ es la multiplicidad de $\displaystyle \lambda  $ como raíz de $\displaystyle P_{cf}\left(x\right) $. Entonces
+\[m.g\left(\lambda \right) \leq m. a \left(\lambda \right) .\]
+\end{fdefinition}
+\section{Endomorfismos diagonalizables y triangulables}
+\begin{fdefinition}[]
+	\normalfont Un endomorfismo $\displaystyle f $ de $\displaystyle V $ es \textbf{diagonalizable} si existe $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $ formada por vectores propios de $\displaystyle f $.
+\end{fdefinition}
+\begin{ftheorem}[]
+	\normalfont Un endomorfismo $\displaystyle f $ es diagonalizable si y solo si $\displaystyle P_{cf}\left(x\right) $ se descompone en factores lineales en $\displaystyle \K[x] $ y $\displaystyle \forall \lambda \in \K $ valor propio de $\displaystyle f $, $\displaystyle m.g\left(\lambda \right) = m.a\left(\lambda \right) $.
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Si $\displaystyle \exists \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $ foramda por vectores propios de $\displaystyle f $, entonces
+\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(f\right) = \begin{pmatrix} 
+	\lambda _{1} & 0 & \cdots & 0 \\
+0 & \lambda _{2} & \cdots & 0 \\
+\vdots & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & \lambda_{n}\end{pmatrix} .\]
+Por lo que 
+\[P_{cf}\left(x\right) = \left(\lambda_{1}-x\right)\left(\lambda_{2}-x\right) \cdots \left(\lambda_{n}-x\right) .\]
+En efecto, 
+\[P_{cf}\left(\lambda \right) = \begin{pmatrix} \lambda _{1} - \lambda & 0 & \cdots & 0 \\
+0 & \lambda _{2} - \lambda & \cdots & 0 \\
+\vdots & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & \lambda_{n} - \lambda \end{pmatrix} .\]
+Sean $\displaystyle \lambda_{1}, \ldots, \lambda_{k} \in \K $ valores propios de $\displaystyle f $, donde $\displaystyle \lambda_{i} \neq \lambda_{j} $ si $\displaystyle i \neq j $. Entonces, tenemos que $\displaystyle L_{\lambda_{1}} \oplus L_{\lambda_{2}} \oplus \cdots \oplus L_{\lambda_{k}} $. Entonces, tenemos que existen $\displaystyle r_{1}, r_{2}, \ldots, r_{k} \geq 1 $, con $\displaystyle r_{1} + \cdots + r_{k}  = n $, tales que
+\[
+\begin{split}
+	P_{cf}\left(x\right) = & \left(x - \lambda_{1}\right)^{r_{1}} \cdots \left(x - \lambda _{k}\right)^{r_{k}} .
+\end{split}
+\]
+Entonces, tenemos que 
+\[\dim\left(V\right) \leq \dim\left(L_{\lambda_{1}}\right) + \cdots + \dim\left(L_{\lambda_{k}}\right) \leq r_{1} + \cdots + r_{k} = n .\]
+Así, $\displaystyle \dim\left(L_{\lambda_{i}}\right) = r_{i} $, $\displaystyle \forall i = 1, \ldots, k $. Así, hemos obtenido que $\displaystyle L_{\lambda_{1}} \oplus \cdots \oplus L_{\lambda_{k}} = V $.
+\item[(ii)] Si $\displaystyle P_{cf}\left(x\right) $ se descompone en factores lineales de forma que 
+	\[P\left(cf\right)\left(x\right) = \left(\lambda_{1}-x\right)^{r_{1}}\cdots\left(\lambda_{k}-x\right)^{r_{k}} .\]
+	Entonces, tenemos que las raíces del polinomio son valores propios de $\displaystyle f $, por lo que existen $\displaystyle L_{\lambda_{1}} \oplus \cdots \oplus L_{\lambda_{k}} $. Además, como $\displaystyle \dim\left(L_{\lambda_{i}}\right) = r_{i} $ para $\displaystyle i = 1, \ldots, k $, tenemos que $\displaystyle L_{\lambda_{1}}\oplus\cdots\oplus L_{\lambda_{k}} = V $, por lo que existe una base de $\displaystyle V $ formada por vectores propios y $\displaystyle f $ es diagonalizable. En efecto, sea $\displaystyle \left\{ \vec{u^{i}}_{1}, \ldots, \vec{u^{i}}_{r_{i}}\right\}  $ base de $\displaystyle L_{\lambda_{i}} $ con $\displaystyle i = 1, \ldots, k $. Entonces, tenemos que $\displaystyle \bigcup_{i = 1, \ldots, k} \left\{ \vec{u^{i}}_{1}, \ldots, \vec{u^{i}}_{r_{i}}\right\}  $ es base de $\displaystyle V $. Así, la matriz de $\displaystyle f $ en esta base será
+\[ \begin{pmatrix} \lambda_{1} & 0 & \cdots & 0 \\\
+0 & \lambda_{2} & \cdots & 0 \\
+ \vdots & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & \lambda_{k}\end{pmatrix}.\]
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont Para ver si un endofmorfismo es diagonalizable, hay que resolver el polinomio característico lo que da unas raíces $\displaystyle \lambda_{1}, \ldots, \lambda_{p} $ y lo primero que hay que comprobar es si la suma de las multiplicidades coincide con la dimensión de $\displaystyle V $.
+\end{observation}
+
+\begin{fdefinition}[]
+	\normalfont Sea $\displaystyle f \in \End\left(V\right) $ es \textbf{triangulable} si $\displaystyle \exists \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $ tal que 
+	\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) =  \begin{pmatrix} a^{1}_{1} & a^{1}_{2} & \cdots & a^{1}_{n} \\
+		0 & a^{2}_{2} & \cdots & a^{2}_{n} \\
+0 & 0 & \cdots & a^{3}_{n} \\
+\vdots & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & a^{n}_{n}\end{pmatrix} .\]
+\end{fdefinition}
+\begin{observation}
+\normalfont Tenemos que $\displaystyle P_{cf}\left(x\right) = \det\left(A - x I_{n \times n}\right)= \left(-1\right)^{n}\left(x - a^{1}_{1}\right) \cdots \left(x- a^{n}_{n}\right) $.
+\end{observation}
+\begin{ftheorem}[]
+	\normalfont $\displaystyle f $ es triangulable si y solo si $\displaystyle P_{cf}\left(x\right) $ se descompone en factores lineales en $\displaystyle \K[x] $.
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Evidente.
+\item[(ii)] Consideremos el caso $\displaystyle n = 2 $. Sea $\displaystyle \lambda \in \K $ un vector propio de $\displaystyle f $ y $\displaystyle \vec{x}_{1} \in L_{\lambda }/ \left\{ \vec{0}\right\}  $. Entonces tenemos que $\displaystyle f\left(\vec{x}_{1}\right) = \lambda\vec{x}_{1} $. Si $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}\right\}  $ es base de $\displaystyle V $, tenemos que
+	\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) = \begin{pmatrix} \lambda & a \\
+	0 & b\end{pmatrix} .\]
+	Asumimos que es cierto para $\displaystyle n - 1 $. Sea $\displaystyle \lambda_{1} \in \K $ un valor propio de $\displaystyle f $ y sea $\displaystyle \vec{x}_{1} \in L_{\lambda_{1}} / \left\{ \vec{0}\right\}  $. Sea $\displaystyle \left\{ \vec{x}_{1}, \ldots, \vec{ x}_{n}\right\}  $ base de $\displaystyle V $ y sea $\displaystyle L = L\left( \left\{ \vec{x}_{2}, \ldots, \vec{x}_{n}\right\} \right) $. Tenemos que $\displaystyle L \oplus L\left( \left\{ \vec{x}_{1}\right\} \right) = V $. 
+	Sea $\displaystyle p $ la proyección vectorial de base $\displaystyle L $ y dirección $\displaystyle L\left( \left\{ \vec{x}_{1}\right\} \right) $, y sea $\displaystyle p \circ f \in \End\left(L\right) $. Tenemos que $\displaystyle \dim\left(L\right) = n - 1 $. Tenemos que 
+		\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) = \begin{pmatrix} \lambda _{1} & a^{1}_{2} & \cdots & a^{1}_{n} \\
+		0 & a^{2}_{2} & \cdots & a^{2}_{n} \\
+	\vdots & \vdots & \vdots & \vdots\\
+0 & a^{n}_{2} & \cdots & a^{n}_{n}\end{pmatrix} .\]
+Similarmente, sabemos que si $\displaystyle \vec{x} \in V $, 
+\[p\circ f\left(\vec{x}\right) = p\left(a^{1}_{i}\vec{x}_{1} + \cdots + a^{n}_{i}\vec{x}_{n}\right)= a^{2}_{i}\vec{x}_{2} + \cdots + a^{n}_{i}\vec{x}_{n} .\]
+Entonces, tenemos que 
+\[p\circ f \to \begin{pmatrix} a^{2}_{2} & \cdots & a^{2}_{n} \\
+\vdots & & \vdots \\
+a^{n}_{2} & \cdots & a^{n}_{n}\end{pmatrix} \Rightarrow P_{cf}\left(x\right) = - \left(x - \lambda_{1}\right) P_{c,p \circ f}\left(x\right) .\]
+	Por hipótesis de inducción, existe $\displaystyle \left\{ \vec{u}_{2}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle L $ tal que $\displaystyle \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(p \circ f\right) = \begin{pmatrix} \lambda_{2} & b^{2}_{2} & \cdots & b^{2}_{n} \\
+	0 & \lambda_{3} & \cdots & b^{3}_{n} \\
+\vdots & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & \lambda_{n}\end{pmatrix} $. Así, en la base $\displaystyle \left\{ \vec{x}_{1}, \vec{u}_{2}, \ldots, \vec{u}_{n}\right\}  $, la matriz de $\displaystyle f $ es
+		\[\begin{pmatrix} \lambda_{1} & a^{1}_{2} & a^{1}_{3} & \cdots & a^{1}_{n}\\
+		0 & \lambda_{2} & b^{2}_{3} & \cdots & b^{2}_{n} \\
+	\vdots & \vdots & \vdots & \vdots & \vdots \\
+0 & 0 & 0 & \cdots & \lambda_{n}\end{pmatrix} .\]
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont 
+Si $\displaystyle p' $ es la proyección de base $\displaystyle L\left( \left\{ \vec{x}_{1}\right\} \right) $ y dirección $\displaystyle L $, tenemos que $\displaystyle id _{V} = p + p' $. Otra forma de decir que $\displaystyle f $ es triangulable, es decir que existe una sucesión de subespacios de $\displaystyle V $: $\displaystyle \left\{ \vec{0}\right\}  \subset L_{1} \subset \cdots \subset L_{n} = V $ tales que $\displaystyle f\left(L_{i}\right) \subset L_{i} $ para $\displaystyle i = 1, \ldots, n $.
+\end{observation}
+
+\begin{fdefinition}[]
+\normalfont Un endomorfismo $\displaystyle f $ de $\displaystyle V $ es \textbf{nilpotente} si existe $\displaystyle m \in \N $ tal que $\displaystyle f^{m} = 0 $ y $\displaystyle f^{m - 1} \neq 0 $. 
+\end{fdefinition}
+\begin{observation}
+\normalfont Si $\displaystyle \vec{x}  $ es un vector propio de $\displaystyle f $, tenemos que $\displaystyle f\left(\vec{x}\right) = \lambda \vec{x} $, \ldots, $\displaystyle f^{m - 1}\left(\vec{x}\right) = \lambda^{m - 1}\vec{x} $ y $\displaystyle f^{m}\left(\vec{x}\right) =\lambda^{m}\vec{x}=\vec{0} $. Es decir, si es nilpotente, el único posible valor propio es el 0. Es decir, en este caso la matriz triangular tiene diagonal nula.
+\end{observation}
+\section{Teorema de Cayley-Hamilton}
+Tenemos que $\displaystyle P_{cf}\left(f\right) \in \End\left(V\right)$. Si $\displaystyle A $ es la matriz de $\displaystyle f $, tenemos que $\displaystyle P_{cA}\left(A\right) \in \mathcal{M}_{n \times n}\left(\K\right) $. Si $\displaystyle p\left(x\right), q\left(x\right) \in \K[x] $, tenemos definidas las operaciones
+\[p\left(x\right) + q\left(x\right) = \left(p + q\right)\left(x\right) = \left(q + p\right)\left(x\right) = q\left(x\right) + p\left(x\right) .\]
+\[p\left(x\right)q\left(x\right) = q\left(x\right) p\left(x\right) .\]
+Similarmente, 
+\[\left(p\left(x\right)+q\left(x\right)\right)\left(f\right) = p\left(f\right) + q\left(f\right) .\]
+\[\left(p\left(x\right)q\left(x\right)\right)\left(f\right) = p\left(f\right)\circ q\left(f\right) .\]
+Entonces, tenemos que
+\[p\left(A\right) = \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} , \left\{ \vec{u}_{i}\right\} }\left(p\left(f\right)\right) .\]
+\begin{observation}
+	\normalfont Si $\displaystyle p\left(x\right) \in \K[x] $ tal que $\displaystyle p\left(x\right) = a_{0} + a_{1}x + \cdots + a_{n}x^{n} $, y $\displaystyle f \in \End\left(V\right)$, se define 
+	\[p\left(f\right) = a_{0} + a_{1}f + \cdots + a_{n}f^{n} \in \End\left(V\right) .\]
+\end{observation}
+\begin{ftheorem}[]
+\normalfont 
+\[P_{cf}\left(f\right) = 0 \in \End\left(V\right), \; P_{CA}\left(A\right) = 0 .\]
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle  \K = \C $, entonces $\displaystyle P_{cf}\left(x\right) = \left(-1\right)^{n}\left(x - \lambda_{1}\right) \cdots \left(x - \lambda_{n}\right) $. Según el teorema 4.7, tenemos que existe una base de $\displaystyle V $, $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ tal que 
+	\[
+	\begin{split}
+	& f\left(\vec{u}_{1}\right) = \lambda_{1}\vec{u}_{1} \\
+	& f\left(\vec{u}_{2}\right) = a^{1}_{2}\vec{u}_{1} + \lambda_{2}\vec{u}_{2} \\
+	& \vdots \\
+	& f\left(\vec{u}_{n}\right) = a^{1}_{n}\vec{u}_{1} + \cdots + a^{n-1}_{n}\vec{u}_{n-1}+\lambda_{n}\vec{u}_{n}.
+	\end{split}
+	\]
+Entonces tenemos que 
+\[P_{cf}\left(f\right) = \left(-1\right)^{n}\left(f-\lambda_{1}id _{V}\right) \circ \cdots \circ \left(f - \lambda_{n}id _{V}\right). \] 
+Para ver que $\displaystyle P_{cf}\left(f\right) $ es el endomorfismo nulo, tenemos que ver que se anula sobre la base anterior. Así, $\displaystyle \left(f - \lambda_{1}id _{V}\right)\left(\vec{u}_{1}\right) = \vec{0} $. Dado que $\displaystyle \left(f - \lambda_{1}id _{V}\right) \circ \left(f - \lambda_{2}id _{V}\right) = \left(f - \lambda_{2}id _{V}\right) \circ \left(f - \lambda_{1}id _{V}\right) $, tenemos que $\displaystyle \left(f - \lambda_{2}id _{V}\right) \circ \left(f - \lambda_{1}id _{V}\right)\left(\vec{u}_{1}\right) = \vec{0} $.
+También tenemos que  
+\[
+\begin{split}
+	\left(f - \lambda_{1}id _{V}\right) \circ \left(f - \lambda_{2}id _{V}\right)\left(\vec{u}_{2}\right) = \left(f - \lambda_{1}id _{V}\right) \circ \left(f - \lambda_{2}id _{V}\right)\left(a^{1}_{2}\vec{u}_{1}+\lambda_{1}\vec{u}_{2}\right) = \vec{0} .
+\end{split}
+\]
+Se deja como ejercicio para el lector que esto definitivamente es cierto.
+Suponemos que es cierto para $\displaystyle i \leq n $. Tenemos que $\displaystyle \left(f - \lambda_{i - 1}id _{V}\right)\left(\vec{u}_{j}\right) = \vec{0} $ para $\displaystyle j = 1, \ldots, i - 1 $. Además, 
+\[ \left(f - \lambda_{i}id _{V}\right)\circ \left(f - \lambda_{1}id _{V}\right) \circ \cdots \circ \left(f - \lambda_{i - 1}id _{V}\right)= \left(f - \lambda_{1}id _{V}\right)\circ \cdots\circ \left(f - \lambda_{i}id _{V}\right).\]
+Así, por hipótesis tenemos que para $\displaystyle j = 1, \ldots, i - 1 $,
+\[
+\begin{split}
+\left(f - \lambda_{1}id _{V}\right)\circ \cdots\circ \left(f - \lambda_{i}id _{V}\right)\left(\vec{u}_{j}\right) = \left(f - \lambda_{i}id _{V}\right)\circ\left(f - \lambda_{1}id _{V}\right)\circ \cdots\circ \left(f - \lambda_{i-1}id _{V}\right)\left(\vec{u}_{j}\right) = \vec{0}.
+\end{split}
+\]
+En el caso de $\displaystyle \vec{u}_{i} $, tenemos que $\displaystyle \left(f - \lambda_{i}id _{V}\right)\left(\vec{u}_{i}\right) = f\left(\vec{u}_{i}\right)-\lambda_{i}\vec{u}_{i} =  a^{1}_{i}\vec{u}_{1} + \cdots + a^{i -1}_{i}\vec{u}_{i-1} $. Si aplicamos $\displaystyle \left(f - \lambda_{1}id _{V}\right) \circ \cdots \circ \left(f - \lambda_{i - 1}id _{V}\right) $ sobre el resultado anterior, obtendremos el vactor nulo, por lo que
+\[ \left(f - \lambda_{1}id _{V}\right) \circ \cdots \circ \left(f - \lambda_{i - 1}id _{V}\right)\left(f - \lambda_{i}id _{V}\right)\left(\vec{u}_{i}\right) = \vec{0} .\]
+\end{proof}
+Recordamos que $\displaystyle P_{cf}\left(x\right) = \det\left(A - xI_{n\times n}\right) $, donde $\displaystyle f \in \End\left(V\right) $ y $\displaystyle A $ es la matriz asociada a $\displaystyle f $. Sea $\displaystyle I = \left\{ p\left(x\right) \in \K[x] \; : \; p\left(f\right) = 0\right\}  $. Sabemos que $\displaystyle I \neq \emptyset $. 
+Tenemos que $\displaystyle I $ es un ideal. En efecto, si $\displaystyle p\left(x\right), q\left(x\right) \in I $,
+\[ \left(p\left(x\right)+q\left(x\right)\right)\left(f\right) = p\left(f\right) + q\left(f\right)= 0 .\]
+Similarmente, si $\displaystyle p\left(x\right) \in \K[x] $ y $\displaystyle q\left(x\right) \in I $, entonces $\displaystyle p\left(f\right) \in \End\left(V\right) $ y $\displaystyle q\left(f\right) = 0 $, por lo que $\displaystyle p\left(f\right) \circ q\left(f\right) = 0 $. \\ \\
+Entonces, existe $\displaystyle P_{mf}\left(x\right) \in \K[x] $ mónico tal que $\displaystyle I = \left(P_{mf}\left(x\right)\right) $.
+\begin{fdefinition}[]
+\normalfont A $\displaystyle P_{mf}\left(x\right) $ lo llamamos \textbf{polinomio mínimo} de $\displaystyle f $. Se dice que $\displaystyle p\left(x\right) $ es un \textbf{polinomio anulador} de $\displaystyle f $ si $\displaystyle p\left(x\right) \in I $.
+\end{fdefinition}
+\begin{fdefinition}[]
+\normalfont Un subespacio vectorial $\displaystyle L $ de $\displaystyle V $ es \textbf{invariante} por $\displaystyle f $ si $\displaystyle f\left(L\right) \subset L $.
+\end{fdefinition}
+\begin{observation}
+\normalfont Si $\displaystyle V = L_{1} \oplus L_{2} \oplus \cdots \oplus L_{k} $ con $\displaystyle L_{i} \in \mathcal{L}\left(V\right) $ ivariante por $\displaystyle f $ para $\displaystyle i = 1, \ldots, k $:
+\[f|_{L_{i}}:L_{i} \to L_{i} .\]
+Si $\displaystyle \left\{ \vec{u}^{i}_{1}, \ldots, \vec{u}^{i}_{k}\right\}  $ base de $\displaystyle L_{i} $ para $\displaystyle i = 1, \ldots, k $, entonces 
+\[ \left\{ \vec{u}^{1}_{1}, \ldots, \vec{u}^{1}_{k}, \ldots, \vec{u}^{k}_{1}, \ldots, \vec{u}^{k}_{k}\right\}  ,\]
+es base de $\displaystyle V $. Así, tenemos que 
+\[ \mathcal{M}_{ \left\{ \vec{u}^{j}_{i}\right\} \left\{ \vec{u}^{j}_{i}\right\} }\left(f\right) = \begin{pmatrix} A_{1} & 0 & \cdots & 0 \\
+0 & A_{2} & \cdots & 0 \\
+\vdots & \vdots & \cdots & \vdots \\
+0 & 0 & \cdots & A_{n}\end{pmatrix} .\]
+Donde $\displaystyle A_{j} = \mathcal{M}_{ \left\{ \vec{u}^{j}_{i}\right\} \left\{ \vec{u}^{j}_{i}\right\} } \left(f|_{L_{j}}\right)$.
+\end{observation}
+Si $\displaystyle p\left(x\right) \in \K[x] $.
+\begin{fprop}[]
+\normalfont 
+\begin{description}
+\item[(a)] $\displaystyle \Ker\left(p\left(f\right)\right) $ es un subespacio vectorial invariante por $\displaystyle f $.
+\item[(b)] $\displaystyle \Imagen\left(p\left(f\right)\right)\in \mathcal{L}\left(V\right) $ es un subespacio vectorial invariante por $\displaystyle f $.
+\end{description}
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(a)] Tenemos que $\displaystyle p\left(x\right) \cdot x = x \cdot p\left(x\right) $. Así, si $\displaystyle p\left(f\right) \left(\vec{x}\right) = \vec{0} $, 
+	\[p\left(f\right)\left(f\left(\vec{x}\right)\right) = \left(\left(p\left(x\right) \cdot x\right)\left(f\right)\right)\left(\vec{x}\right) = f \circ p\left(f\right)\left(\vec{x}\right) = f\left(\vec{0}\right) = \vec{0} .\]
+\item[(b)] Si $\displaystyle \vec{x} \in \Imagen\left(p\left(f\right)\right) $, entonces existe $\displaystyle \vec{y} \in V $ tal que $\displaystyle p\left(f\left(\vec{y}\right)\right) = \vec{x} $. Así,
+	\[f\left(\vec{x}\right) = f\left(p\left(f\left(\vec{y}\right)\right)\right) = \left(f\circ p\left(f\right)\right)\left(\vec{y}\right) = p\left(f\right) \circ f\left(\vec{y}\right) = p\left(f\right)\left( f\left(\vec{y}\right) \right) \in \Imagen\left(p\left(f\right)\right).\]	
+\end{description}
+\end{proof}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle p\left(x\right) $ un polinomio anulador de $\displaystyle f $ y sea $\displaystyle p\left(x\right) = a_{1}\left(x\right) \cdot a_{2}\left(x\right) $, con $\displaystyle a_{1}\left(x\right) $ y $\displaystyle a_{2}\left(x\right) $ primos entre sí. Entonces, $\displaystyle V = \Ker\left(a_{1}\left(f\right)\right) \oplus \Ker\left(a_{2}\left(f\right)\right) $.
+\end{ftheorem}
+\begin{proof}
+	Tenemos que $\displaystyle \mcd\left(a_{1}\left(x\right), a_{2}\left(x\right)\right) = 1 $, por lo que existen $\displaystyle p_{1}\left(x\right), p_{2}\left(x\right) \in \K[x] $ tales que 
+	\[ 1 = p_{1}\left(x\right)a_{1}\left(x\right) + p_{2}\left(x\right)a_{2}\left(x\right) .\]
+Así, $\displaystyle \forall \vec{x} \in V $, 
+\[id _{V}\left(\vec{x}\right) = \left(\left(p_{1}\left(x\right)a_{1}\left(x\right)\right)f\right)\left(\vec{x}\right) + \left(\left(p_{2}\left(x\right)a_{2}\left(x\right)\right)f\right)\left(\vec{x}\right) .\]
+Así,
+\[\vec{x} = \underbrace{\left(p_{1}\left(f\right)\circ a_{1}\left(f\right)\right)\left(\vec{x}\right)}_{\in\Ker\left(a_{2}\left(f\right)\right)}+\underbrace{\left(p_{2}\left(f\right)\circ a_{2}\left(f\right)\right)\left(\vec{x}\right)}_{\in\Ker\left(a_{1}\left(f\right)\right)} .\]
+En efecto, tenemos que 
+\[
+\begin{split}
+	& a_{2}\left(f\right) \circ \left(p_{1}\left(f\right)\circ a_{1}\left(f\right)\right))\left(\vec{x}\right) = p_{1}\left(f\right)\circ\underbrace{\left(a_{1}\left(f\right)\circ a_{2}\left(f\right)\right)}_{p\left(f\right)}\left(\vec{x}\right) = \vec{0} \\
+	& a_{1}\left(f\right) \circ \left(p_{2}\left(f\right)\circ a_{2}\left(f\right)\right)\left(\vec{x}\right) = p_{2}\left(f\right) \circ \underbrace{\left(a_{1}\left(f\right)\circ a_{2}\left(f\right)\right)}_{p\left(f\right)}\left(\vec{x}\right) = \vec{0}.
+\end{split}
+\]
+Finalmente, si $\displaystyle \vec{x}\in \Ker\left(a_{1}\left(f\right)\right)\cap\Ker\left(a_{2}\left(f\right)\right) $, tenemos que 
+\[\vec{x} = \left(p_{1}\left(f\right) \circ a_{1}\left(f\right)\right)\left(\vec{x}\right) + \left(p_{2}\left(f\right)\circ a_{2}\left(f\right)\right)\left(\vec{x}\right) = p_{1}\left(f\right)\left(\vec{0}\right) + p_{2}\left(f\right)\left(\vec{0}\right) = \vec{0} .\]
+\end{proof}
 
