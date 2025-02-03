@@ -12,6 +12,10 @@
 \[\lim_{x \to c}f\left(x\right) = f\left(c\right) .\]
 Si $\displaystyle c \in \dom\left(f\right) $ no fuera un punto de acumulación, entonces resulta trivial que $\displaystyle f $ es continua en $\displaystyle c $. 
 \end{observation}
+\begin{observation}
+\normalfont Vamos a asumir que si $\displaystyle a \in \dom\left(f\right) $ y $\displaystyle f $ es continua en $\displaystyle a $, existe $\displaystyle r > 0 $ tal que $\displaystyle \left(a - r, a + r\right) \subset \dom\left(f\right) $.
+\end{observation}
+
 La continuidad es una propiedad local de las funciones, es decir, se debe comprobar punto a punto.
 \begin{fdefinition}[]
 \normalfont Sea $\displaystyle f : A \subset \R \to \R $ y $\displaystyle B \subset A $. Se dice que $\displaystyle f $ es continua en $\displaystyle B $ si es continua en todos los puntos de $\displaystyle B $.
@@ -23,4 +27,299 @@ La continuidad es una propiedad local de las funciones, es decir, se debe compro
 \item La función identidad $\displaystyle f\left(x\right) = x $ también es continua en todo $\displaystyle \R $. En efecto, si tomamos $\displaystyle \delta = \epsilon  $, tenemos que si $\displaystyle \left|x - c\right| < \delta  $, $\displaystyle \left|f\left(x\right)-f\left(c\right)\right| = \left|x - c\right| < \epsilon  $.
 \end{itemize}
 \end{eg}
+\begin{fprop}[]
+\normalfont Sea $\displaystyle f, g : \R \to \R $ tal que $\displaystyle a \in \dom\left(f\right) \cap \dom\left(g\right) $, siendo $\displaystyle f $ y $\displaystyle g $ continuas en $\displaystyle a $. Sea $\displaystyle \lambda \in \R $.
+\begin{description}
+\item[(i)] $\displaystyle f + g $ es continua en $\displaystyle a $.
+\item[(ii)] $\displaystyle \lambda f $ es continua en $\displaystyle a $.
+\item[(iii)] $\displaystyle f \cdot g $ es continua en $\displaystyle a $.
+\item[(iv)] Si $\displaystyle g\left(a\right) \neq 0 $, $\displaystyle \frac{f}{g} $ es continua en $\displaystyle a $.
+\end{description}
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(i)] Tenemos que $\displaystyle \lim_{x \to a}\left(f + g\right)\left(x\right) = \lim_{x \to a}f\left(x\right) + \lim_{x \to a}g\left(x\right) = f\left(a\right) + g\left(a\right) = \left(f+g\right)\left(a\right) $.
+\item[(ii)-(iv)] El resto de demostraciones son análogas.
+\end{description}
+\end{proof}
+\begin{eg}
+\normalfont 
+\begin{itemize}
+\item Por estas reglas podemos deducir que las funciones polinómicas, es decir, funciones de la forma $\displaystyle f\left(x\right) = a_{0} + a_{1}x + \cdots + a_{n}x^{n} $, son continuas en todo $\displaystyle \R $.
+\item Las funciones racionales, es decir, de la forma
+	\[h\left(x\right) = \frac{P\left(x\right)}{Q\left(x\right)} = \frac{a_{0} + a_{1}x + \cdots + a_{n}x^{n}}{b_{0} + b_{1}x + \cdots + b_{m}x^{m}} ,\]
+	son continuas en los puntos donde $\displaystyle Q\left(x\right) \neq 0 $.
+\end{itemize}
+\end{eg}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : \R \to \R $ y $\displaystyle g : \R \to \R $ con $\displaystyle \Imagen\left(f\right) \subset \dom\left(g\right) $ y tal que $\displaystyle f $ es continua en $\displaystyle a $ y $\displaystyle g $ es continua en $\displaystyle f\left(a\right) \in \Imagen\left(f\right) \subset \dom\left(g\right) $. Entonces, tenemos que $\displaystyle g \circ f $ es continua en $\displaystyle a $. \footnote{El límite de una composición de funciones no tiene por qué ser las composiciones de los límites}.
+\end{ftheorem}
+\begin{proof}
+Dado que $\displaystyle g $ es continua, sea $\displaystyle \epsilon > 0 $ y $\displaystyle \delta_{1} > 0 $ tal que si $\displaystyle \left|y - f\left(a\right)\right| < \delta _{1} $ tenemos que $\displaystyle \left|g\left(y\right) - g\left(f\left(a\right)\right)\right| < \epsilon  $. Como $\displaystyle f $ es continua en $\displaystyle a $ tenemos que $\displaystyle \exists \delta _{2} > 2 $ tal que si $\displaystyle \left|x - a\right|< \delta_{2} $, entonces $\displaystyle \left|f\left(x\right)-f\left(a\right)\right| < \delta_{1} $. 
+\end{proof}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f: \left(a,b\right) \to \R $ continua e inyectiva en $\displaystyle \left(a,b\right) $. Si $\displaystyle x_{0} \in \left(a,b\right) $, entonces $\displaystyle f^{-1} : \Imagen\left(f\right) \to \R $ es continua en $\displaystyle f\left(x_{0}\right) $.
+\end{ftheorem}
+\begin{proof}
+Se verá el miércoles.
+\end{proof}
+\begin{eg}
+\normalfont Consideremos $\displaystyle f\left(x\right) = x^{2} $ con $\displaystyle x > 0 $. Tenemos que $\displaystyle f^{-1}\left(x\right) = \sqrt{x} $ con $\displaystyle x > 0 $. Así, concluimos que $\displaystyle f^{-1}\left(x\right) = \sqrt{x} $ es continua en todo $\displaystyle x > 0 $.
+\end{eg}
+\begin{eg}
+\normalfont Consideremos $\displaystyle f\left(x\right) = \sqrt{x^{2}-1} $. Tenemos que $\displaystyle f $ es continua en su dominio pues es composición de dos funciones continuas.
+\end{eg}
+\begin{eg}
+\normalfont Otras funciones continuas son $\displaystyle \sin x, \cos x, \tan x, e^{x} $ y $\displaystyle \ln x $.
+\end{eg}
+\section{Discontinuidad de funciones}
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle f : \R \to \R $. 
+\begin{description}
+\item[(a)] Se dice que $\displaystyle f $ tiene una \textbf{discontinuidad evitable} en $\displaystyle a $ si $\displaystyle \exists \lim_{x \to a}f\left(x\right) = l $ y $\displaystyle l \neq f\left(a\right) $.
+\item[(b)] Se dice que $\displaystyle f $ tiene una \textbf{discontinuidad de salto} en $\displaystyle a $ si $\displaystyle \exists \lim_{x \to a^{+}}f\left(x\right) $ y $\displaystyle \exists \lim_{x \to a^{-}}f\left(x\right) $ pero no coinciden.
+\item[(c)] Se dice que $\displaystyle f $ tiene una \textbf{discontinuidad esencial} en $\displaystyle a $ si $\displaystyle \lim_{x \to a^{+}}f\left(x\right) = \pm \infty $ o no existe, o $\displaystyle \lim_{x \to a^{-}}f\left(x\right) = \pm \infty $ o no existe.
+\end{description}
+\end{fdefinition}
+\begin{eg}
+	\normalfont Consideremos la función $\displaystyle f\left(x\right) = \frac{x - 1}{x^{2} - 1} $. Tenemos que $\displaystyle \dom\left(f\right) = \R / \left\{ - 1, 1\right\}  $. Al ser racional, tenemos que $\displaystyle f $ es continua en $\displaystyle \dom\left(f\right) $. A continuación, estudiamos los límites y las discontinuidades.
+	\[\lim_{x \to 1}\frac{x - 1}{\left(x + 1\right)\left(x - 1\right)} = \frac{1}{2} .\]
+Como existe el límite pero la función no está definida en $\displaystyle x = 1 $, tenemos que la función presenta una discontinuidad evitable en $\displaystyle x = 1 $. Estudiamos el límite en $\displaystyle x = - 1 $:
+\[\lim_{x \to -1^{-}}\frac{1}{x + 1} = - \infty, \quad \lim_{x \to -1^{+}}\frac{1}{x+1} = \infty .\]
+Por tanto, en $\displaystyle x = - 1 $ tenemos una discontinuidad esencial. Podemos estudiar también los límites en el infinito:
+\[\lim_{x \to \infty} \frac{1}{x+1} = \lim_{x \to -\infty}\frac{1}{x+1} = 0 .\]
+\end{eg}
+\begin{fdefinition}[Asíntotas]
+\normalfont Sea $\displaystyle f : A \subset \R \to \R $. 
+\begin{description}
+\item[(a)] Se dice que $\displaystyle f $ tiene una \textbf{asíntota vertical} en $\displaystyle a \in \R $ si $\displaystyle \lim_{x \to a^{-}}f\left(x\right) = \pm \infty $ o $\displaystyle \lim_{x \to a^{+}}f\left(x\right) = \pm \infty  $. \\
+\item[(b)] Se dice que $\displaystyle f $ tiene una \textbf{asíntota horizontal} en si $\displaystyle \exists \lim_{x \to \infty}f\left(x\right) = l \in \R $ o $\displaystyle \exists \lim_{x \to -\infty} f\left(x\right) = m \in \R $.
+\item[(c)] Se dice que $\displaystyle y = ax + b $ es una \textbf{asíntota oblicua} de $\displaystyle f $ si $\displaystyle \lim_{x \to \infty}f\left(x\right) - \left(ax+b\right) = 0 $ o bien si $\displaystyle \lim_{x \to -\infty}f\left(x\right)-\left(ax+b\right) = 0 $.
+\end{description}
+\end{fdefinition}
+\begin{observation}
+\normalfont En el ejemplo anterior, tenemos que $\displaystyle f $ tiene una asíntota vertical en $\displaystyle x = -1 $ y que $\displaystyle y = 0 $ es una asíntota horizontal.
+\end{observation}
+\begin{observation}
+\normalfont La definición \textbf{(c)} es equivalente a que $\displaystyle \exists \lim_{x \to \pm\infty}\frac{f\left(x\right)}{x} = a \in \R $ y $\displaystyle \exists \lim_{x \to \pm\infty}f\left(x\right)-ax = b $. En efecto, tenemos que 
+\[\lim_{x \to \infty}\left(f\left(x\right)-ax\right) = \lim_{x \to \infty} x\left(\frac{f\left(x\right)}{x}-a\right) .\]
+Debe darse, necesariamente que $\displaystyle \lim_{x \to \infty}\frac{f\left(x\right)}{x}-a = 0 $. Así, tenemos que $\displaystyle \lim_{x \to \infty}\frac{f\left(x\right)}{x} = a $. Además, está claro que $\displaystyle \lim_{x \to \infty}\left(f\left(x\right)-\left(ax + b\right)\right) = 0 \iff \lim_{x \to \infty}\left(f\left(x\right)-ax\right) = b $.
+\end{observation}
+\begin{ftheorem}[Teorema de Bolzano]
+	\normalfont Sea $\displaystyle f : [a,b] \to \R $ continua en el intervalo $\displaystyle [a,b] $ \footnote{Es continua en $\displaystyle [a,b] $ si $\displaystyle \forall c \in \left(a,b\right) $, $\displaystyle \lim_{x \to c^{-}}f\left(x\right) = \lim_{x \to c^{+}}f\left(x\right) = f\left(c\right) $ y $\displaystyle \lim_{x \to a^{+}}f\left(x\right) = f\left(a\right) $ y $\displaystyle \lim_{x \to b^{-}}f\left(x\right) = f\left(b\right) $.}. Si $\displaystyle f\left(a\right) \cdot f\left(b\right) < 0 $, entonces existe $\displaystyle c \in \left(a,b\right) $ tal que $\displaystyle f\left(c\right) = 0 $.
+\end{ftheorem}
+\begin{proof}
+\textbf{Ejercicio para casa:} Demostrar el caso $\displaystyle f\left(a\right) > 0 > f\left(b\right) $. \textbf{Puede entrar en el examen.} \\
+Sin pérdida de generalidad, asumimos que $\displaystyle f\left(a\right) < 0 < f\left(b\right) $. Definimos el conjunto 
+\[A = \left\{ r \in [a,b] \; : \; \forall x \in [a,r], f\left(x\right) < 0\right\} \neq \emptyset .\]
+Tenemos que $\displaystyle A \neq \emptyset $ puesto que $\displaystyle a \in A $.
+Tenemos que $\displaystyle b \not\in A $, pues $\displaystyle f\left(b\right) > 0 $ y $\displaystyle r \leq b $, $\displaystyle \forall r \in A $. Por el axioma de completitud, tenemos que $\displaystyle \exists c = \sup\left(A\right) $. Podemos observar que $\displaystyle a \leq c \leq b $. Vamos a ver que $\displaystyle f\left(c\right) = 0 $. 
+\begin{itemize}
+	\item Si $\displaystyle f\left(c\right) < 0 $, tenemos que existe $\displaystyle \epsilon > 0 $ suficientemente pequeño, tal que $\displaystyle f\left(c\right) + \epsilon < 0 $. Dado que $\displaystyle f $ es continua en $\displaystyle [a,b] $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle \left|x - c\right| < \delta  $, $\displaystyle \left|f\left(x\right)-f\left(c\right)\right|<\epsilon  $. De aquí se deduce que
+		\[ \left|f\left(x\right) - f\left(c\right)\right| < \epsilon \iff f\left(x\right) < f\left(c\right) + \epsilon < 0 .\]
+		Así, $\displaystyle \exists r = c + \frac{\delta }{2} $ tal que si $\displaystyle x \in \left[a, c + \frac{\delta }{2}\right]  $, entonces $\displaystyle f\left(x\right) < 0 $. Es decir, $\displaystyle r \in A $, pero $\displaystyle r > c $, por lo que hemos obtenido una contradicción.
+	\item Si $\displaystyle f\left(c\right) > 0 $, tenemos que existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle f\left(c\right) - \epsilon > 0 $. Dado que $\displaystyle f $ es continua en $\displaystyle [a,b] $, tenemos que $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle \left|x - c\right|< \delta  $ entonces $\displaystyle \left|f\left(x\right)-f\left(c\right)\right|<\epsilon  $. De aquí se deduce que 
+		\[ \left|f\left(x\right)-f\left(c\right)\right| < \epsilon \iff f\left(x\right) > f\left(c\right) - \epsilon > 0 .\]
+Ya hemos obtenido la contradicción, pues se supone que, dado que $\displaystyle c = \sup\left(A\right) $, $\displaystyle \forall \delta > 0 $, $\displaystyle \exists a \in A $ tal que $\displaystyle c - \epsilon < a $. Si embargo, hemos obtenido que para el $\displaystyle \delta  $ anterior, si $\displaystyle x \in \left(c - \delta, c + \delta \right) $, entonces $\displaystyle f\left(x\right) > 0 $, por lo que $\displaystyle x \not\in A $.
+\end{itemize}
+Por tanto, debe ser que $\displaystyle f\left(c\right) = 0 $.
+\end{proof}
+\begin{proof}
+Asumimos que $\displaystyle f\left(a\right) < 0 < f\left(b\right) $. Sea $\displaystyle a_{0} = a $ y $\displaystyle b_{0} = b $. Ahora, consideremos el punto medio $\displaystyle r = \frac{a_{0}+b_{0}}{2} $. Tenemos dos posibilidades.
+\begin{itemize}
+\item Si $\displaystyle f\left(r\right) \geq 0 $, tomamos $\displaystyle a_{1} = a_{0} $ y $\displaystyle b_{1} = \frac{a_{0}+b_{0}}{2} $.
+\item Si $\displaystyle f\left(r\right) < 0 $, tomamos $\displaystyle a_{1} = \frac{a_{0}+b_{0}}{2} $ y $\displaystyle b_{1} = b_{0} $.
+\end{itemize}
+Así, en cualquier caso obtenemos que $\displaystyle a_{1} < b_{1} $, $\displaystyle f\left(a_{1}\right) < 0 \leq f\left(b_{1}\right) $ y que $\displaystyle b_{1}-a_{1} = \frac{b_{0}-a_{0}}{2} $. Repetimos el proceso tomando $\displaystyle r = \frac{a_{1}+b_{1}}{2}$. Si seguimos repitiendo el proceso obtenemos dos sucesiones: $\displaystyle \left\{ a_{n}\right\} _{n\in\N} $ y $\displaystyle \left\{ b_{n}\right\} _{n\in\N} $.
+Así, para cada $\displaystyle n \in \N $ se tiene que 
+\[a_{n} < b_{n}, \quad f\left(a_{n}\right) < 0 \leq f\left(b_{n}\right), \quad b_{n}-a_{n} = \frac{b_{n-1}-a_{n-1}}{2} = \cdots = \frac{b_{0}-a_{0}}{2^{n}} .\]
+Por construcción, tenemos que $\displaystyle \left\{ a_{n}\right\} _{n\in\N} $ es creciente, por lo que existe $\displaystyle \lim_{n \to \infty}a_{n} = \alpha  $. Similarmente, $\displaystyle \left\{ b_{n}\right\} _{n\in\N} $ es decreciente, por lo que existe $\displaystyle \lim_{n \to \infty}b_{n}= \beta  $. 
+Además, como $\displaystyle a_{n} < b_{n} $ para todo $\displaystyle n \in \N $, tenemos que $\displaystyle \alpha \leq \beta  $ y
+\[\beta - \alpha \leq b_{n}-a_{n} = \frac{b_{0}-a_{0}}{2^{n}} \to 0 .\]
+Así, $\displaystyle \alpha = \beta = c \in \left(a,b\right) $. Dado que $\displaystyle f $ es continua en $\displaystyle \left[a,b\right]  $, tenemos que $\displaystyle \lim_{n \to \infty}f\left(a_{n}\right) = f\left(c\right) \leq 0 $ y $\displaystyle \lim_{n \to \infty}f\left(b_{n}\right) = f\left(c\right) \geq 0 $, por lo que $\displaystyle f\left(c\right) = 0 $.
+\end{proof}
+\begin{eg}
+\normalfont Consideremos la ecuación
+\[ \frac{x^{15}+7x^{2}-12-x^{2}\ln x}{\ln x} = 0 \Rightarrow x^{15} + 7x^{2} - 12 - x^{2}\ln x = 0 .\]
+Tenemos que $\displaystyle \lim_{x \to 0}x^{2}\ln x = 0 $. Además, $\displaystyle \lim_{x \to 1^{+}}f\left(x\right)= - \infty $ y $\displaystyle \lim_{x \to \infty}f\left(x\right) =\infty $ . Es continua en el resto de los puntos. Por el teorema de Bolzano, la ecuación tiene al menos una solución.
+\end{eg}
+\begin{fcolorary}[Teorema de la conexión]
+	\normalfont Sea $\displaystyle f : [a,b] \to \R $ continua y sea $\displaystyle f\left(a\right) < \lambda < f\left(b\right) $ (o $\displaystyle f\left(a\right) > \lambda > f\left(b\right) $)entonces, $\displaystyle \exists c \in \left(a,b\right) $ tal que $\displaystyle f\left(c\right) = \lambda  $.
+\end{fcolorary}
+\begin{proof}
+	Sea $\displaystyle f\left(a\right) < \lambda < f\left(b\right) $ (el otro caso se deja como \textbf{ejercicio}) y $\displaystyle g : [a,b] \to \R  $ tal que $\displaystyle g\left(x\right) = f\left(x\right)- \lambda  $. Tenemos que $\displaystyle g\left(a\right) = f\left(a\right)- \lambda < 0 $ y $\displaystyle g\left(b\right) = f\left(b\right) - \lambda > 0 $. Aplicando el teorema de Bolzano, tenemos que $\displaystyle \exists c\in \left(a,b\right) $ tal que $\displaystyle g\left(c\right) = f\left(c\right) - \lambda = 0 $, esto es, $\displaystyle f\left(c\right) = \lambda  $.
+\end{proof}
+\begin{eg}
+\normalfont Consideremos la función 
+\[f\left(x\right) = \frac{x - 1}{x^{2}-1} = 
+\begin{cases}
+> 0, \; x > - 1, x \neq 1 \\
+< 0, \; x < - 1
+\end{cases}
+.\]
+\end{eg}
+\begin{observation}
+\normalfont El teorema de la conexión, nos dice que cuando pintamos una función continua no va a haber saltos.
+\end{observation}
+\section{Propiedades de las funciones continuas}
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle f : A \subset \R \to \R $.
+\begin{description}
+\item[(a)] Se dice que $\displaystyle f $ se dice \textbf{acotada} en $\displaystyle A $ si $\displaystyle \exists M > 0 $ tal que $\displaystyle \left|f\left(x\right)\right| < M $, $\displaystyle \forall x \in A $.
+\item[(b)] Se dice que $\displaystyle x_{0} \in A $ es un \textbf{máximo} de $\displaystyle f $ si $\displaystyle f\left(x_{0}\right) \geq f\left(x\right) $, $\displaystyle \forall x \in A $.
+\item[(c)] Se dice que $\displaystyle x_{0} \in A $ es un \textbf{mínimo} de $\displaystyle f $ si $\displaystyle f\left(x_{0}\right) \leq f\left(x\right)$, $\displaystyle \forall x \in A $.
+\end{description}
+\end{fdefinition}
+\begin{eg}
+\normalfont Consideremos la función $\displaystyle f: \left(0,\infty\right) \to \R $, tal que $\displaystyle f\left(x\right) = \frac{1}{x} $. Tenemos que $\displaystyle \dom\left(f\right)=\left(0,\infty\right) $ y $\displaystyle f $ es continua en su dominio. Tenemos que $\displaystyle \lim_{x \to 0^{+}}f\left(x\right) = \infty $ y $\displaystyle \lim_{x \to \infty}f\left(x\right) = 0 $. Además, se ve que $\displaystyle f $ es decreciente. Esta función no está acotada superiormente, por lo que no tiene máximo. A pesar de estar acotada inferiormente, no tiene mínimo.
+\end{eg}
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle f: [a,b] \to \R $ continua en $\displaystyle [a,b] $.
+	\begin{description}
+	\item[(a)] $\displaystyle f $ está acotada.
+	\item[(b)] $\displaystyle f $ tiene al menos un máximo.
+	\item[(c)] $\displaystyle f $ tiene al menos un mínimo.
+	\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+	\item[(a)] Supongamos que $\displaystyle f $ no está acotada superiormente. Tenemos que $\displaystyle \forall N \in \N $, $\displaystyle \exists a_{n} \in [a,b] $ tal que $\displaystyle f\left(a_{n}\right) > N $. Cogemos la sucesión $\displaystyle \left\{ a_{n}\right\} _{n\in\N}\subset[a,b] $. Entonces, por el teorema de Bolzano-Weierstrass, existe $\displaystyle \left\{ a_{n_{j}}\right\} _{j\in\N} \subset \left\{ a_{n}\right\} _{n\in\N} $ convergente a $\displaystyle l \in [a,b] $. 
+		Dado que $\displaystyle f $ es continua en el intervalo $\displaystyle \left[a,b\right]  $, tenemos que $\displaystyle \lim_{n \to \infty}f\left(a_{n_{j}}\right) = f\left(l\right) $ pero a la vez $\displaystyle \lim_{n \to \infty}f\left(a_{n_{j}}\right) =\infty $.
+	\item[(b)] Se hace de forma análoga a \textbf{(c)}.
+	\item[(c)] Por \textbf{(a)}, $\displaystyle f $ está acotada. Consideramos el conjunto $\displaystyle A = \left\{ f\left(x\right) \; : \; x \in [a,b]\right\} \neq \emptyset $, que está acotado por $\displaystyle M > 0 $. Entonces, existe $\displaystyle \beta = \inf\left(A\right) $. Si $\displaystyle n \in \N $, tenemos que $\displaystyle \beta + \frac{1}{n} $ no es ínfimo, por lo que existe $\displaystyle a_{n} \in [a,b] $ tal que $\displaystyle \beta \leq f\left(a_{n}\right) < \beta + \frac{1}{n} $.
+		Así, por el teorema de Bolzano-Weierstrass, $\displaystyle \exists \left\{ a_{n_{j}}\right\} _{j\in\N} \to \alpha \in \left[a,b\right]  $ y, por continuidad,
+		\[\beta \leq f\left(a_{n_{j}}\right) < \beta + \frac{1}{n_{j}} \Rightarrow \beta \leq f\left(\alpha\right) \leq \beta \Rightarrow f\left(\alpha \right) = \beta  .\]
+	Así, $\displaystyle \alpha $ es el mínimo que buscábamos.
+\end{description}
+\end{proof}
+\begin{fdefinition}[Monotonía]
+\normalfont 
+\begin{description}
+\item[(a)] Se dice que $\displaystyle f $ es \textbf{monótona creciente} si $\displaystyle \forall x < y $, $\displaystyle f\left(x\right) \leq f\left(y\right) $. Se dice que es \textbf{estrictamente creciente} si $\displaystyle f\left(x\right) < f\left(y\right) $.
+\item[(b)] Se dice que $\displaystyle f $ es \textbf{monótona decreciente} si $\displaystyle \forall x < y $, $\displaystyle f\left(x\right) \geq f\left(y\right) $. Se dice que es \textbf{estrictamente decreciente} si $\displaystyle f\left(x\right) > f\left(y\right) $.
+\end{description}
+\end{fdefinition}
+\begin{observation}
+\normalfont Si $\displaystyle f $ es estrictamente monótona, entonces es inyectiva. En efecto, si $\displaystyle x \neq y $, 
+\[
+\begin{split}
+x < y \Rightarrow f\left(x\right) < f\left(y\right) \; \text{o} \;  f\left(x\right) > f\left(y\right) \\
+x > y \Rightarrow f\left(x\right) > f\left(y\right) \; \text{o} \; f\left(x\right) < f\left(y\right)
+\end{split}
+\]
+\end{observation}
+\begin{flema}[]
+\normalfont Si $\displaystyle f : \left(a,b\right) \to \R $ es continua e inyectiva, entonces es monótona.
+\end{flema}
+\begin{proof}
+Supongamos que no es monótona. Entonces, para $\displaystyle x_{1} < x_{2} < x_{3} $ debe ocurrir una de las siguientes opciones:
+\begin{itemize}
+\item $\displaystyle f\left(x_{1}\right) < f\left(x_{2}\right) $ y $\displaystyle f\left(x_{3}\right) < f\left(x_{1}\right) $.
+\item $\displaystyle f\left(x_{1}\right) > f\left(x_{2}\right) $ y $\displaystyle f\left(x_{3}\right) > f\left(x_{2}\right) $.
+\end{itemize}
+En cualquier caso, si $\displaystyle \lambda \in \left(\min\left\{ f\left(x_{1}\right), f\left(x_{2}\right), f\left(x_{3}\right)\right\} , \max\left\{ f\left(x_{1}\right), f\left(x_{2}\right), f\left(x_{3}\right)\right\} \right) $, por el teorema de la conexión, existe más de un punto $\displaystyle x \in \left(x_{1}, x_{2}\right) $ tal que $\displaystyle f\left(x\right) = \lambda  $. 
+\end{proof}
+\begin{ftheorem}[Teorema de la función inversa]
+\normalfont Sea una función $\displaystyle f: \left(a,b\right) \to \R $ definida sobre todo un intervalo, inyectiva y continua en $\displaystyle \left(a,b\right) $. Su función inversa $\displaystyle f^{-1} $ es continua en todo su dominio.
+\end{ftheorem}
+\begin{proof}
+Sea $\displaystyle c \in \left(a,b\right) $ y consideremos $\displaystyle f\left(c\right) \in \dom\left(f^{-1}\right) $. Sea $\displaystyle \epsilon > 0 $. Podemos encontrar $\displaystyle r > 0 $ tal que 
+\[ c - \epsilon < c - r < c < c+ r < c + \epsilon \; \text{y} \; \left(c - r, c + r\right) \subset \left(a,b\right) .\]
+Entonces, de la continuidad de $\displaystyle f $ y por ser inyectiva tenemos que 
+\[f\left(c - r\right) < f\left(c\right) < f\left(c + r\right) \; \text{o} \; f\left(c - r\right) > f\left(c\right) > f\left(c + r\right) .\]
+Consideremos el primer caso (el otro caso se demuestra de forma análoga). Cogemos 
+\[\displaystyle \delta = \min \left\{ f\left(c\right) - f\left(c - r\right), f\left(c + r\right) - f\left(c\right)\right\} >0. \] Entonces, tenemos que si $\displaystyle \left|y - f\left(c\right)\right| < \delta  $, existe $\displaystyle x \in \left(c - r, c + r\right) $ tal que $\displaystyle f\left(x\right) = y $. Luego, por ser $\displaystyle f^{-1} $ inyectiva, si $\displaystyle \left|y - f\left(c\right)\right| < \delta  $, tenemos que
+\[ \left|f^{-1}\left(y\right) - f^{-1}\left(f\left(c\right)\right)\right| = \left|x - c\right| < r < \epsilon  .\]
+\end{proof}
+\section{Continuidad Uniforme}
+\begin{fdefinition}[Continuidad uniforme]
+\normalfont Sea una función $\displaystyle f: A \subset\R \to \R $. Se dice que $\displaystyle f $ es \textbf{uniformemente continua} en el conjunto $\displaystyle A $ si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle x,y \in A $ y $\displaystyle \left|x - y\right|<\delta  $, entonces $\displaystyle \left|f\left(x\right)-f\left(y\right)\right| < \epsilon  $.
+\end{fdefinition}
+\begin{observation}
+\normalfont 
+\begin{itemize}
+\item La continuidad uniforme se define sobre todo un conjunto, no es una propiedad local como la continuidad. 
+\item Si $\displaystyle f $ es uniformememente continua en $\displaystyle I $ (intervalo o semirrecta), entonces $\displaystyle f $ es continua en cada punto de $\displaystyle I $.
+\end{itemize}
+\end{observation}
+\begin{eg}
+\normalfont Consideremos la función $\displaystyle f = \frac{1}{x} $, $\displaystyle x \in \left(0,1\right) $. Tenemos que $\displaystyle f $ es continua en cada punto de $\displaystyle \left(0,1\right) $, pero no es uniformemente continua en el intervalo. En efecto, sea $\displaystyle \epsilon = \frac{1}{2} $ y sea $\displaystyle \delta > 0 $. Sea $\displaystyle x_{n} = \frac{1}{n} $ y sean $\displaystyle n,m \in \N $ suficientemente grandes y distintas. Entonces, tenemos que
+\[ \left|\frac{1}{n}-\frac{1}{m}\right| < \delta  .\]
+Sin embargo, $\displaystyle \left|f\left(\frac{1}{n}\right)-f\left(\frac{1}{m}\right)\right| = \left|n - m\right| \geq 1 > \epsilon = \frac{1}{2} $.
+\end{eg}
+\begin{eg}
+\normalfont Consideremos la función $\displaystyle f: \left(1,\infty\right) \to \R $ con $\displaystyle f\left(x\right) = x^{2} $. Sea $\displaystyle \delta > 0 $. Tenemos que
+\[ \left|f\left(x\right) - f\left(x + \delta \right)\right| = \left|x^{2} - \left(x^{2} + 2\delta x + \delta^{2}\right)\right| \geq 2x\delta \to \infty .\]
+Así, $\displaystyle x^{2} $ no puede ser uniformemente continua en el intervalo $\displaystyle \left(1,\infty\right) $.
+\end{eg}
+\begin{ftheorem}[]
+	\normalfont Sea una función $\displaystyle f : \left[a,b\right]\subset \R  \to \R $, continua en el intervalo $\displaystyle [a,b] $. Entonces, $\displaystyle f $ es uniformemente continua sobre $\displaystyle \left[a,b\right]  $.
+\end{ftheorem}
+\begin{proof}
+	Supongamos que $\displaystyle f $ no es uniformemente continua. Entonces, podemos encontrar un $\displaystyle \epsilon > 0 $ tal que para todo $\displaystyle \frac{1}{n} $ existen $\displaystyle x_{n}, y_{n} \in [a,b] $ tales que 
+	\[ \left|x_{n}-y_{n}\right| < \frac{1}{n} \quad \text{y}\quad \left|f\left(x_{n}\right)-f\left(y_{n}\right)\right| \geq \epsilon  .\]
+	Por el teorema de Bolzano-Weierstrass podemos encontrar dos subsucesiones (primero una y de ésta sacamos la segunda) de modo que $\displaystyle x_{n_{k}} \to x $ e $\displaystyle y_{n_{k}} \to y $. Así, esta claro que $\displaystyle x_{n_{k}} \to x $ y que $\displaystyle x,y \in [a,b] $. También tenemos que $\displaystyle x = y $, pues
+	\[
+	\begin{split}
+	0 \leq \left|x -y\right| \leq \left|x - x_{n_{k}}\right| + \left|x_{n_{k}}-y_{n_{k}}\right| + \left|y_{n_{k}}-y\right| \leq \left|x - x_{n_{k}}\right| + \frac{1}{n_{k}} + \left|y_{n_{k}} - y\right| \to 0 .
+	\end{split}
+	\]
+	Ahora, de la continuidad de $\displaystyle f $ se tiene que $\displaystyle f\left(x_{n_{k}}\right) \to f\left(x\right) $ y $\displaystyle f\left(y_{n_{k}}\right)\to f\left(y\right) = f\left(x\right) $. Esto da una contradicción, pues también tenemos que, $\displaystyle \left|f\left(x_{n_{k}}\right)-f\left(y_{n_{k}}\right)\right| < \epsilon  $. Esto es una contradicción.
+\end{proof}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : I \subset \R \to \R $, donde $\displaystyle I $ es un intervalo o semirrecta y $\displaystyle f $ es monótona en $\displaystyle I $ y está acotada. Entonces, para cada $\displaystyle x_{0} \in I $ existen $\displaystyle \lim_{x \to x_{0}^{+}}f\left(x\right) $ y $\displaystyle \lim_{x \to x_{0}^{-}}f\left(x\right) $.
+\end{ftheorem}
+\begin{proof}
+	Supongamos que $\displaystyle f $ es creciente (el caso decreciente se hace de forma análoga). Salvo en los extremos del intervalo, donde existen únicamente los límites laterales y donde se usa la acotación de $\displaystyle f $. Sea $\displaystyle x_{0} \in I $ tal que existe $\displaystyle \delta > 0 $ con $\displaystyle \left(x_{0}-\delta, x_{0}+\delta \right)\subset I $. Sea $\displaystyle A = \left\{ f\left(x\right) \; : \; x \in \left(x_{0}-\delta, x_{0} \right)\right\}  $. Dado que $\displaystyle f $ es monótona creciente, tenemos que
+	\[f\left(x\right) \leq f\left(x_{0} + \delta \right), \; \forall x \in \left(x_{0} - \delta, x_{0}\right) .\]
+	Sea $\displaystyle B = \left\{ f\left(x\right) \; : \; x \in \left(x_{0}, x_{0}+\delta \right)\right\}  $. Así, tenemos que 
+	\[ f\left(x_{0}-\delta \right)\leq f\left(x\right), \; \forall x \in \left(x_{0}, x_{0}+\delta\right) .\]
+Entonces, por el axioma del supremo, tenemos que existe $\displaystyle \alpha = \sup\left(A\right) $ y $\displaystyle \beta = \inf\left(B\right) $. En concreto, tenemos que $\displaystyle \alpha = \lim_{x \to x_{0}^{-}}f\left(x\right) $ y $\displaystyle \beta = \lim_{x \to x_{0}^{+}}f\left(x\right) $. En efecto, si $\displaystyle \epsilon > 0 $, existe $\displaystyle x_{1} \in \left(x_{0}-\delta, x_{0} \right) $ tal que $\displaystyle \alpha - \epsilon < f\left(x_{1}\right) \leq \alpha  $. Sea $\displaystyle r = \left|x_{0}-x_{1}\right| > 0 $. Si $\displaystyle 0 < x - x_{0} < r $, entonces, $\displaystyle \alpha - \epsilon < f\left(x_{1}\right) < f\left(x\right) < \alpha  $. Así, $\displaystyle \left|\alpha - f\left(x\right)\right| < \epsilon  $. Por definición de límite lateral, $\displaystyle \lim_{x \to x_{0}^{-}}f\left(x\right) = \alpha  $.
+En los límites del intervalo, solo se considera el conjunto $\displaystyle A $  o $\displaystyle B $ y se usa la hipótesis de acotación.
+\end{proof}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : I \subset \R \to \R $, donde $\displaystyle I $ es un intervalo o semirrecta. Sea $\displaystyle f $ monótona en $\displaystyle I $ y sean $\displaystyle x_{1}, x_{2} \in I $. Entonces, si $\displaystyle x_{1} < x_{2} $ y $\displaystyle f $ es monótona creciente, entonces $\displaystyle \lim_{x \to x_{1}^{+}}f\left(x\right) \leq \lim_{x \to x_{2}^{-}}f\left(x\right) $. Si $\displaystyle f $ es monótona decreciente, entonces $\displaystyle \lim_{x \to x_{1}^{+}}f\left(x\right) \geq \lim_{x \to x_{2}^{-}}f\left(x\right) $.
+\end{ftheorem}
+\begin{proof}
+Supongamos que $\displaystyle f $ es creciente (el otro caso se hace de forma análoga). Del teorema anterior tenemos que 
+\[
+\begin{split}
+& \lim_{x \to x_{1}^{+}}f\left(x\right) = \inf \left\{ f\left(x\right) \; : \; x \in \left(x_{1}, x_{1} + \delta \right)\right\} = \beta \\
+& \lim_{x \to x_{2}^{-}}f\left(x\right) = \sup \left\{ f\left(x\right) \; : \; x \in \left(x_{2}-\delta, x_{2}\right)\right\} = \alpha .
+\end{split}
+\]
+Podemos tomar el mismo $\displaystyle \delta > 0 $ en ambos casos tal que $\displaystyle \left(x_{1}, x_{1} + \delta \right) \cap \left(x_{2}-\delta, x_{2}\right) = \emptyset $. Dado que $\displaystyle f $ es creciente, si $\displaystyle y_{1} \in \left(x_{1}, x_{1} + \delta \right) $ y $\displaystyle y_{2} \in \left(x_{2}-\delta, x_{2}\right) $, por lo que $\displaystyle y_{1} < y_{2} $, tenemos que $\displaystyle f\left(y_{1}\right) \leq f\left(y_{2}\right) $ y, está claro que $\displaystyle \beta \leq \alpha  $.
+\end{proof}
+\begin{observation}
+\normalfont De estos dos resultados, podemos concluir que las discontinuidades de las funciones monótonas acotadas son descontinuidades de salto.
+\end{observation}
 
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle f : I \subset \R \to \R $, donde $\displaystyle I $ es un intervalo o semirrecta, y $\displaystyle f $ es monótona, entonces si
+\[E = \left\{ x \in I \; : \; f \; \text{no es continua en } x\right\}  , \]
+tenemos que $\displaystyle \left|E\right| \leq \left|\N\right| $.
+\end{ftheorem}
+\begin{proof}
+Si $\displaystyle f $ es monótona y $\displaystyle f $ no es continua en $\displaystyle x $, debe ser que en $\displaystyle x $ tiene una discontinuidad de salto. Supongamos que $\displaystyle f $ es creciente. Sea $\displaystyle y \in E $. Por el teorema anterior tenemos que 
+\[\lim_{x \to y^{-}}f\left(x\right) < r_{y} < \lim_{x \to y^{+}}f\left(x\right) , \]
+donde $\displaystyle r \in \left(\lim_{x \to y^{-}}f\left(x\right), \lim_{x \to y^{+}}f\left(x\right)\right) \cap \Q $. Consideremos la aplicación 
+\[
+\begin{split}
+	T: E & \to \Q \\
+	y & \to T\left(y\right) = r_{y}.
+\end{split}
+\]
+Vamos a ver que $\displaystyle T $ es inyectiva. Sean $\displaystyle y_{1}, y_{2} \in E $, con $\displaystyle y_{1} \neq y_{2} $ y $\displaystyle y_{1} < y_{2} $. Entonces, 
+\[r_{y_{1}}<\lim_{x \to y_{1}^{+}}f\left(x\right) \leq \lim_{x \to y_{2}^{-}}f\left(x\right) < r_{y_{2}} .\]
+Así, $\displaystyle T\left(y_{1}\right) = r_{y_{1}} \neq r_{y_{2}} = T\left(y_{2}\right) $.
+\end{proof}
+\begin{eg}
+\normalfont Consideremos la función
+\[f\left(x\right) = 
+\begin{cases}
+0, \; x \in \left(0,1\right) \cap \Q \\
+1, \; x \in \left(0,1\right) / \Q
+\end{cases}
+.\]
+Esta función no es continua en ningún punto de $\displaystyle \left(0,1\right) $.
+\end{eg}
