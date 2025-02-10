@@ -3,7 +3,7 @@
 \normalfont Dada $\displaystyle f : A \subset \R \to \R $,  y $\displaystyle c \in \dom\left(f\right) $, se dice que $\displaystyle f $ es \textbf{continua} en $\displaystyle c $ si se verifican los siguientes enunciados equivalentes:
 \begin{itemize}
 \item $\displaystyle \forall \epsilon > 0, \exists \delta > 0 $ tal que si $\displaystyle 0 \leq \left|x - c\right|<\delta $, entonces $\displaystyle \left|f\left(x\right)-f\left(c\right)\right| < \epsilon  $.
-\item $\displaystyle \forall \left\{ x_{n}\right\} _{n\in \N} \subset A $ con $\displaystyle x_{n} \to c $ se tiene que $\displaystyle f\left(x_{n}\right) \to f\left(a\right) $.
+\item $\displaystyle \forall \left\{ x_{n}\right\} _{n\in \N} \subset A $ con $\displaystyle x_{n} \to c $ se tiene que $\displaystyle f\left(x_{n}\right) \to f\left(c\right) $.
 \end{itemize}
 \end{fdefinition}
 \footnote{La equivalencia de estas definiciones fue demostrada en el capítulo anterior.} 
@@ -105,6 +105,7 @@ Por tanto, en $\displaystyle x = - 1 $ tenemos una discontinuidad esencial. Pode
 \[\lim_{x \to \infty}\left(f\left(x\right)-ax\right) = \lim_{x \to \infty} x\left(\frac{f\left(x\right)}{x}-a\right) .\]
 Debe darse, necesariamente que $\displaystyle \lim_{x \to \infty}\frac{f\left(x\right)}{x}-a = 0 $. Así, tenemos que $\displaystyle \lim_{x \to \infty}\frac{f\left(x\right)}{x} = a $. Además, está claro que $\displaystyle \lim_{x \to \infty}\left(f\left(x\right)-\left(ax + b\right)\right) = 0 \iff \lim_{x \to \infty}\left(f\left(x\right)-ax\right) = b $.
 \end{observation}
+\section{Funciones continuas en intervalos}
 \begin{ftheorem}[Teorema de Bolzano]
 	\normalfont Sea $\displaystyle f : [a,b] \to \R $ continua en el intervalo $\displaystyle [a,b] $ \footnote{Es continua en $\displaystyle [a,b] $ si $\displaystyle \forall c \in \left(a,b\right) $, $\displaystyle \lim_{x \to c^{-}}f\left(x\right) = \lim_{x \to c^{+}}f\left(x\right) = f\left(c\right) $ y $\displaystyle \lim_{x \to a^{+}}f\left(x\right) = f\left(a\right) $ y $\displaystyle \lim_{x \to b^{-}}f\left(x\right) = f\left(b\right) $.}. Si $\displaystyle f\left(a\right) \cdot f\left(b\right) < 0 $, entonces existe $\displaystyle c \in \left(a,b\right) $ tal que $\displaystyle f\left(c\right) = 0 $.
 \end{ftheorem}
@@ -252,6 +253,20 @@ Sin embargo, $\displaystyle \left|f\left(\frac{1}{n}\right)-f\left(\frac{1}{m}\r
 \[ \left|f\left(x\right) - f\left(x + \delta \right)\right| = \left|x^{2} - \left(x^{2} + 2\delta x + \delta^{2}\right)\right| \geq 2x\delta \to \infty .\]
 Así, $\displaystyle x^{2} $ no puede ser uniformemente continua en el intervalo $\displaystyle \left(1,\infty\right) $.
 \end{eg}
+Resulta útil formular una condición equivalente para decir que $\displaystyle f $ no es uniformemente continua en $\displaystyle A $.
+\begin{fprop}[Criterios de continuidad no uniforme]
+\normalfont Sea $\displaystyle f : A \subset \R \to \R $, entonces son equivalentes:
+\begin{description}
+\item[(i)] $\displaystyle f $ no es uniformemente continua en $\displaystyle A $.
+\item[(ii)] Existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle \forall \delta > 0 $, si $\displaystyle \left|x-y\right| < \delta  $, entonces $\displaystyle \left|f\left(x\right)-f\left(y\right)\right| \geq \epsilon  $.
+\item[(iii)] Existe $\displaystyle \epsilon > 0 $ y $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N}\subset A $ tales que $\displaystyle x_{n}-y_{n} \to 0 $ pero $\displaystyle \left|f\left(x_{n}\right)-f\left(y_{n}\right)\right| \geq \epsilon  $ para todo $\displaystyle n \in \N $.
+\end{description}
+\end{fprop}
+\begin{eg}
+\normalfont Vamos a demostrar que $\displaystyle f\left(x\right) = \sin\left(\frac{1}{x}\right) $ no es uniformemente continua en el intervalo $\displaystyle \left(0, \infty\right) $. En efecto, podemos considerar las sucesiones $\displaystyle x_{n} = \frac{1}{\frac{\pi }{2} + 2\pi n} $ y $\displaystyle y_{n} = \frac{1}{\pi n} $, tales que $\displaystyle x_{n}-y_{n} \to 0 $ pero 
+\[ f\left(x_{n}\right)-f\left(y_{n}\right) = 1 - 0=1 \geq 1 .\]
+\end{eg}
+
 \begin{ftheorem}[]
 	\normalfont Sea una función $\displaystyle f : \left[a,b\right]\subset \R  \to \R $, continua en el intervalo $\displaystyle [a,b] $. Entonces, $\displaystyle f $ es uniformemente continua sobre $\displaystyle \left[a,b\right]  $.
 \end{ftheorem}
@@ -264,8 +279,39 @@ Así, $\displaystyle x^{2} $ no puede ser uniformemente continua en el intervalo
 	0 \leq \left|x -y\right| \leq \left|x - x_{n_{k}}\right| + \left|x_{n_{k}}-y_{n_{k}}\right| + \left|y_{n_{k}}-y\right| \leq \left|x - x_{n_{k}}\right| + \frac{1}{n_{k}} + \left|y_{n_{k}} - y\right| \to 0 .
 	\end{split}
 	\]
-	Ahora, de la continuidad de $\displaystyle f $ se tiene que $\displaystyle f\left(x_{n_{k}}\right) \to f\left(x\right) $ y $\displaystyle f\left(y_{n_{k}}\right)\to f\left(y\right) = f\left(x\right) $. Esto da una contradicción, pues también tenemos que, $\displaystyle \left|f\left(x_{n_{k}}\right)-f\left(y_{n_{k}}\right)\right| < \epsilon  $. Esto es una contradicción.
+	Ahora, de la continuidad de $\displaystyle f $ se tiene que $\displaystyle f\left(x_{n_{k}}\right) \to f\left(x\right) $ y $\displaystyle f\left(y_{n_{k}}\right)\to f\left(y\right) = f\left(x\right) $. Esto da una contradicción, pues también tenemos que, $\displaystyle \left|f\left(x_{n_{k}}\right)-f\left(y_{n_{k}}\right)\right| \geq \epsilon  $. Esto es una contradicción.
 \end{proof}
+\begin{fdefinition}[Función de Lipschitz]
+\normalfont Se dice que una función $\displaystyle f : A \subset \R \to \R $ es una \textbf{función de Lipschitz} si existe $\displaystyle K > 0 $ tal que 
+\[ \left|f\left(x\right)-f\left(y\right)\right| < K \left|x-y\right|, \; \forall x,y \in A .\]
+\end{fdefinition}
+\begin{observation}
+\normalfont La condición de Lipschitz se puede reescribir de la siguiente manera:
+\[ \left|\frac{f\left(x\right)-f\left(y\right)}{x-y}\right| < K , \; x,y \in A, \; x \neq y.\]
+Es decir, una función es de Lipschitz si y solo si las pendientes de todos los segmentos de recta que unen dos puntos de la gráfica de $\displaystyle y = f\left(x\right) $ están acotadas por algún número $\displaystyle K $.
+\end{observation}
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle f : A \subset \R \to \R $ es una función de Lipschitz, entonces es uniformemente continua en $\displaystyle A $.
+\end{ftheorem}
+\begin{proof}
+Dado que $\displaystyle f $ satisface la condición de Lipschitz, tenemos que existe $\displaystyle K > 0 $ tal que $\displaystyle \forall x,y \in A $ 
+\[ \left|f\left(x\right)-f\left(y\right)\right| < K \left|x -y\right| .\]
+Sea $\displaystyle \epsilon > 0 $, cogemos $\displaystyle \delta = \frac{\epsilon }{K} $, así si $\displaystyle \left|x - y\right| < \delta  $ tenemos que
+\[ \left|f\left(x\right)-f\left(y\right)\right| < K \left|x-y\right| < K \cdot \frac{\epsilon }{K}= \epsilon .\]
+\end{proof}
+\begin{eg}
+\normalfont 
+\begin{itemize}
+	\item Consideremos la función $\displaystyle f\left(x\right) = x^{2} $ definida en el intervalo $\displaystyle A = [0,b] $. Entonces $\displaystyle f $ es de Lipschizt, en efecto
+		\[ \left|f\left(x\right)-f\left(y\right)\right| = \left|x + y\right| \left|x -y\right| < 2b \left|x-y\right| .\]
+	Por tanto, es uniformemente continua en $\displaystyle A $ (también podríamos haber llegado a esta conclusión con el teorema 4.6).
+\item No todas las funciones uniformemente continuas son de Lipschitz. En efecto, consideremos $\displaystyle f\left(x\right) = \sqrt{x} $ en el intervalo $\displaystyle I = [0,2] $. Dado que $\displaystyle f $ es continua en $\displaystyle \R $, se tiene que es uniformemente continua en $\displaystyle I $, sin embargo, no es de Lipschitz.
+\item En algunos casos es útil combinar el teorema de la continuidad uniforme y las funciones Lipschitz para demostrar la continuidad uniforme de una función en un conjunto. Por ejemplo, consideremos $\displaystyle f\left(x\right) = \sqrt{x} $, $\displaystyle x \geq 0 $. Tenemos que $\displaystyle f $ es uniformemente continua en el intervalo $\displaystyle I =[0,2) $ (por el ejemplo anterior). Además, en $\displaystyle J =[1,\infty) $ tenemos que es de Lispchitz:
+	\[ \left|f\left(x\right)-f\left(y\right)\right| = \left|\sqrt{x}-\sqrt{y}\right| = \frac{ \left|x-y\right|}{\sqrt{x}+\sqrt{y}} \leq \frac{1}{2} \left|x -y\right| .\]
+	Dado que $\displaystyle f $ es uniformemente continua en $\displaystyle I $ y $\displaystyle J $, tomando $\displaystyle \delta = \min \left\{ 1, \delta_{I}\left(\epsilon \right), \delta _{J}\left(\epsilon \right)\right\}  $, tenemos que $\displaystyle f $ es uniformemente continua en $\displaystyle \R^{+} $. \footnote{A la hora de demostrar que una función es uniformemente continua en un intervalo, si se va a hacer el procedimiento anterior, es útil no utilizar intervalos disjuntos, sino intentar crear solapamientos.} 
+\end{itemize}
+\end{eg}
+\section{Funciones monótonas}
 \begin{ftheorem}[]
 \normalfont Sea $\displaystyle f : I \subset \R \to \R $, donde $\displaystyle I $ es un intervalo o semirrecta y $\displaystyle f $ es monótona en $\displaystyle I $ y está acotada. Entonces, para cada $\displaystyle x_{0} \in I $ existen $\displaystyle \lim_{x \to x_{0}^{+}}f\left(x\right) $ y $\displaystyle \lim_{x \to x_{0}^{-}}f\left(x\right) $.
 \end{ftheorem}

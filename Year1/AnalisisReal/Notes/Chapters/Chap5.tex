@@ -1,2 +1,330 @@
 \chapter{La Derivada}
+Recordamos que la ecuación de la recta que pasa por dos puntos $\displaystyle \left(x_{1}, y_{1}\right), \left(x_{2}, y_{2}\right) \in \R^{2} $ será
+\[ y = \frac{y_{2}-y_{1}}{x_{2}-x_{1}}\left(x - x_{1}\right) + y_{1} .\]
+\begin{fdefinition}[Derivada]
+\normalfont Sea $\displaystyle f : A \subset \R \to \R $ y sea $\displaystyle a \in \dom\left(f\right) $ tal que $\displaystyle \exists r > 0 $ tal que $\displaystyle \left(a-r, a + r\right) \subset \dom\left(f\right) $. Se dice que $\displaystyle f $ es \textbf{derivable} en el punto $\displaystyle x = a $ si existe 
+\[\lim_{h \to 0}\frac{f\left(a + h\right)-f\left(a\right)}{h} = f'\left(a\right) .\]
+Entonces, se dice que $\displaystyle f $ es \textbf{derivable} en $\displaystyle a $. 
+\end{fdefinition}
+\begin{observation}
+\normalfont Tenemos que la derivabilidad, al igual que la continuidad, es una propiedad local. Se dice que $\displaystyle f $ es derivable en $\displaystyle A \subset \dom\left(f\right) $ si $\displaystyle f $ es derivable en cada $\displaystyle a \in A $.
+\end{observation}
+\begin{observation}
+\normalfont 
+Se llama función derivada de $\displaystyle f $ a la función 
+\[
+\begin{split}
+	f' : \R \to & \R \\
+	x \to & f'\left(x\right).
+\end{split}
+\]
+Tenemos que $\displaystyle \dom\left(f'\right) = \left\{ x \; : \; f\left(x\right) \; \text{derivable en }x\right\}  $.
+\end{observation}
+\begin{eg}
+\normalfont 
+\begin{itemize}
+\item Si consideramos $\displaystyle f\left(x\right) = a \in \R $, tenemos que 
+	\[f'\left(x_{0}\right) = \lim_{h \to 0}\frac{f\left(x_{0}+h\right)-f\left(x_{0}\right)}{h} = \lim_{h \to 0}\frac{a - a}{h} = 0 .\]
+\item Consideremos $\displaystyle f\left(x\right) = x $. Tenemos que
+	\[\lim_{h \to 0}\frac{f\left(x_{0}+h\right)-f\left(x_{0}\right)}{h} = \lim_{h \to 0}\frac{x_{0}+h-x_{0}}{h} = 1 .\]
+\item La función $\displaystyle f\left(x\right) = \left|x\right| $ no es derivable en $\displaystyle x = 0 $.
+	\[ \lim_{h \to 0}\frac{ \left|0 + h\right|- \left|0\right|}{h} = \lim_{h \to 0}\frac{ \left|h\right|}{h} = 
+	\begin{cases}
+	1, \; h \to 0 ^{+} \\
+	-1, \; h \to 0^{-}
+	\end{cases}
+	.\]
+\end{itemize}
+\end{eg}
+\begin{observation}
+\normalfont Si $\displaystyle x = x_{0} +h $, tenemos que $\displaystyle h = x - x_{0} $, así
+\[f'\left(x\right) = \lim_{h \to 0}\frac{f\left(x_{0}+h\right)-f\left(x_{0}\right)}{h} = \lim_{x \to x_{0}}\frac{f\left(x\right)-f\left(x_{0}\right)}{x - x_{0}} .\]
+\end{observation}
+\begin{fdefinition}[Recta Tangente]
+\normalfont Sea $\displaystyle f : A \subset \R \to \R $ derivable en $\displaystyle a \in A $. Se llama \textbf{recta tangente} de la gráfica de $\displaystyle f $ en el punto $\displaystyle \left(a,f\left(a\right)\right) $ a la recta
+\[r\left(x\right) = f'\left(a\right)\left(x-a\right) + f\left(a\right) .\]
+\end{fdefinition}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle r\left(x\right) = f'\left(a\right)\left(x-a\right) + f\left(a\right) $ la recta tangente a la gráfica de $\displaystyle f $ en el punto $\displaystyle \left(a,f\left(a\right)\right) $. Entonces se cumple que:
+\begin{description}
+\item[(a)] La recta $\displaystyle r $ pasa por $\displaystyle \left(a, f\left(a\right)\right) $.
+\item[(b)] $\displaystyle \lim_{x \to a} \frac{f\left(x\right)-r\left(x\right)}{x - a} = 0 $.
+\item[(c)] Si $\displaystyle s\left(x\right) $ es una recta que pasa por $\displaystyle \left(a, f\left(a\right)\right) $ y $\displaystyle \lim_{x \to a}\frac{f\left(x\right)-s\left(x\right)}{x-a} = 0 $, entonces $\displaystyle r\left(x\right) = s\left(x\right) $.
+\item[(d)] $\displaystyle r'\left(a\right) = f'\left(a\right) $.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(a)] Tenemos que $\displaystyle r\left(a\right) = f\left(a\right) $.
+\item[(b)] 
+	\[ .\]
+	\[
+	\begin{split}
+		\lim_{x \to a}\frac{f\left(x\right)-r\left(a\right)}{x-a} = & \lim_{x \to a}\frac{f\left(x\right)-\left(f'\left(a\right)\left(x-a\right) + f\left(a\right)\right)}{x-a} = \lim_{x \to a}\frac{f\left(x\right)-f\left(a\right)}{x-a}-f'\left(a\right) \\
+		= &  f'\left(a\right)-f'\left(a\right) = 0 .
+	\end{split}
+	\]
+\footnote{Esto significa que $\displaystyle f\left(x\right) -r\left(x\right) \to 0 $ mucho más rápido que $\displaystyle x - a \to 0 $, lo que nos asegura que la tangente es una buena aproximación a la curva.} 	
+\item[(c)] Sea $\displaystyle s\left(x\right) = d\left(x-a\right) + f\left(a\right) $ y $\displaystyle \lim_{x \to a} \frac{f\left(x\right)-s\left(x\right)}{x-a}= 0 $. Entonces,
+	\[ .\]
+	\[
+	\begin{split}
+		0 = \lim_{x \to a}\frac{f\left(x\right)-r\left(x\right)}{x-a} = & \lim_{x \to a}\frac{f\left(x\right)-s\left(x\right)+s\left(x\right)-r\left(x\right)}{x-a} = \lim_{x \to a}\frac{s\left(x\right)-r\left(x\right)}{x-a} \\
+		= & \lim_{x \to a}\frac{d\left(x-a\right)+f\left(a\right)-f'\left(a\right)\left(x-a\right)-f\left(a\right)}{x-a} = \lim_{x \to a}\left(d-f'\left(a\right)\right) = d - f'\left(a\right) .
+	\end{split}
+	\]
+	Así, $\displaystyle d = f'\left(a\right) $ y $\displaystyle r\left(x\right) = s\left(x\right) $.
+\item[(d)] Tenemos que
+	\[
+	\begin{split}
+	r'\left(a\right) = \lim_{x \to a}\frac{r\left(x\right)-r\left(a\right)}{x-a} = \lim_{x \to a}\frac{f'\left(a\right)\left(x-a\right)+f\left(a\right)-f\left(a\right)}{x-a} = f'\left(a\right) .
+	\end{split}
+	\]
+\end{description}
+\end{proof}
+\begin{eg}
+\normalfont Consideremos la función $\displaystyle f\left(x\right) = x^{3} $, que es continua en $\displaystyle \R^{3} $ y monótona creciente. Sabemos que $\displaystyle f\left(x\right) < 0 $ si $\displaystyle x < 0 $ y $\displaystyle f\left(x\right) > 0 $ si $\displaystyle x > 0 $. Tenemos que $\displaystyle \lim_{x \to -\infty}f\left(x\right) = -\infty $ y $\displaystyle \lim_{x \to \infty}f\left(x\right) = \infty $. Calculamos la derivada en un punto $\displaystyle x \in \R $,
+\[ f'\left(x\right) = \lim_{h \to 0}\frac{\left(x+h\right)^{3}-x^{3}}{h} = \lim_{h \to 0}\frac{3x^{2}h+3xh^{2}+h^{3}}{h} = \lim_{h \to 0}\left(3x^{2}+3xh+h^{2}\right) = 3x^{2} .\]
+Así, la ecuación de la tangente en un punto $\displaystyle x_{0} \in \R $ será
+\[y = 3x_{0}^{2}\left(x-x_{0}\right) + x_{0}^{3} .\]
+\end{eg}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : I \subset \R \to \R $, donde $\displaystyle I $ es un intervalo o semirrecta, y $\displaystyle a \in I $. Si existe $\displaystyle f'\left(a\right) $, entonces $\displaystyle f $ es continua en $\displaystyle a $.
+\end{ftheorem}
+\begin{proof}
+Tenemos que $\displaystyle \lim_{x \to a}\frac{f\left(x\right)-f\left(a\right)}{x-a} = f'\left(a\right) \in \R $. Tenemos que $\displaystyle f $ es continua en $\displaystyle a $ si $\displaystyle \exists\lim_{x \to a}f\left(x\right) = f\left(a\right) $, es decir, si $\displaystyle \lim_{x \to a}f\left(x\right)-f\left(a\right) = 0 $. Supongamos que $\displaystyle \lim_{x \to a}f\left(x\right)-f\left(a\right) \neq 0 $. 
+Entonces, existe $\displaystyle \epsilon >0 $ y $\displaystyle x_{n} \to a $ tal que $\displaystyle \left|f\left(x_{n}\right)-f\left(a\right)\right| \geq \epsilon  $. Así,
+\[\lim_{n \to \infty}\frac{f\left(x_{n}\right)-f\left(a\right)}{x_{n}-a} = \pm \infty .\]
+Esto es una contradicción, puesto que $\displaystyle f'\left(a\right) \in \R $.
+\end{proof}
+\begin{eg}
+\normalfont El recíproco no es cierto. Recordemos que $\displaystyle f\left(x\right) = \left|x\right| $ es continua en $\displaystyle x = 0 $ pero no es derivable en este punto.
+\end{eg}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f,g : I \subset \R \to\R $ con $\displaystyle I $ invervalo o semirrecta y $\displaystyle a \in I $, tales que existen $\displaystyle f'\left(a\right) $ y $\displaystyle g'\left(a\right) $. Sea $\displaystyle \lambda > 0 $.
+\begin{description}
+\item[(a)] $\displaystyle \exists \left(f+g\right)'\left(a\right) = f'\left(a\right) +g'\left(a\right) $.
+\item[(b)] $\displaystyle \exists \left(\lambda f\right)'\left(a\right) = \lambda f'\left(a\right) $.
+\item[(c)] $\displaystyle \exists \left(f \cdot g\right)'\left(a\right) = f'\left(a\right)g\left(a\right) + f\left(a\right)g'\left(a\right)$.
+\item[(d)] Si $\displaystyle g\left(a\right) \neq 0 $, $\displaystyle \exists \left(\frac{1}{g}\right)\left(a\right) = - \frac{g'\left(a\right)}{g^{2}\left(a\right)} $.
+\item[(e)] Si $\displaystyle g\left(a\right) \neq 0 $, $\displaystyle \exists \left(\frac{f}{g}\right)'\left(a\right) = \frac{f'\left(a\right)g\left(a\right)-f\left(a\right)g'\left(a\right)}{g^{2}\left(a\right)}$.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(a)] Tenemos que
+	\[ .\]
+	\[
+	\begin{split}
+		\left(f+g\right)'\left(a\right) = & \lim_{x \to a}\frac{f\left(x\right)+g\left(x\right)-\left(f\left(a\right)+g\left(a\right)\right)}{x-a} = \lim_{x \to a}\frac{f\left(x\right)-f\left(a\right)}{x-a} + \lim_{x \to a}\frac{g\left(x\right)-g\left(a\right)}{x-a} \\
+		= &  f'\left(a\right) + g'\left(a\right) .
+	\end{split}
+	\]
+\item[(b)] Tenemos que 
+	\[
+	\begin{split}
+		\left(\lambda f\right)'\left(a\right) = & \lim_{x \to a}\frac{\lambda f\left(x\right)-\lambda f\left(a\right)}{x-a} = \lambda \left(\lim_{x \to a}\frac{f\left(x\right)-f\left(a\right)}{x-a}\right) = \lambda f'\left(a\right) .
+	\end{split}
+	\]
+	
+\item[(c)] Tenemos que 
+	\[
+	\begin{split}
+		\left(f \cdot g\right)'\left(a\right) = & \lim_{x \to a}\frac{f\left(x\right)g\left(x\right) - f\left(a\right)g\left(a\right)}{x - a} = \lim_{x \to a}\frac{f\left(x\right)g\left(x\right)-f\left(a\right)g\left(x\right)+f\left(a\right)g\left(x\right)-f\left(a\right)g\left(a\right)}{x-a} \\
+		= & \lim_{x \to a} g\left(x\right) \frac{f\left(x\right)-f\left(a\right)}{x-a} + f\left(a\right) \frac{g\left(x\right)-g\left(a\right)}{x-a} = g\left(a\right)f'\left(a\right) + f\left(a\right)g'\left(a\right).
+	\end{split}
+	\]
+\item[(d)] Tenemos que
+	\[
+	\begin{split}
+		\left(\frac{1}{g}\right)'\left(a\right) = & \lim_{x \to a}\frac{\frac{1}{g}\left(x\right)-\frac{1}{g}\left(a\right)}{x - a} = \lim_{x \to a}\frac{1}{x -a}\frac{g\left(a\right)-g\left(x\right)}{g\left(a\right)g\left(x\right)} \\
+		= & \lim_{x \to a}-\frac{g\left(x\right)-g\left(a\right)}{x-a} \cdot \frac{1}{g\left(x\right)g\left(a\right)} = -\frac{g'\left(a\right)}{g^{2}\left(a\right)} .
+	\end{split}
+	\]
+\item[(e)] Podemos aplicar \textbf{(c)} y \textbf{(d)} para deducirla.
+	\[
+	\begin{split}
+		\left(\frac{f}{g}\right)'\left(a\right) = & \left(f \cdot \frac{1}{g}\right)'\left(a\right) = f'\left(a\right) \frac{1}{g\left(a\right)} + f\left(a\right)\left(-\frac{g'\left(a\right)}{g^{2}\left(a\right)}\right) = \frac{f'\left(a\right)g\left(a\right)-f\left(a\right)g'\left(a\right)}{g^{2}\left(a\right)}.
+	\end{split}
+	\]
+	
+\end{description}
+\end{proof}
+\begin{eg}
+\normalfont \textbf{Hoja 3 - Problema 7}. Si $\displaystyle g\left(0\right) = g'\left(0\right) = 0 $, se define
+\[f\left(x\right) = 
+\begin{cases}
+g\left(x\right)\sin\left(\frac{1}{x}\right), \; x \neq 0\\
+0, \; x = 0
+\end{cases}
+.\]
+Vamos a ver si $\displaystyle f $ es continua. Tenemos que (esto fue demostrado en un ejercicio de las hojas)
+\[ \left|f\left(x\right)\right| = \left|g\left(x\right)\sin\left(\frac{1}{x}\right)\right| \leq \left|g\left(x\right)\right| \to 0 .\]
+Por tanto, $\displaystyle \left|f\left(x\right)\right| \to 0 $ y es continua en $\displaystyle x = 0 $. Entonces, tenemos que 
+\[
+\begin{split}
+f'\left(0\right) = \lim_{x \to 0}\frac{f\left(x\right)-f\left(0\right)}{x - 0} = \lim_{x \to 0}\frac{g\left(x\right) \sin\left(\frac{1}{x}\right)}{x} = \lim_{x \to 0}\frac{g\left(x\right)}{x}\sin\left(\frac{1}{x}\right) = 0 .
+\end{split}
+\]
+El límite anterior se deduce de que
+\[ \left|\frac{g\left(x\right)}{x}\sin\left(\frac{1}{x}\right)\right| \leq \left|\frac{g\left(x\right)}{x}\right| \to 0 .\]
+\end{eg}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f\left(x\right) = x^{n} $ con $\displaystyle n \in \N $. Entonces, existe $\displaystyle f'\left(x\right) = n x^{n-1} $.
+\end{ftheorem}
+\begin{proof}
+Se demuestra por inducción. Si $\displaystyle n = 1 $ es trivial. Suponemos que es cierto para $\displaystyle n $. Entonces, tenemos que si $\displaystyle f\left(x\right) = x^{n+1} = x^{n} \cdot x $, 
+\[ f'\left(x\right) = \left(x^{n}\right)' \cdot x + x^{n}\left(x\right)' = nx^{n-1} \cdot x + x^{n} = nx^{n}+x^{n} = \left(n+1\right)x^{n} .\]
+\end{proof}
+\begin{fcolorary}[]
+\normalfont Sea $\displaystyle f\left(x\right) = \frac{1}{x^{n}} = x^{-n} $, con $\displaystyle n \in \N $. Entonces, si $\displaystyle x \neq 0 $, $\displaystyle f'\left(x\right) = -nx^{-n-1} $.
+\end{fcolorary}
+\begin{proof}
+Aplicando el apartado \textbf{(c)} del \textbf{Teorema 5.3},
+\[f'\left(x\right) = \frac{-nx^{n-1}}{x^{2n}} = -n x^{\left(n-1\right)-2n} = -nx^{-n-1} .\]
+\end{proof}
+\begin{eg}
+\normalfont Consideremos $\displaystyle f\left(x\right) = \frac{x^{3}+x+1}{x^{2}-1} $. Entonces, tenemos que si $\displaystyle x \neq \pm 1 $,
+\[ f'\left(x\right) = \frac{\left(3x^{2}+1\right)\left(x^{2}-1\right)-\left(x^{3}+x+1\right)\left(2x\right)}{\left(x^{2}-1\right)^{2}} .\]
+\end{eg}
+\begin{ftheorem}[Regla de la cadena]
+\normalfont Sea $\displaystyle f,g : \R \to \R $ con $\displaystyle \Imagen\left(f\right) \subset \dom\left(g\right) $ y $\displaystyle a \in \dom\left(f\right) $, tal que existe $\displaystyle f'\left(a\right) $ y existe $\displaystyle g'\left(f\left(a\right)\right) $. Entonces, existe $\displaystyle \left(g \circ f\right)'\left(a\right) = g'\left(f\left(a\right)\right) f'\left(a\right) $.
+\end{ftheorem}
+\begin{proof}
+Tenemos que
+\[
+\begin{split}
+	\left(g\circ f\right)'\left(a\right) =& \lim_{x \to a}\frac{g\circ f\left(x\right) - g\circ f\left(a\right)}{x-a} = \lim_{x \to a}\frac{g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right)}{x-a} \cdot \frac{f\left(x\right)-f\left(a\right)}{f\left(x\right)-f\left(a\right)} \\
+	= & \lim_{x \to a} \frac{g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right)}{f\left(x\right)-f\left(a\right)} \cdot \frac{f\left(x\right)-f\left(a\right)}{x - a} .
+\end{split}
+\]
+Sea $\displaystyle h = f\left(x\right)-f\left(a\right) $, entonces $\displaystyle h\to0 $ cuando $\displaystyle x \to a $. Así,
+\[\lim_{h \to 0} \frac{g\left(f\left(a\right)+h\right)-g\left(f\left(a\right)\right)}{h} = g'\left(f\left(a\right)\right) .\]
+Por otro lado, es trivial que $\displaystyle \lim_{x \to a}\frac{f\left(x\right)-f\left(a\right)}{x-a} = f'\left(a\right) $. Así, hemos obtenido que $\displaystyle \left(g\circ f\right)'\left(a\right) = g'\left(f\left(a\right)\right) f'\left(a\right) $.
+\end{proof}
+\begin{eg}
+\normalfont Consideremos la función $\displaystyle f\left(x\right) = \left(x^{2}-3\right)^{27} $. Aplicando el teorema anterior,
+\[f'\left(x\right) = 27\left(x^{2}-3\right)^{26} \cdot 2x = 54x\left(x^{2}-3\right)^{26} .\]
+\end{eg}
+\begin{ftheorem}[Teorema de la función inversa]
+\normalfont Sea $\displaystyle f: \left(\alpha, \beta \right) \to \R $ derivable en $\displaystyle \left(\alpha, \beta \right) $ y $\displaystyle f' $ es continua en $\displaystyle \left(\alpha, \beta \right) $ y para $\displaystyle a \in \left(\alpha, \beta \right) $, $\displaystyle f'\left(a\right) \neq 0 $. Entonces, en un intervalo centrado en $\displaystyle f\left(a\right) $ existe $\displaystyle f^{-1} $, que es derivable y $\displaystyle \left(f^{-1} \right)' \left(f\left(a\right)\right)= \frac{1}{f'\left(a\right)}$.
+\end{ftheorem}
+\begin{proof}
+Si $\displaystyle f'\left(a\right) \neq 0 $ tenemos que $\displaystyle f'\left(a\right) > 0 $ o $\displaystyle f'\left(a\right) < 0 $. Sin pérdida de generalidad, asumamos que $\displaystyle f'\left(a\right) > 0 $ (como $\displaystyle f' $ es continua, en un intervalo $\displaystyle \left(a-\delta, a + \delta \right) $, $\displaystyle f'\left(x\right) >0$), entonces podemos demostrar que $\displaystyle f $ es inyectiva en $\displaystyle \left(a - \delta, a + \delta \right) $ (por el teorema del valor medio). Tenemos que $\displaystyle f $ es continua (por ser derivable) e inyectiva, por lo que $\displaystyle f $ es estrictamente monótona en $\displaystyle \left(a-\delta, a + \delta \right) $ y, por tanto, existe $\displaystyle f^{-1} $. Consideremos la aplicación
+\[ f: \left(a - \delta, a + \delta \right) \to \left(f\left(a-\delta \right), f\left(a+\delta \right)\right) .\]
+ Tenemos que $\displaystyle f^{-1} $ es continua en $\displaystyle \left(f\left(a-\delta \right), f\left(a+\delta \right)\right) $. Entonces, si $\displaystyle y = f\left(a\right) $, $\displaystyle f^{-1}\left(y\right) = f^{-1}\left(f\left(a\right)\right) = a $. Entonces, tenemos que 
+\[\lim_{y \to f\left(a\right)}\frac{f^{-1}\left(y\right)-f^{-1}f\left(a\right)}{y-f\left(a\right)} = \lim_{x \to a}\frac{1}{\frac{f\left(x\right)-f\left(a\right)}{x-a}} = \frac{1}{f'\left(a\right)} .\]
+\end{proof}
+\begin{observation}
+\normalfont Sea $\displaystyle f\left(x\right) = x^{\frac{1}{n}} = \sqrt[n]{x} $ con $\displaystyle n \in \N $. Entonces, $\displaystyle f^{-1}\left(x\right) = x^{n} $. Así, tenemos que
+	\[f'\left(x\right) = \frac{1}{n\left(x^{\frac{1}{n}}\right)^{n-1}} = \frac{1}{n}x^{-\frac{n-1}{n}} = \frac{1}{n}x^{\frac{1}{n}-1} .\]
+En general, si $\displaystyle n,m \in \N $ y$\displaystyle f\left(x\right) = x^{\frac{n}{m}} = \left(x^{\frac{1}{m}}\right)^{n} $, entonces aplicando la regla de la cadena, 
+\[f'\left(x\right) = n\left(x^{\frac{1}{m}}\right)^{n-1} \cdot \frac{1}{m} x^{\frac{1}{m}-1} = \frac{n}{m}x^{\frac{n}{m}-1} .\]
+\end{observation}
+\begin{eg}
+\normalfont Consideremos la función $\displaystyle f\left(x\right) = \sqrt{ \frac{x}{x^{2}+1}} $:
+\[f'\left(x\right) = \frac{1}{2} \frac{1}{\sqrt{\frac{x}{x^{2}+1}}} \cdot \frac{\left(x+1\right)^{2}-2x^{2}}{\left(x^{2}+1\right)^{2}} .\]
+\end{eg}
+Consideremos ahora las funciones $\displaystyle \sin\left(x\right), \cos\left(x\right) $ y $\displaystyle \tan\left(x\right) $. Más adelante se demostrarán la siguiente igualdade:
+\[ \left(\sin x\right)' = \cos x .\]
+De esta se pueden deducir las otras derivadas. Tenemos que $\displaystyle \cos x= \sqrt{1 - \sin ^{2}x} $, por tanto, derivando a ambos lados:
+\[\left(\cos x\right)' = \frac{-2\sin x\cos x}{2\sqrt{1 - \sin ^{2}x}} = - \sin x.\]
+Por definición, tenemos que $\displaystyle \tan x= \frac{\sin x}{\cos x} $, por tanto,
+\[\left(\tan x\right)' = \left(\frac{\sin x}{\cos x}\right)' = \frac{ \cos^{2} x + \sin ^{2} x }{\cos^{2}x} = \frac{1}{\cos^{2} x} = 1 + \tan ^{2} x\]
+Vamos a estudiar ahora las funciones inversas: $\displaystyle \arcsin x, \arccos x, \arctan x $. Si $\displaystyle f\left(x\right) = \arctan x $, tenemos que $\displaystyle f^{-1}\left(x\right) = \tan x $. Aplicando el teorema de la función inversa,
+\[f'\left(x\right) = \frac{1}{1 + \tan^{2}\left(\arctan x\right)} = \frac{1}{1 + x^{2}} .\]
+Sea $\displaystyle f\left(x\right) = e^{x} $. Más adelante se demostrará que $\displaystyle f'\left(x\right) = e^{x} $. Lo haremos introduciendo la función logarítmica, que es la inversa de la exponencial.
+\begin{fdefinition}[Funciones hiperbólicas]
+\normalfont Sea llama \textbf{coseno hiperbólico} a la función $\displaystyle \cosh x = \frac{e^{x}+e^{-x}}{2} $. Similarmente, se llama \textbf{seno hiperbólico} a la función $\displaystyle \sinh x = \frac{e^{x}-e^{-x}}{2} $. Finalmente, se define \textbf{tangente hiperbólica} a la función $\displaystyle \tanh x = \frac{\sinh x}{\cosh x} $.
+\end{fdefinition}
+Calculamos sus derivadas.
+\[
+\begin{split}
+	\left(\cosh x\right)' = & \frac{e^{x}-e^{-x}}{2} = \sinh x \\
+	\left(\sinh x\right)' = & \frac{e^{x}+e^{-x}}{2} = \cosh x \\
+	\left(\tanh x\right)' = & \frac{\cosh^{2}x - \sinh^{2}x}{\cosh ^{2}x} = 1 - \tanh^{2}x.
+\end{split}
+\]
+\begin{observation}
+\normalfont Podemos observar que 
+\[ \boxed{1 = \cosh^{2}x - \sinh^{2}x} \]
+\end{observation}
+Ahora podemos calcular las derivadas de sus inversas aplicando el teorema de la función inversa.
+\[
+\begin{split}
+	\left(\arcsinh x\right)' = & \frac{1}{\cosh\left(\arcsinh x\right)} = \frac{1}{\sqrt{1 + \sinh^{2}\left(\arcsinh x\right)}} = \frac{1}{\sqrt{1+x^{2}}} \\
+	\left(\arccosh x\right)' = & \frac{1}{\sinh\left(\arccosh x\right)} = \frac{1}{\sqrt{\cosh^{2}\left(\arccos x\right) - 1}} = \frac{1}{\sqrt{x^{2}-1}}\\
+	\left(\arctanh x\right)' = & \frac{1}{1 - \tanh^{2}\left(\arctanh x\right)} = \frac{1}{1 - x^{2}}.
+\end{split}
+\]
+\begin{fdefinition}[Extremos relativos]
+\normalfont Sea $\displaystyle f : A \subset \R \to \R $. 
+\begin{description}
+\item[(a)] Se dice que $\displaystyle x_{0} $ es un \textbf{máximo relativo} si existe $\displaystyle r > 0 $ tal que $\displaystyle \left(x_{0}-r, x_{0}+r\right) \subset A $, y allí $\displaystyle f\left(x_{0}\right) \geq f\left(x\right) $ para $\displaystyle \forall x \in \left(x_{0}-r, x_{0}+r\right) $.
+\item[(b)] Se dice que $\displaystyle x_{0} $ es un \textbf{mínimo relativo} si existe $\displaystyle r > 0 $ tal que $\displaystyle \left(x_{0}-r, x_{0}+r\right) \subset A $, y allí $\displaystyle f\left(x_{0}\right) \leq f\left(x\right) $ para $\displaystyle \forall x \in \left(x_{0}-r, x_{0}+r\right) $.
+\end{description}
+\end{fdefinition}
+\begin{observation}
+\normalfont Los máximos y mínimos absolutos de una función definida en un intervalo o semirrecta abierta son automáticamente extremos relativos. Sin embargo, el recíproco no tiene por que ser cierto.
+\end{observation}
+
+\begin{eg}
+	\normalfont Si consideramos la función $\displaystyle f\left(x\right) = \left|x\right| $ definida en $\displaystyle \left[-1,1\right]  $, tenemos que $\displaystyle f $ tiene un mínimo relativo en $\displaystyle x = 0 $, que también es un mínimo absoluto.
+\end{eg}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : I \subset \R \to \R  $ es un intervalo o semirrecta, con $\displaystyle f $ derivable en $\displaystyle I $. Sea $\displaystyle x_{0} \in I $ un extremo relativo. Entonces, $\displaystyle f'\left(x_{0}\right) = 0 $.
+\end{ftheorem}
+\begin{proof}
+Sin pérdida de generalidad, se $\displaystyle x_{0} $ un máximo local. Entonces existe $\displaystyle r > 0 $ tal que $\displaystyle \left(x_{0}-r, x_{0}+r\right) \subset I $. 
+\begin{itemize}
+\item Si $\displaystyle x > x_{0} $ tenemos que, dado que $\displaystyle f $ es derivable en $\displaystyle I $,
+	\[ \frac{f\left(x\right)-f\left(x_{0}\right)}{x-x_{0}} \leq 0 \Rightarrow \lim_{x \to x_{0}^{+}}\frac{f\left(x\right)-f\left(x_{0}\right)}{x-x_{0}} = f'\left(x_{0}\right) \leq 0 .\]
+\item Si $\displaystyle x < x_{0} $, tenemos que
+	\[ \frac{f\left(x\right)-f\left(x_{0}\right)}{x-x_{0}} \geq 0 \Rightarrow \lim_{x \to x_{0}^{-}}\frac{f\left(x\right)-f\left(x_{0}\right)}{x-x_{0}} = f'\left(x_{0}\right) \geq 0 .\]
+\end{itemize}
+Así, como $\displaystyle \exists f'\left(x_{0}\right) $, debe ser que $\displaystyle f'\left(x_{0}\right) = 0 $.
+\end{proof}
+\begin{eg}
+\normalfont 
+\begin{description}
+\item[(i)] Consideremos la función $\displaystyle f\left(x\right) = \left|x\right| $ definida en $\displaystyle \left(-1, 1\right) $. Tiene un mínimo local en $\displaystyle x= 0 $ pero no es derivable en este punto.
+\item[(ii)] El recíproco del teorema anterior no es cierto. En efecto, consideremos la función $\displaystyle f\left(x\right) = x^{3} $ definida en $\displaystyle \left(-1,1\right) $. Tenemos que $\displaystyle f'\left(0\right) = 0 $, pero no tiene un extremo relativo en ese punto.
+\end{description}
+\end{eg}
+\begin{observation}
+\normalfont Para buscar máximos y mínimos de una función buscamos en:
+\begin{itemize}
+\item Los extremos del dominio.
+\item Los puntos donde no es continua o derivable.
+\item Los puntos en los que se anula la derivada.
+\end{itemize}
+\end{observation}
+\begin{ftheorem}[Teorema de Rolle]
+	\normalfont Sea $\displaystyle f:[a,b] \to \R $ continua en $\displaystyle [a,b] $ y derivable en $\displaystyle \left(a,b\right) $. Si $\displaystyle f\left(a\right) = f\left(b\right) $, entonces existe $\displaystyle c \in \left(a,b\right) $ tal que $\displaystyle f'\left(c\right) = 0 $.
+\end{ftheorem}
+\begin{proof}
+	Si $\displaystyle f $ es constante, es trivial puesto que $\displaystyle \forall x \in \left(a,b\right) $ se tiene que $\displaystyle f'\left(x\right) = 0 $. En caso contrario, dado que $\displaystyle f $ es continua en $\displaystyle \left[a,b\right]  $ existe $\displaystyle x_{0} \in \left(a,b\right) $ máximo o mínimo local con $\displaystyle f\left(x_{0}\right) > f\left(a\right) $ o $\displaystyle f\left(x_{0}\right) < f\left(a\right) $. Por el teorema anterior, dado que $\displaystyle x_{0} $ es un extremo local y $\displaystyle f $ es derivable en $\displaystyle \left(a,b\right) $, debe ser que $\displaystyle f'\left(x_{0}\right) = 0 $.
+\end{proof}
+\begin{ftheorem}[Teorema del valor medio]
+	\normalfont Sea $\displaystyle f : \left[a,b\right]  \to \R $ continua en $\displaystyle \left[a,b\right]  $ y derivable en el intervalo $\displaystyle \left(a,b\right) $. Entonces, existe $\displaystyle c \in \left(a,b\right) $ tal que $\displaystyle f'\left(c\right) = \frac{f\left(b\right)-f\left(a\right)}{b-a} $.
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle g\left(x\right) = f\left(x\right) - \frac{f\left(b\right)-f\left(a\right)}{b-a}\left(x-a\right) - f\left(a\right) $. Tenemos que $\displaystyle g $ es continua en $\displaystyle \left[a,b\right]  $ y derivable en $\displaystyle \left(a,b\right) $. Además, dado que $\displaystyle g\left(a\right) = g\left(b\right) = 0 $, por el teorema de Rolle, existe $\displaystyle c \in \left(a,b\right) $ tal que $\displaystyle g'\left(c\right) = 0 $. Es decir,
+	\[0 = g'\left(c\right) = f'\left(c\right) - \frac{f\left(b\right)-f\left(a\right)}{b-a} \iff f'\left(c\right) = \frac{f\left(b\right)-f\left(a\right)}{b-a} .\]
+\end{proof}
+\begin{fcolorary}[]
+	\normalfont 
+	\begin{description}
+	\item[(a)] Sea $\displaystyle f: [a,b] \to \R $ con $\displaystyle f $ continua en $\displaystyle [a,b] $ y derivable en $\displaystyle \left(a,b\right) $. Si $\displaystyle f'\left(x\right) = 0 $, $\displaystyle \forall x \in \left(a,b\right) $, entonces $\displaystyle f $ es constante.
+	\item[(b)] Sean $\displaystyle f,g : [a,b] \to \R $, ambas continuas en $\displaystyle [a,b] $ y derivables en $\displaystyle \left(a,b\right) $. Si $\displaystyle f'\left(x\right) = g'\left(x\right) $, $\displaystyle \forall x \in \left(a,b\right) $, entonces existe $\displaystyle k \in \R $ tal que $\displaystyle f\left(x\right) = g\left(x\right) + k $, $\displaystyle \forall x \in [a,b] $. 
+	\item[(c)] Sea $\displaystyle f : [a,b] \to \R$ es continua en $\displaystyle \left[a,b\right]  $ y derivable en $\displaystyle \left(a,b\right) $ tal que $\displaystyle f'\left(x\right) \neq 0 $, $\displaystyle \forall x \in \left(a,b\right) $, entonces $\displaystyle f $ es inyectiva \footnote{El recíproco también es cierto.} .
+	\end{description}
+\end{fcolorary}
+\begin{proof}
+\begin{description}
+	\item[(a)] Sean $\displaystyle x,y \in [a,b]$, entonces $\displaystyle f $ es continua en $\displaystyle [x,y] $  y derivable en $\displaystyle \left(x,y\right) $. Por el teorema del valor medio, existe $\displaystyle c \in \left(x,y\right) $ con $\displaystyle f\left(x\right)-f\left(y\right) = f'\left(c\right)\left(x-y\right) = 0 $, así, $\displaystyle f\left(x\right) = f\left(y\right) $, $\displaystyle \forall x,y \in \left[a,b\right]  $.
+	\item[(b)] Consideremos la función $\displaystyle h\left(x\right) = f\left(x\right)-g\left(x\right) $. Entonces, $\displaystyle h $ es continua en $\displaystyle [a,b] $ y derivable en $\displaystyle \left(a,b\right) $. Además, como $\displaystyle h'\left(x\right) = f'\left(x\right)-g'\left(x\right) = 0 $, tenemos, por \textbf{(a)}, que $\displaystyle h\left(x\right) = k \in \R $, por lo que $\displaystyle f\left(x\right) = g\left(x\right) + k $.
+	\item[(c)] Si $\displaystyle x,y \in [a,b] $ (con $\displaystyle x \neq y $), entonces $\displaystyle f : [x,y] \to \R $ es continua en $\displaystyle [x,y] $ y derivable en $\displaystyle \left(x,y\right) $. Por el teorema del valor medio, existe $\displaystyle c \in \left(x,y\right) $ con $\displaystyle f\left(x\right)-f\left(y\right) = f'\left(c\right)\left(x-y\right) \neq 0 $, por lo que debe ser que $\displaystyle f\left(x\right) \neq f\left(y\right) $.
+\end{description}
+\end{proof}
 
