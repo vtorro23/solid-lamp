@@ -584,4 +584,143 @@ En efecto, tenemos que
 Finalmente, si $\displaystyle \vec{x}\in \Ker\left(a_{1}\left(f\right)\right)\cap\Ker\left(a_{2}\left(f\right)\right) $, tenemos que 
 \[\vec{x} = \left(p_{1}\left(f\right) \circ a_{1}\left(f\right)\right)\left(\vec{x}\right) + \left(p_{2}\left(f\right)\circ a_{2}\left(f\right)\right)\left(\vec{x}\right) = p_{1}\left(f\right)\left(\vec{0}\right) + p_{2}\left(f\right)\left(\vec{0}\right) = \vec{0} .\]
 \end{proof}
+\begin{fprop}[]
+\normalfont Si $\displaystyle p\left(x\right) = p_{1}\left(x\right)^{r_{1}}\cdots p_{k}\left(x\right)^{r_{k}} $ es la descomposición en factores irreducibles de un polinomio anulador de $\displaystyle f $, entonces
+\[V = \Ker\left(p_{1}\left(f\right)^{r_{1}}\right) \oplus \cdots \oplus \Ker\left(p_{k}\left(f\right)^{r_{k}}\right) .\]
+\end{fprop}
+\begin{proof}
+La demostración se realiza por inducción sobre $\displaystyle k $. 
+\begin{description}
+\item[(i)] Si $\displaystyle k=2 $, queda demostrado por el resultado anterior.
+\item[(ii)] Asumimos que el resultado es cierto para $\displaystyle k - 1 $. Tenemos que los polinomios $\displaystyle p_{1}\left(x\right)^{r_{1}}, \ldots, p_{k}\left(x\right)^{r_{k}} $ son primos entre si. Entonces, tenemos que
+	\[ V = \Ker\left(p_{1}\left(f\right)^{r_{1}}\right) \oplus \Ker\left(p_{2}\left(f\right)^{r_{2}} \circ \cdots \circ p_{k}\left(f\right)^{r_{k}}\right) .\]
+Por hipótesis de inducción, tenemos que $\displaystyle V = \Ker\left(p_{1}\left(f\right)^{r_{1}}\right) \oplus \cdots \oplus \Ker\left(p_{k}\left(f\right)\right)^{r_{k}} $.
+\end{description}
+\end{proof}
+\begin{fprop}[]
+\normalfont Sea $\displaystyle P_{mf}\left(x\right) = p_{1}\left(x\right)p_{2}\left(x\right) $ con $\displaystyle p_{1}\left(x\right) $ y $\displaystyle p_{2}\left(x\right) $ primos entre si. Entonces, $\displaystyle V = \Ker\left(p_{1}\left(f\right)\right) \oplus \Ker\left(p_{2}\left(f\right)\right) $. Además, $\displaystyle p_{1}\left(x\right) = P_{m, f|_{\Ker\left(p_{1}\left(f\right)\right)}} $ y $\displaystyle p_{2}\left(x\right) = P_{m,f|_{\Ker\left(p_{2}\left(f\right)\right)}} $, salvo por factores escalares.
+\end{fprop}
+\begin{proof}
+Lo único que hay que demostrar es la última afirmación. Tenemos que $\displaystyle p_{1}\left(x\right) $ es un polinomio anulador de $\displaystyle f|_{\Ker\left(p_{2}\left(f\right)\right)} $ y lo mismo sucede para $\displaystyle p_{2}\left(x\right) $. Similarmente, $\displaystyle p_{1}\left(x\right)p_{2}\left(x\right) $ es anulador de $\displaystyle f $, por lo que es producto del polinomio mínimo de $\displaystyle f $. La demostración termina utilizando el hecho de que muchas cosas son primas entre sí.
+\end{proof}
+\begin{fprop}[]
+\normalfont Sea $\displaystyle P_{mf} = p_{1}\left(x\right)^{r_{1}}\cdots p_{k}\left(x\right)^{r_{k}} $ la descomposición en factores irreducibles del polinomio mínimo de $\displaystyle f $. Entonces, tenemos que $\displaystyle V = \Ker\left(p_{1}\left(f\right)^{r_{1}}\right) \oplus \cdots \oplus \Ker\left(p_{k}\left(f\right)^{r_{k}}\right) $.
+\end{fprop}
+\begin{observation}
+\normalfont Si cogemos la base de los subespacios anteriores, la matriz de $\displaystyle f $ en esta base se nos quedará de la forma
+\[ f \to \begin{pmatrix} A_{1} & 0 & \cdots & 0 \\
+0 & A_{2} & \cdots & 0 \\
+\vdots & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & A_{k}\end{pmatrix} .\]
+Donde $\displaystyle A_{i}  = \mathcal{M}\left(f|_{\Ker\left(p_{i}\left(f\right)^{r_{i}}\right)}\right) $, para $\displaystyle i = 1, \ldots, k $. Además, tenemos que,
+\[ P_{m, f|_{\Ker\left(p_{i}\left(f\right)^{r_{i}}\right)}}\left(x\right) = p_{i}\left(x\right)^{r_{i}}.\]
+\end{observation}
+\begin{fdefinition}[]
+\normalfont Un endomorfismo $\displaystyle f \in \End\left(V\right) $ es \textbf{nilpotente} si existe $\displaystyle m \in \N $ tal que $\displaystyle f^{m} = 0 $ pero $\displaystyle f^{m - 1} \neq 0 $.
+\end{fdefinition}
+\begin{observation}
+	\normalfont Tenemos que $\displaystyle p_{i}\left(f\right) ^{r_{i}}\left(x\right) = P_{m,f|\Ker\left(p_{i}\left(f\right)^{r_{i}}\right)}\left(x\right) $. Si $\displaystyle P_{mf}\left(x\right) = p_{1}\left(x\right) $ se descompone en factores lineales en $\displaystyle \K[x] $ y $\displaystyle p_{1}\left(x\right) = x - \lambda_{1} $, entonces $\displaystyle p_{1}\left(f\right) = f - \lambda_{1} $.
+\end{observation}
+Sea $\displaystyle f $ un endomorfismo de índice de nilpotencia $\displaystyle m \in \N $. Sea $\displaystyle \vec{x} \in V $ tal que $\displaystyle f^{m - 1}\left(\vec{x}\right) \neq \vec{0} $. Sea $\displaystyle L = L\left( \left\{ \vec{x}, f\left(\vec{x}\right), \ldots, f^{m - 1}\left(\vec{x}\right)\right\} \right) $. Tenemos que $\displaystyle \left\{ \vec{x}, f\left(\vec{x}\right), \ldots, f^{m -1}\left(\vec{x}\right)\right\}  $ son linealmente independentes. En efecto, si $\displaystyle a_{0}, \ldots, a_{m - 1} \in \K $,
+\[a_{0}\vec{x} + a_{1}f\left(\vec{x}\right) + \cdots + a_{m - 1}f^{m - 1}\left(\vec{x}\right) = \vec{0} .\]
+Por tanto,
+\[
+\begin{split}
+f\left(a_{0}\vec{x} + a_{1}f\left(\vec{x}\right) + \cdots + a_{m - 1}f^{m - 1}\left(\vec{x}\right)\right) = a_{0}f\left(\vec{x}\right) + \cdots a_{m -2}f^{m -1}\left(\vec{x}\right) = \vec{0}.
+\end{split}
+\]
+Iterando, tenemos que $\displaystyle a_{0}f^{m - 1}\left(\vec{x}\right) = \vec{0} $. Como $\displaystyle \vec{x} \not\in \Ker\left(f^{m -1}\right) $, tenemos que $\displaystyle a_{0} = 0 $. Supongamos que $\displaystyle a_{0} = a_{1} = \cdots = a_{i} = 0$, con $\displaystyle i < m $. Entonces, tenemos que 
+\[ a_{i}f^{i}\left(\vec{x}\right) + a_{i+1}f^{i+1}\left(\vec{x}\right) + \cdots + a_{m -1}f^{m -1}\left(\vec{x}\right) = \vec{0} .\]
+Aplicando $\displaystyle f^{m -i-1} $, tenemos que
+\[\vec{0} = a^{i}f^{m -1}\left(\vec{x}\right)  .\]
+Como vimos anteriormente, $\displaystyle a_{i} = 0 $. Así, concluimos que $\displaystyle a_{i} = 0 $ para $\displaystyle i = 0, 1, \ldots, m -1 $. 
+\begin{observation}
+\normalfont Tenemos que $\displaystyle L $ es de dimensión $\displaystyle m $ y $\displaystyle f\left(L\right) \subset L $. Además, la matriz de $\displaystyle f|_{L} $ en la base anterior será de la forma:
+\[ f|_{L} \to \begin{pmatrix} 0 & 0  & \cdots &0 & 0\\
+	1 & 0  & \cdots & 0 & 0 \\
+0 & 1  & \cdots & 0 & 0 \\
+\vdots & \vdots  & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & 1 & 0 \end{pmatrix} .\]
+\end{observation}
+\begin{ftheorem}[]
+\normalfont Existe $\displaystyle L'\in \mathcal{L}\left(V\right) $ invariante por $\displaystyle f $ tal que $\displaystyle L\oplus L' = V $.
+\end{ftheorem}
+\begin{proof}
+	Consideremos $\displaystyle f^{*} $, que es nilpotente de índice de nilpotencia $\displaystyle m $. Esto se deduce de que $\displaystyle \left(f^{*}\right)^{i} = \left(f^{i}\right)^{*} $. Dado que $\displaystyle f^{m -1} \neq 0 $, para algún $\displaystyle \vec{x} \in V $ se tiene que $\displaystyle f^{ m -1}\left(\vec{x}\right) \neq \vec{0} $. De manera similar, deducimos que existe $\displaystyle \alpha \in V^{*} $ tal que $\displaystyle \alpha\left(f^{m -1}\left(\vec{x}\right)\right) \neq \vec{0} $. Así, $\displaystyle \left\{ \alpha, f^{*}\left(\alpha \right), \ldots, \left(f^{*}\right)^{m-1}\left(\alpha\right)\right\}  $ son linealmente independientes.
+Sea $\displaystyle a_{0}, \ldots, a_{m -1} \in \K $ tales que
+\[a_{0}\alpha + a_{1}f^{*}\left(\alpha \right) +\cdots+a_{m -1}\left(f^{*}\right)^{m -1}\left(\alpha \right) = 0 .\]
+Entonces, tenemos que 
+\[
+\begin{split}
+	0 =&  \left(a_{0}\alpha + a_{1}f^{*}\left(\alpha \right) +\cdots+a_{m -1}\left(f^{*}\right)^{m -1}\left(\alpha \right)\right)\left(f^{m -1}\left(\vec{x}\right)\right) \\
+ = &  a_{0} \alpha\left(f^{m -1}\left(\vec{x}\right)\right) + a_{1}\alpha\left(f^{m}\left(\vec{x}\right)\right) + \cdots + a_{m -1}\alpha\left(f^{2m -2}\left(\vec{x}\right)\right) \Rightarrow a_{0} = 0.
+\end{split}
+\]
+Supongamos que $\displaystyle a_{0} = a_{1} = \cdots = a_{i-1} = 0 $ para $\displaystyle i < m $. Entonces, tenemos que 
+\[ a_{i}\left(f^{*}\right)^{i}\left(\alpha \right) + \cdots + a_{m -1}\left(f^{*}\right)^{m -1}\left(\alpha \right)= 0 .\]
+Componiendo, obtenemos que
+\[
+\begin{split}
+	0 =& \left(a_{i}\left(f^{*}\right)^{i}\alpha \left(f^{m - i-1}\left(\vec{x}\right)\right) + \cdots + a_{m -1}\left(f^{*}\right)^{ m -1}\alpha \left(f^{m -i -1}\left(\vec{x}\right)\right)\right) \\
+= & a_{i}\alpha\left(f^{m -1}\left(\vec{x}\right)\right) + \cdots + a_{m -1}\alpha \left(f^{2m - i -2}\left(\vec{x}\right)\right) \Rightarrow a_{i} = 0.
+\end{split}
+\]
+Sea $\displaystyle W = L\left( \left\{ \alpha, f^{*}\left(\alpha\right), \cdots , \left(f^{*}\right)^{m -1}\left(\alpha \right)\right\} \right) $. Tenems que $\displaystyle \dim\left(W\right) = m $. Sea $\displaystyle L' = W^{\perp } $, entonces $\displaystyle \dim\left(L'\right) = \dim\left(W^{\perp }\right) = n - m $. Si $\displaystyle \vec{y} \in L \cap L' $, entonces
+\[\vec{y} = a_{0}\vec{x} + a_{1}f\left(\vec{x}\right) + \cdots + a_{m -1}f^{m -1}\left(\vec{x}\right) ,\]
+y también tenemos que
+\[ \vec{0} = \left(f^{*}\right)^{m -1}\left(\alpha \right)\left(\vec{y}\right) = \alpha \left(a_{0}f^{m -1}\left(\vec{x}\right) + a_{1}f^{m}\left(\vec{x}\right) + \cdots + a_{m -1}f^{2m-2}\left(\vec{x}\right)\right) = a_{0}\alpha\left(f^{m -1}\right)\left(\vec{x}\right) \Rightarrow a_{0} = 0.\]
+Supongamos que $\displaystyle a_{0}= a_{1} = \cdots = a_{i-1} = 0 $ con $\displaystyle i < m $. Así, tenemos que
+\[
+\begin{split}
+ & a_{i}f^{i}\left(\vec{x}\right) + \cdots + a_{m -1}f^{m -1}\left(\vec{x}\right) = \vec{0} \\
+& \vec{y} = a_{i}f^{i}\left(\vec{x}\right) + \cdots + a_{m -1}f^{m -1}\left(\vec{x}\right) 
+\end{split}
+\]
+\[
+\begin{split}
+	\vec{0} = \left(f^{*}\right)^{m -i-1}\left(\alpha \right)\left(a_{i}f^{i}\left(\vec{x}\right) + \cdots + a_{m -1}f^{m -1}\left(\vec{x}\right)\right) = \alpha\left(a_{i}f^{m -1}\left(\vec{x}\right)+a_{m -1}f^{2m -i-1}\left(\vec{x}\right)\right) \Rightarrow a_{i} = 0.
+\end{split}
+\]
+Así, tenemos que $\displaystyle a_{i} = 0 $ para $\displaystyle i = 0, 1, \ldots, m -1 $, por lo que $\displaystyle V = L \oplus L'$.
+\end{proof}
+\begin{observation}
+\normalfont Supongamos que $\displaystyle P_{cf}\left(x\right) = \left(-1\right)^{n}\left(x -\lambda_{1}\right)^{r_{1}} \cdots \left(x - \lambda_{k}\right)^{r_{k}} $. Entonces, tenemos que $\displaystyle V = \Ker\left(f -\lambda_{1}id _{V}\right)^{r_{1}} \oplus \cdots \oplus \Ker\left(f - \lambda_{k}id _{V}\right)^{r_{k}} $. Tenemos que $\displaystyle \left(f -\lambda_{i}id _{V}\right)^{r_{i}} $ es nilpotente con índice de nilpotencia menor o igual que $\displaystyle r_{i} $.
+\end{observation}
+Consideremos $\displaystyle f \in \End\left(f\right) $ tal que $\displaystyle f^{m} = 0 $ pero $\displaystyle f^{ m -1}\neq 0 $. Sea $\displaystyle \Ker\left(f^{m -1}\right)\subsetneq \Ker\left(f^{m}\right) $, sea $\displaystyle L \in \mathcal{L}\left(V\right) $ tal que $\displaystyle L \oplus \Ker\left(f^{m -1}\right) = \Ker\left(f^{m}\right) $ y sea $\displaystyle \left\{ \vec{x}_{1}, \ldots, \vec{x}_{r}\right\}  $ base de $\displaystyle L $. Entonces, la familia de vectores
+\[ \left\{ \vec{x}_{1}, \ldots, \vec{x}_{r}, f\left(\vec{x}_{1}\right), \ldots, f\left(\vec{x}_{r}\right), \ldots, f^{m-1}\left(\vec{x}_{1}\right), \ldots, f^{m -1}f\left(\vec{x}_{r}\right)\right\}  \]
+es linealmente independiente. En efecto, si $\displaystyle c^{i}_{j} \in \K $, para $\displaystyle i = 1, \ldots, r $ y $\displaystyle j = 0, \ldots, m -1 $, tenemos la combinación lineal
+\[\sum^{r, m -1}_{i = 1, j=0}c^{i}_{j}f^{j}\left(\vec{x}_{i}\right) = \vec{0} .\]
+Tenemos que si aplicamos $\displaystyle f^{m -1} $,
+\[
+\begin{split}
+	\vec{0} = f^{m -1}\left(\sum^{r, m -1}_{i = 1, j=0}c^{i}_{j}f^{j}\left(\vec{x}_{i}\right)\right) =& \sum^{r, m -1}_{i = 0, j = 0}c^{i}_{j}f^{j+m -1}\left(\vec{x}_{i}\right)=\sum^{r}_{i = 1}c^{i}_{1}f^{m -1}\left(\vec{x}_{i}\right) = c^{1}_{1}f^{m-1}\left(\vec{x}_{1}\right) + \cdots + c^{r}_{1}f^{m -1}\left(\vec{x}_{r}\right) \\
+	= & f^{m -1}\left(c^{1}_{1}\vec{x}_{1}+ \cdots + c^{r}_{1}\vec{x}_{r}\right).
+\end{split}
+\]
+Entonces, tenemos que $\displaystyle c^{1}_{1}\vec{x}_{1}+ \cdots + c^{r}_{1}\vec{x}_{r} \in L \cap \Ker\left(f^{m -1}\right) $, por lo que
+\[ c^{1}_{1}\vec{x}_{1}+ \cdots + c^{r}_{1}\vec{x}_{r} = \vec{0} .\]
+Al ser linealmente independientes, tenemos que $\displaystyle c^{i}_{1} =0 $ para $\displaystyle i = 1, \ldots, r $. Repitiendo este cálculo, llegamos a que $\displaystyle c^{i}_{j} = 0 $ para $\displaystyle i = 1, \ldots, r $ y $\displaystyle j = 0, \ldots, m -1 $. \\ \\
+A continuación, tenemos que $\displaystyle \Ker\left(f^{m -2}\right) \subsetneq \Ker\left(f^{m -1}\right) $, ampliamos la base de $\displaystyle \Ker\left(f^{m -2}\right) $ hasta obtener una base de $\displaystyle \Ker\left(f^{m -1}\right) $. Hacemos esto con todos los núcleos. 
+\begin{observation}
+\normalfont El número de bloques de Jordan de orden mayor o igual que $\displaystyle i $ es la dimensión del núcleo de $\displaystyle f^{i} $ menos la dimensión del núcleo de $\displaystyle f^{i-1} $.
+\end{observation}
+Dado $\displaystyle f \in \End\left(V\right) $, si existe canónica de $\displaystyle f $, tenemos que el polinomio característico tendrá la forma: $\displaystyle P_{cf}\left(x\right) = \left(x-\lambda_{1}\right)^{r_{1}} \cdots \left(x - \lambda_{k}\right)^{r_{k}} $. Entonces, tenemos que $\displaystyle V = L_{1} \oplus \cdots \oplus L_{k} $, donde $\displaystyle \dim\left(L_{i}\right) = \Ker\left(f-\lambda_{i}id _{V}\right)^{r_{i}} $ con $\displaystyle i =1, \ldots, k $. Así, si $\displaystyle \dim\left(L_{i}\right) = r_{i}$,
+\[P_{cf}\left(x\right) = \left(x - \lambda_{1}\right)^{s_{1}} \cdots \left(x - \lambda_{k}\right)^{s_{k}}, \; s_{i} \leq r_{i} .\]
+tenemos que $\displaystyle f|_{L_{i}} \in \End\left(L_{i}\right) $, $\displaystyle f -\lambda_{i}id _{V} $ es nilpotente de límite de nilpotencia $\displaystyle s_{i} $. Además, tenemos que $\displaystyle \Ker\left(f - \lambda_{i} id _{V}\right) \subsetneq \cdots \subsetneq \Ker\left(f - \lambda_{i} id _{V}\right)^{s _{i}-1} = \Ker\left(f - \lambda_{i}id _{V}\right)^{s_{i}} $.
+\begin{eg}
+	\normalfont Consideremos la matriz $\displaystyle A = \begin{pmatrix} 4 & 5 & - 2 \\ - 2 & - 2 & 1 \\ - 1 & - 1 & 1 \end{pmatrix} $. Tenemos que $\displaystyle P_{cA}\left(x\right) = - \left(x-1\right)^{3} $. Calculamos la dimensión de $\displaystyle \Ker\left(f - id _{V}\right) $,
+	\[A - I = \begin{pmatrix} 3 & 5 & -2 \\ -2 & - 3 & 1 \\ - 1 & - 1 & 0 \end{pmatrix}, \; \left(A - I\right)^{2} = \begin{pmatrix} 1 & 2 & -1 \\ -1 & -2 & 1 \\ - 1 & - 2 & 1 \end{pmatrix} .\]
+Entonces, tenemos que $\displaystyle \dim\left(\Ker\left(f - id _{V}\right)\right) = 1 $ y $\displaystyle \dim\left(\Ker\left(f - id _{V}\right)^{2}\right) = 2 $. Así, debe ser que $\displaystyle \left(A - I\right)^{3} = 0 $. Tenemos que la ecuación de $\displaystyle \Ker\left(f - id _{V}\right)^{2} $ será $\displaystyle x +2y - z = 0 $. Tenemos que coger un vector en $\displaystyle L_{2} $ que no esté en $\displaystyle L_{1} $. Entonces, cogemos cogemos $\displaystyle \vec{u}_{1} = \left(1,0,0\right) $ y $\displaystyle \vec{u}_{2} = \left(3, -2, -1\right) = \left(f - id _{V}\right)\left(1,0,0\right) $. 
+Para conseguir $\displaystyle \vec{u}_{3} $:
+	\[ \left(A - I\right)^{2} \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ - 1 \\ 1 \end{pmatrix} .\]
+Así, $\displaystyle \vec{u}_{3} = \left(1, - 1, - 1\right) $. Entonces, tenemos que la matriz cambio de base será
+	\[ C = \begin{pmatrix} 1 & 3 & 1 \\ 0 & - 2& - 1 \\ 0 & - 1 & -1 \end{pmatrix} .\]
+Y la forma de Jordan será
+	\[ C^{-1}AC = \begin{pmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 0 & 1 & 1 \end{pmatrix} .\]
+\end{eg}
+\begin{eg}
+	\normalfont Consideremos $\displaystyle B = \begin{pmatrix} 1 & 1 & 1 \\ - 1 & 0 & - 1 \\ 1 & - 1 & 0 \end{pmatrix} $. Entonces, $\displaystyle P_{cB} = -\left(x-1\right)^{2}\left(x+1\right) $. Así, $\displaystyle V = \Ker\left(f - id _{V}\right)^{2} \oplus \Ker\left(f + id _{V}\right) $. Vamos a calcular la dimensión de $\displaystyle L_{1} $:
+	\[\left(B - I\right)^{2} = \begin{pmatrix} 0 & - 2 & - 2 \\ 0 & 1 & 1 \\ 0 & 3 & 3 \end{pmatrix} .\]
+Así, $\displaystyle \dim\left(L_{1}\right) = 2 $ y $\displaystyle \dim\left(L_{2}\right) = 1 $. Ahora buscamos un vector que esté en $\displaystyle L_{1} $ pero no en $\displaystyle L_{2} $. Obtenemos las ecuaciones $\displaystyle y + z = 0 $ y $\displaystyle x = 0 $. Entonces, cogemos $\displaystyle \vec{u}_{1} = \left(1, 0, 0\right) $ y $\displaystyle \vec{u}_{2} = \left(0, -1, 1\right) $.  
+\end{eg}
 
