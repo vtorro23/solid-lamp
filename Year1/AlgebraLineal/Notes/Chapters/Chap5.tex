@@ -1,0 +1,184 @@
+\chapter{Formas Bilineales Simétricas}
+\begin{fdefinition}[Forma bilineal]
+\normalfont Una \textbf{forma bilineal} definida en $\displaystyle V $ es una aplicación $\displaystyle \beta : V \times V \to \K $ que verifica que
+\begin{description}
+\item[(a)] $\displaystyle \forall \vec{x}, \vec{y}, \vec{z} \in V $, $\displaystyle \beta\left(\vec{x}+\vec{y}, \vec{z}\right) = \beta\left(\vec{x}, \vec{z}\right) + \beta\left(\vec{y}, \vec{z}\right) $.
+\item[(b)] $\displaystyle \forall \vec{x}, \vec{y}, \vec{z} \in V $, $\displaystyle \beta\left(\vec{x}, \vec{y}+\vec{z}\right) = \beta\left(\vec{x}, \vec{y}\right) + \beta\left(\vec{x}, \vec{z}\right) $.
+\item[(c)] $\displaystyle \forall \vec{x}, \vec{y} \in V, \forall a \in \K$, $\displaystyle \beta\left(a\vec{x}, \vec{y}\right) = \beta\left(\vec{x}, a\vec{y}\right) = a \beta\left(\vec{x}, \vec{y}\right) $.
+\end{description}
+\end{fdefinition}
+\begin{observation}
+\normalfont Resulta trivial que $\displaystyle \forall \vec{x}, \vec{y} \in V $, $\displaystyle \beta\left(\vec{0}, \vec{y}\right) = \beta\left(\vec{x}, \vec{0}\right) = 0 $. En efecto, 
+\[ \beta\left(\vec{x}, \vec{0}\right) = \beta\left(\vec{x}, 0 \cdot \vec{y}\right) = 0 \cdot \beta\left(\vec{x}, \vec{y}\right) = 0 .\]
+\end{observation}
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ una base de $\displaystyle V $, y sean $\displaystyle a_{ij} \in \K $ con $\displaystyle i,j = 1, \ldots, n $. Entonces, $\displaystyle \exists! \beta : V \times V \to \K $ tal que $\displaystyle \beta\left(\vec{u}_{i}, \vec{u}_{j}\right) = a_{ij} $.
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[Unicidad.] Supongamos que existe. Sean $\displaystyle \vec{x},\vec{y}\in V $ tales que 
+	\[
+	\begin{split}
+	\vec{x} = x^{1}\vec{u}_{1} + \cdots +x^{n}\vec{u}_{n} \\
+	\vec{y} = y^{1}\vec{u}_{1} + \cdots + y^{n}\vec{u}_{n}.
+	\end{split}
+	\]
+Entonces, tenemos que 
+\[
+\begin{split}
+	\beta\left(\vec{x}, \vec{y}\right) = & \beta\left(x^{1}\vec{u}_{1} + \cdots +x^{n}\vec{u}_{n}, \vec{y}\right) = x^{1}\beta\left(\vec{u}_{1}, \vec{y}\right) + \cdots + x^{n}\beta\left(\vec{u}_{n}, \vec{y}\right) \\
+	= & \sum^{n}_{i,j = 1}x^{i}y^{j}\beta\left(\vec{u}_{i}, \vec{u}_{j}\right) = \sum^{n}_{i,j = 1}x^{i}y^{j}a_{ij}.
+\end{split}
+\]
+Matricialmente, lo podemos expresar de la siguiente manera:
+\[\beta\left(\vec{x}, \vec{y}\right) = \begin{pmatrix} x^{1} & \cdots & x^{n} \end{pmatrix} \begin{pmatrix} a_{11} & \cdots & a_{1n} \\
+\vdots & & \vdots \\
+a_{n1} & \cdots & a_{nn}\end{pmatrix} \begin{pmatrix} y^{1} \\ \vdots \\ y^{n} \end{pmatrix}.\]
+\item[Existencia.] Defino $\displaystyle \beta\left(\vec{x}, \vec{y}\right) = \sum^{n}_{i,j = 1}x^{i}y^{j}a_{ij} $. Vamos a ver que es bilineal. Tenemos que 
+\[
+\begin{split}
+	\beta\left(\vec{x}+\vec{y}, \vec{z}\right) = & \sum^{n}_{i,j = 1}\left(x^{i}+z^{i}\right)y^{j}a_{ij} = \sum^{n}_{i,j = 1}\left( x^{i}y^{j} + z^{i}y^{j}\right)a_{ij} = \sum^{n}_{i,j=1}x^{i}y^{j}a_{ij} + \sum^{n}_{i,j = 1}z^{i}y^{j}a_{ij}\\
+	= &  \beta\left(\vec{x}, \vec{z}\right) + \beta\left(\vec{y}, \vec{z}\right).
+\end{split}
+\]
+Las propiedades \textbf{(b)} y \textbf{(c)} se deduce de forma análoga.  	
+\end{description}
+\end{proof}
+Entonces, tenemos que la matriz de $\displaystyle \beta  $ en la base $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ será
+\[ \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta \right) = \begin{pmatrix} a_{11} & \cdots & a_{1n} \\
+\vdots & & \vdots \\
+a_{n1} & \cdots & a_{nn}\end{pmatrix} = \begin{pmatrix} \beta\left(\vec{u}_{1}, \vec{u}_{1}\right) & \cdots & \beta\left(\vec{u}_{1}, \vec{u}_{n}\right)\\
+\vdots & & \vdots \\
+\beta\left(\vec{u}_{n}, \vec{u}_{1}\right) & \cdots & \beta\left(\vec{u}_{n}, \vec{u}_{n}\right)\end{pmatrix}.\]
+\begin{observation}
+\normalfont 
+La correspondencia entre matrices y formas bilineales es biyectiva. Así, podemos definir como hicimos anteriormente la suma y el producto de matrices de forma bilineales. En efecto, se trata de un isomorfismo entre el espacio vectorial de las formas bilineales definidas en $\displaystyle V \times V$ y el espacio de las matrices $\displaystyle n \times n $ sobre $\displaystyle \K $.
+\end{observation}
+\begin{fdefinition}[]
+\normalfont Una forma bilineal $\displaystyle \beta : V \times V \to \K $ es \textbf{simétrica} si $\displaystyle \beta\left(\vec{x}, \vec{y}\right) = \beta\left(\vec{y}, \vec{x}\right) $, $\displaystyle \forall \vec{x}, \vec{y} \in V $.
+\end{fdefinition}
+\begin{observation}
+	\normalfont Si $\displaystyle A \in \mathcal{M}_{n \times n} $ es simétrica ($\displaystyle A = A^{t} $), entonces $\displaystyle \beta\left(\vec{x}, \vec{y}\right) = \begin{pmatrix} x^{1} & \cdots & x^{n} \end{pmatrix} A \begin{pmatrix} y^{1} \\ \vdots \\ y^{n} \end{pmatrix} $. Entonces tenemos que 
+	\[\beta\left(\vec{x}, \vec{y}\right)^{t} = \left(\begin{pmatrix} x^{1} & \cdots & x^{n} \end{pmatrix} A \begin{pmatrix} y^{1} \\ \vdots \\ y^{n} \end{pmatrix}\right)^{t} = \begin{pmatrix} y^{1} & \cdots & y^{n} \end{pmatrix} \underbrace{A^{t}}_{A} \begin{pmatrix} x^{1} \\ \vdots \\ x^{n} \end{pmatrix} = \beta\left(\vec{y}, \vec{x}\right).\]
+	Por tanto, $\displaystyle \beta  $ es simétrica.
+\end{observation}
+\begin{fdefinition}[Ortogonal]
+\normalfont Sea $\displaystyle \beta  $ una forma bilineal simétrica. Diremos que los vectores $\displaystyle \vec{x}, \vec{y} \in V $ son \textbf{ortogonales} respecto de $\displaystyle \beta  $ si $\displaystyle \beta\left(\vec{x}, \vec{y}\right) = 0 $. Si $\displaystyle \emptyset \neq A \subset V $, llamaremos \textbf{ortogonal} a $\displaystyle A $ respecto de $\displaystyle \beta  $ y escribiremos $\displaystyle A^{\perp }_{\beta } = \left\{ \vec{x} \in V \; : \; \beta\left(\vec{x}, \vec{y}\right) = 0, \; \forall \vec{y} \in A\right\}  $.
+\end{fdefinition}
+\begin{fprop}[]
+\normalfont Si $\displaystyle A, B \subset V $:
+\begin{description}
+\item[(i)] Si $\displaystyle A \subset B $, $\displaystyle B_{\beta }^{\perp } \subset A^{\perp }_{\beta } $.
+\item[(ii)] $\displaystyle A^{\perp }_{\beta } = \left(L\left(A\right)\right)^{\perp }_{\beta } $.
+\end{description}
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(i)] Si $\displaystyle \vec{x} \in B^{\perp }_{\beta} $, tenemos que $\displaystyle \beta\left(\vec{x}, \vec{y}\right) = 0 $, $\displaystyle \forall \vec{y}\in B $. Por tanto, $\displaystyle \beta\left(\vec{x}, \vec{y}\right) = 0 $, $\displaystyle \forall \vec{y} \in A $.
+\item[(ii)] Tenemos que $\displaystyle A \subset L\left(A\right) $, por lo que $\displaystyle L\left(A\right)^{\perp } \subset A^{\perp } $. Ahora, sea $\displaystyle \vec{x} \in A^{\perp }_{\beta } $. Si $\displaystyle \vec{y} \in L\left(A\right) $, tenemos que existen $\displaystyle \vec{x}_{1}, \ldots, \vec{x}_{p} \in A $ tales que
+	\[\vec{y} = a^{1}\vec{x}_{1} + \cdots + a^{p}\vec{x}_{p} .\]
+Entonces, tenemos que 
+\[
+\begin{split}
+	\beta\left(\vec{x}, \vec{y}\right) = & \beta\left(\vec{x}, a^{1}\vec{x}_{1} + \cdots + a^{p}\vec{x}_{p}\right)  \\
+	= & a^{1}\beta\left(\vec{x}, \vec{x}_{1}\right) + \cdots + a^{p}\beta\left(\vec{x}, \vec{x}_{p}\right) = 0.
+\end{split}
+\]
+Así, tenemos que $\displaystyle A^{\perp } \subset L\left(A\right)^{\perp }_{\beta } $.
+\end{description}
+\end{proof}
+Sea $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\}  $ otra base de $\displaystyle V $. Entonces, tenemos que 
+	\[ \begin{pmatrix} \vec{v}_{1} & \cdots & \vec{v}_{n} \end{pmatrix} = \begin{pmatrix} \vec{u}_{1} & \cdots & \vec{u}_{n} \end{pmatrix}C, \; C \in \GL\left(n, \K\right) .\]
+En efecto, si $\displaystyle \vec{x} = \sum^{n}_{i = 1}x^{i}\vec{u}_{i} = \sum^{n}_{i = 1}x'^{i}\vec{v}_{i} $. Así:
+\[ \begin{pmatrix} x'^{1} \\ \vdots \\ x'^{n} \end{pmatrix} = C \begin{pmatrix} x^{1} \\ \vdots \\ x^{n} \end{pmatrix} .\]
+Recordamos que, si $\displaystyle \beta  $ es simétrica, 
+	\[
+	\begin{split}
+			\beta\left(\vec{x}, \vec{y}\right) =  \begin{pmatrix} x'^{1} & \cdots & x'^{n} \end{pmatrix} \mathcal{M}_{ \left\{ \vec{v}_{i}\right\} }\left(\beta \right)\begin{pmatrix} y'^{1} \\ \vdots \\ y'^{n} \end{pmatrix} 
+				=   \begin{pmatrix} x'^{1} & \cdots & x'^{n} \end{pmatrix} \underbrace{C^{t}\mathcal{M}_{ \left\{ \vec{v}_{i}\right\} }\left(\beta \right) C}_{\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left(\beta\right)}} \begin{pmatrix}y'^{1} \\ \vdots \\ y'^{n} \end{pmatrix} .
+	\end{split}
+	\]
+\begin{fdefinition}[]
+\normalfont Dos matrices $\displaystyle A,B \in \mathcal{M}_{n \times n}\left(\K\right) $ son \textbf{congruentes} si $\displaystyle \exists C \in \GL\left(n, \K\right) $ tal que $\displaystyle B = C^{t}AC $.
+\end{fdefinition}
+\begin{observation}
+	\normalfont Tenemos que $\displaystyle \beta  $ es simétrica si y solo si $\displaystyle \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta \right) = \left( \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta \right)\right)^{t}   $.
+\end{observation}
+Si $\displaystyle A,B \in \mathcal{M}_{ n \times n }\left(\K\right) $ son congruentes, tenemos que 
+\[ \det\left(C^{t}BC\right) = \det\left(C^{t}\right)\det\left(B\right)\det\left(C\right) = \det\left(C\right)^{2}\det\left(B\right) .\]
+\begin{fdefinition}[Discriminante]
+	\normalfont Llamaremos \textbf{discriminante} de $\displaystyle \beta  $ respecto de la base $\displaystyle \left\{ \vec{u}_{1}, \ldots , \vec{u}_{n}\right\}  $ al $\displaystyle \det\left(\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta\right)\right) $, donde $\displaystyle \beta  $ es una forma bilineal simétrica.
+\end{fdefinition}
+\begin{observation}
+\normalfont Por lo visto en el cálculo anterior, al cambiar de base cambia el discriminante pero simplemente queda multiplicado por un cuadrado no nulo. Es decir, el hecho de ser una forma bilineal de discriminante nulo o no nulo no depende de la base considerada.
+\end{observation}
+\begin{fdefinition}[Radical]
+\normalfont Llamaremos \textbf{radical} de $\displaystyle \beta  $ a $\displaystyle V^{\perp }_{\beta } $ ($\displaystyle \rad\left(\beta\right) $).
+\end{fdefinition}
+\begin{fdefinition}[Isótropo]
+\normalfont Un vector $\displaystyle \vec{x} \in V $ es \textbf{isótropo} si $\displaystyle \beta\left(\vec{x}, \vec{x}\right) = 0 $, es decir, es ortogonal a sí mismo.
+\end{fdefinition}
+\begin{fdefinition}[]
+	\normalfont Se dice que $\displaystyle \beta  $ es \textbf{no degenerada} si $\displaystyle \rad\left(\beta \right) = \left\{ \vec{0}\right\}  $.
+\end{fdefinition}
+\begin{observation}
+\normalfont Si $\displaystyle \rad\left(\beta \right) = \left\{ \vec{0}\right\}  $ y $\displaystyle \beta\left(\vec{x}, \vec{y}\right) = 0 $, $\displaystyle \forall \vec{y} \in V $, tenemos que $\displaystyle \vec{x} = \vec{0} $.
+\end{observation}
+\begin{observation}
+\normalfont Si $\displaystyle \forall \vec{x} \in V $, $\displaystyle \beta\left(\vec{x}, \vec{x}\right)=0 $, tenemos que $\displaystyle \forall \vec{x}, \vec{y} \in V $, $\displaystyle \beta\left(\vec{x} + \vec{y}, \vec{x} + \vec{y}\right) =0$. Entonces se puede deducir que
+\[ 0 = \beta\left(\vec{x} + \vec{y}, \vec{x} + \vec{y}\right) = \beta\left(\vec{x}, \vec{x}\right) + \beta\left(\vec{y} , \vec{y}\right) + 2 \beta\left(\vec{x}, \vec{y}\right) \iff \beta\left(\vec{x}, \vec{y}\right) = 0 .\]
+Entonces tenemos que $\displaystyle \beta = 0 $.
+\end{observation}
+Sea $\displaystyle \beta : V \times V \to \K $ una forma bilineal simétrica.
+\begin{ftheorem}[]
+\normalfont $\displaystyle \beta  $ es no degenerada si y solo si el discrimintante de $\displaystyle \beta  $ respecto de una base es no nulo. Además, $\displaystyle \beta  $ induce una $\displaystyle \overline{\beta} : V/ \rad\left(\beta \right) \times V / \rad\left(\beta \right) \to \K $ bilineal simétrica no degenerada.
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ una base de $\displaystyle V $. Entonces, tenemos que $\displaystyle \rad\left(\beta \right) = \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} ^{\perp }_{\beta } $. Tenemos que
+	\[\vec{x} = x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n} \in \rad\left(\beta \right) \iff \beta\left(\vec{x}, \vec{u}_{i}\right) = 0, \; i = 1, \ldots, n .\]
+Tenemos que
+\[
+\begin{split}
+0 =	\beta\left(\vec{x}, \vec{u}_{1}\right) = & x^{1}\beta \left(\vec{u}_{1}, \vec{u}_{1}\right) + \cdots + x^{n}\beta\left(\vec{u}_{n}, \vec{u}_{1}\right) \\
+	\vdots \\
+0 =	\beta\left(\vec{x}, \vec{u}_{n}\right) = & x^{1}\beta\left(\vec{u}_{1}, \vec{u}_{n}\right) + \cdots + x^{n}\beta\left(\vec{u}_{n}, \vec{u}_{n}\right).
+\end{split}
+\]
+Nos encontramos ante un sistema de ecuaciones lineales homogéneo. Si $\displaystyle \beta  $ fuera no degenerada, tendríamos que el sistema obtenido no tiene solución no trivial, lo que solo se verifica si la matriz de $\displaystyle \beta  $ admite inversa. Es decir, si el discriminante respecto de esa base es no nulo. Recíprocamente, si el discriminante no fuera nulo, el sistema sólo tendría la solución trivial, por lo que $\displaystyle \beta $ sería no degenerado. \\ 
+Supongamos que $\displaystyle \rad\left(\beta \right) $ es no nulo. Sea $\displaystyle \overline{\beta } : V/\rad\left(\beta \right) \times V/\rad\left(\beta\right) \to \K $, definida por $\displaystyle \overline{\beta }\left(\vec{x} + \rad\left(\beta \right), \vec{y} + \rad\left(\beta \right)\right) = \beta\left(\vec{x} , \vec{y}\right) $.
+Vamos a ver que la aplicación está bien definida. Sean $\displaystyle \vec{x}', \vec{y}' $ tales que $\displaystyle \vec{x}' + \rad\left(\beta \right) = \vec{x} + \rad\left(\beta \right) $ y $\displaystyle \vec{y}' + \rad\left(\beta \right) = \vec{y} + \rad\left(\beta \right) $. Entonces, tenemos que $\displaystyle \vec{x}-\vec{x}', \vec{y}-\vec{y}' \in \rad\left(\beta\right) $.
+Ahora, sean $\displaystyle \vec{u}, \vec{v} \in\rad\left(\beta \right) $ tales que $\displaystyle \vec{x} = \vec{x}'- \vec{u} $ y $\displaystyle \vec{y} = \vec{y}'-\vec{v} $. Entonces, tenemos que 
+\[
+	\beta\left(\vec{x}', \vec{y}'\right) =  \beta\left(\vec{x} + \vec{u}, \vec{y} + \vec{v}\right) = \beta\left(\vec{x}, \vec{y}\right) + \beta\left(\vec{x}, \vec{v}\right) + \beta\left(\vec{u}, \vec{y}\right) + \beta\left(\vec{u}, \vec{v}\right) = \beta\left(\vec{x}, \vec{y}\right) .
+\]
+El hecho de que $\displaystyle \overline{\beta } $ es bilineal es consecuencia de su definición a partir de la bilineabilidad de $\displaystyle \beta  $. Finalmente, queda ver que $\displaystyle \overline{\beta } $ es no degenerada. Si $\displaystyle \vec{x} + \rad\left(\beta \right) \in \rad\left(\overline{\beta } \right) $, tenemos que $\displaystyle \forall \vec{y}\in V $, 
+\[ \beta\left(\vec{x} + \rad\left(\beta \right), \vec{y} + \rad\left(\beta \right)\right) =0 \Rightarrow \beta\left(\vec{x}, \vec{y}\right) = 0, \; \forall \vec{y} \in V .\]
+Entonces, tenemos que $\displaystyle \vec{x} \in \rad\left(\beta \right) $, por lo que $\displaystyle \vec{x} + \rad\left(\beta \right) = \vec{0} + \rad\left(\beta\right) $.
+\end{proof}
+Supongamos que $\displaystyle \rad\left(\beta \right) \neq \left\{ \vec{0}\right\}  $. Sea $\displaystyle L \in \mathcal{L}\left(V\right) $ tal que $\displaystyle \rad\left(\beta \right)\oplus L = V $. Consideremos la aplicación lineal 
+\[
+\begin{split}
+	p : L \to & V/\rad\left(\beta \right) \\
+	\vec{x} \to & \vec{x} + \rad\left(\beta \right).
+\end{split}
+\]
+Tenemos que si $\displaystyle \vec{x} \in \Ker\left(p\right) $, entonces $\displaystyle \vec{x} + \rad\left(\beta \right) = \vec{0} + \rad\left(\beta \right) $, por lo que $\displaystyle \vec{x} = \vec{x}- \vec{0} \in L \cap \rad\left(\beta \right) = \left\{ \vec{0}\right\}  $. Entonces, $\displaystyle p $ es un isomorfismo (es trivial que era sobreyectiva).
+Tenemos que 
+\[ \overline{\beta }\left(p\left(\vec{x}\right), p\left(\vec{y}\right)\right) = \beta\left(\vec{x}, \vec{y}\right) = \beta_{L}\left(\vec{x}, \vec{y}\right) ,\]
+donde $\displaystyle \beta_{L} = \beta|_{L \times L} $. Es decir, $\displaystyle \beta_{L} $ es no degenerada. Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n-r}\right\}  $ es base de $\displaystyle L $ y $\displaystyle \left\{ \vec{u}_{n-r+1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle \rad\left(\beta \right) $. 
+Entonces tenemos que la matriz de $\displaystyle \beta  $ respecto de esta base será:
+\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta \right) = \begin{pmatrix} \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta _{L}\right) & 0 \\
+0 & 0\end{pmatrix} .\]
+Sea $\displaystyle L \in \mathcal{L}\left(V\right) $ y sea $\displaystyle \beta_{L} = \beta|_{L \times L} $. Tenemos que 
+\[ \rad\left(\beta_{L}\right) = \left\{ \vec{x} \in L \; : \; \beta_{L}\left(\vec{x}, \vec{y}\right) = 0, \; \forall \vec{y} \in L\right\} = L \cap L^{\perp }_{\beta} .\]
+Esto será no degenerado cuando $\displaystyle L \cap L^{\perp }_{\beta }= L $.
+\begin{observation}
+\normalfont De esto podmos concluir que se pueden tener formas bilineales degeneradas que su restricción a un subespacio vectorial sea no degenerada, así como una forma bilineal no degenerada cuya restricción a un subespacio vectorial sea degenerada.
+\end{observation}
+\begin{eg}
+\normalfont Consideremos la forma no degenerada
+\[\beta \to \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} .\]
+Tenemos que su restricción al suespacio $\displaystyle L\left( \left\{ \left(1,0\right)\right\} \right) $ es degenerada:
+\[ \beta_{L \left( \left\{ \left(1,0\right)\right\} \right)} \to \begin{pmatrix} 0 \end{pmatrix} .\]
+\end{eg}
+

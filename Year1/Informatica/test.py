@@ -154,6 +154,7 @@ def suma(x : float, y : float) -> float:
     #aqui se puede especificar como funciona la función, son comentarios
     resultado = x + y
     return resultado
+    # return x + y
 
 # 4/11/24
 
@@ -163,3 +164,7 @@ while i <= 10:
     i = 1
     print(i)
     i += 1
+# 10/2/2025
+# Diccionarios
+diccionario = {"key" : "valor"}
+

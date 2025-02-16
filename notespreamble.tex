@@ -10,6 +10,7 @@
 \usepackage{geometry}[margin=1in]
 \usepackage{tikz}
 \usepackage{url}
+%\usepackage{xifthen}
 
 % Headers and footers configuration
 \pagestyle{fancy}
@@ -48,9 +49,9 @@
 \newenvironment{faxiom}
 {\begin{mdframed}\begin{axiom}}{\end{axiom}\end{mdframed}}
 
-\newtheorem{notation}{Notación}[chapter]
+\newtheorem*{notation}{Notación}
 
-\newtheorem{observation}{Observación}[chapter]
+\newtheorem*{observation}{Observación}
 
 % Custom commands
 
@@ -78,7 +79,11 @@
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Adj}{Adj}
 \DeclareMathOperator{\grad}{grad}
-
+\DeclareMathOperator{\traz}{traz}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\rad}{rad}
 \setlength{\headheight}{13.07225pt}
 \addtolength{\topmargin}{-1.07225pt}
 

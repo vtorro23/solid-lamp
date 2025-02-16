@@ -1,5 +1,5 @@
 \documentclass{article}
-
+%\usepackage{multirow}
 \input{~/University/hwpreamble.tex}
 
 \begin{document}
@@ -18,6 +18,69 @@ Grupo diédrico.
 \item[(c)] Determina todos los subgrupos de $\displaystyle D_{4} $.
 \end{description}
 \end{ej}
+\begin{sol}
+\begin{description}
+	\item[(a)] Tenemos que $\displaystyle D_{4} = \left\{ i , \sigma, \sigma^{2}, \sigma^{3}, \tau, \sigma \circ \tau, \sigma^{2}\circ \tau, \sigma^{3}\circ \tau\right\}  $, donde $\displaystyle \sigma  $ es la rotación de 90 grados respecto del centro del polígono y $\displaystyle \tau $ es la simetría con respecto a una recta que pasa por el centro del polígono y uno de sus vértices. Así, tenemos que $\displaystyle \sigma^{2} $ es una rotación de 180 grados y $\displaystyle \sigma ^{3} $ de 270 grados, respecto al centro del polígono. El elemento $\displaystyle i $ designa la identidad. 
+En general, el orden del grupo diédrico $\displaystyle D_{n} $ es $\displaystyle \ord\left(D_{n}\right) = 2n $. Así, en este caso tenemos que $\displaystyle \ord\left(D_{4}\right) = 2 \cdot 4 = 8 $.
+\item[(b)] La operación es la de composición de funciones.
+	\begin{center}
+	\begin{tabular}{c | c | c | c | c | c | c | c | c |}
+		$\displaystyle \circ $ & $\displaystyle i $ & $\displaystyle \sigma  $ & $\displaystyle \sigma^{2} $ & $\displaystyle \sigma^{3} $ & $\displaystyle \tau $ & $\displaystyle \sigma \circ \tau $ & $\displaystyle \sigma^{2} \circ \tau  $ & $\displaystyle \sigma^{3} \circ \tau $ \\
+		\hline 
+		$\displaystyle i $ & $\displaystyle i $ & $\displaystyle \sigma $ & $\displaystyle \sigma^{2} $ & $\displaystyle \sigma^{3} $ & $\displaystyle \tau $ & $\displaystyle \sigma \circ \tau $ & $\displaystyle \sigma^{2} \circ \tau  $ & $\displaystyle \sigma^{3} \circ \tau $ \\
+		$\displaystyle \sigma  $ & $\displaystyle \sigma  $ & $\displaystyle \sigma^{2} $ & $\displaystyle \sigma^{3} $ & $\displaystyle i $ & $\displaystyle \sigma^{3} \circ \tau  $ & $\displaystyle \tau $ & $\displaystyle \sigma \circ \tau  $ & $\displaystyle \sigma^{2}\circ \tau $ \\
+		$\displaystyle \sigma^{2} $ & $\displaystyle \sigma^{2} $ & $\displaystyle \sigma^{3} $ & $\displaystyle i $ & $\displaystyle \sigma  $ & $\displaystyle \sigma^{2} \circ \tau $ & $\displaystyle \sigma^{3} \circ \tau $ & $\displaystyle \tau $ & $\displaystyle \sigma\circ\tau $ \\
+		$\displaystyle \sigma^{3}  $ & $\displaystyle \sigma^{3} $ & $\displaystyle i $ & $\displaystyle \sigma  $ & $\displaystyle \sigma ^{2} $ & $\displaystyle \sigma \circ \tau $ & $\displaystyle \sigma^{2} \circ \tau $ & $\displaystyle \sigma^{3} \circ \tau $ & $\displaystyle \tau $\\
+		$\displaystyle \tau $ & $\displaystyle \tau $ & $\displaystyle \sigma \circ \tau $ & $\displaystyle \sigma^{2} \circ \tau $ & $\displaystyle \sigma^{3} \circ \tau $ & $\displaystyle i $ & $\displaystyle \sigma  $ & $\displaystyle \sigma^{2} $ & $\displaystyle \sigma^{3} $ \\
+		$\displaystyle \sigma\circ\tau $ & $\displaystyle \sigma\circ\tau $ & $\displaystyle \sigma^{2}\circ\tau $ & $\displaystyle \sigma^{3}\circ\tau $ & $\displaystyle \tau $ & $\displaystyle \sigma^{3} $ & $\displaystyle i $ & $\displaystyle \sigma $ & $\displaystyle \sigma^{2} $ \\
+		$\displaystyle \sigma^{2}\circ\tau $ & $\displaystyle \sigma^{2}\circ\tau $ & $\displaystyle \sigma^{3}\circ\tau $ & $\displaystyle \tau $ & $\displaystyle \sigma\circ\tau $ & $\displaystyle \sigma^{2} $ & $\displaystyle \sigma^{3} $ & $\displaystyle i $ & $\displaystyle \sigma $ \\
+		$\displaystyle \sigma^{3}\circ\tau $ & $\displaystyle \sigma^{3}\circ\tau $ & $\displaystyle \tau $ & $\displaystyle \sigma\circ\tau $ & $\displaystyle \sigma^{2}\circ\tau $ & $\displaystyle \sigma  $ & $\displaystyle \sigma^{2} $ & $\displaystyle \sigma^{3}\circ\tau $ & $\displaystyle i $  
+	\end{tabular}
+	\end{center}		
+Recordamos que la composición de funciones es asociativa. La primera fila y primera columna son triviales, pues consisten en combinar los diferentes elementos con la identidad. Similarmente, si $\displaystyle n, m \in \N $, tenemos que $\displaystyle \sigma^{n} \circ \sigma^{m} = \sigma^{n + m \mod 4} $. También es trivial que $\displaystyle \tau^{2} = i $.
+Cabe recordar que $\displaystyle \tau\circ\sigma = \sigma^{-1}\circ\tau $ y para $\displaystyle k = 1, 2, 3 $, fue visto en clase que $\displaystyle \tau\sigma^{4 - k} = \sigma^{k}\tau $. Con estas herramientas podemos resolver la tabla. Por ejemplo, si $\displaystyle n, m = 1, 2, 3 $,
+\[
+\begin{split}
+& \sigma^{n} \circ \left( \sigma^{m} \circ \tau \right) = \sigma^{n + m \mod 4} \circ \tau \\
+& \left(\sigma^{n}\circ\tau\right)\circ\left(\sigma^{m}\circ\tau\right) = \sigma^{n}\circ\sigma^{4-m}\circ\tau^{2} = \sigma^{n + 4 - m \mod 4} = \sigma^{n - m \mod 4} \\
+& \tau \circ \left(\sigma^{n}\circ\tau\right) = \tau \circ \tau \circ \sigma^{4 - n} = \sigma^{4 - n}.
+\end{split}
+\]
+\item[(c)] En primer lugar definimos lo que es un subgrupo. Dado un grupo $\displaystyle G $, se dice que $\displaystyle H \subset G $ es un subgrupo de $\displaystyle G $ ($\displaystyle H \leq G $) si $\displaystyle H $ también es un grupo. Basta con comprobar que $\displaystyle H $ contiene al elemento neutro y existen los elementos inversos. Dos sugrupos triviales de $\displaystyle D_{4} $ son $\displaystyle \left\{ i\right\}  $ y $\displaystyle D_{4} $. \\ 
+	Para encontrar el resto de subgrupos vamos a hacer uso del teorema de Lagrange, que dice que, dado un grupo $\displaystyle G $, si $\displaystyle H \leq G $ entonces $\displaystyle \left|H\right|  $ divide a $\displaystyle \left|G\right| $. Es decir, dado que $\displaystyle \left|D_{4}\right| = 8 $, los posibles órdenes de los subgrupos de $\displaystyle G $ son 1,2,4 y 8. 
+	\begin{itemize}
+		\item Subgrupos con orden 1 solo puede haber uno, en concreto, $\displaystyle \left\{ i\right\}  $. En efecto, si $\displaystyle H = \left\{ h\right\}$ con $\displaystyle h \neq i $, tenemos que $\displaystyle H $ no contiene al elemento neutro, por lo que no puede ser subgrupo de $\displaystyle D_{4} $.
+		\item Ahora consideramos los subgrupos de orden 2. Estos están formados por los elementos que son su propia inversa, es decir, los $\displaystyle x \in D_{4} $ tales que $\displaystyle x^{2} = i $. Esto sólo ocurre con los elementos: $\displaystyle \sigma^{2}, \tau, \sigma\circ\tau, \sigma^{2}\circ\tau  $ y $\displaystyle \sigma^{3}\circ\tau $. Es decir, otros subgrupos de $\displaystyle D_{4} $ serán:
+		\[ \left\{ i,\sigma^{2}\right\} , \; \; \left\{ i, \tau\right\}, \; \; \left\{ i, \sigma\circ\tau\right\} , \; \; \left\{i, \sigma^{2}\circ\tau\right\}, \; \; \left\{ i, \sigma^{3}\circ\tau\right\}   .\]
+		\item Ahora vamos a estudiar los subgrupos de orden 4. Los subgrupos que buscamos cmplen que tienen al menos dos elementos distintos a la identidad. Si $\displaystyle i,j \in \left\{ 1,2,3\right\}  $ distintos y $\displaystyle \sigma^{i} , \sigma^{j}\in H $, tenemos que $\displaystyle \left\{ i, \sigma, \sigma^{2}, \sigma^{3}\right\} \subset H $. Hemos encontrado otro subgrupo de $\displaystyle D_{4} $:
+		\[ \left\{ i, \sigma, \sigma^{2}, \sigma^{3}\right\}  .\]
+		Si consideramos que $\displaystyle \tau, \sigma^{i} \in H $ ($\displaystyle i \in \left\{ 1,2,3\right\}  $) tenemos que $ H = D_{4}$, pues a partir de estos dos elementos podemos generar todos los elementos de $\displaystyle D_{4} $. 
+		Si $\displaystyle \sigma^{i} \circ \tau, \sigma^{j}\circ\tau \in H $, con $\displaystyle i,j \in \left\{0, 1,2,3\right\}  $, tenemos que, según vimos en el apartado \textbf{(b)}:
+\[ \left(\sigma^{i}\circ\tau\right)\circ\left(\sigma^{j}\circ\tau\right) = \sigma^{i-j \mod 4} .\]
+Si $\displaystyle i - j \equiv 1,3 \mod 4 $, tenemos, nuevamente, que $\displaystyle \sigma, \tau \in H $, por lo que $\displaystyle H = D_{4} $. En caso de que $\displaystyle i - j \equiv 2 \mod 4 $, pueden pasar dos cosas, en primer lugar que $\displaystyle i = 0 $ y $\displaystyle j = 2 $, obteniendo que
+\[ \left\{ i, \tau, \sigma^{2}\circ\tau, \sigma^{2}\right\} \subset H .\]
+El otro posible caso es que $\displaystyle i = 1 $ y $\displaystyle j = 3 $. Así, tenemos que 
+\[ \left\{ i, \tau, \sigma^{3}\circ\tau, \sigma^{2}\right\} \subset H .\]
+En estos últimos dos casos, como tienen estructura de grupo y tienen orden 4, debe ser que son subgrupos de $\displaystyle D_{4} $.
+		\item Dado que $\displaystyle \left|D_{4}\right| = 8 $, es trivial que cualquier $\displaystyle H \leq D_{4} $ con $\displaystyle \left|H\right| = 8 $ debe cumplir que $\displaystyle H = D_{4} $. Por tanto, el único subgrupo de orden 8 será el propio $\displaystyle D_{4} $.
+	\end{itemize}
+Al haber agotado todas las posibilidades, concluimos que los posibles subgrupos de $\displaystyle D_{4} $ son:
+\[
+\begin{split}
+	\left\{ i\right\}  \\
+	\left\{ i, \sigma^{2}\right\} \\
+	\left\{ i, \tau\right\} \\
+	\left\{ i, \sigma\circ\tau\right\} \\
+	\left\{ i, \sigma^{2}\circ\tau\right\} \\
+	\left\{ i, \sigma^{3}\circ\tau\right\} \\
+	\left\{ i, \sigma, \sigma^{2}, \sigma^{3}\right\} \\
+	\left\{ i, \tau, \sigma^{2}\circ\tau, \sigma^{2}\right\} \\
+	\left\{ i, \tau, \sigma^{3}\circ\tau, \sigma^{3}\right\} \\
+	D_{4}.
+\end{split}
+\]
+\end{description}
+\end{sol}
 
 \begin{ej}
 Generación de teselaciones periódicas. Grupos cristalográficos.
@@ -27,5 +90,52 @@ Generación de teselaciones periódicas. Grupos cristalográficos.
 \item[(c)] Justificar los ejemplos del apartado anterior, indicando las características del grupo cristalográfico.
 \end{description}
 \end{ej}
-
+\begin{sol}
+\begin{description}
+\item[(a)] En esta tabla se recoge la clasificación de los grupos cristalográficos.
+	\begin{center}
+		\begin{tabular}{|c|c|p{0.5\linewidth}|}
+	\hline
+	Tipo de retículo & Grupo cristalográfico & Características \\
+	\hline 
+	Oblicuo & p1 & El mosaico está generado únicamente por traslaciones. \\ 
+	\hline
+	Oblicuo & p2 & El grupo puntual está formado por traslaciones y giros de 180 grados.\\
+	\hline 
+	Rectangular & pm & El grupo puntual contiene una reflexión de eje horizontal o vertical, así como traslaciones. \\
+	\hline 
+	Rectangular & pg & Admite traslaciones y rotaciones con deslizamiento. \\
+	\hline 
+	Rectanguar & p2mm & Admite traslaciones, una reflexión de eje horizontal y otra de eje vertical, lo que implica que admite también rotaciones de 180 grados. \\
+	\hline
+	Rectangular & p2mg & Admite traslaciones, una reflexión respecto a un eje pero no respecto al eje perpendicular a este. Por ello, admite una reflexión con deslizamiento respecto al eje perpendicular. \\
+	\hline 
+	Rectangular & p2gg & Admite traslaciones y reflexiones con deslizamiento con ejes horizontales y verticales. \\
+	\hline 
+	Rectangular centrado & cm & Admite traslaciones, reflexiones y reflexiones con deslizamiento. \\
+	\hline 
+	Rectangular cerrado & c2mm & Admite traslaciones, rotaciones de 180 grados, reflexiones (con o sin deslizamiento), respecto de ejes perpendiculares.\\
+	\hline 
+	Cuadrado & p4 & Admite sólamente rotaciones de 90 grados y traslaciones.\\
+	\hline 
+	Cuadrado & p4mm & Admite rotaciones de 90 grados y reflexiones (se pueden componer). \\
+	\hline 
+	Cuadrado & p4gm & Admite rotaciones de 90 grados y una reflexión con deslizamiento respecto al eje perpendicular a un lado del retículo. \\
+	\hline 
+	Hexagonal & p3 & Admite rotaciones de 120 grados. \\
+	\hline 
+	Hexagonal & p3m1 & Admite rotaciones de 120 grados y reflexiones de eje perpendicular a un generador. \\
+	\hline 
+	Hexagonal & p31m &  Admite rotaciones de 120 grados y reflexiones con eje paralelo a uan dirección del retículo.\\
+	\hline 
+	Hexagonal & p6 & Admite rotaciones de 60 grados. \\
+	\hline 
+	Hexagonal & p6m & Admite rotaciones de 60 grados y reflexiones.\\
+	\hline
+	\end{tabular}
+	\end{center}
+	\footnote{Los retículos rectangulares y rectangulares centrados también admiten los grupos p1 y p2. Similarmente, los retículos cuadrados, al ser casos particulares de los retículos rectángulos, también admiten los grupos de los retículos rectángulos.} 
+\item[(b)] 
+\end{description}
+\end{sol}
 \end{document}

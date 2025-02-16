@@ -1,3 +1,115 @@
 \chapter{Trigonometría plana y esférica}
 \section{Trigonometría plana}
+\begin{ftheorem}[]
+\normalfont 
+\begin{description}
+\item[(i)] $\displaystyle \sin ^{2}\alpha + \cos^{2}\alpha = 1 $.
+\item[(ii)] $\displaystyle 1 + \tan ^{2}\alpha = \sec^{2}\alpha  $.
+\item[(iii)] $\displaystyle 1 + \cot ^{2}\alpha = \csc^{2}\alpha  $.
+\end{description}
+\end{ftheorem}
+
+\begin{ftheorem}[Suma de ángulos]
+\normalfont 
+\[
+\begin{split}
+	\sin\left(\alpha + \beta \right) = & \sin\alpha\cos\beta + \cos\alpha \sin\beta \\
+	\cos\left(\alpha + \beta \right) = & \cos \alpha \cos \beta - \sin \alpha \sin \beta \\
+	\tan\left(\alpha + \beta \right) = & \frac{\tan \alpha + \tan \beta }{1 - \tan \alpha \tan \beta }.
+\end{split}
+\]
+\end{ftheorem}
+Las siguientes igualdades se deducen a partir de las anteriores.
+\begin{ftheorem}[Diferencia de ángulos]
+\normalfont 
+\[
+\begin{split}
+	\sin\left(\alpha - \beta \right) = & \sin\alpha\cos\beta - \cos\alpha \sin\beta \\
+	\cos\left(\alpha - \beta \right) = & \cos \alpha \cos \beta + \sin \alpha \sin \beta \\
+	\tan\left(\alpha - \beta \right) = & \frac{\tan \alpha - \tan \beta }{1 + \tan \alpha \tan \beta }.
+\end{split}
+\]
+\end{ftheorem}
+\begin{ftheorem}[Ángulo doble]
+\normalfont 
+\[
+\begin{split}
+	\sin 2\alpha = & 2 \sin \alpha \cos \alpha \\
+	\cos 2 \alpha = & \cos^{2}\alpha - \sin ^{2}\alpha \\
+	\tan 2 \alpha = & \frac{2\tan \alpha }{1 - \tan^{2}\alpha }.
+\end{split}
+\]
+\end{ftheorem}
+\begin{ftheorem}[Ángulo mitad]
+\normalfont 
+\[
+\begin{split}
+	\sin \frac{\alpha }{2} = & \pm \sqrt{\frac{1 - \cos \alpha }{2}} \\
+	\cos \frac{\alpha }{2} = & \pm \sqrt{\frac{1 + \cos \alpha }{2}} \\
+	\tan \frac{\alpha }{2} = & \pm \sqrt{\frac{1 - \cos \alpha }{1 + \cos \alpha }} = \frac{\sin \alpha }{1 + \cos \alpha } = \frac{1 - \cos \alpha }{\sin \alpha }.
+\end{split}
+\]
+\end{ftheorem}
+\begin{ftheorem}[Productos de senos y cosenos]
+\normalfont 
+\[
+\begin{split}
+	\sin\alpha \cos \beta = & \frac{1}{2}\left(\sin\left(\alpha + \beta \right) + \sin \left(\alpha - \beta \right)\right) \\
+	\cos \alpha \sin \beta = & \frac{1}{2}\left(\sin\left(\alpha + \beta \right) - \sin\left(\alpha - \beta \right)\right) \\
+	\cos\alpha \cos \beta = & \frac{1}{2}\left(\cos\left(\alpha + \beta \right) + \cos \left(\alpha - \beta \right)\right) \\
+	\sin \alpha \sin \beta = & - \frac{1}{2}\left(\cos\left(\alpha + \beta \right) - \cos\left(\alpha - \beta \right)\right).
+\end{split}
+\]
+\end{ftheorem}
+\begin{ftheorem}[Suma y diferencia de senos y cosenos]
+\normalfont 
+\[
+\begin{split}
+	\sin A + \sin B = & 2 \sin \frac{A + B}{2}\cos \frac{A - B}{2} \\
+	\sin A - \sin B = & 2 \cos \frac{A + B}{2} \sin \frac{A - B}{2} \\
+	\cos A + \cos B = & 2 \cos \frac{A + B}{2} \cos \frac{A - B}{2} \\
+	\cos A - \cos B = & - 2 \sin \frac{A + B}{2} \sin \frac{A - B}{2}.
+\end{split}
+\]
+\end{ftheorem}
+\begin{ftheorem}[Teorema del seno]
+\normalfont 
+\[\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} .\]
+\end{ftheorem}
+\begin{ftheorem}[Teorema del coseno]
+\normalfont 
+\[
+\begin{split}
+	a^{2} = & b^{2} + c^{2} - 2bc \cos A\\
+	b^{2} = & c^{2} + a^{2} - 2ca \cos B \\
+	c^{2} = & a^{2} + b^{2} - 2ab \cos C.
+\end{split}
+\]
+\end{ftheorem}
+\begin{ftheorem}[Fórmulas de proyección]
+\normalfont 
+\[
+\begin{split}
+	a = & b\cos C + c \cos B \\
+	b = & c \cos A + a \cos C \\
+	c = & a \cos B + b \cos A.
+\end{split}
+\]
+\end{ftheorem}
+\begin{ftheorem}[Fórmulas de Mollweide]
+\normalfont 
+\[
+\begin{split}
+& \frac{a + b}{c} = \frac{\cos \frac{A - B}{2}}{\sin \frac{C}{2}}, \quad \frac{a - b}{c} = \frac{\sin \frac{A - B}{2}}{\cos \frac{C}{2}} \\
+& \frac{b + c}{a} = \frac{\cos \frac{B - C}{2}}{\sin \frac{A}{2}}, \quad \frac{b - c}{a} = \frac{\sin \frac{B - C}{2}}{\cos \frac{A}{2}} \\
+& \frac{c + a}{b} = \frac{\cos \frac{C - A}{2}}{\sin \frac{B}{2}}, \quad \frac{c - a}{b} = \frac{\sin \frac{C - A}{2}}{\cos \frac{B}{2}}.
+\end{split}
+\]
+\end{ftheorem}
+\section{Trigonometría esférica}
+Recordamos que se define \textbf{esfera} como el subconjunto de $\displaystyle \R^{3} $ formado por los puntos cuya distancia a un punto fijo (\textbf{centro}) es menor o igual que una cierta cantidad $\displaystyle r $, denominada \textbf{radio}.
+\[ E = \left\{ \left(x,y,z\right) \in \R^{3} \; : \; \left(x - x_{0}\right)^{2} + \left(y-y_{0}\right)^{2} + \left(z - z_{0}\right)^{2} \leq r^{2}\right\}  .\]
+La \textbf{superficie} de una esfera de centro $\displaystyle \left(x_{0}, y_{0}, z_{0}\right) $ y radio $\displaystyle r $ es el subconjunto de $\displaystyle \R^{3} $ definido por 
+\[S = \left\{ \left(x,y,z\right) \in \R^{3} \; : \; \left(x-x_{0}\right)^{2} + \left(y-y_{0}\right)^{2} + \left(z - z_{0}\right)^{2} = r^{2}\right\}  .\]
+\subsection{Triángulos esférico}
 

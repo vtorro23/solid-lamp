@@ -327,4 +327,311 @@ Así, como $\displaystyle \exists f'\left(x_{0}\right) $, debe ser que $\display
 	\item[(c)] Si $\displaystyle x,y \in [a,b] $ (con $\displaystyle x \neq y $), entonces $\displaystyle f : [x,y] \to \R $ es continua en $\displaystyle [x,y] $ y derivable en $\displaystyle \left(x,y\right) $. Por el teorema del valor medio, existe $\displaystyle c \in \left(x,y\right) $ con $\displaystyle f\left(x\right)-f\left(y\right) = f'\left(c\right)\left(x-y\right) \neq 0 $, por lo que debe ser que $\displaystyle f\left(x\right) \neq f\left(y\right) $.
 \end{description}
 \end{proof}
+\begin{eg}
+\normalfont El teorema del valor medio sirve para estimar errores. Consideremos $\displaystyle f\left(x\right) = \sqrt{x} $ y que conocemos $\displaystyle \sqrt{x} $ pero no conocemos $\displaystyle \sqrt{y} $. Podemos entonces, estimar el valor de $\displaystyle \sqrt{y} $ con la distancia $\displaystyle \left|\sqrt{x}-\sqrt{y}\right| $. Sabemos que existe $\displaystyle c \in \left(x,y\right) $ tal que 
+\[ f'\left(c\right)\left(x-y\right) = f\left(x\right)-f\left(y\right) .\]
+Si $\displaystyle x,y > 1 $, entonces tenemos que 
+\[ \left|\sqrt{x}-\sqrt{y}\right| = f'\left(c\right) = \frac{1}{2\sqrt{c}} \left|x-y\right| \leq \frac{1}{2} \left|x-y\right| .\]
+Este procedimiento también sirve para ver que esta función es uniformemente continua en $\displaystyle (1,\infty) $, puesto que acabamos de ver que es de Lipschitz.
+\end{eg}
+\section{Regla de L'Hôpital}
+\begin{fdefinition}[Curvas paramétricas]
+	\normalfont Sean $\displaystyle f,g : \left[a,b\right]  \to \R $ continuas en $\displaystyle \left[a,b\right]  $. Se llama \textbf{curva paramétrica} a los puntos $\displaystyle C = \left\{ \left(f\left(t\right), g\left(t\right)\right) \; : \; t \in \left[a,b\right] \right\}  $.
+\end{fdefinition}
+\begin{observation}
+\normalfont Si $\displaystyle f\left(t\right) = t $, tenemos una gráfica (podemos definir una función, puesto que a cada valor de $\displaystyle x $ se le asigna sólo uno de $\displaystyle y $).
+\end{observation}
+\begin{observation}
+\normalfont Con tres funciones $\displaystyle f\left(t\right),g\left(t\right),h\left(t\right) $, podemos definir curvas en el espacio.
+\end{observation}
+Vamos a estudiar la tangente de una curva paramétrica. Si cogemos dos puntos, $\displaystyle t_{0} $ y $\displaystyle t $, podemos calcular la ecuación de la recta que pasa por esos puntos:
+\[y\left(t\right) =  \frac{g\left(t\right)-g\left(t_{0}\right)}{f\left(t\right)-f\left(t_{0}\right)}\left(x-t_{0}\right) + g\left(t_{0}\right)   .\]
+Tenemos que 
+\[\lim_{t \to t_{0}}\frac{g\left(t\right)-g\left(t_{0}\right)}{f\left(t\right)-f\left(t_{0}\right)}= \lim_{t \to t_{0}} \left(\frac{g\left(t\right)-g\left(t_{0}\right)}{t-t_{0}} \cdot \frac{t - t_{0}}{f\left(t\right)-f\left(t_{0}\right)}\right) = \frac{g'\left(t_{0}\right)}{f'\left(t_{0}\right)} .\]
+Entonces, concluimos que si $\displaystyle C $ es una curva del plano y $\displaystyle \exists f' $ y $\displaystyle g' $ entonces la pendiente de la recta tangente por el punto $\displaystyle \left(f\left(t_{0}\right), g\left(t_{0}\right)\right) $ será $\displaystyle \frac{g'\left(t_{0}\right)}{f'\left(t_{0}\right)} $. Es decir, esta recta tiene como vector director $\displaystyle \left(f'\left(t_{0}\right), g'\left(t_{0}\right)\right) $. \\ \\ 
+Si tenemos una curva $\displaystyle C $ que empieza en $\displaystyle \left(f\left(a\right), g\left(a\right)\right) $ y termina en $\displaystyle \left(f\left(b\right), g\left(b\right)\right) $, nos gustaría decir que si $\displaystyle c \in \left(a,b\right) $, entonces
+\[ \frac{g'\left(c\right)}{f'\left(c\right)} = \frac{g\left(b\right)-g\left(a\right)}{f\left(b\right)-f\left(a\right)} .\]
+Esto se enuncia en el siguiente teorema.
+\begin{ftheorem}[Teorema del valor medio de Cauchy]
+	\normalfont Sean $\displaystyle f,g : \left[a,b\right] \to \R $ continuas en $\displaystyle \left[a,b\right]  $ y derivables en $\displaystyle \left(a,b\right) $. Entonces, existe $\displaystyle c \in \left(a,b\right) $ tal que 
+	\[\frac{g'\left(c\right)}{f'\left(c\right)} = \frac{g\left(b\right)-g\left(a\right)}{f\left(b\right)-f\left(a\right)} .\]
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle h\left(x\right) = f\left(x\right)\left(g\left(b\right)-g\left(a\right)\right) - g\left(x\right)\left(f\left(b\right)-f\left(a\right)\right) $. Dado que $\displaystyle f $ y $\displaystyle g $ son continuas y derivables, tenemos que $\displaystyle h: [a,b] \to \R $ es continua en $\displaystyle [a,b] $ y derivable en $\displaystyle \left(a,b\right) $.
+Tenemos que $\displaystyle h\left(a\right)=h\left(b\right) = f\left(a\right)g\left(b\right)-g\left(a\right)f\left(b\right) $. Aplicando el teorema de Rolle, tenemos que existe $\displaystyle c \in \left(a,b\right) $ tal que $\displaystyle h'\left(c\right) = 0 $. Es decir, 
+\[ h'\left(c\right) = f'\left(c\right)\left(g\left(b\right)-g\left(a\right)\right) - g'\left(c\right)\left(f\left(b\right)-f\left(a\right)\right) \iff f'\left(c\right)\left(g\left(b\right)-g\left(a\right)\right) = g'\left(c\right)\left(f\left(b\right)-f\left(a\right)\right) .\]
+\end{proof}
+
+\begin{observation}
+\normalfont Si $\displaystyle f\left(b\right) \neq f\left(a\right) $ y $\displaystyle f'\left(c\right) \neq 0 $, el teorema anterior es equivalente a decir que
+\[ f'\left(c\right)\left(g\left(b\right)-g\left(a\right)\right) = g'\left(c\right)\left(f\left(b\right)-f\left(a\right)\right) .\]
+\end{observation}
+\begin{observation}
+\normalfont Podemos ver que el teorema del valor medio es un caso particular de este teorema. En efecto, si tenemos que $\displaystyle f\left(t\right) = t $, entonces obtenemos el teorema del valor medio.
+\end{observation}
+\begin{ftheorem}[Regla de L'Hôpital]
+	\normalfont Sean $\displaystyle f,g : \left[a,b\right] \to \R $, con $\displaystyle f'\left(x\right) \neq 0 $, continuas en $\displaystyle \left[a,b\right] / \left\{ x_{0}\right\}  $ y derivables en $\displaystyle \left(a,b\right) / \left\{ x_{0}\right\}  $, tales que $\displaystyle \lim_{x \to x_{0}}f\left(x\right) = \lim_{x \to x_{0}}g\left(x\right) = 0 $. Si existe $\displaystyle \lim_{x \to x_{0}} \frac{g'\left(x\right)}{f'\left(x\right)} $, entonces existe $\displaystyle \lim_{x \to x_{0}}\frac{g\left(x\right)}{f\left(x\right)} = \lim_{x \to x_{0}}\frac{g'\left(x\right)}{f'\left(x\right)} $. 
+	\footnote{Cuando decimos $\displaystyle \lim_{x \to x_{0}} $, realmente vale también para $\displaystyle x_{0}^{-}, x_{0}^{+} $ y $\displaystyle x_{0} $.} 
+\end{ftheorem}
+\begin{proof}
+Vamos a estudiar los límites laterales (para demostrar el límite, basta con comprobar que los límites laterales coinciden). Sin pérdida de generalidad, estudiamos $\displaystyle \lim_{x \to x_{0}^{+}}\frac{g\left(x\right)}{f\left(x\right)} $. Definimos $\displaystyle g\left(x_{0}\right) = \lim_{x \to x_{0}^{+}}g\left(x\right) $ y $\displaystyle f\left(x_{0}\right) = \lim_{x \to x_{0}^{+}}f\left(x\right) $. Entonces, tenemos que 
+\[ \lim_{x \to x_{0}^{+}}\frac{g\left(x\right)}{f\left(x\right)} = \lim_{x \to x_{0}^{+}}\frac{g\left(x\right)-g\left(x_{0}\right)}{f\left(x\right)-f\left(x_{0}\right)} .\]
+Tenemos que $\displaystyle f,g : \left[x_{0}, x\right] \to \R $ son continuas en $\displaystyle \left[x_{0}, x\right]  $ y derivables en $\displaystyle \left(x_{0}, x\right) $. Aplicando el teorema del valor medio de Cauchy, tenemos que existe $\displaystyle c_{x} \in \left(x_{0}, x\right) $ tal que
+\[ \lim_{x \to x_{0}^{+}}\frac{g\left(x\right)-g\left(x_{0}\right)}{f\left(x\right)-f\left(x_{0}\right)} = \lim_{x \to x_{0}^{+}}\frac{g'\left(c_{x}\right)}{f'\left(c_{x}\right)} = \lim_{x \to x_{0}^{+}}\frac{g'\left(x\right)}{f'\left(x\right)} .\]
+En efecto, si $\displaystyle x \to x_{0}^{+} $ tenemos que $\displaystyle c_{x} \to x_{0}^{+} $, por lo que, dado que existe $\displaystyle \lim_{x \to x_{0}^{+}}\frac{g'\left(x\right)}{f'\left(x\right)} $ tenemos que
+\[\lim_{x \to x_{0}^{+}}\frac{g'\left(c_{x}\right)}{f'\left(c_{x}\right)} = \lim_{y \to x_{0}^{+}}\frac{g'\left(y\right)}{f'\left(y\right)} .\]
+\end{proof}
+\begin{proof}
+	Esta es una demostración alternativa. Al igual que antes, definimos $\displaystyle f\left(x_{0}\right) = \lim_{x \to x_{0}^{+}} $ y $\displaystyle g\left(x_{0}\right) = \lim_{x \to x_{0}^{+}} $. Dado que exsiste $\displaystyle \lim_{x \to x_{0}^{+}} \frac{g'\left(x\right)}{f'\left(x\right)} = l \in \R$, si $\displaystyle \epsilon > 0 $ tenemos que existe un $\displaystyle \delta > 0 $ tal que si $\displaystyle 0 < x - x_{0} < \delta  $ entonces $\displaystyle \left|\frac{g'\left(x\right)}{f'\left(x\right)} - l\right| < \epsilon  $. Tenemos que, dado que $\displaystyle f $ y $\displaystyle g $ son continuas en $\displaystyle \left[x_{0}, x_{0}+\delta \right]  $ y derivables en $\displaystyle \left(x_{0}, x_{0}+\delta \right) $, entonces para cada $\displaystyle x \in (x_{0}, x_{0}+\delta) $  existe $\displaystyle c_{x} \in \left(x_{0}, x \right) $ tal que
+	\[ \frac{g\left(x\right)-g\left(x_{0}\right)}{f\left(x\right)-f\left(x_{0}\right)} = \frac{g\left(x\right)}{f\left(x\right)} = \frac{g'\left(c_{x}\right)}{f'\left(c_{x}\right)} .\]
+	Dado que $\displaystyle c_{x} \in \left(x_{0}, x_{0}+ \delta \right) $, tenemos que
+	\[ \left|\frac{g\left(x\right)}{f\left(x\right)}-l\right| = \left|\frac{g'\left(c_{x}\right)}{f'\left(c_{x}\right)}-l\right|<\epsilon .\]
+Dado que esta expresión es cierta para todo $\displaystyle x \in \left(x_{0}, x_{0}+\delta \right) $, tenemos que $\displaystyle \lim_{x \to x_{0}^{+}}\frac{g\left(x\right)}{f\left(x\right)} = l $.	
+\end{proof}
+\begin{observation}
+\normalfont Si existieran $\displaystyle f'\left(x_{0}\right) \neq 0 $ y $\displaystyle g'\left(x_{0}\right) $, la prueba sería muy sencilla. En efecto, tendríamos que serían continuas en $\displaystyle x_{0} $ y por tanto
+\[ \lim_{x \to x_{0}}\frac{g\left(x\right)}{f\left(x\right)} = \lim_{x \to x_{0}}\frac{g\left(x\right)-g\left(x_{0}\right)}{f\left(x\right)-f\left(x_{0}\right)} = \lim_{x \to x_{0}} \frac{g\left(x\right)-g\left(x_{0}\right)}{x - x_{0}} \cdot \frac{x - x_{0}}{f\left(x\right)-f\left(x_{0}\right)} = \frac{g'\left(x_{0}\right)}{f'\left(x_{0}\right)} .\]
+\end{observation}
+\begin{eg}
+\normalfont 
+\[\lim_{x \to 0}\frac{\sin x}{x} = \lim_{x \to 0} \frac{\cos x}{1} = 1 .\]
+\[ \lim_{x \to 0}\frac{x^{2}\sin\left(\frac{1}{x}\right)}{\sin x} = \lim_{x \to 0}\frac{x \sin\left(\frac{1}{x}\right)}{\frac{\sin x}{x}} =  0 .\]
+En este segundo caso no podemos aplicar L'Hôpital, puesto que $\displaystyle \lim_{x \to 0}\frac{g'\left(x\right)}{f'\left(x\right)} $ no existe.
+\end{eg}
+\begin{ftheorem}[Relga de L'Hôpital general]
+\normalfont Sean $\displaystyle f,g : \left(a,b\right) \to \R $ \footnote{El intervalo $\displaystyle \left(a,b\right) $ puede ser una semirrecta}  dos funciones derivables en $\displaystyle \left(a,b\right) $ salvo quizás en $\displaystyle x_{0} $, donde $\displaystyle x_{0} \in \left(a,b\right) $. Supongamos que $\displaystyle f'\left(x\right) \neq 0 $ si $\displaystyle x \neq x_{0} $ y que existen
+\[\lim_{x \to x_{0}}f\left(x\right) = \lim_{x \to x_{0}}g\left(x\right) = 0 ,\]
+o bien \footnote{Cuando escribimos $\displaystyle x_{0} $ en el límite, también podemos escribir $\displaystyle x_{0}^{+}, x_{0}^{-}, \infty $ o $\displaystyle -\infty $.} 
+\[ \lim_{x \to x_{0}}f\left(x\right) = \pm \infty \quad \text{y} \quad \lim_{x \to x_{0}}g\left(x\right) = \pm \infty .\]
+Si, existe $\displaystyle \lim_{x \to x_{0}}\frac{g'\left(x\right)}{f'\left(x\right)} $, entonces 
+\[ \lim_{x \to x_{0}}\frac{g\left(x\right)}{f\left(x\right)} = \lim_{x \to x_{0}}\frac{g'\left(x\right)}{f'\left(x\right)} .\]
+\end{ftheorem}
+\begin{proof}
+Ejercicio.
+\end{proof}
+\begin{eg}
+\normalfont Consideremos el límite $\displaystyle \lim_{x \to 0^{+}}x\ln x $. Aplicando la regla de L'Hôpital:
+\[ \lim_{x \to 0^{+}} x\ln x= \lim_{x \to 0^{+}}\frac{\ln x}{\frac{1}{x}} = \lim_{x \to 0^{+}} \frac{\frac{1}{x}}{-\frac{1}{x^{2}}} = \lim_{x \to 0^{+}} \left(- x\right) = 0 .\]
+\end{eg}
+\section{Crecimiento y decrecimiento}
+\begin{notation}
+\normalfont 
+\begin{itemize}
+\item Se denomina $\displaystyle f'\left(x^{+}\right) = \lim_{x \to x_{0}^{+}}\frac{f\left(x\right)-f\left(x_{0}\right)}{x - x_{0}} $, a la derivada por la derecha.
+\item Se denomina $\displaystyle f'\left(x^{-}\right) = \lim_{x \to x_{0}^{-}}\frac{f\left(x\right)-f\left(x_{0}\right)}{x-x_{0}} $, a la derivada por la izquierda.
+\end{itemize}
+\end{notation}
+\begin{observation}
+\normalfont Tenemos que existe $\displaystyle f'\left(x_{0}\right) $ si $\displaystyle f'\left(x_{0}^{+}\right) = f'\left(x_{0}^{-}\right) $.
+\end{observation}
+\begin{fcolorary}[]
+	\normalfont Sea $\displaystyle h: \left[a,b\right] \to \R $ continua en $\displaystyle \left[a,b\right] / \left\{ s\right\}  $ y derivable en $\displaystyle \left(a,b\right) / \left\{ s\right\}  $. Si existe $\displaystyle \lim_{x \to s^{*}}h\left(x\right) = r $ y existe $\displaystyle \lim_{x \to s^{*}}h'\left(x\right) $, entonces existe $\displaystyle h'\left(s^{*}\right) = \lim_{x \to s^{*}}h'\left(x\right) $. \footnote{Aquí, $\displaystyle s^{*} $ significa $\displaystyle s, s^{+} $ o $\displaystyle s^{-} $.} 
+\end{fcolorary}
+\begin{proof}
+Sea $\displaystyle g\left(x\right) = h\left(x\right)-r $ y $\displaystyle f\left(x\right) = x - s $. Entonces, tenemos que $\displaystyle \lim_{x \to s}g\left(x\right) = \lim_{x \to s}\left(h\left(x\right)-r\right) = 0 $ y $\displaystyle \lim_{x \to s}f\left(x\right) = \lim_{x \to s}\left(f\left(x\right)-s\right) = 0 $. Entonces tenemos que
+\[\lim_{x \to s}\frac{h\left(x\right)-r}{x-s}=\lim_{x \to s}\frac{g\left(x\right)}{f\left(x\right)} = \lim_{x \to s}\frac{g'\left(x\right)}{f'\left(x\right)} = \lim_{x \to s}\frac{h'\left(x\right)}{1} .\]
+Este último término existe por hipótesis.
+\end{proof}
+\begin{observation}
+\normalfont Esto nos dice que la derivada de una función continua no puede tener discontinuidad de salto.
+\end{observation}
+Dada $\displaystyle f : A \subset \R \to \R $ puede existir $\displaystyle f' $ y puede existir $\displaystyle \left(f'\right)' = f'' $. 
+\begin{observation}
+\normalfont En física, $\displaystyle f $ es un proceso, $\displaystyle f' $ es la velocidad y $\displaystyle f'' $ es la aceleración. Por ejemplo, la segunda ley de Newton se puede expresar de la forma 
+\[ F = m x'' .\]
+\end{observation}
+A través de $\displaystyle f' $ y $\displaystyle f'' $ se pueden conocer propiedades de $\displaystyle f $. 
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle f : \left(a,b\right) \to \R $ continua en $\displaystyle [a,b] $ y derivable en $\displaystyle \left(a,b\right) $. 
+\begin{description}
+	\item[(a)] 
+		\begin{itemize}
+			\item Si $\displaystyle f'\left(c\right) > 0 $, $\displaystyle \forall c \in \left(a,b\right) $, entonces $\displaystyle f $ es creciente en $\displaystyle [a,b] $.
+			\item Si $\displaystyle f $ es creciente en $\displaystyle [a,b] $, entonces $\displaystyle f'\left(c\right) \geq 0 $, $\displaystyle \forall c \in \left(a,b\right) $.
+		\end{itemize}
+		
+	\item[(b)] 
+		\begin{itemize}
+			\item Si $\displaystyle f'\left(c\right) < 0 $, $\displaystyle \forall c \in \left(a,b\right) $, entonces $\displaystyle f $ es decreciente en $\displaystyle [a,b] $.
+			\item Si $\displaystyle f $ es decreciente en $\displaystyle [a,b] $, entonces $\displaystyle f'\left(c\right) \leq 0 $, $\displaystyle \forall c \in \left(a,b\right) $.
+		\end{itemize}
+		
+\end{description}
+\end{ftheorem}
+\begin{proof} Sin pérdida de generalidad, demostramos solo \textbf{(a)}, pues la demostración de \textbf{(b)} es análoga.
+\begin{description}
+	\item[(i)] Sean $\displaystyle x,y \in [a,b] $ con $\displaystyle x < y $. Por el teorema del valor medio, existe $\displaystyle c \in \left(x,y\right) $ tal que 
+		\[ f\left(y\right)-f\left(x\right) = f'\left(c\right)\left(y-x\right) .\]
+		Tenemos que $\displaystyle f'\left(c\right) \geq0 $, por lo que también tenemos que $\displaystyle f\left(y\right)-f\left(x\right) \geq 0  $, es decir, $\displaystyle f\left(y\right) \geq f\left(x\right) $.
+	\item[(ii)] Sea $\displaystyle c \in \left(a,b\right) $. Si $\displaystyle f $ es creciente, tenemos que si $\displaystyle x > c $, 
+		\[ \frac{f\left(x\right)-f\left(c\right)}{x-c} \geq 0 .\]
+		Similarmente, si $\displaystyle x < c $ tenemos que 
+		\[ \frac{f\left(x\right)-f\left(c\right)}{x-c} \geq 0 .\]
+	Por tanto, tenemos que $\displaystyle f'\left(c\right) = \lim_{x \to c}\frac{f\left(x\right)-f\left(c\right)}{x-c} \geq 0 $.
+\end{description}
+\end{proof}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : \left(a,b\right) \to \R $ derivable en $\displaystyle \left(a,b\right) $. Si existe $\displaystyle x_{1}, x_{2} \in \left(a,b\right) $ y $\displaystyle \lambda \in \R $ tal que $\displaystyle f'\left(x_{1}\right) < \lambda < f'\left(x_{2}\right) $, entonces existe $\displaystyle x_{0} \in \left(a,b\right) $ tal que $\displaystyle f'\left(x_{0}\right) = \lambda  $.
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle g\left(x\right) = f\left(x\right)-\lambda x $. Tenemos que $\displaystyle g $ es continua en $\displaystyle [a,b] $ y derivable en $\displaystyle \left(a,b\right) $. Además, tenemos que $\displaystyle g'\left(x\right) = f'\left(x\right) - \lambda  $. Si $\displaystyle g'\left(x\right) \neq 0  $, $\displaystyle \forall x \in \left(a,b\right) $, es decir, $\displaystyle f'\left(x\right) \neq \lambda  $, entonces $\displaystyle g $ es inyectiva, por lo que debe ser monótona.
+\begin{itemize}
+\item Si $\displaystyle g $ es creciente y $\displaystyle g'\left(x\right) \neq 0 $, tenemos que $\displaystyle g'\left(x\right) > 0 $, $\displaystyle \forall x \in \R $. Entonces tenemos que 
+	\[ f'\left(x_{1}\right)-\lambda = g'\left(x_{1}\right) < 0 .\]
+\item Si $\displaystyle g $ es decreciente y $\displaystyle g'\left(x\right) \neq 0 $, tenemos que $\displaystyle g'\left(x\right) < 0 $, $\displaystyle \forall x \in \R $. Entonces tenemos que
+	\[ f'\left(x_{2}\right) - \lambda = g'\left(x_{2}\right) > 0 .\] 
+\end{itemize}
+\end{proof}
+\begin{observation}
+\normalfont Recordamos que una función derivada no puede dar saltos.
+\end{observation}
+\begin{eg}
+\normalfont No todas las funciones derivadas son continuas. Consideremos la función 
+\[ f\left(x\right) = 
+\begin{cases}
+x^{2}\sin\left(\frac{1}{x}\right), \; x \neq 0 \\
+0, \; x = 0
+\end{cases}
+.\]
+Teienmos que $\displaystyle f $ es continua en $\displaystyle \R $. En efecto, 
+\[ \left|x^{2}\sin\left(\frac{1}{x}\right)\right| \leq x^{2} \to 0, \; x \to 0 .\]
+Sin embargo, no es derivable en $\displaystyle x = 0 $:
+\[ f'\left(x\right) = 
+\begin{cases}
+	2\sin \frac{1}{x} - \cos \frac{1}{x}, \; x \neq 0 \\
+	0, \; x = 0
+\end{cases}
+.\]
+Dado que $\displaystyle \exists\lim_{x \to 0}f'\left(x\right) $, $\displaystyle f' $ no es continua en $\displaystyle x = 0 $.
+\end{eg}
+\section{Concavidad y convexidad}
+Procedemos a estudiar las derivadas segundas, con el objetivo de estudiar la convexidad y la concavidad.
+\begin{flema}[]
+	\normalfont
+	\[ \left[a,b\right] = \left\{ x \in \R \; : \; x = \alpha a + \left(1- \alpha \right)b, \; \alpha \in \left[0,1\right] \right\}  .\]
+\end{flema}
+\begin{proof}
+\begin{description}
+	\item[(i)] Si $\displaystyle x = \alpha a + \left(1- \alpha \right)b = a + \left(1 -\alpha \right)\left(b - a\right) \geq a $. Además, $\displaystyle x = \alpha a + \left(1- \alpha \right)b = b + \alpha \left(a- b\right) \leq b $, por lo que $\displaystyle x \in [a,b] $.
+	\item[(ii)] Si $\displaystyle c \in \left[a,b\right]  $, tenemos que 
+		\[ \frac{c-a}{b - a} \leq 1, \quad \frac{b-c}{b-a} \leq 1 .\]
+		Tomamos $\displaystyle \alpha = \frac{b-c}{b-a} $. Entonces, tenemos que 
+		\[c = \frac{b-c}{b-a}a + \frac{c-a}{b-a}b = \alpha a + \left(1-\alpha \right)b .\]		
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont A esta expresión se la llama \textbf{combinación convexa}  de $\displaystyle a $ y $\displaystyle b $.
+\end{observation}
+\begin{fdefinition}[]
+	\normalfont Sea $\displaystyle f : [a,b] \to \R $, se dice que $\displaystyle f $ es \textbf{convexa} en $\displaystyle [a,b]  $ si para $\displaystyle \forall x,y \in [a,b] $, $\displaystyle x < y $ se verifica que 
+	\[f\left(\alpha x + \left(1-\alpha \right)y \right) \leq \alpha f\left(x\right) + \left(1-\alpha \right)f\left(y\right), \; \forall \alpha \in \left[0,1\right]  .\]
+\end{fdefinition}
+\begin{observation}
+\normalfont Para entender la definición de convexidad
+\[
+\begin{split}
+	f\left(\alpha x + \left(1-\alpha \right)y\right) \leq & \alpha f\left(x\right) + \left(1-\alpha \right)f\left(y\right) =  \alpha \left(f\left(x\right)-f\left(y\right)\right) + f\left(y\right) \\
+	= & \frac{f\left(x\right)-f\left(y\right)}{x-y}\alpha\left(x-y\right) + f\left(y\right) \\
+	= & \frac{f\left(x\right)-f\left(y\right)}{x-y}\left(\alpha\left(x-y\right)+y-y\right) + f\left(y\right) \\
+	= & \frac{f\left(x\right)-f\left(y\right)}{x-y}\left( \left[\alpha x + \left(1-\alpha \right)y\right] -y\right) + f\left(y\right) = r\left(\alpha x + \left(1-\alpha\right)y\right).
+\end{split}
+\]
+Donde $\displaystyle r $ es la recta que une los puntos $\displaystyle \left(x,f\left(x\right)\right) $ e $\displaystyle \left(y,f\left(y\right)\right) $.
+Es decir, la gráfica de $\displaystyle f|_{\left[x,y\right] } $ queda por debajo de la gráfica de la recta que pasa por $\displaystyle \left(x, f\left(x\right)\right) $ e $\displaystyle \left(y, f\left(y\right)\right) $.
+\end{observation}
+\begin{fdefinition}[]
+	\normalfont Se dice que $\displaystyle f:\left[a,b\right] \to \R $ es \textbf{cóncava} si $\displaystyle \forall x,y \in [a,b] $, $\displaystyle x<y $, y $\displaystyle \forall \alpha \in [0,1] $, 
+	\[ f\left(\alpha x + \left(1-\alpha \right)y\right) \geq \alpha f\left(x\right) + \left(1-\alpha \right)f\left(y\right) .\]
+\end{fdefinition}
+Es decir, la gráfica de $\displaystyle f|_{[x,y]} $ queda por encima de la recta que pasa por los puntos $\displaystyle \left(x,f\left(x\right)\right) $ e $\displaystyle \left(y,f\left(y\right)\right) $.
+\begin{fprop}[]
+\normalfont Sea $\displaystyle f: I \subset \R \to \R $ una función definida sobre un intervalo o semirrecta. Son equivalentes:
+\begin{description}
+\item[(a)] $\displaystyle f $ es convexa sobre $\displaystyle I $ si y solo si $\displaystyle \forall a,b \in I $, $\displaystyle \forall x \in \left(a,b\right) $ se tiene que
+	\[ \frac{f\left(x\right)-f\left(a\right)}{x-a} \leq \frac{f\left(b\right)-f\left(a\right)}{b-a} \iff \frac{f\left(b\right)-f\left(x\right)}{b-x} \geq \frac{f\left(b\right)-f\left(a\right)}{b-a}.\]
+	
+\item[(b)] $\displaystyle f $ es cóncava sobre $\displaystyle I $ si y solo si $\displaystyle \forall a,b \in I $, $\displaystyle \forall x \in \left(a,b\right) $ se tiene que 
+	\[\frac{f\left(x\right)-f\left(a\right)}{x-a} \geq \frac{f\left(b\right)-f\left(a\right)}{b-a} \iff \frac{f\left(b\right)-f\left(x\right)}{b-x} \leq \frac{f\left(b\right)-f\left(a\right)}{b-a} .\]	
+\end{description}
+\end{fprop}
+\begin{proof}
+La demostración de \textbf{(b)} es análoga a \textbf{(a)}. Tenemos que si $\displaystyle f $ es convexa, 
+\[ f\left(x\right) \leq \frac{f\left(b\right)-f\left(a\right)}{b-a}\left(x-a\right) + f\left(a\right) = r\left(x\right) .\]
+Operando, obtenemos que 
+\[\frac{f\left(x\right)-f\left(a\right)}{x-a} \leq \frac{f\left(b\right)-f\left(a\right)}{b-a} .\]
+El recíproco se demuestra haciendo las mismas cuentas al revés.
+\end{proof}
+\begin{fprop}[]
+\normalfont Sea $\displaystyle f : I \subset \R \to \R $ una función sobre un intervalo o semirrecta.
+\begin{description}
+\item[(a)] Si $\displaystyle f $ es convexa en $\displaystyle I $ y derivable en $\displaystyle I $, entonces $\displaystyle f' $ es creciente.
+\item[(b)] Si $\displaystyle f $ es cóncava en $\displaystyle I $ y derivable $\displaystyle I $, entonces $\displaystyle f' $ es decreciente.
+\end{description}
+\end{fprop}
+\begin{proof}
+La demostración de \textbf{(b)} es análoga a la de \textbf{(a)}. Sea $\displaystyle a \in I $ con $\displaystyle a < b $. Dada $\displaystyle a, a + h_{1} $ y $\displaystyle a + h_{2} $ con $\displaystyle 0 < h_{1} < h_{2} $, por la proposición anterior tenemos que, dado que son cocientes crecientes,
+\[  \frac{f\left(a + h_{1}\right)-f\left(a\right)}{h_{1}} \leq \frac{f\left(a + h_{2}\right)-f\left(a\right)}{h_{2}} .\]
+Es decir, las pendientes $\displaystyle \frac{f\left(a+h\right)-f\left(a\right)}{h} $, decrecen cuando $\displaystyle h > 0 $ tiende a $\displaystyle 0 $. Así, como $\displaystyle f $ es derivable en $\displaystyle a $ tenemos que
+\[ f'\left(a\right) = f'\left(a^{+}\right) =\lim_{h \to 0^{+}}\frac{f\left(a+h\right)-f\left(a\right)}{h} \leq \frac{f\left(a+h\right)-f\left(a\right)}{h} .\]
+Por el otro lado, si $\displaystyle h_{2} < h_{1} < 0 $, por la proposición anterior tenemos que 
+\[ \frac{f\left(b\right)-f\left(b + h_{2}\right)}{h_{2}} \leq \frac{f\left(b\right)-f\left(b+h_{2}\right)}{h_{2}}  .\]
+Es decir, las pendientes $\displaystyle \frac{f\left(b+h\right)-f\left(b\right)}{h} $ decrecen cuando $\displaystyle h\to 0^{- } $. Así, dado que $\displaystyle f $ es derivable en $\displaystyle b $ tenemos que
+\[ f'\left(b\right) = f'\left(b^{-}\right) = \lim_{h \to 0^{-}}\frac{f\left(b+h\right)-f\left(b\right)}{h} \geq \frac{f\left(b+h\right)-f\left(b\right)}{h} .\]
+Si $\displaystyle a < x < b $, por lo visto anteriormente tenemos que
+\[ f'\left(a\right) \leq \frac{f\left(x\right)-f\left(a\right)}{x-a} \leq \frac{f\left(b\right)-f\left(a\right)}{b-a} \leq \frac{f\left(b\right)-f\left(x\right)}{b-x} \leq f'\left(b\right) .\]
+Por tanto, $\displaystyle f' $ es creciente.
+\end{proof}
+\begin{fcolorary}[]
+\normalfont Sea $\displaystyle f : I \subset \R \to \R $, donde $\displaystyle I $ es un intervalo o semirrecta y $\displaystyle f $ es derivable dos veces en $\displaystyle I $.
+\begin{description}
+\item[(a)] Si $\displaystyle f $ es convexa, $\displaystyle f'' \geq 0 $.
+\item[(b)] Si $\displaystyle f $ es cóncava, $\displaystyle f'' \leq 0 $.
+\end{description}
+\end{fcolorary}
+\begin{proof}
+La demostración de \textbf{(b)} es análoga a la de \textbf{(a)}. Si $\displaystyle f $ es convexa y como existe $\displaystyle f'' $, tenemos que por la proposición anterior, si $\displaystyle f' $ es creciente, $\displaystyle f'' \geq 0$.
+\end{proof}
+\begin{flema}[]
+	\normalfont Sea $\displaystyle f : [a,b] \to \R $ derivable en $\displaystyle \left[a,b\right] $ tal que $\displaystyle f\left(a\right) = f\left(b\right) $.
+	\begin{description}
+		\item[(a)] Si $\displaystyle f' $ es creciente, entonces $\displaystyle f\left(x\right) \leq f\left(a\right) $, $\displaystyle \forall x \in [a,b] $.
+		\item[(b)] Si $\displaystyle f' $ es decreciente, entonces $\displaystyle f\left(x\right)\geq f\left(a\right) $, $\displaystyle \forall x \in [a,b] $.
+	\end{description}
+\end{flema}
+\begin{proof}
+	Supongamos que existe $\displaystyle x \in [a,b] $ con $\displaystyle f\left(x\right) > f\left(a\right) $. Como $\displaystyle f|_{[a,b]} $ es continua, existe $\displaystyle x_{0} \in \left(a,b\right) $ tal que $\displaystyle f\left(x_{0}\right) \geq f\left(x\right) $, $\displaystyle \forall x \in [a,b] $, en concreto $\displaystyle f\left(x_{0}\right) > f\left(a\right) $, y además $\displaystyle f'\left(x_{0}\right) =0 $.
+	Por el teorema del valor medio, existe $\displaystyle x_{1} \in \left(a,x_{0}\right) $ tal que 
+	\[f'\left(x_{1}\right) = \frac{f\left(x_{0}\right)-f\left(a\right)}{x_{0}-a} > 0 .\]
+	Entonces, tenemos que $\displaystyle f'\left(x_{1}\right) > f'\left(x_{0}\right) $, lo cual es una contradicción, pues habíamos dicho que la derivada era creciente.
+\end{proof}
+\begin{fprop}[]
+\normalfont Sea $\displaystyle f : I \subset \R \to \R $ con $\displaystyle I $ intervalo o semirrecta, y $\displaystyle f $ derivable. 
+\begin{description}
+\item[(a)] Si $\displaystyle f' $ es creciente, entonces $\displaystyle f $ es convexa.
+\item[(b)] Si $\displaystyle f' $ es decreciente, entonces $\displaystyle f $ es cóncava.
+\end{description}
+\end{fprop}
+\begin{observation}
+\normalfont Si existe $\displaystyle f'' $, entonces 
+\begin{description}
+\item[(a)] $\displaystyle f'' \geq 0  $ implica que $\displaystyle f' $ es creciente, lo cual implica que $\displaystyle f $ es convexa.
+\item[(b)] $\displaystyle f'' \leq 0 $ implica que $\displaystyle f' $ es decreciente, lo cual implica que $\displaystyle f $ es cóncava.
+\end{description}
+\end{observation}
+\begin{proof}
+	Sean $\displaystyle a,b \in I $ y $\displaystyle x \in \left(a,b\right) $. Definimos la función $\displaystyle g : [a,b] \to \R $  
+\[ g\left(x\right) = f\left(x\right)-\frac{f\left(b\right)-f\left(a\right)}{b-a}\left(x-a\right)-f\left(a\right) .\]
+Tenemos que $\displaystyle g $ es derivable. En efecto:
+\[g'\left(x\right) = f'\left(x\right)-\frac{f\left(b\right)-f\left(a\right)}{b-a} .\]
+Dado que $\displaystyle f' $ es creciente, $\displaystyle g' $ es creciente. Tenemos que $\displaystyle g\left(a\right) = g\left(b\right) = 0 $. Por el lema anterior sabemos que $\displaystyle g\left(x\right) \leq g\left(a\right) = 0 $, $\displaystyle \forall x \in \left[a,b\right] $. Así, tenemos que 
+\[ f\left(x\right) \leq \frac{f\left(b\right)-f\left(a\right)}{b-a}\left(x-a\right) + f\left(a\right), \; \forall x \in [a,b] .\]
+\end{proof}
+Todo lo anterior prueba el siguiente teorema.
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f: I \subset \R \to \R  $ con $\displaystyle I $ intervalo o semirrecta, con $\displaystyle f $ derivable.
+\begin{description}
+\item[(a)] $\displaystyle f $ es convexa en $\displaystyle I $ si y solo si $\displaystyle f' $ es creciente. Si existe $\displaystyle f'' $, entonces $\displaystyle f $ es convexa si y solo si $\displaystyle f'' \geq 0 $.
+\item[(b)] $\displaystyle f $ es cóncava en $\displaystyle I $ si y solo si $\displaystyle f' $ es decreciente. Si existe $\displaystyle f'' $, entonces $\displaystyle f $ es cóncava si y solo si $\displaystyle f'' \leq 0 $.
+\end{description}
+\end{ftheorem}
 
