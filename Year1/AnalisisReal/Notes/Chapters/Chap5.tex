@@ -345,7 +345,7 @@ Este procedimiento también sirve para ver que esta función es uniformemente co
 \normalfont Con tres funciones $\displaystyle f\left(t\right),g\left(t\right),h\left(t\right) $, podemos definir curvas en el espacio.
 \end{observation}
 Vamos a estudiar la tangente de una curva paramétrica. Si cogemos dos puntos, $\displaystyle t_{0} $ y $\displaystyle t $, podemos calcular la ecuación de la recta que pasa por esos puntos:
-\[y\left(t\right) =  \frac{g\left(t\right)-g\left(t_{0}\right)}{f\left(t\right)-f\left(t_{0}\right)}\left(x-t_{0}\right) + g\left(t_{0}\right)   .\]
+\[y\left(t\right) =  \frac{g\left(t\right)-g\left(t_{0}\right)}{f\left(t\right)-f\left(t_{0}\right)}\left(x-f(t_{0})\right) + g\left(t_{0}\right)   .\]
 Tenemos que 
 \[\lim_{t \to t_{0}}\frac{g\left(t\right)-g\left(t_{0}\right)}{f\left(t\right)-f\left(t_{0}\right)}= \lim_{t \to t_{0}} \left(\frac{g\left(t\right)-g\left(t_{0}\right)}{t-t_{0}} \cdot \frac{t - t_{0}}{f\left(t\right)-f\left(t_{0}\right)}\right) = \frac{g'\left(t_{0}\right)}{f'\left(t_{0}\right)} .\]
 Entonces, concluimos que si $\displaystyle C $ es una curva del plano y $\displaystyle \exists f' $ y $\displaystyle g' $ entonces la pendiente de la recta tangente por el punto $\displaystyle \left(f\left(t_{0}\right), g\left(t_{0}\right)\right) $ será $\displaystyle \frac{g'\left(t_{0}\right)}{f'\left(t_{0}\right)} $. Es decir, esta recta tiene como vector director $\displaystyle \left(f'\left(t_{0}\right), g'\left(t_{0}\right)\right) $. \\ \\ 
@@ -382,11 +382,10 @@ En efecto, si $\displaystyle x \to x_{0}^{+} $ tenemos que $\displaystyle c_{x} 
 \[\lim_{x \to x_{0}^{+}}\frac{g'\left(c_{x}\right)}{f'\left(c_{x}\right)} = \lim_{y \to x_{0}^{+}}\frac{g'\left(y\right)}{f'\left(y\right)} .\]
 \end{proof}
 \begin{proof}
-	Esta es una demostración alternativa. Al igual que antes, definimos $\displaystyle f\left(x_{0}\right) = \lim_{x \to x_{0}^{+}} $ y $\displaystyle g\left(x_{0}\right) = \lim_{x \to x_{0}^{+}} $. Dado que exsiste $\displaystyle \lim_{x \to x_{0}^{+}} \frac{g'\left(x\right)}{f'\left(x\right)} = l \in \R$, si $\displaystyle \epsilon > 0 $ tenemos que existe un $\displaystyle \delta > 0 $ tal que si $\displaystyle 0 < x - x_{0} < \delta  $ entonces $\displaystyle \left|\frac{g'\left(x\right)}{f'\left(x\right)} - l\right| < \epsilon  $. Tenemos que, dado que $\displaystyle f $ y $\displaystyle g $ son continuas en $\displaystyle \left[x_{0}, x_{0}+\delta \right]  $ y derivables en $\displaystyle \left(x_{0}, x_{0}+\delta \right) $, entonces para cada $\displaystyle x \in (x_{0}, x_{0}+\delta) $  existe $\displaystyle c_{x} \in \left(x_{0}, x \right) $ tal que
+	Esta es una demostración alternativa. Al igual que antes, definimos $\displaystyle f\left(x_{0}\right) = \lim_{x \to x_{0}^{+}}f\left(x\right) $ y $\displaystyle g\left(x_{0}\right) = \lim_{x \to x_{0}^{+}}g\left(x\right) $. Dado que exsiste $\displaystyle \lim_{x \to x_{0}^{+}} \frac{g'\left(x\right)}{f'\left(x\right)} = l \in \R$, si $\displaystyle \epsilon > 0 $ tenemos que existe un $\displaystyle \delta > 0 $ tal que si $\displaystyle 0 < x - x_{0} < \delta  $ entonces $\displaystyle \left|\frac{g'\left(x\right)}{f'\left(x\right)} - l\right| < \epsilon  $. Tenemos que, dado que $\displaystyle f $ y $\displaystyle g $ son continuas en $\displaystyle \left[x_{0}, x_{0}+\delta \right]  $ y derivables en $\displaystyle \left(x_{0}, x_{0}+\delta \right) $, entonces para cada $\displaystyle x \in (x_{0}, x_{0}+\delta) $  existe $\displaystyle c_{x} \in \left(x_{0}, x \right) $ tal que
 	\[ \frac{g\left(x\right)-g\left(x_{0}\right)}{f\left(x\right)-f\left(x_{0}\right)} = \frac{g\left(x\right)}{f\left(x\right)} = \frac{g'\left(c_{x}\right)}{f'\left(c_{x}\right)} .\]
 	Dado que $\displaystyle c_{x} \in \left(x_{0}, x_{0}+ \delta \right) $, tenemos que
 	\[ \left|\frac{g\left(x\right)}{f\left(x\right)}-l\right| = \left|\frac{g'\left(c_{x}\right)}{f'\left(c_{x}\right)}-l\right|<\epsilon .\]
-Dado que esta expresión es cierta para todo $\displaystyle x \in \left(x_{0}, x_{0}+\delta \right) $, tenemos que $\displaystyle \lim_{x \to x_{0}^{+}}\frac{g\left(x\right)}{f\left(x\right)} = l $.	
 \end{proof}
 \begin{observation}
 \normalfont Si existieran $\displaystyle f'\left(x_{0}\right) \neq 0 $ y $\displaystyle g'\left(x_{0}\right) $, la prueba sería muy sencilla. En efecto, tendríamos que serían continuas en $\displaystyle x_{0} $ y por tanto
@@ -407,7 +406,31 @@ Si, existe $\displaystyle \lim_{x \to x_{0}}\frac{g'\left(x\right)}{f'\left(x\ri
 \[ \lim_{x \to x_{0}}\frac{g\left(x\right)}{f\left(x\right)} = \lim_{x \to x_{0}}\frac{g'\left(x\right)}{f'\left(x\right)} .\]
 \end{ftheorem}
 \begin{proof}
-Ejercicio.
+\begin{description}
+\item[(i)] Supongamos que $\displaystyle \lim_{x \to \pm \infty}f\left(x\right) = \lim_{x \to \pm \infty}g\left(x\right) = 0 $. Entonces, tenemos que,
+	\[ \lim_{x \to 0^{+}}f\left(\frac{1}{x}\right) = \lim_{x \to 0^{+}}g\left(\frac{1}{x}\right) = 0 .\]
+Así, podemos aplicar la regla de L'Hôpital a estas funciones, de forma que
+\[ \lim_{x \to \infty}\frac{g\left(x\right)}{f\left(x\right)} = \lim_{x \to 0^{+}} \frac{g\left(\frac{1}{x}\right)}{f\left(\frac{1}{x}\right)} = \lim_{x \to 0^{+}}\frac{g'\left(\frac{1}{x}\right)\left(-\frac{1}{x^{2}}\right)}{f'\left(\frac{1}{x}\right)\left(-\frac{1}{x^{2}}\right)} = \lim_{x \to 0^{+}} \frac{g'\left(\frac{1}{x}\right)}{f'\left(\frac{1}{x}\right)} = \lim_{x \to \infty} \frac{g'\left(x\right)}{f'\left(x\right)}.\]
+\item[(ii)] Supongamos que $\displaystyle \lim_{x \to x_{0}}f\left(x\right) = \lim_{x \to x_{0}}g\left(x\right) = \pm \infty $ y existe $\displaystyle \lim_{x \to x_{0}^{+}}\frac{g'\left(x\right)}{f'\left(x\right)} = l \in \R $. Sea $\displaystyle \epsilon > 0 $. Por hipótesis, tenemos que existe $\displaystyle \delta > 0 $ tal que si $\displaystyle 0 < x - x_{0} < \delta  $, entonces 
+	\[ \left|\frac{g'\left(x\right)}{f'\left(x\right)} - l\right| < \epsilon .\]
+Cogemos $\displaystyle x_{1} \in \left(x_{0}, x_{0} + \delta \right) $ y, dado que $\displaystyle f $ tiene límite por la derecha infinito en $\displaystyle x_{0} $, podemos coger $\displaystyle x_{2} \in \left(x_{0}, x_{1}\right) $ tal que  $\displaystyle f\left(x\right) \neq f\left(x_{1}\right) $ si $\displaystyle x \in \left(x_{0}, x_{2}\right) $. Así, definimos la función
+\[ F\left(x\right) = \frac{1 - \frac{f\left(x_{1}\right)}{f\left(x\right)}}{1 - \frac{g\left(x_{1}\right)}{g\left(x\right)}}, \; x \in \left(x_{0}, x_{2}\right) .\]
+Tenemos que $\displaystyle \lim_{x \to x_{0}^{+}}F\left(x\right) = 1 $. Por tanto, existe $\displaystyle x_{3} \in \left(x_{0}, x_{2}\right) $ tal que si $\displaystyle 0 < x - x_{0} < x - x_{3} $, $\displaystyle \left|F\left(x\right)-1\right|<\epsilon $. Así, tenemos que si $\displaystyle \epsilon < \frac{1}{2} $ 
+\[ \frac{1}{ \left|F\left(x\right)\right|} < \frac{1}{1-\epsilon } < 2.\]
+Entonces, tenemos que 
+\[ \frac{g\left(x\right)}{f\left(x\right)} = \frac{g\left(x\right)}{f\left(x\right)} \cdot \frac{F\left(x\right)}{F\left(x\right)} = \frac{g\left(x\right)-g\left(x_{1}\right)}{f\left(x\right)-f\left(x_{1}\right)} \cdot \frac{1}{ F\left(x\right)} .\]
+Por el teorema del valor medio de Cauchy existe $\displaystyle \xi \in \left(x_{0}, x_{1}\right) $ tal que
+\[ \frac{g\left(x\right)}{f\left(x\right)} = \frac{g'\left(\xi\right)}{f'\left(\xi\right)} \cdot \frac{1}{F\left(x\right)} .\]
+Así, si $\displaystyle x_{0} < x < x_{3} < x_{2} < x_{1}< x_{0} + \delta $,
+\[
+\begin{split}
+	\left|\frac{g\left(x\right)}{f\left(x\right)}-l\right| = & \left|\frac{g'\left(\xi\right)}{f'\left(\xi\right)} \cdot \frac{1}{F\left(x\right)} - l\right| 
+	=  \left|\frac{g'\left(\xi\right)}{f'\left(\xi\right)}-lF\left(x\right)\right| \cdot \frac{1}{ \left|F\left(x\right)\right|} \\
+	\leq & \left\{ \left|\frac{g'\left(\xi\right)}{f'\left(\xi\right)} -l\right| + \left|l - lF\left(x\right)\right|\right\} \cdot \frac{1}{ \left|F\left(x\right)\right|} \\
+	\leq & \left(\epsilon + \left|l\right|\epsilon \right)2 = \left(2  \left(1 + \left|l\right|\right)\right) \epsilon .
+\end{split}
+\]
+\end{description}
 \end{proof}
 \begin{eg}
 \normalfont Consideremos el límite $\displaystyle \lim_{x \to 0^{+}}x\ln x $. Aplicando la regla de L'Hôpital:
@@ -634,4 +657,50 @@ Todo lo anterior prueba el siguiente teorema.
 \item[(b)] $\displaystyle f $ es cóncava en $\displaystyle I $ si y solo si $\displaystyle f' $ es decreciente. Si existe $\displaystyle f'' $, entonces $\displaystyle f $ es cóncava si y solo si $\displaystyle f'' \leq 0 $.
 \end{description}
 \end{ftheorem}
+\section{Puntos críticos}
+\begin{fdefinition}[Punto crítico]
+\normalfont Sea $\displaystyle f : A \subset \R \to \R $ derivable. Se dice que $\displaystyle f $ tiene un \textbf{punto crítico} en $\displaystyle a \in A $ si $\displaystyle f'\left(a\right) = 0 $. \footnote{Puede considerarse también punto crítico si $\displaystyle f''\left(a\right) = 0 $, en el caso en el que exista $\displaystyle f'' $.} 
+\end{fdefinition}
+\begin{observation}
+\normalfont Los puntos críticos de una función son candidatos a máximos y mínimos relativos de la función y, por tanto, puntos donde puede cambiar el crecimiento de una función. Por otro lado, los candidatos a puntos de inflexión son los puntos críticos de la función derivada.
+\end{observation}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : \left(a,b\right) \to \R $ derivable dos veces en $\displaystyle \left(a,b\right) $ y sea $\displaystyle x_{0} \in \left(a,b\right) $ un punto crítico. 
+\begin{description}
+\item[(a)] Si $\displaystyle f'\left(x_{0}\right) = 0 $ y $\displaystyle f''\left(x_{0}\right) < 0 $, entonces $\displaystyle x_{0} $ es un máximo local.
+\item[(b)] Si $\displaystyle f'\left(x_{0}\right) = 0 $ y $\displaystyle f''\left(x_{0}\right) > 0 $, entonces $\displaystyle x_{0} $ es un mínimo local.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+La demostración se verá en unas semanas.
+\end{proof}
+\begin{fdefinition}[Punto de inflexión]
+\normalfont Sea $\displaystyle f : \left(a,b\right) \to \R $. Se dice que $\displaystyle x_{0} \in \left(a,b\right) $ es un \textbf{punto de inflexión} si para $\displaystyle \delta > 0 $, en $\displaystyle \left(x_{0}-\delta, x_{0}\right) $ es cóncava y en $\displaystyle \left(x_{0}, x_{0} + \delta \right) $ es convexa (o viceversa).
+\end{fdefinition}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : \left(a,b\right) \to \R $ tal que $\displaystyle \exists f''\left(x\right) $, $\displaystyle \forall x \in \left(a,b\right) $. Si $\displaystyle x_{0} \in \left(a,b\right) $ es un punto de inflexión, entonces $\displaystyle f''\left(x_{0}\right) = 0 $.
+\end{ftheorem}
+\begin{proof}
+Sabemos que $\displaystyle f' $ es continua, puesto que $\displaystyle f'' $ existe. Si $\displaystyle f $ es convexa en $\displaystyle \left(x_{0}-\delta, x_{0}\right) $, entonces $\displaystyle f' $ es creciente y, al ser continua, tenemos que 
+\[ f'\left(x_{0}\right) = \sup \left\{ f'\left(x\right) \; : \; x \in \left(x_{0}-\delta, x_{0} \right)\right\}  .\]
+Similarmente, si $\displaystyle f $ es cóncava en $\displaystyle \left(x_{0}, x_{0} + \delta \right) $, dado que $\displaystyle f' $ es decreciente y es continua, tenemos que 
+\[ f'\left(x_{0}\right) = \inf \left\{ f'\left(x\right) \; : \; x \in \left(x_{0}, x_{0} + \delta \right)\right\}  .\]
+Así, tenemos que $\displaystyle f' $ tiene un máximo local en $\displaystyle x_{0} $ y, dado que existe $\displaystyle f''\left(x_{0}\right) $, tiene que ser necesariamente que $\displaystyle f''\left(x_{0}\right) =0 $.
+\end{proof}
+\begin{eg}
+\normalfont El recíproco no es cierto. Consideremos $\displaystyle f\left(x\right) = x^{4} $. Tenemos que $\displaystyle f'\left(x\right) = 4x^{3} $ y $\displaystyle f''\left(x\right) = 12x^{2} \geq 0 $. Tenemos que $\displaystyle f''\left(x\right) = 0 \iff x = 0 $. Si embargo, la función no tiene un punto de inflexión en $\displaystyle x = 0 $, sino que se trata de un mínimo.
+\end{eg}
+\begin{eg}
+	\normalfont Consideremos $\displaystyle f\left(x\right) = \frac{x^{3}-x^{2}-x}{x^{2}-x} $. Vamos a estudiar su gráfica. Tenemos que $\displaystyle \dom\left(f\right) = \R / \left\{ 0,1\right\}  $. Tenemos que en $\displaystyle x = 0 $ tiene una discontinuidad evitable. Estudiamos los límites:
+	\[ \lim_{x \to -\infty}\frac{x^{2}-2x-1}{x-1} = - \infty, \quad \lim_{x \to \infty}\frac{x^{2}-2x-1}{x-1} = \infty .\]
+	También 
+	\[\lim_{x \to 1^{+}}f\left(x\right) = - \infty, \quad \lim_{x \to 1^{-}}f\left(x\right) = \infty .\]
+	Es decir, $\displaystyle f $ tiene una asíntota vertical en $\displaystyle x = 1 $. Además, también tiene una asíntota oblicua. En efecto,
+	\[ \lim_{x \to \infty} \frac{f\left(x\right)}{x} = \lim_{x \to \infty}\frac{x^{2}-2x-1}{x^{2}-x} = 1  .\]
+\[ \lim_{x \to \infty}\left(f\left(x\right)-x\right) = \lim_{x \to \infty}\frac{x^{2}-2x-1-x\left(x-1\right)}{x-1} = \lim_{x \to \infty} \frac{-x -1}{x-1} = -1.\]
+Así, la ecuación de la asíntota oblicua será $\displaystyle y = x -1 $.
+	Estudiamos la derivada. Si $\displaystyle x \neq 0, 1 $,
+\[ f'\left(x\right)= \frac{x^{2}-2x+3}{\left(x-1\right)^{2}} = \frac{\left(x-1\right)^{2}+3}{\left(x-1\right)^{2}}\geq 0.\]
+Por tanto, tenemos que la función es creciente.
+\end{eg}
 

@@ -1,0 +1,195 @@
+\chapter{La Integral}
+\section{Definición de la integral}
+\begin{fdefinition}[Partición]
+	\normalfont Sea $\displaystyle \left[a,b\right]  $ un intervalo cerrado de $\displaystyle \R $. Se llama \textbf{partición} $\displaystyle P $ de $\displaystyle [a,b] $ a todo subconjunto finito de $\displaystyle [a,b] $ que contiene a $\displaystyle a $ y $\displaystyle b $. 
+\end{fdefinition}
+\begin{observation}
+\normalfont Las particiones tendrán la forma
+\[ P = \left\{ a = t_{0}, t_{1}, \ldots, t_{n} = b\right\}, \; t_{i} < t_{i+1}, \; \forall i = 0,1, \ldots, n-1 .\]
+\begin{notation}
+\normalfont Se llama $\displaystyle P\left([a,b]\right) = \left\{ P \; \text{partición de } [a,b]\right\} $.
+\end{notation}
+\end{observation}
+\begin{fdefinition}[]
+	\normalfont Dadas $\displaystyle P, P' \in P\left([a,b]\right) $, decimos que $\displaystyle P' $ es \textbf{más fina} que $\displaystyle P $ si $\displaystyle P \subsetneq P' $.
+\end{fdefinition}
+\begin{eg}
+	\normalfont Consideremos el intervalo $\displaystyle [1,2] $ y las particiones $\displaystyle P = \left\{ 1, \frac{3}{2}, 2\right\} \subsetneq P' = \left\{ 1, \sqrt{2},\frac{3}{2}, 2\right\}  $.
+\end{eg}
+\begin{fdefinition}[]
+	\normalfont Sea $\displaystyle f: [a,b] \to \R $ \footnote{De momento estamos solo considerando funciones cuyas imágenes son positivas.} acotada y sea $\displaystyle P = \left\{ t_{0}= a, t_{1}, \ldots, t_{n-1}, t_{n} = b\right\}  $ una partición. Se definen
+	\[ M_{i} = \sup \left\{ f\left(t\right) \; : \; t \in [t_{1}, t_{i+1}]\right\}, \; i = 0, \ldots, n-1  .\]
+	\[ m_{i} = \inf \left\{ f\left(t\right) \; : \; t \in [t_{1}, t_{i+1}]\right\}, \; i = 0, \ldots, n-1  .\]
+\footnote{Sabemos que existen (no tienen por qué alcanzarse) porque $\displaystyle f $ está acotada.} 	
+\end{fdefinition}
+\begin{fdefinition}[]
+	\normalfont Sea $\displaystyle f : [a,b] \to \R $ acotada y sea $\displaystyle P = \left\{ t_{0}= a, t_{1}, \ldots, t_{n-1}, t_{n} = b\right\}  $ una partición. Se llama \textbf{suma superior} de $\displaystyle f $ respecto de $\displaystyle P $ y se escribe 
+	\[ S\left(f, P\right) = \sum^{n-1}_{i = 0}M_{i}\left(t_{i+1}-t_{i}\right) .\]
+	Similarmente, se llama \textbf{suma inferior} de $\displaystyle f $ respecto de $\displaystyle P $ a
+	\[ I\left(f,P\right)= \sum^{n-1}_{i = 0}m_{i}\left(t_{i+1}-t_{i}\right) .\]
+	 
+\end{fdefinition}
+\begin{observation}
+\normalfont Tenemos que $\displaystyle I\left(f,P\right) \leq S\left(f,P\right) $, pues $\displaystyle m_{i} \leq M_{i} $, $\displaystyle \forall i = 0, \ldots, n-1 $.
+\end{observation}
+\begin{flema}[]
+	\normalfont Sea $\displaystyle f : \left[a,b\right] \to \R $ acotada y sean $\displaystyle P,P' \in P\left([a,b]\right) $ con $\displaystyle P' $ más fina que $\displaystyle P $. Entonces, 
+	\[ I\left(f,P\right) \leq I\left(f,P'\right) \leq S\left(f,P'\right) \leq S\left(f,P\right) .\]
+\end{flema}
+\begin{proof}
+	Supongamos que $\displaystyle P' = P \cup \left\{ u\right\}  $, donde $\displaystyle t_{i} < u < t_{i+1} $. Observemos que 
+	\[ m_{i} = \inf \left\{ f\left(t\right) \; : \; t \in \left[t_{i}, t_{i+1}\right] \right\} \leq \min \left\{ m_{[t_{i}, u]}, m_{[u, t_{i+1}]}\right\} 
+	.\]
+\[ M_{i} = \sup \left\{ f\left(t\right) \; : \; t \in \left[t_{i}, t_{i+1}\right] \right\} \geq \max \left\{ M_{[t_{i}, u]}, M_{[u, t_{i+1}]}\right\}.\]
+Así, tenemos que 
+\[ I\left(f, P\right)= \sum^{n-1}_{j = 0}m_{j}\left(t_{j+1}-t_{j}\right) \leq \sum^{n-1}_{j=0, i \neq j} m_{j}\left(t_{j+1}-t_{j}\right) + m_{[t_{i},u]}\left(u-t_{i}\right) + m[u,t_{i+1}]\left(t_{i+1}-u\right) = I\left(f,P'\right).\]
+Similarmente, tenemos que 
+\[ S\left(f,P'\right) = \sum^{n-1}_{j=0,i\neq j}M_{j}\left(t_{j+1}-t_{j}\right) + M_{[t_{i}, u]}\left(u-t_{i}\right) + M_{[u,t_{i+1}]}\left(t_{i+1}-u\right) \leq \sum^{n-1}_{j=0}M_{j}\left(t_{j+1}-t_{j}\right) = S\left(f,P\right) .\]
+Así, tenemos que $\displaystyle I\left(f,P\right) \leq I\left(f,P'\right) \leq S\left(f,P'\right) \leq S\left(f,P\right) $. \footnote{Las desigualdades anteriores se basan en que $\displaystyle m_{i}\left(t_{i+1}-t_{i}\right) = m_{i}\left(u - t_{i}\right) + m_{i}\left(t_{i+1}-u\right) \leq m_{[u,i+1]}\left(t_{i+1}-u\right) + m_{[i,u]}\left(u-i\right) $. } 
+Repetimos el proceso hasta que $\displaystyle P \cup \left\{ u_{1}, \ldots, u_{k}\right\} = P' $.
+\end{proof}
+\begin{flema}[]
+	\normalfont Sea $\displaystyle f: [a,b] \to \R$ acotada y $\displaystyle P,P' \in P\left([a,b]\right) $. Entonces, $\displaystyle I\left(f, P\right) \leq S\left(f, P'\right) $.
+\end{flema}
+\begin{proof}
+Cogemos $\displaystyle P'' = P \cup P' $, así $\displaystyle P'' $ es más fina que $\displaystyle P $ y $\displaystyle P' $. Aplicando el lema anterior:
+\[ I\left(f,P\right) \leq I\left(f,P''\right) \leq S\left(f,P''\right) \leq S\left(f,P'\right) .\]
+\end{proof}
+\begin{fdefinition}[]
+	\normalfont Sea $\displaystyle f: [a,b] \to \R  $ acotada.
+	\begin{description}
+		\item[(a)] Se define la \textbf{integral inferior } de $\displaystyle f $ en $\displaystyle [a,b] $ 
+			\[ \sup\left\{ I\left(f,P\right) \; : \; P \in P\left([a,b]\right) \right\} = \underline{\int^{b}_{a}} f   .\]
+		\item[(b)] Se define la \textbf{integral superior} de $\displaystyle f $ en $\displaystyle [a,b] $ 
+			\[ \inf \left\{ S\left(f,P\right) \; : \; P \in P\left([a,b]\right)\right\} = \overline{\int^{b}_{a}} f .\]
+		\item[(c)] Decimos que $\displaystyle f $ es \textbf{integrable} en $\displaystyle [a,b] $ si $\displaystyle \underline{\int^{b}_{a}} f = \overline{\int^{b}_{a}} f $. A este valor se le llama la integral de $\displaystyle f $ en $\displaystyle [a,b] $:
+			\[ \underline{\int^{b}_{a}} f = \overline{\int^{b}_{a}} f  = \int^{b}_{a} f  .\]
+	\end{description}
+\end{fdefinition}
+\begin{observation}
+	\normalfont Tenemos que la integral inferior siempre es menor que la superior: $\displaystyle \underline{\int^{b}_{a}} f  \leq \overline{\int^{b}_{a}} f $.
+\end{observation}
+\begin{eg}
+\normalfont Consideremos la función 
+\[f\left(x\right) = 
+\begin{cases}
+	1, \; x \in [0,1] \cap \Q \\
+	0, \; x \in [0,1] / \Q
+\end{cases}
+.\]
+Tenemos que $\displaystyle I\left(f, P\right) = 0 $ y $\displaystyle S\left(f,P\right) = 1 $, por lo que 
+\[ \underline{\int^{1}_{0}}  f = 0 \neq 1 = \overline{\int^{1}_{0}} f .\]
+Por tanto, la función de Dirichlet no es integrable.
+\end{eg}
+\begin{fdefinition}[Área]
+	\normalfont Sea $\displaystyle f : [a,b] \to \R$ acotada y $\displaystyle f \geq 0 $. 
+	\begin{description}
+	\item[(a)] Se llama \textbf{recinto por debajo de la gráfica de $\displaystyle f $} al subconjunto de $\displaystyle \R^{2} $ 
+		\[ A_{f} = \left\{ \left(x,y\right) \in \R^{2}\; : \; x \in [a,b], y \in [0,f\left(x\right)]\right\}  .\]
+	\item[(b)] Si $\displaystyle f $ es integrable en $\displaystyle [a,b] $, se define el \textbf{área} de $\displaystyle A_{f} $ 
+		\[ \text{Área }A_{f} = \int^{b}_{a} f .\]
+	\end{description}
+\end{fdefinition}
+\section{Funciones integrables}
+\begin{ftheorem}[Criterio de integrabilidad de Riemann]
+	\normalfont Sea $\displaystyle f : [a,b] \to \R$ acotada. Son equivalentes:
+	\begin{description}
+		\item[(a)] $\displaystyle f $ es integrable en $\displaystyle [a,b] $.
+		\item[(b)] $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists P \in P\left([a,b]\right) $ tal que $\displaystyle S\left(f,P\right)-I\left(f,P\right) < \epsilon  $.
+	\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+	\item[(i)] Sea $\displaystyle \epsilon > 0 $. Tenemos que existe $\displaystyle P_{1} \in P\left(\left[a,b\right] \right) $ tal que 
+		\[ \underline{\int^{b}_{a}} f  - \frac{\epsilon }{2} < I\left(f,P_{1}\right) .\]
+		Similarmente, existe $\displaystyle P_{2} \in P\left(\left[a,b\right] \right) $ tal que 
+		\[ \overline{\int^{b}_{a}} f + \frac{\epsilon }{2} > S\left(f,P_{2}\right)  .\]
+	Sea $\displaystyle P_{3} = P_{1} \cup P_{2} $, por lo que $\displaystyle P_{3} $ es más fina que $\displaystyle P_{1} $ y $\displaystyle P_{2} $. Así, tenemos que 
+	\[ S\left(f,P_{3}\right)-I\left(f,P_{3}\right) \leq S\left(f,P_{2}\right)-I\left(f,P_{1}\right) \leq \overline{\int^{b}_{a}} f + \frac{\epsilon }{2} - \left(\underline{\int^{b}_{a}} f - \frac{\epsilon }{2}\right) = \epsilon   .\]
+\item[(ii)] Sabemos que si $\displaystyle P \in P\left([a,b]\right) $,
+	\[ \overline{\int^{b}_{a}}  f - \underline{\int^{b}_{a}} f \leq S\left(f,P\right) - I\left(f,P\right).\]
+	En particular, si $\displaystyle \epsilon > 0 $, existe $\displaystyle P' \in P\left([a,b]\right) $ tal que se cumple la condición anterior. Así, tenemos que $\displaystyle \forall \epsilon > 0 $,
+	\[ \overline{\int^{b}_{a}} f -\underline{\int^{b}_{a}} f < \epsilon \iff \overline{\int^{b}_{a}} f = \underline{\int^{b}_{a}} f .\]
+\end{description}
+\end{proof}
+\begin{fprop}[]
+	\normalfont Sea $\displaystyle f : \left[a,b\right] \to \R $ acotada. Sea 
+	\[ P_{n} = \left\{ a, a + \frac{b-a}{n}, a + \frac{2\left(b-a\right)}{n}, \ldots, a + \frac{\left(n-1\right)\left(b-a\right)}{n}, b\right\} .\]
+	Si existe $\displaystyle \lim_{n \to \infty}I\left(f,P_{n}\right) = \lim_{n \to \infty}S\left(f,P_{n}\right) $, entonces $\displaystyle f $ es integrable en $\displaystyle [a,b] $ y 
+	\[ \int^{b}_{a} f = \lim_{n \to \infty}I\left(f,P_{n}\right) = \lim_{n \to \infty}S\left(f,P_{n}\right) .\]
+\end{fprop}
+\begin{proof}
+Sea $\displaystyle \alpha = \lim_{n \to \infty}I\left(f,P_{n}\right) = \lim_{n \to \infty}S\left(f,P_{n}\right) $. Tenemos que existe $\displaystyle n_{1} \in \N $ tal que si $\displaystyle n \geq n_{1} $, $\displaystyle \left|I\left(f,P_{n}\right)-\alpha \right| < \frac{\epsilon }{2} $ y existe $\displaystyle n_{2} \in \N $ tal que si $\displaystyle n \geq n_{2} $, $\displaystyle \left|S\left(f,P_{n}\right)-\alpha \right|< \frac{\epsilon }{2} $. 
+Así, si $\displaystyle n_{0} = \max \left\{ n_{1}, n_{2}\right\}  $, para $\displaystyle n \geq n_{0} $ tenemos que $\displaystyle I\left(f,P_{n}\right), S\left(f,P_{n}\right) \in \left(\alpha - \frac{\epsilon }{2}, \alpha + \frac{\epsilon }{2}\right) $. Así, tenemos que 
+\[ 0 \leq S\left(f,P_{n}\right) - I\left(f,P_{n}\right) < \epsilon  .\]
+Así, por el criterio de integrabilidad Riemann, tenemos que 
+\[ \exists \int^{b}_{a} f = \lim_{n \to \infty}I\left(f,P_{n}\right) .\]
+En efecto, tenemos que si $\displaystyle \epsilon > 0 $, existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ \footnote{Quedaría por ver que la integral superior siempre es mayor o igual que el valor de la integral, así como que las sumas superiores también lo están. Otra forma de hacerlo es por reducción al absrudo.} 
+\[ 0 \leq \overline{\int^{b}_{a}} f - \alpha \leq S\left(f,P_{n}\right)-\alpha < \epsilon .\]
+Como esto es cierto para $\displaystyle \forall \epsilon > 0 $, tenemos que 
+\[ \overline{\int^{b}_{a}}f = \int^{b}_{a} f=\alpha .\]
+Esto también se puede demostrar diciendo que 
+\[ 0 < S\left(f,P_{n}\right) - \int^{b}_{a} f \leq S\left(f,P_{n}\right)-I\left(f,P_{n}\right) \to 0 .\]
+\end{proof}
+\begin{observation}
+	\normalfont En general, si $\displaystyle \left\{ P_{n} \; : \; n \in \N\right\}  $ es una sucesión de particiones y $\displaystyle \lim_{n \to \infty}S\left(f,P_{n}\right)= \lim_{n \to \infty}I\left(f,P_{n}\right) $, tenemos que $\displaystyle f $ es integrable en $\displaystyle \left[a,b\right]  $ y $\displaystyle \int^{b}_{a} f = \lim_{n \to \infty}S\left(f,P_{n}\right) $.
+\end{observation}
+\begin{eg}
+	\normalfont Calculamos el área de un triángulo. Sea $\displaystyle f\left(x\right) = rx $ donde $\displaystyle x \in [0,a] $. Tenemos que el área será
+	\[ S = \frac{ra^{2}}{2} .\]
+Tomamos la partición $\displaystyle P_{n} $ de la proposición anterior. Tenemos que 
+\[ I\left(f,P_{n}\right) = \frac{ra^{2}}{n^{2}}\sum^{n-1}_{i = 0}i = \frac{ra^{2}}{n^{2}} \cdot \frac{n\left(n-1\right)}{2} \to \frac{ra^{2}}{2}.\]
+\[S\left(f,P\right) = \frac{ra^{2}}{n^{2}}\sum^{n-1}_{i = 0}\left(i + 1\right) = \frac{ra^{2}}{n^{2}} \cdot \frac{n\left(n+1\right)}{2} \to \frac{ra^{2}}{2} .\]
+Así, $f $ es integrable y queda que 
+\[\int^{a}_{0} rx \; dx = \frac{ra^{2}}{2} .\]
+\end{eg}
+\begin{ftheorem}[]
+	\normalfont Si $\displaystyle f : [a,b] \to \R$ es continua en $\displaystyle [a,b] $, entonces existe $\displaystyle \int^{b}_{a} f $.
+\end{ftheorem}
+\begin{proof}
+Sea $\displaystyle b -a  $ la distancia de $\displaystyle a $ a $\displaystyle b $. Hacemos partes iguales de longitud $\displaystyle \frac{b-a}{n} $. Así, obtenemos la partición
+\[ P_{n} = \left\{ a, a + \frac{b-a}{n}, \ldots, a + \frac{\left(n-1\right)\left(b-a\right)}{n}, b\right\}  .\]
+Dado que $\displaystyle f $ es continua en un intervalo cerrado, tenemos que es uniformemente continua en este mismo intervalo \footnote{Podemos aplicar la continuidad uniforme porque, dado que $\displaystyle f $ es continua, tenemos que $\displaystyle M_{i}, m_{i} \in \Imagen\left(f\right) $ en cada intervalo $\displaystyle [t_{i}, t_{i+1}] $.} . Así, si $\displaystyle \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \left|x-y\right| < \delta  $, entonces $\displaystyle \left|f\left(x\right)-f\left(y\right)\right| < \frac{\epsilon }{b-a} $.
+Además, como $\displaystyle \frac{b-a}{n} \to 0 $, existe $\displaystyle n_{0} \in \N $ tal que si $\displaystyle n \geq n_{0} $ tenemos que $\displaystyle \frac{b-a}{n} < \delta  $. Así, tenemos que si $\displaystyle n \geq n_{0} $ 
+\[ S\left(f,P_{n}\right)-I\left(f,P_{n}\right) = \frac{b-a}{n}\sum^{n-1}_{i=0}\left(M_{i}-m_{i}\right) \leq \frac{b-a}{n}\sum^{n-1}_{i=0}\frac{\epsilon }{b-a} = \epsilon .\]
+Por el criterio de integrabilidad tenemos que $\displaystyle f $ es integrable en $\displaystyle [a,b] $. Además, tenemos que $\displaystyle \lim_{n \to \infty}S\left(f,P_{n}\right)-I\left(f,P_{n}\right) = 0 $. Por lo visto en la observación anterior, tenemos que 
+\[ \int^{b}_{a} f =\lim_{n \to \infty}S\left(f,P_{n}\right) = \lim_{n \to \infty}I\left(f,P_{n}\right) .\]
+\end{proof}
+\begin{fcolorary}[]
+	\normalfont Sea $\displaystyle f : [a,b] \to \R $ continua y consideremos la partición
+	\[ P_{n} = \left\{ a, a + \frac{b-a}{n}, \ldots, a + \frac{\left(n-1\right)\left(b-a\right)}{n}, b\right\}  .\]
+	\begin{description}
+		\item[(a)] Sea $\displaystyle x_{i} \in \left[a + \frac{i\left(b-a\right)}{n}, a + \frac{\left(i+1\right)\left(b-a\right)}{n}\right]  $ con $\displaystyle i = 1, \ldots, n-1 $, entonces
+			\[\int^{b}_{a} f = \lim_{n \to \infty}\frac{b-a}{n}\sum^{n-1}_{i = 0}f\left(x_{i}\right) .\]
+		\item[(b)] En particular, 
+			\[\int^{b}_{a} f = \lim_{n \to \infty}\frac{b-a}{n}\sum^{n-1}_{i = 0}f\left(a + \frac{i\left(b-a\right)}{n}\right) .\]
+		\item[(c)] En particular,
+			\[\int^{b}_{a} f = \lim_{n \to \infty}\frac{b-a}{n}\sum^{n-1}_{i = 0}f\left(a + \frac{\left(i+1\right)\left(b-a\right)}{n}\right) .\]
+		\item[(d)] Si $\displaystyle [a,b] = [0,1]$, 
+			\[\int^{1}_{0} f = \lim_{n \to \infty}\frac{1}{n}\sum^{n-1}_{ i= 0}f\left(\frac{i}{n}\right) .\]
+	\end{description}
+\end{fcolorary}
+\begin{proof}
+Demostramos sólamente \textbf{(d)}, pues el resto de casos son análogos. Por el teorema anterior tenemos que
+	\[
+	\begin{split}
+		\int^{1}_{0} f = & \lim_{n \to \infty}I\left(f,P_{n}\right) = \lim_{n \to \infty}\sum^{n-1}_{i = 0}m_{i} \frac{1}{n} .
+	\end{split}
+	\]
+Dado que $\displaystyle f $ es continua tenemos que existe $\displaystyle x_{i} \in \left[\frac{i}{n}, \frac{i + 1}{n}\right]  $ con $\displaystyle f\left(x_{i}\right) = m_{i} $. Dado que $\displaystyle f $ es uniformemente continua si $\displaystyle \epsilon > 0 $ tenemos que $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle \left|x-y\right|<\delta  $ se tiene que $\displaystyle \left|f\left(x\right)-f\left(y\right)\right| < \epsilon  $. 
+Ahora, como $\displaystyle \frac{1}{n} \to 0 $, cogemos $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ se tenga que $\displaystyle \frac{1}{n} < \delta  $:
+\[ 0 \leq \sum^{n-1}_{i = 0}f\left(\frac{i}{n}\right)\frac{1}{n} - \sum^{n-1}_{i=0}m_{i}\frac{1}{n} = \frac{1}{n}\sum^{n-1}_{i=0}\left[f\left(\frac{i}{n}\right)-f\left(x_{i}\right)\right] \leq \frac{1}{n}\sum^{n-1}_{i = 0}\epsilon  = \epsilon.\]
+	Así, hemos demostrado que 
+	\[\lim_{n \to \infty}\frac{1}{n}\sum^{n-1}_{i = 0}f\left(\frac{1}{n}\right) - \frac{1}{n}\sum^{n-1}_{i = 0}m_{i} = 0 \iff \lim_{n \to \infty}\frac{1}{n}\sum^{n-1}_{i = 0}f\left(\frac{1}{n}\right) = \int^{1}_{0} f .\]
+\end{proof}
+\begin{eg}
+\normalfont Vamos a calcular $\displaystyle \lim_{n \to \infty}\frac{1}{n^{3}}\left(\sum^{n}_{k=1}\left(k+n\right)\left(k-n\right)\right) $. Tenemos que 
+\[
+\begin{split}
+	\lim_{n \to \infty}\frac{1}{n^{3}}\left(\sum^{n}_{k=1}\left(k+n\right)\left(k-n\right)\right) = & \lim_{n \to \infty}\frac{1}{n^{3}}\sum^{n}_{k=1}\left(k^{2}-n^{2}\right) \\
+= & \lim_{n \to \infty}\frac{1}{n}\sum^{n}_{k=1}\frac{1}{n^{2}}\left(k^{2}-n^{2}\right) = \lim_{n \to \infty}\frac{1}{n}\sum^{n}_{k=1}\left(\frac{k}{n}\right)^{2}-1 \\
+= &  \lim_{n \to \infty}\frac{1}{n}\left(\sum^{n-1}_{k=0}\left(\frac{k}{n}\right)^{2}+1\right) = \int^{1}_{0} \left(x^{2}-1\right) \; dx + \lim_{n \to \infty}\frac{1}{n} \\
+= & \int^{1}_{0} \left(x^{2}-1\right) \; dx.
+\end{split}
+\]
+\end{eg}
