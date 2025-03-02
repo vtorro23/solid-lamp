@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1740230955.24156 "main.tex" "main.pdf" "main" 1740230959.49191 0
+["pdflatex"] 1740944391.9274 "main.tex" "main.pdf" "main" 1740944396.02128 2
   "/Users/victoriatorroja/Desktop/Images/diagonalizacion1.png" 1737485666.44486 346611 0a9523daeb8d53c6384bef5e09ffd5a1 ""
   "/Users/victoriatorroja/Desktop/Images/espacio_dual.png" 1731776012.86348 51683 36bf2f0663338d3500926a0330bb3453 ""
   "/Users/victoriatorroja/Desktop/Images/matriz_inversa1.png" 1732731642.92828 52149 ecbe536525be4e3a1973716b47367492 ""
@@ -8,10 +8,10 @@
   "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap1.tex" 1735922220.04647 52916 745c5762b9a217edcf457e4b82fb6242 ""
   "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap2.tex" 1735821228.3902 76217 8dc6c310da45972b8c96ce017d15b0ff ""
   "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap3.tex" 1734783263.69158 66858 1df67cd35406fd09cf846f407cb386a6 ""
-  "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap4.tex" 1739434257.54144 74636 aadfbd49cb660fe1472a2f50874a78cc ""
-  "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap5.tex" 1740230954.64518 41941 f9391dbd91e4e28f1682a9761dd4337d ""
+  "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap4.tex" 1740420420.96448 74626 2b2b448578e6c3a27c3f96000c209bb0 ""
+  "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap5.tex" 1740944391.86817 61702 c6071c73536834181fd84d6f03d1e78d ""
   "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Intro.tex" 1728922290.28707 8890 d5a1b4b3f155ce1de3704222f3b9cfdc ""
-  "/Users/victoriatorroja/University/notespreamble.tex" 1739437000.76569 2602 dbba41d95177841477783528abc67476 ""
+  "/Users/victoriatorroja/University/notespreamble.tex" 1740645296.17718 2687 81d8faf13cae61ca838baca9c4844246 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -60,6 +60,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb" 1248133631 36607 d654cb3f2bc54f57509240071db3bffa ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb" 1248133631 30457 bc0868ebece724ed7c3d37e3d9bff7bd ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb" 1248133631 30273 87a352d78b6810ae5cfdc68d2fb827b2 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1248133631 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
@@ -181,9 +182,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724666679.39075 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "main.aux" 1740230959.15197 4859 49f354bb07a49669f9834ccb9da909a7 "pdflatex"
+  "main.aux" 1740944395.71883 5408 5f18e8c5c3ebf0bbe52f82778de55938 "pdflatex"
   "main.tex" 1739530856.498 648 002085c61508664378c76294d461c5f0 ""
-  "main.toc" 1740230959.15454 2237 a8937d0c56c4c5c4f7c4f5efcc2f33ba "pdflatex"
+  "main.toc" 1740944395.72144 2581 33aed64bf9d63aa22c37aae0fffd206c "pdflatex"
   (generated)
   "main.aux"
   "main.log"

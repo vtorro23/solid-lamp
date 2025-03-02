@@ -27,7 +27,6 @@
 	\[ S\left(f, P\right) = \sum^{n-1}_{i = 0}M_{i}\left(t_{i+1}-t_{i}\right) .\]
 	Similarmente, se llama \textbf{suma inferior} de $\displaystyle f $ respecto de $\displaystyle P $ a
 	\[ I\left(f,P\right)= \sum^{n-1}_{i = 0}m_{i}\left(t_{i+1}-t_{i}\right) .\]
-	 
 \end{fdefinition}
 \begin{observation}
 \normalfont Tenemos que $\displaystyle I\left(f,P\right) \leq S\left(f,P\right) $, pues $\displaystyle m_{i} \leq M_{i} $, $\displaystyle \forall i = 0, \ldots, n-1 $.
@@ -106,9 +105,9 @@ Por tanto, la función de Dirichlet no es integrable.
 		\[ \overline{\int^{b}_{a}} f + \frac{\epsilon }{2} > S\left(f,P_{2}\right)  .\]
 	Sea $\displaystyle P_{3} = P_{1} \cup P_{2} $, por lo que $\displaystyle P_{3} $ es más fina que $\displaystyle P_{1} $ y $\displaystyle P_{2} $. Así, tenemos que 
 	\[ S\left(f,P_{3}\right)-I\left(f,P_{3}\right) \leq S\left(f,P_{2}\right)-I\left(f,P_{1}\right) \leq \overline{\int^{b}_{a}} f + \frac{\epsilon }{2} - \left(\underline{\int^{b}_{a}} f - \frac{\epsilon }{2}\right) = \epsilon   .\]
-\item[(ii)] Sabemos que si $\displaystyle P \in P\left([a,b]\right) $,
-	\[ \overline{\int^{b}_{a}}  f - \underline{\int^{b}_{a}} f \leq S\left(f,P\right) - I\left(f,P\right).\]
-	En particular, si $\displaystyle \epsilon > 0 $, existe $\displaystyle P' \in P\left([a,b]\right) $ tal que se cumple la condición anterior. Así, tenemos que $\displaystyle \forall \epsilon > 0 $,
+\item[(ii)] Sabemos que si $\displaystyle \epsilon > 0 $ existe $\displaystyle P \in P\left(\left[a,b\right] \right) $ tal que 
+	\[ \overline{\int^{b}_{a}}  f - \underline{\int^{b}_{a}} f \leq S\left(f,P\right) - I\left(f,P\right) < \epsilon .\]
+	Así, tenemos que $\displaystyle \forall \epsilon > 0 $,
 	\[ \overline{\int^{b}_{a}} f -\underline{\int^{b}_{a}} f < \epsilon \iff \overline{\int^{b}_{a}} f = \underline{\int^{b}_{a}} f .\]
 \end{description}
 \end{proof}
@@ -124,15 +123,11 @@ Así, si $\displaystyle n_{0} = \max \left\{ n_{1}, n_{2}\right\}  $, para $\dis
 \[ 0 \leq S\left(f,P_{n}\right) - I\left(f,P_{n}\right) < \epsilon  .\]
 Así, por el criterio de integrabilidad Riemann, tenemos que 
 \[ \exists \int^{b}_{a} f = \lim_{n \to \infty}I\left(f,P_{n}\right) .\]
-En efecto, tenemos que si $\displaystyle \epsilon > 0 $, existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ \footnote{Quedaría por ver que la integral superior siempre es mayor o igual que el valor de la integral, así como que las sumas superiores también lo están. Otra forma de hacerlo es por reducción al absrudo.} 
-\[ 0 \leq \overline{\int^{b}_{a}} f - \alpha \leq S\left(f,P_{n}\right)-\alpha < \epsilon .\]
-Como esto es cierto para $\displaystyle \forall \epsilon > 0 $, tenemos que 
-\[ \overline{\int^{b}_{a}}f = \int^{b}_{a} f=\alpha .\]
-Esto también se puede demostrar diciendo que 
+En efecto, tenemos que  
 \[ 0 < S\left(f,P_{n}\right) - \int^{b}_{a} f \leq S\left(f,P_{n}\right)-I\left(f,P_{n}\right) \to 0 .\]
 \end{proof}
 \begin{observation}
-	\normalfont En general, si $\displaystyle \left\{ P_{n} \; : \; n \in \N\right\}  $ es una sucesión de particiones y $\displaystyle \lim_{n \to \infty}S\left(f,P_{n}\right)= \lim_{n \to \infty}I\left(f,P_{n}\right) $, tenemos que $\displaystyle f $ es integrable en $\displaystyle \left[a,b\right]  $ y $\displaystyle \int^{b}_{a} f = \lim_{n \to \infty}S\left(f,P_{n}\right) $.
+	\normalfont En general, si $\displaystyle \left\{ P_{n} \; : \; n \in \N\right\}  $ es una sucesión de particiones y $\displaystyle \lim_{n \to \infty}S\left(f,P_{n}\right)-I\left(f,P_{n}\right)=0 $, tenemos que $\displaystyle f $ es integrable en $\displaystyle \left[a,b\right]  $ y $\displaystyle \int^{b}_{a} f = \lim_{n \to \infty}S\left(f,P_{n}\right) $.
 \end{observation}
 \begin{eg}
 	\normalfont Calculamos el área de un triángulo. Sea $\displaystyle f\left(x\right) = rx $ donde $\displaystyle x \in [0,a] $. Tenemos que el área será
@@ -193,3 +188,566 @@ Ahora, como $\displaystyle \frac{1}{n} \to 0 $, cogemos $\displaystyle n_{0} \in
 \end{split}
 \]
 \end{eg}
+\section{Propiedades de la integral}
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle f : \left[a,b\right]  \to \R $ integrable y $\displaystyle c \in \left(a,b\right) $. Entonces, existen $\displaystyle \int^{c}_{a} f  $ y $\displaystyle \int^{b}_{c} f  $ y además
+	\[ \int^{b}_{a} f = \int^{c}_{a} f + \int^{b}_{c} f .\]
+\end{ftheorem}
+\begin{proof}
+	La parte de existencia se puede demostrar utilizando el criterio de integrabilidad. Sabemos que si $\displaystyle \epsilon > 0 $, existe $\displaystyle P \in P\left([a,b]\right) $ tal que $\displaystyle S\left(f,P\right)-I\left(f,P\right) < \epsilon  $. Podemos suponer que $\displaystyle c \in P $, es decir, existe $\displaystyle t_{k_{0}} =c $. Si no ocurriese, $\displaystyle P' = P \cup \left\{ c\right\}  $ sería más fina que $\displaystyle P $ y 
+	\[ S\left(f,P'\right)-I\left(f,P'\right) \leq S\left(f,P\right)-I\left(f,P\right) < \epsilon  .\]
+Así, tenemos que 
+\[
+\begin{split}
+	S\left(f,P\right) = & \sum^{n-1}_{i = 0}M_{i}\left(t_{i+1}-t_{i}\right) = \sum^{k_{0}-1}_{i=0}M_{i}\left(t_{i+1}-t_{i}\right) + \sum^{n-1}_{i = k_{0}}M_{i}\left(t_{i+1}-t_{i}\right) .
+\end{split}
+\]
+\[I\left(f,P\right) = \sum^{n-1}_{i=0}m_{i}\left(t_{i+1}-t_{i}\right) = \sum^{k_{0}-1}_{i=0}m_{i}\left(t_{i+1}-t_{i}\right) + \sum^{n-1}_{i=k_{0}}m_{i}\left(t_{i+1}-t_{i}\right) .\]
+Definimos la partición $\displaystyle P''= \left\{ t_{0}= a, t_{1}, \ldots, t_{k_{0}}=c\right\}  $. Tenemos que 
+\[
+\begin{split}
+S\left(f,P''\right)-I\left(f,P''\right) \leq S\left(f,P\right) - I\left(f,P\right) < \epsilon .
+\end{split}
+\]
+Por tanto, existe $\displaystyle \int^{c}_{a} f $. Análogamente, se puede ver que existe $\displaystyle \int^{b}_{c} f $. \\ 
+Ahora, vamos a demostrar la igualdad. Si $\displaystyle \epsilon > 0 $, tenemos que, si asumimos (sin pérdida de generalidad), que $\displaystyle \int^{b}_{a} f \geq \int^{c}_{a} f +\int^{b}_{c} f $,
+\[ 0\leq \int^{b}_{a} f -\left(\int^{c}_{a} f +\int^{b}_{c} f \right) \leq S\left(f,P\right) - I\left(f,P\right) < \epsilon.\]
+Por tanto, como esto es cierpo $\displaystyle \forall \epsilon > 0 $, se tiene que 
+\[ \int^{b}_{a} f = \int^{c}_{a} f +\int^{b}_{c} f .\]
+\end{proof}
+\begin{observation}
+\normalfont Si convenimos para que $\displaystyle \int^{b}_{a} f = - \int^{a}_{b} f $, tenemos que el teorema anterior es cierto para todo $\displaystyle a,b,c \in \R $, siempre que las integrales que aparecen existan.
+\end{observation}
+\begin{observation}
+	\normalfont Es fácil ver que si $\displaystyle f $ es integrable en $\displaystyle \left[a,c\right]  $ y $\displaystyle \left[c,b\right]  $, también lo será en $\displaystyle \left[a,b\right]  $. En efecto, si $\displaystyle f $ es integrable en $\displaystyle \left[a,c\right]  $ y $\displaystyle \left[c,b\right]  $, tenemos que si $\displaystyle \epsilon > 0 $ existen $\displaystyle P_{1} \in P\left(\left[a,c\right] \right) $ y $\displaystyle P_{2} \in P\left(\left[c,b\right] \right) $ tales que
+	\[ S\left(f,P_{1}\right)-I\left(f,P_{1}\right) < \frac{\epsilon }{2} \quad \text{y} \quad S\left(f,P_{2}\right)-I\left(f,P_{2}\right) < \frac{\epsilon }{2} .\]
+	Así, si $\displaystyle P_{3} = P_{1} \cup P_{2} $, se tiene que
+	\[ S\left(f,P_{3}\right)-I\left(f,P_{3}\right) = S\left(f,P_{1}\right) + S\left(f,P_{2}\right)-\left(I\left(f,P_{1}\right) + I\left(f,P_{2}\right)\right) < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon.\]
+\end{observation}
+\begin{ftheorem}[]
+	\normalfont Sean $\displaystyle f,g : \left[a,b\right]  \to \R $ dos funciones acotadas e integrables y sea $\displaystyle \lambda \in \R $. Entonces,
+	\begin{description}
+	\item[(a)] $\displaystyle \exists \int^{b}_{a} f + g = \int^{b}_{a} f + \int^{b}_{a} g $.
+	\item[(b)] $\displaystyle \exists \int^{b}_{a} \lambda f = \lambda \int^{b}_{a} f $.
+	\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(a)] Sea $\displaystyle \epsilon > 0 $, tenemos que existe $\displaystyle P \in P\left([a,b]\right) $ tal que 
+	\[ S\left(f,P\right)-I\left(f,P\right) < \frac{\epsilon }{2} \quad \text{y} \quad S\left(g,P\right)-I\left(g,P\right) < \frac{\epsilon }{2} .\]
+	Tenemos que si $\displaystyle f $ y $\displaystyle g $ están acotadas, $\displaystyle f+g $ también lo estará. Si $\displaystyle \left|f\right| \leq M $ y $\displaystyle \left|g\right|\leq M $, tenemos que 
+	\[ \left|f+g\right| \leq \left|f\right| + \left|g\right| \leq 2M .\]
+Así, tenemos que 
+\[ M_{f+g,i} = \sup \left\{ \left(f+g\right)\left(t\right) \; : \; t \in \left[t_{i}, t_{i+1}\right] \right\} \leq M_{f,i} + M_{g,i}.\]
+Similarmente, obtenemos que $\displaystyle m_{f+g,i} \geq m_{f,i} + m_{g,i} $. Entonces, tenemos que 
+\[
+\begin{split}
+	S\left(f+g,P\right)-I\left(f+g,P\right) = & \sum^{n-1}_{i=0}M_{f+g,i}\left(t_{i+1}-t_{i}\right) + \sum^{n-1}_{i =0}m_{f+g,i}\left(t_{i+1}-t_{i}\right) \\
+	\leq & \sum^{n-1}_{i = 0}\left(M_{f,i}+M_{g,i}\right)\left(t_{i+1}-t_{i}\right) - \sum^{n-1}_{i = 0}\left(m_{f,i}+m_{g,i}\right)\left(t_{i+1}-t_{i}\right)\\
+	= & S\left(f,P\right)-I\left(f,P\right)+S\left(g,P\right)-I\left(g,P\right) < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon  .
+\end{split}
+\]
+Así, hemos demostrado que la integral existe. Ahora supongamos que (en el caso contrario se procede de forma análoga)
+\[
+\begin{split}
+	0 \leq \int^{b}_{a} f +g - \left(\int^{b}_{a} f +\int^{b}_{a} g \right) \leq & S\left(f+g,P\right)-\left(I\left(f,P\right)+I\left(g,P\right)\right) \\ \leq & S\left(f,P\right)+S\left(g,P\right)-I\left(f,P\right)-I\left(g,P\right) < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon .
+\end{split}
+\]
+\item[(b)] Si $\displaystyle \lambda = 0 $ es trivial. Consideremos que $\displaystyle \lambda > 0 $, pues el caso $\displaystyle \lambda < 0 $ se hace de forma análoga. Tenemos que $\displaystyle \sup\left(\Imagen\left(\lambda f\right)\right) = \lambda \sup \left(\Imagen\left(f\right)\right) $ y $\displaystyle \inf\left(\Imagen\left(\lambda f\right)\right) = \lambda \inf\left(\Imagen\left(f\right)\right) $. Dado que $\displaystyle f $ es integrable, si $\displaystyle \epsilon > 0 $, tenemos que existe $\displaystyle P \in P\left(\left[a,b\right] \right) $ tal que 
+	\[ S\left(f,P\right) - I\left(f,P\right) < \frac{\epsilon }{2\lambda }.\]
+	Así, tenemos que 
+	\[
+	\begin{split}
+		S\left(\lambda f,P\right) -I\left(\lambda f, P\right) = & \sum^{n-1}_{i=0}M_{\lambda f,i}\left(t_{i+1}-t_{i}\right) - \sum^{n-1}_{i = 0}m_{\lambda f,i}\left(t_{i+1}-t_{i}\right) \\
+		= & \lambda\left[\sum^{n-1}_{i=0}M_{f,i}\left(t_{i+1}-t_{i}\right)-\sum^{n-1}_{i=0}m_{f,i}\left(t_{i+1}-t_{i}\right)\right] \\
+		< & \lambda \cdot \frac{\epsilon }{\lambda} = \epsilon.
+	\end{split}
+	\]
+	En el caso de $\displaystyle \lambda < 0 $, ha de tenerse en cuenta que $\displaystyle \sup\left(\lambda A\right) = \lambda \inf\left(A\right) $ y $\displaystyle \inf\left(\lambda A\right) = \lambda \sup\left(A\right)$. Así, tenemos que $\displaystyle \forall P \in P\left(\left[a,b\right] \right) $,
+	\[ S\left(\lambda f,P\right) = \lambda I\left(f,P\right) \quad \text{y} \quad I\left(\lambda f,P\right) = \lambda S\left(f,P\right) .\]
+\end{description}
+\end{proof}
+\begin{observation}
+	\normalfont Consideremos el conjunto $\displaystyle \mathcal{C}\left[a,b\right]  $, que es conjunto de las funciones continuas en un intervalo. Tenemos que es un espacio vectorial. Definimos la aplicación
+	\[
+	\begin{split}
+	T : \mathcal{C}\left[a,b\right]  \to & \R \\
+	f \to & \int^{b}_{a} f .
+	\end{split}
+	\]
+Tenemos que $\displaystyle T $ es una aplicación lineal, en concreto es una forma lineal. 
+\end{observation}
+\begin{ftheorem}[]
+	\normalfont Sean $\displaystyle f,g : \left[a,b\right] \to \R $ integrables.
+	\begin{description}
+		\item[(a)] Si $\displaystyle f \leq g $, $\displaystyle \forall x \in \left[a,b\right]$, entonces
+			\[ \int^{b}_{a} f \leq \int^{b}_{a} g .\]
+		\item[(b)] Si $\displaystyle m \leq f \leq M $ con $\displaystyle m,M \in \R $, entonces
+			\[\left(b-a\right)m \leq \int^{b}_{a} f \leq M\left(b-a\right) .\]
+		\item[(c)] La función $\displaystyle \left|f\right| $ es integrable y además,
+			\[ \left|\int^{b}_{a} f \right| \leq \int^{b}_{a} \left|f\right| .\]
+	\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+	\item[(a)] Si $\displaystyle f \leq g $, tenemos que $\displaystyle M_{f,i} \leq M_{g,i} $ y $\displaystyle m_{f,i} \leq m_{g,i} $. Así $\displaystyle \forall P \in P\left(\left[a,b\right] \right) $ se tiene que,
+	\[ S\left(f,P\right) \leq S\left(g,P\right) \quad \text{y} \quad I\left(f,P\right) \leq I\left(S,P\right) .\]
+	Por tanto, 
+	\[ \int^{b}_{a} f = \overline{\int^{b}_{a}} f \leq \overline{\int^{b}_{a}} g = \int^{b}_{a} g  .\]
+\item[(b)] Tomamos $\displaystyle g = M $ y $\displaystyle h = m $. Dado que se tiene que $\displaystyle h \leq f \leq g $, por el apartado \textbf{(a)} se tiene que 
+	\[ \int^{b}_{a} h \leq \int^{b}_{a} f \leq \int^{b}_{a} g  \iff \left(b-a\right)m \leq \int^{b}_{a} f \leq M\left(b-a\right).\]
+\item[(c)] Primero demostramos que $\displaystyle \left|f\right| $ es integrable. Definimos
+	\[f^{+} = 
+	\begin{cases}
+	f\left(x\right), \; f\left(x\right) \geq 0 \\
+	0, \; f\left(x\right) < 0
+	\end{cases}
+	, \quad f^{-} = 
+\begin{cases}
+0, \; f\left(x\right) \geq 0 \\
+-f\left(x\right), \; f\left(x\right) < 0
+\end{cases}
+.\]
+Se ve fácilmente que $\displaystyle f = f^{+} - f^{-} $ y $\displaystyle \left|f\right| = f^{+} + f^{-} $. Vamos a ver que $\displaystyle f^{+} $ y $\displaystyle f^{-} $ son integrables. Sin pérdida de generalidad, vamos a ver que $\displaystyle f^{+} $ es integrable. Sea $\displaystyle \epsilon > 0 $, existe $\displaystyle P \in P\left(\left[a,b\right] \right) $ tal que 
+\[
+\begin{split}
+	S\left(f,P\right)-I\left(f,P\right) = & \sum^{n-1}_{i=0}\left(M_{i}-m_{i}\right)\left(t_{i+1}-t_{i}\right) \\
+	= & \left[\sum^{}_{i \in \left\{ j \; : \; M_{j} > 0\right\}} M_{i}\left(t_{i+1}-t_{i}\right)-\sum^{}_{i \in \left\{ j \; : \; m_{j} > 0\right\} }m_{i}\left(t_{i+1}-t_{i}\right) \right] \\
+	+ & \left[\sum^{}_{i \in \left\{ j \; : \; M_{j} \leq 0\right\}} M_{i}\left(t_{i+1}-t_{i}\right)-\sum^{}_{i \in \left\{ j \; : \; m_{j} \leq 0\right\} }m_{i}\left(t_{i+1}-t_{i}\right) \right] \\
+	< & \epsilon .
+\end{split}
+\]
+Tenemos que $\displaystyle \left\{ j \; : \; M_{j} \leq 0\right\} \subset \left\{ j \; : \; m_{j} \leq 0\right\}  $ y siempre se tiene que $\displaystyle M_{i}-m_{i} \geq 0 $. Además, tenemos que 
+\[ M_{j}-m_{j} \geq M_{j}, \; M_{j} > 0, m_{j} \leq 0 .\]
+Similarmente, tenemos que $\displaystyle \left\{ j \; : \; m_{j} \geq 0\right\} \subset \left\{ j \; : \; M_{j} \geq 0\right\}  $. Así, tenemos que
+\[
+\begin{split}
+	S\left(f^{+},P\right)-I\left(f^{+}, P\right) = \left[\sum^{}_{i \in \left\{ j \; : \; M_{j} > 0\right\}} M_{i}\left(t_{i+1}-t_{i}\right)-\sum^{}_{i \in \left\{ j \; : \; m_{j} > 0\right\} }m_{i}\left(t_{i+1}-t_{i}\right) \right] < \epsilon .
+\end{split}
+\]
+Así, hemos visto que $\displaystyle f^{+} $ es integrable, y $\displaystyle f^{-} $, de forma análoga también es integrable, por lo que $\displaystyle \left|f\right| $ es integrable. \\
+	Una vez demostrado que $\displaystyle \left|f\right| $ es integrable, tenemos que 
+	\[
+	\begin{split}
+	\left|\int^{b}_{a} f \right| = \left|\int^{b}_{a} f^{+}-f^{-}\right|= \left|\int^{b}_{a} f^{+} -\int^{b}_{a} f^{-}\right| \leq \int^{b}_{a} f^{+} + \int^{b}_{a} f^{-} = \int^{b}_{a} \left|f\right| .
+	\end{split}
+	\]
+\end{description}
+\end{proof}
+\section{Teorema Fundamental del Cálculo}
+\begin{fdefinition}[]
+	\normalfont Dada $\displaystyle f :\left[a,b\right]  \to \R $ integrable, se define la función
+	\[ F\left(x\right) = \int^{x}_{a} f\left(t\right) \; dt, \; x \in \left[a,b\right]  .\]
+\end{fdefinition}
+\begin{eg}
+\normalfont Consideremos la función 
+\[f\left(x\right) = 
+\begin{cases}
+	\frac{1}{5}, \; x \in \left[0,\frac{1}{2}\right] \\
+	\frac{6}{5}, \; x \in \left(\frac{1}{2},1\right] \\
+	\frac{3}{10}, \; x \in (1,2]
+\end{cases}
+.\]
+Tenemos que $\displaystyle f $ es integrable y 
+\[ F\left(x\right)= 
+\begin{cases}
+	\frac{1}{5}x, \; x \in \left[0,\frac{1}{2}\right] \\
+	\frac{1}{10} + \left(x-\frac{1}{2}\right) \cdot \frac{6}{5}, \; x \in \left(\frac{1}{2},1\right] \\
+	\frac{7}{10} + \left(x-1\right) \cdot \frac{3}{10}, \; x \in (1,2]
+\end{cases}
+.\]
+\end{eg}
+\begin{ftheorem}[]
+	\normalfont Si $\displaystyle f : \left[a,b\right]  \to \R $ es integrable, tenemos que $\displaystyle F\left(x\right)= \int^{x}_{a} f\left(t\right) \; dt $ es continua en $\displaystyle \left[a,b\right]  $.
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle c \in \left[a,b\right]  $. Tenemos que
+	\[
+	\begin{split}
+		F\left(c + h\right)- F\left(c\right) = & \int^{c + h}_{a} f\left(t\right) \; dt - \int^{c}_{a} f\left(t\right) \; dt = \int^{c + h}_{c} f\left(t\right) \; dt .
+	\end{split}
+	\]
+	Por ser $\displaystyle f $ continua en $\displaystyle \left[a,b\right]  $ también está acotada, es decir, existe $\displaystyle M > 0 $ tal que $\displaystyle \forall t \in [a,b] $, $\displaystyle \left|f\left(t\right)\right| \leq M $. Así, tenemos que
+	\[
+	\begin{split}
+	\left|F\left(c+h\right)-F\left(c\right)\right| = \left|\int^{c + h}_{c} f\left(t\right) \; dt\right| \leq \int^{c + h}_{c} \left|f\left(t\right)\right| \; dt \leq \int^{c + h}_{c} M = \left|h\right| M \to 0 .
+	\end{split}
+	\]
+	Por tanto, tenemos que $\displaystyle \lim_{h \to 0}F\left(c+h\right)-F\left(c\right) = 0 $, por lo que $\displaystyle \lim_{x \to c}F\left(x\right)= F\left(c\right) $.
+\end{proof}
+\begin{ftheorem}[Teorema Fundamental del Cálculo]
+	\normalfont Sea $\displaystyle f : [a,b] \to \R$ continua. La función $\displaystyle F\left(x\right) = \int^{x}_{a} f\left(t\right) \; dt $ es derivable en $\displaystyle c \in \left[a,b\right]  $ y $\displaystyle F'\left(c\right) = f\left(c\right) $. \footnote{También se puede demostrar con la hipótesis de que $\displaystyle f $ sea integrable en vez de continua. En este caso, $\displaystyle F'\left(c\right) = f\left(c\right) $ en los puntos donde $\displaystyle f $ es continua.} 
+\end{ftheorem}
+\begin{proof}
+Sin pérdida de generalidad, supongamos que $\displaystyle h > 0 $. Como hemos visto en la demostración anterior,
+\[F\left(c + h\right)-F\left(c\right) = \int^{c + h}_{c} f\left(t\right) \; dt .\]
+Sea $\displaystyle m_{h} = \inf \left\{ f\left(t\right) \; : \; t  \in \left[c, c + h\right]\right\}  $ y $\displaystyle M_{h} = \sup \left\{ f\left(t\right) \; : \; t \in \left[c, c+h\right]\right\}  $. Entonces, tenemos que
+\[hm_{h} \leq \int^{c + h}_{c } f\left(t\right) \; dt \leq M_{h}h .\]
+Por lo que tenemos que
+\[m_{h} \leq \frac{1}{h}\int^{c+h}_{c} f\left(t\right) \; dt = \frac{F\left(c+h\right)-F\left(c\right)}{h} \leq M_{h} .\]
+Dado que $\displaystyle f $ es continua, tenemos que si $\displaystyle h\to0 $, $\displaystyle m_{h}, M_{h} \to f\left(c\right) $, por lo que $\displaystyle F'\left(c\right) = f\left(c\right) $.
+\end{proof}
+\begin{observation}
+	\normalfont Una demostración alternativa es la siguiente. Si $\displaystyle f $ es continua en $\displaystyle c \in \left[a,b\right]  $ entonces si $\displaystyle \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \left|h\right| < \delta  $ se tiene que $\displaystyle \left|f\left(c + h\right)-f\left(c\right)\right|<\epsilon  $. Así,
+\[
+\begin{split}
+	\left|\frac{F\left(c+h\right)-F\left(c\right)}{h}-f\left(c\right)\right| = & \left|\frac{1}{h}\int^{c+h}_{c} f\left(t\right) \; dt - \frac{f\left(c\right)}{h}\int^{c+h}_{c}  \; dt\right| = \frac{1}{ \left|h\right|} \left|\int^{c+h}_{c} f\left(t\right)-f\left(c\right) \; dt\right|\\
+	\leq & \frac{1}{ \left|h\right|}\int^{c+h}_{c} \left|f\left(t\right)-f\left(c\right)\right| \; dt < \frac{1}{ \left|h\right|} \epsilon \left|h\right| = \epsilon.
+\end{split}
+\]
+	
+\end{observation}
+\begin{fcolorary}[Regla de Barrow]
+	\normalfont Sea $\displaystyle f : \left[a,b\right] \to \R $ continua. Si $\displaystyle g : \left[a,b\right] \to \R $ verifica que $\displaystyle g'\left(x\right) = f\left(x\right) $, $\displaystyle \forall x \in \left[a,b\right]  $, entonces
+	\[ \int^{b}_{a} f\left(t\right) \; dt = g\left(b\right)-g\left(a\right) .\]
+\end{fcolorary}
+\begin{proof}
+	Sea $\displaystyle F\left(x\right) = \int^{x}_{a} f\left(t\right) \; dt $. Por el teorema fundamental del cálculo, tenemos que $\displaystyle F'\left(x\right) = f\left(x\right) = g'\left(x\right) $. Así, tenemos que $\displaystyle F $ y $\displaystyle g $ tienen la misma derivada. Podemos recordar que, por el teorema del valor medio, $\displaystyle F\left(x\right) = g\left(x\right) + K $, $\displaystyle \forall x \in [a,b] $. 
+	En particular,
+	\[ F\left(a\right) =\int^{a}_{a} f\left(t\right) \; dt = 0 \Rightarrow g\left(a\right) + K = 0.\]
+	Por tanto, tenemos que $\displaystyle F\left(x\right) = g\left(x\right)-g\left(a\right) $ y, por tanto,
+	\[F\left(b\right) = \int^{b}_{a} f\left(t\right) \; dt = g\left(b\right)-g\left(a\right) .\]
+\end{proof}
+\begin{eg}
+\normalfont Consideremos $\displaystyle \int^{a}_{0} rx \; dx $. Antes lo tuvimos que resolver mediante el límite $\displaystyle \lim_{n \to \infty}\frac{a}{n}\sum^{n-1}_{i=0}r\frac{ia}{n} $. Esto se complica si consideramos, por ejemplo, $\displaystyle f\left(x\right) = x^{5} $. Con la regla de Barrow, los cálculos se simplifican considerablemente:
+\[ \int^{1}_{0} x^{5} \; dx = \left[\frac{x^{6}}{6}\right] ^{1}_{0} = \frac{1}{6} .\]
+\end{eg}
+\begin{eg}
+\normalfont Sea $\displaystyle F\left(x\right) = \int^{\ln\left(x+1\right)}_{x^{2}} \sqrt{1 + t ^{2}} \; dt $. Vamos a calcular la derivada. Tenemos que $\displaystyle f\left(t\right) = \sqrt{1 + t ^{2}} $ es continua en $\displaystyle \R $, por lo que es integrable. Podemos ver que 
+\[ F\left(x\right) = \int^{\ln\left(x+1\right)}_{x^{2}} \sqrt{1 + t ^{2}} \; dt = - \int^{x^{2}}_{0} \sqrt{1 + t ^{2}} \; dt + \int^{\ln\left(x+1\right)}_{0} \sqrt{1 + t ^{2}} \; dt .\]
+Definimos $\displaystyle G\left(x\right) = \int^{x}_{0} \sqrt{1 + t ^{2}} \; dt $, por lo que $\displaystyle F\left(x\right) = G\left(\ln\left(x+1\right)\right)-G\left(x^{2}\right) $. Así, tenemos que
+\[ F'\left(x\right) = -\sqrt{1 + \left(x^{2}\right)^{2}} \cdot2x + \sqrt{1 + \left(\ln\left(x+1\right)\right)^{2}}\frac{1}{x+1}.\]
+\end{eg}
+\begin{ftheorem}[Regla de Barrow II]
+	\normalfont Si $\displaystyle f : \left[a,b\right] \to \R $ es integrable y $\displaystyle g'\left(x\right) = f\left(x\right) $, $\displaystyle \forall x \in \left[a,b\right]  $, entonces 
+	\[ \int^{b}_{a} f\left(t\right) \; dt = g\left(b\right)-g\left(a\right) .\]
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle P \in P\left(\left[a,b\right] \right) $. Por el teorema del valor medio, tenemos que existe $\displaystyle \xi_{i} \in \left(t_{i}, t_{i+1}\right) $ tal que 
+	\[ m_{i}\left(t_{i+1}-t_{i}\right) \leq g\left(t_{i+1}\right)-g\left(t_{i}\right) = g'\left(\xi_{i}\right)\left(t_{i+1}-t_{i}\right) = f\left(\xi_{i}\right)\left(t_{i+1}-t_{i}\right) \leq M_{i}\left(t_{i+1}-t_{i}\right) .\]
+	Así, tenemos que
+	\[
+	\begin{split}
+	I\left(f,P\right) = \sum^{n-1}_{i = 0}m_{i}\left(t_{i+1}-t_{i}\right) \leq \sum^{n-1}_{i=0}g\left(t_{i+1}\right)-g\left(t_{i}\right) = g\left(b\right)-g\left(a\right) \leq \sum^{n-1}_{i=0}M_{i}\left(t_{i+1}-t_{i}\right) = S\left(f,P\right) .
+	\end{split}
+	\]
+	Así, tenemos que $\displaystyle \forall P \in P\left([a,b]\right) $, $\displaystyle I\left(f,P\right) \leq g\left(b\right)-g\left(a\right)\leq S\left(f,P\right) $. También tenemos que $\displaystyle \forall P \in P\left(\left[a,b\right] \right) $ se cumple que
+	\[ I\left(f,P\right) \leq \int^{b}_{a} f\left(t\right) \; dt \leq S\left(f,P\right) .\]
+	Así, si $\displaystyle \int^{b}_{a} f\left(t\right) \; dt \geq g\left(b\right)-g\left(a\right) $ (el otro caso es análogo) y $\displaystyle \epsilon > 0 $, existe $\displaystyle P \in P\left(\left[a,b\right] \right) $ tal que,
+	\[ 0 \leq \int^{b}_{a} f\left(t\right) \; dt - \left(g\left(b\right)-g\left(a\right)\right) \leq S\left(f,P\right)-I\left(f,P\right) < \epsilon .\]
+Por tanto, ha de ser que $\displaystyle \int^{b}_{a} f\left(t\right) \; dt = g\left(b\right)-g\left(a\right) $.	
+\end{proof}
+\begin{observation}
+\normalfont Otra forma de demostrar la igualdad de este último teorema es deducir que, dado que 
+\[ I\left(f,P\right) \leq g\left(b\right)-g\left(a\right) \leq S\left(f,P\right) .\]
+Por tanto, tenemos que $\displaystyle g\left(b\right)-g\left(a\right) \leq \overline{\int^{b}_{a}} f\left(t\right) \; dt $ y $\displaystyle \underline{\int^{b}_{a}} f\left(t\right) \; dt \leq g\left(b\right)-g\left(a\right) $. Así, dado que $\displaystyle f $ es integrable se tiene que
+\[\int^{b}_{a} f\left(t\right) \; dt = \underline{\int^{b}_{a}} f\left(t\right) \; dt \leq g\left(b\right)-g\left(a\right) \leq \overline{\int^{b}_{a}} f\left(t\right) \; dt = \int^{b}_{a} f\left(t\right) \; dt .\]
+Por tanto, $\displaystyle \int^{b}_{a} f\left(t\right) \; dt= g\left(b\right)-g\left(a\right) $ 
+\end{observation}
+\begin{eg}
+\normalfont Consideremos la integral $\displaystyle \int^{\pi }_{0} \sin x \; dx $. Sabemos que $\displaystyle -\cos x = \left(\sin x\right)' $. Por tanto, tenemos que
+\[\int^{\pi }_{0} \sin x \; dx = -\cos x |^{\pi }_{0} = 2.\]
+\end{eg}
+\section{Función logarítmica y exponencial}
+\begin{eg}
+\normalfont Sea $\displaystyle f:\left(0,\infty\right)\to \R $ con $\displaystyle f\left(t\right)= \frac{1}{t} $. 
+\end{eg}
+\begin{fdefinition}[Logaritmo neperiano]
+\normalfont Para $\displaystyle x > 0 $ se define \textbf{logaritmo neperiano} de $\displaystyle x $ por 
+\[ \ln x = \int^{x}_{1} \frac{1}{t} \; dt .\]
+\end{fdefinition}
+\begin{observation}
+\normalfont Tenemos que por el teorema fundamental del cálculo, $\displaystyle \left(\ln x\right)'= \frac{1}{x}. $ 
+Similarmente, tenemos que $\displaystyle \ln 1 = \int^{1}_{1} \frac{1}{t} \; dt = 0 $. Si $\displaystyle x > 1 $, tenemos que 
+\[ \ln x = \int^{x}_{1} \frac{1}{t} \; dx > 0 .\]
+Si $\displaystyle x < 1 $ se tiene que 
+\[ \ln x = \int^{x}_{1} \frac{1}{t} \; dt = - \int^{1}_{x} \frac{1}{t} \; dt < 0 .\]
+Dado que la derivada es siempre positiva, tenemos que es una función creciente y, como $\displaystyle \left(\ln x\right)'' = - \frac{1}{x^{2}} < 0 $, la función es cóncava. Vamos a calcular los límites. 
+\[ \lim_{n \to \infty} \ln n = \lim_{n \to \infty}\int^{n}_{1} \frac{1}{t} \; dt \geq \lim_{n \to \infty} \sum^{n}_{k=2}\frac{1}{k} = \infty .\]
+De este resultado y de que $\displaystyle f $ es creciente, se deduce que $\displaystyle \lim_{x \to \infty}\ln x = \infty $. Por otro lado, vamos a calcular $\displaystyle \lim_{x \to 0^{+}}\ln x $. 
+\[ \lim_{n \to \infty}\int^{\frac{1}{n}}_{1} \frac{1}{t} \; dt = \lim_{n \to \infty}-\int^{1}_{\frac{1}{n}} \frac{1}{t} \; dt \leq \lim_{n \to \infty}-\sum^{n-1}_{k=1}\frac{1}{\frac{1}{k}}\left(\frac{1}{k}-\frac{1}{k+1}\right) = \lim_{n \to \infty}-\sum^{n-1}_{k=1}\frac{1}{k+1} = - \infty .\]
+Dado que $\displaystyle f $ es creciente, tenemos que $\displaystyle \lim_{x \to 0^{+}}\ln x = -\infty $.
+\end{observation}
+\begin{ftheorem}[]
+\normalfont 
+\[ \forall x,y > 0, \;\ln xy = \ln x + \ln y.\]
+\end{ftheorem}
+\begin{proof}
+Sea $\displaystyle y $ fijo. Definimos $\displaystyle g\left(x\right) = \ln yx $. Tenemos que $\displaystyle g'\left(x\right) = \frac{1}{yx} \cdot y = \frac{1}{x} $. Como consecuencia del teorema del valor medio, tenemos que $\displaystyle g\left(x\right) = \ln x + K $. Tenemos que $\displaystyle g\left(1\right) = \ln 1 + K $, por lo que $\displaystyle K = g\left(1\right) = \ln y$. 
+Así, tenemos que $\displaystyle g\left(x\right) = \ln xy = \ln x + \ln y $.
+\end{proof}
+\begin{fprop}[]
+\normalfont 
+\begin{description}
+\item[(a)] $\displaystyle \forall x > 0 $, $\displaystyle \forall n \in \N $, $\displaystyle \ln x^{n} = n \ln x $.
+\item[(b)] $\displaystyle \forall x > 0 $, $\displaystyle \ln \frac{1}{x} = - \ln x $.
+\item[(c)] $\displaystyle \forall x,y > 0 $, $\displaystyle \ln \frac{x}{y} = \ln x - \ln y $.
+\end{description}
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(a)] Tenemos que si $\displaystyle n \in \N $, 
+	\[ \ln x^{n} = \ln\left(x + \cdots + x\right) = n \ln x .\]
+\item[(b)] 
+	\[ 0 = \ln \frac{x}{x} = \ln x + \ln\frac{1}{x} \iff \ln \frac{1}{x} = - \ln x.\]
+\item[(c)] 
+	\[ \ln \frac{x}{y} = \ln x + \ln \frac{1}{y} = \ln x - \ln y .\]
+\end{description}
+\end{proof}
+
+\begin{observation}
+\normalfont Tenemos que $\displaystyle \ln x $ es monótona creciente y se tiene que $\displaystyle \lim_{x \to \infty}\ln x = \infty $ y $\displaystyle \lim_{x \to 0^{+}} \ln x =- \infty$. Así, tenemos que $\displaystyle \forall \lambda \in \R $, $\displaystyle \exists x_{0} $ tal que $\displaystyle \ln x_{0} = \lambda$.
+Como consecuencia del valor medio, dado que $\displaystyle \left(\ln x\right)' > 0 $, se tiene que $\displaystyle \ln x  $ es inyectiva. Por tanto, cabe definir su inversa.
+\end{observation}
+\begin{fdefinition}[Función exponencial]
+\normalfont Definimos la función
+\[
+\begin{split}
+	\exp : \R \to & \left(0, \infty\right) \\
+	x \to & \exp\left(x\right) = \ln^{-1}x.
+\end{split}
+\]
+\end{fdefinition}
+\begin{observation}
+\normalfont Es decir, $\displaystyle \exp x = y \iff \ln y = x $.
+\end{observation}
+Por lo calculado anteriormente, tenemos que $\displaystyle \lim_{x \to -\infty}\exp x = 0 $ y $\displaystyle \lim_{x \to \infty}\exp x = \infty $. Además tenemos que
+\[ \left(\exp x\right) ' = \frac{1}{\ln' \exp x}= \exp x > 0 .\]
+Por tanto, tenemos que es creciente y convexa. 
+\begin{ftheorem}[]
+\normalfont 
+\[ \forall x,y \in \R, \; \exp\left(x+y\right) = \exp x \cdot \exp y .\]
+\end{ftheorem}
+\begin{proof}
+Sean $\displaystyle x' = \exp x $ e $\displaystyle y' = \exp y $. Tenemos que $\displaystyle \ln x' = x $ y $\displaystyle \ln y' = y $. Así, tenemos que
+\[ \exp\left(x+y\right) = \exp\left(\ln x' + \ln y'\right) = \exp\left(\ln x'y'\right) = x'y' = \exp x \cdot \exp y.\]
+\end{proof}
+\begin{notation}
+\normalfont Se define $\displaystyle e = \exp 1 $.
+\end{notation}
+\begin{observation}
+\normalfont Por tanto, tenemos que $\displaystyle \exp n = \exp\left(1 + \cdots + 1\right) = e^{n} $.
+\end{observation}
+\begin{notation}
+\normalfont Se define $\displaystyle \exp x = e^{x} $.
+\end{notation}
+\begin{ftheorem}[]
+\normalfont 
+\[\lim_{x \to \infty}x\ln\left(1+\frac{1}{x}\right) = 1 .\]
+\end{ftheorem}
+\begin{proof}
+\[\lim_{x \to \infty}x\ln\left(1+\frac{1}{x}\right) = \lim_{x \to \infty}\frac{\ln\left(1+\frac{1}{x}\right)}{\frac{1}{x}} = \lim_{x \to \infty} \frac{\frac{1}{1+\frac{1}{x}} \cdot \left(-\frac{1}{x^{2}}\right)}{-\frac{1}{x^{2}}} = 1 .\]
+\end{proof}
+\begin{observation}
+\normalfont Por tanto, se tiene que $\displaystyle \lim_{n \to \infty}n\ln\left(1 + \frac{1}{n}\right) = 1$. Dado que el logaritmo es continuo y monótono, se tiene que \footnote{Sabemos que este límite converge a $\displaystyle l \in \R $ porque es monótono y está acotado superiormente. De aquí se deduce que $\displaystyle \lim_{n \to \infty}\ln\left(1 + \frac{1}{n}\right)^{n} = \ln l = 1 $, y por ser el logaritmo inyectivo, $\displaystyle \lim_{n \to \infty}\left(1+\frac{1}{n}\right)^{n} = e $.} 
+\[ \lim_{n \to \infty}\left(1 + \frac{1}{n}\right)^{n} = \exp 1 = e .\]
+\end{observation}
+\begin{fdefinition}[]
+\normalfont 
+\begin{description}
+\item[(a)] $\displaystyle \forall a > 0 $ y $\displaystyle \forall x \in \R $, se define $\displaystyle a^{x} = e^{x\ln a}  $.
+\item[(b)] Si $\displaystyle a > 0 $ y $\displaystyle a \neq 1 $, se denomina la inversa de $\displaystyle a^{y} $ al $\displaystyle \log_{a}x = \left(a^{y}\right)^{-1} $.
+\end{description}
+\end{fdefinition}
+\begin{fprop}[]
+\normalfont 
+\begin{description}
+\item[(a)] $\displaystyle \forall a,b,c \in \R $, $\displaystyle \left(a^{b}\right)^{c} = a^{bc} $.
+\item[(b)] $\displaystyle \forall a \in \R $, $\displaystyle a^{1} = a $.
+\item[(c)] $\displaystyle a^{x + y}= a^{x} \cdot a^{y} $.
+\item[(d)] $\displaystyle \log_{a} = \frac{\log_{x}}{\log_{a}} $.
+\item[(e)] $\displaystyle \left(\log_{a}x\right)' = \frac{1}{x\ln a} $.
+\end{description}
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(a)] 
+	\[ \left(a^{b}\right)^{c} = e^{c\ln a^{b}} = e^{c\ln e^{b\ln a}} = e^{cb\ln a}= a^{bc} .\]
+\item[(b)] 
+	\[ a^{1} = e^{\ln 1} = e^{0} = 1 .\]
+\item[(c)] 
+	\[a^{x + y} = e^{\left(x+y\right)\ln a} = e^{x\ln a + y\ln a} = e^{x\ln a} \cdot e^{y \ln a} = a^{x}a^{y} .\]
+\item[(d)] 
+	\[ a^{\log_{a}x} = e^{\log_{a}x \cdot \ln a}= e^{\ln x}= x .\]
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont A partir de estas funciones se definen las funciones hiperbólicas y se pueden estudiar sus propiedades.
+\end{observation}
+\begin{fprop}[]
+\normalfont 
+\begin{description}
+\item[(a)] Sea una función tal que $\displaystyle f'\left(x\right) = f\left(x\right) $, entonces existe $\displaystyle K \in \R $ tal que $\displaystyle f\left(x\right) = Ke^{x} $.
+\item[(b)] $\displaystyle \lim_{x \to \infty}\frac{e^{x}}{x^{n}} = \infty $, $\displaystyle \forall n \in \N $.
+\end{description}
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(a)] Sea $\displaystyle f\left(x\right) $ tal que $\displaystyle f'\left(x\right) = f\left(x\right) $. Sea $\displaystyle g\left(x\right) = \frac{f\left(x\right)}{e^{x}} $. Tenemos que
+	\[ g'\left(x\right) = \frac{f'\left(x\right)e^{x}-f\left(x\right)e^{x}}{\left(e^{x}\right)^{2}} = 0 .\]
+	Por tanto, tenemos que $\displaystyle g\left(x\right) = K $. Por tanto, se obtiene que $\displaystyle f\left(x\right) = Ke^{x} $.
+\item[(b)] Aplicamos L'Hôpital $\displaystyle n $ veces,
+	\[ \lim_{x \to \infty}\frac{e^{x}}{x^{n}} = \lim_{x \to \infty}\frac{e^{x}}{nx^{n-1}} = \cdots = \lim_{x \to \infty}\frac{e^{x}}{n!} = \infty .\]
+\end{description}
+\end{proof}
+\section{Criterio de integrabilidad de Lebesgue}
+\begin{fdefinition}[Contenido cero]
+	\normalfont Se dice que $\displaystyle A \subset \R $ tiene \textbf{contenido cero} si $\displaystyle \forall \epsilon > 0 $, existe una sucesión de intervalos abiertos \footnote{Se pueden repetir intervalos.} $\displaystyle \left\{ \left(a_{n}, b_{n}\right) \; : \; n \in \N\right\}  $ tal que 
+	\[  A \subset \bigcup_{n \in \N}\left(a_{n}, b_{n}\right)  \;\; \text{y} \;\;  \sum^{\infty}_{n=1}\left(b_{n}-a_{n}\right) \leq \epsilon.\]
+\end{fdefinition}
+\begin{eg}
+	\normalfont Sea $\displaystyle A = \left\{ a\right\} \subset \R $. Sea $\displaystyle \epsilon > 0 $, tenemos que $\displaystyle A \subset \left(a - \frac{\epsilon }{2}, a + \frac{\epsilon }{2}\right) $. Así, $\displaystyle a + \frac{\epsilon }{2}-\left(a-\frac{\epsilon }{2}\right) = \epsilon $. Tenemos que este conjunto tiene contenido cero \footnote{En este caso, hemos cogido la sucesión de intervalos que contiene un intervalo abierto $\displaystyle \left(a - \frac{\epsilon }{2}, a + \frac{\epsilon }{2}\right) $ y el resto son el intervalo $\displaystyle \left(a,a\right) = \emptyset $.} . 
+\end{eg}
+\begin{eg}
+	\normalfont Sea $\displaystyle \emptyset \neq A \subset \R $ un conjunto finito de números reales. Vamos a ver que tiene contenido cero. Sea $\displaystyle \epsilon > 0 $. Sea $\displaystyle A = \left\{ x_{1}, \ldots, x_{n}\right\}  $. Cogemos la familia de intervalos,
+	\[ \left\{ \left(x_{i}-\frac{\epsilon }{2n}, x_{i}+\frac{\epsilon }{2n}\right) \; : \; i = 1, \ldots, n\right\}  .\]
+	Así, tenemos que 
+\[\sum^{n}_{i=1} x_{i}+\frac{\epsilon }{2n} - \left(x_{i} - \frac{\epsilon }{2n}\right) = \sum^{n}_{i=1}\frac{\epsilon }{n} = \epsilon.\]
+\end{eg}
+\begin{eg}
+	\normalfont Sea $\displaystyle A = \left\{ r_{n}\right\}_{n\in\N} \subset \R $. Sea $\displaystyle \epsilon > 0 $, cogemos  
+	\[ \left(a_{n},b_{n}\right) = \left(r_{n}-\frac{\epsilon }{2^{n+1}}, r_{n} + \frac{\epsilon }{2^{n+1}}\right) .\]
+	Así, tenemos que $\displaystyle A \subset \bigcup_{n \in \N}\left(a_{n}, b_{n}\right) $. Así, tenemos que 
+	\[\sum^{\infty}_{n=1}\left[r_{n} + \frac{\epsilon }{2} - \left(r_{n}-\frac{\epsilon }{2}\right)\right] = \epsilon \sum^{\infty}_{n=1}\frac{1}{2^{n}} = \epsilon .\]
+Así, $\displaystyle A $ tiene contenido cero.	
+\end{eg}
+\begin{observation}
+\normalfont De estos ejemplos se deduce que cualquier conjunto finito o numerable de $\displaystyle \R $ tiene contenido cero.
+\end{observation}
+\begin{ftheorem}[Teorema de integrabilidad de Lebesgue]
+	\normalfont Sea $\displaystyle f : \left[a,b\right] \to \R $. Tenemos que $\displaystyle f $ integrable en $\displaystyle \left[a,b\right]  $ si y solo si el conjunto de discontinuidades de $\displaystyle f $ tiene contenido cero.
+\end{ftheorem}
+\begin{fprop}[]
+	\normalfont Sea $\displaystyle g : \left[a,b\right] \to \R $ monótona. Entonces existe $\displaystyle \int^{b}_{a} g\left(x\right) \; dx $.
+\end{fprop}
+\begin{proof}
+Dado que el conjunto de discontinuidades de una función monótona es a lo más numerable, tenemos quetiene contenido cero, por lo que la función es integrable.
+\end{proof}
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle g : \left[a,b\right] \to \R $ y $\displaystyle f : \left[a,b\right] \to \R $ continua con $\displaystyle g\left(\left[a,b\right] \right)\subset \dom\left(f\right) $. Tenemos que $\displaystyle f \circ g $ es integrable en $\displaystyle \left[a,b\right]  $.
+\end{ftheorem}
+\begin{proof}
+Dado que $\displaystyle g $ es integrable, tenemos que el conjunto de sus discontinuidades tiene contenido cero. Como $\displaystyle f $ es continua, $\displaystyle f \circ g $ es continua donde $\displaystyle g $ es continua. Así, el conjunto de discontinuidades de $\displaystyle g $ y de $\displaystyle f\circ g $ es el mismo, por lo que el conjunto de discontinuidades de $\displaystyle f \circ g $ tiene contenido cero y, por el teorema anterior se tiene que $\displaystyle f \circ g $ es integrable.
+\end{proof}
+\begin{fcolorary}[]
+	\normalfont Si $\displaystyle f $ es integrable en $\displaystyle \left[a,b\right]  $, $\displaystyle f^{2} $ también lo es.
+\end{fcolorary}
+\begin{proof}
+Si $\displaystyle h\left(x\right) = x^{2} $, se tiene que $\displaystyle f^{2} = h\circ f $. Dado que $\displaystyle h $ es continua y $\displaystyle f $ es integrable, por la proposición anterior se tiene que $\displaystyle f^{2} $ es integrable.
+\end{proof}
+\begin{fcolorary}[]
+\normalfont Si $\displaystyle f $ y $\displaystyle g $ son integrables, tenemos que $\displaystyle fg $ es integrable.
+\end{fcolorary}
+\begin{proof}
+Si $\displaystyle f $ y $\displaystyle g $ son integrables, tenemos que $\displaystyle f + g $ es integrable. Por el corolario anterior tenemos que $\displaystyle \left(f+g\right)^{2} $ es integrable. Por tanto, tenemos que 
+\[ fg = \frac{\left(f+g\right)^{2}-f^{2}-g^{2}}{2} .\]
+Por lo que $\displaystyle fg $ es integrable.
+\end{proof}
+\begin{eg}
+	\normalfont Consideremos una función $\displaystyle f : \left[0,1\right] \to \R $ con $\displaystyle f\left(0\right) = 0 $ y $\displaystyle f\left(1\right) = 1 $ tal que
+	\[ f\left(x\right) = \frac{n^{2}}{2n+1}\left[\left(n+1\right)x-1\right] \left[\left(n+1\right)x + 1\right] , \; \frac{1}{n+1} \leq x < \frac{1}{n} .\]
+Si calculamos
+\[\lim_{x \to \frac{1}{n}}f\left(x\right) = 1 .\]
+Así, en todos los $\displaystyle \frac{1}{n} \in \left[0,1\right]  $ tenemos que el límite tiende a 1. Además tenemos que 
+\[f\left(\frac{1}{n+1}\right) = 0 .\]
+Entonces, tenemos que la función no es continua en los puntos donde $\displaystyle x = \frac{1}{n} $. Además, tenemos que
+\[ f\left(x\right) = \frac{n^{2}}{2n+1}\left[\left(n+1\right)^{2}x^{2}-1\right]  .\]
+Es decir, se parece a parábolas que tienden a 1 en los puntos de la forma $\displaystyle \frac{1}{n} $. Si fuera integrable, tendríamos que
+\[\int^{1}_{0} f\left(x\right) \; dx = \sum^{\infty}_{n=1}\int^{\frac{1}{n}}_{\frac{1}{n+1}} f\left(x\right) \; dx .\]
+Vamos a demostrar que es integrable con el criterio de integrabilidad de Riemann. Sea $\displaystyle \epsilon > 0 $ cogemos $\displaystyle n_{0} \in \N $ tal que $\displaystyle \frac{1}{n_{0}} < \frac{\epsilon }{2} $. Entonces, tenemos que $\displaystyle f|_{\left[\frac{1}{n_{0}}, 1\right] } $ es integrable porque continene un número finito de discontinuidades. Entonces, existe $\displaystyle P' \in P\left(\left[\frac{1}{n_{0}},1\right] \right) $, tal que 
+\[S\left(f|_{\left[\frac{1}{n_{0}}, 1\right] }, P'\right) - I\left(f|_{\left[\frac{1}{n_{0}}, 1\right] },P'\right) < \frac{\epsilon }{2}.\]
+Ahora, consideremos la partición $\displaystyle P = \left\{ 0\right\} \cup P' $. Tenemos que
+\[ S\left(f,P\right)-I\left(f,P\right) = \frac{1}{n_{0}} + S\left(f,P'\right) - \left(0 + I\left(f,P'\right)\right) < \frac{1}{n_{0}} + \frac{\epsilon }{2} < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon .\]
+\end{eg}
+\begin{eg}
+	\normalfont Consideremos $\displaystyle f : \left[a,b\right] \to \R $ integrable. Vamos a demostrar que $\displaystyle \int^{b}_{a} f\left(t\right) \; dt = \int^{b+c}_{a + c} f\left(t-c\right) \; dt $. Sea $\displaystyle g\left(t\right) = f\left(t-c\right) $, tenemos que $\displaystyle \dom\left(g\right) = \left[a+c, b + c\right]  $. Tenemos que $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists P \in P\left(\left[a,b\right] \right) $ tal que $\displaystyle S\left(f,P\right)-I\left(f,P\right) < \epsilon  $. Tenemos que $\displaystyle P = \left\{ t_{0}=a, t_{1}, \ldots, t_{n} =b\right\}  $. Ahora consideramos la partición
+	\[ P' = \left\{ t_{0}', t'_{1}, \ldots, t'_{n}\right\}, \; t'_{i} = t_{i} +c, \; \forall i = 0, \ldots, n  .\]
+	Así, tenemos que $\displaystyle S\left(f,P\right)=S\left(g,P'\right) $ y $\displaystyle I\left(f,P\right) = I\left(g,P'\right) $. Por tanto, 
+	\[S\left(g,P'\right)-I\left(g,P'\right) < \epsilon  .\]
+Así, tenemos que $\displaystyle f\left(t-c\right) $ es integrable. Ahora demostramos la igualdad:
+\[I\left(g,P'\right) \leq \int^{b}_{a} f\left(t\right) \; dt \leq S\left(g,P'\right) .\]
+Por tanto, $\displaystyle \int^{b}_{a} f\left(t\right) \; dt = \int^{b + c}_{a+c} f\left(t-c\right) \; dt $.
+\end{eg}
+\begin{eg}
+\normalfont Consideremos $\displaystyle f\left(x\right) = \log_{e^{x}}\left(\sin x\right) $. Vamos a calcular su derivada. Tenemos que 
+\[f\left(x\right) = \log_{e^{x}}\left(\sin x\right) = \frac{\ln \sin x}{\ln e^{x}} = \frac{\ln \sin x}{x} .\]
+Ahora resulta fácil ver que 
+\[f'\left(x\right) = \frac{x\frac{\cos x}{\sin x}- \ln \sin x}{x^{2}} = \frac{\cos x - \sin x \ln \sin x}{x^{2}\sin x} .\]
+\end{eg}
+\begin{eg}
+\normalfont Calculemos el límite
+\[ \lim_{x \to 0}\frac{e^{x}-1-x-\frac{x^{2}}{2}-\frac{x^{3}}{6}}{x^{3}} .\]
+Aplicamos L'Hôpital:
+\[
+\begin{split}
+	\lim_{x \to 0}\frac{e^{x}-1-x-\frac{x^{2}}{2}-\frac{x^{3}}{6}}{x^{3}} = & \lim_{x \to 0}\frac{e^{x}-1-x-\frac{x^{2}}{2}}{3x^{2}} = \lim_{x \to 0}\frac{e^{x}-1-x}{6x} = \lim_{x \to 0}\frac{e^{x}-1}{6} = 0.
+\end{split}
+\]
+\end{eg}
+\begin{eg}
+\normalfont Consideremos la función 
+\[f\left(x\right) = 
+\begin{cases}
+e^{-\frac{1}{x^{2}}}, \; x \neq 0\\
+0, \; x = 0
+\end{cases}
+.\]
+Tenemos que calcular $\displaystyle f' $, $\displaystyle f $ y $\displaystyle f^{\left(n\right)}\left(0\right) $ y estudiar su continuidad. Empezamos por esto último. El único problema está en $\displaystyle x = 0 $:
+\[ \lim_{x \to 0}e^{-\frac{1}{x^{2}}} = 0.\]
+Por tanto, $\displaystyle f $ es continua en $\displaystyle \R $. Para pintar la función puede resultar útil saber que $\displaystyle \lim_{x \to \pm \infty}e^{-\frac{1}{x^{2}}} = 1 $. Ahora derivamos,
+\[ f'\left(x\right) = \frac{2}{x^{3}}e^{-\frac{1}{x^{2}}} = 
+\begin{cases}
+< 0, \; x < 0 \\
+> 0, \; x > 0
+\end{cases}
+.\]
+Calculamos la derivada en 0:
+\[f'\left(0\right) = \lim_{h \to 0}\frac{f\left(h\right)-f\left(0\right)}{h} = \lim_{h \to 0}\frac{e^{-\frac{1}{h^{2}}}}{h} = \lim_{h \to 0}\frac{\frac{1}{h}}{e^{\frac{1}{h^{2}}}} .\]
+Sea $\displaystyle y = \frac{1}{h} $, si $\displaystyle h \to 0 $, $\displaystyle y \to \infty $, así,
+\[f'\left(0\right) = \lim_{y \to \infty}\frac{y}{e^{y^{2}}} = \lim_{y \to \infty}\frac{1}{2ye^{y^{2}}} = 0 .\]
+Así, tenemos que 
+\[f'\left(x\right) = 
+\begin{cases}
+\frac{2}{x^{3}}e^{-\frac{1}{x^{2}}}, \; x \neq 0\\
+0, \; x = 0
+\end{cases}
+.\]
+Ahora calculamos la segunda derivada.
+\[f''\left(0\right) = \lim_{h \to 0}\frac{f'\left(h\right)-f'\left(0\right)}{h} = \lim_{h \to 0} \frac{\frac{2}{h^{3}}e^{-\frac{1}{h^{2}}}}{h} = \lim_{h \to 0}\frac{\frac{2}{h^{4}}}{e^{\frac{1}{h^{2}}}} = \lim_{y \to \infty}\frac{2y^{4}}{e^{y^{2}}}=0 .\]
+Para $\displaystyle x \neq 0 $,
+\[f'\left(x\right) = \left(-\frac{6}{x^{4}}+\frac{4}{x^{6}}\right)e^{-\frac{1}{x^{2}}} .\]
+Supongamos que 
+\[ f^{\left(n\right)}\left(x\right) = 
+\begin{cases}
+P_{n}\left(\frac{1}{x}\right)e^{-\frac{1}{x^{2}}}, \; x \neq 0\\
+0, \; x = 0
+\end{cases}
+.\]
+Ahora consideremos el caso $\displaystyle n + 1 $. Vamos a calcular $\displaystyle f^{\left(n+1\right)} $. Si $\displaystyle x \neq 0 $, 
+\[
+\begin{split}
+	f\left(n+1\right)\left(x\right) = & P'_{n}\left(\frac{1}{x}\right)\left(-\frac{1}{x^{2}}\right)e^{-\frac{1}{x^{2}}} + P_{n}\left(\frac{1}{x}\right)\left(-\frac{2}{x^{3}}\right)e^{-\frac{1}{x^{2}}} \\
+	= &  e^{-\frac{1}{x^{2}}}P'_{n}\left(\frac{1}{x}\right)\left(-\frac{1}{x^{2}}\right) + P_{n}\left(\frac{1}{x}\right)\left(-\frac{2}{x^{3}}\right) = e^{-\frac{1}{x^{2}}}P_{n+1}\left(\frac{1}{x}\right).
+\end{split}
+\]
+Ahora si $\displaystyle x = 0 $, 
+\[
+\begin{split}
+	f^{\left(n+1\right)}\left(0\right) = & \lim_{h \to 0}\frac{f^{\left(n\right)}\left(h\right)-f^{\left(n\right)}\left(0\right)}{h} = \lim_{h \to 0}\frac{P_{n}\left(\frac{1}{h}\right)e^{-\frac{1}{h^{2}}}}{h}  = \lim_{h \to 0}\frac{P_{n}\left(\frac{1}{h}\right)\frac{1}{h}}{e^{-\frac{1}{h^{2}}}}= \lim_{y \to \infty}\frac{P_{n}\left(y\right)y}{e^{y^{2}}} = 0.
+\end{split}
+\]
+\end{eg}
+\section{Cálculo de primitivas}
+Sabemos que si $\displaystyle \exists \int^{b}_{a} f\left(t\right) \; dt $ y $\displaystyle \exists g $ tal que $\displaystyle g'\left(x\right) = f\left(x\right) $, $\displaystyle \forall x \in \left[a,b\right]  $, entonces, por la regla de Barrow
+\[\int^{b}_{a} f\left(t\right) \; dt = g\left(b\right)-g\left(a\right) .\]
+\begin{fdefinition}[Primitiva]
+\normalfont Dada $\displaystyle f $, se dice que $\displaystyle g $ es una \textbf{primitiva} (o \textbf{integral}) de $\displaystyle f $ si $\displaystyle g' = f $.
+\end{fdefinition}
+\begin{observation}
+\normalfont Por la regla de Barrow, el cálculo de integrales se reduce muchas veces al cálculo de primitivas.
+\end{observation}
+\begin{eg}
+\normalfont Consideremos $\displaystyle \int^{\pi}_{0} \sin x \; dx $. Tenemos que $\displaystyle \left(-\cos x\right)' = \sin x $, por lo que 
+\[ \int^{\pi }_{0} \sin x  \; dx = \left[-\cos x\right] ^{\pi }_{0} = 2 .\]
+\end{eg}
+

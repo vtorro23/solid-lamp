@@ -62,6 +62,7 @@ La correspondencia entre matrices y formas bilineales es biyectiva. Así, podemo
 	\[\beta\left(\vec{x}, \vec{y}\right)^{t} = \left(\begin{pmatrix} x^{1} & \cdots & x^{n} \end{pmatrix} A \begin{pmatrix} y^{1} \\ \vdots \\ y^{n} \end{pmatrix}\right)^{t} = \begin{pmatrix} y^{1} & \cdots & y^{n} \end{pmatrix} \underbrace{A^{t}}_{A} \begin{pmatrix} x^{1} \\ \vdots \\ x^{n} \end{pmatrix} = \beta\left(\vec{y}, \vec{x}\right).\]
 	Por tanto, $\displaystyle \beta  $ es simétrica.
 \end{observation}
+\section{Ortogonalidad}
 \begin{fdefinition}[Ortogonal]
 \normalfont Sea $\displaystyle \beta  $ una forma bilineal simétrica. Diremos que los vectores $\displaystyle \vec{x}, \vec{y} \in V $ son \textbf{ortogonales} respecto de $\displaystyle \beta  $ si $\displaystyle \beta\left(\vec{x}, \vec{y}\right) = 0 $. Si $\displaystyle \emptyset \neq A \subset V $, llamaremos \textbf{ortogonal} a $\displaystyle A $ respecto de $\displaystyle \beta  $ y escribiremos $\displaystyle A^{\perp }_{\beta } = \left\{ \vec{x} \in V \; : \; \beta\left(\vec{x}, \vec{y}\right) = 0, \; \forall \vec{y} \in A\right\}  $.
 \end{fdefinition}
@@ -248,6 +249,7 @@ Así, queda demostrado que $\displaystyle L = \left(L^{\perp }_{\beta }\right)^{
 Tenemos que $\displaystyle \rad\left(\beta_{L}\right) = L\cap L^{\perp }_{\beta } $. De esta forma,
 \[ \rad\left(\beta _{L^{\perp }_{\beta }}\right) = L^{\perp }_{\beta }\cap\left(L^{\perp }_{\beta }\right)^{\perp }_{\beta } = \rad\left(\beta_{L}\right) .\]
 \end{proof}
+\section{Bases ortogonales}
 \begin{fdefinition}[]
 	\normalfont Una base $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ de $\displaystyle V $ es \textbf{ortogonal} para $\displaystyle \beta  $ si para $\displaystyle i \neq j $, $\displaystyle \beta\left(\vec{u}_{i}, \vec{u}_{j}\right) = 0 $.
 \end{fdefinition}
@@ -261,7 +263,7 @@ Tenemos que $\displaystyle \rad\left(\beta_{L}\right) = L\cap L^{\perp }_{\beta 
 		Así, $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es una base de $\displaystyle V $ ortogonal para $\displaystyle \beta  $. En efecto, para $\displaystyle i \geq 2 $,
 		\[\beta\left(\vec{u}_{1}, \vec{u}_{i}\right) = 0 .\]
 		Si $\displaystyle i \neq j$ ($\displaystyle i,j \geq 2 $), tenemos que $\displaystyle \beta\left(\vec{u}_{i}, \vec{u}_{j}\right) = \beta_{ \left\{ \vec{u}_{i}\right\} ^{\perp }_{\beta }} = 0 $.	
-	\end{description}
+	\end{description} 
 	Ahora vamos a ver que $\displaystyle \rad\left(\beta \right)= L\left( \left\{ \vec{u}_{i} \in B \; : \; \beta\left(\vec{u}_{i}, \vec{u}_{i}\right)=0\right\} \right) $. Si $\displaystyle \vec{x} \in \rad\left(\beta \right) $, tenemos que si $\displaystyle \vec{u}_{i} \in B $ no es isótropo, $\displaystyle \beta\left(\vec{x}, \vec{u}_{i}\right) = x^{i}\beta\left(\vec{u}_{i}, \vec{u}_{i}\right) = 0 $, por lo que $\displaystyle x^{i} = 0$.
 	Así, tenemos que los únicos coeficientes que no se anulan son aquellos que corresponden a los vectores isótropos de la base de $\displaystyle B $. Así, $\displaystyle \vec{x} \in L\left( \left\{ \vec{u}_{i} \in B \; : \; \beta\left(\vec{u}_{i}, \vec{u}_{i}\right) = 0\right\} \right) $. Recíprocamente, si $\displaystyle \vec{x} \in L\left( \left\{ \vec{u}_{i} \in B \; : \; \beta\left(\vec{u}_{i}, \vec{u}_{i}\right) = 0\right\} \right) $ tenemos que si $\displaystyle \vec{y} \in V $ 
 	\[\beta\left(\vec{x},\vec{y}\right) = x^{1}y^{1}\beta\left(\vec{u}_{1},\vec{u}_{1}\right) + \cdots + x^{n}y^{n}\beta\left(\vec{u}_{n}, \vec{u}_{n}\right) .\]
@@ -390,4 +392,234 @@ Entonces, tenemos que
 \]
 Una consecuencia de esto es que 
 \[\beta\left(\vec{x}, \vec{x}\right) = \left(x^{1}\right)^{2} + \cdots + \left(x^{p}\right)^{2} - \left(x^{p + 1}\right)^{2} - \cdots - \left(x^{p + q}\right)^{2} .\]
+\section{Adjunto de un endomorfismo}
+\begin{fdefinition}[]
+	\normalfont Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ una base de $\displaystyle V $. Se dice que es una base \textbf{ortonormal} para $\displaystyle \beta  $ si
+	\[ \beta\left(\vec{u}_{i}, \vec{u}_{j}\right) = 
+	\begin{cases}
+	0, \; i \neq j \\
+	1, \; i = j
+	\end{cases}
+	.\]
+\end{fdefinition}
+\begin{observation}
+\normalfont Si $\displaystyle \K = \C $ existe si $\displaystyle \beta  $ es no degenerada. En el caso de $\displaystyle \K = \R $, estas bases existen si $\displaystyle \beta  $ es no degenerada, tiene índice nulo y coíndice máximo. 
+\end{observation}
+Recordamos que si $\displaystyle \beta  $ es una forma bilineal simétrica no degenerada, la aplicación $\displaystyle \theta : V \to V^{*} $, con $\displaystyle \theta\left(\vec{x}\right) = \beta_{\vec{x}} $, es un isomorfismo. Si $\displaystyle f : V \to V $ es lineal, tenemos que la aplicación $\displaystyle \theta^{-1}\circ f^{*}\circ\theta : V \to V $ es lineal.
+\begin{fdefinition}[Adjunto]
+\normalfont Llamaremos \textbf{adjunto} de $\displaystyle f $ a la aplicación
+\[ \ad\left(f\right) = \theta^{-1}\circ f^{*}\circ \theta .\]
+\end{fdefinition}
+\begin{observation}
+\normalfont La aplicación $\displaystyle \ad\left(f\right) $ es lineal.
+\end{observation}
+Tenemos que $\displaystyle \forall \vec{x} \in V $,
+\[\ad\left(f\right)\left(\vec{x}\right) = \theta^{-1}\left(\beta_{\vec{x}}\circ f\right) .\]
+Así, tenemos que $\displaystyle \forall \vec{y} \in V $,
+\[ \beta\left(\ad\left(f\right)\left(\vec{x}\right), \vec{y}\right) = \beta_{\theta^{-1}\left(\beta_{\vec{x}}\circ f\right)}\left(\vec{y}\right)= \beta_{\vec{x}}\circ f\left(\vec{y}\right) = \beta_{\vec{x}}\left(f\left(\vec{y}\right)\right) =\beta\left(\vec{x}, f\left(\vec{y}\right)\right) .\]
+\begin{fprop}[]
+\normalfont Si $\displaystyle f : V \to V $ es lineal, $\displaystyle \exists ! g : V \to V $ tal que $\displaystyle \forall \vec{x}, \vec{y} \in V $, $\displaystyle \beta\left(g\left(\vec{x}\right), \vec{y}\right) = \beta\left(\vec{x}, f\left(\vec{y}\right)\right) $.
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[Unicidad.] Supogamos que existen $\displaystyle g,g' : V \to V $ tales que 
+	\[
+	\begin{split}
+		\forall \vec{x}, \vec{y} \in V, \; & \beta\left(g\left(\vec{x}\right), \vec{y}\right) = \beta\left(\vec{x}, f\left(\vec{y}\right)\right) \\
+						   & \beta\left(g'\left(\vec{x}\right), \vec{y}\right)=\beta\left(\vec{x}, f\left(\vec{y}\right)\right).
+	\end{split}
+	\]
+	Así, tenemos que $\displaystyle \forall \vec{x}, \vec{y} \in V $,
+	\[ \beta\left(g\left(\vec{x}\right), \vec{y} \right) = \beta\left(g'\left(\vec{x}\right), \vec{y}\right) \Rightarrow \beta\left(g\left(\vec{x}\right)-g'\left(\vec{x}\right), \vec{y}\right) = 0, \forall \vec{y} \in V .\]
+	Así, tenemos que $\displaystyle \left(g-g'\right)\left(\vec{x}\right) = g\left(\vec{x}\right)-g'\left(\vec{x}\right) \in \rad\left(\beta \right)= \left\{ \vec{0}\right\}  $. Por tanto, tenemos que $\displaystyle \forall \vec{x} \in V $, $\displaystyle g\left(\vec{x}\right) = g'\left(\vec{x}\right) $, por lo que $\displaystyle g = g' $.
+\item[Existencia.] Tenemos que existe, puesto que la aplicación $\displaystyle \ad\left(f\right) $ cumple las hipótesis de la proposición.
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont Así, hemos demostrado que la aplicación adjunta es única.
+\end{observation}
+Si existe $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base ortonormal, consideremos $\displaystyle A = \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(f\right) $ y $\displaystyle B = \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\ad\left(f\right)\right) $. Vamos a ver como podemos relacionar estas matrices. Tenemos que
+\[f\left(\vec{u}_{i}\right) = a^{1}_{i}\vec{u}_{1} + \cdots + a^{n}_{i}\vec{u}_{n} \]
+\[ \ad\left(f\right)\left(\vec{u}_{j}\right) = b^{1}_{j}\vec{u}_{1} + \cdots + b^{n}_{j}\vec{u}_{n} .\]
+Así, por la proposición anterior, $\displaystyle \beta\left(f\left(\vec{u}_{i}\right), \vec{u}_{j}\right) = \beta\left(\vec{u}_{i}, \ad\left(f\right)\left(\vec{u}_{j}\right)\right) $. Tenemos que
+\[ \beta\left(f\left(\vec{u}_{i}\right),\vec{u}_{j}\right)\beta\left(a^{1}_{i}\vec{u}_{1} + \cdots + a^{n}_{i}\vec{u}_{n}, \vec{u}_{j}\right) =a^{j}_{i} .\]
+Por otro lado, tenemos que
+\[
+\begin{split}
+	\beta\left(\vec{u}_{i}, \ad\left(f\right)\left(\vec{u}_{j}\right)\right) = & \beta\left(\vec{u}_{i}, b^{1}_{j}\vec{u}_{1} + \cdots + b^{n}_{j}\vec{u}_{n}\right) = b^{i}_{j} .
+\end{split}
+\]
+Por lo visto en la proposición anterior, tenemos que $\displaystyle a^{j}_{i} = b^{i}_{j} $.
+\begin{observation}
+\normalfont Así, tenemos que $\displaystyle B = A^{t} $.
+\end{observation}
+\begin{observation}
+\normalfont El adjunto del adjunto es el original, es decir, $\displaystyle \ad\left(\ad\left(f\right)\right) = f$.
+\end{observation}
+En efecto, 
+\[ \beta\left(\ad\left(\ad\left(f\right)\right)\left(\vec{x}\right), \vec{y}\right) = \beta\left(\ad\left(f\right)\left(\vec{x}\right), \ad\left(f\right)\left(\vec{y}\right)\right) =\beta\left(\vec{x}, \ad\left(f\right)\left(\vec{y}\right)\right)= \beta\left(f\left(\vec{x}\right), \vec{y}\right).\]
+Así, tenemos que $\displaystyle \forall \vec{x}, \vec{y} \in V $, $\displaystyle \beta\left(\ad\left(\ad\left(f\right)\right)\left(\vec{x}\right) - f\left(\vec{x}\right), \vec{y}\right) = 0 $, por lo que $\displaystyle \ad\left(\ad\left(f\right)\right)\left(\vec{x}\right) - f\left(\vec{x}\right) \in \rad\left(\beta \right)= \left\{ \vec{0}\right\}  $, que es equivalente a decir que $\displaystyle \ad\left(\ad\left(f\right)\right) = f $.
+\begin{fdefinition}[]
+\normalfont Se dice que una aplicación lineal $\displaystyle f : V \to V $ es \textbf{simétrica} si $\displaystyle \ad\left(f\right) = f $.
+\end{fdefinition}
+\section{Grupo ortogonal}
+\begin{fdefinition}[]
+\normalfont Un endomorfismo $\displaystyle f $  de $\displaystyle V $ es \textbf{ortogonal} si $\displaystyle \forall \vec{x}, \vec{y} \in V $, $\displaystyle \beta\left(f\left(\vec{x}\right), f\left(\vec{y}\right)\right) = \beta\left(\vec{x}, \vec{y}\right) $.
+\end{fdefinition}
+\begin{fprop}[]
+\normalfont Si $\displaystyle f \in \End\left(V\right) $ es ortogonal, entonces $\displaystyle f $ es un automorfismo.
+\end{fprop}
+\begin{proof}
+	Dado que $\displaystyle f $ es un endomorfismo, basta con demostrar que es inyectiva. Si $\displaystyle \vec{x} \in \Ker\left(f\right) $, tenemos que $\displaystyle \forall \vec{y} \in V $, $\displaystyle \beta\left(\vec{x}, \vec{y}\right) =\beta\left(f\left(\vec{x}\right), f\left(\vec{y}\right)\right) = 0 $, por lo que $\displaystyle \vec{x} \in \rad\left(\beta \right) = \left\{ \vec{0}\right\}  $ y $\displaystyle \vec{x} = 0 $. 
+\end{proof}
+\begin{fprop}[]
+\normalfont Si $\displaystyle f \in \End\left(V\right)$ es ortogonal, $\displaystyle f^{-1} $ es ortogonal.
+\end{fprop}
+\begin{proof}
+Sabemos que $\displaystyle f^{-1} $ existe por la proposición anterior. Si $\displaystyle \vec{x}, \vec{y} \in V $, tenemos que por ser $\displaystyle f $ ortogonal 
+\[ \beta\left(f^{-1}\left(\vec{x}\right), f^{-1}\left(\vec{y}\right)\right) = \beta\left(f\left(f^{-1}\left(\vec{x}\right)\right), f\left(f^{-1}\right)\left(\vec{y}\right)\right) = \beta\left(\vec{x}, \vec{y}\right).\]
+\end{proof}
+\begin{fprop}[]
+\normalfont $\displaystyle f \in \End\left(V\right) $ es ortogonal si y solo si $\displaystyle \ad\left(f\right) = f^{-1} $.
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(i)] Tenemos que $\displaystyle \forall \vec{x}, \vec{y} \in V $,
+	\[ \beta\left(f\left(\vec{x}\right), \vec{y}\right)\right) = \beta\left(f^{-1}\left(f\left(\vec{x}\right)\right), f^{-1}\left(\vec{y}\right)\right)=\beta\left(\vec{x}, f^{-1}\left(\vec{y}\right)\right).\]
+Por tanto, $\displaystyle \ad\left(f\right) = f^{-1} $.
+\item[(ii)] Tenemos que $\displaystyle \forall \vec{x}, \vec{y} $, $\displaystyle \beta\left(f\left(\vec{x}\right), \vec{y}\right) = \beta\left(\vec{x}, f^{-1}\left(\vec{y}\right)\right) $. De aquí se deduce que $\displaystyle \forall \vec{x}, \vec{y} \in V $,
+	\[\beta\left(f\left(\vec{x}\right), f\left(\vec{y}\right)\right) = \beta\left(\vec{x}, f^{-1}\left(f\left(\vec{y}\right)\right)\right) = \beta\left(\vec{x}, \vec{y}\right).\]
+	Por tanto $\displaystyle f $ es ortogonal.
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont 	Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base ortonormal, sea $\displaystyle A = \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) $, existe $\displaystyle A^{-1} $ y $\displaystyle A^{-1} = A^{t} $. También es cierto que, asumiendo la existencia de una base ortonormal, si la matriz de $\displaystyle f $ respecto de esta base es ortogonal, entonces $\displaystyle f $ es ortogonal respecto de $\displaystyle \beta  $.
+\end{observation}
+\begin{fprop}[]
+\normalfont Si $\displaystyle f,g \in \End\left(V\right) $ son ortogonales, $\displaystyle g\circ f $ es ortogonal.
+\end{fprop}
+\begin{proof}
+Tenemos que $\displaystyle \forall \vec{x}, \vec{y} \in V $ 
+\[  \beta\left(g\circ f\left(\vec{y}\right), g\circ f\left(\vec{x}\right)\right) = \beta\left(g\left(f\left(\vec{x}\right)\right), g\left(f\left(\vec{y}\right)\right)\right) = \beta\left(f\left(\vec{x}\right), f\left(\vec{y}\right)\right) = \beta\left(\vec{x}, \vec{y}\right).\]
+\end{proof}
+\begin{eg}
+\normalfont Tenemos que la identidad es ortogonal.
+\end{eg}
+\begin{observation}
+\normalfont El conjunto
+\[O_{n}\left(\K,\beta \right)= \left\{ f \in \Aut\left(V\right) \; : \; f \; \text{ortogonal}\right\}  ,\]
+es un grupo con la operación de composición. Es decir, $\displaystyle \left(O_{n}\left(\K, \beta \right), \circ \right) $ es un grupo.
+\end{observation}
+Si $\displaystyle f \in O_{n}\left(\K, \beta \right) $, tenemos que 
+\[ \det\left(f\right) = \det\left(\ad\left(f\right)\right) = \det\left(f^{-1}\right) = \frac{1}{\det\left(f\right)} .\]
+Por tanto, $\displaystyle \det\left(f\right) = \pm1 $. Así, definimos $\displaystyle O_{n}^{+}\left(\K, \beta \right) = \left\{ f \in \Aut\left(V\right) \; : \; \det\left(f\right)=1\right\}  $, que es un subgrupo de $\displaystyle O_{n}\left(\K, \beta \right) $. A los elementos de $\displaystyle O^{+}_{n}\left(\K, \beta \right) $ los llamaremos \textbf{rotaciones vectoriales}. 
+\section{Formas cuadráticas}
+Sea $\displaystyle \beta  $ bilineal y simétrica. Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es base de $\displaystyle V $, tenemos que 
+\[ \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta \right)= \begin{pmatrix} a_{11} & \cdots & a_{1n}\\
+\vdots & & \vdots \\
+a_{n1} & \cdots & a_{nn}\end{pmatrix} .\]
+Así, tenemos que si $\displaystyle \vec{x} = x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n} $, 
+	\[\beta\left(\vec{x}, \vec{x}\right) = \begin{pmatrix} x^{1} & \cdots & x^{n} \end{pmatrix}\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta \right) \begin{pmatrix} x^{1} \\ \vdots \\ x^{n} \end{pmatrix} = \sum^{n}_{i,j = 1}a_{ij}x^{i}x^{j}.\]
+ Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es una base ortogonal tenemos que 
+	\[ \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta \right) = \begin{pmatrix} \lambda_{1} & 0 & \cdots & 0 \\
+	0 & \lambda_{2} & \cdots & 0 \\
+\vdots & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & \lambda_{n}\end{pmatrix} .\]
+	Así, tenemos que 
+		\[\beta\left(\vec{x}, \vec{x}\right) = \begin{pmatrix} x^{1} & \cdots & x^{n} \end{pmatrix}\begin{pmatrix} \lambda_{1} & 0 & \cdots & 0 \\
+	0 & \lambda_{2} & \cdots & 0 \\
+\vdots & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & \lambda_{n}\end{pmatrix}\begin{pmatrix} x^{1} \\ \vdots \\ x^{n} \end{pmatrix} = \lambda_{1}\left(x^{1}\right)^{2} + \cdots + \lambda_{n}\left(x^{n}\right)^{2} .\]
+\begin{fdefinition}[Forma cuadrática]
+\normalfont Una \textbf{forma cuadrática} es un polinomio homogéneo de grado 2 de $\displaystyle n $ variables $\displaystyle q\left(x^{1}, \ldots, x^{n}\right) = \sum^{n}_{i,j = 1}a_{ij}x^{i}x^{j} $ donde $\displaystyle a_{ij } \in \K $, $\displaystyle \forall i,j = 1, \ldots, n $.
+\end{fdefinition}
+\begin{observation}
+\normalfont Una forma cuadrática es una aplicación $\displaystyle q : V \to \K $ tal que $\displaystyle q\left(\vec{x}\right) = \sum^{n}_{i,j=1}a_{ij}x^{i}x^{j} $, donde $\displaystyle \vec{x} = x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n} $.
+\end{observation}
+Si $\displaystyle \beta  $ es una forma bilineal simétrica, se define $\displaystyle q_{\beta }: V \to \K $ con $\displaystyle q_{\beta }\left(\vec{x}\right) = \beta\left(\vec{x}, \vec{x}\right) $. Esta es una forma cuadrática definida en $\displaystyle V $. En efecto, se tiene que
+\[\beta\left(\vec{x}, \vec{x}\right) = \begin{pmatrix} x^{1} & \cdots & x^{n} \end{pmatrix} \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta \right)\begin{pmatrix} x^{1} \\ \vdots \\ x^{n} \end{pmatrix} = \sum^{n}_{ i,j = 1}a_{ij}x^{i}x^{j} .\]
+\begin{fprop}[]
+	\normalfont Si $\displaystyle q  $ es una forma cuadrática definida en $\displaystyle V $, defino \footnote{Tenemos que $\displaystyle q : V \to \K $ tal que $\displaystyle q\left(\vec{x}\right) = \sum^{n}_{i,j=1}a_{ij}x^{i}x^{j} $, donde $\displaystyle q $ actúa sobre una base $\displaystyle \left\{ \vec{u}_{1}, \ldots,\vec{u}_{n}\right\}  $ de $\displaystyle V $.} 
+\[ \beta_{q} \left(\vec{x}, \vec{y}\right) = \frac{1}{2}\left(q\left(\vec{x} + \vec{y}\right) - q\left(\vec{x}\right)-q\left(\vec{y}\right)\right).\]
+Entonces, $\displaystyle \beta_{q} $ es bilineal simétrica.
+\end{fprop}
+\begin{proof}
+El que sea simétrica es trivial. Vamos a demostrar que es una forma bilineal.
+\[
+\begin{split}
+	\beta_{q}\left(\sum^{n}_{ i= 1}x^{i}\vec{u}_{i}, \sum^{n}_{j=1}y^{j}\vec{u}_{j}\right) = & \frac{1}{2}\left(\sum^{n}_{i,j=1}a_{ij}\left(x^{i}+y^{i}\right)\left(x^{j}+y^{j}\right) - \sum^{n}_{i,j=1}a_{ij}x^{i}x^{j}-\sum^{n}_{i,j=1}a_{ij}y^{i}y^{j}\right) \\
+	= & \frac{1}{2}\left(\sum^{n}_{i,j=1}a_{ij}\left(x^{i}x^{j} + y^{i}x^{j} + x^{i}y^{j} + y^{i}y^{j}\right)-\sum^{n}_{i,j=1}a_{ij}x^{i}x^{j}-\sum^{n}_{i,j=1}a_{ij}y^{i}y^{j}\right) \\
+	= & \frac{1}{2}\sum^{n}_{i,j=1}a_{ij}\left(y^{i}x^{j}+x^{i}y^{j}\right).
+\end{split}
+\]
+A partir de aquí es fácil demostrar que $\displaystyle \beta_{q} $ cumple con las propiedades de una forma bilineal simétrica.
+\end{proof}
+Sea $\displaystyle Q\left(V\right)= \left\{ q : V \to \K \; : \; q \; \text{forma cuadrática definida en } V\right\}  $ y $\displaystyle \Bil\left(V\right) = \left\{ \beta \; : \; \beta \; \text{forma bilineal definida en } V\right\}  $. Se definen las aplicaciones:
+\[
+\begin{split}
+ \varphi: Q\left(V\right) \to \Bil\left(V\right), \; q \to \beta _{q} \\
+ \psi : \Bil\left(V\right) \to Q\left(V\right), \; \beta \to q_{\beta}.
+\end{split}
+\]
+\begin{ftheorem}[]
+\normalfont 
+\[ \psi \circ \varphi = id _{Q\left(V\right)}, \quad \varphi\circ\psi = id _{\Bil\left(V\right)} .\]
+\end{ftheorem}
+\begin{proof}
+Si $\displaystyle q\left(\vec{x}\right) \in Q\left(V\right) $, se tiene que
+\[ \varphi\left(q\right) \left(\vec{x}\right) = \beta_{q}\left(\vec{x}, \vec{x}\right) .\]
+Así, 
+\[\psi\left(\varphi\left(q\right)\right)\left(\vec{x}\right) = \frac{1}{2}\left(q\left(2\vec{x}\right)-q\left(\vec{x}\right)-q\left(\vec{x}\right)\right) = \frac{1}{2}\left(4q\left(\vec{x}\right)-2q\left(\vec{x}\right)\right) = q\left(\vec{x}\right) .\]
+Por otro lado, tenemos que 
+\[
+\begin{split}
+	\left(\varphi\circ\psi\right)\left(\beta \right)\left(\vec{x}, \vec{y}\right) =  \varphi\left(q_{\beta }\right)\left(\vec{x}, \vec{y}\right)=\frac{1}{2}\left(\beta\left(\vec{x}+\vec{y},\vec{x}+\vec{y}\right)-\beta\left(\vec{x}, \vec{x}\right)-\beta\left(\vec{y}, \vec{y}\right)\right) 
+	=  \beta\left(\vec{x}, \vec{y}\right).
+\end{split}
+\]
+\end{proof}
+\begin{observation}
+\normalfont Así, se puede ver que las formas bilineales simétricas vienen caracterizadas por su forma cuadrática y viceversa. Por tanto, clasificar las formas cuadráticas es lo mismo que clasificar las formas bilineales simétricas. Se puede afirmar que para cada forma bilineal simétrica existe una única forma cuadrática y viceversa.
+\end{observation}
+\begin{fdefinition}[]
+\normalfont Si $\displaystyle q \in Q\left(V\right) $, llamaremos \textbf{rango} de $\displaystyle q $ al rango de $\displaystyle \beta_{q} $. Si $\displaystyle \K = \R $, se llama \textbf{índice} de $\displaystyle q $ al índice de $\displaystyle \beta_{q} $ y \textbf{coíndice} de $\displaystyle q $ al coíndice de $\displaystyle \beta_{q} $.
+\end{fdefinition}
+\begin{eg}
+\normalfont Consideremos la forma cuadrática 
+\[ q\left(\vec{x}\right) = 2\left(x^{1}\right)^{2} + 3\left(x^{2}\right)^{2} + 7\left(x^{3}\right)^{2} + 4x^{1}x^{2} + 6x^{1}x^{3} + 9x^{2}x^{3} .\]
+Tenemos que la expresión matricial de $\displaystyle \beta_{q} $ será
+\[ \beta_{q} \to \begin{pmatrix} 2 & 2& 3 \\
+2& 3 &\frac{9}{2} \\
+3&\frac{9}{2}& 7\end{pmatrix} .\]
+Puede resultar útil recordar que $\displaystyle q\left(\vec{x}\right) = \sum^{n}_{i,j=1}a_{ij}x^{i}x^{j} $, donde $\displaystyle a_{ij} = \beta\left(\vec{u}_{i}, \vec{u}_{j}\right) $ para una base $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ de $\displaystyle V $.
+\end{eg}
+\subsection*{Forma cuadrática expresada como suma de cuadrados}
+Sea $\displaystyle q$ una forma cuadrática, vamos a intentar expresarla como suma de cuadrados. Tenemos que 
+\[
+\begin{split}
+	q\left(\vec{x}\right) =  a_{11}x^{1}x^{1} + 2a_{12}x^{1}x^{2}+\cdots + 2a_{1n}x^{1}x^{n} + \underbrace{\sum_{1< i < j \leq n}2a_{ij}x^{i}x^{j} + \sum^{n}_{i=2}a_{ii}\left(x^{i}\right)^{2}}_{q_{1}\left(x^{2}, \ldots, x^{n}\right)} 
+\end{split}
+\]
+El segundo término de la primera igualdad es la misma forma cuadrática de grado $\displaystyle n - 1 $.
+Supongamos que $\displaystyle a_{11} \neq 0 $,
+\[
+\begin{split}
+	q\left(\vec{x}\right) = & a_{11}x^{1}x^{1} + 2a_{i2}x^{1}x^{2}+\cdots + 2a_{1n}x^{1}x^{n} + \sum_{1< i < j \leq n}2a_{ij}x^{i}x^{j} + \sum^{n}_{i=1}a_{ii}\left(x^{i}\right)^{2} \\
+	= & \frac{1}{a_{11}}\left(a_{11}^{2}\left(x^{1}\right)^{2}+2a\right)
+\end{split}
+\]
+Si $\displaystyle \lambda\left(\vec{x}\right) = a_{11}x^{1} + \cdots + a_{1n}x^{n} $, tenemos que 
+\[q\left(\vec{x}\right) = \frac{1}{a_{11}}\left(\lambda\left(\vec{x}\right)^{2} + q_{1}\left(x^{2}, \ldots, x^{n}\right)\right) = \frac{1}{a_{11}}\left(\sum^{n}_{i=1}a_{ii}x^{i}\right)^{2} + \sum^{}_{2 \leq i < j \leq n}a_{ij}x^{i}x^{j} .\]
+Para acordarnos de la expresión de $\displaystyle \lambda\left(\vec{x}\right) $ puede resultar útil la siguiente ecuación:
+\[ \frac{1}{2}\frac{\partial q\left(\vec{x}\right)}{\partial x^{1}} = \lambda\left(\vec{x}\right) .\]
+En efecto, tenemos que $\displaystyle  $.
+\[ \frac{1}{2} \frac{\partial q\left(\vec{x}\right)}{\partial x^{1}} = \frac{1}{2} \frac{ \partial}{\partial x^{1}} \left( \left(a_{11}x^{1}\right)^{2} + 2x^{1}\left(a_{12}x^{2}+ \cdots + a_{1n}x^{n}\right)+\left(a_{12}x^{2} + \cdots + a_{1n}x^{n}\right)^{2}\right) = \lambda\left(\vec{x}\right) .\]
+\begin{eg}
+	\normalfont Consideremos la matriz $\displaystyle \begin{pmatrix} 2 & 1 & 2 \\ 1 & - 1 & 1 \\ 2 & 1 & 2 \end{pmatrix} $. Tenemos que 
+	\[q\left(x^{1}, x^{2}, x^{3}\right) = 2\left(x^{1}\right)^{2} - \left(x^{2}\right)^{2} + 2\left(x^{3}\right)^{2} + 2x^{1}x^{2} + 4x^{1}x^{3}+2x^{2}x^{3} .\]
+	Vamos a expresarla como suma de cuadrados utilizando el método anterior:
+	\[ \lambda\left(\vec{x}\right) = \frac{1}{2}\frac{\partial q}{\partial x^{1}} = \frac{1}{2}\left(4x^{1}+2x^{2}+4x^{3}\right) = 2x^{1} + x^{2} + 2x^{3} .\]
+	Así, tenemos que 
+	\[q_{1}\left(x^{2}, x^{3}\right) = q\left(\vec{x}\right)-\lambda\left(\vec{x}\right)^{2} = .\]
+\end{eg}
 

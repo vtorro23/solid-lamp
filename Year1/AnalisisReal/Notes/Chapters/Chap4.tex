@@ -258,7 +258,7 @@ Resulta útil formular una condición equivalente para decir que $\displaystyle 
 \normalfont Sea $\displaystyle f : A \subset \R \to \R $, entonces son equivalentes:
 \begin{description}
 \item[(i)] $\displaystyle f $ no es uniformemente continua en $\displaystyle A $.
-\item[(ii)] Existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle \forall \delta > 0 $, si $\displaystyle \left|x-y\right| < \delta  $, entonces $\displaystyle \left|f\left(x\right)-f\left(y\right)\right| \geq \epsilon  $.
+\item[(ii)] Existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle \forall \delta > 0 $, existen $\displaystyle x,y \in A $ tales que si $\displaystyle \left|x-y\right| < \delta  $, entonces $\displaystyle \left|f\left(x\right)-f\left(y\right)\right| \geq \epsilon  $.
 \item[(iii)] Existe $\displaystyle \epsilon > 0 $ y $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N}\subset A $ tales que $\displaystyle x_{n}-y_{n} \to 0 $ pero $\displaystyle \left|f\left(x_{n}\right)-f\left(y_{n}\right)\right| \geq \epsilon  $ para todo $\displaystyle n \in \N $.
 \end{description}
 \end{fprop}
@@ -311,16 +311,41 @@ Sea $\displaystyle \epsilon > 0 $, cogemos $\displaystyle \delta = \frac{\epsilo
 	Dado que $\displaystyle f $ es uniformemente continua en $\displaystyle I $ y $\displaystyle J $, tomando $\displaystyle \delta = \min \left\{ 1, \delta_{I}\left(\epsilon \right), \delta _{J}\left(\epsilon \right)\right\}  $, tenemos que $\displaystyle f $ es uniformemente continua en $\displaystyle \R^{+} $. \footnote{A la hora de demostrar que una función es uniformemente continua en un intervalo, si se va a hacer el procedimiento anterior, es útil no utilizar intervalos disjuntos, sino intentar crear solapamientos.} 
 \end{itemize}
 \end{eg}
+\begin{ftheorem}[]
+	\normalfont Si $\displaystyle f : A \subset \R \to \R $ es uniformemente continua en $\displaystyle A $ y $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset A$ es de Cauchy, entonces $\displaystyle \left\{ f\left(x_{n}\right)\right\} _{n\in\N} $ es de Cauchy.
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset A $ de Cauchy y sea $\displaystyle \epsilon > 0 $. Tenemos que dado que $\displaystyle f $ es uniformemente continua, $\displaystyle \exists \delta > 0 $ tal que $\displaystyle \left|x-y\right| < \delta  $ implica que $\displaystyle \left|f\left(x\right)-f\left(y\right)\right| < \epsilon  $. Así, como $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es de Cauchy, $\displaystyle \exists n_{0} \in \N $, tal que $\displaystyle \forall n,m \geq n_{0} $ se tiene que $\displaystyle \left|x_{n}-x_{m}\right| < \delta  $. Así, se tiene que $\displaystyle \left|f\left(x_{n}\right)-f\left(x_{m}\right)\right| < \epsilon  $.
+\end{proof}
+\begin{ftheorem}[Teorema de la extensión continua]
+	\normalfont Una función $\displaystyle f $ es uniformemente continua en el intervalo $\displaystyle \left(a,b\right) $ si y solo si se puede definir en los puntos terminales $\displaystyle a $ y $\displaystyle b $ de tal modo que la función extendida es continua en $\displaystyle \left[a,b\right]  $.
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[ ($\Leftarrow $) ] Si podemos definir
+	\[ F\left(x\right) = 
+	\begin{cases}
+	\lim_{x \to a^{+}}f\left(x\right), \; x = a \\
+	f\left(x\right), \; x \in \left(a,b\right) \\
+	\lim_{x \to b^{-}}f\left(x\right), \; x = b
+	\end{cases},\]
+	con $\displaystyle F $ continua, tenemos que $\displaystyle F $ es uniformemente continua en $\displaystyle \left[a,b\right]  $ y por tanto lo es en $\displaystyle \left(a,b\right) $. Dado que $\displaystyle f = F|_{\left(a,b\right)} $, está claro que $\displaystyle f $ es uniformemente continua en $\displaystyle \left(a,b\right) $.
+\item[ ($\displaystyle \Rightarrow $) ] Supongamos que $\displaystyle f $ es uniformemente continua en $\displaystyle \left(a,b\right) $. Si $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset \left(a,b\right) $ con $\displaystyle x_{n} \to a $, tenemos que es de Cauchy. Por ser $\displaystyle f $ uniformemente continua, $\displaystyle \left\{ f\left(x_{n}\right)\right\} _{n\in\N}$ también es de Cauchy, por lo que converge a un valor $\displaystyle l \in \R $. 
+	Si $\displaystyle \left\{ y_{n}\right\} _{n\in \N} $ con $\displaystyle y_{n} \to a $, tenemos que, por la continuidad uniforme de $\displaystyle f $,
+	\[\lim_{n \to \infty}y_{n} = \lim_{n \to \infty}\left(y_{n}-x_{n}\right)+\lim_{n \to \infty}x_{n} = 0 + l = l .\]
+	Así, por la caracterización del límite por sucesiones, se tiene que existe $\displaystyle \lim_{x \to a^{+}}f\left(x\right) $ y se puede definir $\displaystyle F\left(a\right) = \lim_{x \to a^{+}} f\left(x\right)$ como se hizo en el apartado anterior. El argumento para $\displaystyle b $ es análogo.
+\end{description}
+\end{proof}
 \section{Funciones monótonas}
 \begin{ftheorem}[]
 \normalfont Sea $\displaystyle f : I \subset \R \to \R $, donde $\displaystyle I $ es un intervalo o semirrecta y $\displaystyle f $ es monótona en $\displaystyle I $ y está acotada. Entonces, para cada $\displaystyle x_{0} \in I $ existen $\displaystyle \lim_{x \to x_{0}^{+}}f\left(x\right) $ y $\displaystyle \lim_{x \to x_{0}^{-}}f\left(x\right) $.
 \end{ftheorem}
 \begin{proof}
-	Supongamos que $\displaystyle f $ es creciente (el caso decreciente se hace de forma análoga). Salvo en los extremos del intervalo, donde existen únicamente los límites laterales y donde se usa la acotación de $\displaystyle f $. Sea $\displaystyle x_{0} \in I $ tal que existe $\displaystyle \delta > 0 $ con $\displaystyle \left(x_{0}-\delta, x_{0}+\delta \right)\subset I $. Sea $\displaystyle A = \left\{ f\left(x\right) \; : \; x \in \left(x_{0}-\delta, x_{0} \right)\right\}  $. Dado que $\displaystyle f $ es monótona creciente, tenemos que
+	Supongamos que $\displaystyle f $ es creciente (el caso decreciente se hace de forma análoga). Salvo en los extremos del intervalo, donde existen únicamente los límites laterales y donde se usa la acotación de $\displaystyle f $. Sea $\displaystyle x_{0} \in I $ tal que existe $\displaystyle \delta > 0 $ con $\displaystyle \left(x_{0}-\delta, x_{0}+\delta \right)\subset I $ \footnote{Basta con que sea un punto de acumulación.} . Sea $\displaystyle A = \left\{ f\left(x\right) \; : \; x \in \left(x_{0}-\delta, x_{0} \right)\right\}  $. Dado que $\displaystyle f $ es monótona creciente, tenemos que
 	\[f\left(x\right) \leq f\left(x_{0} + \delta \right), \; \forall x \in \left(x_{0} - \delta, x_{0}\right) .\]
 	Sea $\displaystyle B = \left\{ f\left(x\right) \; : \; x \in \left(x_{0}, x_{0}+\delta \right)\right\}  $. Así, tenemos que 
 	\[ f\left(x_{0}-\delta \right)\leq f\left(x\right), \; \forall x \in \left(x_{0}, x_{0}+\delta\right) .\]
-Entonces, por el axioma del supremo, tenemos que existe $\displaystyle \alpha = \sup\left(A\right) $ y $\displaystyle \beta = \inf\left(B\right) $. En concreto, tenemos que $\displaystyle \alpha = \lim_{x \to x_{0}^{-}}f\left(x\right) $ y $\displaystyle \beta = \lim_{x \to x_{0}^{+}}f\left(x\right) $. En efecto, si $\displaystyle \epsilon > 0 $, existe $\displaystyle x_{1} \in \left(x_{0}-\delta, x_{0} \right) $ tal que $\displaystyle \alpha - \epsilon < f\left(x_{1}\right) \leq \alpha  $. Sea $\displaystyle r = \left|x_{0}-x_{1}\right| > 0 $. Si $\displaystyle 0 < x - x_{0} < r $, entonces, $\displaystyle \alpha - \epsilon < f\left(x_{1}\right) < f\left(x\right) < \alpha  $. Así, $\displaystyle \left|\alpha - f\left(x\right)\right| < \epsilon  $. Por definición de límite lateral, $\displaystyle \lim_{x \to x_{0}^{-}}f\left(x\right) = \alpha  $.
+Entonces, por el axioma del supremo \footnote{Demostrar que $\displaystyle A $ y $\displaystyle B $ están acotados se puede hacer utilizando la hipótesis del teorema que dice que $\displaystyle f $ está acotada.} , tenemos que existe $\displaystyle \alpha = \sup\left(A\right) $ y $\displaystyle \beta = \inf\left(B\right) $. En concreto, tenemos que $\displaystyle \alpha = \lim_{x \to x_{0}^{-}}f\left(x\right) $ y $\displaystyle \beta = \lim_{x \to x_{0}^{+}}f\left(x\right) $. En efecto, si $\displaystyle \epsilon > 0 $, existe $\displaystyle x_{1} \in \left(x_{0}-\delta, x_{0} \right) $ tal que $\displaystyle \alpha - \epsilon < f\left(x_{1}\right) \leq \alpha  $. Sea $\displaystyle r = \left|x_{0}-x_{1}\right| > 0 $. Si $\displaystyle 0 < x - x_{0} < r $, entonces, $\displaystyle \alpha - \epsilon < f\left(x_{1}\right) < f\left(x\right) < \alpha  $. Así, $\displaystyle \left|\alpha - f\left(x\right)\right| < \epsilon  $. Por definición de límite lateral, $\displaystyle \lim_{x \to x_{0}^{-}}f\left(x\right) = \alpha  $.
 En los límites del intervalo, solo se considera el conjunto $\displaystyle A $  o $\displaystyle B $ y se usa la hipótesis de acotación.
 \end{proof}
 \begin{ftheorem}[]
@@ -341,7 +366,7 @@ Podemos tomar el mismo $\displaystyle \delta > 0 $ en ambos casos tal que $\disp
 \end{observation}
 
 \begin{ftheorem}[]
-\normalfont Si $\displaystyle f : I \subset \R \to \R $, donde $\displaystyle I $ es un intervalo o semirrecta, y $\displaystyle f $ es monótona, entonces si
+\normalfont Si $\displaystyle f : I \subset \R \to \R $, donde $\displaystyle I $ es un intervalo o semirrecta, y $\displaystyle f $ es monótona y acotada, entonces si
 \[E = \left\{ x \in I \; : \; f \; \text{no es continua en } x\right\}  , \]
 tenemos que $\displaystyle \left|E\right| \leq \left|\N\right| $.
 \end{ftheorem}
