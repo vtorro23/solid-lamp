@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  2 MAR 2025 20:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  7 MAR 2025 09:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2020,8 +2020,8 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 34.
 
-Overfull \hbox (13.12624pt too wide) detected at line 44
-\OML/cmm/m/it/10 I [] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 m[] [] \OMS/cmsy/m/n/10 ^^T [] \OML/cmm/m/it/10 m[] [] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 m[] [] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 m\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 u; t[]\OT1/cmr/m/n/10 ] [] = \OML/cmm/m/it/10 I [] :
+Overfull \hbox (7.19759pt too wide) detected at line 44
+\OML/cmm/m/it/10 I [] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 m[] [] \OMS/cmsy/m/n/10 ^^T [] \OML/cmm/m/it/10 m[] [] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 m[] [] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 m[] [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 I [] :
  []
 
 
@@ -2155,10 +2155,10 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 378.
-LaTeX Info: Redefining \. on input line 385.
-LaTeX Info: Redefining \% on input line 385.
-LaTeX Info: Redefining \. on input line 385.
-LaTeX Info: Redefining \% on input line 385.
+LaTeX Info: Redefining \. on input line 387.
+LaTeX Info: Redefining \% on input line 387.
+LaTeX Info: Redefining \. on input line 387.
+LaTeX Info: Redefining \% on input line 387.
  [126]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2280,36 +2280,140 @@ LaTeX Info: Redefining \. on input line 718.
 LaTeX Info: Redefining \% on input line 718.
 LaTeX Info: Redefining \. on input line 718.
 LaTeX Info: Redefining \% on input line 718.
- [136]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 743.
-) (/Users/victoriatorroja/University/Year1/AnalisisReal/Notes/Chapters/Appendix.tex
+ [136]) (/Users/victoriatorroja/University/Year1/AnalisisReal/Notes/Chapters/Chap7.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [137]
+Cap\'{\i }tulo 7.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+[138
+
+]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 62.
+LaTeX Info: Redefining \. on input line 74.
+LaTeX Info: Redefining \% on input line 74.
+LaTeX Info: Redefining \. on input line 74.
+LaTeX Info: Redefining \% on input line 74.
+ [139]
+Overfull \hbox (7.0881pt too wide) detected at line 78
+[] \OML/cmm/m/it/10 x[] [] x dx \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 x[] [] x \OMS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 x [] x dx \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 x[] [] x \OT1/cmr/m/n/10 + 2\OML/cmm/m/it/10 x [] x \OMS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 2 [] \OML/cmm/m/it/10 x dx \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 x[] [] x \OT1/cmr/m/n/10 + 2\OML/cmm/m/it/10 x [] x \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 2 [] \OML/cmm/m/it/10 x:
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 100.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 108.
+LaTeX Info: Redefining \. on input line 108.
+LaTeX Info: Redefining \% on input line 108.
+LaTeX Info: Redefining \. on input line 108.
+LaTeX Info: Redefining \% on input line 108.
+[140]
+Overfull \hbox (20.39592pt too wide) detected at line 134
+[] [] \OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 = [] [][] \OML/cmm/m/it/10 du \OT1/cmr/m/n/10 = [] [] \OML/cmm/m/it/10 du \OT1/cmr/m/n/10 = [] [] \OMS/cmsy/m/n/10 ^^@ [] \OML/cmm/m/it/10 du \OT1/cmr/m/n/10 = [] [] = [] [] \OML/cmm/m/it/10 :
+ []
+
+
+Overfull \hbox (37.33751pt too wide) detected at line 136
+[] [] [] [] \OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 = [] 2 [] \OML/cmm/m/it/10 u du \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 2 [] [] \OML/cmm/m/it/10 du \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 2 [] [] = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 2 [] [] \OML/cmm/m/it/10 :
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 139.
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 142.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 142.
+LaTeX Info: Redefining \. on input line 142.
+LaTeX Info: Redefining \% on input line 142.
+LaTeX Info: Redefining \. on input line 142.
+LaTeX Info: Redefining \% on input line 142.
+[141]
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last split box is empty
+(mdframed)                You have to change the settings on input line 142.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 170.
+Package mdframed Info: Not enough space on this page on input line 172.
+LaTeX Info: Redefining \. on input line 172.
+LaTeX Info: Redefining \% on input line 172.
+LaTeX Info: Redefining \. on input line 172.
+LaTeX Info: Redefining \% on input line 172.
+[142]
+Package mdframed Info: Not enough space on this page on input line 172.
+LaTeX Info: Redefining \. on input line 198.
+LaTeX Info: Redefining \% on input line 198.
+LaTeX Info: Redefining \. on input line 198.
+LaTeX Info: Redefining \% on input line 198.
+ [143]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 200.
+LaTeX Info: Redefining \. on input line 226.
+LaTeX Info: Redefining \% on input line 226.
+LaTeX Info: Redefining \. on input line 226.
+LaTeX Info: Redefining \% on input line 226.
+ [144]
+LaTeX Info: Redefining \. on input line 262.
+LaTeX Info: Redefining \% on input line 262.
+LaTeX Info: Redefining \. on input line 262.
+LaTeX Info: Redefining \% on input line 262.
+ [145]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 268.
+
+Overfull \hbox (24.19228pt too wide) detected at line 283
+[] [] \OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 = [] [] \OMS/cmsy/m/n/10 ^^A [] \OML/cmm/m/it/10 du \OT1/cmr/m/n/10 = 2 [] [] \OML/cmm/m/it/10 du \OT1/cmr/m/n/10 = [] []  \OML/cmm/m/it/10 du \OT1/cmr/m/n/10 = [] [] = [] []\OML/cmm/m/it/10 :
+ []
+
+LaTeX Info: Redefining \. on input line 289.
+LaTeX Info: Redefining \% on input line 289.
+LaTeX Info: Redefining \. on input line 289.
+LaTeX Info: Redefining \% on input line 289.
+[146]) (/Users/victoriatorroja/University/Year1/AnalisisReal/Notes/Chapters/Appendix.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [147]
 Ap\'{e}ndice A.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 27.
-[138
+[148
 
 ]
 Package mdframed Info: Not enough space on this page on input line 29.
 LaTeX Info: Redefining \. on input line 43.
 LaTeX Info: Redefining \% on input line 43.
- [139]
+ [149]
 Ap\'{e}ndice B.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 46.
-[140
+[150
 
 ]
 Ap\'{e}ndice C.
-[141
+[151
 
 ]
 Ap\'{e}ndice D.
@@ -2326,15 +2430,15 @@ Package mdframed Warning: You got a bad break
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
 (mdframed)              on input line 99.
-[142
+[152
 
 ]
 LaTeX Info: Redefining \. on input line 134.
 LaTeX Info: Redefining \% on input line 134.
- [143]
+ [153]
 LaTeX Info: Redefining \. on input line 154.
 LaTeX Info: Redefining \% on input line 154.
- [144]
+ [154]
 Ap\'{e}ndice E.
 
 Underfull \hbox (badness 10000) in paragraph at lines 156--158
@@ -2345,7 +2449,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 173.
 Package mdframed Info: Not enough space on this page on input line 176.
-[145
+[155
 
 ]
 Package mdframed Info: Not enough space on this page on input line 176.
@@ -2353,9 +2457,9 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 192.
 )
-LaTeX Info: Redefining \. on input line 49.
-LaTeX Info: Redefining \% on input line 49.
- [146] (./main.aux
+LaTeX Info: Redefining \. on input line 50.
+LaTeX Info: Redefining \% on input line 50.
+ [156] (./main.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
@@ -2365,19 +2469,19 @@ L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17419 strings out of 474116
- 340751 string characters out of 5743682
- 1956187 words of memory out of 5000000
- 39425 multiletter control sequences out of 15000+600000
+ 17427 strings out of 474116
+ 341112 string characters out of 5743682
+ 1957187 words of memory out of 5000000
+ 39430 multiletter control sequences out of 15000+600000
  573176 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,22n,96p,1434b,585s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (147 pages, 781181 bytes).
+Output written on main.pdf (157 pages, 811052 bytes).
 PDF statistics:
- 618 PDF objects out of 1000 (max. 8388607)
- 410 compressed objects within 5 object streams
+ 650 PDF objects out of 1000 (max. 8388607)
+ 432 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

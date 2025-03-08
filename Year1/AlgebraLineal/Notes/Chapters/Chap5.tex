@@ -485,7 +485,7 @@ Sabemos que $\displaystyle f^{-1} $ existe por la proposición anterior. Si $\di
 \begin{proof}
 \begin{description}
 \item[(i)] Tenemos que $\displaystyle \forall \vec{x}, \vec{y} \in V $,
-	\[ \beta\left(f\left(\vec{x}\right), \vec{y}\right)\right) = \beta\left(f^{-1}\left(f\left(\vec{x}\right)\right), f^{-1}\left(\vec{y}\right)\right)=\beta\left(\vec{x}, f^{-1}\left(\vec{y}\right)\right).\]
+	\[ \beta\left(f\left(\vec{x}\right), \vec{y}\right) = \beta\left(f^{-1}\left(f\left(\vec{x}\right)\right), f^{-1}\left(\vec{y}\right)\right)=\beta\left(\vec{x}, f^{-1}\left(\vec{y}\right)\right).\]
 Por tanto, $\displaystyle \ad\left(f\right) = f^{-1} $.
 \item[(ii)] Tenemos que $\displaystyle \forall \vec{x}, \vec{y} $, $\displaystyle \beta\left(f\left(\vec{x}\right), \vec{y}\right) = \beta\left(\vec{x}, f^{-1}\left(\vec{y}\right)\right) $. De aquí se deduce que $\displaystyle \forall \vec{x}, \vec{y} \in V $,
 	\[\beta\left(f\left(\vec{x}\right), f\left(\vec{y}\right)\right) = \beta\left(\vec{x}, f^{-1}\left(f\left(\vec{y}\right)\right)\right) = \beta\left(\vec{x}, \vec{y}\right).\]
@@ -620,6 +620,23 @@ En efecto, tenemos que $\displaystyle  $.
 	Vamos a expresarla como suma de cuadrados utilizando el método anterior:
 	\[ \lambda\left(\vec{x}\right) = \frac{1}{2}\frac{\partial q}{\partial x^{1}} = \frac{1}{2}\left(4x^{1}+2x^{2}+4x^{3}\right) = 2x^{1} + x^{2} + 2x^{3} .\]
 	Así, tenemos que 
-	\[q_{1}\left(x^{2}, x^{3}\right) = q\left(\vec{x}\right)-\lambda\left(\vec{x}\right)^{2} = .\]
+	\[q_{1}\left(x^{2}, x^{3}\right) = q\left(\vec{x}\right)-\frac{1}{a_{11}}\lambda\left(\vec{x}\right)^{2} = 2\left(x^{1}\right)^{2}+\frac{1}{2}\left(x^{2}\right)^{2} + 2\left(x^{3}\right)^{2}+2x^{1}x^{2}+4x^{1}x^{3}+2x^{2}x^{3}.\]
+	Así, podemos obtener la expresión de $\displaystyle q $ como suma de cuadrados:
+	\[q\left(\vec{x}\right) = \frac{1}{2}\left(2x^{1}+x^{2}+2x^{3}\right)^{2} +  .\]
+	
 \end{eg}
+Si $\displaystyle q $ es una forma cuadrática, tenemos que 
+\[ q\left(\vec{x}\right) = a_{11}\left(x^{1}\right)^{2} + 2 \sum^{n}_{i = 2}a_{ii}x^{1}x^{i} + \sum^{n}_{i=2}a_{ii}\left(x^{i}\right)^{2} + 2 \sum^{}_{2 \leq i < j \leq n}a_{ij}x^{i}x^{j} .\]
+Si $\displaystyle a_{11} \neq 0 $, tenemos que $\displaystyle \exists \lambda \in V^{*} $ y $\displaystyle q_{1}\left(x^{2}, \ldots, x^{n}\right) $ tal que 
+\[ .\]
+\[
+\begin{split}
+	q\left(\vec{x}\right) = & \frac{1}{a_{11}}\left(\left(\lambda\left(\vec{x}\right)\right)^{2}+q_{1}\left(x^{2}, \ldots, x^{n}\right)\right)\\
+	= & \frac{1}{a_{11}}\left(a^{2}_{11}\left(x^{1}\right)^{2} + 2a_{11}x^{1}\left(\sum^{n}_{i=2}a_{1i}x^{1}x^{i}\right)+\left(\sum^{n}_{i=2}a_{1i}x^{1}x^{i}\right)^{2}-\frac{1}{a_{11}}\left(\sum^{n}_{i=2}a_{1i}x^{i}\right)^{2}\right) \\
+	+ &  \sum^{n}_{i=2}a_{ii}\left(x^{i}\right)^{2}+2\sum^{}_{2\leq i < j \leq n}a_{ij}x^{i}x^{j}\\
+	= & \frac{1}{a_{11}}\left(a_{11}x^{1}+\sum^{n}_{i=2}a_{1i}x^{1}x^{i}\right)^{2}+q_{1}\left(x^{2}, \ldots, x^{n}\right) 
+	=  \frac{1}{a_{11}}\left(\lambda\left(\vec{x}\right)\right)^{2}+q_{1}\left(x^{2}, \ldots, x^{n}\right).
+\end{split}
+\]
+Donde $\displaystyle \lambda \left(\vec{x}\right) = \sum^{n}_{i=1}a_{1i}x^{1}x^{i} = \frac{\partial q\left(\vec{x}\right)}{\partial x^{1}} $.
 

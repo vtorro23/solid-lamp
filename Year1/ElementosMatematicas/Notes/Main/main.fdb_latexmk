@@ -1,9 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1739477532.24648 "main.tex" "main.pdf" "main" 1739477534.66536 0
+["pdflatex"] 1741338305.12665 "main.tex" "main.pdf" "main" 1741338307.22898 0
   "/Users/victoriatorroja/University/Year1/ElementosMatematicas/Notes/Chapters/Chap1.tex" 1732470019.41528 56282 da4bf0cbc368f3157b1e3109db3156f7 ""
   "/Users/victoriatorroja/University/Year1/ElementosMatematicas/Notes/Chapters/Chap2.tex" 1738611156.02946 41818 e9378d46de5128dfb9bec6744b197111 ""
   "/Users/victoriatorroja/University/Year1/ElementosMatematicas/Notes/Chapters/Chap3.tex" 1738919281.19486 4671 bb341178ee70072fa299f1af6b523527 ""
-  "/Users/victoriatorroja/University/notespreamble.tex" 1739437000.76569 2602 dbba41d95177841477783528abc67476 ""
+  "/Users/victoriatorroja/University/Year1/ElementosMatematicas/Notes/Chapters/Chap4.tex" 1741089145.73458 5704 862b007c93566ad4fefd12f740ffe69e ""
+  "/Users/victoriatorroja/University/notespreamble.tex" 1741202150.35479 2721 e80f2e030ec1676fcd191720196eb769 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -51,6 +52,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb" 1248133631 36607 d654cb3f2bc54f57509240071db3bffa ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1248133631 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/babel-spanish/spanish.ldf" 1622145181 26965 3b6d1655ad716f98e788b1fb9f2e87b8 ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/babel/babel.sty" 1707339808 146276 10a40dabec03ce18494af0c3a51bcbdc ""
@@ -169,9 +171,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724666679.39075 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "main.aux" 1739477534.39994 2636 a12e5733c572ed89098aeee2893658fa "pdflatex"
-  "main.tex" 1737805174.44294 494 72ccbdd95dde7d3e01e10a12c96c505a ""
-  "main.toc" 1739477534.40197 1429 794fcb5ca96bf76059c0a89631180fea "pdflatex"
+  "main.aux" 1741338307.00179 2945 ac1030952377b6c91589ae0dd166f9d5 "pdflatex"
+  "main.tex" 1741086210.17516 566 463b3ab116f58f41411a14fa375f147a ""
+  "main.toc" 1741338307.00373 1580 96f141c84e93e1b0edbc5454067fb462 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

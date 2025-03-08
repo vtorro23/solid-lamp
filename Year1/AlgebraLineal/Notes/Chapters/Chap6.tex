@@ -1,0 +1,140 @@
+\chapter{Espacios vectoriales euclídeos}
+Sea $\displaystyle E $ un espacio vectorial y $\displaystyle \K = \R $.
+\begin{fdefinition}[Producto escalar]
+\normalfont Un \textbf{producto escalar} definido en $\displaystyle E $ es una forma bilineal simétrica $\displaystyle \langle , \rangle : E \times E \to \R $ y definida positiva \footnote{$\displaystyle \langle \vec{x},\vec{x} \rangle = 0 \iff \vec{x} = 0 $.}. Si $\displaystyle \langle,\rangle  $ es un producto escalar definido en $\displaystyle E $, el par $\displaystyle \left(E, \langle,\rangle \right) $ es un \textbf{espacio vectorial euclídeo}.
+\end{fdefinition}
+\begin{fprop}[]
+	\normalfont Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{p}\right\} \subset V/ \left\{ \vec{0}\right\}  $ son ortogonales dos a dos, entonces son linealmente independientes.
+\end{fprop}
+\begin{proof}
+Sean $\displaystyle a_{1}, \ldots, a_{p} \in \R $ tales que $\displaystyle \langle \vec{u}_{i}, \vec{u}_{i}\rangle $ 
+Tenemos que $\displaystyle \forall i = 1, \ldots, p $, 
+\[ \langle a_{1}\vec{u}_{1} + \cdots + a_{p}\vec{u}_{p}, \vec{u}_{i}\rangle = a_{1}\langle \vec{u}_{1}, \vec{u}_{i}\rangle + \cdots + a_{i}\langle \vec{u}_{i}, \vec{u}_{i}\rangle + \cdots + a_{p}\langle \vec{u}_{p}, \vec{u}_{i}\rangle = a_{i}\langle \vec{u}_{i}, \vec{u}_{i}\rangle = 0 \Rightarrow a_{i} = 0 .\]
+\end{proof}
+\begin{observation}
+\normalfont En un producto escalar, dado que es definido positivo, el índice es 0.
+\end{observation}
+Sea $\displaystyle V $ un $\displaystyle \R $-espacio vectorial y $\displaystyle \beta : V \times V \to \R $ una forma bilineal simétrica. Entonces $\displaystyle \left(V,\beta \right) $ es un espacio vectorial euclídeo. En efecto, tenemos que existe $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base ortonormal de $\displaystyle V $.
+\begin{fprop}[]
+	\normalfont Se considera $\displaystyle \left(E, \langle,\rangle \right) $. Sean $\displaystyle \left\{ \vec{x}, \vec{y}\right\} \subset V $ linealmente independientes y $\displaystyle \lambda \in \R $ tal que $\displaystyle \vec{x} + \lambda \vec{y} \neq \vec{0} $. Se tiene:
+	\begin{description}
+	\item[(i)] $\displaystyle \langle \vec{x} + \lambda \vec{y}, \vec{x} + \lambda \vec{y} \rangle > 0 \Rightarrow \langle \vec{x}, \vec{x} \rangle + 2\lambda \langle \vec{x}, \vec{y}\rangle + \lambda ^{2}\langle \vec{y}, \vec{y} \rangle >0$.
+	\item Si $\displaystyle \left\{ \vec{x}, \vec{y}\right\}  $ son linealmente dependientes, entonces $\displaystyle \exists ! \lambda \in \R $ tal que $\displaystyle \vec{x} + \lambda \vec{y} = \vec{0} $.
+	\end{description}
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(i)] La ecuación dada por $\displaystyle \langle \vec{x}, \vec{x} \rangle + 2\lambda \langle \vec{x}, \vec{y} \rangle + \lambda^{2} \langle \vec{y}, \vec{y} \rangle = 0 $, no tiene raíces reales, pues $\displaystyle \langle \vec{x}, \vec{y}\rangle < \langle \vec{x}, \vec{x} \rangle \langle \vec{y}, \vec{y} \rangle  $.
+\item[(ii)] La ecuación anterior tiene una única solición real, esta es $\displaystyle \left|\langle \vec{x}, \vec{y} \rangle \right|^{2} = \langle \vec{x}, \vec{x} \rangle \langle \vec{y}, \vec{y} \rangle $.
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont Una importante conclusión es la desigualdad Cauchy-Schwartz:
+\[ \left|\langle \vec{x}, \vec{y}\rangle \right|^{2} \leq \langle\vec{x},\vec{x}\rangle\langle\vec{y},\vec{y}\rangle .\]
+\end{observation}
+\begin{fdefinition}[Norma]
+\normalfont Si $\displaystyle \vec{x} \in E $ llamamos \textbf{norma} de $\displaystyle \vec{x} $ y la escribimos $\displaystyle \| \vec{x} \| = \sqrt{\langle \vec{x}, \vec{x}\rangle } $.
+\end{fdefinition}
+\begin{fprop}[]
+\normalfont 
+\begin{description}
+\item[(i)] $\displaystyle \|\vec{x}\| \geq 0 $ y $\displaystyle \| \vec{x} \| = 0 \iff \vec{x} = 0 $. 
+\item[(ii)] $\displaystyle \forall \lambda \in \R $, $\displaystyle \forall \vec{x} \in E $, $\displaystyle \| \lambda \vec{x} \| = \left|\lambda \right| \| \vec{x} \| $.
+\item[(iii)] Desigualdad triangular: $\displaystyle \| \vec{x} + \vec{y} \| \leq \| \vec{x} \| + \| \vec{y}\| $. 
+\end{description}
+\end{fprop}
+\begin{proof}
+Las demostraciones de \textbf{(i)} y \textbf{(ii)} son triviales. Demostraremos, pues, únicamente la desigualdad triangular. 
+\[
+\begin{split}
+	\| \vec{x} + \vec{y}\|^{2} = & \langle \vec{x} + \vec{y}, \vec{x} +\vec{y} \rangle = \langle \vec{x}, \vec{x} \rangle + 2 \langle \vec{x}, \vec{y} \rangle + \langle \vec{y}, \vec{y} \rangle \leq \langle\vec{x}, \vec{x}\rangle + \langle \vec{y}, \vec{y} \rangle + 2 \left|\langle\vec{x}, \vec{y}\rangle \right| \\
+	= & \|\vec{x}\|^{2} + \|\vec{y}\|^{2} +2\|\vec{x}\|\|\vec{y}\| = \left(\|\vec{x}\| + \|\vec{y}\|\right)^{2}.
+\end{split}
+\]
+Así, tenemos que $\displaystyle \|\vec{x}+\vec{y}\|^{2} \leq \left(\|\vec{x}\| + \|\vec{y}\|\right)^{2} $, por lo que $\displaystyle \|\vec{x} + \vec{y}\| \leq \| \vec{x} \| + \|\vec{y}\| $.
+\end{proof}
+\begin{ftheorem}[Teorema de Gram-Schmidt]
+	\normalfont Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ de $\displaystyle E $ y para $\displaystyle i = 1, \ldots, n $. Sea $\displaystyle L_{i} = L\left( \left\{ \vec{u}_{1}, \ldots, \vec{u}_{i}\right\} \right) $. Entonces existe $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\}  $ base ortonormal de $\displaystyle E $ para $\displaystyle \langle, \rangle  $ tal que $\displaystyle L_{i} = \left\{ \vec{v}_{1}, \ldots, \vec{v}_{i}\right\}  $, $\displaystyle \forall i = 1, \ldots, n $.
+\end{ftheorem}
+\begin{proof}
+Se define $\displaystyle \vec{v}_{1} = \frac{\vec{u}_{1}}{\| \vec{u}_{1} \|} $. Ahora, tomamos $\displaystyle \vec{v'}_{2} = \vec{u}_{2}+\lambda\vec{v}_{1} $. Así, se tiene que 
+\[ \langle \vec{v}_{1}, \vec{v'}_{2}\rangle = \langle \vec{v}_{1}, \vec{u}_{2}\rangle + \lambda\underbrace{\langle \vec{v}_{1}, \vec{v}_{1}\rangle}_{1} = 0 .\]
+Si $\displaystyle \lambda = - \langle \vec{v}_{1}, \vec{u}_{2}\rangle  $, tenemos que $\displaystyle \vec{v}_{1} $ y $\displaystyle \vec{v'}_{2} $ son ortogonales.
+Ahora tomo $\displaystyle \vec{v}_{2} = \frac{\vec{v'}_{2}}{\|\vec{v'}_{2}\|} $. Tenemos que $\displaystyle \left\{ \vec{v}_{1}, \vec{v}_{2}\right\}  $ es una base ortonormal de $\displaystyle L_{2} $. Supongamos que están definidmos $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{i}\right\}  $ base ortonormal de $\displaystyle L_{i} $ con $\displaystyle i < n $. Así, tomamos
+\[\vec{v'}_{i+1} = \vec{u}_{i+1} - \langle\vec{u}_{i+1},\vec{v}_{1}\rangle\vec{v}_{1} - \langle\vec{u}_{i+1},\vec{v}_{2}\rangle\vec{v}_{2} - \cdots - \langle \vec{u}_{i+1}, \vec{v}_{i}\rangle \vec{v}_{1}.\]
+Así, tenemos que $\displaystyle \forall j = 1, \ldots, i $, 
+\[
+\begin{split}
+\langle \vec{v'}_{i+1}, \vec{v}_{j}\rangle = & \langle \vec{u}_{i+1}, \vec{v}_{j}\rangle - \langle \vec{u}_{i+1},\vec{v}_{i}\rangle\langle\vec{u}_{i+1},\vec{v}_{1}\rangle - \langle \vec{u}_{i+1}, \vec{v}_{2}\rangle\langle\vec{v_{2}}, \vec{v}_{j}\rangle - \cdots - \langle\vec{u}_{i+1}, \vec{v}_{j}\rangle\langle\vec{v}_{j}, \vec{v}_{j}\rangle - \cdots
+-  \langle\vec{u}_{i+1}, \vec{v}_{i}\rangle\langle\vec{v}_{i},\vec{v}_{j}\rangle \\
+= & \langle \vec{u}_{i+1}, \vec{v}_{j}\rangle - \langle \vec{u}_{i+1},\vec{v}_{j}\rangle = 0 .
+\end{split}
+\]
+\end{proof}
+\section{Criterio de Sylvester}
+Sea $\displaystyle \beta : V \times V \to \R $, donde $\displaystyle V $ es un $\displaystyle \R $-espacio vectorial, una forma bilineal simétrica. Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $. Tenemos que la matriz de $\displaystyle \beta  $ respecto de esta base será:
+\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta \right)= \begin{pmatrix} a_{11} & \cdots & a_{1n} \\
+\vdots & & \vdots \\
+a_{n1} & \cdots & a_{nn}\end{pmatrix}, \; a_{ij} = a_{ji} .\]
+Definimos 
+	\[ \Delta_{1} = \left|a_{11}\right|, \; \Delta_{2} = \begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{vmatrix} , \; \Delta_{i} = \begin{vmatrix} a_{11} & \cdots & a_{1i}\\
+\vdots & & \vdots \\
+\a_{i1} & \cdots & a_{ii}\end{vmatrix}  .\]
+Así, tenemos que $\displaystyle \Delta_{n} = \det\left(\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{u}_{n}\right)\right) $. 
+\begin{ftheorem}[]
+\normalfont Tenemos que $\displaystyle \beta  $ es un producto escalar si y solo si $\displaystyle \Delta_{i} > 0 $ para $\displaystyle i = 1, \ldots, n $. 
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Si $\displaystyle \beta  $ es producto escalar, tenemos que $\displaystyle \beta_{L_{i}} $ es producto escalar en $\displaystyle L_{i} $.
+\item[(ii)] Sea $\displaystyle \beta\left(\vec{u}_{1},\vec{u}_{1}\right) = a_{11}>0 $. Cogemos $\displaystyle \vec{v}_{1} = \frac{\vec{u}_{1}}{\sqrt{a_{11}}} $. Cogemos $\displaystyle \vec{v'}_{2} = \vec{u}_{2}+\lambda\vec{v}_{1} $. Entonces tenemos que
+	\[\beta\left(\vec{v'}_{2}, \vec{v}_{1}\right) = \beta\left(\vec{u}_{2}, \vec{v}_{1}\right)+\lambda\underbrace{\beta\left(\vec{v}_{1}, \vec{v}_{1}\right)}_{1} .\]
+	Tomando $\displaystyle \lambda = -\beta\left(\vec{u}_{2}, \vec{v}_{1}\right) $, tenemos que $\displaystyle \beta\left(\vec{v'}_{2}, \vec{v}_{1}\right) = 0 $. Por tanto, $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}\right\}  $ es base de $\displaystyle L_{2} $ y $\displaystyle \left\{ \vec{v}_{1}, \vec{u}_{2}\right\}  $ también es base de $\displaystyle L_{2} $. Así, tenemos que 
+	\[ \left|\mathcal{M}_{ \left\{ \vec{v}_{1}, \vec{u}_{2}\right\} }\left(\beta_{L_{2}}\right)\right| = \begin{vmatrix} 1 & \beta\left(\vec{v}_{1}, \vec{u}_{2}\right) \\ \beta\left(\vec{v}_{1}, \vec{u}_{2}\right) & \beta\left(\vec{u}_{2}, \vec{u}_{2}\right) \end{vmatrix} = \beta\left(\vec{u}_{2}, \vec{u}_{2}\right)-\beta\left(\vec{v}_{1}, \vec{u}_{2}\right)^{2} .\]	
+	Además tenemos que $\displaystyle \det\left(\mathcal{M}_{ \left\{ \vec{u}_{1}, \vec{u}_{2}\right\} }\left(\beta_{L_{2}}\right)\right) = \Delta_{2} > 0 $. Tenemos que
+	\[ \det\left(\mathcal{M}_{ \left\{ \vec{v}_{1}, \vec{u}_{2}\right\} }\right) = \begin{vmatrix} 1 & \beta\left(\vec{v}_{1}, \vec{u}_{2}\right) \\
+	\beta\left(\vec{v}_{1}, \vec{u}_{2}\right) & \beta\left(\vec{u}_{2}, \vec{u}_{2}\right)\end{vmatrix} = \beta\left(\vec{u}_{2}, \vec{u}_{2}\right)-\beta\left(\vec{v}_{1}, \vec{u}_{2}\right)^{2} > 0 .\]
+	Así, definimos $\displaystyle \vec{v}_{2} = \frac{\vec{v'}_{2}}{\beta\left(\vec{v'}_{2}, \vec{v}_{2}\right)} $. Supongamos que es cierto para $\displaystyle i < n $. Tenemos que 
+	\[\beta\left(\vec{v}_{k}, \vec{v}_{h}\right) = 
+	\begin{cases}
+	1, \; k = h\\
+	0, \; k \neq h
+	\end{cases}
+	.\]
+	Definimos $\displaystyle \vec{v'}_{2} = \vec{u}_{2} + \lambda\vec{v}_{1} $, con $\displaystyle \lambda \in \R $. Así, tomando $\displaystyle \lambda = - \beta\left(\vec{u}_{2},\vec{v}_{1}\right) $. Así, $\displaystyle \vec{v'}_{2} $ es ortogonal a $\displaystyle \vec{v}_{1} $. Así, tenemos que $\displaystyle \left\{ \vec{v}_{1}, \vec{v'}_{2}\right\}  $ son base de $\displaystyle L_{2} $. Así, nos queda que
+	\[\mathcal{M}_{ \left\{ \vec{v}_{1}, \vec{v'}_{2}\right\} }\left(\beta_{L_{2}}\right) = \begin{pmatrix} 1 & -\beta\left(\vec{u}_{2}, \vec{v}_{1}\right) \\
+	-\beta\left(\vec{u}_{2}, \vec{v}_{1}\right) & \beta\left(\vec{u}_{2}, \vec{u}_{2}\right)\end{pmatrix} .\]
+	Así, tenemos que $\displaystyle \det\left(\mathcal{M}_{ \left\{ \vec{v}_{1}, \vec{v'}_{2}\right\} }\left(\beta_{L_{2}}\right)\right) = \beta\left(\vec{u}_{2},\vec{u}_{2}\right)-\beta\left(\vec{u}_{2}, \vec{v}_{1}\right)^{2} \geq 0 $. Así, podemos tomar, $\displaystyle \vec{v}_{2} = \frac{\vec{v'}_{2}}{\sqrt{\beta\left(\vec{v'}_{2}, \vec{v'}_{2}\right)}} $. Así tendremos que $\displaystyle \beta\left(\vec{v}_{2}, \vec{v}_{2}\right) = 1 $. \\ \\
+	Supongamos definidos $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{r}\right\}  $ base de $\displaystyle L_{r} $ con $\displaystyle r < n $. Definimos 
+	\[\vec{v'}_{r+1} = \vec{u}_{r+1}+ \lambda_{1}\vec{v}_{1} + \cdots + \lambda_{r}\vec{v}_{r}.\]
+	Entonces, para $\displaystyle i = 1, \ldots, r $ se tiene que
+	\[
+	\begin{split}
+		\beta\left(\vec{v'}_{r+1}, \vec{v}_{i}\right) = & \beta\left(\vec{u}_{r+1}, \vec{v}_{i}\right) + \lambda_{1}\beta\left(\vec{v}_{1}, \vec{v}_{i}\right) + \cdots + \lambda_{i}\beta\left(\vec{v}_{i}, \vec{v}_{i}\right) + \cdots + \lambda_{r}\beta\left(\vec{v}_{r}, \vec{v}_{i}\right)\\
+		= & \beta\left(\vec{u}_{r+1}, \vec{v}_{i}\right) + \lambda_{i} = 0 .
+	\end{split}
+	\]
+	Tomamos $\displaystyle \lambda_{i} = -\beta\left(\vec{u}_{r+1}, \vec{v}_{i}\right) $, tenemos que $\displaystyle \vec{v'}_{r+1} $ es ortogonal a $\displaystyle \vec{v}_{i} $ para $\displaystyle i = 1, \ldots, r $. Ahora, tenemos que
+	\[ .\]
+\[
+\begin{split}
+	\beta\left(\vec{v'}_{r+1}, \vec{v'}_{r+1}\right) = & \beta\left(\vec{u}_{r+1}, \vec{u}_{r+1}\right) + 2 \sum^{r}_{i=1}-\beta\left(\vec{u}_{r+1}, \vec{v}_{r}\right)^{2}+\sum^{r}_{i,j=1}\beta\left(-\beta\left(\vec{u}_{r+1}, \vec{v}_{i}\right)\vec{v}_{i},- \beta\left(\vec{u}_{r+1}, \vec{v}_{j}\right)\vec{v'}_{j}\right)\\
+	= & \beta\left(\vec{u}_{r+1}, \vec{u}_{r+1}\right) - \sum^{r}_{i=1}\beta\left(\vec{u}_{r+1}, \vec{v}_{i}\right)^{2} > 0.
+\end{split}
+\]
+Así, tenemos que 
+\[\mathcal{M}_{ \left\{ \vec{v}_{i}, \vec{u}_{r+1}\right\} }\left(\beta_{L_{r+1}}\right) = \begin{pmatrix} 1 & 0 & \cdots & 0 & \beta\left(\vec{u}_{r+1}, \vec{v}_{1}\right) \\
+0 & 1 & \cdots & 0 & \beta\left(\vec{u}_{r+1}, \vec{v}_{2}\right) \\
+\vdots & & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & 1 & \beta\left(\vec{u}_{r+1}, \vec{v}_{r}\right) \\
+\beta\left(\vec{u}_{r+1}, \vec{v}_{1}\right) & \beta\left(\vec{u}_{r+1}, \vec{v}_{2}\right) & \cdots & \beta\left(\vec{u}_{r}, \vec{v}_{r}\right) & \beta\left(\vec{u}_{r+1}, \vec{v}_{r+1}\right)\end{pmatrix} .\]
+Así, tomamos $\displaystyle \vec{v}_{r+1} = \frac{\vec{v'}_{r+1}}{\sqrt{\beta\left(\vec{v'}_{r+1}, \vec{v'}_{r+1}\right)}} $ 
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont Si $\displaystyle L_{i} = L\left( \left\{ \vec{u}_{1}, \ldots, \vec{u}_{i}\right\} \right) $, tenemos que $\displaystyle \beta:L_{i} \times L_{i} \to \R $ es un producto escalar. En efecto,
+\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta_{L_{i}}\right) = \begin{pmatrix} a_{11} & \cdots & a_{1i} \\
+\vdots & & \vdots \\
+a_{i1} & \cdots & a_{ii}\end{pmatrix} .\]
+\end{observation}
+

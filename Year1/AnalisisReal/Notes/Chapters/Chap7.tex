@@ -1,0 +1,324 @@
+\chapter{Cálculo de primitivas}
+Sabemos que si $\displaystyle \exists \int^{b}_{a} f\left(t\right) \; dt $ y $\displaystyle \exists g $ tal que $\displaystyle g'\left(x\right) = f\left(x\right) $, $\displaystyle \forall x \in \left[a,b\right]  $, entonces, por la regla de Barrow
+\[\int^{b}_{a} f\left(t\right) \; dt = g\left(b\right)-g\left(a\right) .\]
+\begin{fdefinition}[Primitiva]
+\normalfont Dada $\displaystyle f $, se dice que $\displaystyle g $ es una \textbf{primitiva} (o \textbf{integral}) de $\displaystyle f $ si $\displaystyle g' = f $.
+\end{fdefinition}
+\begin{notation}
+\normalfont Se escribe $\displaystyle g\left(x\right) = \int f\left(x\right) \; dx $.
+\end{notation}
+\begin{observation}
+\normalfont Por la regla de Barrow, el cálculo de integrales se reduce muchas veces al cálculo de primitivas.
+\end{observation}
+\begin{eg}
+\normalfont Consideremos $\displaystyle \int^{\pi}_{0} \sin x \; dx $. Tenemos que $\displaystyle \left(-\cos x\right)' = \sin x $, por lo que 
+\[ \int^{\pi }_{0} \sin x  \; dx = \left[-\cos x\right] ^{\pi }_{0} = 2 .\]
+\end{eg}
+\begin{observation}
+	\normalfont Por el teorema fundamental del cálculo, si $\displaystyle f $ es continua en $\displaystyle \left[a,b\right]  $, entonces $\displaystyle F\left(x\right) = \int^{x}_{a} f\left(t\right) \; dt $ es la primitiva de $\displaystyle f $.
+\end{observation}
+\begin{observation}
+\normalfont Si $\displaystyle F\left(x\right) = \int f\left(x\right) \; dx$, tenemos que $\displaystyle G\left(x\right) = F\left(x\right) + K $, con $\displaystyle K \in \R $, también es una primitiva de $\displaystyle f $. 
+\end{observation}
+Existen funciones que no admiten primitivas elementales, es decir, combinaciones algebraicas de funciones elementales (polinomios, funciones trigonométricas, exponenciales, logaritmos, etc.).
+\begin{eg}
+\normalfont Un caso típico es $\displaystyle \int e^{-x^{2}} \; dx $.
+\end{eg}
+\begin{observation}
+\normalfont El cálculo de primitivas no es inmediato. En verdad, es bastante más complicado que la derivación.
+\end{observation}
+\section{Primitivas elementales}
+Si le damos la vuelta a la tabla de derivadas obtenemos las primitivas elementales:
+\begin{center}
+\begin{tabular}{|cc|}
+	\hline
+$ \int K  \; dx = Kx $ & $ \int \frac{1}{x^{2}+1} \; dx = \arctan x $ \\
+$ \int x^{n} \; dx = \frac{x^{n+1}}{n + 1}, \; n \in \Z / \left\{ -1\right\}  $ & $ \int \frac{1}{\sqrt{1-x^{2}}} \; dx = \arcsin x $ \\
+$ \int \frac{1}{x} \; dx = \ln x $ & $ \int \frac{-1}{\sqrt{1-x^{2}}} \; dx = \arccos x $ \\
+$ \int e^{x} \; dx = e^{x} $ & $ \int \sinh x \; dx = \cosh x $ \\
+$ \int \sin x \; dx = - \cos x $ & $ \int \cosh x \; dx = \sinh x $ \\
+$ \int \cos x \; dx = \sin x $ & $\int \sech^{2}x \; dx = \tanh x $ \\
+$ \int \sec^{2}x \; dx = \tan x $ & $ \int \frac{1}{\sqrt{1 + x^{2}}} \; dx = \arcsinh x $ \\
+\hline
+\end{tabular}
+\end{center}
+\begin{eg}
+\normalfont 
+\[
+\begin{split}
+\int^{}_{} \frac{2x\left(x+1\right)-x^{2}}{\left(x+1\right)^{2}} \; dx = \int^{}_{} \frac{x^{2}+2x}{\left(x+1\right)^{2}} \; dx = \int^{}_{} \frac{x\left(x+2\right)}{\left(x+1\right)^{2}} \; dx = \frac{x^{2}}{x + 1}.
+\end{split}
+\]
+\end{eg}
+\begin{eg}
+\normalfont 
+\[\int 3\cos x - 7 \sin x \; dx = 3 \sin x + 7 \cos x .\]
+\end{eg}
+\begin{observation}
+\normalfont Dado que $\displaystyle \left(f+g\right)' = f' + g' $ y $\displaystyle \left(\lambda f\right)' = \lambda f' $, con $\displaystyle \lambda \in \R $, tenemos que 
+\[ \int f + g = \int f + \int g , \quad \int \lambda f = \lambda \int f .\]
+\end{observation}
+\section{Integración por partes}
+\begin{ftheorem}[Regla de integración por partes]
+\normalfont Si $\displaystyle f $ y $\displaystyle g $ son funciones continuas con $\displaystyle g $ derivable y $\displaystyle F = \int f $, entonces se tiene que 
+\[ \int^{}_{} f\left(x\right)g\left(x\right) \; dx = F\left(x\right)g\left(x\right) - \int F\left(x\right)g'\left(x\right) \; dx .\]
+\end{ftheorem}
+\begin{proof}
+Tenemos que 
+\[ \left(Fg\right)'\left(x\right) = F'\left(x\right)g\left(x\right) + F\left(x\right)g'\left(x\right) .\]
+Dado que todas las funciones que aparecen son continuas, son integrables y, por tanto, tienen primitiva. Entonces, si integramos tenemos que 
+\[ \int^{}_{} f\left(x\right)g\left(x\right) \; dx = \int^{}_{} \left(Fg\right)'\left(x\right)- F\left(x\right)g'\left(x\right) \; dx = F\left(x\right)g\left(x\right) - \int^{}_{} f\left(x\right)g'\left(x\right) \; dx.\] 
+\end{proof}
+\begin{eg}
+\normalfont 
+\[\int xe^{x} \; dx = xe^{x}-\int e^{x} \; dx = xe^{x} - e^{x} .\]
+\end{eg}
+\begin{eg}
+\normalfont 
+\[\int x^{2}\cos x \; dx = x^{2}\sin x - \int 2x\sin x  \; dx = x^{2}\sin x + 2x \cos x - \int 2\cos x \; dx = x^{2}\sin x + 2x \cos x - 2\sin x .\]
+Podemos comprobar que hemos obtenido el resultado correcto:
+\[ \left(x^{2}\sin x + 2x \cos x - 2\sin x \right)' = 2x \sin x + x^{2}\cos x + 2 \cos x - 2x \sin x - 2 \cos x = x^{2}\cos x.\]
+\end{eg}
+\begin{eg}
+\normalfont 
+\[\int \ln x \; dx = \int \left(x\right)'\ln x \; dx = x\ln x - \int x \cdot \frac{1}{x} \; dx = x \ln x - x .\]
+\end{eg}
+\begin{eg}
+\normalfont 
+\[ \int e^{x} \cos x \; dx = e^{x}\sin x - \int e^{x}\sin x \; dx = e^{x}\sin x + e^{x}\cos x - \int e^{x}\cos x \; dx .\]
+Despejando, tenemos que
+\[2\int e^{x}\cos x \; dx = e^{x}\sin x- e^{x}\cos x \Rightarrow \int e^{x}\cos x  \; dx = \frac{1}{2}e^{x}\left(\sin x - \cos x\right).\]
+\end{eg}
+\begin{observation}
+\normalfont Podemos juntar la regla de Barrow con la regla de integración por partes:
+\[ \int^{b}_{a} f\left(x\right)g\left(x\right) \; dx = \left[F\left(x\right)g\left(x\right)\right] ^{b}_{a}-\int^{b}_{a} F\left(x\right)g'\left(x\right) \; dx  .\]
+Donde, $\displaystyle F = \int f $.
+\end{observation}
+\section{Cambio de variable}
+Recordamos que por la regla de la cadena se tiene que:
+\[\left(f\circ g\right)'\left(x\right) = f'\left(g\left(x\right)\right)g'\left(x\right) .\]
+\begin{fcolorary}[Fórmula de sustitución]
+\normalfont Sean $\displaystyle f $ y $\displaystyle g' $ continuas.
+\begin{description}
+\item[(a)] Sea $\displaystyle F $ una primitiva de $\displaystyle f $, entonces 
+	\[\int f\left(g\left(x\right)\right)g'\left(x\right) \; dx = F\circ g\left(x\right) .\]
+\item[(b)] Sea $\displaystyle G $ una primitiva de $\displaystyle f\left(g\left(x\right)\right)g'\left(x\right) $, entonces 
+	\[\int f\left(x\right) \; dx = G\circ g^{-1}\left(x\right) .\]
+\end{description}
+\end{fcolorary}
+\begin{proof}
+\begin{description}
+\item[(a)] Por la regla de la cadena se tiene que 
+	\[ \left(F\circ g\right)'\left(x\right) = F'\left(g\left(x\right)\right)g'\left(x\right) = f\left(g\left(x\right)\right)g'\left(x\right) .\]
+\item[(b)] 
+	\[\left(G\circ g^{-1}\right)'\left(x\right) = G'\left(g^{-1}\left(x\right)\right)\left(g^{-1}\right)'\left(x\right) = f\left(g\left(g^{-1}\left(x\right)\right)\right)g'\left(g^{-1}\left(x\right)\right) \cdot \frac{1}{g'\left(g^{-1}\left(x\right)\right)}=f\left(x\right) .\]
+\end{description}
+\end{proof}
+\begin{eg}
+\normalfont Consideremos
+\[\int \cosh x \cdot \cosh\left(\sinh x\right) \; dx = \int \cosh u \; du = \sinh u = \sinh\left(\sinh x\right) .\]
+\end{eg}
+\begin{observation}
+\normalfont Usualmente cogemos el cambio de variable $\displaystyle u = g\left(x\right) $ donde $\displaystyle \frac{du}{g'\left(x\right)}=dx$, es decir, $\displaystyle du = g'\left(x\right) dx $.
+\end{observation}
+\begin{observation}
+\normalfont Otra opción es coger $\displaystyle x = g\left(u\right) $ como cambio de variable y así $\displaystyle dx = g'\left(u\right)du $. 
+\[\int f\left(x\right) \; dx = \int f\left(g\left(u\right)\right)g'\left(u\right) \; du = G\left(u\right)= G\circ g^{-1}\left(x\right) .\]
+\end{observation}
+\begin{eg}
+\normalfont 
+\begin{itemize}
+\item Cogiendo $\displaystyle u = -x^{2} $, con $\displaystyle du = -2xdx $. 
+	\[\int xe^{-x^{2}} \; dx = -\frac{1}{2}\int -2xe^{-x^{2}} \; dx = -\frac{1}{2}e^{-x^{2}} .\]
+\item Hacemos la sustitución $\displaystyle x = \ln u $, así tenemos que
+	\[\int \frac{1}{e^{x}+1} \; dx = \int \frac{1}{e^{\ln u}+1}\frac{1}{u} \; du = \int \frac{1}{u\left(u+1\right)} \; du = \int \frac{1}{u}-\frac{1}{u+1} \; du = \ln \left|\frac{u}{u+1}\right| = \ln\left(\frac{e^{x}}{1+e^{x}}\right).\]
+\item Cogemos la sustitución $\displaystyle u = \sqrt{x-1} $, con $\displaystyle du = \frac{1}{2\sqrt{x-1}}dx $,
+	\[\int \tan\left(\sqrt{x-1}\right)\frac{1}{\sqrt{x-1}} \; dx = \int 2\tan u \; du = -2\int \frac{-\sin u}{\cos u} \; du = -2\ln\left(\cos u\right)=-2\ln\left(\cos\left(\sqrt{x -1}\right)\right).\]
+\end{itemize}
+\end{eg}
+\begin{ftheorem}[Fórmula de sustitución o del cambio de variable]
+	\normalfont Si $\displaystyle f $ y $\displaystyle g' $ son funciones continuas en $\displaystyle \left[a,b\right]  $, 
+\[\int^{g\left(b\right)}_{g\left(a\right)} f\left(x\right) \; dx = \int^{b}_{a} \left(f\circ g\right)\left(x\right)g'\left(x\right) \; dx.\]
+\end{ftheorem}
+\begin{proof}
+Por ser $\displaystyle f $ continua, tenemos que existe $\displaystyle F =  \int^{x}_{a} f $ continua. Por la regla de Barrow tenemos que 
+\[\int^{g\left(b\right)}_{g\left(a\right)} f\left(x\right) \; dx = F\left(g\left(b\right)\right)-F\left(g\left(a\right)\right) .\]
+Además, tenemos que $\displaystyle \int f\left(g\left(x\right)\right)g'\left(x\right) \; dx = F\circ g $. Así, por la regla de Barrow,
+\[\int^{b}_{a} \left(f\circ g\right)\left(x\right)g'\left(x\right) \; dx = F\left(g\left(b\right)\right)-F\left(g\left(a\right)\right).\]
+\end{proof}
+\section{Primitivas de funciones racionales}
+Vamos a estudiar cómo calcular la primitiva de una función racionales, es decir, una integral de la forma
+\[\int \frac{P\left(x\right)}{Q\left(x\right)} \; dx = \int \frac{a_{n}x^{n} + \cdots + a_{1}x + a_{0}}{b_{m}x^{m}+\cdots + b_{1}x + b_{0}} \; dx .\]
+A veces es conveniente simplificar su expresión utilizando, por ejemplo, el método de descomposición en fracciones simples. 
+\begin{eg}
+\normalfont 
+\[\int \frac{1}{u^{2}+u} \; du = \int \frac{1}{u}\frac{1}{u+1} \; du = \int \frac{1}{u}-\frac{1}{u+1} \; du .\]
+\[\int \frac{1}{\left(ax+b\right)^{n}} \; dx = \frac{1}{a} \int \frac{a}{\left(ax+b\right)^{n}} \; dx = 
+\begin{cases}
+\frac{1}{a}\frac{\left(ax+b\right)-n+1}{-n+1}, \; n \neq 1 \\
+\frac{1}{a}\ln \left(ax+b\right), \; n = 1
+\end{cases}
+.\]
+\end{eg}
+Ahora vamos a estudiar las primitivas de la forma $\displaystyle \int \frac{rx+k}{\left(x^{2}+ax+b\right)^{n}} \; dx $ donde el polinomio del denominador no tiene raíces reales. Si las tuviera, el problema se reduciría al anterior de descomposición en fracciones simples. Operando, obtenemos 
+\[\int \frac{rx+k}{\left(x^{2}+ax+b\right)^{n}} \; dx = \frac{r}{2}\int \frac{2x+a}{\left(x^{2}+ax+b\right)^{n}} + \frac{\frac{2k}{r}-a}{\left(x^{2}+ax+b\right)^{n}} \; dx .\]
+Aquí podemos distinguir dos tipos de integrales:
+\begin{itemize}
+\item En el primero tenemos que el numerador es la derivada de la base del denominador. Por tanto, aplicando el cambio de variable $\displaystyle u = x^{2} + ax + b $ pasamos a la primitiva $\displaystyle \int \frac{1}{u^{n}} \; du $, que sabemos resolver.
+\item El caso difícil es la segunda integral que nos queda.
+\end{itemize}
+\begin{flema}[]
+\normalfont Dada la integral $\displaystyle \int \frac{1}{\left(x^{2}+ax+b\right)^{n}} \; dx $ con denominador irreducible, existe un cambio de variable que transforma la integral en $\displaystyle \int \frac{K}{\left(u^{2}+1\right)^{n}} \; dx $, con $\displaystyle K \in \R $.
+\end{flema}
+\begin{proof}
+Vamos a transformar el polinomio de segundo grado completando cuadrados:
+\[ x^{2} + ax + b=x^{2}+2\frac{a}{2}x + \left(\frac{a}{2}\right)^{2}+b-\frac{a^{2}}{4} = \left(x+\frac{a}{2}\right)^{2}+\beta^{2}, \; \beta = \sqrt{b - \frac{a^{2}}{4}} .\]
+Así, tenemos que 
+\[x^{2}+ax+b = \beta^{2}\left[\frac{1}{\beta^{2}}\left(x+\frac{a}{2}\right)^{2}+1\right] .\]
+Haciendo el cambio de variable $\displaystyle u = \frac{x + \frac{a}{2}}{\beta } $, con $\displaystyle du = \frac{1}{\beta }dx $, obtenemos la integral
+\[ \frac{1}{\beta^{2n-1}}\int \frac{1}{\left(u^{2}+1\right)^{n}} \; du.\]
+\end{proof}
+Así, hemos reducido nuestro problema a dos situaciones posibles:
+\begin{itemize}
+\item Si $\displaystyle n = 1 $, entonces $\displaystyle \int \frac{1}{x^{2}+1} \; dx = \arctan x $.
+\item Si $\displaystyle n > 1 $, entonces a la integral $\displaystyle \int \frac{1}{\left(x^{2}+1\right)^{n}} \; dx $ se le aplica la fórmula de reducción
+	\[\int \frac{1}{\left(x^{2}+1\right)^{n}} \; dx = \frac{1}{2n-2}\frac{x}{\left(x^{2}+1\right)^{n-1}}+\frac{2n-3}{2n-2}\int \frac{1}{\left(x^{2}+1\right)^{n-1}} \; dx .\]
+\end{itemize}
+\begin{eg}
+\normalfont 
+\[\int \frac{1}{x^{2}+2x+5} \; dx .\]
+Tenemos que el polinomio del denominador no tiene soluciones y es irreducible. Tenemos que transformar la función en algo del tipo $\displaystyle \frac{1}{x^{2}+1} $. Completando cuadrados:
+\[ x^{2}+2x+5 = 4\left(\left(\frac{x+1}{2}\right)^{2}+1\right) .\]
+Así, se tiene que
+\[ \int \frac{1}{x^{2}+2x+5} \; dx = \frac{1}{2}\int \frac{1}{2}\frac{1}{\left(\frac{x+1}{2}\right)^{2}+1} \; dx.\]
+Haciendo el cambio de variable $\displaystyle u = \frac{x+1}{2} $ con $\displaystyle du = \frac{1}{2}x dx $ tenemos la integral
+\[ \frac{1}{2}\int \frac{1}{u^{2}+1} \; du = \frac{1}{2}\arctan u = \frac{1}{2}\arctan \left(\frac{x+1}{2}\right) .\]
+\end{eg}
+A continuación, vamos a estudiar formalmente las primitivas de funciones racionales. Dada una integral de la forma $\displaystyle \int \frac{P\left(x\right)}{Q\left(x\right)} \; dx $, primero dividimos $\displaystyle P $ entre $\displaystyle Q $, de modo que $\displaystyle P\left(x\right) = q\left(x\right)Q\left(x\right) + r\left(x\right) $, donde $\displaystyle r $ tiene grado menor que $\displaystyle Q $. Así, tenemos que
+\[\int \frac{P\left(x\right)}{Q\left(x\right)} \; dx = \int \frac{q\left(x\right)Q\left(x\right) + r\left(x\right)}{Q\left(x\right)} \; dx = \int q\left(x\right) + \frac{r\left(x\right)}{Q\left(x\right)} \; dx .\]
+Nuestro problema queda reducido a resolver la segunda integral. 
+\begin{ftheorem}[]
+	\normalfont Dados dos polinomios $\displaystyle P,Q \in \R\left[x\right]  $ con grado $\displaystyle P $ menor que $\displaystyle Q $ y donde tenemos la descomposición
+	\[Q\left(x\right) = \left(x-\alpha_{1}\right)^{r_{1}} \cdots \left(x-\alpha_{i}\right)^{r_{i}}\left(x^{2}-2a_{1}x+a_{1}^{2}+b^{2}_{1}\right)^{s _{1}} \cdots \left(x^{2}-2a_{j}x+a_{j}^{2}+b^{2}_{j}\right)^{s_{j}} ,\]
+	entonces se pueden encontrar $\displaystyle c_{n,m}, d _{n,m} $ y $\displaystyle k_{n,m} $ tales que
+	\[
+	\begin{split}
+		\frac{P\left(x\right)}{Q\left(x\right)} = & \left[\frac{c_{1,1}}{\left(x-\alpha_{1}\right)}+\cdots + \frac{c_{1,r_{1}}}{\left(x-\alpha_{1}\right)^{r_{1}}}\right] \\
+		+ & \cdots + \left[\frac{c_{i,1}}{\left(x-\alpha_{1}\right)}+\cdots + \frac{c_{i,r_{i}}}{\left(x-\alpha_{1}\right)^{r_{i}}}\right] \\
+		+ & \left[\frac{d _{1,1}x + k_{1,1}}{x^{2}-2a_{1}x+a_{1}^{2}+b^{2}_{1}}+ \cdots + \frac{d _{1,s _{1}}x + k_{1,s_{1}}}{(x^{2}-2a_{1}x+a_{1}^{2}+b^{2}_{1})^{s_{1}}}\right]\\
+		+ & \cdots +\left[\frac{d _{j,1}x + k_{j,1}}{x^{2}-2a_{j}x+a_{j}^{2}+b^{2}_{j}}+ \cdots + \frac{d _{j,s _{j}}x + k_{j,s_{j}}}{(x^{2}-2a_{j}x+a_{j}^{2}+b^{2}_{j})^{s_{j}}}\right]  .
+	\end{split}
+	\]
+\end{ftheorem}
+Así, nuestra integral inicial queda reducida a una suma de integrales como las que hemos resuelto anteriormente.
+\begin{eg}
+\normalfont Consideremos la integral $\displaystyle \int \frac{x^{3}+x+1}{x\left(x^{2}+1\right)} \; dx $. En primero lugar, dividimos el polinomio del numerador entre el del denominador:
+\[ \int \frac{x^{3}+x+1}{x\left(x^{2}+1\right)} \; dx = \int 1 + \frac{1}{x\left(x^{2}+1\right)} \; dx = x + \int \frac{1}{x\left(x^{2}+1\right)} \; dx.\]
+Por el teorema anterior, podemos hacer
+\[\frac{1}{x\left(x^{2}+1\right)} = \frac{c}{x} + \frac{dx+k}{x^{2}+1} .\]
+Así, obtenemos que $\displaystyle c = 1 $, $\displaystyle d = - 1 $ y $\displaystyle k = 0 $. Así, 
+\[ \int \frac{1}{x\left(x^{2}+1\right)} \; dx = \int \frac{1}{x}-\frac{x}{x^{2}+1} \; dx = \ln x - \frac{1}{2}\ln\left(x^{2}+1\right).\]
+Así, volviendo a la integral original,
+\[\int \frac{x^{3}+x+1}{x\left(x^{2}+1\right)} \; dx = x + \ln x - \frac{1}{2}\ln\left(x^{2}+1\right) .\]
+\end{eg}
+\section{Otras técnicas}
+Es conveniente conocer las relaciones trigonométricas:
+\[\cos^{2}x+\sin ^{2}x = 1.\]
+\[\cos2x = \cos^{2}x- \sin ^{2}x, \quad \sin2x = 2\sin x \cos x, \quad 1 + \tan^{2}x = \sec^{2}x .\]
+\begin{eg}
+\normalfont Aplicando las propiedades anteriores:
+\[\int \cos^{2}x \; dx = \frac{1}{2}\int \left(1+\cos2x\right) \; dx = \frac{1}{2}\left(x+\frac{1}{2}\sin2x\right) = \frac{2x+\sin2x}{4} .\]
+También se puede calcular por partes:
+\[  .\]
+\[
+\begin{split}
+	\int \cos^{2}x  \; dx = & \int \cos x \cos x \; dx = \sin x \cos x + \int \sin ^{2}x \; dx = \sin x \cos x + \int 1 - \cos ^{2}x \; dx \\
+	= & \sin x \cos x + x - \int \cos^{2}x \; dx.
+\end{split}
+\]
+Así, obtenemos que
+\[\therefore\int \cos^{2}x \; dx = \frac{1}{2}\left(\sin x\cos x + x\right) = \frac{\sin2x + 2x}{4}.\]
+\end{eg}
+Ahora vamos a estudiar las integrales de la forma
+\[\int \sin ^{n}x \cos ^{m}x \; dx, \; n,m \; \text{pares}.\]
+Consideramos $\displaystyle m = 2k $,
+\[
+\begin{split}
+	\int \sin ^{n}x \cos ^{m}x \; dx = & \int \sin ^{n}x \cos ^{2k}x \; dx = \int \sin ^{n}x\left(1-\sin ^{2}x\right)^{k } \; dx \\
+	= & \int \sin ^{n}x \sum^{k}_{j=0}\begin{pmatrix} n \\ j \end{pmatrix}\left(-1\right)^{j}\sin ^{2j}x \; dx = \sum^{k}_{j=0}\begin{pmatrix} n\\j \end{pmatrix}\left(-1\right)^{j}\int \sin ^{n+2j}x \; dx.
+\end{split}
+\]
+Este tipo de integrales las podemos resolver con uno de los ejercicios de la práctica, que nos dice que si $\displaystyle n $ es par y $\displaystyle n > 2 $:
+\[\int \sin ^{n}x \; dx = -\frac{1}{n}\cos x \sin ^{n-1}x + \frac{n-1}{n}\int \sin ^{n-2}x \; dx.\]
+Si $\displaystyle n $ o $\displaystyle m $ es par y la otra impar, es fácil ver que basta utilizar propiedades elementales de la trigonometría y hacer un cambio de variable. A continuación, vamos a estudiar las integrales de la forma
+\[\int \frac{P\left(\sin x, \cos x\right)}{Q\left(\sin x, \cos x\right)} \; dx ,\]
+donde $\displaystyle P $ y $\displaystyle Q $ son polinomios de dos variables. 
+\begin{eg}
+\normalfont 
+\[\int \frac{\sin x \cos x}{1 + \sin x} \; dx .\]
+Es útil utilizar el cambio $\displaystyle u = \tan x $ o, el que siempre funciona, $\displaystyle u = \tan\frac{x}{2} $. En este caso es fácil ver que se puede hacer la sustitución $\displaystyle u = \sin x $. 
+\end{eg}
+Si cogemos $\displaystyle u = \tan x $, tenemos que $\displaystyle x = \arctan u $. También podemos escribir:
+\[u = \tan x = \frac{\sin x}{\cos x}= \frac{\sin x}{\sqrt{1 - \sin ^{2}x}} = \frac{\sin\left(\arctan u\right)}{\sqrt{1 - \sin ^{2}\left(\arctan u\right)}} .\]
+Sea $\displaystyle A = \sin x = \sin\left(\arctan u\right) $. Tenemos que
+\[u = \frac{A}{\sqrt{1-A^{2}}} \Rightarrow u^{2} = \frac{A^{2}}{1 - A^{2}} \iff u^{2}=A^{2}\left(1+u^{2}\right) \iff A = \frac{u}{\sqrt{1 + u^{2}}}.\]
+Así, es fácil de ver que 
+\[\cos x = \sqrt{1 - A^{2}} = \sqrt{1 - \frac{u^{2}}{1 + u^{2}}} = \frac{1}{\sqrt{1 + u^{2}}} .\]
+Así, tenemos que $\displaystyle du = \left(1+\tan^{2}x\right)dx=\left(1+u^{2}\right)dx $.
+\begin{fprop}[]
+\normalfont Sea $\displaystyle u = \tan \frac{x}{2} $, entonces $\displaystyle \sin x = \frac{2u}{1 + u^{2}} $ y $\displaystyle \cos x = \frac{1-u^{2}}{1 + u^{2}} $, donde $\displaystyle du = \frac{1}{2}\left(1+\tan^{2}\frac{x}{2}\right)dx = \frac{1+u^{2}}{2}dx $.
+\end{fprop}
+\begin{proof}
+Si $\displaystyle u = \tan \frac{x}{2} $, tenemos que $\displaystyle x = 2 \arctan u $. 
+\[\sin x = \sin\left(2\arctan u\right) = 2 \cos\left(\arctan u\right)\sin\left(\arctan u\right) =  \frac{2}{\sqrt{1+u^{2}}} \cdot \frac{u}{\sqrt{1 + u^{2}}} = \frac{2u}{1 + u^{2}}.\]
+Así, se tiene que
+\[
+\begin{split}
+	\cos x = & \cos \left(2\arctan u\right) = \cos ^{2}\left(\arctan u\right) - \sin ^{2}\left(\arctan u\right) = \frac{1}{1 + u^{2}}-\frac{u^{2}}{1 + u^{2}} = \frac{1-u^{2}}{1 + u^{2}} .
+\end{split}
+\]
+\end{proof}
+\begin{eg}
+\normalfont Utilizamos el cambio de variable $\displaystyle u = \tan\frac{x}{2} $ \footnote{También se puede utilizar el cambio $\displaystyle u = \sin x $.},
+\[\int \frac{1}{\cos x} \; dx = \int \frac{1}{\frac{1-u^{2}}{1 +u^{2}}} \cdot \frac{2}{1+u^{2}} \; du = 2\int \frac{1}{1-u^{2}} \; du = \int \left(\frac{1}{u+1}+\frac{1}{1-u}\right) \; du = \ln \frac{1+u}{1-u} = \ln \frac{1 + \tan\frac{x}{2}}{1 - \tan \frac{x}{2}}.\]
+\end{eg}
+\begin{eg}
+\normalfont Utilizamos el cambio de variable $\displaystyle u = \tan \frac{x}{2} $,
+\[\int \frac{1}{\cos^{3}x} \; dx = \int \frac{1}{\left(\frac{1-u^{2}}{1+u^{2}}\right)^{3}} \frac{2}{1+u^{2}}\; du = \int \frac{2\left(1+u^{2}\right)^{2}}{\left(1-u^{2}\right)^{3}} \; du = \int \frac{2\left(1+u^{2}\right)^{2}}{\left(1-u\right)^{3}\left(1+u\right)^{3}} \; du.\]
+Esto se puede resolver por el método de fracciones simples. Una forma más sencilla es tomar el cambio de vaible $\displaystyle u = \sin x $:
+\[\int \frac{1}{\cos^{3}x} \; dx = \int \frac{\cos x}{\cos^{4}x} \; dx = \int \frac{\cos x}{\left(1-\sin ^{2}x\right)^{2}} \; dx = \int \frac{1}{\left(1-u^{2}\right)^{2}} \; du .\]
+\end{eg}
+\section{Funciones hiperbólicas}
+De la tabla de derivadas se deduce fácilmente que
+\[\int \sinh x \; dx = \cosh x, \quad \int \cosh x \; dx = \sinh x .\]
+Nos resultarán útiles algunas propiedades:
+\[ .\]
+\[
+\begin{split}
+	\cosh^{2}x - & \sinh^{2}x = 1 \\
+ \cosh\left(x+y\right) = & \cosh x \cosh y + \sinh x \sinh y \\
+ \sinh\left(x+y\right) = & \cosh x\sinh y + \sinh x \cosh y.
+\end{split}
+\]
+
+De estas dos últimas propiedades se deduce que
+\[
+\begin{split}
+	\cosh 2x =& \cosh ^{2}x + \sinh^{2}x \\
+	\sinh2x = & 2 \cosh x \sinh y.
+\end{split}
+\]
+\begin{eg}
+\normalfont Tenemos que $\displaystyle \cosh^{2}x = \frac{\cosh2x -1}{2} $. Así, es fácil calcular
+\[\int \cosh^{2}x \; dx = \frac{1}{2}\int \cosh 2x - 1 \; dx = \frac{1}{2}\left(\frac{1}{2}\sinh2x - x\right).\]
+Otra forma de hacerlo es con la definición de las funciones hiperbólicas, es decir, usar que $\displaystyle \cosh x = \frac{e^{x}+e^{-x}}{2} $, que será fácil de calcular al tratarse de funciones exponenciales.
+\end{eg}
+\begin{eg}
+\normalfont Tomamos $\displaystyle y = \sqrt{\sqrt{x}+1} $ con $\displaystyle dx = 2\left(y^{2}-1\right)2ydy $ 
+\[\int \frac{1}{\sqrt{\sqrt{x}+1}} \; dx = \int \frac{1}{y}2\left(y^{2}-1\right)2y \; dy = 4\int y^{2}-1 \; dy.\]
+\end{eg}
+\begin{eg}
+\normalfont Tomamos $\displaystyle u = F\left(x\right) = \int^{x}_{0} \sin t \; dt$, con $\displaystyle du = \sin x dx $ 
+\[ \int \left(\sin x \int^{x}_{0} \sin t \; dt\right) \; dx = \int u \; du = \frac{u^{2}}{2} = \frac{1}{2}\left(\int^{x}_{0} \sin t \; dt\right)^{2}.\]
+Esta integral también se podría haber hecho por partes.
+\end{eg}

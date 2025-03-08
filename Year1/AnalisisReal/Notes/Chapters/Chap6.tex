@@ -41,7 +41,7 @@
 	.\]
 \[ M_{i} = \sup \left\{ f\left(t\right) \; : \; t \in \left[t_{i}, t_{i+1}\right] \right\} \geq \max \left\{ M_{[t_{i}, u]}, M_{[u, t_{i+1}]}\right\}.\]
 Así, tenemos que 
-\[ I\left(f, P\right)= \sum^{n-1}_{j = 0}m_{j}\left(t_{j+1}-t_{j}\right) \leq \sum^{n-1}_{j=0, i \neq j} m_{j}\left(t_{j+1}-t_{j}\right) + m_{[t_{i},u]}\left(u-t_{i}\right) + m[u,t_{i+1}]\left(t_{i+1}-u\right) = I\left(f,P'\right).\]
+\[ I\left(f, P\right)= \sum^{n-1}_{j = 0}m_{j}\left(t_{j+1}-t_{j}\right) \leq \sum^{n-1}_{j=0, i \neq j} m_{j}\left(t_{j+1}-t_{j}\right) + m_{[t_{i},u]}\left(u-t_{i}\right) + m_{[u,t_{i+1}]}\left(t_{i+1}-u\right) = I\left(f,P'\right).\]
 Similarmente, tenemos que 
 \[ S\left(f,P'\right) = \sum^{n-1}_{j=0,i\neq j}M_{j}\left(t_{j+1}-t_{j}\right) + M_{[t_{i}, u]}\left(u-t_{i}\right) + M_{[u,t_{i+1}]}\left(t_{i+1}-u\right) \leq \sum^{n-1}_{j=0}M_{j}\left(t_{j+1}-t_{j}\right) = S\left(f,P\right) .\]
 Así, tenemos que $\displaystyle I\left(f,P\right) \leq I\left(f,P'\right) \leq S\left(f,P'\right) \leq S\left(f,P\right) $. \footnote{Las desigualdades anteriores se basan en que $\displaystyle m_{i}\left(t_{i+1}-t_{i}\right) = m_{i}\left(u - t_{i}\right) + m_{i}\left(t_{i+1}-u\right) \leq m_{[u,i+1]}\left(t_{i+1}-u\right) + m_{[i,u]}\left(u-i\right) $. } 
@@ -197,12 +197,7 @@ Ahora, como $\displaystyle \frac{1}{n} \to 0 $, cogemos $\displaystyle n_{0} \in
 	La parte de existencia se puede demostrar utilizando el criterio de integrabilidad. Sabemos que si $\displaystyle \epsilon > 0 $, existe $\displaystyle P \in P\left([a,b]\right) $ tal que $\displaystyle S\left(f,P\right)-I\left(f,P\right) < \epsilon  $. Podemos suponer que $\displaystyle c \in P $, es decir, existe $\displaystyle t_{k_{0}} =c $. Si no ocurriese, $\displaystyle P' = P \cup \left\{ c\right\}  $ sería más fina que $\displaystyle P $ y 
 	\[ S\left(f,P'\right)-I\left(f,P'\right) \leq S\left(f,P\right)-I\left(f,P\right) < \epsilon  .\]
 Así, tenemos que 
-\[
-\begin{split}
-	S\left(f,P\right) = & \sum^{n-1}_{i = 0}M_{i}\left(t_{i+1}-t_{i}\right) = \sum^{k_{0}-1}_{i=0}M_{i}\left(t_{i+1}-t_{i}\right) + \sum^{n-1}_{i = k_{0}}M_{i}\left(t_{i+1}-t_{i}\right) .
-\end{split}
-\]
-\[I\left(f,P\right) = \sum^{n-1}_{i=0}m_{i}\left(t_{i+1}-t_{i}\right) = \sum^{k_{0}-1}_{i=0}m_{i}\left(t_{i+1}-t_{i}\right) + \sum^{n-1}_{i=k_{0}}m_{i}\left(t_{i+1}-t_{i}\right) .\]
+\[S\left(f,P\right)-I\left(f,P\right) = \sum^{k-1}_{i=0}\left(M_{i}-m_{i}\right)\left(t_{i+1}-t_{i}\right) + \sum^{n-1}_{i=k}\left(M_{i}-m_{i}\right)\left(t_{i+1}-t_{i}\right)<\epsilon  .\]
 Definimos la partición $\displaystyle P''= \left\{ t_{0}= a, t_{1}, \ldots, t_{k_{0}}=c\right\}  $. Tenemos que 
 \[
 \begin{split}
@@ -291,7 +286,7 @@ Tenemos que $\displaystyle T $ es una aplicación lineal, en concreto es una for
 \begin{proof}
 \begin{description}
 	\item[(a)] Si $\displaystyle f \leq g $, tenemos que $\displaystyle M_{f,i} \leq M_{g,i} $ y $\displaystyle m_{f,i} \leq m_{g,i} $. Así $\displaystyle \forall P \in P\left(\left[a,b\right] \right) $ se tiene que,
-	\[ S\left(f,P\right) \leq S\left(g,P\right) \quad \text{y} \quad I\left(f,P\right) \leq I\left(S,P\right) .\]
+	\[ S\left(f,P\right) \leq S\left(g,P\right) \quad \text{y} \quad I\left(f,P\right) \leq I\left(g,P\right) .\]
 	Por tanto, 
 	\[ \int^{b}_{a} f = \overline{\int^{b}_{a}} f \leq \overline{\int^{b}_{a}} g = \int^{b}_{a} g  .\]
 \item[(b)] Tomamos $\displaystyle g = M $ y $\displaystyle h = m $. Dado que se tiene que $\displaystyle h \leq f \leq g $, por el apartado \textbf{(a)} se tiene que 
@@ -367,7 +362,7 @@ Tenemos que $\displaystyle f $ es integrable y
 		F\left(c + h\right)- F\left(c\right) = & \int^{c + h}_{a} f\left(t\right) \; dt - \int^{c}_{a} f\left(t\right) \; dt = \int^{c + h}_{c} f\left(t\right) \; dt .
 	\end{split}
 	\]
-	Por ser $\displaystyle f $ continua en $\displaystyle \left[a,b\right]  $ también está acotada, es decir, existe $\displaystyle M > 0 $ tal que $\displaystyle \forall t \in [a,b] $, $\displaystyle \left|f\left(t\right)\right| \leq M $. Así, tenemos que
+	Por ser $\displaystyle f $ integrable en $\displaystyle \left[a,b\right]  $ también está acotada, es decir, existe $\displaystyle M > 0 $ tal que $\displaystyle \forall t \in [a,b] $, $\displaystyle \left|f\left(t\right)\right| \leq M $. Así, tenemos que
 	\[
 	\begin{split}
 	\left|F\left(c+h\right)-F\left(c\right)\right| = \left|\int^{c + h}_{c} f\left(t\right) \; dt\right| \leq \int^{c + h}_{c} \left|f\left(t\right)\right| \; dt \leq \int^{c + h}_{c} M = \left|h\right| M \to 0 .
@@ -376,7 +371,7 @@ Tenemos que $\displaystyle f $ es integrable y
 	Por tanto, tenemos que $\displaystyle \lim_{h \to 0}F\left(c+h\right)-F\left(c\right) = 0 $, por lo que $\displaystyle \lim_{x \to c}F\left(x\right)= F\left(c\right) $.
 \end{proof}
 \begin{ftheorem}[Teorema Fundamental del Cálculo]
-	\normalfont Sea $\displaystyle f : [a,b] \to \R$ continua. La función $\displaystyle F\left(x\right) = \int^{x}_{a} f\left(t\right) \; dt $ es derivable en $\displaystyle c \in \left[a,b\right]  $ y $\displaystyle F'\left(c\right) = f\left(c\right) $. \footnote{También se puede demostrar con la hipótesis de que $\displaystyle f $ sea integrable en vez de continua. En este caso, $\displaystyle F'\left(c\right) = f\left(c\right) $ en los puntos donde $\displaystyle f $ es continua.} 
+	\normalfont Sea $\displaystyle f : [a,b] \to \R$ continua. La función $\displaystyle F\left(x\right) = \int^{x}_{a} f\left(t\right) \; dt $ es derivable en $\displaystyle c \in \left[a,b\right]  $ y $\displaystyle F'\left(c\right) = f\left(c\right) $.  
 \end{ftheorem}
 \begin{proof}
 Sin pérdida de generalidad, supongamos que $\displaystyle h > 0 $. Como hemos visto en la demostración anterior,
@@ -737,17 +732,3 @@ Ahora si $\displaystyle x = 0 $,
 \end{split}
 \]
 \end{eg}
-\section{Cálculo de primitivas}
-Sabemos que si $\displaystyle \exists \int^{b}_{a} f\left(t\right) \; dt $ y $\displaystyle \exists g $ tal que $\displaystyle g'\left(x\right) = f\left(x\right) $, $\displaystyle \forall x \in \left[a,b\right]  $, entonces, por la regla de Barrow
-\[\int^{b}_{a} f\left(t\right) \; dt = g\left(b\right)-g\left(a\right) .\]
-\begin{fdefinition}[Primitiva]
-\normalfont Dada $\displaystyle f $, se dice que $\displaystyle g $ es una \textbf{primitiva} (o \textbf{integral}) de $\displaystyle f $ si $\displaystyle g' = f $.
-\end{fdefinition}
-\begin{observation}
-\normalfont Por la regla de Barrow, el cálculo de integrales se reduce muchas veces al cálculo de primitivas.
-\end{observation}
-\begin{eg}
-\normalfont Consideremos $\displaystyle \int^{\pi}_{0} \sin x \; dx $. Tenemos que $\displaystyle \left(-\cos x\right)' = \sin x $, por lo que 
-\[ \int^{\pi }_{0} \sin x  \; dx = \left[-\cos x\right] ^{\pi }_{0} = 2 .\]
-\end{eg}
-

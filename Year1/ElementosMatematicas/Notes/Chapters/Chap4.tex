@@ -1,0 +1,61 @@
+\chapter{Dinámica Discreta}
+La dinámica se encarga de estudiar los cambios en un sistema a lo largo del tiempo. En particular, la dinámica discreta estudia estos cambios en una sucesión de instantes de tiempo (días, meses, años, etc.). Se asume que cada uno de estos estados depende de los instantes anteriores. En general, buscaremos la relación causa-efecto que permite determinar cierto estado en función de los anteriores.
+\begin{eg}
+\normalfont Consideremos como primer ejemplo la sucesión de Fibonacci. Una pareja de conejos tarda un mes en alcanzar la edad fértil. A partir de ese mes, es capaz de engendrar una nueva pareja de conejos cada mes. Dado un mes $\displaystyle n $, buscamos calcular cuántos conejos hay.
+\begin{itemize}
+\item En $\displaystyle t_{0} \left(n = 0\right) $ tenemos solo los dos conejos iniciales. 
+\item En $\displaystyle t_{1} \left(n = 1\right) $, la pareja es fértil, por lo que en $\displaystyle t_{2} \left(n = 2\right)$ tendremos la pareja nativa sumada a su descendencia.
+\item En $\displaystyle t_{3} \left(n=3\right)$ tenemos la pareja inicial, su descendencia, y otra descendencia suya. 
+\item En $\displaystyle t_{4} \left(n = 4\right) $ tenemos la pareja inicial, su descendecia primera y su segunda y la descendencia de su descendencia.
+\end{itemize}
+Así, en general tenemos que $\displaystyle A\left(n + 2\right) = A\left(n + 1\right) - A\left(n\right) $. Matemáticamente, tenemos que la relación que buscamos es la sucesión de Fibonacci
+\[
+A\left(0\right) = 1, \; A\left(1\right) = 1, \; A\left(n+2\right) = A\left(n+1\right)-A\left(n\right).\]
+\end{eg}
+\begin{fdefinition}[]
+	\normalfont Un \textbf{sistema dinámico discreto de primer orden} es una sucesión de números $\displaystyle \left\{ A\left(n\right)\right\} _{n\in\N} $ tal que cada elemento de la sucesión se relación con el anterior mediante alguna función $\displaystyle f $ tal que $\displaystyle A\left(n+1\right) = f\left(A\left(n\right),n\right) $, con $\displaystyle n \in \N $ \footnote{Asumimos que $\displaystyle \N $ incluye el 0.} .
+\end{fdefinition}
+\begin{fdefinition}[]
+\normalfont Dado un sistema dinámico $\displaystyle A\left(n+1\right) = f\left(A\left(n\right),n\right) $ de primer orden:
+\begin{description}
+	\item[(a)] Llamos \textbf{solución general} a la fórmula de sucesiones $\displaystyle \left\{ A\left(n\right)\right\} _{n\in\N} $ que satisface el sistema al solicitar los valores $\displaystyle A\left(n\right) $ y $\displaystyle A\left(n+1\right) $.
+	\item[(b)] Llamamos \textbf{solución particular} del sistema con dato inicial $\displaystyle a_{0} = A\left(0\right) $ a la sucesión $\displaystyle \left\{ A\left(n\right)\right\} _{n\in\N} $ que satisface el sistema para los valores $\displaystyle A\left(n+1\right) $ y $\displaystyle A\left(n\right) $ y además, tal que $\displaystyle A\left(0\right) = a_{0} $.
+\end{description}
+\end{fdefinition}
+\begin{fdefinition}[Sistema lineal]
+\normalfont Un sistema dinámico discreto de primer orden se dice \textbf{lineal} de coeficientes constantes si es de la forma $\displaystyle A\left(n+1\right) = rA\left(n\right) + b $, donde $\displaystyle b,r \in \R $. En esta situación, se denominan
+\begin{description}
+\item[(a)] Sistema \textbf{homogéneo} si $\displaystyle b = 0 $.
+\item[(b)] Sistema \textbf{afín} si $\displaystyle b \neq 0 $.
+\end{description}
+\end{fdefinition}
+\begin{eg}
+\normalfont Consideremos $\displaystyle A\left(n+1\right) = 3A\left(n\right) $. Vamos a encontrar su solución particular. Supongamos que $\displaystyle a_{0} = A\left(0\right) $. Tenemos que 
+\[A\left(1\right) = 3a_{0}, \; A\left(2\right) = 3A\left(1\right) = 3^{2}a_{0}, \; \ldots, \; A\left(n\right) = 3^{n}a_{0}.\]
+Podemos observar que se trata de una sucesión geométrica. 
+\end{eg}
+\begin{fdefinition}[]
+	\normalfont Un sistema dinámico discreto de orden dos es una sucesión $\displaystyle \left\{ A\left(n\right)\right\} _{n\in\N} $ tal que $\displaystyle A\left(n+2\right) = f\left(A\left(n+1\right), A\left(n\right), n\right) $, para cierta función $\displaystyle f $. 
+\end{fdefinition}
+\begin{observation}
+\normalfont Esta definición es generalizable a orden $\displaystyle m $ si la función depende de $\displaystyle m $ estados independientes del sistema.
+\end{observation}
+\section{Sistemas dinámicos de primer orden}
+Estudiaremos los puntos de equilibrio, la estabilidad y análisis gráfico. 
+\begin{fdefinition}[Sistemas autónomos]
+\normalfont Un sistema dinámico de primer orden se dice \textbf{autonónomo} si el funcional $\displaystyle f $ no depende de $\displaystyle n $, es decir, si $\displaystyle A\left(n+1\right) = f\left(A\left(n\right)\right) $. En caso contrario, se denomina \textbf{no autónomo}.
+\end{fdefinition}
+\begin{eg}
+\normalfont Consideremos un préstamo personal al 5\% anual con pagos anuales de 100 euros. Consideremos $\displaystyle a_{0} = A\left(0\right) $. Medimos la deuda anual:
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+$\displaystyle A\left(0\right) $ & $\displaystyle A\left(1\right) $ & $\displaystyle A\left(2\right) $ & $\displaystyle \cdots  $ & $\displaystyle A\left(n+1\right) $ \\
+\hline 
+$\displaystyle a_{0} $ & $\displaystyle 1,05a_{0}-100 $ & $\displaystyle 1,05a_{0}-100 $ & $\displaystyle \cdots  $ & $\displaystyle 1,05A\left(n\right)-100$ \\
+\hline
+\end{tabular}
+\end{center}
+Si $\displaystyle a_{0} = 1000 $, tenemos que la deuda está disminuyendo y si $\displaystyle a_{0} = 3000 $, la deuda está aumentando, cuando $\displaystyle n \in \left\{ 1, \ldots, 5\right\}  $. Tenemos que para $\displaystyle a_{0} = 2000 $, $\displaystyle A\left(1\right) = A\left(2\right) = \cdots = A\left(5\right) $.
+\end{eg}
+
