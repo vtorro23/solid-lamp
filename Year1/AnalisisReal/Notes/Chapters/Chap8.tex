@@ -1,0 +1,143 @@
+\chapter{Aplicaciones de la integral}
+\section{Integrales impropias}
+La pregunta motivadora de esta sección es, qué ocurre si $\displaystyle f $ no está acotada o el intervalo de definición de $\displaystyle f $ no es cerrado?
+\begin{eg}
+	\normalfont Consideremos $\displaystyle f: (0,1] \to \R $ con $\displaystyle f\left(x\right) = \frac{1}{\sqrt{x}} $. Nuestra previa definición de integral no se puede aplicar a esta función en $\displaystyle (0,1] $, pues $\displaystyle f $ no está acotada.
+\end{eg}
+\begin{eg}
+\normalfont Consideremos $\displaystyle f : [1,\infty) \to \R $ con $\displaystyle f\left(x\right) = \frac{1}{x^{2}} $. Necesitamos una forma de calcular $\displaystyle \int^{\infty}_{1} \frac{1}{x^{2}} \; dx$. 
+\end{eg}
+\begin{eg}
+\normalfont Otro ejemplo es el de calcular $\displaystyle \int^{\infty}_{-\infty} e^{-x^{2}} \; dx $ o $\displaystyle \int^{2}_{1} \frac{1}{\sqrt{x-1}\sqrt{2-x}} \; dx$ si $\displaystyle \dom\left(f\right) = \left(1,2\right) $.
+\end{eg}
+En el primer ejemplo, si cogemos $\displaystyle r \in \left(0,1\right) $ podemos calcular $\displaystyle \int^{1}_{r} \frac{1}{\sqrt{x}} \; dx $. En efecto, tenemos que 
+\[ \int^{1}_{r} \frac{1}{\sqrt{x}} \; dx = \left[\frac{\sqrt{x}}{2}\right] ^{1}_{r} = \frac{1}{2}-\frac{\sqrt{r}}{2} .\]
+Podemos tomar el límite
+\[\lim_{r \to 0^{+}}\int^{1}_{r} \frac{1}{\sqrt{x}} \; dx = \frac{1}{2} .\]
+Esta sería una posible definición. Comprobemos el ejemplo 2. Sabemos calcular $\displaystyle \int^{r}_{1} \frac{1}{x^{2}} \; dx$. Así, podemos hacer
+\[\lim_{r \to \infty}\int^{r}_{1} \frac{1}{x^{2}} \; dx = \lim_{r \to \infty}\left(-\frac{1}{r}+1\right) = 1.\]
+Esto nos lleva a proponer la siguiente definición.
+\begin{fdefinition}[Integral impropia]
+\normalfont 
+\begin{description}
+	\item[(a)] Sea $\displaystyle f : \left[a,b\right) \to \R  $ con $\displaystyle b \in \R $ o $\displaystyle b = \infty $. Supongamos que $\displaystyle \forall r \in [a,b)$, existe la integral de Riemann $\displaystyle \int^{r}_{a} f\left(x\right) \; dx $. Se llama \textbf{integral impropia} de $\displaystyle f $ en $\displaystyle [a,b) $ a
+		\[\lim_{r \to b^{-}}\int^{r}_{a} f\left(x\right) \; dx = \int^{b}_{a} f\left(x\right) \; dx .\]
+	
+\item[(b)] Sea $\displaystyle f: (a,b]\to \R $ con $\displaystyle a \in \R $ o $\displaystyle a = -\infty  $. Supongamos que existe $\displaystyle \int^{b}_{r} f\left(x\right) \; dx$, $\displaystyle \forall r \in (a,b] $. Se llama \textbf{integral impropia} de $\displaystyle f $  en $\displaystyle (a,b] $ a
+	\[\lim_{r \to a^{+}}\int^{b}_{r} f\left(x\right) \; dx = \int^{b}_{a} f\left(x\right) \; dx .\]
+\item[(c)] Sea $\displaystyle f : \left(a,b\right) \to \R $ con $\displaystyle a,b \in \R $, $\displaystyle a = - \infty $ o $\displaystyle b = \infty $. Supongamos que $\displaystyle \forall s,r \in \left(a,b\right) $ existe $\displaystyle \int^{r}_{s} f\left(x\right) \; dx $. Se llama \textbf{integral impropia} de $\displaystyle f $ a
+	\[\lim_{s \to a^{+}}\int^{c}_{s} f\left(x\right) \; dx + \lim_{r \to b^{-}} \int^{r}_{c} f\left(x\right) \; dx = \int^{b}_{a} f\left(x\right) \; dx,\]
+	para $\displaystyle c \in \left(a,b\right) $.
+\end{description}
+Si este límite existe \footnote{En \textbf{(c)} tienen que existir ambos.}, se dice que la integral impropia es \textbf{convergente}. En caso contrario, se dice que \textbf{diverge}.
+\end{fdefinition}
+\begin{eg}
+\normalfont 
+\begin{itemize}
+\item $\displaystyle \int^{\infty}_{1} \frac{1}{x^{2}} \; dx = \lim_{r \to \infty }\int^{r}_{1} \frac{1}{x^{2}} \; dx = 1 $. Esta integral impropia converge.
+\item $\displaystyle \int^{\infty}_{1} \frac{1}{x} \; dx = \lim_{r \to \infty }\int^{r}_{1} \frac{1}{x} \; dx = \infty  $. Esta integral impropia diverge.
+\item $\displaystyle \int^{1}_{0} \frac{1}{\sqrt{x}} \; dx = \lim_{r \to 0^{+}}\int^{1}_{r} \frac{1}{\sqrt{x}} \; dx = \frac{1}{2} $. Esta integral impropia converge.
+\item $\displaystyle \int^{1}_{0} \frac{1}{x} \; dx = \lim_{r \to 0^{+}}\int^{1}_{r} \frac{1}{x} \; dx = \infty $. Esta integral impropia diverge.
+\item $\displaystyle \int^{\infty}_{-\infty} e^{- \left|x\right|} \; dx = \int^{0}_{-\infty} e^{x} \; dx + \int^{\infty}_{0} e^{-x} \; dx = \lim_{s \to -\infty}\left(1-e^{s}\right) -\lim_{r \to \infty}\left(1 - e^{-r}\right) = 2 $. Esta integral impropia converge.
+\end{itemize}
+\end{eg}
+\begin{observation}
+\normalfont Si $\displaystyle p > 1 $ tenemos que $\displaystyle \int^{1}_{0} \frac{1}{x^{p}} \; dx = \infty $, es decir, la integral diverge. En efecto, tenemos que
+\[\int^{1}_{0} \frac{1}{x^{p}} \; dx = \lim_{r \to 0^{+}}\int^{1}_{r} \frac{1}{x^{p}} \; dx = \lim_{r \to 0^{+}}\left(\frac{1}{1-p}+\frac{1}{\left(+1\right)r^{+1}}\right) = \infty .\]
+\end{observation}
+\begin{fprop}[]
+\normalfont Sea $\displaystyle f : \left(a,b\right) \to \R $, con $\displaystyle a,b \in \R $, $\displaystyle a = - \infty $ o $\displaystyle b = \infty $, tal que existe $\displaystyle \int^{r}_{s} f\left(x\right) \; dx $, $\displaystyle \forall r,s \in \left(a,b\right)$. Existe la integral impropia $\displaystyle \int^{b}_{a} f\left(x\right) \; dx $ si y solo si $\displaystyle \forall c \in \left(a,b\right) $ 
+\[\int^{b}_{a} f\left(x\right) \; dx = \int^{c}_{a} f\left(x\right) \; dx + \int^{b}_{c} f\left(x\right) \; dx .\]
+\end{fprop}
+\begin{proof}
+La segunda implicación es trivial. Supongamos que $\displaystyle c' < c $ (el caso $\displaystyle c'>c $ es análogo). Por hipótesis, existe
+\[ \int^{b}_{a} f\left(x\right) \; dx = \lim_{s \to a^{+}}\int^{c}_{s} f\left(x\right) \; dx + \lim_{r \to b^{-}}\int^{b}_{r} f\left(x\right) \; dx .\]
+Así, tenemos que
+\[
+\begin{split}
+	= & \lim_{s \to a^{+}}\left(\int^{c'}_{s} f + \int^{c}_{c'} f \right) + \lim_{r \to b^{-}} \int^{r}_{c} f = \lim_{s \to a^{+}}\int^{c'}_{s} f + \int^{c}_{c'} f +\lim_{r \to b^{-}}\int^{r}_{c} f \\
+	= & \lim_{s \to a^{+}} \int^{c'}_{s} f +\lim_{r \to b^{-}}\int^{r}_{c'} f = \int^{c'}_{a} f + \int^{b}_{c'} f.
+\end{split}
+\]
+\end{proof}
+\begin{eg}
+\normalfont Tenemos que $\displaystyle \int^{\infty}_{-\infty} x \; dx $ no existe, pues no existen $\displaystyle \lim_{s \to -\infty}\int^{0}_{s} x \; dx $ y $\displaystyle \lim_{r \to \infty}\int^{r}_{0} x \; dx $. 
+\end{eg}
+\section{Criterios de convergencia}
+Vamos a dar criterios que funcionan por la derecha, puesto que por la izquierda es análogo.
+\begin{ftheorem}[Criterio de Cauchy]
+\normalfont Sea $\displaystyle f : [a,b) \to \R $ tal que existe $\displaystyle \int^{r}_{a} f $, $\displaystyle \forall r \in [a,b) $. 
+\begin{description}
+\item[(a)] Si $\displaystyle b \in \R $, existe la integral impropia $\displaystyle \int^{b}_{a} f  $ si y solo si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \delta > 0 $, tal que si $\displaystyle x_{1}, x_{2} \in \left(b-\delta, b\right) $, se tiene que $\displaystyle \left|\int^{x_{2}}_{x_{1}} f \right|< \epsilon  $.
+\item[(b)] Si $\displaystyle b = \infty $, existe la integral impropia $\displaystyle \int^{\infty}_{a} f $ si y solo si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists M > 0 $ tal que si $\displaystyle x_{1}, x_{2} > M $ se tiene que $\displaystyle \left|\int^{x_{1}}_{x_{1}} f \right|<\epsilon  $.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(a)] Primero demostramos la primera implicación. Tenemos que existe $\displaystyle \int^{b}_{a} f = \lim_{r \to b^{-}}\int^{r}_{a} f = l \in \R $. Es decir, para $\displaystyle \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle r \in \left(b-\delta,b\right) $ se tiene que 
+	\[ \left|\int^{r}_{a} f -l\right| < \frac{\epsilon }{2} .\]
+Ahora, si $\displaystyle x_{1}, x_{2} \in \left(b-\delta, b\right) $, tenemos que 
+\[
+\begin{split}
+	\left|\int^{x_{2}}_{x_{1}} f \right| = & \left|\int^{a}_{x_{1}} f +\int^{x_{2}}_{a} f \right| = \left|l - l + \int^{x_{2}}_{a} f -\int^{x_{1}}_{a} f \right|\leq \left|l - \int^{x_{1}}_{a} f \right| + \left|l + \int^{x_{2}}_{a} f \right| \\
+	< & \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon .
+\end{split}
+\]
+Recíprocamente, sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ creciente con $\displaystyle x_{n} \to b $. Consideremos la sucesión
+\[y_{n} = \int^{x_{n}}_{a} f, \; n \in \N .\]
+Vamos a ver que es de Cauchy:
+\[ \left|y_{n}-y_{m}\right| = \left|\int^{x_{n}}_{a} f - \int^{x_{m}}_{a} f \right| = \left|\int^{x_{n}}_{x_{m}} f\right|.\]
+Por tanto, existe $\displaystyle \lim_{n \to \infty}y_{n} = \lim_{n \to \infty}\int^{x_{n}}_{a} f=l $. Sea $\displaystyle \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle x,r \in \left(b-\delta, b\right) $, entonces $\displaystyle \left|\int^{r}_{x} f \right| < \frac{\epsilon }{2} $. Como $\displaystyle x_{n} \to b $, $\displaystyle \exists n_{0} \in\N $ tal que si $\displaystyle n \geq n_{0} $, $\displaystyle x_{n} \in \left(b-\delta, b\right) $.
+Similarmente se tiene que existe $\displaystyle n_{1} \in \N $ tal que si $\displaystyle n \geq n_{1} $ se tiene que $\displaystyle \left|l - \int^{x_{n}}_{a} f \right|<\frac{\epsilon }{2} $. 
+Si $\displaystyle n \geq \max \left\{ n_{0}, n_{1}\right\}  $ y $\displaystyle r,x_{n} \in \left(b-\delta, b\right) $, tenemos que
+\[
+\begin{split}
+	\left|l - \int^{r}_{a} f \right| =  \left|l - \int^{x_{n}}_{a} f + \int^{x_{n}}_{a} f -\int^{r}_{a} f \right| \leq \left|l - \int^{x_{n}}_{a} f \right|+ \left|\int^{r}_{x_{n}} f \right| < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon  .
+\end{split}
+\]
+\end{description}
+\end{proof}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f: \left(a,b\right) \to \R $ tal que existe $\displaystyle \int^{r}_{s} f $, $\displaystyle \forall r,s \in \left(a,b\right) $. Si existe $\displaystyle \int^{b}_{a} \left|f\right|  $, entonces existe la integral impropia $\displaystyle \int^{b}_{a} f $.
+\end{ftheorem}
+\begin{proof}
+Consideremos que $\displaystyle b \in \R $. Tenemos que $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle x_{1}, x_{2} \in \left(b-\delta, b\right) $, se tiene que 
+\[ \left|\int^{x_{2}}_{x_{1}} f \right| \leq \int^{x_{2}}_{x_{1}} \left|f\right| < \epsilon.\]
+Por tanto, tenemos que $\displaystyle \int^{b}_{a} f $ verifica la condición de Cauchy y, por tanto, converge. 
+\end{proof}
+\begin{observation}
+\normalfont El recíproco es cierto. Este teorema se parece al criterio de convergencia absoluta.
+\end{observation}
+\begin{ftheorem}[Criterio de comparación]
+\normalfont Sea $\displaystyle f,g:[a,b) \to \R $ \footnote{También funciona con un intervalo abierto con $\displaystyle a,b \in \R $, $\displaystyle a = - \infty $ o $\displaystyle b = \infty $.} con $\displaystyle f,g \geq 0 $.
+\begin{description}
+\item[(a)] Si $\displaystyle 0 \leq f\left(x\right) \leq g\left(x\right) $, $\displaystyle \forall x \in [a,b) $ y existe $\displaystyle \int^{b}_{a} g $, entonces existe $\displaystyle \int^{b}_{a} f $.
+\item[(b)] Si $\displaystyle 0 \leq f\left(x\right) \leq g\left(x\right) $, $\displaystyle \forall x \in [a,b) $ y no existe $\displaystyle \int^{b}_{a} f $, entonces tampoco existe $\displaystyle \int^{b}_{a} g $.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+	Si $\displaystyle f \geq 0 $, se tiene que $\displaystyle \lim_{r \to b^{-}}\int^{r}_{a} f\left(x\right) \; dx $ es creciente. Entonces, el límite existe si está acotado \footnote{En el capítulo de continuidad vimos que una función monótona y acotada siempre tiene límites laterales.} :
+	\[ \int^{r}_{a} f\left(x\right) \; dx \leq \int^{r}_{a} g\left(x\right) \; dx \leq \lim_{r \to b^{-}}\int^{r}_{a} g\left(x\right) \; dx = \int^{b}_{a} g\left(x\right) \; dx .\]
+\end{proof}
+\begin{eg}
+\normalfont Consideremos $\displaystyle f\left(x\right) = e^{-x^{2}} $. Tenemos que
+\[ \int^{\infty}_{-\infty} e^{-x^{2}} \; dx =  \int^{-1}_{-\infty} e^{-x^{2}} \; dx + \int^{1}_{-1} e^{-x^{2}} \; dx  + \int^{\infty}_{1} e^{-x^{2}} \; dx .\]
+Por un lado, tenemos que 
+\[ \int^{\infty}_{1} e^{-x^{2}} \; dx \leq \int^{\infty}_{1} e^{-x} \; dx < \infty .\]
+Por el criterio de comparación, existe $\displaystyle \int^{\infty}_{1} e^{-x^{2}} \; dx $.
+\end{eg}
+\begin{ftheorem}[Criterio del cociente]
+\normalfont Sean $\displaystyle f,g : (a,b) \to \R $, con $\displaystyle a,b \in \R $, $\displaystyle a = - \infty $ o $\displaystyle b = \infty $, y $\displaystyle f,g \geq 0 $. Entonces, si existe $\displaystyle \lim_{x \to b^{-}}\frac{f\left(x\right)}{g\left(x\right)} = l $, entonces
+\begin{description}
+\item[(a)] Si $\displaystyle l \in \R $, $\displaystyle \exists \int^{b}_{a} f \iff \exists \int^{b}_{a} g $. 
+\item[(b)] Si $\displaystyle l = 0 $, $\displaystyle \exists \int^{b}_{a} g \Rightarrow \exists \int^{b}_{a} f  $. 
+\item[(c)] Si $\displaystyle l = \infty $, la existencia de $\displaystyle \int^{b}_{a} g $ no implica la existencia de $\displaystyle \int^{b}_{a} f $.
+\end{description}
+\end{ftheorem}
+\begin{eg}
+\normalfont Comprobemos si existe la integral $\displaystyle \int^{\infty}_{1} \frac{1}{x^{27}+x+1} \; dx $. Está claro que si $\displaystyle x > 1 $, $\displaystyle x^{27} > x^{2} $. Así, está claro que
+\[ \frac{1}{x^{27}+x+1} \leq \frac{1}{x^{2}} .\]
+Por tanto, aplicando el criterio de comparación
+\[ \int^{\infty}_{1} \frac{1}{x^{27}+x+1} \; dx \leq \int^{\infty}_{1} \frac{1}{x^{2}} \; dx < \infty .\]
+\end{eg}
+

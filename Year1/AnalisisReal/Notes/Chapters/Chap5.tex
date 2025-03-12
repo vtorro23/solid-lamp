@@ -345,7 +345,7 @@ Este procedimiento también sirve para ver que esta función es uniformemente co
 \normalfont Con tres funciones $\displaystyle f\left(t\right),g\left(t\right),h\left(t\right) $, podemos definir curvas en el espacio.
 \end{observation}
 Vamos a estudiar la tangente de una curva paramétrica. Si cogemos dos puntos, $\displaystyle t_{0} $ y $\displaystyle t $, podemos calcular la ecuación de la recta que pasa por esos puntos:
-\[y\left(t\right) =  \frac{g\left(t\right)-g\left(t_{0}\right)}{f\left(t\right)-f\left(t_{0}\right)}\left(x-f(t_{0})\right) + g\left(t_{0}\right)   .\]
+\[y =  \frac{g\left(t\right)-g\left(t_{0}\right)}{f\left(t\right)-f\left(t_{0}\right)}\left(x-f(t_{0})\right) + g\left(t_{0}\right)   .\]
 Tenemos que 
 \[\lim_{t \to t_{0}}\frac{g\left(t\right)-g\left(t_{0}\right)}{f\left(t\right)-f\left(t_{0}\right)}= \lim_{t \to t_{0}} \left(\frac{g\left(t\right)-g\left(t_{0}\right)}{t-t_{0}} \cdot \frac{t - t_{0}}{f\left(t\right)-f\left(t_{0}\right)}\right) = \frac{g'\left(t_{0}\right)}{f'\left(t_{0}\right)} .\]
 Entonces, concluimos que si $\displaystyle C $ es una curva del plano y $\displaystyle \exists f' $ y $\displaystyle g' $ entonces la pendiente de la recta tangente por el punto $\displaystyle \left(f\left(t_{0}\right), g\left(t_{0}\right)\right) $ será $\displaystyle \frac{g'\left(t_{0}\right)}{f'\left(t_{0}\right)} $. Es decir, esta recta tiene como vector director $\displaystyle \left(f'\left(t_{0}\right), g'\left(t_{0}\right)\right) $. \\ \\ 
@@ -451,7 +451,7 @@ Así, si $\displaystyle x_{0} < x < x_{3} < x_{2} < x_{1}< x_{0} + \delta $,
 	\normalfont Sea $\displaystyle h: \left[a,b\right] \to \R $ continua en $\displaystyle \left[a,b\right] / \left\{ s\right\}  $ y derivable en $\displaystyle \left(a,b\right) / \left\{ s\right\}  $. Si existe $\displaystyle \lim_{x \to s^{*}}h\left(x\right) = r $ y existe $\displaystyle \lim_{x \to s^{*}}h'\left(x\right) $, entonces existe $\displaystyle h'\left(s^{*}\right) = \lim_{x \to s^{*}}h'\left(x\right) $. \footnote{Aquí, $\displaystyle s^{*} $ significa $\displaystyle s, s^{+} $ o $\displaystyle s^{-} $.} 
 \end{fcolorary}
 \begin{proof}
-Sea $\displaystyle g\left(x\right) = h\left(x\right)-r $ y $\displaystyle f\left(x\right) = x - s $. Entonces, tenemos que $\displaystyle \lim_{x \to s}g\left(x\right) = \lim_{x \to s}\left(h\left(x\right)-r\right) = 0 $ y $\displaystyle \lim_{x \to s}f\left(x\right) = \lim_{x \to s}\left(f\left(x\right)-s\right) = 0 $. Entonces tenemos que
+Sea $\displaystyle g\left(x\right) = h\left(x\right)-r $ y $\displaystyle f\left(x\right) = x - s $. Entonces, tenemos que $\displaystyle \lim_{x \to s}g\left(x\right) = \lim_{x \to s}\left(h\left(x\right)-r\right) = 0 $ y $\displaystyle \lim_{x \to s}f\left(x\right) = \lim_{x \to s}x-s = 0 $. Entonces tenemos que
 \[\lim_{x \to s}\frac{h\left(x\right)-r}{x-s}=\lim_{x \to s}\frac{g\left(x\right)}{f\left(x\right)} = \lim_{x \to s}\frac{g'\left(x\right)}{f'\left(x\right)} = \lim_{x \to s}\frac{h'\left(x\right)}{1} .\]
 Este último término existe por hipótesis.
 \end{proof}
@@ -478,7 +478,6 @@ A través de $\displaystyle f' $ y $\displaystyle f'' $ se pueden conocer propie
 			\item Si $\displaystyle f'\left(c\right) < 0 $, $\displaystyle \forall c \in \left(a,b\right) $, entonces $\displaystyle f $ es decreciente en $\displaystyle [a,b] $.
 			\item Si $\displaystyle f $ es decreciente en $\displaystyle [a,b] $, entonces $\displaystyle f'\left(c\right) \leq 0 $, $\displaystyle \forall c \in \left(a,b\right) $.
 		\end{itemize}
-		
 \end{description}
 \end{ftheorem}
 \begin{proof} Sin pérdida de generalidad, demostramos solo \textbf{(a)}, pues la demostración de \textbf{(b)} es análoga.
@@ -506,8 +505,15 @@ A través de $\displaystyle f' $ y $\displaystyle f'' $ se pueden conocer propie
 \end{itemize}
 \end{proof}
 \begin{observation}
-\normalfont Recordamos que una función derivada no puede dar saltos.
+\normalfont Recordamos que una función derivada no puede dar saltos, esto viene mejor enunciado en el siguiente teorema.
 \end{observation}
+\begin{ftheorem}[Teorema de Darboux]
+	\normalfont Si $\displaystyle f $ es derivable en $\displaystyle I = \left[a,b\right]  $ y si $\displaystyle \lambda \in \left(f'\left(a\right), f'\left(b\right)\right) $, entonces existe al menos un punto $\displaystyle c \in \left(a,b\right) $ con $\displaystyle f'\left(c\right) = \lambda  $. 
+\end{ftheorem}
+\begin{proof}
+Definimos $\displaystyle g $ en $\displaystyle I $ por $\displaystyle g\left(x\right) = \lambda x - f\left(x\right) $. Tenemos que, dado que $\displaystyle g $ es continua, alcanza un máximo en $\displaystyle I $. El máximo no ocurre en $\displaystyle a $, pues $\displaystyle g'\left(a\right) = \lambda - f'\left(a\right) > 0 $. Similarmente, tampoco ocurre en $\displaystyle b $, pues $\displaystyle g'\left(b\right) = \lambda -g'\left(b\right) < 0 $. Así, $\displaystyle g $ alcanza el máximo en algún $\displaystyle c \in \left(a,b\right) $. Se tiene entonces que $\displaystyle g'\left(c\right) = \lambda - f'\left(c\right) = 0 $, por lo que $\displaystyle f'\left(c\right) = \lambda  $.
+\end{proof}
+
 \begin{eg}
 \normalfont No todas las funciones derivadas son continuas. Consideremos la función 
 \[ f\left(x\right) = 
@@ -597,7 +603,7 @@ La demostración de \textbf{(b)} es análoga a la de \textbf{(a)}. Sea $\display
 Es decir, las pendientes $\displaystyle \frac{f\left(a+h\right)-f\left(a\right)}{h} $, decrecen cuando $\displaystyle h > 0 $ tiende a $\displaystyle 0 $. Así, como $\displaystyle f $ es derivable en $\displaystyle a $ tenemos que
 \[ f'\left(a\right) = f'\left(a^{+}\right) =\lim_{h \to 0^{+}}\frac{f\left(a+h\right)-f\left(a\right)}{h} \leq \frac{f\left(a+h\right)-f\left(a\right)}{h} .\]
 Por el otro lado, si $\displaystyle h_{2} < h_{1} < 0 $, por la proposición anterior tenemos que 
-\[ \frac{f\left(b\right)-f\left(b + h_{2}\right)}{h_{2}} \leq \frac{f\left(b\right)-f\left(b+h_{2}\right)}{h_{2}}  .\]
+\[ \frac{f\left(b\right)-f\left(b + h_{2}\right)}{h_{2}} \leq \frac{f\left(b\right)-f\left(b+h_{1}\right)}{h_{1}}  .\]
 Es decir, las pendientes $\displaystyle \frac{f\left(b+h\right)-f\left(b\right)}{h} $ decrecen cuando $\displaystyle h\to 0^{- } $. Así, dado que $\displaystyle f $ es derivable en $\displaystyle b $ tenemos que
 \[ f'\left(b\right) = f'\left(b^{-}\right) = \lim_{h \to 0^{-}}\frac{f\left(b+h\right)-f\left(b\right)}{h} \geq \frac{f\left(b+h\right)-f\left(b\right)}{h} .\]
 Si $\displaystyle a < x < b $, por lo visto anteriormente tenemos que

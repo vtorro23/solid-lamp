@@ -7,7 +7,7 @@ Sea $\displaystyle E $ un espacio vectorial y $\displaystyle \K = \R $.
 	\normalfont Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{p}\right\} \subset V/ \left\{ \vec{0}\right\}  $ son ortogonales dos a dos, entonces son linealmente independientes.
 \end{fprop}
 \begin{proof}
-Sean $\displaystyle a_{1}, \ldots, a_{p} \in \R $ tales que $\displaystyle \langle \vec{u}_{i}, \vec{u}_{i}\rangle $ 
+Sean $\displaystyle a_{1}, \ldots, a_{p} \in \R $ tales que $\displaystyle a^{1}\vec{u}_{1} + \cdots + a^{p}\vec{u}_{p} = \vec{0} $.
 Tenemos que $\displaystyle \forall i = 1, \ldots, p $, 
 \[ \langle a_{1}\vec{u}_{1} + \cdots + a_{p}\vec{u}_{p}, \vec{u}_{i}\rangle = a_{1}\langle \vec{u}_{1}, \vec{u}_{i}\rangle + \cdots + a_{i}\langle \vec{u}_{i}, \vec{u}_{i}\rangle + \cdots + a_{p}\langle \vec{u}_{p}, \vec{u}_{i}\rangle = a_{i}\langle \vec{u}_{i}, \vec{u}_{i}\rangle = 0 \Rightarrow a_{i} = 0 .\]
 \end{proof}
@@ -19,7 +19,7 @@ Sea $\displaystyle V $ un $\displaystyle \R $-espacio vectorial y $\displaystyle
 	\normalfont Se considera $\displaystyle \left(E, \langle,\rangle \right) $. Sean $\displaystyle \left\{ \vec{x}, \vec{y}\right\} \subset V $ linealmente independientes y $\displaystyle \lambda \in \R $ tal que $\displaystyle \vec{x} + \lambda \vec{y} \neq \vec{0} $. Se tiene:
 	\begin{description}
 	\item[(i)] $\displaystyle \langle \vec{x} + \lambda \vec{y}, \vec{x} + \lambda \vec{y} \rangle > 0 \Rightarrow \langle \vec{x}, \vec{x} \rangle + 2\lambda \langle \vec{x}, \vec{y}\rangle + \lambda ^{2}\langle \vec{y}, \vec{y} \rangle >0$.
-	\item Si $\displaystyle \left\{ \vec{x}, \vec{y}\right\}  $ son linealmente dependientes, entonces $\displaystyle \exists ! \lambda \in \R $ tal que $\displaystyle \vec{x} + \lambda \vec{y} = \vec{0} $.
+	\item[(ii)] Si $\displaystyle \left\{ \vec{x}, \vec{y}\right\}  $ son linealmente dependientes, entonces $\displaystyle \exists ! \lambda \in \R $ tal que $\displaystyle \vec{x} + \lambda \vec{y} = \vec{0} $.
 	\end{description}
 \end{fprop}
 \begin{proof}
@@ -54,7 +54,7 @@ Las demostraciones de \textbf{(i)} y \textbf{(ii)} son triviales. Demostraremos,
 Así, tenemos que $\displaystyle \|\vec{x}+\vec{y}\|^{2} \leq \left(\|\vec{x}\| + \|\vec{y}\|\right)^{2} $, por lo que $\displaystyle \|\vec{x} + \vec{y}\| \leq \| \vec{x} \| + \|\vec{y}\| $.
 \end{proof}
 \begin{ftheorem}[Teorema de Gram-Schmidt]
-	\normalfont Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ de $\displaystyle E $ y para $\displaystyle i = 1, \ldots, n $. Sea $\displaystyle L_{i} = L\left( \left\{ \vec{u}_{1}, \ldots, \vec{u}_{i}\right\} \right) $. Entonces existe $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\}  $ base ortonormal de $\displaystyle E $ para $\displaystyle \langle, \rangle  $ tal que $\displaystyle L_{i} = \left\{ \vec{v}_{1}, \ldots, \vec{v}_{i}\right\}  $, $\displaystyle \forall i = 1, \ldots, n $.
+	\normalfont Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ una base ortogonal de $\displaystyle E $ y para $\displaystyle i = 1, \ldots, n $, sea $\displaystyle L_{i} = L\left( \left\{ \vec{u}_{1}, \ldots, \vec{u}_{i}\right\} \right) $. Entonces existe $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\}  $ base ortonormal de $\displaystyle E $ para $\displaystyle \langle, \rangle  $ tal que $\displaystyle L_{i} = \left\{ \vec{v}_{1}, \ldots, \vec{v}_{i}\right\}  $, $\displaystyle \forall i = 1, \ldots, n $.
 \end{ftheorem}
 \begin{proof}
 Se define $\displaystyle \vec{v}_{1} = \frac{\vec{u}_{1}}{\| \vec{u}_{1} \|} $. Ahora, tomamos $\displaystyle \vec{v'}_{2} = \vec{u}_{2}+\lambda\vec{v}_{1} $. Así, se tiene que 
@@ -71,7 +71,7 @@ Así, tenemos que $\displaystyle \forall j = 1, \ldots, i $,
 \end{split}
 \]
 \end{proof}
-\section{Criterio de Sylvester}
+\section*{Criterio de Sylvester}
 Sea $\displaystyle \beta : V \times V \to \R $, donde $\displaystyle V $ es un $\displaystyle \R $-espacio vectorial, una forma bilineal simétrica. Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $. Tenemos que la matriz de $\displaystyle \beta  $ respecto de esta base será:
 \[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta \right)= \begin{pmatrix} a_{11} & \cdots & a_{1n} \\
 \vdots & & \vdots \\
@@ -79,9 +79,9 @@ a_{n1} & \cdots & a_{nn}\end{pmatrix}, \; a_{ij} = a_{ji} .\]
 Definimos 
 	\[ \Delta_{1} = \left|a_{11}\right|, \; \Delta_{2} = \begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{vmatrix} , \; \Delta_{i} = \begin{vmatrix} a_{11} & \cdots & a_{1i}\\
 \vdots & & \vdots \\
-\a_{i1} & \cdots & a_{ii}\end{vmatrix}  .\]
+ a_{i1} & \cdots & a_{ii}\end{vmatrix}  .\]
 Así, tenemos que $\displaystyle \Delta_{n} = \det\left(\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{u}_{n}\right)\right) $. 
-\begin{ftheorem}[]
+\begin{ftheorem}[Criterio de Sylvester]
 \normalfont Tenemos que $\displaystyle \beta  $ es un producto escalar si y solo si $\displaystyle \Delta_{i} > 0 $ para $\displaystyle i = 1, \ldots, n $. 
 \end{ftheorem}
 \begin{proof}
@@ -137,4 +137,155 @@ Así, tomamos $\displaystyle \vec{v}_{r+1} = \frac{\vec{v'}_{r+1}}{\sqrt{\beta\l
 \vdots & & \vdots \\
 a_{i1} & \cdots & a_{ii}\end{pmatrix} .\]
 \end{observation}
+Dado un espacio vectorial euclídeo $\displaystyle E $ y un producto escalar $\displaystyle \langle, \rangle  $ , podemos definimor el isomorfismo
+\[
+\begin{split}
+	\theta : V \to & V^{*} \\
+	\vec{x} \to & \langle, \rangle _{\vec{x}}.
+\end{split}
+\]
+Donde, $\displaystyle \langle, \rangle _{\vec{x}} : V \to \K  $ con $\displaystyle \vec{y} \to \langle, \rangle_{\vec{x}}\left(\vec{y}\right) = \langle \vec{x}, \vec{y}\rangle  $. Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es base de $\displaystyle V $ , tenemos que $\displaystyle \left\{ \theta\left(\vec{u}_{1}\right), \ldots, \theta\left(\vec{u}_{n}\right)\right\}  $ es base de $\displaystyle V^{*} $.
+Si consideramos $\displaystyle \left\{ \omega^{1}, \ldots, \omega^{n}\right\}  $ la base dual de $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $. Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es base ortonormal, tenemos que 
+\[\theta_{\vec{u}_{i}}\left(\vec{u}_{j}\right) = \omega^{i}\left(\vec{u}_{j}\right) = \langle \vec{u}_{i}, \vec{u}_{j}\rangle =
+\begin{cases}
+1, \; i = j \\
+0, \; i \neq j
+\end{cases}
+.\]
+Así, se tiene que $\displaystyle \forall j = 1, \ldots, n $, $\displaystyle \theta_{\vec{u}_{i}} \left(\vec{u}_{j}\right) = \omega^{i}\left(\vec{u}_{j}\right) $, es decir, $\displaystyle \theta_{\vec{u}_{i}} = \omega^{i} $.
+Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es base ortonormal y $\displaystyle \vec{x}, \vec{y} \in V $ con 
+\[ \vec{ x} = \sum^{n}_{i = 1}x^{i}\vec{u}_{i}, \quad \vec{y} = \sum^{n}_{ i= 0}y^{i}\vec{u}_{i} ,\]
+se tiene que 
+\[\langle \vec{x}, \vec{y} \rangle = \begin{pmatrix} x^{1} & \cdots & x^{n} \end{pmatrix} I_{n\times n}\begin{pmatrix} y^{1} \\ \vdots \\ y^{n} \end{pmatrix} = x^{1}y^{1} + \cdots + x^{n}y^{n}.\]
+Sea $\displaystyle \emptyset \neq A \subset E $, tenemos que $\displaystyle A^{\perp }_{\langle, \rangle } = \left\{ \vec{x} \in E \; : \; \langle \vec{x}, \vec{y} \rangle = 0, \forall\vec{y} \in A\right\} \in \mathcal{L}\left(V\right) $. Recordando del tema anterior, tenemos que Si $\displaystyle L \in \mathcal{L}\left(V\right) $, se tiene que $\displaystyle L \oplus L^{\perp }_{\langle, \rangle} = E $ y $\displaystyle \left(L^{\perp }_{\langle, \rangle }\right)^{\perp }_{\langle, \rangle} = L $. \\ \\
+Consideremos $\displaystyle \K = \R $ y $\displaystyle \left(E_{1}, \langle, \rangle_{1}\right) $, $\displaystyle \left(E_{2}, \langle, \rangle_{2}\right) $.
+\begin{fdefinition}[Ortogonal]
+\normalfont Una aplicación lineal $\displaystyle f : E_{1} \to E_{2}$ es \textbf{ortogonal} si $\displaystyle \forall \vec{x}, \vec{y} \in E_{1} $, $\displaystyle \langle f\left(\vec{x}\right), f\left(\vec{y}\right)\rangle_{2} = \langle \vec{x}, \vec{y}\rangle_{1} $.
+\end{fdefinition}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : E_{1} \to E_{2}$ una aplicación. Entonces, son equivalentes:
+\begin{description}
+\item[(a)] $\displaystyle f $ es ortogonal.
+\item[(b)] $\displaystyle f $ es lineal y $\displaystyle \forall \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base ortonormal de $\displaystyle E_{1} $, $\displaystyle \left\{ f\left(\vec{u}_{1}\right), \ldots, f\left(\vec{u}_{n}\right)\right\}  $ es una familia ortonormal de $\displaystyle E_{2} $.
+\item[(c)] $\displaystyle f $ es lineal y $\displaystyle \exists \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base ortonormal de $\displaystyle E_{1} $ tal que $\displaystyle \left\{ f\left(\vec{u}_{1}\right), \ldots, f\left(\vec{u}_{n}\right)\right\}  $ es familia ortonormal de $\displaystyle E_{2} $.
+\item[(d)] $\displaystyle f $ es lineal y $\displaystyle \| f\left(\vec{x}\right)\|_{2} = \|\vec{x}\|_{1} $.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(a) $\displaystyle \Rightarrow $ (b)] Por hipótesis, $\displaystyle f $ conserva el producto escalar. Así, $\displaystyle \forall \vec{x}, \vec{y} \in E_{1} $, tenemos que
+\[
+\begin{split}
+	\|f\left(\vec{x} + \vec{y}\right) - f\left(\vec{x}\right) - f\left(\vec{y}\right) \|^{2}_{2} = & \langle f\left(\vec{x} + \vec{y}\right) , f\left(\vec{x} +\vec{y}\right)\rangle_{2} + \langle f\left(\vec{x}\right), f\left(\vec{x}\right)\rangle_{2} + \langle f\left(\vec{y}\right), f\left(\vec{y}\right)\rangle _{2}\\
+	- & 2\langle f\left(\vec{x}+\vec{y}\right),f\left(\vec{x}\right)\rangle_{2}-2\langle f\left(\vec{x}+\vec{y}\right), f\left(\vec{y}\right)\rangle_{2}+2\langle f\left(\vec{x}\right), f\left(\vec{y}\right)\rangle_{2} \\
+	= & \|\vec{x}+\vec{y}\|_{1} + \|\vec{x}\|_{1}^{2} + \|\vec{y}\|^{2}_{1}-2\langle \vec{x}+\vec{y}, \vec{x}\rangle_{1}-2\langle \vec{x}+\vec{y}, \vec{y}\rangle_{1}+2\langle \vec{x}, \vec{y}\rangle_{1} \\
+	= & \|\vec{x}\|^{2}_{1} + \|\vec{y}\|^{2}_{1} + 2\langle\vec{x}, \vec{y}\rangle_{1} + \|\vec{x}\|^{2}_{1}+\|\vec{y}\|^{2}_{1}-2\|\vec{x}\|^{2}_{1}-2\langle\vec{y}, \vec{x}\rangle_{1}-2\langle\vec{x}, \vec{y}\rangle_{1}-2\|\vec{y}\|^{2}_{1} + algo\\
+	= & 0.
+\end{split}
+\]
+Sea $\displaystyle a \in \R $ y $\displaystyle \vec{x} \in E_{1} $,
+	\[
+	\begin{split}
+		\|f\left(a\vec{x}\right)-a f\left(\vec{x}\right) \|^{2}_{2} = & \|f\left(a\vec{x}\right)\|^{2}_{2} - 2a\langle f\left(a\vec{x}\right), f\left(\vec{x}\right) \rangle_{2}+a^{2}\|f\left(\vec{x}\right)\|^{2}_{2}\\
+		= & \langle f\left(a\vec{x}\right), f\left(a\vec{x}\right)\rangle_{2}-2a\langle f\left(a\vec{x}\right), f\left(\vec{x}\right)\rangle_{2} + a^{2}\langle f\left(\vec{x}\right), f\left(\vec{x}\right)\rangle_{2} \\
+		= & \langle a\vec{x}, a\vec{x} \rangle _{1} - 2a\langle a \vec{x}, \vec{x} \rangle _{1} + a^{2}\langle \vec{x}, \vec{x}\rangle _{1} \\
+		= & a\langle\vec{x}, \vec{x}\rangle_{1} -2a^{2}\langle\vec{x},\vec{x}\rangle +  \\
+		= & 0.
+	\end{split}
+	\]
+	Si $\displaystyle \left\{ \vec{u}_{1}, \ldots ,\vec{u}_{n}\right\}  $ es una base ortonormal de $\displaystyle E_{1} $ se tiene que 
+	\[
+	\begin{split}
+	\langle f\left(\vec{u}_{i}\right), f\left(\vec{u}_{j}\right) \rangle_{2} = \langle\vec{u}_{i}, \vec{u}_{j}\rangle_{1} = 
+	\begin{cases}
+	0, \; i \neq j \\
+	1, \; i = j
+	\end{cases}
+	.
+	\end{split}
+	\]
+\item[(b) $\displaystyle \Rightarrow $ (c)] Es trivial. 
+\item[(c) $\displaystyle \Rightarrow $ (d)] Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ una base ortonormal de $\displaystyle E_{1} $ y sea $\displaystyle \vec{x} = \sum^{n}_{i=1}x^{i}\vec{u}_{i} $, por lo que $\displaystyle f\left(\vec{x}\right) = \sum^{n}_{i=0}x^{i}f\left(\vec{u}_{i}\right) $.
+	\[ \| \vec{x}\|^{2}_{1} = \begin{pmatrix} x^{1} & \cdots & x^{n} \end{pmatrix}I_{n\times n}\begin{pmatrix} x^{1} \\ \vdots \\ x^{n} \end{pmatrix} = \left(x^{1}\right)^{2} + \cdots + \left(x^{n}\right)^{2}.\]
+\[  .\]
+\[
+\begin{split}
+	\| f\left(\vec{x}\right)\|^{2}_{2} = & \langle f\left(\vec{x}\right), f\left(\vec{x}\right)\rangle_{2} = \left\langle \sum^{n}_{i=1}x^{i}f\left(\vec{u}_{i}\right), \sum^{n}_{i=1}x^{i}f\left(\vec{u}_{i}\right)\right\rangle_{2} 
+	=   \sum^{n}_{i,j=1}x^{i}x^{j}\langle f\left(\vec{u}_{i}\right), f\left(\vec{u}_{j}\right)\rangle_{2} = \sum^{n}_{i=1}\left(x^{i}\right)^{2} \\
+	= &  \|\vec{x}\|^{2}_{1}.
+\end{split}
+\]
+\item[(d) $\displaystyle \Rightarrow $ (a)] Tenemos que $\displaystyle \forall \vec{x}, \vec{y} \in E_{1} $, 
+	\[
+	\begin{split}
+		\langle f\left(\vec{x}\right), f\left(\vec{y}\right)\rangle_{2} = & \frac{1}{2}\left(\underbrace{\|f\left(\vec{x}\right)  +f\left(\vec{y}\right)\|^{2}_{2}}_{f\left(\vec{x}+\vec{y}\right)} + \|f\left(\vec{x}\right)\|^{2}_{2}+\|f\left(\vec{y}\right)\|^{2}_{2}\right)\\
+		= & \frac{1}{2}\left(\|\vec{x}+\vec{y}\|^{2}_{1}+\|\vec{x}\|^{2}_{1}+\|\vec{y}\|^{2}_{1}\right) = \langle \vec{x}, \vec{y}\rangle_{1} .
+	\end{split}
+	\]
+\end{description}
+\end{proof}
+\begin{fprop}[]
+\normalfont Si $\displaystyle f : E_{1} \to E_{2}$ es ortogonal, entonces es inyectiva.
+\end{fprop}
+\begin{proof}
+Sea $\displaystyle f : E_{1} \to E_{2} $ ortogonal y $\displaystyle \vec{x} \in \Ker\left(f\right) $. Tenemos que
+\[ \|\vec{x}\|_{1} = \|f\left(\vec{x}\right)\|_{2} = \|\vec{0}\|_{2} = 0 \Rightarrow \vec{x} = \vec{0} .\]
+\end{proof}
+\begin{fdefinition}[]
+\normalfont Una aplicación ortogonal $\displaystyle f : E_{1} \to E_{2} $ es un isomorfismo de espacios vecotirales euclídeos si $\displaystyle \exists g : E_{2} \to E_{1} $ ortogonal tal que $\displaystyle g \circ f = id _{E_{1}} $ y $\displaystyle f \circ g = id _{E_{2}} $.
+\end{fdefinition}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : E_{1} \to E_{2} $ una aplicación ortogonal. Entonces, son equivalentes:
+\begin{description}
+\item[(a)] $\displaystyle f $ es un isomorfismo de espacios vectoriales euclídeos.
+\item[(b)] $\displaystyle f $ es biyectiva.
+\item[(c)] $\displaystyle \dim\left(E_{1}\right) = \dim\left(E_{2}\right) $.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(a) $\displaystyle \Rightarrow $ (b) $\displaystyle \Rightarrow $ (c)] Trivial.
+\item[(c) $\displaystyle \Rightarrow $ (a)] Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ una base ortonormal de $\displaystyle E_{1} $. Entonces, $\displaystyle \left\{ f\left(\vec{u}_{1}\right), \ldots, f\left(\vec{u}_{n}\right)\right\}  $ son linealmente independientes y, por tanto, son base ortonormal de $\displaystyle E_{2} $. Sea $\displaystyle g : E_{2} \to E_{1} $ la única aplicación lineal tal que $\displaystyle g\left(f\left(\vec{u}_{i}\right)\right) = \vec{u}_{i} $ con $\displaystyle i = 1, \ldots, n $.
+Entonces, tenemos que para $\displaystyle i = 1, \ldots, n $, $\displaystyle g\left(f\left(\vec{u}_{i}\right)\right) = \vec{u}_{i} = id _{E_{1}}\left(\vec{u}_{i}\right) $ y $\displaystyle f\left(g\left(f\left(\vec{u}_{i}\right)\right)\right) = f\left(\vec{u}_{i}\right) = id _{E_{2}} $.
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont Tenemos que
+\[ O_{n}\left(E\right) = O_{n}\left(\R\right) = \left\{ f : E \to E \; : \; f \; \text{ortogonal}\right\}  .\]
+Tenemos que $\displaystyle \left(O_{n}\left(\R\right), \circ \right) $ es un grupo, y se le denomina grupo ortogonal.
+\end{observation}
+Si $\displaystyle f \in O_{n}\left(\R\right) $, tenemos que $\displaystyle \det\left(f\right) = \pm 1 $. Definimos el conjunto
+\[ O^{+}_{n}\left(\R\right) = \left\{ f \in O_{n}\left(\R\right) \; : \; \det\left(f\right) = 1\right\}  .\]
+Este es un subgrupo de $\displaystyle O_{n}\left(\R\right) $. Similarmente, definimos
+\[ O^{-}_{n}\left(\R\right) = \left\{ f \in O_{n}\left(\R\right) \; : \; \det\left(f\right) = -1\right\}  .\]
+Si $\displaystyle f_{1}, \ldots, f_{k} \in O^{-}_{n}\left(\R\right) $. Tenemos que 
+\[ f_{k}\circ \cdots \circ f_{1} \in 
+\begin{cases}
+O^{+}_{n}\left(\R\right),\; k \; \text{par} \\
+O^{-}_{n}\left(\R\right), \; k \; \text{impar}
+\end{cases}
+.\]
+Así, tenemos que $\displaystyle O^{+}_{n}\left(\R\right) \cup O^{-}_{n}\left(\R\right) = O_{n}\left(\R\right) $.
+\begin{observation}
+\normalfont Tenemos que $\displaystyle O_{n}\left(\R\right) \subset \Aut\left(E\right) $. 
+\end{observation}
+\begin{fprop}[]
+\normalfont Sean $\displaystyle \emptyset\neq A,B \subset E $ ortogonales, entonces si $\displaystyle f \in O_{n}\left(\R\right) $, $\displaystyle f\left(A\right) $ y $\displaystyle f\left(B\right) $ son ortogonales.
+\end{fprop}
+\begin{proof}
+Tenemos que $\displaystyle \forall \vec{x} \in A, \vec{y} \in B $, se tiene que 
+\[\left\langle f\left(\vec{x}\right), f\left(\vec{y}\right) \right\rangle = \left\langle \vec{x}, \vec{y} \right\rangle = 0.\]
+\end{proof}
+Supongamos que $\displaystyle L \in \mathcal{L}\left(E\right) $. 
+\begin{fprop}[]
+\normalfont Si $\displaystyle f \in O_{n}\left(\R\right) $ tal que $\displaystyle f\left(L\right) = L $ ($\displaystyle \iff f\left(L\right) = L $), entonces $\displaystyle f\left(L^{\perp}_{\left\langle ,  \right\rangle }\right) \subset L^{\perp }_{\left\langle ,  \right\rangle } $, $\displaystyle f|_{L} \in O\left(L\right) $ y $\displaystyle f|_{L^{\perp }} \in O\left(L^{\perp}\right)$.
+\end{fprop}
+\begin{proof}
+Sea $\displaystyle \vec{x} \in L^{\perp }_{\left\langle ,  \right\rangle } $. Tenemos que $\displaystyle \forall\vec{y} \in L $, existe $\displaystyle \vec{z} \in L $ tal que $\displaystyle \vec{y} = f\left(\vec{z}\right) $. Así, se tiene que 
+\[\left\langle f\left(\vec{x}\right), \vec{y} \right\rangle = \left\langle f\left(\vec{x}\right), f\left(\vec{z}\right) \right\rangle = \left\langle \vec{x}, \vec{z} \right\rangle = 0 .\]
+Así, tenemos que $\displaystyle f\left(\vec{x}\right) \in L^{\perp }_{\left\langle ,  \right\rangle } $. Así, $\displaystyle \forall \vec{x}, \vec{y} \in L $, se tiene que $\displaystyle \left\langle \vec{x}, \vec{y} \right\rangle _{L} = \left\langle \vec{x}, \vec{y} \right\rangle  $. Es decir,
+\[\left\langle f\left(\vec{x}\right), f\left(\vec{y}\right) \right\rangle = \left\langle \vec{x}, \vec{y} \right\rangle _{L} .\]
+Así, tenemos que $\displaystyle \vec{x}, \vec{y} \in L^{\perp }_{\left\langle ,  \right\rangle } $, pues 
+\[\left\langle \vec{x}, \vec{y} \right\rangle _{L^{\perp }_{\left\langle ,  \right\rangle }} = \left\langle \vec{x}, \vec{y} \right\rangle = \left\langle f|_{L^{\perp }_{\left\langle ,  \right\rangle }}\left(\vec{x}\right), f|_{L^{\perp }_{\left\langle ,  \right\rangle }}\left(\vec{y}\right) \right\rangle  .\]
+\end{proof}
 

@@ -322,3 +322,36 @@ Otra forma de hacerlo es con la definición de las funciones hiperbólicas, es d
 \[ \int \left(\sin x \int^{x}_{0} \sin t \; dt\right) \; dx = \int u \; du = \frac{u^{2}}{2} = \frac{1}{2}\left(\int^{x}_{0} \sin t \; dt\right)^{2}.\]
 Esta integral también se podría haber hecho por partes.
 \end{eg}
+\begin{eg}
+	\normalfont \textbf{Ejercicio 6, Hoja 9}. Consideremos la sucesión de funciones $\displaystyle \left\{ 1, \cos nx, \sin n x\right\} ^{\infty}_{n=1} $ con $\displaystyle x \in \left[-\pi , \pi \right]  $. Tenemos que la sucesión es
+	\[ \left\{ f_{0}\left(x\right)= 1, f_{1}\left(x\right) = \sin x, g_{1}\left(x\right) = \cos x, \ldots, f_{n}\left(x\right) = \sin n x, g_{n}\left(x\right) = \cos nx, \ldots\right\}  .\]
+Vamos a calcular sus integrales. 
+\[ \int^{\pi }_{-\pi } 1 \; dx =2\pi.\]
+\[ \int^{\pi }_{- \pi } \cos nx \; dx = \left[\frac{\sin nx}{n}\right] ^{\pi }_{- \pi } = 0 = \int^{\pi }_{-\pi } \sin nx \; dx.\]
+También tenemos que $\displaystyle \forall n,m \in \N $, 
+\[ \int^{\pi }_{- \pi } \sin nx \cos mx \; dx = 0.\]
+Además, si $\displaystyle n \neq m $ se tiene que
+\[ \int^{ \pi }_{-\pi } \sin nx \sin mx \; dx = 0 .\]
+Para demostrar esto resulta útil usar las fórmulas de los productos de senos y cosenos. También se podría hacer por partes:
+\[  .\]
+\[
+\begin{split}
+	\int^{\pi }_{- \pi } \cos nx \cos mx \; dx = & \left[\frac{\sin nx}{n}\cos mx\right]^{\pi }_{-\pi} - \int^{\pi }_{- \pi } \frac{\sin ny}{n}m\sin mx \; dx = \frac{m }{n} \int^{\pi }_{- \pi } \sin nx \sin mx  \; dx \\
+	= & \frac{m}{n}\left[\frac{-\cos nx \sin mx}{n}\right]^{\pi }_{-\pi} + \frac{m^{2}}{n^{2}}\int^{\pi }_{-\pi } \cos nx \cos mx \; dx = \frac{m^{2}}{n^{2}}\int^{\pi }_{- \pi } \cos nx \cos mx \; dx.
+\end{split}
+\]
+Así, tenemos que, dado que $\displaystyle m \neq n $,
+\[ \left(1- \frac{m^{2}}{n^{2}}\right)\int^{\pi }_{- \pi } \cos nx \cos mx  \; dx = 0 \iff \int^{\pi }_{- \pi } \cos nx \cos mx  \; dx = 0 .\]
+\end{eg}
+\begin{eg}
+\normalfont \textbf{Ejercicio 12, Hoja 10.} Resolvamos la integral:
+\[ \int \frac{2 + \sqrt{1 + x}}{\left(x+1\right)^{2} - \sqrt{1 + x}} \; dx .\]
+Cogemos $\displaystyle y = \sqrt{1 + x} $. Entonces, tenemos que $\displaystyle dy = \frac{1}{2\sqrt{x+1}}dx $. Así, 
+\[ \int \frac{2 + \sqrt{1 + x}}{\left(x+1\right)^{2} - \sqrt{1 + x}} \; dx = \int \frac{2 + y}{y^{4}-y}2y \; dy = \int \frac{4+2y}{y^{3}-1} \; dy  = \int \frac{4 + 2y}{\left(y-1\right)\left(y^{2}+y+1\right)} \; dy.\]
+Procedemos con la descomposición en fracciones simples, que quedará de la forma:
+\[\frac{4 + 2y}{\left(y-1\right)\left(y^{2}+y+1\right)} = \frac{A}{y - 1} + \frac{Bx + C}{y^{2} + y+1} .\]
+Operando, obtenemos que $\displaystyle A = 2 $, $\displaystyle B = -2 $ y $\displaystyle C = -2 $. Así, tenemos que
+\[ \int \frac{2 + \sqrt{1 + x}}{\left(x+1\right)^{2} - \sqrt{1 + x}} \; dx  = \int \left(\frac{2}{y-1}-\frac{2y+2}{y^{2}+y+1}\right) \; dy = 2\ln\left(y-1\right) - \int \frac{2y+1}{y^{2}+y+1} \; dy-\int \frac{1}{y^{2}+y+1} \; dy .\]
+La segunda integral es un logaritmo neperiano y la última se calcula haciendo cuadrados perfectos para obtener el arcotangente.
+\end{eg}
+

@@ -550,7 +550,7 @@ Sean $\displaystyle x' = \exp x $ e $\displaystyle y' = \exp y $. Tenemos que $\
 \item[(a)] $\displaystyle \forall a,b,c \in \R $, $\displaystyle \left(a^{b}\right)^{c} = a^{bc} $.
 \item[(b)] $\displaystyle \forall a \in \R $, $\displaystyle a^{1} = a $.
 \item[(c)] $\displaystyle a^{x + y}= a^{x} \cdot a^{y} $.
-\item[(d)] $\displaystyle \log_{a} = \frac{\log_{x}}{\log_{a}} $.
+\item[(d)] $\displaystyle \log_{a} y= \frac{\log_{x}y}{\log_{a}y} $.
 \item[(e)] $\displaystyle \left(\log_{a}x\right)' = \frac{1}{x\ln a} $.
 \end{description}
 \end{fprop}
@@ -603,7 +603,7 @@ Sean $\displaystyle x' = \exp x $ e $\displaystyle y' = \exp y $. Tenemos que $\
 	\normalfont Sea $\displaystyle A = \left\{ r_{n}\right\}_{n\in\N} \subset \R $. Sea $\displaystyle \epsilon > 0 $, cogemos  
 	\[ \left(a_{n},b_{n}\right) = \left(r_{n}-\frac{\epsilon }{2^{n+1}}, r_{n} + \frac{\epsilon }{2^{n+1}}\right) .\]
 	Así, tenemos que $\displaystyle A \subset \bigcup_{n \in \N}\left(a_{n}, b_{n}\right) $. Así, tenemos que 
-	\[\sum^{\infty}_{n=1}\left[r_{n} + \frac{\epsilon }{2} - \left(r_{n}-\frac{\epsilon }{2}\right)\right] = \epsilon \sum^{\infty}_{n=1}\frac{1}{2^{n}} = \epsilon .\]
+	\[\sum^{\infty}_{n=1}\left[r_{n} + \frac{\epsilon }{2^{n+1}} - \left(r_{n}-\frac{\epsilon }{2^{n+1}}\right)\right] = \epsilon \sum^{\infty}_{n=1}\frac{1}{2^{n}} = \epsilon .\]
 Así, $\displaystyle A $ tiene contenido cero.	
 \end{eg}
 \begin{observation}

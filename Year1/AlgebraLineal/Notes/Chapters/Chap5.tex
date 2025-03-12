@@ -593,26 +593,22 @@ Tenemos que la expresión matricial de $\displaystyle \beta_{q} $ será
 3&\frac{9}{2}& 7\end{pmatrix} .\]
 Puede resultar útil recordar que $\displaystyle q\left(\vec{x}\right) = \sum^{n}_{i,j=1}a_{ij}x^{i}x^{j} $, donde $\displaystyle a_{ij} = \beta\left(\vec{u}_{i}, \vec{u}_{j}\right) $ para una base $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ de $\displaystyle V $.
 \end{eg}
-\subsection*{Forma cuadrática expresada como suma de cuadrados}
-Sea $\displaystyle q$ una forma cuadrática, vamos a intentar expresarla como suma de cuadrados. Tenemos que 
+\subsection*{El método de Lagrange}
+Sea $\displaystyle q$ una forma cuadrática, vamos a intentar expresarla como suma de cuadrados. 
+Si $\displaystyle q $ es una forma cuadrática, tenemos que 
+\[ q\left(\vec{x}\right) = a_{11}\left(x^{1}\right)^{2} + 2 \sum^{n}_{i = 2}a_{ii}x^{1}x^{i} + \sum^{n}_{i=2}a_{ii}\left(x^{i}\right)^{2} + 2 \sum^{}_{2 \leq i < j \leq n}a_{ij}x^{i}x^{j} .\]
+Si $\displaystyle a_{11} \neq 0 $, tenemos que $\displaystyle \exists \lambda \in V^{*} $ y $\displaystyle q_{1}\left(x^{2}, \ldots, x^{n}\right) $ tal que 
 \[
 \begin{split}
-	q\left(\vec{x}\right) =  a_{11}x^{1}x^{1} + 2a_{12}x^{1}x^{2}+\cdots + 2a_{1n}x^{1}x^{n} + \underbrace{\sum_{1< i < j \leq n}2a_{ij}x^{i}x^{j} + \sum^{n}_{i=2}a_{ii}\left(x^{i}\right)^{2}}_{q_{1}\left(x^{2}, \ldots, x^{n}\right)} 
+	q\left(\vec{x}\right) = 
+	 & \frac{1}{a_{11}}\left(a^{2}_{11}\left(x^{1}\right)^{2} + 2a_{11}x^{1}\left(\sum^{n}_{i=2}a_{1i}x^{1}x^{i}\right)+\left(\sum^{n}_{i=2}a_{1i}x^{1}x^{i}\right)^{2}\right) -\frac{1}{a_{11}}\left(\sum^{n}_{i=2}a_{1i}x^{i}\right)^{2}\\
+	+ &  \sum^{n}_{i=2}a_{ii}\left(x^{i}\right)^{2}+2\sum^{}_{2\leq i < j \leq n}a_{ij}x^{i}x^{j}\\
+	= & \frac{1}{a_{11}}\left(a_{11}x^{1}+\sum^{n}_{i=2}a_{1i}x^{1}x^{i}\right)^{2}+q_{1}\left(x^{2}, \ldots, x^{n}\right) 
+	=  \frac{1}{a_{11}}\left(\lambda\left(\vec{x}\right)\right)^{2}+q_{1}\left(x^{2}, \ldots, x^{n}\right).
 \end{split}
 \]
-El segundo término de la primera igualdad es la misma forma cuadrática de grado $\displaystyle n - 1 $.
-Supongamos que $\displaystyle a_{11} \neq 0 $,
-\[
-\begin{split}
-	q\left(\vec{x}\right) = & a_{11}x^{1}x^{1} + 2a_{i2}x^{1}x^{2}+\cdots + 2a_{1n}x^{1}x^{n} + \sum_{1< i < j \leq n}2a_{ij}x^{i}x^{j} + \sum^{n}_{i=1}a_{ii}\left(x^{i}\right)^{2} \\
-	= & \frac{1}{a_{11}}\left(a_{11}^{2}\left(x^{1}\right)^{2}+2a\right)
-\end{split}
-\]
-Si $\displaystyle \lambda\left(\vec{x}\right) = a_{11}x^{1} + \cdots + a_{1n}x^{n} $, tenemos que 
-\[q\left(\vec{x}\right) = \frac{1}{a_{11}}\left(\lambda\left(\vec{x}\right)^{2} + q_{1}\left(x^{2}, \ldots, x^{n}\right)\right) = \frac{1}{a_{11}}\left(\sum^{n}_{i=1}a_{ii}x^{i}\right)^{2} + \sum^{}_{2 \leq i < j \leq n}a_{ij}x^{i}x^{j} .\]
-Para acordarnos de la expresión de $\displaystyle \lambda\left(\vec{x}\right) $ puede resultar útil la siguiente ecuación:
-\[ \frac{1}{2}\frac{\partial q\left(\vec{x}\right)}{\partial x^{1}} = \lambda\left(\vec{x}\right) .\]
-En efecto, tenemos que $\displaystyle  $.
+Donde $\displaystyle \lambda \left(\vec{x}\right) = \sum^{n}_{i=1}a_{1i}x^{1}x^{i} = \frac{\partial q\left(\vec{x}\right)}{\partial x^{1}} $.
+En efecto, tenemos que 
 \[ \frac{1}{2} \frac{\partial q\left(\vec{x}\right)}{\partial x^{1}} = \frac{1}{2} \frac{ \partial}{\partial x^{1}} \left( \left(a_{11}x^{1}\right)^{2} + 2x^{1}\left(a_{12}x^{2}+ \cdots + a_{1n}x^{n}\right)+\left(a_{12}x^{2} + \cdots + a_{1n}x^{n}\right)^{2}\right) = \lambda\left(\vec{x}\right) .\]
 \begin{eg}
 	\normalfont Consideremos la matriz $\displaystyle \begin{pmatrix} 2 & 1 & 2 \\ 1 & - 1 & 1 \\ 2 & 1 & 2 \end{pmatrix} $. Tenemos que 
@@ -622,21 +618,6 @@ En efecto, tenemos que $\displaystyle  $.
 	Así, tenemos que 
 	\[q_{1}\left(x^{2}, x^{3}\right) = q\left(\vec{x}\right)-\frac{1}{a_{11}}\lambda\left(\vec{x}\right)^{2} = 2\left(x^{1}\right)^{2}+\frac{1}{2}\left(x^{2}\right)^{2} + 2\left(x^{3}\right)^{2}+2x^{1}x^{2}+4x^{1}x^{3}+2x^{2}x^{3}.\]
 	Así, podemos obtener la expresión de $\displaystyle q $ como suma de cuadrados:
-	\[q\left(\vec{x}\right) = \frac{1}{2}\left(2x^{1}+x^{2}+2x^{3}\right)^{2} +  .\]
-	
+	\[q\left(\vec{x}\right) = \frac{1}{2}\left(2x^{1}+x^{2}+2x^{3}\right)^{2} +2\left(x^{1}\right)^{2}+\frac{1}{2}\left(x^{2}\right)^{2} + 2\left(x^{3}\right)^{2}+2x^{1}x^{2}+4x^{1}x^{3}+2x^{2}x^{3}  .\]
+	Ahora, repetiríamos el mismo procedimiento con $\displaystyle q_{1}\left(x^{2}, x^{2}\right) $ y, si fuere necesario, hasta otra vez, con el objetivo de expresar $\displaystyle q\left(\vec{x}\right) $ como suma de cuadrados.
 \end{eg}
-Si $\displaystyle q $ es una forma cuadrática, tenemos que 
-\[ q\left(\vec{x}\right) = a_{11}\left(x^{1}\right)^{2} + 2 \sum^{n}_{i = 2}a_{ii}x^{1}x^{i} + \sum^{n}_{i=2}a_{ii}\left(x^{i}\right)^{2} + 2 \sum^{}_{2 \leq i < j \leq n}a_{ij}x^{i}x^{j} .\]
-Si $\displaystyle a_{11} \neq 0 $, tenemos que $\displaystyle \exists \lambda \in V^{*} $ y $\displaystyle q_{1}\left(x^{2}, \ldots, x^{n}\right) $ tal que 
-\[ .\]
-\[
-\begin{split}
-	q\left(\vec{x}\right) = & \frac{1}{a_{11}}\left(\left(\lambda\left(\vec{x}\right)\right)^{2}+q_{1}\left(x^{2}, \ldots, x^{n}\right)\right)\\
-	= & \frac{1}{a_{11}}\left(a^{2}_{11}\left(x^{1}\right)^{2} + 2a_{11}x^{1}\left(\sum^{n}_{i=2}a_{1i}x^{1}x^{i}\right)+\left(\sum^{n}_{i=2}a_{1i}x^{1}x^{i}\right)^{2}-\frac{1}{a_{11}}\left(\sum^{n}_{i=2}a_{1i}x^{i}\right)^{2}\right) \\
-	+ &  \sum^{n}_{i=2}a_{ii}\left(x^{i}\right)^{2}+2\sum^{}_{2\leq i < j \leq n}a_{ij}x^{i}x^{j}\\
-	= & \frac{1}{a_{11}}\left(a_{11}x^{1}+\sum^{n}_{i=2}a_{1i}x^{1}x^{i}\right)^{2}+q_{1}\left(x^{2}, \ldots, x^{n}\right) 
-	=  \frac{1}{a_{11}}\left(\lambda\left(\vec{x}\right)\right)^{2}+q_{1}\left(x^{2}, \ldots, x^{n}\right).
-\end{split}
-\]
-Donde $\displaystyle \lambda \left(\vec{x}\right) = \sum^{n}_{i=1}a_{1i}x^{1}x^{i} = \frac{\partial q\left(\vec{x}\right)}{\partial x^{1}} $.
-

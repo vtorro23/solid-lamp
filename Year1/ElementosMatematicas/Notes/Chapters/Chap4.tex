@@ -30,7 +30,7 @@ A\left(0\right) = 1, \; A\left(1\right) = 1, \; A\left(n+2\right) = A\left(n+1\r
 \end{description}
 \end{fdefinition}
 \begin{eg}
-\normalfont Consideremos $\displaystyle A\left(n+1\right) = 3A\left(n\right) $. Vamos a encontrar su solución particular. Supongamos que $\displaystyle a_{0} = A\left(0\right) $. Tenemos que 
+\normalfont Consideremos $\displaystyle A\left(n+1\right) = 3A\left(n\right) $. Vamos a encontrar su solución general. Supongamos que $\displaystyle a_{0} = A\left(0\right) $. Tenemos que 
 \[A\left(1\right) = 3a_{0}, \; A\left(2\right) = 3A\left(1\right) = 3^{2}a_{0}, \; \ldots, \; A\left(n\right) = 3^{n}a_{0}.\]
 Podemos observar que se trata de una sucesión geométrica. 
 \end{eg}
@@ -58,4 +58,102 @@ $\displaystyle a_{0} $ & $\displaystyle 1,05a_{0}-100 $ & $\displaystyle 1,05a_{
 \end{center}
 Si $\displaystyle a_{0} = 1000 $, tenemos que la deuda está disminuyendo y si $\displaystyle a_{0} = 3000 $, la deuda está aumentando, cuando $\displaystyle n \in \left\{ 1, \ldots, 5\right\}  $. Tenemos que para $\displaystyle a_{0} = 2000 $, $\displaystyle A\left(1\right) = A\left(2\right) = \cdots = A\left(5\right) $.
 \end{eg}
+\begin{fdefinition}[Punto de equilibrio]
+	\normalfont Un \textbf{punto de equilibrio} (o \textbf{fijo}), $\displaystyle a $ , del sistema dinámico discreto autónomo $\displaystyle A\left(n+1\right) = f\left(A\left(n\right)\right) $, con $\displaystyle n \in \N \cup \left\{ 0\right\}  $, si $\displaystyle A\left(n\right) = a $ es solución constante del sistema. Es decir, si $\displaystyle A\left(n\right) = a $, $\displaystyle \forall n \in \N\cup \left\{ 0\right\}  $. 
+\end{fdefinition}
+\begin{observation}
+\normalfont Se tiene que cumplir que $\displaystyle A\left(0\right) = a_{0}=a $.
+\end{observation}
+\begin{fprop}[]
+\normalfont La condición necesaria y suficiente para que $\displaystyle a \in \R $ sea punto de equilibrio del sistema $\displaystyle A\left(n+1\right) = f\left(A\left(n\right)\right) $, es que $\displaystyle a = f\left(a\right) $.
+\end{fprop}
+\begin{proof}
+	Observar que si $\displaystyle A\left(n\right) = a \iff A\left(n+1\right) = a $, $\displaystyle \forall n \in \N \cup \left\{ 0\right\}  $.
+\end{proof}
+\begin{eg}
+\normalfont Encontrar los puntos de equilibrio del sistema $\displaystyle A\left(n+1\right) = 2A\left(n\right)-3 $. Buscamos $\displaystyle a = f\left(a\right) $, por lo que $\displaystyle A\left(0\right) = a = 3 $. 
+\end{eg}
+\begin{fprop}[]
+\normalfont El único punto de equilibrio del sistema lineal afín discreto de la forma $\displaystyle A\left(n+1\right) = rA\left(n\right) + b $ con $\displaystyle r \neq 1 $ y $\displaystyle r,b \in \R $, es $\displaystyle a = \frac{b}{r-1} $.
+\end{fprop}
+\begin{proof}
+Si $\displaystyle a = A\left(n\right) $, la única solución de $\displaystyle a = ra + b $ es $\displaystyle a = \frac{b}{r-1} $.
+\end{proof}
+\begin{fdefinition}[]
+\normalfont Se dice que un punto de equilibrio $\displaystyle a $ del sistema dinámico $\displaystyle A\left(n+1\right) = f\left(A\left(n\right)\right) $ es
+\begin{description}
+\item[(i)] \textbf{Estable (atractor/atractivo)} si $\displaystyle \exists \epsilon > 0 $ tal que $\displaystyle \left|A\left(0\right)-a\right|<\epsilon  $, entonces $\displaystyle \lim_{n \to \infty}A\left(n\right) = a $.
+\item[(ii)] \textbf{Inestable  (repulsor/repulsivo)} si $\displaystyle \exists \epsilon > 0$, tal que si $\displaystyle 0 < \left|A\left(0\right)-a\right|<\epsilon  $, entonces $\displaystyle \lim_{n \to \infty}A\left(n\right) \neq a $.
+\item[(iii)] \textbf{Neutro} si no es estable ni inestable.
+\end{description}
+\end{fdefinition}
+\begin{eg}
+\normalfont Continuamos con el ejemplo anterior, $\displaystyle A\left(n+1\right) = 2A\left(n\right)+3 $. Tenemos que el punto de equilibrio único es $\displaystyle a = A\left(0\right) = 3 $. Consideremos $\displaystyle a_{0}^{1} = 3,01 $ y $\displaystyle a_{0}^{2} = 2,99 $.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+& $\displaystyle a_{0}^{1} $ &$ a_{0}^{2} $ \\
+\hline 
+	$\displaystyle A\left(0\right) $ & & \\
+	\hline 
+	$\displaystyle A\left(1\right) $ & $\displaystyle 3,02 $ & $\displaystyle 2,98 $ \\
+	\hline 
+	\vdots & \vdots & \vdots \\
+	\hline 
+	$\displaystyle A\left(10\right) $ & $\displaystyle 13,24 $ & $\displaystyle -7,24 $ \\
+	\hline
+\end{tabular}
+\end{center}
+Sin embargo, si cogemos ahora $\displaystyle A\left(n+1\right) = 0,8A\left(n\right) - 2 $, tenemos que el único punto de equilibrio será $\displaystyle a = - 10 $. Cogemos $\displaystyle a_{0}^{1} = -9,99 $, $\displaystyle a_{0}^{2} = -10,01 $, $\displaystyle a_{0}^{3} = -10,005 $ y $\displaystyle a_{0}^{4} = -9,995 $. 
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+& $\displaystyle a_{0}^{1} $  & $\displaystyle a_{0}^{2} $ & $\displaystyle a_{0}^{3} $ & $\displaystyle a_{0}^{4} $ \\
+\hline
+	$\displaystyle A\left(0\right) $ & $\displaystyle -9,99 $ & $\displaystyle -10,01 $ & $\displaystyle -10,005 $ & $\displaystyle -9,995 $ \\
+	\hline
+	\vdots & \vdots & \vdots & \vdots & \vdots \\
+	\hline
+	$\displaystyle A\left(10\right) $ & $\displaystyle -9,9989 $ & $\displaystyle -10,0010 $ & $\displaystyle -10,0005 $ & $\displaystyle -9,99946 $ \\
+	\hline
+\end{tabular}
+\end{center}
+\end{eg}
+\begin{ftheorem}[]
+	\normalfont Sea el sistema dinámico afín $\displaystyle A\left(n+1\right) = rA\left(n\right) + b $, con $\displaystyle r \in \R / \left\{ 1\right\} $. El punto de equiilibrio $\displaystyle a = \frac{b}{r-1} $ es
+	\begin{description}
+	\item[(a)] Estable si $\displaystyle \left|r\right| < 1 $. Resulta además que $\displaystyle \lim_{n \to \infty}A\left(n\right) = a $, $\displaystyle \forall A\left(0\right)=a_{0} \in \R$.
+	\item[(b)] Inestable si $\displaystyle \left|r\right| > 1 $. Resulta además que $\displaystyle \lim_{n \to \infty} \left|A\left(n\right)\right| = \infty$, $\displaystyle \forall A\left(0\right) = a_{0} \in \R $, con $\displaystyle A\left(0\right) \neq a $. 
+	\item[(c)] Neutro si $\displaystyle r = - 1 $. En esta situación $\displaystyle \forall n \in \N\cup \left\{ 0\right\}  $ se tiene que $\displaystyle A\left(2n\right) = A\left(0\right) $ y $\displaystyle A\left(2n+1\right) = A\left(1\right) $. 
+	\end{description}
+\end{ftheorem}
+\begin{proof}  Dado el sistema $\displaystyle A\left(n+1\right) = rA\left(n\right)+b $. Tenemos que el punto de equilibrio de equilibrio verifica que 
+	\[a = f\left(a\right) \Rightarrow a = \frac{b}{r-1} .\]
+	Por tanto, se tiene que $\displaystyle \forall n \in \N $, 
+	\[ \left|A\left(n\right)-a\right| = \left|rA\left(n-1\right)+b-a\right| = \left|rA\left(n-1\right)+b+ar-b\right| = \left|r\right| \left|A\left(n-1\right)-a\right| .\]
+	Apliquemos el procedimiento de inducción sobre $\displaystyle n $. Si $\displaystyle n = 1 $, 
+	\[ \left|A\left(1\right) - a\right| = \left|r\right| \left|A\left(0\right)-a\right| .\]
+	Si $\displaystyle n = 2 $, 
+	\[ \left|A\left(2\right)-a\right| = \left|r\right| \left|A\left(1\right)-a\right| = r^{2} \left|A\left(0\right)-a\right| .\]
+	Asumimos que es cierto para $\displaystyle n $. Ahora estudiamos el caso $\displaystyle n+1 $:
+	\[ \left|A\left(n+1\right)-a\right| = \left|r\right| \left|A\left(n\right)-a\right| = \left|r\right|^{n+1} \left|A\left(0\right)-a\right| .\]
+\begin{description}
+	\item[(a)] Si $\displaystyle \left|r\right| < 0 $, tenemos que si $\displaystyle n \to \infty $, $\displaystyle \left|r\right|^{n} \to 0 $ y, en consecuencia, 
+	\[ \left|A\left(n\right)-a\right| = \left|r\right|^{n} \left|A\left(0\right)-a\right| \to 0 .\]
+\item[(b)] Si $\displaystyle \left|r\right| > 1 $, entonces
+	\[\lim_{n \to \infty} \left|A\left(n\right)-a\right| = \lim_{n \to \infty} \left|r^{n}\right| \left|A\left(0\right)-a\right| = \infty .\]
+	Por tanto, $\displaystyle a $ es un punto de equilibrio inestable.
+\item[(c)] Si $\displaystyle r = - 1 $, tenemos que 
+	\[ \left|A\left(n\right)-a\right| = \left|A\left(0\right)-a\right|, \; n \in \N\cup \left\{ 0\right\}  .\]
+	Por tanto, se tiene que $\displaystyle a $ es un punto de equilibrio neutro. Además, tenemos que para todo $\displaystyle n $ se verifica que 
+	\[A\left(n\right) = - A\left(n-1\right) + b = - \left(-A\left(n-2\right)+b\right)+b = A\left(n-2\right) .\]
+	Así, se tiene que
+	\[
+	\begin{cases}
+	A\left(0\right) = A\left(2\right) = \cdots = A\left(2n\right) = \cdots \\
+	A\left(1\right) = A\left(3\right) = \cdots = A\left(2n+1\right) = \cdots 
+	\end{cases}
+	.\]
+\end{description}
+\end{proof}
 
