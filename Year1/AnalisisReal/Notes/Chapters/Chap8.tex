@@ -22,7 +22,6 @@ Esto nos lleva a proponer la siguiente definición.
 \begin{description}
 	\item[(a)] Sea $\displaystyle f : \left[a,b\right) \to \R  $ con $\displaystyle b \in \R $ o $\displaystyle b = \infty $. Supongamos que $\displaystyle \forall r \in [a,b)$, existe la integral de Riemann $\displaystyle \int^{r}_{a} f\left(x\right) \; dx $. Se llama \textbf{integral impropia} de $\displaystyle f $ en $\displaystyle [a,b) $ a
 		\[\lim_{r \to b^{-}}\int^{r}_{a} f\left(x\right) \; dx = \int^{b}_{a} f\left(x\right) \; dx .\]
-	
 \item[(b)] Sea $\displaystyle f: (a,b]\to \R $ con $\displaystyle a \in \R $ o $\displaystyle a = -\infty  $. Supongamos que existe $\displaystyle \int^{b}_{r} f\left(x\right) \; dx$, $\displaystyle \forall r \in (a,b] $. Se llama \textbf{integral impropia} de $\displaystyle f $  en $\displaystyle (a,b] $ a
 	\[\lim_{r \to a^{+}}\int^{b}_{r} f\left(x\right) \; dx = \int^{b}_{a} f\left(x\right) \; dx .\]
 \item[(c)] Sea $\displaystyle f : \left(a,b\right) \to \R $ con $\displaystyle a,b \in \R $, $\displaystyle a = - \infty $ o $\displaystyle b = \infty $. Supongamos que $\displaystyle \forall s,r \in \left(a,b\right) $ existe $\displaystyle \int^{r}_{s} f\left(x\right) \; dx $. Se llama \textbf{integral impropia} de $\displaystyle f $ a
@@ -63,6 +62,35 @@ Así, tenemos que
 \begin{eg}
 \normalfont Tenemos que $\displaystyle \int^{\infty}_{-\infty} x \; dx $ no existe, pues no existen $\displaystyle \lim_{s \to -\infty}\int^{0}_{s} x \; dx $ y $\displaystyle \lim_{r \to \infty}\int^{r}_{0} x \; dx $. 
 \end{eg}
+\begin{fprop}[]
+\normalfont Sean $\displaystyle f,g : \left(a,b\right) \to \R $ tal que $\displaystyle \exists \int^{b}_{a} f\left(x\right) \; dx $ y $\displaystyle \int^{b}_{a} g\left(x\right) \; dx $.
+\begin{description}
+\item[(a)] $\displaystyle \forall c \in \left(a,b\right) $ se tiene que 
+	\[\int^{b}_{a} f\left(x\right) \; dx = \int^{c}_{a} f\left(x\right) \; dx + \int^{b}_{c} f\left(x\right) \; dx .\]
+\item[(b)] $\displaystyle \int^{b}_{a} f\left(x\right)+g\left(x\right) \; dx = \int^{b}_{a} f\left(x\right) \; dx + \int^{b}_{a} g\left(x\right) \; dx $.
+\item[(c)] Si $\displaystyle \lambda \in \R $, $\displaystyle \int^{b}_{a} \lambda f\left(x\right) \; dx = \lambda \int^{b}_{a} f\left(x\right) \; dx $.
+\end{description}
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(a)] Es trivial por la proposición anterior.
+\item[(b)] Tenemos que
+	\[
+	\begin{split}
+		\int^{b}_{a} f\left(x\right) + g\left(x\right) \; dx = & \lim_{s \to a^{+}}\int^{c}_{s} f\left(x\right) + g\left(x\right) \; dx + \lim_{r \to b^{-}}\int^{r}_{c} f\left(x\right) + g\left(x\right) \; dx \\
+		= & \lim_{s \to a^{+}}\int^{c}_{s} f\left(x\right) \; dx + \lim_{s \to a^{+}}\int^{c}_{s} g\left(x\right) \; dx + \lim_{r \to b^{-}}\int^{r}_{c} f\left(x\right) \; dx + \lim_{r \to b^{-}}\int^{r}_{c} g\left(x\right) \; dx \\
+		= & \int^{b}_{a} f\left(x\right) \; dx + \int^{b}_{a} g\left(x\right) \; dx .
+	\end{split}
+	\]
+\item[(c)] Tenemos que 
+	\[
+	\begin{split}
+		\int^{b}_{a} \lambda f\left(x\right) \; dx = & \lim_{s \to a^{+}}\int^{c}_{s} \lambda f\left(x\right) \; dx + \lim_{r \to b^{-}}\int^{r}_{c} \lambda f\left(x\right) \; dx = \lambda\left(\lim_{s \to a^{+}}\int^{c}_{a} f\left(x\right) \; dx + \lim_{r \to b^{-}}\int^{r}_{c} f\left(x\right) \; dx\right)  \\
+		= & \lambda \int^{b}_{a} f\left(x\right) \; dx.
+	\end{split}
+	\]
+\end{description}
+\end{proof}
 \section{Criterios de convergencia}
 Vamos a dar criterios que funcionan por la derecha, puesto que por la izquierda es análogo.
 \begin{ftheorem}[Criterio de Cauchy]
@@ -73,8 +101,7 @@ Vamos a dar criterios que funcionan por la derecha, puesto que por la izquierda 
 \end{description}
 \end{ftheorem}
 \begin{proof}
-\begin{description}
-\item[(a)] Primero demostramos la primera implicación. Tenemos que existe $\displaystyle \int^{b}_{a} f = \lim_{r \to b^{-}}\int^{r}_{a} f = l \in \R $. Es decir, para $\displaystyle \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle r \in \left(b-\delta,b\right) $ se tiene que 
+La demostración de \textbf{(b)} es análoga. Primero demostramos la primera implicación. Tenemos que existe $\displaystyle \int^{b}_{a} f = \lim_{r \to b^{-}}\int^{r}_{a} f = l \in \R $. Es decir, para $\displaystyle \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle r \in \left(b-\delta,b\right) $ se tiene que 
 	\[ \left|\int^{r}_{a} f -l\right| < \frac{\epsilon }{2} .\]
 Ahora, si $\displaystyle x_{1}, x_{2} \in \left(b-\delta, b\right) $, tenemos que 
 \[
@@ -95,7 +122,6 @@ Si $\displaystyle n \geq \max \left\{ n_{0}, n_{1}\right\}  $ y $\displaystyle r
 	\left|l - \int^{r}_{a} f \right| =  \left|l - \int^{x_{n}}_{a} f + \int^{x_{n}}_{a} f -\int^{r}_{a} f \right| \leq \left|l - \int^{x_{n}}_{a} f \right|+ \left|\int^{r}_{x_{n}} f \right| < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon  .
 \end{split}
 \]
-\end{description}
 \end{proof}
 \begin{ftheorem}[]
 \normalfont Sea $\displaystyle f: \left(a,b\right) \to \R $ tal que existe $\displaystyle \int^{r}_{s} f $, $\displaystyle \forall r,s \in \left(a,b\right) $. Si existe $\displaystyle \int^{b}_{a} \left|f\right|  $, entonces existe la integral impropia $\displaystyle \int^{b}_{a} f $.
@@ -106,7 +132,7 @@ Consideremos que $\displaystyle b \in \R $. Tenemos que $\displaystyle \forall \
 Por tanto, tenemos que $\displaystyle \int^{b}_{a} f $ verifica la condición de Cauchy y, por tanto, converge. 
 \end{proof}
 \begin{observation}
-\normalfont El recíproco es cierto. Este teorema se parece al criterio de convergencia absoluta.
+\normalfont El recíproco no es cierto. Este teorema se parece al criterio de convergencia absoluta.
 \end{observation}
 \begin{ftheorem}[Criterio de comparación]
 \normalfont Sea $\displaystyle f,g:[a,b) \to \R $ \footnote{También funciona con un intervalo abierto con $\displaystyle a,b \in \R $, $\displaystyle a = - \infty $ o $\displaystyle b = \infty $.} con $\displaystyle f,g \geq 0 $.
@@ -124,20 +150,519 @@ Por tanto, tenemos que $\displaystyle \int^{b}_{a} f $ verifica la condición de
 \[ \int^{\infty}_{-\infty} e^{-x^{2}} \; dx =  \int^{-1}_{-\infty} e^{-x^{2}} \; dx + \int^{1}_{-1} e^{-x^{2}} \; dx  + \int^{\infty}_{1} e^{-x^{2}} \; dx .\]
 Por un lado, tenemos que 
 \[ \int^{\infty}_{1} e^{-x^{2}} \; dx \leq \int^{\infty}_{1} e^{-x} \; dx < \infty .\]
-Por el criterio de comparación, existe $\displaystyle \int^{\infty}_{1} e^{-x^{2}} \; dx $.
+Por el criterio de comparación, existe $\displaystyle \int^{\infty}_{1} e^{-x^{2}} \; dx $. Dado que la función es par, tenemos que $\displaystyle \int^{\infty}_{-\infty } e^{-x^{2}} \; dx $ también existe.
 \end{eg}
 \begin{ftheorem}[Criterio del cociente]
 \normalfont Sean $\displaystyle f,g : (a,b) \to \R $, con $\displaystyle a,b \in \R $, $\displaystyle a = - \infty $ o $\displaystyle b = \infty $, y $\displaystyle f,g \geq 0 $. Entonces, si existe $\displaystyle \lim_{x \to b^{-}}\frac{f\left(x\right)}{g\left(x\right)} = l $, entonces
 \begin{description}
 \item[(a)] Si $\displaystyle l \in \R $, $\displaystyle \exists \int^{b}_{a} f \iff \exists \int^{b}_{a} g $. 
 \item[(b)] Si $\displaystyle l = 0 $, $\displaystyle \exists \int^{b}_{a} g \Rightarrow \exists \int^{b}_{a} f  $. 
-\item[(c)] Si $\displaystyle l = \infty $, la existencia de $\displaystyle \int^{b}_{a} g $ no implica la existencia de $\displaystyle \int^{b}_{a} f $.
+\item[(c)] Si $\displaystyle l = \infty $, la inexistencia de $\displaystyle \int^{b}_{a} g $ implica la inexistencia de $\displaystyle \int^{b}_{a} f $.
 \end{description}
 \end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(a)] Tenemos que $\displaystyle \lim_{x \to b^{-}}\frac{f\left(x\right)}{g\left(x\right)} = l > 0 $, por lo que si $\displaystyle \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle 0 < b - x < \delta  $, se tiene que $\displaystyle \left|\frac{f\left(x\right)}{g\left(x\right)}-l\right|<\epsilon$. Entonces, para $\displaystyle \epsilon = \frac{l}{2} $ tenemos que
+	\[ \frac{l}{2} < \frac{f\left(x\right)}{g\left(x\right)} < \frac{3l}{2}, \; \forall x \in \left(b-\delta, b\right) .\]
+	Así tenemos que
+	\[\int^{b}_{a} f\left(x\right) \; dx = \int^{b- \delta}_{a} f\left(x\right) \; dx + \int^{b}_{b-\delta } f\left(x\right) \; dx \leq \int^{b-\delta }_{a} f\left(x\right) \; dx + \int^{b}_{b-\delta } \frac{3l}{2}g\left(x\right) \; dx < \infty.\]
+Por el criterio de comparación, tenemos que existe $\displaystyle \int^{b}_{a} f\left(x\right) \; dx $.	
+\end{description}
+\end{proof}
 \begin{eg}
 \normalfont Comprobemos si existe la integral $\displaystyle \int^{\infty}_{1} \frac{1}{x^{27}+x+1} \; dx $. Está claro que si $\displaystyle x > 1 $, $\displaystyle x^{27} > x^{2} $. Así, está claro que
 \[ \frac{1}{x^{27}+x+1} \leq \frac{1}{x^{2}} .\]
 Por tanto, aplicando el criterio de comparación
 \[ \int^{\infty}_{1} \frac{1}{x^{27}+x+1} \; dx \leq \int^{\infty}_{1} \frac{1}{x^{2}} \; dx < \infty .\]
+\end{eg}
+\begin{observation}
+\normalfont Aplicando los criterios anteriores podemos concluir que
+\[\int^{1}_{0} \frac{1}{x^{\alpha }} \; dx = 
+\begin{cases}
+< \infty, \; \alpha \in \left(0,1\right) \\
+\infty, \; \alpha \geq 1
+\end{cases}
+.\]
+Similarmente, 
+\[\int^{\infty}_{1} \frac{1}{x^{\alpha }} \; dx =
+\begin{cases}
+	\infty, \; \alpha \in (0,1] \\
+	< \infty, \; \alpha > 1
+\end{cases}
+.\]
+\end{observation}
+\begin{eg}
+\normalfont Demostremos que el recíproco del criterio de convergencia absoluta es falso. Consideremos la aplicación $\displaystyle f\left(x\right) = \frac{\left(-1\right)^{n}}{n} $ si $\displaystyle x \in [n,n+1) $. Tenemos que 
+\[\int^{\infty}_{1} f\left(x\right) \; dx = \sum^{\infty}_{n = 1}\frac{\left(-1\right)^{n}}{n} < \infty \quad \text{(Criterio de Leibniz)} \]
+Sin embargo, tenemos que 
+\[\int^{\infty}_{1} f\left(x\right) \; dx = \sum^{\infty}_{n =1 }\frac{1}{n} = \infty .\]
+\end{eg}
+\begin{ftheorem}[Criterio de la serie]
+	\normalfont Sea $\displaystyle f : [a,b) \to \R $ tal que existe $\displaystyle \int^{r}_{a} f\left(x\right) \; dx $, $\displaystyle \forall r \in [a,b) $. Entonces existe $\displaystyle \int^{b}_{a} f\left(x\right) \; dx  $ si y solo si $\displaystyle \forall \left\{ x_{n}\right\} _{n\in\N}\subset[a,b) $ con $\displaystyle x_{n} \to b $ se tiene que $\displaystyle \sum^{\infty}_{n=1}\int^{x_{n+1}}_{x_{n}} f\left(x\right) \; dx $ es convergente.
+\end{ftheorem}
+\begin{proof}
+Dada $\displaystyle f : [a,b) \to \R $ tenemos que $\displaystyle F\left(x\right) = \int^{x}_{a} f\left(t\right) \; dt $ es continua en $\displaystyle [a,b) $. Aplicando la caracterización del límite por sucesiones, tenemos que $\displaystyle \int^{b}_{a} f\left(t\right) \; dt $ existe si y solo si existe $\displaystyle \lim_{x \to b^{-}}F\left(x\right) $.
+Esto es cierto si y solo si para cada sucesión $\displaystyle \left\{ x_{n}\right\}_{n\in\N} \subset[a,b)  $ con $\displaystyle x_{n} \to b $ se tiene que existe y son iguales $\displaystyle \lim_{n \to \infty}F\left(x_{n}\right) $. Así, tomando $\displaystyle x_{0} = a $,
+\[\lim_{n \to \infty}F\left(x_{n}\right) =  \lim_{n \to \infty}\int^{x_{n}}_{a} f\left(t\right) \; dt =  \lim_{n \to \infty}\left(\int^{x_{1}}_{x_{0}} f\left(t\right) \; dt + \cdots + \int^{x_{n}}_{x_{n-1}} f\left(t\right) \; dt\right) =\lim_{n \to \infty}\sum^{n-1}_{j=0}\int^{x_{j+1}}_{x_{j}} f\left(t\right) \; dt.\]
+\end{proof}
+\begin{eg}
+\normalfont Vamos a ver que $\displaystyle \int^{\infty}_{\pi } \left|\frac{\sin x}{x}\right| \; dx $ no es convergente. Gráficamente, se puede justificar que
+\[\int^{\infty}_{\pi } \left|\frac{\sin x}{x}\right| \; dx = \sum^{\infty}_{n=1}\int^{n\pi + \pi }_{n\pi } \left|\frac{\sin x}{x}\right| \; dx \geq \sum^{\infty}_{n=1}\int^{2n\pi }_{2n\pi } \left|\frac{\sin x}{x}\right| \; dx \geq \sum^{\infty}_{n=1}\frac{\pi }{4}\frac{1}{2n\pi + \frac{\pi }{2}} = \infty.\]
+\end{eg}
+\begin{flema}[]
+	\normalfont Sean $\displaystyle f,g : \left[a,b\right] \to \R $ con $\displaystyle f $ integrable (Riemann) en $\displaystyle \left[a,b\right]  $, y $\displaystyle g $ es positiva y decreciente. Entonces existe $\displaystyle c \in \left[a,b\right]  $ tal que 
+	\[\int^{b}_{a} f\left(t\right)g\left(t\right) \; dt = g\left(a\right)\int^{c}_{a} f\left(t\right) \; dt .\]
+\end{flema}
+\begin{proof}
+	Tenemos que $\displaystyle F\left(x\right) = \int^{x}_{a} f\left(t\right) \; dt $ es continua, por lo que existen $\displaystyle m = \min \left\{ F\left(x\right) \; : \; x \in \left[a,b\right] \right\}  $ y $\displaystyle M = \max \left\{ F\left(x\right) \; : \; x \in [a,b]\right\}  $. Lo difícil va a ser demostrar la desigualdad:
+	\[g\left(a\right)m \leq \int^{b}_{a} f\left(t\right)g\left(t\right) \; dt \leq g\left(a\right)M .\]
+Una vez demostrada esta desigualdad, se tiene que, por el teorema de Bolzano, $\displaystyle \exists c \in \left(a,b\right) $ tal que 
+\[ g\left(a\right)F\left(c\right) = g\left(a\right)\int^{c}_{a} f\left(t\right) \; dt = \int^{b}_{a} f\left(t\right)g\left(t\right) \; dt .\]
+Para demostrar la desigualdad anterior, procederemos en tres pasos.
+\begin{description}
+	\item[Primero.] Sea $\displaystyle P = \left\{ x_{0} = a, x_{1}, \ldots, x_{n} = b\right\} \in P\left(\left[a,b\right] \right) $. Definimos 
+		\[  .\]
+		\[
+		\begin{split}
+			\rho \left(P\right) = & \sum^{n}_{i=1}g\left(x_{i-1}\right)\int^{x_{i}}_{x_{i-1}} f\left(t\right) \; dt = \sum^{n}_{i=1}g\left(x_{i-1}\right)\left(F\left(x_{i}\right)-F\left(x_{i-1}\right)\right)\\
+			= & -g\left(x_{0}\right)F\left(x_{0}\right) + \left(g\left(x_{0}\right)-g\left(x_{1}\right)\right)F\left(x_{1}\right) + \cdots + \left(g\left(x_{n-2}\right)-g\left(x_{n-1}\right)\right)F\left(x_{n-1}\right)+g\left(x_{n-1}\right)F\left(x_{n}\right) .
+		\end{split}
+		\]
+	Tenemos que si sustituimos $\displaystyle F\left(x_{i}\right) $ por $\displaystyle m $ o $\displaystyle M $:
+	\[m g\left(a\right) \leq \rho\left(P\right) \leq Mg\left(a\right) .\]
+\item[Segundo.]	Si $\displaystyle mg\left(a\right) = \int^{b}_{a} f\left(t\right)g\left(t\right) \; dt $ o $\displaystyle Mg\left(a\right) = \int^{b}_{a} f\left(t\right)g\left(t\right) \; dt $, no hay nada más que probar. Supongamos que no es el caso. Vamos a ver que $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists P \in P\left(\left[a,b\right] \right) $ tal que 
+	\[ \left|\int^{b}_{a} f\left(t\right)g\left(t\right) \; dt-\rho \left(P\right)\right| < \epsilon .\]
+	Por ser $\displaystyle f $ integrable, está acotada. Sea $\displaystyle K > 0 $ con $\displaystyle \left|f\left(t\right)\right| \leq K $, $\displaystyle \forall t \in \left[a,b\right]  $. Dado $\displaystyle \epsilon > 0 $ existe $\displaystyle P \in P\left(\left[a,b\right] \right) $ tal que 
+	\[x_{i}-x_{i-1} \leq \frac{\epsilon }{K\left(g\left(a\right)-g\left(b\right)\right)}, \; \forall i = 1, \ldots, n .\]
+	Entonces tenemos que 
+	\[
+	\begin{split}
+		\left|\int^{b}_{a} f\left(t\right)g\left(t\right) \; dt - \rho\left(P\right)\right| = & \left|\sum^{n}_{i=1}\int^{x_{i}}_{x_{i-1}} f\left(t\right)g\left(t\right) \; dt - \sum^{n}_{i=1}g\left(x_{i-1}\right)\int^{x_{i}}_{x_{i-1}} f\left(t\right) \; dt\right| \\
+		\leq & \sum^{n}_{i=1} \left|\int^{x_{i}}_{x_{i-1}} f\left(t\right)\left(g\left(t\right)-g\left(x_{i-1}\right)\right) \; dt\right|  \\
+		\leq & \sum^{n}_{i=1}\int^{x_{i}}_{x_{i-1}} \left|f\left(t\right)\right| \left|g\left(t\right)-g\left(x_{i-1}\right)\right| \; dt.
+	\end{split}
+	\]
+	Dado que $\displaystyle g $ es decreciente y $\displaystyle f $ está acotada, se tiene que 
+	\[ \sum^{n}_{i=1}\int^{x_{i}}_{x_{i-1}} K\left(g\left(x_{i-1}\right)-g\left(x_{i}\right)\right) \; dt \leq \sum^{n}_{i=1} K \frac{\epsilon }{K\left(g\left(a\right)-g\left(b\right)\right)}\left(g\left(x_{i-1}\right)-g\left(x_{i}\right)\right) = \epsilon .\]
+\item[Tercero.]	Para terminar, no puede ocurrir
+	\[mg\left(a\right) - \int^{b}_{a} f\left(t\right)g\left(t\right) \; dt = \delta > 0 \quad \text{o} \quad \int^{b}_{a} f\left(t\right)g\left(t\right) \; dt - Mg\left(a\right) = \delta > 0 .\]
+	En efecto, para $\displaystyle \epsilon = \frac{\delta }{2} $ existiría $\displaystyle P \in P\left([a,b]\right) $ tal que 
+	\[ \left|\int^{b}_{a} f\left(t\right)g\left(t\right) \; dt - \rho\left(P\right)\right| < \frac{\delta }{2} .\]
+	Esto último no es compatible con 
+	\[ mg\left(a\right) \leq \rho\left(P\right) \leq Mg\left(a\right) .\]
+\end{description}
+\end{proof}
+\begin{ftheorem}[Criterio de Dirichlet]
+\normalfont Si $\displaystyle f,g : [a,b) \to \R $ con $\displaystyle b \in \R $ o $\displaystyle b = \infty $, tales que:
+\begin{description}
+\item[(a)] Existe $\displaystyle M > 0 $ tal que $\displaystyle \left|\int^{x}_{a} f\left(t\right) \; dt\right| \leq M $, $\displaystyle \forall x \in [a,b) $.
+\item[(b)] Existe $\displaystyle \int^{x}_{a} f\left(t\right)g\left(t\right) \; dt $, $\displaystyle \forall x \in [a,b) $.
+\item[(c)] La función $\displaystyle g $ es monótona y $\displaystyle \lim_{x \to b^{-}}g\left(x\right) = 0 $.
+\end{description}
+Entonces existe $\displaystyle \int^{b}_{a} f\left(t\right)g\left(t\right) \; dt $.
+\end{ftheorem}
+\begin{observation}
+\normalfont Se puede prescindir de \textbf{(b)}, pues por el criterio de integrabilidad de Legesgue sabemos que el producto de una función integrable y una función monótona siempre es integrable.
+\end{observation}
+\begin{proof}
+Vamos a usar el criterio de Cauchy y el lema anterior. En primer lugar, si $\displaystyle x_{1}, x_{2} \in [a,b) $ tenemos que
+\[
+\begin{split}
+	\left|\int^{x_{2}}_{x_{1}} f\left(t\right) \; dt\right| = & \left|\int^{x_{1}}_{a} f\left(t\right) \; dt + \int^{x_{2}}_{x_{1}} f\left(t\right) \; dt - \int^{x_{1}}_{a} f\left(t\right) \; dt\right| \leq \left|\int^{x_{2}}_{a} f\left(t\right) \; dt\right| + \left|\int^{x_{1}}_{a} f\left(t\right) \; dt\right| < 2M.
+\end{split}
+\]
+Supongamos que $\displaystyle g $ es decreciente y, por tanto, positiva. Si fuera creciente y negativa, tomaríamos $\displaystyle -g $ y realizamos el mismo razonamiento. Dado $\displaystyle \epsilon > 0 $, existe $\displaystyle x_{0} $ tal que si $\displaystyle x_{0} < x < b $ se tiene que $\displaystyle \left|g\left(x\right)\right| < \frac{\epsilon }{2M} $. 
+Por otro lado, tenemos que si $\displaystyle x_{0} < x_{1} < x_{2} < b $, aplicando el lema para algún $\displaystyle c \in \left[x_{1}, x_{2}\right]  $ se tiene que
+\[ \left|\int^{x_{2}}_{x_{1}} f\left(t\right)g\left(t\right) \; dt\right| = \left|g\left(x_{1}\right)\int^{c}_{x_{1}} f\left(t\right) \; dt\right| = \left|g\left(x_{1}\right)\right| \left|\int^{c}_{x_{1}} f\left(t\right) \; dt\right| \leq \frac{\epsilon }{2M}2M = \epsilon  .\]
+\end{proof}
+\begin{eg}
+\normalfont Consideremos $\displaystyle \int^{\infty}_{\pi} \frac{\sin x}{x} \; dx $. Podemos considerar $\displaystyle f\left(x\right) = \sin x$ y $\displaystyle g\left(x\right) = \frac{1}{x} $. Consideremos $\displaystyle h\left(x\right) = f\left(x\right)g\left(x\right) $. En un ejemplo anterior vimos que
+\[ \int^{\infty}_{\pi} \left|\frac{\sin x}{x}\right| \; dx = \infty .\]
+Cogemos $\displaystyle f\left(x\right) = \sin x $ y cogemos $\displaystyle r > \pi  $. Tenemos que 
+\[\int^{2\pi }_{0} \sin x \; dx = \int^{2k\pi + 2\pi }_{2k\pi } \sin x \; dx = 0 .\]
+Si $\displaystyle r > \pi  $, existe $\displaystyle k \in \Z  $ tal que $\displaystyle r \in \left[2k\pi, 2k\pi + 2\pi\right]  $. Por tanto, 
+\[ \left|\int^{r}_{\pi } \sin x \; dx\right| = \left|\int^{2\pi }_{\pi } \sin x \; dx + \sum^{k-1}_{j=1}\int^{2\pi j + 2\pi }_{2j\pi} \sin x \; dx + \int^{r}_{2k\pi } \sin x \; dx\right|\leq \left|\int^{2\pi }_{\pi } \sin x \; dx\right| + \left|\int^{2k\pi + \pi }_{2k\pi } \sin x \; dx\right|.\]
+Además, como $\displaystyle g\left(x\right) = \frac{1}{x} \to 0 $ si $\displaystyle x \to \infty $ y $\displaystyle g $ es decreciente, podemos aplicar el criterio de Dirichlet para concluir que la integral inicial converge. Este es el ejemplo de una integral que no converge absolutamente pero sí converge.
+\end{eg}
+\begin{ftheorem}[Criterio de Abel]
+\normalfont Sea $\displaystyle g,f : [a,b) \to \R $ con $\displaystyle b \in \R $ o $\displaystyle b = \infty $, tal que 
+\begin{itemize}
+\item Existe $\displaystyle \int^{b}_{a} f\left(t\right) \; dt $.
+\item Existe $\displaystyle \int^{x}_{a} f\left(t\right)g\left(t\right) \; dt $, $\displaystyle \forall x \in [a,b) $.
+\item $\displaystyle g $ es monótona y acotada.
+\end{itemize}
+Entonces existe $\displaystyle \int^{b}_{a} f\left(t\right)g\left(t\right) \; dt $.
+\end{ftheorem}
+\begin{proof}
+	Tenemos que existe $\displaystyle \lim_{x \to b^{-}}\int^{x}_{a} f\left(t\right) \; dt $, por lo que existe $\displaystyle M > 0 $ tal que 
+	\[ \left|\int^{x}_{a} f\left(t\right) \; dt\right| \leq M, \; \forall x \in [a,b) .\]
+	Por otro lado, dado que $\displaystyle g $ es monótona y acotada existe $\displaystyle \lim_{t \to b^{-}}g\left(t\right) = l \in \R $. Sea $\displaystyle h\left(t\right) = g\left(t\right)-l $. Tenemos que $\displaystyle h $ es monótona y $\displaystyle \lim_{t \to b^{-}}h\left(t\right) = 0 $. Así, podemos aplicar el criterio de Dirichlet:
+	\[ \lim_{x \to b}\int^{x}_{a} f\left(t\right)h\left(t\right) \; dt = \lim_{x \to b^{-}}\left(\int^{x}_{a} f\left(t\right)g\left(t\right) \; dt - l\int^{x}_{a} f\left(t\right) \; dt\right) .\]
+Dado que que el primer límite existe y $\displaystyle f $ tiene integral impropia, tenemos que existe $\displaystyle \int^{b}_{a} f\left(t\right)g\left(t\right) \; dt $.	
+\end{proof}
+\begin{observation}
+\normalfont Al igual que en el teorema anterior, se puede obviar la segunda hipótesis por el criterio de integrabilidad de Lebesgue.
+\end{observation}
+\begin{eg}
+\normalfont \textbf{Ejercicio 1, Hoja 11.} 
+\[\int^{2}_{1} \frac{1}{\sqrt{x-1}} \; dx = \left[2\sqrt{x-1}\right]^{2}_{1} = 2 - 0 = 2 .\]
+Dado que se trata de una integral impropia, tenemos que 
+\[\int^{2}_{1} \frac{1}{\sqrt{x-1}} \; dx = \lim_{s \to 1^{+}}\int^{2}_{s} \frac{1}{\sqrt{x-1}} \; dx = \lim_{s \to 1^{+}}2 - 2\sqrt{s-1} = 2 .\]
+El objetivo de este ejercicio es ver que si calculas una primitiva y al sustituir valores no te da ningún problema, puedes seguir adelante, a pesar de ser una integral impropia.
+\end{eg}
+\begin{eg}
+\normalfont \textbf{Ejercicio 4, Hoja 11.} 
+\[\int^{\infty}_{1} \frac{\arctan x}{x^{2}} \; dx .\]
+Tenemos que $\displaystyle \left|\arctan x\right|\leq \frac{\pi  }{2} $, $\displaystyle \forall x \in \R $. Entonces, tenemos que
+\[ \int^{\infty}_{1} \frac{\arctan x}{x^{2}}\; dx \leq \int^{\infty}_{1} \frac{\pi }{2}\frac{1}{x^{2}} \; dx < \infty .\]
+Por tanto la integral converge. Vamos a intentar calcular la integral.
+\[
+\begin{split}
+	\int^{\infty}_{1} \frac{\arctan x}{x^{2}} \; dx = & \left[-\frac{1}{x}\arctan x\right] ^{\infty}_{1} + \int^{\infty}_{1} \frac{1}{x\left(1+x^{2}\right)} \; dx = \frac{\pi }{4} + \int^{\infty}_{1} \left(\frac{A}{x} + \frac{Bx + C}{1 + x^{2}}\right) \; dx \\
+= & \frac{\pi }{4} + \int^{\infty}_{1} \left(\frac{1}{x} - \frac{x}{1+x^{2}}\right) \; dx = \left[ \frac{\pi }{4} + \left(\ln x - \frac{1}{2}\ln\left(1+x^{2}\right)\right)\right]^{\infty}_{1} \\
+= & \frac{\pi }{4} + \lim_{x \to \infty}\ln\left(\frac{x}{\sqrt{1+x^{2}}}\right)+\ln\sqrt{2} = \frac{\pi }{4} + \ln\sqrt{2}.
+\end{split}
+\]
+\end{eg}
+\begin{eg}
+\normalfont Consideremos 
+\[\int^{3}_{0} \frac{x-2}{x^{2}-3x+2} \; dx = \int^{3}_{0} \frac{x-2}{\left(x-1\right)\left(x-2\right)} \; dx= \int^{3}_{0} \frac{1}{x-1} \; dx = \int^{1}_{0} \frac{1}{x-1} \; dx + \int^{3}_{1} \frac{1}{x-1} \; dx.\]
+Esto no va a converger.
+\end{eg}
+\begin{eg}
+\normalfont \textbf{Ejercicio 10, Hoja 11.} Supongamos que existe $\displaystyle \int^{\infty}_{0} f\left(x\right) \; dx $ y existe $\displaystyle \lim_{x \to \infty}f\left(x\right) = l $. Vamos a demostrar que $\displaystyle l = 0 $. Supongamos que $\displaystyle l > 0 $, Sea $\displaystyle \epsilon = \frac{l}{2} $. Tenemos que existe $\displaystyle M > 0 $ tal que si $\displaystyle x > M $ entonces $\displaystyle \left|f\left(x\right)-l\right| < \frac{l }{2} $. Entonces, tenemos que
+\[\int^{\infty}_{0} f\left(x\right) \; dx = \int^{M}_{0} f\left(x\right) \; dx + \int^{\infty}_{M} f\left(x\right) \; dx \geq \int^{\infty}_{0} f\left(x\right) \; dx + \int^{\infty}_{M} \frac{l}{2} \; dx = \infty .\]
+El caso de $\displaystyle l < 0 $ es análogo, por lo que debe ser que $\displaystyle l = 0 $. Supongamos ahora que existe $\displaystyle \int^{\infty}_{0} f\left(x\right) \; dx $ y $\displaystyle f $ es uniformemente continua en $\displaystyle \left(0,\infty\right) $, entonces vamos a ver si se cumple que $\displaystyle \lim_{x \to \infty}f\left(x\right) =0 $. Supongamos que $\displaystyle \lim_{x \to \infty}f\left(x\right) \neq 0 $ si existe o que no existe. Así, tenemos que $\displaystyle \forall l > 0 $, existe $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ con $\displaystyle x_{n}\to \infty $ tal que $\displaystyle f\left(x_{n}\right) > l $.
+Tomamos $\displaystyle \epsilon = \frac{l}{2} $, tenemos que $\displaystyle \forall x \in \left(x_{n}-\delta, x + \delta \right) $ se tiene que $\displaystyle f\left(x\right) > \frac{l}{2} $. Así, tenemos que 
+\[\int^{\infty}_{0} f\left(x\right) \; dx \geq \sum^{\infty}_{n=1}\int^{x_{n}+\delta }_{x_{n}-\delta } f\left(x\right) \; dx \geq \sum^{\infty}_{n =1}2\delta \frac{l}{2} = \infty .\]
+Esto es una contradicción.
+\end{eg}
+\section{Series}
+\begin{ftheorem}[Criterio de la integral]
+\normalfont Sea una función $\displaystyle f : \left(0,\infty\right)\to \R $ positiva y decreciente. Entonces, la serie $\displaystyle \sum^{\infty}_{n=1}f\left(n\right) $ es convergente si y solo si existe $\displaystyle \int^{\infty}_{1} f\left(x\right) \; dx $.
+\end{ftheorem}
+\begin{proof}
+Gráficamente se puede ver que
+\[\sum^{N}_{n = 1}f\left(n\right) \geq \int^{N+1}_{1} f\left(x\right) \; dx .\]
+Por otro lado tenemos que 
+\[ \sum^{N+1}_{n = 2}f\left(n\right) \leq \int^{N+1}_{1} f\left(x\right) \; dx .\]
+Con estas desigualdades tenemos que si $\displaystyle \exists \int^{\infty}_{1} f\left(x\right) \; dx $,
+\[ \lim_{N \to \infty}\sum^{N+1}_{n = 2}f\left(n\right) \leq \lim_{N \to \infty}\int^{N+1}_{1} f\left(x\right) \; dx \Rightarrow \exists \sum^{\infty}_{n = 1}f\left(n\right) < \infty .\]
+Del mismo modo, 
+\[\sum^{\infty}_{n = 1}f\left(n\right) \geq \sum^{N}_{n = 1}f\left(n\right) \geq \int^{N+1}_{1} f\left(x\right) \; dx .\]
+Ahora, para $\displaystyle f \geq 0 $ tenemos que $\displaystyle \int^{r}_{1} f\left(x\right) \; dx $ es creciente. Tenemos que existe $\displaystyle \lim_{r \to \infty}\int^{r}_{1} f\left(x\right) \; dx $ si $\displaystyle \int^{r}_{1} f\left(x\right) \; dx $ está acotada. Luego, si existe $\displaystyle \sum^{\infty}_{n = 1}f\left(n\right) $, es una cota de $\displaystyle \int^{r}_{1} f\left(x\right) \; dx $, $\displaystyle \forall r > 1 $, y por tanto existe $\displaystyle \lim_{r \to \infty}\int^{r}_{1} f\left(x\right) \; dx = \int^{\infty}_{1} f\left(x\right) \; dx $.
+\end{proof}
+\begin{eg}
+\normalfont Demostremos que $\displaystyle \sum^{\infty}_{n = 1}\frac{1}{n^{p}} < \infty $, con $\displaystyle p > 1 $. Sea $\displaystyle f\left(x\right) = \frac{1}{x^{p}} $ con $\displaystyle p > 1 $. Así, tenemos que
+\[ \int^{\infty}_{1} \frac{1}{x^{p}} \; dx = \left[\frac{x^{-p + 1}}{- p + 1}\right] ^{\infty}_{1} = \frac{1}{p - 1} < \infty.\]
+\end{eg}
+\begin{eg}
+\normalfont Consideremos la serie armónica. Tomamos $\displaystyle f\left(x\right)= \frac{1}{x} $. Tenemos que 
+\[\int^{\infty}_{1} \frac{1}{x} \; dx = \left[\ln x\right] ^{\infty}_{1} = \infty .\]
+Por el criterio de la integral, la serie armónica $\displaystyle \sum^{\infty}_{n = 1}\frac{1}{n} $ diverge.
+\end{eg}
+\section{Estadística}
+\begin{fdefinition}[]
+\normalfont Sea $\displaystyle f : \R \to [0,\infty) $ positiva tal que existe $\displaystyle \int^{\infty}_{-\infty} f\left(x\right) \; dx = 1 $. A $\displaystyle f $ se le llama \textbf{función de densidad}. 
+\end{fdefinition}
+\begin{fdefinition}[]
+\normalfont Dado $\displaystyle f $ función de densidad, se llama \textbf{función de distribución} de $\displaystyle f $ a la función $\displaystyle F\left(x\right) = \int^{x}_{-\infty} f\left(t\right) \; dt $.
+\end{fdefinition}
+\begin{eg}
+\normalfont Consideremos $\displaystyle f\left(x\right) = e^{-x^{2}} $. En ejemplos anteriores hemos visto que existe $\displaystyle \int^{\infty}_{-\infty} e^{-x^{2}} \; dx $. Tenemos que $\displaystyle \int^{\infty}_{-\infty} e^{-x^{2}} \; dx = \sqrt{\pi } $. Esto no es una función de densidad, pero $\displaystyle f\left(x\right) = \frac{e^{-x^{2}}}{\sqrt{\pi }} $ sí es una función de densidad.
+\end{eg}
+\begin{observation}
+\normalfont Si $\displaystyle f $ es una función de densidad continua, entonces 
+\[ F\left(x\right) = \int^{x}_{-\infty} f\left(t\right) \; dt = \int^{a}_{-\infty} f\left(t\right) \; dt + \int^{x}_{a} f\left(t\right) \; dt \Rightarrow F'\left(x\right) = f\left(x\right) .\]
+Es decir, ante una función de densidad continua tenemos que su función de distribución es una primitiva.
+\end{observation}
+\begin{eg}
+\normalfont La función $\displaystyle f\left(x\right) = \frac{1}{\sqrt{2\pi }\tau }e^{-\frac{1}{2}\left(\frac{x-\mu }{\tau }\right)^{2}} $ es una función de densidad cuya función de distribución es
+\[F\left(x\right) = \int^{x}_{-\infty} \frac{1}{\sqrt{2\pi }\tau } e^{-\frac{1}{2}\left(\frac{t-\mu }{\tau }\right)^{2}}\; dt .\]
+Esta es la distribución de probabilidad normal de media $\displaystyle \mu $ y varianza $\displaystyle \tau^{2} $. Vamos a ver que en efecto es una función de densidad. Cogemos $\displaystyle u = \frac{t - \mu }{\sqrt{2}\tau } $, por lo que $\displaystyle du = \frac{1}{\sqrt{2}\tau }dt $.
+\[\int^{\infty}_{-\infty} \frac{1}{\sqrt{2\pi }\tau }e^{-\frac{1}{2}\left(\frac{t-\mu}{\tau}\right)^{2}} \; dt = \int^{\infty}_{-\infty} \frac{1}{\sqrt{\pi }}e^{-u^{2}} \; du = 1 .\]
+\end{eg}
+\section{Funciones especiales}
+\begin{fdefinition}[Función Gamma]
+\normalfont Para cada $\displaystyle x > 0 $ se define la función \textbf{Gamma de Euler} por
+\[ \Gamma\left(x\right) = \int^{\infty}_{0} e^{-t}t ^{x-1} \; dt .\]
+\end{fdefinition}
+Vamos a ver que está bien definida. Tenemos que
+\[\int^{\infty}_{0} e^{-t}t ^{x-1} \; dt = \int^{1}_{0} e^{-t}t ^{x-1} \; dt + \int^{\infty}_{1} e^{-t}t ^{x-1} \; dt .\]
+En primer lugar, si $\displaystyle x \geq 1 $ tenemos que $\displaystyle e^{-t}t ^{x-1} $ es continua, por lo que $\displaystyle \int^{1}_{0} e^{-t}t ^{x-1} \; dt < \infty $. Si $\displaystyle x \in \left(0,1\right) $ se tiene que $\displaystyle \frac{1}{e} \leq e^{-t} \leq 1 $, por lo que
+\[\int^{1}_{0} \frac{e^{-t}}{t ^{1-x}} \; dt \leq \int^{1}_{0} \frac{1}{t ^{1-x}} \; dt < \infty .\]
+Ahora nos encargamos de la segunda integral. Dado $\displaystyle x > 0 $, tomamos $\displaystyle n \in \N $ tal que $\displaystyle x - 1 \leq n $ y así (aplicando integración por partes)
+\[\int^{\infty}_{1} e^{-t}t ^{1-x} \; dt \leq \int^{\infty}_{1} e^{-t}t ^{n} \; dt = \frac{1}{e} + \int^{\infty}_{1} e^{-t}t ^{n-1} \; dt .\]
+Aplicando la regla de integración por partes $\displaystyle n - 1 $ veces:
+\[ = \frac{1}{e} + n \frac{1}{e} + \cdots + n!\int^{\infty}_{1} e^{-t} \; dt < \infty.\]
+Por tanto, está bien definida la función Gamma.
+\begin{fprop}[]
+\normalfont 
+\[\Gamma\left(x+1\right) = x\Gamma\left(x\right) .\]
+\end{fprop}
+\begin{proof}
+Aplicamos la regla de integración por partes:
+\[\Gamma\left(x+1\right) = \int^{\infty}_{0} e^{-t}t ^{x} \; dt = \left[-e^{-t}t ^{x}\right] ^{\infty}_{0}+x\int^{\infty}_{0} e^{-t}t ^{x-1} \; dt = x\Gamma\left(x\right) .\]
+\end{proof}
+\begin{observation}
+\normalfont Tenemos que $\displaystyle \Gamma\left(1\right) = 1 $. En efecto,
+\[\Gamma\left(1\right) = \int^{\infty}_{0} e^{-t} \; dt = \left[-e^{-t}\right] ^{\infty}_{0} = 1 .\]
+Inductivamente se deduce que
+\[\Gamma\left(n\right) = \left(n-1\right)\Gamma\left(n-1\right) = \left(n-1\right)!\Gamma\left(1\right)=\left(n-1\right)! .\]
+Así, hemos demostrado que 
+\[\boxed{\Gamma\left(n\right) = \left(n-1\right)!} .\]
+\end{observation}
+\begin{eg}
+\normalfont Tomando la sustitución $\displaystyle u = t ^{x} $, tenemos que $\displaystyle du = xt ^{x-1}dt $ y
+\[\Gamma\left(x\right) = \frac{1}{x}\int^{\infty}_{0} e^{-t}t ^{x-1} \; dt = \frac{1}{x}\int^{\infty}_{0} e^{-u^{\frac{1}{x}}} \; du .\]
+Consecuentemente,
+\[\Gamma\left(\frac{1}{2}\right) = 2\int^{\infty}_{0} e^{-u^{2}} \; du .\]
+\end{eg}
+\begin{fdefinition}[Función de distribución Gamma]
+\normalfont Se define la función 
+\[f\left(x, \alpha, \beta\right) =
+\begin{cases}
+\frac{\beta ^{\alpha }x^{\alpha - 1}e^{-\beta x}}{\Gamma\left(\alpha \right)}, \; x > 0 \\
+0, \; x \leq 0
+\end{cases}
+.\]
+La función 
+\[ F\left(x\right) = \int^{x}_{-\infty} f\left(t,\alpha,\beta \right) \; dt \]
+es la \textbf{función de distribución Gamma} de parámetros $\displaystyle \alpha  $ y $\displaystyle \beta  $.
+\end{fdefinition}
+\begin{fdefinition}[Transformada de Laplace]
+\normalfont Dada una función $\displaystyle f : \left(0,\infty\right) \to \R $ se define su \textbf{transformada de Laplace} por la función
+\[Lf\left(s\right) = \int^{\infty}_{0} f\left(x\right)e^{-sx} \; dx,\]
+con $\displaystyle \dom\left(Lf\right) = \left\{ s \in \left(0,\infty\right) \; : \; \text{existe la integral impropia de }Lf\left(s\right)\right\}  $.
+\end{fdefinition}
+\begin{eg}
+\normalfont 
+\begin{itemize}
+\item Consideremos $\displaystyle f\left(x\right) = 1 $. 
+	\[Lf\left(s\right) = \int^{\infty}_{1} e^{-sx} \; dx = \left[\frac{xe^{-sx}}{-s}\right] ^{\infty}_{0} = \frac{1}{s}.\]
+\item Consideremos $\displaystyle f\left(x\right) = x $. 
+	\[Lf\left(s\right) = \int^{\infty}_{0} xe^{-sx} \; dx = \left[\frac{xe^{-sx}}{-s}\right] ^{\infty}_{0} + \frac{1}{s}\int^{\infty}_{0} e^{-sx} \; dx = \frac{1}{s}\int^{\infty}_{0} e^{-sx} \; dx = \frac{1}{s^{2}} .\]
+\item Consideremos $\displaystyle f\left(x\right) = e^{ax} $.
+	\[Lf\left(s\right) = \int^{\infty}_{0} e^{ax}e^{-sx} \; dx = \int^{\infty}_{0} e^{-\left(s-a\right)x} \; dx = \frac{1}{s-a} .\]
+\item Consideremos $\displaystyle f\left(x\right) = \sin \beta x $. 
+	\[
+	\begin{split}
+		Lf\left(s\right) = & \int^{\infty}_{0} \sin \beta x e^{-sx} \; dx = \left[\sin\beta x \frac{e^{-sx}}{-s}\right] ^{\infty}_{0} + \frac{\beta }{s}\int^{\infty}_{0} \cos \beta x e^{-sx} \; dx \\
+		= & \frac{\beta }{s}\left[\cos \beta x \frac{e^{-sx}}{-s}\right] ^{\infty}_{0} - \frac{\beta }{s}\int^{\infty}_{0} \sin \beta x e^{-sx} \; dx = \frac{\beta }{s^{2}} - \frac{\beta^{2}}{s^{2}}\int^{\infty}_{0} \sin \beta x e^{-sx} \; dx .
+	\end{split}
+	\]
+	Así, tenemos que
+	\[\left(1 + \frac{\beta^{2}}{s^{2}}\right)\int^{\infty}_{0} \sin \beta x e^{-sx} \; dx = \frac{\beta }{s^{2}} \Rightarrow Lf\left(s\right) = \frac{\beta }{s^{2}+\beta^{2}}.\]
+\end{itemize}
+\end{eg}
+\begin{fprop}[]
+\normalfont Si $\displaystyle f : \left(0,\infty\right) \to \R $ es una función derivable y $\displaystyle \lim_{x \to \infty}e^{-sx}f\left(x\right) = 0 $, $\displaystyle \forall s > 0 $, entonces $\displaystyle Lf'\left(s\right) = sLf\left(s\right) - f\left(0\right) $.
+\end{fprop}
+\begin{proof}
+\[
+\begin{split}
+	Lf'\left(s\right) = \int^{\infty}_{0} f'\left(x\right)e^{-sx} \; dx = & \left[f\left(x\right)e^{-sx}\right] ^{\infty}_{0} - s\int^{\infty}_{0} f\left(x\right)e^{-sx} \; dx \\
+	= &  \lim_{x \to \infty}e^{-sx}f\left(x\right)-f\left(0\right) - s \int^{\infty}_{0} f\left(x\right)e^{-sx} \; dx \\
+	= & sLf\left(s\right)-f\left(0\right).
+\end{split}
+\]
+\end{proof}
+\section{Longitudes, áreas y volúmenes}
+\begin{ftheorem}[]
+	\normalfont Dada una función $\displaystyle f : \left[a,b\right] \to \R $ derivable con derivada $\displaystyle f' $ continua en $\displaystyle \left[a,b\right]  $, la longitud de su gráfica viene dada por la fórmula 
+	\[L = \int^{b}_{a} \sqrt{1 + \left[f'\left(x\right)\right] ^{2}} \; dx .\]
+\end{ftheorem}
+\begin{eg}
+	\normalfont Vamos a calcular la longitud del arco de parábola $\displaystyle f : \left[0,1\right] \to \R $ con $\displaystyle f\left(x\right) = x^{2} $. Simplemente aplicamos la fórmula anterior:
+	\[\int^{1}_{0} \sqrt{1 + \left(\left(x^{2}\right)'\right)^{2}} \; dx = \int^{1}_{0} \sqrt{1 + 4x^{2}} \; dx .\]
+	Esta integral es fácil de calcular con el uso de las funciones hiperbólicas.
+\end{eg}
+\begin{fdefinition}[]
+	\normalfont Sean $\displaystyle f,g : \left[a,b\right] \to \R $ dos funciones integrables sobre el intervalo $\displaystyle \left[a,b\right]  $. Definimos el recinto entre las dos gráficas por
+	\[A_{f,g} = \left\{ \left(x,y\right) \in \R^{2} \; : \; x \in \left[a,b\right] , \; f\left(x\right) \leq y \leq g\left(x\right) \; \text{o}\; g\left(x\right) \leq y \leq f\left(x\right)\right\}  .\]
+\end{fdefinition}
+\begin{ftheorem}[]
+	\normalfont Sean $\displaystyle f,g : \left[a,b\right] \to \R $ dos funciones integrables sobre el intervalo $\displaystyle \left[a,b\right]  $. El área del recinto entre gráficas $\displaystyle A_{f,g} $ viene dada por
+	\[\int^{b}_{a} \left|f\left(x\right)-g\left(x\right)\right| \; dx .\]
+\end{ftheorem}
+\begin{fdefinition}[ $\displaystyle \pi $ ]
+\normalfont Llamamos número $\displaystyle \pi  $ al valor de la integral 
+\[ \pi = 2\int^{1}_{-1} \sqrt{1-x^{2}} \; dx .\]
+\end{fdefinition}
+\begin{eg}
+\normalfont Calculamos la longitud de la semicircunferencia de radio 1. Tenemos que $\displaystyle f\left(x\right) = \sqrt{1 - x^{2}} $, por lo que $\displaystyle f'\left(x\right) = \frac{-x}{\sqrt{1 - x^{2}}} $. Así,
+\[\int^{1}_{-1} \sqrt{1 + \left[f'\left(x\right)\right] ^{2}} \; dx = \int^{1}_{-1} \sqrt{1 + \left(\frac{-x}{\sqrt{1 - x^{2}}}\right)^{2}} \; dx = \int^{1}_{-1} \sqrt{1 + \frac{x^{2}}{1 - x^{2}}} \; dx = \int^{1}_{-1} \frac{1}{\sqrt{1 - x^{2}}} \; dx = \pi .\]
+\end{eg}
+\begin{eg}
+\normalfont Calculamos el área del semicírculo de radio $\displaystyle R $. Tenemos la función $\displaystyle f\left(x\right) = \sqrt{R^{2}-x^{2}} $. El área por su gráfica será:
+\[\int^{R}_{-R} \sqrt{R^{2}-x^{2}} \; dx = \int^{R}_{-R} R \sqrt{1 - \left(\frac{x}{R}\right)^{2}} \; dx .\]
+Haciendo el cambio de variable $\displaystyle y = \frac{x}{R} $ con $\displaystyle dy = \frac{1}{R}dx $ nos queda
+\[= R^{2}\int^{1}_{-1} \sqrt{1-y^{2}} \; dy = \frac{\pi R^{2}}{2} .\]
+\end{eg}
+\begin{eg}
+\normalfont Vamos a demostrar que el área de un sector circular es la mitad que la longitud del arco del sector. Sea $\displaystyle A\left(x\right) $ el área del sector circular determinado por los puntos $\displaystyle \left(0,0\right) $, $\displaystyle \left(1,0\right) $ y $\displaystyle \left(x, \sqrt{1-x^{2}}\right) $. Así,
+\[A\left(x\right)= \int^{1}_{x} \sqrt{1-s^{2}} \; d s  + \frac{x\sqrt{1-x^{2}}}{2} .\]
+El segundo sumando es el área de un triángulo que suma si $\displaystyle x > 0 $ y que resta en otro caso. Sea $\displaystyle \theta\left(x\right) $ la longitud del arcto del sector anterior. Aplicando la fórmula de la longitud de una curva:
+\[\theta\left(x\right) = \int^{1}_{x} \frac{1}{\sqrt{1-s^{2}}} \; d s .\]
+Queremos ver que $\displaystyle 2A\left(x\right) = \theta\left(x\right) $, $\displaystyle \forall x \in \left[-1,1\right]  $. Consideremos $\displaystyle H\left(x\right) = 2A\left(x\right) -\theta\left(x\right) $. Está claro que $\displaystyle H\left(1\right) = 0 $ y $\displaystyle H $ es continua en $\displaystyle \left[-1,1\right]  $. Aplicando el teorema fundamental del cálculo:
+\[H'\left(x\right) = 2A'\left(x\right)-\theta'\left(x\right) = -2\sqrt{1-x^{2}}+\sqrt{1-x^{2}}-\frac{x^{2}}{\sqrt{1-x^{2}}}+\frac{1}{\sqrt{1-x^{2}}} = 0 .\]
+Por tanto, $\displaystyle H $ es constante y, como $\displaystyle H\left(1\right) = 0 $ tenemos que $\displaystyle H\left(x\right) = 0 $.
+\end{eg}
+\begin{fdefinition}[]
+	\normalfont Dada una función $\displaystyle f : \left[a,b\right] \to \R $ podemos girar su gráfica alrededor del eje de abscisas, produciendo un \textbf{sólido de revolución}.
+	\[V_{f} = \left\{ \left(x,y,z\right) \in \R^{3} \; : \; x \in [a,b] \; \text{y} \; y^{2} + z^{2} \leq f\left(x\right)^{2}\right\}  .\]
+\end{fdefinition}
+\begin{ftheorem}[]
+	\normalfont Dada una función $\displaystyle f : [a,b] \to \R $ continua, entonces el volumen del sólido de revolución que produce la gráfica de $\displaystyle f $ al rotar respecto del eje $\displaystyle y = 0 $ es 
+	\[ V_{f} = \int^{b}_{a} \pi [f\left(x\right)]^{2} \; dx .\]
+\end{ftheorem}
+\begin{eg}
+	\normalfont Vamos a calcular el volumen que se produce al girar alrededor del eje $\displaystyle x $ el arco de catenaria $\displaystyle y = a \cosh\left(\frac{x}{a}\right) $ para $\displaystyle x \in [- a, a] $. Tenemos que $\displaystyle f\left(x\right) > 0 $ y es claramente continua. 	Entonces, tenemos que el volumen de revolución será
+\[
+\begin{split}
+	\int^{a}_{-a} \pi a^{2}\cosh^{2}\left(\frac{x}{a}\right) \; dx = & \pi a^{2}\int^{a}_{-a} \frac{1 + \cosh\left(\frac{2x}{a}\right)}{2} \; dx = \frac{\pi a^{2}}{2}\left[x + \frac{a}{2}\sinh\left(\frac{2x}{a}\right)\right] ^{a}_{-a} \\
+	= & \frac{\pi a^{2}}{2}\left(2a + a\sinh2\right) = \pi a^{3}\left(1 + \frac{\sinh 2}{2}\right).
+\end{split}
+\]
+\end{eg}
+\section{Funciones trigonométricas}
+La circunferencia con centro el origen y radio uno se puede definir como el conjunto
+\[ C = \left\{ \left(x,y\right) \in \R^{2} \; : \; x^{2} + y^{2} = 1\right\}  .\]
+\begin{fdefinition}[]
+\normalfont Dados $\displaystyle \vec{u},\vec{v} \in \R^{2}$, se llama \textbf{ángulo} entre $\displaystyle \vec{u} $ y $\displaystyle \vec{v} $ a la longitud del arco de $\displaystyle C $ entre los puntos $\displaystyle \frac{\vec{u}}{\|\vec{u}\|} $ y $\displaystyle \frac{\vec{v}}{\|\vec{v}\|} $ (medido en radianes).
+\end{fdefinition}
+\begin{observation}
+\normalfont Todo ángulo está comprendido entre $\displaystyle 0 $ y $\displaystyle 2\pi  $.
+\end{observation}
+Consideremos la función
+\[A\left(x\right) = \int^{1}_{x} \sqrt{1 - s^{2}} \; d s+ \frac{x\sqrt{1-x^{2}}}{2}, \; x \in \left[-1,1\right]  .\]
+Anteriormente hemos visto que $\displaystyle 2A\left(x\right) = \theta\left(x\right) $. Definimos ahora la función $\displaystyle B\left(x\right) = 2A\left(x\right) $. Pintemos la gráfica de $\displaystyle B\left(x\right) $. Tenemos que $\displaystyle \dom\left(B\right) = \left[-1,1\right]  $. Además, $\displaystyle B\left(1\right) = 0 $ y $\displaystyle B\left(-1\right) = \pi  $, por definición. 
+Tenemos que $\displaystyle B\left(x\right) \geq 0 $. Tenemos que $\displaystyle B $ es continua por serlo $\displaystyle A $. Derivamos $\displaystyle B\left(x\right) $.
+\[B'\left(x\right) = \frac{-1}{\sqrt{1-x^{2}}} < 0, \; x \in \left(-1,1\right).\]
+Por tanto, tenemos que $\displaystyle B $ es decreciente. Ahora, calculando la segunda derivada
+\[B''\left(x\right) = \frac{-2x}{\sqrt{\left(1-x^{2}\right)^{3}}} =
+\begin{cases}
+>0, \; x \in \left(-1,0\right) \\
+<0, \; x \in \left(0,1\right)
+\end{cases}
+.\]
+Obtenemos que $\displaystyle B $ es convexa en $\displaystyle \left(-1,0\right) $ y es cóncava en $\displaystyle \left(0,1\right) $.
+\begin{observation}
+	\normalfont Dado $\displaystyle \theta \in [0,\pi] $, tenemos que $\displaystyle B $ es la inversa de lo que llamaríamos geométricamente $\displaystyle \cos\theta $.
+\end{observation}
+\begin{observation}
+	\normalfont Tenemos que $\displaystyle B $ es biyectiva en $\displaystyle \left[-1,1\right] \to \left[0,\pi \right]  $.
+\end{observation}
+\begin{fdefinition}[Función conseno y seno]
+	\normalfont Se define para $\displaystyle \theta \in [0,\pi] $ la inversa de $\displaystyle B $ como $\displaystyle \cos\theta $. Se define la funicón \textbf{seno} como la función $\displaystyle \sin\theta = \sqrt{1 - \cos^{2}\theta} $, con $\displaystyle \theta \in [0,\pi] $.
+\end{fdefinition}
+\begin{observation}
+\normalfont 
+\[\left(\cos\theta\right)' = \frac{1}{B'\left(\cos\theta \right)} = \frac{1}{-\frac{1}{\sqrt{1-\cos^{2}\theta}}} = - \sin \theta .\]
+\[\left(\cos\theta\right)'' = \left(-\sqrt{1 - \cos^{2}\theta}\right)'= -\frac{-2\cos\theta\sin\theta}{2\sqrt{1-\cos^{2}}} = \frac{-2\cos\theta\sin\theta}{2\sqrt{1 - \cos^{2}\theta}} = - \cos\theta .\]
+Así, tenemos que $\displaystyle \cos\theta $ es cóncava en $\displaystyle \left(0,\frac{\pi }{2}\right) $ y es convexa en $\displaystyle \left(\frac{\pi }{2}, \pi \right) $. Ahora, en 0 tenemos que
+\[\cos'0 = \lim_{h \to 0^{+}}\frac{\cos h - \cos0}{h} = \lim_{h \to 0^{+}}\frac{\cos h - 1}{h } = \lim_{h \to 0^{+}}\frac{-\sin h}{1} = 0 .\]
+Por la misma razón, $\displaystyle \cos'\pi = 0 $.
+\end{observation}
+\begin{fdefinition}[]
+\normalfont 
+\begin{description}
+	\item[(a)] Si $\displaystyle \theta \in \left[\pi, 2\pi \right]  $, se define $\displaystyle \cos\theta = \cos\left(2\pi - \theta\right) $.
+	\item[(b)] Si $\displaystyle \theta \in \R $, con $\displaystyle \theta \in \left[2k\pi, 2\left(k+1\right)\pi \right]  $ y $\displaystyle k \in \Z $, definimos $\displaystyle \cos\theta = \cos\left(\theta - 2\pi k\right) $.
+\end{description}
+\end{fdefinition}
+\begin{observation}
+\normalfont Con esta nueva definición tenemos que
+\[\lim_{x \to \pi^{-}}\cos x = \lim_{x \to \pi^{+}}\cos x =  \lim_{x \to \pi^{+}}\cos\left(2\pi - x\right) = -1.\]
+\[\lim_{x \to 0^{+}}\cos x = \lim_{x \to 2\pi^{-}}\cos x = \lim_{x \to 2\pi^{-}}\cos\left(2\pi - x\right) = 1 .\]
+\end{observation}
+\begin{fdefinition}[]
+\normalfont Análogamente, para la función seno:
+\begin{description}
+	\item[(a)] Si $\displaystyle \theta \in [\pi, 2\pi ] $, se define $\displaystyle \sin\theta = -\sin\left(2\pi-\theta\right) $.
+	\item[(b)] Si $\displaystyle \theta \in \R $, con $\displaystyle \theta \in [2\pi k, 2\left(k+1\right)\pi ] $ y $\displaystyle k \in \Z $, se define $\displaystyle \sin \theta = \sin\left(\theta - 2k\pi \right) $.
+\end{description}
+\end{fdefinition}
+\begin{observation}
+\normalfont Algunas conclusiones útiles que podemos sacar (son ciertas tanto para el seno como el coseno):
+\begin{itemize}
+\item $\displaystyle \cos x $ está definido para $\displaystyle x \in \R $.
+\item Es derivable en $\displaystyle \R $.
+\item Es periódica con un periodo de $\displaystyle 2\pi  $.
+\item Consecuentemente, el seno está definido en $\displaystyle \R $, es derivable y es también periódica con periodo $\displaystyle 2\pi  $.
+\end{itemize}
+\end{observation}
+\begin{observation}
+\normalfont Por la definición del seno es evidente que
+\[ \sin ^{2} x + \cos^{2}x = 1, \; \forall x \in \R.\]
+\[\cos\left(-\theta \right)= \cos\theta, \quad \sin\left(-\theta\right) = -\sin\theta .\]
+\end{observation}
+\begin{flema}[]
+\normalfont Sea $\displaystyle f $ definida en $\displaystyle \R $ tal que $\displaystyle f + f'' = 0 $ y $\displaystyle f\left(0\right) = f'\left(0\right) = 0 $, entonces $\displaystyle f = 0 $.
+\end{flema}
+\begin{proof}
+Si $\displaystyle f + f'' = 0 $ se tiene que $\displaystyle f'f + f'f'' = 0 $, por lo que
+\[2f'f + 2f'f'' = 0 \Rightarrow \left(f^{2} + f'^{2}\right)' = 0 .\]
+Como consecuencia del teorema del valor medio, se tiene que $\displaystyle f^{2} + f'^{2} = K \in \R $. Dado que $\displaystyle f^{2}\left(0\right) + f'^{2}\left(0\right) = 0 $, se tiene que $\displaystyle K = 0 $. Así,
+\[f^{2} + f'^{2} = 0 \Rightarrow f = f' = 0 .\]
+\end{proof}
+\begin{flema}[]
+\normalfont Sea $\displaystyle f $ tal que existen $\displaystyle f' $ y $\displaystyle f'' $ en $\displaystyle \R $, con $\displaystyle f + f'' = 0 $ y tal que $\displaystyle f\left(0\right) = a $ y $\displaystyle f'\left(0\right) = b $, con $\displaystyle a,b \in \R $. Entonces, $\displaystyle f\left(x\right) = b\sin x + a \cos x $.
+\end{flema}
+\begin{proof}
+Sea $\displaystyle g\left(x\right) = f\left(x\right)-b\sin x - a \cos x $. Tenemos que
+\[g'\left(x\right) = f'\left(x\right) - b\cos x + a\sin x .\]
+\[g''\left(x\right) = f''\left(x\right) + b \sin x + a \cos x .\]
+Así, tenemos que $\displaystyle g + g'' = 0 $, $\displaystyle g\left(0\right) = 0 $ y $\displaystyle g'\left(0\right) = 0 $. Por el lema anterior, tenemos que $\displaystyle g = 0 $, por lo que $\displaystyle f\left(x\right) = b\sin x + a \cos x $.
+\end{proof}
+\begin{ftheorem}[]
+\normalfont $\displaystyle \forall a,b \in \R $, 
+\begin{description}
+\item[(a)] $\displaystyle \cos\left(a+b\right) = \cos a \cos b - \sin a \sin b $.
+\item[(b)] $\displaystyle \sin\left(a+b\right) = \sin a \cos b + \sin b \cos a $.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+Demostramos \textbf{(b)}, pues la demostración de \textbf{(a)} es análoga. Tomamos $\displaystyle f\left(x\right) = \sin\left(x+y\right) $, con $\displaystyle y \in \R $. Así, tenemos que 
+\[f'\left(x\right) = \cos\left(x+y\right), \quad f''\left(x\right) = -\sin\left(x+y\right) .\]
+Además, $\displaystyle f\left(0\right) = \sin y $ y $\displaystyle f'\left(0\right) = \cos y $. Como $\displaystyle f + f'' = 0 $, aplicando el lema anterior tenemos que 
+\[f\left(x\right) = \sin\left(x+y\right) = \cos y \sin x + \sin y \cos x .\]
+\end{proof}
+\begin{eg}
+\normalfont \textbf{Hoja 11.} Consideremos $\displaystyle f\left(x\right) = \frac{1}{x + \sin x} $. Vamos a ver si existe $\displaystyle \int^{1}_{0} f\left(x\right) \; dx $. Se trata de una integral impropia. Como $\displaystyle f\left(x\right) > 0 $ para $\displaystyle x \in \left(0,1\right) $, podemos aplicar el criterio de comparación. Tenemos que
+\[\lim_{x \to 0}\frac{\frac{1}{x}}{\frac{1}{x+\sin x}} = 2.\]
+Así, tenemos que
+\[ \int^{1}_{0} f\left(x\right) \; dx \approx \int^{1}_{0} \frac{1}{x} \; dx = \infty .\]
+Por tanto, la integral no converge.
+Similarmente, dado que 
+\[\lim_{x \to \infty}\frac{\frac{1}{x}}{\frac{1}{x+\sin x}} = 1 ,\]
+tenemos que
+\[\int^{\infty}_{1} f\left(x\right) \; dx \approx \int^{\infty}_{1} \frac{1}{x} \; dx = \infty .\]
+Por tanto, la integral no converge.
+\end{eg}
+\begin{eg}
+	\normalfont \textbf{Hoja 12.} Consideremos $\displaystyle f,g : (-\infty,7] \to [0,\infty) $ continuas y tal que $\displaystyle \lim_{x \to -\infty}\frac{f\left(x\right)}{g\left(x\right)} =\infty  $. Tenemos que ver si 
+	\[ \int^{7}_{-\infty} f\left(x\right) \; dx < \infty \iff \int^{7}_{-\infty} g\left(x\right) \; dx .\]
+	Dado que $\displaystyle \lim_{x \to -\infty}\frac{f\left(x\right)}{g\left(x\right)} = \infty $, tenemos que $\displaystyle \forall M > 0 $, $\displaystyle \exists N > 0 $ tal que si $\displaystyle x < N $ entonces $\displaystyle \frac{f\left(x\right)}{g\left(x\right)} > M $, es decir, $\displaystyle f\left(x\right) > Mg\left(x\right) $. Así, tenemos que
+	\[\int^{7}_{-\infty} f\left(x\right) \; dx = \int^{7}_{N} f\left(x\right) \; dx + \int^{N}_{-\infty} f\left(x\right) \; dx \geq \int^{7}_{N} f\left(x\right) \; dx + \int^{N}_{-\infty} Mg\left(x\right) \; dx .\]
+	Así, tenemos que si $\displaystyle \int^{7}_{-\infty} f\left(x\right) \; dx $ converge, entonces $\displaystyle \int^{7}_{-\infty} g\left(x\right) \; dx $ converge, por el criterio de comparación. Similarmente, si $\displaystyle \int^{7}_{-\infty} g\left(x\right) \; dx $ diverge, entonces $\displaystyle \int^{7}_{-\infty} f\left(x\right) \; dx $ diverge. Es decir, la relación propuesta en el enunciado es un si y solo si.
+\end{eg}
+\begin{eg}
+\normalfont Calculemos el volumen de la esfera. Tomemos la semicircunferencia de radio $\displaystyle R $, es decir, $\displaystyle f\left(x\right) = \sqrt{R^{2}-x^{2}} $. Si giramos esta figura respecto del eje $\displaystyle x $, obtenemos la esfera de radio $\displaystyle R $. Como la esfera es un volumen de revolución,
+\[V = \int^{R}_{-R} \pi [f\left(x\right)]^{2} \; dx =\pi \int^{R}_{-R} R^{2}-x^{2} \; dx = \pi \left[R^{2}x - \frac{x^{3}}{3}\right] ^{R}_{-R} = \frac{4\pi R^{3}}{3} .\]
+\end{eg}
+\begin{eg}
+\normalfont \textbf{Hoja 13.} Consideremos $\displaystyle f\left(x\right) = \arcsin\left(\frac{1}{\sqrt{1 + x^{2}}}\right) $. Vamos a derivarla. Sea $\displaystyle g\left(y\right) = \arcsin y $. Tenemos que 
+\[g'\left(y\right) = \frac{1}{\sin'\left(\arcsin y\right)} = \frac{1}{\cos\left(\arcsin y\right)} = \frac{1}{\sqrt{1 - \sin ^{2}\left(\arcsin y\right)}} = \frac{1}{\sqrt{1-y^{2}}} .\]
+Ahora, tenemos que derivar $\displaystyle g\left(\frac{1}{\sqrt{1 + x^{2}}}\right) $, lo haremos con la regla de la cadena:
+	\[ f'\left(x\right) = \left[g\left(\frac{1}{\sqrt{1 + x^{2}}}\right)\right] ' = g'\left(\frac{1}{\sqrt{1 + x^{2}}}\right)\left(\frac{1}{\sqrt{1 + x^{2}}}\right)' = \frac{1}{\sqrt{1 - \frac{1}{1+x^{2}}}}\left(-\frac{x}{\sqrt{\left(1+x^{2}\right)^{3}}}\right) = -\frac{1}{1+x^{2}}.\]
+\end{eg}
+\begin{observation}
+\normalfont Una observación curiosa de este ejercicio es que
+\[-\arcsin\left(\frac{1}{\sqrt{1 + x^{2}}}\right) = \arctan x .\]
+\end{observation}
+\begin{eg}
+\normalfont Calculemos el límite
+\[\lim_{x \to 0}\frac{1}{x}-\frac{1}{\sin x} = \lim_{x \to 0}\frac{\sin x - x}{x \sin x} = \lim_{x \to 0}\frac{\cos x - 1}{\sin x + x \cos x} = \lim_{x \to 0}\frac{-\sin x}{\cos x + \cos x - x \sin x} = 0 .\]
 \end{eg}
 

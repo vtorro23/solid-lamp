@@ -1,0 +1,162 @@
+\chapter{Espacios afines}
+\begin{fdefinition}[Espacio afín]
+\normalfont Un conjunto $\displaystyle \mathcal{A} \neq \emptyset $ tiene una estructura de \textbf{espacio afín} asociado a $\displaystyle V $ si se tiene definida una aplicación
+\[
+\begin{split}
+	+ : \mathcal{A} \times V \to & \mathcal{A} \\
+	\left(A, \vec{u}\right) \to & A + \vec{u}
+\end{split}
+\]
+que cumple las siguientes propiedades:
+\begin{description}
+\item[(1)] $\displaystyle \forall A \in \mathcal{A} $, $\displaystyle \forall \vec{u}, \vec{v} \in V $, $\displaystyle \left(A + \vec{u}\right) + \vec{v} = A + \left(\vec{u} + \vec{v}\right) $.
+\item[(2)] $\displaystyle \forall A \in \mathcal{A} $, $\displaystyle A + \vec{0} = A $.
+\item[(3)] $\displaystyle \forall A,B \in \mathcal{A} $, $\displaystyle \exists! \overrightarrow{AB} \in V $ tal que $\displaystyle A + \overrightarrow{AB} = B $.
+\end{description}
+\end{fdefinition}
+\begin{observation}
+\normalfont Si $\displaystyle \mathcal{A} $ es un espacio afín asociado a $\displaystyle V $, $\displaystyle \forall \vec{u} \in V $, la traslación de vector $\displaystyle \vec{u} $ es la aplicación
+\[
+\begin{split}
+	\tau_{\vec{u}} : \mathcal{A} \to & \mathcal{A} \\
+	A \to & A + \vec{u}.
+\end{split}
+\]
+\end{observation}
+\begin{fprop}[]
+\normalfont 
+\begin{description}
+\item[(a)] $\displaystyle \tau_{\vec{0}} = id _{\mathcal{A}} $.
+\item[(b)] $\displaystyle \forall \vec{u}, \vec{v} \in V $, $\displaystyle \tau_{\vec{u}}\circ\tau_{\vec{v}} = \tau_{\vec{u} +\vec{v}} $.
+\item[(c)] Las traslaciones son biyectivas.
+\item[(d)] \textbf{Identidad de Chasles:} $\displaystyle \forall A,B,C \in \mathcal{A} $, 
+	\[\overrightarrow{AB} = \overrightarrow{AC} +\overrightarrow{BC} .\]
+\item[(e)] $\displaystyle \forall A \in \mathcal{A} $, $\displaystyle \vec{0} = \overrightarrow{AA} $.
+\item[(f)] $\displaystyle \forall A,B \in \mathcal{A} $, $\displaystyle \overrightarrow{AB} = -\overrightarrow{BA} $.
+\item[(g)] $\displaystyle \forall A,B \in \mathcal{A} $, $\displaystyle \forall \vec{u} \in V $, $\displaystyle \overrightarrow{A\left(B+\vec{u}\right)} = \overrightarrow{AB} + \vec{u}$. Similarmente, $\displaystyle \overrightarrow{A\left(\overrightarrow{AB}+\vec{u}\right)} = B + \vec{u}$.
+\item[(h)] $\displaystyle \overrightarrow{\left(A+\vec{u}\right)\left(B+\vec{v}\right)} = \overrightarrow{AB} + \left(\vec{v}-\vec{u}\right)$.
+\item[(i)] $\displaystyle \forall A,B,C,D \in \mathcal{A} $, $\displaystyle \overrightarrow{AB} = \overrightarrow{CD} \iff \overrightarrow{AC} = \overrightarrow{BD}$.
+\end{description}
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(a)] Trivial.
+\item[(b)] Se deduce directamente de la condición \textbf{(1)} de la definición anterior.
+\item[(c)] Se deduce fácilmente de la condición \textbf{(3)} de la definición anterior.
+\item[(d)]
+	\[\left(A + \overrightarrow{AC}\right) + \overrightarrow{CB} = C + \overrightarrow{CB} = B .\]
+\item[(e)] Basta ver que $\displaystyle A + \vec{0} = A $.
+\item[(f)]
+	\[\overrightarrow{AB} + \overrightarrow{BA} = \overrightarrow{AA} = \vec{0} .\]	
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont De \textbf{(b)} obtenemos que $\displaystyle \tau_{\vec{u}}\circ\tau_{-\vec{u}} = \tau_{\vec{0}}= id _{\mathcal{A}} $.
+\end{observation}
+Sea $\displaystyle O \in \mathcal{A} $, definimos la aplicación
+\[
+\begin{split}
+	\varphi_{O} : V \to & \mathcal{A} \\
+	\vec{u} \to & O + \vec{u}.
+\end{split}
+\]
+\begin{fprop}[]
+\normalfont $\displaystyle \varphi_{O} $ es biyectiva.
+\end{fprop}
+\begin{observation}
+\normalfont Definimos la aplicación  
+\[
+\begin{split}
+	\displaystyle \psi_{O} : \mathcal{A} \to  & V \\
+	A \to & \overrightarrow{OA}.
+\end{split}
+\]
+Tenemos que $\displaystyle \varphi_{O}\circ\psi_{O} = id _{\mathcal{A}} $ y $\displaystyle \psi_{O}\circ\varphi_{O} = id _{V} $.
+\end{observation}
+\begin{proof}
+$\displaystyle \forall A \in \mathcal{A} $, se tiene que 
+\[\varphi_{O} \circ\psi_{O}\left(A\right) = \varphi_{O}\left(\overrightarrow{OA}\right) = O + \overrightarrow{OA} = A = id _{\mathcal{A}}\left(A\right) .\]
+Similarmente, $\displaystyle \forall \vec{u} \in V $, 
+\[\psi_{O}\circ\varphi_{O}\left(\vec{u}\right) =\psi_{O}\left(O + \vec{u}\right) = \overrightarrow{O O} + \vec{u} = \vec{u} = id _{V}\left(\vec{u}\right).\]
+\end{proof}
+Consideremos el par $\displaystyle \left\{ O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right\}  $. Si $\displaystyle \vec{x} = x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n} $, tenemos que la aplicación
+\[
+\begin{split}
+ f : V \to & \K^{n} \\
+ \vec{x} \to & \left(x^{1}, \ldots, x^{n}\right)
+\end{split}
+\]
+es un isomorfismo. 
+\begin{observation}
+\normalfont Tenemos que 
+\[
+\begin{split}
+	f\circ\psi_{O} : \mathcal{A} \to & \K^{n} \\
+	A \to & \left(x^{1}, \ldots, x^{n}\right),
+\end{split}
+\]
+donde $\displaystyle \overrightarrow{OA} = x^{1}\vec{u}_{1} + \cdots +x^{n}\vec{u}_{n}  $. 
+\end{observation}
+\begin{fdefinition}[Sistema de coordenadas cartesianas]
+	\normalfont El par $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $ siendo $\displaystyle O \in \mathcal{A} $ y $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $, lo llamaremos \textbf{sistema de coordenadas cartesias}. 
+\end{fdefinition}
+\begin{observation}
+\normalfont Sean $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $ y $\displaystyle \left(O', \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\} \right) $ dos sistemas de referencia cartesianos. Tenemos que 
+\[
+\begin{split}
+	\overrightarrow{O O '} = & a^{1}\vec{u}_{1} + \cdots + a^{n}\vec{u}_{n} \\
+	\vec{v}_{1} = & a^{1}_{1}\vec{u}_{1} + \cdots + a^{n}_{1}\vec{u}_{n} \\
+	\vdots & \\
+	\vec{v}_{n} = & a^{1}_{n}\vec{u}_{1} + \cdots + a^{n}_{n}\vec{u}_{n}	.
+\end{split}
+\]
+Si $\displaystyle X \in \mathcal{A} $, tenemos que 
+\[\overrightarrow{OX} = x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n}, \quad \overrightarrow{O'X}=x'^{1}\vec{v}_{1} + \cdots + x'^{n}\vec{v}_{n} .\]
+Vamos a estudiar cómo cambiar de un sistema de referencia a otro. 
+\[
+\begin{split}
+	\overrightarrow{O'X} = & x'^{1}\vec{v}_{1} + \cdots x'^{n}\vec{v}_{n} \\
+	= & x'^{1}\left(a^{1}_{1}\vec{u}_{1} + \cdots + a^{n}_{1}\vec{u}_{n}\right) + \cdots + x'^{n}\left(a^{1}_{n} \vec{u}_{1} + a^{n}_{n}\vec{u}_{n}\right) \\
+	= & \left(x'^{1}a^{1}_{1} + \cdots + x'^{n}a^{1}_{n}\right)\vec{u}_{1} + \cdots + \left(x'^{1}a^{n}_{1} + \cdots + x'^{n}a^{n}_{n}\right)\vec{u}_{n} \\
+	= & \overrightarrow{OX}-\overrightarrow{O O'}.
+\end{split}
+\]
+Similarmente,
+\[
+\begin{split}
+	\overrightarrow{OX} = & x^{1}\vec{u}_{n} + \cdots + x^{n}\vec{u}_{n} \\
+	= & \left(a^{1} + x'^{1}a^{1}_{1} + \cdots + x'^{n}a_{n}^{1}\right)\vec{u}_{1} + \cdots + \left(a^{n} + x'^{1}a_{1}^{n} + \cdots + x'^{n}a^{n}_{n}\right)\vec{u}_{n} .
+\end{split}
+\]
+Así, matricialmente obtenemos que
+\[\begin{pmatrix} x^{1} \\ x^{2} \\ \vdots \\ x^{n} \end{pmatrix} = \begin{pmatrix} a^{1} \\ a^{2} \\ \vdots \\ a^{n} \end{pmatrix} + \begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n} \\
+\vdots & & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix}\begin{pmatrix} x'^{1} \\ x'^{2} \\ \vdots \\ x'^{n} \end{pmatrix} .\]
+En efecto,
+\[ \begin{pmatrix} 1 \\ x^{1} \\ x^{2} \\ \vdots \\ x^{n} \end{pmatrix} =  \begin{pmatrix} 1 & 0 & \cdots & 0 \\a^{1} & a^{1}_{1}  & \cdots & a^{1}_{n} \\
+\vdots & \vdots & \vdots & \vdots \\
+a^{n} & a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix}\begin{pmatrix} 1 \\ x'^{1} \\ x'^{2} \\ \vdots \\ x'^{n} \end{pmatrix}.\]
+\end{observation}
+\begin{fdefinition}[Subespacio afín]
+\normalfont Un subconjunto $\displaystyle \mathcal{L}  $ de $\displaystyle \mathcal{A} $ es un \textbf{subespacio afín} si $\displaystyle \mathcal{L} = \emptyset $ o $\displaystyle \exists L \in \mathcal{L}\left(V\right) $ tal que $\displaystyle \forall A \in \mathcal{A} $, $\displaystyle \forall \vec{u} \in L $, $\displaystyle A + \vec{u} \in \mathcal{L} $ y $\displaystyle \left(\mathcal{L}, +|_{\mathcal{L}\times L}\right) $ es un espacio afín asociado a $\displaystyle L $.
+\end{fdefinition}
+Si $\displaystyle \mathcal{L} \neq \emptyset $ es un subespacio afín y $\displaystyle A \in \mathcal{L} $, se tiene que $\displaystyle B \in \mathcal{L} \iff\overrightarrow{AB} \in L$. En efecto, se tiene que 
+\[ \mathcal{L} = A + L = \left\{ A +\vec{u} \; : \; \vec{u} \in L\right\} .\]
+\begin{fdefinition}[]
+\normalfont $\displaystyle \mathcal{L} $ es una \textbf{variedad lineal afín} $\displaystyle A + L $ con $\displaystyle L \in \mathcal{L}\left(V\right) $.
+\end{fdefinition}
+\begin{observation}
+	\normalfont $\displaystyle B \in A + L \iff \overrightarrow{AB} \in \mathcal{L}$.
+\end{observation}
+\begin{fprop}[]
+\normalfont $\displaystyle B \in A + L \Rightarrow A + L = B + L $.
+\end{fprop}
+\begin{proof}
+	Si $\displaystyle B \in A + L $ se tiene que $\displaystyle \overrightarrow{AB} \in \mathcal{L} $. Así,
+	\[ C \in A + L \iff \overrightarrow{AC} \in L \iff \overrightarrow{BC} = \underbrace{\overrightarrow{BA}}_{\in L} + \underbrace{\overrightarrow{AC}}_{\in L} \iff C \in B + L .\]
+	Así, si $\displaystyle P,Q \in A+L $, entonces $\displaystyle \overrightarrow{PQ} \in L $ y $\displaystyle A + L = B + L $.
+\end{proof}
+\begin{fdefinition}[]
+\normalfont Si $\displaystyle \mathcal{L} \neq \emptyset $ es una variedad lineal afín de dirección $\displaystyle L \in \mathcal{L}\left(V\right) $ diremos que $\displaystyle \dim\left(\mathcal{L}\right) = \dim\left(L\right) $.
+\end{fdefinition}
+

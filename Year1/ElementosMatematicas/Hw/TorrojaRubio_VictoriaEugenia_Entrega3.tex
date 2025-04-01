@@ -4,22 +4,257 @@
 
 \begin{document}
 
-\title{Elementos de Matemáticas- Entrega 3}
+\title{Elementos de Matemáticas - Entrega 3}
 \author{Victoria Eugenia Torroja Rubio}
 \date{\today}
 
 \maketitle
 
 \begin{ej}
-Cambio de coordenadas horizontales a coordenadas ecuatoriales.
+Cambio de coordenadas horizontales a coordenadas ecuatoriales. \\ \\
+Un sistema de referencia euclídeo tridimensional $\displaystyle \left\{ O, X, Y, Z\right\}  $ viene determinado por un origen, $\displaystyle O $, y tres direcciones (orientadas) mutualmente ortogonales, los ejes $\displaystyle OX $, $\displaystyle OY $ y $\displaystyle OZ $. Todo punto de $\displaystyle \R^{3} $ tiene unas coordenadas cartesianas $\displaystyle \left(x,y,z\right) $ asociadas a dicho sistema de referencia.
+\begin{description}
+	\item[(a)] Si el sistema de referencia $\displaystyle \left\{ O, X', Y', Z'\right\}  $ se obtiene rotando el anterior un ángulo $\displaystyle \theta $ en torno al eje $\displaystyle OX $, justifique que las coordenadas cartesianas respecto a ambos sistemas de referencia están relacionados por la siguiente fórmula:
+		\[\begin{pmatrix} x' \\ y' \\ z' \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos \theta & \sin \theta \\ 0 & - \sin \theta & \cos \theta  \end{pmatrix}\begin{pmatrix} x \\ y \\ z \end{pmatrix} .\]
+	\item[(b)] Escribe las fórmulas correspondientes para los casos en que la rotación tiene eje $\displaystyle OY $ y eje $\displaystyle OZ $.
+	\item[(c)] Interpreta el cambio de coordenadas horizontales (sistema horizontal) a coordenadas horarias (sistema ecuatorial horario) en la esfera celeste a través de una rotación. Para ello elige un sistema de referencia euclídeo de forma que las coordenadas esféricas asociadas sean el acimut $\displaystyle A $ y la altura $\displaystyle h $, ¿cuáles son los ejes de ese sistema de referencia? Descríbelos. ¿Qué eje y qué ángulo tiene la rotación aplicada a los ejes de forma que las coordenadas esféricas asociadas se conviertan en el ángulo horario $\displaystyle H $ y la declinación $\displaystyle \delta  $? \textit{(Se puede pensar en la esfera celeste como la esfera centrada en el origen y radio 1.)}
+	\item[(d)] Usando la rotación anterior, encuentra las ecuaciones que relacionan las coordenadas cartesianas de un punto de la esfera celeste escritas en función de $\displaystyle A $ y $\displaystyle h $ con las coordenadas cartesianas escritas en función de $\displaystyle H $ y $\displaystyle \delta  $ \textit{(Las ecuaciones que se pide hallar vienen recogidas en la página 96 de los apuntes)}.
+\end{description}
 \end{ej}
-
 \begin{sol}
 \begin{description}
-	\item[(a)] Dado un punto $\displaystyle P = \left(x,y,z\right) \in \R^{3} $, para calcular sus coordenadas $\displaystyle \left(x', y', z'\right) $ en el nuevo sistema basta con calcular cómo varían las coordenadas de los vectores $\displaystyle \hat{i}= \left(1,0,0\right) $, $\displaystyle \hat{j} = \left(0,1,0\right)$ y $\displaystyle \hat{k} = \left(0,0,1\right)$.
+	\item[(a)] Dado un punto $\displaystyle P = \left(x,y,z\right) \in \R^{3} $ y un ángulo $\displaystyle \theta \in \left[0,2\pi \right] $, para calcular sus coordenadas respecto a este nuevo sistema de referencia, basta estudiar como cambian las coordenadas de una base de $\displaystyle \R^{3} $. Estudiemos como cambia la base canónica,  
+		\[ \mathcal{B} = \left\{ \vec{i} = \left(1,0,0\right), \vec{j} = \left(0,1,0\right), \vec{k} = \left(0,0,1\right)\right\}.\]
+		
+	\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{~/Desktop/Images/ej1,1.jpg}
+	\caption{Rotación de ejes}
+	\label{}
+	\end{figure}
+	Calculemos las coordenadas de los vectores de $\displaystyle \mathcal{B} $ respecto de la nueva base $\displaystyle \mathcal{B'} = \left\{ \vec{i'}, \vec{j'}, \vec{k'}\right\}  $, donde $\displaystyle \vec{i'}, \vec{j'}, \vec{k'} $ son los vectores directores unitarios de los nuevos ejes. Para ello recurrimos a la Figura 2.
+	\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{~/Desktop/Images/ej1,2.jpg}
+	\caption{Planos -Z'Y' y Z'Y', respectivamente}
+	\label{ enter label$}
+	\end{figure}
+		\[
+		\begin{split}
+			\vec{i} = & \vec{i'} \\ 
+			\vec{j} = & \cos \theta \vec{j'} - \sin \theta \vec{k'} \\
+			\vec{k} = & \sin \theta \vec{j'} + \cos \theta \vec{k'}.
+		\end{split}
+		\]
+		Así, nos queda que 
+		\[ P = \left(x',y',z'\right)_{\mathcal{B'}}= x \vec{i} + y \vec{j}  + z \vec{k} = x\vec{i'} + y\left(\cos\theta \vec{j'} - \sin \theta \vec{k'}\right) + z\left(\sin \theta \vec{j'} + \cos \theta \vec{k'}\right) .\]
+	Matricialmente tenemos que
+	\[ \begin{pmatrix} x' \\ y' \\ z' \end{pmatrix} = \begin{pmatrix} 1 & 0& 0 \\
+0 & \cos \theta& \sin \theta\\
+0 & - \sin \theta & \cos \theta\end{pmatrix}\begin{pmatrix} x \\ y \\ z \end{pmatrix}.\]
+\item[(b)] A través de un procedimiento análogo al del apartado anterior se puede deducir que las matrices correspondientes a las rotaciones respecto del eje $\displaystyle OY $ y $\displaystyle OZ $ son $\displaystyle R_{y} $ y $\displaystyle R_{z} $, respectivamente:
+		\[R_{y} = \begin{pmatrix} \cos \theta & 0 & -\sin \theta \\ 0 & 1 & 0 \\  \sin \theta & 0 & \cos \theta \end{pmatrix}, \quad R_{z} = \begin{pmatrix} \cos \theta &  \sin \theta & 0 \\ -\sin \theta & \cos \theta & 0 \\ 0 & 0 & 1\end{pmatrix} .\]
+Por tanto, las fórmulas para el cambio de coordenadas serán, respecitvamente,
+\[ \begin{pmatrix} x' \\ y' \\ z' \end{pmatrix} = R_{y}\begin{pmatrix} x \\ y \\ z \end{pmatrix}, \quad \begin{pmatrix} x' \\ y ' \\ z' \end{pmatrix} = R_{z} \begin{pmatrix} x \\ y \\ z \end{pmatrix} .\]
+\item[(c)] El cambio de coordeandas horizontales a coordenadas horarias se trata de una rotación de $\displaystyle 90 - \Phi $ grados, siendo $\displaystyle \Phi $ la latitud del observador. Como se puede apreciar en la Figura 3, el sistema de coordenadas que hemos elegido tiene como eje $\displaystyle x $ la recta que pasa por los puntos $\displaystyle O $ y $\displaystyle W $, el eje $\displaystyle y $ es la recta que pasa por los puntos $\displaystyle O $ y $\displaystyle S $, y el eje $\displaystyle z $ pasa por $\displaystyle O $ y por el cénit, $\displaystyle Z $. Hemos tomado como centro de la esfera el origen de nuestro sistema de coordenadas. 
+	\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{~/Desktop/Images/ej1,3.jpg}
+	\caption{Cambio de coordenadas celestes}
+	\label{}
+	\end{figure}
+\item[(d)] Como hemos visto en el apartado anterior, se trata de una rotación de $\displaystyle 90 - \Phi $ grados respecto del eje $\displaystyle x $. Además, tenemos que en el sistema horizontal las coordenadas esféricas de un punto $\displaystyle P= \left(x,y,z\right) \in \R^{3} $ son
+	\[
+	\begin{split}
+		x = & \cos \left(90 - A\right) \cos h \\
+		y = & \sin\left(90-A\right) \cos h \\
+		z = & \sin h.
+	\end{split}
+	\]
+ En el sistema horario estas coordenadas son
+\[
+\begin{split}
+	x' = & \cos \delta \cos\left(90-H\right) \\
+	y' = & \cos \delta \sin\left(90 - H\right) \\
+	z' = & \sin \delta.
+\end{split}
+\]
+ En efecto, hemos de tener en cuenta que la forma de medir ángulos en el sistema horizontal y horario comienza por el eje $\displaystyle y $ e $\displaystyle y' $ (según nuestro sistema de referencia), respectivamente, y no en el eje $\displaystyle x $, como es habitual. Dado que se trata de una rotación respecto del eje $\displaystyle  x$, existe una fórmula que relaciona estas dos expresiones de $\displaystyle P $,
+		\[ \begin{pmatrix} x' \\ y' \\ z' \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 \\
+	0 & \cos \left(90 - \Phi\right) & \sin\left(90 - \Phi\right) \\
+0 & - \sin\left(90-\Phi\right) & \cos\left(90-\Phi\right)\end{pmatrix}\begin{pmatrix} x \\ y \\z \end{pmatrix} .\]
+Así, nos queda:
+\[
+\begin{cases}
+\cos \delta \cos \left(90-H\right) = \cos\left(90-A\right)\cos h \quad \cdots \; \left(1\right)\\
+\cos \delta\sin\left(90-H\right)= \sin\left(90-A\right)\cos h \cos \left(90-\Phi\right) + \sin h \sin\left(90-\Phi\right) \quad \cdots \; \left(2\right)\\
+\sin \delta = - \sin\left(90-A\right)\cos h \sin\left(90-\Phi\right) + \sin h \cos\left(90-\Phi\right) \quad \cdots \; \left(3\right)
+\end{cases}
+.\]
+Simplificando:
+\[
+\begin{cases}
+\cos\delta \sin H = \sin A \cos h \quad \cdots \; \left(1\right) \\
+\cos \delta \cos H = \cos A \cos h \sin \Phi + \sin h \cos \Phi \quad \cdots \left(2\right)\\
+\sin \delta = - \cos A\cos h \cos \Phi + \sin h \sin \Phi \quad \cdots \; \left(3\right)
+\end{cases}
+.\]
+Dividiendo (1) entre (2) obtenemos las ecuaciones deseadas:
+\[ \tan H = \frac{\sin A \cos h}{\cos A \cos h \sin \Phi + \sin h \cos \Phi}.\]
+\[\sin \delta = - \cos A \cos h\cos \Phi + \sin h \sin \Phi .\]
 \end{description}
-
 \end{sol}
-
-
+\begin{ej}
+\normalfont \textbf{Movimiento del Sol.} \\ \\
+Representa en la esfera celeste el recorrido del Sol a lo largo de los siguientes cuatro días del año: solsticio de invierno, equinoccio de primavera, solsticio de verano y equinoccio de otoño (fechas relativas al hemisferio Norte).
+\begin{description}
+\item[(a)] Cuando el observador se encuentra en Madrid.
+\item[(b)] Cuando el observador se encuentra en una ciudad del Ecuador terrestre.
+\item[(c)] Cuando el observador se encuentra sobre el círculo polar antártico.
+\end{description}
+Intenta ser especialmente preciso con los puntos que corresponden a la salida y la puesta del Sol y con el momento en que el sol alcanza su máxima altura sobre el horizonte. Redacta una breve explicación que justifique los elementos de cada dibujo y comenta las diferencias entre ambos. \\ 
+\textit{(En este ejercicio se pretende estudiar el efecto de la desviación del eje de la Tierra con la normal al plano de la eclíptica. Se puede suponer que esta desviación es constante.)}
+\end{ej}
+\begin{sol}
+	Los datos que se proporcionan a continuación proceden de la página \url{https://www.sunearthtools.com/dp/tools/pos_sun.php?lang=es}. En las tablas, se evita poner la altura del Sol en su salida y su puesta puesto que es trivial. En cuanto a las representaciones gráficas, el recorrido del Sol durante el solsticio de invierno viene representado en azul, el de verano en rojo y los equinoccios de primavera y otoño en verde. \\ \\
+En primer lugar, consideremos el caso en que el observador se encuentra en Madrid. A continuación presentamos una gráfica con los valores del Acimut (grados) en las fechas y lugares indicados. Estos datos fueron tomados en las fechas indicadas del año 2024.
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline 
+		Acimut($\displaystyle ^{\circ} $)/Altura ($\displaystyle ^{\circ} $) & Solsticio de invierno & Equinoccio de primavera & Solsticio de verano & Equinoccio de otoño \\
+\hline
+		Puesta del Sol & 59,17 & 90,77 & 122,53 & 90,88 \\
+		\hline
+		Máxima altura & 0,02/26,15 & 0,13/49,64 & 0,01/73,02 & 0,13/49,68\\
+		\hline
+		Salida del Sol & 300,84& 268,97 & 237,48& 269,38\\
+		\hline
+	\end{tabular}
+	\end{center}
+A partir de estos datos ha sido desarrollada la Figura 4. Con esta representación podemos apreciar que el día del año de mayor duración (cuando dura más el día en comparación con la noche) es el solsticio de verano, mientras que el más corto es el solsticio de invierno. En el solsticio de verano el Sol alcanza su altura máxima, a pesar de no llegar al cénit. En los equinoccios de primavera y otoño, el Sol sale por el punto Libra y se pone en el punto Aries. Todo ello se debe a que el eje de la Tierra está inclinado respecto a la vertical del plano de la eclíptica. Es por esto por lo que la eclíptica no es paralela al ecuador celeste.
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{~/Desktop/Images/ej2,2.jpg}
+\caption{Recorrido del Sol visto desde Madrid}
+\label{}
+\end{figure}
+A continuación presentamos los datos análogos en la ciudad de Quito, situada en el Ecuador.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+	\hline 
+	Acimut($\displaystyle ^{\circ} $)/Altura ($\displaystyle ^{\circ} $) & Solsticio de invierno & Equinoccio de primavera & Solsticio de verano & Equinoccio de otoño \\
+	\hline 
+	Puesta del Sol & 66,56 & 90,04 & 113,44 & 90,11 \\
+	\hline
+	Máxima altura & 0,00/66,68 & 179,72/89,64 & 179,99/66,34 & 179,67/89,76\\
+	\hline
+	Salida del Sol & 293,44 & 269,76 & 246,57& 270,08 \\
+	\hline
+\end{tabular}
+\end{center}
+A partir de estos datos ha sido desarrollada la Figura 5. En ella podemos apreciar diferencias significantes respecto del caso anterior. A diferencia del caso anterior, visto desde el Ecuador, el Sol se sitúa en el Cénit a mediodía (cuando alcanza su altura máxima) durante los equinoccios de primavera y otoño. También cabe destacar que, en contraste con Madrid, en el Ecuador los días del equinoccio de verano y de invierno tienen la misma cantidad de horas solares (horas en las que la luz del Sol es visible). Debido a la inclinación del eje de la Tierra respecto del plano de la eclíptica, durante los solsticios el Sol no alcanza el Cénit a mediodía, sino que alcanza una altura de $\displaystyle 90^{\circ} - 23,5^{\circ} = 66,5^{\circ} $, puesto que el ángulo de inclinación del eje de la Tierra respecto del plano de la eclíptica es de $\displaystyle 23,5^{\circ} $. \\ \\
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{~/Desktop/Images/ej2,3.jpg}
+\caption{Recorrido del Sol visto desde el Ecuador}
+\label{}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{~/Desktop/Images/ej2,4.jpg}
+\caption{Recorrido del Sol visto desde el círculo polar antártico}
+\label{}
+\end{figure}
+El comportamiento en el círculo antártico es un tanto distinto a lo que hemos visto en los casos anteriores. En el solsticio de invierno, no se ve el Sol en el círculo antártico. Esto se puede entender con la Figura 7, donde se aprecia que el círuclo antártico apunta en sendido contrario al Sol.
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{~/Desktop/Images/ej2,1.jpg}
+\caption{Inclinación del eje de rotación terrestre respecto del plano de la eclíptica}
+\label{}
+\end{figure}
+Similarmente, en el solsticio de verano, al estar apuntando directamente al Sol, se tiene que el recorrido del Sol visto desde este punto tendrá una forma parecida a la Figura 6. Por la misma razón, en los equinoccios de primavera y otoño, el recorrido del Sol a lo largo de la esfera celeste coincide con el horizonte celeste. \\ \\
+En conclusión, las diferencias entre las figuras 4, 5 y 6 se deben a la inclinación del eje de rotación de la Tierra respecto del plano de la eclíptica, como se muestra en la Figura 7.
+\end{sol}
+\begin{ej}
+\textbf{Distancia a un satélite y proyección de su órbita sobre la Tierra.} \\ \\
+Supongamos que un satélite orbita la Tierra a una altura constante $\displaystyle d $, de magnitud comparable con el radio terráqueo ($\displaystyle d $ es la distancia del satélite a la superficie de la Tierra). Si en un determinado momento el satélite es visible a una altura $\displaystyle h $ sobre el horizonte ($\displaystyle h $ es la coordenada celeste del sistema horizontal), calcula la distancia entre el observador y el satélite en función de $\displaystyle d $, $\displaystyle h $ y $\displaystyle r $, el radio de la Tierra. \\ \\
+La Estación Espacial Internacional (ISS por sus siglas en inglés) orbita a unos 420 kilómetros de altura. El 4 de febrero de 2023, su paso fue visible desde Madrid. A las 19:20 se pudo observar con un azimut de 60 grados (contado desde la dirección Sur del horizonte y en sentido S-W-N-E) y una altura $\displaystyle h $ sobre el horizonte de 62 grados. Halla las coordenadas geográficas, latitud y longitud, del lugar de la superficie terrestre más cercano a la ISS en ese instante (es decir, el punto alineado con la ISS y el centro de la Tierra) y busca el lugar habitado más cercano (desde el que se pudo ver el paso de la ISS con más altura, esto es, más cerca del cénit).
+\end{ej}
+\begin{sol}
+	Definimos los ángulos $\displaystyle \theta $ y $\displaystyle \varphi $ según se muestran en la Figura 8. Aplicando el teorema del seno obtenemos que
+\[ \frac{r}{\sin \theta } = \frac{r + d}{\sin\left(h + 90\right)} \Rightarrow \theta = \arcsin\left(\frac{r\sin\left(h+90\right)}{d + r}\right) .\]
+Ahora, tenemos que $\displaystyle 180 = \varphi + \theta + h + 90 $, por lo que
+\[\varphi = 90 - \left(\theta + h\right) \Rightarrow \sin\varphi = \sin\left(90-\left(\theta + h\right)\right) = \cos \left(\theta + h\right) .\]
+Sea $\displaystyle d' $ la distancia del satélite al observador. Aplicando nuevamente el teorema del seno obtenemos que
+\[ \frac{d'}{\sin\varphi} = \frac{r + d}{\sin\left(h+90\right)} \Rightarrow d' = \frac{\left(r+d\right)\sin\varphi}{\sin\left(h+90\right)} .\]
+En conclusión,
+\[\therefore d' = \frac{r+d}{\sin\left(h+90\right)}\cos\left(\theta + h\right) = \left[\frac{r + d}{\sin\left(h+90\right)}\right] \cos\left[h + \arcsin\left(\frac{r \sin\left(h+90\right)}{d + r}\right)\right] .\]
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{~/Desktop/Images/ej3,1.jpg}
+	\caption{Ejercicio 3, apartado 1}
+	\label{}
+	\end{figure}
+	\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{~/Desktop/Images/ej3,2.jpg}
+	\caption{Triángulo resultante}
+	\label{}
+	\end{figure}
+Ahora resolvemos el segundo apartado. Consideremos las variables $\displaystyle \varphi $ y $\displaystyle d' $ como fueron definidas anteriormente. Por lo calculado anteriormente y tomando el radio de la Tierra $\displaystyle r = 6378 $ km,
+\[
+\begin{split}
+	d' = & \left[\frac{r + d}{\sin\left(h+90\right)}\right] \cos\left[h + \arcsin\left(\frac{r \sin\left(h+90\right)}{d + r}\right)\right] \\
+	= & \left[\frac{6378 + 420}{\sin\left(62 + 90\right)}\right] \cos\left[62+ \arcsin\left(\frac{6378 \sin\left(62 + 90\right)}{420 + 6378}\right)\right] = 471,595041 \; \text{km} .
+\end{split}
+\]
+Considerando el triángulo de la Figura 9, aplicamos el teorema del seno:
+\[ \frac{d'}{\sin\varphi} = \frac{r + d}{\sin\left(90 + h\right)} \Rightarrow \varphi = \arcsin\left(\frac{d'}{r + d}\sin\left(90+h\right)\right) .\]
+Con los datos que tenemos,
+\[\varphi = \arcsin\left(\frac{471,595041}{6378 + 420}\sin\left(90+62\right)\right) = 1,866365935^{\circ}.\]
+Consideremos el triángulo esférico de la Figura 10. 
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{~/Desktop/Images/ej3,3.jpg}
+\caption{Triángulo esférico formado por los puntos $\displaystyle M $, $\displaystyle P $ y $\displaystyle C $}
+\label{}
+\end{figure}Sacamos el valor de $\displaystyle a $ con la primera fórmula de Bessel:
+\[ \cos a = \cos \varphi \cos \Phi_{M} + \sin\varphi \sin\Phi_{M}\cos A.\]
+Ahora es un bueno momento para tener en cuenta que las coordenadas de Madrid son $\displaystyle \Phi_{M} = 40,4167^{\circ} $ N y $\displaystyle \Lambda_{M} = 3,7033^{\circ} $ W. Así
+\[
+\begin{split}
+	a = & \arccos\left(\cos \varphi \cos \Phi_{M} + \sin\varphi \sin\Phi_{M}\cos A\right)\\
+	= & \arccos\left(\cos1,866365935 \cos 40,4167 + \sin1,866365935 \sin40,4167\cos 60\right) \\
+	= & 39,51093003^{\circ} .
+\end{split}
+\]
+Sacamos el valor de $\displaystyle c' $ con la segunda fórmula de Bessel:
+\[\frac{\sin A}{\sin a} = \frac{\sin c'}{\sin \varphi} \Rightarrow c' = \arcsin\left(\frac{\sin\varphi \sin A}{\sin a}\right) = \arcsin\left(\frac{\sin1,866365935 \sin 60}{\sin 39,51093003}\right) = .\]
+\[\therefore c' = 2,540867237^{\circ} .\]
+Ahora, como $\displaystyle c = 90 - c' $, 
+\[c = 90 - 2,540867237 = 87,45913276^{\circ} .\]
+Considerando el triángulo esférico de la Figura 10,basta con aplicar la segunda fórmula de Bessel para deducir el valor de $\displaystyle \Phi_{P} $:
+\[ \frac{\sin\Phi_{P}}{\sin c} = \frac{\sin a}{\sin 90} \Rightarrow \Phi_{P} = \arcsin\left(\frac{\sin a \sin c}{\sin 90}\right) = \arcsin\left(\frac{\sin 39,51093003 \sin87,45913276 }{1}\right) = 39,46449258^{\circ}.\]
+Así, la latitud del punto $\displaystyle P $ que buscamos es $\displaystyle \Phi_{P} = 39^{\circ }27'52,17''$. Ahora calculamos la longitud. Para ello, consideremos el siguiente triángulo esférico de la Figura 11.
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{~/Desktop/Images/ej3,4.jpg}
+\caption{Triángulo esférico formado por los puntos $\displaystyle PN $, $\displaystyle M $ y $\displaystyle P $}
+\label{}
+\end{figure}
+Aplicando la primera fórmula de Bessel:
+\[ \cos \varphi = \cos\left(90-\Phi_{M}\right)\cos\left(90-\Phi_{P}\right) + \sin\left(90-\Phi_{M}\right)\sin\left(90-\Phi_{P}\right)\cos\Delta\Lambda  .\]
+Despejando,
+\[
+\begin{split}
+	\Delta\Lambda = & \arccos\left(\frac{\cos\varphi - \cos\left(90-\Phi_{M}\right)\cos\left(90-\Phi_{P}\right)}{\sin\left(90-\Phi_{M}\right)\sin\left(90-\Phi_{P}\right)}\right) = \arccos\left(\frac{\cos\varphi - \sin\Phi_{M}\sin\Phi_{P}}{\cos\Phi_{M}\cos\Phi_{P}}\right) \\
+	= & \arccos\left(\frac{\cos 1,866365935 - \sin40,4167 \sin39,46449258}{\cos40,4167 \cos39,46449258}\right) \\
+	= & 2,093724357^{\circ}.
+\end{split}
+\]
+Por el valor del acimut, sabemos que el punto $\displaystyle P $ se encuentra al oeste de Madrid, por lo que
+\[\Delta\Lambda = \Lambda_{P}-\Lambda_{M} \Rightarrow \Lambda_{P} = \Delta\Lambda + \Lambda_{M}.\]
+\[\therefore \Lambda_{P} = 2,093724357 + 3,7033 = 5,797024357^{\circ}=5^{\circ}47'49,29'' .\]
+Por tanto, las coordenadas del punto $\displaystyle P $ son $\displaystyle \Phi_{P} = 39^{\circ }27'52,17'' $ N y $\displaystyle \Lambda_{P} = 5^{\circ}47'49,29''$ W. El lugar más cercano es Trujillo (Cáceres).
+\end{sol}
 \end{document}

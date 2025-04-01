@@ -373,7 +373,7 @@ Tenemos que $\displaystyle A $ está formada por los componentes de las imágene
 	\vdots & \vdots & \vdots & \vdots & A_{1} \\
 0 & 0 & \cdots & \lambda  - x \\ \hline \\
 \vdots & \vdots & \vdots & \vdots & A_{2} - x I_{\left(n - k\right)\times\left(n - k\right)}  \\
-0 & 0 & \cdots & 0\end{vmatrix} = \left(\lambda - x\right)^{k} \left|A_{2} - I_{\left(n - k\right) \times \left(n - k\right)}\right|
+0 & 0 & \cdots & 0\end{vmatrix} = \left(\lambda - x\right)^{k} \left|A_{2} - xI_{\left(n - k\right) \times \left(n - k\right)}\right|
  .\]
 \end{proof}
 \begin{fdefinition}[]
@@ -423,7 +423,6 @@ Así, $\displaystyle \dim\left(L_{\lambda_{i}}\right) = r_{i} $, $\displaystyle 
 \begin{observation}
 \normalfont Para ver si un endofmorfismo es diagonalizable, hay que resolver el polinomio característico lo que da unas raíces $\displaystyle \lambda_{1}, \ldots, \lambda_{p} $ y lo primero que hay que comprobar es si la suma de las multiplicidades coincide con la dimensión de $\displaystyle V $.
 \end{observation}
-
 \begin{fdefinition}[]
 	\normalfont Sea $\displaystyle f \in \End\left(V\right) $ es \textbf{triangulable} si $\displaystyle \exists \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $ tal que 
 	\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) =  \begin{pmatrix} a^{1}_{1} & a^{1}_{2} & \cdots & a^{1}_{n} \\
@@ -442,17 +441,17 @@ Así, $\displaystyle \dim\left(L_{\lambda_{i}}\right) = r_{i} $, $\displaystyle 
 \begin{description}
 \item[(i)] Evidente.
 \item[(ii)] Consideremos el caso $\displaystyle n = 2 $. Sea $\displaystyle \lambda \in \K $ un vector propio de $\displaystyle f $ y $\displaystyle \vec{x}_{1} \in L_{\lambda }/ \left\{ \vec{0}\right\}  $. Entonces tenemos que $\displaystyle f\left(\vec{x}_{1}\right) = \lambda\vec{x}_{1} $. Si $\displaystyle \left\{ \vec{x}_{1}, \vec{x}_{2}\right\}  $ es base de $\displaystyle V $, tenemos que
-	\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) = \begin{pmatrix} \lambda & a \\
+	\[\mathcal{M}_{ \left\{ \vec{x}_{i}\right\} \left\{ \vec{x}_{i}\right\} }\left(f\right) = \begin{pmatrix} \lambda & a \\
 	0 & b\end{pmatrix} .\]
 	Asumimos que es cierto para $\displaystyle n - 1 $. Sea $\displaystyle \lambda_{1} \in \K $ un valor propio de $\displaystyle f $ y sea $\displaystyle \vec{x}_{1} \in L_{\lambda_{1}} / \left\{ \vec{0}\right\}  $. Sea $\displaystyle \left\{ \vec{x}_{1}, \ldots, \vec{ x}_{n}\right\}  $ base de $\displaystyle V $ y sea $\displaystyle L = L\left( \left\{ \vec{x}_{2}, \ldots, \vec{x}_{n}\right\} \right) $. Tenemos que $\displaystyle L \oplus L\left( \left\{ \vec{x}_{1}\right\} \right) = V $. 
-	Sea $\displaystyle p $ la proyección vectorial de base $\displaystyle L $ y dirección $\displaystyle L\left( \left\{ \vec{x}_{1}\right\} \right) $, y sea $\displaystyle p \circ f \in \End\left(L\right) $. Tenemos que $\displaystyle \dim\left(L\right) = n - 1 $. Tenemos que 
+	Sea $\displaystyle p $ la proyección vectorial de base $\displaystyle L $ y dirección $\displaystyle L\left( \left\{ \vec{x}_{1}\right\} \right) $, y sea $\displaystyle p \circ f \in \End\left(L\right) $. Tenemos que $\displaystyle \dim\left(L\right) = n - 1 $. Además 
 		\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) = \begin{pmatrix} \lambda _{1} & a^{1}_{2} & \cdots & a^{1}_{n} \\
 		0 & a^{2}_{2} & \cdots & a^{2}_{n} \\
 	\vdots & \vdots & \vdots & \vdots\\
 0 & a^{n}_{2} & \cdots & a^{n}_{n}\end{pmatrix} .\]
-Similarmente, sabemos que si $\displaystyle \vec{x} \in V $, 
-\[p\circ f\left(\vec{x}\right) = p\left(a^{1}_{i}\vec{x}_{1} + \cdots + a^{n}_{i}\vec{x}_{n}\right)= a^{2}_{i}\vec{x}_{2} + \cdots + a^{n}_{i}\vec{x}_{n} .\]
-Entonces, tenemos que 
+Similarmente, sabemos que, 
+\[p\circ f\left(\vec{x}_{i}\right) = p\left(a^{1}_{i}\vec{x}_{1} + \cdots + a^{n}_{i}\vec{x}_{n}\right)= a^{2}_{i}\vec{x}_{2} + \cdots + a^{n}_{i}\vec{x}_{n} .\]
+Entonces, tenemos que \footnote{Esta matriz se corresponde más bien con la restricción de $\displaystyle p\circ f $ a $\displaystyle L $.} 
 \[p\circ f \to \begin{pmatrix} a^{2}_{2} & \cdots & a^{2}_{n} \\
 \vdots & & \vdots \\
 a^{n}_{2} & \cdots & a^{n}_{n}\end{pmatrix} \Rightarrow P_{cf}\left(x\right) = - \left(x - \lambda_{1}\right) P_{c,p \circ f}\left(x\right) .\]
@@ -490,7 +489,7 @@ Entonces, tenemos que
 	\normalfont Si $\displaystyle p\left(x\right) \in \K[x] $ tal que $\displaystyle p\left(x\right) = a_{0} + a_{1}x + \cdots + a_{n}x^{n} $, y $\displaystyle f \in \End\left(V\right)$, se define 
 	\[p\left(f\right) = a_{0} + a_{1}f + \cdots + a_{n}f^{n} \in \End\left(V\right) .\]
 \end{observation}
-\begin{ftheorem}[]
+\begin{ftheorem}[Teorema de Cayley-Hamilton]
 \normalfont 
 \[P_{cf}\left(f\right) = 0 \in \End\left(V\right), \; P_{CA}\left(A\right) = 0 .\]
 \end{ftheorem}
@@ -549,9 +548,9 @@ es base de $\displaystyle V $. Así, tenemos que
 0 & 0 & \cdots & A_{n}\end{pmatrix} .\]
 Donde $\displaystyle A_{j} = \mathcal{M}_{ \left\{ \vec{u}^{j}_{i}\right\} \left\{ \vec{u}^{j}_{i}\right\} } \left(f|_{L_{j}}\right)$.
 \end{observation}
-Si $\displaystyle p\left(x\right) \in \K[x] $.
 \begin{fprop}[]
 \normalfont 
+Sea $\displaystyle p\left(x\right) \in \K[x] $.
 \begin{description}
 \item[(a)] $\displaystyle \Ker\left(p\left(f\right)\right) $ es un subespacio vectorial invariante por $\displaystyle f $.
 \item[(b)] $\displaystyle \Imagen\left(p\left(f\right)\right)\in \mathcal{L}\left(V\right) $ es un subespacio vectorial invariante por $\displaystyle f $.
@@ -595,7 +594,7 @@ La demostración se realiza por inducción sobre $\displaystyle k $.
 \item[(i)] Si $\displaystyle k=2 $, queda demostrado por el resultado anterior.
 \item[(ii)] Asumimos que el resultado es cierto para $\displaystyle k - 1 $. Tenemos que los polinomios $\displaystyle p_{1}\left(x\right)^{r_{1}}, \ldots, p_{k}\left(x\right)^{r_{k}} $ son primos entre si. Entonces, tenemos que
 	\[ V = \Ker\left(p_{1}\left(f\right)^{r_{1}}\right) \oplus \Ker\left(p_{2}\left(f\right)^{r_{2}} \circ \cdots \circ p_{k}\left(f\right)^{r_{k}}\right) .\]
-Por hipótesis de inducción, tenemos que $\displaystyle V = \Ker\left(p_{1}\left(f\right)^{r_{1}}\right) \oplus \cdots \oplus \Ker\left(p_{k}\left(f\right)\right)^{r_{k}} $.
+Por hipótesis de inducción, tenemos que $\displaystyle V = \Ker\left(p_{1}\left(f\right)^{r_{1}}\right) \oplus \cdots \oplus \Ker\left(p_{k}\left(f\right) ^{r_{k}}\right) $.
 \end{description}
 \end{proof}
 \begin{fprop}[]
@@ -687,7 +686,7 @@ Así, tenemos que $\displaystyle a_{i} = 0 $ para $\displaystyle i = 0, 1, \ldot
 \end{proof}
 \begin{observation}
 \normalfont Supongamos que $\displaystyle P_{cf}\left(x\right) = \left(-1\right)^{n}\left(x -\lambda_{1}\right)^{r_{1}} \cdots \left(x - \lambda_{k}\right)^{r_{k}} $. Dado que el polinomio característico es múltiplo del polinomio anulador y se descompone en factores lineales, ambos polinomios tienen los mismos factores irreducibles pero diferentes exponentes. 
-Entonces, tenemos que $\displaystyle V = \Ker\left(f -\lambda_{1}id _{V}\right)^{r_{1}} \oplus \cdots \oplus \Ker\left(f - \lambda_{k}id _{V}\right)^{r_{k}} $. Tenemos que $\displaystyle \left(f -\lambda_{i}id _{V}\right)^{r_{i}} $ es nilpotente con índice de nilpotencia menor o igual que $\displaystyle r_{i} $, pues el límite de nilpotencia coincide con el exponente en el polinomio mínimo.
+Entonces, tenemos que $\displaystyle V = \Ker\left(f -\lambda_{1}id _{V}\right)^{r_{1}} \oplus \cdots \oplus \Ker\left(f - \lambda_{k}id _{V}\right)^{r_{k}} $. Tenemos que $\displaystyle f -\lambda_{i}id _{V} $ es nilpotente con índice de nilpotencia menor o igual que $\displaystyle r_{i} $, pues el límite de nilpotencia coincide con el exponente en el polinomio mínimo.
 \end{observation}
 \begin{observation}
 \normalfont Un endomorfismo $\displaystyle f $ es diagonalizable cuando el exponente de todos los factores del mínimo sea 1, es decir, un endomorfismo es diagonalizable si y solo si todas las raices del polinomio mínimo son simples.
@@ -713,19 +712,32 @@ A continuación, tenemos que $\displaystyle \Ker\left(f^{m -2}\right) \subsetneq
 Dado $\displaystyle f \in \End\left(V\right) $, si existe canónica de $\displaystyle f $, tenemos que el polinomio característico tendrá la forma: $\displaystyle P_{cf}\left(x\right) = \left(x-\lambda_{1}\right)^{r_{1}} \cdots \left(x - \lambda_{k}\right)^{r_{k}} $. Entonces, tenemos que $\displaystyle V = L_{1} \oplus \cdots \oplus L_{k} $, donde $\displaystyle L_{i} = \Ker\left(f-\lambda_{i}id _{V}\right)^{r_{i}} $ con $\displaystyle i =1, \ldots, k $. Así, si $\displaystyle \dim\left(L_{i}\right) = r_{i}$,
 \[P_{mf}\left(x\right) = \left(x - \lambda_{1}\right)^{s_{1}} \cdots \left(x - \lambda_{k}\right)^{s_{k}}, \; s_{i} \leq r_{i} .\]
 tenemos que $\displaystyle f|_{L_{i}} \in \End\left(L_{i}\right) $, $\displaystyle f -\lambda_{i}id _{V} $ es nilpotente de límite de nilpotencia $\displaystyle s_{i} $. Además, tenemos que $\displaystyle \Ker\left(f - \lambda_{i} id _{V}\right) \subsetneq \cdots \subsetneq \Ker\left(f - \lambda_{i} id _{V}\right)^{s _{i}-1} \subsetneq \Ker\left(f - \lambda_{i}id _{V}\right)^{s_{i}} $.
+\subsection*{Obtención de la forma de Jordan de una matriz}
+Consideremos $\displaystyle \dim\left(V\right) = n $ y $\displaystyle f \in \End\left(V\right) $ cuya matriz es $\displaystyle A $.
+\begin{enumerate}
+\item Comenzamos calculando los autovalores de $\displaystyle f $, sean estos $\displaystyle \lambda_{1}, \ldots, \lambda_{m} $ con multiplicidadesalgebraicas $\displaystyle r_{1}, \ldots, r_{m} $ tal que $\displaystyle r_{1} + \cdots + r_{m} = n $. 
+\item Para cada autovalor $\displaystyle \lambda_{i} $ se calcula la cadena de subespacios formada por los núcleos de las potencias sucesivas de $\displaystyle f - \lambda_{i}id _{V} $. 
+	\[\Ker\left(f - \lambda_{i}id _{V}\right) \subsetneq \Ker\left(f - \lambda_{i}id _{V}\right)^{2} \subsetneq \cdots \subsetneq \Ker\left(f - \lambda_{i}id _{V}\right)^{p} .\]
+	La cadena se estabiliza después de $\displaystyle p $ pasos, por ser $\displaystyle \left(x - \lambda_{i}\right)^{p} $ su polinomio mínimo. 
+\item Tomamos una base del subespacio $\displaystyle \Ker\left(f - \lambda_{i}id _{V}\right)^{p} / \Ker\left(f - \lambda_{i}id _{V}\right)^{p-1} $. Para cada uno de los vectores de esta base encontramos sus imágenes generadas por las sucesivas potencias de $\displaystyle f - \lambda_{i}id _{V} $.
+\item Se repite este proceso con el subespacio $\displaystyle \Ker\left(f - \lambda_{i}id _{V}\right)^{p-1}/\Ker\left(f - \lambda_{i}id _{V}\right)^{p-2} $ y con el resto hasta llegar a $\displaystyle \Ker\left(f - \lambda_{i}id _{V}\right) $, donde se eligen los vectores necesarios para que junto con todos los vectores elegidos anteriormente se forme una base de $\displaystyle \Ker\left(f - \lambda_{i}id _{V}\right)^{p} $.
+\item Repitiendo estos pasos para cada autovalor, es fácil obtener la matriz de cambio de base y, a partir de esta, obtener la matriz de Jordan del endomorfismo original.
+\end{enumerate}
 \begin{eg}
 	\normalfont Consideremos la matriz $\displaystyle A = \begin{pmatrix} 4 & 5 & - 2 \\ - 2 & - 2 & 1 \\ - 1 & - 1 & 1 \end{pmatrix} $. Tenemos que $\displaystyle P_{cA}\left(x\right) = - \left(x-1\right)^{3} $. Calculamos la dimensión de $\displaystyle \Ker\left(f - id _{V}\right) $,
 	\[A - I = \begin{pmatrix} 3 & 5 & -2 \\ -2 & - 3 & 1 \\ - 1 & - 1 & 0 \end{pmatrix}, \; \left(A - I\right)^{2} = \begin{pmatrix} 1 & 2 & -1 \\ -1 & -2 & 1 \\ - 1 & - 2 & 1 \end{pmatrix} .\]
-Entonces, tenemos que $\displaystyle \dim\left(\Ker\left(f - id _{V}\right)\right) = 1 $ y $\displaystyle \dim\left(\Ker\left(f - id _{V}\right)^{2}\right) = 2 $. Así, debe ser que $\displaystyle \left(A - I\right)^{3} = 0 $. Tenemos que la ecuación de $\displaystyle \Ker\left(f - id _{V}\right)^{2} $ será $\displaystyle x +2y - z = 0 $. Tenemos que coger un vector en $\displaystyle L_{2} $ que no esté en $\displaystyle L_{1} $. Entonces, cogemos cogemos $\displaystyle \vec{u}_{1} = \left(1,0,0\right) $ y $\displaystyle \vec{u}_{2} = \left(3, -2, -1\right) = \left(f - id _{V}\right)\left(1,0,0\right) $. 
-Para conseguir $\displaystyle \vec{u}_{3} $:
-	\[ \left(A - I\right)^{2} \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ - 1 \\ 1 \end{pmatrix} .\]
-Así, $\displaystyle \vec{u}_{3} = \left(1, - 1, - 1\right) $. Entonces, tenemos que la matriz cambio de base será
+Entonces, tenemos que $\displaystyle \dim\left(\Ker\left(f - id _{V}\right)\right) = 1 $ y $\displaystyle \dim\left(\Ker\left(f - id _{V}\right)^{2}\right) = 2 $. Así, debe ser que $\displaystyle \left(A - I\right)^{3} = 0 $. Tenemos que la ecuación de $\displaystyle \Ker\left(f - id _{V}\right)^{2} $ será $\displaystyle x +2y - z = 0 $. Ahora, vamos a encontrar un vector que pertenezca a $\displaystyle \Ker\left(f - id _{V}\right)^{3} $ y no pertenezca a $\displaystyle \Ker\left(f - id _{V}\right)^{2} $. Cogemos cogemos $\displaystyle \vec{u}_{1} = \left(1,0,0\right) $. Por tanto, tomamos  
+\[\vec{u}_{2}  = \left(A - I\right)\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} 3 \\ - 2 \\ -1 \end{pmatrix}, \quad \vec{u}_{3} =\left(A - I\right)^{2} \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ - 1 \\ 1 \end{pmatrix}.\]
+Entonces, tenemos que la matriz cambio de base será
 	\[ C = \begin{pmatrix} 1 & 3 & 1 \\ 0 & - 2& - 1 \\ 0 & - 1 & -1 \end{pmatrix} .\]
 Y la forma de Jordan será
-	\[ C^{-1}AC = \begin{pmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 0 & 1 & 1 \end{pmatrix} .\]
+	\[ A_{J} = C^{-1}AC = \begin{pmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 0 & 1 & 1 \end{pmatrix} .\]
 \end{eg}
 \begin{eg}
-	\normalfont Consideremos $\displaystyle B = \begin{pmatrix} 1 & 1 & 1 \\ - 1 & 0 & - 1 \\ 1 & - 1 & 0 \end{pmatrix} $. Entonces, $\displaystyle P_{cB} = -\left(x-1\right)^{2}\left(x+1\right) $. Así, $\displaystyle V = \Ker\left(f - id _{V}\right)^{2} \oplus \Ker\left(f + id _{V}\right) $. Vamos a calcular la dimensión de $\displaystyle L_{1} $:
-	\[\left(B - I\right)^{2} = \begin{pmatrix} 0 & - 2 & - 2 \\ 0 & 1 & 1 \\ 0 & 3 & 3 \end{pmatrix} .\]
-Así, $\displaystyle \dim\left(L_{1}\right) = 2 $ y $\displaystyle \dim\left(L_{2}\right) = 1 $. Ahora buscamos un vector que esté en $\displaystyle L_{1} $ pero no en $\displaystyle L_{2} $. Obtenemos las ecuaciones $\displaystyle y + z = 0 $ y $\displaystyle x = 0 $. Entonces, cogemos $\displaystyle \vec{u}_{1} = \left(1, 0, 0\right) $ y $\displaystyle \vec{u}_{2} = \left(0, -1, 1\right) $.  
+	\normalfont Consideremos $\displaystyle B = \begin{pmatrix} 1 & 1 & 1 \\ - 1 & 0 & - 1 \\ 1 & - 1 & 0 \end{pmatrix} $. Entonces, $\displaystyle P_{cB} = -\left(x-1\right)^{2}\left(x+1\right) $. En primer lugar, estudiamos el autovalor $\displaystyle \lambda = 1 $. 	
+	\[B - I = \begin{pmatrix} 0 & 1 & 1 \\ -1 & -1 & - 1 \\ 1 & - 1 & - 1 \end{pmatrix}, \quad\left(B - I\right)^{2} = \begin{pmatrix} 0 & - 2 & - 2 \\ 0 & 1 & 1 \\ 0 & 3 & 3 \end{pmatrix} .\]
+	Tenemos que $\displaystyle \dim\left(\Ker\left(f - id _{V}\right)\right) = 1 $, por lo que $\displaystyle \dim\left(\Ker\left(f - id _{V}\right)^{2}\right)= 2 $. Tomamos $\displaystyle \vec{u}_{1} $ perteneciente a $\displaystyle \Ker\left(f - id _{V}\right)^{2} $ pero no perteneciente a $\displaystyle \Ker\left(f - id _{V}\right) $. Cogemos $\displaystyle \vec{u}_{1} = \left(0,0,1\right) $, por lo que
+	\[\vec{u}_{2} = \left(B-I\right) \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 1 \\ - 1 \\ - 1 \end{pmatrix} .\]
+	Ahora, estudiamos el autovalor $\displaystyle \lambda = - 1 $. Para encontrar $\displaystyle \vec{u}_{3} $ pasta con encontrar una base de $\displaystyle \Ker\left(f + id _{V}\right) $. Así, $\displaystyle \vec{u}_{3} = \left(2, -1, -3\right) $. Así, en la base $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \vec{u}_{3}\right\}  $,
+	\[B_{J}= \begin{pmatrix} - 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 1 & 1 \end{pmatrix} .\]
 \end{eg}

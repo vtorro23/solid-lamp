@@ -1,0 +1,226 @@
+\chapter{Aproximación polinómica de funciones}
+\section{Polinomios de Taylor}
+\begin{fdefinition}[Polinomio de Taylor]
+\normalfont Dada $\displaystyle f : \left(a-\delta, a + \delta \right)\to \R $, con $\displaystyle \delta > 0 $, tal que existe $\displaystyle f\left(a\right), f'\left(a\right), \ldots, f^{\left(n\right)}\left(a\right) $, se llama \textbf{polinomio de Taylor} de la función $\displaystyle f $ centrado en $\displaystyle a $ y de grado $\displaystyle n $ al polinomio
+\[P_{a,n}\left(x\right) = \sum^{n}_{k=0}\frac{f^{\left(k\right)}\left(a\right)}{k!}\left(x-a\right)^{k} .\]
+\end{fdefinition}
+\begin{eg}
+\normalfont Consideremos la función polinómica
+\[f\left(x\right) = a_{n}\left(x-a\right)^{n} + \cdots + a_{1}\left(x-a\right) + a_{0} .\]
+Tenemos que $\displaystyle P_{f,a,n}\left(x\right) = f\left(x\right) $.
+\end{eg}
+\begin{observation}
+\normalfont Tenemos que dada $\displaystyle f : \left(a-\delta, a + \delta \right)\to \R $, el polinomio de Taylor de grado 1 centrado en $\displaystyle a $ será la recta tangente a la curva en $\displaystyle \left(a,f\left(a\right)\right) $. Es decir,
+\[P_{a,1}\left(x\right) = f\left(a\right) + f'\left(a\right)\left(x-a\right) .\]
+Además, sabemos que
+\[\lim_{x \to a}\frac{f\left(x\right)-P_{a,1}\left(x\right)}{x-a} = 0 .\]
+\end{observation}
+\begin{observation}
+\normalfont Tenemos que si $\displaystyle f : \left(a-\delta, a + \delta \right)\to \R $, 
+\[ P_{a,2}\left(x\right) = f\left(a\right) + f'\left(a\right)\left(x-a\right) + f''\left(a\right)\left(x-a\right)^{2} .\]
+Entonces, podemos ver que
+\[f\left(a\right) = P_{a,2}\left(a\right), \; f'\left(a\right) = P_{a,2}'\left(a\right), \; f''\left(a\right) = P''_{a,2}\left(a\right) .\]
+En general, $\displaystyle f^{\left(k\right)}\left(a\right) = P^{\left(k\right)}_{a,n}\left(a\right) $, para $\displaystyle k = 0, 1, \ldots, n $.
+\end{observation}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f: \left(a - \delta, a + \delta \right) \to \R $ derivable $\displaystyle n $ veces en $\displaystyle \left(a - \delta, a + \delta \right) $ con $\displaystyle f^{\left(n\right)} $ continua. Entonces
+\[ \lim_{x \to a}\frac{f\left(x\right)-P_{a,n}\left(x\right)}{\left(x-a\right)^{n}} .\]
+\end{ftheorem}
+\begin{proof}
+Aplicando L'Hôpital $\displaystyle n $ veces:
+\[ \lim_{x \to a}\frac{f^{\left(n\right) } \left(x\right)- P^{\left(n\right)}_{a,n}\left(x\right)}{n!} = 0 .\]
+\end{proof}
+\begin{fcolorary}[]
+\normalfont Sea $\displaystyle a \in \left(a - \delta, a + \delta \right) \subset \dom\left(f\right) $ de modo que existe $\displaystyle f' $ y $\displaystyle f'' $ en $\displaystyle \left(a - \delta, a + \delta \right) $ y $\displaystyle f'\left(a\right) = 0 $.
+\begin{description}
+\item[(a)] Si $\displaystyle f''\left(a\right) > 0 $, entonces $\displaystyle a $ es un mínimo local de $\displaystyle f $.
+\item[(b)] Si $\displaystyle f''\left(a\right) < 0 $, entonces $\displaystyle a $ es un máximo local de $\displaystyle f $.
+\end{description}
+\end{fcolorary}
+\begin{proof}
+La demostración de \textbf{(b)} es análoga a la de \textbf{(a)}. Por el teorema anterior tenemos que
+\[\lim_{x \to a}\frac{f\left(x\right)-P_{a,2}\left(x\right)}{\left(x-a\right)^{2}} = 0 .\]
+Ahora, tenemos que
+\[\frac{f\left(x\right)-P_{a,2}\left(x\right)}{\left(x-a\right)^{2}} = \frac{f\left(x\right)-f\left(a\right)-\frac{f''\left(a\right)}{2}\left(x-a\right)^{2}}{\left(x-a\right)^{2}} = \frac{f\left(x\right)-f\left(a\right)}{\left(x-a\right)^{2}} -\frac{f''\left(a\right)}{2} \to 0.\]
+Por tanto tenemos que 
+\[\lim_{x \to a}\frac{f\left(x\right)-f\left(a\right)}{\left(x-a\right)^{2}} = \frac{f''\left(a\right)}{2} > 0 .\]
+Como $\displaystyle \left(x-a\right)^{2} > 0 $, tiene que ser que $\displaystyle f\left(x\right) - f\left(a\right) > 0 $ en un entorno de $\displaystyle a $. Por definición, se tiene que $\displaystyle a $ es un mínimo local. 
+\end{proof}
+\begin{fcolorary}[]
+\normalfont Sea $\displaystyle f : \left(a-\delta, a + \delta \right)\to \R $ tal que existen $\displaystyle f', \ldots, f^{\left(n\right)} $ y $\displaystyle f'\left(a\right) = \cdots = f^{\left(n-1\right)}\left(a\right) = 0$ y $\displaystyle f^{\left(n\right)}\left(a\right) \neq 0 $.
+\begin{description}
+\item[(a)] Si $\displaystyle n $ es par y $\displaystyle f^{\left(n\right)}\left(a\right) > 0 $, entonces $\displaystyle a $ es un mínimo local de $\displaystyle f $.
+\item[(b)] Si $\displaystyle n $ es par y $\displaystyle f^{\left(n\right)}\left(a\right) < 0 $, entonces $\displaystyle a $ es un máximo local de $\displaystyle f $.
+\item[(c)] Si $\displaystyle n $ es impar, entonces $\displaystyle f $ no tiene un mínimo ni un máximo local en $\displaystyle a $.
+\end{description}
+\end{fcolorary}
+\begin{proof}
+Las demostraciones de \textbf{(a)} y \textbf{(b)} son similares a las del corolario anterior. Por ello, sólo demostraremos \textbf{(c)}. Por el teorema tenemos que 
+\[0 = \lim_{x \to a}\frac{f\left(x\right)-P_{a,n}\left(x\right)}{\left(x-a\right)^{n}} = \lim_{x \to a}\left[\frac{f\left(x\right)-f\left(a\right)}{\left(x-a\right)^{n}}-\frac{f^{\left(n\right)}\left(a\right)}{n!}\right]  .\]
+Ahora si $\displaystyle n $ es impar y, sin pérdida de generalidad, $\displaystyle f^{\left(n\right)}\left(a\right) > 0 $, entonces
+\begin{itemize}
+\item si $\displaystyle x > a $, $\displaystyle \left(x-a\right)^{n} > 0 $, por lo que $\displaystyle f\left(x\right)-f\left(a\right) > 0 $.
+\item si $\displaystyle x < a $, $\displaystyle \left(x-a\right)^{n} < 0 $, por lo que $\displaystyle f\left(x\right)-f\left(a\right) < 0 $.
+\end{itemize}
+Por tanto, $\displaystyle a $ no puede ser un máximo ni un mínimo local.
+\end{proof}
+\begin{eg}
+\normalfont 
+\begin{itemize}
+\item $\displaystyle f\left(x\right) = e^{x} $ en $\displaystyle a = 0 $. Tenemos que $\displaystyle \forall k \in \N $, $\displaystyle \left(e^{x}\right)^{\left(k\right)} = e^{0} = 1 $. Por tanto,
+	\[P_{0,n}\left(x\right) =\sum^{n}_{k=0}\frac{x^{k}}{k!} .\]
+\item Si $\displaystyle f\left(x\right) = \cos x $, tenemos que $\displaystyle f'\left(x\right) = -\sin x $, $\displaystyle f'''\left(x\right)=-\cos x $, $\displaystyle f'''\left(x\right) = \sin x $ y $\displaystyle f^{\left(4\right)}\left(x\right) = \cos x $. Así,
+	\[f\left(0\right) = 1, \; f'\left(0\right) = 0, \; f''\left(0\right) = -1, \; f'''\left(0\right) = 0 .\]
+Por tanto, tenemos que
+\[P_{0,2n}\left(x\right) = \sum^{n}_{k=0}\frac{\left(-1\right)^{k}x^{2k}}{\left(2k\right)!} .\]
+Análogamente, si $\displaystyle f\left(x\right) = \sin x $ se tiene que 
+\[P_{0,2n +1}\left(x\right) = \sum^{n}_{k=0}\frac{\left(-1\right)^{k}x^{2k+1}}{\left(2k+1\right)!} .\]
+\item Si $\displaystyle f\left(x\right) = \ln x $ tenemos que
+	\[f'\left(x\right) = \frac{1}{x}, \; f''\left(x\right) = -\frac{1}{x^{2}}, \; f'''\left(x\right) = \frac{2}{x^{3}}, \; \cdots, \; f^{\left(k\right)}=\frac{\left(-1\right)^{k-1}\left(k-1\right)!}{x^{k}} .\]
+Por tanto,
+\[f^{\left(k+1\right)}\left(x\right) = \frac{\left(-1\right)^{k}k!}{x^{k+1}} .\]
+Así, ha sido demostrado por inducción que 
+\[f^{\left(k\right)}\left(x\right) = \frac{\left(-1\right)^{k-1}\left(k-1\right)!}{x^{k}} .\]
+Por tanto, $\displaystyle f^{\left(k\right)}\left(1\right) = \left(-1\right)^{k-1}\left(k-1\right)! $. Por tanto, el polinomio de Taylor que buscamos es
+\[P_{1,n}\left(x\right) = \sum^{n}_{k=1}\frac{\left(-1\right)^{k-1}}{k}\left(x-1\right)^{k} .\]
+\end{itemize}
+\end{eg}
+\begin{fdefinition}[]
+\normalfont Dadas $\displaystyle f,g : \left(a - \delta, a+ \delta \right) \to \R $, se dice que $\displaystyle f $ y $\displaystyle g $ son iguales en el punto $\displaystyle a $ hasta el orden $\displaystyle n $, con $\displaystyle n \in \N $, si 
+\[\lim_{x \to a}\frac{f\left(x\right)-g\left(x\right)}{\left(x-a\right)^{n}} = 0 .\]
+\end{fdefinition}
+\begin{eg}
+\normalfont Si $\displaystyle f : \left(a-\delta, a + \delta \right)\to \R $, que tiene $\displaystyle f', \ldots, f^{\left(n\right)} $ continuas en $\displaystyle \left(a-\delta, a + \delta \right) $, entonces $\displaystyle f $ y $\displaystyle P_{a,n}\left(x\right) $ son iguales hasta el orden $\displaystyle n $.
+\end{eg}
+\begin{observation}
+\normalfont Consideremos que $\displaystyle \left|x-a\right| \leq 1 $. Entonces, para $\displaystyle k = 0, 1, \ldots, n $ se tiene que 
+\[ \left|x-a\right|^{n} \leq \left|x-a\right|^{k} \leq \left|x-a\right| \leq 1 .\]
+Entonces, se tiene que
+\[ 1 \leq \frac{1}{ \left|x-a\right|} \leq \frac{1}{ \left|x-a\right|^{k}} \leq \frac{1}{ \left|x-a\right|^{n}} .\]
+Por tanto, se tiene que
+\[ \left|f\left(x\right)-g\left(x\right)\right| \leq \frac{ \left|f\left(x\right)-g\left(x\right)\right|}{ \left|x-a\right|^{k}} \leq \frac{ \left|f\left(x\right)-g\left(x\right)\right|}{ \left|x-a\right|^{n}} .\]
+Así, se tiene que
+\[0 = \lim_{x \to a}\frac{f\left(x\right)-g\left(x\right)}{ \left(x-a\right)^{n}} \iff \lim_{x \to a} \left|\frac{f\left(x\right)-g\left(x\right)}{\left(x-a\right)^{n}}\right| =0 .\]
+Por tanto, $\displaystyle \lim_{x \to a}\frac{f\left(x\right)-g\left(x\right)}{ \left(x-a\right)^{k}} = 0 $, $\displaystyle \forall k = 0, 1, \ldots, n $. En particular $\displaystyle f\left(a\right) = g\left(a\right) $.
+\end{observation}
+\begin{flema}[]
+\normalfont Sean $\displaystyle P $ y $\displaystyle Q $ dos polinomios de grado menor o igual que $\displaystyle n $. Si ambos son iguales en $\displaystyle a $ hasta el orden $\displaystyle n $, entonces $\displaystyle P = Q $.
+\end{flema}
+\begin{proof}
+Tenemos que 
+\[P\left(x\right) = a_{n}x^{n} + \cdots + a_{1}x + a_{0} = b_{n}\left(x-a\right)^{n} + \cdots + b_{1}\left(x-a\right) + b_{0} .\]
+Donde $\displaystyle b_{k} = \frac{P^{\left(k\right)}\left(a\right)}{k!} $ y $\displaystyle a_{k} = \frac{P^{\left(k\right)}\left(0\right)}{k!} $. Similarmente,
+\[Q\left(x\right) = c_{n}\left(x-a\right)^{n} + \cdots + c_{1}\left(x-a\right) + c_{0} .\]
+Sea $\displaystyle R\left(x\right) = P\left(x\right)-Q\left(x\right) = d _{n}\left(x-a\right)^{n} + \cdots + d _{1}\left(x-a\right) + d _{0} $. Por hipótesis, tenemos que
+\[0 = \lim_{x \to a}\frac{P\left(x\right)-Q\left(x\right)}{\left(x-a\right)^{n}} = \lim_{x \to a}\frac{R\left(x\right)}{\left(x-a\right)^{n}} .\]
+Por tanto, para $\displaystyle k= 0 $,
+\[0 = \lim_{x \to a}\frac{R\left(x\right)}{\left(x-a\right)^{0}} = \lim_{x \to a}R\left(x\right) = d _{0} .\]
+Además, para $\displaystyle k= 1 $,
+\[0 = \lim_{x \to a} \frac{R\left(x\right)}{x-a} = \lim_{x \to a}\frac{d _{n}\left(x-a\right)^{n} + \cdots + d _{1}\left(x-a\right)}{x-a} = d _{1}.\]
+Así, por inducción se puede ver que $\displaystyle d _{k} = 0 $, $\displaystyle \forall k= 0, \ldots, n $, por lo que $\displaystyle R\left(x\right)=0 $ y $\displaystyle P\left(x\right) = Q\left(x\right) $.
+\end{proof}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : \left(a -\delta, a + \delta \right)\to \R $ tal que existen $\displaystyle f', \ldots, f^{\left(n\right)} $ continuas en $\displaystyle \left(a-\delta, a + \delta \right) $. Si $\displaystyle P $ es un polinomio de grado menor o igual que $\displaystyle n $, con $\displaystyle P $ igual a $\displaystyle f $ hasta el orden $\displaystyle n $, entonces $\displaystyle P = P_{a,n}\left(x\right) $.
+\end{ftheorem}
+\begin{proof}
+Por hipótesis, se tiene que 
+\[\lim_{x \to a}\frac{f\left(x\right)-P\left(x\right)}{\left(x-a\right)^{n}} = 0 .\]
+Por resultados anteriores sabemos que 
+\[\lim_{x \to a}\frac{f\left(x\right)-P_{a,n}\left(x\right)}{\left(x-a\right)^{n}} = 0 .\]
+Por tanto, calculamos el límite
+\[
+\begin{split}
+	\lim_{x \to a}\frac{P\left(x\right)-P_{a,n}\left(x\right)}{\left(x-a\right)^{n}} = & \lim_{x \to a}\frac{P\left(x\right)-f\left(x\right) + f\left(x\right)-P_{a,n}\left(x\right)}{\left(x-a\right)^{n}} \\
+	= &  \lim_{x \to a}\frac{P\left(x\right)-f\left(x\right)}{\left(x-a\right)^{n}} + \lim_{x \to a}\frac{f\left(x\right)-P_{a,n}\left(x\right)}{\left(x-a\right)^{n}} = 0 .
+\end{split}
+\]
+Por el lema anterior, tenemos que $\displaystyle P\left(x\right) = P_{a,n}\left(x\right) $.
+\end{proof}
+\begin{observation}
+\normalfont Este resultado nos permite dar otra definición del polinomio de Taylor: $\displaystyle P_{a,n} $ es el único polinomio centrado en $\displaystyle a $ de orden $\displaystyle n $ igual a $\displaystyle f $ hasta el orden $\displaystyle n $ en el punto $\displaystyle a $.
+\end{observation}
+\begin{eg}
+\normalfont 
+Consideremos $\displaystyle f\left(x\right) = \frac{1}{1 + x^{2}} $. Tenemos que 
+	\[
+	\begin{split}
+		f\left(x\right) = & \frac{1}{1 + x^{2}} = \frac{1 +x^{2}-x^{2}}{1 + x^{2}} = 1 - \frac{x^{2}}{1 +x^{2}} = 1 - \frac{x^{2}+x^{4}-x^{4}}{1 +x^{2}} = 1 -x^{2} + \frac{x^{4}+x^{6}-x^{6}}{1 +x^{2}} \\
+		= & 1 -x^{2}+x^{4}-\frac{x^{6}}{1 + x^{2}} = \cdots = \sum^{n}_{k=0}\left(-1\right)^{k}x^{2k} + \frac{\left(-1\right)^{n+1}x^{2n+2}}{1 +x^{2}}.
+	\end{split}
+	\]
+Vamos a ver que $\displaystyle P_{0,2n}\left(x\right) = \sum^{n}_{k=0}\left(-1\right)^{k}x^{2k} $.
+\[\lim_{x \to 0}\frac{\frac{1}{1+x^{2}}-\sum^{2n}_{k=0}\left(-1\right)^{k}x^{2k}}{x^{2n}} = \lim_{x \to 0}\frac{ \left(-1\right)^{n+1}\frac{x^{2n+2}}{1 +x^{2}}}{x^{2n}} = \lim_{x \to 0}\frac{\left(-1\right)^{n+1}x^{2}}{1+x^{2}} = 0 .\]
+Por el teorema anterior, se tiene que $\displaystyle \sum^{n}_{k=0}\left(-1\right)^{k}x^{2k} $ aproxima a $\displaystyle \frac{1}{x^{2}+1} $ en cero hasta el orden $\displaystyle 2n $, por lo que es su polinomio de Taylor.
+\end{eg}
+\begin{eg}
+\normalfont Sea $\displaystyle f\left(x\right) = \sum^{\infty}_{n=0}a_{n}\left(x-a\right)^{n}$. Supongamos que $\displaystyle \exists f\left(n\right)  $, $\displaystyle \forall n \in \N $. Vamos a ver que $\displaystyle P_{a,N} = \sum^{N}_{n=0}a_{n}\left(x-a\right)^{n} $. En efecto, tenemos que
+\[\lim_{x \to a}\frac{f\left(x\right)-\sum^{N}_{n = 0}a_{n}\left(x-a\right)^{n}}{\left(x-a\right)^{N}} = \lim_{x \to a}\frac{\sum^{\infty}_{n = N+1}a_{n}\left(x-a\right)^{n}}{\left(x-a\right)^{N}} = \lim_{x \to a}\sum^{\infty}_{n = N+1}a_{n}\left(x-a\right)^{n - N} \]
+Si $\displaystyle j = n - N $,
+\[= \lim_{x \to a}\sum^{\infty}_{j=1}a_{N+j}\left(x-a\right)^{j} \stackrel{?}{=} 0 .\]
+Esto lo demostraremos más adelante.
+\end{eg}
+\begin{fdefinition}[]
+\normalfont Dada $\displaystyle f : \left(a-\delta, a + \delta \right)\to \R $, $\displaystyle n $ veces derivable en $\displaystyle x = a $, se define el \textbf{resto} de $\displaystyle f $ de grado $\displaystyle n $ centrado en $\displaystyle a $ 
+\[R_{a,n}\left(x\right) = f\left(x\right)-P_{a,n}\left(x\right) .\]
+\end{fdefinition}
+\begin{observation}
+\normalfont El error que se comete al tomar $\displaystyle P_{a,n}\left(x\right) $ en lugar de $\displaystyle f\left(x\right) $ es $\displaystyle \left|R_{a,n}\left(x\right)\right| $.
+\end{observation}
+\begin{eg}
+\normalfont Como se vio anteriormente, 
+\[\frac{1}{1 + x^{2}} = \underbrace{\sum^{n}_{k=0}\left(-1\right)^{k}x^{2k}}_{P_{0,2n}} + \underbrace{\frac{\left(-1\right)^{n+1}x^{2n+2}}{1 + x^{2}}}_{R_{0,2n}} .\]
+\end{eg}
+\begin{ftheorem}[Teorema de Taylor]
+	\normalfont Sea $\displaystyle f : \left[a,x\right] \to \R $ tal que existen $\displaystyle f', \ldots, f^{\left(n+1\right)} $ en $\displaystyle \left[a,x\right]  $.
+	\begin{description}
+		\item[(a)] \textbf{Fórmula del resto de Cauchy.} Para algún $\displaystyle t \in \left[a,x\right]  $,
+		\[ R_{a,n}\left(x\right) = \frac{f^{\left(n+1\right)} \left(t\right)}{n!}\left(x-t\right)^{n}\left(x-a\right) .\]
+	\item[(b)] \textbf{Fórmula del resto de Lagrange.} Para algún $\displaystyle t \in \left[a,x\right]  $, 
+		\[R_{a,n}\left(x\right) = \frac{f^{\left(n+1\right)}\left(t\right)}{\left(n+1\right)!} \left(x - a\right)^{n+1}.\]
+	\item[(c)] \textbf{Fórmula integral del resto.} Si $\displaystyle f^{\left(n+1\right)} $ es integrable en $\displaystyle \left[a,x\right]  $, entonces
+		\[R_{a,n}\left(x\right) = \int^{x}_{a} \frac{f^{\left(n+1\right)}\left(t\right)}{n!}\left(x-t\right)^{n} \; dt .\]
+	\end{description}
+\end{ftheorem}
+\begin{proof}
+	Para $\displaystyle t \in \left[a,x\right]  $, definimos
+	\[S\left(t\right) = R_{t,n}\left(x\right) = f\left(x\right) - P_{t,n}\left(x\right) = f\left(x\right)-\sum^{n}_{k=0}\frac{f^{\left(k\right)}}{k!}\left(x-t\right)^{k}, \; t \in \left[a,x\right]  .\]
+Ahora, consideremos 
+\[g\left(t\right) = \left(x-t\right)^{n+1}, \; t \in \left[a,x\right]  .\]
+Derivamos $\displaystyle S\left(t\right) $ y tomamos $\displaystyle j = k-1 $,
+\[
+\begin{split}
+	S'\left(t\right) = & - \sum^{n}_{k=0}\frac{f^{\left(k+1\right)}\left(t\right)}{k!}\left(x-t\right)^{k} + \sum^{n}_{k=1}\frac{f^{\left(k\right)}\left(t\right)}{k!}k\left(x-t\right)^{k-1} = -\sum^{n}_{k=0}\frac{f^{\left(k+1\right)}\left(t\right)}{k!}\left(x-t\right)^{k}+\sum^{n-1}_{j=0}\frac{f^{\left(j+1\right)}\left(t\right)}{j!}\left(x-t\right)^{j} \\
+	= & -\frac{f^{\left(n+1\right)}\left(t\right)}{n!}\left(x-t\right)^{n}.
+\end{split}
+\]
+Ahora derivamos $\displaystyle g $,
+\[g'\left(t\right) = -\left(n+1\right)\left(x-t\right)^{n} .\]
+\begin{description}
+	\item[(a)] Por el teorema del valor medio, tenemos que existe $\displaystyle t \in \left(a,x\right)  $ tal que 
+		\[S\left(x\right)-S\left(a\right) = S'\left(t\right)\left(x-a\right)=-\frac{f^{\left(n+1\right)}\left(t\right)}{n!}\left(x-t\right)^{n}\left(x-a\right) .\]
+Tenemos que $\displaystyle S\left(x\right) = 0 $ y $\displaystyle S\left(a\right) = R_{a,n}\left(x\right) $. Así, nos queda que
+\[ R_{a,n}\left(x\right) = - \frac{f^{\left(n+1\right)}\left(t\right)}{n!}\left(x-t\right)^{n}\left(x-a\right).\]
+\item[(b)] Por el teorema del valor medio de Cauchy, tenemos que existe $\displaystyle t \in \left(a,x\right)  $ tal que
+	\[\frac{S\left(x\right)-S\left(a\right)}{g\left(x\right)-g\left(a\right)}= \frac{S'\left(t\right)}{g'\left(t\right)} \iff \frac{S\left(a\right)}{g\left(a\right)} = \frac{-\frac{f^{\left(n+1\right)}\left(t\right)}{n!}\left(x-t\right)^{n}}{-\left(n+1\right)\left(x-t\right)^{n}}=\frac{f^{\left(n+1\right)}\left(t\right)}{\left(n+1\right)!}.\]
+	Hemos usado que $\displaystyle S\left(x\right)= g\left(x\right) = 0 $. Por tanto, se tiene que 
+	\[S\left(a\right) = R_{a,n}\left(x\right) = \frac{f^{\left(n+1\right)}\left(t\right)}{\left(n+1\right)!} \left(x - a\right)^{n+1} .\]
+\item[(c)] Si $\displaystyle f^{\left(n+1\right)}\left(t\right) $ es integrable en $\displaystyle \left[a,x\right]  $ (es decir, $\displaystyle S' $ es integrable), por el segundo teorema de Barrow tenemos que 
+	\[S\left(x\right)-S\left(a\right) = \int^{x}_{a} S'\left(t\right) \; dt .\]
+	Dado que $\displaystyle S\left(x\right) = 0 $ y $\displaystyle S\left(a\right) = R_{a,n}\left(x\right) $, 
+\[R_{a,n}\left(x\right) = \int^{x}_{a} \frac{f^{\left(n+1\right)}\left(t\right)}{n!}\left(x-t\right)^{n} \; dt .\]	
+\end{description}
+\end{proof}
+\begin{observation}
+	\normalfont Existe un resultado análogo para $\displaystyle x < a $, en $\displaystyle \left[x,a\right]  $.
+\end{observation}
+\begin{eg}
+\normalfont Vamos a calcular $\displaystyle \sin 1 $. Recordamos que $\displaystyle \sin x = P_{0,2n+1}\left(x\right) + R_{0,2n+1} $, así
+\[\sin x = \sum^{n}_{k=0}\frac{\left(-1\right)^{k}x^{2k+1}}{\left(2k+1\right)!}+\int^{x}_{0} \frac{\left(-1\right)^{n}\sin ^{\left(2n+2\right)}\left(t\right)}{\left(2n+1\right)!}\left(x-t\right)^{2n+1} \; dt .\]
+Así, obtenemos que
+\[\sin 1 = \sum^{n}_{k=0}\frac{\left(-1\right)^{k}}{\left(2k+1\right)!} + \int^{1}_{0} \frac{\left(-1\right)^{n}\sin ^{\left(2n+2\right)}\left(t\right)}{\left(2n+1\right)!}\left(1-t\right)^{2n+1} \; dt.\]
+Para calcular el error,
+\[ \left|\int^{x}_{0} \frac{\left(-1\right)^{n}\sin ^{\left(2n+2\right)}\left(t\right)}{\left(2n+1\right)!}\left(x-t\right)^{2n+1} \; dt \right| \leq \int^{x}_{0} \frac{ \left|x-t\right|^{2n+1}}{\left(2n+1\right)!} \; dt  = \left[\frac{ \left|x-t\right|^{2n+2}}{\left(2n+2\right)!}\right] ^{x}_{0}= \frac{ \left|x\right|^{2n+2}}{\left(2n+2\right)!} .\]
+Si $\displaystyle x = 1 $ se tiene que el error será menor que $\displaystyle \frac{1}{\left(2n+2\right)!} $. Así, si queremos que el error sea menor que $\displaystyle 10^{-2} $, encontramos $\displaystyle n \in \N$ tal que $\displaystyle \frac{1}{\left(2n+2\right)!} < 10^{-2} $. En este caso, basta coger $\displaystyle n=5 $. Así,
+\[\sin 1 \approx 1 - \frac{1}{3!} + \frac{1}{5!} .\]
+\end{eg}
+

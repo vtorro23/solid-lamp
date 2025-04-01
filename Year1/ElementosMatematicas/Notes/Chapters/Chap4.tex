@@ -40,7 +40,7 @@ Podemos observar que se trata de una sucesión geométrica.
 \begin{observation}
 \normalfont Esta definición es generalizable a orden $\displaystyle m $ si la función depende de $\displaystyle m $ estados independientes del sistema.
 \end{observation}
-\section{Sistemas dinámicos de primer orden}
+\section{Sistemas dinámicos lineales de primer orden}
 Estudiaremos los puntos de equilibrio, la estabilidad y análisis gráfico. 
 \begin{fdefinition}[Sistemas autónomos]
 \normalfont Un sistema dinámico de primer orden se dice \textbf{autonónomo} si el funcional $\displaystyle f $ no depende de $\displaystyle n $, es decir, si $\displaystyle A\left(n+1\right) = f\left(A\left(n\right)\right) $. En caso contrario, se denomina \textbf{no autónomo}.
@@ -156,4 +156,311 @@ Sin embargo, si cogemos ahora $\displaystyle A\left(n+1\right) = 0,8A\left(n\rig
 	.\]
 \end{description}
 \end{proof}
+\begin{eg}
+\normalfont \textbf{Ejercicio 1, Hoja 7.} El día 1 de enero de 2010. El capital inicial en la cuenta bancaria es de 1000 euros. El interés compuesto es de 10\% anual. 
+\begin{description}
+\item[(a)] Obtener la relación entre la cantidad de dinero que habrá en la cuenta el día 1 de enero de cada año a partir de la que hubera el anterior.
+	\begin{center}
+	\begin{tabular}{c c}
+		1 enero 2010 & $\displaystyle A\left(0\right) = 1000 $ \\
+		1 enero 2011 & $\displaystyle A\left(1\right) = 1100 $ \\
+		1 enero 2012 & $\displaystyle A\left(2\right) = 1210 $ 
+	\end{tabular}
+	\end{center}
+	Buscamos la relación $\displaystyle A\left(n+1\right) = rA\left(n\right) + b$. Tenemos que 
+	\[
+	\begin{split}
+		A\left(0\right) = & 1000 \\
+		A\left(1\right) = & 1000 + 10\% 1000 = 1,1 A\left(0\right) \\
+		A\left(2\right) = & A\left(1\right) + 10\% A\left(1\right) = 1,1A\left(1\right)=1,1^{2}A\left(0\right) \\
+		\vdots \\
+		A\left(n\right) = & 1,1^{n}A\left(0\right).
+	\end{split}
+	\]
+\item[(b)] $\displaystyle A\left(n\right) = 1,1^{n}A\left(0\right) $.
+\item[(c)] Calcular el dinero en la cuenta el 1 de enero de 2028.
+	\[A\left(18\right) = 1,1^{18}A\left(0\right) = 5559,92 \; \text{euros} .\]	
+\end{description}
+\end{eg}
+\begin{eg}
+\normalfont \textbf{Ejercicio 2, Hoja 7.} Un cultivo celular, las células se reproducen por mitosis (de cada célula se obtienen dos nuevas en una unidad de tiempo). 
+\begin{description}
+\item[(a)] Si inicialmente tenemos $\displaystyle 100 $ células, cuántas habrá para $\displaystyle 6 $ unidades de tiempo y para $\displaystyle n $ unidades? \\
+Es evidente que (en el examen hay que demostrarlo por inducción)
+\[A\left(n\right) = 2A\left(n-1\right) = 2^{n}A\left(0\right).\]
+Para $\displaystyle n = 6 $ se tiene que $\displaystyle A\left(6\right) = 2^{6} \cdot 100 = 6400 $. Para $\displaystyle n = 100 $ tenemos que $\displaystyle A\left(100\right) \approx 10^{30} $. 
+\item[(b)] Modelizar el problema nuevamente asumiendo la tasa de natalidad $\displaystyle b \in \R $ y la tasa de mortalidad $\displaystyle d \in \R $. \\
+	La nueva solución general será $\displaystyle A\left(n\right) = A\left(n-1\right) + bA\left(n-1\right) - dA\left(n-1\right) = \left(1+b-d\right)A\left(n-1\right) $. Así, tenemos que $\displaystyle A\left(n\right) = \left(1+b-d\right)^{n}A\left(0\right) $.
+\end{description}
+\end{eg}
+\begin{eg}
+\normalfont \textbf{Ejercicio 4, Hoja 7.} Hemos hecho un préstamo de $\displaystyle 1000 $ euros al 5\% anual con pagos de 100 euros anuales. Cuánto dinero debemos a los 5 años? \\ 
+Tenemos que 
+\[
+\begin{split}
+	A\left(0\right) = & a_{0} \\
+	A\left(1\right) = & a_{0} + 5\% a_{0} -100 = 1,05a_{0} - 100 \\
+	A\left(2\right) = & a_{1} + 5\% a_{1} -100 = 1,05\left(1,05a_{0}-100\right)-100 = 1,05^{2}a_{0}-1,05 \cdot 100 - 100 \\
+	\vdots \\
+	A\left(n\right) =& 1,05^{n}a_{0} - 100\left(1,05^{n-1} + \cdots + 1,05 + 1\right) = 1,05^{n}a_{0}-100\sum^{n-1}_{i=0}1,05^{i}
+\end{split}
+\]
+Así, tenemos que $\displaystyle A\left(n\right) = 1,05^{n}a_{0} -100 \cdot \frac{1 - 1,05^{n-2}}{1 - 1,05} $.
+\begin{description}
+\item[(a)] Deuda para $\displaystyle n = 5 $ con $\displaystyle a_{0}^{1}= 1000 $, $\displaystyle a_{0}^{2} = 2000 $ y $\displaystyle a_{0}^{3} = 3000 $. Tenemos que
+	\[
+	\begin{split}
+	a_{0}^{1} \to A\left(5\right) = 723,72 \\
+	a_{0}^{2} \to A\left(5\right) = 2000 \\
+	a_{0}^{3} \to A\left(5\right) = 3276,28.
+	\end{split}
+	\]
+\item[(b)] El punto de equilibrio $\displaystyle a $ debe verificar que $\displaystyle f\left(a\right) = a $. Tenemos que 
+\[ a = 1,05^{n}a - \frac{1-1,05^{n}}{1 - 1,05} \cdot 100 \Rightarrow a = 100 \cdot \frac{1 - 1,05^{n}}{\left(1-1,05^{n}\right)\left(1-1,05\right)} = 2000 .\]
+\end{description}
+\end{eg}
+\begin{fdefinition}[Gráfica de un sistema]
+	\normalfont Dado el sistema dinámico lineal autónomo de primer orden $\displaystyle A\left(n+1\right) = f\left(A\left(n\right)\right) $ con $\displaystyle n \in \N \cup \left\{ 0\right\}  $, con $\displaystyle A\left(0\right) = a_{0} $ dado. Sea la representación gráfica de la curva $\displaystyle y = f\left(x\right) $ e $\displaystyle y = x $. Entonces la sucesión de puntos  
+\[ \left\{ \left(A\left(0\right), f\left(A\left(0\right)\right)\right), \ldots, \left(A\left(n\right), f\left(A\left(n\right)\right)\right)\right\}.\]
+se denomina \textbf{gráfica del sistema} 
+\end{fdefinition}
+\begin{ftheorem}[]
+\normalfont Sea la representación gráfica del sistema dinámico $\displaystyle A\left(n+1\right) = r A\left(n\right) + b $, dado por la recta $\displaystyle y = rx + b $. El punto de intersección con $\displaystyle y = x $ es $\displaystyle \left(a,a\right) $, con $\displaystyle a $  el punto de equilibrio del sistema. Entonces la sucesión de puntos de la gráfica del sistema verifica:
+\begin{description}
+\item[(a)] Converge a $\displaystyle \left(a,a\right) $ si $\displaystyle \left|r\right| < 1 $.
+\item[(b)] Diverge de $\displaystyle \left(a,a\right) $ si $\displaystyle \left|r\right| > 1 $.
+\item[(c)] Oscila en un cuadrado alrededor de $\displaystyle \left(a,a\right) $ si $\displaystyle r = -1 $.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+Trivial.
+\end{proof}
+\begin{eg}
+\normalfont Consideremos $\displaystyle A\left(n+1\right) = -0,8A\left(n\right) + 3,6 $, con $\displaystyle A\left(0\right) = 4 $; y $\displaystyle A\left(n+1\right) = -A\left(n\right)+4 $ con $\displaystyle A\left(0\right) = 6 $. En el primer caso, como $\displaystyle \left|-0,8\right| < 1 $, el punto de equilibrio $\displaystyle \left(2,2\right) $ es punto de equilibrio estable. Gráficamente, el sistema converge a $\displaystyle \left(2,2\right) $. En el segundo caso, el punto de equilibrio es también $\displaystyle \left(2,2\right) $, pero no es estable puesto que $\displaystyle \left|-1\right| = 1 $.
+\end{eg}
+\begin{fdefinition}[]
+	\normalfont Una solución $\displaystyle A\left(n\right) $ de un sistema dinámico se dice \textbf{periódica} si existe $\displaystyle m \in \N $ tal que $\displaystyle A\left(n + m\right) = A\left(n\right) $ con $\displaystyle n \in \N \cup \left\{ 0\right\}  $. Se dice que $\displaystyle m $ es el \textbf{periódo} de la solución.
+\end{fdefinition}
+\subsection{Solución general y particular de los sistemas homogéneos y afines}
+Recordamos que un sistema homogéneo es un sistema dinámico de la forma
+\[A\left(n + 1\right) = rA\left(n\right), \; r \in \N .\]
+\begin{ftheorem}[]
+\normalfont La solución general del sistema dinámico lineal homogéneo es
+\[ A\left(n\right) = cr^{n}, \; n \in \N \cup \left\{ 0\right\}  ,\]
+con $\displaystyle c \in \R $. La solución particular del sistema con $\displaystyle A\left(0\right) = a_{0} $ es 
+\[A\left(n\right) = a_{0}r^{n} .\]
+\end{ftheorem}
+\begin{proof}
+Por un lado, tenemos que $\displaystyle \forall c \in \R $, $\displaystyle cr^{n+1} =rcr^{n} $. Por tanto, la sucesión $\displaystyle A\left(n\right) = cr^{n} $ es solución del sistema dinámico. Por otro lado, cualquier otra solución del sistema dinámico debe ser de esa forma. Razonamos por inducción. Tenemos que $\displaystyle A\left(1\right) = rA\left(0\right) $. Asumimos que $\displaystyle A\left(n\right) = r^{n}A\left(0\right) $. Entonces,
+\[A\left(n+1\right) = rA\left(n\right) = r^{n+1}A\left(0\right) .\]
+\end{proof}
+\begin{fcolorary}[]
+\normalfont La solución particular del sistema, conocido el valor $\displaystyle A\left(m\right) = a_{m} $ para cierto $\displaystyle m \in \N $ es 
+\[A\left(n\right) = \frac{a_{m}}{r^{m}}r^{n} = a_{m}r^{n-m}, \; n \in \N \cup \left\{ 0\right\}  .\]
+\end{fcolorary}
+\begin{proof}
+Tenemos que 
+\[A\left(m\right) = a_{0}r^{m} = a_{m} \Rightarrow a_{0} = \frac{a_{m}}{r^{m}} .\]
+Por tanto,
+\[A\left(n\right) = a_{0}r^{n} = \frac{a_{m}}{r^{m}}r^{n} = a_{m}r^{n - m} .\]
+\end{proof}
+\begin{ftheorem}[]
+\normalfont Sea el sistema dinámico lineal afín $\displaystyle A\left(n+1\right) = rA\left(n\right) + b $, con $\displaystyle r,b \in \R $. La solución general es
+\[A\left(n+1\right) = 
+\begin{cases}
+cr^{n} - \frac{b}{1-r}, \; r \neq 1\\
+c + nb, \; r = 1
+\end{cases}
+.\]
+La solución particular con $\displaystyle a_{0} = A\left(0\right) $ es
+\[A\left(n\right) =
+\begin{cases}
+	\left(a_{0}-\frac{b}{1-r}\right)r^{n}+\frac{b}{1-r}, \; r \neq 1 \\
+	a_{0} + nb, \; r = 1
+\end{cases}
+.\]
+\end{ftheorem}
+\begin{proof}
+El punto de equilibrio del sistema dinámico afín $\displaystyle A\left(n+1\right) = rA\left(n\right) + b $ es 
+\[ a = ra + b \Rightarrow a = \frac{b}{1-r}, \; r \neq 1 .\]
+Consideremos el sistema dinámico $\displaystyle E\left(n\right) = A\left(n\right)-a $. Así, tenemos que
+\[ E\left(n+1\right) = A\left(n+1\right)-a = rA\left(n\right) + b - \left(ra + b\right) = r\left(A\left(n\right)-a\right) = rE\left(n\right).\]
+Por tanto, tenemos que $\displaystyle E\left(n\right) $ es un sistema dinámico homogéneo, por lo que su solución general será
+\[E\left(n\right) = cr^{n}, \; c \in \R, n \in \N \cup \left\{ 0\right\}  .\]
+Por tanto, 
+\[ E\left(n\right) = A\left(n\right) - a = cr^{n} \Rightarrow A\left(n\right) = cr^{n} + a = cr^{n} + \frac{b}{1-r}, \; r \neq 1.\]
+Si $\displaystyle A\left(0\right) = a_{0} $, se tiene que $\displaystyle E\left(0\right) = a_{0} - a $. Así,
+\[E\left(n\right) = \left(a_{0} - a\right)r^{n} = A\left(n\right) + a \Rightarrow A\left(n\right) = \left(a_{0} - a\right)r^{n} + a= \left(a_{0}-\frac{b}{1-r}\right)r^{n} + \frac{b}{1-r}.\]
+
+Si $\displaystyle r = 1 $, se tiene que el sistema se escribe $\displaystyle A\left(n+1\right) = A\left(n\right) + b $. Por inducción \footnote{Se trata de una sucesión artimética.} obtenemos que
+\[A\left(n\right) = a_{0} + nb .\]
+\end{proof}
+\section{Sistemas dinámicos lineales de segundo orden}
+Son sistemas de la forma
+\[A\left(n+2\right) = aA\left(n+1\right) + bA\left(n\right) + c ,\]
+con $\displaystyle a,b,c \in \R $. En este caso también diferenciamos en sistemas homogéneos y afines:
+\begin{itemize}
+\item Si $\displaystyle c = 0 $ se dice que el sistema es \textbf{homogéneo}.
+\item Si $\displaystyle c \neq 0 $ se dice que el sistema es \textbf{afín}.
+\end{itemize}
+\subsection{Sistemas dinámicos de segundo orden homogéneos}
+\begin{fdefinition}[Ecuación y polinomio característicos]
+\normalfont La \textbf{ecuación característica} asociada a un sistema dinámico lienal de segundo orden homogéneo $\displaystyle A\left(n+2\right) = aA\left(n+1\right) + bA\left(n\right) $, con $\displaystyle a, b \in \R $, es $\displaystyle x^{2} = ax + b $. El \textbf{polinomio característico} de este sistema es el polinomio de segundo grado $\displaystyle P\left(x\right) = x^{2}-ax - b $.
+\end{fdefinition}
+\begin{ftheorem}[]
+\normalfont Sea el sistema lineal homogéneo de segundo orden $\displaystyle A\left(n+2\right) = aA\left(n+1\right) + bA\left(n\right) $, con $\displaystyle a,b \in \R $, y sean $\displaystyle r,s \in \R $ con $\displaystyle r \neq s $ las soluciones del polinomio característico (reales o complejas). Entonces
+\begin{description}
+\item[(a)] La solución general del sistema es
+	\[A\left(n\right) = c_{1}r^{n} + c_{2}s^{n} ,\]
+	donde $\displaystyle c_{1}, c_{2} \in \R $.
+\item[(b)] La solución particular del sistema con $\displaystyle A\left(0\right) = a_{0} $ y $\displaystyle A\left(1\right) = a_{1} $ será
+	\[ A\left(n\right) = \frac{a_{1}-sa_{0}}{r-s}r^{n} + \frac{a_{1}-ra_{0}}{r-s}s^{n} .\]
+\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(a)] Hacemos uso de la técnica de inducción. Primero, veamos que la solución del sistema se escribe de la forma $\displaystyle A\left(n\right) = c_{1}r^{n} + c_{2}s^{n} $. Sean $\displaystyle r $ y $\displaystyle s $ las soluciones del polinomio característico con $\displaystyle r \neq s $. Es decir, verifican que
+	\[ r^{2}-ar - b = 0, \quad \text{y} \quad s^{2}-as-b = 0.\]
+En esta situación, $\displaystyle A\left(0\right) $ y $\displaystyle A\left(1\right) $ se puede escribir de la forma
+\[A\left(n\right) =  .\]
+\end{description}
+\end{proof}
+\begin{ftheorem}[]
+\normalfont Sea el sistema dinámico lineal de segundo orden, $\displaystyle A\left(n+2\right) = aA\left(n+1\right) + bA\left(n\right) $, y sea $\displaystyle r \neq 0 $ la única raíz de $\displaystyle P\left(x\right) $ (es decir, raíz doble). Entonces,
+\begin{description}
+\item[(a)] La solución general del sistema dinámico es de la forma
+	\[A\left(n\right) = \left(c_{1}+c_{2}n\right)r^{n} , \; n \in \N \cup \left\{ 0\right\} .\]
+\item[(b)] La solución particular del sistema que satisface $\displaystyle A\left(0\right) = a_{0} $ y $\displaystyle A\left(1\right) = a_{1} $ es
+	\[A\left(n\right) = \left(a_{0} + \frac{a_{1}-ra_{0}}{r}n\right)r^{n}, \; n \in \N \cup \left\{ 0\right\}  .\]
+\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(a)] Dado el sistema dinámico $\displaystyle A\left(n+2\right) = aA\left(n+1\right) + bA\left(n\right) $ de polinomio característico $\displaystyle P\left(x\right) = x^{2}-ax-b $, si $\displaystyle r \neq 0 $ es la única solución posible, tenemos que
+\[x^{2} - ax - b = \left(x-r\right)^{2} = x^{2}-2xr + r^{2} .\]
+Así, tenemos que $\displaystyle a = 2r $ y $\displaystyle b = - r^{2} $. Por tanto, tenemos que el sistema se puede escribir de la forma
+\[A\left(n+2\right) = 2rA\left(n+1\right)-r^{2}A\left(n\right) .\]
+Supongamos ahora que existe un sistema dinámico $\displaystyle B\left(n\right) $ tal que $\displaystyle A\left(n\right) = B\left(n\right)r^{n} $, que debe verificar que 
+\[A\left(n+2\right) = B\left(n+2\right)r^{n} = 2r\left(B\left(n+1\right)r^{n+1}\right)-r^{2}B\left(n\right)r^{n} .\]
+Por tanto, $\displaystyle B\left(n+2\right) = 2B\left(n+1\right)-B\left(n\right) $. Veamos, por inducción, si $\displaystyle B\left(n\right) $ tiene solución de la forma $\displaystyle B\left(n\right) = c_{1} + c_{2}n $. Para $\displaystyle n = 0 $ y $\displaystyle n = 1 $ se tiene que, si fuera cierto,
+\[
+\begin{split}
+	B\left(0\right) = & c_{1} + 0c_{2} \\
+	B\left(1\right) = & c_{1} + 1c_{2}.
+\end{split}
+\]
+Como este sistema tiene solución única, es claro que $\displaystyle B\left(0\right) $ y $\displaystyle B\left(1\right) $ verifican solución. Supongamos que $\displaystyle B\left(n\right)  $ y $\displaystyle B\left(n+1\right) $ también verifican la solución y comprobemos si entonces $\displaystyle B\left(n+2\right) $ también es de la forma deseada.
+\[B\left(n+2\right) = 2B\left(n+1\right) - B\left(n\right) = 2\left(c_{1} + c_{2}\left(n+1\right)\right)-\left(c_{1} + c_{2}n\right) = c_{1}+2c_{2}\left(n+2\right) .\]
+Así, se tendría que 
+\[A\left(n\right) = B\left(n\right) r^{n} = \left(c_{1} + c_{2}n\right)r^{n} .\]
+\item[(b)] Busquemos ahora la solución particular para $\displaystyle A\left(0\right) = a_{0} $ y $\displaystyle A\left(1\right) = a_{1} $. Si $\displaystyle n = 0 $ y $\displaystyle n = 1 $:
+	\[
+	\begin{split}
+		n = 0 \Rightarrow & \left(c_{1} + 0c_{2}\right)r^{0} = c_{1} = a_{0} \\
+		n = 1 \Rightarrow & \left(c_{1} + 1c_{2}\right)r^{1} = rc_{1} + rc_{2} = a_{1}.
+	\end{split}
+	\]
+Así, tenemos que $\displaystyle c_{1} = a_{0}$ y $\displaystyle c_{2} = \frac{a_{1}-ra_{0}}{r} $, por lo que
+\[A\left(n\right) = \left(a_{0} + \frac{a_{1}-ra_{0}}{r}n\right)r^{n}, \; n \in \N \cup \left\{ 0\right\}  .\]
+\end{description}
+\end{proof}
+\subsection{Sistemas dinámicos de segundo orden afines}
+\begin{ftheorem}[]
+\normalfont Sea el sistema lineal afín de segundo orden $\displaystyle A\left(n+2\right) = aA\left(n+1\right) + bA\left(n\right) + c $ y sean $\displaystyle r $ y $\displaystyle s $ las soluciones del polinomio característico asociado $\displaystyle P\left(x\right) = x^{2}-ax - b $. La solución general del sistema es
+\[A\left(n\right) = 
+\begin{cases}
+c_{1}r^{n} + c_{2}s^{n} + \frac{c}{1 - a - b}, \; r \neq s \land r,s \neq 1 \\
+\left(c_{1} + c_{2}n\right)r^{n} + \frac{c}{1-a-b}, \; r = s \neq 1 \\
+\left(c_{1}r^{n}+c_{2}\right) + \frac{c}{2-a}n, \; r\neq 1 \land s = 1 \\
+\left(c_{1}+c_{2}n\right) + \frac{cn^{2}}{2}, \; r = s = 1
+\end{cases}
+.\]
+\end{ftheorem}
+\begin{proof}
+Dadas dos soluciones $\displaystyle A\left(n\right) $ y $\displaystyle B\left(n\right) $ del sistema, tales que 
+\[A\left(n+2\right) = aA\left(n+1\right) + bA\left(n\right) + c .\]
+\[B\left(n+2\right) = aB\left(n+1\right) + bB\left(n\right) + c .\]
+Es claro que su diferencia
+\[ .\]
+\[
+\begin{split}
+	D\left(n+2\right) = & A\left(n+2\right)-B\left(n+2\right) = a\left(A\left(n+1\right)-B\left(n+1\right)\right) + b\left(A\left(n\right)-B\left(n\right)\right) \\
+	= &  a D\left(n+1\right) + bD\left(n\right).
+\end{split}
+\]
+es un sistema homogéneo. Así, dada una solución del sistema lineal homogéneo asociado al sistema afín, podemos construir la solución general a partir de ella y una particular, con $\displaystyle A\left(n\right) $ la solución del sistema homogéneo asociado y $\displaystyle A_{p}\left(n\right) $ una solución particular del sistema afín. Para buscar $\displaystyle A_{p}\left(n\right) $, vemos en primer lugar que si una raíz de $\displaystyle P\left(x\right) = 1 $, entonces 
+\[P\left(1\right) = 0 = 1 - a - b \Rightarrow b = 1 - a .\]
+Si $\displaystyle s = 1 $ y $\displaystyle r = a - 1 $, se tendrán las soluciones. Si $\displaystyle r = s = 1 $, que ocurre cuando $\displaystyle a = 2  $ y $\displaystyle b = - 1 $. Otra posibilidad es que $\displaystyle r \neq 1 $ y $\displaystyle s = 1 $ si $\displaystyle  b = 1 - a $ y $\displaystyle a \neq 2 $. Si $\displaystyle r \neq 1 $ y $\displaystyle s \neq 1 $, si $\displaystyle  b=1-a $ y $\displaystyle a \neq 1 $.
+\end{proof}
+\begin{observation}
+\normalfont Para encontrar la solución particular con datos $\displaystyle A\left(0\right) = a_{0} $ y $\displaystyle A\left(1\right) = a_{1} $, basta con resolver el sistema de ecuaciones de incógnitas $\displaystyle c_{1} $ y $\displaystyle c_{2} $.
+\end{observation}
+\begin{eg}
+\normalfont Calcular la TAE, de una cuenta con capitalización cada $\displaystyle m $ meses de intereses con interés $\displaystyle 3\% $. Tendríamos que el sistema dinámico sería
+\[A\left(n+1\right) = \left(1+\frac{I}{m}\right)A\left(n\right) + b ,\]
+con $\displaystyle b $ siendo la cantidad aportar a detraer al finalizar cada período. La solución particular será
+\[A\left(n\right) = \left(1 + \frac{I}{m}\right)^{n}\left(a_{0} + \frac{mb}{I}\right)-\frac{mb}{I} .\]
+En este caso se tienen $\displaystyle m = 4 $ períodos de pago, $\displaystyle I = \frac{3}{100} $ $\displaystyle b = 0 $. A 12 meses,
+\[A\left(4\right) = \left(1 + \frac{0,03}{4}\right)^{4} a_{0}= 1,0304 a_{0} .\]
+Así, $\displaystyle \text{TAE} = 0,0304 = 3,04 \% $.
+\end{eg}
+\section{Sistemas no lineales}
+\begin{fdefinition}[]
+	\normalfont Son aquellos sistemas de la forma $\displaystyle A\left(n+1\right) = f\left(A\left(n\right), n\right) $, $\displaystyle n \in \N\cup \left\{ 0\right\}  $, con $\displaystyle f $ no lineal.
+\end{fdefinition}
+\begin{eg}
+\normalfont Consideremos el sistema $\displaystyle A\left(n+1\right) = - A\left(n\right)^{3} + 0,8A\left(n\right) $. Calculamos el punto de equilibrio con $\displaystyle a = f\left(a\right) $:
+\[a = -a^{3} -0,8a \Rightarrow a = 0 .\]
+Existen otras dos raíces complejas conjugadas. Si $\displaystyle A\left(0\right) = 1,2 $, la sucesión de puntos de la gráfica converge a $\displaystyle \left(a,a\right) $, por lo que es estable. Esto no es cierto para $\displaystyle A\left(0\right)=1,4 $.
+\end{eg}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle a $ el punto de equilibrio de un sistema autónomo $\displaystyle A\left(n+1\right) = f\left(A\left(n\right)\right) $ no lineal, que tenga derivada continua, entonces
+\begin{description}
+\item[(a)] $\displaystyle a $ es estable si $\displaystyle \left|f'\left(a\right)\right| < 1 $.
+\item[(b)] $\displaystyle a $ es inestable si $\displaystyle \left|f'\left(a\right)\right| > 1 $.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(a)] Si $\displaystyle \left|f'\left(a\right)\right|<1 $, tenemos que $\displaystyle \exists \epsilon > 0, b \in \left( \left|f'\left(a\right)\right|, 1\right) $ tal que $\displaystyle \left|f'\left(x_{0}\right)\right|<b $ para $\displaystyle x_{0} \in \left(a-\epsilon, a + \epsilon \right) $. Llamamos $\displaystyle I = \left(a - \epsilon , a + \epsilon \right) $ y elegimos $\displaystyle A\left(0\right) \in I $. Veamos que $\displaystyle \left|A\left(1\right)-a\right| < \left|A\left(0\right)-a\right| $ y que iterativamente tendremos que $\displaystyle \lim_{n \to \infty} \left|A\left(n\right)-a\right| = 0 $.
+Por definición, siendo $\displaystyle a $ punto de equilibrio, entonces por definición $\displaystyle a = f\left(a\right) $. Además, $\displaystyle A\left(1\right) = f\left(A\left(0\right)\right) $. Por tanto, 
+\[ \left|A\left(1\right)-a\right| = \left|f\left(A\left(0\right)\right)-f\left(a\right)\right| .\]
+Por el teorema del valor medio, como $\displaystyle f $ es continua $\displaystyle \exists x_{0}  $ entre $\displaystyle a $ y $\displaystyle A\left(0\right) $ tal que 
+\[ f\left(A\left(0\right)\right)-f\left(a\right) = f'\left(x_{0}\right) \left(A\left(0\right)-a\right) .\]
+Habiendo elegido $\displaystyle A\left(0\right) \in I $, entonces $\displaystyle x_{0} \in I $ y, consecuentemente, $\displaystyle \left|f'\left(x_{0}\right)\right| < b $. Así
+\[ \left|A\left(1\right)-a\right| = \left|f'\left(x_{0}\right)\right| \left|A\left(0\right)-a\right| < b\left|A\left(0\right)-a\right|.\]
+Así, tenemos que $\displaystyle A\left(1\right) \in I $, por lo que podemos repetir el proceso para demostrar lo mismo para $\displaystyle A\left(2\right) $. Así, iterando
+\[ \left|A\left(n\right)-a\right| < \cdots < b^{n-1}\left|A\left(1\right)-a\right|< b^{n}\left|A\left(0\right)-a\right| .\]
+Por ser $\displaystyle b < 1 $, se tiene que $\displaystyle \lim_{n \to \infty} \left|A\left(n\right)-a\right| = 0 $.
+\item[(b)] Procediendo de la misma forma que \textbf{(a)}, siendo $\displaystyle \left|f'\left(a\right)\right| > 1 $, entonces existen $\displaystyle \epsilon > 0 $ y $\displaystyle b \in \left(1, \left|f'\left(a\right)\right|\right) $ tales que $\displaystyle \left|f'\left(x\right)\right| > b $, $\displaystyle \forall x \in \left(a - \epsilon, a + \epsilon \right) $. Elegimos ahora $\displaystyle A\left(0\right) \in I = \left(a-\epsilon, a+ \epsilon \right) $.
+	Existirá cierto $\displaystyle n \in \N $ con $\displaystyle A\left(n\right) \not\in I $ y $\displaystyle a $ será inestable. En efecto, siendo $\displaystyle a $ de equilibrio tenemos que $\displaystyle a = f\left(a\right) $ y $\displaystyle A\left(1\right) = f\left(A\left(0\right)\right) $. Entonces,
+	\[ \left|A\left(0\right)-a\right| = \left|f\left(A\left(0\right)\right)-f\left(a\right)\right| .\]
+Por el teorema del valor medio, existe $\displaystyle x_{0} \in I $ tal que 
+\[ \left|A\left(1\right)-a\right| = \left|f'\left(x_{0}\right)\right| \left|A\left(0\right)-a\right| > b \left|A\left(0\right)-a\right| .\]
+Ahora pueden pasar dos cosas:
+\begin{itemize}
+\item Si $\displaystyle A\left(1\right) \not\in I $, hemos ganado.
+\item Si $\displaystyle A\left(1\right) \in I $, iteramos obteniendo $\displaystyle A\left(2\right) $ tal que
+	\[ \left|A\left(2\right) - a\right| > b \left|A\left(1\right) - a\right| > b^{2} \left|A\left(0\right)-a\right| .\]
+	Si $\displaystyle A\left(2\right) \not\in I $, hemos ganado. En caso contrario, seguimos iterando.
+\end{itemize}
+ Como $\displaystyle I $ es finito, entonces iterando el procedimiento existirá cierto $\displaystyle n \in \N $ tal que $\displaystyle A\left(n\right) \not\in I $ o bien $\displaystyle \left|A\left(n+1\right)-a\right| > b^{n+1} \left|A\left(0\right)-a\right| $. Dado que $\displaystyle \lim_{n \to \infty}b^{n}=\infty $, entonces se tendrá que existe $\displaystyle n \in \N $ tal que $\displaystyle A\left(n\right) \not\in I $ o $\displaystyle A\left(n+1\right) \not\in I $, por lo que el sistema será inestable.
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont Si $\displaystyle \left|f'\left(a\right)\right| = 1 $, el resultado no es concluyente. Una forma de obtener más información es estudiando las derivadas sucesivas, aunque aquí no lo haremos.
+\end{observation}
+\begin{eg}
+\normalfont 
+\begin{description} 
+\item[(a)] Continuación de $\displaystyle A\left(n+1\right) = -A\left(n\right)^{3}-0,8A\left(n\right) $. Teníamos que $\displaystyle a=0 $ era el único punto de equilibrio y $\displaystyle f'\left(x\right) = -3x^{2}-0,8 $. Se tiene que $\displaystyle \left|f'\left(0\right)\right| = 0,8 < 1 $, por lo que el sistema es estable.
+\item[(b)] Consideremos $\displaystyle A\left(n+1\right) = A\left(n\right)^{3} - A\left(n\right)^{2} + 1 $, $\displaystyle n \in \N \cup \left\{ 0\right\}  $. Calculamos los puntos de equilibrio,
+	\[a = a^{3}-a^{2}+1 \Rightarrow a^{3}-a^{2}-a+1=0 \Rightarrow a = \pm 1.\]
+	Tenemos que $\displaystyle f'\left(x\right) = 3x^{2}-2x $. Así, $\displaystyle \left|f'\left(1\right)\right| = 1 $, por lo que no podemos decidir, y $\displaystyle \left|f'\left(-1\right)\right| = 5 > 1 $ por lo que es inestable. Por observación gráfica, se puede ver que en $\displaystyle a = 1 $, es estable por la izquierda e inestable por la derecha, por lo que es \textbf{semiestable}. Es decir $\displaystyle a = 1 $ es un \textbf{punto de equilibrio semiestable}.
+\end{description}
+\end{eg}
+\begin{observation}
+\normalfont Cuando un punto de equilibrio es estable, es útil calcular el \textbf{intervalo maximal} $\displaystyle \left(c,d\right) $ en el que se verifique que
+\[\lim_{n \to \infty}A\left(n\right) = a, \; \forall A\left(0\right) \in \left(c,d\right) .\]
+\end{observation}
 

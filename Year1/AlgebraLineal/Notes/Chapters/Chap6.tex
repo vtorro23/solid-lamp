@@ -15,19 +15,13 @@ Tenemos que $\displaystyle \forall i = 1, \ldots, p $,
 \normalfont En un producto escalar, dado que es definido positivo, el índice es 0.
 \end{observation}
 Sea $\displaystyle V $ un $\displaystyle \R $-espacio vectorial y $\displaystyle \beta : V \times V \to \R $ una forma bilineal simétrica. Entonces $\displaystyle \left(V,\beta \right) $ es un espacio vectorial euclídeo. En efecto, tenemos que existe $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base ortonormal de $\displaystyle V $.
-\begin{fprop}[]
-	\normalfont Se considera $\displaystyle \left(E, \langle,\rangle \right) $. Sean $\displaystyle \left\{ \vec{x}, \vec{y}\right\} \subset V $ linealmente independientes y $\displaystyle \lambda \in \R $ tal que $\displaystyle \vec{x} + \lambda \vec{y} \neq \vec{0} $. Se tiene:
+\begin{observation}
+	\normalfont Se considera $\displaystyle \left(E, \langle,\rangle \right) $. Sean $\displaystyle \left\{ \vec{x}, \vec{y}\right\} \subset V $ linealmente independientes y $\displaystyle \lambda \in \R $ tal que $\displaystyle \vec{x} + \lambda \vec{y} \neq \vec{0} $. 
 	\begin{description}
-	\item[(i)] $\displaystyle \langle \vec{x} + \lambda \vec{y}, \vec{x} + \lambda \vec{y} \rangle > 0 \Rightarrow \langle \vec{x}, \vec{x} \rangle + 2\lambda \langle \vec{x}, \vec{y}\rangle + \lambda ^{2}\langle \vec{y}, \vec{y} \rangle >0$.
-	\item[(ii)] Si $\displaystyle \left\{ \vec{x}, \vec{y}\right\}  $ son linealmente dependientes, entonces $\displaystyle \exists ! \lambda \in \R $ tal que $\displaystyle \vec{x} + \lambda \vec{y} = \vec{0} $.
+	\item[(i)] $\displaystyle \langle \vec{x} + \lambda \vec{y}, \vec{x} + \lambda \vec{y} \rangle > 0 \Rightarrow \langle \vec{x}, \vec{x} \rangle + 2\lambda \langle \vec{x}, \vec{y}\rangle + \lambda ^{2}\langle \vec{y}, \vec{y} \rangle >0$. La ecuación dada por $\displaystyle \langle \vec{x}, \vec{x} \rangle + 2\lambda \langle \vec{x}, \vec{y} \rangle + \lambda^{2} \langle \vec{y}, \vec{y} \rangle = 0 $, no tiene raíces reales, por lo que $\displaystyle \langle \vec{x}, \vec{y}\rangle < \langle \vec{x}, \vec{x} \rangle \langle \vec{y}, \vec{y} \rangle  $.
+	\item[(ii)] Si $\displaystyle \left\{ \vec{x}, \vec{y}\right\}  $ son linealmente dependientes, entonces $\displaystyle \exists ! \lambda \in \R $ tal que $\displaystyle \vec{x} + \lambda \vec{y} = \vec{0} $. La ecuación anterior tiene una única solición real, esta es $\displaystyle \left|\langle \vec{x}, \vec{y} \rangle \right|^{2} = \langle \vec{x}, \vec{x} \rangle \langle \vec{y}, \vec{y} \rangle $.
 	\end{description}
-\end{fprop}
-\begin{proof}
-\begin{description}
-\item[(i)] La ecuación dada por $\displaystyle \langle \vec{x}, \vec{x} \rangle + 2\lambda \langle \vec{x}, \vec{y} \rangle + \lambda^{2} \langle \vec{y}, \vec{y} \rangle = 0 $, no tiene raíces reales, pues $\displaystyle \langle \vec{x}, \vec{y}\rangle < \langle \vec{x}, \vec{x} \rangle \langle \vec{y}, \vec{y} \rangle  $.
-\item[(ii)] La ecuación anterior tiene una única solición real, esta es $\displaystyle \left|\langle \vec{x}, \vec{y} \rangle \right|^{2} = \langle \vec{x}, \vec{x} \rangle \langle \vec{y}, \vec{y} \rangle $.
-\end{description}
-\end{proof}
+\end{observation}
 \begin{observation}
 \normalfont Una importante conclusión es la desigualdad Cauchy-Schwartz:
 \[ \left|\langle \vec{x}, \vec{y}\rangle \right|^{2} \leq \langle\vec{x},\vec{x}\rangle\langle\vec{y},\vec{y}\rangle .\]
@@ -70,6 +64,7 @@ Así, tenemos que $\displaystyle \forall j = 1, \ldots, i $,
 = & \langle \vec{u}_{i+1}, \vec{v}_{j}\rangle - \langle \vec{u}_{i+1},\vec{v}_{j}\rangle = 0 .
 \end{split}
 \]
+Tomando $\displaystyle \vec{v}_{i+1} = \frac{\vec{v'}_{i+1}}{ \|\vec{v'}_{i+1}\|} $, tenemos que $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{i+1}\right\}  $ es una base ortonormal de $\displaystyle L_{i+1} $.
 \end{proof}
 \section*{Criterio de Sylvester}
 Sea $\displaystyle \beta : V \times V \to \R $, donde $\displaystyle V $ es un $\displaystyle \R $-espacio vectorial, una forma bilineal simétrica. Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $. Tenemos que la matriz de $\displaystyle \beta  $ respecto de esta base será:
@@ -80,32 +75,30 @@ Definimos
 	\[ \Delta_{1} = \left|a_{11}\right|, \; \Delta_{2} = \begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{vmatrix} , \; \Delta_{i} = \begin{vmatrix} a_{11} & \cdots & a_{1i}\\
 \vdots & & \vdots \\
  a_{i1} & \cdots & a_{ii}\end{vmatrix}  .\]
-Así, tenemos que $\displaystyle \Delta_{n} = \det\left(\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{u}_{n}\right)\right) $. 
+Así, tenemos que $\displaystyle \Delta_{n} = \det\left(\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta\right)\right) $. 
 \begin{ftheorem}[Criterio de Sylvester]
 \normalfont Tenemos que $\displaystyle \beta  $ es un producto escalar si y solo si $\displaystyle \Delta_{i} > 0 $ para $\displaystyle i = 1, \ldots, n $. 
 \end{ftheorem}
 \begin{proof}
 \begin{description}
-\item[(i)] Si $\displaystyle \beta  $ es producto escalar, tenemos que $\displaystyle \beta_{L_{i}} $ es producto escalar en $\displaystyle L_{i} $.
-\item[(ii)] Sea $\displaystyle \beta\left(\vec{u}_{1},\vec{u}_{1}\right) = a_{11}>0 $. Cogemos $\displaystyle \vec{v}_{1} = \frac{\vec{u}_{1}}{\sqrt{a_{11}}} $. Cogemos $\displaystyle \vec{v'}_{2} = \vec{u}_{2}+\lambda\vec{v}_{1} $. Entonces tenemos que
-	\[\beta\left(\vec{v'}_{2}, \vec{v}_{1}\right) = \beta\left(\vec{u}_{2}, \vec{v}_{1}\right)+\lambda\underbrace{\beta\left(\vec{v}_{1}, \vec{v}_{1}\right)}_{1} .\]
-	Tomando $\displaystyle \lambda = -\beta\left(\vec{u}_{2}, \vec{v}_{1}\right) $, tenemos que $\displaystyle \beta\left(\vec{v'}_{2}, \vec{v}_{1}\right) = 0 $. Por tanto, $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}\right\}  $ es base de $\displaystyle L_{2} $ y $\displaystyle \left\{ \vec{v}_{1}, \vec{u}_{2}\right\}  $ también es base de $\displaystyle L_{2} $. Así, tenemos que 
-	\[ \left|\mathcal{M}_{ \left\{ \vec{v}_{1}, \vec{u}_{2}\right\} }\left(\beta_{L_{2}}\right)\right| = \begin{vmatrix} 1 & \beta\left(\vec{v}_{1}, \vec{u}_{2}\right) \\ \beta\left(\vec{v}_{1}, \vec{u}_{2}\right) & \beta\left(\vec{u}_{2}, \vec{u}_{2}\right) \end{vmatrix} = \beta\left(\vec{u}_{2}, \vec{u}_{2}\right)-\beta\left(\vec{v}_{1}, \vec{u}_{2}\right)^{2} .\]	
-	Además tenemos que $\displaystyle \det\left(\mathcal{M}_{ \left\{ \vec{u}_{1}, \vec{u}_{2}\right\} }\left(\beta_{L_{2}}\right)\right) = \Delta_{2} > 0 $. Tenemos que
+	\item[(i)] Si $\displaystyle \beta  $ es producto escalar, tenemos que $\displaystyle \beta_{L_{i}} $ es producto escalar en $\displaystyle L_{i} $. Otra forma de verlo es por inducción. Dado que $\displaystyle \beta  $ es un producto escalar, se tiene que es definida positiva. Así, si $\displaystyle n = 1 $, tenemos que $\displaystyle \left\{ \vec{u}_{1}\right\}  $ es una base de $\displaystyle V $. Por tanto,
+\[\beta\left(\vec{u}_{1}, \vec{u}_{1}\right) = a_{11}^{2} > 0 .\]
+Asumimos que es cierto para $\displaystyle n-1 $. Queda ver que $\displaystyle \Delta_{n} > 0 $. Como $\displaystyle \beta  $ es definida positiva, existe una base $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\}  $ ortonormal, es decir, $\displaystyle \mathcal{M}_{ \left\{ \vec{v}_{i}\right\} }\left(\beta \right) = I_{n \times n} $. Así, existe $\displaystyle P \in \GL\left(n,\R \right) $ tal que
+\[ I_{n \times n} = P^{t}\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta \right) P \Rightarrow 1 = \det\left(P^{t}\right)\det\left(\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\right)\det\left(P\right) \iff \Delta_{n} = \frac{1}{\left(\det\left(P\right)\right)^{2}} > 0 .\]
+\item[(ii)] Sea $\displaystyle \beta\left(\vec{u}_{1},\vec{u}_{1}\right) = a_{11}>0 $. Cogemos $\displaystyle \vec{v}_{1} = \frac{\vec{u}_{1}}{\sqrt{a_{11}}} $. Es fácil ver que $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}\right\}  $ es base de $\displaystyle L_{2} $ y $\displaystyle \left\{ \vec{v}_{1}, \vec{u}_{2}\right\}  $ también es base de $\displaystyle L_{2} $. 	
+	Además tenemos que $\displaystyle \det\left(\mathcal{M}_{ \left\{ \vec{u}_{1}, \vec{u}_{2}\right\} }\left(\beta_{L_{2}}\right)\right) = \Delta_{2} > 0 $. Por tanto
 	\[ \det\left(\mathcal{M}_{ \left\{ \vec{v}_{1}, \vec{u}_{2}\right\} }\right) = \begin{vmatrix} 1 & \beta\left(\vec{v}_{1}, \vec{u}_{2}\right) \\
-	\beta\left(\vec{v}_{1}, \vec{u}_{2}\right) & \beta\left(\vec{u}_{2}, \vec{u}_{2}\right)\end{vmatrix} = \beta\left(\vec{u}_{2}, \vec{u}_{2}\right)-\beta\left(\vec{v}_{1}, \vec{u}_{2}\right)^{2} > 0 .\]
-	Así, definimos $\displaystyle \vec{v}_{2} = \frac{\vec{v'}_{2}}{\beta\left(\vec{v'}_{2}, \vec{v}_{2}\right)} $. Supongamos que es cierto para $\displaystyle i < n $. Tenemos que 
+	\beta\left(\vec{v}_{1}, \vec{u}_{2}\right) & \beta\left(\vec{u}_{2}, \vec{u}_{2}\right)\end{vmatrix} = \beta\left(\vec{u}_{2}, \vec{u}_{2}\right)-\beta\left(\vec{v}_{1}, \vec{u}_{2}\right)^{2} = \beta\left(\vec{u}_{2}, \vec{u}_{2}\right) > 0 .\]
+	Cogemos $\displaystyle \vec{v'}_{2} = \vec{u}_{2}+\lambda\vec{v}_{1} $. Entonces tenemos que
+	\[\beta\left(\vec{v'}_{2}, \vec{v}_{1}\right) = \beta\left(\vec{u}_{2}, \vec{v}_{1}\right)+\lambda\underbrace{\beta\left(\vec{v}_{1}, \vec{v}_{1}\right)}_{1} .\]
+	Tomando $\displaystyle \lambda = -\beta\left(\vec{u}_{2}, \vec{v}_{1}\right) $, tenemos que $\displaystyle \beta\left(\vec{v'}_{2}, \vec{v}_{1}\right) = 0 $. Así, definimos $\displaystyle \vec{v}_{2} = \frac{\vec{v'}_{2}}{\beta\left(\vec{v'}_{2}, \vec{v'}_{2}\right)} $ y vemos que $\displaystyle \left\{ \vec{v}_{1}, \vec{v}_{2}\right\}  $ es base ortonormal de $\displaystyle L_{2} $. Supongamos que es cierto para $\displaystyle i < n $. Tenemos que 
 	\[\beta\left(\vec{v}_{k}, \vec{v}_{h}\right) = 
 	\begin{cases}
 	1, \; k = h\\
 	0, \; k \neq h
 	\end{cases}
 	.\]
-	Definimos $\displaystyle \vec{v'}_{2} = \vec{u}_{2} + \lambda\vec{v}_{1} $, con $\displaystyle \lambda \in \R $. Así, tomando $\displaystyle \lambda = - \beta\left(\vec{u}_{2},\vec{v}_{1}\right) $. Así, $\displaystyle \vec{v'}_{2} $ es ortogonal a $\displaystyle \vec{v}_{1} $. Así, tenemos que $\displaystyle \left\{ \vec{v}_{1}, \vec{v'}_{2}\right\}  $ son base de $\displaystyle L_{2} $. Así, nos queda que
-	\[\mathcal{M}_{ \left\{ \vec{v}_{1}, \vec{v'}_{2}\right\} }\left(\beta_{L_{2}}\right) = \begin{pmatrix} 1 & -\beta\left(\vec{u}_{2}, \vec{v}_{1}\right) \\
-	-\beta\left(\vec{u}_{2}, \vec{v}_{1}\right) & \beta\left(\vec{u}_{2}, \vec{u}_{2}\right)\end{pmatrix} .\]
-	Así, tenemos que $\displaystyle \det\left(\mathcal{M}_{ \left\{ \vec{v}_{1}, \vec{v'}_{2}\right\} }\left(\beta_{L_{2}}\right)\right) = \beta\left(\vec{u}_{2},\vec{u}_{2}\right)-\beta\left(\vec{u}_{2}, \vec{v}_{1}\right)^{2} \geq 0 $. Así, podemos tomar, $\displaystyle \vec{v}_{2} = \frac{\vec{v'}_{2}}{\sqrt{\beta\left(\vec{v'}_{2}, \vec{v'}_{2}\right)}} $. Así tendremos que $\displaystyle \beta\left(\vec{v}_{2}, \vec{v}_{2}\right) = 1 $. \\ \\
-	Supongamos definidos $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{r}\right\}  $ base de $\displaystyle L_{r} $ con $\displaystyle r < n $. Definimos 
+	Es decir, supongamos definidos $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{r}\right\}  $ base de $\displaystyle L_{r} $ con $\displaystyle r < n $. Definimos 
 	\[\vec{v'}_{r+1} = \vec{u}_{r+1}+ \lambda_{1}\vec{v}_{1} + \cdots + \lambda_{r}\vec{v}_{r}.\]
 	Entonces, para $\displaystyle i = 1, \ldots, r $ se tiene que
 	\[
@@ -114,8 +107,7 @@ Así, tenemos que $\displaystyle \Delta_{n} = \det\left(\mathcal{M}_{ \left\{ \v
 		= & \beta\left(\vec{u}_{r+1}, \vec{v}_{i}\right) + \lambda_{i} = 0 .
 	\end{split}
 	\]
-	Tomamos $\displaystyle \lambda_{i} = -\beta\left(\vec{u}_{r+1}, \vec{v}_{i}\right) $, tenemos que $\displaystyle \vec{v'}_{r+1} $ es ortogonal a $\displaystyle \vec{v}_{i} $ para $\displaystyle i = 1, \ldots, r $. Ahora, tenemos que
-	\[ .\]
+	Tomando $\displaystyle \lambda_{i} = -\beta\left(\vec{u}_{r+1}, \vec{v}_{i}\right) $, tenemos que $\displaystyle \vec{v'}_{r+1} $ es ortogonal a $\displaystyle \vec{v}_{i} $ para $\displaystyle i = 1, \ldots, r $. Ahora, tenemos que
 \[
 \begin{split}
 	\beta\left(\vec{v'}_{r+1}, \vec{v'}_{r+1}\right) = & \beta\left(\vec{u}_{r+1}, \vec{u}_{r+1}\right) + 2 \sum^{r}_{i=1}-\beta\left(\vec{u}_{r+1}, \vec{v}_{r}\right)^{2}+\sum^{r}_{i,j=1}\beta\left(-\beta\left(\vec{u}_{r+1}, \vec{v}_{i}\right)\vec{v}_{i},- \beta\left(\vec{u}_{r+1}, \vec{v}_{j}\right)\vec{v'}_{j}\right)\\
@@ -137,7 +129,7 @@ Así, tomamos $\displaystyle \vec{v}_{r+1} = \frac{\vec{v'}_{r+1}}{\sqrt{\beta\l
 \vdots & & \vdots \\
 a_{i1} & \cdots & a_{ii}\end{pmatrix} .\]
 \end{observation}
-Dado un espacio vectorial euclídeo $\displaystyle E $ y un producto escalar $\displaystyle \langle, \rangle  $ , podemos definimor el isomorfismo
+Dado un espacio vectorial euclídeo $\displaystyle V $ y un producto escalar $\displaystyle \langle, \rangle  $ , podemos definimor el isomorfismo
 \[
 \begin{split}
 	\theta : V \to & V^{*} \\
@@ -145,7 +137,7 @@ Dado un espacio vectorial euclídeo $\displaystyle E $ y un producto escalar $\d
 \end{split}
 \]
 Donde, $\displaystyle \langle, \rangle _{\vec{x}} : V \to \K  $ con $\displaystyle \vec{y} \to \langle, \rangle_{\vec{x}}\left(\vec{y}\right) = \langle \vec{x}, \vec{y}\rangle  $. Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es base de $\displaystyle V $ , tenemos que $\displaystyle \left\{ \theta\left(\vec{u}_{1}\right), \ldots, \theta\left(\vec{u}_{n}\right)\right\}  $ es base de $\displaystyle V^{*} $.
-Si consideramos $\displaystyle \left\{ \omega^{1}, \ldots, \omega^{n}\right\}  $ la base dual de $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $. Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es base ortonormal, tenemos que 
+Consideremos $\displaystyle \left\{ \omega^{1}, \ldots, \omega^{n}\right\}  $ la base dual de $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $. Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es base ortonormal, tenemos que 
 \[\theta_{\vec{u}_{i}}\left(\vec{u}_{j}\right) = \omega^{i}\left(\vec{u}_{j}\right) = \langle \vec{u}_{i}, \vec{u}_{j}\rangle =
 \begin{cases}
 1, \; i = j \\
@@ -153,13 +145,16 @@ Si consideramos $\displaystyle \left\{ \omega^{1}, \ldots, \omega^{n}\right\}  $
 \end{cases}
 .\]
 Así, se tiene que $\displaystyle \forall j = 1, \ldots, n $, $\displaystyle \theta_{\vec{u}_{i}} \left(\vec{u}_{j}\right) = \omega^{i}\left(\vec{u}_{j}\right) $, es decir, $\displaystyle \theta_{\vec{u}_{i}} = \omega^{i} $.
-Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es base ortonormal y $\displaystyle \vec{x}, \vec{y} \in V $ con 
+\begin{observation}
+\normalfont Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es base ortonormal y $\displaystyle \vec{x}, \vec{y} \in V $ con 
 \[ \vec{ x} = \sum^{n}_{i = 1}x^{i}\vec{u}_{i}, \quad \vec{y} = \sum^{n}_{ i= 0}y^{i}\vec{u}_{i} ,\]
 se tiene que 
 \[\langle \vec{x}, \vec{y} \rangle = \begin{pmatrix} x^{1} & \cdots & x^{n} \end{pmatrix} I_{n\times n}\begin{pmatrix} y^{1} \\ \vdots \\ y^{n} \end{pmatrix} = x^{1}y^{1} + \cdots + x^{n}y^{n}.\]
+\end{observation}
 Sea $\displaystyle \emptyset \neq A \subset E $, tenemos que $\displaystyle A^{\perp }_{\langle, \rangle } = \left\{ \vec{x} \in E \; : \; \langle \vec{x}, \vec{y} \rangle = 0, \forall\vec{y} \in A\right\} \in \mathcal{L}\left(V\right) $. Recordando del tema anterior, tenemos que Si $\displaystyle L \in \mathcal{L}\left(V\right) $, se tiene que $\displaystyle L \oplus L^{\perp }_{\langle, \rangle} = E $ y $\displaystyle \left(L^{\perp }_{\langle, \rangle }\right)^{\perp }_{\langle, \rangle} = L $. \\ \\
 Consideremos $\displaystyle \K = \R $ y $\displaystyle \left(E_{1}, \langle, \rangle_{1}\right) $, $\displaystyle \left(E_{2}, \langle, \rangle_{2}\right) $.
-\begin{fdefinition}[Ortogonal]
+\section{Aplicaciones ortogonales}
+\begin{fdefinition}[Aplicación ortogonal]
 \normalfont Una aplicación lineal $\displaystyle f : E_{1} \to E_{2}$ es \textbf{ortogonal} si $\displaystyle \forall \vec{x}, \vec{y} \in E_{1} $, $\displaystyle \langle f\left(\vec{x}\right), f\left(\vec{y}\right)\rangle_{2} = \langle \vec{x}, \vec{y}\rangle_{1} $.
 \end{fdefinition}
 \begin{ftheorem}[]
@@ -173,23 +168,24 @@ Consideremos $\displaystyle \K = \R $ y $\displaystyle \left(E_{1}, \langle, \ra
 \end{ftheorem}
 \begin{proof}
 \begin{description}
-\item[(a) $\displaystyle \Rightarrow $ (b)] Por hipótesis, $\displaystyle f $ conserva el producto escalar. Así, $\displaystyle \forall \vec{x}, \vec{y} \in E_{1} $, tenemos que
+\item[(a) $\displaystyle \Rightarrow $ (b)] Por hipótesis, $\displaystyle f $ conserva el producto escalar. Demostremos que $\displaystyle f $ es lineal. Tenemos que $\displaystyle \forall \vec{x}, \vec{y} \in E_{1} $
 \[
 \begin{split}
 	\|f\left(\vec{x} + \vec{y}\right) - f\left(\vec{x}\right) - f\left(\vec{y}\right) \|^{2}_{2} = & \langle f\left(\vec{x} + \vec{y}\right) , f\left(\vec{x} +\vec{y}\right)\rangle_{2} + \langle f\left(\vec{x}\right), f\left(\vec{x}\right)\rangle_{2} + \langle f\left(\vec{y}\right), f\left(\vec{y}\right)\rangle _{2}\\
 	- & 2\langle f\left(\vec{x}+\vec{y}\right),f\left(\vec{x}\right)\rangle_{2}-2\langle f\left(\vec{x}+\vec{y}\right), f\left(\vec{y}\right)\rangle_{2}+2\langle f\left(\vec{x}\right), f\left(\vec{y}\right)\rangle_{2} \\
 	= & \|\vec{x}+\vec{y}\|_{1} + \|\vec{x}\|_{1}^{2} + \|\vec{y}\|^{2}_{1}-2\langle \vec{x}+\vec{y}, \vec{x}\rangle_{1}-2\langle \vec{x}+\vec{y}, \vec{y}\rangle_{1}+2\langle \vec{x}, \vec{y}\rangle_{1} \\
-	= & \|\vec{x}\|^{2}_{1} + \|\vec{y}\|^{2}_{1} + 2\langle\vec{x}, \vec{y}\rangle_{1} + \|\vec{x}\|^{2}_{1}+\|\vec{y}\|^{2}_{1}-2\|\vec{x}\|^{2}_{1}-2\langle\vec{y}, \vec{x}\rangle_{1}-2\langle\vec{x}, \vec{y}\rangle_{1}-2\|\vec{y}\|^{2}_{1} + algo\\
+	= & \|\vec{x}\|^{2}_{1} + \|\vec{y}\|^{2}_{1} + 2\langle\vec{x}, \vec{y}\rangle_{1} + \|\vec{x}\|^{2}_{1}+\|\vec{y}\|^{2}_{1}-2\|\vec{x}\|^{2}_{1}-2\langle\vec{y}, \vec{x}\rangle_{1}\\
+	- & 2\langle\vec{x}, \vec{y}\rangle_{1}-2\|\vec{y}\|^{2}_{1} + 2\left\langle \vec{x}, \vec{y} \right\rangle _{1}\\
 	= & 0.
 \end{split}
 \]
-Sea $\displaystyle a \in \R $ y $\displaystyle \vec{x} \in E_{1} $,
+Por tanto, $\displaystyle f\left(x+y\right) = f\left(x\right)-f\left(y\right) $. Ahora, sea $\displaystyle a \in \R $ y $\displaystyle \vec{x} \in E_{1} $,
 	\[
 	\begin{split}
 		\|f\left(a\vec{x}\right)-a f\left(\vec{x}\right) \|^{2}_{2} = & \|f\left(a\vec{x}\right)\|^{2}_{2} - 2a\langle f\left(a\vec{x}\right), f\left(\vec{x}\right) \rangle_{2}+a^{2}\|f\left(\vec{x}\right)\|^{2}_{2}\\
 		= & \langle f\left(a\vec{x}\right), f\left(a\vec{x}\right)\rangle_{2}-2a\langle f\left(a\vec{x}\right), f\left(\vec{x}\right)\rangle_{2} + a^{2}\langle f\left(\vec{x}\right), f\left(\vec{x}\right)\rangle_{2} \\
 		= & \langle a\vec{x}, a\vec{x} \rangle _{1} - 2a\langle a \vec{x}, \vec{x} \rangle _{1} + a^{2}\langle \vec{x}, \vec{x}\rangle _{1} \\
-		= & a\langle\vec{x}, \vec{x}\rangle_{1} -2a^{2}\langle\vec{x},\vec{x}\rangle +  \\
+		= & a\langle\vec{x}, \vec{x}\rangle_{1} -2a^{2}\langle\vec{x},\vec{x}\rangle_{1} +a^{2}\left\langle \vec{x}, \vec{x} \right\rangle _{1}  \\
 		= & 0.
 	\end{split}
 	\]
@@ -232,7 +228,7 @@ Sea $\displaystyle f : E_{1} \to E_{2} $ ortogonal y $\displaystyle \vec{x} \in 
 \[ \|\vec{x}\|_{1} = \|f\left(\vec{x}\right)\|_{2} = \|\vec{0}\|_{2} = 0 \Rightarrow \vec{x} = \vec{0} .\]
 \end{proof}
 \begin{fdefinition}[]
-\normalfont Una aplicación ortogonal $\displaystyle f : E_{1} \to E_{2} $ es un isomorfismo de espacios vecotirales euclídeos si $\displaystyle \exists g : E_{2} \to E_{1} $ ortogonal tal que $\displaystyle g \circ f = id _{E_{1}} $ y $\displaystyle f \circ g = id _{E_{2}} $.
+\normalfont Una aplicación ortogonal $\displaystyle f : E_{1} \to E_{2} $ es un isomorfismo de espacios vectoriales euclídeos si $\displaystyle \exists g : E_{2} \to E_{1} $ ortogonal tal que $\displaystyle g \circ f = id _{E_{1}} $ y $\displaystyle f \circ g = id _{E_{2}} $.
 \end{fdefinition}
 \begin{ftheorem}[]
 \normalfont Sea $\displaystyle f : E_{1} \to E_{2} $ una aplicación ortogonal. Entonces, son equivalentes:
@@ -249,10 +245,11 @@ Sea $\displaystyle f : E_{1} \to E_{2} $ ortogonal y $\displaystyle \vec{x} \in 
 Entonces, tenemos que para $\displaystyle i = 1, \ldots, n $, $\displaystyle g\left(f\left(\vec{u}_{i}\right)\right) = \vec{u}_{i} = id _{E_{1}}\left(\vec{u}_{i}\right) $ y $\displaystyle f\left(g\left(f\left(\vec{u}_{i}\right)\right)\right) = f\left(\vec{u}_{i}\right) = id _{E_{2}} $.
 \end{description}
 \end{proof}
+\section{Grupo ortogonal}
 \begin{observation}
 \normalfont Tenemos que
 \[ O_{n}\left(E\right) = O_{n}\left(\R\right) = \left\{ f : E \to E \; : \; f \; \text{ortogonal}\right\}  .\]
-Tenemos que $\displaystyle \left(O_{n}\left(\R\right), \circ \right) $ es un grupo, y se le denomina grupo ortogonal.
+Tenemos que $\displaystyle \left(O_{n}\left(\R\right), \circ \right) $ es un grupo, y se le denomina \textbf{grupo ortogonal} .
 \end{observation}
 Si $\displaystyle f \in O_{n}\left(\R\right) $, tenemos que $\displaystyle \det\left(f\right) = \pm 1 $. Definimos el conjunto
 \[ O^{+}_{n}\left(\R\right) = \left\{ f \in O_{n}\left(\R\right) \; : \; \det\left(f\right) = 1\right\}  .\]
@@ -278,14 +275,397 @@ Tenemos que $\displaystyle \forall \vec{x} \in A, \vec{y} \in B $, se tiene que
 \end{proof}
 Supongamos que $\displaystyle L \in \mathcal{L}\left(E\right) $. 
 \begin{fprop}[]
-\normalfont Si $\displaystyle f \in O_{n}\left(\R\right) $ tal que $\displaystyle f\left(L\right) = L $ ($\displaystyle \iff f\left(L\right) = L $), entonces $\displaystyle f\left(L^{\perp}_{\left\langle ,  \right\rangle }\right) \subset L^{\perp }_{\left\langle ,  \right\rangle } $, $\displaystyle f|_{L} \in O\left(L\right) $ y $\displaystyle f|_{L^{\perp }} \in O\left(L^{\perp}\right)$.
+\normalfont Si $\displaystyle f \in O_{n}\left(\R\right) $ tal que $\displaystyle f\left(L\right) \subset L $ ($\displaystyle \iff f\left(L\right) = L $), entonces $\displaystyle f\left(L^{\perp}_{\left\langle ,  \right\rangle }\right) \subset L^{\perp }_{\left\langle ,  \right\rangle } $, $\displaystyle f|_{L} \in O\left(L\right) $ y $\displaystyle f|_{L^{\perp }_{\left\langle ,  \right\rangle }} \in O\left(L^{\perp}_{\left\langle ,  \right\rangle }\right)$.
 \end{fprop}
 \begin{proof}
-Sea $\displaystyle \vec{x} \in L^{\perp }_{\left\langle ,  \right\rangle } $. Tenemos que $\displaystyle \forall\vec{y} \in L $, existe $\displaystyle \vec{z} \in L $ tal que $\displaystyle \vec{y} = f\left(\vec{z}\right) $. Así, se tiene que 
+Sea $\displaystyle \vec{x} \in L^{\perp }_{\left\langle ,  \right\rangle } $, por lo que $\displaystyle f\left(\vec{x}\right) \in f\left(L^{\perp }_{\left\langle ,  \right\rangle }\right) $. Tenemos que $\displaystyle \forall\vec{y} \in L $, existe $\displaystyle \vec{z} \in L $ tal que $\displaystyle \vec{y} = f\left(\vec{z}\right) $. Así, se tiene que 
 \[\left\langle f\left(\vec{x}\right), \vec{y} \right\rangle = \left\langle f\left(\vec{x}\right), f\left(\vec{z}\right) \right\rangle = \left\langle \vec{x}, \vec{z} \right\rangle = 0 .\]
-Así, tenemos que $\displaystyle f\left(\vec{x}\right) \in L^{\perp }_{\left\langle ,  \right\rangle } $. Así, $\displaystyle \forall \vec{x}, \vec{y} \in L $, se tiene que $\displaystyle \left\langle \vec{x}, \vec{y} \right\rangle _{L} = \left\langle \vec{x}, \vec{y} \right\rangle  $. Es decir,
+Así, tenemos que $\displaystyle f\left(\vec{x}\right) \in L^{\perp }_{\left\langle ,  \right\rangle } $, por lo que queda demostrado que $\displaystyle f\left(L^{\perp }_{\left\langle ,  \right\rangle }\right) $. \\
+Por otro lado, es fácil ver que $\displaystyle f|_{L} \in O\left(L\right) $. En efecto, $\displaystyle \forall \vec{x}, \vec{y} \in L $, se tiene que $\displaystyle \left\langle \vec{x}, \vec{y} \right\rangle _{L} = \left\langle \vec{x}, \vec{y} \right\rangle  $. Es decir,
 \[\left\langle f\left(\vec{x}\right), f\left(\vec{y}\right) \right\rangle = \left\langle \vec{x}, \vec{y} \right\rangle _{L} .\]
-Así, tenemos que $\displaystyle \vec{x}, \vec{y} \in L^{\perp }_{\left\langle ,  \right\rangle } $, pues 
+Finalmente, dado que $\displaystyle f\left(L^{\perp }_{\left\langle ,  \right\rangle }\right) \subset L^{\perp }_{\left\langle ,  \right\rangle } $ y $\displaystyle f $ es ortogonal, tenemos que $\displaystyle \forall\vec{x}, \vec{y} \in L^{\perp }_{\left\langle ,  \right\rangle } $ 
 \[\left\langle \vec{x}, \vec{y} \right\rangle _{L^{\perp }_{\left\langle ,  \right\rangle }} = \left\langle \vec{x}, \vec{y} \right\rangle = \left\langle f|_{L^{\perp }_{\left\langle ,  \right\rangle }}\left(\vec{x}\right), f|_{L^{\perp }_{\left\langle ,  \right\rangle }}\left(\vec{y}\right) \right\rangle  .\]
+Por tanto, $\displaystyle f|_{L^{\perp }_{\left\langle ,  \right\rangle }} \in O\left(L^{\perp }_{\left\langle ,  \right\rangle }\right) $.
 \end{proof}
+Si $\displaystyle f \in \End\left(E\right) $, tenemos que $\displaystyle \ad\left(f\right) \in \End\left(E\right) $. Recordamos que $\displaystyle \forall \vec{x}, \vec{y} \in E $,
+\[\left\langle f\left(\vec{x}\right), \vec{y} \right\rangle  = \left\langle \vec{x}, \ad\left(f\right)\left(\vec{y}\right) \right\rangle  .\]
+Sea $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es una base ortonormal y $\displaystyle A = \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) $. Tenemos que $\displaystyle \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(\ad\left(f\right)\right) = A^{t} $.
+Decíamos que $\displaystyle f $ es simétrica si $\displaystyle f = \ad\left(f\right) $, es decir, si y solo si en una base ortonormal $\displaystyle A = A^{t} $.
+\begin{flema}[]
+	\normalfont Sea $\displaystyle f\in \End\left(E\right) $ simétrica y sean $\displaystyle \lambda, \mu \in \R $ con $\displaystyle \lambda \neq \mu  $. Entonces $\displaystyle L_{\lambda }  $ y  $\displaystyle L_{\mu } $ son ortogonales \footnote{ $\displaystyle L_{\lambda } = \left\{ \vec{x} \in E \; : \; f\left(\vec{x}\right) = \lambda \vec{x}\right\}  $ y $\displaystyle L_{\mu} = \left\{ \vec{x} \in E \; : \; f\left(\vec{x}\right) = \mu \vec{x}\right\}  $. } .
+\end{flema}
+\begin{proof}
+Sea $\displaystyle \vec{x} \in L_{\lambda } $ e $\displaystyle \vec{y} \in L_{\mu} $. Tenemos que 
+\[\left\langle f\left(\vec{x}\right), \vec{y} \right\rangle = \left\langle \vec{x}, f\left(\vec{y}\right) \right\rangle \Rightarrow \left\langle \lambda\vec{x}, \vec{y} \right\rangle = \left\langle \vec{x}, \mu \vec{y} \right\rangle \Rightarrow \left(\lambda - \mu \right)\left\langle \vec{x}, \vec{y} \right\rangle = 0 .\]
+Como $\displaystyle \lambda \neq \mu  $ se tiene que $\displaystyle \left\langle \vec{x}, \vec{y} \right\rangle  = 0 $.
+\end{proof}
+\begin{ftheorem}[Teorema espectral]
+	\normalfont Si $\displaystyle f: E \to E $ es simétrica, entonces $\displaystyle f $ es diagonalizable y existe $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base ortonormal de $\displaystyle E $ formada por vectores propios.
+\end{ftheorem}
+\begin{proof}
+Sea $\displaystyle \lambda \in \R $ un valor propio de $\displaystyle f $. Si $\displaystyle \vec{x} \in \Ker\left(f- \lambda id _{E}\right)^{2} $ tenemos que
+\[ \left\langle \left(f-\lambda id _{E}\right)\left(\vec{x}\right), \left(f-\lambda id _{E}\right)\left(\vec{x}\right) \right\rangle = \left\langle \vec{x}, \left(f- \lambda id _{E}\right)^{2}\left(\vec{x}\right) \right\rangle = 0 .\]
+Así, tenemos que $\displaystyle \left(f- \lambda id _{E}\right)\left(\vec{x}\right) = 0 $, por lo que tenemos que $\displaystyle \Ker\left(f-\lambda id _{E}\right) = \Ker\left(f - \lambda id _{E}\right)^{2} $. Así, la multiplicidad geométrica  es 1 y es diagonalizable. 
+Ahora vamos a ver que no hay autovalores complejos. Si $\displaystyle \vec{x} \in \Ker\left(f^{2}+2af+b\right) $ con $\displaystyle a^{2}-b<0 $, vamos a ver que $\displaystyle \vec{x} = \vec{0} $. Asumimos que $\displaystyle \vec{x} \neq \vec{0} $. 
+\[ 0 \leq \left\langle \left(f+aid _{E}\right)\left(\vec{x}\right), \vec{x} \right\rangle = \left(a^{2}-b\right)\left\langle \vec{x}, \vec{x} \right\rangle \leq 0 .\]
+Por tanto, tenemos que $\displaystyle \left(a^{2}-b\right)\left\langle \vec{x}, \vec{x} \right\rangle =0 $, por lo que $\displaystyle \left\langle \vec{x}, \vec{x} \right\rangle = 0 $, por lo que $\displaystyle \vec{x} = \vec{0} $. \\ \\
+Finalmente, por el lema anterior si $\displaystyle \lambda_{1}, \ldots, \lambda_{k} $ son autovalores con $\displaystyle \lambda_{i} \neq \lambda_{j} $ con $\displaystyle i \neq j $, tenemos que
+\[L_{\lambda_{1}} \oplus \cdots \oplus L_{\lambda_{k}} .\]
+\end{proof}
+\begin{observation}
+\normalfont Sea $\displaystyle f \in O_{n}\left(E\right) $, por lo que $\displaystyle \forall \vec{x}, \vec{y} \in E $ se tiene que $\displaystyle \left\langle f\left(\vec{x}\right), f\left(\vec{y}\right) \right\rangle = \left\langle \vec{x}, \vec{y} \right\rangle  $. Si $\displaystyle f\left(\vec{x}\right) = \vec{0} $ se tiene que $\displaystyle \forall \vec{y} \in E $, $\displaystyle \left\langle f\left(\vec{x}\right), f\left(\vec{y}\right) \right\rangle =\left\langle \vec{x}, \vec{y} \right\rangle =0 $.
+Además, tenemos que $\displaystyle \left\langle f^{-1}\left(\vec{x}\right), f^{-1}\left(\vec{y}\right) \right\rangle = \left\langle \vec{x}, \vec{y} \right\rangle  $. También tenemos que $\displaystyle \left\langle f^{-1}\left(\vec{x}\right), \vec{y} \right\rangle = \left\langle \vec{x}, f\left(\vec{y}\right) \right\rangle  $, por lo que $\displaystyle f^{-1} = \ad\left(f\right) $. Así, en una base ortonormal $\displaystyle A^{-1} = A^{t} $.
+\end{observation}
+\begin{observation}
+	\normalfont Sean $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ y $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\}  $ bases ortonormales. Se tiene que 
+	\[\begin{pmatrix} \vec{v}_{1} & \cdots & \vec{v}_{n} \end{pmatrix} = \begin{pmatrix} \vec{u}_{1} & \cdots & \vec{u}_{n} \end{pmatrix}C, \; C \in \GL\left(n, \K\right) .\]
+	Vamos a ver qué podemos deducir de $\displaystyle C $. Sea $\displaystyle f \in \End\left(E\right)$ la única aplicación lineal tal que $\displaystyle f\left(\vec{u}_{i}\right) = \vec{v}_{i} $ con $\displaystyle i = 1, \ldots, n $.
+	Tenemos que $\displaystyle \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) = C $. También se verifica que si $\displaystyle \vec{x} = \sum^{n}_{ i=1}x^{i}\vec{u}_{i} $ e $\displaystyle \vec{y} = \sum^{n}_{ i=1}y^{i}\vec{u}_{i} $, entonces
+	\[\left\langle \vec{x}, \vec{y} \right\rangle = \sum^{n}_{i,j=1}x^{i}y^{j}\beta\left(\vec{u}_{i}, \vec{u}_{j}\right) = x^{1}y^{1} + \cdots + x^{n}y^{n} .\]
+	Tenemos que 
+	\[f\left(\vec{x}\right) = \sum^{n}_{ i=1}x^{i}f\left(\vec{u}_{i}\right) = \sum^{n}_{ i= 1}x^{i}\vec{v}_{i}, \quad f\left(\vec{y}\right) = \sum^{n}_{i=1}y^{i}f\left(\vec{u}_{i}\right)=\sum^{n}_{ i=1}y^{i}\vec{v}_{i} .\]
+Así, tenemos que $\displaystyle \left\langle f\left(\vec{x}\right), f\left(\vec{y}\right) \right\rangle = \left\langle \vec{x}, \vec{y} \right\rangle  $, por lo que $\displaystyle \exists C^{-1} = C^{t} $, es decir, $\displaystyle C $ es ortogonal.	
+\end{observation}
+\begin{observation}
+\normalfont Esto nos va a permitir diagonalizar matrices simétricas por semejanza y por congruencia.
+\end{observation}
+Tenemos que
+\[O_{n}\left(\R\right) = O\left(E\right) = \left\{ f \in \Aut\left(E\right) \; : \; f\; \text{ortogonal}\right\}  .\]
+\section{Transformaciones ortogonales}
+\subsection{Simetrías vectoriales ortogonales}
+\begin{fdefinition}[Simetría vectorial ortogonal]
+\normalfont Sea $\displaystyle L \in \mathcal{L}\left(E\right) $, llamamos \textbf{simetría vectorial ortogonal} respecto de $\displaystyle L $ a la simetría vectorial de base $\displaystyle L $ y dirección $\displaystyle L^{\perp }_{\left\langle ,  \right\rangle } $. 
+\end{fdefinition}
+\begin{observation}
+\normalfont Tenemos que $\displaystyle \forall \vec{x} \in L $, $\displaystyle \exists! \vec{x}_{1} \in L $, $\displaystyle \vec{x}_{2} \in L^{\perp }_{\left\langle ,  \right\rangle } $ tal que $\displaystyle \vec{x} = \vec{x}_{1} + \vec{x}_{2} $. La simetría de la que hablamos es $\displaystyle s\left(\vec{x}\right) = \vec{x}_{1}-\vec{x}_{2} $.
+\end{observation}
+\begin{ftheorem}[]
+\normalfont Las simetrías ortogonales son los endomorfimos ortogonales involutivos.
+\end{ftheorem}
+\begin{proof}
+Si $\displaystyle f $ es una simetría vectorial, entonces $\displaystyle f $ es involutiva. Tenemos que $\displaystyle \forall \vec{x} \in E $, $\displaystyle \exists!\vec{x}_{1} \in L_{1}, \vec{x}_{2} \in L^{\perp }_{\left\langle ,  \right\rangle } $ tal que $\displaystyle \vec{x} = \vec{x}_{1} + \vec{x}_{2} $. Tenemos además que $\displaystyle s\left(\vec{x}\right) = \vec{x}_{1}-\vec{x}_{2} $, por lo que
+\[ \|\vec{x}\|^{2} = \left\langle \vec{x}_{1}+\vec{x}_{2}, \vec{x}_{1} +\vec{x}_{2} \right\rangle  = \|\vec{x}_{1} \|^{2} + \|\vec{x}_{2}\|^{2} + 2\left\langle \vec{x}_{1}, \vec{x}_{2} \right\rangle = \|\vec{x}_{1}\|^{2} + \|\vec{x}_{2}\|^{2} .\]
+\[\|f\left(\vec{x}\right)\|^{2} = \left\langle \vec{x}_{1}-\vec{x}_{2}, \vec{x}_{1}-\vec{x}_{2} \right\rangle = \|\vec{x}_{1}\|^{2} + \|\vec{x}_{2}\|^{2} .\]
+Así, hemos visto que $\displaystyle f $ es ortogonal. \\ 
+Recíprocamente, si $\displaystyle f $ es un endomorfismo ortogonal involutivo tenemos que $\displaystyle \exists L_{1}, L_{2} \in \mathcal{L}\left(E\right) $ tal que $\displaystyle E = L_{1} \oplus L_{2} $. Tenemos que $\displaystyle \forall\vec{x}_{1} \in L_{1} $, $\displaystyle \vec{x}_{2} \in L_{2} $, se cumple que $\displaystyle f\left(\vec{x}_{1}\right) = \vec{x}_{1} $ y $\displaystyle f\left(\vec{x}_{2}\right) = - \vec{x}_{2} $. Así, 
+\[
+\begin{split}
+	\left\langle f\left(\vec{x}_{1}\right), f\left(\vec{x}_{2}\right) \right\rangle =& \left\langle \vec{x}_{1}, \vec{x}_{2} \right\rangle \\
+= &\left\langle \vec{x}_{1}, -\vec{x}_{2} \right\rangle = - \left\langle \vec{x}_{1}, \vec{x}_{2} \right\rangle .
+\end{split}
+\]
+Entonces debe ser que $\displaystyle \left\langle \vec{x}_{1}, \vec{x}_{2} \right\rangle =0 $, por lo que $\displaystyle L_{2} $ y $\displaystyle L_{1} $ son dos subespacios complementarios y ortogonales. Así, $\displaystyle L_{2} \subset L^{\perp }_{1,\left\langle ,  \right\rangle } $, por lo que $\displaystyle L_{2} = L_{1, \left\langle ,  \right\rangle }^{\perp} $. Consecuentemente, $\displaystyle f $ es la simetría vectorial ortogonal de base $\displaystyle L_{1} $. 
+\end{proof}
+\begin{observation}
+\normalfont 
+Sean $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{r}\right\}  $ base de $\displaystyle L $ y $\displaystyle \left\{ \vec{u}_{r+1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle L^{\perp }_{\left\langle ,  \right\rangle } $. Entonces tenemos que $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ es base de $\displaystyle E $. Si $\displaystyle f $ es la simetría vectorial ortogonal de base $\displaystyle L $:
+\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) = \begin{pmatrix} I_{r \times r} & 0 \\
+0 & -I_{\left(n -r\right)\times\left(n-r\right)}\end{pmatrix} .\]
+Tenemos que $\displaystyle \det\left(f\right) = \left(-1\right)^{n-r} $. Tenemos que $\displaystyle f \in O^{+}_{n}\left(\R\right) $ si y solo si $\displaystyle n-r $ es par, y $\displaystyle f \in O^{-}_{n}\left(\R\right) $ si y solo si $\displaystyle n-r $ es impar. En particular, las simetrías vectoriales ortogonales respecto de hiperplanos vectoriales de $\displaystyle E $ son negativos.
+\end{observation}
+\begin{ftheorem}[]
+\normalfont Sean $\displaystyle \vec{u}, \vec{v} \in E $ tales que $\displaystyle \|\vec{u}\| = \|\vec{v}\| $ y $\displaystyle \vec{u} \neq \vec{v} $. Entonces existe una única simetría vectorial ortogonal de base un hiperplano vectorial tal que $\displaystyle s\left(\vec{u}\right) = \vec{v} $ ($\displaystyle \iff s\left(\vec{v}\right) = \vec{u} $).
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[Unicidad.] Sea $\displaystyle \vec{u}-\vec{v} = \vec{x} $. Tenemos que 
+	\[s\left(\vec{u}-\vec{v}\right) = s\left(\vec{u}\right)-s\left(\vec{v}\right) = \vec{v}-\vec{u} = - \vec{x} .\]
+	Entonces, tenemos que $\displaystyle s\left(\vec{x}\right) = -\vec{x} $, por lo que $\displaystyle \vec{x} $ pertenece a la dirección de la simetría. Por tanto, el hiperplano base de $\displaystyle s $ es $\displaystyle H = \left\{ \vec{x}\right\} ^{\perp }_{\left\langle ,  \right\rangle } $, de donde resulta la unicidad de la solución. 
+\item[Exitencia.] Sea $\displaystyle s $ la simetría vectorial ortogonal de base el hiperplano $\displaystyle H = \left\{ \vec{x} = \vec{u}-\vec{v}\right\} ^{\perp }_{\left\langle ,  \right\rangle } $. Tenemos que $\displaystyle \vec{u} = \vec{u}_{1} + \alpha \vec{x} $ y $\displaystyle \vec{v} = \vec{v}_{1} +\beta \vec{x}$, con $\displaystyle \vec{u}_{1}, \vec{v}_{1} \in H $ y $\displaystyle \alpha, \beta \in \R $.
+	Tenemos que
+	\[ \vec{x} = \vec{u}-\vec{v} = \vec{u}_{1} +\alpha \vec{x} - \left(\vec{v}_{1} + \beta\vec{x}\right) = \vec{u}_{1}-\vec{v}_{1} + \left(\alpha - \beta \right)\vec{x} .\]
+	Por tanto
+	\[\vec{u}_{1}-\vec{v}_{1} = \left(1-\alpha+\beta\right)\vec{x} \in L(\left\{ \vec{x}\right\}) \cap H \Rightarrow \vec{u}_{1} = \vec{v}_{1} .\]
+	También tenemos que, $\displaystyle 1-\alpha + \beta = 0$. Por tanto, tenemos que $\displaystyle \|\vec{u}\| = \|\vec{v}\| $: 
+\[ \|\vec{u}\| = \|\vec{u}_{1}+\alpha\vec{x}\| = \|\vec{u}_{1}\|+\alpha^{2}\|\vec{x}\| = \|\vec{u}_{1}\| + \beta^{2}\|\vec{x}\| .\]
+Por tanto, se tiene que $\displaystyle \left(\alpha^{2}-\beta^{2}\right)\|\vec{x}\| = 0 $, por lo que $\displaystyle \alpha^{2} -\beta^{2} = 0 $ y $\displaystyle \alpha = \pm \beta  $. Como $\displaystyle \vec{u} \neq \vec{v} $, debe ser que $\displaystyle \beta = - \alpha  $, por lo que
+\[\alpha = 1 + \beta = 1 - \alpha \Rightarrow \alpha = \frac{1}{2}, \; \beta = - \frac{1}{2} .\]
+Así obtenemos el resultado que buscábamos: 
+\[s\left(\vec{u}\right) = s\left(\vec{u}_{1} + \frac{1}{2}\vec{x}\right) = s\left(\vec{u}_{1} \right)+\frac{1}{2}s\left(\vec{x}\right) = \vec{u}_{1} - \frac{1}{2}\vec{x} = \vec{v}_{1} - \frac{1}{2}\vec{x} = \vec{v} .\]
+	\end{description}
+\end{proof}
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle f \in O_{n}\left(\R\right) = O_{n}\left(E\right) $ y sea $\displaystyle L = \left\{ \vec{u} \in E \; : \; f\left(\vec{u}\right) = \vec{u}\right\}  $. Sea $\displaystyle r = \dim\left(L\right) $. Entonces existen $\displaystyle n - r $ simetrías ortogonales ($\displaystyle s_{1}, s_{2}, \ldots, s_{n-r} $) de hiperplanos vectoriales tales que $\displaystyle f = s_{n-r}\circ \cdots \circ s_{1} $.
+\end{ftheorem}
+\begin{proof}
+	Lo demostramos por inducción a lo largo de las siguientes secciones.  
+		
+\end{proof}
+\subsection{Transformaciones ortogonales en $\displaystyle O_{1}\left(\R\right) $}
+\begin{ftheorem}[]
+\normalfont Los elementos de $\displaystyle O_{1}\left(E\right) $ son $\displaystyle \pm id _{E} $.
+\end{ftheorem}
+\begin{proof}
+Si $\displaystyle \vec{x} \in E/ \left\{ \vec{0}\right\}  $ tenemos que $\displaystyle E = L\left( \left\{ \vec{x}\right\} \right)$. Así, $\displaystyle \forall \vec{y} \in E $, $\displaystyle \exists \lambda \in \R $ tal que $\displaystyle \vec{y} = \lambda\vec{x} $. Si $\displaystyle f\left(\vec{x}\right) \in O_{1}\left(E\right) $, $\displaystyle \|f\left(\vec{x}\right)\| = \|\vec{x}\| $. Así,
+	\[ \|f\left(\vec{x}\right)\| = \|\lambda \vec{x} \| = \left|\lambda \right|\|\vec{x}\| = \|\vec{x}\| \Rightarrow \left|\lambda \right|= 1 \Rightarrow \lambda = \pm 1 .\]
+	Si $\displaystyle \lambda = 1 $, tenemos que $\displaystyle f = id _{E} $. Por otro lado, si $\displaystyle \lambda = - 1 $, tenemos que $\displaystyle f = - id _{E}$. Por tanto, $\displaystyle O_{1}\left(\R\right) = \left\{ id _{E}, - id _{E}\right\}  $, donde $\displaystyle id _{E} \in O^{+}_{1}\left(\R\right) $ y $\displaystyle -id _{E} \in O^{-}_{1}\left(\R\right) $.
+\end{proof}
+\begin{observation}
+\normalfont El teorema 6.8 está demostrado para $\displaystyle n = 1 $.
+\end{observation}
+\subsection{Transformaciones ortogonales de $\displaystyle O_{2}\left(\R\right) $}
+Ahora, consideremos el caso $\displaystyle n = 2 $. Sea $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}\right\}  $ una base ortonormal de $\displaystyle E $. Si $\displaystyle f $ es un endomorfismo en $\displaystyle O^{+}_{2}\left(\R\right) $ y $\displaystyle A = \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) $ se tiene que $\displaystyle \exists A^{-1} = A^{t} $. Además, $\displaystyle \det\left(A\right) = 1 $. Por tanto, la matriz $\displaystyle A $ será de la forma
+	\[ A = \begin{pmatrix} a & - b \\ b & a\end{pmatrix} , \; a^{2} + b^{2} = 1\]
+	Ahora, si $\displaystyle f \in O^{-}_{2}\left(\R\right) $, tenemos que $\displaystyle \det\left(A\right) = - 1 $ y la matriz $\displaystyle A $ nos queda de la forma
+	\[ A = \begin{pmatrix} a & b \\ b & - a \end{pmatrix}, \; a^{2}+b^{2} = 1 .\]
+\subsection*{Estudio de $\displaystyle O^{+}_{2}\left(\R\right) $}
+\begin{ftheorem}[]
+	\normalfont Los únicos elementos involutivos de $\displaystyle O^{+}_{2}\left(\R\right) $ son $\displaystyle id _{E} $ y $\displaystyle -id _{E} $. Además, si $\displaystyle f \in O^{+}_{2}\left(\R\right) $ con $\displaystyle f \neq \pm id _{E}$, entonces $\displaystyle L = \left\{ \vec{u} \in E \; : \; f\left(\vec{u}\right) = \vec{u}\right\} = \left\{ \vec{0}\right\}  $.
+\end{ftheorem}
+\begin{proof}
+	En primer lugar, si $\displaystyle f \in O^{+}_{2}\left(\R\right) $ y $\displaystyle f^{2} = id _{E} $, tenemos que la matriz de $\displaystyle f $ debe cumplir que
+	\[\begin{pmatrix} a & - b \\ b & a \end{pmatrix} \begin{pmatrix} a & - b \\ b & a \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} .\]
+	De aquí obtenemos el sistema
+	\[
+	\begin{cases}
+	2ab = 0 \\
+	a^{2}-b^{2} = 1
+	\end{cases}
+	.\]
+	Las únicas soluciones son $\displaystyle b = 0 $ y $\displaystyle a = \pm 1 $. Es decir, o bien $\displaystyle f = id _{E} $ o bien $\displaystyle f = - id _{E} $. \\ \\
+	Por otro lado, consideremos que $\displaystyle f \in O^{+}_{2}\left(\R\right) / \left\{ \pm id _{E}\right\}  $ y  $\displaystyle x\vec{u}_{1} + y\vec{u}_{2} \in L $, por lo que
+	\[f\left(x\vec{u}_{1} + y\vec{u}_{2}\right) = x\vec{u}_{1} + y\vec{u}_{2} .\]
+	Matricialmente tenemos que
+	\[\begin{pmatrix} a & - b \\ b & a\end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} x \\ y \end{pmatrix} .\]
+	Obtenemos el sistema
+	\[
+	\begin{cases}
+		\left(a-1\right)x -by = 0\\
+		bx + \left(a-1\right)y = 0
+	\end{cases}
+	.\]
+	Tenemos que $\displaystyle \begin{vmatrix} a - 1 & - b \\ b & a - 1 \end{vmatrix} \neq 0 $, salvo si $\displaystyle a = 1 $ y $\displaystyle b = 0 $, en cuyo caso $\displaystyle f = id _{E} $, que va contra nuestra hipótesis. Por tanto, debe ser que $\displaystyle x = y = 0 $. 
+\end{proof}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle \vec{n} \in E $ tal que $\displaystyle \|\vec{n}\| = 1 $. Entonces
+$\displaystyle a = \left\langle \vec{n}, f\left(\vec{n}\right) \right\rangle  $ y $\displaystyle b = \det _{ \left\{ \vec{u}_{i}\right\} }\left(\vec{n}, f\left(\vec{n}\right)\right) $.
+\end{ftheorem}
+\begin{proof}
+Sea $\displaystyle \vec{n} = \alpha \vec{u}_{1} + \beta \vec{u}_{2} $ con $\displaystyle \alpha^{2} + \beta^{2} = 1 $. Tenemos que
+\[\begin{pmatrix} a & - b \\ b & a \end{pmatrix}\begin{pmatrix} \alpha \\ \beta  \end{pmatrix} = \begin{pmatrix} a \alpha - b \beta \\ b \alpha + a \beta  \end{pmatrix} .\]
+Así, 
+\[f\left(\vec{n}\right) = \left(a \alpha - b \beta \right)\vec{u}_{1} + \left(b \alpha + a \beta \right)\vec{u}_{2} .\]
+Por tanto,
+\[
+\begin{split}
+	\left\langle \vec{n}, f\left(\vec{n}\right) \right\rangle = & \left\langle \alpha \vec{u}_{1} + \beta \vec{u}_{2}, \left(a \alpha - b \beta \right)\vec{u}_{1} + \left(b \alpha + a \beta \right)\vec{u}_{2} \right\rangle \\
+	= & a \alpha^{2} - b\alpha \beta + b\alpha \beta + a \beta^{2} = a \left(\alpha^{2} + \beta^{2}\right) = a .
+\end{split}
+\]
+Similarmente
+\[\det_{ \left\{ \vec{u}_{i}\right\} } \left(\vec{n}, f\left(\vec{n}\right)\right) = \begin{vmatrix} \alpha & a \alpha - b \beta \\ \beta & b \alpha + a \beta  \end{vmatrix} = b \alpha ^{2} + a \alpha \beta - a \beta + b \beta^{2} = b\left(\alpha^{2} + \beta^{2}\right) = b .\]
+\end{proof}
+\begin{observation}
+\normalfont Sea $\displaystyle \left\{ \vec{v}_{1}, \vec{v}_{2}\right\}  $ otra base ortonormal. Tenemos que 
+\[ \det_{ \left\{ \vec{v}_{i}\right\} }\left(\vec{x}, \vec{y}\right) = \underbrace{\det_{\{\vec{v}_{i}\}}\left(\vec{u}_{1}, \vec{u}_{2}\right)}_{\pm 1}\det_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{x}, \vec{y}\right) .\]
+\end{observation}
+\begin{fdefinition}[]
+\normalfont Llamaremos \textbf{ángulo de rotación vectorial} de $\displaystyle f $ al único $\displaystyle \theta \in [0,2\pi) $ tal que $\displaystyle \cos\theta = a $ y $\displaystyle \sin\theta = b $.
+\end{fdefinition}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle \vec{u}, \vec{v} \in E $ tales que $\displaystyle \|\vec{u}\| = \|\vec{v}\| \neq 0 $. Entonces, $\displaystyle \exists ! f \in O^{+}_{2}\left(\R\right)$ tal que $\displaystyle f\left(\vec{u}\right) = \vec{v} $.
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[Unicidad.] Si $\displaystyle \exists f \in O^{+}_{2}\left(\R\right) $ tal que $\displaystyle f\left(\vec{u}\right) = \vec{v} $, tenemos que
+	\[ \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) = \begin{pmatrix} a & - b \\ b & a \end{pmatrix}, \quad a^{2} + b^{2} = 1 .\]
+	Por el teorema anterior, tenemos que estos valores son únicos.
+\item[Existencia.] Sea $\displaystyle \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) = \begin{pmatrix} a & - b \\ b & a \end{pmatrix} $, tal que 
+	\[ a = \left\langle \frac{\vec{u}}{\|\vec{u}\|}, \frac{\vec{v}}{\|\vec{v}\|} \right\rangle , \quad b = \det_{ \left\{ \vec{u}\right\} _{i}}\left(\frac{\vec{u}}{\|\vec{u}\|},\frac{f\left(\vec{u}\right)}{\|\vec{v}\|}\right) .\]
+	Donde 
+\[
+\begin{split}
+	\vec{u} = \alpha\vec{u}_{1} + \beta\vec{u}_{2}, \quad \|\vec{u}\|^{2} = \alpha^{2} + \beta^{2} \\
+	\vec{v} = \gamma \vec{u}_{1} + \delta \vec{u}_{2}, \quad \|\vec{v}\|^{2} = \gamma^{2} + \delta^{2}.
+\end{split}
+\]
+Tenemos entonces que
+\[
+\begin{split}
+	a^{2} + b^{2} = & \frac{\left(\left\langle \alpha\vec{u}_{1}+\beta\vec{u}_{2}, \gamma\vec{u}_{1} + \delta \vec{u}_{2} \right\rangle \right)^{2} + \left(\begin{vmatrix} \alpha & \gamma \\ \beta & \delta  \end{vmatrix} \right)^{2}}{\|\vec{u}\|^{2}\|\vec{v}\|^{2}} \\
+	= & \frac{\left(\alpha \gamma + \beta \delta \right)^{2} + \left(\alpha \delta - \beta \gamma \right)^{2}}{\left(\alpha^{2} + \beta^{2}\right)\left(\gamma^{2} + \delta^{2}\right)} \\
+	= & \frac{\alpha^{2}\gamma^{2} + \beta^{2}\delta^{2} + 2\alpha\gamma\beta\delta + \alpha^{2}\delta^{2} + \beta^{2}\gamma^{2}-2\alpha\beta\gamma\delta }{\left(\alpha^{2}+\beta^{2}\right)\left(\gamma^{2}+\delta^{2}\right)}\\
+	= & 1.
+\end{split}
+\]
+Ahora vamos a ver que $\displaystyle f\left(\vec{u}\right) = \vec{v} $. Tenemos que
+\[
+\begin{split}
+	b =  \det_{ \left\{ \vec{u}_{i}\right\} }\left(\frac{\vec{u}}{\|\vec{u}\|}, \frac{\vec{v}}{\|\vec{v}\|}\right) 
+	=  \det_{ \left\{ \vec{u}_{i}\right\} }\left(\frac{\vec{u}}{\|\vec{u}\|}, \frac{f\left(\vec{u}\right)}{\|\vec{u}\|}\right) .
+\end{split}
+\]
+Por tanto, 
+\[\det_{ \left\{ \vec{u}_{i}\right\} }\left( \vec{u}, \vec{v}\right) = \det_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{u}, f\left(\vec{u}\right)\right) .\]
+\[\therefore \det_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{u}, \vec{v}-f\left(\vec{u}\right)\right) = 0 .\]
+Por tanto, existe $\displaystyle \lambda \in \R $ tal que $\displaystyle \vec{v}-f\left(\vec{u}\right) = \lambda \vec{u} $. Tenemos que
+\[
+\begin{split}
+	a = & \left\langle \frac{\vec{u}}{\|\vec{u}\|}, \frac{\vec{v}}{\|\vec{v}\|} \right\rangle = \left\langle \frac{\vec{u}}{\|\vec{u}\|}, \frac{f\left(\vec{u}\right)}{\|\vec{u}\|} \right\rangle \\
+\Rightarrow & \left\langle \vec{u}, \vec{v} \right\rangle  = \left\langle \vec{u}, f\left(\vec{u}\right) \right\rangle \\
+\Rightarrow &  \left\langle \vec{u}, \vec{v}-f\left(\vec{u}\right) \right\rangle  = \left\langle \vec{u}, \lambda\vec{u} \right\rangle  = \lambda \|\vec{u}\|^{2} = 0 \\
+\Rightarrow & \lambda = 0.
+\end{split}
+\]
+Por tanto, $\displaystyle \vec{v} = f\left(\vec{u}\right) $.
+\end{description}
+\end{proof}
+\subsection*{Estudio de $\displaystyle O^{-}_{2}\left(\R\right) $ }
+Sea $\displaystyle f \in O^{-}_{2}\left(\R\right) $, entonces $\displaystyle \det\left(f\right) = - 1 $. Se tiene que la representación matricial de $\displaystyle f $ será
+\[ A = \begin{pmatrix} a & b \\ b & - a \end{pmatrix}, \quad a^{2} + b^{2} = 1 .\]
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f \in O_{2}\left(E\right) $, entonces son equivalentes.
+\begin{description}
+\item[(a)] $\displaystyle f \in O^{-}_{2}\left(E\right) $.
+\item[(b)] $\displaystyle f $ es involutivo pero no es $\displaystyle \pm id _{E} $.
+\item[(c)] $\displaystyle f $ es la simetría vectorial ortogonal respecto de una recta vectorial de $\displaystyle E $.
+\item[(d)] $\displaystyle L = \left\{ \vec{u} \in E\; : \; f\left(\vec{u}\right) = \vec{u}\right\}  $ es una recta vectorial.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(a) $\displaystyle \Rightarrow $ (b)] Si $\displaystyle f \in O^{-}_{2}\left(\R\right) $ se tiene que 
+	\[\begin{pmatrix} a & b \\ b & - a \end{pmatrix}\begin{pmatrix} a & b \\ b & - a \end{pmatrix} = \begin{pmatrix} a^{2}+b^{2} & 0 \\ 0 & a^{2} + b^{2} \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} .\]
+\item[(b) $\displaystyle \Rightarrow $ (c)] $\displaystyle f $ es la simetría vectorial ortogonal respecto de un subespacio de $\displaystyle E $ distinto de $\displaystyle E $ y $\displaystyle \left\{ \vec{0}\right\}  $.
+\item[(c) $\displaystyle \Rightarrow $ (d)] Si $\displaystyle f $ es la simetría ortogonal respecto de una recta de $\displaystyle E $, esta recta es $\displaystyle \left\{ \vec{u} \in E \; : \; f\left(\vec{u}\right) = \vec{u}\right\}  $.
+\item[(d) $\displaystyle \Rightarrow $ (a)] Si $\displaystyle L = \left\{ \vec{u} \in E \; : \; f\left(\vec{u}\right) = \vec{u}\right\}  $ es una recta, entonces $\displaystyle f \not\in O^{+}_{2}\left(\R\right) $.
+\end{description}
+\end{proof}
+\begin{flema}[]
+\normalfont Sea $\displaystyle f \in O^{+}_{2}\left(\R\right) $ y $\displaystyle \sigma \in O^{-}_{2}\left(\R\right) $, entonces $\displaystyle f\circ \sigma, \sigma\circ f \in O^{-}_{2}\left(\R\right) $.
+\end{flema}
+\begin{proof}
+Tenemos que $\displaystyle \det\left(f\right) = 1 $ y $\displaystyle \det\left(\sigma \right) = -1$, por lo que
+\[ \det\left(f \circ \sigma \right) = \det\left(\sigma \circ f\right) = \det\left(f\right) \cdot \det\left(\sigma \right) = -1 .\]
+Por tanto, $\displaystyle f \circ \sigma, \sigma \circ f \in O^{-}_{2}\left(\R\right) $.
+\end{proof}
+\begin{fcolorary}[]
+\normalfont Si $\displaystyle f \in O^{+}_{2}\left(\R\right) $ entonces $\displaystyle f $ es composición de 2 simetrías vectoriales ortogonales respecto de rectas (hiperplanos) vectoriales, pudiendo elegir uno de ellos arbitrariamente.
+\end{fcolorary}
+\begin{proof}
+Sea $\displaystyle L \in \mathcal{L}\left(E\right) $ tal que $\displaystyle \dim\left(L\right) = 1 $ y sea $\displaystyle \sigma  $ la simetría vectorial ortogonal respecto de $\displaystyle L $. Tenemos que
+\[ f = f\circ id _{E} = f \circ \sigma \circ \sigma =  \underbrace{\left(f \circ \sigma \right)}_{ \in O^{-}_{2}\left(\R\right)}\circ \underbrace{\sigma}_{\in O^{-}_{2}\left(\R\right)}.\]
+Similarmente, tenemos que $\displaystyle f = id _{E} \circ f = \sigma \circ \left(\sigma \circ f\right) $.
+\end{proof}
+\begin{observation}
+\normalfont Así, el teorema 6.8 está demostrado para $\displaystyle n = 2 $.
+\end{observation}
+\subsection*{Conclusión}
+\begin{observation}
+\normalfont 
+Sea $\displaystyle f \in O_{2}\left(\R\right) $ y $\displaystyle L = \left\{ \vec{u} \in E \; : \; f\left(\vec{u}\right) = \vec{u}\right\} \in \mathcal{L}\left(E\right) $. 
+\begin{description}
+	\item[(a)] Si $\displaystyle \dim\left(L\right) = 2 $, entonces $\displaystyle f = id _{E} \in O^{+}_{2}\left(\R\right) $ y $\displaystyle f \to \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} $ . Tenemos que $\displaystyle f $ es composición de cero simetrías vectoriales ortogonales respecto de de rectas.
+	\item[(b)] Si $\displaystyle \dim\left(L\right) = 1 $, entonces $\displaystyle f \in O^{-}_{2}\left(\R\right) $ y $\displaystyle f $ es la simetría vectorial ortogonal de base la recta $\displaystyle L $.
+	\item[(c)] Si $\displaystyle \dim\left(L\right) = 0 $, entonces $\displaystyle f \in O^{+}_{2}\left(\R\right) / \left\{ id _{E}\right\} $ es una composición de dos simetrías ortogonales respecto de rectas (hiperplanos) vectoriales \footnote{Es una rotación vectorial.} .
+\end{description}
+\end{observation}
+\subsection{Transformaciones ortogonales de $\displaystyle O_{3}\left(\R\right) $}
+Sea $\displaystyle f \in O_{3}\left(\R\right) $ y sea $\displaystyle L = \left\{ \vec{u}\in E\; : \; f\left(\vec{u}\right) = \vec{u}\right\} \in \mathcal{L}\left(E\right) $.
+\begin{description}
+\item[Caso 1.] Si $\displaystyle \dim L = 3 $, entonces $\displaystyle L = E $, por lo que $\displaystyle f = id _{E} \in O^{+}_{3}\left(\R\right) $.
+\item[Caso 2.] Si $\displaystyle \dim L = 2 $:
+	\begin{itemize}
+	\item $\displaystyle L^{\perp }_{\left\langle ,  \right\rangle } $ es una recta vectorial.
+	\item $\displaystyle \forall \vec{x} \in L $, $\displaystyle f\left(\vec{x}\right) = \vec{x} $, por lo que $\displaystyle f\left(\vec{x}\right) \in L $ y $\displaystyle L = f\left(L\right) $.
+	\item $\displaystyle f|_{L} \in O\left(L\right) $ y $\displaystyle f|_{L^{\perp }_{\left\langle ,  \right\rangle }} \in O\left(L^{\perp }_{\left\langle ,  \right\rangle }\right) = \left\{ id _{L^{\perp }_{\left\langle ,  \right\rangle }}, - id _{L^{\perp }_{\left\langle ,  \right\rangle }}\right\}  $.
+	\end{itemize}
+	 Sin embargo, $\displaystyle f|_{L^{\perp }_{\left\langle ,  \right\rangle }} \neq id _{L^{\perp }_{\left\langle ,  \right\rangle }}  $ pues tendríamos que $\displaystyle f = id _{E} $, por lo que debe ser que $\displaystyle f|_{L^{\perp }_{\left\langle ,  \right\rangle }} = - id _{L^{\perp }_{\left\langle ,  \right\rangle }} $. En efecto, $\displaystyle \forall \vec{x} \in E $, $\displaystyle \exists ! \vec{x}_{1} \in L, \vec{x}_{2} \in L^{\perp }_{\left\langle ,  \right\rangle } $ tales que $\displaystyle \vec{x} = \vec{x}_{1} + \vec{x}_{2} $. Así
+	\[f\left(\vec{x}\right) = s\left(\vec{x}_{1}\right) + s\left(\vec{x}_{2}\right) = \vec{x}_{1}-\vec{x}_{2} .\]
+	\begin{itemize}
+	\item Por tanto, $\displaystyle f $ es la simetría vectorial ortogonal respecto del hiperplano $\displaystyle L $.
+	\item Recíprocamente, si $\displaystyle f $ es la simetría vectorial ortogonal de base un plano vectorial $\displaystyle L' $, entonces $\displaystyle f \in O_{3}\left(E\right) $ y tiene por base $\displaystyle L' = \left\{ \vec{x} \in E \; : \; f\left(\vec{x}\right) = \vec{x}\right\}  $.
+	\end{itemize}
+\begin{ftheorem}[]
+\normalfont  $\displaystyle L $ es un plano si y solo si $\displaystyle f $ es la simetría ortogonal de base $\displaystyle L $. Además $\displaystyle f \in O^{-}_{3}\left(\R\right) $.
+\end{ftheorem}
+\item[Caso 3.] Si $\displaystyle \dim L = 1 $, se tiene que $\displaystyle \forall \vec{x} \in L $, $\displaystyle f\left(\vec{x}\right) = \vec{x} $, po lo que $\displaystyle f\left(L\right) = L $ y $\displaystyle f|_{L} \in O\left(L\right) $ y $\displaystyle f|_{L^{\perp }_{\left\langle ,  \right\rangle }} \in O\left(L^{\perp }_{\left\langle ,  \right\rangle }\right) $. Tenemos también que 
+	\[ \left\{ \vec{x} \in L^{\perp }_{\left\langle ,  \right\rangle } \; : \; f\left(\vec{x}\right) = \vec{x}\right\} = L^{\perp }_{\left\langle ,  \right\rangle }\cap L = \left\{ \vec{0}\right\}  .\]
+	Así, $\displaystyle f|_{L^{\perp }_{\left\langle ,  \right\rangle }} \in O^{+}_{2}\left(L^{\perp }_{\left\langle ,  \right\rangle }\right) / \left\{ id _{L^{\perp }_{\left\langle ,  \right\rangle }}\right\}  $. Por tanto, $\displaystyle f|_{L^{\perp }_{\left\langle ,  \right\rangle }} $ es una rotación vectorial.
+	\begin{fdefinition}[Rotación vectorial]
+		\normalfont Diremos que $\displaystyle f \in O_{3}\left(\R\right) $ es una \textbf{rotación vectorial} si $\displaystyle f = id _{E} $ o si $\displaystyle \dim \left\{ \vec{x} \in E \; : \; f\left(\vec{x}\right) = \vec{x}\right\} = 1 $. 
+	\end{fdefinition}
+	\begin{ftheorem}[]
+	\normalfont $\displaystyle f $ es composición de dos simetrías vectoriales ortogonales respecto de hiperplanos vectoriales que contienen a $\displaystyle L $ pudiendo elegir arbitrariamente uno de los dos.
+	\end{ftheorem}
+	\begin{proof}
+	Sea $\displaystyle P $ un plano tal que $\displaystyle L \subset P $ y sea $\displaystyle s $ la simetría vectorial ortogonal de base $\displaystyle P $. Se tiene que $\displaystyle \forall \vec{x} \in L $, $\displaystyle s\left(\vec{x}\right)=\vec{x} $ y $\displaystyle s\left(L\right) = L $ y $\displaystyle f|_{P} \in O\left(L^{\perp }_{\left\langle ,  \right\rangle }\right) $. Además
+	\[ \left\{ \vec{x} \in L^{\perp }_{\left\langle ,  \right\rangle } \; : \; f|_{L^{\perp }_{\left\langle ,  \right\rangle }}\left(\vec{x}\right) = \vec{x}\right\} = L^{\perp }_{\left\langle ,  \right\rangle }\cap L = \left\{ \vec{0}\right\}.\]
+	Existen $\displaystyle R_{1}, R_{2} $ rectas de $\displaystyle L^{\perp }_{\left\langle ,  \right\rangle } $ tales que si $\displaystyle \sigma_{1}, \sigma_{2} $ son las simetrías vectoriales ortogonales respecto de $\displaystyle R_{1} $ y $\displaystyle R_{2} $, respectivamente, entonces $\displaystyle f|_{L^{\perp }_{\left\langle ,  \right\rangle }} = \sigma_{1}\circ\sigma_{2} $ y una de las rectas base la puede elegir arbitrariamente. Sean $\displaystyle s_{1} $ y $\displaystyle s_{2} $ las simetrías ortogonales respecto de los planos vectoriales $\displaystyle P_{1} $ y $\displaystyle L_{2} $. Entonces, $\displaystyle f = s_{1}\circ s_{2} $. En efecto,
+	\[\forall \vec{x} \in L, \; f\left(\vec{x}\right) = \vec{x}, \; s_{1}\left(\vec{x}\right)= \vec{x}, \; s_{2}\left(\vec{x}\right) = \vec{x} .\]
+	Así, se tiene que $\displaystyle f\left(\vec{x}\right) = \left(s_{2}\circ s_{1}\right)\left(\vec{x}\right) $, $\displaystyle \forall \vec{x} \in L $. Además, $\displaystyle \forall \vec{x} \in L^{\perp }_{\left\langle ,  \right\rangle } $,
+	\[f|_{L^{\perp }_{\left\langle ,  \right\rangle }}\left(\vec{x}\right) = \sigma_{2}\circ\sigma_{1}\left(\vec{x}\right) = s_{2}\circ \sigma_{1}\left(\vec{x}\right) = \sigma_{2}\circ s_{1}\left(\vec{x}\right) = s _{2} \circ s_{1}\left(\vec{x}\right) .\]
+	\end{proof}
+\item[Caso 4.] Consideremos que $\displaystyle \dim L = 0 $.
+	\begin{ftheorem}[]
+	\normalfont $\displaystyle f $ es composición de tres simetrías vectoriales ortogonales respecto de hiperplanos vectoriales y, por tanto, $\displaystyle f \in O^{-}_{3}\left(\R\right) $.
+	\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle \vec{x} \in E / \left\{ \vec{0}\right\}  $ tal que $\displaystyle f\left(\vec{x}\right) \neq \vec{x} $ y $\displaystyle \|\vec{x}\| = \|f\left(\vec{x}\right)\| $. Existe $\displaystyle \sigma $ simetría vectorial ortogonal respecto de un plano $\displaystyle P = \left\{ \vec{x}-f\left(\vec{x}\right)\right\} ^{\perp }_{\left\langle ,  \right\rangle } $ tal que 
+	\[\sigma\left(\vec{x}\right) = f\left(\vec{x}\right) \iff f\left(\sigma\left(\vec{x}\right)\right) = \vec{x} .\]
+	Tenemos que $\displaystyle f \circ \sigma \in O_{3}\left(\R\right) $ con $\displaystyle \dim \left\{ \vec{u} \in E \; : \; \sigma\circ f\left(\vec{u}\right) = \vec{u}\right\} \neq 0 $. Tenemos que $\displaystyle \sigma\circ f \neq id _{E} $, pues si $\displaystyle \sigma \circ f = id _{E} $, entonces 
+	\[\sigma\circ\left(\sigma\circ f\right) = \sigma\circ id _{E} = \sigma  .\]
+	No se puede dar que $\displaystyle f\circ \sigma = s_{1} $, siendo $\displaystyle s_{1} $ la simetría vectorial ortogonal respecto un plano vectorial. Pues
+	\[f = \left(f\circ \sigma \right)\circ \sigma = s_{1} \circ \sigma  .\]
+Tenemos que $\displaystyle f \circ \sigma  $ es una rotación y no es la identidad. Existen $\displaystyle P_{1} $ y $\displaystyle P_{2} $ planos tales que si $\displaystyle s_{1} $ y $\displaystyle s_{2} $ son las simetrías vectoriales ortogonales respecto de $\displaystyle P_{1} $ y $\displaystyle P_{2} $, entonces	
+\[f\circ \sigma = s_{1}\circ s_{2} \Rightarrow f = f\circ \sigma^{2} = \left(f\circ \sigma \right)\circ \sigma = s_{1}\circ s_{2}\circ \sigma  .\]
+\end{proof}
+\end{description}
+\begin{observation}
+	\normalfont En el \textbf{caso 3}, sea $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \vec{u}_{3}\right\}  $ una base ortonormal tal que $\displaystyle \vec{u}_{1} \in L $. Tenemos que $\displaystyle \forall \vec{x} \in L $, $\displaystyle f\left(\vec{x}\right) = \vec{x} $, por lo que $\displaystyle f\left(L\right) = L $ y $\displaystyle f|_{L^{\perp }_{\left\langle ,  \right\rangle }} \in O\left(L^{\perp }_{\left\langle ,  \right\rangle }\right)$. Tenemos que la matriz de $\displaystyle f $ en esta base será
+	\[\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{u}_{i}\right\} }\left(f\right) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & a & -b \\ 0 & b & a \end{pmatrix}, \; a^{2} + b^{2}=1 .\]
+\end{observation}
+\begin{observation}
+\normalfont En el \textbf{caso 4}, si $\displaystyle f \in O^{-}_{3}\left(\R\right) $, tenemos que $\displaystyle f^{2} \in O^{+}_{3}\left(\R\right) $. Si $\displaystyle f^{2} = id _{E} $, tendríamos que $\displaystyle f = - id _{E} $.
+\end{observation}
+Sea $\displaystyle f \in O_{3}\left(\R\right) $ tal que $\displaystyle L = \left\{ \vec{u} \in E \; : \; f\left(\vec{u}\right) = \vec{u}\right\}  = \left\{ \vec{0}\right\}  $ y $\displaystyle f \neq -id _{E} $.
+\begin{ftheorem}[]
+\normalfont $\displaystyle f $ se descompone de manera única como una rotación de eje una recta vectorial $\displaystyle R $ y la simetría vectorial ortogonal respecto del plano vectorial $\displaystyle R^{\perp }_{\left\langle ,  \right\rangle } $. Además, la simetría y la rotación conmutan.
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle R $ una recta vectorial y $\displaystyle \vec{u}_{1} \in R $ tal que $\displaystyle \|\vec{u}_{1}\| = 1 $. Tenemos que $\displaystyle R = L\left( \left\{ \vec{u}_{1}\right\} \right) $ y sea $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \vec{u}_{3}\right\}  $ una base ortonormal. Tenemos que $\displaystyle R^{\perp }_{\left\langle ,  \right\rangle } = L\left( \left\{ \vec{u}_{2}, \vec{u}_{3}\right\} \right) $.
+Sea $\displaystyle \rho $ una rotación de eje $\displaystyle R $ y $\displaystyle s $ la simetría vectorial ortogonal respecto de $\displaystyle R^{\perp }_{\left\langle ,  \right\rangle } $. Tenemos que 
+\[
+\begin{split}
+	\rho\circ s\left(\vec{u}_{1}\right) = & \rho\left(-\vec{u}_{1}\right) = -\vec{u}_{1} \\
+	\rho\circ s\left(\vec{u}_{2}\right)= & \rho\left(\vec{u}_{2}\right) \\
+	\rho\circ s\left(\vec{u}_{3}\right) = & \rho\left(\vec{u}_{3}\right).
+\end{split}
+\]
+Por otro lado, como $\displaystyle \rho\left(\vec{u}_{2}\right), \rho\left(\vec{u}_{3}\right)\in R^{\perp }_{\left\langle ,  \right\rangle } $,
+\[
+\begin{split}
+	s \circ \rho\left(\vec{u}_{1}\right) = & s\left(\vec{u}_{1}\right) = -\vec{u}_{1} \\
+	s\circ \rho\left(\vec{u}_{2}\right) = & s\left(\vec{u}_{2}\right) = \rho\left(\vec{u}_{2}\right) \\
+	s\circ\rho\left(\vec{u}_{3}\right) = & s\left(\vec{u}_{3}\right) = \rho\left(\vec{u}_{3}\right).
+\end{split}
+\]
+Así, hemos demostrado que la simetría y la rotación conmutan. Como $\displaystyle \rho\left(\vec{x}\right) = \vec{x} $, $\displaystyle \forall \vec{x} \in R $, tenemos que $\displaystyle f\left(R^{\perp }_{\left\langle ,  \right\rangle }\right) = R^{\perp }_{\left\langle ,  \right\rangle } $. \\
+Ahora demostramos la unicidad. Supongamos que $\displaystyle f = \rho\circ s = s\circ \rho $. Tenemos que $\displaystyle f^{2} \in O_{3}^{+}\left(\R\right) $ y $\displaystyle f^{2} \neq id _{E} $. Sea $\displaystyle F $ el eje de la rotación $\displaystyle \rho $ y sea $\displaystyle \vec{x} \in F $. Tenemos que
+\[f\left(\vec{x}\right) = s\circ\rho\left(\vec{x}\right) = s\left(\rho\left(\vec{x}\right)\right) = s\left(\vec{x}\right) = -\vec{x} .\]
+Así, tenemos que $\displaystyle f^{2}\left(\vec{x}\right)=f\left(-\vec{x}\right)=\vec{x} $, por lo que el vector $\displaystyle \vec{x} $ pertenece al eje de la rotación $\displaystyle f^{2} $. \\
+Ahora demostramos la existencia. Sea $\displaystyle \vec{x}  $ perteneciente al eje de la rotación $\displaystyle f^{2} $. Tenemos que $\displaystyle \vec{0} \neq \vec{x} \neq f\left(\vec{x}\right) $ y $\displaystyle \|\vec{x}\| = \|f\left(\vec{x}\right)\| $. Existe una única simetría vectorial ortogonal respecto al plano vectorial $\displaystyle \left\{ \vec{x}-f\left(\vec{x}\right)\right\} ^{\perp }_{\left\langle ,  \right\rangle } $ tal que $\displaystyle s\left(\vec{x}\right) = f\left(\vec{x}\right) $ ($\displaystyle \iff s\left(f\left(\vec{x}\right)\right) = \vec{x} $).
+Tenemos que $\displaystyle s\circ f \in O^{+}_{3}\left(\R\right) $. Además,
+\[
+\begin{split}
+f\circ s\left(\vec{x}\right) = f^{2}\left(\vec{x}\right) = \vec{x} \\
+f\circ s\left(f\left(\vec{x}\right)\right) = f\left(\vec{x}\right).
+\end{split}
+\]
+Por tanto, se tiene que $\displaystyle \vec{x} $ y $\displaystyle f\left(\vec{x}\right) $ pertenecen al eje de la rotación, por lo que $\displaystyle \vec{x} -f\left(\vec{x}\right) $ pertenece también a este. Por tanto, $\displaystyle s $ es la simetría vectorial ortogonal respecto del plano $\displaystyle \left\{ \vec{x}-f\left(\vec{x}\right)\right\} ^{\perp }_{\left\langle ,  \right\rangle } $ y $\displaystyle \vec{x}-f\left(\vec{x}\right)  $ pertenece al eje de la rotación.
+\end{proof}
+\section*{Conclusión}
+Sea $\displaystyle f \in O_{3}\left(\R\right) $ y $\displaystyle L = \left\{ \vec{u}\in E \; : \; f\left(\vec{u}\right) = \vec{u}\right\}  $.
+\begin{description}
+\item[(1)] Si $\displaystyle \dim\left(L\right) = 3 $, $\displaystyle f = id _{E} \in O^{+}_{3}\left(\R\right) $ y $\displaystyle f $ es composición de cero simetrías vectoriales ortogonales respecto de planos vectoriales.
+\item[(2)] Si $\displaystyle \dim\left(L\right) = 2 $, $\displaystyle f \in O_{3}^{-}\left(\R\right) $ y $\displaystyle f $ es la simetría vectorial ortogonal respecto del plano vectorial $\displaystyle L $. Si $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \vec{u}_{3}\right\}  $ es base ortonormal tal que $\displaystyle \left\{ \vec{u}_{2}, \vec{u}_{3}\right\}\subset L $,
+	\[f \to \begin{pmatrix} -1 & 0 & 0 \\
+	0 & 1 & 0 \\
+0 & 0 & 1\end{pmatrix} .\]
+\item[(3)] Si $\displaystyle \dim\left(L\right) = 1 $, $\displaystyle f \in O^{+}_{3}\left(\R\right) $ es composición de dos simetrías ortogonales respecto de planos vectoriales que contienen a $\displaystyle L $. Si $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \vec{u}_{3}\right\}  $ es una base ortonormal tal que $\displaystyle \vec{u}_{1} \in L $,
+		\[f \to \begin{pmatrix} 1 & 0 & 0 \\
+		0 & a & - b \\
+	0 & b & a\end{pmatrix}, \; a^{2} + b^{2} = 1 .\]
+\item[(4)] Si $\displaystyle \dim\left(L\right)= 0 $, $\displaystyle f \in O^{-}_{3}\left(\R\right) $. Tenemos que $\displaystyle f = - id _{E} \circ f $ se descompone de manera única como producto de una rotación $\displaystyle \rho $ y la simetría vectorial ortogonal respecto del plano ortogonal al eje de la rotación. 
+\end{description}
 

@@ -10,6 +10,9 @@ Entonces, se dice que $\displaystyle f $ es \textbf{derivable} en $\displaystyle
 \normalfont Tenemos que la derivabilidad, al igual que la continuidad, es una propiedad local. Se dice que $\displaystyle f $ es derivable en $\displaystyle A \subset \dom\left(f\right) $ si $\displaystyle f $ es derivable en cada $\displaystyle a \in A $.
 \end{observation}
 \begin{observation}
+\normalfont Es posible definir la derivada de una función que tiene un dominio más general que un intervalo, pues solo es necesario que $\displaystyle a \in \dom\left(f\right) $ y que sea un punto de acumulación. Sin embargo, la importancia del concepto se pone de manifiesto de manera más natural usando funciones definidas en intervalos, por lo que nos centraremos en estas.
+\end{observation}
+\begin{observation}
 \normalfont 
 Se llama función derivada de $\displaystyle f $ a la función 
 \[
@@ -275,7 +278,7 @@ Ahora podemos calcular las derivadas de sus inversas aplicando el teorema de la 
 \normalfont Sea $\displaystyle f : I \subset \R \to \R  $ es un intervalo o semirrecta, con $\displaystyle f $ derivable en $\displaystyle I $. Sea $\displaystyle x_{0} \in I $ un extremo relativo. Entonces, $\displaystyle f'\left(x_{0}\right) = 0 $.
 \end{ftheorem}
 \begin{proof}
-Sin pérdida de generalidad, se $\displaystyle x_{0} $ un máximo local. Entonces existe $\displaystyle r > 0 $ tal que $\displaystyle \left(x_{0}-r, x_{0}+r\right) \subset I $. 
+Sin pérdida de generalidad, sea $\displaystyle x_{0} $ un máximo local. Entonces existe $\displaystyle r > 0 $ tal que $\displaystyle \left(x_{0}-r, x_{0}+r\right) \subset I $. 
 \begin{itemize}
 \item Si $\displaystyle x > x_{0} $ tenemos que, dado que $\displaystyle f $ es derivable en $\displaystyle I $,
 	\[ \frac{f\left(x\right)-f\left(x_{0}\right)}{x-x_{0}} \leq 0 \Rightarrow \lim_{x \to x_{0}^{+}}\frac{f\left(x\right)-f\left(x_{0}\right)}{x-x_{0}} = f'\left(x_{0}\right) \leq 0 .\]
@@ -465,7 +468,7 @@ Dada $\displaystyle f : A \subset \R \to \R $ puede existir $\displaystyle f' $ 
 \end{observation}
 A través de $\displaystyle f' $ y $\displaystyle f'' $ se pueden conocer propiedades de $\displaystyle f $. 
 \begin{ftheorem}[]
-	\normalfont Sea $\displaystyle f : \left(a,b\right) \to \R $ continua en $\displaystyle [a,b] $ y derivable en $\displaystyle \left(a,b\right) $. 
+	\normalfont Sea $\displaystyle f : \left[a,b\right] \to \R $ continua en $\displaystyle [a,b] $ y derivable en $\displaystyle \left(a,b\right) $. 
 \begin{description}
 	\item[(a)] 
 		\begin{itemize}

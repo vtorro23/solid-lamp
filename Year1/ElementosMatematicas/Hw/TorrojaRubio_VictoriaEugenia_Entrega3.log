@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  11 MAR 2025 20:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  23 MAR 2025 23:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -569,6 +569,34 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ) (./TorrojaRubio_VictoriaEugenia_Entrega3.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `TorrojaRubio_VictoriaEugenia_Entrega3.aux'.
 
@@ -653,9 +681,117 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Underfull \hbox (badness 10000) in paragraph at lines 14--16
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./TorrojaRubio_VictoriaEugenia_Entrega3.aux
+ []
+
+<~/Desktop/Images/ej1,1.jpg, id=4, 1610.015pt x 1164.35pt>
+File: ~/Desktop/Images/ej1,1.jpg Graphic file (type jpg)
+<use ~/Desktop/Images/ej1,1.jpg>
+Package pdftex.def Info: ~/Desktop/Images/ej1,1.jpg  used on input line 31.
+(pdftex.def)             Requested size: 215.0023pt x 155.47488pt.
+<~/Desktop/Images/ej1,2.jpg, id=5, 1832.8475pt x 772.8875pt>
+File: ~/Desktop/Images/ej1,2.jpg Graphic file (type jpg)
+<use ~/Desktop/Images/ej1,2.jpg>
+Package pdftex.def Info: ~/Desktop/Images/ej1,2.jpg  used on input line 38.
+(pdftex.def)             Requested size: 215.0023pt x 90.65508pt.
+[1
+
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 </Users/victoriatorroja/Desktop/Images/ej1,1.jpg> </Users/victoriatorroja/Desktop/Images/ej1,2.jpg>]
+<~/Desktop/Images/ej1,3.jpg, id=25, 751.80875pt x 718.685pt>
+File: ~/Desktop/Images/ej1,3.jpg Graphic file (type jpg)
+<use ~/Desktop/Images/ej1,3.jpg>
+Package pdftex.def Info: ~/Desktop/Images/ej1,3.jpg  used on input line 62.
+(pdftex.def)             Requested size: 215.0023pt x 205.52919pt.
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 108--110
+
+ []
+
+[4 </Users/victoriatorroja/Desktop/Images/ej1,3.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 119--121
+
+ []
+
+
+Overfull \hbox (90.82973pt too wide) in paragraph at lines 122--133
+ [] 
+ []
+
+<~/Desktop/Images/ej2,2.jpg, id=34, 918.43124pt x 678.535pt>
+File: ~/Desktop/Images/ej2,2.jpg Graphic file (type jpg)
+<use ~/Desktop/Images/ej2,2.jpg>
+Package pdftex.def Info: ~/Desktop/Images/ej2,2.jpg  used on input line 137.
+(pdftex.def)             Requested size: 215.0023pt x 158.83452pt.
+
+Overfull \hbox (90.82973pt too wide) in paragraph at lines 143--154
+ [] 
+ []
+
+<~/Desktop/Images/ej2,3.jpg, id=35, 932.48375pt x 696.6025pt>
+File: ~/Desktop/Images/ej2,3.jpg Graphic file (type jpg)
+<use ~/Desktop/Images/ej2,3.jpg>
+Package pdftex.def Info: ~/Desktop/Images/ej2,3.jpg  used on input line 158.
+(pdftex.def)             Requested size: 215.0023pt x 160.60849pt.
+<~/Desktop/Images/ej2,4.jpg, id=36, 936.49875pt x 699.61375pt>
+File: ~/Desktop/Images/ej2,4.jpg Graphic file (type jpg)
+<use ~/Desktop/Images/ej2,4.jpg>
+Package pdftex.def Info: ~/Desktop/Images/ej2,4.jpg  used on input line 164.
+(pdftex.def)             Requested size: 215.0023pt x 160.61954pt.
+<~/Desktop/Images/ej2,1.jpg, id=37, 1946.27126pt x 913.4125pt>
+File: ~/Desktop/Images/ej2,1.jpg Graphic file (type jpg)
+<use ~/Desktop/Images/ej2,1.jpg>
+Package pdftex.def Info: ~/Desktop/Images/ej2,1.jpg  used on input line 171.
+(pdftex.def)             Requested size: 215.0023pt x 100.89381pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--177
+
+ []
+
+[5] [6 </Users/victoriatorroja/Desktop/Images/ej2,2.jpg> </Users/victoriatorroja/Desktop/Images/ej2,3.jpg>] [7 </Users/victoriatorroja/Desktop/Images/ej2,4.jpg> </Users/victoriatorroja/Desktop/Images/ej2,1.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 179--182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--182
+
+ []
+
+<~/Desktop/Images/ej3,1.jpg, id=49, 1114.1625pt x 1074.0125pt>
+File: ~/Desktop/Images/ej3,1.jpg Graphic file (type jpg)
+<use ~/Desktop/Images/ej3,1.jpg>
+Package pdftex.def Info: ~/Desktop/Images/ej3,1.jpg  used on input line 194.
+(pdftex.def)             Requested size: 215.0023pt x 207.24377pt.
+<~/Desktop/Images/ej3,2.jpg, id=50, 569.12625pt x 822.07124pt>
+File: ~/Desktop/Images/ej3,2.jpg Graphic file (type jpg)
+<use ~/Desktop/Images/ej3,2.jpg>
+Package pdftex.def Info: ~/Desktop/Images/ej3,2.jpg  used on input line 200.
+(pdftex.def)             Requested size: 215.0023pt x 310.55891pt.
+[8]
+<~/Desktop/Images/ej3,3.jpg, id=55, 908.39375pt x 634.37pt>
+File: ~/Desktop/Images/ej3,3.jpg Graphic file (type jpg)
+<use ~/Desktop/Images/ej3,3.jpg>
+Package pdftex.def Info: ~/Desktop/Images/ej3,3.jpg  used on input line 218.
+(pdftex.def)             Requested size: 215.0023pt x 150.14172pt.
+
+Overfull \hbox (37.64125pt too wide) detected at line 237
+[] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ) \OT1/cmr/m/n/10 ^^H[] = [] [] = [] [] = 39\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 46449258[]\OML/cmm/m/it/10 :
+ []
+
+[9 </Users/victoriatorroja/Desktop/Images/ej3,1.jpg>] [10 </Users/victoriatorroja/Desktop/Images/ej3,2.jpg> </Users/victoriatorroja/Desktop/Images/ej3,3.jpg>]
+<~/Desktop/Images/ej3,4.jpg, id=62, 1003.75pt x 745.78625pt>
+File: ~/Desktop/Images/ej3,4.jpg Graphic file (type jpg)
+<use ~/Desktop/Images/ej3,4.jpg>
+Package pdftex.def Info: ~/Desktop/Images/ej3,4.jpg  used on input line 241.
+(pdftex.def)             Requested size: 215.0023pt x 159.7378pt.
+ [11 </Users/victoriatorroja/Desktop/Images/ej3,4.jpg>] (./TorrojaRubio_VictoriaEugenia_Entrega3.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
@@ -663,20 +799,24 @@ LaTeX Info: Redefining \% on input line 9.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 27068 strings out of 474116
- 673249 string characters out of 5743682
- 1929187 words of memory out of 5000000
- 48970 multiletter control sequences out of 15000+600000
- 565020 words of font info for 64 fonts, out of 8000000 for 9000
+ 27172 strings out of 474116
+ 676247 string characters out of 5743682
+ 1950187 words of memory out of 5000000
+ 49072 multiletter control sequences out of 15000+600000
+ 565534 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,6n,110p,785b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on TorrojaRubio_VictoriaEugenia_Entrega3.pdf (1 page, 89994 bytes).
+ 104i,18n,110p,958b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on TorrojaRubio_VictoriaEugenia_Entrega3.pdf (11 pages, 2052413 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
- 34 compressed objects within 1 object stream
+ 129 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 68 words of extra memory for PDF output out of 10000 (max. 10000000)
 

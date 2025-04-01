@@ -96,7 +96,7 @@ Recordamos que, si $\displaystyle \beta  $ es simétrica,
 	\[
 	\begin{split}
 			\beta\left(\vec{x}, \vec{y}\right) =  \begin{pmatrix} x'^{1} & \cdots & x'^{n} \end{pmatrix} \mathcal{M}_{ \left\{ \vec{v}_{i}\right\} }\left(\beta \right)\begin{pmatrix} y'^{1} \\ \vdots \\ y'^{n} \end{pmatrix} 
-				=   \begin{pmatrix} x^{1} & \cdots & x^{n} \end{pmatrix} \underbrace{C^{t}\mathcal{M}_{ \left\{ \vec{v}_{i}\right\} }\left(\beta \right) C}_{\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left(\beta\right)}} \begin{pmatrix}y^{1} \\ \vdots \\ y^{n} \end{pmatrix} .
+				=   \begin{pmatrix} x^{1} & \cdots & x^{n} \end{pmatrix} \underbrace{C^{t}\mathcal{M}_{ \left\{ \vec{v}_{i}\right\} }\left(\beta \right) C}_{\mathcal{M}_{ \left\{ \vec{u}_{i}\right\} }\left(\beta\right)} \begin{pmatrix}y^{1} \\ \vdots \\ y^{n} \end{pmatrix} .
 	\end{split}
 	\]
 \begin{fdefinition}[]
@@ -163,7 +163,7 @@ Supongamos que $\displaystyle \rad\left(\beta \right) \neq \left\{ \vec{0}\right
 	\vec{x} \to & \vec{x} + \rad\left(\beta \right).
 \end{split}
 \]
-Tenemos que si $\displaystyle \vec{x} \in \Ker\left(p\right) $, entonces $\displaystyle \vec{x} + \rad\left(\beta \right) = \vec{0} + \rad\left(\beta \right) $, por lo que $\displaystyle \vec{x} = \vec{x}- \vec{0} \in L \cap \rad\left(\beta \right) = \left\{ \vec{0}\right\}  $. Entonces, $\displaystyle p $ es un isomorfismo (es trivial que era sobreyectiva).
+Tenemos que si $\displaystyle \vec{x} \in \Ker\left(p\right) $, entonces $\displaystyle \vec{x} + \rad\left(\beta \right) = \vec{0} + \rad\left(\beta \right) $, por lo que $\displaystyle \vec{x} = \vec{x}- \vec{0} \in L \cap \rad\left(\beta \right) = \left\{ \vec{0}\right\}  $. Entonces, $\displaystyle p $ es un isomorfismo (es trivial que es sobreyectiva).
 Tenemos que 
 \[ \overline{\beta }\left(p\left(\vec{x}\right), p\left(\vec{y}\right)\right) = \beta\left(\vec{x}, \vec{y}\right) = \beta_{L}\left(\vec{x}, \vec{y}\right) ,\]
 donde $\displaystyle \beta_{L} = \beta|_{L \times L} $. Es decir, $\displaystyle \beta_{L} $ es no degenerada. Si $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n-r}\right\}  $ es base de $\displaystyle L $ y $\displaystyle \left\{ \vec{u}_{n-r+1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle \rad\left(\beta \right) $. 
@@ -370,7 +370,7 @@ Tenemos que
 \normalfont Todos los subespacios definidos positivos maximales tienen la misma dimensión.
 \end{ftheorem}
 \begin{proof}
-	Sean $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $ tales que $\displaystyle \beta_{L_{1}} $ y $\displaystyle \beta_{L_{2}} $ sean definidos positivos maximales. Tenemos que $\displaystyle L^{\perp }_{1,\beta} $ es negativo. En efecto, si $\displaystyle \vec{x} \in L_{1\beta }^{\perp} $ y $\displaystyle \beta\left(\vec{x}, \vec{x}\right) > 0 $ tenemos que $\displaystyle L_{1} \subset L_{1} + L\left( \left\{ \vec{x}\right\} \right) \in \mathcal{L}\left(V\right) $, lo cual es absurdo porque hemos dicho que $\displaystyle L_{1} $ es definido positivo maximal. También tenemos que $\displaystyle L_{1\beta }^{\perp } \cap L_{2} = \left\{ \vec{0}\right\}  $. Por tanto, debe ser que $\displaystyle F_{2} $ está contenido en alún suplementario de $\displaystyle L^{\perp }_{1\beta} $. Por tanto,
+	Sean $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $ tales que $\displaystyle \beta_{L_{1}} $ y $\displaystyle \beta_{L_{2}} $ sean definidos positivos maximales. Tenemos que $\displaystyle L^{\perp }_{1,\beta} $ es negativo. En efecto, si $\displaystyle \vec{x} \in L_{1\beta }^{\perp} $ y $\displaystyle \beta\left(\vec{x}, \vec{x}\right) > 0 $ tenemos que $\displaystyle L_{1} \subset L_{1} + L\left( \left\{ \vec{x}\right\} \right) \in \mathcal{L}\left(V\right) $, lo cual es absurdo porque hemos dicho que $\displaystyle L_{1} $ es definido positivo maximal. También tenemos que $\displaystyle L_{1\beta }^{\perp } \cap L_{2} = \left\{ \vec{0}\right\}  $. Por tanto, debe ser que $\displaystyle L_{2} $ está contenido en alún suplementario de $\displaystyle L^{\perp }_{1\beta} $. Por tanto,
 	\[ \dim L_{2} \leq \dim\left(V\right)-\dim\left(L^{\perp }_{1\beta }\right) = \dim\left(L_{1}\right)  .\]
 	Análogamente, como $\displaystyle L_{1} \cap L^{\perp }_{2\beta } = \left\{ \vec{0}\right\}  $,
 	\[ \dim\left(L_{1}\right) \leq \dim\left(V\right) - \dim\left(L^{\perp }_{2\beta }\right) = \dim\left(L_{2}\right) .\]
@@ -442,7 +442,7 @@ Si existe $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ bas
 \[f\left(\vec{u}_{i}\right) = a^{1}_{i}\vec{u}_{1} + \cdots + a^{n}_{i}\vec{u}_{n} \]
 \[ \ad\left(f\right)\left(\vec{u}_{j}\right) = b^{1}_{j}\vec{u}_{1} + \cdots + b^{n}_{j}\vec{u}_{n} .\]
 Así, por la proposición anterior, $\displaystyle \beta\left(f\left(\vec{u}_{i}\right), \vec{u}_{j}\right) = \beta\left(\vec{u}_{i}, \ad\left(f\right)\left(\vec{u}_{j}\right)\right) $. Tenemos que
-\[ \beta\left(f\left(\vec{u}_{i}\right),\vec{u}_{j}\right)\beta\left(a^{1}_{i}\vec{u}_{1} + \cdots + a^{n}_{i}\vec{u}_{n}, \vec{u}_{j}\right) =a^{j}_{i} .\]
+\[ \beta\left(f\left(\vec{u}_{i}\right),\vec{u}_{j}\right) =\beta\left(a^{1}_{i}\vec{u}_{1} + \cdots + a^{n}_{i}\vec{u}_{n}, \vec{u}_{j}\right) =a^{j}_{i} .\]
 Por otro lado, tenemos que
 \[
 \begin{split}
