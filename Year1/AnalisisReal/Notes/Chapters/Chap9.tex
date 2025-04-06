@@ -123,10 +123,8 @@ Así, por inducción se puede ver que $\displaystyle d _{k} = 0 $, $\displaystyl
 \normalfont Sea $\displaystyle f : \left(a -\delta, a + \delta \right)\to \R $ tal que existen $\displaystyle f', \ldots, f^{\left(n\right)} $ continuas en $\displaystyle \left(a-\delta, a + \delta \right) $. Si $\displaystyle P $ es un polinomio de grado menor o igual que $\displaystyle n $, con $\displaystyle P $ igual a $\displaystyle f $ hasta el orden $\displaystyle n $, entonces $\displaystyle P = P_{a,n}\left(x\right) $.
 \end{ftheorem}
 \begin{proof}
-Por hipótesis, se tiene que 
-\[\lim_{x \to a}\frac{f\left(x\right)-P\left(x\right)}{\left(x-a\right)^{n}} = 0 .\]
-Por resultados anteriores sabemos que 
-\[\lim_{x \to a}\frac{f\left(x\right)-P_{a,n}\left(x\right)}{\left(x-a\right)^{n}} = 0 .\]
+Por hipótesis y por resultados anteriores tenemos que 
+\[\lim_{x \to a}\frac{f\left(x\right)-P\left(x\right)}{\left(x-a\right)^{n}} = 0, \quad \lim_{x \to a}\frac{f\left(x\right)-P_{a,n}\left(x\right)}{\left(x-a\right)^{n}} = 0 .\]
 Por tanto, calculamos el límite
 \[
 \begin{split}
@@ -223,4 +221,170 @@ Para calcular el error,
 Si $\displaystyle x = 1 $ se tiene que el error será menor que $\displaystyle \frac{1}{\left(2n+2\right)!} $. Así, si queremos que el error sea menor que $\displaystyle 10^{-2} $, encontramos $\displaystyle n \in \N$ tal que $\displaystyle \frac{1}{\left(2n+2\right)!} < 10^{-2} $. En este caso, basta coger $\displaystyle n=5 $. Así,
 \[\sin 1 \approx 1 - \frac{1}{3!} + \frac{1}{5!} .\]
 \end{eg}
+\section{Series de Taylor}
+\begin{fdefinition}[Serie de Taylor]
+\normalfont Sea $\displaystyle f : \left(a-\delta, a + \delta \right)\to \R $ tal que existe $\displaystyle f^{\left(n\right)}\left(a\right) $, $\displaystyle \forall n \in \N $. Se llama \textbf{serie de Taylor} de $\displaystyle f $ centrada en $\displaystyle a $ a la serie $\displaystyle \sum^{\infty}_{k = 0}\frac{f^{\left(k\right)}\left(a\right)}{k!}\left(x-a\right)^{k} $.
+\end{fdefinition}
+\begin{observation}
+\normalfont Por definición, tenemos que 
+\[\sum^{\infty}_{n=0}\frac{f^{\left(n\right)}\left(a\right)}{n!}\left(x-a\right)^{n}=\lim_{n \to \infty}\sum^{n}_{k=0}\frac{f^{\left(k\right)}\left(a\right)}{k!}\left(x-a\right)^{k} = \lim_{n \to \infty}P_{a,n}\left(x\right) .\]
+Recordamos que $\displaystyle f\left(x\right)-P_{a,n}\left(x\right) = R_{a,n}\left(x\right) $.
+\end{observation}
+\begin{fprop}[]
+\normalfont Sea $\displaystyle f : \left(a-\delta, a + \delta \right)\to \R $ tal que existe $\displaystyle f^{\left(n\right)} \left(a\right)$, $\displaystyle \forall n \in \N $. Si $\displaystyle \lim_{n \to \infty}R_{a,n}\left(x\right) = 0 $, para $\displaystyle x \in \left(a-\delta, a + \delta \right) $, entonces $\displaystyle f\left(x\right)= \sum^{\infty}_{k=0}\frac{f^{\left(k\right)}\left(a\right)}{k!}\left(x-a\right)^{k} $.
+\end{fprop}
+\begin{proof}
+Como $\displaystyle P_{a,n}\left(x\right) = f\left(x\right)-R_{a,n}\left(x\right) $, tomando límites
+\[\lim_{n \to \infty}P_{a,n}\left(x\right) = \lim_{n \to \infty}f\left(x\right)-R_{a,n}\left(x\right) =f\left(x\right) .\]
+\end{proof}
+\begin{eg}
+\normalfont Consideremos $\displaystyle f\left(x\right)= e^{x} $ centrada en 0. Su serie de Taylor es $\displaystyle \sum^{\infty}_{k=0}\frac{x^{k}}{k!} $. Así, tenemos que
+\[f\left(x\right) = \sum^{n}_{k=0}\frac{x^{k}}{k!}+R_{0,n}\left(x\right) = \sum^{n}_{k=0}\frac{x^{k}}{k!}+\int^{x}_{0} \frac{f^{\left(n+1\right)}\left(s\right)}{n!}\left(x-s\right)^{n} \; d s .\]
+Tenemos que 
+\[ \left|\int^{x}_{0} \frac{f^{\left(n+1\right)}\left(s\right)}{n!}\left(x-s\right)^{n} \; d s\right| \leq \int^{x}_{0} \frac{e^{s}}{n!} \left|x-s\right|^{n} \; d s \leq \max \left\{ 1,e^{x}\right\} \int^{x}_{0} \frac{ \left|x-s\right|^{n}}{n!} \; d s = \max \left\{ 1,e^{x}\right\} \frac{ \left|x\right|^{n+1}}{\left(n+1\right)!} .\]
+Así, si $\displaystyle x \in \left[-M,M\right]  $ para cualquier $\displaystyle M > 0 $ se tiene que
+\[ \left|R_{a,n}\left(x\right)\right| \leq \max \left\{ 1,e^{x}\right\} \frac{ \left|x\right|^{n+1}}{\left(n+1\right)!} \leq \max \left\{ 1,e^{M}\right\} \frac{M^{n+1}}{\left(n+1\right)!} \to 0 .\]
+ Aplicando el criterio del cociente tenemos que $\displaystyle \sum^{\infty}_{n=0}\frac{M^{n+1}}{\left(n+1\right)!} < \infty $. Así, tenemos que $\displaystyle R_{a,n}\left(x\right) \to 0 $ y, consecuentemente, 
+\[e^{x} = \sum^{\infty}_{k=0}\frac{x^{k}}{k!} .\]
+\end{eg}
+\begin{eg}
+\normalfont De forma análoga, se ve que $\displaystyle \forall x \in \R $ 
+\[\cos x = \sum^{\infty}_{k=0}\frac{\left(-1\right)^{k}x^{2k}}{\left(2k\right)!} \quad \text{y} \quad \sin x = \sum^{\infty}_{k=0}\frac{\left(-1\right)^{k}x^{2k+1}}{\left(2k+1\right)!} .\]
+\end{eg}
+\begin{eg}
+\normalfont Consideremos la función 
+\[f\left(x\right) = 
+\begin{cases}
+e^{-\frac{1}{x^{2}}}, \; x \neq 0 \\
+0, \; x = 0
+\end{cases}
+.\]
+En un ejercicio demostramos que $\displaystyle \forall n \in\N $, $\displaystyle \exists f^{\left(n\right)}\left(0\right) = 0 $. Así, su serie de Taylor será, $\displaystyle \sum^{\infty}_{k=0}\frac{f^{\left(k\right)}\left(0\right)}{k!}x^{k} = 0 $. Es decir, hemos encontrado una función $\displaystyle f $ cuyo polinomio de Taylor solo coincide con $\displaystyle f $ en el punto $\displaystyle a = 0 $. Es decir, es una función cuya serie de Taylor no nos aporta información.
+\end{eg}
+\begin{eg}
+\normalfont Consideremos la serie de Taylor de $\displaystyle f\left(x\right)=e^{x} $ centrada en $\displaystyle 1 $. Podemos hacer,
+\[e^{x} = e^{\left(x-1\right)+1} = e e^{x-1} = e \sum^{\infty }_{k=0}\frac{\left(x-1\right)^{k}}{k!} = \sum^{\infty}_{k=0}\frac{e\left(x-1\right)^{k}}{k!} .\]
+Para ver que se trata efectivamente de la serie de Taylor, basta con ver que 
+\[\lim_{x \to 1}\frac{e^{x}-\sum^{n}_{k=0}\frac{e\left(x-1\right)^{k}}{k!}}{\left(x-1\right)!} = 0 .\]
+Así, podemos identificar su polinomio de Taylor y, consecuentemente, su serie de Taylor.
+\end{eg}
+\begin{eg}
+\normalfont Sea $\displaystyle g\left(x\right) = \left(x-1\right)^{5}e^{x} $. Vamos a calcular su serie de Taylor centrada en 1. Tenemos que 
+\[g\left(x\right) = \left(x-1\right)^{5}e^{x} = \left(x-1\right)^{5}\sum^{\infty}_{k = 0}\frac{e\left(x-1\right)^{k}}{k!} = \sum^{\infty}_{k=0}\frac{e\left(x-1\right)^{k+5}}{k!} .\]
+Si tomamos $\displaystyle j= k + 5 $ se tiene que 
+\[g\left(x\right)=\sum^{\infty}_{j=5}\frac{e\left(x-1\right)^{j}}{\left(j-5\right)!} .\]
+\end{eg}
+\begin{eg}
+\normalfont Consideremos $\displaystyle f\left(x\right) = \frac{1}{1 + x^{2}} $. Recordamos que
+\[ \frac{1}{1 + x^{2}} = \sum^{n}_{k=0}\left(-1\right)^{k}x^{2k} + \left(-1\right)^{n+1}\frac{x^{2n+2}}{1+x^{2}} .\]
+Entonces tenemos que, si $\displaystyle \left|x\right| < 1 $,
+\[\lim_{n \to \infty}\left(-1\right)^{n+1}\frac{x^{2n+2}}{1+x^{2}} = 0.\]
+Así, tenemos que 
+\[\frac{1}{1 + x^{2}} = \sum^{\infty}_{k=0}\left(-1\right)^{k}x^{2k}, \; x \in \left(-1,1\right) .\]
+\end{eg}
+\begin{eg}
+\normalfont Calculemos la serie de Taylor de $\displaystyle f\left(x\right) = \arctan x $. Tenemos que $\displaystyle \arctan x = \int^{x}_{0} \frac{1}{1 + s^{2}} \; d s $. Por tanto,
+\[\arctan x = \int^{x}_{0} \sum^{n}_{k=0}\left(-1\right)^{k}s^{2k} + \left(-1\right)^{n+1}\frac{s^{2n+2}}{1+s^{2}} \; d s = \sum^{n}_{k=0}\left(-1\right)^{k}\frac{x^{2k+1}}{2k+1} + \int^{x}_{0} \left(-1\right)^{n+1}\frac{s^{2n+2}}{1+s^{2}} \; d s .\]
+Para ver que el sumatorio resultante es el polinomio de Taylor habría que comprobarlo con el límite. Ahora, tenemos que si $\displaystyle \left|x\right| < 1 $,
+\[ \left|\int^{x}_{0} \frac{\left(-1\right)^{n+1}s^{2n+2}}{1+s^{2}} \; d s\right| \leq \int^{x}_{0} \left|s\right|^{2n+2} \; d s = \frac{x^{2n+3}}{2n+3} \to 0.\]
+En caso contrario, $\displaystyle \lim_{n \to \infty}R_{0,n} = \infty $. Así, se obtiene que 
+\[\arctan x = \sum^{\infty}_{k=0}\left(-1\right)^{k}\frac{x^{2k+1}}{2k+1}, \; x \in \left(-1,1\right) .\]
+\end{eg}
+\section{Método de las tangentes de Newton}
+Sea la ecuación $\displaystyle f\left(x\right) = 0 $. Queremos encontrar $\displaystyle x = f^{-1}\left(0\right) $. Sea $\displaystyle f : \R \to \R $ derivable. Sea $\displaystyle x_{0} \in \dom\left(f\right) $ y sea $\displaystyle y = f'\left(x_{0}\right)\left(x-x_{0}\right) + f\left(x_{0}\right) $ la recta tangente. Calculamos el corte de la recta tangente con la recta $\displaystyle y = 0 $. Es decir, tenemos la ecuación 
+\[ 0 = f'\left(x_{0}\right)\left(x-x_{0}\right) + f\left(x_{0}\right) \Rightarrow x = -\frac{f\left(x_{0}\right)}{f'\left(x_{0}\right)}+x_{0} .\]
+Tomamos $\displaystyle x_{1} = -\frac{f\left(x_{0}\right)}{f'\left(x_{0}\right)}+x_{0} $. Si $\displaystyle x_{1} \in \dom\left(f\right) $, repetimos el procedimiento, obteniendo la sucesión recurrente
+\[x_{n} = x_{n-1}-\frac{f\left(x_{n-1}\right)}{f'\left(x_{n-1}\right)} .\]
+Tenemos que ver que $\displaystyle x_{n} \to r $ tal que $\displaystyle f\left(r\right) = 0 $.
+\begin{ftheorem}[Método de Newton]
+	\normalfont Sea $\displaystyle f : \left[a,b\right] \to \R $ dos veces derivable y con $\displaystyle f\left(a\right)f\left(b\right)<0 $, tal que existen $\displaystyle m,M > 0 $ tales que
+	\[ 0 < m \leq \left|f'\left(x\right)\right| \; \text{y} \; \left|f''\left(x\right)\right|\leq M, \; \forall x \in \left[a,b\right]  .\]
+	Sea $\displaystyle r \in \left[a,b\right]  $ la única raíz de $\displaystyle f\left(x\right) = 0 $ en $\displaystyle \left[a,b\right]  $. Existe un subintervalo $\displaystyle I \subset \left[a,b\right]  $ con $\displaystyle r \in I $ tal que $\displaystyle \forall x_{0} \in I $ la sucesión recurrente definida por
+	\[x_{n+1} = x_{n} - \frac{f\left(x_{n}\right)}{f'\left(x_{n}\right)},\]
+	converge a $\displaystyle r $. En particular,
+	\[ \left|x_{n+1}-r\right| \leq \frac{M}{2m} \left|x_{n}-r\right|^{2}, \; \forall n \in \N .\]
+\end{ftheorem}
+\begin{proof}
+	Como $\displaystyle f\left(a\right)f\left(b\right) < 0 $, el teorema de Bolzano nos dice que existe $\displaystyle r \in \left(a,b\right) $ tal que $\displaystyle f\left(r\right) = 0 $. Además, como $\displaystyle f' $ es continua por existir $\displaystyle f'' $ y $\displaystyle f' \neq 0 $, se sigue que en una vecindad de $\displaystyle r $, $\displaystyle f $ es inyectiva en $\displaystyle \left[a,b\right]  $. \\ 
+	Sea $\displaystyle K = \frac{M}{2m} $ y sea $\displaystyle \delta > 0 $ tal que $\displaystyle \delta < \frac{1}{K} $ e $\displaystyle I = \left[r-\delta, r + \delta \right] \subset \left[a,b\right] $.
+	Ahora, si $\displaystyle x_{0} \in I $, la fórmula del resto de Lagrange del teorema de Taylor nos dice que existe $\displaystyle c \in \left(x_{0}, r\right) $ tal que
+	\[f\left(r\right) = f\left(x_{0}\right) + f'\left(x_{0}\right)\left(r-x_{0}\right) + \frac{1}{2}f''\left(c\right)\left(r-x_{0}\right)^{2} .\]
+	Como $\displaystyle f\left(r\right) = 0 $, tenemos que
+	\[ -f\left(x_{0}\right) = f'\left(x_{0}\right)\left(r-x_{0}\right)+\frac{1}{2}f''\left(c\right)\left(r-x_{0}\right)^{2} .\]
+	Por tanto, se deduce que 
+	\[-\frac{f\left(x_{0}\right)}{f'\left(x_{0}\right)} = \left(r-x_{0}\right) + \frac{f''\left(c\right)}{2f'\left(x_{0}\right)}\left(r-x_{0}\right)^{2} .\]
+Ahora, consideramos $\displaystyle x_{1} = x_{0} - \frac{f\left(x_{0}\right)}{f'\left(x_{0}\right)} $, entonces 
+\[x_{1} = x_{0} + \left(r-x_{0}\right)+\frac{f''\left(c\right)}{2f'\left(x_{0}\right)}\left(r-x_{0}\right)^{2} .\]
+Tomando valores absolutos y acotando se tiene que
+\[ \left|x_{1}-r\right| = \left|\frac{f''\left(c\right)}{2f'\left(x_{0}\right)}\left(r-x_{0}\right)^{2}\right| \leq \frac{M}{2m}\delta ^{2} < \delta  .\]
+En la última desigualdad hemos utilizado el hecho de que $\displaystyle K = \frac{M}{2m} < \frac{1}{\delta } $. Así, tenemos que $\displaystyle x_{1} \in I $. Similarmente, para cualquier $\displaystyle x_{n} \in I $ se tiene que $\displaystyle x_{n} -\frac{f\left(x_{n}\right)}{f'\left(x_{n}\right)} \in I $. Así, si $\displaystyle x_{0} \in I $, la sucesión recurrente $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ con $\displaystyle x_{n+1} = x_{n} -\frac{f\left(x_{n}\right)}{f'\left(x_{n}\right)} $ está dentro del intervalo $\displaystyle I $.
+Luego, con la acotación de arriba e iterando, dado que $\displaystyle K\delta < 1 $, obtenemos que \footnote{La desigualdad anterior se justifica de la siguiente manera: $\displaystyle K\delta \left|x_{n}-r\right| \leq \left(K\delta \right)K \left|x_{n-1}-r\right|^{2} \leq \left(K\delta \right)^{2} \left|x_{n}-r\right| $. } 
+\[ K\delta \left|x_{n}-r\right| \leq \left(K\delta \right)^{2} \left|x_{n-1}-r\right| \leq \cdots \leq \left(K\delta \right)^{n} \left|x_{1}-r\right| \to 0 .\]
+Es decir, $\displaystyle x_{n} \to r $.
+\end{proof}
+\begin{observation}
+\normalfont El problema de este teorema es que para encontrar $\displaystyle I $ donde tomar el primer término de la sucesión, necesitamos conocer primero $\displaystyle r $, la raíz que buscamos.
+\end{observation}
+\begin{fdefinition}[Función contractiva]
+	\normalfont Se dice que $\displaystyle f : \left[a,b\right] \to \R $ es \textbf{contractiva} si $\displaystyle \exists K \in \left(0,1\right) $ tal que $\displaystyle \left|f\left(x\right)-f\left(y\right)\right| \leq K \left|x-y\right| $, $\displaystyle \forall x,y \in \left[a,b\right]  $.
+\end{fdefinition}
+\begin{flema}[Teorema de punto fijo de Banach]
+	\normalfont Sea $\displaystyle f : \left[a,b\right] \to \left[a,b\right]  $ una función contractiva de modo que la sucesión $\displaystyle x_{n+1} = f\left(x_{n}\right) $, con $\displaystyle n \geq 1 $ y $\displaystyle x_{1} \in \left[a,b\right]  $, tiene a $\displaystyle x^{*} $ por límite, es decir, $\displaystyle \lim_{n \to \infty}x_{n} = x^{*} $ y además \footnote{Aquí, $\displaystyle K $ procede de la definición de contractividad.} 
+	\[ \left|x_{n}-x^{*}\right| \leq \frac{K^{n}}{1-K} \left|x_{0}-x_{1}\right| .\]
+\end{flema}
+\begin{observation}
+\normalfont Si $\displaystyle f $ es una función con $\displaystyle \left|f'\left(x\right)\right|< K $, $\displaystyle \forall x \in \dom\left(f\right) $, entonces por el teorema del valor medio existe $\displaystyle \xi \in \left(x,y\right) $ tal que 
+\[ \left|f\left(x\right)-f\left(y\right)\right| = \left|f'\left(\xi\right)\right| \left|x-y\right| \leq K \left|x-y\right| .\]
+Por tanto, se tiene que $\displaystyle f $ es contractiva.
+\end{observation}
+\begin{proof}
+	Sea $\displaystyle x_{0} \in \left[a,b\right]  $ y se define $\displaystyle x_{n+1} = f\left(x_{n}\right) $ para $\displaystyle n \in \N $. Vamos a ver que $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es de Cauchy. Sea $\displaystyle m > n $, 
+	\[ \left|x_{m}-x_{n}\right| = \left|f\left(x_{m - 1} \right)- f\left(x_{n-1}\right)\right| \leq K \left|x_{m - 1} - x_{n-1}\right| .\]
+	Iterando, obtenemos que 
+\[
+\begin{split}
+	\left|x_{m}-x_{n}\right| & \leq K^{n} \left|x_{m - n}-x_{0}\right| \leq K^{n} \left( \left|x_{m - n}-x_{m - n - 1}\right| + \cdots + \left|x_{2}-x_{1}\right| + \left|x_{1}-x_{0}\right|\right) .\\
+	\leq & K^{n} \left(K^{m - n - 1} \left|x_{0}-x_{1}\right| + K^{m - n - 2} \left|x_{0}-x_{1}\right| + \cdots + K \left|x_{1}-x_{0}\right| + \left|x_{1}-x_{0}\right|\right) \\
+	= & K^{n} \left|x_{1}-x_{0}\right| \left(K^{m - n - 1} + \cdots + K + 1\right) \leq K^{n} \left|x_{1}-x_{0}\right| \frac{1}{1- K} \to 0.
+\end{split}
+\]
+Hemos usado que $\displaystyle K \in \left(0,1\right) $. Así, tenemos que si $\displaystyle \epsilon > 0 $, $\displaystyle \exists n_{0} \in \N $ tal que si $\displaystyle n \geq n_{0} $, entonces
+\[ \left|K^{n} \left|x_{1}-x_{0}\right|\frac{1}{1-K}\right| < \epsilon .\]
+Así, si $\displaystyle m,n \geq n_{0} $, 
+\[ \left|x_{m}-x_{n}\right| \leq K^{n} \left|x_{1}-x_{0}\right|\frac{1}{1-K} < \epsilon  .\]
+Por tanto, la sucesión es de Cauchy. Así, tenemos que $\displaystyle \exists x^{*} \in \left[a,b\right]  $ tal que $\displaystyle x_{n} \to x^{*} $. Fijando $\displaystyle x_{m} \to x^{*} $ si $\displaystyle m \to \infty $, tenemos que
+\[ \left|x_{n}-x^{*}\right| \leq K^{n} \left|x_{1}-x_{0}\right|\frac{1}{1-K} .\]
+Por ser contractiva, tenemos que $\displaystyle f $ es continua, por lo que si $\displaystyle x_{n} \to x^{*} $, entonces $\displaystyle f\left(x_{n}\right) \to f\left(x^{*}\right) $. Así, tenemos que $\displaystyle x^{*} = f\left(x^{*}\right) $.
+\end{proof}
+\begin{observation}
+\normalfont No puede haber otro $\displaystyle y^{*} \neq x^{*}$ que cumpla las mismas propiedades. En efecto, si lo hubiera se tendría que
+\[ \left|x^{*}-y^{*}\right| = \left|f\left(x^{*}\right)-f\left(y^{*}\right)\right| \leq K \left|x^{*}-y^{*}\right| .\]
+Esto es imposible puesto que $\displaystyle K \in\left(0,1\right) $.
+\end{observation}
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle f: \left[a,b\right] \to \R $ derivable tal que $\displaystyle f\left(a\right)f\left(b\right) < 0 $. Además, existen $\displaystyle m,M > 0 $ tales que 
+	\[ 0 < m < \left|f\left(x\right)\right| < M , \; \forall x \in \left[a,b\right]  .\]
+	Entonces, dado $\displaystyle x_{0} \in \left[a,b\right]  $, la sucesión $\displaystyle x_{n+1} = x_{n}-\frac{f'\left(x_{n}\right)}{M} $ converge a la única raíz $\displaystyle x^{*} \in \left[a,b\right]  $ de $\displaystyle f $ ($\displaystyle f\left(x^{*}\right) = 0 $) y además
+	\[ \left|x^{*}-x_{n}\right| \leq \frac{ \left|f\left(x_{0}\right)\right|}{m}\left(1-\frac{m}{M}\right)^{n} .\]
+\end{ftheorem}
+\begin{proof}
+Supongamos que $\displaystyle f' > 0 $ y $\displaystyle f $ es creciente. Como $\displaystyle f\left(a\right)f\left(b\right) < 0 $, tenemos que $\displaystyle f\left(a\right) < 0 $. Si $\displaystyle f' < 0 $, $\displaystyle f $ es decreciente y $\displaystyle f\left(a\right) > 0 $ y $\displaystyle f\left(b\right) < 0 $. Además, como $\displaystyle f' \neq 0 $, tenemos que $\displaystyle f $ es inyectiva. Por el teorema de Bolzano, existe $\displaystyle x^{*} $ tal que $\displaystyle f\left(x^{*}\right) = 0 $. Por ser $\displaystyle f $ inyectiva, este punto es único.\\ 
+Sea la función 
+\[
+\begin{split}
+	\varphi : \left[a,b\right] & \to \R\\
+	x & \to \varphi\left(x\right) = x - \frac{f\left(x\right)}{M}.
+\end{split}
+\]
+Tenemos que 
+\[\varphi'\left(x\right) = 1 - \frac{f'\left(x\right)}{M} < 1 - \frac{m}{M} = K \in \left(0,1\right) .\]
+Si $\displaystyle f' > 0 $, tenemos que $\displaystyle \varphi $ es creciente y contractiva. En efecto, por el teorema del valor medio existe $\displaystyle \xi \in \left(x,y\right) $ tal que
+\[ \left|\varphi\left(x\right)-\varphi\left(y\right)\right| \leq \left|\varphi'\left(\xi\right)\right| \left|x-y\right| < K \left|x-y\right|.\]
+Ahora, tenemos que 
+\[a < a - \frac{f\left(a\right)}{M} = \varphi\left(a\right) < \varphi\left(x\right) < \varphi\left(b\right) = b - \frac{f\left(b\right)}{M} < b \Rightarrow \varphi\left(x\right) \in \left[a,b\right]  .\]
+Por el lema anterior, tenemos que dado $\displaystyle x_{0} \in \left[a,b\right]  $,
+\[x_{n+1} = \varphi\left(x_{n}\right) = x_{n}-\frac{f\left(x_{n}\right)}{M} \to x^{*} = x^{*} - \frac{f\left(x^{*}\right)}{M} \Rightarrow f\left(x^{*}\right) = 0.\]
+Además, 
+\[ \left|x_{n}-x^{*}\right| \leq \frac{K^{n}}{1-K} \left|x_{1}-x_{0}\right| = \frac{\left(1-\frac{m}{M}\right)^{n}}{\frac{m}{M}} \left|x_{0}-\frac{f\left(x_{0}\right)}{M}-x_{0}\right| = \left(1-\frac{m}{M}\right)^{n}\frac{ \left|f\left(x_{0}\right)\right|}{m} .\]
+\end{proof}
 

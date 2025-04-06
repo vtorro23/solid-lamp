@@ -98,10 +98,10 @@ es un isomorfismo.
 donde $\displaystyle \overrightarrow{OA} = x^{1}\vec{u}_{1} + \cdots +x^{n}\vec{u}_{n}  $. 
 \end{observation}
 \begin{fdefinition}[Sistema de coordenadas cartesianas]
-	\normalfont El par $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $ siendo $\displaystyle O \in \mathcal{A} $ y $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $, lo llamaremos \textbf{sistema de coordenadas cartesias}. 
+	\normalfont El par $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $ siendo $\displaystyle O \in \mathcal{A} $ y $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $ base de $\displaystyle V $, lo llamaremos \textbf{sistema de coordenadas cartesianas}. 
 \end{fdefinition}
 \begin{observation}
-\normalfont Sean $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $ y $\displaystyle \left(O', \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\} \right) $ dos sistemas de referencia cartesianos. Tenemos que 
+\normalfont Sean $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $ y $\displaystyle \left(O', \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\} \right) $ dos sistemas de referencia cartesianos. Supongamos que 
 \[
 \begin{split}
 	\overrightarrow{O O '} = & a^{1}\vec{u}_{1} + \cdots + a^{n}\vec{u}_{n} \\
@@ -110,7 +110,7 @@ donde $\displaystyle \overrightarrow{OA} = x^{1}\vec{u}_{1} + \cdots +x^{n}\vec{
 	\vec{v}_{n} = & a^{1}_{n}\vec{u}_{1} + \cdots + a^{n}_{n}\vec{u}_{n}	.
 \end{split}
 \]
-Si $\displaystyle X \in \mathcal{A} $, tenemos que 
+Si $\displaystyle X \in \mathcal{A} $, supongamos que 
 \[\overrightarrow{OX} = x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n}, \quad \overrightarrow{O'X}=x'^{1}\vec{v}_{1} + \cdots + x'^{n}\vec{v}_{n} .\]
 Vamos a estudiar cómo cambiar de un sistema de referencia a otro. 
 \[
@@ -132,31 +132,171 @@ Así, matricialmente obtenemos que
 \[\begin{pmatrix} x^{1} \\ x^{2} \\ \vdots \\ x^{n} \end{pmatrix} = \begin{pmatrix} a^{1} \\ a^{2} \\ \vdots \\ a^{n} \end{pmatrix} + \begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{n} \\
 \vdots & & \vdots \\
 a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix}\begin{pmatrix} x'^{1} \\ x'^{2} \\ \vdots \\ x'^{n} \end{pmatrix} .\]
-En efecto,
+Otra forma de escribirlo es,
 \[ \begin{pmatrix} 1 \\ x^{1} \\ x^{2} \\ \vdots \\ x^{n} \end{pmatrix} =  \begin{pmatrix} 1 & 0 & \cdots & 0 \\a^{1} & a^{1}_{1}  & \cdots & a^{1}_{n} \\
 \vdots & \vdots & \vdots & \vdots \\
 a^{n} & a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix}\begin{pmatrix} 1 \\ x'^{1} \\ x'^{2} \\ \vdots \\ x'^{n} \end{pmatrix}.\]
 \end{observation}
-\begin{fdefinition}[Subespacio afín]
-\normalfont Un subconjunto $\displaystyle \mathcal{L}  $ de $\displaystyle \mathcal{A} $ es un \textbf{subespacio afín} si $\displaystyle \mathcal{L} = \emptyset $ o $\displaystyle \exists L \in \mathcal{L}\left(V\right) $ tal que $\displaystyle \forall A \in \mathcal{A} $, $\displaystyle \forall \vec{u} \in L $, $\displaystyle A + \vec{u} \in \mathcal{L} $ y $\displaystyle \left(\mathcal{L}, +|_{\mathcal{L}\times L}\right) $ es un espacio afín asociado a $\displaystyle L $.
-\end{fdefinition}
-Si $\displaystyle \mathcal{L} \neq \emptyset $ es un subespacio afín y $\displaystyle A \in \mathcal{L} $, se tiene que $\displaystyle B \in \mathcal{L} \iff\overrightarrow{AB} \in L$. En efecto, se tiene que 
-\[ \mathcal{L} = A + L = \left\{ A +\vec{u} \; : \; \vec{u} \in L\right\} .\]
-\begin{fdefinition}[]
-\normalfont $\displaystyle \mathcal{L} $ es una \textbf{variedad lineal afín} $\displaystyle A + L $ con $\displaystyle L \in \mathcal{L}\left(V\right) $.
+\section{Subespacios afines}
+\begin{fdefinition}[Subespacios afines]
+\normalfont Un subconjunto $\displaystyle \mathcal{L}  $ de $\displaystyle \mathcal{A} $ es un \textbf{subespacio afín} si $\displaystyle \mathcal{L} = \emptyset $ o $\displaystyle \exists L \in \mathcal{L}\left(V\right) $ tal que $\displaystyle \forall A \in \mathcal{L} $, $\displaystyle \forall \vec{u} \in L $, $\displaystyle A + \vec{u} \in \mathcal{L} $ es decir, si $\displaystyle \left(\mathcal{L}, +|_{\mathcal{L}\times L}\right) $ es un espacio afín asociado a $\displaystyle L $.
 \end{fdefinition}
 \begin{observation}
-	\normalfont $\displaystyle B \in A + L \iff \overrightarrow{AB} \in \mathcal{L}$.
+\normalfont Si $\displaystyle \mathcal{L} \neq \emptyset $ es un subespacio afín y $\displaystyle A \in \mathcal{L} $, es fácil ver que $\displaystyle B \in \mathcal{L} \iff\overrightarrow{AB} \in L$. 
+\end{observation}
+\begin{fdefinition}[Variedad lineal afín]
+	\normalfont Se dice que $\displaystyle \mathcal{L} = A + L = \left\{ A + \vec{u} \; : \; \vec{u} \in L\right\}$ con $\displaystyle L \in \mathcal{L}\left(V\right) $ es una \textbf{variedad lineal afín}.
+\end{fdefinition}
+\begin{observation}
+\normalfont La variedad lineal afín que pasa por $\displaystyle A $ y tiene por dirección $\displaystyle L \in \mathcal{L}\left(V\right) $ es $\displaystyle A + L $.
+\[ \mathcal{L} = A + L = \left\{ A +\vec{u} \; : \; \vec{u} \in L\right\} .\]
+\end{observation}
+\begin{observation}
+	\normalfont Las variedades lineales afines son subespacios afines. Por tanto, se tiene que $\displaystyle B \in A + L \iff \overrightarrow{AB} \in L$.
 \end{observation}
 \begin{fprop}[]
 \normalfont $\displaystyle B \in A + L \Rightarrow A + L = B + L $.
 \end{fprop}
 \begin{proof}
-	Si $\displaystyle B \in A + L $ se tiene que $\displaystyle \overrightarrow{AB} \in \mathcal{L} $. Así,
+	Si $\displaystyle B \in A + L $ se tiene que $\displaystyle \overrightarrow{AB} \in L $. Así,
 	\[ C \in A + L \iff \overrightarrow{AC} \in L \iff \overrightarrow{BC} = \underbrace{\overrightarrow{BA}}_{\in L} + \underbrace{\overrightarrow{AC}}_{\in L} \iff C \in B + L .\]
-	Así, si $\displaystyle P,Q \in A+L $, entonces $\displaystyle \overrightarrow{PQ} \in L $ y $\displaystyle A + L = B + L $.
 \end{proof}
-\begin{fdefinition}[]
+\begin{observation}
+	\normalfont Si $\displaystyle \mathcal{L} = A + L $ es una variedad lineal afín y $\displaystyle P,Q \in A + L $, entonces $\displaystyle L = \left\{ \overrightarrow{PQ} \; : \; P,Q \in \mathcal{L}\right\}  $. En efecto, si $\displaystyle P,Q \in A + L $, podemos considerar $\displaystyle A + L = P + L $. Además, dado $\displaystyle \vec{u} \in L $, existe un único $\displaystyle Q \in \mathcal{L} $ tal que $\displaystyle P + \vec{u} = Q $, por lo que $\displaystyle Q \in \mathcal{L} $.  
+\end{observation}
+\begin{fdefinition}[Dimensión de una variedad afín]
 \normalfont Si $\displaystyle \mathcal{L} \neq \emptyset $ es una variedad lineal afín de dirección $\displaystyle L \in \mathcal{L}\left(V\right) $ diremos que $\displaystyle \dim\left(\mathcal{L}\right) = \dim\left(L\right) $.
 \end{fdefinition}
+\begin{ftheorem}[]
+	\normalfont Sean $\displaystyle \mathcal{L}_{1} = A + L_{1} $ y $\displaystyle \mathcal{L}_{2} = B + L_{2} $. Entonces, $\displaystyle \mathcal{L}_{1} \cap \mathcal{L}_{2} \neq \emptyset \iff \overrightarrow{AB} \in L_{1} + L_{2}$.
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+	\item[(i)] Si $\displaystyle \mathcal{L}_{1} \cap \mathcal{L}_{2} \neq \emptyset $, tenemos que $\displaystyle \exists C \in \mathcal{L}_{1} \cap \mathcal{L}_{2} $. Así, $\displaystyle \overrightarrow{AC} \in L_{1} $ y $\displaystyle \overrightarrow{BC} \in L_{2} $. Así, tenemos que 
+		\[\overrightarrow{AB} = \underbrace{\overrightarrow{AB}}_{\in L_{1}} + \underbrace{\overrightarrow{BC}}_{\in L_{2}} .\]
+		Así, $\displaystyle \overrightarrow{AB} \in L_{1} + L_{2} $.
+	\item[(ii)] Si $\displaystyle \overrightarrow{AB} \in L_{1} + L_{2} $, $\displaystyle \exists \vec{v}_{1} \in L_{1}, \vec{v}_{2} \in L_{2} $ tal que $\displaystyle \overrightarrow{AB} = \vec{v}_{1} +\vec{v}_{2} $. Tenemos que $\displaystyle A + \vec{v}_{1} \in \mathcal{L}_{1} $. Así,
+		\[ \overrightarrow{\left(A + \vec{v}_{1}\right)B} = \overrightarrow{AB} - \vec{v}_{1} = \vec{v}_{1} +\vec{v}_{2} -\vec{v}_{1} = \vec{v}_{2} \in L_{2} .\]
+		Por tanto, $\displaystyle A + \vec{v}_{1} \in B + L = \mathcal{L}_{2}$. Por tanto, $\displaystyle A + \vec{v}_{1} \in \mathcal{L}_{1} \cap \mathcal{L}_{2} $.
+\end{description}
+\end{proof}
+\begin{fprop}[]
+\normalfont Sean $\displaystyle \mathcal{L}_{i} = A + L_{i} $ para $\displaystyle i \in I $. Entonces, $\displaystyle \bigcap_{i\in I}\mathcal{L}_{i} $ es una variedad lineal afín que, si no es vacío, tiene por dirección $\displaystyle \bigcap_{i \in I}L_{i} \in \mathcal{L}\left(V\right) $.
+\end{fprop}
+\begin{proof}
+Supongamos que $\displaystyle \bigcap_{i \in I}\mathcal{L}_{i} \neq \emptyset $ y sea $\displaystyle A \in \bigcap_{i \in I}\mathcal{L}_{i} $. Entonces $\displaystyle \forall i \in I $ se tiene que $\displaystyle \mathcal{L}_{i} = A + L_{i} $. Tenemos que 
+\[ B \in \bigcap_{i \in I}\mathcal{L}_{i} \iff B \in \mathcal{L}_{i} = A + L_{i}, \; \forall i \in I \iff \overrightarrow{AB} \in L_{i}, \; \forall i \in I \iff \overrightarrow{AB} \in \bigcap_{i \in I}L_{i}.\]
+Así, hemos visto que $\displaystyle \bigcap_{i \in I}\mathcal{L}_{i} = A+ \bigcap_{i \in I}L_{i} $.
+\end{proof}
+\begin{fdefinition}[]
+\normalfont Dos variedades lineales afines $\displaystyle \mathcal{L}_{1} = A + L_{1} $ y $\displaystyle \mathcal{L}_{2} = B + L_{2} $ son \textbf{complementarias} si lo son sus direcciones, es decir, si $\displaystyle L_{1} \oplus L_{2} = V $.
+\end{fdefinition}
+\begin{eg}
+	\normalfont Consideremos en $\displaystyle \R^{4} $ los planos $\displaystyle \rho_{1} $ y $\displaystyle \rho_{2} $. Tenemos que $\displaystyle \rho_{1} = A + P_{1} $ y $\displaystyle \rho_{2} = B + P_{2} $ donde $\displaystyle P_{1} = L\left( \left\{ \vec{u}_{1}, \vec{u}_{2}\right\} \right) $ y $\displaystyle P_{2} = L\left( \left\{ \vec{u}_{3}, \vec{u}_{4}\right\} \right) $, donde $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}\right\}  $ y $\displaystyle \left\{ \vec{u}_{3}, \vec{u}_{4}\right\}  $ son linealmente independientes. 
+	\begin{itemize}
+		\item Si $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \vec{u}_{3}, \vec{u}_{4}\right\}  $ son linealmente independientes, tenemos que $\displaystyle P_{1} \oplus P_{2} = \R^{4} $, por lo que $\displaystyle \rho_{1}$ y $\displaystyle \rho_{1}$ son complementarios. Tenemos que $\displaystyle \rho_{1} \cap \rho_{2} \neq \emptyset $, puesto que $\displaystyle P_{1} + P_{2} = \R^{4}$ y $\displaystyle \overrightarrow{AB} \in \R^{4} $. Así, $\displaystyle \rho_{1} $ y $\displaystyle \rho_{2} $ se cortan en un solo punto.
+		\item Supongamos que $\displaystyle \dim\left(L\left( \left\{ \vec{u}_{1}, \vec{u}_{2}, \vec{u}_{3}, \vec{u}_{4}\right\} \right)\right) = 3$ (con $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \vec{u}_{3}\right\}  $ linealmente independientes) y que $\displaystyle \dim\left(L\left( \left\{ \vec{u}_{1}, \vec{u}_{2}, \vec{u}_{3},\vec{u}_{4}, \overrightarrow{AB}\right\} \right)\right)=4 $. Entonces, tenemos que $\displaystyle \rho_{1} \cap \rho_{2} = \emptyset $.
+	\end{itemize}
+\end{eg}
+\begin{observation}
+	\normalfont Si $\displaystyle A \in \mathcal{A} $ y $\displaystyle L \in \mathcal{L}\left(V\right) $, la variedad lineal afín que pasa por $\displaystyle A $ y tiene por dirección $\displaystyle L $ es $\displaystyle \mathcal{L} = A + L = \left\{ A +\vec{u} \; : \; \vec{u} \in L\right\}  $. Diremos que $\displaystyle \dim\left(\mathcal{L}\right) = \dim\left(L\right) $.
+\end{observation}
+\begin{fdefinition}[]
+\normalfont Dos variedades lineales afines $\displaystyle \mathcal{L}_{1} = A + L_{1} $ y $\displaystyle \mathcal{L}_{2} = B + L _{2} $ son \textbf{paralelas} si $\displaystyle L_{1} \subset L_{2} $ o $\displaystyle L_{2} \subset L_{1} $.
+\end{fdefinition}
+\begin{fprop}[]
+\normalfont Si $\displaystyle \mathcal{L}_{1} = A + L_{1} $ y $\displaystyle \mathcal{L}_{2} = A + L_{2} $ son paralelas, entonces $\displaystyle \mathcal{L}_{1} \cap \mathcal{L}_{2} = \emptyset $ o una de ellas está contenida en la otra. 
+\end{fprop}
+\begin{proof}
+Si $\displaystyle \exists C \in \mathcal{L}_{1} \cap \mathcal{L}_{2} $ supongamos sin pérdida de generalidad que $\displaystyle L_{1} \subset L_{2} $, entonces tenemos que
+\[ \mathcal{L}_{1} = C + L_{1}, \; \mathcal{L}_{2}= C + L_{2} .\]
+Así, tenemos que $\displaystyle \forall A \in \mathcal{L}_{1} $, $\displaystyle \exists \vec{u} \in L_{1} $ tal que $\displaystyle A = C + \vec{u} \in \mathcal{L}_{1} $. Dado que $\displaystyle L_{1} \subset L_{2} $, tenemos que $\displaystyle C + \vec{u} \in C + L_{2} = \mathcal{L}_{2} $. Por tanto, $\displaystyle A \in \mathcal{L}_{2} $. 
+\end{proof}
+\begin{fdefinition}[Variedad lineal afín suma]
+	\normalfont Sean $\displaystyle \mathcal{L}_{1} = A + L_{1} $ y $\displaystyle \mathcal{L}_{2} = B + L_{2} $. Llamaremos \textbf{variedad lineal afín suma} de $\displaystyle \mathcal{L}_{1} $ mas $\displaystyle \mathcal{L}_{2} $ a la variedad lineal $\displaystyle \mathcal{L}_{1} + \mathcal{L}_{2} $ más pequeña que contiene a $\displaystyle \mathcal{L}_{1} \cup \mathcal{L}_{2} $.
+\end{fdefinition}
+\begin{observation}
+	\normalfont Supongamos que $\displaystyle \mathcal{L}_{1} + \mathcal{L}_{2} = A + L' = B + L' $, entonces $\displaystyle \overrightarrow{AB} \in L'$. Si $\displaystyle \vec{u} \in L_{1} $ tenemos que $\displaystyle A + \vec{u} \in \mathcal{L}_{1} $ por lo que $\displaystyle \vec{u} \in L' $. Similarmente, si $\displaystyle \vec{v} \in L_{2} $, entonces $\displaystyle B + \vec{v} \in \mathcal{L}_{2} $ y $\displaystyle \vec{v} \in L' $. Así, $\displaystyle L\left( \left\{ \overrightarrow{AB}\right\} \right) + L_{1} + L_{2} \subset L' $. Así, $\displaystyle \mathcal{L}_{1} + \mathcal{L}_{2} = A + \left(L_{1} + L_{2} + L\left( \left\{ \overrightarrow{AB}\right\} \right)\right) $. 
+\end{observation}
+\begin{ftheorem}[Fórmula de Grassman]
+\normalfont Sean $\displaystyle \mathcal{L}_{1} $ y $\displaystyle \mathcal{L}_{2} $ variedades lineales afines. Entonces
+\begin{description}
+\item[(a)] Si $\displaystyle \mathcal{L}_{1} \cap \mathcal{L}_{2} \neq \emptyset $, $\displaystyle \dim\left(\mathcal{L}_{1} + \mathcal{L}_{2}\right) = \dim\left(\mathcal{L}_{1}\right) + \dim\left(\mathcal{L}_{2}\right) - \dim\left(\mathcal{L}_{1} \cap \mathcal{L}_{2}\right) $.
+\item[(b)] Si $\displaystyle \mathcal{L}_{1} \cap \mathcal{L}_{2} = \emptyset $, $\displaystyle \dim\left(\mathcal{L}_{1} + \mathcal{L}_{2}\right) = \dim\left(\mathcal{L}_{1}\right) + \dim\left(\mathcal{L}_{2}\right) - \dim\left(L_{1} \cap L_{2}\right) + 1 $.
+\end{description}
+\end{ftheorem}
+\begin{proof} Tenemos que $\displaystyle \dim\left(\mathcal{L}_{1} + \mathcal{L}_{2}\right) = \dim\left(L_{1} + L_{2} + L\left( \left\{ \overrightarrow{AB}\right\} \right)\right) $.
+\begin{description}
+	\item[(a)] Si $\displaystyle \mathcal{L}_{1} \cap \mathcal{L}_{2} \neq \emptyset $, tenemos que $\displaystyle L\left( \left\{ \overrightarrow{AB}\right\} \right) \subset L_{1} + L_{2}$. Así, tenemos que 
+		\[
+		\begin{split}
+			\dim\left(L_{1} + L_{2} + L\left( \left\{ \overrightarrow{AB}\right\} \right)\right) = & \dim\left(L_{1}\right) + \dim\left(L_{2}\right) - \dim\left(L_{1} \cap L_{2}\right) \\
+			= &  \dim\left(\mathcal{L}_{1}\right)+ \dim\left(\mathcal{L}_{2}\right) - \dim\left(\mathcal{L}_{1} \cap \mathcal{L}_{2}\right) . .
+		\end{split}
+		\]
+	\item[(b)] Si $\displaystyle \mathcal{L}_{1} \cap \mathcal{L}_{2} = \emptyset $, tenemos que $\displaystyle \overrightarrow{AB} \not\in L_{1} + L_{2} $, por lo que 
+		\[\dim\left(\left(L_{1}+L_{2}\right) + L\left( \left\{ \overrightarrow{AB}\right\} \right)\right) = \dim\left(L_{1}\right) + \dim\left(L_{2}\right) -\dim\left(L_{1}\cap L_{2}\right) + 1.\]
+Si $\displaystyle \mathcal{L}_{1} \cap \mathcal{L}_{2} = \emptyset $, tenemos que 
+\[\dim\left(\mathcal{L}_{1}\right) + \dim\left(\mathcal{L}_{2}\right) - \dim\left(L_{1}\cap L_{2}\right)+1 .\]
+\end{description}
+\end{proof}
+\begin{eg}
+\normalfont En $\displaystyle \R^{3} $ consideramos $\displaystyle \rho_{1} = A + R $ con $\displaystyle \dim\left(R\right)=1 $ y $\displaystyle \rho_{2} = B + P $ con $\displaystyle P \in \mathcal{L}\left(\R^{3}\right) $ y $\displaystyle \dim\left(P\right) = 2 $. 
+\begin{itemize}
+\item Si $\displaystyle \rho_{1} \cap \rho_{2} = \emptyset $, tenemos que $\displaystyle \dim\left(\rho_{1} + \rho_{2}\right) = 4 - \dim\left(P \cap R\right) $, por tanto, $\displaystyle \dim\left(P \cap R\right) = 1 $ y $\displaystyle R \subset P $.
+\item Si $\displaystyle \rho_{1} \cap \rho_{2} \neq \emptyset $, tenemos que $\displaystyle \dim\left(\rho_{1} + \rho_{2}\right) = 2 + 1 - \dim\left(P \cap R\right) $. 
+\end{itemize}
+\end{eg}
+\begin{observation}
+\normalfont 
+Sean $\displaystyle \left\{ A_{0}, A_{1}, \ldots, A_{p}\right\} \subset \mathcal{A} $. Tenemos que 
+\[ \mathcal{L} = A_{0} + L\left( \left\{ \overrightarrow{A_{0}A_{1}}, \ldots, \overrightarrow{A_{0}A_{p}}\right\} \right) .\]
+\end{observation}
+\begin{fprop}[]
+	\normalfont Sean $\displaystyle \left\{ A_{0}, A_{1}, \ldots, A_{p}\right\}  \subset \mathcal{A} $. Los siguientes enunciados son equivalentes:
+	\begin{description}
+		\item[(a)] $\displaystyle \left\{\overrightarrow{A_{0}A_{1}}, \ldots, \overrightarrow{A_{0}A_{p}}\right\} $ son linealmente indepependientes.
+		\item[(b)] $\displaystyle \forall i = 0, \ldots, p $, $\displaystyle \left\{ \overrightarrow{A_{i}A_{0}}, \ldots, \overrightarrow{A_{i}A_{i - 1}}, \overrightarrow{A_{i}A_{i+1}}, \ldots, \overrightarrow{A_{i}A_{p}}\right\}  $ son linealmente independientes.
+		\item[(c)] $\displaystyle \forall O \in \mathcal{A} $, si 
+			\[ \lambda^{0}\overrightarrow{OA_{0}} + \lambda^{1}\overrightarrow{OA_{1}} + \cdots + \overrightarrow{OA_{p}} = \vec{0}.\]
+			\[\lambda^{0} + \lambda^{1} + \cdots + \lambda^{p} = 0 .\]
+			Entonces, $\displaystyle \lambda^{0}= \lambda^{1} = \cdots = \lambda^{ p}=0 $.
+	\end{description}
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(a) $\displaystyle \Rightarrow $ (b)] Sea $\displaystyle i = 0, \ldots, p $ y
+	\[ \lambda^{0}\overrightarrow{A_{i}A_{0}} +  \cdots  + \lambda^{i-1} \overrightarrow{A_{i}A_{i - 1}} + \lambda^{i+1} \overrightarrow{A_{i}A_{i+1}} +  \cdots  + \lambda^{p} \overrightarrow{A_{i}A_{p}} = \vec{0} .\]
+	Así, tenemos que
+	\[ - \lambda^{0}\overrightarrow{A_{0}A_{i}} + \lambda^{1}\left(\overrightarrow{A_{0}A_{1}}-\overrightarrow{A_{0}A_{i}}\right) + \cdots + \lambda^{p}\left(\overrightarrow{A_{0}A_{p}} - \overrightarrow{A_{0}A_{i}}\right) = \vec{0} .\]
+Así, tenemos que
+\[ = - \sum^{p}_{i \neq j = 0}\lambda^{j}\overrightarrow{A_{0}A_{j}} + \lambda^{1}\overrightarrow{A_{0}A_{1}} + \cdots + \lambda^{i-1}\overrightarrow{A_{0}A_{i-1}} + \lambda^{i+1}\overrightarrow{A_{0}A_{i+1}}+ \cdots + \lambda^{p}\overrightarrow{A_{0}A_{p}} = \vec{0}.\]
+Así, tenemos que $\displaystyle \lambda^{j} = 0 $ si $\displaystyle i \neq j $, por lo que $\displaystyle \sum^{p}_{i \neq j=0}\lambda^{j}= 0 $, por lo que $\displaystyle \lambda^{0} = 0 $.
+\item[(a) $\displaystyle \Rightarrow $ (c)] Sean $\displaystyle \lambda^{0}, \lambda^{1}, \ldots, \lambda^{p} \in \K $ tales que  
+\[ \lambda^{0}\overrightarrow{OA_{0}} + \lambda^{1}\overrightarrow{OA_{1}} + \cdots + \overrightarrow{OA_{p}} = \vec{0}.\]
+			\[\lambda^{0} + \lambda^{1} + \cdots + \lambda^{p} = 0 .\]
+Por tanto, tenemos que 
+\[\lambda^{0} = - \lambda^{1}-\lambda^{2}-\cdots - \lambda^{p} .\]
+Así, tenemos que 
+\[\lambda^{1}\left(\overrightarrow{OA_{1}}-\overrightarrow{OA_{0}}\right) + \lambda^{2}\left(\overrightarrow{OA_{2}}-\overrightarrow{OA_{0}}\right) + \lambda^{p}\left(\overrightarrow{OA_{p}}-\overrightarrow{OA_{0}}\right) = \lambda^{1}\overrightarrow{A_{0}A_{1}} + \cdots + \lambda^{p}\overrightarrow{A_{0}A_{p}} = \vec{0} .\]
+Así, tenemos que $\displaystyle \lambda^{1} = \cdots = \lambda^{p} = 0 $, por lo que $\displaystyle \lambda^{0} = 0 $.
+\item[(c) $\displaystyle \Rightarrow $ (a)] Consideremos 
+	\[ \lambda^{1}\overrightarrow{A_{0}A_{1}} + \cdots + \lambda^{p}\overrightarrow{A_{0}A_{p}} = \vec{0}.\]
+	Sea $\displaystyle O \in \mathcal{A} $, tenemos que 
+	\[ \lambda^{1}\left(\overrightarrow{OA_{1}}-\overrightarrow{OA_{0}}\right) + \lambda^{2}\left(\overrightarrow{OA_{2}}-\overrightarrow{OA_{0}}\right) + \lambda^{p}\left(\overrightarrow{OA_{p}}-\overrightarrow{OA_{0}}\right) = \vec{0}.\]
+Tenemos entonces que
+\[ \overrightarrow{OA_{0}} \left(-\lambda^{1}-\cdots -\lambda^{p}\right) \overrightarrow{OA_{1}} + \lambda^{1}\overrightarrow{OA_{1}} + \cdots + \lambda^{p}\overrightarrow{OA_{p}} = \vec{0}.\]
+Así, tenemos que 
+\[ \left(-\lambda^{1} - \cdots - \lambda^{p}\right) + \lambda^{1}+\lambda^{2} +\cdots + \lambda^{p}=0 \Rightarrow \lambda^{i} = 0, \; i = 0, \ldots, p .\]
+\end{description}
+\end{proof}
+\begin{fdefinition}[]
+	\normalfont Diremos que que $\displaystyle \left\{ A^{0}, A^{1}, \ldots, A^{p}\right\} \subset \mathcal{A} $ son afinmente independientes si $\displaystyle \left\{ \overrightarrow{A_{0}A_{1}}, \ldots, \overrightarrow{A_{0}A_{p}}\right\}  $ son linealmente independientes.
+\end{fdefinition}
+\begin{fprop}[]
+\normalfont Si $\displaystyle \left\{ A_{0}, \ldots, A_{p}\right\} \subset \mathcal{A} $ son afinmente independientes, existen $\displaystyle A_{p + 1}, \ldots, A_{n} \in\mathcal{A} $ tales que $\displaystyle \left\{ A_{0}, A_{1}, \ldots, A_{p}, A_{p + 1}, \ldots, A_{n}\right\}  $ son afimente independientes.
+\end{fprop}
+\begin{proof}
+	Sean $\displaystyle \left\{ \overrightarrow{A_{0}A_{1}}, \ldots, \overrightarrow{A_{0}A_{p}}\right\}  $ linealmente independientes. Sea $\displaystyle \left\{ \overrightarrow{A_{0}A_{1}}, \ldots, \overrightarrow{A_{0}A_{p}, \vec{u}_{p + 1}, \ldots, \vec{u}_{n}\right\} $ base de $\displaystyle V $. En\tonces \tomamos A_{p + 1}= A_{0} + \vec{u}_{p +1} y, en general $\displaystyle A_{n} = A_{0} + \vec{u}_{n} $.
+\end{proof}
 

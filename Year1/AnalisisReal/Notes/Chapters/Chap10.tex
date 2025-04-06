@@ -1,0 +1,60 @@
+\chapter{Sucesiones y series de funciones}
+Recordamos que una sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ convergía a un valor $\displaystyle x \in \R $ si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ se tiene que $\displaystyle \left|x_{n}-x\right|<\epsilon  $. Para definir la convergencia de una sucesión de funciones, primero tenemos que determinar una forma de determinar si dos funciones están próximas. Hay varias formas:
+\begin{itemize}
+\item En $\displaystyle \R $, dados $\displaystyle x,y \in \R $ se dice que la distancia de $\displaystyle x $ a $\displaystyle y $ es $\displaystyle \left|x-y\right| $. Esta métrica tiene ciertas propiedades:
+	\begin{itemize}
+	\item  $\displaystyle \left|x\right| \iff x = 0 $.
+	\item $\displaystyle \left|x-y\right| = \left|y-x\right| $.
+	\item Si $\displaystyle z \in \R $, $\displaystyle \left|x-y\right| \leq \left|x-z\right| + \left|z - y\right| $.
+	\end{itemize}
+\item En $\displaystyle \R^{n} $, dados $\displaystyle x, y \in \R^{n} $ tenemos que la distancia se puede medir de varias formas:
+	\begin{itemize}
+	\item $\displaystyle d\left(x,y\right) = \|x - y \| = \sqrt{\left(x_{1}-y_{1}\right)^{2} + \cdots + \left(x_{n}-y_{n}\right)^{2}} $.
+	\item Otra definición de distancia es $\displaystyle \|x-y\|_{1} = \left|x_{1}-y_{1}\right|+ \cdots + \left|x_{n}-y_{n}\right| $. Esta definición ccumple las mismas propiedades que la métrica de $\displaystyle \R $ vista anteriormente. Esta forma es útil cuando uno se mueve en un \textit{grid} y hay que ir por las líneas del mismo.
+	\end{itemize}
+\end{itemize}
+A partir de aquí, podemos valorar distintas opciones en cuanto a la distancia entre funciones.
+\begin{itemize}
+\item Sea $\displaystyle x \in A $ con $\displaystyle A = \dom\left(f\right) = \dom\left(g\right) $. Una forma de medición es tomar $\displaystyle \left|f\left(x\right)-g\left(x\right)\right| $ punto a punto.
+\item Otra forma de hacerlo es tomar $\displaystyle \left|f\left(x\right)-g\left(x\right)\right| $ para todos los valores de $\displaystyle x \in A $.
+\item También podemos tomar la distancia como $\displaystyle \int^{b}_{a} \left|f\left(x\right)-g\left(x\right)\right| \; dx $.
+\end{itemize}
+\begin{fdefinition}[Convergencia puntual y uniforme]
+\normalfont Sea $\displaystyle \left\{ f_{n}\left(x\right)\right\} _{n\in\N} $ una sucesión de funciones sobre un dominio común $\displaystyle A $.
+\begin{description}
+	\item[(a)] Se dice que $\displaystyle \left\{ f_{n}\left(x\right)\right\} _{n\in\N} $ \textbf{converge puntualmente} a una función $\displaystyle f $ en $\displaystyle A $, si $\displaystyle \forall x \in A $ se verifica que $\displaystyle \lim_{n \to \infty}f_{n}\left(x\right)=f\left(x\right) $.
+	\item[(b)] Se dice que $\displaystyle \left\{ f_{n}\left(x\right)\right\} _{n\in\N} $ \textbf{converge uniformemente} a la función $\displaystyle f $ en $\displaystyle A $ si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists n_{0} \in \N $ tal que si $\displaystyle n \geq n_{0} $, entonces $\displaystyle \left|f_{n}\left(x\right)-f\left(x\right)\right| < \epsilon $, $\displaystyle \forall x \in A $.
+\end{description}
+\end{fdefinition}
+\begin{eg}
+	\normalfont Consideremos $\displaystyle f_{n}\left(x\right) = x^{n} $ con $\displaystyle x \in \left[0,1\right]  $.
+	\begin{description}
+	\item[(a)] Si $\displaystyle x \in \left[0,1\right]  $, tenemos que  
+		\[ \displaystyle \lim_{n \to \infty}x^{n} =
+		\begin{cases}
+		1, \; x = 1 \\
+		0, \; x \in [0,1)
+		\end{cases}
+		.\]
+	Es decir, el límite puntual será la función 
+		\[f\left(x\right) = 
+		\begin{cases}
+		0, \; x \in [0,1) \\
+		1, \; x = 1
+		\end{cases}
+		.\]
+	\item[(b)] Gráficamente, se puede ver que $\displaystyle f $ no es el límite uniforme de $\displaystyle \left\{ f_{n}\left(x\right)\right\} _{n\in\N} $. 
+	\end{description}
+\end{eg}
+\begin{fprop}[]
+\normalfont Si $\displaystyle f_{n} \to f $ sobre $\displaystyle A $ uniformemente, entonces $\displaystyle f $ es su límite puntual.
+\end{fprop}
+\begin{proof}
+Dado que $\displaystyle f_{n}\left(x\right) $ converge a $\displaystyle f $ uniformemente, tenemos que si fijamos $\displaystyle x_{0} \in A $, entonces $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists n_{0} \in \N $ tal que si $\displaystyle  n \geq n_{0} $ entonces $\displaystyle \left|f_{n}\left(x_{0}\right)-f\left(x_{0}\right)\right| < \epsilon  $. Así, se tiene que $\displaystyle \lim_{n \to \infty}f_{n}\left(x_{0}\right) = f\left(x_{0}\right) $, $\displaystyle \forall x_{0} \in A $.
+\end{proof}
+\begin{eg}
+	\normalfont Consideremos $\displaystyle f_{n}\left(x\right) = \frac{x}{n} $ con $\displaystyle x \in \left[0,1\right]  $. Tenemos que $\displaystyle \lim_{n \to \infty}f_{n}\left(x\right) = 0 $. Vamos a ver si este límite es uniforme:
+	\[ \left|\frac{x}{n}-0\right| = \left|\frac{x}{n}\right| \leq \frac{1}{n} \to 0 .\]
+	Por tanto converge uniformemente y, por la proposición anterior, su límite uniforme es igual a su límite puntual.
+\end{eg}
+

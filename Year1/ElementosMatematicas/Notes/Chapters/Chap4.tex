@@ -463,4 +463,72 @@ Ahora pueden pasar dos cosas:
 \normalfont Cuando un punto de equilibrio es estable, es útil calcular el \textbf{intervalo maximal} $\displaystyle \left(c,d\right) $ en el que se verifique que
 \[\lim_{n \to \infty}A\left(n\right) = a, \; \forall A\left(0\right) \in \left(c,d\right) .\]
 \end{observation}
-
+\subsection{Ciclos}
+\begin{fdefinition}[]
+\normalfont Un ciclo de orden dos de un sistema dinámico $\displaystyle A\left(n+1\right) = f\left(A\left(n\right)\right) $ de primer orden, que tiene valores $\displaystyle a_{1} $ y $\displaystyle a_{2} $, se define estable si existen entornos $\displaystyle \left(c_{1}, d _{1}\right) $ y $\displaystyle \left(c_{2}, d _{2}\right) $ de $\displaystyle a_{1} $ y $\displaystyle a_{2} $, respectivamente, tales que
+\begin{description}
+\item[(a)] Si $\displaystyle A\left(0\right) \in \left(c_{1}, d _{1}\right) $, entonces $\displaystyle \lim_{n \to \infty}A\left(2n\right) = a_{1} $ y $\displaystyle \lim_{n \to \infty}A\left(2n+1\right) = a_{2} $.
+\item[(b)] Si $\displaystyle A\left(0\right) \in \left(c_{2},d _{2}\right) $, entonces $\displaystyle \lim_{n \to \infty}A\left(2n\right) = a_{2} $ y $\displaystyle \lim_{n \to \infty}A\left(2n+1\right)=a_{1} $.
+\end{description}
+\end{fdefinition}
+\begin{observation}
+\normalfont Es decir, dado $\displaystyle A\left(0\right) $ próximo a $\displaystyle a_{1} $, entonces la sucesión $\displaystyle A\left(n\right) $ tiende a $\displaystyle a_{1} $ si $\displaystyle n $ es par y a $\displaystyle a_{2} $ si es impar y viceversa si $\displaystyle A\left(0\right) $ es próximo a $\displaystyle a_{2} $.
+\end{observation}
+\begin{eg}
+\normalfont Consideremos el sistema $\displaystyle A\left(n+1\right) = 3,2A\left(n\right)\left(1-A\left(n\right)\right) $. La ecuación logística será $\displaystyle A\left(n+1\right) = rA\left(n\right)\left(1-A\left(n\right)\right) $. Puede comprobarse que 
+\[a_{1} = \frac{21 + \sqrt{21}}{32} \approx 0,79, \quad a_{2} = \frac{21 - \sqrt{21}}{32} \approx 0,51 ,\]
+son ciclos de orden dos del sistema $\displaystyle A\left(n+1\right) = f\left(A\left(n\right)\right) $ con $\displaystyle f\left(x\right) = x - 3,2x^{2} $. Basta ver que
+\[A\left(1\right) = a_{2}, \quad A\left(2\right) = a_{1} .\]
+Para estudiar su estabilidad, consideremos 
+\[A\left(n+2\right) = f\left(f\left(A\left(n\right)\right)\right) = 3,2f\left(A\left(n\right)\right)\left(1-f\left(A\left(n\right)\right)\right) = \frac{256}{125}A\left(n\right)\left(1-A\left(n\right)\right)\left(16A\left(n\right)^{2}-16A\left(n\right)+5\right) .\]
+Sea $\displaystyle g\left(x\right) = \frac{256}{125}x\left(1-x\right)\left(16x^{2}-16x+5\right) = f\left(f\left(x\right)\right) $. Con este cambio de variable tendríamos un nuevo sistema $\displaystyle B\left(n+1\right) = g\left(B\left(n\right)\right) $, con $\displaystyle B\left(n\right) = A\left(2n\right) $. Tenemos que $\displaystyle a_{1} $ y $\displaystyle a_{2} $ son puntos de equilibrio de $\displaystyle B\left(n\right) $. La estabilidad de estos se puede estudiar gráficamente o con el teorema anterior. Lo hacemos de la segunda forma. Así, tenemos que, aplicando la regla de la cadena,
+\[g'\left(x\right) = f'\left(f\left(x\right)\right)f'\left(x\right)  .\]
+Para $\displaystyle x = a_{1} $ se tiene que
+\[g'\left(a_{1}\right) = f'\left(f\left(a_{1}\right)\right)f'\left(a_{1}\right)= f'\left(a_{2}\right)f'\left(a_{1}\right) .\]
+\[g'\left(a_{2}\right) = f'\left(f\left(a_{2}\right)\right)f'\left(a_{2}\right) = f'\left(a_{1}\right)f'\left(a_{2}\right) .\]
+Si $\displaystyle a_{1} $ y $\displaystyle a_{2} $ fueran ciclos de orden 2, tendríamos que $\displaystyle f\left(a_{1}\right)=a_{2} $ y $\displaystyle a_{2} = f\left(a_{1}\right) $. Tenemos que si tomamos los valores de $\displaystyle a_{1} $ y $\displaystyle a_{2} $ del principio,
+\[
+\begin{split}
+	\left|g'\left(a_{1}\right)\right| = & \left|f'\left(a_{2}\right)f'\left(a_{1}\right)\right|= 0,16 < 1\\
+	\left|g'\left(a_{2}\right)\right| = & \left|f'\left(a_{1}\right)f'\left(a_{2}\right)\right| = 0,16 < 1.
+\end{split}
+\]
+\end{eg}
+\begin{observation}
+\normalfont En general, para estudiar los posibles ciclos de orden 2 de $\displaystyle A\left(n+1\right) =f\left(A\left(n\right)\right)$:
+\begin{enumerate}
+\item Determinar si existen $\displaystyle a_{1} $ y $\displaystyle a_{2} $ soluciones de la ecuación $\displaystyle a = g\left(a\right) = f\left(f\left(a\right)\right) $.
+\item Estudiar su estabilidad mediante $\displaystyle g'\left(x\right) $, es decir, estudiamos si $\displaystyle \left|f'\left(a_{1}\right)f'\left(a_{2}\right)\right|<1 $.
+\end{enumerate}
+\end{observation}
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle a $ es solución de $\displaystyle a = g\left(a\right) = f\left(f\left(a\right)\right) $, entonces o bien $\displaystyle a $ es de equilibrio o bien es uno de los valores de un ciclo de orden 2.
+\end{ftheorem}
+\begin{ftheorem}[]
+\normalfont Dado un sistema de primer de primer orden $\displaystyle A\left(n+1\right) = f\left(A\left(n\right)\right) $ que tenga un ciclo de orden dos que tome valores $\displaystyle a_{1} $ y $\displaystyle a_{2} $, entonces si $\displaystyle f $ tiene derivada continua en sendos entornos de ambos, se tendrá que
+\begin{description}
+\item[(a)] El ciclo es estable si $\displaystyle \left|f'\left(a_{1}\right)f'\left(a_{2}\right)\right|<1 $.
+\item[(b)] El sistema es inestable si $\displaystyle \left|f'\left(a_{1}\right)f'\left(a_{2}\right)\right|>1 $.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+Sean $\displaystyle a_{1} $ y $\displaystyle a_{2} $ los valores que definen el ciclo del sistema dinámico. Supongamos que son puntos de equilibrio estables del sistema definido por $\displaystyle g = f\circ f $, es decir, tales que $\displaystyle \left|g'\left(a_{1}\right)\right|, \left|g'\left(a_{2}\right)\right|<1 $. Por tanto, como según la regla de la cadena $\displaystyle g'\left(x\right) = f'\left(f\left(x\right)\right)f'\left(x\right) $ y si $\displaystyle a_{1} $ y $\displaystyle a_{2} $ definen un ciclo, entonces $\displaystyle f\left(a_{1}\right)= a_{2} $ y $\displaystyle f\left(a_{2}\right)=a_{1} $. Entonces
+\[ \left|g'\left(a_{1}\right)\right| = \left|f'\left(a_{1}\right)f'\left(a_{2}\right)\right| < 1 .\]
+\[ \left|g'\left(a_{2}\right)\right| = \left|f'\left(a_{2}\right)f'\left(a_{1}\right)\right| < 1 .\]
+\end{proof}
+\begin{observation}
+\normalfont Esto se puede generalizar para ciclos de orden 4, 6, etc.
+\end{observation}
+\begin{fdefinition}[]
+\normalfont El sistema $\displaystyle A\left(n+1\right) = f\left(A\left(n\right)\right) $ tiene un ciclo de orden $\displaystyle 2n $ con valore $\displaystyle a_{1}, \ldots, a_{k} $, el ciclo es estable si 
+\[ \left|f'\left(a_{1}\right)f'\left(a_{2}\right) \cdots f'\left(a_{k}\right)\right|<1 ,\]
+e inestable si 
+\[ \left|f'\left(a_{1}\right) f\\left(a_{2}\right) \cdots f'\left(a_{k}\right)\right|>1 .\]
+\end{fdefinition}
+\begin{eg}
+	\normalfont Ecuación logística: $\displaystyle A\left(n+1\right) = rA\left(n\right)\left(1-A\left(n\right)\right) $, $\displaystyle r \in \left[0,4\right]  $. En general, podemos estudiar los puntos de equilibrio y los ciclos a partir de $\displaystyle f\left(x\right) = rx - rx^{2} $. Primero encontramos los puntos de equilibrio
+	\[ a = f\left(a\right) \Rightarrow a = ar - a^{2}r \Rightarrow a = 0, \frac{r-1}{r}.\]
+Tenemos que $\displaystyle f'\left(x\right) = -2rx + r$. Así, $\displaystyle \left|f'\left(0\right)\right|<1 $, por lo que si $\displaystyle \left|r\right| < 1 $, $\displaystyle a  $ es estable. Por otro lado
+\[ \left|f'\left(\frac{r-1}{r}\right)\right| \Rightarrow a = \frac{r-1}{r} .\]
+El punto $\displaystyle a $ es estable si $\displaystyle r \in \left(1,3\right) $ e inestable si $\displaystyle r \neq 0 $ o $\displaystyle r \not\in\left(1,3\right) $. 
+\end{eg}
