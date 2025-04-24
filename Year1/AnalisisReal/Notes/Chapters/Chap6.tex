@@ -207,7 +207,7 @@ S\left(f,P''\right)-I\left(f,P''\right) \leq S\left(f,P\right) - I\left(f,P\righ
 Por tanto, existe $\displaystyle \int^{c}_{a} f $. Análogamente, se puede ver que existe $\displaystyle \int^{b}_{c} f $. \\ 
 Ahora, vamos a demostrar la igualdad. Si $\displaystyle \epsilon > 0 $, tenemos que, si asumimos (sin pérdida de generalidad), que $\displaystyle \int^{b}_{a} f \geq \int^{c}_{a} f +\int^{b}_{c} f $,
 \[ 0\leq \int^{b}_{a} f -\left(\int^{c}_{a} f +\int^{b}_{c} f \right) \leq S\left(f,P\right) - I\left(f,P\right) < \epsilon.\]
-Por tanto, como esto es cierpo $\displaystyle \forall \epsilon > 0 $, se tiene que 
+Por tanto, como esto es cierto $\displaystyle \forall \epsilon > 0 $, se tiene que 
 \[ \int^{b}_{a} f = \int^{c}_{a} f +\int^{b}_{c} f .\]
 \end{proof}
 \begin{observation}
@@ -550,7 +550,7 @@ Sean $\displaystyle x' = \exp x $ e $\displaystyle y' = \exp y $. Tenemos que $\
 \item[(a)] $\displaystyle \forall a,b,c \in \R $, $\displaystyle \left(a^{b}\right)^{c} = a^{bc} $.
 \item[(b)] $\displaystyle \forall a \in \R $, $\displaystyle a^{1} = a $.
 \item[(c)] $\displaystyle a^{x + y}= a^{x} \cdot a^{y} $.
-\item[(d)] $\displaystyle \log_{a} y= \frac{\log_{x}y}{\log_{a}y} $.
+\item[(d)] $\displaystyle \log_{a} y= \frac{\log_{x}y}{\log_{x}a} $.
 \item[(e)] $\displaystyle \left(\log_{a}x\right)' = \frac{1}{x\ln a} $.
 \end{description}
 \end{fprop}
@@ -610,7 +610,7 @@ Así, $\displaystyle A $ tiene contenido cero.
 \normalfont De estos ejemplos se deduce que cualquier conjunto finito o numerable de $\displaystyle \R $ tiene contenido cero.
 \end{observation}
 \begin{ftheorem}[Teorema de integrabilidad de Lebesgue]
-	\normalfont Sea $\displaystyle f : \left[a,b\right] \to \R $. Tenemos que $\displaystyle f $ integrable en $\displaystyle \left[a,b\right]  $ si y solo si el conjunto de discontinuidades de $\displaystyle f $ tiene contenido cero.
+	\normalfont Sea $\displaystyle f : \left[a,b\right] \to \R $ una función acotada. Tenemos que $\displaystyle f $ integrable en $\displaystyle \left[a,b\right]  $ si y solo si el conjunto de discontinuidades de $\displaystyle f $ tiene contenido cero.
 \end{ftheorem}
 \begin{fprop}[]
 	\normalfont Sea $\displaystyle g : \left[a,b\right] \to \R $ monótona. Entonces existe $\displaystyle \int^{b}_{a} g\left(x\right) \; dx $.

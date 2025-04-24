@@ -57,4 +57,412 @@ Dado que $\displaystyle f_{n}\left(x\right) $ converge a $\displaystyle f $ unif
 	\[ \left|\frac{x}{n}-0\right| = \left|\frac{x}{n}\right| \leq \frac{1}{n} \to 0 .\]
 	Por tanto converge uniformemente y, por la proposición anterior, su límite uniforme es igual a su límite puntual.
 \end{eg}
+\begin{eg}
+\normalfont Consideremos las funciones 
+\[f_{n}\left(x\right) = 
+\begin{cases}
+	n^{2}x, \; x \in \left[0,\frac{1}{n}\right] \\
+	\frac{1}{x}, \; x \in \left[\frac{1}{n}, 1\right] 
+\end{cases}
+.\]
+Tenemos que las funciones $\displaystyle f_{n} $ son continuas en $\displaystyle \left[0,1\right]  $ y, por tanto, integrables. En efecto, tenemos que 
+\[\int^{1}_{0} f_{n}\left(x\right) \; dx = \int^{\frac{1}{n}}_{0} n^{2}x \; dx + \int^{1}_{\frac{1}{n}} \frac{1}{x} \; dx = \frac{1}{2} + \ln n.\]
+Calculemos el límite puntual:
+\[\lim_{n \to \infty}f_{n}\left(x\right) = 
+\begin{cases}
+\frac{1}{x}, \; x \neq 0 \\
+0, \; x = 0
+\end{cases}
+.\]
+Tenemos que el límite puntual no es una función continua, sino que es discontinua en $\displaystyle x = 0 $. Además, no es integrable. 
+\end{eg}
+\begin{observation}
+\normalfont En el ejemplo anterior hemos visto que con la convergencia puntual no tiene por qué conservarse la continuidad ni la integrabilidad. Es por esto por lo que necesitamos la definición de convergencia uniforme. 
+\end{observation}
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ una sucesión de funciones sobre $\displaystyle \left[a,b\right]  $. Supongamos que $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ converge uniformemente a $\displaystyle f $ en $\displaystyle \left[a,b\right]  $. 
+	\begin{description}
+		\item[(a)] Si $\displaystyle \forall n \in \N $, $\displaystyle f_{n} $ es continua en $\displaystyle \left[a,b\right]  $, entonces $\displaystyle f $ es continua en $\displaystyle \left[a,b\right]  $.
+		\item[(b)] Si $\displaystyle \forall n \in \N $, $\displaystyle f_{n} $ es integrable en $\displaystyle \left[a,b\right]  $, entonces $\displaystyle f $ es integrable en el intervalo $\displaystyle \left[a,b\right]  $ y además
+			\[\lim_{n \to \infty}\int^{b}_{a} f_{n}\left(x\right) \; dx = \int^{b}_{a} f\left(x\right) \; dx .\]
+	\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+	\item[(a)] Sea $\displaystyle x \in \left(a,b\right)  $, si $\displaystyle x = a $ o $\displaystyle x = b $ la demostración es análoga, solo que se toman límites por la izquierda y por la derecha, respectivamente. Si $\displaystyle \epsilon > 0 $, queremos ver si existe $\displaystyle \delta > 0 $ tal que $\displaystyle \forall y \in \left(x-\delta, x + \delta \right) $ se tiene que $\displaystyle \left|f\left(x\right)-f\left(y\right)\right| < \epsilon  $. \\ 
+		Tomamos $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $, $\displaystyle \left|f\left(t\right)-f_{n}\left(t\right)\right| < \frac{\epsilon }{3} $, $\displaystyle \forall t \in \left[a,b\right]  $. Por otro lado, para $\displaystyle N \geq n_{0} $ tenemos que $\displaystyle f_{N} $ es continua en $\displaystyle \left[a,b\right]  $, por lo que si $\displaystyle \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle \left|x-y\right|<\delta  $ se tiene que $\displaystyle \left|f_{N}\left(x\right)-f_{N}\left(y\right)\right| < \frac{\epsilon }{3} $. 
+	Así, tenemos que  
+	\[
+	\begin{split}
+		\left|f\left(x\right)-f\left(y\right)\right| = & \left|f\left(x\right) -f_{N}\left(x\right) + f_{N}\left(x\right) - f_{N}\left(y\right) + f_{N}\left(y\right)-f\left(y\right)\right| \\
+	\leq & \left|f\left(x\right)-f_{N}\left(x\right)\right| + \left|f_{N}\left(x\right)-f_{N}\left(y\right)\right| + \left|f_{N}\left(y\right)-f\left(y\right)\right| \\
+	< & \frac{\epsilon }{3} + \frac{\epsilon }{3} + \frac{\epsilon }{3} = \epsilon .
+	\end{split}
+	\]
+\item[(b)] Dado $\displaystyle \epsilon > 0 $, tenemoms que $\displaystyle \frac{\epsilon }{4\left(b-a\right)} > 0 $. Así, existe $\displaystyle n_{0} \in \N $ tal que si $\displaystyle n \geq n_{0} $ se tiene que $\displaystyle \left|f\left(x\right)-f_{n}\left(x\right)\right| < \frac{\epsilon }{4\left(b-a\right)} $, $\displaystyle \forall x\in \left[a,b\right]  $. Por hipótesis, tenemos que $\displaystyle \forall n \in \N $, $\displaystyle f_{n} $ es integrable. Por tanto, para $\displaystyle \frac{\epsilon }{2} > 0 $ existe $\displaystyle P \in P\left(\left[a,b\right] \right) $ tal que $\displaystyle S\left(f_{n}, P\right)-I\left(f_{n}, P\right) < \frac{\epsilon }{2} $. 
+	Entonces, tenemos que 
+	\[m_{f_{N},i} - \frac{\epsilon }{4\left(b-a\right)} \leq m_{f,i} \leq M_{f,i} \leq M_{f_{N}, i} + \frac{\epsilon }{4\left(b-a\right)} .\]
+Por otro lado, tenemos que 
+\[
+\begin{split}
+	S\left(f,P\right)-I\left(f,P\right) = & \sum^{n-1}_{ i=0}M_{f,i}\left(t_{i+1}-t_{i}\right)-\sum^{n-1}_{i=0}m_{f,i}\left(t_{i+1}-t_{i}\right) \\
+	\leq & \sum^{n-1}_{i=0}\left( M_{f_{N},i} + \frac{\epsilon }{4\left(b-a\right)}\right)\left(t_{i+1}-t_{i}\right) - \sum^{n-1}_{i=0}\left(m_{f_{N},i}-\frac{\epsilon }{4\left(b-a\right)} \right)\left(t_{i+1}-t_{i}\right) \\
+	\leq & S\left(f_{N},P\right) + \frac{\epsilon }{4\left(b-a\right)}\sum^{n-1}_{i=0}\left(t_{i+1}-t_{i}\right) - I\left(f_{N}, P\right) + \frac{\epsilon }{4\left(b-a\right)}\sum^{n-1}_{i = 0 }\left(t_{i+1}-t_{i}\right) \\
+	< & \frac{\epsilon }{2} + \frac{\epsilon }{4} + \frac{\epsilon }{4} = \epsilon .
+\end{split}
+\]
+Finalmente, por converger uniformemente tenemos que si $\displaystyle \epsilon > 0 $, $\displaystyle \exists n_{1} \in \N $ tal que si $\displaystyle n \geq n_{1} $ se tiene que $\displaystyle \left|f\left(x\right)-f_{n}\left(x\right)\right|<\frac{\epsilon }{b-a} $, $\displaystyle \forall x \in \left[a,b\right]  $. Así, si $\displaystyle n \geq n_{1} $,
+\[ \left|\int^{b}_{a} f\left(x\right) \; dx -\int^{b}_{a} f_{n}\left(x\right) \; dx\right| = \left|\int^{b}_{a} f\left(x\right)-f_{n}\left(x\right) \; dx\right| \leq \int^{b}_{a} \left|f\left(x\right)-f_{n}\left(x\right)\right| \; dx \leq \int^{b}_{a} \frac{\epsilon }{\left(b-a\right)} \; dx = \epsilon  .\]
+Como esto es cierto para todo $\displaystyle \epsilon > 0 $, tenemos que 
+\[ \lim_{n \to \infty}\int^{b}_{a} f_{n}\left(x\right) \; dx = \int^{b}_{a} f\left(x\right) \; dx .\]
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont Otra forma de expresar la igualdad de \textbf{(b)} es la siguiente:
+\[\lim_{n \to \infty}\int^{b}_{a} f_{n}\left(x\right) \; dx = \int^{b}_{a} \lim_{n \to \infty}f_{n}\left(x\right) \; dx .\]
+\end{observation}
+\begin{eg}
+	\normalfont Vamos a ver una aplicación importante de \textbf{(b)}. Consideremos el límite $\displaystyle \lim_{n \to \infty}\int^{1}_{0} \frac{ne^{x}}{n + x} \; dx $. Una forma de calcular el límite es calculando el valor de la integral y después evaluar el límite. Sin embargo, podemos considerar la sucesión de funciones $\displaystyle \left\{ \frac{ne^{x}}{n + x}\right\} _{n\in \N} $.  Si $\displaystyle x \in \left[0,1\right]  $ tenemos que el valor del límite puntual será
+	\[\lim_{n \to \infty}\frac{ne^{x}}{n+x} = e^{x} .\]
+Vamos a ver que esta sucesión de funciones converge uniformemente: 
+\[ \left|e^{x} - \frac{ne^{x}}{n + x}\right| = \left|\frac{xe^{x}}{n + x}\right| \leq \frac{e}{n} \to 0 .\]
+Así, podemos aplicar el teorema anterior para ver que
+\[\lim_{n \to \infty}\int^{1}_{0} \frac{ne^{x}}{n + x} \; dx = \int^{1}_{0} \lim_{n \to \infty}\frac{ne^{x}}{n + x} \; dx = \int^{1}_{0} e^{x} \; dx = e-1 .\]
+\end{eg}
+\begin{eg}
+\normalfont Consideremos la sucesión de funciones
+\[f_{n}\left(x\right) =
+\begin{cases}
+xn, \; 0 \leq x < \frac{1}{n} \\
+2 - nx, \; \frac{1}{n} \leq x \leq \frac{2}{n} \\
+0, \; \frac{2}{n} < x \leq 1
+\end{cases}
+.\]
+Tenemos que el límite puntual será
+\[\lim_{n \to \infty}f_{n}\left(x\right) = 
+\begin{cases}
+f_{n}\left(0\right), \; x = 0 \\
+0, \; x \in (0,1]
+\end{cases}
+.\]
+En efecto, si $\displaystyle a \in (0,1] $, $\displaystyle \exists n_{0} \in \N $ tal que si $\displaystyle \frac{1}{n_{0}} < a $, entonces $\displaystyle f_{n}\left(a\right) = 0 $, $\displaystyle \forall n \geq n_{0} $. Así, el límite puntual es $\displaystyle f = 0 $. Vamos a ver que $\displaystyle f $ no es el límite uniforme en $\displaystyle \left[0,1\right]  $. En particular, si tomamos $\displaystyle n \in \N $ y $\displaystyle x = \frac{1}{n} $, tenemos que 
+\[ \left|0-f_{n}\left(x\right)\right| =  \left|0 - 1\right| = 1.\]
+Sin embargo, tenemos que si $\displaystyle r > 0 $, $\displaystyle f_{n} $ converge uniformemente a $\displaystyle f = 0 $ en $\displaystyle \left[r,1\right]  $. En efecto, si $\displaystyle r > 0 $, $\displaystyle \exists n_{0} \in \N $ tal que si $\displaystyle n \geq n_{0} $ se tiene que $\displaystyle \frac{2}{n} < r $. Así,
+\[ \left|0 - f_{n}\left(x\right)\right| = \left|0 - 0\right| < \epsilon , \; \forall x \in \left[r,1\right]  .\]
+\end{eg}
+\begin{eg}
+\normalfont Consideremos la sucesión de funciones
+\[f_{n}\left(x\right) = \frac{1-x^{2n}}{1+x^{2n}}, \; n \in \N, \; x \in \R .\]
+Tenemos que $\displaystyle \left|f_{n}\left(x\right)\right| \leq 1 $ y $\displaystyle f_{n}\left(x\right) \geq 0 $ si y solo si $\displaystyle \left|x\right| \leq 1 $. Similarmente, $\displaystyle f_{n}\left(x\right) < 0$ si y solo si $\displaystyle \left|x\right| > 1 $. Estas funciones son continuas en $\displaystyle \R $. Calculemos si tiene asíntotas horizontales:
+\[\lim_{x \to \infty}f_{n}\left(x\right) = \lim_{x \to \infty}\frac{1-x^{2n}}{1 + x^{2n}} = - 1 .\]
+Tenemos que $\displaystyle f_{n}\left(0\right) = 0 $, por lo que todas las funciones tienen un máximo en $\displaystyle x = 0 $. Ya tenemos suficiente información para pintar la función. Ahora, calculemos el límite puntual:
+\[\lim_{n \to \infty}f_{n}\left(x\right) = \lim_{n \to \infty}\frac{1-x^{2n}}{1+x^{2n}} = 
+\begin{cases}
+0, \; x = \pm 1 \\
+1, \; \left|x\right| < 1 \\
+-1, \; \left|x\right| > 1
+\end{cases}
+.\]
+Así, el límite puntual es la función definida a trozos como se muestra anteriormente. Estudiemos si la convergencia es uniforme. Tenemos que el límite puntual no es una función continua y, dado que todas las funciones de la sucesión son continuas, si convergiese uniformemente el límite debería ser continuo. Por tanto, no converge uniformemente en $\displaystyle \R $. Por lo mismo, para cualquier intervalo $\displaystyle \left[a,b\right] \subset \R $ tal que $\displaystyle 1 $ o $\displaystyle -1 $ pertenece a $\displaystyle \left[a,b\right]  $, no hay convergencia uniforme. Sin embargo, estudiemos lo que pasa si cogemos un intervalo $\displaystyle \left[a,b\right] \subset \left(-1,1\right) $:
+\[ \left|1 - \frac{1-x^{2n}}{1 +x^{2n}}\right| = \left|\frac{2x^{2n}}{1 + x^{2n}}\right| = \left|\frac{2}{1+\frac{1}{x^{2n}}}\right| \leq \left|\frac{2}{1 + \frac{1}{\max \left\{ \left|a\right|, \left|b\right|\right\} ^{2n}}}\right| \to 0 .\]
+Por tanto, hay convergencia uniforme en subintervalos cerrados de $\displaystyle \left(-1,1\right) $. En el intervalo $\displaystyle \left(-1,1\right) $ no converge uniformemente (esto se puede ver gráficamente).
+\end{eg}
+\begin{eg}
+\normalfont Consideremos la sucesión de funciones
+\[f_{n}\left(x\right) = \frac{nx}{1+nx}, \; x \geq 0 .\]
+En primer lugar, representamos la gráfica. Tenemos que $\displaystyle f_{n} $ es claramente positiva, continua, $\displaystyle f_{n}\left(0\right) = 0 $ y 
+\[\lim_{x \to \infty}f_{n}\left(x\right) = 1 .\]
+También $\displaystyle f_{n}\left(x\right) < 1 $ Derivemos la función para obtener maás información. 
+\[f'_{n}\left(x\right) = \frac{n\left(1+nx\right)-n^{2}x}{\left(1+nx\right)^{2}} = \frac{n}{\left(1+nx\right)^{2}} > 0 .\]
+Por tanto, $\displaystyle f_{n} $ es creciente. Estudiemos la monotonía de la sucesión de funciones $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $. 
+\[ \frac{nx}{1 + nx } < \frac{\left(n+1\right)x}{1 + \left(n+1\right)x} \iff nx + n^{2}x^{2}+nx^{2}<\left(n+1\right)x + n^{2}x^{2} + nx^{2} \iff nx < \left(n+1\right)x .\]
+Esto es cierto si $\displaystyle x \neq 0 $. Ahora, calculamos el límite puntual:
+\[\lim_{n \to \infty}\frac{nx}{1 + nx } = 
+\begin{cases}
+0, \; x = 0 \\
+1, \; x > 0
+\end{cases}
+.\]
+Por continuidad, el límite puntual no puede ser el límite uniforme en $\displaystyle [0,\infty) $. Si $\displaystyle r > 0 $, estudiemos si hay continuidad uniforme en $\displaystyle [r,\infty) $. Por converger puntualmente, tenemos que si $\displaystyle \epsilon > 0 $, $\displaystyle \exists n_{0} \in \N $ tal que si $\displaystyle n \geq n_{0} $, $\displaystyle \left|1 -\frac{nr}{1 + nr}\right|<\epsilon  $. Por otro lado, como $\displaystyle f_{n} $ es creciente, $\displaystyle \forall x \in [r,\infty) $ se tiene que $\displaystyle f_{n}\left(r\right) \leq f_{n}\left(x\right) $. 
+Así, si $\displaystyle n \geq n_{0} $ tenemos que 
+\[ \left|1-f_{n}\left(x\right)\right| \leq \left|1 - \frac{nr}{1 + nr}\right| < \epsilon  .\]
+Por tanto, hay convergencia uniforme ne $\displaystyle [r, \infty) $. Básicamente, hemos aplicado la regla del bocadillo.
+\end{eg}
+\section{Derivada y convergencia uniforme}
+Nos gustaría decir que si $\displaystyle f_{n} \to f $ de alguna forma, entonces $\displaystyle \lim_{n \to \infty}f'_{n}\left(x\right) = f'\left(x\right) $. Sin embargo, nos encontramos algunos problemas.
+\begin{eg}
+\normalfont Consideremos $\displaystyle f\left(x\right) = \left|x\right| $. Vamos a ver si la podemos aproximar por una sucesión de funciones derivables:
+\[f_{n}\left(x\right) =
+\begin{cases}
+-x, \; x < -\frac{1}{n} \\
+\frac{n}{2}x^{2}+\frac{1}{2n}, \; x \in \left[-\frac{1}{n}, \frac{1}{n}\right] \\
+x, \; x > \frac{1}{n}
+\end{cases}
+.\]
+Calculemos el límite puntual:
+\[\lim_{n \to \infty}f_{n}\left(x\right) = \left|x\right| .\]
+Vamos a ver que también hay convergencia uniforme:
+\[ \left| \left|x\right|-f_{n}\left(x\right)\right| \leq \max \left\{ \left|x\right|-f_{n}\left(x\right)\right\} \leq \frac{1}{n} \to 0 .\]
+Es decir, la convergencia uniforme no conserva la derivabilidad. 
+\end{eg}
+\begin{eg}
+\normalfont Consideremos $\displaystyle f_{n}\left(x\right) = \frac{1}{n}\sin\left(n^{2}x\right) $. Tenemos que esta sucesión de funciones converge uniformemente a $\displaystyle 0 $ en todo $\displaystyle \R $, por tanto converge también puntualmente. En efecto, 
+\[ \left|\frac{1}{n}\sin\left(n^{2}x\right)\right| \leq \frac{1}{n} \to 0 .\]
+Por otro lado, tenemos que $\displaystyle \forall n \in \N $ existe $\displaystyle f'_{n}\left(x\right) = n \cos \left(n^{2}x\right) $. Tenemos que $\displaystyle f'\left(x\right) = 0 $, pero
+\[\lim_{n \to \infty}f'_{n}\left(0\right) = \lim_{n \to \infty}n=\infty\]
+Así, hemos visto que $\displaystyle \lim_{n \to \infty}f'_{n}\left(x\right) \neq f'\left(x\right) $.
+\end{eg}
+Vamos a buscar las condiciones necesarias para que se cumpla la propiedad buscada inicialmente.
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ una sucesión de funciones tal que 
+	\begin{itemize}
+		\item $\displaystyle \forall n \in \N $, $\displaystyle f_{n} $ es derivable en $\displaystyle \left[a,b\right]  $ y estas derivadas son integrables en $\displaystyle \left[a,b\right]  $.
+		\item Converge puntualmente a una función $\displaystyle f $ en $\displaystyle \left[a,b\right]  $.
+		\item La sucesión de derivadas converge uniformemente a una función continua $\displaystyle g $ en $\displaystyle \left[a,b\right]  $.
+	\end{itemize} 
+	Entonces, existe $\displaystyle f'\left(x\right) $ y $\displaystyle \lim_{n \to \infty}f'_{n}\left(x\right) = f'\left(x\right) $, $\displaystyle \forall x \in \left[a,b\right]  $.
+\end{ftheorem}
+\begin{proof}
+	Tenemos que $\displaystyle f'_{n} \to g $ uniformemente en $\displaystyle \left[a,b\right]  $ y sabemos que $\displaystyle f'_{n} $ es integrable en $\displaystyle \left[a,b\right]  $. Por tanto, tenemos que
+	\[\lim_{n \to \infty}\int^{x}_{a} f'_{n}\left(s\right) \; d s = \int^{x}_{a} g\left(x\right) \; d s  = \lim_{n \to \infty}f_{n}\left(x\right)-f_{n}\left(a\right) = f\left(x\right)-f\left(a\right).\]
+Despejando, obtenemos que
+\[f\left(x\right) = f\left(a\right) + \int^{x}_{a} g\left(s\right) \; d s .\]
+Dado que $\displaystyle g $ es continua en $\displaystyle \left[a,b\right]  $, podemos aplicar el teorema fundamental del cálculo, por lo que existe
+\[f'\left(x\right) = \left(f\left(a\right) + \int^{x}_{a} g\left(s\right) \; d s\right)' = g\left(x\right) = \lim_{n \to \infty}f'_{n}\left(x\right) .\]
+\end{proof}
+\begin{ftheorem}[Caracterización de Cauchy]
+	\normalfont Sea una sucesión de funciones $\displaystyle \left\{ f_{n}\right\} _{n\in\N}  $ sobre $\displaystyle A \subset \R $. Tenemos que $\displaystyle f_{n} \to f $ uniformemente en $\displaystyle A $ si y solo si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists n_{0} \in \N $ tal que $\displaystyle \forall n,m \geq n_{0} $ se cumple que $\displaystyle \left|f_{m}\left(x\right)-f_{n}\left(x\right)\right|<\epsilon  $, $\displaystyle \forall x \in A $.
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Supongamos que $\displaystyle f_{n} \to f $ uniformemente en $\displaystyle A $. Sea $\displaystyle \epsilon > 0 $, tenemos que existe $\displaystyle n_{0} \in \N $ tal que si $\displaystyle n \geq n_{0} $ se tiene que $\displaystyle \left|f\left(x\right)-f_{n}\left(x\right)\right| < \frac{\epsilon }{2} $, $\displaystyle \forall x \in A $. Si cogemos $\displaystyle n,m \geq n_{0} $,
+	\[ \left|f_{m}\left(x\right)-f_{n}\left(x\right)\right| = \left|f_{m}\left(x\right)-f\left(x\right)+f\left(x\right)-f_{n}\left(x\right)\right| \leq \left|f_{m}\left(x\right)-f\left(x\right)\right|+ \left|f\left(x\right)-f_{n}\left(x\right)\right| < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon  .\]
+\item[(ii)] Si $\displaystyle \epsilon > 0 $, existe $\displaystyle n_{0} \in \N $ tal que si $\displaystyle n,m \geq n_{0} $, se tiene que $\displaystyle \left|f_{n}\left(x\right)-f_{m}\left(x\right)\right|<\epsilon  $, $\displaystyle \forall x \in A $. Si $\displaystyle x_{0} \in A $ está fijo, tenemos que la sucesión $\displaystyle \left\{ f_{n}\left(x_{0}\right)\right\} _{n\in\N} $ es una sucesión de Cauchy, por lo que converge. Es decir, $\displaystyle \exists f\left(x_{0}\right) \in \R $ tal que $\displaystyle \lim_{n \to \infty}f_{n}\left(x_{0}\right) = f\left(x_{0}\right) $. 
+	Haciendo esto con todos los puntos $\displaystyle x \in A $ obtenemos la función $\displaystyle f $, que es el límite puntual de $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $. Así, para $\displaystyle n,m \geq n_{0} $, tomando $\displaystyle m \to \infty $, se tiene que
+	\[ \left|f\left(x\right)-f_{n}\left(x\right)\right| < \epsilon, \; \forall x \in A.\]
+	Por tanto, $\displaystyle f_{n} \to f $ uniformemente en $\displaystyle A $.
+\end{description}
+\end{proof}
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ una sucesión de funciones sobre $\displaystyle \left[a,b\right]  $ tal que
+	\begin{itemize}
+	\item Existe $\displaystyle x_{0} \in \left[a,b\right]  $ tal que existe el límite (puntual) $\displaystyle \lim_{x \to x_{0}}f_{n}\left(x_{0}\right) = f\left(x_{0}\right) $.
+\item $\displaystyle f_{n} $ es derivable para $\displaystyle  n \in \N $ y la sucesión de derivadas converge uniformemente a una función $\displaystyle g $ en $\displaystyle \left[a,b\right]  $.
+	\end{itemize}
+	Entonces la sucesión $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ converge uniformemente a $\displaystyle f $ (el límite puntual) en $\displaystyle \left[a,b\right]  $ tal que $\displaystyle f $ es derivable y verfica que 
+	\[ f'\left(x\right) = \lim_{n \to \infty}f'_{n}\left(x\right).\]
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle \epsilon > 0 $, por lo que $\displaystyle \frac{\epsilon }{2\left(b-a\right)} > 0 $. Existe $\displaystyle n_{1} \in \N $ tal que si $\displaystyle n,m \geq n_{1} $,
+\[ \left|f'_{m}\left(x\right)-f'_{n}\left(x\right)\right|<\frac{\epsilon }{2\left(b-a\right)}, \; \forall x \in \left[a,b\right]  .\]
+Tenemos que para $\displaystyle n,m \geq n_{1} $, $\displaystyle f_{m}-f_{n} $ es derivable en $\displaystyle \left[a,b\right]  $. Por el teorema del valor medio existe $\displaystyle y \in \left[x,x_{0}\right]  $ o $\displaystyle y \in \left[x_{0}, x\right]  $ tal que 
+\[ \left(f_{m}-f_{n}\right)\left(x\right)-\left(f_{m}-f_{n}\right)\left(x_{0}\right) = \left(f_{m}-f_{n}\right)'\left(y\right) \left(x-x_{0}\right)	.\]
+Así, 
+\[\left(f_{m}-f_{n}\right)\left(x\right) = \left(f_{m}-f_{n}\right)\left(x_{0}\right) + \left(f_{m}-f_{n}\right)'\left(y\right) \left(x-x_{0}\right) .\]
+Para $\displaystyle \epsilon > 0 $, tenemos que $\displaystyle \lim_{n \to \infty}f_{n}\left(x_{0}\right) = f\left(x_{0}\right) $. Por la caracterización de Cauchy, existe $\displaystyle n_{2} \in \N $ tal que $\displaystyle \forall n,m \geq n_{2} $ se tiene que 
+\[ \left|f_{m}\left(x_{0}\right)-f_{n}\left(x_{0}\right)\right| < \frac{\epsilon }{2} .\]
+Ahora, si $\displaystyle m,n \geq n_{0} = \max \left\{ n_{1}, n_{2}\right\}  $,
+\[
+\begin{split}
+	\left|f_{m}\left(x\right)-f_{n}\left(x\right)\right| \leq & \left|f_{m}\left(x_{0}\right)-f_{n}\left(x_{0}\right)\right|+ \left|f'_{m}\left(y\right)-f'_{n}\left(y\right)\right| \left|x-x_{0}\right| \\
+	\leq & \left|f_{m}\left(x_{0}\right)-f_{n}\left(x_{0}\right)\right| + \left|f'_{m}\left(y\right)-f'_{n}\left(y\right)\right| \left|b-a\right| < \frac{\epsilon }{2} + \frac{\epsilon }{2\left(b-a\right)}\left(b-a\right) = \epsilon  .
+\end{split}
+\]
+Así, hemos visto que $\displaystyle f_{n} \to f$ uniformemente. Sea $\displaystyle \epsilon > 0 $. Tenemos que $\displaystyle f' \to g $ uniformemente, por lo que existe $\displaystyle n_{3} \in \N $ tal que si $\displaystyle n \geq n_{3} $, entonces
+\[ \left|f_{n}'\left(x\right)-g\left(x\right)\right| < \frac{\epsilon }{3}, \; \forall x \in \left[a,b\right]  .\]
+Por otro lado, tenemos que $\displaystyle f'_{n}\left(c\right) = \lim_{n \to \infty}\frac{f_{n}\left(x\right)-f_{n}\left(c\right)}{x-c} $. Así, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle 0<\left|x-c\right|<\delta  $, entonces $\displaystyle \left|\frac{f_{n}\left(x\right)-f_{n}\left(c\right)}{x-c}\right|<\frac{\epsilon }{3} $. Finalmente, por el teorema del valor medio, existe $\displaystyle y \in \left(x,c\right) $ tal que 
+\[\left(f_{m}-f_{n}\right)\left(x\right)-\left(f_{m}-f_{n}\right)\left(c\right) = \left(f'_{m}-f'_{n}\right)\left(y\right)\left(x-c\right) .\]
+Es decir, 
+\[ \left|\frac{f\left(x\right)-f\left(c\right)}{x-c} - \frac{f_{n}\left(x\right)-f_{n}\left(c\right)}{x-c}\right|\approx \left|\frac{f_{m}\left(x\right)-f_{m}\left(c\right)}{x-c} -\frac{f_{n}\left(x\right)-f_{n}\left(c\right)}{x-c}\right| \leq \left|f'_{m}\left(y\right)-f'_{n}\left(y\right)\right| < \frac{\epsilon }{3}  .\]
+Así, juntándolo todo obtenemos que
+\[
+\begin{split}
+	\left|\frac{f\left(x\right)-f\left(c\right)}{x-c}-g\left(c\right)\right| = & \left|\frac{f\left(x\right)-f\left(c\right)}{x-c} - \frac{f_{n}\left(x\right)-f_{n}\left(c\right)}{x-c}+\frac{f_{n}\left(x\right)-f_{n}\left(c\right)}{x-c}-f'_{n}\left(c\right)+f'_{n}\left(c\right)-g\left(c\right)\right|\\
+	\leq & \left|\frac{f\left(x\right)-f\left(c\right)}{x-c} - \frac{f_{n}\left(x\right)-f_{n}\left(c\right)}{x-c}\right| + \left|\frac{f_{n}\left(x\right)-f_{n}\left(c\right)}{x-c}-f'_{n}\left(c\right)\right| + \left|f'_{n}\left(c\right)-g\left(c\right)\right| \\
+	= & \frac{\epsilon }{3} + \frac{\epsilon }{3} + \frac{\epsilon }{3} = \epsilon .
+\end{split}
+\]
+\end{proof}
+\section{Series de funciones}
+\begin{fdefinition}[Serie de funciones]
+	\normalfont Dada una sucesión de funciones $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ sobre $\displaystyle A $, denotamos por \textbf{serie de funciones} $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x\right) $ al límite puntual o uniforme de la sucesión de sumas parciales $\displaystyle \left\{ S_{N}\left(x\right) = \sum^{N}_{n = 1}f_{n}\left(x\right)\right\} _{N\in\N} $, con $\displaystyle x \in A $. 
+\end{fdefinition}
+\begin{observation}
+\normalfont Dada una serie $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x\right) $, $\displaystyle x \in A $, fijado $\displaystyle x \in A $, 
+\[\lim_{N \to \infty}S_{N}\left(x\right) = \lim_{N \to \infty}f_{1}\left(x\right) + \cdots + f_{N}\left(x\right) = \sum^{\infty}_{n = 1}f_{n}\left(x\right) .\]
+Además, este límite puede ser uniforme o no serlo.
+\end{observation}
+\begin{eg}
+\normalfont Consideremos la serie de funciones $\displaystyle \sum^{\infty}_{n = 1}\frac{x^{n}}{n!} $. Fijando $\displaystyle x \in \R $, por el criterio del cociente,
+\[\lim_{n \to \infty}\frac{ \left|x\right|^{n+1}}{\left(n+1\right)!}\frac{n!}{ \left|x\right|^{n}} = \lim_{n \to \infty}\frac{ \left|x\right|}{n+1} = 0 < 1 .\]
+Por tanto, sabemos que tiene límite puntual. Además, sabemos que $\displaystyle e^{x} = \sum^{\infty}_{n = 0}\frac{x^{n}}{n!} $, por lo que si $\displaystyle x \in \left[-M,M\right]  $ con $\displaystyle M > 0 $,
+\[
+\begin{split}
+	\left|e^{x}-S_{N}\left(x\right)\right| = & \left|e^{x}-\sum^{N}_{n = 0}\frac{x^{n}}{n!}\right| = \left|e^{x}-P_{N,0}\left(x\right)\right| = \left|R_{N,0}\left(x\right)\right| = \left|\int^{x}_{0} \frac{\left(e^{x}\right)^{\left(N+1\right)}}{N!}\left(t-x\right)^{N} \; dt\right| \\
+	\leq & e^{M}\int^{x}_{0} \frac{ \left|t-x\right|^{N}}{N!} \; dt 
+	=  e^{M}\frac{ \left|x\right|^{N+1}}{\left(N+1\right)!} \leq e^{M}\frac{M^{N+1}}{\left(N+1\right)!} \to 0.
+\end{split}
+\]
+Así, tenemos que la convergencia de $\displaystyle e^{x} = \sum^{\infty}_{n = 0}\frac{x^{n}}{n!} $ es uniforme en $\displaystyle \left[-M,M\right]  $ para cualquier $\displaystyle M > 0 $.
+\end{eg}
+\begin{ftheorem}[]
+	\normalfont Sea la serie de funciones $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x\right) $ convergente uniformemente a una función $\displaystyle f $ en $\displaystyle \left[a,b\right]  $.
+	\begin{description}
+		\item[(a)] Si cada $\displaystyle f_{n} $ es continua en $\displaystyle \left[a,b\right]  $, entonces $\displaystyle S_{N}\left(x\right) = \sum^{N}_{n = 1}f_{n}\left(x\right) $ es continua en el intervalo $\displaystyle \left[a,b\right]  $ y por tanto el límite uniforme $\displaystyle f $ es continuo en $\displaystyle \left[a,b\right]  $.
+		\item[(b)] Si cada $\displaystyle f_{n} $ es integrable en $\displaystyle \left[a,b\right]  $, entonces $\displaystyle S_{N}\left(x\right) = \sum^{N}_{n = 1}f_{n}\left(x\right) $ es integrable en $\displaystyle \left[a,b\right]  $ y por tanto su límite uniforme $\displaystyle f $ es integrable en $\displaystyle \left[a,b\right]  $. También,
+			\[\int^{b}_{a} f\left(x\right) \; dx = \lim_{N \to \infty}\int^{b}_{a} S_{N}\left(x\right) \; dx = \lim_{n \to \infty}\sum^{N}_{n = 1}\int^{b}_{a} f_{n}\left(x\right) \; dx = \sum^{\infty}_{n = 1}\int^{b}_{a} f_{n}\left(x\right) \; dx.\]
+	\end{description}
+\end{ftheorem}
+\begin{proof}
+La demostración es trivial a partir de lo demostrado anteriormente sobre sucesiones de funciones.
+\end{proof}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x\right) $, $\displaystyle x \in A $, tal que 
+\begin{description}
+\item[(a)] Existe $\displaystyle x_{0} \in A $ tal que $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x_{0}\right) $ es convergente.
+\item[(b)] Cada $\displaystyle f_{n} $ es derivable en $\displaystyle \left[a,b\right]  $, por lo que la serie $\displaystyle \sum^{\infty}_{n = 1}f'_{n}\left(x\right) $ converge uniformemente en $\displaystyle \left[a,b\right]  $.
+\end{description}
+Entonces, la serie $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x\right) $ converge uniformemente a su límite puntual $\displaystyle f $ en $\displaystyle \left[a,b\right]  $ de modo que $\displaystyle f $ es derivable en $\displaystyle \left(a,b\right) $ y $\displaystyle f'\left(x\right) = \sum^{\infty}_{n = 1}f'_{n}\left(x\right) $.
+\end{ftheorem}
+\begin{eg}
+\normalfont Algunos ejemplos de series de funciones:
+\begin{itemize}
+\item Series de Taylor: $\displaystyle \sum^{\infty}_{n = 0}\frac{f^{\left(n\right)}\left(a\right)}{n!}\left(x-a\right)^{n} $.
+\item Series de Fourier: $\displaystyle \sum^{\infty}_{n = 0}a_{n}\cos nx + b_{n}\sin nx $.
+\item Series de potencias: $\displaystyle \sum^{\infty}_{n = 0}a_{n}\left(x-a\right)^{n} $.
+\end{itemize}
+\end{eg}
+\begin{ftheorem}[Prueba M-Weirstrass]
+\normalfont Sea una serie de funciones $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x\right) $ con $\displaystyle x \in A $ de modo que para cada $\displaystyle n \in \N $ existe $\displaystyle M_{n} \in \R $, $\displaystyle M_{n} > 0 $, tal que $\displaystyle \left|f_{n}\left(x\right)\right| \leq M_{n} $, $\displaystyle \forall x \in A $. Si la serie numérica $\displaystyle \sum^{\infty}_{n = 1}M_{n} < \infty $, entonces $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x\right) $ converge uniformemente sobre $\displaystyle A $ a su límite puntual.
+\end{ftheorem}
+\begin{proof}
+Fijamos $\displaystyle x \in A $, por lo que $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x\right) $ es una serie numérica y 
+\[\sum^{\infty}_{n = 1} \left|f_{n}\left(x\right)\right| \leq \sum^{\infty}_{n = 1}M_{n} < \infty .\]
+Por tanto, la serie $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x\right) $ es absolutamente convergente, por lo que existe $\displaystyle f\left(x\right) = \sum^{\infty}_{n = 1}f_{n}\left(x\right) $ para $\displaystyle x \in A $. Vamos a ver que converge uniformemente a este límite,
+\[
+\begin{split}
+	\left|f\left(x\right)-S_{N}\left(x\right)\right| = & \left|\sum^{\infty}_{n = 1}f_{n}\left(x\right)-\sum^{N}_{n = 1}f_{n}\left(x\right)\right| = \left|\sum^{\infty}_{n = N+1}f_{n}\left(x\right)\right| \leq \sum^{\infty}_{n = N+1} \left|f_{n}\left(x\right)\right| \leq \sum^{\infty}_{n = N + 1}M_{n} \to 0 .
+\end{split}
+\]
+\end{proof}
+\begin{observation}
+\normalfont Otra forma de demostrar la última parte del teorema anterior es aplicando el criterio de Cauchy. Si $\displaystyle m > n $ tenemos que $\displaystyle \forall x \in A $,
+\[ \left|S_{m}\left(x\right)-S_{n}\left(x\right)\right|= \left|f_{m}\left(x\right) + f_{m - 1}\left(x\right) + \cdots + f_{n + 1}\left(x\right)\right| \leq M_{m} + M_{m+1} + \cdots + M_{n+1} = \left|\sum^{m}_{k=1}M_{k}-\sum^{n}_{k=1}M_{k}\right|\to 0 .\]
+\end{observation}
+
+\begin{eg}
+	\normalfont Consideremos $\displaystyle \sum^{\infty}_{n = 0}\frac{x^{n}}{n!} $, que es convergente para $\displaystyle \forall x \in \R $ por el criterio del cociente. Si $\displaystyle x \in \left[-M,M\right]  $, tenemos que 
+	\[ \left|\frac{x^{n}}{n!}\right| \leq \frac{M^{n}}{n!} .\]
+	Como acabamos de ver, tenemos que $\displaystyle \sum^{\infty}_{n = 1}\frac{M^{n}}{n!} < \infty $. Por el teorema anterior $\displaystyle \sum^{\infty}_{n = 0}\frac{x^{n}}{n!} $ converge uniformemente a su límite puntual. Además, si tomamos $\displaystyle f\left(x\right) = \sum^{\infty}_{n = 0}\frac{x^{n}}{n!} $, tenemos que 
+	\[ \left(\frac{x^{n}}{n!}\right)' = \frac{x^{n-1}}{\left(n-1\right)!}, \; x \in \R .\]
+	Tenemos que $\displaystyle \sum^{\infty}_{n = 1}\frac{x^{n-1}}{\left(n-1\right)!} = \sum^{\infty}_{k = 0}\frac{x^{k}}{k!} $ converge uniformemente. Por el teorema 10.6, tenemos que $\displaystyle f $ es derivable y $\displaystyle f'\left(x\right) = f\left(x\right) $. Este es otro mecanismo para definir la exponencial. Por un resultado anterior, tenemos que si $\displaystyle f'\left(x\right) = f\left(x\right) $, entonces $\displaystyle f\left(x\right) = Ke^{x} $. Tenemos que $\displaystyle K = 1 $ puesto que $\displaystyle f\left(0\right) = 1 $.
+\end{eg}
+\begin{eg}
+	\normalfont Consideremos $\displaystyle \int^{a}_{0} e^{-x^{2}} \; dx $. Sabemos que $\displaystyle e^{x} = \sum^{\infty}_{n = 0}\frac{x^{n}}{n!} $, si $\displaystyle x \in \left[-M,M\right]  $. Así, tenemos que 
+	\[
+	\begin{split}
+	\int^{a}_{0} \sum^{\infty}_{n = 0}\frac{\left(-x^{2}\right)^{n}}{n!} \; dx = \sum^{\infty}_{n = 0}\int^{a}_{0} \frac{\left(-x^{2}\right)^{n}}{n!} \; dx = \sum^{\infty}_{n= 0}\frac{\left(-1\right)^{n}a^{2n+2}}{\left(n+1\right)!} .
+	\end{split}
+	\]
+\end{eg}
+\begin{eg}
+\normalfont Vamos a estudiar la convergencia uniforme de $\displaystyle \sum^{\infty}_{n = 1}\frac{\cos nx}{n^{2}} $, $\displaystyle x \in \R $. Tenemos que
+\[ \left|\frac{\cos nx }{n^{2}}\right| \leq \frac{1}{n^{2}}.\]
+Como $\displaystyle \sum^{\infty}_{n = 1}\frac{1}{n^{2}} < \infty $, tenemos que $\displaystyle \sum^{\infty}_{n = 1}\frac{\cos n x}{n^{2}} $ converge uniformemente para $\displaystyle x\in \R $.
+\end{eg}
+\section{Series de potencias}
+\begin{fdefinition}[Serie de potencias]
+	\normalfont Dadas $\displaystyle a \in \R $ y una sucesión $\displaystyle \left\{ a_{n}\right\} _{n\in\N}\subset \R $, se denomina \textbf{serie de potencias} centrada en $\displaystyle a $ al límite puntual de la serie de funciones $\displaystyle \sum^{\infty}_{n = 0}a_{n}\left(x-a\right)^{n} $.
+\end{fdefinition}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ una serie de potencias. Si para $\displaystyle y \in \R $, $\displaystyle y > 0 $, se tiene que la serie numérica $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(y-a\right)^{n} $ es convergente, entonces $\displaystyle \forall r  $ tal que $\displaystyle 0<r< \left|y - a\right| $ se verifican:
+\begin{description}
+	\item[(a)] $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ converge absolutamente en $\displaystyle \left[a-r, a+r\right]  $.
+	\item[(b)] $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ converge uniformemente a su límite puntual en $\displaystyle \left[a-r, a + r\right]  $.
+	\item[(c)] El límite puntual es derivable y 
+		\[ \left(\sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n}\right)' = \sum^{\infty}_{n = 1}na_{n}\left(x-a\right)^{n-1},\]
+		uniformemente en $\displaystyle \left[a-r,a +r\right]  $.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+Sea $\displaystyle f\left(x\right) = \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ con $\displaystyle a \in \dom\left(f\right) $ y $\displaystyle f\left(a\right) = a_{0} $. 
+\begin{description}
+\item[(a) y (b)] Si $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(y-a\right)^{n} $ converge, entonces $\displaystyle \lim_{n \to \infty} \left|a_{n}\left(y-a\right)^{n}\right| = 0 $. Así, existe $\displaystyle M > 0 $ tal que $\displaystyle \forall n \in \N $, $\displaystyle \left|a_{n}\left(y-a\right)^{n}\right|<M $. Supongamos que $\displaystyle \left|x-a\right| \leq r $, entonces
+	\[\sum^{\infty}_{n = 1} \left|a_{n}\left(x-a\right)^{n}\right| = \sum^{\infty}_{n = 1} \left|a_{n}\left(y-a\right)^{n}\left(\frac{x-a}{y-a}\right)^{n}\right| .\]
+Tenemos que $\displaystyle \left|\frac{x-a}{y-a}\right| \leq \frac{r}{ \left|y-a\right|} < 1 $, de lo que se deduce
+\[\leq \sum^{\infty}_{n = 1} \left|a_{n}\left(y-a\right)^{n}\right| \left|\frac{r}{y-a}\right|^{n} \leq \sum^{\infty}_{n = 1}M\left|\frac{r}{y-a}\right| ^{n} < \infty  .\]
+Así, $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ converge absolutamente y, por la prueba de Weirstrass, converge absolutamente a su límite puntual en $\displaystyle \left[a-r, a + r\right]  $. 
+\item[(c)] Sabemos que $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ converge puntualmente en $\displaystyle \left[a-r, a + r\right]  $. Tomamos $\displaystyle x_{0} $ tal que $\displaystyle a + r < x_{0} < y $, por lo que
+	\[ \left|a-x\right| \leq r < \left|a-x_{0}\right| < \left|a-y\right|, \; x \in \left[a-r, a + r\right]  .\]
+	Así, tenemos que 
+\[
+\begin{split}
+	\sum^{\infty}_{n = 1} \left|n a_{n}\left(x-a\right)^{n-1}\right| = & \sum^{\infty}_{n = 1}n \left|a_{n}\right| \left|x-a\right|^{n-1}\leq \sum^{\infty}_{n = 1}n \left|a_{n}\right| \left|x_{0}-a\right|^{n-1} 
+	=  \sum^{\infty}_{n = 1}n \left|a_{n}\right| \frac{1}{ \left| x_{0}-a\right|} \left|x_{0}-a\right|^{n} \\
+	\leq & \sum^{\infty}_{n = 1}n \left|a_{n}\right| \frac{1}{r} \left|x_{0}-a\right|^{n}
+	= \sum^{\infty}_{n = 1}n \left|a_{n}\right|\frac{1}{r} \left|y - a\right|^{n} \left|\frac{x_{0}-a}{y-a}\right|^{n}  \\
+	\leq & \sum^{\infty}_{n = 1}\frac{M}{r}n \left|\frac{x_{0}-a}{y-a}\right|^{n} 
+	=  \frac{M}{r}\sum^{\infty}_{n = 1}n \left|\frac{x_{0}-a}{y-a}\right|^{n} < \infty .
+\end{split}
+\]
+Esto último converge porque $\displaystyle \left|\frac{x_{0}-a}{y - a}\right| < 1 $.
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont Este teorema nos dice que si una serie de potencias converge, lo hace absolutamente. Entonces, en las series de potencias, hablar de convergencia absoluta y convergencia es lo mismo.
+\end{observation}
+\begin{fdefinition}[Radio de convergencia]
+\normalfont Dada una serie de potencias $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $, se denomina \textbf{radio de convergencia} a 
+\[\sup \left\{ \left|a-y\right| \; : \; y \in \R, \; \sum^{\infty}_{n = 1}a_{n}\left(y-a\right)^{n} \; \text{converge}\right\}  .\]
+\end{fdefinition}
+\begin{ftheorem}[]
+\normalfont Sea una serie de potencias $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ y $\displaystyle R $ su radio de convergencia.
+\begin{description}
+\item[(a)] $\displaystyle R = 0 \iff  $ $\displaystyle f\left(x\right) = \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ existe si y solo si $\displaystyle x = a $.
+\item[(b)] $\displaystyle  R > 0 \iff \forall r < R$, $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ convergente uniformemente en $\displaystyle \left[a - r, a + r\right]  $ y 
+	\[ \left(\sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n}\right)' = \sum^{\infty}_{n = 1}n a_{n}\left(x-a\right)^{n-1} .\]
+\item[(c)] $\displaystyle R = \infty \iff \forall x \in \R $, $\displaystyle \sum^{\infty}_{ n=1}a_{n}\left(x-a\right)^{n} $ es convergente y 
+	\[ \left(\sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n}\right)' = \sum^{\infty}_{n = 1}n a_{n}\left(x-a\right)^{n-1} .\]
+\end{description}
+\end{ftheorem}
+\begin{proof}
+Se deduce fácilmente a partir del teorema anterior.
+\end{proof}
+\begin{fcolorary}[]
+\normalfont Sea $\displaystyle \sum^{\infty}_{n = 0}a_{n}\left(x-a\right)^{n} $ una serie de potencias y sea $\displaystyle R $ su radio de convergencia.
+\begin{description}
+\item[(a)] Si existe $\displaystyle \lim_{n \to \infty} \left|\frac{a_{n+1}}{a_{n}}\right| = l $, entonces $\displaystyle R = \frac{1}{l} $. 
+\item[(b)] Si existe $\displaystyle \lim_{n \to \infty} \sqrt\left[n\right] { \left|a_{n}\right|} = l$, entonces $\displaystyle R = \frac{1}{l} $.
+\end{description}
+\end{fcolorary}
+\begin{proof}
+Trivial.
+\end{proof}
+\begin{eg}
+\normalfont Consideremos $\displaystyle \sum^{\infty}_{n = 1}\frac{\left(-1\right)^{n}x^{2n}}{3^{n}} $. Aplicando el criterio del cociente,
+\[ \frac{ \left|x\right|^{2n+2}}{3^{n+1}}\frac{3^{n}}{ \left|x\right|^{2n}} = \frac{ \left|x\right|^{2}}{3} < 1 \iff \left|x\right| < \sqrt{3} .\]
+Así, el radio de convergencia es $\displaystyle \sqrt{3} $. Así, si $\displaystyle r < \sqrt{3} $, la serie converge uniformemente y se cumple la identidad de las derivadas. Estudiemos que pasa si $\displaystyle x \in \left\{ \sqrt{3}, -\sqrt{3}\right\}  $. Si $\displaystyle x = \pm\sqrt{3} $, tenemos que 
+\[\sum^{\infty}_{n = 1}\frac{\left(-1\right)^{n}3^{n}}{3^{n}} = \sum^{\infty}_{n = 1}\left(-1\right)^{n} .\]
+Por tanto, no converge en los extremos.
+\end{eg}
+\begin{observation}
+\normalfont Podemos decir que las series de Taylor son series de potencias, por lo que se les aplican los teoremas anteriores. Además, si $\displaystyle f\left(x\right) = \sum^{\infty}_{k=0}a_{k}\left(x-a\right)^{k} $, existe su derivada y es otra serie de potencias $\displaystyle f'\left(x\right) = \sum^{\infty}_{k=1}ka_{k}\left(x-a\right)^{k-1} $ con $\displaystyle f'\left(a\right) = a_{1} $. Similarmente, existe $\displaystyle f'' $ y el resto de derivadas sucesivas, que son series de potencias con $\displaystyle f^{\left(k\right)}\left(a\right) = a_{k}k! $. Así, la serie de Taylor de una función que viene dada por una serie de potencias existe y coincide con la serie de potencias.
+\end{observation}
+\begin{eg}
+	\normalfont Consideremos $\displaystyle \sum^{\infty}_{n = 0}x^{n} = 1 + x + \cdots + x^{n} + \cdots = \frac{1}{1-x} $, $\displaystyle x \in \left(-1,1\right) $. Tenemos que hay convergencia puntual y absoluta en el intervalo $\displaystyle \left(-1,1\right) $, y hay convergencia uniforme en $\displaystyle \left(-r,r\right) $ si $\displaystyle 0\leq r < 1 $. Estudiemos lo que pasa en los extremos. Si $\displaystyle x = 1 $, está claro que $\displaystyle \sum^{\infty}_{n = 0}1^{n} = \infty $ y si $\displaystyle x = - 1 $, está claro que $\displaystyle \sum^{\infty}_{n = 0}\left(-1\right)^{n} $ no converge. Vamos a ver si converge uniformemente en $\displaystyle \left(-1,1\right) $. Sin pérdida de generalidad, consideremos $\displaystyle x \in [0,1) $,
+\[ \left|\sum^{\infty}_{n = 0}x^{n}-\sum^{N}_{n = 0}x^{n}\right| = \left|\sum^{\infty}_{n = N+1}x^{n}\right| .\]
+Si $\displaystyle N \in \N $, cogemos $\displaystyle x = \sqrt[N+1]{\frac{1}{2}} < 1 $. Así, 
+\[ \sum^{\infty}_{n = N + 1}\left(\sqrt[N+1]{\frac{1}{2}}\right)^{n} = \frac{1}{2} + \sum^{\infty}_{n = N+2} \left(\sqrt[N+1]{\frac{1}{2}}\right)^{n} > \frac{1}{2}.\]
+Así, no converge uniformemente. 
+\end{eg}
+\begin{eg}
+\normalfont Consideremos $\displaystyle f\left(x\right) = \sum^{\infty}_{n = 0}\frac{1}{n^{2}x + 1} $, $\displaystyle x \geq 0 $. Calculemos su dominio. 
+La serie converge si $\displaystyle x > 0 $ y si $\displaystyle x = 0 $ no converge. En efecto, si $\displaystyle x > 0 $, $\displaystyle \exists a > 0 $ tal que $\displaystyle x \geq a $, así, 
+\[\sum^{\infty}_{n = 0}\frac{1}{n^{2}x + 1} \leq \sum^{\infty}_{n = 0}\frac{1}{n^{2}a + 1} \approx \sum^{\infty}_{n = 1}\frac{1}{n^{2}} < \infty .\]
+Por la prueba de Weierstrass, tenemos que la serie converge uniformemente en $\displaystyle [a,\infty) $, $\displaystyle \forall a > 0 $, y la serie converge puntualmente en $\displaystyle (0,\infty) $. Vamos a ver si converge uniformemente en $\displaystyle \left(0,\infty\right) $.
+\end{eg}
+\begin{fdefinition}[Función analítica]
+\normalfont Una función $\displaystyle f $ se llama \textbf{analítica} en un entorno del punto $\displaystyle a $ si se puede expresar como una serie de potencias centrada en $\displaystyle a $, es decir, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \left|x-a\right|<\delta  $, se tiene que 
+\[f\left(x\right) = \sum^{\infty}_{ k= 0}a_{k}\left(x-a\right)^{k} .\]
+\end{fdefinition}
 

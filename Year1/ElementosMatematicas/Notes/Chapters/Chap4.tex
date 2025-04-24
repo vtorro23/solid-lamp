@@ -266,7 +266,7 @@ Por tanto,
 \end{proof}
 \begin{ftheorem}[]
 \normalfont Sea el sistema dinámico lineal afín $\displaystyle A\left(n+1\right) = rA\left(n\right) + b $, con $\displaystyle r,b \in \R $. La solución general es
-\[A\left(n+1\right) = 
+\[A\left(n\right) = 
 \begin{cases}
 cr^{n} - \frac{b}{1-r}, \; r \neq 1\\
 c + nb, \; r = 1
@@ -520,10 +520,10 @@ Sean $\displaystyle a_{1} $ y $\displaystyle a_{2} $ los valores que definen el 
 \normalfont Esto se puede generalizar para ciclos de orden 4, 6, etc.
 \end{observation}
 \begin{fdefinition}[]
-\normalfont El sistema $\displaystyle A\left(n+1\right) = f\left(A\left(n\right)\right) $ tiene un ciclo de orden $\displaystyle 2n $ con valore $\displaystyle a_{1}, \ldots, a_{k} $, el ciclo es estable si 
+\normalfont El sistema $\displaystyle A\left(n+1\right) = f\left(A\left(n\right)\right) $ tiene un ciclo de orden $\displaystyle 2n $ con valores $\displaystyle a_{1}, \ldots, a_{k} $, el ciclo es estable si 
 \[ \left|f'\left(a_{1}\right)f'\left(a_{2}\right) \cdots f'\left(a_{k}\right)\right|<1 ,\]
 e inestable si 
-\[ \left|f'\left(a_{1}\right) f\\left(a_{2}\right) \cdots f'\left(a_{k}\right)\right|>1 .\]
+\[ \left|f'\left(a_{1}\right) f'\left(a_{2}\right) \cdots f'\left(a_{k}\right)\right|>1 .\]
 \end{fdefinition}
 \begin{eg}
 	\normalfont Ecuación logística: $\displaystyle A\left(n+1\right) = rA\left(n\right)\left(1-A\left(n\right)\right) $, $\displaystyle r \in \left[0,4\right]  $. En general, podemos estudiar los puntos de equilibrio y los ciclos a partir de $\displaystyle f\left(x\right) = rx - rx^{2} $. Primero encontramos los puntos de equilibrio

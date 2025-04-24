@@ -24,11 +24,11 @@ En general, $\displaystyle f^{\left(k\right)}\left(a\right) = P^{\left(k\right)}
 \end{observation}
 \begin{ftheorem}[]
 \normalfont Sea $\displaystyle f: \left(a - \delta, a + \delta \right) \to \R $ derivable $\displaystyle n $ veces en $\displaystyle \left(a - \delta, a + \delta \right) $ con $\displaystyle f^{\left(n\right)} $ continua. Entonces
-\[ \lim_{x \to a}\frac{f\left(x\right)-P_{a,n}\left(x\right)}{\left(x-a\right)^{n}} .\]
+\[ \lim_{x \to a}\frac{f\left(x\right)-P_{a,n}\left(x\right)}{\left(x-a\right)^{n}} =0 .\]
 \end{ftheorem}
 \begin{proof}
 Aplicando L'Hôpital $\displaystyle n $ veces:
-\[ \lim_{x \to a}\frac{f^{\left(n\right) } \left(x\right)- P^{\left(n\right)}_{a,n}\left(x\right)}{n!} = 0 .\]
+\[\lim_{x \to a}\frac{f\left(x\right)-P_{a,n}\left(x\right)}{\left(x-a\right)^{n}} = \cdots =\lim_{x \to a}\frac{f^{\left(n\right) } \left(x\right)- P^{\left(n\right)}_{a,n}\left(x\right)}{n!} = 0 .\]
 \end{proof}
 \begin{fcolorary}[]
 \normalfont Sea $\displaystyle a \in \left(a - \delta, a + \delta \right) \subset \dom\left(f\right) $ de modo que existe $\displaystyle f' $ y $\displaystyle f'' $ en $\displaystyle \left(a - \delta, a + \delta \right) $ y $\displaystyle f'\left(a\right) = 0 $.
@@ -86,7 +86,7 @@ Por tanto, $\displaystyle f^{\left(k\right)}\left(1\right) = \left(-1\right)^{k-
 \end{itemize}
 \end{eg}
 \begin{fdefinition}[]
-\normalfont Dadas $\displaystyle f,g : \left(a - \delta, a+ \delta \right) \to \R $, se dice que $\displaystyle f $ y $\displaystyle g $ son iguales en el punto $\displaystyle a $ hasta el orden $\displaystyle n $, con $\displaystyle n \in \N $, si 
+\normalfont Dadas $\displaystyle f,g : \left(a - \delta, a+ \delta \right) \to \R $ \footnote{$\displaystyle a \in \dom\left(f\right) \cap \dom\left(g\right) $.} , se dice que $\displaystyle f $ y $\displaystyle g $ son iguales en el punto $\displaystyle a $ hasta el orden $\displaystyle n $, con $\displaystyle n \in \N $, si 
 \[\lim_{x \to a}\frac{f\left(x\right)-g\left(x\right)}{\left(x-a\right)^{n}} = 0 .\]
 \end{fdefinition}
 \begin{eg}
@@ -101,7 +101,7 @@ Por tanto, se tiene que
 \[ \left|f\left(x\right)-g\left(x\right)\right| \leq \frac{ \left|f\left(x\right)-g\left(x\right)\right|}{ \left|x-a\right|^{k}} \leq \frac{ \left|f\left(x\right)-g\left(x\right)\right|}{ \left|x-a\right|^{n}} .\]
 Así, se tiene que
 \[0 = \lim_{x \to a}\frac{f\left(x\right)-g\left(x\right)}{ \left(x-a\right)^{n}} \iff \lim_{x \to a} \left|\frac{f\left(x\right)-g\left(x\right)}{\left(x-a\right)^{n}}\right| =0 .\]
-Por tanto, $\displaystyle \lim_{x \to a}\frac{f\left(x\right)-g\left(x\right)}{ \left(x-a\right)^{k}} = 0 $, $\displaystyle \forall k = 0, 1, \ldots, n $. En particular $\displaystyle f\left(a\right) = g\left(a\right) $.
+Por tanto, $\displaystyle \lim_{x \to a}\frac{f\left(x\right)-g\left(x\right)}{ \left(x-a\right)^{k}} = 0 $, $\displaystyle \forall k = 0, 1, \ldots, n $. En particular $\displaystyle f\left(a\right) = g\left(a\right) $ (si fueran continuas).
 \end{observation}
 \begin{flema}[]
 \normalfont Sean $\displaystyle P $ y $\displaystyle Q $ dos polinomios de grado menor o igual que $\displaystyle n $. Si ambos son iguales en $\displaystyle a $ hasta el orden $\displaystyle n $, entonces $\displaystyle P = Q $.
@@ -181,7 +181,7 @@ Esto lo demostraremos más adelante.
 \end{ftheorem}
 \begin{proof}
 	Para $\displaystyle t \in \left[a,x\right]  $, definimos
-	\[S\left(t\right) = R_{t,n}\left(x\right) = f\left(x\right) - P_{t,n}\left(x\right) = f\left(x\right)-\sum^{n}_{k=0}\frac{f^{\left(k\right)}}{k!}\left(x-t\right)^{k}, \; t \in \left[a,x\right]  .\]
+	\[S\left(t\right) = R_{t,n}\left(x\right) = f\left(x\right) - P_{t,n}\left(x\right) = f\left(x\right)-\sum^{n}_{k=0}\frac{f^{\left(k\right)}\left(t\right)}{k!}\left(x-t\right)^{k}, \; t \in \left[a,x\right]  .\]
 Ahora, consideremos 
 \[g\left(t\right) = \left(x-t\right)^{n+1}, \; t \in \left[a,x\right]  .\]
 Derivamos $\displaystyle S\left(t\right) $ y tomamos $\displaystyle j = k-1 $,
@@ -387,4 +387,16 @@ Por el lema anterior, tenemos que dado $\displaystyle x_{0} \in \left[a,b\right]
 Además, 
 \[ \left|x_{n}-x^{*}\right| \leq \frac{K^{n}}{1-K} \left|x_{1}-x_{0}\right| = \frac{\left(1-\frac{m}{M}\right)^{n}}{\frac{m}{M}} \left|x_{0}-\frac{f\left(x_{0}\right)}{M}-x_{0}\right| = \left(1-\frac{m}{M}\right)^{n}\frac{ \left|f\left(x_{0}\right)\right|}{m} .\]
 \end{proof}
+\begin{eg}
+\normalfont Vamos a calcular $\displaystyle \sqrt{2} $ con un error menor que $\displaystyle 10^{-3} $. \\
+Consideremos la función $\displaystyle f\left(x\right) = x^{2}-2 $. Esta función es continua y derivable. Sabemos que $\displaystyle \sqrt{2} \in \left[1,2\right]  $ es la única raíz de esta función. Además,
+\begin{itemize}
+\item $\displaystyle f\left(1\right) = - 1 < 0 < 2 = f\left(2\right) $.
+\item $\displaystyle f'\left(x\right) = 2x $, por tanto, $\displaystyle 0 < 2 = m \leq f'\left(x\right) \leq 4 = M $, $\displaystyle \forall x \in \left[1,2\right]  $. El teorema anterior nos dice que 
+	\[x_{n+1} = x_{n}-\frac{x_{n}^{2}-2}{4} \to \sqrt{2} .\]
+	Podemos empezar en cualquier punto de $\displaystyle \left[1,2\right]  $. Tomamos $\displaystyle x_{0}=1 $ y tenemos que
+	\[ \left|x_{n}-\sqrt{2}\right| \leq \frac{ \left|f\left(1\right)\right|}{2} \left(1 - \frac{2}{4}\right)^{n} = \frac{1}{2^{n+1}} < \frac{1}{10^{3}} .\]
+	tenemos que $\displaystyle \frac{1}{2^{9+1}}= \frac{1}{1024} $, por lo que el término $\displaystyle x_{9} $ se aproxima a $\displaystyle \sqrt{2} $ con el valor deseado.
+\end{itemize}
+\end{eg}
 

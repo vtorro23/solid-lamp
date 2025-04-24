@@ -501,9 +501,9 @@ A través de $\displaystyle f' $ y $\displaystyle f'' $ se pueden conocer propie
 \begin{proof}
 	Sea $\displaystyle g\left(x\right) = f\left(x\right)-\lambda x $. Tenemos que $\displaystyle g $ es continua en $\displaystyle [a,b] $ y derivable en $\displaystyle \left(a,b\right) $. Además, tenemos que $\displaystyle g'\left(x\right) = f'\left(x\right) - \lambda  $. Si $\displaystyle g'\left(x\right) \neq 0  $, $\displaystyle \forall x \in \left(a,b\right) $, es decir, $\displaystyle f'\left(x\right) \neq \lambda  $, entonces $\displaystyle g $ es inyectiva, por lo que debe ser monótona.
 \begin{itemize}
-\item Si $\displaystyle g $ es creciente y $\displaystyle g'\left(x\right) \neq 0 $, tenemos que $\displaystyle g'\left(x\right) > 0 $, $\displaystyle \forall x \in \R $. Entonces tenemos que 
+\item Si $\displaystyle g $ es creciente y $\displaystyle g'\left(x\right) \neq 0 $, tenemos que $\displaystyle g'\left(x\right) > 0 $, $\displaystyle \forall x \in \R $. Sin embargo, tenemos que 
 	\[ f'\left(x_{1}\right)-\lambda = g'\left(x_{1}\right) < 0 .\]
-\item Si $\displaystyle g $ es decreciente y $\displaystyle g'\left(x\right) \neq 0 $, tenemos que $\displaystyle g'\left(x\right) < 0 $, $\displaystyle \forall x \in \R $. Entonces tenemos que
+\item Si $\displaystyle g $ es decreciente y $\displaystyle g'\left(x\right) \neq 0 $, tenemos que $\displaystyle g'\left(x\right) < 0 $, $\displaystyle \forall x \in \R $. Sin embargo, tenemos que
 	\[ f'\left(x_{2}\right) - \lambda = g'\left(x_{2}\right) > 0 .\] 
 \end{itemize}
 \end{proof}
@@ -577,7 +577,7 @@ Es decir, la gráfica de $\displaystyle f|_{\left[x,y\right] } $ queda por debaj
 \end{fdefinition}
 Es decir, la gráfica de $\displaystyle f|_{[x,y]} $ queda por encima de la recta que pasa por los puntos $\displaystyle \left(x,f\left(x\right)\right) $ e $\displaystyle \left(y,f\left(y\right)\right) $.
 \begin{fprop}[]
-\normalfont Sea $\displaystyle f: I \subset \R \to \R $ una función definida sobre un intervalo o semirrecta. Son equivalentes:
+\normalfont Sea $\displaystyle f: I \subset \R \to \R $ una función definida sobre un intervalo o semirrecta. 
 \begin{description}
 \item[(a)] $\displaystyle f $ es convexa sobre $\displaystyle I $ si y solo si $\displaystyle \forall a,b \in I $, $\displaystyle \forall x \in \left(a,b\right) $ se tiene que
 	\[ \frac{f\left(x\right)-f\left(a\right)}{x-a} \leq \frac{f\left(b\right)-f\left(a\right)}{b-a} \iff \frac{f\left(b\right)-f\left(x\right)}{b-x} \geq \frac{f\left(b\right)-f\left(a\right)}{b-a}.\]

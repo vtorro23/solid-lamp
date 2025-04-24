@@ -1,0 +1,46 @@
+\chapter{Teoría de grafos}
+\begin{fdefinition}[Grafo]
+\normalfont Un \textbf{grafo} es un part $\displaystyle G = \left(V,A\right) $, donde $\displaystyle V $ es un conjunto no vacío a cuyos elementos llamaremos \textbf{vérticas} y $\displaystyle A $ es una familia de pares no ordenados de vértices distintos, cuyos elementos se denominan \textbf{aristas}.
+\end{fdefinition}
+\begin{fdefinition}[Grafo simple]
+\normalfont Grafo en el que no hay pares repetidos en A ni pares de la vorma $\displaystyle \left(v,v\right) $ con $\displaystyle v \in V $.
+\end{fdefinition}
+\begin{fdefinition}[Multigrafo]
+\normalfont Se admite que haya pares de vértices unidos por más de una arista. A las aristas que unen el mismo par de vértices se llaman \textbf{aristas múltiples}.
+\end{fdefinition}
+\begin{fdefinition}[Pseudografo]
+\normalfont Grafo que permite pares de la forma $\displaystyle \left(v,v\right) $ con $\displaystyle v \in V $.
+\end{fdefinition}
+\begin{fdefinition}[Grafo orientado]
+\normalfont Los pares de vértices de $\displaystyle A $ que definen las aristas están ordenados. Las aristas de un grafo orientado se llaman \textbf{aristas dirigidas}.
+\end{fdefinition}
+\section{Familias de grafos}
+\begin{fdefinition}[Grafo completo]
+\normalfont Grafo que tiene todas las aristas posibles, es decir, cada uno de sus vértices está unido con todos los demás vértices. Se denotan por $\displaystyle K_{n} $ donde $\displaystyle n $ es el número de vértices del grafo.
+\end{fdefinition}
+\begin{observation}
+\normalfont El número de aristas viene dado por la siguiente fórmula:
+\[C\left(n,2\right) = \frac{n\left(n-1\right)}{2} .\]
+\end{observation}
+\begin{fdefinition}[Grafo bipartito completo]
+\normalfont El conjunto de vértices está dividido en dos subconjuntos disjuntos con la propiedad de que cada vértice de uno de los subconjutnos se une con todos los del otro y viceversa, pero con ninguno de su mismo subconjunto. Se denotan por $\displaystyle K_{n,m} $ donde $\displaystyle n $ es el número de vértices de $\displaystyle V_{1} $ y $\displaystyle m $ el de $\displaystyle V_{2} $. 
+\end{fdefinition}
+\begin{observation}
+\normalfont Es trivial que $\displaystyle K_{n,m} = K_{m,n} $.
+\end{observation}
+\begin{fdefinition}[Ciclo]
+	\normalfont Consta de $\displaystyle n $ vértices con $\displaystyle n \geq 3 $: $\displaystyle v_{1}, v_{2}, \ldots, v_{n} $ y aristas $\displaystyle \left\{ v_{1}, v_{2}\right\} , \left\{ v_{2}, v_{3}\right\} , \ldots, \left\{ v_{n}, v_{1}\right\}  $. 
+\end{fdefinition}
+\begin{ftheorem}[Lema del apretón de manos]
+\normalfont Para todo grafo $\displaystyle G = \left(V,A\right) $ se verifica:
+\[\sum_{v \in V}\grad\left(v\right) = 2a ,\]
+siendo $\displaystyle a $ el número de aristas.
+\end{ftheorem}
+\begin{fcolorary}[]
+\normalfont La suma de los grados de un grafo es par. En consecuencia, un grafo no puede tener un número impar de vértices de grado impar.
+\end{fcolorary}
+\begin{fdefinition}[Isomorfismo]
+\normalfont Dados $\displaystyle G_{1} = \left(V_{1}, A_{1}\right) $ y $\displaystyle G_{2} = \left(V_{2}, A_{2}\right) $, consiste en dos aplicaciones biyectivas:
+\[\Phi_{V}: V_{1} \to V_{2} \quad \text{y} \quad \Phi_{A} : A_{1} \to A_{2} .\]
+de forma que $\displaystyle a \in A_{1} $ conecta a $\displaystyle v $ con 
+\end{fdefinition}

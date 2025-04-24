@@ -173,7 +173,7 @@ a^{n} & a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix}\begin{pmatrix} 1 \\ x'^{1} \
 \begin{proof}
 \begin{description}
 	\item[(i)] Si $\displaystyle \mathcal{L}_{1} \cap \mathcal{L}_{2} \neq \emptyset $, tenemos que $\displaystyle \exists C \in \mathcal{L}_{1} \cap \mathcal{L}_{2} $. Así, $\displaystyle \overrightarrow{AC} \in L_{1} $ y $\displaystyle \overrightarrow{BC} \in L_{2} $. Así, tenemos que 
-		\[\overrightarrow{AB} = \underbrace{\overrightarrow{AB}}_{\in L_{1}} + \underbrace{\overrightarrow{BC}}_{\in L_{2}} .\]
+		\[\overrightarrow{AB} = \underbrace{\overrightarrow{AC}}_{\in L_{1}} + \underbrace{\overrightarrow{CB}}_{\in L_{2}} .\]
 		Así, $\displaystyle \overrightarrow{AB} \in L_{1} + L_{2} $.
 	\item[(ii)] Si $\displaystyle \overrightarrow{AB} \in L_{1} + L_{2} $, $\displaystyle \exists \vec{v}_{1} \in L_{1}, \vec{v}_{2} \in L_{2} $ tal que $\displaystyle \overrightarrow{AB} = \vec{v}_{1} +\vec{v}_{2} $. Tenemos que $\displaystyle A + \vec{v}_{1} \in \mathcal{L}_{1} $. Así,
 		\[ \overrightarrow{\left(A + \vec{v}_{1}\right)B} = \overrightarrow{AB} - \vec{v}_{1} = \vec{v}_{1} +\vec{v}_{2} -\vec{v}_{1} = \vec{v}_{2} \in L_{2} .\]
@@ -258,7 +258,7 @@ Sean $\displaystyle \left\{ A_{0}, A_{1}, \ldots, A_{p}\right\} \subset \mathcal
 		\item[(a)] $\displaystyle \left\{\overrightarrow{A_{0}A_{1}}, \ldots, \overrightarrow{A_{0}A_{p}}\right\} $ son linealmente indepependientes.
 		\item[(b)] $\displaystyle \forall i = 0, \ldots, p $, $\displaystyle \left\{ \overrightarrow{A_{i}A_{0}}, \ldots, \overrightarrow{A_{i}A_{i - 1}}, \overrightarrow{A_{i}A_{i+1}}, \ldots, \overrightarrow{A_{i}A_{p}}\right\}  $ son linealmente independientes.
 		\item[(c)] $\displaystyle \forall O \in \mathcal{A} $, si 
-			\[ \lambda^{0}\overrightarrow{OA_{0}} + \lambda^{1}\overrightarrow{OA_{1}} + \cdots + \overrightarrow{OA_{p}} = \vec{0}.\]
+			\[ \lambda^{0}\overrightarrow{OA_{0}} + \lambda^{1}\overrightarrow{OA_{1}} + \cdots +\lambda_{p} \overrightarrow{OA_{p}} = \vec{0}.\]
 			\[\lambda^{0} + \lambda^{1} + \cdots + \lambda^{p} = 0 .\]
 			Entonces, $\displaystyle \lambda^{0}= \lambda^{1} = \cdots = \lambda^{ p}=0 $.
 	\end{description}
@@ -270,12 +270,12 @@ Sean $\displaystyle \left\{ A_{0}, A_{1}, \ldots, A_{p}\right\} \subset \mathcal
 	Así, tenemos que
 	\[ - \lambda^{0}\overrightarrow{A_{0}A_{i}} + \lambda^{1}\left(\overrightarrow{A_{0}A_{1}}-\overrightarrow{A_{0}A_{i}}\right) + \cdots + \lambda^{p}\left(\overrightarrow{A_{0}A_{p}} - \overrightarrow{A_{0}A_{i}}\right) = \vec{0} .\]
 Así, tenemos que
-\[ = - \sum^{p}_{i \neq j = 0}\lambda^{j}\overrightarrow{A_{0}A_{j}} + \lambda^{1}\overrightarrow{A_{0}A_{1}} + \cdots + \lambda^{i-1}\overrightarrow{A_{0}A_{i-1}} + \lambda^{i+1}\overrightarrow{A_{0}A_{i+1}}+ \cdots + \lambda^{p}\overrightarrow{A_{0}A_{p}} = \vec{0}.\]
-Así, tenemos que $\displaystyle \lambda^{j} = 0 $ si $\displaystyle i \neq j $, por lo que $\displaystyle \sum^{p}_{i \neq j=0}\lambda^{j}= 0 $, por lo que $\displaystyle \lambda^{0} = 0 $.
+\[ = - \sum^{p}_{i \neq j = 0}\lambda^{j}\overrightarrow{A_{0}A_{i}} + \lambda^{1}\overrightarrow{A_{0}A_{1}} + \cdots + \lambda^{i-1}\overrightarrow{A_{0}A_{i-1}} + \lambda^{i+1}\overrightarrow{A_{0}A_{i+1}}+ \cdots + \lambda^{p}\overrightarrow{A_{0}A_{p}} = \vec{0}.\]
+Así, tenemos que $\displaystyle \lambda^{j} = 0 $ si $\displaystyle i \neq j $, por lo que $\displaystyle \sum^{p}_{i \neq j=0}\lambda^{j}= 0 $, por lo que $\displaystyle \lambda^{i} = 0 $. 
+\item[(b) $\displaystyle \Rightarrow $ (a)] Trivial.
 \item[(a) $\displaystyle \Rightarrow $ (c)] Sean $\displaystyle \lambda^{0}, \lambda^{1}, \ldots, \lambda^{p} \in \K $ tales que  
-\[ \lambda^{0}\overrightarrow{OA_{0}} + \lambda^{1}\overrightarrow{OA_{1}} + \cdots + \overrightarrow{OA_{p}} = \vec{0}.\]
-			\[\lambda^{0} + \lambda^{1} + \cdots + \lambda^{p} = 0 .\]
-Por tanto, tenemos que 
+\[ \lambda^{0}\overrightarrow{OA_{0}} + \lambda^{1}\overrightarrow{OA_{1}} + \cdots + \lambda^{p}\overrightarrow{OA_{p}} = \vec{0},\quad \lambda^{0} + \lambda^{1} + \cdots + \lambda^{p} = 0.\]
+	Por tanto, tenemos que 
 \[\lambda^{0} = - \lambda^{1}-\lambda^{2}-\cdots - \lambda^{p} .\]
 Así, tenemos que 
 \[\lambda^{1}\left(\overrightarrow{OA_{1}}-\overrightarrow{OA_{0}}\right) + \lambda^{2}\left(\overrightarrow{OA_{2}}-\overrightarrow{OA_{0}}\right) + \lambda^{p}\left(\overrightarrow{OA_{p}}-\overrightarrow{OA_{0}}\right) = \lambda^{1}\overrightarrow{A_{0}A_{1}} + \cdots + \lambda^{p}\overrightarrow{A_{0}A_{p}} = \vec{0} .\]
@@ -285,18 +285,364 @@ Así, tenemos que $\displaystyle \lambda^{1} = \cdots = \lambda^{p} = 0 $, por l
 	Sea $\displaystyle O \in \mathcal{A} $, tenemos que 
 	\[ \lambda^{1}\left(\overrightarrow{OA_{1}}-\overrightarrow{OA_{0}}\right) + \lambda^{2}\left(\overrightarrow{OA_{2}}-\overrightarrow{OA_{0}}\right) + \lambda^{p}\left(\overrightarrow{OA_{p}}-\overrightarrow{OA_{0}}\right) = \vec{0}.\]
 Tenemos entonces que
-\[ \overrightarrow{OA_{0}} \left(-\lambda^{1}-\cdots -\lambda^{p}\right) \overrightarrow{OA_{1}} + \lambda^{1}\overrightarrow{OA_{1}} + \cdots + \lambda^{p}\overrightarrow{OA_{p}} = \vec{0}.\]
+\[ \overrightarrow{OA_{0}} \left(-\lambda^{1}-\cdots -\lambda^{p}\right) + \lambda^{1}\overrightarrow{OA_{1}} + \cdots + \lambda^{p}\overrightarrow{OA_{p}} = \vec{0}.\]
 Así, tenemos que 
 \[ \left(-\lambda^{1} - \cdots - \lambda^{p}\right) + \lambda^{1}+\lambda^{2} +\cdots + \lambda^{p}=0 \Rightarrow \lambda^{i} = 0, \; i = 0, \ldots, p .\]
 \end{description}
 \end{proof}
 \begin{fdefinition}[]
-	\normalfont Diremos que que $\displaystyle \left\{ A^{0}, A^{1}, \ldots, A^{p}\right\} \subset \mathcal{A} $ son afinmente independientes si $\displaystyle \left\{ \overrightarrow{A_{0}A_{1}}, \ldots, \overrightarrow{A_{0}A_{p}}\right\}  $ son linealmente independientes.
+	\normalfont Diremos que que $\displaystyle \left\{ A_{0}, A_{1}, \ldots, A_{p}\right\} \subset \mathcal{A} $ son \textbf{afinmente independientes} si $\displaystyle \left\{ \overrightarrow{A_{0}A_{1}}, \ldots, \overrightarrow{A_{0}A_{p}}\right\}  $ son linealmente independientes.
 \end{fdefinition}
 \begin{fprop}[]
 \normalfont Si $\displaystyle \left\{ A_{0}, \ldots, A_{p}\right\} \subset \mathcal{A} $ son afinmente independientes, existen $\displaystyle A_{p + 1}, \ldots, A_{n} \in\mathcal{A} $ tales que $\displaystyle \left\{ A_{0}, A_{1}, \ldots, A_{p}, A_{p + 1}, \ldots, A_{n}\right\}  $ son afimente independientes.
 \end{fprop}
 \begin{proof}
-	Sean $\displaystyle \left\{ \overrightarrow{A_{0}A_{1}}, \ldots, \overrightarrow{A_{0}A_{p}}\right\}  $ linealmente independientes. Sea $\displaystyle \left\{ \overrightarrow{A_{0}A_{1}}, \ldots, \overrightarrow{A_{0}A_{p}, \vec{u}_{p + 1}, \ldots, \vec{u}_{n}\right\} $ base de $\displaystyle V $. En\tonces \tomamos A_{p + 1}= A_{0} + \vec{u}_{p +1} y, en general $\displaystyle A_{n} = A_{0} + \vec{u}_{n} $.
+	Sean $\displaystyle \left\{ \overrightarrow{A_{0}A_{1}}, \ldots, \overrightarrow{A_{0}A_{p}}\right\}  $ linealmente independientes. Sea $\displaystyle \left\{ \overrightarrow{A_{0}A_{1}}, \ldots, \overrightarrow{A_{0}A_{p}}, \vec{u}_{p + 1}, \ldots, \vec{u}_{n}\right\} $ base de $\displaystyle V $. Entonces tomamos $\displaystyle A_{p + 1}= A_{0} + \vec{u}_{p +1} $  y, en general, $\displaystyle A_{i} = A_{0} + \vec{u}_{i} $.
 \end{proof}
+\section{Ecuaciones cartesianas y paramétricas}
+\subsection*{Cálculo de las ecuaciones cartesianas y paramétricas de una variedad lineal afín}
+Sea $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $ un sistema de referencia cartesiano de $\displaystyle \mathcal{A} $ y sea $\displaystyle \mathcal{L} = A + L\left( \left\{ \vec{v}_{1}, \ldots, \vec{v}_{p}\right\} \right) $ con $\displaystyle \dim\left(\mathcal{L}\right) = p $. Tenemos que existen $\displaystyle a^{1}, \ldots, a^{p} \in \K $ tales que
+\[ \overrightarrow{OA} = a^{1}\vec{u}_{1} + \cdots + a^{n}\vec{u}_{n}.\]
+Como $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{p}\right\} \subset V $, se tiene que
+\[
+\begin{cases}
+\vec{v}_{1} = a^{1}_{1}\vec{u}_{1} + \cdots + a^{n}_{1}\vec{u}_{n} \\
+\vdots \\
+\vec{v}_{p} = a^{1}_{p}\vec{u}_{1} + \cdots + a^{n}_{p}\vec{u}_{n}
+\end{cases}
+.\]
+Si $\displaystyle X \in \mathcal{A} $, tenemos que existen $\displaystyle x^{1}, \ldots, x^{n} \in \K $ tales que $\displaystyle \overrightarrow{OX} = x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n} $. Ahora, tenemos que $\displaystyle X \in A + L\left( \left\{ \vec{v}_{1} + \cdots + \vec{v}_{p}\right\} \right) \iff \overrightarrow{AX} \in L\left( \left\{ \vec{v}_{1}, \ldots, \vec{v}_{p}\right\} \right) \iff \exists \lambda^{1}, \ldots, \lambda^{p} \in \K	$ tales que
+\[
+\begin{split}
+	\overrightarrow{OX} - \overrightarrow{OA} = \overrightarrow{AX} = \lambda^{1}\vec{v}_{1} + \cdots + \lambda^{p}\vec{v}_{p} \iff & \left(x^{1}-a^{1}\right)\vec{u}_{1} + \cdots + \left(x^{n} - a^{n}\right)\vec{u}_{n} \\
+	= & \lambda^{1}\left(a^{1}_{1}\vec{u}_{1} + \cdots + a^{n}_{1}\vec{u}_{n}\right) + \cdots + \lambda^{p}\left(a^{1}_{p}\vec{u}_{1} + \cdots + a^{n}_{p}\vec{u}_{n}\right) \\
+	= & \left(\lambda^{1}a^{1}_{1}+\cdots +\lambda^{2}a^{1}_{p}\right)\vec{u}_{1} + \cdots + \left(\lambda^{1}a^{n}_{1} + \cdots + \lambda^{p}a^{n}_{p}\right)\vec{u}_{n}.
+\end{split}
+\]
+Así, nos quedan las \textbf{ecuaciones paramétricas} de la variedad lineal afín $\displaystyle A + L $:
+\[
+\begin{cases}
+x^{1}-a^{1} = \lambda^{1}a^{1}_{1} + \cdots + \lambda^{p}a^{1}_{p} \\
+\vdots \\
+x^{n}-a^{n} = \lambda^{1}a^{n}_{1} + \cdots + \lambda^{p}a^{n}_{p}
+\end{cases}
+.\]
+Por el teorema de Rouché-Fröbenius, esto es cierto si y solamente si
+\[ \ran\begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{p} & x^{1}-a^{1} \\
+\vdots & \vdots & \vdots & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{p} & x^{n}-a^{n}\end{pmatrix} = \ran\begin{pmatrix} a^{1}_{1} & \cdots & a^{1}_{p} \\
+\vdots & & \vdots \\
+a^{n}_{1} & \cdots & a^{n}_{p}\end{pmatrix} = p.\]
+	Suponemos que $\displaystyle \begin{vmatrix} a^{1}_{1} & \cdots & a^{1}_{p} \\
+	\vdots & & \vdots \\
+a^{p}_{1} & \cdots & a^{p}_{p}\end{vmatrix} = \alpha \neq 0 $. Lo visto anteriormente es cierto si y solo si 
+		\[ \begin{vmatrix} a^{1}_{1} & \cdots & a^{1}_{p} & x^{1}-a^{1} \\
+		\vdots & \vdots & \vdots & \vdots \\
+	a^{p}_{1} & \cdots & a^{p}_{p} & x^{p}-a^{p} \\
+a^{p + i}_{1} & \cdots & a^{ p + i}_{ p + i} & x^{ p + i}- a^{p + i}\end{vmatrix}  = 0 , \; i = 1, \ldots, n - p.\]
+Así, tenemos que 
+\[
+\begin{cases}
+ \left(x^{1}-a^{1}\right)b^{1}_{1} + \cdots + \left(x^{n}-a^{n}\right)b^{n} +\left(x^{p + 1}-a^{p + 1}\right)\alpha = 0 \\
+ \vdots \\
+ \left(x^{1}-a^{1}\right)b^{n-p}_{1} + \cdots + \left(x^{p}-a^{p}\right)b^{n-p} + \left(x^{n}-a^{n}\right)\alpha = 0.
+\end{cases}
+.\]
+Tenemos, pues, las \textbf{ecuaciones cartesianas} de la variedad lineal afín $\displaystyle A + L $: 
+\[
+\begin{cases}
+c^{1}_{1}x^{1} + \cdots + c^{1}_{p}x^{p} + \alpha x^{p + 1} = d^{1} \\
+\vdots \\
+c^{n - p}_{1}x^{1} + \cdots + c^{n-p}_{p}x^{p} + \alpha x^{p + 1} = d^{n - p} 
+\end{cases}
+.\]
+Así, tenemos que $\displaystyle \det\left(\alpha\left(I_{\left(n-p\right)\times\left(n-p\right)}\right)\right) = \alpha^{n-p} \neq 0 $. 
+\subsection*{Determinación de una variedad lineal afín a partir de sus ecuaciones}
+Ahora vamos a ver que los sistemas lineales definen variedades lineales afines. Consideremos el mismo sistema de referencia cartesiano, $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $ y el sistema de ecuaciones
+\[\left(S\right)
+\begin{cases}
+a^{1}_{1}x^{1} + \cdots + a^{1}_{n}x^{n} = b^{1} \\
+\vdots \\
+a^{n}_{1} x^{1} + \cdots + a^{n}_{n}x^{n} = b^{n}
+\end{cases}
+.\]
+Ahora, consideremos $\displaystyle \mathcal{L} = \left\{ C \in \mathcal{A} \; : \; \overrightarrow{OC} = c^{1}\vec{u}_{1} + \cdots + c^{n}\vec{u}_{n}, \; \left(c^{1}, \ldots, c^{n}\right) \; \text{solución de }\left(S\right)\right\}  $. Consideremos ahora el sistema 
+\[\left(H\right) 
+\begin{cases}
+a^{1}_{1}x^{1} + \cdots + a^{1}_{p}x^{p}= 0 \\
+\vdots \\
+a^{n-p}_{1}x^{1} + \cdots + a^{n-p}_{p}x^{p}= 0
+\end{cases}
+.\]
+Tomamos $\displaystyle L = \left\{ \vec{x} = x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n} \; : \; \left(x^{1}, \ldots, x^{n}\right) \; \text{solución de }\left(H\right)\right\}  \in \mathcal{L}\left(V\right) $. Si $\displaystyle \mathcal{L} = \emptyset $, es una variedad lineal afín. Ahora, si $\displaystyle A \in \mathcal{L} $, tenemos que $\displaystyle \forall B \in \mathcal{L} $, $\displaystyle B = A + \overrightarrow{AB} $ y $\displaystyle \overrightarrow{AB} \in L $. Tenemos que $\displaystyle \dim\left(L\right) = n - \left(n-p\right) = p $. Supongamos que existe $\displaystyle A \in \mathcal{L} $ tal que $\displaystyle \mathcal{L}= A + L $.
+\section{Aplicaciones afines}
+Sean los $\displaystyle \K- $espacios vectoriales $\displaystyle V_{1} $ y $\displaystyle V_{2} $, y $\displaystyle \mathcal{A}_{1} $ y $\displaystyle \mathcal{A}_{2} $ sus espacios afines asociados, respectivamente. 
+\begin{fdefinition}[Aplicación afín]
+	\normalfont Una aplicación $\displaystyle f : \mathcal{A} \to \mathcal{A}' $ es \textbf{afín} si existe $\displaystyle \vec{f} : V \to V'$ lineal tal que $\displaystyle f\left(A + \vec{u}\right)= f\left(A\right) + \vec{f}\left(\vec{u}\right) $, $\displaystyle \forall A \in \mathcal{A},\forall\vec{u}\in V $. A $\displaystyle \vec{f} $ se la llama \textbf{aplicación lineal asociada} a $\displaystyle f $.
+\end{fdefinition}
+\begin{fprop}[]
+	\normalfont La aplicación $\displaystyle f : \mathcal{A} \to \mathcal{A}' $ es afín si y solo si existe $\displaystyle \vec{f} : V \to V' $ lineal tal que $\displaystyle \forall A,B \in \mathcal{A} $ se tiene que $\displaystyle \overrightarrow{f\left(A\right)f\left(B\right)} = \vec{f}\left(\overrightarrow{AB}\right) $.
+\end{fprop}
+\begin{proof}
+\begin{description}
+	\item[(i)] Supongamos que $\displaystyle f $ es afín. Sean $\displaystyle A, B \in \mathcal{A} $. Entonces, tenemos que $\displaystyle B = A + \overrightarrow{AB} $. Por tanto, tenemos que $\displaystyle f\left(B\right) = f\left(A\right) + \vec{f}\left(\overrightarrow{AB}\right) $, por lo que $\displaystyle \overrightarrow{f\left(A\right)f\left(B\right)} = \vec{f}\left(\overrightarrow{AB}\right)$. 
+	\item[(ii)] Sean $\displaystyle A \in \mathcal{A} $, $\displaystyle \vec{u} \in V $, y $\displaystyle B = A + \vec{u} $. Tenemos que $\displaystyle \overrightarrow{f\left(A\right)f\left(B\right)} = \vec{f}\left(\overrightarrow{AB}\right)$, por tanto, $\displaystyle f\left(B\right) = f\left(A + \overrightarrow{AB}\right) = f\left(A\right) + \vec{f}\left(\overrightarrow{AB}\right) = f\left(A\right) + \vec{f}\left(\vec{u}\right)$. 
+\end{description}
+\end{proof}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle l : V\to V'$ lineal y $\displaystyle A \in \mathcal{A} $ y $\displaystyle A' \in \mathcal{A}' $. Entonces, $\displaystyle \exists! f : \mathcal{A}\to \mathcal{A}' $ afín tal que $\displaystyle f\left(A\right) = A' $ y $\displaystyle \vec{f} = l $.
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+	\item[Unicidad.] Supognamos que existe $\displaystyle f $ afín tal que $\displaystyle f\left(A\right) = A' $ y $\displaystyle \vec{f} = l $. Tenemos que $\displaystyle \forall B \in \mathcal{A} $,
+		\[f\left(B\right) = f\left(A + \overrightarrow{AB}\right) = f\left(A\right) + l\left(\overrightarrow{AB}\right) = A' + l\left(\overrightarrow{AB}\right) .\]
+	\item[Existencia.] $\displaystyle \forall B \in \mathcal{A} $ defino $\displaystyle f\left(B\right) = A' + l\left(\overrightarrow{AB}\right) $. Así, si $\displaystyle C \in \mathcal{A} $ se tiene que $\displaystyle f\left(C\right) = A' + l\left(\overrightarrow{AC}\right) $. Por tanto,
+	\[ \overrightarrow{f\left(B\right)f\left(C\right)} = \overrightarrow{\left(A'+l\left(\overrightarrow{AB}\right) \right)\left(A'+l\left(\overrightarrow{AC}\right)\right)} = \overrightarrow{A'A'} + l\left(\overrightarrow{AC}\right)-l\left(\overrightarrow{AB}\right) = l\left(\overrightarrow{AC}-\overrightarrow{AB}\right) = l\left(\overrightarrow{BC}\right).\]
+	Además, $\displaystyle f\left(A\right)= A' + l\left(\overrightarrow{A'A'}\right) = A' $.
+\end{description}
+\end{proof}
+\begin{fcolorary}[]
+\normalfont Si $\displaystyle f,g : \mathcal{A} \to \mathcal{A}' $ son tales que $\displaystyle f\left(A\right)=g\left(A\right) $ para algún $\displaystyle A \in \mathcal{A} $ y $\displaystyle \vec{f} = \vec{g} $, entonces $\displaystyle f = g $.
+\end{fcolorary}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : \mathcal{A} \to \mathcal{A'} $ una aplicación afín y $\displaystyle \vec{f} : V \to V' $ su aplicación lineal asociada. Entonces,
+\begin{description}
+\item[(a)] $\displaystyle f $ es inyectiva $\displaystyle \iff  $ $\displaystyle \vec{f} $ es inyectiva.
+\item[(b)] $\displaystyle f $ es sobreyectiva $\displaystyle \iff  $ $\displaystyle \vec{f} $ es sobreyectiva.
+\item[(c)] $\displaystyle f $ es biyectiva $\displaystyle \iff  $ $\displaystyle \vec{f} $ es biyectiva.
+\end{description}
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+	\item[(a)] Supongamos que $\displaystyle f $ es inyectiva, $\displaystyle \vec{u} \in \Ker\left(\vec{f}\right)  $ y sea $\displaystyle B = A + \vec{u} $. Tenemos que 
+	\[f\left(B\right) = f\left(A + \vec{u}\right) = f\left(A\right) + \vec{f}\left(\vec{u}\right) = f\left(A\right) .\]
+	Si $\displaystyle \vec{u} \neq 0 $, tenemos que $\displaystyle B \neq A $, por lo que $\displaystyle f $ no es inyectiva, lo cual es una contradicción. Recíprocamente, supongamos que $\displaystyle \vec{f} $ es inyectiva y $\displaystyle f\left(A\right) = f\left(B\right) $ con $\displaystyle A,B \in \mathcal{A} $. Entonces tenemos que $\displaystyle \overrightarrow{f\left(A\right)f\left(B\right)} = \vec{f}\left(\overrightarrow{AB}\right) = \vec{0} $, por lo que $\displaystyle \overrightarrow{AB} = \vec{0} $ y $\displaystyle A = B $.
+\item[(b)] Sea $\displaystyle A \in \mathcal{A} $ y $\displaystyle f\left(A\right) \in \mathcal{A}' $. Supongamos que $\displaystyle f $ es sobreyectiva. Sea $\displaystyle \vec{u'} \in V' $. Entonces, $\displaystyle f\left(A\right) + \vec{u}' \in \mathcal{A}' $, por lo que existe $\displaystyle B \in \mathcal{A} $ tal que $\displaystyle f\left(B\right) = f\left(A\right) + \vec{u}' $, por lo que $\displaystyle \vec{u}' = \overrightarrow{f\left(A\right)f\left(B\right)} = \vec{f}\left(\overrightarrow{AB}\right) \in V'$. \\
+	Recíprocamente, supongamos que $\displaystyle \vec{f} $ es sobreyectiva y sea $\displaystyle B' \in \mathcal{A}' $. Tenemos que $\displaystyle \overrightarrow{f\left(A\right)B'} \in V'$, por tanto $\displaystyle \exists \vec{u} \in V $ tal que $\displaystyle \vec{f}\left(\vec{u}\right) = \overrightarrow{f\left(A\right)B} $ y, por tanto, $\displaystyle B' = f\left(A\right) + \vec{f}\left(\vec{u}\right) = A' + \vec{f}\left(\vec{u}\right) $.
+\item[(c)] Trivial a partir de \textbf{(a)} y \textbf{(b)}.
+\end{description}
+\end{proof}
+\begin{fprop}[]
+	\normalfont Sean $\displaystyle f : \mathcal{A} \to \mathcal{A}' $ y $\displaystyle g : \mathcal{A'} \to \mathcal{A} $ aplicaciones afines, entonces $\displaystyle g\circ f $ es afín y $\displaystyle \overrightarrow{g \circ f} = \vec{g}\circ \vec{f} $.
+\end{fprop}
+\begin{proof}
+Tenemos que $\displaystyle \forall A,B \in \mathcal{A} $, 
+\[\overrightarrow{\left(g\circ f\left(A\right)\right)\left(g\circ f\left(B\right)\right)} = \overrightarrow{\left(g\left(f\left(A\right)\right)\right)\left(g\left(f\left(B\right)\right)\right)} = \vec{g}\left(\overrightarrow{f\left(A\right)f\left(B\right)}\right) = \vec{g}\left(\vec{f}\left(\overrightarrow{AB}\right)\right) = \vec{g}\circ\vec{f}\left(\overrightarrow{AB}\right) .\]
+\end{proof}
+\begin{fdefinition}[Isomorfismo de espacios afines]
+\normalfont Sea $\displaystyle f : \mathcal{A} \to \mathcal{A}' $ una aplicación afín. Diremos que $\displaystyle f $ es un \textbf{isomorfismo} de espacios afines si existe $\displaystyle g : \mathcal{A}' \to \mathcal{A} $ afín tal que $\displaystyle g\circ f = id _{\mathcal{A}} $ y $\displaystyle f\circ g = id _{\mathcal{A}'} $.
+\end{fdefinition}
+\begin{fprop}[]
+\normalfont Sea $\displaystyle f : \mathcal{A} \to \mathcal{A}' $ una aplicación afín. Son equivalentes:
+\begin{description}
+\item[(a)] $\displaystyle f $ es isomorfismo de espacios afines.
+\item[(b)] $\displaystyle f $ es biyectiva.
+\item[(c)] $\displaystyle \vec{f} $ es isomorfismo de espacios vectoriales.
+\end{description}
+\end{fprop}
+\begin{proof}
+\begin{description}
+\item[(a) $\displaystyle \Rightarrow $ (b) $\displaystyle \Rightarrow $ (c)] Trivial (la última implicación es trivial por el último teorema).
+\item[(c) $\displaystyle \Rightarrow $ (a)] Por el teorema anterior, tenemos que si $\displaystyle \vec{f} $ es biyectiva, entonces $\displaystyle f $ también lo es. Por tanto, sabemos que existe $\displaystyle g = f^{-1} $, ahora tenemos que ver que $\displaystyle g $ es afín. Sea $\displaystyle A \in \mathcal{A} $ y $\displaystyle f\left(A\right) = A' \in \mathcal{A}' $. Como hemos visto, $\displaystyle \exists \vec{f}^{-1} : V' \to V $ lineal. Sea $\displaystyle g : \mathcal{A}' \to \mathcal{A} $ la única aplicación afín tal que $\displaystyle g\left(A'\right) = A $ y $\displaystyle \vec{g} = \vec{f}^{-1} $.
+Entonces, 
+\[g\circ f\left(A\right) = g\left(f\left(A\right)\right) = g\left(A'\right) = A = id _{\mathcal{A}}\left(A\right), \quad \overrightarrow{g \circ f} = \vec{g}\circ\vec{f} = id _{V} .\]
+\[ f\circ g\left(A'\right)= f\left(A\right) = A' = id _{\mathcal{A}'}\left(A'\right), \quad \overrightarrow{f\circ g} = \vec{f}\circ \vec{g} = id _{V'}.\]
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont Sea $\displaystyle f : \mathcal{A} \to \mathcal{A}' $ afín con $\displaystyle \dim\left(\mathcal{A}\right) = \dim\left(\mathcal{A}'\right) $. Entonces, para ver que $\displaystyle f $ es biyectiva basta con ver que $\displaystyle f $ es inyectiva, es decir, basta con comprobar que $\displaystyle \vec{f} $ es inyectiva.
+\end{observation}
+\begin{fprop}[]
+\normalfont Sea $\displaystyle f : \mathcal{A} \to \mathcal{A}' $ una aplicación afín  y $\displaystyle \vec{f} : V \to V' $ su aplicación lineal asociada. 
+\begin{description}
+\item[(a)] Si $\displaystyle \mathcal{L} = A + L $ es una variedad lineal afín de $\displaystyle \mathcal{A} $, entonces $\displaystyle f\left(\mathcal{L}\right) $ es una variedad lineal afín.
+\item[(b)] Si $\displaystyle \mathcal{L}' = A' + L' $ es una variedad lineal afín de $\displaystyle \mathcal{A}' $, entonces $\displaystyle f^{-1}\left(\mathcal{L}'\right) $ es una variedad lineal afín que, si no es vacía \footnote{La inversa no tiene por qué existir, porque $\displaystyle f $ no tiene por qué ser biyectiva.} , tiene por dirección $\displaystyle \vec{f}^{-1}\left(L'\right) $.
+\end{description}
+\end{fprop}
+\begin{proof}
+\begin{description}
+	\item[(a)] Si $\displaystyle \mathcal{L} = A + L = \left\{ A +\vec{u} \; : \; \vec{u} \in L\right\}  $. Tenemos que 
+		\[f\left(\mathcal{L}\right) = \left\{ f\left(A+\vec{u}\right) = f\left(A\right) + \vec{f}\left(\vec{u}\right) \; : \; \vec{u} \in L\right\} = f\left(A\right) + \left\{ \vec{f}\left(\vec{u}\right) \; : \; \vec{u} \in L\right\} = f\left(A\right) + \vec{f}\left(L\right) \in \mathcal{L}\left(\mathcal{L}'\right) .\]
+	\item[(b)] Supongamos que $\displaystyle f^{-1}\left(\mathcal{L}'\right) \neq \emptyset $ y sea $\displaystyle A \in f^{-1}\left(\mathcal{L}'\right) $. Esto es cierto si y solo si $\displaystyle f\left(A\right) \in \mathcal{L}' $. Así, tenemos que 
+		\[B \in f^{-1}\left(\mathcal{L}'\right) \iff f\left(B\right) \in f^{-1}\left(\mathcal{L}'\right) \iff f\left(B\right) \in \mathcal{L}' = A + L' \iff \overrightarrow{f\left(A\right)f\left(B\right)}=\vec{f}\left(\overrightarrow{AB}\right) \in L' .\]
+		Así, tenemos que $\displaystyle B \in A + \vec{f}^{-1}\left(L'\right) $. Así, $\displaystyle f^{-1}\left(\mathcal{L}'\right) = A + \vec{f}^{-1}\left(L'\right) $ y $\displaystyle \vec{f}^{-1}\left(L'\right) \in \mathcal{L}\left(V\right) $.
+\end{description}
+\end{proof}
+\subsection{Traslaciones}
+Si $\displaystyle \vec{u} \in V $, se define la aplicación
+\[
+\begin{split}
+	\tau_{\vec{u}} : \mathcal{A} \to & \mathcal{A} \\
+A \to & \tau_{\vec{u}}\left(A\right) = A +\vec{u}.
+\end{split}
+\]
+Así, $\displaystyle \forall A,B \in \mathcal{A} $,
+\[\overrightarrow{\tau_{\vec{u}}\left(A\right)\tau_{\vec{u}}\left(B\right)} = \overrightarrow{\left(A +\vec{u}\right)\left(B + \vec{u}\right)} = \overrightarrow{AB} + \vec{u}-\vec{u} = id _{V}\left(\overrightarrow{AB}\right).\]
+\begin{observation}
+\normalfont Así, las traslaciones son aplicaciones afines que tienen como aplicación lineal asociada la identidad. Con el siguiente resultado estudiamos el recíproco.
+\end{observation}
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle f : \mathcal{A} \to \mathcal{A} $ una aplicación lineal afín tal que $\displaystyle \vec{f} = id _{V} $, entonces existe $\displaystyle \vec{u} \in V $ tal que $\displaystyle f = \tau_{\vec{u}} $.
+\end{ftheorem}
+\begin{proof}
+	Sea $\displaystyle A \in \mathcal{A} $ y $\displaystyle \vec{u} = \overrightarrow{Af\left(A\right)} $. Tenemos que $\displaystyle \forall B \in \mathcal{A} $,
+	\[\overrightarrow{f\left(A\right)f\left(B\right)} = \vec{f}\left(\overrightarrow{AB}\right)= id _{V}\left(\overrightarrow{AB}\right) = \overrightarrow{AB} .\]
+Así, tenemos que 
+\[f\left(B\right) = f\left(A\right) + \overrightarrow{AB} \Rightarrow \overrightarrow{Bf\left(B\right)} = \overrightarrow{B\left(f\left(A\right)+\overrightarrow{AB} \right)} = \overrightarrow{Bf\left(A\right)} +\overrightarrow{AB} = \overrightarrow{Af\left(A\right)} =\vec{u} .\]
+\end{proof}
+\subsection{Funciones afines}
+\begin{fdefinition}[Función afín]
+\normalfont Una \textbf{función afín} definida en $\displaystyle \mathcal{A} $ es una aplicación afín $\displaystyle f : \mathcal{A} \to \K $.
+\end{fdefinition}
+Sea $\displaystyle f : \mathcal{A} \to \K $ una aplicación afín, tenemos que $\displaystyle \vec{f} \in V^{*}$, por lo que si $\displaystyle \vec{f} \neq 0 $, se tiene que $\displaystyle \Ker\left(\vec{f}\right) $ es un hiperplano vectorial. Además, se tiene que $\displaystyle \forall \alpha \in \K $,
+\[f^{-1}\left( \left\{ \alpha \right\} \right) = \left\{ A \in \mathcal{A} \; :\; f\left(A\right) = \alpha \right\} \neq \emptyset .\]
+Si $\displaystyle \alpha \in \K $, $\displaystyle f^{-1}\left( \left\{ \alpha \right\} \right) $ es una variedad lineal afín no vacía de dirección $\displaystyle \vec{f}^{-1}\left( \left\{ 0\right\} \right) = \Ker\left(\vec{f}\right) $. Si $\displaystyle f: \mathcal{A} \to \K $, $\displaystyle \forall \alpha \in \K $, $\displaystyle f^{-1}\left( \left\{ \alpha \right\} \right) $ es un hiperplano de $\displaystyle \mathcal{A} $. En efecto, el conjunto $\displaystyle \left\{ \alpha \right\} $ es una variedad lineal de $\displaystyle \K $ de dirección $\displaystyle \left\{ \vec{0}\right\}  $, por lo que $\displaystyle f^{-1}\left( \left\{ \alpha \right\} \right) $ es una variedad afín de $\displaystyle \mathcal{A} $ de dirección $\displaystyle \vec{f}^{-1}\left( \left\{ \vec{0}\right\} \right) $.
+\begin{fprop}[]
+\normalfont 
+Recíprocamente, si $\displaystyle \mathcal{H} $ es un hiperplano de dirección $\displaystyle H $, $\displaystyle \forall \alpha \in \K $, $\displaystyle \exists f : \mathcal{A} \to \K $ afín tal que $\displaystyle \mathcal{H} = f^{-1}\left( \left\{ \alpha \right\} \right) $.
+\end{fprop}
+\begin{proof}
+Sea $\displaystyle A \in \mathcal{H} $ y $\displaystyle f : \mathcal{A} \to \K $ la única aplicación afín tal que $\displaystyle f\left(A\right) = \alpha  $ y tiene por aplicación lineal asociada $\displaystyle l \in V^{*} $ con $\displaystyle \Ker\left(l\right) = H $.
+\end{proof}
+\begin{fprop}[]
+	\normalfont Sea $\displaystyle f : \mathcal{A} \to \mathcal{A} $ una aplicación afín. Entonces $\displaystyle \mathcal{L} = \left\{ A \in \mathcal{A} \; : \; f\left(A\right) = A\right\}  $ es una variedad lineal afín que, si no es vacía, tiene por dirección $\displaystyle L = \left\{ \vec{u} \in V \; : \; \vec{f}\left(\vec{u}\right) = \vec{u}\right\} $.
+\end{fprop}
+\begin{proof}
+Si $\displaystyle \mathcal{L} = \emptyset $, no hay nada que demostrar. Supongamos, entonces, que $\displaystyle \mathcal{L} \neq \emptyset $ y sea $\displaystyle A \in \mathcal{L} $. Tenemos que si $\displaystyle B \in \mathcal{A} $, entonces 
+\[ B \in \mathcal{L} \iff f\left(B\right) = B \iff \overrightarrow{Af\left(B\right)} =\overrightarrow{AB} =\vec{f}\left(\overrightarrow{AB} \right)\iff \overrightarrow{AB} \in L.\]
+Así, hemos visto que $\displaystyle \mathcal{L} = A + L $.
+\end{proof}
+\subsection{Homotecias}
+\begin{fdefinition}[Homotecia]
+	\normalfont Sea $\displaystyle \alpha \in \K / \left\{ 0,1\right\}  $. Una aplicación afín $\displaystyle f : \mathcal{A} \to \mathcal{A} $ es una \textbf{homotecia} si su aplicación lineal asociada es la homotecia vectorial de razón $\displaystyle \alpha  $. 
+\end{fdefinition}
+\begin{observation}
+\normalfont 
+\[
+\begin{split}
+	\vec{f} : V & \to V\\
+	\vec{x} & \to \alpha \vec{x}.
+\end{split}
+\]
+\end{observation}
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle f $ una homotecia de razón $\displaystyle \alpha  $ ($\displaystyle \alpha \not\in \left\{ 0,1\right\}  $), entonces $\displaystyle \exists ! C \in \mathcal{A} $ tal que $\displaystyle f\left(C\right)= C $.
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[Unicidad.] Supongamos que existe $\displaystyle C \in \mathcal{A} $ tal que $\displaystyle f\left(C\right) = C $. Tenemos que $\displaystyle \forall A \in \mathcal{A} $, 
+	\[f\left(A\right) = f\left(C + \overrightarrow{CA} \right) = f\left(C\right) + \vec{f}\left(\overrightarrow{CA} \right) = C + \alpha \overrightarrow{CA}  .\]
+Entonces, tenemos que 
+\[\overrightarrow{Af\left(A\right)}  = \overrightarrow{A\left(C + \alpha \overrightarrow{CA} \right)} = \overrightarrow{AC} + \alpha \overrightarrow{CA} = \left(1-\alpha \right)\overrightarrow{AC}  .\]
+Por tanto, $\displaystyle \overrightarrow{AC} = \frac{1}{1-\alpha }\overrightarrow{Af\left(A\right)}  $.
+\item[Existencia.] Sea $\displaystyle A \in \mathcal{A} $ y sea $\displaystyle C = A + \frac{\overrightarrow{Af\left(A\right)} }{1-\alpha } $. Tenemos que 
+	\[
+	\begin{split}
+		f\left(C\right) = & f\left(A + \frac{\overrightarrow{Af\left(A\right)} }{1-\alpha }\right) = f\left(A\right) +\frac{1}{1-\alpha }\vec{f}\left(\overrightarrow{Af\left(A\right)} \right) = f\left(A\right)+\frac{\alpha }{1-\alpha }\overrightarrow{Af\left(A\right)} \\
+		= &  A + \overrightarrow{Af\left(A\right)} +\frac{\alpha }{1-\alpha }\overrightarrow{Af\left(A\right)} = A + \left(1+\frac{\alpha }{1-\alpha }\right)\overrightarrow{Af\left(A\right)} = A + \frac{1}{1-\alpha }\overrightarrow{Af\left(A\right)} = C  .
+	\end{split}
+	\]
+	Así, la homotecia de centro $\displaystyle C $ y razón $\displaystyle \alpha \in \K / \left\{ 0,1\right\}  $ está definida por $\displaystyle f\left(A\right) = C + \alpha \overrightarrow{CA}  $, $\displaystyle \forall A \in \mathcal{A} $.	
+\end{description}
+\end{proof}
+\begin{observation}
+	\normalfont El conjunto $\displaystyle \mathcal{H} = \left\{ f : \mathcal{A} \to \mathcal{A} \; : \; f \; \text{homotecia o traslación}\right\}  $ es un grupo que tiene como operación la comosición de funciones.
+\end{observation}
+\begin{observation}
+\normalfont Una aplicación afín es una homotecia o traslación si y solo si su aplicación lineal asociada es una homotecia vectorial, esto es cierto si y solo si $\displaystyle \vec{f} $ deja invariante todas las rectas vectoriales, es decir, si para cualquier recta $\displaystyle \mathcal{R} $, $\displaystyle f\left(\mathcal{R}\right) $ es una recta paralela a $\displaystyle \mathcal{R} $.
+\end{observation}
+\begin{fdefinition}[Simetría]
+\normalfont Sea $\displaystyle C \in \mathcal{A} $. La \textbf{simetría} respecto de $\displaystyle C $ es la homotecia de centro $\displaystyle C $ y razón $\displaystyle -1 $. 
+\end{fdefinition}
+\begin{fprop}[]
+\normalfont 
+Si $\displaystyle f $ es la simetría respecto de $\displaystyle C $, $\displaystyle f $ es involutiva ($\displaystyle f^{2} = id _{\mathcal{A}} $).
+\end{fprop}
+\begin{proof}
+Si $\displaystyle f $ es la simetría respecto de $\displaystyle C $, $\displaystyle f^{2}\left(C\right) = C = id _{\mathcal{A}}\left(C\right) $.
+Además, $\displaystyle \vec{f} = - id _{V} $, por lo que $\displaystyle \vec{f}^{2} = id _{V} $. Por tanto tenemos que $\displaystyle f^{2} = id _{\mathcal{A}} $.
+\end{proof}
+\begin{observation}
+\normalfont Si $\displaystyle f : \mathcal{A} \to \mathcal{A} $ es una homotecia involutiva, entonces $\displaystyle f^{2} = id _{\mathcal{A}} $ y $\displaystyle \vec{f}^{2} = id _{V} $, por lo que $\displaystyle \alpha^{2} = 1 $ y $\displaystyle \alpha = -1 $.
+\end{observation}
+\subsection{Proyecciones}
+\begin{fdefinition}[Proyección]
+\normalfont Una \textbf{proyección} es una aplicación afín $\displaystyle f : \mathcal{A} \to \mathcal{A} $ tal que $\displaystyle f = f^{2}$.
+\end{fdefinition}
+\begin{observation}
+\normalfont Si $\displaystyle f $ es una proyección, $\displaystyle \vec{f}  $ será una proyección vectorial. En efecto, tenemos que
+\[
+\begin{split}
+	f\left(A + \vec{u}\right) = & f\left(A\right) + \vec{f}\left(\vec{u}\right) \\
+	f^{2}\left(A + \vec{u}\right) = & f\left(f\left(A\right) + \vec{f}\left(\vec{u}\right)\right) = f^{2}\left(A\right) + \vec{f}^{2}\left(\vec{u}\right).
+\end{split}
+\]
+Como $\displaystyle f\left(A\right) = f^{2}\left(A\right) $, es trivial que $\displaystyle \vec{f}\left(\vec{u}\right) = \vec{f}^{2}\left(\vec{u}\right) $. Así, tenemos que $\displaystyle \vec{f^{2}} = \left(\vec{f}\right)^{2} = \vec{f} $. El recíproco no es cierto.
+\end{observation}
+\begin{observation}
+\normalfont Si $\displaystyle f $ es una proyección, $\displaystyle \vec{f} $ es una proyección vectorial, por lo que existen $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $ tales que $\displaystyle V = L_{1} \oplus L_{2} $ y $\displaystyle L_{1} = \Imagen\left(\vec{f}\right) $ y $\displaystyle L_{2} = \Ker\left(\vec{f}\right) $. Así, $\displaystyle \forall \vec{u} \in V $, $\displaystyle \exists!\vec{u}_{1} \in L_{1}, \vec{u}_{2} \in L_{2} $ tales que $\displaystyle \vec{u}= \vec{u}_{1} + \vec{u}_{2} $.
+Así, $\displaystyle \forall A \in \mathcal{A} $, tenemos que $\displaystyle f^{2}\left(A\right) = A $ y $\displaystyle \Imagen\left(f\right) = \left\{ A \in \mathcal{A} \; : \; f\left(A\right) = A\right\}  $. Esta es una variedad lineal afín no vacía que tiene como dirección $\displaystyle L_{1} $, esto se escribe $\displaystyle \Imagen\left(f\right) \| L_{1} $. Gráficamente se puede ver que $\displaystyle f\left(A\right) \in \Imagen\left(f\right) \cap \left(A + L_{2}\right) $.
+\end{observation}
+Sea $\displaystyle f : \mathcal{A} \to \mathcal{A} $ una proyección , tenemos que $\displaystyle \forall A \in \mathcal{A} $, $\displaystyle f^{2}\left(A\right) = f\left(A\right) $. Tenemos que $\displaystyle \mathcal{L} = \left\{ B \in \mathcal{A} \; : \; f\left(B\right) = B\right\}  $ es una variedad lineal afín no vacía con dirección $\displaystyle L_{1} $. 
+\begin{observation}
+	\normalfont Tenemos que $\displaystyle \forall B \in \mathcal{A} $, $\displaystyle \vec{f}\left(\overrightarrow{Bf\left(B\right)} \right) = \overrightarrow{f\left(B\right)f^{2}\left(B\right)} = \vec{0}$. Así, tenemos que $\displaystyle \overrightarrow{Bf\left(B\right)} \in L_{2} $, por lo que $\displaystyle f\left(B\right) \in B + L_{2} $. Por otra parte, $\displaystyle f\left(B\right) \in \mathcal{L} $, por lo que $\displaystyle \left\{ f\left(B\right)\right\} = \underbrace{\mathcal{L}}_{\|L_{1}} \cap \left(B + L_{2}\right) $.
+\end{observation}
+\begin{observation}
+	\normalfont Si $\displaystyle \mathcal{L} $ es una variedad lineal afín de dirección $\displaystyle L_{1} \in \mathcal{L}\left(V\right) $ y $\displaystyle L_{2} \in \mathcal{L}\left(V\right) $ complementario de $\displaystyle L_{1} $ ($\displaystyle L_{1} \oplus L_{2} = V $), entonces la aplicación $\displaystyle f : \mathcal{A} \to \mathcal{A} $ definida por $\displaystyle \left\{ f\left(B\right)\right\} = \mathcal{L} \cap \left(B + L_{2}\right)$ es una proyección.
+\end{observation}
+\begin{ftheorem}[]
+	\normalfont Sea $\displaystyle f : \mathcal{A} \to \mathcal{A} $ es una proyección si y solo si existe $\displaystyle \mathcal{L} $ es una variedad lineal de dirección $\displaystyle L_{1} $ y $\displaystyle L_{2} \in \mathcal{L}\left(V\right)$ tales que $\displaystyle L_{1}\oplus L_{2} = V $, tal que $\displaystyle \left\{ f\left(A\right)\right\} = \left(A + L_{2}\right) \cap \mathcal{L} $.
+\end{ftheorem}
+\begin{fdefinition}[]
+\normalfont Diremos que $\displaystyle f $ es la \textbf{proyección} de la base $\displaystyle \mathcal{L} $ y dirección $\displaystyle L_{2} $.
+\end{fdefinition}
+\subsection{Simetrías}
+\begin{fdefinition}[Simetría]
+\normalfont Una aplicación afín $\displaystyle f : \mathcal{A} \to \mathcal{A} $ es una simetría si $\displaystyle f^{2} = id _{\mathcal{A}} $.
+\end{fdefinition}
+\begin{observation}
+\normalfont Si $\displaystyle f $ es una simetría, $\displaystyle \vec{f} $ es una simetría vectorial (el recíproco no tiene por qué ser cierto). En efecto, $\displaystyle \left(\vec{f}\right)^{2} = \vec{f^{2}} = id _{V} $. 
+\end{observation}
+\begin{observation}
+\normalfont Si $\displaystyle \vec{f} $ es una simetría vectorial, tenemos que que existen $\displaystyle L_{1}, L_{2} \in V $ tales que $\displaystyle L_{1} \oplus L_{2} = V $, con $\displaystyle L_{1} = \Ker\left(f-id _{V}\right) $ y $\displaystyle L_{2} = \Ker\left(f + id _{V}\right) $, además $\displaystyle \vec{f} = p_{1} - p_{2} $.
+\end{observation}
+\begin{observation}
+	\normalfont Sea $\displaystyle \mathcal{L} = \left\{ A \in \mathcal{A} \; : \; f\left(A\right) = A\right\}  $. Vamos a ver que $\displaystyle \mathcal{L} \neq\emptyset $. Sea $\displaystyle A \in \mathcal{A} $. Puede ser que $\displaystyle f\left(A\right)=A $ o $\displaystyle f\left(A\right)\neq A $. Tenemos que $\displaystyle f\left(f\left(A\right)\right) = A $. Sea $\displaystyle M = P_{m}\left(A,f\left(A\right)\right) $ el punto medio de $\displaystyle A $ y $\displaystyle f\left(A\right) $. Es decir, 
+	\[M = P_{m}\left(A,f\left(A\right)\right) = A + \frac{1}{2}\overrightarrow{Af\left(A\right)}  .\]
+Así, tenemos que 
+\[
+\begin{split}
+	f\left(M\right) = & f\left(A + \frac{1}{2}\overrightarrow{Af\left(A\right)} \right) = f\left(A\right) + \frac{1}{2}\vec{f}\left(\overrightarrow{Af\left(A\right)} \right) = f\left(A\right) +\frac{1}{2}\overrightarrow{f\left(A\right)A}  \\
+	= &  A + \overrightarrow{Af\left(A\right)} +\frac{1}{2}\overrightarrow{f\left(A\right)A}  = A + \frac{1}{2}\overrightarrow{Af\left(A\right)}  = M.
+\end{split}
+\]
+Así, tenemos que $\displaystyle \mathcal{L} \neq \emptyset $ es una variedad lineal afín de dirección $\displaystyle L_{1} $.
+\end{observation}
+Sea $\displaystyle A \in \mathcal{A} $ y sea $\displaystyle A_{1} $ la proyección de $\displaystyle A $ sobre $\displaystyle \mathcal{L} $ en la dirección $\displaystyle L_{2}$. Tenemos que $\displaystyle f\left(A_{1}\right) = A_{1} $. Además, 
+\[\overrightarrow{f\left(A\right)f\left(A_{1}\right)} = \vec{f}\left(\overrightarrow{AA_{1}} \right) = \left(p_{1}-p_{2}\right)\left(\overrightarrow{AA_{1}}\right) = \overrightarrow{AA_{1}}  .\]
+Así, tenemos que si $\displaystyle A, A_{1} \in A+L_{2} $, entonces $\displaystyle \overrightarrow{AA_{1}} \in L_{2} $. Así,
+\[f\left(A\right) = A_{1} + \overrightarrow{AA_{1}} = A + 2\overrightarrow{AA_{1}}  .\]
+Así, $\displaystyle f\left(A\right) = A + 2\overrightarrow{AA_{1}}  $. 
+\begin{fprop}[]
+\normalfont Recíprocamente, sea $\displaystyle \mathcal{L} $ una variedad lineal afín de dirección $\displaystyle L_{1} \in \mathcal{L}\left(V\right)$ y sea $\displaystyle L_{2} \in \mathcal{L}\left(V\right) $ tal que $\displaystyle L_{1} \oplus L_{2} = V $. Entonces, $\displaystyle f : \mathcal{A} \to \mathcal{A} $ definida por $\displaystyle f\left(A\right) = A + 2\overrightarrow{AA_{1}}  $ es una simetría, donde $\displaystyle A_{1} $ es la proyección de $\displaystyle A $ sobre $\displaystyle \mathcal{L} $ en la dirección $\displaystyle L_{2} $.
+\end{fprop}
+\begin{proof}
+Sean $\displaystyle A,B \in \mathcal{A} $. Tenemos que ver que $\displaystyle \overrightarrow{f\left(A\right)f\left(B\right)} = \vec{f}\left(\overrightarrow{AB} \right) $. Tenemos que 
+\[f\left(A\right) = A + 2\overrightarrow{AA_{1}}, \quad f\left(B\right) = B + 2\overrightarrow{BB_{1}}  .\]
+Podemos ver que si $\displaystyle A \in \mathcal{L} \cap \left(A + L_{2}\right) $, entonces $\displaystyle A = A_{1} $. Ahora, tenemos que \footnote{Recordar que $\displaystyle id _{V} = p_{1} + p_{2} $.} 
+\[
+\begin{split}
+	\overrightarrow{f\left(A\right)f\left(B\right)} = & \overrightarrow{\left(A + 2\overrightarrow{AA_{1}} \right)\left(B + 2\overrightarrow{BB_{1}} \right)} =\overrightarrow{AB} +2\left(\overrightarrow{BB_{1}} -\overrightarrow{AA_{1}} \right) \\
+	= &  \overrightarrow{AB} +2\left(\overrightarrow{BA_{1}} +\overrightarrow{A_{1}B_{1}} -\overrightarrow{AB} -\overrightarrow{BA_{1}} \right) 
+	= -\overrightarrow{AB} +2\overrightarrow{A_{1}B_{1}} \\
+	= &  -\overrightarrow{AB} +2p_{1}\left(\overrightarrow{AB} \right) = \left(-id _{V} + 2 p_{1}\right)\left(\overrightarrow{AB} \right) =\left(-p_{1}-p_{2}  + 2p_{1}\right)\left(\overrightarrow{AB} \right) = \left(p_{1}-P_{2}\right)\left(\overrightarrow{AB} \right) .
+\end{split}
+\]
+\end{proof}
+\begin{ftheorem}[]
+\normalfont Una aplicación afín $\displaystyle f : \mathcal{A} \to \mathcal{A} $ es una simetría si $\displaystyle \exists \mathcal{L} $ variedad lineal afín de dirección $\displaystyle L_{1} \in \mathcal{L}\left(V\right) $ y un subespacio vectorial $\displaystyle L_{2}$ tal que $\displaystyle L_{1} \oplus L_{2} = V $, tal que $\displaystyle f\left(A\right) = A + 2\overrightarrow{AA_{1}}  $, donde $\displaystyle A_{1} $ es la proyección de $\displaystyle A $ sobre $\displaystyle \mathcal{L} $ en la dirección $\displaystyle L_{2} $.
+\end{ftheorem}
+\begin{fdefinition}[]
+\normalfont $\displaystyle \mathcal{L} $ es la \textbf{base} de $\displaystyle f $ y $\displaystyle L_{2} $ su \textbf{dirección}.
+\end{fdefinition}
 

@@ -155,7 +155,7 @@ Por el criterio de comparación, existe $\displaystyle \int^{\infty}_{1} e^{-x^{
 \begin{ftheorem}[Criterio del cociente]
 \normalfont Sean $\displaystyle f,g : (a,b) \to \R $, con $\displaystyle a,b \in \R $, $\displaystyle a = - \infty $ o $\displaystyle b = \infty $, y $\displaystyle f,g \geq 0 $. Entonces, si existe $\displaystyle \lim_{x \to b^{-}}\frac{f\left(x\right)}{g\left(x\right)} = l $, entonces
 \begin{description}
-\item[(a)] Si $\displaystyle l \in \R $, $\displaystyle \exists \int^{b}_{a} f \iff \exists \int^{b}_{a} g $. 
+	\item[(a)] Si $\displaystyle l \in \R/ \left\{ 0\right\}  $, $\displaystyle \exists \int^{b}_{a} f \iff \exists \int^{b}_{a} g $. 
 \item[(b)] Si $\displaystyle l = 0 $, $\displaystyle \exists \int^{b}_{a} g \Rightarrow \exists \int^{b}_{a} f  $. 
 \item[(c)] Si $\displaystyle l = \infty $, la inexistencia de $\displaystyle \int^{b}_{a} g $ implica la inexistencia de $\displaystyle \int^{b}_{a} f $.
 \end{description}
@@ -645,7 +645,7 @@ Por tanto, la integral no converge.
 	\[ \int^{7}_{-\infty} f\left(x\right) \; dx < \infty \iff \int^{7}_{-\infty} g\left(x\right) \; dx .\]
 	Dado que $\displaystyle \lim_{x \to -\infty}\frac{f\left(x\right)}{g\left(x\right)} = \infty $, tenemos que $\displaystyle \forall M > 0 $, $\displaystyle \exists N > 0 $ tal que si $\displaystyle x < N $ entonces $\displaystyle \frac{f\left(x\right)}{g\left(x\right)} > M $, es decir, $\displaystyle f\left(x\right) > Mg\left(x\right) $. Así, tenemos que
 	\[\int^{7}_{-\infty} f\left(x\right) \; dx = \int^{7}_{N} f\left(x\right) \; dx + \int^{N}_{-\infty} f\left(x\right) \; dx \geq \int^{7}_{N} f\left(x\right) \; dx + \int^{N}_{-\infty} Mg\left(x\right) \; dx .\]
-	Así, tenemos que si $\displaystyle \int^{7}_{-\infty} f\left(x\right) \; dx $ converge, entonces $\displaystyle \int^{7}_{-\infty} g\left(x\right) \; dx $ converge, por el criterio de comparación. Similarmente, si $\displaystyle \int^{7}_{-\infty} g\left(x\right) \; dx $ diverge, entonces $\displaystyle \int^{7}_{-\infty} f\left(x\right) \; dx $ diverge. Es decir, la relación propuesta en el enunciado es un si y solo si.
+	Así, tenemos que si $\displaystyle \int^{7}_{-\infty} f\left(x\right) \; dx $ converge, entonces $\displaystyle \int^{7}_{-\infty} g\left(x\right) \; dx $ converge, por el criterio de comparación. Similarmente, si $\displaystyle \int^{7}_{-\infty} g\left(x\right) \; dx $ diverge, entonces $\displaystyle \int^{7}_{-\infty} f\left(x\right) \; dx $ diverge. Es decir, la relación propuesta en el enunciado no es es un si y solo si.
 \end{eg}
 \begin{eg}
 \normalfont Calculemos el volumen de la esfera. Tomemos la semicircunferencia de radio $\displaystyle R $, es decir, $\displaystyle f\left(x\right) = \sqrt{R^{2}-x^{2}} $. Si giramos esta figura respecto del eje $\displaystyle x $, obtenemos la esfera de radio $\displaystyle R $. Como la esfera es un volumen de revolución,
