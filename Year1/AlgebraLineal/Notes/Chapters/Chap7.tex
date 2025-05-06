@@ -30,7 +30,7 @@ que cumple las siguientes propiedades:
 \item[(b)] $\displaystyle \forall \vec{u}, \vec{v} \in V $, $\displaystyle \tau_{\vec{u}}\circ\tau_{\vec{v}} = \tau_{\vec{u} +\vec{v}} $.
 \item[(c)] Las traslaciones son biyectivas.
 \item[(d)] \textbf{Identidad de Chasles:} $\displaystyle \forall A,B,C \in \mathcal{A} $, 
-	\[\overrightarrow{AB} = \overrightarrow{AC} +\overrightarrow{BC} .\]
+	\[\overrightarrow{AB} = \overrightarrow{AC} +\overrightarrow{CB} .\]
 \item[(e)] $\displaystyle \forall A \in \mathcal{A} $, $\displaystyle \vec{0} = \overrightarrow{AA} $.
 \item[(f)] $\displaystyle \forall A,B \in \mathcal{A} $, $\displaystyle \overrightarrow{AB} = -\overrightarrow{BA} $.
 \item[(g)] $\displaystyle \forall A,B \in \mathcal{A} $, $\displaystyle \forall \vec{u} \in V $, $\displaystyle \overrightarrow{A\left(B+\vec{u}\right)} = \overrightarrow{AB} + \vec{u}$. Similarmente, $\displaystyle \overrightarrow{A\left(\overrightarrow{AB}+\vec{u}\right)} = B + \vec{u}$.
@@ -177,7 +177,7 @@ a^{n} & a^{n}_{1} & \cdots & a^{n}_{n}\end{pmatrix}\begin{pmatrix} 1 \\ x'^{1} \
 		Así, $\displaystyle \overrightarrow{AB} \in L_{1} + L_{2} $.
 	\item[(ii)] Si $\displaystyle \overrightarrow{AB} \in L_{1} + L_{2} $, $\displaystyle \exists \vec{v}_{1} \in L_{1}, \vec{v}_{2} \in L_{2} $ tal que $\displaystyle \overrightarrow{AB} = \vec{v}_{1} +\vec{v}_{2} $. Tenemos que $\displaystyle A + \vec{v}_{1} \in \mathcal{L}_{1} $. Así,
 		\[ \overrightarrow{\left(A + \vec{v}_{1}\right)B} = \overrightarrow{AB} - \vec{v}_{1} = \vec{v}_{1} +\vec{v}_{2} -\vec{v}_{1} = \vec{v}_{2} \in L_{2} .\]
-		Por tanto, $\displaystyle A + \vec{v}_{1} \in B + L = \mathcal{L}_{2}$. Por tanto, $\displaystyle A + \vec{v}_{1} \in \mathcal{L}_{1} \cap \mathcal{L}_{2} $.
+		Por tanto, $\displaystyle A + \vec{v}_{1} \in B + L_{2} = \mathcal{L}_{2}$. Por tanto, $\displaystyle A + \vec{v}_{1} \in \mathcal{L}_{1} \cap \mathcal{L}_{2} $.
 \end{description}
 \end{proof}
 \begin{fprop}[]
@@ -464,7 +464,7 @@ Entonces,
 	\item[(a)] Si $\displaystyle \mathcal{L} = A + L = \left\{ A +\vec{u} \; : \; \vec{u} \in L\right\}  $. Tenemos que 
 		\[f\left(\mathcal{L}\right) = \left\{ f\left(A+\vec{u}\right) = f\left(A\right) + \vec{f}\left(\vec{u}\right) \; : \; \vec{u} \in L\right\} = f\left(A\right) + \left\{ \vec{f}\left(\vec{u}\right) \; : \; \vec{u} \in L\right\} = f\left(A\right) + \vec{f}\left(L\right) \in \mathcal{L}\left(\mathcal{L}'\right) .\]
 	\item[(b)] Supongamos que $\displaystyle f^{-1}\left(\mathcal{L}'\right) \neq \emptyset $ y sea $\displaystyle A \in f^{-1}\left(\mathcal{L}'\right) $. Esto es cierto si y solo si $\displaystyle f\left(A\right) \in \mathcal{L}' $. Así, tenemos que 
-		\[B \in f^{-1}\left(\mathcal{L}'\right) \iff f\left(B\right) \in f^{-1}\left(\mathcal{L}'\right) \iff f\left(B\right) \in \mathcal{L}' = A + L' \iff \overrightarrow{f\left(A\right)f\left(B\right)}=\vec{f}\left(\overrightarrow{AB}\right) \in L' .\]
+		\[B \in f^{-1}\left(\mathcal{L}'\right) \iff  f\left(B\right) \in \mathcal{L}' = A + L' \iff \overrightarrow{f\left(A\right)f\left(B\right)}=\vec{f}\left(\overrightarrow{AB}\right) \in L' \iff \overrightarrow{AB} \in \vec{f}^{-1}\left(L'\right) .\]
 		Así, tenemos que $\displaystyle B \in A + \vec{f}^{-1}\left(L'\right) $. Así, $\displaystyle f^{-1}\left(\mathcal{L}'\right) = A + \vec{f}^{-1}\left(L'\right) $ y $\displaystyle \vec{f}^{-1}\left(L'\right) \in \mathcal{L}\left(V\right) $.
 \end{description}
 \end{proof}
@@ -579,22 +579,34 @@ Además, $\displaystyle \vec{f} = - id _{V} $, por lo que $\displaystyle \vec{f}
 \]
 Como $\displaystyle f\left(A\right) = f^{2}\left(A\right) $, es trivial que $\displaystyle \vec{f}\left(\vec{u}\right) = \vec{f}^{2}\left(\vec{u}\right) $. Así, tenemos que $\displaystyle \vec{f^{2}} = \left(\vec{f}\right)^{2} = \vec{f} $. El recíproco no es cierto.
 \end{observation}
-\begin{observation}
-\normalfont Si $\displaystyle f $ es una proyección, $\displaystyle \vec{f} $ es una proyección vectorial, por lo que existen $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $ tales que $\displaystyle V = L_{1} \oplus L_{2} $ y $\displaystyle L_{1} = \Imagen\left(\vec{f}\right) $ y $\displaystyle L_{2} = \Ker\left(\vec{f}\right) $. Así, $\displaystyle \forall \vec{u} \in V $, $\displaystyle \exists!\vec{u}_{1} \in L_{1}, \vec{u}_{2} \in L_{2} $ tales que $\displaystyle \vec{u}= \vec{u}_{1} + \vec{u}_{2} $.
-Así, $\displaystyle \forall A \in \mathcal{A} $, tenemos que $\displaystyle f^{2}\left(A\right) = A $ y $\displaystyle \Imagen\left(f\right) = \left\{ A \in \mathcal{A} \; : \; f\left(A\right) = A\right\}  $. Esta es una variedad lineal afín no vacía que tiene como dirección $\displaystyle L_{1} $, esto se escribe $\displaystyle \Imagen\left(f\right) \| L_{1} $. Gráficamente se puede ver que $\displaystyle f\left(A\right) \in \Imagen\left(f\right) \cap \left(A + L_{2}\right) $.
-\end{observation}
-Sea $\displaystyle f : \mathcal{A} \to \mathcal{A} $ una proyección , tenemos que $\displaystyle \forall A \in \mathcal{A} $, $\displaystyle f^{2}\left(A\right) = f\left(A\right) $. Tenemos que $\displaystyle \mathcal{L} = \left\{ B \in \mathcal{A} \; : \; f\left(B\right) = B\right\}  $ es una variedad lineal afín no vacía con dirección $\displaystyle L_{1} $. 
-\begin{observation}
-	\normalfont Tenemos que $\displaystyle \forall B \in \mathcal{A} $, $\displaystyle \vec{f}\left(\overrightarrow{Bf\left(B\right)} \right) = \overrightarrow{f\left(B\right)f^{2}\left(B\right)} = \vec{0}$. Así, tenemos que $\displaystyle \overrightarrow{Bf\left(B\right)} \in L_{2} $, por lo que $\displaystyle f\left(B\right) \in B + L_{2} $. Por otra parte, $\displaystyle f\left(B\right) \in \mathcal{L} $, por lo que $\displaystyle \left\{ f\left(B\right)\right\} = \underbrace{\mathcal{L}}_{\|L_{1}} \cap \left(B + L_{2}\right) $.
-\end{observation}
-\begin{observation}
-	\normalfont Si $\displaystyle \mathcal{L} $ es una variedad lineal afín de dirección $\displaystyle L_{1} \in \mathcal{L}\left(V\right) $ y $\displaystyle L_{2} \in \mathcal{L}\left(V\right) $ complementario de $\displaystyle L_{1} $ ($\displaystyle L_{1} \oplus L_{2} = V $), entonces la aplicación $\displaystyle f : \mathcal{A} \to \mathcal{A} $ definida por $\displaystyle \left\{ f\left(B\right)\right\} = \mathcal{L} \cap \left(B + L_{2}\right)$ es una proyección.
-\end{observation}
 \begin{ftheorem}[]
-	\normalfont Sea $\displaystyle f : \mathcal{A} \to \mathcal{A} $ es una proyección si y solo si existe $\displaystyle \mathcal{L} $ es una variedad lineal de dirección $\displaystyle L_{1} $ y $\displaystyle L_{2} \in \mathcal{L}\left(V\right)$ tales que $\displaystyle L_{1}\oplus L_{2} = V $, tal que $\displaystyle \left\{ f\left(A\right)\right\} = \left(A + L_{2}\right) \cap \mathcal{L} $.
+	\normalfont Una aplicación $\displaystyle f : \mathcal{A} \to \mathcal{A} $ es una proyección si y solo si existen dos subespacios vectoriales suplementarios $\displaystyle L_{1} $ y $\displaystyle L_{2} $ con $\displaystyle L_{1} \oplus L_{2} = V $, y una variedad lineal afín $\displaystyle \mathcal{L} $ de dirección $\displaystyle L_{1} $ tal que 
+	\[ \left\{ f\left(A\right)\right\} = \mathcal{L} \cap \left(A+L_{2}\right), \; \forall A \in \mathcal{A} .\]
 \end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Sabemos que si $\displaystyle f $ es una proyección, entonces $\displaystyle \vec{f} $ es una proyección vectorial, por lo que existen $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $ tales que $\displaystyle L_{1}\oplus L_{2} = V $, con $\displaystyle L_{1} = \Imagen\left(\vec{f}\right) $ y $\displaystyle L_{2} = \Ker\left(\vec{f}\right) $. \\
+	Tenemos que $\displaystyle \forall A \in \mathcal{A} $, $\displaystyle f^{2}\left(A\right) = f\left(A\right) $, por lo que todo punto de la imagen de $\displaystyle f $ es invariante por $\displaystyle f $. Así, tenemos que la variedad lineal afín $\displaystyle \mathcal{L} = \left\{ A \in \mathcal{A} \; : \; f\left(A\right) = A\right\}  \neq \emptyset $, por lo que tiene como dirección a $\displaystyle L_{1} $. \\
+	Ahora, tenemos que $\displaystyle \forall B \in \mathcal{A} $, 
+	\[ \vec{f}\left(\overrightarrow{Bf\left(B\right)}\right) = \overrightarrow{f\left(B\right)f^{2}\left(B\right)} = \vec{0} .\]
+	Por tanto, $\displaystyle \overrightarrow{Bf\left(B\right)} \in L_{2} $ y $\displaystyle f\left(B\right) \in B + L_{2} $. Como vimos antes, también tenemos que $\displaystyle f\left(B\right) \in \mathcal{L} $. Así, hemos obtenido que $\displaystyle f\left(B\right) $ es el único punto que pertenece a la intersección de las variedades lineales afines suplementarias $\displaystyle \mathcal{L} $\footnote{Es fácil comprobar que $\displaystyle \mathcal{L} = \Imagen\left(f\right) $.}  y $\displaystyle B + L_{2} $, es decir, 
+	\[ \left\{ f\left(B\right)\right\} = \mathcal{L} \cap \left(B + L_{2}\right) .\]
+\item[(ii)] Consideremos una variedad lineal afín $\displaystyle \mathcal{L} $ de dirección $\displaystyle L_{1} $ y $\displaystyle L_{1} \oplus L_{2} = V $. Vamos a ver que la aplicación $\displaystyle f : \mathcal{A} \to \mathcal{A}$ definida por $\displaystyle \left\{ f\left(B\right)\right\} = \mathcal{L} \cap \left\{ B + L_{2}\right\}  $, $\displaystyle \forall B \in \mathcal{A} $, es una proyección. \\
+	Primero vamos a ver que $\displaystyle f $ es afín. Sea $\displaystyle p \in \End\left(V\right) $ la proyección vectorial de base $\displaystyle L_{1} $ y dirección $\displaystyle L_{2} $. Si $\displaystyle A,B \in \mathcal{A} $, 
+\[
+\begin{split}
+f\left(A\right) \in \mathcal{L}, \; \overrightarrow{Af\left(A\right)} \in L_{2} \\
+f\left(B\right) \in \mathcal{L}, \; \overrightarrow{Bf\left(B\right)} \in L_{2}.
+\end{split}
+\]
+Así, tenemos que 
+\[B = A + \overrightarrow{AB} = A + \overrightarrow{Af\left(A\right)} + \overrightarrow{f\left(A\right)f\left(B\right)} + \overrightarrow{f\left(B\right)B} .\]
+Como $\displaystyle \overrightarrow{Af\left(A\right)}, \overrightarrow{f\left(B\right)B} \in L_{2} $ y $\displaystyle \overrightarrow{f\left(A\right)f\left(B\right)} \in L_{1} $, se tiene que $\displaystyle p\left(\overrightarrow{AB}\right) = \overrightarrow{f\left(A\right)f\left(B\right)} $. Así, $\displaystyle f $ es una aplicación afín que tiene como aplicación lineal asociada a $\displaystyle p $. \\
+Ahora vamos a ver que $\displaystyle f^{2} = f $. En efecto, tenemos que $\displaystyle \forall A \in \mathcal{A} $, $\displaystyle f\left(A\right) \in \mathcal{L} $, y como todo punto de $\displaystyle \mathcal{L} $ es invariante, se tiene que $\displaystyle f\left(f\left(A\right)\right) = f\left(A\right) $.
+\end{description}
+\end{proof}
 \begin{fdefinition}[]
-\normalfont Diremos que $\displaystyle f $ es la \textbf{proyección} de la base $\displaystyle \mathcal{L} $ y dirección $\displaystyle L_{2} $.
+\normalfont Diremos que $\displaystyle f $ es la proyección de la \textbf{base} $\displaystyle \mathcal{L} $ y \textbf{dirección} $\displaystyle L_{2} $.
 \end{fdefinition}
 \subsection{Simetrías}
 \begin{fdefinition}[Simetría]
@@ -603,31 +615,31 @@ Sea $\displaystyle f : \mathcal{A} \to \mathcal{A} $ una proyección , tenemos q
 \begin{observation}
 \normalfont Si $\displaystyle f $ es una simetría, $\displaystyle \vec{f} $ es una simetría vectorial (el recíproco no tiene por qué ser cierto). En efecto, $\displaystyle \left(\vec{f}\right)^{2} = \vec{f^{2}} = id _{V} $. 
 \end{observation}
-\begin{observation}
-\normalfont Si $\displaystyle \vec{f} $ es una simetría vectorial, tenemos que que existen $\displaystyle L_{1}, L_{2} \in V $ tales que $\displaystyle L_{1} \oplus L_{2} = V $, con $\displaystyle L_{1} = \Ker\left(f-id _{V}\right) $ y $\displaystyle L_{2} = \Ker\left(f + id _{V}\right) $, además $\displaystyle \vec{f} = p_{1} - p_{2} $.
-\end{observation}
-\begin{observation}
-	\normalfont Sea $\displaystyle \mathcal{L} = \left\{ A \in \mathcal{A} \; : \; f\left(A\right) = A\right\}  $. Vamos a ver que $\displaystyle \mathcal{L} \neq\emptyset $. Sea $\displaystyle A \in \mathcal{A} $. Puede ser que $\displaystyle f\left(A\right)=A $ o $\displaystyle f\left(A\right)\neq A $. Tenemos que $\displaystyle f\left(f\left(A\right)\right) = A $. Sea $\displaystyle M = P_{m}\left(A,f\left(A\right)\right) $ el punto medio de $\displaystyle A $ y $\displaystyle f\left(A\right) $. Es decir, 
-	\[M = P_{m}\left(A,f\left(A\right)\right) = A + \frac{1}{2}\overrightarrow{Af\left(A\right)}  .\]
-Así, tenemos que 
+\begin{ftheorem}[]
+\normalfont Una aplicación $\displaystyle f : \mathcal{A} \to \mathcal{A} $ es una simetría si y solo si existen $\displaystyle L_{1}, L_{2} \in \mathcal{L}\left(V\right) $ tales que $\displaystyle L_{1} \oplus L_{2} = V $, y una variedad lineal afín $\displaystyle \mathcal{L} $ de dirección $\displaystyle L_{1} $, tales que 
+\[ \forall A \in \mathcal{A}, \; f\left(A\right) = A + 2\overrightarrow{AA_{1}} ,\]
+donde $\displaystyle A_{1} $ es la proyección de $\displaystyle A $ sobre $\displaystyle \mathcal{L} $ en la dirección $\displaystyle L_{2} $.
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(i)] En primer lugar, vamos a ver que la variedad lineal afín de los puntos invariantes, $\displaystyle \mathcal{L} = \left\{ A \in \mathcal{A} \; : \; f\left(A\right) = A\right\}  $, no es vacía. Sea $\displaystyle A \in \mathcal{A} $ y $\displaystyle M = P_{m}\left(A,f\left(A\right)\right) $ el punto medio de $\displaystyle A $ y $\displaystyle f\left(A\right) $, es decir, 
+	\[ M = P_{m}\left(A,f\left(A\right)\right) = A + \frac{1}{2}\overrightarrow{Af\left(A\right)} .\]
+Tenemos que $\displaystyle M \in \mathcal{L}$, en efecto:
 \[
 \begin{split}
 	f\left(M\right) = & f\left(A + \frac{1}{2}\overrightarrow{Af\left(A\right)} \right) = f\left(A\right) + \frac{1}{2}\vec{f}\left(\overrightarrow{Af\left(A\right)} \right) = f\left(A\right) +\frac{1}{2}\overrightarrow{f\left(A\right)A}  \\
 	= &  A + \overrightarrow{Af\left(A\right)} +\frac{1}{2}\overrightarrow{f\left(A\right)A}  = A + \frac{1}{2}\overrightarrow{Af\left(A\right)}  = M.
 \end{split}
 \]
-Así, tenemos que $\displaystyle \mathcal{L} \neq \emptyset $ es una variedad lineal afín de dirección $\displaystyle L_{1} $.
-\end{observation}
-Sea $\displaystyle A \in \mathcal{A} $ y sea $\displaystyle A_{1} $ la proyección de $\displaystyle A $ sobre $\displaystyle \mathcal{L} $ en la dirección $\displaystyle L_{2}$. Tenemos que $\displaystyle f\left(A_{1}\right) = A_{1} $. Además, 
-\[\overrightarrow{f\left(A\right)f\left(A_{1}\right)} = \vec{f}\left(\overrightarrow{AA_{1}} \right) = \left(p_{1}-p_{2}\right)\left(\overrightarrow{AA_{1}}\right) = \overrightarrow{AA_{1}}  .\]
-Así, tenemos que si $\displaystyle A, A_{1} \in A+L_{2} $, entonces $\displaystyle \overrightarrow{AA_{1}} \in L_{2} $. Así,
-\[f\left(A\right) = A_{1} + \overrightarrow{AA_{1}} = A + 2\overrightarrow{AA_{1}}  .\]
-Así, $\displaystyle f\left(A\right) = A + 2\overrightarrow{AA_{1}}  $. 
-\begin{fprop}[]
-\normalfont Recíprocamente, sea $\displaystyle \mathcal{L} $ una variedad lineal afín de dirección $\displaystyle L_{1} \in \mathcal{L}\left(V\right)$ y sea $\displaystyle L_{2} \in \mathcal{L}\left(V\right) $ tal que $\displaystyle L_{1} \oplus L_{2} = V $. Entonces, $\displaystyle f : \mathcal{A} \to \mathcal{A} $ definida por $\displaystyle f\left(A\right) = A + 2\overrightarrow{AA_{1}}  $ es una simetría, donde $\displaystyle A_{1} $ es la proyección de $\displaystyle A $ sobre $\displaystyle \mathcal{L} $ en la dirección $\displaystyle L_{2} $.
-\end{fprop}
-\begin{proof}
-Sean $\displaystyle A,B \in \mathcal{A} $. Tenemos que ver que $\displaystyle \overrightarrow{f\left(A\right)f\left(B\right)} = \vec{f}\left(\overrightarrow{AB} \right) $. Tenemos que 
+Así, hemos visto que $\displaystyle \mathcal{L} \neq \emptyset $. Por otro lado, por ser $\displaystyle \vec{f} $ una simetría, $\displaystyle \exists L_{1}, L_{2} \in \mathcal{L} $ tales que $\displaystyle L_{1}\oplus L_{2} = V $, con $\displaystyle L_{1} = \Ker\left(f-id _{V}\right) $ y $\displaystyle L_{2}=\Ker\left(f+id _{V}\right) $. Además, $\displaystyle \vec{f} = p_{1}-p_{2} $. Así, tenemos que $\displaystyle \mathcal{L} $ tiene por dirección $\displaystyle L_{1} $. \\
+Ahora, consideremos $\displaystyle A \in \mathcal{A} $ y sea $\displaystyle A_{1} $ la proyección de $\displaystyle A $ sobre $\displaystyle \mathcal{L} $ en la dirección $\displaystyle L_{2} $. Tenemos que, como $\displaystyle \overrightarrow{AA_{1}}\in L_{2} $,
+\[\overrightarrow{f\left(A\right)f\left(A_{1}\right)} = \vec{f}\left(\overrightarrow{AA_{1}} \right) = \left(p_{1}-p_{2}\right)\left(\overrightarrow{AA_{1}}\right) = \overrightarrow{A_{1}A}  .\]
+Como $\displaystyle f\left(A_{1}\right) = A_{1} $, tenemos que $\displaystyle \overrightarrow{f\left(A\right)A_{1}}=\overrightarrow{A_{1}A} $, por lo que $\displaystyle A_{1} $ es el punto medio de $\displaystyle A $ y $\displaystyle f\left(A\right) $, y podemos escribir que 
+\[ f\left(A\right) = A + 2 \overrightarrow{AA_{1}} .\]
+\item[(ii)] Recíprocamente, consideremos la variedad lineal afín $\displaystyle \mathcal{L} $ de dirección $\displaystyle L_{1} $ y $\displaystyle L_{2} \in \mathcal{L}\left(V\right) $ tal que $\displaystyle L_{1} \oplus L_{2} = V $. Vamos a ver que la aplicación definida por 
+	\[ f\left(A\right)=A+\frac{1}{2}\overrightarrow{AA_{1}}, \; \forall A \in \mathcal{A} .\]
+	donde $\displaystyle A_{1} $ es la proyección de $\displaystyle A $ sobre $\displaystyle \mathcal{L} $ con dirección $\displaystyle L_{2} $, es una simetría. \\
+	En primer lugar, vamos a ver que $\displaystyle f $ es afín. Sean $\displaystyle A,B \in \mathcal{A} $. Tenemos que ver que $\displaystyle \overrightarrow{f\left(A\right)f\left(B\right)} = \vec{f}\left(\overrightarrow{AB} \right) $. Tenemos que 
 \[f\left(A\right) = A + 2\overrightarrow{AA_{1}}, \quad f\left(B\right) = B + 2\overrightarrow{BB_{1}}  .\]
 Podemos ver que si $\displaystyle A \in \mathcal{L} \cap \left(A + L_{2}\right) $, entonces $\displaystyle A = A_{1} $. Ahora, tenemos que \footnote{Recordar que $\displaystyle id _{V} = p_{1} + p_{2} $.} 
 \[
@@ -635,14 +647,49 @@ Podemos ver que si $\displaystyle A \in \mathcal{L} \cap \left(A + L_{2}\right) 
 	\overrightarrow{f\left(A\right)f\left(B\right)} = & \overrightarrow{\left(A + 2\overrightarrow{AA_{1}} \right)\left(B + 2\overrightarrow{BB_{1}} \right)} =\overrightarrow{AB} +2\left(\overrightarrow{BB_{1}} -\overrightarrow{AA_{1}} \right) \\
 	= &  \overrightarrow{AB} +2\left(\overrightarrow{BA_{1}} +\overrightarrow{A_{1}B_{1}} -\overrightarrow{AB} -\overrightarrow{BA_{1}} \right) 
 	= -\overrightarrow{AB} +2\overrightarrow{A_{1}B_{1}} \\
-	= &  -\overrightarrow{AB} +2p_{1}\left(\overrightarrow{AB} \right) = \left(-id _{V} + 2 p_{1}\right)\left(\overrightarrow{AB} \right) =\left(-p_{1}-p_{2}  + 2p_{1}\right)\left(\overrightarrow{AB} \right) = \left(p_{1}-P_{2}\right)\left(\overrightarrow{AB} \right) .
+	= &  -\overrightarrow{AB} +2p_{1}\left(\overrightarrow{AB} \right) = \left(-id _{V} + 2 p_{1}\right)\left(\overrightarrow{AB} \right) =\left(-p_{1}-p_{2}  + 2p_{1}\right)\left(\overrightarrow{AB} \right) = \left(p_{1}-p_{2}\right)\left(\overrightarrow{AB} \right) .
 \end{split}
 \]
+Así, hemos visto que $\displaystyle f $ es afín y que su aplicación lineal asociada es $\displaystyle p_{1} - p_{2} $. Ahora vamos a ver que es involutiva. En efecto, tenemos que $\displaystyle A $ y $\displaystyle f\left(A\right) $ tienen la misma proyección sobre $\displaystyle \mathcal{L} $ con dirección $\displaystyle L_{2} $, por lo que $\displaystyle A_{1} $ es el punto medio de $\displaystyle A $ y $\displaystyle f\left(A\right) $ y de $\displaystyle f\left(A\right) $ y $\displaystyle f^{2}\left(A\right) $. Así, tenemos que $\displaystyle f^{2}\left(A\right) = A $, por lo que $\displaystyle f $ es involutiva. 
+\end{description}
 \end{proof}
-\begin{ftheorem}[]
-\normalfont Una aplicación afín $\displaystyle f : \mathcal{A} \to \mathcal{A} $ es una simetría si $\displaystyle \exists \mathcal{L} $ variedad lineal afín de dirección $\displaystyle L_{1} \in \mathcal{L}\left(V\right) $ y un subespacio vectorial $\displaystyle L_{2}$ tal que $\displaystyle L_{1} \oplus L_{2} = V $, tal que $\displaystyle f\left(A\right) = A + 2\overrightarrow{AA_{1}}  $, donde $\displaystyle A_{1} $ es la proyección de $\displaystyle A $ sobre $\displaystyle \mathcal{L} $ en la dirección $\displaystyle L_{2} $.
-\end{ftheorem}
 \begin{fdefinition}[]
 \normalfont $\displaystyle \mathcal{L} $ es la \textbf{base} de $\displaystyle f $ y $\displaystyle L_{2} $ su \textbf{dirección}.
 \end{fdefinition}
+\section{Matriz de una aplicación afín}
+Sean $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $ y $\displaystyle \left(O', \left\{ \vec{v}_{1}, \ldots, v_{m}\right\} \right) $ un sistema de referencia cartesiana de $\displaystyle \mathcal{A} $ y $\displaystyle \mathcal{A}' $, respectivamente. Sea $\displaystyle f : \mathcal{A} \to \mathcal{A}' $ una aplicación afín y $\displaystyle \vec{f} $ su aplicación lineal asociada. Sabiendo que $\displaystyle f\left(O\right) \in \mathcal{A}' $,
+\[
+\begin{split}
+	\overrightarrow{O'f\left(O\right)} =&  a^{1}\vec{v}_{1} + \cdots + a^{m}\vec{v}_{m} \\
+	\vec{f}\left(\vec{u}_{1}\right) =&  a^{1}_{1}\vec{v}_{1} + \cdots + a^{m}_{1}\vec{v}_{m} \\
+& \vdots \\
+	\vec{f}\left(\vec{u}_{n}\right) =& a^{1}_{n}\vec{v}_{1} + \cdots + a^{m}_{n}\vec{v}_{m}.
+\end{split}
+\]
+Si $\displaystyle X \in \mathcal{A} $ tenemos que $\displaystyle f\left(X\right) \in \mathcal{A}' $, además si $\displaystyle \overrightarrow{OX} = x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n} $ tendremos que
+\[\overrightarrow{O'f\left(X\right)} = x'^{1}\vec{v}_{1} + \cdots + x'^{m}\vec{v}_{m}.\]
+Así, $\displaystyle X = O + \overrightarrow{OX} $ y $\displaystyle f\left(X\right) = f\left(O\right) + \vec{f}\left(\overrightarrow{OX}\right) $, por lo que $\displaystyle \overrightarrow{O'f\left(X\right)} = \overrightarrow{O'f\left(O\right)}+\vec{f}\left(\overrightarrow{OX}\right) $. Así, tenemos que 
+\[
+\begin{split}
+& x'^{1}\vec{v}_{1} + \cdots + x'^{m}\vec{v}_{m} \\
+= & a^{1}\vec{v}_{1}+\cdots + a^{m}\vec{v}_{m} + \vec{f}\left(x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n}\right) \\
+= & a^{1}\vec{v}_{1} + \cdots + a^{m}\vec{v}_{m} + x^{1}\left(a^{1}_{1}\vec{v}_{1} + \cdots + a^{m}_{1}\vec{v}_{m}\right)+ \cdots + x^{n}\left(a^{1}_{n}\vec{v}_{1} + \cdots + a^{m}_{n}\vec{v}_{m}\right) \\
+= & \left(a^{1}+x^{1}a^{1}_{1} + \cdots + x^{n}a^{1}_{n}\right)\vec{v}_{1} + \cdots + \left(a^{m} + x^{1}a^{m}_{1} + \cdots + x^{n}a^{m}_{n}\right)\vec{v}_{m}.
+\end{split}
+\]
+Así, obtenemos el siguiente sistema de ecuaciones:
+\[
+\begin{cases}
+x'^{1} = a^{1}+x^{1}a^{1}_{1} + \cdots + x^{n}a^{1}_{n} \\
+\vdots \\
+x'^{m} = a^{m}+x^{1}a^{m}_{1} + \cdots + x^{n}a^{m}_{n}
+\end{cases}
+.\]
+Matricialmente, obtenemos la expresión
+\[\begin{pmatrix} x'^{1} \\ \vdots \\ x'^{m} \end{pmatrix} = \begin{pmatrix} a^{1} \\ \vdots \\ a^{m} \end{pmatrix} + \mathcal{M}_{ \left\{ \vec{u}_{i}\right\} \left\{ \vec{v}_{j}\right\} }\left(f\right) \begin{pmatrix} x^{1} \\ \vdots \\ x^{n} \end{pmatrix} .\]
+También lo podemos expresar de la forma
+\[ \begin{pmatrix} 1 \\ x'^{1} \\ \vdots \\ x'^{m} \end{pmatrix} = \begin{pmatrix} 1 & 0 & \cdots & 0 \\
+a^{1} & a^{1}_{1} & \cdots & a^{1}_{n} \\
+\vdots & \vdots & \vdots & \vdots \\
+a^{m} & a^{m}_{1} & \cdots & a^{m}_{n}\end{pmatrix} .\]
 

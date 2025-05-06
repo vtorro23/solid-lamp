@@ -246,7 +246,7 @@ Dado que $\displaystyle g $ es continua en $\displaystyle \left[a,b\right]  $, p
 \begin{ftheorem}[]
 	\normalfont Sea $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ una sucesión de funciones sobre $\displaystyle \left[a,b\right]  $ tal que
 	\begin{itemize}
-	\item Existe $\displaystyle x_{0} \in \left[a,b\right]  $ tal que existe el límite (puntual) $\displaystyle \lim_{x \to x_{0}}f_{n}\left(x_{0}\right) = f\left(x_{0}\right) $.
+	\item Existe $\displaystyle x_{0} \in \left[a,b\right]  $ tal que existe el límite (puntual) $\displaystyle \lim_{n \to \infty}f_{n}\left(x_{0}\right) = f\left(x_{0}\right) $.
 \item $\displaystyle f_{n} $ es derivable para $\displaystyle  n \in \N $ y la sucesión de derivadas converge uniformemente a una función $\displaystyle g $ en $\displaystyle \left[a,b\right]  $.
 	\end{itemize}
 	Entonces la sucesión $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ converge uniformemente a $\displaystyle f $ (el límite puntual) en $\displaystyle \left[a,b\right]  $ tal que $\displaystyle f $ es derivable y verfica que 
@@ -320,7 +320,7 @@ La demostración es trivial a partir de lo demostrado anteriormente sobre sucesi
 \normalfont Sea $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x\right) $, $\displaystyle x \in A $, tal que 
 \begin{description}
 \item[(a)] Existe $\displaystyle x_{0} \in A $ tal que $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x_{0}\right) $ es convergente.
-\item[(b)] Cada $\displaystyle f_{n} $ es derivable en $\displaystyle \left[a,b\right]  $, por lo que la serie $\displaystyle \sum^{\infty}_{n = 1}f'_{n}\left(x\right) $ converge uniformemente en $\displaystyle \left[a,b\right]  $.
+\item[(b)] Cada $\displaystyle f_{n} $ es derivable en $\displaystyle \left[a,b\right]  $ y la serie $\displaystyle \sum^{\infty}_{n = 1}f'_{n}\left(x\right) $ converge uniformemente en $\displaystyle \left[a,b\right]  $.
 \end{description}
 Entonces, la serie $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x\right) $ converge uniformemente a su límite puntual $\displaystyle f $ en $\displaystyle \left[a,b\right]  $ de modo que $\displaystyle f $ es derivable en $\displaystyle \left(a,b\right) $ y $\displaystyle f'\left(x\right) = \sum^{\infty}_{n = 1}f'_{n}\left(x\right) $.
 \end{ftheorem}
@@ -375,26 +375,26 @@ Como $\displaystyle \sum^{\infty}_{n = 1}\frac{1}{n^{2}} < \infty $, tenemos que
 	\normalfont Dadas $\displaystyle a \in \R $ y una sucesión $\displaystyle \left\{ a_{n}\right\} _{n\in\N}\subset \R $, se denomina \textbf{serie de potencias} centrada en $\displaystyle a $ al límite puntual de la serie de funciones $\displaystyle \sum^{\infty}_{n = 0}a_{n}\left(x-a\right)^{n} $.
 \end{fdefinition}
 \begin{ftheorem}[]
-\normalfont Sea $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ una serie de potencias. Si para $\displaystyle y \in \R $, $\displaystyle y > 0 $, se tiene que la serie numérica $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(y-a\right)^{n} $ es convergente, entonces $\displaystyle \forall r  $ tal que $\displaystyle 0<r< \left|y - a\right| $ se verifican:
+\normalfont Sea $\displaystyle \sum^{\infty}_{n = 0}a_{n}\left(x-a\right)^{n} $ una serie de potencias. Si para $\displaystyle y \in \R $, $\displaystyle y > 0 $, se tiene que la serie numérica $\displaystyle \sum^{\infty}_{n = 0}a_{n}\left(y-a\right)^{n} $ es convergente, entonces $\displaystyle \forall r  $ tal que $\displaystyle 0<r< \left|y - a\right| $ se verifican:
 \begin{description}
-	\item[(a)] $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ converge absolutamente en $\displaystyle \left[a-r, a+r\right]  $.
-	\item[(b)] $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ converge uniformemente a su límite puntual en $\displaystyle \left[a-r, a + r\right]  $.
+	\item[(a)] $\displaystyle \sum^{\infty}_{n = 0}a_{n}\left(x-a\right)^{n} $ converge absolutamente en $\displaystyle \left[a-r, a+r\right]  $.
+	\item[(b)] $\displaystyle \sum^{\infty}_{n = 0}a_{n}\left(x-a\right)^{n} $ converge uniformemente a su límite puntual en $\displaystyle \left[a-r, a + r\right]  $.
 	\item[(c)] El límite puntual es derivable y 
-		\[ \left(\sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n}\right)' = \sum^{\infty}_{n = 1}na_{n}\left(x-a\right)^{n-1},\]
+		\[ \left(\sum^{\infty}_{n = 0}a_{n}\left(x-a\right)^{n}\right)' = \sum^{\infty}_{n = 1}na_{n}\left(x-a\right)^{n-1},\]
 		uniformemente en $\displaystyle \left[a-r,a +r\right]  $.
 \end{description}
 \end{ftheorem}
 \begin{proof}
-Sea $\displaystyle f\left(x\right) = \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ con $\displaystyle a \in \dom\left(f\right) $ y $\displaystyle f\left(a\right) = a_{0} $. 
+Sea $\displaystyle f\left(x\right) = \sum^{\infty}_{n = 0}a_{n}\left(x-a\right)^{n} $ con $\displaystyle a \in \dom\left(f\right) $ y $\displaystyle f\left(a\right) = a_{0} $. 
 \begin{description}
-\item[(a) y (b)] Si $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(y-a\right)^{n} $ converge, entonces $\displaystyle \lim_{n \to \infty} \left|a_{n}\left(y-a\right)^{n}\right| = 0 $. Así, existe $\displaystyle M > 0 $ tal que $\displaystyle \forall n \in \N $, $\displaystyle \left|a_{n}\left(y-a\right)^{n}\right|<M $. Supongamos que $\displaystyle \left|x-a\right| \leq r $, entonces
-	\[\sum^{\infty}_{n = 1} \left|a_{n}\left(x-a\right)^{n}\right| = \sum^{\infty}_{n = 1} \left|a_{n}\left(y-a\right)^{n}\left(\frac{x-a}{y-a}\right)^{n}\right| .\]
+\item[(a) y (b)] Si $\displaystyle \sum^{\infty}_{n = 0}a_{n}\left(y-a\right)^{n} $ converge, entonces $\displaystyle \lim_{n \to \infty} \left|a_{n}\left(y-a\right)^{n}\right| = 0 $. Así, existe $\displaystyle M > 0 $ tal que $\displaystyle \forall n \in \N $, $\displaystyle \left|a_{n}\left(y-a\right)^{n}\right|<M $. Supongamos que $\displaystyle \left|x-a\right| \leq r $, entonces
+	\[\sum^{\infty}_{n = 0} \left|a_{n}\left(x-a\right)^{n}\right| = \sum^{\infty}_{n = 0} \left|a_{n}\left(y-a\right)^{n}\left(\frac{x-a}{y-a}\right)^{n}\right| .\]
 Tenemos que $\displaystyle \left|\frac{x-a}{y-a}\right| \leq \frac{r}{ \left|y-a\right|} < 1 $, de lo que se deduce
-\[\leq \sum^{\infty}_{n = 1} \left|a_{n}\left(y-a\right)^{n}\right| \left|\frac{r}{y-a}\right|^{n} \leq \sum^{\infty}_{n = 1}M\left|\frac{r}{y-a}\right| ^{n} < \infty  .\]
-Así, $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ converge absolutamente y, por la prueba de Weirstrass, converge absolutamente a su límite puntual en $\displaystyle \left[a-r, a + r\right]  $. 
-\item[(c)] Sabemos que $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ converge puntualmente en $\displaystyle \left[a-r, a + r\right]  $. Tomamos $\displaystyle x_{0} $ tal que $\displaystyle a + r < x_{0} < y $, por lo que
+\[\leq \sum^{\infty}_{n = 0} \left|a_{n}\left(y-a\right)^{n}\right| \left|\frac{r}{y-a}\right|^{n} \leq \sum^{\infty}_{n = 0}M\left|\frac{r}{y-a}\right| ^{n} < \infty  .\]
+Así, $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ converge absolutamente y, por la prueba M de Weirstrass, converge uniformemente a su límite puntual en $\displaystyle \left[a-r, a + r\right]  $. 
+\item[(c)] Sabemos que $\displaystyle \sum^{\infty}_{n = 0}a_{n}\left(x-a\right)^{n} $ converge puntualmente en $\displaystyle \left[a-r, a + r\right]  $. Tomamos $\displaystyle x_{0} $ tal que $\displaystyle a + r < x_{0} < y $, por lo que
 	\[ \left|a-x\right| \leq r < \left|a-x_{0}\right| < \left|a-y\right|, \; x \in \left[a-r, a + r\right]  .\]
-	Así, tenemos que 
+	Así, tenemos que para $\displaystyle x \in \left[a-r, a + r\right]  $,
 \[
 \begin{split}
 	\sum^{\infty}_{n = 1} \left|n a_{n}\left(x-a\right)^{n-1}\right| = & \sum^{\infty}_{n = 1}n \left|a_{n}\right| \left|x-a\right|^{n-1}\leq \sum^{\infty}_{n = 1}n \left|a_{n}\right| \left|x_{0}-a\right|^{n-1} 
@@ -405,7 +405,8 @@ Así, $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ converge a
 	=  \frac{M}{r}\sum^{\infty}_{n = 1}n \left|\frac{x_{0}-a}{y-a}\right|^{n} < \infty .
 \end{split}
 \]
-Esto último converge porque $\displaystyle \left|\frac{x_{0}-a}{y - a}\right| < 1 $.
+Esto último converge porque $\displaystyle \left|\frac{x_{0}-a}{y - a}\right| < 1 $. Así, tenemos que la serie de potencias de las derivadas converge puntualmente en $\displaystyle x_{0} $ y, por \textbf{(b)}, converge uniformemente en $\displaystyle \left[a-r, a +r\right]  $. Por tanto, tenemos que 
+\[f'\left(x\right) = \sum^{\infty}_{n = 1}na_{n}\left(x-a\right)^{n-1} .\]
 \end{description}
 \end{proof}
 \begin{observation}
@@ -421,7 +422,7 @@ Esto último converge porque $\displaystyle \left|\frac{x_{0}-a}{y - a}\right| <
 \item[(a)] $\displaystyle R = 0 \iff  $ $\displaystyle f\left(x\right) = \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ existe si y solo si $\displaystyle x = a $.
 \item[(b)] $\displaystyle  R > 0 \iff \forall r < R$, $\displaystyle \sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n} $ convergente uniformemente en $\displaystyle \left[a - r, a + r\right]  $ y 
 	\[ \left(\sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n}\right)' = \sum^{\infty}_{n = 1}n a_{n}\left(x-a\right)^{n-1} .\]
-\item[(c)] $\displaystyle R = \infty \iff \forall x \in \R $, $\displaystyle \sum^{\infty}_{ n=1}a_{n}\left(x-a\right)^{n} $ es convergente y 
+\item[(c)] $\displaystyle R = \infty \iff \forall x \in \R $, $\displaystyle \sum^{\infty}_{ n=1}a_{n}\left(x-a\right)^{n} $ converge absolutamente y 
 	\[ \left(\sum^{\infty}_{n = 1}a_{n}\left(x-a\right)^{n}\right)' = \sum^{\infty}_{n = 1}n a_{n}\left(x-a\right)^{n-1} .\]
 \end{description}
 \end{ftheorem}
@@ -432,7 +433,7 @@ Se deduce fácilmente a partir del teorema anterior.
 \normalfont Sea $\displaystyle \sum^{\infty}_{n = 0}a_{n}\left(x-a\right)^{n} $ una serie de potencias y sea $\displaystyle R $ su radio de convergencia.
 \begin{description}
 \item[(a)] Si existe $\displaystyle \lim_{n \to \infty} \left|\frac{a_{n+1}}{a_{n}}\right| = l $, entonces $\displaystyle R = \frac{1}{l} $. 
-\item[(b)] Si existe $\displaystyle \lim_{n \to \infty} \sqrt\left[n\right] { \left|a_{n}\right|} = l$, entonces $\displaystyle R = \frac{1}{l} $.
+\item[(b)] Si existe $\displaystyle \lim_{n \to \infty} \sqrt[n]{ \left|a_{n}\right|} = l$, entonces $\displaystyle R = \frac{1}{l} $.
 \end{description}
 \end{fcolorary}
 \begin{proof}
@@ -459,8 +460,96 @@ Así, no converge uniformemente.
 \normalfont Consideremos $\displaystyle f\left(x\right) = \sum^{\infty}_{n = 0}\frac{1}{n^{2}x + 1} $, $\displaystyle x \geq 0 $. Calculemos su dominio. 
 La serie converge si $\displaystyle x > 0 $ y si $\displaystyle x = 0 $ no converge. En efecto, si $\displaystyle x > 0 $, $\displaystyle \exists a > 0 $ tal que $\displaystyle x \geq a $, así, 
 \[\sum^{\infty}_{n = 0}\frac{1}{n^{2}x + 1} \leq \sum^{\infty}_{n = 0}\frac{1}{n^{2}a + 1} \approx \sum^{\infty}_{n = 1}\frac{1}{n^{2}} < \infty .\]
-Por la prueba de Weierstrass, tenemos que la serie converge uniformemente en $\displaystyle [a,\infty) $, $\displaystyle \forall a > 0 $, y la serie converge puntualmente en $\displaystyle (0,\infty) $. Vamos a ver si converge uniformemente en $\displaystyle \left(0,\infty\right) $.
+Por la prueba de Weierstrass, tenemos que la serie converge uniformemente en $\displaystyle [a,\infty) $, $\displaystyle \forall a > 0 $, y la serie converge puntualmente en $\displaystyle (0,\infty) $. 
 \end{eg}
+\begin{eg}
+	\normalfont Estudiemos la convergencia de $\displaystyle f_{n}\left(x\right) = \frac{x^{n}}{1 + x^{n}} $ en $\displaystyle \left[0,2\right]  $. En primer lugar, calculamos el límite puntual:
+	\[ \lim_{n \to \infty}f_{n}\left(x\right) = \lim_{n \to \infty}\frac{x^{n}}{1+x^{n}} =
+	\begin{cases}
+	0, \; x \in [0,1) \\
+	\frac{1}{2}, \; x = 1 \\
+	1, \; x \in (1,2]
+	\end{cases}
+	.\]
+	Como no conserva la continuidad, tenemos que no converge uniformemente en $\displaystyle \left[0,2\right]  $. En general, no hay convergencia uniforme en ningún intervalo $\displaystyle \left[a,b\right]  $ con $\displaystyle 1 \in \left[a,b\right]  $. Sin embargo, si cogemos un intervalo $\displaystyle \left[0,b\right]  $ con $\displaystyle b < 1 $, sí hay convergencia uniforme. En efecto, 
+	\[ \left|\frac{x^{n}}{1 + x^{n}}\right| \leq \frac{b^{n}}{1} = b^{n} \to 0 .\]
+	Similarmente, si cogemos $\displaystyle [a,2] $ con $\displaystyle a > 1 $, también converge uniformemente:
+	\[ \left|\frac{x^{n}}{1+x^{n}}-1\right| = \frac{1}{1+x^{n}} \leq \frac{1}{1+a^{n}} \to 0 .\]
+\end{eg}
+\begin{eg}
+	\normalfont Estudiemos el dominio de $\displaystyle \sum^{\infty}_{n = 1}\frac{x^{n}}{1+x^{n}} $, $\displaystyle x \in \left[0,a\right]  $. Esto no converge si $\displaystyle x \geq 1 $, por lo visto en el ejemplo anterior. Por lo visto en el ejercicio anterior, tenemos que 
+	\[\sum^{\infty}_{n = 1}\frac{x^{n}}{1+x^{n}} \leq \sum^{\infty}_{n = 1}a^{n} < \infty .\]
+	Por la prueba M de Weirstrass, la serie converge uniformemente en $\displaystyle [0,a] $ si $\displaystyle a < 1 $. Así, la serie converge puntualmente en todo $\displaystyle x \in [0,1) $. Vamos a ver que no hay convergencia uniforme en $\displaystyle [0,1) $. Si tomamos $\displaystyle x= \sqrt[N+1]{\frac{1}{2}} $,
+	\[ \left|\sum^{\infty}_{n = 1}\frac{x^{n}}{1+x^{n}}-\sum^{N}_{n = 1}\frac{x^{n}}{1+x^{n}}\right| = \sum^{\infty}_{n = N + 1}\frac{x^{n}}{1+x^{n}} \geq \frac{x^{N+1}}{1+x^{N+1}} = \frac{\frac{1}{2}}{1 + \frac{1}{2}} = \frac{1}{3}.\]
+\end{eg}
+\begin{eg}
+	\normalfont Estudiemos la integral $\displaystyle \int^{a}_{1} \frac{e^{-x^{2}}}{x} \; dx $, $\displaystyle a > 1 $. No podemos aplicar la regla de Barrow porque no se puede calcular una primitiva de $\displaystyle \frac{e^{-x^{2}}}{x} $. Sabemos que $\displaystyle e^{x} = \sum^{\infty}_{k = 0}\frac{x^{k}}{k!} $, y converge uniformemente en $\displaystyle \left[-M, M\right]  $, $\displaystyle \forall M > 0 $. Así, tenemos que
+\[
+\begin{split}
+	\int^{a}_{1} \frac{e^{-x^{2}}}{x} \; dx = & \int^{a}_{1} \frac{1}{x}\sum^{\infty}_{k = 0}\frac{\left(-x^{2}\right)^{k}}{k!} \; dx = \int^{a}_{1} \frac{1}{x} + \sum^{\infty}_{k = 1}\frac{\left(-1\right)^{k}x^{2k-1}}{k!} \; dx = \int^{a}_{1} \frac{1}{x} \; dx + \int^{a}_{1} \sum^{\infty}_{k=1}\frac{\left(-1\right)^{k}x^{2k-1}}{k!} \; dx.
+\end{split}
+\]
+Tenemos que ver que $\displaystyle \sum^{\infty}_{n = 1}\frac{\left(-1\right)^{k}x^{2k-1}}{k!} $ converge uniformemente:
+\[ \sum^{\infty}_{k = 1} \left|\frac{\left(-1\right)^{k}x^{2k-1}}{k!}\right| \leq \sum^{\infty}_{k = 1}\frac{a^{2k-1}}{k!} < \infty .\]
+La convergencia de esto último se puede comprobar con el criterio del cociente. Así, por la prueba M de Weirstrass, converge uniformemente, por lo que podemos intercambiar los límites:
+\[
+\begin{split}
+	\int^{a}_{1} \frac{e^{-x^{2}}}{x} \; dx = & \int^{a}_{1} \frac{1}{x} \; dx + \int^{a}_{1} \sum^{\infty}_{k=1}\frac{\left(-1\right)^{k}x^{2k-1}}{k!} \; dx = \ln a + \sum^{\infty}_{k = 1}\int^{a}_{1} \frac{\left(-1\right)^{k}x^{2k-1}}{k!} \; dx \\
+	= & \ln a + \sum^{\infty}_{k=1}\left[\frac{\left(-1\right)^{k}x^{2k}}{2k\left(k!\right)}\right] ^{a}_{1} = \ln a + \sum^{\infty}_{k=1}\frac{\left(-1\right)^{k}a^{2k}}{2k\left(k!\right)} - \sum^{\infty}_{k=1}\frac{\left(-1\right)^{k}}{2k\left(k!\right)} .
+\end{split}
+\]
+\end{eg}
+\begin{eg}
+\normalfont Estudiemos la convergencia de la siguiente serie de potencias:
+\[\frac{x}{2} + \frac{x^{2}}{3} + \frac{x^{3}}{2^{2}} + \frac{x^{4}}{3^{2}} + \frac{x^{5}}{2^{3}}+\frac{x^{6}}{3^{3}} + \cdots + \frac{x^{2k-1}}{2^{k}} + \frac{x^{2k}}{3^{k}} + \cdots = \sum^{\infty}_{k = 1} \frac{x^{2k-1}}{2^{k}} + \sum^{\infty}_{k = 1}\frac{x^{2k}}{3} .\]
+Vamos a ver dónde convergen estas dos series. Aplicamos el criterio del cociente:
+\[\lim_{n \to \infty}\frac{x^{2n+1}}{2^{n+1}} \frac{2^{n}}{x^{2n-1}} = \frac{1}{2}x^{2} < 1 .\]
+Así, $\displaystyle x \in \left(-\sqrt{2}, \sqrt{2}\right) $. Similarmente, 
+\[\lim_{n \to \infty}\frac{x^{2n+2}}{3^{n+1}}\frac{3^{n}}{x^{2n}} = \frac{1}{3}x^{2} < 1 .\]
+Así, $\displaystyle x \in \left(-\sqrt{3}, \sqrt{3}\right) $. Así, el radio de convergencia será $\displaystyle R = \sqrt{2} $. Así, la serie converge puntualmente en $\displaystyle \left(-\sqrt{2}, \sqrt{2}\right) $ y uniformemente en $\displaystyle \left[-r,r\right]  $ con $\displaystyle r < \sqrt{2} $. No converge en los límites del intervalo, pues
+\[ \sum^{\infty}_{n = 1}\frac{\left(\sqrt{2}\right)^{2n-1}}{2^{n}} = \sum^{\infty}_{n = 1}\frac{1}{\sqrt{2}}\frac{2^{n}}{2^{n}} = \sum^{\infty}_{n = 1}\frac{1}{\sqrt{2}} = \infty .\]
+En $\displaystyle -\sqrt{2} $ sucede que el término general no converge a 0.
+\end{eg}
+\begin{eg}
+\normalfont Sea $\displaystyle f $ uniformemente continua en $\displaystyle A $ y sea $\displaystyle f_{n} = f\left(x + \frac{1}{n}\right) $, $\displaystyle x \in A $. Vamos a ver si $\displaystyle f_{n} $ uniformemente continua en $\displaystyle A $. Calculamos el límite puntual:
+\[\lim_{n \to \infty}f_{n}\left(x\right) = \lim_{n \to \infty} f\left(x + \frac{1}{n}\right) = f\left(x\right) .\]
+Esto lo podemos hacer por ser $\displaystyle f $ continua. Por ser uniformemente continua, tenemos que $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle \left|x-y\right|<\delta  $, entonces $\displaystyle \left|f\left(x\right)-f\left(y\right)\right|<\epsilon  $. Si cogemos $\displaystyle \frac{1}{n_{0}} < \delta  $, tenemos que $\displaystyle \forall n \geq n_{0} $,  
+\[ \left|f\left(x\right)-f\left(x-\frac{1}{n}\right)\right| <\epsilon   .\]
+\end{eg}
+\begin{eg}
+\normalfont Consideremos $\displaystyle f_{n}\left(x\right) = \frac{1}{n}\arctan x^{n} $. Calculamos el límite puntual:
+\[\lim_{n \to \infty}f_{n}\left(x\right) = 0.\]
+En efecto, 
+\[ \left|f_{n}\right| = \left|\frac{1}{n}\arctan x^{n}\right| \leq \frac{1}{n}\frac{\pi }{2} \to 0 .\]
+Por tanto, $\displaystyle f_{n} $ converge uniformemente a 0. Además, $\displaystyle f' = 0 $. Calculamos la sucesión de derivadas:
+\[f'_{n}\left(x\right) = \frac{x^{n-1}}{1 + x^{2n}} =
+\begin{cases}
+0, \; x \neq 1 \\
+\frac{1}{2}, x = 1
+\end{cases}
+.\]
+Así, tenemos que en $\displaystyle 1 $ no se cumple que $\displaystyle f'\left(1\right) = \lim_{n \to \infty}f'_{n}\left(1\right) $.
+\end{eg}
+\begin{eg}
+\normalfont Consideremos la serie de potencias $\displaystyle \sum^{\infty}_{n = 1}\frac{x^{2n-1}}{2n-1} $. Calculamos el radio de convergencia:
+\[\lim_{n \to \infty}\frac{ \left|x\right|^{2n+1}}{2n+1} \frac{2n-1}{ \left|x\right|^{2n-1}} = \lim_{n \to \infty} \frac{2n-1}{2n+1} \left|x\right|^{2} = \left|x\right|^{2} .\]
+Así, la serie converge si $\displaystyle \left|x\right| < 1 $, por lo que el radio de convergencia es 1, además, se puede comprobar que converge puntualmente en $\displaystyle \left(-1, 1\right) $. También se puede decir que converge uniformemente en $\displaystyle \left[-r,r\right] \subset \left(-1,1\right) $, $\displaystyle \forall r \in \left(0,1\right) $. Se puede ver que no converge uniformemente en $\displaystyle \left(-1,1\right) $, si $\displaystyle x = \sqrt[2N+1]{2N+1} $ 
+\[ \left|\sum^{\infty}_{n = 1}\frac{x^{2n-1}}{2n-1}-\sum^{N}_{n = 1}\frac{x^{2n-1}}{2n-1}\right| = \left|\sum^{\infty}_{n = N+1}\frac{x^{2n-1}}{2n-1}\right| = \frac{x^{2N+1}}{2N+1} = \frac{2N+1}{2N+1} = 1 .\]
+\end{eg}
+\begin{eg}
+\normalfont Vamos a ver cuál de estas funciones no es continua en $\displaystyle x = 2 $. En primer lugar, consideremos 
+\[f\left(x\right) = \int^{x}_{0} \sqrt{1+\sin ^{2}t} \; dt.\]
+Como $\displaystyle g\left(t\right) = \sqrt{1 + \sin ^{2}t} $ es continua en $\displaystyle \R $, es integrable, por lo que $\displaystyle f $ es continua en $\displaystyle \R $. Consideremos ahora la función,
+\[ f\left(x\right) = \sum^{\infty}_{n = 1} \frac{x^{n-1}}{n!} .\]
+Aplicando la regla del cociente, concluimos que el radio de convergencia es infinito, por lo que es derivable en $\displaystyle \R $, por lo que es continua en $\displaystyle \R $. Consideremos ahora la función 
+\[f\left(x\right) = \int^{x}_{0} \frac{1}{\sqrt{ \left|t-2\right|}} \; dt .\]
+En este ejemplo no podemos aplicar el teorema fundamental del cálculo, como se hizo en el primer caso. Será continua en $\displaystyle x = 2 $ si existe la integral impropia:
+\[\int^{2}_{0} \frac{1}{\sqrt{ \left|t-2\right|}} \; dt = \lim_{r \to 2^{-}} \int^{r}_{0} \frac{1}{\sqrt{2-t}} \; dt = 2\sqrt{2} .\]
+Por tanto, $\displaystyle f $ es continua en $\displaystyle x = 2 $. Finalmente, consideremos la serie
+\[f\left(x\right) = \sum^{\infty}_{n = 1}\frac{\left(3-x\right)^{n}}{n} .\]
+Aplicando el criterio del cociente, podemos ver que el radio de convergencia es 1. Así, la serie converge puntualmente en el intervalo $\displaystyle \left(2,4\right) $. Como la serie no converge en $\displaystyle 2 $, no está definida en este punto, por lo que no es continua en $\displaystyle x = 2 $.  
+\end{eg}
+
 \begin{fdefinition}[Función analítica]
 \normalfont Una función $\displaystyle f $ se llama \textbf{analítica} en un entorno del punto $\displaystyle a $ si se puede expresar como una serie de potencias centrada en $\displaystyle a $, es decir, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \left|x-a\right|<\delta  $, se tiene que 
 \[f\left(x\right) = \sum^{\infty}_{ k= 0}a_{k}\left(x-a\right)^{k} .\]

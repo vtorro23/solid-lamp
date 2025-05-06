@@ -1,0 +1,79 @@
+\chapter{Espacio afín euclídeo}
+\begin{fdefinition}[Espacio afín euclídeo]
+\normalfont Un \textbf{espacio afín euclídeo} es un espacio afín $\displaystyle \mathcal{E} $ asociado a $\displaystyle \left(E, \left\langle ,  \right\rangle \right) $. Si $\displaystyle \mathcal{E} $ es un espacio afín euclídeo y $\displaystyle A, B, C \in \mathcal{E} $, llamaremos \textbf{distancia} entre $\displaystyle A $ y $\displaystyle B $, $\displaystyle d\left(A,B\right) = \|\overrightarrow{AB}\| $.  
+\end{fdefinition}
+\begin{observation}
+\normalfont La aplicación distancia está definida de la siguiente manera:
+\[
+\begin{split}
+	d : \mathcal{E} \times \mathcal{E} \to & \R \\
+	\left(A,B\right) \to & \|\overrightarrow{AB}\|.
+\end{split}
+\]
+\end{observation}
+\begin{fprop}[]
+\normalfont Sean $\displaystyle A,B,C \in \mathcal{E} $. 
+\begin{description}
+\item[(a)] $\displaystyle d\left(A,B\right) \geq 0$, $\displaystyle d\left(A,B\right) = 0 \iff \overrightarrow{AB} = \vec{0} \iff A = B $.
+\item[(b)] $\displaystyle d\left(A,B\right) = d\left(B,A\right) $. 
+\item[(c)] $\displaystyle d\left(A,B\right) \leq d\left(A,C\right) + d\left(C,B\right) $.
+\end{description}
+\end{fprop}
+\begin{proof}
+Demostramos \textbf{(c)}, puesto que \textbf{(a)} y \textbf{(b)} son triviales. Si $\displaystyle A,B,C \in \mathcal{E} $, tenemos que $\displaystyle \overrightarrow{AB} = \overrightarrow{AC} + \overrightarrow{CB} $, así
+\[ \|\overrightarrow{AB} \| = \|\overrightarrow{AC} + \overrightarrow{CB} \| \leq \|\overrightarrow{AC}\| + \|\overrightarrow{CB}\| .\]
+\end{proof}
+\begin{ftheorem}[Teorema de Pitágoras]
+\normalfont $\displaystyle d\left(B,C\right)^{2} = d\left(A,B\right)^{2} + d\left(A,C\right)^{2} \iff \left\langle \overrightarrow{AB}, \overrightarrow{AC} \right\rangle = 0 $.
+\end{ftheorem}
+\begin{proof}
+\[
+\begin{split}
+	d\left(B,C\right)^{2} = & \|\overrightarrow{BC}\|^{2} = \|\overrightarrow{BA}+\overrightarrow{AC}\|^{2} = \left\langle \overrightarrow{BA} + \overrightarrow{AC}, \overrightarrow{BA}+\overrightarrow{AC} \right\rangle = \|\overrightarrow{BA}\|^{2} + \|\overrightarrow{AC}\|^{2} + 2\left\langle \overrightarrow{BA}, \overrightarrow{AC} \right\rangle \\
+	= & d\left(A,B\right)^{2} + d\left(A,C\right)^{2}-\left\langle \overrightarrow{AB}, \overrightarrow{AC} \right\rangle  .
+\end{split}
+\]
+\end{proof}
+\begin{observation}
+	\normalfont Sea $\displaystyle \mathcal{L} = A + L $ con $\displaystyle A \in \mathcal{E} $ y $\displaystyle L \in \mathcal{L}\left(E\right) $. Sea $\displaystyle M \in \mathcal{E} $, tenemos que $\displaystyle \left\{ d\left(M,A\right) \; : \; A \in \mathcal{L}\right\} \subset \R $ y $\displaystyle \inf \left\{ d\left(M,A\right) \; : \; A \in \mathcal{L}\right\} \geq 0 $.
+\end{observation}
+\begin{fdefinition}[Distancia de un punto a una variedad lineal]
+\normalfont Llamaremos \textbf{distancia} de un punto a una variedad lineal afín a
+\[ d\left(M, \mathcal{L}\right) = \inf \left\{ d\left(M,A\right) \: : \: A \in \mathcal{L}\right\}  .\]
+\end{fdefinition}
+\begin{fdefinition}[Proyección ortogonal]
+\normalfont Llamaremos \textbf{proyección ortogonal} sobre $\displaystyle \mathcal{L} = A + L $ a la proyección de base $\displaystyle \mathcal{L} $ y dirección $\displaystyle L^{\perp }_{\left\langle ,  \right\rangle } $.
+\end{fdefinition}
+\begin{observation}
+\normalfont Si $\displaystyle A \in \mathcal{L} $, tenemos que si $\displaystyle M_{1} $ es la proyección ortogonal de $\displaystyle M $ sobre $\displaystyle L $, 
+\[ \overrightarrow{AM} = \overrightarrow{AM_{1}} + \overrightarrow{M_{1}M} .\]
+Además, tenemos que $\displaystyle \|\overrightarrow{AM}\|^{2} = \|\overrightarrow{AM_{1}}\|^{2} + \|\overrightarrow{MM_{1}}\|^{2} \geq \|\overrightarrow{MM_{1}}\|^{2} $, $\displaystyle \forall A \in \mathcal{L} $. Así, 
+\[ \inf \left\{ d\left(M,A\right) \; : \; A \in \mathcal{L}\right\} = \|\overrightarrow{MM_{1}}\|^{2} = d\left(M, \mathcal{L}\right) = d\left(M,M_{1}\right) .\]
+\end{observation}
+\begin{fdefinition}[]
+	\normalfont Un sistema de referencia $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $ cartesiano de $\displaystyle \mathcal{E} $ es ortogonal (ortonormal) si lo es la base $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $.
+\end{fdefinition}
+\begin{observation}
+\normalfont Sea $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $ un sistema de referencia ortonormal y sea $\displaystyle A,B \in \mathcal{E} $. Consideremos que 
+\[\overrightarrow{OA} = a^{1}\vec{u}_{1} + \cdots + a^{n}\vec{u}_{n}, \quad \overrightarrow{OB} = b^{1}\vec{u}_{1} + \cdots + b^{n}\vec{u}_{n} .\]
+Así, tendremos que 
+\[\overrightarrow{AB} = \overrightarrow{OB}-\overrightarrow{OA} = \left(b^{1}-a^{1}\right)\vec{u}_{1} + \cdots + \left(b^{n}-a^{n}\right)\vec{u}_{n} .\]
+Además, 
+\[
+\begin{split}
+	d\left(A,B\right)^{2} = & \|\overrightarrow{AB}\|^{2} = \begin{pmatrix} b^{1}-a^{1} & \cdots & b^{n}-a^{n} \end{pmatrix} I_{n \times n}\begin{pmatrix} b^{1}-a^{1} \\ \vdots \\ b^{n}-a^{n} \end{pmatrix} = \left(b^{1}-a^{1}\right)^{2} + \cdots + \left(b^{n}-a^{n}\right)^{2}.
+\end{split}
+\]
+Así, obtenemos que $\displaystyle d\left(A,B\right) = \sqrt{\left(b^{1}-a^{1}\right)^{2} + \cdots + \left(b^{n}-a^{n}\right)^{2}} $.
+\end{observation}
+\subsection{Distancia de un punto a un hiperplano}
+Supongamos que $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $. Sea $\displaystyle H$ el hiperplano dado por $\displaystyle \mathcal{H} : a_{1}x^{1} + \cdots + a_{n}x^{n} + b = 0 $, con $\displaystyle \left(a_{1}, \ldots, a_{n}\right) \neq \left(0, \ldots, 0\right) $. Así, tenemos que la ecuación de $\displaystyle H $ será $\displaystyle a_{1}x^{1} + \cdots + a_{n}x^{n} = 0 $. Así, 
+	\[ \left\langle a_{1}\vec{u}_{1} + \cdots + a_{n}\vec{u}_{n}, a_{1}\vec{u}_{1} + \cdots + a_{n}\vec{u}_{n} \right\rangle = 0 .\]
+	$\displaystyle H = \left\{ a_{1}\vec{u}_{1} + \cdots + a_{n}\vec{u}_{n}\right\} ^{\perp }_{\left\langle ,  \right\rangle } $. Podemos coger
+	\[\vec{n} = \frac{a_{1}\vec{u}_{1} + \cdots + a_{n}\vec{u}_{n}}{\sqrt{a^{2}_{1} + \cdots + a^{2}_{n}}} .\]
+Si $\displaystyle \overrightarrow{OM} = m^{1}\vec{u}_{1} + \cdots + m^{n}\vec{u}_{n} $. Tenemos que $\displaystyle d\left(M, \mathcal{H}\right) = \|\overrightarrow{MM_{1}}\| $, siendo $\displaystyle M_{1} $ la proyección ortogonal de $\displaystyle M $ sobre $\displaystyle \mathcal{H} $. En efecto, como $\displaystyle \overrightarrow{MM_{1}} = \lambda \vec{n} $, 
+\[d\left(M, \mathcal{H}\right) = \|\lambda \vec{n}\| = \left|\lambda \right|\|\vec{n}\| = \left|\lambda \right|.\]
+Si $\displaystyle \overrightarrow{OM_{1}} = m_{1}^{1}\vec{u}_{1} + \cdots + m_{1}^{n}\vec{u}_{n} $, entonces, por un lado, $\displaystyle \left\langle \overrightarrow{MM_{1}}, \vec{n} \right\rangle  = \lambda \left\langle \vec{n}, \vec{n} \right\rangle = \lambda $, por otro
+\[ \overrightarrow{MM_{1}} = \left(m^{1}_{1}-m^{1}\right)\vec{u}_{1} + \cdots + \left(m^{n}_{1}-m^{n}\right)\vec{u}_{n} .\]
+Así, 
+\[\therefore \left|\lambda \right| = \frac{ \left|\left(m^{1}_{1}-m^{1}\right)a_{1} + \cdots + \left(m^{n}_{1}-m^{n}\right)a_{n}\right|}{\sqrt{a^{2}_{1} + \cdots + a^{2}_{n}}} = \frac{ \left| a_{1}m^{1}+\cdots + a_{n}m^{n}+b\right|}{\sqrt{a^{2}_{1}+\cdots + a^{2}_{n}}}.\]

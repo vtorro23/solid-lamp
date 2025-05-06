@@ -16,7 +16,7 @@ Entonces, tenemos el siguiente diagrama.
 De aquí se deduce que $\displaystyle f = id _{V'} \circ f \circ id _{V} $, que es lo mismo que
 \[B = D^{-1}AC .\]
 \begin{fdefinition}[]
-	\normalfont Dos matrices $\displaystyle A,B \in \mathcal{M}_{m \times n}\left(\K\right) $ son equivalentes si existe $\displaystyle C \in \GL\left(n, \K\right) $, $\displaystyle D \in \GL\left(m, \K\right) $ tales que $\displaystyle D^{-1}AC = B $.
+	\normalfont Dos matrices $\displaystyle A,B \in \mathcal{M}_{m \times n}\left(\K\right) $ son \textbf{equivalentes} si existe $\displaystyle C \in \GL\left(n, \K\right) $, $\displaystyle D \in \GL\left(m, \K\right) $ tales que $\displaystyle D^{-1}AC = B $.
 \end{fdefinition}
 
 \begin{observation}
@@ -32,7 +32,7 @@ De aquí se deduce que $\displaystyle f = id _{V'} \circ f \circ id _{V} $, que 
 \end{observation}
 
 \begin{fdefinition}[]
-\normalfont Dos matrices $\displaystyle A, B \in \mathcal{M}_{n \times n}\left(\K\right) $ son semejantes si existe $\displaystyle C \in \GL\left(n, \K\right) $ tal que $\displaystyle B = C^{-1}AC $.
+\normalfont Dos matrices $\displaystyle A, B \in \mathcal{M}_{n \times n}\left(\K\right) $ son \textbf{semejantes} si existe $\displaystyle C \in \GL\left(n, \K\right) $ tal que $\displaystyle B = C^{-1}AC $.
 \end{fdefinition}
 
 \begin{fdefinition}[]
@@ -524,6 +524,9 @@ Así, por hipótesis tenemos que para $\displaystyle j = 1, \ldots, i - 1 $,
 En el caso de $\displaystyle \vec{u}_{i} $, tenemos que $\displaystyle \left(f - \lambda_{i}id _{V}\right)\left(\vec{u}_{i}\right) = f\left(\vec{u}_{i}\right)-\lambda_{i}\vec{u}_{i} =  a^{1}_{i}\vec{u}_{1} + \cdots + a^{i -1}_{i}\vec{u}_{i-1} $. Si aplicamos $\displaystyle \left(f - \lambda_{1}id _{V}\right) \circ \cdots \circ \left(f - \lambda_{i - 1}id _{V}\right) $ sobre el resultado anterior, obtendremos el vactor nulo, por lo que
 \[ \left(f - \lambda_{1}id _{V}\right) \circ \cdots \circ \left(f - \lambda_{i - 1}id _{V}\right)\left(f - \lambda_{i}id _{V}\right)\left(\vec{u}_{i}\right) = \vec{0} .\]
 \end{proof}
+\begin{observation}
+\normalfont Aunque lo hemos demostrado solo para $\displaystyle \K = \C $, este teorema es cierto también para $\displaystyle \K = \R $ (mirar los apuntes colgados en el CV).
+\end{observation}
 \section{Forma reducida de Jordan}
 Recordamos que $\displaystyle P_{cf}\left(x\right) = \det\left(A - xI_{n\times n}\right) $, donde $\displaystyle f \in \End\left(V\right) $ y $\displaystyle A $ es la matriz asociada a $\displaystyle f $. Sea $\displaystyle I = \left\{ p\left(x\right) \in \K[x] \; : \; p\left(f\right) = 0\right\}  $. Sabemos que $\displaystyle I \neq \emptyset $. 
 Tenemos que $\displaystyle I $ es un ideal. En efecto, si $\displaystyle p\left(x\right), q\left(x\right) \in I $,

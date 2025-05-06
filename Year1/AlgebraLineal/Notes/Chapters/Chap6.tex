@@ -669,7 +669,7 @@ f\circ s\left(\vec{x}\right) = f^{2}\left(\vec{x}\right) = \vec{x} \\
 f\circ s\left(f\left(\vec{x}\right)\right) = f\left(\vec{x}\right).
 \end{split}
 \]
-Por tanto, se tiene que $\displaystyle \vec{x} $ y $\displaystyle f\left(\vec{x}\right) $ pertenecen al eje de la rotación, por lo que $\displaystyle \vec{x} -f\left(\vec{x}\right) $ pertenece también a este. Por tanto, $\displaystyle s $ es la simetría vectorial ortogonal respecto del plano $\displaystyle \left\{ \vec{x}-f\left(\vec{x}\right)\right\} ^{\perp }_{\left\langle ,  \right\rangle } $ y $\displaystyle \rho $ es la rotación vectorial de eje $\displaystyle L\left( \left\{ \vec{x}-f\left(\vec{x}\right) \right\} \right)$, y cumplen que $\displaystyle f = \rho \circ \sigma  $.
+Por tanto, se tiene que $\displaystyle \vec{x} $ y $\displaystyle f\left(\vec{x}\right) $ pertenecen al eje de la rotación, por lo que $\displaystyle \vec{x} -f\left(\vec{x}\right) $ pertenece también a este. Por tanto, $\displaystyle s $ es la simetría vectorial ortogonal respecto del plano $\displaystyle \left\{ \vec{x}-f\left(\vec{x}\right)\right\} ^{\perp }_{\left\langle ,  \right\rangle } $ y $\displaystyle \rho $ es la rotación vectorial de eje $\displaystyle L\left( \left\{ \vec{x}-f\left(\vec{x}\right) \right\} \right)$, y cumplen que $\displaystyle f = \rho \circ s  $.
 	\end{description}
 \end{proof}
 \end{description}
@@ -687,4 +687,122 @@ Sea $\displaystyle f \in O_{3}\left(\R\right) $ y $\displaystyle L = \left\{ \ve
 	0 & b & a\end{pmatrix}, \; a^{2} + b^{2} = 1 .\]
 \item[(4)] Si $\displaystyle \dim\left(L\right)= 0 $, $\displaystyle f \in O^{-}_{3}\left(\R\right) $. Tenemos que $\displaystyle f = - id _{E} \circ f $ se descompone de manera única como producto de una rotación $\displaystyle \rho $ y la simetría vectorial ortogonal respecto del plano ortogonal al eje de la rotación. 
 \end{description}
-
+\section{Producto vectorial}
+Sea $\displaystyle E $ un espacio vectorial euclídeo de dimensión 3, que tiene un producto escalar. Sea $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \vec{u}_{3}\right\}  $ una base ortonormal de $\displaystyle E $. Consideremos 
+\[\vec{x} = x^{1}\vec{u}_{1} +x^{2}\vec{u}_{2} +x^{3}\vec{u}_{3}, \quad \vec{y}= y^{1}\vec{u}_{1} + y^{2}\vec{u}_{2} + y^{3}\vec{u}_{3}, \quad \vec{z} = z^{1}\vec{u}_{1} + z^{2}\vec{u}_{2} + z^{3}\vec{u}_{3} .\]
+Tenemos que 
+\[\det_{ \left\{ \vec{u}_{i}\right\} } = \begin{vmatrix} x^{1} & y^{1} & z^{1} \\
+x^{2} & y^{2} & z^{2} \\
+x^{3} & y^{3} & z^{3}\end{vmatrix} \in \R .\]
+Tenemos que podemos definir la siguiente aplicación: 
+\[
+\begin{split}
+	\forall \vec{u}, \vec{v} \in E, \; \det_{ \left\{ \vec{u}_{i}\right\} } \left(\vec{u}, \vec{v}, \cdot \right) : V & \to \R \\
+	\vec{x} & \to \det_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{u}, \vec{v}, \vec{x}\right).
+\end{split}
+\]
+Tenemos que $\displaystyle \det_{ \left\{ \vec{u}_{i}\right\} } \in E^{*} $. Además, $\displaystyle \exists!\vec{u} \land \vec{v} $ tal que $\displaystyle \left\langle ,  \right\rangle _{\vec{u}\land\vec{v}} = \det_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{u}, \vec{v}, \cdot\right) $. Tenemos que $\displaystyle \forall \vec{x} \in E $, 
+\[\left\langle \vec{u}\land\vec{v}, \vec{x} \right\rangle = \det_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{u}, \vec{v}, \vec{x}\right) .\]
+Al vector $\displaystyle \vec{u} \land \vec{v} $ lo llamamos producto vectorial de $\displaystyle \vec{u} $ y $\displaystyle \vec{v} $.
+\begin{fprop}[]
+\normalfont 
+\begin{description}
+\item[(1)] $\displaystyle \vec{u} \land \vec{v} = - \vec{v}\land\vec{u} $.
+\item[(2)] $\displaystyle \forall a \in \R $, $\displaystyle \left(a\vec{u}\right)\land\vec{v} = a \vec{u} \land \vec{v} $.
+\item[(3)] $\displaystyle \vec{u}\land\left(\vec{v}_{1} + \vec{v}_{2}\right) = \vec{u} \land \vec{v}_{1} + \vec{u}\land \vec{v}_{2} $.
+\item[(4)] $\displaystyle \vec{u}\land\vec{v} \in \left\{ \vec{u}\right\} ^{\perp }_{\left\langle ,  \right\rangle } \cap \left\{ \vec{v}\right\} ^{\perp }_{\left\langle ,  \right\rangle } $.
+\item[(5)] $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ son linealmente independientes si y solo si $\displaystyle \vec{u} \land \vec{v} \neq \vec{0} $.
+\item[(6)] Si $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ son linealmente independientes, entonces $\displaystyle \left\{ \vec{u}, \vec{v}, \vec{u}+\vec{v}\right\}  $ son base de $\displaystyle E $ que define la misma orientación que $\displaystyle \left\{ \vec{u}_{1}, \vec{u}_{2}, \vec{u}_{3}\right\}  $. 
+	\[ 0 < \|\vec{u}\land\vec{v}\|^{2} = \det_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{u}, \vec{v}, \vec{u}\land\vec{v}\right) .\]
+\item[(7)] $\displaystyle \vec{u}_{1} \land \vec{u}_{2} = \vec{u}_{3} = -\vec{u}_{2}\land\vec{u}_{1} $. $\displaystyle \forall \vec{u} = a^{1}\vec{u}_{1} + a^{2}\vec{u}_{2} + a^{3}\vec{u}_{3} $, 
+	\[
+	\begin{split}
+	a^{1} = \left\langle \vec{u}_{1}, \vec{u}_{1} \right\rangle, \quad \left\langle \vec{u}_{1}\land\vec{v}_{2}, \vec{u}_{1} \right\rangle = 0 \\
+	a^{2} = \left\langle \vec{u}_{2}, \vec{u}_{2} \right\rangle, \quad \left\langle \vec{u}_{1}\land\vec{u}_{2}, \vec{u}_{2} \right\rangle = 0 \\
+	a^{3} = \left\langle \vec{u}_{3}, \vec{u}_{3} \right\rangle, \quad \left\langle \vec{u}_{1}\land\vec{u}_{2}, \vec{u}_{3} \right\rangle = \det_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{u}_{1}, \vec{u}_{2}, \vec{u}_{3}\right) = 1 .
+	\end{split}
+	\]	
+\end{description}
+\end{fprop}
+\begin{proof}
+\begin{description}
+	\item[(5)] Si $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ son linealmente independientes, existe $\displaystyle \vec{z} \in E $ tal que $\displaystyle \left\{ \vec{u}, \vec{v}, \vec{z}\right\}  $ es base de $\displaystyle E $.
+		\[\det_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{u}, \vec{v}, \vec{z}\right) = \left\langle \vec{u}\land\vec{v}, \vec{z} \right\rangle \neq 0 \Rightarrow \vec{u} \land \vec{v} \neq \vec{0}.\]
+	Recíprocamente, si $\displaystyle \vec{u} \land \vec{v} \neq \vec{0} $, tenemos que existe $\displaystyle \vec{z} \in E $ tal que
+	\[\left\langle \vec{u}\land\vec{v}, \vec{z} \right\rangle = \det_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{u}, \vec{v}, \vec{z}\right) \neq 0.\]
+	Por tanto, $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ son linealmente independientes.
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont De \textbf{(1)} se deduce que $\displaystyle \det_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{u}, \vec{v}, \vec{x}\right) = - \det_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{u}, \vec{v}, \vec{x}\right) $, $\displaystyle \forall \vec{x} \in E $, por lo que $\displaystyle \left\langle \vec{u}\land\vec{v}, \vec{x} \right\rangle = - \left\langle \vec{v}\land\vec{u}, \vec{x} \right\rangle  $.
+\end{observation}
+\begin{observation}
+\normalfont Continuamos después de la \textbf{(7)}:
+\[
+\begin{split}
+\vec{u}_{1} \land \vec{u}_{2} = \vec{u}_{3} = - \vec{u}_{2}\land\vec{u}_{1} \\
+\vec{u}_{2}\land\vec{u}_{3} = \vec{u}_{1} = - \vec{u}_{3}\land\vec{u}_{2} \\
+\vec{u}_{3}\land\vec{u}_{1} = \vec{u}_{2} = - \vec{u}_{1}\land\vec{u}_{3}.
+\end{split}
+\]
+\end{observation}
+\begin{observation}
+\normalfont Sean $\displaystyle \vec{x} = x^{1}\vec{u}_{1} + x^{2}\vec{u}_{2}+x^{3}\vec{u}_{3} $ e $\displaystyle \vec{y} = y^{1}\vec{u}_{1} + y^{2}\vec{u}_{2}+y^{3}\vec{u}_{3} $. Tenemos que 
+\[
+\begin{split}
+	\vec{x}\land\vec{y} = & x^{1}y^{1}\left(\vec{u}_{1}\land\vec{u}_{1}\right) + x^{1}y^{2}\left(\vec{u}_{1}\land\vec{u}_{2}\right) + x^{1}y^{3}\left(\vec{u}_{1}\land\vec{u}_{3}\right) + x^{2}y^{1}\left(\vec{u}_{2}\land\vec{u}_{1}\right)+x^{3}y^{2}\left(\vec{u}_{3}\land\vec{u}_{2}\right)+x^{3}y^{3}\left(\vec{u}_{3}\land\vec{u}_{3}\right) \\
+	= &  x^{1}y^{2}\vec{u}_{3} - x^{1}y^{3}\vec{u}_{2} -x^{2}y^{1}\vec{u}_{3}+x^{3}y^{1}\vec{u}_{1}+x^{3}y^{1}\vec{u}_{2}-x^{3}y^{2}\vec{u}_{1} \\
+	= & \left(x^{2}y^{3} -x^{3}y^{2}\right)\vec{u}_{1} +\left(x^{3}y^{1}-x^{1}y^{3}\right)\vec{u}_{2}+\left(x^{1}y^{2}-x^{2}y^{1}\right)\vec{u}_{3} \\
+	= & \begin{vmatrix} \vec{u}_{1} & x^{1} & y^{1} \\
+	\vec{u}_{2} & x^{2} & y^{2} \\
+\vec{u}_{3} & x^{3} & y^{3}\end{vmatrix} .
+\end{split}
+\]
+\end{observation}
+\begin{fprop}[]
+\normalfont Si $\displaystyle \vec{x}, \vec{y}, \vec{z} \in E $, $\displaystyle \left(\vec{x}\land\vec{y}\right)\land\vec{z} = \left\langle \vec{x}, \vec{z} \right\rangle \vec{y}-\left\langle \vec{y}, \vec{z} \right\rangle \vec{x} $.
+\end{fprop}
+\begin{proof}
+Tenemos que 
+\[\left\langle \vec{x}, \vec{z} \right\rangle = x^{1}z^{1}+x^{2}z^{2}+x^{3}z^{3} .\]
+\[\left\langle \vec{y}, \vec{z} \right\rangle = y^{1}z^{1}+y^{2}z^{2}+y^{3}z^{3} .\]
+Así, tenemos que 
+\[
+\begin{split}
+	\left(\vec{x}\land\vec{y}\right)\land\vec{z} = & \left(\left(x^{1}z^{1}+x^{2}z^{2}+x^{3}z^{3}\right)y^{1}-\left(y^{1}z^{1}+y^{2}z^{2}+y^{3}z^{3}\right)x^{1}\right) \vec{u}_{1} \\
+	+ & completar en casa.
+\end{split}
+\]
+Sin pérdida de generalidad, la primera coordenada de $\displaystyle \left(\vec{x} \land \vec{y}\right)\land\vec{z} $ será:
+\[
+\begin{split}
+ \begin{vmatrix} \vec{u}_{1} & x^{2}y^{3}-x^{3}y^{2} & z^{1} \\
+\vec{u}_{2} & x^{3}y^{1}-x^{1}y^{3} & z^{2} \\
+\vec{u}_{3} & x^{1}y^{2}-x^{2}y^{1} & z^{3}\end{vmatrix} = & \begin{vmatrix} x^{3}y^{1}-x^{1}y^{3} & z^{2} \\ x^{1}y^{2}-x^{2}y^{1} & z^{3} \end{vmatrix} \vec{u}_{1} - \begin{vmatrix} x^{2}y^{3}-x^{3}y^{2} & z^{1} \\ x^{1}y^{2} -x^{2}y^{1} & z^{3} \end{vmatrix} \vec{u}_{2} + \begin{vmatrix} x^{2}y^{3}-x^{3}y^{2} & z^{1} \\ x^{2}y^{1}-x^{1}y^{3} & z^{2} \end{vmatrix} \\
+= & \left(x^{3}y^{1}z^{3}-x^{1}y^{3}z^{3}-x^{1}y^{2}z^{2}+x^{2}y^{1}z^{2}\right)\vec{u}_{1}.
+\end{split}
+\]
+\end{proof}
+\begin{ftheorem}[]
+\normalfont Si $\displaystyle \vec{x}, \vec{y}, \vec{z}, \vec{w} \in E $, entonces $\displaystyle \left\langle \vec{x}\land\vec{y}, \vec{z}\land\vec{w} \right\rangle = \left\langle \vec{x}, \vec{z} \right\rangle \left\langle \vec{y}, \vec{w} \right\rangle -\left\langle \vec{x}, \vec{w} \right\rangle \left\langle \vec{y}, \vec{z} \right\rangle  $.
+\end{ftheorem}
+\begin{proof}
+\[
+\begin{split}
+	\left\langle \vec{x}\land\vec{y}, \vec{z}\land\vec{w} \right\rangle = & \det_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{z}, \vec{w}, \vec{x}\land\vec{y}\right) = \det_{ \left\{ \vec{u}_{i}\right\} }\left(\vec{x}\land\vec{y}, \vec{z}, \vec{w}\right)=\left\langle \left(\vec{x}\land\vec{y}\right)\land\vec{z}, \vec{w} \right\rangle = \left\langle \left\langle \vec{x}, \vec{z} \right\rangle \vec{y}-\left\langle \vec{y}, \vec{z} \right\rangle \vec{x}, \vec{w} \right\rangle \\
+	= &  \left\langle \vec{x}, \vec{z} \right\rangle \left\langle \vec{w}, \vec{y} \right\rangle -\left\langle \vec{y}, \vec{z} \right\rangle \left\langle \vec{x}, \vec{w} \right\rangle  .
+\end{split}
+\]
+\end{proof}
+\begin{fcolorary}[]
+\normalfont Si $\displaystyle \vec{x}, \vec{y} \in E $, $\displaystyle \|\vec{x}\land\vec{y}\|^{2} = \|\vec{x}\|^{2}\|\vec{y}\|^{2}-\left\langle \vec{x}, \vec{y} \right\rangle ^{2} $.
+\end{fcolorary}
+\begin{proof}
+\[\frac{\|\vec{x}\land\vec{y}\|^{2}}{\|\vec{x}\|^{2}\|\vec{y}\|^{2}} = 1 - \frac{\left\langle \vec{x}, \vec{y} \right\rangle ^{2}}{\|\vec{x}\|^{2}\|\vec{y}\|^{2}} .\]
+\end{proof}
+\begin{fdefinition}[Ángulo entre dos vectores]
+	\normalfont Si $\displaystyle \vec{x}, \vec{y} \in E/ \left\{ \vec{0}\right\}  $, tenemos que 
+	\[\left\langle \vec{x}, \vec{y} \right\rangle ^{2} \leq \|\vec{x}\|^{2}\|\vec{y}\|^{2}, \quad \frac{\left\langle \vec{x}, \vec{y} \right\rangle ^{2}}{\|\vec{x}\|^{2}\|\vec{y}\|^{2}}\leq1 .\]
+	Llamaremos \textbf{ángulo} entre $\displaystyle \vec{x} $ e $\displaystyle \vec{y} $ el único $\displaystyle \theta \in \left[0,\pi \right]  $, tal que 
+	\[\cos\theta = \frac{\left\langle \vec{x}, \vec{y} \right\rangle }{\|\vec{x}\|\|\vec{y}\|}, \quad \cos^{2}\theta = \frac{\left\langle \vec{x}, \vec{y} \right\rangle ^{2}}{\|\vec{x}\|^{2}\|\vec{y}\|^{2}} .\]
+\end{fdefinition}

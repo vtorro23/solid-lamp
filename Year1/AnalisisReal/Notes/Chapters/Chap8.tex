@@ -97,7 +97,7 @@ Vamos a dar criterios que funcionan por la derecha, puesto que por la izquierda 
 \normalfont Sea $\displaystyle f : [a,b) \to \R $ tal que existe $\displaystyle \int^{r}_{a} f $, $\displaystyle \forall r \in [a,b) $. 
 \begin{description}
 \item[(a)] Si $\displaystyle b \in \R $, existe la integral impropia $\displaystyle \int^{b}_{a} f  $ si y solo si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \delta > 0 $, tal que si $\displaystyle x_{1}, x_{2} \in \left(b-\delta, b\right) $, se tiene que $\displaystyle \left|\int^{x_{2}}_{x_{1}} f \right|< \epsilon  $.
-\item[(b)] Si $\displaystyle b = \infty $, existe la integral impropia $\displaystyle \int^{\infty}_{a} f $ si y solo si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists M > 0 $ tal que si $\displaystyle x_{1}, x_{2} > M $ se tiene que $\displaystyle \left|\int^{x_{1}}_{x_{1}} f \right|<\epsilon  $.
+\item[(b)] Si $\displaystyle b = \infty $, existe la integral impropia $\displaystyle \int^{\infty}_{a} f $ si y solo si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists M > 0 $ tal que si $\displaystyle x_{1}, x_{2} > M $ se tiene que $\displaystyle \left|\int^{x_{2}}_{x_{1}} f \right|<\epsilon  $.
 \end{description}
 \end{ftheorem}
 \begin{proof}
@@ -195,7 +195,7 @@ Similarmente,
 \normalfont Demostremos que el recíproco del criterio de convergencia absoluta es falso. Consideremos la aplicación $\displaystyle f\left(x\right) = \frac{\left(-1\right)^{n}}{n} $ si $\displaystyle x \in [n,n+1) $. Tenemos que 
 \[\int^{\infty}_{1} f\left(x\right) \; dx = \sum^{\infty}_{n = 1}\frac{\left(-1\right)^{n}}{n} < \infty \quad \text{(Criterio de Leibniz)} \]
 Sin embargo, tenemos que 
-\[\int^{\infty}_{1} f\left(x\right) \; dx = \sum^{\infty}_{n =1 }\frac{1}{n} = \infty .\]
+\[\int^{\infty}_{1} \left|f\left(x\right)\right| \; dx = \sum^{\infty}_{n =1 }\frac{1}{n} = \infty .\]
 \end{eg}
 \begin{ftheorem}[Criterio de la serie]
 	\normalfont Sea $\displaystyle f : [a,b) \to \R $ tal que existe $\displaystyle \int^{r}_{a} f\left(x\right) \; dx $, $\displaystyle \forall r \in [a,b) $. Entonces existe $\displaystyle \int^{b}_{a} f\left(x\right) \; dx  $ si y solo si $\displaystyle \forall \left\{ x_{n}\right\} _{n\in\N}\subset[a,b) $ con $\displaystyle x_{n} \to b $ se tiene que $\displaystyle \sum^{\infty}_{n=1}\int^{x_{n+1}}_{x_{n}} f\left(x\right) \; dx $ es convergente.

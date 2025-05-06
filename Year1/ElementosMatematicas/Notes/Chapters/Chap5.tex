@@ -39,8 +39,32 @@ siendo $\displaystyle a $ el número de aristas.
 \begin{fcolorary}[]
 \normalfont La suma de los grados de un grafo es par. En consecuencia, un grafo no puede tener un número impar de vértices de grado impar.
 \end{fcolorary}
+\begin{proof}
+	Sea $\displaystyle  $ 
+	\[ V = \left\{ v_{1}, \ldots, v_{n}\right\} = \left\{ \underbrace{v_{1}, \ldots, v_{t}}_{\text{grado impar}}, \underbrace{v_{t+1},\ldots, v_{n}}_{\text{grado par}}\right\} .\]
+Por el lema del apretón de manos:
+\[
+\begin{split}
+& \grad\left(v_{1}\right) + \cdots + \grad\left(v_{t}\right) + \grad\left(v_{t+1}\right) + \cdots + \grad\left(v_{n}\right) = t\left(2k-1\right) + \left(n-t\right)2l = 2a \\
+\Rightarrow & t\left(2k-1\right) = 2m \Rightarrow t \equiv 0 \mod 2 .
+\end{split}
+\]
+\end{proof}
 \begin{fdefinition}[Isomorfismo]
 \normalfont Dados $\displaystyle G_{1} = \left(V_{1}, A_{1}\right) $ y $\displaystyle G_{2} = \left(V_{2}, A_{2}\right) $, consiste en dos aplicaciones biyectivas:
 \[\Phi_{V}: V_{1} \to V_{2} \quad \text{y} \quad \Phi_{A} : A_{1} \to A_{2} .\]
 de forma que $\displaystyle a \in A_{1} $ conecta a $\displaystyle v $ con 
 \end{fdefinition}
+\begin{fprop}[Criterios isomorfismos]
+\normalfont 
+\begin{description}
+\item[(a)] Si dos grafos no tienen el mismo número de vértices y de aristas no pueden ser isomorfos.
+\item[(b)] Si los grados de los vértices no son iguales en ambos, estos no pueden ser isomorfos.
+\item[(c)] La conexión se preserva bajo isomorfismo de grafos.
+\item[(d)] La existencia de ciclos cerrados se preserva bajo isomorfismo.
+\end{description}
+\end{fprop}
+\begin{fdefinition}[Camino]
+\normalfont Un \textbf{camino} de longitud $\displaystyle k $ entre $\displaystyle v, v' \in V $ consiste en una cadena continua de $\displaystyle k $ aristas que empieza en $\displaystyle v $ y termina en $\displaystyle v' $. Un camino es un \textbf{circuito} si comienza y termina en el mismo vértice y tiene longitud mayor que cero. Un camino es \textbf{simple} si no contiene la misma arista más de una vez.  
+\end{fdefinition}
+

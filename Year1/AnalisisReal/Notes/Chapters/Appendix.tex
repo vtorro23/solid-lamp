@@ -1,156 +1,3 @@
-\chapter{Productos infinitos}
-
-Sea $\displaystyle \left\{ b_{j}\right\} _{j\in\N}\subset\left(0, \infty\right) $ y sea $\displaystyle B_{n} = \prod^{n}_{j=1}b_{j} $. Se dice que el producto infinito converge si 
-\[\prod^{\infty}_{j=1}b_{j} = \lim_{n \to \infty}B_{n} = l > 0 .\]
-
-\begin{eg}
-\normalfont 
-\begin{description}
-\item[(i)] Sea $\displaystyle b_{j} = \frac{1}{j} > 0 $. Entonces, 
-\[B_{n} = \prod^{n}_{j=1}\frac{1}{j} = \frac{1}{n!} \to 0 .\]
-No converge. 
-\item[(ii)] Sea $\displaystyle b_{j}= 1 - \frac{1}{j^{2}}, \; j \geq 2 $. Tenemos que 
-	\[b_{j} = 1 - \frac{1}{j^{2}} = \frac{j^{2}-1}{j^{2}} = \frac{\left(j+1\right)\left(j-1\right)}{j^{2}} .\]
-Tenemos que, 
-\[
-\begin{split}
-	B_{3} = & \frac{1 \cdot 3}{2 \cdot 2} \cdot \frac{2 \cdot 4}{3 \cdot 3} = \frac{4}{2 \cdot 3} \\
-	B_{4} = & \frac{4}{2 \cdot 3} \cdot \frac{3 \cdot 5}{4 \cdot 4} = \frac{5}{2 \cdot 4} \\
-	\vdots & \\
-	B_{n} = & \frac{n+1}{2n} \to \frac{1}{2}.
-\end{split}
-\]
-\item[(iii)] Calcular $\displaystyle \prod^{\infty}_{j=1}\left(1 +\frac{1}{j^{2}}\right) $.
-\end{description}
-\end{eg}
-
-\begin{ftheorem}[]
-	\normalfont Sea $\displaystyle b_{j} = 1 + a_{j}, \; a_{j}>0 $. Entonces, $\displaystyle \prod^{\infty}_{j=1}b_{j} $ converge si y solo si $\displaystyle \sum^{\infty}_{j=1}a_{j} < \infty $. En particular, si $\displaystyle \prod^{\infty}_{j=1}b_{j} $ converge, entonces $\displaystyle b_{j} \to 1 $.
-\end{ftheorem}
-
-\begin{proof}
-Por continuidad del logaritmo, si $\displaystyle \log\left(\prod^{\infty}_{j=1}b_{j}\right) $, lo de dentro también debe converger. Así, tenemos que
-\[\log\left(\prod^{n}_{j=1}b_{j}\right) = \sum^{n}_{j=1}\log\left(1+a_{j}\right) .\]
-Sabemos que $\displaystyle \lim_{x \to 0^{+}}\frac{\log\left(1 + x\right)}{x} = 1 $. Así,
-\[\frac{\log\left(1 + a_{j}\right)}{a_{j}}\to 1 .\]
-Por comparación, $\displaystyle \sum^{\infty}_{j=1}\log\left(1+a_{j}\right) < \infty \iff \sum^{\infty}_{j=1}a_{j} < \infty $.
-\end{proof}
-
-\begin{eg}
-\normalfont Así, tenemos que $\displaystyle \prod^{\infty}_{j=1}\left(1 + \frac{1}{j^{2}}\right) $ converge pues $\displaystyle \sum^{\infty}_{j=1}\frac{1}{j^{2}}<\infty $.
-\end{eg}
-
-\chapter{Reordenamiento de series}
-
-Sea $\displaystyle f: \N \to \N $ biyectiva. Dada una serie $\displaystyle \sum^{\infty}_{n = 1}a_{n} $, qué pasa con la serie $\displaystyle \sum^{\infty}_{n = 1}a_{f\left(n\right)} $?
-\begin{ftheorem}[]
-\normalfont Si $\displaystyle \sum^{\infty}_{n = 1} \left|a_{n}\right| < \infty $, entonces $\displaystyle \sum^{\infty}_{n = 1} a_{f\left(n\right)} = \sum^{\infty}_{n = 1}a_{n} $. Sin embargo, Riemann probó que si $\displaystyle \sum^{\infty}_{n = 1}a_{n} $ no converge absolutamente y tomamos $\displaystyle c \in \R $, entonces existe $\displaystyle f : \N \to \N $ biyectiva tal que $\displaystyle \sum^{\infty}_{n = 1}a_{f\left(n\right)} = c . $ 
-\end{ftheorem}
-
-\begin{eg}
-\normalfont Considera $\displaystyle a_{n} = \left(-1\right)^{n} $, sabemos que $\displaystyle \sum^{\infty}_{n = 1}a_{n} $ no converge. 
-\[\sum^{\infty}_{n=1}\left(-1\right)^{n} = \left(-1+1\right) + \left(-1+1\right) + \cdots = 0 + 0 + \cdots .\]
-Similarmente, 
-\[\sum^{\infty}_{n = 1}\left(-1\right)^{n} = -1 + \left(1 + -1\right) + \left(-1+1\right) + \cdots = -1 .\]
-\end{eg}
-
-\chapter{Series de potencias}
-
-Anteriormente, hemos visto series numéricas, es decir, $\displaystyle \sum^{\infty}_{n = 1}a_{n} $, con $\displaystyle a_{n} \in \R $. Ahora, queremos estudiar $\displaystyle f_{n} : I \subset \R \to \R $ tal que $\displaystyle \sum^{\infty}_{n = 1}f_{n}\left(x\right), \; x \in I $. En particular, nos interesan funciones del tipo $\displaystyle f_{n}\left(x\right) = a_{n}\left(x-x_{0}\right)^{n}, \; x_{0} \in I $. Queremos ver si una $\displaystyle f $ cualquiera la puedo reescribir de la manera:
-\[f\left(x\right) = \sum^{\infty}_{ n = 0}a_{n}\left(x-x_{0}\right)^{n} .\]
-Esta es su serie de Taylor si $\displaystyle f \in \mathcal{C}^{\infty}\left(I\right) $ (se puede derivar infinitas veces) y decimos que $\displaystyle a_{n} = \frac{ f^{\left(n\right)}\left(x_{0}\right)}{n!}$.
-\begin{eg}
-\normalfont 
-\begin{description}
-\item[(i)] $\displaystyle e^{x} = \sum^{\infty}_{n = 0}\frac{x^{n}}{n!} $.
-\item[(ii)] $\displaystyle \sin x = \sum^{\infty}_{n = 0}\left(-1\right)^{n}\frac{x^{2n+1}}{\left(2n+1\right)!} $.
-\item[(iii)] $\displaystyle \cos x = \sum^{\infty}_{ n = 0}\left(-1\right)^{n}\frac{x^{2n}}{\left(2n\right)!}$.
-\end{description}
-\end{eg}
-
-\chapter{Función logarítmica}
-
-Sea $\displaystyle f\left(x\right) = e^{x} $ con $\displaystyle x \in \R $. Como $\displaystyle e > 1 $, entonces $\displaystyle \lim_{x \to \infty}f\left(x\right)=\infty $. Similarmente, sabemos que $\displaystyle \lim_{x \to -\infty}f\left(x\right) = 0 $ y $\displaystyle f\left(0\right) = 1 $. Tenemos que $\displaystyle f $ es inyectiva, pues si $\displaystyle f\left(x\right) = f\left(y\right) $, entonces
-\[e^{x-y} = 1 \Rightarrow x - y = 0 \iff x = y .\]
-Además, si $\displaystyle x < y $, 
-\[e^{x} = e^{x-y+y} = e^{x-y}e^{y} < e^{y} .\]
-Así, $\displaystyle f $ es estrictamente creciente y $\displaystyle f: \R \to \left(0, \infty\right) $ es exhaustiva. Entonces, $\displaystyle \forall y \in \left(0, \infty\right), \; \exists!x \in \R $ tal que $\displaystyle e^{x} = y $. Entonces, podemos concluir que $\displaystyle f: \R \to \left(0, \infty\right) $ es biyectiva. Por lo tanto, podemos definir la función inversa de $\displaystyle e^{x} $, que denotaremos como $\displaystyle \log x = \ln x $  \footnote{Vamos a considerar que $\displaystyle \log  $ no está en base 10 sino en base $\displaystyle e $.}. Entonces
-\[\log:\left(0,\infty\right) \to \R, \; \log\left(e^{x}\right) = x \iff e^{\log x } = x .\]
-
-\begin{observation}
-\normalfont En general, si $\displaystyle a > 0 $ y $\displaystyle a\neq 1 $, se define 
-\[\log_{a}x = y \iff a^{y} = x  .\]
-\end{observation}
-
-\begin{eg}
-\normalfont Si $\displaystyle a = \frac{1}{2} $, tenemos que $\displaystyle \lim_{x \to \infty}\log_{\frac{1}{2}}x = -\infty $. Similarmente, $\displaystyle \lim_{x \to 0}\log_{\frac{1}{2}}x= \infty $.
-\end{eg}
-
-\begin{fprop}[]
-\normalfont 
-\begin{description}
-\item[(i)] $\displaystyle \log xy = \log x + \log y $, con $\displaystyle x,y > 0 $.
-\item[(ii)] $\displaystyle \log x^{a} = a \log x $ con $\displaystyle x > 0 $ y $\displaystyle a \in \R $.
-\item[(iii)] Cambio de base. Sean $\displaystyle a,b > 0 $ con $\displaystyle a,b \neq 1 $ y $\displaystyle x > 0 $. Tenemos que
-	\[\log_{b}x = \frac{\log_{a}x}{\log_{a}b} .\]
-\item[(iv)] Si $\displaystyle a > 0 $ con $\displaystyle a \neq 1 $, y $\displaystyle x, y > 0 $,
-	\[x^{\log_{a}y} = y^{\log_{a}x} .\]
-\end{description}
-\end{fprop}
-
-\begin{proof}
-\begin{description}
-\item[(i)] Tenemos que si $\displaystyle \log xy = a $, $\displaystyle e^{a} = xy $. Sea $\displaystyle a_{1} = \log x  $ y $\displaystyle a_{2} = \log y $. Entonces, $\displaystyle x = e^{a_{1}} $ e $\displaystyle y = e^{a_{2}} $. Entonces, tenemos que
-	\[e^{a} = xy = e^{a_{1}}e^{a_{2}} = e^{a_{1}+a_{2}} \Rightarrow a = a_{1} + a_{2} .\]
-Entonces, $\displaystyle \log xy = \log x + \log y $.
-\item[(ii)] Sea $\displaystyle \log x^{a} = b $. Entonces, $\displaystyle x^{a} = e^{b} $. Si $\displaystyle a_{1} = \log x $, $\displaystyle e^{a_{1}} = x $. Así, 
-	\[\left(e^{a_{1}}\right)^{a} = e^{a a_{1}} = e^{b} .\]
-Por tanto, $\displaystyle b = a a_{1} $ y $\displaystyle \log x^{a} = a\log x $.
-\item[(iii)] Tenemos que 
-	\[\log_{a}b \cdot \log_{b}x = \log_{a}b^{\log_{b}x} = \log_{a}x .\]
-\item[(iv)] Sea $\displaystyle x \neq 1 $,
-	\[\log_{a}y = \log_{x}y^{\log_{a}x} = \log_{a}x\log_{x}y = \log_{a}x\frac{\log_{a}y}{\log_{a}x} .\] 
-\end{description}
-\end{proof}
-
-\begin{observation}
-\normalfont Queremos ver que $\displaystyle \lim_{x \to 0}\frac{\log\left(1+x\right)}{x} = 1 $. Tenemos que
-\[\frac{\log\left(1+x\right)}{x} = \frac{1}{x}\log\left(1+x\right) = \log\left(1+x\right)^{\frac{1}{x}} .\]
-Sea $\displaystyle y = \frac{1}{x} $, si $\displaystyle x \to 0 $, $\displaystyle y \to \infty $. Así, 
-\[\log\left(1+x\right)^{\frac{1}{x}} = \log\left(1 + \frac{1}{y}\right)^{y} .\]
-Así, 
-\[\lim_{x \to 0}\frac{\log\left(1+x\right)}{x} = \lim_{x \to 0}\log\left(1+x\right)^{\frac{1}{x}} = \lim_{y \to \infty}\log\left(1+\frac{1}{y}\right)^{y} = \log e = 1 .\]
-\end{observation}
-
-\begin{eg}
-	\normalfont Sean $\displaystyle a,b > 0 $ y sea $\displaystyle x_{n} = \left(\frac{\sqrt[n]{a} + \sqrt[n]{b}}{2}\right)^{n} $. Tenemos que
-	\[ \left(\frac{\sqrt[n]{a} + \sqrt[n]{b}}{2}\right)^{n} = \left(\frac{\sqrt[n]{a} + \sqrt[n]{a}\sqrt[n]{\frac{b}{a}}}{2}\right)^{n} = a \left(\frac{1 + \sqrt[n]{\frac{b}{a}}}{2}\right)^{n} .\]
-Sea $\displaystyle r = \frac{b}{a} $,
-\[
-\begin{split}
-	 \left(\frac{1 + \sqrt[n]{\frac{b}{a}}}{2}\right)^{n} = &  \left(\frac{1 + \sqrt[n]{r}}{2}\right)^{n} = \left(1-1+\frac{1+\sqrt[n]{r}}{2}\right)^{n}= \left(1 + \frac{\sqrt[n]{r}-1}{2}\right)^{n} = \left(1 + \frac{1}{\frac{2}{\sqrt[n]{r}-1}}\right)^{n} \\
-	= & \left(1+\frac{1}{\frac{2}{\sqrt[n]{r}-1}}\right)^{\frac{2}{\sqrt[n]{r}-1}\frac{\sqrt[n]{r}-1}{2}n}.
-\end{split}
-\]
-Entonces, tenemos que calcular $\displaystyle \lim_{n \to \infty}n\frac{\sqrt[n]{r}-1}{2} $. Tenemos que
-\[ n \frac{\sqrt[n]{r}-1}{2} = \frac{n}{2}\underbrace{\frac{\sqrt[n]{r}-1}{\log\sqrt[n]{r}}}_{1}\log\sqrt[n]{r} \to \frac{1}{2}\log r.\]
-Entonces, 
-\[\lim_{n \to \infty}\left(1+\frac{1}{\frac{2}{\sqrt[n]{r}-1}}\right)^{\frac{2}{\sqrt[n]{r}-1}\frac{\sqrt[n]{r}-1}{2}n}=e^{\frac{1}{2}\log r} = \sqrt{r} .\]
-Así, 
-\[\lim_{n \to \infty}\left(\frac{\sqrt[n]{a} + \sqrt[n]{b}}{2}\right)^{n} = a \sqrt{\frac{b}{a}} = \sqrt{ab} .\]
-\end{eg}
-
-\begin{observation}
-\normalfont Sabemos que $\displaystyle \lim_{x \to 0}\frac{x}{\log\left(x+1\right)} = 1 $. Por lo tanto, si $\displaystyle x_{n} > 0 $, con $\displaystyle x_{n} \to 0 $, 
-\[\lim_{n \to \infty}\frac{x_{n}}{\log\left(x_{n}+1\right)} = 1.\]
-Tomando, $\displaystyle x_{n} = \sqrt[n]{r} - 1 \to 0 $.
-\end{observation}
-
-\begin{eg}
-\normalfont Consideremos $\displaystyle \lim_{x \to 0} \frac{\log\left(1+x\right)}{\sin x} = 1 $, pues
-\[\lim_{x \to 0}\frac{\log\left(x+1\right)}{\sin x} = \frac{\log\left(1+x\right)}{x} \cdot \frac{x}{\sin x} = 1 \cdot 1 = 1 .\]
-\end{eg}
-
 \chapter{Construcción de $\displaystyle \R $}
 
 Sabemos qué son los números naturales, $\displaystyle \N $. Con ellos definimos los números enteros, $\displaystyle \Z $, y a partir de estos se introduce $\displaystyle \Q $, el cuerpo de los números racionales. A partir de aquí, existen diversas construcciones de los números reales $\displaystyle \R $. Veamos una que está basada en la siguiente idea: vamos a interpretar un número real como una sucesión de Cauchy. \\ \\
@@ -201,3 +48,53 @@ x_{n} < -\epsilon, \; \forall n\geq n_{0}.
 \end{fdefinition}
 
 Así, tenemos que $\displaystyle \left(\R, + , \cdot, >\right) $ es un cuerpo abeliano totalmente ordenado y arquimediano. 
+\chapter{Monstruo de Weirstrass}
+\section{Monstruo de Weirstrass}
+Para $\displaystyle x \in \R $ definimos la distancia de $\displaystyle x $ a $\displaystyle \Z $ por 
+\[ \left[x\right] = d\left(x,\Z\right)= \min \left\{ \left|x-z\right| \; : \; z \in \Z\right\}  .\]
+Esta función es continua en todo $\displaystyle \R $ y no es derivable en los puntos de la forma $\displaystyle x = \frac{k}{2} $, $\displaystyle k \in \Z $. Definimos la siguiente sucesión de funciones:
+\[f_{n}\left(x\right) = \frac{1}{10^{n}}\left[10^{n}x\right], \; \forall x \in \R, \; \forall n \in \N .\]
+Nuevamente, son funciones continuas en todo $\displaystyle \R $ y no derivables en los puntos de la forma $\displaystyle x = \frac{k}{2}\frac{1}{10^{n}} $, $\displaystyle k \in \Z $.
+\begin{ftheorem}[]
+\normalfont La función $\displaystyle f\left(x\right) = \sum^{\infty}_{n = 1}f_{n}\left(x\right) = \sum^{\infty}_{n = 1}\frac{1}{10^{n}}\left[10^{n}x\right] $ 
+es continua en todo $\displaystyle \R $ y no es derivable en ningún punto de $\displaystyle \R $.
+\end{ftheorem}
+\begin{proof}
+Aplicando la prueba M de Weirstrass:
+\[ \left|f_{n}\left(x\right)\right| < \frac{1}{10^{n}}, \; \forall x \in \R .\]
+Como $\displaystyle \sum^{\infty}_{n = 1}\frac{1}{10^{n}}<\infty $, tenemos que la serie de funciones converge uniformemente a su límite puntual $\displaystyle f $ en todo $\displaystyle \R $. De la convergencia uniforme deduciemos que $\displaystyle f $ es continua en todo $\displaystyle \R $. \\
+Observemos que todas las funciones $\displaystyle f_{n} $ son 1-periódicas y por tanto $\displaystyle f $ también lo es. Ahora, para ver que $\displaystyle f $ no es derivable en ningún punto de $\displaystyle \R $ fijamos $\displaystyle a \in \R $ y encontramos una sucesión $\displaystyle \left\{ h_{m}\right\} _{m\in\N}\subset \R $ tal que $\displaystyle h_{m} \to 0 $ y no existe 
+\[\lim_{m \to \infty}\frac{f\left(a+h_{m}\right)-f\left(a\right)}{h_{m}} .\]
+Como $\displaystyle f $ es 1-periódica, basta con tomar $\displaystyle a \in (0,1] $. Tenemos que $\displaystyle a $ se puede escribir en forma decimal, 
+\[ a = \sum^{\infty}_{m = 1}\frac{a_{m}}{10^{m}} .\]
+Podemos ver que 
+\[\frac{1}{2} = 0,5 = 0,49999 \ldots .\]
+Definimos la sucesión $\displaystyle \left\{ h_{m}\right\} _{m\in\N} $ por:
+\[h_{m} =
+\begin{cases}
+	\frac{1}{10^{m}}, \; a_{m} \not\in \left\{ 4,9\right\} \\
+	-\frac{1}{10^{m}}, \; a_{m} \in \left\{ 4,9\right\} 
+\end{cases}
+.\]
+Claramente, $\displaystyle h_{m} \to 0 $. Además, 
+\[
+\begin{split}
+	\frac{f\left(a+h_{m}\right)-f\left(a\right)}{h_{m}} = & \sum^{\infty}_{n = 1}\frac{1}{10^{n}}\frac{\left[10^{n}\left(a+h_{m}\right)\right] -\left[10^{n}a\right] }{\pm10^{-m}} 
+	=  \sum^{\infty}_{n = 1}\pm10^{m - n}\left(\left[10^{n}\left(a+h_{m}\right)\right] -\left[10^{n}a\right] \right) \\
+	= & \sum^{m - 1}_{n = 1}\pm 10^{m - n}\left(\left[10^{n}\left(a+h_{m}\right)\right] -\left[10^{n}a\right] \right).
+\end{split}
+\]
+La última igualdad iene de que si $\displaystyle n \geq m $, entonces $\displaystyle 10^{n}h_{m} $ es entero, como la función $\displaystyle \left[x\right]  $ es 1-periódica, se tiene que $\displaystyle \left[10^{n}\left(a+h_{m}\right)\right] =\left[10^{n}a\right]  $. Por otra parte, para $\displaystyle n < m $, podemos escribir
+\[10^{n}a = l + 0,a_{n+1}a_{n+2} \ldots a_{m} \ldots .\]
+\[10^{n}\left(a+h_{m}\right) = l + 0,a_{n+1}a_{n+2} \ldots \left(a_{m}\pm1\right) \ldots, \; l \in \Z .\]
+Supongamos que 
+\[0,a_{n+1}a_{n+2} \ldots a_{m} \ldots \leq \frac{1}{2} = 0,4999 \ldots .\]
+Entonces, por la elección de $\displaystyle h_{m} $,
+\[0,a_{n+1}a_{n+2} \ldots \left(a_{m}\pm 1\right) \ldots \leq \frac{1}{2} = 0,4999 \ldots .\]
+Así, tenemos que $\displaystyle \left[10^{n}\left(a+h_{m}\right)\right] -\left[10^{n}a\right] = \pm 1 $, por lo que $\displaystyle 10^{m - n}\left(\left[10^{n}\left(a+h_{m}\right)\right] -\left[10^{n}a\right] \right) = \pm 1 $. Análogamente, si $\displaystyle 0,a_{n+1}a_{n+2} \ldots a_{m} \ldots > \frac{1}{2} = 0,4999 \ldots $, entonces, por la elección de $\displaystyle h_{m} $,
+\[0,a_{n+1}a_{n+2} \ldots \left(a_{m}\pm 1\right) \ldots > \frac{1}{2} = 0,4999 \ldots .\]
+Así, tenemos que $\displaystyle \left[10^{n}\left(a+h_{m}\right)\right] -\left[10^{n}a\right] = \pm 10^{n-m} $, por lo que $\displaystyle 10^{m - n}\left(\left[10^{n}\left(a+h_{m}\right)\right] -\left[10^{n}a\right] \right) = \pm 1 $. Así, acabamos de ver que 
+\[\frac{f\left(a+h_{m}\right)-f\left(a\right)}{h_{m}} \]
+es la suma de $\displaystyle m - 1 $ números, cada uno de los cuales es 1 o $\displaystyle - 1 $. Ahora, al sumar a un entero un 1 o $\displaystyle - 1 $ cambia la paridad del número, por tanto el cociente anterior no puede converger porque es una sucesión de enteros alternativamente pares e impares.
+\end{proof}
+
