@@ -1,0 +1,175 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Análisis - Mayo 2025}
+%\author{Victoria Eugenia Torroja Rubio}
+\date{19/5/2025}
+
+\maketitle
+
+\begin{ej}
+	Sea $\displaystyle f : \left[a,b\right] \to \R $ acotada e integrable en $\displaystyle \left[a,b\right]  $. Prueba que existe $\displaystyle \mu \in \left[\inf f, \sup f\right]  $ de modo que 
+	\[\int^{b}_{a} f = \mu\left(b-a\right) .\]
+\end{ej}
+\begin{sol}
+	Dado que $\displaystyle f $ está acotada en $\displaystyle \left[a,b\right]  $, por el axioma del supremo existen $\displaystyle \beta = \inf \left\{ f\left(t\right) \; : \; t \in \left[a,b\right] \right\}  $ y $\displaystyle \alpha = \sup \left\{ f\left(t\right) \; : \; t \in \left[a,b\right] \right\}  $. Además, tenemos que $\displaystyle \forall x \in \left[a,b\right]  $,
+	\[\beta \leq f\left(x\right) \leq \alpha  .\]
+	Dado que $\displaystyle f $ es integrables, se deduce que 
+	\[\int^{b}_{a} \beta  \leq \int^{b}_{a} f \leq \int^{b}_{a} \alpha \iff \beta\left(b-a\right) \leq \int^{b}_{a} f \leq \alpha\left(b-a\right) .\]
+	Consideremos ahora la función $\displaystyle g\left(x\right) = x\left(b-a\right) $. Por ser polinómica es continua en $\displaystyle \R $, en particular, es continua en $\displaystyle \left[a,b\right]  $. Además, tenemos que $\displaystyle \int^{b}_{a} f \in \left[g\left(\beta \right), g\left(\alpha \right)\right]  $. Recordamos el teorema de la conexión:
+\begin{theorem}[Teorema de la conexión]
+	Sea $\displaystyle f : \left[a,b\right] \to \R $ con $\displaystyle f $ continua en $\displaystyle \left[a,b\right]  $ y sea $\displaystyle \lambda \in \left[f\left(a\right), f\left(b\right)\right]  $ (o $\displaystyle \lambda \in \left[f\left(b\right), f\left(a\right)\right]  $). Entonces, como consecuencia del teorema de Bolzano, existe $\displaystyle c \in \left(a,b\right) $ tal que $\displaystyle f\left(c\right) = \lambda  $.
+\end{theorem}
+Dado que $\displaystyle g $ cumple las hipótesis del teorema de la conexión, $\displaystyle \exists \mu \in \left[\beta, \alpha \right]  $ tal que $\displaystyle \int^{b}_{a} f = \mu\left(b-a\right) $.
+\end{sol}
+\begin{ej}
+	Sea $\displaystyle f : \left[a,b\right] \to \R $ continua en $\displaystyle \left[a,b\right]  $ y derivable en $\displaystyle \left(a,b\right) $. Es $\displaystyle f $ Lipchitziana? Es decir, existirá $\displaystyle M > 0 $ de modo que $\displaystyle \left|f\left(x\right) - f\left(y\right)\right| \leq M \left|x-y\right| $, para todo $\displaystyle x,y \in \left[a,b\right]  $? \\
+	( \textbf{Indicación:} la diferencia $\displaystyle f\left(x\right)-f\left(y\right) $ sugiere usar el Teorema del Valor Medio.)
+\end{ej}
+\begin{sol}
+	Vamos a ver que que una función que cumple con estas condiciones no tiene por qué ser de Lipchitz. En efecto, consideremos la función $\displaystyle f\left(x\right) = \sqrt{x} $ en $\displaystyle \left[0,1\right]  $. Tenemos que $\displaystyle f'\left(x\right) = \frac{1}{2\sqrt{x}} $, por lo que 
+	\[\lim_{x \to 0^{+}}f'\left(x\right) = \infty .\]
+Ahora recordamos el Teorema del Valor Medio:
+\begin{theorem}[Teorema del Valor Medio]
+	Sea $\displaystyle f : \left[a,b\right] \to \R $ continua en $\displaystyle \left[a,b\right]  $ y derivable en $\displaystyle \left(a,b\right) $. Existe $\displaystyle c \in \left(a,b\right) $ tal que 
+	\[\frac{f\left(b\right)-f\left(a\right)}{b-a} = f'\left(c\right) .\]
+\end{theorem}
+Por un lado, tenemos que si $\displaystyle M > 0$, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle x \in \left(0, \delta \right) $, se tiene que 
+\[ \left|f'\left(x\right)\right| > M .\]
+Dado que nuestra función cumple con las hipótesis del Teorema del Valor Medio, $\displaystyle \exists c_{x} \in \left(0,x\right) $ tal que 
+\[ \left|f\left(x\right)-f\left(0\right)\right| = \left|f'\left(c_{x}\right)\right| \left|x - 0\right| \geq M \left|x-0\right| .\]
+Esto contradice que $\displaystyle f $ sea de Lipchitz. 
+\end{sol}
+\begin{ej}
+	Sea $\displaystyle f : \left[a,b\right] \to \R $ continua en $\displaystyle \left[a,b\right]  $ y derivable en $\displaystyle \left(a,b\right) $. Si $\displaystyle f\left(a\right) = f\left(b\right) $ y $\displaystyle f' $ es decreciente, prueba que $\displaystyle f\left(x\right) \geq f\left(a\right) $, para todo $\displaystyle x \in \left[a,b\right]  $.
+\end{ej}
+\begin{sol}
+	Supongamos que no es cierto que $\displaystyle f\left(x\right) \geq f\left(a\right) $, $\displaystyle \forall x \in \left[a,b\right]  $. Entonces, tenemos que existe $\displaystyle x_{0} \in \left[a,b\right]  $ tal que $\displaystyle f\left(x_{0}\right) < f\left(a\right) $. Además, como $\displaystyle f $ es continua en $\displaystyle \left[a,b\right]  $ tenemos que tiene un mínimo en este intervalo, es decir, $\displaystyle \exists x_{1} \in \left[a,b\right]  $ con $\displaystyle f\left(x_{1}\right) \leq f\left(x\right) $, $\displaystyle \forall x\in \left[a,b\right]  $. En particular, tenemos que $\displaystyle f\left(x_{1}\right) \leq f\left(x_{0}\right)< f\left(a\right) $.
+Por ser $\displaystyle f $ derivable en $\displaystyle \left(a,b\right) $ tenemos que $\displaystyle f'\left(x_{1}\right) = 0 $. \\
+Dado que $\displaystyle f $ es continua en $\displaystyle \left[x_{1}, b\right]  $ y es derivable en $\displaystyle \left(x_{1}, b\right) $, por el teorema del valor medio tenemos que existe $\displaystyle c \in \left(x_{1}, b\right) $ tal que 
+\[f'\left(c\right) = \frac{f\left(b\right)-f\left(x_{1}\right)}{b-x} > 0 .\]
+Dado que $\displaystyle c > x_{1} $ y $\displaystyle f'\left(c\right) > f'\left(x_{1}\right) $, tenemos que $\displaystyle f' $ no es decreciente, lo que contradice nuestra hipótesis. Por tanto, debe ser que $\displaystyle f\left(x\right) \geq f\left(a\right)$, $\displaystyle \forall x \in \left[a,b\right]  $.
+\end{sol}
+\begin{ej}
+	Sea $\displaystyle f : \left[a,b\right] \to \R $ integrable en $\displaystyle \left[a,b\right]  $. Sea $\displaystyle \lambda \in \left(-\infty, 0\right) $. Prueba que $\displaystyle \lambda f $ es integrable en $\displaystyle \left[a,b\right]  $ y que 
+	\[\int^{b}_{a} \lambda f = \lambda \int^{b}_{a} f .\]
+\end{ej}
+\begin{sol}
+	Dado que $\displaystyle \lambda < 0 $ se tiene que para una partición $\displaystyle P = \left\{ t_{0} = a, t_{1}, \ldots, t_{n} = b\right\}  $, $\displaystyle i = 0, \ldots, n-1 $ 
+\[ M_{\lambda f, i} = \sup \left\{ \lambda f\left(t\right) \; : \; t \in \left[t_{i}, t_{i+1}\right] \right\} = \lambda \inf \left\{ f \left(t\right) \; : \; t \in \left[t_{i}, t_{i+1}\right] \right\} = \lambda m_{f,i}.\]
+\[m_{\lambda f, i} = \inf \left\{ \lambda f\left(t\right) \; : \; t \in \left[t_{i}, t_{i+1}\right] \right\} = \lambda \sup \left\{ f\left(t\right) \; : \; t \in \left[t_{i}, t_{i+1}\right] \right\} = \lambda M_{f, i} .\]
+Dado que $\displaystyle f $ es integrable, por el criterio de integrabilidad de Riemann tenemos que si $\displaystyle \epsilon' = \frac{\epsilon }{-\lambda}> 0 $, existe una partición $\displaystyle P $ tal que $\displaystyle S\left(f,P\right)-I\left(f,P\right) < \epsilon' = \frac{\epsilon }{-\lambda }  $. Así, tenemos que 
+\[
+	S\left(\lambda f, P\right)-I\left(\lambda f, P\right) = \lambda I\left(f,P\right) - \lambda S\left(f,P\right) = -\lambda \left[S\left(f,P\right)-I\left(f,P\right)\right] < -\lambda \frac{\epsilon }{-\lambda } = \epsilon .
+\]
+Así, hemos visto que $\displaystyle \lambda f $ es integrable en $\displaystyle \left[a,b\right]  $. Ahora demostramos la segunda parte. Supongamos si pérdida de generalidad que $\displaystyle \int^{b}_{a} \lambda f \geq \lambda \int^{b}_{a} f  $. 
+\[0 \leq \int^{b}_{a} \lambda f - \lambda \int^{b}_{a} f \leq S\left(\lambda f, P\right)- \lambda S\left(f,P\right) = \lambda I\left(f,P\right)-\lambda S\left(f,P\right) = - \lambda \left[S\left(f,P\right)-I\left(f,P\right)\right] < -\lambda \frac{\epsilon }{-\lambda } = \epsilon  .\]
+Como esto es cierto para $\displaystyle \forall \epsilon > 0 $, tenemos que $\displaystyle \int^{b}_{a} \lambda f = \lambda \int^{b}_{a} f $.
+\end{sol}
+\begin{ej}
+Calcula $\displaystyle \int -\frac{x\sin x + \sin x + \cos x}{\left(x+1\right)^{2}} \; dx $.
+\end{ej}
+\begin{sol}
+Aplicamos la regla de integración por partes:
+\[
+\begin{split}
+	\int -\frac{x\sin x + \sin x + \cos x}{\left(x+1\right)^{2}} \; dx = & \frac{x\sin x + \sin x + \cos x}{x + 1} - \int \frac{\sin x + x \cos x + \cos x - \sin x}{x + 1} \; dx \\
+	= & \frac{x\sin x + \sin x + \cos x}{x + 1} - \int \frac{\left(x+1\right)\cos x}{x + 1} \; dx \\
+	= & \frac{x\sin x + \sin x + \cos x}{x+1} - \sin x + C .
+\end{split}
+\]
+\end{sol}
+\begin{ej}
+	Se define la función $\displaystyle f\left(x\right) = \frac{\left(-1\right)^{n}}{3\sqrt[3]{x^{2}+2}+1} $ si $\displaystyle x \in [n, n+1) $ con $\displaystyle n = 1, 2, \ldots $. Comprueba que $\displaystyle \int^{\infty}_{1} \left|f\left(x\right)\right| \; dx= \infty $ y que $\displaystyle \int^{\infty}_{1} f\left(x\right) \; dx $ es convergente.
+\end{ej}
+\begin{sol}
+En primer lugar estudiamos $\displaystyle \int^{\infty}_{1} \left|f\left(x\right)\right| \; dx $. Tenemos que 
+\[ \left|f\left(x\right)\right| = \frac{1}{3\sqrt[3]{x^{2}+2}+1} .\]
+Dado que $\displaystyle \left|f\left(x\right)\right| \geq 0 $, podemos aplicar el criterio de comparación por cociente:
+\[\lim_{x \to \infty}\frac{\frac{1}{3\sqrt[3]{x^{2}+2}+1}}{\frac{1}{\sqrt[3]{x^{2}}}} = \frac{1}{3} \in \left(0,\infty\right) .\]
+Por tanto, 
+\[\int^{\infty}_{1} \left|f\left(x\right)\right| \; dx < \infty \iff \int^{\infty}_{1} \frac{1}{\sqrt[3]{x^{2}}} \; dx < \infty .\]
+Dado que 
+\[\int^{\infty}_{1} \frac{1}{\sqrt[3]{x^{2}}} \; dx = 3\sqrt[3]{x}|^{\infty}_{1} \to \infty .\]
+Así, tenemos que $\displaystyle \int^{\infty}_{1} \left|f\left(x\right)\right| \; dx = \infty $. Ahora vamos a ver que $\displaystyle \int^{\infty}_{1} f\left(x\right) \; dx $ converge. Para ello, aplicamos el criterio de Dirichlet. Consideremos $\displaystyle g\left(x\right) = \left(-1\right)^{n} $ para $\displaystyle x \in [n, n+1) $ y $\displaystyle h\left(x\right) = \frac{1}{3\sqrt[3]{x^{2}+2}+1} $. Tenemos que ver que 
+\begin{itemize}
+\item $\displaystyle \left|\int^{M}_{1} g\left(x\right) \; dx\right| \leq K $, $\displaystyle \forall M \in \left(1,\infty\right) $.
+\item $\displaystyle h\left(x\right) $ es monótona y $\displaystyle \lim_{x \to \infty}h\left(x\right) = 0 $.
+\end{itemize}
+En primer lugar, si $\displaystyle M > 1 $, tenemos que existe $\displaystyle n \in \N $ tal que $\displaystyle n \leq M < n + 1 $. Por un lado si $\displaystyle N \in \N $, 
+\[\int^{N}_{1} g\left(x\right) \; dx = \sum^{N-1}_{k = 1}\int^{k+1}_{k} g\left(x\right) \; dx = \sum^{N-1}_{k=1}\left(-1\right)^{k} \in \left\{ 1, 0, - 1\right\}  .\]
+Así, tenemos que
+\[
+\begin{split}
+ \left|\int^{M}_{1} g\left(x\right) \; dx \right| = & \left|\int^{n}_{1} g\left(x\right) \; dx + \int^{M}_{n} g\left(x\right) \; dx\right| \leq \left|\int^{n}_{1} g\left(x\right) \; dx\right| + \left| \int^{M}_{n} g\left(x\right) \; dx\right| \\
+ \leq & 1 + \int^{M}_{n} \left|g\left(x\right)\right| \; dx = 1 + M-n \leq 1 + 1 = 2.
+\end{split}
+\]
+Así, hemos comprobado que se cumple la primera hipótesis. Ahora vamos a ver que se cumple la segunda. Tenemos que 
+\[\lim_{x \to \infty}\frac{1}{3\sqrt[3]{x^{2}+2}+1} = 0 .\]
+Además, $\displaystyle h $ es monótona. En efecto, si $\displaystyle x \leq y $,
+\[x^{2} + 2 \leq y^{2} + 2 \iff 3\sqrt[3]{x^{2}+2}+1 \leq 3\sqrt[3]{y^{2}+2}+1 \iff \frac{1}{3\sqrt[3]{x^{2}+2}+1} \geq \frac{1}{3\sqrt[3]{y^{2}+2}+1} .\]
+Así, hemos visto que es monótona decreciente. Dado que se cumplen las dos hipótesis del criterio de Dirichlet, tenemos que la integral impropia $\displaystyle \int^{\infty}_{1} f\left(x\right) \; dx $ converge. 
+\end{sol}
+\begin{ej}
+	Calcula la serie de Taylor centrada en cero de la función coseno hiperbólico $\displaystyle \cosh x = \frac{e^{x}+e^{-x}}{2} $. Cuál es su radio de convergencia? Qué orden $\displaystyle n $ del resto $\displaystyle R_{0,n}\left(x\right) $ es suficiente para que el polinomio de Taylor $\displaystyle P_{0,n}\left(x\right) $ aproxime a la función con un error menor que $\displaystyle \frac{1}{100} $ en todo el intervalo $\displaystyle \left[-1,1\right]  $? Justifica todas las respuestas.
+\end{ej}
+\begin{sol}
+Hay dos formas de deducir la fórmula para el polinomio de Taylor. 
+\begin{description}
+\item[Forma 1.] Tenemos que $\displaystyle e^{x} = \sum^{\infty}_{n = 0}\frac{x^{n}}{n!} $. Así,
+	\[
+	\begin{split}
+		\cosh x = & \frac{e^{x}+e^{-x}}{2} = \frac{1}{2}\left(\sum^{\infty}_{n = 0}\frac{x^{n}}{n!} + \sum^{\infty}_{n = 0}\frac{\left(-x\right)^{n}}{n!}\right) = \frac{1}{2} \sum^{\infty}_{n = 0}\frac{x^{n} + \left(-1\right)^{n}x^{n}}{n!} = \sum^{\infty}_{n = 0}\frac{x^{2n}}{\left(2n\right)!} .
+	\end{split}
+	\]
+\item[Forma 2.]	Tenemos que $\displaystyle \cosh\left(0\right) = 1 $ y $\displaystyle \left(\cosh\right)'\left(0\right) = \sinh\left(0\right) = 0 $. Así, tenemos que para $\displaystyle n \in \N $ 
+	\[\left(\cosh \right)^{(2n)} \left(0\right) = 1, \; \left(\cosh\right)^{(2n+1)}\left(0\right) = 0.\]
+	Así, dado que el polinomio de Taylor centrado en cero tiene la forma $\displaystyle \sum^{n}_{k = 0}\frac{f^{\left(k\right)}\left(0\right)}{k!}x^{k} $, tenemos que la serie de Taylor será:
+\[\sum^{\infty}_{n = 0}\frac{x^{2n}}{\left(2n\right)!} .\]
+\end{description}
+Dado que la serie de Taylor es una serie de potencias, calculamos el radio de convergencia como lo haríamos con otras series de potencias. Aplicamos el criterio del cociente:
+\[ \left|\frac{x^{2n+2}}{\left(2n+2\right)!}\right| \left|\frac{\left(2n\right)!}{x^{2}}\right| = \frac{x^{2}}{\left(2n+2\right)\left(2n+1\right)}\to 0 .\]
+Dado que la serie converge para cualquier $\displaystyle x \in \R $, tenemos que el radio de convergencia es $\displaystyle \infty $. Para calcular el resto aplicamos el teorema de Taylor:
+\[
+\begin{split}
+	\left|R_{0,n}\left(x\right)\right| = & \left|\int^{x}_{0} \frac{f^{\left(n+1\right)}\left(t\right)}{n!}\left(x-t\right)^{n} \; dx\right| \leq \int^{x}_{0} \frac{ \left|f^{\left(n+1\right)}\left(t\right)\right|}{n!} \left|x-t\right|^{n} \; dx  .
+\end{split}
+\]
+Dado que $\displaystyle f^{\left(n+1\right)}\left(t\right) \in \left\{ \sinh\left(t\right), \cosh\left(t\right)\right\}  $, si $\displaystyle t \in \left[-1,1\right]  $, tenemos que (gráficamente se puede comprobar) $\displaystyle \left|f^{\left(n+1\right)}\left(t\right)\right|\leq \frac{e + \frac{1}{e}}{2} $. Así, tenemos que
+\[\int^{x}_{0} \frac{ \left|f^{\left(n+1\right)}\left(t\right)\right|}{n!} \left|x-t\right|^{n} \; dx \leq \frac{e+\frac{1}{e}}{2n!}\int^{x}_{0} \left|x-t\right|^{n} \; dx = \frac{e+\frac{1}{e}}{2\left(n+1\right)!}\left[- \left|x-t\right|^{n+1}\right] ^{x}_{0}  = \frac{e+\frac{1}{e}}{2} \frac{ \left|t\right|^{n+1}}{\left(n+1\right)!}.\]
+Como $\displaystyle t \in \left[-1,1\right]  $ tenemos que $\displaystyle \left|t\right| \leq 1 $, por lo que 
+\[\frac{e+\frac{1}{e}}{2} \frac{ \left|t\right|^{n+1}}{\left(n+1\right)!} \leq \frac{e + \frac{1}{e}}{2}\frac{1}{\left(n+1\right)!} .\]
+Tenemos que $\displaystyle \frac{e+\frac{1}{e}}{2} \approx \frac{3}{2} $. Probando, tenemos que si $\displaystyle n = 5 $,
+\[\frac{e + \frac{1}{e}}{2}\frac{1}{\left(5+1\right)!} \approx \frac{3}{2}\frac{1}{6!} = \frac{1}{2 \cdot 5! \cdot 2} = \frac{1}{240} \leq \frac{1}{100} .\]
+\end{sol}
+\begin{ej}
+	Calcula $\displaystyle \lim_{n \to \infty }\int^{1}_{0} \frac{n^{\frac{3}{2}}e^{x}}{4n^{2}x^{2}-4nx+2} \; dx $ y $\displaystyle \lim_{n \to \infty}\int^{1}_{\frac{1}{2}}  \frac{n^{\frac{3}{2}}e^{x}}{4n^{2}x^{2}-4nx+2} \; dx $. 
+\end{ej}
+\begin{sol}
+Consideremos la sucesión de funciones $\displaystyle f_{n}\left(x\right) = \frac{n^{\frac{3}{2}}e^{x}}{4n^{2}x^{2}-4nx+2} $. Calculamos el límite puntual. Si $\displaystyle x \neq 0 $,
+\[\lim_{n \to \infty}f_{n}\left(x\right) = \lim_{n \to \infty} \frac{n^{\frac{3}{2}}e^{x}}{4n^{2}x^{2}-4nx+2} = 0.\]
+Si $\displaystyle x = 0 $ tenemos que $\displaystyle \lim_{n \to \infty}f_{n}\left(0\right) = \infty $. Así, el límite puntual de $\displaystyle f_{n} $ es $\displaystyle f = 0 $ en $\displaystyle (0,1] $. Vamos a ver que converge uniformemente en $\displaystyle [a,1] $ si $\displaystyle a > 0 $.En primer lugar, vamos a ver cuándo $\displaystyle g_{n}\left(x\right)= 4n^{2}x^{2}-4nx+2$ alcanza su mímimo. Tenemos que
+\[g_{n}'\left(x\right) = 8n^{2}x - 4n .\]
+Así, tenemos que $\displaystyle g_{n}'\left(x\right) = 0 \iff x = \frac{1}{2n} $. Además, como $\displaystyle g_{n}''\left(x\right) = 8n^{2} > 0 $, sabemos que es convexa. Finalmente, como el discriminante 
+\[D = 16n^{2} - 32n^{2} < 0 .\]
+Por tanto, $\displaystyle g_{n} $ alcanza un mínimo en $\displaystyle x =\frac{1}{2n} $. Así, tenemos que si cogemos $\displaystyle n_{0} \in \N $ tal que $\displaystyle \frac{1}{2n_{0}} < a $,
+\[ \left|\frac{n^{\frac{3}{2}}e^{x}}{4n^{2}x^{2}-4nx+2}\right| \leq \frac{n^{\frac{3}{2}}e}{4n^{2}a^{2}-4na+2} \to 0 .\]
+Así, tenemos que $\displaystyle f_{n} \to 0 $ converge uniformemente en $\displaystyle \left[a,1\right]  $, $\displaystyle \forall a \in (0,1] $. Como $\displaystyle f_{n} $ es integrable para $\displaystyle \forall n \in \N $, tenemos que 
+\[\lim_{n \to \infty}\int^{1}_{\frac{1}{2}} \frac{n^{\frac{3}{2}}e^{x}}{4n^{2}x^{2}-4nx+2} \; dx = \int^{1}_{\frac{1}{2}} \lim_{n \to \infty}\frac{n^{\frac{3}{2}}e^{x}}{4n^{2}x^{2}-4nx+2} \; dx = \int^{1}_{\frac{1}{2}} 0 \; dx = 0 .\]
+Ahora estudiamos la segunda integral. No podemos aplicar el teorema que hemos aplicado para la otra integral porque $\displaystyle f_{n} $ no converge uniformemente en $\displaystyle \left[0,1\right]  $, puesto que no se conserva la continuidad. Tenemos que 
+\[
+\begin{split}
+	\int^{1}_{0} \frac{n^{\frac{3}{2}}e^{x}}{4n^{2}x^{2}-4nx+2} \; dx \geq & \int^{1}_{0} \frac{n^{\frac{3}{2}}x}{4n^{2}x^{2}-4nx+2} \; dx = \frac{ n^{\frac{3}{2}} }{8n}\int^{1}_{0} \frac{8nx - 4 + 4}{4n^{2}x^{2}-4nx+2}\; dx \\
+	= & \frac{ n^{\frac{3}{2}} }{8n}\left[\ln \left|4n^{2}x^{2}-4nx+2\right|\right] ^{1}_{0} + \frac{n^{\frac{3}{2}}}{8n}\int^{1}_{0} \frac{4}{4n^{2}x^{2}-4nx+2} \; dx \\
+	= & \frac{ n^{\frac{3}{2}} }{8n}\left(\ln\left(4n^{2}-4n+2\right)-\ln 2\right) + \frac{ n^{\frac{3}{2}} }{8n}\int^{1}_{0} \frac{4}{\left(2nx-1\right)^{2}+1} \; dx\\
+	= & \frac{ n^{\frac{3}{2}} }{8n}\left(\ln\left(4n^{2}-4n+2\right)-\ln 2\right) + \frac{ n^{\frac{3}{2}} }{8n}\left[\frac{4}{2n}\arctan\left(2nx-1\right)\right] ^{1}_{0} \\
+	= & \underbrace{\frac{ n^{\frac{3}{2}} }{8n}\left(\ln\left(4n^{2}-4n+2\right)-\ln 2\right)}_{\to \infty} + \underbrace{\frac{ n^{\frac{3}{2}} }{8n}\frac{4}{2n}\left(\arctan\left(2n-1\right)+\frac{\pi }{4}\right)}_{\to 0} \to \infty.
+\end{split}
+\]
+Por tanto, tenemos que $\displaystyle \lim_{n \to \infty}\int^{1}_{0} \frac{n^{\frac{3}{2}}e^{x}}{4n^{2}x^{2}-4nx+2} \; dx = \infty$.
+\end{sol}
+\end{document}

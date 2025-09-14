@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1746525130.01381 "main.tex" "main.pdf" "main" 1746525134.85446 0
+["pdflatex"] 1756072019.5837 "main.tex" "main.pdf" "main" 1756072024.8588 0
   "/Users/victoriatorroja/Desktop/Images/diagonalizacion1.png" 1737485666.44486 346611 0a9523daeb8d53c6384bef5e09ffd5a1 ""
   "/Users/victoriatorroja/Desktop/Images/espacio_dual.png" 1731776012.86348 51683 36bf2f0663338d3500926a0330bb3453 ""
   "/Users/victoriatorroja/Desktop/Images/matriz_inversa1.png" 1732731642.92828 52149 ecbe536525be4e3a1973716b47367492 ""
@@ -10,12 +10,14 @@
   "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap3.tex" 1734783263.69158 66858 1df67cd35406fd09cf846f407cb386a6 ""
   "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap4.tex" 1746095825.16899 77423 e40a2c063765a8126920d03271a971d4 ""
   "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap5.tex" 1745086271.62152 62692 381ce4a4d298b770f64dbcdbe604a9af ""
-  "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap6.tex" 1746521064.74731 84736 b7385abb59600861c8aa5e6a94881dc4 ""
+  "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap6.tex" 1746899796.92049 84736 fc75c143e4f775ab700ece47e022cb17 ""
   "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap7.tex" 1746520468.75765 64738 8c4bd803b3a8896b33ced664c4480558 ""
-  "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap8.tex" 1746525124.35132 7306 d8597574b5cfd8c1482124fc39ebfb0b ""
+  "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Chap8.tex" 1755866206.27654 40631 5b03a161013226cf78c700aefaa866cb ""
   "/Users/victoriatorroja/University/Year1/AlgebraLineal/Notes/Chapters/Intro.tex" 1728922290.28707 8890 d5a1b4b3f155ce1de3704222f3b9cfdc ""
   "/Users/victoriatorroja/University/notespreamble.tex" 1741202150.35479 2721 e80f2e030ec1676fcd191720196eb769 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -69,6 +71,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1248133631 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1215737283 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/babel-spanish/spanish.ldf" 1622145181 26965 3b6d1655ad716f98e788b1fb9f2e87b8 ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/babel/babel.sty" 1707339808 146276 10a40dabec03ce18494af0c3a51bcbdc ""
@@ -187,9 +190,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724666679.39075 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "main.aux" 1746525134.5116 8246 3b4c1a1329ac24fb87e3cda847235941 "pdflatex"
+  "main.aux" 1756072024.46198 8567 7faedb2bb58062af454f350fff331d47 "pdflatex"
   "main.tex" 1746029836.9316 845 1205198de5b97238e4a80df9635088a0 ""
-  "main.toc" 1746525134.51444 4327 222824a548414fa74e261f096e57a9c5 "pdflatex"
+  "main.toc" 1756072024.46478 4525 9692238ca608a08ad8329ad78dd13091 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

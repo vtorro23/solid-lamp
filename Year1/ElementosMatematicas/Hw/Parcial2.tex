@@ -1,0 +1,39 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Elemenos - Mayo 2025}
+%\author{Victoria Eugenia Torroja Rubio}
+\date{12/5/2025}
+
+\maketitle
+
+\begin{sol}
+\begin{description}
+\item[(a)] Sea $\displaystyle d $ la distancia entre Croydon y Le Bourget. En primer lugar, tenemos que 
+	\[\Delta \Lambda = \Lambda _{C} + \Lambda_{B} = 0,1090 + 2,4410 = 2,55 .\]
+	Tenemos el siguiente triángulo esférico: Aplicamos la primera fórmula de Bessel:
+	\[
+	\begin{split}
+		\cos d = & \cos \left(90 - \Phi_{C}\right)\cos \left(90-\Phi_{B}\right) + \sin\left(90-\Phi_{C}\right)\sin\left(90-\Phi_{B}\right)\cos\Delta\Lambda \\
+		= & \sin\Phi_{C}\sin\Phi_{B} + \cos \Phi_{C}\cos\Phi_{B}\cos\Delta\Lambda \\
+		= & \sin51,3720\sin48,9690 + \cos 51,3720 \cos 48,9690 \cos 2,55.
+	\end{split}
+	\]
+\item[(b)] 
+\end{description}
+
+\end{sol}
+
+\begin{sol}
+Se trata de un sistema dinámico discreto lineal de primer orden, es decir, será de la forma $\displaystyle A\left(n+1\right) = rA\left(n\right) + b$ con $\displaystyle r,b \in \R $. En efecto, será,
+\[A\left(n+1\right) = \left(1+\frac{0,03}{12}\right)A\left(n\right) - 500 .\]
+Si $\displaystyle r \neq 1 $ se tiene que la fórmula particular para un $\displaystyle A\left(0\right) = a_{0} $,
+\[A\left(n\right) = \left(a_{0}-\frac{b}{1-r}\right)r^{n}+\frac{b}{1-r} .\]
+En este caso tenemos que $\displaystyle a_{0}= 10000 $, $\displaystyle r = 1 + \frac{0,03}{12}$ y $\displaystyle b = - 500 $. Así, la solución particular será
+\[A\left(n\right) = \left(10000 + \frac{500}{-\frac{0,03}{12}}\right)\left(1+\frac{0,03}{12}\right)^{n}+\frac{500}{\frac{0,03}{12}} = 190000 \cdot  .\]
+
+\end{sol}
+\end{document}

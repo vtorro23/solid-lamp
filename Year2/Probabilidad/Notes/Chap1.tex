@@ -1,0 +1,164 @@
+\chapter{Estructuras sobre las partes de un conjunto}
+Sea $\displaystyle \Omega  $ un cojunto fijo que en lo sucesivo se denominará \textbf{espacio total}. Consideramos el conjunto $\displaystyle \mathcal{P}\left(\Omega \right) $ de las partes de $\displaystyle \Omega  $. \\ 
+Recibirá el nombre de sucesión de conjuntos toda aplicación de $\displaystyle \N $ en $\displaystyle \mathcal{P}\left(\Omega \right) $ y se representará por $\displaystyle \left\{ A_{n}\right\} _{n\in\N}\subset \mathcal{P}\left(\Omega \right) $.
+\begin{definition}[Límite inferior]
+	Se denomina \textbf{límite inferior} de la sucesión $\displaystyle \left\{ A_{n}\right\} _{n\in\N} $ y se representa por $\displaystyle \lim \inf A_{n} $ al conjunto de los puntos de $\displaystyle \Omega  $ que pertenecen a todos los $\displaystyle A_{n} $, excepto a lo sumo a un número finito de ellos.
+\end{definition}
+Podemos apreciar que también se puede definir el límite inferior como el conjunto de puntos de $\displaystyle \Omega  $ cuyos elementos pertenecen a todos los $\displaystyle A_{n} $ desde un $\displaystyle n $ en adelante. 
+\begin{definition}[Límite superior]
+	Se denomina \textbf{límite superior} de la sucesión $\displaystyle \left\{ A_{n}\right\} _{n\in\N} $ y se representa por $\displaystyle \lim \sup A_{n} $, al conjunto de los puntos de $\displaystyle \Omega  $ que pertenecen a infinitos $\displaystyle A_{n} $.
+\end{definition}
+\begin{observation}
+	Podemos observar que las definiciones anteriores caracterizan a dos conjuntos que pueden ser distintos. En efecto, si $\displaystyle x \in \left\{ A_{2n}\right\} _{n\in\N} $, tenemos que $\displaystyle x \in \lim \sup A_{n} $ pero $\displaystyle x \not\in \lim \inf A_{n} $.
+\end{observation}
+\begin{prop}
+	Sea $\displaystyle \left\{ A_{n}\right\} _{n\in\N} $ una sucesión de conjuntos. Se cumple:
+	\[\lim \inf A_{n} = \bigcup_{k = 1}^{\infty}\bigcap_{n = k}^{\infty}A_{n}, \quad \lim \sup A_{n} = \bigcap_{k = 1}^{\infty}\bigcup_{n = k}^{\infty}A_{n} .\]
+\end{prop}
+\begin{proof}
+\begin{description}
+\item[(i)] Demostramos la primera igualdad. En primer lugar, si $\displaystyle x \in \lim \inf A_{n} $ tenemos que existe $\displaystyle N \in \N $ tal que $\displaystyle \forall n \geq N $, $\displaystyle x \in A_{n} $, así, $\displaystyle x \in \bigcap_{n = N}^{\infty}A_{n} $. De esta forma, $\displaystyle x \in \bigcup_{k = 1}^{\infty}A_{n} $. Por tanto, $\displaystyle \lim \inf A_{n} \subset \bigcup_{k = 1}^{\infty}\bigcap_{n = k}^{\infty}A_{n} $. Recíprocamente, si $\displaystyle x \in \bigcup_{k = 1}^{\infty}\bigcap_{n = k}^{\infty}A_{n} $ tenemos que existe un $\displaystyle N \in \N $ tal que $\displaystyle \forall n \geq N $, $\displaystyle x \in \bigcap_{n = N}^{\infty}A_{n} $.
+	Es decir, tenemos que a partir de un número $\displaystyle N $, $\displaystyle x $ pertenece a todos los $\displaystyle A_{n} $, por lo que $\displaystyle x \in \lim \inf A_{n} $. De esta manera $\displaystyle \bigcup_{k = 1}^{\infty}\bigcap_{n = k}^{\infty}A_{n} \subset \lim \inf A_{n} $ y queda demostrada la igualdad.
+\item[(ii)] Si $\displaystyle x \in \lim \sup A_{n} $, tenemos que $\displaystyle x $ pertenece a infinitos $\displaystyle A_{n} $, por lo que para cualquier $\displaystyle n_{0} \in \N $, existe $\displaystyle n \geq n_{0} $ tal que $\displaystyle x \in A_{n} $.
+	Así, tenemos que $\displaystyle \forall k \in \N $, $\displaystyle x \in \bigcup_{n = k}A_{n} $, es decir, $\displaystyle x \in \bigcap_{k = 1}^{\infty}\bigcup_{n = k}^{\infty}A_{n} $. Así, queda demostrado que $\displaystyle \lim \sup A_{n} \subset \bigcap_{k = 1}^{\infty}\bigcup_{n = k}^{\infty}A_{n} $. 
+	Recíprocamente, si $\displaystyle x \in \bigcap_{k = 1}^{\infty}\bigcup_{n = k}^{\infty}A_{n} $, tenemos que $\displaystyle \forall k \in \N $, $\displaystyle x \in \bigcup_{n = k}^{\infty}A_{n} $, por lo que debe ser que $\displaystyle x $ está en infinitos $\displaystyle A_{n} $, es decir, $\displaystyle x \in \lim \sup A_{n} $. Así, $\displaystyle \bigcap_{k = 1}^{\infty}\bigcup_{n = k}^{\infty}A_{n} \subset \lim \sup A_{n} $ y queda demostrada la igualdad. 
+\end{description}
+\end{proof}
+\begin{prop}
+	Para toda sucesión $\displaystyle \left\{ A_{n}\right\} _{n\in\N} \subset \mathcal{P}\left(\Omega \right) $ se verifica que $\displaystyle \lim \inf A_{n} \subset \lim \sup A_{n} $.
+\end{prop}
+\begin{proof}
+Si $\displaystyle x \in \lim \inf A_{n} $, tenemos que $\displaystyle x $ pertenece a todos los $\displaystyle A_{n} $ sin, como mucho, un número finito de ellos. Por tanto, es trivial que $\displaystyle x \in \lim \sup A_{n} $, puesto que pertenece a infinitos $\displaystyle A_{n} $.
+\end{proof}
+\begin{definition}[Sucesión convergente]
+	Se dice que una sucesión $\displaystyle \left\{ A_{n}\right\} _{n\in\N} \subset \mathcal{P}\left(\Omega \right) $ es \textbf{convergente} si $\displaystyle \lim \inf A_{n} = \lim \sup A_{n} $, y en este caso el límite de la sucesión es 
+	\[\lim_{n \to \infty}A_{n} = \lim \inf A_{n} = \lim \sup A_{n} .\]
+\end{definition}
+\begin{definition}[Sucesión monótona]
+	La sucesión $\displaystyle \left\{ A_{n}\right\} _{n\in\N} $ es \textbf{monótona creciente} o \textbf{expansiva} si $\displaystyle \forall n \in\N $ se tiene que $\displaystyle A_{n} \subset A_{n+1} $. \\
+	Similarmente, la sucesión $\displaystyle \left\{ A_{n}\right\} _{n\in\N} $ es \textbf{monótona decreciente} o \textbf{contractiva} si $\displaystyle \forall n \in \N $ se tiene que $\displaystyle A_{n} \supset A_{n+1} $.
+\end{definition}
+\begin{prop}
+Toda sucesión monótona creciente o decreciente tiene límite.
+\end{prop}
+\begin{proof} 
+	Como hemos visto antes, dado que $\displaystyle \lim \inf A_{n} \subset \lim \sup A_{n} $ para cualquier $\displaystyle \left\{ A_{n}\right\} _{n\in\N} $, basta con demostrar que el límite superior es subconjunto del límite inferior.
+\begin{description}
+	\item[(i)] Supongamos primero que la sucesión $\displaystyle \left\{ A_{n}\right\} _{n\in\N} \subset \mathcal{P}\left(\Omega \right) $ es decreciente. Así, tenemos que $\displaystyle \forall n \in \N $, $\displaystyle A_{n} \subset A_{n-1} $. 
+		De esta manera, si $\displaystyle x \in \lim \sup A_{n} $, tenemos que existe una subsucesión $\displaystyle \left\{ A_{n_{j}}\right\} _{j\in\N} $ tal que $\displaystyle x \in A_{n_{j}} $, $\displaystyle \forall j \in \N $. Así, para cualquier $\displaystyle k \in \N $, podemos coger $\displaystyle n_{j} \in \N $ suficientemente grande tal que $\displaystyle n_{j} \geq k $. Así, tenemos que, por ser la sucesión decreciente, 
+		\[A_{n_{j}} \subset A_{n_{j}-1} \subset \cdots \subset A_{k} \subset \cdots \subset A_{1} .\]
+	De esta manera, está claro que $\displaystyle x \in A_{k} $. Así, hemos demostrado que $\displaystyle x $ pertenece a todos los $\displaystyle A_{k} $, por lo que $\displaystyle x \in \lim \inf A_{n} $ y la sucesión converge.
+\item[(ii)] Supongamos que la sucesión $\displaystyle \left\{ A_{n}\right\} _{n\in\N} $ es creciente, es decir, $\displaystyle \forall n \in \N $ se tiene que $\displaystyle A_{n} \subset A_{n+1} $. Entonces, si $\displaystyle x \in \lim \sup A_{n} $ tenemos que existe una subsucesión $\displaystyle \left\{ A_{n_{j}}\right\} _{j\in\N} $ tal que $\displaystyle x $ pertenece a todos los $\displaystyle A_{n_{j}} $.
+	Así, para $\displaystyle n_{1} $ tenemos que 
+	\[x \in A_{n_{1}} \subset A_{n_{1}+1} \subset \cdots .\]
+	De esta manera, $\displaystyle x $ pertenece a todos los $\displaystyle A_{n} $ salvo excepto a un número finito de ellos. Por tanto, $\displaystyle x \in \lim \inf A_{n} $ y $\displaystyle \lim \sup A_{n} \subset \lim \inf A_{n} $, por lo que la sucesión converge.
+\end{description}
+\end{proof}
+\begin{definition}[Semianillo]
+Dado el espacio total $\displaystyle \Omega  $, una clase $\displaystyle \mathcal{C} \subset \mathcal{P}\left(\Omega \right) $ tiene una estructura de \textbf{semianillo} si 
+\begin{description}
+\item[(a)] $\displaystyle \emptyset \in \mathcal{C} $.
+\item[(b)] $\displaystyle \forall A,B \in \mathcal{C} $, $\displaystyle A \cap B \in \mathcal{C} $.
+\item[(c)] $\displaystyle \forall A, B \in \mathcal{C} $ existe una sucesión finita $\displaystyle C_{1}, \ldots, C_{n} \in \mathcal{C} $ con $\displaystyle C_{i} \cap C_{j} = \emptyset $, $\displaystyle \forall i \neq j $ tal que $\displaystyle A - B = \bigcup_{1 \leq j \leq n}C_{j} $.
+\end{description}
+\end{definition}
+\begin{prop}
+\begin{enumerate}
+\item $\displaystyle \forall B \in \mathcal{C}, \forall C_{1}, \ldots, C_{n} \in \mathcal{C} $, $\displaystyle \exists A_{1}, \ldots, A_{m} \in \mathcal{C} $ con $\displaystyle A_{i} \cap A_{j} = \emptyset $, $\displaystyle \forall i \neq j $ tales que 
+	\[B - \bigcup_{i = 1}^{n}C_{i} = \bigcup_{j = 1}^{m}A_{j} .\]
+\item Cualesquiera que sean $\displaystyle C_{1}, \ldots, C_{n} \in \mathcal{C} $, $\displaystyle \exists A_{1}, \ldots, A_{m} \in \mathcal{C} $ con $\displaystyle A_{i} \cap A_{j} = \emptyset $, $\displaystyle \forall i \neq j $ tales que
+	\[\bigcup_{i = 1}^{n}C_{i} = \bigcup_{j = 1}^{m}A_{j} .\]
+\item Cualesquiera que sean $\displaystyle C_{1}, \ldots, C_{n} \in \mathcal{C} $ se tiene que $\displaystyle C_{1} \cap C_{2} \cap \cdots \cap C_{n} \in \mathcal{C} $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Sea $\displaystyle \mathcal{C} \subset \mathcal{P}\left(\Omega \right) $ un semianillo.
+\begin{enumerate}
+\item Si $\displaystyle B, C_{1}, \ldots, C_{n} \in \mathcal{C} $, tenemos que 
+\[
+\begin{split}
+	B - \bigcup_{1 \leq i \leq n}C_{i} = & B - \left(C_{1} \cup C_{2} \cup \cdots \cup C_{n}\right) = \left(B - C_{1}\right) \cap \left(B - C_{2}\right) \cap \cdots \cap \left(B - C_{n}\right) 
+\end{split}
+\]
+\item Aplicando que $\displaystyle \emptyset \in \mathcal{C} $ y \textbf{(c)}, tenemos que $\displaystyle \exists A_{1}, \ldots, A_{m} \in \mathcal{C} $, con $\displaystyle A_{i} \cap A_{j}  = \emptyset $, $\displaystyle i \neq j $, tales que 
+	\[\bigcup_{1 \leq i \leq n} .\]
+\end{enumerate}
+
+\end{proof}
+
+\begin{definition}[Anillo]
+Dado el espacio total $\displaystyle \Omega  $, una clase $\displaystyle \mathcal{R} \subset \mathcal{P}\left(\Omega \right) $ tiene estructura de \textbf{anillo} si 
+\begin{description}
+\item[(a)] $\displaystyle \forall A,B \in \mathcal{R} $, $\displaystyle A \cap B \in \mathcal{R} $.
+\item[(b)] $\displaystyle \forall A, B \in \mathcal{R} $, $\displaystyle A \Delta B = \left(A - B\right) \cup \left(B - A\right)$.
+\end{description}
+\end{definition}
+\begin{prop}
+\begin{enumerate}
+\item $\displaystyle \forall A_{1}, \ldots, A_{n} \in \mathcal{R} $ se tiene que $\displaystyle \bigcup_{1 \leq i \leq n}A_{i} \in \mathcal{R} $.
+\item $\displaystyle \forall A,B \in \mathcal{R} $ se tiene que $\displaystyle A - B \in \mathcal{R} $.
+\item Todo anillo es semianillo. 
+\item La intersección de anillos es un anillo.
+\end{enumerate}
+\end{prop}
+\begin{definition}[Álgebra]
+Dado el espacio total $\displaystyle \Omega  $, una clase $\displaystyle \mathcal{Q}\subset \mathcal{P}\left(\Omega \right) $ tiene una estructura de \textbf{álgebra} si
+\begin{description}
+\item[(a)] $\displaystyle \Omega \in \mathcal{Q} $.
+\item[(b)] $\displaystyle \forall A \in \mathcal{Q} $, $\displaystyle A^{c} \in \mathcal{Q} $.
+\item[(c)] $\displaystyle A,B \in \mathcal{Q} $, $\displaystyle A \cup B \in \mathcal{Q} $.
+\end{description}
+\end{definition}
+\begin{prop}
+\begin{enumerate}
+\item $\displaystyle \forall A,B \in \mathcal{Q} $ se tiene que $\displaystyle A \cap B \in \mathcal{Q} $.
+\item $\displaystyle \forall A, B \in \mathcal{Q} $ se tiene que $\displaystyle A - B \in \mathcal{Q} $.
+\item $\displaystyle \forall A, B \in \mathcal{Q} $ se tiene que $\displaystyle A \Delta B \in \mathcal{Q} $.
+\item Para cualquier sucesión finita $\displaystyle A_{1}, \ldots, A_{n} $ con $\displaystyle A_{i} \in \mathcal{Q} $, $\displaystyle i = 1, \ldots, n $, se tiene que $\displaystyle \bigcup_{1 \leq i\leq n}A_{i} \in \mathcal{Q} $.
+\item Todo álgebra es un anillo.
+\end{enumerate}
+\end{prop}
+\begin{definition}[$\displaystyle \sigma $-álgebra]
+Dado el espacio total $\displaystyle \Omega  $, una clase $\displaystyle \mathcal{A} \subset \mathcal{P}\left(\Omega \right) $ tiene estructura de $\displaystyle \sigma  $\textbf{-álgebra} si 
+\begin{description}
+\item[(a)] $\displaystyle \Omega \subset \mathcal{A} $.
+\item[(b)] $\displaystyle \forall A \in \mathcal{A} \Rightarrow A^{c} \in \mathcal{A} $.
+\item[(c)] Dada cualquier sucesión $\displaystyle \left\{ A_{n}\right\} _{n\in\N} \in \mathcal{A} $ verifica $\displaystyle \bigcup_{n \in \N}A_{n}\in \mathcal{A} $.
+\end{description}
+\end{definition}
+\begin{prop}
+\begin{enumerate}
+\item $\displaystyle \emptyset \in \mathcal{A} $.
+\item Para cualquier sucesión $\displaystyle \left\{ A_{n}\right\} _{n\in\N} $ con $\displaystyle A_{n} \in \mathcal{A} $ para todo $\displaystyle n \in \N $, se tiene que $\displaystyle \bigcap_{n \in \N}A_{n} \in \mathcal{A} $.
+\item Para cualquier sucesión finita $\displaystyle A_{1}, \ldots, A_{n} $ con $\displaystyle A_{i} \in \mathcal{A} $, $\displaystyle i = 1, \ldots, n $, se tiene que $\displaystyle \bigcup_{1\leq i \leq n}A_{i} \in \mathcal{A} $.
+\item Para cualquier sucesión finita $\displaystyle A_{1}, \ldots, A_{n} $ con $\displaystyle A_{i} \in \mathcal{A} $, $\displaystyle i = 1, \ldots, n $, se tiene que $\displaystyle \bigcap_{1\leq i \leq n}A_{i} \in \mathcal{A} $.
+\item Toda $\displaystyle \sigma  $-álgebra es un álgebra.
+\item Todo álgebra con un número finito de elementos es $\displaystyle \sigma  $-algebra.
+\item Toda $\displaystyle \sigma  $-álgebra es cerrada respecto de la operación paso al l´ˆmite para cualquier sucesión.
+\item La intersección de $\displaystyle \sigma  $-algebras definidas sobre el mismo espacio total es una $\displaystyle \sigma  $-álgebra.
+\item Dada una clase $\displaystyle \mathcal{B} \subset \mathcal{P}\left(\Omega\right)$ existe una mínima $\displaystyle \sigma  $-álgebra que la contiene. Esta será la intersección de todas las $\displaystyle \sigma  $-álgebras que contengan a $\displaystyle \mathcal{B} $. Se indicará por $\displaystyle \sigma\left(\mathcal{B}\right) $.
+\end{enumerate}
+\end{prop}
+\begin{observation}
+La unión de dos $\displaystyle \sigma  $-álgebras puede no ser $\displaystyle \sigma  $-álgebra.
+\end{observation}
+\begin{definition}[Clase monótona]
+Dado el espacio total $\displaystyle \Omega  $, una clase $\displaystyle \mathcal{M} \subset \mathcal{P}\left(\Omega \right) $ tiene estructura de clase monótona si y solo si es cerrada bajo la operación paso al límite para sucesiones monótonas de subconjuntos de $\displaystyle \mathcal{M} $.
+\end{definition}
+\begin{prop}
+\begin{enumerate}
+\item La intersección de dos clases monótonas, del mismo espacio total es otra clase monótona.
+\item La intersección de una familia arbitraria de clases monótonas es clase monótona. 
+\item Dada una clase $\displaystyle \mathcal{B} \subset \mathcal{P}\left(\Omega \right) $ siempre existirá una mínima clase monótona que contenga a $\displaystyle \mathcal{B} $. Se denotará por $\displaystyle \mathcal{M}\left(\mathcal{B}\right) $. Será la intersección de todas las clases monótonas que contengan a $\displaystyle \mathcal{B} $.
+\item Toda $\displaystyle \sigma  $-álgebra es clase monótona.
+\item Toda clase monótona que sea álgebra, es $\displaystyle \sigma  $-álgebra.
+\item $\displaystyle \mathcal{A} \subset \mathcal{P}\left(\Omega \right) $ es $\displaystyle \sigma  $-álgebra si y solo si $\displaystyle \mathcal{A} \subset \mathcal{P}\left(\Omega \right) $ es álgebra y clase monótona.
+\end{enumerate}
+\end{prop}
+\begin{definition}
+La $\displaystyle \sigma  $-álgebra engendrada por una clase $\displaystyle \mathcal{B}\subset \mathcal{P}\left(\Omega \right) $ es la $\displaystyle \sigma  $-álgebra más pequeña que contiene a $\displaystyle \mathcal{B} $ que se representa por $\displaystyle \sigma\left(\mathcal{B}\right) $.
+\end{definition}
+\begin{definition}[Espacio medible]
+Al par $\displaystyle \left(\Omega, \mathcal{A}\right) $, donde $\displaystyle \mathcal{A} \subset \mathcal{P}\left(\Omega \right) $ es una $\displaystyle \sigma  $-álgebra se le denomina \textbf{espacio medible} o \textbf{espacio probabizable}. A los elementos de $\displaystyle \mathcal{A} $ se les llama conjuntos medibles.
+\end{definition}
+

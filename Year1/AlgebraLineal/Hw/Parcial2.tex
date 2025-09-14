@@ -1,0 +1,118 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Álgebra Lineal - Mayo 2025}
+%\author{Victoria Eugenia Torroja Rubio}
+\date{14/5/2025}
+
+\maketitle
+
+\begin{ej}
+En $\displaystyle \R^{9} $ se considera un endomorfismo $\displaystyle f $ con un único valor propio $\displaystyle \lambda  $ que verifica
+\[\dim \Ker\left(f - \lambda id\right)^{5} = 8 .\]
+Determinar las posibles formas canónicas de Jordan de $\displaystyle f $.
+\end{ej}
+\begin{sol}
+Dado que $\displaystyle \Ker\left(f - \lambda id\right)^{5} \subsetneq \Ker\left(f - \lambda id\right)^{6} $, tenemos que 
+\[ \dim \Ker\left(f - id\right)^{5} = 8 < \dim \Ker\left(f - \lambda id\right)^{6} \leq 9, \]
+por lo que $\displaystyle \dim \Ker\left(f -\lambda id\right)^{6} = 9 $. Tenemos que el límite de nilpotencia de $\displaystyle f - \lambda id $ es 6. Así, sabemos que habrá un bloque de orden 6. Las posibilidades restantes son:
+\begin{itemize}
+\item Un bloque de orden 3.
+	\[f \to \begin{pmatrix} \lambda & & & & & & & & \\
+		1 & \lambda & & & & & & & \\
+	  & 1 & \lambda & & & & & &\\
+	  & & 1 & \lambda & & & & & \\
+	  & & & 1 & \lambda & & & & \\
+	  & & & & 1 & \lambda & & & \\
+	  & & & & & & \lambda & & \\
+	  & & & & & & 1 & \lambda & \\
+	  & & & & & & & 1 & \lambda\end{pmatrix} .\]
+\item Un bloque de orden 2 y uno de 1.
+	\[f \to \begin{pmatrix} \lambda & & & & & & & & \\
+		1 & \lambda & & & & & & & \\
+	  & 1 & \lambda & & & & & &\\
+	  & & 1 & \lambda & & & & & \\
+	  & & & 1 & \lambda & & & & \\
+	  & & & & 1 & \lambda & & & \\
+	  & & & & & & \lambda & & \\
+	  & & & & & & 1 & \lambda & \\
+	  & & & & & & & & \lambda\end{pmatrix} .\]
+\item Tres bloques de orden 1.
+	\[f \to \begin{pmatrix} \lambda & & & & & & & & \\
+		1 & \lambda & & & & & & & \\
+	  & 1 & \lambda & & & & & &\\
+	  & & 1 & \lambda & & & & & \\
+	  & & & 1 & \lambda & & & & \\
+	  & & & & 1 & \lambda & & & \\
+	  & & & & & & \lambda & & \\
+	  & & & & & & & \lambda & \\
+	  & & & & & & & & \lambda\end{pmatrix} .\]
+\end{itemize}
+\end{sol}
+\begin{ej}
+En $\displaystyle \R^{4} $ se considera la forma bilineal $\displaystyle \beta  $ que respecto de la base canónica tiene por matriz
+\[A = \begin{pmatrix} 0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0\end{pmatrix} .\]
+Calcular una base de $\displaystyle \R^{4} $ ortogonal para $\displaystyle \beta  $ y obtener los posibles índices y coíndices.
+\end{ej}
+\begin{sol}
+	Sea $\displaystyle \mathcal{B} = \left\{ \vec{u}_{1}, \vec{u}_{2}, \vec{u}_{3}, \vec{u}_{4}\right\}  $ la base canónica. Dado que $\displaystyle \beta \neq 0 $, tenemos que existe $\displaystyle \vec{x} \in \R^{4} $ tal que $\displaystyle \beta\left(\vec{x}, \vec{x}\right) \neq 0 $. En efecto, tenemos que $\displaystyle \vec{v}_{1} = \vec{u}_{1} + \vec{u}_{2} $ no es isótropo: 
+	\[\beta\left(\vec{u}_{1} + \vec{u}_{2}, \vec{u}_{1} + \vec{u}_{2}\right) = 2\beta\left(\vec{u}_{1}, \vec{u}_{2}\right) = 2 \neq 0 .\]
+	Calculamos $\displaystyle \left\{ \vec{v}_{1}\right\} ^{\perp }_{\beta } $:
+	\[\begin{pmatrix} 1 & 1 & 0 & 0 \end{pmatrix}\begin{pmatrix} 0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0\end{pmatrix}\begin{pmatrix} x \\ y \\ z \\ t \end{pmatrix} = \begin{pmatrix} 1 & 1 & 2 & 2 \end{pmatrix}\begin{pmatrix} x \\ y \\ z \\ t \end{pmatrix} = \boxed{x + y + 2z + 2t = 0} .\]
+Tenemos que $\displaystyle \vec{v}_{2} = \vec{u}_{1}-\vec{u}_{2} \in \left\{ \vec{v}_{1}\right\} ^{\perp }_{\beta } $ y no es isótropo:
+\[\beta\left(\vec{u}_{1}-\vec{u}_{2}, \vec{u}_{1}-\vec{u}_{2}\right) = -\beta\left(\vec{u}_{1}, \vec{u}_{2}\right) = - 2 \neq 0 .\]
+Calculamos $\displaystyle \left\{ \vec{v}_{2}\right\} ^{\perp }_{\beta }$:
+\[ \begin{pmatrix} 1 & - 1 & 0 & 0 \end{pmatrix}\begin{pmatrix} 0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0\end{pmatrix}\begin{pmatrix} x \\ y \\ z \\ t \end{pmatrix} = \begin{pmatrix} -1 & 1 & 0 & 0 \end{pmatrix}\begin{pmatrix} x \\ y \\ z \\ t \end{pmatrix} = \boxed{- x + y = 0} .\]
+Tenemos que $\displaystyle \vec{v}_{3} = \vec{u}_{3}-\vec{u}_{4} \in \left\{ \vec{v}_{1}\right\} ^{\perp }_{\beta }\cap \left\{ \vec{v}_{2}\right\} ^{\perp }_{\beta }$ y no es isótropo:
+\[\beta\left(\vec{u}_{3}-\vec{u}_{4}, \vec{u}_{3}-\vec{u}_{4}\right) = -\beta\left(\vec{u}_{3}, \vec{u}_{4}\right) = - 2 \neq 0 .\]
+Calculamos $\displaystyle \left\{ \vec{v}_{3}\right\} ^{\perp }_{\beta} $:
+\[\begin{pmatrix} 0 & 0 & 1 & - 1 \end{pmatrix}\begin{pmatrix} 0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0\end{pmatrix}\begin{pmatrix} x \\ y \\ z \\ t \end{pmatrix} = \begin{pmatrix} 0 & 0 & - 1 & 1 \end{pmatrix} \begin{pmatrix}  x\\ y \\ z\\ t \end{pmatrix} =\boxed{ -z + t = 0 }.\]
+Tenemos que $\displaystyle \vec{v}_{4} = \left(-2, -2, 1, 1\right) \in \left\{ \vec{v}_{1}\right\} ^{\perp }_{\beta }\cap \left\{ \vec{v}_{2}\right\} ^{\perp }_{\beta }\cap \left\{ \vec{v}_{3}\right\} ^{\perp }_{\beta } $ y 
+\[ \begin{pmatrix} -2 & - 2 & 1 & 1 \end{pmatrix}\begin{pmatrix} 0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0\end{pmatrix}\begin{pmatrix} - 2\\ - 2\\ 1 \\ 1 \end{pmatrix}=\begin{pmatrix} 0 & 0 & -3 & - 3 \end{pmatrix}\begin{pmatrix} -2 \\ - 2\\ 1 \\ 1 \end{pmatrix} = - 6 < 0.\]
+Así, la base ortogonal que buscamos es $\displaystyle \mathcal{B}'= \left\{ \vec{v}_{1}, \vec{v}_{2}, \vec{v}_{3}, \vec{v}_{4}\right\}  $ y, como hemos visto tenemos que el índice es 3 y el coíndice es 1.
+\end{sol}
+\begin{ej}
+Sea $\displaystyle \left(V_{1}, \left\langle ,  \right\rangle _{1}\right) $ un espacio vectorial euclídeo y $\displaystyle V_{2} $ un espacio vectorial real. Sea $\displaystyle f : V_{2} \to V_{1} $ una aplicación lineal. En $\displaystyle V_{2} $ se considera la forma bilineal $\displaystyle \left\langle ,  \right\rangle _{2} $ definida por 
+\[\left\langle \vec{x}, \vec{y} \right\rangle _{2} = \left\langle f\left(\vec{x}\right), f\left(\vec{y}\right) \right\rangle _{1}, \; \vec{x}, \vec{y} \in V_{2} .\]
+Pruébese que $\displaystyle \left\langle ,  \right\rangle _{2} $ es un producto escalar en $\displaystyle V_{2} $ si y solo si $\displaystyle f $ es inyectiva.
+\end{ej}
+\begin{sol}
+\begin{description}
+\item[(i)] Supongamos que $\displaystyle \left\langle ,  \right\rangle _{2} $ es un producto escalar. Si $\displaystyle \vec{x} \in \Ker\left(f\right) $ tenemos que 
+	\[\left\langle \vec{x}, \vec{x} \right\rangle _{2} = \left\langle f\left(\vec{x}\right), f\left(\vec{x}\right) \right\rangle _{1} = \left\langle \vec{0}, \vec{0} \right\rangle _{1} = 0 .\]
+	Dado que $\displaystyle \left\langle ,  \right\rangle _{2} $ es un producto escalar, tenemos que $\displaystyle \left\langle \vec{x}, \vec{x} \right\rangle _{2} = 0 \iff \vec{x} = \vec{0} $, por lo que $\displaystyle \vec{x} = \vec{0} $ y $\displaystyle \Ker\left(f\right) = \left\{ \vec{0}\right\}  $, por lo que $\displaystyle f $ es inyectiva.
+\item[(ii)] Supongamos que $\displaystyle f $ es inyectiva si $\displaystyle \left\langle \vec{x}, \vec{x} \right\rangle _{2} = 0 $ tenemos que 
+	\[\left\langle \vec{x}, \vec{x} \right\rangle _{2} = \left\langle f\left(\vec{x}\right), f\left(\vec{x}\right) \right\rangle _{1} = 0 .\]
+	Como $\displaystyle \left\langle ,  \right\rangle _{1} $ es un producto escalar, tenemos que $\displaystyle \left\langle \vec{y}, \vec{y} \right\rangle _{1} = 0 \iff \vec{y} = \vec{0} $, por lo que $\displaystyle f\left(\vec{x}\right) = \vec{0} $ y $\displaystyle \vec{x} \in \Ker\left(f\right) $, por lo que $\displaystyle \vec{x} = \vec{0} $. Así, hemos visto que $\displaystyle \left\langle \vec{x}, \vec{x} \right\rangle _{2} = 0 \iff \vec{x} = \vec{0} $, por lo que $\displaystyle \left\langle ,  \right\rangle _{2} $ es un producto escalar.
+\end{description}
+\end{sol}
+\begin{ej}
+En un espacio afín de dimensión tres se considera una rotación $\displaystyle f $ de eje una recta $\displaystyle l $ y una traslación $\displaystyle \tau_{\vec{u}} $ de vector $\displaystyle \vec{u} $. Demostrar que $\displaystyle \tau_{\vec{u}} \circ f \circ \tau_{-\vec{u}}$ es una rotación. Determinar el eje de rotación en función de $\displaystyle l $ y $\displaystyle \vec{u} $.
+\end{ej}
+\begin{sol}
+Tenemos que 
+\[\overrightarrow{\tau_{\vec{u}}\circ f \circ \tau_{-\vec{u}}} = \overrightarrow{\tau_{\vec{u}}}\circ \vec{f} \circ \overrightarrow{\tau_{-\vec{u}}} = id _{V} \circ \vec{f}\circ id _{V} = \vec{f} .\]
+Para ver que se trata de una rotación vamos a ver que el conjunto de puntos invariantes es de dimensión 1. Sabemos que $\displaystyle \mathcal{L} = \left\{ A \in \mathcal{A} \; : \; f\left(A\right) = A\right\}  $ es una variedad lineal afín que, si no es vacía, tiene como subespacio vectorial asociado a $\displaystyle L = \left\{ \vec{x} \in V \; : \; \vec{f}\left(\vec{x}\right) = \vec{x}\right\}  $. Tenemos que $\displaystyle A + \vec{u} $, si $\displaystyle A \in l $. En efecto
+\[\tau_{\vec{u}}\circ f \circ \tau_{-\vec{u}}\left(A + \vec{u}\right) = \tau_{\vec{u}}\left(f\left(A\right)\right) = \tau_{\vec{u}}\left(A\right) = A + \vec{u}	.\]
+Así, tenemos que $\displaystyle \mathcal{L} \neq \emptyset $, por lo que su subespacio vectorial asociado será $\displaystyle L = \left\{ \vec{x} \in V \; : \; \vec{f}\left(\vec{x}\right) = \vec{x}\right\}  $. Dado que $\displaystyle f $ es una rotación y el conjunto de sus puntos invariantes es 1, está claro que la dimensión de $\displaystyle \mathcal{L} $ será 1. Además, tenemos que 
+\[\mathcal{L} = \left\{ A + \vec{u} \; : \; A \in l\right\} = l + \vec{u} .\]
+\end{sol}
+\end{document}

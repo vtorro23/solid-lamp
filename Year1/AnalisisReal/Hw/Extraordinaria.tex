@@ -1,0 +1,167 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Análisis Real - Examen Extraordinario}
+\author{Victoria Eugenia Torroja Rubio}
+\date{30 de junio de 2025}
+
+\maketitle
+
+\begin{ej}
+\begin{description}
+\item[(a)] Si $\displaystyle A \subset \R $ es un conjunto acotado, define los siguientes términos: $\displaystyle \sup A, \inf A, \max A, \min A $.
+\item[(b)] Demuestra los siguientes resultados, \textbf{si son ciertos,} o encuentra un contraejemplo, \textbf{si son falsos:} 
+	\begin{description}
+	\item[(i)] Si $\displaystyle A \subset B $, entonces $\displaystyle \sup A \leq \sup B $.
+	\item[(ii)] Si $\displaystyle A \subset B $, entonces $\displaystyle \inf A \leq \inf B $.
+	\item[(iii)] Si $\displaystyle A \subsetneq B $, entonces $\displaystyle \sup A < \sup B$. 
+	\end{description}
+\end{description}
+\end{ej}
+
+\begin{ej}
+\begin{description}
+\item[(a)] Demuestra que la siguiente sucesión es monótona creciente y acotada superiormente:
+	\[x_{1} = 0, \quad x_{n+1} = \left(x_{n}+\frac{1}{4}\right)^{2} \quad n \in \N .\]
+	Justifica que $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ converge y calcula su límite.
+\item[(b)] Qué pasa si tomamos $\displaystyle x_{1} = 1 $ en la sucesión anterior?
+\end{description}
+\end{ej}
+\begin{sol}
+\begin{description}
+\item[(a)] Primero vamos a ver que es creciente. Para ello, emplearemos el método de inducción. Tenemos que 
+	\[x_{2} = \left(0 + \frac{1}{4}\right)^{2} = \frac{1}{16} \geq 0 = x_{0} .\]
+	Asumimos que es cierto para $\displaystyle n $, por tanto
+	\[x_{n+1} = \left(x_{n}+\frac{1}{4}\right)^{2} \geq \left(x_{n-1}+\frac{1}{4}\right)^2 = x_{n}.\]
+Así, hemos visto que es creciente para $\displaystyle n \in \N $. Ahora vamos a ver que está acotada superiormente. Para encontrar una cota, vamos a suponer que la sucesión converge:
+\[l = \left(l + \frac{1}{4}\right)^{2} = l^{2}+\frac{l}{2}+\frac{1}{8} \iff l^{2}-\frac{l}{2}+\frac{1}{8} = \left(l - \frac{1}{4}\right)^2=0 \iff l = \frac{1}{4}.\]
+Vamos a comprobar si $\displaystyle \frac{1}{4}$ es una cota superior. Está claro que $\displaystyle \frac{1}{4} \geq 0 = x_{0} $. Ahora, supongamos que es cierto para $\displaystyle n $, entonces
+\[x_{n+1} = \left(x_{n}+\frac{1}{4}\right)^2 \leq \left(\frac{1}{4}+\frac{1}{4}\right)^{2} = \frac{1}{2}^{2} = \frac{1}{4} .\]
+Así, hemos visto que $\displaystyle \forall n \in \N $ se tiene que $\displaystyle x_{n} \leq \frac{1}{4} $. Dado que se trata de una sucesión monótona creciente y acotada superiormente, tenemos que converge y, como hemos visto antes, el límite será $\displaystyle l = \frac{1}{4} $.
+\item[(b)] Si $\displaystyle x_{1} = 1 $, vamos a ver que la sucesión no converge. Si convergiera, el límite tendría que ser $\displaystyle l = \frac{1}{4} $, como hemos visto en el apartado anteriror. Dado que $\displaystyle x_{1} = 1 > \frac{1}{4} $, basta con ver que la sucesión es monótona creciente para ver que nunca va a converger a $\displaystyle \frac{1}{4} $. En primer lugar, tenemos que $\displaystyle x_{2} = \left(1+\frac{1}{4}\right)^{2}>1=x_{1} $. 
+	Ahora, supongamos que es cierto para $\displaystyle n $, entonces
+	\[x_{n+1} = \left(x_{n}+\frac{1}{4}\right)^2 \geq \left(x_{n-1}+\frac{1}{4}\right)^{2} = x_{n} .\]
+	Así, hemos visto que la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es monótona creciente, por lo que no puede converger a $\displaystyle \frac{1}{4} $. Ahora vamos a ver que diverge. En efecto, hemos visto que $\displaystyle x_{n} \geq 1 $, $\displaystyle \forall n \in \N $, por lo que
+	\[x_{n+1} = \left(x_{n}+\frac{1}{4}\right)^2 = x_{n}^{2}+\frac{x_{n}}{2}+\frac{1}{16}\geq x_{n}+\frac{1}{16} .\]
+	Así, 
+	\[x_{n+k} \geq x_{n}+\frac{k}{16} \to \infty .\]
+\end{description}
+\end{sol}
+\begin{ej}
+Estudia y calcula, si existen, los siguientes límites:
+\begin{description}
+\item[(a)] $\displaystyle \lim_{n \to \infty}\left(\frac{1}{\sqrt{n+1}}+\frac{1}{\sqrt{n+2}}+\cdots + \frac{1}{\sqrt{n + n}}\right) $.
+\item[(b)] $\displaystyle \lim_{n \to \infty}\left(\frac{3n^{2}-n+7}{3n^{2}+4n-1}\right)^{\frac{3n^{2}-7}{5n}} $.
+\end{description}
+\end{ej}
+\begin{sol}
+\begin{description}
+\item[(a)] Tenemos que 
+	\[ \frac{1}{\sqrt{n+1}}+\frac{1}{\sqrt{n+2}}+\cdots + \frac{1}{\sqrt{n + n}} \geq \frac{1}{\sqrt{n + n}}+\cdots + \frac{1}{\sqrt{n + n}} = \frac{n}{\sqrt{2n}} \to \infty.\]
+Así, tenemos que la sucesión diverge.	
+\item[(b)] Recordamos que dadas dos sucesiones $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N} \subset \R^+ $ tales que $\displaystyle x_{n} \to x $ y $\displaystyle y_{n} \to y $, se tiene que $\displaystyle x_{n}^{y_{n}} \to x^{y} $. Tenemos que 
+\[
+\begin{split}
+	\lim_{n \to \infty}\left(\frac{3n^{2}-n+7}{3n^{2}+4n-1}\right)^{\frac{3n^{2}-7}{5n}} = & \lim_{n \to \infty}\left(1 - 1 + \frac{3n^{2}-n+7}{3n^{2}+4n-1}\right)^{\frac{3n^{2}-7}{5n}} = \lim_{n \to \infty}\left(1+\frac{-5n-8}{3n^{2}+4n-1}\right)^{\frac{3n^{2}-7}{5n}} \\
+	= & \lim_{n \to \infty}\left(1 + \frac{1}{\frac{3n^{2}+4n-1}{-5n-8}}\right)^{\frac{3n^{2}-7}{5n}} = \lim_{n \to \infty}\left[\left(1 + \frac{1}{\frac{3n^{2}+4n-1}{-5n-8}}\right) ^{\frac{3n^{2}+4n-1}{-5n-8}} \right] ^{\frac{3n^{2}-7}{5n} \cdot \frac{-5n-8}{3n^{2}+4n-1}} 
+\end{split}
+\]
+Por otro lado, tenemos que
+\[\lim_{n \to \infty} \frac{3n^{2}-7}{5n} \cdot \frac{-5n-8}{3n^{2}+4n-1} = -1.\]
+Así, por lo visto a lo largo del curso tenemos que
+\[\lim_{n \to \infty}\left(\frac{3n^{2}-n+7}{3n^{2}+4n-1}\right)^{\frac{3n^{2}-7}{5n}} = e^{-1} .\]
+\end{description}
+\end{sol}
+
+\begin{ej}
+Estudia la convergencia, y la convergencia absoluta, de las siguientes series:
+\begin{description}
+\item[(a)] $\displaystyle \sum^{\infty}_{n = 1}\left(\frac{n+1}{n}\right)^{n^{2}}3^{-n} $.
+\item[(b)] $\displaystyle \sum^{\infty}_{n = 1}\left(-1\right)^{n}\left(\sqrt{n+1}-\sqrt{n}\right) $.
+\end{description}
+\end{ej}
+\begin{sol}
+\begin{description}
+\item[(a)] Dado que $\displaystyle \left(\frac{n+1}{n}\right)^{n^{2}}3^{-n} \geq 0 $, $\displaystyle \forall n \in \N $, para ver si converge absolutamente basta con ver que converge. Para ello, empleamos el criterio de la raíz, 
+	\[\lim_{n \to \infty}\sqrt[n]{\left(\frac{n+1}{n}\right)^{n^{2}}3^{-n}} = \lim_{n \to \infty}\left(\frac{n+1}{n}\right)^{n}3^{-1}=\lim_{n \to \infty}\left(1+\frac{1}{n}\right)^{n}\frac{1}{3}=\frac{1}{3e} < 1 .\]
+Así, por el criterio de la raíz, la serie converge, por lo que converge absolutamente. 	
+\item[(b)] Vamos a ver que no converge absolutamente. Para ello, basta ver que la serie $\displaystyle \sum^{\infty}_{n = 1}\sqrt{n+1}-\sqrt{n} $ es divergente:
+	\[\left(\sqrt{2}-\sqrt{1}\right)+\left(\sqrt{3}-\sqrt{2}\right)+\cdots +\left(\sqrt{n+1}-\sqrt{n}\right)=\sqrt{n+1}-1 \to \infty .\]
+Para ver que la serie converge, vamos a aplicar el criterio de Dirichlet. En primer lugar, tenemos que la suma $\displaystyle \sum^{M}_{n = 1}\left(-1\right)^{n} $ está claramente acotada. Por otro lado, tenemos que 
+\[\lim_{n \to \infty}\sqrt{n+1}-\sqrt{n} = \lim_{n \to \infty}\frac{1}{\sqrt{n+1}+\sqrt{n}} = 0 .\]
+Falta ver que la serie es decreciente, lo cual es bastante trivial tras racionalizar. Así, la serie converge, pero no absolutamente. 
+\end{description}
+\end{sol}
+\begin{ej}
+Comprueba si la siguiente función es continua en su dominio:
+\[f\left(x\right) = 
+\begin{cases}
+\frac{\cos\left(x+\frac{\pi }{2}\right)}{x}, \quad x \in [-\frac{\pi }{2}, 0) \\
+-1, \quad x = 0 \\
+\frac{\int^{x^{2}}_{0} \cos \sqrt{t} \; dt}{\sin ^{2}x}, \quad x \in (0, \frac{\pi }{2}]
+\end{cases}
+.\]
+\end{ej}
+\begin{sol}
+Por un lado, $\displaystyle \frac{\cos\left(x+\frac{\pi }{2}\right)}{x} $ es continua en $\displaystyle [-\frac{\pi }{2}, 0) $ por ser cociente de funciones continuas. Por otro lado, por ser $\displaystyle \cos \sqrt{t} $ composición de funciones continuas, es continua e integrable, por lo que $\displaystyle \int^{x^{2}}_{0} \cos \sqrt{t} \; dt $ es continua en $\displaystyle \R $ y el cociente $\displaystyle \frac{\int^{x^{2}}_{0} \cos \sqrt{t} \; dt}{\sin ^{2}x}, \quad x \in (0, \frac{\pi }{2}] $ es continuo en $\displaystyle (0, \frac{\pi }{2}] $, por ser cociente de funciones continuas. 
+Así, basta con estudiar la continuidad de $\displaystyle f $ en $\displaystyle x = 0 $. Así, aplicando L'Hôpital y el segundo Teorema Fundamental del Cálculo:
+\[\lim_{x \to 0^{-}}f\left(x\right) = \lim_{x \to 0^{-}}\frac{\cos\left(x+\frac{\pi }{2}\right)}{x}= \lim_{x \to 0^{-}}\frac{-\sin\left(x+\frac{\pi }{2}\right)}{1}=-1 .\]
+\[\lim_{x \to 0^{+}}f\left(x\right) = \lim_{x \to 0^{+}} \frac{\int^{x^{2}}_{0} \cos \sqrt{t} \; dt}{\sin ^{2}x} = \lim_{x \to 0^{+}}\frac{2x \cos x^{2}}{2\sin x \cos x}=1.\]
+Así, como $\displaystyle \lim_{x \to 0^{+}}f\left(x\right) \neq f\left(0\right) $, tenemos que la función no es continua en $\displaystyle x = 0 $.
+\end{sol}
+\begin{ej}
+Sea $\displaystyle f: \left(a,b\right)\to \R $ una función derivable en $\displaystyle \left(a,b\right) $. Si $\displaystyle x_{0} \in \left(a,b\right) $ es un mínimo local de $\displaystyle f $, prueba que $\displaystyle f'\left(x_{0}\right) = 0 $.
+\end{ej}
+\begin{ej}
+Prueba que la ecuación:
+\[x^{2}-x\sin x-\cos x = 0 ,\]
+tiene únicamente dos soluciones.
+\end{ej}
+\begin{sol}
+Para resolver este ejercicio, vamos a tratar de dibujar la función $\displaystyle f\left(x\right) = x^{2}- x \sin x - \cos x $. Tenemos que la función es continua en $\displaystyle \R $, estudiemos sus límites en infinito:
+\[\lim_{x \to \infty}f\left(x\right) = \lim_{x \to \infty}x^{2}-x \sin x - \cos x = \lim_{x \to \infty}x^{2}\left(1-\frac{\sin x }{x}-\frac{\cos x}{x^{2}}\right)= \infty .\]
+\[\lim_{x \to -\infty}f\left(x\right) = \lim_{x \to -\infty}x^{2}-x\sin x - \cos x = \lim_{x \to -\infty}x^{2}\left(1-\frac{\sin x }{x}- \frac{\cos x}{x^{2}}\right) = \infty .\]
+claramente, es derivable, estudiemos la derivada:
+\[f'\left(x\right) = 2x - \left(\sin x + x\cos x\right)+\sin x=2x-x \cos x=x\left(2-\cos x\right) .\]
+Está claro que $\displaystyle f'\left(x\right) = 0 \iff x = 0 $. Además, se tiene que
+\[f'\left(x\right) = 
+\begin{cases}
+< 0, \quad x < 0 \\
+0, \quad x = 0 \\
+> 0, \quad x > 0
+\end{cases}
+.\]
+Tenemos que $\displaystyle f\left(0\right) = -1 $. Dado que es decreciente cuando $\displaystyle x < 0 $ y $\displaystyle \lim_{x \to - \infty}f\left(x\right) = \infty $, tenemos que existe un único punto $\displaystyle x_{1} \in \left(-\infty, 0\right) $ tal que $\displaystyle f\left(x_{1}\right)=0 $. Análogamente, existe un único punto $\displaystyle x_{2} \in \left(0, \infty\right) $ tal que $\displaystyle f\left(x_{2}\right) = 0 $.
+\end{sol}
+\begin{ej}
+Calcula $\displaystyle \lim_{n \to \infty}\sum^{n}_{k = 1}\frac{n}{n^{2}+k^{2}} $.
+\end{ej}
+\begin{sol}
+Tenemos que
+\[\lim_{n \to \infty}\sum^{n}_{k=1}\frac{n}{n^{2}+k^{2}}=\lim_{n \to \infty}\frac{1}{n}\sum^{n}_{k=1}\frac{1}{1+\frac{k^{2}}{n^{2}}}=\int^{1}_{0} \frac{1}{1+x^{2}} \; dx = \left[\arctan x\right] ^{1}_{0}=\frac{\pi }{4} .\]
+Esto es cierto porque la función $\displaystyle \frac{1}{1+x^{2}} $ es continua en $\displaystyle \R $. 
+\end{sol}
+\begin{ej}
+	Calcula el volumen de revolución que se produce al girar la gráfica de la función $\displaystyle f\left(x\right) = \sqrt{\sin x}\left(\cos x +1\right) $, para $\displaystyle x \in \left[0, \pi \right]  $, respecto del eje de las $\displaystyle x $ (eje $\displaystyle y = 0 $).
+\end{ej}
+\begin{sol}
+	En primer lugar, estudiemos la gráfica de la función. Basta con saber que $\displaystyle f\left(x\right) \geq 0 $, $\displaystyle \forall x \in \left[0,\pi \right]  $. Así, tenemos que
+\[
+\begin{split}
+	V = \pi \int^{\pi }_{0} \left[\sqrt{\sin x}\left(\cos x + 1\right)\right] ^{2} \; dx = \pi \int^{\pi }_{0} \sin x \left(\cos x + 1\right)^{2} \; dx = \pi \int^{\pi }_{0} \sin x\left(\cos ^{2}x +2\cos x+1\right) \; dx .
+\end{split}
+\]
+Cogemos $\displaystyle u = \cos x $, así $\displaystyle du = - \sin x dx $:
+\[ = \pi \int^{1}_{-1} u^{2}+2u+1 \; du = \pi \left[\frac{\left(u+1\right)^{3}}{3}\right]^{1}_{-1} = \pi\left(\frac{8}{3}-0\right) = \frac{8\pi }{3}.\]
+\end{sol}
+\begin{ej}
+Sea la función $\displaystyle f\left(x\right) = \sum^{\infty}_{k = 0}\left(-1\right)^{k}\frac{\left(x-\pi \right)^{2k}}{\left(2k\right)!} $. Calcula su serie de Taylor centrada en cero.
+\end{ej}
+\begin{sol}
+
+\end{sol}
+
+\end{document}

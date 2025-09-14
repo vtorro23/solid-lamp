@@ -1,0 +1,144 @@
+\chapter{Preliminares}
+Recordamos que $\displaystyle \N = \left\{ 1, 2, \ldots\right\} $ es el conjunto de los \textbf{números naturales} y $\displaystyle \Z = \left\{ \ldots, -1, -1, 0, 1, 2, \ldots\right\}  $ es el conjunto de \textbf{números enteros}. Tomamos la suma y el producto tal y como los conocemos $\displaystyle \left(+, \cdot \right) $. Además, dotas a $\displaystyle \N $ y $\displaystyle \Z $ del orden que conocemos ($\displaystyle < $). En $\displaystyle \N $, tenemos el \textbf{principio del buen orden}.
+\begin{theorem}[Principio del buen orden]
+Todo subconjunto no vacío de $\displaystyle \N $ tiene un elemento mínimo.
+\end{theorem}
+Recordemos también que dado $\displaystyle z \in \Z $, su valor absoluto $\displaystyle \left|z\right| $ es asignar el valor positivo de $\displaystyle z $. En concreto, 
+\[ \left|z\right| =
+\begin{cases}
+z, \quad z \geq 0 \\
+-z, \quad z < 0
+\end{cases}
+.\]
+Además, se cumple que
+\[ \left|z_{1}\right| \leq \left|z_{1} \cdot z_{2}\right|, \quad \forall z_{1}, z_{2} \in \Z / \left\{ 0\right\}  .\]
+\section{Divisibilidad}
+\begin{theorem}
+Sean $\displaystyle n, m \in \Z $ con $\displaystyle m \neq 0 $. Así, existen $\displaystyle q, r \in \Z $ únicos tales que $\displaystyle n = mq + r $ y $\displaystyle 0 \leq r < \left|m\right| $.
+\end{theorem}
+\begin{proof}
+Estudiemos primero la existencia.
+ Supongamos que $\displaystyle m > 0 $ y consideremos el siguiente subconjunto
+	\[ X = \left\{ n - mk \; | \; k \in \Z, n -mk \geq 0\right\} \subset \N .\]
+Tenemos que este subconjunto es no vacío. En efecto, si $\displaystyle n \geq 0 $ tenemos que $\displaystyle n = n - m \cdot 0 \in X$. Si $\displaystyle n < 0 $, tenemos que $\displaystyle n\left(1 - m\right) \in X $. Así, tenemos que $\displaystyle X \neq \emptyset $. Así, podemos aplicar el principio del bueno orden, por lo que existe un elemento mínimo $\displaystyle r $. Así, tenemos que existe $\displaystyle q \in \Z $ tal que 
+\[r = n - mq, \; r \geq 0 .\]
+Además, tenemos que 
+\[n - \left(q+1\right)m = n - qm - m = r - m < r .\]
+Por tanto, $\displaystyle n - \left(q+1\right)m \not\in X $ por ser $\displaystyle r $ el mínimo. Entonces, necesariamente tenemos que $\displaystyle n - \left(q+1\right)m < 0 $, por lo que $\displaystyle r < m \leq \left|m\right| $. Ahora, si $\displaystyle m < 0 $, hemos visto que $\displaystyle r_{1}, q_{1} \in \Z $ tales que $\displaystyle n = \left(-m\right)q_{1}+r_{1} $ con $\displaystyle 0\leq r_{1} < \left|m\right| $. Es trivial que esto demuestra el teorema, puesto que $\displaystyle -q_{1} \in \Z $. \\
+Ahora demostramos la unicidad. Supongamos que existen $\displaystyle q_{1}, q_{2}, r_{1}, r_{2} \in \Z $ tales que 
+\[n = mq_{1} + r_{1} , \quad n = mq_{2} +r_{2} .\]
+Supongamos sin pérdida de generalidad que $\displaystyle r_{1} \leq r_{2} $. Así, tenemos que
+\[\left(q_{1}-q_{2}\right)m = r_{2}-r_{1} \Rightarrow \left|q_{1}-q_{2}\right| \left|m\right| = r_{2}-r_{1} .\]
+Así, si $\displaystyle r_{1} \neq r_{2} $, tenemos que $\displaystyle \left|q_{1}-q_{2}\right| \geq 1 $. Por tanto, se tiene que
+\[ \left|q_{1}-q_{2}\right| \left|m\right| \geq \left|m\right| > r_{2} \geq r_{2}-r_{1}.\]
+Así, hemos obtenido una contradicción, por lo que debe ser que $\displaystyle r_{1} = r_{2} $ y, consecuentemente, $\displaystyle q_{1} = q_{2} $.
+\end{proof}
+\begin{observation}
+A los números $\displaystyle n, m, q $ y $\displaystyle r $ los llamamos \textbf{dividendo}, \textbf{divisor}, \textbf{cociente} y \textbf{resto}, respectivamente.
+\end{observation}
+\begin{definition}
+Dados $\displaystyle a,b \in \Z $, decimos que $\displaystyle a $ divide a $\displaystyle b $, $\displaystyle a | b $, si existe $\displaystyle c \in \Z $ tal que $\displaystyle b = ac $.
+\end{definition}
+Recordemos que si $\displaystyle c | a $ y $\displaystyle c | b $, entonces $\displaystyle c | a+b $. En efecto, 
+\[a + b = ck_{1} + ck_{2} = c\left(k_{1}+k_{2}\right) .\]
+\begin{prop}
+	Sean $\displaystyle a,b,c \in \Z $,
+\begin{description}
+\item[Reflexiva.] $\displaystyle a|a $.
+\item[Antisimétrica.] $\displaystyle a|b, b|a \Rightarrow a = b $.
+\item[Transitiva.] $\displaystyle a|b, b|c \Rightarrow a|c $.
+\end{description}
+\end{prop}
+\begin{proof}
+La propiedad reflexiva es trivial, puesto que $\displaystyle a = a \cdot 1 $, $\displaystyle \forall a \in \Z $. En cuanto a la propiedad antisimétrica, tenemos que si $\displaystyle a|b $ y $\displaystyle b|a $, entonces $\displaystyle a = \lambda_{1} b $ y $\displaystyle b = \lambda_{2}a $. Así, tenemos que $\displaystyle a \leq b $ pero también tenemos que $\displaystyle b \leq a $, por lo que debe ser que $\displaystyle b = a $. Finalmente, para demostrar la propiedad transitiva basta ver que si $\displaystyle b = \lambda a $ y $\displaystyle c = \mu b $, se tiene que $\displaystyle c = \mu \lambda a $, por lo que $\displaystyle a | c $.
+\end{proof}
+\begin{observation}
+Tenemos entonces, que la relación de divisibilidad es una \textbf{relación de orden parcial}.
+\end{observation}
+\begin{definition}[Máximo común divisor]
+Sean $\displaystyle n, m \in \Z $ y $\displaystyle d \in \Z $. Diremos que $\displaystyle d $ es \textbf{divisor común} de $\displaystyle n $ y $\displaystyle m $ si $\displaystyle d |n $ y $\displaystyle d|m $. Llamaremos \textbf{máximo común divisor} de $\displaystyle n  $ y $\displaystyle m $, $\displaystyle \mcd\left(n,m\right) $ al más grande de los divisores comunes positivos.
+\end{definition}
+\begin{observation}
+Dado que el máximo común divisor es positivo, es único. 
+\end{observation}
+\begin{prop}
+Sean $\displaystyle a,b \in \Z $, entonces se cumple:
+\begin{enumerate}
+\item Existe el máximo común divisor de $\displaystyle a $ y $\displaystyle b $.
+\item \textbf{Identidad de Bézout.} Existen $\displaystyle x,y \in \Z $ tales que si $\displaystyle d = \mcd\left(a,b\right) $ entonces $\displaystyle d = ax + by $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+La demostración de 1 y 2 es la misma. Sean $\displaystyle a, b \in \Z $ y consideremos el siguiente conjunto:
+\[ S = \left\{ \lambda a + \mu b \; : \; \lambda, \mu \in \Z, \lambda a + \mu b > 0\right\} \subset \N .\]
+Está claro que $\displaystyle S \neq \emptyset $, pues supongamos sin pérdida de generalidad que $\displaystyle a > b $, entonces $\displaystyle a - b > 0 \in S $. Así, por el principio del buen orden, tenemos que existe un elemento mínimo de $\displaystyle S $ al que llamaremos $\displaystyle d $. Así, existen $\displaystyle x,y \in \Z $ tales que $\displaystyle d = ax + by $. Vamos a ver que $\displaystyle d = \mcd\left(a,b\right) $. En primer lugar, vamos a ver que es divisor común de $\displaystyle a $ y $\displaystyle b $. Tenemos que, por el algoritmo de la divisibilidad, existen $\displaystyle q, r \in \Z $ con $\displaystyle 0 \leq r < d $ tales que
+\[a = qd + r .\]
+Si $\displaystyle r > 0 $, tenemos que 
+\[r = a - qd = a - q\left(ax + by\right) = \left(1-qx\right)a + yb \in S .\]
+Así, tenemos que $\displaystyle r \geq d $ pero también $\displaystyle r < d $, lo que es una contradicción. Por tanto, debe ser que $\displaystyle r = 0 $, por lo que $\displaystyle d | a $. De manera análoga se demuestra que $\displaystyle r | b $. Así, queda demostrado que $\displaystyle d $ es divisor común de $\displaystyle a $ y $\displaystyle b $. Ahora, supongamos que $\displaystyle d' $ es también divisor común de $\displaystyle a $ y $\displaystyle b $. Así, existen $\displaystyle k_{1}, k_{2} \in \Z $ tales que $\displaystyle a = k_{1}d' $ y $\displaystyle b = k_{2}d' $. De esta manera queda que
+\[d = xa + yb = xk_{1}d' + yk_{2}d' = \left(xk_{1} + yk_{2}\right)d' .\]
+Así, tenemos que $\displaystyle d' \leq d $, por lo que $\displaystyle d = \mcd\left(a,b\right) $.
+\end{proof}
+
+Así, sabemos que existe el máximo común divisor, pero ahora necesitamos una manera de calcularlo. Para ello haremos uso del algoritmo de Euclides, que nos va a permitir también encontrar una identidad de Bézout.
+\begin{lema}
+Sean $\displaystyle a,b,r \in \Z $ tales que $\displaystyle 0 \leq r < b $. Si existe $\displaystyle q \in \Z $ tal que $\displaystyle a = bq + r $, entonces $\displaystyle \mcd\left(a,b\right) = \mcd\left(b,r\right) $.
+\end{lema}
+\begin{proof}
+Supongamos las condiciones del lema. Tenemos que, claramente $\displaystyle \mcd\left(a,b\right) | r $. Así, $\displaystyle \mcd\left(a,b\right) $ es divisor común de $\displaystyle b $ y $\displaystyle r $, por lo que $\displaystyle \mcd\left(a,b\right) \leq \mcd\left(b,r\right) $. Por otro lado, tenemos que $\displaystyle \mcd\left(b,r\right) | a $, por lo que es divisor común de $\displaystyle b $ y $\displaystyle a $ y, consecuentemente, $\displaystyle \mcd\left(b,r\right)\leq \mcd\left(a,b\right) $. Así, tenemos que $\displaystyle \mcd\left(a,b\right) = \mcd\left(b,r\right) $.
+\end{proof}
+
+\begin{theorem}[Algoritmo de Euclides]
+Sean $\displaystyle a,b \in \Z$, $\displaystyle a > b $ y vamos a dividir $\displaystyle a $ entre $\displaystyle b $. Así, $\displaystyle a = bq_{1} + r_{1} $, $\displaystyle q_{1} \in \Z $, $\displaystyle 0 < r_{1} < \left|b\right| $. 
+\begin{itemize}
+\item Si $\displaystyle r_{1} = 0 $, entonces $\displaystyle b | a $ y $\displaystyle \mcd\left(a,b\right) = b $. 
+\item Si $\displaystyle r_{1} \neq 0 $, entonces aplicando el lema tenemos que $\displaystyle \mcd\left(a,b\right) = \mcd\left(b, r_{1}\right) $. Así, dividimos $\displaystyle b $ entre $\displaystyle r_{1} $ y obtenemos $\displaystyle b = r_{1}q_{2}+r_{2} $, y aplicamos el mismo razonamiento de antes hasta obtener un $\displaystyle r_{k} = 0 $ y tendremos que $\displaystyle r_{k-1} = \mcd\left(a,b\right) $.
+\end{itemize}
+ Sabemos que este proceso es finito por el principio del buen orden y porque $\displaystyle r_{i} $ se hace cada vez más pequeño.
+\end{theorem}
+Reconstruyendo las igualdades obtenidas en el algoritmo de Euclides podemos obtener una identidad de Bézout.
+\section{Factorización}
+\begin{definition}
+	Sea $\displaystyle a \in \Z / \left\{ -1, 0, 1\right\}  $. 
+	\begin{enumerate}
+	\item Diremos que $\displaystyle a $ es \textbf{primo} si $\displaystyle a | bc \Rightarrow a | b \lor a | c $.
+	\item Diremos que $\displaystyle a $ es \textbf{irreducible} si $\displaystyle a = bc \Rightarrow b = \pm 1 \lor c = \pm 1 $.
+	\end{enumerate}
+\end{definition}
+\begin{observation}
+Si $\displaystyle a \in \N $, $\displaystyle a $ es irreducible si sus únicos divisores son $\displaystyle 1 $ y $\displaystyle a $. Además, si $\displaystyle a \in \Z $, entonces a es primo si y solo si es irreducible. En efecto, si $\displaystyle a $ es irreducible y $\displaystyle a |bc $ pero $\displaystyle a $ no divide a $\displaystyle b $, tenemos que $\displaystyle \mcd\left(a,b\right) = 1 $. Así, existen $\displaystyle \lambda, \mu \in \Z $ tales que 
+\[1 = \lambda a + \mu b .\]
+De esta forma, se tiene que, dado que $\displaystyle bc = ak $ con $\displaystyle k \in \Z $,
+\[ c = c\lambda a + c \mu b = c\lambda a + k\mu a = \left(c\lambda + k\mu \right)a.\]
+Así, tenemos que $\displaystyle a $ es primo.
+\end{observation}
+\begin{theorem}[Teorema fundamental de la aritmética]
+	Sea $\displaystyle n \in \Z / \left\{ -1, 0, 1\right\}  $ \footnote{Si $\displaystyle n < 0 $ consideramos la descomposición de $\displaystyle \left|n\right| $ y lo multiplicamos por $\displaystyle -1 $.} , entonces $\displaystyle n $ es producto finito de enteros irreducibles de forma única salvo reordenación. Esto es, existen $\displaystyle p_{1}, \ldots, p_{k} \in \Z $ y $\displaystyle \alpha_{1}, \ldots, \alpha_{k} \in \N $ tales que $\displaystyle n = p_{1}^{\alpha_{1}} \cdots p_{k}^{\alpha_{k}} $.
+\end{theorem}
+\begin{colorary}
+	Sean $\displaystyle a,b \in \Z $ y $\displaystyle a = p_{1}^{\alpha_{1}} \cdots p_{k}^{\alpha_{k}} $ y $\displaystyle b = q_{1}^{\beta _{1}} \cdots q_{t}^{\beta_{t}} $, con $\displaystyle p_{i}, q_{i} \in \Z $ irreducibles y $\displaystyle \alpha_{i}, \beta_{i} \in \N \cup \left\{ 0\right\}  $. Así, definimos el $\displaystyle \mcd\left(a,b\right) $ como los enteros irreducibles comunes elevados al menor exponente. Es decir, si $\displaystyle p_{i} = q_{i} $ para $\displaystyle i = 1, \ldots, s $ con $\displaystyle s < t, k $, tenemos que
+	\[\mcd\left(a,b\right) = p_{1}^{\min \left\{ \alpha_{1}, \beta_{1}\right\} } \cdots p_{s}^{\min \left\{ \alpha_{s}, \beta _{s}\right\} } .\]
+\end{colorary}
+\section{Aritmética modular}
+\begin{definition}
+Sean $\displaystyle a,m \in \Z $ y $\displaystyle n \in \N $. Diremos que $\displaystyle a $ es \textbf{congruente} con $\displaystyle m $ módulo $\displaystyle n $ si $\displaystyle a - m = kn $ para $\displaystyle k \in \Z $, $\displaystyle a\equiv m \mod n $. 
+\end{definition}
+\begin{observation}
+También podemos decir que $\displaystyle m $ es el resto de dividir $\displaystyle a $ entre $\displaystyle n $.
+\end{observation}
+Las congruencias respetan las operaciones, es decir si $\displaystyle a_{1} \equiv m_{1} \mod n $ y $\displaystyle a_{2} \equiv m_{2}\mod n $ tenemos que
+\[a_{1} + a_{2} \equiv m_{1} + m_{2} \mod n .\]
+Con la resta funciona igual. Además, si $\displaystyle b \in \Z $, 
+\[ba_{1} \equiv bm_{1} \mod n .\]
+\begin{theorem}[Teorema chino del resto]
+Sea el sistema de congruencias
+\[
+\begin{cases}
+x \equiv a_{1} \mod n_{1} \\
+\vdots \\
+x \equiv a_{t}\mod n_{t}
+\end{cases}
+,\]
+tal que $\displaystyle a_{1}, \ldots, a_{t} \in \Z $, $\displaystyle n_{1}, \ldots, n_{t} \in \N $ tal que $\displaystyle \mcd\left(n_{i}, n_{j}\right) = 1 $, $\displaystyle \forall i \neq j $. Entonces, el sistema tiene solución y estas soluciones están en la misma clase de equivalencia módulo $\displaystyle n = n_{1} \cdots n _{t} $.
+\end{theorem}
+

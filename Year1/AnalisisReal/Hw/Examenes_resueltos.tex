@@ -1,0 +1,142 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Exámenes pasados}
+\author{Victoria Eugenia Torroja Rubio}
+\date{\today}
+
+\maketitle
+
+\section*{Mayo 2024}
+\begin{ej}
+Sea $\displaystyle f\left(x\right) = \sqrt{1-x} $. Determinar para qué puntos del dominio de $\displaystyle f $ se cumple que $\displaystyle \left|f\left(x\right)-1\right| \geq \frac{1}{2} $.
+\end{ej}
+\begin{sol}
+Se puede hacer de dos formas:
+\begin{itemize}
+\item Resolver la inecuación $\displaystyle \left|\sqrt{1-x}-1\right| \geq \frac{1}{2} $. 
+\item Pintar la función y verlo gráficamente.
+\end{itemize}
+Lo hacemos de la segunda manera. Primero calculamos el dominio de $\displaystyle f $: $\displaystyle (-\infty, 1] $. Por otro lado, tenemos que 
+\[f'\left(x\right) = \frac{-1}{2\sqrt{1-x}} < 0 .\]
+Por tanto, es decreciente. Además, es inyectiva. Tenemos que $\displaystyle \lim_{x \to -\infty}f\left(x\right) = \infty $ y $\displaystyle f\left(1\right) = 0 $. También sabemos que la función es continua en todo su dominio. Así, podemos pintar la función y podemos ver que 
+\[ \left\{ x \; : \; \left|f\left(x\right)-1\right| \geq \frac{1}{2}\right\} = (-\infty, f^{-1}\left(\frac{3}{2}\right)] \cup [f^{-1}\left(\frac{1}{2}\right), \infty).\]
+Como $\displaystyle f^{-1}\left(\frac{3}{2}\right) = -\frac{5}{4} $ y $\displaystyle f^{-1}\left(\frac{1}{2}\right) = \frac{3}{4} $, tenemos que la solución es el conjunto $\displaystyle \left(-\infty, -\frac{5}{4}\right] \cup \left[\frac{3}{4}, \infty\right) $.
+\end{sol}
+\begin{ej}
+	Sean $\displaystyle f, g : \left[a,b\right] \to \R $ dos funciones continuas y derivables en $\displaystyle \left[a,b\right] / \left\{ s\right\}  $ con $\displaystyle s \in \left(a,b\right) $, con $\displaystyle f'\left(x\right) \neq 0 $, $\displaystyle \forall x \in \left[a,b\right] / \left\{ s\right\}  $. Si existe $\displaystyle \lim_{x \to s^{-}}f\left(x\right) = \lim_{x \to s^{-}}g\left(x\right) = 0 $ y existe
+	\[\lim_{x \to s^{-}}\frac{g'\left(x\right)}{f'\left(x\right)} ,\]
+	entonces se verifica que 
+	\[ \lim_{x \to s^{-}}\frac{g\left(x\right)}{f\left(x\right)} = \lim_{x \to s^{-}}\frac{g'\left(x\right)}{f'\left(x\right)} .\]
+\end{ej}
+\begin{sol}
+	Cogemos $\displaystyle f, g : [a,s) \to \R $. Definimos $\displaystyle f\left(s\right) = g\left(s\right) = \lim_{x \to s^{-}}f\left(x\right) = \lim_{x \to s^{-}}g\left(x\right) = 0 $. Así, tenemos que $\displaystyle f $ y $\displaystyle g $ son continuas en $\displaystyle \left[a,s\right]  $ y derivables en $\displaystyle \left(a,s\right) $. Además, sabemos que $\displaystyle f'\left(x\right) \neq 0 $. Por el teorema del valor medio de Cauchy, tenemos que $\displaystyle \forall x \in \left(a,s\right) $, $\displaystyle \exists \xi \in (x,s) $ tal que 
+	\[\frac{g\left(x\right)-g\left(s\right)}{f\left(x\right)-f\left(s\right)} = \frac{g'\left(\xi\right)}{f'\left(\xi\right)} .\]
+Además, como $\displaystyle \lim_{x \to s^{-}}\frac{g'\left(x\right)}{f'\left(x\right)} = l $, tenemos que $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle 0 < \delta - x < \delta  $, entonces $\displaystyle \left|\frac{g'\left(x\right)}{f'\left(x\right)}-l\right| < \epsilon $. Así, como $\displaystyle \xi \in \left(x,s\right) $ tenemos que 
+\[ \left|\frac{g\left(x\right)}{f\left(x\right)}-l\right| = \left|\frac{g\left(x\right)-g\left(s\right)}{f\left(x\right)-f\left(s\right)}-l\right| = \left|\frac{g'\left(\xi\right)}{f'\left(\xi\right)}-l\right| < \epsilon .\]
+\end{sol}
+\begin{ej}
+Calcula  
+\[ \lim_{x \to 1^{-}}\left(1-x\right)^{\frac{1}{\sqrt{-\ln\left(1-x\right)}}}.\]
+\end{ej}
+\begin{sol} Se trata de una indeterminación de la forma $\displaystyle 0^{0} $. Dado que el logaritmo neperiano es una función continua y monótona, el límite existe si y solo si existe el límite
+\[
+\begin{split}
+	\lim_{x \to 1^{-}}\ln\left(\left(1-x\right)^{\frac{1}{\sqrt{-\ln\left(1-x\right)}}}\right) = & \lim_{x \to 1^{-}}\frac{\ln \left(1-x\right)}{\sqrt{-\ln\left(1-x\right)}} = \lim_{x \to 1^{-}}\frac{- \left(-\ln\left(1-x\right)\right)}{\sqrt{-\left(1-x\right)}} = -\sqrt{-\ln\left(1-x\right)} = -\infty.
+\end{split}
+\]
+Así, el límite original vale 0.
+\end{sol}
+\begin{ej}
+	Encuentra una función $\displaystyle \varphi:\left[0,1\right] \to \R $ derivable en todo $\displaystyle \left[0,1\right]  $ y tal que $\displaystyle \varphi\left(0\right)= 0 $ y $\displaystyle \forall x \in \left(\epsilon , 1\right) $, para cierto $\displaystyle \epsilon > 0 $, $\displaystyle \varphi\left(x\right) = 1 $ y además $\displaystyle \int^{1}_{0} \varphi\left(x\right) \; dx < 1 $.
+\end{ej}
+\begin{sol}
+	Necesitamos una función continua en $\displaystyle \left[0,\epsilon \right]  $ que cumpla que $\displaystyle \varphi\left(\epsilon \right) = 1 $ y $\displaystyle \varphi'\left(\epsilon \right) = 0 $. Así, podemos coger por ejemplo una parábola de la forma
+	\[ \varphi\left(x\right) = k\left(x-\epsilon \right)^{2} + 1 .\]
+	Para que $\displaystyle \varphi\left(0\right) = 0 $, cogemos $\displaystyle k = -\frac{1}{\epsilon^{2}} $. Así, hemos construido la función
+	\[\varphi\left(x\right) =
+	\begin{cases}
+		-\frac{1}{\epsilon ^{2}}\left(x-\epsilon \right)^{2}+1, \; x\in [0, \epsilon] \\
+		1, \; x \in \left[\epsilon ,1\right] 
+	\end{cases}
+	.\]
+Ahora falta ver que la integral es menor a uno. En efecto, tenemos que
+\[\int^{1}_{0} \varphi\left(x\right) \; dx = \int^{\epsilon }_{0} \varphi\left(x\right) \; dx + \int^{1}_{\epsilon } \varphi\left(x\right) \; dx < \int^{\epsilon }_{0} 1 \; dx + \int^{1}_{\epsilon } 1 \; dx = 1 .\]
+\end{sol}
+\begin{ej}
+Calcular la integral
+\[\int \frac{1}{x\ln ^{2}x - x \ln x^{2} + x} \; dx .\]
+\end{ej}
+\begin{sol}
+\[
+\begin{split}
+\int \frac{1}{x\ln ^{2}x - x \ln x^{2} + x} \; dx = \int \frac{1}{x\ln ^{2}x - 2\ln x + x} \; dx = \int \frac{1}{x\left(\ln x - 1\right)^{2}} \; dx
+\end{split}
+\]
+Así, cogiendo $\displaystyle u = \left(\ln x-1\right)^{2} $, $\displaystyle du = \frac{1}{x}dx $,
+\[ = \int \frac{1}{u^{2}} \; du = -\frac{1}{u} + C = -\frac{1}{\ln x - 1} + C = \frac{1}{1-\ln x} + C.\]
+\end{sol}
+\begin{ej}
+Demostrar que $\displaystyle \ln x \leq \frac{1}{e}\left(x-e\right)+1 $, $\displaystyle x > 0 $.
+\end{ej}
+\begin{sol}
+Tenemos que la recta del lado derecho de la desigualdad es la recta tangente de la función $\displaystyle \ln x $ en $\displaystyle x = e $. Una forma de resolver el ejercicio es demostrar que si una función es cóncava, cualquier recta tangente a la función queda por encima de la función. Otra forma de hacerlo es estudiando la función $\displaystyle g\left(x\right) = \frac{1}{e}\left(x-e\right)+1-\ln x $ y viendo que $\displaystyle g\left(x\right) \geq 0 $, $\displaystyle x > 0 $. Hacemos la segunda opción:
+\[g'\left(x\right) = \frac{1}{e} - \frac{1}{x} =
+\begin{cases}
+< 0, \; x > e \\
+0, \; x = e \\
+> 0, \; x < e
+\end{cases}
+.\]
+Tenemos que $\displaystyle g\left(e\right) = 0 $, que es un mínimo. Así, $\displaystyle \forall x > 0 $ se tiene que $\displaystyle g\left(x\right) \geq 0 $.
+\end{sol}
+\begin{ej}
+Consideramos una función $\displaystyle f : [0,\infty) \to (0,\infty) $ continua en $\displaystyle \left(0,\infty\right) $ y tal que $\displaystyle \forall n \in \N $, 
+\[\int^{\frac{1}{n}}_{\frac{1}{n+1}} f\left(x\right) \; dx \quad \text{y} \quad \int^{n + \frac{1}{n}}_{n} f\left(x\right) \; dx = \frac{1}{n} .\]
+Estudiar si existen $\displaystyle \int^{1}_{0} f\left(x\right) \; dx $ y $\displaystyle \int^{\infty}_{0} f\left(x\right) \; dx $.
+\end{ej}
+\begin{sol}
+Partimos el ejercicio en dos partes. 
+\begin{itemize}
+	\item Primero estudiamos $\displaystyle \int^{1}_{0} f\left(x\right) \; dx $. Sabemos que $\displaystyle \forall y \in (0,1] $, $\displaystyle \exists \int^{1}_{y} f\left(x\right) \; dx $. Así, tenemos que ver si existe el límite
+		\[\lim_{y \to 0^{+}}\int^{1}_{y} f\left(x\right) \; dx .\]
+Consideremos $\displaystyle F\left(y\right) = \int^{1}_{y} f\left(x\right) \; dx $. Por el teorema fundamental del cálculo, tenemos que $\displaystyle F'\left(y\right) = -f\left(y\right) < 0  $.
+Por tanto, $\displaystyle F $ es estrictamente decreciente. Por ser monótona, tenemos que 
+\[\lim_{y \to 0^{+}}F\left(y\right) = \lim_{n \to \infty}\int^{1}_{\frac{1}{n}} f\left(x\right) \; dx = \lim_{n \to \infty}\sum^{n-1}_{k = 1}\int^{\frac{1}{k}}_{\frac{1}{k+1}} f\left(x\right) \; dx = \lim_{n \to \infty}\sum^{n-1}_{k = 1}\frac{1}{n^{2}} = \sum^{\infty}_{n = 1}\frac{1}{n^{2}} < \infty.\]
+Por tanto, la integral $\displaystyle \int^{1}_{0} f\left(x\right) \; dx $ existe.
+\item Para estudiar la convergencia de $\displaystyle \int^{\infty}_{0} f\left(x\right) \; dx $ hacemos algo similar. Como sabemos que existe $\displaystyle \int^{1}_{0} f\left(x\right) \; dx $, para ver que converge nuestra integral de interés basta con que estudiemos la convergencia de $\displaystyle \int^{\infty}_{1} f\left(x\right) \; dx $.
+	Consideremos ahora $\displaystyle F\left(y\right) = \int^{y}_{1} f\left(x\right) \; dx $. Por el TFC tenemos que $\displaystyle F'\left(y\right) = f\left(y\right) > 0 $, por lo que es monótona, por lo que
+\[
+\begin{split}
+	\lim_{y \to \infty}F\left(y\right) = & \lim_{y \to \infty}\int^{y}_{1} f\left(x\right) \; dx = \lim_{n \to \infty}\int^{n}_{1} f\left(x\right) \; dx = \lim_{n \to \infty}\sum^{n-1}_{k = 1}\int^{n + 1}_{n} f\left(x\right) \; dx  \\
+	= & \lim_{n \to \infty}\sum^{n-1}_{k = 0}\int^{n + \frac{1}{n}}_{n} f\left(x\right) \; dx = \sum^{\infty}_{n = 1}\frac{1}{n} = \infty.
+\end{split}
+\]
+Así, como no converge la integral $\displaystyle \int^{\infty}_{1} f\left(x\right) \; dx $, no converge $\displaystyle \int^{\infty}_{0} f\left(x\right) \; dx $.
+\end{itemize}
+\end{sol}
+\begin{ej}
+Consideremos la serie de potencias $\displaystyle \sum^{\infty}_{n = 1}r^{n}\left(x-a\right)^{n} $, $\displaystyle 0 < r < a < \frac{1}{2} $.
+\begin{description}
+\item[(a)] Calcular el radio de convergencia.
+\item[(b)] Calcular el límite puntual.
+\item[(c)] Deducir si converge uniformemente en $\displaystyle \left[-1,1\right]  $.
+\end{description}
+\end{ej}
+\begin{sol}
+\begin{description}
+\item[(a)] Aplicamos el criterio del cociente:
+	\[\lim_{n \to \infty}\frac{r^{n+1} \left|x-a\right|^{n+1}}{r^{n} \left|x-a\right|^{n}} = r \left|x-a\right| .\]
+	Así, como $\displaystyle r \left|x-a\right| < 1 \iff \left|x-a\right| < \frac{1}{r} $, tenemos que el radio de convergencia es $\displaystyle \frac{1}{r} $.
+\item[(b)] Al tratarse de una serie geométrica, si $\displaystyle x \in \left(a - \frac{1}{r}, a + \frac{1}{r}\right) $:
+	\[\sum^{\infty}_{n = 1}r^{n}\left(x-a\right)^{n} = \frac{r\left(x-a\right)}{1 - r\left(x-a\right)} .\]
+En $\displaystyle x = a $ la serie vale 0.
+\item[(c)] Tenemos que $\displaystyle r < \frac{1}{2} $, por lo que $\displaystyle 2 < \frac{1}{r} $ y $\displaystyle -\frac{1}{r} < - 2 $. Así, $\displaystyle a + \frac{1}{r} > a + 2 > 2 $ y $\displaystyle a - \frac{1}{r} < a - 2 < -1 $. Así, tenemos que $\displaystyle \left[-1,1\right] \subset \left(a-\frac{1}{r}, a +\frac{1}{r}\right) $, por lo que la serie converge uniformemente en $\displaystyle \left[-1,1\right]  $.
+\end{description}
+
+\end{sol}
+ 
+\end{document}

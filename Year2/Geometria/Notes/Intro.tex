@@ -1,0 +1,97 @@
+\chapter{Preliminares}
+\begin{definition}[Cuerpo]
+Un \textbf{cuerpo} es un conjunto $\displaystyle \K $ con dos operaciones $\displaystyle + $ y $\displaystyle \cdot  $ tales que:
+\begin{itemize}
+\item $\displaystyle \left(\K, +\right) $ es un grupo abeliano. 
+\item $\displaystyle \left(\K/ \left\{ 0\right\}, \cdot \right) $ es un grupo abeliano.
+\item Se cumple la propiedad distributiva.
+\end{itemize}
+\end{definition}
+\begin{definition}[Espacio vectorial]
+Un \textbf{espacio vectorial} $\displaystyle V $ sobre un cuerpo $\displaystyle \K $, es un grupo abeliano $\displaystyle \left(V, +\right) $ con una función $\displaystyle \cdot : \K \times V \to V $ tal que:
+\begin{itemize}
+\item $\displaystyle \forall \lambda, \mu \in \K $, $\displaystyle \forall \vec{v} \in V $, $\displaystyle \lambda \cdot \left(\mu \cdot \vec{v}\right) = \left(\lambda \mu\right) \cdot \vec{v} $. 
+\item $\displaystyle \forall \vec{v} \in V $, $\displaystyle 1 \cdot \vec{v} = \vec{v} $.
+\item $\displaystyle \forall \lambda \in \K, \forall \vec{u}, \vec{v} \in V $, $\displaystyle \lambda\left(\vec{u}+\vec{v}\right) = \lambda\vec{u}+\lambda\vec{v}$. 
+\item $\displaystyle \forall \lambda, \mu \in \K, \forall \vec{v} \in V $, $\displaystyle \lambda\vec{v}+\mu\vec{v} $.
+\end{itemize}
+\end{definition}
+\begin{observation}
+Dado $\displaystyle V $ un $\displaystyle \K $-espacio vectorial, si $\displaystyle \dim\left(V\right) = n < \infty $, entonces se tiene que $\displaystyle V \cong \K^{n} $.
+\end{observation}
+\begin{definition}[Relación de equivalencia]
+Una relación $\displaystyle \mathcal{R} $ en un conjunto $\displaystyle X $ es de \textbf{equivalencia} si cumple:
+\begin{description}
+\item[Reflexiva.] $\displaystyle \forall x \in X $, $\displaystyle x \mathcal{R} x $.
+\item[Simétrica.] $\displaystyle \forall x, y \in X $, $\displaystyle x \mathcal{R} y \Rightarrow y \mathcal{R} x $.
+\item[Transitiva.] $\displaystyle \forall x,y,z \in X $, $\displaystyle \left(x \mathcal{R} y\right) \land \left(y \mathcal{R} z\right) \Rightarrow \left(x \mathcal{R}z\right) $.
+\end{description}
+\end{definition}
+Recordamos los conjuntos de \textbf{clase de equivalencia} de un elemento $\displaystyle x \in X $:
+\[ [x]_{\mathcal{R}} = \left\{ y \in X \; : \; y \mathcal{R}x\right\}  .\]
+Similarmente, tenemos que el \textbf{conjunto cociente} de una relación de equivalencia es
+\[X/\mathcal{R} = \left\{ [x]_{\mathcal{R}}\; : \; x \in X\right\}  .\]
+Una \textbf{partición} de $\displaystyle X $ es una familia de subconjuntos de $\displaystyle X $, disjuntos dos a dos, cuya unión es $\displaystyle X $. 
+\section{Partición de $\displaystyle \Z $ definida por $\displaystyle n\Z $}
+Para $\displaystyle A, B \subset \Z $, definimos las operaciones
+\begin{itemize}
+	\item $\displaystyle A + B = \left\{ a + b \; : \; a \in A, b \in B\right\}  $.
+	\item $\displaystyle A \cdot B = \left\{ a \cdot b \; : \; a \in A, b \in B\right\}  $.
+	\item $\displaystyle n\Z := \left\{ n\right\} \cdot \Z $.
+	\item $\displaystyle a + n\Z := \left\{ a\right\} + \left\{ n\right\} \Z $.
+\end{itemize}
+\begin{theorem}[Algoritmo de la división]
+	Para todo $\displaystyle x \in \Z $ existe un único $\displaystyle q \in \Z $ y $\displaystyle r \in \left\{ 0, 1, \ldots, n-1\right\}  $ tal que $\displaystyle x = r + qn $. Por tanto, 
+	\[ \left\{ n\Z, 1 + n\Z, \ldots, \left(n-1\right)+n\Z\right\}  ,\]
+	es una partición de $\displaystyle \Z $ que denotamos por $\displaystyle \Z/n\Z $.
+\end{theorem}
+\begin{observation}
+La partición anterior se corresponde con la relación de equivalencia 
+\[a \mathcal{R}_{n} b \iff a - b \in n\Z .\]
+\end{observation}
+\begin{theorem}
+El par $\displaystyle \left(\Z/n\Z, +\right) $ es un grupo, con la suma definida de la siguiente forma:
+\[\left(a+n\Z\right)+\left(b+n\Z\right) = \left(a+b\right) +n\Z = r + n\Z ,\]
+donde $\displaystyle a + b = r +qn $ con $\displaystyle r \in \left\{ 0, 1, \ldots, n -1\right\}  $.
+\end{theorem}
+\begin{proof}
+	Primero vamos a ver que la aplicación está bien definida. Para ello, vamos a ver que no depende del representante. Es decir, supongamos que $\displaystyle x_{1}, x_{2} \in [x]_{\mathcal{R}}$ e $\displaystyle y_{1}, y_{2} \in [y]_{\mathcal{R}} $. Tenemos que $\displaystyle x_{2} = x_{1} + \lambda n $ e $\displaystyle y_{2} = y_{1} + \mu n $, así tenemos que
+	\[y_{2}+x_{2}=y_{1}+\mu n + x_{1} + \lambda n = \left(y_{1}+x_{1}\right) + \left(\mu + \lambda \right)n .\]
+	Así, tenemos que $\displaystyle y_{2}+x_{2} \mathcal{R}_{n} y_{1}+x_{1} $, por lo que $\displaystyle y_{2}+x_{2} \in [y_{1}+x_{1}]_{\mathcal{R}_{n}} $. Así, hemos visto que está bien definida y, por la definición, se puede ver que es una operación binaria en $\displaystyle \Z/n\Z $. Ahora tenemos que ver que es asociativa:
+	\[
+	\begin{split}
+		[\left(a +n\Z\right)+\left(b+n\Z\right)] + \left(c + n\Z\right) = & [\left(a+b\right)+n\Z] + \left(c + n\Z\right) \\
+		= & \left(a+b+c\right) + n\Z \\
+		= & \left(a+n\Z\right)+[\left(b+c\right)+n\Z] \\
+		= & \left(a+n\Z\right)+\left[\left(b+n\Z\right)+\left(c+n\Z\right)\right] .
+	\end{split}
+	\]
+Ahora vamos a ver que existen el elemento neutro y los inversos. Por un lado, tenemos que el elemento neutro es claramente $\displaystyle 0 + n\Z $. En efecto, $\displaystyle \forall a \in \Z $, 
+\[\left(0 + n\Z\right) + \left(a + n\Z\right) = \left(0 + a\right) + n\Z = a + n\Z .\]
+Así, tenemos que $\displaystyle 0 $ es el elemento neutro. En cuanto al inverso, si $\displaystyle a \in \Z $, tenemos que $\displaystyle -a + n\Z $ es su inverso:
+\[\left(a + n\Z\right) + \left(-a+n\Z\right) = \left(a - a\right)+n\Z = 0 + n\Z .\]
+\end{proof}
+\begin{observation}
+Además, se tiene que dado que la suma en $\displaystyle \Z $ es conmutativa, la suma definida en $\displaystyle \Z/n\Z $ también lo es.
+\end{observation}
+\begin{prop} Para $\displaystyle \forall a,b \in \Z $ se tiene que
+\begin{description}
+\item[(i)] $\displaystyle \left(a + n\Z\right) \cdot \left(b + n\Z\right) \neq \emptyset $.
+\item[(ii)] $\displaystyle \left(a + n\Z\right) \cdot \left(b + n\Z\right) \subset \left(a \cdot b\right)+n\Z = r + n\Z $, donde $\displaystyle a \cdot b = r + qn $ con $\displaystyle r \in \left\{ 0, 1, \ldots, n - 1\right\}  $.
+\end{description}
+\end{prop}
+\begin{proof}
+\begin{description}
+\item[(i)] Dado que $\displaystyle a,b \in \Z $, tenemos que $\displaystyle a + n\Z, b + n\Z \neq \emptyset $. Así, por nuestra definición del producto de conjuntos, tenemos que $\displaystyle \left(a + n\Z\right) \cdot \left(b + n\Z\right) \neq \emptyset $.
+\item[(ii)] Si $\displaystyle x \in \left(a + n\Z\right) \cdot \left(b+n\Z\right) $, tenemos que $\displaystyle x = y \cdot z $ para $\displaystyle y \in a + n\Z $ y $\displaystyle z = b + n\Z $. Así, $\displaystyle y = a + \lambda n $ y $\displaystyle z = b + \mu n $, con $\displaystyle \lambda, \mu \in \Z $. Así, queda que 
+	\[x = y \cdot z = \left(a + \lambda n\right) \cdot \left(b + \mu n\right) = ab + \left(a\mu + \lambda b +\lambda \mu n\right)n .\]
+	Así, está claro que $\displaystyle x \in \left(a \cdot b\right) + n\Z $.
+\end{description}
+\end{proof}
+\begin{observation}
+En cuanto a la parte \textbf{(ii)} de la proposición anterior, la igualdad no tiene por qué darse. En efecto, consideremos como ejemplo 
+\end{observation}
+
+Definimos la operación $\displaystyle * : \Z/n\Z \times \Z/n\Z \to \Z/n\Z $ como 
+\[\left(a + n\Z\right) * \left(b + n\Z\right) = \left(c + n\Z\right) \iff \left(a + n\Z\right) \cdot \left(b + n\Z\right) \subset c + n\Z .\]
+

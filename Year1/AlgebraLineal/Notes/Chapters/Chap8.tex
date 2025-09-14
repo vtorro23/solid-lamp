@@ -48,12 +48,12 @@ Demostramos \textbf{(c)}, puesto que \textbf{(a)} y \textbf{(b)} son triviales. 
 \normalfont Si $\displaystyle A \in \mathcal{L} $, tenemos que si $\displaystyle M_{1} $ es la proyección ortogonal de $\displaystyle M $ sobre $\displaystyle L $, 
 \[ \overrightarrow{AM} = \overrightarrow{AM_{1}} + \overrightarrow{M_{1}M} .\]
 Además, tenemos que $\displaystyle \|\overrightarrow{AM}\|^{2} = \|\overrightarrow{AM_{1}}\|^{2} + \|\overrightarrow{MM_{1}}\|^{2} \geq \|\overrightarrow{MM_{1}}\|^{2} $, $\displaystyle \forall A \in \mathcal{L} $. Así, 
-\[ \inf \left\{ d\left(M,A\right) \; : \; A \in \mathcal{L}\right\} = \|\overrightarrow{MM_{1}}\|^{2} = d\left(M, \mathcal{L}\right) = d\left(M,M_{1}\right) .\]
+\[ \inf \left\{ d\left(M,A\right) \; : \; A \in \mathcal{L}\right\} = \|\overrightarrow{MM_{1}}\| = d\left(M, \mathcal{L}\right) = d\left(M,M_{1}\right) .\]
 \end{observation}
 \begin{fdefinition}[]
 	\normalfont Un sistema de referencia $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $ cartesiano de $\displaystyle \mathcal{E} $ es ortogonal (ortonormal) si lo es la base $\displaystyle \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\}  $.
 \end{fdefinition}
-\begin{observation}
+\subsection*{Distancia entre dos puntos}
 \normalfont Sea $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $ un sistema de referencia ortonormal y sea $\displaystyle A,B \in \mathcal{E} $. Consideremos que 
 \[\overrightarrow{OA} = a^{1}\vec{u}_{1} + \cdots + a^{n}\vec{u}_{n}, \quad \overrightarrow{OB} = b^{1}\vec{u}_{1} + \cdots + b^{n}\vec{u}_{n} .\]
 Así, tendremos que 
@@ -65,15 +65,420 @@ Además,
 \end{split}
 \]
 Así, obtenemos que $\displaystyle d\left(A,B\right) = \sqrt{\left(b^{1}-a^{1}\right)^{2} + \cdots + \left(b^{n}-a^{n}\right)^{2}} $.
-\end{observation}
-\subsection{Distancia de un punto a un hiperplano}
-Supongamos que $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $. Sea $\displaystyle H$ el hiperplano dado por $\displaystyle \mathcal{H} : a_{1}x^{1} + \cdots + a_{n}x^{n} + b = 0 $, con $\displaystyle \left(a_{1}, \ldots, a_{n}\right) \neq \left(0, \ldots, 0\right) $. Así, tenemos que la ecuación de $\displaystyle H $ será $\displaystyle a_{1}x^{1} + \cdots + a_{n}x^{n} = 0 $. Así, 
-	\[ \left\langle a_{1}\vec{u}_{1} + \cdots + a_{n}\vec{u}_{n}, a_{1}\vec{u}_{1} + \cdots + a_{n}\vec{u}_{n} \right\rangle = 0 .\]
-	$\displaystyle H = \left\{ a_{1}\vec{u}_{1} + \cdots + a_{n}\vec{u}_{n}\right\} ^{\perp }_{\left\langle ,  \right\rangle } $. Podemos coger
+\subsection*{Distancia de un punto a un hiperplano}
+Supongamos que $\displaystyle \left(O, \left\{ \vec{u}_{1}, \ldots, \vec{u}_{n}\right\} \right) $ es un sistema de referencia cartesiano ortonormal. Sea $\displaystyle H$ el hiperplano dado por $\displaystyle \mathcal{H} : a_{1}x^{1} + \cdots + a_{n}x^{n} + b = 0 $, con $\displaystyle \left(a_{1}, \ldots, a_{n}\right) \neq \left(0, \ldots, 0\right) $. Así, tenemos que la ecuación de $\displaystyle H $ será $\displaystyle a_{1}x^{1} + \cdots + a_{n}x^{n} = 0 $. Así, si $\displaystyle \vec{x} = x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n} \in H $,
+	\[ \left\langle a_{1}\vec{u}_{1} + \cdots + a_{n}\vec{u}_{n}, x^{1}\vec{u}_{1} + \cdots + x^{n}\vec{u}_{n} \right\rangle = 0 .\]
+	$\displaystyle H = \left\{ a_{1}\vec{u}_{1} + \cdots + a_{n}\vec{u}_{n}\right\} ^{\perp }_{\left\langle ,  \right\rangle } $. Podemos coger el vector unitario
 	\[\vec{n} = \frac{a_{1}\vec{u}_{1} + \cdots + a_{n}\vec{u}_{n}}{\sqrt{a^{2}_{1} + \cdots + a^{2}_{n}}} .\]
-Si $\displaystyle \overrightarrow{OM} = m^{1}\vec{u}_{1} + \cdots + m^{n}\vec{u}_{n} $. Tenemos que $\displaystyle d\left(M, \mathcal{H}\right) = \|\overrightarrow{MM_{1}}\| $, siendo $\displaystyle M_{1} $ la proyección ortogonal de $\displaystyle M $ sobre $\displaystyle \mathcal{H} $. En efecto, como $\displaystyle \overrightarrow{MM_{1}} = \lambda \vec{n} $, 
+Sea $\displaystyle \overrightarrow{OM} = m^{1}\vec{u}_{1} + \cdots + m^{n}\vec{u}_{n} $. Tenemos que $\displaystyle d\left(M, \mathcal{H}\right) = \|\overrightarrow{MM_{1}}\| $, siendo $\displaystyle M_{1} $ la proyección ortogonal de $\displaystyle M $ sobre $\displaystyle \mathcal{H} $. En efecto, como $\displaystyle \overrightarrow{MM_{1}} = \lambda \vec{n} $, 
 \[d\left(M, \mathcal{H}\right) = \|\lambda \vec{n}\| = \left|\lambda \right|\|\vec{n}\| = \left|\lambda \right|.\]
 Si $\displaystyle \overrightarrow{OM_{1}} = m_{1}^{1}\vec{u}_{1} + \cdots + m_{1}^{n}\vec{u}_{n} $, entonces, por un lado, $\displaystyle \left\langle \overrightarrow{MM_{1}}, \vec{n} \right\rangle  = \lambda \left\langle \vec{n}, \vec{n} \right\rangle = \lambda $, por otro
 \[ \overrightarrow{MM_{1}} = \left(m^{1}_{1}-m^{1}\right)\vec{u}_{1} + \cdots + \left(m^{n}_{1}-m^{n}\right)\vec{u}_{n} .\]
 Así, 
 \[\therefore \left|\lambda \right| = \frac{ \left|\left(m^{1}_{1}-m^{1}\right)a_{1} + \cdots + \left(m^{n}_{1}-m^{n}\right)a_{n}\right|}{\sqrt{a^{2}_{1} + \cdots + a^{2}_{n}}} = \frac{ \left| a_{1}m^{1}+\cdots + a_{n}m^{n}+b\right|}{\sqrt{a^{2}_{1}+\cdots + a^{2}_{n}}}.\]
+\subsection*{Distancia de un punto a una recta}
+Sean $\displaystyle A,B \in \mathcal{E} $ con $\displaystyle A \neq B $. Sea $\displaystyle \mathcal{R} = A + L\left( \left\{ \overrightarrow{AB}\right\} \right) $ y sea $\displaystyle M \in \mathcal{E} $. Tenemos que si $\displaystyle \vec{u} = \frac{\overrightarrow{AB}}{\|\overrightarrow{AB}\|} $, 
+\[
+\begin{split}
+	d\left(M, \mathcal{R}\right) = & d\left(M, M_{1}\right) = \|\overrightarrow{MM_{1}}\| = \|\overrightarrow{MM_{1}}\land \vec{u}\| = \left\|\overrightarrow{MM_{1}}\land \frac{\overrightarrow{AB}}{\|\overrightarrow{AB}\|}\right\| \\
+	= &  \left\|\frac{\overrightarrow{MM_{1}} + \overrightarrow{M_{1}B} \land \overrightarrow{AB}}{\|\overrightarrow{AB}\|}\right\| = \frac{\|\overrightarrow{MB}\land \overrightarrow{AB}\|}{\|\overrightarrow{AB}\|} .
+\end{split}
+\]
+\subsection*{Distancia entre dos rectas que se cruzan}
+Sean $\displaystyle \mathcal{R}_{1} = A + L\left( \left\{ \vec{u}\right\} \right) $ y $\displaystyle \mathcal{R}_{2} = B + L\left( \left\{ \vec{v}\right\} \right) $ dos rectas que se cruzan. Tenemos entonces que $\displaystyle \left\{ \vec{u}, \vec{v}, \overrightarrow{AB}\right\}  $ son linealmente independientes. Buscamos $\displaystyle \lambda, \mu \in \R $ tales que 
+\[0 = \left\langle \overrightarrow{\left(A + \lambda \vec{u}\right)\left(B + \mu \vec{v}\right)}, \vec{u} \right\rangle = \left\langle \overrightarrow{\left(A + \lambda \vec{u}\right)\left(B + \mu \vec{v}\right)}, \vec{v} \right\rangle   .\]
+Resolvemos el sistema, 
+\[
+\begin{cases}
+\left\langle \overrightarrow{AB}+\mu \vec{v} - \lambda \vec{u}, \vec{u} \right\rangle = 0 \\
+\left\langle \overrightarrow{AB} + \mu \vec{v}-\lambda \vec{u}, \vec{v} \right\rangle = 0
+\end{cases}
+\Rightarrow 
+	\begin{cases}
+	
+\left\langle \overrightarrow{AB}, \vec{u} \right\rangle + \mu \left\langle \vec{v}, \vec{u} \right\rangle -\lambda\left\langle \vec{u}, \vec{u} \right\rangle = 0 \\
+\left\langle \overrightarrow{AB}, \vec{v} \right\rangle + \mu \left\langle \vec{v}, \vec{v} \right\rangle - \lambda \left\langle \vec{u}, \vec{v} \right\rangle = 0.
+	\end{cases} 
+.\]
+Desarrollando el sistema obtenemos que 
+\[ \begin{vmatrix} \left\langle \vec{v}, \vec{u} \right\rangle & - \left\langle \vec{u}, \vec{u} \right\rangle  \\ \left\langle \vec{v}, \vec{v} \right\rangle & -\left\langle \vec{u}, \vec{v} \right\rangle  \end{vmatrix}  = - \left(\left\langle \vec{u}, \vec{v} \right\rangle ^{2} - \|\vec{v}\|^{2} \|\vec{u}\|^{2}\right) = - \|\vec{u}\land \vec{v}\|^{2} \neq 0 .\]
+Así, tenemos que $\displaystyle \exists ! \lambda_{0}, \mu_{0} \in \R $ tales que $\displaystyle \overrightarrow{\left(A + \lambda_{0}\vec{u}\right)\left(B + \mu_{0}\vec{v}\right)} \in \left\{ \vec{u}, \vec{v}\right\} ^{\perp }_{\left\langle ,  \right\rangle } $. Así, $\displaystyle A_{1} = A + \lambda_{0}\vec{u} $ y $\displaystyle B_{1} = B + \mu_{0}\vec{v} $ son los puntos de la perpendicular común. Así, tenemos que 
+\[
+\begin{split}
+	d\left(A,B\right)^{2} = & \|\overrightarrow{AB}\|^{2} = \|\overrightarrow{AA_{1}} + \overrightarrow{A_{1}B_{1}} + \overrightarrow{B_{1}B}\|^{2} 
+	\\
+	= &  \|\underbrace{\overrightarrow{A_{1}B_{1}}}_{\in \left\{ \vec{u}, \vec{v}\right\}^{\perp }_{\left\langle ,  \right\rangle }} + \underbrace{\overrightarrow{AA_{1}} + \overrightarrow{B_{1}B}}_{\in L\left( \left\{ \vec{u}, \vec{v}\right\} \right)}\|^{2} 
+	=   \|\overrightarrow{A_{1}B_{1}}\|^{2} + \|\overrightarrow{AA_{1}}+\overrightarrow{BB_{1}}\|^{2} \geq \|\overrightarrow{A_{1}B_{1}}\|^{2}.
+\end{split}
+\]
+Así, dado que 
+\[d\left(A_{1}, B_{1}\right) = \inf \left\{ d\left(A,B\right) \; : \; A \in \mathcal{R}_{1}, B \in \mathcal{R}_{2}\right\}  ,\]
+se cumple que $\displaystyle d\left(\mathcal{R}_{1}, \mathcal{R}_{2}\right) = \|\overrightarrow{A_{1}B_{1}}\| $. Por otro lado, tenemos que $\displaystyle \frac{\vec{u}\land \vec{v}}{\|\vec{u}\land\vec{v}\|} = \vec{w} $, con $\displaystyle \vec{w} \in \left\{ \vec{u}, \vec{v}\right\} ^{\perp }_{\left\langle ,  \right\rangle } $ y $\displaystyle \|\vec{w}\| = 1 $. Finalmente, concluimos que si $\displaystyle \overrightarrow{AB} = \lambda_{1}\vec{w} $,
+\[
+\begin{split}
+	d\left(\mathcal{R}_{1}, \mathcal{R}_{2}\right) = & \|\overrightarrow{A_{1}B_{1}}\| = \left|\lambda_{1}\right| = \|\vec{A_{1}B_{1}}\| \left\|\frac{\vec{u}\land \vec{v}}{\|\vec{u}\land\vec{v}\|}\right\| 
+= \frac{ \left|\left\langle \overrightarrow{A_{1}B_{1}}, \vec{u}\land\vec{v} \right\rangle \right|}{\|\vec{u}\land\vec{v}\|} \\
+	= &  \frac{ \left|\left\langle \overrightarrow{AA_{1}} + \overrightarrow{A_{1}B_{1}} + \overrightarrow{B_{1}B}, \vec{u} \land \vec{v} \right\rangle \right|}{\|\vec{u}\land \vec{v}\|} = \frac{ \left|\left\langle \overrightarrow{AB}, \vec{u}\land \vec{v} \right\rangle \right|}{\|\vec{u}\land\vec{v}\|} = \frac{ \left|\det_{ \left\{ \vec{u}_{i}\right\}} \left(\overrightarrow{AB}, \vec{u}, \vec{v}\right)\right|}{\sqrt{\|\vec{u}\|^{2}\|\vec{v}\|^{2}-\left\langle \vec{u}, \vec{v} \right\rangle ^{2}}}.
+\end{split}
+\]
+\begin{observation}
+\normalfont $\displaystyle \left\langle \overrightarrow{AA_{1}}+\overrightarrow{B_{1}B}, \vec{u}\land \vec{v} \right\rangle = 0 $.
+\end{observation}
+\subsection*{Distancia de un punto a un plano}
+Sean $\displaystyle \left\{ A,B,C\right\} \subset \mathcal{E} $ afinmente independientes y sea $\displaystyle \mathcal{P} = A + L\left( \left\{ \overrightarrow{AB}, \overrightarrow{AC}\right\} \right) $. Recordamos que si $\displaystyle M \in \mathcal{E} $ teníamos que 
+\[ .\]
+\[
+\begin{split}
+	d\left(M,\mathcal{P}\right)^{2} = & d\left(\overrightarrow{MM_{1}}\right)^{2} = \|\overrightarrow{MM_{1}}\|^{2} = \left| \frac{\left\langle \overrightarrow{MM_{1}}, \overrightarrow{AB}\land \overrightarrow{AC} \right\rangle }{ \|\overrightarrow{AB}\land \overrightarrow{AC}\|}\right|^{2} = \frac{ \left|\left\langle \overrightarrow{MA}+\overrightarrow{AM_{1}},\overrightarrow{AB}\land\overrightarrow{AC}  \right\rangle \right|^{2}}{ \|\overrightarrow{AB}\land \overrightarrow{AC}\|^{2}} \\
+	= & \frac{ \left|\left\langle \overrightarrow{MA}, \overrightarrow{AB}\land \overrightarrow{AC} \right\rangle \right|^{2}}{ \|\overrightarrow{AB}\land \overrightarrow{AC}\|^{2}} = \frac{ \left|\det_{ \left\{ \vec{u}_{i}\right\}} \left(\overrightarrow{MA}, \overrightarrow{AB}, \overrightarrow{AC}\right)\right|^{2}}{ \|\overrightarrow{AB}\land \overrightarrow{AC}\|^{2}}.
+\end{split}
+\]
+\begin{eg}
+\normalfont En $\displaystyle \R^{3} $ consideremos el producto escalar dado por la matriz 
+\[ A = \begin{pmatrix} 2 & 1 & 1 \\
+1 & 2 & 1\\
+1 & 1 & 2\end{pmatrix} .\]
+Calcular la distancia del origen a la recta que viene dada por las ecuaciones
+\[ \mathcal{R} : 
+\begin{cases}
+x + y = 2 \\
+z = - 2
+\end{cases}
+.\]
+En primer lugar, identificamos el subespacio vectorial asociado a $\displaystyle \mathcal{R} $. Este viene dado por las ecuaciones
+\[R :
+\begin{cases}
+x + y = 0 \\
+z = 0
+\end{cases}
+.\]
+Así, tenemos que $\displaystyle R = L\left( \left\{ \left(1, - 1, 0\right)\right\} \right) $. Calculamos $\displaystyle R^{\perp }_{\left\langle ,  \right\rangle } $:
+\[\begin{pmatrix} 1 & - 1 & 0 \end{pmatrix} A \begin{pmatrix} x \\ y \\ z \end{pmatrix} = 0 \Rightarrow x - y = 0 .\]
+Así, la variedad lineal afín ortogonal a $\displaystyle \mathcal{R} $ que pasa por $\displaystyle O $ viene dado por la ecuación $\displaystyle x-y = 0 $. Ahora, encontramos la proyección ortogonal de $\displaystyle O $ sobre $\displaystyle \mathcal{R} $, que denominaremos $\displaystyle P $:
+\[
+\begin{cases}
+x + y = 2 \\
+z = - 2 \\
+x - y = 0
+\end{cases}
+\Rightarrow P = \left(1, 1, -2\right).\]
+Así, tendremos que $\displaystyle \overrightarrow{OP} = \left(1,1,-2\right) $, por lo que
+\[d\left(O, \mathcal{R}\right) = \|\overrightarrow{OP}\| = \|\left(1, 1, -2\right)\| = \begin{pmatrix} 1 & 1 & - 2 \end{pmatrix} A \begin{pmatrix} 1 \\ 1 \\ - 2 \end{pmatrix} = 2.\]
+\end{eg}
+\section{Isometrías}
+\begin{fdefinition}[Isometría]
+\normalfont Una aplicación $\displaystyle f : \mathcal{E}_{1} \to \mathcal{E}_{2} $ es una \textbf{isometría} si $\displaystyle \forall A,B \in \mathcal{E}_{1} $, $\displaystyle d _{1}\left(A,B\right) = d _{2}\left(f\left(A\right), f\left(B\right)\right) $. 
+\end{fdefinition}
+\begin{ftheorem}[]
+\normalfont Una aplicación $\displaystyle f : \mathcal{E}_{1} \to \mathcal{E}_{2} $ es una isometría si y solo si $\displaystyle f $ es afín y $\displaystyle \vec{f} $ es una aplicación ortogonal. 
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Supongamos que $\displaystyle f $ es una isometría y sea $\displaystyle A \in \mathcal{E}_{1} $. Definimos la aplicación
+	\[
+	\begin{split}
+		l : E_{1} \to & E_{2} \\
+		\vec{u} \to & l\left(\vec{u}\right) = \overrightarrow{f\left(A\right)f\left(A+\vec{u}\right)}.
+	\end{split}
+	\]
+Sean $\displaystyle \vec{u}, \vec{v} \in \mathcal{E}_{1} $ y $\displaystyle f\left(A\right)  = A' $. Cogemos $\displaystyle B = A + \vec{u} $ y $\displaystyle C = A + \vec{v} $ con $\displaystyle B' = f\left(B\right)$ y $\displaystyle C' = f\left(C\right) $. Tenemos que 
+\[
+\begin{split}
+	d _{1}\left(B,C\right)^{2} = & \|\overrightarrow{BC}\|^{2}_{1} = \|\overrightarrow{BA}+\overrightarrow{AC}\|^{2}_{1} = \left\langle \overrightarrow{BA} + \overrightarrow{AC}, \overrightarrow{BA} + \overrightarrow{AC} \right\rangle _{1} \\
+= & \|\overrightarrow{BA}\|^{2} + \|\overrightarrow{AC}\|^{2} + 2\left\langle \overrightarrow{BA}, \overrightarrow{AC} \right\rangle _{1} .
+\end{split}
+\]
+Por otro lado, tenemos 
+\[
+\begin{split}
+	d _{2}\left(B',C'\right)^{2} = & \|\overrightarrow{B'C'}\|^{2}_{2} = \|\overrightarrow{B'A'} + \overrightarrow{A'C'}\|^{2}_{2} = \left\langle \overrightarrow{B'A'}+\overrightarrow{A'C'}, \overrightarrow{B'A'}+\overrightarrow{A'C'} \right\rangle _{2} \\
+= & \|\overrightarrow{B'A'}\|^{2}_{2} + \|\overrightarrow{A'C'}\|^{2}_{2} + 2\left\langle \overrightarrow{B'A'}, \overrightarrow{A'C'} \right\rangle _{2}.
+\end{split}
+\]
+Así, tenemos que 
+\[\left\langle \underbrace{\overrightarrow{BA}}_{-\vec{u}}, \underbrace{\overrightarrow{AC}}_{\vec{v}} \right\rangle _{1} = \left\langle \underbrace{\overrightarrow{B'A'}}_{-l\left(\vec{u}\right)}, \underbrace{\overrightarrow{A'C'}}_{l\left(\vec{v}\right)} \right\rangle _{2} .\]
+Por tanto, concluimos que $\displaystyle \left\langle \vec{u}, \vec{v} \right\rangle _{1} = \left\langle l\left(\vec{u}\right), l\left(\vec{v}\right) \right\rangle _{2} $.
+\item[(ii)] Recíprocamente, sea $\displaystyle f $ una aplicación tal que $\displaystyle \vec{f} $ es ortogonal. Entonces, tenemos que $\displaystyle \forall A,B \in \mathcal{E}_{1} $,
+	\[d _{2}\left(f\left(A\right), f\left(B\right)\right) = \|\overrightarrow{f\left(A\right)f\left(B\right)}\|_{2} = \|\vec{f}\left(\overrightarrow{AB}\right)\|_{2} = \|\overrightarrow{AB}\|_{1} .\]
+\end{description}
+\end{proof}
+\begin{observation}
+\normalfont Las isometrías son inyectivas. En efecto, como $\displaystyle \vec{f} $ es ortogonal, tendrenmos que $\displaystyle \vec{f} $ es inyectiva, por lo que $\displaystyle f $ será inyectiva.
+\end{observation}
+\begin{fprop}[]
+\normalfont Si $\displaystyle f : \mathcal{E}_{1} \to \mathcal{E}_{2} $ y $\displaystyle g : \mathcal{E}_{2} \to \mathcal{E}_{3} $ son isometrías, entonces $\displaystyle g\circ f : \mathcal{E}_{1} \to \mathcal{E}_{3} $ es isometría. 
+\end{fprop}
+\begin{proof}
+Tenemos que $\displaystyle \forall A,B \in \mathcal{E}_{1} $,
+\[d _{3}\left(g\circ f\left(A\right), g\circ f\left(B\right)\right) = d _{3}\left(g\left(f\left(A\right)\right), g\left(f\left(B\right)\right)\right) = d _{2}\left(f\left(A\right), f\left(B\right)\right) = d _{1}\left(A,B\right) .\]
+\end{proof}
+\begin{fdefinition}[]
+\normalfont Una isometría $\displaystyle f : \mathcal{E}_{1} \to \mathcal{E}_{2} $ es un isomorfismo de espacios afines euclídeos si $\displaystyle \exists g : \mathcal{E}_{2} \to \mathcal{E}_{1} $ isometría tal que $\displaystyle g\circ f = id _{\mathcal{E}_{1}} $ y $\displaystyle f \circ g = id _{\mathcal{E}_{2}} $.
+\end{fdefinition}
+\begin{observation}
+\normalfont Si $\displaystyle \dim\left(\mathcal{E}_{1}\right) = \dim\left(\mathcal{E}_{2}\right)$, tenemos que es un isomorfismo de espacios afines euclídeos. 
+\end{observation}
+\begin{observation}
+	\normalfont El conjunto $\displaystyle Iso\left(\mathcal{E}\right) = \left\{ f : \mathcal{E} \to \mathcal{E} \: : \; f \; \text{isometría}\right\}  $ es un grupo con la operación de composición de funciones.
+\end{observation}
+\begin{observation}
+\normalfont La aplicación 
+\[
+\begin{split}
+	\to : Iso\left(\mathcal{E}\right) \to & O_{n}\left(\R\right) \\
+	f \to & \vec{f}
+\end{split}
+\]
+es un homomorfismo de grupos. Definimos $\displaystyle Iso ^{+}\left(\mathcal{E}\right) = \left\{ f \in Iso\left(\mathcal{E}\right) \; : \; \vec{f} \in O^{+}_{n}\left(\R\right)\right\}  $ es un subgrupo de $\displaystyle Iso\left(\mathcal{E}\right) $. Análogamente, podemos definir $\displaystyle Iso^{-}\left(\mathcal{E}\right) = \left\{ f \in Iso\left(\mathcal{E}\right)\; : \; \vec{f} \in O^{-}_{n}\left(\R\right)\right\}  $.
+Si $\displaystyle f_{1}, f_{2}, \ldots, f_{k} \in Iso^{-}\left(\mathcal{E}\right) $, entonces
+\[
+f_{k}\circ f_{k-1} \circ \cdots \circ f_{1} \in 
+\begin{cases}
+	Iso^{+}\left(\mathcal{E}\right), \; k \; \text{par} \\
+	Iso^{-}\left(\mathcal{E}\right), \; k \; \text{impar}
+\end{cases}
+.\]
+\end{observation}
+\begin{observation}
+	\normalfont Tenemos que $\displaystyle \Ker\left(\to \right) = \left\{ f \in Iso\left(\mathcal{E}\right) \; : \; \vec{f} = id _{E}\right\} = \left\{ \tau _{\vec{u}} \; : \; \vec{u} \in E\right\}  $.
+\end{observation}
+\begin{fdefinition}[Simetría ortogonal]
+\normalfont Sea $\displaystyle \mathcal{L} = A + L $ con $\displaystyle A \in \mathcal{E} $ y $\displaystyle L \in \mathcal{L}\left(E\right) $. Llamaremos \textbf{simetría ortogonal} respecto de $\displaystyle \mathcal{L} $ a la simetría de base $\displaystyle \mathcal{L} $ y dirección $\displaystyle L^{\perp }_{\left\langle ,  \right\rangle } $.
+\end{fdefinition}
+Si $\displaystyle \dim\left(\mathcal{E}\right) = n $ y $\displaystyle l \in O_{n}\left(E\right) $ y y $\displaystyle L = \left\{ \vec{u} \in E \; : \; l\left(\vec{u}\right) = \vec{u}\right\} \in \mathcal{L}\left(E\right) $ y $\displaystyle p = \dim\left(L\right) $, entonces existen $\displaystyle \sigma _{1} \circ \cdots \sigma_{n - p} $ simetrías ortogonales respecto de hiperplanos vectoriales de $\displaystyle E $ tales que $\displaystyle l = \sigma _{n-p} \circ \cdots \circ \sigma_{1} $.
+Si $\displaystyle f \in Iso\left(\mathcal{E}\right) $, $\displaystyle \mathcal{L} = \left\{ A \in \mathcal{E} \; : \; f\left(A\right) = A\right\}  $ es una variedad lineal afín que, si no es vacía, tiene por dirección $\displaystyle L $. 
+\begin{ftheorem}[]
+\normalfont Sea $\displaystyle M,N \in \mathcal{E} $ con $\displaystyle M \neq N $, entonces existe una única simetría de base un hiperplano, $\displaystyle s $, tal que $\displaystyle s\left(M\right)= N $ ($\displaystyle  \iff s\left(N\right) = M $).
+\end{ftheorem}
+\begin{proof}
+\begin{description}
+\item[Unicidad.] Sea $\displaystyle P $ el punto medio entre $\displaystyle M $ y $\displaystyle N $, entonces
+\[ P = M + \frac{1}{2}\overrightarrow{MN} .\]
+Así, tenemos que $\displaystyle s\left(P\right) = P $. Además, el hiperplano de base será $\displaystyle \mathcal{H} = P + \left\{ \overrightarrow{MN}\right\} ^{\perp }_{\left\langle ,  \right\rangle} $.
+\item[Existencia.] Sea $\displaystyle s $ la simetría ortogonal respecto de $\displaystyle \mathcal{H} = P + \left\{ \overrightarrow{MN}\right\} ^{\perp }_{\left\langle ,  \right\rangle } $. Tenemos que 
+	\[s\left(M\right) = M + 2\overrightarrow{MP} = N + \overrightarrow{NM} + 2 \overrightarrow{MP} = N .\]
+\end{description}
+\end{proof}
+Si $\displaystyle f \in Iso\left(\mathcal{E}\right) $ tenemos que $\displaystyle \vec{f} \in O_{n}\left(E\right) $. Sea $\displaystyle \mathcal{L} = \left\{ A \in \mathcal{E} \; : \; f\left(A\right) = A\right\}  $ y sea $\displaystyle L = \left\{ \vec{u} \in E \; : \; \vec{f}\left(\vec{u}\right) = \vec{u}\right\}  $. 
+\begin{observation}
+\normalfont Si $\displaystyle \mathcal{L} \neq \emptyset $, sea $\displaystyle A \in \mathcal{E} $ y $\displaystyle f\left(A\right) \in \mathcal{E} $ con $\displaystyle A \neq f\left(A\right) $, existe una única simetría $\displaystyle s $ tal que $\displaystyle s\left(A\right) = f\left(A\right) $ y $\displaystyle A = s\left(f\left(A\right)\right) $. Podemos considerar el conjunto 
+\[ \left\{ s \circ f \in Iso\left(\mathcal{E}\right) \; : \; M \in \mathcal{E}, s\circ f\left(M\right) \neq \emptyset\right\}  .\]
+\end{observation}
+\section{Caso $\displaystyle n = 2 $}
+\begin{itemize}
+\item $\displaystyle \dim\left(\mathcal{L}\right) = 2 $.
+\item $\displaystyle \dim\left(\mathcal{L}\right) = 1 $. Tendremos que $\displaystyle f \in Iso^{-}\left(\mathcal{E}\right) $ y $\displaystyle f $ es la isometría ortogonal de base la recta $\displaystyle \mathcal{L} $.
+\item $\displaystyle \dim\left(\mathcal{L}\right) = 0 $. Si $\displaystyle \mathcal{L} = \left\{ C\right\}  $, tenemos que $\displaystyle \left\{ C, \left\{ \vec{u}_{1}, \vec{u}_{2}\right\} \right\}  $ es una referencia ortonormal, por lo que la matriz de $\displaystyle f $ en esta referencia será
+	\[ f \to \begin{pmatrix} 1 & 0 & 0 \\
+	0 & a & - b \\
+0 & b & a\end{pmatrix}, \; a^{2} +b^{2} = 1 .\]
+\item $\displaystyle \mathcal{L} = \emptyset $. Puede suceder que $\displaystyle f \in Iso^{+}\left(\mathcal{E}\right) $, en cuyo caso tenemos que $\displaystyle f $ es composición de dos simetrías ortogonales respecto de rectas paralelas, o es una traslación. Otro caso es que $\displaystyle f \in Iso^{-}\left(\mathcal{E}\right) $, por lo que $\displaystyle f $ es composición de tres simetrías ortogonales respecto de rectas que se cortan (deslizamiento). Existe $\displaystyle \mathcal{L}_{1} $ recta de dirección $\displaystyle L_{1} $ y $\displaystyle \vec{u} \in L_{1} $ tal que $\displaystyle f = \tau _{\vec{u}}\circ s_{1} = s_{1}\circ \tau_{\vec{u}} $.
+\end{itemize}
+\section{Caso $\displaystyle n = 3 $ }
+\begin{itemize}
+\item $\displaystyle \dim\left(\mathcal{L}\right) = 3 $.
+\item $\displaystyle \dim\left(\mathcal{L}\right) = 2 $.
+\item $\displaystyle \dim\left(\mathcal{L}\right) = 1 $. Una rotación de eje la recta $\displaystyle \mathcal{L} $.
+\item $\displaystyle \dim\left(\mathcal{L}\right) = 0 $.
+\item $\displaystyle \mathcal{L} = \emptyset $. O bien $\displaystyle f $ es una traslación ($\displaystyle f \in Iso\left(\mathcal{E}\right)^{+} $). Si $\displaystyle f \in Iso^{-}\left(\mathcal{E}\right) $, 
+\end{itemize}
+\section{Cónicas y cuádricas}
+Sea $\displaystyle \mathcal{E} $ un espacio afín euclídeo bidimensional. 
+\begin{fdefinition}[Cónica]
+\normalfont Una \textbf{cónica} $\displaystyle \mathcal{C} $ definida en $\displaystyle \mathcal{E} $ es un conjunto de puntos de $\displaystyle \mathcal{E} $ cuyas coordenadas $\displaystyle \left(x,y\right) $ respecto de un sistema de referencia ortonormal satisfacen la ecuación 
+\[ a_{11}x^{2} + 2a_{12}xy +a_{22}y^{2} + 2a_{01}x + 2a_{02}y + a_{00} = 0,\]
+donde $\displaystyle a_{ij} \in \R $ y $\displaystyle a_{12}, a_{22} $ y $\displaystyle a_{11} $ no son simultáneamente nulos.
+\end{fdefinition}
+\begin{observation}
+\normalfont Si $\displaystyle a_{11} = a_{22} = a_{12} = 0 $, tendríamos que 
+\begin{itemize}
+\item $\displaystyle \mathcal{C} $ es una recta si $\displaystyle a_{01} $ o $\displaystyle a_{02} $ no son nulos.
+\item $\displaystyle \mathcal{C} = \emptyset $ si $\displaystyle a_{01} = a_{02} = 0 $.
+\item $\displaystyle \mathcal{C} = \mathcal{E} $ si todos los coeficientes son nulos.
+\end{itemize}
+\end{observation}
+\begin{observation}
+\normalfont La ecuación de la definición se puede escribir matricialmente:
+\[\begin{pmatrix} 1 & x & y \end{pmatrix}\begin{pmatrix} a_{00} & a_{01} & a_{02} \\
+a_{01} & a_{11} & a_{12} \\
+a_{02} & a_{12} & a_{22}\end{pmatrix}\begin{pmatrix} 1 \\ x \\ y \end{pmatrix} = 0.\]
+Las matrices $\displaystyle A = \begin{pmatrix} a_{00} & a_{01} & a_{02} \\
+a_{01} & a_{11} & a_{12} \\
+a_{02} & a_{12} & a_{22}\end{pmatrix} $ y $\displaystyle A_{00} = \begin{pmatrix} a_{11} & a_{12} \\ a_{12} & a_{22} \end{pmatrix} $ son simétricas.
+\end{observation}
+Sean $\displaystyle I = \traz\left(A_{00}\right) = a_{11} + a_{22} $, $\displaystyle J = \det\left(A_{00}\right) $ y $\displaystyle k = \det\left(A\right) $. Como $\displaystyle A_{00} $ es una matriz simétrica real, existe una matriz $\displaystyle D $ ortogonal tal que 
+	\[D^{t} A_{00}D = \begin{pmatrix} a'_{11} & 0 \\ 0 & a'_{22} \end{pmatrix}, \; J = a'_{11}a'_{22}, \; I = a'_{11} + a'_{22} .\]
+	Consideremos el cambio de sistema de referencia ortonormal dado por el isomorfismo de matriz $\displaystyle \begin{pmatrix} 1 & 0 & 0 \\
+		0 & D & \\
+0 & & \end{pmatrix} $. Así, la ecuación de la definición queda de la forma:
+		\[\begin{pmatrix} 1 & x' & y' \end{pmatrix}A'\begin{pmatrix} 1 \\ x' \\ y' \end{pmatrix} = 0, \quad A' = \begin{pmatrix} 1 & 0 & 0 \\
+		0 & D^{t} & \\
+0 & & \end{pmatrix}A\begin{pmatrix} 1 & 0 & 0 \\
+		0 & D & \\
+		0 & & \end{pmatrix} = \begin{pmatrix} a_{00} & a'_{01} & a'_{02} \\
+	a'_{01} & a'_{11} & 0 \\
+a'_{02} & 0 & a'_{22}\end{pmatrix} ,\]
+y $\displaystyle k = \det\left(A'\right) $. Ahora consideramos la traslación del vector $\displaystyle \left(c_{1}, c_{2}\right) $, la cónica se transforma en 
+\[ \begin{pmatrix} 1 & x'' & y'' \end{pmatrix}A''\begin{pmatrix} 1 \\ x'' \\ y '' \end{pmatrix} ,\]
+donde 
+\[ A'' = \begin{pmatrix} 1 & c_{1} & c_{2} \\
+0 & 1 & 0 \\
+0 & 0 & 1\end{pmatrix}A'\begin{pmatrix} 1 & 0 & 0\\
+c_{1} & 1 & 0 \\
+c_{2} & 0 & 1\end{pmatrix} = \begin{pmatrix} a''_{00} & a'_{01} +c_{1}a'_{11} & a'_{02}+c_{2}a'_{22} \\
+a'_{01}+c_{1}a'_{01} & a'_{11} & 0 \\
+a'_{02} +c_{2}a'_{22} & 0 & a'_{22}\end{pmatrix} ,\]
+donde $\displaystyle a''_{00} = a_{00} + 2c_{1}a'_{01}+2c_{2}a'_{02}+c_{1}^{2}a'_{11}+c_{2}^{2}a'_{22} $. Así, si $\displaystyle a'_{11} \neq 0 $ (respectivamente $\displaystyle a'_{22} \neq 0 $) se puede elegir $\displaystyle c_{1} $ (respectivamente $\displaystyle c_{2} $) de manera que $\displaystyle a''_{01} = 0 $ (respectivamente $\displaystyle a''_{02} = 0 $). \\ \\
+Por otra parte, $\displaystyle k = \det\left(A''\right) $, $\displaystyle J = a'_{11}a'_{22} $ o $\displaystyle J = a'_{11} + a'_{22} $. De esta manera si, por ejemplo, $\displaystyle J \neq 0 $ la ecuación de la cónica $\displaystyle \mathcal{C} $ queda:
+\[a'_{11}x''^{2}+a'_{22}y''^{2}+a''_{00} = 0 .\]
+Entonces, dependiendo de la nulidad o no de $\displaystyle a''_{00} $ y de los signos de $\displaystyle a'_{11}, a'_{22} $ y $\displaystyle a''_{00} $ se tienen las siguientes posibilidades. \\ \\
+Si $\displaystyle a''_{00} \neq 0 $ ($\displaystyle \iff k \neq 0 $) y $\displaystyle \sig\left(a'_{11}\right) = \sig\left(a'_{22}\right) \neq \sig\left(a''_{00}\right) $ ($\displaystyle \iff J > 0 $ y $\displaystyle \sig\left(k\right) \neq \sig\left(I\right) $), la ecuación anterior se puede poner como:
+\[\underbrace{\left(\frac{a'_{11}}{-a''_{00}}\right)}_{>0}x''^{2} + \underbrace{\left(\frac{a'_{22}}{-a''_{00}}\right)}_{>0}y''^{2} = 1 .\]
+Si tomamos $\displaystyle \alpha ^{2} = \frac{-a'_{00}}{a'_{11}} $ y $\displaystyle \beta ^{2} = \frac{-a'_{00}}{a'_{22}} $ nos queda 
+\[\frac{x''^{2}}{\alpha^{2}}+\frac{y''^{2}}{\beta ^{2}} = 1 .\]
+Analizando las distintas posibilidades según los valores de los invariantes $\displaystyle I, J, k $ se llega a la siguiente clasificación de las cónicas:
+\begin{itemize}
+\item $\displaystyle J \neq 0 $ 
+	\begin{itemize}
+	\item Se denomina \textbf{irreducible} si $\displaystyle k \neq 0 $ 
+		\begin{itemize}
+		\item Si $\displaystyle J > 0 $ se denomina \textbf{elipse} 
+			\begin{itemize}
+			\item Es una \textbf{elipse real} si $\displaystyle \sig\left(k\right) \neq \sig\left(I\right) $ 
+			\item Es una \textbf{elipse imaginaria} ($\displaystyle C = \left(0,0\right) $) si $\displaystyle \sig\left(k\right) = \sig\left(I\right) $
+			\end{itemize}
+		\item Si $\displaystyle J < 0 $ se denomina \textbf{hipérbola} ($\displaystyle \frac{x^{2}}{\alpha^{2}} - \frac{y^{2}}{\beta ^{2}} = 1 $)	
+		\end{itemize}
+	\item Se denomina \textbf{degenerada} si $\displaystyle k = 0 $
+		\begin{itemize}
+		\item Si $\displaystyle J > 0 $, se trata de un par de rectas imaginarias conjugadas que se cortan en un punto, $\displaystyle \left(0,0\right) $ 
+		\item Si $\displaystyle J < 0 $, se trata de rectas que se cortan
+		\end{itemize}
+	\end{itemize}
+\item $\displaystyle J = 0 $ 
+	\begin{itemize}
+	\item Si $\displaystyle k \neq 0 $ es \textbf{irreducible} y se trata de una parábola ($\displaystyle y^{2} = 2kx  $, $\displaystyle k > 0 $) 
+	\item Si $\displaystyle k = 0 $ es \textbf{degenerada} 
+		\begin{itemize}
+		\item Si la signatura de $\displaystyle \beta  $ \footnote{$\displaystyle \beta  $ es la forma bilineal simétrica de matriz $\displaystyle A $.} es igual a $\displaystyle 0 $, se trata de un par de rectas paralelas.
+		\item Si la signatura de $\displaystyle \beta  $ es igual a 2, se trata de un par de rectas paralelas imaginarias.
+		\item Si el rango de $\displaystyle A $ es igual a 1, se trata de un par de rectas coincidentes.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\begin{fdefinition}[Cuadráticas]
+\normalfont Consideremos un espacio afín euclídeo tridimensional, $\displaystyle \mathcal{E} $. Una \textbf{cuadrática} $\displaystyle \mathcal{C} $ definida en $\displaystyle \mathcal{E} $ es el conjunto de puntos de $\displaystyle \mathcal{E} $ cuyas coordenadas respecto de un sistema de referencia ortonormal verifican
+\[a_{11}x^{2}+a_{22}y^{2}+a_{33}z^{2}+2a_{12}xy+2a_{13}xz+2a_{23}yz+2a_{01}x+2a_{02}y+2a_{03}z+a_{00} = 0 , \]
+donde $\displaystyle a_{11}, a_{22}, a_{33}, a_{12}, a_{13}, a_{23} \in \R $ no son simultáneamente y $\displaystyle a_{01}, a_{02}, a_{03}, a_{00} \in \R $.
+\end{fdefinition}
+Matricialmente, tenemos que 
+\[\begin{pmatrix} 1 & x & y & z \end{pmatrix}\begin{pmatrix} a_{00} & a_{01} & a_{02} & a_{03} \\
+a_{01} & a_{11} & a_{12} & a_{13} \\
+a_{02} & a_{12} & a_{22} & a_{23} \\ 
+a_{03} & a_{13} & a_{23} & a_{33}\end{pmatrix}\begin{pmatrix} 1 \\ x\\ y \\ z \end{pmatrix} = 0 .\]
+Las matrices $\displaystyle A = \begin{pmatrix} a_{00} & a_{01} & a_{02} & a_{03} \\
+a_{01} & a_{11} & a_{12} & a_{13} \\
+a_{02} & a_{12} & a_{22} & a_{23} \\ 
+a_{03} & a_{13} & a_{23} & a_{33}\end{pmatrix} $ y $\displaystyle A_{00} = \begin{pmatrix} a_{11} & a_{12} & a_{13} \\
+a_{12} & a_{22} & a_{23} \\
+a_{13} & a_{23} & a_{33}\end{pmatrix} $ son matrices reales simétricas, por lo que existe una matriz ortogonal $\displaystyle D  $ de orden 3 tal que 
+	\[ D^{t}A_{00}D = \begin{pmatrix} a'_{11} & 0 & 0 \\
+	0 a'_{22} & 0 \\
+0 & 0 & a'_{33}\end{pmatrix}.\]
+		Considerando el cambio de sistema de referencia dado por la matriz $\displaystyle \begin{pmatrix} 1 & 0 & 0 & 0 \\
+		0 &  & & \\
+	0 & & D & \\
+0 & & & \end{pmatrix} $, la ecuación de la definición queda
+			\[\begin{pmatrix} 1 & x' & y' & z' \end{pmatrix}A'\begin{pmatrix} 1 \\ x' \\ y ' \\ z' \end{pmatrix} = 0 , \]
+donde 
+\[A' = \begin{pmatrix} 1 & 0 & 0 & 0 \\
+		0 & & & \\
+	0 & & D^{t}& \\
+0 & & & \end{pmatrix}A\begin{pmatrix} 1 & 0 & 0 & 0 \\
+		0 & & & \\
+	0 & & D & \\
+	0 & & & \end{pmatrix} = \begin{pmatrix} a_{00} & a'_{01} & a'_{02} & a'_{03} \\
+a'_{01} & a'_{11} & 0 & 0 \\
+a'_{02} & 0 & a'_{22} & 0 \\
+a'_{03} & 0 & 0 & a'_{33}\end{pmatrix}, \]
+y $\displaystyle \det\left(A\right) = \det\left(A'\right) $, $\displaystyle \det\left(A_{00}\right) = a'_{11}a'_{22}a'_{33} $ y $\displaystyle \traz\left(A_{00}\right) = a'_{11}+a'_{22}+a'_{33} $. \\ \\
+Si ahora consideramos la traslación de vector $\displaystyle \left(c_{1}, c_{2}, c_{3}\right) $, la ecuación de $\displaystyle \mathcal{C} $ se transforma en 
+	\[ \begin{pmatrix} 1 & x'' & y'' & z'' \end{pmatrix}A''\begin{pmatrix} 1 \\ x'' \\ y'' \\ z'' \end{pmatrix} = 0, \]
+donde
+	\[A'' = \begin{pmatrix} 1 & c_{1} & c_{2} & c_{3} \\
+	0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1\end{pmatrix} A' 
+		\begin{pmatrix} 1 & 0 & 0 & 0 \\
+		c_{1} & 1 & 0 & 0 \\
+	c_{2}& 0 & 1 & 0 \\
+c_{3} & 0 & 0 & 1\end{pmatrix} = 
+			\begin{pmatrix} a''_{00} & a'_{01}+c_{1}a'_{11} & a'_{02}+c_{2}a'_{22} & a'_{03}+c_{3}a'_{33} \\
+			a'_{01}+c_{1}a'_{11} & a'_{11} & 0 & 0 \\
+		a'_{02}+c_{2}a'_{22} & 0 & a'_{22} & 0 \\
+	a'_{03}+c_{3}a'_{33} & 0 & 0 & a'_{33}\end{pmatrix}, \]
+\[a''_{00} = a_{00} + 2c_{1}a'_{01}+2c_{2}a'_{02}+2c_{3}a'_{03}+c_{1}^{2}a'_{11}+c_{2}^{2}a'_{22}+c_{3}^{2}a'_{33} .\]
+Un razonamiento análogo al realizado con las cónicas permite llegar a la siguiente clasificación de las cuádricas:
+\subsection*{Caso 1: $\displaystyle a'_{11}a'_{22}a'_{33} \neq 0 \iff \det\left(A_{00}\right) \neq 0 $}
+\begin{notation}
+\normalfont La expresión $\displaystyle \sig\left(i, j, k\right) $ significa que: $\displaystyle i $ es el coíndice de $\displaystyle \beta_{0} $, $\displaystyle j  $ es el índice de $\displaystyle \beta_{0} $ y $\displaystyle k = 3 - i- j = \dim \rad\left(\beta_{0}\right) $, donde $\displaystyle \beta_{0} $ es la forma bilineal simétrica de matriz $\displaystyle A_{00} $.
+\end{notation}
+
+\begin{description}
+\item[(a)] Si $\displaystyle a''_{00} \neq 0 \iff \det\left(A\right) \neq 0 $:
+\begin{description}
+\item[Elipsoide imaginario:] $\displaystyle \sig\left(3, 0, 0\right) $ o $\displaystyle \left(0, 3, 0\right) $, y $\displaystyle \sig\left(a'_{00}\right) = \sig\left(a'_{11}\right) $. 
+\item[Elipsoide real:] $\displaystyle \sig \left(3, 0, 0\right) $ o $\displaystyle \left(0, 3, 0\right) $, y $\displaystyle \sig\left(a'_{00}\right) = \sig\left(a'_{12}\right) $.
+	\[\frac{x^{2}_{1}}{b^{2}_{1}}+\frac{x^{2}_{2}}{b^{2}_{2}}+\frac{x^{2}_{3}}{b^{2}_{3}} = 1 .\]
+\item[Hiperboloide hiperbólico:] $\displaystyle \sig\left(2, 1, 0\right) $ o $\displaystyle \left(1, 2, 0\right) $, y $\displaystyle \sig\left(a''_{00}\right) = \underbrace{\sig\left(a''_{11}\right) \neq \sig\left(a''_{22}\right)}_{\iff \det\left(A\right)>0} = \sig\left(a''_{33}\right) $. 
+	\[\frac{-x^{2}_{1}}{b^{2}_{1}}+\frac{x^{2}_{2}}{b^{2}_{2}}+\frac{x^{2}_{3}}{b^{2}_{3}} = 1 .\]
+\item[Hiperboloide elíptico:] $\displaystyle \sig\left(2, 1, 0\right) $ o $\displaystyle \left(1, 2, 0\right) $, y $\displaystyle \sig\left(a''_{00}\right) =\underbrace{ \sig\left(a''_{11}\right) = \sig\left(a''_{22}\right)}_{\iff \det\left(A\right) < 0} \neq \sig\left(a''_{33}\right) $.
+	\[\frac{-x^{2}_{1}}{b^{2}_{1}}-\frac{x^{2}_{2}}{b^{2}_{2}}+\frac{x^{2}_{3}}{b^{2}_{3}} = 1 .\]
+\end{description}
+\item[(b)] Si $\displaystyle a''_{00} = 0 \iff \det\left(A\right) = 0 $:
+	\begin{description}
+	\item[Cono imaginario con vértice real:] $\displaystyle \sig\left(3, 0, 0\right) $ o $\displaystyle \left(0, 3, 0\right) $.
+		\[a'_{11}x^{2}_{1}+a'_{22}x^{2}_{2}+a'_{33}x^{2}_{3} = 0 .\]
+	\item[Cono real:] $\displaystyle \sig\left(2, 1, 0\right) $ o $\displaystyle \left(1,2, 0\right) $.
+		\[c^{2}_{1}x^{2}_{1}+c^{2}_{2}x^{2}_{2}-c^{2}_{3}x^{2}_{3} = 0 .\]
+	\end{description}
+\end{description}
+\subsection*{Caso 2: $\displaystyle \ran\left(A\right) = 2 $, $\displaystyle a'_{11}\neq 0 \neq a'_{22} $, $\displaystyle a'_{33} = 0 $}
+\begin{description}
+\item[(a)] Si $\displaystyle \det\left(A\right) \neq 0 \iff a''_{03} \neq 0 $:
+	\begin{description}
+	\item[Paraboloide elíptico:] $\displaystyle \sig\left(2, 0, 1\right) $ o $\displaystyle \left(0, 2, 1\right) $. 
+		\[x_{3} = \frac{x^{2}_{1}}{c_{1}^{2}}+\frac{x^{2}_{2}}{c^{2}_{2}} .\]
+	\item[Paraboloide hiperbólico:] $\displaystyle \sig\left(1,1,1\right) $.
+	\end{description}
+\item[(b)] Si $\displaystyle \det\left(A\right) = 0 \iff a''_{03} = 0 $:
+	\begin{description}
+	\item[(b1)] Si $\displaystyle \sig\left(2, 0, 1\right) $ o $\displaystyle \left(0, 2, 1\right) $:
+		\begin{description}
+		\item[Cilindro elíptico imaginario:] $\displaystyle \sig\left(a'_{00}\right) = \sig\left(a''_{11}\right) = \sig\left(a''_{22}\right) $. 
+		\item[Cilindro elíptico:] $\displaystyle \sig\left(a'_{00}\right) \neq \sig\left(a''_{11}\right) = \sig\left(a''_{22}\right) $. 
+			\[\frac{x^{2}_{1}}{\alpha^{2}_{1}}+\frac{x^{2}_{2}}{\alpha_{2}^{2}} = 1 .\]
+		\item[Par de planos imaginarios que se cortan en una recta real:] $\displaystyle a'_{00} = 0 $.
+		\end{description}
+	\item[(b2)] Si $\displaystyle \sig\left(1,1,1\right) $:
+		\begin{description}
+		\item[Cilindro hiperbólico:] $\displaystyle a''_{00} \neq 0 $.
+		\item[Plar de planos que se cortan:] $\displaystyle a''_{00} = 0 $.
+		\end{description}
+	\end{description}
+\end{description}
+\subsection*{Caso 3: $\displaystyle \ran\left(A_{00}\right) = 1 $, $\displaystyle a''_{22} = a''_{33} = 0 $ }
+\begin{description}
+\item[Cilindro parabólico:] $\displaystyle a''_{02} \neq 0 $.
+	\[y^{2} = 2px .\]
+\item[Si] $\displaystyle a''_{02} = 0 $:
+	\begin{description}
+		\item[Si] $\displaystyle a''_{00} \neq 0 $, 
+		\begin{description}
+		\item[Par de planos imaginarios:] $\displaystyle \sig\left(a'_{00}\right) = \sig\left(a'_{11}\right) $. 
+		\item[Par de planos paralelos:] $\displaystyle \sig\left(a''_{00}\right) \neq \sig\left(a''_{11}\right) $.
+		\end{description}
+	\item[Par de planos coincidentes:] $\displaystyle a''_{00} = 0 $.
+	\end{description}
+\end{description}
+

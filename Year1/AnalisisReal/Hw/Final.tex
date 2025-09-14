@@ -1,0 +1,177 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Análisis - Final 2025}
+%\author{Victoria Eugenia Torroja Rubio}
+\date{30/5/2025}
+
+\maketitle
+\section{Parcial 1}
+\begin{ej}
+	Demuestra el \textit{Teorema de los intervalos encajados de Cantor}: \\
+	Si $\displaystyle I_{n} = \left[a_{n}, b_{n}\right]  $, $\displaystyle n \in \N $ es una sucesión encajada (i.e., $\displaystyle I_{n+1} \subset I_{n} $) de intervalos cerrados y acotados, entonces existe un número $\displaystyle \xi \in \R $ tal que $\displaystyle \xi \in I_{n} $, para todo $\displaystyle n \in \N $ (es decir, $\displaystyle \bigcap_{n \in \N}I_{n} \neq \emptyset $).
+\end{ej}
+\begin{sol}
+Primero vamos a ver que $\displaystyle \forall n,m \in \N $, $\displaystyle a_{n} \leq b_{m} $. Si $\displaystyle n < m $, tenemos que 
+\[a_{n} \leq a_{m} < b_{m} \leq b_{n} \Rightarrow a_{n} < b_{m} .\]
+Similarmente, si $\displaystyle n > m $ se tiene que 
+\[a_{m} \leq a_{n} < b_{n} \leq b_{m} \Rightarrow a_{n} < b_{m} .\]
+Así, hemos visto que cualquier $\displaystyle b_{n} $ sirve de cota superior para el conjunto $\displaystyle A = \left\{ a_{n} \; : \; n \in \N\right\}  $, por lo que este conjunto está acotado y, por el axioma del supremo, existe $\displaystyle \alpha = \sup\left(A\right) $. Además, se tiene que, como $\displaystyle \alpha  $ es supremo y cada $\displaystyle b_{n} $ es una cota superior, $\displaystyle \alpha \leq b_{n} $, $\displaystyle \forall n \in \N $. Es decir, tenemos que $\displaystyle \forall n \in \N $,
+\[a_{n} \leq \alpha \leq b_{n} .\]
+Es decir, $\displaystyle \alpha \in \bigcap_{n \in \N}I_{n} $, por lo que $\displaystyle \bigcap_{n \in \N}I_{n} \neq \emptyset $.
+\end{sol}
+\begin{ej}
+Demuestra que la siguiente sucesión es monótona creciente y acotada superiormente:
+\[x_{1} = 8, \quad x_{n+1} = \sqrt{9 +8x_{n}}, \quad n \in \N .\]
+Justifica que $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ converge y calcula su límite.
+\end{ej}
+\begin{sol}
+Primero demostramos que es monótona creciente por inducción. Tenemos que 
+\[x_{2} = \sqrt{9 + 8 \cdot 8} = \sqrt{73} \geq \sqrt{64} = 8 .\]
+Ahora, asumimos que $\displaystyle x_{n} \geq x_{n-1} $, entonces tenemos que
+\[x_{n+1} = \sqrt{9 + 8 x_{n}} \geq \sqrt{9 + 8x_{n-1}} = x_{n} .\]
+Así, hemos visto que $\displaystyle \forall n \in \N $, $\displaystyle x_{n} \geq x_{n-1} $, por lo que la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es monótona creciente. Ahora vamos a demostrar que está acotada superiormente. Para encontrar una cota superior, asumimos que converge para calcular su posible límite. Si $\displaystyle \lim_{n \to \infty}x_{n} = l $,
+\[ l = \sqrt{9 + 8l} \iff l^{2} - 8l - 9 = \left(l-9\right)\left(l + 1\right) = 0 \iff l \in \left\{ -1,9\right\} .\]
+Como $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es creciente y $\displaystyle x_{1} = 8 $, tendremos que $\displaystyle l = 9 $. Vamos a demostrar que la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ está acotada superiormente por 9. Es cierto para $\displaystyle n = 1 $, puesto que $\displaystyle x_{1} = 8 \leq 9 $. Asumimos que es cierto para $\displaystyle n \in \N $, entonces
+\[x_{n+1} = \sqrt{9 + 8x_{n}} \leq \sqrt{9 + 8 \cdot 9} = 9 .\]
+Así, hemos visto que para $\displaystyle \forall n \in \N $, $\displaystyle x_{n} \leq 9 $, por lo que la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ está acotada superiormente por 9. Dado que se trata de una sucesión monótona creciente que está acotada superiormente, converge, y el límite, como hemos calculado anteriormente, es $\displaystyle l = 9 $.
+\end{sol}
+\begin{ej}
+Calcula los siguientes límites:
+\[\left(a\right) \; \lim_{x \to 2}\frac{4 - x^{2}}{3-\sqrt{x^{2}+5}}, \quad \left(b\right)\; \lim_{x \to \infty}\sqrt{x}\left(\sqrt{x+1}-\sqrt{x}\right) .\]
+\end{ej}
+\begin{sol}
+\[
+\begin{split}
+	\lim_{x \to 2}\frac{4 - x^{2}}{3-\sqrt{x^{2}+5}} = & \lim_{x \to 2}\frac{\left(4-x^{2}\right)\left(3 +\sqrt{x^{2}+5}\right)}{9 - x^{2}-5} = \lim_{x \to 2}\frac{\left(4-x^{2}\right)\left(3+\sqrt{x^{2}+5}\right)}{4-x^{2}} \\
+	= & \lim_{x \to 2}\left(3+\sqrt{x^{2}+5}\right) = 6.
+\end{split}
+\]
+\[
+\begin{split}
+	\lim_{x \to \infty}\sqrt{x}\left(\sqrt{x+1}-\sqrt{x}\right) = & \lim_{x \to \infty}\frac{\sqrt{x}}{\sqrt{x+1}+\sqrt{x}} = \lim_{x \to \infty}\frac{1}{\sqrt{1 + \frac{1}{x}}+1} = \frac{1}{2} .
+\end{split}
+\]
+\end{sol}
+\begin{ej}
+Demuestra que, si $\displaystyle a > e $, la siguiente serie es convergente:
+\[\sum^{\infty}_{n = 1}\frac{1}{n!}\left(\frac{n}{a}\right)^{n} .\]
+\end{ej}
+\begin{sol}
+Dado que $\displaystyle \frac{1}{n!}\left(\frac{n}{a}\right)^{n} > 0 $, $\displaystyle \forall n \in \N $, podemos aplicar el criterio del cociente:
+\[\frac{1}{\left(n+1\right)!}\left(\frac{n+1}{a}\right)^{n+1} \cdot n!\left(\frac{a}{n}\right)^{n} = \frac{1}{n+1}\left(\frac{n+1}{a}\right)\left(\frac{n+1}{a} \cdot \frac{a}{n}\right)^{n} = \frac{1}{a}\left(1+\frac{1}{n}\right)^{n} \to \frac{e}{a} < 1.\]
+Por el criterio del cociente, la serie converge (para deducir que el límite cuando $\displaystyle n \to \infty $ es menor que 1 hemos aplicado que $\displaystyle a > e $).
+\end{sol}
+\section{Parcial 2}
+\begin{ej}
+	Sea $\displaystyle f: \left[a,b\right] \to \R $ continua en todo $\displaystyle \left[a,b\right]  $. Prueba que existe $\displaystyle m \in \R $ de modo que 
+	\[ m \leq f\left(x\right) \quad \text{para todo} \quad x \in \left[a,b\right]  .\]
+\end{ej}
+\begin{sol}
+	Supongamos que $\displaystyle f $ no está acotada inferiormente. Entonces, $\displaystyle \forall n \in \N $ existe $\displaystyle x_{n} \in \left[a,b\right]  $ tal que $\displaystyle f\left(x_{n}\right) < n $. Así, tenemos la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset \left[a,b\right]  $. Por estar acotada, el \textbf{Teorema de Bolzano-Weirstrass} nos dice que existe una subsucesión $\displaystyle \left\{ x_{n_{j}}\right\} _{j\in\N} $ convergente, es decir, $\displaystyle x_{n_{j}} \to l \in \left[a,b\right]  $. 
+	Por ser $\displaystyle f $ continua en $\displaystyle \left[a,b\right]  $ se tiene que $\displaystyle \lim_{j \to \infty}f\left(x_{n_{j}}\right) = f\left(l\right) $, pero también tenemos que, por construcción de nuestra sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $, $\displaystyle \lim_{j \to \infty}f\left(x_{n_{j}}\right) = -\infty $. Esto es una contradicción, por lo que debe ser que existe $\displaystyle m \in \R $ tal que $\displaystyle m \leq f\left(x\right) $, $\displaystyle \forall x \in \left[a,b\right]  $.
+\end{sol}
+
+\begin{ej}
+Sea $\displaystyle f : \left(a,b\right) \to \R $ tal que existe $\displaystyle f'' $ en $\displaystyle \left(a,b\right) $ y es cóncava en $\displaystyle \left(a,b\right) $. Sea $\displaystyle x_{0} \in \left(a,b\right) $, prueba que 
+\[f\left(x\right) \leq f'\left(x_{0}\right)\left(x-x_{0}\right) + f\left(x_{0}\right) \quad \text{para todo} \quad x \in \left(a,b\right) .\]
+\end{ej}
+\begin{sol}
+Dado que $\displaystyle f $ es cóncava, tenemos que $\displaystyle f'' \leq 0 $, $\displaystyle \forall x \in \left(a,b\right) $, por lo que $\displaystyle f' $ es decreciente en $\displaystyle \left(a,b\right) $. Sean $\displaystyle x_{0},x \in \left(a,b\right) $. 
+Dado que $\displaystyle f $ es derivable en $\displaystyle \left(x_{0}, x\right) $ (respectivamente $\displaystyle \left(x, x_{0}\right) $) y continua en $\displaystyle \left[x_{0}, x\right]  $ (respectivamente $\displaystyle \left[x, x_{0}\right]  $), por el \textbf{Teorema del Valor Medio}, $\displaystyle \exists \xi \in \left(x_{0}, x\right) $ (respectivamente $\displaystyle \left(x, x_{0}\right) $) tal que 
+\[f\left(x\right)-f\left(x_{0}\right) = f'\left(\xi\right)\left(x-x_{0}\right) .\]
+Dado que $\displaystyle f' $ es decreciente, si $\displaystyle x > x_{0} $, como $\displaystyle \xi > x_{0} $, se tiene que $\displaystyle f'\left(\xi\right) \leq f'\left(x_{0}\right) $, por lo que
+\[f\left(x\right) = f'\left(\xi\right)\left(x-x_{0}\right)+f\left(x_{0}\right) \leq f'\left(x_{0}\right)\left(x-x_{0}\right)+f\left(x_{0}\right) .\]
+Por otro lado, si $\displaystyle x < x_{0} $ tenemos que $\displaystyle \xi < x_{0} $, por lo que $\displaystyle f'\left(\xi\right) > f'\left(x_{0}\right) $. Como $\displaystyle x - x_{0} < 0 $ tenemos que 
+\[f\left(x\right) = f'\left(\xi\right)\left(x-x_{0}\right)+f\left(x_{0}\right) \leq f'\left(x_{0}\right)\left(x-x_{0}\right)+f\left(x_{0}\right) .\]
+Así, hemos demostrado que dado $\displaystyle x_{0} \in \left(a,b\right) $, $\displaystyle \forall x \in \left(a,b\right) $ se tiene que 
+\[f\left(x\right) \leq f'\left(x_{0}\right)\left(x-x_{0}\right)+f\left(x_{0}\right) .\]
+\end{sol}
+\begin{ej}
+Calcula la serie de Taylor centrada en cero de la función $\displaystyle f\left(x\right) = \frac{1}{x^{3}+1} $. Para qué valores de $\displaystyle \R $ converge la serie de Taylor? Justifica tu respuesta.
+\end{ej}
+\begin{sol}
+Tenemos que 
+\[
+\begin{split}
+	\frac{1}{x^{3}+1} = & \frac{x^{3}+1-x^{3}}{x^{3}+1} = 1 - \frac{x^{3}+x^{6}-x^{6}}{x^{3}+1}= 1 - x^{3} + \frac{x^{6}+x^{9}-x^{9}}{x^{3}+1} \\
+	= & 1 - x^{3}+x^{6} - \cdots  + \frac{\left(-1\right)^{n}x^{3n+1}}{x^{3}+1} 
+	=  \sum^{n}_{k = 0}\left(-1\right)^{k}x^{3k} + \frac{\left(-1\right)^{n+1}x^{3n+1}}{x^{3}+1}.
+\end{split}
+\]
+Vamos a demostrar que $\displaystyle P_{0,3n}\left(x\right) = \sum^{n}_{k = 0}\left(-1\right)^{k}x^{3k} $ es el polinomio de Taylor de grado $\displaystyle 3n $ centrado en cero de $\displaystyle f $:
+\[\lim_{x \to 0}\frac{f\left(x\right)-P_{0,3n}\left(x\right)}{\left(x-0\right)^{3n}} = \lim_{x \to 0}\frac{\left(-1\right)^{n+1}x^{3n+1}}{x^{3n}\left(x^{3}+1\right)} = \lim_{x \to 0}\frac{\left(-1\right)^{n+1}x}{x^{3}+1} = \frac{\left(-1\right)^{n+1} \cdot 0}{0^{3}+1} = 0 .\]
+Como $\displaystyle f $ y $\displaystyle P_{3n,0} $ son iguales hasta el grado $\displaystyle 3n $, tenemos que $\displaystyle P_{3n, 0} $ es el polinomio de Taylor de grado $\displaystyle 3n $ centrado en cero de $\displaystyle f $. Así, la serie de Taylor de $\displaystyle f $ centrada en cero será:
+\[\sum^{\infty}_{n = 0}\left(-1\right)^{n}x^{3n} .\]
+Para que $\displaystyle f\left(x\right) = \sum^{\infty}_{n = 1}\left(-1\right)^{n}x^{3n} $ se tiene que cumplir que $\displaystyle \lim_{n \to \infty}R_{n,0}\left(x\right) = 0  $. Como hemos visto antes, $\displaystyle R_{3n, 0}\left(x\right) = \frac{\left(-1\right)^{n+1}x^{3n+1}}{x^{3}+1} $. Dado que la serie de Taylor es una serie de potencias, aplicamos el criterio del cociente para calcular el radio de convergencia:
+\[ \left|\frac{x^{3n+1}}{x^{3n}}\right| = \left|x\right| < 1.\]
+Está claro que si $\displaystyle x \in \left\{ -1,1\right\}  $ su serie de Taylor no converge. Así, tenemos que el radio de convergencia es 1, y si $\displaystyle x \in \left(-1,1\right) $:
+\[ \left|R_{3n+1,0}\left(x\right)\right| = \left|\frac{x^{3n+1}}{x^{3}+1}\right| \leq \left|x\right|^{3n+1} \to 0.\]
+Así, tenemos que en el intervalo $\displaystyle \left(-1,1\right) $ la serie de Taylor converge a $\displaystyle f $.
+\end{sol}
+\begin{ej}
+Calcula $\displaystyle \int \frac{\sin x \cos x + \cos ^{2}x \sin x}{\cos ^{2}+1} \; dx $.
+\end{ej}
+\begin{sol} 
+	Cogemos $\displaystyle u = \cos x $ por lo que $\displaystyle du = - \sin x dx $. Así, nos queda:
+\[
+\begin{split}
+	\int \frac{\sin x \cos x + \cos ^{2}x \sin x}{\cos ^{2}x + 1} \; dx = & \int \frac{\sin x\left(\cos x + \cos ^{2}x\right)}{\cos ^{2}x + 1} \; dx = \int -\frac{u+u^{2}}{u^{2}+1} \; du \\
+	= & - \int \frac{u^{2}+1+u-1}{u^{2}+1} \; du = -\int 1 + \frac{u-1}{u^{2}+1} \; du \\
+	= & - u - \frac{1}{2}\ln\left(u^{2}+1\right) + \arctan u\\
+	= & - \cos x - \frac{1}{2}\ln\left(1+\cos^{2}x\right)+\arctan \cos x
+\end{split}
+\]
+\end{sol}
+\begin{ej}
+Sea $\displaystyle f : [0,\infty) \to \R $ uniformemente continua en $\displaystyle [0,\infty) $. Si $\displaystyle \lim_{x \to \infty}\frac{f\left(x\right)x^{2}}{1 + \sin ^{2}x} = 0 $, existe $\displaystyle \int^{\infty}_{0} f\left(x\right) \; dx $? Justifica tu respuesta.
+\end{ej}
+\begin{sol}
+Tenemos que 
+\[\lim_{x \to \infty}\frac{f\left(x\right)x^{2}}{1+\sin ^{2}x } = 0 \iff \lim_{x \to \infty}\frac{ \left|f\left(x\right)\right|x^{2}}{1+ \sin ^{2}x} = 0 .\]
+Así, si $\displaystyle \epsilon > 0 $, $\displaystyle \exists M > 0 $ tal que $\displaystyle \forall x > M $ se tiene que 
+\[ \left|\frac{ \left|f\left(x\right)\right|x^{2}}{1+\sin ^{2}x}\right| = \frac{ \left|f\left(x\right)\right|x^{2}}{1+\sin ^{2}x} < \epsilon \Rightarrow \left|f\left(x\right)\right| < \epsilon \frac{1+ \sin ^{2}x}{x^{2}}.\]
+Como 
+\[\int^{\infty}_{M} \frac{1 + \sin ^{2}x}{x^{2}} \; dx < \int^{\infty}_{1} \frac{2}{x^{2}} \; dx < \infty .\]
+Por el criterio de comparación tenemos que $\displaystyle \int^{\infty}_{M} \left|f\left(x\right)\right| \; dx < \int^{\infty}_{M} \frac{1+\sin ^{2}x}{x^{2}} \; dx < \infty $, por tanto, 
+\[\int^{\infty}_{0} \left|f\left(x\right)\right| \; dx = \int^{M}_{0} \left|f\left(x\right)\right| \; dx + \int^{\infty}_{M} \left|f\left(x\right)\right| \; dx .\]
+La primera integral converge porque $\displaystyle f $ es uniformemente continua en $\displaystyle [0,M] $, y por tanto continua e integrable. Así, como $\displaystyle \int^{\infty}_{0} f\left(x\right) \; dx $ converge absolutamente, converge.
+\end{sol}
+\begin{ej}
+Se considera 
+\[f_{n}\left(x\right) = 
+\begin{cases}
+1 \quad \text{si} \quad x < - 2n \\
+-\frac{1}{n^{2}}\left(-2n-x\right)^{2}+1 \quad \text{si} \quad x \in \left[-2n,n\right] \\
+\frac{2x^{2}-2n^{2}}{-1-n^{2}} \quad \text{si} \quad x \in \left[-n,n\right] \\
+-\frac{1}{n^{2}}\left(2n-x\right)^{2}+1 \quad \text{si} \quad x \in \left[n, 2n\right] \\
+1 \quad \text{si} \quad x > 2n
+\end{cases}
+\]
+para $\displaystyle n \in \N $.
+\begin{description}
+\item[(a)] Calcula su límite puntual.
+\item[(b)] Converge uniformemente en $\displaystyle \left[-M,M\right]  $, para $\displaystyle M > 0 $? Justifica tu respuesta.
+\item[(c)] Converge uniformemente en todo $\displaystyle \R $? Justifica tu respuesta.
+\end{description}
+\end{ej}
+\begin{sol}
+\begin{description}
+\item[(a)] Calculamos el límite puntual:
+	\[\lim_{n \to \infty}f_{n}\left(x\right) = 2 .\]
+	En efecto, si $\displaystyle x \in \R $ cogemos $\displaystyle n_{0} \in \N $ suficientemente grande tal que $\displaystyle x \in \left[-n_{0},n_{0}\right]  $. Así, $\displaystyle \forall n \geq n_{0} $ tenemos que $\displaystyle x \in \left[-n, n\right]  $, por lo que 
+	\[ \left|\frac{2x^{2}-2n^{2}}{-1-n^{2}}-2\right| = \left|\frac{2x^{2}-2n^{2}+2+2n^{2}}{-1-n^{2}}\right| = \left|\frac{2x^{2}+2}{1+n^{2}}\right| \to 0 .\]
+\item[(b)] Estudiemos la convergencia uniforme en el intervalo $\displaystyle \left[-M,M\right]  $ con $\displaystyle M > 0 $,
+	\[ \left|\frac{2x^{2}-2n^{2}}{-1-n^{2}}-2\right| = \left|\frac{2x^{2}+2}{1 + n^{2}}\right| \leq \frac{2M^{2}+2}{1+n^{2}} \to 0 .\]
+	Por tanto, la sucesión de funciones $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ converge uniformemente en $\displaystyle \left[-M, M\right]  $ para cada $\displaystyle M > 0 $.
+\item[(c)] La sucesión de funciones $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ no converge uniformemente en $\displaystyle \R $, puesto que si $\displaystyle x = n $ tenemos que 
+	\[ \left|f_{n}\left(x\right)-2\right| = \left|0 - 2\right| \geq 2 .\]
+	Por tanto, la sucesión $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ no converge uniformemente en $\displaystyle \R $.
+\end{description}
+
+\end{sol}
+
+\end{document}

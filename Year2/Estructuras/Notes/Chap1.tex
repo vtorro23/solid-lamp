@@ -1,0 +1,118 @@
+\chapter{Grupos}
+\begin{definition}[Grupo]
+Sea la terna $\displaystyle \left(G, \cdot, e\right) $ donde $\displaystyle G $ es un conjunto no vacío, $\displaystyle \cdot : G \times G \to G $ una operación interna y $\displaystyle e \in G $. Diremos que la terna $\displaystyle \left(G, \cdot , e\right) $ es un \textbf{grupo} si se cumple:
+\begin{description}
+\item[Asociativa.] $\displaystyle \forall a, b, c \in G $, $\displaystyle \left(a \cdot b\right) \cdot c = a \cdot \left(b \cdot c\right) $.
+\item[Elemento neutro.] $\displaystyle \forall a \in G $, $\displaystyle a \cdot e = e \cdot a = a $.
+\item[Inversa.] $\displaystyle \forall a \in G, \exists b \in G $, $\displaystyle a \cdot b = b \cdot a = e $.
+\end{description}
+Además, diremos que $\displaystyle \left(G, \cdot, e\right) $ es \textbf{abeliano} si se cumple la propiedad conmutativa, es decir, $\displaystyle \forall a,b \in G $, $\displaystyle a \cdot b = b \cdot a $.
+\end{definition}
+\begin{definition}[Orden de un grupo]
+Dado un grupo $\displaystyle \left(G, \cdot, e\right) $, llamamos \textbf{orden} del grupo a la cardinalidad de $\displaystyle G $, $\displaystyle \left|G\right| $.
+\end{definition}
+\begin{eg}
+Algunos ejemplos de grupos son:
+\begin{enumerate}
+\item $\displaystyle \left(\R, +, 0\right) $ es un grupo abeliano.
+\item $\displaystyle \left(\R / \left\{ 0\right\} , \cdot, 1\right) $ es un grupo abeliano.
+\item $\displaystyle \left(\Z, +, 0\right) $ es un grupo abeliano. 
+\item $\displaystyle \left(\N \cup \left\{ 0\right\} , + , 0\right) $ no es un grupo por no haber inversos.
+\end{enumerate}
+\end{eg}
+\begin{prop}
+Sea $\displaystyle \left(G, \cdot, e\right) $ un grupo. Entonces se tiene que:
+\begin{enumerate}
+\item El elemento neutro es único.
+\item Dado $\displaystyle a \in G $, existe un único elemento inverso.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Demostremos \textbf{1}. Supongamos que $\displaystyle e $ y $\displaystyle e' $ son ambos elementos neutros. Tenemos que 
+\[e = e \cdot e' = e' \cdot e = e' .\]
+Así, hemos visto que $\displaystyle e = e' $. Ahora, demostremos \textbf{2}. Si $\displaystyle a \in G $, supongamos que $\displaystyle b, c \in G $ son sus inversos. Entonces tenemos que
+\[ b = b \cdot e = b \cdot (a \cdot c) = \left(b \cdot a \right) \cdot c = e \cdot c = c .\]
+Así, tenemos que $\displaystyle b = c $.
+\end{proof}
+\begin{observation}
+\begin{enumerate}
+\item De ahora en adelante, en vez de escribir $\displaystyle \left(G, \cdot , e\right) $ para nombrar el grupo, escribiremos sólamente $\displaystyle G $. De manera similar, no escribiremos $\displaystyle a \cdot b $ sino $\displaystyle ab $.
+\item Dado $\displaystyle a \in G $ finito, a su inverso lo denotaremos por $\displaystyle a^{-1} $.
+\item Dado un grupo $\displaystyle G $, va a estar totalmente definido por su tabla de multiplicación (tabla de Cayley). Esta será de la forma
+	\begin{center}
+	\begin{tabular}{c | c | c | c | c}
+	& $\displaystyle e $  & $\displaystyle a_{1} $ & $\displaystyle \cdots $ & $\displaystyle a_{n} $ \\
+	\hline 
+		$\displaystyle e $ & $\displaystyle e $ & $\displaystyle a_{1} $ & $\displaystyle \cdots  $ & $\displaystyle a_{n} $ \\
+		\hline
+		$\displaystyle a_{1} $ & $\displaystyle a_{1} $ & $\displaystyle a_{1}^{2} $ & $\displaystyle \cdots  $ & $\displaystyle a_{1} a_{n} $ \\
+		\hline
+		$\displaystyle \vdots  $ & $\displaystyle \vdots $  & $\displaystyle \vdots $  & $\displaystyle \vdots $ & $\displaystyle \vdots $ \\
+		\hline 
+		$\displaystyle a_{n} $ & $\displaystyle a_{n} $ & $\displaystyle a_{n}a_{1} $ & $\displaystyle \cdots  $ & $\displaystyle a_{n}^{2} $ 
+	\end{tabular}
+	\end{center}
+\end{enumerate}
+\end{observation}
+\begin{eg}
+	Consideremos el grupo $\displaystyle \left(\Z_{5} / \left\{ 0\right\} , \cdot\right) $. Su tabla de Cayley será:
+\begin{center}
+\begin{tabular}{c|c|c|c|c}
+$\displaystyle \cdot $ & 1 & 2 & 3 & 4 \\
+\hline
+	1 & 1 & 2 & 3 & 4 \\
+\hline 
+	2 & 2 & 4 & 1 & 3 \\
+\hline 
+	3 & 3 & 1 & 4 & 2 \\
+\hline 
+	4 & 4 & 3 & 2 & 1
+\end{tabular}
+\end{center}
+\end{eg}
+\begin{prop}
+Sea $\displaystyle G $ un grupo. Entonces, 
+\begin{enumerate}
+\item $\displaystyle \forall a \in G $, $\displaystyle \left(a^{-1}\right)^{-1} = a $.
+\item $\displaystyle \forall a,b,c \in G $, $\displaystyle \left(ab\right)^{-1} = b^{-1}a^{-1} $.
+\item $\displaystyle \forall a, b, c \in G $, si $\displaystyle ba = ca $ o $\displaystyle ab = ac $, entonces $\displaystyle b = c $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Demostramos \textbf{1}. Si $\displaystyle a \in G $, tenemos que 
+\[a^{-1}a = a \cdot a^{-1} = e .\]
+Dado que el inverso es único, tenemos que $\displaystyle \left(a^{-1}\right)^{-1} = a $. Ahora demostramos \textbf{2}. Si $\displaystyle a,b \in G $, 
+\[\left(ab\right)\left(b^{-1}a^{-1}\right) = a  e  a^{-1} = a a^{-1} = e .\]
+Por la inversa del inverso, tenemos que $\displaystyle \left(ab\right)^{-1} = b^{-1}a^{-1} $. Finalmente, demostramos \textbf{3}. Si $\displaystyle a,b,c \in G $ y, sin pérdida de generalidad, $\displaystyle ba = ca $, dado que existe $\displaystyle a^{-1}\in G $, tenemos que
+\[ ba = ca \iff ba a^{-1} = c a a^{-1} \iff b e = ce \iff b = c .\]
+
+\end{proof}
+\begin{eg}
+\begin{enumerate}
+	\item Consideremos un conjunto $\displaystyle X \neq \emptyset $ y el conjunto de sus biyecciones $\displaystyle Biy\left(X\right) = \left\{ f : X \to X \; : \; f \; \text{biyección}\right\}  $. Como operación tomamos la composición de funciones. Entonces, $\displaystyle \left(Biy\left(X\right), \circ\right) $ es un grupo. En efecto:
+		\begin{description}
+		\item[Asociativa.] La composición de funciones es asociativa.
+		\item[Elemento neutro.] Tomamos como elemento neutro la función identidad. En efecto, $\displaystyle id \in Biy\left(X\right) $ y $\displaystyle \forall f \in Biy\left(X\right) $, 
+			\[\left(f\circ id \right)\left(x\right) = f\left(id \left(x\right)\right) = f\left(x\right) .\]
+		\[\left(id \circ f\right)\left(x\right) = id \left(f\left(x\right)\right) = f\left(x\right) .\]
+	\item[Inverso.]	Si $\displaystyle f \in Biy\left(X\right) $, sabemos que por ser $\displaystyle f $ biyectiva existe $\displaystyle f^{-1} \in Biy\left(X\right) $ tal que $\displaystyle f \circ f^{-1} = id $ y $\displaystyle f^{-1} \circ f = id $. 
+		\end{description}
+	Así, hemos visto que $\displaystyle \left(Biy\left(X\right), \circ\right) $ es un grupo, pero no tiene por qué ser abeliano.
+\item Sea $\displaystyle \mathcal{M}_{n}\left(\R\right) $, $\displaystyle n \geq 1 $, el conjunto de matrices reales cuadradas con coeficientes en $\displaystyle \R $, y consideremos el producto de matrices usual. El par $\displaystyle \left(\mathcal{M}_{n}, \cdot\right) $ no es un grupo, puesto que las matrices con determinante nulo no tienen inverso. \\ 
+	Tomemos así solo las matrices cuyo determinante es distinto de cero, y por tanto sabemos que tienen inverso. A este conjunto lo llamamos \textbf{grupo lineal general}, $\displaystyle \GL_{n}\left(\R\right) = \left\{ A \in \mathcal{M}_{n}\left(\R\right) \; : \; \left|A\right| \neq 0\right\}  $. Así, $\displaystyle \left(\GL_{n}\left(\R\right), \cdot\right) $ forma un grupo. \\
+	De manera similar, el conjunto $\displaystyle \SL_{n}\left(\R\right) = \left\{ A \in \mathcal{M}_{n}\left(\R\right) \; : \; \left|A\right| = 1\right\}  $, al que llamamos \textbf{grupo lineal especial}, también forma un grupo con la multiplicación. 
+\end{enumerate}
+\end{eg}
+\begin{observation}
+Se puede ver que $\displaystyle \SL_{n}\left(\R\right) \subset \GL_{n}\left(\R\right) $. 
+\end{observation}
+\begin{definition}[Subgrupo]
+Sea $\displaystyle G $ un grupo y $\displaystyle H \subset G $. Diremos que $\displaystyle H $ es \textbf{subgrupo} de $\displaystyle G $, $\displaystyle H \leq G $, si $\displaystyle H $ es cerrado para la operación de $\displaystyle G $, esto es
+\begin{itemize}
+\item $\displaystyle H \neq \emptyset $.
+\item $\displaystyle \forall a,b \in H $, $\displaystyle ab \in H $.
+\item $\displaystyle \forall a \in H $, $\displaystyle a^{-1} \in H $.
+\end{itemize}
+
+\end{definition}
+
