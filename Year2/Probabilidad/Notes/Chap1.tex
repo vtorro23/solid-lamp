@@ -118,10 +118,24 @@ Dado el espacio total $\displaystyle \Omega  $, una clase $\displaystyle \mathca
 \item Todo álgebra es un anillo.
 \end{enumerate}
 \end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Aplicando \textbf{(b)} y \textbf{(c)} tenemos que 
+	\[ A \cap B = \left(A^{c} \cup B^{c}\right)^{c} \in \mathcal{Q} .\]
+\item Aplicando \textbf{(b)} y el apartado anterior tenemos que
+	\[A - B = A \cap B^{c} \in \mathcal{Q} .\]
+\item Aplicando los dos apartados anteriores, está claro que
+	\[A \Delta B = \left(A \cup B\right) - \left(A \cap B\right) \in \mathcal{Q} .\]
+\item Se deduce por inducción a partir de \textbf{(c)}.
+\item Ya hemos visto que se cumple \textbf{(a)}, tenemos que ver que se cumple \textbf{(b)}.
+\end{enumerate}
+
+\end{proof}
+
 \begin{definition}[$\displaystyle \sigma $-álgebra]
 Dado el espacio total $\displaystyle \Omega  $, una clase $\displaystyle \mathcal{A} \subset \mathcal{P}\left(\Omega \right) $ tiene estructura de $\displaystyle \sigma  $\textbf{-álgebra} si 
 \begin{description}
-\item[(a)] $\displaystyle \Omega \subset \mathcal{A} $.
+\item[(a)] $\displaystyle \Omega \in \mathcal{A} $.
 \item[(b)] $\displaystyle \forall A \in \mathcal{A} \Rightarrow A^{c} \in \mathcal{A} $.
 \item[(c)] Dada cualquier sucesión $\displaystyle \left\{ A_{n}\right\} _{n\in\N} \in \mathcal{A} $ verifica $\displaystyle \bigcup_{n \in \N}A_{n}\in \mathcal{A} $.
 \end{description}
@@ -134,11 +148,29 @@ Dado el espacio total $\displaystyle \Omega  $, una clase $\displaystyle \mathca
 \item Para cualquier sucesión finita $\displaystyle A_{1}, \ldots, A_{n} $ con $\displaystyle A_{i} \in \mathcal{A} $, $\displaystyle i = 1, \ldots, n $, se tiene que $\displaystyle \bigcap_{1\leq i \leq n}A_{i} \in \mathcal{A} $.
 \item Toda $\displaystyle \sigma  $-álgebra es un álgebra.
 \item Todo álgebra con un número finito de elementos es $\displaystyle \sigma  $-algebra.
-\item Toda $\displaystyle \sigma  $-álgebra es cerrada respecto de la operación paso al l´ˆmite para cualquier sucesión.
+\item Toda $\displaystyle \sigma  $-álgebra es cerrada respecto de la operación paso al límite para cualquier sucesión.
 \item La intersección de $\displaystyle \sigma  $-algebras definidas sobre el mismo espacio total es una $\displaystyle \sigma  $-álgebra.
 \item Dada una clase $\displaystyle \mathcal{B} \subset \mathcal{P}\left(\Omega\right)$ existe una mínima $\displaystyle \sigma  $-álgebra que la contiene. Esta será la intersección de todas las $\displaystyle \sigma  $-álgebras que contengan a $\displaystyle \mathcal{B} $. Se indicará por $\displaystyle \sigma\left(\mathcal{B}\right) $.
 \end{enumerate}
 \end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Por \textbf{(a)} y \textbf{(b)} tenemos que $\displaystyle \Omega ^{c} = \emptyset \in \mathcal{A} $.
+\item Aplicando \textbf{(b)} y \textbf{(c)}, tenemos que 
+	\[ \bigcap_{n \in \N}A_{n} = \left(\bigcup_{n \in \N}A_{n}^{c} \right) ^{c}\in \mathcal{A} .\]
+En efecto, tenemos que $\displaystyle A_{n}^{c} \in \mathcal{A} $ para cada $\displaystyle n \in \N $, por lo que $\displaystyle \bigcup_{n \in \N}A_{n}^{c} \in \mathcal{A}$ y su complementario también pertenece a $\displaystyle \mathcal{A} $.
+\item Podemos coger la sucesión $\displaystyle \left\{ A_{m}\right\} _{m\in\N} $ tal que $\displaystyle A_{m} = A_{m} $ con $\displaystyle 1\leq m \leq n $, y $\displaystyle A_{m} = \bigcup_{1 \leq i \leq n}A_{i} $ para $\displaystyle m > n $. Así, está claro que, aplicando \textbf{(c)},
+	\[\bigcup_{m \in \N}A_{m} = \bigcup_{1 \leq i \leq n}A_{i} \in \mathcal{A} .\]
+\item Se demuestra de forma análoga al apartado anterior.	
+\item Basta demostrar la condición \textbf{(c)}, que es cierto por lo demostrado en \textbf{3}.
+\item 
+\item Dada una sucesión $\displaystyle \left\{ A_{n}\right\} _{n\in\N} \subset \mathcal{P}\left(\Omega \right) $ tal que $\displaystyle A_{n} \in \mathcal{A} $, $\displaystyle \forall n \in \N $, es trivial que si existe $\displaystyle \lim_{n \to \infty}A_{n} $ debe ser que $\displaystyle \lim_{n \to \infty}A_{n} = \lim \sup A_{n} $. Así, por lo demostrado anteriormente, 
+	\[\lim \sup A_{n} = \bigcap_{k = 1}^{\infty}\bigcup_{n = k}^{\infty}A_{n} \in \mathcal{A} .\]
+\item Está claro que se cumplen \textbf{(a)} y \textbf{(b)}. 	
+\end{enumerate}
+
+\end{proof}
+
 \begin{observation}
 La unión de dos $\displaystyle \sigma  $-álgebras puede no ser $\displaystyle \sigma  $-álgebra.
 \end{observation}

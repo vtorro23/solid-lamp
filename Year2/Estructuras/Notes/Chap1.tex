@@ -113,6 +113,150 @@ Sea $\displaystyle G $ un grupo y $\displaystyle H \subset G $. Diremos que $\di
 \item $\displaystyle \forall a,b \in H $, $\displaystyle ab \in H $.
 \item $\displaystyle \forall a \in H $, $\displaystyle a^{-1} \in H $.
 \end{itemize}
-
 \end{definition}
+\begin{eg}
+\begin{description}
+	\item[(i)] Sea $\displaystyle G $ un grupo. Tenemos que $\displaystyle \left\{ e\right\} \leq G $ es el \textbf{subgrupo trivial} .
+	\item[(ii)] $\displaystyle \SL_{n}\left(\R\right) \leq \GL_{n}\left(\R\right) $.
+	\item[(iii)] $\displaystyle \Z \leq \Q \leq \R \leq \C $.
+	\item[(iv)] $\displaystyle \Q/ \left\{ 0\right\}  \leq \R/ \left\{ 0\right\}  \leq \C / \left\{ 0\right\}  $.
+\end{description}
+\end{eg}
+
+\begin{prop}
+Sea $\displaystyle G $ un grupo y $\displaystyle H \subset G $. Así, $\displaystyle H \leq G $ si y solo si $\displaystyle e \in H $ y $\displaystyle \forall a,b \in H $ se cumple que $\displaystyle ab^{-1} \in H $.
+\end{prop}
+\begin{proof}
+Demostremos la primera implicación. Si $\displaystyle H \leq G $, tenemos que $\displaystyle H \neq \emptyset $ por lo que existe $\displaystyle a \in H $, por lo que $\displaystyle a ^{-1} \in H $ y $\displaystyle e = a a^{-1} \in H $. Ahora, si $\displaystyle a,b \in H $, tenemos que $\displaystyle b^{-1} \in H $, por lo que $\displaystyle a b^{-1} \in H $. \\
+Recíprocamente, $\displaystyle H \neq \emptyset $ puesto que $\displaystyle e \in H $. Sea $\displaystyle a \in H $. Tenemos que $\displaystyle a^{-1} = e \cdot a^{-1} \in H $. Falta que si $\displaystyle a,b \in H$, entonces $\displaystyle ab \in H $. Sean $\displaystyle a,b \in H $, entonces $\displaystyle a^{-1}, b^{-1} \in H $. Entonces $\displaystyle ab = a\left(b^{-1}\right)^{-1} \in H $. Así, demostramos las tres propiedades. 
+\end{proof}
+\begin{eg}[Producto cartesiano de dos grupos]
+Sean $\displaystyle \left(G_{1}, \cdot _{G_{1}}, e_{G_{1}}\right) $ y $\displaystyle \left(G_{2}, \cdot _{G_{2}}, e_{G_{2}}\right) $ dos grupos. Vamos a ver que su producto cartesiano también es un grupo. Definimos la siguiente operación para el producto cartesiano:
+\[
+\begin{split}
+	\cdot : (G_{1} \times G_{2}) \times \left(G_{1} \times G_{2}\right) & \to G_{1} \times G_{2} \\
+	\left(g_{1}, g_{2}\right) \times \left(g_{1}', g_{2}'\right) & \to \left(g_{1} \cdot _{G_{1}}g_{1}', g_{2} \cdot _{G_{2}}g'_{2}\right).
+\end{split}
+\]
+Está claro que $\displaystyle G = G_{1}\times G_{2} \neq \emptyset $ y que se trata de una operación interna. 
+\begin{description}
+\item[Asociatividad.] Si $\displaystyle \left(a_{1}, a_{2}\right), \left(b_{1}, b_{2}\right) , \left(c_{1}, c_{2}\right) \in G_{1} \times G_{2}$, tenemos que
+	\[
+	\begin{split}
+		\left(\left(a_{1}, a_{2}\right) \cdot \left(b_{1}, b_{2}\right)\right) \cdot \left(c_{1}, c_{2}\right) & = \left(a_{1} \cdot b_{1}, a_{2} \cdot b_{2}\right) \cdot \left(c_{1},c_{2}\right) = \left(a_{1} \cdot b_{1} \cdot c_{1}, a_{2} \cdot b_{2} \cdot c_{2}\right) \\
+		= & \left(a_{1}, a_{2}\right) \left(b_{1} \cdot c_{1}, b_{2} \cdot c_{2}\right) = \left(a_{1}, a_{2}\right) \cdot \left(\left(b_{1}, b_{2}\right) \cdot \left(c_{1}, c_{2}\right)\right).
+	\end{split}
+	\]
+\item[Elemento neutro.] Tenemos que $\displaystyle e = \left(e_{G_{1}}, e_{G_{2}}\right) $. En efecto, si $\displaystyle \left(g_{1}, g_{2}\right) \in G_{1} \times G_{2} $, tenemos que
+	\[
+	\begin{split}
+		\left(e_{G_{1}}, e_{G_{2}}\right) \cdot \left(g_{1}, g_{2}\right) & = \left(g_{1}, g_{2}\right) \\
+		\left(g_{1}, g_{2}\right) \cdot \left(e_{G_{1}}, e_{G_{2}}\right) & = \left(g_{1}, g_{2}\right).
+	\end{split}
+	\]
+\item[Inverso.] Si $\displaystyle \left(g_{1}, g_{2}\right) \in G_{1} \times G_{2} $, tenemos que su inverso será $\displaystyle \left(g_{1}^{-1}, g_{2}^{-1}\right) \in G_{1} \times G_{2} $. En efecto,
+	\[
+	\begin{split}
+		\left(g_{1}, g_{2}\right) \cdot \left(g_{1}^{-1}, g_{2}^{-1}\right) & = \left(e_{G_{1}}, e_{G_{2}}\right) \\
+		\left(g_{1}^{-1}, g_{2}^{-1}\right) \cdot \left(g_{1}, g_{2}\right) & = \left(e_{G_{1}}, e_{G_{2}}\right).
+	\end{split}
+	\]
+\end{description}
+Así, está claro que $\displaystyle G_{1} \times G_{2} $ es un grupo.	
+\end{eg}
+
+\begin{definition}
+Sea $\displaystyle G $ un grupo. Entonces, 
+\begin{description}
+\item[(a)] Llamamos \textbf{centro} de $\displaystyle G $ al conjunto 
+	\[A\left(G\right) = \left\{ a \in G \; : \; ax = xa, \forall x \in G\right\}  .\]
+\item[(b)] Llamamos \textbf{centralizador} de $\displaystyle x \in G $ al conjunto 
+	\[C_{G}\left(x\right) = \left\{ a \in G \; : \; ax = xa\right\}  .\]
+\end{description}
+\end{definition}
+\begin{observation}
+Los conjuntos $\displaystyle A\left(G\right) $ y $\displaystyle C_{G}\left(x\right) $ son subgrupos. En efecto:
+\begin{description}
+\item[(i)] Tenemos que $\displaystyle e \in A\left(G\right) $ y si $\displaystyle a \in A\left(G\right) $, también tenemos que $\displaystyle a^{-1} \in A\left(G\right) $. En efecto, 
+	\[a^{-1}x = xa^{-1} \iff a a^{-1}x = a x a^{-1} \iff x = x a a^{-1} = x e = x .\]
+	Así, si $\displaystyle a,b \in A\left(G\right) $, tenemos que $\displaystyle b^{-1} \in A\left(G\right) $ y $\displaystyle \forall x \in G $,
+	\[ab^{-1}x = axb^{-1} = xab^{-1} .\]
+	Por lo que $\displaystyle ab^{-1} \in A\left(G\right) $ y se trata de un subgrupo.
+\item[(ii)] El argumento para demostrar que $\displaystyle C_{G}\left(x\right) $ es un subgrupo de $\displaystyle G $ es análogo al anterior.
+\end{description}
+\end{observation}
+
+\begin{observation}
+Se puede comprobar que $\displaystyle Z\left(G\right) = \bigcap_{x \in G}C_{G}\left(x\right) $. En efecto:
+\begin{description}
+\item[(i)] Si $\displaystyle x \in Z\left(G\right) $ tenemos que $\displaystyle \forall g \in G $, $\displaystyle x g = g x $, por lo que $\displaystyle \forall g \in G $, $\displaystyle x \in C_{G}\left(g\right) \iff x \in \bigcap_{g \in G}C_{G}\left(g\right) $.
+\item[(ii)] Si $\displaystyle x \in \bigcap_{g \in G}C_{G}\left(g\right) $, $\displaystyle x \in C_{G}\left(g\right) $, $\displaystyle \forall g \in G $. Por lo que $\displaystyle xg = gx $, $\displaystyle \forall g \in G $ y $\displaystyle x \in Z\left(G\right) $.
+\end{description}
+\end{observation}
+\begin{definition}[Homomorfismo]
+Sean $\displaystyle G_{1} $ y $\displaystyle G_{2} $ grupos tales que $\displaystyle \cdot _{G_{1}} $ y $\displaystyle \cdot _{G_{2}} $ son sus operaciones y $\displaystyle e_{G_{1}} $ y $\displaystyle e_{G_{2}} $ sus elementos neutros. Entonces, $\displaystyle f : G_{1} \to G_{2} $ es un \textbf{homomorfismo} de grupos si $\displaystyle \forall a,b \in G_{1} $, 
+\[f\left(a \cdot _{G_{1}} b\right) = f\left(a\right) \cdot _{G_{2}}f\left(b\right) .\]
+\end{definition}
+\begin{observation}
+Si $\displaystyle f_{1}: G_{1} \to G_{2} $ y $\displaystyle f_{2} : G_{2} \to G_{3} $ son homomorfismos de grupos, entonces $\displaystyle f_{2} \circ f_{1} $ es un homomorfismo de grupos. Es decir, la composición de homomorfismos de grupos sigue siendo homomorfismo de grupos. En efecto, si $\displaystyle a,b \in G_{1} $, 
+\[f_{2}\circ f_{1}\left(ab\right) = f_{2}\left(f_{1}\left(ab\right)\right) = f_{2}\left(f_{1}\left(a\right)f_{1}\left(b\right)\right) = f_{2}\left(f_{1}\left(a\right)\right)f_{2}\left(f_{1}\left(b\right)\right) = f_{2} \circ f_{1}\left(a\right) f_{2}\circ f_{1}\left(b\right).\]
+\end{observation}
+\begin{eg}
+Consideremos la aplicación 
+\[
+\begin{split}
+	f : \R/ \left\{ 0\right\}  & \to \GL_{n}\left(\R\right) \\
+	t & \to \begin{pmatrix} t & 0 & \cdots & 0 \\
+	0 & t & \cdots & 0 \\
+\vdots & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & t\end{pmatrix} = t \cdot I_{n}.
+\end{split}
+\]
+Está aplicación es un homomorfismo de grupos.
+\end{eg}
+\begin{definition}
+Sea $\displaystyle f : G_{1} \to G_{2} $ homomorfismo de grupos. Entonces:
+\begin{description}
+\item[(a)] Llamamos \textbf{núcleo} de $\displaystyle f $ al conjunto
+	\[\Ker\left(f\right) = \left\{ a \in G_{1} \; : \; f\left(a\right) = e _{G_{2}}\right\}  .\]
+\item[(b)] Llamamos \textbf{imagen} de $\displaystyle f $ al conjunto
+	\[\Imagen\left(f\right) = \left\{ b \in G_{2} \; : \; \exists a \in G_{1}, f\left(a\right) = b\right\}  .\]
+\end{description}
+\end{definition}
+\begin{prop}
+Sea $\displaystyle f : G_{1} \to G_{2} $ un homomorfismo de grupos. Entonces:
+\begin{enumerate}
+\item $\displaystyle f\left(e_{G_{1}}\right) = e_{G_{2}} $.
+\item $\displaystyle \forall a \in G_{1} $, $\displaystyle f\left(a^{-1}\right) = f\left(a\right)^{-1} $.
+\item Si $\displaystyle H \leq G_{1} $, entonces $\displaystyle f\left(H\right) \leq G_{2} $. En particular, tenemos que $\displaystyle \Imagen\left(f\right) \leq G_{2} $.
+\item $\displaystyle f $ es inyectiva si y solo si $\displaystyle \Ker\left(f\right) = \left\{ e_{G_{1}}\right\}  $.
+\item Si $\displaystyle N \leq G_{2} $, entonces $\displaystyle f^{-1}\left(N\right) \leq G_{1} $ que contiene a $\displaystyle \Ker\left(f\right) $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Sabemos que $\displaystyle e_{G_{1}} = e_{G_{1}} \cdot e_{G_{1}} $, por lo que:
+	\[f\left(e_{G_{1}}\right) = f\left(e_{G_{1}} \cdot e_{G_{1}}\right)=f\left(e_{G_{1}}\right)f\left(e_{G_{1}}\right) .\]
+Así, tenemos que 
+\[ .\]
+\[
+\begin{split}
+	e_{G_{2}}  &= f\left(e_{G_{1}}\right)^{-1}f\left(e_{G_{1}}\right) = f\left(e_{G_{1}}\right)^{-1}\left(f\left(e_{G_{1}}\right)f\left(e_{G_{1}}\right)\right) \\
+	= &  \left(f\left(e_{G_{1}}\right)^{-1}f\left(e_{G_{1}}\right)\right)f\left(e_{G_{1}}\right) = e_{G_{2}}f\left(e_{G_{1}}\right) = f\left(e_{G_{1}}\right).
+\end{split}
+\]
+\item Sea $\displaystyle a \in G_{1} $, entonces por la unicidad del inverso y por \textbf{1}:
+	\[f\left(a\right) f\left(a^{-1}\right) = f\left(a a^{-1}\right) = f\left(e_{G_{1}}\right) = e_{G_{2}} .\]
+\item Si $\displaystyle H \leq G_{1} $, tenemos que $\displaystyle e_{G_{1}} \in H $, por lo que $\displaystyle e_{G_{2}} \in f\left(H\right) $. Además, tenemos que $\displaystyle \forall a,b \in H $ se cumple que $\displaystyle a b^{-1} \in H $. Por tanto, si $\displaystyle x,y \in f\left(H\right) $, $\displaystyle \exists a,b \in H $ tales que $\displaystyle x = f\left(a\right) $ y $\displaystyle y = f\left(b\right) $, 
+	de esta manera, tenemos que $\displaystyle ab^{-1} \in H $, por lo que $\displaystyle f\left(ab^{-1}\right) \in f\left(H\right) $. Así, 
+	\[xy^{-1} = f\left(a\right)f\left(b\right)^{-1} = f\left(a\right)f\left(b^{-1}\right) = f\left(ab^{-1}\right) \in f\left(H\right) .\]
+	Así, queda demostrado que $\displaystyle f\left(H\right) \leq G_{2} $.
+\item Si $\displaystyle \Ker\left(f\right) = \left\{ e_{G_{1}}\right\}  $ y $\displaystyle f\left(a\right) = f\left(b\right) $, tenemos que 
+	\[f\left(a\right)f\left(b\right)^{-1} = e_{G_{2}} \iff f\left(ab^{-1}\right) = e_{G_{2}} .\]
+	Por tanto, $\displaystyle ab^{-1} = e_{G_{1}} $, por lo que $\displaystyle a = b $. Así, hemos visto que $\displaystyle f $ es inyectiva. Supongamos que $\displaystyle f $ es inyectiva y que $\displaystyle a \in \Ker\left(f\right) $. Entonces, tenemos que $\displaystyle f\left(a\right)=f\left(e_{G_{1}}\right) = e_{G_{2}} $, por lo que $\displaystyle a = e_{G_{1}} $ y $\displaystyle \Ker\left(f\right) = \left\{ e_{G_{1}}\right\}  $.
+\item Supongamos que $\displaystyle N \leq G_{2} $. Tenemos que $\displaystyle e_{G_{2}} \in N $, por lo que $\displaystyle e_{G_{1}} \in f^{-1}\left(N\right) $. Si $\displaystyle x,y \in f^{-1}\left(N\right) $ tenemos que $\displaystyle f\left(x\right), f\left(y\right) \in N $, así, 
+	\[f\left(xy^{-1}\right)= f\left(x\right)f\left(y^{-1}\right) = f\left(x\right) f\left(y\right)^{-1} \in N .\]
+	Por tanto, $\displaystyle \forall x,y \in f^{-1}\left(N\right) $, tenemos que $\displaystyle xy^{-1} \in f^{-1}\left(N\right) $, por lo que $\displaystyle f^{-1}\left(N\right) \leq G_{1} $. Ahora, si $\displaystyle x \in \Ker\left(f\right) $, tenemos que $\displaystyle f\left(x\right) = e_{G_{2}} \in N $, por lo que $\displaystyle x \in f^{-1}\left(N\right) $ y consecuentemente $\displaystyle \Ker\left(f\right) \leq f^{-1}\left(N\right) $.
+\end{enumerate}
+\end{proof}
 

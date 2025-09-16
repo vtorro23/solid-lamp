@@ -14,7 +14,7 @@ El tercer axioma asegura que se trata de algo dimensional.
 \begin{definition}[Rectas paralelas]
 Si $\displaystyle l, m \in \mathcal{R} $ tales que $\displaystyle l \cap m = \emptyset $, diremos que $\displaystyle l $ y $\displaystyle m $ son \textbf{paralelas} y escribimos $\displaystyle l||m $.
 \end{definition}
-\begin{eg}
+\begin{eg}[Plano cartesiano]
 El plano cartesiano $\displaystyle \R^{2} $ es un plano afín. Tenemos que 
 \[\mathcal{P  } = \left\{ \left(x_{1}, x_{2}\right) \; : \; x_{1}, x_{2} \in \R\right\}.\]
 \[\mathcal{R} : l = \left\{ \left(x_{1}, x_{2}\right) \in \R^{2} \; : \; ax_{1} + bx_{2} = 0, \; a,b,c \in \R, \left(a,b\right) \neq \left(0,0\right)\right\} := \left\{ ax_{1} +bx_{2} = c\right\}  .\]
@@ -124,11 +124,11 @@ Sean $\displaystyle l, m \in \mathcal{R} $.
 \coordinate (P) at (-1,0); % between L and O on l
 
 % Lines l and m through O
-\draw[name path=l] (-2.5,-1.5) -- (0.5,1.5) node[right] {$l$};
-\draw[name path=m] (2.5,-1.5) -- (-0.5,1.5) node[left] {$m$};
+\draw (-2.5,-1.5) -- (0.5,1.5) node[right] {$l$};
+\draw (2.5,-1.5) -- (-0.5,1.5) node[left] {$m$};
 
 % Line r (horizontal) through L and M
-\draw[name path=r] (L) -- (M) node[midway, above] {$r$};
+\draw (L) -- (M) node[midway, above] {$r$};
 
 % Dashed line through P parallel to r (horizontal)
 %\draw[dashed] (P) -- ($(P)+(1,0)$);
@@ -178,4 +178,196 @@ Tenemos que $\displaystyle r_{f\left(P\right)} = r _{r_{p} \cap m} | | r $ y $\d
 	% Dibujo 3
 \end{description}
 \end{proof}
+\begin{lema}
+Sea $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $ un plano afín. Ponemos $\displaystyle l \sim m $, $\displaystyle l, m \in \mathcal{R} $, si $\displaystyle  l = m  $ o $\displaystyle l | | m $. Entonces, $\displaystyle \sim $ es una relación de equivalencia.
+\end{lema}
+\begin{proof}
+\begin{description}
+\item[(i)] Está claro que si $\displaystyle l \in \mathcal{R} $ se tiene que $\displaystyle l = l $, por lo que se cumple la propiedad reflexiva. 
+\item[(ii)] Sean $\displaystyle l,m \in \mathcal{R} $. Si $\displaystyle l = m $ es trivial que se cumple la propiedad simétrica. Si $\displaystyle l \sim m $ y $\displaystyle l | | m $, tenemos que $\displaystyle l \cap m = m \cap l = \emptyset $, por lo que $\displaystyle m \sim l $. Así, hemos verificado la propiedad simétrica.
+\item[(iii)] Sean $\displaystyle l,m,r \in \mathcal{R} $ con $\displaystyle l \sim m $ y $\displaystyle m \sim r $. Hay que valorar varios casos:
+	\begin{description}
+	\item[Caso 1.] Si $\displaystyle l = m $ y $\displaystyle m = r $, está claro que $\displaystyle l = r $ y, por tanto, $\displaystyle l \sim r $.
+	\item[Caso 2.] Si $\displaystyle l = m $ y $\displaystyle m | | r $, está claro que $\displaystyle l \cap r = m \cap r = \emptyset $, por lo que $\displaystyle l \sim r $.
+	\item[Caso 3.] Si $\displaystyle l | | m $ y $\displaystyle m = r $, tenemos que $\displaystyle l \cap r = l \cap m = \emptyset $, por lo que $\displaystyle l \sim r $.
+	\item[Caso 4.] Si $\displaystyle l | | m  $ y $\displaystyle m | | r $, está claro que $\displaystyle l \cap m = m \cap r = \emptyset $, por lo que $\displaystyle l \sim r $.
+	\end{description}
+	Así, queda demostrada la propiedad transitiva.
+\end{description}
+\end{proof}
+
+\begin{definition}[Haz de rectas]
+Un \textbf{haz de rectas paralelas} es una clase de equivalencia de $\displaystyle \sim $. Entonces, $\displaystyle \mathcal{H} \subset \mathcal{R}  $ es un \textbf{haz} si y solo si $\displaystyle \exists l \in \mathcal{R} $ tal que 
+\[\mathcal{H} = [l]_{\sim} = \left\{ m \; | \; m = l \; \text{o} \; m | | l\right\}  .\]
+\end{definition}
+\begin{prop}
+Sea $\displaystyle \mathcal{H} $ un haz y $\displaystyle l \in \mathcal{R} $ con $\displaystyle l \not\in \mathcal{H} $, entonces $\displaystyle f: \mathcal{H} \to l : m \to l \cap m $ es una biyección.
+\end{prop}
+\begin{proof}
+\begin{description}
+\item[(i)] Primero vamos a ver que la función está bien definida. Como $\displaystyle l \not\in \mathcal{H} $, $\displaystyle \forall m \in \mathcal{H} $ tenemos que $\displaystyle l  $ no es paralelo a $\displaystyle m $ y $\displaystyle l \neq m $. Por el lema de la tricotomía, debe ser que $\displaystyle l \cap m $ es un punto. Así, la función está bien definida.
+\item[(ii)] Veamos que la función es inyectiva. Consideremos $\displaystyle m_{1}, m_{2} \in \mathcal{H} $ tales que $\displaystyle m_{1} \cap l = m_{2} \cap l \neq \emptyset $, por lo que $\displaystyle m_{1} \cap m_{2} \neq \emptyset $. Dado que $\displaystyle m_{1}, m_{2} \in \mathcal{H} $, tenemos que $\displaystyle m_{1} \sim m_{2} $ y como $\displaystyle m_{1} $ no es paralela a $\displaystyle m_{2} $, debe ser que $\displaystyle m_{1} = m_{2}$.
+\item[(iii)] Comprobemos que la aplicación es sobreyectiva. Supongamos que $\displaystyle P \in l $, $\displaystyle  m \in \mathcal{H} $. Si $\displaystyle P \in m $, tenemos que $\displaystyle m \cap l = P $, por lo que hemos ganado. Si $\displaystyle  P \not\in m $, por \textbf{A2} tenemos que existe $\displaystyle m_{1} \in \mathcal{H} $ (es decir, paralela a $\displaystyle m $) tal que $\displaystyle P \in m_{1} $, por lo que $\displaystyle P = m_{1} \cap l $.
+\end{description}
+\end{proof}
+\begin{prop}
+Si $\displaystyle \mathcal{H}_{1} $ y $\displaystyle \mathcal{H}_{2} $ son dos haces distintos, tenemos que $\displaystyle \forall P \in \mathcal{P} $, $\displaystyle \exists! l \in \mathcal{H}_{1}, \exists! m \in \mathcal{H}_{2} $ tales que  $\displaystyle P = l \cap m $. En particular, la aplicación $\displaystyle f: \mathcal{H}_{1} \times \mathcal{H}_{2} \to \mathcal{P} : \left(l, m\right) \to l \cap m$ es una biyección.
+\end{prop}
+\begin{proof}
+Supongamos que 
+\[\mathcal{H}_{1} = \left[l\right] _{\sim} = \left\{ l' \; | \; l' = l \; \text{o} \; l' | | l\right\}  .\]
+\[\mathcal{H}_{2} = \left[m\right] _{\sim} = \left\{ m' \; | \; m' = m \; \text{o} \; m' | | m\right\} .\]
+Tenemos que dado que $\displaystyle \mathcal{H}_{1} \neq \mathcal{H}_{2} $, tenemos que $\displaystyle l \neq m $ y $\displaystyle l $ no es paralelo a $\displaystyle m $, por lo que $\displaystyle l \cap m $ es un punto. Así, hemos visto que la aplicación está bien definida.\\
+Sea $\displaystyle P \in \mathcal{P} $:
+\begin{description}
+\item[Caso 1.] Si $\displaystyle P \in l $ hemos terminado.
+\item[Caso 2.] Si $\displaystyle P \not\in l $, por \textbf{A2} existe una única recta $\displaystyle l' \in \mathcal{H}_{1} $ tal que $\displaystyle P \in l' $.
+\end{description}
+En ambos casos, tenemos que $\displaystyle \exists! l_{1} \in \mathcal{H}_{1} $ tal que $\displaystyle P \in l_{1} $. Así, simétricamente existe una única $\displaystyle m_{1} \in \mathcal{H}_{2} $ tal que $\displaystyle P \in m_{1} $. 
+\end{proof}
+\subsection{Planos afines finitos}
+\begin{definition}
+Un plano afín tiene \textbf{orden} $\displaystyle n $ si todas sus rectas tienen $\displaystyle n $ elementos.
+\end{definition}
+\begin{observation}
+La definición tiene sentido dado que todas las rectas tienen el mismo número de puntos.
+\end{observation}
+\begin{theorem}
+Sea $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $ una plano afín de orden $\displaystyle n $. 
+\begin{description}
+\item[(i)] Cada haz de rectas tiene $\displaystyle n $ elementos.
+\item[(ii)] $\displaystyle \left|\mathcal{P}\right| = n^{2} $.
+\item[(iii)] Cada punto está en $\displaystyle n + 1 $ rectas.
+\item[(iv)] Hay $\displaystyle n + 1 $ haces de rectas.
+\item[(v)] Hay $\displaystyle n\left(n+1\right) $ rectas.
+\end{description}
+\end{theorem}
+\begin{proof}
+Sea $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $ un plano afín de orden $\displaystyle n $.
+\begin{description}
+\item[(i)] Sea $\displaystyle \mathcal{H} $ un haz de rectas. Por \textbf{A3}, existe $\displaystyle l_{1}, l_{2} \in \mathcal{R} $ con $\displaystyle l_{1} \neq l_{2} $. Si existe $\displaystyle l \not\in \mathcal{H} $ hemos ganado. Si $\displaystyle l_{1}, l_{2} \in \mathcal{H} $, sea $\displaystyle P \in l_{1} $ y $\displaystyle Q\in l_{2} $, tenemos que $\displaystyle l\left(P,Q\right) \not\in \mathcal{H} $ por lo que existe $\displaystyle l \not\in \mathcal{H} $. Por una proposición anterior, tenemos que existe una biyección entre $\displaystyle \mathcal{H}  $ y $\displaystyle l $, por lo que $\displaystyle \left|\mathcal{H}\right| = \left|l\right| = n $.
+\item[(ii)] Por el argumento del apartado anterior, existen $\displaystyle l, m \in \mathcal{R} $ con $\displaystyle l \neq m $ y que no son paralelas entre sí, tales que $\displaystyle \mathcal{H}_{1} = \left[l\right]_{\sim}  $ y $\displaystyle \mathcal{H}_{2} = \left[m\right]_{\sim}  $. Por la proposición anterior, tenemos que $\displaystyle \left|\mathcal{H}_{1} \times \mathcal{H}_{2}\right| = \left|\mathcal{P}\right| $. Por la primera propiedad, nos queda que $\displaystyle \left|\mathcal{P}\right| = \left|\mathcal{H}_{1}\right| \cdot \left|\mathcal{H}_{2}\right| = n^{2} $.
+\item[(iii)] Sea $\displaystyle P \in \mathcal{P} $. Por \textbf{A3} es fácil deducir que existe una recta $\displaystyle l \in \mathcal{R} $ tal que $\displaystyle P \not\in l $. Tenemos que $\displaystyle l = \left\{ A_{1}, \ldots, A_{n}\right\}  $, por lo que $\displaystyle P \in l\left(P, A_{1}\right), \ldots, l\left(P, A_{n}\right) $. 
+	Por \textbf{A2}, existe una única paralela $\displaystyle m $ a $\displaystyle l $ tal que $\displaystyle P \in m $, por lo que $\displaystyle P $ está en $\displaystyle n + 1 $ rectas. En efecto, todas las rectas anteriores son distintas porque de no serlo tendríamos que 
+	\[l\left(P, A_{i}\right) = l\left(P, A_{j}\right) \Rightarrow l\left(P, A_{i}\right) = l\left(A_{i}, A_{j}\right) = l \Rightarrow P \in l .\]
+	Si $\displaystyle r \in \mathcal{R} $ tal que $\displaystyle P \in r $, por \textbf{A2} se sigue que o $\displaystyle r \cap l = \emptyset $, por lo que $\displaystyle r = m $; o $\displaystyle r \cap l = A_{i} $, por lo que $\displaystyle r = l\left(P, A_{i}\right) $.
+\item[(iv)] Por \textbf{(iii)}, dado $\displaystyle P \in \mathcal{P} $, existen $\displaystyle l_{1}, \ldots, l_{n+1} \in \mathcal{R} $ con $\displaystyle P \in l_{i} $, $\displaystyle \forall i = 1, \ldots, n +1$. Como $\displaystyle l_{i} \cap l_{j} = P $, tenemos que $\displaystyle \left[l_{i}\right]_{\sim} \neq \left[l_{j}\right]_{\sim}  $ si $\displaystyle i \neq j $. Por tanto hay al menos $\displaystyle n + 1 $ haces. Sea $\displaystyle r \in \mathcal{R} $, 
+	\begin{itemize}
+	\item Si $\displaystyle P \in r $, tenemos que $\displaystyle r = l_{i} $ para algún $\displaystyle 1 \leq i \leq n +1 $.
+	\item Si $\displaystyle P \not\in r $, por \textbf{A2} tenemos que existe una única $\displaystyle l_{i} $ tal que $\displaystyle r | | l_{i} $, por lo que $\displaystyle P \in l_{i} $.
+	\end{itemize}
+	En ambos casos tenemos que $\displaystyle r \in \left[l_{i}\right] _{\sim} $ para algún $\displaystyle i $.
+\item[(v)] Los haces son distintos dos a dos, por ser una relación de equivalencia. Por tanto, 
+	\[ \left|\mathcal{R}\right| = \left|\bigcup_{i = 1}^{n+1}\mathcal{H}_{i}\right| = \sum^{n + 1}_{ i = 1} \left|\mathcal{H}_{i}\right| = \sum^{n+1}_{i = 1}n = n\left(n+1\right) .\]
+\end{description}
+\end{proof}
+\begin{observation}
+Para todo primo $\displaystyle p $ y todo $\displaystyle k \geq 1 $, existe un cuerpo $\displaystyle \K $ con $\displaystyle p^{k} $ elementos. Entonces, $\displaystyle \forall p $ primo y $\displaystyle \forall k \geq 1 $, existe un plano afín de orden $\displaystyle p ^{k} $, porque $\displaystyle \K^{2} $ es un plano afín.
+\end{observation}
+\section{Planos proyectivos sintéticos}
+\begin{definition}[Plano proyectivo]
+Un \textbf{plano proyectivo} es un par $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ donde $\displaystyle \overline{\mathcal{P}} $ es un conjunto no vacío cuyos elementos se llaman \textbf{puntos} y $\displaystyle \overline{\mathcal{R}} $ es un conjunto de subconjuntos de $\displaystyle \overline{\mathcal{P}} $ cuyos elementos se llaman \textbf{rectas}. Se cumplen los axiomas:
+\begin{description}
+\item[P1.] Para cada par de puntos distintos existe una única recta que los contiene.
+\item[P2.] Todo par de rectas tiene intersección no vacía.
+\item[P3.] Toda recta tiene al menos tres puntos y hay al menos dos rectas.
+\end{description}
+\end{definition}
+En primer lugar, vamos a comprobar la consistencia de la definición, es decir, que hemos definido algo que existe.
+\begin{eg}[Plano de Fano]
+Consideremos los conjuntos 
+\[\overline{\mathcal{P}} = \left\{ A, B, C, D, E, F, G\right\}  .\]
+\[\overline{\mathcal{R}} = \left\{ \left\{ A,B,C\right\} , \left\{ C, D, E\right\} , \left\{ E, F, A\right\} , \left\{ B, G, F\right\} , \left\{ A, G, D\right\}, \left\{ F, G, C\right\}, \left\{ F, D, B\right\} \right\}  .\]
+\begin{center}
+\begin{tikzpicture}[scale=2, every node/.style={font=\small}]
+
+% --- Definir coordenadas explícitas ---
+\coordinate (A) at (0,1.2);
+\coordinate (B) at (-1.04,-0.6);
+\coordinate (C) at (1.04,-0.6);
+
+\coordinate (F) at (-0.52,0.3); % aprox. punto medio de AB
+\coordinate (D) at (0,-0.6);    % aprox. punto medio de BC
+\coordinate (E) at (0.52,0.3);  % aprox. punto medio de CA
+
+\coordinate (G) at (0,0);       % centro
+
+% --- Dibujar las rectas del plano de Fano ---
+% 1) Lado AB
+\draw (A) -- (B);
+% 2) Lado BC
+\draw (B) -- (C);
+% 3) Lado CA
+\draw (C) -- (A);
+% 4) Triángulo interior DEF
+\draw (D) -- (E) -- (F) -- cycle;
+% 5) Medianas
+\draw (A) -- (E);
+\draw (B) -- (F);
+\draw (C) -- (D);
+\draw (A) -- (D);
+\draw (F) -- (C);
+\draw (B) -- (E);
+
+% --- Dibujar puntos ---
+\foreach \pt in {A,B,C,D,E,F,G} {
+  \fill (\pt) circle (1.2pt);
+}
+
+% --- Nombres ---
+\node[above right] at (A) {$A$};
+\node[below left]  at (B) {$B$};
+\node[below right] at (C) {$C$};
+
+\node[below] at (D) {$D$};
+\node[right] at (E) {$E$};
+\node[left]  at (F) {$F$};
+
+\node[above right] at (G) {$G$};
+
+\end{tikzpicture}
+\end{center}
+Es fácil comprobar que se trata de un plano proyectivo.
+\end{eg}
+\begin{observation}
+Este es el plano proyectivo más pequeño, es decir, que tiene menos puntos.
+\end{observation}
+\subsection{Independencia de los axiomas}
+\begin{itemize}
+	\item Comprobamos la independencia de \textbf{P3} respecto de \textbf{P2} y \textbf{P1}. Consideremos el ejemplo $\displaystyle \overline{\mathcal{P}}= \R $ y $\displaystyle \overline{\mathcal{R}} = \left\{ \R\right\} $. Está claro que se cumplen \textbf{P1} y \textbf{P2} pero no se cumple \textbf{P3}.
+	\item Comprobamos la independencia de \textbf{P2} respecto de \textbf{P1} y \textbf{P3}. Consideremos como ejemplo el plano afín $\displaystyle \R^{2} $. Tenemos que \textbf{A1} es igual que \textbf{P1}, hay rectas paralelas, por lo que \textbf{P2} no se cumple y está claro que se cumple \textbf{P3} puesto que $\displaystyle \left|\overline{\mathcal{R}}\right| = \infty, \forall \overline{l} \in \overline{\mathcal{R}} , \left|\overline{l}\right|=\infty$.
+	\item Comprobamos la independencia de \textbf{P1} respecto de \textbf{P2} y \textbf{P3}. Consideremos por ejemplo:
+		\[\overline{\mathcal{P}} = \left\{ A, B, C, D, E\right\}  .\]
+		\[\overline{\mathcal{R}} = \left\{ \left\{ A, B, C\right\}, \left\{ C, D, E\right\} \right\}  .\]
+Claramente se cumple \textbf{P3} y se cumple \textbf{P2} porque hay dos rectas y las dos se intersecan. No se cumple \textbf{P1} puesto que no existe $\displaystyle \overline{l} \in \overline{\mathcal{R}} $ tal que $\displaystyle A , D \in \overline{l} $.
+\end{itemize}
+\subsection{Algunos teoremas}
+\begin{theorem}
+Sea $\displaystyle \K $ es un cuerpo y $\displaystyle \K^{3} $ un espacio vectorial. Sean 
+\[\overline{\mathcal{P}} = \left\{ U \subset \K^{3} \; : \; U \in \mathcal{L}\left(\K^{3}\right), \dim _{\K}U = 1\right\}  .\]
+\[\overline{\mathcal{R}} = \left\{ W \subset \K^{3} \; : \; W \in \mathcal{L}\left(\K^{3}\right), \dim _{\K} W = 2\right\}  .\]
+Entonces, $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ es un plano proyectivo 
+\footnote{La definición de $\displaystyle \overline{\mathcal{R}} $ es más bien el conjunto de los conjuntos de rectas que son contenidas por un plano, así se puede hacer una correspondencia biyectiva entre $\displaystyle \overline{\mathcal{R}} $ y la descripción que le hemos dado. Así, decimos que un punto $\displaystyle \overline{P} \in \overline{\mathcal{P}} $ está en una recta $\displaystyle \overline{l} \in \overline{\mathcal{R}} $ si $\displaystyle \overline{P} $ está contenido en el plano que caracteriza a $\displaystyle \overline{l} $.} .
+\end{theorem}
+\begin{proof}
+\begin{description}
+	\item[(i)] Vamos a ver que se cumple \textbf{P1}. Si $\displaystyle P,Q \in \overline{\mathcal{P}} $ con $\displaystyle P \neq Q $, existen $\displaystyle \vec{v}_{1}, \vec{v}_{2} \in \K^{3} $ linealmente independientes tales que $\displaystyle P = L\left( \left\{ \vec{v}_{1}\right\} \right) $ y $\displaystyle Q = L\left( \left\{ \vec{v}_{2}\right\} \right) $.
+		Así, existe $\displaystyle r \in \overline{\mathcal{R}} $ tal que $\displaystyle r = L\left( \left\{ \vec{v}_{1}, \vec{v}_{2}\right\} \right) $ que cumple que $\displaystyle P, Q \subset r $. En concreto, tenemos que $\displaystyle r = P \oplus Q $. \\
+	 Sea $\displaystyle r_{2} \in \overline{\mathcal{R}} $ tales que $\displaystyle P,Q \subset r_{2} $, entonces tenemos que $\displaystyle P \oplus Q \subset r_{2} $ y $\displaystyle \dim\left(P\oplus Q\right) = \dim r_{2} $, por lo que $\displaystyle r_{2} = r $.
+\item[(ii)] Vamos a ver que se cumple \textbf{P2}. Sean $\displaystyle l,m \in \overline{\mathcal{R}} $, tenemos que 
+	\[\underbrace{\dim\left(l \cap m\right)} _{\leq 3} = \underbrace{\dim l}_{2} + \underbrace{\dim m}_{2} - \underbrace{\dim\left(l \cap m\right)}_{\geq 1} .\]
+	Por tanto, $\displaystyle \dim\left(l \cap m\right) \geq 1 $, por lo que $\displaystyle l \cap m \neq \emptyset $.
+\item[(iii)] Vamos a ver que se cumple \textbf{P3}. Sea $\displaystyle \K^{3} = L\left( \left\{ \vec{u}_{1}, \vec{u}_{2}, \vec{u}_{3}\right\} \right) $, sean $\displaystyle r_{1} = L\left( \left\{ \vec{v}_{1}, \vec{v}_{2}\right\} \right) $ y $\displaystyle r_{2} = L\left( \left\{ \vec{u}_{1}, \vec{u}_{3}\right\} \right) $ dos rectas. Así, hemos visto que hay al menos dos rectas.
+	Ahora, dada una recta $\displaystyle r = L(\left\{ \vec{v}_{1}, \vec{v}_{2}\right\} ) $ tenemos que $\displaystyle P_{1} = L\left( \left\{ \vec{v}_{1}\right\} \right) $, $\displaystyle P_{2} = L\left( \left\{ \vec{v}_{2}\right\} \right) $ y $\displaystyle P_{3} = L\left( \left\{ \vec{v}_{1} + \vec{v}_{2}\right\} \right) $ son puntos de la recta. Así, hemos visto que cada recta tiene al menos tres puntos.
+\end{description}
+\end{proof}
+\begin{definition}
+	Sea $\displaystyle \K $ un cuerpo. Al plano proyectivo construido en el teorema anterior lo llamamos \textbf{proyectivizado de} $\displaystyle \K^{3} $ y lo denotamos por $\displaystyle \mathbb{P}\left(\K^{3}\right) $.
+\end{definition}
+\begin{observation}
+	Dado $\displaystyle \left(a_{0}, a_{1}, a_{2}\right) \in \K^{3} $ denotamos por $\displaystyle \left[a_{0}: a_{1}: a_{2}\right]  $ al punto $\displaystyle L\left( \left\{ \left(a_{0}, a_{1}, a_{2}\right)\right\} \right) $. Observamos que 
+	\[ \left[a_{0} : a_{1} : a_{2}\right] = \left[b_{0} : b_{1} : b_{2}\right] \iff L\left( \left\{ \left(a_{0}, a_{1}, a_{2}\right)\right\} \right) = L\left( \left\{ \left(b_{0}, b_{1}, b_{2}\right)\right\} \right).\]
+	Esto es cierto si y solo si existe $\displaystyle \lambda \in \K/ \left\{ 0\right\}  $ tal que $\displaystyle \left(a_{0}, a_{1}, a_{2}\right) = \lambda \left(b_{0}, b_{1}, b_{2}\right) $. Así, tenemos que esta notación está bien definida salvo proporcionalidad. Así, tenemos que los puntos de $\displaystyle \mathbb{P}\left(\K^{3}\right) $ son 
+	\[ \left\{ \left[a_{0} : a_{1} : a_{2}\right] \; : \; \left(a_{0}, a_{1}, a_{2}\right) \in \K^{3} / \left\{ 0\right\} \right\}  .\]
+\end{observation}
 

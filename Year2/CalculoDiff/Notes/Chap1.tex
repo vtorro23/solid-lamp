@@ -264,8 +264,8 @@ Considermos bolas en $\displaystyle \R^{2} $ de distintas normas.
 Sabemos que 
 \[\|x\|_{\infty} \leq \|x\|_{2} \leq \|x\|_{1} \leq n \|x\|_{\infty} .\]
 Por tanto, tenemos que 
-\[B_{1}\left(a,r\right) \subset B_{2}\left(a,r\right) \subset B_{\infty}\left(a,r\right) \subset B_{1}\left(a, nr\right) .\]
-En efecto, si $\displaystyle x \in B_{1} \left(a,r\right) $, tenemos que $\displaystyle \|x - a\|_{1} < r $. Por tanto, es fácil ver que $\displaystyle \|x - a\|_{2} \leq \|x - a\|_{1} < r $, por lo que $\displaystyle x \in B_{2}\left(a,r\right) $.
+\[B_{1}\left(a,r\right) \subset B_{2}\left(a,r\right) \subset B_{\infty}\left(a,r\right) \subset B_{1}\left(a, nr\right) \footnote{También se puede escribir $\displaystyle B_{\infty}\left(a,nr\right) \subset B_{1}\left(a,r\right) \subset B_{2}\left(a,r\right) \subset B_{\infty}\left(a,nr\right) $ .}  .\]
+En efecto, si $\displaystyle x \in B_{1} \left(a,r\right) $, tenemos que $\displaystyle \|x - a\|_{1} < r $. Por tanto, es fácil ver que $\displaystyle \|x - a\|_{2} \leq \|x - a\|_{1} < r $, por lo que $\displaystyle x \in B_{2}\left(a,r\right) $. El resto de inclusiones se deducen de forma análoga.
 \end{observation}
 \begin{definition}
 Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \subset X $. Se define el \textbf{diámetro} de $\displaystyle A $ como 
@@ -292,7 +292,7 @@ Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \s
 Toda bola abierta es un conjunto abierto.
 \end{prop}
 \begin{proof}
-Tomemos $\displaystyle A = B\left(a,R\right) $ y $\displaystyle x \in B\left(a,r\right) $. Sea $\displaystyle \delta = d\left(x, a\right) < R $ y $\displaystyle r = R - \delta > 0 $. Sea $\displaystyle y \in B\left(x,r\right) $, tenemos que $\displaystyle d\left(x,y\right) < r $. Así, 
+	Tomemos $\displaystyle A = B\left(a,R\right) $ y $\displaystyle x \in B\left(a,R\right) $. Sea $\displaystyle \delta = d\left(x, a\right) < R $ y $\displaystyle r = R - \delta > 0 $ \footnote{No hace falta de escribir $\displaystyle r = \min \left\{ R - \delta, \delta \right\} $ al tratarse de una bola.}. Sea $\displaystyle y \in B\left(x,r\right) $, tenemos que $\displaystyle d\left(x,y\right) < r $. Así, 
 \[d\left(y,a\right) \leq d\left(y,x\right) + d\left(x,a\right) < r + \delta = R .\]
 Así, $\displaystyle y \in B\left(a,R\right) $, por lo que $\displaystyle B\left(x,r\right) \subset B\left(a,R\right) $.
 \end{proof}
@@ -382,4 +382,82 @@ Sea $\displaystyle \left(X, \emptyset\right) $ un espacio métrico.
 	es abierto, por lo que $\displaystyle \bigcup_{i = 1}^{m}C_{i} $ es cerrado.
 \end{enumerate}
 \end{proof}
+\begin{definition}[Punto interior]
+Sea $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \subset X $. Se dice que $\displaystyle a \in A $ es un \textbf{punto interior} de $\displaystyle A $ si existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(a,r\right) \subset A $. Denotamos $\displaystyle \Int\left(A\right) $ al conjunto de puntos interiores de $\displaystyle A $.
+\end{definition}
+\begin{observation}
+Es trivial ver que $\displaystyle \Int\left(A\right) \subset A $. 
+\end{observation}
+\begin{prop}
+Sea $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \subset X $.
+\begin{enumerate}
+\item El conjunto $\displaystyle \Int\left(A\right) $ es el mayor abierto contenido en A.
+\item $\displaystyle A $ es abierto si y solo si $\displaystyle A = \Int\left(A\right) $.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\begin{enumerate}
+\item Sea $\displaystyle U = \Int\left(A\right) $. Vamos a ver que es abierto. Dado $\displaystyle x \in U $, tenemos que existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(x,r\right) \subset A $. Si $\displaystyle y \in B\left(x,r\right) $, por tratarse de una bola abierta existe $\displaystyle r' > 0 $ tal que $\displaystyle B\left(y,r'\right)\subset B\left(x,r\right) \subset A $, por lo que $\displaystyle y \in \Int\left(A\right) = U $. Por tanto, $\displaystyle B\left(x,r\right) \subset U $ y $\displaystyle U $  es abierto. \\ 
+	Ahora tenemos que ver que es el mayor abierto. Supongamos que $\displaystyle V $ es abierto y $\displaystyle V \subset A $. Sea $\displaystyle x \in V $, tenemos que existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(x,r\right) \subset V \subset A$. Por tanto, $\displaystyle x \in \Int\left(A\right) = U$ y $\displaystyle V \subset U $.
+\item Si $\displaystyle A = Int\left(A\right) $ está claro que $\displaystyle A $ es abierto. Recíprocamente, si $\displaystyle A $ es abierto, tenemos que como $\displaystyle A $ es el mayor abierto contenido en $\displaystyle A $, $\displaystyle A = Int\left(A\right) $.
+\end{enumerate}
+\end{proof}
+\begin{eg}
+	En $\displaystyle \left(\R, \left| \cdot \right|\right) $, sea $\displaystyle A = (0,2] $. Tenemos que $\displaystyle \Int\left(A\right) = \left(0,2\right) $. En efecto, 
+	\begin{description}
+		\item[(i)] Si $\displaystyle x \in \left(0,2\right) $, entonces existe $\displaystyle r > 0 $ tal que $\displaystyle \left(x -r, x+r\right) \subset \left(0,2\right) \subset (0,2] $, por lo que $\displaystyle x \in \Int\left(A\right) $.
+	\item[(ii)] Recíprocamente, tenemos que $\displaystyle 2 \not\in \Int\left(A\right) $, puesto que $\displaystyle \forall r > 0 $ tenemos que $\displaystyle \left(2-r, 2 + r\right)$ no es subconjunto de $ (0,2] $.
+	\end{description}
+\end{eg}
+\begin{definition}[Punto adherente]
+Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \subset X $. Se dice que $\displaystyle x \in X $ es \textbf{punto adherente} a $\displaystyle A $ (o también \textbf{punto clausura}) si $\displaystyle \forall r > 0 $, $\displaystyle A \cap B\left(x,r\right) \neq \emptyset $. Denotamos $\displaystyle \overline{A} $ o $\displaystyle Adh\left(A\right) $ al conjunto de puntos adherentes de $\displaystyle A $.
+\end{definition}
+\begin{observation}
+Se ve trivialmente que $\displaystyle A \subset \overline{A} $.
+\end{observation}
+\begin{eg}
+	En $\displaystyle \left(\R, \left| \cdot \right|\right) $ sea $\displaystyle A = (0,2] $. Tenemos que $\displaystyle \overline{A} = \left[0,2\right]  $. En efecto:
+	\begin{description}
+	\item[(i)] Tenemos que $\displaystyle 0 \in \overline{A} $, puesto que $\displaystyle \forall r > 0 $ tenemos que $\displaystyle \left(-r,r\right) \cap A \neq \emptyset $. Así, tenemos que $\displaystyle \left[0,2\right] \subset \overline{A} $.
+	\item[(ii)] Recíprocamente, si $\displaystyle x > 2 $, tenemos que existe $\displaystyle r > 0 $ suficientemente pequeño tal que $\displaystyle x - r > 2 $, por tanto $\displaystyle x \not\in \overline{A} $. Similarmente, podemos demostrar que $\displaystyle 0 \not\in \overline{A} $.
+	\end{description}
+\end{eg}
+\begin{lema}
+Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \subset X $. Entcones, $\displaystyle \overline{A} = X/\Int\left(X/A\right) $.
+\end{lema}
+\begin{proof}
+\begin{description}
+\item[(i)] Sea $\displaystyle x \in \overline{A} $. Tenemos que $\displaystyle \forall r > 0 $, $\displaystyle B\left(x,r\right) \cap A \neq \emptyset $, por lo que $\displaystyle B\left(x,r\right) \not \subset X/A $, por lo que $\displaystyle x \not\in \Int\left(X/A\right) $, por lo que $\displaystyle x \in X/\Int\left(X/A\right) $.
+\item[(ii)] Sea $\displaystyle x \in X/\Int\left(X/A\right) $, entonces $\displaystyle x \not\in \Int\left(X/A\right) $, es decir, $\displaystyle \forall r > 0 $ tenemos que $\displaystyle B\left(x,r\right) \not \subset X/A $. Así, debe ser que $\displaystyle B\left(x,r\right) \cap A \neq \emptyset $, por lo que $\displaystyle x \in \overline{A} $.
+\end{description}
+\end{proof}
+\begin{prop}
+\begin{enumerate}
+\item $\displaystyle \overline{A} $ es el menor cerrado que contiene a $\displaystyle A $.
+\item Un conjunto $\displaystyle A \subset X $ es cerrado si y solo si $\displaystyle A = \overline{A} $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Tenemos que $\displaystyle \overline{A} = X/\Int\left(X/A\right) $, por lo que su complementario es abierto y él es cerrado. Ahora vamos a ver que es el menor cerrado que contiene a $\displaystyle A $. Sea $\displaystyle C \subset X $ cerrado con $\displaystyle A \subset C $. Tenemos que $\displaystyle X/C \subset X/A $, por lo que $\displaystyle X/C \subset \Int\left(X/A\right) $ y tenemos que $\displaystyle C \supset X/\Int\left(X/A\right) = \overline{A} $.
+\item Si $\displaystyle A = \overline{A} $, $\displaystyle A  $ es cerrado.
+Por otro lado, si $\displaystyle A $ es cerrado, entonces su complementario, $\displaystyle X/A $ es abierto, por lo que $\displaystyle X/A = \Int\left(X/A\right) $, por lo que $\displaystyle \overline{A} = X/\Int\left(X/A\right) = X/\left(X/A\right) = A $.
+\end{enumerate}
+\end{proof}
+\begin{definition}[Punto frontera]
+Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \subset X $. Se dice que $\displaystyle x \in X $ es un \textbf{punto frontera} de $\displaystyle A $ si $\displaystyle \forall r > 0 $, $\displaystyle B\left(x,r\right) \cap A \neq \emptyset $ y $\displaystyle B\left(x,r\right) \cap \left(X/A\right) \neq \emptyset $. Denotamos $\displaystyle Fr\left(A\right) $ el conjunto de puntos frontera de $\displaystyle A $.
+\end{definition}
+\begin{observation}
+Tenemos que $\displaystyle Fr\left(A\right) = \overline{A} \cap \overline{X/A} $ y en particular $\displaystyle Fr\left(A\right) $ es cerrado.
+\end{observation}
+\begin{eg}
+	En $\displaystyle \left(\R^{2}, \| \cdot \|_{2}\right) $ sea $\displaystyle A = \left\{ \left(x,y\right) \; : \; 0 < x \leq 1\right\}  $.Tenemos que  
+	\[ Fr\left(A\right) = \left\{ \left(0,y\right)\; : \; y \in \R\right\} \cup \left\{ \left(1,y\right) \; : \; y \in \R\right\} .\]
+	En efecto:
+	\begin{description}
+	\item[(i)] Sea $\displaystyle P = \left(0,y\right) $. Tenemos que $\displaystyle \forall r > 0 $, $\displaystyle B\left(P,r\right) \cap A \neq \emptyset $ y $\displaystyle B\left(P,r\right)\cap \left(X/A\right) \neq \emptyset $. Así, $\displaystyle P \in Fr\left(A\right) $. De forma análoga, se puede demostrar que $\displaystyle P = \left(1,y\right) \in Fr\left(A\right) $.
+	\item[(ii)] El recíproco lo demostramos típicamente por contrapositiva. Sea $\displaystyle P = \left(x,y\right) \in \R^{2} $ con $\displaystyle x \neq 0 $ y $\displaystyle x \neq 1 $. Hay tres posibilidades a considerar: $\displaystyle x \in \left(-\infty, 0\right) $, $\displaystyle x \in \left(0,1\right) $ o $\displaystyle x \in \left(1,\infty\right) $. Si $\displaystyle x \in \left(-\infty, 0\right) $, $\displaystyle \exists r > 0 $ tal que $\displaystyle B\left(P,r\right) \cap A = \emptyset $. El resto de los casos se demuestran de forma análoga.
+	\end{description}
+\end{eg}
 

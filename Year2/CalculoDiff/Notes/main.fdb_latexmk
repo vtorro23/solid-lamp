@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1757764337.0902 "main.tex" "main.pdf" "main" 1757764339.86384 0
+["pdflatex"] 1758042990.61509 "main.tex" "main.pdf" "main" 1758042993.23348 0
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -42,6 +42,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb" 1248133631 24457 5cbb7bdf209d5d1ce9892a9b80a307cc ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb" 1248133631 28902 2f5c04fd2884d1878057baa5aad22765 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
@@ -232,11 +233,11 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724666679.39075 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Chap1.tex" 1757764334.29617 26310 8ec5591f5a6c5ec0d6e895e19980d1fd ""
-  "main.aux" 1757764339.6369 7128 d9d2b4a2cec5cf6cb99bea4659b6d1c1 "pdflatex"
-  "main.tex" 1757498597.57445 1003 81ee0b63577803d4df67f7548840803b ""
-  "main.toc" 1757764339.6403 309 d9ccd3d833d3586c6db191ceb7e23acf "pdflatex"
-  "preamble.tex" 1756398709.84869 3569 a8a2231d8d8249f494a2c1d6b564d960 ""
+  "Chap1.tex" 1758042987.24493 34820 1c6ed05496651bea98649d643d6df0c0 ""
+  "main.aux" 1758042993.01383 9538 c3268ce9883534914af009576ff1d7e3 "pdflatex"
+  "main.tex" 1757843406.25327 1003 81ee0b63577803d4df67f7548840803b ""
+  "main.toc" 1758042993.01673 309 d9ccd3d833d3586c6db191ceb7e23acf "pdflatex"
+  "preamble.tex" 1757950804.39725 3600 1f33d3c9ea698b4425a659b10a387692 ""
   (generated)
   "main.aux"
   "main.log"
