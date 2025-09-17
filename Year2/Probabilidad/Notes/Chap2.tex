@@ -1,0 +1,56 @@
+\chapter{Introducción al cálculo de probabilidades}
+Por experimento entendemos cualquier acción que pueda dar lugar a resultados identificables. Un experimento que da lugar siempre al mismo resultado, recibe el nombre de \textbf{experimento determinista}.
+\begin{definition}[Experimento aleatorio]
+Un experimento que pueda dar lugar a varios resultados, sin que sea posible anunciar con certeza cuál de éstos va a ser observado, recibe el nombre de \textbf{experimento aleatorio}. Estos tienen tres propiedades:
+\begin{enumerate}
+\item Los posibles resultados del experimento son conocidos previamente.
+\item No se puede predecir de antemano el resultado.
+\item Realizado en condiciones análogas puede dar lugar a resultados distintos en cada experiencia particular.
+\end{enumerate}	
+\end{definition}
+\begin{eg}
+Un ejemplo de experimento aleatorio es el del lanzamiento de una moneda, mientras que un ejemplo de un experimento determinista es el del fenómeno de los días y las noches.
+\end{eg}
+\begin{definition}[Espacio muestral]
+Llamaremos \textbf{espacio muestral}, $\displaystyle \Omega  $, al conjunto de todos los posibles resultados de un experimento aleatorio.
+\end{definition}
+\begin{observation}
+Hay que tener en cuenta que un mismo experimento puede dar lugar a distintos espacios muestrales.
+\end{observation}
+\begin{eg}
+Consideremos como experimento aleatorio el lanzamiento de un dado.
+\begin{itemize}
+	\item Si el interés es el resultado numérico, tenemos que $\displaystyle \Omega = \left\{ 1, 2, 3, 4, 5, 6\right\}  $.
+	\item Si el interés es que el resultado sea múltiplo de 2, tenemos que $\displaystyle \Omega = \left\{ par, impar\right\}  $.
+\end{itemize}
+\end{eg}
+\begin{observation}
+Los espacios muestrales pueden ser finitos o infinitos.
+\end{observation}
+\begin{definition}[Suceso]
+Un \textbf{suceso} es un subconjunto del espacio muestral. Se trata de un suceso \textbf{elemental} si están formados por un único elemento, mientras que son sucesos \textbf{compuestos} aquellos que son unión de sucesos elementales. 
+\end{definition}
+\begin{eg}
+En el lanzamiento de un dado, el suceso de que salga un 2 es un suceso elemental, mientras que el suceso de que salga par es un suceso compuesto.
+\end{eg}
+\section{Axiomas de la probabilidad}
+\begin{definition}[Axiomática de Kolmogorov]
+Sea $\displaystyle \left(\Omega, \mathcal{A}\right) $ un espacio probabilizable. Definimos una función de conjunto $\displaystyle P $ dediante una aplicación de $\displaystyle \mathcal{A} $ sobre $\displaystyle \R $ que cumple que:
+\begin{description}
+\item[Axioma 1.] $\displaystyle \forall A \in \mathcal{A} $, $\displaystyle P\left(A\right) \geq 0 $.
+\item[Axioma 2.] $\displaystyle P\left(\Omega \right)= 1 $.
+\item[Axioma 3.] $\displaystyle \forall A,B \in \mathcal{A} $ con $\displaystyle A \cap B \neq \emptyset $, $\displaystyle P\left(A \cup B\right) = P\left(A\right) + P\left(B\right) $.
+\item[Axioma 3 generalizado.] Si $\displaystyle \left\{ A_{n}\right\} _{n\in \N} \subset \mathcal{A} $, con $\displaystyle A_{i} \cap A_{j} = \emptyset $ si $\displaystyle i \neq j $, entonces
+	\[P\left(\bigcup_{i \in \N}A_{i}\right) = \sum^{\infty}_{i = 1}P\left(A_{i}\right) .\]
+\end{description}
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+\item Está claro que $\displaystyle P\left(\emptyset\right) = 0 $, puesto que $\displaystyle \emptyset \cap \emptyset = \emptyset $, podemos afirmar que
+	\[P\left(\emptyset\right) = P\left(\emptyset \cup \emptyset\right) = P\left(\emptyset\right) + P\left(\emptyset\right) \iff P\left(\emptyset\right) = 0 .\]
+\item Si $\displaystyle A \in \mathcal{A} $, tenemos que $\displaystyle P\left(A^{c}\right) = 1 - P\left(A\right) $. En efecto, tenemos que $\displaystyle A^{c} \cap A = \emptyset $ y $\displaystyle A^{c} \cup A = \Omega  $, por lo que
+	\[P\left(A \cup A^{c} \right) = P\left(A\right) + P\left(A^{c}\right) = P\left(\Omega \right) = 1 \iff P\left(A^{c}\right) = 1 - P\left(A\right) .\]
+\item Si $\displaystyle A,B \in \mathcal{A} $ con $\displaystyle A \subset B $, entonces $\displaystyle P\left(A\right) \leq P\left(B\right) $.
+\end{enumerate}
+\end{observation}
+

@@ -89,15 +89,15 @@ Por la inversa del inverso, tenemos que $\displaystyle \left(ab\right)^{-1} = b^
 \end{proof}
 \begin{eg}
 \begin{enumerate}
-	\item Consideremos un conjunto $\displaystyle X \neq \emptyset $ y el conjunto de sus biyecciones $\displaystyle Biy\left(X\right) = \left\{ f : X \to X \; : \; f \; \text{biyección}\right\}  $. Como operación tomamos la composición de funciones. Entonces, $\displaystyle \left(Biy\left(X\right), \circ\right) $ es un grupo. En efecto:
+	\item Consideremos un conjunto $\displaystyle X \neq \emptyset $ y el conjunto de sus biyecciones $\displaystyle \Biy\left(X\right) = \left\{ f : X \to X \; : \; f \; \text{biyección}\right\}  $. Como operación tomamos la composición de funciones. Entonces, $\displaystyle \left(\Biy\left(X\right), \circ\right) $ es un grupo. En efecto:
 		\begin{description}
 		\item[Asociativa.] La composición de funciones es asociativa.
-		\item[Elemento neutro.] Tomamos como elemento neutro la función identidad. En efecto, $\displaystyle id \in Biy\left(X\right) $ y $\displaystyle \forall f \in Biy\left(X\right) $, 
+		\item[Elemento neutro.] Tomamos como elemento neutro la función identidad. En efecto, $\displaystyle id \in \Biy\left(X\right) $ y $\displaystyle \forall f \in \Biy\left(X\right) $, 
 			\[\left(f\circ id \right)\left(x\right) = f\left(id \left(x\right)\right) = f\left(x\right) .\]
 		\[\left(id \circ f\right)\left(x\right) = id \left(f\left(x\right)\right) = f\left(x\right) .\]
-	\item[Inverso.]	Si $\displaystyle f \in Biy\left(X\right) $, sabemos que por ser $\displaystyle f $ biyectiva existe $\displaystyle f^{-1} \in Biy\left(X\right) $ tal que $\displaystyle f \circ f^{-1} = id $ y $\displaystyle f^{-1} \circ f = id $. 
+	\item[Inverso.]	Si $\displaystyle f \in \Biy\left(X\right) $, sabemos que por ser $\displaystyle f $ biyectiva existe $\displaystyle f^{-1} \in \Biy\left(X\right) $ tal que $\displaystyle f \circ f^{-1} = id $ y $\displaystyle f^{-1} \circ f = id $. 
 		\end{description}
-	Así, hemos visto que $\displaystyle \left(Biy\left(X\right), \circ\right) $ es un grupo, pero no tiene por qué ser abeliano.
+	Así, hemos visto que $\displaystyle \left(\Biy\left(X\right), \circ\right) $ es un grupo, pero no tiene por qué ser abeliano.
 \item Sea $\displaystyle \mathcal{M}_{n}\left(\R\right) $, $\displaystyle n \geq 1 $, el conjunto de matrices reales cuadradas con coeficientes en $\displaystyle \R $, y consideremos el producto de matrices usual. El par $\displaystyle \left(\mathcal{M}_{n}, \cdot\right) $ no es un grupo, puesto que las matrices con determinante nulo no tienen inverso. \\ 
 	Tomemos así solo las matrices cuyo determinante es distinto de cero, y por tanto sabemos que tienen inverso. A este conjunto lo llamamos \textbf{grupo lineal general}, $\displaystyle \GL_{n}\left(\R\right) = \left\{ A \in \mathcal{M}_{n}\left(\R\right) \; : \; \left|A\right| \neq 0\right\}  $. Así, $\displaystyle \left(\GL_{n}\left(\R\right), \cdot\right) $ forma un grupo. \\
 	De manera similar, el conjunto $\displaystyle \SL_{n}\left(\R\right) = \left\{ A \in \mathcal{M}_{n}\left(\R\right) \; : \; \left|A\right| = 1\right\}  $, al que llamamos \textbf{grupo lineal especial}, también forma un grupo con la multiplicación. 
@@ -169,19 +169,19 @@ Así, está claro que $\displaystyle G_{1} \times G_{2} $ es un grupo.
 Sea $\displaystyle G $ un grupo. Entonces, 
 \begin{description}
 \item[(a)] Llamamos \textbf{centro} de $\displaystyle G $ al conjunto 
-	\[A\left(G\right) = \left\{ a \in G \; : \; ax = xa, \forall x \in G\right\}  .\]
+	\[Z\left(G\right) = \left\{ a \in G \; : \; ax = xa, \forall x \in G\right\}  .\]
 \item[(b)] Llamamos \textbf{centralizador} de $\displaystyle x \in G $ al conjunto 
 	\[C_{G}\left(x\right) = \left\{ a \in G \; : \; ax = xa\right\}  .\]
 \end{description}
 \end{definition}
 \begin{observation}
-Los conjuntos $\displaystyle A\left(G\right) $ y $\displaystyle C_{G}\left(x\right) $ son subgrupos. En efecto:
+Los conjuntos $\displaystyle Z\left(G\right) $ y $\displaystyle C_{G}\left(x\right) $ son subgrupos. En efecto:
 \begin{description}
-\item[(i)] Tenemos que $\displaystyle e \in A\left(G\right) $ y si $\displaystyle a \in A\left(G\right) $, también tenemos que $\displaystyle a^{-1} \in A\left(G\right) $. En efecto, 
+\item[(i)] Tenemos que $\displaystyle e \in Z\left(G\right) $ y si $\displaystyle a \in Z\left(G\right) $, también tenemos que $\displaystyle a^{-1} \in Z\left(G\right) $. En efecto, 
 	\[a^{-1}x = xa^{-1} \iff a a^{-1}x = a x a^{-1} \iff x = x a a^{-1} = x e = x .\]
-	Así, si $\displaystyle a,b \in A\left(G\right) $, tenemos que $\displaystyle b^{-1} \in A\left(G\right) $ y $\displaystyle \forall x \in G $,
+	Así, si $\displaystyle a,b \in Z\left(G\right) $, tenemos que $\displaystyle b^{-1} \in Z\left(G\right) $ y $\displaystyle \forall x \in G $,
 	\[ab^{-1}x = axb^{-1} = xab^{-1} .\]
-	Por lo que $\displaystyle ab^{-1} \in A\left(G\right) $ y se trata de un subgrupo.
+	Por lo que $\displaystyle ab^{-1} \in Z\left(G\right) $ y se trata de un subgrupo.
 \item[(ii)] El argumento para demostrar que $\displaystyle C_{G}\left(x\right) $ es un subgrupo de $\displaystyle G $ es análogo al anterior.
 \end{description}
 \end{observation}
@@ -259,4 +259,27 @@ Así, tenemos que
 	Por tanto, $\displaystyle \forall x,y \in f^{-1}\left(N\right) $, tenemos que $\displaystyle xy^{-1} \in f^{-1}\left(N\right) $, por lo que $\displaystyle f^{-1}\left(N\right) \leq G_{1} $. Ahora, si $\displaystyle x \in \Ker\left(f\right) $, tenemos que $\displaystyle f\left(x\right) = e_{G_{2}} \in N $, por lo que $\displaystyle x \in f^{-1}\left(N\right) $ y consecuentemente $\displaystyle \Ker\left(f\right) \leq f^{-1}\left(N\right) $.
 \end{enumerate}
 \end{proof}
+\begin{eg}
+\begin{enumerate}
+	\item Consideremos $\displaystyle f_{m} : \Z \to \Z $ con $\displaystyle m \in \Z $, con la suma, tal que $\displaystyle f\left(z\right) = mz $. Tenemos que $\displaystyle f_{m} $ es un homomorfismo de grupos. Por proposición anterior, tenemos que 
+		\[ m\Z := f\left(\Z\right)= \left\{ z \in \Z \; : \; z = km, k \in \Z\right\}  \leq \Z .\]
+	Similarmente, tenemos que $\displaystyle \Ker\left(f_{m}\right) $ es el subgrupo trivial si $\displaystyle m \neq 0 $ y es $\displaystyle \Z $ si $\displaystyle m = 0 $.	
+\item Es homomorfismo la aplicación $\displaystyle \det : \GL_{n}\left(\R\right) \to \R / \left\{ 0\right\}  : M \to \det\left(M\right) $. En concreto, se trata de un homomorfismo sobreyectivo. Además, podemos ver que $\displaystyle \Ker\left(\det \right) = \SL_{n}\left(\R\right) $.
+\end{enumerate}
+\end{eg}
+\begin{definition}[Isomorfismo y automorfismo]
+Sea $\displaystyle f : G_{1} \to G_{2} $ un homomorfismo de grupos. Si $\displaystyle f $ es biyectiva, entonces $\displaystyle f $ es un \textbf{isomorfismo} y lo escribimos $\displaystyle G_{1} \cong G_{2} $. Si $\displaystyle f : G_{1} \to G_{1} $ es un isomorfismo, se llama \textbf{automorfismo}.
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+\item Si $\displaystyle G_{1} \cong G_{2} $ tenemos que $\displaystyle \left|G_{1}\right| = \left|G_{2}\right| $ y tienen la misma tabla de Cayley. 
+\item Si $\displaystyle f: G_{1} \to G_{2} $ es un isomorfismo, tenemos que $\displaystyle f^{-1} : G_{2} \to G_{1} $ también lo es. En efecto, Si $\displaystyle x,y \in G_{2} $ existen $\displaystyle a,b \in G_{1} $ tales que $\displaystyle x = f\left(a\right) $ e $\displaystyle y = f\left(b\right) $. Así, 
+	\[f^{-1}\left(xy\right) = f^{-1}\left(f\left(a\right)f\left(b\right)\right) = f^{-1}\left(f\left(ab\right)\right) = ab = f^{-1}\left(x\right)f^{-1}\left(y\right).\]
+	
+\item Si $\displaystyle f: G_{1} \to G_{2} $ es un homomorfismo sobreyectivo, tenemos que $\displaystyle f\left(G_{1}\right) \cong G_{2} $, es decir, $\displaystyle \Imagen\left(f\right)\cong G_{2} $.
+\item Si $\displaystyle f: G_{1} \to G_{2} $ es un homomorfismo inyectivo, entonces $\displaystyle G_{1} \cong \Imagen\left(f\right) $.
+\item La relación de ser isomorfo es una relación de equivalencia.
+\item El conjunto de automorfismos de $\displaystyle G $, $\displaystyle \Aut\left(G\right) $, es un subgrupo de $\displaystyle \Biy\left(G\right) $.
+\end{enumerate}
+\end{observation}
 

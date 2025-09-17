@@ -446,7 +446,7 @@ Por otro lado, si $\displaystyle A $ es cerrado, entonces su complementario, $\d
 \end{enumerate}
 \end{proof}
 \begin{definition}[Punto frontera]
-Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \subset X $. Se dice que $\displaystyle x \in X $ es un \textbf{punto frontera} de $\displaystyle A $ si $\displaystyle \forall r > 0 $, $\displaystyle B\left(x,r\right) \cap A \neq \emptyset $ y $\displaystyle B\left(x,r\right) \cap \left(X/A\right) \neq \emptyset $. Denotamos $\displaystyle Fr\left(A\right) $ el conjunto de puntos frontera de $\displaystyle A $.
+Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \subset X $. Se dice que $\displaystyle x \in X $ es un \textbf{punto frontera} de $\displaystyle A $ si $\displaystyle \forall r > 0 $, $\displaystyle B\left(x,r\right) \cap A \neq \emptyset $ y $\displaystyle B\left(x,r\right) \cap \left(X/A\right) \neq \emptyset $. Denotamos $\displaystyle Fr\left(A\right) $ o $\displaystyle \partial A$ el conjunto de puntos frontera de $\displaystyle A $.
 \end{definition}
 \begin{observation}
 Tenemos que $\displaystyle Fr\left(A\right) = \overline{A} \cap \overline{X/A} $ y en particular $\displaystyle Fr\left(A\right) $ es cerrado.
@@ -460,4 +460,92 @@ Tenemos que $\displaystyle Fr\left(A\right) = \overline{A} \cap \overline{X/A} $
 	\item[(ii)] El recíproco lo demostramos típicamente por contrapositiva. Sea $\displaystyle P = \left(x,y\right) \in \R^{2} $ con $\displaystyle x \neq 0 $ y $\displaystyle x \neq 1 $. Hay tres posibilidades a considerar: $\displaystyle x \in \left(-\infty, 0\right) $, $\displaystyle x \in \left(0,1\right) $ o $\displaystyle x \in \left(1,\infty\right) $. Si $\displaystyle x \in \left(-\infty, 0\right) $, $\displaystyle \exists r > 0 $ tal que $\displaystyle B\left(P,r\right) \cap A = \emptyset $. El resto de los casos se demuestran de forma análoga.
 	\end{description}
 \end{eg}
+\begin{definition}[Punto de acumulación]
+	Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \subset X $. Se dice que $\displaystyle x \in X $ es un \textbf{punto de acumulación} de $\displaystyle A $ si $\displaystyle \forall r> 0 $ se tiene que $\displaystyle A \cap \left(B\left(x,r\right)/ \left\{ x\right\} \right)\neq \emptyset $. Denotamos $\displaystyle A' $ el conjunto de los puntos de acumulación de $\displaystyle A $.
+\end{definition}
+\begin{observation}
+	Tenemos que $\displaystyle A' \subset \overline{A} $. En efecto, si $\displaystyle x \in A' $, tenemos que $\displaystyle \forall r > 0 $ se cumple que $\displaystyle A \cap \left(B\left(x,r\right) / \left\{ x\right\} \right) \neq \emptyset $, es decir, $\displaystyle A \cap B\left(x,r\right) \neq \emptyset $, por lo que $\displaystyle x \in \overline{A} $.
+\end{observation}
+\begin{eg}
+Consideremos $\displaystyle A = \N \times \N \subset \left(\R^{2}, d _{2}\right)$. Tenemos que 
+\begin{itemize}
+\item $\displaystyle \Int\left(A\right) = \emptyset $. En efecto, tenemos que $\displaystyle \forall r > 0 $, si $\displaystyle n_{0} = \left(n,n\right) \in \N^{2} $, existe $\displaystyle x \in \R/\Q $ tal que $\displaystyle n < x < n + r $, por lo que $\displaystyle \left(x,x\right) \in B\left(n,r\right) $ pero $\displaystyle \left(x,x\right)\not\in \N^{2} $.
+\item $\displaystyle \overline{A} = A $. En efecto, si $\displaystyle x \not\in A$, tenemos que podemos encontrar $\displaystyle r > 0 $ suficientemente pequeño tal que $\displaystyle B\left(x,r\right) \cap A = \emptyset $.
+\item $\displaystyle \partial A = A $. Dado que $\displaystyle A = \overline{A} $ y $\displaystyle \partial A= \overline{A} \cap \overline{X/A} $, tenemos que $\displaystyle A \subset \partial A $. Por otro lado, si $\displaystyle x \not\in A $, tenemos que existe un $\displaystyle r>0 $ suficientemente pequeño tal que $\displaystyle B\left(x,r\right) \cap A = \emptyset $, como hemos visto anteriormente, por lo que $\displaystyle x \not\in \partial A $. 
+\item $\displaystyle A' = \emptyset $. Si cogemos $\displaystyle r < 1 $ y $\displaystyle n \in \N^{2} $, está claro que $\displaystyle \left(B\left(n,r\right)/ \left\{ n\right\} \right) \cap A = \emptyset $, por lo que $\displaystyle n $ no puede ser un punto de acumulación. Si $\displaystyle x \not\in A $, hacemos un argumento similar al del apartado anterior.
+\end{itemize}
+\end{eg}
+\begin{definition}[Punto aislado]
+	Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \subset X $. Se dice que $\displaystyle x \in A $ es un \textbf{punto aislado} de $\displaystyle A $ si existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(x,r\right) \cap A = \left\{ x\right\}  $. Denotaremos $\displaystyle Ais\left(A\right) $ al conjunto de los puntos aislados de $\displaystyle A $.
+\end{definition}
+\begin{prop}
+Sean $\displaystyle \left(X, d\right) $ un espacio métrico y $\displaystyle A \subset X $. Entonces, se cumple que $\displaystyle \overline{A} = A' \cup Ais\left(A\right) $.
+\end{prop}
+\begin{proof}
+\begin{description}
+	\item[(i)] Sea $\displaystyle x \in \overline{A} $. Supongamos que $\displaystyle x \not\in A' $, entonces existe $\displaystyle r > 0 $ tal que $\displaystyle A \cap \left(B\left(x,r\right)/ \left\{ x\right\} \right) = \emptyset $. Sin embargo, sabemos que $\displaystyle A \cap B\left(x,r\right) \neq \emptyset $ al ser $\displaystyle x \in \overline{A} $, por tanto debe ser que $\displaystyle A \cap B\left(x,r\right) = \left\{ x\right\}  $, es decir, $\displaystyle x \in Ais\left(A\right) $.
+\item[(ii)] Está claro que $\displaystyle Ais\left(A\right) \subset A \subset \overline{A} $ y $\displaystyle A' \subset \overline{A} $, por lo que $\displaystyle A' \cup Ais\left(A\right) \subset \overline{A} $.
+\end{description}
+\end{proof}
+\begin{colorary}
+Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \subset X $. Entonces, $\displaystyle A $ es cerrado si y solo si $\displaystyle A $ contiene todos sus puntos de acumulación.
+\end{colorary}
+\begin{proof}
+\begin{description}
+\item[(i)] Tenemos que $\displaystyle A = \overline{A} = A' \cup Ais\left(A\right)  $, por lo que $\displaystyle A' \subset A $.
+\item[(ii)] Tenemos que $\displaystyle Ais\left(A\right) \subset A $ y $\displaystyle A' \subset A $, por lo que $\displaystyle \overline{A} = Ais\left(A\right) \cup A' \subset A $, así, $\displaystyle \overline{A} = A $.
+\end{description}
+\end{proof}
+\begin{definition}
+	Sean $\displaystyle \left(x,d\right) $ un espacio métrico, $\displaystyle A \subset X $ y $\displaystyle x \in X $. Se define la \textbf{distancia} de $\displaystyle x $ a $\displaystyle A $ como:
+\[d\left(x,A\right) = \inf \left\{ d\left(x,a\right) \; : \; a \in A\right\}  .\]
+\end{definition}
+\begin{prop}
+	Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \subset X $. Entonces, 
+	\[ \overline{A} = \left\{ x \in X \; : \; d\left(x,A\right) = 0\right\}.\]
+\end{prop}
+\begin{proof}
+\begin{description}
+\item[(i)] Sea $\displaystyle x \in \overline{A} $, entonces existe $\displaystyle r > 0 $ tal que $\displaystyle A \cap B\left(x,r\right) \neq \emptyset$. Por tanto, existe $\displaystyle a_{r} \in A \cap B\left(x,r\right) $, por tanto $\displaystyle d\left(x,a_{r}\right) < r $. Así, tenemos que 
+	\[ d\left(x,A\right) \leq d\left(x,a_{r}\right) < r, \; \forall r > 0 .\]
+	Por tanto, $\displaystyle d\left(x,A\right) = 0 $.
+\item[(ii)] Tenemos que $\displaystyle \forall r > 0 $, $\displaystyle d\left(x,A\right) < r $, por lo que existe $\displaystyle a_{r} \in A $ tal que $\displaystyle d\left(x,a_{r}\right)< r $. Por tanto, $\displaystyle a_{r} \in A \cap B\left(x,r\right) \neq \emptyset $ y podemos concluir que $\displaystyle x \in \overline{A} $.
+\end{description}
+\end{proof}
+\section{Conjuntos abiertos y cerrados relativos}
+\begin{observation}
+Sean $\displaystyle \left(X,d\right) $ un espacio métrico e $\displaystyle Y \subset X $. Sabemos que $\displaystyle \left(Y, d _{Y}\right) $ es un subespacio métrico de $\displaystyle \left(X,d\right) $ donde $\displaystyle d _{Y}\left(y_{1}, y_{2}\right) = d\left(y_{1}, y_{2}\right) $. 
+Dado $\displaystyle y_{0} \in Y $ y $\displaystyle r > 0 $, la bola $\displaystyle B_{Y}\left(y_{0}, r\right) = \left\{ y \in Y \; : \; d\left(y, y_{0}\right)<r\right\} = B\left(y_{0}, r\right) \cap Y $. Es decir, la forma de las bolas cambia.
+\end{observation}
+\begin{observation}
+En un espacio métrico $\displaystyle \left(X,d\right) $, todo conjunto abierto es unión de bolas abiertas. En efecto, si $\displaystyle A $ es abierto, entonces $\displaystyle \forall a \in A $, existe $\displaystyle r_{a} > 0 $ tal que $\displaystyle B\left(a,r_{a}\right) \subset A $, por lo que $\displaystyle A = \bigcup_{ a \in A}B\left(a,r_{a}\right) $ \footnote{Esta observación se puede reformular diciendo que un subconjunto $\displaystyle A \subset X $ es abierto si y solo si es unión de bolas abiertas.}.
+\end{observation}
+\begin{prop}
+Sean $\displaystyle \left(X,d\right) $ un espacio métrico e $\displaystyle Y \subset X $. 
+\begin{description}
+\item[(a)] $\displaystyle A \subset Y $ es $\displaystyle d _{Y} $-abierto si y solo si existe $\displaystyle U \subset X $ abierto tal que $\displaystyle A = U \cap Y $.
+\item[(b)] $\displaystyle C \subset Y $ es $\displaystyle d _{Y} $-cerrado si y solo si existe $\displaystyle H \subset X $ cerrado tal que $\displaystyle C = H \cap Y $.
+\end{description}
+Estos conjuntos se llaman \textbf{abiertos y cerrados relativos} de $\displaystyle Y $, respectivamente.
+\end{prop}
+\begin{proof}
+\begin{description}
+\item[(a)] Sea $\displaystyle Y \subset X $,
+	\begin{description}
+	\item[(i)] Tenemos que $\displaystyle \forall y \in A $, existe $\displaystyle r_{y}>0 $ tal que $\displaystyle B_{Y}\left(y,r_{y}\right) \subset A $. Definimos $\displaystyle U = \bigcup_{y \in A}B\left(y,r_{y}\right) $, que es abierto en $\displaystyle \left(X,d\right) $ por ser unión de bolas abiertas.
+Veamos que $\displaystyle A = U \cap Y $. Tenemos que si $\displaystyle y \in A $, entonces $\displaystyle y \in B\left(y, r_{y}\right) \subset A \subset U $ (puesto que $\displaystyle B_{Y}\left(y, r_{y}\right) \subset B\left(y, r_{y}\right) $).
+Recíprocamente, sea $\displaystyle z \in Y \cap U $, entonces existe $\displaystyle y \in Y $ tal que $\displaystyle z \in B\left(y,r_{y}\right) \cap Y = B_{Y}\left(y,r_{y}\right) \subset A$. Por tanto, $\displaystyle Y \cap U \subset A $.
+	\item[(ii)] Dado $\displaystyle y_{0} \in A = U \cap Y $, como $\displaystyle U $ es abierto \footnote{Cuando escribimos abierto y $\displaystyle B\left(x,r\right) $ queremos decir que es $\displaystyle d $-abierto y es la bola en $\displaystyle X $, respectivamente.} , existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(y_{0}, r\right)\subset U $. Por tanto, tenemos que $\displaystyle B_{Y}\left(y_{0}, r\right) = B\left(y_{0}, r\right)\cap Y \subset U \cap Y = A $. Así, hemos visto que $\displaystyle A $ es $\displaystyle d _{Y} $-abierto.
+	\end{description}
+\item[(b)] Sea $\displaystyle Y \subset X $.
+	\begin{description}
+	\item[(i)] Sea $\displaystyle C \subset Y $ $\displaystyle d _{Y} $-cerrado, entonces tenemos que $\displaystyle Y/C $ es $\displaystyle d _{Y} $-abierto. Así, existe $\displaystyle U \subset X $ abierto tal que $\displaystyle Y/C = U \cap Y $. Sea $\displaystyle H = X/U $, que es cerrado. Veamos que $\displaystyle C = H \cap Y $:
+\[C = Y / \left(Y / C\right) = Y / \left(U \cap Y\right) = Y / U = Y \cap \left(X/U\right) = Y \cap H .\]
+\item[(ii)] Si $\displaystyle C = H\cap Y $ con $\displaystyle H $ cerrado en $\displaystyle X $, entonces $\displaystyle X/H $ es abierto. Tenemos que
+	\[Y/C = Y / \left(H \cap Y\right) = Y \cap \left(X/H\right) .\]
+	Dado que $\displaystyle X/H $ es abierto, por \textbf{(a)} tenemos que $\displaystyle Y/C $ es $\displaystyle d _{Y} $-abierto, por lo que $\displaystyle C $ es $\displaystyle d _{Y} $-cerrado.
+	\end{description}
+\end{description}
+\end{proof}
+
 
