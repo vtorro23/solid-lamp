@@ -364,10 +364,115 @@ Entonces, $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\ri
 \begin{definition}
 	Sea $\displaystyle \K $ un cuerpo. Al plano proyectivo construido en el teorema anterior lo llamamos \textbf{proyectivizado de} $\displaystyle \K^{3} $ y lo denotamos por $\displaystyle \mathbb{P}\left(\K^{3}\right) $.
 \end{definition}
-\begin{observation}
+\begin{notation}
 	Dado $\displaystyle \left(a_{0}, a_{1}, a_{2}\right) \in \K^{3} $ denotamos por $\displaystyle \left[a_{0}: a_{1}: a_{2}\right]  $ al punto $\displaystyle L\left( \left\{ \left(a_{0}, a_{1}, a_{2}\right)\right\} \right) $. Observamos que 
 	\[ \left[a_{0} : a_{1} : a_{2}\right] = \left[b_{0} : b_{1} : b_{2}\right] \iff L\left( \left\{ \left(a_{0}, a_{1}, a_{2}\right)\right\} \right) = L\left( \left\{ \left(b_{0}, b_{1}, b_{2}\right)\right\} \right).\]
 	Esto es cierto si y solo si existe $\displaystyle \lambda \in \K/ \left\{ 0\right\}  $ tal que $\displaystyle \left(a_{0}, a_{1}, a_{2}\right) = \lambda \left(b_{0}, b_{1}, b_{2}\right) $. Así, tenemos que esta notación está bien definida salvo proporcionalidad. Así, tenemos que los puntos de $\displaystyle \mathbb{P}\left(\K^{3}\right) $ son 
 	\[ \left\{ \left[a_{0} : a_{1} : a_{2}\right] \; : \; \left(a_{0}, a_{1}, a_{2}\right) \in \K^{3} / \left\{ 0\right\} \right\}  .\]
+	Por otro lado, si $\displaystyle u \in \K^{3} $ tal que $\displaystyle \dim\left(u\right) = 2 $, podemos describir $\displaystyle u $ con una ecuación implícita homogénea:
+	\[u = \left\{ \left(x_{0}, x_{1}, x_{2}\right) \; : \; ax_{0} + bx_{1} + c_{2} = 0\right\}  .\]
+	Decimos que $\displaystyle \overline{l} $ es la recta $\displaystyle ax_{0} + bx_{1} + cx_{2} = 0 $. Tenemos que si $\displaystyle \left(u_{0}, u_{1}, u_{2}\right) \in \overline{l} $, entonces $\displaystyle \left(\lambda u_{0}, \lambda u_{1}, \lambda u_{2}\right) \in \overline{l} $. En efecto, 
+	\[au_{0} + bu_{1} + cu_{2} = 0 \Rightarrow a\lambda u_{0} + b\lambda u_{1} + c\lambda u_{2} = 0.\]
+	Así hemos visto que $\displaystyle \left[u_{0} : u_{1} : u_{2}\right] \in \overline{l} $ si y solo si $\displaystyle au_{0} + bu_{1} + cu_{2} = 0 $, por lo que $\displaystyle \left[u_{0} : u_{1} : u_{2}\right] \in \overline{l} $ está bien definido. Definimos $\displaystyle \mathbb{P}\left(\K^{3}\right) $ de la siguiente forma,
+	\[\overline{\mathcal{P}} = \left\{ \left[a_{0} : a_{1} : a_{2}\right]  \; : \; a_{i} \in \K/ \left\{ 0\right\} \right\}  .\]
+	\[\overline{\mathcal{R}} = \left\{ ax_{0} + bx_{1} + cx_{2} = 0\right\} \footnote{Claramente $\displaystyle a $, $\displaystyle b $ y $\displaystyle c $ no son 0 simultáneamente.}  .\]	
+\end{notation}
+\subsection{Construcción de planos proyectivos desde planos afines}
+Sea $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $ un plano afín. 
+\begin{itemize}
+\item Para cada haz de rectas $\displaystyle \mathcal{H} $ creamos un punto $\displaystyle P_{\mathcal{H}} $.
+\item Cogemos $\displaystyle \overline{\mathcal{P}} = \mathcal{P} \cup \left\{ P_{\mathcal{H}} \; : \; \mathcal{H} \; \text{haz de rectas}\right\}  $.
+\item Dado $\displaystyle l \in \mathcal{R} $ con $\displaystyle l \in \mathcal{H} $, ponemos $\displaystyle \overline{l} = l \cup \left\{ P_{\mathcal{H}}\right\}  $.
+\item Ponemos $\displaystyle \overline{l}_{\infty} = \left\{ P_{\mathcal{H}} \; : \; \mathcal{H} \; \text{haz de rectas}\right\}  $.
+\item Tomamos $\displaystyle \overline{\mathcal{R}} = \left\{ \overline{l} \; : \; l \in \mathcal{R}\right\} \cup \left\{ \overline{l}_{\infty}\right\} $.
+\end{itemize}
+\begin{observation}
+Se tiene que $\displaystyle \overline{\mathcal{P}} = \mathcal{P}\cup \overline{l}_{\infty} $.
 \end{observation}
+\begin{eg}
+Consideremos el plano afín $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $ tal que 
+\[\mathcal{P} = \left\{ A, B, C, D\right\}  .\]
+\[\mathcal{R} = \left\{ \left\{ A,B\right\} , \left\{ A,C\right\} , \left\{ A,D\right\} , \left\{ B,C\right\} , \left\{ B, D\right\} , \left\{ C, D\right\} \right\}  .\]
+Tomamos los haces de rectas:
+\[ \mathcal{H}_{1} = \left\{ \left\{ A,B\right\} , \left\{ C,D\right\} \right\}, \quad \mathcal{H}_{2} = \left\{ \left\{ A,C\right\} , \left\{ B,D\right\} \right\} , \quad \mathcal{H}_{3} = \left\{ \left\{ A,D\right\}, \left\{ C,B\right\} \right\} .\]
+Gráficamente queda así:
+\end{eg}
+
+\begin{theorem}
+Con esta construcción, $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ es un plano proyectivo.
+\end{theorem}
+\begin{proof}
+Comprobamos que se cumplen los axiomas.
+\begin{description}
+\item[P1.] Sean $\displaystyle P,Q \in \overline{\mathcal{P}} = \mathcal{P} \cup $
+\end{description}
+\end{proof}
+Vmos que dado un plano afín $\displaystyle \left(\mathcal{P},\mathcal{R}\right) $, 
+\[\overline{\mathcal{P}} = \mathcal{P} \cup \left\{ P_{\mathcal{H}} \; : \; \mathcal{H} \; \text{haz de rectas}\right\}  .\]
+\[\overline{\mathcal{R}} = \left\{ \overline{l} : = l \cup \left\{ P_{\mathcal{H}\left(l\right)} \right\} \; : \; l \in \mathcal{R}\right\} \cup \left\{ \overline{l}_{\infty}\right\} .\]
+Entonces, $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ es un plano proyectivo. 
+\subsection{Construcción de un plano afín desde un plano proyectivo}
+Sea $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ un plano proyectivo y sea $\displaystyle \overline{l}_{\infty} \in \overline{\mathcal{P}} $ una recta cualquiera \footnote{Realmente es una recta cualquiera, lo que pasa es que la vamos a tratar como la recta infinita.}. Tomamos $\displaystyle \mathcal{P} = \overline{\mathcal{P}}  - \overline{l}_{\infty} $ y $\displaystyle \overline{\mathcal{R}} = \left\{ l = \overline{l} - \left(\overline{l} \cap \overline{l}_{\infty}\right) \; : \; \overline{l} \in \overline{\mathcal{R}} - \left\{ \overline{l}_{\infty}\right\} \right\}  $.
+\begin{theorem}
+El par $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $ construido anteriormente es un plano afín. 
+\end{theorem}
+\begin{proof}
+Comprobemos que se cumplen los axiomas.
+\begin{description}
+\item[A1.] Dados $\displaystyle P, Q \in \mathcal{P} \subset \overline{\mathcal{P}}$ con $\displaystyle P \neq Q $, por \textbf{P1} tenemos que existe una única $\displaystyle \overline{l} \in \overline{\mathcal{R}} $ tal que $\displaystyle P, Q \in \overline{l} $. Como $\displaystyle P,Q \not\in \overline{l}_{\infty} $, tenemos que $\displaystyle P,Q \in \overline{l}- \left(\overline{l} \cap \overline{l}_{\infty}\right) = l \in \mathcal{R}$. La unicidad de $\displaystyle l $ es por construcción de $\displaystyle \mathcal{R} $.
+\item[A2.] Sea $\displaystyle l \in \mathcal{R} $, por lo que $\displaystyle l = \overline{l} - \left\{ Q\right\}  $ donde $\displaystyle \overline{l} \in \overline{\mathcal{R}} $ y $\displaystyle Q \in \overline{l}_{\infty} $. Sea $\displaystyle P \in \mathcal{P} $ tal que $\displaystyle P \not\in l $.
+	Por \textbf{P1} tenemos que existe una única $\displaystyle \overline{m} \in \overline{\mathcal{R}} $ que une $\displaystyle P $ y $\displaystyle Q $. Por tanto
+	\[ m = \overline{m} - \left(\overline{m} \cap \overline{l}_{\infty}\right) = \overline{m} - \left\{ Q\right\}  .\]
+Si $\displaystyle m \cap l \neq \emptyset $, existe $\displaystyle Q_{2} \in \mathcal{P} $ tal que $\displaystyle Q_{2} \in m \cap l \in \overline{m} \cap \overline{l} $ y $\displaystyle Q \in \overline{m} \cap \overline{l} $. Así, tenemos que $\displaystyle \overline{m} = \overline{l} $, tenemos que $\displaystyle P \not\in \overline{l} $ y $\displaystyle P \in \overline{m} $, lo que es una contradicción. Así, debe ser que $\displaystyle m | | l $. La unicidad se deduce por construcción.
+\item[A3.] Por \textbf{P3}, tenemos que $\displaystyle \left|\overline{l}\right| \geq 3 $, $\displaystyle \forall \overline{l} \in \overline{\mathcal{R}} $. Tenemos entonces que si $\displaystyle l \in \mathcal{R} $ 
+	\[ \left|l \right| = \left|\overline{l} - \left(\overline{l} \cap \overline{l}_{\infty}\right)\right| \geq 2  .\]
+Por lo que se vio en uno de los ejercicios, tenemos que $\displaystyle \left|\overline{\mathcal{R}}\right| \geq 3 $, por lo que
+\[ \left|\mathcal{R}\right| = \left|\overline{\mathcal{R}} - \left\{ \overline{l}_{\infty}\right\} \right| = \left|\overline{\mathcal{R}}\right| - 1 \geq 2 .\]
+\end{description}
+\end{proof}
+\begin{colorary}
+Todo par de rectas de $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ están en biyección.
+\end{colorary}
+\begin{proof}
+Habíamos demostrado que todo par de rectas de un plano afín están en biyección. Sean $\displaystyle \overline{l}, \overline{m} \in \overline{\mathcal{R}} $. Existe $\displaystyle \overline{r} \in \overline{\mathcal{R}} $ tal que $\displaystyle \overline{r} \neq \overline{l}, \overline{m} $. Tomamos $\displaystyle \overline{l}_{\infty} = \overline{r} $ y construimos un plano afín $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $. Así, tenemos que 
+\[l = \overline{l} - \left(\overline{l}_{\infty} \cap \overline{l}\right), \quad m = \overline{m} - \left(\overline{l}_{\infty} \cap \overline{m}\right) \in \mathcal{R} .\]
+Como $\displaystyle l $ y $\displaystyle m $ están en biyección y $\displaystyle \left|\overline{l}_{\infty}\cap \overline{l}\right| = \left|\overline{l}_{\infty} \cap \overline{m}\right| = 1 $, es fácil ver que $\displaystyle \overline{l}  $ y $\displaystyle \overline{m} $ están en biyección.
+\end{proof}
+\subsection{Dualidad}
+\begin{prop}
+Sea $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ un plano proyectivo. Se cumplen:
+\begin{description}
+\item[P1'.] Si $\displaystyle P $ y $\displaystyle Q $ son puntos distintos de $\displaystyle \overline{\mathcal{P}} $, entonces existe una única $\displaystyle \overline{l} \in \overline{\mathcal{R}} $ tal que $\displaystyle P,Q \in \overline{l} $.
+\item[P2'.] Si $\displaystyle \overline{l} $ y $\displaystyle \overline{m} $ son rectas distintas de $\displaystyle \overline{\mathcal{R}} $, entonces existe un único $\displaystyle P \in \overline{\mathcal{P}} $ tal que $\displaystyle \overline{l} $ y $\displaystyle \overline{m} $ contienen a $\displaystyle P $.
+\item[P3'.] Cada recta contiene al menos tres puntos y cada punto está contenido en al menos tres rectas.
+\end{description}
+\end{prop}
+\begin{proof}
+\begin{description}
+\item[P1'.] Como \textbf{P1'} y \textbf{P1} son lo mismo, es trivial que se cumple.
+\item[P2'.] Por \textbf{P2} sabemos que $\displaystyle \overline{l} \cap \overline{m} \neq \emptyset$. Por \textbf{P1}, si $\displaystyle \left|\overline{l} \cap \overline{m}\right|  \geq 2$, tenemos que $\displaystyle \overline{l} = \overline{m} $. Así, debe ser que si $\displaystyle \overline{l} \neq \overline{m} $, entonces $\displaystyle \left|\overline{l} \cap \overline{m}\right| =1 $. 
+\item[P3'.] Por \textbf{P3} cada recta contiene al menos tres puntos. Por un ejercicio de la hoja, tenemos que $\displaystyle \left|\overline{\mathcal{R}}\right| \geq 3 $, por lo que si $\displaystyle \overline{l}, \overline{m}, \overline{r} \in \overline{\mathcal{R}}$ son distintas, y $\displaystyle P \in \overline{\mathcal{P}} $ con $\displaystyle P \in \overline{l} \cap \overline{m} \overline{r} $, tenemos que $\displaystyle P $ está en tres rectas. Si $\displaystyle P \not\in \overline{l} $, existe $\displaystyle A_{1}, A_{2}, A_{3} \in \overline{l} $ y existen $\displaystyle \overline{l}\left(P,A_{1}\right), \overline{l}\left(P,A_{2}\right),\overline{l}\left(P,A_{3}\right) \in \overline{\mathcal{R}} $ tres rectas distintas.
+\end{description}
+\end{proof}
+\begin{theorem}
+Sea $\displaystyle \overline{\mathcal{P}} $ un conjunto no vacío y sea $\displaystyle \overline{\mathcal{R}} $ una colección de subconjuntos de $\displaystyle \overline{\mathcal{P}} $. Entonces, son equivalentes
+\begin{itemize}
+\item $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ es un plano proyectivo.
+\item $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ cumple \textbf{P1'}, \textbf{P2'} y \textbf{P3'}. 
+\end{itemize}
+Es decir, podríamos haber tomado \textbf{P1'}, \textbf{P2'} y \textbf{P3'} como axiomas.
+\end{theorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Es trivial a partir de la proposición anterior.
+\item[(ii)] Tenemos que \textbf{P1'} es igual que \textbf{P1}, \textbf{P2'} implica \textbf{P2} y \textbf{P3'} implica \textbf{P3}.
+\end{description}
+\end{proof}
+\begin{observation}
+En los nuevos axiomas, si cambiamos la palabra 'punto' por 'recta' y 'está contenido' por 'contiene', obtenemos los mismos axiomas. En efecto, \textbf{P1'} se convierte en \textbf{P2'}, \textbf{P2'} se convierte en \textbf{P1'} y \textbf{P3'} cambia el orden de las oraciones. \\ 
+En particular, toda afirmación cierta usando \textbf{P1}, \textbf{P2} y \textbf{P3} tendrá una afirmación (llamada afirmación dual) que también será cierta y se obtiene haciendo el cambio indicado anteriormente.
+\end{observation}
+\begin{colorary}
+En un plano proyectivo cada par de puntos está contenido en el mismo número de rectas. \footnote{Esta es la afirmación dual del corolario anterior.} 
+\end{colorary}
 

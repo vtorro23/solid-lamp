@@ -50,7 +50,21 @@ Sea $\displaystyle \left(\Omega, \mathcal{A}\right) $ un espacio probabilizable.
 	\[P\left(\emptyset\right) = P\left(\emptyset \cup \emptyset\right) = P\left(\emptyset\right) + P\left(\emptyset\right) \iff P\left(\emptyset\right) = 0 .\]
 \item Si $\displaystyle A \in \mathcal{A} $, tenemos que $\displaystyle P\left(A^{c}\right) = 1 - P\left(A\right) $. En efecto, tenemos que $\displaystyle A^{c} \cap A = \emptyset $ y $\displaystyle A^{c} \cup A = \Omega  $, por lo que
 	\[P\left(A \cup A^{c} \right) = P\left(A\right) + P\left(A^{c}\right) = P\left(\Omega \right) = 1 \iff P\left(A^{c}\right) = 1 - P\left(A\right) .\]
-\item Si $\displaystyle A,B \in \mathcal{A} $ con $\displaystyle A \subset B $, entonces $\displaystyle P\left(A\right) \leq P\left(B\right) $.
+\item Si $\displaystyle A,B \in \mathcal{A} $ con $\displaystyle A \subset B $, entonces $\displaystyle P\left(A\right) \leq P\left(B\right) $. En efecto, tenemos que $\displaystyle \left(B/A\right) \cap A = \emptyset $, por lo que 
+	\[P\left(B\right) = P\left(\left(B/A\right) \cup A\right) = P\left(B/A\right) + P\left(A\right) \iff P\left(B\right)-P\left(A\right) = P\left(B/A\right) \geq 0 .\]
+	Así, tenemos que $\displaystyle P\left(B\right) \geq P\left(A\right) $.
+\item $\displaystyle P\left(A\right) \leq 1 $, $\displaystyle \forall A \in \mathcal{A} $. En efecto, como $\displaystyle \forall A \in \mathcal{A} $ se tiene que $\displaystyle A \subset \Omega  $, por el apartado anterior tenemos que $\displaystyle P\left(A\right) \leq P\left(\Omega \right) = 1 $.
 \end{enumerate}
 \end{observation}
+\begin{prop}
+Sea un experimento aleatorio cualquiera con espacio muestral $\displaystyle \Omega  $ y dos sucesos cualesquiera de este experimento $\displaystyle A,B \in \mathcal{A} $. Entonces, 
+\[P\left(A\cup B\right) = P\left(A\right) + P\left(B\right) - P\left(A \cap B\right) .\]
+\end{prop}
+\begin{proof}
+Tenemos que 
+\[A \cup B = \left(A-B\right) \cup \left(A \cap B\right) \cup \left(B-A\right) .\]
+Está claro que estos conjuntos son disjuntos dos a dos, por lo que podemos aplicar el \textbf{Axioma 3} para obtener que
+\[P\left(A \cup B\right) = P\left(A-B\right) + P\left(A \cap B\right) .\]
+
+\end{proof}
 

@@ -282,4 +282,126 @@ Sea $\displaystyle f : G_{1} \to G_{2} $ un homomorfismo de grupos. Si $\display
 \item El conjunto de automorfismos de $\displaystyle G $, $\displaystyle \Aut\left(G\right) $, es un subgrupo de $\displaystyle \Biy\left(G\right) $.
 \end{enumerate}
 \end{observation}
+\section{Grupos cíclicos}
+\begin{notation}
+Sea $\displaystyle \left(G, \cdot\right) $ un grupo, $\displaystyle a \in G $ y $\displaystyle k \in \Z $. Entonces utilizaremos la siguiente notación:
+\[a^{0} = e, \quad a^{n} = \underbrace{a \cdot a \cdots a}_{n\; \text{veces}}, \quad a^{-n} = \underbrace{a^{-1} \cdot a^{-1} \cdots a^{-1}}_{n\; \text{veces}}  .\]
+\end{notation}
+\begin{lema}
+Sea $\displaystyle \left(G, \cdot \right) $ un grupo, $\displaystyle a \in G $ y $\displaystyle k, l \in \Z $. Entonces $\displaystyle a^{l + k} = a^{l}a^{k} $ y $\displaystyle \left(a^{-1}\right)^{k}=a^{-k}=\left(a^{k}\right)^{-1} $.
+\end{lema}
+\begin{proof}
+Está claro que, por la propiedad asociativa, si $\displaystyle l,k \in \N $ (o $\displaystyle l, k \leq 0 $, se procede igual):
+\[ a^{l + k} = \underbrace{a \cdot a \cdots a}_{l + k \; \text{veces}} = \underbrace{a \cdot a \cdots a }_{l \; \text{veces}} \cdot \underbrace{a \cdot a \cdots a}_{k \; \text{veces}}=a^{l}a^{k} .\]
+Sin pérdida de generalidad, supongamos que $\displaystyle l \leq 0 $ y $\displaystyle k > 0 $. Entonces, es evidente que
+\[a^{l}a^{k} = a \cdots a \cdot a^{-1} \cdots a^{-1} = a^{l - k} .\]
+Por otro lado, tenemos que
+\[\left(a^{-1}\right)^{k}a^{k} = \left(a^{-1} \cdots a^{-1}\right) \cdot \left(a \cdots a\right) = a^{-1} \cdots a^{-1} \cdot \left(a^{-1} \cdot a\right) \cdot a \cdots a = e .\]
+Al haber el mismo número de $\displaystyle a^{-1} $ que de $\displaystyle a $, está claro que el resultado será el elemento neutro. Por la unicidad del inverso, tenemos que $\displaystyle \left(a^{k}\right)^{-1} = \left(a^{-1}\right)^{k} $.
+\end{proof}
+\begin{notation}
+Dado un grupo $\displaystyle \left(G, \cdot \right) $ y $\displaystyle a \in G $, utilizaremos la siguiente notación:
+\[\left\langle a \right\rangle = \left\{ a^{k} \; : \; k \in \Z\right\}  .\]
+\end{notation}
+\begin{prop}
+Si $\displaystyle G $ es un grupo y $\displaystyle a \in G $, se tiene que $\displaystyle \left\langle a \right\rangle \leq G $ y $\displaystyle \left\langle a \right\rangle  $ es abeliano.
+\end{prop}
+\begin{proof}
+Dado que $\displaystyle G $ es un grupo, su operación es cerrada, por lo que $\displaystyle \left\langle a \right\rangle \subset G $. Tenemos que $\displaystyle e \in \left\langle a \right\rangle  $. Por otro lado, si $\displaystyle x,y \in \left\langle a \right\rangle  $, existen $\displaystyle n,m \in \Z $ tales que $\displaystyle x = a^{n} $ e $\displaystyle y = a^{m} $.
+Así, tenemos que $\displaystyle y^{-1} = a^{-m} $, así, $\displaystyle xy^{-1} = a^{n}a^{-m} = a^{n - m} \in \left\langle a \right\rangle  $, puesto que $\displaystyle n - m \in \Z $. Además, es abeliano, puesto que 
+\[ x y = a^{n}a^{m} = a^{n + m} = a^{m + n} = a^{m}a^{n} = yx.\]
+\end{proof}
+\begin{notation}
+Si la operación del grupo fuera aditiva, en lugar de $\displaystyle a^{k} $ escribiríamos $\displaystyle ka $.
+\end{notation}
+\begin{observation}
+Está claro que $\displaystyle \left\langle a \right\rangle  = \left\langle a^{-1} \right\rangle  $. En efecto, 
+\[x \in \left\langle a \right\rangle \iff x = a^{n}, n \in \Z \iff x = \left(a^{-1}\right)^{-n}, n \in \Z \iff x \in \left\langle a^{-1} \right\rangle  .\]
+\end{observation}
+\begin{definition}[Grupo cíclico]
+Un grupo $\displaystyle G $ es \textbf{cíclico} si existe $\displaystyle a \in G $ tal que $\displaystyle G = \left\langle a \right\rangle  $. Decimos que $\displaystyle a $ es \textbf{generador} de $\displaystyle G $ o que $\displaystyle G $ \textbf{está generado} por $\displaystyle a $.
+\end{definition}
+\begin{eg}
+Consideremos el grupo $\displaystyle \left(\Z, +\right) $. Tenemos que este grupo es cíclico y tiene dos generadores, $\displaystyle 1 $ y $\displaystyle -1 $. En efecto, se cumple que $\displaystyle \Z = \left\langle 1 \right\rangle  = \left\langle -1 \right\rangle  $.
+\end{eg}
+\begin{prop}
+Si $\displaystyle G $ es un grupo cíclico, cualquier subgrupo $\displaystyle H \leq G $ también es cíclico.
+\end{prop}
+\begin{proof}
+	Supongamos que $\displaystyle H \neq \left\{ e\right\}  $ y $\displaystyle H \neq G $, puesto que estos casos son triviales. Sea $\displaystyle k \in \N $ el más pequeño tal que $\displaystyle a^{k} \in H $. Podemos observar que dado que $\displaystyle H \leq G $, tenemos que $\displaystyle a^{-k} \in H $. Vamos a ver que $\displaystyle H = \left\langle a^{k} \right\rangle  $.
+	\begin{description}
+	\item[(i)] Si $\displaystyle x \in H $, tenemos que existe $\displaystyle l \in \Z $ tal que $\displaystyle x = a^{l} $. Por el algoritmo de la división, tenemos que existen $\displaystyle q, r \in \Z $ tales que 
+		\[l = qk + r, \quad 0 \leq r < k .\]
+	Entonces, tenemos que 
+	\[a^{l} = a^{qk + r} = \left(a^{k}\right)^{q}a^{r} .\]
+	Dado que $\displaystyle a^{l}, \left(a^{k}\right)^{q} \in H $, debe ser que $\displaystyle a^{r} \in H $. Como $\displaystyle k \in \N $ era el menor tal que $\displaystyle a^{k} \in H $ y $\displaystyle r < k $, debe ser que $\displaystyle r = 0 $, por lo que $\displaystyle x = a^{l} = \left(a^{k}\right)^{q} \in H $. Así, hemos visto que $\displaystyle H \leq \left\langle a^{k} \right\rangle  $.
+\item[(ii)] Por otro lado, si $\displaystyle x \in \left\langle a^{k} \right\rangle  $, tenemos que existe $\displaystyle n \in \Z $ tal que $\displaystyle x = \left(a^{k}\right)^{l} \in H $. Así, tenemos que $\displaystyle \left\langle a^{k} \right\rangle \subset H $.  
+	\end{description}
+	Así, hemos visto que $\displaystyle H = \left\langle a^{k} \right\rangle  $, por lo que es cíclico.
+\end{proof}
+\begin{colorary}
+Todo $\displaystyle H \leq \Z $ es un subgrupo cíclico, es decir, existe $\displaystyle m \in \Z $ tal que $\displaystyle H = \left\langle m \right\rangle  $.
+\end{colorary}
+\begin{proof}
+Se deduce fácilmente a partir de la proposición y de la observación anterior.
+\end{proof}
+\begin{eg}
+\begin{enumerate}
+	\item El conjunto $\displaystyle U_{n} = \left\{ z \in \C \; : \; z^{2} = 1\right\}  $, de las raíces $\displaystyle n $-ésimas de la unidad, es un grupo cíclico con la multiplicación. Recordamos que $\displaystyle w_{k} = e^{i\frac{2\pi k}{n}} $, para $\displaystyle k = 0, \ldots, n-1 $. Es sencillo ver que $\displaystyle \left(U_{n}, \cdot, 1\right) \leq \left(\C / \left\{ 0\right\} , 1\right) $. En efecto, 
+		\[ e^{i\frac{2\pi \cdot 0}{n} } = e^{0} = 1 .\]
+		Ahora, si $\displaystyle w_{1}, w_{2} \in U_{n} $, tenemos que si $\displaystyle k_{1} > k_{2} $:
+		\[w_{1}w_{2}^{-1} = e^{i\frac{2\pi k_{1}}{n}}e^{i\frac{2\pi \left(-k_{2}\right)}{n}} = e^{i\frac{e\pi\left(k_{1}-k_{2}\right)}{n }}\in U_{n}.\]
+		Así, está claro que $\displaystyle \left(U_{n}, \cdot , 1\right) \leq \left(\C / \left\{ 0\right\} \; \cdot , 1\right) $. Para ver que es cíclico basta con ver que $\displaystyle U_{n} = \left\langle e^{i\frac{2\pi }{n}} \right\rangle  $. 
+	\item En $\displaystyle \Z $, tenemos que $\displaystyle \forall m \in \Z $, $\displaystyle m\Z \leq \Z $. Sabemos que $\displaystyle \Z / m\Z \cong \Z_{m} = \left\{ \left[0\right] , [1], \ldots, [m -1]\right\}  $. Podemos definir la operación:
+	\[
+	\begin{split}
+		+ :	\Z_{m} \times \Z_{m} & \to \Z_{m} \\
+		\left([a]_{m}, [b]_{m}\right) & \to [a + b]_{m}.
+	\end{split}
+	\]
+	Vamos a ver que está operación está bien definida. Si $\displaystyle x \in [a]_{m} $ e $\displaystyle y \in [b]_{m} $, tenemos que 
+	\[m | x - a \quad \text{y} \quad m | y - b .\]
+	Así, existen $\displaystyle \lambda, \mu \in \Z $ tales que $\displaystyle x = a + \lambda m $ e $\displaystyle y = b + \mu m $. Por tanto, obtenemos que
+	\[ x + y = a + \lambda m + b + \mu m = \left(a+b\right) + \left(\lambda + \mu\right)m \iff x + y \equiv a + b \mod m \iff [x +y]_{m} = [a + b]_{m} .\]
+	Queremos ver ahora que $\displaystyle \left(Z_{m}, +, [0]_{m}\right) $ es un grupo. Está claro que $\displaystyle \Z_{m} \neq \emptyset $ y que el elemento neutro es $\displaystyle [0]_{m} $. Ahora comprobamos que hay inversos. Si $\displaystyle [a]_{m} \in \Z_{m} $, tenemos que $\displaystyle [-a]_{m} \in \Z_{m} $ y, por definición, $\displaystyle [a]_{m} + [-a]_{m} = [0]_{m} $. También se puede ver que $\displaystyle \Z_{m} $ es cíclico, es decir, que $\displaystyle \Z_{m} = \left\langle [1]_{m} \right\rangle  $.
+\end{enumerate}
+\end{eg}
+\begin{lema}
+	Sea $\displaystyle G $ un grupo cíclico, por lo que $\displaystyle G = \left\langle a \right\rangle  $. Entonces si $\displaystyle a^{k} \neq e $, $\displaystyle \forall k \in \N $, tenemos que $\displaystyle G $ tiene orden infinito. En caso contrario, si $\displaystyle m = \min \left\{ k \in \N \; : \; a^{k} = e\right\}  $ tenemos que $\displaystyle G = \left\langle a \right\rangle = \left\{ e, a, \ldots, a^{m-1}\right\}  $. Además, $\displaystyle a^{k} = e $ si y solo si $\displaystyle m | k $.
+\end{lema}
+\begin{proof}
+\begin{description}
+	\item[(i)] Sea $\displaystyle a^{k} \neq e $, $\displaystyle \forall k \in \N $. Entonces, $\displaystyle a^{k} \neq e $, $\displaystyle \forall \Z / \left\{0 \right\}  $, por lo que el orden de $\displaystyle G $ es infinito. En efecto, si existieran $\displaystyle i, j \in \Z $ distintos tales que $\displaystyle a^{i} = a^{j} $, tendríamos que $\displaystyle a^{i-j} = e $, lo que es una contradicción. 
+	\item[(ii)] Por otro lado, sea $\displaystyle m = \min \left\{ k \in \N \; : \; a^{k} = e\right\}  $. Vamos a ver que $\displaystyle G = \left\langle a \right\rangle = \left\{ e, a, \ldots, a^{m - 1}\right\}  $. Es trivial que $\displaystyle \left\{ e, a, \ldots, a^{m - 1}\right\} \subset G $. Recíprocamente, si $\displaystyle g \in G $, tenemos que existe $\displaystyle l \in \Z / \left\{ 0\right\}  $ tal que $\displaystyle g = a^{l} $. Por el algoritmo de la división, tenemos que existen $\displaystyle q, r \in \Z $ tales que
+		\[l = mq + r, \; 0 \leq r < m .\]
+		Así, tenemos que 
+		\[a^{l} = a^{mq + r}= \left(a^{m}\right)^{q}a^{r} = a^{r}.\]
+		Así, como $\displaystyle 0 \leq r < m $, debe ser que $\displaystyle g \in \left\{ e, a, \ldots, a^{m - 1}\right\}  $, por lo que $\displaystyle G \subset \left\{ e, a, \ldots, m - 1\right\}  $. Consecuentemente, $\displaystyle G = \left\{ e, a, \ldots, a^{m - 1}\right\}  $. \\
+		Finalmente, como $\displaystyle l = qm+r $, es trivial que $\displaystyle a^{l} = e \iff r = 0 $.
+\end{description}
+\end{proof}
+\begin{observation}
+	En el lema podemos ver que $\displaystyle m = \min \left\{ k \in \N\; : \; a^{k} = e\right\}  $ es también el orden de $\displaystyle G $.
+\end{observation}
+
+\begin{prop}
+Dos grupos $\displaystyle G $ y $\displaystyle H $ cícliclos del mismo orden son isomorfos.
+\end{prop}
+\begin{proof}
+Sea $\displaystyle G = \left\langle a \right\rangle  $ y $\displaystyle H = \left\langle b \right\rangle  $. Consideremos la aplicación
+\[
+\begin{split}
+	f : G & \to H \\
+	a^{k} & \to b^{k}.
+\end{split}
+\]
+Vamos a ver que se trata de un homomorfismo de grupos:
+\[f\left(a^{k}\right)f\left(a^{t}\right) = b^{k}b^{t} = b^{k+t} = f\left(a^{k+t}\right) = f\left(a^{k}a^{t}\right) .\]
+Ahora vamos a ver que es biyectiva. 
+\begin{description}
+\item[Inyectiva.] Si $\displaystyle \left|G\right| > k \geq t $ y $\displaystyle f\left(a^{k}\right) = f\left(a^{t}\right) $, tenemos que $\displaystyle f\left(a^{k-t}\right) = b^{k -t} = e $. Como $\displaystyle \left|G\right|>k - t \geq 0 $, debe ser que $\displaystyle k - t = 0 $, por lo que $\displaystyle a^{k} = a^{t} $.
+\item[Sobreyectiva.]  Si $\displaystyle c \in H $ con $\displaystyle c = b^{k} $ para algún $\displaystyle k = 0, \ldots, \left|H\right|-1 $, tenemos que $\displaystyle f\left(a^{k}\right)= b^{k} = c $.
+\end{description}
+Así, está claro que $\displaystyle f $ es un isomorfismo.
+\end{proof}
 

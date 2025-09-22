@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  17 SEP 2025 16:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  22 SEP 2025 16:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -657,6 +657,7 @@ Package: thmdef-mdframed 2023/05/04 v0.76
 \c@prop=\count326
 \c@theorem=\count327
 \c@lema=\count328
+\c@colorary=\count329
  (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@headwidth=\skip127
@@ -727,16 +728,16 @@ LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count329
+\scratchcounter=\count330
 \scratchdimen=\dimen295
 \scratchbox=\box74
-\nofMPsegments=\count330
-\nofMParguments=\count331
+\nofMPsegments=\count331
+\nofMParguments=\count332
 \everyMPshowfont=\toks55
-\MPscratchCnt=\count332
+\MPscratchCnt=\count333
 \MPscratchDim=\dimen296
-\MPnumerator=\count333
-\makeMPintoPDFobject=\count334
+\MPnumerator=\count334
+\makeMPintoPDFobject=\count335
 \everyMPtoPDFconversion=\toks56
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -962,10 +963,110 @@ LaTeX Info: Redefining \% on input line 261.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 270.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 291.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 294.
+LaTeX Info: Redefining \. on input line 301.
+LaTeX Info: Redefining \% on input line 301.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.07225pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.07225pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.07225pt}.
+
+LaTeX Info: Redefining \. on input line 301.
+LaTeX Info: Redefining \% on input line 301.
+[14]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 307.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 310.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 321.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 328.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 331.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 341.
+LaTeX Info: Redefining \. on input line 341.
+LaTeX Info: Redefining \% on input line 341.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.07225pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.07225pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.07225pt}.
+
+LaTeX Info: Redefining \. on input line 341.
+LaTeX Info: Redefining \% on input line 341.
+[15]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 343.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 346.
+
+Overfull \hbox (7.43474pt too wide) in paragraph at lines 355--356
+[]\OT1/cmr/m/n/10 En $\U/msb/m/n/10 Z$\OT1/cmr/m/n/10 , te-ne-mos que $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 m \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 Z$\OT1/cmr/m/n/10 , $\OML/cmm/m/it/10 m\U/msb/m/n/10 Z \OMS/cmsy/m/n/10 ^^T \U/msb/m/n/10 Z$\OT1/cmr/m/n/10 . Sa-be-mos que $\U/msb/m/n/10 Z\OML/cmm/m/it/10 =m\U/msb/m/n/10 Z [] Z[] \OT1/cmr/m/n/10 = []$.
+ []
+
+
+Overfull \hbox (42.78525pt too wide) detected at line 365
+\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 a \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^Um \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 b \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^Vm \OT1/cmr/m/n/10 = [] + [] \OML/cmm/m/it/10 m  \OMS/cmsy/m/n/10 ([])  \OML/cmm/m/it/10 x \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y \OMS/cmsy/m/n/10 ^^Q \OML/cmm/m/it/10 a \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 b[]  m  \OMS/cmsy/m/n/10 ([])  \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y\OT1/cmr/m/n/10 ][] = [\OML/cmm/m/it/10 a \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 ][]\OML/cmm/m/it/10 :
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 370.
+LaTeX Info: Redefining \. on input line 371.
+LaTeX Info: Redefining \% on input line 371.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.07225pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.07225pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.07225pt}.
+
+LaTeX Info: Redefining \. on input line 371.
+LaTeX Info: Redefining \% on input line 371.
+[16]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 373.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 388.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 391.
 )
 LaTeX Info: Redefining \. on input line 32.
 LaTeX Info: Redefining \% on input line 32.
- [14] (./main.aux
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.07225pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.07225pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.07225pt}.
+
+LaTeX Info: Redefining \. on input line 32.
+LaTeX Info: Redefining \% on input line 32.
+[17] (./main.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
@@ -975,18 +1076,18 @@ L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 29895 strings out of 474116
- 742394 string characters out of 5743682
+ 29933 strings out of 474116
+ 743189 string characters out of 5743682
  1957187 words of memory out of 5000000
- 51713 multiletter control sequences out of 15000+600000
+ 51751 multiletter control sequences out of 15000+600000
  568134 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,22n,110p,959b,1139s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (15 pages, 268451 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (18 pages, 297560 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
+ 171 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

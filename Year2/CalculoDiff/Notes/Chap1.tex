@@ -547,5 +547,160 @@ Recíprocamente, sea $\displaystyle z \in Y \cap U $, entonces existe $\displays
 	\end{description}
 \end{description}
 \end{proof}
-
+\section{Sucesiones en espacios métricos}
+\begin{definition}[Sucesión y convergencia]
+	Sea $\displaystyle \left(X,d\right) $ un espacio métrico. Una \textbf{sucesión} es una aplicación $\displaystyle S : \N \to X $. Si $\displaystyle S\left(n\right) = x_{n} \in X $, denotamos la sucesión por $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $. Se dice que $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ \textbf{converge} a $\displaystyle x_{0} \in X $ cuando $\displaystyle  d\left(x_{n}, x_{0}\right) _{n\in\N} \to 0 $ 
+\end{definition}
+\begin{observation}
+	Recordamos que $\displaystyle x_{n} \to x_{0} $ si y solo si (ambas definiciones son equivalentes):
+\begin{itemize}
+\item  $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ se tiene que $\displaystyle d\left(x_{n}, x_{0}\right) < \epsilon  $.
+\item $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ se tiene que $\displaystyle x_{n} \in B\left(x_{0}, \epsilon \right) $.
+\end{itemize}
+\end{observation}
+\begin{prop}
+	Sea $\displaystyle \left(X,d\right) $ un espacio métrico. Si la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ converge, el límite es único.
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle l_{1}, l_{2} \in X $ son límites de la sucesión, entonces tenemos que si $\displaystyle \epsilon > 0 $, existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ se cumple que
+\[ d\left(l_{1}, l_{2}\right) \leq d\left(l_{1}, x_{n}\right) + d\left(x_{n}, l_{2}\right) < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon .\]
+Como esto es cierto para todo $\displaystyle \epsilon > 0 $, debe ser que $\displaystyle d\left(l_{1}, l_{2}\right) = 0 $, por lo que $\displaystyle l_{1} = l_{2} $.
+\end{proof}
+\begin{prop}
+	Sea $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \subset X $. Entonces, $\displaystyle x \in \overline{A} $ si y solo si existe una sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset A $ tal que $\displaystyle x_{n}\to x $.
+\end{prop}
+\begin{proof}
+\begin{description}
+	\item[(i)] Tenemos que si $\displaystyle x \in \overline{A} $, entonces para todo $\displaystyle \epsilon > 0 $ se tiene que $\displaystyle B\left(x,\epsilon \right) \cap A \neq \emptyset $, es decir. Así, podemos coger una sucesión tal que para $\displaystyle \epsilon = \frac{1}{n} $ se tiene que $\displaystyle x_{n} \in B\left(x,\frac{1}{n}\right) \cap A $. Vamos a ver que la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ converge a $\displaystyle x $. 
+		\[0 \leq d\left(x_{n}, x\right) < \frac{1}{n} \Rightarrow d\left(x_{n}, x\right) \to 0 \iff x_{n} \to x .\]
+	\item[(ii)] Si existe $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset A $ tal que $\displaystyle x_{n} \to x $, tenemos que si $\displaystyle r > 0 $, existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $, $\displaystyle x_{n} \in B\left(x, r\right) $, es decir, $\displaystyle B\left(x,r\right) \cap A \neq \emptyset $, por lo que $\displaystyle x \in \overline{A} $.
+\end{description}
+\end{proof}
+\begin{prop}
+	Sea $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle A \subset X $. Entonces $\displaystyle x \in A' $ si y solo si existe una sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ de términos distintos con $\displaystyle x_{n} \to x $.
+\end{prop}
+\begin{proof}
+\begin{description}
+	\item[(i)] Si $\displaystyle x \in A' $, tenemos que $\displaystyle \forall r> 0 $, $\displaystyle A \cap \left(B\left(x,r\right)/ \left\{ x\right\} \right) \neq \emptyset $. 
+		\begin{itemize}
+			\item Para $\displaystyle n = 1 $, tomamos $\displaystyle x_{1} $ tal que $\displaystyle x_{1} \in A \cap \left(B\left(x,1\right) / \left\{ x\right\} \right) $.
+			\item Para $\displaystyle n = 2 $, tomamos $\displaystyle \epsilon = \min \left\{ \frac{1}{2}, d\left(x_{1}, x\right)\right\}  $, y tomamos $\displaystyle x_{2} $ tal que $\displaystyle x_{2} \in A \cap \left(B\left(x,\epsilon \right) / \left\{ x\right\} \right) $.
+			\item Asumimos que tenemos $\displaystyle \left\{ x_{1}, \ldots, x_{n}\right\}  $ distintos como los hemos descrito anteriormente. Ahora, en el caso $\displaystyle n +1 $, cogemos $\displaystyle \epsilon = \min \left\{ \frac{1}{n+1}, d\left(x_{i}, x\right)\right\}  $ para $\displaystyle i = 1, \ldots, n $. Así, cogemos $\displaystyle x_{n+1} \in A \cap \left(B\left(x,\epsilon \right)/ \left\{ x\right\} \right)  $. Obtenemos que
+				\[0 < d\left(x_{n+1}, x\right) < \frac{1}{n+1} < d\left(x_{i}, x\right), \; 1 \leq i \leq n .\]
+				Así, está claro que $\displaystyle x_{n+1} \neq x_{i} $ para $\displaystyle 1 \leq i \leq n $.
+		\end{itemize}
+		Así, hemos construido la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ que buscábamos. Tenemos que ver que la sucesión converge a $\displaystyle x $. En efecto, si $\displaystyle \epsilon > 0 $ existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $, $\displaystyle \frac{1}{n} < \epsilon  $, por lo que $\displaystyle d\left(x_{n}, x\right)<\frac{1}{n} < \epsilon  $.
+	\item[(ii)] Puesto que los elementos de la sucesión no se repiten, existe $\displaystyle m \in \N $ tal que $\displaystyle \forall n \geq m $, $\displaystyle x_{n} \neq x $. Como la sucesión converge, si $\displaystyle \epsilon > 0 $, existe $\displaystyle n_{0} \geq m$ tal que $\displaystyle \forall n \geq n_{0} $, $\displaystyle A \cap \left(B\left(x_{n}, x\right) / \left\{ x\right\} \right) \neq \emptyset $, por lo que $\displaystyle x \in A' $.
+\end{description}
+\end{proof}
+\begin{observation}
+	Sea $\displaystyle \left(E, \| \cdot \| \right) $ un espacio normado. Tenemos que una sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ converge a un punto $\displaystyle x \in E $ si y solo si $\displaystyle \| x_{n} - x \| \to 0 $.
+\end{observation}
+\begin{prop}
+	En $\displaystyle \R^{n} $ consideremos las normas $\displaystyle \| \cdot \| _{1} $, $\displaystyle \| \cdot \|_{2} $ y $\displaystyle \| \cdot \|_{\infty} $. Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ una sucesión de $\displaystyle \R^{n} $ tal que 
+	\[x_{k} = \left(x_{k}^{1} \; , \; \ldots \;, \;  x^{n}_{k}\right) ,\]
+	y $\displaystyle x_{n} \to x = \left(x^{1}, \ldots, x^{n}\right)\in \R^{n}$. Entonces, la sucesión converge coordenada a coordenada, es decir, $\displaystyle x_{k}^{i} \to x^{i} $ para $\displaystyle 1 \leq i \leq n $.
+\end{prop}
+\begin{proof}
+Recordamos que
+\[\| x \|_{\infty} \leq \| x \| _{2} \leq \| x \|_{1} < n\|x\|_{\infty} .\]
+Así, tenemos que si $\displaystyle x_{k} \to x $,
+\[ \|x_{k}-x\|_{\infty} \leq \|x_{k}-x\|_{2} \leq \|x_{k}-x\|_{1} \leq n\|x_{k}-x\|_{\infty} .\]
+Por tanto, la convergencia no depende de la métrica que escojamos. Así, para $\displaystyle 1 \leq i \leq n $ tenemos que
+\[ \left|x_{k}^{i}-x^{i}\right| \leq \|x_{k}-x\|_{2} \leq \left|x_{k}^{1}-x^{1}\right|+\cdots + \left|x_{k}^{n}-x^{n}\right| \to 0 .\]
+\end{proof}
+\begin{definition}[Subsucesión]
+	Sea sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset X $, donde $\displaystyle \left(X,d\right) $ es un espacio métrico. Una \textbf{subsucesión} es otra sucesión de la forma $\displaystyle \left\{ x_{n_{k}}\right\} _{k \in \N} $ tal que $\displaystyle n_{k} $ es estrictamente creciente.
+\end{definition}
+\begin{prop}
+	Sea $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset X $ tal que $\displaystyle x_{n} \to x $. Entonces, toda subsucesión converge a $\displaystyle x $.
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle \left\{ x_{n_{k}}\right\} _{k\in\N} \subset \left\{ x_{n}\right\} _{n\in\N}$. Tenemos que si $\displaystyle \epsilon > 0 $, existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ se tiene que $\displaystyle d\left(x_{n}, x\right) < \epsilon  $. Como $\displaystyle n_{k} \to \infty $, podemos encontrar $\displaystyle n_{k_{0}} \in \N $ tal que $\displaystyle \forall n_{k} \geq n_{k_{0}} $ se tenga que $\displaystyle n_{k} \geq n_{0} $, por lo que $\displaystyle \forall k \geq k_{0} $, tenemos que $\displaystyle d\left(x_{k}, x\right) $.
+	Así, hemos visto que la subsucesión converge al mismo límite.
+\end{proof}
+\section{Completitud}
+\begin{definition}[Sucesión de Cauchy]
+	Sea $\displaystyle \left(X,d\right) $ un espacio métrico. Se dice que una sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ en $\displaystyle X $ es una \textbf{sucesión de Cauchy} si $\displaystyle \forall \epsilon > 0 $, existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall m,n \geq n_{0} $, $\displaystyle d\left(x_{n}, x_{m}\right) < \epsilon  $.
+\end{definition}
+\begin{prop}
+Toda sucesión convergente es de Cauchy.
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset X $ una sucesión convergente a $\displaystyle x_{0} \in X $.  Así, si $\displaystyle \epsilon > 0 $, tenemos que existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $, $\displaystyle d\left(x_{n}, x\right) < \frac{\epsilon }{2} $. Si $\displaystyle n, m \geq n_{0} $,
+	\[d\left(x_{n}, x_{m}\right) \leq d\left(x_{n}, x\right) + d\left(x, x_{m}\right) < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon  .\]
+\end{proof}
+\begin{definition}[Espacio completo]
+Se dice que un espacio métrico $\displaystyle \left(X,d\right) $ es \textbf{completo} si toda sucesión de Cauchy es convergente en $\displaystyle \left(X,d\right) $.
+\end{definition}
+\begin{theorem}
+El espacio $\displaystyle \left(\R, |\cdot|\right) $ es completo.
+\end{theorem}
+\begin{eg}
+	Consideramos $\displaystyle X = \Q $ con la distancia usual. Entonces, $\displaystyle \left(\Q, | \cdot |\right) $ no es completo. Hay sucesiones $\displaystyle \left\{ q_{n}\right\} _{n\in\N} \subset \Q $ de Cauchy tales que $\displaystyle q_{n} \to x \in \R/\Q $. Entonces la sucesión $\displaystyle \left\{ q_{n}\right\} _{n\in\N} $ no converge en $\displaystyle \left(\Q, | \cdot |\right) $. Como ejemplo se puede tomar la sucesión de los decimales de $\displaystyle \sqrt{2} $.
+\end{eg}
+\begin{colorary}
+El espacio $\displaystyle \R^{n} $ con la norma $\displaystyle \| \cdot \|_{1} $, $\displaystyle \| \cdot \|_{2} $ y con $\displaystyle \| \cdot \|_{\infty} $ también es completo.
+\end{colorary}
+\begin{proof}
+Recordamos que 
+\[\| x \|_{\infty} \leq \| x \|_{2} \leq \| x \|_{1} \leq n \|x\|_{\infty}.\]
+Por tanto una sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset \R^{n} $ es de Cauchy para $\displaystyle \| \cdot \|_{\infty} $ si y solo si lo es para $\displaystyle \| \cdot \|_{2} $, si y solo si lo es para $\displaystyle \| \cdot \|_{1} $. Por ejemplo, para $\displaystyle \| \cdot \|_{2} $, si $\displaystyle \left\{ x_{k}\right\} _{k\in\N} \subset \R^{n} $ es de Cauchy, entoces $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle k_{0} \in \N $ tal que $\displaystyle \forall k,j \geq k_{0} $, 
+\[ \left|x^{i}_{k}-x^{i}_{j}\right| \leq \| x_{k}-x_{j}\|_{2} < \epsilon, \quad \forall i = 1, \ldots, n.\]
+Donde $\displaystyle x_{m} = \left(x^{1}_{m}, \ldots, x^{n}_{m}\right) $. Por tanto, cada componente $\displaystyle \left\{ x^{i}_{k}\right\} _{k\in \N} $ es de Cauchy en $\displaystyle \R $, por lo que cada componente es convergente en $\displaystyle \R $ y la sucesión es convergente en $\displaystyle \R^{n} $.
+\end{proof}
+\begin{eg}
+	Sea $\displaystyle \left[a,b\right] \subset \R $. Consideramos el siguiente espacio normado:
+	\[X = \mathcal{C}[a,b] = \left\{ f : [a,b] \to \R \; : \; f \; \text{continua en } [a,b]\right\}  .\]
+	\[\| f \|_{\infty} = \sup \left\{ \left|f\left(t\right)\right| \; : \; t \in [a,b]\right\} = \max \left\{ \left|f\left(t\right)\right| \; : \; t \in [a,b]\right\}  .\]
+	Por ser $\displaystyle f $ continua, la norma está bien definida. Se trata de una norma, puesto que:
+	\begin{itemize}
+	\item $\displaystyle \|f\|_{\infty} \geq 0 $.
+	\item $\displaystyle \| f \|_{\infty} = 0 $ si y solo si $\displaystyle \left|f\left(t\right)\right| = 0, \forall t \in [a,b] $, es decir, $\displaystyle f = 0 $.
+	\item $\displaystyle \|\lambda f\|_{\infty} = \sup \left\{ \left|\lambda f\left(t\right)\right| \; : \; t \in [a,b]\right\} = \left|\lambda \right|\sup \left\{ \left|f\left(t\right)\right| \; : \; t \in [a,b]\right\} = \left|\lambda \right| \|f\|_{\infty} $.
+	\item Comprobamos la propiedad triangular:
+		\[
+		\begin{split}
+			\| f + g \|_{\infty} & = \sup \left\{ \left|f\left(t\right) + g\left(t\right) \right| \; : \; t \in [a,b]\right\} \\
+			\leq & \sup \left\{ \left|f\left(t\right)\right| \; : \; t \in [a,b]\right\} + \sup \left\{ \left|g\left(t\right)\right| \; : \; t \in [a,b]\right\}  = \|f\|_{\infty} + \|g\|_{\infty} .
+		\end{split}
+		\]
+	\end{itemize}
+	Podemos observar que $\displaystyle \left\{ f_{n}\right\} _{n\in\N} \to f $ en $\displaystyle \| \cdot \|_{\infty} $ si y solo si $\displaystyle \| f_{n} - f\|_{\infty} \to 0 $. Es decir, si $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $: $\displaystyle \| f_{n}-f\|_{\infty} \leq \epsilon  $. Esto es cierto si y solo si $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ se tiene que $\displaystyle \left|f_{n}\left(t\right)-f\left(t\right)\right| \leq \epsilon  $, $\displaystyle \forall t \in [a,b] $.
+	Es decir, si $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ converge uniformemente en $\displaystyle [a,b] $ a $\displaystyle f $. \\ \\
+	Otra observación que podemos hacer es que $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ es de Cauchy con $\displaystyle \| \cdot \|_{\infty} $ si y solo si $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n,m \geq n_{0} $ se tiene que $\displaystyle \| f_{m}-f_{m}\|_{\infty} \leq \epsilon  $, si y solo si $\displaystyle \forall \epsilon > 0 $, existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n,m \geq n_{0} $, $\displaystyle \left|f_{n}\left(t\right)-f_{m}\left(t\right)\right|\leq \epsilon  $, $\displaystyle \forall t \in [a,b] $.
+	Así, podemos decir que $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ es \textbf{uniformemente de Cauchy}.
+\end{eg}
+\begin{theorem}
+	El espacio $\displaystyle \left(\mathcal{C}[a,b],\| \cdot \|_{\infty}\right) $ es completo.
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ de Cauchy para $\displaystyle \| \cdot \|_{\infty} $. Tenemos que 
+	\[ \forall t \in [a,b],\; \left|f_{n}\left(t\right)-f_{m}\left(t\right)\right| \leq \|f_{n}-f_{m}\|_{\infty}.\]
+	Luego, $\displaystyle \forall t \in [a,b] $, $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ es de Cauchy en $\displaystyle \R $, por lo que existe $\displaystyle a_{t} \in \R $ tal que $\displaystyle \left\{ f_{n}\left(t\right)\right\} \to a_{t} $.
+	Definimos la función 
+	\[
+	\begin{split}
+		f : [a,b] & \to \R \\
+		t & \to a_{t}.
+	\end{split}
+	\]
+	Vamos a ver que $\displaystyle f_{n} \to f $ en $\displaystyle \| \cdot \|_{\infty} $. Dado $\displaystyle \epsilon > 0 $, existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n,m \geq n_{0} $, tenemos que 
+	\[ \left|f_{n}\left(t\right) - f_{m}\left(t\right)\right| \leq \epsilon , \; \forall t \in [a,b] .\]
+	Si cogemos $\displaystyle m \to \infty $, tenemos que
+	\[ \left|f_{n}\left(t\right) -f\left(t\right)\right| \leq \epsilon, \; \forall t \in \left[a,b\right] , \forall n \geq n_{0} .\]
+	Así, tenemos que $\displaystyle \|f_{n}-f\|_{\infty} \leq \epsilon  $, $\displaystyle \forall n \geq n_{0} $. Por tanto, $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ converge a $\displaystyle f $ uniformemente en $\displaystyle [a,b] $.
+	Como el límite de una sucesión de funciones continuas es una función continua, tenemos que $\displaystyle f \in \mathcal{C}[a,b] $.
+\end{proof}
+\begin{prop}
+Sea $\displaystyle \left(X,d\right) $ un espacio métrico completo y sea $\displaystyle Y \subset X $. Entonces, $\displaystyle \left(Y, d _{Y}\right) $ es completo si y solo si $\displaystyle Y $ es cerrado en $\displaystyle X $.
+\end{prop}
+\begin{proof}
+\begin{description}
+	\item[(i)] Sea $\displaystyle \left(Y,d _{Y}\right) $ completo. Vamos a ver que $\displaystyle Y $ es cerrado. Sea $\displaystyle x \in \overline{Y} $, por lo que $\displaystyle \exists \left\{ y_{n}\right\} _{n\in\N} \subset Y $ tal que $\displaystyle y_{n} \to x $.
+		Por tanto, $\displaystyle \left\{ y_{n}\right\} _{n\in\N} $ es de Cauchy en $\displaystyle X $ e $\displaystyle Y $. Luego, existe $\displaystyle y_{0} = x = \lim_{n \to \infty}y_{n} \in Y $, por lo que $\displaystyle x \in Y $. Así, tenemos que $\displaystyle \overline{Y} \subset Y $ y por tanto $\displaystyle Y  $ es cerrado.
+	\item[(ii)] Supongamos que $\displaystyle Y $ es cerrado en $\displaystyle X $. Sea $\displaystyle \left\{ y_{n}\right\} _{n\in\N} \subset \left(Y, d _{Y}\right) $ sucesión de Cauchy. Entonces, $\displaystyle \forall \epsilon > 0 $, existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n,m \geq n_{0} $ $\displaystyle d _{Y}\left(y_{n}, y_{m}\right) < \epsilon  $.
+		Por ser de Cauchy en $\displaystyle \left(X,d\right) $, existe $\displaystyle x \in X $ tal que $\displaystyle y_{n} \to x $. Por tanto, tenemos que $\displaystyle x \in \overline{Y} = Y $, por lo que $\displaystyle \left\{ y_{n}\right\} _{n\in\N} $ es convergente en $\displaystyle Y $.
+\end{description}
+\end{proof}
 

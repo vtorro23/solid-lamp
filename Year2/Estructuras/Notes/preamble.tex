@@ -58,13 +58,13 @@ headfont=\bfseries\sffamily\color{Cyan!70!black}, bodyfont=\normalfont,
 \declaretheorem[style=thmredbox, name=Proposición, numberwithin=chapter]{prop}
 \declaretheorem[style=thmredbox, name=Teorema, numberwithin=chapter]{theorem}
 \declaretheorem[style=thmredbox, name=Lema, numberwithin=chapter]{lema}
-\declaretheorem[style=thmredbox, numbered=no, name=Corolario, numberwithin=chapter]{colorary}
+\declaretheorem[style=thmredbox, numberwithin=chapter, name=Corolario, numberwithin=chapter]{colorary}
 
 \declaretheorem[style=thmproofbox, name=Demostración]{replacementproof}
 \renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
 
 \declaretheorem[style=thmbluebox, numbered=no, name=Observación]{observation}
-\declaretheorem[style=thmblueline, numbered=no, name=Notación]{notation}
+\declaretheorem[style=thmbluebox, numbered=no, name=Notación]{notation}
 
 % Headers and footers
 \usepackage{fancyhdr}

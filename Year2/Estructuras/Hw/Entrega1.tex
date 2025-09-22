@@ -1,0 +1,137 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Estructuras Algebraicas - Entrega 1}
+\author{Irene García, Andrés Segarra, Victoria Eugenia Torroja}
+\date{22/9/2025}
+
+\maketitle
+% Documento Real
+\subsection*{Ejercicio 1}
+
+	Sea $\displaystyle G $ un grupo y $\displaystyle \left\{ H_{i}\right\} _{i \in I} $ una familia de subgrupos de $\displaystyle G $. Demostrar que $ \bigcap_{i \in I}H_{i} $ es un subgrupo de $\displaystyle G $.  
+\subsection*{Solución}
+
+Veamos que $ H = \bigcap_{i \in I} H_{i} $ cumple los tres requisitos para ser un grupo, esto es, vamos a ver que $\displaystyle H \neq \emptyset $, que la operación restringida a $\displaystyle H $ es interna y que $\displaystyle \forall h \in H $ se tiene que $\displaystyle h^{-1} \in H $. 
+\begin{description}
+\item[(i)] En primer lugar, si $\displaystyle H_{i} \leq G $, está claro que el elemento neutro $\displaystyle e \in H_{i} $. Así, tenemos que $\displaystyle e \in H_{i} $, $\displaystyle \forall i \in I $, por lo que $ e \in \bigcap_{i \in I}H_{i} = H $. Así, tenemos que $\displaystyle H \neq \emptyset $.
+\item[(ii)] Veamos ahora que la operación es interna en $\displaystyle H $. Si $\displaystyle a,b \in H $, tenemos que $\displaystyle \forall i \in I $, $\displaystyle a,b \in H_{i} $. Como cada $\displaystyle H_{i} $ es subgrupo, se tiene que $\displaystyle ab \in H_{i} $, $\displaystyle \forall i \in I $, por lo que $\displaystyle ab \in H $. Así, hemos visto que la operación es interna en $\displaystyle H $.
+\item[(iii)] Finalmente, si $\displaystyle a \in H_{i} \leq G $, tenemos que $\displaystyle a^{-1} \in H_{i} $. Así, tenemos que si $\displaystyle a\in H_{i}, \; \forall i \in I $, entonces $\displaystyle a^{-1} \in H_{i}, \; \forall i \in I $, es decir, $ a^{-1} \in H = \bigcap_{ i \in I} $.
+\end{description}
+Dado que se cumplen las tres características definitorias de un subgrupo, debe ser que $\displaystyle H \leq G $.
+\subsection*{Ejercicio 2}
+Determinar si la operación $\displaystyle x \cdot y = \left(x+y\right)/ \left(1 + xy\right) $ define una estructura de grupo sobre los números reales mayores que $\displaystyle - 1 $ y menores que $\displaystyle 1 $.
+\subsection*{Solución}
+Vamos a ver que $\displaystyle \left(\left(-1,1\right), \cdot, 0 \right) $ es un grupo. 
+\begin{description}
+\item[Operación bien definida.] En primer lugar, vamos a ver que la operación está bien definida. Si $\displaystyle x,y = 0 $, tenemos que $\displaystyle 1 +xy = 1 \neq 0 $, por lo que no se anula el denominador. Ahora, si $\displaystyle x,y \neq 0 $ tenemos que
+\[1 + xy = 0 \iff xy = -1 \iff x = -\frac{1}{y} .\]
+Como $\displaystyle \left|y\right|< 1 $, tendríamos que
+\[ \left|x\right| = \left|-\frac{1}{y}\right| = \frac{1}{ \left|y\right|} > 1 .\]
+Esto no es posible, puesto que $\displaystyle x \in \left(-1,1\right) $. Así, hemos visto que el denominador nunca se anula, por lo que la operación está bien definida.
+\item[Operación interna.] Ahora vamos a ver que la operación $\displaystyle \cdot  $ es interna en el intervalo $\displaystyle \left(-1,1\right) $. Deseamos ver que $\displaystyle \forall x,y \in \left(-1,1\right) $,
+\[-1 < \frac{x + y}{1 + xy} < 1 .\]
+Tenemos que si $\displaystyle x,y \in \left(-1,1\right) $, entonces $\displaystyle \left(1-y\right) > 0 $ y $\displaystyle \left(x-1\right) < 0 $, por lo que 
+\[\left(1-y\right)\left(x-1\right) = x -xy-1+y < 0 .\]
+Así, tenemos que $\displaystyle x +y < 1 + xy $, por lo que 
+\[\frac{x+y}{1 + xy} < 1 .\]
+Por otro lado, tenemos que $\displaystyle \left(y+1\right), \left(x+1\right) > 0 $, por lo que 
+\[\left(y+1\right)\left(x+1\right) = xy+x +y +1 > 0 .\]
+Así, tenemos que $\displaystyle x+y > -1-xy = -\left(1+xy\right)$. Dado que $\displaystyle 1 +xy > 0 $, obtenemos el resultado deseado:
+\[\frac{x+y}{1 +xy} > -1 .\]
+Así, hemos visto que se trata de una operación interna.
+\item[Asociatividad.] Vamos a ver que la operación $\displaystyle \cdot  $ es asociativa. Sean $\displaystyle a,b, c \in \left(-1,1\right) $,
+	\[
+	\begin{split}
+		\left(a \cdot b\right) \cdot c & = \frac{a + b}{1 + ab} \cdot c = \frac{\frac{a+b}{1+ab} + c}{1 + \left(\frac{a + b}{1 + ab}\right)c} = \frac{\frac{a + b + c + abc}{1 + ab}}{\frac{1 + ab + ac + bc}{1 + ab}} \\
+		= & \frac{a + b + c + abc}{1 + ab + ac + bc} = \frac{\frac{a + b + c + abc}{1 + bc}}{\frac{1 + ab + ac + bc}{1 + bc}} = \frac{\frac{\left(1+bc\right)a + b + c}{1 + bc}}{\frac{\left(1+ bc\right) + a\left(b+c\right)}{1 + bc}} \\
+		= & \frac{a + \frac{b + c}{1 + bc}}{1 + a\left(\frac{b +c }{1 + bc}\right)} = a \cdot \left(\frac{b + c}{1 + bc}\right) = a \cdot \left(b \cdot c\right) .
+	\end{split}
+	\]
+	Así, hemos visto que la operación cumple la propiedad asociativa.
+\item[Elemento neutro.] Vamos a ver ahora que existe el elemento neutro, es decir, existe $\displaystyle e \in \left(-1,1\right) $ tal que $\displaystyle \forall x \in \left(-1,1\right) $, $\displaystyle x \cdot e = e \cdot x = x $. Sea $\displaystyle x \in \left(-1,1\right) $, 
+	\[x \cdot e = x \iff \frac{x+e}{1 + x e} = x \iff x + e = x + x^{2}e \iff x^{2}e = e \iff \left(x^{2}-1\right)e = 0 .\]
+Dado que $\displaystyle x \neq \pm 1 $, debe ser que $\displaystyle e = 0 $. Veamos que efectivamente el elemento neutro es 0 \footnote{En las siguientes ecuaciones hemos usado $\displaystyle \cdot  $ como el producto usual en $\displaystyle \R $ en casos en los que resulta trivial la interpretación.}:
+\[ x \cdot 0 = \frac{x + 0}{1 + x \cdot   0} = \frac{x}{1} = x .\]
+\[0 \cdot x = \frac{0 + x}{1 + 0 \cdot x} = \frac{x}{1} = x .\]
+Así, tenemos que $\displaystyle e = 0 $ es el elemento neutro.
+\item[Inverso.] Para ver que se trata de un grupo nos falta ver que si $\displaystyle x \in \left(-1,1\right) $, entonces existe $\displaystyle y \in \left(-1,1\right) $ tal que $\displaystyle x \cdot y = y \cdot x = e$. Intentamos calcular el inverso: si $\displaystyle x,y \in \left(-1,1\right) $ 
+	\[x \cdot y = \frac{x + y}{1 + xy} = 0 \iff x + y = 0 \iff y = - x.\]
+Está claro que si $\displaystyle x \in \left(-1,1\right) $, entonces $\displaystyle -x \in \left(-1,1\right) $. Veamos que efectivamente $\displaystyle y = x^{-1} $:
+\[x \cdot \left(-x\right)= \frac{x + \left(-x\right)}{1 + x\left(-x\right)} = 0 .\]
+\[\left(-x\right)\cdot x = \frac{-x +x }{1 + \left(-x\right)x} = 0 .\]
+Así, está claro que $\displaystyle x^{-1} = -x $. 
+\end{description}
+Efectivamente, se cumplen las propiedades de los grupos, por tanto $\displaystyle \left(\left(-1,1\right), \cdot , 0\right) $ es un grupo donde $\displaystyle \cdot  $ está definido como viene en el enunciado.
+\subsection*{Ejercicio 3}
+
+Sea $\displaystyle G $ un grupo conmutativo. Si $\displaystyle H_{1} $ y $\displaystyle H_{2} $ son subgrupos de $\displaystyle G $, probar que 
+\[H_{1}H_{2} = \left\{ h_{1}h_{2} \; : \; h_{1} \in H_{1}, h_{2} \in H_{2}\right\}  \]
+es un subgrupo de $\displaystyle G $, y que es el menor subgrupo de $\displaystyle G $ que contiene a $\displaystyle H_{1} $ y $\displaystyle H_{2} $. ¿Es cierto este resultado si se elimina la hipótesis de que $\displaystyle G $ sea abeliano?
+\subsection*{Solución}
+
+En primer lugar, veamos que $\displaystyle H = H_{1}H_{2} \leq G $. Para ello, vamos a ver que $\displaystyle e \in H $ y que $\displaystyle \forall a,b \in H $ se tiene que $\displaystyle ab^{-1} \in H $. \\
+En efecto, tenemos que $\displaystyle e \in H $, puesto que al darse que $\displaystyle H_{1}, H_{2} \leq G $, debe ser que $\displaystyle e \in H_{1} \cap H_{2} $, por lo que 
+\[e = \underbrace{e}_{\in H_{1}} \cdot \underbrace{e}_{\in H_{2}} \in H .\]
+Ahora, supongamos que $\displaystyle a,b \in H $. Entonces, existen $\displaystyle x_{1}, y_{1} \in H_{1} $ y $\displaystyle x_{2}, y_{2} \in H_{2}$ tales que
+\[a = x_{1}x_{2}, \quad b = y_{1}y_{2} .\]
+Tenemos que $\displaystyle b^{-1} = \left(y_{1}y_{2}\right)^{-1} = y^{-1}_{2}y^{-1}_{1} $. Si aplicamos que $\displaystyle G $ es un grupo abeliano, obtenemos 
+\[ab^{-1} = x_{1}x_{2}y^{-1}_{2}y^{-1}_{1} = \underbrace{x_{1}y^{-1}_{1}}_{\in H_{1}}\underbrace{x_{2}y^{-1}_{2}}_{\in H_{2}} \in H.\]
+Así, hemos visto que $\displaystyle H = H_{1} H_{2} \leq G $. \\
+Ahora vamos a ver que si $\displaystyle C \leq G $ con $\displaystyle H_{1}, H_{2} \subset C $, entonces $\displaystyle H \subset C $. En efecto, si $\displaystyle x \in H $, tenemos que existen $\displaystyle h_{1} \in H_{1} $ y $\displaystyle h_{2} \in H_{2} $ tales que $\displaystyle x = h_{1} h_{2} $. Así, como $\displaystyle C \leq G $ y $\displaystyle H_{1}, H_{2} \subset C $, la operación está cerrada en $\displaystyle C $, por lo que $\displaystyle x = h_{1} h_{2} \in C $. Así, hemos visto que $\displaystyle H = H_{1} H_{2} \subset C $. \\
+Si eliminamos la hipótesis de que $\displaystyle G $ sea abeliano no se cumple que $\displaystyle H_{1} H_{2} \leq G $. En efecto, dado un conjunto $\displaystyle X $ con $\displaystyle \left|X\right|=3 $, en clase hemos visto que $\displaystyle \Biy\left(X\right) $ es un grupo con la composición de funciones.  Si $\displaystyle X = \left\{ a,b,c\right\}  $, podemos considerar sus biyecciones:
+\begin{center}
+\begin{tabular}{c | c c c}
+	& $\displaystyle a $ & $\displaystyle b $ & $\displaystyle c $ \\
+	\hline
+	$\displaystyle f_{1} $ & $\displaystyle a $ & $\displaystyle b $ & $\displaystyle c $ \\
+	$\displaystyle f_{2} $ & $\displaystyle b $ & $\displaystyle a $ & $\displaystyle c $ \\
+	$\displaystyle f_{3} $ & $\displaystyle c $ & $\displaystyle b $ & $\displaystyle a $ \\
+	$\displaystyle f_{4} $ & $\displaystyle a $ & $\displaystyle c $ & $\displaystyle b $ \\
+	$\displaystyle f_{5} $ & $\displaystyle b $ & $\displaystyle c $ & $\displaystyle a $ \\
+	$\displaystyle f_{6} $ & $\displaystyle c $ & $\displaystyle a $ & $\displaystyle b $ 
+\end{tabular}
+\end{center}
+ Es fácil comprobar que este grupo no es abeliano puesto que $\displaystyle f_{2} \circ f_{3} = f_{5} \neq f_{6} = f_{3}\circ f_{2} $. Consideremos los subgrupos 
+\[ H_{1} = \left\langle f_{2} \right\rangle = \left\{ f_{1}, f_{2}\right\}, \quad H_{2} = \left\langle f_{3} \right\rangle = \left\{ f_{1}, f_{3}\right\}  .\]
+Por construcción, tenemos que $\displaystyle H_{1}H_{2} = \left\{ f _{1}, f_{2}, f_{3}, f_{2}\circ f_{3} = f_{5}\right\}  $. Sin embargo, tenemos que $\displaystyle H_{1}H_{2} $ no es subgrupo de $\displaystyle \Biy\left(X\right) $, puesto que $\displaystyle f_{3}\circ f_{2} = f_{6} \not\in H_{1}H_{2} $, es decir, la operación no es interna.
+\subsection*{Ejercicio 4}
+Determina los números complejos $\displaystyle a,b $ tales que la operación $\displaystyle x \cdot y = ax + by $ define una estructura de grupo en $\displaystyle \C $.
+\subsection*{Solución}
+	Para encontrar los valores de $\displaystyle a $ y $\displaystyle b $, obtengamos primero información sobre estos a partir de las propiedades de los grupos. Es evidente que se trata de una operación interna. Estudiamos primero la propiedad asociativa. Si $\displaystyle x,y,z \in \C $:
+	\[
+	\begin{cases}
+		\left(x \cdot y\right) \cdot z = \left(ax + by\right) \cdot z = a\left(ax+by\right) + bz = a^{2}x + aby + bz \\
+		x \cdot \left(y \cdot z\right) = x \cdot \left(ay + bz\right) = ax + b\left(ay + bz\right) = ax + aby + b^{2}z
+	\end{cases}
+	.\]
+	Como tiene que darse que $\displaystyle \left(x \cdot y\right) \cdot z = x \cdot \left(y \cdot z\right) $, debe ser que $\displaystyle a^{2} = a $ y $\displaystyle b^{2} = b $, por lo que $\displaystyle a,b \in \left\{ 0,1\right\}  $. \\
+	Veamos ahora lo que tiene que suceder para que haya un elemento neutro. Si existe $\displaystyle e \in \C $ tal que $\displaystyle \forall x \in \C $, $\displaystyle e \cdot x = x \cdot e = x $, tenemos que 
+	\[x \cdot e = ax + be = x \iff \left(a-1\right)x + be = 0 .\]
+Como el elemento neutro no depende de $\displaystyle x $, debe ser que $\displaystyle \left(a-1\right)x = 0$, por lo que $\displaystyle a = 1 $. De forma análoga, se demuestra que $\displaystyle b = a = 1 $. Así, nos queda que $\displaystyle \cdot  $ en verdad es la suma usual en $\displaystyle \C $, por lo que el grupo que nos queda es $\displaystyle \left(\C, +, 0\right) $. Para ver que se trata de un grupo basta comprobar que existen inversos. Si $\displaystyle z \in \C $, tenemos que $\displaystyle - z \in \C $ y $\displaystyle z + \left(-z\right) = \left(-z\right) + z = 0 $. \\
+En conclusión, para que $\displaystyle \C $ forme un grupo con la operación $\displaystyle \cdot  $, debe ser que $\displaystyle a = b = 1 $. \\ \\
+Otra forma de obtener este resultado es, sabiendo que $\displaystyle a,b \in \left\{ 0,1\right\}  $, estudiar los distintos casos:
+\begin{itemize}
+\item Si $\displaystyle a = b = 0 $, está claro que $\displaystyle x \cdot y = 0 , \forall x,y \in \C$ no define una operación de grupo puesto que no hay inversos.
+\item Si $\displaystyle a = 1 $ y $\displaystyle b =0 $, tenemos que $\displaystyle \forall x,y \in \Z $, $\displaystyle x \cdot y = x $. Esta operación tampoco puede dar lugar a un grupo puesto que no existe un elemento neutro. En efecto, $\displaystyle x \cdot e = x $ para cualquier $\displaystyle e \in \C $, pero $\displaystyle e \cdot x = e $, por lo que el único elemento neutro podría ser $\displaystyle x $ y no es único para todo $\displaystyle \C $.
+\item Si $\displaystyle a = 0 $ y $\displaystyle b = 1 $ se razona de forma análoga al caso anterior.
+\item Si $\displaystyle a = b = 1 $ obtenemos una estructura de grupo, como hemos visto anteriormente.
+\end{itemize}
+
+\subsection*{Ejercicio 5}
+Sea $\displaystyle H $ un subconjunto no vacío de un grupo $\displaystyle G $. Probar que $\displaystyle H $ es subgrupo de $\displaystyle G $ si y solo si $\displaystyle xH = H $ para todo $\displaystyle x \in H $.
+\subsection*{Solución}
+	Recordamos que si $\displaystyle x \in H $, entonces $\displaystyle xH = \left\{ xh \; : \; h \in H\right\}  $.
+	\begin{description}
+	\item[($\displaystyle \Rightarrow $)] Supongamos que $\displaystyle H \leq G $ y $\displaystyle x \in H $. Vamos a ver que $\displaystyle xH = H $. Si $\displaystyle y \in xH $, tenemos que existe $\displaystyle h \in H $ tal que $\displaystyle y = xh $. Como $\displaystyle H \leq G $, la operación es interna en $\displaystyle H $, por lo que $\displaystyle y \in H $. Así, hemos visto que $\displaystyle xH \subset H $. Recíprocamente, si $\displaystyle y \in H $, tenemos que 
+		\[y = x\left(x^{-1}y\right) \in xH .\]
+		Está claro que $\displaystyle x^{-1}y \in H $, puesto que $\displaystyle x^{-1} \in H $ por ser $\displaystyle H $ subgrupo, y $\displaystyle x^{-1}y \in H $ por tratarse de una operación interna. Así, hemos visto que $\displaystyle H \subset xH $, por lo que debe ser que $\displaystyle xH = H $.
+	\item[($\displaystyle \Leftarrow $)] Supongamos que $\displaystyle \forall x \in H $ se tiene que $\displaystyle xH = H $. Vamos a ver que $\displaystyle H \leq G $. Para ello vamos a ver que $\displaystyle e \in H $ y que $\displaystyle \forall a,b \in H $ se tiene que $\displaystyle ab^{-1} \in H $. \\
+		Por hipótesis, tenemos que $\displaystyle H \neq \emptyset $, por lo que existe $\displaystyle x \in H $. Como $\displaystyle xH = H $, existe $\displaystyle h \in H $ tal que $\displaystyle xh = x $, por lo que debe ser que $\displaystyle h = e \in H $. \\
+		Veamos que si $\displaystyle h \in H $, entonces $\displaystyle h^{-1} \in H $. En efecto, si $\displaystyle h \in H $ tenemos que $\displaystyle hH = H $, por lo que $\displaystyle \exists z \in H $ tal que $\displaystyle e = hz $, por lo que $\displaystyle z = h^{-1} \in H $. \\
+		Así, si $\displaystyle a,b \in H $ tenemos que $\displaystyle a^{-1}, b^{-1} \in H $, por lo que $\displaystyle a^{-1}H = H $ y existe $\displaystyle h \in H $ tal que $\displaystyle b^{-1} = a^{-1}h $, es decir, $\displaystyle h = ab^{-1} \in H $. Por tanto, hemos comprobado que $\displaystyle H \leq G $.
+	\end{description}
+\end{document}
