@@ -1,21 +1,32 @@
-\documentclass{report}
+\documentclass{article}
 
-\input{preamble.tex}
+\input{~/University/hwpreamble.tex}
 
 \begin{document}
 
-\title{Métodos Numéricos}
-\author{Victoria Torroja Rubio}
+\title{Métodos Numéricos - Demostraciones de las observaciones}
+\author{Victoria Eugenia Torroja Rubio}
 \date{8/9/2025}
 
 \maketitle
 
-\tableofcontents
-
-\pagebreak
-
-%Imput the different chapters here
-
-\input{Chap1.tex}
-
+\begin{prop}[Proposición 2.11, Página 71]
+	Sea $\displaystyle \| \cdot \|  $ una norma en $\displaystyle V $. La aplicación $\displaystyle | | | \cdot | | | : \mathcal{M}_{n} \to \R^{+}\cup \left\{ 0\right\}  $ dada por 
+	\[ | | | A | | | = \sup_{v \neq 0}\frac{\| Av \|}{\|v\|} = \sup_{\|v\|=1}\|Av\| ,\]
+	es una norma matricial.
+\end{prop}
+\begin{proof}
+Veamos que se cumplen las propiedades de las normas matriciales.
+\begin{description}
+\item[(i)] Está claro que como $\displaystyle \| A v\| \geq 0 $, $\displaystyle \forall v \in V $, si $\displaystyle | | | A | | | = 0 $, debe ser que $\displaystyle A = 0$.
+\item[(ii)] Si $\displaystyle \lambda \in \K $, 
+	\[| | | \lambda A | | | = \sup_{\|v\| = 1}\|\lambda Av\| = \sup_{\|v\| = 1} \left|\lambda \right|\|Av\| = \left|\lambda \right|\sup_{\|v\| = 1} = \left|\lambda \right| | | | A | | | .\]
+\item[(iii)] Si $\displaystyle A,B \in \mathcal{M}_{n} $,
+	\[ | | | A + B | | | = \sup_{\|v\| = 1}\| \left(A + B\right) v \| = \sup_{\|v\| = 1} \| A v + Bv \| \leq \sup_{\|v\| = 1}\left(\|Av\|+\|Bv\|\right) = \sup_{\|v\| = 1}\|Av\| + \sup_{\|v\| = 1}\|Bv\| .\]
+\item[(iv)] Si $\displaystyle A,B \in \mathcal{M}_{n} $,
+	\[| | | AB | | | = \sup_{\|v\| = 1}\|ABv\| \leq | | | A | | | \cdot \sup_{\|v\| = 1}\|Bv\| = | | | A | | | \cdot | | | B | | | .\]
+	En efecto, por definición tenemos que 
+	\[ | | | A | | | = \sup_{v \neq 0}\frac{\|Av\|}{\|v\|} \geq \frac{\|Av\|}{\|v\|} \iff | | | A | | | \cdot \|v\| \geq \|Av\| .\]
+\end{description}
+\end{proof}
 \end{document}

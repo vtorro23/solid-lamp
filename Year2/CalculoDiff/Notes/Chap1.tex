@@ -703,4 +703,72 @@ Sea $\displaystyle \left(X,d\right) $ un espacio métrico completo y sea $\displ
 		Por ser de Cauchy en $\displaystyle \left(X,d\right) $, existe $\displaystyle x \in X $ tal que $\displaystyle y_{n} \to x $. Por tanto, tenemos que $\displaystyle x \in \overline{Y} = Y $, por lo que $\displaystyle \left\{ y_{n}\right\} _{n\in\N} $ es convergente en $\displaystyle Y $.
 \end{description}
 \end{proof}
+\begin{lema}
+En un espacio métrico $\displaystyle \left(X,d\right) $, toda sucesión de Cauchy está acotada.
+\end{lema}
+\begin{proof}
+	Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ una sucesión de Cauchy. Entonces, si cogemos $\displaystyle \epsilon = 1 $, existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ se tiene que $\displaystyle d\left(x_{n}, x_{n_{0}}\right) < 1 $. Podemos tomar 
+	\[R = \max \left\{ d\left(x_{1}, x_{n_{0}}\right), d\left(x_{2}, x_{n_{0}}\right), \ldots, d\left(x_{n_{0}-1}, x_{n_{0}}\right), 1\right\}  .\]
+	Entonces, tenemos que $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset B\left(x_{n_{0}}, R\right) $.	
+\end{proof}
+\begin{lema}
+	Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ sucesión de Cauchy en un espacio métrico $\displaystyle \left(X,d\right) $. Si existe una subsucesión $\displaystyle \left\{ x_{n_{k}}\right\}_{k \in \N} $ convergente a $\displaystyle x \in X $, entonces toda la sucesión $\displaystyle \left\{ x_{n}\right\}_{n \in \N} $ converge a $\displaystyle x $.
+\end{lema}
+\begin{proof}
+	Sea $\displaystyle \epsilon > 0 $, existe $\displaystyle n_{1} \in \N $ tal que $\displaystyle \forall n,m \geq n_{0} $, $\displaystyle d\left(x_{n}, x_{m}\right) < \frac{\epsilon }{2} $. También existe $\displaystyle k_{0} \in \N $ tal que $\displaystyle \forall k \geq k_{0} $, $\displaystyle d\left(x_{n_{k}},x\right) < \frac{\epsilon }{2} $. Sea $\displaystyle n_{0} = \max \left\{ n_{0}, n_{k_{0}}\right\}  $ y sea $\displaystyle n \geq n_{0} $,
+	\[d\left(x_{n}, x\right) \leq d\left(x_{n}, x_{n_{0}}\right) + d\left(x_{n_{0}}, x\right) < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon  .\]
+\end{proof}
+
+\section{Compacidad}
+\begin{theorem}[Teorema de Bolzano-Weierstrass]
+Toda sucesión acotada en $\displaystyle \R $ admite una subsucesión convergente.
+\end{theorem}
+\begin{colorary}
+En $\displaystyle \R^{n} $ \footnote{Con las normas $\displaystyle \| \cdot \|_{1}, \| \cdot \|_{2} $ o $\displaystyle \| \cdot \|_{\infty} $.} , toda sucesión acotada admite una subsucesión convergente. 
+\end{colorary}
+\begin{proof}
+	El caso general es un poco tedioso, por lo que solo haremos la demostración cuando $\displaystyle n = 2 $. \\ 
+	Sea $\displaystyle \left(x_{n}, y_{n}\right)_{n\in\N} \subset \R^{2} $ acotada, por lo que existe $\displaystyle R > 0 $ tal que $\displaystyle \left|x_{n}\right|, \left|y_{n}\right| \leq R $, $\displaystyle \forall n \in \N $. Como $\displaystyle \left\{ x_{n}\right\} _{n \in \N} \subset \R$ está acotada, existe $\displaystyle \left\{ x_{n_{k}}\right\} _{k \in \N} $ convergente a $\displaystyle x_{0} \in \R $. Consideramos $\displaystyle \left\{ y_{n_{k}}\right\} _{k \in \N} $ está acotada, existe $\displaystyle \{ y_{n_{k_{j}}}\} _{j \in \N} $ convergente a $\displaystyle y_{0} \in \R $.
+	Así, tenemos que $\displaystyle (x_{n_{k_{j}}}, y_{n_{k_{j}}})_{j \in \N} $ es una subsucesión de $\displaystyle \left(x_{n}, y_{n}\right) $ y $\displaystyle (x_{n_{k_{j}}}, y_{n_{k_{j}}}) \to \left(x_{0}, y_{0}\right) $.
+\end{proof}
+\begin{definition}[Conjunto compacto]
+Sea $\displaystyle \left(X,d\right) $ un espacio métrico y sea $\displaystyle K \subset X $. Se dice que $\displaystyle K $ es \textbf{compacto} si toda sucesión en $\displaystyle K $ admite una subsucesión convergente en $\displaystyle K $.
+\end{definition}
+\begin{lema}
+Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle K \subset X $ compacto. Entonces $\displaystyle K $ es cerrado y acotado en $\displaystyle \left(X,d\right) $.
+\end{lema}
+\begin{proof}
+\begin{description}
+\item[(i)] Supongamos que $\displaystyle K $ no es acotado. Si fijamos $\displaystyle x_{0} \in X $ y sabemos que $\displaystyle \forall n \in \N $, $\displaystyle K \not\subset B\left(x_{0}, n\right) $. Por tanto, existe $\displaystyle x_{n} \in K $ tal que $\displaystyle d\left(x_{n}, x_{0}\right) \geq n $. Por tanto, la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset K $ y $\displaystyle d\left(x_{n}, x_{0}\right) = \infty $, por lo que la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ no es acotada. 
+	Además, para toda subsucesión $\displaystyle \left\{ x_{n_{j}}\right\} _{j \in \N} $, se tiene que $\displaystyle d\left(x_{n_{j}},x_{0}\right) = \infty $, por lo que $\displaystyle \left\{ x_{n_{j}}\right\} _{j \in \N} $ no es acotada, por lo que no es convergente. Por tanto, $\displaystyle K $ no es compacto.
+\item[(ii)] Supongamos que $\displaystyle K $ no es cerrado. Es decir, existe $\displaystyle x \in \overline{K}/K $. Así, existe una sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset K $ con $\displaystyle x_{n} \to x \not\in K $. Además, para toda subsucesión $\displaystyle \left\{ x_{n_{j}}\right\} _{j \in \N} $ se tiene que $\displaystyle x_{n_{j}} \to x \not\in K$. Es decir, todas las subsucesiones de $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ convergen fuera de $\displaystyle K $, por lo que $\displaystyle K $ no es compacto.
+\end{description}
+\end{proof}
+
+\begin{theorem}
+En $\displaystyle \R^{n} $ (con $\displaystyle \| \cdot \|_{1}, \| \cdot \|_{2} $ o $\displaystyle \| \cdot \|_{\infty} $) un subconjunto $\displaystyle K \subset \R^{n} $ es compacto si y solo si $\displaystyle K $ es cerrado y acotado.
+\end{theorem}
+\begin{proof}
+\begin{description}
+	\item[(i)] Es trivial a partir del lema anterior.
+	\item[(ii)] Sea $\displaystyle K \subset \R^{n} $ cerrado y acotado. Sea $\displaystyle \left\{ x_{j}\right\} _{j \in \N} $ una sucesión en $\displaystyle K $. Entonces, $\displaystyle \left\{ x_{j}\right\} _{j \in \N} $ está acotada y por tanto existe una subsucesión $\displaystyle \left\{ x_{n_{l}}\right\} _{l \in \N} $ convergente a $\displaystyle x_{0} \in \R^{n} $. 
+		Entonces, $\displaystyle x_{0} \in \overline{K} = K $ puesto que $\displaystyle K $ es cerrado. Entonces, $\displaystyle K $ es compacto.
+\end{description}
+\end{proof}
+\begin{eg}
+El recíproco del lema anterior no es cierto. Consideremos por ejemplo $\displaystyle \left(X,d\right) $ donde $\displaystyle X = \N $ y $\displaystyle d $ es la métrica discreta. El conjunto de todos los números naturales es cerrado y acotado (tal y como lo hemos definido). Sin embargo, no es compacto. \\ \\
+Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ convergente a $\displaystyle x \in \N $. Entonces, tenemos que $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists n_{0} \in \N, \forall n \geq n_{0} $, $\displaystyle d\left(x_{n}, x\right) < \epsilon  $. Esto solo sucede si existe un $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n\geq n_{0} $, $\displaystyle x_{n} = x $. \\ \\
+Por tanto, la sucesión $\displaystyle \left\{ n\right\} _{n\in\N} \subset X$ está acotada pero no es convergente (puesto que no cumple la condición de convergencia que hemos visto anteriormente) y no tiene subsucesiones convergentes. 
+\end{eg}
+\section{Recubrimientos}
+\begin{definition}[Recubrimiento]
+Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle M \subset X $. 
+\begin{description}
+	\item[(a)] Un \textbf{recubrimiento} de $\displaystyle M $ es una familia $\displaystyle \left\{ U_{i}\right\} _{i \in I} $ de subconjuntos de $\displaystyle X $ que \textbf{recubre} $\displaystyle M $ en el sentido de que $\displaystyle M \subset \bigcup_{i \in I}U_{i} $. Se dice que el recubrimiento es \textbf{abierto} si cada $\displaystyle U_{i} $ es un conjunto abierto en $\displaystyle X $.
+	\item[(b)] Un \textbf{sub-recubrimiento} de $\displaystyle \left\{ U_{i}\right\} _{i \in I} $ es un recubrimiento de la forma $\displaystyle \left\{ U_{j}\right\} _{j \in J} $ donde $\displaystyle J \subset I $ y tal que $\displaystyle M \subset \bigcup_{j \in J}U_{j} $.
+\end{description}
+\end{definition}
+\begin{theorem}
+Sea $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle K \subset X $. Entonces $\displaystyle K $ es compacto si y solo si todo recubrimiento abierto de $\displaystyle K $ admite un subrecubrimiento finito.
+\end{theorem}
 

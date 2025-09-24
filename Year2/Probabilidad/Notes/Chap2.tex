@@ -64,7 +64,22 @@ Sea un experimento aleatorio cualquiera con espacio muestral $\displaystyle \Ome
 Tenemos que 
 \[A \cup B = \left(A-B\right) \cup \left(A \cap B\right) \cup \left(B-A\right) .\]
 Está claro que estos conjuntos son disjuntos dos a dos, por lo que podemos aplicar el \textbf{Axioma 3} para obtener que
-\[P\left(A \cup B\right) = P\left(A-B\right) + P\left(A \cap B\right) .\]
-
+\[P\left(A \cup B\right) = P\left(A-B\right) + P\left(A \cap B\right) + P\left(B - A\right) .\]
+Por otra parte tenemos que 
+\[A = \left(A - B \right) \cup \left(A \cap A\right) \quad \text{y} \quad B = \left(B-A\right) \cup \left(A \cap B\right) .\]
+Es decir, hemos expresado los sucesos $\displaystyle A $ y $\displaystyle B $ como uniones de sucesos incompatibles, por lo que podemos usar nuevamente el \textbf{Axioma 3}:
+\[P\left(A\right) = A\left(A-B\right) + P\left(A \cap B\right) \quad \text{y} \quad P\left(B\right) = P\left(B - A\right) + P\left(A \cap B\right) .\]
+Por tanto, tenemos que $\displaystyle P\left(A - B\right) = P\left(A\right) - P\left(A \cap B\right) $ y $\displaystyle P\left(B -A\right) = P\left(B\right)-P\left(A\cap B\right) $. Así, es fácil obtener la igualdad:
+\[
+\begin{split}
+	P\left(A \cup B\right) = & P\left(A\right) - P\left(A \cap B\right) + P\left(A \cap B\right) + P\left(B\right) -P\left(A \cap B\right)\\
+	= & P\left(A\right) + P\left(B\right) -P\left(A \cap B\right) .
+\end{split}
+\]
 \end{proof}
+\begin{prop}
+Sea un experimento aleatorio cualquiera con espacio muestral $\displaystyle \Omega  $. Sean tres sucesos cualesquiera de este experimento $\displaystyle A,B, C \in \mathcal{A} $, entonces
+\[ .\]
+
+\end{prop}
 

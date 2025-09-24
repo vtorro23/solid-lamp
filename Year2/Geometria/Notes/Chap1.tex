@@ -375,12 +375,15 @@ Entonces, $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\ri
 	\[au_{0} + bu_{1} + cu_{2} = 0 \Rightarrow a\lambda u_{0} + b\lambda u_{1} + c\lambda u_{2} = 0.\]
 	Así hemos visto que $\displaystyle \left[u_{0} : u_{1} : u_{2}\right] \in \overline{l} $ si y solo si $\displaystyle au_{0} + bu_{1} + cu_{2} = 0 $, por lo que $\displaystyle \left[u_{0} : u_{1} : u_{2}\right] \in \overline{l} $ está bien definido. Definimos $\displaystyle \mathbb{P}\left(\K^{3}\right) $ de la siguiente forma,
 	\[\overline{\mathcal{P}} = \left\{ \left[a_{0} : a_{1} : a_{2}\right]  \; : \; a_{i} \in \K/ \left\{ 0\right\} \right\}  .\]
-	\[\overline{\mathcal{R}} = \left\{ ax_{0} + bx_{1} + cx_{2} = 0\right\} \footnote{Claramente $\displaystyle a $, $\displaystyle b $ y $\displaystyle c $ no son 0 simultáneamente.}  .\]	
+	\[\overline{\mathcal{R}} = \left\{ ax_{0} + bx_{1} + cx_{2} = 0\right\} \footnote{Claramente $\displaystyle a $, $\displaystyle b $ y $\displaystyle c $ no son 0 simultáneamente.}  .\]
+	Podemos observar que si $\displaystyle P = [a_{0} : a_{1} : a_{2}] $ y $\displaystyle Q = [b_{0}:b_{1}:b_{2}] $ con $\displaystyle P \neq Q $, se cumple que
+	\[\overline{l}\left(P,Q\right) = \left\{ \begin{vmatrix} x_{0} & x_{1} & x_{2} \\ a_{0} & a_{1} & a_{2} \\ b_{0} & b_{1} & b_{2} \end{vmatrix} = 0\right\}   .\]
+	
 \end{notation}
 \subsection{Construcción de planos proyectivos desde planos afines}
 Sea $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $ un plano afín. 
 \begin{itemize}
-\item Para cada haz de rectas $\displaystyle \mathcal{H} $ creamos un punto $\displaystyle P_{\mathcal{H}} $.
+\item Para cada haz de rectas $\displaystyle \mathcal{H} $ creamos un punto $\displaystyle P_{\mathcal{H}} $ \footnote{Este punto es distinto para cada haz de rectas.}.
 \item Cogemos $\displaystyle \overline{\mathcal{P}} = \mathcal{P} \cup \left\{ P_{\mathcal{H}} \; : \; \mathcal{H} \; \text{haz de rectas}\right\}  $.
 \item Dado $\displaystyle l \in \mathcal{R} $ con $\displaystyle l \in \mathcal{H} $, ponemos $\displaystyle \overline{l} = l \cup \left\{ P_{\mathcal{H}}\right\}  $.
 \item Ponemos $\displaystyle \overline{l}_{\infty} = \left\{ P_{\mathcal{H}} \; : \; \mathcal{H} \; \text{haz de rectas}\right\}  $.
@@ -396,6 +399,9 @@ Consideremos el plano afín $\displaystyle \left(\mathcal{P}, \mathcal{R}\right)
 Tomamos los haces de rectas:
 \[ \mathcal{H}_{1} = \left\{ \left\{ A,B\right\} , \left\{ C,D\right\} \right\}, \quad \mathcal{H}_{2} = \left\{ \left\{ A,C\right\} , \left\{ B,D\right\} \right\} , \quad \mathcal{H}_{3} = \left\{ \left\{ A,D\right\}, \left\{ C,B\right\} \right\} .\]
 Gráficamente queda así:
+\begin{center}
+\includegraphics[scale=0.5]{~/Desktop/Images/plano_fano.png}
+\end{center}
 \end{eg}
 
 \begin{theorem}
@@ -404,15 +410,50 @@ Con esta construcción, $\displaystyle \left(\overline{\mathcal{P}}, \overline{\
 \begin{proof}
 Comprobamos que se cumplen los axiomas.
 \begin{description}
-\item[P1.] Sean $\displaystyle P,Q \in \overline{\mathcal{P}} = \mathcal{P} \cup $
+\item[P1.] Sean $\displaystyle P,Q \in \overline{\mathcal{P}} = \mathcal{P} \cup \overline{l}_{\infty} $. Entonces, tenemos los casos:
+	\begin{description}
+	\item[Caso 1.] Si $\displaystyle P,Q \in \mathcal{P} $, por \textbf{A1} existe una única $\displaystyle l \in \mathcal{R} $ tal que $\displaystyle P,Q \in l $. Así, tenemos que $\displaystyle P,Q \in \overline{l} = l \cup P_{\mathcal{H}} \in \overline{\mathcal{R}}$. 
+	\item[Caso 2.] Si $\displaystyle P,Q \in \overline{l}_{\infty}$ tenemos que $\displaystyle P $ y $\displaystyle Q $ están en una recta y $\displaystyle \overline{l}_{\infty} $ es la única recta con más de un punto que no está en $\displaystyle \mathcal{P} $. 
+	\item[Caso 3.] Si $\displaystyle P \in \mathcal{P} $ y $\displaystyle Q \in \overline{l}_{\infty} $, tenemos que $\displaystyle Q = P_{\mathcal{H}} $, siendo $\displaystyle \mathcal{H}  $ un haz de rectas. Por \textbf{A2}, existe $\displaystyle l \in \mathcal{H} $ tal que $\displaystyle P \in l $, por lo que $\displaystyle P,Q \in \overline{l} = l \cup \left\{ P_{\mathcal{H}}\right\}  $. La unicidad se deduce por construcción. 
+	\end{description}
+\item[P2.] Sean $\displaystyle \overline{l}, \overline{m} \in \overline{\mathcal{R}} $. 
+	\begin{description}
+	\item[Caso 1.] Si $\displaystyle \overline{l} = \overline{l}_{\infty} $, tenemos que $\displaystyle \overline{l} \cap \overline{m} $ contiene un punto del infinito por construcción, por lo que $\displaystyle \overline{l} \cap \overline{m} \neq \emptyset $.
+	\item[Caso 2.] Si $\displaystyle \overline{l} \neq \overline{l}_{\infty} \neq \overline{m} $, tenemos que $\displaystyle \overline{l} = l \cup \left\{ P_{\mathcal{H}_{1}}\right\}  $ y $\displaystyle \overline{m} = m \cup \left\{ P_{\mathcal{H}_{2}}\right\}  $. Si $\displaystyle l | | m $, tenemos que $\displaystyle P_{\mathcal{H}_{1}} = P_{\mathcal{H}_{2}} $, por lo que $\displaystyle \overline{l} \cap \overline{m} \neq \emptyset $. Por otro lado, si $\displaystyle l = m $ está claro que $\displaystyle \overline{l} = \overline{m} $. Finalmente, tenemos que si $\displaystyle l \cap m $ es un punto, entonces $\displaystyle \overline{l} \cap \overline{m} \neq \emptyset $.
+	\end{description}
+\item[P3.] Por \textbf{A3} se tiene que $\displaystyle \left|\mathcal{R}\right| \geq 2 $, por lo que $\displaystyle \left|\overline{\mathcal{R}}\right| \geq 2 $. Similarmente, por \textbf{A3} tenemos que $\displaystyle \left|l\right| \geq 2 $, $\displaystyle \forall l \in \mathcal{R} $. Por tanto, 
+	\[ \left|\overline{l}\right| = \left|l \cup \left\{ P_{\mathcal{H}}\right\} \right| \geq 3 .\]
 \end{description}
 \end{proof}
-Vmos que dado un plano afín $\displaystyle \left(\mathcal{P},\mathcal{R}\right) $, 
-\[\overline{\mathcal{P}} = \mathcal{P} \cup \left\{ P_{\mathcal{H}} \; : \; \mathcal{H} \; \text{haz de rectas}\right\}  .\]
-\[\overline{\mathcal{R}} = \left\{ \overline{l} : = l \cup \left\{ P_{\mathcal{H}\left(l\right)} \right\} \; : \; l \in \mathcal{R}\right\} \cup \left\{ \overline{l}_{\infty}\right\} .\]
-Entonces, $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ es un plano proyectivo. 
+\begin{eg}[Completación proyectiva de $\displaystyle \K^2 $]
+	Sea $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $ un plano afín sobre $\displaystyle \K^{3} $. Consideramos $\displaystyle \mathcal{P} = \left\{ \left(u_{1}, u_{2}\right) \; : \; u_{i} \in \K\right\}  $. Construimos la siguiente aplicación:
+		\[
+		\begin{split}
+			\K^{2} & \to \mathbb{P}\left(\K^{3}\right)\\
+			\left(u_{1}, u_{2}\right) & \to \left[1 : u_{1} : u_{2}\right] .
+		\end{split}
+		\]
+		Vamos a ver que es inyectiva. Si $\displaystyle \left(u_{1}, u_{2}\right) \neq \left(u_{1}', u_{2}'\right) $, no existe $\displaystyle \lambda \in \K $ tal que $\displaystyle [1: u_{1} : u_{2} ] = \lambda [1 : u_{1}' : u_{2}']$. \\
+		Sabemos que las rectas de $\displaystyle \K^{2} $ son de la forma $\displaystyle l = \left\{ ax_{1} + bx_{2} = c\right\} $. Vemos que 
+		\[\left(u_{1}, u_{2}\right) \in l \iff [1 : u_{1} : u_{2}] \in \overline{l} = \left\{ ax_{1} + bx_{2} = cx_{0}\right\}  .\]
+		Por ahora todo ha sido notación. Vamos a ver la construcción. Tenemos que $\displaystyle l = \left\{ ax_{1} + b_{2} = c\right\}  $ es paralela a $\displaystyle m = \left\{ a'x_{1} + b'x_{2} = c'\right\}  $ si y solo si existe $\displaystyle \lambda \in \K $ tal que $\displaystyle \left(a,b\right) = \lambda \left(a',b'\right) $. Consideremos $\displaystyle \mathcal{H} = \left\{ \left\{ ax_{1} + bx_{2} = d\right\} \; : \; d \in \K\right\} $ y tomamos $\displaystyle P_{\mathcal{H}} = [0 : b : -a] $. \\
+Podemos hacer un par de observaciones:
+\begin{itemize}
+	\item $\displaystyle \left[0 : b : -a\right] \in \overline{l} = \left\{ ax_{1} + bx_{2} = cx_{0}\right\}  $.
+	\item $\displaystyle \overline{l} = l \cup \left\{ [0 : b : -a]\right\}  $.
+	\item $\displaystyle \overline{l}_{\infty} = \left\{ [0 : u_{1} : u_{2}] \; : \; u_{i} \in \K\right\}  $.
+\end{itemize}
+Ahora ya podemos construir $\displaystyle \overline{\mathcal{P}} $ y $\displaystyle \overline{\mathcal{R}} $:
+\[\overline{\mathcal{P}} = P \cup \overline{l}_{\infty} = \left\{ [1 : u_{1} : u_{2}] \; : \; u_{i} \in \K\right\} \cup \left\{ [0 : u_{1} : u_{2}] \; : \; u_{i} \in \K\right\} = \mathbb{P}\left(\K^{3}\right).\]
+\[\overline{\mathcal{R}} = \mathcal{R} \cup \{\overline{l}\} = \left\{ \overline{l}_{\infty} = \left\{ ax_{1} + bx_{2} = cx_{0} \; : \; \left(a,b\right) \neq \left(0,0\right)\right\} \right\} \cup \left\{ x_{0} = 0\right\}  .\]
+
+\end{eg}
+ 
 \subsection{Construcción de un plano afín desde un plano proyectivo}
-Sea $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ un plano proyectivo y sea $\displaystyle \overline{l}_{\infty} \in \overline{\mathcal{P}} $ una recta cualquiera \footnote{Realmente es una recta cualquiera, lo que pasa es que la vamos a tratar como la recta infinita.}. Tomamos $\displaystyle \mathcal{P} = \overline{\mathcal{P}}  - \overline{l}_{\infty} $ y $\displaystyle \overline{\mathcal{R}} = \left\{ l = \overline{l} - \left(\overline{l} \cap \overline{l}_{\infty}\right) \; : \; \overline{l} \in \overline{\mathcal{R}} - \left\{ \overline{l}_{\infty}\right\} \right\}  $.
+Sea $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ un plano proyectivo y sea $\displaystyle \overline{l}_{\infty} \in \overline{\mathcal{P}} $ una recta cualquiera \footnote{Realmente es una recta cualquiera, lo que pasa es que la vamos a tratar como la recta infinita.}. Tomamos 
+\[ \mathcal{P} = \overline{\mathcal{P}}  - \overline{l}_{\infty}.\]
+\[ \overline{\mathcal{R}} = \left\{ l = \overline{l} - \left(\overline{l} \cap \overline{l}_{\infty}\right) \; : \; \overline{l} \in \overline{\mathcal{R}} - \left\{ \overline{l}_{\infty}\right\} \right\}.\]
+
 \begin{theorem}
 El par $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $ construido anteriormente es un plano afín. 
 \end{theorem}
@@ -451,7 +492,7 @@ Sea $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $
 \begin{description}
 \item[P1'.] Como \textbf{P1'} y \textbf{P1} son lo mismo, es trivial que se cumple.
 \item[P2'.] Por \textbf{P2} sabemos que $\displaystyle \overline{l} \cap \overline{m} \neq \emptyset$. Por \textbf{P1}, si $\displaystyle \left|\overline{l} \cap \overline{m}\right|  \geq 2$, tenemos que $\displaystyle \overline{l} = \overline{m} $. Así, debe ser que si $\displaystyle \overline{l} \neq \overline{m} $, entonces $\displaystyle \left|\overline{l} \cap \overline{m}\right| =1 $. 
-\item[P3'.] Por \textbf{P3} cada recta contiene al menos tres puntos. Por un ejercicio de la hoja, tenemos que $\displaystyle \left|\overline{\mathcal{R}}\right| \geq 3 $, por lo que si $\displaystyle \overline{l}, \overline{m}, \overline{r} \in \overline{\mathcal{R}}$ son distintas, y $\displaystyle P \in \overline{\mathcal{P}} $ con $\displaystyle P \in \overline{l} \cap \overline{m} \overline{r} $, tenemos que $\displaystyle P $ está en tres rectas. Si $\displaystyle P \not\in \overline{l} $, existe $\displaystyle A_{1}, A_{2}, A_{3} \in \overline{l} $ y existen $\displaystyle \overline{l}\left(P,A_{1}\right), \overline{l}\left(P,A_{2}\right),\overline{l}\left(P,A_{3}\right) \in \overline{\mathcal{R}} $ tres rectas distintas.
+\item[P3'.] Por \textbf{P3} cada recta contiene al menos tres puntos. Por un ejercicio de la hoja, tenemos que $\displaystyle \left|\overline{\mathcal{R}}\right| \geq 3 $, por lo que si $\displaystyle \overline{l}, \overline{m}, \overline{r} \in \overline{\mathcal{R}}$ son distintas, y $\displaystyle P \in \overline{\mathcal{P}} $ con $\displaystyle P \in \overline{l} \cap \overline{m} \cap \overline{r} $, tenemos que $\displaystyle P $ está en tres rectas. Si $\displaystyle P \not\in \overline{l} $, existen $\displaystyle A_{1}, A_{2}, A_{3} \in \overline{l} $ y existen $\displaystyle \overline{l}\left(P,A_{1}\right), \overline{l}\left(P,A_{2}\right),\overline{l}\left(P,A_{3}\right) \in \overline{\mathcal{R}} $ tres rectas distintas.
 \end{description}
 \end{proof}
 \begin{theorem}
@@ -475,4 +516,59 @@ En particular, toda afirmación cierta usando \textbf{P1}, \textbf{P2} y \textbf
 \begin{colorary}
 En un plano proyectivo cada par de puntos está contenido en el mismo número de rectas. \footnote{Esta es la afirmación dual del corolario anterior.} 
 \end{colorary}
+\begin{eg}
+Consideremos la afirmación: 
+\[ \forall \overline{l}_{1}, \overline{l}_{2} \in \overline{\mathcal{R}}, \overline{l}_{1} \neq \overline{l}_{2}, \exists P \in \overline{\mathcal{P}}, P \not\in \overline{l}_{1} \cup \overline{l}_{2}.\]
+La afirmación dual será:
+\[\forall P_{1}, P_{2} \in \overline{\mathcal{P}}, P_{1} \neq P_{2}, \exist \overline{l} \in \overline{\mathcal{R}}, \overline{l} \supset \left\{ P_{1}, P_{2}\right\}  .\]
+Demostración de la primera afirmación: 
+\begin{itemize}
+\item Por \textbf{P2'} tenemos que existe un único $\displaystyle Q \in \overline{l}_{1} \cap \overline{l}_{2} $ con $\displaystyle Q \in \overline{\mathcal{P}} $.
+\item Por \textbf{P3'} existe $\displaystyle \overline{r} \in \overline{\mathcal{R}} $ tal que $\displaystyle \overline{r} \neq \overline{l}_{1}, \overline{l}_{2} $ y $\displaystyle Q \in \overline{r} $.
+\item Por \textbf{P3'} existe $\displaystyle A \in \overline{r} $ tal que $\displaystyle A \neq Q $ y $\displaystyle A \in \overline{\mathcal{P}} $.
+\item Tenemos que $\displaystyle A \in \overline{l}_{1} $, por lo que $\displaystyle A,Q \in \overline{r} \cap \overline{l}_{1} $ y por \textbf{P2'} se tiene que $\displaystyle A = Q $, que es una contradicción. Por tanto, $\displaystyle A \not\in \overline{l}_{1} \cup \overline{l}_{2} $. \qed
+\end{itemize}
+Demostramos la afirmación dual: 
+\begin{itemize}
+\item Por \textbf{P1'} tenemos que existe una única $\displaystyle \overline{l} \in \overline{\mathcal{R}} $ con $\displaystyle P_{1}, P_{2 } \in \overline{l} $.
+\item Por \textbf{P3'} tenemos que existe $\displaystyle Q \in \overline{l} $ tal que $\displaystyle Q \neq P_{1}, P_{2} $.
+\item Por \textbf{P3'}, existe $\displaystyle \overline{r} \in \overline{\mathcal{R}} $ con $\displaystyle \overline{r} \neq \overline{l} $.
+\item Si $\displaystyle P_{1} \in \overline{r} $, tenemos que $\displaystyle P_{1}, Q \in \overline{r} $, por lo que $\displaystyle \overline{r} = \overline{l} $, que es una contradicción, por lo que $\displaystyle P_{1}, P_{2} \not\in \overline{r} $. \qed
+\end{itemize}
+\end{eg}
+\section{Independencia del teorema de Desargues}
+\begin{theorem}[Desargues proyectivo]
+Sean $\displaystyle A,B,C,A', B', C' $ puntos dos a dos distintos y ningún triple alineado \footnote{Buscamos poder tener dos tríangulos: $\displaystyle ABC $ y $\displaystyle A'B'C' $.}. Si $\displaystyle \overline{l}\left(A,A'\right) \cap \overline{l}\left(B,B'\right)\cap \overline{l}\left(C,C'\right) = O \in \overline{\mathcal{P}} $, entonces $\displaystyle \overline{l}\left(A,B\right) \cap \overline{l}\left(A',B'\right) $, $\displaystyle \overline{l}\left(A,C\right) \cap \overline{l}\left(A',C'\right) $ y $\displaystyle \overline{l}\left(B,C\right) \cap \overline{l}\left(B',C'\right) $ están alineados.
+\end{theorem}
+\begin{theorem}
+Sea $\displaystyle \K $ un cuerpo. Entonces, el teorema de Desargues se cumple en $\displaystyle \mathbb{P}\left(\K^{3}\right) $.
+\end{theorem}
+\begin{prop}
+Supongamos que $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ es un plano proyectivo que cumple el teorema de Desargues. Sea $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $ un plano afín obtenido de $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ quitando una recta. Entonces, dados $\displaystyle A,A',B,B',C,C'  $ puntos dos a dos distintos de $\displaystyle \mathcal{P} $, ningún triple alineado, tales que $\displaystyle l\left(A,A'\right) | | l\left(B, B'\right) | | l\left(C,C'\right) $, $\displaystyle l\left(A,B\right) | | l\left(A',B'\right) $ y $\displaystyle l\left(A,C\right) | | l\left(A',B'\right) $. Entonces, $\displaystyle l\left(B,C\right) | | l\left(B',C'\right) $.
+\end{prop}
+\begin{proof}
+Si $\displaystyle \overline{\mathcal{P}} = \mathcal{P} \cup \overline{l}_{\infty} $, tenemos que 
+\[l\left(A,A'\right) | | l\left(B,B'\right) | | l\left(C,C'\right) \Rightarrow \overline{l}\left(A,A'\right) \cap \overline{l}\left(B,B'\right) \cap \overline{l}\left(C,C'\right) = O \in \overline{l}_{\infty} .\]
+De forma similar, como $\displaystyle l\left(A,B\right) | | l\left(A', B'\right) $ y $\displaystyle l\left(A,C\right) | | l\left(A',C'\right) $, se tiene que $\displaystyle \overline{l}\left(A,B\right) \cap \overline{l}\left(A',B'\right), \overline{l}\left(A,C\right)\cap \overline{l}\left(A',C'\right) \in \overline{l}_{\infty} $. Como se cumple el teorema de Desargues, tenemos que $\displaystyle \overline{l}\left(B,C\right) \cap \overline{l}\left(B',C'\right) \in \overline{l}_{\infty} $, entonces $\displaystyle l\left(B,C\right) | | l\left(B',C'\right) $.
+\end{proof}
+Vamos a probar que existen planos proyectivos que no cumplen el teorema de Desargues viendo un plano afín que no cumple la proposición anterior. 
+\begin{eg}[Plano de Moulton]
+Consideremos el plano afín $\displaystyle \mathcal{P} = \R^{2} $ y tenemos que $\displaystyle \mathcal{R} $ es el conjunto de:
+\begin{itemize}
+\item Rectas horizontales, $\displaystyle x_{2} = k $.
+\item Rectas verticales, $\displaystyle x_{1} = k $.
+\item Rectas de pendiente negativa, es decir, $\displaystyle x_{2} = \lambda x_{1} + c $, $\displaystyle \lambda < 0 $.
+\item Rectas quebradas de la forma 
+	\[ x_{2} = 
+	\begin{cases}
+	2\lambda\left(x_{1}-c\right), \; x_{1} \leq c \\
+	\lambda\left(x_{1}-c\right), \; x_{1} \geq c
+	\end{cases}
+	\]
+	con $\displaystyle \lambda > 0 $.
+\end{itemize}
+Vamos a ve que el plano de Moulton no cumple la proposición. 
+% Enseñar dibujo
+Tenemos que $\displaystyle l\left(A,A'\right) | | l\left(B,B'\right) | | l\left(C,C'\right) $ son verticales y $\displaystyle l\left(A,B\right) $ y $\displaystyle l\left(A,B'\right) $ son horizontales y paralelas. Las rectas $\displaystyle l\left(A,C\right) | | l\left(A',C'\right) $ son paralelas y de pendiente negativa. Sin embargo, por construcción tenemos que $\displaystyle l\left(B,C\right) $ y $\displaystyle l\left(B',C'\right) $ no son paralelas. Este es el primer ejemplo de un plano afín que no viene de un espacio vectorial. 
+\end{eg}
 

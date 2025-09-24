@@ -106,6 +106,7 @@ Por la inversa del inverso, tenemos que $\displaystyle \left(ab\right)^{-1} = b^
 \begin{observation}
 Se puede ver que $\displaystyle \SL_{n}\left(\R\right) \subset \GL_{n}\left(\R\right) $. 
 \end{observation}
+\section{Subgrupos}
 \begin{definition}[Subgrupo]
 Sea $\displaystyle G $ un grupo y $\displaystyle H \subset G $. Diremos que $\displaystyle H $ es \textbf{subgrupo} de $\displaystyle G $, $\displaystyle H \leq G $, si $\displaystyle H $ es cerrado para la operación de $\displaystyle G $, esto es
 \begin{itemize}
@@ -193,6 +194,7 @@ Se puede comprobar que $\displaystyle Z\left(G\right) = \bigcap_{x \in G}C_{G}\l
 \item[(ii)] Si $\displaystyle x \in \bigcap_{g \in G}C_{G}\left(g\right) $, $\displaystyle x \in C_{G}\left(g\right) $, $\displaystyle \forall g \in G $. Por lo que $\displaystyle xg = gx $, $\displaystyle \forall g \in G $ y $\displaystyle x \in Z\left(G\right) $.
 \end{description}
 \end{observation}
+\section{Homomorfismos}
 \begin{definition}[Homomorfismo]
 Sean $\displaystyle G_{1} $ y $\displaystyle G_{2} $ grupos tales que $\displaystyle \cdot _{G_{1}} $ y $\displaystyle \cdot _{G_{2}} $ son sus operaciones y $\displaystyle e_{G_{1}} $ y $\displaystyle e_{G_{2}} $ sus elementos neutros. Entonces, $\displaystyle f : G_{1} \to G_{2} $ es un \textbf{homomorfismo} de grupos si $\displaystyle \forall a,b \in G_{1} $, 
 \[f\left(a \cdot _{G_{1}} b\right) = f\left(a\right) \cdot _{G_{2}}f\left(b\right) .\]
@@ -403,5 +405,71 @@ Ahora vamos a ver que es biyectiva.
 \item[Sobreyectiva.]  Si $\displaystyle c \in H $ con $\displaystyle c = b^{k} $ para algún $\displaystyle k = 0, \ldots, \left|H\right|-1 $, tenemos que $\displaystyle f\left(a^{k}\right)= b^{k} = c $.
 \end{description}
 Así, está claro que $\displaystyle f $ es un isomorfismo.
+\end{proof}
+\begin{notation}
+Vamos a llamar $\displaystyle C_{n} $ al grupo cíclico con la multiplicación y $\displaystyle \Z_{n} $ al grupo cíclico con la suma. 
+\end{notation}
+\begin{definition}[Orden de un elemento]
+Sea $\displaystyle G $ un grupo y $\displaystyle a \in G $. Llamaremos \textbf{orden} de $\displaystyle a $, $\displaystyle o\left(a\right) $, al cardinal del grupo que genera, es decir, $\displaystyle o\left(a\right) = \left|\left\langle a \right\rangle \right| $.
+\end{definition}
+\begin{observation} Sean $\displaystyle G $ y $\displaystyle H $ grupos.
+\begin{enumerate}
+\item Si $\displaystyle G $ es finito y $\displaystyle a \in G $, tenemos que 
+	\[o\left(a\right) = m = \min \left\{ k \in \N \; :\; a^{k} = e\right\}  .\]
+	Si $\displaystyle \left\langle a \right\rangle  $ es finito, entonces se aplica de igual forma. En particular, $\displaystyle o\left(a\right) | k \iff a^{k} = e $, para $\displaystyle k \in \Z / \left\{ 0\right\}  $.
+\item Supongamos que $\displaystyle G $ y $\displaystyle H $ son finitos. Sea $\displaystyle f : G \to H $ un homomorfismo y sea $\displaystyle x \in G $. Entonces $\displaystyle o\left(f\left(x\right)\right) | o\left(x\right) $. En efecto, tenemos que
+	\[f\left(x\right)^{o\left(x\right)} = f\left(x^{o\left(x\right)}\right) = f\left(e_{G}\right) = e_{H} \iff o\left(f\left(x\right)\right) | o\left(x\right) .\]
+Además, si $\displaystyle f : G \to H $ es isomorfismo, entonces sabemos que existe $\displaystyle f^{-1} : H \to G $ que también es isomorfismo. De aquí, obtenemos que $\displaystyle o\left(x\right) | o\left(f\left(x\right)\right) $, por lo que $\displaystyle o\left(x\right) = o\left(f\left(x\right)\right) $.	
+\end{enumerate}
+\end{observation}
+\begin{eg}
+\begin{enumerate}
+\item Consideremos los grupos $\displaystyle C_{2} \times C_{4} $ y $\displaystyle C_{8} $. Ambos tienen orden 8, sin embargo no son isomorfos. En $\displaystyle C_{8} $ hay elementos de orden 8, puesto que $\displaystyle C_{8} = \left\langle a \right\rangle  $ tal que $\displaystyle a^{8} = e $, pero en $\displaystyle C_{2} \times C_{4} $ no hay elementos de orden 8, lo más que hay es de orden 4. En efecto, si $\displaystyle \left(a,b\right) \in C_{2} \times C_{4} $ tenemos que
+	\[ \left(a,b\right)^{4} = \left(a^{4}, b^{4}\right) = \left(e_{C_{2}}, e_{C_{4}}\right) \in C_{2} \times C_{4}.\]
+	Tenemos que $\displaystyle C_{8} = \left\{ e, a, \ldots, a^{n-1}\right\}  $ y 
+	\[C_{2} \times C_{4} = \left\{ \left(e,e\right), \left(e,b\right), \left(e,b^{2}\right), \left(e,b^{3}\right), \left(c,e\right), \left(c,b\right), \left(c,b^{2}\right), \left(c,b^{3}\right)\right\}  .\]
+\item Tomemos los grupos $\displaystyle \left(\C, +, 0\right) $ y $\displaystyle \left(\C / \left\{ 0\right\} , \cdot, 1\right) $. Supongamos que existe un homomorfismo de grupos, $\displaystyle f : \C/ \left\{ 0\right\}  \to \C $. Esta aplicación nunca podrá ser inyectiva. En efecto, tenemos que $\displaystyle i \in \C/ \left\{ 0\right\}  $ y $\displaystyle o\left(i\right) = 4 $, pero si $\displaystyle z \in \C $, tenemos que $\displaystyle o\left(z\right) $ no es finito. 
+\end{enumerate}
+\end{eg}
+\begin{lema}
+Sea $\displaystyle G $ un grupo y sea $\displaystyle a \in G $ tal que $\displaystyle o\left(a\right) $ es finito. Entonces,
+\begin{enumerate}
+\item $\displaystyle o\left(a\right) = o\left(a^{-1}\right) $.
+\item $\displaystyle \forall k \in \N $, si $\displaystyle \mcd\left(o\left(a\right), k\right) = 1 $, entonces $\displaystyle o\left(a^{k}\right) = o\left(a\right) $. En general,
+	\[o\left(a^{k}\right) = \frac{o\left(a\right)}{\mcd\left(o\left(a\right), k\right)} .\]
+\item Si $\displaystyle b \in G $ con $\displaystyle o\left(b\right) $ finito tal que $\displaystyle ab = ba $ y $\displaystyle \mcd\left(o\left(a\right), o\left(b\right)\right) = 1 $, entonces $\displaystyle o\left(ab\right) = o\left(a\right) o \left(b\right)$.
+\end{enumerate}
+\end{lema}
+\begin{proof}
+\begin{enumerate}
+\item Como $\displaystyle \left\langle a \right\rangle  = \left\langle a^{-1} \right\rangle  $, tenemos que
+	\[o\left(a\right) = \left|\left\langle a \right\rangle \right| = \left|\left\langle a^{-1} \right\rangle \right| = o\left(a^{-1}\right) .\]
+\item Fijemos $\displaystyle k\in \N $. Sea $\displaystyle r \geq 1 $ con $\displaystyle  r \in \N $, entonces tenemos que
+\[
+\begin{split}
+	a^{kr } = e \iff & o\left(a\right) | kr \iff o\left(a\right) | \mcd\left(o\left(a\right)r, kr\right) \\
+	\iff & o\left(a\right) |r \cdot \mcd\left(o\left(a\right), k\right) \iff \frac{o\left(a\right)}{\mcd\left(o\left(a\right), k\right)} | r.
+\end{split}
+\]
+Así, tenemos que $\displaystyle o\left(a^{k}\right) = \frac{o\left(a\right)}{\mcd\left(o\left(a\right), k\right)} $.	
+\item Supongamos que $\displaystyle ab = ba $ y que $\displaystyle \mcd\left(o\left(a\right), o\left(b\right)\right) = 1 $. Tenemos que 
+	\[\left(ab\right)^{o\left(a\right)o\left(b\right)} = a^{o\left(a\right)o\left(b\right)}b^{o\left(a\right)o\left(b\right)} = \left(a^{o\left(a\right)}\right)^{o\left(b\right)}\left(b^{o\left(b\right)}\right)^{o\left(a\right)} = e \cdot e = e .\]
+Tenemos que $\displaystyle o\left(ab\right) | o\left(a\right)o\left(b\right) $. Por otro lado, tenemos que 
+\[a^{o\left(ab\right)}b^{o\left(ab\right)} = \left(ab\right)^{o\left(ab\right)} = e .\]
+Así, tenemos que $\displaystyle a^{o\left(ab\right)} = b^{-o\left(ab\right)} $ y por \textbf{(1)} tenemos que $\displaystyle o\left(a^{o\left(ab\right)}\right) = o\left(b^{o\left(ab\right)}\right) $. Por \textbf{(2)} tenemos que 
+\[\frac{o\left(a\right)}{\mcd\left(o\left(a\right), o\left(ab\right)\right)} = o\left(a^{o\left(ab\right)}\right) = o\left(b^{o\left(ab\right)}\right) = \frac{o\left(b\right)}{\mcd\left(o\left(b\right), o\left(ab\right)\right)} .\]
+Sabemos que los órdenes son números naturales y que $\displaystyle \mcd\left(o\left(a\right), o\left(b\right)\right) = 1 $, por tanto debe ser que 
+\[\frac{o\left(a\right)}{\mcd\left(o\left(a\right), o\left(ab\right)\right)} = \frac{o\left(b\right)}{\mcd\left(o\left(b\right), o\left(ab\right)\right)} = 1 .\]
+Así, obtenemos que $\displaystyle o\left(a\right) = \mcd\left(o\left(a\right), o\left(ab\right)\right) $ y $\displaystyle o\left(b\right) = \mcd\left(o\left(b\right), o\left(ab\right)\right) $, por lo que $\displaystyle o\left(a\right) | o\left(ab\right) $ y $\displaystyle o\left(b\right) | o \left(ab\right) $. Como $\displaystyle \mcd\left(o\left(a\right), o\left(b\right)\right) =1 $, tenemos que $\displaystyle o\left(a\right)o\left(b\right) |o\left(ab\right) $. Así, podemos concluir que $\displaystyle o\left(a\right)o\left(b\right)=o\left(ab\right) $.
+\end{enumerate}
+\end{proof}
+\begin{colorary}
+Sean $\displaystyle n,m \geq 1 $ enteros naturales tales que $\displaystyle \mcd\left(n,m\right) = 1 $. Entonces, el grupo $\displaystyle C_{n} \times C_{m} \cong C_{nm} $ es el único grupo cíclico de orden $\displaystyle n \cdot m $ salvo isomorfía.
+\end{colorary}
+\begin{proof}
+La unicidad ya la hemos visto. Lo único que falta por ver es que $\displaystyle C_{n}\times C_{m} $ es cíclico. Supongamos que $\displaystyle C_{n} = \left\langle a \right\rangle  $ y $\displaystyle C_{m} = \left\langle b \right\rangle  $. Tenemos que $\displaystyle \left(a, 1_{m}\right) \in C_{n} \times C_{m} $ y $\displaystyle o\left(a,1_{m}\right) = n $.
+De forma análoga se puede ver que $\displaystyle o\left(1_{n}, b\right) = m $. Tenemos que 
+\[o\left(\left(a, 1_{m}\right)\left(1_{n}, b\right)\right) = o\left(a,1_{m}\right)o\left(1_{n},b\right) = nm .\]
+Así, tenemos que $\displaystyle \left\langle \left(a,b\right) \right\rangle \subset C_{n} \times C_{m} $ y $\displaystyle \left|C_{n} \times C_{m}\right| = o\left(a,b\right) $, por lo que debe ser que $\displaystyle C_{n}\times C_{m} = \left\langle \left(a,b\right) \right\rangle  $ y $\displaystyle C_{n} \times C_{m} $ es cíclico.
 \end{proof}
 
