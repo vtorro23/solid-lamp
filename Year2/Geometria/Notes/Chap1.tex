@@ -446,7 +446,6 @@ Podemos hacer un par de observaciones:
 Ahora ya podemos construir $\displaystyle \overline{\mathcal{P}} $ y $\displaystyle \overline{\mathcal{R}} $:
 \[\overline{\mathcal{P}} = P \cup \overline{l}_{\infty} = \left\{ [1 : u_{1} : u_{2}] \; : \; u_{i} \in \K\right\} \cup \left\{ [0 : u_{1} : u_{2}] \; : \; u_{i} \in \K\right\} = \mathbb{P}\left(\K^{3}\right).\]
 \[\overline{\mathcal{R}} = \mathcal{R} \cup \{\overline{l}\} = \left\{ \overline{l}_{\infty} = \left\{ ax_{1} + bx_{2} = cx_{0} \; : \; \left(a,b\right) \neq \left(0,0\right)\right\} \right\} \cup \left\{ x_{0} = 0\right\}  .\]
-
 \end{eg}
  
 \subsection{Construcción de un plano afín desde un plano proyectivo}
@@ -464,7 +463,7 @@ Comprobemos que se cumplen los axiomas.
 \item[A2.] Sea $\displaystyle l \in \mathcal{R} $, por lo que $\displaystyle l = \overline{l} - \left\{ Q\right\}  $ donde $\displaystyle \overline{l} \in \overline{\mathcal{R}} $ y $\displaystyle Q \in \overline{l}_{\infty} $. Sea $\displaystyle P \in \mathcal{P} $ tal que $\displaystyle P \not\in l $.
 	Por \textbf{P1} tenemos que existe una única $\displaystyle \overline{m} \in \overline{\mathcal{R}} $ que une $\displaystyle P $ y $\displaystyle Q $. Por tanto
 	\[ m = \overline{m} - \left(\overline{m} \cap \overline{l}_{\infty}\right) = \overline{m} - \left\{ Q\right\}  .\]
-Si $\displaystyle m \cap l \neq \emptyset $, existe $\displaystyle Q_{2} \in \mathcal{P} $ tal que $\displaystyle Q_{2} \in m \cap l \in \overline{m} \cap \overline{l} $ y $\displaystyle Q \in \overline{m} \cap \overline{l} $. Así, tenemos que $\displaystyle \overline{m} = \overline{l} $, tenemos que $\displaystyle P \not\in \overline{l} $ y $\displaystyle P \in \overline{m} $, lo que es una contradicción. Así, debe ser que $\displaystyle m | | l $. La unicidad se deduce por construcción.
+Si $\displaystyle m \cap l \neq \emptyset $, existe $\displaystyle Q_{2} \in \mathcal{P} $ tal que $\displaystyle Q_{2} \in m \cap l \subset \overline{m} \cap \overline{l} $ y $\displaystyle Q \in \overline{m} \cap \overline{l} $. Así, tenemos que $\displaystyle \overline{m} = \overline{l} $, y como $\displaystyle P \not\in \overline{l} $ y $\displaystyle P \in \overline{m} $, obtenemos una contradicción. Así, debe ser que $\displaystyle m | | l $. La unicidad se deduce por construcción.
 \item[A3.] Por \textbf{P3}, tenemos que $\displaystyle \left|\overline{l}\right| \geq 3 $, $\displaystyle \forall \overline{l} \in \overline{\mathcal{R}} $. Tenemos entonces que si $\displaystyle l \in \mathcal{R} $ 
 	\[ \left|l \right| = \left|\overline{l} - \left(\overline{l} \cap \overline{l}_{\infty}\right)\right| \geq 2  .\]
 Por lo que se vio en uno de los ejercicios, tenemos que $\displaystyle \left|\overline{\mathcal{R}}\right| \geq 3 $, por lo que
@@ -520,13 +519,13 @@ En un plano proyectivo cada par de puntos está contenido en el mismo número de
 Consideremos la afirmación: 
 \[ \forall \overline{l}_{1}, \overline{l}_{2} \in \overline{\mathcal{R}}, \overline{l}_{1} \neq \overline{l}_{2}, \exists P \in \overline{\mathcal{P}}, P \not\in \overline{l}_{1} \cup \overline{l}_{2}.\]
 La afirmación dual será:
-\[\forall P_{1}, P_{2} \in \overline{\mathcal{P}}, P_{1} \neq P_{2}, \exist \overline{l} \in \overline{\mathcal{R}}, \overline{l} \supset \left\{ P_{1}, P_{2}\right\}  .\]
+\[\forall P_{1}, P_{2} \in \overline{\mathcal{P}}, P_{1} \neq P_{2}, \exists \overline{l} \in \overline{\mathcal{R}}, \overline{l} \not\supset \left\{ P_{1}, P_{2}\right\}  .\]
 Demostración de la primera afirmación: 
 \begin{itemize}
 \item Por \textbf{P2'} tenemos que existe un único $\displaystyle Q \in \overline{l}_{1} \cap \overline{l}_{2} $ con $\displaystyle Q \in \overline{\mathcal{P}} $.
 \item Por \textbf{P3'} existe $\displaystyle \overline{r} \in \overline{\mathcal{R}} $ tal que $\displaystyle \overline{r} \neq \overline{l}_{1}, \overline{l}_{2} $ y $\displaystyle Q \in \overline{r} $.
 \item Por \textbf{P3'} existe $\displaystyle A \in \overline{r} $ tal que $\displaystyle A \neq Q $ y $\displaystyle A \in \overline{\mathcal{P}} $.
-\item Tenemos que $\displaystyle A \in \overline{l}_{1} $, por lo que $\displaystyle A,Q \in \overline{r} \cap \overline{l}_{1} $ y por \textbf{P2'} se tiene que $\displaystyle A = Q $, que es una contradicción. Por tanto, $\displaystyle A \not\in \overline{l}_{1} \cup \overline{l}_{2} $. \qed
+\item Tenemos que si $\displaystyle A \in \overline{l}_{1} $ se tiene que $\displaystyle A,Q \in \overline{r} \cap \overline{l}_{1} $ y por \textbf{P2'} se tiene que $\displaystyle A = Q $, que es una contradicción. Por tanto, $\displaystyle A \not\in \overline{l}_{1} \cup \overline{l}_{2} $. \qed
 \end{itemize}
 Demostramos la afirmación dual: 
 \begin{itemize}
@@ -544,7 +543,7 @@ Sean $\displaystyle A,B,C,A', B', C' $ puntos dos a dos distintos y ningún trip
 Sea $\displaystyle \K $ un cuerpo. Entonces, el teorema de Desargues se cumple en $\displaystyle \mathbb{P}\left(\K^{3}\right) $.
 \end{theorem}
 \begin{prop}
-Supongamos que $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ es un plano proyectivo que cumple el teorema de Desargues. Sea $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $ un plano afín obtenido de $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ quitando una recta. Entonces, dados $\displaystyle A,A',B,B',C,C'  $ puntos dos a dos distintos de $\displaystyle \mathcal{P} $, ningún triple alineado, tales que $\displaystyle l\left(A,A'\right) | | l\left(B, B'\right) | | l\left(C,C'\right) $, $\displaystyle l\left(A,B\right) | | l\left(A',B'\right) $ y $\displaystyle l\left(A,C\right) | | l\left(A',B'\right) $. Entonces, $\displaystyle l\left(B,C\right) | | l\left(B',C'\right) $.
+Supongamos que $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ es un plano proyectivo que cumple el teorema de Desargues. Sea $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $ un plano afín obtenido de $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ quitando una recta. Entonces, dados $\displaystyle A,A',B,B',C,C'  $ puntos dos a dos distintos de $\displaystyle \mathcal{P} $, ningún triple alineado, tales que $\displaystyle l\left(A,A'\right) | | l\left(B, B'\right) | | l\left(C,C'\right) $, $\displaystyle l\left(A,B\right) | | l\left(A',B'\right) $ y $\displaystyle l\left(A,C\right) | | l\left(A',C'\right) $. Entonces, $\displaystyle l\left(B,C\right) | | l\left(B',C'\right) $.
 \end{prop}
 \begin{proof}
 Si $\displaystyle \overline{\mathcal{P}} = \mathcal{P} \cup \overline{l}_{\infty} $, tenemos que 
@@ -567,8 +566,12 @@ Consideremos el plano afín $\displaystyle \mathcal{P} = \R^{2} $ y tenemos que 
 	\]
 	con $\displaystyle \lambda > 0 $.
 \end{itemize}
-Vamos a ve que el plano de Moulton no cumple la proposición. 
-% Enseñar dibujo
-Tenemos que $\displaystyle l\left(A,A'\right) | | l\left(B,B'\right) | | l\left(C,C'\right) $ son verticales y $\displaystyle l\left(A,B\right) $ y $\displaystyle l\left(A,B'\right) $ son horizontales y paralelas. Las rectas $\displaystyle l\left(A,C\right) | | l\left(A',C'\right) $ son paralelas y de pendiente negativa. Sin embargo, por construcción tenemos que $\displaystyle l\left(B,C\right) $ y $\displaystyle l\left(B',C'\right) $ no son paralelas. Este es el primer ejemplo de un plano afín que no viene de un espacio vectorial. 
+Vamos a ver que el plano de Moulton no cumple la proposición. 
+\begin{center}
+	\includegraphics[scale=0.5]{~/Desktop/Images/plano_moulton.png}
+\end{center}
+Tenemos que  
+\[ l\left(A,A'\right) | | l\left(B,B'\right) | | l\left(C,C'\right)\]
+son verticales y $\displaystyle l\left(A,B\right) $ y $\displaystyle l\left(A,B'\right) $ son horizontales y paralelas. Las rectas $\displaystyle l\left(A,C\right) $ y $l\left(A',C'\right) $ son paralelas y de pendiente negativa. Sin embargo, por construcción tenemos que $\displaystyle l\left(B,C\right) $ y $\displaystyle l\left(B',C'\right) $ no son paralelas. Este es el primer ejemplo de un plano afín que no viene de un espacio vectorial. 
 \end{eg}
 

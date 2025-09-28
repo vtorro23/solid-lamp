@@ -472,4 +472,37 @@ De forma análoga se puede ver que $\displaystyle o\left(1_{n}, b\right) = m $. 
 \[o\left(\left(a, 1_{m}\right)\left(1_{n}, b\right)\right) = o\left(a,1_{m}\right)o\left(1_{n},b\right) = nm .\]
 Así, tenemos que $\displaystyle \left\langle \left(a,b\right) \right\rangle \subset C_{n} \times C_{m} $ y $\displaystyle \left|C_{n} \times C_{m}\right| = o\left(a,b\right) $, por lo que debe ser que $\displaystyle C_{n}\times C_{m} = \left\langle \left(a,b\right) \right\rangle  $ y $\displaystyle C_{n} \times C_{m} $ es cíclico.
 \end{proof}
+\begin{prop}
+Sea $\displaystyle G $ un grupo cíclico tal que $\displaystyle G = \left\langle a \right\rangle  $, y sea $\displaystyle d > 0 $ de forma que $\displaystyle d | o\left(a\right) = n $. Entonces existe un único subgrupo $\displaystyle H \leq G $ de orden $\displaystyle d $ tal que $\displaystyle H = \left\langle a^{\frac{n}{d}} \right\rangle  $.
+\end{prop}
+\begin{proof}
+Sea $\displaystyle k = \frac{n}{d} $. Vamos a considerar el homomorfismo de grupos $\displaystyle f : G \to G : x \to x^{d} $. Cogemos 
+\[  H = \Ker\left(f\right) = \left\{ x \in G \; : \; x^{d} = e\right\} \leq G.\]
+Como $\displaystyle H $ es subgrupo de un grupo cíclico, tenemos que $\displaystyle H $ también es cíclico. Así, para un $\displaystyle r \in \N $, $\displaystyle H = \left\langle a^{r} \right\rangle  $. Tenemos que $\displaystyle \left(a^{r}\right)^{d} = e $, por lo que $\displaystyle n | rd $. En particular, tenemos que $\displaystyle kd | rd $, por lo que $\displaystyle k |r $. Así, nos queda que $\displaystyle a^{r} \in \left\langle a^{k} \right\rangle  $, por lo que $\displaystyle H \subset \left\langle a^{k} \right\rangle  $. Recíprocamente, tenemos que $\displaystyle k = \mcd\left(k,n\right) $, por lo que
+\[o\left(a^{k}\right) = \frac{o\left(a\right)}{\mcd\left(k, o\left(a\right)\right)} = \frac{n}{k } = d .\]
+Entonces, tenemos que $\displaystyle \left(a^{k}\right)^{d} = e $, por lo que $\displaystyle a^{k} \in H $. Así, tenemos que $\displaystyle \left\langle a^{k} \right\rangle \subset H $. Así, hemos desmostrado que $\displaystyle H = \left\langle a^{k} \right\rangle  $. \\
+Demostramos ahora la unicidad. Sea $\displaystyle K $ un subgrupo de orden $\displaystyle d $. Como $\displaystyle K \leq G $, que es cíclico, sabemos que $\displaystyle K $ es cíclico, y está generado por un elemento $\displaystyle a^{r} = b $. Sabemos que $\displaystyle b^{d} = e $, por lo que $\displaystyle b \in H $ y $\displaystyle K \subset H $. Como ambos grupos son del mismo orden, debe ser que $\displaystyle H = K $. 
+\end{proof}
+\section{Grupos finitamente generados}
+\begin{definition}
+	Sea $\displaystyle G $ un grupo y $\displaystyle S \subset G $ con $\displaystyle S = \left\{ s _{1}, \ldots, s_{k}\right\}  $ finito. Llamamos \textbf{subgrupo generado por} $\displaystyle S $ al conjunto 
+	\[\left\langle S \right\rangle = \left\{ s_{1}^{t_{1}}s_{2}^{t_{2}} \cdots s_{k}^{t_{k}} \; : \; t_{i} \in \Z, s_{i} \in S, k \in \N\right\}  .\]
+\end{definition}
+\begin{definition}[Grupo finitamente generado]
+	Sea $\displaystyle G $ un grupo. Diremos que $\displaystyle G $ es \textbf{finitamente generado} si $\displaystyle G = \left\langle s_{1}, \ldots, s_{k} \right\rangle  $ para algún $\displaystyle S = \left\{ s_{1}, \ldots, s_{k}\right\} \subset G $ finito. 
+\end{definition}
+\begin{observation}
+Se cumple que $\displaystyle \left\langle S \right\rangle  = \bigcap_{S \subset H \leq G}H $. En efecto:
+\begin{description}
+\item[(i)] Si $\displaystyle x \in \left\langle S \right\rangle  $, tenemos que $\displaystyle x = s_{1}^{t_{1}} \cdots s_{k}^{t_{k}} $ para $\displaystyle s_{i} \in S $ y $\displaystyle t_{i} \in \Z $. Entonces, si $\displaystyle S \subset H \leq G $, como $\displaystyle H $ es subgrupo la operación está cerrada en $\displaystyle H $, por lo que $\displaystyle x = s_{1}^{t_{1}} \cdots s_{k}^{t_{k}} \in H $. Así, $\displaystyle \left\langle S \right\rangle \subset \bigcap_{S \subset H \leq G}H $.
+\item[(ii)] Supongamos que $\displaystyle x \in \bigcap_{S \subset H \leq G}H $ pero $\displaystyle x \not\in \left\langle S \right\rangle  $. Esto es una contradicción, pues es fácil comprobar que $\displaystyle \left\langle S \right\rangle \leq G $ y $\displaystyle S \subset \left\langle S \right\rangle  $. Por tanto, debe ser que $\displaystyle \bigcap_{S \subset H \leq G}H \subset \left\langle S \right\rangle  $.
+\end{description}
+\end{observation}
+\begin{eg}
+\begin{enumerate}
+\item Los grupos cíclicos son finitamente generados puesto que son generados por un único elemento. 
+\item Todos los grupos finitos están finitamente generados. 
+\item El grupo de los cuaterniones, $\displaystyle Q $, tiene orden 8 y tenemos que $\displaystyle Q = \left\langle i, j, k \right\rangle =\left\langle i,j \right\rangle  $. 
+\end{enumerate}
+\end{eg}
 
