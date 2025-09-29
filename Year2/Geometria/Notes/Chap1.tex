@@ -371,7 +371,9 @@ Entonces, $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\ri
 	\[ \left\{ \left[a_{0} : a_{1} : a_{2}\right] \; : \; \left(a_{0}, a_{1}, a_{2}\right) \in \K^{3} / \left\{ 0\right\} \right\}  .\]
 	Por otro lado, si $\displaystyle u \in \K^{3} $ tal que $\displaystyle \dim\left(u\right) = 2 $, podemos describir $\displaystyle u $ con una ecuación implícita homogénea:
 	\[u = \left\{ \left(x_{0}, x_{1}, x_{2}\right) \; : \; ax_{0} + bx_{1} + c_{2} = 0\right\}  .\]
-	Decimos que $\displaystyle \overline{l} $ es la recta $\displaystyle ax_{0} + bx_{1} + cx_{2} = 0 $. Tenemos que si $\displaystyle \left(u_{0}, u_{1}, u_{2}\right) \in \overline{l} $, entonces $\displaystyle \left(\lambda u_{0}, \lambda u_{1}, \lambda u_{2}\right) \in \overline{l} $. En efecto, 
+	Así, definimos $\displaystyle \overline{l} $ de la siguiente forma:
+	\[\overline{l} = \left\{ [x_{0}:x_{1}:x_{2}] \; : \; ax_{0} + bx_{1} + cx_{2} = 0\right\}, \; \left(a,b,c\right) \neq \left(0,0,0\right) .\]
+	 Tenemos que si $\displaystyle \left(u_{0}, u_{1}, u_{2}\right) \in \overline{l} $, entonces $\displaystyle \left(\lambda u_{0}, \lambda u_{1}, \lambda u_{2}\right) \in \overline{l} $. En efecto, 
 	\[au_{0} + bu_{1} + cu_{2} = 0 \Rightarrow a\lambda u_{0} + b\lambda u_{1} + c\lambda u_{2} = 0.\]
 	Así hemos visto que $\displaystyle \left[u_{0} : u_{1} : u_{2}\right] \in \overline{l} $ si y solo si $\displaystyle au_{0} + bu_{1} + cu_{2} = 0 $, por lo que $\displaystyle \left[u_{0} : u_{1} : u_{2}\right] \in \overline{l} $ está bien definido. Definimos $\displaystyle \mathbb{P}\left(\K^{3}\right) $ de la siguiente forma,
 	\[\overline{\mathcal{P}} = \left\{ \left[a_{0} : a_{1} : a_{2}\right]  \; : \; a_{i} \in \K/ \left\{ 0\right\} \right\}  .\]
@@ -543,7 +545,7 @@ Sean $\displaystyle A,B,C,A', B', C' $ puntos dos a dos distintos y ningún trip
 	Sean $\displaystyle A,B,C,D \in \mathbb{P}\left(\K^{3}\right) $ distintos dos a dos y ninguna terna alineada. Existe una base $\displaystyle \mathcal{B} = \left\{ v_{0}, v_{1}, v_{2}\right\}  $ de $\displaystyle \K^{3} $ tal que $\displaystyle A = L\left( \left\{ v_{0}\right\} \right) $, $\displaystyle B = L\left( \left\{ v_{1}\right\} \right) $, $\displaystyle C = L\left( \left\{ v_{2}\right\} \right) $ y $\displaystyle D = L\left( \left\{ v_{0}+v_{1}+v_{2}\right\} \right) $.
 \end{lema}
 \begin{proof}
-	Sean $\displaystyle \vec{a}, \vec{b}, \vec{c}, \vec{d} \in \K^{3} $ tales que $\displaystyle A = L\left(\vec{a}\right) $, $\displaystyle B = L\left(\vec{b}\right) $, $\displaystyle C = L\left(\vec{c}\right) $ y $\displaystyle D = L\left(\vec{d}\right) $. Si $\displaystyle A \neq B $, tenemos que $\displaystyle \left\{ \vec{a}, \vec{b}\right\}  $ son linealmente independientes. 
+	Sean $\displaystyle \vec{a}, \vec{b}, \vec{c}, \vec{d} \in \K^{3} $ tales que $\displaystyle A = L\left(\vec{a}\right) $, $ B = L\left(\vec{b}\right) $, $\displaystyle C = L\left(\vec{c}\right) $ y $D = L\left(\vec{d}\right) $. Si $\displaystyle A \neq B $, tenemos que $\displaystyle \left\{ \vec{a}, \vec{b}\right\}  $ son linealmente independientes. 
 	Como $\displaystyle C $ no está alineado con $\displaystyle A $ y $\displaystyle B $, debe ser que $\displaystyle \vec{c} \not\in L\left(\vec{a}, \vec{b}\right) $. Por tanto, tenemos que $\displaystyle \left\{ \vec{a}, \vec{b}, \vec{c}\right\}  $ son linealmente independientes. Así, tenemos que 
 	\[\vec{d} = \alpha \vec{a} + \beta \vec{b} + \gamma \vec{c}, \; \alpha, \beta, \gamma \in \K .\]
 Si $\displaystyle \alpha = 0 $, tenemos que $\displaystyle \vec{d} \in L\left(\vec{b}, \vec{c}\right) $, por lo que $\displaystyle D \in \overline{l}\left(B,C\right) $, lo que es una contradicción, por lo que $\displaystyle \alpha \neq 0 $. De análoga demostramos que $\displaystyle \beta, \gamma \neq 0 $. Tomamos $\displaystyle v_{0} = \alpha \vec{a} $, $\displaystyle v_{1} = \beta \vec{b} $ y $\displaystyle v_{2} = \gamma \vec{c} $, de forma que nos queda que $\displaystyle \vec{d} = v_{0} + v_{1}+v_{2} $.
@@ -553,8 +555,11 @@ Si $\displaystyle \alpha = 0 $, tenemos que $\displaystyle \vec{d} \in L\left(\v
 Sea $\displaystyle \K $ un cuerpo. Entonces, el teorema de Desargues se cumple en $\displaystyle \mathbb{P}\left(\K^{3}\right) $.
 \end{theorem}
 \begin{proof}
-En primer lugar, veamos que $\displaystyle O = \overline{l}\left(A,A'\right) \cap \overline{l}\left(B,B'\right) \cap \overline{l}\left(C,C'\right) $, no está alineado con $\displaystyle A $ y $\displaystyle B $. Si $\displaystyle O \in \overline{l}\left(A,B\right) $, tenemos que $\displaystyle O \in \overline{l}\left(O,B\right) $, por lo que $\displaystyle \overline{l}\left(A,B\right) = \overline{l}\left(O,B\right) $. Sin embargo, tenemos que $\displaystyle B' \in \overline{l}\left(O,B\right) $, por lo que $\displaystyle A,B $ y $\displaystyle B' $ están alineados, que es una contradicción. 
-También, $\displaystyle O\neq A $, puesto que si $\displaystyle O = A $ tendríamos que $\displaystyle A \in \overline{l}\left(B,B'\right) $ y $\displaystyle A,B $ y $\displaystyle B' $ estarían alineados. \\
+En primer lugar, veamos que se cumplen las hipótesis del lema anterior. 
+\begin{itemize}
+\item Veamos que $\displaystyle O = \overline{l}\left(A,A'\right) \cap \overline{l}\left(B,B'\right) \cap \overline{l}\left(C,C'\right) $, no está alineado con $\displaystyle A $ y $\displaystyle B $. Si $\displaystyle O \in \overline{l}\left(A,B\right) $, tenemos que $\displaystyle O \in \overline{l}\left(O,B\right) $, por lo que $\displaystyle \overline{l}\left(A,B\right) = \overline{l}\left(O,B\right) $. Sin embargo, tenemos que $\displaystyle B' \in \overline{l}\left(O,B\right) $, por lo que $\displaystyle A,B $ y $\displaystyle B' $ están alineados, que es una contradicción.
+\item Debe ser que $\displaystyle O\neq A $, puesto que si $\displaystyle O = A $ tendríamos que $\displaystyle A \in \overline{l}\left(B,B'\right) $ y $\displaystyle A,B $ y $\displaystyle B' $ estarían alineados.
+\end{itemize}
 De forma análoga tenemos que $\displaystyle O \neq B,C $ y $\displaystyle O \not\in \overline{l}\left(B,C\right), \overline{l}\left(A,C\right) $. Podemos usar el lema con $\displaystyle A,B,C $ y $\displaystyle O $. En la base apropiada, tenemos que 
 \[A = [1:0:0], \; B = [0:1:0], \; C = [0:0:1], \; D = [1:1:1] .\]
 Tenemos que  
@@ -601,9 +606,5 @@ Tenemos que
 \[ l\left(A,A'\right) | | l\left(B,B'\right) | | l\left(C,C'\right)\]
 son verticales y $\displaystyle l\left(A,B\right) $ y $\displaystyle l\left(A,B'\right) $ son horizontales y paralelas. Las rectas $\displaystyle l\left(A,C\right) $ y $l\left(A',C'\right) $ son paralelas y de pendiente negativa. Sin embargo, por construcción tenemos que $\displaystyle l\left(B,C\right) $ y $\displaystyle l\left(B',C'\right) $ no son paralelas. Este es el primer ejemplo de un plano afín que no viene de un espacio vectorial. 
 \end{eg}
-Recordemos que $\displaystyle \mathbb{P}\left(\K^{3}\right) = \left\{ [x_{0} : x_{1} : x_{2}] \; : \; \left(x_{0}, x_{1}, x_{2}\right) \in \K^{3} / \left\{ 0\right\} \right\}  $. Tenemos que
-\[[x_{0}:x_{1}:x_{2}] = [y_{0}:y_{1}:y_{2}] \iff \exists \lambda \in \K/ \left\{ 0\right\}, \; \left(x_{0}, x_{1}, x_{2}\right) = \lambda \left(y_{0}, y_{1}, y_{2}\right) .\]
-Las rectas las definimos de la forma
-\[ \overline{l} = \left\{ [x_{0}:x_{1}:x_{2}] \; : \; ax_{0} + bx_{1} +cx_{2} = 0\right\}, \; \left(a,b,c\right) \neq \left(0,0,0\right) .\]
-\[\overline{l}\left([a_{0}:a_{1}:a_{2}], [b_{0},b_{1},b_{2}]\right) = \left\{ \begin{vmatrix} x_{0} & x_{1} & x_{2} \\ a_{0} & a_{1} & a_{2} \\ b_{0} & b_{1} & b_{2} \end{vmatrix} = 0\right\}  .\]
+
 

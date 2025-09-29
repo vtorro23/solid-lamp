@@ -19,7 +19,92 @@ De esta manera, nos queda que
 \[Bx = \left(b^{T}_{i}x\right)_{i = 1}^{n} = \begin{pmatrix} b_{1}^{T}x \\ \vdots \\ b^{T}_{m}x \end{pmatrix} .\]
 \end{ej}
 \begin{ej}
+Tenemos que 
+\[\left(Bx\right)_{i} = \sum^{n}_{k = 1}b_{ik}x_{k} .\]
+Para $\displaystyle 1 \leq i \leq m $ tenemos que 
+\[Bx = \begin{pmatrix} \sum^{n}_{k = 1}b_{1k}x_{k} \\ \vdots \\ \sum^{n}_{k = 1}b_{mk} x_{k}\end{pmatrix} = \sum^{n}_{k = 1}x_{k}\begin{pmatrix} b_{1k} \\ \vdots \\ b_{mk} \end{pmatrix} = \sum^{n}_{k = 1}x_{k}b_{k} .\]
+\end{ej}
+\begin{ej}
+Tenemos que las dimensiones de $\displaystyle AB $ serán de $\displaystyle m \times p $. Por otro lado, 
+\[\left(AB\right)_{ij} = \sum^{n}_{k = 1}a_{ik}b_{kj}  .\]
+Así, tenemos que la columna $\displaystyle i $-ésima de la matriz $\displaystyle AB $ será:
+\[ AB_{i} = \begin{pmatrix} \sum^{n}_{k= 1}a_{1k}b_{ki} \\ \vdots \\ \sum^{n}_{k = 1}a_{mk}b_{ki} \end{pmatrix} =  A \begin{pmatrix} b_{1i} \\ \vdots \\ b_{ni} \end{pmatrix} = Ab_{i}.\]
+\end{ej}
+\begin{ej}
+Tenemos que, por el ejercicio 2,
+\[A\left(Bx\right) = A\left(\sum^{p}_{k = 1}x_{k}b_{k}\right) = \sum^{p}_{k = 1}Ax_{k}b_{k} = \sum^{p}_{k = 1}x_{k}\left(Ab_{k}\right)  .\]
+Por otro lado, los ejercicios 2 y 3 nos dicen que
+\[\left(AB\right)x = \left(Ab_{1}, \ldots, Ab_{p}\right)x = \sum^{k = 1}_{p}x_{k}Ab_{k} .\]
+Así, queda demostrada la igualdad. 
+\end{ej}
+\begin{ej}
+Sea $\displaystyle C = \left(c_{1}, \ldots, c_{q}\right) $. Tenemos que
+\[A\left(BC\right) = A\left(Bc_{1}, \ldots, Bc_{q}\right) = \left(A\left(Bc_{1}\right), \ldots, A\left(Bc_{q}\right)\right) = \left(\left(AB\right)c_{1}, \ldots, \left(AB\right)c_{q}\right) = \left(AB\right)C .\]
+\end{ej}
+\begin{ej}
+Por un lado, tenemos que 
+\[\left(DA\right)_{ij} = \sum^{n}_{k = 1}d _{ik}a_{kj} = d _{i}a_{ij} .\]
+Similarmente, 
+\[\left(AD\right)_{ij } = \sum^{n}_{ k= 1}a_{ik}d _{kj } = a_{ij }d _{j} .\]
+\end{ej}
+\begin{ej}
+La dimensión de $\displaystyle v w^{*} $ será de $\displaystyle n \times n $. Tenemos que 
+\[\left(vw^{*}\right)_{ij} = v_{i}\overline{w}_{j}.\]
+\end{ej}
+\begin{ej}
+Es fácil ver que:
+\[\left(\lambda D\right)_{ij} = \lambda d _{ij} = 
+\begin{cases}
+0, \; i \neq j \\
+d _{i},\; i = j
+\end{cases}
+.\]
+Así, tenemos que $\displaystyle \lambda D $ también es diagonal. Similarmente, 
+\[\left(D + E\right)_{ij} = 
+\begin{cases}
+0, \; i \neq j \\
+d _{i}+ e_{i} ,\; i = j
+\end{cases}
+.\]
+\[\left(DE\right)_{ij} = \sum^{n}_{k = 1}d _{ik} e _{kj} = 
+\begin{cases}
+0, \; i \neq j \\
+d _{i}e_{i}, \; i = j
+\end{cases}
+.\]
+\end{ej}
+\begin{ej}
+Tenemos que si $\displaystyle i < j $, $\displaystyle \left(A\right)_{ij} = \left(B\right)_{ij} = 0 $. Así, 
+\[\left(\lambda A\right) = 
+\begin{cases}
+0, \; i < j \\
+\lambda a_{ij}, \; i \geq j
+\end{cases}
+.\]
+\[\left(A + B\right) _{ij } = 
+\begin{cases}
+0, \; i < j \\
+a_{ij} + b_{ij}, \; i \geq j
+\end{cases}
+.\]
+Para este último caso supongamos que $\displaystyle i < j $,
+\[\left(AB\right)_{ij } = \sum^{n}_{k= 1} a_{ik}b_{kj} = \sum^{i-1}_{k = 1}a_{ik}b_{kj} + \sum^{j - 1}_{k = i}a_{ik}b_{kj} + \sum^{n}_{k = j}a_{ik}b_{kj} = 0 + 0 + 0 = 0
+.\]
+\end{ej}
+\begin{ej}
+\begin{description}
+\item[(a)] Si $\displaystyle D $ es inversible, por ser diagonal tenemos que 
+\[\det\left(D\right) = \prod^{n}_{i = 1}d _{i} \neq 0.\]
+Por tanto, $\displaystyle d _{i} \neq 0 $, $\displaystyle \forall i = 1, \ldots, n $. Así, tenemos que 
+\[\det\left(D D^{-1}\right) = \det\left(D\right) \det\left(D^{-1}\right) = \det\left(I_{n}\right) = 1 \iff \det\left(D^{-1}\right) = \frac{1}{\det\left(D\right)} \neq 0 .\]
+Así, tenemos que $\displaystyle D^{-1} $ es inversible. Tenemos que $\displaystyle D^{-1} = diag\left(\frac{1}{d _{1}}, \ldots, \frac{1}{d _{n}}\right) $.
+\item[(b)] 
+\end{description}
+\end{ej}
 
+\begin{ej}
+	Supongamos que $\displaystyle \lambda \in Sp\left(A\right) $ y $\displaystyle \alpha \in \K/ \left\{ 0\right\}  $. Tenemos que 
+	\[\lambda \in Sp\left(A\right) \iff \det\left(A - \lambda I_{n}\right) = 0 \iff \frac{1}{\alpha ^{n}}\det\left(\alpha A - \alpha \lambda I_{n}\right) = 0 \iff \det\left(\alpha A - \alpha \lambda I_{n}\right) = 0 \iff \alpha \lambda \in Sp\left(\alpha A\right) .\]
 \end{ej}
 
 \end{document}
