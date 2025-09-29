@@ -349,7 +349,7 @@ Se deduce fácilmente a partir de la proposición y de la observación anterior.
 \end{proof}
 \begin{eg}
 \begin{enumerate}
-	\item El conjunto $\displaystyle U_{n} = \left\{ z \in \C \; : \; z^{2} = 1\right\}  $, de las raíces $\displaystyle n $-ésimas de la unidad, es un grupo cíclico con la multiplicación. Recordamos que $\displaystyle w_{k} = e^{i\frac{2\pi k}{n}} $, para $\displaystyle k = 0, \ldots, n-1 $. Es sencillo ver que $\displaystyle \left(U_{n}, \cdot, 1\right) \leq \left(\C / \left\{ 0\right\} , 1\right) $. En efecto, 
+	\item El conjunto $\displaystyle U_{n} = \left\{ z \in \C \; : \; z^{n} = 1\right\}  $, de las raíces $\displaystyle n $-ésimas de la unidad, es un grupo cíclico con la multiplicación. Recordamos que $\displaystyle w_{k} = e^{i\frac{2\pi k}{n}} $, para $\displaystyle k = 0, \ldots, n-1 $. Es sencillo ver que $\displaystyle \left(U_{n}, \cdot, 1\right) \leq \left(\C / \left\{ 0\right\} , 1\right) $. En efecto, 
 		\[ e^{i\frac{2\pi \cdot 0}{n} } = e^{0} = 1 .\]
 		Ahora, si $\displaystyle w_{1}, w_{2} \in U_{n} $, tenemos que si $\displaystyle k_{1} > k_{2} $:
 		\[w_{1}w_{2}^{-1} = e^{i\frac{2\pi k_{1}}{n}}e^{i\frac{2\pi \left(-k_{2}\right)}{n}} = e^{i\frac{e\pi\left(k_{1}-k_{2}\right)}{n }}\in U_{n}.\]
@@ -504,5 +504,55 @@ Se cumple que $\displaystyle \left\langle S \right\rangle  = \bigcap_{S \subset 
 \item Todos los grupos finitos están finitamente generados. 
 \item El grupo de los cuaterniones, $\displaystyle Q $, tiene orden 8 y tenemos que $\displaystyle Q = \left\langle i, j, k \right\rangle =\left\langle i,j \right\rangle  $. 
 \end{enumerate}
+\end{eg}
+\begin{prop}
+	Sea $\displaystyle G $ un grupo y $\displaystyle \emptyset \neq S \subset G $, con $\displaystyle S = \left\{ s_{1}, \ldots, s_{k}\right\}  $. Sea $\displaystyle f : G \to H $ un homomorfismo de grupos. Entonces $\displaystyle f\left(\left\langle S \right\rangle \right) = \left\langle f\left(S\right) \right\rangle  $.
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle \left\langle S \right\rangle = \left\{ s_{1}^{t_{1}} \cdots s_{k}^{t_{k}} \; : \; t_{i} \in \Z, s_{i} \in S, k \in \N\right\}  $. Tenemos que
+	\[f\left(s_{1}^{t_{1}} \cdots s_{k}^{t_{k}}\right) = f\left(s_{1}^{t_{1}}\right) \cdots f\left(s_{k}^{t_{k}}\right) = f\left(s_{1}\right)^{t_{1}} \cdots f\left(s_{k}\right)^{t_{k}} .\]
+\end{proof}
+\begin{eg}[Grupo diédrico $D_n$]
+Sea $\displaystyle n \geq 3 $ y consideremos $\displaystyle U_{n} = \left\langle e^{\frac{2\pi i }{n}} \right\rangle $ \footnote{Recordamos que este es el grupo formado por las raíces $\displaystyle n $-ésimas de la unidad.}. Pensemos en la representación de $\displaystyle U_{n} $ en el plano, que forma un polígono de $\displaystyle n $ lados. Tenemos que si $\displaystyle u = e^{\frac{2\pi i }{n}} $, entonces
+\[U_{n} = \left\{ 1, u, u^{2}, \ldots, u^{n-1}\right\}  .\]
+Sea $\displaystyle \tau $ la simetría en el plano respecto del eje horizontal. Entonces, tenemos que $\displaystyle \tau : U_{n} \to U_{n} : z \to z^{-1} $, que es una biyección. Sea $\displaystyle \rho $ el giro en sentido antihorario de ángulo $\displaystyle \frac{2\pi }{n} $. Tenemos que $\displaystyle \rho : U_{n} \to U_{n} : z \to z \cdot u $, que también es una biyección. Definimos el grupo diédrico de orden $\displaystyle n $ como 
+\[D_{n} = \left\langle \tau , \rho \right\rangle  .\]
+Estudiemos el orden de $\displaystyle \tau  $ y $\displaystyle \rho $. Por ser $\displaystyle \tau $ una simetría tenemos que $\displaystyle \forall z \in U_{n} $,
+\[\tau ^{2}\left(z\right) = \tau\left(z^{-1}\right) = z .\]
+Así, tenemos que $\displaystyle o\left(\tau \right) = 2 $. Por otro lado, 
+\[\rho ^{k}\left(z\right) = z u^{k} .\]
+Tenemos que $\displaystyle u^{k} = 1 \iff n|k$, por tanto $\displaystyle o\left(\rho \right) = n $. Así podemos asegurar que  
+\[ \left\{ 1, \tau, \rho, \rho^{2}, \ldots, \rho ^{n -1}, \tau \rho, \ldots, \tau \rho^{n-1}\right\} \subset D_{n}.\]
+Por un lado sabemos que $\displaystyle \rho^{i} \neq \rho^{j} $ si $\displaystyle i \neq j $ con $\displaystyle i,j < n $, y $\displaystyle \tau \neq \rho^{k} $, $\displaystyle \forall k \leq n $. Por tanto, tenemos que $\displaystyle \left|D_{n}\right| \geq 2n $. Veamos que efectivamente $\displaystyle \left|D_{n}\right| = 2n $ y que $\displaystyle D_{n} $ coincide con el conjunto de arriba. Veamos que $\displaystyle \tau \cdot \rho $ tiene orden dos:
+\[\left(\tau \cdot \rho\right)^{2} \left(z\right) = \tau\left(\rho\left(\tau\left(\rho\left(z\right)\right)\right)\right) = \tau\left(\rho\left(\tau\left(z \cdot u\right)\right)\right) = \tau\left(\rho\left(u^{-1}z^{-1}\right)\right) = \tau\left(u^{-1}z^{-1}u\right) = u^{-1}zu = z .\]
+Así, obtenemos que $\displaystyle \tau \cdot \rho = \rho^{-1} \cdot \tau $ y $\displaystyle o\left(\tau \cdot \rho\right) = 2 $. En particular tenemos que $\displaystyle \forall k \in \N $, $\displaystyle \tau\rho^{k} = \rho^{-k}\tau $. Así, tenemos que $\displaystyle \left|D_{n}\right| = 2n $ y $\displaystyle D_{n} $ es el conjunto que hemos visto anteriormente. Podemos hacer un par de observaciones:
+\begin{itemize}
+\item Todos los elementos de $\displaystyle D_{n} $ pueden ser expresados como una potencia de $\displaystyle \tau $ por una potencia de $\displaystyle \rho $.
+\item No es un grupo abeliano, puesto que $\displaystyle \tau \cdot \rho \neq \rho \cdot \tau $. 
+\end{itemize}
+\end{eg}
+\begin{prop}
+Sea $\displaystyle G $ un grupo finito tal que $\displaystyle G = \left\langle s, t \right\rangle  $, donde $\displaystyle s $ tiene orden 2, $\displaystyle t $ tiene orden $\displaystyle n $ y $\displaystyle st $ tiene orden 2. Entonces, $\displaystyle G \cong D_{n} $. 
+\end{prop}
+\begin{proof}
+Como $\displaystyle \left(st\right)^{2} = e $, tenemos que $\displaystyle st = t ^{-1}s $. Así, es fácil ver que $\displaystyle st^{k} = t ^{-k}s$, $\displaystyle \forall k \in \N $. Por tanto, tenemos que 
+\[G = \left\{ 1, s, t, t ^{2}, \ldots, t ^{n-1}, st, \ldots, s t ^{n-1}\right\}  .\]
+Consideremos la aplicación $\displaystyle f : D_{n} \to G : \tau^{i}\rho^{j} \to s ^{i}t ^{j} $ para $\displaystyle i \in \left\{ 0,1\right\}  $ y $\displaystyle j \in \left\{ 0, 1, \ldots, n -1\right\}  $. Se trata de un homomorfismo de grupos puesto que 
+\[f\left(\left(\tau^{i}\rho^{j}\right)\left(\tau^{k}e^{m}\right)\right) = f\left(\tau^{i +k}\rho^{m - j}\right) = s ^{i + k} t ^{m - j} = s^{i}s^{k}t ^{-j}t^{m} = s^{i}t ^{j}s^{k}t ^{m} = f\left(\tau^{i}\rho^{j}\right)f\left(\tau^{k}\rho^{m}\right) .\]
+Veamos que es una biyección. Tenemos que 
+\[\Imagen\left(f\right) = \left\langle f\left(\tau\right), f\left(\rho\right) \right\rangle = \left\langle s, t \right\rangle  = G .\]
+Por tanto, $\displaystyle f $ es sobreyectiva. Como $\displaystyle G $ y $\displaystyle D_{n} $ tienen el mismo orden, tenemos que $\displaystyle f $ es un isomorfismo y $\displaystyle G \cong D_{n} $. 
+\end{proof}
+\begin{eg}[Generadores en grupos de congruencias]
+Vamos a considerar $\displaystyle \Z_{m} = \left\{ [0]_{m}, [1]_{m}, \ldots, [m - 1]_{m}\right\}  $. Sea 
+\[
+\begin{split}
+	\cdot : \Z_{m}\times \Z_{m} & \to \Z_{m} \\
+	\left([a]_{m},[b]_{m}\right) & \to [a \cdot b]_{m}.
+\end{split}
+\]
+Veamos que la aplicación está bien definida. Supongamos que $\displaystyle [a]_{m} = [a']_{m} $ y $\displaystyle [b]_{m} = [b']_{m} $. Tenemos que $\displaystyle a - a' = km  $ y $\displaystyle b -b' = k'm $ para $\displaystyle k,k' \in \Z $. Así,
+\[ab = \left(km + a'\right)\left(k'm+b'\right) = k k' m^{2} + kb'm + a'k'm + a'b' \Rightarrow ab - a'b' = Cm, \; C \in \Z .\]
+Por tanto, $\displaystyle [ab]_{m} = [a'b']_{m} $. Consideremos el neutro $\displaystyle [1]_{m} $. Vamos a estudiar si $\displaystyle \left(\Z_{m}/ \left\{ [0]_{m}\right\} , \cdot , [1]_{m}\right) $ es un grupo. Para que lo sea, basta estudiar la propiedad de los inversos y que la operación sea interna. Para que este conjunto sea grupo debe darse que $\displaystyle m $ es primo. 
 \end{eg}
 

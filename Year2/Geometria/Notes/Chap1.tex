@@ -539,9 +539,36 @@ Demostramos la afirmación dual:
 \begin{theorem}[Desargues proyectivo]
 Sean $\displaystyle A,B,C,A', B', C' $ puntos dos a dos distintos y ningún triple alineado \footnote{Buscamos poder tener dos tríangulos: $\displaystyle ABC $ y $\displaystyle A'B'C' $.}. Si $\displaystyle \overline{l}\left(A,A'\right) \cap \overline{l}\left(B,B'\right)\cap \overline{l}\left(C,C'\right) = O \in \overline{\mathcal{P}} $, entonces $\displaystyle \overline{l}\left(A,B\right) \cap \overline{l}\left(A',B'\right) $, $\displaystyle \overline{l}\left(A,C\right) \cap \overline{l}\left(A',C'\right) $ y $\displaystyle \overline{l}\left(B,C\right) \cap \overline{l}\left(B',C'\right) $ están alineados.
 \end{theorem}
+\begin{lema}
+	Sean $\displaystyle A,B,C,D \in \mathbb{P}\left(\K^{3}\right) $ distintos dos a dos y ninguna terna alineada. Existe una base $\displaystyle \mathcal{B} = \left\{ v_{0}, v_{1}, v_{2}\right\}  $ de $\displaystyle \K^{3} $ tal que $\displaystyle A = L\left( \left\{ v_{0}\right\} \right) $, $\displaystyle B = L\left( \left\{ v_{1}\right\} \right) $, $\displaystyle C = L\left( \left\{ v_{2}\right\} \right) $ y $\displaystyle D = L\left( \left\{ v_{0}+v_{1}+v_{2}\right\} \right) $.
+\end{lema}
+\begin{proof}
+	Sean $\displaystyle \vec{a}, \vec{b}, \vec{c}, \vec{d} \in \K^{3} $ tales que $\displaystyle A = L\left(\vec{a}\right) $, $\displaystyle B = L\left(\vec{b}\right) $, $\displaystyle C = L\left(\vec{c}\right) $ y $\displaystyle D = L\left(\vec{d}\right) $. Si $\displaystyle A \neq B $, tenemos que $\displaystyle \left\{ \vec{a}, \vec{b}\right\}  $ son linealmente independientes. 
+	Como $\displaystyle C $ no está alineado con $\displaystyle A $ y $\displaystyle B $, debe ser que $\displaystyle \vec{c} \not\in L\left(\vec{a}, \vec{b}\right) $. Por tanto, tenemos que $\displaystyle \left\{ \vec{a}, \vec{b}, \vec{c}\right\}  $ son linealmente independientes. Así, tenemos que 
+	\[\vec{d} = \alpha \vec{a} + \beta \vec{b} + \gamma \vec{c}, \; \alpha, \beta, \gamma \in \K .\]
+Si $\displaystyle \alpha = 0 $, tenemos que $\displaystyle \vec{d} \in L\left(\vec{b}, \vec{c}\right) $, por lo que $\displaystyle D \in \overline{l}\left(B,C\right) $, lo que es una contradicción, por lo que $\displaystyle \alpha \neq 0 $. De análoga demostramos que $\displaystyle \beta, \gamma \neq 0 $. Tomamos $\displaystyle v_{0} = \alpha \vec{a} $, $\displaystyle v_{1} = \beta \vec{b} $ y $\displaystyle v_{2} = \gamma \vec{c} $, de forma que nos queda que $\displaystyle \vec{d} = v_{0} + v_{1}+v_{2} $.
+\end{proof}
+
 \begin{theorem}
 Sea $\displaystyle \K $ un cuerpo. Entonces, el teorema de Desargues se cumple en $\displaystyle \mathbb{P}\left(\K^{3}\right) $.
 \end{theorem}
+\begin{proof}
+En primer lugar, veamos que $\displaystyle O = \overline{l}\left(A,A'\right) \cap \overline{l}\left(B,B'\right) \cap \overline{l}\left(C,C'\right) $, no está alineado con $\displaystyle A $ y $\displaystyle B $. Si $\displaystyle O \in \overline{l}\left(A,B\right) $, tenemos que $\displaystyle O \in \overline{l}\left(O,B\right) $, por lo que $\displaystyle \overline{l}\left(A,B\right) = \overline{l}\left(O,B\right) $. Sin embargo, tenemos que $\displaystyle B' \in \overline{l}\left(O,B\right) $, por lo que $\displaystyle A,B $ y $\displaystyle B' $ están alineados, que es una contradicción. 
+También, $\displaystyle O\neq A $, puesto que si $\displaystyle O = A $ tendríamos que $\displaystyle A \in \overline{l}\left(B,B'\right) $ y $\displaystyle A,B $ y $\displaystyle B' $ estarían alineados. \\
+De forma análoga tenemos que $\displaystyle O \neq B,C $ y $\displaystyle O \not\in \overline{l}\left(B,C\right), \overline{l}\left(A,C\right) $. Podemos usar el lema con $\displaystyle A,B,C $ y $\displaystyle O $. En la base apropiada, tenemos que 
+\[A = [1:0:0], \; B = [0:1:0], \; C = [0:0:1], \; D = [1:1:1] .\]
+Tenemos que  
+\[ A' \in \overline{l}\left(A,O\right) = \left\{ \begin{vmatrix} x_{0} & x_{1} & x_{2} \\ 1 & 0 & 0 \\ 1 & 1 & 1\end{vmatrix} = 0\right\} = \left\{ x_{1} = x_{2}\right\} .\]
+De esta manera, tenemos que $\displaystyle A' = [\alpha : \beta : \beta] $. Como $\displaystyle A \neq A' $, tenemos que $\displaystyle \beta \neq 0 $. Así, podemos definir $\displaystyle A' = \left[\frac{\alpha }{\beta }: 1 : 1\right] = [1 + a: 1 : 1] $, para algún $\displaystyle a \in \K/ \left\{ 0\right\}  $.
+De forma similar, deducimos que $\displaystyle B' = [1: 1 + b : 1] $ y $\displaystyle C' = [1:1:1 + c] $ con $\displaystyle b,c \neq 0 $. Calculamos $\displaystyle \overline{l}\left(A,B\right) \cap \overline{l}\left(A',B'\right) $:
+\[\overline{l}\left(A,B\right) = \left\{ \begin{vmatrix} x_{0} & x_{1} & x_{2} \\ 1 & 0 & 0 \\ 0 & 1 & 0 \end{vmatrix} = 0\right\} = \left\{ x_{2} = 0\right\}   .\]
+\[ \overline{l}\left(A',B'\right) = \left\{ \begin{vmatrix} x_{0} & x_{1} & x_{2} \\ 1 +a & 1 & 1 \\ 1 & 1 + b & 1 \end{vmatrix}=0 \right\} = \{-bx_{0} -ax_{1} + \left(\left(1 + a\right)\left(1 + b\right)-1\right)x_{2} = 0\}.\]
+Así, tenemos que $\displaystyle \overline{l}\left(A,B\right) \cap \overline{l}\left(A',B'\right) = [a : - b : 0] $. De forma similar, tenemos que $\displaystyle \overline{l}\left(B,C\right) \cap \overline{l}\left(B',C'\right) =  [0 : b : - c] $ y $\displaystyle \overline{l}\left(A,C\right) \cap \overline{l}\left(A',B'\right) = [a : 0 : - c] $.
+Para ver que estos tres puntos están alineados vamos a ver que el determinante se anula:
+\[\begin{vmatrix} a & - b & 0 \\ 0 & b & - c \\ a & 0 & - c \end{vmatrix} = -abc + abc = 0 .\]
+Otra forma de hacerlo es calcular la recta de dos cualesquiera de ellos y ver si el tercero pertenece a esa recta. 
+\end{proof}
+
 \begin{prop}
 Supongamos que $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ es un plano proyectivo que cumple el teorema de Desargues. Sea $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $ un plano afín obtenido de $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\right) $ quitando una recta. Entonces, dados $\displaystyle A,A',B,B',C,C'  $ puntos dos a dos distintos de $\displaystyle \mathcal{P} $, ningún triple alineado, tales que $\displaystyle l\left(A,A'\right) | | l\left(B, B'\right) | | l\left(C,C'\right) $, $\displaystyle l\left(A,B\right) | | l\left(A',B'\right) $ y $\displaystyle l\left(A,C\right) | | l\left(A',C'\right) $. Entonces, $\displaystyle l\left(B,C\right) | | l\left(B',C'\right) $.
 \end{prop}
@@ -574,4 +601,9 @@ Tenemos que
 \[ l\left(A,A'\right) | | l\left(B,B'\right) | | l\left(C,C'\right)\]
 son verticales y $\displaystyle l\left(A,B\right) $ y $\displaystyle l\left(A,B'\right) $ son horizontales y paralelas. Las rectas $\displaystyle l\left(A,C\right) $ y $l\left(A',C'\right) $ son paralelas y de pendiente negativa. Sin embargo, por construcción tenemos que $\displaystyle l\left(B,C\right) $ y $\displaystyle l\left(B',C'\right) $ no son paralelas. Este es el primer ejemplo de un plano afín que no viene de un espacio vectorial. 
 \end{eg}
+Recordemos que $\displaystyle \mathbb{P}\left(\K^{3}\right) = \left\{ [x_{0} : x_{1} : x_{2}] \; : \; \left(x_{0}, x_{1}, x_{2}\right) \in \K^{3} / \left\{ 0\right\} \right\}  $. Tenemos que
+\[[x_{0}:x_{1}:x_{2}] = [y_{0}:y_{1}:y_{2}] \iff \exists \lambda \in \K/ \left\{ 0\right\}, \; \left(x_{0}, x_{1}, x_{2}\right) = \lambda \left(y_{0}, y_{1}, y_{2}\right) .\]
+Las rectas las definimos de la forma
+\[ \overline{l} = \left\{ [x_{0}:x_{1}:x_{2}] \; : \; ax_{0} + bx_{1} +cx_{2} = 0\right\}, \; \left(a,b,c\right) \neq \left(0,0,0\right) .\]
+\[\overline{l}\left([a_{0}:a_{1}:a_{2}], [b_{0},b_{1},b_{2}]\right) = \left\{ \begin{vmatrix} x_{0} & x_{1} & x_{2} \\ a_{0} & a_{1} & a_{2} \\ b_{0} & b_{1} & b_{2} \end{vmatrix} = 0\right\}  .\]
 
