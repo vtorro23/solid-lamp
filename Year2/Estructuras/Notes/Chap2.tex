@@ -1,0 +1,44 @@
+\chapter{Cocientes y homomorfismos}
+\begin{definition}
+Sea $\displaystyle G $ un grupo, $\displaystyle H \leq G $ y $\displaystyle a \in G $. Definimos los conjuntos
+\[aH = \left\{ ah \; : \; h \in H\right\} , \quad Ha = \left\{ ha \; : \; h \in H\right\}  .\]
+\end{definition}
+\begin{lema}
+Sea $\displaystyle G $ un grupo, $\displaystyle H \leq G $ y $\displaystyle a \in G $. Las aplicaciones
+\[
+\begin{split}
+f_{1} : H \to aH : h \to ah, \quad f_{2} : H \to aH : h \to ha 
+\end{split}
+\]
+son biyecciones. En particular, si $\displaystyle a \in H $, $\displaystyle aH = Ha = H $.
+\end{lema}
+\begin{proof}
+Demostramos sólamente que $\displaystyle f_{1} $ es biyección, puesto que la demostración de $\displaystyle f_{2} $ es análoga. 
+\begin{itemize}
+\item Veamos que $\displaystyle f_{1} $ es sobreyectiva. Tenemos que si $\displaystyle x \in aH $, entonces $\displaystyle \exists h \in H $ tal que $\displaystyle x = ah $, por lo que $\displaystyle f_{1}\left(h\right) = x $.
+\item Para ver que $\displaystyle f_{1} $ es inyectiva, supongamos que $\displaystyle f_{1}\left(h_{1}\right) = f_{1}\left(h_{2}\right) $, por lo que $\displaystyle ah_{1} = ah_{2} $. Multiplicando por el inverso de  $\displaystyle a $ en la izquierda de ambos lados obtenemos que $\displaystyle h_{1} = h_{2} $.
+\end{itemize}
+Ahora, si $\displaystyle a \in H $, tenemos que $\displaystyle aH, Ha \subset H $. Sea $\displaystyle h \in H $, por tanto
+\[h =\underbrace{ a^{-1}\left(ah\right)}_{\in aH} = \underbrace{\left(ha^{-1}\right)a}_{\in Ha} \in H .\]
+Así, tenemos que $\displaystyle H \subset aH,Ha $, por lo que $\displaystyle H = aH = Ha $.
+\end{proof}
+\begin{definition}
+Sea $\displaystyle G $ un grupo y $\displaystyle H \leq G $. Sean $\displaystyle a,b \in G $ y vamos a definir la relación de equivalencia $\displaystyle \sim_{H} $:
+\[a\sim_{H} b \iff Ha = Hb .\]
+Entonces diremos que $\displaystyle a $ y $\displaystyle b $ son \textbf{congruentes por la derecha módulo} $\displaystyle H $. El \textbf{índice} $\displaystyle [G:H] $ de $\displaystyle H $ en $\displaystyle G $ es el número de $\displaystyle G $ módulo $\displaystyle H $. Es decir, 
+\[ [G : H] := \left|G/\sim_{H}\right| .\]
+\end{definition}
+\begin{lema}
+Sean $\displaystyle a,b \in G $ y $\displaystyle H \leq G $. Entonces $\displaystyle a\sim_{H}b $ si y solo si $\displaystyle ab^{-1}\in H $. 
+\end{lema}
+\begin{proof}
+\begin{description}
+\item[(i)] Si $\displaystyle a \sim _{H}b $ tenemos que $\displaystyle Ha = Hb $. Por tanto, $\displaystyle a = e \cdot a \in Hb $, por lo que existe $\displaystyle h \in H $ tal que $\displaystyle a = hb $, así tenemos que $\displaystyle ab^{-1} = h \in H $. 
+\item[(ii)] Si $\displaystyle ab^{-1} \in H $, tenemos que existe $\displaystyle h \in H $ tal que $\displaystyle ab^{-1} = h $ por lo que $\displaystyle a = hb $ y $\displaystyle a \in Hb $. Sea $\displaystyle xa \in Ha $, tenemos que $\displaystyle xa = xhb \in Hb $, por lo que $\displaystyle Ha \subset Hb $. Recíprocamente, tenemos que $\displaystyle b = h^{-1}a $. Tomamos $\displaystyle h' = h^{-1} \in H $. Entonces, si $\displaystyle xb \in Hb $ tenemos que $\displaystyle xb = xh'a \in Ha $, por lo que $\displaystyle Hb\subset Ha $. Así, nos queda que $\displaystyle Ha = Hb $.
+\end{description}
+\end{proof}
+\begin{observation}
+	Si $\displaystyle a \in G $, tenemos que $\displaystyle [a]_{\sim_{H}} = Ha $. Lo llamamos la clase de equivalencia de $\displaystyle a $ módulo $\displaystyle H $ o la clase lateral derecha de $\displaystyle a $ por $\displaystyle H $. En efecto, 
+	\[b \in [a]_{m} \iff ab^{-1}\in H  \iff ba^{-1} \in H \iff b \in Ha .\]
+\end{observation}
+

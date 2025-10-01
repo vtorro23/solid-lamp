@@ -1,0 +1,105 @@
+\chapter{Continuidad}
+\begin{definition}[Continuidad]
+Sea $\displaystyle f : \left(X,d _{X}\right) \to \left(Y, d _{Y}\right) $ una función entre dos espacios métricos y $\displaystyle x_{0} \in X $. Se dice que $\displaystyle f $ es \textbf{continua} en $\displaystyle x_{0} $ si 
+\[\forall \epsilon > 0, \exists \delta > 0, \; d _{X}\left(x,x_{0}\right) < \delta \Rightarrow d _{Y}\left(f\left(x\right), f\left(x_{0}\right)\right) < \epsilon .\]
+. Decimos que $\displaystyle f $ es continua en un subconjunto $\displaystyle M \subset X $ si es continua en $\displaystyle x_{0} $, $\displaystyle \forall x_{0} \in M $.
+\end{definition}
+\begin{observation}
+Una definición equivalente es
+\[\forall \epsilon > 0, \exists \delta > 0, \; x \in \left(B_{X}\left(x_{0}, \delta \right)\right) \Rightarrow f\left(x\right) \in B _{Y}\left(f\left(x_{0}\right), \epsilon \right) .\]
+Es decir, 
+\[\forall \epsilon > 0, \exists \delta > 0, \; f\left(B_{X}\left(x_{0}, \delta \right)\right) \subset B_{Y}\left(f\left(x_{0}\right), \epsilon \right) .\]
+\end{observation}
+\begin{prop}
+Sea $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ y $\displaystyle x_{0} \in X $. Son equivalentes:
+\begin{enumerate}
+\item $\displaystyle f $ es continua en $\displaystyle x_{0} $.
+\item $\displaystyle \forall \left\{ x_{n}\right\} _{n\in\N}\subset X $ con $\displaystyle x_{n} \to x_{0} $ en $\displaystyle X $, entonces la sucesión $\displaystyle \left\{ f\left(x_{n}\right)\right\} _{n\in\N} $ converge a $\displaystyle f\left(x_{0}\right) $ en $\displaystyle Y $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{description}
+	\item[(i)] Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset X $ una sucesión cualquiera con $\displaystyle x_{n} \to x_{0} $. Dado $\displaystyle \epsilon > 0 $, sabemos que existe $\displaystyle \delta > 0 $ tal que si $\displaystyle d _{X}\left(x,x_{0}\right) < \delta  $, entonces $\displaystyle d _{Y}\left(f\left(x\right), f\left(x_{0}\right)\right) < \epsilon  $. Tenemos que existe $\displaystyle n_{0} \in \N $ tal que si $\displaystyle n \geq n_{0} $ se tiene que $\displaystyle d _{X}\left(x_{n}, x_{0}\right) < \delta  $. Por tanto, $\displaystyle \forall n \geq n_{0} $ se tiene que $\displaystyle d _{Y}\left(f\left(x_{n}\right), f\left(x_{0}\right)\right) < \epsilon  $.
+	\item[(ii)] Supongamos que $\displaystyle f $ no es continua en $\displaystyle x_{0} $. Así, existe un $\displaystyle \epsilon > 0 $ tal que $\displaystyle \forall \delta > 0 $ existe $\displaystyle x_{\delta } \in X $ tal que $\displaystyle d _{X}\left(x, x_{0}\right) < \delta  $ y $\displaystyle d _{Y}\left(f\left(x\right), f\left(x_{0}\right)\right) \geq \epsilon  $. 
+		Si $\displaystyle n \in \N $ podemos tomar $\displaystyle x_{n} \in X $ tal que $\displaystyle d _{X}\left(x_{n}, x_{0}\right) < \delta = \frac{1}{n} $ y $\displaystyle d _{Y}\left(f\left(x\right), f\left(x_{0}\right)\right) \geq \epsilon  $. Por tanto, tenemos que $\displaystyle x_{n} \to x_{0} $ en $\displaystyle X $, pero $\displaystyle f\left(x_{n}\right) \not \to f\left(x_{0}\right) $ en $\displaystyle Y $.  
+\end{description}
+\end{proof}
+\begin{observation}
+	Si $\displaystyle f $ no es continua en $\displaystyle x_{0} $, tenemos que existe una sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset X $ tal que 
+	\[ d _{Y}\left(f\left(x_{n}\right), f\left(x_{0}\right)\right) \geq \epsilon, \; \forall n \in \N .\]
+	Por tanto, $\displaystyle f\left(x_{n}\right) \not \to f\left(x_{0}\right) $ y ninguna subsucesión suya converge a $\displaystyle f\left(x_{0}\right) $.
+\end{observation}
+\begin{prop}
+Las funciones $\displaystyle s : \R^{2} \to \R : \left(x,y\right) \to x + y $ y $\displaystyle p : \R^{2} \to \R : \left(x,y\right) \to x \cdot y $, son continuas en $\displaystyle \R^{2} $ (con las normas $\displaystyle \| \cdot \|_{1}, \| \cdot \|_{2}, \| \cdot \| _{\infty} $).
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle \left\{ z_{n} = \left(x_{n},y_{n}\right)\right\} _{n\in\N} \subset \R^{2} $ tal que $\displaystyle z_{n} \to \left(x_{0}, y_{0}\right) \in \R^{2} $. Tenemos que $\displaystyle x_{n} \to x_{0} $ e $\displaystyle y_{n} \to y_{0} $ en $\displaystyle \R $. Ahora, 
+	\[s\left(x_{n}, y_{n}\right) = x_{n} +y_{n} \to x_{0} +y_{0} = s\left(x_{0}, y_{0}\right) .\]
+	De forma similar, 
+	\[p\left(x_{n}, y_{n}\right) = x_{n} \cdot y_{n} \to x_{0} \cdot y_{0} = p\left(x_{0}, y_{0}\right) .\]
+Así, tenemos que $\displaystyle s $ y $\displaystyle p $ son continuas.	
+\end{proof}
+\begin{prop}
+Sean $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ y $\displaystyle g : \left(Y, d _{Y}\right) \to \left(Z, d _{Z}\right) $. Supongamos que $\displaystyle f $ es continua en $\displaystyle x_{0} $ y $\displaystyle g $ es continua en $\displaystyle f\left(x_{0}\right) $. Entonces $\displaystyle g\circ f : \left(X, d _{X}\right) \to \left(Z, d _{Z}\right) $ es continua en $\displaystyle x_{0} $.
+\end{prop}
+\begin{proof}
+Dado $\displaystyle \epsilon > 0 $, tenemos que existe $\displaystyle \delta _{1} > 0 $ tal que si $\displaystyle d _{Y}\left(y, f\left(x_{0}\right)\right) < \delta _{1} $, entonces $\displaystyle d _{Z}\left(g\left(y\right), g\left(f\left(x_{0}\right)\right)\right) < \epsilon  $. Así, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle d _{X}\left(x,x_{0}\right) < \delta  $ entonces $\displaystyle d _{Y}\left(f\left(x\right), f\left(x_{0}\right)\right) < \delta_{1} $. Por tanto, si $\displaystyle d _{X}\left(x,x_{0}\right) < \delta  $, tenemos que $\displaystyle d _{Z}\left(g\left(f\left(x\right)\right), g\left(f\left(x_{0}\right)\right)\right) < \epsilon  $.
+\end{proof}
+\begin{eg}
+Las funciones siguientes son continuas: $\displaystyle f,g : \R^{2} \to \R $.
+\begin{itemize}
+\item $\displaystyle f\left(x,y\right) = \cos\left(xy\right) $.
+\item $\displaystyle g\left(x,y\right) = \sin\left(x + y\right)^{3} $. 
+\end{itemize}
+\end{eg}
+\begin{prop}
+Sea $\displaystyle f : \left(X, d _{X}\right) \to \R^{n} $ (con $\displaystyle \| \cdot \|_{1}, \| \cdot \|_{2} $ o $\displaystyle \| \cdot \|_{\infty} $). Entonces, $\displaystyle f\left(x\right) = \left(f_{1}\left(x\right), f_{2}\left(x\right), \ldots, f_{n}\left(x\right)\right) $. Por tanto, $\displaystyle f $ es continua en $\displaystyle x_{0} \in X $ si y solo si $\displaystyle f_{1}, \ldots, f_{n} $ son continuas en $\displaystyle x_{0} $.
+\end{prop}
+\begin{proof}
+\begin{description}
+	\item[(i)] Supongamos que $\displaystyle f $ es continua en $\displaystyle x_{0} $. Sea $\displaystyle \left\{ x_{j}\right\} _{j\in \N} \subset X $ tal que $\displaystyle x_{j} \to x_{0} $ en $\displaystyle \left(X, d _{X}\right) $. Entonces, tenemos que 
+	\[f\left(x_{j}\right) = \left(f_{1}\left(x_{j}\right), \ldots, f_{n}\left(x_{j}\right)\right) \to f\left(x_{0}\right) = \left(f_{1}\left(x_{0}\right), \ldots, f_{n}\left(x_{0}\right)\right) .\]
+	Así, tenemos que $\displaystyle \forall i = 1, \ldots, n $, $\displaystyle f_{i}\left(x_{j}\right) \to f_{i}\left(x_{0}\right) $, por lo que $\displaystyle \forall i = 1, \ldots, n $ se tiene que $\displaystyle f_{i} $ es continua. 
+\item[(ii)] Sea $\displaystyle \left\{ x_{j}\right\} _{j \in \N} \subset X $ tal que $\displaystyle x_{j} \to x_{0} $ en $\displaystyle \left(X, d _{X}\right) $. Tenemos que $\displaystyle \forall i = 1, \ldots, n $, $\displaystyle f_{i}\left(x_{j}\right) \to f_{i}\left(x_{0}\right) $, por lo que $\displaystyle f\left(x_{j}\right) \to f\left(x_{0}\right) $ en $\displaystyle \R^{n} $ y $\displaystyle f $ es continua en $\displaystyle x_{0} $.
+\end{description}
+\end{proof}
+\begin{colorary}
+Sean $\displaystyle f,g : \left(X, d _{X}\right) \to \R $. Si $\displaystyle f $ y $\displaystyle g $ son continuas en $\displaystyle x_{0} $, entonces $\displaystyle f + g $ y $\displaystyle f \cdot g $ también son continuas en $\displaystyle x_{0} $. 
+\end{colorary}
+\begin{proof}
+Consideremos $\displaystyle h = \left(f,g\right) : \left(X, d _{X}\right) \to \R^{2} $ tal que $\displaystyle h\left(x\right) = \left(f\left(x\right), g\left(x\right)\right) $. Tenemos que $\displaystyle h $ es continua en $\displaystyle x_{0} $ por la proposición anterior. Además,
+\[
+\begin{split}
+	f + g : \left(X, d _{X}\right) & \to^{h} \R^{2} \to^{s} \R \\
+	x & \to \left(f\left(x\right), g\left(x\right)\right) \to f\left(x\right) + g\left(x\right),
+\end{split}
+\]
+que es continua en $\displaystyle x_{0} $. Similarmente, 
+\[
+\begin{split}
+	f \cdot g : \left(X, d _{X}\right) & \to^{h} \R^{2} \to^{p} \R \\
+	x & \to \left(f\left(x\right), g\left(x\right)\right) \to f\left(x\right) \cdot g\left(x\right),
+\end{split}
+\]
+que también es continua en $\displaystyle x_{0} $.
+\end{proof}
+\begin{eg}
+	\begin{itemize}
+	\item La función $\displaystyle u\left(x,y\right) = \sin\left(x+y\right)^{3} + \cos\left(xy\right) $ es continua en $\displaystyle \R^{2} $.
+	\item La función $\displaystyle w\left(x,y,z\right) = \sin\left(x + y +z \right)^{3} + \cos\left(xyz + 2xy\right) $ es continua en $\displaystyle \R^{3} $.
+	\item La función $\displaystyle v\left(x,y,z\right)= \log\left(1 + x^{2} +y^{2}\right) $ es continua en $\displaystyle \R^{3} $. 
+	\end{itemize}
+\end{eg}
+\begin{observation}
+Las proyecciones $\displaystyle \pi_{i} : \R^{n} \to \R $, $\displaystyle \pi_{i}\left(x_{1}, \ldots, x_{n}\right) = x_{i} $, son continuas en $\displaystyle \R^{n} $ para $\displaystyle \forall i = 1, \ldots, n $. En efecto, tenemos que la identidad es continua y sus componentes son $\displaystyle \left(\pi_{1}, \ldots, \pi_{n}\right) $,
+\[id \left(x\right) = id\left(x_{1}, \ldots, x_{n}\right) = \left(\pi_{1}\left(x\right), \ldots, \pi_{n}\left(x\right)\right) = \left(x_{1}, \ldots, x_{n}\right) .\]
+\end{observation}
+\begin{observation}
+Toda aplicación lineal $\displaystyle T : \R^{n} \to \R^{m} $ es continua (con $\displaystyle \| \cdot \|_{1}, \| \cdot \|_{2} $ y $\displaystyle \| \cdot \|_{\infty} $). En efecto, tenemos que $\displaystyle T\left(x\right) = \left(T_{1}\left(x\right), \ldots, T_{m}\left(x\right)\right) \in \R^{m} $ y existe $\displaystyle A \in \mathcal{M}_{n \times m}\left(\R\right) $ tal que 
+\[A \begin{pmatrix} x_{1} \\ \vdots \\ x_{m} \end{pmatrix} = \begin{pmatrix} T_{1}\left(x\right) \\ \vdots \\ T_{m}\left(x\right) \end{pmatrix} .\]
+Así, tenemos que $\displaystyle T_{i}\left(x\right) = \sum^{n}_{k = 1}a_{ik}x_{k} $, que es continua $\displaystyle \forall i = 1, \ldots, m $. Como las coordenadas son continuas tenemos que $\displaystyle T $ es continua.
+\end{observation}
+\begin{observation}
+Veremos que $\displaystyle \mathcal{M}_{n \times m} \cong \R^{n \cdot m} $.
+\end{observation}
+

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1759157488.09 "main.tex" "main.pdf" "main" 1759157491.7709 0
+["pdflatex"] 1759253814.41022 "main.tex" "main.pdf" "main" 1759253818.1614 0
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -48,6 +48,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb" 1248133631 36607 d654cb3f2bc54f57509240071db3bffa ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1248133631 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/babel-spanish/spanish.ldf" 1622145181 26965 3b6d1655ad716f98e788b1fb9f2e87b8 ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/babel/babel.sty" 1707339808 146276 10a40dabec03ce18494af0c3a51bcbdc ""
@@ -233,11 +234,12 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724666679.39075 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Chap1.tex" 1759157484.84431 52600 af563d4f6f144c61b50bd22698f43168 ""
+  "Chap1.tex" 1759250508.35201 58530 b1f60ab6b83d7e8ba24047942be6e6dd ""
+  "Chap2.tex" 1759253813.67541 3658 7333f9b71ffb3c722b3260499058b7f6 ""
   "Intro.tex" 1757843406.26196 13728 9e867cf5858e527c0687fcb4aba5c443 ""
-  "main.aux" 1759157491.49792 17972 1c187982f4334ce2accadfe8f195c9ef "pdflatex"
-  "main.tex" 1757843406.28912 618 e2ff68e6e4c313881302e752a9db080f ""
-  "main.toc" 1759157491.50219 786 d8ee433d3a31e663449979029ab8db98 "pdflatex"
+  "main.aux" 1759253817.9213 21412 45241393fa0332c84c7b0471e86fd638 "pdflatex"
+  "main.tex" 1759220909.53483 636 50d69cf70284412a9942e6be014c109c ""
+  "main.toc" 1759253817.92514 859 d06215cdc55ea1b0935be2b2177b2a64 "pdflatex"
   "preamble.tex" 1758291295.49121 4010 b153fe0d8745a9534077b48774b7457f ""
   (generated)
   "main.aux"

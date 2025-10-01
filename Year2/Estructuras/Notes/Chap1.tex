@@ -553,4 +553,61 @@ Vamos a considerar $\displaystyle \Z_{m} = \left\{ [0]_{m}, [1]_{m}, \ldots, [m 
 Veamos que la aplicación está bien definida. Supongamos que $\displaystyle [a]_{m} = [a']_{m} $ y $\displaystyle [b]_{m} = [b']_{m} $. Tenemos que $\displaystyle a - a' = km  $ y $\displaystyle b -b' = k'm $ para $\displaystyle k,k' \in \Z $. Así,
 \[ab = \left(km + a'\right)\left(k'm+b'\right) = k k' m^{2} + kb'm + a'k'm + a'b' \Rightarrow ab - a'b' = Cm, \; C \in \Z .\]
 Por tanto, $\displaystyle [ab]_{m} = [a'b']_{m} $. Consideremos el neutro $\displaystyle [1]_{m} $. Vamos a estudiar si $\displaystyle \left(\Z_{m}/ \left\{ [0]_{m}\right\} , \cdot , [1]_{m}\right) $ es un grupo. Para que lo sea, basta estudiar la propiedad de los inversos y que la operación sea interna. Para que este conjunto sea grupo debe darse que $\displaystyle m $ es primo. 
+\begin{definition}
+	Sea $\displaystyle \Z_{m} $ con $\displaystyle m \in \N $ y vamos a definir las \textbf{unidades de} $\displaystyle \Z_{m} $ como $\displaystyle \mathcal{U}\left(\Z_{m}\right) = \left\{ \left[a\right] _{m} \; : \; \mcd\left(a,m\right) = 1\right\}  $. 
+\end{definition}
+\begin{observation}
+	El conjunto está bien definido ya que si $\displaystyle [a]_{m} = [b]_{m} $, tenemos que $\displaystyle b = a + km $ con $\displaystyle k \in \Z $. Como $\displaystyle \mcd\left(a,m\right) = 1 $, debe ser que $\displaystyle \mcd\left(b,m\right) = 1 $.  
+\end{observation}
+\begin{lema}
+	Dado $\displaystyle a \in \Z $, $\displaystyle [a]_{m} \in \mathcal{U}\left(\Z_{m}\right) $ si y solo si tiene inverso multiplicativo en $\displaystyle \Z_{m}^{*} $. 
+\end{lema}
+\begin{proof}
+\begin{description}
+	\item[(i)] Supongamos que $\displaystyle [a]_{m} \in \mathcal{U}\left(\Z_{m}\right) $, por lo que $\displaystyle \mcd\left(a,m\right) = 1 $. Por la identidad de Bézout, existen $\displaystyle \lambda, \mu \in \Z $ tales que 
+		\[1 = \lambda a + \mu m .\]
+		Por tanto, tenemos que $\displaystyle [1]_{m} = [\lambda a]_{m} = [\lambda]_{m}[a]_{m} $. Para ver que $\displaystyle [\lambda]_{m} $ es el inverso multiplicativo de $\displaystyle [a]_{m} $ falta ver que $\displaystyle [\lambda]_{m} \in \mathcal{U}\left(\Z_{m}\right) $. En efecto, tenemos que $\displaystyle \mcd\left(\lambda, m\right) | 1 $ por lo que $\displaystyle \mcd\left(\lambda, m\right) = 1 $ y $\displaystyle [\lambda]_{m} \in \mathcal{U}\left(\Z_{m}\right) $. 
+	\item[(ii)] Supongamos que $\displaystyle [a]_{m} $ tiene inverso multiplicativo. Entonces, exsite $\displaystyle [b]_{m} \in \Z_{m}^{*} $ tal que $\displaystyle [a]_{m} \cdot [b]_{m} = [a \cdot b]_{m} = [1]_{m} $. Por tanto, $\displaystyle 1 = ab - km $. Sea $\displaystyle d = \mcd\left(a,m\right) $, entonces $\displaystyle d | a $ y $\displaystyle d | m $, por lo que $\displaystyle d | 1 $ y tenemos que $\displaystyle d = 1 $. Así, nos queda que $\displaystyle [a]_{m} \in \mathcal{U}\left(\Z_{n}\right) $.
+\end{description}
+\end{proof}
+\begin{observation}
+	Los elementos de $\displaystyle \mathcal{U}\left(\Z_{m}\right) $ son los generadores de $\displaystyle \Z_{m} $. En efecto, si $\displaystyle [a]_{m} \in \mathcal{U}\left(\Z_{m}\right) $ tenemos que $\displaystyle \mcd\left(a,m\right) = 1 $, por lo que $\displaystyle o\left([a]_{m}\right) = m $.
+\end{observation}
+\begin{prop}
+El conjunto $\displaystyle \left(\mathcal{U}\left(\Z_{m}\right), \cdot , [1]_{m}\right) $ es un grupo abeliano.
+\end{prop}
+\begin{proof}
+\begin{description}
+	\item[(i)] Veamos que la operación está cerrada. Si $\displaystyle [a]_{m}, [b]_{m} \in \mathcal{U}\left(\Z_{m}\right) $ tenemos que si $\displaystyle \mcd\left(ab,m\right) > 1 $, entonces existe un primo $\displaystyle p $ tal que $\displaystyle p | m $ y $\displaystyle p | ab $, por lo que $\displaystyle p | a $ o $\displaystyle p | b $, que es una contradicción. Por tanto, tenemos que $\displaystyle [ab]_{m} \in \mathcal{U}\left(\Z_{m}\right) $\footnote{Esta parte también se puede demostrar directamente utilizando la identidad de Bézout para $\displaystyle a,m $ y $\displaystyle b,m $ y haciendo el producto de las dos.}.
+	\item[(ii)] Veamos que se cumple la propiedad asociativa. Está claro que
+		\[\left([a]_{m} \cdot [b]_{m}\right)[c]_{m} = [ab]_{m} \cdot [c]_{m} = [abc]_{m} = [a]_{m} \cdot [bc]_{m} = [a]_{m}\left([b]_{m} \cdot [c]_{m }\right) .\]
+	\item[(iii)] Está claro que el elemento neutro es $\displaystyle [1]_{m} $.
+	\item[(iv)] Por lo visto en el lema anterior, los elementos de $\displaystyle \mathcal{U}\left(\Z_{m}\right) $ tienen inversos multiplicativos en $\displaystyle \mathcal{U}\left(\Z_{m}\right)$.
+\end{description}
+\end{proof}
+
+\begin{definition}[Función de Euler]
+	La \textbf{función de Euler}, $\displaystyle \varphi $, se define como 
+	\[ \varphi: \N / \left\{ 0\right\} \to \N : m \to \varphi\left(m\right) = \left|\mathcal{U}\left(\Z_{m}\right)\right|.\]
+	Es decir, $\displaystyle \varphi\left(m\right) $ es el número de generadores de $\displaystyle \Z_{m} $.
+\end{definition}
+\begin{prop}
+Sea $\displaystyle \varphi $ la función de Euler. 
+\begin{enumerate}
+\item Si $\displaystyle p $ es primo con $\displaystyle p \geq 2 $, entonces $\displaystyle \varphi\left(p\right) = p - 1 $.
+\item Si $\displaystyle p $ es primo y $\displaystyle k \geq 2 $ entero, entonces $\displaystyle \varphi\left(p^{k}\right) = \left(p-1\right)p^{k -1} $. En particular, si $\displaystyle k \geq 3 $, $\displaystyle \varphi\left(p^{k}\right) = \varphi\left(p^{k-1}\right)p $.
+\item Si $\displaystyle n,m \in \N $ tales que $\displaystyle \mcd\left(n,m\right) = 1 $, entonces $\displaystyle \varphi\left(nm\right) = \varphi\left(n\right)\varphi\left(m\right) $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Es trivial.
+\item El grupo $\displaystyle \mathcal{U}\left(\Z_{p^{k}}\right) $ está formado por las clases $\displaystyle [a]_{p^{k}} \in \Z_{p^{k}} $ tales que $\displaystyle \mcd\left(a,p^{k}\right) = 1 $, es decir, $\displaystyle \mcd\left(a,p\right) = 1 $. Por tanto, 
+	\[\mathcal{U}\left(\Z_{p^{k}}\right) = \Z_{p^{k}} / \underbrace{\left\{ \left[p i \right] _{p^{k}} \; : \; 0 \leq i < p^{k}\right\}}_{p\Z_{p^{k}}} .\]
+	Podemos observar que $\displaystyle p\Z_{p^{k}} = \left\langle [p]_{p^{k}} \right\rangle = \left\langle p \cdot [1]_{p^{k}} \right\rangle  $, por lo que tiene orden $\displaystyle \frac{p^{k}}{p} = p^{k-1} $. Por tanto, tenemos que
+	\[\varphi\left(p^{k}\right) = p^{k}-p^{k-1} = \left(p - 1\right)p^{k-1} .\]
+Finalmente, está claro que la ecuación $\displaystyle \varphi\left(p^{k}\right) = \varphi\left(p^{k-1}\right)p $ es trivial para $\displaystyle k = 2 $. Si $\displaystyle k > 2 $, tenemos que
+\[\varphi\left(p^{k-1}\right)p = \left(p-1\right)p^{k-2}p = \left(p-1\right)p^{k-1} = \varphi\left(p^{k}\right) .\]
+\end{enumerate}
+\end{proof}
 
