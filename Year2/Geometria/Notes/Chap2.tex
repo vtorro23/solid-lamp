@@ -1,0 +1,50 @@
+\chapter{Geometría afín y proyectiva lineal}
+\section{Espacios proyectivos y afines}
+\begin{definition}[Espacio afín]
+	Sea $\displaystyle \K $ un cuerpo. Un $\displaystyle \K $\textbf{-espacio afín} de dimensión $\displaystyle n < \infty $ es una terna $\displaystyle \left(\mathbb{A}, \vec{\mathbb{A}}, \vec{ \cdot}\right) $ donde $\displaystyle \mathbb{A} $ es un conjunto no vacío, $\displaystyle \vec{\mathbb{A}} $ es un $\displaystyle \K $-espacio vectorial de dimensión $\displaystyle n $ y 
+	\[
+	\begin{split}
+		\vec{ \cdot} : \mathbb{A} \times \mathbb{A} & \to \vec{\mathbb{A}} \\
+		\left(A,B\right) & \to \overrightarrow{AB},
+	\end{split}
+	\]
+	que cumple 
+	\begin{enumerate}
+	\item $\displaystyle \forall A \in \mathbb{A} $, $\displaystyle \forall v \in \vec{\mathbb{A}} $, $\displaystyle \exists ! B \in \mathbb{A} $ tal que $\displaystyle \overrightarrow{AB} = v $. 
+	\item $\displaystyle \forall A,B,C \in \mathbb{A} $, $\displaystyle \overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC} $.
+	\end{enumerate}
+\end{definition}
+\begin{eg}
+Un ejemplo es $\displaystyle \mathbb{A} = \vec{\mathbb{A}} = \K^{n} $. Podemos transformar puntos en vectores de la forma 
+\[\overrightarrow{\left(a_{1}, \ldots, a_{n}\right)\left(b_{1}, \ldots, b_{n}\right)} = \left(b_{1}-a_{1}, \ldots, b_{n}-a_{n}\right) .\]
+\end{eg}
+\begin{notation}
+Si $\displaystyle \overrightarrow{AB} = v $ escribimos $\displaystyle A + v = B $.
+\end{notation}
+\begin{observation}
+	\begin{itemize}
+	\item $\displaystyle \forall A \in \mathbb{A} $ la función $\displaystyle \overrightarrow{ \cdot A} : \mathbb{A} \to \vec{\mathbb{A}} : B \to \overrightarrow{AB} $ es una biyección. Esto se deduce directamente de \textbf{(1)}. De forma similar, si $\displaystyle v \in \vec{\mathbb{A}} $, la aplicación $\displaystyle + v : \mathbb{A} \to \mathbb{A}: A \to A + v $ también es biyectiva.
+	\item $\displaystyle \overrightarrow{AB} = 0 \iff A = B $. En efecto, por \textbf{(2)} se tiene que 
+		\[\overrightarrow{A A} + \overrightarrow{ A A} = \overrightarrow{A A} \iff \overrightarrow{A A } = 0 .\]
+		Como la aplicación $\displaystyle \overrightarrow{ \cdot A} $ es biyectiva, si $\displaystyle \overrightarrow{AB} = 0 $ debe ser que $\displaystyle A = B $. 
+	\item Se cumple la \textbf{ley del paralelogramo}. Es decir, tenemos que $\displaystyle \overrightarrow{AB} = \overrightarrow{CD} \Rightarrow \overrightarrow{AC} = \overrightarrow{BD} $. En efecto,
+		\[\overrightarrow{AC} = \overrightarrow{AB} + \overrightarrow{BD} + \overrightarrow{DC} = \overrightarrow{AB} + \overrightarrow{BC}-\overrightarrow{CD} = \overrightarrow{AB} + \overrightarrow{BD} - \overrightarrow{AB} = \overrightarrow{BD} .\]
+	
+	\end{itemize} 
+\end{observation}
+\begin{definition}[Poryectivizado de un espacio vectorial]
+Sea $\displaystyle V $ un $\displaystyle \K $-espacio vectoria de $\displaystyle \dim _{\K}V = n $. El \textbf{proyectivizado} de $\displaystyle V $, denotado $\displaystyle \mathbb{P}\left(V\right) $, es el conjunto de los subespacios vectoriales de $\displaystyle V $ de dimensión 1. La dimensión de $\displaystyle \mathbb{P}\left(V\right) $, denotada $\displaystyle \dim \mathbb{P}\left(V\right) $, es igual a $\displaystyle \dim _{\K}\left(V\right) -1 $.
+\end{definition}
+\begin{observation}
+	$\displaystyle \mathbb{P}\left(V\right) = \left(V- \left\{ 0\right\} \right)/_{\sim} $, donde $\displaystyle \sim $ denota la relación
+	\[u \sim v \iff \exists \lambda \in \K ^{*}, \; u = \lambda v .\]
+	Si $\displaystyle v = \left(a_{1}, \ldots, a_{n}\right) \in \K^{n} $, usamos $\displaystyle [v] $, $\displaystyle [v]_{n} $ o $\displaystyle [a_{1} : a_{2} : \cdots : a_{n}] $ para denotar al punto $\displaystyle L\left(v\right) $ de $\displaystyle \mathbb{P}\left(V\right) $.
+\end{observation}
+\begin{eg}
+\begin{enumerate}
+	\item Sea $\displaystyle V = \left\{ 0\right\}  $ el espacio vectorial trivial. Tenemos que $\displaystyle \mathbb{P}\left(V\right) = \emptyset $. Así, tenemos que el conjunto vacío es un espacio proyectivo con $\displaystyle \dim\mathbb{P}\left(V\right) = -1 $.
+	\item Si $\displaystyle V = \K $, tenemos que $\displaystyle \mathbb{P}\left(V\right) = \left\{ *\right\}  $ es un punto, por lo que $\displaystyle \dim\left(\mathbb{P}\left(\K\right)\right) = 0 $.
+	\item Si $\displaystyle V = \R^{2} $, tenemos que $\displaystyle \dim\mathbb{P}\left(\R^{2}\right) = 1 $. Hay una biyección $\displaystyle [0,\pi) \to \mathbb{P}\left(\R^{2}\right) : \theta \to [\left(\cos\theta, \sin \theta\right)] $. Tenemos que $\displaystyle \mathbb{P}\left(\R^{2}\right) \cong \mathbb{S}^{1}$, que es una circunferencia.
+\end{enumerate}
+\end{eg}
+

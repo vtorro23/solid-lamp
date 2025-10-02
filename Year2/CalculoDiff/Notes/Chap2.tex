@@ -102,4 +102,77 @@ Así, tenemos que $\displaystyle T_{i}\left(x\right) = \sum^{n}_{k = 1}a_{ik}x_{
 \begin{observation}
 Veremos que $\displaystyle \mathcal{M}_{n \times m} \cong \R^{n \cdot m} $.
 \end{observation}
+\section{Continuidad global}
+\begin{notation}
+Sea $\displaystyle f : X \to Y $. 
+\begin{itemize}
+	\item Para $\displaystyle y \in Y $ definimos $\displaystyle f^{-1}\left( \left\{ y\right\} \right) = \left\{ x \in X \; : \; f\left(x\right) = y\right\}  $.
+	\item Para $\displaystyle M \subset Y $ definimos $\displaystyle f^{-1}\left(M\right) = \left\{ x \in X \; : \; f\left(x\right) \in M\right\}  $.
+\end{itemize}
+\end{notation}
+\begin{theorem}
+Sea $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $. Son equivalentes:
+\begin{enumerate}
+\item $\displaystyle f $ es continua en $\displaystyle X $.
+\item $\displaystyle \forall V \subset Y $ abierto, $\displaystyle f^{-1}\left(V\right) $ es abierto en $\displaystyle X $.
+\item $\displaystyle \forall H \subset Y $ cerrado, $\displaystyle f^{-1}\left(H\right) $ es cerrado en $\displaystyle X $.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Sea $\displaystyle V \subset Y$ abierto y $\displaystyle x_{0} \in f^{-1}\left(V\right) $. Tenemos que $\displaystyle f\left(x_{0}\right) \in V $, que es abierto en $\displaystyle Y $, por lo que existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle B _{Y}\left(f\left(x_{0}\right), \epsilon \right) \subset V $. 
+Por ser $\displaystyle f $ continua en $\displaystyle X $ existe $\displaystyle \delta > 0 $ tal que $\displaystyle f\left(B _{X}\left(x_{0}, \delta \right)\right) \subset B_{Y}\left(f\left(x_{0}\right), \epsilon \right) \subset V $, por lo que $\displaystyle B_{X}\left(x_{0}, \delta \right)\subset f^{-1}\left(V\right) $.
+\item[(2) $\displaystyle \Rightarrow $ (1)] Sea $\displaystyle x_{0} \in X $. Dado $\displaystyle \epsilon > 0 $ podemos considerar $\displaystyle V =  B_{Y}\left(f\left(x_{0}\right), \epsilon \right)$, que es abierto en $\displaystyle Y $. Por hipótesis tenemos que $\displaystyle f^{-1}\left(V\right) $ es abierto en $\displaystyle X $, por lo que existe $\displaystyle \delta > 0 $ tal que $\displaystyle B_{X}\left(x_{0}, \delta \right) \subset f^{-1}\left(V\right) $. Así, nos queda que 
+	\[f\left(B_{X}\left(x_{0}, \delta \right)\right) \subset V = B_{Y}\left(f\left(x_{0}\right), \epsilon \right) .\]
+	Es decir, $\displaystyle f $ es continua en $\displaystyle x_{0} $. 
+\item[(2) $\displaystyle  \Rightarrow $ (3)] Sea $\displaystyle H \subset Y $ cerrado, por lo que $\displaystyle V = Y / H $ es abierto. Así, tenemos que $\displaystyle f^{-1}\left(V\right) $ es abierto en $\displaystyle X $, por lo que
+	\[f^{-1}\left(V\right) = \left\{ x \in X \; : \; f\left(x\right) \not\in H\right\} = X / f^{-1}\left(H\right) .\]
+	Por tanto, $\displaystyle f^{-1}\left(H\right) $ es cerrado en $\displaystyle Y $.
+\item[(3) $\displaystyle  \Rightarrow $ (2)] Sea $\displaystyle V \subset Y $ abierto. Consideramos $\displaystyle H = Y / V $ cerrado. Tenemos que $\displaystyle f^{-1}\left(H\right) $ es cerrado en $\displaystyle X $. Como  
+	\[f^{-1}\left(H\right) = \left\{ x \in X \; : \; f\left(x\right) \not\in V\right\}  = X / f^{-1}\left(V\right) ,\]
+	se sigue que $\displaystyle f^{-1}\left(V\right) $ es abierto en $\displaystyle X $.
+\end{description}
+\end{proof}
+\begin{eg}
+\begin{enumerate}
+	\item Sea $\displaystyle A = \left\{ \left(x,y\right) \in \R^{2} \; : \; x^{2} < 1 + y^{2}\right\} = \left\{ \left(x,y\right) \in \R^{2} \; : \; x^{2} - y^{2} - 1 < 0\right\}  $. Sea $\displaystyle f\left(x,y\right) = x^{2} - y^{2} -1 $, que es continua en $\displaystyle \R^{2} $. Podemos decir que $\displaystyle A = \left\{ \left(x,y\right)\in \R^{2} \; : \; f\left(x,y\right) \in \left(-\infty, 0\right)\right\} = f^{-1}\left(\left(-\infty,0\right)\right) $. Como $\displaystyle \left(-\infty,0\right) $ es abierto en $\displaystyle \R $, tenemos que $\displaystyle A $ es abierto en $\displaystyle \R^{2} $.
+	\item Sea $\displaystyle B = \left\{ \left(x,y,z\right) \in \R^{3} \; : \; x^{2} +y ^{2} \leq 1 + z^{2}\right\}  $. Podemos considerar $\displaystyle g : \R^{3} \to \R : \left(x,y,z\right) \to x^{2} + y^{2}-z^{2} -1 $, que es continua. Tenemos, pues que $\displaystyle B = g^{-1}\left(\left(-\infty,0\right]\right) $ que es cerrado, por lo que $\displaystyle B $ es cerrado en $\displaystyle \R^{3} $.
+	\item Sea $\displaystyle C = \left\{ \left(x,y,z\right) \in \R^{3} \; : \; x^{2} + y^{2} = 1 + z^{2}\right\}  $. Podemos tomar $\displaystyle h\left(x,y,z\right) = x^{2} +y^{2} -z^{2} -1 $, que es continua. Así, tenemos que $\displaystyle C = h^{-1}\left( \left\{ 0\right\} \right) $ y como $\displaystyle \left\{ 0\right\}  $ es cerrado en $\displaystyle \R $, tenemos que $\displaystyle C $ es cerrado. 
+\end{enumerate}
+\end{eg}
+\section{Continuidad y restricciones}
+\begin{prop}
+Sea $\displaystyle f : \left(X,d _{X}\right) \to \left(Y, d _{Y}\right) $ es continua en $\displaystyle X $ y sea $\displaystyle M \subset X $. Entonces la restricción de $\displaystyle f $ a $\displaystyle M $ \footnote{Se define la función de $\displaystyle f $ restringida a $\displaystyle M $ como $\displaystyle f|_{M}:\left(M, d _{X}|_{M}\right) \to \left(Y, d _{Y}\right) $} es continua en $\displaystyle M $. 
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle z_{0} \in M \subset X $ y sea $\displaystyle \left\{ x_{k}\right\} _{k \in \N} \subset M $ con $\displaystyle x_{k} \to z_{0} $ en $\displaystyle d _{X} |_{M} $, por lo que $\displaystyle x_{k} \to z_{0} $ en $\displaystyle d _{X} $. Como $\displaystyle f $ es cotinua tenemos que $\displaystyle f\left(x_{k}\right) \to f\left(z_{0}\right) $, por lo que $\displaystyle f|_{M} $ es continua en $\displaystyle z_{0} $.
+\end{proof}
+\begin{prop}
+Supongamos que $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ y sea $\displaystyle A \subset X $ abierto. Si $\displaystyle f|_{A} : \left(A, d _{X}|_{A}\right) \to \left(Y, d _{Y}\right) $ es continua en $\displaystyle A $, entonces $\displaystyle f $ es continua en $\displaystyle A $.
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle x_{0} \in A $ y $\displaystyle \left\{ x_{k}\right\} _{k \in \N} \subset X $ con $\displaystyle x_{k} \to x_{0} $. Como $\displaystyle A $ es abierto, existe $\displaystyle r > 0 $ tal que $\displaystyle B_{X}\left(x_{0},r\right) \subset A $. Por otro lado, existe $\displaystyle k_{0} \in \N $ tal que $\displaystyle \forall k \geq k_{0} $, $\displaystyle x_{k} \in B_{X}\left(x_{0}, r\right) $.
+	Así, como $\displaystyle \left\{ x_{k}\right\}_{k \geq k_{0}} \subset A $, tenemos que $\displaystyle x_{k} \to x_{0} $ por lo que $\displaystyle f\left(x_{k}\right) \to f\left(x_{0}\right) $ \footnote{Hemos usado que el límite de dos sucesiones que difieren en un número finito de términos es el mismo.}. Por tanto, $\displaystyle f $ es continua en $\displaystyle x_{0} $.
+\end{proof}
+\begin{eg}
+Sea $\displaystyle f : \R^{2} \to \R $ con 
+\[f\left(x,y\right) = 
+\begin{cases}
+\frac{xy}{x^{2}+y^{2}}, \; x^{2} +y^{2} \neq 0 \\
+0, \; \left(x,y\right) = \left(0,0\right)
+\end{cases}
+.\]
+Consideremos $\displaystyle A =\R^{2} / \left\{ \left(0,0\right)\right\} = \left\{ \left(x,y\right) \in \R^{2} \; : \; \left(x,y\right) \neq \left(0,0\right)\right\}  $, que es abierto en $\displaystyle \R^{2} $. Tenemos que $\displaystyle f|_{A}\left(x,y\right) = \frac{xy}{x^{2} +y^{2}} $ es continua en $\displaystyle A $. Por la proposición anterior tenemos que $\displaystyle f $ es continua en todos los puntos de $\displaystyle A $. \\
+Veamos si es continua en $\displaystyle \left(0,0\right) $. Dado $\displaystyle \lambda \in \R $ consideramos $\displaystyle M_{\lambda } = \left\{ \left(x,y\right) \; : \; y = \lambda x\right\}  $. Tenemos que
+\[f | _{M_{\lambda }}\left(x,y\right) = \frac{xy}{x^{2} + y^{2}} = \frac{\lambda x^{2}}{x^{2} + \lambda^{2}x^{2}} = \frac{\lambda }{1 + \lambda ^{2}} .\]
+Como $\displaystyle f|_{M_{\lambda }} $ es constante en $\displaystyle M_{\lambda } $, tenemos que $\displaystyle f|_{M_{\lambda }} $ es continua. Sin embargo, tenemos que $\displaystyle f $ no es continua en $\displaystyle \left(0,0\right) $, puesto que adopta valores distintios para cada $\displaystyle M_{\lambda} $.
+\end{eg}
+\begin{lema}[Lema de Pegado]
+Sea $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $. Supongamos que $\displaystyle X = F_{1} \cup \cdots \cup F_{m} $ es una unión finita de cerrados tales que $\displaystyle f|_{F_{i}} : \left(F_{i}, d _{X}|_{F_{i}}\right) \to \left(Y, d _{Y}\right) $ es continua $\displaystyle \forall i = 1, \ldots, m $. Entonces, $\displaystyle f $ es continua en $\displaystyle X $.
+\end{lema}
+\begin{proof}
+Sea $\displaystyle H \subset Y $ cerrado. Tenemos que 
+\[f^{-1}\left(H\right) = \left\{ x \in X \; : \; f\left(x\right) \in H\right\} = \bigcup_{1 \leq i \leq m} \left\{ x \in F_{i} \; : \; f\left(x\right) \in H\right\} = \bigcup_{1\leq i \leq m}\left(f|_{F_{i}}\right)^{-1}\left(H\right) .\]
+Tenemos que $\displaystyle \left(f|_{F_{i}}\right)^{-1}\left(H\right) $ es cerrado relativo en $\displaystyle \left(F_{i}, d _{X}|_{F_{i}}\right) $ y que $\displaystyle F_{i} $ es cerrado en $\displaystyle X $. Por tanto, $\displaystyle \left(f|_{F_{i}}\right)^{-1}\left(H\right) $ es cerrado en $\displaystyle X $ \footnote{Hemos usado que $\displaystyle C $ es cerrado relativo en $\displaystyle \left(Z, d _{Z}\right) $ si y solo si existe $\displaystyle F $ cerrado en $\displaystyle X $ tal que $\displaystyle C = Z \cap F $.} y $\displaystyle f $ es continua en $\displaystyle X $.
+\end{proof}
 
