@@ -47,4 +47,184 @@ Sea $\displaystyle V $ un $\displaystyle \K $-espacio vectoria de $\displaystyle
 	\item Si $\displaystyle V = \R^{2} $, tenemos que $\displaystyle \dim\mathbb{P}\left(\R^{2}\right) = 1 $. Hay una biyección $\displaystyle [0,\pi) \to \mathbb{P}\left(\R^{2}\right) : \theta \to [\left(\cos\theta, \sin \theta\right)] $. Tenemos que $\displaystyle \mathbb{P}\left(\R^{2}\right) \cong \mathbb{S}^{1}$, que es una circunferencia.
 \end{enumerate}
 \end{eg}
+\begin{prop}
+	Sea $\displaystyle V $ un $\displaystyle \K $-espacio vectorial de $\displaystyle \dim _{\K}V\geq 1 $. Sea $\displaystyle f : V \to \K $ una aplicación lineal sobreyectiva. Tenemos que $\displaystyle \mathcal{U} = \Ker\left(f\right) \subset V $ es un subespacio vectorial de $\displaystyle V $. Entonces, $\displaystyle \left(\mathbb{P}\left(V\right)/\mathbb{P}\left(\mathcal{U}\right), \mathcal{U}, \vec{ \cdot }\right) $ es un espacio afín donde $\displaystyle \overrightarrow{[u][v]}  = \frac{v}{f\left(v\right)}-\frac{u}{f\left(u\right)}$.
+\end{prop}
+\begin{proof}
+Primero comprobamos que la definición de $\displaystyle \vec{ \cdot} $ no depende de los representantes. Sea $\displaystyle u' = \lambda u $ y $\displaystyle v' = \mu v $ con $\displaystyle \lambda, \mu \neq 0 $. Tenemos que
+\[\frac{v'}{f\left(v'\right)} - \frac{u'}{f\left(u'\right)} = \frac{\lambda v}{f\left(\lambda v\right)} - \frac{\mu u}{f\left(\mu u\right)} = \frac{\lambda v}{\lambda f\left(v\right)} - \frac{\mu u}{\mu f\left(u\right)} = \frac{v}{f\left(v\right)} - \frac{u}{f\left(u\right)} .\]
+Comprobamos que $\displaystyle \forall [v_{1}], [v_{2}] \in \mathbb{P}\left(V\right)/\mathbb{P}\left(\mathcal{U}\right) $, $\displaystyle \overrightarrow{[v_{1}][v_{2}]} \in \mathcal{U} $. Tenemos que
+\[\overrightarrow{[v_{1}][v_{2}]} = \frac{v_{2}}{f\left(v_{2}\right)} - \frac{v_{1}}{f\left(v_{1}\right)} \Rightarrow f\left(\frac{v_{2}}{f\left(v_{2}\right)} - \frac{v_{1}}{f\left(v_{1}\right)}\right) = \frac{f\left(v_{2}\right)}{f\left(v_{2}\right)} - \frac{f\left(v_{1}\right)}{f\left(v_{1}\right)} = 0.\]
+Así, tenemos que $\displaystyle \overrightarrow{[v_{1}][v_{2}]} \in \mathcal{U} $. \\
+Demostremos que cumple los axiomas. 
+\begin{enumerate}
+	\item Demostremos primero la existencia. Sea $\displaystyle A \in \mathbb{P}\left(V\right) / \mathbb{P}\left(\mathcal{U}\right) $, por lo que $\displaystyle A = [w] $ con $\displaystyle f\left(w\right) \neq 0 $. Sea $\displaystyle v \in \mathcal{U} $. Tomamos $\displaystyle B = \left[\frac{w}{f\left(w\right)} + v\right] $.Comprobemos que $\displaystyle B \in \mathbb{P}\left(V\right) / \mathbb{P}\left(\mathcal{U}\right) $:
+	\[f\left(\frac{w}{f\left(w\right)} + v\right) = f\left(\frac{w}{f\left(w\right)}\right) + f\left(v\right) = \frac{f\left(w\right)}{f\left(w\right)} + f\left(v\right) = 1 \neq 0 \Rightarrow B \in \mathbb{P}\left(V\right) / \mathbb{P}\left(\mathcal{U}\right) .\]
+Así, tenemos que 
+\[
+\begin{split}
+	\overrightarrow{AB} = \overrightarrow{[w]\left[\frac{w}{f\left(w\right)} + v\right] } = \frac{\frac{w}{f\left(w\right)} + v}{f\left(\frac{w}{f\left(w\right)}+v\right)}-\frac{w}{f\left(w\right)} = v .
+\end{split}
+\]
+Demostramos ahora la unicidad. Sea $\displaystyle B' \in \mathbb{P}\left(V\right)/\mathbb{P}\left(\mathcal{U}\right) $ tal que $\displaystyle \overrightarrow{AB'} = v = \overrightarrow{AB} $. Tenemos que $\displaystyle B' = [z] $ con $\displaystyle f\left(z\right) \neq 0 $. Así, 
+\[\overrightarrow{AB'} = \overrightarrow{[w][z]} = \frac{z}{f\left(z\right)} - \frac{w}{f\left(w\right)} = v \Rightarrow z = \left(v + \frac{w}{f\left(w\right)}\right)f\left(z\right) \Rightarrow z = \lambda\left(\frac{w}{f\left(w\right)}+v\right), \; \lambda \in \K^{*} .\]
+Por tanto, tenemos que $\displaystyle [z] = \left[\frac{w}{f\left(w\right)}+v\right]  $, por lo que $\displaystyle B = B' $ y queda demostrada la unicidad.
+\item Sean $\displaystyle A,B,C \in \mathbb{P}\left(V\right) / \mathbb{P}\left(\mathcal{U}\right) $ tales que $\displaystyle A = [a] $, $\displaystyle B = [b] $ y $\displaystyle C = [c] $ con $\displaystyle f\left(a\right), f\left(b\right), f\left(c\right) \neq 0 $. Tenemos que
+	\[\overrightarrow{AB}+\overrightarrow{BC} = \left(\frac{b}{f\left(b\right)}-\frac{a}{f\left(a\right)}\right) + \left(\frac{c}{f\left(c\right)} - \frac{b}{f\left(b\right)}\right) = \frac{c}{f\left(c\right)} - \frac{a}{f\left(a\right)} = \overrightarrow{AC} .\]
+\end{enumerate}
+\end{proof}
+\begin{eg}
+	Sean $\displaystyle V = \K^{3} $ y $\displaystyle f: \K^{3} \to \K : \left(x_{0}, x_{1}, x_{2}\right) \to x_{0} $. Entonces, $\displaystyle \mathcal{U} = \Ker\left(f\right) = \left\{ x_{0} = 0\right\}  $. Tenemos que
+	\[\mathbb{P}\left(V\right) / \mathbb{P}\left(\mathcal{U}\right) = \left\{ [x_{0} : x_{1} : x_{2}] \in \mathbb{P}\left(V\right) \; : \; x_{0} \neq 0\right\} = \left\{ [1:x_{1}:x_{2}] \in \mathbb{P}\left(V\right)\right\}  .\]
+	Tenemos que $\displaystyle \mathbb{P}\left(V\right) / \mathbb{P}\left(\mathcal{U}\right) $ es un plano afín con espacio vectorial asociado $\displaystyle \mathcal{U} $ \footnote{Esto se parece mucho a nuestro intento de constuir un plano afín desde el espacio proyectivo $\displaystyle \K^{3} $.}. En este caso podemos observar que
+\[
+\begin{split}
+	\overrightarrow{[x_{0}:x_{1}:x_{2}][y_{0}:y_{1}:y_{2}]}  = & \frac{\left(1,y_{1}, y_{2}\right)}{f\left(1,y_{1}, y_{2}\right)} - \frac{\left(1, x_{1}, x_{2}\right)}{f\left(1,x_{1}, x_{2}\right)} \\
+	= &  \left(1, y_{1}, y_{2}\right) - \left(1, x_{1}, x_{2}\right) = \left(0, y_{1}-x_{1}, y_{2}-x_{2}\right) .
+\end{split}
+\]
+Consideremos ahora $\displaystyle \mathbb{P}\left(\mathcal{U}\right) = \left\{ [0:x_{1}:x_{2}] \in \mathbb{P}\left(V\right)\right\}  $. Podemos considerar la aplicación $\displaystyle g : \mathcal{U} \to \K : \left(0, x_{1}, x_{2}\right) \to x_{1} $. Sea $\displaystyle W = \Ker\left(g\right) $, entonces $\displaystyle \mathbb{P}\left(\mathcal{U}\right) / \mathbb{P}\left(W\right) $ es un espacio afín asociado a $\displaystyle W $ con $\displaystyle \dim_{\K}\left(W\right) = 1 $. 
+Así, tenemos que 
+\[\mathbb{P}\left(\mathcal{U}\right) / \mathbb{P}\left(W\right) = \left\{ [0:x_{1}:x_{2}] \in \mathbb{P}\left(V\right) \; : \; x_{1} \neq 0\right\} = \left\{ [0:1:x_{2}] \in \mathbb{P}\left(V\right)\right\}  .\]
+Si realizamos el cálculo anterior
+\[
+\begin{split}
+	\overrightarrow{[0:1:x_{2}][0:1:y_{2}]} = & \frac{\left(0,1,y_{2}\right)}{g\left(0,1,y_{2}\right)} - \frac{\left(0,1,x_{2}\right)}{g\left(0,1,x_{2}\right)} \\
+	= &  \left(0,1,y_{2}\right) - \left(0,1,x_{2}\right) = \left(0,0,y_{2}-x_{2}\right) .
+\end{split}
+\]
+Tenemmos que $\displaystyle \mathbb{P}\left(W\right) = \left\{ [0:0:x_{2}] \in \mathbb{P}\left(V\right)\right\} = \left\{ [0:0:1]\right\}  $. Podríamos seguir hasta obtener el conjunto vacío. 
+\end{eg}
+\begin{observation}
+Tenemos que
+\[
+\begin{split}
+	\mathbb{P}\left(\K^{3}\right) = & \mathbb{P}\left(V\right) = \mathbb{P}\left(V\right) / \mathbb{P}\left(\mathcal{U}\right) \sqcup \mathbb{P}\left(\mathcal{U}\right)\\
+	= & \underbrace{\mathbb{P}\left(V\right) / \mathbb{P}\left(\mathcal{U}\right)}_{\text{plano afín}} \sqcup \underbrace{\mathbb{P}\left(\mathcal{U}\right)/\mathbb{P}\left(W\right)}_{\text{recta afín}} \sqcup \underbrace{\mathbb{P}\left(W\right)}_{\text{punto}}.
+\end{split}
+\]
+\end{observation}
+\subsection{Sistemas de referencia}
+\begin{definition}[Referencia cartesiana]
+Sea $\displaystyle \mathbb{A} $ un espacio afín. Una \textbf{referencia cartesiana} es un par $\displaystyle \mathcal{R}_{C}= \left(O,\mathcal{B}\right) $ donde $\displaystyle O \in \mathbb{A} $ y $\displaystyle \mathcal{B} $ es una base de $\displaystyle \vec{\mathbb{A}} $. Las coordenadas de $\displaystyle A \in \mathbb{A} $ en $\displaystyle \mathcal{R}_{C} $ son las coordenadas de $\displaystyle \overrightarrow{OA} $ en la base $\displaystyle \mathcal{B} $.
+\end{definition}
+\begin{eg}
+Consideremos $\displaystyle \mathbb{A} = \R^{2} $ y la siguiente referencia cartesiana:
+\[ \mathcal{R}_{C} = \left( O = \left(1,0\right), \mathcal{B} = \left\{ \left(1,1\right), \left(1,-1\right)\right\} \right) .\]
+Consideremos $\displaystyle A = \left(3,2\right) \in \mathbb{A} $ y calculemos sus coordenadas en $\displaystyle \mathcal{R}_{C} $:
+\[\overrightarrow{OA} = \left(3,2\right)-\left(1,0\right) = \left(2,2\right) = 2e_{1} .\]
+Por tanto, $\displaystyle \overrightarrow{OA} = \left(2,0\right)\mathcal{B} $ y $\displaystyle A = \left(2,0\right)_{\mathcal{R}_{C}} $.
+\end{eg}
+A continuación introduciremos las coordenadas baricéntricas. Para ello, necesitamos primero:
+\begin{prop}
+Consideremos $\displaystyle P_{0}, \ldots, P_{n} \in \mathbb{A} $ y $\displaystyle \lambda_{0}, \ldots, \lambda_{n} \in \K $ tales que $\displaystyle \sum^{n}_{i = 0}\lambda_{i} = 1 $. Entonces, $\displaystyle \forall s,t = 0, \ldots, n $ se tiene que 
+\[P_{s} + \sum^{n}_{i = 0, i \neq s}\lambda_{i}\overrightarrow{P_{s}P_{i}} = P_{t} + \sum^{n}_{i = 0, i \neq t}\lambda_{i}\overrightarrow{P_{t}P_{i}} .\]
+\end{prop}
+\begin{proof}
+Está claro que
+\[
+\begin{split}
+	P_{s} + \sum^{n}_{i = 0, i \neq s}\lambda_{i}\overrightarrow{P_{s}P_{i}} = & P_{s} +\sum^{n}_{i = 0}\lambda_{i}\overrightarrow{P_{s}P_{i}} = P_{t} + \overrightarrow{P_{t}P_{s}} + \sum^{n}_{i = 0}\lambda_{i}\overrightarrow{P_{s}P_{i}} = P_{t} +\sum^{n}_{i = 0}\lambda_{i}\overrightarrow{P_{t}P_{s}} + \sum^{n}_{i = 0}\lambda_{i}\overrightarrow{P_{s}P_{i}} \\
+	= & P_{t} + \sum^{n}_{i = 0}\lambda_{i}\left(\overrightarrow{P_{t}P_{s}} + \overrightarrow{P_{s}P_{i}}\right) = P_{t} + \sum^{n}_{i = 0}\lambda_{i}\overrightarrow{P_{t}P_{i}}  = P_{t} + \sum^{n}_{i = 0, i \neq t}\lambda_{i}\overrightarrow{P_{t}P_{i}} .
+\end{split}
+\]
+\end{proof}
+\begin{definition}[Combinación afín]
+Una \textbf{combinación afín} de $\displaystyle P_{0}, \ldots, P_{n} \in \mathbb{A} $ es un punto de la forma $\displaystyle P_{0} + \sum^{n}_{i = 1}\lambda_{i}\overrightarrow{P_{0}P_{i}} $ con $\displaystyle \sum^{n}_{i = 0}\lambda_{i} = 1 $. Usamos $\displaystyle \sum^{n}_{i = 0}\lambda_{i}P_{i} $ para denotar a $\displaystyle P_{t}+\sum^{n}_{i = 0}\lambda_{i}\overrightarrow{P_{t}P_{i}} $ con $\displaystyle \sum^{n}_{i = 0}\lambda_{i} = 1 $.
+\end{definition}
+\begin{observation}
+La proposición anterior nos permite ver que la notación que hemos empleado en la definición anterior tiene sentido. 
+\end{observation}
+\begin{definition}
+	Una colección $\displaystyle \left\{ P_{0}, \ldots, P_{n}\right\} \subset \mathbb{A} $ es \textbf{afinmente generadora} si $\displaystyle \forall P \in \mathbb{A} $ existen $\displaystyle \lambda_{0}, \ldots, \lambda_{n} \in \K $ tales que $\displaystyle \sum\lambda_{i} = 1 $ y $\displaystyle P = \sum\lambda_{i}P_{i} $ (todo punto es combinación afín de $\displaystyle P_{0}, \ldots, P_{n} $). 
+	\begin{itemize}
+	\item Se dice que $\displaystyle \left\{ P_{0}, \ldots, P_{n}\right\} \subset \mathbb{A} $ es \textbf{afinmente dependiente} si existe $\displaystyle i \in \left\{ 0, \ldots, n\right\}  $ tal que $\displaystyle P_{i} $ es combinación afín de los demás. 
+	\item Se dice que es \textbf{afinmente independiente} si no es afinmente dependiente.
+	\end{itemize}
+\end{definition}
+\begin{definition}[Referencia afín]
+	Una \textbf{referencia afín} de $\displaystyle \mathbb{A} $ es una colección ordenada de puntos $\displaystyle \mathcal{R}_{A} = \left\{ P_{0}, \ldots, P_{n}\right\}  $ que es afinmente generadora y afinmente independiente. Las \textbf{coordenadas baricéntricas} de $\displaystyle A \in \mathbb{A} $ son $\displaystyle \left(\lambda_{0}, \ldots, \lambda_{n}\right) $ si $\displaystyle \sum\lambda_{i} = 1 $ y $\displaystyle \sum\lambda_{i}P_{i} = A $.
+\end{definition}
+\begin{prop}
+Las coordenadas baricéntricas de $\displaystyle A $ en $\displaystyle \mathcal{R}_{A} $ existen y son únicas. 
+\end{prop}
+\begin{proof}
+Como $\displaystyle \mathcal{R}_{A} $ es afinmente generador, tenemos que existen $\displaystyle \lambda_{0}, \ldots, \lambda_{n} \in \K $ tales que $\displaystyle \sum\lambda_{i} = 1 $ y $\displaystyle A = \sum\lambda_{i}P_{i} $. Demostremos ahora la unicidad. Supongamos que 
+\[A = \sum\lambda_{i}P_{i} = \sum\mu_{i}P_{i}, \; \sum\mu_{i} = 1 .\]
+Tenemos que
+\[
+\begin{split}
+& P_{0} + \sum^{n}_{i = 1}\lambda_{i}\overrightarrow{P_{0}P_{i}} = P_{0} + \sum^{n}_{i = 1}\mu_{i} \overrightarrow{P_{0}P_{i}} \\
+	\Rightarrow & \sum^{n}_{i = 1}\lambda_{i}\overrightarrow{P_{0}P_{i}} = \sum^{n}_{i = 1}\mu_{i}\overrightarrow{P_{0}P_{i}} = \sum^{n}_{i = 1}\left(\lambda_{i}-\mu_{i}\right)\overrightarrow{P_{0}P_{i}} = 0.
+\end{split}
+\]
+Hay dos posibles casos:
+\begin{itemize}
+\item Si $\displaystyle \lambda_{i}-\mu_{i} = 0 $, $\displaystyle \forall i = 1, \ldots, n $, tenemos que 
+	\[\lambda_{0} = 1 - \sum^{n}_{i = 1}\lambda_{i} = 1 - \sum^{n}_{i = 1}\mu_{i} = \mu_{0} .\]
+	Así, nos queda que $\displaystyle \lambda_{i} = \mu_{i} $ para $\displaystyle i = 0, \ldots, n $.
+\item Supongamos que existe algún $\displaystyle i \in \left\{ 0, \ldots, n\right\}  $ tal que $\displaystyle \lambda_{i}-\mu_{i} \neq 0 $. Entonces, tendríamos que 
+	\[\left(\lambda_{i}-\mu_{i}\right)\overrightarrow{P_{0}P_{i}} = \sum^{n}_{j = 0, j \neq i}-\left(\lambda_{j}-\mu_{j}\right)\overrightarrow{P_{0}P_{j}} \Rightarrow \overrightarrow{P_{0}P_{i}} = \sum^{n}_{j = 0, j \neq i}\alpha_{j}\overrightarrow{P_{0}P_{j}} ,\]
+donde $\displaystyle \alpha_{j} = -\frac{\lambda_{j}-\mu_{j}}{\lambda_{i}-\mu_{i}} $. Así, nos queda que
+\[P_{i} = P_{0} + \overrightarrow{P_{0}P_{i}} = P_{0}+\sum^{n}_{j = 0, j \neq i}\alpha_{j}\overrightarrow{P_{0}P_{j}} .\]
+Por tanto, $\displaystyle P_{i} $ es una combinación afín de $\displaystyle P_{0}, \ldots, P_{i-1}, P_{i+1}, \ldots, P_{n} $ \footnote{Es fácil comprobar que $\displaystyle \sum^{n}_{j=0, j \neq i}\alpha_{j} = 1$.}  que contradice que $\displaystyle \mathcal{R}_{A} $ sea afinmente independiente. 
+\end{itemize}
+\end{proof}
+\begin{lema}
+	$\displaystyle \mathcal{R}_{A} = \left\{ P_{0}, \ldots, P_{n}\right\}  $ es una referencia afín si y solo si $\displaystyle \mathcal{B} = \left\{ \overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0}P_{n}}\right\}  $ es una base de $\displaystyle \vec{\mathbb{A}} $. En particular, $\displaystyle \left|\mathcal{R}_{A}\right| = \dim\mathbb{A} + 1$. 
+\end{lema}
+\begin{proof}
+\begin{description}
+	\item[(i)] Vamos a ver que $\displaystyle \mathcal{B}= \left\{ \overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0}P_{n}}\right\}  $ genera $\displaystyle \vec{\mathbb{A}} $. Sea $\displaystyle v \in \vec{\mathbb{A}} $. Tenemos que $\displaystyle P_{0} + v \in \mathbb{A} $ y $\displaystyle P_{0}+v = \left(\lambda_{0}, \ldots, \lambda_{n}\right)_{\mathcal{R}_{A}} $. Así, tenemos que
+		\[P_{0} + v = P_{0} + \sum^{n}_{i = 1}\lambda_{i}\overrightarrow{P_{0}P_{i}} .\]
+		Por tanto, debe ser que $\displaystyle v = \sum^{n}_{i = 1}\lambda_{i}\overrightarrow{P_{0}P_{i}} $, por lo que $\displaystyle \mathcal{B} $ genera a $\displaystyle \vec{\mathbb{A}} $. Veamos que son linealmente independientes:
+		\[ \alpha_{1}\overrightarrow{P_{0}P_{1}} + \cdots + \alpha_{n}\overrightarrow{P_{0}P_{n}} = 0 ,\]
+con $\displaystyle \alpha_{0} = 1 - \alpha_{1} - \cdots -\alpha_{n} $. Así, nos queda que
+\[\sum^{n}_{i = 0}\alpha_{i}P_{i} = P_{0} + \alpha_{1}\overrightarrow{P_{0}P_{1}} + \cdots + \alpha_{n}\overrightarrow{P_{0}P_{n}} = P_{0} + 0 = P_{0} .\]
+Así, tenemos que $\displaystyle P_{0} = \left(1, 0, \ldots, 0\right)_{\mathcal{R}_{A}} $ y $\displaystyle P_{0} = \left(\alpha_{0}, \alpha_{2}, \ldots, \alpha_{n}\right)_{\mathcal{R}_{A}} $, por lo que $\displaystyle \alpha_{1} = \cdots= \alpha_{n} = 0 $. Así, hemos visto que $\displaystyle \mathcal{B} $ son linealmente independientes.
+\item[(ii)] Supongamos que $\displaystyle \mathcal{B} $ es una base de $\displaystyle \vec{\mathbb{A}} $. Veamos que $\displaystyle \mathcal{R}_{A} $ es afinmente generadora. Sea $\displaystyle P \in \mathbb{A} $, está claro que $\displaystyle P = P_{0} + \overrightarrow{P_{0}P} $. Como $\displaystyle \overrightarrow{P_{0}P} \in \vec{\mathbb{A}}$, tenemos que existen $\displaystyle \lambda_{1}, \ldots, \lambda_{n} \in \K $ tales que
+	\[\overrightarrow{P_{0}P} = \lambda_{1}\overrightarrow{P_{0}P_{1}} + \cdots + \lambda_{n}\overrightarrow{P_{0}P_{n}} .\]
+	Si tomamos $\displaystyle \lambda_{0} = 1 - \sum^{n}_{i = 1}\lambda_{i} $, tenemos que $\displaystyle P = P_{0} + \sum^{n}_{i = 1}\lambda_{i}\overrightarrow{P_{0}P_{i}} $, por lo que $\displaystyle P $ es una combinación afín de $\displaystyle \mathcal{R}_{A} $ y $\displaystyle \mathcal{R}_{A} $ es afinmente generadora. Veamos que $\displaystyle \mathcal{R}_{A} $ es afimente independiente. 
+Supongamos que $\displaystyle P_{i} = \sum_{j \neq i}\alpha_{j}P_{j} $ con $\displaystyle \sum_{j \neq i}\alpha_{j} = 1 $ para $\displaystyle i \neq 0 $ (si $\displaystyle i = 0 $ para lo que continua tomamos otro punto). Tenemos que $\displaystyle P_{i} = P_{0} + \overrightarrow{P_{0}P_{i}} $ y además
+\[P_{i} = P_{0} + \sum^{n}_{j = 0, j \neq i} \alpha_{j}\overrightarrow{P_{0}P_{j}} \Rightarrow \overrightarrow{P_{0}P_{i}} = \sum^{n}_{j = 0, j\neq i}\alpha_{j}\overrightarrow{P_{0}P_{j}}.\]
+Esto contradice que $\displaystyle \mathcal{B} $ sea linealmente independiente.
+\end{description}
+\end{proof}
+\begin{eg}
+	Consideremos $\displaystyle \mathbb{A} = \mathbb{P}\left(\R^{2}\right) / \left\{ x_{0}+2x_{1} = 0\right\} = \mathbb{P}\left(\R^{2}\right) / \mathbb{P}\left(U\right) $ donde $\displaystyle U = \Ker\left(f\right) $ y $\displaystyle f\left(x_{0},x_{1}\right) = x_{0}+2x_{1} $. 
+	\begin{enumerate}
+		\item Probemos que $\displaystyle P_{0} = [1:1] $ y $\displaystyle P_{1} = [1:0] $ forman una referencia afín de $\displaystyle \mathbb{A} $. Por lo visto anteriormente, $\displaystyle \mathcal{R}_{A} = \left\{ P_{0}, P_{1}\right\}  $ es una referencia afín si y solo si $\displaystyle \mathcal{B} = \left\{ \overrightarrow{P_{0}P_{1}}\right\}  $ es una base de $\displaystyle \vec{\mathbb{A}} $. En este caso, tenemos que $\displaystyle \vec{A} = U $ y $\displaystyle \dim U = 1 $. Tenemos que 
+			\[\overrightarrow{P_{0}P_{1}} = \frac{\left(1,0\right)}{f\left(1,0\right)}-\frac{\left(1,1\right)}{f\left(1,1\right)} = \left(1,0\right)-\frac{1}{3}\left(1,1\right) = \left(\frac{2}{3}, -\frac{1}{3}\right) .\]
+		Como $\displaystyle \overrightarrow{P_{0}P_{1}} \neq 0 $, tenemos que $\displaystyle \mathcal{B} $ es una base de $\displaystyle \vec{\mathbb{A}} $. 	
+		\item Calculemos las coordenadas baricéntricas de $\displaystyle [5:-2] $ en la referencia afín. Queremos que existan $\displaystyle \lambda_{0}, \lambda_{1} \in \R $ tales que $\displaystyle \lambda_{0}+\lambda_{1} = 1 $ y
+			\[ [5:-2] = \left(\lambda_{0}, \lambda_{1}\right)_{\mathcal{R}_{A}} .\]
+			Además,
+			\[[5:-2] = [1:1] + \lambda_{1}\overrightarrow{P_{0}P_{1}} = [1:1] + \lambda_{1}\left(\frac{2}{3}, -\frac{1}{3}\right) \iff \overrightarrow{[1:1][5:-2]} = \lambda_{1}\left(\frac{2}{3}, -\frac{1}{3}\right) .\]
+		Así, nos queda que 
+		\[\left(\frac{14}{3},-\frac{7}{3}\right) = \lambda_{1}\left(\frac{2}{3}, -\frac{1}{3}\right) .\]
+		Nos queda que $\displaystyle \lambda_{1} = 7 $ y $\displaystyle \lambda_{0}=-6 $. Así, las coordenadas baricéntricas de $\displaystyle [5:-2] $ son $\displaystyle \left(-6,7\right)_{\mathcal{R}_{A}} $.	
+	\end{enumerate}
+\end{eg}
+Ahora vamos a intriducir referencias en el espacio proyectivo. 
+\begin{definition}
+	Una familia de puntos $\displaystyle [v_{0}], \ldots, [v_{n}] \in \mathbb{P}\left(V\right) $ es \textbf{independiente} si $\displaystyle v_{0}, \ldots, v_{n} $ es linealmente independiente.
+\end{definition}
+\begin{lema}
+Ser independiente no depende de los representantes.
+\end{lema}
+\begin{proof}
+	Sean $\displaystyle [v_{0}], \ldots, [v_{n}] \in \mathbb{P}\left(V\right)$ y supongamos que $\displaystyle v_{0}, \ldots, v_{n} $ son linealmente independientes. Sean $\displaystyle [v'_{0}] = [v_{0}], \ldots, [v'_{n}] = [v_{n}] $. Así, para $\displaystyle i = 1, \ldots, n $ existe $\displaystyle \lambda_{i} \in \K^{*} $ tal que $\displaystyle v_{i}' = \lambda_{i}v_{i} $. 
+	Tenemos que demostrar que $\displaystyle v_{0}', \ldots, v_{n}' $ son linealmente independientes. Si $\displaystyle \mu_{0}, \ldots, \mu_{n} \in \K $,
+	\[0 = \mu_{0}v_{0}' + \cdots + \mu_{n}v_{n}' = \mu_{0}\lambda_{0}v_{0} + \cdots + \mu_{n}\lambda_{n}v_{n} .\]
+	Como $\displaystyle v_{0}, \ldots, v_{n} $ son linealmente independientes, debe ser que $\displaystyle \mu_{i}\lambda_{i} = 0 $, $\displaystyle \forall i = 0, \ldots, n $. Como $\displaystyle \lambda_{i} \neq 0 $ debe ser que $\displaystyle \mu_{i} = 0 $ y $\displaystyle v_{0}', \ldots, v_{n}' $ son linealmente independientes.
+\end{proof}
+\begin{observation}
+Observamos que si $\displaystyle \dim\left(V\right) = n +1$, entonces toda familia independiente de $\displaystyle \mathbb{P}\left(V\right) $ tiene a lo sumo $\displaystyle n +1 $ elementos.
+\end{observation}
+\begin{definition}
+$\displaystyle P_{0}, \ldots, P_{r} \in \mathbb{P}\left(V\right) $ están en \textbf{posición general} si cualquier subconjunto de tamaño $\displaystyle \dim\left(V\right) $ contiene elementos independientes. 
+\end{definition}
+\begin{eg}
+$\displaystyle P_{0}, \ldots, P_{n} \in \mathbb{P}\left(\R^{3}\right) $ están en posición general si ninguna terna está alineada. 
+\end{eg}
 

@@ -7,7 +7,7 @@ Sea $\displaystyle G $ un grupo, $\displaystyle H \leq G $ y $\displaystyle a \i
 Sea $\displaystyle G $ un grupo, $\displaystyle H \leq G $ y $\displaystyle a \in G $. Las aplicaciones
 \[
 \begin{split}
-f_{1} : H \to aH : h \to ah, \quad f_{2} : H \to aH : h \to ha 
+f_{1} : H \to aH : h \to ah, \quad f_{2} : H \to Ha : h \to ha 
 \end{split}
 \]
 son biyecciones. En particular, si $\displaystyle a \in H $, $\displaystyle aH = Ha = H $.
@@ -41,4 +41,183 @@ Sean $\displaystyle a,b \in G $ y $\displaystyle H \leq G $. Entonces $\displays
 	Si $\displaystyle a \in G $, tenemos que $\displaystyle [a]_{\sim_{H}} = Ha $. Lo llamamos la clase de equivalencia de $\displaystyle a $ módulo $\displaystyle H $ o la clase lateral derecha de $\displaystyle a $ por $\displaystyle H $. En efecto, 
 	\[b \in [a]_{m} \iff ab^{-1}\in H  \iff ba^{-1} \in H \iff b \in Ha .\]
 \end{observation}
+\begin{prop}[Fórmula de Lagrange]
+Sea $\displaystyle G $ un grupo y $\displaystyle H \leq G $. Entonces, $\displaystyle \left|G\right| = \left|G : H\right| \left|H\right| $.
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle [G : H] = k $, entonces sean $\displaystyle a_{1}, \ldots, a_{k} $ representantes de las $\displaystyle k $ distintas clases de equivalencia. Así, 
+	\[G = Ha_{1} \sqcup \cdots \sqcup Ha_{k} .\]
+Dado que se trata de uniones disjuntas obtenemos que
+\[ \left|G\right| = \left|Ha_{1} \sqcup \cdots \sqcup Ha_{k}\right| = \sum^{k}_{i = 1} \left|Ha_{i}\right|  = \sum^{k}_{i = 1} \left|H\right| = k \left|H\right|.\]
+La segunda igualdad la hemos obtenido del primer lema del tema.
+\end{proof}
+\begin{observation}
+\begin{enumerate}
+\item Sea $\displaystyle G $ un grupo finito y $\displaystyle a \in G $. Entonces por la fórmula de Lagrange sabemos que $\displaystyle o\left(a\right) | \left|G\right| $. Basta ver que hemos tomado $\displaystyle H = \left\langle a \right\rangle  $.
+\item Se puede definir la relación de equivalencia también por la izquierda:
+	\[a \sim^{H}b \iff aH = bH \iff b^{-1}a \in H .\]
+	Podemos observar que $\displaystyle \sim_{H} $ y $\displaystyle \sim^{H} $ son en general distintos pero $\displaystyle G/\sim_{H} $ y $\displaystyle G/\sim^{H} $ están en biyección. En efecto, la aplicación $\displaystyle [a]_{\sim_{H}} \to [a^{-1}]_{\sim^{H}} $ es una biyección. Así, el índice de un subgrupo no depende de si trabajamos por la izquierda o por la derecha.
+\end{enumerate}
+\end{observation}
+\begin{prop}[Transitividad del índice]
+Sean $\displaystyle G $ un grupo finito y $\displaystyle H,K \leq G $ tales que $\displaystyle K \leq H $. Así,
+\[ [G:K] = [G:H] [H:K] .\]
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle m = [G:H] $ y $\displaystyle n = [H:K] $. Sean $\displaystyle a_{1}, \ldots, a_{m} $ representantes de las clases de equivalencia de $\displaystyle [G:H] $ y sean $\displaystyle b_{1}, \ldots, b_{n} $ representantes de las clases de equivalencia $\displaystyle [H:K] $. Así, tenemos que 
+	\[G = Ha_{1} \sqcup \cdots \sqcup Ha_{m}, \quad H = Kb_{1} \sqcup \cdots \sqcup Kb_{n} .\]
+	Por tanto, $\displaystyle Ha_{i} = Kb_{1}a_{i} \sqcup \cdots \sqcup Kb_{n}a_{i} $, $\displaystyle \forall i = 1, \ldots, n $. Así, nos queda que
+	\[G = \bigsqcup_{i = 1}^{m}Ha_{i} = \bigsqcup_{i = 1}^{m}\left(\bigsqcup_{j = 1}^{n}Kb_{j}a_{i}\right) .\]
+	Así queda demostrado el resultado. 
+\end{proof}
+\begin{colorary}
+	Sea $\displaystyle K \leq H \leq G $ tales que $\displaystyle [G:K] = p $, con $\displaystyle p $ primo. Entonces o $\displaystyle H = K $ o $\displaystyle H = G $. 
+\end{colorary}
+\begin{proof}
+Tenemos que 
+\[[G:K] = [G : H] [H:K] .\]
+Hay dos posibles casos:
+\begin{itemize}
+	\item Si $\displaystyle [G:H] =p $, entonces $\displaystyle [H:K] =1$ y $\displaystyle H = K $. 
+	\item Si $\displaystyle [H:K] = p $, entonces $\displaystyle [G:H] =1$ y $\displaystyle H = G $. 
+\end{itemize}
+\end{proof}
+\begin{colorary}
+Sea $\displaystyle G $ un grupo finito. 
+\begin{enumerate}
+	\item Si $\displaystyle H,K \leq G $ con órdenes coprimos entre ellos, entonces $\displaystyle H \cap K = \left\{ e\right\}  $.
+	\item Si $\displaystyle G $ tiene orden primo, entonces $\displaystyle G $ es cíclico y está generado por $\displaystyle a \in G/ \left\{ e\right\}  $.
+\end{enumerate}
+\end{colorary}
+\begin{proof}
+\begin{enumerate}
+	\item Sabemos que $\displaystyle H \cap K \leq G, K, H $. Por la fórmula de Lagrange tenemos que $\displaystyle \left|H\cap K\right|  $ divide a $\displaystyle \left|H\right| $ y a $\displaystyle \left|K\right| $, pero $\displaystyle \mcd\left( \left|H\right|, \left|K\right|\right) = 1 $, por lo que $\displaystyle \left|K \cap H\right| = 1 $ y necesariamente $\displaystyle H \cap K = \left\{ e\right\}  $. 
+	\item Supongamos que $\displaystyle \left|G\right|= p $, con $\displaystyle p $ primo, y $\displaystyle a\in G/ \left\{ e\right\}  $. Por la fórmula de Lagrange, sabemos que $\displaystyle o\left(a\right) $ divide a $\displaystyle \left|G\right| $. Por ser $\displaystyle \left|G\right| $ primo, debe ser que $\displaystyle o\left(a\right) = p $, por lo que $\displaystyle G = \left\langle a \right\rangle  $.
+\end{enumerate}
+\end{proof}
+\begin{theorem}[Teorema de Euler]
+Sea $\displaystyle m \geq 1 $ un entero natural. Para cada $\displaystyle a \in \Z $ tal que $\displaystyle \mcd\left(a,m\right) = 1 $ se cumple que $\displaystyle a^{\varphi\left(m\right)}\equiv 1 \mod m $, donde $\displaystyle \varphi\left(m\right) $ es la función de Euler.
+\end{theorem}
+\begin{proof}
+	Recordamos que $\displaystyle \mathcal{U}\left(\Z_{m}\right) $ son las unidades de $\displaystyle \Z_{m} $ y $\displaystyle \varphi\left(m\right) = \left|\mathcal{U}\left(\Z_{m}\right)\right| $. Sea $\displaystyle a \in \Z  $ con $\displaystyle [a]_{m} \in \mathcal{U}\left(\Z_{m}\right) $. Así
+	\[\left[a^{\varphi\left(m\right)}\right] _{m} = [a]^{\varphi\left(m\right)}_{m} = [1]_{m} ,\]
+	puesto que $\displaystyle \varphi\left(m\right) = \left|\mathcal{U}\left(\Z_{m}\right)\right| $ y $\displaystyle o\left([a]_{m}\right) | \varphi\left(m\right) $. 
+\end{proof}
+\begin{colorary}[Pequeño teorema de Fermat]
+Sea $\displaystyle p \geq 2 $ primo y $\displaystyle a \in \Z $ entonces $\displaystyle a ^{p} \equiv a \mod p $ \footnote{Para que se cumpla el teorema debe darse que $\displaystyle \mcd\left(a,p\right)=1 $.}.
+\end{colorary}
+\begin{proof}
+Usando lo anterior, tenemos que
+\[a^{\varphi\left(p\right)} \equiv a^{p-1} \equiv 1 \mod p \Rightarrow a^{p} \equiv a \mod p .\]
+\end{proof}
+\begin{eg}[Grupos de orden 4]
+	Vamos a considerar grupos de orden 4. Sea $\displaystyle G = \left\{ e, a, b, ab\right\}  $. Como $\displaystyle \left|G\right| = 4 $, el orden de sus elementos es 2 o 4. Podemos considerar varios casos:
+	\begin{itemize}
+	\item Puede suceder que todos los elementos tengan orden 2. Tendríamos entonces que $\displaystyle G \cong C_{2} \times C_{2} $.
+	\item Puede suceder que exista un elemento de orden 4. Entonces existe otro elemento de orden 4 que es su inverso. Por tanto, el otro elemento que sobra debe tener orden 2. Tendríamos entonces que $\displaystyle C \cong C_{4} $.
+	\end{itemize}
+\end{eg}
+\section{Subgrupos normales}
+\begin{definition}
+	Sea $\displaystyle G $ un grupo, $\displaystyle H \leq G $ y $\displaystyle a \in G $. Definimos el subgrupo $\displaystyle a^{-1}Ha = \left\{ a^{-1}ha \; : \; h \in H\right\}  $ como el \textbf{conjugado} de $\displaystyle H $ por $\displaystyle a $.
+\end{definition}
+\begin{observation}
+Comprobemos que verdaderamente $\displaystyle a^{-1}Ha $ es un subgrupo. Está claro que $\displaystyle e \in a^{-1}Ha $, puesto que $\displaystyle e = a^{-1}ea $. Ahora, si $\displaystyle x,y \in H $, existen $\displaystyle h_{1}, h_{2} \in H $ tales que $\displaystyle x = a^{-1}h_{1}a $ e $\displaystyle y = a^{-1}h_{2}a $. Así, tenemos que
+\[xy^{-1} = \left(a^{-1}h_{1}a\right)\left(a^{-1}h_{2}a\right) = a^{-1}h_{1}h_{2}a \in a^{-1}Ha .\]
+Así, nos queda que $\displaystyle a^{-1}Ha \leq G $.
+\end{observation}
+
+\begin{observation}
+\begin{enumerate}
+\item Si $\displaystyle G $ es abeliano, tenemos que $\displaystyle a^{-1}ha = h $, por lo que $\displaystyle a^{-1}Ha = H $, $\displaystyle \forall a \in G $.
+\item Si $\displaystyle a \in H $, entonces $\displaystyle a^{-1}Ha = H $.
+\item $\displaystyle a^{-1}Ha $ y $\displaystyle H $ están en biyección, por tanto si $\displaystyle H $ es finito, el orden de $\displaystyle a^{-1}Ha $ no depende del $\displaystyle a $ escogido.
+\end{enumerate}
+\end{observation}
+\begin{definition}[Subgrupo normal]
+Sea $\displaystyle G $ un grupo y $\displaystyle H \leq G $. Diremos que $\displaystyle H $ es \textbf{subgrupo normal}, $\displaystyle H \lhd G $, si $\displaystyle a^{-1}Ha = H $, $\displaystyle \forall a \in G $.
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+	\item Siempre hay subgrupos normales: $\displaystyle \left\{ e\right\}  $ y $\displaystyle G $.
+	\item Si $\displaystyle G $ es abeliano, todo subgrupo es normal.
+\end{enumerate}
+\end{observation}
+\begin{lema}
+Sea $\displaystyle H \leq G $. Son equivalentes:
+\begin{enumerate}
+\item $\displaystyle H \lhd G $.
+\item $\displaystyle \forall a \in G $, $\displaystyle \forall h \in H $ tal que $\displaystyle a^{-1}ha \in H $. 
+\item $\displaystyle aH = Ha $, $\displaystyle \forall a \in G $.
+\end{enumerate}
+\end{lema}
+\begin{proof}
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Es trivial por la definición.
+\item[(2) $\displaystyle \Rightarrow $ (3)] Sea $\displaystyle h_{1} \in H $ tal que $\displaystyle a^{-1}ha = h_{1} $. Así, tenemos que $\displaystyle ha = ah_{1}\in aH $. Por otro lado, sea $\displaystyle h_{2} \in H $ tal que $\displaystyle aha^{-1} = h_{2} $, por lo que $\displaystyle ah = h_{2}a \in Ha $.
+\item[(3) $\displaystyle \Rightarrow $ (1)] Como $\displaystyle aH = Ha $, tenemos que $\displaystyle H = a^{-1}Ha $, $\displaystyle \forall a \in G $ por lo que $\displaystyle H \lhd G $.
+\end{description}
+\end{proof}
+\begin{prop}
+Sean $\displaystyle G_{1} $ y $\displaystyle G_{2} $ grupos y $\displaystyle f $ un homomorfismo de grupos. 
+\begin{enumerate}
+\item Si $\displaystyle H \lhd G_{1} $, entonces $\displaystyle f\left(H\right) \lhd \Imagen\left(f\right) $.
+\item Si $\displaystyle K \lhd \Imagen\left(f\right) $, entonces $\displaystyle f^{-1}\left(K\right)\lhd G_{1} $. En particular, $\displaystyle \Ker\left(f\right) \lhd G_{1} $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Sabemos que si $\displaystyle H \leq G_{1} $ entonces $\displaystyle f\left(H\right) \leq \Imagen\left(f\right) $. Falta ver que es subgrupo normal, es decir, $\displaystyle \forall y \in \Imagen\left(f\right) $, $\displaystyle y^{-1}f\left(H\right)y = f\left(H\right) $. Sea $\displaystyle y \in \Imagen\left(f\right) $ y $\displaystyle h' \in f\left(H\right) $, sea $\displaystyle x \in G_{1}, h \in H $ tales que $\displaystyle f\left(x\right) = y $ y $\displaystyle f\left(h\right) = h' $. Tenemos que 
+	\[y^{-1}h'y = f\left(x^{-1}\right)f\left(h\right)f\left(x\right) = f\left(x^{-1}hx\right) \in f\left(H\right) .\]
+\item Si $\displaystyle K \leq \Imagen\left(f\right) $, entonces $\displaystyle f^{-1}\left(K\right) \leq G_{1} $. Tenemos que ver que $\displaystyle f^{-1}\left(K\right) \lhd G_{1} $, es decir, $\displaystyle \forall x \in G_{1} $, $\displaystyle x^{-1}f^{-1}\left(K\right)x = f^{-1}\left(K\right) $. Sea $\displaystyle x \in G_{1} $, $\displaystyle k \in f^{-1}\left(K\right) $, entonces existe $\displaystyle y \in \Imagen\left(f\right) $ y $\displaystyle k' \in K $ tales que $\displaystyle f\left(x\right) = y $ y $\displaystyle f\left(k\right) = k' $.
+Así, nos queda que
+\[x^{-1}kx = f^{-1}\left(y\right)^{-1}f^{-1}\left(k'\right)f^{-1}\left(y\right)  = f^{-1}\left(y^{-1}k'y\right) \in f^{-1}\left(K\right) .\]
+\end{enumerate}
+\end{proof}
+\begin{eg}
+Consideremos la aplicación $\displaystyle \det : \GL_{n}\left(\R\right) \to \R^{*} $. Tenemos que $\displaystyle \Ker\left(\det\right) = \SL_{n}\left(\R\right) \lhd \GL_{n}\left(\R\right) $. 
+\end{eg}
+\begin{prop}
+Sea $\displaystyle G $ un grupo. 
+\begin{enumerate}
+	\item Si $\displaystyle H \leq G $ y $\displaystyle [G:H] = 2 $, entonces $\displaystyle H \lhd G $.
+	\item Si $\displaystyle K,H \leq G $ y $\displaystyle H \lhd G $, entonces $\displaystyle HK \leq G $. Además, si $\displaystyle K\lhd G $, $\displaystyle HK \lhd G $.
+	\item Si $\displaystyle K,H \lhd G $ con $\displaystyle H \cap K = \left\{ e\right\}  $, entonces $\displaystyle \forall k \in K, \forall h \in H $ se tiene que $\displaystyle h k = kh $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+	\begin{enumerate}
+	\item Como $\displaystyle [G:H] = 2 $, solo existen dos clases de equivalencia, $\displaystyle [e]_{\sim_{H}} $ y $\displaystyle [a]_{\sim_{H}} $. Así, $\displaystyle G = H \sqcup Ha = H \sqcup aH $, por lo que $\displaystyle Ha = aH $ y $\displaystyle H \lhd G $.
+	\item Es trivial que $\displaystyle e \in HK $. Sean $\displaystyle x,y \in HK $, entonces existen $\displaystyle h_{1}, h_{2} \in H $, $\displaystyle k_{1}, k_{2} \in K $ tales que $\displaystyle x = h_{1}k_{1} $ e $\displaystyle y = h_{2}k_{2} $. Tenemos que
+		\[xy^{-1} = \left(h_{1}k_{1}\right)\left(h_{2}k_{2}\right)^{-1} = h_{1}\left(k_{1}k_{2}^{-1}\right)h_{2}^{-1} \in h_{1}\left(k_{1}k_{2}^{-1}\right)  H = h_{1}H\left(k_{1}k_{2}^{-1}\right) .\]
+Así, tenemos que $\displaystyle h_{1}H\left(k_{1}k_{2}^{-1}\right) \subset H\left(k_{1}k_{2}^{-1}\right) \subset HK $, por lo que $\displaystyle xy^{-1} \in HK $. Si se cumple también que $\displaystyle K \lhd G $ entonces dados $\displaystyle g \in G $ y $\displaystyle hk \in HK $,
+\[g^{-1}\left(hk\right)g = \left(g^{-1}hg\right)\left(g^{-1}kg\right) \in HK .\]
+\item Tenemos que ver que si $\displaystyle k \in K $ y $\displaystyle h \in H $, entonces $\displaystyle hk = kh $, que es equivalente a ver que $\displaystyle h^{-1}k^{-1}hk = e $. Tenemos que
+	\[h^{-1}k^{-1}hk = h^{-1}k^{-1}hkh^{-1}h = h^{-1}\left(k^{-1}hkh^{-1}\right)h \in H .\]
+	\[h^{-1}k^{-1}hk = k^{-1}k h^{-1}k^{-1}hk = k^{-1}\left(kh^{-1}k^{-1}h\right)k \in K .\]
+	Así, $\displaystyle h^{-1}k^{-1}hk \in H \cap K $, por lo que $\displaystyle h^{-1}k^{-1}hk = e $, que es lo que queríamos demostrar. 
+	\end{enumerate}
+\end{proof}
+\begin{observation}
+	Sea $\displaystyle G $ grupo y $\displaystyle H,K \lhd G $ con $\displaystyle H \cap K = \left\{ e\right\}  $, y la aplicación $\displaystyle f : H \times K \to G : \left(h,k\right) \to hk $. Entonces $\displaystyle f $ es un homomorfismo inyectivo y $\displaystyle \Imagen\left(f\right) = HK $. Además si $\displaystyle H $ y $\displaystyle K $ son finitos, entonces $\displaystyle \left|HK\right| = \left|H\right| \left|K\right| $. 
+\end{observation}
+\begin{eg}
+	Tomamos $\displaystyle D_{4} = \left\langle \tau, \rho \right\rangle = \left\{ e, \tau, \rho, \rho^{2}, \rho^{3}, \tau\rho, \tau\rho^{2}, \tau\rho^{3}\right\} $. Estudiemos los subgrupos de $\displaystyle D_{4} $. Sabemos que todos los subgrupos, a excepción de los triviales, van a tener orden dos o cuatro. 
+	\begin{itemize}
+	\item Calculamos los subgrupos de orden 4:
+		\[H_{1} = \left\langle \rho \right\rangle, \; H_{2} = \left\langle \tau, \rho^{3} \right\rangle , \; H_{3} = \left\langle \tau\rho, \rho^{2} \right\rangle  .\]
+	\item Calculamos los subgrupos de orden 2:
+		\[H_{4} = \left\langle \tau \right\rangle , \; H_{5} = \left\langle \rho^{2} \right\rangle , \; H_{6} = \left\langle \tau \rho \right\rangle , \; H_{7} = \left\langle \tau\rho^{2} \right\rangle , \; H_{8} = \left\langle \tau\rho^{3} \right\rangle  .\]
+	\end{itemize}
+	Estudiemos cuáles de estos son normales. Por la proposición anterior, tenemos que todos los subgrupos de orden 4 son normales porque su índice es dos. Entre los grupos de orden dos el único normal es $\displaystyle H_{5} $. Es fácil ver que el resto no son normales. 
+\end{eg}
+\begin{observation}
+En general si $\displaystyle K \lhd H$ y $\displaystyle H \lhd G $ no implica que $\displaystyle K\lhd G $. Por ejemplo, en $\displaystyle D_{4} $ tenemos que $\displaystyle \left\langle \tau \right\rangle \lhd \left\langle \tau, \rho^{2} \right\rangle \lhd D_{4} $ pero $\displaystyle \left\langle \tau \right\rangle  $ no es subgrupo normal de $\displaystyle D_{4} $. 
+\end{observation}
+\begin{definition}[Grupo simple]
+	Llamamos \textbf{grupos simples} a los grupos, $\displaystyle G $, cuyos únicos subgrupos normales son $\displaystyle \left\{ e\right\}  $ y $\displaystyle G $. 
+\end{definition}
+\begin{eg}
+El grupo $\displaystyle \Z_{p} $ con $\displaystyle p $ primo es un grupo simple.
+\end{eg}
 

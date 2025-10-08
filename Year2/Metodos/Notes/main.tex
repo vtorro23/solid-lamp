@@ -9,6 +9,35 @@
 \date{8/9/2025}
 
 \maketitle
+\begin{observation}[Observación 2.5, Página 57]
+	\[\left(AB\right)^{-1} = B^{-1}A^{-1}, \quad \left(A^{*}\right)^{-1} = \left(A^{-1}\right)^{*}, \quad \left(A^{T}\right)^{-1} = \left(A^{-1}\right)^{T} .\]	
+\end{observation}
+\begin{proof}
+\begin{description}
+\item[(i)] Aprovechamos que $\displaystyle \GL_{n}\left(\K\right) $ es un grupo para usar la unicidad del inverso:
+	\[AB \cdot B^{-1}A^{-1} = A A ^{-1} = I, \quad B^{-1}A^{-1}AB = B^{-1}B = I .\]
+\item[(ii)] Sabemos que $\displaystyle \left(AB\right)^{*} = B^{*}A^{*} $:
+	\[ A^{*} \cdot \left(A^{-1}\right)^{*} = \left(A^{-1} \cdot A\right)^{*} = I^{*} = I, \quad \left(A^{-1}\right)^{*} \cdot A^{*} = \left(A \cdot A^{-1}\right)^{*} = I^{*} = I .\]
+\item[(iii)] Sabemos que $\displaystyle \left(AB\right)^{T} = B^{T}A^{T} $:
+	\[A^{T}\left(A^{-1}\right)^{T} = \left(A^{-1} A\right)^{T}= I^{T} = I, \quad \left(A^{-1}\right)^{T}A^{T} = \left(A A^{-1}\right)^{T}= I^{T} = I .\]
+\end{description}
+\end{proof}
+\begin{observation}[Observación 2.6, Página 58]
+\begin{enumerate}
+\item Toda matriz hermítica o unitaria es normal. 
+\item Si $\displaystyle A $ es hermítica e inversible, $\displaystyle A^{-1} $ también es hermítica.
+\item Si $\displaystyle A $ es normal e inversible, $\displaystyle A^{-1} $ también es normal. 
+\end{enumerate}
+\end{observation}
+\begin{proof}
+\begin{enumerate}
+\item Trivial a partir de la definición.
+\item Sea $\displaystyle A $ hermítica e inversible, veamos que $\displaystyle A^{-1} $ también es hermítica:
+	\[A = A^{*} \iff A^{-1} = \left(A^{*}\right)^{-1} \iff A^{-1} = \left(A^{-1}\right)^{*} .\]
+\item Sea $\displaystyle A $ normal e inversible, veamos que $\displaystyle A^{-1} $ también es normal:
+	\[\left(A^{-1}\right)^{*}A^{-1} = A^{-1}\left(A^{-1}\right)^{*} \iff \left(A^{*}\right)^{-1}A^{-1} = A^{-1}\left(A^{*}\right)^{-1} \iff A A^{*} = A^{*}A .\]
+\end{enumerate}
+\end{proof}
 
 \begin{prop}[Proposición 2.11, Página 71]
 	Sea $\displaystyle \| \cdot \|  $ una norma en $\displaystyle V $. La aplicación $\displaystyle | | | \cdot | | | : \mathcal{M}_{n} \to \R^{+}\cup \left\{ 0\right\}  $ dada por 

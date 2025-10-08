@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1759416406.94524 "main.tex" "main.pdf" "main" 1759416411.67072 0
+["pdflatex"] 1759946470.36314 "main.tex" "main.pdf" "main" 1759946474.87131 0
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -44,6 +44,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb" 1248133631 24457 5cbb7bdf209d5d1ce9892a9b80a307cc ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb" 1248133631 28902 2f5c04fd2884d1878057baa5aad22765 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
@@ -236,11 +237,11 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724666679.39075 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Chap1.tex" 1759164515.78544 76118 b4c6777402d2bc75a666b66c543a92c4 ""
-  "Chap2.tex" 1759416405.73402 20099 30c6ae8b6d5abe599a6c486a2ce73a0d ""
-  "main.aux" 1759416411.37499 22219 50f04d330fe8a29d5212d5b6d520733a "pdflatex"
+  "Chap1.tex" 1759591251.02198 76321 e865349f8d6ad7175ea939c35bd6950b ""
+  "Chap2.tex" 1759946469.15041 45064 73fc43ae0ad0dce97021d45bb347ba55 ""
+  "main.aux" 1759946474.59666 28256 1e33a745ea5361c3d8812a92259552d5 "pdflatex"
   "main.tex" 1759313173.93444 1021 eb1a103e4fe3eb351525de553ccd8b63 ""
-  "main.toc" 1759416411.37975 822 b45230cef817abd63de2b5339ca16b33 "pdflatex"
+  "main.toc" 1759946474.60238 881 868eaf7a72275ececab981b6f6799b26 "pdflatex"
   "preamble.tex" 1758104456.78191 3599 be57b67a90016da7ba8d1cf6dcec1791 ""
   (generated)
   "main.aux"

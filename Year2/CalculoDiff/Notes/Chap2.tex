@@ -167,7 +167,7 @@ Veamos si es continua en $\displaystyle \left(0,0\right) $. Dado $\displaystyle 
 \[f | _{M_{\lambda }}\left(x,y\right) = \frac{xy}{x^{2} + y^{2}} = \frac{\lambda x^{2}}{x^{2} + \lambda^{2}x^{2}} = \frac{\lambda }{1 + \lambda ^{2}} .\]
 Como $\displaystyle f|_{M_{\lambda }} $ es constante en $\displaystyle M_{\lambda } $, tenemos que $\displaystyle f|_{M_{\lambda }} $ es continua. Sin embargo, tenemos que $\displaystyle f $ no es continua en $\displaystyle \left(0,0\right) $, puesto que adopta valores distintios para cada $\displaystyle M_{\lambda} $.
 \end{eg}
-\begin{lema}[Lema de Pegado]
+\begin{lema}[Lema de pegado]
 Sea $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $. Supongamos que $\displaystyle X = F_{1} \cup \cdots \cup F_{m} $ es una unión finita de cerrados tales que $\displaystyle f|_{F_{i}} : \left(F_{i}, d _{X}|_{F_{i}}\right) \to \left(Y, d _{Y}\right) $ es continua $\displaystyle \forall i = 1, \ldots, m $. Entonces, $\displaystyle f $ es continua en $\displaystyle X $.
 \end{lema}
 \begin{proof}
@@ -175,4 +175,263 @@ Sea $\displaystyle H \subset Y $ cerrado. Tenemos que
 \[f^{-1}\left(H\right) = \left\{ x \in X \; : \; f\left(x\right) \in H\right\} = \bigcup_{1 \leq i \leq m} \left\{ x \in F_{i} \; : \; f\left(x\right) \in H\right\} = \bigcup_{1\leq i \leq m}\left(f|_{F_{i}}\right)^{-1}\left(H\right) .\]
 Tenemos que $\displaystyle \left(f|_{F_{i}}\right)^{-1}\left(H\right) $ es cerrado relativo en $\displaystyle \left(F_{i}, d _{X}|_{F_{i}}\right) $ y que $\displaystyle F_{i} $ es cerrado en $\displaystyle X $. Por tanto, $\displaystyle \left(f|_{F_{i}}\right)^{-1}\left(H\right) $ es cerrado en $\displaystyle X $ \footnote{Hemos usado que $\displaystyle C $ es cerrado relativo en $\displaystyle \left(Z, d _{Z}\right) $ si y solo si existe $\displaystyle F $ cerrado en $\displaystyle X $ tal que $\displaystyle C = Z \cap F $.} y $\displaystyle f $ es continua en $\displaystyle X $.
 \end{proof}
+\begin{eg}
+\begin{enumerate}
+\item Sea $\displaystyle f : \R^{3} \to \R $ con 
+	\[ f\left(x,y,z\right) = 
+	\begin{cases}
+	\sqrt{x^{2}+y^{2}+z^{2}}, \; \sqrt{x^{2}+y^{2}+z^{2}}\leq 1 \\
+	\frac{1}{\sqrt{x^{2}+y^{2}+z^{2}}} \geq 1
+	\end{cases}
+	.\]
+	Podemos considerar 
+	\[ \displaystyle F_{1} = \left\{ \left(x,y,z\right) \; : \; \sqrt{x^{2}+y^{2}+z^{2}}\leq 1\right\} \; \text{y} \; F_{2} = \left\{ \left(x,y,z\right) \; : \; \sqrt{x^{2}+y^{2}+z^{2}} \geq 1\right\},\]
+	que son cerrados. Tenemos que $\displaystyle \R^{3} = F_{1} \cup F_{2} $ pero $\displaystyle F_{1} \cap F_{2} \neq \emptyset $. Tenemos que $\displaystyle f|_{F_{1}} $ y $\displaystyle f|_{F_{2}} $ son continuas, por lo que $\displaystyle f $ es continua en $\displaystyle \R^{3} $.
+\item Veamos que $\displaystyle f : \R^{2} \to \R : \left(x,y\right) \to \max \left\{ x,y\right\}  $ es continua. Podemos considerar los conjuntos cerrados
+	\[F_{1} = \left\{ \left(x,y\right) \; : \; y \geq x\right\} \; \text{y} \; F_{2} = \left\{ \left(x,y\right) \; : \; y \leq x\right\}  .\]
+	Tenemos que $\displaystyle f|_{F_{1}}\left(x,y\right) = y $ y $\displaystyle f|_{F_{2}} \left(x,y\right) = x $, que son continuas por lo que $\displaystyle f $ es continua en $\displaystyle \R^{2} $.
+\end{enumerate}
+\end{eg}
+\begin{theorem}
+Sea $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ continua en $\displaystyle X $ \footnote{Bastaría con que fuese continua en $\displaystyle K $.}. Si $\displaystyle \K \subset X $ es compacto, entonces $\displaystyle f\left(K\right) $ es compacto en $\displaystyle Y $.
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle \left\{ y_{n}\right\} _{n\in\N}\subset f\left(K\right) $ una sucesión cualquiera. Para cada $\displaystyle n \in \N $, como $\displaystyle y_{n} \in f\left(K\right) $, existe $\displaystyle x_{n} \in K $ tal que $\displaystyle f\left(x_{n}\right) = y_{n} $. Así, tenemos la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset K $. Como $\displaystyle K $ es compacto, existe $\displaystyle \left\{ x_{n_{j}}\right\} _{j \in \N} \subset \left\{ x_{n}\right\} _{n\in\N} $ tal que $\displaystyle x_{n_{j}} \to x_{0} \in \K $. Por ser $\displaystyle f $ continua, tenemos que $\displaystyle f\left(x_{n_{j}}\right) = y_{n_{j}} \to f\left(x_{0}\right) \in f\left(K\right) $.
+	Así, hemos visto que la sucesión $\displaystyle \left\{ y_{n}\right\} _{n\in\N} $ tiene una subsucesión convergente en $\displaystyle f\left(K\right) $.
+\end{proof}
+\begin{colorary}
+Sean $\displaystyle \left(X,d _{X}\right) $ un espacio métrico y $\displaystyle f : \left(X, d _{X}\right) \to \R $ continua en $\displaystyle X $. Si $\displaystyle K \subset X $ es compacto, $\displaystyle f $ alcanza un valor máximo y un valor mínimo en $\displaystyle K $, es decir, $\displaystyle \exists x_{m}, x_{M} \in K $ tales que $\displaystyle f\left(x_{m}\right) \leq f\left(x\right) \leq f\left(x_{M}\right), \; \forall x \in K $.
+\end{colorary}
+\begin{proof}
+Como $\displaystyle K \subset X $ es compacto, tenemos que $\displaystyle f\left(K\right) $ es compacto en $\displaystyle \R $, por lo que $\displaystyle f\left(K\right) $ es cerrado y acotado. Por ser $\displaystyle f\left(K\right) $ acotado en $\displaystyle \R $ existen $\displaystyle \alpha = \inf \left(f\left(K\right)\right) $ y $\displaystyle \beta = \sup\left(f\left(K\right)\right) $ con $\displaystyle \alpha, \beta \in \R $. Tenemos que $\displaystyle \alpha, \beta \in \overline{f\left(K\right)} = f\left(K\right) $ puesto que $\displaystyle f\left(K\right) $ es cerrado. Así, existen $\displaystyle x_{m}, x_{M} \in K $ tales que $\displaystyle \alpha = f\left(x_{m}\right) $ y $\displaystyle \beta = f\left(x_{M}\right) $.
+\end{proof}
+\begin{observation}
+Si $\displaystyle M \subset \R $ es acotado, entonces $\displaystyle \alpha = \inf\left(M\right) $ y $\displaystyle \beta = \sup\left(M\right) $ son puntos adherentes a $\displaystyle M $, puesto que $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists x\in M $ tal que 
+\[x \in M \cap \left(\beta - \epsilon, \beta + \epsilon \right) = M \cap B\left(\beta, \epsilon \right) \neq \emptyset .\]
+\end{observation}
+\begin{theorem}[Normas equivalentes]
+En $\displaystyle \R^{n} $ todas las normas son equivalentes.
+\end{theorem}
+\begin{proof}
+Sea $\displaystyle \| \cdot \| $ una norma en $\displaystyle \R^{n} $. Vamos a demostrar que $\displaystyle \| \cdot \| $ es equivalente a $\displaystyle \| \cdot \|_{\infty} $. 
+\begin{enumerate}
+	\item Consideramos $\displaystyle \left\{ e_{i}\right\} _{i = 1}^{n} $ la base canónica de $\displaystyle \R^{n} $ y sea $\displaystyle M = \sum^{n}_{i = 1}\|e_{i}\| $. Tenemos que si $\displaystyle x \in \R^{n} $,
+		\[\|x\| = \left\|\sum^{n}_{i = 1}x_{i}e_{i}\right\| \leq \sum^{n}_{i = 1} \|x_{i}e_{i}\| = \sum^{n}_{i = 1} \left|x_{i}\right| \|e_{i}\| \leq \sum^{n}_{i = 1} \| x \|_{\infty}\|e_{i}\| = M\|x\|_{\infty} .\]
+	\item Consideramos $\displaystyle f : \left(\R^{n}, \| \cdot \|_{\infty}\right) \to \R : x \to \| x\|$. Veamos que $\displaystyle f $ es continua en $\displaystyle \R^{n} $. Sea $\displaystyle \left\{ x_{k}\right\} _{k \in \N} \subset \R^{n}$ con $\displaystyle x_{k} \to x_{0} $ en $\displaystyle \left(\R^{n}, \| \cdot \| _{\infty}\right) $. 
+Vamos a ver que $\displaystyle f\left(x_{k}\right) \to f\left(x_{0}\right) $:
+\[ \left|f\left(x_{k}\right) -f\left(x_{0}\right)\right| = \left| \| x_{k}\| - \|x_{0}\|\right| \leq \| x_{k}-x_{0}\| \leq M\|x_{k}-x_{0}\|_{\infty} \to 0 .\]
+\item El conjunto $\displaystyle S_{\| \cdot \|_{\infty}} = \left\{ x \in \R^{n} \; : \; \|x\|_{\infty} = 1\right\}  $ es compacto en $\displaystyle \left(\R^{n}, \| \cdot \|_{\infty}\right) $ puesto que es cerrado y acotado. Por tanto, $\displaystyle f $ alcanza un valor mínimo en $\displaystyle S_{\| \cdot \|_{\infty}} $:
+	\[\exists u_{m} \in S_{\| \cdot \|_{\infty}}, \; 0 < \alpha = f\left(u_{m}\right) = \|u_{m}\| \leq \|u\|, \; \forall u \in S_{\| \cdot \|_{\infty}} .\]
+	Tenemos que $\displaystyle \|u\| \geq \alpha > 0 $, $\displaystyle \forall u \in \R^{n} $ con $\displaystyle \|u\|_{\infty} = 1 $. Por tanto, $\displaystyle \forall x \neq 0 $,
+	\[\|x\| = \left\|\frac{x}{\|x\|_{\infty}} \cdot \|x\|_{\infty}\right\| = \|x\|_{\infty} \cdot \left\|\frac{x}{\|x\|_{\infty}}\right\| \geq \|x\|_{\infty} \cdot \alpha .\]
+	Así, nos queda que $\displaystyle \alpha \cdot \|x\|_{\infty} \leq \|x\| $, $\displaystyle \forall x \in \R^{n} $. 
+\end{enumerate}
+\end{proof}
+\begin{colorary}
+En un espacio vectorial real de dimensión finita todas las normas son equivalentes. 
+\end{colorary}
+\begin{proof}
+Sea $\displaystyle E $ con $\displaystyle \dim\left(E\right) = n $, entonces $\displaystyle E $ es linealmente isomorfo a $\displaystyle \R^{n} $. 
+\end{proof}
+\begin{eg}
+En el espacio $\displaystyle \mathcal{M}_{n \times m} $ de matrices $\displaystyle n \times m $, todas las normas son equivalentes. 
+\end{eg}
+\section{Conexión}
+\begin{definition}[Intervalo]
+Un conjunto $\displaystyle I \subset \R $ es un \textbf{intervalo} si $\displaystyle \forall x,y \in I $ con $\displaystyle x < y $ y $\displaystyle \forall z \in \R $ con $\displaystyle x < z < y $, entonces $\displaystyle z \in I $.
+\end{definition}
+\begin{theorem}[Teorema de Bolzano]
+Sean $\displaystyle I \subset \R $ un intervalo y sea $\displaystyle f : I \to \R $ continua. Si $\displaystyle f $ toma dos valores, entonces toma los valores intermedios. Es decir, si $\displaystyle \exists x,y \in I $ con $\displaystyle f\left(x\right) = u, f\left(y\right) = v $ y $\displaystyle u < w < v $, entonces existe $\displaystyle z \in I $ tal que $\displaystyle f\left(z\right) = w $.
+\end{theorem}
+\begin{colorary}
+Sea $\displaystyle M \subset \R $. Son equivalentes:
+\begin{enumerate}
+\item $\displaystyle M $ es un intervalo.
+\item No existe ninguna función continua $\displaystyle f : M \to \R $ tal que $\displaystyle f\left(M\right) = \left\{ 0,1\right\}  $. 
+\item Para toda función continua $\displaystyle f : M \to \R $ con $\displaystyle f\left(M\right) \subset \left\{ 0,1\right\}  $, se tiene que $\displaystyle f $ es constante. 
+\end{enumerate}
+\end{colorary}
+\begin{proof}
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Es trivial a partir del teorema de Bolzano. 
+\item[(2) $\displaystyle \Rightarrow $ (1)] Supongamos que $\displaystyle M $ no es un intervalo. Por tanto, existen $\displaystyle x,y \in M $ con $\displaystyle x < y $ y existe $\displaystyle z \in \R $ con $\displaystyle x < z < y $ con $\displaystyle z \not\in M $. Definimos $\displaystyle f : M \to \R $ por 
+	\[f\left(t\right) =
+	\begin{cases}
+	0, \; t < z \\ 
+	1, \; t > z
+	\end{cases}
+	.\]
+	Está claro que $\displaystyle f\left(M\right) = \left\{ 0,1\right\}  $ y que $\displaystyle f $ es continua en $\displaystyle M $. 
+\item[(2) $\displaystyle \iff $ (3)] Trivial.
+\end{description}
+\end{proof}
+\begin{definition}[Conjunto conexo]
+Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle M \subset X $. 
+\begin{description}
+	\item[(a)] Diremos que $\displaystyle M $ es \textbf{conexo} cuando $\displaystyle \forall f : M \to \R $ continua con $\displaystyle f\left(M\right) \subset \left\{ 0,1\right\}  $, entonces $\displaystyle f $ es constante. 
+	\item[(b)] Diremos que $\displaystyle M $ es \textbf{desconexo} cuando no es conexo, es decir, existe alguna $\displaystyle f : M \to \R $ continua tal que $\displaystyle f\left(M\right) = \left\{ 0,1\right\}  $.
+\end{description}
+\end{definition}
+\begin{theorem}
+Sea $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ una función continua entre espacios métricos. Si $\displaystyle M \subset X $ es conexo, entonces $\displaystyle f\left(M\right) $ es conexo. 
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle h : f\left(M\right) \to \R $ continua con $\displaystyle h\left(f\left(M\right)\right) \subset \left\{ 0,1\right\}  $. Tenemos que $\displaystyle h \circ f|_{M} $ es continua y $\displaystyle h \circ f|_{M}\left(M\right) \subset \left\{ 0,1\right\}  $. Por ser $\displaystyle M $ conexo, tenemos que $\displaystyle h \circ f|_{M} $ es constante, por lo que $\displaystyle h $ es constante. 
+\end{proof}
+\begin{lema}
+Sean $\displaystyle \left(X,d \right) $ un espacio métrico y $\displaystyle A \subset X $. Consideramos $\displaystyle \chi_{A} : X \to \R $ definida por
+\[\chi_{A}\left(x\right) = 
+\begin{cases}
+0, \; x \in X / A \\
+1, \; x \in A
+\end{cases}
+.\]
+Entonces $\displaystyle \chi_{A} $ es continua en $\displaystyle X $ si y solo si $\displaystyle A $ es abierto y cerrado a la vez. 
+\end{lema}
+\begin{proof}
+\begin{description}
+\item[(i)] Como $\displaystyle \chi_{A} $ es continua, hemos visto anteriormente que el siguiente conjunto es cerrado:
+	\[A = \left\{ x \in X \; : \; \chi_{A}\left(x\right) = 1\right\}  = \chi_{A}^{-1}\left( \left\{ 1\right\} \right) .\]
+	Tenemos que 
+	\[X/A = \left\{ x \in X \; : \; \chi_{A}\left(x\right) = 0\right\}  = \chi_{A}^{-1}\left( \left\{ 0\right\} \right) .\]
+	De esta última igualdad obtenemos que $\displaystyle A $ es abierto, por lo que podemos concluir que $\displaystyle A $ es abierto y cerrado a la vez. 
+\item[(ii)] Sea $\displaystyle U \subset \R $ abierto. 
+	\begin{itemize}
+	\item Si $\displaystyle 0,1 \in U $, entonces $\displaystyle \chi_{A}^{-1}\left(U\right) = X $, que es abierto. 
+	\item Si $\displaystyle 0,1 \not\in U $, entonces $\displaystyle \chi_{A}^{-1}\left(U\right) = \emptyset $, que es abierto.
+	\item Si $\displaystyle 1 \in U $ y $\displaystyle 0 \not\in U $, tenemos que $\displaystyle \chi_{A}^{-1}\left(U\right) = A $, que es abierto.
+	\item Si $\displaystyle 1 \not\in U $ y $\displaystyle 0 \in U $, tenemos que $\displaystyle \chi_{A}^{-1}\left(U\right) = X / A $ que es abierto. 
+	\end{itemize}
+\end{description}
+\end{proof}
+\begin{eg}
+	Consideremos $\displaystyle X = \R $ y $\displaystyle M = \R/ \left\{ z\right\}  $. Tenemos que 
+	\[ A =\left(-\infty, z\right) = \left(-\infty,z\right] \cap M ,\]
+	por lo que $\displaystyle A $ es abierto y cerrado relativo en $\displaystyle M $. 
+\end{eg}
+\begin{theorem}
+Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle M \subset X $. Son equivalentes:
+\begin{enumerate}
+\item $\displaystyle M $ es desconexo.
+\item $\displaystyle M = A \sqcup B $ donde $\displaystyle A $ y $\displaystyle B $ son abiertos relativos y no vacíos de $\displaystyle \left(M, d|_{M}\right) $. 
+\item Existe $\displaystyle A \subset M $ con $\displaystyle \emptyset \neq A \neq M $ tal que $\displaystyle A $ es abierto y cerrado relativo en $\displaystyle \left(M, d|_{M}\right) $. 
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+\begin{description}
+	\item[(1) $\displaystyle \Rightarrow $ (2)] Si $\displaystyle M $ es desconexo, existe $\displaystyle f : M \to \R $ continua tal que $\displaystyle f\left(M\right) = \left\{ 0,1\right\}  $. Consideramos $\displaystyle A = f^{-1}\left( \left\{ 0\right\} \right) $ y $\displaystyle B = f^{-1}\left( \left\{ 1\right\} \right) $. Es fácil ver que $\displaystyle A $ y $\displaystyle B $ son cerrados relativos en $\displaystyle \left(M, d|_{M}\right) $ y que $\displaystyle A \cap B= \emptyset $. Además, $\displaystyle A = M/B $ y $\displaystyle B = M/A $, por lo que $\displaystyle A $ y $\displaystyle B $ son a la vez abiertos y cerrados relativos en $\displaystyle \left(M, d|_{M}\right) $. 
+	\item[(2) $\Rightarrow$ (3)] Si $\displaystyle \emptyset \neq A \neq M $, entonces $\displaystyle A $ es abierto y $\displaystyle B = M / A $ es abierto por lo que $\displaystyle A $ también es cerrado. 
+	\item[(3) $\displaystyle \Rightarrow $ (1)] Basta considerar $\displaystyle f = \chi_{A} : M \to \R $ tal que 
+		\[f\left(x\right) = 
+		\begin{cases}
+		0, \; x \in M / A \\
+		1, \; x \in M / B
+		\end{cases}
+		.\]
+		Por el lema tenemos que $\displaystyle f $ es continua en $\displaystyle M $ y $\displaystyle f\left(M\right) = \left\{ 0,1\right\}  $. 		
+\end{description}
+\end{proof}
+\begin{definition}[Separación]
+Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle M \subset X $. Una \textbf{separación} de $\displaystyle M $ en $\displaystyle X $ es un par $\displaystyle \left(U,V\right) $ donde:
+\begin{enumerate}
+\item $\displaystyle U $ y $\displaystyle V $ son conjuntos abiertos en $\displaystyle X $.
+\item $\displaystyle M \subset U \cup V $. 
+\item $\displaystyle M \cap U, M \cap V \neq \emptyset $. 
+\item $\displaystyle M \cap U \cap V = \emptyset$.
+\end{enumerate}
+\end{definition}
+\begin{theorem}
+Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle M \subset X $. Entonces $\displaystyle M $ es desconexo si y solo si $\displaystyle M $ admite una separación en $\displaystyle X $.
+\end{theorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Si $\displaystyle M $ es desconexo, existen $\displaystyle A,B \subset X $ abiertos relativos en $\displaystyle M $ tales que $\displaystyle M = A \sqcup B$. Por ser abiertos relativos, existen $\displaystyle U,V \subset X $ abiertos tales que $\displaystyle A = U \cap M $ y $\displaystyle B = V \cap M $. Es fácil comprobar que $\displaystyle \left(U,V\right) $ es una separación.
+\item[(ii)] Si $\displaystyle M $ admite una separación tenemos que $\displaystyle M \subset \left(U \cap M\right) \sqcup \left(V \cap M\right)$, que son abiertos relativos en $\displaystyle M $, por lo que se cumple \textbf{(2)} del teorema anterior y $\displaystyle M $ es desconexo.
+\end{description}
+\end{proof}
+\begin{eg}
+Sea $\displaystyle M = \Q $ subespacio de $\displaystyle X = \left(\R, \left| \cdot\right|\right) $. 
+\begin{description}
+\item[(a)] Un ejemplo de abierto y cerrado relativo en $\displaystyle M $ es
+	\[A = \left\{ x \in \Q \; : \; \pi < x < \pi+1\right\}  = \Q \cap \left(\pi , \pi + 1\right) .\]
+Está claro que $\displaystyle A $ es abierto relativo en $\displaystyle \Q $ por ser la intersección de un abierto en $\displaystyle \R $ y $\displaystyle \Q $. Además, tenemos que
+\[A = \Q \cap [\pi , \pi + 1] .\]
+Por la misma razón, $\displaystyle A $ es también cerrado relativo en $\displaystyle \Q $, por lo que $\displaystyle \Q \subset \R $ es desconexo. 
+\item[(b)] Sea $\displaystyle C \subset\Q $ conexo. Nos preguntamos, cuántos elementos puede contener $\displaystyle C $? 
+\end{description}
+\end{eg}
+\begin{lema}[Lema del pivote]
+	Sea $\displaystyle \left(X,d\right) $ un espacio métrico y sea $\displaystyle \left\{ M_{i}\right\} _{i\in I} $ una familia de subconjuntos conexos de $\displaystyle X $. Supongamos que $\displaystyle \bigcap_{i \in I}M_{i} \neq \emptyset $. Entonces, $\displaystyle \bigcup_{i \in I}M_{i} $ es conexo.
+\end{lema}
+\begin{proof}
+	Sea $\displaystyle x_{0} \in \bigcap_{i \in I}M_{i} \neq \emptyset $ y sea $\displaystyle M = \bigcup_{i \in I}M_{i}$. Sea $\displaystyle f : M \to \R $ continua con $\displaystyle f\left(M\right) \subset \left\{ 0,1\right\}  $. Supongamos que $\displaystyle f\left(x_{0}\right) = 0 $. Como $\displaystyle M_{i} $ es conexo $\displaystyle \forall i  \in I $, tenemos que $\displaystyle f|_{M_{i}} $ es constante y por tener $\displaystyle x_{0} \in \bigcap_{i \in I}M_{i} $, $\displaystyle f|_{M_{i}} \equiv 0 $.
+	Luego, $\displaystyle f \equiv 0 $ en $\displaystyle M = \bigcup_{i \in I}M_{i} $.
+\end{proof}
+\begin{lema}[Lema de la percha]
+	Sea $\displaystyle \left(X,d\right) $ un espacio métrico y sea $\displaystyle \left\{ M_{i}\right\} _{i\in I} $ una familia de subconjuntos conexos de $\displaystyle X $. Supongamos que existe $\displaystyle M_{0} \subset X $ conexo tal que $\displaystyle M_{i} \cap M_{0} \neq \emptyset $, $\displaystyle \forall i \in I $. Entonces, $\displaystyle M_{0} \cup \left(\bigcup_{i \in I}M_{i}\right) $ es conexo.
+\end{lema}
+\begin{proof}
+	Sean $\displaystyle M = M_{0} \cup \left(\bigcup_{ i \in I}M_{i}\right) $ y $\displaystyle f : M \to \R $ continua con $\displaystyle f\left(M\right) \subset \left\{ 0,1\right\}  $. 
+	\begin{itemize}
+	\item Como $\displaystyle M_{0} $ es conexo, tenemos que $\displaystyle f|_{M_{0}} $ es constante. Por ejemplo, supongamos que $\displaystyle f|_{M_{0}} \equiv 0 $. 
+	\item Tenemos que $\displaystyle \forall i \in I $, $\displaystyle f|_{M_{i}} $ es constante y $\displaystyle M_{i} \cap M_{0} \neq \emptyset $, por lo que $\displaystyle f|_{M_{i}} \equiv 0 $.
+	\end{itemize}
+\end{proof}
+\begin{observation}
+La unión de dos conjuntos no tiene por qué se conexa. En efecto, podemos considerar en $\displaystyle \R $ el conjunto $\displaystyle M = \left(0,1\right) \cup \left(3,4\right) $, que claramente no es conexo.
+\end{observation}
+\begin{theorem}
+Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle M \subset X $. Si $\displaystyle M $ es conexo y $\displaystyle M \subset A \subset \overline{M} $, entonces $\displaystyle A $ es conexo. En particular, si $\displaystyle M $ es conexo, $\displaystyle \overline{M} $ también lo es.
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle f:A \to \R $ continua con $\displaystyle f\left(A\right) \subset \left\{ 0,1\right\}  $. Tenemos que $\displaystyle f|_{M} $ es constante y ponemos que $\displaystyle f|_{M}\equiv 0 $. Sea $\displaystyle x \in A \subset \overline{M} $. Tenemos que existe $\displaystyle \left\{ x_{n}\right\} _{n\in\N}\subset M $ tal que $\displaystyle x_{n} \to x_{0} $.
+Por ser $\displaystyle f $ continua, tenemos que $\displaystyle f\left(x_{n}\right)\to f\left(x\right) = 0 $, puesto que $\displaystyle f\left(x_{n}\right) = 0 $, $\displaystyle \forall n \in \N $. Así, hemos demostrado que $\displaystyle f|_{A} $ es constante.
+\end{proof}
+\begin{definition}[Camino]
+	Un \textbf{camino} en un espacio métrico $\displaystyle \left(X,d\right) $ es una función continua $\displaystyle \sigma : [a,b] \to X $. 
+\end{definition}
+\begin{eg}
+	En $\displaystyle \R^{n} $, dados $\displaystyle x,y \in \R^{n} $, tenemos que el segmento que los une $\displaystyle \sigma : [0,1] \to \R^{n} : t \to \left(1-t\right)x +ty $ es un camino. 
+\end{eg}
+\begin{definition}[Conexión por caminos]
+	Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle M \subset X $. Se dice que $\displaystyle M $ es \textbf{conexo por caminos} si $\displaystyle \forall x,y \in M $ existe $\displaystyle \sigma : [a,b] \to X $ camino tal que $\displaystyle \Imagen\left(\sigma \right) \subset M $, $\displaystyle \sigma\left(a\right) = x $ y $\displaystyle \sigma\left(b\right) = y $ \footnote{Es decir, cada par de puntos en $\displaystyle M $ se puede unir mediante un camino en $\displaystyle M $.}.
+\end{definition}
+\begin{definition}[Convexidad]
+	Un conjunto $\displaystyle C \subset \R^{n} $ es \textbf{convexo} si $\displaystyle \forall x,y \in C $ el segmento $\displaystyle \sigma\left(t\right) = \left(1-t\right)x + ty $, $\displaystyle t \in [0,1] $, está contenido en $\displaystyle C $.
+\end{definition}
+\begin{observation}
+Está claro que si un conjunto es convexo, es conexo por caminos. Puede darse que sea conexo por caminos pero que no sea convexo.
+\end{observation}
+\begin{theorem}
+Sea $\displaystyle \left(X,d\right) $ un espacio métrico. Si $\displaystyle M \subset X $ es conexo por caminos, entonces $\displaystyle M $ es conexo.
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle M $ conexo por caminos y sea $\displaystyle f : M \to \R $ continua con $\displaystyle f\left(M\right) \subset \left\{ 0,1\right\}  $. Dados $\displaystyle x,y \in M $, existe $\displaystyle \sigma : [a,b] \to M $ camino. Tenemos que $\displaystyle f\circ \sigma  $ es continua y $\displaystyle f\circ \sigma\left( \left[a,b\right] \right) \subset \left\{ 0,1\right\}  $. Por ser $\displaystyle [a,b] $ conexo, tenemos que $\displaystyle f\circ \sigma  $ es constante en $\displaystyle \left[a,b\right]  $, es decir, $\displaystyle f\left(\sigma\left(a\right)\right) = f\left(\sigma\left(b\right)\right) $ y $\displaystyle f\left(x\right) = f\left(y\right) $, por lo que $\displaystyle f|_{M} $ es constante.
+\end{proof}
+\begin{theorem}
+	Sea $\displaystyle U \subset \R^{n} $ abierto y conexo. Entonces, $\displaystyle U $ es conexo por caminos.
+\end{theorem}
+\begin{proof}
+	Fijamos $\displaystyle x_{0} \in U $. Dado $\displaystyle x \in U $ veamos que existe un camino de $\displaystyle x $ a $\displaystyle x_{0} $. Consideremos  
+	\[ A = \left\{ x \in U \; : \; \exists \; \text{camino en $\displaystyle U $ de $\displaystyle x_{0} $ a $\displaystyle x $ }\right\} .\]
+	\begin{itemize}
+	\item Está claro que $\displaystyle A \neq \emptyset $, puesto que $\displaystyle x_{0} \in A $. 
+	\item Veamos que $\displaystyle A $ es abierto relativo en $\displaystyle U $. Si $\displaystyle x \in A \subset U $, tenemos que existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(x,r\right) \subset U $. Tenemos que $\displaystyle \forall y \in B\left(x,r\right) $ podemos conectar $\displaystyle x $ con $\displaystyle y $ mediante un segmento, por lo que existe un camino en $\displaystyle U $ de $\displaystyle x_{0} $ a $\displaystyle x $ y de $\displaystyle x $ a $\displaystyle y $, luego existe uno de $\displaystyle x_{0} $ a $\displaystyle y $. Así, $\displaystyle B\left(x,r\right) \subset A $. 
+	\item Veamos que $\displaystyle A $ es cerrado relativo en $\displaystyle U $. Para ello, veamos que $\displaystyle U/A $ es abierto. Dado $\displaystyle x \in U/A $ existe $\displaystyle r>0 $ tal que $\displaystyle B\left(x,r\right) \subset U $. Tenemos que $\displaystyle \forall y \in B\left(x,r\right) $, no existe camino en $\displaystyle U $ de $\displaystyle x_{0} $ a $\displaystyle y $. 
+		Si existiera, existiría un camino en $\displaystyle U $ de $\displaystyle x_{0} $ a $\displaystyle x $, que es una contradicción. Por tanto, $\displaystyle B\left(x,r\right) \subset U / A $, por lo que $\displaystyle A $ es cerrado relativo en $\displaystyle U $.
+	\item Por ser $\displaystyle U $ conexo y $\displaystyle A \neq \emptyset $, debe ser que $\displaystyle A = U $.
+	\end{itemize}
+\end{proof}
+\begin{eg}
+	En general, conexo no implica conexo por caminos. En efecto, podemos considerar $\displaystyle M = \left\{ \left(0,0\right)\right\} \cup \left\{ \left(x,\sin \frac{1}{x}\right) \; : \; 0 < x \leq 1\right\} \subset \R^{2} $. Si $\displaystyle f : (0,1] \to \R $ con $\displaystyle f\left(x\right) = \left(x,\sin \frac{1}{x}\right) $, tenemos que
+	\begin{itemize}
+		\item $\displaystyle f $ es continua en $\displaystyle (0,1] $.
+		\item $\displaystyle (0,1] $ es convexo.
+		\item Si $\displaystyle G_{f}\left(x\right) $ es la segunda parte de la unión, entonces $\displaystyle G_{f} = f\left((0,1]\right) $ es convexo.
+		\item $\displaystyle \left(0,0\right) \in \overline{G}_{f} $.
+		\item $\displaystyle \left(0,0\right)\cup G_{f} = M $ es conexo.
+	\end{itemize}
+	Sin embargo, gráficamente se puede ver que no podemos conectar los puntos $\displaystyle \left(1,\sin 1\right) $ y $\displaystyle \left(0,0\right) $ por un camino contenido en $\displaystyle M $.
+\end{eg}
+
 
