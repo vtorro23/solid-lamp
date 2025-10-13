@@ -187,7 +187,7 @@ Sea $\displaystyle G $ un grupo.
 \end{prop}
 \begin{proof}
 	\begin{enumerate}
-	\item Como $\displaystyle [G:H] = 2 $, solo existen dos clases de equivalencia, $\displaystyle [e]_{\sim_{H}} $ y $\displaystyle [a]_{\sim_{H}} $. Así, $\displaystyle G = H \sqcup Ha = H \sqcup aH $, por lo que $\displaystyle Ha = aH $ y $\displaystyle H \lhd G $.
+	\item Como $\displaystyle [G:H] = 2 $, solo existen dos clases de equivalencia, $\displaystyle [e]_{\sim_{H}} $ y $\displaystyle [a]_{\sim_{H}} $, con $\displaystyle a \in G/H $. Así, $\displaystyle G = H \sqcup Ha = H \sqcup aH $, por lo que $\displaystyle Ha = aH $ y $\displaystyle H \lhd G $.
 	\item Es trivial que $\displaystyle e \in HK $. Sean $\displaystyle x,y \in HK $, entonces existen $\displaystyle h_{1}, h_{2} \in H $, $\displaystyle k_{1}, k_{2} \in K $ tales que $\displaystyle x = h_{1}k_{1} $ e $\displaystyle y = h_{2}k_{2} $. Tenemos que
 		\[xy^{-1} = \left(h_{1}k_{1}\right)\left(h_{2}k_{2}\right)^{-1} = h_{1}\left(k_{1}k_{2}^{-1}\right)h_{2}^{-1} \in h_{1}\left(k_{1}k_{2}^{-1}\right)  H = h_{1}H\left(k_{1}k_{2}^{-1}\right) .\]
 Así, tenemos que $\displaystyle h_{1}H\left(k_{1}k_{2}^{-1}\right) \subset H\left(k_{1}k_{2}^{-1}\right) \subset HK $, por lo que $\displaystyle xy^{-1} \in HK $. Si se cumple también que $\displaystyle K \lhd G $ entonces dados $\displaystyle g \in G $ y $\displaystyle hk \in HK $,
@@ -220,4 +220,81 @@ En general si $\displaystyle K \lhd H$ y $\displaystyle H \lhd G $ no implica qu
 \begin{eg}
 El grupo $\displaystyle \Z_{p} $ con $\displaystyle p $ primo es un grupo simple.
 \end{eg}
+\section{Grupo cociente}
+Sea $\displaystyle G $ un grupo y $\displaystyle H \lhd G $. Así, $\displaystyle \forall a \in G $, $\displaystyle aH = Ha $. Entonces $\displaystyle \sim_{H} $ y $\displaystyle \sim^{H} $ son las mismas relaciones y escribimos $\displaystyle G/H $ para denotar al conjunto $\displaystyle G/\sim_{H} = G/\sim^{H} $. Los elementos de $\displaystyle G/H $ son $\displaystyle \left[a\right] = aH $. Vamos a dotar de estructura de grupo a $\displaystyle G / H$ con la operación:
+\[
+\begin{split}
+	\cdot : G/H \times G/H& \to G/H \\
+	\left([a]_{H}, [b]_{H}\right) & \to [a \cdot b]_{H}.
+\end{split}
+\]
+Veamos que la aplicación está bien definida. Sean $\displaystyle \left[a\right]  = \left[a_{1}\right]  $ y $\displaystyle \left[b\right]  = \left[b_{1}\right]  $. Sabemos que $\displaystyle a a^{-1}_{1} \in H $ y $\displaystyle b b^{-1}_{1} \in H $ por darse que $\displaystyle H \lhd G $. Tenemos que
+\[ab\left(a_{1}b_{1}\right)^{-1} = abb^{-1}_{1}a^{-1}_{1} = a\left(bb^{-1}_{1}\right)a^{-1}a a^{-1}_{1} = \left(a\left(bb^{-1}_{1}\right)a^{-1}\right)\left(a a^{-1}_{1}\right) \in H .\]
+Nuevamente hemos utilizado que $\displaystyle H \lhd G $. Así la operación está bien definida. \\ 
+La operación es asociativa por ser asociativa la operación de $\displaystyle G $. 
+El elemento neutro es $\displaystyle [e]_{H} $ y el inverso de un elemento $\displaystyle [a]_{H} $ es $\displaystyle [a^{-1}] _{H}$.
+Así, hemos visto que $\displaystyle \left(G/H, \cdot \right) $ tiene estructura de grupo. Diremos que $\displaystyle G/H $ es el \textbf{grupo cociente} de $\displaystyle G $ entre $\displaystyle H $. Su orden será $\displaystyle \left[G:H\right]  = \frac{ \left|G\right|}{|H|} $.
+\begin{eg}
+\begin{enumerate}
+\item La construcción del grupo cociente no es más que la generalización del grupo de las congruencias. En efecto, sea $\displaystyle \left(\Z, + \right) $ como grupo $\displaystyle G $ y $\displaystyle H = m\Z $ con $\displaystyle m \in \Z $ por lo que $\displaystyle H \leq G $. Tenemos que $\displaystyle H \lhd G $ puesto que $\displaystyle G $ es abeliano y $\displaystyle \Z/m\Z \cong \Z_{m} $, que tiene estructura de grupo (con la operación ya vista y las clases de equivalencia módulo $\displaystyle m $).
+\item Sea $\displaystyle G = D_{4} $ y $\displaystyle H = \left\langle \rho^{2} \right\rangle  \lhd G $. Tenemos que $\displaystyle G/H $ tiene estructura de grupo y $\displaystyle [G:H] = 4 $, por lo que $\displaystyle \left|D_{4}/\rho^{2}\right| = 4 $. Veamos si $\displaystyle G/H \cong C_{4} $ o $\displaystyle G/H \cong C_{2} \times C_{2} $. 
+Tenemos que $\displaystyle \left[\tau\right] \neq [\rho^{2}] $ ya que $\displaystyle \tau \not\in \left\langle \rho^{2} \right\rangle  $. Como $\displaystyle [\tau]^{2} = [\tau^{2}] = [e]$, concluimos que $\displaystyle D_{4}/\left\langle \rho^{2} \right\rangle \cong C_{2} \times C_{2} $. En efecto, podemos tomar la aplicación 
+\[ f : D_{4} \to \left\langle \tau \right\rangle \times \left\langle \rho^{2} \right\rangle : \tau^{i}\rho^{j} \to \left(\tau^{i}, \rho^{2j}\right).\]
+Tenemos que es un homomorfismo de grupos cuyo núcleo es $\displaystyle \Ker\left(f\right) = \left\langle \rho^{2} \right\rangle  $.
+\end{enumerate}
+\end{eg}
+\begin{prop}
+Sea $\displaystyle G $ un grupo y $\displaystyle H \leq G $. Entonces $\displaystyle H \lhd G $ si y solo si $\displaystyle H  $ es el núcleo de un homomorfismo de grupos.
+\end{prop}
+\begin{proof}
+\begin{description}
+\item[(i)] Sea $\displaystyle H \lhd G $ y consideremos $\displaystyle G/H $. Vamos a definir la aplicación 
+	\[\pi : G \to G/H : g \to [g] .\]
+Veamos que $\displaystyle \Ker\left(\pi \right) = H $. Primero, demostremos que $\displaystyle \pi  $ es un homomorfismo. Si $\displaystyle x,y \in G $,
+\[ \pi\left(xy\right) = [xy] = [x][y] = \pi\left(x\right) \pi \left(y\right).\]
+Además, sabemos que es sobreyectivo, puesto que si $\displaystyle [y] \in G/H $ basta con tomar $\displaystyle y \in G $ y tendremos que $\displaystyle \pi\left(y\right) = [y] $. Ahora, tenemos que 
+\[x \in \Ker\left(f\right) \iff [x] = [e] \iff x \in H .\]
+Así, tenemos que $\displaystyle \Ker\left(\pi \right) = H $. 
+\item[(ii)] Ya vimos que $\displaystyle \Ker\left(f\right) \lhd G $. 
+\end{description}
+\end{proof}
+\begin{observation}
+El homomorfismo $\displaystyle \pi : G \to G/H $ se le llama \textbf{homomorfismo cociente} o \textbf{proyección}. 
+\end{observation}
+\begin{prop}
+Sea $\displaystyle f: G_{1} \to G_{2} $ un homomorfismo de grupos. Entonces, la siguiente aplicación es una biyección:
+\[\phi : \left\{ K \leq G_{1} \; : \; \Ker\left(f\right) \leq K\right\} \to \left\{ N \; : \; N \leq \Imagen\left(f\right)\right\} : H \to f\left(H\right)  .\]
+Además, $\displaystyle K \lhd G $ si y solo si $\displaystyle f\left(K\right) \lhd \Imagen\left(f\right) $.
+\end{prop}
+\begin{proof}
+	Veamos que la aplicación está bien definida. Si $\displaystyle H \leq G_{1} $ tenemos que $\displaystyle f\left(H\right) \leq \Imagen\left(f\right) $. \\
+	Veamos ahora que la aplicación es inyectiva. Supongamos que existen $\displaystyle K_{1}, K_{2} \in \left\{ K \leq G_{1} \; : \; \Ker\left(f\right) \leq K\right\}  $ con $\displaystyle \phi\left(K_{1}\right) = \phi\left(K_{2}\right) $. Si tomamos $\displaystyle k_{1} \in K_{1} $, existe $\displaystyle k_{2} \in K_{2} $ con $\displaystyle f\left(k_{1}\right) = f\left(k_{2}\right) $. 
+Así, tenemos que
+\[f\left(k_{1}\right) = f\left(k_{2}\right) \iff f\left(k_{1}\right)f\left(k_{2}\right)^{-1} = e \iff f\left(k_{1}k_{2}^{-1}\right) = e \iff k_{1}k_{2}^{-1} \in \Ker\left(f\right)  .\]
+Así, tenemos que $\displaystyle k_{1}k_{2}^{-1} \in K_{1} $, por lo que $\displaystyle x_{1} \in K_{2} $ y $\displaystyle K_{1} \subset K_{2} $. De forma análoga se demuestra que $\displaystyle K_{2} \subset K_{1} $. \\
+Veamos ahora que la aplicación es sobreyectiva. Sea $\displaystyle N_{1} \in \left\{ N \; : \; N \leq \Imagen\left(f\right)\right\}  $. Sabemos que $\displaystyle f^{-1}\left(N_{1}\right) \leq G_{1} $ y $\displaystyle \Ker\left(f\right) \leq f^{-1}\left(N_{1}\right) $, por lo que $\displaystyle f^{-1}\left(N_{1}\right) \in \left\{ K \leq G_{1} \; : \; \Ker\left(f\right) \leq K\right\}  $. Es fácil ver que $\displaystyle f\left(f^{-1}\left(N_{1}\right)\right) = N_{1} $. El resultado final viene dado por una proposición anterior.  
+\end{proof}
+\begin{observation}
+Este resultado nos permite establecer una biyección entre el número de subgrupos (normales) de $\displaystyle G $ que contienen a $\displaystyle H $ y los subgrupos (normales) de $\displaystyle G/H $ (con $\displaystyle H \lhd G $). 
+\end{observation}
+\section{Primer Teorema de Isomorfía}
+\begin{eg}
+\begin{enumerate}
+\item Sea $\displaystyle f_{n} : \left(\Z, + \right) \to \left(\C^{*}, \cdot \right) : k \to e^{\frac{2k\pi i}{n}} $. Tenemos que $\displaystyle f_{n} $ es un homomorfismo de grupos,
+	\[ f_{n}\left(t + k\right) = e^{\frac{e\pi i }{n}\left(t+k\right)} = e^{\frac{2t\pi i}{n}} e^{\frac{2k\pi i}{n}} = f_{n}\left(t\right)f_{n}\left(k\right) .\]
+	Tenemos que $\displaystyle \Imagen\left(f_{n}\right) = U_{n} $, que son las raíces $\displaystyle n $-ésimas de la unidad. Calculemos el núcleo:
+	\[x \in \Ker\left(f_{n}\right) \iff f_{n}\left(x\right) = 1 \iff e^{\frac{2\pi i}{n}x} = 1 \iff n | x .\]
+Así, tenemos que $\displaystyle \Ker\left(f_{n}\right) = n \Z $. Sabemos que $\displaystyle \Z/n\Z \cong \Z_{n} \cong U_{n}= \Imagen\left(f_{n}\right) $. 	
+\item En $\displaystyle D_{4} $ podemos considerar la aplicación anterior $\displaystyle f : D_{4} \to C_{2} \times C_{2} $. Recordamos que $\displaystyle \Ker\left(f\right) = \left\langle \rho^{2} \right\rangle  $. Así, tenemos que $\displaystyle D_{4}/\left\langle \rho^{2} \right\rangle  \cong C_{2} \times C_{2} = \Imagen\left(f\right)$. 
+\end{enumerate}
+\end{eg}
+\begin{theorem}
+Sea $\displaystyle f : G_{1} \to G_{2} $ un homomorfismo de grupos. Entonces la aplicación 
+\[ \overline{f} : G_{1} / \Ker\left(f\right) \to \Imagen\left(f\right) : [g] \to \overline{f}\left([g]\right) = f\left(g\right) ,\]
+es un isomorfismo de grupos. En particular, $\displaystyle G_{1}/\Ker\left(f\right) \cong \Imagen\left(f\right) $.
+\end{theorem}
+\begin{proof}
+	Veamos que está bien definida. Si $\displaystyle [g_{1}] = [g]_{2}$, tenemos que $\displaystyle g_{1}g_{2}^{-1} \in \Ker\left(f\right) $. Así,
+	\[f\left(g_{1}g_{2}^{-1}\right) = e \iff f\left(g_{1}\right) = f\left(g_{2}\right) .\]	
+\end{proof}
 

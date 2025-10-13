@@ -15,7 +15,9 @@
 	\end{enumerate}
 \end{definition}
 \begin{eg}
-Un ejemplo es $\displaystyle \mathbb{A} = \vec{\mathbb{A}} = \K^{n} $. Podemos transformar puntos en vectores de la forma 
+Dado un espacio vectorial $\displaystyle \K^{n} $, siempre podemos dotar a $\displaystyle \K^{n} $ de una estructura afín. En efecto, tomamos $\displaystyle \mathbb{A} : = \K^{n} $, $\displaystyle \vec{\mathbb{A}} := \K^{n}	$ y 
+\[ \vec{ \cdot } : \K^{n} \times \K^{n} \to \K^{n} : \left(A,B\right) \to B - A .\]
+Si tenemos una base podemos expresar la aplicación anterior de la forma
 \[\overrightarrow{\left(a_{1}, \ldots, a_{n}\right)\left(b_{1}, \ldots, b_{n}\right)} = \left(b_{1}-a_{1}, \ldots, b_{n}-a_{n}\right) .\]
 \end{eg}
 \begin{notation}
@@ -27,12 +29,13 @@ Si $\displaystyle \overrightarrow{AB} = v $ escribimos $\displaystyle A + v = B 
 	\item $\displaystyle \overrightarrow{AB} = 0 \iff A = B $. En efecto, por \textbf{(2)} se tiene que 
 		\[\overrightarrow{A A} + \overrightarrow{ A A} = \overrightarrow{A A} \iff \overrightarrow{A A } = 0 .\]
 		Como la aplicación $\displaystyle \overrightarrow{ \cdot A} $ es biyectiva, si $\displaystyle \overrightarrow{AB} = 0 $ debe ser que $\displaystyle A = B $. 
+	\item $\displaystyle \overrightarrow{AB} = - \overrightarrow{BA} $. En efecto, tenemos que
+		\[0 = \overrightarrow{A A} = \overrightarrow{AB} + \overrightarrow{BA} \iff \overrightarrow{AB} = - \overrightarrow{BA} .\]
 	\item Se cumple la \textbf{ley del paralelogramo}. Es decir, tenemos que $\displaystyle \overrightarrow{AB} = \overrightarrow{CD} \Rightarrow \overrightarrow{AC} = \overrightarrow{BD} $. En efecto,
 		\[\overrightarrow{AC} = \overrightarrow{AB} + \overrightarrow{BD} + \overrightarrow{DC} = \overrightarrow{AB} + \overrightarrow{BC}-\overrightarrow{CD} = \overrightarrow{AB} + \overrightarrow{BD} - \overrightarrow{AB} = \overrightarrow{BD} .\]
-	
 	\end{itemize} 
 \end{observation}
-\begin{definition}[Poryectivizado de un espacio vectorial]
+\begin{definition}[Proyectivizado de un espacio vectorial]
 Sea $\displaystyle V $ un $\displaystyle \K $-espacio vectoria de $\displaystyle \dim _{\K}V = n $. El \textbf{proyectivizado} de $\displaystyle V $, denotado $\displaystyle \mathbb{P}\left(V\right) $, es el conjunto de los subespacios vectoriales de $\displaystyle V $ de dimensión 1. La dimensión de $\displaystyle \mathbb{P}\left(V\right) $, denotada $\displaystyle \dim \mathbb{P}\left(V\right) $, es igual a $\displaystyle \dim _{\K}\left(V\right) -1 $.
 \end{definition}
 \begin{observation}
@@ -124,8 +127,9 @@ Consideremos $\displaystyle P_{0}, \ldots, P_{n} \in \mathbb{A} $ y $\displaysty
 Está claro que
 \[
 \begin{split}
-	P_{s} + \sum^{n}_{i = 0, i \neq s}\lambda_{i}\overrightarrow{P_{s}P_{i}} = & P_{s} +\sum^{n}_{i = 0}\lambda_{i}\overrightarrow{P_{s}P_{i}} = P_{t} + \overrightarrow{P_{t}P_{s}} + \sum^{n}_{i = 0}\lambda_{i}\overrightarrow{P_{s}P_{i}} = P_{t} +\sum^{n}_{i = 0}\lambda_{i}\overrightarrow{P_{t}P_{s}} + \sum^{n}_{i = 0}\lambda_{i}\overrightarrow{P_{s}P_{i}} \\
-	= & P_{t} + \sum^{n}_{i = 0}\lambda_{i}\left(\overrightarrow{P_{t}P_{s}} + \overrightarrow{P_{s}P_{i}}\right) = P_{t} + \sum^{n}_{i = 0}\lambda_{i}\overrightarrow{P_{t}P_{i}}  = P_{t} + \sum^{n}_{i = 0, i \neq t}\lambda_{i}\overrightarrow{P_{t}P_{i}} .
+	P_{s} + \sum^{n}_{i = 0}\lambda_{i}\overrightarrow{P_{s}P_{i}} = & P_{t} + \overrightarrow{P_{t}P_{s}} + \sum^{n}_{i = 0}\lambda_{i}\left(\overrightarrow{ P_{s}P_{t}} + \overrightarrow{P_{t}P_{i}}\right) 
+	=  P_{t} + \overrightarrow{P_{t}P_{s}} + \sum^{n}_{i = 0 }\lambda_{i}\overrightarrow{P_{s}P_{t}} + \sum^{n}_{i = 0}\overrightarrow{P_{t}P_{i}} \\
+	= & P_{t} + \overrightarrow{P_{t}P_{s}} + \overrightarrow{P_{s}P_{t}} + \sum^{n}_{i = 0}\overrightarrow{P_{t}P_{i}} = P_{t} + \sum^{n}_{i = 0}\lambda_{i}\overrightarrow{P_{t}P_{i}} .
 \end{split}
 \]
 \end{proof}
@@ -136,10 +140,11 @@ Una \textbf{combinación afín} de $\displaystyle P_{0}, \ldots, P_{n} \in \math
 La proposición anterior nos permite ver que la notación que hemos empleado en la definición anterior tiene sentido. 
 \end{observation}
 \begin{definition}
-	Una colección $\displaystyle \left\{ P_{0}, \ldots, P_{n}\right\} \subset \mathbb{A} $ es \textbf{afinmente generadora} si $\displaystyle \forall P \in \mathbb{A} $ existen $\displaystyle \lambda_{0}, \ldots, \lambda_{n} \in \K $ tales que $\displaystyle \sum\lambda_{i} = 1 $ y $\displaystyle P = \sum\lambda_{i}P_{i} $ (todo punto es combinación afín de $\displaystyle P_{0}, \ldots, P_{n} $). 
+	Una colección $\displaystyle \left\{ P_{0}, \ldots, P_{n}\right\} \subset \mathbb{A} $ es  
 	\begin{itemize}
-	\item Se dice que $\displaystyle \left\{ P_{0}, \ldots, P_{n}\right\} \subset \mathbb{A} $ es \textbf{afinmente dependiente} si existe $\displaystyle i \in \left\{ 0, \ldots, n\right\}  $ tal que $\displaystyle P_{i} $ es combinación afín de los demás. 
-	\item Se dice que es \textbf{afinmente independiente} si no es afinmente dependiente.
+	\item \textbf{afinmente generadora} si $\displaystyle \forall P \in \mathbb{A} $ existen $\displaystyle \lambda_{0}, \ldots, \lambda_{n} \in \K $ tales que $\displaystyle \sum\lambda_{i} = 1 $ y $\displaystyle P = \sum\lambda_{i}P_{i} $ (todo punto es combinación afín de $\displaystyle P_{0}, \ldots, P_{n} $).
+	\item  \textbf{afinmente dependiente} si existe $\displaystyle i \in \left\{ 0, \ldots, n\right\}  $ tal que $\displaystyle P_{i} $ es combinación afín de los demás. 
+	\item  \textbf{afinmente independiente} si no es afinmente dependiente.
 	\end{itemize}
 \end{definition}
 \begin{definition}[Referencia afín]
@@ -222,9 +227,155 @@ Ser independiente no depende de los representantes.
 Observamos que si $\displaystyle \dim\left(V\right) = n +1$, entonces toda familia independiente de $\displaystyle \mathbb{P}\left(V\right) $ tiene a lo sumo $\displaystyle n +1 $ elementos.
 \end{observation}
 \begin{definition}
-$\displaystyle P_{0}, \ldots, P_{r} \in \mathbb{P}\left(V\right) $ están en \textbf{posición general} si cualquier subconjunto de tamaño $\displaystyle \dim\left(V\right) $ contiene elementos independientes. 
+	$\displaystyle P_{0}, \ldots, P_{r} \in \mathbb{P}\left(V\right) $ están en \textbf{posición general} si cualquier subconjunto de tamaño $\displaystyle \dim\left(V\right) $ contiene elementos independientes. \footnote{En el caso de que $\displaystyle r+1 < \dim\left(V\right) $ basta con que los elementos de $\displaystyle \left\{ P_{0}, \ldots, P_{r}\right\}  $ sean independientes.} 
 \end{definition}
 \begin{eg}
 $\displaystyle P_{0}, \ldots, P_{n} \in \mathbb{P}\left(\R^{3}\right) $ están en posición general si ninguna terna está alineada. 
 \end{eg}
+\begin{definition}[Referencia proyectiva]
+Sea $\displaystyle n = \dim \mathbb{P}\left(V\right) $ ($\displaystyle \dim_{\K}V = n +1 $). Una \textbf{referencia proyectiva} de $\displaystyle \mathbb{P}\left(V\right) $ es una colección ordenada de $\displaystyle n + 2 $ puntos en posición general
+\[\mathcal{R} = \left\{ P_{0}, P_{1}, \ldots, P_{n}; P_{n+1}\right\}  .\]
+A $\displaystyle P_{n+1} $ se le llama \textbf{punto de medida} o \textbf{punto de unidad}. Diremos que una base de $\displaystyle V $, $\displaystyle \mathcal{B}= \left\{ v_{0}, \ldots, v_{n}\right\}  $, es una \textbf{base asociada} a $\displaystyle \mathcal{R} $ si $\displaystyle P_{i} = [v_{i}] $ para $\displaystyle  i = 0, \ldots, n $ y $\displaystyle P_{n+1} = \left[v_{0}+v_{1} + \cdots + v_{n}\right]  $. Las \textbf{coordenadas homogéneas} de $\displaystyle P \in \mathbb{P}\left(V\right) $ son $\displaystyle \left[\lambda_{0} : \lambda_{1} : \cdots : \lambda_{n}\right]  $ si $\displaystyle P = \left[\lambda_{0}v_{0}+\cdots + \lambda_{n}v_{n}\right] = [\left(\lambda_{0}, \ldots, \lambda_{n}\right)_{\mathcal{B}}]  $. 
+\end{definition}
+\begin{lema}
+Las bases asociadas a una referencia proyectiva son proporcionales entre ellas. En particular, las coordenadas homogéneas respecto a una referencia proyectiva son únicas, salvo proporcionalidad. 
+\end{lema}
+\begin{proof}
+	Sea $\displaystyle \mathcal{R} = \left\{ P_{0}, \ldots, P_{n}; P_{n+1}\right\}  $ una referencia proyectiva de $\displaystyle \mathbb{P}\left(V\right) $ y sean $\displaystyle \mathcal{B} = \left\{ v_{0}, \ldots, v_{n}\right\}  $ y $\displaystyle \mathcal{B}' = \left\{ v_{0}', \ldots, v_{n}'\right\}  $ bases asociadas tales que $\displaystyle P_{i} = \left[v_{i}\right]  = \left[v_{i}\right] ' $ para $\displaystyle i = 0, \ldots, n $ y $\displaystyle P_{n+1} = \left[v_{0}+\cdots + v_{n}\right] = \left[v_{0}' + \cdots + v_{n}'\right]  $. 
+	Así, existe $\displaystyle \lambda_{i} \in \K $ para $\displaystyle i = 0, \ldots, n $ tal que $\displaystyle v_{i}' = \lambda_{i}v_{i} $ con $\displaystyle \lambda_{i} \neq 0 $. Similarmente, existe $\displaystyle \lambda\neq 0 $ tal que 
+	\[v_{0}' + \cdots + v_{n}' = \lambda\left(v_{0} + \cdots + v_{n}\right) .\]
+Así, tenemos que
+\[v_{0}' + \cdots + v'_{n} = \lambda_{0}v_{0} + \cdots + \lambda_{n}v_{n} = \lambda v_{0} + \cdots + \lambda v_{n}.\]
+Por ser $\displaystyle \mathcal{B} $ base de $\displaystyle V $, tenemos que $\displaystyle \lambda_{i} = \lambda  $, $\displaystyle \forall i = 0, \ldots, n $ y nos queda que $\displaystyle \mathcal{B}' = \left\{ \lambda v_{0}, \ldots, \lambda v_{n}\right\}  $. Explicamos el 'en particular': si $\displaystyle P = [a_{0}v_{0} + \cdots + a_{n}v_{n}] $, entonces  
+\[
+\begin{split}
+	P = [a_{0} : \cdots : a_{n}] = \left[\frac{a_{0}}{\lambda }\left(\lambda v_{0}\right) + \cdots + \left(\frac{a_{n}}{\lambda }\right)\left(\lambda v_{n}\right)\right] \Rightarrow P = \left[\frac{a_{0}}{\lambda } : \cdots : \frac{a_{n}}{\lambda }\right] .
+\end{split}
+\]
+\end{proof}
+\begin{eg}
+	La referencia proyectiva estándar es  
+	\[ \mathcal{R} = \left\{ \left[1:0:\cdots:0\right] , [0:1:\cdots:0], \cdots , [0:0:\cdots :1]; [1:1: \cdots :1]\right\}.\]
+Así, tenemos que la base asociada es la base estándar
+\[\mathcal{B} = \left\{ \left(1,0, \ldots, 0\right), \left(0,1, \ldots, 0\right), \ldots, \left(0,0, \ldots, 1\right)\right\}  .\]
+\end{eg}
+\begin{eg}
+Consideremos los puntos 
+\[P_{0} = [1:2:3], \quad P_{1} = [2:-3:4], \quad P_{2} = [4:5:-6], \quad P_{3} = [11:9:-5] .\]
+Veamos que $\displaystyle \mathcal{R} = \left\{ P_{0}, P_{1}, P_{2} ; P_{3}\right\}  $ es una referencia proyectiva y buscamos la base asociada. \\
+Consideremos 
+\[v_{0} = \left(1,2,3\right), \quad v_{1} = \left(2, -3, 4\right), \quad v_{2} = \left(4,5-6\right), \quad v_{3} = \left(11,9,-5\right) .\]
+Tenemos que $\displaystyle \mathcal{R} $ es una referencia proyectiva si y solo si están en posición general, es decir, si toda colección de tres vectores de $\displaystyle \left\{ v_{0}, v_{1}, v_{2}, v_{3}\right\}  $ son linealmente independientes. Esto es equivalente a que $\displaystyle \left\{ v_{0}, v_{1}, v_{2}\right\}  $ sean linealmente independientes y que $\displaystyle \alpha v_{0} + \beta v_{1} + \gamma v_{2} = v_{3} $ implica que $\displaystyle \alpha, \beta, \gamma \neq 0 $. Tenemos que
+\[\begin{vmatrix} 1 & 2 & 3 \\ 2 & -3 & 4 \\ 4 & 5 & -6 \end{vmatrix}  = 120 \neq 0 .\]
+Por tanto, $\displaystyle \left\{ v_{0}, v_{1}, v_{2}\right\}  $ son linealmente independientes. Veamos la segunda parte:
+\[\alpha\left(1,2,3\right) + \beta\left(2,-3,4\right) + \gamma\left(4,5,-6\right) = \left(11,9,-5\right) .\]
+Así, nos queda el sistema 
+\[
+\begin{cases}
+\alpha + 2\beta + 4\gamma = 11 \\
+2\alpha - 3\beta + 5\gamma = 9 \\
+3\alpha + 4\beta -6\gamma = -5
+\end{cases}
+\Rightarrow \alpha = \beta = 1, \; \gamma = 2.\]
+Por tanto, $\displaystyle P_{0}, P_{1}, P_{2}, P_{3} $ están en posición general y $\displaystyle \mathcal{R} $ es una referencia proyectiva. Busquemos la base asociada $\displaystyle \mathcal{B}= \left\{ u_{0}, u_{1}, u_{2}\right\}  $ tal que $\displaystyle P_{i} = [u_{i}] $ con $\displaystyle i = 0, 1, 2 $ y $\displaystyle P_{3} = [u_{0} + u_{1} + u_{2}] $. Tendremos que 
+\[\mathcal{B} = \left\{ u_{0}, u_{1}, u_{2}\right\} = \left\{ \alpha v_{0}, \beta v_{1}, \gamma v_{2}\right\} = \left\{ v_{0}, v_{1}, 2v_{2}\right\}  .\]
+\end{eg}
+\subsection{Cambio de coordenadas cartesianas}
+Estudiemos primero el caso de las coordenadas cartesianas en $\displaystyle \mathbb{A} $. \\ \\
+Sean $\displaystyle \mathcal{R}_{C} = \left\{ O, \mathcal{B}\right\} $ y $\displaystyle \mathcal{R}_{C}' = \left\{ O', \mathcal{B}'\right\}  $ referencias cartesianas de $\displaystyle \mathbb{A} $. Si $\displaystyle A \in \mathbb{A} $ tenemos que 
+\[A = O + \sum^{n}_{i = 1}x_{i}v_{i} = O'+\sum^{n}_{i = 1}y_{i}v_{i}' .\]
+De aquí deducimos que 
+\[\overrightarrow{O'A} = \sum^{n}_{i = 1}y_{i}v'_{i} = \overrightarrow{O'O} + \overrightarrow{OA} = \overrightarrow{O'O} + \sum^{n}_{ i = 1}x_{i}v_{i}  .\]
+Tenemos que $\displaystyle \overrightarrow{O'O} = \left(a_{0}, \ldots, a_{n}\right)_{\mathcal{B}'} $ con $\displaystyle O = \left(a_{0}, \ldots, a_{n}\right)_{\mathcal{R}'_{C}} $. Así, nos queda que 
+\[\sum^{n}_{i = 1}y_{i}v'_{i}= \sum^{n}_{i = 1}a_{i}v'_{i} = \sum^{n}_{i = 1}x_{i}v_{i} \Rightarrow \sum^{n}_{i = 1}\left(y_{i}-a_{i}\right)v_{i}' = \sum^{n}_{i = 1}x_{i}v_{i} .\]
+Sea $\displaystyle C_{\mathcal{B}\mathcal{B}'} $ la matriz de cambio de base de la base $\displaystyle \mathcal{B} $ a la base $\displaystyle \mathcal{B}' $. 
+Así, tenemos que
+\[\begin{pmatrix} y_{1}-a_{1} \\ \vdots \\ y_{n}-a_{n} \end{pmatrix}= C_{\mathcal{B}\mathcal{B}'}\begin{pmatrix} x_{1} \\ \vdots \\ x_{n} \end{pmatrix} \Rightarrow \begin{pmatrix} y_{1} \\ \vdots \\ y_{n} \end{pmatrix} = \begin{pmatrix} a_{1} \\ \vdots \\ a_{n} \end{pmatrix} + C_{\mathcal{B}\mathcal{B}'}\begin{pmatrix} x_{1} \\ \vdots \\ x_{n} \end{pmatrix}.\]
+Para que quede elegante ponemos 
+\[\begin{pmatrix} 1 \\ y_{1} \\ \vdots \\ y_{n} \end{pmatrix} = \begin{pmatrix} 1 & 0 & \cdots & 0 \\
+a_{1} & & & \\
+\vdots & & C_{\mathcal{B}\mathcal{B}'} & \\
+a_{n} & & & & \end{pmatrix}\begin{pmatrix} 1 \\ x_{1} \\ \vdots \\ x_{n} \end{pmatrix} .\]
+La matriz de cambio de $\displaystyle \mathcal{R}_{C} $ a $\displaystyle \mathcal{R}'_{C} $ es 
+\[C_{\mathcal{R}_{C}\mathcal{R}'_{C}} = \begin{pmatrix} 1 & 0 & \cdots & 0 \\
+a_{1} & & & \\
+\vdots & & C_{\mathcal{B}\mathcal{B}'} & \\
+a_{n} & & & & \end{pmatrix} .\]
+\subsection{Cambio de coordenadas baricéntricas}
+Sean $\displaystyle \mathcal{R}_{A} = \left\{ P_{0}, \ldots, P_{n}\right\}  $ y $\displaystyle \mathcal{R}_{A}' = \left\{ Q_{0}, \ldots, Q_{n}\right\}  $ referencias afines de $\displaystyle \mathbb{A} $. Sea $\displaystyle A \in \mathbb{A} $ con $\displaystyle A = \left(\lambda_{0}, \ldots, \lambda_{n}\right)_{\mathcal{R}_{A}} = \left(\mu_{0}, \ldots, \mu_{n}\right)_{\mathcal{R}_{A}'} $. Supongamos que $\displaystyle P_{j} = \left(a_{0j}, \ldots, a_{nj}\right)_{\mathcal{R}_{A}'} $.
+Tenemos que
+\[A = \sum^{n}_{j = 0}\lambda_{j}P_{j} = \sum^{n}_{j = 0}\lambda_{j}\sum^{n}_{i = 0}a_{ij}Q_{i} = \sum^{n}_{i = 0}\left(\sum^{n}_{j = 0}\lambda_{j}a_{ij}\right)Q_{i}= \sum^{n}_{j = 0}\mu_{j}Q_{j} .\]
+Así, tenemos que $\displaystyle \mu_{i} = \sum^{n}_{j = 0}a_{ij}\lambda_{j} $.
+Matricialmente obtenemos la expresión
+\[\begin{pmatrix} \mu_{0} \\ \mu_{1} \\ \vdots \\ \mu_{n} \end{pmatrix} = \underbrace{\begin{pmatrix} a_{00} & a_{01} & \cdots & a_{0n} \\
+a_{10} & a_{11} & \cdots & a_{1n} \\
+\vdots & \vdots & \vdots & \vdots \\
+a_{n0} & a_{n1} & \cdots & a_{nn}\end{pmatrix}}_{C_{\mathcal{R}_{A}\mathcal{R}_{A}'}}\begin{pmatrix} \lambda_{0} \\\lambda_{1} \\ \vdots \\ \lambda_{n} \end{pmatrix} .\]
+Tenemos que $\displaystyle C_{\mathcal{R}_{A}\mathcal{R}_{A}'} $ es la matriz de cambio de $\displaystyle \mathcal{R}_{A} $ a $\displaystyle \mathcal{R}_{A}' $. Podemos observar que las columnas de $\displaystyle C_{\mathcal{R}_{A}\mathcal{R}_{A}'} $ son las coordenadas baricéntricas de $\displaystyle P_{i} $ en la referencia $\displaystyle \mathcal{R}_{A}' $.
+\subsection{Cambios de coordenadas homogéneas en $\displaystyle \mathbb{P} $}
+Sean $\displaystyle \mathcal{R} $ y $\displaystyle \mathcal{R}' $ referencias proyectivas y sean $\displaystyle \mathcal{B} = \left\{ v_{0}, \ldots, v_{n}\right\}  $ y $\displaystyle \mathcal{B}'= \left\{ v_{0}', \ldots, v_{n}'\right\}  $ sus bases asociadas, respectivamente. Sea $\displaystyle P \in \mathbb{P} $ con $\displaystyle P = [a_{0}: \cdots : a_{n}]_{\mathcal{R}}= [a_{0}v_{0}+ \cdots + a_{n}v_{n}] = [a'_{0}v_{0}' + \cdots + a'_{n}v_{n}'] $. 
+Supongamos que $\displaystyle v_{i} = b_{i0}v_{0}' + \cdots + b_{in}v_{n}' $. Así, nos queda que
+\[
+\begin{split}
+	\left(a_{0}, \ldots, a_{n}\right)_{\mathcal{B}} = & a_{0}\left(b_{00}v_{0}' + \cdots + b_{0n}v_{n}'\right) + \cdots + a_{n}\left(b_{n0}v_{0}' + \cdots + b_{nn}v'_{n}\right) \\
+	= & \left(a_{0}b_{00} + \cdots + a_{n}b_{n0}\right)v_{0}' + \cdots + \left(a_{0}b_{0n} + \cdots + a_{n}b_{nn}\right)v'_{n} \\
+	= & \left(a_{0}b_{00} + \cdots + a_{n}b_{n0}, \ldots, a_{0}b_{0n} + \cdots + a_{n}b_{nn}\right)_{\mathcal{B}'} .
+\end{split}
+\]
+Matricialmente nos queda que
+\[\begin{pmatrix} a_{0}' \\ a_{1}' \\ \vdots \\ a_{n}' \end{pmatrix} = \underbrace{\begin{pmatrix} b_{00} & b_{10} & \cdots & b_{n0} \\ 
+b_{01} & b_{11} & \cdots & b_{n1} \\ 
+\vdots & \vdots & \vdots & \vdots \\
+b_{0n} & b_{1n} & \cdots & b_{nn}\end{pmatrix}}_{C_{\mathcal{B}\mathcal{B}'}}\begin{pmatrix} a_{0} \\ a_{1} \\ \vdots \\ a_{n} \end{pmatrix} .\]
+Cada una de las columnas de $\displaystyle C_{\mathcal{B}\mathcal{B}'} $ es $\displaystyle v_{i} $ en la base $\displaystyle \mathcal{B}' $. Podemos observar que $\displaystyle P = [a_{0} : \cdots : a_{n}] = [\lambda a_{0}: \cdots : \lambda a_{n}]$ con $\displaystyle \lambda \in \K^{*} $. 
+En particular
+\[ \begin{pmatrix} a_{0}' \\ a_{1}' \\ \vdots \\ a_{n}' \end{pmatrix} =\lambda C_{\mathcal{B}\mathcal{B}'}\begin{pmatrix} a_{0} \\ a_{1} \\ \vdots \\ a_{n} \end{pmatrix}\]
+también nos sirve para cambiar de coordenadas homogéneas de $\displaystyle \mathcal{R} $ en $\displaystyle \mathcal{R}' $. Por tanto, no buscamos una matriz para cambiar de una referencia a otra, sino una clase de equivalencia de matrices de cambio de referencias:
+\[ [C_{\mathcal{R}\mathcal{R}'}] = \left\{ \lambda C_{\mathcal{B}\mathcal{B}'} \; : \; \lambda \in \K^{*}\right\}  .\]
+\begin{eg}
+Consideremos las refernecias 
+\[\mathcal{R} = \left\{ [1:0:0], [0:1:0], [0:0:1]; [1:1:1]\right\}  .\]
+\[\mathcal{R}' = \left\{[1:1:0], [-1:1:0], [1:0:1]; [1: -2:1] \right\}  .\]
+Calculemos las posibles matrices de cambio de referencia. Tenemos que $\displaystyle \mathcal{B} = \left\{ \left(1,0,0\right), \left(0,1,0\right), \left(0,0,1\right)\right\}  $ es la base asociada a $\displaystyle \mathcal{R} $. Calculemos la base asociada a $\displaystyle \mathcal{R}' $. Cogemos $\displaystyle v_{0}= \left(1,1,0\right), v_{1} = \left(-1,1,0\right) $ y $\displaystyle v_{2} = \left(1,0,1\right) $. Tenemos que
+\[ \begin{vmatrix}  1 & 1 & 0 \\ - 1 & 1 & 0 \\ 1 & 0 & 1\end{vmatrix}  = 2 .\]
+Así, $\displaystyle \left\{ v_{0}, v_{1}, v_{2}\right\}  $ son linealmente independientes. Encontremos $\displaystyle \alpha, \beta, \gamma \in \K $ tales que 
+\[\alpha v_{0} + \beta v_{1} + \gamma v_{2} = \left(1,-2,1\right) .\]
+Nos queda el sistema 
+\[
+\begin{cases}
+\alpha-\beta+\gamma = 1 \\
+\alpha + \beta = 2 \\
+\gamma = 1
+\end{cases}
+\Rightarrow \alpha = \beta = -1, \; \gamma = 1.\]
+Así, tenemos que $\displaystyle \mathcal{B}' = \left\{ \left(-1,-1,0\right), \left(1, - 1, 0\right), \left(1, 0, 1\right)\right\}  $. Para encontrar $\displaystyle [C_{\mathcal{R}\mathcal{R}'}] $ buscamos  
+\[ C_{\mathcal{B}\mathcal{B}'} = \left(C_{\mathcal{B}'\mathcal{B}}\right)^{-1} = \begin{pmatrix} -1 & 1 & 1 \\ - 1 & - 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}^{-1}= \begin{pmatrix} -\frac{1}{2} & -\frac{1}{2} & \frac{1}{2} \\
+\frac{1}{2} & -\frac{1}{2} & -\frac{1}{2} \\
+0 & 0 & 1\end{pmatrix}.\]
+Así, nos queda que 
+\[[C_{\mathcal{R}\mathcal{R}'}] = \left[\begin{pmatrix} -\lambda & - \lambda & \lambda \\ \lambda & - \lambda & - \lambda \\ 0 & 0 & 2\lambda  \end{pmatrix} \; : \; \lambda \in \K^{*}\right]  .\]
+\end{eg}
+\begin{observation}
+En los tres tipos de referencia tenemos que $\displaystyle C^{-1}_{\mathcal{R}\mathcal{R}'} = C_{\mathcal{R}'\mathcal{R}} $. También es cierto que $\displaystyle C_{\mathcal{R}'\mathcal{R}''} C_{\mathcal{R}\mathcal{R}'} = C_{\mathcal{R}\mathcal{R}''} $. Esto último es útil porque, en general, es más sencillo calcular $\displaystyle C_{\mathcal{R}\mathcal{E}} $, donde $\displaystyle \mathcal{E} $ es la base canónica. Así, para cambiar de $\displaystyle \mathcal{R} $ a $\displaystyle \mathcal{R}' $ podemos hacer
+\[C_{\mathcal{R}\mathcal{R}'} = C_{\mathcal{R}'\mathcal{E}}^{-1}C_{\mathcal{R}\mathcal{E}} .\]
+\end{observation}
+\section{Aplicaciones afines y proyectivas}
+\begin{definition}[Aplicación afín]
+Sean $\displaystyle \mathbb{A} $ y $\displaystyle \mathbb{A}' $ espacios afines. Una \textbf{aplicación afín} es una función $\displaystyle f : \mathbb{A} \to \mathbb{A}' $ tal que $\displaystyle \forall O \in \mathbb{A} $,
+\[\vec{f}_{O} : \vec{\mathbb{A}} \to \vec{\mathbb{A}'} : \overrightarrow{OA} \to \overrightarrow{f\left(O\right)f\left(A\right)} ,\]
+es lineal. Si $\displaystyle f $ es biyectiva, diremos que $\displaystyle f $ es una \textbf{afinidad}.
+\end{definition}
+\begin{prop}
+Sea $\displaystyle f : \mathbb{A} \to \mathbb{A}' $ una función. Son equivalentes:
+\begin{description}
+\item[(i)] $\displaystyle \forall O \in \mathbb{A} $, $\displaystyle \vec{f}_{O} : \vec{\mathbb{A}} \to \vec{\mathbb{A}} : A \to \vec{f}\left(\overrightarrow{OA}\right) = \overrightarrow{f\left(O\right)f\left(A\right)} $ es lineal.
+\item[(ii)] Si $\displaystyle \sum \lambda_{i} = 1 $, $\displaystyle f\left(\sum^{r}_{i= 0}\lambda_{i}P_{i}\right) = \sum^{r}_{i= 0}\lambda_{i}f\left(P_{i}\right) $.
+\end{description}
+\end{prop}
+\begin{proof}
+\begin{description}
+\item[(ii)] Sean $\displaystyle v_{1}, v_{2} \in \vec{\mathbb{A}} $ y $\displaystyle \lambda_{1},\lambda_{2} \in \K $. Supongamos que $\displaystyle v_{1} = \overrightarrow{OA} $ y $\displaystyle v_{2} = \overrightarrow{OB} $. Tenemos que
+	\[\vec{f}_{O}\left(\lambda_{1}\overrightarrow{OA} + \lambda_{2}\overrightarrow{OB}\right) = \overrightarrow{f\left(O\right)f\left(O + \lambda_{1}\overrightarrow{OA}+\lambda\overrightarrow{OB}\right)} = \overrightarrow{f\left(O\right)f\left(\left(1-\lambda_{1}-\lambda_{2}\right)O + \lambda_{1}A + \lambda_{2}B\right)} .\]
+\end{description}
+\end{proof}
 

@@ -433,5 +433,130 @@ Sea $\displaystyle \left(X,d\right) $ un espacio métrico. Si $\displaystyle M \
 	\end{itemize}
 	Sin embargo, gráficamente se puede ver que no podemos conectar los puntos $\displaystyle \left(1,\sin 1\right) $ y $\displaystyle \left(0,0\right) $ por un camino contenido en $\displaystyle M $.
 \end{eg}
+\section{Continuidad uniforme}
+\begin{definition}[Continuidad uniforme]
+Sean $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ y $\displaystyle M \subset X $. Se dice que $\displaystyle f $ es \textbf{uniformemente continua} en $\displaystyle M $ si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle x, x' \in M $ con $\displaystyle d _{X}\left(x,x'\right) < \delta  $, entonces $\displaystyle d _{Y}\left(f\left(x\right), f\left(x'\right)\right) < \epsilon  $. 
+\end{definition}
+\begin{observation}
+\begin{itemize}
+\item $\displaystyle f : X \to Y $ es continua en $\displaystyle X $ si y solo si $\displaystyle \forall x \in X $, $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que $\displaystyle d _{X}\left(x,x'\right) < \delta  $ implica que $\displaystyle d _{Y}\left(f\left(x\right), f\left(x'\right)\right) < \epsilon  $. 
+\item $\displaystyle f : X \to Y $ es uniformemente continua en $\displaystyle X $ si y solo si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle x,x' \in X $ con $\displaystyle d _{X}\left(x,x'\right) < \delta  $ entonces $\displaystyle d _{Y}\left(f\left(x\right), f\left(x'\right)\right) < \epsilon  $. 
+\end{itemize}
+\end{observation}
+\begin{observation}
+Si $\displaystyle f $ es uniformemente continua en $\displaystyle M $, entonces $\displaystyle f|_{M} $ es continua en $\displaystyle M $. 
+\end{observation}
+\begin{theorem}
+Sean $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ y $\displaystyle M \subset X $. Son equivalentes:
+\begin{enumerate}
+\item $\displaystyle f $ es uniformemente continua en $\displaystyle M $.
+\item $\displaystyle \forall \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N} \subset M $ con $\displaystyle d _{Y}\left(x_{n}, y_{n}\right) \to 0 $, entonces $\displaystyle d _{Y} \left(f\left(x_{n}\right), f\left(y_{n}\right)\right) \to 0 $.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+\begin{description}
+	\item[(1) $\displaystyle \Rightarrow $ (2)] Sean $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N} \subset M $ con $\displaystyle d _{X}\left(x_{n}, y_{n}\right) \to 0 $. Dado $\displaystyle \epsilon > 0 $, por la continuidad uniforme existe $\displaystyle \delta > 0 $ tal que si $\displaystyle d _{X}\left(x,x'\right) < \delta  $ entonces $\displaystyle d _{Y}\left(f\left(x\right), f\left(x'\right)\right) < \epsilon  $. Existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ se tiene que $\displaystyle d _{X}\left(x_{n}, y_{n}\right) < \delta  $, por lo que $\displaystyle d _{Y}\left(f\left(x_{n}\right), f\left(y_{n}\right)\right) < \epsilon  $. 
+	\item[(2) $\displaystyle \Rightarrow $ (1)] Supongamos que $\displaystyle f $ no es uniformemente continua en $\displaystyle M $. Así, existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle \forall \delta > 0 $ existen $\displaystyle x_{\delta }, x'_{\delta } \in M $ con $\displaystyle d _{X}\left(x_{\delta }, x'_{\delta }\right) < \delta  $ pero $\displaystyle d _{Y}\left(f\left(x_{\delta }\right), f\left(x'_{\delta }\right)\right) \geq \epsilon $. En concreto, si tomamos $\displaystyle \delta = \frac{1}{n} $ tenemos que existen $\displaystyle x_{n}, y_{n} \in M $ tal que 
+		\[ d _{X}\left(x_{n}, y_{n}\right) < \frac{1}{n}, \quad d _{Y}\left(f\left(x_{n}\right), f\left(y_{n}\right)\right) \geq \epsilon  .\]
+		Así, tenemos dos sucesiones $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N} \subset M $ tal que $\displaystyle d _{X}\left(x_{n}, y_{n}\right) \to 0 $ pero $\displaystyle d _{Y}\left(f\left(x_{n}\right), f\left(y_{n}\right)\right) \not \to 0 $.
+\end{description}
+\end{proof}
+\begin{theorem}
+Sea $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ y $\displaystyle K \subset X $ compacto. Si $\displaystyle f $ es continua en $\displaystyle K $, entonces $\displaystyle f $ es uniformemente continua en $\displaystyle K $.
+\end{theorem}
+\begin{proof}
+	Sean $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N} \subset K $ tales que $\displaystyle d _{X}\left(x_{n}, y_{n}\right) \to 0 $. Como $\displaystyle K $ es compacto, existe $\displaystyle \left\{ x_{n_{k}}\right\} _{k \in \N}  $ subsucesión con $\displaystyle x_{n_{k}} \to x_{0} \in K$. Consideramos ahora $\displaystyle \left\{ y_{n_{k}}\right\}_{k \in \N}  $, que tiene una subsucesión $\displaystyle \left\{ y_{n_{k_{j}}}\right\} _{j \in \N} $ tal que $\displaystyle x_{n_{k_{j}}} \to x_{0}' \in K $. Tenemos que
+	\[d _{X}\left(x_{0}, x_{0}'\right) \leq d _{X}\left(x_{0}, x_{n_{k_{j}}}\right) + d _{X}\left(x_{n_{k_{j}}}, y_{n_{k_{j}}}\right)+ d _{X}\left(y_{n_{k_{j}}}, x_{0}'\right) \to 0 .\]
+	Así, tenemos que $\displaystyle x_{0} = x_{0}' $. Como $\displaystyle f $ es continua en $\displaystyle x_{0} \in X $, tenemos que 
+	\[ d _{Y}\left(f\left(x_{n_{k_{j}}}\right), f\left(y_{n_{k_{j}}}\right)\right) \leq d _{Y}\left(f\left(x_{n_{k_{j}}}\right), f\left(x_{0}\right)\right) + d _{Y}\left(f\left(x_{0}\right), f\left(y_{n_{k_{j}}}\right)\right) \to 0 .\]
+	Si suponemos que $\displaystyle f $ no es uniformemente continua en $\displaystyle K $, existe $\displaystyle \epsilon > 0 $ y existen $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N} \subset K $ tales que $\displaystyle d _{X}\left(x_{n}, y_{n}\right)\to 0 $ pero $\displaystyle d _{Y}\left(f\left(x_{n}\right), f\left(y_{n}\right)\right) \not \to 0 $. Esto supone una contradicción con lo que hemos visto anteriormente. 
+\end{proof}
+\begin{eg}
+La función $\displaystyle f: \R \to \R  $ con $\displaystyle f\left(x\right) = x^{2} $ es continua pero no es uniformemente continua en $\displaystyle \R $. En efecto, si $\displaystyle \delta > 0 $ tenemos que si $\displaystyle x \to \infty $,
+\[ \left|f\left(x\right)-f\left(x + \delta \right)\right| = \left|x^{2} - \left(x+ \delta \right)^{2}\right| = 2x\delta + \delta ^{2} \to \infty .\]
+Otra forma de verlo es tomar $\displaystyle x_{n} = n $ e $\displaystyle y_{n} = n + \frac{1}{n} $. Tenemos que
+\[ d\left(x_{n}, y_{n}\right) = \left|n + \frac{1}{n} - n\right| = \frac{1}{n} \to 0 .\]
+Sin embargo, nos queda que
+\[ d\left(f\left(x_{n}\right), f\left(y_{n}\right)\right) = \left|n^{2}-\left(n+\frac{1}{n}\right)^{2}\right| = 2 + \frac{1}{n^{2}} \geq 2 \not \to 0 .\]
+\end{eg}
+\begin{definition}[Función Lipschitz]
+Se dice que $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ es \textbf{Lipschitz} si existe $\displaystyle K \geq 0 $ tal que 
+\[d _{Y}\left(f\left(x\right), f\left(x'\right)\right) \leq K \cdot d _{X}\left(x,x'\right), \; \forall x,x' \in X .\]
+\end{definition}
+\begin{observation}
+Es fácil ver que si $\displaystyle f $ es de Lipschitz entonces $\displaystyle f $ es uniformemente continua. 
+\end{observation}
+\begin{prop}
+Sea $\displaystyle I \subset \R $ un intervalo y supongamos que $\displaystyle f : I \to \R $ es derivable con derivada acotada en $\displaystyle I $. Entonces, $\displaystyle f $ es Lipschitz en $\displaystyle I $ y por tanto uniformemente continua.
+\end{prop}
+\begin{proof}
+Existe $\displaystyle K \geq 0 $ tal que $\displaystyle \left|f'\left(t\right)\right|\leq K $, $\displaystyle \forall t \in I $. Sean $\displaystyle x,y \in I $, por el Teorema del Valor Medio tenemos que existe $\displaystyle \xi \in \left(x,y\right) $ tal que 
+\[f\left(x\right)-f\left(y\right) = f'\left(\xi\right)\left(x-y\right) .\]
+Por tanto, tenemos que 
+\[ \left|f\left(x\right)-f\left(y\right)\right| = \left|f'\left(\xi \right)\right| \left|x - y\right|\leq K \left|x-y\right|, \; \forall x,y \in I .\]
+\end{proof}
+\begin{eg}
+Sea $\displaystyle f : [0,\infty) \to \R $ con $\displaystyle \lim_{x \to \infty}f\left(x\right) = 0 $. Tenemos que $\displaystyle f $ es uniformemente continua en $\displaystyle [0,\infty) $. En efecto, sabemos que para $\displaystyle \epsilon > 0 $, existe $\displaystyle R > 0 $ tal que si $\displaystyle x > R $ entonces $\displaystyle \left|f\left(x\right)\right| < \frac{\epsilon }{3} $.
+\begin{itemize}
+\item Como $\displaystyle [0,R] $ es compacto, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle x,y \in [0,R] $ con $\displaystyle \left|x-y\right| < \delta  $, entonces $\displaystyle \left|f\left(x\right)-f\left(y\right)\right| < \frac{\epsilon }{3} $.
+\item Si $\displaystyle x,y \geq R $ tenemos que $\displaystyle \left|f\left(x\right)-f\left(y\right)\right| < \frac{2\epsilon }{3} $. 
+\item Si $\displaystyle x \leq R < y$ con $\displaystyle \left|x-y\right| < \delta  $, tenemos que $\displaystyle \left|x - R\right| < \delta  $, por lo que 
+\[ \left|f\left(x\right)-f\left(y\right)\right| \leq \left|f\left(x\right) -f\left(R\right)\right| + \left|f\left(R\right)\right| + \left|f\left(y\right)\right| < \frac{\epsilon }{3} + \frac{\epsilon }{3} + \frac{\epsilon }{3} = \epsilon .\]
+\end{itemize}
+\end{eg}
+\begin{lema}
+	Sea $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ uniformemente continua en $\displaystyle X $. Si $\displaystyle \left\{ x_{n}\right\}_{n\in\N}\subset X $ es de Cauchy, entonces $\displaystyle \left\{ f\left(x_{n}\right)\right\} _{n\in\N} $ es de Cauchy.
+\end{lema}
+\begin{proof}
+	Sea $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset X $ una sucesión de Cauchy. Por ser $\displaystyle f $ uniformemente continua, si $\displaystyle \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle d _{X}\left(x,y\right) < \delta  $, entonces $\displaystyle d _{Y}\left(f\left(x\right), f\left(y\right)\right) < \epsilon  $. Como $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es de Cauchy, existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n,m \geq n_{0} $,
+	\[ d _{X}\left(x_{n}, x_{m}\right) < \delta \Rightarrow d _{Y}\left(f\left(x_{n}\right), f\left(x_{m}\right)\right) < \epsilon  .\]
+\end{proof}
 
+\begin{theorem}[Teorema de extensión]
+Sean $\displaystyle \left(X,d _{X}\right) $ e $\displaystyle \left(Y, d _{Y}\right) $ espacios métricos, siendo $\displaystyle \left(Y, d _{Y}\right) $ completo. Sean $\displaystyle M \subset X $ y $\displaystyle f : M \to Y $ uniformemente continua en $\displaystyle M $. Entonces $\displaystyle f $ admite una extensión $\displaystyle \overline{f} : \overline{M} \to Y $ uniformemente continua en $\displaystyle \overline{M} $ (es decir, $\displaystyle \overline{f} $ es uniformemente continua en $\displaystyle \overline{M} $ y $\displaystyle \overline{f}|_{M} = f $).
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle x_{0} \in \overline{M} $, tenemos que existe $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset M $ con $\displaystyle x_{n} \to x_{0} $. Por tanto, $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es de Cauchy. Por ser $\displaystyle f $ uniformemente continua, es tenemos que $\displaystyle f $ transforma sucesiones de Cauchy en sucesiones de Cauchy. Así, $\displaystyle \left\{ f\left(x_{n}\right)\right\} _{n\in\N} $ es de Cauchy. Por ser $\displaystyle Y $ completo, tenemos que existe $\displaystyle y_{0} = \lim_{n \to \infty}f\left(x_{n}\right) \in Y $. Definimos $\displaystyle \overline{f}\left(x_{0}\right) = y_{0} $.
+	Veamos que hemos definido bien $\displaystyle \overline{f}\left(x_{0}\right) $, es decir, que si $\displaystyle \left\{ x'_{n}\right\} _{n\in\N} \subset M $ con $\displaystyle x'_{n} \to x_{0} $, entonces $\displaystyle f\left(x_{n}'\right) \to y_{0} $. En efecto
+	\[d _{Y}\left(f\left(x'_{n}\right), y_{0}\right) \leq d _{Y}\left(f\left(x'_{n}\right), f\left(x_{n}\right)\right) + d _{Y}\left(f\left(x_{n}\right), y_{0}\right) \to 0 .\]
+Hemos utilizado que $\displaystyle d _{Y}\left(f\left(x'_{n}\right), f\left(x_{n}\right)\right) \to 0 $ puesto que $\displaystyle d _{X}\left(x'_{n}, x_{n}\right) \to 0 $ por tender ambas sucesiones al mismo límite y ser $\displaystyle f $ uniformemente continua en $\displaystyle M $. 
+Está claro que $\displaystyle \overline{f}|_{M} = f $ por definición. Veamos que $\displaystyle \overline{f} $ es uniformemente continua en $\displaystyle \overline{M} $. Hay dos posibles casos:
+\begin{itemize}
+\item Si $\displaystyle x,y \in M $, como $\displaystyle \overline{f}|_{M} = f $ es trivial que se cumple la condición de continuidad uniforme. 
+\item Si $\displaystyle x,y \in \overline{M} $ tomamos sucesiones $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N} \subset M $ con $\displaystyle x_{n}\to x $ e $\displaystyle y_{n} \to y $. 
+Así, $\displaystyle \forall n \in \N $ se tiene que
+\[ d _{Y}\left(\overline{f}\left(x\right), \overline{f}\left(y\right)\right) \leq d _{Y}\left(\overline{f}\left(x\right), f\left(x_{n}\right)\right) + d _{Y}\left(f\left(x_{n}\right), f\left(y_{n}\right)\right) + d _{Y}\left(f\left(y_{n}\right), \overline{f}\left(y\right)\right)  .\]
+Esta expresión tiende a 0 si $\displaystyle d _{X}\left(x,y\right) \to 0 $ por la convergencia de las sucesiones $\displaystyle \left\{ f\left(x_{n}\right)\right\} _{n\in\N}, \left\{ f\left(y_{n}\right)\right\} _{n\in\N} $ a $\displaystyle \overline{f}\left(x\right) $ y $\displaystyle \overline{f}\left(y\right) $, respectivamente, y a la continuidad uniforme de $\displaystyle \overline{f} $ en $\displaystyle M $ por ser $\displaystyle \overline{f}|_{M} = f $.
+\end{itemize}
+\end{proof}
+\begin{eg}
+	Consideremos $\displaystyle f:(0,1] \to \R $ con $\displaystyle f\left(x\right) = \sin \frac{1}{x} $. Está claro que $\displaystyle f $ es continua en $\displaystyle (0,1] $ pero no es uniformemente continua en este intervalo puesto que no admite ninguna extensión continua a $\displaystyle [0,1] $ porque no existe $\displaystyle \lim_{x \to 0^{+}}\sin \frac{1}{x} $. 
+\end{eg}
+\section{Teorema del punto fijo de Banach}
+\begin{definition}[Función contractiva]
+Se dice que $\displaystyle f : \left(X,d\right)\to \left(X,d\right) $ es \textbf{contractiva} si existe $\displaystyle 0 \leq \alpha < 1 $ tal que $\displaystyle d\left(f\left(x\right),f\left(y\right)\right) \leq \alpha \cdot d\left(x,y\right) $, $\displaystyle \forall x,y \in X $.
+\end{definition}
+\begin{theorem}[Teorema del punto fijo de Banach]
+	Sea $\displaystyle \left(X,d\right) $ un espacio métrico completo. Toda aplicación contractiva $\displaystyle f:\left(X,d\right) \to \left(X,d\right) $ tiene un único punto fijo, es decir, un único $\displaystyle x \in X $ tal que $\displaystyle f\left(x\right) = x $. Además, $\displaystyle \forall x_{0} \in X $ la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset X $ definida por $\displaystyle x_{n+1} = f\left(x_{n}\right) $ verifica que $\displaystyle x_{n} \to x_{0} $.
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle x_{0} \in X $ y $\displaystyle \forall n \geq 1 $ definimos $\displaystyle x_{n+1} = f\left(x_{n}\right) $. Consideramos pues la sucesión $\displaystyle \left\{ f\left(x_{0}\right), f^{2}\left(x_{0}\right), \ldots, f^{n}\left(x_{0}\right), \ldots\right\}  $. \\
+ Veamos que la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es de Cauchy en $\displaystyle \left(X,d\right) $. Tenemos que 
+			\[d\left(x_{n}, x_{n+1}\right) = d\left(f\left(x_{n-1}\right), f\left(x_{n}\right)\right) \leq \alpha \cdot d\left(x_{n-1}, x_{n}\right) \leq \cdots \leq \alpha^{n} \cdot d\left(x_{0}, x_{1}\right) .\]
+		Sea $\displaystyle m > n $, haciendo un cálculo similar tenemos que
+		\[
+		\begin{split}
+			d\left(x_{m}, x_{n}\right) \leq & d\left(x_{m}, x_{m - 1}\right) + \cdots + d\left(x_{n+1}, x_{n}\right) \\
+			\leq & \alpha ^{m - 1} d\left(x_{1}, x_{0}\right) + \alpha^{m - 2}d\left(x_{1}, x_{0}\right) + \cdots + \alpha^{n}d\left(x_{1}, x_{0}\right) \\
+			= & \alpha^{n}\left(1 + \alpha + \cdots + \alpha^{m - 1 - n}\right)d\left(x_{1}, x_{0}\right) \leq \alpha^{n}\left(\sum^{\infty}_{j = 0}\alpha^{j}\right)d\left(x_{1}, x_{0}\right)\\
+			= & \frac{\alpha^{n}}{1-\alpha }d\left(x_{1}, x_{0}\right) \to 0.
+		\end{split}
+		\]
+		Así, está claro que la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} $ es de Cauchy. 
+Como $\displaystyle \left(X,d\right) $ es completo, existe $\displaystyle x = \lim_{n \to \infty}x_{n} \in X $. Como $\displaystyle f $ es continua, tenemos que  
+		\[ f\left(x\right) = \lim_{n \to \infty}f\left(x_{n}\right) = \lim_{n \to \infty}x_{n+1} = \lim_{n \to \infty}x_{n} = x.\]
+Veamos que el punto fijo que hemos calculado es único. Sea $\displaystyle y \in X $ con $\displaystyle y \neq x $, por lo que $\displaystyle d\left(y,x\right) > 0 $, y $\displaystyle f\left(y\right) = y $. Tenemos que
+		\[d\left(x,y\right) = d\left(f\left(x\right), f\left(y\right)\right) \leq \alpha d\left(x,y\right) < d\left(x,y\right) .\]
+		Esto es una contradicción, por lo que debe ser que $\displaystyle x =y $.
+\end{proof}
 

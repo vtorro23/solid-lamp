@@ -49,7 +49,7 @@ Veamos que se cumplen las propiedades de las normas matriciales.
 \begin{description}
 \item[(i)] Está claro que como $\displaystyle \| A v\| \geq 0 $, $\displaystyle \forall v \in V $, si $\displaystyle | | | A | | | = 0 $, debe ser que $\displaystyle A = 0$.
 \item[(ii)] Si $\displaystyle \lambda \in \K $, 
-	\[| | | \lambda A | | | = \sup_{\|v\| = 1}\|\lambda Av\| = \sup_{\|v\| = 1} \left|\lambda \right|\|Av\| = \left|\lambda \right|\sup_{\|v\| = 1} = \left|\lambda \right| | | | A | | | .\]
+	\[| | | \lambda A | | | = \sup_{\|v\| = 1}\|\lambda Av\| = \sup_{\|v\| = 1} \left|\lambda \right|\|Av\| = \left|\lambda \right|\sup_{\|v\| = 1} \|Av\| = \left|\lambda \right| | | | A | | | .\]
 \item[(iii)] Si $\displaystyle A,B \in \mathcal{M}_{n} $,
 	\[ | | | A + B | | | = \sup_{\|v\| = 1}\| \left(A + B\right) v \| = \sup_{\|v\| = 1} \| A v + Bv \| \leq \sup_{\|v\| = 1}\left(\|Av\|+\|Bv\|\right) = \sup_{\|v\| = 1}\|Av\| + \sup_{\|v\| = 1}\|Bv\| .\]
 \item[(iv)] Si $\displaystyle A,B \in \mathcal{M}_{n} $,
@@ -58,4 +58,27 @@ Veamos que se cumplen las propiedades de las normas matriciales.
 	\[ | | | A | | | = \sup_{v \neq 0}\frac{\|Av\|}{\|v\|} \geq \frac{\|Av\|}{\|v\|} \iff | | | A | | | \cdot \|v\| \geq \|Av\| .\]
 \end{description}
 \end{proof}
+\begin{prop}[Proposición 2.12, Página 72]
+Sea $\displaystyle | | | \cdot | | | $ una norma matricial subordinada.
+\begin{description}
+\item[(i)] $\displaystyle \|Av\| \leq | | | A | | | \cdot  \|v\| $, $\displaystyle A \in \mathcal{M}_{n} $ y $\displaystyle v \in V $.
+\item[(ii)] $\displaystyle | | | A | | | = \inf \left\{ \lambda \geq 0 \; : \; \|Av\| \leq \lambda \|v\|, \; v \in V\right\}  $.
+\item[(iv)] Existe $\displaystyle u \in V^{*} $ tal que $\displaystyle \|Au\| = | | | A | | | \cdot \|u\| $.
+\item[(v)] $\displaystyle | | | I | | | = 1 $.
+\end{description}
+\end{prop}
+\begin{proof}
+\begin{description}
+\item[(i)] A partir de la definición
+	\[ | | | A | | | = \sup_{v \neq 0}\frac{\|Av\|}{\|v\|} \geq \frac{\|Av\|}{\|v\|} \iff | | | A | | | \cdot \|v\| \geq \|Av\| .\]
+\item[(ii)] Como $\displaystyle | | | A | | | = \sup_{ v \neq 0}\frac{\|Av\|}{\|v\|} $, si $\displaystyle M = | | | A | | | $ tenemos que 
+	\[M \geq \frac{\|Av\|}{\|v\|}, \; \forall v \in V^{*} \Rightarrow \|Av\| \leq M \|v\|, \; \forall v \in V .\]
+	Por ser $\displaystyle M $ el supremo, tenemos que ningún elemento de valor inferior va a cumplir esta propiedad, por lo que debe ser que $\displaystyle M = \inf \left\{ \lambda \geq 0 \; : \; \|Av\| \leq \lambda \|v\|\right\}  $.
+\item[(iii)] Se deduce de la continuidad de $\displaystyle v \to \|Av\| $ sobre la esfera unidad, que es compacta, por lo que se alcanza el supremo y $\displaystyle \|Au\| = | | | A | | |$. Como $\displaystyle \|u\| = 1 $, se tiene que 
+	\[\|Au\| = | | | A | | | \cdot \|u\| .\]
+\item[(iv)] En efecto, como $\displaystyle \forall v \in V $, $\displaystyle I \cdot v = v $ tenemos que
+	\[ | | | I | | | = \sup_{ \|v\|= 1} \|Iv\| = \sup_{ \|v\| = 1}\|v\| = 1 .\]
+\end{description}
+\end{proof}
+
 \end{document}

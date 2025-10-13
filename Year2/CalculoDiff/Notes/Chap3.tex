@@ -1,0 +1,30 @@
+\chapter{Límites en $\displaystyle \R^{n} $}
+\begin{definition}[Límite]
+Sea $\displaystyle S \subset \R^{n} $, $\displaystyle f : S \to \R^{m} $ y sea $\displaystyle x_{0} \in S' $. Se dice que $\displaystyle l \in \R^{m} $ es \textbf{límite} de $\displaystyle f $ en $\displaystyle x_{0} $ si:
+\[\forall \epsilon > 0, \exists\delta > 0, \; 0 < \|x-x_{0}\| < \delta \Rightarrow \|f\left(x\right)-l\|<\epsilon  .\]
+Denotaremos $\displaystyle  l = \lim_{x \to x_{0}}f\left(x\right) $ (o también $\displaystyle l = \lim_{x \to x_{0}, x \in S}f\left(x\right) $). 
+\end{definition}
+\begin{prop}
+En límite, si existe, es único.
+\end{prop}
+\begin{proof}
+Si $\displaystyle l,l' \in \R^{m} $ son posibles límites, tenemos que $\displaystyle \forall \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle 0 < \| x - x_{0}\| < \delta  $ entonces $\displaystyle \|f\left(x\right) -l\|,\|f\left(x\right)-l'\| < \frac{\epsilon }{2} $. Así,
+\[ \| l - l'\| \leq \|l - f\left(x\right)\| + \|f\left(x\right)-l'\| < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon  .\]
+Como esto es cierto $\displaystyle \forall \epsilon > 0 $, debe ser que $\displaystyle \| l - l'\| = 0 $, por lo que $\displaystyle l = l' $.
+\end{proof}
+\begin{prop}
+	Para una función $\displaystyle f : S \subset \R^{n} \to \R^{m} $ y $\displaystyle x_{0} \in S' $, son equivalentes
+	\begin{description}
+	\item[(i)] $\displaystyle l = \lim_{x \to x_{0}, x \in S}f\left(x\right) $. 
+	\item[(ii)] $\displaystyle \forall \left\{ x_{j}\right\} _{j\in \N}\subset S / \left\{ x_{0}\right\}  $ con $\displaystyle x_{j} \to x_{0} $, se tiene que $\displaystyle f\left(x_{j}\right) \to l $.
+	\end{description}
+\end{prop}
+\begin{proof}
+\begin{description}
+	\item[(i)] Sea $\displaystyle \left\{ x_{j}\right\} _{j} \in S / \left\{ x_{0}\right\}  $ con $\displaystyle x_{j} \to x_{0} $. Tenemos que $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle  0 < \| x - x_{0}\| < \delta  $, entonces $\displaystyle \|f\left(x\right)-l\| < \epsilon  $. Como $\displaystyle x_{j} \to x_{0} $, tenemos que existe $\displaystyle j _{0} \in \N $ tal que $\displaystyle \forall j \geq j_{0} $, $\displaystyle 0 < \|x_{j}-x_{0}\| < \delta  $, por lo que $\displaystyle \| f\left(x_{j}\right)-l \| < \epsilon  $. 
+	\item[(ii)] Supongamos que $\displaystyle \lim_{x \to x_{0}}f\left(x\right) \neq l $, es decir, existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle \forall \delta > 0 $ existe $\displaystyle x \in S $ con $\displaystyle 0 < \|x - x_{0}\|< \delta  $ y $\displaystyle \|f\left(x\right)-l\| \geq \epsilon  $. 
+		Así, podemos tomar $\displaystyle \delta = \frac{1}{j} $ y $\displaystyle x_{j} \in S $ tal que $\displaystyle 0< \|x_{j}-x_{0}\| < \frac{1}{j} $ y $\displaystyle \|f\left(x_{j}\right)-l\| \geq \epsilon  $, para $\displaystyle j \in \N $. Tenemos que la sucesión $\displaystyle \left\{ x_{j}\right\} _{j\in \N} \subset S/ \left\{ x_{0}\right\}  $ converge a $\displaystyle x_{0} $ pero su imagen no converge a $\displaystyle l $.
+\end{description}
+
+\end{proof}
+
