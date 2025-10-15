@@ -368,14 +368,88 @@ es lineal. Si $\displaystyle f $ es biyectiva, diremos que $\displaystyle f $ es
 \begin{prop}
 Sea $\displaystyle f : \mathbb{A} \to \mathbb{A}' $ una función. Son equivalentes:
 \begin{description}
-\item[(i)] $\displaystyle \forall O \in \mathbb{A} $, $\displaystyle \vec{f}_{O} : \vec{\mathbb{A}} \to \vec{\mathbb{A}} : A \to \vec{f}\left(\overrightarrow{OA}\right) = \overrightarrow{f\left(O\right)f\left(A\right)} $ es lineal.
+\item[(i)] $\displaystyle \forall O \in \mathbb{A} $, $\displaystyle \vec{f}_{O} : \vec{\mathbb{A}} \to \vec{\mathbb{A}} : A \to \vec{f}_{O}\left(\overrightarrow{OA}\right) = \overrightarrow{f\left(O\right)f\left(A\right)} $ es lineal.
 \item[(ii)] Si $\displaystyle \sum \lambda_{i} = 1 $, $\displaystyle f\left(\sum^{r}_{i= 0}\lambda_{i}P_{i}\right) = \sum^{r}_{i= 0}\lambda_{i}f\left(P_{i}\right) $.
 \end{description}
 \end{prop}
 \begin{proof}
 \begin{description}
+\item[(i)] Sean $\displaystyle P_{0}, \ldots, P_{r} \in \mathbb{A} $ y $\displaystyle \lambda_{0}, \ldots, \lambda_{r} \in \K $ con $\displaystyle \sum \lambda_{i} = 1 $. Por definición de $\displaystyle \vec{f}_{O} $ tenemos que $\displaystyle \vec{f}_{O}\left(\overrightarrow{O\sum\lambda_{i}P_{i}}\right) = \overrightarrow{f\left(O\right)f\left(\sum\lambda_{i}P_{i}\right)} $. Es decir, 
+	\[f\left(O\right) + \vec{f}_{O}\left(\overrightarrow{O\sum\lambda_{i}P_{i}}\right) = f\left(\sum\lambda_{i}P_{i}\right) .\]
+Así, tenemos que
+\[
+\begin{split}
+	f\left(\sum^{r}_{i = 0}\lambda_{i}P_{i}\right) = & f\left(O\right) + \vec{f}_{O}\left(\overrightarrow{O\sum^{r}_{i = 0}\lambda_{i}P_{i}}\right) = f\left(O\right) + \vec{f}_{O}\left(\sum^{r}_{i = 0}\lambda_{i}\overrightarrow{OP_{0}}\right)  .
+\end{split}
+\]
+Esta última igualdad se debe a que
+\[
+\begin{split}
+	\overrightarrow{O\sum^{r}_{i = 0}\lambda_{i}P_{i}} = & \overrightarrow{O\left(P_{0}+\sum^{r}_{i = 0}\lambda_{i}\overrightarrow{P_{0}P_{i}}\right)} = \overrightarrow{OP_{0}} + \sum^{r}_{ i= 0}\lambda_{i}\overrightarrow{P_{0}P_{i}} \\
+	= & \sum^{r}_{i = 0}\overrightarrow{OP_{0}} + \sum^{r}_{i = 0}\lambda_{i}\overrightarrow{P_{0}P_{i}} = \sum^{r}_{i = 0}\lambda_{i}\left(\overrightarrow{OP_{0}}+\overrightarrow{P_{0}P_{i}}\right) .
+\end{split}
+\]
+Aplicando que $\displaystyle \vec{f}_{O} $ es lineal, si volvemos a nuestro cálculo inicial tomando $\displaystyle \lambda_{-1} = 0 $ y $\displaystyle f\left(P_{-1}\right) = O $,
+\[
+\begin{split}
+	=  f\left(O\right) + \sum^{r}_{i = 0}\lambda_{i}\vec{f}_{O}\left(\overrightarrow{OP_{i}}\right) = f\left(O\right) + \sum^{r}_{i = 0}\lambda_{i}\overrightarrow{f\left(O\right)f\left(P_{i}\right)} =\sum^{r}_{i = -1}\lambda_{i}f\left(P_{i}\right) 
+=  \sum^{r}_{i = 0}\lambda_{i}f\left(P_{i}\right) .
+\end{split}
+\]
 \item[(ii)] Sean $\displaystyle v_{1}, v_{2} \in \vec{\mathbb{A}} $ y $\displaystyle \lambda_{1},\lambda_{2} \in \K $. Supongamos que $\displaystyle v_{1} = \overrightarrow{OA} $ y $\displaystyle v_{2} = \overrightarrow{OB} $. Tenemos que
-	\[\vec{f}_{O}\left(\lambda_{1}\overrightarrow{OA} + \lambda_{2}\overrightarrow{OB}\right) = \overrightarrow{f\left(O\right)f\left(O + \lambda_{1}\overrightarrow{OA}+\lambda\overrightarrow{OB}\right)} = \overrightarrow{f\left(O\right)f\left(\left(1-\lambda_{1}-\lambda_{2}\right)O + \lambda_{1}A + \lambda_{2}B\right)} .\]
+	\[
+	\begin{split}
+		\vec{f}_{O}\left(\lambda_{1}v_{1} +\lambda_{2}v_{2}\right) = & \vec{f}_{O}\left(\lambda_{1}\overrightarrow{OA} + \lambda_{2}\overrightarrow{OB}\right) =  \overrightarrow{f\left(O\right)f\left(O + \lambda_{1}\overrightarrow{OA}+\lambda_{2}\overrightarrow{OB}\right)} \\
+		= &  \overrightarrow{f\left(O\right)f\left(\left(1-\lambda_{1}-\lambda_{2}\right)O + \lambda_{1}A + \lambda_{2}B\right)} \\
+		= & \overrightarrow{f\left(O\right)\left(\left(1-\lambda_{1}-\lambda_{2}\right)f\left(O\right) + \lambda_{1}f\left(A\right) + \lambda_{2}f\left(B\right)\right)} \\
+		= & \overrightarrow{f\left(O\right)\left(f\left(O\right) + \lambda_{1}\overrightarrow{f\left(O\right)f\left(A\right)}+\lambda_{2}\overrightarrow{f\left(O\right)f\left(A\right)}\right)} \\
+		= & \lambda_{1}\overrightarrow{f\left(O\right)f\left(A\right)} + \lambda_{2}\overrightarrow{f\left(O\right)f\left(B\right)} = \lambda_{1}\vec{f}_{O}\left(\overrightarrow{OA}\right) + \lambda_{2}\vec{f}_{O}\left(\overrightarrow{OB}\right) \\
+		= & \lambda_{1}\vec{f}_{O}\left(v_{1}\right) + \lambda_{2}\vec{f}_{O}\left(v_{2}\right).
+	\end{split}
+	\]
+	Por tanto, $\displaystyle \vec{f}_{O} $ es lineal.
 \end{description}
 \end{proof}
+\begin{prop}
+	Sean $\displaystyle \mathbb{A} $ y $\displaystyle \mathbb{A}' $ dos espacios afines de dimensión $\displaystyle n $. Sean $\displaystyle \mathcal{R}_{A} = \left\{ P_{0}, \ldots, P_{n}\right\}  $ y $\displaystyle \mathcal{R}_{A}' = \left\{ Q_{0}, \ldots, Q_{n}\right\}  $ referencias afines de $\displaystyle \mathbb{A} $ y $\displaystyle \mathbb{A}' $, respectivamente. Entonces existe una única afinidad
+	\[\phi : \mathbb{A} \to \mathbb{A}', \; \phi\left(P_{i}\right) = Q_{i}, \; i = 0, \ldots, n .\]
+\end{prop}
+\begin{proof}
+\begin{description}
+\item[Existencia.] Definimos $\displaystyle \phi $ de las siguiente forma: 
+	\[\phi\left(\sum^{n}_{i=0}\lambda_{i}P_{i}\right) = \sum^{n}_{i = 0}\lambda_{i}\phi\left(P_{i}\right) = \sum^{n}_{i = 0}\lambda_{i}Q_{i}, \; \sum \lambda_{i} = 1 .\]
+	Vamos a ver que esto define una aplicación lineal $\displaystyle \vec{\phi}_{P_{0}} $. Por ser $\displaystyle \mathcal{R}_{A} $ y $\displaystyle \mathcal{R}_{A}' $ referencias afines, tenemos que $\displaystyle \left\{ \overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0}P_{n}}\right\}  $ y $\displaystyle \left\{ \overrightarrow{Q_{0}Q_{1}}, \ldots, \overrightarrow{Q_{0}Q_{n}}\right\}  $ son bases de $\displaystyle \vec{\mathbb{A}}$ y $\displaystyle \vec{\mathbb{A}}' $, respectivamente.
+Sea $\displaystyle A = \left(a_{0}, \ldots, a_{n}\right)_{\mathcal{R}_{A}} \in \mathbb{A} $. Así, tenemos que
+\[\overrightarrow{P_{0}A} = a_{1}\overrightarrow{P_{0}P_{1}} + \cdots + a_{n}\overrightarrow{P_{0}P_{n}} .\]
+Ahora podemos calcular
+\[\vec{\phi}_{P_{0}}\left(\overrightarrow{P_{0}A}\right) = \vec{\phi}_{P_{0}}\left(a_{1}\overrightarrow{P_{0}P_{1}} + \cdots + a_{n}\overrightarrow{P_{0}P_{n}}\right) .\]
+Por otro lado tenemos que esta expresión es igual a
+\[
+\begin{split}
+	\overrightarrow{\phi\left(P_{0}\right)\phi\left(A\right)} = & \overrightarrow{\phi\left(P_{0}\right)\phi\left(\sum a_{i}P_{i}\right)} = \overrightarrow{Q_{0}\sum a_{i}Q_{i}} = a_{1}\overrightarrow{Q_{0}Q_{1}} + \cdots + a_{n}\overrightarrow{Q_{0}Q_{n}} \\
+	= & a_{1}\vec{\phi}_{P_{0}}\left(\overrightarrow{P_{0}P_{1}}\right) + \cdots + a_{n}\vec{\phi}_{P_{0}}\left(\overrightarrow{P_{0}P_{n}}\right).
+\end{split}
+\]
+Así, tenemos que $\displaystyle \vec{\phi}_{P_{0}} $ es lineal y $\displaystyle \phi $ es una afinidad.
+\item[Unicidad.] Sea $\displaystyle \psi : \mathbb{A} \to \mathbb{A}' $ una afinidad tal que $\displaystyle \psi\left(P_{i}\right) = Q_{i} $, $\displaystyle \forall i = 0, \ldots, n $. Entonces, tenemos que
+	\[\psi\left(\sum^{n}_{i = 0}\lambda_{i}P_{i}\right) = \sum^{n}_{i = 0}\lambda_{i}\psi\left(P_{i}\right) = \sum^{n}_{i = 0}\lambda_{i}Q_{i} = \sum^{n}_{i = 0}\lambda_{i}\phi\left(P_{i}\right) = \phi\left(\sum^{n}_{i = 0}\lambda_{i}P_{i}\right) .\]
+	Como $\displaystyle \phi $ y $\displaystyle \psi $ coinciden en todo punto tenemos que $\displaystyle \phi = \psi $. 
+\end{description}
+\end{proof}
+\begin{notation}
+Dados $\displaystyle \mathbb{A} $ y $\displaystyle \mathbb{A} $ espacios afines con referencias afines $\displaystyle \mathcal{R}_{A} $ y $\displaystyle \mathcal{R}_{A}' $, respectivamente, y $\displaystyle f : \mathbb{A} \to \mathbb{A}' $ afín, denotamos por $\displaystyle M_{\mathcal{R}_{A}\mathcal{R}_{A}'}\left(f\right) $ a la matriz de la función $\displaystyle f $ que cumple que
+\[f \begin{pmatrix} a_{0} \\ \vdots \\ a_{n} \end{pmatrix}_{\mathcal{R}_{A}'} = M_{\mathcal{R}_{A}\mathcal{R}_{A}'}\left(f\right) \begin{pmatrix} a_{0} \\ \vdots \\ a_{n} \end{pmatrix}_{\mathcal{R}_{A}} .\]
+\end{notation}
+\begin{eg}
+Sea $\displaystyle \phi : \mathbb{A} \to \mathbb{A} $ de dimensión 2 tal que 
+\[\phi\left(1,1\right) = \left(2,2\right), \; \phi\left(0,1\right) = \left(-1,1\right), \; \phi\left(2,-1\right) = \left(0,1\right) .\]
+Tenemos que $\displaystyle \mathcal{R}_{A} = \left\{ \left(1,1\right), \left(0,1\right), \left(2,-1\right)\right\}  $ y $\displaystyle \mathcal{R}_{A}' = \left\{ \left(2,2\right), \left(-1,1\right), \left(0,1\right)\right\} $ son referencias afines de $\displaystyle \mathbb{A} $. Tenemos que en estas referencias 
+\[M_{\mathcal{R}_{A}\mathcal{R}_{A}'}\left(\phi\right) = I .\]
+Calculemos la matriz de $\displaystyle \phi $ esta vez con la referencia $\displaystyle \mathcal{E} = \left\{ \left(0,0\right), \left(1,0\right), \left(0,1\right)\right\}  $, es decir, buscamos $\displaystyle M_{\mathcal{E}\mathcal{E}}\left(\phi\right) $. Veremos que
+\[M_{\mathcal{E}\mathcal{E}}\left(\phi\right) = C_{\mathcal{R}_{A}'\mathcal{E}} M _{\mathcal{R}_{A}\mathcal{R}_{A}'}\left(\phi\right) C_{\mathcal{E}\mathcal{R}_{A}} .\]
+Tenemos que 
+\[C_{\mathcal{R}_{A}\mathcal{E}} = \begin{pmatrix} -1 & 0 & 0 \\ 1 & 0 & 2 \\ 1 & 1 & -1 \end{pmatrix}, \; C_{\mathcal{R}'A\mathcal{E}} = \begin{pmatrix} -3 & 1 & 0 \\ 2 & - 1 & 0 \\ 2 & 1 & 1 \end{pmatrix} .\]
+Así, nos queda que
+\[M_{\mathcal{E}\mathcal{E}}\left(\phi\right) = \begin{pmatrix} \frac{9}{2} & \frac{1}{2} & 1 \\ -\frac{7}{2} & -\frac{1}{2} & -1 \\ 0 & 1 & 1\end{pmatrix} .\]
+\end{eg}
 

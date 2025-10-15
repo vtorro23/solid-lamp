@@ -1,0 +1,52 @@
+\chapter{Grupos finitos abelianos}
+\begin{definition}[Exponente de un grupo]
+Se define \textbf{exponente} de un grupo finito $\displaystyle G $, $\displaystyle \exp\left(G\right) $, como el mínimo común múltiplo de los órdenes de los elementos de $\displaystyle G $.
+\end{definition}
+\begin{observation}
+El exponente de un grupo divide al orden del grupo. 
+\end{observation}
+\begin{lema}
+En un grupo finito abeliano el exponente coincide con el orden del elemento de mayor orden. 
+\end{lema}
+\begin{proof}
+Sea $\displaystyle a \in G $ de tal forma que $\displaystyle a $ tiene orden máximo, por lo que $\displaystyle o\left(a\right) \leq \exp\left(G\right) $. Supongamos que $\displaystyle o\left(a\right) < \exp\left(G\right) $, entonces existe $\displaystyle b \in G $ tal que $\displaystyle o\left(b\right) \not | o\left(a\right) $, es decir, $\displaystyle b^{o\left(a\right)} \neq e $. Así existe un primo $\displaystyle p $ y un $\displaystyle k \geq 1 $ tal que $\displaystyle p^{k} | o\left(b\right) $ pero $\displaystyle p^{k} \not | o\left(a\right) $. Escribimos 
+\[o\left(a\right) = p^{i}m, \; i < k, \; \mcd\left(m,p\right) = 1 .\]
+Tenemos que $\displaystyle m | o\left(a\right) $ y $\displaystyle p^{k} | o\left(b\right) $, por tanto existen $\displaystyle x \in \left\langle a \right\rangle  $ e $\displaystyle y \in \left\langle b \right\rangle  $ tales que $\displaystyle o\left(x\right) = m $ y $\displaystyle o\left(y\right) = p^{k} $. Como el grupo es abeliano $\displaystyle x,y $ conmutan y $\displaystyle \mcd\left(o\left(x\right), o\left(y\right)\right) = 1 $, podemos escribir
+\[o\left(xy\right) = o\left(x\right)o\left(y\right) = m \cdot p^{k} > o\left(a\right) .\]
+Esto es una contradicción puesto que $\displaystyle o\left(a\right) $ era el máximo, por lo que debe ser que $\displaystyle \exp\left(G\right) = o\left(a\right) $. 
+\end{proof}
+\begin{observation}
+\begin{enumerate}
+\item Dos grupos finitos isomorfos tienen el mismo exponente.
+\item Si $\displaystyle G $ no es abeliano no se cumple en general el lema anterior. Por ejemplo, si consideramos $\displaystyle D_{3} $, tenemos que $\displaystyle  \exp\left(D_{3}\right)=6$ y todos sus elementos tienen órdenes $\displaystyle 2 $ o $\displaystyle 3 $, por lo que no se cumple el lema. 
+\end{enumerate}	
+\end{observation}
+\begin{lema}
+Sea $\displaystyle G $ un grupo finito abeliano. Sea $\displaystyle a \in G $ tal que $\displaystyle o\left(a\right) = \exp\left(G\right) $. Entonces, existe un subgrupo $\displaystyle K \leq G $ tal que $\displaystyle G \cong \left\langle a \right\rangle \times K $. 
+\end{lema}
+\begin{proof}
+	Basta probar la existencia de un subgrupo $\displaystyle K \leq G $ tal que $\displaystyle G = \left\langle a \right\rangle \cdot \K $ y $\displaystyle \left\langle a \right\rangle \cap K = \left\{ e\right\}  $. Procedemos por inducción en $\displaystyle \left|G\right| $, siendo el caso $\displaystyle \left|G\right| = 1 $ trivial. \\
+Sea $\displaystyle H = \left\langle a \right\rangle  $ y observemos que si $\displaystyle G = H $, el enunciado es trivial. Por tanto, supongamos que $\displaystyle G-H $ es no vacío, y de entre todos sus elementos escogemos un elemento $\displaystyle x \in G - H $ de orden minimal. Es obvio que $\displaystyle x \neq e $. \\
+Veamos que $\displaystyle o\left(x\right) $ es primo. Para todo número primo $\displaystyle p $ que sea divisor de $\displaystyle o\left(x\right) $ tenemos que $\displaystyle o\left(x^{p}\right) = \frac{o\left(x\right)}{p} < o\left(x\right) $, por el lema anterior. En particular, por minimalidad de $\displaystyle o\left(x\right) $ deducimos que $\displaystyle x^{p} \in H $ y por tanto, como $\displaystyle o\left(x^{p}\right) | \exp\left(G\right) = o\left(a\right) = \left|H\right| $, deducimos que $\displaystyle \left\langle x^{p} \right\rangle  $ es el único subgrupo de $\displaystyle H $ de orden $\displaystyle o\left(x^{p}\right) $.
+Por otro lado, como $\displaystyle o\left(x\right) | \exp\left(G\right) = o\left(a\right) $, el lema anterior también implica que $\displaystyle o\left(a\right) = o\left(a^{p}\right) \cdot p $, con lo que $\displaystyle o\left(x^{p}\right) | o\left(a^{p}\right) $, por lo que $\displaystyle \left\langle a^{p} \right\rangle \leq H $ posee un subgrupo de orden $\displaystyle o\left(x^{p}\right) $. 
+\end{proof}
+\begin{theorem}[Teorema de caracterización de grupos finitos abelianos]
+Sea $\displaystyle G $ un grupo finito abeliano. Entonces existe $\displaystyle m_{1}, \ldots, m_{k} $ tales que $\displaystyle m_{i} $ divide a $\displaystyle m_{i-1} $ enteros con $\displaystyle k \geq 1 $ natural tal que 
+\[ G \cong \Z_{m_{1}} \times Z_{m_{2}} \times \cdots \times \Z_{m_{k}} .\]
+Además, $\displaystyle m_{1}, \ldots, m_{k} $ son únicos con esta propiedad. 
+\end{theorem}
+\begin{definition}[Coeficientes de torsión]
+Los números $\displaystyle m_{1}, \ldots, m_{k} $ son los \textbf{coeficientes de torsión} de $\displaystyle G $. 
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+\item Sabemos que $\displaystyle \left|G\right| = m_{1} \cdots m_{k} $.
+\item Como $\displaystyle m_{i}|m_{i-1} $, tenemos que $\displaystyle \exp\left(G\right) = m_{1} $.
+\end{enumerate}
+\end{observation}
+\begin{eg}
+Sea $\displaystyle G = \Z_{2} \times \Z_{2} \times \Z_{5^{2}} \times \Z_{5^{2}} \times \Z_{5} \times \Z_{2} $. Tenemos que $\displaystyle \left|G\right| = 2^{3} \cdot 5^{5} $. Queremos expresar $\displaystyle G $ de la forma del teorema anterior. Sabemos que si tienen órdenes coprimos entre ellos, son isomorfos al grupo cíclico que es producto de esos órdenes. Así,
+\[G \cong \Z_{5^{2} \cdot 2} \times \Z_{5^{2} \cdot 2} \times \Z_{5 \cdot 2} .\]
+Así, tenemos que los coeficientes de torsión serán $\displaystyle \left(5^{2} \cdot 2, 5^{2} \cdot 2, 5 \cdot 2\right) $. 
+\end{eg}
+

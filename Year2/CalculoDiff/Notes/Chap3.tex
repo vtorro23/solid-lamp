@@ -25,6 +25,78 @@ Como esto es cierto $\displaystyle \forall \epsilon > 0 $, debe ser que $\displa
 	\item[(ii)] Supongamos que $\displaystyle \lim_{x \to x_{0}}f\left(x\right) \neq l $, es decir, existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle \forall \delta > 0 $ existe $\displaystyle x \in S $ con $\displaystyle 0 < \|x - x_{0}\|< \delta  $ y $\displaystyle \|f\left(x\right)-l\| \geq \epsilon  $. 
 		Así, podemos tomar $\displaystyle \delta = \frac{1}{j} $ y $\displaystyle x_{j} \in S $ tal que $\displaystyle 0< \|x_{j}-x_{0}\| < \frac{1}{j} $ y $\displaystyle \|f\left(x_{j}\right)-l\| \geq \epsilon  $, para $\displaystyle j \in \N $. Tenemos que la sucesión $\displaystyle \left\{ x_{j}\right\} _{j\in \N} \subset S/ \left\{ x_{0}\right\}  $ converge a $\displaystyle x_{0} $ pero su imagen no converge a $\displaystyle l $.
 \end{description}
+\end{proof}
+\begin{prop}
+Sea $\displaystyle S \subset \R^{n} $, $\displaystyle x_{0} \in S' $ y $\displaystyle f, g : S \to \R $. Supongamos que existen $\displaystyle p = \lim_{x \to x_{0}}f\left(x\right) $ y $\displaystyle q =\lim_{x \to x_{0}}g\left(x\right) $. 
+Entonces, 
+\begin{enumerate}
+\item $\displaystyle \lim_{x \to x_{0}}\left(f\left(x\right) + g\left(x\right)\right) = p + q $.
+\item $\displaystyle \lim_{x \to x_{0}}\left(f\left(x\right)g\left(x\right)\right) = pq $.
+\item Si $\displaystyle q \neq 0 $, $\displaystyle \lim_{x \to x_{0}}\frac{f\left(x\right)}{g\left(x\right)} = \frac{p}{q} $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+	Basta con tomar una sucesión $\displaystyle \left\{ x_{j}\right\} _{j \in \N} \subset S / \left\{ x_{0}\right\} $ con $\displaystyle x_{j} \to x_{0} $ y aplicar las propiedades de las sucesiones en $\displaystyle \R $. Demostraremos únicamente la tercera afirmación. \\
+ Sea $\displaystyle \left\{ x_{j}\right\} _{j\in \N}\subset S' $ tal que $\displaystyle x_{j} \to x_{0} $. Sabemos que $\displaystyle f\left(x_{j}\right) \to p $ y $\displaystyle g\left(x_{j}\right) \to q $ en $\displaystyle \R $. Si $\displaystyle q \neq 0 $, existe $\displaystyle j_{0} \in \N $ tal que $\displaystyle \forall j \geq j_{0} $, $\displaystyle g\left(x_{j}\right) \neq 0 $. 
+ Dado que $\displaystyle \left\{ \frac{f\left(x_{j}\right)}{g\left(x_{j}\right)}\right\} _{j \in \N} \subset \R $ es una sucesión, podemos aplicar las propiedades de las sucesiones en $\displaystyle \R $ y obtener el resultado deseado: 
+ \[ \frac{f\left(x_{j}\right)}{g\left(x_{j}\right)} \to \frac{p}{q} .\]
+\end{proof}
+\begin{prop}
+Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle x_{0} \in U $ y $\displaystyle f : U \to \R^{m} $. Son equivalentes:
+\begin{description}
+\item[(i)] $\displaystyle f $ es continua en $\displaystyle x_{0} $.
+\item[(ii)] $\displaystyle \lim_{x \to x_{0}}f\left(x\right) = f\left(x_{0}\right) $.
+\item[(iii)] $\displaystyle \forall S \subset U $ con $\displaystyle x_{0} \in S' $ se tiene que $\displaystyle \lim_{x \to x_{0}, x \in S}f\left(x\right) = f\left(x_{0}\right) $.
+\end{description}
+\end{prop}
+\begin{proof}
+Como $\displaystyle x_{0} \in U $, que es abierto, tenemos que existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(x_{0},r \right) \subset U $, por lo que $\displaystyle x_{0} \in U' $.
+\begin{description}
+\item[(i) $\displaystyle \Rightarrow $ (ii)] Dado $\displaystyle \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \|x-x_{0}\| < \delta  $ entonces $\displaystyle \|f\left(x\right)-f\left(x_{0}\right)\| < \epsilon  $, por lo que $\displaystyle \lim_{x \to x_{0}}f\left(x\right) = f\left(x_{0}\right) $.
+\item[(ii) $\displaystyle  \Rightarrow $ (iii)] Si $\displaystyle x \in S $ y $\displaystyle 0 < \|x-x_{0}\|<\delta  $, entonces $\displaystyle \|f\left(x\right)-f\left(x_{0}\right)\|<\epsilon  $. Por tanto, tenemos que $\displaystyle \lim_{x \to x_{0}, x\in S}f\left(x\right) = f\left(x_{0}\right) $. 
+\item[(iii) $\displaystyle \Rightarrow $ (ii)] En particular, tomando $\displaystyle S = U $ es trivial. 
+\item[(ii) $\displaystyle \Rightarrow $ (i)] $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle x \in U $ y $\displaystyle 0 < \|x - x_{0}\| < \delta  $, entonces $\displaystyle \|f\left(x\right)-f\left(x_{0}\right)<\epsilon  $. 
+\end{description}
+\begin{description}
+\item[(i) $\displaystyle \Rightarrow $ (ii)] Si $\displaystyle \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle 0<\|x - x_{0}\| < \delta  $ \footnote{Podemos poner que esto es mayor estrictamente que 0 porque siempre van a haber puntos en cualquier entorno de $\displaystyle x_{0} $ que no sean iguales a él.} entonces $\displaystyle \|f\left(x\right)-f\left(x_{0}\right)\| < \epsilon  $, por lo que $\displaystyle \lim_{x \to x_{0}}f\left(x\right) = f\left(x_{0}\right) $. 
+\item[(ii) $\displaystyle \Rightarrow $ (iii)] Sea $\displaystyle S \subset U $ con $\displaystyle x_{0} \in S' $. 
+\end{description}
 
 \end{proof}
+\begin{eg}
+\begin{enumerate}
+\item Consideremos la función $\displaystyle f : \R^{2} \to \R $ con 
+	\[f\left(x,y\right) = 
+	\begin{cases}
+	\frac{xy}{x^{2}+y^{2}}\sin\left(x+y\right), \; \left(x,y\right) \neq \left(0,0\right) \\
+	0, \; \left(x,y\right) = \left(0,0\right)
+	\end{cases}
+	.\]
+	Podemos ver que $\displaystyle h\left(x,y\right) = \sin\left(x+y\right) $ es continua en $\displaystyle \R^{2} $ y $\displaystyle g\left(x,y\right) = \frac{xy}{x^{2}+y^{2}} $ es continua en $\displaystyle \R^{2}/ \left\{ \left(0,0\right)\right\} = U $. Luego $\displaystyle f $ es continua en $\displaystyle \R^{2}/ \left\{ 0,0\right\}  $. Estudiemos la continuidad en $\displaystyle \left(0,0\right) $:
+\[ \left|f\left(x,y\right)\right| = \left|\frac{xy}{x^{2}+y^{2}}\right| \left|\sin\left(x+y\right)\right| \leq \frac{1}{2} \left|\sin\left(x+y\right)\right| \to 0 .\]
+Así, tenemos que $\displaystyle \lim_{\left(x,y\right) \to \left(0,0\right)}f\left(x,y\right) = \left(0,0\right) $ por lo que $\displaystyle f $ es continua en $\displaystyle \left(0,0\right) $. 
+\item Nos preguntamos si existe $\displaystyle \lim_{\left(x,y\right) \to \left(0,0\right)}\frac{xy}{x^{2}+y^{2}} $. Dado $\displaystyle \lambda \in \R $ podemos considerar $\displaystyle S_{\lambda } = \left\{ \left(x,y\right) \; : \; y = \lambda x\right\}  $. Tenemos que
+	\[\lim_{\left(x,y\right) \to \left(0,0\right), y = \lambda x}\frac{xy}{x^{2}+y^{2}} = \lim_{\left(x,y\right) \to \left(0,0\right), y = \lambda x} \frac{\lambda x^{2}}{\left(1+\lambda ^{2}\right)x^{2}} = \frac{\lambda }{1 + \lambda^{2}}.\]
+Como depende de $\displaystyle \lambda  $, debe ser que el límite no existe. 
+\item Calculemos $\displaystyle \lim_{\left(x,y\right) \to \left(0,0\right)}\frac{x^{4}}{x^{4}+y^{2}} $. Si tomamos el mismo conjunto que antes obtenemos que si $\displaystyle \lambda \neq 0 $,
+	\[\lim_{x \to 0, y = \lambda x}\frac{x^{4}}{x^{4}+\lambda ^{2}x^{2}} = \lim_{x \to 0}\frac{x^{2}}{x^{2}+\lambda ^{2}} = 0 .\]
+Sin embargo, esto no nos asegura que exista el límite. En efecto, si tomamos $\displaystyle y = \lambda x^{2} $ tenemos que
+\[\lim_{\left(x,y\right) \to \left(0,0\right), y = \lambda x^{2}}\frac{x^{4}}{x^{4}+\lambda ^{2}x^{4}} = \lim_{x \to 0}\frac{x^{4}}{\left(1+\lambda ^{2}\right)x^{4}} = \frac{1}{1 + \lambda^{2}} .\]
+Lo que nos dice que el límite no existe. 
+\end{enumerate}
+\end{eg}
+\section{Coordenadas polares}
+% Hacer dibujo de las coordenadas polares en el plano
+Como se puede deducir de la imagen, tenemos que $\displaystyle x = r\cos\theta $ y $\displaystyle y = r\sin \theta $, donde $\displaystyle r \geq 0 $ y $\displaystyle \theta \in [0,2\pi] $. Así, por ejemplo, tenemos que 
+\[ B\left(\left(0,0\right), R\right) = \left\{ \left(x,y\right) \; : \; x^{2} +y^{2}<R^{2}\right\} = \left\{ \left(r, \theta \right) \; : \; 0 \leq r < R, \; 0 \leq \theta \leq 2\pi \right\}  .\]
+El último igual no es un igual, estrictamente. Sin embargo dada $\displaystyle f: \R^{2} \to \R $, si podemos decir que $\displaystyle \lim_{\left(x,y\right) \to \left(0,0\right)}f\left(x\right) = l $ si y solo si 
+\[\forall \epsilon > 0, \; \exists \delta > 0, \; 0 < r < \delta \Rightarrow \left|f\left(r \cos \theta, r \sin \theta\right)-l\right| < \epsilon, \; \forall \theta \in [0,2\pi].\]
+Diremos que $\displaystyle \lim_{r \to 0}f\left(r \cos \theta, r \sin \theta\right)= l $ uniformemente en $\displaystyle \theta  $. 
+\begin{eg}
+Tenemos que
+\[\lim_{\left(x,y\right) \to \left(0,0\right)}\frac{ \left|x\right|y}{\sqrt{x^{2}+y^{2}}}  = \lim_{r \to 0} \frac{r \left|\cos \theta\right| \cdot r \sin\theta}{r} = r \left|\cos\theta \sin \theta\right|\leq r \to 0 .\]
+\end{eg}
+\begin{observation}
+	El objetivo del ejemplo anterior es hacer desaparecer el ángulo que se cumpla $\displaystyle \forall \theta \in [0,2\pi] $. 
+\end{observation}
 

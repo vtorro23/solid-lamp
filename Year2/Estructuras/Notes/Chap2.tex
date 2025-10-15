@@ -277,7 +277,7 @@ Veamos ahora que la aplicación es sobreyectiva. Sea $\displaystyle N_{1} \in \l
 \begin{observation}
 Este resultado nos permite establecer una biyección entre el número de subgrupos (normales) de $\displaystyle G $ que contienen a $\displaystyle H $ y los subgrupos (normales) de $\displaystyle G/H $ (con $\displaystyle H \lhd G $). 
 \end{observation}
-\section{Primer Teorema de Isomorfía}
+\section{Teoremas de isomorfía}
 \begin{eg}
 \begin{enumerate}
 \item Sea $\displaystyle f_{n} : \left(\Z, + \right) \to \left(\C^{*}, \cdot \right) : k \to e^{\frac{2k\pi i}{n}} $. Tenemos que $\displaystyle f_{n} $ es un homomorfismo de grupos,
@@ -288,13 +288,33 @@ Así, tenemos que $\displaystyle \Ker\left(f_{n}\right) = n \Z $. Sabemos que $\
 \item En $\displaystyle D_{4} $ podemos considerar la aplicación anterior $\displaystyle f : D_{4} \to C_{2} \times C_{2} $. Recordamos que $\displaystyle \Ker\left(f\right) = \left\langle \rho^{2} \right\rangle  $. Así, tenemos que $\displaystyle D_{4}/\left\langle \rho^{2} \right\rangle  \cong C_{2} \times C_{2} = \Imagen\left(f\right)$. 
 \end{enumerate}
 \end{eg}
-\begin{theorem}
+\begin{theorem}[Primer teorema de isomorfía]
 Sea $\displaystyle f : G_{1} \to G_{2} $ un homomorfismo de grupos. Entonces la aplicación 
 \[ \overline{f} : G_{1} / \Ker\left(f\right) \to \Imagen\left(f\right) : [g] \to \overline{f}\left([g]\right) = f\left(g\right) ,\]
 es un isomorfismo de grupos. En particular, $\displaystyle G_{1}/\Ker\left(f\right) \cong \Imagen\left(f\right) $.
 \end{theorem}
 \begin{proof}
-	Veamos que está bien definida. Si $\displaystyle [g_{1}] = [g]_{2}$, tenemos que $\displaystyle g_{1}g_{2}^{-1} \in \Ker\left(f\right) $. Así,
-	\[f\left(g_{1}g_{2}^{-1}\right) = e \iff f\left(g_{1}\right) = f\left(g_{2}\right) .\]	
+	Veamos que está bien definida y que es inyectiva. Dados $\displaystyle x_{1}, x_{2} \in G_{1} $, 
+	\[
+	\begin{split}
+		[x_{1}] = [x_{2}] \iff & x_{1}x_{2}^{-1} \in \Ker\left(f\right) \iff f\left(x_{1}x_{2}^{-1}\right) = e \\
+		\iff & f\left(x_{1}\right)f\left(x_{2}\right)^{-1} = e \iff f\left(x_{1}\right) = f\left(x_{2}\right).
+	\end{split}
+	\]
+	Veamos que se trata de un homomorfismo. Si $\displaystyle [g_{1}], [g_{2}] \in G_{1}/\Ker\left(f\right)	$,
+	\[\overline{f}\left([g_{1}][g_{2}]\right) = \overline{f}\left([g_{1}g_{2}]\right) = f\left(g_{1}g_{2}\right) = f\left(g_{1}\right)f\left(g_{2}\right) = \overline{f}\left([g_{1}]\right)\overline{f}\left([g_{2}]\right) .\]
+ Veamos que es sobreyectiva. Sea $\displaystyle y \in \Imagen\left(f\right) $, por definición existe $\displaystyle x \in G_{1} $ tal que $\displaystyle f\left(x\right) = y $. Basta con tomar $\displaystyle [x] \in G_{1}/\Ker\left(f\right) $, por lo que $\displaystyle \overline{f}\left([x]\right) = f\left(x\right) = y $. Así, hemos visto que $\displaystyle \overline{f} $ es un isomorfismo y $\displaystyle G_{1}/\Ker\left(f\right) \cong \Imagen\left(f\right) $.
 \end{proof}
+\begin{eg}
+\begin{enumerate}
+\item Consideremos $\displaystyle \det : \GL_{n}\left(\R\right) \to \R^{*} : A \to \det\left(A\right) $. Ya vimos que $\displaystyle \Ker\left(\det \right) = \SL_{n}\left(\R\right) $. Además, $\displaystyle \Imagen\left(\det \right) = \R^{*} $. Por el teorema anterior, tenemos que $\displaystyle \GL_{n}\left(\R\right)/\SL_{n}\left(\R\right) \cong \R^{*} $. 
+\item Consideremos $\displaystyle f : \Z \times \Z \to \Z_{m} \times \Z_{n} : \left(x,y\right) \to \left([x]_{m}, [y]_{n}\right) $. Tenemos que $\displaystyle \Ker\left(f\right) = m\Z \times n\Z $ e $\displaystyle \Imagen\left(f\right) = \Z_{m} \times \Z_{n} $. Por el teorema anterior, tenemos que $\displaystyle \Z \times \Z / m\Z \times n\Z \cong \Z_{m} \times \Z_{n} $.
+\end{enumerate}
+\end{eg}
+\begin{theorem}[Segundo teorema de isomorfía]
+Sea $\displaystyle G $ un grupo y $\displaystyle H,N \leq G $ con $\displaystyle N \lhd G $. Así, $\displaystyle H/H\cap N \cong HN/N $.
+\end{theorem}
+\begin{theorem}[Tercer teorema de isomorfía]
+Sea $\displaystyle G $ un grupo y $\displaystyle H,N \lhd G $ tal que $\displaystyle N \subset H $. Así, $\displaystyle G/N \cong \left(G/N\right) / \left(H/N\right) $. 
+\end{theorem}
 
