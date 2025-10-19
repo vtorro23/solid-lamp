@@ -172,7 +172,7 @@ Sea $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $. Supo
 \end{lema}
 \begin{proof}
 Sea $\displaystyle H \subset Y $ cerrado. Tenemos que 
-\[f^{-1}\left(H\right) = \left\{ x \in X \; : \; f\left(x\right) \in H\right\} = \bigcup_{1 \leq i \leq m} \left\{ x \in F_{i} \; : \; f\left(x\right) \in H\right\} = \bigcup_{1\leq i \leq m}\left(f|_{F_{i}}\right)^{-1}\left(H\right) .\]
+\[f^{-1}\left(H\right) = \left\{ x \in X \; : \; f\left(x\right) \in H\right\} = \bigcup_{1 \leq i \leq m} \underbrace{\left\{ x \in F_{i} \; : \; f\left(x\right) \in H\right\}}_{f^{-1}\left(H\right) \cap F_{i}} = \bigcup_{1\leq i \leq m}\left(f|_{F_{i}}\right)^{-1}\left(H\right) .\]
 Tenemos que $\displaystyle \left(f|_{F_{i}}\right)^{-1}\left(H\right) $ es cerrado relativo en $\displaystyle \left(F_{i}, d _{X}|_{F_{i}}\right) $ y que $\displaystyle F_{i} $ es cerrado en $\displaystyle X $. Por tanto, $\displaystyle \left(f|_{F_{i}}\right)^{-1}\left(H\right) $ es cerrado en $\displaystyle X $ \footnote{Hemos usado que $\displaystyle C $ es cerrado relativo en $\displaystyle \left(Z, d _{Z}\right) $ si y solo si existe $\displaystyle F $ cerrado en $\displaystyle X $ tal que $\displaystyle C = Z \cap F $.} y $\displaystyle f $ es continua en $\displaystyle X $.
 \end{proof}
 \begin{eg}

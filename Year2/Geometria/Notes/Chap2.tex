@@ -448,8 +448,121 @@ Tenemos que $\displaystyle \mathcal{R}_{A} = \left\{ \left(1,1\right), \left(0,1
 Calculemos la matriz de $\displaystyle \phi $ esta vez con la referencia $\displaystyle \mathcal{E} = \left\{ \left(0,0\right), \left(1,0\right), \left(0,1\right)\right\}  $, es decir, buscamos $\displaystyle M_{\mathcal{E}\mathcal{E}}\left(\phi\right) $. Veremos que
 \[M_{\mathcal{E}\mathcal{E}}\left(\phi\right) = C_{\mathcal{R}_{A}'\mathcal{E}} M _{\mathcal{R}_{A}\mathcal{R}_{A}'}\left(\phi\right) C_{\mathcal{E}\mathcal{R}_{A}} .\]
 Tenemos que 
-\[C_{\mathcal{R}_{A}\mathcal{E}} = \begin{pmatrix} -1 & 0 & 0 \\ 1 & 0 & 2 \\ 1 & 1 & -1 \end{pmatrix}, \; C_{\mathcal{R}'A\mathcal{E}} = \begin{pmatrix} -3 & 1 & 0 \\ 2 & - 1 & 0 \\ 2 & 1 & 1 \end{pmatrix} .\]
+\[C_{\mathcal{R}_{A}\mathcal{E}} = \begin{pmatrix} -1 & 0 & 0 \\ 1 & 0 & 2 \\ 1 & 1 & -1 \end{pmatrix}, \; C_{\mathcal{R}'_{A}\mathcal{E}} = \begin{pmatrix} -3 & 1 & 0 \\ 2 & - 1 & 0 \\ 2 & 1 & 1 \end{pmatrix} .\]
 Así, nos queda que
 \[M_{\mathcal{E}\mathcal{E}}\left(\phi\right) = \begin{pmatrix} \frac{9}{2} & \frac{1}{2} & 1 \\ -\frac{7}{2} & -\frac{1}{2} & -1 \\ 0 & 1 & 1\end{pmatrix} .\]
 \end{eg}
+\begin{prop}
+	Sean $\displaystyle \mathbb{A} $ y $\displaystyle \mathbb{A}' $ espacios afines de dimensión $\displaystyle n $. Sea $\displaystyle \mathcal{R}_{C} = \left\{ O, \mathcal{B} = \left\{ v_{1}, \ldots, v_{n}\right\} \right\}  $ referencia de $\displaystyle \mathbb{A} $ y $\displaystyle \mathcal{R}_{C}' = \left\{ O', \mathcal{B}' = \left\{ v_{1}', \ldots, v_{n}'\right\} \right\}  $ referencia de $\displaystyle \mathbb{A}' $. Entonces existe una única afinidad $\displaystyle f : \mathbb{A} \to \mathbb{A}' $ tal que $\displaystyle f\left(O\right) = O' $ y $\displaystyle \vec{f}\left(v_{i}\right) = v_{i}' $.
+\end{prop}
+\begin{proof}
+	Sean $\displaystyle \mathcal{R}_{A} = \left\{ O, O + v_{1}, \ldots, O + v_{n}\right\}  $ y $\displaystyle \mathcal{R}_{A}' = \left\{ O', O' + v_{1}' , \cdots , O' + v'_{n}\right\}  $ referencias afines de $\displaystyle \mathbb{A} $ y $\displaystyle \mathbb{A}' $, respectivamente. Podemos poner $\displaystyle v_{0} = v'_{0} = 0 $. Por la proposición anterior, existe una única $\displaystyle f : \mathbb{A} \to \mathbb{A}' $ afinidad tal que $\displaystyle f\left(O + v_{i}\right) = O' + v_{i}' $, $\displaystyle i = 0, \ldots, n $. 
+	De esta forma, tenemos que 
+	\[\vec{f}\left(v_{i}\right) = \vec{f}\left(\overrightarrow{O \left(O + v_{i}\right)}\right) = \overrightarrow{f\left(O\right)f\left(O + v_{i}\right)} = \overrightarrow{O'\left(O'+v_{i}'\right)} = v_{i}'.\]
+\end{proof}
+\begin{observation}
+Sabemos que 
+\[ f : \mathbb{A} \to \mathbb{A}' : O + \overrightarrow{OA} \to f\left(O\right) + \vec{f}\left(\overrightarrow{OA}\right) .\]
+La matriz de $\displaystyle f $ en las referencias cartesianas $\displaystyle \mathcal{R}_{C} $ y $\displaystyle \mathcal{R}_{C}' $ cumple que
+\[\begin{pmatrix} 1 \\ f\left(\begin{pmatrix} x_{1} \\ \vdots \\ x_{n} \end{pmatrix}\right)_{\mathcal{R}_{C}'} \end{pmatrix} = M_{\mathcal{R}_{C}\mathcal{R}_{C}'}\left(f\right)\begin{pmatrix} 1 \\ \begin{pmatrix} x_{1} \\ \vdots \\ x_{n} \end{pmatrix} _{\mathcal{R}_{C}} \end{pmatrix}.\]
+Nos queda que 
+\[M_{\mathcal{R}_{C}\mathcal{R}_{C}'} = \begin{pmatrix} 1 & 0  \\ f\left(O\right)_{\mathcal{R}_{C}} & M_{\mathcal{B}\mathcal{B}'}\left(\vec{f}\right) \end{pmatrix} .\]
+\end{observation}
+\begin{eg}
+Sea $\displaystyle f : \R^{2} \to \R^{2} $ tal que 
+\[f\left(1,1\right) = \left(2,2\right), \quad f\left(0,1\right) = \left(-1,1\right), \quad f\left(2,-1\right) = \left(0,1\right) .\]
+Habíamos calculado $\displaystyle M_{\mathcal{R}_{A}}\left(f\right) $ donde $\displaystyle \mathcal{R}_{A} = \left\{ \left(0,0\right), \left(1,0\right), \left(0,1\right)\right\}  $. Ahora, buscamos $\displaystyle M_{\mathcal{R}_{C}}\left(f\right) $ en la referencia $\displaystyle \mathcal{R}_{C} = \left\{ \left(0,0\right), \mathcal{B} = \left\{ \left(1,0\right), \left(0,1\right)\right\} \right\}  $. 
+\begin{description}
+	\item[Opción 1.] Sea 
+		\[  \mathcal{R}_{1} = \left\{ \left(1,1\right), \mathcal{B}_{1} = \left\{ \overrightarrow{\left(1,1\right)\left(0,1\right)}, \overrightarrow{\left(1,1\right)\left(2,-1\right)}\right\} \right\} = \left\{ \left(1,1\right), \mathcal{B}_{1} = \left\{ \left(-1,0\right),\left(1,-2\right)\right\} \right\} .\]
+	Podemos tomar otra referencia 
+	\[\mathcal{R}_{2} = \left\{ \left(2,2\right), \mathcal{B}_{2} = \left\{ \overrightarrow{\left(2,2\right)\left(-1,1\right)},\overrightarrow{\left(2,2\right)\left(0,1\right)}\right\} \right\} = \left\{ \left(2,2\right), \mathcal{B}_{2} = \left\{ \left(-3,-1\right),\left(-2,-1\right)\right\} \right\}  .\]
+	Así, nos queda que
+	\[M_{\mathcal{R}_{1}\mathcal{R}_{2}}\left(f\right) = \begin{pmatrix} 1 & 0 & 0 \\
+	0 & 1&0 \\
+0 &0 &1 \end{pmatrix} .\]
+Así, tenemos que 
+\[
+\begin{split}
+	M_{\mathcal{R}_{C}}\left(f\right) = & C_{\mathcal{R}_{2}\mathcal{R}_{C}}M_{\mathcal{R}_{1}\mathcal{R}_{2}}C_{\mathcal{R}_{C}\mathcal{R}_{1}}\\
+	= & \begin{pmatrix} 1 & 0 & 0 \\ 2 & -3 & - 2 \\ 2 & - 1 & - 1 \end{pmatrix} I \begin{pmatrix} 1 &  0 & 0 \\ 1 & - 1 & 1 \\ 1 & 0 & -2 \end{pmatrix}^{-1} = \begin{pmatrix} 1 & 0 & 0 \\ -\frac{7}{2} & 3 & \frac{5}{2} \\ 0 & 1 & 1 \end{pmatrix}.
+\end{split}
+\]
+\item[Opción 2.] Buscamos $\displaystyle \vec{f}\left(1,0\right) $ y $\displaystyle \vec{f}\left(0,1\right) $. Tenemos que
+	\[
+	\begin{split}
+		\vec{f}\left(1,0\right) = & \vec{f}\left(-\left(-1,0\right)\right) = -\vec{f}\left(\overrightarrow{\left(1,1\right)\left(0,1\right)}\right) = - \overrightarrow{f\left(1,1\right)f\left(0,1\right)} \\
+		= &  -\overrightarrow{\left(2,2\right)\left(-1,1\right)} = \left(3,1\right) .
+	\end{split}
+	\]
+	De forma análoga, tenemos que 
+	\[
+	\begin{split}
+		\vec{f}\left(0,1\right) = & \vec{f}\left(-\frac{1}{2}\left(-1,0\right) -\frac{1}{2}\left(1,-2\right)\right) = \vec{f}\left(-\frac{1}{2}\overrightarrow{\left(1,1\right)\left(0,1\right)} - \frac{1}{2}\overrightarrow{\left(1,1\right)\left(2,-1\right)}\right) \\
+		= & \frac{1}{2}\overrightarrow{f\left(1,1\right)f\left(0,1\right)} - \frac{1}{2}\overrightarrow{f\left(1,1\right)f\left(2,-1\right)} = -\frac{1}{2}\left(-3,-1\right)-\frac{1}{2}\left(-2,-1\right) \\
+		= & \left(\frac{5}{2},1\right) .
+	\end{split}
+	\]
+\end{description}
+Finalmente, calculamos $\displaystyle f\left(0,0\right) $:
+\[
+\begin{split}
+	f\left(0,0\right) = & f\left(\left(1,1\right)-\left(1,1\right)\right) = f\left(1,1\right) - \vec{f}\left(1,1\right) \\
+	= & \left(2,2\right)-\left(3,1\right)-\left(\frac{5}{2}, 1\right) = \left(-\frac{7}{2}, 0\right) .
+\end{split}
+\]
+Así, hemos obtenido la misma matriz de dos formas distintas. 
+\end{eg}
+\begin{prop}
+Sean $\displaystyle f : \mathbb{A} \to \mathbb{A}' $ y $\displaystyle g : \mathbb{A}' \to \mathbb{A}'' $ aplicaciones afines. Entonces
+\begin{enumerate}
+\item $\displaystyle g\circ f : \mathbb{A} \to \mathbb{A}'' $ es afín y $\displaystyle \overrightarrow{g\circ f} = \vec{g}\circ \vec{f} $.
+\item $\displaystyle f $ inyectiva $\displaystyle \iff  $ $\displaystyle \vec{f} $ inyectiva.
+\item $\displaystyle f $ sobreyectiva $\displaystyle \iff  $ $\displaystyle \vec{f} $ sobreyectiva.
+\item Si $\displaystyle f $ es biyectiva, entonces $\displaystyle f^{-1} $ es afín y $\displaystyle \overrightarrow{f^{-1}} = \vec{f}^{-1} $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+	\begin{enumerate}
+	\item Por ser $\displaystyle g $ y $\displaystyle f $ aplicaciones afines, sabemos que conserban las combinaciones afines, por lo que $\displaystyle g \circ f $ también conservará las combinaciones afines y será una aplicación afín. Ahora, sean $\displaystyle P,Q \in \mathbb{A} $ y $\displaystyle A = f\left(P\right), B = f\left(Q\right) \in \mathbb{A}' $. 
+		Tenemos que
+		\[
+		\begin{split}
+			\overrightarrow{g\circ f}\left(\overrightarrow{PQ}\right) = & \overrightarrow{\left(g\circ f\right)\left(P\right)\left(g\circ f\right)\left(Q\right)} = \overrightarrow{g\left(A\right)g\left(B\right)} = \vec{g}\left(\overrightarrow{AB}\right) = \vec{g} \left(\overrightarrow{f\left(P\right)f\left(Q\right)}\right) \\
+			= & \vec{g}\left(\vec{f}\left(\overrightarrow{PQ}\right)\right) = \vec{g}\circ \vec{f}\left(\overrightarrow{PQ}\right)  .
+		\end{split}
+		\]
+	\item Tenemos que $\displaystyle f $ es inyectiva si y solo si $\displaystyle f\left(P\right) \neq f\left(Q\right) $ cuando $\displaystyle P \neq Q $, es decir, si $\displaystyle \vec{f}\left(\overrightarrow{PQ}\right)=\overrightarrow{f\left(P\right)f\left(Q\right)} \neq 0 $ cuando $\displaystyle \overrightarrow{PQ} \neq 0 $, es decir, cuando $\displaystyle \vec{f} $ sea inyectiva. 
+	\item Supongamos que $\displaystyle f $ es sobreyectiva. Dado $\displaystyle v \in \vec{\mathbb{A}'} $, sean $\displaystyle P,Q \in \mathbb{A}' $ tales que $\displaystyle v = \overrightarrow{PQ} $. Sean $\displaystyle A,B \in \mathbb{A} $ tales que $\displaystyle f\left(A\right) = P $ y $\displaystyle f\left(B\right) = Q $. Así, tenemos que 
+		\[\vec{f}\left(\overrightarrow{AB}\right) = \overrightarrow{f\left(A\right)f\left(B\right)} = \overrightarrow{PQ} = v .\]
+		Por tanto, $\displaystyle \vec{f} $ es sobreyectiva. Ahora, supongamos que $\displaystyle \vec{f} $ es sobreyectiva y sea $\displaystyle P \in \mathbb{A}' $. Fijamos $\displaystyle O \in \mathbb{A} $ y como $\displaystyle \overrightarrow{f\left(O\right)P} \in \vec{\mathbb{A}'} $, existe $\displaystyle u \in \vec{\mathbb{A}} $ tal que $\displaystyle \vec{f}\left(u\right) = \overrightarrow{f\left(O\right)P} $.
+Entonces, tenemos que si cogemos $\displaystyle B = O + u $, entonces $\displaystyle f\left(B\right) = P $. En efecto,
+\[f\left(B\right) = f\left(O + u\right) = f\left(O \right)+ \vec{f}\left(u\right) = f\left(O\right) + \overrightarrow{f\left(O\right)P} = P .\]
+Así, hemos visto que $\displaystyle f $ es sobreyectiva. 
+\item Veamos que $\displaystyle f^{-1} $ conserva las combinaciones afines. Dados $\displaystyle Q_{1}, \ldots, Q_{r} \in \mathbb{A}' $ y $\displaystyle \lambda_{0}, \ldots, \lambda_{r} \in \K $ con $\displaystyle \sum^{r}_{i = 0}\lambda_{i} = 1 $, sea $\displaystyle P_{i} = f^{-1}\left(Q_{i}\right) $. Como $\displaystyle f $ es afín tenemos que
+	\[
+	\begin{split}
+		\sum^{r}_{i = 0}\lambda_{i}f^{-1}\left(Q_{i}\right) = & \sum^{r}_{i = 0}\lambda_{i}P_{i} = f^{-1}\left(f\left(\sum^{r}_{i = 0}\lambda_{i}P_{i}\right)\right) \\
+		= & f^{-1}\left(\sum^{r}_{i = 0}\lambda_{i}f\left(P_{i}\right)\right) = f^{-1}\left(\sum^{r}_{i = 0}\lambda_{i}Q_{i}\right) .
+	\end{split}
+	\]
+	Por tanto, tenemos que $\displaystyle f^{-1} $ también es afín. Usando \textbf{(1)} deducimos que
+	\[id _{\vec{\mathbb{A}'}} = \overrightarrow{f \circ f^{-1}} = \vec{f}\circ \overrightarrow{f^{-1}} \quad \text{y}\quad id _{\vec{\mathbb{A}'}} = \overrightarrow{f^{-1}\circ f} = \overrightarrow{f^{-1}}\circ \vec{f} .\]
+Por tanto, tenemos que $\displaystyle \overrightarrow{f^{-1}} = \vec{f}^{-1} $. 	
+	\end{enumerate}
+\end{proof}
+\begin{prop}
+	Sea $\displaystyle \mathcal{R} = \left\{ P_{0}, \ldots, P_{n}; P_{n+1}\right\}  $ una referencia proyectiva de $\displaystyle \mathbb{P}\left(V\right) $. Sea $\displaystyle \mathcal{B} = \left\{ v_{0}, \ldots, v_{n}\right\}  $ asociada y sea $\displaystyle f : V \to \K $ lineal tal que $\displaystyle f\left(v_{i}\right) \neq 0 $, $\displaystyle \forall i = 0, \ldots, n $. Entonces $\displaystyle \mathcal{R}_{A} = \left\{ P_{0}, \ldots, P_{n}\right\}  $ es una referencia afín de $\displaystyle \mathbb{P}\left(V\right) / \mathbb{P}\left(\Ker\left(f\right)\right) $. 
+\end{prop}
+\begin{proof}
+	Como $\displaystyle P_{i} = [v_{i}] $ para $\displaystyle i = 0, \ldots,n $ y $\displaystyle f\left(v_{i}\right) \neq 0 $, tenemos que $\displaystyle P_{i} \in \mathbb{P}\left(V\right) / \mathbb{P}\left(\Ker\left(f\right)\right) $. Veamos que $\displaystyle \left\{ \overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0} P_{n}}\right\}  $ es una base de $\displaystyle \Ker\left(f\right) $. 
+	Basta ver que son linealmente independientes puesto que $\displaystyle \dim \Ker\left(f\right) = n $. Recordamos que
+	\[\overrightarrow{P_{0}P_{i}} = \frac{v_{i}}{f\left(v_{i}\right)} - \frac{v_{0}}{f\left(v_{0}\right)}, \; \forall i = 1, \ldots, n .\]
+	Así, tenemos que 
+	\[0 = \alpha_{1}\overrightarrow{P_{0}P_{1}} + \cdots + \alpha_{n}\overrightarrow{P_{0}P_{n}} = \alpha_{1}\left(\frac{v_{1}}{f\left(v_{1}\right)}-\frac{v_{0}}{f\left(v_{0}\right)}\right) + \cdots + \alpha_{n}\left(\frac{v_{n}}{f\left(v_{n}\right)}-\frac{v_{0}}{f\left(v_{0}\right)}\right) .\]
+	De donde se deduce que
+	\[\sum\alpha_{i}\frac{v_{0}}{f\left(v_{0}\right)} = \alpha_{1}\frac{v_{1}}{f\left(v_{1}\right)}+ \cdots + \alpha_{n}\frac{v_{n}}{f\left(v_{n}\right)} .\]
+	Como $\displaystyle \left\{ v_{0}, \ldots, v_{n}\right\}  $ son linealmente independientes, tenemos que $\displaystyle \alpha_{i} = 0 $, $\displaystyle \forall i = 0, \ldots, n $. Por tanto, $\displaystyle \left\{ \overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0}P_{n}}\right\}  $ son linealmente independientes.
+\end{proof}
+
 

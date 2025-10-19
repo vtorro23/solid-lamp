@@ -52,16 +52,11 @@ Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle x_{0} \in U $ y $\
 \begin{proof}
 Como $\displaystyle x_{0} \in U $, que es abierto, tenemos que existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(x_{0},r \right) \subset U $, por lo que $\displaystyle x_{0} \in U' $.
 \begin{description}
-\item[(i) $\displaystyle \Rightarrow $ (ii)] Dado $\displaystyle \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \|x-x_{0}\| < \delta  $ entonces $\displaystyle \|f\left(x\right)-f\left(x_{0}\right)\| < \epsilon  $, por lo que $\displaystyle \lim_{x \to x_{0}}f\left(x\right) = f\left(x_{0}\right) $.
-\item[(ii) $\displaystyle  \Rightarrow $ (iii)] Si $\displaystyle x \in S $ y $\displaystyle 0 < \|x-x_{0}\|<\delta  $, entonces $\displaystyle \|f\left(x\right)-f\left(x_{0}\right)\|<\epsilon  $. Por tanto, tenemos que $\displaystyle \lim_{x \to x_{0}, x\in S}f\left(x\right) = f\left(x_{0}\right) $. 
+\item[(i) $\displaystyle \Rightarrow $ (ii)] Si $\displaystyle \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle 0<\|x - x_{0}\| < \delta  $ \footnote{Podemos poner que esto es mayor estrictamente que 0 porque siempre van a haber puntos en cualquier entorno de $\displaystyle x_{0} $ que no sean iguales a él.} entonces $\displaystyle \|f\left(x\right)-f\left(x_{0}\right)\| < \epsilon  $, por lo que $\displaystyle \lim_{x \to x_{0}}f\left(x\right) = f\left(x_{0}\right) $.
+\item[(ii) $\displaystyle  \Rightarrow $ (iii)] Sea $\displaystyle S \subset U $ con $\displaystyle x_{0} \in S' $ y $\displaystyle x_{0} \in U $. Si $\displaystyle x \in S $ y $\displaystyle  0 < \|x -x_{0}\| < \delta  $, entonces $\displaystyle \|f\left(x\right)-f\left(x_{0}\right)\| < \epsilon  $. Por tanto, $\displaystyle \lim_{x \to x_{0}, x \in S}f\left(x\right) = f\left(x_{0}\right) $.
 \item[(iii) $\displaystyle \Rightarrow $ (ii)] En particular, tomando $\displaystyle S = U $ es trivial. 
-\item[(ii) $\displaystyle \Rightarrow $ (i)] $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle x \in U $ y $\displaystyle 0 < \|x - x_{0}\| < \delta  $, entonces $\displaystyle \|f\left(x\right)-f\left(x_{0}\right)<\epsilon  $. 
+\item[(ii) $\displaystyle \Rightarrow $ (i)] $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle x \in U $ y $\displaystyle  \|x - x_{0}\| < \delta  $ \footnote{El que sea mayor estrictamente que 0 da igual porque $\displaystyle f\left(x_{0}\right) $ está bien definido.} , entonces $\displaystyle \|f\left(x\right)-f\left(x_{0}\right)\|<\epsilon  $. 
 \end{description}
-\begin{description}
-\item[(i) $\displaystyle \Rightarrow $ (ii)] Si $\displaystyle \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle 0<\|x - x_{0}\| < \delta  $ \footnote{Podemos poner que esto es mayor estrictamente que 0 porque siempre van a haber puntos en cualquier entorno de $\displaystyle x_{0} $ que no sean iguales a él.} entonces $\displaystyle \|f\left(x\right)-f\left(x_{0}\right)\| < \epsilon  $, por lo que $\displaystyle \lim_{x \to x_{0}}f\left(x\right) = f\left(x_{0}\right) $. 
-\item[(ii) $\displaystyle \Rightarrow $ (iii)] Sea $\displaystyle S \subset U $ con $\displaystyle x_{0} \in S' $. 
-\end{description}
-
 \end{proof}
 \begin{eg}
 \begin{enumerate}
@@ -86,8 +81,12 @@ Lo que nos dice que el límite no existe.
 \end{enumerate}
 \end{eg}
 \section{Coordenadas polares}
-% Hacer dibujo de las coordenadas polares en el plano
-Como se puede deducir de la imagen, tenemos que $\displaystyle x = r\cos\theta $ y $\displaystyle y = r\sin \theta $, donde $\displaystyle r \geq 0 $ y $\displaystyle \theta \in [0,2\pi] $. Así, por ejemplo, tenemos que 
+\begin{figure}[h!]
+ \centering
+  \includegraphics[scale = 0.5]{~/Desktop/Images/polar_coordinates.png}
+ \caption{Coordenadas polares}
+ \end{figure}
+Como se puede deducir de la imagen, tenemos que $\displaystyle x = r\cos\theta $ e $\displaystyle y = r\sin \theta $, donde $\displaystyle r \geq 0 $ y $\displaystyle \theta \in [0,2\pi] $. Así, por ejemplo, tenemos que 
 \[ B\left(\left(0,0\right), R\right) = \left\{ \left(x,y\right) \; : \; x^{2} +y^{2}<R^{2}\right\} = \left\{ \left(r, \theta \right) \; : \; 0 \leq r < R, \; 0 \leq \theta \leq 2\pi \right\}  .\]
 El último igual no es un igual, estrictamente. Sin embargo dada $\displaystyle f: \R^{2} \to \R $, si podemos decir que $\displaystyle \lim_{\left(x,y\right) \to \left(0,0\right)}f\left(x\right) = l $ si y solo si 
 \[\forall \epsilon > 0, \; \exists \delta > 0, \; 0 < r < \delta \Rightarrow \left|f\left(r \cos \theta, r \sin \theta\right)-l\right| < \epsilon, \; \forall \theta \in [0,2\pi].\]
@@ -97,6 +96,6 @@ Tenemos que
 \[\lim_{\left(x,y\right) \to \left(0,0\right)}\frac{ \left|x\right|y}{\sqrt{x^{2}+y^{2}}}  = \lim_{r \to 0} \frac{r \left|\cos \theta\right| \cdot r \sin\theta}{r} = r \left|\cos\theta \sin \theta\right|\leq r \to 0 .\]
 \end{eg}
 \begin{observation}
-	El objetivo del ejemplo anterior es hacer desaparecer el ángulo que se cumpla $\displaystyle \forall \theta \in [0,2\pi] $. 
+	El objetivo del ejemplo anterior es hacer desaparecer el ángulo para que se cumpla $\displaystyle \forall \theta \in [0,2\pi] $. 
 \end{observation}
 
