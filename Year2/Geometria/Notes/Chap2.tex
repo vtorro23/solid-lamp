@@ -359,7 +359,7 @@ Así, nos queda que
 En los tres tipos de referencia tenemos que $\displaystyle C^{-1}_{\mathcal{R}\mathcal{R}'} = C_{\mathcal{R}'\mathcal{R}} $. También es cierto que $\displaystyle C_{\mathcal{R}'\mathcal{R}''} C_{\mathcal{R}\mathcal{R}'} = C_{\mathcal{R}\mathcal{R}''} $. Esto último es útil porque, en general, es más sencillo calcular $\displaystyle C_{\mathcal{R}\mathcal{E}} $, donde $\displaystyle \mathcal{E} $ es la base canónica. Así, para cambiar de $\displaystyle \mathcal{R} $ a $\displaystyle \mathcal{R}' $ podemos hacer
 \[C_{\mathcal{R}\mathcal{R}'} = C_{\mathcal{R}'\mathcal{E}}^{-1}C_{\mathcal{R}\mathcal{E}} .\]
 \end{observation}
-\section{Aplicaciones afines y proyectivas}
+\section{Aplicaciones afines}
 \begin{definition}[Aplicación afín]
 Sean $\displaystyle \mathbb{A} $ y $\displaystyle \mathbb{A}' $ espacios afines. Una \textbf{aplicación afín} es una función $\displaystyle f : \mathbb{A} \to \mathbb{A}' $ tal que $\displaystyle \forall O \in \mathbb{A} $,
 \[\vec{f}_{O} : \vec{\mathbb{A}} \to \vec{\mathbb{A}'} : \overrightarrow{OA} \to \overrightarrow{f\left(O\right)f\left(A\right)} ,\]
@@ -564,5 +564,39 @@ Por tanto, tenemos que $\displaystyle \overrightarrow{f^{-1}} = \vec{f}^{-1} $.
 	\[\sum\alpha_{i}\frac{v_{0}}{f\left(v_{0}\right)} = \alpha_{1}\frac{v_{1}}{f\left(v_{1}\right)}+ \cdots + \alpha_{n}\frac{v_{n}}{f\left(v_{n}\right)} .\]
 	Como $\displaystyle \left\{ v_{0}, \ldots, v_{n}\right\}  $ son linealmente independientes, tenemos que $\displaystyle \alpha_{i} = 0 $, $\displaystyle \forall i = 0, \ldots, n $. Por tanto, $\displaystyle \left\{ \overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0}P_{n}}\right\}  $ son linealmente independientes.
 \end{proof}
-
+\begin{prop}
+Sea $\displaystyle \mathbb{A} $ un espacio afín sobre $\displaystyle \K $ de dimensión $\displaystyle n $. Sea $\displaystyle \mathcal{R}_{A} = \left\{ Q_{0}, \ldots, Q_{n}\right\}  $ una referencia afín y sea $\displaystyle \mathbb{P}\left(V\right) $ un espacio proyectivo de $\displaystyle \K $ de dimensión $\displaystyle n $ con $\displaystyle \mathcal{R} = \left\{ P_{0}, \ldots, P_{n}; P_{n+1}\right\}  $ una referencia proyectiva con base asociada $\displaystyle \mathcal{B} = \{v_{0}, \ldots, v_{n}\} $ . Si $\displaystyle f : V \to \K $ es lineal tal que $\displaystyle f\left(v_{i}\right) \neq 0 $, $\displaystyle \forall i = 0, \ldots, n $ tal que $\displaystyle P_{i} = [v_{i}] $, entonces 
+	\[
+	\begin{split}
+		\phi : \mathbb{A} & \to \mathbb{P}\left(V\right) / \mathbb{P}\left(\Ker\left(f\right)\right) \\ 
+		\left(a_{0}, \ldots, a_{n}\right)_{\mathcal{R}_{A}} & \to \left[\frac{a_{0}}{f\left(v_{0}\right)} : \cdots : \frac{a_{n}}{f\left(v_{n}\right)}\right] ,
+	\end{split}
+	\]
+	es una afinidad que cumple $\displaystyle \phi\left(Q_{i}\right) = P_{i} $, $\displaystyle \forall i = 0, \ldots, n $.
+\end{prop}
+\begin{proof}
+	En la situación de la proposición tenemos que $\displaystyle \mathcal{R}_{A}' = \left\{ P_{0}, \ldots, P_{n}\right\}  $ es referencia afín de $\displaystyle \mathbb{A}'=\mathbb{P}\left(V\right) / \mathbb{P}\left(\Ker\left(f\right)\right) $. Por tanto, existe una única afinidad $\displaystyle \phi : \mathbb{A} \to \mathbb{A}':Q_{i} \to P_{i} $.  
+	Sea $\displaystyle P = \left(a_{0}, \ldots, a_{n}\right)_{\mathcal{R}_{A}'} $, entonces $\displaystyle P = P_{0} + \sum^{n}_{ i=1}a_{i}\overrightarrow{P_{0}P_{i}} $.
+	 Así, tenemos que $\displaystyle P = [a_{0} : \cdots : a_{n}] $ si y solo si $\displaystyle P = [a_{0}v_{0}+\cdots + a_{n}v_{n}] $. Si $\displaystyle P \in \mathbb{P}\left(V\right)/\mathbb{P}\left(\Ker\left(f\right)\right) $, entonces $\displaystyle f\left(a_{0}v_{0} + \cdots + a_{n}v_{n}\right) \neq 0 $. Así, nos queda que
+	\[
+	\begin{split}
+		P = & [v_{0}] + a_{1}\left(\frac{v_{1}}{f\left(v_{1}\right)}-\frac{v_{0}}{f\left(v_{0}\right)}\right) + \cdots + a_{n}\left(\frac{v_{n}}{f\left(v_{n}\right)}-\frac{v_{0}}{f\left(v_{0}\right)}\right) \\
+		= & \left[\frac{v_{0}}{f\left(v_{0}\right)}+a_{1}\left(\frac{v_{1}}{f\left(v_{1}\right)}-\frac{v_{0}}{f\left(v_{0}\right)}\right) + \cdots + a_{n}\left(\frac{v_{n}}{f\left(v_{n}\right)}-\frac{v_{0}}{f\left(v_{0}\right)}\right)\right] \\
+		= & \left[\left(1-\sum^{n}_{i = 1}a_{i}\right)\frac{v_{0}}{f\left(v_{0}\right)} + a_{1}\frac{v_{1}}{f\left(v_{1}\right)} + \cdots +a_{n}\frac{v_{n}}{f\left(v_{n}\right)}\right] \\
+		= & \left[a_{0}\frac{v_{0}}{f\left(v_{0}\right)} + \cdots + a_{n}\frac{v_{n}}{f\left(v_{n}\right)}\right] = \left[\frac{a_{0}}{f\left(v_{0}\right)}: \frac{a_{1}}{f\left(v_{1}\right)}: \cdots : \frac{a_{n}}{f\left(v_{n}\right)}\right] _{\mathcal{R}}  .
+	\end{split}
+	\]
+\end{proof}
+\section{Aplicaciones proyectivas}
+Escribimos $\displaystyle f : A \to B $ para denotar a una función definida sobre un subconjunto de $\displaystyle A $. 
+\begin{definition}[Aplicación proyectiva]
+	Una \textbf{aplicación proyectiva} $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ es una función asociada a una función lineal $\displaystyle \hat{f}: V \to V $ de tal forma que $\displaystyle [\hat{f}(v)] = f\left([v]\right) $. La aplicación $\displaystyle f $ no está definida sobre $\displaystyle \mathbb{P}\left(\Ker\left(\hat{f}\right)\right) $. A este conjunto lo llamamos el \textbf{centro} de $\displaystyle f $ y lo denotamos $\displaystyle Z\left(f\right) $. 
+\end{definition}
+\begin{observation}
+	Tenemos que realmente $\displaystyle f $ es de la forma $\displaystyle f : \mathbb{P}\left(V\right)/Z\left(f\right) \to \mathbb{P}\left(V'\right) $. Si $\displaystyle Z\left(f\right) = \emptyset $, es decir, $\displaystyle \Ker\left(\hat{f}\right) = \left\{ 0\right\}  $, entonces escribimos $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $. 
+	Si además $\displaystyle \hat{f} $ es un isomorfismo, decimos que $\displaystyle f $ es una \textbf{homografía}. 
+\end{observation}
+\begin{prop}
+	Sea $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ una aplicación proyectiva. Si $\displaystyle \hat{f},\hat{g} : V \to V' $ cumplen que $\displaystyle \left[\hat{f}\left(v\right)\right]  = \left[\hat{g}\left(v\right)\right] = f\left([v]\right)$, entonces existe $\displaystyle \lambda \in \K^{*} $ tal que $\displaystyle \hat{f} = \lambda \hat{g} $.
+\end{prop}
 
