@@ -593,10 +593,61 @@ Escribimos $\displaystyle f : A \to B $ para denotar a una función definida sob
 	Una \textbf{aplicación proyectiva} $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ es una función asociada a una función lineal $\displaystyle \hat{f}: V \to V $ de tal forma que $\displaystyle [\hat{f}(v)] = f\left([v]\right) $. La aplicación $\displaystyle f $ no está definida sobre $\displaystyle \mathbb{P}\left(\Ker\left(\hat{f}\right)\right) $. A este conjunto lo llamamos el \textbf{centro} de $\displaystyle f $ y lo denotamos $\displaystyle Z\left(f\right) $. 
 \end{definition}
 \begin{observation}
+Podemos ver que la definición de aplicación proyectiva está bien definida puesto que 
+\[f\left([\lambda v]\right) = \left[\hat{f}\left(\lambda v\right)\right] = \left[\lambda \hat{f}\left(v\right)\right] = \left[\hat{f}\left(v\right)\right]  .\]
+\end{observation}
+\begin{observation}
 	Tenemos que realmente $\displaystyle f $ es de la forma $\displaystyle f : \mathbb{P}\left(V\right)/Z\left(f\right) \to \mathbb{P}\left(V'\right) $. Si $\displaystyle Z\left(f\right) = \emptyset $, es decir, $\displaystyle \Ker\left(\hat{f}\right) = \left\{ 0\right\}  $, entonces escribimos $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $. 
 	Si además $\displaystyle \hat{f} $ es un isomorfismo, decimos que $\displaystyle f $ es una \textbf{homografía}. 
 \end{observation}
 \begin{prop}
-	Sea $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ una aplicación proyectiva. Si $\displaystyle \hat{f},\hat{g} : V \to V' $ cumplen que $\displaystyle \left[\hat{f}\left(v\right)\right]  = \left[\hat{g}\left(v\right)\right] = f\left([v]\right)$, entonces existe $\displaystyle \lambda \in \K^{*} $ tal que $\displaystyle \hat{f} = \lambda \hat{g} $.
+	Sea $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ una aplicación proyectiva. Si $\displaystyle \hat{f},\hat{g} : V \to V' $ cumplen que $\displaystyle \left[\hat{f}\left(v\right)\right]  = \left[\hat{g}\left(v\right)\right] = f\left([v]\right)$, $\displaystyle \forall [v] \in \mathbb{P}\left(V\right)/Z\left(f\right) $, entonces existe $\displaystyle \lambda \in \K^{*} $ tal que $\displaystyle \hat{f} = \lambda \hat{g} $.
 \end{prop}
+\begin{proof}
+	Tenemos que $\displaystyle f $ está bien definida en $\displaystyle \mathbb{P}\left(V\right)/\mathbb{P}\left(\Ker\left(\hat{f}\right)\right) = \mathbb{P}\left(V\right)/\mathbb{P}\left(\Ker\left(\hat{g}\right)\right) $. Por tanto, $\displaystyle \mathbb{P}\left(\Ker\left(\hat{f}\right)\right) = \mathbb{P}\left(\Ker\left(\hat{g}\right)\right) $ y en consecuencia $\displaystyle \Ker\left(\hat{f}\right) = \Ker\left(\hat{g}\right) $. Ponemos $\displaystyle \hat{Z} = \Ker \hat{f}$. 
+	Buscamos un complemento de $\displaystyle \hat{Z} $ tal que $\displaystyle V = \hat{Z} \oplus W $. Si $\displaystyle v \in V $, $\displaystyle \exists ! z \in \hat{Z}, w \in W $ tales que $\displaystyle v = z + w $. Así, tenemos que 
+	\[\hat{f}\left(v\right) = \hat{f}\left(z + w\right) = \hat{f}\left(z\right) + \hat{f}\left(w\right) = \hat{f}\left(w\right) .\]
+	Análogamente, $\displaystyle \hat{g}\left(v\right) = \hat{g}\left(w\right) $. Así, tenemos que 
+	\[f\left([v]\right) = [\hat{f}\left(v\right)] = [\hat{f}\left(w\right)] = [\hat{g}\left(v\right)] = [\hat{g}\left(w\right)] ,\]
+	por lo que existe $\displaystyle \lambda_{w} \in \K^{*} $ tal que $\displaystyle \hat{f}\left(w\right) = \lambda_{w}\hat{g}\left(w\right) $. Necesitamos probar que $\displaystyle \forall w_{1}, w_{2} \in W $ se tiene que $\displaystyle \lambda_{w_{1}} = \lambda_{w_{2}} $. Consideremos 
+	\[\hat{f}\left(w_{1} + w_{2}\right) = \lambda_{w_{1} + w_{2}}\hat{g}\left(w_{1} + w_{2}\right) = \lambda_{w_{1} + w_{2}}\hat{g}\left(w_{1}\right) + \lambda_{w_{1}+w_{2}}\hat{g}\left(w_{2}\right) = \lambda_{w_{1}}\hat{g}\left(w_{1}\right) + \lambda_{w_{2}}\hat{g}\left(w_{2}\right) .\]
+	Si $\displaystyle \left\{ \hat{g}\left(w_{1}\right), \hat{g}\left(w_{2}\right)\right\}  $ son linealmente independientes, está claro que $\displaystyle \lambda_{w_{1}+w_{2}} = \lambda_{w_{1}} = \lambda_{w_{2}} $. Supongamos ahora que son linealmente dependientes, es decir, $\displaystyle \hat{g}\left(w_{1}\right)= \mu\hat{g}\left(w_{2}\right) $ para $\displaystyle \mu \in \K^{*} $ (para que $\displaystyle \mu \neq 0 $ debemos tomar $\displaystyle w_{1}, w_{2} \neq 0 $). Sabemos que $\displaystyle \hat{g}\left(w_{1}\right), \hat{g}\left(w_{2}\right) \neq 0 $. Así, nos queda que
+	\[\hat{g}\left(w_{1}-\mu w_{2}\right) = 0 \iff w_{1} - \mu w_{2} \in \hat{Z} \cap W \iff w_{1} = \mu w_{2} .\]
+Así, está claro que 
+\[\hat{f}\left(w_{1} + w_{2}\right) = \left(1+\mu\right)\hat{f}\left(w_{2}\right) = \left(1+\mu\right)\lambda_{w_{2}}\hat{g}\left(w_{2}\right) = \mu\lambda_{w_{1}}\hat{g}\left(w_{2}\right) + \lambda_{w_{2}}\hat{g}\left(w_{2}\right) .\]
+De aquí obtenemos que
+\[ \mu \lambda_{w_{2}}\hat{g}\left(w_{2}\right) = \mu\lambda_{w_{1}}\hat{g}\left(w_{2}\right).\]
+		Como $\displaystyle \mu \neq 0 $, tenemos que $\displaystyle \lambda_{w_{1}} = \lambda_{w_{2}} $. Por tanto, existe $\displaystyle \lambda \in \K^{*} $ tal que $\displaystyle \forall w \in W $ se tiene que $\displaystyle \hat{f} \left(w\right) = \lambda \hat{g}\left(w\right) $. Así, si $\displaystyle v \in V $, tenemos que 
+	\[\hat{f}\left(v\right) = \hat{f}\left(w\right) = \lambda \hat{g}\left(w\right) = \lambda \hat{g}\left(v\right) .\]
+\end{proof}
+\begin{prop}
+	Sean $\displaystyle \mathbb{P}\left(V\right) $ y $\displaystyle \mathbb{P}\left(V'\right) $ espacios proyectivos de dimensión $\displaystyle n $ sobre $\displaystyle \K $. Sea $\displaystyle \mathcal{R} = \left\{ P_{0}, \ldots, P_{n}; P_{n+1}\right\}  $ y $\displaystyle \mathcal{R}' = \left\{ P_{0}', \ldots, P_{n}'; P_{n+1}'\right\}  $ referencias proyectivas de $\displaystyle \mathbb{P}\left(V\right) $ y $\displaystyle \mathbb{P}\left(V'\right) $ respectivamente. 
+Entonces, existe una única homografía $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ tal que $\displaystyle f\left(P_{i}\right) = P_{i}' $. 
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle \mathcal{B} = \left\{ v_{0}, \ldots, v_{n}\right\}  $ una base asociada a $\displaystyle \mathcal{R} $ y $\displaystyle \mathcal{B}' = \left\{ v_{0}', \ldots, v_{n}'\right\} $ una base asociada a $\displaystyle \mathcal{R}' $.
+	\begin{description}
+	\item[Existencia.] Tomamos $\displaystyle \hat{f} : V \to V' $ tal que $\displaystyle \hat{f}\left(v_{i}\right) = v_{i}' $, por lo que $\displaystyle \hat{f} $ es un isomorfismo. 
+	En particular, $\displaystyle \Ker\hat{f} = \left\{ 0\right\}  $. Como $\displaystyle \dim\mathbb{P}\left(V\right) = \dim\mathbb{P}\left(V'\right) $ tenemos que $\displaystyle \hat{f} $ induce una homografía. Así, podemos tomar
+	\[f\left(P_{i}\right) = f\left([v_{i}]\right) = [\hat{f}\left(v_{i}\right)] = [v_{i}'] = P_{i}' .\]
+Además, tenemos que 
+\[f\left(P_{n+1}\right) = f\left([v_{0} + \cdots + v_{n}]\right) = [\hat{f}\left(v_{0}+ \cdots + v_{n}\right)] = [v_{0}'+\cdots +v_{n}'] = P_{n+1}' .\]
+\item[Unicidad.] Sea $\displaystyle h : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ una homografía tal que $\displaystyle h\left(P_{i}\right) = P_{i}' $ con $\displaystyle i = 0, \ldots, n+ 1 $. Sea $\displaystyle \hat{h} : V \to V'$ la aplicación lineal que induce $\displaystyle h $. 
+Tenemos que 
+\[h\left(P_{i}\right) = f\left(P_{i}\right) \Rightarrow [\hat{h}\left(v_{i}\right)] = [\hat{f}\left(v_{i}\right)] .\]
+Así, tenemos que $\displaystyle \hat{h}\left(v_{i}\right) = \lambda_{i}v_{i}' $ y $\displaystyle \hat{h} \left(v_{0} + \cdots + v_{n}\right) = \lambda\left(v'_{0} + \cdots + v'_{n}\right) $. De esta manera, obtenemos que
+\[\lambda\left(v_{0}' + \cdots + v_{n}'\right) = \lambda_{0}v_{0}' + \cdots + \lambda_{n}v_{n}' .\]
+Como $\displaystyle \mathcal{B}' $ es una base tenemos que $\displaystyle \lambda_{0} = \cdots = \lambda_{n} = \lambda  $, así tenemos que $\displaystyle \hat{h}\left(v_{i}\right) = \lambda v_{i}' = \lambda \hat{f}\left(v_{i}\right) $, por lo que $\displaystyle \hat{h} = \lambda \hat{f} $ y $\displaystyle h = f $.
+	\end{description}
+\end{proof}
+\begin{eg}
+En $\displaystyle \R\mathbb{P}^{1} := \mathbb{P}\left(\R^{2}\right) $ consideremos 
+\[
+\begin{split}
+	f : \R\mathbb{P}^{1} & \to \R\mathbb{P}^{1} : [x_{0}:x_{1}]  \to [x_{0}:2x_{1}] \\
+	g : \R\mathbb{P}^{1} & \to \R\mathbb{P}^{1} : [x_{0}:x_{1}] \to [2x_{0}:x_{1}].
+\end{split}
+\]
+Tenemos que $\displaystyle f\left([1:0]\right)=[1:0] $ y $\displaystyle g\left([1:0]\right)= [2:0] $, por lo que $\displaystyle  f\left([1:0]\right) =  g\left([1:0]\right) $. Análogamente, podemos ver que $\displaystyle f\left([0,1]\right)=[0:2] = [0:1] = g\left([0:1]\right) $. Sin embargo, como $\displaystyle f\left([1:1]\right) = [1:2] \neq [2:1] = g\left([1:1]\right)$ no puede tratarse de una homografía. Es decir, para poder decir que $\displaystyle f $ y $\displaystyle g $ son iguales debemos encontrar tres puntos que formen una referencia proyectiva y cuyas imágenes cuadren. Sin embargo una afinidad de $\displaystyle \R \to \R $ está determinada por dos puntos. 
+\end{eg}
 

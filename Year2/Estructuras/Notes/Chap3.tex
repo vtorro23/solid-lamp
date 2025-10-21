@@ -49,4 +49,88 @@ Sea $\displaystyle G = \Z_{2} \times \Z_{2} \times \Z_{5^{2}} \times \Z_{5^{2}} 
 \[G \cong \Z_{5^{2} \cdot 2} \times \Z_{5^{2} \cdot 2} \times \Z_{5 \cdot 2} .\]
 Así, tenemos que los coeficientes de torsión serán $\displaystyle \left(5^{2} \cdot 2, 5^{2} \cdot 2, 5 \cdot 2\right) $. 
 \end{eg}
+\begin{prop}
+Sea $\displaystyle G $ un grupo abeliano finito de orden $\displaystyle n $. Sea $\displaystyle m $ un divisor de $\displaystyle n $. Entonces existe un $\displaystyle H \leq G $ con $\displaystyle \left|H\right| = m $. En particular, si $\displaystyle m $ es primo, entonces existe en $\displaystyle G $ un elemento de orden $\displaystyle m $.
+\end{prop}
+\begin{proof}
+Como $\displaystyle G $ es un grupo abeliano finito, existen $\displaystyle m_{1}, \ldots, m_{k} \in \N $ tales que $\displaystyle G \cong \Z_{m_{1}} \times \cdots \times \Z_{m_{k}} $. Sabemos que $\displaystyle n = m_{1} \cdots m_{k} $. Como $\displaystyle m | n $, entonces existen $\displaystyle n_{1}, \ldots, n_{k} \in \N $ con $\displaystyle n_{i}|m_{i} $, $\displaystyle \forall i = 1, \ldots, k $ tal que $\displaystyle m = n_{1} \cdots n_{k} $. 
+Por ser $\displaystyle \left(\Z, +\right) $ cíclico, tenemos que para cada $\displaystyle i $ existe $\displaystyle H_{i}\leq \Z_{m_{i}} $ de orden $\displaystyle n_{i} $.
+Así, tenemos que existe $\displaystyle H \leq G $ con $\displaystyle H \cong H_{n_{1}} \times \cdots \times H_{n_{k}} $ donde $\displaystyle H_{n_{i}} \leq \Z_{n_{i}} $. Además obtenemos que $\displaystyle \left|H\right| = n_{1} \cdots n_{k} = m $. 
+\end{proof}
+\begin{eg}
+Vamos a construir, dado un orden $\displaystyle n $, los distintos grupos finitos abelianos de ese orden. 
+\begin{enumerate}
+\item Consideremos $\displaystyle n = 24 $. Podemos considerar varios casos:
+	\begin{description}
+	\item[Caso 1.] Consideremos que $\displaystyle m_{1} = 24 $, tenemos que $\displaystyle G \cong \Z_{24} $. 
+	\item[Caso 2.] Consideremos que $\displaystyle m_{1} = 12 $, por lo que $\displaystyle m_{2} = 2 $. Así, tenemos que $\displaystyle G \cong \Z_{12} \times \Z_{2} $. 
+	\item[Caso 3.] Consideremos que $\displaystyle m_{1} = 8 $, por lo que $\displaystyle m_{2} = 3 $. Así, tendríamos que $\displaystyle m_{2} = 3 $, pero esto no puede ser porque $\displaystyle \mcd\left(8,3\right) = 1 $ y 3 no divide a 8. Por tanto, $\displaystyle G \cong \Z_{24} $.
+	\item[Caso 4.] Consideremos que $\displaystyle m_{1} = 6 $. No podemos tomar $\displaystyle m_{2} =4 $ porque 4 no divide a 6. Así, nos queda que la única posibilidad es que $\displaystyle m_{2} = m_{3} = 2 $. Así, $\displaystyle G \cong \Z_{6} \times \Z_{2} \times \Z_{2} $.
+	\item[Caso 5.] Si consideramos $\displaystyle m_{1}=3 $, o $\displaystyle m_{1}=2 $, volvemos a los casos anteriores. 
+	\end{description}
+\item Consideremos $\displaystyle n=196 = 2^{2} \cdot 7^{2} $. 
+	\begin{description}
+	\item[Caso 1.] Consideremos $\displaystyle m_{1} = 196 $, por lo que $\displaystyle G \cong \Z_{196} $.
+	\item[Caso 2.] Consideremos $\displaystyle m_{1} = 98 $, por lo que necesariamente $\displaystyle m_{2} = 2 $ y tenemos que $\displaystyle G \cong \Z_{98} \times \Z_{2} $.
+	\item[Caso 3.] Consideremos $\displaystyle m_{1} = 28 $, por lo que necesariamente $\displaystyle m_{2} = 7 $ y tenemos que $\displaystyle G \cong \Z_{28} \times \Z_{7} $.
+	\item[Caso 4.] Consideremos $\displaystyle m_{1} = 14 $, por lo que necesariamente debe ser que $\displaystyle m_{2} = 14 $ y tenemos que $\displaystyle G \cong \Z_{14} \times \Z_{14} $. 
+	\end{description}
+\end{enumerate}
+\end{eg}
+\begin{observation}
+Para agilizar los cálculos podemos darnos cuenta de que en el $\displaystyle m_{1} $ deben estar contenidos todos los factores primos de $\displaystyle n $.
+\end{observation}
+\begin{observation}
+Sea $\displaystyle G $ un grupo finito y $\displaystyle \left|G\right| = p_{1}^{\alpha_{1}} \cdots p_{k}^{\alpha_{k}} $, donde $\displaystyle p_{i} $ es primo y $\displaystyle \alpha_{i} \in \N $. Si considero las distintas descomposiciones de $\displaystyle \alpha_{i} $, en el sentido de cuántas maneras tengo de expresar $\displaystyle \alpha_{i} $ como suma de naturales más el cero, es decir,
+\[\alpha_{i} = j_{i_{1}} + \cdots + j_{i_{s}}, \; j_{i_{t}} \in \N \cup \left\{ 0\right\}, \; i_{t} \in \N  ,\]
+entonces el número de grupos abelianos finitos de orden $\displaystyle \left|G\right| $ es el producto de las cantidad de descomposiciones de cada $\displaystyle \alpha_{i} $. 
+\end{observation}
+\begin{theorem}
+Sea $\displaystyle G $ un grupo finito abeliano no trivial de orden $\displaystyle n = p_{1}^{\alpha_{1}} \cdots p_{s}^{\alpha_{s}} $, con $\displaystyle p_{i} $ primos y $\displaystyle \alpha_{i} \geq 1 $, $\displaystyle \forall i = 1, \ldots, s $. Para cada primo $\displaystyle p_{i} $ existe un subgrupo $\displaystyle G_{i} $ de $\displaystyle G $ tal que 
+\[G \cong G_{1} \times \cdots \times G_{s} ,\]
+y cada $\displaystyle G_{i} $ es isomorfo a $\displaystyle \Z_{j_{i,1}} \times \cdots \times \Z_{j_{i,r_{i}}} $, donde $\displaystyle j_{i,1} \geq \cdots \geq j_{i,r_{i}} $ y $\displaystyle j_{i,1} + \cdots + j_{i,r_{i}} = \alpha_{i} $. 
+\end{theorem}
+\begin{proof}
+Por la proposición anterior, existe subgrupos $\displaystyle G_{i} $ de orden $\displaystyle p^{\alpha_{i}} $. Como consecuencia de la fórmula de Lagrange tenemos que 
+\[G_{i} \cap \prod_{j \neq i}G_{j} = \left\{ e\right\}  ,\]
+para cada $\displaystyle i $, por lo que se verifica que $\displaystyle G \cong G_{1} \times \cdots \times G_{s} $. Finalmente, por el Teorema de Caracterización tenemos que cada $\displaystyle G_{i} $ cumple la propiedad deseada. 
+\end{proof}
+
+\begin{eg}
+\begin{enumerate}
+\item Tomemos $\displaystyle n = 24  = 3 \cdot 2^{2}$. Entonces, $\displaystyle \alpha_{1} = 1 + 0 $, solo lo podemos expresar de esta forma; y $\displaystyle \alpha_{2} = 3 = 3 + 0 = 2 + 1=1+1+1 $, que se puede expresar de estas tres formas. Por tanto, hay $\displaystyle 1 \cdot 3 $ grupos finitos abelianos de orden 24. Nos salen los siguientes grupos:
+	\[
+	\begin{split}
+		\Z_{3} \times \Z_{2^{3}} & \cong \Z_{24} \\
+		\Z_{3} \times \Z_{2^{2}} \times \Z_{2} & \cong \Z_{12} \times \Z_{2} \\
+		\Z_{3} \times \Z_{2} \times \Z_{2} \times \Z_{2} & \cong \Z_{6} \times \Z_{2} \times \Z_{2}.
+	\end{split}
+	\]
+\item Tomemos $\displaystyle n = 196 = 2^{2} \cdot 7^{2} $. Tenemos que 
+	\[
+	\begin{split}
+		\alpha_{1} = \alpha_{2} = & 2 = 2 + 0 = 1 + 1 .
+	\end{split}
+	\]
+	Así, tenemos $\displaystyle 2 \cdot 2 = 4$ posibles grupos. 
+\item Tomemos $\displaystyle n = 3969 = 7^{2} \cdot 3^{4} $. Calculemos el número de grupos que nos tienen que salir:
+	\[
+	\begin{split}
+		\alpha_{1} = & 2 = 2 + 0 = 1 + 1 \\
+		\alpha_{2} = & 4 = 4 + 0 = 3 + 1 = 2 + 2 = 2 + 1 + 1 = 1+ 1 + 1 + 1.
+	\end{split}
+	\]
+	Así, hay $\displaystyle 2 \cdot 5 = 10 $ grupos abelianos finitos. Tenemos que $\displaystyle m_{1}  $ es múltiplo de $\displaystyle 7 \cdot 3 = 21 $. 
+	\begin{description}
+	\item[Caso 1.] Supongamos que $\displaystyle m_{1} = 21 $. Tenemos que $\displaystyle m_{2} | m_{1} $, por lo que debe ser que $\displaystyle m_{2} = 7 \cdot 3 $. Similarmente, como $\displaystyle m_{3} | m_{2} $, debe ser que $\displaystyle m_{3} = m_{4} = 3 $. Así, $\displaystyle G \cong \Z_{21} \times \Z_{21} \times \Z_{3}\times\Z_{3} $.
+	\item[Caso 2.] Consideremos que $\displaystyle m_{1}=21 \cdot 3 $. Tenemos que hay dos opciones para $\displaystyle m_{2} $. La primera es considerar $\displaystyle G \cong \Z_{63} \times \Z_{63} $. La otra es coger $\displaystyle G \cong \Z_{63} \times \Z_{21} \times \Z_{3} $.
+	\item[Caso 3.] Consideremos $\displaystyle m_{1} = 147 = 7^{2} \cdot 3 $. En este caso, solo tenemos la opción $\displaystyle G \cong \Z_{147} \times \Z_{3} \times \Z_{3} \times \Z_{3} $.
+	\item[Caso 4.] Consideremos $\displaystyle m_{1} = 189 = 7 \cdot 3^{3} $. Entonces, necesariamente $\displaystyle G \cong \Z_{189} \times \Z_{21} $. 
+	\item[Caso 5.] Consideremos $\displaystyle m_{1} = 441 = 7^{2} \cdot 3^{2} $. En este caso tenemos las opciones $\displaystyle G \cong \Z_{441} \times \Z_{3} \times \Z_{3} $ y $\displaystyle G \cong \Z_{441} \times \Z_{9} $. 
+	\item[Caso 6.] Consideremos $\displaystyle m_{1} = 567 = 7 \cdot 3^{4} $, entonces tenemos que $\displaystyle G \cong \Z_{567} \times \Z_{7} $. 
+	\item[Caso 7.] Consideremos $\displaystyle m_{1} = 1323 = 7^{2} \times 3^{3} $, entonces tenemos que $\displaystyle G \cong \Z_{1323} \times \Z_{3} $.
+	\item[Caso 8.] Consideremos $\displaystyle m_{1} = 3969 $, por lo que $\displaystyle G \cong \Z_{3969} $.
+	\end{description}
+\end{enumerate}
+\end{eg}
 
