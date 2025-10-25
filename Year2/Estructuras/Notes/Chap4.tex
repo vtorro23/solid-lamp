@@ -1,0 +1,78 @@
+\chapter{Grupos de permutaciones}
+Sea $\displaystyle f : G \to G' $ una biyección. Consideramos la aplicación $\displaystyle \Biy\left(G\right) \to \Biy\left(G'\right) : \sigma \to f^{-1}\sigma f $, que es un isomorfismo de grupos.  
+Vamos a considerar un conjunto finito de elementos al que llamaremos $\displaystyle X_{n} = \left\{ 1, 2, \ldots, n\right\}  $ y $\displaystyle \Biy\left(X_{n}\right) $, para $\displaystyle n \geq 1 $.
+\begin{definition}[Grupo de permutaciones]
+	El \textbf{grupo de permutaciones} de $\displaystyle n $ elementos, o el \textbf{$\displaystyle n $-ésimo grupo de permutaciones}, es el grupo $\displaystyle \mathcal{S}_{n} = \Biy\left(X_{n}\right) $ con la composición de funciones, donde $\displaystyle \tau \cdot \sigma = \sigma \circ \tau $. 
+\end{definition}
+\begin{observation}
+El orden de $\displaystyle \mathcal{S}_{n} $ es $\displaystyle n! $. 
+\end{observation}
+\begin{notation}
+Dado $\displaystyle \mathcal{S}_{n} $ grupo de permutaciones, si $\displaystyle \sigma \in \mathcal{S}_{n} $ entonces podemos expresar $\displaystyle \sigma  $ de la forma
+\[\sigma = \begin{pmatrix} 1 & 2 & \cdots & n \\ \sigma\left(1\right) & \sigma\left(2\right) & \cdots & \sigma\left(n\right) \end{pmatrix} .\]
+\end{notation}
+\begin{eg}
+Dado $\displaystyle \sigma \in \mathcal{S}_{4} $, 
+\[\sigma = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 1 & 3 & 2 & 4 \end{pmatrix}= \left(3,2\right) .\]
+Similarmente, dado $\displaystyle \sigma \in \mathcal{S}_{6} $ 
+\[\sigma = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 \\ 2 & 3 & 4 & 1 & 5& 6 \end{pmatrix} = \left(1,2,3,4\right) .\]
+Esta última notación es la que utilizaremos con más frecuencia.
+\end{eg}
+\begin{eg}
+Consideremos $\displaystyle \sigma, \tau \in \mathcal{S}_{4} $ tales que $\displaystyle \sigma = \left(1,2,3\right) $ y $\displaystyle \tau = \left(3,4\right)\left(1,2\right) $. Tenemos que 
+\[\sigma \cdot \tau = \tau \circ \sigma = \left(3,4\right)\left(1,2\right)\left(1,2,3\right) = \left(2,4,3\right) .\]
+\[\tau \cdot \sigma = \sigma \circ \tau = \left(1,2,3\right)\left(3,4\right)\left(1,2\right) = \left(1,3,4\right) .\]
+\end{eg}
+\begin{eg} Calculemos algunos grupos de permutación.
+	\begin{itemize}
+	\item Tenemos que $\displaystyle \mathcal{S}_{2} = \left\{ id, \left(1,2\right)\right\}  $.
+	\item Tenemos que $\displaystyle \mathcal{S}_{3}= \left\{ id, \left(1,2\right), \left(1,3\right), \left(2,3\right), \left(1,2,3\right), \left(1,3,2\right)\right\}  $. Podemos ver que $\displaystyle \mathcal{S}_{3} \cong D_{3} $.
+	\end{itemize}	 
+\end{eg}
+\begin{theorem}[Teorema de Cayley]
+Todo grupo finito es isomorfo a un subgrupo de un grupo de permutaciones.
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle G $ un grupo finito y $\displaystyle g \in G $. Consideremos la aplicación $\displaystyle \tilde{g} : G \to G : x \to x \cdot g $. Es fácil ver que $\displaystyle \tilde{g} \in \Biy\left(G\right) $. Ahora, consideremos $\displaystyle \phi : G \to \Biy\left(G\right) : g \to \tilde{g} $. Veamos que $\displaystyle \phi $ es un homomorfismo de grupos:
+	\[\phi\left(gh\right)\left(x\right) = \widetilde{gh}\left(x\right) = x \cdot \left(gh\right) = \tilde{g}\left(x\right)h = \tilde{h}\left(\tilde{g}\left(x\right)\right) = \tilde{g} \cdot \tilde{h}\left(x\right) .\]
+	Ahora, veamos que es inyectiva. Si $\displaystyle g \in \Ker\left(\phi\right) $, tenemos que $\displaystyle \tilde{g} = id $, es decir, $\displaystyle \forall x \in G $, 
+	\[g\left(x\right) = x \cdot g = e .\]
+	Así, tenemos que $\displaystyle \Ker\left(\phi\right) = \left\{ e\right\}  $, por lo que $\displaystyle \phi $ es inyectiva. Así, tenemos que $\displaystyle G \cong \Imagen\left(\phi\right) \leq \Biy\left(G\right) = \mathcal{S}_{ \left|G\right|}$. 	
+\end{proof}
+\begin{definition}[Soporte]
+	Sea $\displaystyle \sigma \in \mathcal{S}_{n} $. Llamamos \textbf{soporte} de $\displaystyle \sigma  $ al conjunto $\displaystyle \sop\left(\sigma \right) = \left\{ a \in X_{n} \; : \; \sigma\left(a\right) \neq a\right\}  $. Diremos que $\displaystyle \sigma, \tau \in \mathcal{S}_{n} $ son \textbf{disjuntos} si $\displaystyle sop\left(\sigma \right) \cap \sop\left(\tau\right) = \emptyset $. 
+\end{definition}
+\begin{eg}
+Consideremos $\displaystyle \sigma, \tau \in \mathcal{S}_{6} $ tales que
+\[\sigma = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 \\ 1 & 3 & 4 & 5 & 2 & 6 \end{pmatrix} = \left(2,3,4,5\right), \quad \tau = \left(1,6\right) .\]
+Tenemos que $\displaystyle \sop\left(\sigma \right)= \left\{ 2,3,4,5\right\}  $ y $\displaystyle \sop\left(\tau\right) = \left\{ 1,6\right\}  $, por lo que $\displaystyle \tau $ y $\displaystyle \sigma  $ son disjuntos. Podemos ver que la notación de los ciclos nos facilita mucho el cálculo del soporte.
+\end{eg}
+\begin{observation}
+\begin{enumerate}
+\item $\displaystyle \sop\left(\sigma \right)= \emptyset $ si y solo si $\displaystyle \sigma = id $. 
+\item $\displaystyle \sop\left(\sigma \right)= \sop\left(\sigma ^{-1}\right) $. En efecto, si $\displaystyle a \in \sop\left(\sigma \right) $, tenemos que $\displaystyle a \neq \sigma \left(a\right) $, por lo que $\displaystyle \sigma^{-1}\left(a\right) \neq a $ y $\displaystyle a \in \sop\left(\sigma^{-1}\right) $. El recíproco es análogo.
+\item $\displaystyle m \geq 2 $, $\displaystyle \sop\left(\sigma^{m}\right) \subset \sop\left(\sigma \right) $. En efecto, si $\displaystyle a \not\in \sop\left(\sigma \right) $ tenemos que $\displaystyle a = \sigma\left(a\right) $, por lo que $\displaystyle a = \sigma^{m}\left(a\right) $ y $\displaystyle a \not\in \sop\left(\sigma^{m}\right) $. 
+\end{enumerate}
+\end{observation}
+\begin{lema}
+Sean $\displaystyle \sigma, \tau \in \mathcal{S}_{n} $ dos permutaciones disjuntas.
+\begin{enumerate}
+\item $\displaystyle \sigma \cdot \tau = \tau \cdot \sigma  $.
+\item $\displaystyle \forall m \in \N $, se tiene que $\displaystyle \left(\sigma \cdot \tau\right)^{m} = id $ si y solo si $\displaystyle \sigma^{m} = \tau^{m} = id $.
+\end{enumerate}
+\end{lema}
+\begin{proof} Supongamos que $\displaystyle \sop\left(\sigma \right) \cap \sop\left(\tau \right) = \emptyset $.
+\begin{enumerate}
+\item Si $\displaystyle x \not\in \sop\left(\sigma \right)\cup \sop\left(\tau \right) $ tenemos que $\displaystyle \sigma\left(x\right) = x $ y $\displaystyle \tau\left(x\right) = x $, por lo que
+	\[\sigma\left(\tau x\right) = \sigma \left(x\right) = \tau\left(x\right) = \tau\left(\sigma\left(x\right)\right) .\]
+	Ahora, supongamos sin pérdida de generalidad que $\displaystyle x \in \sop\left(\sigma \right) $. Como $\displaystyle \sigma  $ y $\displaystyle \tau $ son disjuntos, debe ser que $\displaystyle x \not\in \sop\left(\tau\right) $, es decir, $\displaystyle \tau\left(x\right) = x $. Por otro lado, tenemos que $\displaystyle \sigma\left(x\right) \in \sop\left(\sigma \right) $ y en consecuencia $\displaystyle \sigma\left(x\right) \not\in \sop\left(\tau\right) $. Así, podemos concluir que
+	\[ \sigma\left(\tau\left(x\right)\right) = \sigma \left(x\right) = \tau\left(\sigma \left(x\right)\right) .\]
+\item La segunda implicación es trivial. Supongamos que $\displaystyle \left(\sigma \cdot \tau\right)^{m} = id $, es decir, $\displaystyle \sigma^{m} = \left(\tau^{m}\right)^{-1} $. Así, nos queda que
+	\[\sop\left(\sigma \right) \supset \sop\left(\sigma ^{m}\right) = \sop\left(\tau^{m}\right)\subset \sop\left(\tau\right) .\]
+Así, por ser $\displaystyle \sigma  $ y $\displaystyle \tau $ disjuntos tenemos que $\displaystyle \sop\left(\sigma ^{m}\right) = \sop\left(\tau^{m}\right)= \emptyset $, por lo que $\displaystyle \sigma^{m} = \tau^{m} = id $.	
+\end{enumerate}
+\end{proof}
+\begin{observation}
+	Tenemos que $\displaystyle \mathcal{S}_{2} \cong C_{2} $. Para $\displaystyle n \geq 3 $, tenemos que $\displaystyle Z\left(\mathcal{S}_{n}\right) = \left\{ id\right\}  $. 
+\end{observation}
+

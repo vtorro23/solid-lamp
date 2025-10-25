@@ -1,0 +1,185 @@
+\chapter{Cálculo diferencial}
+Consideremos, en primer lugar, funciones de la forma $\displaystyle f : \R \to \R^{m} $, que podemos considerar curvas paramétricas.
+\section{Caso $\displaystyle f: \R \to \R^{m} $}
+\begin{definition}[Curva paramétrica]
+Una \textbf{curva} en $\displaystyle \R^{m} $ es una función continua $\displaystyle \sigma : I \to \R^{m} $, donde $\displaystyle I $ es un intervalo de $\displaystyle \R $. 
+\end{definition}
+\begin{definition}[Derivabilidad]
+Se dice que $\displaystyle \sigma  $ es \textbf{derivable} en $\displaystyle t_{0} \in I $ cuando existe $\displaystyle  $ 
+\[ \sigma'\left(t_{0}\right) =\lim_{t \to t_{0}} \frac{\sigma\left(t\right)-\sigma\left(t_{0}\right)}{t -t_{0}} = \lim_{h \to 0}\frac{\sigma\left(t_{0}+h\right)-\sigma\left(t_{0}\right)}{h}.\]
+Si $\displaystyle \sigma'\left(t_{0}\right) \neq 0 $, se define la \textbf{recta tangente} a $\displaystyle \sigma  $ en $\displaystyle t_{0} $ como la recta que pasa por $\displaystyle \sigma\left(t_{0}\right) $ con vector director $\displaystyle \sigma'\left(t_{0}\right) $.
+\end{definition}
+\begin{observation}
+Si denotamos $\displaystyle \sigma\left(t\right) = \left(\sigma_{1}\left(t\right), \ldots, \sigma_{m}\left(t\right)\right) $, entonces $\displaystyle \sigma  $ es derivable en $\displaystyle t_{0} $ si y solo si $\displaystyle \forall j = 1, \ldots, m $, $\displaystyle \sigma_{j} $ es derivable en $\displaystyle t_{0} $. Entonces tendremos que $\displaystyle \sigma'\left(t_{0}\right) = \left(\sigma_{1}'\left(t_{0}\right), \ldots, \sigma'_{m}\left(t_{0}\right)\right) $. Esto es consecuencia de que en $\displaystyle \R^{m} $ los límites se hacen coordenada a coordenada.
+\end{observation}
+\begin{eg}
+\begin{enumerate}
+	\item Consideremos $\displaystyle \sigma : \R \to \R^{2} $ con $\displaystyle \sigma\left(t\right) = \left(\cos t, \sin t\right) $. Tenemos que $\displaystyle \Imagen\left(\sigma \right) = \left\{ \left(x,y\right) \; : \; x^{2} +y^{2} = 1\right\}  $. Por la observación anterior tenemos que
+		\[\sigma'\left(t\right) = \left(-\sin t, \cos t\right) .\]
+	\item Si consideramos $\displaystyle \gamma\left(t\right) = \left(\cos t, - \sin t\right) $, tenemos que $\displaystyle \Imagen\left(\gamma \right) = \Imagen\left(\sigma \right) $, pero como 
+		\[\gamma ' \left(t\right) = \left(-\sin t, - \cos t\right) .\]
+		Por lo que los vectores tangentes recorren la curva en sentido contrario.
+	\item Consideremos $\displaystyle \beta\left(t\right) = \left(\cos\left(2t\right), \sin\left(2t\right)\right) $. Nuevamente, $\displaystyle \Imagen\left(\beta \right) = \Imagen\left(\sigma \right) $ pero 
+		\[\beta'\left(t\right) = \left(-2\sin 2t, 2\cos2t\right) = 2\left(-\sin2t, \cos2t\right) .\]
+		Por tanto, podemos interpretar que los vectores tangentes de $\displaystyle \beta  $ van el doble de rápido que los de $\displaystyle \sigma  $.
+\end{enumerate}
+\end{eg}
+\begin{theorem}
+Sean $\displaystyle I \subset \R $ un intervalo abierto y $\displaystyle \sigma : I \to \R^{m} $ una curva. Son equivalentes para $\displaystyle t_{0} \in I $
+\begin{enumerate}
+\item $\displaystyle \sigma  $ es derivable en $\displaystyle t_{0} $.
+\item Existe $\displaystyle L : \R \to \R^{m} $ lineal tal que 
+	\[\lim_{h \to 0}\frac{\sigma\left(t_{0}+h\right)-\sigma\left(t_{0}\right)-L\left(h\right)}{ \left|h\right|} = 0 .\]
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Supongamos que existe $\displaystyle \sigma'\left(t_{0}\right) \in \R^{m} $. Definimos $\displaystyle L : \R \to \R^{m} $ tal que $\displaystyle L\left(h\right) = h\sigma'\left(t_{0}\right) $, $\displaystyle h \in \R $. Sabemos que
+	\[
+	\begin{split}
+		0 = & \lim_{h \to 0}\left(\frac{\sigma \left(t_{0}+h\right)-\sigma\left(t_{0}\right)}{h}-\sigma'\left(t_{0}\right)\right) = \lim_{h \to 0}\frac{\sigma\left(t_{0}+h\right)-\sigma\left(t_{0}\right)-L\left(h\right)}{h} \\
+	\iff & \lim_{h \to 0}\left\|\frac{\sigma\left(t_{0}+h\right)-\sigma\left(t_{0}\right)-L\left(h\right)}{h}\right\| = 0 \iff \lim_{h \to 0} \frac{\sigma\left(t_{0}+h\right)-\sigma(t_{0}) - L\left(h\right)}{ \left|h\right|} = 0 \in \R^{m}.
+	\end{split}
+	\]
+\item[(ii)] Si tenemos $\displaystyle L : \R \to \R^{m} $ lineal, definimos $\displaystyle w = L\left(1\right) \in \R^{m} $. Entonces, tenemos que $\displaystyle L\left(h\right) = L\left(h \cdot 1\right) = hL\left(1\right) $. Veamos que $\displaystyle w = \sigma'\left(t_{0}\right) $. Sabemos que
+	\[  .\]
+	\[
+	\begin{split}
+		0 = & \lim_{h \to 0}\frac{\sigma\left(t_{0}+h\right)-\sigma\left(t_{0}\right)-hw}{ \left|h\right|} \\
+	\iff & 0 = \lim_{h \to 0}\frac{\sigma\left(t_{0}+h\right)-\sigma\left(t_{0}\right)-hw}{h} =\lim_{h \to 0}\left(\frac{\sigma\left(t_{0}+h\right)-\sigma\left(t_{0}\right)}{h}-w\right) \\
+	\Rightarrow & w = \lim_{h \to 0}\frac{\sigma\left(t_{0}+h\right)-\sigma\left(t_{0}\right)}{h} .
+	\end{split}
+	\]
+\end{description}
+\end{proof}
+\section{Derivadas parciales y direccionales}
+\begin{eg}
+Consideremos $\displaystyle f\left(x,y\right) = \sin\left(x^{2}-y^{2}+3xy\right) $. Tenemos que
+\[\frac{\partial f}{\partial x}\left(x,y\right) = \left(2x+3y\right)\cos\left(x^{2}-y^{2}+3xy\right) .\]
+\[\frac{\partial f}{\partial y}\left(x,y\right) = \left(-2y + 3x\right)\cos\left(x^{2}-y^{2}+3xy\right) .\]
+\end{eg}
+Dado $\displaystyle f : \R^{2} \to \R^{2} $, podemos definir las derivadas parciales de la siguiente forma
+\[
+\begin{split}
+\frac{\partial f}{\partial x}\left(x,y\right) = \lim_{t \to 0}\frac{f\left(x_{0}+ t, y_{0}\right)-f\left(x_{0}, y_{0}\right)}{t} = \lim_{h \to 0}\frac{f\left(\left(x_{0},y_{0}\right)+t\left(1,0\right)\right)-f\left(x_{0}, y_{0}\right)}{t} .
+\end{split}
+\]
+
+\begin{definition}[Derivadas parciales]
+	Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{m} $ y $\displaystyle a \in U $. Se define $\displaystyle \forall i = 1, \ldots, n $, la \textbf{derivada parcial $\displaystyle i $-ésima} de $\displaystyle f $ en $\displaystyle a $ como el límite, cuando existe,
+	\[\frac{\partial f}{\partial x_{i}}\left(a\right) = \lim_{t \to 0}\frac{f\left(a+t e_{i}\right)-f\left(a\right)}{t} \in \R^{m} ,\]
+	donde $\displaystyle \left\{ e_{1}, \ldots, e_{n}\right\}  $ es la base canónica de $\displaystyle \R^{n} $.
+\end{definition}
+\begin{observation}
+Otra forma de escribir la definición anterior es:
+\[\frac{\partial f}{\partial x_{i}}\left(a\right) = \lim_{t \to 0}\frac{f\left(a_{1}, \ldots, a_{i}+t, \ldots,a_{n}\right)-f\left(a_{1}, \ldots, a_{n}\right)}{t} .\]
+\end{observation}
+\begin{definition}[Derivada direccional]
+Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{m} $ y $\displaystyle a \in U $. Dado $\displaystyle w \in \R^{n} $, se define la \textbf{derivada direccional} de $\displaystyle f $ en $\displaystyle a $ según el vector $\displaystyle w $ al límite, si existe
+\[D_{w}f\left(a\right) = \lim_{t \to 0}\frac{f\left(a+tw\right)-f\left(a\right)}{t} \in \R^{m} .\]
+\end{definition}
+\begin{observation}
+Es fácil ver que $\displaystyle D_{e_{i}}f\left(a\right) = \frac{\partial f}{\partial x_{i}}\left(a\right) $. 
+\end{observation}
+\begin{observation}
+Podemos deducir que $\displaystyle D_{w}f\left(a\right) = \frac{d}{dt}|_{t = 0}f\left(a+tw\right) $. En efecto, si tomamos $\displaystyle \varphi : \R \to \R^{m} : t \to f\left(a + tw\right) $, tenemos que
+\[\varphi'\left(0\right) = \lim_{h \to 0}\frac{\varphi\left(t\right)-\varphi\left(0\right)}{t} = \lim_{t \to 0}\frac{f\left(a+tw\right)-f\left(a\right)}{t} = D_{w}f\left(a\right).\]
+\end{observation}
+\begin{eg}
+Consideremos $\displaystyle f : \R^{2} \to \R $ tal que 
+\[f\left(x,y\right) = 
+\begin{cases}
+x + \frac{xy}{\sqrt{x^{2}+y^{2}}}, \; \left(x,y\right) \neq \left(0,0\right) \\
+0, \; \left(x,y\right) = \left(0,0\right)
+\end{cases}
+.\]
+Calculemos las derivadas parciales en $\displaystyle \left(0,0\right) $:
+\[\frac{\partial f}{\partial x}\left(0,0\right) = \lim_{t \to 0}\frac{f\left(t,0\right)-f\left(0,0\right)}{t} = \lim_{t \to 0}\frac{1}{t}\left(t + \frac{t \cdot 0}{\sqrt{t^{2}}}-0\right) = \lim_{t \to 0}\frac{t}{t} = 1 .\]
+\[\frac{\partial f}{\partial y}\left(0,0\right) = \lim_{t \to 0}\frac{f\left(0,t\right)-f\left(0,0\right)}{t} = \lim_{t \to 0}\frac{1}{t} \cdot 0 = 0 .\]
+Por otro lado, si $\displaystyle w = \left(u,v\right) \in \R^{2} $, tenemos que 
+\[
+\begin{split}
+	D_{w}f\left(0,0\right) = & \lim_{t \to 0}\frac{f\left(tu,tv\right)-f\left(0,0\right)}{t} = \lim_{t \to 0}\frac{1}{t}\left(tu + \frac{t^{2}uv}{ \left|t\right|\sqrt{u^{2}+v^{2}}}\right) \\
+	= &  \lim_{t \to 0}\left(u + \frac{t}{ \left|t\right|} \frac{uv}{\sqrt{u^{2}+v^{2}}}\right).
+\end{split}
+\]
+Si $\displaystyle vu \neq 0 $, tenemos que $\displaystyle \frac{uv}{\sqrt{u^{2}+v^{2}}}\neq 0 $, por lo que el límite no existe \footnote{El problema es que al tener $\displaystyle \left|t\right| $ en el denominador, al hacer el límite por la izquierda y por la derecha obtenemos $\displaystyle -1 $ y 1, respectivamente.}.
+\end{eg}
+\begin{observation}
+Denotamos $\displaystyle f = \left(f_{1}, \ldots, f_{m}\right) $. Entonces, puesto que los límites en $\displaystyle \R^{m} $ se obtienen  coordenada a coordenada, tenemos que
+\[D_{w}f\left(a\right) = \left(D_{w}f_{1}\left(a\right), \ldots, D_{w}f_{m}\left(a\right)\right) \in \R^{m} .\]
+\end{observation}
+\begin{definition}[Diferenciabilidad]
+Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $ y $\displaystyle f : U \to \R^{m} $. Se dice que $\displaystyle f $ es \textbf{diferenciable} en $\displaystyle a $ si existe $\displaystyle L : \R^{n} \to \R^{m} $ lineal tal que 
+\[\lim_{h \to 0}\frac{f\left(a+h\right)-f\left(a\right)-L\left(h\right)}{ \|h\|} = 0.\]
+\end{definition}
+\begin{observation}
+Podemos observar que $\displaystyle f\left(a+h\right) = f\left(a\right) + L\left(h\right) + r\left(h\right) $, donde $\displaystyle r\left(h\right) = f\left(a+h\right)-f\left(a\right)+L\left(h\right) $. Entonces, $\displaystyle f $ es diferenciable en $\displaystyle a $ si y solo si $\displaystyle \lim_{h \to 0}\frac{r\left(h\right)}{ \|h\|} = 0 $. En este caso, se denota $\displaystyle r\left(h\right) = o\left(h\right) $ y así tenemos que $\displaystyle f $ es diferenciable en $\displaystyle a $ si y solo si $\displaystyle f\left(a+h\right) = f\left(a\right)+L\left(h\right)+o\left(h\right) $, donde $\displaystyle L : \R^{n} \to \R^{m} $ es lineal.
+\end{observation}
+\begin{prop}
+Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{m} $ y $\displaystyle a \in U $. Si $\displaystyle f $ es diferenciable en $\displaystyle a $ con aplicación lineal $\displaystyle L $, entonces $\displaystyle \forall v \in \R^{n} $ existe $\displaystyle D_{v}f\left(a\right) = L\left(v\right) $. Por tanto, la aplicación $\displaystyle L $ es única y la denotaremos $\displaystyle L = Df\left(a\right) $ y la llamaremos \textbf{diferencial} de $\displaystyle f $ en $\displaystyle a $.
+\end{prop}
+\begin{proof}
+Tomamos $\displaystyle v \in \R^{n} $ con $\displaystyle v \neq 0 $, y consieramos $\displaystyle h = tv $ con $\displaystyle t \in \R $. Entonces, 
+\[\lim_{t \to 0}\frac{f\left(a+tv\right)-f\left(a\right)-L\left(tv\right)}{ \|tv\|} = \lim_{t \to 0}\frac{f\left(a+tv\right)-f\left(a\right)-tL\left(v\right)}{ \left|t\right|} .\]
+Por tanto, tenemos que 
+\[0 = \lim_{t \to 0} \left|\frac{f\left(a+tv\right)-f\left(a\right)-tL\left(v\right)}{t}\right| = \lim_{t \to 0} \left|\frac{f\left(a+tv\right)-f\left(a\right)}{t}-L\left(v\right)\right| .\]
+Por tanto, existe $\displaystyle \lim_{t \to 0}\frac{1}{t}\left(f\left(a+tv\right)-f\left(a\right)\right) = L\left(v\right) $. Por otro lado, si $\displaystyle v = 0 $, tenemos que $\displaystyle D_{v}f\left(a\right) = \lim_{t \to 0}\left(f\left(a\right)-f\left(a\right)\right) = 0 = L\left(0\right) $.
+\end{proof}
+\begin{eg}
+Consideremos $\displaystyle f : \R^{2} \to \R $ con 
+\[f\left(x,y\right) = 
+\begin{cases}
+x + \frac{x \left|y\right|}{\sqrt{x^{2}+y^{2}}}, \; \left(x,y\right) \neq \left(0,0\right) \\
+0, \; \left(x,y\right) = \left(0,0\right)
+\end{cases}
+.\]
+Estudiemos si $\displaystyle f $ es diferenciable en $\displaystyle a = \left(0,0\right) $. Tenemos que
+\[\frac{\partial f}{\partial x}\left(0,0\right) = \lim_{t \to 0}\frac{1}{t}\left(f\left(t,0\right)-f\left(0,0\right)\right) = \lim_{t \to 0}\frac{1}{t}\left(t+0\right) = 1 .\]
+\[\frac{\partial f}{\partial y}\left(0,0\right) = \lim_{t \to 0}\frac{1}{t}\left(f\left(0,t\right)-f\left(0,0\right)\right) = \lim_{t \to 0}\frac{1}{t}\left(0 - 0\right) = 0 .\]
+Veamos si $\displaystyle L $ que buscamos es lineal. Si $\displaystyle \left(u,v\right) \in \R^{2} $, por ser $\displaystyle L $ lineal tendríamos que
+\[L\left(u,v\right) = uL\left(e_{1}\right) + vL\left(e_{2}\right) = u D_{e_{1}}f\left(a\right)+vD_{e_{2}}f\left(a\right)  .\]
+Así, podemos ver que si $\displaystyle f $ es diferenciable en $\displaystyle a $, entonces $\displaystyle L\left(u,v\right) = u \cdot 1 + v \cdot 0 = u$. Vamos a ver si $\displaystyle f $ es diferenciable en $\displaystyle a = \left(0,0\right) $:
+\[
+\begin{split}
+	\lim_{\left(x,y\right) \to \left(0,0\right)}\frac{f\left(x,y\right)-f\left(0,0\right)-L\left(x,y\right)}{\sqrt{x^{2}+y^{2}}} = & \lim_{\left(x,y\right) \to \left(0,0\right)}\frac{1}{\sqrt{x^{2}+y^{2}}} \left(x + \frac{x \left|y\right|}{\sqrt{x^{2}+y^{2}}}-0-x\right) \\
+	= & \lim_{\left(x,y\right) \to \left(0,0\right)}\frac{x \left|y\right|}{x^{2}+y^{2}} \sim \frac{r^{2}\cos\theta \left|\sin\theta \right|}{r^{2}}.
+\end{split}
+\]
+Como el valor del límite depende de $\displaystyle \theta $, tenemos que el límite no existe, por lo que $\displaystyle f $ no es diferenciable en $\displaystyle \left(0,0\right) $. Dado $\displaystyle w = \left(u,v\right) \in \R^{2} $, tenemos que 
+\[
+\begin{split}
+	D_{w}f\left(0,0\right) = & \lim_{t \to 0}\frac{1}{t}\left(f\left(tu,tv\right)-f\left(0,0\right)\right) = \lim_{t \to 0}\frac{1}{t}\left(tu + \frac{t \left|t\right|u \left|v\right|}{ \left|t\right|\sqrt{u^{2}+v^{2}}}\right) \\
+	= & \lim_{t \to 0}\left(u +\frac{u \left|v\right|}{ \sqrt{u^{2}+v^{2}}}\right) = u + \frac{u \left|v\right|}{\sqrt{u^{2}+v^{2}}} .
+\end{split}
+\]
+Esta última expresión no es lineal, por lo que $\displaystyle f $ no es diferenciable en $\displaystyle w = \left(u,v\right) \in \R^{2} $.
+\end{eg}
+\begin{prop}
+Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{m} $ y $\displaystyle a \in U $. Entonces $\displaystyle f $ es diferenciable en $\displaystyle a $ si y solo si $\displaystyle f_{1}, \ldots, f_{m} $ son diferenciables en $\displaystyle a $ y en este caso 
+\[Df\left(a\right)\left(v\right) = \left(Df_{1}\left(a\right)\left(v\right), \ldots, Df_{m}\left(a\right)\left(v\right)\right) .\]
+\end{prop}
+\begin{proof}
+Sea $\displaystyle L : \R^{n} \to \R^{m} $ y denotamos $\displaystyle L = \left(L_{1}, \ldots, L_{m}\right) $. Entonces, el límite de la definición es cero si y solo si cada componente tiene límite cero, es decir, si y solo si cada $\displaystyle f_{j} $ es diferenciable en $\displaystyle a $ con $\displaystyle L_{j} $, $\displaystyle \forall j = 1, \ldots, m $. 
+\[  D\left(f\left(a\right)\right)\left(v\right) = D_{v}f\left(a\right) = \left(D_{v}f_{1}\left(a\right), \ldots, D_{v}f_{m}\left(a\right)\right) = \left(Df_{1}\left(a\right)\left(v\right), \ldots, Df_{m}\left(a\right)\left(v\right)\right).\]
+\end{proof}
+\begin{definition}[Matriz jacobiana]
+Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $ y $\displaystyle f : U \to \R^{m} $. Si $\displaystyle f $ admite todas las derivadas parciales en $\displaystyle a $, se define la \textbf{matriz jacobiana} de $\displaystyle f $ en $\displaystyle a $ como 
+\[Jf\left(a\right) = \begin{pmatrix} \frac{\partial f_{1}}{\partial x_{1}}\left(a\right) & \cdots & \frac{\partial f_{1}}{\partial x_{n}} \left(a\right)\\ \vdots & & \vdots \\ \frac{\partial f_{m}}{\partial x_{1}}\left(a\right) & \cdots & \frac{\partial f_{m}}{\partial x_{n}}\left(a\right) \end{pmatrix} \in \mathcal{M}_{m \times n} .\]
+\end{definition}
+\begin{prop}
+Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{m} $ y $\displaystyle a \in U $. Si $\displaystyle f $ es diferenciable en $\displaystyle a $, la matriz jacobiana, $\displaystyle Jf\left(a\right) $, es la matriz de $\displaystyle Df\left(a\right) $ con respecto a las bases canónicas.
+\end{prop}
+\begin{proof}
+Sea $\displaystyle v = \sum^{m}_{i = 1}v_{i}e_{i}\in \R^{m} $. Tenemos que 
+\[
+\begin{split}
+	Df\left(a\right)\left(v\right) = & \left(Df_{1}\left(a\right)\left(v\right), \ldots, Df_{m}\left(a\right)\left(v\right)\right) \\
+	= & \left(Df_{1}\left(a\right)\left(\sum^{m}_{i = 1}v_{i}e_{i}\right), \ldots, Df_{m}\left(a\right)\left(\sum^{n}_{i = 1}v_{i}e_{i}\right)\right) \\
+	= & \left(\sum^{n}_{i = 1}Df_{1}\left(a\right)\left(e_{i}\right), \ldots, \sum^{n}_{i = 1}v_{i}Df_{m}\left(a\right)\left(e_{i}\right)\right) \\
+	= & \left(\sum^{n}_{i = 1}v_{i}\frac{\partial f_{1}}{\partial x_{i}}\left(a\right), \ldots, \sum^{n}_{ i= 1}\frac{\partial f_{m}}{\partial x_{i}}\left(a\right)\right) \\
+	= & Jf\left(a\right) \begin{pmatrix} v_{1} \\ \vdots \\ v_{n} \end{pmatrix}.
+\end{split}
+\]
+\end{proof}
+

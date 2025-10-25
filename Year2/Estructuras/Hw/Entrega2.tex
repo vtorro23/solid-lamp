@@ -1,0 +1,77 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Estructuras Algebraicas - Entrega 2}
+\author{Victoria Eugenia Torroja Rubio}
+\date{27/10/2025}
+
+\maketitle
+
+\begin{ej}
+Demostrar que $\displaystyle U\left(\Z_{p}\right) = \Z_{p}^{*} $ si y solo si $\displaystyle p \geq 2 $ es primo. Deducir que $\displaystyle \Z^{*}_{p} $ es un grupo si y solo si $\displaystyle p \geq 2 $ es primo.
+\end{ej}
+
+\begin{ej}
+Sea $\displaystyle G = D_{6} $. Encuentra una serie normal
+\[ \left\{ e\right\} \lhd H_{1} \lhd H_{2} \lhd G \]
+tal que cada cociente $\displaystyle H_{i+1}/H_{i} $ sea abeliano.
+\end{ej}
+
+\begin{ej}
+Sea 
+\[H = \left\{ \begin{pmatrix} 1 & a & c \\ 0 & 1 & b \\ 0 & 0 & 1 \end{pmatrix} \; : \; a,b,c \in \Z\right\}  \]
+con la multiplicación matricial usual.
+\begin{description}
+\item[(a)] Muestra que $\displaystyle H $ es finitamente generado.
+\item[(b)] Da un conjunto de generadores mínimos.
+\item[(c)] ¿Es abeliano?
+\end{description}
+\end{ej}
+
+\begin{sol}
+\begin{description}
+\item[(c)] El grupo $\displaystyle H $ no es abeliano. En efecto, sean 
+	\[h_{1} = \begin{pmatrix} 1 & -4 & -4 \\ 0 & 1 & 3 \\ 0 & 0 & 1 \end{pmatrix}, \quad h_{2} = \begin{pmatrix} 1 & -11 & -13 \\ 0 & 1 & 5 \\ 0 & 0 & 1 \end{pmatrix} .\]
+	Tenemos que 
+	\[h_{1} \cdot h_{2} = \begin{pmatrix} 1 & -15 & -37 \\ 0 & 1 & 8 \\ 0 & 0 & 1 \end{pmatrix} \neq \begin{pmatrix} 1 & -15 & -50 \\ 0 & 1 & 8 \\ 0 & 0 & 1 \end{pmatrix} = h_{2} \cdot h_{1} .\]
+\end{description}
+\end{sol}
+
+\begin{ej}
+Demuestre o refute cada una de las siguientes proposiciones.
+\begin{description}
+\item[(a)] Todos los generadores de $\displaystyle \Z_{60} $ son primos.
+\item[(b)] $\displaystyle U_{8} $ es cíclico.
+\item[(c)] $\displaystyle \Q $ es cíclico.
+\item[(d)] Si todo subgrupo propio de un grupo $\displaystyle G $ es cíclico, entonces $\displaystyle G $ es un grupo cíclico.
+\item[(e)] Un grupo con un número finito de subgrupos es finito.
+\end{description}
+\end{ej}
+
+\begin{sol}
+\begin{description}
+\item[(a)] No es cierto, puesto que $\displaystyle \Z_{60} = \left\langle 49 \right\rangle  $. En efecto, tenemos que 
+	\[60 | 49k \iff 60 | k .\]
+	Por tanto, tenemos que $\displaystyle o\left(14\right) = 60 $ y en consecuencia $\displaystyle \Z_{60} = \left\langle 49 \right\rangle  $.
+\item[(b)] Es cierto. 
+\item[(c)] No es cierto que $\displaystyle \Q $ es cíclico. En efecto, está claro que $\displaystyle \Q \neq \left\langle 0 \right\rangle  $. Ahora, supongamos que $\displaystyle \Q = \left\langle x \right\rangle  $ con $\displaystyle x = \frac{a}{b} $, $\displaystyle a ,b \in \Z^{*} $. Podemos encontrar $\displaystyle m \in \Z $ tal que $\displaystyle \mcd\left(m,b\right) = 1 $, de esta forma tenemos que $\displaystyle \frac{1}{m} \in \Q $ pero $\displaystyle \frac{1}{m} \in \left\langle x \right\rangle  $. En efecto, si $\displaystyle \frac{1}{m} \in \left\langle x \right\rangle  $ tendríamos que
+	\[\frac{1}{m} = \frac{a}{b} \iff b = ma .\]
+	Esto último es una contradicción puesto que $\displaystyle \mcd\left(b,m\right) = 1 $. Así, tenemos que no puede ser que $\displaystyle \Q = \left\langle x \right\rangle  $, $\displaystyle \forall x \in \Q $, por lo que $\displaystyle \Q $ no es cíclico. 
+\item[(d)] Supongamos que $\displaystyle \forall H < G $, $\displaystyle H $ es cíclico y $\displaystyle G $ no es cíclico. Así, como $\displaystyle G $ no es cíclico tenemos que $\displaystyle \forall g \in G $, $\displaystyle G \neq \left\langle g \right\rangle  $. Así, tenemos que 
+\end{description}
+
+\end{sol}
+
+\begin{ej}
+Sea $\displaystyle G = \left\langle R, S/R^{4}=S^{4}=\left(RS\right)^{2} = \left(R^{-1}S\right)^{2} = 1 \right\rangle  $ un grupo finito.
+\begin{description}
+\item[(a)] ¿Qué orden tiene el grupo $\displaystyle G $?
+\item[(b)] ¿Cuál es el exponente de $\displaystyle G $?
+\item[(c)] ¿Qué orden tiene el elemento $\displaystyle R^{2}SRS^{3}RS^{2} $?
+\end{description}
+\end{ej}
+
+\end{document}

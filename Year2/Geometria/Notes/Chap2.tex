@@ -650,4 +650,38 @@ En $\displaystyle \R\mathbb{P}^{1} := \mathbb{P}\left(\R^{2}\right) $ considerem
 \]
 Tenemos que $\displaystyle f\left([1:0]\right)=[1:0] $ y $\displaystyle g\left([1:0]\right)= [2:0] $, por lo que $\displaystyle  f\left([1:0]\right) =  g\left([1:0]\right) $. Análogamente, podemos ver que $\displaystyle f\left([0,1]\right)=[0:2] = [0:1] = g\left([0:1]\right) $. Sin embargo, como $\displaystyle f\left([1:1]\right) = [1:2] \neq [2:1] = g\left([1:1]\right)$ no puede tratarse de una homografía. Es decir, para poder decir que $\displaystyle f $ y $\displaystyle g $ son iguales debemos encontrar tres puntos que formen una referencia proyectiva y cuyas imágenes cuadren. Sin embargo una afinidad de $\displaystyle \R \to \R $ está determinada por dos puntos. 
 \end{eg}
+\begin{observation}
+	Si $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ es una aplicación proyectiva, $\displaystyle \mathcal{R} $ y $\displaystyle \mathcal{R}' $ son referencias proyectivas de $\displaystyle \mathbb{P}\left(V\right) $ y $\displaystyle \mathbb{P}\left(V'\right) $, respectivamente, con bases asociadas $\displaystyle \mathcal{B} $ y $\displaystyle \mathcal{B}' $, existe una aplicación lineal $\displaystyle \hat{f} : V \to V' $ tal que $\displaystyle f\left([v]\right) = [\hat{f}\left(v\right)] $.
+	Entonces, tenemos que la matriz que representa a la aplicación $\displaystyle f  $ será la clase de equivalencia
+	\[ \left[M_{\mathcal{R}\mathcal{R}'}\left(f\right)\right] = \left\{ \lambda M_{\mathcal{B}\mathcal{B}}\left(\hat{f}\right) \; :\; \lambda \in \K^{*}\right\}  .\]
+	Tenemos que 
+	\[f\left(\left(x_{1}, \ldots, x_{n}\right)_{\mathcal{R}}\right) = M_{\mathcal{B}\mathcal{B}'}\left(\hat{f}\right)\begin{pmatrix} x_{1} \\ \vdots \\ x_{n} \end{pmatrix} = M_{\mathcal{R}\mathcal{R}'}\left(f\right)\begin{pmatrix} x_{1} \\ \vdots \\ x_{n} \end{pmatrix} .\]
+\end{observation}
+\begin{eg}
+Consideremos los siguientes puntos en $\displaystyle \mathbb{P}\left(\R^{3}\right) $:
+\[P_{0}= [1:0:0], \quad P_{1} = [1:-2:1], \quad P_{2} = [0:2:1], \quad P_{3} = [1:-2:0] .\]
+\[Q_{0} = [1:-1:0], \quad Q_{1} = [1 : 0: 1], \quad Q_{2} = [1:-1:1], \quad Q_{3} = [1:0:0] .\]
+Nos preguntamos si existe una aplicación proyectiva $\displaystyle f : \mathbb{P}\left(\R^{3}\right) \to \mathbb{P}\left(\R^{3}\right) $ tal que $\displaystyle f\left(P_{i}\right) = Q_{i} $ y calcular $\displaystyle f $ en la referencia estandar
+\[\mathcal{E} = \left\{ [1:0:0], [0:1:0], [0:0:1]; [1:1:1]\right\}  .\]
+Comprobemos que se $\displaystyle \mathcal{R} = \left\{ P_{i} \; :\; 0 \leq i \leq 3\right\}  $ es una referencia proyectiva. Tenemos que 
+\[\begin{vmatrix} 1 & 1 & 0 \\ 0 & - 2 & 2 \\ 0 & 1 & 1 \end{vmatrix}  = - 4 \neq 0 .\]
+Así, son independientes. Por otro lado, tenemos que 
+\[\left(1,-2,0\right) = \alpha\left(1,0,0\right)+\beta\left(1,-2,1\right)+\gamma\left(0,2,1\right) .\]
+Obtenemos que $\displaystyle \alpha = \frac{1}{2} $, $\displaystyle \beta = \frac{1}{2} $ y $\displaystyle \gamma = -\frac{1}{2} $. Como ninguno es nulo, tenemos que $\displaystyle \mathcal{R} $ es una referencia proyectiva que tiene de base asociada 
+\[\mathcal{B} = \left\{ \left(1,0,0\right), \left(1, -2,1\right), \left(0,-2,-1\right)\right\}  .\]
+Hacemos lo mismo para ver que $\displaystyle \mathcal{R}' = \left\{ Q_{i} \; : \; 0 \leq i \leq 3\right\}  $ es una referencia proyectiva y calculamos que su base asociada es
+\[\mathcal{B}' = \left\{ \left(1,-1,0\right), \left(1,0,1\right), \left(-1,1,-1\right)\right\}  .\]
+Por la última proposición, existe la $\displaystyle f $ que buscamos y es única por mandar de una referencia a otra. Así, podemos definir la aplicación lineal asociada como 
+\[\hat{f}\left(1,0,0\right) = \left(1,-1,0\right), \quad \hat{f}\left(1,-2,1\right) = \left(0,-2,-1\right), \quad \hat{f}\left(0,-2,-1\right) = \left(-1,1,-1\right) .\]
+De aquí es fácil deducir el valor de $\displaystyle \hat{f} $ en la referencia canónica calculando como actúa $\displaystyle \hat{f} $ sobre la base canónica o con matrices. Lo hacemos por matrices. Tenemos que $\displaystyle M_{\mathcal{B}\mathcal{B}'}\left(\hat{f}\right) = I $. Así, tenemos que 
+\[M_{\mathcal{E}\mathcal{E}}\left(\hat{f}\right) = C_{\mathcal{B}'\mathcal{E}} M_{\mathcal{B}\mathcal{B}'}\left(\hat{f}\right)C_{\mathcal{E}\mathcal{B}}.\]
+Donde tenemos que 
+\[C_{\mathcal{E}\mathcal{B}} = C_{\mathcal{B}\mathcal{E}}^{-1} = \begin{pmatrix} 1 & 1 & 0 \\ 0 & - 2 & - 2 \\ 0 & 1 & -1 \end{pmatrix}^{-1} = \begin{pmatrix} 1 & \frac{1}{4} & -\frac{1}{2} \\ 0 & -\frac{1}{4} & \frac{1}{2} \\ 0 & -\frac{1}{4} & -\frac{1}{2} \end{pmatrix}, \; C_{\mathcal{B}'\mathcal{E}} = \begin{pmatrix} 1 & 1 & 1 \\ -1 & 0 & 1 \\ 0 & 1 & -1 \end{pmatrix} .\]
+Como estamos en el caso proyectivo, tenemos que lo que nos importa son las clases de equivalencia de las matrices, no los representantes, por lo que podemos tomar
+\[ C_{\mathcal{E}\mathcal{B}} = \begin{pmatrix} 4 & 1 & - 2 \\ 0 & - 1 & 2 \\ 0 & - 1 & - 2 \end{pmatrix} .\]
+Así, nos queda
+\[M_{\mathcal{E}\mathcal{E}}\left(f\right) = \begin{pmatrix} 1 & 1 & -1 \\ -1 & 0 & 1 \\ 0 & 1 & - 1 \end{pmatrix}\begin{pmatrix} 4 & 1 & -2\\ 0 & - 1 & 2 \\ 0 & - 1 & -2 \end{pmatrix} = \begin{pmatrix} 4 & 1 & 1 \\ -4 & -2 & 0 \\ 0 & 0 & 4 \end{pmatrix} .\]
+En la igualdad anterior estamos igualando clases de equivalencia, no ponemos los corchetes por estética. Así, tendríamos que la expresión analítica de $\displaystyle f $ es
+\[f\left([x_{0}:x_{1}:x_{2}]\right) = [4x_{0}+x_{1}+x_{2}:-4x_{0}-2x_{1}:4x_{2}] .\]
+\end{eg}
 
