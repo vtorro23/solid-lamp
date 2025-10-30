@@ -75,4 +75,79 @@ Así, por ser $\displaystyle \sigma  $ y $\displaystyle \tau $ disjuntos tenemos
 \begin{observation}
 	Tenemos que $\displaystyle \mathcal{S}_{2} \cong C_{2} $. Para $\displaystyle n \geq 3 $, tenemos que $\displaystyle Z\left(\mathcal{S}_{n}\right) = \left\{ id\right\}  $. 
 \end{observation}
+\section{Ciclos}
+\begin{definition}[Ciclo]
+Sea $\displaystyle \sigma \in \mathcal{S}_{n} $. Diremos que $\displaystyle \sigma  $ es un \textbf{ $\displaystyle k $-ciclo} o \textbf{ciclo de orden $\displaystyle k $} si dados $\displaystyle i_{1}, \ldots, i_{k} \in X_{n} $, tenemos que $\displaystyle \sigma\left(i_{j}\right)=i_{j+1} $ (con $\displaystyle \sigma\left(i_{k}\right)=i_{1} $) y para el resto $\displaystyle i_{k+1}, \ldots, i_{n} \in X_{n} $ se tiene que $\displaystyle \sigma\left(i_{t}\right) = i_{t} $. Lo escribimos $\displaystyle \left(i_{1}, \ldots, i_{k}\right) $.
+\end{definition}
+\begin{eg}
+\begin{enumerate}
+\item En $\displaystyle \mathcal{S}_{4} $ podemos considerar el 3-ciclo $\displaystyle \left(1,2,3\right) $ y el 4-ciclo $\displaystyle \left(1,4,2,3\right) $. 
+\item En $\displaystyle \mathcal{S}_{3} $ podemos considerar $\displaystyle \sigma = \left(1,3,2\right) $. Tenemos que $\displaystyle \sigma^{-1} = \left(2,3,1\right) $. En efecto, tenemos que
+	\[\sigma \circ \sigma^{-1} = \left(1,3,2\right)\left(2,3,1\right) = \left(1\right)\left(2\right)\left(3\right) .\]
+\item Considerando nuevamente en $\displaystyle \mathcal{S}_{4} $ el ciclo $\displaystyle \left(1,2,3\right) $, tenemos que 
+	\[\left(1,2,3\right) = \left(2,3,1\right) = \left(3,1,2\right) .\]
+\end{enumerate}
+\end{eg}
+\begin{prop}
+Sea $\displaystyle 2 \leq k \leq n $. 
+\begin{enumerate}
+\item Si $\displaystyle l \leq k $, tenemos que $\displaystyle \left(i_{1}, \ldots, i_{k}\right) = \left(i_{l}, i_{l+1}, \ldots, i_{k}, i_{1}, \ldots, i_{l-1}\right) $.
+\item El inverso de $\displaystyle \left(i_{1}, i_{2}, \ldots, i_{k}\right) $ es $\displaystyle \left(i_{k}, i_{k-1}, \ldots, i_{2}, i_{1}\right) $.
+\item Todo $\displaystyle k $-ciclo tiene orden $\displaystyle k $.
+\item Si $\displaystyle \sigma \in \mathcal{S}_{n} $ es un $\displaystyle k $-ciclo, entonces $\displaystyle \sigma = \left(i, \sigma\left(i\right), \ldots, \sigma^{k-1}\left(i\right)\right) $, $\displaystyle \forall i \in \sop\left(\sigma \right) $. Además $\displaystyle k = \left|\sop\left(\sigma \right)\right| $. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Consideremos $\displaystyle 2 \leq k \leq n $.
+\begin{enumerate}
+\item Es trivial a partir de la definición. 
+\item Basta con comprobar que su composición es la identidad:
+	\[ \left(i_{1}, i_{2}, \ldots, i_{k}\right)\left(i_{k}, i_{k-1}, \ldots, i_{1}\right) = \left(i_{1}\right) \cdots \left(i_{k}\right) = id .\]
+Comprobar la otra composición es análogo. 
+\item Si tomamos $\displaystyle \sigma = \left(i_{1}, \ldots, i_{k}\right) $ y $\displaystyle l \leq k $, tenemos que $\displaystyle \sigma^{l}\left(i_{1}\right) = i_{l+1} $. Como buscamos la identidad, necesitamos que $\displaystyle i_{l+1} = i_{1} $, que solo ocurre cuando $\displaystyle l = k $. No hay un menor elemento que lo cumpla.
+\item Se deduce de \textbf{(1)} y \textbf{(3)} por como están construidos. 
+\end{enumerate}
+\end{proof}
+\begin{prop}[Descomposición en ciclos disjuntos]
+Todo $\displaystyle \sigma \in \mathcal{S}_{n} $ se puede descomponer como producto de ciclos disjuntos dos a dos tal que $\displaystyle \sigma = \sigma_{1} \cdots \sigma_{k} $.
+\end{prop}
+\begin{proof}
+Sea $\displaystyle \sigma \in \mathcal{S}_{n} $ y vamos a considerar la siguiente relación de equivalencia:
+\[x \sim y \iff \exists s \in \N, \; \sigma^{s}\left(x\right) = y \iff \exists \tau \in \left\langle \sigma  \right\rangle , \tau\left(x\right) = y .\]
+Esta relación de equivalencia genera una partición de $\displaystyle X_{n} $. Consideremos $\displaystyle \left\{ j_{1}, \ldots, j_{t}\right\}  $ representantes de las clases de equivalencia con más de un elemento y llamamos $\displaystyle O_{i} $ a la clase de equivalencia de $\displaystyle j_{i} $. Para cada $\displaystyle 1 \leq i \leq t $, definimos $\displaystyle \sigma_{i} : X_{i} \to X_{i} $ tal que 
+\[\sigma_{i}\left(x\right) = 
+\begin{cases}
+\sigma\left(x\right), \; x \in O_{i} \\ 
+x, \; x \not\in O_{i}
+\end{cases}
+.\]
+Así, tenemos que $\displaystyle \sigma_{i} = \left(j_{i}, \sigma\left(j_{i}\right), \ldots, \sigma^{s-1}\left(j_{i}\right)\right) $ es un $\displaystyle s $-ciclo donde $\displaystyle \sop\left(\sigma _{i}\right) = O_{i} $. Como $\displaystyle O_{i} \cap O_{j} = \emptyset $ si $\displaystyle i \neq j $, tenemos que $\displaystyle \sop\left(\sigma _{i}\right) \cap \sop\left(\sigma _{2}\right) = \emptyset $, $\displaystyle \forall i,j \in \left\{ 1, \ldots, t\right\}  $ con $\displaystyle i \neq j $. Así, tenemos que 
+\[\sop\left(\sigma \right) = \bigsqcup^{t}_{i = 1}\sop\left(\sigma_{i}\right) \Rightarrow \sigma = \sigma _{1} \cdots \sigma _{t} .\]
+\end{proof}
+\begin{eg}
+Tenemos que
+\[\left(1,4,2,3\right) = \left(1,2,3,4\right)\left(1,3,4\right) .\]
+\end{eg}
+\begin{prop}
+Sea $\displaystyle \sigma \in \mathcal{S}_{n} $ con $\displaystyle \sigma = \sigma_{1} \cdots \sigma _{k} $ ciclos disjuntos. Entonces, $\displaystyle o\left(\sigma \right) = \mcm\left(o\left(\sigma_{1}\right), \ldots, o\left(\sigma_{k}\right)\right) $. 
+\end{prop}
+\begin{proof}
+Por ser $\displaystyle \sigma_{1}, \ldots, \sigma_{k} $ disjuntos tenemos que para cualquier $\displaystyle m \in \Z $,
+\[\sigma^{m} = \sigma^{m}_{1} \cdots \sigma^{m}_{k} .\]
+Además, hemos visto que $\displaystyle \sigma^{m} = id $ si y solo si $\displaystyle \sigma^{m}_{i} = id $, $\displaystyle \forall i = 1, \ldots, k $. Por tanto, necesitamos que $\displaystyle o\left(\sigma_{1}\right) |m $, $\displaystyle \forall i = 1, \ldots, k $, por lo que claramente debe ser que $\displaystyle \mcm\left(o\left(\sigma_{1}\right), \ldots, o\left(\sigma_{k}\right)\right) | m $, por lo que 
+\[o\left(\sigma \right) = \mcm\left(o\left(\sigma_{1}\right), \ldots, o\left(\sigma_{k}\right)\right) .\]
+\end{proof}
+\begin{definition}[Trasposiciones]
+A los 2-ciclos los llamamos \textbf{trasposiciones}.
+\end{definition}
 
+\begin{colorary}
+Sea $\displaystyle \sigma \in \mathcal{S}_{n} $. Entonces, podemos escribir $\displaystyle \sigma  $ como producto de 2-ciclos.	
+\end{colorary}
+ \begin{proof}
+Si $\displaystyle \sigma \in \mathcal{S}_{n} $, sabemos que $\displaystyle \sigma = \sigma_{1} \cdots \sigma_{k} $ ciclos disjuntos. Está claro que cualquier $\displaystyle n $-ciclo lo podemos expresar como 
+\[\left(i_{1}, \ldots, i_{n}\right) = \left(i_{1}, i_{n}\right)\left(i_{n}, i_{2}\right) \cdots \left(i_{n-1}, i_{n}\right) .\]
+% esto no está bien hay que arreglarlo
+Así, cada $\displaystyle n $-ciclo es producto de trasposiciones y $\displaystyle \sigma  $ lo es.
+ \end{proof}
+ 

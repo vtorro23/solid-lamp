@@ -5,7 +5,7 @@
 \begin{document}
 
 \title{Estructuras Algebraicas - Entrega 2}
-\author{Victoria Eugenia Torroja Rubio}
+\author{Julia Romero, Pablo Salas y Victoria Torroja}
 \date{27/10/2025}
 
 \maketitle
@@ -14,11 +14,37 @@
 Demostrar que $\displaystyle U\left(\Z_{p}\right) = \Z_{p}^{*} $ si y solo si $\displaystyle p \geq 2 $ es primo. Deducir que $\displaystyle \Z^{*}_{p} $ es un grupo si y solo si $\displaystyle p \geq 2 $ es primo.
 \end{ej}
 
+\begin{sol}
+En primer lugar, demostremos que $\displaystyle U\left(\Z_{p}\right) = \Z_{p}^{*} $ si y solo si $\displaystyle p \geq 2 $ es primo:
+\begin{description}
+\item[(i)] Supongamos que $\displaystyle p\geq 2 $ no es primo. Entonces, existe $\displaystyle 1 < k < p $, es decir, $\displaystyle k \in \Z_{p}^{*} $, tal que $\displaystyle k | p $, por lo que $\displaystyle \mcd\left(p,k\right) = k \neq 1 $ y $\displaystyle k \not\in U\left(\Z_{p}\right) $. En consecuencia, tenemos que $\displaystyle \Z^{*}_{p} \neq U\left(\Z_{p}\right) $.
+\item[(ii)] Supongamos que $\displaystyle p \geq 2 $ es primo. Es trivial que $\displaystyle U\left(\Z_{p}\right) \subset \Z_{p}^{*} $. Ahora, si $\displaystyle k \in \Z_{p}^{*} $, tenemos que $\displaystyle 1 \leq k < p $, por lo que debe ser que $\displaystyle \mcd\left(k,p\right) = 1 $, por ser $\displaystyle p $ primo. Así, tenemos que $\displaystyle k \in U\left(\Z_{p}\right) $, por lo que $\displaystyle U\left(\Z_{p}\right) = \Z_{p}^{*} $.
+\end{description}
+Ahora demostramos que $\displaystyle \Z_{p}^{*} $ es un grupo si y solo si $\displaystyle p \geq 2 $ es primo.
+\begin{description}
+\item[(i)] Si $\displaystyle p \geq 2 $ no es primo, tenemos que existe $\displaystyle 1 < k < p $ tal que $\displaystyle k | p $. Así, tenemos que $\displaystyle k \not\in U\left(\Z_{p}\right)$, por lo que $\displaystyle k $ no tiene inverso multiplicativo en $\displaystyle \Z_{p}^{*} $ (en un resultado de clase vimos que los elementos de $\displaystyle \Z^{*}_{p} $ tenían inverso multiplicativo si y solo si estaban en $\displaystyle U\left(\Z_{p}\right) $). Por tanto, $\displaystyle \Z_{p}^{*} $ no es un grupo.
+\item[(ii)] Si $\displaystyle p \geq 2 $ es primo, acabamos de ver que $\displaystyle \Z^{*}_{p} = U\left(\Z_{p}\right) $ y por un resultado de clase tenemos que $\displaystyle U\left(\Z_{p}\right) $ es un grupo, por lo que $\displaystyle \Z_{p}^{*} $ es un grupo. En efecto, por el resultado visto en clase se cumple la existencia de los inversos. La existencia del elemento neutro es trivial, puesto que $\displaystyle [1]_{m} \in \Z_{p}^{*} $ es el elemento neutro. La operación claramente es asociativa, falta ver que se trata de una operación interna. 
+	Supongamos que $\displaystyle [a]_{m}, [b]_{m} \in U\left(\Z_{p}\right) $. Como $\displaystyle \mcd\left(a,p\right) = \mcd\left(b,p\right) = 1 $, por la identidad de Bézout existen $\displaystyle \lambda, \mu, \lambda', \mu' \in \Z $ tales que
+	\[ 1 = \lambda a + \mu p = \lambda'b+ \mu' p .\]
+	Así, tenemos que
+	\[ 1 = \left(\lambda a + \mu p\right)\left(\lambda'b+\mu'p\right) = \lambda \lambda' ab + \left(\lambda \mu'a + \lambda'\mu b + \mu \mu 'p\right)p .\]
+	Así, tenemos que si $\displaystyle d = \mcd\left(ab, p\right) $, entonces $\displaystyle d | 1 $, por lo que debe ser que $\displaystyle d = 1 $ y $\displaystyle ab \in U\left(\Z_{p}\right) = \Z_{p}^{*} $. Por tanto, $\displaystyle \Z^{*}_{p} $ es un grupo.
+\end{description}
+\end{sol}
+
 \begin{ej}
 Sea $\displaystyle G = D_{6} $. Encuentra una serie normal
 \[ \left\{ e\right\} \lhd H_{1} \lhd H_{2} \lhd G \]
 tal que cada cociente $\displaystyle H_{i+1}/H_{i} $ sea abeliano.
 \end{ej}
+
+\begin{sol}
+	Consideremos $\displaystyle H_{1} = \left\langle \sigma^{3} \right\rangle  $ y $\displaystyle H_{2} = \left\langle \sigma  \right\rangle  $. Como $\displaystyle \left|H_{2}\right| = 6 $ tenemos que $\displaystyle \left[G:H_{2}\right]  = \frac{ \left|G\right|}{ \left|H_{2}\right|} = 2 $, por lo que $\displaystyle H_{2} \lhd G $. Por ser $\displaystyle H_{2} $ cíclico tenemos que es abeliano, por lo que cualquier subgrupo suyo será subgrupo normal. En particular, tenemos que $\displaystyle \left\langle \sigma^{3} \right\rangle \leq \left\langle \sigma  \right\rangle  $, por lo que $\displaystyle H_{1} \lhd H_{2} $. Así, tenemos que, por ser $\displaystyle \left\{ e\right\}  $ un subgrupo normal trivial,
+	\[ \left\{ e\right\} \lhd H_{1} \lhd H_{2} \lhd G .\]
+	Falta ver que $\displaystyle H_{1} / \left\{ e\right\}  $, $\displaystyle H_{2} / H_{1} $ y $\displaystyle G / H_{2} $ son abelianos. Tenemos que 
+	\[H_{1}/ \left\{ e\right\} = \left\{ [e], [\sigma^{3}]\right\}, \quad H_{2}/H_{1} = \left\{ [e], [\sigma], [\sigma^{2}]\right\} , \quad G/H_{2} = \left\{ [e], [\tau]\right\}  .\]
+	Claramente, $\displaystyle G/H_{2} $ es abeliano por tener únicamente dos elementos, uno de los cuales es el elemento neutro. Por la misma razón, $\displaystyle H_{1}/ \left\{ e\right\}  $ es abeliano. Finalmente, está claro que $\displaystyle H_{2}/H_{1} $ es abeliano puesto que los representantes pertenecen a $\displaystyle \left\langle \sigma  \right\rangle  $, que es abeliano.	
+\end{sol}
 
 \begin{ej}
 Sea 
@@ -33,10 +59,43 @@ con la multiplicación matricial usual.
 
 \begin{sol}
 \begin{description}
+\item[(a)] Consideremos las matrices
+	\[h_{1} = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}, \quad h_{2} = \begin{pmatrix} 1 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}, \quad h_{3} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix} \in H .\]
+Si calculamos las inversas obtenemos 
+\[ h_{1}^{-1} = \begin{pmatrix} 1 & -1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}, \quad h_{2}^{-1} = \begin{pmatrix} 1 & 0 &-1 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}, \quad h_{3}^{-1} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & -1 \\ 0 & 0 & 1 \end{pmatrix} \in H.\]
+Tenemos que 
+\[\left\langle h_{1} \right\rangle = \left\{ \begin{pmatrix} 1 & \lambda & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}\; : \; \lambda \in \Z\right\} , \quad \left\langle h_{2} \right\rangle = \left\{\begin{pmatrix}  1 & 0 & \lambda \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}\; : \; \lambda \in \Z\right\} , \quad \left\langle h_{3} \right\rangle = \left\{ \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & \lambda \\ 0 & 0 & 1 \end{pmatrix}\; : \; \lambda \in \Z\right\}  .\]
+Esto es fácil de demostrar por inducción. Demostramos sólamente el caso de $\displaystyle h_{1} $ puesto que los otros dos son análogos:
+\begin{itemize}
+\item Si $\displaystyle n = 2 $, tenemos que 
+	\[ \begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}^{2} = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}, \quad \begin{pmatrix} 1 & -1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}^{2} = \begin{pmatrix} 1 & -2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}	.\]
+\item Asumiendo que es cierto para $\displaystyle n -1 $, tenemos que 
+	\[\begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}^{n} = \begin{pmatrix} 1 & n-1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}\begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}=\begin{pmatrix} 1 & n & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} .\]
+	Análogamente, 
+	\[\begin{pmatrix} 1 & -1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}^{n}= \begin{pmatrix} 1 & -\left(n-1\right) & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}\begin{pmatrix} 1 & -1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}=\begin{pmatrix} 1 & -n & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} .\]
+\end{itemize}
+Así, dado 
+\[h = \begin{pmatrix} 1 & a & c \\ 0 & 1 & b \\ 0 & 0 & 1 \end{pmatrix} \in H ,\]
+tenemos que 
+\[\begin{pmatrix} 1 & a & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}\in \left\langle h_{1} \right\rangle , \quad \begin{pmatrix} 1 & 0 & c \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \in \left\langle h_{2} \right\rangle, \quad \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & b \\ 0 & 0 & 1 \end{pmatrix} \in \left\langle h_{3} \right\rangle .\]
+Si tomamos $\displaystyle d = c-ab $, 
+\[
+\begin{split}
+	\begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}^{a} \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix}^{b} \begin{pmatrix} 1 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}^{d} = & \begin{pmatrix} 1 & a & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & b \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & 0 & d \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \\
+	= & \begin{pmatrix} 1 & a & ab \\ 0 & 1 & b \\ 0 & 0 & 1 \end{pmatrix}\begin{pmatrix} 1 & 0 & d \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & a & d+ab \\ 0 & 1 & b \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & a & c \\ 0 & 1 & b \\ 0 & 0 & 1 \end{pmatrix} .
+\end{split}
+\]
+Así, tenemos que cualquier elemento de $\displaystyle H $ se puede expresar como una combinación de $\displaystyle h_{1},h_{2} $ y $\displaystyle h_{3} $, por lo que $\displaystyle H = \left\langle h_{1}, h_{2}, h_{3} \right\rangle  $ y $\displaystyle H $ es finitamente generado.
+\item[(b)] Hemos encontrado un grupo de tres generadores. Para ver que no podemos reducir este conjunto veamos que ninguno se puede expresar como una combinación de los otros dos. 
+\[\begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & \beta \\ 0 & 0 & 1 \end{pmatrix}\begin{pmatrix} 1 & 0 & \alpha \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}=\begin{pmatrix} 1 & 0 & \alpha \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}\begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & \beta \\ 0 & 0 & 1 \end{pmatrix} =  \begin{pmatrix} 1 & 0 & \alpha \\ 0 & 1 & \beta \\ 0 & 0 & 1 \end{pmatrix} \neq h_{1}, \; \forall \alpha, \beta \in \Z.\]
+\[\begin{pmatrix} 1 & \alpha & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}\begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & \beta \\ 0 & 0 & 1 \end{pmatrix}  = \begin{pmatrix} 1 & \alpha & \alpha+\beta \\ 0 & 1 & \beta \\ 0 & 0 & 1 \end{pmatrix} \neq h_{2}, \; \forall \alpha, \beta \in \Z.\]
+\[\begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & \beta \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & \alpha & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}=\begin{pmatrix} 1 & \alpha & 0 \\ 0 & 1 & \beta \\ 0 & 0 & 1 \end{pmatrix} \neq h_{2}, \; \forall \alpha, \beta \in \Z.\]
+\[\begin{pmatrix} 1 & 0 & \beta \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}\begin{pmatrix} 1 & \alpha & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}=\begin{pmatrix} 1 & \alpha & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}\begin{pmatrix} 1 & 0 & \beta \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & \alpha & \beta \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \neq h_{3}, \; \forall \alpha, \beta \in \Z.\]
+Así, acabamos de comprobar que ningún elemento de $\displaystyle \left\{ h_{1}, h_{2}, h_{3}\right\}  $ se puede expresar como combinación de los otros dos por lo que debe ser que es un conjunto de generadores mínimos.
 \item[(c)] El grupo $\displaystyle H $ no es abeliano. En efecto, sean 
-	\[h_{1} = \begin{pmatrix} 1 & -4 & -4 \\ 0 & 1 & 3 \\ 0 & 0 & 1 \end{pmatrix}, \quad h_{2} = \begin{pmatrix} 1 & -11 & -13 \\ 0 & 1 & 5 \\ 0 & 0 & 1 \end{pmatrix} .\]
+	\[h = \begin{pmatrix} 1 & -4 & -4 \\ 0 & 1 & 3 \\ 0 & 0 & 1 \end{pmatrix}, \quad h' = \begin{pmatrix} 1 & -11 & -13 \\ 0 & 1 & 5 \\ 0 & 0 & 1 \end{pmatrix} .\]
 	Tenemos que 
-	\[h_{1} \cdot h_{2} = \begin{pmatrix} 1 & -15 & -37 \\ 0 & 1 & 8 \\ 0 & 0 & 1 \end{pmatrix} \neq \begin{pmatrix} 1 & -15 & -50 \\ 0 & 1 & 8 \\ 0 & 0 & 1 \end{pmatrix} = h_{2} \cdot h_{1} .\]
+	\[h \cdot h' = \begin{pmatrix} 1 & -15 & -37 \\ 0 & 1 & 8 \\ 0 & 0 & 1 \end{pmatrix} \neq \begin{pmatrix} 1 & -15 & -50 \\ 0 & 1 & 8 \\ 0 & 0 & 1 \end{pmatrix} = h' \cdot h .\]
 \end{description}
 \end{sol}
 
@@ -55,14 +114,26 @@ Demuestre o refute cada una de las siguientes proposiciones.
 \begin{description}
 \item[(a)] No es cierto, puesto que $\displaystyle \Z_{60} = \left\langle 49 \right\rangle  $. En efecto, tenemos que 
 	\[60 | 49k \iff 60 | k .\]
-	Por tanto, tenemos que $\displaystyle o\left(14\right) = 60 $ y en consecuencia $\displaystyle \Z_{60} = \left\langle 49 \right\rangle  $.
-\item[(b)] Es cierto. 
-\item[(c)] No es cierto que $\displaystyle \Q $ es cíclico. En efecto, está claro que $\displaystyle \Q \neq \left\langle 0 \right\rangle  $. Ahora, supongamos que $\displaystyle \Q = \left\langle x \right\rangle  $ con $\displaystyle x = \frac{a}{b} $, $\displaystyle a ,b \in \Z^{*} $. Podemos encontrar $\displaystyle m \in \Z $ tal que $\displaystyle \mcd\left(m,b\right) = 1 $, de esta forma tenemos que $\displaystyle \frac{1}{m} \in \Q $ pero $\displaystyle \frac{1}{m} \in \left\langle x \right\rangle  $. En efecto, si $\displaystyle \frac{1}{m} \in \left\langle x \right\rangle  $ tendríamos que
-	\[\frac{1}{m} = \frac{a}{b} \iff b = ma .\]
+	Por tanto, tenemos que $\displaystyle o\left(49\right) = 60 $ y en consecuencia $\displaystyle \Z_{60} = \left\langle 49 \right\rangle  $.
+\item[(b)] Es cierto. En efecto, en clase vimos que
+	\[U_{n} = \left\{ z \in \C \; : \; z^{n} = 1\right\}  ,\]
+	es un grupo $\displaystyle \forall n \in \N $, en particular es cierto para $\displaystyle n = 8 $. Veamos ahora que $\displaystyle U_{8} = \left\langle e^{i\frac{2\pi }{8}} \right\rangle  $. Tenemos que
+	\[U_{8} = \left\{ e^{i\frac{2\pi }{8}k} \; : \; 0 \leq k \leq 7\right\}  .\]
+	Así, si $\displaystyle x = e^{i \frac{2\pi }{8}k} $ con $\displaystyle k \in \left\{ 0, \ldots, 7\right\}  $, tenemos que
+	\[x = e^{i \frac{2\pi }{8}k} = \left(e^{i \frac{2\pi }{8}}\right)^{k} \in \left\langle e^{i \frac{2\pi }{8}} \right\rangle  .\]
+	Así, está claro que $\displaystyle U_{8}  $ es cíclico.
+\item[(c)] No es cierto que $\displaystyle \Q $ es cíclico. En efecto, está claro que $\displaystyle \Q \neq \left\langle 0 \right\rangle  $. Ahora, supongamos que $\displaystyle \Q = \left\langle x \right\rangle  $ con $\displaystyle x = \frac{a}{b} $, $\displaystyle a ,b \in \Z^{*} $. Podemos encontrar $\displaystyle m \in \Z $ tal que $\displaystyle \mcd\left(m,b\right) = 1 $, de esta forma tenemos que $\displaystyle \frac{1}{m} \in \Q $ pero $\displaystyle \frac{1}{m} \not\in \left\langle x \right\rangle  $. En efecto, si $\displaystyle \frac{1}{m} \in \left\langle x \right\rangle  $ tendríamos que existe $\displaystyle k \in \Z^{*} $ tal que 
+	\[\frac{1}{m} = \frac{a}{b}k \iff b = mak .\]
 	Esto último es una contradicción puesto que $\displaystyle \mcd\left(b,m\right) = 1 $. Así, tenemos que no puede ser que $\displaystyle \Q = \left\langle x \right\rangle  $, $\displaystyle \forall x \in \Q $, por lo que $\displaystyle \Q $ no es cíclico. 
-\item[(d)] Supongamos que $\displaystyle \forall H < G $, $\displaystyle H $ es cíclico y $\displaystyle G $ no es cíclico. Así, como $\displaystyle G $ no es cíclico tenemos que $\displaystyle \forall g \in G $, $\displaystyle G \neq \left\langle g \right\rangle  $. Así, tenemos que 
+\item[(d)] No es cierto. Consideremos el grupo $\displaystyle G = C_{2} \times C_{2} $. Tenemos que $\displaystyle \left|G\right|=2^{2} $. El grupo $\displaystyle G $ no es cíclico puesto que todos los elementos de $\displaystyle G $ tienen orden 2, es decir, no pueden generar $\displaystyle G $ que tiene orden 4. \\
+	Por otro lado, tenemos que si $\displaystyle G $ tiene orden $\displaystyle p^{2} $ con $\displaystyle p $ primo, entonces todo subgrupo propio debe tener orden $\displaystyle p $ (puesto que el orden del subgrupo debe dividir al orden del grupo). En particular, como $\displaystyle C_{2} \times C_{2} $ no es cíclico debe ser que el orden de todos los elementos es $\displaystyle p $.
+Así, dado $\displaystyle H < C_{2} \times C_{2} $, debe ser que $\displaystyle \left|H\right| = p $, pero existe $\displaystyle g \in H $ con $\displaystyle g \neq e $, y como hemos visto antes tenemos que $\displaystyle o\left(g\right) = p $, por lo que $\displaystyle H = \left\langle g \right\rangle  $ y $\displaystyle H $ es cíclico. Así, tenemos que todos los subgrupos propios de $\displaystyle C_{2} \times C_{2} $ son cíclicos pero $\displaystyle C_{2} \times C_{2} $ no es cíclico.
+\item[(e)] Esto es verdadero. En efecto, supongamos que $\displaystyle G $ es un grupo infinito que tiene un número finito de subgrupos. Entonces, tenemos que el conjunto de todos los subgrupos cíclicos es finito. Tenemos que 
+	\[G = \bigcup_{g \in G}\left\langle g \right\rangle  .\]
+	Por tanto, si todos los subgrupos cíclicos son finitos, $\displaystyle G $ es la unión de un número finito de grupos finitos, por lo que $\displaystyle G $ es finito, lo cual es una contradicción. Así, debe existir algún $\displaystyle g \in G $ tal que $\displaystyle \left\langle g \right\rangle  $ es infinito. Así, tenemos que $\displaystyle \left\langle g \right\rangle \cong \Z $, puesto que podemos considerar el isomorfismo
+	\[\left\langle g \right\rangle \to \Z : g^{i} \to i .\]
+Sin embargo, tenemos que $\displaystyle \Z $ tiene infinitos subgrupos, por ejemplo, $\displaystyle n \Z $ para $\displaystyle n = 1, 2, \ldots $. Como $\displaystyle \left\langle g \right\rangle  $ y $\displaystyle \Z $ son isomorfos, tenemos que $\displaystyle \left\langle g \right\rangle  $ también tiene infinitos subgrupos, que son a su vez subgrupos de $\displaystyle G $, por lo que $\displaystyle G $ tiene infinitos subgrupos, que es una contradicción. Así, debe ser que $\displaystyle G $ tiene infinitos subgrupos.	
 \end{description}
-
 \end{sol}
 
 \begin{ej}
@@ -73,5 +144,52 @@ Sea $\displaystyle G = \left\langle R, S/R^{4}=S^{4}=\left(RS\right)^{2} = \left
 \item[(c)] ¿Qué orden tiene el elemento $\displaystyle R^{2}SRS^{3}RS^{2} $?
 \end{description}
 \end{ej}
+
+\begin{sol}
+Consideremos que $\displaystyle o\left(R\right) = o\left(S\right) = 4 $ y que $\displaystyle 1 \neq R \neq S \neq 1 $. De los datos del enunciado podemos deducir algunas igualdades:
+\[RS = S^{-1}R^{-1}, \quad R^{-1}S = S^{-1}R .\]
+\begin{description}
+\item[(a)] A priori, parece que tenemos que
+	\[ \left\{ 1, R, R^{2}, R^{3}, S, S^{2}, S^{3}\right\} \subset G .\]
+	Sin embargo, tenemos que ver que $\displaystyle R^{i} \neq S^{j} $ para $\displaystyle i,j \in \left\{ 1,2,3\right\}  $. 
+	\begin{itemize}
+	\item Si $\displaystyle R = S^{2} $, tenemos que $\displaystyle R^{2} = 1 $, lo que contradice que $\displaystyle o\left(R\right) = 4 $, por lo que debe ser que $\displaystyle R \neq S^{2} $ y $\displaystyle S \neq R^{2} $.
+	\item Si $\displaystyle R = S^{3} $ tenemos que $\displaystyle RS = 1 $, por lo que $\displaystyle R = S^{-1} $ y $\displaystyle o\left(RS\right) = 1 $, que contradice que $\displaystyle o\left(RS\right) = 2 $. Por tanto, debe ser que $\displaystyle R \neq S^{3} $ y $\displaystyle S \neq R^{3} $.
+	\item Si $\displaystyle R^{2} = S^{3} $ tenemos que $\displaystyle S^{-1} = R^{2} $, por lo que $\displaystyle S^{-2} = S^{2} = 1 $, que contradice que $\displaystyle o\left(S\right) = 4 $. De esta forma, tenemos que $\displaystyle R^{2} \neq S^{3} $ y $\displaystyle S^{2} \neq R^{3} $.
+	\item Si $\displaystyle R^{3} = S^{3} $ tenemos que $\displaystyle 1 = RS^{-1} $ por lo que $\displaystyle R = S $, que contradice nuestras hipótesis, por lo que debe ser que $\displaystyle R^{3} \neq S^{3} $.
+	\item Finalmente, habría que comprobar que $\displaystyle R^{2} \neq S^{2} $. Bajo las condiciones dadas en el enunciado no podríamos afirmar que $\displaystyle R^{2} = S^{2} $ ni el contrario, puesto que hay ejemplos de grupos en los que se cumplen ambas condiciones. En lo que nos afecta, asumiremos que $\displaystyle R^{2} \neq S^{2} $.
+	\end{itemize}
+	Así, hemos visto que en general, $\displaystyle S^{i} \neq R^{j} $ para $\displaystyle i,j \in \left\{ 1,2,3\right\}  $. Por otro lado, tenemos que
+	\[\boxed{RS = S^{3}R^{3} } \iff RS = \left(RS\right)^{-1} = S^{-1}R^{-1} = S^{3}R^{3} .\]
+	\[\boxed{R^{3}S^{3} = SR} \iff S\left(RS\right)S^{3} = S\left(S^{3}R^{3}\right)S^{3} .\]
+De forma análoga se demuestran todas las siguientes igualdades:
+\[\begin{pmatrix} RS & RS^{2} & RS^{3} \\ 
+R^{2}S & R^{2}S^{2} & R^{2}S^{3} \\
+R^{3}S & R^{3}S^{2} & R^{3}S^{3}\end{pmatrix} = 
+	\begin{pmatrix} S^{3}R^{3} & S^{2}R & SR^{3} \\
+	SR^{2} & S^{2}R^{2} & S^{3}R^{2} \\
+S^{3}R & S^{2}R^{3} & SR\end{pmatrix}.\]
+
+	Así, tenemos que $\displaystyle \forall a,b \in \Z $, $\displaystyle R^{a}S^{b} = S^{b'}R^{a'} $. Es decir, todas las cadenas de más de dos elementos podrán reducirse dejando las $\displaystyle S $ a la derecha y las $\displaystyle R $ a la izquierda. Así, tenemos que 
+	\[G = \left\{ 1, R, R^{2}, R^{3}, S, S^{2}, S^{3}, RS, RS^{2}, RS^{3}, R^{2}S, R^{2}S^{2}, R^{2}S^{3}, R^{3}S, R^{3}S^{2}, R^{3}S^{3}\right\}  .\]
+	Así, tenemos que $\displaystyle 7 \leq \left|G\right| \leq 16 $. Para calcular el orden veamos que ninguno de los elementos se repiten del conjunto que hemos descrito anteriormente. Sabemos que $\displaystyle \forall i,j \in \left\{ 1,2,3\right\}  $ $\displaystyle R^{i}S^{j} \neq 1 $. En efecto, si $\displaystyle R^{i}S^{j} = 1 $, tendríamos que $\displaystyle R^{i} = S^{-j} $, que contradice el análisis que hemos hecho anteriormente. De forma análoga, 
+	\[ R^{i} S^{j} = R^{m}S^{n} \iff R^{i-m} = S^{n-j} \iff i = m \; \text{y} \; n = j.\]
+	Así, tenemos que todos los elementos que hemos puesto en el conjunto anterior no se repiten, por lo que $\displaystyle \left|G\right| = 16 $. 
+\item[(b)] Para calcular el exponente basta con calcular los órdenes de todos los elementos y calcular el mínimo común múltiplo: 
+	\begin{center}
+	\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c |}
+		\hline 
+		$\displaystyle x $ & $\displaystyle 1 $ & $\displaystyle R $ & $\displaystyle R^{2} $ & $\displaystyle R^{3} $ & $\displaystyle S $ & $\displaystyle S^{2} $ & $\displaystyle S^{3} $ & $\displaystyle RS $ & $\displaystyle RS^{2} $ & $\displaystyle RS^{3} $ & $\displaystyle R^{2}S $ & $\displaystyle R^{2}S^{2} $ & $\displaystyle R^{2}S^{3} $ & $\displaystyle R^{3}S $ & $\displaystyle R^{3}S^{2} $ & $\displaystyle R^{3}S^{3} $ \\
+		\hline 
+		$\displaystyle o\left(x\right) $ & $\displaystyle  1 $ & $\displaystyle 4 $ & 2 & 4 & 4 & 2 & 4 & 2 & 4 & 2 & 4 & 2 & 4 & 2 & 4 & 2\\
+		\hline
+	\end{tabular}
+	\end{center}
+Así, tenemos $\displaystyle \exp\left(G\right) = \mcm\left(1,2,4\right) = 4 $. 
+\item[(c)] Para calcular el orden de $\displaystyle R^{2}SRS^{3}RS^{2} $ buscamos la forma reducida de este elemento y buscamos su orden en la tabla calculada en el apartado anterior. Tenemos que
+	\[ R^{2}SRS^{3}RS^{2} = R^{2}SR\left(S^{3}R\right)S^{2} = R^{2}SR\left(R^{3}S\right)S^{2} = R^{2}S S S^{2} = R^{2}.\]
+Así, tenemos que $\displaystyle o\left(R^{2}SRS^{3}RS^{2}\right) = o\left(R^{2}\right) = 2 $. 	
+\end{description}
+\end{sol}
 
 \end{document}

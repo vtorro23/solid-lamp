@@ -42,7 +42,6 @@ Sean $\displaystyle I \subset \R $ un intervalo abierto y $\displaystyle \sigma 
 	\end{split}
 	\]
 \item[(ii)] Si tenemos $\displaystyle L : \R \to \R^{m} $ lineal, definimos $\displaystyle w = L\left(1\right) \in \R^{m} $. Entonces, tenemos que $\displaystyle L\left(h\right) = L\left(h \cdot 1\right) = hL\left(1\right) $. Veamos que $\displaystyle w = \sigma'\left(t_{0}\right) $. Sabemos que
-	\[  .\]
 	\[
 	\begin{split}
 		0 = & \lim_{h \to 0}\frac{\sigma\left(t_{0}+h\right)-\sigma\left(t_{0}\right)-hw}{ \left|h\right|} \\
@@ -114,14 +113,14 @@ Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $ y $\disp
 \[\lim_{h \to 0}\frac{f\left(a+h\right)-f\left(a\right)-L\left(h\right)}{ \|h\|} = 0.\]
 \end{definition}
 \begin{observation}
-Podemos observar que $\displaystyle f\left(a+h\right) = f\left(a\right) + L\left(h\right) + r\left(h\right) $, donde $\displaystyle r\left(h\right) = f\left(a+h\right)-f\left(a\right)+L\left(h\right) $. Entonces, $\displaystyle f $ es diferenciable en $\displaystyle a $ si y solo si $\displaystyle \lim_{h \to 0}\frac{r\left(h\right)}{ \|h\|} = 0 $. En este caso, se denota $\displaystyle r\left(h\right) = o\left(h\right) $ y así tenemos que $\displaystyle f $ es diferenciable en $\displaystyle a $ si y solo si $\displaystyle f\left(a+h\right) = f\left(a\right)+L\left(h\right)+o\left(h\right) $, donde $\displaystyle L : \R^{n} \to \R^{m} $ es lineal.
+Podemos observar que $\displaystyle f\left(a+h\right) = f\left(a\right) + L\left(h\right) + r\left(h\right) $, donde $\displaystyle r\left(h\right) = f\left(a+h\right)-f\left(a\right)-L\left(h\right) $. Entonces, $\displaystyle f $ es diferenciable en $\displaystyle a $ si y solo si $\displaystyle \lim_{h \to 0}\frac{r\left(h\right)}{ \|h\|} = 0 $. En este caso, se denota $\displaystyle r\left(h\right) = o\left(h\right) $ y así tenemos que $\displaystyle f $ es diferenciable en $\displaystyle a $ si y solo si $\displaystyle f\left(a+h\right) = f\left(a\right)+L\left(h\right)+o\left(h\right) $, donde $\displaystyle L : \R^{n} \to \R^{m} $ es lineal.
 \end{observation}
 \begin{prop}
 Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{m} $ y $\displaystyle a \in U $. Si $\displaystyle f $ es diferenciable en $\displaystyle a $ con aplicación lineal $\displaystyle L $, entonces $\displaystyle \forall v \in \R^{n} $ existe $\displaystyle D_{v}f\left(a\right) = L\left(v\right) $. Por tanto, la aplicación $\displaystyle L $ es única y la denotaremos $\displaystyle L = Df\left(a\right) $ y la llamaremos \textbf{diferencial} de $\displaystyle f $ en $\displaystyle a $.
 \end{prop}
 \begin{proof}
 Tomamos $\displaystyle v \in \R^{n} $ con $\displaystyle v \neq 0 $, y consieramos $\displaystyle h = tv $ con $\displaystyle t \in \R $. Entonces, 
-\[\lim_{t \to 0}\frac{f\left(a+tv\right)-f\left(a\right)-L\left(tv\right)}{ \|tv\|} = \lim_{t \to 0}\frac{f\left(a+tv\right)-f\left(a\right)-tL\left(v\right)}{ \left|t\right|} .\]
+\[0 = \lim_{t \to 0}\frac{f\left(a+tv\right)-f\left(a\right)-L\left(tv\right)}{ \|tv\|} = \lim_{t \to 0}\frac{f\left(a+tv\right)-f\left(a\right)-tL\left(v\right)}{ \left|t\right|} .\]
 Por tanto, tenemos que 
 \[0 = \lim_{t \to 0} \left|\frac{f\left(a+tv\right)-f\left(a\right)-tL\left(v\right)}{t}\right| = \lim_{t \to 0} \left|\frac{f\left(a+tv\right)-f\left(a\right)}{t}-L\left(v\right)\right| .\]
 Por tanto, existe $\displaystyle \lim_{t \to 0}\frac{1}{t}\left(f\left(a+tv\right)-f\left(a\right)\right) = L\left(v\right) $. Por otro lado, si $\displaystyle v = 0 $, tenemos que $\displaystyle D_{v}f\left(a\right) = \lim_{t \to 0}\left(f\left(a\right)-f\left(a\right)\right) = 0 = L\left(0\right) $.
@@ -174,12 +173,361 @@ Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{m} 
 Sea $\displaystyle v = \sum^{m}_{i = 1}v_{i}e_{i}\in \R^{m} $. Tenemos que 
 \[
 \begin{split}
-	Df\left(a\right)\left(v\right) = & \left(Df_{1}\left(a\right)\left(v\right), \ldots, Df_{m}\left(a\right)\left(v\right)\right) \\
-	= & \left(Df_{1}\left(a\right)\left(\sum^{m}_{i = 1}v_{i}e_{i}\right), \ldots, Df_{m}\left(a\right)\left(\sum^{n}_{i = 1}v_{i}e_{i}\right)\right) \\
-	= & \left(\sum^{n}_{i = 1}Df_{1}\left(a\right)\left(e_{i}\right), \ldots, \sum^{n}_{i = 1}v_{i}Df_{m}\left(a\right)\left(e_{i}\right)\right) \\
-	= & \left(\sum^{n}_{i = 1}v_{i}\frac{\partial f_{1}}{\partial x_{i}}\left(a\right), \ldots, \sum^{n}_{ i= 1}\frac{\partial f_{m}}{\partial x_{i}}\left(a\right)\right) \\
+	Df\left(a\right)\left(v\right) = & \left(Df_{1}\left(a\right)\left(v\right), \ldots, Df_{m}\left(a\right)\left(v\right)\right) 
+	=  \left(Df_{1}\left(a\right)\left(\sum^{m}_{i = 1}v_{i}e_{i}\right), \ldots, Df_{m}\left(a\right)\left(\sum^{n}_{i = 1}v_{i}e_{i}\right)\right) \\
+	= & \left(\sum^{n}_{i = 1}v_{i}Df_{1}\left(a\right)\left(e_{i}\right), \ldots, \sum^{n}_{i = 1}v_{i}Df_{m}\left(a\right)\left(e_{i}\right)\right) 
+	=  \left(\sum^{n}_{i = 1}v_{i}\frac{\partial f_{1}}{\partial x_{i}}\left(a\right), \ldots, \sum^{n}_{ i= 1}v_{i}\frac{\partial f_{m}}{\partial x_{i}}\left(a\right)\right) \\
 	= & Jf\left(a\right) \begin{pmatrix} v_{1} \\ \vdots \\ v_{n} \end{pmatrix}.
 \end{split}
 \]
 \end{proof}
+\begin{observation}
+Podemos establecer dos límites equivalentes que definen la diferenciabilidad:
+\[\lim_{h \to 0}\frac{f\left(a + h\right)-f\left(a\right)-L\left(h\right)}{\|h\|} = \lim_{x \to a}\frac{f\left(x\right)-f\left(a\right)-L\left(x-a\right)}{\|x-a\|} .\]
+\end{observation}
+\begin{prop}
+Si $\displaystyle f $ es constante, entonces $\displaystyle f $ es diferenciable en todos los puntos y $\displaystyle Df\left(a\right) = 0 $, $\displaystyle \forall a \in U $.
+\end{prop}
+\begin{proof}
+En efecto, tenemos que si $\displaystyle x \to a $ 
+\[\frac{f\left(x\right)-f\left(a\right)-0}{\|x-a\|} = \frac{0}{ \| x- a\|} \to 0 .\]
+\end{proof}
+\begin{prop}
+Si $\displaystyle f $ es lineal, tenemos que $\displaystyle f $ es diferenciable en todos los puntos y $\displaystyle Df\left(a\right) = f $, $\displaystyle \forall a \in U $. 
+\end{prop}
+\begin{proof}
+En efecto, tenemos que
+\[\frac{f\left(x\right)-f\left(a\right)-f\left(x-a\right)}{ \|x-a\|} = \frac{f\left(x\right)-f\left(a\right)-f\left(x\right)+f\left(a\right)}{\|x-a\|} = 0 .\]	
+\end{proof}
+\begin{prop}
+Si $\displaystyle f,g : U \to \R^{m} $ son diferenciables en $\displaystyle a \in U $ y $\displaystyle \lambda, \mu \in \R $, entonces $\displaystyle \lambda f + \mu g $ es diferenciable en $\displaystyle a $ y  
+\[ D\left(\lambda f + \mu g\right)\left(a\right) = \lambda Df\left(a\right) + \mu Df\left(a\right).\]
+\end{prop}
+\begin{proof}
+En efecto, tenemos que
+\[
+\begin{split}
+ & \frac{\left(\lambda f + \mu g\right)\left(x\right) - \left(\lambda f + \mu g\right)\left(a\right) - \left(\lambda Df\left(a\right)+\mu Dg\left(a\right)\right)\left(x-a\right)}{\|x-a\|} \\
+	= & \frac{\lambda \left[f\left(x\right)-f\left(a\right) - Df\left(a\right)\left(x-a\right)\right] +\mu \left[g\left(x\right)-g\left(a\right)-Dg\left(a\right)\left(x-a\right)\right] }{\|x-a\|} \\
+	= & \lambda \left(\frac{f\left(x\right)-f\left(a\right)-Df\left(a\right)\left(x-a\right)}{\|x-a\|}\right) + \mu \left(\frac{g\left(x\right)-g\left(a\right)-Dg\left(a\right)\left(x-a\right)}{\|x-a\|}\right) \to 0.
+\end{split}
+\]
+\end{proof}
+\begin{notation}
+	Denotamos $\displaystyle \mathcal{L}\left(\R^{n}, \R^{m}\right) = \left\{ L : \R^{n} \to \R^{m}\; : \; L \; \text{lineal}\right\}  $, que es un espacio vectorial de dimensión $\displaystyle n \times m $. Para $\displaystyle L \in \mathcal{L}\left(\R^{n}, \R^{m}\right) $ definimos la norma matricial \footnote{Por ser $\displaystyle L $ una aplicación lineal (y por ello continua) y por ser $\displaystyle \overline{B}\left(0,1\right) $ un conjunto compacto, existe el supremo del conjunto.} 
+	\[ \|L\| = \sup \left\{ \|L\left(u\right)\| : \|u\|\leq 1\right\} = \sup \left\{ \|L\left(u\right)\| \; : \; u \in \overline{B}\left(0,1\right)\right\} < \infty .\]
+\end{notation}
+\begin{prop}
+La aplicación definida anteriormente es efectivamente una norma.
+\end{prop}
+\begin{proof}
+	\begin{itemize}
+	\item Veamos que si $\displaystyle \|L\| = 0 $, entonces $\displaystyle L = 0 $. Para ello, supongamos que $\displaystyle L \neq 0 $. Entonces, existe $\displaystyle x \in \R^{n} $ tal que $\displaystyle L\left(x\right) \neq 0 $. Así, tenemos que $\displaystyle x \neq 0 $ y podemos considerar $\displaystyle u = \frac{x}{\|x\|} \in \overline{B}\left(0,1\right) $. Así, tenemos que
+\[ \|L\| \geq \|L\left(u\right)\| = \left\|L\left(\frac{x}{\|x\|}\right)\right\| = \left\|\frac{1}{\|x\|}L\left(x\right)\right\| = \frac{\|L\left(x\right)\|_{\R^{m}}}{\|x\|_{\R^{n}}} \neq 0.\]
+Así, tenemos que si $\displaystyle \|L\| = 0 $ entonces $\displaystyle L = 0 $. 
+\item Por otro lado, tenemos que si $\displaystyle \lambda \in \R $,
+\[\|\lambda L\| = \sup \left\{ \|\lambda L\left(u\right)\| \; : \; u \in \overline{B}\left(0,1\right)\right\} = \left|\lambda \right| \sup \left\{ \|L\left(u\right)\| \; : \; u \in \overline{B}\left(0,1\right)\right\} = \left|\lambda \right| \|L\| .\]
+\item Similarmente, tenemos que $\displaystyle \forall u \in \overline{B}\left(0,1\right) $,
+\[\|\left(L_{1}+L_{2}\right)\left(u\right)\| \leq \|L_{1}\left(u\right) + L_{2}\left(u\right)\| \leq \|L_{1}\left(u\right)\| + \|L_{2}\left(u\right)\| \leq \|L_{1}\| + \|L_{2}\| .\]
+Así, tenemos que $\displaystyle \|L_{1} + L_{2} \| \leq \|L_{1}\| + \|L_{2}\| $.
+	\end{itemize}
+\end{proof}
+\begin{observation}
+Por tanto, $\displaystyle \| \cdot \| $ define una norma en $\displaystyle \mathcal{L}\left(\R^{n}, \R^{m}\right) $ que se llamará \textbf{matricial} porque 
+\[\|L\left(x\right)\|_{\R^{m}} \leq \|L\| \|x\|_{\R^{n}}, \; \forall x \in \R^{n} .\]
+En efecto, para $\displaystyle x = 0 $ es trivial. Si $\displaystyle x \neq 0 $, tomamos $\displaystyle u = \frac{x}{\|x\|} \in \overline{B}\left(0,1\right) $ por lo que $\displaystyle \|L\left(u\right)\| \leq \|L\| $. Así, obtenemos que
+\[\|L\left(x\right)\|_{\R^{m}} \leq \|L\| \cdot \|x\|_{\R^{n}} .\]
+\end{observation}
+\begin{prop}
+Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $ y $\displaystyle f : U \to \R^{m} $. Si $\displaystyle f $ es diferenciable en $\displaystyle a $, entonces existen $\displaystyle r > 0 $ y $\displaystyle M > 0 $ tales que
+\[ \|f\left(x\right)-f\left(a\right)\| \leq M \|x-a\|, \;  \|x - a\| \leq r .\]
+\end{prop}
+\begin{proof}
+Dado $\displaystyle \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \|x-a\| \leq \delta  $, entonces 
+\[ \|f\left(x\right)-f\left(a\right)-Df\left(a\right)\left(x-a\right)\|\leq \epsilon \|x-a\| .\]
+Dado $\displaystyle \epsilon = 1 $, existe $\displaystyle r > 0 $ tal que si $\displaystyle \|x-a\| \leq r $, entonces 
+\[ \|f\left(x\right)-f\left(a\right)-Df\left(a\right)\left(x-a\right)\| \leq  \|x-a\| .\]
+Así, nos queda que 
+\[ .\]
+\[
+\begin{split}
+	\|f\left(x\right)-f\left(a\right)\| \leq & \|x-a\| + \|Df\left(a\right)\left(x-a\right)\| \\
+	\leq & \|x-a\| + \|Df\left(a\right)\| \|x-a\| = \left(\|Df\left(a\right)\| + 1\right) \|x-a\|.
+\end{split}
+\]
 
+Así, basta con tomar $\displaystyle M = \|Df\left(a\right)\|+1 $.
+\end{proof}
+\begin{colorary}
+Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $ y $\displaystyle f : U \to \R^{m} $. Si $\displaystyle f $ es diferenciable en $\displaystyle a $ entonces $\displaystyle f $ es continua en $\displaystyle a $.
+\end{colorary}
+\begin{theorem}[Regla de la cadena]
+Sean $\displaystyle U \subset \R^{n}, V \subset \R^{m} $ abiertos, $\displaystyle f : U \to \R^{m} $ y $\displaystyle g : V \to \R^{p} $ con $\displaystyle f\left(U\right) \subset V $, y sea $\displaystyle a \in U $. Entonces, si $\displaystyle f $ es diferenciable en $\displaystyle a $ y $\displaystyle g $ es diferenciable en $\displaystyle f\left(a\right) $, entonces $\displaystyle g \circ f $ es diferenciable en $\displaystyle a $ y 
+\[D\left(g\circ f\right)\left(a\right) = Dg\left(f\left(a\right)\right)\circ Df\left(a\right) .\]
+Por tanto, $\displaystyle J\left(g\circ f\right)\left(a\right) = Jg\left(f\left(a\right)\right) \cdot J\left(f\left(a\right)\right) $.
+\end{theorem}
+\begin{proof}
+Por la proposición anterior sabemos que existen $\displaystyle r > 0 $ y $\displaystyle M > 0 $ tales que 
+\[\|f\left(x\right)-f\left(a\right)\| \leq M \|x-a\|, \; \|x-a\| \leq r .\]
+Sea ahora $\displaystyle M' = \|Dg\left(f\left(a\right)\right)\| $ y denotamos $\displaystyle b = f\left(a\right) $. Dado $\displaystyle \epsilon > 0 $ consideramos $\displaystyle \epsilon ' = \frac{\epsilon }{M + M'} > 0 $. Existe $\displaystyle \delta _{1} > 0 $ tal que si $\displaystyle \|y - b\| \leq \delta _{1} $, entonces 
+\[\|g\left(y\right)-g\left(b\right)-Dg\left(b\right)\left(y-b\right)\| \leq \epsilon '\|y - b\| .\]
+También tenemos que existe $\displaystyle \delta _{2} > 0 $ tal que si $\displaystyle \|x-a\| \leq \delta_{2} $, entonces
+\[\|f\left(x\right)-f\left(a\right)-Df\left(a\right)\left(x-a\right)\| \leq \epsilon ' \|x-a\| .\]
+Sea $\displaystyle \delta = \min \left\{ r,\frac{\delta _{1}}{M}, \delta _{2}\right\} > 0 $. Si $\displaystyle \|x-a\| \leq \delta  $, en particular tenemos que
+\[\|f\left(x\right)-f\left(a\right)\| \leq M \|x-a\| \leq M \cdot \frac{\delta _{1}}{M} = \delta _{1} .\]
+Así, tomando $\displaystyle y = f\left(x\right) $ tenemos que
+\[
+\begin{split}
+ \|g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right) - Dg\left(f\left(a\right)\right)\left(f\left(x\right)-f\left(a\right)\right) \| \leq \epsilon ' \|f\left(x\right)-f\left(a\right)\| \leq \epsilon ' M \|x-a\|.
+\end{split}
+\]
+Así, nos queda 
+\[
+\begin{split}
+& \|g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right) -Dg\left(f\left(a\right)\right)\left(Df\left(a\right)\left(x-a\right)\right)\| \\
+\leq & \|g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right) - Dg\left(f\left(a\right)\right)\left(f\left(x\right)-f\left(a\right)\right) \| + \|Dg\left(f\left(a\right)\right) \left(f\left(x\right)-f\left(a\right)-Df\left(a\right)\left(x-a\right)\right)\| \\
+\leq & \epsilon ' M \|x-a\| + \|Dg\left(f\left(a\right)\right)\| \|f\left(x\right)-f\left(a\right) - Df\left(a\right)\left(x-a\right)\| \leq \epsilon ' M' \|x-a\| + M\epsilon ' \|x-a\|\\
+= & \epsilon'\left(M + M'\right)\|x-a\| = \epsilon \|x-a\|.
+\end{split}
+\]
+\end{proof}
+\begin{theorem}[Condición suficiente de diferenciabilidad]
+Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $ y $\displaystyle f : U \to \R^{m} $. Supongamos que $\displaystyle \forall j = 1, \ldots, m $, $\displaystyle \forall i = 1, \ldots, n $, $\displaystyle \forall x \in U $, existe $\displaystyle \frac{\partial f}{\partial x_{i}}\left(x\right) $ y además las funciones $\displaystyle \frac{\partial f_{j}}{\partial x_{i}} : U \to \R^{m} $ son continuas en $\displaystyle a $. Entonces, $\displaystyle f $ es diferenciable en $\displaystyle a $.
+\end{theorem}
+\begin{proof}
+Es suficiente considerar el caso $\displaystyle m = 1 $, puesto que $\displaystyle f = \left(f_{1}, \ldots, f_{m}\right) $ es diferenciable en $\displaystyle a $ si y solo si $\displaystyle f_{j}  $ es diferenciable en $\displaystyle a $, $\displaystyle \forall j = 1, \ldots, m $. Como $\displaystyle U $ es abierto y $\displaystyle a \in U $, existe $\displaystyle r > 0 $ tal que $\displaystyle B_{\infty}\left(a,r\right) \subset U $.
+Sea $\displaystyle x \in B_{\infty}\left(a,r\right) $, tenemos que
+\[
+\begin{split}
+	f\left(x\right)-f\left(a\right) = & f\left(x_{1}, \ldots, x_{n}\right) - f\left(a_{1}, \ldots, a_{n}\right) \\
+	= & f\left(x_{1}, \ldots, x_{n}\right) -f\left(a_{1}, x_{2}, \ldots, x_{n}\right) + f\left(a_{1}, x_{2}, \ldots, x_{n}\right) \\
+	- &  f\left(a_{1}, a_{2}, x_{3}, \ldots, x_{n}\right) + \cdots + f\left(a_{1}, a_{2}, \ldots, a_{n-1}, x_{n}\right) - f\left(a_{1}, \ldots, a_{n}\right).
+\end{split}
+\]
+Denotamos $\displaystyle \varphi\left(t\right) = f\left(t,x_{2}, \ldots, x_{n}\right) $ con $\displaystyle t \in \left(a_{1}-r, a_{1}+r\right) $, tenemos que si aplicamos el teorema del valor medio encontramos $\displaystyle c_{1}  $ un punto intermedio entre $\displaystyle a_{1} $ y $\displaystyle x_{1} $ tal que
+\[f\left(x_{1}, \ldots, x_{n}\right) -f\left(a_{1}, x_{2}, \ldots, x_{n}\right) = \varphi\left(x_{1}\right)-\varphi\left(a_{1}\right) = \varphi\left(c_{1}\right)\left(x_{1}-a_{1}\right)   .\]
+En efecto, podemos aplicar el teorema del valor medio puesto que $\displaystyle \varphi $ es derivable en $\displaystyle \left(a_{1}-r_{1}, a_{1}+r\right) $ y 
+\[\varphi'\left(t\right) = \lim_{h \to 0}\frac{f\left(t+h, x_{2}, \ldots, x_{n}\right)-f\left(t, x_{2}, \ldots, x_{n}\right)}{t} = \frac{\partial f}{\partial x_{1}}\left(t, x_{2}, \ldots, x_{n}\right) .\]
+Así, aplicando el mismo razonamiento nos queda que 
+\[
+\begin{split}
+	f\left(x\right)-f\left(a\right) = & \left(x_{1}-a_{1}\right)\frac{\partial f}{\partial x_{1}}\left(c_{1}, x_{2}, \ldots, x_{n}\right) + \left(x_{2}-a_{2}\right)\frac{\partial f}{\partial x_{2}}\left(a_{1}, c_{2}, \ldots, x_{n}\right) \\
+	+ &  \cdots + \left(x_{n}-a_{n}\right)\frac{\partial f}{\partial x_{n}}\left(a_{1}, \ldots, a_{n-1}, c_{n}\right) .
+\end{split}
+\]
+donde cada $\displaystyle c_{i} $ es un punto intermedio entre $\displaystyle a_{i} $ y $\displaystyle x_{i} $, $\displaystyle \forall i = 1, \ldots, n $. Ahora, definimos $\displaystyle L\left(h\right) = \sum^{n}_{i = 1}h_{i}\frac{\partial f}{\partial x_{i}}\left(a\right) $, por tanto tendremos que
+\[L\left(x-a\right) = \sum^{n}_{i = 1}\left(x_{i}-a_{i}\right) \cdot \frac{\partial f}{\partial x_{i}}\left(a\right) .\]
+Así, nos queda que
+\[
+\begin{split}
+	 f\left(x\right)-f\left(a\right) - L\left(x-a\right) 
+	 = & \left(x_{1}-a_{1}\right) \left(\frac{\partial f}{\partial x_{1}}\left(a_{1}, x_{2}, \ldots, x_{n}\right)-\frac{\partial f}{\partial x_{1}}\left(a_{1}, \ldots, a_{n}\right)\right) \\
+	+ &  \cdots + \left(x_{n}-a_{n}\right)\left(\frac{\partial f}{\partial x_{n}}\left(a_{1}, \ldots, a_{n-1}, c_{n}\right)-\frac{\partial f}{\partial x_{n}}\left(a_{1}, \ldots, a_{n}\right)\right) .
+\end{split}
+\]
+De esta forma la fracción nos queda
+\[
+\begin{split}
+	\frac{ \left|f\left(x\right)-f\left(a\right)-L\left(x-a\right)\right|}{ \|x-a\|} \leq & \frac{ \left|x_{1}-a_{1}\right|}{\|x-a\|} \left|\frac{\partial f}{\partial x_{1}}\left(a_{1}, x_{2}, \ldots, x_{n}\right)-\frac{\partial f}{\partial x_{1}}\left(a_{1}, \ldots, a_{n}\right)\right| \\
+	+ & \cdots + \frac{ \left|x_{n}-a_{n}\right|}{\|x-a\|} \left|\frac{\partial f}{\partial x_{n}}\left(a_{1}, \ldots, a_{n-1}, c_{n}\right)-\frac{\partial f}{\partial x_{n}}\left(a_{1}, \ldots, a_{n}\right)\right|.
+\end{split}
+\]
+Por tanto, cuando $\displaystyle x \to a $ tenemos que $\displaystyle \forall i = 1, \ldots, n $, $\displaystyle c_{i} \to a_{i} $ por lo que 
+\[
+\begin{split}
+	\frac{\partial f}{\partial x_{1}}\left(c_{1}, x_{2}, \ldots, x_{n}\right) & \to \frac{\partial f}{\partial x_{1}}\left(a\right) \\
+& \vdots \\
+	\frac{\partial f}{\partial x_{n}}\left(a_{1}, \ldots, a_{n-1}, c_{n}\right) & \to \frac{\partial f}{\partial x_{n}}\left(a\right).
+\end{split}
+\]
+\end{proof}
+\begin{eg}
+Consideremos $\displaystyle f\left(x,y,z\right) = x^{2}z + \sin\left(x+y+z\right) $. Tenemos que $\displaystyle f : \R^{3} \to \R $. Además, 
+\[\frac{\partial f}{\partial x} = 2xz + \cos\left(x+y+z\right), \quad \frac{\partial f}{\partial y}= \cos\left(x+y+z\right), \quad \frac{\partial f}{\partial z} = x^{2} + \cos\left(x+y+z\right) .\]
+Todas las derivadas son continuas en $\displaystyle \R^{3} $, por lo que $\displaystyle f $ es diferenciable en todo punto de $\displaystyle \R^{3} $. 
+\end{eg}
+\begin{observation}
+El mismo resultado se obtiene $\displaystyle \forall j = 1, \ldots, m $, $\displaystyle \forall i = 1, \ldots, n-1 $, $\displaystyle \frac{\partial f}{\partial x_{i}} $ es continua en $\displaystyle a $ y además existe $\displaystyle \frac{\partial f}{\partial x_{n}}\left(a\right) $.
+\end{observation}
+\begin{colorary}
+Sea $\displaystyle U \subset \R^{n} $ abierto y $\displaystyle f : U \to \R^{m} $. Si $\displaystyle f $ admite todas sus derivadas parciales en $\displaystyle U $ y son continuas en $\displaystyle U $, entonces $\displaystyle f $ es diferenciable en $\displaystyle U $.
+\end{colorary}
+\begin{lema}
+La función $\displaystyle p : \R^{2} \to \R $ con $\displaystyle p\left(x,y\right) = xy $ es diferenciable en $\displaystyle \R^{2} $ y $\displaystyle \forall \left(x_{0}, y_{0}\right) \in \R^{2} $,
+\[Dp\left(x_{0},y_{0}\right)\left(u,v\right) = x_{0}v + y_{0}u .\]
+\end{lema}
+\begin{proof}
+Es trivial ver que
+\[\frac{\partial p}{\partial x}\left(x,y\right) = y, \quad \frac{\partial f}{\partial y}\left(x,y\right) = x .\]
+Como ambas funciones son continuas en $\displaystyle \R^{2} $, por el teorema anterior tenemos que $\displaystyle p $ es diferenciable en $\displaystyle \R^{2} $. Por otro lado,
+\[Dp\left(x_{0},y_{0}\right)\left(u,v\right) = \left(\frac{\partial p}{\partial x}\left(x_{0}, y_{0}\right), \frac{\partial p}{\partial y}\left(x_{0}, y_{0}\right)\right)\begin{pmatrix} u \\ v \end{pmatrix} = x_{0}v + y_{0}u .\]
+\end{proof}
+\begin{lema}
+	Sean $\displaystyle A = \left\{ \left(x,y\right) \; : \; y \neq 0\right\}  $ y $\displaystyle q : A \to \R $ con $\displaystyle q\left(x,y\right) = \frac{x}{y} $. Entonces $\displaystyle q $ es diferenciable en $\displaystyle A $ y $\displaystyle \forall \left(x_{0}, y_{0}\right) \in A $
+	\[Dq\left(x_{0},y_{0}\right)\left(u,v\right) = \frac{y_{0}u - x_{0}v}{y_{0}^{2}}.\]
+\end{lema}
+\begin{proof}
+Es trivial ver que
+\[\frac{\partial q}{\partial x}\left(x,y\right) = \frac{1}{y}, \quad \frac{\partial q}{\partial x}\left(x,y\right) = -\frac{x}{y^{2}} .\]
+Como son continuas en $\displaystyle A $ tenemos que $\displaystyle q $ es diferenciable en $\displaystyle A $. Por otro lado,
+\[Dq\left(x_{0}, y_{0}\right)\left(u,v\right) = \left(\frac{1}{y_{0}}, -\frac{x_{0}}{y_{0}^{2}}\right)\begin{pmatrix} u \\ v \end{pmatrix} = \frac{y_{0}u - x_{0}v}{y_{0}^{2}} .\]
+\end{proof}
+\begin{colorary}[de la Regla de la Cadena]
+Sean $\displaystyle U \subset \R^{n} $ abierto y $\displaystyle f \cdot g : U \to \R $ diferenciable en $\displaystyle a $. 
+\begin{enumerate}
+\item Entonces, $\displaystyle f \cdot g $ es diferenciable en $\displaystyle a $ y 
+\[D\left(f \cdot g\right)\left(a\right) = g\left(a\right)Df\left(a\right) + f\left(a\right)Dg\left(a\right) .\]
+\item Si además, $\displaystyle g\left(a\right) \neq 0 $, entonces $\displaystyle \frac{f}{g} $ es diferenciable en $\displaystyle a $ y
+	\[D\left(\frac{f}{g}\right)\left(a\right) = \frac{g\left(a\right)Df\left(a\right)-f\left(a\right)Dg\left(a\right)}{g\left(a\right)^{2}} .\]
+\end{enumerate}
+\end{colorary}
+\begin{proof}
+\begin{enumerate}
+\item Podemos considerar la composición de funciones
+\[
+\begin{split}
+	U & \to \R^{2} \to \R \\
+	x & \to \left(f\left(x\right), g\left(x\right)\right) \to f\left(x\right)g\left(x\right).
+\end{split}
+\]
+Así, nos queda que $\displaystyle f \cdot g = p\circ \left(f,g\right)$. De esta forma, tenemos que $\displaystyle \forall v \in \R^{n} $ 
+\[
+\begin{split}
+	D\left(f \cdot g\right)\left(a\right)\left(v\right) = & \left[D\left(p\left(f\left(a\right), g\left(a\right)\right)\right) \circ D\left(f,g\right)\left(a\right)\right]\left(v\right) \\
+= & Dp\left(f\left(a\right), g\left(a\right)\right) \left(Df\left(a\right)\left(v\right), Dg\left(a\right)\left(v\right)\right) = g\left(a\right) \cdot Df\left(a\right)\left(v\right) + f\left(a\right) \cdot Dg\left(a\right)\left(v\right).
+\end{split}
+\]
+\item Según el lema previo, la función $\displaystyle q : A =\left\{ \left(x,y\right) \; : \; y \neq 0\right\}  \to \R : \left(x,y\right) \to \frac{x}{y} $ es diferenciable en $\displaystyle A $. Como $\displaystyle g\left(a\right) \neq 0 $ y $\displaystyle g $ es continua, el conjunto $\displaystyle V = \left\{ x \in U \; : \; g\left(x\right) \neq 0\right\}  $ es abierto de $\displaystyle \R^{n} $. Así, la función $\displaystyle \frac{f}{g} $ está bien definida en $\displaystyle V $ y tenemos que
+	\[
+	\begin{split}
+		\frac{f}{g}: V & \to^{\left(f,g\right)} A \to^{q} \R \\
+		x & \to \left(f\left(x\right), g\left(x\right)\right)  \to \frac{f\left(x\right)}{g\left(x\right)}.
+	\end{split}
+	\]
+Puesto que $\displaystyle h = \left(f,g\right) $ es diferenciable en $\displaystyle A $ y $\displaystyle Dh\left(a\right)\left(v\right) = \left(Df\left(a\right)\left(v\right), Dg\left(a\right)\left(v\right)\right) $, tenemos que
+\[
+\begin{split}
+D\left(\frac{f}{g}\right)\left(a\right) = D\left(q\circ h\right)\left(a\right) = Dq\left(h\left(a\right)\right) \circ Dh\left(a\right) .
+\end{split}
+\]
+Así, $\displaystyle \forall w \in \R^{n} $ se cumple que
+\[
+\begin{split}
+	D\left(\frac{f}{g}\right)\left(a\right)\left(w\right) = & Dq\left(f\left(a\right), g\left(a\right)\right)\left[Dh\left(a\right)\left(w\right)\right] = Dq\left(f\left(a\right), g\left(a\right)\right)\left(Df\left(a\right)\left(w\right), Dg\left(a\right)\left(w\right)\right) \\
+	= & \frac{g\left(a\right)Df\left(a\right)\left(w\right)-f\left(a\right)Dg\left(a\right)\left(w\right)}{g\left(a\right)^{2}} .
+\end{split}
+\]
+\end{enumerate}
+\end{proof}
+\begin{observation}
+Sean $\displaystyle f,g $ diferenciables y $\displaystyle h = g\circ f $. Por la regla de la cadena tenemos que $\displaystyle Dh\left(a\right)=Dg\left(f\left(a\right)\right)\circ Df\left(a\right) $ y que $\displaystyle Jh\left(a\right)=Jg\left(f\left(a\right)\right) \cdot Jf\left(a\right) $. Así, nos queda que
+\[\begin{pmatrix} \frac{\partial h_{1}}{\partial x_{1}} & \cdots & \frac{\partial h_{1}}{\partial x_{n}} \\ \vdots & & \vdots \\ \frac{\partial h_{p}}{\partial x_{1}} & \cdots & \frac{\partial h_{p}}{\partial x_{n}} \end{pmatrix}_{a}= \begin{pmatrix} \frac{\partial g_{1}}{\partial y_{1}} & \cdots & \frac{\partial g_{1}}{\partial y_{m}} \\ \vdots & & \vdots \\ \frac{\partial g_{p}}{\partial y_{1}} & \cdots & \frac{\partial g_{p}}{\partial y_{m}} \end{pmatrix}_{f\left(a\right)}
+\cdot \begin{pmatrix} \frac{\partial f_{1}}{\partial x_{1}} & \cdots & \frac{\partial f_{1}}{\partial x_{n}} \\ 
+\vdots & & \vdots \\ 
+\frac{\partial f_{m}}{\partial x_{1}} & \cdots & \frac{\partial f_{m}}{\partial x_{n}}\end{pmatrix}_{a}.\]
+Así, si cogemos la columna $\displaystyle i $ obtenemos que 
+\[\frac{\partial h_{k}}{\partial x_{i}}\left(a\right) = \sum^{m}_{j = 1}\frac{\partial g_{k}}{\partial y_{j}}f\left(a\right) \cdot \frac{\partial f_{j}}{\partial x_{i}}\left(a\right) .\]
+Convencionalmente, la regla de la cadena se escribe de la forma
+\[\frac{\partial z_{k}}{\partial x_{i}} = \sum^{m}_{ j= 1}\frac{\partial z_{k}}{\partial y_{j}} \cdot \frac{\partial y_{j}}{\partial x_{i}} .\]
+\end{observation}
+\begin{eg}
+Consideremos $\displaystyle u = x^{2}+3y $, $\displaystyle v = \sin\left(x-y\right) $ y $\displaystyle w = y $. Consideremos la aplicación $\displaystyle z = 2u-v^{2}+w $. Tenemos que 
+\[
+\begin{split}
+	\frac{\partial z}{\partial x} = & \frac{\partial z}{\partial u} \cdot \frac{\partial u}{ \partial x} + \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial x} + \frac{\partial z}{\partial w} \cdot \frac{\partial w}{\partial x} \\
+	= &  4x -2v\cos\left(x-y\right) = 4x -2\sin\left(x-y\right)\cos\left(x-y\right).
+\end{split}
+\]
+Análogamente, 
+\[
+\begin{split}
+	\frac{\partial z}{\partial y} = & \frac{\partial z}{\partial u} \cdot \frac{\partial u}{ \partial y} + \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial y} + \frac{\partial z}{\partial w} \cdot \frac{\partial w}{\partial y} \\
+	= &  6 +2v\cos\left(x-y\right) + 1 = 7 + 2\sin\left(x-y\right)\cos\left(x-y\right).
+\end{split}
+\]
+También las podríamos haber calculado con el producto de las matrices jacobianas. 
+\end{eg}
+\begin{definition}[Vector gradiente]
+Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R $ diferenciable en $\displaystyle a \in U $. Se define el \textbf{vector gradiente} de $\displaystyle f $ en $\displaystyle a $ como 
+\[\nabla f\left(a\right)= \left(\frac{\partial f}{\partial x_{1}}\left(a\right), \ldots, \frac{\partial f}{\partial x_{n}}\left(a\right)\right) \in \R^{n} .\]
+\end{definition}
+\begin{observation}
+Tenemos que $\displaystyle \forall w \in \R^{n} $,
+\[Df\left(a\right)w = \sum^{n}_{i = 1}\frac{\partial f\left(a\right)}{\partial x_{i}}w_{i} = \left\langle \nabla f\left(a\right), w \right\rangle  .\]
+\end{observation}
+\begin{observation}
+Sea $\displaystyle I \subset \R $ un intervalo abierto y $\displaystyle f : I \to \R^{n} $. Sabemos que $\displaystyle f $ es diferenciable en $\displaystyle t_{0} \in I $ si y solo si $\displaystyle f $ es derivable en $\displaystyle t_{0} $ y además $\displaystyle f'\left(t_{0}\right) = Df\left(t_{0}\right)\left(1\right) $. 
+\end{observation}
+\begin{colorary}
+Sean $\displaystyle I \subset \R $ un intervalo abierto, $\displaystyle t_{0} \in I $; $\displaystyle f : I \to \R^{n} $ derivable en $\displaystyle t_{0} $ con $\displaystyle f\left(I\right) \subset U $ abierto; $\displaystyle g : U \to \R $ diferenciable en $\displaystyle a = f\left(t_{0}\right) $. Entonces, $\displaystyle g\circ f : I \to U \to \R $ es derivable en $\displaystyle t_{0} $ y además
+\[\left(g\circ f\right)'\left(t_{0}\right) = \left\langle \nabla g\left(f\left(t_{0}\right)\right), f'\left(t_{0}\right) \right\rangle  .\]
+\end{colorary}
+\begin{proof}
+Es fácil ver que
+\[\left(g\circ f\right)'\left(t_{0}\right) = D\left(g\circ f\right)\left(t_{0}\right)\left(1\right) = Dg\left(f\left(t_{0}\right)\right)\left(f'\left(t_{0}\right)\right) = \left\langle \nabla g\left(f\left(t_{0}\right)\right), f'\left(t_{0}\right) \right\rangle  .\]
+\end{proof}
+\section{Conjuntos de nivel}
+\begin{definition}[Conjuntos de nivel]
+Sean $\displaystyle U \subset \R^{n} $ abierto y $\displaystyle F : U \to \R $ diferenciable en $\displaystyle U $. Se define el \textbf{conjunto de nivel} de $\displaystyle F $ correspondiente al valor $\displaystyle r \in \R $ como 
+\[S_{r} = \left\{ x \in U \; : \; F\left(x\right) = r\right\}  .\]
+\end{definition}
+\begin{eg}
+\begin{enumerate}
+\item Si consideramos $\displaystyle F : \R^{2} \to \R $ con $\displaystyle F\left(x,y\right) = x^{2}+y^{2} $. Para un $\displaystyle r \in \R $ tenemos que 
+	\[S_{r} = 
+	\begin{cases}
+	\emptyset, \; r < 0 \\ 
+	\left\{ \left(0,0\right)\right\} , \; r = 0 \\
+	\left\{ \left(x,y\right) \; : \; x^{2} +y^{2} = r\right\} , \; r > 0
+	\end{cases}
+	.\]
+\item Consideremos $\displaystyle F\left(x,y\right) = xy $. Tenemos que sus curvas de nivel son hipérbolas si $\displaystyle r \neq 0 $ y los ejes de coordenadas en el caso de que $\displaystyle r = 0 $. 	
+\item Si tomamos $\displaystyle F\left(x,y,z\right) = x^{2}+y^{2}+z^{2} $, obtenemos superficies esféricas para $\displaystyle r > 0 $; el origen si $\displaystyle r = 0 $; y el conjunto vacío si $\displaystyle r < 0 $.
+\item Consideremos $\displaystyle F : \R^{3} \to \R $ con $\displaystyle F\left(x,y,z\right)= x^{2}+y^{2} -z^{2} $. En el caso $\displaystyle r = 0 $ tenemos el conjunto de nivel dado por la ecuación $\displaystyle z^{2} = x^{2} +y^{2} $, que es un cono. Si $\displaystyle r = 1 $, tenemos el conjunto de nivel dado por la ecuación $\displaystyle x^{2}+y^{2} = r + z^{2} $ por lo que obtenemos un hiperboloide. Si $\displaystyle r = -1 $, obtenemos el conjunto de nivel dado por la ecuación $\displaystyle x^{2} +y^{2} - r = + z^{2} $, es decir, $\displaystyle z = \pm\sqrt{x^{2}+y^{2}-r} $, que es un paraboloide.
+\end{enumerate}
+\end{eg}
+\begin{prop}
+Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle F : U \to \R $ diferenciable, $\displaystyle r \in \R $ y sea $\displaystyle p \in S_{r} $. Sea $\displaystyle \sigma : I \to \R^{n} $ una curva diferenciable con $\displaystyle \sigma\left(t_{0}\right) = p $ y tal que $\displaystyle \Imagen\left(\sigma \right)\subset S_{r} $. Entonces, $\displaystyle \nabla F\left(p\right) \perp \sigma'\left(t_{0}\right) $.
+\end{prop}
+\begin{proof}
+Consideremos la composición
+\[I \to ^{\sigma } S_{r} \subset U \to ^{F} \R .\]
+Tenemos que $\displaystyle F\circ \sigma\left(t\right) = r $, $\displaystyle \forall t \in I $. Consecuentemente, 
+\[0 = \left(F\circ \sigma \right)'\left(t\right) = \left\langle \nabla F\left(\sigma \left(t\right)\right), \sigma'\left(t\right) \right\rangle  .\]
+Por lo que $\displaystyle \nabla F\left(p\right) \perp\sigma'\left(t_{0}\right) $.
+\end{proof}
+\begin{definition}[Hiperplano tangente]
+Sean $\displaystyle U\subset\R^{n} $ abierto, $\displaystyle F:U \to \R $ y $\displaystyle r \in \R $. Sea $\displaystyle p \in S_{r} $. Si $\displaystyle \nabla F\left(p\right)= 0 $, se dice que $\displaystyle \nabla F\left(p\right) $ es un \textbf{vector normal} a $\displaystyle S_{r} $ en $\displaystyle p $ y se define el \textbf{hiperplano tangente} a $\displaystyle S_{r} $ en $\displaystyle p $ como el hiperplano que pasa por $\displaystyle p $ y es perpendicular a $\displaystyle \nabla F\left(p\right) $.
+\end{definition}
+\begin{eg}
+	Consideremos $\displaystyle M = \left\{ \left(x,y,z\right) \; : \; 2x^{2} +y^{2}+3z^{2} = 6\right\}  $, que es un elipsoide. Tomamos $\displaystyle p= \left(1,2,0\right) \in M $. Calculamos el hiperplano tangente a $\displaystyle M $ en $\displaystyle p $. Tenemos que 
+	\[\nabla F\left(p\right)= \left(4x,2y,6z\right)|_{p}= \left(4,4,0\right) .\]
+Así, el hiperplano que buscamos es
+\[4\left(x-1\right) + 4\left(y-2\right) = 0 .\]
+\end{eg}
+\subsection*{Superficies explícitas}
+Una superficie es explícita si tiene la forma $\displaystyle z = f\left(x,y\right) $ con $\displaystyle f $ diferenciable. Una forma de calcular el hiperplano tangente es definir $\displaystyle F\left(x,y,z\right)= f\left(x,y\right) -z $. Así, tenemos que
+\[z = f\left(x,y\right) \iff F\left(x,y,z\right) = 0 .\]
+Por tanto, toda superficie explícita puede considerarse una superficie implícita. Tendremos que
+\[\nabla F\left(x_{0}, y_{0},z_{0}\right) = \left(\frac{\partial f}{\partial x}\left(x_{0}, y_{0}\right), \frac{\partial f}{\partial y}\left(x_{0}, y_{0}\right), -1\right) .\]
+Tomando $\displaystyle z_{0} = f\left(x_{0}, y_{0}\right) $ tendremos que el plano tangente en $\displaystyle p=\left(x_{0}, y_{0}, z_{0}\right) $ será
+\[\left(x-x_{0}\right)\frac{\partial f}{\partial x}\left(x_{0}, y_{0}\right) + \left(y - y_{0}\right)\frac{\partial f}{\partial y}\left(x_{0}, y_{0}\right) - \left(z - z_{0}\right) = 0.\]
+Es decir,
+\[z = f\left(x_{0}, y_{0}\right) + \left(x-x_{0}\right)\frac{\partial f}{\partial x}\left(x_{0}, y_{0}\right) + \left(y - y_{0}\right)\frac{\partial f}{\partial y}\left(x_{0}, y_{0}\right) .\]
+Otra forma de calcular el hiperplano tangente es, dada $\displaystyle f : U\subset \R^{2} \to \R $ diferenciable, considerar su gráfica $\displaystyle z = f\left(x,y\right) $. Dado $\displaystyle p=\left(x_{0},y_{0}\right) \in \Imagen\left(z\right) $, podemos considerar la curva
+\[\sigma\left(t\right) = \left(x_{0}+t, y_{0}, f\left(x_{0}+t,y_{0}\right)\right) , \; \sigma\left(0\right) = p\]
+Así, tenemos que 
+\[\sigma'\left(0\right) = \left(1,0, \frac{\partial f}{\partial x}\left(x_{0}, y_{0}\right)\right).\]
+De manera análoga, podemos fijar $\displaystyle x_{0} $ y obtener la curva
+\[\gamma \left(t\right)= \left(x_{0}, y_{0}+t, f\left(x_{0}, y_{0}+t\right)\right), \; \gamma\left(0\right) = t .\]
+Así, tendremos que el vector tangente a la superficie será 
+\[\gamma'\left(0\right) = \left(0,1,\frac{\partial f}{\partial y}\left(x_{0}, y_{0}\right)\right) .\]
+Así, el plano tangente será el que viene dado por las ecuaciones
+\[
+\begin{cases}
+x = x_{0} + \lambda \\
+y = y_{0} + \mu \\
+z = f\left(x_{0}, y_{0}\right) + \lambda \frac{\partial f}{\partial x}\left(x_{0}, y_{0}\right) + \mu \frac{\partial f}{\partial y}\left(x_{0}, y_{0}\right)
+\end{cases}
+.\]
+Claramente, obtenemos el mismo plano por ambos métodos.

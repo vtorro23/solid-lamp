@@ -684,4 +684,161 @@ Así, nos queda
 En la igualdad anterior estamos igualando clases de equivalencia, no ponemos los corchetes por estética. Así, tendríamos que la expresión analítica de $\displaystyle f $ es
 \[f\left([x_{0}:x_{1}:x_{2}]\right) = [4x_{0}+x_{1}+x_{2}:-4x_{0}-2x_{1}:4x_{2}] .\]
 \end{eg}
+\begin{prop}
+Sea $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ y $\displaystyle g : \mathbb{P}\left(V'\right) \to \mathbb{P}\left(V''\right) $ aplicaciones proyectivas con aplicaciones lineales asociadas $\displaystyle \hat{f} : V \to V' $ y $\displaystyle g : V' \to V'' $. Entonces
+\begin{enumerate}
+\item La composición $\displaystyle g\circ f $ es una aplicación proyectiva y $\displaystyle \hat{g \circ f} =\hat{g}\circ\hat{f} $.
+\item $\displaystyle f $ es inyectiva si y solo si $\displaystyle \hat{f} $ es inyectiva.
+\item $\displaystyle f $ es sobreyectiva si y solo si $\displaystyle \hat{g} $ es sobreyectiva.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Ejercicio para casa.
+\end{proof}
+\section{Variedades}
+\subsection{Variedades afines}
+\begin{definition}[Variedad afín]
+Si $\displaystyle \mathbb{A} $ es un espacio afín, una \textbf{variedad} es un conjunto $\displaystyle \emptyset \neq X \subset \mathbb{A} $ tal que existe $\displaystyle P \in X $ y existe $\displaystyle W \in \mathcal{L}\left(\vec{\mathbb{A}}\right) $ tal que 
+\[X = P + W = \left\{ P + w \; : \; w \in W\right\}  .\]
+\end{definition}
+\begin{lema}
+Sean $\displaystyle X $ una variedad de $\displaystyle \mathbb{A} $; $\displaystyle P,Q \in X $; $\displaystyle W,U \in \mathcal{L}\left(\vec{\mathbb{A}}\right) $. Si $\displaystyle P + W = Q + U = X $, entonces $\displaystyle W = U $ y $\displaystyle \overrightarrow{PQ} \in W $.
+\end{lema}
+\begin{proof}
+Supongamos que $\displaystyle P + W = Q + U $, tenemos que $\displaystyle Q \in P + W $, es decir, existe $\displaystyle w \in W $ tal que $\displaystyle P + w = Q $, por lo que $\displaystyle \overrightarrow{PQ} = w \in W $. Por otro lado, si $\displaystyle u \in U $, tenemos que $\displaystyle Q + u \in P + W $, por lo que existe $\displaystyle w \in W $ tal que $\displaystyle Q + u = P + w $, así nos queda que $\displaystyle u = \overrightarrow{QP} +w \in W $ por lo que $\displaystyle u \in W $. El otro contenido se hace de forma análoga por lo que $\displaystyle W = U $.
+\end{proof}
+\begin{notation}
+Si $\displaystyle X $ es una variedad de $\displaystyle \mathbb{A} $ y $\displaystyle X = P + W $, ponemos que $\displaystyle \vec{X} = W $ y lo llamamos la \textbf{dirección} de $\displaystyle X $.
+\end{notation}
+\begin{lema}
+Sea $\displaystyle X $ una variedad de $\displaystyle \mathbb{A} $. Entonces, $\displaystyle \forall P \in X $, $\displaystyle X = P + \vec{X} $.
+\end{lema}
+\begin{proof}
+Por definición, sabemos que existe $\displaystyle O \in X $ tal que $\displaystyle X = O + \vec{X} $. Sea $\displaystyle P \in X $, tenemos que ver que $\displaystyle P + \vec{X} = O + \vec{X} $. Como $\displaystyle P \in O + \vec{X} $, existe $\displaystyle v \in \vec{X} $ tal que $\displaystyle P = O + v $, es decir, $\displaystyle \overrightarrow{OP} = v $. Así, si $\displaystyle Q \in P + \vec{X} $, existe $\displaystyle w \in \vec{X} $ tal que 
+\[Q = P + w = O + \overrightarrow{OP} + w = O + \left(v + w\right) \in O + \vec{X} .\]
+Análogamente, si $\displaystyle Q \in O + \vec{X} $, existe $\displaystyle w \in \vec{X} $ tal que 
+\[Q = O + w = P + \overrightarrow{PO} + w = P + \left(w -v\right) \in P + \vec{X} .\]
+Así, tenemos que $\displaystyle O+\vec{X} = P + \vec{X} $.
+\end{proof}
+\begin{definition}[Dimensión de una variedad]
+Sea $\displaystyle X \subset \mathbb{A} $ una variedad. Decimos que la \textbf{dimensión} de $\displaystyle X $ es $\displaystyle \dim X := \dim_{\K}\vec{X} $. Si $\displaystyle \dim X = 0 $, $\displaystyle X $ es un \textbf{punto}; si $\displaystyle \dim X = 1 $, $\displaystyle X $ es una \textbf{recta}; si $\displaystyle \dim X = 2 $, $\displaystyle X $ es un \textbf{plano}; si $\displaystyle \dim X = \dim \mathbb{A} -1 $, $\displaystyle X $ es un \textbf{hiperplano}.
+\end{definition}
+\begin{lema}
+Sea $\displaystyle X,Y \subset \mathbb{A} $ variedades. Si $\displaystyle X \cap Y \neq \emptyset $, entonces $\displaystyle X \cap Y  $ es una variedad y $\displaystyle \overrightarrow{X \cap Y} = \vec{X} \cap \vec{Y} $. 
+\end{lema}
+\begin{proof}
+Tenemos que ver que $\displaystyle X \cap Y = P + \vec{X} \cap \vec{Y} $ con $\displaystyle P \in \mathbb{A} $. Como $\displaystyle X \cap Y \neq \emptyset $, existe $\displaystyle P \in X \cap Y $. Es trivial que $\displaystyle P + \vec{X} \cap \vec{Y} \subset X \cap Y $. Ahora, si $\displaystyle Q \in X \cap Y $, tenemos que $\displaystyle \overrightarrow{PQ} \in \vec{X} \cap \vec{Y} $, por lo que $\displaystyle Q = P + \overrightarrow{PQ} \in P + \vec{X} \cap \vec{Y} $. 
+\end{proof}
+\begin{definition}[Variedad generada por un conjunto]
+La variedad de $\displaystyle \mathbb{A} $ \textbf{generada} por $\displaystyle S \subset \mathbb{A} $ la denotamos por $\displaystyle V\left(S\right) $ y consiste en la menor variedad que contiene a $\displaystyle S $. Así, tenemos que 
+\[V\left(S\right) = \bigcap_{ X \; \text{variedad}, \; S \subset X}X .\]
+\end{definition}
+\begin{lema}
+	Dados $\displaystyle \left\{ P_{0}, \ldots, P_{r}\right\} \subset \mathbb{A} $, entonces 
+	\[ V\left( \left\{ P_{0}, \ldots, P_{r}\right\} \right) = \left\{ \sum^{r}_{i = 0}\lambda_{i}P_{i}\; : \; \sum^{r}_{i = 0}\lambda_{i} = 1\right\}.\]
+	\[  \overrightarrow{V\left( \left\{ P_{0}, \ldots, P_{r}\right\} \right)} = L\left(\overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0}P_{r}}\right).\]
+\end{lema}
+\begin{proof}
+	Sea $\displaystyle Y = V\left( \left\{ P_{0}, \ldots, P_{r}\right\} \right) $. Como $\displaystyle P_{0}, \ldots, P_{r} \in Y $, tenemos que $\displaystyle \overrightarrow{P_{0}P_{i}} \in \vec{Y} $. Así, necesariamente debe ser que $\displaystyle L\left(\overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0}P_{r}}\right) \subset \vec{Y} $, por lo que
+	\[P_{0} + L\left(\overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0}P_{r}}\right) \subset Y .\]
+	Por ser $\displaystyle Y $ la menor variedad que contiene a $\displaystyle \left\{ P_{0}, \ldots, P_{r}\right\}  $ tenemos que $\displaystyle Y \subset P_{0} + L\left(\overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0}P_{r}}\right) $, por lo que $\displaystyle Y = P_{0} + L\left(\overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0}P_{r}}\right) $. Así, nos queda que
+	\[\vec{Y} = L\left(\overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0}P_{r}}\right) .\]	
+\end{proof}
+\begin{observation}
+	Tenemos que $\displaystyle \left\{ P_{0}, \ldots, P_{r}\right\} \subset \mathbb{A} $ es afinmente independiente si y solo si $\displaystyle V\left( \left\{ P_{0}, \ldots, P_{r}\right\} \right) \neq V\left( \left\{ P_{0}, \ldots, P_{i-1}, P_{i+1}, \ldots, P_{r}\right\} \right) $, $\displaystyle \forall i \in \left\{ 0, \ldots, r\right\}  $. Esto es equivalente a que $\displaystyle \dim V\left( \left\{ P_{0}, \ldots, P_{r}\right\} \right) =r $.	
+\end{observation}
+\begin{prop}
+Un conjunto $\displaystyle X \subset \mathbb{A} $ es una variedad si y solo si $\displaystyle X $ es cerrado por combinaciones afines. 
+\end{prop}
+\begin{proof}
+\begin{description}
+	\item[(i)] Si $\displaystyle X $ es una variedad y $\displaystyle P_{0}, \ldots, P_{r} \in X $, entonces $\displaystyle V\left( \left\{ P_{0}, \ldots, P_{r}\right\} \right)\subset X $, así el conjunto de combinaciones afines de $\displaystyle \left\{ P_{0}, \ldots, P_{r}\right\}  $ están contenidas en $\displaystyle X $. 
+	\item[(ii)] Sabemos que $\displaystyle X $ es cerrado por combinaciones afines. Sea $\displaystyle W = \left\{ \overrightarrow{AB} \; : \; A,B \in X\right\} \subset \vec{\mathbb{A}} $. Vamos a ver que $\displaystyle W $ es un subespacio vectorial. Consideremos $\displaystyle \overrightarrow{AB}, \overrightarrow{CD} \in W $ y $\displaystyle \lambda, \mu \in \K $, tenemos que
+		\[\lambda \overrightarrow{AB} + \mu \overrightarrow{CD} = \lambda \overrightarrow{AB} + \mu\left(\overrightarrow{CA} + \overrightarrow{AD}\right) = \lambda \overrightarrow{AB} -\mu\overrightarrow{AC} + \mu\overrightarrow{AD} .\]
+		Así, tenemos que 
+		\[A + \left(\lambda \overrightarrow{AB} + \mu\overrightarrow{CD}\right) = \left(1-\lambda \right)A + \lambda B -\mu C + \mu D \in X .\]
+	Por tanto, tenemos que $\displaystyle A + \left(\lambda \overrightarrow{AB} + \mu\overrightarrow{CD}\right) \in X $ y en consecuencia $\displaystyle \lambda \overrightarrow{AB} + \mu \overrightarrow{CD} \in W $, por lo que $\displaystyle W $ es un subespacio vectorial. Falta probar que $\displaystyle X = A + W $. Si $\displaystyle B \in X $, tenemos que $\displaystyle \overrightarrow{AB} \in W $ por lo que $\displaystyle B = A + \overrightarrow{AB} \in A + W $. Recíprocamente, si tomamos $\displaystyle w \in W $, tenemos que existen $\displaystyle B,C \in X $ tal que $\displaystyle w = \overrightarrow{BC} $. Veamos que $\displaystyle A + w \in X $. 
+	\[A + w = A + \overrightarrow{BC} = A + \overrightarrow{BA} + \overrightarrow{AC}= A - \overrightarrow{AB} + \overrightarrow{AC} = 1 \cdot A - 1 \cdot B + 1 \cdot C \in X ,\]
+	por estar $\displaystyle X $ cerrado por combinaciones afines.
+\end{description}
+\end{proof}
+\begin{notation}
+Dadas dos variedades $\displaystyle X_{1} $ y $\displaystyle X_{2} $, denotamos $\displaystyle X_{1} + X_{2} := V\left(X_{1} \cup X_{2}\right) $, es decir, $\displaystyle X_{1} + X_{2} $ es la menor variedad que contiene a $\displaystyle X_{1} \cup X_{2} $.
+\end{notation}
+\begin{lema}
+Sean $\displaystyle X_{1} = P_{1} + \overrightarrow{X}_{1} $ y $\displaystyle X_{2} = P_{2} + \overrightarrow{X}_{2} $ variedades. Entonces, 
+\[X_{1} + X_{2} = P_{1} + \left(L\left(\overrightarrow{P_{1}P_{2}}\right)+\overrightarrow{X}_{1} + \overrightarrow{X}_{2}\right) .\]
+En particular, $\displaystyle \overrightarrow{X_{1}+X_{2}} = L\left(\overrightarrow{P_{1}P_{2}}+\overrightarrow{X}_{1}+\overrightarrow{X}_{2}\right)$.
+\end{lema}
+\begin{proof}
+Consideremos 
+\[ Y = P_{1} + \left(L\left(\overrightarrow{P_{1}P_{2}}\right)+\overrightarrow{X}_{1} + \overrightarrow{X}_{2}\right).\]
+Está claro que $\displaystyle X_{1} = P_{1} + \overrightarrow{X}_{1} \subset Y $. Análogamente, $\displaystyle X_{2} = P_{2} + \overrightarrow{X}_{2} = P_{1}+\overrightarrow{P_{1}P_{2}} + \overrightarrow{X}_{2} \subset Y $. De esta manera, tenemos que $\displaystyle X_{1} + X_{2} \subset Y $, puesto que $\displaystyle Y $ es la menor variedad que contienen a $\displaystyle X_{1} $ y $\displaystyle X_{2} $.
+Por otro lado, supongamos que $\displaystyle P \in Y $, entonces tenemos que existen $\displaystyle \lambda \in \K $, $\displaystyle w_{1} \in W_{1} $ y $\displaystyle w_{2} \in W_{2}$ tales que
+\[P = P_{1} + \lambda \overrightarrow{P_{1}P_{2}} + w_{1} + w_{2} .\]
+Podemos encontrar $\displaystyle Q_{1} \in X_{1} $ y $\displaystyle Q_{2} \in X_{2} $ tales que
+\[
+\begin{split}
+	P = & P_{1} +\lambda\overrightarrow{P_{1}P_{2}} + \overrightarrow{P_{1}Q_{1}} + \overrightarrow{P_{2}Q_{2}} = P_{1} + \lambda \overrightarrow{P_{1}P_{2}} + \overrightarrow{P_{1}Q_{1}} + \overrightarrow{P_{2}P_{1}} + \overrightarrow{P_{1}Q_{2}} \\
+	= & P_{1} + \lambda\overrightarrow{P_{1}P_{2}} + \overrightarrow{P_{1}Q_{1}} - \overrightarrow{P_{1}P_{2}} + \overrightarrow{P_{1}Q_{2}} = -\lambda P_{1} + \left(\lambda - 1\right)P_{2} + Q_{1}+Q_{2}.
+\end{split}
+\]
+Así, tenemos que $\displaystyle P $ es una combinación afín de $\displaystyle P_{1}, P_{2}, Q_{1}, Q_{2} \in X_{1} \cup X_{2} \subset X_{1} + X_{2} $, que está cerrado por combinaciones afines, por lo que $\displaystyle P \in X_{1} + X_{2} $ y $\displaystyle Y \subset X_{1} + X_{2} $.
+\end{proof}
+\begin{theorem}[Fórmula de Grassmann]
+Sean $\displaystyle X_{1}, X_{2} \subset \mathbb{A} $ variedades con $\displaystyle \dim\mathbb{A}\leq \infty $. Entonces
+\[\dim X_{1} + X_{2} = \dim X_{1} + \dim X_{2} - \dim \left(X_{1} \cap X_{2}\right) + \epsilon ,\]
+donde 
+\[\epsilon = 
+\begin{cases}
+0, \; X_{1} \cap X_{2} \neq \emptyset \\ 
+1, \; X_{1} \cap X_{2} = \emptyset
+\end{cases}
+.\]
+\end{theorem}
+\begin{proof}
+Tenemos que
+\[\dim X_{1} + X_{2} = \dim_{\K}\overrightarrow{X_{1} + X_{2}} .\]
+Si $\displaystyle X_{1} \cap X_{2} \neq \emptyset $ existe $\displaystyle P \in X_{1} \cap X_{2} $ tal que $\displaystyle X_{1} = P + \overrightarrow{X}_{1} $ y $\displaystyle X_{2} = P + \overrightarrow{X}_{2} $. Así, tenemos que
+\[\overrightarrow{X_{1} + X_{2}} = L\left(\overrightarrow{P P}\right) + \overrightarrow{X}_{1} + \overrightarrow{X}_{2} = \overrightarrow{X}_{1} + \overrightarrow{X}_{2} .\]
+Así, está claro que si $\displaystyle X_{1} \cap X_{2} \neq \emptyset $, entonces
+\[\dim X_{1} + X_{2} = \dim_{\K}\overrightarrow{X}_{1} + \overrightarrow{X}_{2} = \dim_{\K}\overrightarrow{X}_{1} + \dim_{\K}\overrightarrow{X}_{2} - \dim_{\K}\overrightarrow{X}_{1} \cap \overrightarrow{X}_{2} .\]
+Ahora, si $\displaystyle X_{1} \cap X_{2} = \emptyset $, tenemos que $\displaystyle X_{1} = P_{1} + \overrightarrow{X}_{1} $ y $\displaystyle X_{2} = P_{2} + \overrightarrow{X}_{2} $. Veamos que $\displaystyle \overrightarrow{P_{1}P_{2}} \not\in \overrightarrow{X}_{1} + \overrightarrow{X}_{2} $. En efecto, si $\displaystyle \overrightarrow{P_{1}P_{2}} \in \overrightarrow{X}_{1} + \overrightarrow{X}_{2} $ tenemos que existen $\displaystyle v_{1} \in \overrightarrow{X}_{1} $ y $\displaystyle v_{2} \in \overrightarrow{X}_{2} $ tales que
+\[\overrightarrow{P_{1}P_{2}}=v_{1} +v_{2} \Rightarrow v_{1} = \overrightarrow{P_{1}B},\; B \in X_{1} .\]
+Así, nos queda que $\displaystyle  $. 
+\[v_{2} = \overrightarrow{P_{1}P_{2}} -v_{1} = \overrightarrow{P_{1}P_{2}}-\overrightarrow{P_{1}B} = \overrightarrow{BP_{1}} + \overrightarrow{P_{1}P_{2}} = \overrightarrow{BP_{2}} .\]
+Así, tendríamos que $\displaystyle P_{2}-v_{2} = P_{2}-\overrightarrow{BP_{2}} = P_{2}+\overrightarrow{P_{2}B } = B \in X_{1} \cap X_{2} $, que es una contradicción. Por tanto, tendremos que
+\[
+\begin{split}
+	\dim X_{1} + X_{2} = & \dim_{\K}\left(\overrightarrow{X_{1}+X_{2}}\right) \\
+	= & 1 + \dim_{\K}\left(\overrightarrow{X}_{1} + \overrightarrow{X}_{2}\right) = 1 + \dim_{\K}\overrightarrow{X}_{1} + \dim_{\K}\overrightarrow{X}_{2} - \dim_{\K}\left(\overrightarrow{X}_{1} \cap \overrightarrow{X}_{2}\right).
+\end{split}
+\]
+\end{proof}
+\begin{eg}
+En $\displaystyle \R^{3} $ si tomamos $\displaystyle X_{1} $ como una recta y $\displaystyle X_{2} $ como un plano tal que $\displaystyle X_{1} \cap X_{2} = \emptyset $ y $\displaystyle \overrightarrow{X}_{1} \subset \overrightarrow{X}_{2} $, tenemos que
+\[\dim X_{1} + X_{2} = \dim X_{1} + \dim X_{2} - \dim\left(\overrightarrow{X}_{1} \cap \overrightarrow{X}_{2}\right) +\epsilon = 3 .\]
+Sin embargo, tenemos que
+\[\dim X_{1} + X_{2} \neq \dim X_{1} + \dim X_{2} - \dim\left(X_{1} \cap X_{2}\right) + \epsilon ,\]
+esta última ecuación no tiene sentido puesto que no hemos descrito ninguna forma de asociar una dimensión al conjunto vacío.
+\end{eg}
+\begin{definition}[Afinidades paralelas]
+Sean $\displaystyle X_{1} $ y $\displaystyle X_{2} $ variedades de $\displaystyle \mathbb{A} $. 
+\begin{enumerate}
+\item Se dice que son \textbf{paralelas} si $\displaystyle X_{1} \cap X_{2} = \emptyset $ y $\displaystyle \overrightarrow{X}_{1} \subset \overrightarrow{X}_{2} $ o $\displaystyle \overrightarrow{X}_{2} \subset \overrightarrow{X}_{1} $.
+\item Se dice que se \textbf{cruzan} si $\displaystyle X_{1} \cap X_{2} \neq \emptyset $ y $\displaystyle \overrightarrow{X}_{1} \not\subset \overrightarrow{X}_{2} $ o $\displaystyle \overrightarrow{X}_{2} \not\subset \overrightarrow{X}_{1} $. 
+\end{enumerate}
+\end{definition}
+\begin{prop}
+Sean $\displaystyle \mathbb{A} $ y $\displaystyle \mathbb{A}' $ dos espacios afines, $\displaystyle X \subset \mathbb{A} $, $\displaystyle Y \subset \mathbb{A}' $ variedades afines y $\displaystyle f : \mathbb{A} \to \mathbb{A}' $ una aplicación afín. Entonces,
+\begin{enumerate}
+\item $\displaystyle f\left(X\right) $ es una variedad afín y 
+	\[\overrightarrow{f\left(X\right)} = \vec{f}\left(\overrightarrow{X}\right) \quad \text{y} \quad f\left(X\right) = f\left(A\right) + \vec{f}\left(\overrightarrow{X}\right), \; A \in X .\]
+\item Si $\displaystyle f^{-1}\left(Y\right) \neq \emptyset $, entonces $\displaystyle f^{-1}\left(Y\right) $ es una variedad afín y
+	\[\overrightarrow{f^{-1}\left(Y\right)} = \vec{f}^{-1}\left(\overrightarrow{Y}\right) \quad \text{y} \quad f^{-1}\left(Y\right)= A + \vec{f}^{-1}\left(\overrightarrow{Y}\right), \; A \in f^{-1}\left(Y\right) .\]
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Ejercicio.
+\end{proof}
 
