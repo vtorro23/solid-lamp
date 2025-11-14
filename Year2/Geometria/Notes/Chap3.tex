@@ -1,0 +1,144 @@
+\chapter{Dualidad}
+\section{Repaso del espacio dual}
+Sea $\displaystyle V $ un $\displaystyle \K  $-espacio vectorial. Decíamos que $\displaystyle V^{*}=\Hom\left(V, \K\right) $ es el \textbf{espacio dual}, donde $\displaystyle V^{*} $ también es un $\displaystyle \K $-espacio vectorial. En efecto, si $\displaystyle \phi, \psi \in \Hom\left(V, \K\right) $, tenemos que 
+\[\left(\phi + \psi\right)\left(v\right) : = \phi\left(v\right) + \psi\left(v\right), \; \forall v \in V .\]
+Análogamente, si $\displaystyle \lambda \in \K $ y $\displaystyle \phi \in \Hom\left(V, \K\right) $ tenemos que 
+\[\left(\lambda \phi\right)\left(v\right) : = \lambda\left(\phi\left(v\right)\right), \; \forall v \in V .\]
+Sea $\displaystyle \mathcal{B} = \left\{ v_{1}, \ldots, v_{n}\right\}  $ una base de $\displaystyle V $. Definimos $\displaystyle \phi_{i} : V \to \K $ de forma que 
+\[\phi_{i}\left(v_{j}\right) = 
+\begin{cases}
+1, \; i= j \\ 
+0, \; i \neq j
+\end{cases}
+, \; \forall j = 1, \ldots, n.\]
+Veamos que $\displaystyle \mathcal{B}^{*} = \left\{ \phi_{1}, \ldots, \phi_{n}\right\}  $ es una base de $\displaystyle V^{*} $. Sea $\displaystyle \phi \in V^{*} $ y sea $\displaystyle u = \left(x_{1}, \ldots, x_{n}\right)_{\mathcal{B}} \in V $. Tenemos que 
+\[\phi\left(u\right) = \phi\left(x_{1}v_{1} + \cdots + x_{n}v_{n}\right) = x_{1}\phi\left(v_{1}\right) + \cdots + x_{n}\phi\left(v_{n}\right) .\]
+Por otro lado, tenemos que 
+\[
+\begin{split}
+	\left(\phi\left(v_{1}\right)\phi_{1} + \cdots + \phi\left(v_{n}\right)\phi_{n}\right)\left(u\right) = & \phi\left(v_{1}\right)\phi_{1}\left(u\right) + \cdots + \phi\left(v_{n}\right)\phi_{n}\left(u\right) \\
+	= & \phi\left(v_{1}\right)\phi_{1}\left(x_{1}v_{1} + \cdots + x_{n}v_{n}\right) + \cdots + \phi\left(v_{n}\right)\phi_{n}\left(x_{1}v_{1} + \cdots + x_{n}v_{n}\right) \\
+	= & \phi\left(v_{1}\right)\sum^{n}_{i = 1}x_{i}\phi_{1}\left(v_{i}\right) + \cdots + \phi\left(v_{n}\right)\sum^{n}_{i = 1}x_{i}\phi_{n}\left(v_{i}\right) \\
+	= & x_{1}\phi\left(v_{1}\right) + \cdots + x_{n}\phi\left(v_{n}\right) .
+\end{split}
+\]
+Veamos que $\displaystyle \mathcal{B}^{*} $ son linealmente independientes. Supongamos que 
+\[0 = \lambda_{1}\phi_{1} + \cdots + \lambda_{n}\phi_{n} .\]
+Tenemos entonces que 
+\[0 = \lambda_{1}\phi_{1}\left(v_{i}\right) + \cdots + \lambda_{n}\phi_{n}\left(v_{i}\right) = \lambda_{i} .\]
+Por tanto, tenemos que $\displaystyle \lambda_{i} = 0 $, $\displaystyle \forall i = 1, \ldots, n $ y en consecuencia son linealmente independientes. 
+\begin{colorary}
+Si $\displaystyle \dim_{\K}V < \infty $, entonces $\displaystyle \dim_{\K}V = \dim_{\K}V^{*} $ \footnote{Si la dimensión es infinita también es cierto pero no nos vale la demostración anterior.}. 
+\end{colorary}
+Supongamos que $\displaystyle \dim_{\K}V < \infty $ y veamos que hay un isomorfismo canónico entre $\displaystyle V $ y $\displaystyle V^{**} = \left(V^{*}\right)^{*} = \Hom\left(V^{*}, \K\right) $. Este viene dado por la función 
+\[\ev : V \to V^{**} : u \to \ev_{u} ,\quad \ev_{u} : V^{*} \to \K : \phi \to \ev_{u}\left(\phi\right) = \phi\left(u\right).\]
+Veamos que es un isomorfismo:
+\[\ev_{u_{1}+u_{2}}\left(\phi\right) = \phi\left(u_{1} + u_{2}\right) = \phi\left(u_{1}\right) + \phi\left(u_{2}\right) = \ev_{u_{1}}\left(\phi\right) + \ev_{u_{2}}\left(\phi\right), \; \forall \phi \in V^{*} .\]
+\[ev_{\lambda u}\left(\phi\right) = \phi\left(\lambda\right) = \lambda \phi\left(u\right) = \lambda \ev_{u}\left(\phi\right), \; \forall \phi \in V^{*} .\]
+Así, hemos visto que $\displaystyle \ev $ es lineal. Veamos ahora que $\displaystyle \ev $ es inyectiva. 
+\[
+\begin{split}
+	\ev_{u} = 0 \iff & \ev_{u}\left(\phi\right) = 0, \; \forall \phi \in V^{*} \iff \phi\left(u\right) = 0, \; \forall \phi \in V^{*} \iff \phi_{i}\left(u\right) = 0, \; \forall \phi_{i}\in \mathcal{B}^{*} \\
+	\iff & u = 0 \iff $\displaystyle \Ker\left(\ev\right) = \left\{ 0\right\}  $ .
+\end{split}
+\]
+Como $\displaystyle \dim_{\K}V = \dim_{\K}V^{*} = \dim_{\K}\left(V^{**}\right) < \infty $, con ver que es inyectiva hemos visto que es biyectiva y por tanto es un isomorfismo. Abusando de la notación, identificamos $\displaystyle V $ con $\displaystyle V^{**} $ mediante $\displaystyle u = \ev_{u} $. \\ \\ 
+Dado $\displaystyle U \in \mathcal{L}\left(V\right) $, podemos definir el \textbf{ortogonal} de $\displaystyle U $ de la forma
+\[U^{\perp } = \left\{ \phi \in V^{*} \; : \; \phi\left(u\right) = 0, \; \forall u \in U\right\}  .\]
+\begin{prop}
+Se cumple, 
+\begin{enumerate}
+\item $\displaystyle U^{\perp } $ es un $\displaystyle \K $-subespacio vectorial de $\displaystyle V^{*} $. 
+\item Si $\displaystyle U \subset W $, entonces $\displaystyle W^{\perp } \subset U^{\perp } $. 
+\item $\displaystyle \dim_{\K}U^{\perp } = \dim_{\K}V - \dim_{\K}U $. 
+\item $\displaystyle V^{\perp } = \left\{ 0\right\}  $ y $\displaystyle \left\{ 0\right\} ^{\perp } = V^{*} $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Claramente $\displaystyle U^{\perp } \neq \emptyset $ puesto que $\displaystyle 0 \in U^{\perp } $. Ahora, sean $\displaystyle \phi_{1}, \phi_{2} \in U^{\perp } $ y $\displaystyle u \in U $, 
+	\[\left(\phi_{1} + \phi_{2}\right)\left(u\right) =\phi_{1}\left(u\right) + \phi_{2}\left(u\right) = 0 \Rightarrow \phi_{1} + \phi_{2} \in U^{\perp } .\]
+	Además, sea $\displaystyle \phi \in U^{\perp } $, $\displaystyle \lambda \in \K $ y $\displaystyle u \in U $,
+	\[\left(\lambda\phi\right)\left(u\right) = \lambda\left(\phi\left(u\right)\right) = \lambda \cdot 0 = 0 \Rightarrow \lambda \phi \in U^{\perp } .\]
+\item Sea $\displaystyle u \in U \subset W $. Si $\displaystyle \phi \in W^{\perp } $ tenemos que $\displaystyle \phi\left(u\right) = 0 $, $\displaystyle \forall u \in U \subset W $, por lo que $\displaystyle \phi \in U^{\perp } $ y en consecuencia $\displaystyle W^{\perp }\subset U^{\perp } $. 
+\item Sea $\displaystyle \dim_{\K}U = k $ y $\displaystyle \dim_{\K}V = n $. Sea $\displaystyle \left\{ u_{1}, \ldots, u_{k}\right\}  $ una base de $\displaystyle U $ y la ampliamos a $\displaystyle \left\{ u_{1}, \ldots, u_{n}\right\}  $ base de $\displaystyle V $. Sea $\displaystyle \mathcal{B}^{*} = \left\{ \phi_{1}, \ldots, \phi_{n}\right\}  $ la base dual de la anterior. Tenemos que $\displaystyle \phi_{k+1}, \ldots, \phi_{n} \in U^{\perp } $, puesto que $\displaystyle \forall u = \lambda_{1}u_{1} + \cdots + \lambda_{k}u_{k} \in U $ tenemos que
+	\[\forall j > k, \; \phi_{j}\left(u\right) = \lambda_{1}\phi_{j}\left(u_{1}\right) + \lambda_{k}\phi_{j}\left(u_{k}\right) = 0 .\]
+	Tenemos que $\displaystyle \phi_{k+1}, \ldots, \phi_{n} $ son linealmente independientes por ser parte de una base. Veamos que generan $\displaystyle U^{\perp } $. Sea $\displaystyle \phi \in U^{\perp } $. Como $\displaystyle \mathcal{B}^{*} $ es base de $\displaystyle V^{*} $, tenemos que 
+	\[\phi = a_{1}\phi_{1} + \cdots + a_{n}\phi_{n} .\]
+	Además, tenemos que
+	\[
+	\begin{cases}
+	\phi\left(u_{i}\right) = a_{1}\phi_{1}\left(u_{i}\right) + \cdots + a_{n}\phi_{n}\left(u_{i}\right) = a_{i} \\ 
+	\phi\left(u_{i}\right) = 0
+	\end{cases}
+	, \; \forall i= 1, \ldots, k.\]
+Por tanto, tenemos que $\displaystyle a_{i} = 0 $, $\displaystyle \forall i = 1, \ldots, k $, por lo que $\displaystyle \phi = a_{k+1}\phi_{k+1} + \cdots + a_{n}\phi_{n} $. 
+\item Es fácil ver que $\displaystyle \dim_{\K}V^{*} = 0 $, por lo que $\displaystyle V^{*} = \left\{ 0\right\}  $. Análogamente tenemos que $\displaystyle \dim \left\{ 0\right\} ^{*} = \dim_{\K}V  $, así tenemos que $\displaystyle \left\{ 0\right\} ^{*} = V $.
+\end{enumerate}
+\end{proof}
+\begin{prop}
+Sea $\displaystyle V $ un $\displaystyle \K $-espacio vectorial con $\displaystyle \dim_{\K}V < \infty $ y $\displaystyle U, W \in \mathcal{L}\left(V\right) $. 
+\begin{enumerate}
+\item $\displaystyle \left(U^{\perp }\right)^{\perp } = U $ \footnote{Este igual no es estricto puesto que $\displaystyle \left(U^{\perp }\right)^{\perp } \subset V^{**} $, realmente estamos diciendo que es isomorfo a $\displaystyle U $.}.
+\item $\displaystyle \left(U \cap W\right)^{\perp } = U^{\perp } + W^{\perp } $. 
+\item $\displaystyle \left(U + W\right)^{\perp } = U^{\perp } \cap W^{\perp } $. 
+\item Si $\displaystyle V = U \oplus W $, entonces $\displaystyle V^{*} = U^{\perp }\oplus W^{\perp } $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+	\item Recordamos que $\displaystyle U^{\perp } = \left\{ \phi \in V^{*} \; : \; \phi\left(u\right) = 0, \; \forall u \in U\right\}  $. Así, tenemos que 
+		\[\left(U^{\perp }\right)^{\perp } = \left\{ \ev_{v} \in V^{**} \; : \; \ev_{v}\left(\phi\right) = 0, \; \forall \phi \in U^{\perp }\right\} = \left\{ v \; : \; \phi\left(v\right) = 0, \; \forall \phi \in U^{\perp }\right\} = U  .\]
+	\item Tenemos que $\displaystyle U \cap W \subset U, W$, por lo que $\displaystyle U^{\perp } \subset \left(U \cap W \right)^{\perp } $ y $\displaystyle W^{\perp } \subset \left(U \cap W\right)^{\perp } $. Por tanto, tenemos que $\displaystyle U^{\perp } + W^{\perp } \subset \left(U \cap W\right)^{\perp } $. Por otro lado, tenemos que 
+		\[U \cap W = \left(\left(U \cap W\right)^{\perp }\right)^{\perp } \subset \left(U^{\perp } + W^{\perp }\right)^{\perp } \subset \left(U^{\perp }\right)^{\perp } \cap \left(W^{\perp }\right)^{\perp } = U \cap W .\]
+		Por tanto, debe ser que todos los contenidos son igualdades, en particular, $\displaystyle U \cap W = \left(U^{\perp } + W^{\perp }\right)^{\perp } $. Así, obtenemos que $\displaystyle \left(U \cap W\right)^{\perp } = \left(\left(U^{\perp } + W^{\perp }\right)^{\perp }\right)^{\perp } = U^{\perp } + W^{\perp } $.	
+	\item Como $\displaystyle U \subset U + W $ y $\displaystyle W \subset U + W $, tenemos que $\displaystyle \left(U + W\right)^{\perp } \subset U^{\perp }, W^{\perp } $, por lo que $\displaystyle \left(U+W\right)^{\perp } \subset U^{\perp }\cap W^{\perp } $. Tenemos que 
+		\[U + W = \left(\left(U + W\right)^{\perp }\right)^{\perp } \supset \left(U^{\perp } \cap W^{\perp }\right)^{\perp }\supset \left(U^{\perp }\right)^{\perp } + \left(W^{\perp }\right)^{\perp } = U + W .\]
+	Al igual que en \textbf{(2)}, tenemos que $\displaystyle U + W = \left(U^{\perp }\cap W^{\perp }\right)^{\perp } $, por lo que $\displaystyle \left(U + W\right)^{\perp } = U^{\perp }\cap W^{\perp } $.
+\item Consideremos $\displaystyle V = U \oplus W $, es decir, $\displaystyle V = U + W $ y $\displaystyle U \cap W = \left\{ 0\right\}  $. Así, tenemos que $\displaystyle V^{\perp } = U^{\perp }\cap W^{\perp } = \left\{ 0\right\}  $ y $\displaystyle \left\{ 0\right\} ^{\perp } = U^{\perp } + W^{\perp } = V^{*} $. 
+\end{enumerate}
+\end{proof}
+\begin{colorary}
+La aplicación 
+\[\perp : \mathcal{L}\left(V\right) \to \mathcal{L}\left(V^{*}\right) : U \to U^{\perp } ,\]
+es una biyección con sí misma como inversa. Además, cambia $\displaystyle \subset  $ por $\displaystyle \supset  $, y $\displaystyle +  $ por $\displaystyle \cap  $ y viceversa.
+\end{colorary}
+Dado un $\displaystyle \K $-espacio vectorial $\displaystyle V $, tenemos que hay una biyección entre las variedades de $\displaystyle \mathbb{P}\left(V\right) $ y los subespacios de $\displaystyle V $. También tenemos una biyección entre los subespacios de $\displaystyle U $ y subespacios de $\displaystyle V^{*} $. En particular
+\[ \left\{ X \subset \mathbb{P}\left(V\right) \; : \; X \; \text{variedad}\right\} \leftrightarrow \left\{ X \subset \mathbb{P}\left(V^{*}\right) \; : \; X \; \text{variedad}\right\}  .\]
+En efecto, podemos considerar la aplicación $\displaystyle X \to \mathbb{P}\left(\left(\hat{X}\right)^{\perp }\right) $. 
+\begin{notation}
+Denotamos $\displaystyle X^{*} := \mathbb{P}\left(\left(\hat{X}\right)^{\perp }\right) $. 
+\end{notation}
+Tenemos que se cumplen las mismas propiedades que hemos demostrado anteriormente para subespacios vectoriales. 
+\begin{lema}
+Si $\displaystyle \dim\mathbb{P}\left(V\right) = n < \infty $, entonces $\displaystyle \dim X^{*} = \dim\mathbb{P}\left(V\right) - \dim X -1 $. 
+\end{lema}
+\begin{proof}
+Recordamos que 
+\[\dim X = \dim_{\K}\hat{X} - 1.\]
+Como $\displaystyle \widehat{X^{*}} = \widehat{\mathbb{P}\left(\hat{X}^{\perp }\right)} = \hat{X}^{\perp } $, tenemos que
+\[
+\begin{split}
+	\dim X^{*} = & \dim_{\K}\left(\hat{X^{*}}\right)-1 = \dim_{\K}\hat{X}^{\perp }-1 = \dim_{\K}V - \dim_{\K}\hat{X}-1\\
+	= &  \dim\mathbb{P}\left(V\right)+1-\left(\dim X +1\right)-1 = \dim\mathbb{P}\left(V\right) + \dim X - 1.
+\end{split}
+\]
+
+\end{proof}
+\begin{eg}
+Consideremos $\displaystyle \dim\mathbb{P}\left(V\right) = 2 $. Si $\displaystyle P $ es un punto, tenemos que $\displaystyle \dim P^{*} = 2 - 0 - 1 = 1 $, por lo que el dual de un punto en un espacio proyectivo es una recta. Similarmente, si $\displaystyle X = \mathbb{P}\left(V\right) $, tenemos que $\displaystyle \dim X^{*} = 2 - 2 - 1 = 0 $, por lo que $\displaystyle X^{*} = \emptyset $. 
+\end{eg}
+\begin{observation}[Principio de dualidad]
+Si $\displaystyle \mathcal{E} $ es un enunciado sobre variedades de $\displaystyle \mathbb{P}\left(V\right) $ que se expresa con $\displaystyle \forall $, $\displaystyle \exists $, $\displaystyle \subset  $, $\displaystyle \dim  $, $\displaystyle \cap  $, $\displaystyle + $ y negación, y obtenemos $\displaystyle \mathcal{E}^{*} $, un enunciado dual sustituyendo 
+\[\dim = d \leftrightarrow \dim\mathbb{P}\left(V\right)-d-1 .\]
+\[\subset \leftrightarrow \supset .\]
+\[\cap \leftrightarrow + .\]
+Entonces, $\displaystyle \mathcal{E} $ es cierto si y solo si $\displaystyle \mathcal{E}^{*} $ es cierto.
+\end{observation}
+\begin{eg}
+Consideremos el enunciado \\ \\ 
+$\displaystyle \mathcal{E} $: 'Todo par de hiperplanos de un espacio proyectivo de dimensión $\displaystyle n $ tiene intersección no vacía'. \\ \\
+El enunciado dual sería, \\ \\
+$\displaystyle \mathcal{E}^{*} $: 'Todo par de puntos de un espacio proyectivo de dimensión $\displaystyle n $ generan una variedad que está contenida en un hiperplano'.
+\end{eg}
+ 

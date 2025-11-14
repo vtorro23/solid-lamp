@@ -1,0 +1,103 @@
+\chapter{Acciones de grupos}
+\begin{definition}[Acción de un grupo]
+Una \textbf{acción} de un grupo $\displaystyle G $ sobre un conjunto $\displaystyle X \neq \emptyset $ es un homomorfismo de grupos
+\[ G \to \Biy\left(X\right) : g \to \tilde{g} .\]
+\end{definition}
+\begin{eg}
+\begin{enumerate}
+\item Sea $\displaystyle \mathcal{S}_{n} $ y $\displaystyle X = X_{n} $. Tenemos que la identidad es una acción de grupo de $\displaystyle \mathcal{S}_{n} $ sobre $\displaystyle X_{n} $:
+	\[\mathcal{S}_{n} \to \Biy\left(X_{n}\right) : \sigma \to \sigma  .\]
+\item Consideremos $\displaystyle G = \left\langle \sigma  \right\rangle  $, con $\displaystyle \sigma \in \mathcal{S}_{n} $ y $\displaystyle X = X_{n} $. La inclusión, definida de la forma 
+	\[\in : H \subset G \to G : x \to x ,\]
+	es una acción de grupo de $\displaystyle \left\langle \sigma  \right\rangle  $ en $\displaystyle X_{n} $. 
+\item Si $\displaystyle G $ actúa sobre $\displaystyle X $ y $\displaystyle H \leq G $, entonces $\displaystyle H $ actúa sobre $\displaystyle X $. Basta con tomar la restricción de la acción a $\displaystyle H $. 
+\item Sea $\displaystyle H \leq G $. Definimos una acción 
+	\[\alpha : H \to \Biy\left(G\right) : h \to \tilde{h} ,\]
+	tal que $\displaystyle \tilde{h} : G \to G : g \to gh $. Veamos que $\displaystyle \alpha  $ es un homomorfismo. Sean $\displaystyle x,y \in H $ y $\displaystyle g \in G $,
+	\[\alpha\left(xy\right)\left(g\right) = \widetilde{xy}\left(g\right) = gxy = \tilde{y}\left(gx\right) = \tilde{y}\left(\tilde{x}\left(g\right)\right) = \tilde{y}\circ\tilde{x}\left(g\right) = \tilde{x} \cdot \tilde{y} \left(g\right) .\]
+A esto se lo llama \textbf{acción por traslación a la derecha}. 
+La acción por la izquierda no funciona de la forma anterior, solo funciona si es de la forma 
+\[\tilde{h} : G \to G : g \to h^{-1}g .\]
+\item Sea $\displaystyle H \leq G $. Definimos la \textbf{acción por conjugación} $\displaystyle \alpha : H \to \Biy\left(G\right) $ tal que $\displaystyle \tilde{h}\left(g\right) = h^{-1}gh $. Ya sabemos que $\displaystyle \tilde{h} \in \Biy\left(G\right) $. Veamos que es homomorfismo. 
+	\[\widetilde{xy}\left(g\right) = \left(xy\right)^{-1}g\left(xy\right) = y^{-1}x^{-1}gxy = y^{-1}\tilde{x}\left(g\right)y = \tilde{y}\left(\tilde{x}\left(g\right)\right) =  \tilde{x} \cdot \tilde{y} \left(g\right).\]
+\end{enumerate}
+\end{eg}
+\begin{definition}[Órbita]
+Sea $\displaystyle G $ un grupo que actúa sobre $\displaystyle X $. Tomamos $\displaystyle x \in X $, definimos la \textbf{órbita} de $\displaystyle x $ como 
+\[O_{x} = \left\{ \tilde{g}\left(x\right) \in X \; : \; g \in G\right\}  .\]
+\end{definition}
+\begin{observation}
+Consideremos la relación 
+\[x\sim y \iff \exists \tilde{g} \in \Biy\left(X\right), \; \tilde{g}\left(x\right)= y \iff \exists g\in G, \; \tilde{g}\left(x\right)= y.\]
+Es fácil comprobar que se trata de una relación de equivalencia, por lo que podemos considerar el cociente $\displaystyle X/\sim  $. Si consideramos las clases de equivalencia de este cociente, corresponden con las órbitas, es decir, $\displaystyle [x]_{\sim } = O_{x} $. 
+Así, dados $\displaystyle x,y \in X $, tenemos que $\displaystyle O_{x} \cap O_{y} = \emptyset $ o $\displaystyle O_{x} = O_{y} $, por tratarse de clases de equivalencia. 
+\end{observation}
+\begin{definition}[Estabilizador de un elemento]
+Sea $\displaystyle G $ un grupo que actúa sobre $\displaystyle X $. Llamamos \textbf{estabilizador} de $\displaystyle x \in X $ a 
+\[G_{x}= \left\{ g \in G \; : \; \tilde{g}\left(x\right) = x\right\}  .\]
+\end{definition}
+\begin{observation}
+Es fácil ver que $\displaystyle G_{x} \leq G $. En efecto, está claro que $\displaystyle e \in G_{x} $ puesto que $\displaystyle id\left(x\right) = x $, $\displaystyle \forall x \in G $. Por otro lado, supongamos que $\displaystyle a,b \in G_{x} $, entonces tenemos que 
+\[\tilde{a} \cdot \widetilde{b^{-1}}\left(x\right) = \tilde{a} \cdot \tilde{b}^{-1}\left(x\right) =  \tilde{b}^{-1}\left(\tilde{a}\left(x\right)\right) = \tilde{b}^{-1}\left(x\right) = x.\]
+Así, tenemos que $\displaystyle ab^{-1} \in G_{x} $, por lo que $\displaystyle G_{x} \leq G $. 
+\end{observation}
+\begin{eg}
+ Consideremos la permutación $\displaystyle \sigma = \left(1,4,5\right)\left(2,6\right) \in \mathcal{S}_{7} $ y $\displaystyle G = \left\langle \sigma  \right\rangle  $. Sabemos que $\displaystyle G $ actúa sobre $\displaystyle X_{7} $. Consideremos $\displaystyle x = 4 \in X_{7} $ y calculemos su órbita y su estabilizador:
+\[O_{4} = \left\{ 1,4,5\right\} , \; G_{4} = \left\{ id, \sigma^{3}\right\} .\]
+Ahora si $\displaystyle x = 7 $ tenemos que $\displaystyle O_{7}= \left\{ 7\right\}  $ y $\displaystyle G_{7} = G $. Podemos observar que $\displaystyle \left|O_{4}\right| = \left[G : G_{4}\right]  $ y $\displaystyle \left|O_{7}\right|= \left[G:G_{7}\right]  $.
+\end{eg}
+\begin{theorem}[Teorema de la órbita-estabilizador]
+	Sea $\displaystyle G $ un grupo que actúa sobre un conjunto no vacío $\displaystyle X $ y $\displaystyle x \in X $. La órbita $\displaystyle O_{x} $ está en biyección con $\displaystyle G/\sim_{G_{x}} $. En particular, si la órbita $\displaystyle O_{x} $ es finita, entonces $\displaystyle \left|O_{x}\right|= [G : G_{x}] $.
+\end{theorem}
+\begin{proof}
+Recordemos que $\displaystyle \sim_{G_{x}} $ es la relación de equivalencia que viene dada por
+\[g_{1} \sim_{G_{x}} g_{2} \iff g_{1}g_{2}^{-1} \in G_{x} .\]
+También tenemos que $\displaystyle [G:G_{x}] = \left|G/\sim_{G_{x}}\right|$. Definimos la función 
+\[O_{x} \to G/\sim_{G_{x}} : \tilde{g}\left(x\right) \to G_{x}g .\]
+Veamos que es una biyección. Claramente es sobreyectiva. Veamos que es inyectiva y que está bien definida. 
+\[\tilde{g}_{1}\left(x\right) = \tilde{g}_{2}\left(x\right) \iff \tilde{g}_{2}^{-1}\left(\tilde{g}_{1}\left(x\right)\right) = x \iff \tilde{g}_{1} \tilde{g}_{2}^{-1}\left(x\right) = x \iff \tilde{g}_{1}\tilde{g}_{2}^{-1} \in G_{x} .\]
+Con esto hemos visto que es inyectiva y que está bien definida. 
+\end{proof}
+\begin{colorary}[Fórmula de las órbitas]
+Sea $\displaystyle G $ un grupo que actúa sobre un conjunto finito $\displaystyle X $ y sea $\displaystyle \mathcal{C} $ el conjunto de los representantes de las órbitas. Entonces, 
+\[ \left|X\right| = \sum_{x \in \mathcal{C}} \left|O_{x}\right| = \sum_{x \in \mathcal{C}} \left[G:G_{x}\right]  .\]
+\end{colorary}
+\begin{proof}
+Tenemos que 
+\[X = \bigsqcup_{x \in \mathcal{C}} O_{x} .\]
+De aquí la deducción es trivial.
+\end{proof}
+\begin{definition}[Punto fijo]
+	Dicemos que $\displaystyle x \in X $ es un \textbf{punto fijo} si $\displaystyle O_{x} = \left\{ x\right\}  $, es decir, si la órbita es trivial. Llamaremos $\displaystyle \Fix\left(X\right) $ al conjunto de los puntos fijos de $\displaystyle X $ por una acción.
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+	\item Sea $\displaystyle x \in X $, entonces $\displaystyle O_{x} = \left\{ x\right\} \iff G = G_{x} $. 
+	\item Es fácil ver que 
+		\[ \left|X\right| = \sum_{x \in \mathcal{C}} \left|O_{x}\right| = \left|\Fix\left(X\right)\right| + \sum_{x_{i} \in X} \left|O_{x_{i}}\right|,\]
+	donde $\displaystyle x_{i} $ son elementos cuyas órbitas son no triviales. 
+\end{enumerate}
+\end{observation}
+\begin{prop}[Ecuación de clases]
+Sea $\displaystyle G $ un grupo finito. Entonces, 
+\[ \left|G\right| = \left|Z\left(G\right)\right| + \sum^{n}_{i = 1} \left[G: C_{G}\left(x_{i}\right)\right]  ,\]
+donde $\displaystyle x_{i} $ son los elementos cuyas órbitas no son triviales mediante la acción de conjugación.
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle G $ un grupo finito y consideramos la acción por conjugación, $\displaystyle \tilde{g}\left(x\right) = g^{-1}xg $ para $\displaystyle x \in X = G $. Tenemos que 
+	\[x \in Z\left(G\right) \iff O_{x} = \left\{ x\right\}  .\]
+	Por otro lado, si $\displaystyle x \not\in Z\left(G\right) $, tendremos que $\displaystyle G_{x}= C_{G}\left(x\right) $. Así, basta con aplicar la observación anterior para obtener el resultado deseado.
+\end{proof}
+\begin{theorem}[Teorema de Cauchy]
+Si $\displaystyle G $ es un grupo finito y $\displaystyle p $ un primo que divide a $\displaystyle \left|G\right| $, entonces existe $\displaystyle g \in G $ tal que $\displaystyle o\left(g\right) = p $.
+\end{theorem}
+\begin{proof}
+
+\end{proof}
+\begin{colorary}
+Sea $\displaystyle G $ un grupo de orden $\displaystyle 2p $ con $\displaystyle p \geq 3 $ primo. Entonces, $\displaystyle G \cong D_{p} $ o $\displaystyle G \cong C_{2} \times C_{p} $. 
+\end{colorary}
+\begin{proof}
+
+\end{proof}
+

@@ -685,15 +685,30 @@ En la igualdad anterior estamos igualando clases de equivalencia, no ponemos los
 \[f\left([x_{0}:x_{1}:x_{2}]\right) = [4x_{0}+x_{1}+x_{2}:-4x_{0}-2x_{1}:4x_{2}] .\]
 \end{eg}
 \begin{prop}
-Sea $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ y $\displaystyle g : \mathbb{P}\left(V'\right) \to \mathbb{P}\left(V''\right) $ aplicaciones proyectivas con aplicaciones lineales asociadas $\displaystyle \hat{f} : V \to V' $ y $\displaystyle g : V' \to V'' $. Entonces
+Sea $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ y $\displaystyle g : \mathbb{P}\left(V'\right) \to \mathbb{P}\left(V''\right) $ aplicaciones proyectivas con aplicaciones lineales asociadas $\displaystyle \hat{f} : V \to V' $ y $\displaystyle \hat{g} : V' \to V'' $. Entonces
 \begin{enumerate}
-\item La composición $\displaystyle g\circ f $ es una aplicación proyectiva y $\displaystyle \hat{g \circ f} =\hat{g}\circ\hat{f} $.
+\item La composición $\displaystyle g\circ f $ es una aplicación proyectiva y $\displaystyle \widehat{g \circ f} =\hat{g}\circ\hat{f} $.
 \item $\displaystyle f $ es inyectiva si y solo si $\displaystyle \hat{f} $ es inyectiva.
-\item $\displaystyle f $ es sobreyectiva si y solo si $\displaystyle \hat{g} $ es sobreyectiva.
+\item $\displaystyle f $ es sobreyectiva si y solo si $\displaystyle \hat{f} $ es sobreyectiva.
 \end{enumerate}
 \end{prop}
 \begin{proof}
-Ejercicio para casa.
+	\begin{enumerate}
+	\item Tenemos que $\displaystyle g\circ f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V''\right) $ cumple que $\displaystyle \forall v \in V $,
+		\[g\left(f\left([v]\right)\right) = g([\hat{f}\left(v\right)]) = [\hat{g}(\hat{f}\left(v\right))] .\]
+	Así, está claro que $\displaystyle g\circ f $ es una aplicación proyectiva y que $\displaystyle \widehat{g\circ f} = \hat{g}\circ\hat{f} $.
+\item Supongamos que $\displaystyle f $ es inyectiva y que $\displaystyle \hat{f}\left(v\right) = \hat{f}\left(w\right) $. Así, tenemos que
+	\[[\hat{f}\left(v\right)] = [\hat{f}\left(w\right)] \Rightarrow f\left([v]\right)=f\left([w]\right) \Rightarrow [v]=[w] .\]
+	Así, tenemos que $\displaystyle v = \lambda w $ para $\displaystyle \lambda \in \K^{*} $. Así, tenemos que $\displaystyle \hat{f}\left(v\right) = \lambda\hat{f}\left(w\right) = \hat{f}\left(w\right) $, por lo que debe ser que $\displaystyle \lambda = 1 $ (tenemos que $\displaystyle \hat{f}\left(w\right)\neq 0 $). Recíprocamente, si $\displaystyle \hat{f} $ es inyectiva y $\displaystyle f\left([v]\right) = f\left([w]\right) $, tenemos que 
+	\[[\hat{f}\left(v\right)] = [\hat{f}\left(w\right)] \Rightarrow \hat{f}\left(v\right) = \lambda \hat{f}\left(w\right), \lambda \in \K^{*}.\]
+	Así, obtenemos que $\displaystyle v-\lambda w \in \Ker\hat{f} $, por lo que $\displaystyle v - \lambda w = 0 $ y $\displaystyle v = \lambda w $, de forma que $\displaystyle [v] = [w] $.
+\item Supongamos que $\displaystyle f $ es sobreyectiva. Si $\displaystyle v \in V' $, tenemos que existe $\displaystyle u \in V $ tal que $\displaystyle f\left([u]\right) = [v] $, es decir, 
+	\[[\hat{f}\left(u\right)] = [v] \Rightarrow \hat{f}\left(u\right) = \lambda v, \; \lambda \in \K^{*} .\]
+Así, si tomamos $\displaystyle u' = \frac{u}{\lambda } \not\in \Ker\left(\hat{f}\right) $ tenemos que 
+\[\hat{f}\left(u'\right) = \hat{f}\left(\frac{u}{\lambda }\right) = \frac{1}{\lambda }\lambda v = v .\]
+Recíprocamente, supongamos que $\displaystyle \hat{f} $ es sobreyectiva. Si $\displaystyle [v] \in \mathbb{P}\left(V'\right) $, podemos coger a su representante $\displaystyle v \in V' $ y sabemos que existe $\displaystyle u \in V $ tal que $\displaystyle \hat{f}\left(u\right) = v $, es decir,
+\[f\left([u]\right) = [\hat{f}\left(u\right)] = [v] .\]
+	\end{enumerate}
 \end{proof}
 \section{Variedades}
 \subsection{Variedades afines}
@@ -721,7 +736,13 @@ Análogamente, si $\displaystyle Q \in O + \vec{X} $, existe $\displaystyle w \i
 Así, tenemos que $\displaystyle O+\vec{X} = P + \vec{X} $.
 \end{proof}
 \begin{definition}[Dimensión de una variedad]
-Sea $\displaystyle X \subset \mathbb{A} $ una variedad. Decimos que la \textbf{dimensión} de $\displaystyle X $ es $\displaystyle \dim X := \dim_{\K}\vec{X} $. Si $\displaystyle \dim X = 0 $, $\displaystyle X $ es un \textbf{punto}; si $\displaystyle \dim X = 1 $, $\displaystyle X $ es una \textbf{recta}; si $\displaystyle \dim X = 2 $, $\displaystyle X $ es un \textbf{plano}; si $\displaystyle \dim X = \dim \mathbb{A} -1 $, $\displaystyle X $ es un \textbf{hiperplano}.
+Sea $\displaystyle X \subset \mathbb{A} $ una variedad. Decimos que la \textbf{dimensión} de $\displaystyle X $ es $\displaystyle \dim X := \dim_{\K}\vec{X} $. 
+\begin{itemize}
+\item Si $\displaystyle \dim X = 0 $, $\displaystyle X $ es un \textbf{punto}.
+\item Si $\displaystyle \dim X = 1 $, $\displaystyle X $ es una \textbf{recta}.
+\item Si $\displaystyle \dim X = 2 $, $\displaystyle X $ es un \textbf{plano}.
+\item Si $\displaystyle \dim X = \dim \mathbb{A} -1 $, $\displaystyle X $ es un \textbf{hiperplano}.
+\end{itemize}
 \end{definition}
 \begin{lema}
 Sea $\displaystyle X,Y \subset \mathbb{A} $ variedades. Si $\displaystyle X \cap Y \neq \emptyset $, entonces $\displaystyle X \cap Y  $ es una variedad y $\displaystyle \overrightarrow{X \cap Y} = \vec{X} \cap \vec{Y} $. 
@@ -731,7 +752,7 @@ Tenemos que ver que $\displaystyle X \cap Y = P + \vec{X} \cap \vec{Y} $ con $\d
 \end{proof}
 \begin{definition}[Variedad generada por un conjunto]
 La variedad de $\displaystyle \mathbb{A} $ \textbf{generada} por $\displaystyle S \subset \mathbb{A} $ la denotamos por $\displaystyle V\left(S\right) $ y consiste en la menor variedad que contiene a $\displaystyle S $. Así, tenemos que 
-\[V\left(S\right) = \bigcap_{ X \; \text{variedad}, \; S \subset X}X .\]
+\[V\left(S\right) = \bigcap_{ \substack{X \; \text{variedad} \\ S \subset X}}X .\]
 \end{definition}
 \begin{lema}
 	Dados $\displaystyle \left\{ P_{0}, \ldots, P_{r}\right\} \subset \mathbb{A} $, entonces 
@@ -773,7 +794,7 @@ En particular, $\displaystyle \overrightarrow{X_{1}+X_{2}} = L\left(\overrightar
 \begin{proof}
 Consideremos 
 \[ Y = P_{1} + \left(L\left(\overrightarrow{P_{1}P_{2}}\right)+\overrightarrow{X}_{1} + \overrightarrow{X}_{2}\right).\]
-Está claro que $\displaystyle X_{1} = P_{1} + \overrightarrow{X}_{1} \subset Y $. Análogamente, $\displaystyle X_{2} = P_{2} + \overrightarrow{X}_{2} = P_{1}+\overrightarrow{P_{1}P_{2}} + \overrightarrow{X}_{2} \subset Y $. De esta manera, tenemos que $\displaystyle X_{1} + X_{2} \subset Y $, puesto que $\displaystyle Y $ es la menor variedad que contienen a $\displaystyle X_{1} $ y $\displaystyle X_{2} $.
+Está claro que $\displaystyle X_{1} = P_{1} + \overrightarrow{X}_{1} \subset Y $. Análogamente, $\displaystyle X_{2} = P_{2} + \overrightarrow{X}_{2} = P_{1}+\overrightarrow{P_{1}P_{2}} + \overrightarrow{X}_{2} \subset Y $. De esta manera, tenemos que $\displaystyle X_{1} + X_{2} \subset Y $, puesto que $\displaystyle X_{1} + X_{2} $ es la menor variedad que contienen a $\displaystyle X_{1} $ y $\displaystyle X_{2} $.
 Por otro lado, supongamos que $\displaystyle P \in Y $, entonces tenemos que existen $\displaystyle \lambda \in \K $, $\displaystyle w_{1} \in W_{1} $ y $\displaystyle w_{2} \in W_{2}$ tales que
 \[P = P_{1} + \lambda \overrightarrow{P_{1}P_{2}} + w_{1} + w_{2} .\]
 Podemos encontrar $\displaystyle Q_{1} \in X_{1} $ y $\displaystyle Q_{2} \in X_{2} $ tales que
@@ -783,11 +804,11 @@ Podemos encontrar $\displaystyle Q_{1} \in X_{1} $ y $\displaystyle Q_{2} \in X_
 	= & P_{1} + \lambda\overrightarrow{P_{1}P_{2}} + \overrightarrow{P_{1}Q_{1}} - \overrightarrow{P_{1}P_{2}} + \overrightarrow{P_{1}Q_{2}} = -\lambda P_{1} + \left(\lambda - 1\right)P_{2} + Q_{1}+Q_{2}.
 \end{split}
 \]
-Así, tenemos que $\displaystyle P $ es una combinación afín de $\displaystyle P_{1}, P_{2}, Q_{1}, Q_{2} \in X_{1} \cup X_{2} \subset X_{1} + X_{2} $, que está cerrado por combinaciones afines, por lo que $\displaystyle P \in X_{1} + X_{2} $ y $\displaystyle Y \subset X_{1} + X_{2} $.
+Así, tenemos que $\displaystyle P $ es una combinación afín de $\displaystyle P_{1}, P_{2}, Q_{1}, Q_{2} \in X_{1} \cup X_{2} \subset X_{1} + X_{2} $, que está cerrado por combinaciones afines, por lo que $\displaystyle P \in X_{1} + X_{2} $ e $\displaystyle Y \subset X_{1} + X_{2} $.
 \end{proof}
 \begin{theorem}[Fórmula de Grassmann]
 Sean $\displaystyle X_{1}, X_{2} \subset \mathbb{A} $ variedades con $\displaystyle \dim\mathbb{A}\leq \infty $. Entonces
-\[\dim X_{1} + X_{2} = \dim X_{1} + \dim X_{2} - \dim \left(X_{1} \cap X_{2}\right) + \epsilon ,\]
+\[\dim X_{1} + X_{2} = \dim X_{1} + \dim X_{2} - \dim \left(\vec{X}_{1} \cap \vec{X}_{2}\right) + \epsilon ,\]
 donde 
 \[\epsilon = 
 \begin{cases}
@@ -799,13 +820,14 @@ donde
 \begin{proof}
 Tenemos que
 \[\dim X_{1} + X_{2} = \dim_{\K}\overrightarrow{X_{1} + X_{2}} .\]
-Si $\displaystyle X_{1} \cap X_{2} \neq \emptyset $ existe $\displaystyle P \in X_{1} \cap X_{2} $ tal que $\displaystyle X_{1} = P + \overrightarrow{X}_{1} $ y $\displaystyle X_{2} = P + \overrightarrow{X}_{2} $. Así, tenemos que
+\begin{itemize}
+\item Si $\displaystyle X_{1} \cap X_{2} \neq \emptyset $ existe $\displaystyle P \in X_{1} \cap X_{2} $ tal que $\displaystyle X_{1} = P + \overrightarrow{X}_{1} $ y $\displaystyle X_{2} = P + \overrightarrow{X}_{2} $. Así, tenemos que
 \[\overrightarrow{X_{1} + X_{2}} = L\left(\overrightarrow{P P}\right) + \overrightarrow{X}_{1} + \overrightarrow{X}_{2} = \overrightarrow{X}_{1} + \overrightarrow{X}_{2} .\]
-Así, está claro que si $\displaystyle X_{1} \cap X_{2} \neq \emptyset $, entonces
+Entonces,
 \[\dim X_{1} + X_{2} = \dim_{\K}\overrightarrow{X}_{1} + \overrightarrow{X}_{2} = \dim_{\K}\overrightarrow{X}_{1} + \dim_{\K}\overrightarrow{X}_{2} - \dim_{\K}\overrightarrow{X}_{1} \cap \overrightarrow{X}_{2} .\]
-Ahora, si $\displaystyle X_{1} \cap X_{2} = \emptyset $, tenemos que $\displaystyle X_{1} = P_{1} + \overrightarrow{X}_{1} $ y $\displaystyle X_{2} = P_{2} + \overrightarrow{X}_{2} $. Veamos que $\displaystyle \overrightarrow{P_{1}P_{2}} \not\in \overrightarrow{X}_{1} + \overrightarrow{X}_{2} $. En efecto, si $\displaystyle \overrightarrow{P_{1}P_{2}} \in \overrightarrow{X}_{1} + \overrightarrow{X}_{2} $ tenemos que existen $\displaystyle v_{1} \in \overrightarrow{X}_{1} $ y $\displaystyle v_{2} \in \overrightarrow{X}_{2} $ tales que
-\[\overrightarrow{P_{1}P_{2}}=v_{1} +v_{2} \Rightarrow v_{1} = \overrightarrow{P_{1}B},\; B \in X_{1} .\]
-Así, nos queda que $\displaystyle  $. 
+\item Ahora, si $\displaystyle X_{1} \cap X_{2} = \emptyset $, tenemos que $\displaystyle X_{1} = P_{1} + \overrightarrow{X}_{1} $ y $\displaystyle X_{2} = P_{2} + \overrightarrow{X}_{2} $. Veamos que $\displaystyle \overrightarrow{P_{1}P_{2}} \not\in \overrightarrow{X}_{1} + \overrightarrow{X}_{2} $. En efecto, si $\displaystyle \overrightarrow{P_{1}P_{2}} \in \overrightarrow{X}_{1} + \overrightarrow{X}_{2} $ tenemos que existen $\displaystyle v_{1} \in \overrightarrow{X}_{1} $ y $\displaystyle v_{2} \in \overrightarrow{X}_{2} $ tales que
+\[\overrightarrow{P_{1}P_{2}}=v_{1} +v_{2} .\]
+Existe $\displaystyle B \in X_{1} $ tal que $\displaystyle v_{1} = \overrightarrow{P_{1}B} $. Así, nos queda que 
 \[v_{2} = \overrightarrow{P_{1}P_{2}} -v_{1} = \overrightarrow{P_{1}P_{2}}-\overrightarrow{P_{1}B} = \overrightarrow{BP_{1}} + \overrightarrow{P_{1}P_{2}} = \overrightarrow{BP_{2}} .\]
 Así, tendríamos que $\displaystyle P_{2}-v_{2} = P_{2}-\overrightarrow{BP_{2}} = P_{2}+\overrightarrow{P_{2}B } = B \in X_{1} \cap X_{2} $, que es una contradicción. Por tanto, tendremos que
 \[
@@ -814,6 +836,7 @@ Así, tendríamos que $\displaystyle P_{2}-v_{2} = P_{2}-\overrightarrow{BP_{2}}
 	= & 1 + \dim_{\K}\left(\overrightarrow{X}_{1} + \overrightarrow{X}_{2}\right) = 1 + \dim_{\K}\overrightarrow{X}_{1} + \dim_{\K}\overrightarrow{X}_{2} - \dim_{\K}\left(\overrightarrow{X}_{1} \cap \overrightarrow{X}_{2}\right).
 \end{split}
 \]
+\end{itemize}
 \end{proof}
 \begin{eg}
 En $\displaystyle \R^{3} $ si tomamos $\displaystyle X_{1} $ como una recta y $\displaystyle X_{2} $ como un plano tal que $\displaystyle X_{1} \cap X_{2} = \emptyset $ y $\displaystyle \overrightarrow{X}_{1} \subset \overrightarrow{X}_{2} $, tenemos que
@@ -822,11 +845,12 @@ Sin embargo, tenemos que
 \[\dim X_{1} + X_{2} \neq \dim X_{1} + \dim X_{2} - \dim\left(X_{1} \cap X_{2}\right) + \epsilon ,\]
 esta última ecuación no tiene sentido puesto que no hemos descrito ninguna forma de asociar una dimensión al conjunto vacío.
 \end{eg}
-\begin{definition}[Afinidades paralelas]
+\begin{definition}
 Sean $\displaystyle X_{1} $ y $\displaystyle X_{2} $ variedades de $\displaystyle \mathbb{A} $. 
 \begin{enumerate}
 \item Se dice que son \textbf{paralelas} si $\displaystyle X_{1} \cap X_{2} = \emptyset $ y $\displaystyle \overrightarrow{X}_{1} \subset \overrightarrow{X}_{2} $ o $\displaystyle \overrightarrow{X}_{2} \subset \overrightarrow{X}_{1} $.
-\item Se dice que se \textbf{cruzan} si $\displaystyle X_{1} \cap X_{2} \neq \emptyset $ y $\displaystyle \overrightarrow{X}_{1} \not\subset \overrightarrow{X}_{2} $ o $\displaystyle \overrightarrow{X}_{2} \not\subset \overrightarrow{X}_{1} $. 
+\item Se dice que se \textbf{cortan} si $\displaystyle X_{1} \cap X_{2} \neq \emptyset $, $\displaystyle \overrightarrow{X}_{1} \not\subset \overrightarrow{X}_{2} $ y $\displaystyle \overrightarrow{X}_{2} \not\subset \overrightarrow{X}_{1} $. 
+\item Se dice que se \textbf{cruzan} si $\displaystyle X_{1} \cap X_{2} = \emptyset $, $\displaystyle \overrightarrow{X}_{1} \not\subset \overrightarrow{X}_{2} $ y $\displaystyle \overrightarrow{X}_{2} \not\subset \overrightarrow{X}_{1} $. 
 \end{enumerate}
 \end{definition}
 \begin{prop}
@@ -839,6 +863,219 @@ Sean $\displaystyle \mathbb{A} $ y $\displaystyle \mathbb{A}' $ dos espacios afi
 \end{enumerate}
 \end{prop}
 \begin{proof}
+\begin{enumerate}
+\item Sea $\displaystyle X = A + \vec{X} $, veamos que $\displaystyle f\left(X\right)= f\left(A\right) + \vec{f}\left(\vec{X}\right) $. Si $\displaystyle B \in f\left(X\right) $ entonces existe $\displaystyle C \in X $ tal que $\displaystyle f\left(C\right) = B $. Como $\displaystyle C \in X $ tenemos que $\displaystyle C = A + v $ con $\displaystyle v \in \vec{X} $. Por ser $\displaystyle f $ una aplicación afín tenemos que
+	\[B = f\left(C\right) = f\left(A + v\right)=f\left(A\right) + \vec{f}\left(v\right) \in f\left(A\right) + \vec{f}\left(\vec{X}\right) .\]
+	Recíprocamente, si $\displaystyle B \in f\left(A\right) + \vec{f}\left(\vec{X}\right) $, tenemos que existe $\displaystyle v \in \vec{f}\left(\vec{X}\right) $ y en consecuencia $\displaystyle u \in \vec{X} $ con $\displaystyle v = \vec{f}\left(u\right) $, tal que
+	\[B = f\left(A\right) + v = f\left(A\right) + \vec{f}\left(u\right) = f\left(A + u\right) \in f\left(X\right).\]
+\item Supongamos que $\displaystyle f^{-1}\left(Y\right) \neq \emptyset $, entonces existe $\displaystyle A \in f^{-1}\left(Y\right) $, es decir, $\displaystyle f\left(A\right) \in Y $. Si $\displaystyle B \in f^{-1}\left(Y\right) $, tenemos que $\displaystyle f\left(B\right) \in Y $. Por ser $\displaystyle f $ una aplicación afín tenemos que
+	\[f\left(B\right) = f\left(A+\overrightarrow{AB}\right) = f\left(A\right) + \vec{f}\left(\overrightarrow{AB}\right) \iff \vec{f}\left(\overrightarrow{AB}\right) = \overrightarrow{f\left(A\right)f\left(B\right)} \in \vec{Y} .\]
+	Así, tenemos que $\displaystyle \overrightarrow{AB} \in \vec{f}^{-1}\left(\vec{Y}\right) $, por lo que $\displaystyle B \in A + \vec{f}^{-1}\left(\vec{Y}\right) $. Recíprocamente, si $\displaystyle B \in A + \vec{f}^{-1}\left(\vec{Y}\right) $, tenemos que existe $\displaystyle v \in \vec{f}^{-1}\left(\vec{Y}\right) $ tal que $\displaystyle B = A + v $. Así, tenemos que 
+	\[f\left(B\right) = f\left(A\right) + \vec{f}\left(v\right) \in Y .\]
+\end{enumerate}
+\end{proof}
+\subsection{Ecuaciones de variedades afines}
+Sea $\displaystyle \mathbb{A} $ un espacio afín de dimensión $\displaystyle n $ y $\displaystyle X \subset \mathbb{A} $ una variedad de dimensión $\displaystyle d $. En una referencia cartesiana $\displaystyle \mathcal{R}_{C} = \left\{ O, \mathcal{B}\right\}  $ podemos describir $\displaystyle X $ con ecuaciones implícitas con $\displaystyle C \in \mathcal{M}_{\left(n-d\right) \times n}\left(\K\right) $ y $\displaystyle a_{1}, \ldots, a_{n-d} \in \K $ tales que 
+\[\begin{pmatrix} x_{1} \\ \vdots \\ x_{n} \end{pmatrix} \in X \iff C\begin{pmatrix} x_{1} \\ \vdots \\ x_{n} \end{pmatrix}=\begin{pmatrix} a_{1} \\ \vdots \\ a_{n-d} \end{pmatrix} .\]
+\begin{eg}
+Consideremos la variedad dada por las ecuaciones
+\[
+\begin{cases}
+2x_{1} + x_{2} = 2 \\ 
+3x_{1} + x_{3} = 1
+\end{cases}
+.\]
+En este caso tenemos que $\displaystyle n = 3 $ y $\displaystyle d = 1 $, donde $\displaystyle n-d $ es el número de ecuaciones. Tenemos que $\displaystyle X $ es una recta. 
+\end{eg}
+Tenemos que $\displaystyle \overrightarrow{X}= \left\{ \overrightarrow{OA} \; : \; A \in X\right\}  $. Así, si $\displaystyle O = \left(y_{1}, \ldots, y_{n}\right) $ y $\displaystyle \overrightarrow{OA} = \left(x_{1}-y_{1}, \ldots, x_{n}-y_{n}\right) $,
+\[C\begin{pmatrix} x_{1}-y_{1} \\ \vdots \\ x_{n}-y_{n} \end{pmatrix} = C\begin{pmatrix} x_{1} \\ \vdots \\ x_{n} \end{pmatrix}-C\begin{pmatrix} y_{1} \\ \vdots \\ y_{n} \end{pmatrix}=\begin{pmatrix} a_{1} \\ \vdots \\ a_{n-d} \end{pmatrix} - \begin{pmatrix} a_{1} \\ \vdots \\ a_{n-d} \end{pmatrix}= 0 .\]
+Por tanto, tenemos que
+\[ \left(x_{1}, \ldots, x_{n}\right)_{\mathcal{B}} \in \overrightarrow{X} \iff C\begin{pmatrix} x_{1} \\ \vdots \\ x_{n} \end{pmatrix}= \begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix}.\]
+\begin{eg}
+En el ejemplo anterior, tenemos que 
+\[\overrightarrow{X}= \left\{ \left(x_{1}, x_{2}, x_{3}\right) \; : \; 
+\begin{cases}
+2x_{1} + x_{2} = 0 \\
+3x_{1} + x_{3} = 0
+\end{cases}
+\right\}  .\]
+\end{eg}
+También podemos describir $\displaystyle X $ con \textbf{ecuaciones paramétricas}. Es decir, existen $\displaystyle C \in \mathcal{M}_{n \times d}\left(\K\right) $ y $\displaystyle P = \left(a_{1}, \ldots, a_{n}\right)_{\mathcal{R}_{C}} $ entonces
+\[\begin{pmatrix} x_{1}\\ \vdots \\ x_{n} \end{pmatrix} \in X \iff \exists \begin{pmatrix} \lambda_{1} \\ \vdots \\ \lambda_{d} \end{pmatrix} \in \K^{d}, \; \begin{pmatrix} x_{1} \\ \vdots \\ x_{n} \end{pmatrix} = \begin{pmatrix} a_{1} \\ \vdots\\ a_{n} \end{pmatrix} + C\begin{pmatrix} \lambda_{1} \\ \vdots \\ \lambda_{d} \end{pmatrix}.\]
+\begin{eg}
+Consideremos la variedad
+\[X = \left\{ \left(x_{1}, x_{2}, x_{3}\right) \; : \; 
+\begin{cases}
+2x_{1} + x_{2} = 2 \\ 
+3x_{1} +x_{3} = 1
+\end{cases}
+\right\}  .\]
+Tenemos que $\displaystyle P = \left(0,2,1\right) \in X $ y
+\[\overrightarrow{X}= \left\{ \left(x_{1}, x_{2}, x_{3}\right) \; : \; 
+\begin{cases}
+2x_{1} + x_{2} = 0 \\
+3x_{1} + x_{3} = 0
+\end{cases}
+\right\} = L\left(\left(1,-2,-3\right)\right) .\]
+Así, tendríamos que las ecuaciones paramétricas para esta variedad serían
+\[X = \left\{ \left(0,2,1\right) + \lambda\left(1,-2,-3\right) \; : \; \lambda \in \K\right\}  .\]
+\end{eg}
+En una referencia afín $\displaystyle \mathcal{R}_{A} $ podemos describir $\displaystyle X $ con \textbf{ecuaciones baricéntricas}. Es decir, existe $\displaystyle C \in \mathcal{M}_{\left(n + 1\right) \times \left(d + 1\right)} $ tal que
+\[\begin{pmatrix} x_{0} \\ \vdots \\ x_{n} \end{pmatrix}\in X \iff \begin{pmatrix} x_{0} \\ \vdots \\ x_{n} \end{pmatrix} = C\begin{pmatrix} \mu_{0} \\ \vdots \\ \mu_{d} \end{pmatrix} , \; \sum^{d}_{i = 0}\mu_{i} = 1. \]
+\begin{eg}
+En el ejemplo anterior consideremos la referencia afín estándar
+\[\mathcal{R}_{A}= \left\{ \left(0,0,0\right), \left(1,0,0\right), \left(0,1,0\right), \left(0,0,1\right)\right\}  .\]
+Recordamos que 
+\[X = \left\{ \left(0,2,1\right) + \lambda\left(1,-2,-3\right) \; : \; \lambda \in \K\right\}  .\]
+Si tomamos $\displaystyle P_{0} = \left(0,2,1\right) $, $\displaystyle \overrightarrow{P_{0}P_{1}} = \left(1, -2,-3\right) $ y $\displaystyle P_{1} = \left(1,0,-2\right) $. De esta manera nos queda 
+\[X = \left\{ P_{0} + \lambda\overrightarrow{P_{0}P_{1}} \; : \; \lambda \in \K\right\}  = \left\{ \left(1-\lambda \right)P_{0} + \lambda P_{1} \; : \; \lambda \in \K\right\}  .\]
+Matricialmente nos queda
+\[X = \left\{ \begin{pmatrix} x_{0} \\ x_{1} \\ x_{2} \\ x_{3} \end{pmatrix}_{\mathcal{R}_{A}} \; : \; \begin{pmatrix} x_{0} \\ x_{1} \\ x_{2} \\ x_{3} \end{pmatrix}_{\mathcal{R}_{A}} = \left(1-\lambda \right)\begin{pmatrix} -2 \\ 0 \\ 2 \\ 1 \end{pmatrix} + \lambda \begin{pmatrix} 2 \\ 1 \\ 0 \\ - 2 \end{pmatrix}\right\}  .\]
+\end{eg}
+\begin{eg}
+Consideremos $\displaystyle \mathbb{A} = \R^{3} $ y las variedades
+\[X_{1} = \left(0,0,1\right) + L\left(\left(2,3,0\right), \left(-1,-1,0\right)\right) .\]
+\[X_{2} = \left\{ 2x_{1} + x_{2} = 3\right\}  .\]
+Calculemos las ecuaciones implícitas y paramétricas de $\displaystyle X_{1} + X_{2} $ y $\displaystyle X_{1} \cap X_{2} $. \\
+En primer lugar, calculemos las ecuaciones implícitas de $\displaystyle X_{1} $:
+\[
+	X_{1} = \left\{ \begin{pmatrix} x_{1} \\ x_{2} \\ x_{3} \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} + \lambda\begin{pmatrix} 2 \\ 3 \\ 0 \end{pmatrix}+\mu\begin{pmatrix} -1 \\ - 1 \\ 0 \end{pmatrix} \; : \; \lambda, \mu \in \K\right\} 
+.\]
+Obtenemos el sistema 
+\[
+\begin{cases}
+x_{1} = 2\lambda -\mu \\ 
+x_{2} = 3\lambda - \mu \\ 
+x_{3} = 1
+\end{cases} \Rightarrow 
+X_{1} = \left\{ x_{3} = 1\right\} 
+.\]
+Así, tenemos que $\displaystyle X_{1} \cap X_{2} $ viene dado por los puntos que satisfacen las ecuaciones implícitas de $\displaystyle X_{1} $ y $\displaystyle X_{2} $:
+\[X_{1} \cap X_{2} =
+\begin{cases}
+x_{3} = 1 \\ 
+2x_{1} + x_{2} = 3
+\end{cases}
+.\]
+Para obtener las ecuaciones paramétricas necesitamos calcular $\displaystyle \overrightarrow{X_{1} \cap X_{2}} $:
+\[
+\begin{cases}
+x_{3} = 0 \\ 
+2x_{1} + x_{2} = 0 
+\end{cases}
+\Rightarrow \overrightarrow{X_{1} \cap X_{2}} = L\left(\left(-1,2,0\right)\right).\]
+Como $\displaystyle \left(1,1,1\right) \in X_{1} \cap X_{2} $ tenemos que 
+\[X_{1} \cap X_{2} = \left\{ \begin{pmatrix} x_{1} \\ x_{2} \\ x_{3} \end{pmatrix} =\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} + \lambda \begin{pmatrix} -1 \\ 2 \\ 0 \end{pmatrix} \; : \; \lambda \in \K\right\}  .\]
+Por otro lado, tenemos que $\displaystyle \dim\left(X_{1} + X_{2}\right) = 3 $, por lo que $\displaystyle X_{1}+X_{2} = \mathbb{A} $. 
+\end{eg}
+\subsection{Variedades proyectivas}
+\begin{definition}[Variedad proyectiva]
+	Se dice que $\displaystyle X \subset \mathbb{P}\left(V\right) $ es una \textbf{variedad proyectiva} si existe $\displaystyle U \in \mathcal{L}\left(V\right) $ tal que $\displaystyle X = \mathbb{P}\left(U\right) $, es decir, $\displaystyle X = \left\{ [u] \; : \; u \in U / \left\{ 0\right\} \right\}  $. La dimensión de $\displaystyle X $ es $\displaystyle \dim X = \dim_{\K}U - 1 $. 
+\end{definition}
+\begin{observation}
+En el mundo proyectivo tenemos que el conjunto $\displaystyle \emptyset $ es una variedad de dimensión $\displaystyle -1 $. Sin embargo, en el mundo afín el conjunto $\displaystyle \emptyset $ no es una variedad.
+\end{observation}
+\begin{prop}
+Consideremos la aplicación
+\[\pi : V/ \left\{ 0\right\} \to \mathbb{P}\left(V\right) : v \to [v] .\]
+Para $\displaystyle X \subset \mathbb{P}\left(V\right) $ definimos 
+\[\hat{X} : = \pi^{-1}\left(X\right) \cup \left\{ 0\right\} .\]
+Si $\displaystyle X $ es una variedad tenemos que $\displaystyle \hat{X} $ es un subespacio vectorial de $\displaystyle V $ y $\displaystyle \mathbb{P}\left(\hat{X}\right) = X $.
+\end{prop}
+\begin{proof}
+\begin{description}
+	\item[(i)] Supongamos que $\displaystyle x \in \hat{X} $. Si $\displaystyle x = 0 $ claramente $\displaystyle x \in \pi^{-1}\left(X\right) \cup \left\{ 0\right\}  $. Si $\displaystyle x \neq 0 $, tenemos que $\displaystyle [x] \in X $, por lo que $\displaystyle x \in \pi^{-1}\left(X\right)\cup \left\{ 0\right\}  $. 
+	\item[(ii)] Supongamos que $\displaystyle x \in \pi^{-1}\left(X\right) \cup \left\{ 0\right\}  $. Si $\displaystyle x = 0 $ claramente $\displaystyle x \in \hat{X} $. Si $\displaystyle x \neq 0 $, tenemos que $\displaystyle \pi\left(x\right) = [x] \in X $, por lo que debe ser que $\displaystyle x \in \hat{X} $. 
+\end{description} 
+\end{proof}
+\begin{prop}
+	Sean $\displaystyle \left\{ X_{i}\right\} _{i\in I} $ una familia de variedades de $\displaystyle \mathbb{P}\left(V\right) $. Entonces, $\displaystyle X = \bigcap_{i \in I}X_{i} $ es una variedad y $\displaystyle \hat{X} = \bigcap_{i \in I}\hat{X}_{i} $. 
+\end{prop}
+\begin{proof}
+	Tenemos que $\displaystyle \bigcap_{i \in I}X_{i} $ es una variedad si y solo si $\displaystyle \pi^{-1}\left(\bigcap_{i \in I}X_{i}\right) \cup \left\{ 0\right\}  $ es un subespacio vectorial. Tenemos que 
+	\[\pi^{-1}\left(\bigcap_{i \in I}X_{i}\right) \cup \left\{ 0\right\} = \bigcap_{i \in I}\pi^{-1}\left(X_{i}\right) \cup \left\{ 0\right\}  = \bigcap_{i \in I}\left(\pi^{-1}\left(X_{i}\right) \cup \left\{ 0\right\} \right) = \bigcap_{i \in I}\hat{X}_{i} .\]
+	Esto último sabemos que es un subespacio vectorial, por lo que $\displaystyle X $ es una variedad.
+\end{proof}
+\begin{definition}[Variedad generada por un conjunto]
+Sea $\displaystyle \emptyset \neq S \subset \mathbb{P}\left(V\right) $. La \textbf{variedad proyectiva generada por} $\displaystyle S $ es 
+\[V\left(S\right) = \bigcap_{\substack{X \subset \mathbb{P}\left(V\right) \; \text{variedad} \\ S \subset X}}X .\]
+Es decir, $\displaystyle V\left(S\right) $ es la menor variedad que contiene a $\displaystyle S $.
+\end{definition}
+\begin{prop}
+	$\displaystyle \widehat{V\left(S\right)} = L[\pi^{-1}\left(S\right)] $.
+\end{prop}
+\begin{proof}
+	Ponemos $\displaystyle U = L[\pi^{-1}\left(S\right)] $. En primer lugar tenemos que ver que $\displaystyle \widehat{V\left(S\right)} \supset U $. Como $\displaystyle S \subset V\left(S\right) $ tenemos que
+	\[\pi^{-1}\left(S\right) \subset \pi^{-1}\left(V\left(S\right)\right) \cup \left\{ 0\right\}  = \widehat{V\left(S\right)} \Rightarrow L[\pi^{-1}\left(S\right)] \subset \widehat{V\left(S\right)} \Rightarrow U \subset \widehat{V\left(S\right)} .\]
+Recíprocamente tenemos que 
+$\displaystyle S \subset \pi\left(U\right) \Rightarrow V\left(S\right) \subset \pi\left(U\right) $ Como $\displaystyle \pi\left(U\right) $ es una variedad tenemos que $\displaystyle \widehat{V\left(S\right)} \subset \widehat{\pi\left(U\right)} = U $. 
+\end{proof}
+\begin{definition}
+Si $\displaystyle X_{1} $ y $\displaystyle X_{2} $ son variedades de $\displaystyle \mathbb{P}\left(V\right) $, definimos
+\[X_{1} + X_{2} : = V\left(X_{1} \cup X_{2}\right) .\]
+Por la proposición anterior tenemos que $\displaystyle \widehat{X_{1} + X_{2}} = \widehat{V\left(X_{1} \cup X_{2}\right)} = L\left(\hat{X}_{1} \cup \hat{X}_{2}\right) = \hat{X}_{1} + \hat{X}_{2} $.
+\end{definition}
+\begin{theorem}[Teorema de incidencia]
+Sea $\displaystyle \mathbb{P}\left(V\right) $ de dimensión finita y $\displaystyle X,Y $ variedades de $\displaystyle \mathbb{P}\left(V\right) $. Entonces, 
+\[\dim\left(X+Y\right) = \dim\left(X\right) + \dim\left(Y\right) - \dim\left(X \cap Y\right) .\]
+\end{theorem}
+\begin{proof}
+Aplicando la fórmula de Grassmann
+\[
+\begin{split}
+	\dim\left(X + Y\right) = & \dim_{\K}\left(\widehat{X + Y}\right)-1 = \dim_{\K}\left(\hat{X} + \hat{ Y}\right)-1 
+	=   \dim_{\K}\hat{X} + \dim_{\K}\hat{Y} - \dim_{\K}\left(\hat{X} \cap \hat{ Y}\right)-1 \\
+	= & \left(\dim_{\K}\hat{X}-1\right) + \left(\dim_{\K}\hat{Y}-1\right)-\left(\dim_{\K}\left(\hat{X}\cap\hat{Y}\right)-1\right)\\
+	= & \dim X + \dim Y - \left(\dim_{\K}\widehat{X \cap Y} - 1\right) 
+	=  \dim X + \dim Y - \dim\left(X \cap Y\right).
+\end{split}
+\]
+\end{proof}
+\begin{colorary}
+Si $\displaystyle \dim\mathbb{P}\left(V\right) = n \geq 2 $ y $\displaystyle X,Y \subset \mathbb{P}\left(V\right) $ son hiperplanos, entonces $\displaystyle X \cap Y \neq \emptyset $. En particular, en $\displaystyle \mathbb{P}^{2} $ todo par de rectas se interseca.
+\end{colorary}
+\begin{proof}
+Por el teorema anterior, tenemos que
+\[
+\dim\left(X \cap Y\right) = \dim X + \dim Y - \dim\left(X + Y\right) .
+\]
+Como $\displaystyle X \subset X + Y \subset \mathbb{P}\left(V\right) $ tenemos que 
+\[\dim X = n-1 \leq \dim\left(X+Y\right)\leq n = \dim \mathbb{P}\left(V\right) .\]
+Así, tenemos que
+\[\dim\left(X \cap Y\right) \geq \dim X + \dim Y - n \geq \left(n-1\right) + \left(n-1\right) - n \geq n-2 \geq 0.\]
+\end{proof}
+\begin{prop}
+Sea $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ una aplicación proyectiva de centro $\displaystyle Z = Z\left(f\right) $ y aplicación lineal asociada $\displaystyle \hat{f} $. 
+\begin{enumerate}
+\item Si $\displaystyle X \subset \mathbb{P}\left(V\right) $ es una variedad, entonces $\displaystyle f\left(X/Z\right) $ es una variedad y $\displaystyle \widehat{f\left(X/Z\right)} = \hat{f}\left(\hat{X}\right) $. 
+\item Si $\displaystyle Y \subset \mathbb{P}\left(V'\right) $ es una variedad, entonces $\displaystyle f^{-1}\left(Y\right)\cup Z $ es una variedad y $\displaystyle \widehat{f^{-1}\left(Y\right)\cup Z} = \hat{f}^{-1}\left(\hat{Y}\right) $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
 Ejercicio.
 \end{proof}
+\begin{notation}
+Por estética escribiremos 
+\[f\left(X\right):=f\left(X/Z\right)\quad \text{y} \quad f^{-1}\left(Y\right):= f^{-1}\left(Y\right)\cup Z .\]
+\end{notation}
+\begin{eg}
+	Consideremos $\displaystyle f : \mathbb{P}^{3} \to \mathbb{P}^{3} : [x_{0}:x_{1}:x_{2}:x_{3}] \to [x_{0}:x_{1}:0:0]$. Tenemos que $\displaystyle Z\left(f\right)= \left\{ [0:0:x_{2}:x_{3}]\right\} = \left\{ x_{0} = 0, x_{1} = 0\right\}  $, que es una recta. Si $\displaystyle X = \left\{ x_{0}-x_{2} = 0\right\}  $ es un plano de $\displaystyle \mathbb{P}^{3} $, calculamos $\displaystyle f\left(X\right) $.
+	Para ello, calculamos $\displaystyle \hat{f} : \K^{4} \to \K^{4} : \left(x_{0}, x_{1}, x_{2}, x_{3}\right) \to \left(x_{0}, x_{1}, 0, 0\right)$. Tenemos que
+	\[\hat{X}= \left\{ \left(x_{0}, x_{1}, x_{2}, x_{3}\right) \in \K^{4} \; : \; x_{0}-x_{2} = 0\right\} = L\left(\left(1,0,1,0\right), \left(0,1,0,0\right), \left(0,0,0,1\right)\right) .\]
+Así, tenemos que 
+\[
+\begin{split}
+	\hat{f}\left(\hat{X}\right) = & L\left(\hat{f}\left(1,0,1,0\right), \hat{f}\left(0,1,0,0\right), \hat{f}\left(0,0,0,1\right)\right) = L\left(\left(1,0,0,0\right), \left(0,1,0,0\right)\right) \\
+	= &  \left\{ x_{2} = 0, x_{3} = 0\right\}  .
+\end{split}
+\]
+Así, nos queda que $\displaystyle f\left(X\right) = \left\{ x_{2}= 0, x_{3}=0\right\}  $ que es una recta de $\displaystyle \mathbb{P}^{3} $. Por otro lado, dado $\displaystyle Y = \left\{ [1:0:0:0]\right\}  $, tenemos que para calcular $\displaystyle f^{-1}\left(Y\right) $:
+\[
+\begin{split}
+	\hat{f}^{-1}\left(L\left(1,0,0,0\right)\right) = & L\left(\left(1,0,0,0\right),\Ker\hat{f}\right)=L\left(\left(1,0,0,0\right), \left(0,0,1,0\right), \left(0,0,0,1\right)\right)\\
+	= & \left\{ x_{1} = 0\right\} .
+\end{split}
+\]
+Así, tenemso que $\displaystyle f^{-1}\left(Y\right) = \left\{ x_{1} = 0\right\}  $ que es un plano de $\displaystyle \mathbb{P}^{3} $.
+\end{eg}
 

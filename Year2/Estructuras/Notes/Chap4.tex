@@ -40,7 +40,7 @@ Todo grupo finito es isomorfo a un subgrupo de un grupo de permutaciones.
 	Así, tenemos que $\displaystyle \Ker\left(\phi\right) = \left\{ e\right\}  $, por lo que $\displaystyle \phi $ es inyectiva. Así, tenemos que $\displaystyle G \cong \Imagen\left(\phi\right) \leq \Biy\left(G\right) = \mathcal{S}_{ \left|G\right|}$. 	
 \end{proof}
 \begin{definition}[Soporte]
-	Sea $\displaystyle \sigma \in \mathcal{S}_{n} $. Llamamos \textbf{soporte} de $\displaystyle \sigma  $ al conjunto $\displaystyle \sop\left(\sigma \right) = \left\{ a \in X_{n} \; : \; \sigma\left(a\right) \neq a\right\}  $. Diremos que $\displaystyle \sigma, \tau \in \mathcal{S}_{n} $ son \textbf{disjuntos} si $\displaystyle sop\left(\sigma \right) \cap \sop\left(\tau\right) = \emptyset $. 
+	Sea $\displaystyle \sigma \in \mathcal{S}_{n} $. Llamamos \textbf{soporte} de $\displaystyle \sigma  $ al conjunto $\displaystyle \sop\left(\sigma \right) = \left\{ a \in X_{n} \; : \; \sigma\left(a\right) \neq a\right\}  $. Diremos que $\displaystyle \sigma, \tau \in \mathcal{S}_{n} $ son \textbf{disjuntos} si $\displaystyle \sop\left(\sigma \right) \cap \sop\left(\tau\right) = \emptyset $. 
 \end{definition}
 \begin{eg}
 Consideremos $\displaystyle \sigma, \tau \in \mathcal{S}_{6} $ tales que
@@ -91,7 +91,7 @@ Sea $\displaystyle \sigma \in \mathcal{S}_{n} $. Diremos que $\displaystyle \sig
 \begin{prop}
 Sea $\displaystyle 2 \leq k \leq n $. 
 \begin{enumerate}
-\item Si $\displaystyle l \leq k $, tenemos que $\displaystyle \left(i_{1}, \ldots, i_{k}\right) = \left(i_{l}, i_{l+1}, \ldots, i_{k}, i_{1}, \ldots, i_{l-1}\right) $.
+\item Si $\displaystyle 2 \leq l \leq k $, tenemos que $\displaystyle \left(i_{1}, \ldots, i_{k}\right) = \left(i_{l}, i_{l+1}, \ldots, i_{k}, i_{1}, \ldots, i_{l-1}\right) $.
 \item El inverso de $\displaystyle \left(i_{1}, i_{2}, \ldots, i_{k}\right) $ es $\displaystyle \left(i_{k}, i_{k-1}, \ldots, i_{2}, i_{1}\right) $.
 \item Todo $\displaystyle k $-ciclo tiene orden $\displaystyle k $.
 \item Si $\displaystyle \sigma \in \mathcal{S}_{n} $ es un $\displaystyle k $-ciclo, entonces $\displaystyle \sigma = \left(i, \sigma\left(i\right), \ldots, \sigma^{k-1}\left(i\right)\right) $, $\displaystyle \forall i \in \sop\left(\sigma \right) $. Además $\displaystyle k = \left|\sop\left(\sigma \right)\right| $. 
@@ -112,29 +112,34 @@ Comprobar la otra composición es análogo.
 Todo $\displaystyle \sigma \in \mathcal{S}_{n} $ se puede descomponer como producto de ciclos disjuntos dos a dos tal que $\displaystyle \sigma = \sigma_{1} \cdots \sigma_{k} $.
 \end{prop}
 \begin{proof}
-Sea $\displaystyle \sigma \in \mathcal{S}_{n} $ y vamos a considerar la siguiente relación de equivalencia:
+Sea $\displaystyle \sigma \in \mathcal{S}_{n} $ y consideremos la siguiente relación de equivalencia:
 \[x \sim y \iff \exists s \in \N, \; \sigma^{s}\left(x\right) = y \iff \exists \tau \in \left\langle \sigma  \right\rangle , \tau\left(x\right) = y .\]
-Esta relación de equivalencia genera una partición de $\displaystyle X_{n} $. Consideremos $\displaystyle \left\{ j_{1}, \ldots, j_{t}\right\}  $ representantes de las clases de equivalencia con más de un elemento y llamamos $\displaystyle O_{i} $ a la clase de equivalencia de $\displaystyle j_{i} $. Para cada $\displaystyle 1 \leq i \leq t $, definimos $\displaystyle \sigma_{i} : X_{i} \to X_{i} $ tal que 
+Esta relación de equivalencia genera una partición de $\displaystyle X_{n} $. Consideremos $\displaystyle \left\{ j_{1}, \ldots, j_{t}\right\}  $ representantes de las clases de equivalencia con más de un elemento y llamamos $\displaystyle O_{i} $ a la clase de equivalencia de $\displaystyle j_{i} $. Para cada $\displaystyle 1 \leq i \leq t $, definimos $\displaystyle \sigma_{i} : X_{n} \to X_{n} $ tal que 
 \[\sigma_{i}\left(x\right) = 
 \begin{cases}
 \sigma\left(x\right), \; x \in O_{i} \\ 
 x, \; x \not\in O_{i}
 \end{cases}
 .\]
-Así, tenemos que $\displaystyle \sigma_{i} = \left(j_{i}, \sigma\left(j_{i}\right), \ldots, \sigma^{s-1}\left(j_{i}\right)\right) $ es un $\displaystyle s $-ciclo donde $\displaystyle \sop\left(\sigma _{i}\right) = O_{i} $. Como $\displaystyle O_{i} \cap O_{j} = \emptyset $ si $\displaystyle i \neq j $, tenemos que $\displaystyle \sop\left(\sigma _{i}\right) \cap \sop\left(\sigma _{2}\right) = \emptyset $, $\displaystyle \forall i,j \in \left\{ 1, \ldots, t\right\}  $ con $\displaystyle i \neq j $. Así, tenemos que 
+Así, tenemos que $\displaystyle \sigma_{i} = \left(j_{i}, \sigma\left(j_{i}\right), \ldots, \sigma^{s_{i}-1}\left(j_{i}\right)\right) $ es un $\displaystyle s_{i} $-ciclo donde $\displaystyle \sop\left(\sigma _{i}\right) = O_{i} $. Como $\displaystyle O_{i} \cap O_{j} = \emptyset $ si $\displaystyle i \neq j $, tenemos que $\displaystyle \sop\left(\sigma _{i}\right) \cap \sop\left(\sigma _{j}\right) = \emptyset $, $\displaystyle \forall i,j \in \left\{ 1, \ldots, t\right\}  $ con $\displaystyle i \neq j $. Así, tenemos que 
 \[\sop\left(\sigma \right) = \bigsqcup^{t}_{i = 1}\sop\left(\sigma_{i}\right) \Rightarrow \sigma = \sigma _{1} \cdots \sigma _{t} .\]
 \end{proof}
+\begin{observation}
+La descomposición en ciclos disjuntos es única salvo en el ordenamiento de los factores. 
+\end{observation}
 \begin{eg}
 Tenemos que
 \[\left(1,4,2,3\right) = \left(1,2,3,4\right)\left(1,3,4\right) .\]
 \end{eg}
-\begin{prop}
-Sea $\displaystyle \sigma \in \mathcal{S}_{n} $ con $\displaystyle \sigma = \sigma_{1} \cdots \sigma _{k} $ ciclos disjuntos. Entonces, $\displaystyle o\left(\sigma \right) = \mcm\left(o\left(\sigma_{1}\right), \ldots, o\left(\sigma_{k}\right)\right) $. 
-\end{prop}
+\begin{colorary}[Orden de una permutación]
+Sea $\displaystyle \sigma \in \mathcal{S}_{n} $ con $\displaystyle \sigma = \sigma_{1} \cdots \sigma _{k} $ ciclos disjuntos. Entonces, $\displaystyle o\left(\sigma \right) = \mcm\left(o\left(\sigma_{1}\right), \ldots, o\left(\sigma_{k}\right)\right) $.
+\end{colorary}
 \begin{proof}
 Por ser $\displaystyle \sigma_{1}, \ldots, \sigma_{k} $ disjuntos tenemos que para cualquier $\displaystyle m \in \Z $,
 \[\sigma^{m} = \sigma^{m}_{1} \cdots \sigma^{m}_{k} .\]
-Además, hemos visto que $\displaystyle \sigma^{m} = id $ si y solo si $\displaystyle \sigma^{m}_{i} = id $, $\displaystyle \forall i = 1, \ldots, k $. Por tanto, necesitamos que $\displaystyle o\left(\sigma_{1}\right) |m $, $\displaystyle \forall i = 1, \ldots, k $, por lo que claramente debe ser que $\displaystyle \mcm\left(o\left(\sigma_{1}\right), \ldots, o\left(\sigma_{k}\right)\right) | m $, por lo que 
+Además, hemos visto que $\displaystyle \sigma^{m} = id $ si y solo si $\displaystyle \sigma^{m}_{i} = id $, $\displaystyle \forall i = 1, \ldots, k $. Por tanto, necesitamos que $\displaystyle o\left(\sigma_{i}\right) |m $, $\displaystyle \forall i = 1, \ldots, k $, por lo que claramente debe ser que $\displaystyle \mcm\left(o\left(\sigma_{1}\right), \ldots, o\left(\sigma_{k}\right)\right) | m $. Por otro lado, como $\displaystyle \sigma_{i}^{\mcm\left(o\left(\sigma_{1}\right), \ldots, o\left(\sigma_{k}\right)\right)} = id $, tenemos que 
+$\displaystyle \sigma^{\mcm\left(o\left(\sigma_{1}\right), \ldots, o\left(\sigma_{k}\right)\right)} = id $, por lo que $\displaystyle m | \mcm\left(o\left(\sigma_{1}\right), \ldots, o\left(\sigma_{k}\right)\right) $. Así, obtenemos que
+
 \[o\left(\sigma \right) = \mcm\left(o\left(\sigma_{1}\right), \ldots, o\left(\sigma_{k}\right)\right) .\]
 \end{proof}
 \begin{definition}[Trasposiciones]
@@ -142,12 +147,145 @@ A los 2-ciclos los llamamos \textbf{trasposiciones}.
 \end{definition}
 
 \begin{colorary}
-Sea $\displaystyle \sigma \in \mathcal{S}_{n} $. Entonces, podemos escribir $\displaystyle \sigma  $ como producto de 2-ciclos.	
+Sea $\displaystyle \sigma \in \mathcal{S}_{n} $. Entonces, podemos escribir $\displaystyle \sigma  $ como producto de trasposiciones.	
 \end{colorary}
  \begin{proof}
-Si $\displaystyle \sigma \in \mathcal{S}_{n} $, sabemos que $\displaystyle \sigma = \sigma_{1} \cdots \sigma_{k} $ ciclos disjuntos. Está claro que cualquier $\displaystyle n $-ciclo lo podemos expresar como 
-\[\left(i_{1}, \ldots, i_{n}\right) = \left(i_{1}, i_{n}\right)\left(i_{n}, i_{2}\right) \cdots \left(i_{n-1}, i_{n}\right) .\]
-% esto no está bien hay que arreglarlo
+Si $\displaystyle \sigma \in \mathcal{S}_{n} $, sabemos que $\displaystyle \sigma = \sigma_{1} \cdots \sigma_{k} $ ciclos disjuntos. Basta ver que todo ciclo puede escribirse como producto de trasposiciones. Sea $\displaystyle \left(i_{1}, \ldots, i_{k}\right) $ un $\displaystyle k $-ciclo arbitrario. Es fácil ver que
+\[\left(i_{1}, \ldots, i_{k}\right) = \left(i_{1}, i_{k}\right)\left(i_{2}, i_{k}\right) \cdots \left(i_{k-1}, i_{k}\right) .\]
 Así, cada $\displaystyle n $-ciclo es producto de trasposiciones y $\displaystyle \sigma  $ lo es.
  \end{proof}
- 
+\begin{observation}
+\begin{enumerate}
+\item Si consideramos el siguiente $\displaystyle 3 $-ciclo: 
+	\[\left(1,2,3\right) = \left(2,3\right)\left(1,3\right) = \left(3,1\right)\left(2,1\right) = \left(1,2\right)\left(3,2\right) .\]
+\item En $\displaystyle \mathcal{S}_{6} $ nos preguntamos cómo son los elementos de orden 3. Si $\displaystyle \sigma \in \mathcal{S}_{6} $ con $\displaystyle o\left(\sigma \right)= 3 $, tenemos que $\displaystyle \sigma = \sigma_{1} \cdots \sigma_{k} $ y tenemos que $\displaystyle 3 = o\left(\sigma \right)= \mcm\left(o\left(\sigma_{1}\right), \ldots, o\left(\sigma_{k}\right)\right) $, por lo que todos los ciclos que componen a $\displaystyle \sigma  $ deben ser de orden 3. 
+	Así, tenemos que $\displaystyle \sigma  $ tiene dos posibles formas:
+	\[\sigma = \left(i_{1}, i_{2}, i_{3}\right) .\]
+	\[\sigma = \left(i_{1}, i_{2}, i_{3}\right)\left(i_{4}, i_{5}, i_{6}\right) .\]
+	Así, los elementos de orden 3 pueden ser un $\displaystyle 3 $-ciclo o dos $\displaystyle 3 $-ciclos.
+\item En $\displaystyle \mathcal{S}_{5} $ los elementos de orden tres sólo son los $\displaystyle 3 $-ciclos puesto que sólo tenemos tres elementos. También podemos ver que en $\displaystyle \mathcal{S}_{5} $ hay elementos de orden 6, en particular aquellos que son la composición de un 2-ciclo y un 3-ciclo. 
+\item En $\displaystyle \mathcal{S}_{n} $, $\displaystyle n \geq 2 $, con $\displaystyle k \in \N $, nos podemos preguntar cuántos $\displaystyle k $-ciclos hay en $\displaystyle \mathcal{S}_{n} $. Recordamos que los elementos de $\displaystyle \mathcal{S}_{n} $ son las biyecciones del conjunto $\displaystyle X_{n}= \left\{ 1, \ldots, n\right\}  $. En primer lugar, tenemos que calcular el número de soportes posibles, es decir, cuántas formas hay de coger $\displaystyle k $ elementos de $\displaystyle X_{n} $. Hay $\displaystyle \begin{pmatrix} n \\ k \end{pmatrix} $ soportes posibles. Por otro lado, dado un soporte $\displaystyle \left\{ i_{1}, \ldots, i_{k}\right\}  $ hay $\displaystyle k! $ formas de ordenar estos números. Hemos de notar que cada ciclo lo contamos $\displaystyle k $ veces, puesto que
+	\[\left(i_{1}, \ldots, i_{k}\right)= \left(i_{2}, \ldots, i_{k}, i_{1}\right) = \cdots = \left(i_{k-1}, i_{k}, i_{1}, \ldots, i_{k-2}\right) = \left(i_{k}, \ldots, i_{k-1}\right) .\]
+	Así, en total el número de $\displaystyle k $-ciclos es:
+	\[\begin{pmatrix} n \\ k \end{pmatrix}k!\frac{1}{k} = \begin{pmatrix} n \\ k \end{pmatrix}\left(k-1\right)! .\]
+\end{enumerate}
+\end{observation}
+\section{Conjugación}
+\begin{definition}[Elemento conjugado]
+Sea $\displaystyle G $ un grupo y $\displaystyle x \in G $. Llamamos \textbf{conjugado} de $\displaystyle x $ por $\displaystyle g \in G $ a $\displaystyle g^{-1}xg \in G $.
+\end{definition}
+\begin{prop}
+Sean $\displaystyle \sigma, \tau \in \mathcal{S}_{n} $ tal que $\displaystyle \sigma = \left(i_{1}, \ldots, i_{k}\right) $. Se cumple que $\displaystyle \tau^{-1}\sigma \tau = \left(\tau\left(i_{1}\right), \ldots, \tau\left(i_{k}\right)\right) $.
+\end{prop}
+\begin{proof}
+Sea $\displaystyle j < k $, tenemos que 
+\[\tau^{-1}\sigma\tau\left(\tau\left(i_{j}\right)\right) = \tau\left(\sigma\left(\tau^{-1}\left(\tau_{i_{j}}\right)\right)\right) = \tau\left(\sigma\left(i_{j}\right)\right) = \tau\left(i_{j+1}\right) .\]
+Si $\displaystyle j = k $ tenemos que
+\[\tau^{-1}\sigma\tau\left(\tau\left(i_{k}\right)\right) = \tau\left(\sigma\left(\tau^{-1}\left(\tau\left(i_{k}\right)\right)\right)\right) = \tau\left(\sigma\left(i_{k}\right)\right) = \tau\left(i_{1}\right) .\]
+Sea $\displaystyle x \not\in \tau\left(\sop\left(\sigma \right)\right) $, entonces $\displaystyle \tau^{-1}\left(x\right)\not\in\sop\left(\sigma \right) $, es decir, 
+\[\sigma\left(\tau^{-1}\left(x\right)\right) = \tau^{-1}\left(x\right) \Rightarrow \tau^{-1}\sigma\tau\left(x\right) = \tau\left(\sigma\left(\tau^{-1}\left(x\right)\right)\right) = \tau\left(\tau^{-1}\left(x\right)\right) = x .\]
+Así, nos queda que $\displaystyle \tau^{-1}\sigma\tau = \left(\tau\left(i_{1}\right), \ldots, \tau\left(i_{k}\right)\right) $ es un $\displaystyle k $-ciclo.
+\end{proof}
+\begin{prop}
+Sean $\displaystyle \sigma_{1}, \sigma_{2} \in \mathcal{S}_{n} $, $\displaystyle k $-ciclos. Entonces existe $\displaystyle \tau \in \mathcal{S}_{n} $ tal que $\displaystyle \tau^{-1}\sigma_{1}\tau = \sigma_{2} $.
+\end{prop}
+\begin{proof}
+Sea $\displaystyle \sigma_{1} = \left(i_{1}, \ldots, i_{k}\right) $ y $\displaystyle \sigma_{2} = \left(j_{1}, \ldots, j_{k}\right) $. Vamos a definir la aplicación siguiente:
+\[\tau_{\sigma_{1}\sigma_{2}} : \sop\left(\sigma_{1}\right) \to \sop\left(\sigma_{2}\right):i_{s} \to j_{s}, \; 1 \leq s \leq k .\]
+Claramente $\displaystyle \tau_{\sigma_{1}\sigma_{2}} $ es una biyección. Es fácil ver que $\displaystyle \left|X_{n}/\sop\left(\sigma_{1}\right)\right| = \left|X_{n}/\sop\left(\sigma_{2}\right)\right| $. Podemos extender $\displaystyle \tau_{\sigma_{1}\sigma_{2}} $ a una biyección $\displaystyle \tau : X_{n} \to X_{n} $ arbitraria que cumpla $\displaystyle \tau\left(i_{s}\right) = \tau_{\sigma_{1}\sigma_{2}}\left(i_{s}\right) = j_{s} $ para $\displaystyle 1 \leq s\leq k $. Por construcción y por la proposición anterior, tenemos que 
+\[\tau^{-1}\sigma\tau = \left(\tau\left(i_{1}\right), \ldots, \tau\left(i_{k}\right)\right) = \left(j_{1}, \ldots, j_{k}\right) = \sigma_{2} .\]
+\end{proof}
+\begin{eg}
+En $\displaystyle \mathcal{S}_{5} $ consideremos $\displaystyle \sigma_{1} = \left(1,3,2\right) $ y $\displaystyle \sigma_{2} = \left(2,5,1\right) $. Calculando $\displaystyle \tau $ usando la notación anterior:
+\[\tau = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 \\ 2 & 1 & 5 & * & * \end{pmatrix} .\]
+Hay dos formas posibles de poner los dos valores restantes, 3 y 4, y ambas permutaciones son válidas. Así, las dos permutaciones que funcionarían son:
+\[\tau_{1} = \left(1,2\right)\left(3,5,4\right), \quad \tau_{2}= \left(1,2\right)\left(3,5\right) .\]
+\end{eg}
+\begin{colorary}
+Sean $\displaystyle \sigma, \gamma \in \mathcal{S}_{n} $ permutaciones. Entonces, $\displaystyle \sigma $ y $\displaystyle \gamma $ son conjugadas si y solo si tienen una descomposición en ciclos disjuntos parecida; es decir, $\displaystyle \sigma = \sigma_{1} \cdots \sigma_{k} $ y $\displaystyle \gamma = \gamma_{1} \cdots \gamma_{k} $ y tienen la misma longitud en $\displaystyle k $-ciclos.
+\end{colorary}
+ \begin{proof}
+\begin{description}
+\item[(i)] Si $\displaystyle \sigma  $ y $\displaystyle \gamma  $ son conjugados, existe $\displaystyle \tau \in \mathcal{S}_{n} $ tal que $\displaystyle \tau^{-1}\sigma \tau = \gamma  $. Sabemos que $\displaystyle \sigma = \sigma_{1} \cdots \sigma_{k} $ ciclos disjuntos. Entonces, tenemos que
+	\[\gamma= \tau^{-1}\sigma \tau = \tau^{-1}\left(\sigma_{1} \cdots \sigma_{k}\right)\tau = \left(\tau^{-1}\sigma_{1}\tau\right) \cdots \left(\tau^{-1}\sigma_{k}\tau\right).\]
+Tenemos que $\displaystyle \gamma_{j} = \tau^{-1}\sigma_{j}\tau $ es un $\displaystyle t $-ciclo, donde $\displaystyle t = \left|\sop\left(\sigma_{j}\right)\right| $. Así, tenemos que $\displaystyle \sop\left(\tau^{-1}\sigma_{j}\tau \right)= \tau\left(\sop\left(\sigma_{j}\right)\right) $. Por ser $\displaystyle \tau $ una biyección, los soportes de $\displaystyle \gamma_{j} $ son disjuntos. 
+Así, la descomposición de $\displaystyle \gamma  $ tiene las mismas características que la de $\displaystyle \sigma  $, que es lo que buscábamos.
+\item[(ii)] Supongamos que ambas permutaciones tienen esa descomposición. Entonces, siguiendo la demostración de la proposición anterior podemos constuir $\displaystyle \tau_{\sigma_{i}\gamma_{i}} $ para cada $\displaystyle i $ y luego extendemos la biyección
+	\[\bigsqcup_{i = 1}^{r}\tau_{\sigma_{i}\gamma_{i}} : \bigsqcup_{i = 1}^{r}\sop\left(\tau_{i}\right) \to \bigsqcup_{i = 1}^{r}\sop\left(\gamma_{i}\right),\]
+	a una biyección $\displaystyle \tau $ de $\displaystyle X_{n} $.
+\end{description} 
+ \end{proof}
+ \begin{eg}
+ En $\displaystyle \mathcal{S}_{7} $ sean $\displaystyle \sigma = \sigma_{1}\sigma_{2} $, con $\displaystyle \sigma_{1} = \left(2,1,5\right) $ y $\displaystyle \sigma_{2}= \left(3,4\right) $, y $\displaystyle \gamma = \gamma_{1}\gamma_{2} $, con $\displaystyle \gamma_{1} = \left(7,4,2\right) $ y $\displaystyle \gamma_{2}=\left(1,3\right) $. La demostración anterior nos da que
+ \[\tau_{\sigma_{1}\gamma_{1}}=\begin{pmatrix} 1 & 2 & 5 \\ 4 & 7 & 2 \end{pmatrix}, \; \tau_{\sigma_{2}\gamma_{2}}=\begin{pmatrix} 3 & 4 \\ 1 & 3 \end{pmatrix}, \; \text{y} \; \tau = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ 4 & 7 & 1 & 3 & 2 & * & * \end{pmatrix} .\]
+ \end{eg}
+\section{Subgrupo alternado}
+\begin{definition}[Paridad]
+Sea $\displaystyle \sigma \in \mathcal{S}_{n} $. 
+\begin{itemize}
+\item Diremos que es \textbf{par} si se puede escribir como un producto par de trasposiciones.
+\item Diremos que es \textbf{impar} si no es par.
+\end{itemize}
+\end{definition}
+\begin{observation}
+A priori podría suceder que una permutación se pueda escribir con un número par e impar de trasposiciones. El siguiente resultado prueba que esto no es posible. 
+\end{observation}
+\begin{prop}
+Sea $\displaystyle \sigma \in \mathcal{S}_{n} $ con $\displaystyle \sigma = \tau_{1} \cdots \tau_{r}=\gamma_{1} \cdots \gamma_{l} $ producto de trasposiciones. Entonces, si $\displaystyle r $ es par $\displaystyle l $ también lo es.
+\end{prop}
+\begin{proof}
+Tenemos que $\displaystyle \sigma = \tau_{1} \cdots \tau_{r}= \gamma_{1} \cdots \gamma_{l} $, por lo que
+\[\tau_{1}\cdots \tau_{r} \cdot \gamma_{l} \cdots \gamma_{1} = id .\]
+Basta ver que la identidad solo se puede escribir como un producto par de trasposiciones. Supongamos que la identidad se puede escribir como un producto impar de trasposiciones. Vamos a coger la de menor longitud $\displaystyle s $ impar, es decir 
+\[id = \left(a_{1}, b_{1}\right) \cdots \left(a_{s}, b_{s}\right), \; a_{1}, \ldots, a_{s}, b_{1}, \ldots, b_{s} \in X_{n} .\]
+Tenemos que $\displaystyle a_{i} \neq b_{i} $, $\displaystyle \forall i = 1, \ldots, s $. Ahora, de entre todas las representaciones de longitud $\displaystyle s $ vamos a tomar la que menos cantidad de $\displaystyle a_{1} $ tenga. Es claro que $\displaystyle s \neq 1 $, puesto que si $\displaystyle s = 1 $ entonces $\displaystyle id = \left(a_{1}, b_{1}\right) $ y tendríamos que $\displaystyle a_{1} = b_{1} $. 
+Podemos suponer que $\displaystyle s \geq 3 $. Tenemos que en $\displaystyle \left(a_{2}, b_{2}\right) \cdots \left(a_{s}, b_{s}\right) $ aparece $\displaystyle a_{1} $, es decir, está en su soporte. Así, existe $\displaystyle 2 \leq j \leq s $ tal que $\displaystyle a_{j} = a_{1} $. Escogiendo el mínimo $\displaystyle j $ y operando adecuadamente podemos tomar $\displaystyle j = 2 $, por lo que $\displaystyle a_{2} = a_{1} $. Así, podemos distinguir dos casos:
+\begin{itemize}
+\item Si $\displaystyle b_{1} = b_{2} $, tenemos que $\displaystyle \left(a_{1}, b_{1}\right)\left(a_{2}, b_{2}\right) = id $, por lo que la identidad es el producto de $\displaystyle s-2 $ trasposiciones, lo cual es imposible porque habíamos dicho que $\displaystyle s $ era la mínima longitud.
+\item Si $\displaystyle b_{1} \neq b_{2} $, tenemos que $\displaystyle \left(a_{1},b_{1}\right)\left(a_{2}, b_{2}\right) = \left(a_{1}, b_{2}\right)\left(b_{1}, b_{2}\right) $. Por tanto, podemos reescribir
+	\[id = \left(a_{1}, b_{2}\right)\left(b_{1}, b_{2}\right) \cdots \left(a_{s}, b_{s}\right) .\]
+	Como hemos escrito la identidad con un $\displaystyle a_{1} $ menos, esto contradice la elección de la representación inicial de $\displaystyle id $.
+\end{itemize}
+\end{proof}
+\begin{definition}[Subgrupo alternado]
+	En $\displaystyle \mathcal{S}_{n} $ llamamos \textbf{grupo $\displaystyle n $-ésimo alternado} a $\displaystyle \mathcal{A}_{n} = \left\{ \sigma \in \mathcal{S}_{n} \; : \; \sigma \; \text{par}\right\}  $. 
+\end{definition}
+\begin{observation}
+	Consideremos la aplicación $\displaystyle \sig : \mathcal{S}_{n} \to \left\{ -1,1\right\}  $ tal que
+	\[\sigma \to \sig\left(\sigma \right) = 
+	\begin{cases}
+	-1, \quad \sigma  \; \text{impar} \\
+	1, \quad  \sigma  \; \text{par}
+	\end{cases}
+	.\]
+	Es fácil ver que es un homomorfismo. Claramente tenemos que $\displaystyle \Ker\left(\sig \right)= \mathcal{A}_{n} $ e $\displaystyle \Imagen\left(f\right) = \left\{ -1,1\right\}  $. Por tanto, tenemos que $\displaystyle \mathcal{A}_{n} \lhd \mathcal{S}_{n} $. Por el primer teorema de isomorfía tenemos que $\displaystyle \mathcal{S}_{n}/\mathcal{A}_{n} \cong \left\{ -1,1\right\}  $, por lo que $\displaystyle [\mathcal{S}_{n} \; : \; \mathcal{A}_{n}] = 2 $ y tenemos que 
+	\[ \left|\mathcal{A}_{n}\right|= \frac{n!}{2} .\]	
+\end{observation}
+\begin{prop}
+Si $\displaystyle n \geq 3 $, $\displaystyle \mathcal{A}_{n} $ está generado por todos los 3-ciclos de $\displaystyle \mathcal{S}_{n} $. 
+\end{prop}
+\begin{proof}
+Si tomamos un 3-ciclo $\displaystyle \left(i,j,k\right) $, tenemos que 
+\[\left(i,j,k\right) = \left(k,i\right)\left(j,i\right) \in \mathcal{A}_{n} .\]
+Por tanto, todos los 3-ciclos están en el grupo alternado. Ahora veamos que las permutaciones pares son productos de 3-ciclos. Consideremos dos trasposiciones, entonces podemos escribirlas como producto de a lo sumo dos 3-ciclos. En efecto, consideremos las trasposiciones $\displaystyle \left(i,j\right) $ y $\displaystyle \left(k,r\right) $. Hay varias opciones:
+\begin{itemize}
+	\item Si $\displaystyle \left\{ i,j\right\}\cap\left\{ k,r\right\} \neq \emptyset $ y $\displaystyle j = r $, podemos escribir
+		\[\left(i,j\right)\left(k,r\right)=\left(i,j\right)\left(k,j\right)=\left(j,k,i\right) .\]
+	\item Si $\displaystyle \left\{ i,j\right\} \cap \left\{ k,r\right\} \neq \emptyset $ y $\displaystyle \left\{ i,j\right\} = \left\{ k,r\right\}  $ tenemos que $\displaystyle \left(i,j\right)\left(k,r\right) = id $.
+	\item Si $\displaystyle \left\{ i,j\right\} \cap \left\{ k,r\right\} = \emptyset $, tenemos que 
+		\[\left(i,j\right)\left(k,r\right) = \left(r,k,i\right)\left(i,j,k\right) .\]
+\end{itemize}
+\end{proof}
+\begin{eg}
+	\begin{itemize}
+	\item $\displaystyle \mathcal{A}_{2} $ tiene un sólo elemento.
+	\item $\displaystyle \mathcal{A}_{3}\cong C_{3} $.
+	\item $\displaystyle \mathcal{A}_{4} $ tiene orden 12 y es un grupo en sí mismo, es decir, no es isomorfo a ningún grupo que hayamos visto anteriormente. Además, $\displaystyle \mathcal{A}_{4} $ está formado por los 3-ciclos de $\displaystyle \mathcal{S}_{4} $ y las permutaciones de dos trasposiciones disjuntas. Es fácil ver que $\displaystyle \mathcal{A}_{4} $ no tiene elementos de orden 4 ni de orden 6.
+	\item Si consideramos el conjunto 
+		\[ \left\{ id, \left(1,2\right), \left(3,4\right), \left(1,3\right), \left(2,4\right), \left(1,4\right), \left(2,3\right)\right\} \leq \mathcal{A}_{n} ,\]
+		es un subgrupo de orden $\displaystyle 4 $ y lo llamamos \textbf{grupo de Klein}, que es isomorfo a $\displaystyle C_{2} \times C_{2} $. En concreto, el grupo de Klein es normal en $\displaystyle \mathcal{A}_{4} $. 
+	\end{itemize}
+\end{eg}
+\begin{theorem}
+Si $\displaystyle n \geq 5 $, entonces $\displaystyle \mathcal{A}_{n} $ es simple. 
+\end{theorem} 

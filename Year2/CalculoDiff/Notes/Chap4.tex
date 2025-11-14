@@ -108,6 +108,7 @@ Si $\displaystyle vu \neq 0 $, tenemos que $\displaystyle \frac{uv}{\sqrt{u^{2}+
 Denotamos $\displaystyle f = \left(f_{1}, \ldots, f_{m}\right) $. Entonces, puesto que los límites en $\displaystyle \R^{m} $ se obtienen  coordenada a coordenada, tenemos que
 \[D_{w}f\left(a\right) = \left(D_{w}f_{1}\left(a\right), \ldots, D_{w}f_{m}\left(a\right)\right) \in \R^{m} .\]
 \end{observation}
+\section{Diferenciabilidad}
 \begin{definition}[Diferenciabilidad]
 Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $ y $\displaystyle f : U \to \R^{m} $. Se dice que $\displaystyle f $ es \textbf{diferenciable} en $\displaystyle a $ si existe $\displaystyle L : \R^{n} \to \R^{m} $ lineal tal que 
 \[\lim_{h \to 0}\frac{f\left(a+h\right)-f\left(a\right)-L\left(h\right)}{ \|h\|} = 0.\]
@@ -145,14 +146,14 @@ Así, podemos ver que si $\displaystyle f $ es diferenciable en $\displaystyle a
 	= & \lim_{\left(x,y\right) \to \left(0,0\right)}\frac{x \left|y\right|}{x^{2}+y^{2}} \sim \frac{r^{2}\cos\theta \left|\sin\theta \right|}{r^{2}}.
 \end{split}
 \]
-Como el valor del límite depende de $\displaystyle \theta $, tenemos que el límite no existe, por lo que $\displaystyle f $ no es diferenciable en $\displaystyle \left(0,0\right) $. Dado $\displaystyle w = \left(u,v\right) \in \R^{2} $, tenemos que 
+Como el valor del límite depende de $\displaystyle \theta $, tenemos que el límite no existe, por lo que $\displaystyle f $ no es diferenciable en $\displaystyle \left(0,0\right) $. Otra forma de verlo es, dado $\displaystyle w = \left(u,v\right) \in \R^{2} $, tenemos que 
 \[
 \begin{split}
 	D_{w}f\left(0,0\right) = & \lim_{t \to 0}\frac{1}{t}\left(f\left(tu,tv\right)-f\left(0,0\right)\right) = \lim_{t \to 0}\frac{1}{t}\left(tu + \frac{t \left|t\right|u \left|v\right|}{ \left|t\right|\sqrt{u^{2}+v^{2}}}\right) \\
 	= & \lim_{t \to 0}\left(u +\frac{u \left|v\right|}{ \sqrt{u^{2}+v^{2}}}\right) = u + \frac{u \left|v\right|}{\sqrt{u^{2}+v^{2}}} .
 \end{split}
 \]
-Esta última expresión no es lineal, por lo que $\displaystyle f $ no es diferenciable en $\displaystyle w = \left(u,v\right) \in \R^{2} $.
+Esta última expresión no es lineal, por lo que $\displaystyle f $ no es diferenciable en $\displaystyle \left(0,0\right)$.
 \end{eg}
 \begin{prop}
 Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{m} $ y $\displaystyle a \in U $. Entonces $\displaystyle f $ es diferenciable en $\displaystyle a $ si y solo si $\displaystyle f_{1}, \ldots, f_{m} $ son diferenciables en $\displaystyle a $ y en este caso 
@@ -285,14 +286,14 @@ Así, nos queda
 \[
 \begin{split}
 & \|g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right) -Dg\left(f\left(a\right)\right)\left(Df\left(a\right)\left(x-a\right)\right)\| \\
-\leq & \|g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right) - Dg\left(f\left(a\right)\right)\left(f\left(x\right)-f\left(a\right)\right) \| + \|Dg\left(f\left(a\right)\right) \left(f\left(x\right)-f\left(a\right)-Df\left(a\right)\left(x-a\right)\right)\| \\
+\leq & \|g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right) - Dg\left(f\left(a\right)\right)\left(f\left(x\right)-f\left(a\right)\right) \| + \|Dg\left(f\left(a\right)\right) \left(f\left(x\right)-f\left(a\right) \right)-Df\left(a\right)\left(x-a\right)\| \\
 \leq & \epsilon ' M \|x-a\| + \|Dg\left(f\left(a\right)\right)\| \|f\left(x\right)-f\left(a\right) - Df\left(a\right)\left(x-a\right)\| \leq \epsilon ' M' \|x-a\| + M\epsilon ' \|x-a\|\\
 = & \epsilon'\left(M + M'\right)\|x-a\| = \epsilon \|x-a\|.
 \end{split}
 \]
 \end{proof}
 \begin{theorem}[Condición suficiente de diferenciabilidad]
-Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $ y $\displaystyle f : U \to \R^{m} $. Supongamos que $\displaystyle \forall j = 1, \ldots, m $, $\displaystyle \forall i = 1, \ldots, n $, $\displaystyle \forall x \in U $, existe $\displaystyle \frac{\partial f}{\partial x_{i}}\left(x\right) $ y además las funciones $\displaystyle \frac{\partial f_{j}}{\partial x_{i}} : U \to \R^{m} $ son continuas en $\displaystyle a $. Entonces, $\displaystyle f $ es diferenciable en $\displaystyle a $.
+Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $ y $\displaystyle f : U \to \R^{m} $. Supongamos que $\displaystyle \forall j = 1, \ldots, m $, $\displaystyle \forall i = 1, \ldots, n $, $\displaystyle \forall x \in U $, existe $\displaystyle \frac{\partial f_{j}}{\partial x_{i}}\left(x\right) $ y además las funciones $\displaystyle \frac{\partial f_{j}}{\partial x_{i}} : U \to \R^{m} $ son continuas en $\displaystyle a $. Entonces, $\displaystyle f $ es diferenciable en $\displaystyle a $.
 \end{theorem}
 \begin{proof}
 Es suficiente considerar el caso $\displaystyle m = 1 $, puesto que $\displaystyle f = \left(f_{1}, \ldots, f_{m}\right) $ es diferenciable en $\displaystyle a $ si y solo si $\displaystyle f_{j}  $ es diferenciable en $\displaystyle a $, $\displaystyle \forall j = 1, \ldots, m $. Como $\displaystyle U $ es abierto y $\displaystyle a \in U $, existe $\displaystyle r > 0 $ tal que $\displaystyle B_{\infty}\left(a,r\right) \subset U $.
@@ -305,8 +306,8 @@ Sea $\displaystyle x \in B_{\infty}\left(a,r\right) $, tenemos que
 \end{split}
 \]
 Denotamos $\displaystyle \varphi\left(t\right) = f\left(t,x_{2}, \ldots, x_{n}\right) $ con $\displaystyle t \in \left(a_{1}-r, a_{1}+r\right) $, tenemos que si aplicamos el teorema del valor medio encontramos $\displaystyle c_{1}  $ un punto intermedio entre $\displaystyle a_{1} $ y $\displaystyle x_{1} $ tal que
-\[f\left(x_{1}, \ldots, x_{n}\right) -f\left(a_{1}, x_{2}, \ldots, x_{n}\right) = \varphi\left(x_{1}\right)-\varphi\left(a_{1}\right) = \varphi\left(c_{1}\right)\left(x_{1}-a_{1}\right)   .\]
-En efecto, podemos aplicar el teorema del valor medio puesto que $\displaystyle \varphi $ es derivable en $\displaystyle \left(a_{1}-r_{1}, a_{1}+r\right) $ y 
+\[f\left(x_{1}, \ldots, x_{n}\right) -f\left(a_{1}, x_{2}, \ldots, x_{n}\right) = \varphi\left(x_{1}\right)-\varphi\left(a_{1}\right) = \varphi'\left(c_{1}\right)\left(x_{1}-a_{1}\right)   .\]
+En efecto, podemos aplicar el teorema del valor medio puesto que $\displaystyle \varphi $ es derivable en $\displaystyle \left(a_{1}-r, a_{1}+r\right) $ y 
 \[\varphi'\left(t\right) = \lim_{h \to 0}\frac{f\left(t+h, x_{2}, \ldots, x_{n}\right)-f\left(t, x_{2}, \ldots, x_{n}\right)}{t} = \frac{\partial f}{\partial x_{1}}\left(t, x_{2}, \ldots, x_{n}\right) .\]
 Así, aplicando el mismo razonamiento nos queda que 
 \[
@@ -321,14 +322,14 @@ Así, nos queda que
 \[
 \begin{split}
 	 f\left(x\right)-f\left(a\right) - L\left(x-a\right) 
-	 = & \left(x_{1}-a_{1}\right) \left(\frac{\partial f}{\partial x_{1}}\left(a_{1}, x_{2}, \ldots, x_{n}\right)-\frac{\partial f}{\partial x_{1}}\left(a_{1}, \ldots, a_{n}\right)\right) \\
+	 = & \left(x_{1}-a_{1}\right) \left(\frac{\partial f}{\partial x_{1}}\left(c_{1}, x_{2}, \ldots, x_{n}\right)-\frac{\partial f}{\partial x_{1}}\left(a_{1}, \ldots, a_{n}\right)\right) \\
 	+ &  \cdots + \left(x_{n}-a_{n}\right)\left(\frac{\partial f}{\partial x_{n}}\left(a_{1}, \ldots, a_{n-1}, c_{n}\right)-\frac{\partial f}{\partial x_{n}}\left(a_{1}, \ldots, a_{n}\right)\right) .
 \end{split}
 \]
 De esta forma la fracción nos queda
 \[
 \begin{split}
-	\frac{ \left|f\left(x\right)-f\left(a\right)-L\left(x-a\right)\right|}{ \|x-a\|} \leq & \frac{ \left|x_{1}-a_{1}\right|}{\|x-a\|} \left|\frac{\partial f}{\partial x_{1}}\left(a_{1}, x_{2}, \ldots, x_{n}\right)-\frac{\partial f}{\partial x_{1}}\left(a_{1}, \ldots, a_{n}\right)\right| \\
+	\frac{ \left|f\left(x\right)-f\left(a\right)-L\left(x-a\right)\right|}{ \|x-a\|} \leq & \frac{ \left|x_{1}-a_{1}\right|}{\|x-a\|} \left|\frac{\partial f}{\partial x_{1}}\left(c_{1}, x_{2}, \ldots, x_{n}\right)-\frac{\partial f}{\partial x_{1}}\left(a_{1}, \ldots, a_{n}\right)\right| \\
 	+ & \cdots + \frac{ \left|x_{n}-a_{n}\right|}{\|x-a\|} \left|\frac{\partial f}{\partial x_{n}}\left(a_{1}, \ldots, a_{n-1}, c_{n}\right)-\frac{\partial f}{\partial x_{n}}\left(a_{1}, \ldots, a_{n}\right)\right|.
 \end{split}
 \]
@@ -373,7 +374,7 @@ Como son continuas en $\displaystyle A $ tenemos que $\displaystyle q $ es difer
 \[Dq\left(x_{0}, y_{0}\right)\left(u,v\right) = \left(\frac{1}{y_{0}}, -\frac{x_{0}}{y_{0}^{2}}\right)\begin{pmatrix} u \\ v \end{pmatrix} = \frac{y_{0}u - x_{0}v}{y_{0}^{2}} .\]
 \end{proof}
 \begin{colorary}[de la Regla de la Cadena]
-Sean $\displaystyle U \subset \R^{n} $ abierto y $\displaystyle f \cdot g : U \to \R $ diferenciable en $\displaystyle a $. 
+Sean $\displaystyle U \subset \R^{n} $ abierto y $\displaystyle f, g : U \to \R $ diferenciables en $\displaystyle a $. 
 \begin{enumerate}
 \item Entonces, $\displaystyle f \cdot g $ es diferenciable en $\displaystyle a $ y 
 \[D\left(f \cdot g\right)\left(a\right) = g\left(a\right)Df\left(a\right) + f\left(a\right)Dg\left(a\right) .\]
@@ -425,7 +426,7 @@ Sean $\displaystyle f,g $ diferenciables y $\displaystyle h = g\circ f $. Por la
 \cdot \begin{pmatrix} \frac{\partial f_{1}}{\partial x_{1}} & \cdots & \frac{\partial f_{1}}{\partial x_{n}} \\ 
 \vdots & & \vdots \\ 
 \frac{\partial f_{m}}{\partial x_{1}} & \cdots & \frac{\partial f_{m}}{\partial x_{n}}\end{pmatrix}_{a}.\]
-Así, si cogemos la columna $\displaystyle i $ obtenemos que 
+Así, si cogemos el elemento que está en la columna $\displaystyle i $ y la fila $\displaystyle k $ obtenemos que 
 \[\frac{\partial h_{k}}{\partial x_{i}}\left(a\right) = \sum^{m}_{j = 1}\frac{\partial g_{k}}{\partial y_{j}}f\left(a\right) \cdot \frac{\partial f_{j}}{\partial x_{i}}\left(a\right) .\]
 Convencionalmente, la regla de la cadena se escribe de la forma
 \[\frac{\partial z_{k}}{\partial x_{i}} = \sum^{m}_{ j= 1}\frac{\partial z_{k}}{\partial y_{j}} \cdot \frac{\partial y_{j}}{\partial x_{i}} .\]
@@ -453,13 +454,13 @@ Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R $ di
 \end{definition}
 \begin{observation}
 Tenemos que $\displaystyle \forall w \in \R^{n} $,
-\[Df\left(a\right)w = \sum^{n}_{i = 1}\frac{\partial f\left(a\right)}{\partial x_{i}}w_{i} = \left\langle \nabla f\left(a\right), w \right\rangle  .\]
+\[Df\left(a\right)\left(w\right) =D_{w}f\left(a\right) = \sum^{n}_{i = 1}\frac{\partial f\left(a\right)}{\partial x_{i}}w_{i} = \left\langle \nabla f\left(a\right), w \right\rangle  .\]
 \end{observation}
 \begin{observation}
-Sea $\displaystyle I \subset \R $ un intervalo abierto y $\displaystyle f : I \to \R^{n} $. Sabemos que $\displaystyle f $ es diferenciable en $\displaystyle t_{0} \in I $ si y solo si $\displaystyle f $ es derivable en $\displaystyle t_{0} $ y además $\displaystyle f'\left(t_{0}\right) = Df\left(t_{0}\right)\left(1\right) $. 
+Sea $\displaystyle I \subset \R $ un intervalo abierto y $\displaystyle f : I \to \R^{m} $. Sabemos que $\displaystyle f $ es diferenciable en $\displaystyle t_{0} \in I $ si y solo si $\displaystyle f $ es derivable en $\displaystyle t_{0} $ y además $\displaystyle f'\left(t_{0}\right) = Df\left(t_{0}\right)\left(1\right) $. 
 \end{observation}
 \begin{colorary}
-Sean $\displaystyle I \subset \R $ un intervalo abierto, $\displaystyle t_{0} \in I $; $\displaystyle f : I \to \R^{n} $ derivable en $\displaystyle t_{0} $ con $\displaystyle f\left(I\right) \subset U $ abierto; $\displaystyle g : U \to \R $ diferenciable en $\displaystyle a = f\left(t_{0}\right) $. Entonces, $\displaystyle g\circ f : I \to U \to \R $ es derivable en $\displaystyle t_{0} $ y además
+Sean $\displaystyle I \subset \R $ un intervalo abierto, $\displaystyle t_{0} \in I $; $\displaystyle f : I \to \R^{m} $ derivable en $\displaystyle t_{0} $ con $\displaystyle f\left(I\right) \subset U $ abierto; $\displaystyle g : U \to \R $ diferenciable en $\displaystyle a = f\left(t_{0}\right) $. Entonces, $\displaystyle g\circ f : I \to U \to \R $ es derivable en $\displaystyle t_{0} $ y además
 \[\left(g\circ f\right)'\left(t_{0}\right) = \left\langle \nabla g\left(f\left(t_{0}\right)\right), f'\left(t_{0}\right) \right\rangle  .\]
 \end{colorary}
 \begin{proof}
@@ -497,7 +498,7 @@ Tenemos que $\displaystyle F\circ \sigma\left(t\right) = r $, $\displaystyle \fo
 Por lo que $\displaystyle \nabla F\left(p\right) \perp\sigma'\left(t_{0}\right) $.
 \end{proof}
 \begin{definition}[Hiperplano tangente]
-Sean $\displaystyle U\subset\R^{n} $ abierto, $\displaystyle F:U \to \R $ y $\displaystyle r \in \R $. Sea $\displaystyle p \in S_{r} $. Si $\displaystyle \nabla F\left(p\right)= 0 $, se dice que $\displaystyle \nabla F\left(p\right) $ es un \textbf{vector normal} a $\displaystyle S_{r} $ en $\displaystyle p $ y se define el \textbf{hiperplano tangente} a $\displaystyle S_{r} $ en $\displaystyle p $ como el hiperplano que pasa por $\displaystyle p $ y es perpendicular a $\displaystyle \nabla F\left(p\right) $.
+Sean $\displaystyle U\subset\R^{n} $ abierto, $\displaystyle F:U \to \R $ y $\displaystyle r \in \R $. Sea $\displaystyle p \in S_{r} $. Si $\displaystyle \nabla F\left(p\right)\neq 0 $, se dice que $\displaystyle \nabla F\left(p\right) $ es un \textbf{vector normal} a $\displaystyle S_{r} $ en $\displaystyle p $ y se define el \textbf{hiperplano tangente} a $\displaystyle S_{r} $ en $\displaystyle p $ como el hiperplano que pasa por $\displaystyle p $ y es perpendicular a $\displaystyle \nabla F\left(p\right) $.
 \end{definition}
 \begin{eg}
 	Consideremos $\displaystyle M = \left\{ \left(x,y,z\right) \; : \; 2x^{2} +y^{2}+3z^{2} = 6\right\}  $, que es un elipsoide. Tomamos $\displaystyle p= \left(1,2,0\right) \in M $. Calculamos el hiperplano tangente a $\displaystyle M $ en $\displaystyle p $. Tenemos que 
@@ -531,3 +532,272 @@ z = f\left(x_{0}, y_{0}\right) + \lambda \frac{\partial f}{\partial x}\left(x_{0
 \end{cases}
 .\]
 Claramente, obtenemos el mismo plano por ambos métodos.
+\section{Teorema del valor medio}
+\begin{definition}[Segmento]
+Dados $\displaystyle x,y \in \R^{n} $, el \textbf{segmento} que los une es
+\[\left[x,y\right]  = \left\{ \left(1-t\right)x + ty \; : \; 0 \leq t \leq 1\right\}  .\]
+\end{definition}
+\begin{theorem}[Teorema del valor medio]
+	Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R $ diferenciable en $\displaystyle U $, y supongamos que $\displaystyle \left[x,y\right]  \subset U $. Entonces, existe $\displaystyle z \in \left[x,y\right]  $ tal que 
+	\[f\left(y\right)-f\left(x\right) = \left\langle \nabla f\left(z\right), y - x \right\rangle = Df\left(z\right) \left(y-x\right) .\]
+\end{theorem}
+\begin{proof}
+	Consideramos $\displaystyle \sigma : \left[0,1\right] \to U $, $\displaystyle \sigma\left(t\right) = \left(1-t\right)x +ty = x + t\left(y - x\right)$ es derivable en $\displaystyle \left[0,1\right]  $ y además $\displaystyle \sigma'\left(t\right) = y - x $, $\displaystyle \forall t \in [0,1] $. Consideremos $\displaystyle g = f \circ \sigma : \left[0,1\right] \to \R $ donde $\displaystyle g\left(t\right)=f\left(\sigma\left(t\right)\right) = f\left(\left(1-t\right)x + ty\right) $. Por la regla de la cadena tenemos que $\displaystyle g $ es derivable en $\displaystyle [0,1] $ y
+	\[g'\left(t\right)=\left\langle \nabla f\left(\sigma\left(t\right)\right), \sigma'\left(t\right) \right\rangle = \left\langle \nabla f\left(\left(1-t\right)x + ty\right), y-x \right\rangle  .\]
+Aplicando el teorema del valor medio en $\displaystyle \R $, tenemos que existe $\displaystyle c \in \left(0,1\right) $ tal que 
+\[g\left(1\right) -g\left(0\right) = g'\left(c\right) \iff f\left(y\right)-f\left(x\right) = \left\langle \nabla f\left(\left(1-c\right)x + cy\right), y-x \right\rangle  .\]
+Llamando $\displaystyle z = \left(1-c\right)x + cy \in \left[x,y\right]  $, tenemos que 
+\[f\left(x\right)-f\left(y\right) = \left\langle \nabla f\left(z\right), y - x \right\rangle  .\]
+\end{proof}
+\begin{colorary}
+Sean $\displaystyle U \subset \R^{n} $ abierto convexo, $\displaystyle f : U \to \R $ diferenciable en $\displaystyle U $ y supongamos que $\displaystyle \|\nabla f\left(z\right) \| \leq K $, $\displaystyle \forall z \in U $ \footnote{Consideramos la norma euclídea.}. Entonces
+\[|f\left(x\right)-f\left(y\right)|\leq K \|x-y\|, \; \forall x,y \in U .\]
+\end{colorary}
+\begin{proof}
+	Dados $\displaystyle x,y \in U $, tenemos que $\displaystyle \left[x,y\right] \subset U $ y por el teorema anterior existe $\displaystyle z \in \left[x,y\right]  $ tal que, aplicando la desigualdad Cauchy-Swartz,
+	\[|f\left(y\right)-f\left(x\right)| = |\left\langle \nabla f\left(z\right), y-x \right\rangle| \leq \|\nabla f\left(z\right)\| \|y -x\| \leq K \|y-x\|  .\]
+\end{proof}
+\begin{colorary}
+Sean $\displaystyle U \subset \R^{n} $ abierto convexo y $\displaystyle f : U \to \R $ diferenciable en $\displaystyle U $ tal que $\displaystyle \nabla f\left(z\right) = 0 $, $\displaystyle \forall z \in U $. Entonces $\displaystyle f $ es constante en $\displaystyle U $.
+\end{colorary}
+\begin{proof}
+Tenemos que $\displaystyle \forall x,y \in U $, 
+\[ \left|f\left(x\right)-f\left(y\right)\right| \leq \|\nabla f\left(z\right) \| \|x-y\| = 0 .\]
+Así, tenemos que $\displaystyle f\left(x\right) = f\left(y\right) $.
+\end{proof}
+\begin{observation} %esta observación hay que conectarla con una observación anterior
+Sea $\displaystyle U \subset \R^{n} $ abierto conexo y $\displaystyle f : U \to \R $ diferenciable en $\displaystyle U $ tal que $\displaystyle \nabla f\left(z\right) = 0 $, $\displaystyle \forall z \in U $. Entonces $\displaystyle f $ es constante en $\displaystyle U $. 
+\end{observation}
+\begin{proof}
+	Sea $\displaystyle x_{0} \in U $, tenemos que existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(x_{0}, r\right)\subset U $, que es convexo, por lo que $\displaystyle f $ es constante en $\displaystyle B\left(x,r\right) $. Sea $\displaystyle A = \left\{ x \in U \; : \; f\left(x\right) = f\left(x_{0}\right)\right\}  $. 
+	\begin{itemize}
+	\item Tenemos que $\displaystyle A \neq \emptyset $ puesto que $\displaystyle x_{0} \in A $. 
+	\item Tenemos que $\displaystyle A $ es abierto en $\displaystyle U $. En efecto, dado $\displaystyle x \in A $, existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(x,r\right) \subset U $ y por el corolario anterior tenemos que $\displaystyle f $ es constante en $\displaystyle B\left(x,r\right) $ por ser esta convexa. Así, $\displaystyle f\left(y\right) = f\left(x_{0}\right) $, $\displaystyle \forall y \in B\left(x,r\right) $ por lo que $\displaystyle B\left(x,r\right)\subset A $.
+	\item Análogamente, tenemos que $\displaystyle A $ es cerrado en $\displaystyle U $. Veamos que $\displaystyle U/A $ es abierto. Dado $\displaystyle x \in U/A $ tenemos que $\displaystyle f\left(x\right) \neq f\left(x_{0}\right) $. Existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(x,r\right)\subset U $ y sabemos que $\displaystyle f|_{B\left(x,r\right)} $ es constante. Por tanto, debe ser que $\displaystyle f\left(y\right) = f\left(x\right) \neq f\left(x_{0}\right) $, $\displaystyle \forall y \in B\left(x,r\right) $. Por lo que $\displaystyle B\left(x,r\right) \subset U/A $.
+	\end{itemize}
+	Por conexión debe ser que $\displaystyle A = U $. 
+\end{proof}
+
+\begin{theorem}[Desigualdad del valor medio]
+	Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{m} $ diferenciable en $\displaystyle U $. Supongamos que $\displaystyle \left|\frac{\partial f_{j}}{\partial x_{i}}\left(z\right)\right|\leq K $, $\displaystyle \forall i = 1, \ldots, n $, $\displaystyle \forall j = 1, \ldots, m $, $\displaystyle \forall z \in [x,y] \subset U $. Entonces \footnote{Consideramos la norma euclídea.},
+	\[\|f\left(x\right)-f\left(y\right)\| \leq K\sqrt{n \cdot m}\|y-x\| .\]
+\end{theorem}
+\begin{proof}
+	Tenemos que $\displaystyle \forall j= 1, \ldots, m $, $\displaystyle f_{j} : U \to \R $ es diferenciable, luego por el teorema del valor medio existe $\displaystyle z_{j} \in [x,y] $ tal que 
+	\[|f_{j}\left(y\right)-f_{j}\left(x\right)| = |\left\langle \nabla f_{j}\left(z_{j}\right), y-x \right\rangle| \leq \|\nabla f_{j}\left(z_{j}\right)\| \|y - x\|  .\]
+Por otro lado, tenemos que
+\[\|\nabla f_{j}\left(z_{j}\right)\|^{2} = \sum^{n}_{i = 1} \left|\frac{\partial f_{j}}{\partial x_{i}}\left(z_{j}\right)\right|^{2} \leq nK^{2} .\]
+Así, la desigualdad anterior nos queda
+\[ \left|f_{j}\left(y\right)-f_{j}\left(x\right)\right| \leq \sqrt{n}K \|x-y\| .\]
+Así, tenemos que 
+\[\|f\left(y\right)-f\left(x\right)\|^{2} = \sum^{m}_{j = 1} \left|f_{j}\left(y\right)-f_{j}\left(x\right)\right|^{2} \leq \sum^{m}_{j = 1}nK^{2}\|y -x\|^{2} = nmK^{2}\|y-x\|^{2} .\]
+Quitando los cuadrados obtenemos el resultado deseado. 
+\end{proof}
+\begin{colorary}
+Sean $\displaystyle U \subset \R^{n} $ abierto convexo, $\displaystyle f : U \to \R^{m} $ diferenciable en $\displaystyle U $, y supongamos que $\displaystyle \left|\frac{\partial f_{j}}{\partial x_{i}}\left(z\right)\right| \leq K $, $\displaystyle \forall j = 1, \ldots, m $, $\displaystyle \forall i = 1, \ldots, n $, $\displaystyle \forall z \in U $. Entonces, 
+\[\|f\left(x\right)-f\left(y\right)\| \leq K\sqrt{nm}\|x-y\|, \; \forall x,y \in U .\]
+\end{colorary}
+\section{Derivadas de orden superior}
+% quizás es nuevo capítulo?
+\begin{eg}
+Consideremos $\displaystyle f\left(x,y,z\right)= x^{3}y^{2} + xz + \sin\left(x-y^{2}\right) $. Tenemos que 
+\[\frac{\partial f}{\partial x} = 3x^{2}y^{2}+z+ \cos\left(x-y^{2}\right) .\]
+Así, podemos calcular las derivadas:
+\[\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right)= \frac{\partial ^{2}f}{\partial y\partial x} = 6x^{2}y + 2y\sin\left(x-y^{2}\right) .\]
+\[\frac{\partial^{2} f}{\partial x \partial y} = \frac{\partial }{\partial x}\left(\frac{\partial f}{\partial y}\right)=6x^{2}y +2y\sin\left(x-y^{2}\right) .\]
+\end{eg}
+\begin{definition}[Derivadas parciales de orden 2]
+Sean $\displaystyle U \subset \R^{n} $ abierto, consideremos $\displaystyle f : U \to \R $ y $\displaystyle a \in U $. Se define, cuando exixte, la \textbf{derivada parcial de orden 2} de la forma
+\[\frac{\partial^{2}f}{\partial x_{i}x_{j}}\left(a\right) = \frac{\partial }{\partial x_{i}}\left(\frac{\partial f}{\partial x_{j}}\left(a\right)\right), \; \forall i,j = 1, \ldots, n .\]
+\end{definition}
+\begin{definition}
+Sea $\displaystyle U \subset \R^{n} $ abierto y $\displaystyle f : U \to \R $. Se dice que $\displaystyle f $ es de \textbf{clase} $\displaystyle \mathcal{C}^{2} $ en $\displaystyle U $, y se denota, $\displaystyle f \in \mathcal{C}^{2}\left(U\right) $, cuando $\displaystyle f $ admite todas las derivadas parciales segundas en $\displaystyle U $ y todas son continuas en $\displaystyle U $.
+\end{definition}
+\begin{theorem}[Teorema de Schwarz]
+Sean $\displaystyle U\subset \R^{n} $ abierto y $\displaystyle f \in \mathcal{C}^{2}\left(U\right) $. Entonces, $\displaystyle \forall i,j = 1, \ldots, n $, $\displaystyle \forall a \in U $, se tiene que 
+\[\frac{\partial^{2}f}{\partial x_{i}\partial x_{j}}\left(a\right)= \frac{\partial^{2}f}{\partial x_{j}\partial x_{i}} \left(a\right).\]
+\end{theorem}
+\begin{proof}
+Podemos limitarnos al caso $\displaystyle n = 2 $. Así, supongamos que $\displaystyle U \subset \R^{2} $ y $\displaystyle a = \left(x_{0}, y_{0}\right) \in U $. Sea $\displaystyle r > 0 $ tal que $\displaystyle B_{\infty}\left(\left(x_{0}, y_{0}\right), r\right) \subset U $ \footnote{Recordamos que $\displaystyle B_{\infty}\left(\left(x_{0}, y_{0}\right), r\right) = \left(x_{0}-r, x_{0}+r\right) \times \left(y_{0}-r, y_{0}+r\right) $.}. 
+Dados $\displaystyle \left(h,k\right) \in B_{\infty}\left(\left(0,0\right), r\right) $, es decir, $\displaystyle \left|h\right|, \left|k\right| < r $, obtenemos que el rectángulo $\displaystyle R_{\left(h,k\right)} $ de vértices $\displaystyle \left(x_{0}, y_{0}\right) $, $\displaystyle \left(x_{0}+h, y_{0}\right) $, $\displaystyle \left(x_{0}, y_{0}+k\right) $ y $\displaystyle \left(x_{0}+h, y_{0}+k\right) $ está contenido en $\displaystyle U $.
+Consideramos 
+\[S\left(h,k\right) = f\left(x_{0}+h, y_{0}+k\right)-f\left(x_{0}+h, y_{0}\right) - f\left(x_{0}, y_{0}+k\right)+f\left(x_{0},y_{0}\right) .\]
+Consideremos $\displaystyle \varphi_{k}\left(t\right)= f\left(t,y_{0}+k\right) -f\left(t,y_{0}\right) $, así, tenemos que
+\[S\left(h,k\right)=\varphi_{k}\left(x_{0} + h\right)-\varphi\left(x_{0}\right) = \varphi_{k}'\left(\alpha\left(h,k\right)\right)h .\]
+En efecto, tenemos que 
+\[\varphi'_{k}\left(t\right)= \frac{\partial f}{\partial x}\left(t, y_{0}+k\right) - \frac{\partial f}{\partial x}\left(t, y_{0}\right) ,\]
+que existe por hipótesis. Así, nos queda que 
+\[S\left(h,k\right)= h \left[\frac{\partial f}{\partial x}\left(\alpha\left(h,k\right), y_{0}+k\right) - \frac{\partial f}{\partial x}\left(\alpha\left(h,k\right), y_{0}\right)\right]  ,\]
+donde $\displaystyle \alpha\left(h,k\right) $ es un punto intermedio entre $\displaystyle x_{0} $ y $\displaystyle x_{0}+h $. Denotamos $\displaystyle g\left(t\right)= \frac{\partial f}{\partial x}\left(\alpha\left(h,k\right), t\right) $, y obtenemos que 
+\[S\left(h,k\right)= h \left[g\left(y_{0}+k\right) -g\left(y_{0}\right)\right]  .\]
+Por otro lado, 
+\[g'\left(t\right)= \frac{\partial }{\partial y}\left(\frac{\partial f}{\partial x}\right)\left(\alpha\left(h,k\right), t\right) .\]
+Aplicando nuevamente el teorema del valor medio obtenemos que existe $\displaystyle \beta\left(h,k\right) $ punto intermedio entre $\displaystyle y_{0} $ e $\displaystyle y_{0}+k $,
+\[ S\left(h,k\right)= hkg'\left(\beta\left(h,k\right)\right) .\]
+Por tanto, para cada par $\displaystyle \left(h,k\right) \in B_{\infty}\left(\left(0,0\right), r\right) $ existen puntos intermedios $\displaystyle \left(\alpha\left(h,k\right), \beta\left(h,k\right)\right) \in R\left(h,k\right) $ tales que 
+\[\frac{S\left(h,k\right)}{hk} = \frac{\partial^{2}f}{\partial y \partial x}\left(\alpha\left(h,k\right), \beta\left(h,k\right)\right) \to \frac{\partial^{2}f}{\partial y\partial x}\left(x_{0}, y_{0}\right) ,\]
+cuando $\displaystyle \left(h,k\right)\to \left(0,0\right) $, por lo que $\displaystyle \left(\alpha\left(h,k\right), \beta\left(h,k\right)\right)\to \left(x_{0}, y_{0}\right) $, puesto que $\displaystyle f \in \mathcal{C}^{2}\left(U\right) $.
+De forma análoga, podemos plantear $\displaystyle \psi_{h}\left(t\right) = f\left(x_{0}+h, t\right)-f\left(x_{0}, t\right) $, obteniendo
+\[\psi_{h}'\left(t\right)= \frac{\partial f}{\partial y}\left(x_{0}+h, t\right)-\frac{\partial f}{\partial y}\left(x_{0}, t\right) .\]
+Aplicando el teorema del valor medio, existe $\displaystyle \tilde{\beta}\left(h,k\right) $ un punto intermedio entre $\displaystyle y_{0} $ e $\displaystyle y_{0} + k $ tal que
+\[
+\begin{split}
+	S\left(h,k\right) = \psi_{h}\left(y_{0}+k\right) - \psi\left(y_{0}\right) = k \psi'_{h}\left(\tilde{\beta}\left(h,k\right)\right) = k \left[\frac{\partial f}{\partial y}\left(x_{0}+h, \tilde{\beta}\left(h,k\right)\right)- \frac{\partial f}{\partial y}\left(x_{0}, \tilde{\beta}\left(h,k\right)\right)\right]  .
+\end{split}
+\]
+Considerando $\displaystyle \tilde{g} = \frac{\partial f}{\partial y}\left(t, \tilde{\beta}\left(h,k\right)\right) $, tenemos que 
+\[S\left(h,k\right) = k \left[\tilde{g}\left(x_{0}+h\right)-\tilde{g}\left(x_{0}\right)\right] = kh \frac{\partial^{2}f}{\partial x\partial y}\left(\tilde{\alpha}\left(h,k\right), \tilde{\beta}\left(h,k\right)\right),\]
+donde $\displaystyle \tilde{\alpha}\left(h,k\right) $ es un punto intermedio entre $\displaystyle x_{0} $ y $\displaystyle x_{0}+h $. Así, obtenemos que 
+\[\lim_{\left(h,k\right) \to \left(0,0\right)}\frac{S\left(h,k\right)}{hk} = \lim_{\left(h,k\right) \to \left(0,0\right)} \frac{\partial^{2}f}{\partial x\partial y}\left(\tilde{\alpha}\left(h,k\right), \tilde{\beta}\left(h,k\right)\right) = \frac{\partial f^{2}}{\partial x \partial y}\left(x_{0}, y_{0}\right) .\]
+Nuevamente hemos usado la continuidad de $\displaystyle \frac{\partial^{2}f}{\partial x \partial y} $. 
+\end{proof}
+\begin{definition}
+	Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R $ y $\displaystyle a \in U $. Dados $\displaystyle i_{1}, \ldots, i_{k} \in \left\{ 1, \ldots, n\right\}  $ se define recursivamente, cuando existe
+	\[\frac{\partial ^{k}f}{\partial x_{i_{1}} \cdots \partial x_{i_{k}}}\left(a\right) = \frac{\partial }{\partial x_{i_{1}}}\left(\frac{\partial^{k-1}f}{\partial x_{i_{2}} \cdots \partial x_{i_{k}}} \right)\left(a\right) .\]	
+\end{definition}
+\begin{definition}
+Se dice que $\displaystyle f $ es de clase $\displaystyle \mathcal{C}^{k} $ en $\displaystyle U $, y se denota $\displaystyle f \in \mathcal{C}^{k}\left(U\right) $, si existen todas las derivadas parciales de orden $\displaystyle k $ en $\displaystyle U $ y son continuas. Análogamente, decimos que $\displaystyle f \in \mathcal{C}^{\infty}\left(U\right) $ si $\displaystyle f \in \mathcal{C}^{k}\left(U\right) $, $\displaystyle \forall k \in \N $.
+\end{definition}
+\begin{colorary}
+	Sean $\displaystyle U\subset \R^{n} $ abierto y $\displaystyle f : U \to \R $ de clase $\displaystyle \mathcal{C}^{k} $ en $\displaystyle U $. Sea $\displaystyle i_{1}, \ldots, i_{k} \in \left\{ 1, \ldots, n\right\}  $ y sea $\displaystyle \left(i_{1}', \ldots, i_{k}'\right) $ una permutación de $\displaystyle \left(i_{1}, \ldots, i_{k}\right) $. Entonces,
+	\[\frac{\partial ^{k}f}{\partial x_{i_{1}} \cdots \partial x_{i_{k}}} = \frac{\partial ^{k}f}{\partial x_{i'_{1}} \cdots \partial x_{i'_{k}}}, \; \text{en }U .\]
+\end{colorary}
+\begin{proof}
+Sabemos que toda permutación es composición de trasposiciones. Por tanto, trasponiendo $\displaystyle \left(i_{1}, \ldots, i_{k}\right) $ podemos pasar de $\displaystyle \left(i_{1}, \ldots, i_{k}\right) $ a $\displaystyle \left(i_{1}', \ldots, i_{k'}\right) $ en una candidad finita de pasos en los cuales intercambiamos dos índices entre sí. 
+\end{proof}
+\begin{definition}
+	Sea $\displaystyle U\subset \R^{n} $ abierto y sea $\displaystyle f : U \to \R^{m} $. Se dice que $\displaystyle f $ es de \textbf{clase $\displaystyle \mathcal{C}^{k} $} en $\displaystyle U $, y se denota $\displaystyle f \in \mathcal{C}^{k}\left(U, \R^{m}\right) $, si $\displaystyle \forall j = 1, \ldots, m $ se tiene que $\displaystyle f_{j} \in \mathcal{C}^{k}\left(U\right) $.
+\end{definition}
+\begin{observation}
+Es fácil comprobar que 
+\[\mathcal{C}^{k}\left(U, \R^{m}\right) \subset \mathcal{C}^{k-1}\left(U, \R^{m}\right) \subset \cdots \subset \mathcal{C}\left(U, \R^{m}\right) ,\]
+donde $\displaystyle \mathcal{C}\left(U,\R^{m}\right) $ representa el conjunto de las funciones continuas de $\displaystyle U $ en $\displaystyle \R^{m} $.
+\end{observation}
+\begin{lema}
+Sean $\displaystyle U\subset \R^{n} $ abierto y $\displaystyle f : U \to \R $. Son equivalentes, para $\displaystyle k \in \N $ con $\displaystyle k \geq 2 $:
+\begin{enumerate}
+\item $\displaystyle f\in \mathcal{C}^{k}\left(U\right) $.
+\item $\displaystyle \forall i= 1, \ldots, n $, $\displaystyle \exists \frac{\partial f}{\partial x_{i}} \in \mathcal{C}^{k-1}\left(U\right) $.
+\end{enumerate}
+\end{lema}
+\begin{proof}
+\begin{description}
+	\item[(i)] Tenemos que $\displaystyle \forall i_{1}, \ldots, i_{k-1} \in \left\{ 1, \ldots, n\right\}  $,
+		\[\frac{\partial^{k}f}{\partial x_{i_{1}} \cdots \partial x_{i_{k-1}}\partial x_{i}} = \frac{\partial ^{k-1}}{\partial x_{i_{1}} \cdots \partial x_{i_{k-1}}}\left(\frac{\partial f}{\partial x_{i}}\right) ,\]
+estas últimas existen y son continuas $\displaystyle \forall i = 1, \ldots, n $.
+\item[(ii)] Por otro lado, $\displaystyle \forall i_{1}, \ldots, i_{k} \in \left\{ 1, \ldots, n\right\}  $, tenemos que 
+	\[\frac{\partial^{k}f}{\partial x_{i_{1}} \cdots \partial x_{i_{k}}} = \frac{\partial ^{k-1}}{\partial x_{i_{1}} \cdots \partial x_{i_{k-1}}}\left(\frac{\partial f}{\partial x_{i_{k}}}\right) ,\]
+estas últimas existen y son continuas.	
+\end{description}
+\end{proof}
+\begin{theorem}[Regla de la cadena - $\displaystyle \mathcal{C}^r $]
+	Esto es cierto si $\displaystyle r \in \N \cup \left\{ \infty\right\}  $. Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle V \subset \R^{m} $ abierto, $\displaystyle f : U \to \R^{m} $ con $\displaystyle f\left(U\right) \subset V $; $\displaystyle g : V \to \R^{p} $. 
+	Si $\displaystyle f \in \mathcal{C}^{r}\left(U\right)$ y $\displaystyle g \in \mathcal{C}^{r}\left(V\right) $, tenemos que $\displaystyle g\circ f \in \mathcal{C}^{r}\left(U\right) $.
+\end{theorem}
+\begin{proof}
+Consideremos varios casos:
+\begin{itemize}
+\item Para $\displaystyle r \in \N $, aplicamos inducción sobre $\displaystyle r $. 
+	\begin{itemize}
+		\item Si $\displaystyle r = 1 $, tenemos que $\displaystyle f,g \in \mathcal{C}^{1} $. Por tanto, tenemos que $\displaystyle f $ y $\displaystyle g $ son diferenciables en $\displaystyle U $ y $\displaystyle V $, respectivamente, luego por la regla de la cadena tenemos que $\displaystyle h = g\circ f $ es diferenciable y $\displaystyle \forall k \in\left\{ 1, \ldots, p\right\}  $, $\displaystyle \forall i \in \left\{ 1, \ldots, n\right\}  $, como $\displaystyle J\left(g\circ f\right)\left(x\right) = Jg\left(f\left(x\right)\right) \cdot Jf\left(x\right) $,
+			\[\frac{\partial h_{k}}{\partial x_{i}}\left(x\right) = \sum^{m}_{j = 1}\frac{\partial g_{k}}{\partial y_{j}}\left(f\left(x\right)\right) \cdot \frac{\partial f_{j}}{\partial x_{i}}\left(x\right) = \sum^{m}_{j = 1}\left(\frac{\partial g_{k}}{\partial y_{j}}\circ f\right)\left(x\right) \cdot \frac{\partial f_{j}}{\partial x_{i}}\left(x\right) ,\]
+			que es continua.
+		\item Supongamos que la composición de funciones en $\displaystyle \mathcal{C}^{r} $ está también en $\displaystyle \mathcal{C}^{r} $. Veamos que pasa con $\displaystyle r + 1 $. Sean $\displaystyle f,g \in \mathcal{C}^{r+1} $, tenemos que las derivadas parciales de $\displaystyle f $ y de $\displaystyle g $ son $\displaystyle \mathcal{C}^{r} $, por el lema anterior. Es fácil aplicar la fórmula anterior para obtener el resultado deseado.			
+	\end{itemize}
+\item El caso $\displaystyle r = \infty $, tenemos que $\displaystyle f, g \in \mathcal{C}^{\infty} $, que es cierto si y solo si $\displaystyle \forall r \in \N $ se tiene que $\displaystyle f,g \in \mathcal{C}^{r} $. Por tanto, $\displaystyle g\circ f \in \mathcal{C}^{r} $, $\displaystyle \forall r \in \N $, que es lo mismo que decir que $\displaystyle g\circ f \in \mathcal{C}^{\infty} $. 
+\end{itemize}
+\end{proof}
+\begin{eg}[Ejemplos de funciones de $\displaystyle \mathcal{C}^{\infty}$] Algunos ejemplos ilustrativos:
+	\begin{itemize}
+	\item Polinomios en varias variables:
+		\[f\left(x,y,z\right)= x + 5y^{2} + 3xyz -2x^{3}+7yz^{2} .\]
+	\item $\displaystyle f\left(x,y\right) = \sin\left(x^{2}-y^{2}+1\right) $.
+	\item $\displaystyle f\left(x,y,z\right)=e^{x+y+z} $.
+	\end{itemize}
+\end{eg}
+\section{Diferenciales de orden superior}
+\begin{definition}[Diferencial segunda]
+Sean $\displaystyle U \subset \R^{n} $ abierto y $\displaystyle f \in \mathcal{C}^{2}\left(U, \R\right) $. Para cada $\displaystyle a \in U $, se define la \textbf{diferencial segunda} de $\displaystyle f $ en $\displaystyle a $ como la forma cuadrática $\displaystyle D^{2}f\left(a\right) : \R^{n} \to \R $ definida por 
+\[D^{2}f\left(a\right)\left(h\right) = \sum^{n}_{i,j = 1}\frac{\partial^{2}f\left(a\right)}{\partial x_{i}\partial x_{j}}h_{i}h_{j} .\]
+Es decir, 
+\[Df^{2}\left(a\right) \left(h_{1}, \ldots h_{n}\right) = \left(h_{1}, \ldots, h_{n}\right)\begin{pmatrix} \frac{\partial^{2}f\left(a\right)}{\partial x_{1}\partial x_{n}} & \cdots & \frac{\partial^{2}f\left(a\right)}{\partial x_{1}\partial x_{n}} \\ 
+\vdots & & \vdots \\
+\frac{\partial^{2}f\left(a\right)}{\partial x_{n}\partial x_{1}} & \cdots & \frac{\partial^{2}f\left(a\right)}{\partial x_{n}\partial x_{n}}\end{pmatrix}\begin{pmatrix} h_{1} \\ \vdots \\ h_{n}\end{pmatrix} .\]
+\end{definition}
+\begin{definition}[Polinomio homogéneo de grado $\displaystyle k $]
+Un \textbf{polinomio homogéneo de grado $\displaystyle k $} en $\displaystyle \R^{n} $ es una función $\displaystyle P : \R^{n} \to \R $ de la forma:
+\[P\left(h\right) = \sum^{n}_{i_{1}, \ldots, i_{k} = 1}a_{i_{1}, \ldots, i_{k}}h_{i_{1}}\cdots h_{i_{k}} ,\]
+donde $\displaystyle a_{i_{1}}, \ldots, a_{i_{k}} \in \R $, $\displaystyle \forall i_{1}, \ldots, i_{k} \in \left\{ 1, \ldots, n\right\}  $.
+\end{definition}
+\begin{definition}[Diferencial $\displaystyle k $-ésima]
+Sea $\displaystyle U \subset \R^{n} $ aiberto y $\displaystyle f \in \mathcal{C}^{k}\left(U,\R\right) $ donde $\displaystyle k \in \N $. Para cada $\displaystyle a \in U $ se define la \textbf{diferencial $\displaystyle k $-ésima} de $\displaystyle f $ en $\displaystyle a $ como el polinomio homogéneo de grado $\displaystyle k $ dado por
+\[D^{k}f\left(a\right) = \sum^{n}_{i_{1}, \ldots, i_{k}= 1}\frac{\partial^{k}f\left(a\right)}{\partial x_{i_{1}} \cdots \partial x_{i_{k}}}h_{i_{1}} \cdots h_{i_{k}} .\]
+\end{definition}
+\begin{eg}
+Consideremos $\displaystyle f\left(x,y\right) = e^{2x+3y} $ y $\displaystyle a = \left(0,0\right) $. Es fácil ver que $\displaystyle f\in \mathcal{C}^{\infty}\left(\R^{2}\right) $. Tenemos que 
+\[\frac{\partial f}{\partial x}\left(a\right) = 2e^{2x+3y}|_{a} = 2, \; \frac{\partial f}{\partial y}\left(a\right) = 3e^{2x+3y}|_{a} = 3 .\]
+Así, tendremos que la diferencial es $\displaystyle Df\left(a\right)\left(h_{1}, h_{2}\right) = 2h_{1} + 3h_{2} $. Ahora calculamos la diferencial de segundo orden:
+\[\frac{\partial^{2}f}{\partial x^{2}}\left(a\right) = 4, \; \frac{\partial^{2}f}{\partial x\partial y}\left(a\right) = \frac{\partial^{2}f}{\partial y \partial x}\left(a\right) = 6, \; \frac{\partial^{2} f}{\partial y^{2}}\left(a\right) = 9 .\]
+Así, nos queda 
+\[D^{2}f\left(a\right) \left(h_{1}, h_{2}\right) = 4h_{1}^{2}+12h_{1}h_{2}+9h^{2}_{2} .\]
+Ahora calculamos la diferencial de tercer orden:
+\[\frac{\partial^{3}f}{\partial x^{3}}\left(a\right) = 8, \; \frac{\partial^{3}f}{\partial x^{2}\partial y}\left(a\right) = 12, \; \frac{\partial^{3}f}{\partial x\partial y^{2}}\left(a\right) = 18, \; \frac{\partial^{3}f}{\partial y^{3}}\left(a\right) = 27 .\]
+Así, tenemos que 
+\[Df^{3}\left(a\right)\left(h_{1}, h_{2}\right) = 8h_{1}^{3} + 3 \cdot 12 h_{1}^{2}h_{2} + 3 \cdot 18 h_{1}h_{2}^{2} + 27h_{2}^{3} .\]
+\end{eg}
+\begin{theorem}[Teorema de Taylor]
+	Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $, $\displaystyle f \in \mathcal{C}^{k}\left(U\right) $ donde $\displaystyle k \in \N $. Si $\displaystyle \left[a, a+h\right] \subset U $, entonces existe $\displaystyle \theta \in \left[0,1\right]  $ tal que 
+	\[
+	\begin{split}
+		f\left(a+h\right) = & f\left(a\right) + Df\left(a\right)\left(h\right) + \frac{1}{2}D^{2}f\left(a\right)\left(h\right) \\
+		+ &  \cdots + \frac{1}{\left(k-1\right)!}D^{k-1}\left(a\right)\left(h\right)+\frac{1}{k!}D^{k}f\left(a+\theta h\right)\left(h\right).
+	\end{split}
+	\]
+\end{theorem}
+\begin{proof}
+Aplicamos el teorema de Taylor con resto de Lagrange en una variable. Denotamos $\displaystyle \varphi\left(t\right)= a + th $ para $\displaystyle t \in \R $, donde $\displaystyle \varphi\left(0\right) = a $ y $\displaystyle \varphi\left(1\right) = a+h $. Consideramos la función $\displaystyle g\left(t\right)=\left(f\circ \varphi\right)\left(t\right) = f\left(\varphi\left(t\right)\right) $. 
+Como $\displaystyle f \in \mathcal{C}^{k} $ y $\displaystyle \varphi \in \mathcal{C}^{\infty} $, tenenmos que $\displaystyle g \in \mathcal{C}^{k} $ en un abierto que contiene a $\displaystyle \left[0,1\right]  $ \footnote{Estamos hablando del conjunto $\displaystyle \varphi^{-1}\left(U\right) $.}. Así, podemos aplicar a $\displaystyle g $ el teorema de Taylor con resto de Lagrange:
+\[
+\begin{split}
+	g\left(1\right) = g\left(0\right) + g'\left(0\right) \cdot 1 + \cdots + \frac{1}{\left(k-1\right)!}g^{ \left(k-1\right)}\left(0\right) \cdot 1 + \frac{1}{k!}g^{\left(k\right)}\left(\theta \right) \cdot 1.
+\end{split}
+\]
+Por otro lado, tenemos que
+\[g'\left(0\right) = \left(f\circ\varphi\right)'\left(0\right) = \left\langle \nabla f\left(\varphi\left(0\right)\right), \varphi'\left(0\right) \right\rangle = \sum^{n}_{i = 1}\frac{\partial f\left(a\right)}{\partial x_{i}}h_{i} .\]
+\[
+\begin{split}
+	g''\left(t\right)= & \left(f\circ\varphi\right)''\left(t\right) = \sum^{n}_{i = 1}h_{i}\left(\sum^{n}_{j = 1}\frac{\partial }{\partial x_{j}}\left(\frac{\partial f}{\partial x_{i}}\left(\varphi\left(t\right)\right)\right)h_{j}\right) = \sum^{n}_{i,j = 1}\frac{\partial ^{2}f\left(\varphi\left(t\right)\right)}{\partial x_{i}\partial x_{j}}h_{i}h_{j}.
+\end{split}
+\]
+Por tanto, $\displaystyle g''\left(0\right) = D^{2}f\left(a\right)\left(h\right) $. Por inducción se demuestra que $\displaystyle \forall 2 \leq j \leq k $, se cumple que 
+\[g^{\left(j\right)}\left(t\right) = \sum^{n}_{i_{1}, \ldots, i_{j} = 1}\frac{\partial^{j}\left(\varphi\left(t\right)\right)}{\partial x_{i_{1}} \cdots \partial x_{i_{j}}}h_{i_{1}} \cdots h_{i_{j}} .\]
+Por lo que, 
+\[g^{\left(j\right)}\left(0\right) = \sum^{n}_{i_{1}, \ldots, i_{j} = 1}\frac{\partial ^{j}f\left(a\right)}{\partial x_{i_{1}} \cdots \partial x_{i_{j}}}h_{i_{1}} \cdots h_{i_{j}} .\]
+Así, obtenemos que  
+\[
+\begin{split}
+	f\left(a+h\right) = & f\left(a\right) + Df\left(a\right)\left(h\right) + \cdots + \frac{1}{\left(k-1\right)!}D^{k-1}f\left(a\right)\left(h\right)+\frac{1}{k!}D^{k}f\left(a+\theta h\right)\left(h\right) .
+\end{split}
+\]
+\end{proof}
+\begin{observation}
+Haciendo $\displaystyle h = x - a $, obtenemos 
+\[f\left(x\right) = f\left(a\right) + Df\left(a\right)\left(x-a\right) + \cdots + \frac{1}{\left(k-1\right)!}D^{k-1}f\left(a\right)\left(x-a\right) + \frac{1}{k!}D^{k}f\left(\left(1-\theta \right)a + \theta x\right)\left(x-a\right) .\]
+\end{observation}
+\begin{definition}[Polinomio de Taylor]
+Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $, $\displaystyle f \in \mathcal{C}^{k}\left(U\right) $. Se define el \textbf{polinomio de Taylor} de orden $\displaystyle k $ de $\displaystyle f $ en $\displaystyle a $ como:
+\[P^{k}_{a}\left(h\right)=f\left(a\right)+Df\left(a\right)\left(h\right)+\cdots + \frac{1}{k!}D^{k}f\left(a\right)\left(h\right) = f\left(a\right) + \sum^{k}_{j = 1} \frac{1}{j!}D^{j}f\left(a\right)\left(h\right).\]
+\end{definition}
+\begin{observation}
+También podemos escribir el polinomio de Taylor de la forma
+\[P_{a}^{k}\left(x-a\right) = f\left(a\right) + \sum^{k}_{j = 1}\frac{1}{j!}D^{j}f\left(a\right)\left(x-a\right) .\]
+\end{observation}
+\begin{colorary}[al Teorema de Taylor]
+Sea $\displaystyle U\subset \R^{n} $ abierto, $\displaystyle a \in U $ y $\displaystyle f \in \mathcal{C}^{k}\left(U\right) $, con $\displaystyle k \in \N $. Entonces, 
+\[\lim_{h \to 0}\frac{f\left(a+h\right)-P^{k}_{a}\left(h\right)}{\|h\|^{k}} = 0 .\]
+\end{colorary}
+\begin{observation}
+El equivalente en la otra notación sería
+\[\lim_{x \to a}\frac{f\left(x\right)-P_{a}^{k}\left(x-a\right)}{\|x-a\|^{k}} = 0 .\]
+\end{observation}
+
