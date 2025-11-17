@@ -1031,6 +1031,14 @@ Aplicando la fórmula de Grassmann
 \end{split}
 \]
 \end{proof}
+\begin{definition}[Posición relativa de dos variedades proyectivas.]
+Sean $\displaystyle X_{1}, X_{2} \subset \mathbb{P}\left(V\right) $ dos variedades proyectivas. 
+\begin{enumerate}
+\item Si $\displaystyle X_{1} \subset X_{2} $ o $\displaystyle X_{2} \subset X_{1} $, una de las variedades está incluida en la otra.
+\item Si $\displaystyle X_{1} \cap X_{2} \neq \emptyset $, $\displaystyle X_{1} \not\subset X_{2} $ y $\displaystyle X_{2}\not\subset X_{1} $, las variedades se \textbf{cortan}.
+\item Si $\displaystyle X_{1} \cap X_{2} = \emptyset $, las variedades \textbf{no se cortan.} 
+\end{enumerate}
+\end{definition}
 \begin{colorary}
 Si $\displaystyle \dim\mathbb{P}\left(V\right) = n \geq 2 $ y $\displaystyle X,Y \subset \mathbb{P}\left(V\right) $ son hiperplanos, entonces $\displaystyle X \cap Y \neq \emptyset $. En particular, en $\displaystyle \mathbb{P}^{2} $ todo par de rectas se interseca.
 \end{colorary}
@@ -1044,6 +1052,9 @@ Como $\displaystyle X \subset X + Y \subset \mathbb{P}\left(V\right) $ tenemos q
 Así, tenemos que
 \[\dim\left(X \cap Y\right) \geq \dim X + \dim Y - n \geq \left(n-1\right) + \left(n-1\right) - n \geq n-2 \geq 0.\]
 \end{proof}
+\begin{observation}
+De forma más general, es cierto que si $\displaystyle X $ es un hiperplano de $\displaystyle \mathbb{P}\left(V\right) $ e $\displaystyle Y $ es una variedad con $\displaystyle \dim Y \geq 1 $, la intersección de $\displaystyle X $ e $\displaystyle Y $ no es vacía. 
+\end{observation}
 \begin{prop}
 Sea $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ una aplicación proyectiva de centro $\displaystyle Z = Z\left(f\right) $ y aplicación lineal asociada $\displaystyle \hat{f} $. 
 \begin{enumerate}
@@ -1052,7 +1063,22 @@ Sea $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ 
 \end{enumerate}
 \end{prop}
 \begin{proof}
-Ejercicio.
+\begin{enumerate}
+	\item Basta ver que $\displaystyle f\left(X/Z\right) = \mathbb{P}\left(\hat{f}\left(\hat{X}\right)\right) $. En primer lugar podemos ver que $\displaystyle \hat{f}\left(\hat{X}\right) / \left\{ 0\right\} = \hat{f}\left(\hat{X}/\Ker\left(\hat{f}\right)\right) $. Además, 
+	\[
+	\begin{split}
+		f\left(X/Z\right) = & \left\{ \left[\hat{f}\left(u\right)\right]  \in \mathbb{P}\left(E'\right) \; : \; u \in \hat{X}/\Ker\left(\hat{f}\right)\right\} = \left\{ [w] \in \mathbb{P}\left(E'\right) \; : \; w \in \hat{f}\left(\hat{X}\right) / \left\{ 0\right\} \right\} \\
+		= &  \mathbb{P}\left(\hat{f}\left(\hat{X}\right)\right) .
+	\end{split}
+	\]
+\item Basta con demostrar que $\displaystyle f^{-1}\left(Y\right) \cup Z = \mathbb{P}\left(\hat{f}^{-1}\left(\hat{Y}\right)\right) $. Podemos ver que $\displaystyle \hat{f}^{-1}\left(\hat{Y}\right) = \hat{f}^{-1}\left(\hat{Y}/ \left\{ 0\right\} \right) \cup \Ker\left(\hat{f}\right) $. Así, tenemos que 
+	\[
+	\begin{split}
+		f^{-1}\left(Y\right) \cup Z = & \left\{ [u] \in \mathbb{P}\left(V\right) \; : \; \left[\hat{f}\left(u\right)\right] \in Y \; \text{o} \; [u] \in Z\right\} = \left\{ [u] \in \mathbb{P}\left(V\right)\; : \; u \in \hat{f}^{-1}\left(\hat{Y}/ \left\{ 0\right\} \right)\cup \Ker\left(\hat{f}\right)\right\} \\
+		= & \mathbb{P}\left(\hat{f}^{-1}\left(\hat{Y}\right)\right) .
+	\end{split}
+	\]
+\end{enumerate}
 \end{proof}
 \begin{notation}
 Por estética escribiremos 

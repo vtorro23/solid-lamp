@@ -62,7 +62,7 @@ Se cumple,
 	\[\left(\lambda\phi\right)\left(u\right) = \lambda\left(\phi\left(u\right)\right) = \lambda \cdot 0 = 0 \Rightarrow \lambda \phi \in U^{\perp } .\]
 \item Sea $\displaystyle u \in U \subset W $. Si $\displaystyle \phi \in W^{\perp } $ tenemos que $\displaystyle \phi\left(u\right) = 0 $, $\displaystyle \forall u \in U \subset W $, por lo que $\displaystyle \phi \in U^{\perp } $ y en consecuencia $\displaystyle W^{\perp }\subset U^{\perp } $. 
 \item Sea $\displaystyle \dim_{\K}U = k $ y $\displaystyle \dim_{\K}V = n $. Sea $\displaystyle \left\{ u_{1}, \ldots, u_{k}\right\}  $ una base de $\displaystyle U $ y la ampliamos a $\displaystyle \left\{ u_{1}, \ldots, u_{n}\right\}  $ base de $\displaystyle V $. Sea $\displaystyle \mathcal{B}^{*} = \left\{ \phi_{1}, \ldots, \phi_{n}\right\}  $ la base dual de la anterior. Tenemos que $\displaystyle \phi_{k+1}, \ldots, \phi_{n} \in U^{\perp } $, puesto que $\displaystyle \forall u = \lambda_{1}u_{1} + \cdots + \lambda_{k}u_{k} \in U $ tenemos que
-	\[\forall j > k, \; \phi_{j}\left(u\right) = \lambda_{1}\phi_{j}\left(u_{1}\right) + \lambda_{k}\phi_{j}\left(u_{k}\right) = 0 .\]
+	\[\forall j > k, \; \phi_{j}\left(u\right) = \lambda_{1}\phi_{j}\left(u_{1}\right) + \cdots + \lambda_{k}\phi_{j}\left(u_{k}\right) = 0 .\]
 	Tenemos que $\displaystyle \phi_{k+1}, \ldots, \phi_{n} $ son linealmente independientes por ser parte de una base. Veamos que generan $\displaystyle U^{\perp } $. Sea $\displaystyle \phi \in U^{\perp } $. Como $\displaystyle \mathcal{B}^{*} $ es base de $\displaystyle V^{*} $, tenemos que 
 	\[\phi = a_{1}\phi_{1} + \cdots + a_{n}\phi_{n} .\]
 	Además, tenemos que
@@ -73,13 +73,13 @@ Se cumple,
 	\end{cases}
 	, \; \forall i= 1, \ldots, k.\]
 Por tanto, tenemos que $\displaystyle a_{i} = 0 $, $\displaystyle \forall i = 1, \ldots, k $, por lo que $\displaystyle \phi = a_{k+1}\phi_{k+1} + \cdots + a_{n}\phi_{n} $. 
-\item Es fácil ver que $\displaystyle \dim_{\K}V^{*} = 0 $, por lo que $\displaystyle V^{*} = \left\{ 0\right\}  $. Análogamente tenemos que $\displaystyle \dim \left\{ 0\right\} ^{*} = \dim_{\K}V  $, así tenemos que $\displaystyle \left\{ 0\right\} ^{*} = V $.
+\item Es fácil ver que $\displaystyle \dim_{\K}V^{*} = 0 $, por lo que $\displaystyle V^{*} = \left\{ 0\right\}  $. Análogamente tenemos que $\displaystyle \dim \left\{ 0\right\} ^{\perp} = \dim_{\K}V  $, así tenemos que $\displaystyle \left\{ 0\right\} ^{\perp} = V^{*} $.
 \end{enumerate}
 \end{proof}
 \begin{prop}
 Sea $\displaystyle V $ un $\displaystyle \K $-espacio vectorial con $\displaystyle \dim_{\K}V < \infty $ y $\displaystyle U, W \in \mathcal{L}\left(V\right) $. 
 \begin{enumerate}
-\item $\displaystyle \left(U^{\perp }\right)^{\perp } = U $ \footnote{Este igual no es estricto puesto que $\displaystyle \left(U^{\perp }\right)^{\perp } \subset V^{**} $, realmente estamos diciendo que es isomorfo a $\displaystyle U $.}.
+\item $\displaystyle \left(U^{\perp }\right)^{\perp } = U $ \footnote{Este igual no es estricto puesto que $\displaystyle \left(U^{\perp }\right)^{\perp } \subset V^{**} $, realmente estamos diciendo que $\displaystyle \left(U^{\perp }\right)^{\perp } = \ev\left(U\right) $.}.
 \item $\displaystyle \left(U \cap W\right)^{\perp } = U^{\perp } + W^{\perp } $. 
 \item $\displaystyle \left(U + W\right)^{\perp } = U^{\perp } \cap W^{\perp } $. 
 \item Si $\displaystyle V = U \oplus W $, entonces $\displaystyle V^{*} = U^{\perp }\oplus W^{\perp } $.
@@ -88,7 +88,7 @@ Sea $\displaystyle V $ un $\displaystyle \K $-espacio vectorial con $\displaysty
 \begin{proof}
 \begin{enumerate}
 	\item Recordamos que $\displaystyle U^{\perp } = \left\{ \phi \in V^{*} \; : \; \phi\left(u\right) = 0, \; \forall u \in U\right\}  $. Así, tenemos que 
-		\[\left(U^{\perp }\right)^{\perp } = \left\{ \ev_{v} \in V^{**} \; : \; \ev_{v}\left(\phi\right) = 0, \; \forall \phi \in U^{\perp }\right\} = \left\{ v \; : \; \phi\left(v\right) = 0, \; \forall \phi \in U^{\perp }\right\} = U  .\]
+		\[\left(U^{\perp }\right)^{\perp } = \left\{ \ev_{v} \in V^{**} \; : \; \ev_{v}\left(\phi\right) = 0, \; \forall \phi \in U^{\perp }\right\} = \left\{ v \; : \; \phi\left(v\right) = 0, \; \forall \phi \in U^{\perp }\right\} = \ev\left(U\right)  .\]
 	\item Tenemos que $\displaystyle U \cap W \subset U, W$, por lo que $\displaystyle U^{\perp } \subset \left(U \cap W \right)^{\perp } $ y $\displaystyle W^{\perp } \subset \left(U \cap W\right)^{\perp } $. Por tanto, tenemos que $\displaystyle U^{\perp } + W^{\perp } \subset \left(U \cap W\right)^{\perp } $. Por otro lado, tenemos que 
 		\[U \cap W = \left(\left(U \cap W\right)^{\perp }\right)^{\perp } \subset \left(U^{\perp } + W^{\perp }\right)^{\perp } \subset \left(U^{\perp }\right)^{\perp } \cap \left(W^{\perp }\right)^{\perp } = U \cap W .\]
 		Por tanto, debe ser que todos los contenidos son igualdades, en particular, $\displaystyle U \cap W = \left(U^{\perp } + W^{\perp }\right)^{\perp } $. Así, obtenemos que $\displaystyle \left(U \cap W\right)^{\perp } = \left(\left(U^{\perp } + W^{\perp }\right)^{\perp }\right)^{\perp } = U^{\perp } + W^{\perp } $.	
@@ -103,7 +103,8 @@ La aplicación
 \[\perp : \mathcal{L}\left(V\right) \to \mathcal{L}\left(V^{*}\right) : U \to U^{\perp } ,\]
 es una biyección con sí misma como inversa. Además, cambia $\displaystyle \subset  $ por $\displaystyle \supset  $, y $\displaystyle +  $ por $\displaystyle \cap  $ y viceversa.
 \end{colorary}
-Dado un $\displaystyle \K $-espacio vectorial $\displaystyle V $, tenemos que hay una biyección entre las variedades de $\displaystyle \mathbb{P}\left(V\right) $ y los subespacios de $\displaystyle V $. También tenemos una biyección entre los subespacios de $\displaystyle U $ y subespacios de $\displaystyle V^{*} $. En particular
+\section{Dualidad en espacios proyectivos}
+Dado un $\displaystyle \K $-espacio vectorial $\displaystyle V $, tenemos que hay una biyección entre las variedades de $\displaystyle \mathbb{P}\left(V\right) $ y los subespacios de $\displaystyle V $. También tenemos una biyección entre los subespacios de $\displaystyle V $ y subespacios de $\displaystyle V^{*} $. En particular
 \[ \left\{ X \subset \mathbb{P}\left(V\right) \; : \; X \; \text{variedad}\right\} \leftrightarrow \left\{ X \subset \mathbb{P}\left(V^{*}\right) \; : \; X \; \text{variedad}\right\}  .\]
 En efecto, podemos considerar la aplicación $\displaystyle X \to \mathbb{P}\left(\left(\hat{X}\right)^{\perp }\right) $. 
 \begin{notation}
@@ -126,7 +127,7 @@ Como $\displaystyle \widehat{X^{*}} = \widehat{\mathbb{P}\left(\hat{X}^{\perp }\
 
 \end{proof}
 \begin{eg}
-Consideremos $\displaystyle \dim\mathbb{P}\left(V\right) = 2 $. Si $\displaystyle P $ es un punto, tenemos que $\displaystyle \dim P^{*} = 2 - 0 - 1 = 1 $, por lo que el dual de un punto en un espacio proyectivo es una recta. Similarmente, si $\displaystyle X = \mathbb{P}\left(V\right) $, tenemos que $\displaystyle \dim X^{*} = 2 - 2 - 1 = 0 $, por lo que $\displaystyle X^{*} = \emptyset $. 
+Consideremos $\displaystyle \dim\mathbb{P}\left(V\right) = 2 $. Si $\displaystyle P $ es un punto, tenemos que $\displaystyle \dim P^{*} = 2 - 0 - 1 = 1 $, por lo que el dual de un punto en un espacio proyectivo de dimensión dos es una recta. Similarmente, si $\displaystyle X = \mathbb{P}\left(V\right) $, tenemos que $\displaystyle \dim X^{*} = 2 - 2 - 1 = 0 $, por lo que $\displaystyle X^{*} = \emptyset $. 
 \end{eg}
 \begin{observation}[Principio de dualidad]
 Si $\displaystyle \mathcal{E} $ es un enunciado sobre variedades de $\displaystyle \mathbb{P}\left(V\right) $ que se expresa con $\displaystyle \forall $, $\displaystyle \exists $, $\displaystyle \subset  $, $\displaystyle \dim  $, $\displaystyle \cap  $, $\displaystyle + $ y negación, y obtenemos $\displaystyle \mathcal{E}^{*} $, un enunciado dual sustituyendo 
@@ -140,5 +141,94 @@ Consideremos el enunciado \\ \\
 $\displaystyle \mathcal{E} $: 'Todo par de hiperplanos de un espacio proyectivo de dimensión $\displaystyle n $ tiene intersección no vacía'. \\ \\
 El enunciado dual sería, \\ \\
 $\displaystyle \mathcal{E}^{*} $: 'Todo par de puntos de un espacio proyectivo de dimensión $\displaystyle n $ generan una variedad que está contenida en un hiperplano'.
+\end{eg}
+\section{Coordenadas y dualidad}
+\begin{definition}[Bases duales]
+	Dos referencias proyectivas, $\displaystyle \mathcal{R} $ de $\displaystyle \mathbb{P}\left(V\right) $ y $\displaystyle \mathcal{R}^{*} $ de $\displaystyle \mathbb{P}\left(V^{*}\right) $, son \textbf{duales} si admiten bases asociadas $\displaystyle \mathcal{B} $ y $\displaystyle \mathcal{B}^{*} $ duales. Es decir, $\displaystyle \mathcal{B} = \left\{ v_{0}, \ldots, v_{n}\right\}  $ y $\displaystyle \mathcal{B}^{*} = \left\{ \phi_{0}, \ldots, \phi_{n}\right\}  $ con 
+	\[\phi_{j}\left(v_{i}\right) = 
+	\begin{cases}
+	1, \; i = j \\ 
+	0, \; i \neq j 
+	\end{cases}
+	.\]
+\end{definition}
+\begin{observation}
+	Sea $\displaystyle H = \left\{ a_{0}x_{0} + \cdots + a_{n}x_{n} = 0\right\} \subset \mathbb{P}\left(V\right) $ un hiperplano dado en la referencia $\displaystyle \mathcal{R} $, tenemos que 
+	\[a_{0}\phi_{0} + \cdots + a_{n}\phi_{n} \in V^{*} .\]
+Así, tendremos que 
+\[
+\begin{split}
+	\left(x_{0}, \ldots, x_{n}\right) \in \hat{H} \iff & a_{0}x_{0} + \cdots + a_{n}x_{n} = 0 \\
+	\iff & a_{0}\phi_{0}\left(x_{0}, \ldots, x_{n}\right) + \cdots + a_{n}\phi_{n}\left(x_{0}, \ldots, x_{n}\right) = 0 \\
+	\iff & \left(a_{0}\phi_{0} + \cdots + a_{n}\phi_{n}\right)\left(x_{0}, \ldots, x_{n}\right) = 0 \\
+	\iff & \hat{H}^{\perp } = L\left(a_{0}\phi_{0}+\cdots + a_{n}\phi_{n}\right) .
+\end{split}
+\]
+Así, tenemos que $\displaystyle H^{*} = \mathbb{P}\left(\hat{H}^{\perp }\right) = [a_{0}: \cdots : a_{n}]_{\mathcal{R}^{*}} $. 
+\end{observation}
+\begin{eg}
+En $\displaystyle \mathbb{P}^{2} $ vamos a calcular la intersección de dos rectas sin resolver un sistema. Consideremos 
+\[L_{1} = \left\{ x_{0}-3x_{1}+2x_{2} = 0\right\}, \quad L_{2}= \left\{ 5x_{0}-4x_{1}-3x_{2} = 0\right\}  .\]
+Tenemos que $\displaystyle L_{1}\cap L_{2} = P\iff L_{1}^{*} + L_{2}^{*} = P^{*} $. Está claro que $\displaystyle L_{1} $ y $\displaystyle L_{2} $ son hiperplanos de $\displaystyle \mathbb{P}^{2} $. Tenemos que 
+\[L_{1}^{*}= [1:-3:2], \quad L_{2}^{*} = [5:-4:-3] .\]
+Tenemos que $\displaystyle P^{*} $ es la recta que pasa por $\displaystyle L_{1}^{*} $ y $\displaystyle L_{2}^{*} $. Así, 
+\[P = \left\{ [x_{0}:x_{1}:x_{2}] \; : \; \begin{vmatrix} x_{0} & 1 & 5 \\ x_{1} & -3 & - 4 \\ x_{2} & 2 & - 3 \end{vmatrix} = 0\right\} = \left\{ 17x_{0}+13x_{1}+11x_{2} = 0\right\}  .\]
+Así, nos queda que $\displaystyle P = \left(P^{*}\right)^{*} = [17:13:11] $.
+\end{eg}
+\begin{observation}
+En general, si $\displaystyle \mathcal{R} $ y $\displaystyle \mathcal{R}^{*} $ son referencias duales y 
+\[X = 
+\begin{cases}
+a_{10}x_{0} + \cdots + a_{1n}x_{n} = 0 \\ 
+\vdots \\ 
+a_{n-d,0}x_{0}+\cdots + a_{n-d,n}x_{n} = 0
+\end{cases}
+,\]
+es una variedad de dimensión $\displaystyle d $ de $\displaystyle \mathbb{P}\left(V\right) $ en la referencia $\displaystyle \mathcal{R} $, tenemos que 
+\[\hat{X} = \left\{ \left(x_{0}, \ldots, x_{n}\right)_{\mathcal{B}} \; : \; \begin{pmatrix} a_{10} & \cdots & a_{1n} \\
+\vdots & & \vdots \\
+a_{n-d,0} & \cdots & a_{n-d, n}\end{pmatrix}\begin{pmatrix} x_{0} \\ \vdots \\ x_{n} \end{pmatrix} = \begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix}\right\}  .\]
+Así, tendremos que 
+\[\hat{X}^{\perp} = L\left(a_{10}\phi_{0} + \cdots + a_{1n}\phi_{n}, \ldots, a_{n-d,0}\phi_{0}+\cdots + a_{n-d,n}\phi_{n}\right).\]
+Por tanto, 
+\[X^{*} = \left\{ [x_{0}: \cdots : x_{n}]_{\mathcal{R}^{*}} \; : \; \begin{pmatrix} x_{0} \\ \vdots \\ x_{n} \end{pmatrix} = \begin{pmatrix} a_{10} & \cdots & a_{n-d,0} \\
+\vdots & & \vdots \\
+a_{1,n} & \cdots & a_{n-d, n}\end{pmatrix}\begin{pmatrix} \lambda_{1} \\ \vdots \\ \lambda_{n-d} \end{pmatrix}, \; \lambda_{1}, \ldots, \lambda_{n-d} \in \K\right\}  .\]
+\end{observation}
+\begin{eg}[Dual de un cubo]
+	Consideremos en $\displaystyle \R^{3} $ el cubo de vértices $\displaystyle \left(\pm1, \pm1, \pm1\right) $. Podemos situar $\displaystyle \R^{3} $ dentro de un espacio proyectivo: $\displaystyle \R^{3} = \mathbb{P}^{3}/ \left\{ x_{0} = 0\right\}  $, es decir, 
+	\[ \left(x_{1}, x_{2}, x_{3}\right) \to [1:x_{1}:x_{2}:x_{3}] .\]
+	Consideremos la variedad $\displaystyle S = \left\{ x_{3}=1\right\}  $, es decir, la cara superior del cubo. Tenemos que $\displaystyle \overline{S} = \left\{ x_{3} = x_{0}\right\}  $ y
+	\[\overline{S}^{*} = [1:0:0:-1] .\]
+	Consideremos ahora un vértice del cubo, por ejemplo $\displaystyle P = \left(1,1,1\right) $. Tenemos que $\displaystyle \overline{P} = [1:1:1:1] $ y 
+	\[\overline{P} = 
+	\begin{cases}
+	x_{0} = x_{1} \\
+	x_{0} = x_{2} \\ 
+	x_{0} = x_{3}
+	\end{cases}
+	.\]
+	Así, tenemos que podemos calcular $\displaystyle \overline{P}^{*} $ de la siguiente forma:
+	\[
+	\begin{split}
+		\overline{P}^{*} = & \mathbb{P}\left(L\left(\left(1,0,0,-1\right), \left(1,-1,0,0\right), \left(1,0,-1,0\right)\right)\right) \\
+		= & \left\{ \begin{vmatrix} x_{0} & 1 & 1 & 1 \\ x_{1} & 0 & -1 & 0 \\ x_{2} & 0 & 0 & -1\\ x_{3} & -1 & 0 & 0 \end{vmatrix} = 0\right\}  = \left\{ x_{0}+x_{1}+x_{2}+x_{3}= 0\right\}  .
+	\end{split}
+	\]
+	Consideremos ahora la recta $\displaystyle l = \left\{ x_{3}=1, x_{1}=1\right\}  $. Tenemos que 
+	\[\overline{l} = 
+	\begin{cases}
+	x_{3}= x_{0} \\ 
+	x_{1}= x_{0}
+	\end{cases}
+	.\]
+Así, nos queda que su dual será
+\[
+\begin{split}
+	\overline{l}^{*} = & \mathbb{P}\left(L\left(\left(1,0,0,-1\right), \left(1, -1, 0, 0\right)\right)\right) \\
+	= & \left\{ [x_{0}:x_{1}:x_{2}:x_{3}] \; : \; \ran\begin{pmatrix} x_{0} & 1 & 1 \\ x_{1} & 0 & - 1 \\ x_{2} & 0 & 0 \\ x_{3} & -1 & 0 \end{pmatrix}=2\right\} = \left\{ x_{2} = 0, \; x_{0}+x_{1}+x_{3}=0\right\} .
+\end{split}
+\]
+Ahora, podemos volver a $\displaystyle \R^{3} $ restringiendo las variedades duales a $\displaystyle \mathbb{P}^{3}/ \left\{ x_{0} = 0\right\}  $. 
 \end{eg}
  
