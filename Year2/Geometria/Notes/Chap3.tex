@@ -231,4 +231,68 @@ Así, nos queda que su dual será
 \]
 Ahora, podemos volver a $\displaystyle \R^{3} $ restringiendo las variedades duales a $\displaystyle \mathbb{P}^{3}/ \left\{ x_{0} = 0\right\}  $. 
 \end{eg}
- 
+\begin{definition}[Haz de hiperplanos]
+Sea $\displaystyle X \subset \mathbb{P}\left(V\right) $ una variedad con $\displaystyle \dim X = \dim\mathbb{P}\left(V\right) -2 $. El conjunto 
+\[h\left(X\right)= \left\{ H \; \text{hiperplano} \; : \; X \subset H\right\}  ,\]
+es el \textbf{haz de hiperplanos} con base $\displaystyle X $.
+\end{definition}
+\begin{eg}
+En $\displaystyle \mathbb{P}^{2} $ sea $\displaystyle X $ un punto. Tenemos que $\displaystyle h\left(X\right) $ es el conjunto de rectas que pasan por $\displaystyle X $. Análogamente, en $\displaystyle \mathbb{P}^{3} $ si $\displaystyle X $ es una recta, tenemos que $\displaystyle h\left(X\right) $ es el conjunto de los planos que continenen a $\displaystyle X $. 
+\end{eg}
+\begin{observation}
+Sea $\displaystyle X \subset \mathbb{P}\left(V\right) $ con $\displaystyle \dim X = \dim \mathbb{P}\left(V\right)-2 $. Tenemos que 
+\[\dim X^{*} = \dim\mathbb{P}\left(V\right)-\dim X - 1 = \dim \mathbb{P}\left(V\right)-\dim\mathbb{P}\left(V\right)+2-1 = 1 .\]
+Por tanto, $\displaystyle X^{*} $ es una recta de $\displaystyle \mathbb{P}\left(V^{*}\right) $. Además, tenemos que 
+\[ X^{*}= \mathbb{P}\left(\hat{X}^{\perp }\right) = \mathbb{P}\left( \left\{ \omega \in \Hom\left(V, \K\right) \; : \; \omega\left(x\right) = 0, \; \forall x \in \hat{X}\right\} \right) = h\left(X\right).\]
+\end{observation}
+\section{Aplicaciones duales}
+Sea $\displaystyle \mathcal{B} $ una base de $\displaystyle V $ y $\displaystyle \mathcal{B}' $ una base de $\displaystyle V' $. Consideremos $\displaystyle \mathcal{B}^{*} $ y $\displaystyle \mathcal{B}'^{*} $ las bases duales de las anteriores, respectivamente. Dada $\displaystyle f : V \to V' $ lineal, definimos la \textbf{aplicación lineal dual} de la siguiente forma:
+\[f^{*} : V'^{*} \to V^{*} : \omega \in \Hom\left(V', \K\right) \to \omega\circ f \in \Hom\left(V, \K\right) .\]
+Sean $\displaystyle \mathcal{B} = \left\{ v_{1}, \ldots, v_{n}\right\}  $, $\displaystyle \mathcal{B}' = \left\{ u_{1}, \ldots, u_{m}\right\}  $, $\displaystyle \mathcal{B}^{*} = \left\{ \phi_{1}, \ldots, \phi_{n}\right\}  $ y $\displaystyle \mathcal{B}'^{*} = \left\{ \psi_{1}, \ldots, \psi_{m}\right\}  $. Tenemos que 
+\[f\left(v_{i}\right)=\sum^{m}_{k=1}a_{ki}u_{k}, \quad f^{*}\left(\psi{i}\right) = \sum^{n}_{k = 1}b_{ki}\phi_{k} .\]
+Ahora, tenemos que 
+\[a_{ij} = \psi_{i}\left(f\left(v_{j}\right)\right) = \psi_{i}\left(\sum^{m}_{k = 1}a_{kj}u_{k}\right) = f^{*}\left(\psi_{i}\right)\left(v_{j}\right) = \left(\sum^{n}_{k = 1}b_{ki}\phi_{k}\right)\left(v_{j}\right) = b_{ji} .\]
+Por tanto, tenemos que  
+\[\boxed{ \mathcal{M}_{\mathcal{B}^{*}\mathcal{B}'^{*}}\left(f^{*}\right) = \left(\mathcal{M}_{\mathcal{B}\mathcal{B}'}\left(f\right)\right)^{T}.} \]
+
+\begin{lema}
+Sean $\displaystyle f : V \to V' $ y $\displaystyle g : V' \to V'' $ duales. Entonces
+\[\left(g\circ f\right)^{*} = f^{*}\circ g^{*} .\]
+\end{lema}
+\begin{proof}
+Sea $\displaystyle \omega \in \Hom\left(V'', \K\right) $, entonces
+\[\left(g\circ f\right)^{*}\left(\omega \right) = \omega \circ \left(g \circ f\right) = f^{*} \left(\omega \circ g\right) = f^{*} \circ g^{*} \left(\omega \right) .\]
+\end{proof}
+Dada una aplicación proyectiva $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $, con aplicación lineal asociada $\displaystyle \hat{f} : V \to V' $, definimos 
+\[ f^{*} : \mathbb{P}\left(V^{*}\right) \to \mathbb{P}\left(V'^{*}\right) : [\omega] \to [\hat{f}^{*}\left(\omega\right)] = [\omega\circ \hat{f}].\]
+Como $\displaystyle \left(\lambda \hat{f}\right)^{*} = \lambda \hat{f}^{*} $, $\displaystyle \forall \lambda \in \K $, tenemos que $\displaystyle f^{*} $ está bien definido. Además, $\displaystyle Z\left(f^{*}\right) = \left(\Imagen\left(f\right)\right)^{*} $. En efecto, tenemos que 
+\[
+\begin{split}
+	Z\left(f^{*}\right) = & \mathbb{P}\left(\Ker\left(\hat{f}^{*}\right)\right) = \mathbb{P}\left( \left\{ \omega \in \Hom\left(V', \K\right) \; : \; \omega \circ \hat{f} = 0\right\} \right) \\
+	= & \mathbb{P}\left( \left\{ \omega \in \Hom\left(V', \K\right) \; : \; \omega\left(x\right) = 0, \; \forall x \in \Imagen\left(\hat{f}\right)\right\} \right) = \mathbb{P}\left(\Imagen\left(\hat{f}\right)^{\perp }\right) = \Imagen\left(f\right)^{*}.
+\end{split}
+\]
+\begin{lema}
+Consideremos $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ y $\displaystyle g : \mathbb{P}\left(V'\right)\to \mathbb{P}\left(V''\right) $. Entonces, 
+\begin{enumerate}
+\item $\displaystyle \left(g\circ f\right)^{*} = f^{*} \circ g^{*} $.
+\item $\displaystyle f^{*} $ es inyectiva $\displaystyle \iff  $ $\displaystyle f $ es sobreyectiva. 
+\item $\displaystyle f^{*} $ es sobreyectiva $\displaystyle \iff  $ $\displaystyle f $ es inyectiva. 
+\item $\displaystyle f^{*} $ es biyectiva $\displaystyle \iff  $ $\displaystyle f $ es biyectiva. Además, $\displaystyle \left(f^{-1}\right)^{*} = \left(f^{*}\right)^{-1} $. 
+\end{enumerate}
+\end{lema}
+\begin{proof}
+\begin{enumerate}
+\item Es consecuencia de que $\displaystyle \left(g\circ f\right)^{*} = f^{*}\circ g^{*} $.
+\item Es consecuencia de que $\displaystyle f^{*} $ es inyectiva si y solo si $\displaystyle \hat{f}^{*} $ también lo es, y de que $\displaystyle Z\left(f^{*}\right) = \emptyset $ si y solo si $\displaystyle f $ es suprayectiva. 
+\item Con Ancochea fue demostrado para espacios vectoriales, de ahí es fácil extenderlo al espacio proyectivo. 
+\item La primera parte es consecuencia de los dos apartados anteriores. Por otro lado
+	\[\left(\widehat{f^{-1}}\right)^{*} = \left(\hat{f}^{-1}\right)^{*} = \left(\hat{f}^{*}\right)^{-1} .\]	
+La segunda igualdad ha sido demostrada por Ancochea el año pasado.
+\end{enumerate}
+\end{proof}
+\subsection{Subvariedades invariantes por homografías}
+Sea $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V\right) $ una homografía. Se dice que $\displaystyle X \subset \mathbb{P}\left(V\right) $ es una \textbf{variedad invariante por} $\displaystyle f $ si $\displaystyle f\left(X\right) \subset X $ \footnote{Esto es equivalente a que $\displaystyle f\left(X\right) = X $ puesto que $\displaystyle f $ es una homografía. En efecto, si $\displaystyle f\left(X\right)\subset X $ y $\displaystyle \dim X = \dim f\left(X\right) $ está claro que $\displaystyle X = f\left(X\right) $.}. 
+Un punto $\displaystyle P \in \mathbb{P}\left(V\right) $ es fijo si $\displaystyle f\left(P\right) = P $, que es cierto si y solo si 
+\[P = [x_{0}:\cdots:x_{n}], \; \exists \lambda \in \K^{*}, \lambda \begin{pmatrix} x_{0} \\ \vdots \\ x_{n} \end{pmatrix} = M\left(f\right) \begin{pmatrix} x_{0} \\ \vdots \\ x_{n} \end{pmatrix} .\]
+Esto es cierto si y solo si $\displaystyle P = [v] $ es un autovector para $\displaystyle \lambda \neq 0 $. 
