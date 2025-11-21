@@ -731,7 +731,7 @@ donde $\displaystyle a_{i_{1}}, \ldots, a_{i_{k}} \in \R $, $\displaystyle \fora
 \end{definition}
 \begin{definition}[Diferencial $\displaystyle k $-ésima]
 Sea $\displaystyle U \subset \R^{n} $ aiberto y $\displaystyle f \in \mathcal{C}^{k}\left(U,\R\right) $ donde $\displaystyle k \in \N $. Para cada $\displaystyle a \in U $ se define la \textbf{diferencial $\displaystyle k $-ésima} de $\displaystyle f $ en $\displaystyle a $ como el polinomio homogéneo de grado $\displaystyle k $ dado por
-\[D^{k}f\left(a\right) = \sum^{n}_{i_{1}, \ldots, i_{k}= 1}\frac{\partial^{k}f\left(a\right)}{\partial x_{i_{1}} \cdots \partial x_{i_{k}}}h_{i_{1}} \cdots h_{i_{k}} .\]
+\[D^{k}f\left(a\right)\left(h\right) = \sum^{n}_{i_{1}, \ldots, i_{k}= 1}\frac{\partial^{k}f\left(a\right)}{\partial x_{i_{1}} \cdots \partial x_{i_{k}}}h_{i_{1}} \cdots h_{i_{k}} .\]
 \end{definition}
 \begin{eg}
 Consideremos $\displaystyle f\left(x,y\right) = e^{2x+3y} $ y $\displaystyle a = \left(0,0\right) $. Es fácil ver que $\displaystyle f\in \mathcal{C}^{\infty}\left(\R^{2}\right) $. Tenemos que 
@@ -796,8 +796,232 @@ También podemos escribir el polinomio de Taylor de la forma
 Sea $\displaystyle U\subset \R^{n} $ abierto, $\displaystyle a \in U $ y $\displaystyle f \in \mathcal{C}^{k}\left(U\right) $, con $\displaystyle k \in \N $. Entonces, 
 \[\lim_{h \to 0}\frac{f\left(a+h\right)-P^{k}_{a}\left(h\right)}{\|h\|^{k}} = 0 .\]
 \end{colorary}
+\begin{proof}
+	Por el Teorema de Taylor, para $\displaystyle h $ suficientemente pequeño tenemos que $\displaystyle a + h \in U $ y por tanto existe $\displaystyle \theta \in [0,1] $ tal que 
+	\[f\left(a + h\right)-P^{k}_{a}\left(h\right) = \frac{1}{k!} \left( D^{k}f\left(a+\theta h\right)\left(h\right) - D^{k}f\left(a\right)\left(h\right)\right) .\]
+Así, nos queda que 
+\[
+\begin{split}
+\left|f\left(a+h\right)-P^{k}_{a}\left(h\right)\right| \leq \frac{1}{k!}\sum^{n}_{i_{1}, \ldots, i_{k} = 1} \left|\frac{\partial ^{k}f\left(a+\theta h\right)}{\partial x_{i_{1}} \cdots \partial x_{i_{k}}}-\frac{\partial ^{k}f\left(a\right)}{\partial x_{i_{1}} \cdots \partial x_{i_{k}}} \right| \left|h_{i_{1}}\right| \cdots \left|h_{i_{k}}\right| .
+\end{split}
+\]
+Teniendo en cuenta que $\displaystyle \forall i = 1, \ldots, n $ se tiene que
+\[ \left|h_{i}\right| \leq \|h\| = \sqrt{ \left|h_{1}\right|^{2} + \cdots + \left|h_{n}\right|^{2}} \Rightarrow \frac{ \left|h_{i}\right|}{\|h\|} \leq 1 .\]
+Por tanto, tenemos que 
+\[ \frac{ \left|f\left(a+h\right)-P^{k}_{a}\left(h\right)\right|}{\|h\|^{k}} \leq \frac{1}{k!} \sum^{n}_{i_{1}, \ldots, i_{k} = 1} \left|\frac{\partial ^{k}f\left(a+\theta h\right)}{\partial x_{i_{1}} \cdots \partial x_{i_{k}}}-\frac{\partial ^{k}f\left(a\right)}{\partial x_{i_{1}} \cdots \partial x_{i_{k}}}\right| \cdot 1 \to 0.\]
+Este último paso se deduce de que $\displaystyle \frac{\partial^{k}f}{\partial x_{i_{1}} \cdots \partial x_{i_{k}}} $ es continua y $\displaystyle a+\theta h \to a $ (porque $\displaystyle h \to 0 $). 
+\end{proof}
 \begin{observation}
 El equivalente en la otra notación sería
 \[\lim_{x \to a}\frac{f\left(x\right)-P_{a}^{k}\left(x-a\right)}{\|x-a\|^{k}} = 0 .\]
 \end{observation}
+\begin{observation}
+Si $\displaystyle f \in \mathcal{C}^{k}\left(U\right) $, el polinomio de Taylor de orden $\displaystyle k $ de $\displaystyle f $ en $\displaystyle a $ satisface que
+\[\lim_{h \to 0}\frac{f\left(a+h\right)-P^{k}_{a}\left(h\right)}{\|h\|^{k}} = 0 .\]
+Se puede demostrar que el único polinomio $\displaystyle P $ de orden menor o igual que $\displaystyle k $ que cumpla está condición es el polinomio de Taylor, es decir, $\displaystyle P = P_{a}^{k} $. 
+\end{observation}
+\begin{notation}[Notación de multi-índices]
+Un \textbf{multi-índice} en $\displaystyle \R^{n} $ es $\displaystyle \alpha = \left(\alpha_{1}, \ldots, \alpha_{n}\right) $, donde cada $\displaystyle \alpha_{i} \in \Z^{+} $, $\displaystyle \forall i = 1, \ldots, n $. La \textbf{longitud} de $\displaystyle \alpha  $ es $\displaystyle \left|\alpha \right|= \alpha_{1} + \cdots + \alpha_{n} $. Sea $\displaystyle k = \left|\alpha \right| $ y $\displaystyle f \in \mathcal{C}^{k}\left(U\right) $. Si $\displaystyle \left(i_{1}, \ldots, i_{k}\right) $ es una permutación de 
+\[(\underbrace{1, \ldots, 1}_{\alpha_{1} \; \text{veces}}; \ldots; \underbrace{n, \ldots, n}_{\alpha_{n}\; \text{veces}}) .\]
+Así, podemos escribir
+\[\frac{\partial^{k}f\left(a\right)}{\partial x_{i_{1}} \cdots \partial x_{i_{k}}} = \frac{\partial^{k}f\left(a\right)}{\partial x_{1}^{\alpha_{1}} \cdots \partial x_{n}^{\alpha_{n}}} .\]
+Por tanto, tenemos que
+\[D^{k}f\left(a\right)\left(h\right) = \sum_{ \left|\alpha \right|=k}\frac{k!}{\alpha_{1}! \cdots \alpha_{n}!}\frac{\partial^{k}f\left(a\right)}{\partial x_{1}^{\alpha_{1}} \cdots \partial x_{n}^{\alpha_{n}}}h_{1}^{\alpha_{1}} \cdots h_{n}^{\alpha_{n}} .\]
+Así, podemos escribir
+\[P_{a}^{k}\left(h\right) = f\left(a\right) + \sum^{k}_{j = 1}\sum_{ \left|\alpha \right|=j}\frac{j!}{\alpha_{1}! \cdots \alpha_{n}!}\frac{\partial^{j}f\left(a\right)}{\partial x_{1}^{\alpha_{1}} \cdots \partial x_{n}^{\alpha_{n}}}h_{1}^{\alpha_{1}} \cdots h_{n}^{\alpha_{n}} .\]
+\end{notation}
+\section{Máximos y mínimos locales}
+\begin{definition}[Extremos locales]
+Sea $\displaystyle M \subset \R^{n} $, $\displaystyle a \in M $ y $\displaystyle f : M \to \R $. Se dice que 
+\begin{itemize}
+\item $\displaystyle a $ es un \textbf{máximo local} de $\displaystyle f $ si existe $\displaystyle r > 0 $ tal que $\displaystyle f\left(a\right) \geq f\left(x\right) $, $\displaystyle \forall x \in M \cap B\left(a,r\right) $. Se dice que es \textbf{estricto} si $\displaystyle f\left(a\right) > f\left(x\right) $, $\displaystyle \forall x \in M \cap B\left(a,r\right) $. 
+\item $\displaystyle a $ es un \textbf{mínimo local} de $\displaystyle f $ si existe $\displaystyle r > 0 $ tal que $\displaystyle f\left(a\right) \leq f\left(x\right) $, $\displaystyle \forall x \in M \cap B\left(a,r\right) $. Se dice que es \textbf{estricto} si $\displaystyle f\left(a\right) < f\left(x\right) $, $\displaystyle \forall x\in M \cap B\left(a,r\right) $.
+\end{itemize}
+Se dice que $\displaystyle a $ es un \textbf{extremo local} de $\displaystyle f $ si es un máximo o un mínimo local.
+\end{definition}
+\begin{prop}[Condición necesaria de extremo]
+Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $ y $\displaystyle f : U \to \R $ diferenciable en $\displaystyle a $. Si $\displaystyle a $ es un extremo local de $\displaystyle f $, entonces $\displaystyle Df\left(a\right) = 0 $, es decir, $\displaystyle \nabla f\left(a\right)= 0 $.
+\end{prop}
+\begin{proof}
+Supongamos sin pérdida de generalidad que $\displaystyle a $ es un máximo local y sea $\displaystyle v \in \R^{n} $ con $\displaystyle v \neq 0 $. Tenemos que existe $\displaystyle r > 0 $ tal que $\displaystyle f\left(a\right) \geq f\left(x\right) $, $\displaystyle \forall x \in B\left(a,r\right) $. Además, existe un $\displaystyle \delta > 0 $ tal que si $\displaystyle \left|t\right| < \delta  $ entonces $\displaystyle a+tv\in U $ y $\displaystyle f\left(a\right) \geq f\left(a+tv\right) $. Consideremos la función
+	\[g : \left(-\delta, \delta \right) \to \R : t \to f\left(a + tv\right) .\]
+Así, tenemos que 
+\[g\left(0\right) = f\left(a\right) \geq f\left(a+tv\right) = g\left(t\right), \; \forall t \in \left(-\delta, \delta \right) .\]
+Así, $\displaystyle 0 $ es un máximo local de $\displaystyle g $, por lo que $\displaystyle g'\left(0\right) = 0 $. Por tanto, tenemos que 
+\[\lim_{t \to 0}\frac{g\left(t\right)-g\left(0\right)}{t} = \lim_{t \to 0}\frac{f\left(a+tv\right)-f\left(a\right)}{t} = D_{v}f\left(a\right) = Df\left(a\right)\left(v\right) = 0 .\]
+Así, $\displaystyle Df\left(a\right)\left(v\right) = 0 $, $\displaystyle \forall v \in \R^{n} $, por lo que $\displaystyle Df\left(a\right) = 0 $.
+\end{proof}
+
+\begin{eg}
+La función $\displaystyle f\left(x,y\right) = x^{2}-y^{2} $ en $\displaystyle a = \left(0,0\right) $ cumple que $\displaystyle \nabla f\left(0,0\right) = 0 $, pero $\displaystyle \left(0,0\right) $ no es ni máximo ni mínimo local. En efecto, tenemos que $\displaystyle f\left(0,0\right) = 0 $, pero $\displaystyle f\left(x,0\right) = x^{2}>0 $ y $\displaystyle f\left(0,y\right) = -y^{2} < 0 $. 
+\end{eg}
+\begin{definition}[Punto crítico y punto de silla]
+Sean $\displaystyle U\subset\R^{n} $ abierto, $\displaystyle a \in U $ y $\displaystyle f : U \to \R $ diferenciable en $\displaystyle a $. Si $\displaystyle \nabla f\left(a\right) = 0 $, se dice que $\displaystyle a $ es un \textbf{punto crítico} de $\displaystyle f $. Si $\displaystyle a $ es un punto crítico pero no es un extremo relativo se dice que es un \textbf{punto de silla} de $\displaystyle f $.
+\end{definition}
+\begin{definition}
+Sea $\displaystyle Q : \R^{n} \to \R $ una forma cuadrática.
+\begin{description}
+\item[(a.1)] $\displaystyle Q $ es \textbf{definida positiva} ($\displaystyle Q > 0 $) si $\displaystyle Q\left(h\right) > 0 $, $\displaystyle \forall h \neq 0 $.
+\item[(a.2)] $\displaystyle Q $ es \textbf{semidefinida positiva} ($\displaystyle Q \geq 0 $) si $\displaystyle Q\left(h\right) \geq 0 $, $\displaystyle \forall h \in \R^{n} $. 
+\item[(b.1)] $\displaystyle Q $ es \textbf{definida negativa} ($\displaystyle Q < 0 $) si $\displaystyle Q\left(h\right) < 0 $, $\displaystyle \forall h \neq 0 $.
+\item[(b.2)] $\displaystyle Q $ es \textbf{semidefinida negativa} ($\displaystyle Q \leq 0 $) si $\displaystyle Q\left(h\right) \leq 0 $, $\displaystyle \forall h \in \R^{n} $. 
+\item[(c)] $\displaystyle Q $ es \textbf{indefinida} si existen $\displaystyle h_{1}, h_{2} \in \R^{n} $ tales que $\displaystyle Q\left(h_{1}\right) > 0 $ y $\displaystyle Q_{2} < 0 $.
+\end{description}
+\end{definition}
+\begin{theorem}[Clasificación de puntos críticos]
+Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $, $\displaystyle f \in \mathcal{C}^{2}\left(U\right) $ tal que $\displaystyle Df\left(a\right) = 0 $.
+\begin{description}
+\item[(a)] $\displaystyle D^{2}f\left(a\right) > 0 $ $\displaystyle \Rightarrow $ $\displaystyle a $ es un mínimo local de $\displaystyle f $ $\displaystyle \Rightarrow $  $\displaystyle D^{2}f\left(a\right) \geq 0 $.
+\item[(b)] $\displaystyle D^{2}f\left(a\right) < 0 $ $\displaystyle \Rightarrow $  $\displaystyle a $ es un máximo local de $\displaystyle f $ $\displaystyle \Rightarrow $  $\displaystyle D^{2}f\left(a\right) \leq 0 $.
+\item[(c)] Si $\displaystyle D^{2}f\left(a\right) $ es indefinida, entonces $\displaystyle a $ es un punto de silla. 
+\end{description}
+\end{theorem}
+\begin{proof}
+\begin{description}
+	\item[(a)] Demostramos las dos implicaciones. En primer lugar, sea $\displaystyle Q = D^{2}f\left(a\right) : \R^{n} \to \R $, que es una forma cuadrática definida positiva. Como $\displaystyle Q $ es continua en $\displaystyle \R^{n} $ y $\displaystyle S = \left\{ u  \in \R^{n} \; : \; \|u\|=1\right\}  $ es compacto, entonces $\displaystyle Q $ alcanza un mínimo en $\displaystyle S $, es decir, $\displaystyle \exists u_{0} \in S $ tal que 
+		\[\alpha = \inf \left\{ Q\left(u\right) \; : \; \|u\| = 1\right\}  = Q\left(u_{0}\right) > 0 .\]
+	Ahora, $\displaystyle \forall h \neq 0 $ (también funciona para $\displaystyle h = 0 $),
+	\[Q\left(h\right) = Q\left( \|h\| \cdot \frac{h}{\|h\|}\right) = \|h\|^{2} Q\left(\frac{h}{\|h\|}\right) \geq \alpha \|h\|^{2} .\]
+	Por el corolario al teorema de Taylor tenemos que
+	\[f\left(a+h\right) = f\left(a\right) + Df\left(a\right)\left(h\right) + \frac{1}{2}D^{2}f\left(a\right)\left(h\right) + R\left(h\right), \quad \lim_{h \to 0}\frac{R\left(h\right)}{\|h\|^{2}}=0 .\]
+	Así, tenemos que 
+	\[f\left(a+h\right)-f\left(a\right) = \frac{1}{2}Q\left(h\right)-R\left(h\right) .\]
+	Dado $\displaystyle \epsilon = \frac{\alpha }{4} > 0 $, existe $\displaystyle \delta > 0 $ tal que $\displaystyle 0 < \|h\| < \delta  $ implica que $\displaystyle a+h \in U $ y $\displaystyle \frac{ \left|R\left(h\right)\right|}{\|h\|^{2}} < \epsilon  $. Por otro lado, 
+	\[\frac{ \left|R\left(h\right)\right|}{\|h\|^{2}} < \epsilon \Rightarrow \left|R\left(h\right)\right| \leq \epsilon \|h\|^{2} \iff -\epsilon \|h\|^{2} \leq R\left(h\right) \leq
+	 \epsilon \|h\|^{2} \|.\]
+Por tanto, si $\displaystyle 0 < \|h\| < \delta  $, tenemos que 
+\[f\left(a+h\right)-f\left(a\right) \geq \frac{1}{2}Q\left(h\right) - \epsilon \|h\|^{2} \geq \frac{\alpha }{2}\|h\|^{2}-\epsilon \|h\|^{2} = \frac{\alpha }{4}\|h\|^{2} > 0 .\]
+Por tanto, $\displaystyle f\left(a+h\right)-f\left(a\right) > 0 $ si $\displaystyle 0 < \|h\| < \delta  $, por lo que $\displaystyle a  $ es un mínimo local estricto de $\displaystyle f $. \\ 
+Supongamos ahora que $\displaystyle a $ es un mínimo local de $\displaystyle f $. Sea $\displaystyle h \in \R^{n} $ con $\displaystyle h \neq 0 $. Por el corolario al teorema de Taylor, 
+\[f\left(a+th\right) = f\left(a\right) + Df\left(a\right)\left(th\right) + \frac{1}{2}D^{2}f\left(a\right)\left(th\right) + R\left(th\right) , \quad \lim_{t \to 0}\frac{R\left(th\right)}{t ^{2}} = \lim_{t \to 0}\left(\frac{R\left(th\right)}{\|th\|^{2}} \|h\|^{2}\right) = 0\]
+Así, tenemos que si $\displaystyle \epsilon > 0 $, entonces existe $\displaystyle \delta > 0 $ tal que si $\displaystyle 0 < \left|t\right| < \delta  $, entonces $\displaystyle \frac{ \left|R\left(th\right)\right|}{t ^{2}} < \epsilon  $ y $\displaystyle f\left(a+th\right) \geq f\left(a\right) $. En este caso, 
+\[
+\begin{split}
+	0 \leq & f\left(a+th\right)-f\left(a\right) = \frac{1}{2}Q\left(th\right) + R\left(th\right) \\
+	\Rightarrow 0 \leq & \frac{1}{2}Q\left(th\right) + R\left(th\right) .
+\end{split}
+\]
+Así, nos queda que 
+\[\frac{1}{2}t ^{2}Q\left(h\right) =\frac{1}{2} Q\left(th\right) \geq - R\left(th\right) > \epsilon t ^{2} \Rightarrow Q\left(h\right) \geq -\epsilon, \; \forall \epsilon > 0 .\]
+Así, tenemos que $\displaystyle Q\left(h\right) \geq 0 $. 
+\item[(b)] Es análogo al apartado anterior. Alternativamente podemos aplicar el apartado anterior a la función $\displaystyle -f $. 
+\item[(c)] Supongamos que $\displaystyle D^{2}f\left(a\right) $ es indefinida. Por lo visto anteriormente, $\displaystyle a $ no puede ser ni mínimo local ni máximo local de $\displaystyle f $, por lo que $\displaystyle a $ es un punto de silla.
+\end{description}
+\end{proof}
+\begin{definition}[Matriz Hessiana]
+Llamamos \textbf{matriz Hessiana} de $\displaystyle f $ en $\displaystyle a $ a la matriz de $\displaystyle D^{2}f\left(a\right) $, es decir
+\[\text{Hess}f\left(a\right) = \begin{pmatrix} \frac{\partial^{2}f\left(a\right)}{\partial x_{1} \partial x_{1}} & \cdots & \frac{\partial^{2}f\left(a\right)}{\partial x_{1}\partial x_{n}} \\ \vdots & & \vdots \\ \frac{\partial^{2}f\left(a\right)}{\partial x_{n}\partial x_{1}} & \cdots & \frac{\partial ^{2}f\left(a\right)}{\partial x_{n} \partial x_{n}} \end{pmatrix} ,\]
+que es simétrica al ser $\displaystyle f \in \mathcal{C}^{2} $.
+\end{definition}
+\begin{eg}
+Consideremos $\displaystyle f : \R^{2} \to \R $ con $\displaystyle f\left(x,y\right) = x^{2}-y^{2} $ y $\displaystyle a = \left(0,0\right) $. Como vimos en un ejemplo anterior, tenemos que $\displaystyle \nabla f\left(a\right)= 0 $. Así, 
+\[\text{Hess} f = \begin{pmatrix} \frac{\partial^{2}f}{\partial x^{2}} & \frac{\partial^{2}f}{\partial x \partial y}  \\ \frac{\partial ^{2}f}{\partial y \partial x} & \frac{\partial ^{2}f}{\partial y^{2}} \end{pmatrix}= \begin{pmatrix} 2 & 0 \\ 0 & - 2 \end{pmatrix} .\]
+Claramente, $\displaystyle D^{2}f\left(a\right) $ es indefinida, por lo que $\displaystyle \left(0,0\right) $ es un punto de silla. 
+\end{eg}
+\begin{eg}
+Consideremos $\displaystyle f\left(x,y\right) = x^{2} \geq 0 $. El punto $\displaystyle a = \left(0,0\right) $ es un mínimo absoluto de $\displaystyle f $. Por tanto, tenemos que $\displaystyle \nabla f\left(a\right) = 0 $. Además, 
+\[\text{Hess} f\left(0,0\right) = \begin{pmatrix} 2 & 0 \\ 0 & 0  \end{pmatrix} ,\]
+que no es definida positiva, pero sí es semidefinida positiva. 
+\end{eg}
+\begin{theorem}[Criterio de los autovalores]
+Sea $\displaystyle Q $ una forma cuadráta en $\displaystyle \R^{n} $ dada por 
+\[Q\left(h_{1}, \ldots, h_{n}\right) = \left(h_{1}, \ldots, h_{n}\right)\begin{pmatrix} a_{11} & \cdots & a_{1n} \\ \vdots & & \vdots \\ a_{n1} & \cdots & a_{nn} \end{pmatrix}\begin{pmatrix} h_{1} \\ \vdots \\ h_{n} \end{pmatrix} ,\]
+con $\displaystyle A $ simétrica. Entonces, 
+\begin{itemize}
+\item $\displaystyle Q $ es definida positiva si y solo si todos los autovalores de $\displaystyle A $ son positivos.
+\item $\displaystyle Q $ es definida negativa si y solo si todos los autovalores de $\displaystyle A $ son negativos.
+\item $\displaystyle Q $ es indefinida si y solo si existen autovalores $\displaystyle \lambda_{1} $ y $\displaystyle \lambda_{2} $ de $\displaystyle A $ con $\displaystyle \lambda_{1} < 0 < \lambda_{2}$.
+\end{itemize}	
+\end{theorem}
+\begin{eg}
+\begin{enumerate}
+\item $\displaystyle f\left(x,y\right) = x^{3}-3x^{2}+y^{2} $. Tenemos que 
+	\[\nabla f = \left(3x^{2}-6x, 2y\right) = \left(0,0\right) \iff 
+	\begin{cases}
+	3x\left(x-2\right) = 0 \\
+	2y = 0
+	\end{cases}
+	.\]
+Así, los puntos críticos son $\displaystyle P_{1} = \left(0,0\right) $ y $\displaystyle P_{2} = \left(2,0\right) $. 
+Así, tenemos que 
+\[\text{Hess}f = \begin{pmatrix} 6x-6 & 0  \\ 0 & 2 \end{pmatrix} .\]
+Por tanto, 
+\[\text{Hess}f\left(P_{1}\right) = \begin{pmatrix} -6 & 0 \\ 0 & 2 \end{pmatrix} ,\]
+como los autovalores son $\displaystyle -6 $ y $\displaystyle 2 $ tenemos que se trata de un punto de silla. Por otro lado, 
+\[\text{Hess}f\left(P_{2}\right) = \begin{pmatrix} 6 & 0 \\ 0 & 2 \end{pmatrix} ,\]
+como los autovalores son $\displaystyle 6 $ y $\displaystyle 2 $ tenemos que $\displaystyle P_{2} $ es un mínimo local (estricto).
+\item Sea $\displaystyle f\left(x,y,z\right) = xy + y + z^{2} $. Tenemos que 
+	\[\nabla f = \left(y, x+1, 2z\right) = \left(0,0,0\right)\iff 
+	\begin{cases}
+	y = 0\\
+	x + 1 = 0 \\
+	z = 0
+	\end{cases}
+	.\]
+	Así, el único punto crítico es $\displaystyle P = \left(-1,0,0\right) $. Así, tenemos que 
+	\[\text{Hess}f = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 2 \end{pmatrix} .\]
+Calculemos los autovalores de la matriz:
+\[0 = \det\left(A - \lambda I\right) = \left(2-\lambda \right)\left(\lambda + 1\right)\left(\lambda - 1\right) .\]
+Como los autovalores son $\displaystyle \lambda \in \left\{ -1,1,2\right\}  $, se trata de un punto de silla. 
+\end{enumerate}
+\end{eg}
+\begin{theorem}[Criterio de Sylvester]
+Para $\displaystyle j = 1, \ldots, n $ denotamos 
+\[\Delta_{j} = \begin{vmatrix} a_{11} & \cdots & a_{1j} \\ \vdots & & \vdots \\ a_{j1} & \cdots & a_{jj} \end{vmatrix}  ,\]
+a los menores angulares. 
+\begin{itemize}
+\item $\displaystyle Q $ es definida positiva si y solo si $\displaystyle \Delta_{j} > 0 $, $\displaystyle \forall j = 1, \ldots, n $. 
+\item $\displaystyle Q $ es definida negativa si y solo si $\displaystyle \left(-1\right)^{j}\Delta _{j} > 0 $, $\displaystyle \forall j = 1, \ldots, n $. 
+\item Si $\displaystyle \det\left(A\right) \neq 0 $ y no se cumple ninguna de las codiciones entonces es indefinida. 
+\end{itemize}
+\end{theorem}
+\begin{notation}
+En algunos casos utilizamos la notación
+\[f_{x x} : = \frac{\partial^{2}f}{\partial x \partial x}, \quad f_{xy} := \frac{\partial^{2}f}{\partial x\partial y} .\]
+\end{notation}
+\begin{eg}
+Sea $\displaystyle U \subset \R^{2} $ abierto, $\displaystyle a \in U $, $\displaystyle f \in \mathcal{C}^{2}\left(U\right) $ con $\displaystyle Df\left(a\right) = 0 $. Tenemos que 
+\[\text{Hess}f\left(a\right) =\begin{pmatrix} f_{x x }\left(a\right) & f_{xy}\left(a\right) \\ f_{yx}\left(a\right) & f_{yy}\left(a\right) \end{pmatrix} .\]
+Tenemos que
+\[\Delta_{1} = f_{x x}\left(a\right), \quad \Delta_{2} = f_{ x x}\left(a\right) \cdot f_{yu}\left(a\right)- \left(f_{xy}\left(a\right)\right)^{2}.\]
+Así, tenemos que 
+\begin{itemize}
+\item Si $\displaystyle \Delta_{1} > 0 $ y $\displaystyle \Delta_{2}> 0 $, entonces $\displaystyle a $ es un mínimo local. 
+\item Si $\displaystyle \Delta_{1} < 0 $ y $\displaystyle \Delta_{2} > 0 $, entonces $\displaystyle a $ es un máximo local. 
+\item Si $\displaystyle \Delta_{2} < 0$, entonces $\displaystyle a $ es un punto de silla.
+\end{itemize}
+\end{eg}
+\begin{eg}
+Consideremos $\displaystyle f\left(x,y,z\right) = x^{3}+y^{3}+z^{3}-3\left(xy + xz + yz\right) $. Calculemos los puntos críticos:
+\[
+\begin{cases}
+f_{x} = 3x^{2} - 3\left(x+y\right) = 0 \\
+f_{y} = 3y^{2} - 3\left(x+z\right) = 0 \\
+f_{z} = 3z^{2}-3\left(x + y \right) = 0
+\end{cases} \Rightarrow
+\begin{cases}
+x^{2} = y + z \\
+y^{2} = x + z \\
+z^{2} = x + y
+\end{cases}
+.\]
+Resolviendo el sistema obtenemos que los puntos críticos son $\displaystyle P_{1} = \left(0,0,0\right) $ y $\displaystyle P_{2} = \left(2,2,2\right) $. Tenemos que 
+\[\text{Hess}f = \begin{pmatrix} 6x & - 3 & - 3 \\ - 3 & 6y & -3 \\ -3 & - 3 & 6z \end{pmatrix} .\]
+Así, tenemos que 
+\[\text{Hess}f\left(P_{1}\right)= \begin{pmatrix} 0 & -3 & -3 \\ -3 & 0 & - 3 \\ -3 & - 3 & 0 \end{pmatrix} \Rightarrow 
+\begin{cases}
+\Delta_{1} = 0 \\
+\Delta_{2} = -9 < 0
+\end{cases}
+.\]
+Por tanto, tenemos que $\displaystyle P_{1} $ es un punto de silla. Por otro lado, 
+\[\text{Hess}f\left(P_{2}\right) = 3 \cdot \begin{pmatrix} 4 & - 1 & - 1 \\ - 1 & 4 & 1 \\ - 1 & - 1 & 4 \end{pmatrix} \Rightarrow 
+\begin{cases}
+\Delta_{1} > 0 \\
+\Delta_{2} > 0 \\
+\Delta_{3} > 0
+\end{cases}
+.\]
+Por tanto, $\displaystyle P_{2} $ es un mínimo local. 
+\end{eg}
 

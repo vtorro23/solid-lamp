@@ -1,0 +1,229 @@
+\part{Anillos}
+\chapter{Generalidades de Anillos}
+\begin{definition}[Anillo]
+Sea $\displaystyle \left(A, +, \cdot \right) $, donde $\displaystyle A $ es un conjunto no vacío y $\displaystyle + : A \times A \to A $ y $\displaystyle \cdot : A \times A \to A $ son dos operaciones internas. Diremos que $\displaystyle A $ es un \textbf{anillo} si:
+\begin{enumerate}
+\item $\displaystyle \left(A, +\right) $ es un grupo abeliano.
+\item El producto es asociativo, es decir, $\displaystyle \forall x,y,z \in A $, $\displaystyle \left(x \cdot y\right) \cdot z = x \cdot \left(y \cdot z\right) $.
+\item El producto es distributivo por la derecha y por la izquierda, es decir, $\displaystyle \forall x,y,z \in A $, 
+	\[ \left(x + y\right) \cdot z = x \cdot z + y \cdot z \quad \text{y} \quad  z \cdot \left(x + y\right) = z \cdot x + z \cdot y.\]
+\end{enumerate}
+\end{definition}
+\begin{definition}
+Sea $\displaystyle \left(A, + , \cdot \right) $ un anillo. 
+\begin{enumerate}
+\item Diremos que es \textbf{unitario} si existe $\displaystyle 1_{A} \in A $ tal que $\displaystyle a \cdot 1_{A} = 1_{A} \cdot a $, $\displaystyle \forall a \in A $. 
+\item Diremos que es un \textbf{anillo conmutativo} si $\displaystyle \forall a,b \in A $, $\displaystyle a \cdot b = b \cdot a $. 
+\end{enumerate}
+\end{definition}
+\begin{observation}
+Si el anillo es unitario el elemento neutro para el producto es único. En efecto, si $\displaystyle 1_{A} $ y $\displaystyle 1_{A}' $ son elementos neutros para el producto tenemos que
+\[1_{A} = 1_{A} \cdot 1_{A}' = 1_{A}' .\]
+\end{observation}
+\begin{eg}
+\begin{enumerate}
+\item Tenemos que $\displaystyle \left(\Z, +, \cdot \right) $ es un anillo unitario conmutativo. De manera similar, $\displaystyle \left(\Q, +, \cdot\right) $, $\displaystyle \left(\R, +, \cdot \right) $ y $\displaystyle \left(\C, +, \cdot \right) $ también son anillos unitarios conmutativos.
+\item El conjunto $\displaystyle \left(\mathcal{M}_{n}\left(\R\right), +, \cdot \right) $ es un anillo unitario (es no conmutativo si $\displaystyle n \geq 2 $). 
+\item $\displaystyle \left(\Z_{n}, +, \cdot \right) $ con $\displaystyle n \geq 2 $ es un anillo unitario conmutativo. 
+\item $\displaystyle \left(2\Z, + , \cdot \right) $ es un anillo conmutativo no unitario (esto es cierto en general para $\displaystyle d\Z $ con $\displaystyle d \in \Z/ \left\{ -1,0,1\right\}  $).
+\end{enumerate}
+\end{eg}
+\begin{notation}
+Dado un anillo $\displaystyle \left(A, + , \cdot \right) $, $\displaystyle a \in A $ y $\displaystyle n \in \N $, denotamos 
+\[na := \underbrace{a + \cdots + a}_{n \; \text{veces}}, \quad -na = \underbrace{\left(-a\right) + \cdots + \left(-a\right)}_{n \; \text{veces}} \quad a^{n} = \underbrace{a \cdots a}_{n \; \text{veces}} .\]
+Además, si $\displaystyle A $ es unitario definimos que $\displaystyle a^{0}=1 $. Decimos que $\displaystyle 0 $ es el elemento neutro para la suma y $\displaystyle 1 $ es el elemento neutro para el producto, si es unitario. 
+\end{notation}
+\begin{prop}
+Sea $\displaystyle \left(A, +, \cdot \right) $ un anillo. 
+\begin{enumerate}
+\item $\displaystyle \forall a \in A $, $\displaystyle a \cdot 0 = 0 \cdot a = 0 $.
+\item $\displaystyle \forall a,b \in A $, $\displaystyle -\left(ab\right) = \left(-a\right)b = a\left(-b\right) $.
+\item Si $\displaystyle \left(B, \oplus, *\right) $ es un anillo, entonces $\displaystyle A \times B $ también es un anillo con las operaciones coordenada a coordenada. Además, si $\displaystyle A $ y $\displaystyle B $ son unitarios, $\displaystyle A \times B $ es unitario.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Sea $\displaystyle a \in A $,
+	\[a \cdot 0 = a \cdot \left(0 + 0\right) = a \cdot 0 + a \cdot 0 \iff a \cdot 0 = 0 .\]
+Por la izquierda se hace igual.
+\item Si $\displaystyle a,b \in A $ tenemos que 
+	\[ab + \left(-a\right)b = \left(a + \left(-a\right)\right)b = 0 \cdot b = 0 .\]
+	Los otros casos son análogos.
+\item Tenemos que $\displaystyle A \times B $ es un grupo abeliano con la suma por serlo $\displaystyle A $ y $\displaystyle B $. Es fácil ver que el producto es una operación interna, veamos que es asociativo. Si $\displaystyle \left(a,b\right), \left(c,d\right), \left(e,f\right) \in A \times B $,
+	\[
+	\begin{split}
+		\left(\left(a,b\right) \cdot \left(c,d\right)\right) \cdot \left(e,f\right) = & \left(a \cdot c, b * d\right) \cdot \left(e,f\right) = \left(\left(a \cdot c\right) \cdot e, \left(b * d\right)* f\right) \\
+		= &  \left(a \cdot \left(c \cdot e\right), b * \left(d * f\right)\right) = \left(a, b\right) \cdot \left(c \cdot e, d * f\right) \\
+		= &  \left(a,b\right) \cdot \left(\left(c, d\right) \cdot \left(e,f\right)\right).
+	\end{split}
+	\]
+Veamos que el se cumple la propiedad distributiva:
+\[
+\begin{split}
+	\left[\left(a,b\right) + \left(c,d\right)\right] \cdot \left(e,f\right) = & \left(a + c, b \oplus d\right) \cdot \left(e,f\right) = \left(\left(a+c\right) \cdot e, \left(b \oplus d\right) * f\right) \\
+	= & \left(a \cdot e + c \cdot e, b * f \oplus d * f\right) = \left(a \cdot e, b * f\right) + \left(c \cdot e, d * f\right) \\
+	= & \left(a,b\right) \cdot \left(e,f\right) + \left(c,d\right) \cdot \left(e,f\right).
+\end{split}
+\]
+Por otro lado, si son los dos unitarios está claro que $\displaystyle A \times B $ también lo será puesto que $\displaystyle \left(1_{A}, 1_{B}\right) \in A \times B $ y $\displaystyle \forall \left(a,b \right)\in A\times B $ se tiene que
+\[\left(1_{A}, 1_{B}\right) \cdot \left(a,b\right) = \left(a,b\right) \cdot \left(1_{A}, 1_{B}\right) = \left(a,b\right) .\]
+\end{enumerate}
+\end{proof}
+\begin{definition}[Subanillo]
+Sea $\displaystyle \left(A, +, \cdot \right) $ un anillo y $\displaystyle \emptyset \neq B \subset A $. Diremos que $\displaystyle \left(B, +, \cdot \right) $ es \textbf{subanillo} de $\displaystyle A $ si $\displaystyle \left(B, +\right) $ es subgrupo de $\displaystyle \left(A, +\right) $ y $\displaystyle B $ es cerrado para el producto, es decir, $\displaystyle \forall b_{1}, b_{2} \in B $, $\displaystyle b_{1} \cdot b_{2} \in B $.
+\end{definition}
+\begin{observation}
+Sea $\displaystyle \left(A, +, \cdot \right) $ un anillo unitario y $\displaystyle \left(B, +, \cdot \right) $ un subanillo.
+\begin{enumerate}
+\item $\displaystyle B $ puede no ser unitario. En efecto, en el ejemplo anterior vimos que $\displaystyle \left(2\Z, + , \cdot \right) $ es subanillo no unitario de $\displaystyle \left(\Z, + , \cdot \right) $, que es unitario. 
+\item Puede ser que $\displaystyle B $ sea unitario pero $\displaystyle 1_{A} \not\in B $. En efecto, tenemos que $\displaystyle A \times B $ es unitario y $\displaystyle \left\{ 0\right\} \times B $ es un subanillo unitario, pero las unidades son distintas puesto que en el primer caso la unidad es $\displaystyle \left(1_{A}, 1_{B}\right) $ y en el segundo es $\displaystyle \left(0, 1_{B}\right) $.
+\end{enumerate}
+\end{observation}
+\begin{definition}[Subanillo unitario]
+Dado un anillo $\displaystyle \left(A, +, \cdot\right) $, llamamos \textbf{subanillo unitario} de $\displaystyle A $ a un subanillo tal que $\displaystyle 1_{A} \in B $ (por tanto $\displaystyle 1_{B} = 1_{A} $). 
+\end{definition}
+\begin{definition}[Unidad]
+Sea $\displaystyle A $ un anillo conmutativo unitario y $\displaystyle a \in A $. Diremos que $\displaystyle a $ es \textbf{unidad} si existe $\displaystyle b \in A $ tal que $\displaystyle a \cdot b = 1_{A} $. 
+\end{definition}
+\begin{observation}
+Está claro que $\displaystyle 1_{A} $ es siempre unidad y $\displaystyle 0_{A} $ nunca es unidad. 
+\end{observation}
+\begin{definition}[Conjunto de unidades]
+Sea $\displaystyle A $ un anillo conmutativo unitario. Definimos el \textbf{conjunto de todas las unidades} de $\displaystyle A $ como
+\[\mathcal{U}\left(A\right) = \left\{ a \in A \; : \; a \; \text{unidad}\right\}  .\]
+\end{definition}
+\begin{observation}
+Es fácil ver que el conjunto de las unidades es un grupo abeliano con el producto. En efecto:
+\begin{itemize}
+\item Si $\displaystyle a,b \in \mathcal{U}\left(A\right) $, tenemos que 
+	\[ab\left(b^{-1}a^{-1}\right) = 1_{A} .\]
+	Por tanto, $\displaystyle ab \in \mathcal{U}\left(A\right) $, por lo que la operación es interna. 
+\item La asociatividad de la operación se deduce por ser $\displaystyle A $ un anillo, al igual que la existencia de los inversos se deduce de la definición de unidad. 
+\item El elemenento neutro claramente es $\displaystyle 1_{A} $. 
+\end{itemize}
+Por tanto, los inversos con el producto son únicos y si $\displaystyle a \cdot b = 1_{A} $, podemos escribir $\displaystyle b = a^{-1} $.
+\end{observation}
+\begin{eg}
+\begin{enumerate}
+\item $\displaystyle \mathcal{U}\left(\Q\right) = \Q^{*} $. Lo mismo sucede en $\displaystyle \R $ y $\displaystyle \C $. 
+\item $\displaystyle \mathcal{U}\left(\Z\right) = \left\{ 1, -1\right\}  $. 
+\item $\displaystyle \mathcal{U}\left(\Z_{n}\right)= \left\{ a \in \Z_{n} \; : \; \mcd\left(a,n\right)=1\right\}  $. 
+\end{enumerate}
+\end{eg}
+\begin{prop}
+Si $\displaystyle A \times B $ es un anillo unitario conmutativo, entonces $\displaystyle \mathcal{U}\left(A \times B\right) = \mathcal{U}\left(A\right) \times \mathcal{U}\left(B\right) $. 
+\end{prop}
+\begin{proof}
+Sea $\displaystyle \left(a,b\right) \in \mathcal{U}\left(A \times B\right) $, por lo que existe $\displaystyle \left(c,d\right) \in A \times B $ tal que 
+\[ \left(a,b\right) \cdot \left(c,d\right) = \left(a \cdot c, b \cdot d\right) = \left(1_{A}, 1_{B}\right) .\]
+Por tanto, $\displaystyle a \in \mathcal{U}\left(A\right) $ y $\displaystyle b \in \mathcal{U}\left(B\right) $ y $\displaystyle \left(a,b\right) \in \mathcal{U}\left(A\right) \times \mathcal{U}\left(B\right) $. El recíproco es análogo. 
+\end{proof}
+\begin{definition}[Divisor de cero y dominio de integridad]
+	Sea $\displaystyle A $ un anillo y $\displaystyle a \in A / \left\{ 0\right\}  $. Diremos que $\displaystyle a $ es \textbf{divisor de cero} si existe $\displaystyle b \in A/ \left\{ 0\right\}  $ tal que $\displaystyle a \cdot b = 0 $. Decimos que $\displaystyle A $ es \textbf{dominio de integridad} si no tiene divisores de cero.
+\end{definition}
+\begin{eg}
+\begin{enumerate}
+	\item Podemos ver que $\displaystyle \Z_{6} $ no es dominio de integridad, puesto que $\displaystyle [2] \cdot [3] = [0] $ y $\displaystyle [2], [3] \neq 0 $, por lo que $\displaystyle [2] $ y $\displaystyle [3] $ son divisores de cero. 
+	\item En general, $\displaystyle \Z_{p} $ con $\displaystyle p $ primo es dominio de integridad. 
+\end{enumerate}
+\end{eg}
+\begin{prop}
+Una unidad no es divisor de cero. 
+\end{prop}
+\begin{proof}
+	Supongamos que $\displaystyle a \in \mathcal{U}\left(A\right) $ es divisor de cero. Por tanto, $\displaystyle \exists b \in A / \left\{ 0\right\}  $ tal que $\displaystyle ab = 0_{A} $. Como $\displaystyle a $ es unidad, existe $\displaystyle a^{-1} $, por tanto
+	\[ab = 0_{A} \Rightarrow a^{-1}\left(ab\right) = a^{-1}0_{A} \Rightarrow b = 0_{A} .\]
+	Esto contradice nuestra hipótesis, por lo que debe ser que $\displaystyle a $ no es divisor de cero.
+\end{proof}
+\begin{definition}[Cuerpo]
+	Sea $\displaystyle \left(A, +, \cdot\right) $ un anillo conmutativo unitario. Diremos que $\displaystyle A $ es un \textbf{cuerpo} si $\displaystyle \mathcal{U}\left(A\right) = A / \left\{ 0\right\}  $, es decir, todo elemento salvo el 0 tiene inverso multiplicativo.
+\end{definition}
+\begin{eg}
+\begin{enumerate}
+\item Antes hemos visto que $\displaystyle \Q $, $\displaystyle \R $ y $\displaystyle \C $ son cuerpos.
+\item $\displaystyle \left(\Z_{p}, +, \cdot \right) $ también es cuerpo y lo llamaremos $\displaystyle \F_{p} $. 
+\item Como $\displaystyle \mathcal{U}\left(\Z\right) = \left\{ -1,1\right\}  $ está claro que $\displaystyle \Z $ no es un cuerpo. De manera similar, $\displaystyle \Z_{m} $ con $\displaystyle m $ no primo tampoco es un cuerpo.
+\item $\displaystyle \left(\Q[\mathtt{t}], +, \cdot \right) $ no son un cuerpo. 
+\end{enumerate}
+\end{eg}
+\begin{observation}
+\begin{enumerate}
+\item Ser dominio de integridad no se conserva bajo productos directos. En efecto, sabemos que $\displaystyle \R $ es un dominio de integridad, pero $\displaystyle \left(\R^{2}, +, \cdot \right) $ no es un dominio de integridad, puesto que $\displaystyle \left(0,1\right) \cdot \left(1,0\right) = \left(0,0\right) $.
+\item Un cuerpo es un dominio de integridad, puesto que las unidades del cuerpo son todas menos el cero y una unidad no puede ser divisor de cero. 
+\end{enumerate}
+\end{observation}
+\begin{definition}[Característica de un anillo]
+Sea $\displaystyle A $ un anillo unitario. Definimos la \textbf{característica} de $\displaystyle A $, $\displaystyle \Char\left(A\right) $, al mínimo $\displaystyle k \in \N $ tal que $\displaystyle k \cdot 1_{A}= 1_{A} + \cdots + 1_{A} = 0_{A} $. Si no existe $\displaystyle k \in \N $ con $\displaystyle k \cdot 1_{A} = 0_{A} $ decimos que $\displaystyle A $ tiene \textbf{característica cero}.
+\end{definition}
+\begin{eg}
+Es fácil ver que $\displaystyle \Q $, $\displaystyle \R $ y $\displaystyle \C $ tienen característica cero. Por otro lado, $\displaystyle \F_{p} $ tiene caracterísctica $\displaystyle p $.
+\end{eg}
+\begin{observation}
+Si $\displaystyle A $ es un anillo con característica finita y es dominio de integridad, entonces la característica es un número primo. Si suponemos que $\displaystyle \Char(A) = p \cdot m $ con $\displaystyle p $ divisor primo, entonces tenemos que
+\[\left(p1_{A}\right)\left(m1_{A}\right) = pm1_{A} = 0 .\]
+Como se trata de un dominio de integridad no puede haber divisores de cero, debe ser que $\displaystyle m = 1 $. 
+\end{observation}
+\subsection{Enteros de Gauss}
+Consideremos el anillo $\displaystyle \left(\C, +, \cdot \right) $ (sabemos que es un cuerpo) e $\displaystyle i \in \C $. Definimos el conjunto 
+\[\Z[i] = \left\{ a + bi \; : \; a,b \in \Z\right\}  .\]
+Como $\displaystyle \left\{ 1, i\right\}  $ es una base de $\displaystyle \C $, sabemos que todos los elementos de $\displaystyle \Z[i] $ se pueden expresar de forma única como combinación lineal de esos dos elementos. Es fácil ver que $\displaystyle \Z[i] $ es un subanillo unitario de $\displaystyle \C $. Así, tenemos que $\displaystyle \Z[i] $ tiene estructura de anillo unitario conmutativo.Como $\displaystyle \C $ es dominio de integridad y $\displaystyle \Z[i] $ es subanillo, $\displaystyle \Z[i] $ es también dominio de integridad. Veamos que 
+\[\mathcal{U}\left(\Z[i]\right) = \left\{ \pm1, \pm i\right\}  .\]
+Es trivial ver que $\displaystyle \left\{ \pm 1, \pm i \right\} \subset \mathcal{U}\left(\Z[i]\right) $. Recíprocamente, si $\displaystyle a + bi \in \mathcal{U}\left(\Z[i]\right) $ existe $\displaystyle c + di \in \mathcal{U}\left(\Z[i]\right) $ tal que 
+\[\left(a + bi\right)\left(c + di\right) = 1 \iff \left(a-bi\right)\left(c-di\right)=1 .\]
+Así, nos queda que 
+\[1 = \left(a +bi\right)\left(c + di\right)\left(a-bi\right)\left(c - di\right) = \left(a^{2}+b^{2}\right)\left(c^{2}+d^{2}\right) .\]
+Necesariamente debe ser que $\displaystyle a^{2}+b^{2} = 1 $ y $\displaystyle c^{2}+d^{2} = 1 $. Así, podemos considerar cuatro casos:
+\begin{itemize}
+\item Si $\displaystyle a = 0 $ y $\displaystyle b = 1 $, tenemos que $\displaystyle a + bi = i $.
+\item Si $\displaystyle a = 1 $ y $\displaystyle b = 0 $, tenemos que $\displaystyle a + bi = 1$. 
+\item Si $\displaystyle a = -1 $ y $\displaystyle b = 0 $, tenemos que $\displaystyle a +bi = -1$.
+\item Si $\displaystyle a = 0 $ y $\displaystyle b = -1 $, tenemos que $\displaystyle a +bi = -i $.
+\end{itemize}
+\subsection{Anillo de polinomios}
+Sea $\displaystyle A $ un anillo conmutativo unitario. Llaremos \textbf{anillo de polinomios} en la variable $\displaystyle \mathtt{x} $ a $\displaystyle A[\mathtt{x} ] $ donde sus elementos son
+\[a_{n}\mathtt{x} ^{n} + \cdots + a_{1}\mathtt{x} +a_{0} , \; a_{i} \in A, \; n \in \N.\]
+Dotamos a $\displaystyle A[\mathtt{x} ] $ de una operación de suma y producto que conocemos. Sean $\displaystyle p,q \in A[\mathtt{x} ] $ con 
+\[p = a_{n}\mathtt{x} ^{n} + \cdots + a_{1}\mathtt{x} +a_{0}, \; a_{i} \in A, \; n \in \N .\]
+\[q = b_{m}\mathtt{x} ^{m} + \cdots + b_{1}\mathtt{x} +b_{0}, \; b_{j} \in A, \; m \in \N .\]
+La suma la definimos de la forma:
+\[p + q : = \sum^{ \max \left\{ n,m\right\} }_{k = 0}\left(a_{k}+b_{k}\right)\mathtt{x} ^{k} .\]
+El producto lo deinimos de la forma:
+\[p \cdot q:= \sum^{n+m}_{k = 0}c_{k}\mathtt{x} ^{k}, \quad c_{k} = \sum_{i + j = k}a_{i}b_{j} .\]
+Es fácil ver que $\displaystyle A[\mathtt{x} ] $ es un anillo conmutativo unitario y tiene como subanillo a $\displaystyle A \subset A[\mathtt{x} ] $. 
+\begin{definition}
+	Sea $\displaystyle A[\mathtt{x} ] $ un anillo de polinomios y sea $\displaystyle p \in A[\mathtt{x} ] $, con $\displaystyle p = a_{n}\mathtt{x} ^{n} + \cdots + a_{1}\mathtt{x} +a_{0} $. 
+	\begin{enumerate}
+	\item Llamamos \textbf{grado} de $\displaystyle p $, $\displaystyle \grad\left(p\right)= n $. 
+	\item Diremos que $\displaystyle a_{n}, \ldots, a_{1}, a_{0} $ son los \textbf{coeficientes} de $\displaystyle p $.
+	\item Al coeficiente $\displaystyle a_{0} $ lo llamamos \textbf{coeficiente independiente} y al coeficiente $\displaystyle a_{n} $ lo llamamos \textbf{coeficiente director}, y escribimos $\displaystyle l\left(p\right)=a_{n} $.
+	\end{enumerate}
+\end{definition}
+\begin{lema}
+	Sean $\displaystyle p,q \in A[\mathtt{x} ] $ no nulos. 
+	\begin{enumerate}
+		\item $\displaystyle \grad\left(p + q\right) \leq \max \left\{ \grad\left(p\right), \grad\left(q\right)\right\}  $ y se da la igualdad si $\displaystyle l\left(p\right)+l\left(q\right)\neq 0 $.
+		\item $\displaystyle \grad\left(p \cdot q\right) \leq \grad\left(p\right)+\grad\left(q\right) $ y se da la igualdad si $\displaystyle l\left(p\right)l\left(q\right) \neq 0 $ y tendremos que $\displaystyle l\left(p \cdot q\right) = l\left(p\right) \cdot l\left(q\right) $.
+	\end{enumerate}
+\end{lema}
+\begin{eg}
+	Consideremos $\displaystyle \Z_{6}[\mathtt{x} ] $ y $\displaystyle 3\mathtt{x} +1, 4\mathtt{x} +2 \in \Z_{6}[\mathtt{x} ] $. Tenemos que 
+	\[\left(3\mathtt{x} +1\right)\left(4\mathtt{x} +2\right) = 7\mathtt{x} +3 = \mathtt{x} +3 .\]
+\[\left(3\mathtt{x} +1\right) \cdot \left(4\mathtt{x} +2\right) = 12\mathtt{x} ^{2}+10\mathtt{x} +2 = 4\mathtt{x} + 2 .\]	
+\end{eg}
+\begin{prop} 
+	Sea $\displaystyle A $ un anillo conmutativo unitario.
+\begin{enumerate}
+	\item Si $\displaystyle A $ es dominio de integridad, entonces $\displaystyle \mathcal{U}\left(A\right) = \mathcal{U}\left(A[\mathtt{x} ]\right)$. 
+	\item $\displaystyle A $ es dominio de integridad si y solo si $\displaystyle A[\mathtt{x} ] $ es dominio de integridad. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+	\item Está claro que $\displaystyle \mathcal{U}\left(A\right) \subset \mathcal{U}\left(A[\mathtt{x} ]\right) $ por ser $\displaystyle A \subset A[\mathtt{x} ] $. Sea $\displaystyle p \in \mathcal{U}\left(A[\mathtt{x} ]\right) $, entonces existe $\displaystyle q \in \mathcal{U}\left(A[\mathtt{x} ]\right) $ tal que $\displaystyle pq = 1 $. Como $\displaystyle p,q \neq 0 $, tenemos que $\displaystyle l\left(p\right), l\left(q\right) \neq 0 $, por lo que $\displaystyle l\left(p\right)l\left(q\right) \neq 0 $. 
+	Así, tenemos que 
+	\[0 =\grad\left(0\right) = \grad\left(pq\right) = \grad\left(p\right)+\grad\left(q\right) .\]
+	Por tanto, necesariamente debe ser que $\displaystyle \grad\left(p\right) = \grad\left(q\right) = 0 $. Por tanto, $\displaystyle p = a_{0}, q = b_{0} \in A $, por lo que $\displaystyle a_{0}b_{0} = 1 $. Así, $\displaystyle p \in \mathcal{U}\left(A\right) $. 
+\end{enumerate}
+
+\end{proof}
+

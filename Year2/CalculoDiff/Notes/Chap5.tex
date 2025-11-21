@@ -1,0 +1,19 @@
+\chapter{Teorema de la función inversa}
+\begin{theorem}[Teorema de la función inversa]
+Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle U $; $\displaystyle a\in U $ tal que $\displaystyle \det Jf\left(a\right) \neq 0 $. Entonces, existe $\displaystyle V \subset \R^{n} $ abierto tal que $\displaystyle a \in V \subset U $ y existe $\displaystyle W \subset \R^{n} $ abierto tal que $\displaystyle f\left(a\right) \in W $, tales que $\displaystyle f\left(V\right) = W $ y $\displaystyle f|_{V} : V \to W $ admite una función inversa diferenciable $\displaystyle g = \left(f|_{V}\right)^{-1} : W \to V $, que satisface 
+\[Dg\left(f\left(x\right)\right) = Df\left(x\right)^{-1}, \; \forall x \in V .\]
+Además, si $\displaystyle f \in \mathcal{C}^{m}\left(U\right) $, entonces $\displaystyle g \in \mathcal{C}^{m}\left(W\right) $ para $\displaystyle m \in \N $.
+\end{theorem}
+\begin{eg}
+Consideremos $\displaystyle f : \R^{2} \to \R^{2} $ con $\displaystyle f\left(x,y\right) = \left(e^{x}\cos y, e^{x}\sin y\right) $. Consideremos 
+\[
+\begin{cases}
+u = e^{x}\cos y \\
+v = e^{x} \sin y
+\end{cases}
+.\]
+Buscamos saber si existen $\displaystyle x = x\left(u,v\right) $ e $\displaystyle y = y\left(u,v\right) $. Tenemos que si $\displaystyle a = \left(0,0\right) $, $\displaystyle f\left(a\right) = \left(1,0\right) $. Además, 
+\[ Jf\left(a\right) = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} .\]
+Como $\displaystyle \det Jf\left(a\right) \neq 0 $, tenemos que se cumple el teorema de la función inversa y por tanto podemos encontrar las expresiones de $\displaystyle x $ e $\displaystyle y $ en función de $\displaystyle u $ y $\displaystyle v $ en un entorno cercano a $\displaystyle a $. 
+\end{eg}
+

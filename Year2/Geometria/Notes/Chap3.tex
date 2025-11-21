@@ -292,7 +292,88 @@ La segunda igualdad ha sido demostrada por Ancochea el año pasado.
 \end{enumerate}
 \end{proof}
 \subsection{Subvariedades invariantes por homografías}
-Sea $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V\right) $ una homografía. Se dice que $\displaystyle X \subset \mathbb{P}\left(V\right) $ es una \textbf{variedad invariante por} $\displaystyle f $ si $\displaystyle f\left(X\right) \subset X $ \footnote{Esto es equivalente a que $\displaystyle f\left(X\right) = X $ puesto que $\displaystyle f $ es una homografía. En efecto, si $\displaystyle f\left(X\right)\subset X $ y $\displaystyle \dim X = \dim f\left(X\right) $ está claro que $\displaystyle X = f\left(X\right) $.}. 
+\begin{definition}[Variedad invariante]
+Sea $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V\right) $ una homografía. Se dice que $\displaystyle X \subset \mathbb{P}\left(V\right) $ es una \textbf{variedad invariante por} $\displaystyle f $ si $\displaystyle f\left(X\right) \subset X $ \footnote{Esto es equivalente a que $\displaystyle f\left(X\right) = X $ puesto que $\displaystyle f $ es una homografía. En efecto, si $\displaystyle f\left(X\right)\subset X $ y $\displaystyle \dim X = \dim f\left(X\right) $ está claro que $\displaystyle X = f\left(X\right) $.}.
+\end{definition} 
+\subsection*{Puntos fijos}
 Un punto $\displaystyle P \in \mathbb{P}\left(V\right) $ es fijo si $\displaystyle f\left(P\right) = P $, que es cierto si y solo si 
 \[P = [x_{0}:\cdots:x_{n}], \; \exists \lambda \in \K^{*}, \lambda \begin{pmatrix} x_{0} \\ \vdots \\ x_{n} \end{pmatrix} = M\left(f\right) \begin{pmatrix} x_{0} \\ \vdots \\ x_{n} \end{pmatrix} .\]
-Esto es cierto si y solo si $\displaystyle P = [v] $ es un autovector para $\displaystyle \lambda \neq 0 $. 
+Esto es cierto si y solo si $\displaystyle P = [v] $ es un autovector para $\displaystyle \lambda \neq 0 $. Así, tendremos que $\displaystyle \lambda  $ es raíz del polinomio
+\[p\left(t\right) = \det\left(M_{\mathcal{B}}\left(\hat{f}\right)-t I\right) .\]
+Dependiendo de $\displaystyle \K $ puede haber puntos fijos o no. Por ejemplo, si $\displaystyle \K = \C $, el polinomio característico de $\displaystyle \hat{f} $ siempre tiene raíces, pero si $\displaystyle \K = \Q $ o $\displaystyle \K = \R $ no siempre tiene raíces. Fijado $\displaystyle \lambda  $ raíz de $\displaystyle p\left(t\right) $, tomamos
+\[\hat{X}_{\lambda} = \Ker\left(\hat{f}-\lambda id\right), \; X_{\lambda }= \mathbb{P}\left(\hat{X}_{\lambda }\right) .\]
+Así, tenemos que $\displaystyle X_{\lambda } $ es una variedad de puntos fijos de $\displaystyle f $. 
+\subsection*{Hiperplanos invariantes}
+Un hiperplano $\displaystyle H = \left\{ b_{0}x_{0}+\cdots + b_{n}x_{n} = 0\right\}  $ es invariante para $\displaystyle f $ si y solo si 
+\[f\left(H\right) \subset H \iff f^{*}\left(H\right) \supset H^{*} \iff f^{*}\left([b_{0}: \cdots : b_{n}]\right) = [b_{0}: \cdots : b_{n}].\]
+Esto es cierto si y solo si existe $\displaystyle \lambda \in \K^{*} $ tal que 
+\[\lambda \begin{pmatrix} b_{0} \\ \vdots \\ b_{n} \end{pmatrix} = M_{\mathcal{B}^{*}}\left(\hat{f}^{*}\right)\begin{pmatrix} b_{0} \\ \vdots \\ b_{n} \end{pmatrix} \iff \lambda \begin{pmatrix} b_{0} \\ \vdots \\ b_{n} \end{pmatrix} = M_{\mathcal{B}}\left(\hat{f}\right)^{T}\begin{pmatrix} b_{0} \\ \vdots \\ b_{n} \end{pmatrix} .\]
+Esto es cierto si y solo si 
+\[\begin{pmatrix} b_{0} \\ \vdots \\ b_{n} \end{pmatrix} \in \Ker\left(M_{\mathcal{B}}\left(\hat{f}\right)^{T} - \lambda id \right) .\]
+Esto es cierto si y solo si $\displaystyle \lambda  $ es raíz del polinomio característico de $\displaystyle M_{\mathcal{B}}\left(\hat{f}\right)^{T} $, que coincide con el polinomio característico de $\displaystyle \hat{f} $. Si tomamos 
+\[\hat{Y}_{\lambda } = \Ker\left(M_{\mathcal{B}}\left(\hat{f}\right)^{T}-\lambda id\right) , \]
+tenemos que 
+\[\mathbb{P}\left(\hat{Y}_{\lambda }\right)^{*} = \left\{ b_{0}x_{0} + \cdots + b_{n}x_{n} = 0 \; : \; \left(b_{0}, \ldots, b_{n}\right) \in \hat{Y}_{\lambda}- \left\{ 0\right\} \right\}  ,\]
+que es una familia de hiperplanos invariantes para $\displaystyle f $. 
+\begin{lema}
+Sean $\displaystyle X_{1}, X_{2} $ variedades invariantes para una homografía $\displaystyle f : \mathbb{P}\left(V\right)\to \mathbb{P}\left(V\right) $ y $\displaystyle \dim\mathbb{P}\left(V\right) < \infty $. Entonces, $\displaystyle X_{1} \cap X_{2} $ y $\displaystyle X_{1} + X_{2} $ son invariantes para $\displaystyle f $.
+\end{lema}
+\begin{proof}
+Tenemos que $\displaystyle f\left(X_{1}\right) \subset X_{1} $ y $\displaystyle f\left(X_{2}\right) \subset X_{2} $. Así, tenemos que 
+\[f\left(X_{1} \cap X_{2}\right) \subset f\left(X_{1}\right) \cap f\left(X_{2}\right) \subset X_{1} \cap X_{2} .\]
+Por tanto, $\displaystyle X_{1} \cap X_{2} $ es invariante. Ahora, tenemos que $\displaystyle X_{1} + X_{2} = V\left(X_{1} \cup X_{2}\right) $. Así, tenemos que 
+\[f\left(X_{1}\right)\cup f\left(X_{2}\right) \subset f\left(X_{1}\right) + f\left(X_{2}\right), \quad f\left(X_{1}\right)\cup f\left(X_{2}\right) \subset f\left(X_{1}+X_{2}\right) .\]
+Así, tenemos que $\displaystyle f\left(X_{1}\right)+f\left(X_{2}\right) \subset f\left(X_{1} + X_{2}\right) $. Por ser homografía, tenemos que $\displaystyle f\left(X_{1}\right) = X_{1} $ y $\displaystyle f\left(X_{2}\right) = X_{2} $. Así, tenemos que 
+\[X_{1} + X_{2} \subset f\left(X_{1} + X_{2}\right) .\]
+Por ser $\displaystyle f $ homografía tenemos que $\displaystyle \dim\left(X_{1} + X_{2}\right)= \dim f\left(X_{1} + X_{2}\right) $, por lo que $\displaystyle X_{1} + X_{2} = f\left(X_{1} + X_{2}\right) $. 
+\end{proof}
+\begin{eg}
+Consideremos  
+\[  f : \mathbb{P}^{3} \to \mathbb{P}^{3} : [x_{0}:x_{1}:x_{2}:x_{3}] \to [x_{0}+x_{1}:x_{1}+x_{2}:x_{2}+x_{3}:2x_{3}].\]
+Tenemos que
+\[M\left(f\right) = \begin{pmatrix} 1 & 1 & & \\ & 1 & 1 & \\ & & 1 & 1 \\ & & & 2 \end{pmatrix} .\]
+Tenemos que el polinomio característico será $\displaystyle P_{M}\left(t\right) = \det\left(M - t id\right)=\left(1-t\right)^{3}\left(2-t\right) $, por lo que los autovalores son $\displaystyle \lambda \in \left\{ 1,2\right\}  $. 
+\begin{itemize}
+\item Los puntos fijos para $\displaystyle \lambda = 1 $ son:
+	\[\left(M - \lambda I\right)\begin{pmatrix} x_{0} \\ \vdots \\ x_{3} \end{pmatrix}=\begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix} \Rightarrow 
+	\begin{cases}
+	x_{0} = 0 \\ 
+	x_{1} = 0 \\
+	x_{2} = 0 \\
+	x_{3} = 0
+	\end{cases}
+.\]
+Así, tenemos que la variedad de los puntos fijos para $\displaystyle \lambda = 1 $ es $\displaystyle X_{1} = [1:0:0:0] $. 
+\item Los puntos fijos para $\displaystyle \lambda = 2 $ serán 
+	\[\left(M - 2 I\right) \begin{pmatrix} x_{0} \\ \vdots \\ x_{3} \end{pmatrix}= \begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix} \Rightarrow 
+\begin{cases}
+-x_{0}+x_{1} = 0 \\
+-x_{1} + x_{2} = 0 \\
+-x_{2}+x_{3} = 0
+\end{cases}
+.\]
+Así, la variedad de puntos fijos para $\displaystyle \lambda = 2 $ será $\displaystyle X_{2} = [1:1:1:1] $. 
+\item Los hiperplanos invariantes para $\displaystyle \lambda = 1 $ será:
+	\[ \left(M^{t}-I\right)\begin{pmatrix} b_{0} \\ \vdots \\ b_{3} \end{pmatrix}=\begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix} \Rightarrow 
+\begin{cases}
+b_{0} = 0 \\
+b_{1} = 0 \\
+b_{2}+b_{3}=0
+\end{cases}
+.\]
+Así, nuestra familia de hiperplanos invariantes para $\displaystyle \lambda = 1 $ son $\displaystyle H = \left\{ x_{2}-x_{3} = 0\right\} = [0 : 0 : 1 : - 1]^{*} $. 
+\item Los hiperplanos invariantes para $\displaystyle \lambda = 2 $ serán:
+	\[\left(M^{t}-2I\right)\begin{pmatrix} b_{0} \\ \vdots \\ b_{3} \end{pmatrix}=\begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix} \Rightarrow
+\begin{cases}
+-b_{0} = 0 \\
+b_{0}-b_{1} = 0 \\
+b_{1}-b_{2} = 0 \\
+b_{2}=0
+\end{cases}
+.\]
+Así, $\displaystyle H = \left\{ x_{3}=0\right\} = [0:0:0:1] ^{*}$ es nuestra familia de hiperplanos invariantes para $\displaystyle \lambda = 2 $. 
+\item Calculamos las rectas invariantes. Sabemos que las rectas que pasan por los dos puntos fijos es una recta invariante. Análogamente la recta que resulta de la intersección de los dos hiperplanos es otra recta invariante. La pregunta es, hay más rectas invariantes?
+\end{itemize}
+
+\end{eg}
+
