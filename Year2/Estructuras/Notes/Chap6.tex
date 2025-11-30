@@ -86,7 +86,11 @@ Dado un anillo $\displaystyle \left(A, +, \cdot\right) $, llamamos \textbf{suban
 Sea $\displaystyle A $ un anillo conmutativo unitario y $\displaystyle a \in A $. Diremos que $\displaystyle a $ es \textbf{unidad} si existe $\displaystyle b \in A $ tal que $\displaystyle a \cdot b = 1_{A} $. 
 \end{definition}
 \begin{observation}
-Está claro que $\displaystyle 1_{A} $ es siempre unidad y $\displaystyle 0_{A} $ nunca es unidad. 
+	\begin{enumerate}
+	\item Está claro que $\displaystyle 1_{A} $ es siempre unidad y $\displaystyle 0_{A} $ nunca es unidad. 
+	\item Si $\displaystyle a \in A $ es unidad, podemos hablar de su inverso multiplicativo como $\displaystyle a^{-1} $, puesto que de haberlo es único. En efecto, supongamos que existe $\displaystyle b, b' \in A $ tales que $\displaystyle a \cdot b = a \cdot b' = 1 $, entonces,
+		\[b = b \cdot 1 = b \cdot \left(a b'\right) = b' .\]
+	\end{enumerate}
 \end{observation}
 \begin{definition}[Conjunto de unidades]
 Sea $\displaystyle A $ un anillo conmutativo unitario. Definimos el \textbf{conjunto de todas las unidades} de $\displaystyle A $ como
@@ -141,9 +145,9 @@ Una unidad no es divisor de cero.
 \begin{eg}
 \begin{enumerate}
 \item Antes hemos visto que $\displaystyle \Q $, $\displaystyle \R $ y $\displaystyle \C $ son cuerpos.
-\item $\displaystyle \left(\Z_{p}, +, \cdot \right) $ también es cuerpo y lo llamaremos $\displaystyle \F_{p} $. 
+\item Si $\displaystyle p \geq 2 $ es primo, $\displaystyle \left(\Z_{p}, +, \cdot \right) $ también es cuerpo y lo llamaremos $\displaystyle \F_{p} $. 
 \item Como $\displaystyle \mathcal{U}\left(\Z\right) = \left\{ -1,1\right\}  $ está claro que $\displaystyle \Z $ no es un cuerpo. De manera similar, $\displaystyle \Z_{m} $ con $\displaystyle m $ no primo tampoco es un cuerpo.
-\item $\displaystyle \left(\Q[\mathtt{t}], +, \cdot \right) $ no son un cuerpo. 
+\item $\displaystyle \left(\Q[\mathtt{t}], +, \cdot \right) $ no es un cuerpo. 
 \end{enumerate}
 \end{eg}
 \begin{observation}
@@ -166,7 +170,7 @@ Como se trata de un dominio de integridad no puede haber divisores de cero, debe
 \subsection{Enteros de Gauss}
 Consideremos el anillo $\displaystyle \left(\C, +, \cdot \right) $ (sabemos que es un cuerpo) e $\displaystyle i \in \C $. Definimos el conjunto 
 \[\Z[i] = \left\{ a + bi \; : \; a,b \in \Z\right\}  .\]
-Como $\displaystyle \left\{ 1, i\right\}  $ es una base de $\displaystyle \C $, sabemos que todos los elementos de $\displaystyle \Z[i] $ se pueden expresar de forma única como combinación lineal de esos dos elementos. Es fácil ver que $\displaystyle \Z[i] $ es un subanillo unitario de $\displaystyle \C $. Así, tenemos que $\displaystyle \Z[i] $ tiene estructura de anillo unitario conmutativo.Como $\displaystyle \C $ es dominio de integridad y $\displaystyle \Z[i] $ es subanillo, $\displaystyle \Z[i] $ es también dominio de integridad. Veamos que 
+Como $\displaystyle \left\{ 1, i\right\}  $ es una base de $\displaystyle \C $, sabemos que todos los elementos de $\displaystyle \Z[i] $ se pueden expresar de forma única como combinación lineal de esos dos elementos. Es fácil ver que $\displaystyle \Z[i] $ es un subanillo unitario de $\displaystyle \C $. En particular, tenemos que $\displaystyle \Z[i] $ tiene estructura de anillo unitario conmutativo. Como $\displaystyle \C $ es dominio de integridad y $\displaystyle \Z[i] $ es subanillo, $\displaystyle \Z[i] $ es también dominio de integridad. Veamos que 
 \[\mathcal{U}\left(\Z[i]\right) = \left\{ \pm1, \pm i\right\}  .\]
 Es trivial ver que $\displaystyle \left\{ \pm 1, \pm i \right\} \subset \mathcal{U}\left(\Z[i]\right) $. Recíprocamente, si $\displaystyle a + bi \in \mathcal{U}\left(\Z[i]\right) $ existe $\displaystyle c + di \in \mathcal{U}\left(\Z[i]\right) $ tal que 
 \[\left(a + bi\right)\left(c + di\right) = 1 \iff \left(a-bi\right)\left(c-di\right)=1 .\]
@@ -179,9 +183,13 @@ Necesariamente debe ser que $\displaystyle a^{2}+b^{2} = 1 $ y $\displaystyle c^
 \item Si $\displaystyle a = -1 $ y $\displaystyle b = 0 $, tenemos que $\displaystyle a +bi = -1$.
 \item Si $\displaystyle a = 0 $ y $\displaystyle b = -1 $, tenemos que $\displaystyle a +bi = -i $.
 \end{itemize}
+\begin{observation}
+	Un entero de Gauss $\displaystyle z \in \Z[i] $ es una unidad si y solo si $\displaystyle z \cdot \overline{z} = 1 $. 
+\end{observation}
 \subsection{Anillo de polinomios}
 Sea $\displaystyle A $ un anillo conmutativo unitario. Llaremos \textbf{anillo de polinomios} en la variable $\displaystyle \mathtt{x} $ a $\displaystyle A[\mathtt{x} ] $ donde sus elementos son
 \[a_{n}\mathtt{x} ^{n} + \cdots + a_{1}\mathtt{x} +a_{0} , \; a_{i} \in A, \; n \in \N.\]
+Además, decimos que $\displaystyle a_{n}\mathtt{x}^{n} + \cdots +a_{1}\mathtt{x} + a_{0} $ es el polinomio 0 si y solo si $\displaystyle a_{0} = \cdots = a_{n} = 0 $. \\
 Dotamos a $\displaystyle A[\mathtt{x} ] $ de una operación de suma y producto que conocemos. Sean $\displaystyle p,q \in A[\mathtt{x} ] $ con 
 \[p = a_{n}\mathtt{x} ^{n} + \cdots + a_{1}\mathtt{x} +a_{0}, \; a_{i} \in A, \; n \in \N .\]
 \[q = b_{m}\mathtt{x} ^{m} + \cdots + b_{1}\mathtt{x} +b_{0}, \; b_{j} \in A, \; m \in \N .\]
@@ -193,7 +201,7 @@ Es fácil ver que $\displaystyle A[\mathtt{x} ] $ es un anillo conmutativo unita
 \begin{definition}
 	Sea $\displaystyle A[\mathtt{x} ] $ un anillo de polinomios y sea $\displaystyle p \in A[\mathtt{x} ] $, con $\displaystyle p = a_{n}\mathtt{x} ^{n} + \cdots + a_{1}\mathtt{x} +a_{0} $. 
 	\begin{enumerate}
-	\item Llamamos \textbf{grado} de $\displaystyle p $, $\displaystyle \grad\left(p\right)= n $. 
+	\item Llamamos \textbf{grado} de $\displaystyle p $, $\displaystyle \grad\left(p\right)= n $. \footnote{Por conveción decimos que $\displaystyle \grad\left(0\right) = -\infty $, así tenemos que los elementos de $\displaystyle A $ son los polinomios de grado menor o igual a 0.} 
 	\item Diremos que $\displaystyle a_{n}, \ldots, a_{1}, a_{0} $ son los \textbf{coeficientes} de $\displaystyle p $.
 	\item Al coeficiente $\displaystyle a_{0} $ lo llamamos \textbf{coeficiente independiente} y al coeficiente $\displaystyle a_{n} $ lo llamamos \textbf{coeficiente director}, y escribimos $\displaystyle l\left(p\right)=a_{n} $.
 	\end{enumerate}
@@ -207,7 +215,7 @@ Es fácil ver que $\displaystyle A[\mathtt{x} ] $ es un anillo conmutativo unita
 \end{lema}
 \begin{eg}
 	Consideremos $\displaystyle \Z_{6}[\mathtt{x} ] $ y $\displaystyle 3\mathtt{x} +1, 4\mathtt{x} +2 \in \Z_{6}[\mathtt{x} ] $. Tenemos que 
-	\[\left(3\mathtt{x} +1\right)\left(4\mathtt{x} +2\right) = 7\mathtt{x} +3 = \mathtt{x} +3 .\]
+	\[\left(3\mathtt{x} +1\right)+\left(4\mathtt{x} +2\right) = 7\mathtt{x} +3 = \mathtt{x} +3 .\]
 \[\left(3\mathtt{x} +1\right) \cdot \left(4\mathtt{x} +2\right) = 12\mathtt{x} ^{2}+10\mathtt{x} +2 = 4\mathtt{x} + 2 .\]	
 \end{eg}
 \begin{prop} 
@@ -221,9 +229,170 @@ Es fácil ver que $\displaystyle A[\mathtt{x} ] $ es un anillo conmutativo unita
 \begin{enumerate}
 	\item Está claro que $\displaystyle \mathcal{U}\left(A\right) \subset \mathcal{U}\left(A[\mathtt{x} ]\right) $ por ser $\displaystyle A \subset A[\mathtt{x} ] $. Sea $\displaystyle p \in \mathcal{U}\left(A[\mathtt{x} ]\right) $, entonces existe $\displaystyle q \in \mathcal{U}\left(A[\mathtt{x} ]\right) $ tal que $\displaystyle pq = 1 $. Como $\displaystyle p,q \neq 0 $, tenemos que $\displaystyle l\left(p\right), l\left(q\right) \neq 0 $, por lo que $\displaystyle l\left(p\right)l\left(q\right) \neq 0 $. 
 	Así, tenemos que 
-	\[0 =\grad\left(0\right) = \grad\left(pq\right) = \grad\left(p\right)+\grad\left(q\right) .\]
+	\[0 =\grad\left(1\right) = \grad\left(pq\right) = \grad\left(p\right)+\grad\left(q\right) .\]
 	Por tanto, necesariamente debe ser que $\displaystyle \grad\left(p\right) = \grad\left(q\right) = 0 $. Por tanto, $\displaystyle p = a_{0}, q = b_{0} \in A $, por lo que $\displaystyle a_{0}b_{0} = 1 $. Así, $\displaystyle p \in \mathcal{U}\left(A\right) $. 
+\item Supongamos que $\displaystyle A $ es dominio de integridad y sean $\displaystyle p,q \in A[\mathtt{x}] $. Como $\displaystyle p,q \neq 0 $ tenemos que $\displaystyle l\left(p\right), l\left(q\right) \neq 0 $, por lo que $\displaystyle l\left(p\right)l\left(q\right) \neq 0 $. Así,
+	\[l\left(pq\right) = l\left(p\right)l\left(q\right) \neq 0 \Rightarrow pq \neq 0 .\]
+	Recíprocamente, como $\displaystyle A \subset A[\mathtt{x}] $ es subanillo tenemos que si $\displaystyle A[\mathtt{x}] $ es dominio de integridad, $\displaystyle A $ también lo es. 
 \end{enumerate}
-
 \end{proof}
+\begin{observation}
+\begin{enumerate}
+	\item Es fácil ver que $\displaystyle \Char\left(A\right) = \Char\left(A[\mathtt{x}]\right) $. 
+	\item El anillo $\displaystyle A[\mathtt{x}] $ no es un cuerpo, puesto que $\displaystyle \mathtt{x} $ no es unidad. 
+\end{enumerate}
+\end{observation}
+\section{Ideales}
+\begin{definition}[Ideal]
+	Sea $\displaystyle A $ un anillo unitario conmutativo y $\displaystyle \mathfrak{a} \subset A $ no vacío. Diremos que $\displaystyle \mathfrak{a} $ es un \textbf{ideal} si:
+\begin{description}
+\item[(a)] $\displaystyle \left(\mathfrak{a}, +\right) $ es subgrupo de $\displaystyle \left(A, +, 0_{A}\right) $. 
+\item[(b)] $\displaystyle\forall b \in \mathfrak{a} $ y $\displaystyle\forall x \in A $ se tiene que $\displaystyle bx \in \mathfrak{a} $, es decir, $\displaystyle \mathfrak{a} A \subset \mathfrak{a} $. 
+\end{description}
+\end{definition}
+\begin{eg}
+\begin{enumerate}
+	\item Algunos ideales triviales son $\displaystyle \left\{ 0\right\}  $ y $\displaystyle A $. 
+	\item Si $\displaystyle \mathfrak{a} \subsetneq A $ es un ideal, decimos que es un \textbf{ideal propio}. 
+	\item Si $\displaystyle A = \Z $ y $\displaystyle \mathfrak{a} = 3\Z $, tenemos que $\displaystyle \mathfrak{a} $ es un ideal. En general, $\displaystyle n\Z $ para $\displaystyle n \in \N $ es un ideal de $\displaystyle \Z $. 
+\end{enumerate}
+\end{eg}
+\begin{observation}
+\begin{enumerate}
+\item Si $\displaystyle \mathfrak{a} \subset A $ es un ideal y $\displaystyle u \in \mathfrak{a} $ es unidad, tenemos que $\displaystyle \mathfrak{a} = A $. En efecto, si $\displaystyle x \in A $, tenemos que $\displaystyle  \left(xu^{-1}\right)u \in A\mathfrak{a} \subset \mathfrak{a} $. Así, los ideales propios no tienen unidades.
+\item Sea $\displaystyle b \in A $. Decimos que $\displaystyle \left(b\right) := bA = \left\{ bx \; : \; x \in A\right\} $ es el \textbf{ideal principal generado por} $\displaystyle b $. 
+\end{enumerate}
+\end{observation}
+\subsection{Construcción del anillo cociente}
+Sea $\displaystyle \left(A, +, \cdot \right) $ un anillo conmutativo unitario y $\displaystyle \mathfrak{a} \subsetneq A $ un ideal. Entonces, sabemos que $\displaystyle \mathfrak{a} $ es subgrupo normal de $\displaystyle A $, por ser $\displaystyle A $ abeliano. Por tanto, podemos considerar el grupo $\displaystyle A/\mathfrak{a} $. Recordamos que 
+\[[a] = [b] \iff a - b \in \mathfrak{a}  .\]
+Definíamos la suma de la forma: 
+\[ + : A/\mathfrak{a} \times A/\mathfrak{a} \to A/\mathfrak{a} : \left([a_{1}], [a_{2}]\right) \to [a_{1}] + [a_{2}] = [a_{1}+a_{2}].\]
+De forma análoga podemos definir el producto, 
+\[ \cdot : A/\mathfrak{a} \times A/\mathfrak{a} \to A/\mathfrak{a} : \left([a_{1}], [a_{2}]\right) \to [a_{1}] \cdot [a_{2}] := [a_{1} \cdot a_{2}] .\]
+Veamos que la aplicación está bien definida. Supongamos que $\displaystyle [a_{1}] = [a_{2}] $ y $\displaystyle [b_{1}] = [b_{2}] $. Tenemos que 
+\[a_{1}b_{1}-a_{2}b_{2} = a_{1}b_{1}-a_{2}b_{1}-a_{2}b_{2}+a_{2}b_{1} = b_{1}\underbrace{\left(a_{1}-a_{2}\right) }_{\in \mathfrak{a} }+a_{2}\underbrace{\left(b_{1}-b_{2}\right)}_{\in \mathfrak{a} } \in \mathfrak{a}  .\]
+Así tenemos que $\displaystyle [a_{1}b_{1}] = [a_{2}b_{2}] $ y la operación está bien definida. Así, diremos que $\displaystyle \left(A/\mathfrak{a} , +, \cdot \right) $ es el \textbf{anillo cociente} que es conmutativo y unitario. 
+\begin{eg}
+\begin{enumerate}
+\item Consideremos $\displaystyle A = \Z $ y $\displaystyle \mathfrak{a} = n\Z $, que es un ideal por un ejemplo anterior. Sabemos que $\displaystyle \Z/n\Z \cong \Z_{n} $. Tenemos que $\displaystyle \Z $ es dominio de integridad y $\displaystyle n\Z $ también lo es por ser subanillo, sin embargo $\displaystyle \Z_{n} $ sólo es dominio de integridad si $\displaystyle n $ es primo. Por tanto, ser dominio de integridad no se conserva por cocientes. 
+\item Sea $\displaystyle A = \R[\mathtt{x}] $ y $\displaystyle \mathfrak{a} = \left(\mathtt{x}^{2}+1\right) $. Estudiemos el conjunto cociente $\displaystyle \R[\mathtt{x}]/\mathfrak{a} $. Tenemos que $\displaystyle [\mathtt{x}^{2}+1] = [0]$, por lo que $\displaystyle [\mathtt{x}^{2}] = [-1]$. 
+	Así, si $\displaystyle k \in \N $, tenemos que 
+	\[ \left[\mathtt{x}^{2k}\right] = \left[\mathtt{x}^{2}\right] ^{k} = \left[-1\right] ^{k} .\]
+	\[\left[\mathtt{x}^{2k+1}\right] = \left[\mathtt{x}^{2}\right] ^{k} \cdot \left[\mathtt{x}\right] = \left[\left(-1\right)^{k}\right] \left[\mathtt{x}\right]  .\]
+Así, si tomamos el polinomio $\displaystyle a_{n}\mathtt{x}^{n} + \cdots + a_{1}\mathtt{x}+a_{0} $, tenemos que 
+\[ \left[a_{n}\mathtt{x}^{n}+\cdots + a_{1}\mathtt{x}+a_{0}\right] = [b] [\mathtt{x}] + [c].\]
+Así, si $\displaystyle p \in \R[\mathtt{x}]/\mathfrak{a} $, tenemos que $\displaystyle p = b\mathtt{x}+ c $. Análogamente, si $\displaystyle q \in \R[\mathtt{x}]/\mathfrak{a} $ con $\displaystyle q = d\mathtt{x}+e $, tenemos que 
+\[ p + q = \left(b + d\right)\mathtt{x} + \left(c + e\right) .\]
+\[p \cdot q = \left(b\mathtt{x}+c\right)\left(d\mathtt{x}+e\right)=bd\mathtt{x}^{2}+\left(be+cd\right)\mathtt{x}+ce = \left(be + cd\right)\mathtt{x}+\left(ce-bd\right) .\]
+Así, para cada elemento $\displaystyle p \in \R[\mathtt{x}]/\mathfrak{a} $ podemos encontrar un elemento inverso respecto a la multiplicación. Así, tenemos que $\displaystyle \R[\mathtt{x}]/\mathfrak{a} $ es un cuerpo. En efecto, se trata de $\displaystyle \C $. 	
+\end{enumerate}
+\end{eg}
+\begin{definition}
+	Sea $\displaystyle A $ un anillo conmutativo unitario y $\displaystyle \mathfrak{a}, \mathfrak{b} \subset A $ ideales. 
+	\begin{enumerate}
+		\item Definimos el \textbf{ideal suma} como $\displaystyle \mathfrak{a} + \mathfrak{b} := \left\{ a + b \; : \; a \in \mathfrak{a}, b \in \mathfrak{b}\right\}  $. 
+		\item Definimos el \textbf{ideal intersección} como $\displaystyle \mathfrak{a} \cap \mathfrak{b} := \left\{ x \in A \; : \; x \in \mathfrak{a}, x \in \mathfrak{b}\right\}  $.
+		\item Definimos el \textbf{ideal producto} como $\displaystyle \mathfrak{a} \cdot \mathfrak{b} := \left\{ \sum^{n}_{k = 1}x_{k}y_{k} \; : \; x_{k} \in \mathfrak{a}, y_{k}\in \mathfrak{b}, n \in \N\right\}  $. 
+	\end{enumerate}	
+\end{definition}
+\begin{definition}[Ideal generado por un conjunto]
+Sea $\displaystyle A $ un anillo conmutativo unitario y $\displaystyle \emptyset \neq S \subset A $. Llamamos \textbf{ideal generado por} $\displaystyle S $ a
+\[ \left(S\right) := \left\{ a_{1}s_{1} + \cdots + a_{k}s_{k} \; : \; s_{i} \in S, a_{i} \in A, k \in \N\right\}  .\]
+Además, $\displaystyle \left(S\right) $ es el menor ideal que contiene a $\displaystyle S $ y si $\displaystyle S = \left\{ s_{1}, \ldots, s_{n}\right\}  $, tenemos que $\displaystyle \left(S\right) = \left(s_{1}, \ldots, s_{n}\right) = \left(s_{1}\right)+\cdots + \left(s_{n}\right) $. 
+\end{definition}
+\begin{eg}
+En $\displaystyle \Z $ tenemos que $\displaystyle \left(4,6\right) = \left(2\right) $. Sin embargo, en $\displaystyle \R $, $\displaystyle \left(4,6\right) = \R $. 
+\end{eg}
+\begin{definition}[Ideal primo]
+	Sea $\displaystyle A $ un anillo conmutativo unitario. Sea $\displaystyle \mathfrak{p} \subsetneq A $ un ideal. Diremos que $\displaystyle \mathfrak{p} $ es un \textbf{ideal primo} si $\displaystyle xy \in \mathfrak{p} $ implica que $\displaystyle x \in \mathfrak{p} $ o $\displaystyle y \in \mathfrak{p} $, $\displaystyle \forall x ,y \in A $. 
+\end{definition}
+\begin{eg}
+	En $\displaystyle \Z $ sabemos que $\displaystyle n\Z $ son los ideales, con $\displaystyle n \in \N $. En efecto, si $\displaystyle \mathfrak{a} \subset \Z $ es un ideal, tenemos que es subgrupo aditivo, por lo que $\displaystyle \mathfrak{a} = n\Z $ para algún $\displaystyle n \in \N $. Entonces, tenemos que $\displaystyle n\Z $ es ideal primo si y solo si $\displaystyle n $ es primo. 
+\end{eg}
+\begin{prop}
+Sea $\displaystyle A $ un anillo conmutativo unitario y $\displaystyle \mathfrak{p} \subset A $ un ideal. Tenemos que $\displaystyle \mathfrak{p} $ es primo si y solo si $\displaystyle A/\mathfrak{p} $ es dominio de integridad.
+\end{prop}
+\begin{proof}
+Sabemos que $\displaystyle \mathfrak{p}\neq A $ y que $\displaystyle A/\mathfrak{p} $ es un anillo también conmutativo unitario. Además, si $\displaystyle a,b \in A $, tenemos que 
+\[\left[ab\right]  = \left[a\right] \left[b\right] = \left[0\right] \iff ab \in \mathfrak{p} .\]
+\begin{description}
+	\item[(i)] Supongamos que $\displaystyle \mathfrak{p} $ es primo y sean $\displaystyle [a], [b] \in A/\mathfrak{p} $ con $\displaystyle [a] \cdot [b] = [0]$. Por lo visto anteriormente, tenemos que $\displaystyle ab \in \mathfrak{p} $, por lo que debe ser que $\displaystyle a \in \mathfrak{p} $ o $\displaystyle b \in \mathfrak{p} $, y en consecuencia debe ser que $\displaystyle [a] = [0] $ o $\displaystyle [b] = [0] $. Por tanto, $\displaystyle A/\mathfrak{p} $ es dominio de integridad.
+	\item[(ii)] Supongamos que $\displaystyle A/\mathfrak{p} $ es dominio de integridad y $\displaystyle ab \in \mathfrak{p} $. Así, tenemos que $\displaystyle [ab] = [a] [b]= [0] $. Como $\displaystyle A/\mathfrak{p} $ es dominio de integridad debe ser que $\displaystyle [a] = 0 $ o $\displaystyle [b] = 0 $, es decir, $\displaystyle a \in \mathfrak{p} $ o $\displaystyle b \in \mathfrak{p} $. Por tanto, $\displaystyle \mathfrak{p} $ es primo.
+\end{description}
+\end{proof}
+\begin{definition}[Ideal maximal]
+Sea $\displaystyle A $ un anillo y $\displaystyle \mathfrak{m} \subsetneq A $ un ideal. Diremos que es un \textbf{ideal maximal} si no existe un ideal $\displaystyle \mathfrak{a} \subset A $ tal que $\displaystyle \mathfrak{m} \subsetneq \mathfrak{a} $. 
+\end{definition}
+\begin{prop}
+Sea $\displaystyle A $ un anillo conmutativo unitario y $\displaystyle \mathfrak{m} \subset A $ un ideal. Tenemos que $\displaystyle \mathfrak{m} $ es maximal si y solo si $\displaystyle A/\mathfrak{m} $ es cuerpo.
+\end{prop}
+\begin{proof}
+\begin{description}
+	\item[(i)] Supongamos que $\displaystyle \mathfrak{m} \subset A $ es un ideal maximal. Tenemos que ver que $\displaystyle A/\mathfrak{m} - \left\{ [0]\right\} \subset \mathcal{U}\left(A/\mathfrak{m}\right) $. Sea $\displaystyle [a] \in A/\mathfrak{m} $ con $\displaystyle [a] \neq [0] $, es decir, $\displaystyle a \in A-\mathfrak{m} $. Como $\displaystyle a \not\in \mathfrak{m} $, podemos considerar el ideal $\displaystyle \left(\mathfrak{m}\cup \left\{ a\right\} \right) \supsetneq \mathfrak{m} $. Como $\displaystyle \mathfrak{m} $ es maximal, necesariamente debe ser que $\displaystyle A = \left( \mathfrak{m} \cup \left\{ a\right\} \right)  $. 
+		Así, $\displaystyle 1 \in A = \left(\mathfrak{m} \cup \left\{ a\right\} \right)  $, por lo que existe $\displaystyle b \in \mathfrak{m} $ y $\displaystyle c \in A $ tal que $\displaystyle 1 = b + ac $. Por tanto, 
+		\[[1] = [ac] = [a] [c] \Rightarrow [a] \in \mathcal{U}\left(A/\mathfrak{m}\right) .\]
+	\item[(ii)] Supongamos que $\displaystyle A/\mathfrak{m} $ es un cuerpo y existe un ideal $\displaystyle \mathfrak{m}' $ tal que $\displaystyle \mathfrak{m} \subsetneq \mathfrak{m}' $. Queremos ver que $\displaystyle \mathfrak{m}' = A $, para ello basta con ver que $\displaystyle 1\in \mathfrak{m}' $. Sea $\displaystyle a \in \mathfrak{m}' - \mathfrak{m} $. Como $\displaystyle A/\mathfrak{m} $ es un cuerpo, existe $\displaystyle b \in A/\mathfrak{m} $ tal que $\displaystyle [1] = [a][b]=[ab] $. Así, tenemos que 
+		\[[1-ab] = [0] \Rightarrow 1-ab \in \mathfrak{m} \Rightarrow 1 \in \mathfrak{m} + \left(a\right) .\]
+	Por tanto, debe ser que $\displaystyle 1 \in \mathfrak{m}' $. 
+\end{description}
+\end{proof}
+\begin{eg}
+	En $\displaystyle \R[\mathtt{x}] $, el ideal $\displaystyle \left(\mathtt{x}^{2}+1\right) $ es maximal puesto que $\displaystyle \R[\mathtt{x}]/\left(\mathtt{x}^{2}+1\right) $ es un cuerpo.
+\end{eg}
+\begin{colorary}
+Todo ideal maximal es primo.
+\end{colorary}
+\begin{proof}
+Si $\displaystyle \mathfrak{m} \subset A $ es un ideal maximal tenemos que $\displaystyle A/\mathfrak{m} $ es un cuerpo, por lo que $\displaystyle A/\mathfrak{m} $ es dominio de integridad, por lo que $\displaystyle \mathfrak{m} $ es primo.
+\end{proof}
+\begin{eg}
+En $\displaystyle \Z $, los ideales maximales son los $\displaystyle p\Z $ donde $\displaystyle p $ es primo. Es decir, en $\displaystyle \Z $ los ideales primos son los maximales. 
+\end{eg}
+\section{Homomorfismos de anillos}
+\begin{definition}[Homomorfismo de anillos]
+Sean $\displaystyle A $ y $\displaystyle B $ anillos y $\displaystyle f : A \to B $. Diremos que $\displaystyle f $ es un \textbf{homomorfismo de anillos} si:
+\begin{enumerate}
+\item $\displaystyle f\left(a + b\right) = f\left(a\right)+f\left(b\right) $, $\displaystyle \forall a,b \in A $. 
+\item $\displaystyle f\left(a \cdot b\right) = f\left(a\right) \cdot f\left(b\right) $, $\displaystyle \forall a,b \in A $.
+\end{enumerate}
+Diremos que es un \textbf{homomorfismo de anillos unitarios} si $\displaystyle A $ y $\displaystyle B $ son unitarios y $\displaystyle f\left(1\right) = 1 $. 
+\end{definition}
+\begin{definition}
+Dado un homomorfismo de anillos $\displaystyle f : A \to B $:
+\begin{enumerate}
+\item Si $\displaystyle f $ es biyectiva la llamamos \textbf{isomorfismo}.
+\item Si $\displaystyle f $ es inyectiva la llamamos \textbf{monomorfismo}.
+\item Si $\displaystyle f $ es sobreyectiva la llamamos \textbf{epimorfismo}. 
+\item Si $\displaystyle A = B $, a $\displaystyle f $ la llamamos \textbf{endomorfismo}.
+\end{enumerate}
+\end{definition}
+\begin{prop}
+Sea $\displaystyle f:A \to B $ un homomorfismo de anillos unitarios.
+\begin{enumerate}
+\item $\displaystyle f\left(0\right) = 0 $. 
+\item $\displaystyle \forall n \in \Z, \forall a \in A $, $\displaystyle f\left(na\right) = nf\left(a\right) $. 
+\item Si $\displaystyle n \in \N, \forall a \in A $, $\displaystyle f\left(a^{n}\right) = f\left(a\right)^{n} $. 
+\item Si $\displaystyle a \in \mathcal{U}\left(A\right) $, entonces $\displaystyle f\left(a\right) \in \mathcal{U}\left(B\right) $. En particular, $\displaystyle f|_{\mathcal{U}\left(A\right)}:\mathcal{U}\left(A\right) \to \mathcal{U}\left(B\right) $ es un homomorfismo de grupos y $\displaystyle f\left(a^{n}\right) = f\left(a\right)^{n} $, $\displaystyle \forall n \in \Z $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Como $\displaystyle f $ es homomorfismo de grupos es trivial. 
+\item Sea $\displaystyle n \in \N $ y $\displaystyle a \in A $,
+	\[f\left(na\right) = f\left(a+\cdots + a\right)= f\left(a\right)+\cdots +f\left(a\right) = nf\left(a\right) .\]
+\item Sea $\displaystyle n \in \N $ y $\displaystyle a \in A $, 
+	\[f\left(a^{n}\right) = f\left(a \cdots a\right) = f\left(a\right) \cdots f\left(a\right) = f\left(a\right)^{n} .\]
+\item Sea $\displaystyle a \in \mathcal{U}\left(A\right) $, por lo que existe $\displaystyle x \in A $ tal que $\displaystyle ax = 1 $. Así, tenemos que 
+	\[f\left(a\right)f\left(x\right) = f\left(ax\right) = f\left(1\right) = 1 \Rightarrow f\left(a\right) \in \mathcal{U}\left(B\right) .\]
+\end{enumerate}
+\end{proof}
+\begin{eg}
+\begin{enumerate}
+\item Sea $\displaystyle A $ un anillo, entonces la identidad es un homomorfismo de anillos unitario. 
+\item Si $\displaystyle B \subset A $ es un subanillo unitario, la función inclusión $\displaystyle i : B \to A $ es homomorfismo de anillos unitarios. 
+\item La aplicación $\displaystyle f : \Z \to \R : n \to 2n $ no es un homomorfismo de anillos unitario puesto que $\displaystyle f\left(1\right) = 2 \neq 1 $. 
+\item La aplicación $\displaystyle f : A \to A \times A : a \to \left(a,0\right) $ es un homomorfismo de anillos no unitario, puesto que $\displaystyle f\left(1\right) = \left(1,0\right) \neq \left(1,1\right) $. 
+\end{enumerate}
+\end{eg}
 

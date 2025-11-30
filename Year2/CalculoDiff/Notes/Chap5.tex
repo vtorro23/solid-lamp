@@ -16,4 +16,100 @@ Buscamos saber si existen $\displaystyle x = x\left(u,v\right) $ e $\displaystyl
 \[ Jf\left(a\right) = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} .\]
 Como $\displaystyle \det Jf\left(a\right) \neq 0 $, tenemos que se cumple el teorema de la función inversa y por tanto podemos encontrar las expresiones de $\displaystyle x $ e $\displaystyle y $ en función de $\displaystyle u $ y $\displaystyle v $ en un entorno cercano a $\displaystyle a $. 
 \end{eg}
+\begin{theorem}[Teorema de la función inyectiva]
+Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $, $\displaystyle f : U \to \R^{m} $ de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle U $, tal que $\displaystyle Df\left(a\right) : \R^{n} \to \R^{m} $ es inyectiva. Entonces existen $\displaystyle C,r > 0 $ tales que 
+\[ \|x-y\| \leq C \|f\left(x\right)-f\left(y\right) \|, \; \forall x,y \in \overline{B}\left(a,r\right) \subset U .\]
+En particular, $\displaystyle f|_{\overline{B}\left(a,r\right)} $ es inyectiva. 
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle L = Df\left(a\right) : \R^{n} \to \R^{m} $ que es inyectiva, por lo que $\displaystyle \Ker\left(L\right) = \left\{ 0\right\}  $. Por tanto, consideremos 
+	\[\alpha = \inf \left\{ \|L\left(v\right)\| \; : \; \|v\| = 1\right\}  .\]
+	Como la aplicación $\displaystyle v \to \|L\left(v\right)\| $ es continua en $\displaystyle \R^{n} $ y $\displaystyle S = \left\{ v \in \R^{n} \; : \; \|v\|=1\right\}  $ es compacto, tenemos que existe $\displaystyle v_{0} \in S $ tal que $\displaystyle \alpha = \|L\left(v_{0}\right)\| > 0 $. En consecuencia, $\displaystyle \forall x \neq 0 $, tenemos que
+	\[ \|L\left(x\right)\| = \left\|L\left(\|x\|\frac{x}{\|x\|}\right)\right\| = \|x\|\left\|L\left(\frac{x}{\|x\|}\right)\right\|\geq \|x\|\alpha  .\]
+Ahora, como $\displaystyle f $ es de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle U $, tenemos que $\displaystyle \forall i = 1, \ldots, n $ y $\displaystyle \forall j = 1, \ldots, m $, tenemos que $\displaystyle \frac{\partial f_{j}}{\partial x_{i}} $ es continua en $\displaystyle U $. Tomando $\displaystyle \epsilon = \frac{\alpha }{2\sqrt{nm}} $, existe $\displaystyle r > 0 $ tal que $\displaystyle \overline{B}\left(a,r\right) \subset U $ y además
+\[ \left|\frac{\partial f_{j}}{\partial x_{i}}\left(x\right)-\frac{\partial f_{j}}{\partial x_{i}}\left(a\right)\right| < \frac{\alpha }{2\sqrt{nm}}, \; \forall i = 1, \ldots, n; \forall j = 1, \ldots, m; \forall x \in \overline{B}\left(a,r\right) .\]
+Consideremos ahora $\displaystyle g : U \to \R^{m} $ con $\displaystyle g\left(x\right)= f\left(x\right)-L\left(x\right) $. Tenemos que $\displaystyle \forall j= 1, \ldots, m $, 
+\[ g_{j}\left(x\right) = f_{j}\left(x\right)-L_{j}\left(x\right) = f_{j}\left(x\right)-\sum^{n}_{i = 1}\frac{\partial f_{j}\left(a\right)}{\partial x_{i}} x_{i}.\]
+Así, tenemos que 
+\[ \left|\frac{\partial g_{j}}{\partial x_{i}}\left(x\right)\right| = \left|\frac{\partial f_{j}}{\partial x_{i}}\left(x\right)-\frac{\partial f_{j}}{\partial x_{i}}\left(a\right)\right| < \frac{\alpha }{2\sqrt{nm}}, \; \forall x \in \overline{B}\left(a,r\right) .\]
+Por la desigualdad del valor medio tenemos que, como $\displaystyle V = B\left(a,r\right) $ es abierto convexo y se cumple la desigualdad anterior, tenemos que
+\[ \|g\left(x\right)-g\left(y\right)\| \leq \sqrt{nm}\frac{\alpha }{2\sqrt{nm}} \|x-y\| = \frac{\alpha }{2}\|x-y\|, \; \forall x,y \in B\left(a,r\right)  .\]
+Por continuidad, podemos extender la desigualdad anterior a la bola $\displaystyle \overline{B}\left(a,r\right) $. Así, nos queda que 
+\[
+\begin{split}
+	\|f\left(x\right)-f\left(y\right)-L\left(x\right)+L\left(y\right)\| = & \|f\left(x\right)-f\left(y\right)-L\left(x-y\right)\| \geq \|L\left(x-y\right)\| -\|f\left(x\right)-f\left(y\right)\| \\
+	\geq & \alpha \|x-y\|-\|f\left(x\right)-f\left(y\right)\| .
+\end{split}
+\]
+Así, nos queda que 
+\[\frac{\alpha }{2}\|x-y\| \geq \alpha \|x-y\| - \|f\left(x\right)-f\left(y\right)\| .\]
+Así, obtenemos que 
+\[\|f\left(x\right)-f\left(y\right)\| \geq \alpha\|x-y\| - \frac{\alpha }{2}\|x-y\| = \frac{\alpha }{2}\|x-y \|, \; \forall x,y \in \overline{B}\left(a,r\right).\]
+\end{proof}
+\begin{lema}
+	El conjunto $\displaystyle \GL\left(\R^{n}\right) = \left\{ L : \R^{n} \to \R^{n} \; : \; L\; \text{lineal biyectiva}\right\}  $ es abierto en $\displaystyle \mathcal{L}\left(\R^{n}, \R^{n}\right) \cong \mathcal{M}_{n \times n} \left(\R\right)\cong \R^{n^{2}}$ y además la aplicación
+	\[J : \GL\left(\R^{n}\right) \to \GL\left(\R^{n}\right) : L \to L^{-1}	\]
+	es de clase $\displaystyle \mathcal{C}^{\infty} $. 
+\end{lema}
+\begin{proof}
+Podemos decir que 
+\[\GL\left(\R^{n}\right) = \left\{ L \in \mathcal{L}\left(\R^{n}, \R^{n}\right) \; : \; \det\left(L\right) \neq 0\right\}  .\]
+Además, la aplicación $\displaystyle \det : \mathcal{L}\left(\R^{n}, \R^{n}\right) \cong \mathcal{M}_{n \times n} \left(\R\right) \to \R : L \to \det\left(L\right)$  es continua y es de clase $\displaystyle \mathcal{C}^{\infty} $ puesto que $\displaystyle \det\left(L\right) $ se obtiene a partir de operaciones algebraicas de sus componentes en la base canónica. 
+Otra forma de verlo es que 
+\[L^{-1} = \frac{1}{\det\left(L\right)}\Adj\left(L^{T}\right) ,\]
+se obtiene por medio de operaciones algebraicas, por lo que es de clase $\displaystyle \mathcal{C}^{\infty} $. 
+\end{proof}
+Ahora estamos en condiciones para demostrar el \textbf{Teorema de la Función Inversa}. 
+\begin{theorem}[Teorema de la función inversa]
+Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle U $; $\displaystyle a\in U $ tal que $\displaystyle \det Jf\left(a\right) \neq 0 $. Entonces, existe $\displaystyle V \subset \R^{n} $ abierto tal que $\displaystyle a \in V \subset U $ y existe $\displaystyle W \subset \R^{n} $ abierto tal que $\displaystyle f\left(a\right) \in W $, tales que $\displaystyle f\left(V\right) = W $ y $\displaystyle f|_{V} : V \to W $ admite una función inversa diferenciable $\displaystyle g = \left(f|_{V}\right)^{-1} : W \to V $, que satisface 
+\[Dg\left(f\left(x\right)\right) = Df\left(x\right)^{-1}, \; \forall x \in V .\]
+Además, si $\displaystyle f \in \mathcal{C}^{m}\left(U\right) $, entonces $\displaystyle g \in \mathcal{C}^{m}\left(W\right) $ para $\displaystyle m \in \N $.
+\end{theorem}
+\begin{proof}
+\begin{description}
+\item[Paso 1.] Consideramos $\displaystyle \varphi : U \to \R $, con $\displaystyle \varphi\left(x\right) = \det\left(Df\left(x\right)\right) $, que es continua en $\displaystyle U $ puesto que $\displaystyle \varphi $ se obtiene por medio de operaciones algebraicas con las derivadas parciales primeras $\displaystyle \left(\frac{\partial f_{j}}{\partial x_{i}}\right)_{i,j = 1, \ldots, n} $, las cuales son continuas. Como $\displaystyle \varphi\left(a\right) = \det\left(Df\left(a\right)\right) \neq 0 $, existe $\displaystyle U_{0} \subset U $ abierto con $\displaystyle a\in U_{0} $ tal que $\displaystyle \varphi\left(x\right) = \det\left(f\left(x\right)\right) \neq 0 $, $\displaystyle \forall x \in U_{0} $. 
+\item[Paso 2.] Por el teorema de la función inyectiva, existen $\displaystyle C,r > 0 $ tales que $\displaystyle \overline{B}\left(a,r\right) \subset U_{0} $ y 
+	\[\|f\left(x_{1}\right)-f\left(x_{2}\right)\| \geq C \|x_{1}-x_{2}\|, \; \forall x_{1}, x_{2} \in \overline{B}\left(a,r\right) .\]
+	En particular, $\displaystyle f|_{\overline{B}\left(a,r\right)} $ es inyectiva. Sea $\displaystyle S = \partial\left(\overline{B}\left(a,r\right)\right) = \left\{ x \in \R^{n} \; : \; \|x-a\| = r\right\}  $, que es un conjunto compacto por lo que $\displaystyle f\left(S\right) $ es también compacto. Además, $\displaystyle f\left(a\right) \not\in f\left(S\right) $ por la inyectividad de $\displaystyle f $ y $\displaystyle a \not\in S $.
+	Así, podemos definir
+	\[d = \min \left\{ \|f\left(a\right)-f\left(x\right)\|\; : \; x \in S\right\} > 0 .\]
+Por tanto, tenemos que
+\[ \|f\left(x\right)-f\left(a\right)\| \geq d, \; \forall x \in S .\]
+\item[Paso 3.] Consideremos $\displaystyle W = B\left(f\left(a\right), \frac{d}{2}\right) $ y $\displaystyle B = B\left(a,r\right) $. Tenemos que ver que $\displaystyle W \subset f\left(B\right) $. Sea $\displaystyle \hat{y} \in W $ y consideremos la función
+	\[ h : \overline{B}\left(a,r\right) \to \R : x \to \|f\left(x\right)-\hat{y}\|^{2} .\]
+Como $\displaystyle \overline{B}\left(a,r\right) $ es complacto y $\displaystyle h $ es continua, existe $\displaystyle \hat{x} \in \overline{B}\left(a,r\right) $ donde $\displaystyle h $ alcanza un mínimo. Veamos que $\displaystyle \hat{x} \not\in S $. En efecto, si $\displaystyle x \in S $ tenemos que 
+\[\|f\left(x\right)-\hat{y}\| \geq \|f\left(x\right)-f\left(a\right)\| - \|f\left(a\right)-\hat{y}\| \geq d -\frac{d}{2} = \frac{d}{2} > \|f\left(a\right)-\hat{y}\| .\]
+Así, tenemos que si $\displaystyle x \in S $, $\displaystyle h\left(x\right) > h\left(a\right) $, por lo que $\displaystyle \hat{x} \not\in S $ y debe ser que $\displaystyle \hat{x} \in B $, por lo que $\displaystyle \hat{x} $ es un mínimo local de $\displaystyle h $. Así, debe ser que $\displaystyle \nabla h\left(\hat{x}\right) = 0 $. Si denotamos $\displaystyle \hat{y} = \left(y_{1}, \ldots, y_{n}\right) $, tenemos que 
+\[h\left(x\right) = \sum^{n}_{j = 1}\left(f_{j}\left(x\right)-y_{j}\right)^{2} .\]
+Por tanto, $\displaystyle \forall j = 1, \ldots, n $,
+\[\frac{\partial h}{\partial x_{i}}\left(\hat{x}\right) = \sum^{n}_{j = 1}2\underbrace{\left(f_{j}\left(x\right)-y_{j}\right)}_{u_{j}} \cdot \underbrace{\frac{\partial f_{j}}{\partial x_{i}}\left(\hat{ x}\right)}_{a_{ij}} = 0 .\]
+Así, obtenemos el sistema
+\[
+\begin{cases}
+a_{11}u_{1} + \cdots + a_{1n}u_{n} = 0 \\
+\vdots \\
+a_{n1}u_{1} + \cdots + a_{nn}u_{n} = 0
+\end{cases}
+.\]
+Tenemos que 
+\[\det\begin{pmatrix} a_{11} & \cdots & a_{1n} \\ \vdots & & \vdots \\ a_{n1} & \cdots & a_{nn} \end{pmatrix} = \det\left(\frac{\partial f_{j}}{\partial x_{i}}\left(\hat{x}\right)\right) = \det\left(Jf\left(\hat{x}\right)\right) \neq 0 .\]
+Así, debe ser que es sistema tiene sólo una solución, la solución trivial, por lo que $\displaystyle u_{1} = u_{2} = \cdots = u_{n} = 0 $. Por tanto, $\displaystyle f_{j}\left(\hat{x}\right) = y_{j} $, $\displaystyle \forall j = 1, \ldots,n $. Así, tenemos que $\displaystyle f\left(\hat{x}\right) = \hat{y} $. 
+\item[Paso 4.] Definimos $\displaystyle V = B\left(a,r\right) \cap f^{-1}\left(W\right) = \left\{ x \in B\left(a,r\right) \; : \; f\left(x\right) \in W\right\}  $ que es abierto y $\displaystyle a \in V $. Por construcción tenemos que $\displaystyle f|_{V} : V \to W $, que es inyectiva y sobreyectiva, por lo que es biyectiva. 
+\item[Paso 5.] Veamos que $\displaystyle g $ es diferenciable con $\displaystyle Dg\left(f\left(x\right)\right) = \left(Df\left(x\right)\right)^{-1} $, $\displaystyle \forall x \in V $. Sea $\displaystyle x_{0} \in V $, $\displaystyle  x \in V $ y denotamos $\displaystyle y_{0} = f\left(x_{0}\right) $ e $\displaystyle y = f\left(x\right) $, así como $\displaystyle L = Df\left(x_{0}\right) $. Tenemos que 
+	\[
+	\begin{split}
+		\frac{\|g\left(y\right)-g\left(y_{0}\right)-L^{-1}\left(y-y_{0}\right)\|}{\|y-y_{0}\|} = & \frac{\|x-x_{0}-L^{-1}\left(f\left(x\right)-f\left(x_{0}\right)\right)\|}{\|f\left(x\right)-f\left(x_{0}\right)\|} \\
+		= & \frac{\|x-x_{0}\|}{\|f\left(x\right)-f\left(x_{0}\right)\|} \cdot \frac{\|L^{-1}\left(L\left(x-x_{0}\right)\right)-L^{-1}\left(f\left(x\right)-f\left(x_{0}\right)\right)}{\|x-x_{0}\|} \\
+		\leq &  C \|L^{-1}\| \frac{\|f\left(x\right)-f\left(x_{0}\right)-L\left(x-x_{0}\right)\|}{\|x-x_{0}\|}  \to 0.
+	\end{split}
+	\]
+	Hemos aplicado el teorema de la función inyectiva. Si $\displaystyle y \to y_{0} $ tenemos que $\displaystyle f\left(x\right) \to f\left(x_{0}\right) $, por lo que $\displaystyle x \to x_{0} $ (puesto que $\displaystyle \|x-x_{0}\| \leq C\|f\left(x\right)-f\left(x_{0}\right)\| $). 
+Así, tenemos que si $\displaystyle x \in V $, $\displaystyle Dg\left(f\left(x\right)\right) = \left(Df\left(x\right)\right)^{-1} $. Equivalentemente, podemos decir que si $\displaystyle y \in W $, $\displaystyle Dg\left(y\right) = \left(Df\left(g\left(y\right)\right)\right)^{-1} $.
+\item[Paso 6.] Sabemos que 
+	\[Jg\left(y\right) = \left(Jf\left(g\left(y\right)\right)\right)^{-1} ,\]
+	es continua puesto que 
+	\[y \to g\left(y\right) \to Jf\left(g\left(y\right)\right) \to \left(Jf\left(g\left(y\right)\right)\right)^{-1} ,\]
+	y son todas continuas. Por tanto, tenemos que $\displaystyle g $ es de clase $\displaystyle \mathcal{C}^{1} $ siempre. Inductivamente podemos ver que si $\displaystyle f $ es $ \mathcal{C}^{m} $, entonces $\displaystyle g $ es $  \mathcal{C}^{m} $. 
+\end{description}
+\end{proof}
 

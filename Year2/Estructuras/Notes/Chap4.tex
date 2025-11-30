@@ -64,7 +64,7 @@ Sean $\displaystyle \sigma, \tau \in \mathcal{S}_{n} $ dos permutaciones disjunt
 \begin{proof} Supongamos que $\displaystyle \sop\left(\sigma \right) \cap \sop\left(\tau \right) = \emptyset $.
 \begin{enumerate}
 \item Si $\displaystyle x \not\in \sop\left(\sigma \right)\cup \sop\left(\tau \right) $ tenemos que $\displaystyle \sigma\left(x\right) = x $ y $\displaystyle \tau\left(x\right) = x $, por lo que
-	\[\sigma\left(\tau x\right) = \sigma \left(x\right) = \tau\left(x\right) = \tau\left(\sigma\left(x\right)\right) .\]
+	\[\sigma\left(\tau \left(x\right)\right) = \sigma \left(x\right) = \tau\left(x\right) = \tau\left(\sigma\left(x\right)\right) .\]
 	Ahora, supongamos sin pérdida de generalidad que $\displaystyle x \in \sop\left(\sigma \right) $. Como $\displaystyle \sigma  $ y $\displaystyle \tau $ son disjuntos, debe ser que $\displaystyle x \not\in \sop\left(\tau\right) $, es decir, $\displaystyle \tau\left(x\right) = x $. Por otro lado, tenemos que $\displaystyle \sigma\left(x\right) \in \sop\left(\sigma \right) $ y en consecuencia $\displaystyle \sigma\left(x\right) \not\in \sop\left(\tau\right) $. Así, podemos concluir que
 	\[ \sigma\left(\tau\left(x\right)\right) = \sigma \left(x\right) = \tau\left(\sigma \left(x\right)\right) .\]
 \item La segunda implicación es trivial. Supongamos que $\displaystyle \left(\sigma \cdot \tau\right)^{m} = id $, es decir, $\displaystyle \sigma^{m} = \left(\tau^{m}\right)^{-1} $. Así, nos queda que
@@ -266,7 +266,7 @@ Si $\displaystyle n \geq 3 $, $\displaystyle \mathcal{A}_{n} $ está generado po
 \end{prop}
 \begin{proof}
 Si tomamos un 3-ciclo $\displaystyle \left(i,j,k\right) $, tenemos que 
-\[\left(i,j,k\right) = \left(k,i\right)\left(j,i\right) \in \mathcal{A}_{n} .\]
+\[\left(i,j,k\right) = \left(k,i\right)\left(j,k\right) \in \mathcal{A}_{n} .\]
 Por tanto, todos los 3-ciclos están en el grupo alternado. Ahora veamos que las permutaciones pares son productos de 3-ciclos. Consideremos dos trasposiciones, entonces podemos escribirlas como producto de a lo sumo dos 3-ciclos. En efecto, consideremos las trasposiciones $\displaystyle \left(i,j\right) $ y $\displaystyle \left(k,r\right) $. Hay varias opciones:
 \begin{itemize}
 	\item Si $\displaystyle \left\{ i,j\right\}\cap\left\{ k,r\right\} \neq \emptyset $ y $\displaystyle j = r $, podemos escribir
@@ -282,7 +282,7 @@ Por tanto, todos los 3-ciclos están en el grupo alternado. Ahora veamos que las
 	\item $\displaystyle \mathcal{A}_{3}\cong C_{3} $.
 	\item $\displaystyle \mathcal{A}_{4} $ tiene orden 12 y es un grupo en sí mismo, es decir, no es isomorfo a ningún grupo que hayamos visto anteriormente. Además, $\displaystyle \mathcal{A}_{4} $ está formado por los 3-ciclos de $\displaystyle \mathcal{S}_{4} $ y las permutaciones de dos trasposiciones disjuntas. Es fácil ver que $\displaystyle \mathcal{A}_{4} $ no tiene elementos de orden 4 ni de orden 6.
 	\item Si consideramos el conjunto 
-		\[ \left\{ id, \left(1,2\right), \left(3,4\right), \left(1,3\right), \left(2,4\right), \left(1,4\right), \left(2,3\right)\right\} \leq \mathcal{A}_{n} ,\]
+		\[ \left\{ id, \left(1,2\right) \left(3,4\right), \left(1,3\right) \left(2,4\right), \left(1,4\right) \left(2,3\right)\right\} \leq \mathcal{A}_{n} ,\]
 		es un subgrupo de orden $\displaystyle 4 $ y lo llamamos \textbf{grupo de Klein}, que es isomorfo a $\displaystyle C_{2} \times C_{2} $. En concreto, el grupo de Klein es normal en $\displaystyle \mathcal{A}_{4} $. 
 	\end{itemize}
 \end{eg}

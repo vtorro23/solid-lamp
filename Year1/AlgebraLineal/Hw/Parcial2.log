@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  22 MAY 2025 16:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  24 NOV 2025 21:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -561,11 +561,16 @@ File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count317
+\float@exts=\toks51
+\float@box=\box71
+\@float@everytoks=\toks52
+\@floatcapt=\box72
 )
-\c@theorem=\count317
-\c@definition=\count318
-\c@ej=\count319
-\c@sol=\count320
+\c@ej=\count318
+\c@sol=\count319
 ) (./Parcial2.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
@@ -588,17 +593,17 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
  (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count321
+\scratchcounter=\count320
 \scratchdimen=\dimen281
-\scratchbox=\box71
-\nofMPsegments=\count322
-\nofMParguments=\count323
-\everyMPshowfont=\toks51
-\MPscratchCnt=\count324
+\scratchbox=\box73
+\nofMPsegments=\count321
+\nofMParguments=\count322
+\everyMPshowfont=\toks53
+\MPscratchCnt=\count323
 \MPscratchDim=\dimen282
-\MPnumerator=\count325
-\makeMPintoPDFobject=\count326
-\everyMPtoPDFconversion=\toks52
+\MPnumerator=\count324
+\makeMPintoPDFobject=\count325
+\everyMPtoPDFconversion=\toks54
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -693,10 +698,10 @@ L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 27089 strings out of 474116
- 673232 string characters out of 5743682
+ 27158 strings out of 474116
+ 674256 string characters out of 5743682
  1963187 words of memory out of 5000000
- 48990 multiletter control sequences out of 15000+600000
+ 49055 multiletter control sequences out of 15000+600000
  565373 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,13n,110p,756b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s

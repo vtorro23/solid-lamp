@@ -286,7 +286,7 @@ Así, nos queda
 \[
 \begin{split}
 & \|g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right) -Dg\left(f\left(a\right)\right)\left(Df\left(a\right)\left(x-a\right)\right)\| \\
-\leq & \|g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right) - Dg\left(f\left(a\right)\right)\left(f\left(x\right)-f\left(a\right)\right) \| + \|Dg\left(f\left(a\right)\right) \left(f\left(x\right)-f\left(a\right) \right)-Df\left(a\right)\left(x-a\right)\| \\
+\leq & \|g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right) - Dg\left(f\left(a\right)\right)\left(f\left(x\right)-f\left(a\right)\right) \| + \|Dg\left(f\left(a\right)\right) \left(f\left(x\right)-f\left(a\right) -Df\left(a\right)\left(x-a\right) \right)\| \\
 \leq & \epsilon ' M \|x-a\| + \|Dg\left(f\left(a\right)\right)\| \|f\left(x\right)-f\left(a\right) - Df\left(a\right)\left(x-a\right)\| \leq \epsilon ' M' \|x-a\| + M\epsilon ' \|x-a\|\\
 = & \epsilon'\left(M + M'\right)\|x-a\| = \epsilon \|x-a\|.
 \end{split}
@@ -756,7 +756,7 @@ Así, tenemos que
 \end{theorem}
 \begin{proof}
 Aplicamos el teorema de Taylor con resto de Lagrange en una variable. Denotamos $\displaystyle \varphi\left(t\right)= a + th $ para $\displaystyle t \in \R $, donde $\displaystyle \varphi\left(0\right) = a $ y $\displaystyle \varphi\left(1\right) = a+h $. Consideramos la función $\displaystyle g\left(t\right)=\left(f\circ \varphi\right)\left(t\right) = f\left(\varphi\left(t\right)\right) $. 
-Como $\displaystyle f \in \mathcal{C}^{k} $ y $\displaystyle \varphi \in \mathcal{C}^{\infty} $, tenenmos que $\displaystyle g \in \mathcal{C}^{k} $ en un abierto que contiene a $\displaystyle \left[0,1\right]  $ \footnote{Estamos hablando del conjunto $\displaystyle \varphi^{-1}\left(U\right) $.}. Así, podemos aplicar a $\displaystyle g $ el teorema de Taylor con resto de Lagrange:
+Como $\displaystyle f \in \mathcal{C}^{k} $ y $\displaystyle \varphi \in \mathcal{C}^{\infty} $, tenemos que $\displaystyle g \in \mathcal{C}^{k} $ en un abierto que contiene a $\displaystyle \left[0,1\right]  $ \footnote{Estamos hablando del conjunto $\displaystyle \varphi^{-1}\left(U\right) $.}. Así, podemos aplicar a $\displaystyle g $ el teorema de Taylor con resto de Lagrange:
 \[
 \begin{split}
 	g\left(1\right) = g\left(0\right) + g'\left(0\right) \cdot 1 + \cdots + \frac{1}{\left(k-1\right)!}g^{ \left(k-1\right)}\left(0\right) \cdot 1 + \frac{1}{k!}g^{\left(k\right)}\left(\theta \right) \cdot 1.
@@ -885,10 +885,10 @@ Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $, $\disp
 	Por el corolario al teorema de Taylor tenemos que
 	\[f\left(a+h\right) = f\left(a\right) + Df\left(a\right)\left(h\right) + \frac{1}{2}D^{2}f\left(a\right)\left(h\right) + R\left(h\right), \quad \lim_{h \to 0}\frac{R\left(h\right)}{\|h\|^{2}}=0 .\]
 	Así, tenemos que 
-	\[f\left(a+h\right)-f\left(a\right) = \frac{1}{2}Q\left(h\right)-R\left(h\right) .\]
+	\[f\left(a+h\right)-f\left(a\right) = \frac{1}{2}Q\left(h\right)+R\left(h\right) .\]
 	Dado $\displaystyle \epsilon = \frac{\alpha }{4} > 0 $, existe $\displaystyle \delta > 0 $ tal que $\displaystyle 0 < \|h\| < \delta  $ implica que $\displaystyle a+h \in U $ y $\displaystyle \frac{ \left|R\left(h\right)\right|}{\|h\|^{2}} < \epsilon  $. Por otro lado, 
 	\[\frac{ \left|R\left(h\right)\right|}{\|h\|^{2}} < \epsilon \Rightarrow \left|R\left(h\right)\right| \leq \epsilon \|h\|^{2} \iff -\epsilon \|h\|^{2} \leq R\left(h\right) \leq
-	 \epsilon \|h\|^{2} \|.\]
+	 \epsilon \|h\|^{2} .\]
 Por tanto, si $\displaystyle 0 < \|h\| < \delta  $, tenemos que 
 \[f\left(a+h\right)-f\left(a\right) \geq \frac{1}{2}Q\left(h\right) - \epsilon \|h\|^{2} \geq \frac{\alpha }{2}\|h\|^{2}-\epsilon \|h\|^{2} = \frac{\alpha }{4}\|h\|^{2} > 0 .\]
 Por tanto, $\displaystyle f\left(a+h\right)-f\left(a\right) > 0 $ si $\displaystyle 0 < \|h\| < \delta  $, por lo que $\displaystyle a  $ es un mínimo local estricto de $\displaystyle f $. \\ 
@@ -902,7 +902,7 @@ Así, tenemos que si $\displaystyle \epsilon > 0 $, entonces existe $\displaysty
 \end{split}
 \]
 Así, nos queda que 
-\[\frac{1}{2}t ^{2}Q\left(h\right) =\frac{1}{2} Q\left(th\right) \geq - R\left(th\right) > \epsilon t ^{2} \Rightarrow Q\left(h\right) \geq -\epsilon, \; \forall \epsilon > 0 .\]
+\[\frac{1}{2}t ^{2}Q\left(h\right) =\frac{1}{2} Q\left(th\right) \geq - R\left(th\right) > -\epsilon t ^{2} \Rightarrow Q\left(h\right) \geq -\epsilon, \; \forall \epsilon > 0 .\]
 Así, tenemos que $\displaystyle Q\left(h\right) \geq 0 $. 
 \item[(b)] Es análogo al apartado anterior. Alternativamente podemos aplicar el apartado anterior a la función $\displaystyle -f $. 
 \item[(c)] Supongamos que $\displaystyle D^{2}f\left(a\right) $ es indefinida. Por lo visto anteriormente, $\displaystyle a $ no puede ser ni mínimo local ni máximo local de $\displaystyle f $, por lo que $\displaystyle a $ es un punto de silla.
@@ -924,7 +924,7 @@ Consideremos $\displaystyle f\left(x,y\right) = x^{2} \geq 0 $. El punto $\displ
 que no es definida positiva, pero sí es semidefinida positiva. 
 \end{eg}
 \begin{theorem}[Criterio de los autovalores]
-Sea $\displaystyle Q $ una forma cuadráta en $\displaystyle \R^{n} $ dada por 
+Sea $\displaystyle Q $ una forma cuadrática en $\displaystyle \R^{n} $ dada por 
 \[Q\left(h_{1}, \ldots, h_{n}\right) = \left(h_{1}, \ldots, h_{n}\right)\begin{pmatrix} a_{11} & \cdots & a_{1n} \\ \vdots & & \vdots \\ a_{n1} & \cdots & a_{nn} \end{pmatrix}\begin{pmatrix} h_{1} \\ \vdots \\ h_{n} \end{pmatrix} ,\]
 con $\displaystyle A $ simétrica. Entonces, 
 \begin{itemize}

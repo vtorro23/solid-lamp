@@ -1,0 +1,269 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Estructuras Algebraicas - Entrega 3}
+\author{Irene García, Julia Romero, Pablo Salas y Victoria Torroja}
+\date{\today}
+
+\maketitle
+
+\begin{ej}
+Determina si los siguientes pares de grupos son isomorfos o no. Justifica tu respuesta.
+\begin{description}
+\item[(a)] $\displaystyle \Z_{100} \times \Z_{36} $ y $\displaystyle \Z_{60} \times \Z_{60} $. 
+\item[(b)] $\displaystyle \Z_{12}\times\Z_{18} $ y $\displaystyle \Z_{6} \times \Z_{36} $.
+\item[(c)] $\displaystyle \Z_{2} \times \Z_{2} \times \Z_{4} $ y $\displaystyle \Z_{4} \times \Z_{4} $. 
+\end{description}
+\end{ej}
+\begin{sol}
+	Recordamos que los coeficientes de torsión de un grupo finito abeliano son únicos, por lo que para ver si los grupos dados son isomorfos o no basta con ver si coinciden sus coeficientes de torsión. 
+\begin{description}
+\item[(a)] Los coeficientes de torsión de $\displaystyle \Z_{60} \times \Z_{60} $ son $\displaystyle \left(60,60\right) $. Ahora calculemos los de $\displaystyle \Z_{100} \times \Z_{36} $. Como $\displaystyle 100 = 2^{2} \cdot 5^{2} $ y $\displaystyle 36 = 2^{2} \cdot 3^{2} $ tenemos que
+\[\Z_{100} \times \Z_{36} \cong \Z_{2^{2}} \times \Z_{5^{2}} \times \Z_{2^{2}} \times \Z_{3^{2}} \cong \Z_{2^{2} \cdot 5^{2} \cdot 3^{2}} \times \Z_{2^{2}}  .\]
+Así, los coeficientes de torsión de $\displaystyle \Z_{100} \times \Z_{36} $ son $\displaystyle \left(900,4\right) $, que no coinciden con los de $\displaystyle \Z_{60} \times \Z_{60} $, por lo que los dos grupos no son isomorfos. 
+\item[(b)] Como $\displaystyle 12 = 2^{2} \cdot 3 $ y $\displaystyle 18 = 2 \cdot 3^{2} $ tenemos que 
+	\[\Z_{12}\times \Z_{18} \cong \Z_{2^{2}} \times \Z_{3} \times \Z_{2} \times \Z_{3^{2}} \cong \Z_{2^{2} \cdot 3^{2}} \times \Z_{2 \cdot 3} = \Z_{36} \times \Z_{6} \cong \Z_{6} \times \Z_{36} .\]
+	Por tanto, los dos grupos son isomorfos. 
+\item[(c)] No son isomorfos puesto que no coinciden los coeficientes de torsión. En efecto, los coeficientes de torsión de $\displaystyle \Z_{2} \times \Z_{2} \times \Z_{4} $ son $\displaystyle \left(4,2,2\right) $, mientras que los de $\displaystyle \Z_{4}\times\Z_{4} $ son $\displaystyle \left(4,4\right) $. Otra forma de verlo es que en $\displaystyle \Z_{2} \times \Z_{2} \times \Z_{4} $ hay más elementos de orden 2 que en $\displaystyle \Z_{4} \times \Z_{4} $. En efecto, 
+	tenemos que los elementos de orden 2 de $\displaystyle \Z_{4} \times \Z_{4} $ son 
+	\[ \left([0]_{4}, [2]_{4}\right), \quad \left([2]_{4}, [0]_{4}\right), \quad \left([2]_{4}, [2]_{4}\right) .\]
+Sin embargo, algunos de los elementos de orden dos de $\displaystyle \Z_{2} \times \Z_{2} \times \Z_{4} $ son 
+\[ \left([0]_{4}, [0]_{2}, [2]_{4}\right), \quad \left([0]_{2}, [1]_{2}, [2]_{4}\right), \quad \left([0]_{2}, [0]_{2}, [2]_{4}\right), \quad \left([0]_{2}, [1]_{2}, [0]_{4}\right),\]
+que ya superan en cantidad a los de $\displaystyle \Z_{4} \times \Z_{4} $. 
+\end{description}
+\end{sol}
+
+\begin{ej}
+Sea $\displaystyle G = \Z_{60} \times \Z_{45} \times \Z_{12} $. 
+\begin{description}
+\item[(a)] Calcula el exponente del grupo $\displaystyle G $. 
+\item[(b)] Encuentra el número de elementos de orden $\displaystyle 10 $ en el grupo $\displaystyle H = \Z_{100} \times \Z_{25} $. 
+\item[(c)] Encuentra el número de subgrupos de orden $\displaystyle 9 $ en el grupo $\displaystyle K = \Z_{9} \times \Z_{3} $. 
+\end{description}
+\end{ej}
+
+\begin{sol}
+\begin{description}
+\item[(a)] Calculemos los coeficientes de torsión de $\displaystyle G $. Tenemos que $\displaystyle 60 = 2^{2} \cdot 3 \cdot 5 $, $\displaystyle 45 = 3^{2} \cdot 5 $ y $\displaystyle 12 = 2^{2} \cdot 3 $. Así, tenemos que 
+	\[
+	\begin{split}
+	\Z_{60} \times \Z_{45} \times \Z_{12} \cong \Z_{2^{2}} \times \Z_{3} \times \Z_{5} \times \Z_{3^{2}} \times \Z_{5} \times \Z_{2^{2}} \times \Z_{3} \cong \Z_{2^{2} \cdot 3^{2} \cdot 5} \times \Z_{5 \cdot 3 \cdot 2^{2}} \times \Z_{3} .
+	\end{split}
+	\]
+	Como en los grupos finitos abelianos el exponente coincide con el mayor coeficiente de torsión, tendremos que $\displaystyle \exp\left(G\right) = 2^{2} \cdot 3^{2} \cdot 5 = 180 $. 
+\item[(b)] Sea $\displaystyle h = \left(a,b\right) \in H $. Si $\displaystyle o\left(h\right) = 10 $ tenemos que 
+	\[\left(a,b\right)^{10}=\left(a^{10}, b^{10}\right) = e .\]
+	Entonces, $\displaystyle 10 = \mcm\left(o\left(a\right), o\left(b\right)\right) $. En general, tenemos que los posibles órdenes para que $\displaystyle a $ y $\displaystyle b $ cumplan con la ecuación anterior son 
+	\[o\left(a\right) \in \left\{ 1,2,5,10\right\}, \quad  o\left(b\right) \in \left\{ 1,5\right\} .\]
+	Podemos descartar que $\displaystyle o\left(a\right) = 1 $, puesto que ningún elemento de $\displaystyle \Z_{25} $ tiene orden 10. Análogamente, podemos descartar que $\displaystyle o\left(a\right) = 5 $, puesto que ningún elemento de $\displaystyle \Z_{25} $ tiene orden 2. 
+	 Así, tenemos los siguientes casos:
+	\begin{itemize}
+	\item Supongamos que $\displaystyle o\left(a\right) = 10 $. Por ser $\displaystyle \Z_{100} $ cíclico sabemos que hay un único grupo de orden 10, por tanto el número de elementos de orden 10 en $\displaystyle \Z_{100} $ será el número de generadores que tiene este grupo:
+		\[\varphi\left(10\right)=\varphi\left(2 \cdot 5\right) = \varphi\left(2\right) \cdot \varphi\left(5\right) = 1 \cdot 4 = 4 .\]
+	Por otro lado, podemos tener que el orden de $\displaystyle b $ sea 1 o 5. Haciendo un cálculo similar obtenemos que en $\displaystyle \Z_{25} $ hay 1 elemento de orden 1 y 4 elementos de orden 5. Así, tendremos que el número de pares que podemos encontrar en este caso son $\displaystyle 4 \cdot \left(1 + 4\right) = 20 $. 
+\item Supongamos que $\displaystyle o\left(a\right) = 2 $, entonces debe ser que $\displaystyle o\left(b\right) = 5 $. Haciendo un cálculo parecido al del primer caso obtenemos que en $\displaystyle \Z_{100} $ hay un elemento de orden 2 y en $\displaystyle \Z_{25} $ hay 4 elementos de orden 5, por lo que el número de pares posibles en este caso es $\displaystyle 1 \cdot 4 = 4 $. 
+	\end{itemize}
+Haciendo la suma de los posibles casos obtenemos que el número de elementos de orden 10 en $\displaystyle H $ es $\displaystyle 20 + 4 = 24 $. 
+\item[(c)] Cualquier subgrupo de orden 9 de $\displaystyle K $ es un grupo finito abeliano de orden9, por lo que será isomorfo a $\displaystyle \Z_{9} $ o a $\displaystyle \Z_{3} \times \Z_{3} $. \\
+	En primer lugar, calculemos el número de subgrupos cíclicos de orden 9. Para ello, primero calculamos el número de elementos de $\displaystyle K $ de orden 9. Sea $\displaystyle h = \left(a,b\right) \in \Z_{9} \times \Z_{3} $. Si $\displaystyle o\left(h\right) = 9 $ debe ser que
+	\[\left(a,b\right)^{9}= \left(a^{9}, b^{9}\right) =\left(e,e\right) .\]
+	Es decir, $\displaystyle 9 = \mcm\left(o\left(a\right), o\left(b\right)\right) $. Así, necesariamente debe ser que $\displaystyle o\left(a\right) = 9  $ y $\displaystyle o\left(b\right) \in \left\{ 1,3\right\}  $. Podemos ver que $\displaystyle o\left(b\right) \neq 9 $, puesto que $\displaystyle b \in \Z_{3} $. Por tanto, necesariamente debe ser que $\displaystyle o\left(a\right) = 9 $. Tenemos que en $\displaystyle \Z_{9} $ hay 
+	\[\varphi\left(9\right) = \varphi\left(3^{2}\right) = 2 \cdot 3 = 6 ,\]
+	elementos de orden $\displaystyle 9 $. En $\displaystyle \Z_{3} $ hay dos elementos de orden 3 y un elemento de orden 1. Así, el número de elementos de orden 9 en $\displaystyle \Z_{9} \times \Z_{3} $ será $\displaystyle 6 \cdot \left(1 + 2\right) = 18 $, sin embargo, no se generan 18 subgrupos distintos. Cada subgrupo tiene $\displaystyle \varphi\left(9\right) = 6 $ generadores, por lo que hay $\displaystyle \frac{18}{6} = 3 $ subgrupos distintos.  \\
+	Ahora calculemos el número de subgrupos de $\displaystyle K $ isomorfos a $\displaystyle \Z_{3} \times \Z_{3} $. Podemos observar que ningún elemento de estos subgrupos tendrá orden 9.
+	Como $\displaystyle \left|\Z_{9} \times \Z_{3}\right| = 27 $, los posibles órdenes de los elementos de los subgrupos de $\displaystyle K $ que buscamos son 1 y 3. Calculemos el número de elementos de orden 3 que hay en $\displaystyle K $. Para que $\displaystyle h = \left(a,b\right) \in K $ cumpla que $\displaystyle o\left(h\right) = 3$, debe ser que:
+	\begin{itemize}
+	\item $\displaystyle o\left(a\right) = 1 $ y $\displaystyle o\left(b\right) = 3 $, para lo cual hay 2 casos posibles. 
+	\item $\displaystyle o\left(a\right) = 3 $ y $\displaystyle o\left(b\right) = 1 $, para lo cual hay $\displaystyle 2 $ casos posibles. 
+	\item $\displaystyle o\left(a\right) = 3 $ y $\displaystyle o\left(b\right) = 3 $, para lo cual hay $\displaystyle 2 \cdot 2 = 4 $ casos posibles. 
+	\end{itemize}
+Así, en $\displaystyle K $ hay 8 elementos de orden 3 y uno de 1, lo que significa que hay 9 elementos que no tienen orden 9. Si denotamos
+\[\Z_{9} := \left\{ e, a, a^{2}, \ldots, a^{8}\right\} \quad \text{y} \quad \Z_{3} := \left\{ e, b, b^{2}\right\}  ,\]
+este conjunto será
+\[ \left\{ \left(e,e\right), \left(e,b\right), \left(e,b^{2}\right), \left(a^{3}, e\right), \left(a^{6}, e\right), \left(a^{3}, b\right), \left(a^{3}, b^{2}\right), \left(a^{6}, b\right), \left(a^{6}, b^{2}\right)\right\} = \left\{ a^{3l} \; : \; l \in\Z\right\} \times \Z_{3} .\]
+Como $\displaystyle \left\{ a^{3l} \; : \; l \in \Z\right\} \cong \Z_{3} $, claramente tenemos que $\displaystyle \left\{ a^{3l}\; : \; l \in \Z\right\}  \times \Z_{3}\cong \Z_{3} \times \Z_{3} \leq K $. Como estos eran todos los elementos de $\displaystyle K $ que no tenían orden 9, no podemos encontrar otro subgrupo de $\displaystyle K $ isomorfo a $\displaystyle \Z_{3} \times \Z_{3} $. Así, el número de subgrupos de $\displaystyle K $ con orden 9 es $\displaystyle 3 + 1 = 4 $. 
+\end{description}
+\end{sol}
+
+\begin{ej}
+Sean las permutaciones $\displaystyle \sigma, \tau \in \mathcal{S}_{8} $ :
+\[\sigma = \left(1,3,5\right)\left(2,8,6\right) \quad \text{y} \quad \tau = \left(1,2,7,4\right)\left(3,5,8\right) .\]
+\begin{description}
+\item[(a)] Escribe $\displaystyle \sigma\tau $ y $\displaystyle \tau\sigma  $ en su descomposición de ciclos disjuntos. 
+\item[(b)] Calcula el orden de $\displaystyle \sigma  $, $\displaystyle \tau $ y $\displaystyle \sigma\tau $. 
+\item[(c)] Calcula el signo (par o impar) de $\displaystyle \sigma  $, $\displaystyle \tau $ y $\displaystyle \sigma \tau $.
+\item[(d)] Calcula $\displaystyle \sigma^{-1} $. 
+\end{description}
+\end{ej}
+
+\begin{sol}
+Tomamos la notación $\displaystyle \sigma \cdot \tau = \tau \circ \sigma  $, es decir, al realizar las operaciones con las permutaciones nos movemos de izquierda a derecha. 
+\begin{description}
+\item[(a)] Si nos movemos de izquierda a derecha como acabamos de mencionar: 
+\[\sigma \cdot \tau = \left(1,3,5\right)\left(2,8,6\right) \left(1,2,7,4\right)\left(3,5,8\right) = \left(1,5,2,3,8,6,7,4\right) .\]
+\[\tau \cdot \sigma = \left(1,2,7,4\right)\left(3,5,8\right)\left(1,3,5\right)\left(2,8,6\right) = \left(1,8,5,6,2,7,4,3\right) .\]
+\item[(b)] Como $\displaystyle \sigma  $ y $\displaystyle \tau $ son productos de 3-ciclos disjuntos, tenemos que $\displaystyle o\left(\sigma \right)= \mcm\left(3,3\right)=3 $ y $\displaystyle o\left(\tau \right)= \mcm\left(4,3\right)=12 $. Como $\displaystyle \sigma\tau $ es un 8-ciclo, tenemos que $\displaystyle o\left(\sigma \tau\right) = 8 $.  
+\item[(c)] Para calcular la paridad necesitamos ver si son producto de un número par o impar de trasposiciones: 
+	\[\sigma = \left(1,3,5\right)\left(2,8,6\right) = \left(3,1\right)\left(5,1\right)\left(8,2\right)\left(6,2\right) .\]
+	\[\tau = \left(1,2,7,4\right)\left(3,5,8\right) = \left(1,4\right)\left(2,4\right)\left(7,4\right)\left(3,8\right)\left(5,8\right) .\]
+	\[\sigma\tau = \left(1,5,2,3,8,6,7,4\right) = \left(1,4\right)\left(5,4\right)\left(2,4\right)\left(3,4\right)\left(8,4\right)\left(6,4\right)\left(7,4\right) .\]
+Así, tenemos que $\displaystyle \sigma  $ es par, $\displaystyle \tau $ es impar y $\displaystyle \sigma\tau $ es impar. 
+\item[(d)] Recordamos que dado un ciclo $\displaystyle \left(i_{1}, \ldots, i_{k}\right) $, su inverso es $\displaystyle \left(i_{k}, i_{k-1}, \ldots, i_{1}\right) $. De esta manera, 
+	\[\sigma^{-1} = \left(2,8,6\right)^{-1}\left(1,3,5\right)^{-1} = \left(6,8,2\right)\left(5,3,1\right) .\]
+\end{description}
+\end{sol}
+
+\begin{ej}
+	\begin{description}
+	\item[(a)] Demuestra que $\displaystyle \alpha = \left(1,2,3\right)\left(4,5\right) $ y $\displaystyle \beta = \left(1,4,2\right)\left(3,5\right) $ son conjugados en $\displaystyle \mathcal{S}_{5} $. Encuentra explícitamente una permutación $\displaystyle \gamma \in \mathcal{S}_{5} $ tal que $\displaystyle \gamma \alpha \gamma^{-1} = \beta  $. 
+	\item[(b)] ¿Son $\displaystyle \alpha  $ y $\displaystyle \beta  $ conjugadas en el grupo alternado $\displaystyle \mathcal{A}_{5} $?
+	\item[(c)] Determina cuántas clases de conjugación tiene $\displaystyle \mathcal{S}_{4} $ y cuántas tiene $\displaystyle \mathcal{A}_{4} $. 
+	\end{description}
+\end{ej}
+\begin{sol}
+	En lo que procede, utilizaremos la notación $\displaystyle \sigma\tau = \tau\circ \sigma  $. Es decir, a la hora de componer permutaciones lo hacemos de izquierda a derecha. En el apartado (a) hemos calculado una permutación $\displaystyle \gamma  $ tal que $\displaystyle \gamma^{-1}\alpha\gamma = \beta  $. Si se desea buscar una permutación $\displaystyle \sigma \in \mathcal{S}_{5} $ tal que $\displaystyle \sigma \alpha \sigma^{-1} = \beta  $ basta con considerar $\displaystyle \sigma = \gamma^{-1} $, que en este caso es el 3-ciclo $\displaystyle \left(3,4,2\right) $.  
+\begin{description}
+\item[(a)] En clase vimos que si dos permutaciones eran parecidas, es decir, tenían el mismo número de ciclos de la misma longitud, entonces pertenecían a la misma clase de conjugación. Como $\displaystyle \alpha  $ y $\displaystyle \beta  $ ambas tienen un 3-ciclo y un 2-ciclo, tienen la misma estructura y por tanto son conjugados. En efecto, podemos encontrar $\displaystyle \gamma \in \mathcal{S}_{5} $ tal que $\displaystyle \gamma^{-1} \alpha \gamma = \beta  $. Definimos 
+	\[\alpha_{1} := \left(1,2,3\right), \quad \alpha_{2} : = \left(4,5\right), \quad \beta_{1} := \left(1,4,2\right) \quad \text{y} \quad \beta_{2} := \left(3,5\right) .\]
+En primer lugar construimos la permutación $\displaystyle \gamma_{\alpha_{1}\beta_{1}} $ que cumple que $\displaystyle \gamma_{\alpha_{1}\beta_{1}}^{-1}\alpha_{1}\gamma_{\alpha_{1}\beta_{1}} = \beta_{1} $:
+\[\gamma_{\alpha_{1}\beta_{1}} = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 \\ 1 & 4 & 2 & * & * \end{pmatrix} .\]
+Análogamente, construimos la permutación $\displaystyle \gamma_{\alpha_{2}\beta_{2}} $ que cumple que $\displaystyle \gamma_{\alpha_{2}\beta_{2}}^{-1}\alpha_{2}\gamma_{\alpha_{2}\beta_{2}} = \beta_{2} $:
+\[ \gamma_{\alpha_{2}\beta_{2}} = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 \\ * & * & * & 3 & 5 \end{pmatrix} .\]
+Así, la permutación $\displaystyle \gamma  $ que buscamos nos queda de la forma:
+\[\gamma = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 \\ 1 & 4 & 2 & 3 & 5 \end{pmatrix} = \left(2,4,3\right) .\]
+\item[(b)] Dado que la permutación $\displaystyle \gamma \in \mathcal{S}_{5} $ que cumple $\displaystyle \gamma^{-1}\alpha\gamma = \beta  $ es un 3-ciclo, es una permutación par por lo que pertenece a $\displaystyle \mathcal{A}_{5} $. Así, tenemos que $\displaystyle \alpha  $ y $\displaystyle \beta  $ son conjugadas en $\displaystyle \mathcal{A}_{5} $. 
+\item[(c)] Como hemos visto en el apartado \textbf{(a)}, calcular el número de clases de conjugación que hay en $\displaystyle \mathcal{S}_{4} $ realmente es equivalente a calcular el número de descomposiciones en ciclos disjuntos. \\
+	En $\displaystyle \mathcal{S}_{4} $ podemos encontrar las siguientes descomposiciones: la identidad (que es producto de cuatro 1-ciclos disjuntos), 2-ciclos, 3-ciclos, 4-ciclos y 2 2-ciclos, es decir, permutaciones que se descomponen en producto de dos 2-ciclos disjuntos. No hay más descomposiciones puesto que, la estar en $\displaystyle \mathcal{S}_{4} $ estamos tratando con biyecciones de $\displaystyle X_{4} = \left\{ 1,2,3,4\right\}  $, por lo que no contamos con suficientes elementos como para tener productos de 2-ciclos por 3-ciclos ni ciclos de orden mayor a los ya vistos. Así, en $\displaystyle \mathcal{S}_{4} $ hay 5 clases de conjugación. \\ \\
+Por otro lado, sabemos que los elementos de $\displaystyle \mathcal{A}_{4} $ son las permutaciones pares de $\displaystyle \mathcal{S}_{4} $, es decir, la identidad, los productos de 2-ciclos disjuntos y los 3-ciclos. 
+Sabemos que dos permutaciones sólo pueden estar conjugadas si tienen una estructura parecida, por lo que un producto de $\displaystyle 2 $-ciclos disjuntos no puede estar conjugado con un $\displaystyle 3 $-ciclo. Así, sabemos que habrá al menos tres clases de conjugación. 
+Podemos considerar la acción de conjugación de $\displaystyle \mathcal{A}_{4} $ sobre sí mismo:
+\[\mathcal{A}_{4} \to \Biy\left(\mathcal{A}_{4}\right) : \sigma \to \tilde{\sigma} ,\]
+\[\tilde{\sigma} : \mathcal{A}_{4} \to \mathcal{A}_{4} : \tau \to \sigma^{-1}\tau\sigma  .\]
+Tendremos que las clases de conjugación son las distintas órbitas correspondientes a esta acción. Como $\displaystyle \left|\mathcal{A}_{4}\right| = \frac{4!}{2} = 12 $, para $\displaystyle \sigma \in \mathcal{A}_{4} $, tenemos que 
+\[ \left|O_{\sigma }\right| = \left[\mathcal{A}_{4} : G_{\sigma }\right] = \frac{ \left|\mathcal{A}_{4}\right|}{ \left|G_{\sigma }\right|} = \frac{12}{ \left|G_{\sigma }\right|} .\]
+Claramente, la identidad constituye su propia clase de conjugación y además $\displaystyle \left|O_{id }\right| = \left| \left\{ id\right\} \right| = 1 $. Por otro lado, consideremos el 3-ciclo $\displaystyle \sigma_{1} = \left(1,2,3\right) $. Tenemos que 
+\[ G_{\sigma_{1} }= \left\{ id, \left(1,2,3\right), \left(1,3,2\right)\right\}  .\]
+Por tanto, tenemos que $\displaystyle \left|O_{\sigma }\right|= \frac{12}{3} = 4 $. Análogamente, tenemos que si $\displaystyle \sigma_{2} = \left(1,3,2\right) $, entonces $\displaystyle G_{\sigma_{2}} = \left\{ id, \left(1,2,3\right), \left(1,3,2\right)\right\}  $, por lo que $\displaystyle \left|O_{\sigma_{2}}\right| = \frac{12}{3} = 4 $. No hemos indicado los pasos a seguir para calcular el estabilizador de $\displaystyle \sigma_{1} $ y $\displaystyle \sigma_{2} $ puesto que el procedimiento es análogo al del apartado (b) del ejercicio 6 (con la excepción de que sólo nos quedamos con las permutaciones que pertenecan a $\displaystyle \mathcal{A}_{4} $). Veamos que $\displaystyle \sigma_{1} $ y $\displaystyle \sigma_{2} $ no están conjugadas en $\displaystyle \mathcal{A}_{4} $. 
+Si $\displaystyle \gamma \in \mathcal{S}_{4} $ con $\displaystyle \gamma^{-1}\sigma_{1}\gamma = \sigma_{2} $, tenemos que 
+\[\gamma^{-1}\sigma_{1}\gamma = \sigma_{2} \iff 
+\begin{cases}
+	\left(\gamma\left(1\right), \gamma\left(2\right), \gamma\left(3\right)\right) = \left(1,3,2\right) \\
+	\left(\gamma\left(2\right), \gamma\left(3\right), \gamma\left(1\right)\right) = \left(1,3,2\right) \\
+	\left(\gamma\left(3\right), \gamma\left(1\right), \gamma\left(2\right)\right) = \left(1,3,2\right)
+\end{cases}
+.\]
+Así, nos encontramos ante tres casos:
+\begin{itemize}
+\item En el primer caso tendremos que 
+	\[\gamma = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 1 & 3 & 2 & 4 \end{pmatrix}= \left(2,3\right) \not\in \mathcal{A}_{4} .\]
+\item En el segundo caso tendremos que
+	\[\gamma = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 2 & 1 & 3 & 4 \end{pmatrix} = \left(1,2\right) \not\in\mathcal{A}_{4} .\]
+\item En el tercer caso tendremos que
+	\[\gamma = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 3 & 2 & 1 & 4 \end{pmatrix} = \left(1,3\right)\not\in\mathcal{A}_{4} .\]
+\end{itemize}
+Así, tenemos que $\displaystyle \sigma_{1} $ y $\displaystyle \sigma_{2} $ no son conjugadas en $\displaystyle \mathcal{A}_{4} $, por lo que debe ser que $\displaystyle O_{\sigma_{1}} \cap O_{\sigma_{2}} = \emptyset $. Por otro lado, tenemos que si $\displaystyle \sigma_{3} = \left(1,2\right)\left(3,4\right) $, entonces
+\[G_{\sigma_{3}} = \left\{ id, \left(1,2\right)\left(3,4\right), \left(1,3\right)\left(2,4\right), \left(1,4\right)\left(2,3\right)\right\}  .\]
+Así, tendremos que $\displaystyle \left|O_{\sigma_{3}}\right| = \frac{12}{4} = 3 $. Como $\displaystyle \sigma_{3} $ no es conjugada con $\displaystyle id $, $\displaystyle \sigma_{1} $ o $\displaystyle \sigma_{2} $, tenemos que $\displaystyle O_{id} $, $\displaystyle O_{\sigma_{1}} $, $\displaystyle O_{\sigma_{2}} $ y $\displaystyle O_{\sigma_{3}} $ son disjuntas dos a dos, y 
+\[ \left|O_{id}\right| + \left|O_{\sigma_{1}}\right| + \left|O_{\sigma_{2}}\right| + \left|O_{\sigma_{3}}\right| = 1 + 4 + 4 + 3 = 12 = \left|\mathcal{A}_{4}\right| .\]
+Por tanto, no puede haber más clases de conjugación y podemos concluir que en $\displaystyle \mathcal{A}_{4} $ hay 4 clases de conjugación. 
+\end{description}
+\end{sol}
+
+\begin{ej}
+	Sea $\displaystyle G = \mathcal{D}_{4} $, el grupo de simetrías de un cuadrado (el grupo diédrico de orden 8). Sea $\displaystyle V = \left\{ 1,2,3,4\right\}  $ el conjunto de los vértices del cuadrado. $\displaystyle G $ actúa sobre $\displaystyle V $. 
+\begin{description}
+\item[(a)] Elige un vértice $\displaystyle x \in V $. Calcula su órbita y su estabilizador. 
+\item[(b)] Verifica que $\displaystyle \left|G\right| = \left|O_{x}\right| \cdot \left|G_{x}\right| $ con el vértice elegido en el apartado (a). 
+\end{description}
+\end{ej}
+
+\begin{sol}
+	Consideramos $\displaystyle \mathcal{D}_{4} = \left\{ id, \tau, \sigma, \sigma^{2}, \sigma^{3}, \tau\sigma, \tau\sigma^{2}, \tau\sigma^{3}\right\}  $, donde $\displaystyle \sigma  $ es la rotación de 90 grados en el sentido de las agujas del reloj y $\displaystyle \tau $ es la simetría respecto a la recta que pasa por el centro y por el vértice 2. Además, asumimos que si $\displaystyle x,y \in \mathcal{D}_{4} $, $\displaystyle xy = x\circ y $.  
+\begin{description}
+\item[(a)] Cogemos por ejemplo el vértice $\displaystyle x = 1 \in V $, que se corresponde gráficamente con el de la imagen:
+\begin{center}
+\begin{tikzpicture}[scale=1]
+% Define vertices of the square
+\coordinate (A) at (0,0);
+\coordinate (B) at (2,0);
+\coordinate (C) at (2,2);
+\coordinate (D) at (0,2);
+% Draw the square
+\draw (A) -- (B) -- (C) -- (D) -- cycle;
+% Label the vertices
+\node[below left] at (A) {4};
+\node[below right] at (B) {3};
+\node[above right] at (C) {2};
+\node[above left] at (D) {1};
+\end{tikzpicture}
+\end{center}
+\end{description}
+Es fácil ver que 
+\[O_{1} = \left\{ \tilde{g}\left(1\right) \in V \; : \; g \in \mathcal{D}_{4}\right\} = \left\{ 1,2,3,4\right\}  = V .\]
+En efecto, tenemos que podemos generar $\displaystyle V $ simplemente con las rotaciones:
+\[ 1 = id\left(1\right), \; 2 = \sigma\left(1\right), \; 3 = \sigma^{2}\left(1\right), \; 4 = \sigma^{3}\left(1\right) .\]
+Por otro lado, recordamos que el estabilizador de $\displaystyle 1 \in V $ es:
+\[G_{1} = \left\{ g \in \mathcal{D}_{4} \; : \; \tilde{g}\left(1\right) = 1\right\}  .\]
+Para calcularlo podemos ver la imagen de 1 por cada uno de los elementos de $\displaystyle \mathcal{D}_{4} $:
+\[
+\begin{split}
+id\left(1\right) = 1, \quad \sigma\left(1\right)= 2 \\
+\sigma^{2}\left(1\right) = 3, \quad \sigma^{3}\left(1\right) = 4 \\
+\tau\left(1\right) = 3, \quad \tau\sigma\left(1\right) = 2 \\
+\tau\sigma^{2}\left(1\right) = 1, \quad \tau\sigma^{3}\left(1\right) = 4.
+\end{split}
+\]
+Así, obtenemos que $\displaystyle G_{1} = \left\{ id, \tau\sigma^{2}\right\}  $. 
+\item[(b)] Tenemos que $\displaystyle \left|G\right| = \left|\mathcal{D}_{4}\right|= 8 $, $\displaystyle \left|O_{1}\right| = 4 $ y $\displaystyle \left|G_{1}\right|=2 $, por tanto, se verifica que 
+	\[ 8 = \left|G\right| = \left|O_{1}\right| \cdot \left|G_{1}\right| = 4 \cdot 2 .\]
+\end{sol}
+
+\begin{ej}
+Sea $\displaystyle G = \mathcal{S}_{4} $ actuando sobre sí mismo por conjugación. 
+\begin{description}
+\item[(a)] Describe la órbita del elemento $\displaystyle \sigma = \left(1,2\right)\left(3,4\right) $. 
+\item[(b)] Calcula el estabilizador de $\displaystyle \sigma  $. 
+\end{description}
+\end{ej}
+\begin{sol}
+Tenemos que existe un homomorfismo 
+\[\alpha : \mathcal{S}_{4} \to \Biy\left(\mathcal{S}_{4}\right) : \tau \to \tilde{\tau} ,\]
+con $\displaystyle \tilde{\tau} : \mathcal{S}_{4} \to \mathcal{S}_{4} : \sigma \to \tau^{-1}\sigma\tau $. En este ejercicio, si $\displaystyle x,y \in \mathcal{S}_{4} $, denotamos $\displaystyle xy = y \circ x $. \\ 
+Denotamos $\displaystyle \sigma_{1} := \left(1,2\right) $ y $\displaystyle \sigma_{2} := \left(3,4\right) $, de forma que $\displaystyle \sigma = \sigma_{1}\sigma_{2} $. 
+\begin{description}
+\item[(a)] Calculemos la órbita de $\displaystyle \sigma = \left(1,2\right)\left(3,4\right) $:
+	\[O_{\sigma }= \left\{ \tau^{-1}\sigma\tau \; : \; \tau \in \mathcal{S}_{4}\right\}  .\]
+Tenemos que la órbita de $\displaystyle \sigma  $ será el conjunto de permutaciones conjugadas con ella, es decir, las permutaciones que sean un producto de dos 2-ciclos disjuntos. Así, tenemos que
+\[O_{\sigma }= \left\{ \left(1,2\right)\left(3,4\right), \left(1,3\right)\left(2,4\right), \left(1,4\right)\left(2,3\right)\right\}  .\]
+\item[(b)] Recordamos que el estabilizador de $\displaystyle \sigma  $ es el conjunto
+	\[G_{\sigma } = \left\{ \tau \in \mathcal{S}_{4} \; : \; \tau^{-1}\sigma\tau = \sigma \right\}  .\]
+Busquemos las permutaciones $\displaystyle \tau \in \mathcal{S}_{4} $ que cumplan esta condición. Necesitamos que 
+\[\tau^{-1}\sigma\tau = \tau^{-1}\sigma_{1}\sigma_{2}\tau = \left(\tau^{-1}\sigma_{1}\tau\right)\left(\tau^{-1}\sigma_{2}\tau\right) = \sigma  .\]
+Por un resultado visto en clase tendremos que 
+\[\tau^{-1}\sigma_{1}\tau = \left(\tau\left(1\right), \tau\left(2\right)\right) \quad \text{y} \quad \tau^{-1}\sigma_{2}\tau = \left(\tau\left(3\right), \tau\left(4\right)\right) .\]
+Así, tendremos que los dos ciclos son disjuntos (por ser $\displaystyle \tau $ biyectiva). Como la descomposición de $\displaystyle \sigma  $ en ciclos disjuntos es única salvo el orden de los productos tenemos que: o bien $\displaystyle \tau^{-1}\sigma_{1}\tau = \sigma_{1} $ y $\displaystyle \tau^{-1}\sigma_{2}\tau = \sigma_{2} $; o bien $\displaystyle \tau^{-1}\sigma_{1}\tau = \sigma_{2} $ y $\displaystyle \tau^{-1}\sigma_{2}\tau = \sigma_{1} $. Estudiemos cada caso por separado:
+\begin{itemize}
+\item Si $\displaystyle \tau^{-1}\sigma_{1}\tau = \sigma_{1} $ y $\displaystyle \tau^{-1}\sigma_{2}\tau = \sigma_{2} $, debe ser que 
+	\[\left(\tau\left(1\right), \tau\left(2\right)\right) = \left(1,2\right) \quad \text{y} \quad \left(\tau\left(3\right), \tau\left(4\right)\right) = \left(3,4\right) .\]
+	Así, obtenemos que $\displaystyle \left\{ id, \left(1,2\right), \left(3,4\right), \left(1,2\right)\left(3,4\right)\right\} \subset G_{\sigma } $. 	
+\item Si $\displaystyle \tau^{-1}\sigma_{1}\tau = \sigma_{2} $ y $\displaystyle \tau^{-1}\sigma_{2}\tau=\sigma_{1} $, debe ser que
+	\[\left(\tau\left(1\right), \tau\left(2\right)\right) = \left(3,4\right) \quad \text{y} \quad \left(\tau\left(3\right), \tau\left(4\right)\right) = \left(1,2\right) .\]
+De aquí podemos distinguir varios casos:
+\begin{enumerate}
+\item Si $\displaystyle \tau\left(1\right) = 3 $, $\displaystyle \tau\left(2\right) = 4 $, $\displaystyle \tau\left(3\right) = 1 $ y $\displaystyle \tau\left(4\right) = 2 $, tenemos que $\displaystyle \tau = \left(1,3\right)\left(2,4\right) $.
+\item Si $\displaystyle \tau\left(1\right) = 4 $, $\displaystyle \tau\left(2\right) = 3 $, $\displaystyle \tau\left(3\right) = 1 $ y $\displaystyle \tau\left(4\right) = 2 $, tenemos que $\displaystyle \tau = \left(1,4,2,3\right) $. 
+\item Si $\displaystyle \tau\left(1\right) = 3 $, $\displaystyle \tau\left(2\right) = 4 $, $\displaystyle \tau\left(3\right) = 2 $ y $\displaystyle \tau\left(4\right) = 1 $, tenemos que $\displaystyle \tau = \left(1,3,2,4\right) $. 
+\item Si $\displaystyle \tau\left(1\right) = 4 $, $\displaystyle \tau\left(2\right) = 3 $, $\displaystyle \tau\left(3\right) = 2 $ y $\displaystyle \tau\left(4\right) = 1 $, tenemos que $\displaystyle \tau = \left(1,4\right)\left(2,3\right) $. 
+\end{enumerate}
+\end{itemize}
+Así, podemos concluir que 
+\[G_{\sigma }= \left\{ id, \left(1,2\right), \left(3,4\right), \left(1,2\right)\left(3,4\right), \left(1,3\right)\left(2,4\right), \left(1,4\right)\left(2,3\right), \left(1,4,2,3\right), \left(1,3,2,4\right)\right\}  .\]
+Hemos obtenido que $\displaystyle \left|G_{\sigma }\right| = 8 $, lo cual tiene sentido puesto que 
+\[ 3 = \left|O_{\sigma }\right|= [G : G_{\sigma }] = \frac{24}{8} .\]
+\end{description}
+\end{sol}
+
+\end{document}

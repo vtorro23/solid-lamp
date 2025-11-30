@@ -263,8 +263,11 @@ Sean $\displaystyle f : V \to V' $ y $\displaystyle g : V' \to V'' $ duales. Ent
 Sea $\displaystyle \omega \in \Hom\left(V'', \K\right) $, entonces
 \[\left(g\circ f\right)^{*}\left(\omega \right) = \omega \circ \left(g \circ f\right) = f^{*} \left(\omega \circ g\right) = f^{*} \circ g^{*} \left(\omega \right) .\]
 \end{proof}
-Dada una aplicación proyectiva $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $, con aplicación lineal asociada $\displaystyle \hat{f} : V \to V' $, definimos 
+\begin{definition}[Aplicación proyectiva dual]
+Dada una aplicación proyectiva $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $, con aplicación lineal asociada $\displaystyle \hat{f} : V \to V' $, definimos su \textbf{aplicación dual} como
 \[ f^{*} : \mathbb{P}\left(V^{*}\right) \to \mathbb{P}\left(V'^{*}\right) : [\omega] \to [\hat{f}^{*}\left(\omega\right)] = [\omega\circ \hat{f}].\]
+\end{definition}
+\begin{observation}
 Como $\displaystyle \left(\lambda \hat{f}\right)^{*} = \lambda \hat{f}^{*} $, $\displaystyle \forall \lambda \in \K $, tenemos que $\displaystyle f^{*} $ está bien definido. Además, $\displaystyle Z\left(f^{*}\right) = \left(\Imagen\left(f\right)\right)^{*} $. En efecto, tenemos que 
 \[
 \begin{split}
@@ -272,6 +275,7 @@ Como $\displaystyle \left(\lambda \hat{f}\right)^{*} = \lambda \hat{f}^{*} $, $\
 	= & \mathbb{P}\left( \left\{ \omega \in \Hom\left(V', \K\right) \; : \; \omega\left(x\right) = 0, \; \forall x \in \Imagen\left(\hat{f}\right)\right\} \right) = \mathbb{P}\left(\Imagen\left(\hat{f}\right)^{\perp }\right) = \Imagen\left(f\right)^{*}.
 \end{split}
 \]
+\end{observation}
 \begin{lema}
 Consideremos $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $ y $\displaystyle g : \mathbb{P}\left(V'\right)\to \mathbb{P}\left(V''\right) $. Entonces, 
 \begin{enumerate}
@@ -291,7 +295,7 @@ Consideremos $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\
 La segunda igualdad ha sido demostrada por Ancochea el año pasado.
 \end{enumerate}
 \end{proof}
-\subsection{Subvariedades invariantes por homografías}
+\subsection{Variedades invariantes por homografías}
 \begin{definition}[Variedad invariante]
 Sea $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V\right) $ una homografía. Se dice que $\displaystyle X \subset \mathbb{P}\left(V\right) $ es una \textbf{variedad invariante por} $\displaystyle f $ si $\displaystyle f\left(X\right) \subset X $ \footnote{Esto es equivalente a que $\displaystyle f\left(X\right) = X $ puesto que $\displaystyle f $ es una homografía. En efecto, si $\displaystyle f\left(X\right)\subset X $ y $\displaystyle \dim X = \dim f\left(X\right) $ está claro que $\displaystyle X = f\left(X\right) $.}.
 \end{definition} 
@@ -305,7 +309,7 @@ Dependiendo de $\displaystyle \K $ puede haber puntos fijos o no. Por ejemplo, s
 Así, tenemos que $\displaystyle X_{\lambda } $ es una variedad de puntos fijos de $\displaystyle f $. 
 \subsection*{Hiperplanos invariantes}
 Un hiperplano $\displaystyle H = \left\{ b_{0}x_{0}+\cdots + b_{n}x_{n} = 0\right\}  $ es invariante para $\displaystyle f $ si y solo si 
-\[f\left(H\right) \subset H \iff f^{*}\left(H\right) \supset H^{*} \iff f^{*}\left([b_{0}: \cdots : b_{n}]\right) = [b_{0}: \cdots : b_{n}].\]
+\[f\left(H\right) \subset H \iff f^{*}\left(H^{*}\right) \supset H^{*} \iff f^{*}\left([b_{0}: \cdots : b_{n}]\right) = [b_{0}: \cdots : b_{n}].\]
 Esto es cierto si y solo si existe $\displaystyle \lambda \in \K^{*} $ tal que 
 \[\lambda \begin{pmatrix} b_{0} \\ \vdots \\ b_{n} \end{pmatrix} = M_{\mathcal{B}^{*}}\left(\hat{f}^{*}\right)\begin{pmatrix} b_{0} \\ \vdots \\ b_{n} \end{pmatrix} \iff \lambda \begin{pmatrix} b_{0} \\ \vdots \\ b_{n} \end{pmatrix} = M_{\mathcal{B}}\left(\hat{f}\right)^{T}\begin{pmatrix} b_{0} \\ \vdots \\ b_{n} \end{pmatrix} .\]
 Esto es cierto si y solo si 
@@ -372,8 +376,222 @@ b_{2}=0
 \end{cases}
 .\]
 Así, $\displaystyle H = \left\{ x_{3}=0\right\} = [0:0:0:1] ^{*}$ es nuestra familia de hiperplanos invariantes para $\displaystyle \lambda = 2 $. 
-\item Calculamos las rectas invariantes. Sabemos que las rectas que pasan por los dos puntos fijos es una recta invariante. Análogamente la recta que resulta de la intersección de los dos hiperplanos es otra recta invariante. La pregunta es, hay más rectas invariantes?
+\item Calculamos las rectas invariantes. Sabemos que la recta que pasan por los dos puntos fijos es una recta invariante. Así, obtenemos
+	\[l_{1} = \left\{ \left[1:0:0:0\right] \right\} + \left\{ \left[1:1:1:1\right] \right\}  .\]
+	Análogamente la recta que resulta de la intersección de los dos hiperplanos es otra recta invariante. Así, obtenemos
+	\[l_{2} = 
+	\begin{cases}
+	x_{2}-x_{3} = 0 \\
+	x_{3} = 0
+	\end{cases}
+	.\]
+	La pregunta es, hay más rectas invariantes? Sea $\displaystyle l $ una recta invariante. Si $\displaystyle [1:0:0:0] $ y $\displaystyle [1:1:1:1] $ están en $\displaystyle l $, tenemos que $\displaystyle l = l_{1} $. Por otro lado, si $\displaystyle [1:0:0:0] \in l$ y $\displaystyle [1:1:1:1] \not\in l $, podemos considerar la variedad
+	\[X = \left\{ [1:1:1:1]\right\} +l ,\]
+	que es una variedad invariante. Así, tenemos que 
+	\[\dim X = \dim \left\{ [1:1:1:1]\right\} +\dim l - \dim\left(l \cap \left\{ [1:1:1:1]\right\} \right) = 2 .\]
+	Por tanto tenemos que $\displaystyle X $ es un hiperplano invariante, por lo que debe ser que $\displaystyle X \in \left\{ H_{1}, H_{2}\right\}  $. En este caso tenemos que $\displaystyle X = H_{1} $. Tenemos que $\displaystyle l \cap H_{2} $ es una variedad invariante, por lo que
+	\[\dim l \cap H_{2} = \dim l + \dim H_{2} - \dim\left(l + H_{2}\right) \geq 1 + 2 - 3 = 0 .\]
+	Por tanto, tenemos que $\displaystyle l \cap H_{2} \neq \emptyset $. Si $\displaystyle \dim\left(l \cap H_{2}\right) = 1 $, tenemos que $\displaystyle l \subset H_{2} $, pero como $\displaystyle l \subset H_{1} $, tenemos que $\displaystyle l = l_{2} $. Por otro lado, si $\displaystyle \dim\left(l \cap H_{2}\right)= 0 $, tenemos que $\displaystyle l \cap H_{2} = [1:0:0:0] $. \\
+	Sabemos que si $\displaystyle l $ existe, entonces $\displaystyle l \subset H $ y $\displaystyle l \cap H_{2} = [1:0:0:0] $. Sea $\displaystyle P = [a:b:c:d] \in l $ con $\displaystyle P \neq [1:0:0:0] $. Como $\displaystyle P \in H_{1} $ tenemos que $\displaystyle P = [a : b : c :c] $. Tenemos que 
+	\[f\left(P\right) = [a+ b : b + c : 2c : 2c] \in l .\]
+Nuevamente, 
+\[f^{2}\left(P\right) = \left[a + 2b + c : b + 3c : 4c : 4c\right] .\]
+Tenemos que $\displaystyle \left(a,b,c,c\right), \left(a+b, b+c, 2c, 2c\right), \left(a+2b+c, b+3c, 4c, 4c\right) \in \hat{l} $ y $\displaystyle \dim\hat{l} = 2 $, por lo que 
+\[
+\begin{split}
+	2 = & \ran\begin{pmatrix} a & b & c & c \\ a+b & a+c & 2c & 2c \\ a+2b+c & a+3c & 4c & 4c \end{pmatrix}=\ran\begin{pmatrix} a & b & c & c \\ b & c & c & c \\ 2b + c & 3c & 3c & 3c \end{pmatrix} \\
+	= & \ran\begin{pmatrix} a & b & c \\ b & c & c \\ c & c & c \end{pmatrix}.
+\end{split}
+\]
+Si $\displaystyle c = 0 $, tenemos que 
+\[\ran\begin{pmatrix} a & b & 0 \\ b & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}= 2 \Rightarrow b \neq 0 .\]
+Así, tenemos que $\displaystyle P = [a:1:0:0] $. Así, tenemos que $\displaystyle l = P + \left\{ [1:0:0:0]\right\}  $, por lo que 
+\[\hat{l}= L\left( \left\{ \left(1,0,0,0\right), \left(a,1,0,0\right)\right\} \right) = L\left( \left\{ \left(0,1,0,0\right), \left(1,0,0,0\right)\right\} \right) .\]
+Así, hemos obtenido que $\displaystyle l = l_{2} $. Esto es una contradicción, puesto que habíamos dicho que $\displaystyle l \cap H_{2} $ era un punto. Por tanto, supongamos ahora que $\displaystyle c \neq 0 $, podemos suponer $\displaystyle c = 1 $ y tenemos que
+\[2 = \ran\begin{pmatrix} a & b & 1 \\ b & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix} \Rightarrow \begin{vmatrix} a & b & 1 \\ b & 1 & 1 \\ 1 & 1 & 1 \end{vmatrix} = -\left(b-1\right)^{2} = 0.\]
+Así, obtenemos que $\displaystyle b=1 $ y por tanto $\displaystyle P = [a : 1 : 1 : 1] $. Así, como $\displaystyle l = P + \left\{ [1:0:0:0]\right\}  $, tenemos que 
+\[\hat{l} = L\left( \left\{ \left(a,1,1,1\right), \left(1,0,0,0\right)\right\} \right) .\]
+Así, tenemos que $\displaystyle \left(1,1,1,1\right) \in l $, por lo que $\displaystyle l = l_{1} $, que es una contradicción puesto que habíamos supuesto que $\displaystyle [1:1:1:1]\not\in l $. Por tanto, no existe la recta con las características que hemos pedido. \\ 
+Supongamos ahora que $\displaystyle [1:0:0:0] \in l$ y $\displaystyle [1:1:1:1] \in l $. Tenemos que $\displaystyle l \cap H_{2} $ es una variedad invariante. Haciendo el mismo argumento que antes, tenemos que 
+\[\dim\left(l \cap H_{2}\right) = \dim l + \dim H_{2}-\dim\left(l + H_{2}\right) \geq 0 .\]
+Si $\displaystyle l \subset H_{2} $, tenemos que $\displaystyle [1:1:1:1] \in H_{2} $, que no es posible. Si $\displaystyle l \cap H_{2} $ es un punto, tenemos que es un punto fijo por lo que debe ser que $\displaystyle l \cap H_{2} = [1:0:0:0] $, por lo que $\displaystyle [1:0:0:0] \in l $, que es una contradicción. Así, no existe una recta invariante con estas características. \\
+Finalmente, si $\displaystyle [1:0:0:0] \not\in l$ y $\displaystyle [1:1:1:1] \not\in l $, tenemos que $\displaystyle l \cap H_{i} $ no es un punto fijo, por lo que debe ser que $\displaystyle l \subset H_{i} $ para $\displaystyle i = 1,2 $. Así, tenemos que $\displaystyle l = H_{1} \cap H_{2} $, que es una contradicción puesto que $\displaystyle [1:0:0:0] \in H_{1} \cap H_{2} $. 
 \end{itemize}
+\end{eg}
+\section{Espacios afines en espacios proyectivos}
+Recordamos que si $\displaystyle \mathbb{P}^{n} $ es un espacio proyctivo de dimensión $\displaystyle n $, $\displaystyle \mathbb{P}^{n} = \mathbb{P}\left(V\right) $ y $\displaystyle f : V \to \K $ lineal, entonces $\displaystyle \mathbb{P}^{n}/\mathbb{P}\left(\Ker\left(f\right)\right) $ es un espacio afín con dirección $\displaystyle \Ker\left(f\right) \subset V $. Así, podemos escribir, $\displaystyle \mathbb{P}\left(\Ker\left(f\right)\right) $ es un hiperplano $\displaystyle H $ de $\displaystyle \mathbb{P}^{n} $ y tenemos que $\displaystyle \hat{H} = \Ker\left(f\right) $. 
+\begin{prop}
+	Sea $\displaystyle \psi : \mathbb{P}^{n} \to \mathbb{P}^{n} $ una homografía y $\displaystyle H = \left\{ \omega = 0\right\} \footnote{Es el núcleo de una forma lineal.} $ un hiperplano invariante para $\displaystyle \psi $. Entonces $\displaystyle \psi|_{\mathbb{A}}:\mathbb{A} \to \mathbb{A} $, con $\displaystyle \mathbb{A} = \mathbb{P}^{n} / H $ es una afinidad.
+\end{prop}
+\begin{proof}
+	Como $\displaystyle \psi\left(H\right) = H $, $\displaystyle \psi $ induce una función en el complementario de $\displaystyle H $, que es $\displaystyle \mathbb{A} $. Para ver que $\displaystyle \psi_{\mathbb{A}} $ es una afinidad basta comprobar que preserva las combinaciones afines. Sean $\displaystyle P_{0}, \ldots, P_{k} \in \mathbb{A} $ con $\displaystyle P_{i} = [v_{i}] $, $\displaystyle v_{i} \in V/ \left\{ 0\right\}  $ y $\displaystyle \omega\left(v_{i}\right)\neq 0 $, y sean $\displaystyle \lambda_{0}, \ldots, \lambda_{k} \in \K $ tales que $\displaystyle \sum^{k}_{i = 1}\lambda_{i} = 1 $. 
+	Así, tenemos que
+	\[
+	\begin{split}
+		\psi\left(\lambda_{0}P_{0}+\cdots + \lambda_{k}P_{k}\right) = & \psi\left(P_{0} + \sum^{k}_{i = 1}\lambda_{i}\overrightarrow{P_{0}P_{i}}\right) = \psi\left([v_{0}] + \sum^{k}_{ i = 1}\lambda_{i}\left(\frac{v_{i}}{\omega\left(v_{i}\right)}-\frac{v_{0}}{\omega\left(v_{0}\right)}\right)\right) \\
+		= & \psi\left(\left[\frac{v_{0}}{\omega\left(v_{0}\right)}+\sum^{k}_{i = 1}\lambda_{i}\left(\frac{v_{i}}{\omega\left(v_{i}\right)}-\frac{v_{0}}{\omega\left(v_{0}\right)}\right)\right] \right) = \left[\frac{\hat{\psi}\left(v_{0}\right)}{\omega\left(v_{0}\right)} + \sum^{k}_{i = 1}\lambda_{i}\left(\frac{\hat{\psi}\left(v_{i}\right)}{\omega\left(v_{i}\right)} -\frac{\hat{\psi}\left(v_{0}\right)}{\omega\left(v_{0}\right)}\right)\right] \\
+		=^{*} & \left[\frac{\hat{\psi}\left(v_{0}\right)}{C\omega\left(\hat{\psi}\left(v_{0}\right)\right)}+\sum^{k}_{i = 1}\lambda_{i}\left(\frac{\hat{\psi}\left(v_{i}\right)}{C\omega\left(\hat{\psi}\left(v_{i}\right)\right)}-\frac{\hat{\psi}\left(v_{0}\right)}{C\omega\left(\hat{\psi}\left(v_{0}\right)\right)}\right)\right] \\
+		= & \left[\frac{\hat{\psi}\left(v_{0}\right)}{\omega\left(\hat{\psi}\left(v_{0}\right)\right)}+\sum^{k}_{i = 1}\lambda_{i}\left(\frac{\hat{\psi}\left(v_{i}\right)}{\omega\left(\hat{\psi}\left(v_{i}\right)\right)}-\frac{\hat{\psi}\left(v_{0}\right)}{\omega\left(\hat{\psi}\left(v_{0}\right)\right)}\right)\right] \\
+		= & \left[\hat{\psi}\left(v_{0}\right)\right] +\sum^{k}_{i = 1}\lambda_{i}\overrightarrow{[\hat{\psi}\left(v_{0}\right)][\hat{\psi}\left(v_{i}\right)]} = \psi\left(P_{0}\right) + \sum^{k}_{i = 1}\lambda_{i}\overrightarrow{\psi\left(P_{0}\right)\psi\left(P_{i}\right)} \\
+		= & \lambda_{0}\psi\left(P_{0}\right) + \cdots + \lambda_{k}\psi\left(P_{k}\right).
+	\end{split}
+	\]
+Veamos que $\displaystyle * $ es cierto, es decir, veamos que $\displaystyle \Ker\left(\omega \right)= \Ker\left(\omega \circ \hat{\psi}\right) $. 
+\[
+\begin{split}
+	v \in \Ker\left(\omega \right)/ \left\{ 0\right\} \iff & [v] \in H \iff \psi\left([v]\right)\in H \iff [\hat{\psi}\left(v\right)] \in H \\
+	\iff & \hat{\psi}\left(v\right) \in \Ker\left(\omega \right) \iff \omega\left(\hat{\psi}\left(v\right)\right) = 0 \iff v \in \Ker\left(\omega \circ \hat{\psi}\right).
+\end{split}
+\]
+Tenemos que $\displaystyle V = \Ker\left(\omega \right)\oplus L\left(u\right) $ para algún $\displaystyle u \in V $. Si $\displaystyle v \in V $, existe $\displaystyle z \in \Ker\left(\omega \right)  $ y $\displaystyle \lambda \in \K $ tal que $\displaystyle v = z + \lambda u $. Así, tenemos que 
+\[\omega\left(v\right) = \omega\left(z + \lambda u\right) = \omega\left(\lambda u\right) = \lambda\omega\left(u\right) .\]
+Así, tenemos que 
+\[
+\begin{split}
+	\left(\omega\circ\hat{\psi}\right)\left(v\right)  = & \omega\left(\hat{\psi}\left(v\right)\right) = \omega\left(\hat{\psi}\left(z + \lambda u\right)\right) = \omega\left(\hat{\psi}\left(\lambda u\right)\right) = \lambda \omega\left(\hat{\psi}\left(u\right)\right).
+\end{split}
+\]
+Así, podemos coger $\displaystyle C = \frac{\omega\left(v\right)}{\omega\left(\hat{\psi}\left(v\right)\right)} = \frac{\omega\left(u\right)}{\omega\left(\hat{\psi}\left(u\right)\right)} $.
+\end{proof}
+\begin{eg}
+Consideremos la homografía
+\[f : \mathbb{P}^{3} \to \mathbb{P}^{3} : [x_{0}:x_{1}:x_{2}:x_{3}] \to [x_{0}+x_{1}:x_{1}+x_{2}:x_{2}+x_{3}:2x_{3}] .\]
+Un plano invariante es $\displaystyle H = \left\{ x_{3} = 0\right\}  $. Así, podemos considerar el espacio afín $\displaystyle \mathbb{A} = \mathbb{P}^{3} / H = \left\{ [x_{0}:x_{1}:x_{2}:1] \; : \; x_{0}, x_{1}, x_{2} \in \K\right\}  $. Buscamos ahora $\displaystyle f|_{\mathbb{A}} $. Buscamos una referencia de $\displaystyle \mathbb{A} $. Sabemos que $\displaystyle H_{2} = \left\{ x_{2}-x_{3} = 0\right\}  $ es invariante y los puntos $\displaystyle [1 : 0:0:0] $ y $\displaystyle [1:1:1:1] $ son fijos. 
+Sea $\displaystyle O = [1:1:1:1] \in \mathbb{A}$, por lo que $\displaystyle f\left(O \right)= O $. Consideremos ahora los puntos,
+\[ P_{1} = [1 : 0 : 1 : 1], \quad P_{2} = [0:1:1:1] \quad \text{y} \quad P_{3} = [0:0:0:1].\]
+Tenemos que 
+\[f\left(P_{1}\right)= [1:1:2:2] = \left[\frac{1}{2}:\frac{1}{2}:1:1\right], \quad f\left(P_{2}\right)=[1:2:2:2] = \left[\frac{1}{2}:1:1:1\right]  .\]
+\[f\left(P_{3}\right) = [0:0:1:2] = \left[0:0:\frac{1}{2}:1\right] .\]
+Así, podemos tomar la referencia cartesiana $\displaystyle \mathcal{R}_{C} = \left\{ O, \mathcal{B} = \left\{ \overrightarrow{OP_{1}}, \overrightarrow{OP_{2}}, \overrightarrow{OP_{3}}\right\} \right\}  $. Calculemos la matriz de $\displaystyle f|_{\mathbb{A}} $. Tenemos que 
+\[\vec{f}\left(\overrightarrow{OP_{1}}\right) = \overrightarrow{f\left(O\right)f\left(P_{1}\right)}= \overrightarrow{[1:1:1:1]\left[\frac{1}{2}:\frac{1}{2}:1:1\right] } = \left(-\frac{1}{2}, -\frac{1}{2}, 0,0\right) .\]
+\[\vec{f}\left(\overrightarrow{OP_{2}} \right) = \overrightarrow{f\left(O\right)f\left(P_{2}\right)} = \overrightarrow{[1:1:1:1]\left[\frac{1}{2}:1:1:1\right] } = \left(-\frac{1}{2} , 0, 0, 0\right) .\]
+\[\vec{f}\left(\overrightarrow{OP_{3}}\right) = \overrightarrow{f\left(O\right)f\left(P_{2}\right)}= \overrightarrow{[1:1:1:1]\left[0:0:\frac{1}{2}:1\right] } = \left(-1,-1, -\frac{1}{2}, 0\right) .\]
+Así, tenemos que 
+\[\mathcal{B} = \left\{ \left(-1,0,0,0\right), \left(0, -1, 0,0\right), \left(-1,-1,-1,0\right)\right\}  .\]
+En esta base, tenemos que 
+\[\overrightarrow{f\left(OP_{2}\right)} = \left(\frac{1}{2}, 0, 0\right)_{\mathcal{B}}, \quad \overrightarrow{f\left(OP_{1}\right) } = \left(\frac{1}{2}, \frac{1}{2}, 0\right)_{\mathcal{B}}, \quad \overrightarrow{f\left(OP_{3}\right)} = \left(\frac{1}{2}, \frac{1}{2}, \frac{1}{2}\right)_{\mathcal{B}} .\]
+Así, nos queda que la matriz de $\displaystyle f|_{\mathbb{A}} $ en la referencia $\displaystyle \mathcal{R}_{C} $ será
+\[M_{\mathcal{R}_{C}}\left(f|_{\mathbb{A}}\right) = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & \frac{1}{2} & \frac{1}{2} & \frac{1}{2} \\ 0 & 0 & \frac{1}{2} & \frac{1}{2} \\ 0 & 0 & 0 & \frac{1}{2} \end{pmatrix} .\]
+\end{eg}
 
+\begin{observation}
+Sea $\displaystyle X \subset \mathbb{P}^{n} $ una variedad tal que 
+\[X = 
+\begin{cases}
+a_{00}x_{0} + \cdots + a_{0n}x_{n} = 0 \\
+\vdots \\
+a_{k0}x_{0} + \cdots + a_{kn}x_{n} = 0
+\end{cases}
+.\]
+Consideremos el hiperplano $\displaystyle H = \left\{ b_{0}x_{0} + \cdots + b_{n}x_{n} = 0\right\} $ y consideremos $\displaystyle \mathbb{A} = \mathbb{P}^{n} / H $ que es un espacio afín. Tenemos que $\displaystyle X \cap \mathbb{A} $ es una variedad afín. En efecto, tenemos que 
+\[\mathbb{A} = \left\{ [x_{0} : \cdots :x_{n}] \; : \; b_{0}x_{0}+ \cdots + b_{n}x_{n} = 1\right\} =  \left\{ \left( \frac{1}{b_{0}}\left(1-b_{1}x_{1}-\cdots -b_{n}x_{n}\right), x_{1}, \ldots, x_{n}\right)\right\} \subset \K^{n+1}	.\]
+Así, tenemos que 
+\[X \cap A = 
+\begin{cases}
+a_{00} \frac{1}{b_{0}}\left(1-b_{1}x_{1}-\cdots -b_{n}x_{n}\right)+ \cdots + a_{n}x_{n} = 0 \\
+\vdots \\
+a_{k0} \frac{1}{b_{0}}\left(1-b_{1}x_{1}-\cdots -b_{n}x_{n}\right)+ \cdots + a_{k}x_{n}=0
+\end{cases}
+,\]
+que son las ecuaciones implícitas de una variedad afín. 
+\end{observation}
+ \begin{eg}
+	 Consideremos en $\displaystyle \mathbb{P}^{3} $ el hiperplano $\displaystyle H = \left\{ x_{0}+x_{1}+x_{2} = 0\right\}  $. Tenemos que 
+	 \[ \mathbb{A} = \left\{ \left(x_{0}, x_{1}, x_{2}, x_{3}\right) \; : \; x_{0}+x_{1}+x_{2} = 1\right\}  .\]
+	 Consideremos por otro lado la variedad
+	 \[X = 
+	 \begin{cases}
+	 2x_{0} + x_{3} = 0 \\
+	 2x_{1} - x_{3} = 0
+	 \end{cases}
+	 .\]
+Así, tenemos que 
+\[X \cap \mathbb{A} = 
+\begin{cases}
+2\left(1-x_{1}-x_{2}\right) + x_{3} = 0 \\
+2x_{1}-x_{3} = 0 
+\end{cases}
+\Rightarrow 
+\begin{cases}
+-x_{1}-x_{2}+x_{3} = -2 \\
+2x_{1} -x_{3} = 0
+\end{cases}
+.\]
+ \end{eg}
+\section{Completaciones proyectivas}
+Sea $\displaystyle f : \mathbb{A} \to \mathbb{A} $ una afinidad con $\displaystyle \dim\mathbb{A} = n $ y $\displaystyle \mathcal{R}_{C} = \left\{ O, \mathcal{B} = \left\{ v_{1}, \ldots, v_{n}\right\} \right\}  $ una referencia cartesiana de $\displaystyle \mathbb{A} $. Para meter el espacio afín $\displaystyle \mathbb{A} $ un un espacio proyectivo consideramos la aplicación 
+\[i : \mathbb{A} \to \mathbb{P}\left(\K^{n+1}\right) = \mathbb{P}^{n} : \left(x_{1}, \ldots, x_{n}\right)_{\mathcal{B}} \to \left[1:x_{1}: \cdots :x_{n}\right]  .\]
+Tenemos que 
+\[\Imagen\left(i\right) = \left\{ \left[1:x_{1}: \cdots : x_{n}\right]  \; : \; x_{1}, \ldots, x_{n} \in \K\right\} = \mathbb{P}^{n} / \left\{ x_{0} = 0\right\}  .\]
+\begin{definition}
+Se define la \textbf{completación proyectiva} de $\displaystyle f $ respecto a $\displaystyle i $ de la forma
+\[\overline{f} : \mathbb{P}^{n} \to \mathbb{P}^{n} : [x_{0}: \cdots :x_{n}] \to \left[x_{0}\left(1,f\left(0, \ldots, 0\right)\right) + \left(0, \vec{f}\left(x_{1}, \ldots, x_{n}\right)\right)\right]  .\]
+\end{definition}
+\begin{prop}
+La aplicación $\displaystyle \overline{f}:\mathbb{P}^{n} \to \mathbb{P}^{n} $ es una homografía y $\displaystyle \overline{f}|_{\mathbb{A}} = f $. 
+\end{prop}
+\begin{proof}
+Tenemos que ver que $\displaystyle \overline{f} $ es una homografía y que $\displaystyle \overline{f}|_{\mathbb{A}} = f $. Ponemos 
+\[\hat{f} : \K^{n+1} \to \K^{n+1} : \left(x_{0}, \ldots, x_{n}\right) \to x_{0}\left(1,f\left(0, \ldots, 0\right)\right) + \left(0, \vec{f}\left(x_{1}, \ldots, x_{n}\right)\right) .\]
+Veamos que es lineal. Tenemos que
+\[
+\begin{split}
+	\hat{f}\left(\left(x_{0}, \ldots, x_{n}\right) + \left(y_{0}, \ldots, y_{n}\right)\right) = & \hat{f}\left(\left(x_{0}+y_{0}, \ldots, x_{n}+y_{n}\right)\right) \\
+	= & \left(x_{0}+y_{0}\right)\left(1, f\left(0, \ldots, 0\right)\right) + \left(0, \vec{f}\left(x_{1}+y_{1}, \ldots, x_{n}+y_{n}\right)\right) \\
+	= & \left(x_{0}+y_{0}\right)\left(1, f\left(0, \ldots, 0\right)\right) + \left(0, \vec{f}\left(x_{1}, \ldots, x_{n}\right)\right)+\left(0, \vec{f}\left(y_{1}, \ldots, y_{n}\right)\right) \\
+	= & \left[x_{0}\left(1, f\left(0, \ldots, 0\right)\right) + \left(0, \vec{f}\left(x_{1}, \ldots, x_{n}\right)\right)\right] \\
+	+ &  \left[y_{0}\left(1, f\left(0, \ldots, 0\right)\right) + \left(0, \vec{f}\left(y_{1}, \ldots, y_{n}\right)\right)\right] \\
+	= & \hat{f}\left(x_{0}, \ldots, x_{n}\right) + \hat{f}\left(y_{0}, \ldots, y_{n}\right) .
+\end{split}
+\]
+Análogamente, si $\displaystyle \lambda \in \K $ tenemos que 
+\[
+\begin{split}
+	\hat{f}\left(\lambda\left(x_{0}, \ldots, x_{n}\right)\right) = & \hat{f}\left(\lambda x_{0}, \ldots, \lambda x_{n}\right) \\
+	= & \left(\lambda x_{0}\right)\left(1, f\left(0, \ldots, 0\right)\right) + \left(0, \vec{f}\left(\lambda x_{1}, \ldots, \lambda x_{n}\right)\right) \\
+	= & \left(\lambda x_{0}\right)\left(1, f\left(0, \ldots, 0\right)\right) + \lambda\left(0, \vec{f}\left(\lambda x_{1}, \ldots, \lambda x_{n}\right)\right) \\
+	= & \lambda \left(x_{0}\left(1, f\left(0, \ldots, 0\right)\right) + \left(0, \vec{f}\left(x_{1}, \ldots, x_{n}\right)\right)\right) \\
+	= & \lambda \hat{f}\left(x_{0}, \ldots, x_{n}\right).
+\end{split}
+\]
+Veamos ahora que $\displaystyle \overline{f}|_{i\left(\mathbb{A}\right)} = i \circ f $. Por el teorema anterior sabemos que $\displaystyle \overline{f}|_{i\left(\mathbb{A}\right)} $ es una afinidad. En efecto, tenemos que $\displaystyle \overline{f}\left( \left\{ x_{0} = 0\right\} \right) = \left\{ x_{0} = 0\right\}  $: 
+\[
+\begin{split}
+	\overline{f}\left( \left\{ x_{0} = 0\right\} \right) = & \left[\hat{f}\left( \left\{ x_{0}= 0\right\} \right)\right] = \left\{ \left[0\left(1, f\left(0, \ldots, 0\right)\right)+\left(0, \vec{f}\left(x_{1}, \ldots,x_{n}\right)\right)\right] \; : \; x_{1}, \ldots, x_{n} \in \K\right\} \\
+	= & \left\{ x_{0} = 0\right\}  .
+\end{split}
+\]
+Finalmente, para ver que las dos funciones coinciden es suficiente con comprobar la igualdad en una referencia afín. Consideremos la referencia
+\[\mathcal{R}_{A} = \left\{ O, O +v_{1}, \ldots, O + v_{n}\right\} .\]
+Tenemos que  
+\[\overline{f}\left(i\left(O\right)\right) = \overline{f}\left( [1 : 0 : \cdots : 0]\right) = \left[\left(1, f\left(0, \ldots, 0\right)\right)\right]  .\]
+Además, $\displaystyle i\left(f\left(O\right)\right) = i\left(f\left(0, \ldots, 0\right)\right) = [\left(1, f\left(0, \ldots, 0\right)\right)] $. De forma análoga, tenemos que si $\displaystyle j = 1, \ldots, n $, 
+\[
+\begin{split}
+	\overline{f}\left(i\left(O +v_{j}\right)\right) = & \overline{f}\left(\left[1: 0 : \cdots : 1 : \cdots : 0\right] \right) \\
+	= & \left[1 \left(1, f\left(0, \ldots, 0\right)\right) + \left(0, \vec{f}\left(0, \ldots, 1, \ldots, 0\right)\right)\right] \\
+	= & \left[\left(1, f \left(0, \ldots, 0\right) + \vec{f}\left(0, \ldots, 1, \ldots, 0\right)\right)\right] \\
+	= & \left[\left(1, f\left(O + v_{j}\right)\right)\right]  .
+\end{split}
+\]
+Por otro lado, 
+\[i\left(f\left(O + v_{j}\right)\right) = \left[1, f\left(O +v_{j}\right)\right] .\]
+Como son dos afinidades que coinciden en una referencia afín, tendremos que $\displaystyle \overline{f}|_{i\left(\mathbb{A}\right)} = i\circ f $.
+\end{proof}
+\begin{observation}
+ Se puede comprobar que si $\displaystyle \mathcal{E} $ es la referencia estándar de $\displaystyle \mathbb{P}^{n} $, entonces
+\[\left[M_{\mathcal{E}}\left(\overline{f}\right)\right] = \left[M_{\mathcal{R}_{C}}\left(f\right)\right]  .\]
+\end{observation}
+\begin{eg}
+Consideremos la aplicación 
+\[f: \R^{2} \to \R^{2} : \left(x_{1}, x_{2}\right) \to \left(2x_{1}+x_{2}, 2x_{2}+1\right) .\]
+Tendremos que 
+\[
+\begin{split}
+	\overline{f}\left([x_{0}:x_{1}:x_{2}]\right) = & \left[x_{0}\left(1, f\left(0,0\right)\right)+\left(0,\vec{f}\left(x_{1}, x_{2}\right)\right)\right] \\
+	= & \left[x_{0}\left(1,0,1\right)+\left(0,2x_{1}+x_{2}, x_{2}\right)\right] \\
+	= & \left[x_{0} : 2x_{1}+x_{2}:x_{0}+2x_{2}\right]  .
+\end{split}
+\]
 \end{eg}
 
