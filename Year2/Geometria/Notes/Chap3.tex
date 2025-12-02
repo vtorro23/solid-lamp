@@ -39,7 +39,7 @@ Así, hemos visto que $\displaystyle \ev $ es lineal. Veamos ahora que $\display
 \[
 \begin{split}
 	\ev_{u} = 0 \iff & \ev_{u}\left(\phi\right) = 0, \; \forall \phi \in V^{*} \iff \phi\left(u\right) = 0, \; \forall \phi \in V^{*} \iff \phi_{i}\left(u\right) = 0, \; \forall \phi_{i}\in \mathcal{B}^{*} \\
-	\iff & u = 0 \iff $\displaystyle \Ker\left(\ev\right) = \left\{ 0\right\}  $ .
+	\iff & u = 0 \iff  \Ker\left(\ev\right) = \left\{ 0\right\}   .
 \end{split}
 \]
 Como $\displaystyle \dim_{\K}V = \dim_{\K}V^{*} = \dim_{\K}\left(V^{**}\right) < \infty $, con ver que es inyectiva hemos visto que es biyectiva y por tanto es un isomorfismo. Abusando de la notación, identificamos $\displaystyle V $ con $\displaystyle V^{**} $ mediante $\displaystyle u = \ev_{u} $. \\ \\ 
@@ -594,4 +594,79 @@ Tendremos que
 \end{split}
 \]
 \end{eg}
+Sea $\displaystyle f : \K^{n+1} \to \K $ una forma lineal y $\displaystyle \mathbb{A} = \mathbb{P}^{n}/\mathbb{P}\left( \Ker\left(f\right)\right) $, donde $\displaystyle \mathbb{P}^{n} = \mathbb{P}\left(\K^{n+1}\right) $, es un espacio afín. Si $\displaystyle X \subset \mathbb{A} $ es una variedad afín de dimensión $\displaystyle d $, $\displaystyle X $ viene dado por $\displaystyle n-d $ ecuaciones implícitas. Como $\displaystyle X $ es un espacio afín tiene una referencia afín $\displaystyle \left\{ P_{0}, \ldots, P_{d}\right\}  $ y
+\[\overline{X} = V_{\mathbb{P}}\left(P_{0}, \ldots, P_{d}\right) ,\]
+es el completado proyectivo de $\displaystyle X $. 
+\begin{lema}
+Si $\displaystyle P_{0}, \ldots, P_{d} $ son independientes en $\displaystyle \mathbb{A} $, entonces están en posición general en $\displaystyle \mathbb{P}^{n} $.
+\end{lema}
+\begin{proof}
+	Supongamos que $\displaystyle P_{0}, \ldots, P_{d} $ son independientes, por lo que $\displaystyle \left\{ \overrightarrow{P_{0}P_{1}}, \ldots, P_{0}P_{d}\right\}  $ son linealmente independientes. Supongamos que $\displaystyle P_{i} = [v_{i}] $ para $\displaystyle i = 0, \ldots, d $. Tenemos que ver que $\displaystyle \left\{ v_{0}, \ldots, v_{d}\right\}  $ son linealmente independientes. Recordamos que 
+	\[\overrightarrow{P_{0}P_{i}} = \frac{v_{i}}{f\left(v_{i}\right)}-\frac{v_{0}}{f\left(v_{0}\right)} .\]
+Supongamos que 
+\[0 = \lambda_{0}v_{0} + \cdots + \lambda_{d}v_{d} .\]
+Así, tenemos que 
+\[0 = \lambda_{0}v_{0} + \sum^{d}_{i = 1}\lambda_{i}f\left(v_{i}\right)\left(\overrightarrow{P_{0}P_{i}}+\frac{v_{0}}{f\left(v_{0}\right)}\right) = \left(\lambda_{0}+\sum^{d}_{i = 1}\lambda_{i}\frac{f\left(v_{i}\right)}{f\left(v_{0}\right)}\right)v_{0}+\sum^{d}_{i = 1}\lambda_{i}f\left(v_{i}\right)\overrightarrow{P_{0}P_{i}}.\]
+Como $\displaystyle [v_{0}] = P_{0} \in \mathbb{A} = \mathbb{P}^{n} / \mathbb{P}\left(\Ker\left(f\right)\right)  $ y $\displaystyle \overrightarrow{P_{0}P_{i}} \in \Ker\left(f\right) $, tenemos que 
+\[f\left(\mu_{0}v_{0}\right) = f\left(\sum^{d}_{i = 1}\mu_{i}\overrightarrow{P_{0}P_{i}}\right) = 0\Rightarrow \mu_{0} = 0 .\]
+Por tanto, 
+\[\mu_{0}v_{0} = \sum^{d}_{i = 1}\mu_{i}\overrightarrow{P_{0}P_{i}} = 0 .\]
+Como $\displaystyle \left\{ \overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0}P_{d}}\right\}  $ son linealmente independientes tenemos que $\displaystyle \mu_{i} = 0 $, por lo que $\displaystyle \lambda f\left(v_{i}\right) = 0 $ y $\displaystyle \lambda_{i} = 0 $. Así, tenemos que 
+\[0 = \lambda_{0}v_{0} \Rightarrow \lambda_{0} = 0 .\]
+Por tanto, $\displaystyle \left\{ v_{0}, \ldots, v_{d}\right\}  $ son linealmente independientes. 
+\end{proof}
+\begin{observation}
+Por el lema, tenemos que  
+\[ \dim\overline{X} = \dim \hat{X} - 1 = \dim\left(L\left( \left\{ v_{0}, \ldots, v_{d}\right\} \right)\right)-1 = d.\]
+En particular, $\displaystyle \overline{X} $ está definido por $\displaystyle n-d $ ecuaciones implícitas. Así, si 
+\[X = 
+\begin{cases}
+a_{00}x_{0} + \cdots + a_{0n}x_{n} = c_{0} \\ 
+\vdots \\ 
+a_{n-d-1,0}x_{0} + \cdots + a_{n-d-1,n}x_{n} = c_{n}
+\end{cases}
+,\]
+y 
+\[f\left(x_{0}, \ldots, x_{n}\right) = b_{0}x_{0} + \cdots + b_{n}x_{n} ,\]
+suponiendo que $\displaystyle b_{0} \neq 0 $, tenemos que 
+\[\mathbb{A} = \left\{ \left[x_{0} : \cdots : x_{n}\right] \; : \; b_{0}x_{0} + \cdots + b_{n}x_{n} = 1\right\}  .\]
+Comprobamos que $\displaystyle P_{0}, \ldots, P_{d} $ vistos como puntos de $\displaystyle \mathbb{P}^{n} $ cumplen 
+\[
+\begin{cases}
+a_{00}x_{0} + \cdots + a_{0n}x_{n} = c_{0}\left(b_{0}x_{0} + \cdots + b_{n}x_{n}\right) \\ 
+\vdots \\
+a_{n-d-1, 0}x_{0} + \cdots + a_{n-d-1,1}x_{n} = c_{n}\left(b_{0}x_{0} + \cdots + b_{n}x_{n}\right)
+\end{cases}
+.\]
+Son $\displaystyle n-d $ ecuaciones implícitas por lo que necesariamente debe ser las ecuaciones de $\displaystyle \overline{X} $.
+\end{observation}
+\begin{eg}
+Consideremos la variedad afín
+\[X =
+\begin{cases}
+2x_{1} + 3x_{2} -x_{3} = 2 \\ 
+x_{1} + x_{3} = 1
+\end{cases}
+,\]
+con $\displaystyle X \subset \R^{3} $, que es una recta. Podemos meter $\displaystyle \R^{3} $ en $\displaystyle \mathbb{P}^{3} $ de la forma:
+\[\R^{3} \to \mathbb{P}^{3} : \left(x_{1}, x_{2}, x_{3}\right) \to \left[1 : x_{1} : x_{2} : x_{3}\right]  ,\]
+es decir, identificamos $\displaystyle \R^{3} $ con $\displaystyle \mathbb{P}^{3}/ \left\{ x_{0} = 0\right\}  $. Así, tendremos que 
+\[\overline{X} = 
+\begin{cases}
+2x_{1}+3x_{2}-x_{3} = 2x_{0} \\ 
+x_{1} + x_{3} = x_{0}
+\end{cases}
+.\]
+\end{eg}
+\begin{observation}
+Sea $\displaystyle \overline{X} $ la completación proyectiva de una variedad afín $\displaystyle X $. Podemos considerar
+\[X_{\infty} = \overline{X}/X =  \overline{X} \cap \mathbb{P}\left(\Ker\left(f\right)\right)\quad \text{y} \quad \hat{X}_{\infty}  = \overrightarrow{X},\]
+que es una variedad de $\displaystyle \mathbb{P}^{n} $. 
+En efecto, si $\displaystyle X = V_{\mathbb{A}}\left(P_{0}, \ldots, P_{d}\right) $ y $\displaystyle \overline{X} = V_{\mathbb{P}}\left(P_{0}, \ldots, P_{d}\right) $, tenemos que $\displaystyle \left[\overrightarrow{P_{0}P_{i}}\right] \in \overline{X} $ y como $\displaystyle f\left(\overrightarrow{P_{0}P_{i}}\right) = 0 $ tenemos que $\displaystyle \left[\overrightarrow{P_{0}P_{i}}\right] \not\in X $. 
+Como 
+\[\overrightarrow{X} = L\left( \left\{ \overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0}P_{d}}\right\} \right)\subset \hat{X}_{\infty} ,\]
+y 
+\[\dim \overrightarrow{X} = d \leq \dim\widehat{\overline{X}/X} < d + 1 .\]
+Por tanto, debe ser que $\displaystyle \overrightarrow{X} = \widehat{\overline{X}/X} = \hat{X}_{\infty} $. 
+\end{observation}
 

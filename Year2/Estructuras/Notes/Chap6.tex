@@ -391,8 +391,104 @@ Sea $\displaystyle f:A \to B $ un homomorfismo de anillos unitarios.
 \begin{enumerate}
 \item Sea $\displaystyle A $ un anillo, entonces la identidad es un homomorfismo de anillos unitario. 
 \item Si $\displaystyle B \subset A $ es un subanillo unitario, la función inclusión $\displaystyle i : B \to A $ es homomorfismo de anillos unitarios. 
-\item La aplicación $\displaystyle f : \Z \to \R : n \to 2n $ no es un homomorfismo de anillos unitario puesto que $\displaystyle f\left(1\right) = 2 \neq 1 $. 
+\item La aplicación $\displaystyle f : \Z \to \R : n \to 2n $ no es un homomorfismo de anillos unitarios puesto que $\displaystyle f\left(1\right) = 2 \neq 1 $. 
 \item La aplicación $\displaystyle f : A \to A \times A : a \to \left(a,0\right) $ es un homomorfismo de anillos no unitario, puesto que $\displaystyle f\left(1\right) = \left(1,0\right) \neq \left(1,1\right) $. 
+\item La aplicación $\displaystyle f : \C \to \C : z \to \overline{z} $ es un isomorfismo. 
+\item Si $\displaystyle f : \Z \to \Z $ es un homomorfismo de anillos unitarios. Necesariamente, debe ser que $\displaystyle f\left(1\right)=1 $, por lo que para $\displaystyle m \in \Z $,
+	\[f\left(m\right) = f\left(1 + \cdots + 1\right)=f\left(1\right)+ \cdots +f\left(1\right) = mf\left(1\right) = m .\]
+	Por tanto, debe ser que $\displaystyle f = id $ por lo que la identidad es el único homomorfismo de anillos unitarios de $\displaystyle \Z $ en $\displaystyle \Z $. 
+\end{enumerate}
+\end{eg}
+\begin{prop}
+Sea $\displaystyle f : A \to B $ un homomorfismo de anillos unitarios. 
+\begin{enumerate}
+	\item Si $\displaystyle \mathfrak{b} \subset B $ es un ideal, entonces $\displaystyle f^{-1}\left(\mathfrak{b} \right) $ es un ideal de $\displaystyle A $. 
+	\item Si $\displaystyle f $ es sobreyectiva y $\displaystyle \mathfrak{a} \subset A $, entonces $\displaystyle f\left(\mathfrak{a} \right) $ es un ideal de $\displaystyle B $. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Sea $\displaystyle \mathfrak{b} \subset B $ un ideal, $\displaystyle a \in f^{-1}\left(\mathfrak{b} \right) $ y $\displaystyle x \in A $. Como $\displaystyle a \in f^{-1}\left(\mathfrak{b} \right) $ tenemos que $\displaystyle f\left(a\right) \in \mathfrak{b}  $. Por tanto, debe ser que 
+	\[f\left(ax\right) = f\left(a\right)f\left(x\right) \in \mathfrak{b}  .\]
+	Así, tenemos que $\displaystyle ax \in f^{-1}\left(\mathfrak{b} \right) $. 
+\item Sea $\displaystyle \mathfrak{a} \subset A $ un ideal, $\displaystyle b \in f\left(\mathfrak{a} \right) $ y $\displaystyle x \in B $. Así, tenemos que existe $\displaystyle c \in \mathfrak{a}  $ tal que $\displaystyle f\left(c\right) = b $. Como $\displaystyle f $ es sobreyectiva, existe $\displaystyle y \in A $ tal que $\displaystyle f\left(y\right) = x $. Por tanto,
+	\[xb = f\left(y\right)f\left(c\right) = f\left(yc\right) \in f\left(\mathfrak{a} \right) .\]	
+\end{enumerate}
+\end{proof}
+\begin{definition}[Núcleo e imagen]
+Sea $\displaystyle f : A \to B $ un homomorfismo de anillos.
+\begin{enumerate}
+	\item El \textbf{núcleo} de $\displaystyle f $ es el conjunto $\displaystyle \Ker\left(f\right) = \left\{ x \in A \; : \; f\left(x\right) = 0\right\} = f^{-1} \left( \left\{ 0\right\} \right) $. 
+	\item La \textbf{imagen} de $\displaystyle f $ es el conjunto $\displaystyle \Imagen\left(f\right) = \left\{ f\left(x\right) \; : \; x \in A\right\}  = f\left(A\right) $.
+\end{enumerate}
+\end{definition}
+\begin{observation}
+El núcleo es un ideal por ser la pre-imagen de un ideal, pero la imagen no es en general un ideal (sin embargo sí es un subanillo).
+\end{observation}
+\begin{prop}
+Sea $\displaystyle f : A \to B $ homomorfismo de anillos unitarios. 
+\begin{enumerate}
+	\item $\displaystyle f $ es inyectiva si y solo si $\displaystyle \Ker\left(f\right)= \left\{ 0\right\}  $.
+	\item Si $\displaystyle A $ es un cuerpo, entonces $\displaystyle f $ es inyectiva.
+	\item Si $\displaystyle f : A \to B $ es un isomorfismo, entonces $\displaystyle f^{-1} $ también lo es.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Ha sido demostrada en la parte de teoría de grupos. 
+\item Como hemos visto antes, $\displaystyle \Ker\left(f\right) = f^{-1}\left( \left\{ 0\right\} \right) $ es un ideal de $\displaystyle A $. Como $\displaystyle A $ es cuerpo, sus únicos ideales son $\displaystyle \left\{ 0\right\}  $ y $\displaystyle A $. Como $\displaystyle f\left(1\right) = 1 $, debe ser que $\displaystyle \Ker\left(f\right) = \left\{ 0\right\}  $, por lo que $\displaystyle f $ es inyectiva.
+\item Comprobar que para el producto $\displaystyle f^{-1} $ es homomorfismo (porque ya sabemos que para grupos funciona).
+\end{enumerate}
+\end{proof}
+\begin{eg}
+Sea $\displaystyle \mathfrak{a}  \subset A$ un ideal y consideremos la aplicación 
+\[ \pi : A \to A/\mathfrak{a} : x \to [x] ,\]
+que es un epimorfismo de anillos unitarios. 
+\end{eg}
+\begin{theorem}[Teorema de correspondencia]
+Sea $\displaystyle f : A \to B $ un epimorfismo de anillos unitarios. La aplicación
+\[\varphi : \left\{ \mathfrak{a} \subset A \; : \; \mathfrak{a} \; \text{ideal con} \; \Ker\left(f\right) \subset \mathfrak{a}\right\}  \to \left\{ \mathfrak{b} \subset B \; \text{ideal}\right\} : \mathfrak{a} \to f\left(\mathfrak{a}\right),\]
+es una biyección.
+\end{theorem}
+\begin{proof}
+	Por la proposición anterior tenemos que la función está bien definida. Es sobreyectiva puesto que si $\displaystyle \mathfrak{b} \subset B $ es un ideal, $\displaystyle f^{-1}\left(\mathfrak{b}\right)  $ es un ideal que contiene a $\displaystyle f^{-1}\left( \left\{ 0\right\} \right)=\Ker\left(f\right) $. La inyectividad se deduce del teorema análogo demostrado en la parte de grupos.
+\end{proof}
+\begin{theorem}[Primer teorema de isomorfía]
+Sea $\displaystyle f : A \to B $ un homomorfismo de anillos unitarios. La aplicación
+\[\tilde{f} : A/\Ker\left(f\right) \to \Imagen\left(f\right) : [x] \to f\left(x\right),\]
+es un isomorfismo de anillos unitarios.
+\end{theorem}
+\begin{proof}
+	Por el teorema análogo demostrado en la parte de grupos tenemos que $\displaystyle \tilde{f} $ es un isomorfismo de grupos. Veamos ahora que es un homomorfismo de anillos unitarios. Está claro que $\displaystyle \tilde{f}\left([1]\right) = f\left(1\right) = 1 $. Por otro lado,
+	\[\tilde{f}\left([x][y]\right) = \tilde{f}\left([xy]\right) = f\left(xy\right) = f\left(x\right)f\left(y\right) = \tilde{f}\left([x]\right)\tilde{f}\left([y]\right) .\]
+\end{proof}
+\begin{colorary}
+Sea $\displaystyle f : A \to B $ un epimorfismo de anillos unitarios. Sea $\displaystyle \mathfrak{b} \subset B $ un ideal tal que $\displaystyle \mathfrak{a} = f^{-1}\left(\mathfrak{b}\right) $. Así, $\displaystyle \mathfrak{a}  $ es primo (resp. maximal) si y solo si $\displaystyle \mathfrak{b} $ es un ideal primo (resp. maximal).
+\end{colorary}
+\begin{proof}
+Consideremos los homomorfismos
+\[\pi_{1} : A \to B/\mathfrak{b} \quad \text{y} \quad \pi_{2} : B \to B/\mathfrak{b} .\]
+Tenemos que $\displaystyle \pi_{1} = \pi_{2} \circ f $ es un epimorfismo con núcleo $\displaystyle \mathfrak{a} $. Así, por el primer teorema de isomorfía tenemos que $\displaystyle A/\mathfrak{a} \cong B/\mathfrak{b}$. Así, si $\displaystyle \mathfrak{a} $ es primo, entonces $\displaystyle A/\mathfrak{a} $ es dominio de integridad, por lo que $\displaystyle B/\mathfrak{b} $ también es dominio de integridad y en consecuencia $\displaystyle \mathfrak{b} $ también es primo. El argumento para ideales maximales es similar.
+\end{proof}
+\begin{colorary}[Teorema chino del resto]
+	Sean $\displaystyle n_{1}, \ldots, n_{k} \in \N $ tales que $\displaystyle \mcd\left(n_{i}, n_{j}\right)=1 $, $\displaystyle \forall i,j \in \left\{ 1, \ldots, k\right\}  $ con $\displaystyle i \neq j $. Sea $\displaystyle n = n_{1} \cdots n_{k} $, entonces $\displaystyle \Z_{n} \cong \Z_{n_{1}} \times \cdots \times \Z_{n_{k}} $. 
+	Además, $\displaystyle \mathcal{U}\left(\Z_{n}\right) \cong \mathcal{U}\left(\Z_{n_{1}}\right) \times \cdots \times \mathcal{U}\left(\Z_{n_{k}}\right) $. 
+\end{colorary}
+\begin{proof}
+Consideremos el homomorfismo (es homomorfismo por serlo coordenada a coordenada)
+\[f : \Z \to \Z_{n_{1}} \times \cdots \times \Z_{n_{k}} : x \to \left([x]_{n_{1}}, \ldots, [x]_{n_{k}}\right) .\]
+Como $\displaystyle \Ker\left(f\right) = n_{1} \Z \times \cdots \times n_{k}\Z $, el resultado se deduce fácilmente a partir del primer teorema de isomorfía. Por otro lado,
+\[\mathcal{U}\left(\Z_{n}\right) \cong \mathcal{U}\left(\Z_{n_{1}} \times \cdots \times \Z_{n_{k}}\right) = \mathcal{U}\left(\Z_{n_{1}}\right) \times \cdots \times \mathcal{U}\left(\Z_{n_{k}}\right) .\]
+\end{proof}
+\subsection{Homomorfismo evaluación}
+Sea $\displaystyle A $ un anillo conmutativo unitario y $\displaystyle A[\mathtt{x}] $ su anillo de polinomios. Entonces, definimos el \textbf{homomorfismo evaluación} como 
+\[\ev_{d} : A[\mathtt{x}]\to A : p\left(\mathtt{x}\right) \to p\left(d\right), \; d \in A .\]
+Es fácil ver que es un homomorfismo de anillos unitarios. Si tomamos $\displaystyle A \subset B $ subanillo de $\displaystyle B $ anillo unitario y $\displaystyle d \in B $, se puede definir también de la siguiente forma:
+\[\ev_{d} : A[\mathtt{x}] \to B.\]
+\begin{eg}
+\begin{enumerate}
+	\item Consideremos el homomorfismo evaluación $\displaystyle \ev_{i} : \Z[\mathtt{x}] \to \C : p\left(\mathtt{x}\right) \to p\left(i\right) $. Obtenemos que $\displaystyle \Imagen\left(\ev_{i}\right) = \Z[i] $ y $\displaystyle \Ker\left(\ev_{i}\right) = \left(x^{2}+1\right)\subset \Z[\mathtt{x}] $. 
+	\item Consideremos ahora $\displaystyle \ev_{i} : \R[\mathtt{x}] \to \C : p\left(\mathtt{x}\right) \to p\left(i\right) = a + bi $. Obtenemos que $\displaystyle \Imagen\left(\ev_{i}\right) = \C $ y $\displaystyle \Ker\left(\ev_{i}\right) = \left(x^{2}+1\right) $. Por el primer teorema de isomorfía tenemos que $\displaystyle \R[\mathtt{x}]/\left(x^{2}+1\right) \cong \C $. 
 \end{enumerate}
 \end{eg}
 

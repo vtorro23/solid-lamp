@@ -1,0 +1,67 @@
+\chapter{Cónicas y cuádricas}
+\begin{notation}
+	De ahora en adelante tomamos $\displaystyle \K = \R, \C $.  
+\end{notation}
+Consideremos el conjunto $\displaystyle \K[x_{0}, \ldots, x_{n}] $ de polinomio scon coeficientes en $\displaystyle \K $ en $\displaystyle n + 1 $ variables.
+\begin{definition}[Polinomios equivalentes]
+	Dos polinomios $\displaystyle p,q \in \K[x_{0}, \ldots, x_{n}] $ son \textbf{equivalentes} si existe $\displaystyle \lambda \in \K^{*} $ tal que $\displaystyle p = \lambda q $. 
+\end{definition}
+\begin{definition}[Polinomio homogéneo]
+	Un polinomio $\displaystyle p \in \K[x_{0}, \ldots, x_{n}] $ es \textbf{homogéneo} si todos los monomios tienen el mismo grado. Equivalentemente, existe $\displaystyle d $ tal que $\displaystyle p\left(tx_{0}, \ldots, tx_{n}\right) = t ^{d}p\left(x_{0}, \ldots, x_{n}\right) $.
+\end{definition}
+\begin{eg}
+El polinomio $\displaystyle x_{1}^{2} + x_{1}x_{2} $ es homogéneo, pero el polinomio $\displaystyle x_{0}^{2} + x_{1} + x_{2}+1 $ no es homogéneo.
+\end{eg}
+\begin{definition}[Hipersuperficie y soporte]
+	Una \textbf{hipersuperficie} de $\displaystyle \mathbb{P}^{n} $ en la referencia $\displaystyle \mathcal{R} $, es la clase de equivalencia $\displaystyle [F] $ de un polinomio homogéneo $\displaystyle F \in \K[x_{0}, \ldots, x_{n}]$. El \textbf{soporte}  de $\displaystyle [F] $ es el conjunto $\displaystyle V\left(F\right) = \left\{ \left[x_{0} : \cdots :x_{n}\right] \; : \; F\left(x_{0}, \ldots , x_{n}\right) = 0\right\}  $. 
+\end{definition}
+\begin{observation}
+	El conjunto $\displaystyle V\left(F\right) $ está bien definido. En efecto, si $\displaystyle \left[x_{0}: \cdots : x_{n}\right] \in V\left(F\right) $ y $\displaystyle \left[x_{0} : \cdots : x_{n}\right] = \left[y_{0} : \cdots : y_{n}\right]  $, tenemos que existe $\displaystyle \lambda \in \K^{*} $ tal que $\displaystyle \left(y_{0}, \ldots, y_{n}\right) = \lambda \left(x_{0}, \ldots, x_{n}\right) $. Así, tendremos que 
+	\[F\left(y_{0}, \ldots, y_{n}\right) = F\left(\lambda x_{0}, \ldots, \lambda x_{n}\right) = \lambda ^{d}F\left(x_{0}, \ldots, x_{n}\right) = \lambda^{d} \cdot 0 = 0 .\]
+\end{observation}
+\begin{definition}[Cónicas y cuádricas]
+	Una \textbf{cuádrica} es una hipersuperficie $\displaystyle \left[F\right]  $ con $\displaystyle \grad\left(F\right) = 2 $. Una \textbf{cónica} es una cuádrica en $\displaystyle \mathbb{P}^{2} $. 
+\end{definition}
+\begin{definition}[Equivalencia de cuádricas]
+	Dos cuádricas $\displaystyle [F] $ y $\displaystyle [G] $ de $\displaystyle \mathbb{P}^{n} $ son \textbf{equivalentes} si existe una homografía $\displaystyle \varphi : \mathbb{P}^{n} \to \mathbb{P}^{n} $ tal que $\displaystyle \left[F\left(x_{0}, \ldots, x_{n}\right)\right] = \left[G\left(\hat{\varphi}\left(x_{0}, \ldots, x_{n}\right)\right)\right]  $. 
+\end{definition}
+Sea $\displaystyle F $ un polinomio homogéneo de grado 2. Entonces, tendremos que 
+\[F = \sum^{n}_{i = 0}\sum^{n}_{j = i}a_{ij}x_{i}x_{j} .\]
+Podemos poner,
+\[M\left(F\right) = \begin{pmatrix} a_{00} & \frac{a_{01}}{2} & \cdots & \frac{a_{0n}}{2} \\ \frac{a_{01}}{2} & a_{11} & \cdots & \frac{a_{1n}}{2} \\ \vdots & \vdots & \vdots & \vdots \\ \frac{a_{0n}}{2} & \frac{a_{1n}}{2} & \cdots & a_{nn} \end{pmatrix} .\]
+Es una matriz simétrica. Podemos ver que
+\[\left(x_{0}, \ldots, x_{n}\right)M\left(F\right)\begin{pmatrix} x_{0} \\ \vdots \\ x_{n} \end{pmatrix}= F\left(x_{0}, \ldots, x_{n}\right) .\]
+Si $\displaystyle \varphi : \mathbb{P}^{n} \to \mathbb{P}^{n} $ es una homografía, entonces
+\[\left(x_{0}, \ldots, x_{n}\right)M\left(F\left(\hat{\varphi}\right)\right)\begin{pmatrix} x_{0} \\ \vdots \\ x_{n} \end{pmatrix} = \hat{\varphi}\left(x_{0}, \ldots, x_{n}\right)M\left(F\right)\hat{\varphi}\begin{pmatrix} x_{0} \\ \vdots \\ x_{n} \end{pmatrix} = \left(M\left(\hat{\varphi}\right)\begin{pmatrix} x_{0} \\ \vdots \\ x_{n} \end{pmatrix}\right)^{T}M\left(F\right)M\left(\hat{\varphi}\right)\begin{pmatrix} x_{0} \\ \vdots \\ x_{n} \end{pmatrix} .\]
+Por lo que 
+\[\left(x_{0}, \ldots, x_{n}\right)M\left(\hat{\varphi}\right)^{T}M\left(F\right)M\left(\hat{\varphi}\right)\begin{pmatrix} x_{0} \\ \vdots \\ x_{n} \end{pmatrix} .\]
+Así, hemos demostrado el siguiente lema:
+\begin{lema}
+	Dos cuádricas $\displaystyle [F] $ y $\displaystyle [G] $ son equivalentes si y solo si existe $\displaystyle C \in \GL $ tal que $\displaystyle [M\left(C\right)] = \left[C^{T}M\left(F\right)C\right]  $.
+\end{lema}
+\begin{observation}
+Así, tenemos que el problema de clasificar cuádricas proyectivas es equivalente a clasificar matrices simétricas por convergencia. 
+\end{observation}
+\begin{theorem}
+Sea $\displaystyle A \in \mathcal{M}_{n \times n}\left(\K\right) $ con $\displaystyle \char\left(\K\right) \neq 2 $. Entonces, $\displaystyle A $ es congruente con una matriz diagonal si y solo si $\displaystyle A $ es simétrica.
+\end{theorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Supongamos que $\displaystyle A = P^{T}DP $ con $\displaystyle D $ diagonal. Tenemos que
+	\[A^{T} = \left(P^{T}DP\right)^{T} = P^{T}D^{T}P = P^{T}DP = A .\]
+	Como $\displaystyle A^{T} = A $ tenemos que $\displaystyle A $ es simétrica.
+\item[(ii)] Supongamos que $\displaystyle A $ es simétrica y procedemos por inducción. 
+	\begin{itemize}
+	\item Si $\displaystyle n = 1 $, tenemos que $\displaystyle A = \left(a\right)$ que es diagonal. 
+	\item Si $\displaystyle n > 1 $, tenemos que $\displaystyle A $ es simétrica por lo que
+		\[A = \begin{pmatrix} a_{11} & \cdots & a_{1n} \\ 
+		\vdots & & \vdots \\
+	a_{n1} & \cdots & a_{nn}\end{pmatrix} , \quad a_{ij} = a_{ji}.\]
+	Si $\displaystyle a_{11} \neq 0 $, podemos considerar
+			\[P^{T} = \begin{pmatrix} 1 & & &  \\ -\frac{a_{21}}{a_{11}}& 1 & & \\ \vdots & & & \\ -\frac{a_{n1}}{a_{11}} & & & 1 \end{pmatrix} \Rightarrow P^{T}AP = \begin{pmatrix} a_{11} & 0 & 0 \\ 0 & A' \\ 0 & &  \end{pmatrix}.\]
+Por inducción, existe $\displaystyle P' $ tal que $\displaystyle P'^{T}A'P' = D $ es diagonal. Así, tenemos que 
+\[\left(P\begin{pmatrix} 1 & 0 & 0 \\ 0 & P' \\ 0 & &  \end{pmatrix}\right)^{T}AP\begin{pmatrix} 1 & 0 & 0 \\ 0 & P' \\ 0 & &  \end{pmatrix} = \begin{pmatrix} a_{11} & 0 & 0 \\ 0 & D \\ 0 & &  \end{pmatrix}.\]
+	\end{itemize}
+\end{description}
+\end{proof}
+

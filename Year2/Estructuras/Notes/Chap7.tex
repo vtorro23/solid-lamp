@@ -1,0 +1,70 @@
+\chapter{Divisibilidad y factorización}
+\begin{notation}
+De ahora en adelante $\displaystyle A $ denota un dominio de integridad, es decir, un anillo conmutativo unitario que no tiene divisores de cero. Además, denotaremos $\displaystyle A^{*} = A / \left\{ 0\right\}  $.
+\end{notation}
+\begin{definition}
+Sea $\displaystyle A $ un anillo y $\displaystyle a,b \in A $. Diremos que $\displaystyle a $ \textbf{divide} a $\displaystyle b $, $\displaystyle a|b $, si existe $\displaystyle c \in A $ tal que $\displaystyle b = ac $. Diremos que $\displaystyle a $ y $\displaystyle b $ son \textbf{asociados} si $\displaystyle a|b $ y $\displaystyle b|a $.
+\end{definition}
+\begin{prop}
+Sea $\displaystyle A $ dominio de integridad. Tenemos que $\displaystyle a,b \in A^{*} $ son asociados si y solo si $\displaystyle a = ub $ con $\displaystyle u \in \mathcal{U}\left(A\right) $.
+\end{prop}
+\begin{proof}
+\begin{description}
+\item[(i)] Si $\displaystyle a $ y $\displaystyle b $ son asociados, existen $\displaystyle c,d \in A $ tales que $\displaystyle a = bc $ y $\displaystyle b = ad $, así,
+\[a = bc = \left(adc\right) = a \left(dc\right) \Rightarrow a\left(1-dc\right) = 0 .\]
+Como $\displaystyle A $ es cominio de integridad debe ser que $\displaystyle a = 0 $ o $\displaystyle 1 - dc = 0 $. Como $\displaystyle a \in A^{*} $ debe ser que $\displaystyle 1 - cd = 0 $, por lo que $\displaystyle cd = 1 $.
+\item[(ii)] Recíprocamente, si $\displaystyle a = ub $ tenemos que $\displaystyle b | a $. Como $\displaystyle u \in \mathcal{U}\left(A\right) $ tenemos que 
+\[b = u^{-1}a = u^{-1}\left(ub\right) \Rightarrow a | b .\]
+\end{description}
+\end{proof}
+\begin{observation}
+La relación $\displaystyle a\sim b \iff  $ $\displaystyle a $ y $\displaystyle b  $ son asociados es una relación de equivalencia.
+\end{observation}
+\begin{eg}
+\begin{enumerate}
+\item En $\displaystyle \Z $, $\displaystyle n,m \in \Z $ son asociados si y solo si $\displaystyle n = \pm m$. 
+\item En $\displaystyle \R[\mathtt{x}] $ tenemos que los polinomios $\displaystyle p\left(\mathtt{x}\right) = \mathtt{x}^{2}-\mathtt{x}+1 $ y $\displaystyle q\left(\mathtt{x}\right) = 2\mathtt{x}^{2}-2\mathtt{x}+2 = 2p\left(\mathtt{x}\right) $, son asociados, puesto que $\displaystyle 2 \in \mathcal{U}\left(\R[\mathtt{x}]\right) = \R^{*} $.
+\end{enumerate}
+\end{eg}
+\begin{definition}[Elemento irreducible y primo]
+Sea $\displaystyle A $ un anillo y $\displaystyle a \in A^{*}/\mathcal{U}\left(A\right) $. 
+\begin{enumerate}
+\item Diremos que $\displaystyle a $ es \textbf{irreducible} si no existen $\displaystyle b,c \in A^{*}/\mathcal{U}\left(A\right) $ tales que $\displaystyle a = bc $.
+\item Diremos que $\displaystyle a $ es \textbf{primo} si $\displaystyle \forall b,c \in A $ tal que $\displaystyle a | bc $, entonces $\displaystyle a | b $ o $\displaystyle a | c $.
+\end{enumerate}
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+\item Si $\displaystyle a \in A $ es primo, $\displaystyle \left(a\right) $ también es primo. El recíproco también es cierto.
+\item Si $\displaystyle a \in A^{*}/\mathcal{U}\left(A\right) $ divide a $\displaystyle b $ irreducible, entonces $\displaystyle a $ y $\displaystyle b $ son asociados. En efecto, si $\displaystyle b = ac $, como $\displaystyle b $ es irreduble debe ser que $\displaystyle c \in \mathcal{U}\left(A\right) $.
+\end{enumerate} 
+\end{observation}
+\begin{lema}
+Sea $\displaystyle a \in A^{*}/\mathcal{U}\left(A\right) $. Si $\displaystyle a $ es primo, entonces $\displaystyle a $ es irreducible. 
+\end{lema}
+\begin{proof}
+Como $\displaystyle a $ es primo, $\displaystyle \forall b,c \in A $, si $\displaystyle a |bc $ entonces $\displaystyle a | b $ o $\displaystyle a | c $. Supongamos que $\displaystyle a $ no es irreducible, por lo que $\displaystyle a = bc $ con $\displaystyle b, c\in A^{*}/\mathcal{U}\left(A\right) $. Claramente tenemos que $\displaystyle a | bc $, por lo que $\displaystyle a | b $ o $\displaystyle a | c $. Sin pérdida de generalidad, supongamos que $\displaystyle a | b $, por lo que existe $\displaystyle z \in A $ tal que $\displaystyle b = az $. Así, tenemos que 
+\[a = bc = a\left(zc\right)\Rightarrow a\left(1-zc\right) = 0 \Rightarrow 1 - zc = 0 .\]
+Así, tenemos que $\displaystyle c \in \mathcal{U}\left(A\right) $, que es una contradicción, por lo que debe ser que $\displaystyle a $ es irreducible. 
+\end{proof}
+\begin{eg}
+\begin{enumerate}
+\item En un cuerpo $\displaystyle \K $ no hay elementos irreducibles puesto que $\displaystyle \mathcal{U}\left(\K\right) = \K^{*} $. En consecuencia, tampoco hay elementos primos.
+\item En $\displaystyle \Z $ coincide la noción de primo con la de irreducibilidad.
+\item En $\displaystyle \Z[i] $ el $\displaystyle 2 $ no es irreducible puesto que $\displaystyle 2 = \left(1 + i\right)\left(1 - i\right) $. Como no es irreducible, tampoco es primo.
+\item Consideremos $\displaystyle d \in \Z^{+} $ libre de cuadrados y el anillo $\displaystyle \Z[\sqrt{-d}] = \left\{ a + b\sqrt{-d} \; : \; a,b \in \Z\right\} \subset \C $. Como es subanillo de los complejos es dominio de integridad. Consideremos ahora la aplicación norma
+	\[\varphi: \Z[\sqrt{-d}] \to \N : a + b\sqrt{-d} \to \left|a -b\sqrt{-d}\right| = a^{2}+db^{2} .\]
+	Si $\displaystyle z_{1}, z_{2} \in \Z[\sqrt{-d}] $, entonces 
+	\[\varphi\left(z_{1}z_{2}\right) = \varphi\left(z_{1}\right)\varphi\left(z_{2}\right) .\]
+	Además, como se vio en los ejercicios $\displaystyle z \in \mathcal{U}\left(\Z[\sqrt{-d}]\right) \iff \varphi\left(z\right) = 1 $. Consideremos en particular $\displaystyle d = 5 $. Tenemos que 
+	\[\varphi\left(a+b\sqrt{-5}\right) = a^{2}+5b^{2} \geq 0 .\]
+	Sea $\displaystyle 2 \in \Z\left[\sqrt{-5}\right]  $ y estudiemos si es irreducible. Supongamos que no lo es. Entonces, existe $\displaystyle z_{1}, z_{2} \in \Z\left[\sqrt{-5}\right]  $ tales que 
+	\[2 = z_{1}z_{2} \Rightarrow \varphi\left(2\right) = \varphi\left(z_{1}z_{2}\right) \Rightarrow 4 = \varphi\left(z_{1}\right)\varphi\left(z_{2}\right) \Rightarrow \varphi\left(z_{1}\right) = \varphi\left(z_{2}\right) = 2 .\]
+	Sin embargo, no hay elementos en $\displaystyle \Z\left[\sqrt{-5}\right]  $ con norma 2, por lo que 2 es irreducible. Veamos si es primo. Tenemos que 
+	\[2 | \left(1+\sqrt{-5}\right)\left(1-\sqrt{-5}\right) = 6 ,\]
+	pero no divide a ninguno de los dos factores. En efecto, si $\displaystyle 2 | \left(1 + \sqrt{-5}\right) $ tendríamos que existe $\displaystyle z \in \Z\left[\sqrt{-5}\right] /\mathcal{U}\left(\Z\left[\sqrt{-5}\right] \right) $, tal que 
+	\[1 + \sqrt{-5} = 2z \Rightarrow \varphi\left(1+\sqrt{-5}\right) = \varphi\left(2z\right) = 6 = 4\varphi\left(z\right) .\]
+	Esto es una contradicción puesto que $\displaystyle \varphi\left(z\right) \in \N $. Así, tenemos que 2 no es primo. 
+\end{enumerate}
+\end{eg}
+
