@@ -1,4 +1,4 @@
-\chapter{Teorema de la función inversa}
+\section{Teorema de la función inversa}
 \begin{theorem}[Teorema de la función inversa]
 Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle U $; $\displaystyle a\in U $ tal que $\displaystyle \det Jf\left(a\right) \neq 0 $. Entonces, existe $\displaystyle V \subset \R^{n} $ abierto tal que $\displaystyle a \in V \subset U $ y existe $\displaystyle W \subset \R^{n} $ abierto tal que $\displaystyle f\left(a\right) \in W $, tales que $\displaystyle f\left(V\right) = W $ y $\displaystyle f|_{V} : V \to W $ admite una función inversa diferenciable $\displaystyle g = \left(f|_{V}\right)^{-1} : W \to V $, que satisface 
 \[Dg\left(f\left(x\right)\right) = Df\left(x\right)^{-1}, \; \forall x \in V .\]
@@ -112,4 +112,260 @@ Así, tenemos que si $\displaystyle x \in V $, $\displaystyle Dg\left(f\left(x\r
 	y son todas continuas. Por tanto, tenemos que $\displaystyle g $ es de clase $\displaystyle \mathcal{C}^{1} $ siempre. Inductivamente podemos ver que si $\displaystyle f $ es $ \mathcal{C}^{m} $, entonces $\displaystyle g $ es $  \mathcal{C}^{m} $. 
 \end{description}
 \end{proof}
+\section{Teorema de la función implícita}
+\begin{eg}
+Una par $\displaystyle \left(x,y\right) \in \R^{2} $ satisface la ecuación implícita $\displaystyle x^{2}+y^{2} = 1 $ si y solo si satisface
+\[y = \sqrt{1-x^{2}} \quad \text{o} \quad y = -\sqrt{1-x^{2}} .\]
+Podemos considerar $\displaystyle F\left(x\right) = x^{2}+y^{2}-1 $ y $\displaystyle f\left(x\right) = \sqrt{1-x^{2}} $ y $\displaystyle g\left(x\right)= -\sqrt{1-x^{2}} $. Tendremos que $\displaystyle F\left(x,y\right) = 0 \iff f\left(x\right) = 0  $ o $\displaystyle g\left(x\right) = 0 $, dependiendo del conjunto en el que estemos.
+\end{eg}
+\begin{notation}
+Sea $\displaystyle U \subset \R^{n} \times \R^{m}\cong\R^{n+m} $ abierto, $\displaystyle F: U \to \R^{m} $ de clase $\displaystyle \mathcal{C}^{1} $. Denotamos los elementos de $\displaystyle U $ como $\displaystyle \left(x,y\right) = \left(x_{1}, \ldots, x_{n} ; y_{1}, \ldots, y_{m}\right) $. Para $\displaystyle \left(x_{0}, y_{0}\right) \in U $,
+\[JF\left(x_{0}, y_{0}\right) = \begin{pmatrix} \frac{\partial F_{1}}{\partial x_{1}} & \cdots & \frac{\partial F_{1}}{\partial x_{n}} & \frac{\partial F_{1}}{\partial y_{1}} & \cdots & \frac{\partial F_{1}}{\partial y_{m}} \\ \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\ \frac{\partial F_{m}}{\partial x_{1}} & \cdots & \frac{\partial F_{m}}{\partial x_{n}} & \frac{\partial F_{m}}{\partial y_{1}} & \cdots & \frac{\partial F_{m}}{\partial y_{m}} \end{pmatrix} .\]
+A la submatriz izquierda la denotamos $\displaystyle D_{1}F\left(x_{0}, y_{0}\right) $ y a la de la derecha la llamamos $\displaystyle D_{2}F\left(x_{0}, y_{0}\right) $. 
+\end{notation}
+\begin{theorem}[Teorema de la función implícita]
+Sean $\displaystyle U \subset \R^{n} \times \R^{m} \cong \R^{n+m} $ abierto, $\displaystyle F : U \to \R^{m} $ de clase $\displaystyle \mathcal{C}^{1} $, $\displaystyle \left(x_{0}, y_{0}\right) \in U $ tal que $\displaystyle F\left(x_{0}, y_{0}\right) = 0 $ y $\displaystyle \det\left(D_{2}F\left(x_{0}, y_{0}\right)\right) \neq 0 $. 
+Existe $\displaystyle V \subset \R^{n} $ abierto con $\displaystyle x_{0} \in V $ y existe $\displaystyle W \subset \R^{m} $ abierto con $\displaystyle y_{0} \in W $ con $\displaystyle V \times W \subset U $, tales que existe $\displaystyle f : V \to W $ de clase $\displaystyle \mathcal{C}^{1} $ tal que $\displaystyle \forall \left(x,y\right) \in V \times W $,
+\[ F\left(x,y\right) = 0 \iff y = f\left(x\right).\]
+Además, $\displaystyle \forall x \in V $,
+\[Jf\left(x\right) = -D_{2}F\left(x,f\left(x\right)\right)^{-1} \cdot D_{1}F\left(x,f\left(x\right)\right) .\]
+Si $\displaystyle F \in \mathcal{C}^{k} $, entonces $\displaystyle f \in \mathcal{C}^{k} $ para $\displaystyle k \in \N $.
+\end{theorem}
+\begin{notation}
+Tenemos que en $\displaystyle V \times W $,
+\[
+\begin{cases}
+F_{1}\left(x_{1}, \ldots, x_{n}; y_{1}, \ldots, y_{m}\right) = 0 \\
+\vdots \\
+F_{m}\left(x_{1}, \ldots, x_{n}; y_{1}, \ldots, y_{m}\right) = 0
+\end{cases} 
+\iff 
+\begin{cases}
+y_{1} = f_{1}\left(x_{1}, \ldots, x_{n}\right) \\
+\vdots \\
+y_{m} = f_{m}\left(x_{1}, \ldots, x_{n}\right)
+\end{cases}
+.\]
+Muchas veces omitiremos la función $\displaystyle f $ y denotaremos 
+\[
+\begin{cases}
+y_{1} = y_{1}\left(x_{1}, \ldots, x_{n}\right) \\
+\vdots \\ 
+y_{m} = y_{m}\left(x_{1}, \ldots, x_{n}\right)
+\end{cases}
+.\]
+\end{notation}
+\begin{proof}
+No veremos la demostración pero daremos una idea de cómo se demuestra. Definimos 
+\[H:U \subset \R^{n} \times \R^{m} \to \R^{n} \times \R^{m} : \left(x,y\right) \to \left(x, F\left(x,y\right)\right) .\]
+Tendremos pues
+\[JH\left(x_{0},y_{0}\right) = \begin{pmatrix} Id & 0 \\ D_{1}F\left(x_{0}, y_{0}\right) & D_{2}F\left(x_{0}, y_{0}\right) \end{pmatrix} .\]
+Por tanto, obtenemos que $\displaystyle \det\left(DH\left(x_{0}, y_{0}\right)\right) \neq 0 $, por lo que $\displaystyle H $ es localmente invertible alrededor de $\displaystyle \left(x_{0}, y_{0}\right) $ y $\displaystyle F\left(x,y\right) = 0 \iff H\left(x,y\right) = \left(x,0\right) $. Si consideramos $\displaystyle A = \left\{ \left(x,y\right) \; : \; F\left(x,y\right) = 0\right\}  \subset U$, tenemos que $\displaystyle H|_{A} : A \to B $ es invertivle y podemos considerar $\displaystyle G = \left(H|_{A}\right)^{-1} $.
+\end{proof}
+\begin{eg}
+\begin{enumerate}
+\item Consideremos $\displaystyle z^{3}+x\left(z-y\right) = 1 $. Nos preguntamos si podemos despejar $\displaystyle z = z\left(x,y\right) $ alrededor de $\displaystyle p = \left(0,0,1\right) $. Tenemos que 
+	\[F\left(x,y,z\right) = z^{3}+x\left(z-y\right)-1, \; U = \R^{3} .\]
+Podemos observar varias cosas:
+\begin{itemize}
+\item $\displaystyle F \in \mathcal{C}^{\infty} $ en $\displaystyle \R^{3} $.
+\item $\displaystyle F\left(p\right) = F\left(0,0,1\right) = 0 $.
+\item En este caso tenemos que $\displaystyle JF = \nabla F = \left(\frac{\partial F}{\partial x}, \frac{\partial F}{\partial y}, \frac{\partial F}{\partial z}\right) = \left(z-y, -x, 3z^{2}+x\right)$. En nuestro caso tenemos que $\displaystyle n = 2 $ y $\displaystyle m = 1 $. 
+	\[JF\left(p\right) = \left(1,0,3\right) \Rightarrow \det\left(D_{2}F\left(p\right)\right) = 3 \neq 0 .\]
+\end{itemize}
+Como se cumplen las hipótesis del teorema, existen $\displaystyle V^{\left(0,0\right)} \subset \R^{2} $, $\displaystyle W^{1} \subset \R $ y $\displaystyle f : V \to W $ de clase $\displaystyle \mathcal{C}^{\infty} $ tal que $\displaystyle \forall \left(x,y,z\right) \in V \times W $,
+\[F\left(x,y,z\right) = 0 \iff z = f\left(x,y\right) .\]
+Además, $\displaystyle \forall \left(x,y\right) \in V $, tenemos que 
+\[h\left(x,y\right) := F\left(x,y,f\left(x,y\right)\right) = 0 .\]
+\[\Rightarrow 
+\begin{cases}
+0 = \frac{\partial h}{\partial x} = \frac{\partial F}{\partial x} \cdot 1 + \frac{\partial F}{\partial y} \cdot 0 + \frac{\partial F}{\partial z}\frac{\partial f}{\partial x} \\
+0 = \frac{\partial h}{\partial y} = \frac{\partial F}{\partial x} \cdot 0 + \frac{\partial F}{\partial y} \cdot 1 + \frac{\partial F}{\partial z}\frac{\partial f}{\partial z}
+\end{cases}
+.\]
+Así, tenemos que 
+\[\frac{\partial f}{\partial x} = - \frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial z}} = -\frac{1}{3}, \quad \frac{\partial f}{\partial y}= - \frac{\frac{\partial F}{\partial y}}{\frac{\partial F}{\partial z}} = 0 .\]
+Podemos calcular también las derivadas de segundo orden. 
+\[\frac{\partial^{2}f}{\partial x^{2}} = \frac{\partial }{\partial x}\left(\frac{\partial f}{\partial x}\right) = \frac{\partial }{\partial x}\left(\frac{y-z}{3z^{2}+x}\right) = \frac{-\frac{\partial f}{\partial x}\left(3z^{2}+x\right)-\left(y-z\right)\left(6z\frac{\partial f}{\partial x}+1\right)}{\left(3z^{2}+x\right)^{2}}  .\]
+En $\displaystyle p $, es fácil ver que la derivada segunda será 0. El resto de derivadas segundas se calculan de forma análoga. \\ 
+Otra manera de calcular las derivadas es de forma implícita:
+\[\frac{\partial }{\partial x}\left(z^{3}+x\left(z-y\right)\right) = 0 \Rightarrow 3z^{2}\frac{\partial f}{\partial x} + \left(z-1\right) + x \frac{\partial f}{\partial x} = 0 .\]
+\[\frac{\partial }{\partial y}\left(z^{3}+x\left(z-y\right)\right)= 0 \Rightarrow 3z^{2}\frac{\partial f}{\partial y}+x\left(\frac{\partial f}{\partial y }-1\right)= 0 .\]
+\item Consideremos el sistema 
+	\[
+	\begin{cases}
+	xu^{3} +y^{2}v^{3} + z^{2} - 1 = 0 \\
+	2xy^{3} + uv^{2} + vz = 0
+	\end{cases}
+	,\]
+y el punto $\displaystyle p = \left(0,1,0,0,1\right) $. Buscamos despejar $\displaystyle u $ y $\displaystyle v $. Veamos que se cumplen las condiciones del teorema:
+\begin{itemize}
+\item $\displaystyle F \in \mathcal{C}^{\infty} $, $\displaystyle F : \R^{3}\times\R^{2} \to \R^{2} $. 
+\item $\displaystyle F\left(0,1,0,0,1\right) = \left(0,0\right) $.
+\item Calculamos $\displaystyle \det\left(D_{2}F\left(p\right)\right) $. 
+	\[JF = \begin{pmatrix} \nabla F_{1} \\ \nabla F_{2} \end{pmatrix} = \begin{pmatrix} u^{3} & 2yv^{3} & 2z & 3xu^{2} & 3v^{2}y^{2} \\ 2y^{3} & 6xy^{2} & v & v^{2} & 2uv+z \end{pmatrix}.\]
+	Así, tendremos que $\displaystyle D_{2}F = \begin{pmatrix} 3xu^{2} & 3v^{2}y^{2} \\ v^{2} & 2uv +z \end{pmatrix} $. Claramente $\displaystyle \det\left(D_{2}F\left(p\right)\right) = -3 \neq 0 $. 
+\end{itemize}
+Así, tenemos que existen $\displaystyle V^{\left(0,1,0\right)} \subset \R^{3} $, $\displaystyle W ^{\left(0,1\right)}\subset \R^{2} $ y $\displaystyle f : V \to W $ tales que $\displaystyle \forall \left(x,y,z,u,v\right) \in V \times W $,
+\[F\left(x,y,z,u,v\right) = 0 \iff \left(u,v\right) = f\left(x,y,z\right) .\]
+Tenemos que el jacobiano de $\displaystyle f $ evaluado en $\displaystyle p $ será
+\[Jf\left(p\right) = \begin{pmatrix} \frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} & \frac{\partial u}{\partial z} \\ \frac{\partial v}{\partial x} & \frac{\partial v}{\partial y} & \frac{\partial v}{\partial z} \end{pmatrix} = -\begin{pmatrix} 0 & 3 \\ 1 & 0 \end{pmatrix}^{-1}\begin{pmatrix} 0 & 2 & 0 \\ 2 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 2 & 0 & 1 \\ 0 & \frac{2}{3} & 0 \end{pmatrix} .\]
+Si derivamos de forma implícita:
+\[
+\begin{cases}
+u^{3} + 3xu^{2}\frac{\partial u}{\partial x} + 3y^{2}v^{2}\frac{\partial v}{\partial x} = 0 \\
+2y^{3} + \frac{\partial u}{\partial x}v^{2} + 2uv\frac{\partial v}{\partial x} + \frac{\partial v}{\partial z}z = 0
+\end{cases}
+.\]
+Para calcular las derivadas tenemos que resolver el sistema.
+\end{enumerate}
+\end{eg}
+\section{Extremos condicionados}
+\begin{eg}
+	Calcular el máximo y el mínimo valor de $\displaystyle f\left(x,y\right) = 2x+3y $ sobre la elipse $\displaystyle E = \left\{ \left(x,y\right) \; : \; x^{2}+4y^{2} = 1\right\}  $. \\
+	Tenemos que $\displaystyle f $ es continua en $\displaystyle \R^{2} $ y $\displaystyle E $ es compacto, por lo que existen $\displaystyle p_{m}, p_{M} \in E $ tales que 
+	\[f\left(p_{m} \right)\leq f\left(p\right) \leq f\left(p_{M}\right), \; \forall p \in E .\]
+Tenemos que $\displaystyle \nabla f\left(x,y\right) = \left(2,3\right) \neq \left(0,0\right) $ y $\displaystyle f $ es lineal. El problema se puede ver de más sencillamente de forma geométrica. Buscamos el punto $\displaystyle \left(x,y\right) \in E $ tal que $\displaystyle \nabla F\left(x,y\right) = \nabla f\left(x,y\right) $, es decir, existe $\displaystyle \lambda \in \R $ con 
+\[\nabla f\left(x,y\right) = \lambda \nabla F\left(x,y\right) ,\]
+donde $\displaystyle F\left(x,y\right) = x^{2}+4y^{2}-1 $. Como $\displaystyle \nabla F\left(x,y\right) = \left(2x,8y\right) $, tenemos que resolver el sistema
+\[
+\begin{cases}
+2 = \lambda 2x \\ 
+3 = \lambda 8y \\ 
+x^{2}+4y^{2} = 1
+\end{cases}
+.\]
+Obtenemos dos puntos: $\displaystyle p_{1} = \left(\frac{4}{5}, \frac{3}{10}\right) $ y $\displaystyle p_{2} = \left(-\frac{4}{5}, \frac{3}{10}\right) $. Así, obtenemos que el máximo y el mínimo de $\displaystyle f $ serán, 
+\[f\left(p_{1}\right)=\frac{25}{10} \quad \text{y} \quad f\left(p_{2}\right) = -\frac{25}{10},\]
+respectivamente. 
+\end{eg}
+\begin{definition}[Variedades diferenciables implícitas]
+	Sean $\displaystyle 1\leq k \leq n $; $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle F : U \to \R^{k} $ de clase $\displaystyle \mathcal{C}^{m} $. Consideramos el conjunto 
+	\[M = \left\{ x \in U \; : \; F\left(x\right) = 0\right\} = \left\{ x \in U \; : \; F_{1}\left(x\right) = 0, \ldots, F_{k}\left(x\right) = 0\right\}  .\]
+Supongamos que $\displaystyle \forall x \in U $ la matriz $\displaystyle JF\left(x\right) $ tiene rango $\displaystyle k $. Decimos entonces que $\displaystyle M $ es una \textbf{variable diferenciable} de clase $\displaystyle \mathcal{C}^{p} $ en $\displaystyle \R^{n} $, con dimensión $\displaystyle d = n - k  $. Diremos también que 
+\[
+\begin{cases}
+F_{1}\left(x_{1}, \ldots, x_{n}\right) = 0 \\
+\vdots \\ 
+F_{k}\left(x_{1}, \ldots, x_{n}\right) = 0
+\end{cases}
+\]
+son las \textbf{ecuaciones implícitas} de $\displaystyle M $.
+\end{definition}
+\begin{definition}[Espacio normal y tangente]
+	Dada una variedad diferenciable $\displaystyle M $,
+	decimos que 
+	\[N_{p}\left(M\right) = L\left( \left\{ \nabla F_{1}\left(p\right), \ldots, \nabla F_{k}\left(p\right)\right\} \right) \]
+	es el \textbf{espacio vectorial normal} a $\displaystyle M $ en $\displaystyle p $. Por otro lado, decimos que 
+	\[T_{p}\left(M\right) = L\left( \left\{ \nabla F_{1}\left(p\right), \ldots, \nabla F_{k}\left(p\right)\right\} \right)^{\perp} ,\]
+	es el \textbf{espacio vectorial tangente} a $\displaystyle M $ en $\displaystyle p $. 
+\end{definition}
+\begin{eg}
+\begin{enumerate}
+	\item Consideremos $\displaystyle M = \left\{ \left(x,y,z\right) \; : \; x^{2}+y^{2}+z^{2} = 1\right\} \subset \R^{3} $ y 
+		\[F\left(x,y,z\right) = x^{3}+y^{3}+z^{3}-1 .\]
+Para que sea variedad debe ser que $\displaystyle \nabla F = \left(2x, 2y, 2z\right) $ tenga rango máximo en $\displaystyle M $, que lo tiene puesto que es 0 si y solo si $\displaystyle \left(x,y,z\right)=\left(0,0,0\right) $. 
+\item Consideremos $\displaystyle M = \left\{ \left(x,y,z\right) \;  :\; x^{2}+xy+y^{2}+z^{2} = 1\right\} \subset \R^{3} $ y 
+	\[F\left(x,y,z\right)=x^{2}+xy+y^{2}+z^{2}-1 ,\]
+	que es de clase infinito. Tenemos que 
+	\[\nabla F = \left(2x+y, 2y+x, 2z\right) .\]
+	Si $\displaystyle \nabla F = 0 $, resolviendo el sistema obtenemos que no tiene solución más que la trivial, que no pertenece a nuestro conjunto, por lo que sí es una variedad diferencial. 
+\item Sea $\displaystyle M = \left\{ \left(x,y,z\right) \; : \; x^{2}+y^{2}+z^{2} = 1 , \; x + y +z = 0\right\}  $. Las ecuaciones implícitas son,
+\[
+\begin{cases}
+F_{1}\left(x,y,z\right)=x^{2}+y^{2}+z^{2}-1\\
+F_{2}\left(x,y,z\right)=x+y+z
+\end{cases}
+.\]
+Queremos ver si el rango es máximo,
+\[\ran\begin{pmatrix} \nabla F_{1} \\ \nabla F_{2} \end{pmatrix} = \begin{pmatrix} 2x & 2y & 2z \\ 1 & 1 & 1 \end{pmatrix} .\]
+Como $\displaystyle \left(x,y,z\right) = \left(0,0,0\right) \in M $, no se trata de una variedad diferenciable.	
+\end{enumerate}
+\end{eg}
+\begin{theorem}[Teorema de los multiplicadores de Lagrange]
+	Sean $\displaystyle 1\leq k < n $; $\displaystyle U \subset \R^{n} $ abierto; $\displaystyle F : U \to \R^{k} $ de clase $\displaystyle \mathcal{C}^{1} $, donde $\displaystyle F = \left(F_{1}, \ldots, F_{k}\right) $. Supongamos que $\displaystyle M= \left\{ x \in U \; : \; F\left(x\right) = 0\right\}  $ es una variedad diferenciable. Sea además, $\displaystyle f : U \to \R $ diferenciable. Si $\displaystyle p \in M $ es un punto máximo o mínimo local de $\displaystyle f|_{M} $, entonces existen $\displaystyle \lambda_{1}, \ldots, \lambda_{k} $ (a los que llamaremos \textbf{multiplicadores de Lagrange}) tales que 
+	\[\nabla f\left(p\right) = \sum^{k }_{i = 1}\lambda_{i}\nabla F_{i}\left(p\right) .\]
+\end{theorem}
+\begin{lema}[Lema del espacio tangente]
+Sea $\displaystyle M \subset \R^{n}$ una variedad diferenciable de clase $\displaystyle \mathcal{C}^{1} $ y sea $\displaystyle p \in M $. Si $\displaystyle w \in \R^{n} $, son equivalentes:
+\begin{enumerate}
+\item $\displaystyle w \in T_{p}\left(M\right) $.
+\item Existe $\displaystyle \gamma : \left(a,b\right) \to \R^{n} $ curva de clase $\displaystyle \mathcal{C}^{1} $ con $\displaystyle \Imagen\left(\gamma \right)\subset M $ y existe $\displaystyle t_{0} \in \left(a,b\right) $ tal que $\displaystyle \gamma\left(t_{0}\right)=p $ y $\displaystyle \gamma'\left(t_{0}\right)=w $.
+\end{enumerate}
+\end{lema}
+\begin{eg}
+\begin{enumerate}
+	\item Calcular el máximo y el mínimo de $\displaystyle f\left(x,y,z\right) = 2x-z^{2} $ en la esfera $\displaystyle S = \left\{ \left(x,y,z\right) \; : \; x^{2} +y^{2} + z^{2} = 5\right\}  $. Como $\displaystyle f $ es continua y $\displaystyle S $ es continuo, existen $\displaystyle p_{m}, p_{M} \in S $ tales que 
+		\[f\left(p_{m}\right) \leq f\left(x\right) \leq f\left(p_{M}\right), \; \forall x \in S .\]
+		Sea $\displaystyle F\left(x,y,z\right) = x^{2} +y^{2} + z^{2} -5 $ y cogemos $\displaystyle S = \left\{ \left(x,y,z\right) \; : \; F\left(x,y,z\right) = 0\right\}  $. Como $\displaystyle k = 1 $, tenemos que $\displaystyle S $ es una variedad diferenciable de clase $\displaystyle \mathcal{C}^{\infty} $ y $\displaystyle \dim S = n - k = 3 - 1 = 2$, siempre que 
+		\[\ran\nabla F = \left(2x, 2y, 2z\right) = 1, \; \forall \left(x,y,z\right) \in S .\]
+	Como esto se da, lo que hemos dicho anteriormente también se cumple. Tenemos que $\displaystyle p_{m} $ y $\displaystyle p_{M} $ son extremos locales de $\displaystyle f|_{S} $, por lo que existe $\displaystyle \lambda \in \R $ tal que $\displaystyle \nabla f = \lambda \nabla F $. Como $\displaystyle \nabla f = \left(2, 0, -2z\right) $, tenemos que
+	\[
+	\begin{cases}
+	2 = \lambda 2x \\
+	0 = \lambda 2y \\
+	-2z = \lambda 2z \\
+	x^{2} +y^{2} +z^{2} = 5
+	\end{cases}
+	.\]
+Debe ser que $\displaystyle y = 0 $ y $\displaystyle x = \frac{1}{\lambda } $, y tenemos dos opciones:
+\begin{itemize}
+\item Si $\displaystyle z = 0 $, tenemos que $\displaystyle x^{2} = 5 $, por lo que $\displaystyle x = \pm \sqrt{5} $ y obtenemos dos posibles puntos
+	\[p_{1} = \left(\sqrt{5}, 0, 0\right) \quad \text{y} \quad p_{2} =\left(-\sqrt{5}, 0, 0\right) .\]
+\item Si $\displaystyle \lambda = -1 $, tenemos que $\displaystyle x = - 1 $ por lo que $\displaystyle z^{2} = 4 $ y $\displaystyle z = \pm 2 $. Así, obtenemos dos puntos
+	\[p_{3} = \left(-1, 0, 2\right) \quad \text{y} \quad p_{4} = \left(-1,0,-2\right) .\]
+\end{itemize}
+Necesariamente debe ser que $\displaystyle p_{m}, p_{M} \in \left\{ p_{1}, p_{2}, p_{3}, p_{4}\right\}  $. Para calcular el valor exacto calculamos el valor de las imágenes
+\[f\left(p_{1}\right)=2\sqrt{5}, \quad f\left(p_{2}\right) = -2\sqrt{5}, \quad f\left(p_{3}\right) = -6, \quad f\left(p_{4}\right)=-6 .\]
+Por tanto, el mínimo se alcanza en $\displaystyle p_{3} $ y $\displaystyle p_{4} $ y el máximo se alcanza en $\displaystyle p_{1} $. 
+\item Calcular el máximo y el mínimo de $\displaystyle f\left(x,y,z\right) = x^{2} +y^{2} +z^{2} +x + y + z $ en $\displaystyle C = \left\{ \left(x,y,z\right) \; : \; x^{2} +y^{2} + z^{2} \leq 4, \; z \leq 1\right\}  $. Como $\displaystyle f $ es continua y $\displaystyle C $ es compacto, existe $\displaystyle p_{m}, p_{M} \in C $ tales que 
+	\[f\left(p_{m}\right) \leq f\left(x\right) \leq f\left(p_{M}\right), \quad \forall x \in C .\]
+Tenemos que 
+\[
+\begin{split}
+	C = & \Int\left(C\right) \cup \partial C \\
+	= &  \left\{x^{2}+y^{2}+z^{2} = 4 , z < 1\right\} \cup \left\{ x^{2}+y^{2}+z^{2} < 4,  z = 1\right\}  \cup \left\{ x^{2} +y^{2}+z^{2} = 4, z = 1\right\} .
+\end{split}
+\]
+Podemos considerar $\displaystyle F\left(x,y,z\right)=x^{2}+y^{2}+z^{2}-4 $ y $\displaystyle G\left(x,y,z\right) = z-1 $. Tenemos que 
+\[\nabla f = \left(2x+1, 2y+1, 2z+1\right) = \left(0,0,0\right) \Rightarrow \left(x,y,z\right) = \left(-\frac{1}{2}, -\frac{1}{2}, -\frac{1}{2}\right) .\]
+Cogemos $\displaystyle p_{0} = \left(-\frac{1}{2}, -\frac{1}{2}, -\frac{1}{2}\right) \in \Int\left(C\right) $. Así, existe $\displaystyle \lambda \in \R $ tal que $\displaystyle \nabla f = \lambda \nabla F $, por lo que 
+\[
+\begin{cases}
+2x+1 = \lambda 2x \\
+2y+1 = \lambda 2y \\
+2z+1 = \lambda 2z \\
+x^{2}+y^{2}+z^{2} = 4 \\
+z < 1
+\end{cases}
+.\]
+De aquí sacamos $\displaystyle x = y = z $ y sacamos dos puntos
+\[p_{1} = \left(\frac{2}{\sqrt{3}}, \frac{2}{\sqrt{3}}, \frac{2}{\sqrt{3}}\right) \not\in M_{1}, \quad p_{2} = \left(-\frac{2}{\sqrt{3}}, -\frac{2}{\sqrt{3}}, -\frac{2}{\sqrt{3}}\right) \in M_{1}.\]
+Así, el único punto que nos vale es $\displaystyle p_{2} $. Por otro lado, existe $\displaystyle \mu \in \R $ tal que $\displaystyle \nabla f = \mu \nabla G $:
+\[
+\begin{cases}
+2x+1 = \mu \cdot 0 \\
+2y+1 = \mu \cdot 0 \\
+2z + 1 = \mu \cdot 1 \\
+z = 1 \\
+x^{2} +y^{2}+z^{2} < 4
+\end{cases}
+.\]
+De aquí sacamos el punto $\displaystyle p_{3} = \left(-\frac{1}{2}, -\frac{1}{2}, 1\right) \in M_{2} $. Ahora estudiamos $\displaystyle M_{3} $ (hay que comprobar previamente que $\displaystyle M_{1}, M_{2} $ y $\displaystyle M_{3} $ son variedades diferenciables). 
+Si $\displaystyle p_{m}, p_{M} \in M_{3} $, existen $\displaystyle \lambda, \mu \in \R $ tales que $\displaystyle \nabla = \lambda \nabla F + \mu \nabla G $. Así, tenemos que
+\[
+\begin{cases}
+2x+1 = \lambda 2x + 0 \cdot \mu \\
+2y+1 = \lambda 2y + 0 \cdot \mu \\
+2z + 1 = \lambda 2z + \mu \cdot 1 \\
+x^{2} +y^{2} +z^{2} = 4 \\
+z = 1
+\end{cases}
+.\]
+De aquí sacamos 
+\[p_{4} = \left(\sqrt{\frac{3}{2}}, \sqrt{\frac{3}{2}}, 1\right) \quad \text{y} \quad p_{5} = \left(-\sqrt{\frac{3}{2}}, -\sqrt{\frac{3}{2}}, 1\right) .\]
+Tenemos que $\displaystyle p_{m}, p_{M} \in \left\{ p_{0}, p_{2}, p_{3}, p_{4}, p_{5}\right\}  $. Comparando los valores de las imágenes obtenemos que el máximo se obtiene en $\displaystyle p_{4} $ con $\displaystyle f\left(p_{4}\right) = 5 +\sqrt{6} $; y el mínimo en $\displaystyle p_{0} $ con $\displaystyle f\left(p_{0}\right) = -\frac{3}{4} $.
+\end{enumerate}
+
+\end{eg}
 

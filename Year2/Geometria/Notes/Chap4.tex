@@ -2,6 +2,7 @@
 \begin{notation}
 	De ahora en adelante tomamos $\displaystyle \K = \R, \C $.  
 \end{notation}
+\section{Clasificación de cuádricas proyectivas}
 Consideremos el conjunto $\displaystyle \K[x_{0}, \ldots, x_{n}] $ de polinomio scon coeficientes en $\displaystyle \K $ en $\displaystyle n + 1 $ variables.
 \begin{definition}[Polinomios equivalentes]
 	Dos polinomios $\displaystyle p,q \in \K[x_{0}, \ldots, x_{n}] $ son \textbf{equivalentes} si existe $\displaystyle \lambda \in \K^{*} $ tal que $\displaystyle p = \lambda q $. 
@@ -43,7 +44,7 @@ Así, hemos demostrado el siguiente lema:
 Así, tenemos que el problema de clasificar cuádricas proyectivas es equivalente a clasificar matrices simétricas por convergencia. 
 \end{observation}
 \begin{theorem}
-Sea $\displaystyle A \in \mathcal{M}_{n \times n}\left(\K\right) $ con $\displaystyle \char\left(\K\right) \neq 2 $. Entonces, $\displaystyle A $ es congruente con una matriz diagonal si y solo si $\displaystyle A $ es simétrica.
+Sea $\displaystyle A \in \mathcal{M}_{n \times n}\left(\K\right) $ con $\displaystyle \Char\left(\K\right) \neq 2 $. Entonces, $\displaystyle A $ es congruente con una matriz diagonal si y solo si $\displaystyle A $ es simétrica.
 \end{theorem}
 \begin{proof}
 \begin{description}
@@ -61,7 +62,164 @@ Sea $\displaystyle A \in \mathcal{M}_{n \times n}\left(\K\right) $ con $\display
 			\[P^{T} = \begin{pmatrix} 1 & & &  \\ -\frac{a_{21}}{a_{11}}& 1 & & \\ \vdots & & & \\ -\frac{a_{n1}}{a_{11}} & & & 1 \end{pmatrix} \Rightarrow P^{T}AP = \begin{pmatrix} a_{11} & 0 & 0 \\ 0 & A' \\ 0 & &  \end{pmatrix}.\]
 Por inducción, existe $\displaystyle P' $ tal que $\displaystyle P'^{T}A'P' = D $ es diagonal. Así, tenemos que 
 \[\left(P\begin{pmatrix} 1 & 0 & 0 \\ 0 & P' \\ 0 & &  \end{pmatrix}\right)^{T}AP\begin{pmatrix} 1 & 0 & 0 \\ 0 & P' \\ 0 & &  \end{pmatrix} = \begin{pmatrix} a_{11} & 0 & 0 \\ 0 & D \\ 0 & &  \end{pmatrix}.\]
+Si $\displaystyle a_{11} = 0 $, podemos considerar varios casos:
+\begin{itemize}
+\item Si $\displaystyle a_{1i} = 0 $, $\displaystyle \forall i = 1, \ldots, n $, tenemos que 
+	\[A = \begin{pmatrix} 0 & 0 & 0 \\ 0 & A' \\ 0 & &  \end{pmatrix} .\]
+	Por hipótesis de inducción exiset $\displaystyle P' $ tal que $\displaystyle P'^{T}A'P = D' $ diagonal, por lo que 
+	\[\begin{pmatrix} 1 & 0 & 0 \\ 0 & P' \\ 0 & &  \end{pmatrix}^{T}A\begin{pmatrix} 1 & 0 & 0 \\ 0 & P' \\ 0 & &  \end{pmatrix} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & D \\ 0 & &  \end{pmatrix},\]
+	que es diagonal. 
+\item Si existe $\displaystyle a_{1i} \neq 0 $, tenemos que 
+	\[\begin{pmatrix} 1 & \cdots & 1 & \cdots & \\ \vdots & & 0& & \\
+	& & & & 1\end{pmatrix}A\begin{pmatrix} 1 & \cdots & 1 & \cdots & \\ \vdots & & 0& & \\
+	& & & & 1\end{pmatrix}^{T} = \begin{pmatrix} 2a_{ii} & \times & \times \\ \times &  \\ \times & &  \end{pmatrix} ,\]
+	que es simétrica y $\displaystyle 2a_{ii} \neq 0 $, por lo que podemos usar el caso $\displaystyle a_{11} \neq 0 $ y concluimos que existe $\displaystyle P  $ tal que
+\[P^{T}\begin{pmatrix} 1 & \cdots & 1 & \cdots & \\ \vdots & & 0& & \\
+	& & & & 1\end{pmatrix}^{T}A\begin{pmatrix} 1 & \cdots & 1 & \cdots & \\ \vdots & & 0& & \\
+	& & & & 1\end{pmatrix}P = D .\]
+\end{itemize}
 	\end{itemize}
 \end{description}
 \end{proof}
+\begin{observation}
+Supongamos que $\displaystyle \K = \C $. Entonces una matriz diagonal de la forma
+\[D = \begin{pmatrix} d _{1} & & & & \\ & & & & \\ & & d _{r}& & \\ & & &0 &  \end{pmatrix} .\]
+Tenemos que $\displaystyle D $ es congruente con 
+\[\begin{pmatrix} 1 & & & & \\ & & & & \\ & & 1& & \\ & & &0 &  \end{pmatrix} ,\]
+usando que 
+\[\begin{pmatrix} \frac{1}{\sqrt{ d _{1}}} & & & & \\ & & & & \\ & & \frac{1}{\sqrt{d _{r}}}& & \\ & & &0 &  \end{pmatrix}\begin{pmatrix} d _{1} & & & & \\ & & & & \\ & & d _{r}& & \\ & & &0 &  \end{pmatrix}\begin{pmatrix} \frac{1}{\sqrt{d _{1}}} & & & & \\ & & & & \\ & & \frac{1}{\sqrt{d _{r}}}& & \\ & & &0 &  \end{pmatrix} = \begin{pmatrix} 1 & & & & \\ & & & & \\ & & 1& & \\ & & &0 &  \end{pmatrix}.\]
+Si $\displaystyle \K = \R $, 
+\[\begin{pmatrix} \frac{1}{\sqrt{ |d _{1}|}} & & & & \\ & & & & \\ & & \frac{1}{\sqrt{|d _{r}|}}& & \\ & & &0 &  \end{pmatrix}\begin{pmatrix} d _{1} & & & & \\ & & & & \\ & & d _{r}& & \\ & & &0 &  \end{pmatrix}\begin{pmatrix} \frac{1}{\sqrt{|d _{1}|}} & & & & \\ & & & & \\ & & \frac{1}{\sqrt{|d _{r}|}}& & \\ & & &0 &  \end{pmatrix} = \begin{pmatrix} \frac{d _{1}}{ \left|d _{1}\right|} & & & & \\ & & & & \\ & & \frac{d _{r}}{ \left|d _{r}\right|}& & \\ & & &0 &  \end{pmatrix}.\]
+\end{observation}
+\begin{theorem}
+	Toda cuádrica $\displaystyle \left[F\right]  $ de $\displaystyle \mathbb{P}^{n}\left(\C\right) $ es equivalente a la siguiente cuádrica
+	\[x_{0}^{2} + \cdots + x_{r-1}^{2}, \quad r= \ran\left(F\right) ,\]
+	y $\displaystyle \forall t \neq r $, $\displaystyle x_{0}^{2} + \cdots x_{t-1}^{2} $ no es equivalente a $\displaystyle x_{0}^{2} + \cdots + x_{r-1}^{2} $. 
+\end{theorem}
+\begin{proof}
+	Tenemos que $\displaystyle \left[F\right] \sim \left[G\right]  $ si y solo si existe $\displaystyle P $ inversible tal que $\displaystyle P^{T}M\left(F\right)P = \lambda M\left(G\right) $. Como $\displaystyle P $ es invertible, tenemos que $\displaystyle \ran\left(P^{T}M\left(F\right)P\right) = \ran\left(M\left(F\right)\right) = \ran\left(M\left(G\right)\right) $. Por el teorema anterior y la observación sobre $\displaystyle \C $, podemos tomar $\displaystyle M\left(G\right) $ diagonal con $\displaystyle 1's $ en la diagonal, por lo que $\displaystyle \left[G\right]  = \left[x_{0}^{2}+ \cdots +x_{r-1}^{2}\right]  $. \\
+	Si $\displaystyle t \neq r $, tenemos que las matrices
+	\[\begin{pmatrix} 1_{1} & & & & \\ & & & & \\ & & 1_{r}& & \\ & & &0 &  \end{pmatrix} \quad \text{y} \quad \begin{pmatrix} 1_{1} & & & & \\ & & & & \\ & & 1_{t}& & \\ & & &0 &  \end{pmatrix} ,\]
+no son congruentes por matrices inversibles. 	
+\end{proof}
+\begin{theorem}
+Toda cuádrica de $\displaystyle \mathbb{P}^{n}\left(\R\right) $ es equivalente a la siguiente cuádrica
+\[x_{0}^{2}++ x_{p-1}^{2} -x_{p}^{2} - \cdots - x_{r-1}^{2}, \quad r = \ran\left(F\right), \; p \geq r-p ,\]
+y si $\displaystyle t \neq r $ (o $\displaystyle r = t $ y $\displaystyle  q \geq t-q $ y $\displaystyle q \neq p $), entonces $\displaystyle x_{0}^{2} + \cdots + x_{p-1}^{2} -x^{2}_{p}-\cdots - x_{r-1}^{2} $ no es equivalente a $\displaystyle x_{0}^{2} + \cdots + x_{q-1}^{2} -x^{2}_{q} - \cdots -x^{2}_{t-1} $.
+\end{theorem}
+\begin{proof}
+	Tenemos que $\displaystyle \left[F\right] \sim \left[G\right]  $ si y solo si existe $\displaystyle P $ invertible y $\displaystyle \lambda \in \K^{\times} $ tal que $\displaystyle P^{T}M\left(F\right)P = \lambda M\left(G\right) $, por lo que $\displaystyle \ran\left(M\left(F\right)\right) = \ran\left(M\left(G\right)\right) $, por lo que la signatura de $\displaystyle M\left(F\right) $ coincide con la de $\displaystyle \lambda M\left(G\right) $. 
+	Por el teorema y la observación sobre $\displaystyle \R $,
+	\[M\left(F\right) \quad \text{congruente} \quad \begin{pmatrix} 1 & & & & \\ & & & & \\ & & -1& & \\ & & &0 &  \end{pmatrix} ,\]
+	y en el caso que $\displaystyle p < r-p $ podemos multiplicar por $\displaystyle -1 $. Por tanto, $\displaystyle \left[F\right]  = \left[x_{0}^{2}+x_{p-1}^{2} -x_{p}^{2}-\cdots -x_{r}^{2}\right]  $ 
+	y la unicidad viene de la discusión de rango y signatura.
+\end{proof}
+\subsection*{Resumen}
+\begin{itemize}
+\item Las cónicas complejas son equivalentes a una y solo una de las siguientes:
+\[x_{0}^{2} + x_{1}^{2}+x_{2}^{2} \quad \text{o bien} \quad x_{0}^{2}+x_{2}^{2} \quad \text{o bien}\quad x_{0}^{2} .\]
+\item Las cónicas reales son equivalentes a una y solo una de las siguientes:
+\begin{itemize}
+\item De rango 3: $\displaystyle x_{0}^{2}+x_{1}^{2}+x_{2}^{2} $ y $\displaystyle x_{0}^{2}+x_{1}^{2}-x_{2}^{2} $.
+\item De grado 2: $\displaystyle x_{0}^{2} + x_{1}^{2} $ y $\displaystyle x_{0}^{2}-x_{1}^{2} $.
+\item De grado 1: $\displaystyle x_{0}^{2} $.
+\end{itemize}
+\end{itemize}
+\begin{eg}
+Clasifiquemos la cónica 
+\[F = x_{0}^{2}+x_{1}^{2}+2x_{2}^{2}+4x_{0}x_{1}+6x_{0}x_{2} ,\]
+y buscamos la homografía que la lleve a la forma estándar. \\ 
+Tenemos que 
+\[ M\left(F\right) = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 0 \\ 3 & 0 & 2 \end{pmatrix} .\]
+Es fácil ver que $\displaystyle \det\left(M\left(F\right)\right) \neq 0 $, por lo que es de rango 3. Para calcular la signatura estudiamos las raíces de $\displaystyle P_{M\left(F\right)}\left(t\right) $. Como va a tener raíces positivas y negativas tendremos que $\displaystyle \left[F\right] \sim \left[x_{0}^{2}+x_{1}^{2}-x_{2}^{2}\right]  $ en el caso real y $\displaystyle \left[F\right] \sim \left[x_{0}^{2}+x_{1}^{2}+x_{2}^{2}\right]  $ en el caso complejo. La homografía que nos piden es $\displaystyle P $ tal que 
+\[\begin{pmatrix} 1 & & \\ & 1 & \\ &&-1 \end{pmatrix}=P^{T}M\left(F\right)P .\]
+\end{eg}
+\begin{eg}
+Consideremos la cónica
+\[F = 10x_{0}^{2} + 2x_{0}x_{1} + x_{1}^{2} +4x_{2}^{2} .\]
+Tenemos que 
+\[M\left(F\right) = \begin{pmatrix} 10 & 1 & 0 \\ 1 & 1 & 0 \\ 0 & 0 & 4 \end{pmatrix} .\]
+Obtenemos que $\displaystyle F $ es equivalente a $\displaystyle x_{0}^{2}+x_{1}^{2}+x_{2}^{2} $. En efecto, si tomamos
+\[P = \begin{pmatrix} \frac{1}{3} & 0 & 0 \\ -\frac{1}{3} & 0 & 0 \\ 0 & \frac{1}{2} & 0 \end{pmatrix} , \quad P^{T}M\left(F\right)P = \begin{pmatrix} 1 & & \\ & 1 & \\ & & 1 \end{pmatrix}.\]
+Vamos a interpretar $\displaystyle P $ como un cambio de referencia, 
+\[\begin{pmatrix} x_{0} \\ x_{1} \\ x_{2} \end{pmatrix} = \begin{pmatrix} \frac{1}{3} & 0 & 0 \\ -\frac{1}{3} & 0 & 0 \\ 0 & \frac{1}{2} & 0 \end{pmatrix}\begin{pmatrix} y_{0} \\ y_{1} \\ y_{2} \end{pmatrix} \Rightarrow 
+\begin{cases}
+x_{0} = \frac{1}{3}y_{0} \\
+x_{1}= -\frac{1}{3}y_{0} +y_{2} \\
+x_{2} = \frac{1}{2}y_{1}
+\end{cases}
+.\]
+Así, obtenemos que la nueva expresión de $\displaystyle F $ será
+\[
+\begin{split}
+	F = & 10\left(\frac{1}{3}y_{0}\right)^{2} + 2\left(\frac{1}{3}y_{0}\right)\left(-\frac{1}{3}y_{0}+y_{2}\right) +\left(-\frac{1}{3}y_{0}+y_{2}\right)^{2} + 4\left(\frac{1}{2}y_{1}\right)^{2} \\
+	= & y_{0}^{2} + y_{1}^{2} + y_{2}^{2}.
+\end{split}
+\]
+Un método relativamente rápido para ver con qué cuádrica se corresponde una cuádrica $\displaystyle F $ es completar cuadrados y ver a ojo el cambio de variable. En este caso lo podríamos hacer de esta forma:
+\[F = 10x_{0}^{2} + 2x_{0}x_{1} + x_{1}^{2} + 4x_{2}^{2} = 9x_{0}^{2} + \left(x_{0}+x_{1}\right)^{2}+4x_{2} .\]
+De aquí es fácil ver que tomamos 
+\[
+\begin{cases}
+y_{0} = 3x_{0} \\ 
+y_{1} = x_{0} + x_{1} \\
+y_{2} = 2x_{2}
+\end{cases}
+.\]
+\end{eg}
+\section{Clasificación de cuádricas afines}
+Sea $\displaystyle \mathbb{A} $ un espacio afín de dimensión $\displaystyle n $ y $\displaystyle f \in \K\left[x_{1}, \ldots, x_{n}\right]  $ de grado 2. Una \textbf{cuádrica afín} es la clase $\displaystyle \left[f\right] = \left\{ \lambda f \; : \; \lambda \in \K^{*}\right\}  $ con 
+\[V_{\mathbb{A}}= \left\{ \left(x_{1}, \ldots, x_{n}\right) \; : \; f\left(x_{1}, \ldots, x_{n}\right) = 0\right\}  \]
+el soporte de la cuádrica. Dos cuádricas afines $\displaystyle [f] $ y $\displaystyle \left[g\right]  $ en $\displaystyle \mathbb{A} $ son equivalentes si existe $\displaystyle \varphi : \mathbb{A} \to \mathbb{A} $ tal que $\displaystyle f\circ \varphi = \lambda g $, $\displaystyle \lambda \in \K^{*} $. Matricialmente, si
+\[ f = \sum^{n}_{i = 1}\sum^{n}_{j = i}a_{ij}x_{i}x_{j}+\sum^{n}_{i = 1}b_{i}x_{i} + c ,\]
+tendremos que 
+\[M\left(f\right)= \begin{pmatrix} c & b \end{pmatrix}  .\] %copiar a pablo
+\begin{observation}
+	\[f\left(x_{1}, \ldots, x_{n}\right) = \begin{pmatrix} 1 & x_{1} & \cdots & x_{n} \end{pmatrix}M\left(f\right)\begin{pmatrix} 1 \\ x_{1} \\ \vdots \\ x_{n} \end{pmatrix} .\]
+\end{observation}
+Tenemos que $\displaystyle f\circ \varphi = \lambda g  $ si y solo si 
+\[M\left(\varphi\right)^{T}M\left(f\right)M\left(\varphi\right) = \lambda M\left(g\right) ,\]
+con 
+\[M\left(\varphi\right) = \begin{pmatrix} 1 & 0 & \cdots & 0 \\
+0 & & & \\
+\vdots & & A & \\
+0 & & & \end{pmatrix} , \; A \in \GL_{n}\left(\K\right).\]
+Así, $\displaystyle f $ y $\displaystyle g $ son afinmente equivalentes si y solo si $\displaystyle M\left(f\right) $ y $\displaystyle M\left(g\right) $ son congruentes por matrices de tipo afinidad. 
+\begin{theorem}[Teorema de Witt]
+	Sean $\displaystyle [f] $ y $\displaystyle [g] $ dos cuádricas afines de $\displaystyle \mathbb{A} $. Sea $\displaystyle \mathbb{A} \to \mathbb{P}^{n} / \left\{ x_{0} = 0\right\}  $ la inclusión de $\displaystyle \mathbb{A} $ en $\displaystyle \mathbb{P}^{n} $. Entonces, $\displaystyle \left[f\right]  $ y $\displaystyle \left[g\right]  $ son afinmente equivalentes si y solo si $\displaystyle \overline{\left[f\right] } $ y $\displaystyle \overline{\left[g\right] } $ las completaciones proyectivas son proyectivamente equivalentes y
+	\[\overline{\left[f\right] }\cap \left\{ x_{0} = 0\right\} \quad \text{y} \quad \overline{\left[g\right] } \cap \left\{ x_{0} = 0\right\} ,\]
+	son proyectivamente equivalentes. 
+\end{theorem}
+\begin{observation}
+	Tomando la inclusión $\displaystyle \mathbb{A} \to \mathbb{P}^{n}/ \left\{ x_{0} = 0\right\}  $, tendremos que $\displaystyle M\left(f\right) = M\left(\overline{f}\right) $ y si 
+	\[M\left(f\right) = \begin{pmatrix} c & b_{\frac{1}{2}} & \cdots & b_{\frac{n}{2}} \\
+b_{\frac{1}{2}} & & & \\
+\vdots & & A & \\
+b_{\frac{n}{2}} & & & \end{pmatrix} ,\]
+entonces $\displaystyle M\left([f] \cap \left\{ x_{0} = 0\right\} \right) = A $.
+\end{observation}
+\begin{eg}
+Consideremos $\displaystyle f = 2x_{1}-x_{1}x_{2}+4x_{1}-6x_{2}-x_{2}^{2} $. Tenemos que 
+\[M\left(f\right) = \begin{pmatrix} 0 & 2 & -3 \\ 2 & 2 & -\frac{1}{2} \\ -3 & -\frac{1}{2} & -1\end{pmatrix} .\]
+Por tanto, tenemos que 
+\[\overline{f} = 2x_{1}^{2} -x_{1}x_{2}+4x_{1}x_{0} -6x_{2}x_{0}-x_{2}^{2} .\]
+$\displaystyle \overline{f} $ es el homogeneizado de $\displaystyle f $ 'sustituyendo' $\displaystyle 1 $ por $\displaystyle x_{0} $. Así, tenemos que 
+\[\overline{f} \cap \left\{ x_{0} = 0\right\} = 2x_{1}^{2} - x_{1}x_{2}-x_{2}^{2} ,\]
+que es una cuádrica proyectiva en $\displaystyle \left\{ x_{0} = 0\right\} \subset \mathbb{P}^{2} $. Por el teorema anterior, tenemos que clasificar afinmente es equivalente a clasificar proyectivamente. Tenemos que $\displaystyle \overline{f} \sim x_{0}^{2}+x_{1}^{2}-x_{2}^{2} $ en el caso real y $\displaystyle \overline{f}\sim x_{0}^{2} + x_{1}^{2} + x_{2}^{2} $ en el caso complejo. 
+Análogamente, tenemos que $\displaystyle \overline{f} \cap \left\{ x_{0} = 0\right\} \sim x_{0}^{2}-x_{1}^{2} $ en el caso real y $\displaystyle \overline{f}\cap \left\{ x_{0} = 0\right\} \sim x_{0}^{2}+x_{1}^{2} $ en el caso complejo. 
+\end{eg}
+\subsection*{Resumen}
+Sea $\displaystyle Q $ una cónica afín real, $\displaystyle \overline{Q} $ la cónica en el completado proyectivo, $\displaystyle \left(x_{1}, x_{2}\right) \to \left[1:x_{1}:x_{2}\right] \in \mathbb{P}^{2} / \left\{ x_{0} = 0\right\}  $, y $\displaystyle Q_{\infty} $ la cónica del infinito $\displaystyle \mathbb{A}_{\infty} = \left\{ x_{0} = 0\right\} \subset \mathbb{P}^{n} $. 
+Para $\displaystyle \overline{Q} $ hay cinco casos (que ya hemos visto), mientras que los únicos casos para $\displaystyle Q_{\infty} $ son 
+\[x_{1}^{2} + x_{2}^{2} \quad x_{1}^{2}-x_{2}^{2} \quad x_{1}^{2} .\]
+Así, tenemos la clasificación 
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+$\displaystyle \overline{Q} $ & $\displaystyle Q_{\infty} $ & $\displaystyle Q $ \\
+\hline
+
+\end{tabular}
+\end{center}
+
 

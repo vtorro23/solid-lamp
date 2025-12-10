@@ -1,0 +1,235 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+\fancyhead[R]{Julia Romero, Pablo Salas y Victoria Torroja}
+\begin{document}
+
+\title{Geometría Lineal - Entrega}
+\author{Julia Romero, Pablo Salas y Victoria Torroja}
+\date{\today}
+
+\maketitle
+\begin{ej}
+Sean $\displaystyle P $ y $\displaystyle Q $ dos puntos distintos del plano proyectivo $\displaystyle \mathbb{P}^{2} $ real. Sea $\displaystyle f : \mathbb{P}^{2} \to \mathbb{P}^{2} $ una homografía tal que $\displaystyle f\left(P\right) = Q $ y $\displaystyle f\left(Q\right)=P $. 
+\begin{description}
+\item[(a)] Demuestra que existe una referencia proyectiva $\displaystyle \mathcal{R} $ de $\displaystyle \mathbb{P}^{2} $ tal que la matriz de $\displaystyle f $ tenga la forma
+	\[M_{\mathcal{R}\mathcal{R}}\left(f\right) = \begin{pmatrix} 0 & 1 & a \\ 1 & 0 & b \\ 0 & 0 & 1 \end{pmatrix} .\]
+\item[(b)] Determina la ecuación implícita de una recta genérica $\displaystyle \ell $ que pasa por $\displaystyle P $ en dicha referencia. 
+\item[(c)] Calcula la ecuación implícita de la recta imagen $\displaystyle f\left(\ell\right) $.
+\item[(d)] Sean $\displaystyle \ell_{A} $ y $\displaystyle \ell_{B} $ dos rectas distintas que pasan por $\displaystyle P $. Sea $\displaystyle X = \ell_{A} \cap f\left(\ell_{B}\right) $ e $\displaystyle Y = \ell_{B} \cap f\left(\ell_{A}\right) $. Demuestra que la recta que une $\displaystyle X $ e $\displaystyle Y $ pasa siempre por un punto fijo $\displaystyle R $, independiente de la elección de las rectas. 
+\item[(e)] Usando el principio de dualidad, demuestra el siguiente enunciado: \textit{Dadas dos rectas $\displaystyle r $ y $\displaystyle s $ y una homografía $\displaystyle f $ tal que $\displaystyle f\left(r\right) = s $ y $\displaystyle f\left(s\right) = r $, el lugar geométrico de los puntos de intersección de las rectas $\displaystyle A+f\left(B\right) $ y $\displaystyle B + f\left(A\right) $ (donde $\displaystyle A,B \in r $) es una recta fija}.
+\end{description}
+\end{ej}
+\begin{sol}
+\begin{description}
+	\item[(a)] Como se vio en clase, esto no es demostrable porque no es cierto siempre. De todas formas, cogemos que la matriz de $\displaystyle f $ es
+		\[M_{\mathcal{R}\mathcal{R}}\left(f\right) = \begin{pmatrix} 0 & 1 & a \\ 1 & 0 & b \\ 0 & 0 & 1 \end{pmatrix} .\]
+\item[(b)] Tenemos que $\displaystyle P = \left[1 : 0 : 0\right]  $ y consideremos un punto $\displaystyle O = \left[\alpha : \beta : \gamma \right]  $ con $\displaystyle O \neq P $. La recta que pasa por ambos puntos será
+\[\ell = \left\{ \begin{vmatrix} x_{0} & x_{1} & x_{2} \\ 1 & 0 & 0 \\ \alpha & \beta & \gamma  \end{vmatrix} = 0\right\} = \left\{ \beta x_{2}-\gamma x_{1} = 0\right\}  .\]
+\item[(c)] Como $\displaystyle f $ es una homografía tendremos que $\displaystyle \hat{f} $ es un isomorfismo, por lo que $\displaystyle \Ker\left(\hat{f}\right) = \left\{ 0\right\}  $ y $\displaystyle Z = \emptyset $. Así, podemos aplicar que $\displaystyle f\left(\ell\right) = \mathbb{P}\left(\hat{f}\left(\hat{\ell}\right)\right) $ y obtenemos que
+	\[\hat{f}\left(\hat{\ell}\right) = L\left( \left\{ \hat{f}\left(1,0,0\right), \hat{f}\left(\alpha, \beta, \gamma \right)\right\} \right) = L\left( \left\{ \left(0,1,0\right), \left(\beta + \gamma a, \alpha + b\gamma, \gamma\right)\right\} \right) .\]
+	Así, tenemos que $\displaystyle f\left(\ell\right) $ es la recta que pasa por los puntos $\displaystyle Q $ y $\displaystyle \left[\beta + \gamma a : \alpha + \gamma b : \gamma \right]  $. De esta forma,
+	\[f\left(\ell \right) = \left\{ \begin{vmatrix} x_{0} & x_{1} & x_{2} \\ 0 & 1 & 0 \\ \beta + \gamma a & \alpha + \gamma b & \gamma  \end{vmatrix} = 0 \right\} =  \left\{ \gamma x_{0} - \left(\beta + \gamma a\right)x_{2}= 0\right\} .\]
+\item[(d)] Antes de empezar vamos a simplificar las ecuaciones de los apartados b) y c) para facilitar los calculos. Tenemos:
+$$\begin{array}{l}
+     \ell = \{\gamma x_1 -\beta x_2 = 0 \}\\
+     f(\ell) = \{\gamma x_0 -(\beta + \gamma a)x_2 = 0\}
+\end{array}$$
+Consideraremos el caso de $\gamma = 0$ al final.
+Para $\gamma \neq 0$ dividimos las ecuaciones entre $\gamma$:
+$$\begin{array}{l}
+     \ell = \{ x_1 -\frac{\beta}{\gamma} x_2 = 0 \}\\
+     f(\ell) = \{ x_0 +(-\frac{\beta}{\gamma} - a)x_2 = 0\}
+\end{array}$$
+Tomando $\lambda = -\frac{\beta}{\gamma} $ obtenemos las ecuaciones de $\ell_A$y $\ell_B$:
+$$
+\begin{array}{l}
+\ell_A = \{x_1 + \lambda x_2 = 0\} \\
+f(\ell_A) = \{x_0 + (\lambda - a)x_2 = 0\} \\
+\ell_B = \{x_1 + \lambda' x_2 = 0\} \\
+f(\ell_B) = \{x_0 + (\lambda' - a)x_2 = 0\} \\
+\end{array}
+$$
+Sabemos que $\lambda \neq \lambda'$ al ser las rectas distintas.
+Tomando los espacios vectoriales asociados hacemos la intersección: 
+$$\hat{X}= \widehat{\ell_A} \cap \widehat{f(\ell_B)} = 
+\left \{
+\begin{array}{l}
+x_1 + \lambda x_2 = 0\ \\
+x_0 + (\lambda' - a)x_2 = 0\ \\
+\end{array}
+\right .
+$$
+Obtenemos una recta vectorial: $\hat{X} = L( \{(\lambda'-a,\lambda,-1) \} )$, siendo el punto proyectivo $X = [\lambda'-a:\lambda:-1]$. 
+Análogamente calculamos $\hat{Y} = \widehat{\ell_B} \cap \widehat{f(\ell_A)}$, obteniendo: $Y = [\lambda-a:\lambda':-1]$.\\
+Ahora calculamos la recta $X + Y$, donde
+\[ \widehat{X+Y} = L(\hat{X}\cup\hat{Y})= L(\{(\lambda'-a,\lambda,-1),(\lambda-a,\lambda',-1)\}).\]
+Haciendo el determinante:
+$$
+\left|
+\begin{matrix}
+x_0 & \lambda-a & \lambda'-a \\
+x_1 & \lambda' & \lambda \\
+x_2 & -1 & -1 \\
+\end{matrix}
+\right|
+= (\lambda - \lambda')x_0+(\lambda - \lambda')x_1+(\lambda - \lambda')(\lambda + \lambda'-a)x_2 = 0
+$$
+Con $\lambda - \lambda'\neq 0$, obtenemos la ecuación de la recta:
+$$s = X+Y = \{ x_0+x_1+(\lambda + \lambda'-a)x_2 = 0\}$$
+Para obtener el punto fijo $R$, tenemos que encontrar la intersección de todas las posibles rectas $s$. Para ello basta con la intersección de 2 rectas distintas cualesquiera que tenga la expresión de $s$.
+$$s\cap s' = \left \{
+\begin{array}{l}
+x_0+x_1+(\lambda + \lambda'-a)x_2 = 0 \\
+x_0+x_1+(\mu + \mu'-a)x_2 = 0 \\
+\end{array}
+\right .$$
+Al ser distintas el espacio vectorial asociado estará generado por un único vector, $\widehat{s\cap s'} = L((1,-1,0)) = \hat{R}$. Y por tanto:
+$$R = [1:-1:0]$$
+Por último estudiamos el caso $\gamma = 0$. Con las ecuaciones iniciales:
+$$\begin{array}{l}
+     \ell = \{\gamma x_1 -\beta x_2 = 0 \}\\
+     f(\ell) = \{\gamma x_0 -(\beta + \gamma a)x_2 = 0\}
+\end{array}$$
+Podemos ver que
+$$\ell_0 = f(\ell_0) = \{x_2 = 0\}$$
+Esta recta pasa por $P$ y por $Q$. Sabiendo que todas las $\ell$ pasan por P y todas las $f(\ell)$ pasan por Q, podemos ver como la intersección con otra recta distinta y su imagen será:
+$$\begin{array}{l}
+     \ell_0 \cap f(\ell_B) = X_0 = Q\\
+     f(\ell_0 )\cap \ell_B = Y_0 = P
+\end{array}$$
+Por lo tanto la recta correspondiente que une $X_0$ e $Y_0$ será: $s_0 = \ell_0$.
+Y así podemos comprobar:
+$$[1:-1:0] = R \in s_0 = \ell_0$$
+De esta forma $\displaystyle R $ pertenece a todas las posibles rectas $\displaystyle s $. 
+\item[(e)] Aplicando el principio de dualidad (cambiamos las dimensiones de las variedades por las de sus duales, intersecciones por sumas y el sentido de los contenidos), tenemos que el enunciado dual será: \\ \\
+	\textit{Dados dos puntos $\displaystyle R $ y $\displaystyle S $ y una homografía $\displaystyle f $ tal que $\displaystyle f\left(R\right)=S $ y $\displaystyle f\left(S\right) = R $, la intersección de las rectas generadas por $\displaystyle a\cap f\left(b\right) $ y $\displaystyle b \cap f\left(a\right) $ (donde $\displaystyle a,b $ son rectas que contienen a $\displaystyle R $) es un punto fijo }. \\ \\
+	Este enunciado es el que hemos demostrado en el apartado anterior, por lo que el enunciado original queda demostrado por ser su dual. 
+\end{description}
+\end{sol}
+
+\begin{ej}
+Una dilatación es una afinidad $\displaystyle \varphi : \mathbb{A} \to \mathbb{A} $ tal que $\displaystyle \vec{\varphi} = \lambda \cdot id $ con $\displaystyle \lambda \in \K^{\times} $. Llamamos a $\displaystyle \lambda  $ la \textit{razón} de $\displaystyle \varphi $.
+\begin{description}
+\item[(a)] Demuestra que una afinidad es una dilatación si y solo si para cada recta $\displaystyle l $, su imagen es paralela o igual a $\displaystyle l $.
+\item[(b)] Demuestra que toda dilatación distinta de la identidad o bien es una translación o bien tiene un único punto fijo y es una homotecia.
+\item[(c)] Sea $\displaystyle \varphi : \mathbb{P}^{2} \to \mathbb{P}^{2} $ la homografía dada por
+	\[\varphi\left([x_{0}:x_{1}:x_{2}]\right) = \left[3x_{0}+2x_{1}+2x_{2} : -x_{0}-x_{2} : 2x_{0}+2x_{1}+3x_{2}\right]  .\]
+	Demuestra que $\displaystyle l = \left\{ x_{0}+x_{1}+x_{2} = 0\right\}  $ es una recta invariante por $\displaystyle \varphi $. Calcula el resto de rectas invariantes y puntos fijos, si los hay.
+\item[(d)] Con la notación de (c), demuestra que $\displaystyle \varphi $ induce una dilatación de $\displaystyle \mathbb{A} = \mathbb{P}^{2}/l $. Si es una traslación, calcúlese su dirección, y si es una homotecia calcúlense su centro y su razón. 
+\end{description}
+\end{ej}
+
+\begin{sol}
+\begin{description}
+\item[(a)] Sea $\displaystyle \varphi : \mathbb{A} \to \mathbb{A} $ una dilatación y $\displaystyle l \subset \mathbb{A} $ una recta afín. Así, tenemos que existe $\displaystyle \mathbb{P} \in \mathbb{A} $ y $\displaystyle u \in \vec{\mathbb{A}} $ tal que 
+	\[l = P + L\left( \left\{ u\right\} \right) .\]
+Como $\displaystyle l $ es una variedad afín y $\displaystyle \varphi $ es una aplicación afín tenemos que 
+\[\varphi\left(l\right) = f\left(P\right) + \vec{\varphi}\left(L\left( \left\{ u\right\} \right)\right) .\]
+Para ver que $\displaystyle \varphi\left(l\right) $ es paralela o igual a $\displaystyle l $ basta con ver que $\displaystyle \vec{l} = \vec{\varphi}\left(\vec{l}\right) $. En efecto, como $\displaystyle \lambda \neq 0 $,
+\[\vec{\varphi}\left(\vec{l}\right) = \vec{\varphi}\left(L\left( \left\{ u\right\} \right)\right) = L\left( \left\{ \vec{\varphi}\left(u\right)\right\} \right) = L\left( \left\{ \lambda u\right\} \right) = L\left( \left\{ u\right\} \right) = \vec{l} .\]
+Recíprocamente, supongamos que $\displaystyle \varphi $ es una afinidad y que para cualquier recta $\displaystyle l \subset \mathbb{A} $, $\displaystyle \varphi\left(l\right) $ es paralela o igual a $\displaystyle l $. Como acabamos de ver, esto quiere decir que $\displaystyle \vec{\varphi}\left(\vec{l}\right) = \vec{l} $. Así, tenemos que $\displaystyle \forall u \in \vec{\mathbb{A}}, \exists\lambda_{u} \in \K $ tal que $\displaystyle \vec{\varphi}\left(u\right)=\lambda_{u}u $. Sean $\displaystyle u,v \in \vec{\mathbb{A}} $ distintos y consideremos dos casos:
+\begin{itemize}
+	\item Si $\displaystyle \left\{ u,v\right\}  $ son linealmente independientes, tenemos que 
+		\[\vec{\varphi}\left(u\right) = \lambda_{u}u, \quad \vec{\varphi}\left(v\right) = \lambda_{v}v \quad \text{y} \quad \vec{\varphi}\left(u+v\right) = \lambda_{u+v}\left(u+v\right) .\]
+		Aplicando la linealidad de $\displaystyle \vec{\varphi} $ tenemos que 
+		\[\vec{\varphi}\left(u+v\right) = \lambda_{u+v}u + \lambda_{u+v}v = \lambda_{u}u + \lambda_{v}v \Rightarrow \left(\lambda_{u+v}-\lambda_{u}\right)u + \left(\lambda_{u+v}-\lambda_{v}\right)v = 0 .\]
+		Como $\displaystyle \left\{ u,v\right\}  $ son linealmente independientes tenemos que $\displaystyle \lambda_{u+v}-\lambda_{u} = \lambda_{u+v}-\lambda_{v} = 0 $, por lo que $\displaystyle \lambda = \lambda_{u+v} = \lambda_{u} = \lambda_{v} $. Así, tenemos que $\displaystyle \vec{\varphi} = \lambda id $, por lo que $\displaystyle \varphi $ es una dilatación.
+	\item Si $\displaystyle \left\{ u,v\right\}  $ son linealmente dependientes, tenemos que existe $\displaystyle \mu \in \K^{\times} $ tal que $\displaystyle v = \mu u  $. Así, tendremos que 
+		\[\vec{\varphi}\left(v\right) = \lambda_{v}v = \lambda_{v}\mu u = \lambda_{u}\mu u \Rightarrow \left(\lambda_{v}-\lambda_{u}\right)\mu u = 0  .\]
+		Como $\displaystyle \mu \neq 0 $ y $\displaystyle u \neq 0 $, debe ser que $\displaystyle \lambda_{v}-\lambda_{u}= 0 $, por lo que $\displaystyle \lambda = \lambda_{v} = \lambda_{u} $. Así, $\displaystyle \vec{\varphi} = \lambda id $ y $\displaystyle \varphi $ es una dilatación \footnote{En ningún caso puede ser $\displaystyle \lambda = 0 $ puesto que $\displaystyle \varphi $ es una afinidad, por lo que $\displaystyle \vec{\varphi} $ es una biyección y $\displaystyle \Ker\vec{\varphi}= \left\{ 0\right\}  $.}. 
+\end{itemize}
+\item[(b)] Supongamos que $\displaystyle \varphi : \mathbb{A} \to \mathbb{A} $ es una dilatación con $\displaystyle \varphi \neq id $, por lo que $\displaystyle \vec{\varphi} = \lambda id $. Podemos considerar dos casos:
+	\begin{itemize}
+	\item Supongamos que $\displaystyle \lambda = 1 $, por lo que $\displaystyle \vec{\varphi}=id $. Claramente $\displaystyle \varphi $ no tiene puntos fijos. Si tuviese un punto fijo $\displaystyle P \in \mathbb{A} $ tendríamos que si $\displaystyle Q \neq P $, entonces
+		\[\varphi\left(Q\right) = \varphi\left(P + \overrightarrow{PQ}\right) = \varphi\left(P\right) + \vec{\varphi}\left(\overrightarrow{PQ}\right) = P + \overrightarrow{PQ} = Q .\]
+		Así, tendríamos que $\displaystyle \varphi = id $, que es una contradicción. Por tanto, no hay puntos fijos. Consideremos $\displaystyle A,B \in \mathbb{A} $. Tenemos que $\displaystyle \overrightarrow{\varphi\left(A\right)\varphi\left(B\right)} = \vec{\varphi}\left(\overrightarrow{AB}\right) = \overrightarrow{AB} $. De esta manera,
+		\[\overrightarrow{A\varphi\left(A\right)} = \overrightarrow{AB} + \overrightarrow{B\varphi\left(B\right)} + \overrightarrow{\varphi\left(B\right)\varphi\left(A\right)} = \overrightarrow{AB} + \overrightarrow{B\varphi\left(B\right)} + \overrightarrow{BA} = \overrightarrow{B\varphi\left(B\right)} .\]
+	Consecuentemente podemos tomar $\displaystyle u := \overrightarrow{O\varphi\left(O\right)} $ para algún $\displaystyle O \in \mathbb{A} $ y tendremos que $\displaystyle \forall A \in \mathbb{A} $, $\displaystyle \varphi\left(A\right) = A + u $, por lo que claramente $\displaystyle \varphi $ es una traslación. 
+\item Supongamos ahora que $\displaystyle \lambda \neq 1 $. Supongamos que tiene un punto fijo $\displaystyle C \in \mathbb{A} $ y $\displaystyle A \in \mathbb{A} $ con $\displaystyle A \neq f\left(A\right) $. Tendremos que 
+	\[\varphi\left( A\right) = \varphi\left(C + \overrightarrow{CA}\right) = \varphi\left(C\right) + \vec{\varphi}\left(CA\right) = C + \lambda \overrightarrow{CA} .\]
+	De donde se deduce que
+	\[\overrightarrow{A\varphi\left(A\right)} = \overrightarrow{A\left(C + \lambda \overrightarrow{CA}\right)} = \overrightarrow{AC} + \lambda \overrightarrow{CA} = \left(1-\lambda \right)\overrightarrow{AC} .\]
+Así, tenemos que, de haber un punto fijo sería único y sería $\displaystyle C = A + \frac{\overrightarrow{A\varphi\left(A\right)}}{1-\lambda } $. En efecto sería único puesto que si tuviésemos otro punto fijo $\displaystyle C' $ obtendríamos que
+\[\overrightarrow{C C'} = \overrightarrow{\varphi\left(C\right)\varphi\left(C'\right)} = \vec{\varphi}\left(\overrightarrow{C C'}\right) = \lambda \overrightarrow{C C'} .\]
+Como $\displaystyle \lambda \neq 1 $, debe ser que $\displaystyle \overrightarrow{C C'} = 0 $ por lo que $\displaystyle C = C' $. Veamos que el punto $\displaystyle C $ que hemos construido es efectivamente un punto fijo:
+\[
+\begin{split}
+	\varphi\left(C\right) = & \varphi\left(A + \frac{\overrightarrow{A\varphi\left(A\right)}}{1-\lambda }\right) = \varphi\left(A\right) + \vec{\varphi}\left(\frac{\overrightarrow{A\varphi\left(A\right)}}{1-\lambda }\right) = \varphi\left(A\right) + \frac{1}{1-\lambda }\vec{\varphi}\left(\overrightarrow{A\varphi\left(A\right)}\right) \\
+	= &  \varphi\left(A\right) + \frac{\lambda}{1-\lambda }\overrightarrow{A\varphi\left(A\right)} = A + \overrightarrow{A\varphi\left(A\right)} + \frac{\lambda }{1-\lambda }\overrightarrow{A\varphi\left(A\right)} = A + \frac{1}{1-\lambda }\overrightarrow{A\varphi\left(A\right)} = C.
+\end{split}
+\]
+Así, tenemos que $\displaystyle \varphi $ tendrá un único punto fijo y si $\displaystyle A \in \mathbb{A} $, tendremos que 
+\[\varphi\left(A\right) = \varphi\left(C + \overrightarrow{CA}\right) = C + \lambda \overrightarrow{CA} ,\]
+por lo que $\displaystyle \varphi $ es una homotecia. 
+\end{itemize}
+\item[(c)] Consideremos la aplicación lineal asociada a $\displaystyle \varphi $,
+	\[\hat{\varphi} \left(x_{0}, x_{1}, x_{2}\right) = \left(3x_{0}+2x_{1}+2x_{2}, -x_{0}-x_{2}, 2x_{0}+2x_{1}+3x_{2}\right) .\]
+	Dada la variedad $\displaystyle l = \left\{ x_{0} + x_{1} + x_{2} = 0\right\}  $, tenemos que 
+	\[\hat{l} = \left\{ x_{0}+x_{1}+x_{2} = 0\right\} = L\left( \left\{ \left(-1,1,0\right), \left(-1,0,1\right)\right\} \right) .\]
+	Para ver que $\displaystyle l $ es invariante basta con ver que $\displaystyle \hat{l} $ es invariante por $\displaystyle \hat{\varphi} $. Tenemos que 
+	\[\hat{\varphi}\left(\hat{l}\right) = L\left( \left\{ \hat{\varphi}\left(-1,1,0\right)\right\} , \hat{\varphi}\left(-1,0,1\right)\right)= L\left( \left\{ \left(-1,1,0\right), \left(-1,0,1\right)\right\} \right) = \hat{l} .\]
+Así hemos obtenido que $\displaystyle \hat{\varphi}\left(\hat{l}\right)= \hat{l} $ y $\displaystyle \varphi\left(l\right) = \mathbb{P}\left(\hat{\varphi}\left(\hat{l}\right)\right)=\mathbb{P}\left(\hat{l}\right) = l $ \footnote{No nos tenemos que preocupar por el centro puesto que al ser $\displaystyle \varphi $ una homografía, $\displaystyle \hat{\varphi} $ es un isomorfismo, por lo que $\displaystyle \Ker\left(\hat{\varphi}\right) = \left\{ 0\right\}  $ y $\displaystyle Z = \emptyset $.} . \\ \\
+Busquemos ahora el resto de rectas y puntos fijos. Al estar en $\displaystyle \mathbb{P}^{2} $ tenemos que las rectas son en verdad hiperplanos. En efecto, si $\displaystyle l \subset \mathbb{P}^{2} $ es una recta tenemos que 
+\[\dim l = 1 = \dim\mathbb{P}^{2} - 1 .\]
+Así, realmente estamos buscando los puntos fijos e hiperplanos invariantes por $\displaystyle \varphi $. Para calcular los puntos fijos calculamos los autovalores de $\displaystyle M_{\varphi} $. 
+\[P\varphi\left(\lambda \right) = \begin{vmatrix} 3 - \lambda & 2 & 2 \\ - 1 & - \lambda & -1 \\ 2 & 2 & 3-\lambda  \end{vmatrix} = -\left(\lambda - 4\right)\left(\lambda-1\right)^{2} .\]
+Así, los autovalores de $\displaystyle \hat{\varphi} $ son 1 y 4. En primer lugar, calculemos los puntos fijos, para lo que calculamos los subespacios vectoriales $\displaystyle L_{4} = \Ker\left(\hat{\varphi}-4id\right) $ y $\displaystyle L_{1} = \Ker\left(\hat{\varphi}-id\right) $. 
+\begin{itemize}
+\item Para $\displaystyle \lambda = 4 $,
+	\[\begin{pmatrix} -1 & 2 & 2 \\ -1 & -4 & -1 \\ 2 & 2 & -1 \end{pmatrix}\begin{pmatrix} x_{0} \\ x_{1} \\ x_{2} \end{pmatrix}= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \Rightarrow 
+\begin{cases}
+-x_{0}+2x_{1}+2x_{2} = 0 \\ 
+x_{0} + 4x_{1} + x_{2} = 0 \\
+2x_{0} + 2x_{1} -x_{2} = 0
+\end{cases} \Rightarrow
+\begin{cases}
+	x_{2} = -2x_{1}\\
+	x_{0} = -2x_{1}
+\end{cases}
+.\]
+Así, tenemos que $\displaystyle L_{4}= L\left( \left\{ \left(-2,1,-2\right)\right\} \right) $. Por tanto un punto fijo será $\displaystyle P_{1} = \left[2 : -1 : 2\right]  $.
+\item Para $\displaystyle \lambda = 1 $,
+	\[\begin{pmatrix} 2 & 2 & 2 \\ - 1 & - 1 & - 1 \\ 2 & 2 & 2 \end{pmatrix}\begin{pmatrix} x_{0} \\ x_{1} \\ x_{2} \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \\0 \end{pmatrix}\Rightarrow x_{0}+x_{1}+x_{2} = 0
+.\]
+Así, tenemos que $\displaystyle L_{1} = L\left( \left\{ \left(-1,1,0\right), \left(-1,0,1\right)\right\} \right) $, por lo que hay otra familia de puntos fijos que será 
+\[ \left\{ \left[x_{0}:x_{1}:x_{2}\right] \; : \; x_{0} + x_{1} + x_{2} = 0\right\}  .\]
+\end{itemize}
+Calculemos ahora las rectas invariantes. Supongamos que $\displaystyle l $ es la recta invariante $\displaystyle l = \left\{ b_{0}x_{0}+b_{1}x_{1}+b_{2}x_{2} = 0\right\} = \left[b_{0}:b_{1}:b_{2}\right] ^{*} $. 
+\begin{itemize}
+\item Para $\displaystyle \lambda = 4 $,
+	\[\begin{pmatrix} -1 & -1 & 2 \\ 2 & -4 & 2 \\ 2 & -1 & -1 \end{pmatrix}\begin{pmatrix} b_{0} \\ b_{1} \\ b_{2} \end{pmatrix}= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \Rightarrow 
+\begin{cases}
+b_{0}+b_{1}-2b_{2} = 0 \\
+b_{0}-2b_{1}+b_{2} = 0 \\
+2b_{0}-b_{1}-b_{2} = 0
+\end{cases}
+\Rightarrow 
+\begin{cases}
+b_{1} = b_{2} \\ 
+b_{0} = b_{1}
+\end{cases}
+.\]
+Así, tenemos que $\displaystyle l_{1}^{*} = \left[1:1:1\right]  $, por lo que $\displaystyle l_{1} = \left\{ x_{0} +x_{1}+x_{2}=0\right\}  $.
+\item Para $\displaystyle \lambda = 1 $, 
+	\[\begin{pmatrix} 2 & -1 & 2 \\ 2 & -1 & 2 \\ 2 & -1 & 2 \end{pmatrix}\begin{pmatrix} b_{0} \\ b_{1} \\ b_{2} \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \Rightarrow
+2b_{0}-b_{1}+2b_{2} = 0
+.\]
+Este es el subespacio vectorial generado por $\displaystyle \left\{ \left(1,2,0\right), \left(0,1,2\right)\right\}  $. Por tanto, hay una familia de rectas invariantes que es 
+\[ \left\{ b_{0}x_{0} + b_{1}x_{1} + b_{2}x_{2} = 0 \; : \; 2b_{0}-b_{1}+2b_{2} = 0\right\}  .\]
+\end{itemize}
+\item[(d)] Por ser $\displaystyle l $ un hiperplano invariante por $\displaystyle \varphi $ en $\displaystyle \mathbb{P}^{2} $, tenemos que $\displaystyle \mathbb{A} := \mathbb{P}^{2}/l $ es un espacio afín. Por un teorema visto en clase tenemos que por ser $\displaystyle \varphi $ una homografía, $\displaystyle \varphi|_{\mathbb{A}} $ es una afinidad. Consideremos los puntos
+	\[P_{0} = \left[1:0:0\right] , \quad P_{1} = \left[0:1:0\right] , \quad P_{2} = \left[0:0:1\right]  .\]
+que pertenecen a $\displaystyle \mathbb{A} $. Como 
+\[\overrightarrow{P_{0}P_{1}} = \left(-1,1,0\right), \quad \overrightarrow{P_{0}P_{2}} = \left(-1,0,1\right),\]
+son linealmente independientes y pertenecen a $\displaystyle \hat{l} $ que tiene dimensión 2, $\displaystyle \mathcal{R}_{c} = \left\{ P_{0}, \mathcal{B}= \left\{ \overrightarrow{P_{0}P_{1}}, \overrightarrow{P_{0}P_{2}}\right\} \right\}  $ es una referencia cartesiana de $\displaystyle \mathbb{A} $. Calculemos cómo actúa $\displaystyle \varphi|_{\mathbb{A}} $ respecto de esta referencia. Tenemos que
+\[\varphi\left(P_{0}\right) = \left[3:-1:2\right] , \quad \varphi\left(P_{1}\right) = \left[2:0:2\right] \quad \text{y} \quad \varphi\left(P_{2}\right) = \left[2 : - 1 : 3\right]  .\]
+Por tanto,
+\[\vec{\varphi}\left(\overrightarrow{P_{0}P_{1}}\right) = \overrightarrow{\varphi\left(P_{0}\right)\varphi\left(P_{1}\right)} = \overrightarrow{\left[3:-1:2\right] \left[2:0:2\right] } = \frac{1}{4} \left(-1,1,0\right).\]
+\[\vec{\varphi}\left(\overrightarrow{P_{0}P_{2}}\right) = \overrightarrow{\varphi\left(P_{0}\right)\varphi\left(P_{2}\right)} = \overrightarrow{\left[3:-1:2\right] \left[2:-1:3\right] }= \frac{1}{4}\left(-1,0,1\right) .\]
+Así, obtenemos que si $\displaystyle v \in \vec{\mathbb{A}} $, existen $\displaystyle \lambda, \mu \in \K $ tales que $\displaystyle v = \lambda \overrightarrow{P_{0}P_{1}} +\mu\overrightarrow{P_{0}P_{2}}$. De esta forma,
+\[\overrightarrow{\varphi|_{\mathbb{A}}}\left(v\right) = \overrightarrow{\varphi|_{\mathbb{A}}}\left(\lambda\overrightarrow{P_{0}P_{1}} + \mu\overrightarrow{P_{0}P_{2}}\right) = \frac{1}{4}\left(\lambda\overrightarrow{P_{0}P_{1}}+\mu\overrightarrow{P_{0}P_{2}}\right) = \frac{1}{4}id\left(v\right) .\]
+Así tenemos que $\displaystyle \varphi|_{\mathbb{A}} $ es una dilatación. Concretamente es una homotecia de razón $\displaystyle \frac{1}{4} $ y centro $\displaystyle C = \left[2:-1:2\right]  $ (es el único punto fijo de $\displaystyle \varphi $ que está en $\displaystyle \mathbb{A} $). 
+\end{description}
+\end{sol}
+\end{document}

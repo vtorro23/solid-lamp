@@ -35,7 +35,7 @@ Sea $\displaystyle A $ un anillo y $\displaystyle a \in A^{*}/\mathcal{U}\left(A
 \end{definition}
 \begin{observation}
 \begin{enumerate}
-\item Si $\displaystyle a \in A $ es primo, $\displaystyle \left(a\right) $ también es primo. El recíproco también es cierto.
+\item Si $\displaystyle a \in A $ es primo, $\displaystyle \left(a\right) $ también es primo. El recíproco también es cierto. Esto se debe a que $\displaystyle \forall x \in A $ se cumple que $\displaystyle a | x \iff x \in \left(a\right) $.
 \item Si $\displaystyle a \in A^{*}/\mathcal{U}\left(A\right) $ divide a $\displaystyle b $ irreducible, entonces $\displaystyle a $ y $\displaystyle b $ son asociados. En efecto, si $\displaystyle b = ac $, como $\displaystyle b $ es irreduble debe ser que $\displaystyle c \in \mathcal{U}\left(A\right) $.
 \end{enumerate} 
 \end{observation}
@@ -58,13 +58,174 @@ Así, tenemos que $\displaystyle c \in \mathcal{U}\left(A\right) $, que es una c
 	\[\varphi\left(z_{1}z_{2}\right) = \varphi\left(z_{1}\right)\varphi\left(z_{2}\right) .\]
 	Además, como se vio en los ejercicios $\displaystyle z \in \mathcal{U}\left(\Z[\sqrt{-d}]\right) \iff \varphi\left(z\right) = 1 $. Consideremos en particular $\displaystyle d = 5 $. Tenemos que 
 	\[\varphi\left(a+b\sqrt{-5}\right) = a^{2}+5b^{2} \geq 0 .\]
-	Sea $\displaystyle 2 \in \Z\left[\sqrt{-5}\right]  $ y estudiemos si es irreducible. Supongamos que no lo es. Entonces, existe $\displaystyle z_{1}, z_{2} \in \Z\left[\sqrt{-5}\right]  $ tales que 
+	Sea $\displaystyle 2 \in \Z\left[\sqrt{-5}\right]  $ y estudiemos si es irreducible. Supongamos que no lo es. Entonces, existe $\displaystyle z_{1}, z_{2} \in \Z\left[\sqrt{-5}\right] /\mathcal{U}\left(\Z\left[\sqrt{-5}\right] \right) $ tales que 
 	\[2 = z_{1}z_{2} \Rightarrow \varphi\left(2\right) = \varphi\left(z_{1}z_{2}\right) \Rightarrow 4 = \varphi\left(z_{1}\right)\varphi\left(z_{2}\right) \Rightarrow \varphi\left(z_{1}\right) = \varphi\left(z_{2}\right) = 2 .\]
 	Sin embargo, no hay elementos en $\displaystyle \Z\left[\sqrt{-5}\right]  $ con norma 2, por lo que 2 es irreducible. Veamos si es primo. Tenemos que 
 	\[2 | \left(1+\sqrt{-5}\right)\left(1-\sqrt{-5}\right) = 6 ,\]
-	pero no divide a ninguno de los dos factores. En efecto, si $\displaystyle 2 | \left(1 + \sqrt{-5}\right) $ tendríamos que existe $\displaystyle z \in \Z\left[\sqrt{-5}\right] /\mathcal{U}\left(\Z\left[\sqrt{-5}\right] \right) $, tal que 
+	pero no divide a ninguno de los dos factores. En efecto, si $\displaystyle 2 | \left(1 + \sqrt{-5}\right) $ tendríamos que existe $\displaystyle z \in \Z\left[\sqrt{-5}\right]  $, tal que 
 	\[1 + \sqrt{-5} = 2z \Rightarrow \varphi\left(1+\sqrt{-5}\right) = \varphi\left(2z\right) = 6 = 4\varphi\left(z\right) .\]
 	Esto es una contradicción puesto que $\displaystyle \varphi\left(z\right) \in \N $. Así, tenemos que 2 no es primo. 
 \end{enumerate}
 \end{eg}
+\begin{definition}[Máximo común divisor]
+Sea $\displaystyle A $ anillo y $\displaystyle a_{1}, \ldots, a_{k} \in A^{*} $. Definimos el \textbf{máximo común divisor} de $\displaystyle a_{1}, \ldots, a_{k} $ como un elemento $\displaystyle d \in A $ tal que $\displaystyle d | a_{i} $ para $\displaystyle i = 1, \ldots, k $ y si hay otro $\displaystyle d' $ tal que $\displaystyle d' | a_{i} $, $\displaystyle \forall i = 1, \ldots, k $, entonces $\displaystyle d' | d $.
+\end{definition}
+\begin{observation}
+\begin{itemize}
+\item Si $\displaystyle d $ y $\displaystyle d' $ son máximos comunes divisores de $\displaystyle a_{1}, \ldots, a_{k} $ entonces son asociados.
+\item En general, el máximo común divisor no tiene por qué existir. En efecto, podemos considerar el conjunto $\displaystyle \Z\left[\sqrt{-5}\right]  $ y sean 
+	\[6 = \left(1+\sqrt{-5}\right)\left(1-\sqrt{-5}\right) \quad \text{y} \quad 2\left(1+\sqrt{-5}\right) .\]
+	No existe máximo común divisor de estos dos elementos. Supogamos que existe $\displaystyle w = a + b\sqrt{-5} \in \Z\left[\sqrt{-5}\right]  $ el máximo común divisor de ambos. Tendríamos que $\displaystyle \varphi\left(w\right) | \varphi\left(6\right) $, por lo que $\displaystyle \varphi\left(w\right) | 36 $. Análogamente, tendríamos que $\displaystyle \varphi\left(w\right) | \varphi\left(2\left(1+\sqrt{-5}\right)\right) = 24 $. Así, debe ser que $\displaystyle \varphi\left(w\right) |12$. Por otra parte tenemos que $\displaystyle \left(1+\sqrt{-5}\right)|w $ y $\displaystyle 2 | w $. Tomando normas tendremos que 
+	\[\varphi\left(1+\sqrt{-5}\right) = 6 | \varphi\left(w\right) \quad \text{y}\quad \varphi\left(2\right) = 4 | \varphi\left(w\right) .\]
+Así, debe ser que $\displaystyle \varphi\left(w\right) = 12 $, por lo que $\displaystyle a^{2} + 5b^{2} = 12 $, que no es posible para $\displaystyle a,b \in \Z $. 	
+\end{itemize}
+\end{observation}
+\begin{observation}
+	Si pensamos en dividir polinomios en $\displaystyle \R[\mathtt{x}] $, podemos hacerlo sin problemas. Nos preguntamos ahora, qué sucede con $\displaystyle A[\mathtt{x}] $? 
+\end{observation}
+\section{Divisibilidad en polinomios}
+\begin{lema}[Algoritmo de la división]
+	Sean $\displaystyle A $ un anillo conmutativo unitario y $\displaystyle p,q \in A[\mathtt{x}] $ tales que $\displaystyle l\left(q\right) $ es una unidad. Entonces, sabemos que existen $\displaystyle c,r \in A[\mathtt{x}] $ únicos tales que 
+	\[p = cq + r, \quad \grad\left(r\right) < \grad\left(q\right) .\]
+\end{lema}
+\begin{proof}
+\begin{description}
+\item[Existencia.] Si $\displaystyle \grad\left(p\right) < \grad\left(q\right) $ tomamos $\displaystyle r = p $ y $\displaystyle c = 0 $. Supongamos que $\displaystyle \grad\left(p\right) \geq \grad\left(q\right) $. Consideremos 
+	\[p\left(\mathtt{x}\right) = \sum^{n}_{i = 0}a_{i}\mathtt{x}^{i} \quad \text{y} \quad q\left(\mathtt{x}\right) = \sum^{m}_{j = 0}b_{j}\mathtt{x}^{j}, \quad n \geq m .\]
+Si $\displaystyle n = 0 $ tenemos que $\displaystyle m = 0 $. Podemos tomar $\displaystyle r = 0 $ y $\displaystyle c\left(x\right) = a_{0}b_{0}^{-1} $. Si $\displaystyle n > 0 $, consideramos el polinomio
+\[h\left(\mathtt{x}\right) = p\left(\mathtt{x}\right)-a_{n}b_{m}^{-1}\mathtt{x}^{n-m}q\left(\mathtt{x}\right).\]
+Tenemos que $\displaystyle \grad\left(h\right) < n $. Podemos consideraro dos casos:
+\begin{itemize}
+\item Si $\displaystyle \grad\left(h\right) < m $, tomamos $\displaystyle r = h $ y $\displaystyle c\left(\mathtt{x}\right) = a_{n}b_{m}^{-1}\mathtt{x}^{n-m} $.
+\item Si $\displaystyle \grad\left(h\right) \geq m $, obtenemos $\displaystyle c_{1}\left(\mathtt{x}\right) $ y $\displaystyle r_{1}\left(\mathtt{x}\right) $ tales que $\displaystyle h\left(\mathtt{x}\right) = c_{1}\left(\mathtt{x}\right)q\left(\mathtt{x}\right)+r_{1}\left(\mathtt{x}\right) $ con $\displaystyle \grad\left(r_{1}\right) < \grad\left(q_{1}\right) $ (aplicando la hipótesis de inducción para polinomios de menor grado lo obtenemos). 
+	Tomamos $\displaystyle r = r_{1} $ y $\displaystyle c\left(\mathtt{x}\right) = c_{1}\left(\mathtt{x}\right)+a_{n}b_{m}^{-1}\mathtt{x}^{n-m} $, por lo que 
+	\[p\left(\mathtt{x}\right) = h\left(\mathtt{x}\right) + a_{n}b_{m}^{-1}\mathtt{x}^{n-m}q\left(\mathtt{x}\right) = \left(c_{1}\left(\mathtt{x}\right) + a_{n}b^{-1}_{m}\mathtt{x}^{n-m}\right)q\left(\mathtt{x}\right)+r_{1}\left(\mathtt{x}\right) .\]
+\end{itemize}
+\item[Unicidad.] Supongamos que existe otros $\displaystyle c_{0}, r_{0} \in A\left[\mathtt{x}\right]  $ tales que $\displaystyle p\left(\mathtt{x}\right) = c_{0}\left(\mathtt{x}\right)q\left(\mathtt{x}\right)+r_{0}\left(\mathtt{x}\right) = c\left(\mathtt{x}\right)q\left(\mathtt{x}\right)+r\left(\mathtt{x}\right) $. Tenemos que 
+	\[0 = \left(c_{0}-c\right)q + \left(r_{0}-r\right) .\]
+	Como $\displaystyle l\left(q\right) $ es una unidad, no puede ser divisor de cero por lo que  
+	\[ \grad\left(\left(c_{0}-c\right)q\right) = \grad\left(c_{0}-c\right) + \grad\left(q\right) \geq \grad\left(q\right).\]
+	Por otro lado, 
+	\[\grad\left(\left(c_{0}-c\right)q\right) = \grad\left(r_{0}-r\right) < \grad\left(q\right) .\]
+	Esto es una contradicción, por lo que debe ser que $\displaystyle c_{0}= c $ y $\displaystyle r_{0} = r $. 
+\end{description}
+\end{proof}
+\begin{colorary}[Regla de Ruffini]
+	Sea $\displaystyle A $ un anillo conmutativo unitario y sean $\displaystyle a \in A $ y $\displaystyle p \in A\left[\mathtt{x}\right]  $. Entonces existe $\displaystyle c\left(\mathtt{x}\right) \in A[\mathtt{x}] $ tal que 
+	\[p\left(\mathtt{x}\right) = \left(\mathtt{x}-a\right)c\left(\mathtt{x}\right)+p\left(a\right) .\]	
+\end{colorary}
+\begin{prop}
+	Sea $\displaystyle A $ un anillo conmutativo unitario y $\displaystyle p,q \in A\left[\mathtt{x}\right]  $ tales que $\displaystyle \grad\left(q\right) \leq \grad\left(p\right) $, con $\displaystyle q \neq 0 $. Sea $\displaystyle b_{m} = l\left(q\right) $. Así, existen $\displaystyle c,r \in A[\mathtt{x}] $ y $\displaystyle k \geq 0 $ tales que 
+	\[b^{k}_{m}p\left(\mathtt{x}\right) = c\left(\mathtt{x}\right)q\left(\mathtt{x}\right)+r\left(\mathtt{x}\right), \quad \grad\left(r\right) < \grad\left(q\right) .\]
+\end{prop}
+\begin{definition}[Raíz de un polinomio]
+	Sea $\displaystyle A $ un anillo conmutativo unitario y sea $\displaystyle p\left(\mathtt{x}\right)\in A\left[\mathtt{x}\right]  $. Diremos que $\displaystyle a \in A $ es \textbf{raíz} de $\displaystyle p\left(\mathtt{x}\right) $ si $\displaystyle p\left(a\right) = \ev_{a}\left(p\right) = 0 $.
+\end{definition}
+\begin{observation}
+Por la regla de Ruffini podemos decir que $\displaystyle a $ es raíz si y solo si $\displaystyle \left(x-a\right) | p\left(x\right) $. 
+\end{observation}
+\begin{prop}
+	Sea $\displaystyle A $ un dominio de integridad y $\displaystyle p\left(\mathtt{x}\right) \in A\left[\mathtt{x}\right]  $ tal que $\displaystyle \grad\left(p\right) \in \left\{ 2,3\right\}  $ y $\displaystyle l\left(p\right) $ es una unidad. Entonces, tenemos que $\displaystyle p\left(\mathtt{x}\right) $ es irreducible si y solo si no tiene raíces en $\displaystyle A $.
+\end{prop}
+\begin{eg}
+Sea $\displaystyle p\left(\mathtt{x}\right) = \mathtt{x}^{2}+1 $. 
+\begin{enumerate}
+	\item Si $\displaystyle A = \F_{2}= \left\{ 0,1\right\}  $, tenemos que $\displaystyle p\left(0\right) = 1 $ y $\displaystyle p\left(1\right) = 2 = 0 $, por lo que $\displaystyle p\left(x\right) $ no es irreducible en $\displaystyle \F_{2}\left[\mathtt{x}\right]  $. 
+	\item Si $\displaystyle A = \F_{3} = \left\{ 0,1,2\right\}  $, tenemos que $\displaystyle p\left(0\right) = 1 $, $\displaystyle p\left(1\right) = 2 $ y $\displaystyle p\left(2\right) = 2 $, por lo que $\displaystyle p\left(x\right) $ es irreducible en $\displaystyle \F_{3}\left[\mathtt{x}\right]  $. 
+	\item En $\displaystyle \Z\left[\mathtt{x}\right]  $, $\displaystyle \Q\left[\mathtt{x}\right]  $ y $\displaystyle \R\left[\mathtt{x}\right]  $ es irreducible, no así en $\displaystyle \C\left[\mathtt{x}\right]  $. 
+\end{enumerate}
+\end{eg}
+\section{Dominios de ideales principales}
+\begin{definition}[Dominio de ideales principales]
+	Sea $\displaystyle A $ un dominio de integridad. Diremos que $\displaystyle A $ es \textbf{dominio de ideales principales}, DIP, si $\displaystyle \forall \mathfrak{a} \subset A $ ideal, existe $\displaystyle x \in A $ tal que $\displaystyle \mathfrak{a} = \left(x\right) $. 
+\end{definition}
+\begin{lema}
+Sea $\displaystyle A $ un dominio de ideales principales y $\displaystyle a,b \in A^{*} $. 
+\begin{enumerate}
+\item Existe un máximo común divisor de $\displaystyle a $ y $\displaystyle b $.
+\item Podemos encontrar una identidad de Bézout tal que $\displaystyle d = ax + by $, $\displaystyle x,y \in A $.
+\end{enumerate}
+\end{lema}
+\begin{proof}
+Supongamos que $\displaystyle a,b \in A^{*} $ y consideramos $\displaystyle \left(a,b\right) $. Como $\displaystyle A $ es DIP, existe $\displaystyle d $ tal que $\displaystyle \left(a,b\right) = \left(d\right) $. Veamos que $\displaystyle d = \mcd\left(a,b\right) $. Claramente tenemos que $\displaystyle a \in \left(a,b\right) = \left(d\right) $, por lo que existe $\displaystyle c \in A $ tal que $\displaystyle a = cd $, por lo que $\displaystyle d | a $. De fórma análoga tenemos que $\displaystyle d | b $. Supongamos que existe $\displaystyle d' $ con $\displaystyle d'|a $ y $\displaystyle d'|b $. Así, tenemos que $\displaystyle \left(d\right) = \left(a,b\right) \subset \left(d'\right) $, por lo que existe $\displaystyle k \in A $ tal que $\displaystyle d = kd' $ y $\displaystyle d' | d $. 
+Por otro lado, como $\displaystyle \left(d\right) = \left(a,b\right) $, existen $\displaystyle x,y \in A $ tales que $\displaystyle d = ax +by $. 
+\end{proof}
+\begin{lema}
+Sea $\displaystyle A $ DIP y $\displaystyle a \in A^{*} / \mathcal{U}\left(A\right) $. Si $\displaystyle a $ es irreducible entonces $\displaystyle \left(a\right) $ es maximal. En particular, $\displaystyle a $ es primo. 
+\end{lema}
+\begin{proof}
+Sea $\displaystyle a \in A^{*}/\mathcal{U}\left(A\right) $ y veamos que $\displaystyle \left(a\right) $ es maximal. Supongamos que existe $\displaystyle b \in A^{*}/\mathcal{U}\left(A\right) $ tal que $\displaystyle \left(a\right) \subsetneq \left(b\right) \subsetneq A $. Tenemos que $\displaystyle a \in \left(a\right) \subsetneq \left(b\right) $, por lo que existe $\displaystyle c \in A $ tal que $\displaystyle a = bc $. 
+Sabemos que $\displaystyle a $ es irreducible, por lo que debe ser que $\displaystyle c \in \mathcal{U}\left(A\right) $ y tenemos que $\displaystyle b = ac^{-1} $, por lo que $\displaystyle b \in \left(a\right) $ y $\displaystyle \left(a\right) = \left(b\right) $, que contradice nuestra hipótesis. \\
+Si $\displaystyle \left(a\right) $ es maximal, entonces es primo, por lo que $\displaystyle a $ es primo. 
+\end{proof}
+\begin{observation}
+En un DIP, los ideales maximales coinciden con los primos.
+\end{observation}
+\begin{prop}
+Sea $\displaystyle A $ un DIP y $\displaystyle a \in A^{*}/\mathcal{U}\left(A\right) $. Entonces, existen irreducibles $\displaystyle p_{1}, \ldots, p_{k}\in A $ tal que $\displaystyle a = p_{1} \cdots p_{k} $. Además, esta descomposición es única en el sentido de que si existen $\displaystyle q_{1}, \ldots, q_{r} \in A $ con $\displaystyle a = q_{1} \cdots q_{r} $, entonces $\displaystyle r = k $ y con cierta ordenación $\displaystyle q_{i} $ y $\displaystyle p_{i} $ son asociados.
+\end{prop}
+\begin{observation}
+Si reordenamos la descomposición y juntamos elementos iguales podemos obtener una descomposición del estilo
+\[a = up_{1}^{\alpha_{1}} \cdots p_{l}^{\alpha_{l}} ,\]
+donde $\displaystyle u \in \mathcal{U}\left(A\right) $, $\displaystyle p_{1}, \ldots, p_{l} \in A $ y $\displaystyle \alpha_{1}, \ldots, \alpha_{l} \in \N $. 
+\end{observation}
+\begin{theorem}
+	Sea $\displaystyle A $ un anillo y $\displaystyle A\left[\mathtt{x}\right]  $ su anillo de polinomios. Entonces, $\displaystyle A $ es cuerpo si y solo si $\displaystyle A\left[\mathtt{x}\right]  $ es DIP. Además, si $\displaystyle \mathfrak{a} \subset A[\mathtt{x}] $ es ideal con $\displaystyle A $ cuerpo, entonces $\displaystyle \mathfrak{a} $ está generado por el polinomio de menor grado de $\displaystyle \mathfrak{a}/ \left\{ 0\right\}  $.
+\end{theorem}
+\begin{eg}
+\begin{enumerate}
+	\item Con este resultado es fácil ver que $\displaystyle \Z\left[\mathtt{x}\right]  $ no es DIP.
+	\item Tenemos que $\displaystyle \R\left[\mathtt{x}\right]  $ y $\displaystyle \C\left[\mathtt{x}\right]  $ son DIP. 
+	\item Consideremos el homomorfismo $\displaystyle \ev_{i}: \Q\left[\mathtt{x}\right]  \to \C $. Tenemos que $\displaystyle \Q\left[\mathtt{x}\right]  $ es DIP puesto que $\displaystyle \Q $ es cuerpo. Sabemos que $\displaystyle \Ker\left(\ev_{i}\right) \subset \Q\left[\mathtt{x}\right]  $ es un ideal y por ser $\displaystyle \mathtt{x}^{2}+1 $ el polinomio de menor grado en $\displaystyle \Ker\left(\ev_{i}\right) $, tenemos que $\displaystyle \Ker\left(\ev_{i}\right) = \left(\mathtt{x}^{2}+1\right) $. 
+\end{enumerate}
+\end{eg}
+\section{Dominios de factorización única}
+\begin{definition}[Dominio de factorización única]
+	Sea $\displaystyle A $ un dominio de integridad. Diremos que $\displaystyle A $ es \textbf{dominio de factorización única}, DFU, si para cada $\displaystyle a \in A^{*}/\mathcal{U}\left(A\right) $ existen $\displaystyle a_{1}, \ldots, a_{k} $ irreducibles de $\displaystyle A $ no necesariamente distintos tales que $\displaystyle a = a_{1} \cdots a_{k} $. Además, esta factorización es única en el sentido de que si $\displaystyle a = a'_{1} \cdots a'_{p} $ irreducibles, entonces $\displaystyle k = p $ y después de cierta ordenación, $\displaystyle a_{i}  $ y $\displaystyle a_{i}' $ son asociados $\displaystyle \forall i \in \left\{ 1, \ldots, k\right\}  $.
+\end{definition}
+\begin{observation}
+Agrupando los irreducibles que se repiten obtenemos la factorización
+\[a = u p_{1}^{\alpha_{1}} \cdots p_{l}^{\alpha_{l}} .\]
+A esta factorización se la llama la \textbf{factorización reducida}.
+\end{observation}
+\begin{eg}
+\begin{enumerate}
+\item $\displaystyle \Z $ es un dominio de factorización única.
+\item $\displaystyle \Z\left[\sqrt{-5}\right]  $ no es DFU. En efecto, tenemos que $\displaystyle \left(1+\sqrt{-5}\right)\left(1-\sqrt{-5}\right) = 6 = 2 \cdot 3 $, por lo que la factorización no es única. 
+\end{enumerate}
+\end{eg}
+\begin{theorem}
+Todo dominio de ideales principales es dominio de factorización única. 
+\end{theorem}
+\begin{prop}
+Si $\displaystyle A $ es DFU, entonces $\displaystyle a $ es irreducible si y solo si $\displaystyle a $ es primo.
+\end{prop}
+\begin{proof}
+Sabemos que si $\displaystyle a $ es primo entonces es irreducible, falta demostrar la otra implicación. Supongamos que $\displaystyle b,c \in A^{*}/\mathcal{U}\left(A\right) $ y $\displaystyle a | bc $. Por tanto, existe $\displaystyle x \in A $ tal que $\displaystyle bc = xa $. 
+\begin{itemize}
+\item Si $\displaystyle x \in \mathcal{U}\left(A\right) $, tenemos que $\displaystyle a = \left(x^{-1}b\right)c $. Como $\displaystyle a $ es irreducible debe ser que $\displaystyle x^{-1}b \in \mathcal{U}\left(A\right) $ o $\displaystyle c \in \mathcal{U}\left(A\right) $, en cualquier caso obtenemos una contradicción.
+\item Si $\displaystyle x \not\in \mathcal{U}\left(A\right) $, como $\displaystyle A $ es DFU, $\displaystyle b $ y $\displaystyle c $ se pueden expresar como $\displaystyle b = b_{1} \cdots b_{k} $ y $\displaystyle c = c_{1} \cdots c_{r} $. Así, tenemos que 
+	\[bc = b_{1} \cdots b_{k}c_{1} \cdots c_{r} .\]
+	Por otro lado, $\displaystyle x = x_{1} \cdots x_{n} $ irreducibles. Como $\displaystyle bc = xa $ podemos decir que 
+	\[b_{1} \cdots b_{k}c_{1} \cdots c_{r} = x_{1} \cdots x_{n}a .\]
+Como la factorización es única, debe ser que $\displaystyle a $ es asociada a uno de los factores de $\displaystyle b $ o de $\displaystyle c $, por lo que $\displaystyle a | b $ o $\displaystyle a | c $ y obtenemos que $\displaystyle a $ es primo.	
+\end{itemize}
+\end{proof}
+\begin{lema}
+Si $\displaystyle A $ es DFU y $\displaystyle a,b \in A^{*}/\mathcal{U}\left(A\right) $, entonces existe el máximo común divisor de $\displaystyle a $ y $\displaystyle b $.
+\end{lema}
+\begin{theorem}[Teorema de Gauss]
+	Si $\displaystyle A $ es DFU, entonces $\displaystyle A[\mathtt{x}] $ también lo es.
+\end{theorem}
+\begin{definition}[Dominio euclídeo]
+Sea $\displaystyle A $ un dominio de integridad. Diremos que $\displaystyle A $ es \textbf{domino euclídeo}, DE, si existe una función euclídea (o función grado), $\displaystyle \phi : A ^{*} \to \Z^{*} $ tal que 
+\begin{enumerate}
+\item $\displaystyle \forall a,b \in A^{*} $, $\displaystyle \phi\left(ab\right) \geq \phi\left(a\right) $. 
+\item $\displaystyle \forall a,b \in A $ con $\displaystyle b \neq 0 $, $\displaystyle \exists q,r \in A $ tales que $\displaystyle a = bq + r $, $\displaystyle \phi\left(q\right) > \phi\left(r\right) $ o $\displaystyle r = 0 $.
+\end{enumerate}
+\end{definition}
+\begin{observation}
+Se cumple la relación
+\[\text{DE} \Rightarrow \text{DIP} \Rightarrow \text{DFU} .\]	
+\end{observation}
 
