@@ -221,11 +221,19 @@ Si $\displaystyle A $ es DFU y $\displaystyle a,b \in A^{*}/\mathcal{U}\left(A\r
 Sea $\displaystyle A $ un dominio de integridad. Diremos que $\displaystyle A $ es \textbf{domino euclídeo}, DE, si existe una función euclídea (o función grado), $\displaystyle \phi : A ^{*} \to \Z^{*} $ tal que 
 \begin{enumerate}
 \item $\displaystyle \forall a,b \in A^{*} $, $\displaystyle \phi\left(ab\right) \geq \phi\left(a\right) $. 
-\item $\displaystyle \forall a,b \in A $ con $\displaystyle b \neq 0 $, $\displaystyle \exists q,r \in A $ tales que $\displaystyle a = bq + r $, $\displaystyle \phi\left(q\right) > \phi\left(r\right) $ o $\displaystyle r = 0 $.
+\item $\displaystyle \forall a,b \in A $ con $\displaystyle b \neq 0 $, $\displaystyle \exists q,r \in A $ tales que $\displaystyle a = bq + r $, $\displaystyle \phi\left(b\right) > \phi\left(r\right) $ o $\displaystyle r = 0 $.
 \end{enumerate}
 \end{definition}
 \begin{observation}
 Se cumple la relación
 \[\text{DE} \Rightarrow \text{DIP} \Rightarrow \text{DFU} .\]	
 \end{observation}
+\begin{observation}
+	Supongamos que $\displaystyle A[\mathtt{x}] $ es DIP y $\displaystyle I = \left(p\right) $ con $\displaystyle p \in A[\mathtt{x}] $. Como $\displaystyle A[\mathtt{x}] $ es DFU, existen $\displaystyle p_{1}, \ldots, p_{k} $ irreducibles tales que $\displaystyle p = p_{1}^{\alpha_{1}} \cdots p_{k}^{\alpha_{k}} $. Así, tenemos que
+	\[A[\mathtt{x}]/I \cong A[\mathtt{x}]/\left(p_{1}^{\alpha_{1}}\right) \times \cdots \times A[\mathtt{x}] / \left(p_{k}^{\alpha_{k}}\right) .\]
+\end{observation}
+\begin{eg}
+	En $\displaystyle \R[\mathtt{x}] $ si consideramos $\displaystyle I = \left(\mathtt{x}^{2}-3\mathtt{x}+2\right) $ tenemos que, como $\displaystyle \mathtt{x}^{2}-3\mathtt{x}+2 = \left(\mathtt{x}-2\right)\left(\mathtt{x}-1\right) $, por la observación anterior
+	\[\R[\mathtt{x}] / \left(\mathtt{x}^{2}-3\mathtt{x}+2\right) \cong \R[\mathtt{x}] / \left(\mathtt{x}-2\right) \times \R[\mathtt{x}] / \left(\mathtt{x}-1\right) \cong \R \times \R .\]
+\end{eg}
 
