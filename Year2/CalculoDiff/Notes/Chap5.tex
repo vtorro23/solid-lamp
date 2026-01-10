@@ -225,7 +225,7 @@ Para calcular las derivadas tenemos que resolver el sistema.
 	Calcular el máximo y el mínimo valor de $\displaystyle f\left(x,y\right) = 2x+3y $ sobre la elipse $\displaystyle E = \left\{ \left(x,y\right) \; : \; x^{2}+4y^{2} = 1\right\}  $. \\
 	Tenemos que $\displaystyle f $ es continua en $\displaystyle \R^{2} $ y $\displaystyle E $ es compacto, por lo que existen $\displaystyle p_{m}, p_{M} \in E $ tales que 
 	\[f\left(p_{m} \right)\leq f\left(p\right) \leq f\left(p_{M}\right), \; \forall p \in E .\]
-Tenemos que $\displaystyle \nabla f\left(x,y\right) = \left(2,3\right) \neq \left(0,0\right) $ y $\displaystyle f $ es lineal. El problema se puede ver de más sencillamente de forma geométrica. Buscamos el punto $\displaystyle \left(x,y\right) \in E $ tal que $\displaystyle \nabla F\left(x,y\right) = \nabla f\left(x,y\right) $, es decir, existe $\displaystyle \lambda \in \R $ con 
+Tenemos que $\displaystyle \nabla f\left(x,y\right) = \left(2,3\right) \neq \left(0,0\right) $ y $\displaystyle f $ es lineal. El problema se puede ver de forma más sencilla geométricamente. Buscamos el punto $\displaystyle \left(x,y\right) \in E $ tal que $\displaystyle \nabla F\left(x,y\right) = \nabla f\left(x,y\right) $, es decir, existe $\displaystyle \lambda \in \R $ con 
 \[\nabla f\left(x,y\right) = \lambda \nabla F\left(x,y\right) ,\]
 donde $\displaystyle F\left(x,y\right) = x^{2}+4y^{2}-1 $. Como $\displaystyle \nabla F\left(x,y\right) = \left(2x,8y\right) $, tenemos que resolver el sistema
 \[
@@ -240,7 +240,7 @@ Obtenemos dos puntos: $\displaystyle p_{1} = \left(\frac{4}{5}, \frac{3}{10}\rig
 respectivamente. 
 \end{eg}
 \begin{definition}[Variedades diferenciables implícitas]
-	Sean $\displaystyle 1\leq k \leq n $; $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle F : U \to \R^{k} $ de clase $\displaystyle \mathcal{C}^{m} $. Consideramos el conjunto 
+	Sean $\displaystyle 1\leq k \leq n $; $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle F : U \to \R^{k} $ de clase $\displaystyle \mathcal{C}^{p} $. Consideramos el conjunto 
 	\[M = \left\{ x \in U \; : \; F\left(x\right) = 0\right\} = \left\{ x \in U \; : \; F_{1}\left(x\right) = 0, \ldots, F_{k}\left(x\right) = 0\right\}  .\]
 Supongamos que $\displaystyle \forall x \in U $ la matriz $\displaystyle JF\left(x\right) $ tiene rango $\displaystyle k $. Decimos entonces que $\displaystyle M $ es una \textbf{variable diferenciable} de clase $\displaystyle \mathcal{C}^{p} $ en $\displaystyle \R^{n} $, con dimensión $\displaystyle d = n - k  $. Diremos también que 
 \[
@@ -295,7 +295,7 @@ Sea $\displaystyle M \subset \R^{n}$ una variedad diferenciable de clase $\displ
 \end{lema}
 \begin{eg}
 \begin{enumerate}
-	\item Calcular el máximo y el mínimo de $\displaystyle f\left(x,y,z\right) = 2x-z^{2} $ en la esfera $\displaystyle S = \left\{ \left(x,y,z\right) \; : \; x^{2} +y^{2} + z^{2} = 5\right\}  $. Como $\displaystyle f $ es continua y $\displaystyle S $ es continuo, existen $\displaystyle p_{m}, p_{M} \in S $ tales que 
+	\item Calcular el máximo y el mínimo de $\displaystyle f\left(x,y,z\right) = 2x-z^{2} $ en la esfera $\displaystyle S = \left\{ \left(x,y,z\right) \; : \; x^{2} +y^{2} + z^{2} = 5\right\}  $. Como $\displaystyle f $ es continua y $\displaystyle S $ es compacto, existen $\displaystyle p_{m}, p_{M} \in S $ tales que 
 		\[f\left(p_{m}\right) \leq f\left(x\right) \leq f\left(p_{M}\right), \; \forall x \in S .\]
 		Sea $\displaystyle F\left(x,y,z\right) = x^{2} +y^{2} + z^{2} -5 $ y cogemos $\displaystyle S = \left\{ \left(x,y,z\right) \; : \; F\left(x,y,z\right) = 0\right\}  $. Como $\displaystyle k = 1 $, tenemos que $\displaystyle S $ es una variedad diferenciable de clase $\displaystyle \mathcal{C}^{\infty} $ y $\displaystyle \dim S = n - k = 3 - 1 = 2$, siempre que 
 		\[\ran\nabla F = \left(2x, 2y, 2z\right) = 1, \; \forall \left(x,y,z\right) \in S .\]

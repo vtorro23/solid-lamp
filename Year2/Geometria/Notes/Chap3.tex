@@ -265,7 +265,7 @@ Sea $\displaystyle \omega \in \Hom\left(V'', \K\right) $, entonces
 \end{proof}
 \begin{definition}[Aplicación proyectiva dual]
 Dada una aplicación proyectiva $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\right) $, con aplicación lineal asociada $\displaystyle \hat{f} : V \to V' $, definimos su \textbf{aplicación dual} como
-\[ f^{*} : \mathbb{P}\left(V^{*}\right) \to \mathbb{P}\left(V'^{*}\right) : [\omega] \to [\hat{f}^{*}\left(\omega\right)] = [\omega\circ \hat{f}].\]
+\[ f^{*} : \mathbb{P}\left(V'^{*}\right) \to \mathbb{P}\left(V^{*}\right) : [\omega] \to [\hat{f}^{*}\left(\omega\right)] = [\omega\circ \hat{f}].\]
 \end{definition}
 \begin{observation}
 Como $\displaystyle \left(\lambda \hat{f}\right)^{*} = \lambda \hat{f}^{*} $, $\displaystyle \forall \lambda \in \K $, tenemos que $\displaystyle f^{*} $ está bien definido. Además, $\displaystyle Z\left(f^{*}\right) = \left(\Imagen\left(f\right)\right)^{*} $. En efecto, tenemos que 
@@ -295,7 +295,16 @@ Consideremos $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V'\
 La segunda igualdad ha sido demostrada por Ancochea el año pasado.
 \end{enumerate}
 \end{proof}
-\subsection{Variedades invariantes por homografías}
+\begin{observation}
+Sea $\displaystyle f : \mathbb{P}^{n} \to \mathbb{P}^{n}' $ una homografía y $\displaystyle A \subset \mathbb{P}^{n} $, $\displaystyle B \subset \mathbb{P}^{n}' $ variedades tales que $\displaystyle f\left(A\right) = B $. Entonces, es cierto que 
+\[\boxed{f^{*}\left(B^{*}\right) = A^{*}.} \]
+En efecto, si $\displaystyle \omega \in f^{*}\left(B^{*}\right) $, tenemos que existe $\displaystyle \lambda \in B^{\perp } $ tal que $\displaystyle \omega = \lambda \circ f $. Así, 
+\[\omega\left(A\right) = \lambda \circ f \left(A\right) = \lambda\left(f\left(A\right)\right) = \lambda\left(B\right) = \left\{ 0\right\}  .\]
+Por tanto, $\displaystyle \omega \in A^{\perp } $, por lo que $\displaystyle f^{*}\left(B^{*}\right) \subset A^{*} $. Como $\displaystyle f $ es biyectiva, tenemos que $\displaystyle f^{*} $ es biyectiva. Como $\displaystyle \dim A = \dim B $, tendremos que $\displaystyle \dim A^{\perp } = \dim B^{\perp } $, por lo que $\displaystyle \dim f^{*}\left(B^{\perp}\right)= \dim A^{\perp } $ y en consecuencia $\displaystyle f^{*}\left(B^{\perp }\right)=A^{\perp } $. 
+\end{observation}
+
+\section{Variedades invariantes por homografías}
+
 \begin{definition}[Variedad invariante]
 Sea $\displaystyle f : \mathbb{P}\left(V\right) \to \mathbb{P}\left(V\right) $ una homografía. Se dice que $\displaystyle X \subset \mathbb{P}\left(V\right) $ es una \textbf{variedad invariante por} $\displaystyle f $ si $\displaystyle f\left(X\right) \subset X $ \footnote{Esto es equivalente a que $\displaystyle f\left(X\right) = X $ puesto que $\displaystyle f $ es una homografía. En efecto, si $\displaystyle f\left(X\right)\subset X $ y $\displaystyle \dim X = \dim f\left(X\right) $ está claro que $\displaystyle X = f\left(X\right) $.}.
 \end{definition} 
@@ -319,6 +328,55 @@ Esto es cierto si y solo si $\displaystyle \lambda  $ es raíz del polinomio car
 tenemos que 
 \[\mathbb{P}\left(\hat{Y}_{\lambda }\right)^{*} = \left\{ b_{0}x_{0} + \cdots + b_{n}x_{n} = 0 \; : \; \left(b_{0}, \ldots, b_{n}\right) \in \hat{Y}_{\lambda}- \left\{ 0\right\} \right\}  ,\]
 que es una familia de hiperplanos invariantes para $\displaystyle f $. 
+\subsection*{Rectas invariantes}
+\begin{prop}
+Sea $\displaystyle f : \mathbb{P}^{n} \to \mathbb{P}^{n} $ una homografía y $\displaystyle L $ una recta de $\displaystyle \mathbb{P}^{n} $. Entonces, son equivalentes:
+\begin{description}
+\item[(i)] $\displaystyle L $ es una recta invariante para $\displaystyle f $. 
+\item[(ii)] $\displaystyle L \subset \Fix\left(f\right) $ o existe $\displaystyle P \in L/\Fix\left(f\right) $ tal que $\displaystyle f^{2}\left(P\right) \in V\left( \left\{ P, f\left(P\right)\right\}  \right) = L $. 
+\end{description}
+\end{prop}
+\begin{proof}
+\begin{description}
+	\item[$\displaystyle \Rightarrow $] Supongamos que $\displaystyle L $ es una recta invariante por $\displaystyle f $ y $\displaystyle L \subsetneq \Fix\left(f\right) $. Entonces, existe $\displaystyle P \in L$ tal que $\displaystyle f\left(P\right) \neq P $. Como $\displaystyle L $ es invariante, tenemos que $\displaystyle f\left(P\right) \in L $, por lo que $\displaystyle L = V\left( \left\{ P, f\left(P\right)\right\} \right) $. 
+		Como $\displaystyle f\left(P\right) \in L $ y $\displaystyle L $ es invariante, debe ser que $\displaystyle f^{2}\left(P\right) \in L $. 
+	\item[$\displaystyle \Leftarrow $] Si $\displaystyle L \subset \Fix\left(f\right) $ no hay nada que demostrar. Supongamos que $\displaystyle L \subsetneq \Fix\left(f\right) $ y que existe $\displaystyle P \in L/\Fix\left(f\right) $ tal que $\displaystyle f^{2}\left(P\right) \in V\left( \left\{ P, f\left(P\right)\right\} \right) = L $. Tenemos que para $\displaystyle Q \in L $,
+		\[f\left(Q\right) \in f\left(L\right) = f\left(V\left( \left\{ P, f\left(P\right)\right\} \right)\right) = V\left( \left\{ f\left(P\right), f^{2}\left(P\right)\right\} \right) = L .\]
+		Así, tenemos que $\displaystyle L $ es invariante. 
+\end{description}
+\end{proof}
+\begin{eg}
+	Calcular rectas invariantes para homografías involutivas es muy sencillo. En efecto si $\displaystyle L \subsetneq \Fix\left(f\right) $, cogemos $\displaystyle P \in L $ con $\displaystyle f\left(P\right) \neq P $, entonces $\displaystyle f^{2}\left(P\right) = P \in V \left( \left\{ P, f\left(P\right)\right\} \right) $ y tomamos $\displaystyle L = V\left( \left\{ P, f\left(P\right)\right\} \right) $. \\
+	Así, las rectas invariantes de una homografía involutiva son las rectas de puntos fijos y las que unen un punto no fijo con su imagen. 
+\end{eg}
+\begin{observation}
+Dada una homografía $\displaystyle f : \mathbb{P}^{3} \to \mathbb{P}^{3} $, sabemos que la búsqueda de puntos fijos e hiperplanos invariantes se reduce a buscar subespacios de autovectores. Veámos cómo proceder para calcular las rectas invariantes. 
+\begin{itemize}
+	\item Cada par de puntos fijos $\displaystyle P $ y $\displaystyle Q $ determina una recta invariatne $\displaystyle V\left( \left\{ P,Q\right\} \right) $ y cada par de hiperplanos invariantes $\displaystyle H_{1} $ y $\displaystyle H_{2} $ determina una recta invariante $\displaystyle H_{1} \cap H_{2} $. 
+	\item La restricción de $\displaystyle f $ a cada hiperplano invariante $\displaystyle H $ es una homografía $\displaystyle f|_{H} : H \to H $, cuyas rectas invariantes se calculan resolviendo un sistema de ecuaciones lineales por ser hiperplanos de $\displaystyle H $.
+	\item Por último, podemos utilizar la proposición anterior para calcular las restantes rectas invariantes o confirmar su defecto si las anteriores eran todas. 
+\end{itemize}
+\end{observation}
+\begin{eg}[Rectas invariantes por homologías]
+Se dice que una homografía $\displaystyle f : \mathbb{P}^{n} \to \mathbb{P}^{n} $ es una homología si el conjunto de puntos fijos es igual a un hiperplano de puntos fijos, $\displaystyle H $, más un punto fijo exterior a este hiperplano, $\displaystyle P $. \\
+En este caso las únicas rectas invariantes son 
+\begin{itemize}
+\item las rectas contenidas en $\displaystyle H $.
+\item las rectas que pasan por $\displaystyle P $, puesto que cortan a $\displaystyle H $ y son invariantes por ser la unión de dos puntos fijos. 
+\end{itemize}
+Tenemos que $\displaystyle \mathbb{A} = \mathbb{P}^{n} / H $ es un espacio afín y, como $\displaystyle f |_{H}= id $ y $\displaystyle f|_{\mathbb{A}} $ tiene un único punto fijo, $\displaystyle f|_{\mathbb{A}} $ es una homotecia. \\
+Supongamos que hay una recta invariante, $\displaystyle \ell $, no contenida en $\displaystyle H $ y que no pasa por $\displaystyle P $. Sea $\displaystyle Q \in \ell/H $ con $\displaystyle Q \neq P $, podemos hacer dos observaciones:
+\begin{itemize}
+\item Como $\displaystyle \ell $ es invariante, $\displaystyle f\left(Q\right) \in \ell $.
+\item Como $\displaystyle f|_{\mathbb{A}} $ es una homotecia, debe ser que $\displaystyle f\left(Q\right) \in V\left( \left\{ P, Q\right\} \right) $.
+\end{itemize}
+Así, tenemos que 
+\[f\left(Q\right) \in \ell \cap V\left( \left\{ P,Q\right\} \right) = \left\{ Q\right\}  .\]
+Tenemos que $\displaystyle f\left(Q\right) = Q $ y como no hay más puntos invariantes que $\displaystyle P $, esto es una contradicción. 
+\end{eg}
+
+\subsection*{Otras subvariedades invariantes}
+
 \begin{lema}
 Sean $\displaystyle X_{1}, X_{2} $ variedades invariantes para una homografía $\displaystyle f : \mathbb{P}\left(V\right)\to \mathbb{P}\left(V\right) $ y $\displaystyle \dim\mathbb{P}\left(V\right) < \infty $. Entonces, $\displaystyle X_{1} \cap X_{2} $ y $\displaystyle X_{1} + X_{2} $ son invariantes para $\displaystyle f $.
 \end{lema}
@@ -331,6 +389,7 @@ Así, tenemos que $\displaystyle f\left(X_{1}\right)+f\left(X_{2}\right) \subset
 \[X_{1} + X_{2} \subset f\left(X_{1} + X_{2}\right) .\]
 Por ser $\displaystyle f $ homografía tenemos que $\displaystyle \dim\left(X_{1} + X_{2}\right)= \dim f\left(X_{1} + X_{2}\right) $, por lo que $\displaystyle X_{1} + X_{2} = f\left(X_{1} + X_{2}\right) $. 
 \end{proof}
+
 \begin{eg}
 Consideremos  
 \[  f : \mathbb{P}^{3} \to \mathbb{P}^{3} : [x_{0}:x_{1}:x_{2}:x_{3}] \to [x_{0}+x_{1}:x_{1}+x_{2}:x_{2}+x_{3}:2x_{3}].\]
@@ -486,7 +545,7 @@ a_{k0}x_{0} + \cdots + a_{kn}x_{n} = 0
 Consideremos el hiperplano $\displaystyle H = \left\{ b_{0}x_{0} + \cdots + b_{n}x_{n} = 0\right\} $ y consideremos $\displaystyle \mathbb{A} = \mathbb{P}^{n} / H $ que es un espacio afín. Tenemos que $\displaystyle X \cap \mathbb{A} $ es una variedad afín. En efecto, tenemos que 
 \[\mathbb{A} = \left\{ [x_{0} : \cdots :x_{n}] \; : \; b_{0}x_{0}+ \cdots + b_{n}x_{n} = 1\right\} =  \left\{ \left( \frac{1}{b_{0}}\left(1-b_{1}x_{1}-\cdots -b_{n}x_{n}\right), x_{1}, \ldots, x_{n}\right)\right\} \subset \K^{n+1}	.\]
 Así, tenemos que 
-\[X \cap A = 
+\[X \cap \mathbb{A} = 
 \begin{cases}
 a_{00} \frac{1}{b_{0}}\left(1-b_{1}x_{1}-\cdots -b_{n}x_{n}\right)+ \cdots + a_{n}x_{n} = 0 \\
 \vdots \\
@@ -601,7 +660,7 @@ es el completado proyectivo de $\displaystyle X $.
 Si $\displaystyle P_{0}, \ldots, P_{d} $ son independientes en $\displaystyle \mathbb{A} $, entonces están en posición general en $\displaystyle \mathbb{P}^{n} $.
 \end{lema}
 \begin{proof}
-	Supongamos que $\displaystyle P_{0}, \ldots, P_{d} $ son independientes, por lo que $\displaystyle \left\{ \overrightarrow{P_{0}P_{1}}, \ldots, P_{0}P_{d}\right\}  $ son linealmente independientes. Supongamos que $\displaystyle P_{i} = [v_{i}] $ para $\displaystyle i = 0, \ldots, d $. Tenemos que ver que $\displaystyle \left\{ v_{0}, \ldots, v_{d}\right\}  $ son linealmente independientes. Recordamos que 
+	Supongamos que $\displaystyle P_{0}, \ldots, P_{d} $ son independientes, por lo que $\displaystyle \left\{ \overrightarrow{P_{0}P_{1}}, \ldots, \overrightarrow{P_{0}P_{d}}\right\}  $ son linealmente independientes. Supongamos que $\displaystyle P_{i} = [v_{i}] $ para $\displaystyle i = 0, \ldots, d $. Tenemos que ver que $\displaystyle \left\{ v_{0}, \ldots, v_{d}\right\}  $ son linealmente independientes. Recordamos que 
 	\[\overrightarrow{P_{0}P_{i}} = \frac{v_{i}}{f\left(v_{i}\right)}-\frac{v_{0}}{f\left(v_{0}\right)} .\]
 Supongamos que 
 \[0 = \lambda_{0}v_{0} + \cdots + \lambda_{d}v_{d} .\]

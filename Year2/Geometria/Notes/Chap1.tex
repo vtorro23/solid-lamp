@@ -257,7 +257,7 @@ Sea $\displaystyle \left(\mathcal{P}, \mathcal{R}\right) $ un plano afín de ord
 	\item Si $\displaystyle P \not\in r $, por \textbf{A2} tenemos que existe una única $\displaystyle l_{i} $ tal que $\displaystyle r | | l_{i} $, por lo que $\displaystyle P \in l_{i} $.
 	\end{itemize}
 	En ambos casos tenemos que $\displaystyle r \in \left[l_{i}\right] _{\sim} $ para algún $\displaystyle i $.
-\item[(v)] Los haces son distintos dos a dos, por ser una relación de equivalencia. Por tanto, 
+\item[(v)] Los haces son disjuntos dos a dos, por ser una relación de equivalencia. Por tanto, 
 	\[ \left|\mathcal{R}\right| = \left|\bigcup_{i = 1}^{n+1}\mathcal{H}_{i}\right| = \sum^{n + 1}_{ i = 1} \left|\mathcal{H}_{i}\right| = \sum^{n+1}_{i = 1}n = n\left(n+1\right) .\]
 \end{description}
 \end{proof}
@@ -370,7 +370,7 @@ Entonces, $\displaystyle \left(\overline{\mathcal{P}}, \overline{\mathcal{R}}\ri
 	Esto es cierto si y solo si existe $\displaystyle \lambda \in \K/ \left\{ 0\right\}  $ tal que $\displaystyle \left(a_{0}, a_{1}, a_{2}\right) = \lambda \left(b_{0}, b_{1}, b_{2}\right) $. Así, tenemos que esta notación está bien definida salvo proporcionalidad. Así, tenemos que los puntos de $\displaystyle \mathbb{P}\left(\K^{3}\right) $ son 
 	\[ \left\{ \left[a_{0} : a_{1} : a_{2}\right] \; : \; \left(a_{0}, a_{1}, a_{2}\right) \in \K^{3} / \left\{ 0\right\} \right\}  .\]
 	Por otro lado, si $\displaystyle u \in \K^{3} $ tal que $\displaystyle \dim\left(u\right) = 2 $, podemos describir $\displaystyle u $ con una ecuación implícita homogénea:
-	\[u = \left\{ \left(x_{0}, x_{1}, x_{2}\right) \; : \; ax_{0} + bx_{1} + c_{2} = 0\right\}  .\]
+	\[u = \left\{ \left(x_{0}, x_{1}, x_{2}\right) \; : \; ax_{0} + bx_{1} + cx_{2} = 0\right\}  .\]
 	Así, definimos $\displaystyle \overline{l} $ de la siguiente forma:
 	\[\overline{l} = \left\{ [x_{0}:x_{1}:x_{2}] \; : \; ax_{0} + bx_{1} + cx_{2} = 0\right\}, \; \left(a,b,c\right) \neq \left(0,0,0\right) .\]
 	 Tenemos que si $\displaystyle \left(u_{0}, u_{1}, u_{2}\right) \in \overline{l} $, entonces $\displaystyle \left(\lambda u_{0}, \lambda u_{1}, \lambda u_{2}\right) \in \overline{l} $. En efecto, 
@@ -447,7 +447,7 @@ Podemos hacer un par de observaciones:
 \end{itemize}
 Ahora ya podemos construir $\displaystyle \overline{\mathcal{P}} $ y $\displaystyle \overline{\mathcal{R}} $:
 \[\overline{\mathcal{P}} = P \cup \overline{l}_{\infty} = \left\{ [1 : u_{1} : u_{2}] \; : \; u_{i} \in \K\right\} \cup \left\{ [0 : u_{1} : u_{2}] \; : \; u_{i} \in \K\right\} = \mathbb{P}\left(\K^{3}\right).\]
-\[\overline{\mathcal{R}} = \mathcal{R} \cup \{\overline{l}\} = \left\{ \overline{l}_{\infty} = \left\{ ax_{1} + bx_{2} = cx_{0} \; : \; \left(a,b\right) \neq \left(0,0\right)\right\} \right\} \cup \left\{ x_{0} = 0\right\}  .\]
+\[\overline{\mathcal{R}} = \mathcal{R} \cup \{\overline{l}_{\infty}\} = \left\{ \overline{l} = \left\{ ax_{1} + bx_{2} = cx_{0} \; : \; \left(a,b\right) \neq \left(0,0\right)\right\} \right\} \cup \left\{ x_{0} = 0\right\}  .\]
 \end{eg}
  
 \subsection{Construcción de un plano afín desde un plano proyectivo}

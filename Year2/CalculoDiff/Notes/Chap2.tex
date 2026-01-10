@@ -181,7 +181,7 @@ Tenemos que $\displaystyle \left(f|_{F_{i}}\right)^{-1}\left(H\right) $ es cerra
 	\[ f\left(x,y,z\right) = 
 	\begin{cases}
 	\sqrt{x^{2}+y^{2}+z^{2}}, \; \sqrt{x^{2}+y^{2}+z^{2}}\leq 1 \\
-	\frac{1}{\sqrt{x^{2}+y^{2}+z^{2}}} \geq 1
+	\frac{1}{\sqrt{x^{2}+y^{2}+z^{2}}}, \; \sqrt{x^{2}+y^{2}+z^{2}} \geq 1
 	\end{cases}
 	.\]
 	Podemos considerar 
@@ -193,7 +193,7 @@ Tenemos que $\displaystyle \left(f|_{F_{i}}\right)^{-1}\left(H\right) $ es cerra
 \end{enumerate}
 \end{eg}
 \begin{theorem}
-Sea $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ continua en $\displaystyle X $ \footnote{Bastaría con que fuese continua en $\displaystyle K $.}. Si $\displaystyle \K \subset X $ es compacto, entonces $\displaystyle f\left(K\right) $ es compacto en $\displaystyle Y $.
+Sea $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ continua en $\displaystyle X $ \footnote{Bastaría con que fuese continua en $\displaystyle K $.}. Si $\displaystyle K \subset X $ es compacto, entonces $\displaystyle f\left(K\right) $ es compacto en $\displaystyle Y $.
 \end{theorem}
 \begin{proof}
 	Sea $\displaystyle \left\{ y_{n}\right\} _{n\in\N}\subset f\left(K\right) $ una sucesión cualquiera. Para cada $\displaystyle n \in \N $, como $\displaystyle y_{n} \in f\left(K\right) $, existe $\displaystyle x_{n} \in K $ tal que $\displaystyle f\left(x_{n}\right) = y_{n} $. Así, tenemos la sucesión $\displaystyle \left\{ x_{n}\right\} _{n\in\N} \subset K $. Como $\displaystyle K $ es compacto, existe $\displaystyle \left\{ x_{n_{j}}\right\} _{j \in \N} \subset \left\{ x_{n}\right\} _{n\in\N} $ tal que $\displaystyle x_{n_{j}} \to x_{0} \in \K $. Por ser $\displaystyle f $ continua, tenemos que $\displaystyle f\left(x_{n_{j}}\right) = y_{n_{j}} \to f\left(x_{0}\right) \in f\left(K\right) $.
@@ -465,7 +465,7 @@ Sean $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ y $\
 Sea $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ y $\displaystyle K \subset X $ compacto. Si $\displaystyle f $ es continua en $\displaystyle K $, entonces $\displaystyle f $ es uniformemente continua en $\displaystyle K $.
 \end{theorem}
 \begin{proof}
-	Sean $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N} \subset K $ tales que $\displaystyle d _{X}\left(x_{n}, y_{n}\right) \to 0 $. Como $\displaystyle K $ es compacto, existe $\displaystyle \left\{ x_{n_{k}}\right\} _{k \in \N}  $ subsucesión con $\displaystyle x_{n_{k}} \to x_{0} \in K$. Consideramos ahora $\displaystyle \left\{ y_{n_{k}}\right\}_{k \in \N}  $, que tiene una subsucesión $\displaystyle \left\{ y_{n_{k_{j}}}\right\} _{j \in \N} $ tal que $\displaystyle x_{n_{k_{j}}} \to x_{0}' \in K $. Tenemos que
+	Sean $\displaystyle \left\{ x_{n}\right\} _{n\in\N}, \left\{ y_{n}\right\} _{n\in\N} \subset K $ tales que $\displaystyle d _{X}\left(x_{n}, y_{n}\right) \to 0 $. Como $\displaystyle K $ es compacto, existe $\displaystyle \left\{ x_{n_{k}}\right\} _{k \in \N}  $ subsucesión con $\displaystyle x_{n_{k}} \to x_{0} \in K$. Consideramos ahora $\displaystyle \left\{ y_{n_{k}}\right\}_{k \in \N}  $, que tiene una subsucesión $\displaystyle \left\{ y_{n_{k_{j}}}\right\} _{j \in \N} $ tal que $\displaystyle y_{n_{k_{j}}} \to x_{0}' \in K $. Tenemos que
 	\[d _{X}\left(x_{0}, x_{0}'\right) \leq d _{X}\left(x_{0}, x_{n_{k_{j}}}\right) + d _{X}\left(x_{n_{k_{j}}}, y_{n_{k_{j}}}\right)+ d _{X}\left(y_{n_{k_{j}}}, x_{0}'\right) \to 0 .\]
 	Así, tenemos que $\displaystyle x_{0} = x_{0}' $. Como $\displaystyle f $ es continua en $\displaystyle x_{0} \in X $, tenemos que 
 	\[ d _{Y}\left(f\left(x_{n_{k_{j}}}\right), f\left(y_{n_{k_{j}}}\right)\right) \leq d _{Y}\left(f\left(x_{n_{k_{j}}}\right), f\left(x_{0}\right)\right) + d _{Y}\left(f\left(x_{0}\right), f\left(y_{n_{k_{j}}}\right)\right) \to 0 .\]
