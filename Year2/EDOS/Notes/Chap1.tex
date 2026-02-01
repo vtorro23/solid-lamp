@@ -1,0 +1,240 @@
+\chapter{Introducción a las ecuaciones diferenciales ordinarias}
+
+\section{Motivación: problema directo e inverso}
+
+\begin{itemize}
+\item \textbf{Cuestión directa:} nos dan una función $\displaystyle x\left(t\right) : I \subset \R \to \R $ y nos piden que calculemos su derivada.
+\begin{eg}
+Consideremos $\displaystyle x\left(t\right) = e^{t ^{2}} $. Tenemos que $\displaystyle x'\left(t\right) = 2te^{t ^{2}} = 2tx\left(t\right) $. 
+\end{eg}
+\item \textbf{Cuestión inversa:} busco $\displaystyle x\left(t\right) : I \subset \R \to \R$ que satisfazca una ecuación diferencial. 
+\begin{eg}
+	Encontrar $\displaystyle x\left(t\right) $ tal que $\displaystyle x'\left(t\right) = 2tx\left(t\right) $. Una solución es $\displaystyle x\left(t\right) = e^{t ^{2}} $, como hemos visto en el ejemplo anterior. Otra solución es $\displaystyle x_{C}\left(t\right) = Ce^{t ^{2}} $ con $\displaystyle C \in \R $. En el \textbf{Tema 2} veremos que no hay más soluciones. Diremos que $\displaystyle \left\{ x_{C}\right\}  $ es la familia de soluciones de la ecuación diferencial
+	\[x' = 2tx \]	
+	y se denomina \textbf{familia monoparamétrica} porque depende de un único parámetro. Para conseguir una única solución podemos imponer alguna condición más, como que $\displaystyle x\left(0\right) = 1 $. Entonces, tenemos que 
+	\[Ce^{0 ^{2}} = 1 \Rightarrow C = 1 .\]
+	Así, la única función que verifica esto es $\displaystyle x\left(t\right) = e^{t ^{2}} $. A este par, ecuación más condición, se le llama \textbf{problema de valor inicial} o \textbf{problema de Cauchy}. 
+\end{eg}
+\begin{observation}
+Una pregunta natural es cómo debe ser $\displaystyle x\left(t\right) $ para que el problema de Cauchy tenga solución y sea única. Esta pregunta dio lugar a los \textbf{teoremas de existencia y unicidad.} 
+\end{observation}
+\end{itemize}
+
+\section{Notación y conceptos básicos}
+\begin{notation}
+De forma habitual usaremos la notación de Newton para las derivadas de $\displaystyle x\left(t\right) $:  
+\[x'\left(t\right), x''\left(t\right), \ldots, x^{\left(n\right)}\left(t\right) .\]
+Puede que eventualmente aparezca la notación de Leibniz:
+\[\frac{dx}{dt}, \frac{d^{2}x}{dt ^{2}}, \ldots, \frac{d^{n}x}{dt ^{n}} .\]
+A menudo escribirmos simplemente $\displaystyle x, x', \ldots, x^{\left(n\right)} $ en vez de $\displaystyle x\left(t\right), x'\left(t\right), \ldots, x^{\left(n\right)}\left(t\right) $, pues en las dos sólo hay una variable independiente.
+\end{notation}
+\begin{definition}[EDO]
+Entendemos por \textbf{ecuación diferencial ordinaria} una relación que implica una o varias derivadas respecto de una única variable $\displaystyle t $ (\textbf{variable independiente}) de una función especificada $\displaystyle x\left(t\right) $ (\textbf{variable dependiente} o \textbf{función incógnita}), pudiendo implicar también a funciones de dichas variables $\displaystyle x $ y $\displaystyle t $. Llamamos \textbf{orden} de una EDO al valor de la derivada de mayor orden que aparece en la ecuación.
+\end{definition}
+\begin{observation}
+Utilizamos el adjetivo \textbf{ordinarias} para diferenciarlas de las \textbf{ecuaciones en derivadas parciales}, es decir, ecuaciones diferenciales donde una o más funciones dependen de dos o más variables independientes.
+\end{observation}
+
+\begin{eg} Calculemos los órdenes de estas ecuaciones diferenciales. 
+\begin{itemize}
+\item La ecuación
+\[x^{'''}+x'=0 ,\]
+es una EDO de orden 3.
+\item La ecuación
+	\[\frac{\partial^{2}u}{\partial x^{2}} + \frac{\partial^{2}u}{\partial t ^{2}} = 0 ,\]
+	es una EDP de orden 2.
+\end{itemize}
+\end{eg}
+\begin{eg}[Teorema Fundamental del Cálculo]
+Supongamos que $\displaystyle f\left(t\right) $ es una función continua y acotada en un cierto intervalo $\displaystyle \left(a,b\right) $ y queremos resolver la EDO $\displaystyle x'\left(t\right) = f\left(t\right) $. Por el TFC, sabemos que 
+\[x\left(t\right) = \int^{t}_{a} f\left(t\right) \; dt + x\left(a\right), \; \forall t \in \left(a,b\right) .\]
+Si conocemos el valor de $\displaystyle x\left(a\right) $ (problema de Cauchy), entonces podemos resolver la EDO.
+\end{eg}
+Aunque ya hemos definido lo que es una EDO, ahora lo hacemos de manera más formal. 
+\begin{definition}[EDO]
+	Una \textbf{ecuación diferencial ordinaria} es una ecuación que contiene a una función y sus derivadas con respecto a una variable. Formalmente, consideramos $\displaystyle x : I \subset \R \to \R $ (incógnita), con $\displaystyle I $ abierto, y $\displaystyle F : \tilde{\Omega} \subset \R^{n+2}\to \R $ con $\displaystyle \tilde{\Omega} $ abierto, y la EDO asociada será
+	\[F\left(t, x, x', \ldots, x^{\left(n\right)}\right) = 0 .\]
+\end{definition}
+Asumimos que $\displaystyle F \in \mathcal{C}^{1}\left(\tilde{\Omega }\right) $ y que existen $\displaystyle \left(t_{0}, x_{0}, \ldots, x_{0}^{\left(n\right)}\right) \in \tilde{\Omega } $ de manera que 
+\[F\left(t_{0}, x_{0}, \ldots, x^{\left(n\right)}_{0}\right) = 0 .\]
+\[\frac{\partial F}{\partial x^{\left(n\right)}}\left(t_{0}, x_{0}, \ldots, x_{0}^{\left(n\right)}\right) \neq 0 .\]
+Esto es importante porque tiene que ver con el teorema de la función implícita. La forma que aparece en la definición se llama la \textbf{forma implícita} del problema. Por otro lado, si en la EDO podemos despejar la variable $\displaystyle x^{\left(n\right)} $, escribiendo entonces
+\[x^{\left(n\right)} = f\left(t, x, \ldots, x^{\left(n-1\right)}\right) ,\]
+para $\displaystyle f : \Omega \subset \R^{n+1} \to \R $, diremos que la EDO está en \textbf{forma explícita}. Finalmente, a $\displaystyle n $ se le llama el \textbf{orden} de la EDO. \\
+Recordamos el \textbf{Teorema de la Función Implícita:}
+\begin{theorem}[Teorema de la función implícita]
+Sea $\displaystyle G : U \subset \R^{n} \times \R^{m} \to \R^{m} $ con $\displaystyle U $ abierto, donde $\displaystyle G $ es de clase $\displaystyle \mathcal{C}^{k}\left(U\right) $. Si existe un punto $\displaystyle \left(x_{0}, y_{0}\right) \in U $ tal que 
+\begin{itemize}
+\item $\displaystyle G\left(x_{0}, y_{0}\right) = 0 $ y,
+\item $\displaystyle D_{2}G\left(x_{0}, y_{0}\right) $ es inversible,
+\end{itemize}
+entonces existen $\displaystyle \epsilon, \delta  >0 $ y una función $\displaystyle g : B\left(x_{0}, \epsilon \right) \subset \R^{n} \to \R^{m} $, con $\displaystyle g \in \mathcal{C}^{k}\left(B\left(x_{0}, \epsilon \right)\right) $ tal que $\displaystyle g\left(B\left(x_{0}, \epsilon \right)\right)\subset B\left(y_{0}, \delta \right) $ y
+\[G\left(x, g\left(x\right)\right) = 0, \; \forall x \in B\left(x_{0}, \epsilon \right). \]
+Además, las únicas soluciones de $\displaystyle G\left(x,y\right) = 0 $ en $\displaystyle B\left(x_{0}, \epsilon \right)\times B\left(y_{0}, \delta \right) $ son las que cumplen la ecuación anterior. 
+\end{theorem}
+
+\subsection{Clasificación de EDOS}
+
+Podemos clasificar una EDO atendiendo a diferentes conceptos.
+\begin{itemize}
+	\item Atenciendo al \underline{orden}, es decir, el orden de la derivada de mayor orden involucrada en la EDO. 
+	\begin{eg}
+	La EDO $\displaystyle x''' +tx' = 0 $ es una EDO de orden 3.
+	\end{eg}
+\item Atendiendo a la \underline{expresión dada}, pueden ser
+	\begin{enumerate}
+	\item \textbf{Expresión explícita} o \textbf{forma normal} 
+	\item \textbf{Expresión implícita},
+	\item Referidas a las EDOS de orden 1, a veces trabajamos con la \textbf{expresión diferencial}, que viene en general dada por $\displaystyle M\left(t,x\right)dx + N\left(t,x\right)dt = 0 $. 
+	\end{enumerate}
+	\begin{eg}
+	La EDO
+	\[x' = \frac{3x^{2}+t ^{2}}{x + t} ,\]
+	esta en forma explícita, mientras que la forma diferencial será
+	\[\left(x+t\right)dx-\left(3x^{2}+t ^{2}\right) dt = 0 .\]
+	\end{eg}
+	En general, dada la EDO de orden 1, $\displaystyle F\left(t,x,x'\right) = 0 $ (expresión implícita), $\displaystyle x' = f\left(t,x\right) $ (expresión implícita), tenemos que
+		\[\frac{dx}{dt}=f\left(t,x\right) \iff dx - f\left(t,x\right)dt = 0 ,\]
+		es la \textbf{expresión diferencial}.
+	\item Otra forma de clasificarlas es por \underline{linealidad}. 
+	\begin{definition}[EDO Lineal]
+	Una EDO es \textbf{lineal} cuando se puede escribir de la forma
+	\[L\left(x\left(t\right)\right) = b\left(t\right) ,\]
+	siendo $\displaystyle L\left(x\left(t\right)\right) $ el operador lineal 
+	\[L\left(x\left(t\right)\right) = \sum^{n}_{j = 0}a_{j}\left(t\right)x^{\left(j\right)}\left(t\right),\]
+	donde $\displaystyle x^{\left(0\right)}\left(t\right) = x\left(t\right) $. Los \textbf{coeficientes} $\displaystyle a_{j}\left(t\right) $ son funciones que dependen sólo de $\displaystyle t $. Cuando todos los coeficientes $\displaystyle a_{j}\left(t\right) $ hablamos de una EDO lineal \textbf{con coeficientes constantes}.
+	Decimos que $\displaystyle b\left(t\right) $ es el \textbf{término independiente} de la EDO lineal. Cuando $\displaystyle b\left(t\right)\equiv 0 $ decimos que la EDO lineal se denomina \textbf{lineal homogénea}. 
+	\end{definition}
+\begin{observation}
+La clave de las EDOS lineales homogéneas (y de ahí su nombre de lineal) es que el conjunto de soluciones tiene estructura de $\displaystyle \R $-espacio vectorial. Formalmente, escribimos que si $\displaystyle L\left(x\right) = 0 $ es una EDO lineal de orden $\displaystyle n $, entonces
+\begin{itemize}
+\item Si $\displaystyle x_{1}\left(t\right) $ y $\displaystyle x_{2}\left(t\right) $ son soluciones, $\displaystyle x_{1}\left(t\right) + x_{2}\left(t\right) $ también lo es.
+\item $\displaystyle \forall \lambda \in \R $ y $\displaystyle x\left(t\right) $ solución de la EDO, $\displaystyle \lambda x\left(t\right) $ también es solución.
+\end{itemize}
+\end{observation}
+\begin{proof}
+Tenemos que $\displaystyle L\left(x_{1}\left(t\right)\right) = L\left(x_{2}\left(t\right)\right) = 0 $. Por tanto, tenemos que 
+\[L\left(x_{1}\left(t\right) + x_{2}\left(t\right)\right) = L\left(x_{1}\left(t\right)\right)+L\left(x_{2}\left(t\right)\right) = 0 .\]
+Hemos aplicado que la derivada de la suma es la suma de las derivadas. Del mismo modo, si $\displaystyle x\left(t\right) $ es solución, $\displaystyle L\left(x\left(t\right)\right)\equiv 0 $ y por tanto
+\[L\left(\lambda x\left(t\right)\right) = \sum^{n}_{j = 0}a_{j}\left(t\right)\left(\lambda x\left(t\right)\right)^{\left(j\right)} = \lambda\sum^{n}_{j = 0}a_{j}\left(t\right)x^{\left(j\right)}\left(t\right) = \lambda L\left(x\left(t\right)\right) = 0 .\]
+\end{proof}
+\begin{observation}
+Una EDO es lineal si su expresión implícita es lineal, es decir, todas las derivadas están elevadas a exponente 0 o 1 y no se multiplican entre sí.
+\end{observation}
+\begin{eg}
+Consideremos la EDO anterior:
+\[x' = \frac{3x^{2}+t ^{2}}{x + t} .\]
+Podemos despejar de forma que 
+\[\left(x + t\right)x' - 3x^{2} = t ^{2} .\]
+Está claro que no es lineal, puesto que el término $\displaystyle x $ está al cuadrado.  
+Sin embargo, la EDO $\displaystyle x'' + 3tx' + x = 0 $ sí es lineal. Finalmente, 
+\[x x'' + tx' = t ^{2} ,\]
+no es lineal, puesto que se están multiplicando $\displaystyle x $ y $\displaystyle x'' $. 
+\end{eg}
+\item Atendiendo a la \underline{dependencia o no de la variable independiente}, cuando una EDO no depende explícitamente de la variable independiente se denomina \textbf{autónoma}.
+\begin{definition}[EDO autónoma]
+En una EDO, cuando no aparece explícitamente la variable independiente decimos que es \textbf{autónoma}. Formalmente, su expresión explícita será
+\[x^{\left(n\right)} = f\left(x, x', \ldots, x^{\left(n-1\right)}\right) .\]
+\end{definition}
+
+\begin{eg}
+	\begin{itemize}
+	\item La EDO $\displaystyle x'' + x' x = 0 $ es \textbf{autónoma} (la $\displaystyle t $ sólo puede aparecer implícitamente con la variable dependiente).
+	\item La EDO $\displaystyle x''' + x' = 0 $ es autónoma pero $\displaystyle x' = 2tx $ no es autónoma.
+	\end{itemize}
+\end{eg}
+\begin{observation}
+Veremos que de las EDOs autónomas de orden 1 es fácil sacar mucha información cualitativa con la representación.
+\end{observation}
+\begin{observation}
+ Las únicas EDOs lineales que son autónomas son las lineales de coeficientes constantes con término independiente también constante, es decir
+\[a_{n}x^{\left(n\right)} + a_{n-1}x^{\left(n-1\right)} + \cdots + a_{0}x = b .\]
+\end{observation}
+\end{itemize}
+\subsection{Solución de una EDO}
+El problema principal asociado a una EDO es encontrar sus soluciones. 
+\begin{definition}[Solución de una EDO]
+Dada una EDO de orden $\displaystyle n $ donde $\displaystyle t \in I \subset \R $, decimos que la función $\displaystyle x = x\left(t\right) $ definida en $\displaystyle J \subset I $ es \textbf{solución} de la EDO si
+\begin{itemize}
+\item Existen sus $\displaystyle n $ primeras derivadas: $\displaystyle x' $, \ldots, $\displaystyle x^{\left(n\right)} $ en $\displaystyle J $. 
+\item Satisfacen la ecuación dada para todo $\displaystyle t \in J $.
+\end{itemize}
+\end{definition}
+El proceso de obtención de las soluciones de una EDO se denomina también \textbf{integración de la ecuación} y a sus soluciones \textbf{curvas integrales}. Además, cuando nos dan una EDO de forma explícita, es decir
+\[x^{\left(n\right)} = f\left(t, x, x', \ldots, x^{\left(n-1\right)}\right) ,\]
+decimos que $\displaystyle f $ es el \textbf{campo} asociado a la ecuación anterior. Lo ideal es encontrar una solución explícitamente pero en muchos casos la solución vendrá dada de manera implícita.
+\begin{notation}
+Normalmente $\displaystyle I $ denota el intervalo de definición de la EDO y $\displaystyle J $ el intervalo donde está definida la solución. En general, buscamos el intervalo $\displaystyle J $ más grande posible. Si no se indica lo contrario, supondremos que $\displaystyle I $ y $\displaystyle J $ son abiertos, donde las derivadas de los extremos del intervalo se consideran siempre laterales.
+\end{notation}
+\begin{definition}
+	Dadas dos soluciones $\displaystyle \left(x,J\right) $ y $\displaystyle \left(\tilde{x}, \tilde{J}\right) $ de $\displaystyle x' = f\left(t,x\right) $, se dice que $\displaystyle \left(x,J\right) $ es una \textbf{prolongación} de $\displaystyle \left(\tilde{x}, \tilde{J}\right) $ o que $\displaystyle x\left(t\right) $ \textbf{se extiende} a $\displaystyle \tilde{x}\left(t\right) $ si $\displaystyle \tilde{J} \subset J $ y $\displaystyle \tilde{x}\left(t\right) = x\left(t\right) $, $\displaystyle \forall t \in \tilde{J} $.
+\end{definition}
+\begin{eg}
+Consideremos los siguientes ejemplos.
+\begin{enumerate}
+\item Dada la EDO $\displaystyle x' = x\cos t $, tenemos que la solución $\displaystyle x\left(t\right) = e^{\sin t} $ es solución para todo $\displaystyle \R $. Lo mismo sucede con la solución $\displaystyle x_{C} = Ce^{\sin t} $ para $\displaystyle C \in \R $. Sin embargo, la ecuación $\displaystyle x' + \sqrt{t} x = t ^{2} $ sólo tiene sentido para $\displaystyle t \geq 0 $. Respecto a la solución, se puede ver que $\displaystyle x\left(t\right) = t ^{\frac{3}{2}} - \frac{3}{2} $ es solución.
+\item Es importante ver que la solución debe ser solución en un intervalo. Por ejemplo, $\displaystyle x' = x $ tiene como solución $\displaystyle x\left(t\right) = e^{t } $ en $\displaystyle t \in \R $. Podríamos pensar que $\displaystyle x = \sin t $ también, pero no es solución salvo para $\displaystyle t = \frac{\pi }{4} + k \pi  $, que no es un intervalo. Por tanto, esta última no es solución.
+\end{enumerate}
+\end{eg}
+Normalmente encontrar la solución a una EDO es muy complicado. Sin embargo, ver si una función es o no es solución es muy sencillo, basta con derivar, sustituir en la ecuación y ver si obtenemos o no una identidad para algún intervalo de la variable independiente.
+\begin{eg}
+\begin{enumerate}
+\item Consideremos $\displaystyle x'' - 2x' + x = 0 $, es sencillo comprobar que $\displaystyle x\left(t\right)=\left(1+2t\right)e^{t} $ es solución. 
+\item Las soluciones a una EDO no siempre se pueden dar explícitamente. En efecto, para la EDO
+	\[x' = \frac{x}{x^{2}+1} ,\]
+	una solución es
+	\[\ln \left|x\left(t\right)\right| + \frac{x\left(t\right)^{2}}{2} = t + C, \; C \in \R .\]
+Decimos que esta es una solución \textbf{implícita} de la EDO. 	
+\end{enumerate}
+
+\end{eg}
+
+\begin{eg}
+La solución de una EDO puede ser una función definida a trozos. En efecto, consideremos la EDO, $\displaystyle x'^{2} - 9tx = 0 $. Una solución es
+\[x\left(t\right) = 
+\begin{cases}
+0, \; t \leq 0 \\
+t ^{3}, \; t > 0
+\end{cases}
+.\]
+Se puede comprobar que $\displaystyle x\in\mathcal{C}^{1} $ y es solución de la ecuación. 
+\end{eg}
+Obtener la \textbf{solución general} de una EDO es hallar todas las soluciones que verifican la ecuación. En una EDO lineal de orden $\displaystyle n $ veremos que la solución general es una familia que depende de $\displaystyle n $ parámetros y se denomina \textbf{familia $\displaystyle n $-paramétrica}. 
+\begin{eg}
+	Para la EDO $\displaystyle x' = x $ vimos que la solución general era la familia $\displaystyle \left\{ x_{c}\right\}  $ con $\displaystyle x_{C}\left(t\right) = Ce^{t} $, $\displaystyle C \in \R $. Decimos que es una \textbf{familia monoparamétrica}, puesto que depende de un único parámetro $\displaystyle C $. 
+\end{eg}
+\begin{eg}
+La EDO $\displaystyle x'' - x = 0 $ tiene por solución general 
+\[x\left(t\right) = C_{1}e^{t} + C_{2}e^{-t}, \quad C_{1}, C_{2} \in \R ,\]
+que es una \textbf{familia biparamétrica}. La base del espacio vectorial de soluciones $\displaystyle \left\{ e^{t}, e^{-t}\right\}  $, puesto que son linealmente independientes. 
+\end{eg}
+En el \underline{caso no lineal}, obtener una solución genera es mas complicado. En este escenario podemos, por ejemplo, tener \textbf{soluciones singulares} que son aquellas que no pertenecen a una familia de funciones dependiente de un parámetro que también es solución.
+\begin{eg}
+Consideremos $\displaystyle x' = t\sqrt{x} $. Una solución de la EDO es
+\[x\left(t\right) = \left(\frac{t ^{2}}{4} + C\right)^{2}, C \in \R ,\]
+es una familia solución de la EDO. Sin embargo, esta familia no incluye la solución trivial, $\displaystyle x\left(t\right)\equiv 0 $, por tanto decimos que esta es una solución singular.
+\end{eg}
+En el caso anterior, para encontrar la solución general tenemos que encontrar la familia y la solución singular. 
+\begin{observation}
+No confundir solución singular con solución particular. Una \textbf{solución particular} es una solución concreta de la EDO; es decir un miembro de la familia si la solución es una familia. 
+\end{observation}
+\begin{eg}
+En el ejemplo anterior, la solución singular también es solución particular. Otro ejemplo es que $\displaystyle x\left(t\right)= e^{t} $ es una solución particular de $\displaystyle x' = x $.
+\end{eg}
+\begin{notation}
+La \textbf{solución trivial} es la solución idénticamente nula. 
+\end{notation}
+\subsection{Problemas de valor inicial y contornos}
+\begin{definition}[Problema de valor inicial]
+Un \textbf{problema de valor inicial} o \textbf{de Cauchy} es un sistema
+\[
+\begin{cases}
+x^{\left(n\right)} = f\left(t, x, x', \ldots, x^{\left(n-1\right)}\right), \; t\in I \\
+x\left(t_{0}\right) = x_{0}, \; t_{0} \in I, \; x_{0} \in \R\\
+x'\left(t_{0}\right) = x_{1} , \; x_{1} \in \R\\
+\vdots \\
+x^{\left(n-1\right)}\left(t_{0}\right)= x_{n-1}, \; x_{n-1} \in \R
+\end{cases}
+.\]
+\end{definition}
+

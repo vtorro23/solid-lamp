@@ -1,0 +1,113 @@
+% Basic commands
+\usepackage[margin=1.5in]{geometry}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{float}
+
+% Tikz
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{intersections, angles, quotes, calc, positioning}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+
+% For math environments
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em}
+
+\theoremstyle{definition}
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+    mdframed={nobreak,
+        %linewidth=2pt,
+        %rightline=false, topline=false, bottomline=false, leftline=false, 
+        %linecolor=Bittersweet,
+        backgroundcolor=NavyBlue!5,
+    }
+]{thmgreenbox}
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=0.5pt,
+        rightline=false, leftline=false,}
+]{thmblueline}
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily\color{Bittersweet!70!black}, bodyfont=\normalfont,
+    mdframed={nobreak,
+        %linewidth=2pt,
+        %rightline=false, topline=false, bottomline=false, leftline=false, 
+        %linecolor=Bittersweet,
+        backgroundcolor=Bittersweet!5,
+    }
+]{thmredbox}
+
+\declaretheoremstyle[headfont=\bfseries\sffamily\color{Gray!70!black}, bodyfont=\normalfont, 
+	mdframed={
+	rightline=false, 
+	topline=false, 
+	bottomline=false, 
+	leftline=false,
+	backgroundcolor=Gray!5,}]{thmbluebox}
+
+%\declaretheoremstyle[headfont=\bfseries\sffamily\color{Gray!70!black}, bodyfont=\normalfont\color{Gray!70!black}]{thmbluebox}
+
+\declaretheorem[style=thmgreenbox, name=Definición, numberwithin=chapter]{definition}
+\declaretheorem[style=thmbluebox, numbered=no, name=Ejemplo]{eg}
+\declaretheorem[style=thmredbox, name=Proposición, numberwithin=chapter]{prop}
+\declaretheorem[style=thmredbox, name=Teorema, numberwithin=chapter]{theorem}
+\declaretheorem[style=thmredbox, name=Lema, numberwithin=chapter]{lema}
+\declaretheorem[style=thmredbox, name=Corolario, numberwithin=chapter]{colorary}
+\declaretheorem[style=thmblueline, numbered=no, name=Notación]{notation}
+
+\declaretheorem[style=thmblueline, numbered=no, name=Observación]{observation}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead[L]{Victoria Eugenia Torroja}
+\fancyhead[R]{\rightmark}
+\fancyfoot[C]{\leftmark}
+\fancyfoot[R]{\thepage}
+
+% New commands
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\mcd}{\text{mcd}}
+\newcommand{\mcm}{\text{mcm}}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Imagen}{Im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\sig}{sig}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Adj}{Adj}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\traz}{traz}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Bil}{Bil}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\Int}{Int}
+\let\epsilon\varepsilon

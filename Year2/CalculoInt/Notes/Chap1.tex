@@ -1,0 +1,277 @@
+\chapter{Integral de Riemann}
+\section{Conceptos básicos}
+Consideramos el paralelepípedo
+\[R = [a_{1}, b_{1}] \times \cdots \times [a_{n}, b_{n}] ,\]
+que es producto directo de intervalos compactos en $\displaystyle \R $. Consideremos también una función $\displaystyle f : R \to \R $ acotada. Definimos el \textbf{volumen} del rectángulo $\displaystyle R $ como el producto de las longitudes de sus lados, es decir,
+\[v\left(R\right) := \left(b_{1}-a_{1}\right) \cdots \left(b_{n}-a_{n}\right) .\]
+\begin{definition}[Partición]
+Tomamos particiones
+\[P_{1} \in \mathcal{P}\left([a_{1}, b_{1}]\right), \ldots, P_{n} \in \mathcal{P}\left([a_{n}, b_{n}]\right) ,\]
+y decimos que $\displaystyle P = \left(P_{1}, \ldots, P_{n}\right) \in \mathcal{P}\left(R\right) $ es una \textbf{partición} de $\displaystyle R $.
+\end{definition}
+De esta forma, estamos dividiendo el rectángulo $\displaystyle R $ en subrectángulos.
+\begin{definition}
+Dadas dos particiones $\displaystyle P = \left(P_{1}, \ldots, P_{n}\right) $ y $\displaystyle Q = \left(Q_{1}, \ldots, Q_{n}\right) $, decimos que $\displaystyle P $ es \textbf{más fina} que $\displaystyle Q $, $\displaystyle P \geq Q $, si $\displaystyle P_{i} $ es más fina que $\displaystyle Q_{i} $ para $\displaystyle i = 1, \ldots, n $.
+\end{definition}
+ Si $\displaystyle T \in \mathcal{P}\left(R\right) $, entonces $\displaystyle T $ es un pequeño paralelepípedo cuyos lados son intervalos de $\displaystyle P_{i} $ (queremos decir que $\displaystyle T $ es uno de los subrectángulos formados por la partición $\displaystyle P $). Podemos ver que para cada partición $\displaystyle P_{i} = \left\{ x^{i}_{0}, \ldots, x^{i}_{m_{i}}\right\}  $, los rectángulos $\displaystyle T $ tendrán la forma  
+\[ T = \left[x^{1}_{j_{1}}, x^{1}_{j_{1}+1}\right] \times \cdots \times \left[x^{n}_{j_{n}}, x^{n}_{j_{n}+1}\right], \; 0 \leq j_{i} \leq m_{i}-1.\]
+Así, definimos,
+\begin{definition}[Suma superior e inferior]
+Decimos que la \textbf{suma inferior} de $\displaystyle f $ por $\displaystyle P $ es
+\[s\left(f, P\right) := \sum_{T \in P}v\left(T\right)\inf \left\{ f\left(t\right) \; : \; t \in T\right\} .\]
+Análogamente, decimos que la \textbf{suma superior} de $\displaystyle f $ por $\displaystyle P $ es
+\[S\left(f,P\right):=\sum_{T \in P}v\left(T\right)\sup \left\{ f\left(t\right) \; : \; t \in T\right\}  .\]
+\end{definition}
+\begin{observation}
+A partir de la definición anterior, podemos hacer un par de observaciones. 
+\begin{itemize}
+\item En primer lugar, como $\displaystyle f $ está acotada, las sumas superiores e inferiores están bien definidas.
+\item Para cualquier partición $\displaystyle P \in \mathcal{P}\left(R\right) $ se cumple que $\displaystyle s\left(f,P\right)\leq S\left(f,P\right) $.
+\end{itemize}
+\end{observation}
+Para introducir la noción de \textbf{integral superior} e \textbf{integral inferior}, tenemos que ver que las sumas superiores e inferiores están acotadas, esto se puede ver de dos formas.
+\begin{notation}
+A partir de ahora, utilizamos la notación siguiente:
+\[\alpha_{T} = \inf \left\{ f\left(t\right) \; : \; t \in T\right\} \quad \text{y} \quad \beta_{T} = \sup \left\{ f\left(t\right) \; : \; t \in T\right\}  .\]
+\end{notation}
+
+\subsection*{Forma 1}
+Sea $\displaystyle P \in \mathcal{P}\left(R\right) $. Como $\displaystyle f $ es acotada en $\displaystyle R $ sabemos que existen $\displaystyle M,m \in \R $ tales que 
+\[m \leq f\left(x\right)\leq M, \; \forall x \in R .\]
+Así, tenemos que 
+\[\sum_{T\in P}mv\left(T\right) \leq s\left(f,P\right) \leq S\left(f,P\right)\leq \sum_{T \in P}Mv\left(T\right) .\]
+Demostremos ahora la igualdad
+\[\sum_{T \in P} v\left(T\right) = v\left(R\right).\]
+En primer lugar, consideremos el caso $\displaystyle n = 1 $. Cogemos $\displaystyle R = [a,b] $ y la partición $\displaystyle P = \left\{ t_{0} = a, t_{1}, \ldots, t_{m} = b\right\}  $. Así, tenemos que 
+\[\sum^{m}_{i = 1}v\left(\left[t_{i-1}, t_{i}\right] \right) = \sum^{m}_{i = 1}\left(t_{i}-t_{i-1}\right) = t_{m}-t_{0} = b-a = v\left(R\right).\]
+Demostraremos el caso $\displaystyle n = 2 $ pues a partir de este es fácil generalizar la demostración para $\displaystyle n > 2 $. Por tanto, tomamos $\displaystyle R = [a_{1}, b_{1}]\times[a_{2}, b_{2}] $ con la partición $\displaystyle P = \left(P_{1}, P_{2}\right) $ tal que 
+\[P_{1} = \left\{ t_{0} = a_{1} , t_{1}, \ldots, t_{m} = b_{1}\right\} , \quad P_{2} = \left\{ q_{0} = a_{2} , q_{1} , \cdots , q_{r} = b_{2}\right\}  .\]
+Tendremos que 
+\[
+\begin{split}
+	\sum_{T \in R}v\left(T\right) = & \sum^{m - 1}_{i = 0}\sum^{r - 1}_{j = 0}v\left(\left[t_{i}, t_{i+1}\right] \times \left[q_{j}, q_{j+1}\right] \right) = \sum^{m - 1}_{i = 0}\sum^{r - 1}_{j = 0} \left(t_{i+1}-t_{i}\right)\left(q_{j+1}-q_{j}\right) = \left(b_{1}-a_{1}\right) \left(b_{2}-a_{2}\right).
+\end{split}
+\]
+Así, podemos decir que
+\[mv\left(R\right)\leq s\left(f,P\right) \leq S\left(f,P\right) \leq Mv\left(R\right) .\]
+\subsection*{Forma 2}
+
+\begin{lema}
+Sean $\displaystyle P,T \in \mathcal{P}\left(R\right) $ con $\displaystyle T \geq P $. Entonces,
+\[s\left(f,P\right)\leq s\left(f,T\right)\leq S\left(f,T\right)\leq S\left(f,P\right) .\]
+\end{lema}
+\begin{proof}
+	Lo demostramos para $\displaystyle n =2$ puesto que la demostración es fácil de generalizar para $\displaystyle n > 2 $. Sea $\displaystyle P = \left(P_{1},P_{2}\right) \in \mathcal{P}\left(R\right) $. Para demostrar el lema basta con demostrar el caso $\displaystyle P' = \left(P_{1}',P_{2}\right) $, donde $\displaystyle P_{1}' = P_{1} \cup \left\{ u\right\}  $. Claramente tenemos que $\displaystyle P' $ es más fina que $\displaystyle P $. Concretamente, supongamos que 
+\[P_{1} = \left\{ t_{0}^{1}, \ldots, t_{n}^{1}\right\} \quad \text{y} \quad P_{1}' = \left\{ t_{0}^{1}, \ldots, t_{i}^{1}, u, t_{i+1}^{1}, \ldots, t_{n}^{1}\right\}  .\]
+Sea $\displaystyle P_{2} = \left\{ q_{0}, \ldots, q_{r}\right\}  $, y definimos los conjuntos de rectángulos
+\[J_{1} = \left\{ [t_{i}, u] \times [q_{j}, q_{j+1}] \; : \; 0 \leq j \leq r-1 \right\} \quad \text{y} \quad  J_{2} = \left\{ \left[u, t_{i+1}\right] \times \left[q_{j}, q_{j+1}\right] \; : \; 0 \leq j \leq r-1\right\} .\]
+Claramente tenemos que $\displaystyle J_{1} \cap J_{2} = \emptyset $. De esta forma, tenemos que
+\[
+\begin{split}
+	s\left(f,P'\right) = &  \sum_{T \in P'}v\left(T\right) \alpha_{T} 
+	=  \sum_{T \in P'/\left(J_{1} \cup J_{2}\right)}v\left(T\right) \alpha_{T} + \sum_{T \in J_{1}}v\left(T\right) \alpha_{T} + \sum_{T \in J_{2}}v\left(T\right) \alpha_{T} \\
+	= & \sum_{T \in P'/\left(J_{1} \cup J_{2}\right)}v\left(T\right) \alpha_{T} + \sum^{r-1}_{j = 0}\left(u-t_{i}\right)\left(q_{j+1}-q_{j}\right)\alpha_{j}^{1}+\sum^{r-1}_{j = 0}\left(t_{i+1}-u\right)\left(q_{j+1}-q_{j}\right)\alpha_{j}^{2}\\
+	\geq & \sum_{T \in P'/\left(J_{1} \cup J_{2}\right)}v\left(T\right) \alpha_{T} + \sum^{r-1}_{j = 0} \left(t_{i+1}-t_{i}\right)\left(q_{j+1}-q_{j}\right)\alpha_{j} = s\left(f,P\right).
+\end{split}
+\]
+La desigualdad para la suma superior se demuestra de forma análoga. 
+\end{proof}
+\begin{prop}
+Dadas dos particiones, $\displaystyle P, Q \in \mathcal{P}\left(R\right) $
+\[s\left(f,P\right) \leq S\left(f,Q\right) .\]
+\end{prop}
+\begin{proof}
+Sea $\displaystyle T = \left(P_{1} \cup Q_{1}, \ldots, P_{n} \cup Q_{n}\right)\in \mathcal{P}\left(R\right) $. Claramente, $\displaystyle T \geq P $ y $\displaystyle T \geq Q $. Por tanto, aplicando el lema anterior
+\[ s\left(f,P\right) \leq s\left(f, T\right)\leq S\left(f,T\right)\leq S\left(f,Q\right).\]
+\end{proof}
+Por ambas formas hemos visto que existen
+\[\inf \left\{ S\left(f,P\right) \; : \; P \in \mathcal{P}\left(R\right)\right\} \quad \text{y} \quad \sup \left\{ s\left(f,P\right) \; : \; P \in \mathcal{P}\left(R\right)\right\}  ,\]
+por lo que estamos en condiciones de definir la integral superior e inferior. 
+\begin{definition}[Integral superior e inferior]
+Se define como \textbf{integral superior} e \textbf{integral inferior} a los valores
+\[\overline{\int _{R}}f = \inf \left\{ S\left(f,P\right) \; : \; P \in \mathcal{P}\left(R\right)\right\} \quad \text{y} \quad \underline{\int _{R}}f = \sup \left\{ s\left(f,P\right) \; : \; P \in \mathcal{P}\left(R\right)\right\} ,\]
+repsectivamente. Decimos que $\displaystyle f $ es \textbf{integrable} si el valor de la integral superior e inferior coincide.
+\end{definition}
+
+\begin{colorary}
+Dada $\displaystyle f : R \to \R $ acotada,
+\[\underline{\int _{R}}f \leq \overline{\int _{R}}f .\]
+\end{colorary}
+
+\begin{eg}
+Consideremos $\displaystyle f \equiv c $, con $\displaystyle c $ constante. Tenemos que para una partición $\displaystyle P \in \mathcal{P}\left(R\right)$,
+\[s\left(f,P\right) = \sum_{T \in P}v\left(T\right) \inf \left\{ f\left(t\right) \; : \; t\in T\right\}  = \sum_{T \in P}v\left(T\right)c = cv\left(R\right).\]
+Por otro lado, 
+\[ S\left(f,P\right) = \sum_{T \in P}v\left(T\right)\sup \left\{ f\left(t\right) \; : \; t \in T\right\} = \sum_{T \in P}v\left(T\right)c = cv\left(R\right).\]
+Como la integral superior y la inferior coinciden, debe ser que la función es integrable.
+\end{eg}
+\begin{theorem}[Criterio de integrabilidad de Riemann]
+Una función $\displaystyle f: R \to \R $ acotada es integrable si y solo si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists P_{\epsilon } \in \mathcal{P}\left(R\right) $ tal que 
+\[S\left(f,P_{\epsilon }\right)-s\left(f,P_{\epsilon }\right) < \epsilon  .\]
+\end{theorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Supongamos que $\displaystyle f $ es integrable y sea $\displaystyle \epsilon > 0 $. Por definición de supremo e ínfimo, tenemos que existen particiones $\displaystyle P_{1}, P_{2} \in \mathcal{P}\left(R\right) $ tales que
+	\[\int _{R}f -\frac{\epsilon }{2} < s\left(f, P_{1}\right), \; \int _{R}f +\frac{\epsilon }{2} > S\left(f,P_{2}\right) .\]
+Cogemos $\displaystyle P_{\epsilon} \in \mathcal{P}\left(R\right) $ más fina que $\displaystyle P_{1} $ y $\displaystyle P_{2} $ y tenemos que
+\[S\left(f,P_{\epsilon}\right)-s\left(f,P_{\epsilon}\right) \leq S\left(f,P_{2}\right)-s\left(f,P_{1}\right)<\left(\int _{R}f +\frac{\epsilon }{2}\right)-\left(\int _{R}f -\frac{\epsilon }{2}\right) = \epsilon  .\]
+\item[(ii)] Sea $\displaystyle \epsilon > 0 $, entonces por hipótesis tenemos que
+	\[0 \leq \overline{\int _{R}}f-\underline{\int _{R}}f \leq S\left(f,P_{\epsilon }\right)-s\left(f,P_{\epsilon }\right) < \epsilon .\]
+	Como esto es cierto para todo $\displaystyle \epsilon > 0 $, debe ser que la integral superior y la inferior coinciden, por lo que $\displaystyle f $ es integrable. 
+\end{description}
+\end{proof}
+\begin{observation}
+La negación del criterio anterior nos permite ver cuándo una función no es integrable, que es si y solo si existe $\displaystyle \epsilon _{0} > 0 $ tal que $\displaystyle S\left(f, P\right)-s\left(f,P\right) \geq \epsilon_{0} $, $\displaystyle \forall P \in \mathcal{P}\left(R\right) $. 
+\end{observation}
+\begin{eg}
+Un ejemplo muy común de función no integrable es la función de Dirichlet,
+\[f:\left[0,1\right]  \to \R : x \to 
+\begin{cases}
+1, \; x \in \Q \\
+0, \; x \not\in \Q
+\end{cases}
+.\]
+Este ejemplo lo podemos generalizar en $\displaystyle \R^{n} $. En efecto, podemos tomar $\displaystyle R = \left[0,1\right] ^{n} \subset \R^{n} $, con 
+\[f:R \to \R : x = \left(x_{1}, \ldots, x_{n}\right) \to 
+\begin{cases}
+1, \; x \in \Q^{n} \\
+0, \; x\not\in \Q^{n}
+\end{cases}
+.\]
+Tenemos que $\displaystyle \forall P \in \mathcal{P}\left(R\right) $, $\displaystyle S\left(f,P\right) = 1 $ y $\displaystyle s\left(f,P\right) = 0 $, por lo que $\displaystyle S\left(f,P\right) -s\left(f,P\right) = 1 $ y $\displaystyle f $ no es integrable. \\
+Esta noción la podemos generalizar. Consideremos $\displaystyle R = \left[0,1\right] ^{n} \subset \R^{n} $ y $\displaystyle A \subset \R $ tal que $\displaystyle A $ y $\displaystyle R/A $ son densos en $\displaystyle R $. Por denso queremos decir que todo rectángulo no trivial $\displaystyle J $, $\displaystyle A \cap J \neq \emptyset $ y $\displaystyle \left(R/A\right)\cap J \neq \emptyset $. Entonces, 
+\[f : R \to \R : x \to 
+\begin{cases}
+1, \; x \in A \\
+0, \; x \in R/A
+\end{cases}
+,\]
+no es integrable. 
+\end{eg}
+\begin{theorem}[Teorema de Darboux]
+Una función $\displaystyle f : R \to \R $ acotada es integrable en $\displaystyle R $ con integral $\displaystyle I $ si y solo si para todo $\displaystyle \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle P \in \mathcal{P}\left(R\right) $ con $\displaystyle \|P\|<\delta  $ \footnote{Para cualquier $\displaystyle J \in P $, el diámetro de $\displaystyle J $ es menor a $\displaystyle \delta  $.}, entonces
+\[ \left|\sum_{J \in P}f\left(x_{J}\right)v\left(J\right) - I\right|< \epsilon , \quad \forall x_{J} \in J .\]
+\end{theorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Supongamos que $\displaystyle f: R \to \R $ es integrable con integral $\displaystyle I $ y sea $\displaystyle \epsilon > 0 $. Por el criterio de integrabilidad de Riemann, existe $\displaystyle P_{\epsilon } \in \mathcal{P}\left(R\right) $ tal que $\displaystyle S\left(f,P_{\epsilon }\right)-s\left(f,P_{\epsilon }\right) < \epsilon  $. 
+\item[(ii)] Sea $\displaystyle \epsilon > 0 $, entonces existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \|P\| < \delta  $ entonces
+	\[ \left|\sum_{i = 1}^{N}f\left(x_{i}\right)v\left(J_{i}\right) - I\right| < \frac{\epsilon }{2} ,\]
+Donde $\displaystyle J_{1}, \ldots, J_{N} $ son los rectángulos que componen la partición $\displaystyle P $. Cogemos $\displaystyle x_{i} \in J_{i} $ tal que 
+	\[ \left|f\left(x_i\right)-\beta_{J_{i}}\right| < \frac{\epsilon }{v\left(J_{i}\right)2N} .\]
+Así, tenemos que 
+\[ \left|S\left(f,P\right)-I\right| \leq \left|S\left(f,P\right)-\sum^{N}_{i = 1}f\left(x_{i}\right)v\left(J_{i}\right)\right| + \left|\sum^{N}_{i = 1}f\left(x_{i}\right)v\left(J_{i}\right)-I\right| .\]
+Tenemos que 
+\[ \left|S\left(f,P\right)-\sum^{N}_{i = 1}f\left(x_{i}\right)v\left(J_{i}\right)\right| < \sum^{N}_{i = 1}\frac{\epsilon v\left(J_{i}\right)}{v\left(J_{i}\right)2N} = \frac{\epsilon }{2} .\]
+Así, obtenemos que $\displaystyle \left|S\left(f,P\right)-I\right| < \epsilon  $. De forma análoga se puede demostrar que $\displaystyle \left|I - s\left(f,P\right)\right| < \epsilon  $. De esta forma, obtenemos que si $\displaystyle \epsilon > 0 $ existe $\displaystyle P \in \mathcal{P}\left(R\right) $ tal que 
+\[ \left|S\left(f,P\right)-s\left(f,P\right)\right| \leq \left|S\left(f,P\right)-I\right|+ \left|I -s\left(f,P\right)\right| < \epsilon ,\]
+y por el criterio de Riemann tenemos que $\displaystyle f $ es integrable en $\displaystyle R $. Además, por lo visto anteriormente, existe $\displaystyle P \in \mathcal{P}\left(R\right) $ tal que 
+\[ \left|\overline{\int_{R}}f - I\right|\leq \left|\overline{\int _{R} }f - S\left(f,P\right)\right| + \left|S\left(f,P\right)-I\right| < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon , \quad \forall \epsilon > 0  .\]
+El caso para la integral inferior es análogo. Así, hemos demostrado que $\displaystyle \int _{R}f = I $. 
+\end{description}
+\end{proof}
+\begin{theorem}
+Sea $\displaystyle f : R \to \R $ continua, entonces $\displaystyle f $ es integrable. 
+\end{theorem}
+\begin{proof}
+En esta demostración trabajaremos con la norma infinita pero la equivalencia de normas permite generalizar el resultado para cualquier norma en $\displaystyle \R^{n} $. Dado que $\displaystyle f $ es continua en $\displaystyle R $ y este es compacto, tenemos que $\displaystyle f $ es uniformemente continua en $\displaystyle R $. Sea $\displaystyle \epsilon > 0 $ y $\displaystyle \epsilon ' = \frac{\epsilon }{v\left(R\right)} > 0 $. Tenemos que existe $\displaystyle \delta > 0 $ tal que 
+\[ \|x -y\|_{\infty} < \delta \Rightarrow \left|f\left(x\right)-f\left(y\right)\right| < \epsilon ' , \; \forall x,y \in R.\]
+Así, cogemos una partición $\displaystyle P_{\delta} \in \mathcal{P}\left(R\right) $ que form rectángulos de lados con longitud menor a $\displaystyle \delta  $. Recordamos que dado que $\displaystyle f $ es continua en $\displaystyle R $, lo es también en cada subrectángulo generado por la partición $\displaystyle P_{\delta } $. De esta forma, en cada $\displaystyle T \in P_{\delta } $, $\displaystyle f $ alcanza su máximo y su mínimo, $\displaystyle \beta _{T} $ y $\displaystyle \alpha_{T} $, respectivamente. Por tanto,
+\[S\left(f,P_{\delta }\right)-s\left(f,P_{\delta }\right) = \sum_{T \in P_{\delta }}v\left(T\right)\left(\beta_{T}-\alpha_{T}\right) < \epsilon ' \sum_{T \in P_{\delta }}v\left(T\right) = \epsilon .\]
+Por el criterio de integrabilidad de Riemann, $\displaystyle f $ es integrable en $\displaystyle R $. 
+\end{proof}
+\section{Integrales en otros conjuntos}
+\begin{definition}[Volumen]
+Sea $\displaystyle A \subset \R^{n} $ con $\displaystyle A\neq \emptyset $ y $\displaystyle A $ acotado. Tomamos un rectángulo $\displaystyle R $ tal que $\displaystyle A \subset R $. Definimos la función 
+\[\chi_{A} : R \to \R : x \to 
+\begin{cases}
+1, \; x \in A \\
+0, \; x \not\in A
+\end{cases}
+.\]
+Diremos que $\displaystyle A $ tiene \textbf{volumen} (A es \textbf{medible Jordan}) si $\displaystyle \chi_{A} $ es integrable y en este caso diremos que su \textbf{volumen} es 
+\[V\left(A\right) = \int _{R}\chi_{A} .\]
+\end{definition}
+\begin{observation}
+	Ya vimos anteriormente que $\displaystyle \Q^{n} \cap \left[0,1\right] ^{n} $ no tiene volumen.
+\end{observation}
+\begin{observation}
+Sea $\displaystyle \emptyset \neq A \subset \R^{n} $ acotado y $\displaystyle R $ un rectángulo tal que $\displaystyle A \subset R $. Cogemos $\displaystyle P \in \mathcal{P}\left(R\right) $. Podemos observar que 
+\[\alpha_{J} = 
+\begin{cases}
+1, \; J \subset A \\
+0, \; J \subsetneq A
+\end{cases}
+.\]
+Así, tendremos que 
+\[s\left(\chi_{A}, P\right) = \sum_{J \in P}v\left(J\right)\alpha_{J} = \sum_{J \in P, J \subset A}v\left(J\right).\]
+De esta forma,
+\[\underline{\int _{R}} \chi_{A} = \sup \left\{ \sum_{J \in P, J \subset A}v\left(J\right) \; : \; P \in \mathcal{P}\left(R\right)\right\} .\]
+Consideremos ahora las sumas superiores,
+\[\beta_{J} = 
+\begin{cases}
+1, \; J \cap A \neq \emptyset \\
+0, \; J \cap A = \emptyset
+\end{cases}
+.\]
+De esta forma,
+\[S\left(\chi_{A}, P\right) = \sum_{J \in P, J \cap A \neq \emptyset}v\left(J\right) .\]
+Así, 
+\[\overline{\int _{R} }\chi_{A} = \inf \left\{\sum_{J \in P, J \cap A \neq \emptyset}v\left(J\right)\; : \; P \in \mathcal{P}\left(R\right) \right\}  .\]
+\end{observation}
+\begin{eg}
+Si $\displaystyle R $ es un rectángulo, $\displaystyle R $ es medible Jordan.
+\end{eg}
+\begin{definition}[Integral en otros conjuntos]
+Sea $\displaystyle A \subset \R^{n} $ acotado y $\displaystyle f : A \to \R $ también acotada. Diremos que $\displaystyle f $ \textbf{es integrable en} $\displaystyle A $ si existe $\displaystyle R $ rectángulo tal que $\displaystyle A \subset R $ y 
+\[\tilde{f} : R \to \R : x \to 
+\begin{cases}
+f\left(x\right), \; x \in A \\
+0, \; x \not\in A
+\end{cases}
+,\]
+es integrable en $\displaystyle R $. En este caso
+\[\int _{A}f := \int _{R}\tilde{f}  .\]
+De forma equivalente, desde $\displaystyle f : R \to \R $ y $\displaystyle A \subset R $, diremos que $\displaystyle f $ es integrable en $\displaystyle A $ si $\displaystyle f \cdot \chi_{A} $ es integrable en $\displaystyle R $ y tomamos
+\[\int _{A}f = \int _{R}f \cdot \chi_{A}  .\]
+\end{definition}
+
+\begin{observation}
+	Tanto para la definición anterior como para la de volumen, tenemos que ver que basta con que exista $\displaystyle R $, puesto que en cuanto existe uno para cualquier otro rectángulo que cumpla estas características el valor de la integral coincide. \\ 
+
+	En efecto, si $\displaystyle \tilde{f} : R \to \R $ es integrable y $\displaystyle R' $ es otro rectángulo tal que $\displaystyle A \subset R' $, basta con tomar el rectángulo que contenga a $\displaystyle R \cap R' $, puesto que dado que $\displaystyle \tilde{f} $ es integrable en $\displaystyle R $, también lo será en este nuevo rectángulo (puesto que realmente hemos cortado partes en las que la función se anulaba). Así, el valor de la integral en $\displaystyle R $ y $\displaystyle R' $ coincidirá. Esto se ve de forma más clara con la observación anterior.
+\end{observation}
+\section{Propiedades de la integral}
+\begin{prop}[Propiedades de las integrales] Sea $\displaystyle A \subset \R^{n} $.
+	\begin{enumerate}
+	\item Si $\displaystyle f_{1}, f_{2} : A \to \R $ son integrables en $\displaystyle A $, entonces
+\[\int _{A}f_{1} + f_{2} = \int _{A}f_{1} +\int _{A}f_{2}  .\]
+\item Si $\displaystyle \alpha \in \R $ y $\displaystyle f : A \to \R $ es integrable en $\displaystyle A $, entonces
+\[\int _{A}\alpha f = \alpha\int_{A} f .\]
+\item Si $\displaystyle f_{1}, f_{2} : A \to \R$ son integrables en $\displaystyle A $, con $\displaystyle f_{1} \leq f_{2} $, $\displaystyle \forall x \in A $, entonces 
+\[\int _{R}f_{1} \leq \int _{R}f_{2}  .\]
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Aplicamos el teorema de Darboux.
+	\begin{enumerate}
+	\item Sea $\displaystyle \epsilon > 0 $, como $\displaystyle f $ y $\displaystyle g $ son integrables tenemos que existen $\displaystyle \delta _{1}, \delta _{2} > 0 $ y $\displaystyle P_{1}, P_{2} \in \mathcal{P}\left(R\right) $, con $\displaystyle \|P_{1}\| < \delta_{1} $ y $\displaystyle \|P_{2}\|<\delta_{2} $, tales que
+\[ \left|\sum_{J \in P_{1}}f\left(y_{j}\right)v\left(J\right)-I_{1}\right|< \frac{\epsilon }{2}, \quad \left|\sum_{T \in P_{2}}g\left(z_{j}\right)v\left(J\right)-I_{2}\right|< \frac{\epsilon }{2}.\]
+Cogemos $\displaystyle \delta = \min \left\{ \delta_{1}, \delta_{2}\right\}  > 0 $, y tomamos $\displaystyle P \in \mathcal{P}\left(R\right) $ con $\displaystyle \|P\|<\delta  $, de esta forma 
+\[\left|\sum_{J \in P}\left(f + g\right)\left(x_{j}\right)v\left(J\right)-\left(I_{1} + I_{2}\right)\right| \leq \left|\sum^{}_{J \in P}f\left(x_{J}\right)v\left(J\right) - I_{1}\right| + \left|\sum^{}_{J \in P}g\left(x_{J}\right)v\left(J\right)-I_{2}\right| < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon.\]
+	\end{enumerate}
+\end{proof}
+
+\begin{prop}
+Por otro lado, 
+\end{prop}
+\begin{proof}
+Hay que ver primero que si $\displaystyle f \geq 0 $, entonces
+\[\int _{R}f \geq 0 .\]
+Una vez demostrado esto, basta con aplicar la linealidad y lo demostrado anteriormente con $\displaystyle f_{2}-f_{1} \geq 0 $. 
+\end{proof}
+Supongamos que $\displaystyle f:R \to \R $ es integrable en $\displaystyle R $. Entonces, $\displaystyle f $ es acotada, por lo que existen $\displaystyle m,M \in \R $ tales que 
+\[m \leq f\left(x\right)\leq M, \; \forall x \in \R .\]
+Así, tenemos que 
+\[\int _{R}m \leq \int _{R}f \leq \int _{R}M \Rightarrow mv\left(R\right) \leq \int _{R}f \leq Mv\left(R\right) .\]
+

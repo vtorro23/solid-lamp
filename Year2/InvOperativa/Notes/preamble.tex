@@ -1,0 +1,120 @@
+% Basic commands
+\usepackage[margin=1.5in]{geometry}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{float}
+
+% Tikz
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{intersections, angles, quotes, calc, positioning}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+
+% For math environments
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em}
+
+\theoremstyle{definition}
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily\color{Orchid!70!black}, bodyfont=\normalfont,
+    mdframed={nobreak,
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=Orchid, backgroundcolor=Orchid!5,
+    }
+]{thmgreenbox}
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily\color{Orchid!70!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=Orchid
+    }
+]{thmblueline}
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily\color{Orchid!70!black}, bodyfont=\normalfont,
+    mdframed={nobreak,
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=Orchid, backgroundcolor=Orchid!5,
+    }
+]{thmredbox}
+
+\declaretheoremstyle[headfont=\bfseries\sffamily\color{Orchid!70!black}, bodyfont=\normalfont, numbered=no, mdframed={linewidth=2pt, rightline=false, topline=false, bottomline=false, linecolor=Orchid,}, qed=\qedsymbol]{thmproofbox}
+
+%\declaretheoremstyle[headfont=\bfseries\sffamily\color{Cyan!70!black}, bodyfont=\normalfont, numbered=no, mdframed={linewidth=2pt, rightline=false, topline=false, bottomline=false, linecolor=Cyan,}, qed=\qedsymbol]{thmproofbox}
+
+\declaretheoremstyle[headfont=\bfseries\sffamily\color{Orchid!70!black}, bodyfont=\normalfont]{thmbluebox}
+
+\declaretheorem[style=thmgreenbox, name=Definición, numberwithin=chapter]{definition}
+\declaretheorem[style=thmbluebox, numbered=no, name=Ejemplo]{eg}
+\declaretheorem[style=thmredbox, name=Proposición, numberwithin=chapter]{prop}
+\declaretheorem[style=thmredbox, name=Teorema, numberwithin=chapter]{theorem}
+\declaretheorem[style=thmredbox, name=Lema, numberwithin=chapter]{lema}
+\declaretheorem[style=thmredbox, numberwithin=chapter, name=Corolario, numberwithin=chapter]{colorary}
+
+\declaretheorem[style=thmproofbox, name=Demostración]{replacementproof}
+\renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
+
+\declaretheorem[style=thmbluebox, numbered=no, name=Observación]{observation}
+\declaretheorem[style=thmbluebox, numbered=no, name=Notación]{notation}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead[L]{Victoria Eugenia Torroja}
+\fancyhead[R]{\rightmark}
+\fancyfoot[C]{\leftmark}
+\fancyfoot[R]{\thepage}
+
+% Chapter counter to 0
+\setcounter{chapter}{-1}
+
+% New commands
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\mcd}{\text{mcd}}
+\newcommand{\mcm}{\text{mcm}}
+\newcommand{\Char}{\text{char}}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Imagen}{Im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\sig}{sig}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Adj}{Adj}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\traz}{traz}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Bil}{Bil}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\Biy}{Biy}
+\DeclareMathOperator{\sop}{sop}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\ev}{ev}
+\let\epsilon\varepsilon
+

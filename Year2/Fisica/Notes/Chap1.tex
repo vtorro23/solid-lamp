@@ -1,0 +1,97 @@
+\chapter{Cinemática (Geometría diferencial de curvas)}
+La \textbf{mecánica comprende tres partes:}
+\begin{itemize}
+\item \textbf{Cinemática:} estudia el movimiento sin atender a las causas.
+\item \textbf{Dinámica:} estudia el movimiento atendiendo a las fuezas que lo causan.
+\item \textbf{Estática:} estudia las condiciones para que no se produzca movimiento.
+\end{itemize}
+En cinemática estudiamos el movimiento de un punto material sin dimensiones al que llamamos $\displaystyle P $. \\ \\
+Utilizaremos habitualmente el \textbf{sistema de referencia cartesiano} con origen $\displaystyle O $, de tres ejes a los que llamamos $\displaystyle X $, $\displaystyle Y $ y $\displaystyle Z $, con vectores directores unitarios $\displaystyle \hat{i}, \hat{j} $ y $\displaystyle \hat{k} $, respectivamente. \\
+% poner aquí figura del sistema de coordenadas
+Así, podemos describir a nuestro punto $\displaystyle P $ de la forma $\displaystyle P\left(x,y,z\right) $. 
+\begin{definition}[Vector de posición]
+Llamamos \textbf{vector de posición} al vector $\displaystyle \vec{r} = \overrightarrow{OP} $. 
+\end{definition}
+% poner imagen del vector de posición
+A los ángulos que forman el vector de posición con los ejes $\displaystyle X $, $\displaystyle Y $ y $\displaystyle Z $ los llamamos $\displaystyle \alpha  $, $\displaystyle \beta  $ y $\displaystyle \gamma  $, respectivamente. 
+\begin{observation}
+Claramente, 
+\[\cos\alpha = \frac{x}{\|\overrightarrow{OP}\|} = \frac{x}{\sqrt{x^{2}+y^{2}+z^{2}}} = \frac{x}{\|\vec{r}\|}:=\frac{x}{r} .\]
+Así, escribimos,
+\[\cos\alpha = \frac{x}{r}, \quad \cos\beta=\frac{y}{r}, \quad \cos\gamma=\frac{z}{r} .\]
+\end{observation}
+Dado que la posición de nuestro objeto va a cambiar a lo largo del tiempo, podemos escribir $\displaystyle \vec{r}\left(t\right) $. 
+\begin{definition}[Desplazamiento]
+Decimos que el \textbf{desplazamiento} de nuestra partícula en un periodo de tiempo $\displaystyle \Delta t $ es
+\[\Delta \vec{r} = \vec{r}\left(t + \Delta t\right)-\vec{r}\left(t\right) .\]
+\end{definition}
+\begin{definition}[Velocidad media]
+	La \textbf{velocidad media} se describe como el vector
+	\[\vec{v}_{\text{media}} = \frac{\Delta \vec{r}}{\Delta t} .\]
+\end{definition}
+\begin{definition}[Ley del movimiento]
+Se define \textbf{ley del movimiento} a la aplicación $\displaystyle \vec{r} : I \subset \R \to \R^{3} $.
+\end{definition}
+\begin{definition}[Trayectoria]
+	La \textbf{trayectoria} es $\displaystyle \Imagen\left(\vec{r}\right) = \left\{ \vec{r}\left(t\right) \; : \; t \in I\right\}  $. 
+\end{definition}
+\begin{definition}[Velocidad instantánea]
+La \textbf{velocidad instantánea} es la velocidad que lleva la partícula en cada instante, es decir,
+\[\vec{v} = \dot{\vec{r}} = \frac{d\vec{r}\left(t\right)}{dt} = \lim_{\Delta t \to 0}\frac{\Delta \vec{r}}{\Delta t} .\]
+\end{definition}
+En general, la ley del movimiento la podemos escribir de la forma
+\[\vec{r}\left(t\right)= \left(x\left(t\right), y\left(t\right), z\left(t\right)\right) = x\left(t\right)\hat{i} + y\left(t\right)\hat{j} + z\hat{k} .\]
+\begin{notation}
+En muchos casos resulta desagradable escribir la $\displaystyle t $ del tiempo, por lo que podemos escribir, 
+\[\vec{r}\left(t\right) = x\hat{i} +y\hat{j} + z\hat{k} .\]
+\[\dot{\vec{r}}\left(t\right)= \dot{x}\hat{i} + \dot{y}\hat{j} + \dot{z}\hat{k} .\]
+\end{notation}
+\begin{definition}[Aceleración]
+Se define la \textbf{aceleración} de la forma
+\[\vec{a} = \frac{d^{2}\vec{r}\left(t\right)}{dt ^{2}} = \frac{d\vec{v}}{dt} = \ddot{\vec{r}}\left(t\right) .\]
+\end{definition}
+Es sencillo ver que el vector tangente a la curva será 
+\[\hat{t} =\frac{\vec{v}}{\|\vec{v}\|} .\]
+Sea $\displaystyle \hat{n} $ el vector normal a la curva el perpendicular al vector tangente. Tiene el mismo sentido que el que sigue la curvatura de la trayectoria. \\
+Así, podemos escribir $\displaystyle \vec{v} = v\hat{t} $. Así, tenemos que 
+\[\vec{a} = \underbrace{\frac{dv}{dt}\hat{t}}_{\text{aceleración tangencial}}+\underbrace{v\frac{d\hat{t}}{dt}}_{\text{aceleración normal}} .\]
+Tenemos que 
+\[\lim_{\Delta t \to 0}\frac{\Delta \hat{t}}{\Delta t} = \lim_{\Delta t \to 0}\frac{\hat{t}' - \hat{t}}{\Delta t}  .\]
+Podemos ver que 
+\[\Delta \hat{t} = \hat{t}' - \hat{t} = \Delta \phi \cdot \hat{n} .\]
+Por tanto, 
+\[\lim_{\Delta t \to 0}\frac{\Delta \hat{t}}{\Delta t} = \lim_{\Delta t \to 0}\frac{\hat{t}' - \hat{t}}{\Delta t} = \lim_{\Delta t \to 0}\frac{\Delta \phi}{\Delta t} \cdot \hat{n}  .\]
+Tenemos que 
+\[\Delta \phi = \frac{\text{arco}}{R} = \frac{v\Delta t}{R} .\]
+Así, 
+\[\lim_{\Delta t \to 0}\frac{\Delta \hat{t}}{\Delta t} = \lim_{\Delta t \to 0}\frac{\hat{t}' - \hat{t}}{\Delta t} = \lim_{\Delta t \to 0}\frac{\Delta \phi}{\Delta t} \cdot \hat{n} 
+= \frac{v}{R}\hat{n}.\]
+De esta forma, nos queda que la expresión de la aceleración normal es
+\[\hat{ a} = \frac{dv}{dt}\hat{t} + \frac{v^{2}}{R}  \hat{n} .\]
+Decimos que $\displaystyle R $ es el \textbf{radio de curvatura}. Para intervalos de tiempo muy pequeños la trayectoria se puede aproximar a una circunferencia, pero en general tenemos que el radio de curvatura depende del tiempo: $\displaystyle R\left(t\right) $. \\ \\
+El vector normal está definido cuando hay cambios de dirección, es decir, si la trayectoria es una línea recta no hablamos de vector normal. \\ \\
+Tipos de movimiento en el plano:
+\begin{itemize}
+\item \textbf{Movimiento rectilíneo uniforme (MRU):} son movimientos en los que $\displaystyle \vec{a} = 0 $, por lo que $\displaystyle \vec{v}\left(t\right) = \vec{v}_{0} $. Así, tenemos que 
+	\[\vec{r}\left(t\right) = \int^{t}_{t_{0}} \vec{v}_{0} \; dt \Rightarrow \vec{r}\left(t\right)-\vec{r}\left(t_{0}\right) = \vec{v}_{0}\left(t -t_{0}\right) .\]
+	Así, nos queda que 
+	\[\boxed{\vec{r}\left(t\right) = \vec{r}\left(t_{0}\right) + \vec{v}_{0}\left(t - t_{0}\right).} \]
+\item \textbf{Movimiento rectilíneo uniformemente acelerado (MRUA):} son movimientos en los que $\displaystyle \vec{a}\left(t\right) = \vec{a}_{0} $. De esta forma, tenemos que
+	\[\vec{v}\left(t\right) = \int^{t}_{t_{0}} \vec{a}_{0} \; dt \Rightarrow \vec{v}\left(t\right) = \vec{v}\left(t_{0}\right) + \vec{a}_{0}\left(t - t_{0}\right) .\]
+	Así, tenemos que
+	\[\vec{r}\left(t\right)=\int^{t}_{t_{0}} \vec{v}\left(t\right) \; dt=\int^{t}_{t_{0}} \vec{v}\left(t_{0}\right)+\vec{a}_{0}\left(t - t_{0}\right) \; dt = \vec{v}\left(t_{0}\right)\left(t-t_{0}\right)+\frac{1}{2}\vec{a}_{0}\left(t - t_{0}\right)^{2} .\]
+Así, nos queda que
+\[\boxed{\vec{r}\left(t\right) = \vec{r}\left(t_{0}\right) + \vec{v}\left(t_{0}\right)\left(t - t_{0}\right)+\frac{1}{2}\vec{a}_{0}\left(t-t_{0}\right)^{2}.} \]
+\item \textbf{Movimiento circular uniforme (MCU):} en este caso está claro que 
+	\[\vec{r}\left(t\right) = \vec{r}_{0}+ R\cos\left(\omega t\right)\hat{i} + R\sin\left(\omega t\right)\hat{j} .\]
+De esta manera, podemos calcular la velocidad y consecuentemente la aceleración,
+\[\vec{v}\left(t\right) = \dot{\vec{r}}\left(t\right) = R\omega \left[-\sin\left(\omega t\right)\hat{i} + \cos\left(\omega t\right)\hat{j}\right] \Rightarrow v\left(t\right) = \|\vec{v}\left(t\right)\| = R\omega , \; \hat{t} = -\sin\left(\omega t\right)\hat{i} + \cos\left(\omega t\right)\hat{j} .\]
+Análogamente,
+\[\vec{a}\left(t\right) = \ddot{\vec{r}}\left(t\right) = \omega^{2}R\left[-\cos\left(\omega t\right)\hat{i} - \sin\left(\omega t\right)\hat{j}\right] \Rightarrow a\left(t\right) = \| \vec{a}\left(t\right)\| = \omega^{2}R, \; \hat{n} = -\cos\left(\omega t\right)\hat{i}-\sin\left(\omega t\right)\hat{j} .\]
+Como $\displaystyle v = \omega R $, tenemos que $\displaystyle \omega = \frac{v}{R} $, por lo que 
+\[\vec{a}\left(t\right) = \frac{v^{2}}{R}\hat{n} .\]
+\end{itemize}
+\section{Sistemas de referencia}
+\subsection*{Sistemas de referencia móvil: triedro de Frenet-Serret}
+
+
