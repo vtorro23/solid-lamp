@@ -1,0 +1,86 @@
+\chapter{Estadística descriptiva}
+\textbf{Práctica:}  
+\begin{itemize}
+\item Hacer en R el ejemplo 1.3.2 (lo del colesterol) del libro (página 11). Lo que hay que hacer aparece en el ejercicio 1.9.3.
+\item Programar el coeficiente de simetría y de curtosis en R. 
+\end{itemize}
+\begin{eg}
+\textbf{Página 44, Ejercicio 1.} Consideramos la población dada por la distribución de Bernuilli $\displaystyle B\left(\frac{1}{2}\right) $. Se consideran todas las m.a.s de tamaño 3, es decir,
+\[ \left(X_{1}, X_{2}, X_{3}\right) .\]
+Recordamos que 
+\[S^{2} = \frac{1}{n-1}\sum^{n}_{i = 1}\left(X_{i}-\overline{X}\right)^{2}, \; \overline{X} = \frac{1}{n}\sum^{n}_{i = 1}X_{i} .\]
+Tendremos que
+\[\overline{X} = 
+\begin{cases}
+0 \to \frac{1}{8} \\
+\frac{1}{3} \to \frac{3}{8} \\
+\frac{2}{3} \to \frac{3}{8} \\
+1 \to \frac{1}{8}
+\end{cases}
+.\]
+De esta forma tenemos que
+\[P_{\overline{X}}\left(0\right) = \frac{1}{8}, \quad P_{\overline{X}}\left(\frac{1}{3}\right) = \frac{3}{8}, \; \text{etc} .\]
+Lo que estamos haciendo es considerar los diferentes casos para $\displaystyle X_{1}, X_{2} $ y $\displaystyle X_{3} $ y calcular la media en cada caso. A partir de ahí, estamos tratando a la media como una variable aleatoria discreta.
+\end{eg}
+\begin{eg}
+	\textbf{Página 44, Ejercicio 2.} Una forma de media $\displaystyle \theta $ y varianza $\displaystyle 1 $. Se toma una m.a.s de tamaño $\displaystyle n $. Así, tenemos que $\displaystyle X \sim F_{\theta}\left(x\right) = P_{\theta}\left(X \leq x\right) $. Tendremos que $\displaystyle E_{\theta}\left[X\right]  = \theta $ y $\displaystyle V_{\theta }\left(X\right) = 1 $. Tenemos que calcular $\displaystyle \theta  $ para que 
+	\[P_{\theta }\left( \left|\overline{X}-\theta \right| \leq 0.5\right) \geq 0.95 .\]
+Tenemos que aplicar la desigualdad de Chebychev, primer calculamos
+\[E_{\theta}\left[\overline{X}\right] = \frac{1}{n}\sum^{n}_{i = 1}E_{\theta}\left[X_{i}\right] = \theta  .\]
+Por otro lado, $\displaystyle D_{\theta}\left(X\right) = \sqrt{V_{\theta}\left(X\right)}=1 $, así
+\[D_{\theta}\left(\overline{X}\right) = \sqrt{V_{\theta}\left(\overline{X}\right)} = \sqrt{V_{\theta }\left(\frac{1}{n}\sum^{n}_{i = 1}X_{i}\right)} =? \frac{1}{n}\sum^{n}_{i = 1}V_{\theta}\left(X_{i}\right) = \frac{1}{n} \to 0 .\]
+Aplicando la desigualdad de Chebychev
+\[ P_{\theta}\left( \left|\overline{X}-\theta\right| \geq \frac{K}{n}\right) \leq \frac{1}{K} .\]
+\end{eg}
+\begin{eg}
+\textbf{Página 45, Ejercicio 6.} Sea una m.a.s de tamaño $\displaystyle n $ calculamos la distribución de la media muestral $\displaystyle \overline{X} $, cuando la población:
+\begin{description}
+\item[(b)] $\displaystyle X \sim \gamma\left(p,a\right) $. Denotamos $\displaystyle \theta = \left(p,a\right) \in \R^{+}\times \R^{+} $ y decimos que $\displaystyle \theta \in \Theta \subset \R^{2} $. Recordamos que 
+	\[f\left(x|_{\theta}\right) = f_{\theta}\left(x\right)=\frac{a^{p}x^{p-1}e^{-ax}}{\Gamma\left(p\right)}, \; x > 0 .\]
+	Hacemos el ejercicio con la ecuación característica:
+	\[
+	\begin{split}
+		\varphi_{\overline{X}}\left(t\right) = & E_{\theta}\left[e^{it\overline{X}}\right] = E_{\theta}\left[e^{i\frac{t}{n}\sum^{n}_{i = 1}X_{i}}\right] = \prod^{n}_{i = 1}\varphi_{X_{i}}\left(\frac{t}{n}\right) = \varphi_{X}\left(\frac{t}{n}\right)^{n} = \left(1 - i\frac{t}{na}\right)^{-pn} .
+	\end{split}
+	\]
+La función característica se corresponde con $\displaystyle \gamma\left(np, na\right) $.	
+\item[(c)] Basta con sustituir $\displaystyle \lambda = 1 $ en el apartado anterior.
+\end{description}
+\end{eg}
+
+\subsection*{Distribuciones asociadas a la normal}
+Consideremos que $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ es una m.a.s con cada variable independientes y siguen una distribución $\displaystyle X \sim N\left(0,1\right) $. Consideremos la variable aleatoria
+\[Y := \sum^{n}_{i = 1}X^{2}_{i} = X^{2}_{1} + \cdots + X^{2}_{n} .\]
+Tenemos que 
+\[
+\begin{split}
+	\varphi_{Y}\left(t\right) = & \prod^{n}_{i = 1}\varphi_{X_{i}^{2}}\left(t\right) .
+\end{split}
+\]
+En general, si $\displaystyle Z = X^{2} $, 
+\[F_{Z}\left(z\right) = P\left(Z \leq z\right) = P\left(X^{2} \leq z\right) = P\left(-\sqrt{z} \leq X \leq \sqrt{z}\right) = F_{X}\left(\sqrt{z}\right) - F_{X}\left(-\sqrt{z}\right) .\]
+La función de densidad será
+\[f_{Z}\left(t\right) = \frac{1}{2\sqrt{z}}f_{X}\left(\sqrt{z}\right) + \frac{1}{2\sqrt{z}}f_{X}\left(-\sqrt{t}\right) = \frac{1}{\sqrt{2\pi }} t ^{-\frac{1}{2}}e^{-\frac{1}{2}t}, \; t > 0 .\]
+Podemos ver que se trata de la función de densidad de una distribución Gamma, así, $\displaystyle Z \sim \gamma\left(\frac{1}{2}, \frac{1}{2}\right) $. Definimos $\displaystyle \chi^{2}_{1} \sim \gamma\left(\frac{1}{2}, \frac{1}{2}\right) $, el uno viene de que tenemos un grado de libertad (se genera a partir de una normal $\displaystyle N\left(0,1\right) $). Por la propiedad de reproductividad de la distribución Gamma, tenemos que $\displaystyle Y \sim \gamma\left(\frac{n}{2}, \frac{1}{2}\right) $. A esta distribución la llamamos $\displaystyle \chi_{n}^{2}\sim \gamma\left(\frac{n}{2}, \frac{1}{2}\right) $ (decimos que tiene $\displaystyle n $ grados de libertad porque viene de $\displaystyle n $ distribuciones normales $\displaystyle N\left(0,1\right) $). 
+Recordamos que la función característica de una distribución $\displaystyle \gamma  $ es
+\[\varphi\left(t\right)= \left(1 - \frac{it}{a}\right)^{-p} .\]
+
+\begin{eg}
+\textbf{Ejercicio 19.} Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s distribuida idénticamente a $\displaystyle X $ tal que 
+\[P\left(X = x_{i}\right) = p_{i}, \; i \in \N .\]
+Sea $\displaystyle \left(X_{\left(1\right)}, \ldots, X_{\left(n\right)}\right) $ la muestra ordenada de menor a mayor. Demostremos que la distribución para $\displaystyle X_{\left(k\right)} $ es discreta y 
+\[P\left(X_{\left(1\right)} \leq x_{i}\right) = \sum^{n}_{j = k}\begin{pmatrix} n \\ j \end{pmatrix}\left(F\left(x_{i}\right)\right)^{j}\left(1-F\left(x_{i}\right)\right)^{n-j} .\]
+El resto viene dado en el enunciado. Tenemos que $\displaystyle X_{\left(1\right)} = \min \left\{ X_{1}, \ldots, X_{n}\right\}  $ y $\displaystyle X_{\left(n\right)} = \max \left\{ X_{1}, \ldots, X_{n}\right\}  $. 
+Tenemos que 
+\[F_{X_{\left(n\right)}}\left(t\right) = P\left(X_{\left(n\right)} \leq t\right) = P\left(\bigcap_{1 \leq i \leq n} \left\{ X_{i} \leq t\right\} \right) = \prod^{n}_{i = 1}P\left(X_{i} \leq t\right) = F_{X}\left(t\right)^{n} .\]
+Por otro lado,
+\[F_{X_{\left(1\right)}}\left(t\right) = 1 - P\left(X_{\left(1\right)} > t\right) = 1 - P\left(\bigcap_{1 \leq i \leq n} \left\{ X_{i} > t\right\} \right) = 1 - \prod^{n}_{i = 1}P\left(X_{i} > t\right) = 1 - \left(1 - F_{X}\left(t\right)\right)^{n} .\]
+Ahora, buscamos $\displaystyle F_{X_{\left(k\right)}}\left(t\right) $ para $\displaystyle k \in \left\{ 1, \ldots, n\right\}  $. Tenemos que
+\[
+\begin{split}
+	F_{X_{\left(k\right)}}\left(t\right) = & P\left(X_{\left(k\right)} \leq t\right) = \sum^{n}_{j = k}P\left(\text{'exactamente $\displaystyle j $ por debajo de $\displaystyle t $'}\right) = \sum^{n}_{j = k} \begin{pmatrix} n \\ j\end{pmatrix}F_{X}\left(t\right)^{j}\left(1-F_{X}\left(t\right)\right)^{n-j}.
+\end{split}
+\]
+Finalmente, recordamos que $\displaystyle P_{X_{\left(k\right)}}\left(x_{i}\right) = F_{X_{\left(k\right)}}\left(x_{i}\right) - F_{X_{\left(k\right)}}\left(x_{i-1}\right) $. 
+\end{eg}
+

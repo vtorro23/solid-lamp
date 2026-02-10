@@ -237,4 +237,92 @@ x^{\left(n-1\right)}\left(t_{0}\right)= x_{n-1}, \; x_{n-1} \in \R
 \end{cases}
 .\]
 \end{definition}
+\begin{eg}
+\begin{enumerate}
+\item La EDO $\displaystyle x' = x $ sujeta a $\displaystyle x\left(0\right) = 3 $ es un problema de valor inicial que tiene por solución única la función $\displaystyle x\left(t\right) = 3e^{t} $.
+\item La EDO $\displaystyle x'' + 16x = 0 $ tiene por soluciones la familia biparamétrica $\displaystyle x\left(t\right) = C_{1}\cos4t + C_{2}\sin4t $. El problema de valor inicial
+	\[
+	\begin{cases}
+	x'' + 16x = 0 \\
+	x\left(\frac{\pi }{2}\right) = - 2 \\
+	x'\left(\frac{\pi }{2}\right) = 1
+	\end{cases}
+	\]
+tiene una única solución, que es $\displaystyle x\left(t\right) = -2\cos4t + \frac{1}{4}\sin4t $. 	
+\end{enumerate}
+\end{eg}
+\begin{definition}[Problema de contorno]
+Se define \textbf{problema de contorno} como un par formado por una EDO y unas condiciones inciales de frontera, que pueden o no implicar a las derivadas \footnote{La principal diferencia respecto de las anteriores es que las condiciones iniciales no están todas asociadas al mismo instante $\displaystyle t = t_{0} $.} . Existen dos casos especiales de problemas de contorno:
+\begin{itemize}
+\item \textbf{Problema de Dirichlet:} se proporciona el valor de la función en puntos diferentes. 
+\item \textbf{Problema de Neumann:} se proporciona el valor de la derivada de una función en puntos diferentes. 
+\end{itemize}
+\end{definition}
+\begin{eg}
+\begin{enumerate}
+\item El siguiente es un ejemplo de condición de frontera de tipo Dirichlet:
+	\[
+	\begin{cases}
+	x'' + x = 0 \\
+	x\left(0\right) = 1 \\
+	x\left(\pi \right) = 0
+	\end{cases}
+	.\]
+\item El siguiente es un ejemplo de condición de frontera de tipo Neumann:
+	\[
+	\begin{cases}
+	x'' + 3x = 1 \\
+	x'\left(0\right) = x'\left(\pi \right) = 0
+	\end{cases}
+	.\]
+\end{enumerate}
+\end{eg}
+\subsection{Sistemas de ecuaciones diferenciales}
+\begin{definition}[Sistema de EDOS de orden $\displaystyle 1 $ y $\displaystyle n $ ecuaciones]
+El orden indica la derivada de mayor orden involucrada. Se trata de hallar $\displaystyle n $ funciones incógnita $\displaystyle x_{1}\left(t\right), \ldots, x_{n}\left(t\right) $ referidas a la misma variable independiente $\displaystyle t $ tales que
+\[ \left(S\right)
+\begin{cases}
+x_{1}' = f_{1}\left(t, x_{1}, \ldots, x_{n}\right) \\
+\vdots \\
+x_{n}' = f_{n}\left(t, x_{1}, \ldots, x_{n}\right)
+\end{cases}
+.\]
+Para resolver el sistema tendremos que encontrar las $\displaystyle x_{i}\left(t\right) $ soluciones definidas en un intervalo de definición $\displaystyle J $ común a todas ellas.
+\end{definition}
+Podemos reescribir este sistema de $\displaystyle n $ incógnitas como una EDO vectorial de orden 1. En efecto, podemos considerar
+\[\vec{x}\left(t\right) = \begin{pmatrix} x_{1}\left(t\right) \\ \vdots \\ x_{n}\left(t\right) \end{pmatrix} \quad \text{y} \quad \vec{f}\left(t, \vec{x}\left(t\right)\right) = \begin{pmatrix} f_{1}\left(t, x_{1}, \ldots, x_{n}\right) \\ \vdots \\ f_{n}\left(t, x_{1}, \ldots, x_{n}\right) \end{pmatrix},\]
+Además, una EDO de orden $\displaystyle n $ se puede reescribir como un sistema de EDOS de orden 1.En efecto, consideremos $\displaystyle x^{\left(n\right)} = f\left(t, x, x', \ldots, x^{\left(n-1\right)}\right) $. Podemos reescribir $\displaystyle x \equiv x_{1} $, $\displaystyle x' \equiv x_{2} $, \ldots, $\displaystyle x^{\left(n-1\right)} \equiv x_{n} $. Así, nos queda el sistema
+\[
+\begin{cases}
+	x_{1}' = x_{2} \\
+	x_{2}' = x_{3} \\
+	\vdots \\
+	x_{n-1}' = x_{n} \\
+	x_{n}' = f\left(t, x_{1}, x_{2}, \ldots, x_{n}\right)
+\end{cases}
+.\]
+\begin{observation}
+Un sistema lineal de orden 1 son siempre de la forma 
+\[
+\begin{cases}
+x_{1}' = a_{11}\left(t\right)x_{1} +a_{12}\left(t\right)x_{2} + \cdots + a_{1n}\left(t\right)x_{n} + b_{1}\left(t\right) \\
+\vdots \\
+x_{i}' = a_{i1}\left(t\right)x_{1} + a_{i2}\left(t\right)x_{2} + \cdots + a_{in}\left(t\right)x_{n}+ b_{i}\left(t\right) \\ 
+\vdots \\
+x_{n}' = a_{n1}\left(t\right)x_{1} + a_{n2}\left(t\right)x_{2} + \cdots + a_{nn}\left(t\right)x_{n} + b_{n}\left(t\right)
+\end{cases}
+.\]
+Matricialmente, podemos escribir $\displaystyle \vec{x}'\left(t\right) = A\left(t\right)\vec{x}\left(t\right) + \vec{b}\left(t\right) $, con $\displaystyle A\left(t\right) \in \mathcal{M}_{n \times n} $. Posteriormente estudiaremos las EDOS lineales de coeficientes constantes puesto que entonces tendremos que $\displaystyle A \in \mathcal{M}_{n \times n}\left(\R\right) $. 
+\end{observation}
+
+\begin{eg}
+\textbf{Hoja 1, Ejercicio 10.} Convierte $\displaystyle x'' + x\left(\frac{3}{2}x - 1\right) = 0 $ en un sistema de dos ecuaciones de primer orden. Denotamos $\displaystyle x_{1} \equiv x $ y $\displaystyle x_{2} \equiv x' $, así, tenemos que 
+\[
+\begin{cases}
+x_{1}' = x_{2} \\
+x_{2}' = x_{1}\left(1 - \frac{3}{2}x_{1}\right)
+\end{cases}
+.\]
+
+\end{eg}
 

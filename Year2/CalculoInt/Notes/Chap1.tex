@@ -76,6 +76,16 @@ Claramente tenemos que $\displaystyle J_{1} \cap J_{2} = \emptyset $. De esta fo
 \]
 La desigualdad para la suma superior se demuestra de forma análoga. 
 \end{proof}
+\begin{proof}
+	Esta es una demostración alternativa. Consideremos que $\displaystyle T $ es más fina que $\displaystyle P $ y sean $\displaystyle R_{1}, \ldots, R_{N} $ los subrectángulos de $\displaystyle P $ y $\displaystyle \tilde{R}_{1}, \ldots, \tilde{R} _{\tilde{N}}$ los de $\displaystyle T $.
+	Sea $\displaystyle I_{k} $ el conjunto de índices $\displaystyle j $ tales que $\displaystyle \tilde{R}_{j} \subset R_{k} $. Así, es fácil ver que
+	\[R_{k} = \bigsqcup_{j \in I_{k}}\tilde{R}_{j}, \quad v\left(R_{k}\right) = \sum_{j \in I_{k}}v\left(\tilde{R}_{j}\right) .\]
+	Denotamos $\displaystyle \alpha_{j} = \inf \left\{ f\left(x\right) \; : \; x \in R_{j}\right\}  $ y $\displaystyle \tilde{\alpha }_{j} = \inf \left\{ f\left(x\right) \; :\; x \in \tilde{R}_{j}\right\}  $. 
+	Claramente, si $\displaystyle j \in I_{k} $ se tiene que $\displaystyle \alpha _{k} \leq \tilde{\alpha}_{j} $, así
+	\[s\left(f,P\right) = \sum^{N}_{k = 1}\alpha_{k}v\left(R_{k}\right) = \sum^{N}_{k = 1}\sum_{j \in I_{k}}\alpha_{k}v\left(\tilde{R}_{j}\right) \leq \sum^{N}_{k = 1}\sum_{j \in I_{k}}\tilde{\alpha}_{j}v\left(\tilde{R}_{j}\right) = \sum^{\tilde{N}}_{j = 1}\tilde{\alpha}_{j}v\left(\tilde{R}_{j}\right) = s\left(f,T\right) .\]
+El caso para la suma superior es análogo.	
+\end{proof}
+
 \begin{prop}
 Dadas dos particiones, $\displaystyle P, Q \in \mathcal{P}\left(R\right) $
 \[s\left(f,P\right) \leq S\left(f,Q\right) .\]
@@ -87,6 +97,7 @@ Sea $\displaystyle T = \left(P_{1} \cup Q_{1}, \ldots, P_{n} \cup Q_{n}\right)\i
 Por ambas formas hemos visto que existen
 \[\inf \left\{ S\left(f,P\right) \; : \; P \in \mathcal{P}\left(R\right)\right\} \quad \text{y} \quad \sup \left\{ s\left(f,P\right) \; : \; P \in \mathcal{P}\left(R\right)\right\}  ,\]
 por lo que estamos en condiciones de definir la integral superior e inferior. 
+\section{Integral de Riemann}
 \begin{definition}[Integral superior e inferior]
 Se define como \textbf{integral superior} e \textbf{integral inferior} a los valores
 \[\overline{\int _{R}}f = \inf \left\{ S\left(f,P\right) \; : \; P \in \mathcal{P}\left(R\right)\right\} \quad \text{y} \quad \underline{\int _{R}}f = \sup \left\{ s\left(f,P\right) \; : \; P \in \mathcal{P}\left(R\right)\right\} ,\]
@@ -154,7 +165,7 @@ Una función $\displaystyle f : R \to \R $ acotada es integrable en $\displaysty
 \end{theorem}
 \begin{proof}
 \begin{description}
-\item[(i)] Supongamos que $\displaystyle f: R \to \R $ es integrable con integral $\displaystyle I $ y sea $\displaystyle \epsilon > 0 $. Por el criterio de integrabilidad de Riemann, existe $\displaystyle P_{\epsilon } \in \mathcal{P}\left(R\right) $ tal que $\displaystyle S\left(f,P_{\epsilon }\right)-s\left(f,P_{\epsilon }\right) < \epsilon  $. 
+\item[(i)] Se puede mirar en el libro de Marsden y Hoffmann. 
 \item[(ii)] Sea $\displaystyle \epsilon > 0 $, entonces existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \|P\| < \delta  $ entonces
 	\[ \left|\sum_{i = 1}^{N}f\left(x_{i}\right)v\left(J_{i}\right) - I\right| < \frac{\epsilon }{2} ,\]
 Donde $\displaystyle J_{1}, \ldots, J_{N} $ son los rectángulos que componen la partición $\displaystyle P $. Cogemos $\displaystyle x_{i} \in J_{i} $ tal que 
@@ -170,6 +181,7 @@ y por el criterio de Riemann tenemos que $\displaystyle f $ es integrable en $\d
 El caso para la integral inferior es análogo. Así, hemos demostrado que $\displaystyle \int _{R}f = I $. 
 \end{description}
 \end{proof}
+\section{Propiedades de la integral}
 \begin{theorem}
 Sea $\displaystyle f : R \to \R $ continua, entonces $\displaystyle f $ es integrable. 
 \end{theorem}
@@ -180,7 +192,76 @@ Así, cogemos una partición $\displaystyle P_{\delta} \in \mathcal{P}\left(R\ri
 \[S\left(f,P_{\delta }\right)-s\left(f,P_{\delta }\right) = \sum_{T \in P_{\delta }}v\left(T\right)\left(\beta_{T}-\alpha_{T}\right) < \epsilon ' \sum_{T \in P_{\delta }}v\left(T\right) = \epsilon .\]
 Por el criterio de integrabilidad de Riemann, $\displaystyle f $ es integrable en $\displaystyle R $. 
 \end{proof}
-\section{Integrales en otros conjuntos}
+\begin{prop}[Linealidad y monotonía] Sea $\displaystyle R \subset \R^{n} $ un rectángulo.
+	\begin{description}
+	\item[Linealidad.] Si $\displaystyle f_{1}, f_{2} : R \to \R $ son integrables en $\displaystyle R $, entonces
+\[\int _{R}f_{1} + f_{2} = \int _{R}f_{1} +\int _{R}f_{2}  .\]
+Además, si $\displaystyle \alpha \in \R $ y $\displaystyle f : R \to \R $ es integrable en $\displaystyle R $, entonces
+\[\int _{R}\alpha f = \alpha\int_{R} f .\]
+\item[Monotonía.] Si $\displaystyle f_{1}, f_{2} : R \to \R$ son integrables en $\displaystyle R $, con $\displaystyle f_{1} \leq f_{2} $, $\displaystyle \forall x \in R $, entonces 
+\[\int _{R}f_{1} \leq \int _{R}f_{2}  .\]
+	\end{description}
+\end{prop}
+\begin{proof}
+	Aplicamos el teorema de Darboux.
+	\begin{enumerate}
+	\item Sea $\displaystyle \epsilon > 0 $, como $\displaystyle f $ y $\displaystyle g $ son integrables tenemos que existen $\displaystyle \delta _{1}, \delta _{2} > 0 $ y $\displaystyle P_{1}, P_{2} \in \mathcal{P}\left(R\right) $, con $\displaystyle \|P_{1}\| < \delta_{1} $ y $\displaystyle \|P_{2}\|<\delta_{2} $, tales que
+\[ \left|\sum_{J \in P_{1}}f\left(y_{j}\right)v\left(J\right)-I_{1}\right|< \frac{\epsilon }{2}, \quad \left|\sum_{T \in P_{2}}g\left(z_{j}\right)v\left(J\right)-I_{2}\right|< \frac{\epsilon }{2}.\]
+Cogemos $\displaystyle \delta = \min \left\{ \delta_{1}, \delta_{2}\right\}  > 0 $, y tomamos $\displaystyle P \in \mathcal{P}\left(R\right) $ con $\displaystyle \|P\|<\delta  $, de esta forma 
+\[\left|\sum_{J \in P}\left(f + g\right)\left(x_{j}\right)v\left(J\right)-\left(I_{1} + I_{2}\right)\right| \leq \left|\sum^{}_{J \in P}f\left(x_{J}\right)v\left(J\right) - I_{1}\right| + \left|\sum^{}_{J \in P}g\left(x_{J}\right)v\left(J\right)-I_{2}\right| < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon.\]
+\item Sea $\displaystyle I = \int _{R}f $ y $\displaystyle \epsilon > 0 $. Por el teorema de Darboux, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle P \in \mathcal{P}\left(R\right) $ con $\displaystyle \|P\| < \delta  $, entonces
+	\[ \left|\sum_{J \in P}f\left(x_{J}\right)v\left(J\right)-I\right|< \frac{\epsilon }{ \left|\alpha \right|}.\]
+	Así, tenemos que 
+	\[ \left|\sum_{J \in P}\alpha f\left(x_{J}\right)v\left(J\right)-\alpha I\right| = \left|\alpha \right| \left|\sum_{J \in P}f\left(x_{J}\right)v\left(J\right)-I\right| < \left|\alpha \right|\frac{\epsilon }{ \left|\alpha \right|} = \epsilon  .\]
+\item Para demostrar la monotonía primero asumimos que $\displaystyle f : R \to \R $ es integrable y $\displaystyle f\left(x\right) \geq 0 $, $\displaystyle \forall x \in R $. Tenemos que 
+	\[s\left(f,P\right) = \sum_{J \in P} \alpha_{J} v\left(J\right) \geq 0, \; \forall P \in \mathcal{P}\left(R\right) .\]
+Así, está claro que la integral inferior debe ser superior a 0, por lo que el valor de la integral será superior a 0. Ahora, supongamos que $\displaystyle f_{1}, f_{2} : R \to \R $ son integrables y $\displaystyle f_{1}\left(x\right) \leq f_{2} \left(x\right)$, $\displaystyle \forall x \in R $. Tenemos que la función $\displaystyle f_{2}-f_{1} : R \to \R $ cumple que es integrable (por la linealidad) y además $\displaystyle \left(f_{2}-f_{1}\right)\left(x\right) \geq 0 $, $\displaystyle \forall x \in R $. Por lo que acabamos de demostrar:
+\[\int _{R}f_{2}-f_{1} = \int_{R} f_{2} - \int _{R}f_{1} \geq 0 \iff \int _{R}f_{1} \leq \int _{R}f_{2}  .\]
+	\end{enumerate}
+\end{proof}
+
+\begin{observation}[Cota de la integral]
+Supongamos que $\displaystyle f:R \to \R $ es integrable en $\displaystyle R $. Entonces, $\displaystyle f $ es acotada, por lo que existen $\displaystyle m,M \in \R $ tales que 
+\[m \leq f\left(x\right)\leq M, \; \forall x \in \R .\]
+Así, tenemos que 
+\[\int _{R}m \leq \int _{R}f \leq \int _{R}M \Rightarrow mv\left(R\right) \leq \int _{R}f \leq Mv\left(R\right) .\]
+Se puede hacer un razonamiento igual sobre un conjunto $\displaystyle A $ que es medible Jordan.
+\end{observation}
+ 
+\begin{prop}
+Si $\displaystyle f : A \to \R $ es integrable, entonces $\displaystyle \left|f\right| $ es integrable y
+\[ \left|\int _{A}f \right| \leq \int _{A} \left|f\right| .\]
+\end{prop}
+\begin{proof}
+Demostramos la segunda parte. Claramente tenemos que 
+\[- \left|f\left(x\right)\right| \leq f\left(x\right) \leq \left|f\left(x\right)\right|, \; \forall x \in A .\]
+Por la propiedad de la monotonía tenemos que 
+\[-\int _{A} \left|f\right| \leq \int _{A}f \leq \int _{A} \left|f\right| \iff \left|\int _{A}f \right|\leq \int _{A} \left|f\right| .\]
+\end{proof}
+
+\begin{observation}
+Sea $\displaystyle A $ medible Jordan y $\displaystyle \left|f\left(x\right)\right| \leq M $, $\displaystyle \forall x \in A $. Entonces, tenemos que 
+\[ \left|\int _{A}f \right|\leq \int _{A} \left|f\right| \leq M v\left(A\right) .\]
+De esta manera, podemos utilizar la proposición anterior para obtener una cota de la integral.
+\end{observation}
+\begin{prop}
+Sean $\displaystyle S,R \subset \R^{n} $ rectángulos cerrados tales que $\displaystyle S \subset R $. Si $\displaystyle f : R \to \R $ es integrable, entonces $\displaystyle f $ es integrable en $\displaystyle S $.
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle \epsilon > 0 $ y $\displaystyle P = \left(P_{1}, \ldots, P_{n}\right) \in \mathcal{P}\left(R\right) $ tal que $\displaystyle S\left(f,P\right)-s\left(f,P\right) < \epsilon  $. Podemos asumir que los vértices de $\displaystyle S $ están en $\displaystyle P $, es decir, si $\displaystyle S = \left[a_{1}, b_{1}\right] \times \cdots \times \left[a_{n}, b_{n}\right]  $, entonces $\displaystyle a_{i}, b_{i} \in P_{i} $, $\displaystyle \forall i = 1, \ldots, n $. 
+	Ahora, consideramos $\displaystyle \tilde{P} = \left(\tilde{P}_{1}, \ldots, \tilde{P}_{n}\right) \in \mathcal{P}\left(S\right) $ tal que $\displaystyle \tilde{P}_{i} = P_{i} \cap \left[a_{i}, b_{i}\right]  $ con $\displaystyle i = 1, \ldots, n $ . 
+	Dado que los subrectángulos de $\displaystyle \tilde{P} $ son subrectángulos de $\displaystyle P $ es fácil ver que $\displaystyle S $ es una unión de subrectángulos de $\displaystyle R $. Sean $\displaystyle R_{1}, \ldots, R_{k} $ los subrectángulos de $\displaystyle P $ que también lo son de $\displaystyle \tilde{P}  $, y sean $\displaystyle R_{k + 1}, \ldots, R_{N} $ el resto. 
+	Tenemos que 
+\[
+\begin{split}
+	\epsilon & > S\left(f,P\right)-s\left(f,P\right) = \sum^{k}_{j = 1}\left(\beta_{j}-\alpha_{j}\right)v\left(R_{j}\right) + \sum^{N}_{j = k + 1}\left(\beta_{j}-\alpha_{j}\right)v\left(R_{j}\right) \\
+		 & \geq \sum^{k}_{j = 1}\left(\beta_{j}-\alpha_{j}\right)v\left(R_{j}\right) = S\left(f|_{S}, \tilde{P}\right) - s\left(f|_{S}, \tilde{P}\right).
+\end{split}
+\]
+Por el criterio de la integrabilidad de Riemann, $\displaystyle f|_{S} $ es integrable.	
+\end{proof}
+
+\section{Conjuntos medibles Jordan}
 \begin{definition}[Volumen]
 Sea $\displaystyle A \subset \R^{n} $ con $\displaystyle A\neq \emptyset $ y $\displaystyle A $ acotado. Tomamos un rectángulo $\displaystyle R $ tal que $\displaystyle A \subset R $. Definimos la función 
 \[\chi_{A} : R \to \R : x \to 
@@ -192,9 +273,14 @@ Sea $\displaystyle A \subset \R^{n} $ con $\displaystyle A\neq \emptyset $ y $\d
 Diremos que $\displaystyle A $ tiene \textbf{volumen} (A es \textbf{medible Jordan}) si $\displaystyle \chi_{A} $ es integrable y en este caso diremos que su \textbf{volumen} es 
 \[V\left(A\right) = \int _{R}\chi_{A} .\]
 \end{definition}
-\begin{observation}
-	Ya vimos anteriormente que $\displaystyle \Q^{n} \cap \left[0,1\right] ^{n} $ no tiene volumen.
-\end{observation}
+
+\begin{eg}
+\begin{itemize}
+\item Ya vimos anteriormente que $\displaystyle \Q^{n} \cap \left[0,1\right] ^{n} $ no tiene volumen.
+\item Si $\displaystyle R $ es un rectángulo, $\displaystyle R $ es medible Jordan.
+\end{itemize}
+
+	\end{eg}
 \begin{observation}
 Sea $\displaystyle \emptyset \neq A \subset \R^{n} $ acotado y $\displaystyle R $ un rectángulo tal que $\displaystyle A \subset R $. Cogemos $\displaystyle P \in \mathcal{P}\left(R\right) $. Podemos observar que 
 \[\alpha_{J} = 
@@ -219,9 +305,7 @@ De esta forma,
 Así, 
 \[\overline{\int _{R} }\chi_{A} = \inf \left\{\sum_{J \in P, J \cap A \neq \emptyset}v\left(J\right)\; : \; P \in \mathcal{P}\left(R\right) \right\}  .\]
 \end{observation}
-\begin{eg}
-Si $\displaystyle R $ es un rectángulo, $\displaystyle R $ es medible Jordan.
-\end{eg}
+
 \begin{definition}[Integral en otros conjuntos]
 Sea $\displaystyle A \subset \R^{n} $ acotado y $\displaystyle f : A \to \R $ también acotada. Diremos que $\displaystyle f $ \textbf{es integrable en} $\displaystyle A $ si existe $\displaystyle R $ rectángulo tal que $\displaystyle A \subset R $ y 
 \[\tilde{f} : R \to \R : x \to 
@@ -241,37 +325,139 @@ De forma equivalente, desde $\displaystyle f : R \to \R $ y $\displaystyle A \su
 
 	En efecto, si $\displaystyle \tilde{f} : R \to \R $ es integrable y $\displaystyle R' $ es otro rectángulo tal que $\displaystyle A \subset R' $, basta con tomar el rectángulo que contenga a $\displaystyle R \cap R' $, puesto que dado que $\displaystyle \tilde{f} $ es integrable en $\displaystyle R $, también lo será en este nuevo rectángulo (puesto que realmente hemos cortado partes en las que la función se anulaba). Así, el valor de la integral en $\displaystyle R $ y $\displaystyle R' $ coincidirá. Esto se ve de forma más clara con la observación anterior.
 \end{observation}
-\section{Propiedades de la integral}
-\begin{prop}[Propiedades de las integrales] Sea $\displaystyle A \subset \R^{n} $.
-	\begin{enumerate}
-	\item Si $\displaystyle f_{1}, f_{2} : A \to \R $ son integrables en $\displaystyle A $, entonces
-\[\int _{A}f_{1} + f_{2} = \int _{A}f_{1} +\int _{A}f_{2}  .\]
-\item Si $\displaystyle \alpha \in \R $ y $\displaystyle f : A \to \R $ es integrable en $\displaystyle A $, entonces
-\[\int _{A}\alpha f = \alpha\int_{A} f .\]
-\item Si $\displaystyle f_{1}, f_{2} : A \to \R$ son integrables en $\displaystyle A $, con $\displaystyle f_{1} \leq f_{2} $, $\displaystyle \forall x \in A $, entonces 
-\[\int _{R}f_{1} \leq \int _{R}f_{2}  .\]
-	\end{enumerate}
+
+\begin{definition}[Media]
+Sea $\displaystyle f : A \to \R $ integrable con $\displaystyle A \subset \R^{n} $ medible Jordan y $\displaystyle v\left(A\right) > 0 $, definimos la \textbf{media} de $\displaystyle f $ en $\displaystyle A $ como 
+\[m_{A}\left(f\right) = \frac{1}{v\left(A\right)}\int _{A}f .\]
+\end{definition}
+\begin{observation}
+Si $\displaystyle f : A \to \R $ es integrable, entonces está acotada por lo que existen $\displaystyle M,m > 0 $ tales que $\displaystyle m \leq f\left(x\right) \leq M $, así
+\[mv\left(A\right) \leq \int _{A}f \leq Mv\left(A\right) \iff m\leq \frac{1}{v\left(A\right)}\int _{A}f \leq M \iff m \leq m_{A}\left(f\right) \leq M .\]
+Podemos observar que 
+\[\int _{A}m_{A}\left(f\right) = \int _{A}f .\]
+\end{observation}
+\begin{theorem}[Teorema del valor medio]
+Sea $\displaystyle \emptyset \neq A \subset \R^{n} $ un conjunto compacto y conexo, medible Jordan con volumen positivo, y sea $\displaystyle f : A \to \R $ continua. Entonces, existe $\displaystyle x_{m} \in A $ tal que 
+\[f\left(x_{m}\right) = m_{A}\left(f\right) = \frac{1}{v\left(A\right)}\int _{A}f .\]
+\end{theorem}
+\begin{proof}
+Como $\displaystyle f  $ es continua y $\displaystyle A $ es compacto y conexo, debe ser que $\displaystyle f\left(A\right) $ también es compacto y conexo (por lo que debe ser un intervalo cerrado y acotado), es decir, existen $\displaystyle x_{1}, x_{2} \in A $ tales que 
+\[m = f\left(x_{1}\right) \leq f\left(x\right) \leq M = f\left(x_{2}\right), \; \forall x \in A .\]
+Así, tenemos que $\displaystyle f\left(A\right) = \left[m,M\right]  $. Anteriormente hemos visto que $\displaystyle m \leq m_{A}\left(f\right) \leq M $, por lo que $\displaystyle m_{A}\left(f\right) \in f\left(A\right) $ y en consecuencia existe $\displaystyle x_{m} \in A $ tal que $\displaystyle f\left(x_{m}\right) = m_{A}\left(f\right) $. 
+\end{proof}
+\begin{prop}[Aditividad de la integral respecto de los conjuntos de integración]
+Sean $\displaystyle A, B \subset \R^{n} $ acotados con $\displaystyle f : A \cup B\to \R $ acotada. Supongamos que $\displaystyle f $ es integrable en $\displaystyle A \cap B $ y $\displaystyle \int _{A \cap B}f = 0 $. Entonces $\displaystyle f $ es integrable en $\displaystyle A \cup B $ si y solo si $\displaystyle f $ es integrable en $\displaystyle A $ y en $\displaystyle B $, y en este caso
+\[\int _{A \cup B}f = \int _{A}f + \int _{B}f  .\]
 \end{prop}
 \begin{proof}
-	Aplicamos el teorema de Darboux.
-	\begin{enumerate}
-	\item Sea $\displaystyle \epsilon > 0 $, como $\displaystyle f $ y $\displaystyle g $ son integrables tenemos que existen $\displaystyle \delta _{1}, \delta _{2} > 0 $ y $\displaystyle P_{1}, P_{2} \in \mathcal{P}\left(R\right) $, con $\displaystyle \|P_{1}\| < \delta_{1} $ y $\displaystyle \|P_{2}\|<\delta_{2} $, tales que
-\[ \left|\sum_{J \in P_{1}}f\left(y_{j}\right)v\left(J\right)-I_{1}\right|< \frac{\epsilon }{2}, \quad \left|\sum_{T \in P_{2}}g\left(z_{j}\right)v\left(J\right)-I_{2}\right|< \frac{\epsilon }{2}.\]
-Cogemos $\displaystyle \delta = \min \left\{ \delta_{1}, \delta_{2}\right\}  > 0 $, y tomamos $\displaystyle P \in \mathcal{P}\left(R\right) $ con $\displaystyle \|P\|<\delta  $, de esta forma 
-\[\left|\sum_{J \in P}\left(f + g\right)\left(x_{j}\right)v\left(J\right)-\left(I_{1} + I_{2}\right)\right| \leq \left|\sum^{}_{J \in P}f\left(x_{J}\right)v\left(J\right) - I_{1}\right| + \left|\sum^{}_{J \in P}g\left(x_{J}\right)v\left(J\right)-I_{2}\right| < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon.\]
-	\end{enumerate}
+Es fácil ver que 
+	\[\chi_{A \cup B} = \chi_{A} + \chi_{B} - \chi_{A \cap B} .\]
+Por tanto, tenemos que 
+\[f \cdot \chi_{A \cup B} = f \cdot \chi_{A} + f \cdot \chi_{B} - f \cdot \chi_{A \cap B} .\]
+La equivalencia se deduce de las propiedades de la linealidad de la integral.
 \end{proof}
+\section{Conjuntos de medida nula}
+\begin{lema}
+Sea $\displaystyle A \subset \R^{n} $. Entonces, $\displaystyle A $ tiene contenido nulo \footnote{$\displaystyle A $ es medible Jordan y $\displaystyle v\left(A\right) = 0 $.} si y solo si existe $\displaystyle R \supset A $ tal que $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists P \in \mathcal{P}\left(R\right) $ tal que $\displaystyle \sum^{}_{J \in P, \; J \cap A \neq \emptyset}v\left(J\right) < \epsilon  $.
+\end{lema}
+\begin{proof}
+Tenemos que $\displaystyle A $ tiene contenido nulo si y solo si es medible Jordan y $\displaystyle v\left(A\right) = 0 $, es decir, si existe $\displaystyle R \subset \R^{n} $ rectángulo con $\displaystyle A \subset R $ y 
+\[0 \leq \underline{\int _{R} }\chi_{A} \leq \overline{\int _{R} }\chi_{A} \leq 0 .\]
+Esto último sucede si y solo si $\displaystyle \inf \left\{ S\left(\chi_{A}, P\right)\; : \; P \in \mathcal{P}\left(R\right)\right\} \leq 0 $, es decir, si $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle P \in \mathcal{P} \left(R\right) $ tal que \footnote{Esto último se deduce de la caracterización de ínfimo: $\displaystyle S\left(\chi_{A}, P\right)< \overline{\int _{R} }\chi_{A} + \epsilon \leq \epsilon  $.} 
+\[ S\left(\chi_{A}, P\right) = \sum_{J \in P, \; J \cap A \neq \emptyset}v\left(J\right) < \epsilon  .\]
+\end{proof}
+\begin{prop}[Caracterización de contenido nulo]
+	$\displaystyle A \subset \R^{n} $ tiene contenido nulo si y solo si $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle \left\{ J_{1}, \ldots, J_{N}\right\}  $ familia finita de rectángulos tal que 
+	\[A \subset \bigcup_{i =1}^{N}J_{i}\quad \text{y} \quad \sum^{N}_{i \in F} v\left(J_{i}\right) < \epsilon  .\]
+\end{prop}
+\begin{proof}
+	La primera implicación es trivial a partir del lema anterior, por lo que demostraremos únicamente la segunda implicación. Sea $\displaystyle \epsilon > 0 $, entonces existe $\displaystyle \left\{ J_{1}, \ldots, J_{N}\right\}  $ familia de rectángulos que recubren $\displaystyle A $ y $\displaystyle \sum^{N}_{i = 1}v\left(J_{i}\right)< \epsilon  $. Cogemos $\displaystyle R \subset \R^{n} $ un rectángulo grande tal que $\displaystyle \bigcup_{i = 1}^{N}J_{i} \subset R $. 
+	Podemos obtener una partición $\displaystyle P\in \mathcal{P}\left(R\right) $ tal que cualquiera de los $\displaystyle J_{i} $ es unión de rectángulos de $\displaystyle P $. Entonces,
+	\[\sum_{J \in P, \; J \cap A \neq \emptyset}v\left(J\right) = \sum^{N}_{i = 1}\sum_{J \in P, J \subset J_{i}}v\left(J\right) \leq \sum^{N}_{i = 1}v\left(J_{i}\right) < \epsilon  .\]
+	Por el lema anterior, tenemos que $\displaystyle A $ tiene contenido nulo.
+\end{proof}
+\begin{prop}
+	Sea $\displaystyle \left\{ A_{1}, \ldots, A_{N}\right\} \subset \R^{n} $ una familia finita de conjuntos de contenido nulo. Entonces, $\displaystyle \bigcup_{i = 1}^{N}A_{i} $ tiene contenido nulo.
+\end{prop}
+\begin{observation}
+	En la proposición anterior es importante que la familia de conjuntos sea finita y no numerable. En efecto, ya vimos que $\displaystyle \Q \cap [0,1]$  no tiene contenido nulo.
+\end{observation}
+
+\begin{definition}[Medida nula]
+	Sea $\displaystyle A \subset \R^{n} $. Decimos que $\displaystyle A $ tiene \textbf{medida nula} si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \left\{ J_{k}\right\} _{k \in \N} $ familia de rectángulos tales que 
+	\[A \subset \bigcup_{k \in \N}J_{k} \quad \text{y} \quad \sum^{\infty}_{k = 1}v\left(J_{k}\right) < \epsilon  .\]
+\end{definition}
+\begin{prop}
+Si $\displaystyle A \subset \R^{n} $ tiene contenido nulo entonces también tiene medida nula.
+\end{prop}
+\begin{proof}
+	Supongamos que $\displaystyle A $ tiene contenido nulo y sea $\displaystyle \epsilon > 0 $. Tenemos que existe $\displaystyle \left\{ J_{1}, \ldots, J_{N}\right\}  $ familia de rectángulos tales que 
+	\[A \subset \bigcup_{i = 1}^{N}J_{i} \quad \text{y} \quad \sum^{N}_{i = 1}v\left(J_{i}\right) < \frac{\epsilon }{2}  .\]
+	Ahora, tomamos una sucesión cualquiera de rectángulos $\displaystyle \left\{ J_{N+k}\right\} _{k \in \N} $ tal que $\displaystyle v\left(J_{N + k}\right) < \frac{\epsilon }{2^{k+1}} $. De esta forma, es trivial que $\displaystyle \left\{ J_{i}\right\} _{i \in \N} $ recubre a $\displaystyle A $ y
+	\[\sum^{\infty}_{i = 1}v\left(J_{i}\right) = \sum^{N}_{i = 1}v\left(J_{i}\right) + \sum^{\infty}_{k = 1}v\left(J_{N + k}\right) < \frac{\epsilon }{2} + \sum^{\infty}_{k = 1}\frac{\epsilon }{2^{k+1}} = \epsilon  .\]
+\end{proof}
+\begin{prop}
+	Si $\displaystyle \left\{ A_{i}\right\} _{i \in I} $ es una sucesión o familia finita de conjuntos de medida nula, entonces $\displaystyle \bigcup_{i \in I} $ también tiene medida nula.
+\end{prop}
+\begin{proof}
+Tomamos $\displaystyle \epsilon > 0 $ y para cada $\displaystyle i \in I $ tomamos un rectángulo $\displaystyle J_{i} $ tal que $\displaystyle A_{i} \subset J_{i} $ y $\displaystyle v\left(J_{i}\right)< \frac{\epsilon }{2^{i}} $. Claramente se tiene que
+\[A \subset \bigcup_{i \in I}J_{i} \quad \text{y} \quad \sum_{i \in I}v\left(J_{i}\right) < \sum_{i \in I}\frac{\epsilon }{2^{i}} < \epsilon  .\]
+\end{proof}
+\begin{eg}
+	Por la proposición anterior tenemos que $\displaystyle \Q \cap \left[0,1\right]  $ tiene medida nula pero como vimos no tiene contenido nulo puesto que no es medible Jordan. Es decir, \textbf{que un conjunto tenga medida nula no significa que tenga contenido nulo}.
+\end{eg}
+\begin{theorem}
+Sea $\displaystyle K \subset \R^{n} $ compacto. Entonces $\displaystyle K $ tiene contenido nulo si y solo si $\displaystyle K $ tiene medida nula.
+\end{theorem}
+\begin{prop}
+Sea $\displaystyle A \subset \R^{n} $ medible Jordan. Entonces, $\displaystyle A $ tiene contenido nulo si y solo si tiene medida nula.
+\end{prop}
 
 \begin{prop}
-Por otro lado, 
+Si $\displaystyle \emptyset \neq B \subset A \subset \R^{n} $ tal que $\displaystyle A $ tiene contenido (resp. medida) nulo, entonces $\displaystyle B $ tiene contenido (resp. medida) nulo.
 \end{prop}
+
+\begin{eg}
+Sea $\displaystyle R \subset \R^{n} $ un rectángulo (no trivial, es decir, no tiene volumen nulo). Entonces, $\displaystyle v\left(R\right) > 0 $ por lo que $\displaystyle R $ no tiene contenido nulo, que se puede deducir a partir de la definición. Además, como $\displaystyle R $ es medible Jordan y no tiene contenido nulo tenemos que no tiene medida nula.
+\end{eg}
+
+\begin{observation}
+Sea $\displaystyle A \subset \R^{n} $ tal que $\displaystyle A \supset R $ con $\displaystyle R  $ rectángulo no trivial. Entonces $\displaystyle A $ no tiene contenido ni medida nula.
+\end{observation}
+\section{Teorema de Lebesgue}
+\begin{theorem}[Teorema de Lebesgue]
+Sea $\displaystyle f : R\subset \R^{n} \to \R $ acotada y $\displaystyle R $ un rectángulo. Entonces $\displaystyle f $ es integrable si y solo si el conjunto de discontinuidades de $\displaystyle f $ en $\displaystyle R $, $\displaystyle D\left(f\right) $, tiene medida nula.
+\end{theorem}
+Ahora estamos preparados para demostrar la proposición siguiente (que ya habíamos mencionado antes):
+
+\begin{colorary}
+Si $\displaystyle f : R \to \R $ es integrable, entonces $\displaystyle \left|f\right| $ también es integrable.
+\end{colorary}
+
 \begin{proof}
-Hay que ver primero que si $\displaystyle f \geq 0 $, entonces
-\[\int _{R}f \geq 0 .\]
-Una vez demostrado esto, basta con aplicar la linealidad y lo demostrado anteriormente con $\displaystyle f_{2}-f_{1} \geq 0 $. 
+Si $\displaystyle f $ es continua en $\displaystyle x \in R $, entonces $\displaystyle \left|f\right| $ también es continua en $\displaystyle x $. De esta manera, tenemos que $\displaystyle D\left( \left|f\right|\right)\subset D\left(f\right) $. Así, como $\displaystyle D\left(f\right) $ tiene medida nula, por una proposición anterior tenemos que $\displaystyle D\left( \left|f\right|\right) $ también tiene medida nula, por lo que $\displaystyle \left|f\right| $ también es integrable en $\displaystyle R $.
 \end{proof}
-Supongamos que $\displaystyle f:R \to \R $ es integrable en $\displaystyle R $. Entonces, $\displaystyle f $ es acotada, por lo que existen $\displaystyle m,M \in \R $ tales que 
-\[m \leq f\left(x\right)\leq M, \; \forall x \in \R .\]
-Así, tenemos que 
-\[\int _{R}m \leq \int _{R}f \leq \int _{R}M \Rightarrow mv\left(R\right) \leq \int _{R}f \leq Mv\left(R\right) .\]
+
+\begin{colorary}
+Sean $\displaystyle f,g : R \to \R $ integrables. Entonces, $\displaystyle f + g $ es integrable en $\displaystyle R $.
+\end{colorary}
+
+\begin{proof}
+Es sencillo ver que $\displaystyle D\left(f + g\right)\subset D\left(f\right) \cup D\left(g\right) $. Como $\displaystyle D\left(f\right) $ y $\displaystyle D\left(g\right) $ tienen medida nula su unión también, por lo que $\displaystyle D\left(f + g\right) $ tiene medida nula y $\displaystyle f + g $ es integrable.
+\end{proof}
+\begin{colorary}
+Sean $\displaystyle f, g : R \to \R $ integrables en $\displaystyle R $. Entonces, $\displaystyle f \cdot g $ es integrable en $\displaystyle R $.
+\end{colorary}
+
+\begin{observation}
+	Recordamos que $\displaystyle A \subset \R^{n} $ acotado es medible Jordan si y solo si existe $\displaystyle R \subset \R^{n} $ rectángulo tal que $\displaystyle \chi_{A} $ es integrable en $\displaystyle R $. Entonces, por el criterio de Lebesgue, $\displaystyle A $ es medible Jordan si y solo si $\displaystyle D\left(\chi_{A}\right) $ tiene medida nula. Tenemos que $\displaystyle D\left(\chi_{A}\right) = \partial A $, por lo que buscamos que $\displaystyle \partial A $ tenga medida nula \footnote{Recordamos que $\displaystyle \partial A = \left\{ x \in R \; : \; B\left(x,\epsilon \right)\cap A \neq \emptyset \; \text{y} \; B\left(x,\epsilon \right) \cap \left(R/A\right) \neq \emptyset, \; \forall \epsilon > 0\right\}  $. }.
+\end{observation}
+\begin{eg}
+	Consideremos $\displaystyle A = \Q \cap \left[0,1\right]  $. Tenemos que $\displaystyle \partial A = \left[0,1\right]  $ y como $\displaystyle v\left(\partial A\right) = 1 \neq 0$, $\displaystyle \partial A $ no tiene medida nula por lo que $\displaystyle A $ no es medible Jordan.
+\end{eg}
+\begin{observation}
+Supongamos que $\displaystyle A $ y $\displaystyle B $ son medibles Jordan. Tenemos que 
+\[\chi_{A \cap B} = \chi_{A} \cdot \chi_{B} .\]
+Como $\displaystyle \chi_{A} $ y $\displaystyle \chi_{B} $ son integrables Riemann, tenemos que $\displaystyle \chi_{A \cap B} $ es integrable Riemann.
+\end{observation}
 
