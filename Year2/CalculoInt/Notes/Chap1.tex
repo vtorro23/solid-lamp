@@ -229,22 +229,6 @@ Se puede hacer un razonamiento igual sobre un conjunto $\displaystyle A $ que es
 \end{observation}
  
 \begin{prop}
-Si $\displaystyle f : A \to \R $ es integrable, entonces $\displaystyle \left|f\right| $ es integrable y
-\[ \left|\int _{A}f \right| \leq \int _{A} \left|f\right| .\]
-\end{prop}
-\begin{proof}
-Demostramos la segunda parte. Claramente tenemos que 
-\[- \left|f\left(x\right)\right| \leq f\left(x\right) \leq \left|f\left(x\right)\right|, \; \forall x \in A .\]
-Por la propiedad de la monotonía tenemos que 
-\[-\int _{A} \left|f\right| \leq \int _{A}f \leq \int _{A} \left|f\right| \iff \left|\int _{A}f \right|\leq \int _{A} \left|f\right| .\]
-\end{proof}
-
-\begin{observation}
-Sea $\displaystyle A $ medible Jordan y $\displaystyle \left|f\left(x\right)\right| \leq M $, $\displaystyle \forall x \in A $. Entonces, tenemos que 
-\[ \left|\int _{A}f \right|\leq \int _{A} \left|f\right| \leq M v\left(A\right) .\]
-De esta manera, podemos utilizar la proposición anterior para obtener una cota de la integral.
-\end{observation}
-\begin{prop}
 Sean $\displaystyle S,R \subset \R^{n} $ rectángulos cerrados tales que $\displaystyle S \subset R $. Si $\displaystyle f : R \to \R $ es integrable, entonces $\displaystyle f $ es integrable en $\displaystyle S $.
 \end{prop}
 \begin{proof}
@@ -260,9 +244,74 @@ Sean $\displaystyle S,R \subset \R^{n} $ rectángulos cerrados tales que $\displ
 \]
 Por el criterio de la integrabilidad de Riemann, $\displaystyle f|_{S} $ es integrable.	
 \end{proof}
+\begin{lema}
+Sean $\displaystyle R, R' \subset \R^{n} $ rectángulos con $\displaystyle R' \subset R $. Supongamos que $\displaystyle f : R \to \R $ es integrable en $\displaystyle R' $ y $\displaystyle f\left(x\right) = 0 $ para $\displaystyle x \in \overline{R/R'} $. Entonces $\displaystyle f $ es integrable en $\displaystyle R $ y 
+\[\int _{R'}f =\int _{R}f .\]
+\end{lema}
+\begin{proof}
+	Sea $\displaystyle \tilde{f} := f|_{R'} $ y sea $\displaystyle \epsilon > 0 $, entonces existe $\displaystyle \tilde{P} \in \mathcal{P}\left(R'\right) $ tal que 
+	\[S\left(\tilde{f}, \tilde{P}\right)-s\left(\tilde{f}, \tilde{P}\right) < \epsilon  .\]
+	Cogemos ahora la partición $\displaystyle P \in \mathcal{P}\left(R\right) $ que resulta de extender $\displaystyle \tilde{P} $ a una partición de $\displaystyle R $, como se muestra en la figura. 
+	% Añadir una imagen para explicar. 
+	Entonces, tendremos que $\displaystyle R' $ es una unión de subrectángulos de $\displaystyle P $. Sean $\displaystyle R_{1}, \ldots, R_{k} $ los subrectángulos de $\displaystyle P $ que también lo son de $\displaystyle \tilde{P} $ y $\displaystyle R_{k+1}, \ldots, R_{N} $ el resto. Así, tenemos que 
+\[
+\begin{split}
+S\left(f, P\right)-s\left(f,P\right) = \sum^{k}_{i = 1}\left(\beta_{i}-\alpha_{i}\right)v\left(R_{i}\right) + \sum^{N}_{i = k + 1}\left(\beta_{i}-\alpha_{i}\right)v\left(R_{i}\right) < \epsilon + \sum^{N}_{i = k + 1}\left(\beta_{i}-\alpha_{i}\right)v\left(R_{i}\right) .
+\end{split}
+\]
+Los rectángulos $\displaystyle R_{k+1}, \ldots, R_{N} $ pueden cumplir una de dos cosas.
+\begin{itemize}
+\item Si $\displaystyle R_{j} \cap R' = \emptyset $, entonces $\displaystyle f|_{R_{j}} \equiv 0 $ y se tiene que $\displaystyle \beta_{j}-\alpha_{j} = 0 $.
+\item Si $\displaystyle R_{j} \cap R' \neq \emptyset $, entonces, debe ser que su intersección con $\displaystyle R' $ no es más que un segmento del borde de $\displaystyle R' $, es decir, $\displaystyle R_{j} \cap R' \subset \overline{R/R'} $, por lo que de nuevo tenemos que $\displaystyle \beta_{j}-\alpha_{j} = 0 $. 
+\end{itemize}
+Así, hemos visto que $\displaystyle \sum^{N}_{i=k+1}\left(\beta_{i}-\alpha_{i}\right)v\left(R_{i}\right)= 0 $, por lo que $\displaystyle S\left(f,P\right)-s\left(f,P\right) < \epsilon  $ y tenemos que $\displaystyle f $ es integrable en $\displaystyle R $. Veamos ahora que el valor de las integrales coincide. Sea $\displaystyle I = \int _{R'}\tilde{f} $. Sea $\displaystyle \epsilon > 0 $, podemos coger $\displaystyle \tilde{P} \in \mathcal{P}\left(R'\right) $ tal que $\displaystyle I - s\left(\tilde{f}, \tilde{P}\right) < \epsilon  $. Cogemos $\displaystyle P \in \mathcal{P}\left(R\right) $ extendiendo $\displaystyle \tilde{P} $ a una partición de $\displaystyle R $ como hemos hecho antes, así
+\[0 \leq I - s\left(f,P\right) = I - \sum_{J \in P, J \subset R'}\alpha_{J}v\left(J\right) = I - \sum_{J \in \tilde{P}}\tilde{\alpha}_{J}v\left(J\right) =  I - s\left(\tilde{f}, \tilde{P}\right) < \epsilon .\]
+Así, hemos obtenido que 
+\[\underline{\int _{R}}f = \int _{R}f = I .\]
+\end{proof}
+
+\begin{prop}
+Sean $\displaystyle R, R' \subset \R^{n} $ rectángulos con $\displaystyle R' \subset R $. Supongamos que $\displaystyle f : R \to \R $ es integrable en $\displaystyle R' $ y $\displaystyle f\left(x\right) = 0 $ para $\displaystyle x \in R/R' $. Entonces $\displaystyle f $ es integrable en $\displaystyle R $ y 
+\[\int _{R'}f =\int _{R}f .\]
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle f\left(x\right)=g\left(x\right) + h\left(x\right) $ con $\displaystyle g, h : R \to \R $ tales que
+\[
+	g\left(x\right)=
+\begin{cases}
+0, \; x \in \overline{R/R'} \\
+f\left(x\right), \; \text{resto}
+\end{cases}
+, \quad h\left(x\right) = 
+\begin{cases}
+0, \; x \in R/\partial R' \\
+f\left(x\right), \; \text{resto}
+\end{cases}
+.\]
+Veamos que $\displaystyle \int _{R}h =\int _{R'}h =0 $. Veamos primero que $\displaystyle h $ es integrable en $\displaystyle R $. Se puede comprobar que $\displaystyle \partial R' $ tiene contenido nulo, por lo que para $\displaystyle \epsilon > 0 $, existe $\displaystyle P \in \mathcal{P}\left(R\right) $ tal que 
+\[\sum_{J \in P, J \cap \partial R' \neq \emptyset}v\left(J\right) < \frac{\epsilon }{M}, \; \; \text{donde}\; \left|f\right| \leq M .\]
+Así, tendremos que 
+\[S\left(h, P\right) = \sum_{J \in P}\beta_{J}v\left(J\right) = \sum_{J \in P, J \cap \partial R' \neq \emptyset} \beta_{J}v\left(J\right) \leq M\sum_{J \in P, J \cap \partial R' \neq \emptyset}v\left(J\right) < \epsilon .\]
+Así, $\displaystyle h $ es integrable en $\displaystyle R $ y su integral es nula. Por una proposición anterior, como $\displaystyle R' \subset R $, tenemos que $\displaystyle h $ también es integrable en $\displaystyle R' $. De esta manera, como $\displaystyle s\left(h|_{R'}, P\right) = 0 $, $\displaystyle \forall P \in \mathcal{P}\left(R'\right) $, tenemos que 
+\[\underline{\int _{R'} }h = \int _{R'}h = 0 .\]
+Veamos ahora que $\displaystyle g $ es integrable en $\displaystyle R' $. Primero, como $\displaystyle f $ está acotada, tendremos que existe $\displaystyle K > 0 $ tal que $\displaystyle \beta_{g,J}-\alpha_{g,J} \leq K $, $\displaystyle \forall J \in P $ con $\displaystyle J \cap \partial R' \neq \emptyset $. Ahora, sea $\displaystyle \epsilon > 0 $, entonces existe $\displaystyle P_{1} \in \mathcal{P}\left(R'\right) $ tal que $\displaystyle S\left(\tilde{f}, P_{1}\right)-s\left(\tilde{f}, P_{1}\right) < \frac{\epsilon }{2}  $. Además, como $\displaystyle \partial R' $ tiene contenido nulo, existe $\displaystyle P_{2}\in \mathcal{P}\left(R'\right) $ tal que $\displaystyle \sum_{J \in P_{2}, J \cap \partial R'}v\left(J\right) < \frac{\epsilon }{2K} $. Así, cogiendo $\displaystyle P \in \mathcal{P}\left(R'\right) $ más fina que $\displaystyle P_{1} $ y $\displaystyle P_{2} $,
+\[
+\begin{split}
+	S\left(g|_{R'}, P\right)-s\left(g|_{R'}, P\right) = & \sum_{J \in P}\left(\beta_{g,J}-\alpha_{g,J}\right)v\left(J\right) \\
+	= &  \sum_{J \cap \partial R' = \emptyset} \left(\beta_{g,J}-\alpha_{g,J}\right)v\left(J\right) + \sum_{J \cap \partial R' \neq \emptyset}\left(\beta_{g, J}-\alpha_{g,J}\right)v\left(J\right) \\
+	\leq & \sum_{J \in P}\left(\beta_{f, J}-\alpha_{f,J}\right)v\left(J\right) + \sum^{}_{J \cap \partial R' \neq \emptyset}\left(\beta_{g,J}-\alpha_{g,J}\right)v\left(J\right) \\
+	< & \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon .
+\end{split}
+\]
+Así, tenemos que $\displaystyle g $ es integrable en $\displaystyle R' $ y por el lema anterior tenemos que también es integrable en $\displaystyle R $ y además
+\[\int _{R'}g= \int _{R}g  .\]
+Como $\displaystyle f $ es suma de funciones integrables, tendremos que 
+\[\int _{R}f =\int _{R}g + h = \int _{R}g +\int _{R}h  = \int _{R'}g  .\]
+
+\end{proof}
 
 \section{Conjuntos medibles Jordan}
-\begin{definition}[Volumen]
+\begin{definition}[Conjunto medible Jordan]
 Sea $\displaystyle A \subset \R^{n} $ con $\displaystyle A\neq \emptyset $ y $\displaystyle A $ acotado. Tomamos un rectángulo $\displaystyle R $ tal que $\displaystyle A \subset R $. Definimos la función 
 \[\chi_{A} : R \to \R : x \to 
 \begin{cases}
@@ -325,6 +374,9 @@ De forma equivalente, desde $\displaystyle f : R \to \R $ y $\displaystyle A \su
 
 	En efecto, si $\displaystyle \tilde{f} : R \to \R $ es integrable y $\displaystyle R' $ es otro rectángulo tal que $\displaystyle A \subset R' $, basta con tomar el rectángulo que contenga a $\displaystyle R \cap R' $, puesto que dado que $\displaystyle \tilde{f} $ es integrable en $\displaystyle R $, también lo será en este nuevo rectángulo (puesto que realmente hemos cortado partes en las que la función se anulaba). Así, el valor de la integral en $\displaystyle R $ y $\displaystyle R' $ coincidirá. Esto se ve de forma más clara con la observación anterior.
 \end{observation}
+Las integrales sobre conjuntos que no sean rectángulos cumplen propiedades parecidas a las integrales sobre rectángulos.
+\begin{prop}[Linealidad y monotonía]
+\end{prop}
 
 \begin{definition}[Media]
 Sea $\displaystyle f : A \to \R $ integrable con $\displaystyle A \subset \R^{n} $ medible Jordan y $\displaystyle v\left(A\right) > 0 $, definimos la \textbf{media} de $\displaystyle f $ en $\displaystyle A $ como 
@@ -345,6 +397,23 @@ Como $\displaystyle f  $ es continua y $\displaystyle A $ es compacto y conexo, 
 \[m = f\left(x_{1}\right) \leq f\left(x\right) \leq M = f\left(x_{2}\right), \; \forall x \in A .\]
 Así, tenemos que $\displaystyle f\left(A\right) = \left[m,M\right]  $. Anteriormente hemos visto que $\displaystyle m \leq m_{A}\left(f\right) \leq M $, por lo que $\displaystyle m_{A}\left(f\right) \in f\left(A\right) $ y en consecuencia existe $\displaystyle x_{m} \in A $ tal que $\displaystyle f\left(x_{m}\right) = m_{A}\left(f\right) $. 
 \end{proof}
+\begin{prop}
+Si $\displaystyle f : A \to \R $ es integrable, entonces $\displaystyle \left|f\right| $ es integrable y
+\[ \left|\int _{A}f \right| \leq \int _{A} \left|f\right| .\]
+\end{prop}
+\begin{proof}
+Demostramos la segunda parte. Claramente tenemos que 
+\[- \left|f\left(x\right)\right| \leq f\left(x\right) \leq \left|f\left(x\right)\right|, \; \forall x \in A .\]
+Por la propiedad de la monotonía tenemos que 
+\[-\int _{A} \left|f\right| \leq \int _{A}f \leq \int _{A} \left|f\right| \iff \left|\int _{A}f \right|\leq \int _{A} \left|f\right| .\]
+\end{proof}
+
+\begin{observation}
+Sea $\displaystyle A $ medible Jordan y $\displaystyle \left|f\left(x\right)\right| \leq M $, $\displaystyle \forall x \in A $. Entonces, tenemos que 
+\[ \left|\int _{A}f \right|\leq \int _{A} \left|f\right| \leq M v\left(A\right) .\]
+De esta manera, podemos utilizar la proposición anterior para obtener una cota de la integral.
+\end{observation}
+
 \begin{prop}[Aditividad de la integral respecto de los conjuntos de integración]
 Sean $\displaystyle A, B \subset \R^{n} $ acotados con $\displaystyle f : A \cup B\to \R $ acotada. Supongamos que $\displaystyle f $ es integrable en $\displaystyle A \cap B $ y $\displaystyle \int _{A \cap B}f = 0 $. Entonces $\displaystyle f $ es integrable en $\displaystyle A \cup B $ si y solo si $\displaystyle f $ es integrable en $\displaystyle A $ y en $\displaystyle B $, y en este caso
 \[\int _{A \cup B}f = \int _{A}f + \int _{B}f  .\]
@@ -460,4 +529,49 @@ Supongamos que $\displaystyle A $ y $\displaystyle B $ son medibles Jordan. Tene
 \[\chi_{A \cap B} = \chi_{A} \cdot \chi_{B} .\]
 Como $\displaystyle \chi_{A} $ y $\displaystyle \chi_{B} $ son integrables Riemann, tenemos que $\displaystyle \chi_{A \cap B} $ es integrable Riemann.
 \end{observation}
+\section{11/2/2026}
+\begin{prop}
+Sea $\displaystyle A $ de contenido nulo y $\displaystyle f : A \to \R $ acotada. Entonces, $\displaystyle f $ es integrable en $\displaystyle A $ y $\displaystyle \int _{A}f = 0 $. 
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle A \subset \R^{n} $ de contenido nulo y $\displaystyle f : A \to \R $ acotada. Cogemos $\displaystyle R \subset \R^{n} $ rectángulo tal que $\displaystyle A \subset R $ y consideramos la función
+	\[\tilde{f} : R \to \R : x \to 
+	\begin{cases}
+	f\left(x\right) , \; x \in A \\
+	0, \; x \not\in A
+	\end{cases}
+	.\]
+	Tendremos que $\displaystyle D\left(\tilde{f}\right) \subset \overline{A} $. En efecto, si $\displaystyle x \not\in \overline{A} $ tendremos que existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle B\left(x,\epsilon \right)\subset R/A $, por lo que $\displaystyle \tilde{f}|_{B\left(x,\epsilon \right)} \equiv 0 $ y por tanto es continua en $\displaystyle x $. Como $\displaystyle A $ tiene contenido nulo, $\displaystyle \overline{A} $ también tiene contenido nulo (Hoja 3, Ejercicio 2). Por tanto, $\displaystyle \overline{A} $ tiene medida nula. Así, $\displaystyle \tilde{f} $ es integrable en $\displaystyle R $ y en consecuencia $\displaystyle f $ es integrable en $\displaystyle A $. 
+	Veamos ahora que el valor de la integral es nulo. Como $\displaystyle \tilde{f} $ es integrable, basta con ver que la integral inferior de $\displaystyle \left|\tilde{f}\right| $ vale 0, es decir,
+	\[\underline{\int _{R}} \left|\tilde{f}\right| = \sup \left\{ s\left( \left|\tilde{f}\right|, P\right) \; : \; P \in \mathcal{P}\left(R\right)\right\}  = 0.\]
+Sea $\displaystyle P \in \mathcal{P}\left(R\right) $, entonces
+\[s\left( \left|\tilde{f}\right|, P\right) = \sum_{J \in P} \alpha_{J}v\left(J\right) .\]
+Como $\displaystyle A $ tiene volumen nulo y $\displaystyle J $ no, no puede ser que $\displaystyle J \subset A $. Así, tenemos que existe $\displaystyle x \in J $ con $\displaystyle x \not\in A $, por lo que $\displaystyle \alpha_{J} = 0 $, $\displaystyle \forall J \in P $. Así, tenemos que $\displaystyle s\left( \left|\tilde{f}\right|, P\right) = 0 $, por lo que la integral inferior vale 0. Así, 
+\[ \left|\int _{R} \tilde{f} \right| \leq \int _{R} \left|\tilde{f}\right| = 0 \Rightarrow \int _{R}\tilde{f} = \int _{A}f = 0.\]
+\end{proof}
+\begin{observation}
+	Nos podemos preguntar, es válido el resultado si en vez de tener $\displaystyle A $ contenido nulo tenemos que $\displaystyle A $ tiene medida nula? Claramente, la respuesta es que no. En efecto, tenemos que $\displaystyle \chi_{\left[0,1\right] \cap \Q} $ tiene medida nula pero no es integrable. Sin embargo, sí es cierto que si $\displaystyle A $ tiene medida nula y $\displaystyle f : A \to \R $ es integrable, entonces $\displaystyle \int _{A}f =0 $. 
+\end{observation}
+\begin{colorary}
+	Sean $\displaystyle f,g : R \to \R $ acotadas con $\displaystyle f $ integrable en $\displaystyle A \subset R $ y $\displaystyle \left\{ x \in R \; : \; f\left(x\right) \neq g\left(x\right)\right\}  $ tiene contenido nulo. Entonces, $\displaystyle g $ es integrable en $\displaystyle A $ y 
+	\[\int _{A}g = \int _{A}f  .\]
+\end{colorary}
+\begin{proof}
+Tenemos que $\displaystyle g\left(x\right) = g\left(x\right)-f\left(x\right) + f\left(x\right) $. Por la proposición anterior tenemos que $\displaystyle g\left(x\right)-f\left(x\right) $ es integrable y tiene integral nula, por ser suma de funciones integrables tenemos que $\displaystyle g $ es integrable y
+\[\int _{A}g = \int _{A}g - f + \int _{A}f = \int _{A}f  .\]
+\end{proof}
+\begin{observation}
+	Al igual que antes, el enunciado no es cierto sis sustituimos 'contenido nulo' con 'medida nula'. En efecto, basta con considerar $\displaystyle f \equiv 0 $ y $\displaystyle g = \chi_{\Q \cap \left[0,1\right] } $. 
+\end{observation}
+\begin{observation}
+Podemos repasar nuestro resultado sobre la aditividad de la integral en conjuntos integrables. Si $\displaystyle A = A_{1} \cup A_{2} $ con $\displaystyle A, A_{1} $ y $\displaystyle A_{2} $ medibles Jordan, si además $\displaystyle A_{1} \cap A_{2} $ tiene contenido nulo entonces 
+\[\int _{A}f = \int _{A_{1}}f + \int _{A_{2}}f  .\]
+\end{observation}
+
+\begin{prop}
+	Sea $\displaystyle f : R \to \R $ con $\displaystyle f \geq 0 $, y $\displaystyle \int _{R}f = 0 $. Entonces el conjunto $\displaystyle \left\{ x \in R \; : \; f\left(x\right) \neq 0\right\}  $ tiene medida nula. Es decir, existe $\displaystyle A \subset R $ de medida nula tal que $\displaystyle f\left(x\right) = 0 $, $\displaystyle \forall x \in R/A $. 
+\end{prop}
+\begin{notation}
+A partir de ahora, si decimos que algo se cumple en casi todo punto es porque se cumple en todos los puntos salvo en un conjunto de medida nula.
+\end{notation}
 
