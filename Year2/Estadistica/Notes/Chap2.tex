@@ -1,0 +1,176 @@
+\chapter{Muestreo}
+\section{Modelos estadísticos}
+Cada fenómeno aleatorio está gobernado por una función de probabilidad. Para estudiar dicho fenómeno, nos centramos en estudiar su distribución de probabilidad subyacente. \\
+
+Llamaremos \textbf{población} a una variable aleatoria $\displaystyle X \sim F $, donde $\displaystyle F $ es una función de distribución no completamente conocida. Nuestro objetivo será obtener información sobre ciertas características de la distribución de $\displaystyle X $. Para ello, replicaremos el experimento aleatorio (de forma idéntica e independiente) un número de $\displaystyle n $ veces. \\
+
+Hay varios tipos de inferencia:
+\begin{itemize}
+\item Inferencia frecuentista: utilizamos información objetiva, es decir, datos de la muestra.
+\item Inferencia bayesiana: se utiliza información subjetiva.
+\end{itemize}
+También podemos diferenciar en función del grado de conocimiento sobre $\displaystyle F $:
+\begin{itemize}
+\item Inferencia paramétrica: se conoce la forma funcional de $\displaystyle F $, excepto por ciertas características.
+\item Inferencia no paramétrica: no se asume una forma funcional para $\displaystyle F $.
+\end{itemize}
+Supongamos por ahora que la verdadera función de distribución $\displaystyle F $ de nuestra población $\displaystyle X $ está contenida en una familia $\displaystyle \mathcal{F} $ de funciones de distribución asociadas a $\displaystyle X $.
+\begin{definition}[Modelo estadístico]
+Un \textbf{modelo estadístico} es una terna $\displaystyle \left(\chi, \beta_{\chi}, \mathcal{F}\right) $, donde 
+\begin{itemize}
+\item $\displaystyle \chi \subset \R $ es el espacio muestral.
+\item $\displaystyle \beta_{\chi} $ es una $\displaystyle \sigma  $-álgebra de Borel sobre $\displaystyle \chi $. 
+\item $\displaystyle \mathcal{F} $ es un conjunto de funciones de distribución asociadas a medidas de probabilidad $\displaystyle P_{X} $ definidas sobre $\displaystyle \left(\chi, \beta_{\chi}\right) $.
+\end{itemize}
+\end{definition}
+En la inferencia paramétrica asumimos que conocemos la forma funcional de la verdadera función de distribución $\displaystyle F $ de la variable aleatoria de interés $\displaystyle X $, excepto por $\displaystyle k $ parámetros $\displaystyle \theta = \left(\theta_{1}, \ldots, \theta_{k}\right) $. En este caso, la familia $\displaystyle \mathcal{F} $ tiene la forma
+\[\mathcal{F}= \left\{ F\left( \cdot; \theta \right) \; : \; \theta \in \Theta\right\}  .\]
+Decimos que $\displaystyle \theta \in \Theta \subset \R^{k}$, donde $\displaystyle \Theta $ es el \textbf{espacio paramétrico}. En el caso de inferencia frecuentista consideraremos que $\displaystyle \theta $ es un valor fijo y desconocido, por lo que escribiremos $\displaystyle f_{\theta}\left(x\right) $ para designar a la función de masa. Sin embargo, en el planteamiento bayesiano consideraremos que $\displaystyle \theta $ es una variable aleatoria, por lo que escribiremos $\displaystyle f\left(x | \theta \right) $. 
+\begin{definition}[Modelo estadístico paramétrico]
+Un \textbf{modelo estadístico paramétrico} es una terna $\displaystyle \left(\chi, \beta_{\chi}, \mathcal{F}\right) $ donde 
+\[\mathcal{F}= \left\{ F\left( \cdot; \theta \right) \; : \; \theta \in \Theta\right\}  .\]
+\end{definition}
+\begin{eg}
+Consideremos los siguientes ejemplos.
+\begin{itemize}
+	\item Estimar la probabilidad de que un producto resulte defectuoso en una cadena de producción: $\displaystyle X \sim Bern\left(\theta\right) $, $\displaystyle \theta \in \left[0,1\right]  $.
+	\item Estimar el tiempo entre llegadas a la cola de un servidor: $\displaystyle X \sim \exp\left(\lambda \right) $, $\displaystyle \lambda > 0 $.
+	\item Estimar el peso esperado de niños hasta cierta edad en una región determinada: $\displaystyle X \sim N\left(\mu, \sigma^{2}\right) $, $\displaystyle \mu \in \R $, $\displaystyle \sigma^{2} > 0 $. 
+\end{itemize}
+\end{eg}
+
+\section{Estadísticos muestrales}
+Consideremos una variable aleatoria $\displaystyle X $ a la que llamaremos \textbf{universo} o \textbf{población} cuya función de distribución $\displaystyle F $ viene dada por algún elemento de una familia $\displaystyle \mathcal{F} $ de distribuciones de probabilidad.
+\begin{definition}[Muestra aleatoria simple (m.a.s.)]
+Dada una población $\displaystyle X $ se llama \textbf{muestra aleatoria simple (m.a.s.)} de tamaño $\displaystyle n $ a la repetición de $\displaystyle X_{1}, \ldots, X_{n} $ variables aleatorias independientes con distribución igual a la de $\displaystyle X $. 
+\end{definition}
+\begin{observation}
+El modelo estadístico asociado a nuestra muestra $\displaystyle \overrightarrow{X} = \left(X_{1}, \ldots, X_{n}\right) $ es $\displaystyle \left(\chi^{n}, \beta_{\chi^{n}}, \mathcal{F}^{n}\right) $, donde $\displaystyle \mathcal{F}^{n} $ es el conjunto de funciones de distribución $\displaystyle F_{X} : \R^{n} \to \R $ tales que 
+\[F_{X}\left(x_{1}, \ldots, x_{n}\right)=\prod^{n}_{i=1}F\left(x_{i}\right), \; \forall \left(x_{1}, \ldots, x_{n}\right) \in \R^{n} .\]
+\end{observation}
+
+\begin{observation}
+Por ejemplo, la función de distribución de la muestra $\displaystyle \left(x_{1}, \ldots, x_{n}\right) $ es
+\[F\left(x_{1}, \ldots, x_{n}\right)=\prod^{n}_{i = 1}F\left(x_{i}\right) ,\]
+donde $\displaystyle F\left(x\right) $ es la función de distribución de $\displaystyle X $, que viene dada por un elemento de $\displaystyle \mathcal{F} $. 
+\end{observation}
+\begin{observation}
+Los datos observados $\displaystyle \left(x_{1}, \ldots, x_{n}\right) $ son un resultado o realización de la m.a.s., $\displaystyle X_{1} = x_{1} $, \ldots, $\displaystyle X_{n}=x_{n} $. 
+\end{observation}
+
+\begin{definition}[Estadístico muestral]
+Dada $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. de $\displaystyle X $, a toda $\displaystyle f : \R^{n} \to \R^{k} $ función conocida medible recible el nombre de \textbf{estadístico muestral}.
+\end{definition}
+\begin{eg}
+Algunos ejemplos de estadíscitos muestrales son la \textbf{media muestral} que viene dada como 
+\[\overline{X}:=\frac{1}{n}\sum^{n}_{i = 1}X_{i} ,\]
+y la \textbf{cuasivarianza muestral} 
+\[S^{2} : = \frac{1}{n-1}\sum^{n}_{i = 1}\left(X_{i}-\overline{X}\right)^{2} .\]
+\end{eg}
+\begin{definition}[Momentos centrales]
+Se llama \textbf{momento muestral respecto al origen} de orden $\displaystyle k $ a $\displaystyle a_{k}:=\frac{1}{n}\sum^{n}_{i = 1}X_{i}^{k} $, con $\displaystyle k > 0 $. Análogamente, se llama \textbf{momento muestral respecto al centro} de orden $\displaystyle k $ a $\displaystyle b_{k} := \frac{1}{n}\sum^{n}_{i = 1}\left(X_{i}-\overline{X}\right)^{k} $, con $\displaystyle k > 0 $.
+\end{definition}
+\begin{eg}
+Como hemos visto antes, tendremos que $\displaystyle a_{1}= \overline{X} $. 
+\end{eg}
+\begin{observation}
+Es sencillo ver que 
+\[b_{k}= a_{k}-\begin{pmatrix} k \\ 1 \end{pmatrix}\overline{x}a_{k-1} + \cdots + \left(-1\right)^{k}\overline{x}^{k} ,\]
+es decir, los momentos muestrales respecto al centro se puede calcular en función de los momentos muestrales respecto al origen. En particular,
+\[b_{2}=a_{2} - a_{1}^{2} = a_{2}-\overline{X}^{2} .\]
+\end{observation}
+\begin{prop}
+	Dada una m.a.s. de tamaño $\displaystyle n $ de una población $\displaystyle X $ con momento de segundo orden finito \footnote{Esta hipótesis es necesaria para asegurar la existencia de $\displaystyle \sigma^{2} $ y $\displaystyle \mu $.}, se tiene que $\displaystyle E[\overline{X}] = \mu$ y $\displaystyle V\left(\overline{X}\right)= \frac{\sigma ^{2}}{n} $, donde $\displaystyle \mu = E[X] $ y $\displaystyle \sigma^{2}= V\left(X\right) $. 
+\end{prop}
+\begin{proof}
+Aplicando las propiedades de la esperanza,
+\[E\left[\overline{X}\right] = E\left[\frac{1}{n}\sum^{n}_{i = 1}X_{i}\right] = \frac{1}{n}\sum^{n}_{i = 1}E\left[X_{i}\right] =\frac{1}{n}\sum^{n}_{i = 1}\mu = \mu .\]
+Por otro lado, aplicando las propiedades de la varianza,
+\[
+\begin{split}
+	V\left(\overline{X}\right) = & E\left[\left(\overline{X}-\mu\right)^{2}\right] = E\left[\left(\frac{1}{n}\sum^{n}_{i = 1}\left(X_{i}-\mu\right)\right)^{2}\right] \\
+	= & \frac{1}{n^{2}}E\left[\sum^{n}_{i = 1}\left(X_{i}-\mu\right)^{2}+2\sum^{n}_{i=1}\sum^{n}_{j = 1, j > i}\left(X_{i}-\mu\right)\left(X_{j}-\mu\right)\right] \\
+	= & \frac{1}{n^{2}}\left[\sum^{n}_{i = 1}V\left(X_{i}\right) + 2\sum^{n}_{i = 1}\sum_{j > i}E\left[X_{i}-\mu\right] E\left[X_{j}-\mu\right] \right] = \frac{\sigma^{2}}{n}  .
+\end{split}
+\]
+Podemos observar que el segundo sumando se anula. 
+\end{proof}
+
+\section{Propiedades asintóticas de los momentos muestrales}
+Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s ($\displaystyle n $) de $\displaystyle X $ con $\displaystyle \mu = E\left[X\right]  $ y $\displaystyle \sigma = \sqrt{V\left(X\right)} $. 
+\begin{prop}[Momentos muestrales respecto al origen]
+	Se cumple que si $\displaystyle n \to \infty $ 
+	\[a_{k} = \frac{1}{n}\sum^{n}_{i = 1}X_{i}^{k} \xrightarrow{c.s.} \alpha_{k} = E\left[X^{k}\right]  .\]
+	Particularmente,
+	\[\overline{X}\xrightarrow{c.s.} \mu \quad \left(\text{Ley Fuerte de Kintchine}, \; \mu < \infty\right) .\]
+\end{prop}
+\begin{proof}
+	Por el teorema de Kintchine, tenemos que para una sucesión de variables aleatorias $\displaystyle \left\{ Y_{n}\right\} _{n\in\N} $ independientes e idénticamente distribuidas con $\displaystyle E\left[Y_{i}\right] =\mu < \infty$, $\displaystyle \forall n \in \N $, tenemos que $\displaystyle \overline{Y}\xrightarrow{cs} \mu $. El resultado general lo obtenemos tomando $\displaystyle Y_{i}=X_{i}^{k} $.
+\end{proof}
+
+\begin{prop}[Momentos muestrales respecto a la media]
+Si una población tiene momentos de orden $\displaystyle k > 0 $, el momento muestral respecto al centro de orden $\displaystyle k $, converge, casi seguro, al momento poblacional respecto al centro de orden $\displaystyle k $, es decir
+\[b_{k}=\frac{1}{n}\sum^{n}_{i=1}\left(X_{i}-\overline{X}\right)^{k}\xrightarrow{cs}\beta_{k}=E\left[\left(X-\mu\right)^{k}\right]  .\]
+En particular, 
+\[\sigma_{n}^{2}\xrightarrow{cs}\sigma^{2} \quad \text{y} \quad S_{n}^{2} \xrightarrow{cs} \sigma^{2} .\]
+\end{prop}
+\begin{proof}
+Hacer en casa.
+\end{proof}
+\begin{prop}
+Si la población tiene momentos de orden $\displaystyle 2k $ respecto al origen, entonces se tiene la siguiente convergencia en ley
+\[\frac{a_{k}-\alpha_{k}}{\sqrt{\alpha_{2k}-\alpha ^{2}_{k}}}\sqrt{n}\xrightarrow{\mathcal{L}} N\left(0,1\right) .\]
+En particular, 
+\[\sqrt{n}\frac{\overline{X}-\mu}{\sigma }\xrightarrow{\mathcal{L}} N\left(0,1\right) \; \text{(Teorema de Lévy-Lindeberg)}.\]
+\end{prop}
+\begin{proof}
+	Basta con aplicar el teorema central del límite, $\displaystyle \left\{ Y_{n}\right\} _{n\in\N} $ con v.a.i.i.d con momento de segundo orden y $\displaystyle E\left[Y_{n}\right] =\mu $ y $\displaystyle V\left(Y_{n}\right)=\sigma^{2}< \infty $. Entonces, tendremos que
+	\[\frac{\overline{Y}-\mu}{\sigma }\sqrt{n} \xrightarrow{\mathcal{L}} N\left(0,1\right) .\]
+	Para obtener el resultado general podemos considerar $\displaystyle Y_{n}=X^{k}_{n} $ y $\displaystyle a_{k}=\overline{Y} $, de forma que $\displaystyle \mu = \alpha_{k} $ y $\displaystyle \sigma^{2}=\alpha_{2k}-\alpha_{k}^{2} $.
+\end{proof}
+\begin{prop}
+Si existe el momento poblacional respecto al origen de orden $\displaystyle 2k $, entonces
+\[\sqrt{n}\frac{b_{k}-\beta_{k}}{\sqrt{ \beta_{2k}-\beta_{k}^{2} - 2k\beta_{k-1}\beta_{k+1}+k^{2}\beta_{k-1}^{2}\beta_{2}}} \xrightarrow{\mathcal{L}} N\left(0,1\right).\]
+En particular, 
+\[\sqrt{n}\frac{\sigma^{2}_{n}-\sigma^{2}}{\sqrt{\beta_{4}-\sigma^{4}}}\xrightarrow{\mathcal{L}} N\left(0,1\right) .\]
+\end{prop}
+\begin{theorem}[Teorema de Slutsky]
+Si $\displaystyle X_{n}\xrightarrow{\mathcal{L}} X$ e $\displaystyle Y_{n}\xrightarrow{P}a $, con $\displaystyle a \in \R $, entonces
+\begin{enumerate}
+\item $\displaystyle Y_{n}X_{n}\xrightarrow{\mathcal{L}}aX $.
+\item $\displaystyle X_{n} + Y_{n} \xrightarrow{\mathcal{L}} X + a $.
+\end{enumerate}
+\end{theorem}
+\begin{lema}
+	Si $\displaystyle \left\{ a_{n}\right\} _{n\in\N}\subset \R $ con $\displaystyle \lim_{n \to \infty}a_{n}=\infty $ y $\displaystyle a \in \R $ tal que 
+	\[a_{n}\left(X_{n}-a\right)\xrightarrow{\mathcal{L}} X ,\]
+	entonces para $\displaystyle g : \R \to \R $ con derivada continua y no nula en $\displaystyle a $ se tiene que 
+	\[a_{n}\left(g\left(X_{n}\right)-g\left(a\right)\right)\xrightarrow{\mathcal{L}} g'\left(a\right)X .\]
+\end{lema}
+Otro estadístico muestral importante es la función de distribución empírica o muestral.
+\begin{definition}[Función de distribución empírica]
+Dada una realización particular de una muestra $\displaystyle \left(x_{1}, \ldots, x_{n}\right) $, la \textbf{función de distribución empírica} viene dada por
+\[ F^{*}_{n}\left(x\right)=
+\begin{cases}
+0, \; x < x_{\left(1\right)} \\
+\frac{k}{n}, \; x_{\left(k\right)} \leq x < x_{\left(k+1\right)}, \; k = 1, \ldots, n-1 \\
+1, \; x_{\left(n\right)}\leq x
+\end{cases}
+.\]
+Recordamos que $\displaystyle \left(x_{\left(1\right)}, \ldots, x_{\left(n\right)}\right) $ es la muestra ordenada de menor a mayor.
+\end{definition}
+
+\section{Distribuciones asociadas a la normal}
+Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. ($\displaystyle n $) de $\displaystyle X \sim N\left(\mu, \sigma \right) $.
+\begin{observation}[Distribución de la media muestral]
+Sabemos que $\displaystyle \varphi_{X}\left(t\right)=e^{it\mu-\frac{1}{2}t ^{2}\sigma^{2}} $. Por tanto, tendremos que 
+\[
+\begin{split}
+	\varphi_{\overline{X}}\left(t\right) =& E\left[e^{it\overline{X}}\right] = E\left[e^{it\frac{1}{n}\sum^{n}_{i = 1}X_{i}}\right] = E\left[\prod^{n}_{i = 1}e^{it\frac{1}{n}X_{i}}\right] = \prod^{n}_{i = 1}\varphi_{X_{i}}\left(\frac{t}{n}\right)\\
+	= & \varphi_{X}^{n}\left(\frac{t}{n}\right)= e^{it\mu - \frac{1}{2}\frac{\sigma^{2}}{n}t ^{2}}.
+\end{split}
+\]
+Por tanto, tenemos que $\displaystyle \overline{X}\sim N\left(\mu, \frac{\sigma }{\sqrt{n}}\right) $. 
+\end{observation}
+\section{Teorema de Fisher}
+En el archivo de Fisher hay que saber deducir todas las identidades que vienen en el documento. 

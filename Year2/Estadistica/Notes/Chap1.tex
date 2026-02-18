@@ -3,6 +3,7 @@
 \begin{itemize}
 \item Hacer en R el ejemplo 1.3.2 (lo del colesterol) del libro (página 11). Lo que hay que hacer aparece en el ejercicio 1.9.3.
 \item Programar el coeficiente de simetría y de curtosis en R. 
+\item Demostrar todas las cosas del teorema de Fisher.
 \end{itemize}
 \begin{eg}
 \textbf{Página 44, Ejercicio 1.} Consideramos la población dada por la distribución de Bernuilli $\displaystyle B\left(\frac{1}{2}\right) $. Se consideran todas las m.a.s de tamaño 3, es decir,
@@ -83,4 +84,30 @@ Ahora, buscamos $\displaystyle F_{X_{\left(k\right)}}\left(t\right) $ para $\dis
 \]
 Finalmente, recordamos que $\displaystyle P_{X_{\left(k\right)}}\left(x_{i}\right) = F_{X_{\left(k\right)}}\left(x_{i}\right) - F_{X_{\left(k\right)}}\left(x_{i-1}\right) $. 
 \end{eg}
+\begin{theorem}
+Es cierto que $\displaystyle \sqrt{n}\left(b_{2}-\sigma^{2}\right) \to N\left(0, \sqrt{\beta_{4}-\sigma^{4}}\right) $. 
+\end{theorem}
+\begin{theorem}[Teorema de Fisher]
+Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s idénticamente distribuida a $\displaystyle X \sim N\left(\mu, \sigma \right) $. Entonces se cumple que 
+\begin{enumerate}
+\item $\displaystyle \overline{X} \sim N\left(\mu, \frac{\sigma }{\sqrt{n}}\right) $. 
+\item $\displaystyle \frac{\left(n-1\right)S^{2}}{\sigma^{2}} \sim \chi^{2}_{n-1} $. 
+\item $\displaystyle \frac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}} \sim t_{n-1}$. 
+\item $\displaystyle \overline{X} $ y $\displaystyle S = \sqrt{\frac{1}{n-1}\sum^{n}_{i = 1}\left(X_{i}-\overline{X}\right)^{2}} $ son independientes.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Cogemos $\displaystyle Z = \frac{\overline{X}-\mu}{\frac{\sigma  }{\sqrt{n}}} $ así, tendremos que
+\[T = \frac{\frac{\overline{X}-\mu}{\frac{\sigma }{\sqrt{n}}}}{\sqrt{\frac{\left(n-1\right)}{\sigma^{2}}\frac{S^{2}}{n-1}}} = \frac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}} .\]
+En esto último hemos aplicado el punto 2 del teorema de Fisher. Esto es en teoría una demostración del punto 3 del teorema de Fisher. Para demostrar 4 basta con ver que $\displaystyle Cov\left(\overline{X}, S\right)= 0 $, por ser $\displaystyle X \sim N\left(\mu, \sigma \right) $. 
+\end{proof}
+
+\begin{definition}
+	Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s $\displaystyle \left(n\right) $ idénticamente distribuidas a $\displaystyle N\left(0,1\right) $. Tenemos que $\displaystyle \chi^{2}_{n-1} : = X_{1}^{2} + \cdots + X_{n}^{2} \sim \gamma\left(p = \frac{n-1}{2}, a = \frac{1}{2}\right) $. 
+\end{definition}
+\begin{definition}[Distribución $\displaystyle t_k $-student]
+	Sea $\displaystyle \left\{ X_{i}\right\} _{i \in \N} $ una sucesión de variables independientes idénticamente distribuidas que siguen la distribución $\displaystyle X \sim N\left(0,1\right) $. Cogemos las $\displaystyle k $ primeras y definimos
+	\[ Y = \sqrt{\frac{X_{1}^{2} + \cdots + X_{k}^{2}}{k}} \sim \sqrt{\frac{\chi_{k}^{2}}{k}} .\]
+Si $\displaystyle Z = X_{k + 1} \sim N\left(0,1\right) $, entonces definimos la $\displaystyle T $ de Student como $\displaystyle T = \frac{Z}{Y} $. 	
+\end{definition}
 

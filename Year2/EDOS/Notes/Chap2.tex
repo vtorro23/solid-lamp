@@ -1,0 +1,187 @@
+\chapter{Métodos de integración elemental para EDOS de primer orden}
+Como se ha visto en el capítulo anterior, una EDO de primer orden viene dada generalmente por una expresión de la forma 
+\[ F\left(t, x, x'\right)=0 .\]
+En algunos casos podremos despejar $\displaystyle x' $ por lo que podremos escribir la EDO de la forma $\displaystyle x' = f\left(t,x\right) $. Esta última se denomina la \textbf{forma explícita o normal} de una EDO de primer orden. De esta forma podemos pasar fácilmente a la \textbf{forma diferencial} que en general tiene la forma
+\[M\left(t,x\right)dt + N\left(t,x\right)dx = 0 .\]
+Es fácil pasar de la forma explícita a la forma diferencial, en efecto, 
+\[x' = f\left(t,x\right) \iff \frac{dx}{dt} = f\left(t,x\right) \iff f\left(t,x\right)dt-dx = 0 .\]
+En general, veremos que dado el problema de Cauchy
+\[ \left(P\right)
+\begin{cases}
+x' = f\left(t,x\right) \\
+x\left(t_{0}\right)=x_{0}
+\end{cases}
+.\]
+Tenemos entonces que resolver $\displaystyle P $ es equivalente a 
+\[x\left(t\right)- x\left(t_{0}\right)= \int^{t}_{t_{0}} x'\left(s\right) \; d s = \int^{t}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s  .\]
+
+\section{Método de separación de variables}
+\begin{definition}[EDO en variables separadas]
+Se dice que una EDO está en \textbf{variables separadas} si podemos escribir 
+\[x'\left(t\right) = f\left(t,x\left(t\right)\right) = p\left(t\right)q\left(x\left(t\right)\right) .\]
+\end{definition}
+\begin{observation}[Método de resolución]
+	En general para resolver una EDO en variables separadas procedemos de la siguiente forma. Si $\displaystyle q\left(x\left(t\right)\right) \neq 0 $, podremos integrar en $\displaystyle t \in I $ \footnote{Donde $\displaystyle I $ es un intervalo donde buscamos que esté definida la solución.} a los dos lados de la igualdad. En efecto,
+\[ x'\left(t\right) = p\left(t\right)q\left(x\left(t\right)\right) \iff \int \frac{x'\left(t\right)}{q\left(x\left(t\right)\right)} \; dt = \int p\left(t\right) \; dt \iff Q\left(x\left(t\right)\right) = P\left(t\right) + C,\]
+donde $\displaystyle \frac{d}{dt}Q\left(x\left(t\right)\right) = \frac{x'\left(t\right)}{q\left(x\left(t\right)\right)} $ y $\displaystyle \frac{d}{dt}P\left(t\right) = p\left(t\right) $. Podemos aplicar la regla de la cadena para ver que 
+\[\int \frac{x'\left(t\right)}{q\left(x\left(t\right)\right)} \; dt = \int \frac{1}{q\left(x\right)} \; dx .\]
+\end{observation} 
+
+\begin{theorem}[Existencia y unicidad para EDOS en variables separadas]
+Si $\displaystyle f\left(t,x\right) = p\left(t\right)q\left(x\left(t\right)\right) $ con $\displaystyle p : \left(a,b\right)\to \R $ y $\displaystyle q : \left(c,d\right) \to \R $ continuas y $\displaystyle q\left(x\left(t\right)\right) \neq 0 $, $\displaystyle \forall x\left(t\right) \in \left(c,d\right) $, entonces 
+\[ \left(P\right) 
+\begin{cases}
+x'\left(t\right) = p\left(t\right)q\left(x\left(t\right)\right) \\
+x\left(t_{0}\right) = x_{0}
+\end{cases}
+\]
+tiene solución única para todo $\displaystyle \left(t_{0}, x_{0}\right) \in \left(a,b\right)\times \left(c,d\right) $, en un entorno de $\displaystyle t_{0} $.
+\end{theorem}
+
+\begin{proof}
+	 Sea $\displaystyle x\left(t\right) $ una solución del problema. Como $\displaystyle q\left(x\right) \neq 0$ en $\displaystyle \left(c,d\right) $ podemos escribir
+	\[\frac{x'\left(t\right)}{q\left(x\left(t\right)\right)} = p\left(t\right) .\]
+Sean 
+\[Q\left(x\right) := \int ^{x}_{x_{0}}\frac{1}{q\left(s\right)} \; d s \quad \text{y} \quad P\left(t\right):= \int ^{t}_{t_{0}}p\left(s\right) \; d s .\]
+Por el teorema fundamental del cálculo tendremos que $\displaystyle \frac{d}{dt}Q\left(x\left(t\right)\right) = \frac{x'}{q\left(x\left(t\right)\right)} $, por lo que la EDO equivale a $\displaystyle \frac{d}{dt}Q\left(x\left(t\right)\right) = \frac{d}{dt}P\left(t\right) $. Integrando obtenemos 
+\[Q\left(x\left(t\right)\right)= P\left(t\right) + C .\]
+Imponiendo la condición inicial $\displaystyle x\left(t_{0}\right)=x_{0} $ tenemos que $\displaystyle Q\left(x_{0}\right) = P\left(t_{0}\right) = 0 $, por lo que $\displaystyle C = 0 $ y nos queda que $\displaystyle Q\left(x\left(t\right)\right)=P\left(t\right) $. Ahora, definimos
+\[F\left(t,x\right)= Q\left(x\right)-P\left(t\right) .\]
+Se cumple:
+\begin{itemize}
+\item $\displaystyle F\left(t_{0}, x_{0}\right)=0 $.
+\item $\displaystyle F \in \mathcal{C}^{1}\left(\left(a, b\right)\times \left(c,d\right)\right) $.
+\item $\displaystyle \frac{\partial F}{\partial x}\left(t_{0}, x_{0}\right)= \frac{1}{q\left(x_{0}\right)} \neq 0 $.
+\end{itemize}
+Por el Teorema de la Función Implícita existe un entorno de $\displaystyle t_{0} $ en el que existe una única solución $\displaystyle x\left(t\right) $ tal que $\displaystyle F\left(t,x\left(t\right)\right)=0 $. Si derivamos implícitamente obtenemos que 
+\[F_{t} + x'\left(t\right)F_{x}= 0 \Rightarrow x'\left(t\right)= - \frac{F_{t}}{F_{x}} = p\left(t\right)q\left(x\left(t\right)\right) .\]
+La unicidad se deduce del Teorema de la Función Implícita. 
+\end{proof}
+\begin{eg}
+Obtengamos la solución general de la EDO $\displaystyle x' = \frac{x^{2}}{t} $ y la solución particular cuando $\displaystyle x\left(1\right) = 0 $ . Como $\displaystyle x\left(1\right)=0 $, no podemos aplicar el método de separación de variables, por lo que la solución particular que buscamos es la solución trivial. Para resolver la EDO (sin condición inicial), una vez descartada la solución trivial, tendremos que
+\[ x' = \frac{x^{2}}{t} \iff \int \frac{x'}{x^{2}} \; dt = \int \frac{1}{t} \; dt \iff -\frac{1}{x} = \ln t + C \iff x = \frac{1}{C - \ln t}.\]
+\end{eg}
+\begin{eg}
+Obtengamos la solución del problema
+\[\left(P\right)
+\begin{cases}
+x' = \frac{\left(2t+1\right)\left(2x-1\right)}{2\left(t ^{2} + t\right)} \\
+x\left(1\right) = 0
+\end{cases}
+.\]
+Podemos observar que es de variables separadas, además la solución $\displaystyle x \equiv \frac{1}{2} $ es solución de la EDO pero no del problema. Tendremos que para $\displaystyle t \in I $ donde $\displaystyle I $ es un entorno del 1:
+\[
+\begin{split}
+	\frac{2x'}{2x-1} = \frac{2t+1}{t ^{2} + t} \iff & \int \frac{2x'}{2x-1} \; dt = \int \frac{2t+1}{t ^{2}+t} \; dt \iff \ln (1-2x)= \ln (t ^{2}+t)+ C \\
+	\iff & \ln \left(\frac{1-2x}{t ^{2}+t}\right) = C \iff  \frac{1-2x}{t^{2}+t}=C.
+\end{split}
+\]
+En un entorno de $\displaystyle \left(1,0\right) $ tenemos que los contenidos del valor absoluto son positivos por lo que podemos decir que $\displaystyle C = \frac{1}{2} $. 
+\end{eg}
+\section{EDOS lineales}
+
+Sea $\displaystyle \left(E\right) \; x'\left(t\right) = a\left(t\right)x\left(t\right) + b\left(t\right) $ una EDO lineal. Tendremos que la EDO lineal homogénea asociada será $\displaystyle \left(E_{h}\right) \; x'\left(t\right) = a\left(t\right)x\left(t\right) $. Claramente esta última es una EDO de variables separadas. Tendremos que
+\[ \int \frac{x'\left(t\right)}{x\left(t\right)} \; dt = \int a\left(t\right) \; dt \iff \ln x\left(t\right) = \int a\left(t\right) \; dt + C \iff x\left(t\right) = C\exp\left(\int a\left(t\right) \; dt\right) .\]
+Estas son todas las soluciones de la EDO. Podemos ver que todas las soluciones son proporcionales a la función $\displaystyle \exp\left(\int a\left(t\right) \; dt\right) $. Si $\displaystyle u\left(t\right) $ es solución de $\displaystyle \left(E_{h}\right) $ podemos ver que si cogemos
+\[u\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right) \]
+y lo metemos dentro de la ecuación, tendremos que 
+\[u'\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right) - u\left(t\right)a\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right) .\]
+Como $\displaystyle u\left(t\right) $ es solución tendremos que $\displaystyle u'\left(t\right)= a\left(t\right)u\left(t\right) $, por lo que 
+\[ = u\left(t\right)a\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right) - u\left(t\right)a\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right) = 0 .\]
+Por tanto, tendremos que 
+\[ u\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right)= K \Rightarrow u\left(t\right) = K\exp\left(-\int a\left(s\right) \; d s\right) .\]
+Así, hemos demostrado que esta familia monoparamétrica compone todas las soluciones de la EDO. Es fácil comprobar que las soluciones de $\displaystyle \left(E_{h}\right) $ constituyen un $\displaystyle \R $-espacio vectorial de dimensión 1.
+\begin{prop}
+El conjunto de soluciones de $\displaystyle \left(E_{h}\right) $ tiene estructura de $\displaystyle \R $-espacio vectorial de dimensión 1.
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle u\left(t\right)=c\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) $ es solución de $\displaystyle \left(E_{h}\right) $. Por tanto, debe ser que $\displaystyle u'\left(t\right)=a\left(t\right)u\left(t\right) $, por lo que 
+\[c'\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) + c\left(t\right)a\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) = a\left(t\right)c\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) .\]
+Por tanto, debe ser que $\displaystyle c'\equiv 0 $, por lo que $\displaystyle c\left(t\right) $ es una función constante. 
+\end{proof}
+\begin{colorary}
+La solución general de $\displaystyle \left(E\right) $ es de la forma 
+\[x\left(t\right)=x_{h}\left(t\right)+x_{p}\left(t\right) ,\]
+donde $\displaystyle x_{h}\left(t\right) $ es la solución general de $\displaystyle \left(E_{h}\right) $ y $\displaystyle x_{p}\left(t\right) $ es una solución particular e $\displaystyle \left(E\right) $.
+\end{colorary}
+\begin{proof}
+Si $\displaystyle x_{h} $ es solución de $\displaystyle \left(E_{h}\right) $ y tendremos que $\displaystyle x_{h}' = a\left(t\right)ax_{h} $. Además, si $\displaystyle x_{p}\left(t\right) $ es solución de $\displaystyle \left(E\right) $ tendremos que $\displaystyle x_{p}' = a\left(t\right)x_{p} + b\left(t\right) $. Así, tenemos que
+\[\left(x_{h} + x_{p}\right)' = x_{h}' + x_{p} ' = a\left(t\right)\left(x_{h} + x_{p}\right) + b\left(t\right).\]
+Así, hemos visto que es solución de $\displaystyle \left(E\right) $. Veamos ahora que cualquier solución de $\displaystyle \left(E\right) $ se puede expresar de esta forma. Si $\displaystyle x_{p}\left(t\right) $ es solución particular de $\displaystyle \left(E\right) $ tendremos que 
+\[\left(x\left(t\right) - x_{p}\left(t\right)\right)' = x' - x_{p}' = a\left(t\right)x + b\left(t\right)-a\left(t\right)x_{p} -b\left(t\right) = a\left(t\right)\left(x-x_{0}\right) .\]
+Por tanto, tenemos que la diferencia es solución de $\displaystyle \left(E_{h}\right) $. 
+\end{proof}
+
+\begin{observation}
+En este caso, el conjunto de soluciones forma un espacio afín.
+\end{observation}
+
+Para resolver la EDO completa nos falta ver cómo obtener una solución particular. Esto lo haremos mediante el \textbf{método de variación de constantes:} proponemos una solución particular no muy diferente a $\displaystyle x_{h}\left(t\right) $, como por ejemplo
+\[x_{p}\left(t\right) = C\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) .\]
+Forzamos que sea solución y tendremos que
+\[x'_{p} = C'\exp\left(\int a\left(s\right) \; d s\right)+ Ca\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) .\]
+Queremos que $\displaystyle x'_{p}\left(t\right) = a\left(t\right)x_{p}+b\left(t\right) $, pero esto tiene como consecuencia que 
+\[C'\exp\left(\int a\left(s\right) \; d s\right) + Ca\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) = a\left(t\right)C\exp\left(\int a\left(s\right) \; d s\right) .\]
+De esta forma, nos queda que 
+\[C'\left(t\right) = b\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right) \iff C\left(t\right)=\int b\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right) \; dt .\]
+\begin{eg}[Hoja2, Ejercicio 6]
+Consideremos la EDO
+\[\left(R\right) \quad x' + x = 2te^{-t} + t ^{2} .\]
+En este caso, tendremos que $\displaystyle \left(E\right) $ es $\displaystyle x' +x = 2te^{-t}+t ^{2} $ y $\displaystyle \left(E_{h}\right) $ será $\displaystyle x' + x = 0 $. Resolvemos $\displaystyle \left(E_{h}\right) $ por separación de variables:
+\[\frac{x'}{x} = -1 \iff \int \frac{x'}{x} \; dt = -\int  \; dt \iff \ln x = -t + C \iff x_{h}\left(t\right) = Ce^{-t}, C \in \R .\]
+Podemos observar que la solución trivial está incluída dentro de nuestra familia monoparamétrica de soluciones. Ahora, buscamos una solución particular $\displaystyle x_{p}\left(t\right) $ por el método de variación de constantes. Es decir, buscamos $\displaystyle x_{p}\left(t\right)=C\left(t\right)e^{-t} $. Tendremos que 
+\[x_{p}'\left(t\right)= C'\left(t\right)e^{-t}-C\left(t\right)e^{-t}  .\]
+Queremos que $\displaystyle x'_{p} + x = 2te^{-t}+t ^{2} $, por lo que 
+\[C'\left(t\right)e^{-t}-Ce^{-t} + Ce^{-t} = 2te^{-t} + t ^{2} \iff C'\left(t\right) = 2t + t ^{2}e^{t}.\]
+Así, nos queda que 
+\[C\left(t\right) = \int 2t + t ^{2}e^{t} \; dt = t ^{2} + t ^{2}e^{t}-2te^{t}+2e^{t} .\]
+Por tanto, nos queda que 
+\[x_{p}\left(t\right)=t ^{2}e^{-t} + t ^{2}-2t+2 .\]
+Así, la solución general de $\displaystyle \left(E\right) $ será
+\[x\left(t\right)=Ce^{-t}+t ^{2}e^{-t} + t ^{2}-2t + 2 .\]
+Calculemos ahora la solución que verifique $\displaystyle x\left(0\right) = 1 $. Tendremos que $\displaystyle C = -1 $, por lo que la solución particular que buscamos será
+\[x\left(t\right)=e^{-t} + t ^{2}e^{-t}+t ^{2}-2t + 2 .\]
+\end{eg}
+\section{Ecuaciones homogéneas}
+\begin{definition}[Función homogénea]
+Decimos que $\displaystyle f\left(t,x\right) $ es una \textbf{función homogénea} de grado $\displaystyle m \in \R $ si \footnote{Esta definición se puede extender a funciones de más variables.} 
+\[f\left(\lambda t, \lambda x\right)= \lambda^{m}f\left(t,x\right), \; \forall \lambda \in \R .\]
+\end{definition}
+\begin{eg}
+La función $\displaystyle f\left(t,x\right) = t ^{2}+x^{2} $ es homogénea de grado 2, sin embargo $\displaystyle f\left(t,x\right) = t ^{2} + x^{2} + 3 $ no es homogénea.
+\end{eg}
+\begin{definition}[EDO homogénea]
+Dada la EDO $\displaystyle x'=f\left(t,x\right) $, decimos que es una \textbf{EDO homogénea} si $\displaystyle f $ es una función homogénea de grado 0.	
+\end{definition}
+\begin{observation}
+Podemos ver que esto es equivalente a que, si la EDO viene dada por $\displaystyle M\left(t,x\right)dt + N\left(t,x\right)dx = 0 $ en su forma diferencial, entonces $\displaystyle M $ y $\displaystyle N $ son funciones homogéneas del mismo grado. En efecto, si $\displaystyle N\left(t,x\right)\neq 0 $ tendremos que 
+\[ x'= -\frac{M\left(\lambda t,\lambda x\right)}{N\left(\lambda t,\lambda x\right)} = -\frac{\lambda^{m}M\left(t,x\right)}{\lambda^{m}N\left(t,x\right)}=-\frac{M\left(t,x\right)}{N\left(t,x\right)}.\]
+\end{observation}
+\begin{observation}[Método de resolución]
+Veremos que las EDOS homogéneas son EDOS de variables separadas haciendo el cambio de variable oportuno. En efecto, podemos ver que 
+\[x' = f\left(t,x\right)=f\left(t,t\frac{x}{t}\right) = t ^{0}f\left(1,\frac{x}{t}\right) = f\left(1, \frac{x}{t}\right).\]
+Haciendo el cambio de variable $\displaystyle z\left(t\right) = \frac{x\left(t\right)}{t} $, tenemos que 
+\[x=zt \Rightarrow x' = z't + z .\]
+Por tanto, tendremos que $\displaystyle z't + z = f\left(1,z\right) = \tilde{f}\left(z\right) $, que es una EDO de variables separadas, por lo que podemos proceder de la forma
+\[z't = \tilde{f}\left(z\right) -z \iff \frac{z'}{\tilde{f}\left(z\right)-z}=\frac{1}{t} .\]
+\end{observation}
+
+\begin{eg}[Hoja2, Ejercicio 3 apartado 1]
+Consideremos el problema de valor inicial
+\[
+\begin{cases}
+t x^{2}x' = x^{3}-t ^{3} \\
+x\left(1\right) = 2
+\end{cases}
+.\]
+Tenemos que la EDO es equivalente a $\displaystyle tx^{2}dx +\left(t ^{3}-x^{3}\right)dt = 0 $ y ambas $\displaystyle M $ y $\displaystyle N $ son homogéneas de grado 3. Tenemos que 
+\[x'=\frac{x^{3}-t ^{3}}{tx^{2}} = \frac{\left(\frac{x}{t}\right)^{3}-1}{\left(\frac{x}{t}\right)^{2}} .\]
+Hacemos el cambio de variable $\displaystyle z = \frac{x}{t} $, de forma que $\displaystyle x' = z't + z $. Así, nos queda que para $\displaystyle t > 0 $,
+\[z't + z = \frac{z^{3}-1}{z^{2}} \iff z't = -\frac{1}{z^{2}} \iff z^{2}z' = -\frac{1}{t} \iff \frac{z^{3}}{3}= - \ln t + C, \; C \in \R .\]
+Deshaciendo el cambio $\displaystyle z = \frac{x}{t} $, tenemos que 
+\[x^{3} = -3t ^{3}\ln t + Ct ^{3}, \; C \in \R, \; t > 0 .\]
+Ahora buscamos la solución particular
+\[8 = -3 \cdot 1 \cdot \ln 1 + C \cdot 1 \iff C = 8 .\]
+Así, nos queda que la solución particular será $\displaystyle x^{3}= -3t ^{3}\ln t + 8 t ^{3} $ con $\displaystyle t > 0 $. 
+\end{eg}
+

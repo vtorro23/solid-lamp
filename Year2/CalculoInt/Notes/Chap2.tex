@@ -1,0 +1,72 @@
+\chapter{Cálculo de integrales}
+\begin{eg}
+	Consideremos $\displaystyle f\left(x,y\right) = x^{2}y + \cos xy $ y $\displaystyle R = \left[0,1\right] \times \left[2,3\right]  $. Como $\displaystyle f $ es continua en $\displaystyle \R^{2} $, lo es en $\displaystyle R $ por lo que es integrable. Buscamos cómo calcular
+	\[\int _{\left[0,1\right] \times\left[2,3\right] }f\left(x,y\right) \; dx \; dy .\]
+Veremos que la forma de calcular integrales es a través de integrales iteradas, es decir,
+\[
+\begin{split}
+	\int _{\left[0,1\right] \times\left[2,3\right] }f\left(x,y\right) \; dx \; dy = & \int^{3}_{2} \int^{1}_{0} x^{2}y + \cos xy \; dx \; dy = \int^{3}_{2} \frac{y}{3} + \frac{\sin y}{y} \; dy \\
+	= & \left[\frac{y^{2}}{6}\right]^{3}_{2} + \int^{3}_{2} \frac{\sin y}{y} \; dy= \frac{5}{6} + \int^{3}_{2} \frac{\sin y}{y} \; dy .
+\end{split}
+\]
+Podríamos haber planteado también la integral
+\[\int^{1}_{0} \int^{3}_{2} x^{2}y + \cos xy \; dy \; dx ,\]
+es decir, cambiar el orden de integración. En este caso, los dos resultados coinciden.
+\end{eg}
+\section{Teorema de Fubini}
+\begin{theorem}[Teorema de Fubini]
+	Sea $\displaystyle R = \left[a, b \right] \times \left[c,d\right] \subset \R^{2} $ y $\displaystyle f : R \to \R $ integrable. Supongamos que para cada $\displaystyle x \in \left[a,b\right]  $, la función 
+	\[f_{x} : \left[c,d\right] \to \R : y \to f\left(x,y\right) ,\]
+	es integrable en $\displaystyle \left[c,d\right]  $. Entonces, la función 
+	\[x \to \int^{d}_{c} f_{x}\left(y\right) \; dy ,\]
+	es integrable en $\displaystyle \left[a,b\right]  $ y 
+	\[\int _{\left[a,b\right] \times\left[c,d\right] }f = \int^{b}_{a} \int^{d}_{c} f\left(x,y\right) \; dy \; dx .\]
+\end{theorem}
+\begin{observation} Podemos hacer un par de observaciones.
+	\begin{itemize}
+	\item Es importante ver la condición de que $\displaystyle f_{x} $ sea integrable es necesaria puesto que el hecho de que $\displaystyle f $ sea integrable no implica siempre que $\displaystyle f_{x} $ lo sea.
+	\item El teorema también se cumple si cambiamos $\displaystyle x $ por $\displaystyle y $.
+	\end{itemize}
+\end{observation}
+\begin{theorem}[Teorema de Fubini en $\displaystyle \R^n $]
+Sea $\displaystyle R = R_{1} \times R_{2} \subset \R^{n}$ un rectángulo con $\displaystyle R_{1} \subset \R^{k} $ rectángulo y $\displaystyle R_{2}\subset \R^{n-k} $ rectángulo. Suponemos que $\displaystyle \forall x \in R_{1} $, $\displaystyle f_{x} : R_{2} \to \R : y \to f\left(x,y\right) $ es integrable en $\displaystyle R_{2} $. Entonces la función 
+\[x \to \int _{R_{2}}f\left(x,y\right)  ,\]
+es integrable en $\displaystyle R_{1} $ y se tiene que 
+\[\int _{R}f=\int_{R_{1}} \int_{R_{2}} f\left(x,y\right) \; dy \; dx .\]
+\end{theorem}
+\begin{eg}
+	Consideremos los siguientes ejemplos.
+	\begin{enumerate}
+	\item Sea $\displaystyle A = \left\{ \left(x,y\right) \in \R^{2} \; : \; x + y\leq1,\; x \geq 0, \; y \geq 0\right\}  $, queremos calcular
+	\[\int _{A}f\left(x,y\right) \; dx \; dy .\]
+	Si cogemos el rectángulo $\displaystyle R = \left[0,1\right] \times\left[0,1\right]  $, tenemos que
+	\[\int _{A}f\left(x,y\right) \; dx \; dy = \int _{R}\tilde{f}\left(x,y\right) \; dx \; dy .\]
+	Si cogemos un $\displaystyle x_{0} \in \left[a,b\right]  $, podemos considerar  
+	\[ \tilde{f}_{x_{0}} : \left[c,d\right] \to \R: y \to 
+	\begin{cases}
+	f\left(x_{0}, y\right), \; \left(x_{0}, y \right)\in A \\
+	0, \; \left(x_{0}, y \right)\not\in A
+	\end{cases}
+	.\]
+Supongamos que es integrable, entonces tendremos que 
+\[\int _{R}\tilde{f} = \int^{1}_{0} \int^{1}_{0} \tilde{f}\left(x,y\right) \; dy \; dx .\]
+Dado que nos es incómodo calcular la integral de $\displaystyle \tilde{f} $, podemos decir que 
+\[
+\begin{split}
+	\int^{1}_{0} \left(\int^{y}_{0} \tilde{f}\left(x,y\right) \; dy + \int^{1}_{y} \tilde{f}\left(x,y\right) \; dy\right) \; dx = & \int^{1}_{0} \int^{y}_{0} f\left(x,y\right) \; dy \; dx \\
+	= &  \int^{1}_{0} \int^{1-x}_{0} f\left(x,y\right) \; dy \; dx.
+\end{split}
+\]
+Si tomamos por ejemplo $\displaystyle f\left(x,y\right)= x $, tendremos que 
+\[\int _{A}f\left(x,y\right) \; dy \; dx = \int^{1}_{0} \int^{1-x}_{0} x \; dy \; dx = \int^{1}_{0} x\left(1-x\right) \; dx = \frac{1}{6} .\]
+Podemos cambiar el orden de integración:
+\[\int _{A}f\left(x,y\right) \; dx \; dy = \int^{1}_{0} \int^{1-y}_{0} x \; dx \; dy=\int^{1}_{0} \frac{\left(1-y\right)^{2}}{2} \; dy = \frac{1}{6} .\]
+\item Consideremos ahora $\displaystyle A = \left\{ \left(x,y\right) \in \R^{2} \; : \; x^{2} + y^{2} \leq 1, \; y \geq 0\right\}  $. Podemos considerar $\displaystyle R = \left[-1,1\right] \times \left[0,1\right]  $. De esta forma, 
+	\[\int _{A}f\left(x,y\right) \; dy \; dx = \int^{1}_{-1} \int^{1}_{0} \tilde{f}\left(x,y\right) \; dy \; dx = \int^{1}_{-1} \int^{\sqrt{1-x^{2}}}_{0} f\left(x,y\right) \; dy \; dx .\]
+	Podemos cambiar el orden de integración:
+	\[\int _{A}f\left(x,y\right) \; dx \; dy = \int^{1}_{0} \int^{1}_{-1} \tilde{f}\left(x,y\right) \; dx \; dy = \int^{1}_{0} \int^{\sqrt{1-y^{2}}}_{-\sqrt{1-y^{2}}}  f\left(x,y\right)\; dx \; dy.\]
+\item Sea $\displaystyle A = \left\{ \left(x,y\right) \in \R^{2} \; : \; x \in \left[a,b\right], \; g_{2}\left(x\right) \leq y \leq g_{1}\left(x\right)\right\}  $ para $\displaystyle g_{1}, g_{2} : \R \to \R $ continuas. Tendremos que 
+	\[\int _{A}f\left(x,y\right) \; dy \; dx = \int^{b}_{a} \int^{g_{1}\left(x\right)}_{g_{2}\left(x\right)} f\left(x,y\right) \; dy \; dx  .\]
+	\end{enumerate}
+\end{eg}
+

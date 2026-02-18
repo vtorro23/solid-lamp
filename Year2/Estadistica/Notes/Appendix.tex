@@ -1,0 +1,197 @@
+\chapter{Convergencia de variables aleatorias}
+\section{Convergencia en probabilidad}
+\begin{definition}[Convergencia en probabilidad]
+	Dada una sucesión de variables aleatorias $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ definidas sobre un mismo espacio de probabilidad $\displaystyle \left(\Omega, \mathcal{A}, P\right) $, diremos que $\displaystyle \left\{ X_{n}\right\} _{n \in \N} $ \textbf{converge en probabilidad} hacia la variable aleatoria $\displaystyle X $, definida en el mismo espacio de probabilidad, si
+	\[\forall \epsilon > 0, \; \lim_{n \to \infty}P\left(\omega \in \Omega \: : \; \left|X_{n}\left(\omega \right)-X\left(\omega \right)\right|> \epsilon \right) = 0 .\]
+\end{definition}
+\begin{observation}
+Una definición equivalente es
+\[\forall \epsilon > 0, \; \lim_{n \to \infty}P\left(\omega \in \Omega \; : \; \left|X_{n}\left(\omega \right)-X\left(\omega \right)\right|\leq \epsilon \right) = 1 .\]
+\end{observation}
+\begin{notation}
+	Si una sucesión $\displaystyle \left\{ X_{n}\right\} _{n \in \N} $ converge en probabilidad a $\displaystyle X $ lo escribiremos
+	\[X_{n}\xrightarrow{P}X .\]
+\end{notation}
+\begin{prop}[Propiedades]
+Si $\displaystyle X_{n}\xrightarrow{P}X $, 
+\begin{itemize}
+\item $\displaystyle X_{n}-X \xrightarrow{P} 0 $. 
+\item Si $\displaystyle c \in \R/ \left\{ 0\right\}  $, $\displaystyle cX_{n}\xrightarrow{P}cX $. 
+\item Si $\displaystyle Y $ es una variable aleatoria, $\displaystyle X_{n}Y\xrightarrow{P} XY $.
+\item Si $\displaystyle g : \R \to \R$ es continua, $\displaystyle g\left(X_{n}\right)\xrightarrow{P} g\left(X\right) $. 
+\item Si $\displaystyle k \in \R^{+} $, $\displaystyle X^{k}_{n}\xrightarrow{P}X^{k} $. 
+\end{itemize}
+Si $\displaystyle X_{n} \xrightarrow{P} X $ y $\displaystyle Y_{n}\xrightarrow{P}Y $,
+\begin{itemize}
+\item $\displaystyle X_{n} \pm Y_{n} \xrightarrow{P} X \pm Y $.
+\item $\displaystyle X_{n}Y_{n} \xrightarrow{P} XY $.
+\item Si $\displaystyle g : \R^{2} \to \R $ es real y continua, $\displaystyle g\left(X_{n}, Y_{n}\right)\xrightarrow{P}g\left(X,Y\right) $.
+\item Si $\displaystyle k, h \in \R^{+} $, $\displaystyle X^{k}_{n}Y^{h}_{n}\xrightarrow{P}X^{k}Y^{h} $. 
+\end{itemize}
+Si $\displaystyle X_{n}\xrightarrow{P}X $ y $\displaystyle X_{n} \xrightarrow{P}Y $, se tiene que $\displaystyle P\left(X = Y\right)= 1 $. \\
+Si $\displaystyle X_{n}\xrightarrow{P}a $ e $\displaystyle Y_{n}\xrightarrow{P}b $ con $\displaystyle a,b \in \R $,
+\begin{itemize}
+\item $\displaystyle X_{n}Y_{n}\xrightarrow{P}ab $. 
+\item $\displaystyle \frac{X_{n}}{Y_{n}} \xrightarrow{P} \frac{a}{b} $, si $\displaystyle b \neq 0 $. 
+\end{itemize}
+\end{prop}
+\section{Convergencia casi segura}
+\begin{definition}[Convergencia casi segura]
+	Sea $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ una sucesión de variables aleatorias, definidas sobre un mismo espacio de probabilidad $\displaystyle \left(\Omega, \mathcal{A}, P\right) $. Diremos que $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ \textbf{converge casi seguro} a la variable aleatoria $\displaystyle X $, definida en el mismo espacio de probabilidad, si 
+	\[P\left(\omega \in \Omega \; : \; \lim_{n \to \infty}X_{n}\left(\omega \right)= X\left(\omega \right)\right)=1 .\]
+\end{definition}
+\begin{notation}
+	Si la sucesión $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ converge casi seguro a $\displaystyle X $, escribimos
+	\[X_{n}\xrightarrow{cs}X .\]
+\end{notation}
+\begin{prop}[Propiedades]
+Si $\displaystyle X_{n} \xrightarrow{cs}X $, 
+\begin{itemize}
+\item $\displaystyle X_{n}-X \xrightarrow{cs} 0 $.
+\item Si $\displaystyle c \in \R/ \left\{ 0\right\}  $, $\displaystyle cX_{n}\xrightarrow{cs}cX $.
+\item Si $\displaystyle g : \R \to \R $ es continua, $\displaystyle g\left(X_{n}\right)\xrightarrow{cs}g\left(X\right) $. 
+\item Si $\displaystyle k \in \R^{+} $, $\displaystyle X^{k}_{n}\xrightarrow{cs}X^{k} $.
+\end{itemize}
+Si $\displaystyle X_{n}\xrightarrow{cs}X $ e $\displaystyle Y_{n}\xrightarrow{cs}Y $,
+\begin{itemize}
+\item $\displaystyle X_{n}\pm Y_{n}\xrightarrow{cs}X\pm Y $.
+\item $\displaystyle X_{n}Y_{n}\xrightarrow{cs} XY $.
+\item Si $\displaystyle g : \R^{2} \to \R $ es continua, $\displaystyle g\left(X_{n}, Y_{n}\right)\xrightarrow{cs} XY $.
+\item Si $\displaystyle k,h \in \R^{+} $, $\displaystyle X^{k}_{n}Y^{h}_{n} \xrightarrow{cs}X^{k}Y^{h} $. 
+\item $\displaystyle \frac{X_{n}}{Y_{n}} \xrightarrow{cs}\frac{X}{Y} $, siempre que los cocientes estén bien definidos.
+\end{itemize}
+\end{prop}
+\begin{theorem}
+	Sea $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ una sucesión estríctamente creciente de variables aleatorias positivas y supongamos que $\displaystyle X_{n}\xrightarrow{P}0 $, entonces $\displaystyle X_{n}\xrightarrow{cs}0 $.
+\end{theorem}
+\begin{theorem}
+Si $\displaystyle X_{n}\xrightarrow{cs}X $, entonces $\displaystyle X_{n}\xrightarrow{P}X $.
+\end{theorem}
+\begin{theorem}
+	Si $\displaystyle \left\{ X_{n}\right\} _{n\in\N} \xrightarrow{P}X$, existe $\displaystyle \left\{ X_{n_{j}}\right\} _{j \in \N} $ subsucesión tal que $\displaystyle X_{n_{j}} \xrightarrow{cs} X $. 
+\end{theorem}
+\section{Convergencia en ley}
+\begin{definition}[Convergencia en ley]
+	Dada una sucesión de variables aleatorias $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $, definidas sobre el mismo espacio de probabilidad $\displaystyle \left(\Omega, \mathcal{A}, P\right) $, diremos que $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ \textbf{converge en ley} a la variable aleatoria $\displaystyle X $, definida sobre el mismo espacio de probabilidad, si la correspondiente sucesión de funciones de distribución de las $\displaystyle X_{n} $, $\displaystyle \left\{ F_{n}\right\} _{n\in\N} $ converge puntualmente hacia la función de distribución $\displaystyle F $ de $\displaystyle X $ en todo punto de continuidad de la función. Es decir, 
+	\[\lim_{n \to \infty}F_{n}\left(x\right)=F\left(x\right) ,\]
+	para todos los puntos de continuidad de $\displaystyle F $. 
+\end{definition}
+\begin{observation}
+La convergencia puntual de $\displaystyle F_{n} $ a $\displaystyle F $ no es suficiente para garantizar la convergencia, es necesario ver que la función límite sea función de distribución. 
+\end{observation}
+\begin{notation}
+	Si la sucesión $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ converge en ley a $\displaystyle X $, lo escribimos 
+	\[X_{n}\xrightarrow{d}X \quad \text{o} \quad X_{n}\xrightarrow{\mathcal{L}}X.\]
+\end{notation}
+\begin{prop}[Propiedades]
+	Si $\displaystyle X_{n} \xrightarrow{\mathcal{L}} X$,
+	\begin{itemize}
+	\item $\displaystyle X_{n}-X \xrightarrow{\mathcal{L}} 0 $.
+	\item Si $\displaystyle c \in \R/ \left\{ 0\right\}  $, $\displaystyle cX_{n}\xrightarrow{\mathcal{L}}cX $.
+	\item Si $\displaystyle c \in \R $, $\displaystyle X_{n} + c \xrightarrow{\mathcal{L}}X + c $. 
+	\item Si $\displaystyle g : \R \to \R $ es continua, $\displaystyle g\left(X_{n}\right)\xrightarrow{\mathcal{L}}g\left(X\right) $.
+	\end{itemize}
+	Si $\displaystyle X_{n}\xrightarrow{\mathcal{L}}X $ e $\displaystyle Y_{n}\xrightarrow{P}c $, con $\displaystyle c \in \R $,
+	\begin{itemize}
+	\item $\displaystyle X_{n}\pm Y_{n} \xrightarrow{\mathcal{L}} X\pm c $. 
+	\item Si $\displaystyle c \neq 0 $, $\displaystyle X_{n}Y_{n}\xrightarrow{\mathcal{L}} cX $. 
+	\item Si $\displaystyle c = 0 $, $\displaystyle X_{n}Y_{n}\xrightarrow{P}0 $.
+	\item Si $\displaystyle c \neq 0 $, $\displaystyle \frac{X_{n}}{Y_{n}}\xrightarrow{\mathcal{L}}\frac{X}{c} $. 
+	\end{itemize}
+\end{prop}
+\begin{theorem}
+	Si $\displaystyle X_{n}\xrightarrow{P}X $, entonces $\displaystyle X_{n}\xrightarrow{\mathcal{L}}X $. 
+\end{theorem}
+\begin{theorem}
+Si $\displaystyle k \in \R $ y $\displaystyle X_{n}\xrightarrow{\mathcal{L}}k $, entonces $\displaystyle X_{n}\xrightarrow{P}X $. 
+\end{theorem}
+\begin{observation}[Convergencia de las funciones características]
+Sabemos que las funciones características proporcionan otro medio para determinar la distribución de una variable aleatoria. También se cumple que 
+\[X_{n}\xrightarrow{\mathcal{L}}X \Rightarrow \lim_{n \to \infty}\varphi_{n}\left(t\right)=\varphi\left(t\right), \; \forall t \in \R .\]
+Recíprocamente, si $\displaystyle \lim_{n \to \infty}\varphi_{n}\left(t\right)=\varphi\left(t\right) $, $\displaystyle \forall t \in \R $ y $\displaystyle \varphi\left(t\right) $ es continua en el 0, entonces $\displaystyle X_{n}\xrightarrow{\mathcal{L}}X $ y $\displaystyle \varphi\left(t\right) $ es la función característica de $\displaystyle X $.
+\end{observation}
+ 
+\section{Convergencia en media de orden $\displaystyle r $}
+\begin{definition}[Convergencia en media de orden $\displaystyle r $]
+	Sea $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ una sucesión de variables aleatorias, diremos que \textbf{converge en media de orden} $\displaystyle r $ a la variable aleatoria $\displaystyle X $ si
+	\[\lim_{n \to \infty}E\left( \left|X_{n}-X\right|^{r}\right)=0 ,\]
+	siendo $\displaystyle E\left( \left|X_{n}\right|^{r}\right) $ y $\displaystyle E\left( \left|X\right|^{r}\right) $ finitas. 
+\end{definition}
+\begin{notation}
+Denotaremos la convergencia en orden $\displaystyle r $ como
+\[X_{n}\xrightarrow{mr}X .\]
+Cuando $\displaystyle r = 2 $, hablamos de \textbf{convergencia en media cuadrática} y escribimos
+\[X_{n}\xrightarrow{mc}X .\]
+
+\end{notation}
+\begin{observation}
+Si existe el momento de orden $\displaystyle r $, sabemos que existen todos los momentos de orden inferior. De esta forma, si $\displaystyle s \leq r $,
+\[X_{n} \xrightarrow{mr}X \Rightarrow X_{n}\xrightarrow{ms}X.\]
+\end{observation}
+\begin{prop}[Propiedades] Algunas propiedades son:
+	\begin{itemize}
+	\item Si $\displaystyle X_{n}\xrightarrow{mc}X $, entonces $\displaystyle E\left(X_{n}\right)\xrightarrow{mc}E\left(X\right) $ y $\displaystyle E\left(X^{2}_{n}\right)\xrightarrow{mc}E\left(X^{2}\right) $. De ambas se deduce que $\displaystyle V\left(X_{n}\right)\xrightarrow{mc}V\left(X\right) $.
+	\item La sucesión $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ converge en media cuadrática a una constante $\displaystyle c  $ si y solo si se verifica que $\displaystyle \lim_{n \to \infty}E\left(X_{n}\right)=c $ y $\displaystyle \lim_{n \to \infty}V\left(X_{n}\right)=0 $.
+	\item Si $\displaystyle X_{n}\xrightarrow{mc}X $ e $\displaystyle Y_{n}\xrightarrow{mc}Y $,
+		\begin{itemize}
+		\item $\displaystyle E\left(X_{n}Y_{n}\right)\xrightarrow{mc}E\left(XY\right) $.
+		\item De esta propiedad y la primera se tiene que $\displaystyle \Cov\left(X_{n},Y_{n}\right)\xrightarrow{mc}\Cov\left(X,Y\right) $. 
+		\end{itemize}
+	\end{itemize}
+\end{prop}
+\begin{theorem}
+Si $\displaystyle X_{n}\xrightarrow{mc}X $, entonces $\displaystyle X_{n}\xrightarrow{P}X $. 
+\end{theorem}
+\section{Leyes de los grandes números}
+\subsection{Ley débil de los grándes números}
+
+\begin{theorem}[Ley débil de los grandes números]
+	Sea $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ una sucesión de variables aleatorias, definidas sobre un mismo espacio de probabilidad $\displaystyle \left(\Omega, \mathcal{A}, P\right) $. Diremos que obedece la ley débil de los grandes números si existen dos sucesiones $\displaystyle \left\{ A_{n}\right\} _{n\in\N}, \left\{ B_{n}\right\} _{n\in\N}\subset \R $ con $\displaystyle B_{n} > 0 $ y $\displaystyle B_{n}\to \infty $ creciente, tales que
+	\[\frac{S_{n}-A_{n}}{B_{n}}\xrightarrow{P}0, \; n \to \infty ,\]
+	donde $\displaystyle S_{n}= \sum^{n}_{i=1}X_{i} $.
+\end{theorem}
+\begin{theorem}[Teorema de Chebychev]
+	Sea $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ una sucesión de variables aleatorias independientes con $\displaystyle E\left(X_{n}\right)<\infty $, $\displaystyle \forall n \in \N $. Supongamos que existe $\displaystyle \gamma > 0 $ tal que $\displaystyle V\left(X_{n}\right)\leq \gamma  $, $\displaystyle \forall n \in \N $. Entonces, 
+	\[\frac{S_{n}-E\left(S_{n}\right)}{n} \xrightarrow{P}0 .\]	
+\end{theorem}
+\begin{theorem}[Teorema de Markov]
+	Sea $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ una sucesión de variables aleatorias con $\displaystyle \lim_{n \to \infty}V\left(\overline{X}_{n}\right)=0 $, donde $\displaystyle \overline{X}_{n}=\frac{S_{n}}{n} $. Entonces,
+	\[ \frac{S_{n}-E\left(S_{n}\right)}{n}\xrightarrow{P}0.\]
+\end{theorem}
+\begin{theorem}[Teorema de Khintchine]
+	Si $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ es una sucesión de variables aleatorias independientes e idénticamente distribuidas de media finita $\displaystyle \mu $, entonces
+	\[\frac{S_{n}}{n} \xrightarrow{P} \mu .\]
+\end{theorem}
+\begin{theorem}[Teorema de Bernoulli]
+	Si $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ es una sucesión de variables aleatorias independientes tales que $\displaystyle X_{n} \equiv B\left(1,p\right) $, $\displaystyle \forall n \in \N $, entonces
+	\[\frac{S_{n}}{n}\xrightarrow{P}p .\]
+\end{theorem}
+\subsection{Ley fuerte de los grandes números}
+\begin{theorem}[Ley fuerte de los grandes números]
+	Sea $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ una sucesión de variables aleatorias definidas sobre un mismo espacio de probabilidad $\displaystyle \left(\Omega, \mathcal{A}, P\right) $. Diremos que obedece la ley fuerte de los grandes números si existen $\displaystyle \left\{ A_{n}\right\} _{n\in\N}, \left\{ B_{n}\right\} _{n\in\N}\subset \R $ con $\displaystyle B_{n}> 0 $ y $\displaystyle B_{n}\to \infty $ creciente tales que 
+	\[\frac{S_{n}-A_{n}}{B_{n}}\xrightarrow{cs}0 .\]
+\end{theorem}
+\begin{theorem}[Teorema de Kolmogorov]
+	Si $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ es una sucesión de variables aleatorias independientes con $\displaystyle E\left(X_{n}\right)=0 $ y $\displaystyle V\left(X_{n}\right)=\sigma_{n}^{2} $, $\displaystyle \forall n \in \N $, tales que 
+	\[\sum^{\infty}_{i = 1}\frac{\sigma^{2}_{i}}{i^{2}} < \infty ,\]
+	entonces
+	\[\frac{S_{n}}{n}\xrightarrow{cs} 0 .\]
+\end{theorem}
+\begin{theorem}[Teorema de Khintchine]
+Si $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ es una sucesión de variables aleatorias independientes e idénticamente distribuidas de media finita $\displaystyle \mu $, entonces
+	\[\frac{S_{n}}{n} \xrightarrow{cs} \mu .\]
+\end{theorem}
+\section{Teorema central del límite}
+\begin{theorem}[Teorema central del límite]
+	Sea $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ una sucesión de variables aleatorias definidas sobre un mismo espaico de probabilidad $\displaystyle \left(\Omega, \mathcal{A}, P\right) $, con media y varianzas finitas. Diremos que obedece el teorema central del límite si 
+	\[ Z_{n}=\frac{S_{n}-E\left(S_{n}\right)}{\sqrt{V\left(S_{n}\right)}}\xrightarrow{\mathcal{L}}N\left(0,1\right) .\]
+\end{theorem}
+\begin{theorem}[Teorema de Moivre]
+	Si $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ es una sucesión de variables aleatorias independientes e idénticamente distribuidas con distribución de Bernoulli de parámetro $\displaystyle p $, entonces
+	\[\frac{S_{n}-np}{\sqrt{np\left(1-p\right)}} \xrightarrow{\mathcal{L}}N\left(0,1\right) .\]
+\end{theorem}
+\begin{theorem}[Teorema de Lévy-Lindeberg]
+	Si $\displaystyle \left\{ X_{n}\right\} _{n\in\N} $ es una sucesión de variables aleatorias independientes e idénticamente distribuidas con media $\displaystyle \mu $ y varianza $\displaystyle \sigma^{2} $ finitas, entonces
+	\[\frac{S_{n}-nm}{\sigma\sqrt{n}}\xrightarrow{\mathcal{L}} N\left(0,1\right) .\]
+\end{theorem}
+

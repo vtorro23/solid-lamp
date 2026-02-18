@@ -323,6 +323,136 @@ x_{1}' = x_{2} \\
 x_{2}' = x_{1}\left(1 - \frac{3}{2}x_{1}\right)
 \end{cases}
 .\]
-
+\end{eg}
+\section{Existencia y unicidad}
+Dado un problema de Cauchy de la forma
+\[ \left(P\right)
+\begin{cases}
+x' = f\left(t,x\right) , \; t \in I \\
+x\left(t_{0}\right) = x_{0}
+\end{cases}
+.\]
+Vamos a buscar condiciones suficientes en $\displaystyle f $ para garantizar que $\displaystyle \left(P\right) $ tenga solución y esta sea única. 
+\begin{eg}
+Consideremos 
+\[\left(P\right) 
+\begin{cases}
+x' = x \\
+x\left(t_{0}\right) = x_{0}
+\end{cases}
+.\]
+Sabemos que la solución de esta EDO es la familia monoparamétrica $\displaystyle x_{C}\left(t\right) = Ce^{t} $ para $\displaystyle C \in \R $. Una forma de resolverlo es
+\[x' = x \iff \frac{x'}{x} = 1 \iff \int \frac{x'}{x} \; dt = \int  \; dt \iff \ln x\left(t\right) = t + C \iff x\left(t\right) = e^{t + C} = Ce^{t} .\]
+Si imponemos la condición $\displaystyle x\left(t_{0}\right)=x_{0} $, tenemos que 
+\[Ce^{t_{0}} = x_{0} \iff C = \frac{x_{0}}{e^{t_{0}}}=x_{0}e^{-t_{0}} .\]
+Así, la única solución de esa familia que es solución de $\displaystyle \left(P\right) $ es $\displaystyle x\left(t\right)=x_{0}e^{t-t_{0}} $, $\displaystyle t \in \R $. Así, $\displaystyle \left(P\right) $ tiene solución única.
+\end{eg}
+\begin{eg}
+Consideremos ahora
+\[ \left(P\right) 
+\begin{cases}
+x' = \sqrt{ \left|x\right|} \\
+x\left(0\right) = 0
+\end{cases}
+.\]
+Podemos observar que la función nula es solución de $\displaystyle \left(P\right) $. Haciendo el procedimiento del ejemplo anterior podemos obtener más soluciones, como 
+\[x\left(t\right) = 
+\begin{cases}
+0, \; t \leq 0 \\
+\frac{t^{2}}{4}, \; t > 0
+\end{cases}
+.\]
+En efecto, podemos considerar $\displaystyle x\left(t\right) > 0 $ y así
+\[ \frac{x'}{\sqrt{x}} = 1 \iff \int \frac{x'}{\sqrt{x}} \; dt = \int  \; dt \iff 2\sqrt{x\left(t\right)}=t + C \iff x\left(t\right) = \frac{1}{4}\left(t+C\right)^{2} .\]
+Hay infinitas soluciones, podemos escribir también 
+\[x\left(t\right)=
+\begin{cases}
+0, \; t \leq C \\
+\frac{\left(t+C\right)^{2}}{4}, \; t > C
+\end{cases}
+.\]
+En este caso hay infinitas soluciones a $\displaystyle \left(P\right) $, es decir no vamos a tener solución única. Podemos hacer varias observaciones:
+\begin{enumerate}
+\item En $\displaystyle \left(0,0\right) $, la función $\displaystyle \sqrt{x} $ no es derivable.
+\item En $\displaystyle \left(t_{0}, x_{0}\right)\neq \left(0,0\right) $ puede encontrar un entorno del punto por el que pase sólo una solución. Es decir, existe solución única localmente ($\displaystyle \sqrt{x} $ es derivable fuera de ese punto). Podemos pensar que pedir a $\displaystyle f $ que sea derivable es una buena condición suficiente. 
+\end{enumerate}
+\end{eg}
+\begin{observation}
+Dado el problema de Cauchy
+\[ \left(P\right)
+\begin{cases}
+x' = f\left(t, x\right) \\
+x\left(t_{0}\right) = x_{0}
+\end{cases}
+.\]
+Consideramos que $\displaystyle f $ es continua para que $\displaystyle \left(P\right) $ esté bien definida, sin embargo pedir derivabilidad de $\displaystyle f $ puede que sea demasiado. Por tanto, buscamos una condición que esté entre medias de la continuidad y la derivabilidad, que será que la función sea Lipschitz respecto de la segunda variable. Si lo es globalmente (en todo su dominio), hablaremos de un resultado global de unicidad; mientras que si lo es solo en un entorno de $\displaystyle \left(t_{0}, x_{0}\right) $ el resultado será local. 
+\end{observation}
+\begin{definition}[Función Lipschitz]
+Sea $\displaystyle E \subset \R^{2} $ abierto, se dice que $\displaystyle f : E \to \R $ es \textbf{globalmente Lipcschitz} en $\displaystyle E $ respecto de si existe $\displaystyle h > 0 $ tal que 
+\[ \underbrace{\left|f\left(x\right)-f\left(y\right)\right|}_{ \left|f\left(t,x\right)-f\left(t,y\right)\right|} \leq h \| x - y\| .\]
+Diremos que lo es \textbf{localmente} si $\displaystyle \forall x_{0} \in E$ es Lipschit en $\displaystyle B\left(x_{0}, R\right) $ para algún $\displaystyle R > 0 $. Globalmente Lipschitz respecto de la segunda variable uniformemente en $\displaystyle t $.
+\end{definition}
+\begin{definition}[Función Lipschitz]
+Sea $\displaystyle E \subset \R^{2} $ abierto y $\displaystyle f : E \to \R : \left(t,x\right) \to f\left(t,x\right) $, decimos que es \textbf{Lipschitz} respecto de la segunda variable ($\displaystyle x $) si existe $\displaystyle L > 0 $ tal que $\displaystyle \forall \left(t,x\right), \left(t,y\right) \in E $
+\[ \left|f\left(t,x\right)-f\left(t,y\right)\right| \leq L \left|x - y\right| ,\]
+uniformemente en $\displaystyle t $ (es decir, $\displaystyle L $ no depende de $\displaystyle t $). 
+\end{definition}
+\begin{theorem}[Teorema local de Cauchy (Picard-Lindelöf)]
+Sea $\displaystyle f : E \subset \R^{2} \to \R $ continua y localmente Lipschitz respecto de la segunda variable. Entonces, el problema $\displaystyle \left(P\right) $ dado por 
+\[ \left(P\right)
+\begin{cases}
+x' = f\left(t,x\right) \\
+x\left(t_{0}\right) = x_{0}
+\end{cases}
+\]
+tiene solución única para cada $\displaystyle \left(t_{0}, x_{0}\right) \in E $ al que se refiera $\displaystyle \left(P\right) $. 
+\end{theorem}
+\begin{observation} Podemos hacer un par de observaciones:
+	\begin{itemize}
+	\item La continuidad de $\displaystyle f $ garantiza la existencia de soluciones pero no la unicidad (Teorema de Cauchy). Es la condición de ser Lipschitz la que garantiza la unicidad. 
+	\item Para la versión global de este teorema consideramos $\displaystyle f : I \times \R \to \R $ y pediremos que sea globalmente Lipschitz respecto de la segunda variable en $\displaystyle I \times \R $.
+	\end{itemize}
+\end{observation}
+\begin{eg}[Hoja 1, Ejercicio 27 apartado (a)]
+Consideremos el problema de Cauchy
+	\[ \left(P\right) 
+	\begin{cases}
+	y' = y^{2}, \; \left(t,y\right) \in \R^{2} \\
+	y\left(0\right) = 1
+	\end{cases}
+	.\]
+Consideremos las funciones $\displaystyle \varphi_{1}\left(t\right) = \frac{1}{1-t} $ para $\displaystyle t \in \left(-\infty, 1\right) $ y $\displaystyle \varphi_{2}\left(t\right) = 0 $ para $\displaystyle t \in \R $. Tenemos que $\displaystyle f\left(t,y\right)=y^{2} $ es continua. Buscamos aplicar el teorema del valor medio, es decir, 
+\[ \left|f\left(t,x\right)-f\left(t,y\right)\right| \leq \left|\frac{\partial f}{\partial y}\left(t,y\right)\right| \left|x-y\right| .\]
+Buscamos que $\displaystyle \left|\frac{\partial f}{\partial y}\left(t,y\right)\right| $ esté acotado uniformemente en $\displaystyle t $. En nuestro caso tenemos que 
+\[ \left|f\left(t,x\right)-f\left(t,y\right)\right| = \left|x^{2}-y^{2}\right| = \left|x-y\right| \left|x + y\right|\leq 2M \left|x-y\right| .\]
+Así, es Lipschitz localmente en un entorno de $\displaystyle \left(0,1\right) $. Por el teorema anterior, el problema tiene solución única. Claramente $\displaystyle \varphi_{2}\left(t\right) $ no es solución. Por otro lado, es sencillo comprobar que $\displaystyle \varphi_{1}\left(t\right) $ es solución de $\displaystyle \left(P\right) $. Podemos observar que el intervalo $\displaystyle \left(-\infty, 1\right) $ es el más grande posible de definición puesto que $\displaystyle \varphi_{1}\left(t\right) $ tiene una asíntota vertical en $\displaystyle t = 1 $. \\
+Podemos ver que esta EDO se puede resolver por separación de variables:
+\[ y' = y^{2} \iff \frac{1}{y^{2}}y' = 1 \iff \int \frac{y'}{y^{2}} \; dt = \int  \; dt \iff -\frac{1}{y} = t + C \iff y = \frac{1}{C - t} .\]
+\end{eg}
+\begin{eg}[Hoja 1, Ejercicio 17 apartado (c)]
+El enunciado dice: 'La pendiente de la recta tangente en $\displaystyle \left(t, x\left(t\right)\right) $ es proporcional al cuadrado de la ordenada' y pasa por $\displaystyle \left(1,1\right) $. El problema será
+\[ \left(P\right)
+\begin{cases}
+x' = k x^{2}, \; k \neq 0 \\
+x\left(1\right) = 1
+\end{cases}
+.\]
+Podemos sacar la solución general de la EDO, suponiendo $\displaystyle t > 0 $ y descartando la solución trivial:
+\[\frac{x'}{kx^{2}} = 1 \iff \int \frac{x'}{kx^{2}} \; dt = \int  \; dt \iff -\frac{1}{kx} = t + C \iff x\left(t\right)=\frac{1}{C - kt} .\]
+Aplicando la condición inicial
+\[1 = \frac{1}{C - k} \iff C = k + 1 , \quad \text{suponiendo} \; C \neq k.\]
+Así, la solución particular será
+\[ x\left(t\right)=\frac{1}{k + 1 - kt} = \frac{1}{1 + k\left(1-t\right)} .\]
+Como pasa por el $\displaystyle \left(1,1\right) $, como nos da una hipérbola nos fijamos en la rama que contiene el $\displaystyle \left(1,1\right) $. 
+\end{eg}
+\begin{eg}[Hoja 1, Ejercicio 18]
+Comprobemos que $\displaystyle x\left(t\right)= \frac{1+ Ce^{2t}}{1-Ce^{2t}} $ con $\displaystyle C \in \R $ es solución de la EDO $\displaystyle x' = x^{2}-1 $. Tenemos que 
+\[x'\left(t\right)= \frac{2Ce^{2t}\left(1-Ce^{2t}\right)+\left(1+Ce^{2t}\right)2Ce^{2t}}{\left(1-Ce^{2t}\right)^{2}} = \frac{4Ce^{2t}}{\left(1-Ce^{2t}\right)^{2}} .\]
+Por otro lado, tenemos que 
+\[x^{2}-1 = \left(\frac{1 + Ce^{2t}}{1-Ce^{2t}}\right)^{2} - 1 = \frac{1 + 2Ce^{2t} + C^{2}e^{4t}}{\left(1-Ce^{2t}\right)^{2}}-1 = \frac{4Ce^{2t}}{\left(1-Ce^{2t}\right)^{2}}.\]
+Por tanto, $\displaystyle x\left(t\right) $ es solución de la EDO. Buscamos las soluciones de equilibrio, que son $\displaystyle x \equiv 1 $ y $\displaystyle x \equiv - 1 $. Si $\displaystyle C = 0 $ podemos ver que $\displaystyle x \equiv 1 $, por lo que esta no es solución singular. Sin embargo, sí es solución singular $\displaystyle x \equiv -1 $. 
+\end{eg}
+\begin{eg}[Hoja 1, Ejercicio 19]
+Dada una familia de curvas $\displaystyle A $ nos preguntamos por la familia de curvas ortogonales a ella. 
 \end{eg}
 

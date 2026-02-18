@@ -305,9 +305,19 @@ Veamos ahora que $\displaystyle g $ es integrable en $\displaystyle R' $. Primer
 \]
 Así, tenemos que $\displaystyle g $ es integrable en $\displaystyle R' $ y por el lema anterior tenemos que también es integrable en $\displaystyle R $ y además
 \[\int _{R'}g= \int _{R}g  .\]
-Como $\displaystyle f $ es suma de funciones integrables, tendremos que 
-\[\int _{R}f =\int _{R}g + h = \int _{R}g +\int _{R}h  = \int _{R'}g  .\]
+Por otro lado, sea $\displaystyle I= \int _{R'}f  $, entonces, suponiendo que $\displaystyle I \geq \int _{R'}g  $ tenemos que 
+\[
+\begin{split}
+	0 \leq & I - \int _{R'}g \leq S\left(f|_{R'}, P\right) - s\left(g|_{R'}, P\right) \\
+	= & \sum_{J \cap \partial R' = \emptyset}\beta_{f,J}v\left(J\right) + \sum_{J \cap \partial R'\neq \emptyset}\beta_{f,J}v\left(J\right)  - \sum_{J \cap \partial R' = \emptyset}\alpha_{g,J}v\left(J\right) - \sum^{}_{J \cap \partial R'\neq \emptyset}\alpha_{g,J}v\left(J\right) \\
+	= & \sum_{J \cap \partial R' = \emptyset}\left(\beta_{f,J}-\alpha_{f,J}\right)v\left(J\right) + \sum_{J \cap \partial R' \neq \emptyset}\left(\beta_{f,J}-\alpha_{g,J}\right)v\left(J\right) \\
+	\leq & \sum_{J \in P}\left(\beta_{f,J}-\alpha_{f,J}\right)v\left(J\right) + \sum_{J \cap \partial R' \neq \emptyset}\tilde{K}v\left(J\right) < \epsilon.
+\end{split}
+\]
+El objetivo de $\displaystyle \tilde{K} $ es acotar la resta $\displaystyle \beta_{f,J}-\alpha_{g,J} \geq 0 $, lo cual podemos hacer puesto que $\displaystyle f $ y $\displaystyle g $ son acotadas y valen lo mismo en casi todos los puntos. El primer término lo podemos hacer arbitrariamente pequeño por la integrabilidad de $\displaystyle f $ en $\displaystyle R' $ y el segundo porque $\displaystyle \partial R' $ tiene contenido nulo. El caso $\displaystyle I \leq \int _{R'}g  $ es análogo.
 
+Finalmente, como $\displaystyle f $ es suma de funciones integrables, tendremos que 
+\[\int _{R}f =\int _{R}g + h = \int _{R}g +\int _{R}h  = \int _{R'}g = \int _{R'}f  .\]
 \end{proof}
 
 \section{Conjuntos medibles Jordan}
@@ -370,13 +380,33 @@ De forma equivalente, desde $\displaystyle f : R \to \R $ y $\displaystyle A \su
 \end{definition}
 
 \begin{observation}
-	Tanto para la definición anterior como para la de volumen, tenemos que ver que basta con que exista $\displaystyle R $, puesto que en cuanto existe uno para cualquier otro rectángulo que cumpla estas características el valor de la integral coincide. \\ 
+	Tanto para la definición anterior como para la de volumen, tenemos que ver que basta con que exista $\displaystyle R $, puesto que en cuanto existe uno para cualquier otro rectángulo que cumpla estas características el valor de la integral coincide. 
 
-	En efecto, si $\displaystyle \tilde{f} : R \to \R $ es integrable y $\displaystyle R' $ es otro rectángulo tal que $\displaystyle A \subset R' $, basta con tomar el rectángulo que contenga a $\displaystyle R \cap R' $, puesto que dado que $\displaystyle \tilde{f} $ es integrable en $\displaystyle R $, también lo será en este nuevo rectángulo (puesto que realmente hemos cortado partes en las que la función se anulaba). Así, el valor de la integral en $\displaystyle R $ y $\displaystyle R' $ coincidirá. Esto se ve de forma más clara con la observación anterior.
+	En efecto, sea $\displaystyle \emptyset\neq  A \subset \R^{n}$ tal que $\displaystyle \chi_{A} $ es integrable en el rectángulo $\displaystyle R \supset A $ y sea $\displaystyle R' \supset A $ otro rectángulo. Tenemos que $\displaystyle R \cap R' $ es un rectángulo que contiene a $\displaystyle A $. Por las últimas proposiciones de la sección anterior tenemos que, por ser $\displaystyle f $ integrable en $\displaystyle R $ lo es en $\displaystyle R \cap R' $ y además
+	\[\int _{R}\chi_{A} = \int _{R \cap R'}\chi_{A} = \int _{R'}\chi_{A}  .\]
 \end{observation}
 Las integrales sobre conjuntos que no sean rectángulos cumplen propiedades parecidas a las integrales sobre rectángulos.
-\begin{prop}[Linealidad y monotonía]
+\begin{prop}[Linealidad y monotonía] Sea $\displaystyle A \subset \R^{n} $ con $\displaystyle A \neq \emptyset $. 
+	\begin{enumerate}
+	\item \textbf{Linealidad.} Si $\displaystyle f_{1}, f_{2} : A \to \R $ son integrables en $\displaystyle A $, entonces
+		\[\int _{A}f_{1} + f_{2} = \int _{A}f_{1} +\int _{A}f_{2}  .\]
+		Además, si $\displaystyle \alpha\in \R $ y $\displaystyle f : A \to \R $ es integrable en $\displaystyle A $, entonces
+		\[\int _{A}\alpha f = \alpha \int _{A}f  .\]
+	\item \textbf{Monotonía.} Si $\displaystyle f_{1}, f_{2} : A \to \R $ son integrables en $\displaystyle A $, con $\displaystyle f_{1} \leq f_{2} $, $\displaystyle \forall x \in A $, entonces
+		\[\int _{A}f_{1} \leq \int _{A}f_{2}  .\]
+	\end{enumerate}
 \end{prop}
+\begin{proof} Sea $\displaystyle A \subset \R^{n} $ con $\displaystyle A \neq \emptyset $. 
+\begin{enumerate}
+\item Como $\displaystyle f_{1} $ y $\displaystyle f_{2} $ son integrables en $\displaystyle A $, existe $\displaystyle R $ rectángulo tal que $\displaystyle A \subset R $ y existen $\displaystyle \int _{R}\tilde{f}_{1} $ y $\displaystyle \int _{R}\tilde{f}_{2} $.
+Así, tendremos que existe
+\[\int _{A}f_{1} + f_{2} = \int _{R}\widetilde{f_{1} + f_{2}} = \int _{R}\tilde{f}_{1} + \tilde{f}_{2} =  \int _{R}\tilde{f}_{1} +\int _{R}\tilde{f}_{2} = \int _{A}f_{1} +\int _{A}f_{2} .\]
+Similarmente, si $\displaystyle \alpha \in \R $ y $\displaystyle f : A \to \R $ es integrable en $\displaystyle A $, entonces existe $\displaystyle R \subset \R^{n} $ rectángulo con $\displaystyle A \subset R $ y existe $\displaystyle \int _{R}\tilde{f}  $. Así, existe
+\[\int _{A}\alpha f = \int _{R}\widetilde{\alpha f} = \int _{R}\alpha\tilde{f} = \alpha \int _{R}\tilde{f} = \alpha\int _{A}f .\]
+\item Como $\displaystyle f_{1} $ y $\displaystyle f_{2} $ son integrables en $\displaystyle A $, existe $\displaystyle R \subset \R^{n} $ rectángulo con $\displaystyle A \subset R $ tal que $\displaystyle \tilde{f}_{1} $ y $\displaystyle \tilde{f}_{2} $ son integrables en $\displaystyle R $. Es fácil ver que $\displaystyle \tilde{f}_{1} \leq \tilde{f}_{2} $, $\displaystyle \forall x \in R $, por lo que 
+	\[\int _{A}f_{1} = \int _{R}\tilde{f}_{1} \leq \int _{R}\tilde{f}_{2} =\int _{A}f_{2}  .\]
+\end{enumerate}
+\end{proof}
 
 \begin{definition}[Media]
 Sea $\displaystyle f : A \to \R $ integrable con $\displaystyle A \subset \R^{n} $ medible Jordan y $\displaystyle v\left(A\right) > 0 $, definimos la \textbf{media} de $\displaystyle f $ en $\displaystyle A $ como 
@@ -415,7 +445,7 @@ De esta manera, podemos utilizar la proposición anterior para obtener una cota 
 \end{observation}
 
 \begin{prop}[Aditividad de la integral respecto de los conjuntos de integración]
-Sean $\displaystyle A, B \subset \R^{n} $ acotados con $\displaystyle f : A \cup B\to \R $ acotada. Supongamos que $\displaystyle f $ es integrable en $\displaystyle A \cap B $ y $\displaystyle \int _{A \cap B}f = 0 $. Entonces $\displaystyle f $ es integrable en $\displaystyle A \cup B $ si y solo si $\displaystyle f $ es integrable en $\displaystyle A $ y en $\displaystyle B $, y en este caso
+Sean $\displaystyle A, B \subset \R^{n} $ acotados con $\displaystyle f : A \cup B\to \R $ acotada. Supongamos que $\displaystyle \int _{A \cap B}f = 0 $ y $\displaystyle f $ es integrable en $\displaystyle A $ y en $\displaystyle B $. Entonces $\displaystyle f $ es integrable en $\displaystyle A \cup B $ y 
 \[\int _{A \cup B}f = \int _{A}f + \int _{B}f  .\]
 \end{prop}
 \begin{proof}
@@ -423,11 +453,13 @@ Es fácil ver que
 	\[\chi_{A \cup B} = \chi_{A} + \chi_{B} - \chi_{A \cap B} .\]
 Por tanto, tenemos que 
 \[f \cdot \chi_{A \cup B} = f \cdot \chi_{A} + f \cdot \chi_{B} - f \cdot \chi_{A \cap B} .\]
-La equivalencia se deduce de las propiedades de la linealidad de la integral.
+Si cogemos $\displaystyle R \subset \R^{n} $ rectángulo tal que $\displaystyle A \cup B \subset R $, aplicando las hipótesis de la proposición y la linealidad de la integral tendremos que
+\[\int _{A \cup B}f = \int _{R}f \cdot \chi_{A \cup B} = \int _{R} f \cdot \chi_{A} + \int _{R} f \cdot \chi_{B}  - \int _{R} f \cdot \chi_{A \cap B}  = \int _{A}f + \int _{B}f  .\]
 \end{proof}
+
 \section{Conjuntos de medida nula}
 \begin{lema}
-Sea $\displaystyle A \subset \R^{n} $. Entonces, $\displaystyle A $ tiene contenido nulo \footnote{$\displaystyle A $ es medible Jordan y $\displaystyle v\left(A\right) = 0 $.} si y solo si existe $\displaystyle R \supset A $ tal que $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists P \in \mathcal{P}\left(R\right) $ tal que $\displaystyle \sum^{}_{J \in P, \; J \cap A \neq \emptyset}v\left(J\right) < \epsilon  $.
+Sea $\displaystyle \emptyset \neq A \subset \R^{n} $. Entonces, $\displaystyle A $ tiene contenido nulo \footnote{$\displaystyle A $ es medible Jordan y $\displaystyle v\left(A\right) = 0 $.} si y solo si existe $\displaystyle R \supset A $ tal que $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists P \in \mathcal{P}\left(R\right) $ tal que $\displaystyle \sum^{}_{J \in P, \; J \cap A \neq \emptyset}v\left(J\right) < \epsilon  $.
 \end{lema}
 \begin{proof}
 Tenemos que $\displaystyle A $ tiene contenido nulo si y solo si es medible Jordan y $\displaystyle v\left(A\right) = 0 $, es decir, si existe $\displaystyle R \subset \R^{n} $ rectángulo con $\displaystyle A \subset R $ y 
@@ -437,7 +469,7 @@ Esto último sucede si y solo si $\displaystyle \inf \left\{ S\left(\chi_{A}, P\
 \end{proof}
 \begin{prop}[Caracterización de contenido nulo]
 	$\displaystyle A \subset \R^{n} $ tiene contenido nulo si y solo si $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle \left\{ J_{1}, \ldots, J_{N}\right\}  $ familia finita de rectángulos tal que 
-	\[A \subset \bigcup_{i =1}^{N}J_{i}\quad \text{y} \quad \sum^{N}_{i \in F} v\left(J_{i}\right) < \epsilon  .\]
+	\[A \subset \bigcup_{i =1}^{N}J_{i}\quad \text{y} \quad \sum^{N}_{i =1} v\left(J_{i}\right) < \epsilon  .\]
 \end{prop}
 \begin{proof}
 	La primera implicación es trivial a partir del lema anterior, por lo que demostraremos únicamente la segunda implicación. Sea $\displaystyle \epsilon > 0 $, entonces existe $\displaystyle \left\{ J_{1}, \ldots, J_{N}\right\}  $ familia de rectángulos que recubren $\displaystyle A $ y $\displaystyle \sum^{N}_{i = 1}v\left(J_{i}\right)< \epsilon  $. Cogemos $\displaystyle R \subset \R^{n} $ un rectángulo grande tal que $\displaystyle \bigcup_{i = 1}^{N}J_{i} \subset R $. 
@@ -448,6 +480,16 @@ Esto último sucede si y solo si $\displaystyle \inf \left\{ S\left(\chi_{A}, P\
 \begin{prop}
 	Sea $\displaystyle \left\{ A_{1}, \ldots, A_{N}\right\} \subset \R^{n} $ una familia finita de conjuntos de contenido nulo. Entonces, $\displaystyle \bigcup_{i = 1}^{N}A_{i} $ tiene contenido nulo.
 \end{prop}
+\begin{proof}
+Sea $\displaystyle \epsilon > 0 $. Para cada $\displaystyle A_{i} $ existe una familia $\displaystyle \left\{ J_{1}^{i}, \ldots, J_{N_{i}}^{i}\right\}  $ de rectángulos tales que 
+	\[ A_{i} \subset \bigcup_{1 \leq j \leq N_{i}}J_{j}^{i} \quad \text{y} \quad \sum^{N_{i}}_{j = 1}v\left(J_{j}^{i}\right) < \frac{\epsilon }{N}.\]
+	Así, si cogemos la familia $\displaystyle \mathcal{F}=\bigcup_{i = 1}^{N} \left\{ J^{i}_{1}, \ldots, J_{N_{i}}^{i}\right\}  $, tendremos que claramente $\displaystyle \bigcup_{i = 1}^{N}A_{i} $ está recubierto por $\displaystyle \mathcal{F} $ y además
+	\[ \sum_{J \in \mathcal{F}}v\left(J\right) = \sum^{N}_{i = 1}\sum^{N_{i}}_{j = 1}v\left(J^{i}_{j}\right) < \sum^{N}_{i = 1}\frac{\epsilon }{N} = \epsilon  .\]
+Una demostración alternativa es hacerlo por inducción. Supongamos que $\displaystyle A $ y $\displaystyle B $ tienen contenido nulo y veamos que $\displaystyle A \cup B $ también tiene contenido nulo. Como $\displaystyle A \cap B \subset A $, es sencillo ver que también tendrá contenido nulo, y por la propiedad de aditividad tendremos que para un rectángulo $\displaystyle R \supset A \cup B $ se tiene que
+\[v\left(A \cup B\right) = \int _{R} \chi_{A \cup B} = \int _{R} \chi_{A} + \int _{R}\chi_{B} -\int _{R}\chi_{A \cap B} = v\left(A\right) + v\left(B\right)-v\left(A \cap B\right) = 0 .\]
+A partir de aquí es sencillo ver inducitvamente que la proposición se cumple para una familia finita de conjuntos de contenido nulo.
+\end{proof}
+
 \begin{observation}
 	En la proposición anterior es importante que la familia de conjuntos sea finita y no numerable. En efecto, ya vimos que $\displaystyle \Q \cap [0,1]$  no tiene contenido nulo.
 \end{observation}
@@ -466,33 +508,50 @@ Si $\displaystyle A \subset \R^{n} $ tiene contenido nulo entonces también tien
 	\[\sum^{\infty}_{i = 1}v\left(J_{i}\right) = \sum^{N}_{i = 1}v\left(J_{i}\right) + \sum^{\infty}_{k = 1}v\left(J_{N + k}\right) < \frac{\epsilon }{2} + \sum^{\infty}_{k = 1}\frac{\epsilon }{2^{k+1}} = \epsilon  .\]
 \end{proof}
 \begin{prop}
-	Si $\displaystyle \left\{ A_{i}\right\} _{i \in I} $ es una sucesión o familia finita de conjuntos de medida nula, entonces $\displaystyle \bigcup_{i \in I} $ también tiene medida nula.
+	Si $\displaystyle \left\{ A_{i}\right\} _{i \in I} $ es una sucesión o familia finita de conjuntos de medida nula, entonces $\displaystyle \bigcup_{i \in I} A_{i}$ también tiene medida nula.
 \end{prop}
 \begin{proof}
-Tomamos $\displaystyle \epsilon > 0 $ y para cada $\displaystyle i \in I $ tomamos un rectángulo $\displaystyle J_{i} $ tal que $\displaystyle A_{i} \subset J_{i} $ y $\displaystyle v\left(J_{i}\right)< \frac{\epsilon }{2^{i}} $. Claramente se tiene que
+Sea $\displaystyle A = \bigcup_{i \in I}A_{i} $. Tomamos $\displaystyle \epsilon > 0 $ y para cada $\displaystyle i \in I $ tomamos un rectángulo $\displaystyle J_{i} $ tal que $\displaystyle A_{i} \subset J_{i} $ y $\displaystyle v\left(J_{i}\right)< \frac{\epsilon }{2^{i}} $. Claramente se tiene que
 \[A \subset \bigcup_{i \in I}J_{i} \quad \text{y} \quad \sum_{i \in I}v\left(J_{i}\right) < \sum_{i \in I}\frac{\epsilon }{2^{i}} < \epsilon  .\]
+Alternativamente, podemos ver que para un $\displaystyle i \in I $ se tiene que existe $\displaystyle \left\{ J_{ij}\right\} _{j \in \N} $ tal que 
+\[A_{i} \subset \bigcup_{j \in \N}J_{ij} \quad \text{y} \quad \sum^{\infty}_{j = 1}v\left(J_{ij}\right) < \frac{\epsilon }{2^{i}} .\]
+De esta forma, podemos coger la familia numerable $\displaystyle \left\{ J_{ij}\right\} _{i,j \in \N} $ que recubre a $\displaystyle A $ y tendremos que \footnote{El hecho de que podamos sumar primero en función de $\displaystyle J $ y luego de $\displaystyle i $ se debe a que los términos se pueden reordenar en una serie doble que es absolutamente convergente.} 
+\[ \sum_{i \in I, j \in \N} = \sum_{i \in I}\sum^{\infty}_{j = 1}v\left(J_{ij}\right) < \sum_{i \in I}\frac{\epsilon }{2^{i}} < \epsilon .\]
 \end{proof}
 \begin{eg}
 	Por la proposición anterior tenemos que $\displaystyle \Q \cap \left[0,1\right]  $ tiene medida nula pero como vimos no tiene contenido nulo puesto que no es medible Jordan. Es decir, \textbf{que un conjunto tenga medida nula no significa que tenga contenido nulo}.
 \end{eg}
-\begin{theorem}
-Sea $\displaystyle K \subset \R^{n} $ compacto. Entonces $\displaystyle K $ tiene contenido nulo si y solo si $\displaystyle K $ tiene medida nula.
-\end{theorem}
-\begin{prop}
-Sea $\displaystyle A \subset \R^{n} $ medible Jordan. Entonces, $\displaystyle A $ tiene contenido nulo si y solo si tiene medida nula.
-\end{prop}
-
 \begin{prop}
 Si $\displaystyle \emptyset \neq B \subset A \subset \R^{n} $ tal que $\displaystyle A $ tiene contenido (resp. medida) nulo, entonces $\displaystyle B $ tiene contenido (resp. medida) nulo.
 \end{prop}
+\begin{proof}
+	Supongamos que $\displaystyle B \subset A $ y $\displaystyle A $ tiene contenido nulo. Si $\displaystyle \epsilon > 0 $ tendremos que existe $\displaystyle \left\{ J_{1}, \ldots, J_{N}\right\}  $ familia de rectángulos que recubre a $\displaystyle A $ y $\displaystyle \sum^{N}_{i = 1}v\left(J_{i}\right) < \epsilon  $. Como $\displaystyle B \subset A $ se tiene que también recubren a $\displaystyle B $, por lo que $\displaystyle B $ también tiene contenido nulo. La demostración para el caso de medida nula es análoga.
+\end{proof}
+\begin{prop}
+Sea $\displaystyle A \subset \R^{n} $ medible Jordan. Entonces, $\displaystyle A $ tiene contenido nulo si y solo si tiene medida nula.
+\end{prop}
+\begin{proof}
+La primera implicación es cierta para cualquier subconjunto de $\displaystyle \R^{n} $, por lo que sólo demostraremos la segunda implicación. Supongamos que $\displaystyle A $ tiene medida nula
+\end{proof}
 
 \begin{eg}
 Sea $\displaystyle R \subset \R^{n} $ un rectángulo (no trivial, es decir, no tiene volumen nulo). Entonces, $\displaystyle v\left(R\right) > 0 $ por lo que $\displaystyle R $ no tiene contenido nulo, que se puede deducir a partir de la definición. Además, como $\displaystyle R $ es medible Jordan y no tiene contenido nulo tenemos que no tiene medida nula.
 \end{eg}
 
-\begin{observation}
+\begin{colorary}
 Sea $\displaystyle A \subset \R^{n} $ tal que $\displaystyle A \supset R $ con $\displaystyle R  $ rectángulo no trivial. Entonces $\displaystyle A $ no tiene contenido ni medida nula.
-\end{observation}
+\end{colorary}
+\begin{proof}
+	Como contenido nulo implica medida nula, basta con demostrar que no puede tener medida nula. Supongamos que $\displaystyle A $ tiene medida nula, entonces para $\displaystyle \epsilon > 0 $ existe $\displaystyle \left\{ J_{k}\right\} _{k \in \N} $ tal que esta familia recubre a $\displaystyle A $ y $\displaystyle \sum^{\infty}_{k = 1}v\left(J_{k}\right)< \epsilon  $. Como $\displaystyle R \subset A $, tendremos que esta familia también recubre a $\displaystyle R $ y por tanto $\displaystyle R $ también tiene medida nula, lo cual es una contradicción como se ha visto en el ejemplo anterior. \footnote{La demostración no es necesaria realmente puesto que este enunciado es una consecuencia directa de la proposición anterior.}  
+\end{proof}
+
+\begin{theorem}
+Sea $\displaystyle K \subset \R^{n} $ compacto. Entonces $\displaystyle K $ tiene contenido nulo si y solo si $\displaystyle K $ tiene medida nula.
+\end{theorem}
+\begin{proof}
+La primera implicación es cierta para cualquier subconjunto de $\displaystyle \R^{n} $, por lo que demostraremos únicamente la segunda implicación. Supongamos que $\displaystyle K $ no tiene contenido nulo.
+\end{proof}
+
 \section{Teorema de Lebesgue}
 \begin{theorem}[Teorema de Lebesgue]
 Sea $\displaystyle f : R\subset \R^{n} \to \R $ acotada y $\displaystyle R $ un rectángulo. Entonces $\displaystyle f $ es integrable si y solo si el conjunto de discontinuidades de $\displaystyle f $ en $\displaystyle R $, $\displaystyle D\left(f\right) $, tiene medida nula.
@@ -548,6 +607,9 @@ Sea $\displaystyle P \in \mathcal{P}\left(R\right) $, entonces
 \[s\left( \left|\tilde{f}\right|, P\right) = \sum_{J \in P} \alpha_{J}v\left(J\right) .\]
 Como $\displaystyle A $ tiene volumen nulo y $\displaystyle J $ no, no puede ser que $\displaystyle J \subset A $. Así, tenemos que existe $\displaystyle x \in J $ con $\displaystyle x \not\in A $, por lo que $\displaystyle \alpha_{J} = 0 $, $\displaystyle \forall J \in P $. Así, tenemos que $\displaystyle s\left( \left|\tilde{f}\right|, P\right) = 0 $, por lo que la integral inferior vale 0. Así, 
 \[ \left|\int _{R} \tilde{f} \right| \leq \int _{R} \left|\tilde{f}\right| = 0 \Rightarrow \int _{R}\tilde{f} = \int _{A}f = 0.\]
+Otra forma de verlo es ver que 
+\[ \left|\int _{A}f \right|\leq \int _{A} \left|f\right| \leq \int _{A} M  = Mv\left(A\right)= 0 ,\]
+donde $\displaystyle \left|f\right| \leq M $, $\displaystyle \forall x \in A $. 
 \end{proof}
 \begin{observation}
 	Nos podemos preguntar, es válido el resultado si en vez de tener $\displaystyle A $ contenido nulo tenemos que $\displaystyle A $ tiene medida nula? Claramente, la respuesta es que no. En efecto, tenemos que $\displaystyle \chi_{\left[0,1\right] \cap \Q} $ tiene medida nula pero no es integrable. Sin embargo, sí es cierto que si $\displaystyle A $ tiene medida nula y $\displaystyle f : A \to \R $ es integrable, entonces $\displaystyle \int _{A}f =0 $. 
@@ -571,7 +633,27 @@ Podemos repasar nuestro resultado sobre la aditividad de la integral en conjunto
 \begin{prop}
 	Sea $\displaystyle f : R \to \R $ con $\displaystyle f \geq 0 $, y $\displaystyle \int _{R}f = 0 $. Entonces el conjunto $\displaystyle \left\{ x \in R \; : \; f\left(x\right) \neq 0\right\}  $ tiene medida nula. Es decir, existe $\displaystyle A \subset R $ de medida nula tal que $\displaystyle f\left(x\right) = 0 $, $\displaystyle \forall x \in R/A $. 
 \end{prop}
+\begin{proof}
+	Queremos ver que el conjunto $\displaystyle X =\left\{ x \in \R \; : \; f\left(x\right) \neq 0\right\}  $ tiene medida nula. Tenemos que 
+	\[ X = \bigcup_{k = 1}^{\infty} A_{k}  ,\]
+con $\displaystyle A_{k} = \left\{ x \in R \; : \; f\left(x\right) > \frac{1}{k}\right\} $. Basta probar que $\displaystyle A_{k} $ tienen medida nula y basta probar que tienen contenido nulo. Supongamos que $\displaystyle A_{k} $ es medible Jordan, entonces
+	\[0 = \int _{R}f \geq \int _{A_{k}}f \geq \int _{A_{k}}\frac{1}{k} = \frac{1}{k}v\left(A_{k}\right) \geq 0 .\]
+	Así, debe ser que $\displaystyle \frac{1}{k}v\left(A_{k}\right) = 0 $, por lo que $\displaystyle v\left(A_{k}\right) = 0 $. Sea $\displaystyle k_{0} \in \N $ y sea $\displaystyle \epsilon > 0 $, existe $\displaystyle P \in \mathcal{P}\left(R\right) $ tal que $\displaystyle S\left(f,P\right)< \frac{\epsilon }{k_{0}} $. Así, tenemos que 
+	\[\frac{\epsilon }{k_{0}} > \sum_{J \in P}\beta_{J}v\left(J\right) \geq \sum_{J \cap A_{k_{0}}\neq \emptyset}\beta_{J}v\left(J\right) \geq \sum_{J \cap A_{k_{0}} \neq \emptyset} v\left(J\right)\frac{1}{k_{0}}.\]
+Así, tenemos que $\displaystyle \sum^{}_{J \cap A_{k_{0}}\neq \emptyset}v\left(J\right) < \epsilon  $, por lo que $\displaystyle A_{k_{0}} $ tiene contenido nulo. 	
+\end{proof}
+
 \begin{notation}
 A partir de ahora, si decimos que algo se cumple en casi todo punto es porque se cumple en todos los puntos salvo en un conjunto de medida nula.
 \end{notation}
+\begin{observation}
+	No podemos concluir que $\displaystyle \left\{ x \in R \; : \; f\left(x\right) \neq 0\right\}  $ tiene contenido nulo. En efecto, basta tomar la función de Thomae,
+	\[x \to 
+	\begin{cases}
+	0, \; x \in \Q \\
+	\frac{1}{q}, \; x=\frac{p}{q} \in \Q \; \left(\text{la fracción $\displaystyle \frac{p}{q} $ es irreducible}\right)
+	\end{cases}
+	.\]
+	que es continua en los irracionales y discontinua en los racionales. Así, $\displaystyle D\left(f\right) = \Q \cap \left[0,1\right]  $ que tiene medida nula, por lo que $\displaystyle f $ es integrable.  
+\end{observation}
 
