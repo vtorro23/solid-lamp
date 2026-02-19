@@ -80,21 +80,22 @@ En un entorno de $\displaystyle \left(1,0\right) $ tenemos que los contenidos de
 \end{eg}
 \section{EDOS lineales}
 
-Sea $\displaystyle \left(E\right) \; x'\left(t\right) = a\left(t\right)x\left(t\right) + b\left(t\right) $ una EDO lineal. Tendremos que la EDO lineal homogénea asociada será $\displaystyle \left(E_{h}\right) \; x'\left(t\right) = a\left(t\right)x\left(t\right) $. Claramente esta última es una EDO de variables separadas. Tendremos que
+Sea $\displaystyle \left(E\right) \; x'\left(t\right) = a\left(t\right)x\left(t\right) + b\left(t\right) $ una EDO lineal. Tendremos que la EDO lineal homogénea asociada será $\displaystyle \left(E_{h}\right) \; x'\left(t\right) = a\left(t\right)x\left(t\right) $. Consideraremos que $\displaystyle a\left(t\right) $ y $\displaystyle b\left(t\right) $ son continuas en un cierto intervalo. Claramente esta última es una EDO de variables separadas. Tendremos que, suponiendo que $\displaystyle x\left(t\right)\neq 0 $,
 \[ \int \frac{x'\left(t\right)}{x\left(t\right)} \; dt = \int a\left(t\right) \; dt \iff \ln x\left(t\right) = \int a\left(t\right) \; dt + C \iff x\left(t\right) = C\exp\left(\int a\left(t\right) \; dt\right) .\]
-Estas son todas las soluciones de la EDO. Podemos ver que todas las soluciones son proporcionales a la función $\displaystyle \exp\left(\int a\left(t\right) \; dt\right) $. Si $\displaystyle u\left(t\right) $ es solución de $\displaystyle \left(E_{h}\right) $ podemos ver que si cogemos
+Estas son todas las soluciones de la EDO. En efecto, podemos ver que todas las soluciones son proporcionales a la función $\displaystyle \exp\left(\int a\left(t\right) \; dt\right) $. Si $\displaystyle u\left(t\right) $ es solución de $\displaystyle \left(E_{h}\right) $ podemos ver que si cogemos
 \[u\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right) \]
-y lo metemos dentro de la ecuación, tendremos que 
+y lo derivamos, tendremos que 
 \[u'\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right) - u\left(t\right)a\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right) .\]
 Como $\displaystyle u\left(t\right) $ es solución tendremos que $\displaystyle u'\left(t\right)= a\left(t\right)u\left(t\right) $, por lo que 
 \[ = u\left(t\right)a\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right) - u\left(t\right)a\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right) = 0 .\]
 Por tanto, tendremos que 
-\[ u\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right)= K \Rightarrow u\left(t\right) = K\exp\left(-\int a\left(s\right) \; d s\right) .\]
+\[ u\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right)= K \Rightarrow u\left(t\right) = K\exp\left(\int a\left(s\right) \; d s\right) .\]
 Así, hemos demostrado que esta familia monoparamétrica compone todas las soluciones de la EDO. Es fácil comprobar que las soluciones de $\displaystyle \left(E_{h}\right) $ constituyen un $\displaystyle \R $-espacio vectorial de dimensión 1.
 \begin{prop}
 El conjunto de soluciones de $\displaystyle \left(E_{h}\right) $ tiene estructura de $\displaystyle \R $-espacio vectorial de dimensión 1.
 \end{prop}
 \begin{proof}
+	En el capítulo anterior vimos que el conjunto de soluciones de una EDO lineal componía un $\displaystyle \R $-espacio vectorial, falta por ver que en este caso la dimensión será 1 (el argumento que hemos dado anteriormente vale). \\
 Supongamos que $\displaystyle u\left(t\right)=c\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) $ es solución de $\displaystyle \left(E_{h}\right) $. Por tanto, debe ser que $\displaystyle u'\left(t\right)=a\left(t\right)u\left(t\right) $, por lo que 
 \[c'\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) + c\left(t\right)a\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) = a\left(t\right)c\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) .\]
 Por tanto, debe ser que $\displaystyle c'\equiv 0 $, por lo que $\displaystyle c\left(t\right) $ es una función constante. 
@@ -102,13 +103,13 @@ Por tanto, debe ser que $\displaystyle c'\equiv 0 $, por lo que $\displaystyle c
 \begin{colorary}
 La solución general de $\displaystyle \left(E\right) $ es de la forma 
 \[x\left(t\right)=x_{h}\left(t\right)+x_{p}\left(t\right) ,\]
-donde $\displaystyle x_{h}\left(t\right) $ es la solución general de $\displaystyle \left(E_{h}\right) $ y $\displaystyle x_{p}\left(t\right) $ es una solución particular e $\displaystyle \left(E\right) $.
+donde $\displaystyle x_{h}\left(t\right) $ es la solución general de $\displaystyle \left(E_{h}\right) $ y $\displaystyle x_{p}\left(t\right) $ es una solución particular de $\displaystyle \left(E\right) $.
 \end{colorary}
 \begin{proof}
-Si $\displaystyle x_{h} $ es solución de $\displaystyle \left(E_{h}\right) $ y tendremos que $\displaystyle x_{h}' = a\left(t\right)ax_{h} $. Además, si $\displaystyle x_{p}\left(t\right) $ es solución de $\displaystyle \left(E\right) $ tendremos que $\displaystyle x_{p}' = a\left(t\right)x_{p} + b\left(t\right) $. Así, tenemos que
+Si $\displaystyle x_{h} $ es solución de $\displaystyle \left(E_{h}\right) $ tendremos que $\displaystyle x_{h}' = a\left(t\right)ax_{h} $. Además, si $\displaystyle x_{p}\left(t\right) $ es solución particular de $\displaystyle \left(E\right) $ tendremos que $\displaystyle x_{p}' = a\left(t\right)x_{p} + b\left(t\right) $. Así, tenemos que
 \[\left(x_{h} + x_{p}\right)' = x_{h}' + x_{p} ' = a\left(t\right)\left(x_{h} + x_{p}\right) + b\left(t\right).\]
-Así, hemos visto que es solución de $\displaystyle \left(E\right) $. Veamos ahora que cualquier solución de $\displaystyle \left(E\right) $ se puede expresar de esta forma. Si $\displaystyle x_{p}\left(t\right) $ es solución particular de $\displaystyle \left(E\right) $ tendremos que 
-\[\left(x\left(t\right) - x_{p}\left(t\right)\right)' = x' - x_{p}' = a\left(t\right)x + b\left(t\right)-a\left(t\right)x_{p} -b\left(t\right) = a\left(t\right)\left(x-x_{0}\right) .\]
+Por tanto, $\displaystyle x_{h}+x_{p} $ es solución de $\displaystyle \left(E\right) $. Veamos ahora que cualquier solución de $\displaystyle \left(E\right) $ se puede expresar de esta forma. Si $\displaystyle x_{p}\left(t\right) $ es solución particular de $\displaystyle \left(E\right) $ tendremos que 
+\[\left(x\left(t\right) - x_{p}\left(t\right)\right)' = x' - x_{p}' = a\left(t\right)x + b\left(t\right)-a\left(t\right)x_{p} -b\left(t\right) = a\left(t\right)\left(x-x_{p}\right) .\]
 Por tanto, tenemos que la diferencia es solución de $\displaystyle \left(E_{h}\right) $. 
 \end{proof}
 
@@ -116,14 +117,36 @@ Por tanto, tenemos que la diferencia es solución de $\displaystyle \left(E_{h}\
 En este caso, el conjunto de soluciones forma un espacio afín.
 \end{observation}
 
+\begin{observation}[Método de variación de constantes]
 Para resolver la EDO completa nos falta ver cómo obtener una solución particular. Esto lo haremos mediante el \textbf{método de variación de constantes:} proponemos una solución particular no muy diferente a $\displaystyle x_{h}\left(t\right) $, como por ejemplo
 \[x_{p}\left(t\right) = C\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) .\]
 Forzamos que sea solución y tendremos que
 \[x'_{p} = C'\exp\left(\int a\left(s\right) \; d s\right)+ Ca\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) .\]
 Queremos que $\displaystyle x'_{p}\left(t\right) = a\left(t\right)x_{p}+b\left(t\right) $, pero esto tiene como consecuencia que 
-\[C'\exp\left(\int a\left(s\right) \; d s\right) + Ca\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) = a\left(t\right)C\exp\left(\int a\left(s\right) \; d s\right) .\]
+\[C'\exp\left(\int a\left(s\right) \; d s\right) + Ca\left(t\right)\exp\left(\int a\left(s\right) \; d s\right) = a\left(t\right)C\exp\left(\int a\left(s\right) \; d s\right) +b\left(t\right).\]
 De esta forma, nos queda que 
 \[C'\left(t\right) = b\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right) \iff C\left(t\right)=\int b\left(t\right)\exp\left(-\int a\left(s\right) \; d s\right) \; dt .\]
+\end{observation}
+Así, hemos demostrado el siguiente teorema:
+\begin{theorem}
+Para cada $\displaystyle \left(t_{0}, x_{0}\right) \in \left(\alpha, \omega \right)\times \R $ \footnote{Siendo $\displaystyle \left(\alpha, \omega \right) $ el intervalo donde son continuas $\displaystyle a\left(t\right) $ y $\displaystyle b\left(t\right) $.} el problema
+\[
+\begin{cases}
+x'\left(t\right)=a\left(t\right)x \\
+x\left(t_{0}\right)=x_{0}
+\end{cases}
+\]
+admite por solución $\displaystyle x\left(t\right)=x_{0}\exp\left(\int^{t}_{t_{0}} a\left(s\right) \; d s \right) $. Análogamente, la única solución del problema
+\[
+\begin{cases}
+x'\left(t\right)= a\left(t\right)x + b\left(t\right) \\
+x\left(t_{0}\right)=x_{0}
+\end{cases}
+\]
+es la función
+\[x\left(t\right)=C\exp\left(\int^{t}_{t_{0}} a\left(s\right) \; d s\right) + \exp\left(\int^{t}_{t_{0}} a\left(s\right) \; d s\right)\int^{t}_{t _{0}} b\left(s\right)\exp\left(-\int^{s}_{t_{0}} a\left(u\right) \; du\right) \; d s .\]
+\end{theorem}
+
 \begin{eg}[Hoja2, Ejercicio 6]
 Consideremos la EDO
 \[\left(R\right) \quad x' + x = 2te^{-t} + t ^{2} .\]
@@ -184,4 +207,65 @@ Ahora buscamos la solución particular
 \[8 = -3 \cdot 1 \cdot \ln 1 + C \cdot 1 \iff C = 8 .\]
 Así, nos queda que la solución particular será $\displaystyle x^{3}= -3t ^{3}\ln t + 8 t ^{3} $ con $\displaystyle t > 0 $. 
 \end{eg}
+
+\section{Ecuaciones exactas y factor integrante}
+\begin{definition}[Ecuación exacta]
+La EDO $\displaystyle M\left(t,x\right)dt + N\left(t,x\right)dx = 0 $ con $\displaystyle M $ y $\displaystyle N $ continuas en $\displaystyle \Omega\subset\R^{2} $, se dice que es \textbf{exacta} si existe si existe una función $\displaystyle F : \Omega \subset \R^{2} \to \R $ con $\displaystyle F \in \mathcal{C}^{1}\left(\Omega \right) $ tal que la solución de la EDO son las curvas de nivel de $\displaystyle F $, esto es $\displaystyle F\left(t,x\right)=C $, $\displaystyle C \in \R $.
+\end{definition}
+\begin{observation}
+La definición equivalente a la anterior es: \\
+
+\textit{La EDO $\displaystyle M\left(t,x\right)dt + N\left(t,x\right)dx = 0 $ es \textbf{exacta} si existe $\displaystyle F : \Omega \subset \R^{2} \to \R $ con $\displaystyle F \in \mathcal{C}^{1}\left(\Omega \right) $ tal que}
+\[\frac{\partial F\left(t,x\right)}{\partial t}= M\left(t,x\right) \quad \text{y} \quad \frac{\partial F\left(t,x\right)}{\partial x}=N\left(t,x\right) .\]
+En efecto, derivando implícitamente tenemos que 
+\[\frac{\partial F}{\partial t} + \frac{\partial F}{\partial x}x'= 0 \iff \frac{\partial F}{\partial t}dt + \frac{\partial F}{\partial x}dx = 0.\]
+Así, tendremos que $\displaystyle M\left(t,x\right)=\frac{\partial F}{\partial t} $ y $\displaystyle N\left(t,x\right)= \frac{\partial F}{\partial x} $. Recíprocamente, 
+\[M\left(t,x\right) + N\left(x,t\right)\frac{dx}{dt} = \frac{\partial F\left(t,x\right)}{\partial t} + \frac{\partial F\left(t,x\right)}{\partial x}\frac{dx}{dt}=\frac{d}{dt}F\left(t,x\right) ,\]
+por lo que la EDO es equivalente a $\displaystyle \frac{d}{dt}F\left(t,x\right)=0 $ y sus soluciones son las curvas de nivel del campo $\displaystyle F\left(t,x\right) $. 
+\end{observation}
+\begin{prop}
+Para $\displaystyle M $ y $\displaystyle N $ continuas y con derivadas parciales continuas en $\displaystyle \Omega\subset \R^{2} $, la EDO $\displaystyle M\left(t,x\right)dt + N\left(t,x\right)dx = 0 $ es exacta si y solo si $\displaystyle \frac{\partial M}{\partial x} = \frac{\partial N}{\partial t} $. 
+\end{prop}
+\begin{proof}
+	Como $\displaystyle M,N \in \mathcal{C}^{1} $, se sigue que $\displaystyle F\in\mathcal{C}^{2}\left(\Omega \right) $. 
+\begin{description}
+\item[(i)] Si $\displaystyle M\left(t,x\right)dt + N\left(t,x\right)dx = 0 $ es exacta, existe $\displaystyle F : \Omega\subset\R^{2} \to \R$ tal que 
+	\[M\left(t,x\right)=\frac{\partial F}{\partial t}\quad \text{y} \quad N\left(t,x\right)=\frac{\partial F}{\partial x} .\]
+Como $\displaystyle F \in \mathcal{C}^{2}\left(\Omega \right) $ podemos aplicar el teorema de Schwartz, por lo que 
+\[\frac{\partial M}{\partial x}= \frac{\partial }{\partial x}\left(\frac{\partial F}{\partial t}\right)= \frac{\partial }{\partial t}\left(\frac{\partial F}{\partial x}\right)= \frac{\partial N}{\partial t} .\]
+\item[(ii)] Supongamos que $\displaystyle \frac{\partial M}{\partial x}= \frac{\partial N}{\partial t} $. Buscamos $\displaystyle F : \Omega\subset \R^{2} \to \R $ tal que $\displaystyle F \in \mathcal{C}^{2}\left(\Omega \right) $ y $\displaystyle \frac{\partial F}{\partial t}=M\left(t,x\right) $ y $\displaystyle \frac{\partial F}{\partial x}= N\left(t,x\right) $. Podemos tomar
+	\[\frac{\partial F}{\partial t}=M\left(t,x\right) \Rightarrow F\left(t,x\right)=\int M\left(t,x\right) \; dt + C\left(x\right) .\]
+Tendremos que $\displaystyle C\left(x\right) $ es tal que 
+\[\frac{\partial F}{\partial x}= \frac{\partial }{\partial x}\left(\int M\left(t,x\right) \; dt\right)+C'\left(x\right)=N\left(t,x\right) \iff C'\left(x\right)=N\left(t,x\right)-\int \frac{\partial }{\partial x}M\left(t,x\right) \; dt .\]
+De esta forma tendremos que 
+\[C\left(x\right)=\int \left(M\left(t,x\right)-\int \frac{\partial }{\partial x}N\left(t, x\right) \; dt\right) \; dx + C .\]
+La construcción está bien hecha y $\displaystyle C\left(x\right) $ es una función que depende sólo de $\displaystyle x $ puesto que si derivamos $\displaystyle C'\left(x\right) $ respecto de $\displaystyle t $ obtenemos 
+\[\frac{\partial C'}{\partial t} = \frac{\partial M}{\partial t}-\frac{\partial N}{\partial x}= 0 .\]
+Así, tenemos que 
+\[F\left(t,x\right)=\int M\left(t,x\right) \; dt + \int \left(N\left(t,x\right) -\int \frac{\partial }{\partial x}M\left(t,x\right) \; dt\right) \; dx + C .\]
+\end{description}
+\end{proof}
+\begin{observation}
+Observando la construcción que acabamos de hacer tendremos que la solución general de la ecuación es $\displaystyle F\left(t,x\right)=C $, donde $\displaystyle F $ la hemos calculado anteriormente. 
+\end{observation}
+
+\begin{eg}[Hoja 2, Ejercicio 4 apartado (a)]
+Consideremos $\displaystyle x' = \frac{2tx}{x - t ^{2}} $. En su forma diferencial tendremos que
+\[2tx \; dt +\left(t ^{2}-x\right) \; dx = 0 .\]
+Veamos si es exacta. Tenemos que $\displaystyle M\left(t,x\right)=2tx $ y $\displaystyle N\left(t,x\right)=t ^{2}-x $, así
+\[\frac{\partial M}{\partial x}=2t = \frac{\partial N}{\partial t} .\]
+Como es exacta, existe $\displaystyle F : \Omega\subset \R^{2} \to \R $ tal que la solución de la EDO son las curvas de nivel de $\displaystyle F $. Buscamos $\displaystyle F $:
+\[\frac{\partial F}{\partial t}= 2tx \quad \text{y} \quad \frac{\partial F}{\partial x} = t ^{2}-x .\]
+Tendremos que 
+\[ F\left(t,x\right)=\int 2tx \; dt + C\left(x\right)= t ^{2}x + C\left(x\right) .\]
+Además, necesitamos que 
+\[\frac{\partial F}{\partial x}=t ^{2}-x=t ^{2}+ C'\left(x\right) \iff C'\left(x\right)=-x .\]
+Así, tenemos que $\displaystyle C\left(x\right)=-\frac{x^{2}}{2} $ \footnote{No nos interesan las constantes porque las soluciones son las curvas de nivel de $\displaystyle F $.} , por lo que nos queda que $\displaystyle F\left(t,x\right)=t ^{2}x - \frac{x^{2}}{2} $ y la solución de la EDO es
+\[ t ^{2}x - \frac{x^{2}}{2} = C, \; C \in \R.\]
+\end{eg}
+\begin{observation}[Factor integrante]
+Hay EDOS que no son exactas, pero que si las multiplicamos por una función $\displaystyle \mu\left(t,x\right) $ se convierten en exactas. Es decir, $\displaystyle M\left(t,x\right)dt + N\left(t,x\right)dx=0 $ no es exacta, pero existe $\displaystyle \mu $ tal que 
+\[\underbrace{\mu M\left(t,x\right)}_{\widetilde{M}} + \underbrace{\mu N\left(t,x\right)}_{\tilde{N}} x' = 0 ,\]
+es exacta puesto que $\displaystyle \frac{\partial \widetilde{M}}{\partial x}= \frac{\partial \tilde{N}}{\partial t} $. A $\displaystyle \mu $ lo llamamos \textbf{factor integrante}. Si no nos dan alguna información de $\displaystyle \mu $ para que lo podeamos calcular, no podemos calcular $\displaystyle \mu $ ni la solución de la EDO (sería una EDP muy complicada).
+\end{observation}
 

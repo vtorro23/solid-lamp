@@ -69,4 +69,25 @@ Podemos cambiar el orden de integración:
 	\[\int _{A}f\left(x,y\right) \; dy \; dx = \int^{b}_{a} \int^{g_{1}\left(x\right)}_{g_{2}\left(x\right)} f\left(x,y\right) \; dy \; dx  .\]
 	\end{enumerate}
 \end{eg}
+\section{Cambio de variable}
+\begin{theorem}[Teorema de cambio de variable]
+Si $\displaystyle \varphi: B\subset \R^{n} \to A \subset \R^{n} $ es de clase $\displaystyle \mathcal{C}^{1} $ y $\displaystyle \varphi^{-1}\in\mathcal{C}^{1} $ \footnote{Buscamos que $\displaystyle \varphi $ sea difeomorfismo.}, tenemos que 
+\[\int _{A}f\left(x\right) \; dx = \int _{B}f\left(\varphi\left(t\right)\right) \left|\det \varphi'\left(t\right)\right| \; dt .\]
+Asumimos que $\displaystyle A $ y $\displaystyle B $ son abiertos.
+\end{theorem}
+\subsection{Coordenadas polares}
+El cambio de coordenadas polares consiste en
+\[x = \rho \cos\theta \quad \text{y} \quad y = \rho\sin\theta .\]
+Para deshacer el cambio es fácil ver que 
+\[\rho = \sqrt{x^{2} + y^{2}} \quad \text{y} \quad \theta = \arctan\left(\frac{y}{x}\right) .\]
+Es sencillo comprobar que 
+\[J\left(\rho, \theta \right) = \begin{pmatrix} \cos\theta & -\rho\sin\theta \\ \sin\theta & \rho\cos\theta \end{pmatrix} \Rightarrow \left|\det J\left(\rho, \theta\right)\right|=\rho	 .\]
+En este caso podemos considerar $\displaystyle \varphi : [0, \infty) \times [0, 2\pi) \to \R^{2} $.
+\begin{eg}
+	Consideremos $\displaystyle A = \left\{ \left(x,y\right) \in \R^{2} \; : \; x^{2} +y^{2}\leq 1\right\}  $. Tenemos que 
+	\[v\left(A\right)=\int _{A} \; dx\; dy = \int^{1}_{-1} \int^{\sqrt{1-x^{2}}}_{-\sqrt{1-x^{2}}}  \; dy \; dx = \int^{1}_{-1} 2\sqrt{1-x^{2}} \; dx=\pi .\]
+Intentemos resolver el problema pero esta vez con un cambio de variable:
+\[v\left(A\right) = \int^{2\pi }_{0} \int^{1}_{0} \rho \; d\rho \; d\theta=\int^{2\pi }_{0} \frac{1}{2} \; d\theta = \pi .\]
+Podemos ver que hemos obtenido el mismo valor por los dos métodos.
+\end{eg}
 

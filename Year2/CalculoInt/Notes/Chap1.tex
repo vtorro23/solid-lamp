@@ -498,6 +498,21 @@ A partir de aquí es sencillo ver inducitvamente que la proposición se cumple p
 	Sea $\displaystyle A \subset \R^{n} $. Decimos que $\displaystyle A $ tiene \textbf{medida nula} si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists \left\{ J_{k}\right\} _{k \in \N} $ familia de rectángulos tales que 
 	\[A \subset \bigcup_{k \in \N}J_{k} \quad \text{y} \quad \sum^{\infty}_{k = 1}v\left(J_{k}\right) < \epsilon  .\]
 \end{definition}
+\begin{lema}
+	Un conjunto no vacío $\displaystyle A \subset \R^{n} $ tiene medida nula si y solo si $\displaystyle \forall \epsilon > 0 $ existe una sucesión de rectángulos $\displaystyle \left\{ R_{j}\right\} _{j \in \N} $ tales que 
+	\[ A \subset \bigcup_{j \in \N}\Int\left(R_{j}\right) \quad \text{y}\quad \sum^{\infty}_{j = 1}v\left(R_{j}\right) < \epsilon  .\]
+\end{lema}
+\begin{proof}
+	La segunda implicación es trivial, por lo que sólo demostraremos la primera. Dado $\displaystyle \epsilon > 0 $, existe una sucesión de rectángulos $\displaystyle \left\{ Q_{j}\right\} _{j \in \N} $ tales que 
+	\[A \subset \bigcup_{j \in \N}Q_{j} \quad \text{y}\quad \sum^{\infty}_{j= 1}v\left(Q_{j}\right)< \frac{\epsilon }{2} ,\]
+	donde $\displaystyle Q_{j} = \left[a_{1}^{j}, b_{1}^{j}\right] \times \left[a_{n}^{j}, b_{n}^{j}\right]  $ y $\displaystyle v\left(Q_{j}\right)=\prod^{n}_{k=1}\left(b^{j}_{k}-a^{j}_{k}\right) $, $\displaystyle \forall j \in \N $. Para $\displaystyle \delta_{j} > 0 $ definimos
+	\[R_{j}=\left[a_{1}^{j}-\delta_{j}, b_{1}^{j}+\delta_{j}\right] \times \cdots \times \left[a_{n}^{j}-\delta_{j}, b_{n}^{j}+\delta_{j}\right]  .\]
+Claramente tenemos que $\displaystyle Q_{j}\subset \Int\left(R_{j}\right) $ y además
+\[v\left(R_{j}\right) = \prod^{n}_{k = 1}\left(b^{j}_{k}-a^{j}_{k}+2\delta_{j}\right)\xrightarrow{\delta_{j}\to0}v\left(Q_{j}\right), \; \forall j \in \N .\]
+Cogemos $\displaystyle \delta_{j} $ de forma que $\displaystyle v\left(R_{j}\right) \leq v\left(Q_{j}\right)+\frac{\epsilon }{2 \cdot 2^{j}} $. De esta forma tenemos que $\displaystyle A \subset \bigcup_{j \in \N}R_{j} $ y además
+\[\sum^{\infty}_{j = 1}v\left(R_{j}\right) \leq \sum^{\infty}_{j = 1}\left(v\left(Q_{j}\right)+\frac{\epsilon }{2 \cdot 2^{j}}\right)=\sum^{\infty}_{j = 1}v\left(Q_{j}\right) + \sum^{\infty}_{j = 1}\frac{\epsilon }{2 \cdot 2^{j}} < \frac{\epsilon }{2} + \frac{\epsilon }{2} = \epsilon.\]
+\end{proof}
+
 \begin{prop}
 Si $\displaystyle A \subset \R^{n} $ tiene contenido nulo entonces también tiene medida nula.
 \end{prop}
@@ -549,7 +564,11 @@ Sea $\displaystyle A \subset \R^{n} $ tal que $\displaystyle A \supset R $ con $
 Sea $\displaystyle K \subset \R^{n} $ compacto. Entonces $\displaystyle K $ tiene contenido nulo si y solo si $\displaystyle K $ tiene medida nula.
 \end{theorem}
 \begin{proof}
-La primera implicación es cierta para cualquier subconjunto de $\displaystyle \R^{n} $, por lo que demostraremos únicamente la segunda implicación. Supongamos que $\displaystyle K $ no tiene contenido nulo.
+	La primera implicación es cierta para cualquier subconjunto de $\displaystyle \R^{n} $, por lo que demostraremos únicamente la segunda implicación. Supongamos que $\displaystyle K \subset \R^{n} $ tiene medida nula, entonces existen $\displaystyle \left\{ R_{j}\right\} _{j \in \N} $ rectángulos tales que 
+	\[K \subset \bigcup_{j \in \N}\Int\left(R_{j}\right) \quad \text{y} \quad \sum^{\infty}_{j= 1}v\left(R_{j}\right)< \epsilon  .\]
+	Como se trata de un recubrimiento abierto de $\displaystyle K $, por ser $\displaystyle K $ compacto debe ser que existe un subrecubrimiento finito, es decir, exsiten $\displaystyle \left\{ R_{j_{1}}, \ldots, R_{j_{N}}\right\}  $ tal que $\displaystyle K \subset \bigcup_{i = 1}^{N}R_{j_{i}} $ y además
+	\[\sum^{N}_{i=1}v\left(R_{j_{i}}\right)\leq \sum^{\infty}_{j = 1}v\left(R_{j}\right) < \epsilon  .\]
+	Por tanto, $\displaystyle K $ tiene contenido nulo.
 \end{proof}
 
 \section{Teorema de Lebesgue}
@@ -576,9 +595,24 @@ Es sencillo ver que $\displaystyle D\left(f + g\right)\subset D\left(f\right) \c
 \begin{colorary}
 Sean $\displaystyle f, g : R \to \R $ integrables en $\displaystyle R $. Entonces, $\displaystyle f \cdot g $ es integrable en $\displaystyle R $.
 \end{colorary}
+\begin{prop}
+Un conjunto no vacío y acotado $\displaystyle A \subset \R^{n} $ es medible Jordan si y solo si $\displaystyle \partial A $ tiene medida nula \footnote{Recordamos que $\displaystyle \partial A = \left\{ x \in R \; : \; B\left(x,\epsilon \right)\cap A \neq \emptyset \; \text{y} \; B\left(x,\epsilon \right) \cap \left(R/A\right) \neq \emptyset, \; \forall \epsilon > 0\right\}  $. }.
+\end{prop}
+\begin{proof}
+$\displaystyle A $ es medible Jordan si y solo si existe $\displaystyle R \subset \R^{n} $ rectángulo con $\displaystyle A \subset R $ tal que $\displaystyle \chi_{A} $ es integrable en $\displaystyle R $. Esto es equivalente a que $\displaystyle D\left(\chi_{A}\right) $ tenga medida nula. Veamos que $\displaystyle D\left(\chi_{A}\right)=\partial A $.
+\begin{description}
+\item[($\displaystyle \Rightarrow$)] Si $\displaystyle x \in \partial A $, entonces se cumple que $\displaystyle \forall \epsilon > 0 $, $\displaystyle B\left(x,\epsilon \right)\cap A \neq \emptyset $ y $\displaystyle B\left(x,\epsilon \right)\cap \left(R/A\right) \neq \emptyset $. 
+Así, existen sucesiones $\displaystyle \left\{ y_{j}\right\} _{j \in \N} \subset A $ y $\left\{ z_{j}\right\} _{j \in \N}\subset R/A $ tales que $\displaystyle y_{j},z_{j}\to x $. Así, tenemos que $\displaystyle \chi_{A}\left(y_{j}\right) \to 1 $ y $\displaystyle \chi_{A}\left(z_{j}\right)\to 0 $, por lo que $\displaystyle \chi_{A} $ es discontinua en $\displaystyle x $.
+\item[($\displaystyle \Leftarrow $)] Si $\displaystyle x \not\in \partial A $, existe $\displaystyle \epsilon_{0} > 0 $ para el cual podemos distinguir dos casos:
+	\begin{itemize}
+	\item $\displaystyle B\left(x, \epsilon_{0}\right) \cap A = \emptyset $, por lo que debe ser que $\displaystyle B\left(x,\epsilon_{0}\right) \subset R/A $. Tenemos que $\displaystyle \chi_{A}|_{B\left(x, \epsilon_{0}\right)}\equiv 0 $, por lo que es continua en $\displaystyle x $ y $\displaystyle x \not\in D\left(\chi_{A}\right) $.
+	\item $\displaystyle B\left(x, \epsilon _{0}\right)\cap \left(R/A\right)=\emptyset $, por lo que debe ser que $\displaystyle B\left(x, \epsilon_{0}\right)\subset A $. Tenemos que $\displaystyle \chi_{A}|_{B\left(x, \epsilon _{0}\right)} \equiv 1 $, por lo que es continua en $\displaystyle x $ y $\displaystyle x \not\in D\left(\chi_{A}\right) $.
+	\end{itemize}
+\end{description}
+\end{proof}
 
 \begin{observation}
-	Recordamos que $\displaystyle A \subset \R^{n} $ acotado es medible Jordan si y solo si existe $\displaystyle R \subset \R^{n} $ rectángulo tal que $\displaystyle \chi_{A} $ es integrable en $\displaystyle R $. Entonces, por el criterio de Lebesgue, $\displaystyle A $ es medible Jordan si y solo si $\displaystyle D\left(\chi_{A}\right) $ tiene medida nula. Tenemos que $\displaystyle D\left(\chi_{A}\right) = \partial A $, por lo que buscamos que $\displaystyle \partial A $ tenga medida nula \footnote{Recordamos que $\displaystyle \partial A = \left\{ x \in R \; : \; B\left(x,\epsilon \right)\cap A \neq \emptyset \; \text{y} \; B\left(x,\epsilon \right) \cap \left(R/A\right) \neq \emptyset, \; \forall \epsilon > 0\right\}  $. }.
+	Recordamos que $\displaystyle A \subset \R^{n} $ acotado es medible Jordan si y solo si existe $\displaystyle R \subset \R^{n} $ rectángulo tal que $\displaystyle \chi_{A} $ es integrable en $\displaystyle R $. Entonces, por el criterio de Lebesgue, $\displaystyle A $ es medible Jordan si y solo si $\displaystyle D\left(\chi_{A}\right) $ tiene medida nula. Tenemos que $\displaystyle D\left(\chi_{A}\right) = \partial A $, por lo que buscamos que $\displaystyle \partial A $ tenga medida nula .
 \end{observation}
 \begin{eg}
 	Consideremos $\displaystyle A = \Q \cap \left[0,1\right]  $. Tenemos que $\displaystyle \partial A = \left[0,1\right]  $ y como $\displaystyle v\left(\partial A\right) = 1 \neq 0$, $\displaystyle \partial A $ no tiene medida nula por lo que $\displaystyle A $ no es medible Jordan.
