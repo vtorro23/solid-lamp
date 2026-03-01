@@ -266,6 +266,243 @@ Así, tenemos que $\displaystyle C\left(x\right)=-\frac{x^{2}}{2} $ \footnote{No
 \begin{observation}[Factor integrante]
 Hay EDOS que no son exactas, pero que si las multiplicamos por una función $\displaystyle \mu\left(t,x\right) $ se convierten en exactas. Es decir, $\displaystyle M\left(t,x\right)dt + N\left(t,x\right)dx=0 $ no es exacta, pero existe $\displaystyle \mu $ tal que 
 \[\underbrace{\mu M\left(t,x\right)}_{\widetilde{M}} + \underbrace{\mu N\left(t,x\right)}_{\tilde{N}} x' = 0 ,\]
-es exacta puesto que $\displaystyle \frac{\partial \widetilde{M}}{\partial x}= \frac{\partial \tilde{N}}{\partial t} $. A $\displaystyle \mu $ lo llamamos \textbf{factor integrante}. Si no nos dan alguna información de $\displaystyle \mu $ para que lo podeamos calcular, no podemos calcular $\displaystyle \mu $ ni la solución de la EDO (sería una EDP muy complicada).
+es exacta puesto que $\displaystyle \frac{\partial \widetilde{M}}{\partial x}= \frac{\partial \tilde{N}}{\partial t} $. A $\displaystyle \mu $ lo llamamos \textbf{factor integrante}. A la hora de buscar uno, buscamos que se cumpla la condición
+\[\frac{\partial M}{\partial x}\mu + M\frac{\partial \mu}{\partial x}= \frac{\partial N}{\partial t}\mu + N\frac{\partial \mu}{\partial t} .\]
+Si no nos dan alguna información de $\displaystyle \mu $ para que lo podeamos calcular, no podemos calcular $\displaystyle \mu $ ni la solución de la EDO (sería una EDP muy complicada).
 \end{observation}
+\begin{eg}[Hoja 2, Ejercicio 10]
+Consideremos la EDO 
+\[\left(x\cos \frac{x}{t}-t\right)dt - t \cos \frac{x}{t}dx = 0 .\]
+Veamos si es exacta y si no lo es buscaremos un factor integrante $\displaystyle \mu\left(t,x\right)=\mu\left(\frac{x}{t}\right) $. Tenemos que $\displaystyle M\left(t,x\right)=x\cos\frac{x}{t} - t $ y $\displaystyle N\left(t,x\right)=-t \cos \frac{x}{t} $. Tenemos que 
+\[\frac{\partial M}{\partial x} = \cos \frac{x}{t} + -\frac{x}{t}\sin \frac{x}{t}, \quad \frac{\partial N}{\partial t}=-\cos \frac{x}{t} - \frac{x}{t}\sin \frac{x}{t} .\]
+Como $\displaystyle \frac{\partial M}{\partial x} \neq \frac{\partial N}{\partial t} $, tenemos que la EDO no es exacta. Buscamos el factor integrante. Tendremos que $\displaystyle \widetilde{M}\left(t,x\right)=\mu\left(\frac{x}{t}\right)\left(x\cos \frac{x}{t}-t\right) $ y $\displaystyle \tilde{N}\left(t,x\right)=-\mu\left(\frac{x}{t}\right)t \cos \frac{x}{t} $. Para que sea exacta necesitamos que $\displaystyle \frac{\partial \widetilde{M}}{\partial x} = \frac{\partial \tilde{N}}{\partial t} $. 
+\[ \frac{\partial \widetilde{M}}{\partial x} = \frac{1}{t}\mu'\left(\frac{x}{t}\right)\left(x\cos \frac{x}{t}-t\right)+\mu\left(\frac{x}{t}\right)\left(\cos \frac{x}{t}- \frac{x}{t}\sin \frac{x}{t}\right) .\]
+\[\frac{\partial \tilde{N}}{\partial t}= \frac{x}{t ^{2}}\mu'\left(\frac{x}{t}\right)t\cos \frac{x}{t} - \mu\left(\frac{x}{t}\right)\left(\cos \frac{x}{t} + \frac{x}{t} \sin \frac{x}{t}\right) .\]
+Para que coincidan ambos valores tenemos que 
+\[ 2\mu\left(\frac{x}{t}\right)\cos\frac{x}{t} = \mu'\left(\frac{x}{t}\right).\]
+Así, nos queda una EDO de separación de variables. Cogemos $\displaystyle s = \frac{x}{t} $ y tenemos que 
+\[\frac{\mu'\left(s\right)}{\mu\left(s\right)} = 2\cos s \iff \int \frac{1}{\mu} \; d\mu = \int 2\cos s \; d s \iff \ln \mu = 2\sin s \iff \mu\left(\frac{x}{t}\right) = Ce^{2\sin \frac{x}{t}} .\]
+Podemos coger cualquier factor integrante, por lo que podemos coger $\displaystyle \mu \left(\frac{x}{t}\right)=\exp\left(2\sin \frac{x}{t}\right) $. Ahora podemos resolver la EDO $\displaystyle \widetilde{M}\left(t,x\right)dt + \tilde{N}\left(t,x\right)dx = 0 $ como una EDO exacta. Tenemos que existe $\displaystyle F : \Omega \subset \R^{2} \to \R $ tal que 
+\[\frac{\partial F}{\partial t}=\tilde{M}\left(t,x\right)=\exp\left(2\sin \frac{x}{t}\right)\left(x\cos \frac{x}{t}-t\right) \quad \text{y} \quad \frac{\partial F}{\partial x}= \tilde{N}\left(t,x\right) = -\exp\left(2\sin \frac{x}{t}\right)t \cos \frac{x}{t}.\]
+Tendremos que 
+\[F\left(t,x\right) = -t\int \exp\left(2\sin \frac{x}{t}\right)\cos \frac{x}{t} \; dx = - \frac{t ^{2}}{2}\exp\left(2\sin \frac{x}{t}\right) + C\left(t\right).\]
+Para calcular $\displaystyle C\left(t\right) $ tenemos que 
+\[\frac{\partial F}{\partial t}=-t\exp\left(2\sin \frac{x}{t}\right) + x\exp\left(\sin \frac{x}{t}\right)\cos \frac{x}{t} + C'\left(t\right) = \exp\left(2\sin \frac{x}{t}\right)x\cos \frac{x}{t}-t\exp\left(2\sin \frac{x}{t}\right)  .\]
+Así, tenemos que $\displaystyle C'\left(t\right)= 0 $, por lo que $\displaystyle C\left(t\right) $ es una constante y tendremos que la solución de la EDO será
+\[-\frac{t ^{2}}{2}\exp\left(2\sin \frac{x}{t}\right) = C, \; C \in \R .\]
+\end{eg}
+\begin{eg}[Hoja 2, Ejercicio 11 apartado (a)]
+Busca un factor integrante de tipo $\displaystyle \mu\left(x\right) $ o $\displaystyle \mu\left(y\right) $ y resuelve la EDO. Consideremos la EDO $\displaystyle \left(x + y\right)dx + dy = 0 $. En este caso tenemos que $\displaystyle M\left(x,y\right)=x + y $ y $\displaystyle N\left(x,y\right)= 1 $. Tenemos que 
+	\[\frac{\partial M}{\partial y}= 1, \quad \frac{\partial N}{\partial x}= 0 .\]
+	Como $\displaystyle \frac{\partial M}{\partial y}\neq \frac{\partial N}{\partial x} $, la EDO no es exacta, por lo que debemos multiplicar por un factor integrante. Cogemos $\displaystyle \mu\left(x\right) $, tendremos que $\displaystyle \widetilde{M}\left(x,y\right)=\mu\left(x\right)\left(x+y\right) $ y $\displaystyle \tilde{N}\left(x,y\right)=\mu\left(x\right) $, así 
+	\[\frac{\partial \widetilde{M}}{\partial y} = \mu\left(x\right) \quad \text{y} \quad \frac{\partial \tilde{N}}{\partial x}=\mu'\left(x\right) .\]
+Así, buscamos que $\displaystyle \mu\left(x\right)=\mu'\left(x\right) $, por lo que cogemos $\displaystyle \mu\left(x\right)= e^{x} $. Así, podemos resolver la nueva EDO como una EDO exacta. Buscamos $\displaystyle F : \R ^{2} \to \R $ tal que 
+\[\frac{\partial F}{\partial x}= \widetilde{M}\left(x,y\right)=e^{x}\left(x+y\right) \quad \text{y} \quad \frac{\partial F}{\partial y}=\tilde{N}\left(x,y\right)=e^{x}.\]
+Así, tendremos que 
+\[F\left(x,y\right)=\int e^{x} \; dy = e^{x}y + C\left(x\right) .\]
+Buscamos $\displaystyle C\left(x\right) $:
+\[e^{x}y + C'\left(x\right)=e^{x}\left(x+y\right) \Rightarrow C'\left(x\right)=e^{x}x .\]
+Por tanto, tendremos que $\displaystyle C\left(x\right)=e^{x}x-e^{x} $ y así nos queda que la solución de la EDO será
+\[e^{x}y + e^{x}x - e^{x} = C, \; C \in \R .\]
+\end{eg}
+\section{Cambios de variable}
+\begin{definition}[EDO de Bernoulli]
+Se denomina \textbf{EDO de Bernoulli} a las EDO's que tienen la forma 
+\[x'=p\left(t\right)x + q\left(t\right)x^{\alpha }, \; \alpha \in \R .\]
+\end{definition}
+\begin{observation}
+Podemos ver que 
+\begin{itemize}
+\item Si $\displaystyle \alpha = 0 $, es una EDO lineal no homogénea.
+\item Si $\displaystyle \alpha = 1 $, es una EDO lineal homogénea. 
+\end{itemize}
+\end{observation}
+\begin{observation}[Método de resolución]
+	Supongamos que $\displaystyle \alpha \not\in \left\{ 0,1\right\}  $. Podemos escribir
+	\[x^{-\alpha }x' = p\left(t\right)x^{1-\alpha }+q\left(t\right) .\]
+Sea $\displaystyle z\left(t\right)=x^{1-\alpha } $, entonces $\displaystyle z'\left(t\right)=\left(1-\alpha \right)x^{-\alpha }x' $. Así, la EDO nos queda
+\[\frac{z'}{1-\alpha }=p\left(t\right)z + q\left(t\right) ,\]
+que es una EDO lineal no homogénea. 
+\end{observation}
+\begin{eg}[Hoja 2, Ejercicio 12 apartado (d)]
+Resolver la EDO
+\[3xy^{2}\frac{dy}{dx}+y^{3}=\frac{8}{x} .\]
+Podemos reescribir la EDO de forma que 
+\[y' = -\frac{y}{3x}+\frac{8}{3x^{2}}y^{-2} .\]
+Se trata de una EDO de Bernoulli de grado $\displaystyle \alpha = -2 $. Podemos escribir
+\[y^{2}y' = \frac{-1}{3x}y^{3}+\frac{8}{3x^{2}} .\]
+Cogiendo $\displaystyle z\left(x\right)=y^{3} $, tenemos que $\displaystyle 3y^{2}y' = z' $, así nos queda
+\[\left(E\right) \quad z' = -\frac{z}{x}+\frac{8}{x^{2}} .\]
+Se trata de una EDO lineal. La EDO homogénea asociada es $\displaystyle \left(E_{h}\right) z_{h}' = -\frac{z_{h}}{x} $, que podemos calcular por separación de variables
+\[\frac{z_{h}'}{z_{h}}= -\frac{1}{x} \iff z_{h}=\frac{C}{x}, \; C \in \R .\]
+Calculamos $\displaystyle z_{p}\left(x\right) $ por el método de separación de constantes: $\displaystyle z_{p}\left(x\right)=\frac{C\left(x\right)}{z} $, entonces $\displaystyle z_{p}' = \frac{C'}{x}-\frac{C}{x^{2}} $. Queremos que 
+\[z'_{p}=-\frac{1}{x}z_{p} + \frac{8}{x^{2}} \Rightarrow C'\left(x\right)=\frac{8}{x} \Rightarrow C\left(x\right)=8\ln x .\]
+Así, tenemos que la solución general de $\displaystyle \left(E\right) $ es
+\[z\left(x\right)= \frac{C}{x} + \frac{8\ln x}{x} .\]
+Por tanto, la solución general de nuestra EDO es
+\[y^{3}=\frac{C}{x}+\frac{8\ln x}{x} .\]
+\end{eg}
+
+\begin{definition}[EDO de Riccati]
+Se llama \textbf{EDO de Riccati} a las EDO's que tiene la forma
+\[x' = r\left(t\right)+p\left(t\right)+q\left(t\right)x^{2} .\]
+\end{definition}
+\begin{observation}
+Podemos obtener la solución general a partir de una solución particular conocida $\displaystyle x_{0}\left(t\right) $. El cambio de variable $\displaystyle z\left(t\right)= x\left(t\right)-x_{0}\left(t\right) $ convierte a la EDO de Riccati en una de Bernoulli. En efecto, tendremos que $\displaystyle x' = z' + x_{0}' $ y como $\displaystyle x_{0} $ es solución tendremos que 
+\[x_{0}' = r\left(t\right) + p\left(t\right)x_{0}+q\left(t\right)x_{0} .\]
+Sustituyendo en la EDO,
+\[z' + x_{0}' = r\left(t\right) + p\left(t\right)z + p\left(t\right)x_{0}+ q\left(t\right)z^{2} + q\left(t\right)x_{0}^{2} +2q\left(t\right)zx_{0} .\]
+\[ \Rightarrow z' = \left(p\left(t\right)+2q\left(t\right)x_{0}\right)z + q\left(t\right)z^{2} .\]
+\end{observation}
+\begin{eg}[Hoja 2, Ejercicio 13]
+Sabiendo que $\displaystyle x\left(t\right)=\tan t $ es una solución particular de
+\[\frac{dx}{dt}\sin\left(2t\right)x - x^{2} = 1 - 2\sin ^{2}t .\]
+Hallemos la solución general. Como es una EDO de Riccati, hacemos el cambio de variable $\displaystyle x\left(t\right)=z\left(t\right)+ \tan t $ para convertirla en una EDO de Bernoulli. Tenemos que
+\[x'\left(t\right)=z'\left(t\right)+\frac{1}{\cos ^{2}t} .\]
+Así, tenemos que 
+\[x' = z' + \frac{1}{\cos ^{2}t} = \sin\left(2t\right)z + \sin2t \tan t + z^{2} + \tan ^{2}t + 2\tan t z+1-2\sin ^{2}t .\]
+\[\Rightarrow z' = \left(\sin 2t + 2\tan t\right)z + z^{2} .\]
+Para resolver esto aplicamos el método anterior para resolver las EDO's de Bernoulli. 
+\end{eg}
+\begin{eg}[Hoja 2, Ejercicio 16 apartado (b)]
+Nos preguntan si la EDO de Riccati $\displaystyle y' + y + y^{2} + e^{x} = 0 $ se transforma en una EDO lineal de orden 2, mediante el cambio $\displaystyle y = \frac{z'}{z} $. Tendremos que 
+\[y' = \frac{z'' z-\left(z'\right)^{2}}{z^{2}} .\]
+Así, nos queda
+\[\frac{z''}{z}-\frac{z'^{2}}{z^{2}}+\frac{z'}{z}+\frac{z'^{2}}{z^{2}}+e^{x} =0 \iff z'' + z' + e^{x}z = 0 .\]
+Claramente se trata de una EDO homogénea de orden 2, por lo que el enunciado es verdadero. 
+\end{eg}
+\section{EDOS de segundo orden reducibles}
+En su forma general una EDO de orden 2 es de la forma 
+\[F\left(t, x, x', x''\right)=0 .\]
+Si faltan $\displaystyle x $ o $\displaystyle t $ en esa expresión, mediante un cambio de variable la EDO se convierte en una de orden 1. Podemos distinguir varios casos:
+
+\begin{itemize}
+\item \textbf{Primer caso.} Consideremos el caso $\displaystyle F\left(x'', x', t\right)= 0 $. Tomamos $\displaystyle x'\left(t\right)=z\left(t\right) $ y $\displaystyle x''\left(t\right)=z'\left(t\right) $, así la EDO nos queda $\displaystyle F\left(z', z, t\right)= 0 $. 
+\item \textbf{Segundo caso.} Consideremos $\displaystyle F\left(x'', x', x\right)= 0 $. Hacemos el cambio $\displaystyle x'\left(t\right)=z\left(t\right) $ y tenemos que 
+	\[x''\left(t\right)=\frac{d}{dt}x' = \frac{d}{dt}\frac{dx}{dx}x' = \frac{d}{dx}\left(\frac{dx}{dt}\right)x'=z\frac{d}{dx}z .\]
+Así, la EDO nos queda $\displaystyle F\left(\frac{d}{dx}z, z, x\right)= 0 $.
+\end{itemize}
+
+\begin{eg}[Hoja 2, Ejercicio 10 apartado 10]
+	Consideremos la EDO
+	\[y'' + \left(y'\right)^{2}= 1 .\]
+Estamos en el caso número 1. Así, podemos coger $\displaystyle z\left(x\right)=y'\left(x\right) $ y obtenemos que la EDO se convierte en $\displaystyle z' + z^{2}=1 $, que es una EDO por separación de variables:
+\[\frac{z'}{1-z^{2}}=1 \iff \frac{1}{2}\ln \left(\frac{1+z}{1-z}\right)=x+C \iff \frac{1+z}{1-z}=Ce^{2x}, \; C \in \R .\]
+Despejamos $\displaystyle z = y' $ 
+\[y' =z = \frac{Ce^{2x}-1}{Ce^{2x}+1}, \quad C \in \R .\]
+Entonces, tendremos que 
+\[y = \int \frac{Ce^{2x}-1}{Ce^{2x}+1} \; dx = \frac{1}{2}\ln C_{1}e^{2x} - \ln C_{1}e^{2x} + \ln \left|C_{1}e^{2x}+1\right|+C_{2}, \quad C_{1}, C_{2} \in \R .\]
+\end{eg}
+\begin{eg}[Hoja 2, Ejercicio 12 apartado 7]
+Consideremos el problema de valor inicial
+\[
+\begin{cases}
+y'' +y=y'^{2} \\
+y\left(1\right)=\frac{1}{4} \\
+y'\left(1\right)=\frac{1}{2}
+\end{cases}
+.\]
+Cogemos $\displaystyle z\left(x\right)=y' $. Así, tendremos que 
+\[y'' = \frac{d}{dx}y' = \frac{dy}{dx}\frac{d}{dx}y' = z\frac{d}{dy}z .\]
+La EDO nos queda
+\[z\frac{dz}{dy} +y=z^{2} \iff \frac{dz}{dy} = z - \frac{y}{z},\]
+que es una Bernoulli de grado $\displaystyle \alpha = -1 $. Se puede comprobar que también es de factor integrante $\displaystyle \mu\left(y\right) $.  En efecto, podemos reescribir la EDO de la forma
+\[z' = z-yz^{-1} .\]
+Hacemos el cambio $\displaystyle u\left(y\right)=z^{2} $ de forma que $\displaystyle u'\left(y\right)=2zz' $, por lo que la EDO nos queda de la forma
+\[\frac{u'}{2}+y=u ,\]
+que es una EDO lineal no homogénea. Si la resolvemos obtenemos
+\[u = Ce^{2y}+y+\frac{1}{2} \Rightarrow z^{2} = Ce^{2y}+y+\frac{1}{2} .\]
+Calculamos el valor de $\displaystyle C $. En $\displaystyle x = 1 $, tenemos que $\displaystyle y = -\frac{1}{4} $ por lo que $\displaystyle z = \frac{1}{2} $ y se tiene que 
+\[\frac{1}{4}=Ce^{-\frac{1}{2}}+\frac{1}{4}\Rightarrow C = 0 .\]
+Por tanto, 
+\[z = \sqrt{y + \frac{1}{2}} ,\]
+las condiciones iniciales nos obligan a quedarnos con la rama positiva. Así, nos queda
+\[y' = \sqrt{y + \frac{1}{2}} ,\]
+que es una EDO de variables separadas, y obtenemos
+\[2\sqrt{y + \frac{1}{2}} = x + C \Rightarrow y + \frac{1}{2} = \frac{\left(x+C\right)^{2}}{4} .\]
+Si sustituimos las condiciones iniciales tenemos que 
+\[\frac{1}{4} = \frac{\left(1 + C\right)^{2}}{4} \Rightarrow C = 0 .\]
+Así, la solución de nuestra EDO es
+\[y = \frac{x^{2}}{4}-\frac{1}{2} .\]
+\end{eg}
+\section{Ecuación de Clairaut y de Legendre}
+\begin{definition}[Ecuaciones de Clairaut y Legendre]
+Se denomina \textbf{ecuación de Clairaut} a las EDO's de la forma
+\[x = tx' + f\left(x'\right) ,\]
+donde $\displaystyle f $ es derivable.  
+\end{definition}
+\begin{observation}[Método de resolución de las ecuaciones de Clairaut]
+Busco una solución que sea de clase $\displaystyle \mathcal{C}^{2} $. En este caso, tenemos que 
+\[x' = x' + tx'' + f'\left(x'\right)x'' \Rightarrow x''\left(t+f'\left(x'\right)\right)=0 .\]
+Tenemos dos posibles soluciones:
+\begin{itemize}
+\item La solución $\displaystyle x'' = 0 $ define una familia de soluciones.
+\item La solución $\displaystyle t + f'\left(x'\right) = 0 $ va a definir la envolvente de dicha familia que es solución singular de la EDO. 
+\end{itemize}
+En el primer caso, como $\displaystyle x'' = 0 $ debe ser que $\displaystyle x' = C $ y si volvemos a la EDO original tenemos que 
+\[x_{C}\left(t\right)=tC + f\left(C\right), \; C \in \R ,\]
+es una familia de soluciones de la EDO. En el otro caso, tenemos que $\displaystyle t +f'\left(x'\right)=0 $. Como $\displaystyle \left(t, x\left(t\right)\right) $ dependen de $\displaystyle x' $, se suele dar la solución en forma paramétrica $\displaystyle x'\left(t\right)=p\left(t\right) $, mi solución es
+\[
+\begin{cases}
+t = f'\left(p\right) \\
+x = f'\left(p\right)p + f\left(p\right)
+\end{cases}
+.\]
+\end{observation}
+\begin{eg}[Hoja 2, Ejercicio 15 apartado (b)]
+Consideremos la EDO 
+\[ y = xy' + \frac{a}{2y'}, \; a \in \R, \; a \neq 0 .\]
+Derivando obtenemos 
+\[y' = y' + xy'' -\frac{a}{4}\left(y'\right)^{2}y'' \Rightarrow y''\left(x-\frac{a}{4}\left(y'\right)^{-2}\right)=0 .\]
+Obtenemos las siguientes soluciones:
+\begin{itemize}
+\item La familia monoparamétrica $\displaystyle y_{C}\left(x\right)=Cx + \frac{a}{2^{C}} $. 
+\item Tendremos que 
+	\[
+	\begin{cases}
+	x = -\frac{a}{4}p^{-2} \\
+	y = - \frac{a}{4}p^{-1}+\frac{1}{2p}
+	\end{cases}
+	.\]
+\end{itemize}
+\end{eg}
+\begin{eg}
+Consideremos la EDO $\displaystyle x = tx' + f\left(x'\right) $ con $\displaystyle f $ derivable. Tenemos que 
+\[x' = x' + tx'' + 2x'x'' \iff x''\left(t+2x'\right)=0 \iff 
+\begin{cases}
+x'' = 0 \Rightarrow x_{C}= tC + C^{2} \\
+t = -2x'
+\end{cases}
+.\]
+En el segundo caso parametrizamos $\displaystyle x' = p $ y nos queda
+\[ 
+\begin{cases}
+t = -2p \\
+x = -2pp +p^{2}=-\frac{t ^{2}}{2}+\frac{t ^{2}}{4}=-\frac{t ^{2}}{4}
+\end{cases}
+.\]
+Así, obtenemos la solución singular $\displaystyle x\left(t\right)=-\frac{t ^{2}}{4} $. 
+\end{eg}
+\begin{definition}[Ecuación de Legendre]
+Las \textbf{ecuaciones de Legendre} son las EDO's de la forma
+\[x=tg\left(x'\right) + f\left(x'\right) ,\]
+con $\displaystyle f $ y $\displaystyle g $ derivables \footnote{Si hacemos $\displaystyle g\left(x\right)=x $, obtenemos la de Clairaut.}.
+\end{definition}
+
+\begin{observation}[Método de resolución de las ecuaciones de Legendre]
+Consideremos la EDO $\displaystyle x = tg\left(x'\right)+f\left(x'\right) $, con $\displaystyle f $ y $\displaystyle g $ derivables. Vamos a buscar una solución de clase $\displaystyle \mathcal{C}^{2} $, de esta forma
+\[x' = g\left(x'\right)+tg'\left(x'\right)x'' + f'\left(x'\right)x'' .\]
+Parametrizamos $\displaystyle x' = p\left(t\right) $, así
+\[p -g\left(p\right)=\frac{dp}{dt}\left(tg'\left(p\right)+f\left(p\right)\right) .\]
+Distinguimos dos casos:
+\begin{itemize}
+\item $\displaystyle tg'\left(p\right)+f\left(p\right)\neq 0 $, entonces
+	\[\frac{p-g\left(p\right)}{tg'\left(p\right)+g'\left(p\right)} = \frac{dp}{dt} \iff \frac{dt}{dp} = \frac{tg'\left(p\right)+f'\left(p\right)}{p - g\left(p\right)} = \frac{g'\left(p\right)}{p - g\left(p\right)}t + \frac{f'\left(p\right)}{p - g\left(p\right)} .\]
+	Se trata de una EDO lineal de orden 1. 
+\item $\displaystyle tg'\left(p\right)+f\left(p\right)=0 $ produce la solución singular. 
+\end{itemize}
+\end{observation}
+\begin{eg}[Hoja 2, Ejercicio 15 apartado (a)]
+Consideremos la EDO 
+\end{eg}
 

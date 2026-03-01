@@ -22,6 +22,17 @@ es decir, cambiar el orden de integración. En este caso, los dos resultados coi
 	es integrable en $\displaystyle \left[a,b\right]  $ y 
 	\[\int _{\left[a,b\right] \times\left[c,d\right] }f = \int^{b}_{a} \int^{d}_{c} f\left(x,y\right) \; dy \; dx .\]
 \end{theorem}
+\begin{proof}
+	Como $\displaystyle f $ es integrable, para una partición $\displaystyle P \in \mathcal{P}\left(R\right) $ podemos coger los puntos que queramos dentro de cada rectángulo. Tendremos que si $\displaystyle P = P_{1} \times P_{2} $ con $\displaystyle P_{1}= \left\{ I_{1}, \ldots, I_{N}\right\} \in \mathcal{P}\left(\left[a,b\right] \right) $ y $\displaystyle P_{2}= \left\{ J_{1}, \ldots, J_{M}\right\} \in \mathcal{P}\left(\left[c,d\right] \right) $.
+\[
+\begin{split}
+	\int _{R}f \sim & \sum_{i}\sum_{j}f\left(x_{I_{i}}, y_{J_{j}}\right)v\left(I_{i} \times J_{j}\right)= \sum_{i}\left(\sum_{j}f\left(x_{i}, y_{j}\right)l\left(J_{j}\right)\right)l\left(I_{i}\right)\\
+	\sim & \sum_{i}\int _{J}f\left(x_{I_{i}}, y\right) \; dy  \; l\left(I_{i}\right)  \sim \int _{I}\int _{J}f\left(x,y\right) \; dy \; dx .
+\end{split}
+\]
+Esto no es una demostración pero nos da cierta intuición. 
+\end{proof}
+
 \begin{observation} Podemos hacer un par de observaciones.
 	\begin{itemize}
 	\item Es importante ver la condición de que $\displaystyle f_{x} $ sea integrable es necesaria puesto que el hecho de que $\displaystyle f $ sea integrable no implica siempre que $\displaystyle f_{x} $ lo sea.
@@ -90,4 +101,24 @@ Intentemos resolver el problema pero esta vez con un cambio de variable:
 \[v\left(A\right) = \int^{2\pi }_{0} \int^{1}_{0} \rho \; d\rho \; d\theta=\int^{2\pi }_{0} \frac{1}{2} \; d\theta = \pi .\]
 Podemos ver que hemos obtenido el mismo valor por los dos métodos.
 \end{eg}
+\begin{eg}[Cálculo de un volumen]
+	Para calcular un volumen en $\displaystyle \R^{3} $ cogemos un conjunto 
+	\[ A = \left\{ \left(x,y,z\right)\in \R^{3} \; :\; \left(x,y\right) \in B, 0 \leq z \leq g\left(x,y\right)\right\}.\]
+	Tendremos que 
+\[
+\begin{split}
+	\int _{A}f\left(x,y,z\right) \; dx \; dy \; dz = & \int _{R}\tilde{f}\left(x,y,z\right) \; dx \; dy \; dz \\
+	= & \int _{R_{1}}\int^{M}_{0} \tilde{f}\left(x,y,z\right)\; dz \; dx\; dy =\int _{B}\int^{M}_{0} \tilde{f}\left(x,y,z\right)\; dz \; dx \; dy\\
+	= & \int _{B}\int^{g\left(x,y\right)}_{0} f\left(x,y,z\right)\; dz \; dx \; dy.
+\end{split}
+\]
+\end{eg}
+\begin{theorem}[Teorema de cambio de variable]
+Sea $\displaystyle A \subset \R^{n} $ un abierto medible Jordan y sea $\displaystyle g : A \to \R^{n} $ es un $\displaystyle \mathcal{C}^{1} $-difeomorfismo sobre su imagen $\displaystyle B = g\left(A\right) $, con $\displaystyle B $ abierto medible Jordan \footnote{Por ser $\displaystyle g $ difeomorfismo se cumple que $\displaystyle \det\left(Jg\right)\neq 0 $.}. Supongamos que existen $\displaystyle M, m > 0 $ con $\displaystyle 0 < m < M $ tal que 
+\[ m \leq \left|\det Jg\left(t\right)\right| \leq M , \; \forall t \in A.\]
+Supongamos que $\displaystyle f $ es integrable en $\displaystyle B $. Entonces, la aplicación 
+\[t \to f\left(g\left(t\right)\right) \left|\det Jg\left(t\right)\right| ,\]
+es integrable en $\displaystyle A $ y 
+\[\int _{B}f \; dx = \int _{A}f\left(g\left(t\right)\right) \left|\det Jg\right| \; dt .\]
+\end{theorem}
 

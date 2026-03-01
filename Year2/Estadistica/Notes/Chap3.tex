@@ -1,0 +1,38 @@
+\chapter{Reducción de datos}
+Sea $\displaystyle \left(\Omega, \mathcal{A}, P \right) $ el espacio de probabilidad asociado a un experimento aleatorio $\displaystyle \mathcal{E} $, una variable aleatoria observable $\displaystyle X : \Omega \to \R $ y su modelo estadístico asociado $\displaystyle \left(\chi, \mathcal{B}, F_{\theta }\right)_{\theta \in \Theta \subset \R^{l}} $, $\displaystyle \mathcal{B}=\mathcal{B}\left(\R\right) $ y $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. $\displaystyle \left(n\right) $ de $\displaystyle X $.
+\begin{definition}[Estadístico suficiente]
+Decimos que $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) : \R^{n} \to \R^{m} $ es un \textbf{estadístico suficiente} para $\displaystyle \theta  $ si la distribución de probabilidad de la muestra condicionada por $\displaystyle T $ es independiente de $\displaystyle \theta  $. 
+\end{definition}
+\begin{eg}
+	Supongamos que $\displaystyle X\sim Ber\left(\theta\right) $. En este caso, tenemos que $\displaystyle f_{\theta}\left(x\right)=\theta^{x}\left(1-\theta\right)^{1-x} $ para $\displaystyle x \in \left\{ 0,1\right\}  $. En nuestro caso tenemos que $\displaystyle \mu= \theta $ y $\displaystyle \sigma^{2} = \theta\left(1-\theta \right) $. Veamos que $\displaystyle T = \sum^{n}_{i = 1}X_{i}\sim Ber\left(n, \theta\right) $ es suficiente para $\displaystyle \theta $. Tenemos que su función de densidad será 
+	\[f_{\theta }\left(t\right)=\begin{pmatrix} n \\ t \end{pmatrix}\theta^{t}\left(1-\theta\right)^{n-t}, \; t \in \left\{ 0, \ldots, n\right\}  .\]
+De esta forma, tendremos que si $\displaystyle \sum^{n}_{i=1}X_{i} = t $ entonces
+\[
+\begin{split}
+	P_{\theta}\left(X_{1}=x_{1}, \ldots, X_{n}=x_{n}|\sum^{n}_{i=1}X_{i}=t\right) = &\frac{P_{\theta}\left(X_{1}=x_{1}, \ldots, X_{n}=t - \sum^{n-1}_{i = 1}x_{i}\right)}{P\left(\sum^{n}_{i=1}X_{i}=t\right)} \\
+	= & \frac{\theta^{t}\left(1-\theta\right)^{n-t}}{\begin{pmatrix} n \\ t \end{pmatrix}\theta^{t}\left(1-\theta\right)^{n-t}}=\frac{1}{\begin{pmatrix} n\\ t \end{pmatrix}}, \; t = 0, \ldots, n.
+\end{split}
+\]
+\end{eg}
+\begin{theorem}[Teorema de factorización de Fisher]
+$\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) : \R^{n} \to \R^{m} $ es un estadístico suficiente para $\displaystyle \theta $ si y solo si existen funciones reales positivas $\displaystyle h : \R^{n} \to \R $ y $\displaystyle g_{\theta } : \R^{m} \to \R $ tales que 
+\[f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=h\left(x_{1}, \ldots, x_{n}\right)g_{\theta}\left(T\left(x_{1}, \ldots, x_{n}\right)\right) ,\]
+donde $\displaystyle f_{\theta}\left(x_{1}, \ldots, x_{n}\right) $ es la función de masa de la muestra. 
+\end{theorem}
+\begin{eg}[Ejercicio 1]
+	Sea $\displaystyle X $ una observación de una población $\displaystyle N\left(0, \sigma \right) $. Tenemos que $\displaystyle \sigma \in \Theta \subset \R^{+} $. Sabemos que 
+	\[f_{\sigma }\left(x\right)=\frac{1}{\sigma\sqrt{2\pi }}e^{-\frac{1}{2\sigma^{2}}x^{2}} .\]
+Veamos si $\displaystyle \left|X\right| $ es un estadístico suficiente. Por el teorema de caracterización de Fisher es fácil ver que $\displaystyle T = \left|X\right| $ es suficiente.
+\end{eg}
+\begin{eg}[Ejercicio 2]
+	Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. de $\displaystyle X $. 
+	\begin{description}
+	\item[(a)] $\displaystyle Beta\left(\alpha, \beta \right) $, $\displaystyle \alpha, \beta > 0 $. Tendremos que $\displaystyle \theta = \left(\alpha, \beta \right)\in \R^{+} \times \R^{+} $. Tendremos que  
+		\[ f_{\theta}\left(x\right)\propto K\left(\alpha, \beta \right)x^{\alpha-1}\left(1-x\right)^{\beta-1} = K\left(\alpha, \beta \right)e^{\left(\alpha - 1\right)\ln x + \left(\beta-1\right)\ln \left(1-x\right)} .\]
+	Podemos coger $\displaystyle q_{1}\left(\theta \right)=\alpha-1 $ y $\displaystyle t_{1}\left(x\right)=\ln x $ y también $\displaystyle q_{2}\left(\theta\right)=\beta-1 $ y $\displaystyle t_{2}\left(x\right)=\ln\left(1-x\right) $. Así, el estadístico suficiente será
+	\[ \left(\sum^{n}_{i=1}t_{1}\left(X_{i}\right), \sum^{n}_{i=1}t_{2}\left(X_{i}\right)\right)=\left(\sum^{n}_{i= 1}\ln X_{i}, \sum^{n}_{i=1}\ln\left(1-X_{i}\right)\right) .\]
+\item[(b)] 
+	\end{description}
+	
+\end{eg}
+

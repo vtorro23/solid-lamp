@@ -150,7 +150,7 @@ Si $\displaystyle X_{n}\xrightarrow{\mathcal{L}} X$ e $\displaystyle Y_{n}\xrigh
 Otro estadístico muestral importante es la función de distribución empírica o muestral.
 \begin{definition}[Función de distribución empírica]
 Dada una realización particular de una muestra $\displaystyle \left(x_{1}, \ldots, x_{n}\right) $, la \textbf{función de distribución empírica} viene dada por
-\[ F^{*}_{n}\left(x\right)=
+\[ F_{n}\left(x\right)=
 \begin{cases}
 0, \; x < x_{\left(1\right)} \\
 \frac{k}{n}, \; x_{\left(k\right)} \leq x < x_{\left(k+1\right)}, \; k = 1, \ldots, n-1 \\
@@ -159,10 +159,34 @@ Dada una realización particular de una muestra $\displaystyle \left(x_{1}, \ldo
 .\]
 Recordamos que $\displaystyle \left(x_{\left(1\right)}, \ldots, x_{\left(n\right)}\right) $ es la muestra ordenada de menor a mayor.
 \end{definition}
-
+La función de distribución empírica también se puede escribir de la forma
+\[F_{n}\left(x\right)=\frac{1}{n}\sum^{n}_{i = 1}I_{\left(-\infty, x\right]}\left(x_{i}\right) .\]
+Es fácil ver que para $\displaystyle t \in \R $ fijo se verifica que 
+\[nF_{n}\left(t\right)\sim Bin\left(n, F\left(t\right)\right) .\]
+\begin{observation}
+Para todo $\displaystyle x $ se verifica que 
+\[F_{n}\left(x\right)\xrightarrow{c.s.}F\left(x\right) ,\]
+donde $\displaystyle F\left(x\right) $ es la función de distribución de la población. En efecto, si tomamos $\displaystyle Y_{i}=I_{\left(-\infty, x\right]}\left(x_{i}\right) $, tenemos que 
+\[E\left[Y_{i}\right] = F\left(x\right), \quad V\left(Y_{i}\right)=F\left(x\right)\left[1-F\left(x\right)\right] , \quad F_{n}\left(x\right)=\overline{Y} .\]
+Aplicando la ley de los grandes números obtenemos la convergencia que hemos mencionado antes. Por otro lado, podemos aplicar el Teorema Central del Límite para obtener que
+\[\sqrt{n}\frac{F_{n}\left(x\right) - F\left(x\right)}{\sqrt{F\left(x\right)\left[1-F\left(x\right)\right] }}\xrightarrow{\mathcal{L}} Z \sim N\left(0,1\right).\]
+\end{observation}
+\begin{theorem}[Teorema central de la estadística]
+Si se tiene una m.a.s. de tamaño $\displaystyle n $ de una población $\displaystyle X $ con función de distribución $\displaystyle F\left(x\right) $, para cualquier $\displaystyle \epsilon > 0 $ se tiene que 
+\[\lim_{n \to \infty}P\left(\sup_{x \in \R} \left|F_{n}\left(x\right)-F\left(x\right)\right|\geq \epsilon \right) = 0 .\]
+\end{theorem}
+\begin{observation}
+Este teorema nos dice que si se quiere determinar de forma aproximada la función de distribución, se puede obtener una m.a.s. de tamaño $\displaystyle n $ grande, construir a partir de ella la función de distribución empírica y esperar que $\displaystyle F_{n}\left(x\right) $ sea una buena aproximación de $\displaystyle F\left(x\right) $. 
+\end{observation}
 \section{Distribuciones asociadas a la normal}
-Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. ($\displaystyle n $) de $\displaystyle X \sim N\left(\mu, \sigma \right) $.
-\begin{observation}[Distribución de la media muestral]
+Para muchas variables podemos asumir que su distribución pertenece a la familia Gausiana $\displaystyle N\left(\mu, \sigma\right) $, donde tendremos que 
+\[\theta = \left(\mu, \sigma\right) \in \Theta = \left(-\infty, \infty\right)\times \left(0, \infty\right) .\]
+En esta sección supondremos que $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ es una m.a.s. ($\displaystyle n $) de $\displaystyle X \sim N\left(\mu, \sigma \right) $.
+\begin{theorem}[Distribución de la media muestral]
+Si $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ es una m.a.s. ($\displaystyle n $) de $\displaystyle X \sim N\left(\mu, \sigma^{2}\right) $ con $\displaystyle \sigma^{2} > 0 $, entonces
+\[\overline{X} \sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right) .\]
+\end{theorem}
+\begin{proof}
 Sabemos que $\displaystyle \varphi_{X}\left(t\right)=e^{it\mu-\frac{1}{2}t ^{2}\sigma^{2}} $. Por tanto, tendremos que 
 \[
 \begin{split}
@@ -171,6 +195,271 @@ Sabemos que $\displaystyle \varphi_{X}\left(t\right)=e^{it\mu-\frac{1}{2}t ^{2}\
 \end{split}
 \]
 Por tanto, tenemos que $\displaystyle \overline{X}\sim N\left(\mu, \frac{\sigma }{\sqrt{n}}\right) $. 
+\end{proof}
+\begin{definition}[Estadístico Z]
+El \textbf{estadístico $\displaystyle Z $} se obtiene estandarizando la media muestral
+\[Z = \frac{\overline{X}-\mu}{\frac{\sigma }{\sqrt{n}}}\sim N\left(0,1\right) .\]
+\end{definition}
+\begin{definition}[Distribución $\displaystyle \chi^2 $]
+Una \textbf{distribución} $\displaystyle \chi_{n}^{2} $ con $\displaystyle n $ grados de libertad es la distribución de la suma de $\displaystyle n $ variables aleatorias independientes $\displaystyle Z_{1}, \ldots, Z_{n} $ con distribución $\displaystyle N\left(0,1\right) $, es decir
+\[ Y = \sum^{n}_{i=1}Z^{2}_{i}\sim \chi_{n}^{2} .\]
+\end{definition}
+\begin{prop}
+Se verifica $\displaystyle \chi_{n}^{2} \sim \gamma\left(a = \frac{1}{2}, p = \frac{n}{2}\right) $. 
+\end{prop}
+\begin{proof}
+Como $\displaystyle Z \sim N\left(0,1\right) $, tenemos que $\displaystyle \varphi_{Z}\left(t\right)=\frac{1}{\sqrt{2\pi }}e^{-\frac{1}{2}t ^{2}} $. En primer lugar, calculamos la distribución de $\displaystyle Z^{2} $:
+\[F_{Z^{2}}\left(y\right)=P\left(Z^{2} \leq y\right) = P\left(-\sqrt{y} \leq Z \leq \sqrt{y} \right) = F_{Z}\left(\sqrt{y}\right)-F_{Z}\left(-\sqrt{y}\right) = 2F_{Z}\left(\sqrt{y}\right)-1.\]
+Así, tenemos que 
+\[f_{Z^{2}}\left(y\right)=2f_{Z}\left(\sqrt{y}\right)\frac{1}{2\sqrt{y}}=\frac{1}{\sqrt{2\pi }}e^{-\frac{1}{2}y}y^{-\frac{1}{2}} .\]
+Por tanto, tenemos que $\displaystyle Z^{2} \sim \gamma \left(a = \frac{1}{2}, p = \frac{1}{2}\right) $. Así, tendremos que $\displaystyle \varphi_{Z^{2}}\left(t\right)=\left(1-2it\right)^{-\frac{1}{2}} $, por lo que 
+\[\varphi_{\chi_{n}^{2}}\left(t\right)=E\left[e^{it\sum^{n}_{i = 1}Z_{i}^{2}}\right] = \prod^{n}_{i = 1}\varphi_{Z_{i}^{2}}\left(t\right)=\varphi_{Z^{2}}^{n}\left(t\right) = \left(1 - 2it\right)^{-\frac{n}{2}} .\]
+Por tanto, tenemos que $\displaystyle \chi_{n}^{2} \sim \gamma\left(a = \frac{1}{2}, p = \frac{n}{2}\right) $. 
+\end{proof}
+\begin{observation}[Propiedades de la distribución $\displaystyle \chi_n^2 $] Las siguientes propiedades son fáciles de comprobar:
+	\begin{itemize}
+	\item A partir de la proposición anterior es sencillo ver que la función de densidad de $\displaystyle \chi_{n}^{2} $ será
+\[f_{\chi_{n}^{2}}\left(x\right)=\frac{1}{2^{\frac{n}{2}}\Gamma\left(\frac{n}{2}\right)}e^{-\frac{1}{2}y}y^{\frac{n}{2}-1}, x > 0 .\]
+\item Se tiene que $\displaystyle E\left[\chi_{n}^{2}\right] =n $ y $\displaystyle V\left(\chi_{n}^{2}\right)=2n $.
+\item \textbf{Propiedad de aditividad.} Si $\displaystyle Y_{i} \sim \chi_{n_{i}}^{2} $, con $\displaystyle i = 1, \ldots, k $, son independientes, entonces
+	\[Y = \sum^{k}_{i = 1}Y_{i} \sim \chi_{n}^{2}, \quad n = \sum^{k}_{i=1}n_{i} .\]
+	\end{itemize} 
 \end{observation}
-\section{Teorema de Fisher}
-En el archivo de Fisher hay que saber deducir todas las identidades que vienen en el documento. 
+\begin{lema}
+Si $\displaystyle Y \sim \gamma\left(a,p\right) $, entonces $\displaystyle T = 2aY \sim \gamma\left(a = \frac{1}{2}, p\right) $. 
+\end{lema}
+\begin{proof}
+Como $\displaystyle Y \sim \gamma\left(a, p\right) $ se tiene que
+\[f_{Y}\left(y\right)=\frac{a^{p}}{\Gamma\left(p\right)}e^{-ay}y^{p-1} .\]
+Por otro lado, como $\displaystyle T = 2aY $, se tiene que $\displaystyle Y = \frac{1}{2a}T $. Así, tenemos que
+\[f_{T}\left(t\right)=f_{Y}\left(\frac{1}{2a}t\right)\frac{1}{2a}=\frac{\left(\frac{1}{2}\right)^{p}}{\Gamma\left(p\right)}e^{-\frac{1}{2}t}t ^{p-1} .\]
+\end{proof}
+\begin{prop}
+Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. $\displaystyle \left(n\right) $ de $\displaystyle X \sim N\left(0,\sigma \right) $. Entonces, 
+\[a_{2}=\frac{1}{n}\sum^{n}_{i = 1}X_{i}^{2} \sim \gamma\left(a = \frac{n}{2\sigma^{2}}, p= \frac{n}{2}\right) \quad \text{y} \quad \sigma^{2}\sqrt{\frac{n}{2}}\left(a_{2}-\sigma^{2}\right)\xrightarrow{\mathcal{L}} N\left(0,1\right) .\]
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle Z_{i}=\frac{X_{i}}{\sigma } \sim N\left(0,1\right) $, para $\displaystyle i \in \left\{ 1, \ldots, n\right\}  $. Entonces, tenemos que 
+	\[\sum^{n}_{i= 1}Z_{i}^{2}\sim \chi_{n}^{2}\equiv \gamma\left(a = \frac{1}{2}, p = \frac{n}{2}\right) .\]
+De esta manera, tenemos que 	
+\[ a_{2}= \frac{1}{n}\sum^{n}_{i=1}X_{i}^{2} = \frac{\sigma^{2}}{n}\sum^{n}_{i= 1}Z_{i}^{2}.\]
+Por tanto, 
+\[f_{a_{2}}\left(t\right)= f_{\chi_{n}^{2}}\left(\frac{n}{\sigma^{2}}t\right)\frac{n}{\sigma^{2}} = \frac{\left(\frac{n}{2\sigma^{2}}\right)^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}\right)}e^{-\frac{n}{2\sigma^{2}}t}t ^{\frac{n}{2}-1} .\]
+Así, tenemos que $\displaystyle a_{2} \sim \Gamma \left(a = \frac{n}{2\sigma^{2}}, p = \frac{n}{2}\right) $. 
+% Falta demostrar la segunda parte
+\end{proof}
+\begin{definition}[Distribución $\displaystyle t $ de Student]
+Dadas las variables independientes $\displaystyle X, X_{1}, \ldots, X_{n} $ con distribución $\displaystyle N\left(0,1\right) $, la distribución de la variable aleatoria 
+\[T = \frac{X}{\sqrt{\frac{1}{n}\sum^{n}_{i=1}X_{i}^{2}}} ,\]
+es una \textbf{$\displaystyle t $ de Student} con $\displaystyle n $ grados de libertad, denotada $\displaystyle t_{n} $.  
+\end{definition}
+\begin{prop}[Función de densidad de la $\displaystyle t $ de Student]
+La función de densidad de $\displaystyle T \sim t_{n} $ es
+\[f_{T}\left(t\right)=\frac{1}{\sqrt{n\pi }}\frac{\Gamma\left(\frac{n+1}{2}\right)}{\Gamma\left(\frac{n}{2}\right)}\left(1+ \frac{t ^{2}}{n}\right)^{-\frac{n+1}{2}}, \; t \in \R .\]
+\end{prop}
+\begin{proof} Sean $\displaystyle X \sim N\left(0,1\right) $ e $\displaystyle Y \sim \sqrt{\frac{1}{n}\sum^{n}_{i=1}X_{i}^{2}} $. Así, $\displaystyle T \sim \frac{X}{Y} $ y tendremos que 
+\[f_{X}\left(x\right)=\frac{1}{\sqrt{2\pi }}e^{-\frac{1}{2}x^{2}}, \; x \in \R \quad \text{y} \quad f_{Y} \left(y\right)=\frac{n^{\frac{n}{2}}}{2^{\frac{n}{2}-1}\Gamma\left(\frac{n}{2}\right)}e^{-\frac{n}{2}y^{2}}y^{n-1}, \; y > 0 .\]
+La función de densidad conjunta de $\displaystyle X $ e $\displaystyle Y $ será $\displaystyle f\left(x,y\right)=f_{X}\left(x\right)f_{Y}\left(y\right) $. Haciendo el cambio $\displaystyle T = \frac{X}{Y} $ y $\displaystyle Z = Y $, obtenemos la función de densidad
+\[f\left(t,u\right)=ke^{-\frac{1}{2}\left(t ^{2}+n\right)u^{2}}u^{n}, \; t \in \R, \; u \geq 0 , \quad k = \frac{n^{\frac{n}{2}}}{2^{\frac{n-1}{2}}\Gamma\left(\frac{1}{2}\right)\Gamma\left(\frac{n}{2}\right)}.\]
+La función de densidad de $\displaystyle T $ es se obtiene como la marginal de la anterior \footnote{Para resolver la integral conviene mirar el libro.}:
+\[f_{T}\left(t\right)=\int^{\infty}_{0} f\left(t,u\right) \; du = k\int^{\infty}_{0} e^{-\frac{1}{2}\left(t ^{2}+n\right)u^{2}}u^{n} \; du = \frac{k}{2}\left(\frac{n+t ^{2}}{2}\right)^{-\frac{n+1}{2}}\Gamma\left(\frac{n+1}{2}\right).\]
+Sustituyendo el valor de $\displaystyle k $ obtenemos 
+\[f_{T}\left(t\right)=\frac{n^{\frac{n}{2}}}{2^{\frac{n}{2}-\frac{1}{2}}\Gamma\left(\frac{1}{2}\right)\Gamma\left(\frac{n}{2}\right)}\frac{1}{2}\left(\frac{n+t ^{2}}{2}\right)^{- \frac{n+1}{2}} \Gamma\left(\frac{n+1}{2}\right) .\]
+Simplificando obtenemos la expresión deseada.
+\end{proof}
+\begin{observation}[Propiedades de la distribución $\displaystyle t $ de Student] Es fácil de comprobar que:
+	\begin{itemize}
+	\item La distribución $\displaystyle t $ de Student es simétrica.
+	\item Para $\displaystyle n > 2 $ se cumple que $\displaystyle E[T]=0 $ y $\displaystyle V\left(T\right)=\frac{n}{n-2} $. Para $\displaystyle n \leq 2 $ la varianza no existe. 
+	\item En el caso $\displaystyle n = 1 $ también se llama \textbf{distribución de Cauchy}. 
+	\end{itemize}
+\end{observation}
+
+\begin{theorem}[Teorema de Fisher]
+Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. $\displaystyle \left(n\right) $ de $\displaystyle X \sim N\left(\mu, \sigma \right) $, con $\displaystyle \mu $ y $\displaystyle \sigma  $ desconocidos. 
+\begin{enumerate}
+\item La media muestral y la cuasivarianza muestral son variables aleatorias independientes. 
+\item Se cumple que $\displaystyle \overline{X} \sim N\left(\mu, \frac{\sigma }{\sqrt{n}}\right) $ y $\displaystyle \frac{\left(n-1\right)S^{2}}{\sigma^{2}}\sim \chi_{n-1}^{2} $.
+\item Se cumple que 
+	\[\frac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}}\sim t_{n-1} .\]	
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+\begin{enumerate}
+\item Basta con demostrar que $\displaystyle \overline{X} $ y $\displaystyle X_{h}-\overline{X} $ son independientes para $\displaystyle h = 1, \ldots, n $. Una forma de ver esto es que 
+	\[\varphi_{\overline{X}, X_{h}-\overline{X}}\left(t_{1}, t_{2}\right)=\varphi_{\overline{X}}\left(t_{1}\right)\varphi_{X_{h}-\overline{X}}\left(t_{2}\right) .\]
+Tenemos que 
+\[
+\begin{split}
+	\varphi_{\overline{X}, X_{h}-\overline{X}}\left(t_{1}, t_{2}\right)= & E\left[e^{it_{1}\overline{X}+it_{2}\left(X_{h}-\overline{X}\right)}\right] = E\left[e^{ i\left(t_{1}-t_{2}\right)\overline{X}+it_{2}X_{h}}\right]\\
+	= & E\left[e^{i\frac{t_{1}-t_{2}}{n}\sum_{i\neq h}X_{i}}\right] E\left[e^{i\left(\frac{t_{1}-t_{2}}{n}+t_{2}\right)X_{h}}\right]  .
+\end{split}
+\]
+Así, como $\displaystyle \sum_{i \neq h}X_{i}\sim N\left(\left(n-1\right)\mu, \sigma\sqrt{n-1}\right) $ y $\displaystyle X_{h} \sim N\left(\mu, \sigma \right) $, tenemos que 
+\[\varphi_{\overline{X}, X_{h}-\overline{X}}\left(t_{1}, t_{2}\right)=\varphi_{N\left(\mu, \frac{\sigma }{\sqrt{n}}\right)}\left(t_{1}\right)\varphi_{N\left(0,\sigma\sqrt{1-\frac{1}{n}}\right)}\left(t_{2}\right) .\]
+Como $\displaystyle \overline{X}\sim N\left(\mu, \frac{\sigma }{\sqrt{n}}\right) $ y $\displaystyle  $ 
+\[ X_{h}-\overline{X}=\left(1 - \frac{1}{n}\right)X_{h}-\frac{\sum^{}_{i \neq h}X_{i}}{n} \sim N\left(0, \sigma\sqrt{1 - \frac{1}{n}}\right),\]
+hemos terminado.
+\item La primera igualdad ya ha sido demostrada. Sea $\displaystyle S^{2}_{n+1}=\frac{1}{n}\sum^{n+1}_{i=1}\left(X_{i}-\overline{X}_{n+1}\right)^{2} $. Podemos ver que 
+	\[nS^{2}_{n+1}=\left(n-1\right)S^{2}_{n} + \left(X_{n+1}-\overline{X}_{n}\right)^{2}\frac{n}{n+1} .\]
+	En efecto, 
+	\[
+	\begin{split}
+		nS^{2}_{n+1} = & \sum^{n+1}_{i=1}\left(X_{i}-\overline{X}_{n+1}\right)^{2}= \sum^{n}_{i=1}\left(X_{i}-\overline{X}_{n}+\overline{X}_{n}-\overline{X}_{n+1}\right)^{2} + \left(X_{n+1}-\overline{X}_{n+1}\right)^{2} \\
+		= & \left(n-1\right)S^{2}_{n}+n\left(\overline{X}_{n}-\overline{X}_{n+1}\right)^{2}+\left(X_{n+1}-\overline{X}_{n+1}\right)^{2} .
+	\end{split}
+	\]
+Aplicando que $\displaystyle \overline{X}_{n+1}=\frac{n\overline{X}_{n}+X_{n+1}}{n+1} $, obtenemos la igualdad deseada. Ahora, procedemos por inducción. Para $\displaystyle n + 1=2 $, tenemos que 
+\[\frac{S^{2}_{2}}{\sigma^{2}}=\left(\frac{X_{2}-\overline{X}_{1}}{\sigma\sqrt{2}}\right)^{2}\sim\chi_{1}^{2} .\]
+Supongamos ahora que es cierto para $\displaystyle n $, es decir
+\[\frac{\left(n-1\right)S^{2}_{n}}{\sigma^{2}}\sim \chi_{n-1}^{2} .\]
+Entonces, en el caso $\displaystyle n + 1 $ tenemos que 
+\[\frac{nS^{2}_{n+1}}{\sigma^{2}}= \frac{\left(n-1\right)S^{2}_{n}}{\sigma^{2}} + \left(\frac{X_{n+1}-\overline{X}_{n}}{\sigma\sqrt{\frac{n+1}{n}}}\right)^{2}\sim\chi^{2}_{n-1} + \chi_{1}^{2} \sim \chi^{2}_{n} .\]
+\item La variable $\displaystyle \frac{\overline{X}-\mu}{\sigma }\sqrt{n} $ tiene distribución $\displaystyle N\left(0,1\right) $ y la variable $\displaystyle \left(n-1\right)\frac{S^{2}}{\sigma^{2}} $ tiene distribución $\displaystyle \chi_{n-1}^{2} $, como acabamos de ver. Por \textbf{(1)} tenemos que ambas son independientes, y de aquí el resultado se obtiene fácilmente.
+\end{enumerate}
+\end{proof}
+\begin{definition}[Distribución $\displaystyle F $ de Snedecor]
+Sean $\displaystyle X_{1} \sim \chi_{n_{1}}^{2} $ y $\displaystyle X_{2}\sim \chi_{n_{2}}^{2} $ independientes \footnote{También podemos enunciar esto tomando dos m.a.s independientes $\displaystyle \left(X_{1}, \ldots, X_{n_{1}}\right) $ y $\displaystyle \left(Y_{1}, \ldots, Y_{n_{2}}\right) $ de una población $\displaystyle N\left(0,1\right) $, entonces $\displaystyle \mathcal{F}_{n_{1}, n_{2}}=\frac{\frac{1}{n_{1}} \sum^{n_{1}}_{i=1}X_{i}^{2}}{\frac{1}{n_{2}}\sum^{n_{2}}_{i = 1}Y_{i}^{2}} $.} . La distribución de la variable aleatoria
+\[F = \frac{\frac{X_{1}}{n_{1}}}{\frac{X_{2}}{n_{2}}} ,\]
+es una \textbf{distribución $\displaystyle F $ de Snedecor} con $\displaystyle n_{1} $ grados de libertad en el numerador y $\displaystyle n_{2} $ grados de libertad en el denominador, denotada $\displaystyle F_{n_{1}, n_{2}} $. 
+\end{definition}
+\begin{prop}[Función de densidad de la $\displaystyle F $ de Snedecor]
+	La función de densidad de la $\displaystyle F $ de Snedecor con $\displaystyle \left(n_{1}, n_{2}\right) $ grados de libertad es
+	\[f\left(x\right)=\frac{\begin{pmatrix} n_{1} \\ n_{2} \end{pmatrix}^{\frac{n_{1}}{2}}\Gamma\left(\frac{n_{1}+n_{2}}{2}\right)}{\Gamma\left(\frac{n_{1}}{2}\right)\Gamma\left(\frac{n_{2}}{2}\right)}x^{\frac{n_{1}}{2}-1}\left(1 + \frac{n_{1}}{n_{2}}x\right)^{-\frac{n_{1}+n_{2}}{2}}, \; x > 0 .\]
+\end{prop}
+\begin{proof}
+Sea $\displaystyle F_{n_{1},n_{2}}=\frac{U}{V} $. Tenemos que la función de densidad de $\displaystyle U $ será
+\[f\left(u\right)=\frac{n_{1}^{\frac{n_{1}}{2}}}{2^{\frac{n_{1}}{2}}\Gamma\left(\frac{n_{1}}{2}\right)}u^{\frac{n_{1}}{2}-1}e^{-\frac{n_{1}}{2}u}, \; u \geq 0 .\]
+De esta forma, la función de densidad conjunta de $\displaystyle U $ y $\displaystyle V $ será, dada su independencia,
+\[f\left(u,v\right) = k u^{\frac{n_{1}}{2}-1}v^{\frac{n_{2}}{2}-1}e^{-\frac{1}{2}\left(n_{1}u + n_{2}v\right)}, \; u, v \geq 0, \quad k = \frac{n_{1}^{\frac{n_{1}}{2}}n_{2}^{\frac{n_{2}}{2}}}{2^{\frac{n_{1}+n_{2}}{2}}\Gamma\left(\frac{n_{1}}{2}\right)\Gamma\left(\frac{n_{2}}{2}\right)}.\]
+Haciendo el cambio $\displaystyle S = \frac{U}{V} $ y $\displaystyle T = V $, tenemos que 
+\[f\left(s,t\right)=k\left(st\right)^{\frac{n_{1}}{2}-1}t ^{\frac{n_{2}}{2}}e^{-\frac{n_{1}s + n_{2}}{2}t} .\]
+Calculamos la función de densidad de $\displaystyle S $ como la función de densidad marginal y nos queda \footnote{Si se quiere ver cómo resolver la integral en detalle mirar el libro.} 
+\[f\left(s\right)=\frac{\begin{pmatrix} n_{1} \\ n_{2} \end{pmatrix}^{\frac{n_{1}}{2}}\Gamma\left(\frac{n_{1}+n_{2}}{2}\right)}{\Gamma\left(\frac{n_{1}}{2}\right)\Gamma\left(\frac{n_{2}}{2}\right)}s^{\frac{n_{1}}{2}-1}\left(1 + \frac{n_{1}}{n_{2}}s\right)^{-\frac{n_{1}+n_{2}}{2}}, \; s > 0  .\]
+\end{proof}
+
+\begin{observation}[Propiedades de la $\displaystyle F $ de Snedecor] Se puede observar que:
+	\begin{itemize}
+	\item Para $\displaystyle n_{1}=1 $ se tiene que $\displaystyle F_{1, n}\equiv t_{n}^{2} $.
+	\item Si $\displaystyle F \sim F_{n_{1}, n_{2}} $, entonces $\displaystyle \frac{1}{F}\sim F_{n_{2}, n_{1}} $. 
+	\item Se cumple que 
+		\[E\left[F\right] = \frac{n_{2}}{n_{2}-2} \quad \text{y} \quad V\left(F\right)=\frac{2n_{2}^{2}\left(n_{1}+n_{2}-2\right)}{n_{1}\left(n_{2}-2\right)^{2}\left(n_{2}-4\right)} .\]
+	\end{itemize}
+\end{observation}
+\begin{colorary}
+Si $\displaystyle \left(X_{1}, \ldots, X_{m}\right) $ es una m.a.s. de una población $\displaystyle N\left(\mu_{1}, \sigma_{1}\right) $ e $\displaystyle \left(Y_{1}, \ldots, Y_{n}\right) $ una m.a.s. de una población $\displaystyle N\left(\mu_{2}, \sigma_{2}\right) $ y ambas muestras son independientes, la variable aleatoria
+\[F_{m -1, n-1}=\frac{S_{1}^{2}\sigma^{2}_{2}}{S_{2}^{2}\sigma_{1}^{2}} \sim F_{m - 1, n-1},\]
+donde $\displaystyle S_{1}^{2} $ y $\displaystyle S_{2}^{2} $ son las cuasivarianzas muestrales respectivas y $\displaystyle \mu_{1}, \mu_{2}, \sigma_{1}, \sigma_{2} $ son desconocidas.
+\end{colorary}
+\section{Estadísticos de orden}
+Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. de una variable aleatoria $\displaystyle X $ con función de distribución $\displaystyle F $. Los \textbf{estadísticos de orden} son obtenidos al ordenar la muestra de menor a mayor, es decir
+\[
+\begin{split}
+	X_{\left(1\right)}= &\min \left\{ X_{1}, \ldots, X_{n}\right\} \\
+	X_{\left(2\right)}=& \min \left\{ \left\{ X_{1}, \ldots, X_{n}\right\} -X_{\left(1\right)}\right\}  \\
+	\vdots \\
+	X_{\left(n\right)} = & \max \left\{ X_{1}, \ldots, X_{n}\right\} .
+\end{split}
+\]
+De esta forma, obtenemos la muestra ordenada $\displaystyle \left(X_{\left(1\right)}, \ldots, X_{\left(n\right)}\right) $. 
+\begin{observation}[IMPORTANTE]
+	Para $\displaystyle i = 1, \ldots, n $, las distribuciones de $\displaystyle X_{\left(i\right)} $ dependen de $\displaystyle F $, pero no son independientes y no tienen por qué estar identicamente distribuidos!
+\end{observation}
+\begin{eg}[Distribución del mínimo y máximo]
+Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. de una variable aleatoria $\displaystyle X $ continua con función de distribución $\displaystyle F $ y función de densidad $\displaystyle f $. Tendremos que 
+\[
+\begin{split}
+	1 - F_{X_{\left(1\right)}}\left(t\right)= & P\left(X_{\left(1\right)} > t\right)=P\left(X_{1} > t, \ldots, X_{n} > t\right) \\
+	= &  \prod^{n}_{i=1}P\left(X_{i} > t\right) = \prod^{n}_{i=1}\left[1-F_{X_{i}}\left(t\right)\right] = \left[1-F\left(t\right)\right] ^{n}.
+\end{split}
+\]
+De esta manera, la función de densidad de $\displaystyle X_{\left(1\right)} $ será
+\[f_{X_{\left(1\right)}}\left(t\right)=n\left[1-F\left(t\right)\right] ^{n-1}f\left(t\right) .\]
+Análogamente, para $\displaystyle X_{\left(n\right)} $ tendremos que 
+\[
+\begin{split}
+	F_{X_{\left(n\right)}}\left(t\right)= & P\left(X_{\left(n\right)} \leq t\right) = P\left(X_{1} \leq t, \ldots, X_{n} \leq t\right) \\
+	= &  \prod^{n}_{i=1}P\left(X_{i}\leq t\right) = \prod^{n}_{i=1}F_{X_{i}}\left(t\right) = \left[F\left(t\right)\right] ^{n}.
+\end{split}
+\]
+Así, tendremos que la función de densidad de $\displaystyle X_{\left(n\right)} $ será
+\[f_{X_{\left(n\right)}}\left(t\right) = n\left[F\left(t\right)\right] ^{n-1}f\left(t\right) .\]
+\end{eg}
+\begin{prop}
+Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. de una variable aleatoria $\displaystyle X $ con función de distribución $\displaystyle F $ continua y función de densidad $\displaystyle f $. Entonces
+\begin{enumerate}
+\item La función de desidad conjunta de $\displaystyle \left(X_{\left(1\right)}, \ldots, X_{\left(n\right)}\right) $ es
+	\[g\left(t_{1}, \ldots, t_{n}\right)=n!\prod^{n}_{i=1}f\left(t_{i}\right), \; t_{1}\leq \cdots \leq t_{n} .\]
+\item La función de distribución marginal de $\displaystyle X_{\left(r\right)} $ para $\displaystyle r = 1, \ldots, n $ es
+	\[F_{X_{\left(r\right)}}\left(t\right)=\sum^{n}_{i=r}\begin{pmatrix} n \\ i \end{pmatrix}\left[F\left(t\right)\right] ^{i}\left[1-F\left(t\right)\right] ^{n-i} .\]
+\item La función de densidad marginal de $\displaystyle X_{\left(r\right)} $ para $\displaystyle r = 1, \ldots, n $ es
+	\[g\left(t\right)=\frac{n!}{\left(r-1\right)!\left(n-r\right)!}\left[F\left(t\right)\right] ^{r-1}\left[1 - F\left(t\right)\right] ^{n-r}f\left(t\right) .\]
+\end{enumerate}
+\end{prop}
+\begin{proof}
+	Demostramos \textbf{(2)} puesto que \textbf{(3)} se deduce fácilmente de este. El suceso $\displaystyle \left\{ X_{\left(r\right)} \leq t\right\}  $ es equivalente a que al menos $\displaystyle r $ valores muestrales sean menores que $\displaystyle t $. Así, se sigue fácilmente que
+	\[F_{X_{\left(r\right)}}\left(t\right) =\sum^{n}_{i= r}\begin{pmatrix} n \\ i \end{pmatrix}\left[F\left(t\right)\right] ^{i}\left[1-F\left(t\right)\right] ^{n-i}.\]
+	Como estamos suponiendo que $\displaystyle X $ es una variable aleatoria con función de distribución continua, podemos obtener la función de densidad derivando la expresión anterior. 
+\end{proof}
+\begin{prop}
+La función de densidad conjunta de $\displaystyle \left(X_{\left(r\right)}, X_{\left(s\right)}\right) $ para $\displaystyle r < s $ es
+\[
+\begin{split}
+ g\left(t_{1}, t_{2}\right)=\frac{n!}{\left(r-1\right)!\left(s-r-1\right)!\left(n-s\right)!}\left[F\left(t_{1}\right)\right] ^{r-1}f\left(t_{1}\right) \\
+ \cdot \left[F\left(t_{2}\right)-F\left(t_{1}\right)^{s-r-1}\right] \left[1-F\left(t_{2}\right)\right] ^{n-s}, \; t_{1}\leq t_{2}.
+\end{split}
+\]
+\end{prop}
+\begin{colorary}
+La función de densidad conjunta de $\displaystyle \left(X_{\left(1\right)}, X_{\left(n\right)}\right) $ es
+\[g\left(t_{1}, t_{2}\right)=\frac{n!}{\left(n-2\right)!}f\left(t_{1}\right)\left[F\left(t_{2}\right)-F\left(t_{1}\right)\right] ^{n-2}f\left(t_{2}\right), \; t_{1}\leq t_{2} .\]
+\end{colorary}
+\begin{eg}[Distribución uniforme]
+	Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. $\displaystyle \left(n\right) $ de una población $\displaystyle X \equiv U\left(0,1\right) $. Tenemos que la función de distribución de $\displaystyle X $ es
+	\[F\left(x\right)=
+	\begin{cases}
+	0, \; x \leq 0 \\
+	x, \; 0 < x \leq 1 \\
+	1, \; 1 \leq x
+	\end{cases}
+	.\]
+De esta manera, tendremos que la función de distribución de $\displaystyle X_{\left(n\right)} $ será
+\[f_{X_{\left(n\right)}}\left(x\right)=nx^{n-1}, \; x \in \left[0,1\right]  .\]
+De esta forma, tenemos que $\displaystyle X_{\left(n\right)}\sim Beta\left(n,1\right) $. De forma análoga, tenemos que 
+\[f_{X_{\left(1\right)}}\left(x\right)=n\left(1-x\right)^{n-1}, \; x \in \left[0,1\right]  .\]
+Por tanto, $\displaystyle X_{\left(1\right)}\sim Beta\left(1,n\right) $. En general, para $\displaystyle r \in \left\{ 1, \ldots, n\right\}  $ se tiene que
+\[f_{X_{\left(r\right)}}\left(x\right)=\frac{n!}{\left(r-1\right)!\left(n-r\right)!}x^{r-1}\left(1-x\right)^{n-r} , \; x \in \left[0,1\right] .\]
+Por tanto, $\displaystyle X_{\left(r\right)}\sim Beta\left(r, n-r+1\right) $. Finalmente, es fácil ver que
+\[f_{\left(X_{\left(1\right)}, X_{\left(n\right)}\right)} \left(x,y\right)=n\left(n-1\right)\left(y-x\right)^{n-2}, \; 0 < x < y < 1 .\]
+\end{eg}
+\begin{eg}[Rango muestral]
+Calculemos la distribución del rango muestral. Se define rango muestral como $\displaystyle R = X_{\left(n\right)}-X_{\left(1\right)} $. Sea $\displaystyle H = \frac{X_{\left(n\right)}+X_{\left(1\right)}}{2} $. Tenemos que 
+\[
+\begin{cases}
+R = X_{\left(n\right)}-X_{\left(1\right)} \\
+H = \frac{X_{\left(n\right)}+X_{\left(1\right)}}{2}
+\end{cases}
+\begin{cases}
+X_{\left(n\right)} = H + \frac{R}{2} \\
+X_{\left(1\right)}= H - \frac{R}{2}
+\end{cases}
+\Rightarrow J = \begin{vmatrix} 1 & -\frac{1}{2} \\ 1 & \frac{1}{2} \end{vmatrix} = 1.\]
+Por otro lado, si $\displaystyle 0 < x < y < 1 $ se tiene que $\displaystyle \frac{r}{2} < h < 1-\frac{r}{2} $. Así, tenemos que la función de densidad conjunta será
+\[g\left(R, H\right)\left(r,h\right)=f_{\left(X_{\left(1\right)}, X_{\left(n\right)}\right)}\left(h-\frac{r}{2}, h + \frac{r}{2}\right) = 1 - n\left(n-1\right)r^{n-2} ,\]
+por lo que la función de densidad marginal de $\displaystyle R $ es
+\[g_{R}\left(r\right)=n\left(n-1\right)r^{n-2}\left(1-r\right) .\]
+Por tanto, tenemos que $\displaystyle R \sim Beta\left(n-1,2\right) $. 
+\end{eg}
+\begin{eg}
+Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. $\displaystyle \left(n\right) $ de una población $\displaystyle X $ tal que $\displaystyle F\left(x\right)= P\left(X \leq x\right) $. Calculemos la distribución de $\displaystyle U=F\left(X\right) $ y de $\displaystyle U_{R}= F\left(X_{\left(r\right)}\right) $. En primer lugar, tendremos que
+\[G_{U}\left(u\right)=P\left(U \leq u \right)=P\left(F\left(x\right)\leq u\right)=P\left(X\leq F^{-1}\left(u\right)\right)=F\left(F^{-1}\left(u\right)\right) = u, \; 0 < u < 1 .\]
+Así, tendremos que $\displaystyle F\left(X\right)\sim U\left(0,1\right) $. Por otro lado, se tiene que
+\[
+\begin{split}
+	G_{U_{R}}\left(u\right)=& P\left(U_{R} \leq u\right)=P\left(F\left(X_{\left(r\right)}\right)\leq u\right) = P\left(X_{\left(r\right)} \leq F^{-1}\left(u\right)\right) = F_{X_{\left(r\right)}}\left(F^{-1}\left(u\right)\right) \\
+	= & \sum^{n}_{j = r}\begin{pmatrix} n \\ j \end{pmatrix}F\left(F^{-1}\left(u\right)\right)^{j}\left(1-F\left(F^{-1}\left(u\right)\right)\right)^{n-j}=\sum^{n}_{j = r}\begin{pmatrix} n \\ j \end{pmatrix}u^{j}\left(1-u\right)^{n-j} .
+\end{split}
+\]
+De esta forma, $\displaystyle U_{R}=F\left(X_{\left(r\right)}\right) $ es el estadístico ordenado de orden $\displaystyle r $ asociado a una m.a.s. $\displaystyle \left(n\right) $ de una población $\displaystyle U = F\left(x\right) \sim U\left(0,1\right) $. 
+\end{eg}
+

@@ -345,7 +345,7 @@ Sea $\displaystyle \emptyset \neq A \subset \R^{n} $ acotado y $\displaystyle R 
 \[\alpha_{J} = 
 \begin{cases}
 1, \; J \subset A \\
-0, \; J \subsetneq A
+0, \; J \not\subset A
 \end{cases}
 .\]
 Así, tendremos que 
@@ -485,9 +485,11 @@ Sea $\displaystyle \epsilon > 0 $. Para cada $\displaystyle A_{i} $ existe una f
 	\[ A_{i} \subset \bigcup_{1 \leq j \leq N_{i}}J_{j}^{i} \quad \text{y} \quad \sum^{N_{i}}_{j = 1}v\left(J_{j}^{i}\right) < \frac{\epsilon }{N}.\]
 	Así, si cogemos la familia $\displaystyle \mathcal{F}=\bigcup_{i = 1}^{N} \left\{ J^{i}_{1}, \ldots, J_{N_{i}}^{i}\right\}  $, tendremos que claramente $\displaystyle \bigcup_{i = 1}^{N}A_{i} $ está recubierto por $\displaystyle \mathcal{F} $ y además
 	\[ \sum_{J \in \mathcal{F}}v\left(J\right) = \sum^{N}_{i = 1}\sum^{N_{i}}_{j = 1}v\left(J^{i}_{j}\right) < \sum^{N}_{i = 1}\frac{\epsilon }{N} = \epsilon  .\]
-Una demostración alternativa es hacerlo por inducción. Supongamos que $\displaystyle A $ y $\displaystyle B $ tienen contenido nulo y veamos que $\displaystyle A \cup B $ también tiene contenido nulo. Como $\displaystyle A \cap B \subset A $, es sencillo ver que también tendrá contenido nulo, y por la propiedad de aditividad tendremos que para un rectángulo $\displaystyle R \supset A \cup B $ se tiene que
-\[v\left(A \cup B\right) = \int _{R} \chi_{A \cup B} = \int _{R} \chi_{A} + \int _{R}\chi_{B} -\int _{R}\chi_{A \cap B} = v\left(A\right) + v\left(B\right)-v\left(A \cap B\right) = 0 .\]
-A partir de aquí es sencillo ver inducitvamente que la proposición se cumple para una familia finita de conjuntos de contenido nulo.
+	Alternativamente, lo podemos demostrar por inducción. Basta con demostrar que si $\displaystyle A, B \subset \R^{n} $ tienen contenido nulo, entonces $\displaystyle A \cup B $ también tiene contenido nulo. Es fácil ver que 
+	\[\chi_{A \cup B}=\chi_{A} + \chi_{B} -\chi_{A \cap B} .\]
+	Como $\displaystyle A \cap B \subset A $, entonces $\displaystyle A\cap B $ también tiene contenido nulo. Cogemos $\displaystyle R \subset \R^{n} $ rectángulo tal que $\displaystyle A \cup B \subset R $, entonces aplicando la linealidad de la integral
+	\[v\left(A \cup B\right)=\int _{R}\chi_{A \cup B} = \int _{R}\chi_{A} +\int _{R}\chi_{B} -\int _{R}\chi_{A \cap B} = 0 .\]
+	Por tanto, $\displaystyle A \cup B $ tiene contenido nulo.
 \end{proof}
 
 \begin{observation}
@@ -542,24 +544,6 @@ Si $\displaystyle \emptyset \neq B \subset A \subset \R^{n} $ tal que $\displays
 \begin{proof}
 	Supongamos que $\displaystyle B \subset A $ y $\displaystyle A $ tiene contenido nulo. Si $\displaystyle \epsilon > 0 $ tendremos que existe $\displaystyle \left\{ J_{1}, \ldots, J_{N}\right\}  $ familia de rectángulos que recubre a $\displaystyle A $ y $\displaystyle \sum^{N}_{i = 1}v\left(J_{i}\right) < \epsilon  $. Como $\displaystyle B \subset A $ se tiene que también recubren a $\displaystyle B $, por lo que $\displaystyle B $ también tiene contenido nulo. La demostración para el caso de medida nula es análoga.
 \end{proof}
-\begin{prop}
-Sea $\displaystyle A \subset \R^{n} $ medible Jordan. Entonces, $\displaystyle A $ tiene contenido nulo si y solo si tiene medida nula.
-\end{prop}
-\begin{proof}
-La primera implicación es cierta para cualquier subconjunto de $\displaystyle \R^{n} $, por lo que sólo demostraremos la segunda implicación. Supongamos que $\displaystyle A $ tiene medida nula
-\end{proof}
-
-\begin{eg}
-Sea $\displaystyle R \subset \R^{n} $ un rectángulo (no trivial, es decir, no tiene volumen nulo). Entonces, $\displaystyle v\left(R\right) > 0 $ por lo que $\displaystyle R $ no tiene contenido nulo, que se puede deducir a partir de la definición. Además, como $\displaystyle R $ es medible Jordan y no tiene contenido nulo tenemos que no tiene medida nula.
-\end{eg}
-
-\begin{colorary}
-Sea $\displaystyle A \subset \R^{n} $ tal que $\displaystyle A \supset R $ con $\displaystyle R  $ rectángulo no trivial. Entonces $\displaystyle A $ no tiene contenido ni medida nula.
-\end{colorary}
-\begin{proof}
-	Como contenido nulo implica medida nula, basta con demostrar que no puede tener medida nula. Supongamos que $\displaystyle A $ tiene medida nula, entonces para $\displaystyle \epsilon > 0 $ existe $\displaystyle \left\{ J_{k}\right\} _{k \in \N} $ tal que esta familia recubre a $\displaystyle A $ y $\displaystyle \sum^{\infty}_{k = 1}v\left(J_{k}\right)< \epsilon  $. Como $\displaystyle R \subset A $, tendremos que esta familia también recubre a $\displaystyle R $ y por tanto $\displaystyle R $ también tiene medida nula, lo cual es una contradicción como se ha visto en el ejemplo anterior. \footnote{La demostración no es necesaria realmente puesto que este enunciado es una consecuencia directa de la proposición anterior.}  
-\end{proof}
-
 \begin{theorem}
 Sea $\displaystyle K \subset \R^{n} $ compacto. Entonces $\displaystyle K $ tiene contenido nulo si y solo si $\displaystyle K $ tiene medida nula.
 \end{theorem}
@@ -570,6 +554,23 @@ Sea $\displaystyle K \subset \R^{n} $ compacto. Entonces $\displaystyle K $ tien
 	\[\sum^{N}_{i=1}v\left(R_{j_{i}}\right)\leq \sum^{\infty}_{j = 1}v\left(R_{j}\right) < \epsilon  .\]
 	Por tanto, $\displaystyle K $ tiene contenido nulo.
 \end{proof}
+
+\begin{prop}
+Sea $\displaystyle A \subset \R^{n} $ medible Jordan. Entonces, $\displaystyle A $ tiene contenido nulo si y solo si tiene medida nula.
+\end{prop}
+\begin{proof}
+	La primera implicación ya la hemos demostrado, por lo que solo demostraremos la segunda. Veamos que $\displaystyle \underline{\int _{R} }\chi_{A} = 0 $ para un rectángulo $\displaystyle R \supset A $. Para $\displaystyle P \in \mathcal{P}\left(R\right) $ tenemos que 
+	\[s\left(\chi_{A}, P\right)=\sum_{J \in P}\alpha_{J}v\left(J\right)=\sum_{J \subset A}v\left(J\right)=0 .\]
+Esto se debe a que $\displaystyle \forall J \in P $, $\displaystyle J \not\subset A $ puesto que $\displaystyle A $ tiene medida nula. Así, debe ser que $\displaystyle s\left(\chi_{A}, P\right) =0$, $\displaystyle \forall P \in \mathcal{P}\left(R\right) $, por lo que la integral inferior es nula y en consecuencia $\displaystyle A $ tiene contenido nulo.	
+\end{proof}
+
+\begin{eg}
+Sea $\displaystyle R \subset \R^{n} $ un rectángulo (no trivial, es decir, no tiene volumen nulo). Entonces, $\displaystyle v\left(R\right) > 0 $ por lo que $\displaystyle R $ no tiene contenido nulo, que se puede deducir a partir de la definición. Además, como $\displaystyle R $ es medible Jordan y no tiene contenido nulo tenemos que no tiene medida nula.
+\end{eg}
+
+\begin{colorary}
+Sea $\displaystyle A \subset \R^{n} $ tal que $\displaystyle A \supset R $ con $\displaystyle R  $ rectángulo no trivial. Entonces $\displaystyle A $ no tiene contenido ni medida nula.
+\end{colorary}
 
 \section{Teorema de Lebesgue}
 \begin{theorem}[Teorema de Lebesgue]
@@ -582,7 +583,7 @@ Si $\displaystyle f : R \to \R $ es integrable, entonces $\displaystyle \left|f\
 \end{colorary}
 
 \begin{proof}
-Si $\displaystyle f $ es continua en $\displaystyle x \in R $, entonces $\displaystyle \left|f\right| $ también es continua en $\displaystyle x $. De esta manera, tenemos que $\displaystyle D\left( \left|f\right|\right)\subset D\left(f\right) $. Así, como $\displaystyle D\left(f\right) $ tiene medida nula, por una proposición anterior tenemos que $\displaystyle D\left( \left|f\right|\right) $ también tiene medida nula, por lo que $\displaystyle \left|f\right| $ también es integrable en $\displaystyle R $.
+Si $\displaystyle f $ es continua en $\displaystyle x \in R $, entonces $\displaystyle \left|f\right| $ también es continua en $\displaystyle x $. De esta manera, tenemos que $\displaystyle D\left( \left|f\right|\right)\subset D\left(f\right) $. Así, como $\displaystyle D\left(f\right) $ tiene medida nula y tenemos que $\displaystyle D\left( \left|f\right|\right) $ también tiene medida nula, por lo que $\displaystyle \left|f\right| $ también es integrable en $\displaystyle R $.
 \end{proof}
 
 \begin{colorary}
@@ -595,6 +596,7 @@ Es sencillo ver que $\displaystyle D\left(f + g\right)\subset D\left(f\right) \c
 \begin{colorary}
 Sean $\displaystyle f, g : R \to \R $ integrables en $\displaystyle R $. Entonces, $\displaystyle f \cdot g $ es integrable en $\displaystyle R $.
 \end{colorary}
+Si $\displaystyle f $ y $\displaystyle g $ son continuas en $\displaystyle x \in R $, entonces $\displaystyle f \cdot g $ es continua en $\displaystyle x $, por lo que $\displaystyle D\left(f \cdot g\right)\subset D\left(f\right) \cup D\left(g\right) $. Como $\displaystyle f $ y $\displaystyle g $ son integrables, tendremos que $\displaystyle D\left(f\right) $ y $\displaystyle D\left(g\right) $ tienen medida nula, por lo que su unión tiene medida nula y $\displaystyle D\left(f \cdot g\right) $ también la tiene. Por tanto, $\displaystyle f \cdot g $ es integrable en $\displaystyle R $. 
 \begin{prop}
 Un conjunto no vacío y acotado $\displaystyle A \subset \R^{n} $ es medible Jordan si y solo si $\displaystyle \partial A $ tiene medida nula \footnote{Recordamos que $\displaystyle \partial A = \left\{ x \in R \; : \; B\left(x,\epsilon \right)\cap A \neq \emptyset \; \text{y} \; B\left(x,\epsilon \right) \cap \left(R/A\right) \neq \emptyset, \; \forall \epsilon > 0\right\}  $. }.
 \end{prop}
@@ -611,20 +613,23 @@ Así, existen sucesiones $\displaystyle \left\{ y_{j}\right\} _{j \in \N} \subse
 \end{description}
 \end{proof}
 
-\begin{observation}
-	Recordamos que $\displaystyle A \subset \R^{n} $ acotado es medible Jordan si y solo si existe $\displaystyle R \subset \R^{n} $ rectángulo tal que $\displaystyle \chi_{A} $ es integrable en $\displaystyle R $. Entonces, por el criterio de Lebesgue, $\displaystyle A $ es medible Jordan si y solo si $\displaystyle D\left(\chi_{A}\right) $ tiene medida nula. Tenemos que $\displaystyle D\left(\chi_{A}\right) = \partial A $, por lo que buscamos que $\displaystyle \partial A $ tenga medida nula .
-\end{observation}
 \begin{eg}
 	Consideremos $\displaystyle A = \Q \cap \left[0,1\right]  $. Tenemos que $\displaystyle \partial A = \left[0,1\right]  $ y como $\displaystyle v\left(\partial A\right) = 1 \neq 0$, $\displaystyle \partial A $ no tiene medida nula por lo que $\displaystyle A $ no es medible Jordan.
 \end{eg}
 \begin{observation}
 Supongamos que $\displaystyle A $ y $\displaystyle B $ son medibles Jordan. Tenemos que 
 \[\chi_{A \cap B} = \chi_{A} \cdot \chi_{B} .\]
-Como $\displaystyle \chi_{A} $ y $\displaystyle \chi_{B} $ son integrables Riemann, tenemos que $\displaystyle \chi_{A \cap B} $ es integrable Riemann.
+Como $\displaystyle \chi_{A} $ y $\displaystyle \chi_{B} $ son integrables Riemann, tenemos que $\displaystyle \chi_{A \cap B} $ es integrable Riemann. Además, como $\displaystyle \chi_{A \cup B} = \chi_{A} + \chi_{B} - \chi_{A \cap B} $, entonces $\displaystyle A \cup B $ también es medible Jordan. 
 \end{observation}
-\section{11/2/2026}
+\begin{colorary}
+Sean $\displaystyle A \subset \R^{n} $ medible Jordan y $\displaystyle f : A \to \R $ una función acotada con un número finito o contable de discontinuidades. Entonces, $\displaystyle f $ es integrable en $\displaystyle A $. 
+\end{colorary}
+\begin{proof}
+	Las discontinuidades de $\displaystyle \tilde{f} $ serán las discontinuidades de $\displaystyle f $ más, posiblemente, las continuidades de $\displaystyle \tilde{f} $ en $\displaystyle \partial A $. Como $\displaystyle A $ es medible Jordan, tenemos que $\displaystyle \partial A $ tiene medida nula. De esta forma, en el peor de los casos $\displaystyle D\left(\tilde{f}\right) $ es la unión de dos conjuntos de medida nula, por lo que tiene medida nula y $\displaystyle \tilde{f} $ es integrable en $\displaystyle R \supset A $ rectángulo. Así, $\displaystyle f $ es integrable en $\displaystyle A $. 
+\end{proof}
+
 \begin{prop}
-Sea $\displaystyle A $ de contenido nulo y $\displaystyle f : A \to \R $ acotada. Entonces, $\displaystyle f $ es integrable en $\displaystyle A $ y $\displaystyle \int _{A}f = 0 $. 
+Sea $\displaystyle A \subset \R^{n}$ de contenido nulo y $\displaystyle f : A \to \R $ acotada. Entonces, $\displaystyle f $ es integrable en $\displaystyle A $ y $\displaystyle \int _{A}f = 0 $. 
 \end{prop}
 \begin{proof}
 	Sea $\displaystyle A \subset \R^{n} $ de contenido nulo y $\displaystyle f : A \to \R $ acotada. Cogemos $\displaystyle R \subset \R^{n} $ rectángulo tal que $\displaystyle A \subset R $ y consideramos la función
@@ -646,10 +651,20 @@ Otra forma de verlo es ver que
 donde $\displaystyle \left|f\right| \leq M $, $\displaystyle \forall x \in A $. 
 \end{proof}
 \begin{observation}
-	Nos podemos preguntar, es válido el resultado si en vez de tener $\displaystyle A $ contenido nulo tenemos que $\displaystyle A $ tiene medida nula? Claramente, la respuesta es que no. En efecto, tenemos que $\displaystyle \chi_{\left[0,1\right] \cap \Q} $ tiene medida nula pero no es integrable. Sin embargo, sí es cierto que si $\displaystyle A $ tiene medida nula y $\displaystyle f : A \to \R $ es integrable, entonces $\displaystyle \int _{A}f =0 $. 
+	Nos podemos preguntar, ¿es válido el resultado si en vez de tener $\displaystyle A $ contenido nulo tenemos que $\displaystyle A $ tiene medida nula? Claramente, la respuesta es que no. En efecto, tenemos que $\displaystyle \left[0,1\right] \cap \Q $ tiene medida nula pero $\displaystyle \chi_{\left[0,1\right] \cap \Q} $ no es integrable.  
 \end{observation}
+\begin{prop}
+Si $\displaystyle A \subset \R^{n} $ tiene medida nula y $\displaystyle f : A \to \R $ es integrable, entonces $\displaystyle \int _{A}f =0 $. 
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle R \subset \R^{n} $ un rectángulo con $\displaystyle A \subset R $. Como $\displaystyle f $ es integrable en $\displaystyle A $ tendremos que $\displaystyle \left|f\right| $ también lo es. De esta forma para cualquier $\displaystyle P \in \mathcal{P}\left(R\right) $ se tiene que 
+	\[ s\left( \left|\tilde{f}\right|, P\right)=\sum_{J \in P}\alpha_{J}v\left(J\right)  .\]
+	Como $\displaystyle A $ tiene medida nula no puede ser que $\displaystyle J \subset A $, $\displaystyle \forall J \in P $. Por tanto, $\displaystyle \forall J \in P $, $\displaystyle \exists x \in R/A $, por lo que $\displaystyle \alpha_{J}=0 $ y así tendremos que $\displaystyle s\left( \left|\tilde{f}\right|, P\right)= 0 $. Como la integral inferior es nula, tendremos que 
+	\[ \left|\int _{A}f \right|\leq \int _{A} \left|f\right| = 0 \Rightarrow \int _{A}f =0.\]
+\end{proof}
+
 \begin{colorary}
-	Sean $\displaystyle f,g : R \to \R $ acotadas con $\displaystyle f $ integrable en $\displaystyle A \subset R $ y $\displaystyle \left\{ x \in R \; : \; f\left(x\right) \neq g\left(x\right)\right\}  $ tiene contenido nulo. Entonces, $\displaystyle g $ es integrable en $\displaystyle A $ y 
+	Sean $\displaystyle f,g : R \to \R $ acotadas con $\displaystyle f $ integrable en $\displaystyle A \subset R $ y el conjunto $\displaystyle \left\{ x \in R \; : \; f\left(x\right) \neq g\left(x\right)\right\}  $ tiene contenido nulo. Entonces, $\displaystyle g $ es integrable en $\displaystyle A $ y 
 	\[\int _{A}g = \int _{A}f  .\]
 \end{colorary}
 \begin{proof}
@@ -659,35 +674,163 @@ Tenemos que $\displaystyle g\left(x\right) = g\left(x\right)-f\left(x\right) + f
 \begin{observation}
 	Al igual que antes, el enunciado no es cierto sis sustituimos 'contenido nulo' con 'medida nula'. En efecto, basta con considerar $\displaystyle f \equiv 0 $ y $\displaystyle g = \chi_{\Q \cap \left[0,1\right] } $. 
 \end{observation}
-\begin{observation}
-Podemos repasar nuestro resultado sobre la aditividad de la integral en conjuntos integrables. Si $\displaystyle A = A_{1} \cup A_{2} $ con $\displaystyle A, A_{1} $ y $\displaystyle A_{2} $ medibles Jordan, si además $\displaystyle A_{1} \cap A_{2} $ tiene contenido nulo entonces 
-\[\int _{A}f = \int _{A_{1}}f + \int _{A_{2}}f  .\]
-\end{observation}
 
 \begin{prop}
-	Sea $\displaystyle f : R \to \R $ con $\displaystyle f \geq 0 $, y $\displaystyle \int _{R}f = 0 $. Entonces el conjunto $\displaystyle \left\{ x \in R \; : \; f\left(x\right) \neq 0\right\}  $ tiene medida nula. Es decir, existe $\displaystyle A \subset R $ de medida nula tal que $\displaystyle f\left(x\right) = 0 $, $\displaystyle \forall x \in R/A $. 
+	Sea $\displaystyle f : R \to \R $ con $\displaystyle f \geq 0 $, y $\displaystyle \int _{R}f = 0 $. Entonces el conjunto $\displaystyle \left\{ x \in R \; : \; f\left(x\right) \neq 0\right\}  $ tiene medida nula \footnote{Es decir, existe $\displaystyle A \subset R $ de medida nula tal que $\displaystyle f\left(x\right) = 0 $, $\displaystyle \forall x \in R/A $.}.  
 \end{prop}
 \begin{proof}
 	Queremos ver que el conjunto $\displaystyle X =\left\{ x \in \R \; : \; f\left(x\right) \neq 0\right\}  $ tiene medida nula. Tenemos que 
 	\[ X = \bigcup_{k = 1}^{\infty} A_{k}  ,\]
-con $\displaystyle A_{k} = \left\{ x \in R \; : \; f\left(x\right) > \frac{1}{k}\right\} $. Basta probar que $\displaystyle A_{k} $ tienen medida nula y basta probar que tienen contenido nulo. Supongamos que $\displaystyle A_{k} $ es medible Jordan, entonces
-	\[0 = \int _{R}f \geq \int _{A_{k}}f \geq \int _{A_{k}}\frac{1}{k} = \frac{1}{k}v\left(A_{k}\right) \geq 0 .\]
-	Así, debe ser que $\displaystyle \frac{1}{k}v\left(A_{k}\right) = 0 $, por lo que $\displaystyle v\left(A_{k}\right) = 0 $. Sea $\displaystyle k_{0} \in \N $ y sea $\displaystyle \epsilon > 0 $, existe $\displaystyle P \in \mathcal{P}\left(R\right) $ tal que $\displaystyle S\left(f,P\right)< \frac{\epsilon }{k_{0}} $. Así, tenemos que 
+con $\displaystyle A_{k} = \left\{ x \in R \; : \; f\left(x\right) > \frac{1}{k}\right\} $. Basta probar que $\displaystyle A_{k} $ tienen medida nula y para ello basta probar que tienen contenido nulo. Sea $\displaystyle k_{0} \in \N $ y sea $\displaystyle \epsilon > 0 $, como $\displaystyle f $ es integrable en $\displaystyle R $ existe $\displaystyle P \in \mathcal{P}\left(R\right) $ tal que $\displaystyle S\left(f,P\right)< \frac{\epsilon }{k_{0}} $. Así, tenemos que 
 	\[\frac{\epsilon }{k_{0}} > \sum_{J \in P}\beta_{J}v\left(J\right) \geq \sum_{J \cap A_{k_{0}}\neq \emptyset}\beta_{J}v\left(J\right) \geq \sum_{J \cap A_{k_{0}} \neq \emptyset} v\left(J\right)\frac{1}{k_{0}}.\]
 Así, tenemos que $\displaystyle \sum^{}_{J \cap A_{k_{0}}\neq \emptyset}v\left(J\right) < \epsilon  $, por lo que $\displaystyle A_{k_{0}} $ tiene contenido nulo. 	
 \end{proof}
 
 \begin{notation}
-A partir de ahora, si decimos que algo se cumple en casi todo punto es porque se cumple en todos los puntos salvo en un conjunto de medida nula.
+A partir de ahora, si decimos que algo se cumple en \textbf{casi todo punto} es porque se cumple en todos los puntos salvo en un conjunto de medida nula.
 \end{notation}
-\begin{observation}
-	No podemos concluir que $\displaystyle \left\{ x \in R \; : \; f\left(x\right) \neq 0\right\}  $ tiene contenido nulo. En efecto, basta tomar la función de Thomae,
+\begin{observation}[Función de Thomae]
+	Con las hipótesis de la proposición, no podemos concluir que $\displaystyle \left\{ x \in R \; : \; f\left(x\right) \neq 0\right\}  $ tiene contenido nulo. En efecto, basta tomar la función de Thomae,
 	\[x \to 
 	\begin{cases}
 	0, \; x \in \Q \\
 	\frac{1}{q}, \; x=\frac{p}{q} \in \Q \; \left(\text{la fracción $\displaystyle \frac{p}{q} $ es irreducible}\right)
 	\end{cases}
 	.\]
-	que es continua en los irracionales y discontinua en los racionales. Así, $\displaystyle D\left(f\right) = \Q \cap \left[0,1\right]  $ que tiene medida nula, por lo que $\displaystyle f $ es integrable.  
+	que es continua en los irracionales y discontinua en los racionales. Así, $\displaystyle D\left(f\right) = \Q \cap \left[0,1\right]  $ que tiene medida nula, por lo que $\displaystyle f $ es integrable. El valor de la integral es 0. \\
+
+	En efecto, tendremos que $\displaystyle \forall P \in \mathcal{P}\left(\left[0,1\right] \right) $, $\displaystyle s\left(f,P\right)= 0 $, por lo que la integral inferior es nula. 
+	Sin embargo, $\displaystyle \left\{ x \in R \; : \; f\left(x\right)\neq 0\right\} = \left[0,1\right] \cap \left(\R/ \Q\right) $, que \underline{no tiene contenido nulo}.
 \end{observation}
+\section{Demostración del Teorema de Lebesgue}
+\begin{definition}[Oscilación infinitesimal en un punto]
+Sean $\displaystyle A \subset \R^{n} $, $\displaystyle f : A \to \R $ y $\displaystyle a \in A $. 
+\begin{enumerate}
+\item Para $\displaystyle r > 0 $ denotamos 
+	\[M\left(a,r\right)= \sup \left\{ f\left(x\right)\; : \; x \in A \cap B\left(a,r\right)\right\}  .\]
+	\[m\left(a,r\right)= \inf \left\{ f\left(x\right) \; : \; x \in A \cap B\left(a,r\right)\right\}  .\]
+\item Se cumple que
+	\[ M\left(a,r\right)-m\left(a,r\right)= \sup \left\{ f\left(x\right)-f\left(y\right) \; : \; x,y \in A \cap B\left(a,r\right)\right\}  .\]
+\end{enumerate}
+De esta forma, la \textbf{oscilación de $\displaystyle f $ en $\displaystyle a $} se define como
+\[o\left(f,a\right)=\lim_{r \to 0^{+}}M\left(a,r\right)-m\left(a,r\right) .\]
+\end{definition}
+\begin{observation}
+Suponiendo que $\displaystyle f $ es acotada, si tomamos $\displaystyle 0 < s < r $ tenemos que 
+\[
+\begin{cases}
+M\left(a,r\right) \geq M\left(a,s\right) \\
+m\left(a,r\right) \leq m\left(a,s\right)
+\end{cases}
+\Rightarrow M\left(a,s\right)-m\left(a,s\right) \leq M\left(a,r\right)-m\left(a,r\right).\]
+Así, podemos observar que $\displaystyle M\left(a,r\right)-m\left(a,r\right) $ es una función creciente en $\displaystyle \R $ y por tanto existe el límite:
+\[o\left(f,a\right)=\lim_{r \to 0^{+}}M\left(a,r\right)-m\left(a,r\right) = \inf_{r > 0}M\left(a,r\right)-m\left(a,r\right) .\]
+\end{observation}
+\begin{prop}
+Sean $\displaystyle A \subset \R^{n} $, $\displaystyle f : A \to \R $ acotada y $\displaystyle a \in A $. Entonces, $\displaystyle f $ es continua en $\displaystyle a $ si y solo si $\displaystyle o\left(f,a\right)= 0 $. 
+\end{prop}
+\begin{proof}
+\begin{description}
+\item[(i)] Como $\displaystyle f $ es continua en $\displaystyle a $, para $\displaystyle \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle x \in B\left(a, \delta \right)\cap A $, entonces $\displaystyle \left|f\left(x\right)-f\left(a\right)\right| < \epsilon  $. De esta forma, es fácil ver que $\displaystyle M\left(a,\delta \right)-m\left(a,\delta \right)\leq \epsilon  $. Así, para $\displaystyle 0 < r < \delta  $ se tiene que 
+	\[M\left(a,r\right) - m\left(a,r\right)\leq M\left(a, \delta \right)-m\left(a,\delta \right) \leq \epsilon  ,\]
+	por lo que $\displaystyle o\left(f,a\right)=\lim_{r \to 0^{+}}M\left(a,r\right)-m\left(a,r\right)=0 $. 
+\item[(ii)] Si $\displaystyle o\left(f,a\right)=0 $, tenemos que para $\displaystyle \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que $\displaystyle M\left(a, \delta \right)-m\left(a,\delta \right) < \epsilon  $. Así, si $\displaystyle x \in A \cap B\left(a, \delta \right) $, entonces $\displaystyle m\left(a, \delta \right)\leq f\left(x\right) \leq M\left(a,\delta \right) $ y $\displaystyle m\left(a,\delta \right)\leq f\left(a\right)\leq M\left(a, \delta \right) $, por lo que $\displaystyle \left|f\left(x\right)-f\left(a\right)\right| < \epsilon  $, es decir $\displaystyle f $ es continua en $\displaystyle a $. 
+\end{description}
+\end{proof}
+\begin{lema}
+Sea $\displaystyle A \subset \R^{n} $ compacto y $\displaystyle f :A \to \R $ acotada. Para todo $\displaystyle \epsilon > 0 $ el conjunto 
+\[F_{\epsilon } = \left\{ x \in A \; : \; o\left(f,x\right)\geq \epsilon \right\}  \]
+es cerrado y acotado. 
+\end{lema}
+\begin{proof}
+Como $\displaystyle A $ es compacto, tenemos que es cerrado y acotado. Como $\displaystyle F_{\epsilon }\subset A $, tendremos que también está acotado. Ahora, veamos que $\displaystyle F_{\epsilon } $ es cerrado en $\displaystyle A $ (y por tanto, cerrado en $\displaystyle \R^{n} $ \footnote{Revisar la \textbf{Proposición 1.12} de los apuntos de Cálculo Diferencial.}). Sea $\displaystyle x \in A/F_{\epsilon } $, entonces $\displaystyle o\left(f,x \right) < \epsilon  $. De esta forma, existe $\displaystyle r > 0 $ tal que $\displaystyle M\left(x,r\right)-m\left(x,r\right) < \epsilon  $. Así, para todo $\displaystyle y \in A \cap B\left(x,r\right) $ existe $\displaystyle r' > 0 $ tal que 
+\[B\left(y,r'\right)\subset B\left(x,r\right) \Rightarrow B\left(y,r'\right) \subset A \cap B\left(x,r\right) .\]
+De esta forma nos queda que
+\[o\left(f,y\right)\leq M\left(y,r'\right)-m\left(y,r'\right) \leq M\left(x,r\right)-m\left(x,r\right)<\epsilon ,\]
+por lo que $\displaystyle B\left(x,r\right)\cap A \subset A/F_{\epsilon } $, es decir $\displaystyle A/F_{\epsilon } $ es abierto en $\displaystyle A $. Por tanto, $\displaystyle F_{\epsilon } $ es cerrado en $\displaystyle A $, como queríamos ver. 
+\end{proof}
+\begin{lema}
+Sea $\displaystyle R \subset \R^{n} $ un rectángulo y $\displaystyle f : R \to \R $ acotada con $\displaystyle o\left(f,x\right) < \epsilon  $, $\displaystyle \forall x \in R $. Entonces, existe $\displaystyle P \in \mathcal{P}\left(R\right) $ tal que
+\[S\left(f,P\right)-s\left(f,P\right) < \epsilon \cdot v\left(R\right) .\]
+\end{lema}
+\begin{proof}
+Tenemos que $\displaystyle \forall x \in R $ existe $\displaystyle r_{x} > 0 $ tal que $\displaystyle M\left(x,r_{x}\right)-m\left(x,r_{x}\right)<\epsilon  $. Sea $\displaystyle R_{x} $ un rectángulo tal que 
+\[x \in \Int\left(R_{x}\right)\subset R_{x} \subset B\left(x, r_{x}\right) .\]
+De esta forma, tenemos que $\displaystyle R \subset \bigcup_{x \in R}\Int\left(R_{x}\right) $. Como $\displaystyle R $ es compacto, tenemos que existen $\displaystyle x_{1}, \ldots, x_{m} \in R $ tales que $\displaystyle R \subset \bigcup_{k = 1}^{m}\Int\left(R_{x_{k}}\right) $. Prolongando los lados de los $\displaystyle R_{x_{i}} $, obtenemos una partición $\displaystyle P $ de $\displaystyle R $ tal que $\displaystyle \forall S \in P $, $\displaystyle \exists i \in \left\{ 1, \ldots, m\right\}  $ tal que $\displaystyle S \subset R_{x_{i}} $. Si $\displaystyle S \in P $, entonces:
+\[M_{S}\left(f\right)-m_{S}\left(f\right) = \sup \left\{ f\left(y\right)-f\left(z\right) \; : \; y,z \in S\right\} \leq \sup \left\{ f\left(y\right)-f\left(z\right) \; : \; y,z \in R_{x_{i}}\right\} <\epsilon  .\]
+De esta manera, 
+\[S\left(f,P\right)-s\left(f,P\right)=\sum^{}_{S\in P}\left(M_{S}\left(f\right)-m_{S}\left(f\right)\right)v\left(S\right) \leq \sum^{}_{S \in P}\epsilon \cdot v\left(S\right) = \epsilon \cdot v\left(R\right).\]
+\end{proof}
+\begin{observation}
+Se puede ver que 
+\[D\left(f\right)= \left\{ x \in R \; : \; f \; \text{no es continua en }x\right\} \subset \bigcup_{\epsilon > 0}F_{\epsilon } = \bigcup_{k \in \N}F_{\frac{1}{k}} .\]
+\end{observation}
+Ahora estamos en condiciones para demostrar el teorema de Lebesgue. 
+\begin{theorem}[Teorema de Lebesgue]
+Sea $\displaystyle R \subset \R^{n} $ un rectángulo y $\displaystyle f : R \to \R $ acotada. Entonces, $\displaystyle f $ es integrable en $\displaystyle R $ si y solo si el conjunto de puntos de discontinuidad de $\displaystyle f $, $\displaystyle D\left(f\right) $, tiene medida nula.
+\end{theorem}
+\begin{proof}
+\begin{description}
+\item[(i)] Supongamos que $\displaystyle f $ es integrable en $\displaystyle R $. Veamos que $\displaystyle \forall m \in \N $, el conjunto $\displaystyle F_{\frac{1}{m}} $ tiene contenido nulo. Dado $\displaystyle \epsilon > 0 $, consideramos $\displaystyle \frac{\epsilon }{m} > 0 $. Por ser $\displaystyle f $ integrable, existe $\displaystyle P \in \mathcal{P}\left(R\right) $ tal que 
+	\[S\left(f,P\right)-s\left(f,P\right) = \sum^{}_{S \in P}\left(M_{S}\left(f\right)-m_{S}\left(f\right)\right) \cdot v\left(S\right) < \frac{\epsilon }{m} .\]
+	Sean $\displaystyle X= \left\{ S \in P \; : \; S \cap F_{\frac{1}{m}} \neq \emptyset\right\}  $ y $\displaystyle X_{0} = \left\{ S \in P \; : \; \Int\left(S\right)\cap F_{\frac{1}{m}}\neq\emptyset\right\} \subset X $. Podemos distinguir dos casos:
+	\begin{itemize}
+	\item Si $\displaystyle S \in X/X_{0} $, tenemos que $\displaystyle \Int\left(S\right) \cap F_{\frac{1}{m}} = \emptyset $ y además $\displaystyle \partial S \cap F_{\frac{1}{m}} = S \cap F_{\frac{1}{m}}\neq \emptyset $. 
+	\item Si $\displaystyle S \in X_{0} $, tenemos que existen $\displaystyle x \in \Int\left(S\right) \cap F_{\frac{1}{m}} $ y $\displaystyle r > 0 $ tales que $\displaystyle B\left(x,r\right)\subset S $ y $\displaystyle o\left(f,x\right)\geq \frac{1}{m} $. 
+	\end{itemize}
+De esta forma, 
+\[ .\]
+\[
+\begin{split}
+	M_{S}\left(f\right)-m_{S}\left(f\right)=&\sup \left\{ f\left(y\right)-f\left(z\right) \; : \; y,z \in S\right\}  \\ \geq & \sup \left\{ f\left(y\right)-f\left(z\right) \; : \; y,z \in B\left(x,r\right)\right\} \geq \frac{1}{m}.
+\end{split}
+\]
+
+Por otra parte,
+\[
+\begin{split}
+F_{\frac{1}{m}} \subset \left(\bigcup_{S \in X_{0}}S\right) \cup \left(\bigcup_{S \in X/X_{0}}\partial S\right) .
+\end{split}
+\]
+De esto se deduce que
+\[
+\begin{split}
+	\frac{1}{m}\sum^{}_{S\in X_{0}}v\left(S\right)=\sum^{}_{S\in X_{0}}\frac{1}{m}v\left(S\right)\leq \sum^{}_{S \in X_{0}}\left(M_{S}\left(f\right)-m_{S}\left(f\right)\right)v\left(S\right) 
+	\leq  S\left(f,P\right)-s\left(f,P\right)\leq \frac{\epsilon }{m}.
+\end{split}
+\]
+Así, $\displaystyle \sum^{}_{S \in X_{0}}v\left(S\right)<\epsilon  $. Como $\displaystyle F_{\frac{1}{m}} $ tiene contenido nulo, tiene medida nula. De esta forma, como $\displaystyle D_{f} $ es unión numerable de conjuntos de medida nula, tiene medida nula. 
+\item[(ii)] Supongamos que $\displaystyle D\left(f\right)$ tiene medida nula. Dado $\displaystyle \epsilon > 0 $, sabemos que $\displaystyle F_{\epsilon } \subset D\left(f\right) $, por lo que $\displaystyle F_{\epsilon } $ tiene medida nula. Además, por ser $\displaystyle F_{\epsilon } $ compacto, se tiene que $\displaystyle F_{\epsilon } $ tiene contenido nulo. Así, existen rectángulos $\displaystyle R_{1}, \ldots, R_{m} $ tales que 
+	\[F_{\epsilon }\subset \bigcup_{i = 1}^{m}\Int\left(R_{i}\right) \quad \text{y} \quad \sum^{m}_{i = 1}v\left(R_{i}\right) < \epsilon  .\]
+	Prolongando los lados de los $\displaystyle R_{i} $ obtenemos una partición $\displaystyle P $ de $\displaystyle R $ donde consideramos dos tipos de rectángulos:
+	\[X_{1} = \left\{ S \in P \; : \; \exists i \in \left\{ 1, \ldots, m\right\} , S \subset R_{i}\right\} , \; X_{2}= \left\{ S \in P \; : \; \forall i \in \left\{ 1, \ldots, m\right\} , S \not\subset R_{i}\right\}  .\]
+Si $\displaystyle S \in X_{2} $, entonces $\displaystyle \Int\left(S\right)\cap F_{\epsilon } = \emptyset $, por lo que $\displaystyle \forall x \in S $ se tiene que $\displaystyle o\left(f,x\right) < \epsilon  $. Por tanto, existe $\displaystyle P_{S} \in \mathcal{P}\left(S\right) $ tal que 
+\[S\left(f|_{S}, P_{S}\right)-s\left(f|_{S}, P_{S}\right) < \epsilon \cdot v\left(S\right) .\]
+Prolongando los lados de los subrectángulos de cada $\displaystyle P_{S} $ cuando $\displaystyle S \in X_{2} $, obtenemos una partición $\displaystyle P' $ más fina que $\displaystyle P $. Así, para todo $\displaystyle S \in X_{2} $, tenemos que $\displaystyle P'|_{S} $ es más fina que $\displaystyle P_{S} $. En particular
+\[S\left(f|_{S}, P'|_{S}\right)-s\left(f|_{S}, P'|_{S}\right)<\epsilon \cdot v\left(S\right) .\]
+Además, como $\displaystyle f $ es acotada podemos tomar $\displaystyle k > 0 $ tal que $\displaystyle \left|f\left(x\right)\right| \leq k $, $\displaystyle \forall x \in R $. Así,
+\[
+\begin{split}
+	S\left(f,P'\right)-s\left(f,P'\right)=&\sum^{}_{S \in X_{1}}\sum^{}_{S' \in P', S' \subset S}\left(M_{S'}\left(f\right)-m_{S'}\left(f\right)\right)v\left(S'\right) \\ +&\sum^{}_{S \in X_{2}}\sum^{}_{S'\in P', S' \subset S}\left(M_{S'}\left(f\right)-m_{S'}\left(f\right)\right)v\left(S'\right).
+\end{split}
+\]
+La expresión anterior se puede acotar gracias a estas dos desigualdades:
+\[
+\begin{split}
+	\sum^{}_{S \in X_{1}}\sum^{}_{S'\in P', S' \subset S}\left(M_{S'}\left(f\right)-m_{S'}\left(f\right)\right)v\left(S'\right) \leq & \sum^{}_{S \in X_{1}}\sum^{}_{S'\in P', S' \subset S}2kv\left(S'\right) \\
+	= & \sum^{}_{S \in X_{1}}2kv\left(S\right) \leq 2k\sum^{m}_{i = 1}v\left(R_{i}\right)=2k\epsilon  .
+\end{split}
+\]
+\[
+\begin{split}
+	\sum^{}_{S \in X_{2}}\sum^{}_{S'\in P', S' \subset S}\left(M_{S'}\left(f\right)-m_{S'}\left(f\right)\right)v\left(S'\right) = & \sum^{}_{S \in X_{2}}S\left(f|_{S}, P'|_{S}\right)-s\left(f|_{S}, P'|_{S}\right) \\
+	\leq & \sum^{}_{S \in X_{2}}\epsilon v\left(S\right)=\epsilon v\left(R\right) .
+\end{split}
+\]
+Así, tenemos que 
+\[S\left(f,P'\right)-s\left(f,P'\right)\leq \left(2k+v\left(R\right)\right)\epsilon  .\]
+Por tanto, $\displaystyle f $ es integrable.
+\end{description}
+
+\end{proof}
 
