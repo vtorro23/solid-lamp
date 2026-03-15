@@ -110,4 +110,21 @@ En esto último hemos aplicado el punto 2 del teorema de Fisher. Esto es en teor
 	\[ Y = \sqrt{\frac{X_{1}^{2} + \cdots + X_{k}^{2}}{k}} \sim \sqrt{\frac{\chi_{k}^{2}}{k}} .\]
 Si $\displaystyle Z = X_{k + 1} \sim N\left(0,1\right) $, entonces definimos la $\displaystyle T $ de Student como $\displaystyle T = \frac{Z}{Y} $. 	
 \end{definition}
+\section{Tema 3}
+\begin{eg}[Ejercicio 1]
+	Sea $\displaystyle X $ una observación de una población $\displaystyle N\left(0, \sigma \right) $. Tenemos que $\displaystyle \sigma \in \Theta \subset \R^{+} $. Sabemos que 
+	\[f_{\sigma }\left(x\right)=\frac{1}{\sigma\sqrt{2\pi }}e^{-\frac{1}{2\sigma^{2}}x^{2}} .\]
+Veamos si $\displaystyle \left|X\right| $ es un estadístico suficiente. Por el teorema de caracterización de Fisher es fácil ver que $\displaystyle T = \left|X\right| $ es suficiente.
+\end{eg}
+\begin{eg}[Ejercicio 2]
+	Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. de $\displaystyle X $. 
+	\begin{description}
+	\item[(a)] $\displaystyle Beta\left(\alpha, \beta \right) $, $\displaystyle \alpha, \beta > 0 $. Tendremos que $\displaystyle \theta = \left(\alpha, \beta \right)\in \R^{+} \times \R^{+} $. Tendremos que  
+		\[ f_{\theta}\left(x\right)\propto K\left(\alpha, \beta \right)x^{\alpha-1}\left(1-x\right)^{\beta-1} = K\left(\alpha, \beta \right)e^{\left(\alpha - 1\right)\ln x + \left(\beta-1\right)\ln \left(1-x\right)} .\]
+	Podemos coger $\displaystyle q_{1}\left(\theta \right)=\alpha-1 $ y $\displaystyle t_{1}\left(x\right)=\ln x $ y también $\displaystyle q_{2}\left(\theta\right)=\beta-1 $ y $\displaystyle t_{2}\left(x\right)=\ln\left(1-x\right) $. Así, el estadístico suficiente será
+	\[ \left(\sum^{n}_{i=1}t_{1}\left(X_{i}\right), \sum^{n}_{i=1}t_{2}\left(X_{i}\right)\right)=\left(\sum^{n}_{i= 1}\ln X_{i}, \sum^{n}_{i=1}\ln\left(1-X_{i}\right)\right) .\]
+\item[(b)] 
+	\end{description}
+	
+\end{eg}
 

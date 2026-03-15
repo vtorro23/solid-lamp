@@ -1,0 +1,32 @@
+\chapter{Estimación puntual paramétrica}
+\section{Propiedades de los estimadores}
+Sea $\displaystyle \left(\Omega, \mathcal{A}, P\right) $ el espacio probabilístico asociado a un experimento aleatorio $\displaystyle \mathcal{E} $, una variable aleatoria observable $\displaystyle X : \Omega \to \R $ y su modelo estadístico asociado $\displaystyle \left(\chi, \mathcal{B}, F_{\theta}\right)_{\theta\in\Theta\subset\R^{l}} $, $\displaystyle \mathcal{B}=\mathcal{B}\left(\R\right) $ y $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. $\displaystyle \left(n\right) $ de $\displaystyle X $. 
+\begin{definition}[Estimador]
+Un \textbf{estimador} del parámetro $\displaystyle \theta $ es un estadístico $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) : \chi^{n} \to \Theta$ que se utiliza para determinar el valor desconocido $\displaystyle \theta $. 
+\end{definition}
+\begin{definition}[Sesgo]
+	En general, se llama \textbf{sesgo} de un estimador a la diferencia $\displaystyle b\left(T, \theta\right)=E_{\theta}\left[T\right] -\theta $.
+\end{definition}
+
+\begin{definition}[Estimador centrado]
+	Decimos que un estadístico $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) : \chi^{n} \to \Theta $ es un \textbf{estimador centrado} para $\displaystyle \theta $ cuando $\displaystyle E_{\theta}\left[T\right] =\theta $.
+\end{definition}
+\begin{observation}
+En el caso de los estimadore scentrados tendremos que el sesgo es $\displaystyle b\left(T, \theta\right)=0 $. 
+\end{observation}
+\begin{eg}
+Es fácil comprobar que $\displaystyle \left(\overline{X}, S^{2}\right) $ es un estimador centrado de $\displaystyle \theta=\left(\mu, \sigma^{2}\right) $. 
+\end{eg}
+\begin{eg}
+Es fácil ver que $\displaystyle \sigma^{2}_{n}=b_{2}=\frac{1}{n}\sum^{n}_{i= 1}\left(X_{i}-\overline{X}\right)^{2} $ es un estimador centrado de $\displaystyle h\left(\theta\right)=\frac{n-1}{n}\sigma^{2} $ y $\displaystyle b\left(\sigma_{n}^{2}, \sigma^{2}\right)=-\frac{\sigma^{2}}{n} $. 
+\end{eg}
+\begin{observation}
+Podemos hacer un par de observaciones.
+\begin{enumerate}
+\item Puede que no exista un estimador centrado de $\displaystyle \theta $.
+\item Si $\displaystyle T $ es un estimador centraod para $\displaystyle \theta $, en general $\displaystyle h\left(T\right) $, con $\displaystyle h $ medible, no tiene por qué ser centrado para $\displaystyle h\left(\theta\right) $. 
+\item A pesar de que exista un estimador centrado para $\displaystyle \theta $, puede ser que no tenga sentido. 
+\item A pesar de que exista un estimador centrado para $\displaystyle \theta $, puede que su varianza sea muy grande y no sea adecuado para la estimación.
+\end{enumerate}
+\end{observation}
+

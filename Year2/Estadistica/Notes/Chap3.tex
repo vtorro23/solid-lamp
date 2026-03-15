@@ -1,4 +1,6 @@
 \chapter{Reducción de datos}
+\section{Estadísticos suficientes y minimal suficientes}
+
 Sea $\displaystyle \left(\Omega, \mathcal{A}, P \right) $ el espacio de probabilidad asociado a un experimento aleatorio $\displaystyle \mathcal{E} $, una variable aleatoria observable $\displaystyle X : \Omega \to \R $ y su modelo estadístico asociado $\displaystyle \left(\chi, \mathcal{B}, F_{\theta }\right)_{\theta \in \Theta \subset \R^{l}} $, $\displaystyle \mathcal{B}=\mathcal{B}\left(\R\right) $ y $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. $\displaystyle \left(n\right) $ de $\displaystyle X $.
 \begin{definition}[Estadístico suficiente]
 Decimos que $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) : \R^{n} \to \R^{m} $ es un \textbf{estadístico suficiente} para $\displaystyle \theta  $ si la distribución de probabilidad de la muestra condicionada por $\displaystyle T $ es independiente de $\displaystyle \theta  $. 
@@ -19,20 +21,257 @@ $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) : \R^{n} \to \R^{m} $ es u
 \[f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=h\left(x_{1}, \ldots, x_{n}\right)g_{\theta}\left(T\left(x_{1}, \ldots, x_{n}\right)\right) ,\]
 donde $\displaystyle f_{\theta}\left(x_{1}, \ldots, x_{n}\right) $ es la función de masa de la muestra. 
 \end{theorem}
-\begin{eg}[Ejercicio 1]
-	Sea $\displaystyle X $ una observación de una población $\displaystyle N\left(0, \sigma \right) $. Tenemos que $\displaystyle \sigma \in \Theta \subset \R^{+} $. Sabemos que 
-	\[f_{\sigma }\left(x\right)=\frac{1}{\sigma\sqrt{2\pi }}e^{-\frac{1}{2\sigma^{2}}x^{2}} .\]
-Veamos si $\displaystyle \left|X\right| $ es un estadístico suficiente. Por el teorema de caracterización de Fisher es fácil ver que $\displaystyle T = \left|X\right| $ es suficiente.
+\begin{proof}
+Demostramos solo el caso discreto. En primer lugar, si $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) $ es un estadístico suficiente para $\displaystyle \theta $, entonces $\displaystyle f_{\theta}\left(x_{1}, \ldots, x_{n} | t\right) $ es independiente de $\displaystyle \theta $. Así, tendremos que si $\displaystyle T\left(x_{1}, \ldots, x_{n}\right)=t $, entonces
+\[f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=f_{\theta}\left(x_{1}, \ldots, x_{n} | t\right)f_{\theta}\left(t\right)=h\left(x_{1}, \ldots, x_{n}\right)g_{\theta}\left(T\left(x_{1}, \ldots, x_{n}\right)\right) .\]
+Recíprocamente, si $\displaystyle T\left(x_{1}, \ldots, x_{n}\right) = t $, tendremos que
+\[
+\begin{split}
+	f_{\theta}\left(x_{1}, \ldots, x_{n} | t\right)= &\frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}\left(t\right)}=\frac{f_{\theta}\left(x_{1}, \ldots , x_{n}\right)}{\sum^{}_{\left(y_{1}, \ldots, y_{n}\right), T\left(y_{1}, \ldots, y_{n}\right)=1}f_{\theta}\left(y_{1}, \ldots, y_{n}\right)} \\
+	= & \frac{h\left(x_{1}, \ldots, x_{n}\right)g_{\theta}\left(t\right)}{\sum^{}_{\left(y_{1}, \ldots, y_{n}\right), T\left(y_{1}, \ldots, y_{n}\right)=1}h\left(y_{1}, \ldots, y_{n}\right)g_{\theta }\left(t\right)} \\
+	= & \frac{h\left(x_{1}, \ldots, x_{n}\right)}{\sum^{}_{\left(y_{1}, \ldots, y_{n}\right), T\left(y_{1}, \ldots, y_{n}\right)=1}h\left(y_{1}, \ldots, y_{n}\right)},
+\end{split}
+\]
+que es independiente de $\displaystyle \theta $. 
+\end{proof}
+\begin{eg}[Bernoulli]
+Encontremos un estadístico suficiente para $\displaystyle \theta $ si $\displaystyle X \sim Bin\left(1,\theta\right) $. Tenemos que 
+\[f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=\prod^{n}_{i = 1}\theta^{x_{i}}\left(1-\theta\right)^{1-x_{i}}=\theta^{\sum^{n}_{i=1}x_{i}}\left(1-\theta \right)^{n-\sum^{n}_{i=1}x_{i}}=g_{\theta}\left(\sum^{n}_{i=1}x_{i}\right)h\left(x_{1}, \ldots, x_{n}\right) .\]
+De esta forma, $\displaystyle T = \sum^{n}_{i = 1}X_{i} $ es un estadístico suficiente para $\displaystyle \theta $, como habíamos visto antes. 
 \end{eg}
-\begin{eg}[Ejercicio 2]
-	Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. de $\displaystyle X $. 
-	\begin{description}
-	\item[(a)] $\displaystyle Beta\left(\alpha, \beta \right) $, $\displaystyle \alpha, \beta > 0 $. Tendremos que $\displaystyle \theta = \left(\alpha, \beta \right)\in \R^{+} \times \R^{+} $. Tendremos que  
-		\[ f_{\theta}\left(x\right)\propto K\left(\alpha, \beta \right)x^{\alpha-1}\left(1-x\right)^{\beta-1} = K\left(\alpha, \beta \right)e^{\left(\alpha - 1\right)\ln x + \left(\beta-1\right)\ln \left(1-x\right)} .\]
-	Podemos coger $\displaystyle q_{1}\left(\theta \right)=\alpha-1 $ y $\displaystyle t_{1}\left(x\right)=\ln x $ y también $\displaystyle q_{2}\left(\theta\right)=\beta-1 $ y $\displaystyle t_{2}\left(x\right)=\ln\left(1-x\right) $. Así, el estadístico suficiente será
-	\[ \left(\sum^{n}_{i=1}t_{1}\left(X_{i}\right), \sum^{n}_{i=1}t_{2}\left(X_{i}\right)\right)=\left(\sum^{n}_{i= 1}\ln X_{i}, \sum^{n}_{i=1}\ln\left(1-X_{i}\right)\right) .\]
-\item[(b)] 
-	\end{description}
-	
+\begin{eg}[Poisson]
+Encontramos un estadístico suficiente para $\displaystyle \theta $ si $\displaystyle X \sim Poisson\left(\theta \right) $. Tenemos que 
+\[f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=\prod^{n}_{i=1}e^{-\theta}\frac{\theta^{x_{i}}}{x_{i}!} = e^{-n\theta}\frac{\theta^{\sum^{n}_{i=1}x_{i}}}{\prod^{n}_{i=1}x_{i}!} .\]
+Podemos tomar $\displaystyle T = \sum^{n}_{i= 1}X_{i} $ de forma que
+\[g_{\theta}\left(t\right)=e^{-n\theta}\theta^{t} \quad \text{y} \quad h\left(x_{1}, \ldots, x_{n}\right)=\left(\prod^{n}_{i=1}x_{i}!\right)^{-1} .\]
+\end{eg}
+\begin{observation}
+	La propia muestra y el estadístico ordenado $\displaystyle \left(X_{\left(1\right)}, \ldots, X_{\left(n\right)}\right) $ son estadísticos suficientes. La primera es trivial. Por otro lado, supongamos que dada una m.a.s. ($\displaystyle n $) de $\displaystyle X $, donde $\displaystyle \tilde{f}_{\theta} $ es la función de densidad de $\displaystyle X $, tendremos que
+	\[f_{\theta}\left(x_{1}, \ldots, x_{n}\right) = \prod^{n}_{i=1}\tilde{f}_{\theta}\left(x_{i}\right)=\frac{1}{n!}g_{\theta}\left(x_{\left(1\right)}, \ldots, x_{\left(n\right)}\right) ,\]
+	donde $\displaystyle g_{\theta} $ es la función de densidad del estadístico ordenado. 
+\end{observation}
+\begin{prop}
+	Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s $\displaystyle \left(n\right) $ de $\displaystyle X $.
+	\begin{enumerate}
+	\item Si $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) $ es suficiente para $\displaystyle \theta $, entonces cualquier biyección $\displaystyle S = S\left(T\right) $ también es suficiente para $\displaystyle \theta $.
+	\item Si $\displaystyle T=T\left(X_{1}, \ldots, X_{n}\right) $ y $\displaystyle S=S\left(X_{1}, \ldots, X_{n}\right) $ son suficientes para $\displaystyle \theta $, entonces también es suficiente para $\displaystyle \theta $ el estadístico $\displaystyle \left(T,S\right) $. 
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s $\displaystyle \left(n\right) $ de $\displaystyle X $.
+\begin{enumerate}
+\item Como $\displaystyle T $ es suficiente tendremos que $\displaystyle f_{\theta} $ se puede factorizar de la forma
+	\[f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=h\left(x_{1}, \ldots, x_{n}\right)g_{\theta}\left(T\left(x_{1}, \ldots, x_{n}\right)\right) =h\left(x_{1}, \ldots, x_{n}\right)g_{\theta}\left(S\right) .\]
+	Por tanto, obtenemos también la factorización en función de $\displaystyle S $, por lo que $\displaystyle S $ también es suficiente para $\displaystyle \theta $. 
+\item Mirar la demostración en el libro.	
+\end{enumerate}
+\end{proof}
+\begin{eg}[Normal]
+	Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. de $\displaystyle X\sim N\left(\theta, \sigma_{0}\right) $, con $\displaystyle \sigma_{0} $ conocida. Veamos que $\displaystyle T=\overline{X} $ es un estadístico suficiente para $\displaystyle \theta $:
+	\[
+	\begin{split}
+		f_{\theta}\left(x_{1}, \ldots, x_{n}\right)= & \prod^{n}_{i=1}\frac{1}{\sigma_{0}\sqrt{2\pi }}e^{-\frac{1}{2}\left(\frac{x_{i}-\theta}{\sigma_{0}}\right)^{2}}=\frac{1}{\left(\sigma_{0}\sqrt{2\pi }\right)^{n}} e^{-\frac{1}{2}\sum^{n}_{i=1}\left(\frac{x_{i}-\theta}{\sigma_{0}}\right)^{2}}\\
+		= &\frac{1}{\left(\sigma_{0}\sqrt{2\pi }\right)^{n}} e^{-\frac{1}{2\sigma_{0}^{2}}\sum^{n}_{i=1}x_{i}^{2}}e^{\frac{n\theta}{\sigma_{0}^{2}}\left(\overline{x}-\frac{\theta}{2}\right)}.
+	\end{split}
+	\]
+De esta manera, podemos tomar $\displaystyle T = \overline{X} $ y nos queda que
+\[h\left(x_{1}, \ldots, x_{n}\right)=\frac{1}{\left(\sigma_{0}\sqrt{2\pi }\right)^{n}}e^{-\frac{1}{2\sigma_{0}^{2}}\sum^{n}_{i=1}x_{i}^{2}} \quad \text{y} \quad g_{\theta}\left(T\left(x_{1}, \ldots, x_{n}\right)\right)= e^{\frac{n\theta}{\sigma_{0}^{2}}\left(\overline{x}-\frac{\theta}{2}\right)}.\]
+Ahora, veamos que $\displaystyle T = \sum^{n}_{i=1}\left(X_{i}-\mu_{0}\right)^{2} $ es suficiente para $\displaystyle \theta $ si $\displaystyle X \sim N\left(\mu_{0}, \theta\right) $, con $\displaystyle \mu_{0} $ conocida. Tendremos que
+\[f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=\prod^{n}_{i=1}\frac{1}{\theta\sqrt{2\pi }}e^{-\frac{1}{2}\left(\frac{x_{i}-\mu_{0}}{\theta}\right)^{2}}=\frac{1}{\left(\theta\sqrt{2\pi }\right)^{n}}e^{-\frac{1}{2\theta^{2}}\sum^{n}_{i=1}\left(x_{i}-\mu_{0}\right)^{2}} .\]
+De esta forma, podemos tomar
+\[h\left(x_{1}, \ldots, x_{n}\right)=1 \quad \text{y} \quad g_{\theta}\left(T\left(x_{1}, \ldots, x_{n}\right)\right)=\frac{1}{\left(\theta\sqrt{2\pi }\right)^{n}}e^{-\frac{1}{2\theta^{2}}\sum^{n}_{i=1}\left(x_{i}-\mu_{0}\right)^{2}}.\]
+Finalmente, veamos que $\displaystyle T = \left(\sum^{n}_{i=1}X_{i}, \sum^{n}_{i=1}X^{2}_{i}\right) $ es suficiente para $\displaystyle \theta\left(\mu, \sigma \right) $, con $\displaystyle X \sim N\left(\mu, \sigma \right) $ y $\displaystyle \mu, \sigma  $ son desconocidas. 
+\[
+\begin{split}
+	f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=& \prod^{n}_{i=1}\frac{1}{\sigma\sqrt{2\pi }}e^{-\frac{1}{2}\left(\frac{x_{i}-\mu}{\sigma }\right)^{2}}=\frac{1}{\left(\sigma\sqrt{2\pi }\right)^{n}}e^{-\frac{1}{2\sigma^{2}}\sum^{n}_{i=1}\left(x_{i}-\mu\right)^{2}} \\
+	= & \frac{1}{\left(\sigma\sqrt{2\pi }\right)^{n}} e^{-\frac{1}{2\sigma^{2}}\sum^{n}_{i=1}x_{i}^{2}}e^{\frac{\mu}{\sigma^{2}}\sum^{n}_{i=1}x_{i}}e^{-\frac{n\mu^{2}}{2\sigma^{2}}}.
+\end{split}
+\]
+De esta forma, podemos tomar
+\[h\left(x_{1}, \ldots, x_{n}\right)=1 \quad \text{y} \quad g_{\theta}\left(T\left(x_{1}, \ldots, x_{n}\right)\right)=\frac{1}{\left(\sigma\sqrt{2\pi }\right)^{n}} e^{-\frac{1}{2\sigma^{2}}\sum^{n}_{i=1}x_{i}^{2}}e^{\frac{\mu}{\sigma^{2}}\sum^{n}_{i=1}x_{i}}e^{-\frac{n\mu^{2}}{2\sigma^{2}}} .\]
+Podemos ver que en este caso $\displaystyle h : \R^{n} \to \R $ y como $\displaystyle T : \R^{n} \to \R^{2} $, tendremos que $\displaystyle g_{\theta} : \R^{2} \to \R $. De esto último que hemos demostrado es fácil deducir que $\displaystyle T = \left(\overline{X}, S^{2}_{n}\right) $ también es suficiente. 
+\end{eg}
+\begin{eg}[Uniforme]
+	Si $\displaystyle X \sim U\left(0, \theta\right) $, entonces los estadísticos $\displaystyle \left(X_{\left(1\right)}, X_{\left(n\right)}\right) $ y $\displaystyle X_{\left(n\right)} $ son suficientes para $\displaystyle \theta $. En efecto, tendremos que la función de densidad de $\displaystyle X $ será $\displaystyle \tilde{f}_{\theta}=\frac{1}{\theta} $, de forma que
+	\[f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=\prod^{n}_{i=1}\frac{1}{\theta}=\frac{1}{\theta^{n}} .\]
+Por otro lado, se puede comprobar que la función de densidad de $\displaystyle X_{\left(n\right)} $ será
+\[f_{X_{\left(n\right)}}\left(x\right)=n\frac{x^{n-1}}{\theta^{n}} .\]
+De esta forma, 
+\[f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=\frac{1}{\theta^{n}}= .\]
+También podemos ver que el estadístico $\displaystyle \left(X_{\left(1\right)}, X_{\left(n\right)}\right) $ es suficiente para $\displaystyle \theta $ si $\displaystyle X \sim U\left(-\frac{\theta}{2}, \frac{\theta}{2}\right) $. 
 \end{eg}
 
+\begin{definition}[Órbita]
+Dado un estadístico $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) $ se define su \textbf{órbita} de $\displaystyle t \in \R^{m} $ como \footnote{Recordamos que $\displaystyle \chi^{n} $ es el espacio muestral.} 
+\[A_{t}= \left\{ \left(x_{1}, \ldots, x_{n}\right) \in \chi^{n} \; : \; T\left(x_{1}, \ldots, x_{n}\right)=t\right\}  .\]
+\end{definition}
+\begin{observation}
+	Es fácil ver que $\displaystyle K_{T}= \left\{ A_{t} \; : \; t \in \R^{m}\right\}  $ es una partición disjunta de $\displaystyle \chi^{n} $ y la denominamos \textbf{partición inducida por el estadístico $\displaystyle T $}.
+\end{observation}
+\begin{notation}
+Decimos que $\displaystyle K_{T} $ es \textbf{suficiente} si y solo si $\displaystyle T $ es suficiente.
+\end{notation}
+\begin{definition}[Subpartición]
+Dados dos estadísticos $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) $ y $\displaystyle S = S\left(X_{1}, \ldots, X_{n}\right) $, dedimos que $\displaystyle K_{S} $ es una \textbf{subpartición} de $\displaystyle K_{T} $ si $\displaystyle \forall B \in K_{S} $, $\displaystyle \exists A \in K_{T} $ tal que $\displaystyle B \subset A $. En este caso, se dice que $\displaystyle K_{T} $ es \textbf{menos fina} que $\displaystyle K_{S} $. 
+\end{definition}
+\begin{definition}[Estadístico minimal suficiente]
+Decimos que un estadístico $\displaystyle T $ es \textbf{minimal suficiente} si su partición asociada es suficiente y es la menos fina entre todos los estadísticos suficientes.
+\end{definition}
+\begin{prop}
+Ambos enunciados son equivalentes:
+\begin{enumerate}
+\item El estadístico $\displaystyle T $ es minimal suficiente.
+\item El estadísitco $\displaystyle T $ es suficiente y $\displaystyle \forall S = S\left(X_{1}, \ldots, X_{n}\right) $ suficiente, $\displaystyle \exists \varphi $ tal que $\displaystyle \varphi\left(S\right)=T $. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Demostramos (1)$\displaystyle \Rightarrow $(2). Sea $\displaystyle S $ suficiente. Si $\displaystyle S\left(x_{1}, \ldots, x_{n}\right)=S\left(y_{1}, \ldots, y_{n}\right)=s $, entonces tendremos que $\displaystyle \left(x_{1}, \ldots, x_{n}\right), \left(y_{1}, \ldots, y_{n}\right)\in B_{s} $. De esta forma, existe $\displaystyle A_{t} \in K_{T} $ tal que $\displaystyle B_{s}\subset A_{t} $, por lo que $\displaystyle T\left(x_{1}, \ldots, x_{n}\right)=T\left(y_{1}, \ldots, y_{n}\right)=t $. Así, existe $\displaystyle \varphi $ tal que $\displaystyle \varphi\left(S\right)=T $ y $\displaystyle T $ es suficiente. \\
+Ahora demostramos (2)$\displaystyle \Rightarrow $(1), sea $\displaystyle S $ suficiente y $\displaystyle \varphi\left(S\right) $ tal que $\displaystyle \varphi\left(S\right)=T $. Tendremos que $\displaystyle T $ es suficiente y si $\displaystyle S\left(x_{1}, \ldots, x_{n}\right)=S\left(y_{1}, \ldots, y_{n}\right)=s $, entonces 
+\[T\left(x_{1}, \ldots, x_{n}\right)=\varphi\left(S\left(x_{1}, \ldots, x_{n}\right)\right)=\varphi\left(s\right)=\varphi\left(S\left(y_{1}, \ldots, y_{n}\right)\right)=T\left(y_{1}, \ldots, y_{n}\right) .\]
+De esta forma, como $\displaystyle B_{s}\subset A_{\varphi\left(s\right)} $ tendremos que $\displaystyle K_{S} $ es una subpartición de $\displaystyle K_{T} $. 
+\end{proof}
+Consideremos la siguiente relación de equivalencia
+\[\left(x_{1}, \ldots, x_{n}\right)\sim \left(y_{1}, \ldots, y_{n}\right) \iff \frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}\left(y_{1}, \ldots, y_{n}\right)} \; \text{es independiente de }\theta.\]
+
+\begin{theorem}[Teorema de caracterización de estadísticos suficientes]
+La relación de equivalencia $\displaystyle \sim $ induce una partición minimal suficiente y por tanto determina un estadístico minimal suficiente.
+\end{theorem}
+\begin{proof}
+Asignemos a cada clase del conjunto cociente un valor $\displaystyle t $ y definamos el estadístico $\displaystyle T = T\left(X_{1}, \ldots, X_{1}\right) $ tal que $\displaystyle \left(x_{1}, \ldots, x_{n}\right)\sim \left(y_{1}, \ldots, x_{n}\right) $ cuando $\displaystyle T\left(x_{1}, \ldots, x_{n}\right)=T\left(y_{1}, \ldots, y_{n}\right)=t $. Demostremos que $\displaystyle T $ es suficiente \footnote{Lo hacemos solo en el caso discreto.}. 
+Si $\displaystyle T\left(x_{1}, \ldots, x_{n}\right)=t $, tendremos que
+\[
+\begin{split}
+	f_{\theta}\left(x_{1}, \ldots, x_{n} | t\right) = & \frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}\left(t\right)}=\frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{\sum^{}_{\left(y_{1}, \ldots, y_{n}\right), T\left(y_{1}, \ldots, y_{n}\right)=1}f_{\theta}\left(y_{1}, \ldots, y_{n}\right)} \\
+	= & \frac{1}{\sum^{}_{\left(y_{1}, \ldots, y_{n}\right)\in A_{t}}\frac{f_{\theta}\left(y_{1}, \ldots, y_{n}\right)}{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}} .
+\end{split}
+\]
+Como este valor es independiente de $\displaystyle \theta $, tenemos que $\displaystyle T $ es suficiente para $\displaystyle \theta $. 
+Ahora demostramos que $\displaystyle T $ es minimal. Sea $\displaystyle S = S\left(X_{1}, \ldots, X_{n}\right) $ suficiente y $\displaystyle \left(x_{1}, \ldots, x_{n}\right), \left(y_{1}, \ldots, y_{n}\right)\in B_{s} $. Entonces,
+\[\frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}\left(y_{1}, \ldots, y_{n}\right)}=\frac{h\left(x_{1}, \ldots, x_{n}\right)g_{\theta}\left(s\right)}{h\left(y_{1}, \ldots, y_{n}\right)g_{\theta}\left(s\right)} = \frac{h\left(x_{1}, \ldots, x_{n}\right)}{h\left(y_{1}, \ldots, y_{n}\right)}.\]
+Como este valor no depende de $\displaystyle \theta $, existe $\displaystyle t $ tal que $\displaystyle \left(x_{1}, \ldots, x_{n}\right), \left(y_{1}, \ldots, y_{n}\right) \in A_{t} $, por lo que $\displaystyle K_{S} $ es una subpartición de $\displaystyle K_{T} $. 
+\end{proof}
+\begin{observation}
+Podemos enunciar este teorema de una forma más entendible: un estadístico $\displaystyle T $ es minimal suficiente si y solo si  
+\[ \frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}\left(y_{1}, \ldots, y_{n}\right)}\; \text{no depende de $\displaystyle \theta $ } \iff T\left(x_{1}, \ldots, x_{n}\right)=T\left(y_{1}, \ldots, y_{n}\right).\]
+\end{observation}
+
+\begin{eg}
+Veamos que $\displaystyle T\left(X_{1}, \ldots, X_{n}\right)=\sum^{n}_{i=1}X_{i} $ es minimal suficiente para $\displaystyle \theta $ si $\displaystyle X \sim Bin\left(1,\theta\right) $. En efecto, tenemos que 
+\[f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=\prod^{n}_{i=1}\theta^{x_{i}}\left(1-\theta\right)^{1-x_{i}}=\theta^{\sum^{n}_{i=1}x_{i}}\left(1-\theta\right)^{n-\sum^{n}_{i=1}x_{i}} .\]
+Tenemos que 
+\[\frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}\left(y_{1}, \ldots, y_{n}\right)}=\left(\frac{\theta}{1-\theta}\right)^{\sum^{n}_{i=1}x_{i}-\sum^{n}_{i=1}y_{i}} \]
+es independiente de $\displaystyle \theta $ sólamente cuando $\displaystyle \sum^{n}_{i=1}x_{i}=\sum^{n}_{i=1}y_{i} $. 
+\end{eg}
+\section{Familia exponencial $\displaystyle k $-paramétrica}
+Sea $\displaystyle \left(\Omega, \mathcal{A}, P\right) $ es espacio probabilístico asociado a un experimento aleatorio $\displaystyle \mathcal{E} $, una variable aleatoria observable $\displaystyle X : \Omega \to \R $ y su modelo estadístico asociado $\displaystyle \left(\chi, \mathcal{B}, F_{\theta}\right)_{\theta\in \Theta \subset \R^{l}} $, $\displaystyle \mathcal{B}=\mathcal{B}\left(\R\right) $ y $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. $\displaystyle \left(n\right) $ de $\displaystyle X $. 
+\begin{definition}[Familia exponencial $\displaystyle k $-paramétrica]
+La distribución de $\displaystyle X $ pertenece a la \textbf{familia exponencial $\displaystyle k $-paramétrica} si 
+\[f_{\theta}\left(x\right)=c\left(\theta\right)h\left(x\right)e^{\sum^{k}_{j=1}q_{j}\left(\theta\right)T_{j}\left(x\right)} .\]
+\end{definition}
+\begin{observation}
+Si $\displaystyle X $ pertenece a la familia exponencial $\displaystyle k $-paramétrica, tendremos que 
+\[f_{\theta}\left(x_{1}, \ldots, x_{n}\right)=c\left(\theta\right)^{n}\prod^{n}_{i=1}h\left(x_{i}\right)e^{\sum^{k}_{j = 1}q_{j}\left(\theta\right)\sum^{n}_{i=1}T_{j}\left(x_{i}\right)} .\]
+Por el teorema de factorización, $\displaystyle \left(\sum^{n}_{i=1}T_{1}\left(X_{i}\right), \ldots, \sum^{n}_{i=1}T_{k}\left(X_{i}\right)\right) $ es suficiente para $\displaystyle \theta $ y se le denomina el \textbf{estadístico natural suficiente}. 
+\end{observation}
+\begin{theorem}
+Si existen $\displaystyle \theta_{1}, \ldots, \theta_{k} \in \Theta \subset \R^{l} $ tales que los vectores $\displaystyle c_{r}=\left(q_{1}\left(\theta_{r}\right), \ldots, q_{k}\left(\theta_{r}\right)\right) $, $\displaystyle r = 1, \ldots, k $, son linealmente independientes. Entonces, el estadístico natural suficiente de la familia exponencial $\displaystyle k $-paramétrica es minimal.
+\end{theorem}
+\begin{proof}
+Tenemos que 
+\[
+\begin{split}
+	\frac{f_{\theta}\left(x_{1}, \ldots, x_{n}\right)}{f_{\theta}\left(y_{1}, \ldots, y_{n}\right)} = & \frac{c\left(\theta\right)^{n}\prod^{n}_{i=1}h\left(x_{i}\right)e^{\sum^{k}_{j=1}q_{j}\left(\theta\right)\sum^{n}_{i=1}T_{j}\left(x_{i}\right)}}{c\left(\theta\right)^{n}\prod^{n}_{i=1}h\left(y_{i}\right)e^{\sum^{k}_{j=1}q_{j}\left(\theta\right)\sum^{n}_{i=1}T_{j}\left(y_{i}\right)}} \\
+	= & \frac{\prod^{n}_{i=1}h\left(x_{i}\right)}{\prod^{n}_{i=1}h\left(y_{i}\right)}e^{\sum^{k}_{j = 1}q_{j}\left(\theta\right)\left(\sum^{n}_{i=1}T_{j}\left(x_{i}\right)-\sum^{n}_{i=1}T_{j}\left(y_{j}\right)\right)}.
+\end{split}
+\]
+Este valor es independiente de $\displaystyle \theta $ si y solo si 
+\[ \sum^{k}_{j = 1}q_{j}\left(\theta\right)\left(\sum^{n}_{i=1}T_{j}\left(x_{i}\right)-\sum^{n}_{i=1}T_{j}\left(y_{j}\right)\right)=0.\]
+En este caso, el sistema homogéneo 
+\[\sum^{k}_{j = 1}q_{j}\left(\theta_{r}\right)\left(\sum^{n}_{i=1}T_{j}\left(x_{i}\right)-\sum^{n}_{i = 1}T_{j}\left(y_{i}\right)\right)=0, \; r = 1, \ldots, k \]
+solo ademite la solución $\displaystyle \sum^{n}_{i=1}T_{j}\left(x_{i}\right)-\sum^{n}_{i=1}T_{j}\left(y_{i}\right)=0 $. Por el teorema de caracterización de estadísticos minimales suficientes, $\displaystyle \left(\sum^{n}_{i= 1}T_{1}\left(X_{i}\right), \ldots, \sum^{n}_{i=1}T_{k}\left(X_{i}\right)\right) $ es minimal. 
+\end{proof}
+\begin{eg}
+Antes vimos que $\displaystyle T = \left(\sum^{n}_{i= 1}X_{i}, \sum^{n}_{i=1}X_{i}^{2}\right) $ era suficiente para $\displaystyle \theta = \left(\mu, \sigma \right) $ si $\displaystyle X \sim N\left(\mu, \sigma \right) $. Veamos ahora que es minimal y que $\displaystyle \left(\overline{X}, S^{2}_{n}\right) $ también es minimal suficiente. Tenemos que $\displaystyle N\left(\mu, \sigma \right) $ pertenece a la familia exponencial $\displaystyle k $-paramétrica con $\displaystyle k=2 $. En efecto, tenemos que 
+\[f_{\theta}\left(x\right)=\frac{1}{\sigma\sqrt{2\pi }}e^{-\frac{1}{2\sigma^{2}}\left(x-\mu\right)^{2}}=c\left(\theta\right)h\left(x\right)e^{-\frac{1}{2\sigma^{2}}x^{2}+\frac{\mu}{\sigma^{2}}x} .\]
+De esta forma, el estadístico $\displaystyle T = \left(\sum^{n}_{i=1}X_{i}, \sum^{n}_{i = 1}X_{i}^{2}\right) $ es natural suficiente para $\displaystyle \theta $. Además, tenemos que $\displaystyle q_{1}\left(\theta\right)=\frac{\mu}{\sigma^{2}} $ y $\displaystyle q_{2}\left(\theta\right)=-\frac{1}{2\sigma^{2}} $. Tomando $\displaystyle \theta_{1}=\left(0,1\right) $ y $\displaystyle \theta_{2}=\left(1,1\right) $, tendremos que 
+\[c_{1}=\left(q_{1}\left(\theta_{1}\right), q_{2}\left(\theta_{1}\right)\right)=\left(0, - \frac{1}{2}\right)\quad \text{y} \quad c_{2}=\left(q_{1}\left(\theta_{2}\right), q_{2}\left(\theta_{2}\right)\right)=\left(1, - \frac{1}{2}\right) .\]
+Como $\displaystyle c_{1} $ y $\displaystyle c_{2} $ son linealmente independientes, tenemos que $\displaystyle T $ es minimal. \\
+Veamos ahora que $\displaystyle \left(\overline{X}, S^{2}_{n}\right) $ también es minimal suficiente. Tenemos que 
+\[S^{2}_{n}=\frac{n}{n-1}\left(\sum^{n}_{i=1}X_{i}^{2}-n\overline{X}_{i}^{2}\right) .\]
+Denotamos por $\displaystyle \left(W,Z\right)=\left(\sum^{n}_{i=1}X_{i}, \sum^{n}_{i=1}X_{i}^{2}\right) $ y
+\[\left(F,G\right)=\left(\overline{X}, S^{2}_{n}\right)=\left(\frac{W}{n}, \frac{n}{n-1}\left(Z-\frac{W^{2}}{n}\right)\right) .\]
+La transformación inversa es $\displaystyle \left(W = nF, Z = \frac{n-1}{n}G + n F^{2}\right) $, por lo que 
+\[J = \begin{vmatrix} n & 0 \\ 2nF & \frac{n-1}{n} \end{vmatrix} =n-1\neq 0, \; n \geq 2 .\]
+De esta forma, existe $\displaystyle \psi_{1} $ biyectiva tal que $\displaystyle \left(F,G\right)=\psi_{1}\left(W,Z\right) $ y como $\displaystyle \left(W,Z\right) $ es minimal suficiente, $\displaystyle \forall S $ suficiente existe $\displaystyle \psi_{2} $ tal que $\displaystyle \psi_{2}\left(S\right)=\left(W,Z\right) $. Por tanto, 
+\[\psi_{1}\circ\psi_{2}\left(S\right)=\psi_{1}\left(W,Z\right)=\left(F,G\right) \]
+y $\displaystyle \left(F,G\right) $ es minimal suficiente. 
+\end{eg}
+\section{Estadísticos ancilario y completos}
+Sea $\displaystyle \left(\Omega, \mathcal{A}, P\right) $ es espacio probabilístico asociado a un experimento aleatorio $\displaystyle \mathcal{E} $, una variable aleatoria observable $\displaystyle X : \Omega \to \R $ y su modelo estadístico asociado $\displaystyle \left(\chi, \mathcal{B}, F_{\theta}\right)_{\theta \in \Theta \subset \R^{l}} $, $\displaystyle \mathcal{B}=\mathcal{B}\left(\R\right) $, y $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. $\displaystyle \left(n\right) $ de $\displaystyle X $. 
+\begin{definition}[Estadístico ancilario]
+Un estadístico $\displaystyle U = U\left(X_{1}, \ldots, X_{n}\right) $ es \textbf{ancilario} para $\displaystyle \theta $ si su distribución en el muestreo es independiente de $\displaystyle \theta $. 
+\end{definition}
+\begin{eg}
+Si $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ es una m.a.s. $\displaystyle \left(n\right) $ de $\displaystyle X \sim N\left(\mu, \sigma_{0}\right) $, con $\displaystyle \sigma_{0} $ conocida, entonces $\displaystyle U\left(X_{1}, \ldots, X_{n}\right)=X_{1}-X_{2}\sim N\left(0,\sigma_{0}\sqrt{2}\right) $, que no depende de $\displaystyle \mu $, por lo que $\displaystyle U $ es un estadístico ancilario para $\displaystyle \mu $. 
+\end{eg}
+\begin{definition}[Familia de distribuciones completa]
+	La familia de distribuciones de probabilidad $\displaystyle \left\{ G_{\theta}\left(y_{1}, \ldots, y_{m}\right)\right\} _{\theta\in\Theta\subset\R^{l}} $ es \textbf{completa} si para cualquier función real $\displaystyle h\left(y_{1}, \ldots, y_{m}\right) $ con $\displaystyle h\left(Y_{1}, \ldots, Y_{m}\right) $ medible y tal que $\displaystyle E_{\theta}\left[h\left(Y_{1}, \ldots, Y_{m}\right)\right] =0 $, $\displaystyle \forall \theta \in \Theta $, se tiene que $\displaystyle h\left(Y_{1}, \ldots, Y_{m}\right)=^{cs}0 $ \footnote{Esto quiere decir que $\displaystyle h\left(y_{1}, \ldots, y_{m}\right)= 0$ salvo en un conjunto de probabilidad cero, calculada a partir de $\displaystyle G_{\theta}\left(y_{1}, \ldots, y_{m}\right) $, $\displaystyle \forall \theta \in \Theta $.}.
+\end{definition}
+\begin{eg}
+La familia de distribuciones de probabilidad $\displaystyle Bin\left(n,\theta\right) $ es completa. En efecto, sea $\displaystyle Y \sim Bin\left(n,\theta\right) $ y $\displaystyle h\left(Y\right)$ una función real como se describe en la definición. Entonces, 
+\[E_{\theta}\left[h\left(Y\right)\right] =\sum^{n}_{i=1}h\left(i\right)\begin{pmatrix} n \\ i \end{pmatrix}\theta^{i}\left(1-\theta\right)^{n-i}=\left(1-\theta\right)^{n}\sum^{n}_{i=1}h\left(i\right)\begin{pmatrix} n\\ i \end{pmatrix}\left(\frac{\theta}{1-\theta}\right)^{i}=0, \; \forall \theta \in \left(0,1\right) .\]
+Esto es un polinomio de grado $\displaystyle n $ en $\displaystyle \frac{\theta}{1-\theta} \in \left(0,\infty\right) $, por lo que para que sea nulo debe ser que $\displaystyle h\left(i\right)=0 $, $\displaystyle \forall i = 1, \ldots, n $. De esta forma, $\displaystyle h\left(Y\right)=^{cs}0 $. 
+\end{eg}
+\begin{eg}
+La familia de distribuciones de probabilidad $\displaystyle N\left(0, \theta\right) $ no es completa. En efecto, sea $\displaystyle Y \sim N\left(0, \theta\right) $ y $\displaystyle h\left(Y\right)=Y $. Entonces,
+\[E_{\theta}\left[h\left(Y\right)\right] =E_{\theta}\left[Y\right] =0, \; \forall \theta > 0 .\]
+Sin embargo, $\displaystyle h\left(Y\right)=Y $ no es idénticamente nula casi seguro. 
+\end{eg}
+\begin{definition}[Estadístico completo]
+Decimos que el estadístico $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) $ es \textbf{completo} si su distribución en el muestreo es una familia de distribuciones de probabilidad completa.
+\end{definition}
+\begin{eg}
+Si $\displaystyle X \sim Bin\left(1,\theta\right) $, entonces $\displaystyle T = \sum^{n}_{i = 1}X_{i}\sim Bin\left(n,\theta\right) $ es completo, por lo que hemos visto anteriormente. 
+\end{eg}
+\begin{eg}
+Si $\displaystyle X \sim N\left(\theta, \theta\right) $, el estadístico $\displaystyle T = \left(\sum^{n}_{i=1}X_{i}, \sum^{n}_{i=1}X_{i}^{2}\right) $ no es completo. En efecto, podemos ver que 
+\[h\left(T\right)=2\left(\sum^{n}_{i = 1}X_{i}\right)^{2}-\left(n+1\right)\sum^{n}_{i = 1}X_{i}^{2} ,\]
+cumple que 
+\[E_{\theta}\left[h\left(T\right)\right] = 2E_{\theta}\left[\left(\sum^{n}_{i = 1}X_{i}\right)^{2}\right] -\left(n+1\right)E_{\theta}\left[\sum^{n}_{i = 1}X_{i}^{2}\right] =2n\theta^{2}\left(1 + n\right)-\left(n+1\right)2n\theta^{2} = 0, \; \forall \theta \in \Theta.\]
+Hemos usado que $\displaystyle E_{\theta} \left[\left(\sum^{n}_{i = 1}X_{i}\right)^{2}\right]=n\theta^{2}\left(1 + n\right)$, puesto que 
+\[\frac{\left(\sum^{n}_{i = 1}X_{i}-n\theta\right)^{2}}{n\theta^{2}}\sim\chi_{1}^{2} .\]
+También hemos usado que $\displaystyle E_{\theta}\left[\sum^{n}_{i = 1}X_{i}^{2}\right] =2n\theta^{2} $, puesto que 
+\[\sum^{n}_{i = 1}\frac{\left(X_{i}-\theta\right)^{2}}{\theta^{2}}\sim \chi^{2}_{n} .\]
+De esta forma, tenemos que $\displaystyle E_{\theta}\left[h\left(T\right)\right] =0 $, $\displaystyle \forall \theta \in \Theta $, pero no se cumple que $\displaystyle h\left(T\right)=0 $ casi seguro.
+\end{eg}
+\begin{prop}
+Si $\displaystyle S = S\left(X_{1}, \ldots, X_{n}\right) $ es suficiente y completo, entonces es minimal suficiente. 
+\end{prop}
+\begin{proof}
+	Supongamos que $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) $ se minimal suficiente, entonces tendremos que por ser $\displaystyle S $ completo, $\displaystyle S =^{cs}E\left[S|T\right]  $, por lo que $\displaystyle S $ es función de $\displaystyle T $. 
+\end{proof}
+\begin{theorem}[Existencia de estadísticos completos]
+El estadístico natural  
+\[\left(\sum^{n}_{i = 1}T_{1}\left(X_{i}\right), \ldots, \sum^{n}_{i = 1}T_{k}\left(X_{i}\right)\right) \]
+de la familia de distribuciones exponencial $\displaystyle k $-paramétrica, 
+\[ \left\{ f_{\theta}\left(x\right)=c\left(\theta\right) h\left(x\right)e^{\sum^{k}_{j = 1}q_{j}\left(\theta\right)T_{j}\left(x\right)}\right\} _{\theta\in \Theta\subset \R^{l}} ,\]
+es completo si la imagen de la aplicación $\displaystyle q = \left(q_{1}\left(\theta\right), \ldots, q_{k}\left(\theta\right)\right) : \Theta \to \R^{k} $ contiene un rectángulo abierto de $\displaystyle \R^{k} $. 
+\end{theorem}
+\begin{eg}
+Si $\displaystyle X \sim N\left(\theta, \theta\right) $, tenemos que $\displaystyle q = \left(q_{1}\left(\theta\right), q_{2}\left(\theta\right)\right)=\left(\frac{1}{\theta}, -\frac{1}{2\theta^{2}}\right) $. Entonces,
+\[q_{2}\left(\theta\right)=-\frac{1}{2}q_{1}\left(\theta\right)^{2}, \; \forall \theta > 0 .\]
+Al tratarse de una rama de una parábola, tenemos que no contiene ningún abierto de $\displaystyle \R^{2} $. 
+\end{eg}
+\begin{theorem}[Teorema de Basu]
+Si $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) $ es un estadístico suficiente y completo, y $\displaystyle U = U\left(X_{1}, \ldots, X_{n}\right) $ es un estadístico ancilario, entonces $\displaystyle T $ y $\displaystyle U $ son independientes.
+\end{theorem}
+\begin{proof}
+Como $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) $ es suficiente, tenemos que $\displaystyle f\left(x_{1}, \ldots, x_{n}|t\right) $ es independiente de $\displaystyle \theta $. Así, tenemos que
+\[f\left(u|t\right)=\sum^{}_{\left(x_{1}, \ldots, x_{n}\right) : U\left(x_{1}, \ldots, x_{n}\right)=u}f\left(x_{1}, \ldots, x_{n} | t\right) \]
+es independiente de $\displaystyle \theta $. Además, como $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) $ es completo y la función $\displaystyle h\left(t\right)=f\left(u|t\right)-f\left(u\right) $ tiene media $\displaystyle 0 $, $\displaystyle \forall \theta \in \Theta $, tendremos que respecto a la distribución de $\displaystyle T\sim f_{\theta}\left(t\right) $, $\displaystyle f\left(u|t\right)=^{cs}f\left(u\right) $. 
+\end{proof}
+\begin{eg}
+Si $\displaystyle X \sim U\left(0,\theta\right) $, entonces $\displaystyle X_{\left(n\right)} $ y $\displaystyle \frac{X_{\left(1\right)}}{X_{\left(n\right)}} $ son independientes.
+\end{eg}
+\section{Principio de reducción de datos}
+Sea $\displaystyle \left(\Omega, \mathcal{A}, P\right) $ es espacio probabilístico asociado a un experimento aleatorio $\displaystyle \mathcal{E} $, una variable aleatoria observable $\displaystyle X : \Omega \to \R $ y su modelo estadístico asociado $\displaystyle \left(\chi, \mathcal{B}, F_{\theta}\right)_{\theta \in \Theta \subset \R^{l}} $, $\displaystyle \mathcal{B}=\mathcal{B}\left(\R\right) $, y $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. $\displaystyle \left(n\right) $. 

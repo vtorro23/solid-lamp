@@ -1,0 +1,195 @@
+\chapter{Sistemas lineales de EDOS de orden 1}
+En este capítulo estudiaremos los sistemas de EDOS de la forma
+\[
+\begin{cases}
+x'_{1}=f_{1}\left(t, x_{1}, \ldots, x_{n}\right) \\
+\vdots \\
+x_{n}'=f_{n}\left(t, x_{1}, \ldots, x_{n}\right)
+\end{cases}
+, \; t \in I = \left(\alpha, \omega \right).\]
+Si el sistema es lineal, necesariamente debe ser que las funciones $\displaystyle f_{i} $ son lineales, es decir, para $\displaystyle i = 1, \ldots, n $ tendremos que 
+\[f_{i}\left(t, x_{1}, \ldots, x_{n}\right)=a_{i1}\left(t\right)x_{1}\left(t\right) + \cdots + a_{in}\left(t\right)x_{n}\left(t\right) .\]
+De esta forma, podemos recurrir a la notación matricial
+\[\vec{x}'\left(t\right)=A\left(t\right)\vec{x}\left(t\right)+\vec{b}\left(t\right) , \]
+donde 
+\[\vec{x}\left(t\right)=\begin{pmatrix} x_{1}\left(t\right) \\ \vdots \\ x_{n}\left(t\right) \end{pmatrix}, \quad \vec{x}'\left(t\right)=\frac{d}{dt}\begin{pmatrix} x_{1}\left(t\right) \\ \vdots \\ x_{n}\left(t\right) \end{pmatrix}=\begin{pmatrix} x_{1}'\left(t\right) \\ \vdots \\ x_{n}\left(t\right) \end{pmatrix}  .\]
+\[ A\left(t\right)=\begin{pmatrix} a_{11}\left(t\right) & \cdots & a_{1n}\left(t\right) \\ \vdots & & \vdots \\ a_{n1}\left(t\right) & \cdots & a_{nn}\left(t\right) \end{pmatrix}\in \mathcal{M}_{n}\left(t\right) \footnote{Esta notación indica que la matriz depende de $\displaystyle t $.} , \quad \vec{b}\left(t\right)=\begin{pmatrix} b_{1}\left(t\right) \\ \vdots \\ b_{n}\left(t\right) \end{pmatrix}.\]
+Decimos que $\displaystyle \vec{b}\left(t\right) $ es el \textbf{vector de términos independientes}. \\
+Los objetivos del tema serán:
+\begin{itemize}
+\item Comprender la estructura del conjunto de soluciones del sistema lineal $\displaystyle \vec{x}'=A\vec{x}+\vec{b} $ y el del sistema lineal homogéneo asociado $\displaystyle \vec{x}' = A\vec{x} $. Para este resultado es fundamental la siguiente versión del teorema de existencia y unicidad del problema de Cauchy.
+\item Aprender a resolver los sistemas $\displaystyle \vec{x}'=A\vec{x} + \vec{b} $, donde $\displaystyle A \in \mathcal{n}\left(\R\right) $, es decir, tiene coeficientes constantes.
+\item Veremos el caso particular de las ecuaciones de orden $\displaystyle n $, que son de la forma
+	\[x^{\left(n\right)} + a_{n-1}x^{\left(n-1\right)} + \cdots + a_{1}x' + a_{0}x + b = 0 ,\]
+	donde $\displaystyle A $ tiene un 'aspecto' determinado \footnote{En el primer tema vimos que las EDOS de orden $\displaystyle n $ se puede escribir como un sistema de orden 1.}.
+\item Hacer análisis cualitativo de los sistemas autónomos, es decir, $\displaystyle \vec{x}' = A\vec{x} $ con $\displaystyle A $ de coeficientes constantes y estamos en el caso de dimensión 2, es decir, $\displaystyle \vec{x}=\left(x_{1}, x_{2}\right)^{t} $.
+\end{itemize}
+\begin{notation}
+Utilizaremos la siguiente notación
+\[\int^{t}_{t_{0}} \vec{x}\left(s\right) \; d s = \begin{pmatrix} \int^{t}_{t_{0}} x_{1}\left(s\right) \; d s \\ \vdots \\ \int^{t}_{t_{0}} x_{n}\left(s\right) \; d s \end{pmatrix} .\]
+Recordamos que $\displaystyle A\left(t\right) $ y $\displaystyle \vec{b}\left(t\right) $ son continuas si y solo si sus componentes lo son.
+\end{notation}
+
+\begin{theorem}[Teorema de existencia y unicidad]
+Si $\displaystyle A\left(t\right) $ y $\displaystyle \vec{b}\left(t\right) $ son continuas en un intervalo $\displaystyle I = \left(\alpha, \omega \right)\subset \R $, entonces el problema de Cauchy
+\[
+\begin{cases}
+\vec{x}' = A\left(t\right)\vec{x} + \vec{b}\\
+\vec{x}\left(t_{0}\right) = \vec{x}_{0}
+\end{cases}
+\]
+tiene solución única $\displaystyle \vec{x}\left(t\right) $ para $\displaystyle t \in J \subset I \subset \R $. 
+\end{theorem}
+\section{Estructura de las soluciones}
+Asumimos que $\displaystyle A\left(t\right) $ y $\displaystyle \vec{b}\left(t\right) $ son continuas en $\displaystyle I = \left(\alpha, \omega \right) \subset \R $. 
+\begin{theorem}
+El conjunto de soluciones del sistema $\displaystyle \vec{x}'=A\left(t\right)\vec{x} $ tiene estructura  de espacio vectorial de dimensión $\displaystyle n $. 
+\end{theorem}
+\begin{proof}
+El conjunto de soluciones tendrá estructura de espacio vectorial puesto que si $\displaystyle \vec{x}_{1}\left(t\right) $ y $\displaystyle \vec{x}_{2}\left(t\right) $ son soluciones y $\displaystyle \alpha, \beta \in \R $ se tiene que 
+\[\left(\alpha\vec{x}_{1} + \beta\vec{x}_{2}\right)' = \alpha\vec{x}_{1}' + \beta\vec{x}_{2}' = \alpha A\left(t\right)\vec{x}_{1}+\beta A\left(t\right)\vec{x}_{2}= A\left(t\right)\left(\alpha \vec{x}_{1} + \vec{x}_{2}\right) .\]
+De esta forma, $\displaystyle \alpha\vec{x}_{1} + \beta\vec{x}_{2} $ también es solución del sistema. Veamos ahora que tiene dimensión $\displaystyle n $. Consideremos los siguientes $\displaystyle n $ problemas de valor inicial:
+\[\left(P_{i}\right)
+\begin{cases}
+\vec{x}'=A\left(t\right)\vec{x} \\
+\vec{x}\left(t_{0}\right)=\vec{e}_{i}
+\end{cases}
+, \; t_{0} \in I, \; i = 1, \ldots, n.\]
+Por el teorema de existencia y unicidad, cada $\displaystyle P_{i} $ tiene solución única $\displaystyle \vec{x}_{i}\left(t\right) $. Consideramos el conjunto $\displaystyle \left\{ \vec{x}_{1}, \ldots, \vec{x}_{n}\right\}  $ y veamos que es una base del conjunto de soluciones del sistema. Veamos primero que forma un sistema de generadores. Sea $\displaystyle \vec{z}\left(t\right) $ una solución cualquiera del sistema, en particular $\displaystyle \vec{z}\left(t_{0}\right)=\vec{z}_{0} $. Como $\displaystyle \left\{ \vec{e}_{1}, \ldots, \vec{e}_{n}\right\}  $ es base de $\displaystyle \R^{n} $ tendremos que existen $\displaystyle c_{1}, \ldots, c_{n} \in \R $ tales que
+\[\vec{z}_{0} =  c_{1}\vec{e}_{1} + \cdots + c_{n}\vec{e}_{n}.\]
+Entonces tenemos que $\displaystyle c_{1}\vec{x}_{1} + \cdots + c_{n}\vec{x}_{n} $ es solución del problema de Cauchy
+\[
+\begin{cases}
+\vec{x}' = A\left(t\right)\vec{x} \\
+\vec{x}\left(t_{0}\right)=z_{0}
+\end{cases}
+.\]
+Por el teorema de existencia y unicidad debe ser que $\displaystyle \vec{z} = c_{1}\vec{x}_{1} + \cdots + c_{n}\vec{x}_{n}$. Ahora, veamos que son linealmente independientes. Supongamos que existen $\displaystyle a_{1}, \ldots, a_{n} \in \R $ tales que 
+\[a_{1}\vec{x}_{1} + \cdots + a_{n}\vec{x}_{n}=0, \; \forall t \in I = \left(\alpha , \omega \right) .\]
+En particular, para $\displaystyle t_{0}  $ tendremos que
+\[a_{1}\vec{x}_{1}\left(t_{0}\right) +\cdots + a_{n}\vec{x}_{n}\left(t_{0}\right)=0 \Rightarrow a_{1}\vec{e}_{1} + \cdots + a_{n}\vec{e}_{n}= 0 \Rightarrow a_{1} = \cdots =a_{n}=0 .\]
+Así, tenemos que $\displaystyle \left\{ \vec{x}_{1}, \ldots, \vec{x}_{n}\right\}  $ es una base del conjunto de soluciones del sistema. 
+\end{proof}
+
+\begin{colorary}
+La solución general del sistema completo $\displaystyle \vec{x}' = A\left(t\right)\vec{x} +\vec{b}\left(t\right)$ es 
+\[\vec{x}\left(t\right)=\vec{x}_{h}\left(t\right)+\vec{x}_{p}\left(t\right) ,\]
+donde $\displaystyle \vec{x}_{h} $ es la solución general del sistema homogéneo asociado $\displaystyle \vec{x}' = A\left(t\right)\vec{x} $, y $\displaystyle \vec{x}_{p} $ es una solución particular del completo. 
+\end{colorary}
+\begin{proof}
+Sea $\displaystyle \vec{x}_{h} $ una solución del sistema homogéneo asociado y sea $\displaystyle \vec{x}_{p} $ una solución particular del sistema completo. Entonces,
+\[\left(\vec{x}_{h}+\vec{x}_{p}\right)' = \vec{x}_{h}' + \vec{x}_{p}' = A\left(t\right)\vec{x}_{h}+A\left(t\right)\vec{x}_{p} + \vec{b}\left(t\right)=A\left(t\right)\left(\vec{x}_{h}+\vec{x}_{p}\right)+\vec{b}\left(t\right)	 .\]
+Así, tenemos que $\displaystyle \vec{x}_{h}+\vec{x}_{p} $ es solución del sistema completo. Ahora, veamos que toda solución del sistema se puede escribir de esta forma. Dada una solución $\displaystyle \vec{x} $ del sistema y una solución particular $\displaystyle \vec{x}_{p} $, tenemos que
+\[\left(\vec{x}-\vec{x}_{p}\right)' = \vec{x}' - \vec{x}_{p}' = A\left(t\right)\vec{x} + \vec{b}\left(t\right) - \left(A\left(t\right)\vec{x}_{p}+\vec{b}\left(t\right)\right)=A\left(t\right)\left(\vec{x}-\vec{x}_{p}\right).\]
+Así, $\displaystyle \vec{x}-\vec{x}_{p} $ es solución del sistema homogéneo asociado. 
+\end{proof}
+\begin{definition}[Matriz fundamental]
+Dado un sistema lineal homogéneo $\displaystyle \vec{x}' = A\left(t\right)\vec{x} $ con $\displaystyle A \in C\left(I, \mathcal{M}_{n}\right) $ \footnote{Esta notación indica que $\displaystyle A $ es continua en el intervalo $\displaystyle I $ y es una matriz cuadrada de dimensión $\displaystyle n $.}, denominamos \textbf{matriz fundamental} a aquella cuyas columnas son $\displaystyle n $ soluciones linealmente independientes del sistema y la denotamos $\displaystyle \phi\left(t\right) $. 
+\end{definition}
+\begin{observation}
+Por el teorema anterior tendremos que $\displaystyle \phi\left(t\right) $ es también una matriz de dimensión $\displaystyle n \times n $ y sus entradas son funciones continuas, por lo que $\displaystyle \phi\left(t\right)\in C\left(I, \mathcal{M}_{n}\right) $. 
+\end{observation}
+\begin{notation}
+	A cada columna de $\displaystyle \phi\left(t\right) $ la denotamos $\displaystyle \phi^{i}\left(t\right) $ para $\displaystyle i= 1, \ldots, n $. Así, tendremos que $\displaystyle \left\{ \phi^{1}\left(t\right), \ldots, \phi^{n}\left(t\right)\right\}  $ es una base de las soluciones $\displaystyle \vec{x}' = A\left(t\right)\vec{x} $. 
+\end{notation}
+\subsection{Propiedades de la matriz fundamental}
+\begin{prop}
+Supongamos que $\displaystyle \phi\left(t\right) $ es matriz fundamental del sistema $\displaystyle \vec{x}' = A\left(t\right)\vec{x} $ e $\displaystyle \vec{y}\left(t\right) $ es solución del sistema. Entonces, existe $\displaystyle \vec{c}= \left(c_{1}, \ldots, c_{n}\right)\in \R^{n} $ tal que $\displaystyle \vec{y}\left(t\right)=\phi\left(t\right)\vec{c} $. 
+\end{prop}
+\begin{proof}
+Como $\displaystyle \phi\left(t\right) $ es matriz fundamental, sus columnas son linealmente independientes y forman una base de las soluciones del sistema. Entonces, existirán escalares tales que 
+\[\vec{y}\left(t\right)=c_{1}\phi^{1}\left(t\right) + \cdots + c_{n}\phi^{n}\left(t\right) .\]
+\end{proof}
+\begin{prop}
+Dado el sistema $\displaystyle \vec{x}' = A\left(t\right)\vec{x} $, $\displaystyle t \in I $ con $\displaystyle A\left(t\right)\in C\left(I, \mathcal{M}_{n}\right) $. Sea $\displaystyle \phi\left(t\right)\in C\left(I, \mathcal{M}_{n}\right) $ tal que sus columnas son soluciones de dicho sistema, entonces son equivalentes:
+\begin{enumerate}
+\item Existe $\displaystyle t_{0} \in I $ tal que $\displaystyle \det\left(\phi\left(t_{0}\right)\right)\neq 0 $. 
+\item $\displaystyle \forall t \in I $, $\displaystyle \det\left(\phi\left(t\right)\right) \neq 0 $. 
+\item $\displaystyle \phi\left(t\right) $ es matriz fundamental del sistema. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{description}
+	\item[(1) $\displaystyle \Rightarrow $ (3)] Supongamos que existe $\displaystyle t_{0} \in I $ tal que $\displaystyle \det\left(\phi\left(t_{0}\right)\right)\neq 0 $, entonces los vectores $\displaystyle \left\{ \phi^{1}\left(t_{0}\right), \ldots , \phi^{n}\left(t_{0}\right)\right\}  $ son linealmente independientes. Queremos ver que $\displaystyle \phi\left(t\right) $ es matriz fundamental. Sus columnas son soluciones del sistema $\displaystyle \vec{x}' = A\left(t\right)\vec{x} $ por hipótesis. Quiero ver que $\displaystyle \left\{ \phi^{1}\left(t\right), \ldots, \phi^{n}\left(t\right)\right\}  $ son linealmente independientes. 
+		Si existen $\displaystyle c_{1}, \ldots, c_{n} \in \R $ tales que 
+		\[c_{1}\phi^{1}\left(t\right) + \cdots + c_{n}\phi^{n}\left(t\right)=0 \Rightarrow c_{1}\phi^{1}\left(t_{0}\right)+\cdots + c_{n}\phi^{n}\left(t_{0}\right)=0 \Rightarrow c_{1} = \cdots = c_{n}= 0 .\]	
+\item[(3) $\displaystyle \Rightarrow $ (2)] Supongamos que $\displaystyle \phi\left(t\right) $ es matriz fundamental y que existe $\displaystyle t_{0} \in I $ tal que $\displaystyle \det\left(\phi\left(t_{0}\right)\right)=0 $. 
+	Esto quiere decir que $\displaystyle \left\{ \phi^{1}\left(t_{0}\right), \ldots, \phi^{n}\left(t_{0}\right)\right\}  $ son linealmente dependientes, por lo que existen $\displaystyle c_{1}, \ldots, c_{n} \in \R $ no todos nulos tales que 
+	\[c_{1}\phi_{1}\left(t_{0}\right)+\cdots + c_{n}\phi_{n}\left(t_{0}\right)=0 .\]
+Consideramos $\displaystyle \vec{x}\left(t\right)=c_{1}\phi^{1}\left(t\right) + \cdots + c_{n}\phi^{n}\left(t\right) $. Como $\displaystyle \phi^{i}\left(t\right) $ es solución del sistema para cada $\displaystyle i = 1, \ldots, n $, entonces $\displaystyle \vec{x}\left(t\right) $ también es solución del sistema y además verifica la condición inicial $\displaystyle \vec{x}\left(t_{0}\right)=0 $. 
+El problema de valor inicial
+\[
+\begin{cases}
+\vec{x}' = A\left(t\right)\vec{x} \\
+\vec{x}\left(t_{0}\right)=0
+\end{cases}
+,\]
+tiene como solución la trivial. Por unicidad de soluciones tendremos que 
+\[c_{1}\phi^{1}\left(t\right) + \cdots +c_{n}\phi^{n}\left(t\right)=0 ,\]
+con $\displaystyle c_{i} $ no todos nulos. De esta forma, los $\displaystyle \phi^{i}\left(t\right) $ son linealmente dependientes, que es una contradicción. 
+\item[(2) $\displaystyle \Rightarrow $ (1)] Trivial. 
+\end{description}
+\end{proof}
+De ahora en adelante, denotamos por $\displaystyle \left(S_{h}\right) $ a la EDO homogénea $\displaystyle \vec{x}'=A\left(t\right)\vec{x} $. 
+\begin{colorary}
+Supongamos que $\displaystyle \phi\left(t\right) $ es matriz fundamental del sistema $\displaystyle \vec{x}'=A\left(t\right)\vec{x} $ con $\displaystyle A\left(t\right) \in C\left(I, \mathcal{M}_{n}\right) $. Entonces, la solución del problema de valor inicial
+\[ \left(P\right)
+\begin{cases}
+\vec{x}'=A\left(t\right)\vec{x} \\
+\vec{x}\left(t_{0}\right)=\vec{x}_{0}
+\end{cases}
+, \; t_{0} \in I,\]
+es $\displaystyle \vec{x}\left(t\right)=\phi\left(t\right)\phi^{-1}\left(t_{0}\right)\vec{x}_{0} $ 
+\end{colorary}
+\begin{proof}
+Por lo visto anteriormente, tendremos que $\displaystyle \forall t \in I $, $\displaystyle \phi\left(t\right) $ es invertible. También vimos que las soluciones del problema son de la forma $\displaystyle \phi\left(t\right)\vec{c} $ para $\displaystyle \vec{c} \in \R^{n} $. Como queremos que $\displaystyle \vec{x}\left(t\right) $ satisfazca la condición inicial,
+\[\vec{x}\left(t_{0}\right)=\vec{x}_{0}=\phi\left(t_{0}\right)\vec{c} \iff \vec{c}=\phi^{-1}\left(t_{0}\right)\vec{x}_{0} .\]
+Por tanto, la única solución de $\displaystyle \left(P\right) $ es
+\[\vec{x}\left(t\right)=\phi\left(t\right)\phi^{-1}\left(t_{0}\right)\vec{x}_{0} .\]
+\end{proof}
+\begin{prop}[Cambio de base]
+	Supongamos que $\displaystyle \phi\left(t\right) $ es matriz fundamental de $\displaystyle \left(S_{h}\right) $ con $\displaystyle A\left(t\right)\in C\left(I, \mathcal{M}_{n}\right) $.
+	\begin{enumerate}
+	\item Sea $\displaystyle C \in \mathcal{M}_{n}\left(\R\right) $, de coeficientes constantes, con $\displaystyle \det\left(C\right)\neq0 $. Entonces, $\displaystyle \phi\left(t\right)C $ es también matriz fundamental.
+	\item Si $\displaystyle \psi\left(t\right) $ es otra matriz fundamental del sistema, entonces existe $\displaystyle C \in \mathcal{M}_{n}\left(\R\right) $ con $\displaystyle \det\left(C\right)\neq 0 $ tal que 
+	\[\psi\left(t\right)=\phi\left(t\right)C .\]
+	\end{enumerate}
+\end{prop}
+\begin{proof} Supongamos que $\displaystyle \phi\left(t\right) $ es matriz fundamental de $\displaystyle \left(S_{h}\right) $ con $\displaystyle A\left(t\right)\in C\left(I, \mathcal{M}_{n}\right) $. 
+\begin{enumerate}
+\item Observamos que 
+\[\phi\left(t\right)C = \left(\phi\left(t\right)C_{1}, \ldots, \phi\left(t\right)C_{n}\right) ,\]
+donde $\displaystyle C_{i} $ son las columnas de $\displaystyle C $. Es fácil ver que $\displaystyle \phi\left(t\right)C_{i} $ es solución de $\displaystyle \left(S_{h}\right) $, $\displaystyle \forall i = 1, \ldots, n $, por ser combinación lineal de soluciones de $\displaystyle \left(S_{h}\right) $.
+Ahora veamos que son linealmente independientes. Para $\displaystyle t \in I $, tenemos que 
+\[\det\left(\phi\left(t\right)C\right)=\det\left(\phi\left(t\right)\right)\det\left(C\right)\neq 0 .\]
+Por tanto, tenemos que $\displaystyle \phi\left(t\right)C $ es matriz fundamental.
+\item Para la segunda parte, como $\displaystyle \left\{ \phi^{1}\left(t\right), \ldots, \phi^{n}\left(t\right)\right\}  $ es una base del conjunto de soluciones de $\displaystyle \left(S_{h}\right) $, cada columna de $\displaystyle \psi\left(t\right) $ se puede escribir de la forma
+\[\psi^{i}\left(t\right)=c_{1i}\phi^{1}\left(t\right)+ \cdots + c_{ni}\phi^{n}\left(t\right) ,\]
+Así, $\displaystyle \psi\left(t\right)=\phi\left(t\right)C $ con $\displaystyle \det\left(C\right)\neq 0 $. En efecto, si tuviésemos $\displaystyle \det\left(C\right)=0 $, $\displaystyle \forall t \in I $ se tendría que
+\[\det\left(\psi\left(t\right)\right)=\det\left(\phi\left(t\right)C\right)=\det\left(\phi\left(t\right)\right)\det\left(C\right)=0,\]
+por lo que $\displaystyle \psi\left(t\right) $ no sería matriz fundamental, que es una contradicción. 
+\end{enumerate}
+\end{proof}
+\begin{definition}[Matriz fundamental principal]
+Dada una matriz fundamental asociada a $\displaystyle \left(S_{h}\right) $ con $\displaystyle A\left(t\right)\in C\left(I, \mathcal{M}_{n}\right) $, diremos que es \textbf{matriz fundamental principal} o \textbf{canónica} asociada al instante inicial $\displaystyle t_{0} \in I $, si $\displaystyle \phi\left(t_{0}\right)=I$.
+\end{definition}
+\begin{observation}
+Podemos observar que:
+\begin{itemize}
+\item Por el teorema de existencia y unicidad podemos garantizar que la matriz fundamental principal existe y es única. 
+\item De cara a los cálculos que haremos, su uso simplifica notablemente el proceso. En efecto por el corolario anterior tendremos que la solución será
+	\[\vec{x}\left(t\right)=\phi\left(t\right)\phi^{-1}\left(t_{0}\right)\vec{x}_{0}=\phi\left(t\right)\vec{x}_{0} .\]
+En este sentido también se simplifican los cálculos para resolver el problema completo
+\[
+\begin{cases}
+\vec{x}' = A\left(t\right)\vec{x} + \vec{b}\left(t\right) \\
+\vec{x}\left(t_{0}\right)=\vec{x}_{0}
+\end{cases}
+,\]
+cuando es conocida la matriz fundamental y especialmente la canónica por variación de constantes.
+\item Se puede comprobar que 
+	\[\phi^{-1}\left(t\right)=\phi\left(-t\right) \quad \text{y} \quad \phi\left(t + s\right)=\phi\left(t\right)\phi\left(s\right) .\]
+\end{itemize}
+\end{observation}
+
+

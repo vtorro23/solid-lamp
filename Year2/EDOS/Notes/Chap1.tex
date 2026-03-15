@@ -452,7 +452,28 @@ Por otro lado, tenemos que
 \[x^{2}-1 = \left(\frac{1 + Ce^{2t}}{1-Ce^{2t}}\right)^{2} - 1 = \frac{1 + 2Ce^{2t} + C^{2}e^{4t}}{\left(1-Ce^{2t}\right)^{2}}-1 = \frac{4Ce^{2t}}{\left(1-Ce^{2t}\right)^{2}}.\]
 Por tanto, $\displaystyle x\left(t\right) $ es solución de la EDO. Buscamos las soluciones de equilibrio, que son $\displaystyle x \equiv 1 $ y $\displaystyle x \equiv - 1 $. Si $\displaystyle C = 0 $ podemos ver que $\displaystyle x \equiv 1 $, por lo que esta no es solución singular. Sin embargo, sí es solución singular $\displaystyle x \equiv -1 $. 
 \end{eg}
-\begin{eg}[Hoja 1, Ejercicio 19]
-Dada una familia de curvas $\displaystyle A $ nos preguntamos por la familia de curvas ortogonales a ella. 
+\begin{eg}[Hoja 1, Ejercicio 17] Platear la EDO que se corresponde a cada problema. 
+	\begin{description}
+	\item[(a)] 'Una curva que pasa por $\displaystyle \left(0,2\right) $ tal que la pendiente de la recta tangente en cada punto coincide con la ordenada de dicho punto aumentada en 3 unidades.' \\
+	En este caso la EDO que tenemos que plantear es
+	\[ \left(P\right)
+	\begin{cases}
+	x' = x + 3 \\
+	x\left(0\right)=2
+	\end{cases}
+	.\]
+	La resolvemos por separación de variables
+	\[\frac{x'}{x+3}=1 \iff \ln\left(x+3\right)=t \iff x + 3 = Ce^{t} \iff x\left(t\right)=Ce^{t}-3 .\]
+La única solución de $\displaystyle \left(P\right) $ es $\displaystyle 2 = x\left(0\right)=C-3 \iff C = 5 $, por lo que $\displaystyle x\left(t\right)=5e^{t}-3 $. 
+\item[(b)] 'Describe el tipo de curva que tiene la propiedad de que todas sus rectas normales pasan por un punto fijo de coordenadas $\displaystyle \left(x_{0}, y_{0}\right) $'. \\
+	Las rectas normales a mis curvas buscadas son
+	\[y-y_{0}=-\frac{1}{y'}\left(x-x_{0}\right) .\]
+	Resolvemos la EDO por separación de variables:
+	\[y'\left(y-y_{0}\right)=x_{0}-x \iff \int \left(y-y_{0}\right)y' \; dx=\int \left(x_{0}-x\right) \; dx \iff \frac{y^{2}}{2}-y_{0}y=x_{0}x-\frac{x^{2}}{2}+C .\]
+De esta forma, nos queda que la solución será
+\[\left(y-y_{0}\right)^{2}+\left(x-x_{0}\right)^{2}=C, \; C \in \R, C > 0 .\]
+Así, las curvas que verifican el enunciado son circunferencias centradas en $\displaystyle \left(x_{0}, y_{0}\right) $. 
+	\end{description}
 \end{eg}
+
 

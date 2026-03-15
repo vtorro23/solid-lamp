@@ -15,6 +15,48 @@ es decir, cambiar el orden de integración. En este caso, los dos resultados coi
 \end{eg}
 \section{Teorema de Fubini}
 \begin{theorem}[Teorema de Fubini]
+Sean $\displaystyle Q \subset \R^{n} $ y $\displaystyle R \subset \R^{m} $ rectángulos, y $\displaystyle f : Q \times R \to \R $ una función integrable en $\displaystyle Q \times R \subset \R^{n+m} $. Entonces, si para todo $\displaystyle x \in Q $ la función $\displaystyle f_{x} : R \to \R : y \to f\left(x,y\right) $ es integrable en $\displaystyle R $, entonces la función 
+	\[ F : Q \to \R : x \to \int _{R}f_{x} =\int _{R}f\left(x,y\right) \; dy\]
+	es integrable en $\displaystyle Q $ y además
+	\[\int _{Q}F =\int _{Q \times R}f  ,\]
+	es decir,
+	\[\int _{Q}\int _{R}f\left(x,y\right) \; dy \; dx = \int _{Q \times R}f\left(x,y\right) \; dx \; dy .\]
+\end{theorem}
+\begin{proof}
+	Sean $\displaystyle P_{Q}= \left\{ Q_{1}, \ldots, Q_{N}\right\} \in \mathcal{P}\left(Q\right) $ y $\displaystyle P_{R} = \left\{ R_{1}, \ldots, R_{M}\right\} \in \mathcal{P}\left(R\right) $. De esta forma, tomamos $\displaystyle P = P_{Q} \times P_{R} = \left\{ Q_{i} \times R_{j} \; : \; 1 \leq i \leq N, \; 1 \leq j \leq M\right\} \in \mathcal{P}\left(Q \times R\right) $. 
+Así, 
+\[
+\begin{split}
+	s\left(f,P\right)= & \sum^{}_{1 \leq i \leq N, 1 \leq j \leq M}m_{Q_{i} \times R_{j}}\left(f\right)v\left(Q_{i} \times R_{j}\right)\\
+	= & \sum^{N}_{i = 1}\sum^{M}_{j=1}m_{Q_{i} \times R_{j}}\left(f\right)v\left(Q_{i}\right)v\left(R_{j}\right)=\sum^{N}_{i=1}\left(\sum^{M}_{j = 1}m_{Q_{i}\times R_{j}}\left(f\right)v\left(R_{j}\right)\right)v\left(Q_{i}\right).
+\end{split}
+\]
+Tenemos que $\displaystyle \forall x \in Q_{i} $, $\displaystyle m_{Q_{i} \times R_{j}} = \inf_{Q_{i}\times R_{j}}\left(f\right) \leq \inf_{R_{j}}\left(f_{x}\right) $. De esta forma
+\[\sum^{M}_{j = 1}m_{Q_{i} \times R_{j}}\left(f\right)v\left(R_{j}\right)\leq \sum^{M}_{j = 1}m_{R_{j}}\left(f_{x}\right)v\left(R_{j}\right)=s\left(f_{x}, P_{R}\right)\leq \int _{R}f_{x} = F\left(x\right) .\]
+Tomando ínfimos obtenemos que 
+\[\sum^{M}_{j = 1}m_{Q_{i} \times R_{j}}\left(f\right)v\left(R_{j}\right)\leq \inf_{Q_{i}}F=m_{Q_{i}}\left(F\right) .\]
+De esta forma, tendremos que 
+\[s\left(f,P\right)\leq \sum^{N}_{i = 1}m_{Q_{i}}\left(F\right)v\left(Q_{i}\right) = s\left(F, P_{Q}\right) \leq S\left(F, P_{Q}\right) = \sum^{N}_{i = 1}M_{Q_{i}}\left(F\right)v\left(Q_{i}\right) .\]
+Además, $\displaystyle \forall x \in P $, tendremos que $\displaystyle M_{Q_{i} \times R_{j}}= \sup_{Q_{i} \times R_{j}}f \geq \sup_{R_{j}}f_{x}=M_{R_{j}}\left(f_{x}\right) $, por lo que
+\[\sum^{M}_{j = 1}M_{Q_{i}\times R_{j}}\left(f\right)v\left(R_{j}\right) \geq \sum^{M}_{j = 1}M_{R_{j}}\left(f_{x}\right)v\left(R_{j}\right)=S\left(f_{x}, P_{R}\right) \geq \int _{R}f_{x} =F\left(x\right) .\]
+De esta forma, 
+\[s\left(f,P\right)\leq \sum^{N}_{i = 1}M_{Q_{i}}\left(F\right)v\left(Q_{i}\right)\leq\sum^{N}_{i = 1}\left(\sum^{M}_{j = 1}M_{Q_{i} \times R_{j}}\left(f\right)v\left(R_{j}\right)\right)v\left(Q_{i}\right) = S\left(f,P\right) .\]
+Por tanto, dado $\displaystyle \epsilon > 0 $, existe $\displaystyle P \in \mathcal{P}\left(Q \times R\right) $ tal que $\displaystyle S\left(f,P\right)-s\left(f,P\right)<\epsilon  $. Además, $\displaystyle P $ es de la forma $\displaystyle P = P_{Q} \times P_{R} $. Aplicando lo anterior obtenemos que
+\[s\left(f,P\right)\leq s\left(F,P_{Q}\right)\leq \int _{Q}F \leq S\left(F,P_{Q}\right) \Rightarrow S\left(F, P_{Q}\right)-s\left(F, P_{Q}\right)<\epsilon  .\]
+De esta forma, tenemos que $\displaystyle F $ es integrable en $\displaystyle Q $ y además
+\[ \left|\int _{Q}F-\int _{Q \times R}F \right|<\epsilon, \; \forall \epsilon > 0 \Rightarrow \int _{Q}F =\int _{Q \times R}f  .\]
+Por tanto,
+\[\int _{Q}\left(\int _{R}f\left(x,y\right) \; dy\right) \; dx = \int _{Q \times R}f\left(x,y\right) \; dx \; dy .\]
+\end{proof}
+
+\begin{observation}
+Se puede hacer un argumento idéntico para fijar $\displaystyle y $ primero y luego $\displaystyle x $. 
+\end{observation}
+\begin{observation}
+Si $\displaystyle f : Q \times R \to \R $ es continua, entonces $\displaystyle f $ es integrable en $\displaystyle Q \times R $ y además $\displaystyle \forall x \in Q $, $\displaystyle f_{x} $ es continua (por lo que es integrable en $\displaystyle R $) al igual que para todo $\displaystyle y \in R $, $\displaystyle f^{y} $ es continua (por lo que es integrable en $\displaystyle Q $). Por tanto, en este caso se aplicaría el teorema.
+\end{observation}
+
+\begin{theorem}[Teorema de Fubini]
 	Sea $\displaystyle R = \left[a, b \right] \times \left[c,d\right] \subset \R^{2} $ y $\displaystyle f : R \to \R $ integrable. Supongamos que para cada $\displaystyle x \in \left[a,b\right]  $, la función 
 	\[f_{x} : \left[c,d\right] \to \R : y \to f\left(x,y\right) ,\]
 	es integrable en $\displaystyle \left[c,d\right]  $. Entonces, la función 
@@ -121,4 +163,293 @@ Supongamos que $\displaystyle f $ es integrable en $\displaystyle B $. Entonces,
 es integrable en $\displaystyle A $ y 
 \[\int _{B}f \; dx = \int _{A}f\left(g\left(t\right)\right) \left|\det Jg\right| \; dt .\]
 \end{theorem}
+\subsection{Coordenadas cilíndricas}
+\begin{definition}[Coordenadas cilíndricas]
+Las \textbf{coordenadas cilíndricas} se definen de la forma
+\[x = \rho\cos\theta, \quad y=\rho\sin\theta, \quad z = z ,\]
+con $\displaystyle \rho \in \R^{+} $ y $\displaystyle \theta \in \left[0,2\pi \right]  $. Para deshacer el cambio,
+\[\rho=\sqrt{x^{2}+y^{2}} \quad \text{y} \quad \theta = \arctan\left(\frac{y}{x}\right) .\]
+\end{definition}
+% Adjuntar imagen
+\subsection{Coordenadas esféricas}
+\begin{definition}[Coordenadas esféricas]
+Las \textbf{coordenadas esféricas} se definen de la forma
+\[x = r\sin\varphi\cos\theta, \quad y = r\sin\varphi\sin\theta, \quad z = r\cos\varphi .\]
+\end{definition}
+
+% Adjuntar imagen
+\section{Integrales impropias}
+\begin{definition}
+	Sea $\displaystyle f : \R^{n} \to \R $, con $\displaystyle f \geq 0 $, tal que $\displaystyle f $ es integrable en $\displaystyle \left[-m,m\right] ^{n} $, $\displaystyle \forall m \in \N $. Decimos que $\displaystyle f $ es \textbf{integrable} (en el sentido impropio) si existe
+	\[ \int _{\R^{n}}f :=\lim_{m \to \infty}\int _{\left[-m,m\right] ^{n}}f <\infty.\]
+\end{definition}
+\begin{observation}
+Podemos ver que dada $\displaystyle f : A \subset \R^{n} \to \R $, la podemos extender a $\displaystyle \R^{n} $ de esta forma
+\[\tilde{f} : \R^{n} \to \R : x \to 
+\begin{cases}
+f\left(x\right), \; x \in A\\
+0, \; x \not\in A
+\end{cases}
+.\]
+\end{observation}
+
+\begin{eg}
+Sea $\displaystyle f : [1,\infty) \to \R : x \to \frac{1}{x^{p}} $, para $\displaystyle p \in \R $. De esta forma, tendremos que 
+\[\lim_{m \to \infty}\int^{m}_{-m} f =\lim_{m \to \infty}\int^{m}_{1} f =\lim_{m \to \infty}\frac{1}{x^{p}}dx =
+\begin{cases}
+\infty, \; p = 1 \\
+\frac{1}{p-1}, \; p > 1\\
+\infty, \; p < 1
+\end{cases}
+.\]
+Así, la integral impropia existe sólo cuando $\displaystyle p > 1 $. 
+\end{eg}
+\begin{definition}[Sucesión exhaustiva]
+	Dada una sucesión $\displaystyle \left\{ B_{k}\right\} _{k \in \N} $ de conjuntos medibles Jordan (con $\displaystyle B_{k}\subset \R^{n} $), diremos que es \textbf{exhaustiva} si 
+	\begin{itemize}
+	\item $\displaystyle \forall k \in \N $, $\displaystyle B_{k}\subset B_{k+1} $.
+	\item Para cada $\displaystyle m \in \N $, existe $\displaystyle k \in \N $ tal que $\displaystyle \left[-m,m\right] ^{n}\subset B_{k} $.
+	\end{itemize}
+\end{definition}
+
+\begin{prop}
+Los siguientes enunciados son equivalentes:
+\begin{enumerate}
+\item $\displaystyle f $ es integrable en $\displaystyle \R^{n} $. 
+\item Existe $\displaystyle \left\{ B_{k}\right\} _{k \in \N} $ exhaustiva tal que
+	\[\lim_{k \to \infty}\int _{B_{k}}f <\infty .\]
+\item Para toda sucesión exhaustiva $\displaystyle \left\{ B_{k}\right\} _{k \in \N} $ 
+	\[\lim_{k \to \infty}\int _{B_{k}}f <\infty \]
+	y en este caso se cumple que 
+	\[\int _{\R^{n}}f = \lim_{k \to \infty}\int _{B_{k}}f  .\]
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{description}
+	\item[(1) $\displaystyle \Rightarrow $ (3)] Supongamos que $\displaystyle f $ es integrable en $\displaystyle \R^{n} $ y $\displaystyle \left\{ B_{k}\right\} _{k \in \N} $ es una sucesión exhaustiva. Para $\displaystyle m \in \N $ tenemos que existe $\displaystyle k \in \N $ y $\displaystyle l \in \N $ tales que
+		\[\int _{\left[-m,m\right]^{n} } f\leq\int _{B_{k}}f \leq \int _{\left[-l,  l\right]^{n} } f .\]
+		Como $\displaystyle f $ es integrable, tendremos que existe $\displaystyle \lim_{m \to \infty}\int _{\left[-m,m\right] ^{n}}f  $. Por la regla del sandwich la sucesión $\displaystyle \left\{ \int _{B_{k}}f \right\} _{n\in\N} $ converge y además lo hace al mismo valor que $\displaystyle \lim_{m \to \infty}\int _{\left[-m,m\right] ^{n}}f $. 
+\item[(3) $\displaystyle \Rightarrow $ (2)] Trivial.
+\item[(2) $\displaystyle \Rightarrow $ (1)] Supongamos que existe $\displaystyle \left\{ B_{k}\right\} _{k \in \N} $ exhaustiva tal que 
+	\[\lim_{k \to \infty}\int _{B_{k}}f <\infty .\]
+	Como esta sucesión es creciente y convergente, debe ser que existe $\displaystyle C > 0 $ tal que $\displaystyle \int _{B_{k}}f \leq C $, $\displaystyle \forall k \in \N $. Así, para $\displaystyle m \in \N $ tendremos que existe $\displaystyle k \in \N $ con
+	\[ \int _{\left[-m,m\right] ^{n}} f \leq \int _{B_{k}}f \leq C.\]
+	Así, $\displaystyle \left\{ \int _{\left[-m,m\right] ^{n}}f \right\} _{m \in \N} $ es una sucesión creciente y acotada, por lo que converge y $\displaystyle f $ es integrable en $\displaystyle \R^{n} $. 	
+\end{description}
+\end{proof}
+\begin{observation}
+	Realmente basta con demostrar \textbf{(2)} $\displaystyle \Rightarrow $ \textbf{(3)}. Demostremos esta implicación. Supongamos que existe $\displaystyle \left\{ B_{m}\right\} _{m\in\N} $ tal que existe $\displaystyle \lim_{m \to \infty}\int _{B_{m}}f  $, y sea $\displaystyle \left\{ C_{k}\right\} _{k \in \N} $ otra sucesión exhaustiva. Para $\displaystyle k_{0} \in \N $, existe $\displaystyle m_{0} \in \N $ tal que $\displaystyle C_{k_{0}}\subset\left[-m_{0}, m_{0}\right] ^{n} $.
+	Tendremos que existe $\displaystyle j \in \N $ tal que $\displaystyle \left[-m_{0}, m_{0}\right] ^{n}\subset B_{j} $, por lo que 
+	\[\int _{C_{k_{0}}}f \leq \int _{\left[-m_{0}, m_{0}\right] ^{n}} f\leq \int _{B_{j}}f \leq \lim_{m \to \infty}\int _{B_{m}}f   .\]
+	Así, tenemos que la sucesión $\displaystyle \left\{ \int _{C_{k}}f \right\} _{k \in \N} $ está acotada y es creciente, por lo que es convergente.	
+\end{observation}
+
+\begin{eg}
+Consideremos $\displaystyle f\left(x,y\right)=e^{-x^{2}-y^{2}} $, veamos si es integrable en $\displaystyle \R^{2} $. Tenemos que ver que existe
+\[
+\begin{split}
+	\lim_{m \to \infty}\int _{B\left(0,m\right)} f = & \lim_{m \to \infty}\int^{m}_{0} \int^{2\pi }_{0} e^{-\rho^{2}}\rho \; d\theta \; d\rho =\lim_{m \to \infty}2\pi \left[-\frac{1}{2}e^{-\rho^{2}}\right] ^{m}_{0} \\
+	= & \lim_{m \to \infty}2\pi\left(\frac{1}{2}-\frac{1}{2}e^{-m^{2}}\right)=\pi .
+\end{split}
+\]
+De esta forma, tenemos que 
+\[\pi = \lim_{m \to \infty}\int _{\left[-m, m\right] ^{2}}f =\lim_{m \to \infty}\int^{m}_{-m} \int^{m}_{-m} e^{-x^{2}-y^{2}} \; dx \; dy=\lim_{m \to \infty}\left(\int^{m}_{-m} e^{-x^{2}} \; dx \right)^{2} .\]
+Así, debe ser que 
+\[\pi = \left(\int^{\infty}_{-\infty} e^{-x^{2}} \; dx\right)^{2} \Rightarrow \int^{\infty}_{-\infty} e^{-x^{2}} \; dx = \sqrt{\pi } .\]
+\end{eg}
+\begin{prop}[Criterio de comparación]
+Sean $\displaystyle f, g : \R^{n} \to \R $ integrables en conjuntos medibles Jordan con $\displaystyle 0 \leq f \leq g $. 
+\begin{enumerate}
+\item Si $\displaystyle g $ es integrable en $\displaystyle \R^{n} $, entonces $\displaystyle f $ es integrable en $\displaystyle \R^{n} $ y 
+\[\int _{\R^{n}}f \leq \int _{\R^{n}}g  .\]
+\item Si la integral de $\displaystyle f $ en $\displaystyle \R^{n} $ diverge, entonces la integral de $\displaystyle g $ en $\displaystyle \R^{n} $ también diverge.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Demostramos \textbf{(1)}. Tenemos que $\displaystyle \forall m \in \N $,
+\[0 \leq \int _{\left[-m,m\right] ^{n}}f \leq \int _{\left[-m,m\right] ^{n}}g \leq \int _{\R^{n}}g   .\]
+De esta forma, como la sucesión $\displaystyle \left\{ \int _{\left[-m,m\right] ^{n}}f \right\} _{m\in\N} $ es creciente y acotada, converge, y por tanto $\displaystyle f $ es integrable en $\displaystyle \R^{n} $. La demostración de \textbf{(2)} es trivial a partir de las propiedades de las sucesiones.
+\end{proof}
+
+\begin{eg}
+Consideremos la integral impropia $\displaystyle \int^{\infty}_{1} \frac{\sin ^{2}x}{x^{2}} \; dx $. Tendremos que
+\[0 \leq \frac{\sin ^{2}x}{x^{2}}\leq \frac{1}{x^{2}} .\]
+Por un ejemplo anterior tenemos que $\displaystyle \int^{\infty}_{1} \frac{1}{x^{2}} \; dx $ es convergente, por lo que la integral converge. 
+\end{eg}
+\begin{prop}[Comparación por cociente]
+Sean $\displaystyle f,g : \R^{n} \to \R $ integrables en los medibles Jordan con $\displaystyle f \geq 0 $ y $\displaystyle g > 0 $. Supongamos que 
+\[\lim_{ \|x\| \to \infty}\frac{f\left(x\right)}{g\left(x\right)} = L \in \R \]
+y que $\displaystyle g $ es integrable en $\displaystyle \R^{n} $. Entonces, $\displaystyle f $ es integrable en $\displaystyle \R^{n} $. 
+\end{prop}
+\begin{proof}
+Como $\displaystyle \lim_{\|x\| \to \infty}\frac{f\left(x\right)}{g\left(x\right)}=L < L +1 $, existe $\displaystyle K > 0 $ tal que si $\displaystyle \|x\| > K $ entonces
+\[\frac{f\left(x\right)}{g\left(x\right)}<L+1 \iff f\left(x\right) < \left(L+1\right)g\left(x\right) .\]
+Sea $\displaystyle D = \left\{ x \in \R^{n} \; : \; \|x\| > K\right\}  $, entonces $\displaystyle f\left(x\right)\chi_{D} \leq g\left(x\right)\chi_{D} $ y $\displaystyle g\chi_{D} $ es integrable en $\displaystyle \R^{n} $. 
+Así, por la proposición anterior tendremos que $\displaystyle f\left(x\right)\chi_{D} $ es integrable en $\displaystyle \R^{n} $. En efecto, podemos escribir
+\[f\left(x\right)=f\left(x\right)\chi_{\overline{B}\left(0,K\right)}\left(x\right) + f\left(x\right)\chi_{D} \left(x\right).\]
+Como $\displaystyle f\chi_{D} $ es integrable en $\displaystyle \R^{n} $, tendremos que $\displaystyle f $ es integrable en $\displaystyle \R^{n} $. 
+\end{proof}
+\begin{prop}[Linealidad]
+Sean $\displaystyle f,g : \R^{n} \to \R $ con $\displaystyle f,g \geq 0 $ integrables en $\displaystyle \R^{n} $, y $\displaystyle \alpha \geq 0 $. Entonces,
+\begin{enumerate}
+\item $\displaystyle \int _{\R^{n}}f+g =\int _{\R^{n}}f +\int _{\R^{n}}g  $.
+\item $\displaystyle \int _{\R^{n}}\alpha f = \alpha\int _{\R^{n}}f  $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle f,g : \R^{n} \to \R $ con $\displaystyle f,g \geq 0 $ son integrables en $\displaystyle \R^{n} $. 
+\begin{enumerate}
+	\item Como $\displaystyle f $ y $\displaystyle g $ son integrables en $\displaystyle \R^{n} $, tendremos que $\displaystyle f + g $ es integrable en $\displaystyle \left[-m,m\right] ^{n} $, $\displaystyle \forall m \in \N $. Además, $\displaystyle f + g \geq 0 $. Así, aplicando las propiedades de los límites obtenemos que
+		\[
+		\begin{split}
+			\int _{\R^{n}}f + g = &\lim_{m \to \infty}\int _{\left[-m,m\right] ^{n}}f + g = \lim_{m \to \infty}\left(\int _{\left[-m,m\right] ^{n}}f +\int _{\left[-m,m\right]^{n} }g \right)\\
+			= & \lim_{m \to \infty}\int _{\left[-m,m\right] ^{n}}f + \lim_{m \to \infty}\int _{\left[-m,m\right] ^{n}}g = \int _{\R^{n}}f +\int _{\R^{n}}g .
+		\end{split}
+		\]
+	\item Como $\displaystyle \alpha \geq 0 $, tendremos que $\displaystyle \alpha f \geq 0 $. Además, como $\displaystyle f $ es integrable en $\displaystyle \R^{n} $, tendremos que $\displaystyle \alpha f $ lo es en $\displaystyle \left[-m,m\right] ^{n} $, $\displaystyle \forall m \in \N $. De esta forma, aplicando las propiedades de los límites
+		\[\int _{\R^{n}}\alpha f = \lim_{m \to \infty}\int _{\left[-m,m\right] ^{n}}\alpha f = \lim_{m \to \infty}\alpha\int _{\left[-m,m\right] ^{n}}f =\alpha\left(\lim_{m \to \infty}\int _{\left[-m,m\right] ^{n}}f \right)=\alpha\int _{\R^{n}}f  .\]
+\end{enumerate}
+\end{proof}
+\begin{definition}[Integral de funciones no acotadas]
+Sea $\displaystyle f:\R^{n} \to \R $ con $\displaystyle f \geq 0 $ no acotada. Para $\displaystyle M > 0$ definimos
+\[f_{M}\left(x\right)=
+\begin{cases}
+f\left(x\right), \; f\left(x\right)\leq M\\
+0, \; f\left(x\right) > M
+\end{cases}
+.\]
+Diremos que $\displaystyle f $ es \textbf{integrable impropia} si para cada $\displaystyle M > 0 $, $\displaystyle f_{M} $ es integrable en $\displaystyle \R^{n} $ y además existe
+\[\int _{\R^{n}}f :=\lim_{M \to \infty}\int _{\R^{n}}f_{M} <\infty .\]
+\end{definition}
+\begin{eg}
+	Consideremos la función $\displaystyle  $ 
+	\[ f : \left[0,1\right] \to \R : x \to 
+	\begin{cases}
+	\frac{1}{x^{p}}, \; x \neq 0 \\
+	0, \; x = 0
+	\end{cases}
+	.\]
+\end{eg}
+\begin{prop}[Criterio de comparación]
+Sean $\displaystyle f,g : \R^{n} \to \R $ con $\displaystyle 0\leq f\leq g $ no necesariamente acotadas y $\displaystyle g $ integrable en $\displaystyle \R^{n} $. Entonces, $\displaystyle f $ es integrable en $\displaystyle \R^{n} $. 
+\end{prop}
+Para extender la definición de integral impropia a funciones más generales (concretamente las que no cumplen que $\displaystyle f \geq 0 $), no podemos dar la misma definición puesto que da problemas.
+Dada $\displaystyle f : \R^{n} \to \R $ con $\displaystyle D\left(f\right) $ tiene medida nula, consideramos las funciones
+\[f^{+}:\R^{n}\to \R : x \to 
+\begin{cases}
+f\left(x\right), \; f\left(x\right)\geq 0 \\
+0, \; f\left(x\right)<0
+\end{cases}
+\quad
+\text{y} \quad f^{-}:\R^{n}\to \R : x \to 
+\begin{cases}
+0, \; f\left(x\right)\geq 0 \\
+-f\left(x\right), \; f\left(x\right)<0
+\end{cases}
+.\]
+Claramente, tendremos que $\displaystyle f = f^{+}-f^{-} $. Decimos que $\displaystyle f $ es integrable en $\displaystyle \R^{n} $ si $\displaystyle f^{+} $ y $\displaystyle f^{-} $ son integrables en $\displaystyle \R^{n} $. Así, 
+\[\int _{\R^{n}}f :=\int _{\R^{n}}f^{+} -\int _{\R^{n}}f^{-}  .\]
+\begin{definition}[Integral impropia para funciones no positivas]
+Dada $\displaystyle f : \R^{n} \to \R $ con $\displaystyle D\left(f\right) $ medida nula. % Terminar la definición.
+\end{definition}
+
+\begin{observation}
+Suponemos siempre en esta sección que $\displaystyle D\left(f\right) $ tiene medida nula.
+\end{observation}
+\begin{prop}
+Dada $\displaystyle f : \R^{n} \to \R $ con $\displaystyle D\left(f\right) $ medida nula, tendremos que $\displaystyle f $ es integrable si y solo si $\displaystyle \left|f\right| $ es integrable.
+\end{prop}
+\begin{proof}
+Es fácil ver que $\displaystyle \left|f\right|=f^{+}+f^{-} $. 
+\begin{description}
+\item[(i)] Si $\displaystyle f $ es integrable, tendremos que $\displaystyle f^{+} $ y $\displaystyle f^{-} $ son integrables, por lo que $\displaystyle f^{+}+f^{-}= \left|f\right| $ es integrable, por lo que $\displaystyle \left|f\right| $ es integrable.
+\item[(ii)] Tenemos que $\displaystyle 0 \leq f^{+}, f^{-}\leq \left|f\right| $ y, por el criterio de comparación tendremos que $\displaystyle f^{+} $ y $\displaystyle f^{-} $ son integrables y por tanto $\displaystyle f $ es integrable en $\displaystyle \R^{n} $. 
+\end{description}
+\end{proof}
+\begin{observation}
+Antes vimos que $\displaystyle \left|f\right| $ integrable no necesariamente implicaba $\displaystyle f $ integrable. Esto se debía a la incertidumbre sobre $\displaystyle D\left(f\right) $. En este caso, no la tenemos por lo que se da la doble implicación. 
+\end{observation}
+\begin{prop}[Linealidad]
+Sean $\displaystyle f,g : \R^{n}\to \R $ integrables, entonces:
+\begin{enumerate}
+\item $\displaystyle \int _{\R^{n}}f + g =\int _{\R^{n}}f +\int _{\R^{n}}g $.
+\item $\displaystyle \forall \alpha \in \R $, $\displaystyle \int _{\R^{n}}\alpha f =\alpha\int _{\R^{n}}f $. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Como $\displaystyle f $ y $\displaystyle g $ son integrables, tendremos que $\displaystyle f^{+}, f^{-}, g^{+}, g^{-} $ son integrables. Tenemos que 
+	\[f + g = \left(f+g\right)^{+} - \left(f+g\right)^{-}  .\]
+	Tenemos que $\displaystyle \left|f+g\right|\leq \left|f\right|+ \left|g\right| $, y como $\displaystyle \left|f\right| $ y $\displaystyle \left|g\right| $ son integrables, entonces $\displaystyle \left|f +g\right| $ es integrable y en consecuencia $\displaystyle f + g $ es integrable. También tenemos que 
+	\[f + g = \left(f+g\right)^{+}-\left(f+g\right)^{-}=f^{+}-f^{-}+g^{+}-g^{-} .\]
+	De aquí se deduce que,
+\[\left(f+g\right)^{+}+f^{-}+g^{-}=f^{+}+g^{+}+\left(f+g\right)^{+} .\]
+Como todos los componentes son integrables y son mayores o iguales a 0, podemos aplicar la linealidad de la integral
+\[
+\begin{split}
+	\int _{\R^{n}} &\left(f+g\right)^{+} +\int _{\R^{n}}f^{-} +\int _{\R^{n}}g^{-} =\int _{\R^{n}}f^{+} + \int _{\R^{n}}g^{+} +\int _{\R^{n}}\left(f+g\right)^{-} \\
+ \iff & \int _{\R^{n}}\left(f+g\right)^{+} -\int _{\R^{n}}\left(f+g\right)^{-} = \int _{\R^{n}}f^{+} -\int _{\R^{n}}f^{-} +\int _{\R^{n}}g^{+} -\int _{\R^{n}}g^{-} \\
+ \iff & \int _{\R^{n}}f + g = \int _{\R^{n}}f +\int _{\R^{n}}g .
+\end{split}
+\]
+\item Supongamos que $\displaystyle \alpha \in \R $. Si $\displaystyle \alpha = 0 $, ho hay nada que demostrar. Supongamos que $\displaystyle \alpha > 0 $ (la demostración en el caso $\displaystyle \alpha < 0 $ es análoga). Tendremos que 
+	\[\alpha f = \left(\alpha f\right)^{+}-\left(\alpha f\right)^{-}=\alpha \left(f^{+}-f^{-}\right) .\]
+Como $\displaystyle f $ es integrable, $\displaystyle f^{+} $ es integrable por lo que $\displaystyle \alpha f^{+}=\left(\alpha f\right)^{+} $ es integrable. Análogamente, $\displaystyle \left(\alpha f\right)^{-} $ es integrable, por lo que $\displaystyle \alpha f $ es integrable. Además
+\[\int _{\R^{n}}\alpha f = \int _{\R^{n}}\alpha f^{+} -\int _{\R^{n}}\alpha f^{-} =\alpha \left(\int _{\R^{n}}f ^{+}-\int _{\R^{n}}f^{-} \right)=\alpha \int _{\R^{n}}f  .\]
+% Hay que tener cuidado y revisar el signo de $\displaystyle \alpha  $ y $\displaystyle f- $ . 
+\end{enumerate}
+\end{proof}
+En el caso de $\displaystyle \R $, estudiamos funciones que cumplen que existe el límite
+\[\int^{\infty}_{a} f\left(x\right) =\lim_{m \to \infty}\int^{m}_{a} f\left(x\right) \; dx ,\]
+pero no existe 
+\[\int^{\infty}_{a} \left|f\left(x\right)\right| \; dx = \lim_{m \to \infty}\int^{m}_{a} \left|f\left(x\right)\right| \; dx .\]
+Así, podemos diferenciar entre funciones integrables pero no absolutamente integrables.
+\begin{eg}
+La integral
+\[\int^{\infty}_{0} \frac{\sin x}{x} \; dx ,\]
+es convergente pero no absolutamente integrable. Esto se vio el año pasado en el curso de Análisis de Variable Real. Es necesario decir que esta función no es integrable en el sentido impropio con la definición que hemos dado.
+\end{eg}
+\section{Integral de Lebesgue}
+\begin{definition}[Medida de un conjunto]
+	Dado $\displaystyle \emptyset\neq A \subset \R^{n} $, definimos su \textbf{medida} como \footnote{Las sucesiones $\displaystyle \left\{ R_{k}\right\} _{k \in \N} $ son sucesiones de rectángulos.} 
+\[\mu^{*}\left(A\right)=\inf \left\{ \sum^{\infty}_{k = 1}v\left(R_{k}\right)\; : \; \left\{ R_{k}\right\} _{k \in \N}, \; A \subset \bigcup_{k \in \N}R_{k}\right\}  .\]
+\end{definition}
+\begin{observation}
+	Podemos ver que $\displaystyle \mu^{*} \in [0,\infty]$ \footnote{Incluimos el $\displaystyle \infty $ porque este valor puede no converger.}. También podemos ver que la definición de medida nula que dimos anteriormente es consistente con esta. Además, para un rectángulo $\displaystyle R $ se cumple que $\displaystyle \mu^{*}\left(R\right)=v\left(R\right) $, en el sentido usual.	
+\end{observation}
+Se puede ver que $\displaystyle \mu^{*} $ no es finitamente aditiva (ni contablemente aditiva) en $\displaystyle \mathcal{P}\left(\R^{n}\right) $. De esta forma, consideraremos el conjunto $\displaystyle \mathcal{M}\subset\mathcal{P}\left(\R^{n}\right) $, donde $\displaystyle \mathcal{M} $ es el conjunto de conjuntos medibles Lebesgue. Este conjunto nos es útil porque $\displaystyle \mathcal{M} $ es $\displaystyle \sigma  $-álgebra y $\displaystyle \mu^{*} $ es una medida en $\displaystyle \mathcal{M} $. Además, $\displaystyle \mathcal{M} $ también contiene todos los abiertos, cerrados, etc, y todos los conjuntos de medida nula.
+\begin{definition}[$\displaystyle \sigma $-álgebra]
+Dado $\displaystyle \mathcal{M}\subset\mathcal{P}\left(\R^{n}\right) $, decimos que $\displaystyle \mathcal{M} $ es una $\displaystyle \sigma  $-álgebra si
+\begin{enumerate}
+\item $\displaystyle \emptyset, \R^{n} \in \mathcal{M} $. 
+\item Si $\displaystyle A \in \mathcal{M} $, entonces $\displaystyle \R^{n}/A \in \mathcal{M} $. 
+\item Si $\displaystyle \left\{ A_{k}\right\} _{k \in \N}\subset \mathcal{M} $, entonces $\displaystyle \bigcup_{k \in \N}A_{k} \in \mathcal{M} $ y $\displaystyle \bigcap_{k \in \N}A_{k}\in \mathcal{M} $. 
+\end{enumerate}
+\end{definition}
+\begin{observation}
+	Tenemos que $\displaystyle \mu^{*}:\mathcal{M} \to [0,\infty] $ verifica que $\displaystyle \mu^{*}\left(\emptyset\right)=0 $ y $\displaystyle \mu^{*}\left(\R^{n}\right)=\infty $. Además, si $\displaystyle \left\{ A_{k}\right\} _{k \in \N}\subset \mathcal{M} $ con $\displaystyle A_{k}\cap A_{j}=\emptyset $, si $\displaystyle k \neq j $, entonces
+	\[\mu^{*}\left(\bigcup_{k \in \N}A_{k}\right)=\sum^{\infty}_{k = 1}\mu^{*}\left(A_{k}\right) .\]
+\end{observation}
+\begin{eg}
+	Tenemos que $\displaystyle \Q, \left[0,1\right] \in \mathcal{M} $, por lo que $\displaystyle \Q \cap \left[0,1\right] \in \mathcal{M} $. Además, $\displaystyle \mu^{*}\left(\Q \cap \left[0,1\right] \right)=0 $. Ahora, podemos ver que
+	\[\left[0,1\right] / \Q = \left[0,1\right] \cap \left(\R/\Q\right)\in \mathcal{M} .\]
+Así, como el conjunto de los irracionales y los racionales tienen intersección nula, podemos ver que 
+\[\left[0,1\right] = \left(\Q \cap \left[0,1\right] \right)\cup \left(\left[0,1\right] /\Q\right)\Rightarrow \mu^{*}\left(\left[0,1\right] \right)=\mu^{*}\left(\Q \cap \left[0,1\right] \right)+\mu^{*}\left(\left[0,1\right] /\Q\right) .\]
+\[\Rightarrow \mu^{*}\left([0,1]/\Q\right)=\mu^{*}\left([0,1]\right) - \mu^{*}\left([0,1]\cap \Q\right)=1-0=1 .\]
+\end{eg}
+Al igual que antes, para $\displaystyle A_{i} \in \mathcal{M} $ definimos la función
+\[\chi_{A_{i}}=
+\begin{cases}
+1, \; x \in A_{i}\\
+0, \; x \not\in A_{i}
+\end{cases}
+.\]
+Así, definimos
+\[\int _{\R^{n}}\alpha \chi_{A_{i}} :=\alpha\mu^{*}\left(A_{i}\right) .\]
+Para $\displaystyle \left\{ A_{i}\right\} _{i=1}^{N}\subset\mathcal{M} $ disjuntos, es decir $\displaystyle A_{i}\cap A_{j}=\emptyset $ para $\displaystyle i \neq j $, con $\displaystyle \alpha_{i} \in \R $ y $\displaystyle \mu^{*}\left(A_{i}\right)<\infty $ así
+\[\int _{\R^{n}}\sum^{N}_{i = 1}\alpha_{i}\chi_{A_{i}}  .\]
+\begin{definition}
+Dado $\displaystyle A \in \mathcal{M} $, definimos
+\[\int _{\R^{n}}\chi_{A} :=\mu^{*}\left(A\right) .\]
+\end{definition}
 

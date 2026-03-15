@@ -668,7 +668,11 @@ Si $\displaystyle A \subset \R^{n} $ tiene medida nula y $\displaystyle f : A \t
 	\[\int _{A}g = \int _{A}f  .\]
 \end{colorary}
 \begin{proof}
-Tenemos que $\displaystyle g\left(x\right) = g\left(x\right)-f\left(x\right) + f\left(x\right) $. Por la proposición anterior tenemos que $\displaystyle g\left(x\right)-f\left(x\right) $ es integrable y tiene integral nula, por ser suma de funciones integrables tenemos que $\displaystyle g $ es integrable y
+	Veamos primero que si $\displaystyle f \neq 0 $ en un conjunto de contenido nulo, entonces $\displaystyle f $ es integrable y 
+	\[\int _{A}f =0 .\]
+	Sea $\displaystyle D = \left\{ x \in R \; : \; f\left(x\right)\neq 0\right\}  $. Tendremos que $\displaystyle \tilde{f}_{A}=\tilde{f}_{D} $ y $\displaystyle D $ tiene contenido nulo. De esta forma, por una proposición anterior, 
+	\[\int _{A}f =\int _{D}f = 0 .\]
+Ahora, tenemos que $\displaystyle g\left(x\right) = g\left(x\right)-f\left(x\right) + f\left(x\right) $. Por lo que acabamos de ver tenemos que $\displaystyle g\left(x\right)-f\left(x\right) $ es integrable y tiene integral nula. Por ser suma de funciones integrables tenemos que $\displaystyle g $ es integrable y
 \[\int _{A}g = \int _{A}g - f + \int _{A}f = \int _{A}f  .\]
 \end{proof}
 \begin{observation}
@@ -702,6 +706,28 @@ A partir de ahora, si decimos que algo se cumple en \textbf{casi todo punto} es 
 	En efecto, tendremos que $\displaystyle \forall P \in \mathcal{P}\left(\left[0,1\right] \right) $, $\displaystyle s\left(f,P\right)= 0 $, por lo que la integral inferior es nula. 
 	Sin embargo, $\displaystyle \left\{ x \in R \; : \; f\left(x\right)\neq 0\right\} = \left[0,1\right] \cap \left(\R/ \Q\right) $, que \underline{no tiene contenido nulo}.
 \end{observation}
+\begin{prop}
+Sea $\displaystyle A \subset \R^{n} $ medible Jordan y $\displaystyle f :A \to \R $ integrable en $\displaystyle A $. Entonces
+\[G\left(f\right)= \left\{ \left(x,y\right)\in \R^{n} \times \R \; : \; x \in A, y = f\left(x\right)\right\}  \]
+tiene contenido nulo en $\displaystyle \R^{n+1} $. 
+\end{prop}
+\begin{proof}
+Como $\displaystyle f $ es integrable en $\displaystyle A $, existe $\displaystyle R \subset \R^{n} $ rectángulo con $\displaystyle A \subset R $ y
+\[\tilde{f} : R \to \R : x \to 
+\begin{cases}
+f\left(x\right), \; x \in A \\
+0, \; x \in R/A
+\end{cases}
+\]
+es integrable en $\displaystyle R $. De esta forma, para $\displaystyle \epsilon > 0 $, existe $\displaystyle P_{1} \in \mathcal{P}\left(R\right) $ tal que 
+\[S\left(\tilde{f}, P_{1}\right)-s\left(\tilde{f},P_{1}\right)=\sum^{}_{J \in P_{1}}\left(M_{J}\left(\tilde{f}\right)-m_{J}\left(\tilde{f}\right)\right)v\left(J\right) < \epsilon  .\]
+Si $\displaystyle P_{1}= \left\{ R_{1}, \ldots, R_{N}\right\}  $, cogemos rectángulos $\displaystyle Q_{i}= R_{i} \times \left[m_{R_{i}}\left(\tilde{f}\right), M_{R_{i}}\left(\tilde{f}\right)\right] $. De esta forma, tendremos que claramente
+\[G\left(f\right)\subset \bigcup_{i=1}^{N}Q_{i} \]
+y además
+\[\sum^{N}_{i=1}v\left(Q_{i}\right)=\sum^{N}_{i=1}v\left(R_{i}\right)\left(M_{R_{i}}\left(\tilde{f}\right)-m_{R_{i}}\left(\tilde{f}\right)\right) < \epsilon  .\]
+Así, $\displaystyle G\left(f\right) $ tiene contenido nulo.
+\end{proof}
+
 \section{Demostración del Teorema de Lebesgue}
 \begin{definition}[Oscilación infinitesimal en un punto]
 Sean $\displaystyle A \subset \R^{n} $, $\displaystyle f : A \to \R $ y $\displaystyle a \in A $. 
@@ -831,6 +857,6 @@ Así, tenemos que
 \[S\left(f,P'\right)-s\left(f,P'\right)\leq \left(2k+v\left(R\right)\right)\epsilon  .\]
 Por tanto, $\displaystyle f $ es integrable.
 \end{description}
-
 \end{proof}
+
 
