@@ -447,9 +447,24 @@ Al igual que antes, para $\displaystyle A_{i} \in \mathcal{M} $ definimos la fun
 Así, definimos
 \[\int _{\R^{n}}\alpha \chi_{A_{i}} :=\alpha\mu^{*}\left(A_{i}\right) .\]
 Para $\displaystyle \left\{ A_{i}\right\} _{i=1}^{N}\subset\mathcal{M} $ disjuntos, es decir $\displaystyle A_{i}\cap A_{j}=\emptyset $ para $\displaystyle i \neq j $, con $\displaystyle \alpha_{i} \in \R $ y $\displaystyle \mu^{*}\left(A_{i}\right)<\infty $ así
-\[\int _{\R^{n}}\sum^{N}_{i = 1}\alpha_{i}\chi_{A_{i}}  .\]
+\[\int _{\R^{n}}\sum^{N}_{i = 1}\alpha_{i}\chi_{A_{i}} =\sum^{}_{i \in F}\alpha_{i}\mu^{*}\left(A_{i}\right) .\]
 \begin{definition}
 Dado $\displaystyle A \in \mathcal{M} $, definimos
 \[\int _{\R^{n}}\chi_{A} :=\mu^{*}\left(A\right) .\]
 \end{definition}
+\begin{prop}
+	Sea $\displaystyle f : \R^{n} \to \R $ con $\displaystyle f \geq 0 $ y sea $\displaystyle \left\{ S_{k}\right\} _{k \in \N} $ una sucesión de funciones simples tales que $\displaystyle S_{k}\to f $ en casi todo punto. Además, $\displaystyle 0\leq  S_{k}\leq f $ y $\displaystyle S_{k-1}\leq S_{k} $. Entonces, la sucesión $\displaystyle \left\{ \int _{\R^{n}}S_{k} \right\} _{k \in \N} $ converge si y solo si está acotada superiormente. En este caso decimos que $\displaystyle f $ es integrable y
+	\[\int _{\R^{n}}f = \lim_{k \to \infty} \int _{\R^{n}}S_{k}.\]
+\end{prop}
+\begin{theorem}[Teorema de la convergencia monótona]
+	Sean $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ una sucesión de funciones integrables no negativas tales que es monótona no decreciente en casi todo punto. Entonces, si $\displaystyle f = \lim_{k \to \infty}f_{k}\left(x\right) $ en casi todo punto, se cumple que 
+	\[\lim_{k \to \infty}\int _{\R^{n}}f_{k} =\int _{\R^{n}}f  .\]
+\end{theorem}
+\begin{theorem}[Teorema de la convergencia dominada]
+	Sea $\displaystyle \left\{ f_{k}\right\} _{k \in \N} $ una sucesión de funciones integrables. Supongamos que existe $\displaystyle g : \R^{n} \to [0,\infty) $ integrable tal que $\displaystyle \left|f_{k}\left(x\right)\right|\leq g\left(x\right) $, $\displaystyle \forall k \in \N $ en casi todo punto. Supongamos que $\displaystyle \lim_{k \to \infty}f_{k}\left(x\right)=f\left(x\right) $ en casi todo punto, entonces $\displaystyle f $ es integrable y
+	\[\lim_{k \to \infty}\int _{\R^{n}}f_{k} =\int _{\R^{n}}f .\]
+\end{theorem}
+\begin{observation}
+Es fácil extender este teorema a integral de Riemann y Riemann impropia. Basta con ver que $\displaystyle f $ es integrable Riemann en todo conjunto medible Jordan. 
+\end{observation}
 

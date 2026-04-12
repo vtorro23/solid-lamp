@@ -15,5 +15,67 @@
 \pagebreak
 
 %Imput the different chapters here
+\chapter{Dualidad}
+Recordamos que hay dos formas de expresar los problemas en programación lineal:
+\begin{itemize}
+\item Forma estándar:
+	\[
+	\begin{cases}
+		\min & c^{t}x \\
+		     & Ax = b \\
+		     & x \geq 0
+	\end{cases}
+	.\]
+\item Forma canónica:
+	\[
+	\begin{cases}
+		\min & c^{t}x \\
+		     & Ax \geq b \\
+		     & x \geq 0
+	\end{cases}
+	.\]
+\end{itemize}
+Podemos pasar de una forma a otra mediante variables de holgura, etc. 
+\begin{observation}
+Los teoremas de dualidad se aplican en la \textbf{forma canónica}.
+\end{observation}
+\begin{prop}[Propiedad involutiva de la dualidad]
+El dual del dual es el primario. 
+\end{prop}
+\begin{proof}
+Trivial.
+\end{proof}
+Dado un problema en forma estándar, lo podemos pasar a forma canónica
+\[
+	\begin{cases}
+		\min & c^{t}x \\
+		     & Ax = b \\
+		     & x \geq 0
+	\end{cases} \Rightarrow
+\begin{cases}
+		\min & c^{t}x \\
+		     & Ax \geq b \\
+		     & -Ax \geq - b \\
+		     & x \geq 0
+	\end{cases}
+	.\]
+\begin{theorem}[Teorema débil de la dualidad]
+Dadas $\displaystyle \vec{x} $ y $\displaystyle \vec{u} $ soluciones factibles de $\displaystyle P_{c} $ y $\displaystyle D_{c} $ respectivamente. Entonces, 
+\[c^{t}\vec{x}\geq b^{t}\vec{u} .\]
+\end{theorem}
+\begin{proof}
+Por ser $\displaystyle \vec{x} $ y $\displaystyle \vec{u} $ factibles, tendremos que 
+\[A\vec{x}\geq b, \; \vec{x}\geq 0 \quad \text{y} \quad \vec{u}A \leq c, \; \vec{u}\geq 0 .\]
+Podemos escribir,
+\[\vec{u}A\vec{x}\geq \vec{u}b \quad \text{y} \quad \vec{u}A\vec{x}\leq c\vec{x} .\]
+Así, obtenemos lo que queríamos,
+\[\vec{u}b \leq \vec{u}A\vec{x}\leq c\vec{x} .\]
+\end{proof}
+\begin{prop}
+Si existe solución óptima de $\displaystyle P_{c} $, existe solución óptima de $\displaystyle D_{c} $. 
+\end{prop}
+\begin{proof}
+
+\end{proof}
 
 \end{document}

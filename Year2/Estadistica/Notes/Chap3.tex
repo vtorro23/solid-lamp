@@ -274,4 +274,60 @@ es independiente de $\displaystyle \theta $. Además, como $\displaystyle T = T\
 Si $\displaystyle X \sim U\left(0,\theta\right) $, entonces $\displaystyle X_{\left(n\right)} $ y $\displaystyle \frac{X_{\left(1\right)}}{X_{\left(n\right)}} $ son independientes.
 \end{eg}
 \section{Principio de reducción de datos}
-Sea $\displaystyle \left(\Omega, \mathcal{A}, P\right) $ es espacio probabilístico asociado a un experimento aleatorio $\displaystyle \mathcal{E} $, una variable aleatoria observable $\displaystyle X : \Omega \to \R $ y su modelo estadístico asociado $\displaystyle \left(\chi, \mathcal{B}, F_{\theta}\right)_{\theta \in \Theta \subset \R^{l}} $, $\displaystyle \mathcal{B}=\mathcal{B}\left(\R\right) $, y $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. $\displaystyle \left(n\right) $. 
+Sea $\displaystyle \left(\Omega, \mathcal{A}, P\right) $ es espacio probabilístico asociado a un experimento aleatorio $\displaystyle \mathcal{E} $, una variable aleatoria observable $\displaystyle X : \Omega \to \R $ y su modelo estadístico asociado $\displaystyle \left(\chi, \mathcal{B}, F_{\theta}\right)_{\theta \in \Theta \subset \R^{l}} $, $\displaystyle \mathcal{B}=\mathcal{B}\left(\R\right) $, y $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. $\displaystyle \left(n\right) $. \\
+La idea es considerar la distribución de probabilidad de la muestra, no como función de $\displaystyle \left(x_{1}, \ldots, x_{n}\right) $, sino como función del parámetro desconocido $\displaystyle \theta $. 
+\begin{definition}[Función de verosimilitud]
+Supuesto que se ha observado un valor muestral $\displaystyle \left(x_{1}, \ldots, x_{n}\right) $, la función $\displaystyle \theta $ definida mediante $\displaystyle L\left(\theta|x_{1}, \ldots, x_{n}\right) : = f\left(x_{1}, \ldots, x_{n} | \theta \right) $, se llama \textbf{función de verosimilitud}, siendo $\displaystyle f\left(x_{1}, \ldots, x_{n}|\theta \right) $ la función de densidad de la muestra. 
+\end{definition}
+\begin{definition}[Principio de verosimilitud]
+Si $\displaystyle \vec{x}= \left(x_{1}, \ldots, x_{n}\right) $ e $\displaystyle \vec{y}= \left(y_{1}, \ldots, y_{n}\right) $ son dos puntos muestrales, tales que existe una constante $\displaystyle c\left(\vec{x}, \vec{y}\right) $ verificando que $\displaystyle L_{1}\left(\theta | \vec{x}\right)=c\left(\vec{x}, \vec{y}\right)L_{2}\left(\theta|\vec{y}\right) $, entonces la evidencia estadística que suministran ambos puntos debe ser idéntica. 
+\end{definition}
+\begin{observation}
+Podemos observar varias cosas:
+\begin{itemize}
+\item La evidencia estadística se toma en un sentido amplio y no se define, así esta puede ser un estadístico muestral, un estadístico suficiente, un intervalo de confianza, etc. 
+\item Las dos funciones de verosimilitud no tienen por qué estar definidas en el mismo espacio muestral. 
+\item Realmente la evidencia estadística depende del experimento bajo estudio $\displaystyle E $ y del punto observado, por lo que puede expresarse como $\displaystyle Ev\left(E, \vec{x}\right) $, con $\displaystyle E = \left(\chi^{n}, f\left(\vec{x}|\theta\right)\right)_{\theta \in \Theta \subset \R^{l}} $. 
+\end{itemize}
+\end{observation}
+\begin{eg}
+La evidencia que se obtiene de un modelo $\displaystyle Binomial\left(n,\theta\right) $ sobre $\displaystyle \theta $, cuando se observan $\displaystyle t $ éxitos en $\displaystyle n $  repeticiones, es la misma que la obtenida de un modelo binomia negativo $\displaystyle BN\left(n, \theta \right) $, siempre que se suponga que se han realizado $\displaystyle n $ repeticiones hasta obtener $\displaystyle t $ éxitos. 
+En efecto, tenemos que en el primer caso 
+\[f\left(t | \theta \right)=\begin{pmatrix} n \\ t \end{pmatrix}\theta ^{t}\left(1-\theta \right)^{n-t} .\]
+En el segundo caso tenemos que 
+\[g\left(n|\theta \right)=\begin{pmatrix} n-1 \\ t-1 \end{pmatrix}\theta^{t}\left(1-\theta \right)^{n-t} .\]
+Así, podemos aplicar el principio de verosimilitud con $\displaystyle c\left(t,n\right)=\frac{n}{t} $. 
+\end{eg}
+\begin{eg}
+Los procedimientos bayesianos, por estar basados en la distribución de probabilidad final o a posteriori, satisfacen el principio de verosimilitud, ya que si $\displaystyle \vec{x}=\left(x_{1}, \ldots, x_{n}\right) $ e $\displaystyle \vec{y}=\left(y_{1}, \ldots, y_{n}\right) $ satisfacen el principio de verosimilitud, entonces $\displaystyle \pi_{1}\left(\theta|\vec{x}\right)=\pi_{2}\left(\theta|\vec{y}\right) $. 
+\end{eg}
+\begin{definition}[Principio de suficiencia]
+En un experimento $\displaystyle E = \left(\chi^{n}, f\left(\vec{x} | \theta \right)\right)_{\theta \in \Theta \subset \R^{l}} $, si $\displaystyle T = T\left(X\right) $ es un estadístico suficiente para $\displaystyle \theta $ y se tiene que $\displaystyle T\left(\vec{x}\right)=T\left(\vec{y}\right) $, entonces $\displaystyle Ev\left(E, \vec{x}\right)=Ev\left(E, \vec{y}\right) $. 
+\end{definition}
+\begin{eg}
+En un experimento consistente en la repetición de $\displaystyle n $ pruebas de Bernoulli, la evidencia estadística que se obtiene de dos puntos muestrales con el mismo número de éxitos es la misma.
+\end{eg}
+\begin{definition}[Principio de condicionalidad]
+	Dados dos experimentos $\displaystyle E_{1}=\left(\chi^{n}, f_{1}\left(\vec{x}|\theta\right)\right)_{\theta\in\Theta\subset\R^{l}} $ y $\displaystyle E_{2}=\left(\chi^{m}, f_{2}\left(\vec{y}|\theta\right)\right)_{\theta\in\Theta\subset\R^{l}} $, considérese el experimento mixto, en el que depeniendo de una v.a. $\displaystyle J $, que toma valor 1 o 2 con probabilidad $\displaystyle \frac{1}{2} $, se observa el experimento $\displaystyle E = \left(\chi^{n} \cup \chi^{m} \times \left\{ 1,2\right\} , f\left(\vec{x}, j | \theta \right)\right)_{\theta\in\Theta\subset\R^{l}} $ representado por la v.a. $\displaystyle \left(Z,J\right) $ tal que 
+	\[Z =
+	\begin{cases}
+	X, \; J = 1 \\
+	Y, \; J = 2
+	\end{cases}
+	, \quad f\left(\vec{x}, 1|\theta \right)=\frac{1}{2}f_{1}\left(\vec{x} | \theta \right) \quad \text{y} \quad f\left(\vec{y}, 2 | \theta\right)=\frac{1}{2}f_{2}\left(\vec{y}|\theta \right).\]
+Entonces $\displaystyle Ev\left(E, \left(\vec{x}, 1\right)\right) = Ev\left(E_{1}, \vec{x}\right) $ y $\displaystyle Ev\left(E, \left(\vec{y}, 1\right)\right)=Ev\left(E_{2}, \vec{y}\right) $. 
+\end{definition}
+\begin{observation}
+El principio de condicionalidad dice algo bastante intuitivo: los mecanismos aleatorios que no dependan del valor a determinar, $\displaystyle \theta  $, no proporcionan evidencia sobre él. Por otro lado, el valor $\displaystyle \frac{1}{2} $ (probabilidad con la que toma valores la v.a. $\displaystyle J $) puede ser sustituido por otro cualquiera sin modificar el significado del principio de condicionalidad; lo sustancial es que la distribución de la v.a. no dependa de $\displaystyle \theta  $. 
+\end{observation}
+\begin{theorem}[Teorema de Birnbaum]
+El principio de verosimilitud es equivalente a los principios de suficiencia y condicionalidad. 
+\end{theorem}
+\begin{observation}
+El teorema de Birnbaum es importante desde el punto de vista de los fundamentos de la Estadística. Muchos de los procedimientos estadísticos usuales violan el principio de verosimilitud, en concreto los procedimientos que se basan en la distribución en el muestreo de un estadístico pueden hacerlo. \\
+
+Por ejemplo, si se pasa de un modelo binomial a uno binomial negativo, la función de masa cambia y por tanto las propiedades del estamador también pueden cambiar. Sin embargo, a la luz del teorema esto significa contradecir el principio de suficiencia, que es compartido por toda aproximación a la inferencia, o el principio de condicionalidad, que parece bastante aséptico. \\
+
+El teorema de Birnbaum constituye uno de los motivos por los que el principio de verosimilitud no es universalmente aceptado, a pesar de que como se verá, la función de verosimilitud posee muchas buenas propiedades estadísticas. 
+\end{observation}
+

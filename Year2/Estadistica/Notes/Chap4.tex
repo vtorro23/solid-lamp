@@ -4,15 +4,17 @@ Sea $\displaystyle \left(\Omega, \mathcal{A}, P\right) $ el espacio probabilíst
 \begin{definition}[Estimador]
 Un \textbf{estimador} del parámetro $\displaystyle \theta $ es un estadístico $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) : \chi^{n} \to \Theta$ que se utiliza para determinar el valor desconocido $\displaystyle \theta $. 
 \end{definition}
+\subsection{Estimadores centrados}
+\begin{definition}[Estimador centrado]
+	Decimos que un estadístico $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) : \chi^{n} \to \Theta $ es un \textbf{estimador centrado} para $\displaystyle \theta $ cuando $\displaystyle E_{\theta}\left[T\right] =\theta $.
+\end{definition}
+
 \begin{definition}[Sesgo]
 	En general, se llama \textbf{sesgo} de un estimador a la diferencia $\displaystyle b\left(T, \theta\right)=E_{\theta}\left[T\right] -\theta $.
 \end{definition}
 
-\begin{definition}[Estimador centrado]
-	Decimos que un estadístico $\displaystyle T = T\left(X_{1}, \ldots, X_{n}\right) : \chi^{n} \to \Theta $ es un \textbf{estimador centrado} para $\displaystyle \theta $ cuando $\displaystyle E_{\theta}\left[T\right] =\theta $.
-\end{definition}
 \begin{observation}
-En el caso de los estimadore scentrados tendremos que el sesgo es $\displaystyle b\left(T, \theta\right)=0 $. 
+En el caso de los estimadores centrados tendremos que el sesgo es $\displaystyle b\left(T, \theta\right)=0 $. 
 \end{observation}
 \begin{eg}
 Es fácil comprobar que $\displaystyle \left(\overline{X}, S^{2}\right) $ es un estimador centrado de $\displaystyle \theta=\left(\mu, \sigma^{2}\right) $. 
@@ -23,10 +25,66 @@ Es fácil ver que $\displaystyle \sigma^{2}_{n}=b_{2}=\frac{1}{n}\sum^{n}_{i= 1}
 \begin{observation}
 Podemos hacer un par de observaciones.
 \begin{enumerate}
-\item Puede que no exista un estimador centrado de $\displaystyle \theta $.
-\item Si $\displaystyle T $ es un estimador centraod para $\displaystyle \theta $, en general $\displaystyle h\left(T\right) $, con $\displaystyle h $ medible, no tiene por qué ser centrado para $\displaystyle h\left(\theta\right) $. 
-\item A pesar de que exista un estimador centrado para $\displaystyle \theta $, puede ser que no tenga sentido. 
+\item Puede que no exista un estimador centrado de $\displaystyle \theta $. En efecto, para muestras de tamaño uno de una población $\displaystyle Bernoulli\left(\theta \right) $ con $\displaystyle \theta \in \left(0,1\right) $, no existe estimador centrado para $\displaystyle h\left(\theta \right)=\theta^{2} $. Si lo hubiera, tendríamos que
+	\[T\left(1\right)\theta + T\left(0\right)\left(1-\theta \right)=\theta^{2} , \forall\theta\in \Theta\]
+	lo que es imposible puesto que un polinomio de grado dos puede tener como mucho dos raíces distintas. 
+\item Si $\displaystyle T $ es un estimador centrado para $\displaystyle \theta $, en general $\displaystyle h\left(T\right) $, con $\displaystyle h $ medible, no tiene por qué ser centrado para $\displaystyle h\left(\theta\right) $. En efecto, para muestras de tamaño uno de una población de $\displaystyle Bernoulli\left(\theta \right) $, con $\displaystyle \theta \in \left[0,1\right]  $, existe un estimador centrado para $\displaystyle h\left(\theta\right)=\theta $. Como este debe ser
+	\[T\left(1\right)\theta+T\left(0\right)\left(1-\theta \right)=\theta, \; \forall \theta \in \Theta ,\]
+	tendremos que $\displaystyle T\left(0\right)=0 $ y $\displaystyle T\left(1\right)=1 $. Este ejemplo y el anterior demuestran lo deseado. 
+\item A pesar de que exista un estimador centrado para $\displaystyle \theta $, puede ser que no tenga sentido. En efecto, para una población de $\displaystyle Poisson\left(\theta \right) $, con $\displaystyle \theta \in \left(0, \infty\right) $, si se quiere estimar la función $\displaystyle h\left(\theta \right)=e^{-3\theta } $ con muestras de tamaño uno mediante un estimador centrado $\displaystyle T $, este debe cumplir
+	\[\sum^{\infty}_{i = 0}e^{-\theta }\frac{\theta^{i}}{i!}T\left(i\right)=e^{-3\theta } \iff \sum^{\infty}_{i = 0}\frac{\theta^{i}}{i!}T\left(i\right)=\sum^{\infty}_{i = 0}\frac{\theta^{i}}{i!}\left(-2\right)^{i} .\]
+Así, tenemos que $\displaystyle T\left(i \right)=\left(-2\right)^{i} $ es el estimador centrado, pero este es negativo para los valores impares de $\displaystyle i $, por lo que no es un estimador de $\displaystyle h\left(\theta \right) $. 	
 \item A pesar de que exista un estimador centrado para $\displaystyle \theta $, puede que su varianza sea muy grande y no sea adecuado para la estimación.
 \end{enumerate}
 \end{observation}
+\begin{observation}
+Si $\displaystyle T_{j} $ para $\displaystyle j \in \N $ es una sucesión de estimadores centrados para $\displaystyle \theta $, entonces $\displaystyle \overline{T}_{k}=\frac{1}{k}=\frac{1}{k}\sum^{k}_{j = 1}T_{j} $ es un estimador centrado para $\displaystyle \theta $. Si además los estimadores $\displaystyle T_{j} $ son independientes y $\displaystyle V_{\theta}\left(T_{j}\right)<\sigma^{2}<\infty $, $\displaystyle \forall j \in \N $, entonces 
+\[V_{\theta}\left(\overline{T}_{k}\right)\leq \frac{\sigma^{2}}{k} \xrightarrow{k \to \infty}0 \; \Rightarrow \; \overline{T}_{k}\xrightarrow{P, \; k \to \infty}\theta \; \text{(Teorema de Markov)}.\]
+\end{observation}
+\subsection{Estimadores consistentes}
+
+\begin{definition}[Estimadores consistentes]
+	Una sucesión de estimadores $\displaystyle T_{n}=T\left(X_{1}, \ldots, X_{n}\right) $ es \textbf{consistente} para el parámetro $\displaystyle \theta $ si $\displaystyle T_{n}\xrightarrow{P}\theta $, $\displaystyle \forall\theta \in \Theta $, es decir
+	\[\forall\epsilon > 0, \; \lim_{n \to \infty}P_{\theta}\left( \left|T_{n}-\theta\right|\leq \epsilon \right)=1, \; \forall \theta \in \Theta .\]
+\end{definition}
+\begin{eg}
+Si el parámetro $\displaystyle \theta $ es el momento poblacional respecto al origen de orden $\displaystyle k $, es decir $\displaystyle \theta = \alpha_{k} $, entonces el momento muestral respecto al origen de orden $\displaystyle k $, $\displaystyle a_{k}=\frac{1}{n}\sum^{n}_{i = 1}X_{i}^{k} $ es un estimador consistente. 
+\end{eg}
+\begin{prop}[Condición suficiente]
+	Si $\displaystyle T_{n}=T\left(X_{1}, \ldots, X_{n}\right) $ es una sucesión de estimadores tales que $\displaystyle \forall \theta \in \Theta $, $\displaystyle E_{\theta}\left[T_{n}\right] \xrightarrow{n \to \infty}\theta $ y $\displaystyle V_{\theta}\left(T_{n}\right)\xrightarrow{n \to \infty} 0$, entonces $\displaystyle T_{n} $ es consistente para $\displaystyle \theta  $. 
+\end{prop}
+\begin{proof}
+Ya que para $\displaystyle \forall \epsilon > 0 $ tenemos que 
+\[P_{\theta}\left( \left|T_{n}-\theta\right| > \epsilon \right)\leq \epsilon ^{-2}E_{\theta}\left[\left(T_{n}-\theta\right)^{2}\right] ,\]
+y sumando y restando $\displaystyle E_{\theta}\left[T_{n}\right]  $ en la expresión del cuadrado del segundo miembro obtenemos que 
+\[P_{\theta}\left( \left|T_{n}-\theta\right|>\epsilon \right)\leq \epsilon ^{-2}\left[V_{\theta}\left(T_{n}\right)+\left(E_{\theta}\left[T_{n}\right] -\theta\right)^{2}\right]  \xrightarrow{n \to \infty} 0.\]
+\end{proof}
+\begin{observation}
+Las hipótesis de la proposición anterior son equivalentes a decir que $\displaystyle \lim_{n \to \infty}ECM\left(T_{n}\right)=0 $. En efecto, tenemos que 
+\[E_{\theta}\left[\left(T_{n}-\theta\right)^{2}\right] =V_{\theta}\left(T_{n}\right)+\left(E_{\theta}\left[T_{n}\right] -\theta\right)^{2} .\]
+\end{observation}
+\begin{eg}
+Con una m.a.s. $\displaystyle \left(n\right) $ de una población $\displaystyle Bernoulli\left(\theta\right) $, el estimador
+\[T_{n}=\frac{1}{n+2}\left(\sum^{n}_{i = 1}X_{i}+1\right) ,\]
+es consistente para $\displaystyle \theta  $. En efecto, tenemos que 
+\[\lim_{n \to \infty}E_{\theta}\left[T_{n}\right]=\lim_{n \to \infty}\frac{n\theta + 1}{n + 2}=\theta \quad \text{y} \quad \lim_{n \to \infty}V\left(T_{n}\right)=\lim_{n \to \infty}\frac{n\theta\left(1-\theta \right)}{\left(n+2\right)^{2}}=0  .\]
+Por la proposición anterior tenemos que es consistente. 
+\end{eg}
+\subsection{Estimadores bayesianos}
+En la aproximación bayesiana $\displaystyle \theta  $ es una variable aleatoria con distribución inicial (o a priori) dada por una función de masa o de densidad $\displaystyle \pi\left(\theta\right) $. Cuando se observa una muestra se calcula la distribución final (o a posteriori),
+\[\pi\left(\theta|x_{1}, \ldots, x_{n}\right)=\frac{\pi\left(\theta\right)f\left(x_{1}, \ldots, x_{n}|\theta \right)}{m\left(x_{1}, \ldots, x_{n}\right)}\quad \text{con}\quad m\left(x_{1}, \ldots, x_{n}\right)=\int _{\Theta }\pi\left(\theta\right)f\left(x_{1}, \ldots, x_{n}|\theta \right) \; d\theta ,\]
+donde decimos que $\displaystyle m $ es la \textbf{distribución predictiva}. La idea es que antes de tomar la muestra, la información sobre $\displaystyle \theta $ viene dada por $\displaystyle \pi\left(\theta\right) $ y tras la experimentación se debe utilizar $\displaystyle \pi\left(\theta|x_{1}, \ldots, x_{n}\right) $. El \textbf{estimador bayesiano} de $\displaystyle \theta $ es toda la distribución final y por extensión cualquier medida de centralización correspondiente a esta distribución. 
+\begin{eg}[Familias conjugadas]
+Si $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ es una m.a.s. $\displaystyle \left(n\right) $ de $\displaystyle X\sim Bin\left(1, \theta\right) $ y $\displaystyle \theta\sim U\left(0,1\right) $, entonces tendremos que 
+\[\pi\left(\theta|x_{1}, \ldots, x_{n}\right)=\frac{\theta^{\sum^{n}_{i = 1}x_{i}}\left(1-\theta\right)^{n-\sum^{n}_{i = 1}x_{i}}I_{\left(0,1\right)}\left(\theta\right) }{\int^{1}_{0} \theta^{\sum^{n}_{i = 1}x_{i}}\left(1-\theta\right)^{n-\sum^{n}_{i = 1}x_{i}} \; d\theta} = \frac{\theta^{\sum^{n}_{i = 1}x_{i}}\left(1-\theta\right)^{n-\sum^{n}_{i = 1}x_{i}}I_{\left(0,1\right)\left(\theta\right)}}{B\left(\sum^{n}_{i = 1}x_{i}+1, n-\sum^{n}_{i = 1}x_{i}+1\right)} .\]
+Así, tenemos que $\displaystyle \pi\left(\theta|x_{1}, \ldots, x_{n}\right)\sim Beta\left(\sum^{n}_{i = 1}x_{i}+1, n -\sum^{n}_{i = 1}x_{i}+1\right) $. En general se tiene que 
+\[\pi\left(\theta|x_{1}, \ldots, x_{n}\right)\sim Beta\left(\sum^{n}_{i = 1}x_{i}+\alpha, n - \sum^{n}_{i = 1}x_{i}+\beta \right) \]
+si $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ es una m.a.s. $\displaystyle \left(n\right) $ de $\displaystyle X \sim Bin\left(1, \theta \right) $ y $\displaystyle \theta\sim Beta\left(\alpha, \beta \right) $. En este caso, se dice que la familia de distribuciones iniciales $\displaystyle Beta\left(\alpha, \beta \right) $ es \textbf{conjugada} de la familia de distribuciones de probabilidad $\displaystyle X\sim Bin\left(1,\theta \right) $. Además, 
+\[E\left[\theta|x_{1}, \ldots, x_{n}\right] =\frac{\sum^{n}_{i=1}x_{i}+\alpha }{n + \alpha + \beta }=\frac{n}{n + \alpha + \beta }\overline{x} + \frac{\alpha + \beta }{n + \alpha + \beta }\frac{\alpha }{\alpha + \beta } .\]
+Con frecuencia suele ocurrir que la información muestral domina a la información inicial, cuando $\displaystyle n $ es suficientemente grande. 
+\end{eg}
+\begin{eg}
+Si $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ es una m.a.s. $\displaystyle \left(n\right) $ de $\displaystyle X\sim N\left(\theta, \sigma \right) $ con $\displaystyle \sigma  $ conocida y $\displaystyle \theta\sim N\left(\mu_{0}, \sigma_{0}\right) $, entonces $\displaystyle \pi\left(\theta|x_{1}, \ldots, x_{n}\right)\sim N\left(\mu_{1}, \sigma_{1}\right) $ con 
+\[\mu_{1}=\frac{\frac{\mu_{0}}{\sigma_{0}^{2}}+\frac{\overline{x}}{\frac{\sigma^{2}}{n}}}{\frac{1}{\sigma_{0}^{2}}+\frac{1}{\frac{\sigma^{2}}{n}}} = \frac{\sigma^{2}}{\sigma^{2} + n\sigma ^{2}_{0}}\mu_{0} + \frac{n\sigma_{0}^{2}}{\sigma^{2}+n\sigma^{2}_{0}}\overline{x} \quad \text{y} \quad \sigma_{1}=\sqrt{\frac{1}{\frac{1}{\sigma^{2}_{0}}+\frac{1}{\frac{\sigma^{2}}{n}}}}.\]
+\end{eg}
 
