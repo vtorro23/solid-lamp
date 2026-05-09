@@ -1,0 +1,92 @@
+\chapter{Otros métodos de resolución}
+\section{La transformada de Laplace}
+Dada
+\[x^{\left(n\right)} + a_{n-1}x^{\left(n-1\right)} + \cdots + a_{1}x' + a_{0}x = b\left(t\right), \]
+sabemos que la podemos resolver si $\displaystyle b\left(t\right) $ es buena, es decir, por lo menos continua. Si no lo es, como es habitual en el contexto físico, no podemos obtener una solución particular para el completo. Por ejemplo, si $\displaystyle b\left(t\right) $ es continua a trozos, tanto el método de variación de constantes como el de parámetros indefinidos no funciona. 
+\begin{eg}
+Consideremos 
+\end{eg}
+\begin{definition}[Transformada de Laplace]
+Dada $\displaystyle f : \R \to \R $, se define la \textbf{transformada de Laplace} de la forma
+\[\mathcal{L}\left(f\left(t\right)\right) : = \int^{\infty}_{0} e^{-st}f\left(t\right) \; dt .\]
+\end{definition}
+\begin{definition}[Función continua a trozos]
+	Decimos que $\displaystyle f : [a,b) \to \R $ es \textbf{continua a trozos} en $\displaystyle \left[a,b\right]  $ si es continua en todo el intervalo $\displaystyle \left[a,b\right]  $ salvo en un número finito de puntos en los que sí existe los límites laterales.
+\end{definition}
+\begin{definition}[Orden exponencial]
+Decimos que $\displaystyle f : \left(0,\infty\right)\to \R $ es de \textbf{orden exponencial} si y solo si existen $\displaystyle K $, $\displaystyle M $ y $\displaystyle a $ tales que 
+\[ \left|f\left(t\right)\right|\leq Ke^{at} ,\]
+cuando $\displaystyle t \geq M $. 
+\end{definition}
+\begin{prop}[Condición suficiente de existencia]
+Si $\displaystyle f : \left(0,\infty\right)\to \R $ es continua a trozos y de orden exponencial, entonces $\displaystyle \mathcal{L}\left(f\left(t\right)\right)<\infty $ para $\displaystyle s > a $. 
+\end{prop}
+\begin{proof}
+Es sencillo ver que 
+\[\mathcal{L}\left(f\left(t\right)\right)=\int^{\infty}_{0} e^{-st}f\left(t\right) \; dt = \int^{M}_{0} e^{-st}f\left(t\right) \; dt + \int^{\infty}_{0} e^{-st}f\left(t\right) \; dt .\]
+La primera integral existe claramente y la segunda también puesto que
+\[ \left|f\left(t\right)\right|\leq Ke^{at}.\]
+\end{proof}
+\begin{eg}
+Consideremos la función 
+\[f\left(t\right)=
+\begin{cases}
+3e^{t ^{2}}, \; t < 5 \\
+10^{3}, \; t \geq 5
+\end{cases}
+.\]
+Por la proposición anterior es fácil ver que la transformada de Laplace existe. También lo podemos ver de la forma:
+\[\mathcal{L}\left(f\left(t\right)\right)=\int^{5}_{0} 3e^{t ^{2}}e^{-st} \; dt + \int^{\infty}_{5} 10^{3}e^{-st} \; dt < \infty .\]
+\end{eg}
+\begin{observation}
+Nos preguntamos, si $\displaystyle \mathcal{L}\left(f\left(t\right)\right)=\mathcal{L}\left(g\left(t\right)\right) $, entonces $\displaystyle f\left(t\right) = g\left(t\right) $. Tenemos que por la linealidad de $\displaystyle \mathcal{L} $:
+\[\mathcal{L}\left(f\left(t\right)\right)-\mathcal{L}\left(g\left(t\right)\right)=0 \iff \mathcal{L}\left(f\left(t\right)-g\left(t\right)\right)=0 \iff \int^{\infty}_{0} e^{st}\left(f\left(t\right)-g\left(t\right)\right) \; dt = 0 .\]
+Como $\displaystyle e^{st} > 0 $, debe ser que $\displaystyle f\left(t\right)-g\left(t\right)=0 $ salvo quizás en un conjunto de medida nula.
+\end{observation}
+\begin{theorem}[Teorema de Lerch]
+Sean $\displaystyle f $ y $\displaystyle g $ funciones de orden exponencial y continuas a trozos tales que $\displaystyle \mathcal{L}\left(f\left(t\right)\right)=\mathcal{L}\left(g\left(t\right)\right) $. Entonces, $\displaystyle f\left(t\right)=g\left(t\right) $, $\displaystyle \forall t > 0 $ salvo en sus respectivos puntos de discontinuidad.
+\end{theorem}
+Podemos entonces asegurar la existencia de $\displaystyle \mathcal{L}^{-1} $ en un cierto rango y nocvamos a ver la expresión explícita de $\displaystyle \mathcal{L}^{-1} $ porque es compleja, pero trabajaremos con ella a través de sus propiedades.
+\begin{prop}
+$\displaystyle \mathcal{L}^{-1} $ es lineal.
+\end{prop}
+\begin{proof}
+Sean $\displaystyle \alpha, \beta \in \R $, entonces queremos ver que
+\[
+	\mathcal{L}^{-1}\left(\alpha F\left(s\right)+\beta G\left(s\right)\right)=  \alpha\mathcal{L}^{-1}\left(F\left(s\right)\right) + \beta\mathcal{L}^{-1}\left(G\left(s\right)\right).
+\]
+Si tomamos $\displaystyle F\left(s\right)=\mathcal{L}\left(f\left(t\right)\right) $ y $\displaystyle G\left(s\right)=\mathcal{L}\left(g\left(t\right)\right) $, tenemos que 
+\[
+\begin{split}
+	\mathcal{L}^{-1}\left(\alpha F\left(s\right)+\beta G\left(s\right)\right)=& \mathcal{L}^{-1}\left(\alpha\mathcal{L}\left(f\left(t\right)\right)+\beta\mathcal{L}\left(g\left(t\right)\right)\right) = \mathcal{L}^{-1}\left(\mathcal{L}\left(\alpha f\left(t\right)+\beta g\left(t\right)\right)\right) \\
+	= & \alpha f\left(t\right)+\beta g\left(t\right) = \alpha \mathcal{L}^{-1}\left(F\left(s\right)\right)+\beta \mathcal{L}^{-1}\left(G\left(s\right)\right) .
+\end{split}
+\]
+\end{proof}
+\begin{eg}
+Sabiendo que para $\displaystyle f\left(t\right)=\sin kt $ tenemos que $\displaystyle F\left(s\right)=\frac{k}{s^{2}+k^{2}} $, buscamos $\displaystyle \mathcal{L}^{-1}\left(\frac{1}{s^{2}+7}\right) $. Es fácil ver que $\displaystyle f\left(t\right)=\frac{\sin7t}{\sqrt{7}} $.  
+\end{eg}
+\begin{eg}
+Calculemos $\displaystyle f\left(t\right) $ tal que $\displaystyle F\left(s\right)=\frac{-2s + 6}{s^{2}+4} $. Tendremos que 
+\[\mathcal{L}^{-1} \left(\frac{-2s + 6}{s^{2}+4}\right) = - 2\mathcal{L}^{-1}\left(\frac{s}{s^{2}+4}\right)+3\mathcal{L}^{-1}\left(\frac{2}{s^{2}+4}\right)=-2\cos2t+3\sin2t.\]
+\end{eg}
+\begin{prop}[Cambio de escala]
+Si $\displaystyle a > 0 $, tenemos que 
+\[\mathcal{L}\left(f\left(at\right)\right)=\int^{\infty}_{0} e^{-st}f\left(at\right) \; dt = \frac{1}{a}\int^{\infty}_{0} e^{-\frac{s}{a}u}f\left(u\right) \; du = \frac{1}{a}F\left(\frac{s}{a}\right) .\]
+\end{prop}
+\begin{observation}[Traslaciones]
+	Podemos hacer un par de observaciones.
+	\begin{itemize}
+	\item Para cualquier $\displaystyle a \in \R $, tenemos que $\displaystyle \mathcal{L}\left(e^{at}f\left(t\right)\right)=F\left(s-a\right) $.
+	\item Para $\displaystyle a > 0 $, $\displaystyle \mathcal{L}\left(H_{a}\left(t\right)f\left(t-a\right)\right)=e^{-as}F\left(s\right) $. 
+	\end{itemize}
+	En efecto,
+	\[\mathcal{L}\left(e^{at}f\left(t\right)\right)=\int^{\infty}_{0} e^{at}e^{-st}f\left(t\right) \; dt = \int^{\infty}_{0} e^{-\left(s-a\right)t}f\left(t\right) \; dt=F\left(s-a\right) .\]
+Por otro lado,
+\[\mathcal{L}\left(H_{a}\left(t\right)f\left(t-a\right)\right)=\int^{\infty}_{0} e^{-st}f\left(t-a\right) \; dt=\int^{\infty}_{a} e^{-sa}e^{-s\left(t-a\right)}f\left(t-a\right) \; dt=e^{-sa}\int^{\infty}_{0} e^{-su}f\left(u\right) \; du=e^{-sa}F\left(s\right) .\]
+\end{observation}
+\begin{prop}[Derivación]
+	Para $\displaystyle f\left(t\right) $ con $\displaystyle \mathcal{L}\left(f\left(t\right)\right)=F\left(s\right) $ tenemos que 
+
+\end{prop}
+

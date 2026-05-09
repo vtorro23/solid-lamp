@@ -1,8 +1,22 @@
-\chapter{Cálculo Vectorial}
+\chapter{Integrales de línea}
 \section{Caminos}
 \begin{definition}[Camino]
 	Un \textbf{camino} en $\displaystyle \R^{n} $ es una función $\displaystyle \gamma: \left[a,b\right] \subset\R  \to \R^{n} $ continua.
 \end{definition}
+\begin{eg}
+Consideremos los siguientes caminos o curvas parametrizadas:
+\begin{enumerate}
+	\item Un segmento de $\displaystyle A=\left(a_{1}, a_{2}\right) $ a $\displaystyle B = \left(b_{1}, b_{2}\right) $. Consideramos $\displaystyle \gamma : \left[0,1\right] \to \R^{2} : t \to A + t\left(B-A\right) $. 
+	\item Una circunferencia de radio $\displaystyle r $ centrada en el origen. Tomamos $\displaystyle \gamma : \left[0,2\pi \right] \to \R^{2} : t \to \left(r\cos t, r\sin t\right) $. Otra parametrización es $\displaystyle \gamma : \left[0,2\pi \right] \to \left(r\sin t, r \cos t\right) $, que es equivalente a recorrer la circunferencia en sentido contrario. 
+	\item La gráfica de una función continua. Dada $\displaystyle f : \left[a,b\right] \to \R $, podemos parametrizarla así: $\displaystyle \gamma : \left[a,b\right] \to \R^{2} : t \to \left(t,f\left(t\right)\right) $. 
+	\item La hélice la podemos parametrizar de la forma $\displaystyle \gamma : \left[0,2\pi \right] \to \R^{3} : \left(\cos t, \sin t, t\right) $. 
+	\item El cicloide lo podemos parametrizar de la forma $\displaystyle \gamma : \left[0, 2\pi \right] \to \R^{2} : t \to \left(t-\sin t, 1- \cos t\right) $. 
+	\item El cardioide lo podemos parametrizar de la forma
+		\[\gamma : \left[0,2\pi \right] \to \R^{2} : \theta \to \left(\rho\left(\theta\right)\cos\theta, \rho\left(\theta\right)\sin \theta\right) ,\]
+		donde $\displaystyle \rho\left(\theta \right)=1-\cos\theta  $ para $\displaystyle \theta\in \left[0,2\pi \right]  $. 
+\end{enumerate}
+\end{eg}
+
 \begin{definition}
 	Sea $\displaystyle \gamma:\left[a,b\right] \to \R^{n} $ un camino. Para cada partición $\displaystyle P = \left\{ a=t_{0}, \ldots, t_{m} = b\right\}  $ de $\displaystyle \left[a,b\right]  $, denotamos
 	\[L\left(\gamma, P\right):=\sum^{m}_{j = 1} \|\gamma\left(t_{j}\right)-\gamma\left(t_{j-1}\right)\|,\]
@@ -12,9 +26,21 @@
 	Dado un camino $\displaystyle \gamma:[a,b]\to \R $, se define la \textbf{longitud} de $\displaystyle \gamma  $ como 
 	\[L\left(\gamma \right)= \sup \left\{ L\left(\gamma, P\right) \; : \; P \in \mathcal{P}\left(\left[a,b\right] \right)\right\} \in \left[0, \infty\right)  .\]
 \end{definition}
+\begin{observation}
+No toda curva parametrizada tiene longitud finita. En efecto, podemos considerar la gráfica de 
+\[f\left(x\right)=
+\begin{cases}
+	x\sin \frac{1}{x}, \; x \in (0,1] \\
+	0, \; x = 0
+\end{cases}
+.\]
+Tenemos que $\displaystyle f $ es continua en $\displaystyle \left[0,1\right]  $, pero su gráfica parametrizada por $\displaystyle \gamma : \left[0,1\right] \to \R^{2} : t \to \left(t, f\left(t\right)\right) $ no tiene longitud finita.
+\end{observation}
+
 \begin{definition}[Camino de clase $\displaystyle \mathcal{C}^1 $ a trozos]
 	Dado un camino $\displaystyle \gamma:\left[a,b\right] \to \R^{n} $, decimos que es $\displaystyle \mathcal{C}^{1} $ \textbf{a trozos} si existe una partición $\displaystyle P = \left\{ a = t_{0}, \ldots, t_{m}= b\right\}  $ de $\displaystyle \left[a,b\right]  $ tal que $\displaystyle \gamma|_{\left[t_{j-1}, t_{j}\right] } $ es $\displaystyle \mathcal{C}^{1} $ en $\displaystyle \left[t_{j-1}, t_{j}\right]  $, $\displaystyle \forall j \in \left\{ 1, \ldots, m\right\}  $. 
 \end{definition}
+
 \begin{observation}
 	En los extremos de cada $\displaystyle \left[t_{j-1}, t_{j}\right]  $, $\displaystyle \gamma  $ admite derivadas laterales que pueden ser diferentes. 
 \end{observation}
@@ -39,6 +65,7 @@ En la desigualdad hemos utilizado la desigualdad de Cauchy-Schwarz.
 	\[L\left(\gamma \right)=\int^{b}_{a} \|\gamma'\left(t\right)\| \; dt .\]
 \end{theorem}
 \begin{proof}
+	Podemos suponer que $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ es $\displaystyle \mathcal{C}^{1} $ en todo $\displaystyle \left[a,b\right]  $, puesto que si lo es a trozos la podemos partir en distintos segmentos y luego sumar sus longitudes. \\
 	En primer lugar, veamos que $\displaystyle L\left(\gamma \right)\leq \int^{b}_{a} \|\gamma'\left(t\right)\| \; dt $. Sea $\displaystyle P = \left\{ a = t_{0}, \ldots, t_{m} = b\right\} \in \mathcal{P}\left(\left[a,b\right] \right) $, entonces
 \[
 	L\left(\gamma, P\right)=  \sum^{m}_{i = 1}\|\gamma\left(t_{i}\right)-\gamma\left(t_{i-1}\right)\| = \sum^{m}_{i = 1}\left\|\int^{t_{i}}_{t_{i-1}} \gamma'\left(t\right) \; dt\right\| \leq \sum^{m}_{i = 1}\int^{t_{i}}_{t_{i-1}} \|\gamma'\left(t\right)\| \; dt = \int^{b}_{a} \|\gamma'\left(t\right)\| \; dt.
@@ -46,17 +73,94 @@ En la desigualdad hemos utilizado la desigualdad de Cauchy-Schwarz.
 Como esto es cierto $\displaystyle \forall P \in \mathcal{P}\left(\left[a,b\right] \right) $ tenemos que 
 \[L\left(\gamma \right)=\sup \left\{ L\left(\gamma, P\right) \; : \; P \in \mathcal{P}\left(\left[a,b\right] \right)\right\} \leq \int^{b}_{a} \|\gamma'\left(t\right)\| \; dt .\]
 Por otro lado, tenemos que $\displaystyle t \to \|\gamma'\left(t\right)\| $ es continua en casi todo $\displaystyle \left[a,b\right]  $, por lo que es uniformemente continua en $\displaystyle \left[a,b\right]  $. 
+De esta forma, dado $\displaystyle \epsilon > 0 $, $\displaystyle \exists \delta > 0 $ tal que si $\displaystyle t,s \in \left[a,b\right]  $ y $\displaystyle \left|t-s\right|<\delta  $, entonces $\displaystyle \|\gamma'\left(t\right)-\gamma'\left(s\right)\| < \epsilon  $. Sea $\displaystyle P = \left\{ a = t_{0}, \ldots, t_{m}= b\right\}  $ una partición de $\displaystyle \left[a,b\right]  $ con $\displaystyle t_{i}-t_{i-1} < \delta  $, $\displaystyle \forall i = 1, \ldots, m $. Tendremos que
+\[
+\begin{split}
+	\int^{t_{i}}_{t_{i-1}} \|\gamma'\left(t\right)\| \; dt = & \int^{t_{i}}_{t_{i-1}} \|\gamma'\left(t\right)-\gamma'\left(t_{i}\right)+\gamma'\left(t_{i}\right)\| \; dt \leq \int^{t_{i}}_{t_{i-1}} \|\gamma'\left(t\right)-\gamma'\left(t_{i}\right)\| +\|\gamma'\left(t_{i}\right)\|\; dt \\
+	\leq & \int^{t_{i}}_{t_{i-1}} \epsilon \|\gamma'\left(t_{i}\right)\| \; dt = \|\gamma'\left(t_{i}\right)\|\left(t_{i}-t_{i-1}\right) + \epsilon \left(t_{i}-t_{i-1}\right).
+\end{split}
+\]
+Usando que para $\displaystyle u \in \R^{n} $ y $\displaystyle c \in \R $ se tiene que $\displaystyle \|cu\| = \left|c\right|\|u\| $, tenemos que
+\[
+\begin{split}
+	= &\|\gamma'\left(t_{i}\right)\left(t_{i}-t_{i-1}\right)\| + \epsilon \left(t_{i}-t_{i-1}\right)=\left\|\int^{t_{i}}_{t_{i-1}} \gamma'\left(t_{i}\right) \; dt\right\| +\epsilon \left(t_{i}-t_{i-1}\right)\\
+= & \left\|\int^{t_{i}}_{t_{i-1}} \gamma'\left(t_{i}\right)-\gamma'\left(t\right) \; dt+\int^{t_{i}}_{t_{i-1}} \gamma'\left(t\right) \; dt\right\| +\epsilon \left(t_{i}-t_{i-1}\right).
+\end{split}
+\]
+Aplicando la desigualdad triangular
+\[\leq \left\|\int^{t_{i}}_{t_{i-1}} \gamma'\left(t_{i}\right)-\gamma'\left(t\right) \; dt\right\| +\left\|\int^{t_{i}}_{t_{i-1}} \gamma'\left(t\right) \; dt\right\| + \epsilon \left(t_{i}-t_{i-1}\right).\]
+Por el lema anterior tenemos que 
+\[
+\begin{split}
+	\leq & \int^{t_{i}}_{t_{i-1}} \|\gamma'\left(t_{i}\right)-\gamma'\left(t\right)\| \; dt +\left\|\int^{t_{i}}_{t_{i-1}} \gamma'\left(t\right) \; dt\right\| + \epsilon \left(t_{i}-t_{i-1}\right) \leq 2\epsilon \left(t_{i}-t_{i-1}\right)+\left\|\int^{t_{i}}_{t_{i-1}} \gamma'\left(t\right) \; dt\right\|\\
+	= & 2\epsilon \left(t_{i}-t_{i-1}\right)+\|\gamma\left(t_{i}\right)-\gamma\left(t_{i-1}\right)\|.
+\end{split}
+\]
+Por tanto,
+\[
+\begin{split}
+	\int^{b}_{a} \|\gamma'\left(t\right)\| \; dt = & \sum^{n}_{i = 1}\int^{t_{i}}_{t_{i-1}} \|\gamma'\left(t\right)\| \; dt\leq \sum^{n}_{i = 1}2\epsilon \left(t_{i}-t_{i-1}\right)+\|\gamma\left(t_{i}\right)-\gamma\left(t_{i-1}\right)\|\\
+	= & 2\epsilon \left(b-a\right)+L\left(\gamma, P\right)\leq 2\epsilon\left(b-a\right)+L\left(\gamma \right).
+\end{split}
+\]
 \end{proof}
+\begin{eg}
+\begin{enumerate}
+\item Calculemos la longitud del segmento $\displaystyle \overline{AB} $ en $\displaystyle \R^{2} $. Tenemos que podemos parametrizar el segmento de la forma
+	\[\gamma : \left[0,1\right] \to \R^{2} : t \to \left(\left(1-t\right)a_{1} + tb_{1}, \left(1-t\right)a_{2}+tb_{2}\right) .\]
+	Así, tendremos que 
+\[
+\begin{split}
+	L\left(\overline{AB}\right)= &\int^{1}_{0} \|\gamma'\left(t\right)\| \; dt = \int^{1}_{0} \|\left(b_{1}-a_{1}, b_{2}-a_{2}\right)\| \; dt\\
+	= & \int^{1}_{0} \sqrt{\left(b_{1}-a_{1}\right)^{2}+\left(b_{2}-a_{2}\right)^{2}} \; dt = \sqrt{\left(b_{1}-a_{1}\right)^{2}+\left(b_{2}-a_{2}\right)^{2}}.
+\end{split}
+\]
+\item Consideremos una circunferencia de centro $\displaystyle \left(\alpha, \beta \right) $ y radio $\displaystyle r $. La podemos parametrizar de la forma
+	\[\gamma : \left[0,2\pi \right] \to \R^{2} : t \to \left(\alpha + r \cos t, \beta + r \sin t\right) .\]
+	De esta forma tendremos que 
+	\[
+	\begin{split}
+		L\left(\gamma \right)= & \int^{2\pi }_{0} \|\gamma'\left(t\right)\| \; dt = \int^{2\pi }_{0} \|\left(-r \sin t, r \cos t\right)\| \; dt \\
+		= & \int^{2\pi }_{0} \sqrt{r^{2}\sin ^{2}t + r^{2}\cos ^{2}t} \; dt = \int^{2\pi }_{0} r \; dt = 2\pi r .
+	\end{split}
+	\]
+\item Calculemos la longitud de la gráfica de $\displaystyle f : \left[a,b\right] \to \R $ con $\displaystyle f \in \mathcal{C}^{1}\left(\left[a,b\right] \right) $. Como hemos visto, podemos parametrizar la curva de la forma
+	\[\gamma : \left[a,b\right] \to \R^{2} : t \to \left(t, f\left(t\right)\right) .\]
+	Así, tendremos que 
+	\[L\left(G\left(f\right)\right)=\int^{b}_{a} \|\gamma'\left(t\right)\| \; dt = \int^{b}_{a} \|\left(1, f'\left(t\right)\right)\| \; dt =\int^{b}_{a} \sqrt{1 + \left[f'\left(t\right)\right] ^{2}} \; dt .\]
+\end{enumerate}
+\end{eg}
+\begin{eg}
+	Consideremos el borde del cuadrado $\displaystyle \left[0,1\right] ^{2} $ que parametrizamos de la forma:
+	\[\gamma : \left[0,4\right] \to \R^{2} : t \to \gamma\left(t\right)=
+	\begin{cases}
+		\left(t,0\right), \; t \in \left[0,1\right]  \\
+		\left(1,t-1\right), \; t \in \left[1,2\right] \\
+		\left(3-t, 1\right), \; t \in \left[2,3\right]  \\
+		\left(0,4-t\right), \; t \in \left[3,4\right] 
+	\end{cases}
+	.\]
+	Tendremos que si numeramos los distintos segmentos de la forma $\displaystyle \gamma_{1}, \gamma_{2}, \gamma_{3} $ y $\displaystyle \gamma_{4} $ (siguiendo el orden anterior), entonces la longitud será
+\[
+\begin{split}
+	L\left(\gamma \right)= & L\left(\gamma_{1}\right)+L\left(\gamma_{2}\right)+L\left(\gamma_{3}\right)+L\left(\gamma_{4}\right)\\
+	= & \int^{1}_{0} \|\gamma_{1}'\left(t\right)\| \; dt + \int^{2}_{1} \|\gamma_{2}'\left(t\right)\| \; dt+\int^{3}_{2} \|\gamma_{3}'\left(t\right)\| \; dt + \int^{4}_{3} \|\gamma_{4}'\left(t\right)\| \; dt \\
+	= & \int^{1}_{0} \|\left(1,0\right)\| \; dt+\int^{2}_{1} \|\left(0,1\right)\| \; dt + \int^{3}_{2} \|\left(-1,0\right)\| \; dt+\int^{4}_{3} \|\left(0,-1\right)\| \; dt\\
+	= & 1+1+1+1 = 4.
+\end{split}
+\]	
+\end{eg}
 
- % ----------------------------------------------------
-Sea $\displaystyle \gamma : \left[a,b\right] \subset \R \to \R^{n} $ una curva en $\displaystyle \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ a trozos. Nuestro objetivo es definir la integral de la forma
-\[\int _{\gamma }f  .\]
-Diremos que $\displaystyle f $ es un \textbf{campo escalar}. Necesitamos que $\displaystyle f : \Imagen\left(\gamma\right) \subset \R^{n} \to \R $. Análogamente, diremos que $\displaystyle \vec{F} : \Imagen\left(\gamma\right)\subset \R^{n} \to \R^{n} $ es un \textbf{campo vectorial}. 
 \section{Integral sobre campos escalares}
 \begin{definition}[Integral de un campo escalar]
-	Dada $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ y $\displaystyle f : \Imagen\left(\gamma \right) \to \R $, definimos
+	Dada $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ a trozos y $\displaystyle f : \Imagen\left(\gamma \right) \to \R $ continua, definimos
 	\[\int _{\gamma }f := \int^{b}_{a} f\left(\gamma\left(t\right)\right)\|\gamma'\left(t\right)\| \; dt .\]
 \end{definition}
+\begin{observation}
+	Dada $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ a trozos, si tomamos $\displaystyle f \equiv 1 $ obtenemos
+	\[\int _{\gamma }f =\int^{b}_{a} \|\gamma'\left(t\right)\| \; dt = L\left(\gamma \right) .\]
+\end{observation}
+
 \begin{eg}
 	Consideremos $\displaystyle \gamma : \left[0,2\pi \right] \to \R^{2} : \theta \to \left(\cos\theta, \sin \theta\right) $ y $\displaystyle f\left(x,y\right)=x^{2}+y^{2} $. Tendremos que 
 	\[
@@ -66,52 +170,168 @@ Diremos que $\displaystyle f $ es un \textbf{campo escalar}. Necesitamos que $\d
 	\end{split}
 	\]
 \end{eg}
-\begin{observation}[Longitud de una curva]
-	Podemos ver que la longitud de una curva viene dada por
-	\[\int _{\gamma } 1 = L\left(\gamma \right) .\]
-En efecto, tenemos que 
-\[
-\begin{split}
-	\int _{\gamma }f = & \int^{b}_{a} f\left(\gamma \left(t\right)\right)\|\gamma'\left(t\right)\| \; dt \sim \sum^{m}_{ i= 1}\left(t_{i}-t_{i-1}\right)f\left(\gamma\left(s_{i}\right)\right)\|\gamma'\left(s_{i}\right)\| \\
-	\sim & \sum^{m}_{i = 1}\left(t_{i}-t_{i-1}\right)f\left(\gamma\left(s_{i}\right)\right)\left\|\frac{\gamma\left(t_{i}\right)-\gamma\left(t_{i-1}\right)}{t_{i}-t_{i-1}}\right\| \\
-	= & \sum^{m}_{i = 1}f\left(\gamma\left(s_{i}\right)\right)\|\gamma\left(t_{i}\right)-\gamma\left(t_{i-1}\right)\| = \sum^{m}_{i = 1}m\left(\gamma\left(\left[t_{i-1}, t_{i}\right] \right)\right)=m\left(\gamma \right) ,
-\end{split}
-\]
-donde $\displaystyle m $ denota la masa. 
-\end{observation}
-\begin{prop}[Linealidad]
+\begin{definition}[Media de una función a lo largo de una curva]
+En general, \textbf{la media} o \textbf{valor medio} de una función escalar $\displaystyle f $ a lo largo de una curva parametrizada $\displaystyle \gamma  $ es
+\[m_{\gamma }\left(f\right):=\frac{1}{L\left(\gamma \right)}\int _{\gamma }f  .\]
+\end{definition}
+\begin{eg}
+	Calculemos la media de la función $\displaystyle f\left(x,y,z\right)=x^{2}+y^{2}+z^{2} $ a lo largo de la curva $\displaystyle \gamma  $ parametrizada por $\displaystyle \gamma\left(t\right)=\left(\cos t, \sin t, t\right) $, $\displaystyle \forall t \in \left[0,2\pi \right]  $. En primer lugar, calculamos la longitud de $\displaystyle \gamma  $:
+	\[L\left(\gamma \right)=\int^{2\pi }_{0} \|\left(-\sin t, \cos t, 1\right)\| \; dt = 2\sqrt{2}\pi  .\]
+	Por otro lado,
+	\[
+	\begin{split}
+		\int _{\gamma }f = & \int^{2\pi }_{0} \left(\cos ^{2}t + \sin ^{2}t + t ^{2}\right) \|\left(- \sin t, \cos t, 1\right)\| \; dt \\
+		= &  \sqrt{2}\int^{2\pi }_{0} 1 + t ^{2} \; dt = \sqrt{2}\left(2\pi + \frac{1}{3}\left(2\pi \right)^{3}\right) .
+	\end{split}
+	\]
+	De esta forma tenemos que la media de $\displaystyle f $ a lo largo de $\displaystyle \gamma  $ será
+	\[m_{\gamma }\left(f\right)=\frac{1}{2\sqrt{2}\pi } \sqrt{2}\left(2\pi + \frac{1}{3}\left(2\pi \right)^{3}\right).\]	
+\end{eg}
+\begin{definition}[Centro de masas]
+Si $\displaystyle f $ es la función de densidad por unidad de longitud de una curva parametrizada, tendremos que 
+\[masa\left(\gamma \right)=\int _{\gamma }f  .\]
+Por otro lado, el \textbf{centro de masa} de $\displaystyle \gamma  $ será $\displaystyle x = \left(x_{1} , \ldots, x_{n}\right)\in \R^{n} $ con 
+\[x_{i}=\frac{1}{L\left(\gamma \right)}\int _{\gamma }x_{i}f\left(x_{1}, \ldots, x_{n}\right) .\]
+\end{definition}
+
+\begin{prop}[Linealidad] Sea $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ y $\displaystyle f,g : \Imagen\left(\gamma \right)\to \R $ continuas.
 	\begin{enumerate}
-	\item 
-		\[\int _{\gamma }f_{1} + f_{2} = \int _{\gamma }f_{1} + \int _{\gamma }f_{2}  .\]
-	\item Para $\displaystyle \alpha \in \R $, 
-		\[\int _{\gamma }\alpha f = \alpha \int _{\gamma }f  .\]
+	\item $\displaystyle \int _{\gamma }f + g = \int _{\gamma }f+ \int _{\gamma }g $.
+	\item Para $\displaystyle \alpha \in \R $, $\displaystyle \int _{\gamma }\alpha f = \alpha \int _{\gamma }f $.
 	\end{enumerate}
 \end{prop}
+\begin{proof}
+Tendremos que 
+\[
+\begin{split}
+	\int _{\gamma }f+ g = & \int _{a}^{b}\left(f+g\right)\left(\gamma\left(t\right)\right)\|\gamma'\left(t\right)\| \; dt = \int^{b}_{a} f\left(\gamma\left(t\right)\right)\|\gamma'\left(t\right)\| + g\left(\gamma\left(t\right)\right)\|\gamma'\left(t\right)\| \; dt \\
+	= & \int^{b}_{a} f\left(\gamma\left(t\right)\right)\|\gamma'\left(t\right)\| \; dt + \int^{b}_{a} g\left(\gamma\left(t\right)\right)\|\gamma'\left(t\right)\| \; dt = \int _{\gamma }f + \int _{\gamma }g  .
+\end{split}
+\]
+Ahora, si $\displaystyle \alpha \in \R $ tenemos que 
+\[\int _{\gamma }\alpha f = \int^{b}_{a} \alpha f\left(\gamma \left(t\right)\right)\|\gamma'\left(t\right)\| \; dt = \alpha \int^{b}_{a} f\left(\gamma\left(t\right)\right)\|\gamma'\left(t\right)\| \; dt =\alpha \int _{\gamma }f.\]
+\end{proof}
+
 \begin{prop}[Monotonía]
-	Si $\displaystyle f \leq g $, entonces 
+	Sea $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ y $\displaystyle f,g : \Imagen\left(\gamma \right)\to \R $ continuas con $\displaystyle f \leq g $, entonces 
 	\[\int _{\gamma }f \leq \int _{\gamma }g .\]
 \end{prop}
+\begin{proof}
+	Tendremos que, como $\displaystyle \|\gamma'\left(t\right)\| \geq 0 $ y $\displaystyle f\left(\gamma\left(t\right)\right) \leq g\left(\gamma \left(t\right)\right) $, $\displaystyle \forall t \in \left[a,b\right]  $, entonces $\displaystyle f\left(\gamma\left(t\right)\right)\|\gamma'\left(t\right)\| \leq g\left(\gamma\left(t\right)\right)\|\gamma'\left(t\right)\| $. Por tanto
+\[\int _{\gamma }f = \int^{b}_{a} f\left(\gamma\left(t\right)\right)\|\gamma'\left(t\right)\| \; dt\leq \int^{b}_{a} g\left(\gamma\left(t\right)\right)\|\gamma'\left(t\right)\| \; dt = \int _{\gamma }g  .\]
+\end{proof}
+
 \begin{colorary}
-Si tenemos que $\displaystyle \left|f\right|\leq M $, tendremos que 
+	Sea $\displaystyle \gamma: \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ y $\displaystyle f : \Imagen\left(\gamma \right)\to \R $ continua. Si tenemos que $\displaystyle \left|f\right|\leq M $, entonces 
 \[ \left|\int _{\gamma }f \right|\leq \int _{\gamma } \left|f\right| \leq ML\left(\gamma \right) .\]
 \end{colorary}
-Podemos cambiar la parametrización sin cambiar la integral. En efecto, dada $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $. Podemos coger una biyección $\displaystyle h : \left[\alpha , \beta \right] \to \left[a,b\right]  $, entonces la curva $\displaystyle \varphi = \gamma \circ h $ cumple que 
-\[\int _{\gamma }f =\int _{\varphi}f  .\]
+\begin{proof}
+Como $\displaystyle f $ es continua, $\displaystyle \left|f\right| $ también lo es. Así, 
+\[
+\begin{split}
+	\left|\int _{\gamma }f \right|= & \left|\int^{b}_{a} f\left(\gamma\left(t\right)\right)\|\gamma'\left(t\right)\| \; dt\right| \leq \int^{b}_{a} \left|f\left(\gamma\left(t\right)\right)\|\gamma'\left(t\right)\|\right| \; dt = \int^{b}_{a} \left|f\left(\gamma\left(t\right)\right)\right|\|\gamma'\left(t\right)\| \; dt=\int _{\gamma } \left|f\right|.
+\end{split}
+\]
+Por otro lado, como $\displaystyle \left|f\right| $ tendremos que por la monotonía de la integral
+\[\int _{\gamma } \left|f\right| \leq \int _{\gamma }M = ML\left(\gamma \right) .\]
+\end{proof}
 \section{Integral sobre campos vectoriales}
 \begin{definition}[Integral de un campo vectorial]
-Consideramos $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ y $\displaystyle F : \Imagen\left(\gamma \right)\subset \R^{n} \to \R^{n} $. Entonces, 
+Consideramos $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ a trozos y $\displaystyle F : \Imagen\left(\gamma \right)\subset \R^{n} \to \R^{n} $ continua. Entonces se define la \textbf{integral de $\displaystyle F $ a lo largo de $\displaystyle \gamma  $} como 
 \[\int _{\gamma }F := \int^{b}_{a} F\left(\gamma \left(t\right)\right) \cdot \gamma'\left(t\right) \; dt = \int^{b}_{a} \left\langle F\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle  \; dt .\]
 \end{definition}
-\begin{prop}[Linealidad]
+\begin{eg}
+	Consideremos $\displaystyle F\left(x,y\right)=\left(-y,x\right) $ y $\displaystyle \gamma : \left[0, 2\pi \right] \to \R^{2} : \theta \to \left(\cos\theta, \sin\theta\right) $. Tendremos que 
+	\[
+	\begin{split}
+		\int _{\gamma }F = &\int^{2\pi }_{0} F\left(\gamma\left(\theta\right)\right) \cdot \gamma'\left(\theta \right) \; d\theta = \int^{2\pi }_{0} \left(-\sin \theta, \cos\theta\right) \cdot \left(-\sin\theta, \cos\theta\right) \; d\theta \\
+		= &  \int^{2\pi }_{0} \sin ^{2}\theta + \cos^{2}\theta \; d\theta = 2\pi  .
+	\end{split}
+	\]
+\end{eg}
+\begin{notation}
+Otra forma de escribir lo mismo es coger $\displaystyle F = \left(F_{1}, \ldots, F_{n}\right) $ y $\displaystyle \gamma\left(t\right)=\left(\gamma_{1}\left(t\right), \ldots, \gamma_{n}\right) $, de forma que $\displaystyle \gamma'\left(t\right)=\left(\gamma'_{1}\left(t\right), \ldots, \gamma'_{n}\left(t\right)\right) $ por lo que
+\[
+\begin{split}
+	\int _{\gamma }F = & \int^{b}_{a} \left\langle \left(F_{1}\left(\gamma\left(t\right)\right), \ldots, F_{n}\left(\gamma\left(t\right)\right)\right), \left(\gamma'_{1}\left(t\right)\right), \ldots, \gamma'_{n}\left(t\right) \right\rangle  \; dt=\int^{b}_{a} \sum^{n}_{i = 1}F_{i}\left(\gamma\left(t\right)\right)\gamma_{i}'\left(t\right) \; dt .
+\end{split}
+\]
+Esto último nos permite abusar de notación de la siguiente forma
+\[\int _{\gamma }F = \int _{\gamma }F_{1} \; dx_{1} + \cdots + F_{n} \; dx_{n} ,\]
+donde $\displaystyle dx_{i} $ es la proyección sobre la coordenada $\displaystyle i $-ésima.
+\end{notation}
+\begin{eg}
+Resolvamos las siguientes integrales de línea sobre campos vectoriales. 
 \begin{enumerate}
-\item 
-	\[\int _{\gamma }F_{1} + F_{2} = \int _{\gamma }F_{1} + \int _{\gamma }F_{2}  .\]
-\item Si $\displaystyle \alpha \in \R $, 
-	\[\int _{\gamma }\alpha F =\alpha \int _{\gamma }F .\]
+	\item Dado $\displaystyle \gamma\left(t\right)=\left(t, t ^{2}, 1\right) $, $\displaystyle t \in \left[0,1\right]  $, calcular
+		\[\int _{\gamma }x^{2} \; dx + xy \; dy + dz .\]
+	Tenemos que $\displaystyle \gamma'\left(t\right)=\left(1, 2t, 1\right) $, por lo que 
+	\[\int _{\gamma }x^{2} \; dx + xy \; dy + dz = \int^{1}_{0} t ^{2} + t \cdot t ^{2}\left(2t\right) + 0 \; dt = \frac{11}{15} .\]
+\item Dado $\displaystyle \gamma\left(t\right)=\left(1, t, e^{t}\right) $ con $\displaystyle t \in \left[0, 2\right]  $, tendremos que como $\displaystyle \gamma'\left(t\right)=\left(0,1,e^{t}\right) $, entonces
+	\[\int _{\gamma }\cos z \; dx + e^{x} \; dy + e^{y} \; dz = \int^{2}_{0} \cos e^{t} \cdot 0 + e^{1} \cdot 1 + e^{t} e^{t} \; dt = 2e+\frac{1}{2}e^{4}-\frac{1}{2} .\]
+\end{enumerate}
+\end{eg}
+\begin{observation}
+	Sea $\displaystyle \gamma:\left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ a trozos y tal que $\displaystyle \gamma'\left(t\right)\neq 0 $, $\displaystyle \forall t \in \left[a,b\right]  $, y sea $\displaystyle F : \Imagen\left(\gamma \right)\to \R^{n} $ un campo vectorial continuo. Entonces, 
+	\[\int _{\gamma }F =\int^{b}_{a} \left\langle F\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle  \; dt = \int^{b}_{a} \left\langle F\left(\gamma\left(t\right)\right), \frac{\gamma'\left(t\right)}{\|\gamma'\left(t\right)\|} \right\rangle \|\gamma'\left(t\right)\| \; dt .\]
+	Así, hemos transformado la integral de línea sobre un campo vectorial en una sobre un campo escalar. Concretamente, podemos ver que la integral del campo $\displaystyle F $ a lo largo de $\displaystyle \gamma  $ es la integral de su componente tangencial a lo largo de $\displaystyle \gamma  $. 
+\end{observation}
+\begin{observation}
+	Si $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ y con $\displaystyle \gamma'\left(t\right)\neq 0 $, $\displaystyle \forall t \in \left[a,b\right]  $, entonces $\displaystyle \gamma  $ no tiene picos. Es posible tener una parametrización de clase $\displaystyle \mathcal{C}^{1} $ que tenga picos.
+\end{observation}
+\begin{eg}
+	Consideremos la curva parametrizada de la siguiente forma $\displaystyle \gamma\left(t\right)=\left(t, \left|t\right|\right) $ para $\displaystyle t \in \left[-1,1\right]  $. Tenemos que $\displaystyle \gamma  $ no es $\displaystyle \mathcal{C}^{1} $ en $\displaystyle \left[-1,1\right]  $, pero sí lo es a trozos
+	\[\gamma\left(t\right) = 
+	\begin{cases}
+		\left(t, - t\right), \; t \in \left[-1,0\right] \\
+		\left(t, t \right), \; t \in \left[0,1\right] 
+	\end{cases}
+	.\]
+	Sin embargo, podemos considerar esta otra parametrización:
+	\[\gamma\left(t\right)=
+	\begin{cases}
+		\left(-t ^{2}, t ^{2}\right), \; t \in \left[-1,0\right]  \\
+		\left(t ^{2}, t ^{2}\right), \; t \in \left[0,1\right] 
+	\end{cases}
+	\Rightarrow \gamma'\left(t\right)=
+	\begin{cases}
+		\left(-2t, 2t\right), \; t \in [-1,0) \\
+		\left(2t, 2t\right), \; t \in (0,1] 
+	\end{cases}
+	.\]
+	Podemos ver que es derivable en $\displaystyle t = 0 $ puesto que 
+	\[\gamma'\left(0\right)= \lim_{t \to 0}\frac{\gamma\left(t\right)-\gamma\left(0\right)}{t-0}=\left(0,0\right) .\]
+	Así, tenemos que $\displaystyle \gamma'\left(t\right) $ es continua en $\displaystyle \left[-1,1\right]  $ por lo que es $\displaystyle \mathcal{C}^{1} $ en $\displaystyle \left[-1,1\right]  $ a pesar de tener un pico.
+\end{eg}
+
+\begin{prop}[Linealidad]
+	Sea $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ a trozos y $\displaystyle F_{1}, F_{2} : \Imagen\left(\gamma \right)\to \R^{n} $ continuas. 
+\begin{enumerate}
+\item $\displaystyle \int _{\gamma }F_{1} + F_{2} = \int _{\gamma }F_{1} + \int _{\gamma }F_{2} $. 
+\item Si $\displaystyle \alpha \in \R $, $\displaystyle \int _{\gamma }\alpha F =\alpha \int _{\gamma }F $. 
 \end{enumerate}
 \end{prop}
+\begin{proof}
+Se sigue de la definición que
+\[
+\begin{split}
+	\int _{\gamma }F_{1} + F_{2} =& \int^{b}_{a} \left\langle \left(F_{1} + F_{2}\right)\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle  \; dt=\int^{b}_{a} \left\langle F_{1}\left(\gamma\left(t\right)\right)+F_{2}\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle  \; dt \\
+	= & \int^{b}_{a} \left\langle F_{1}\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle +\left\langle F_{2}\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle  \; dt \\
+	= &  \int^{b}_{a} \left\langle F_{1}\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle  \; dt + \int^{b}_{a} \left\langle F_{2}\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle  \; dt 
+	=  \int _{\gamma }F_{1} +\int _{\gamma }F_{2} .
+\end{split}
+\]
+Ahora, si $\displaystyle \alpha \in \R $, tendremos que
+\[
+\begin{split}
+	\int _{\gamma} F_{1}  \; dt =& \int^{b}_{a} \left\langle \alpha F_{1}\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle \; dt = \int^{b}_{a} \alpha \left\langle F_{1}\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle  \; dt \\
+	= &  \alpha \int^{b}_{a} \left\langle F_{1}\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle  \; dt = \alpha \int _{\gamma }F_{1} .
+\end{split}
+\]
+\end{proof}
+
 \begin{prop}[Monotonía]
-	Si $\displaystyle \|F\|\leq M $, $\displaystyle \forall x \in \Imagen\left(\gamma \right) $, para algún $\displaystyle M > 0 $, entonces
+	Sea $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ a trozos y $\displaystyle F : \Imagen\left(\gamma \right)\to \R^{n} $ continua. Si $\displaystyle \|F\|\leq M $, $\displaystyle \forall x \in \Imagen\left(\gamma \right) $, para algún $\displaystyle M > 0 $, entonces
 \[ \left|\int _{\gamma }F \right|\leq ML\left(\gamma \right) .\]
 \end{prop}
  \begin{proof}
@@ -123,84 +343,226 @@ Consideramos $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ de clase $\di
 \end{split}
 \]
  \end{proof}
-Si cogemos dos curvas, podemos decir que 
-\[\int _{\gamma \cup \varphi}F =\int _{\gamma }F +\int _{\varphi}F  .\]
-% Cambio de variable y unión de curvas
+ \section{Caminos equivalentes y simples}
+\begin{definition}[Caminos equivalentes]
+	Dos caminos $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ y $\displaystyle \sigma : \left[c,d\right] \to \R^{n} $ son \textbf{equivalentes} si existe $\displaystyle h : \left[c,d\right] \to \left[a,b\right]  $ biyectiva de clase $\displaystyle \mathcal{C}^{1} $ con $\displaystyle \sigma = \gamma \circ h $. Podemos además distinguir dos casos:
+	\begin{enumerate}
+		\item Si $\displaystyle h'\geq0 $ en $\displaystyle \left[c,d\right]  $, decimos que $\displaystyle h $ \textbf{conserva la orientación} (o que $\displaystyle \sigma  $ y $\displaystyle \gamma  $ tienen la misma orientación).
+		\item Si $\displaystyle h'\leq0 $ en $\displaystyle \left[c,d\right]  $, decimos que $\displaystyle h $ \textbf{invierte la orientación} (o que $\displaystyle \sigma  $ y $\displaystyle \gamma  $ tienen orientaciones opuestas).
+	\end{enumerate}
+\end{definition}
+\begin{observation}
+	Si $\displaystyle h $ cumple que $\displaystyle h'\neq 0 $ para todo punto, existe $\displaystyle h^{-1} : \left[a,b\right] \to \left[c,d\right]  $ y por el Teorema de la Función Inversa obtenemos que $\displaystyle h^{-1} $ es $\displaystyle \mathcal{C}^{1} $ en $\displaystyle \left[a,b\right]  $. Además, 
+	\[\left(h^{-1}\right)'\left(h\left(s\right)\right)=\frac{1}{h'\left(s\right)}, \; \forall s \in \left[c,d\right]  .\]
+	Es decir, $\displaystyle h $ es $\displaystyle \mathcal{C}^{1} $-difeomorfismo de $\displaystyle \left[c,d\right]  $ en $\displaystyle \left[a,b\right]  $. 
+\end{observation}
+\begin{observation}
+Si $\displaystyle \gamma  $ y $\displaystyle \sigma  $ son equivalentes, entonces $\displaystyle \Imagen\left(\gamma \right) = \Imagen\left(\sigma \right) $. 
+\end{observation}
+\begin{definition}[Camino opuesto]
+	Sea $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ un camino $\displaystyle \mathcal{C}^{1} $ a trozos. Definimos el \textbf{camino opuesto} $\displaystyle \left(-\gamma \right):\left[a,b\right] \to \R^{n} $ por $\displaystyle \left(-\gamma \right)\left(s\right)=\gamma\left(h\left(s\right)\right)=\gamma\left(a+b-s\right) $. Asímismo, $\displaystyle -\gamma  $ es equivalente a $\displaystyle \gamma  $ con orientación opuesta.
+\end{definition}
+
 \begin{eg}
-	Consideremos $\displaystyle F\left(x,y\right)=\left(-y,x\right) $ y $\displaystyle \gamma : \left[0, 2\pi \right] \to \R^{2} : \theta \to \left(\cos\theta, \sin\theta\right) $. Tendremos que 
+	Consideremos $\displaystyle \gamma\left(t\right)=\left(\cos t, \sin t\right) $ con $\displaystyle t \in \left[0, 2\pi \right]  $. Tenemos que 
+	\[\tilde{\gamma}\left(t\right)=\left(\cos\left(2\pi -t\right), \sin\left(2\pi - t\right)\right)=\left(\cos\left(-t\right), \sin\left(-t\right)\right)=\left(\cos t, - \sin t\right), \; t \in \left[0,2\pi \right]  \]
+	también parametriza la circunferencia sólo que lo hace con la orientación contraria.
+\end{eg}
+\begin{theorem}
+	Sean $\displaystyle \gamma:\left[a,b\right] \to \R^{n} $ y $\displaystyle \sigma : \left[c,d\right] \to \R^{n} $ caminos $\displaystyle \mathcal{C}^{1} $ a trozos equivalentes. y  
+	\begin{enumerate}
+	\item Sea $\displaystyle f : \Imagen\left(\gamma \right)=\Imagen\left(\sigma \right)\to \R $ continua, entonces  
+		\[ \int _{\gamma }f =\int _{\sigma }f.\]
+	\item Sea $\displaystyle F : \Imagen\left(\gamma \right)=\Imagen\left(\sigma \right)\to \R^{n} $ un campo vectorial continuo, entonces
+		\[\int _{\gamma }F =
+		\begin{cases}
+		\int _{\sigma }F , \; \sigma \; \text{y} \; \gamma \; \text{tienen la misma orientación} \\
+		-\int _{\sigma }F , \; \sigma \; \text{y} \; \gamma \; \text{tienen orientaciones opuestas}
+		\end{cases}
+		.\]
+	\end{enumerate}
+\end{theorem}
+\begin{proof} Supongamos que $\displaystyle \gamma  $ y $\displaystyle \sigma  $ son como se dan en las hipótesis.
+	\begin{enumerate}
+	\item Tenemos que existe $\displaystyle h : \left[c,d\right] \to \left[a,b\right]  $ de clase $\displaystyle \mathcal{C}^{1} $ tal que $\displaystyle \sigma = \gamma \circ h $ y aplicando el teorema de cambio de variable
 	\[
 	\begin{split}
-		\int _{\gamma }F = &\int^{2\pi }_{0} F\left(\gamma\left(\theta\right)\right) \cdot \gamma'\left(\theta \right) \; d\theta = \int^{2\pi }_{0} \left(-\sin \theta, \cos\theta\right) \cdot \left(-\sin\theta, \cos\theta\right) \; d\theta \\
-		= &  \int^{2\pi }_{0} \sin ^{2}\theta + \cos^{2}\theta \; d\theta = 2\pi  .
+		\int _{\gamma }f = & \int^{b}_{a} f\left(\gamma\left(t\right)\right)\|\gamma'\left(t\right)\| \; dt = \int^{h\left(d\right)}_{h\left(c\right)} f\left(\gamma\left(h\left(s\right)\right)\right)\|\gamma'\left(h\left(s\right)\right)\| h'\left(s\right) \; d s \\
+		= &
+		\begin{cases}
+		\int^{d}_{c} f\left(\gamma\left(h\left(s\right)\right)\right)\|h'\left(s\right)\gamma'\left(h\left(s\right)\right)\| \; d s = \int^{d}_{c} f\left(\sigma\left(s\right)\right)\|\sigma'\left(s\right)\| \; d s  , \; h' \geq 0 \\
+		-\int^{c}_{d} f\left(\gamma\left(h\left(s\right)\right)\right)\|h'\left(s\right)\gamma'\left(h\left(s\right)\right)\| \; d s = \int^{d}_{c} f\left(\sigma\left(s\right)\right)\|\sigma'\left(s\right)\| \; d s , \; h' \leq 0
+		\end{cases}\\
+		= & \int _{\sigma }f 
+		.
 	\end{split}
 	\]
-\end{eg}
-Si tenemos una curva $\displaystyle \gamma  $, podemos obtener $\displaystyle \varphi $ parametrizándola de otra forma. Así, si $\displaystyle \varphi = \gamma \circ g $,
-\[
-\begin{split}
-	\int _{\varphi}F = & \int^{\beta }_{\alpha } F\left(\varphi\left(s\right)\right) \cdot \varphi'\left(s\right) \; d s = \int^{\beta }_{\alpha } F\left(\gamma\left(g\left(s\right)\right)\right) \cdot \left(\gamma \circ g\right)'\left(s\right) \; d s \\
-	= & \int^{\beta }_{\alpha } F\left(\gamma\left(g\left(s\right)\right)\right) \cdot \gamma'\left(g\left(s\right)\right)g'\left(s\right) \; d s = \int^{g\left(\beta \right)}_{g\left(\alpha \right)} F\left(\gamma\left(t\right)\right) \cdot \gamma'\left(t\right) \; dt \\
-	= & 
+\item Consideremos en primer lugar que $\displaystyle h' \geq 0 $, entonces
+		\[
+		\begin{split}
+			\int _{\gamma }F = & \int^{b}_{a} \left\langle F\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle  \; dt = \int^{d}_{c} \left\langle F\left(\gamma\left(h\left(s\right)\right)\right), \gamma'\left(h\left(s\right)\right) \right\rangle h'\left(s\right) \; d s \\
+			= & \int^{d}_{c} \left\langle F\left(\gamma\left(h\left(s\right)\right)\right), h'\left(s\right)\gamma'\left(h\left(s\right)\right) \right\rangle  \; d s =\int^{d}_{c} \left\langle F\left(\sigma \left(s\right)\right), \sigma'\left(s\right) \right\rangle  \; d s = \int _{\sigma }F .
+		\end{split}
+		\]
+		Ahora, si $\displaystyle h' \leq 0 $ tenemos que
+		\[
+		\begin{split}
+			\int _{\gamma }F = & \int^{b}_{a} \left\langle F\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle  \; dt = \int^{c}_{d} \left\langle F\left(\gamma\left(h\left(s\right)\right)\right), \gamma'\left(h\left(s\right)\right) \right\rangle  \; d s \\
+			= & \int^{c}_{d} \left\langle F\left(\gamma\left(h\left(s\right)\right)\right), h'\left(s\right)\gamma'\left(h\left(s\right)\right) \right\rangle  \; d s = \int^{c}_{d} \left\langle F\left(\sigma\left(s\right)\right), \sigma'\left(s\right) \right\rangle  \; d s = -\int _{\sigma }F .
+		\end{split}
+		\]
+	\end{enumerate}
+	\end{proof}
+\begin{colorary}
+Sean $\displaystyle \gamma  $ y $\displaystyle \sigma  $ dos caminos $\displaystyle \mathcal{C}^{1} $ a trozos equivalentes. Entonces, $\displaystyle L\left(\gamma \right)= L\left(\sigma \right) $. 
+\end{colorary}
+\begin{proof}
+Basta con tomar $\displaystyle f \equiv 1 $, puesto que 
+\[L\left(\gamma \right)= \int _{\gamma }1 =\int _{\sigma }1 =L\left(\sigma \right) .\]
+\end{proof}
+\begin{definition}[Concatenación de caminos]
+	Sean $\displaystyle \gamma:\left[a,b\right] \to \R^{n} $ y $\displaystyle \sigma:\left[c,d\right] \to \R^{n} $ dos caminos $\displaystyle \mathcal{C}^{1} $ a trozos, tales que $\displaystyle \gamma\left(b\right)=\sigma\left(c\right) $. Definimos la \textbf{concatenación} de $\displaystyle \gamma  $ con $\displaystyle \sigma  $ como 
+	\[\left(\gamma + \sigma \right):\left[a,b+\left(d-c\right)\right] \to \R^{n} : t \to 
 	\begin{cases}
-	\int _{\gamma }F , \; \text{si} \; g'\left(s\right)>0 \\
-	-\int _{\gamma }F, \; \text{si} \; g'\left(s\right)<0
+		\gamma\left(t\right), \; t \in \left[a,b\right] \\
+		\sigma\left(t-b+c\right), \; t \in \left[b,b + d-c\right] 
 	\end{cases}
-	.
-\end{split}
-\]
-Por otro lado, recordamos por el teorema de cambio de variable que
+	.\]
+\end{definition}
+\begin{observation}
+	Es fácil ver que $\displaystyle \gamma + \sigma  $ es un camino continuo y $\displaystyle \mathcal{C}^{1} $ a trozos. Además, $\displaystyle \left(\gamma+\sigma \right)|_{\left[a,b\right] } $ es equivalente a $\displaystyle \gamma  $ con la misma orientación y $\displaystyle \left(\gamma + \sigma \right)|_{\left[b, b+ d-c\right] } $ es equivalente a $\displaystyle \sigma  $ con la misma orientación. 
+\end{observation}
+\begin{definition}[Concatenación de caminos generalizada]
+	Sean $\displaystyle \gamma_{1}, \ldots, \gamma_{k} $ caminos $\displaystyle \mathcal{C}^{1} $ a trozos en $\displaystyle \R^{n} $ tales que el extremo de $\displaystyle \gamma_{j} $ coincide con el origen de $\displaystyle \gamma_{j + 1} $, $\displaystyle \forall j \in \left\{ 1, \ldots, k - 1\right\}  $. Definimos entonces por recurrencia la concatenación
+	\[\gamma_{1} + \cdots + \gamma_{k} = \left(\gamma_{1} + \cdots + \gamma_{k-1}\right)+\gamma_{k} .\]
+\end{definition}
+\begin{colorary}
+Es inmediato a partir del teorema anterior que:
+\begin{enumerate}
+\item Sea $\displaystyle \gamma  $ un camino $\displaystyle \mathcal{C}^{1} $ a trozos y $\displaystyle f : \Imagen\left(\gamma\right) \to \R $ y $\displaystyle F : \Imagen\left(\gamma \right)\to \R^{n} $ continuas. Entonces,
+	\[\int _{-\gamma }f =\int _{\gamma }f  \quad \text{y} \quad \int _{-\gamma }F =-\int _{\gamma }F.\]
+\item Sean $\displaystyle \gamma_{1}, \ldots, \gamma_{k} $ caminos $\displaystyle \mathcal{C}^{1} $ a trozos tal que el extremo de $\displaystyle \gamma_{j} $ coincide con el origen de $\displaystyle \gamma_{j+1} $, $\displaystyle \forall j \in \left\{ 1, \ldots, k - 1\right\}  $. Sea $\displaystyle f:\bigcup_{i = 1}^{k}\Imagen\left(\gamma_{i}\right)\to \R $ continua y $\displaystyle F:\bigcup_{i = 1}^{k}\Imagen\left(\gamma_{i}\right)\to \R^{n} $ continua. Entonces,
+	\[\int _{\gamma_{1}+\cdots + \gamma_{k}}f =\sum^{k}_{i = 1}\int _{\gamma_{i}}f \quad \text{y}\quad \int _{\gamma_{1} + \cdots + \gamma_{k}}F =\sum^{k}_{i = 1}\int _{\gamma_{i}}F.\]
+\end{enumerate}
+\end{colorary}
+\begin{observation}
+Las siguientes definiciones se pueden extender fácilmente a caminos de clase $\displaystyle \mathcal{C}^{1} $ a trozos. En efecto, si es $\displaystyle \mathcal{C}^{1} $ a trozos se puede concatenar de la forma $\displaystyle \gamma = \gamma_{1} + \cdots + \gamma_{k} $, donde cada $\displaystyle \gamma_{i} $ cumple con nuestra definición. 
+\end{observation}
+
+\begin{definition}[Curva simple]
+	Diremos que $\displaystyle \mathcal{C}\subset \R^{n} $ es una \textbf{curva simple} si admite una parametrización \footnote{Queremos decir que $\displaystyle \mathcal{C}=\Imagen\left(\gamma \right) $.} $\displaystyle \gamma: \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ tal que $\displaystyle \gamma  $ es inyectiva en $\displaystyle \left[a,b\right]  $. 
+\end{definition}
+\begin{definition}[Curva cerrada]
+	Diremos que $\displaystyle \mathcal{C}\subset \R^{n} $ es una \textbf{curva cerrada} si admite una parametrización $\displaystyle \gamma:\left[a,b\right] \to \R^{n} $ tal que $\displaystyle \gamma\left(a\right)=\gamma\left(b\right) $. 
+\end{definition}
+\begin{definition}[Curva simple cerrada]
+	Diremos que $\displaystyle \mathcal{C}\subset \R^{n} $ es una \textbf{curva simple cerrada} si admite una parametrización $\displaystyle \gamma:\left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ con $\displaystyle \gamma\left(a\right)=\gamma\left(b\right) $ y es inyectiva en $\displaystyle [a,b) $. 
+\end{definition}
+\begin{definition}[Curva simple orientada]
+Decimos que $\displaystyle \mathcal{C}\subset \R^{n} $ es una \textbf{curva simple orientada} si es una curva simple y hemos determinado una orientación en ella. Esta orientación se puede establecer mediante un campo vectorial tangente continuo en $\displaystyle \mathcal{C} $. 
+Es decir, un campo $\displaystyle T:\mathcal{C}\to \R^{n} $ continuo tal que $\displaystyle T\left(x\right) $ es un vector tangente a $\displaystyle \mathcal{C} $ en $\displaystyle x $, con $\displaystyle \|T\left(x\right)\| = 1 $. Concretamente tendremos que 
+\[T\left(\gamma\left(t\right)\right)=\frac{\gamma'\left(t\right)}{\|\gamma\left(t\right)\|} .\]
+\end{definition}
+\begin{observation}
+Las curvas simples o las curvas simples cerradas solo tienen dos orientaciones posibles.
+\end{observation}
+\begin{notation}
+Si $\displaystyle \mathcal{C} $ es una curva cerrada simple en $\displaystyle \R^{2} $, tomaremos la orientación positiva como la contraria a las agujas del reloj.
+\end{notation}
+
+\begin{notation}[Integral a lo largo de una curva]
+	Si $\displaystyle \mathcal{C} $ es una curva simple orientada o una curva simple cerrada orientada en $\displaystyle \R^{n} $ y $\displaystyle f $ y $\displaystyle F $ son un campo escalar y vectorial, respectivamente, continuos en $\displaystyle \mathcal{C} $, definimos
+	\[\int _{\mathcal{C}}f :=\int _{\gamma }f \quad \text{y} \quad \int _{\mathcal{C}}F :=\int _{\gamma }F  ,\]
+	siendo $\displaystyle \gamma:\left[a,b\right] \to \R^{n} $ su parametrización. 
+\end{notation}
+\begin{notation}
+Si $\displaystyle \mathcal{C} $ es un curva simple orientada en $\displaystyle \R^{n} $, denotamos por $\displaystyle \mathcal{C}^{-} $ a la curva con orientación opuesta. De esta manera, tenemos que
+\[\int _{\mathcal{C}^{-}}f =\int _{\mathcal{C}}f \quad \text{y} \quad \int _{\mathcal{C}^{-}}F =-\int _{\mathcal{C}}F .\]
+\end{notation}
+\begin{notation}[Concatenación de curvas]
+	Sean $\displaystyle \mathcal{C} $ una curva simple de clase $\displaystyle \mathcal{C}^{1} $ a trozos. Entonces tenemos que $\displaystyle \mathcal{C}=\Imagen\left(\gamma \right) $ donde $\displaystyle \gamma  $ es un camino $\displaystyle \mathcal{C}^{1} $ a trozos que es concatenación $\displaystyle \gamma = \gamma_{1} + \cdots + \gamma_{k} $, y cada $\displaystyle \gamma_{i} $ da lugar a un camino simple. Así, sidenotamos $\displaystyle \mathcal{C}_{i}=\Imagen\left(\gamma_{i}\right) $ diremos que $\displaystyle \mathcal{C} $ es concatenación de $\displaystyle \mathcal{C}_{1}, \ldots, \mathcal{C}_{k} $ y lo escribiremos
+	\[\mathcal{C}=\sum^{k}_{i = 1}\mathcal{C} .\]
+	Así, para un campo escalar o vectorial $\displaystyle \varphi $ decimos que 
+	\[\int _{\mathcal{C}}\varphi = \int _{\mathcal{C}_{1} + \cdots + \mathcal{C}_{k}}\varphi =\sum^{k}_{i = 1}\int _{\gamma_{i}}\varphi .\]
+\end{notation}
+\begin{eg}
+	Sea $\displaystyle \mathcal{C} $ el borde del cuadrado $\displaystyle \left[0,1\right] ^{2} $ con orientación positiva. Tenemos que $\displaystyle \mathcal{C}=\mathcal{C}_{1} + \mathcal{C}_{2}+\mathcal{C}_{3}+\mathcal{C}_{4} $, donde cada $\displaystyle \mathcal{C}_{i} $ es un borde del cuadrado. Así, podemos parametrizarlos de la forma
+	\[\gamma_{1}\left(t\right)=\left(t,0\right), \; t \in \left[0,1\right] , \quad \gamma_{2}\left(t\right)=\left(1,t\right), \; t \in \left[0,1\right]  .\]
+	\[\gamma_{3}\left(t\right)=\left(t,1\right), \; t \in \left[0,1\right] , \quad \gamma_{4}\left(t\right)=\left(0,t\right), \; t \in \left[0,1\right]  .\]
+De esta forma,
 \[
 \begin{split}
-	\int _{\gamma }F = & \int _{\left[a,b\right] }F\left(\gamma\left(t\right)\right) \cdot \gamma'\left(t\right) \; dt = \int _{g^{-1}\left(\left[a,b\right] \right)=\left[\alpha, \beta \right] }F\left(\gamma\left(g\left(s\right)\right)\right) \cdot \gamma'\left(g\left(s\right)\right) \left|g'\left(s\right)\right| \; d s  \\
-	= & 
-	\begin{cases}
-	\int^{\beta }_{\alpha } F\left(\gamma\left(g\left(s\right)\right)\right) \cdot \gamma'\left(g\left(s\right)\right)g'\left(s\right) \; d s = \int _{\varphi }F, \; \text{si} \; g'\left(s\right) > 0 \\
-	\int^{\beta }_{\alpha } F\left(\gamma\left(g\left(s\right)\right)\right) \cdot \gamma'\left(g\left(s\right)\right)\left(-g'\left(s\right)\right) \; d s = - \int _{\varphi}F, \; \text{si} \; g'\left(s\right) < 0
-	\end{cases}.
+	\int _{\mathcal{C}}x^{2} \; dx + xy \; dy = & \int _{\gamma_{1}}x^{2} \; dx + xy \; dy +\int _{\gamma_{2}}x^{2} \; dx + xy \; dy \\
+	+ &\int _{\gamma_{3}}x^{2} \; dx + xy \; dy +\int _{\gamma_{4}}x^{2} \; dx + xy \; dy.
 \end{split}
 \]
+\end{eg}
+\section{Campos conservativos}
+\begin{definition}[Campo conservativo]
+Sea $\displaystyle A \subset \R^{n} $ un abierto con $\displaystyle A \neq \emptyset $ y $\displaystyle F : A \to \R^{n} $ un campo vectorial continuo. Diremos que $\displaystyle F $ es \textbf{conservativo} (o \textbf{campo gradiente}) si existe $\displaystyle f : A \to \R $ de clase $\displaystyle \mathcal{C}^{1} $ tal que $\displaystyle F = \nabla f $ en $\displaystyle U $. En este caso diremos que $\displaystyle f $ es un \textbf{potencial} para $\displaystyle F $. 
+\end{definition}
+\begin{eg}
+No todo campo vectoria es conservativo. En efecto, basta con considerar $\displaystyle F\left(x,y\right)=\left(2xy, x^{2}y^{2}\right) $ o $\displaystyle F\left(x,y\right)=\left(-y,x\right) $. 
+\end{eg}
+
+\begin{observation}
+Si $\displaystyle f $ es un potencial para $\displaystyle F $ entonces $\displaystyle f + K $ con $\displaystyle K \in \R $ también lo es.
+\end{observation}
 \begin{prop}
-	Sea $\displaystyle A \subset \R^{n} $ abierto con $\displaystyle A \neq \emptyset $, $\displaystyle F : A \to \R^{n} $ continuo. Supongamos que existe $\displaystyle V : A \to \R $ de clase $\displaystyle \mathcal{C}^{1} $, tal que $\displaystyle \nabla V = F $. Sea $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ tal que $\displaystyle \Imagen\left(\gamma \right)\subset A $. Entonces, 
-	\[\int _{\gamma }F =V\left(\gamma\left(b\right)\right)-V\left(\gamma\left(a\right)\right) .\]
+	Sea $\displaystyle A \subset \R^{n} $ abierto con $\displaystyle A \neq \emptyset $, $\displaystyle F : A \to \R^{n} $ un campo conservativo. Sea $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ a trozos tal que $\displaystyle \Imagen\left(\gamma \right)\subset A $. Si $\displaystyle f $ es un potencial para $\displaystyle F $ entonces, 
+	\[\int _{\gamma }F =f\left(\gamma\left(b\right)\right)-f\left(\gamma\left(a\right)\right) .\]
 \end{prop}
 \begin{proof}
 Tenemos que 
 \[
 \begin{split}
-	\int _{\gamma }F = & \int^{b}_{a} F\left(\gamma\left(t\right)\right) \cdot \gamma'\left(t\right) \; dt = \int^{b}_{a} \nabla V\left(\gamma\left(t\right)\right) \cdot \gamma'\left(t\right) \; dt \\
-	= &  \int^{b}_{a} \left(V\circ \gamma \right)'\left(t\right) \; dt = V\circ \gamma \left(b\right)-V\circ \gamma \left(a\right)=V\left(\gamma\left(b\right)\right)-V\left(\gamma\left(a\right)\right).
+	\int _{\gamma }F = & \int^{b}_{a} F\left(\gamma\left(t\right)\right) \cdot \gamma'\left(t\right) \; dt = \int^{b}_{a} \nabla f\left(\gamma\left(t\right)\right) \cdot \gamma'\left(t\right) \; dt \\
+	= &  \int^{b}_{a} \left(f\circ \gamma \right)'\left(t\right) \; dt = f\circ \gamma \left(b\right)-f\circ \gamma \left(a\right)=V\left(\gamma\left(b\right)\right)-f\left(\gamma\left(a\right)\right).
 \end{split}
 \]
 \end{proof}
+\begin{eg}
+Calculemos la integral
+\[\int _{\mathcal{C}}2xy \; dx + x^{2} \; dy ,\]
+donde $\displaystyle \mathcal{C} $ es una curva que cumple las hipótesis del teorema, que empieza en $\displaystyle \left(1,3\right) $ y termina en $\displaystyle \left(7,4\right) $. Podemos ver que como 
+\[F\left(x,y\right)=\left(2xy, x^{2}\right)=\nabla f\left(x,y\right) \quad \text{con}\quad f\left(x,y\right)=x^{2}y ,\]
+tendremos que 
+\[\int _{\mathcal{C}}2xy \; dx + x^{2}\; dy = f\left(7,4\right)-f\left(1,3\right)=7^{2} \cdot 4 - 3 .\]
+\end{eg}
+
 \begin{colorary}
-En las condiciones anteriores, $\displaystyle \int _{\gamma }F  $ depende sólamente de los extremos de $\displaystyle \gamma  $. Así, si $\displaystyle \gamma  $ es un camino cerrado, entonces $\displaystyle \int _{\gamma }F = 0 $.
+En las condiciones anteriores, $\displaystyle \int _{\gamma }F  $ depende sólamente de los extremos de $\displaystyle \gamma  $. Así, si $\displaystyle \mathcal{C}  $ es una curva cerrada, entonces $\displaystyle \int _{\mathcal{C} }F = 0 $.
 \end{colorary}
-\begin{notation}
-Decimos que $\displaystyle V $ es la \textbf{función potencial} de $\displaystyle F $. 
-\end{notation}
-\begin{observation}
-El campo $\displaystyle F\left(x,y\right)=\left(-y,x\right) $ no tiene función potencial, por lo que hemos visto en el ejemplo anterior. 
-\end{observation}
-\begin{definition}[Campo conservativo]
-Si $\displaystyle F $ cumple las hipótesis de la proposición anterior, decimos que es \textbf{conservativo} o que \textbf{es un gradiente}. 
-\end{definition}
-\begin{theorem}
-Sea $\displaystyle \emptyset \neq A \subset \R^{n} $ abierto, $\displaystyle F : A \to \R^{n} $ continuo. Entonces, son equivalentes:
+\begin{eg}
+Veamos que $\displaystyle F\left(x,y\right)=\left(2xy, x^{2}y^{2}\right) $ no es conservativo. Si lo fuera en $\displaystyle \R^{2} $, tendríamos que existe $\displaystyle f : \R^{2}\to \R $ tal que $\displaystyle F = \nabla f = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right) $. 
+Como $\displaystyle F $ es $\displaystyle \mathcal{C}^{1} $ en $\displaystyle \R^{2} $ tendremos que $\displaystyle f $ es $\displaystyle \mathcal{C}^{2} $ en $\displaystyle \R^{2} $ y por el teorema de Schwarz tendremos que $\displaystyle \frac{\partial ^{2}f}{\partial x \partial y}= \frac{\partial ^{2}f}{\partial y\partial x} $. Sin embargo,
+\[\frac{\partial ^{2}f}{\partial x \partial y}= \frac{\partial }{\partial x}F_{2} \quad \text{y} \quad \frac{\partial ^{2}f}{\partial y \partial x}= \frac{\partial }{\partial y}F_{1} .\]
+Por tanto, debe darse que $\displaystyle \frac{\partial F_{1}}{\partial y}=\frac{\partial F_{2}}{\partial x} $, pero
+\[\frac{\partial F_{1}}{\partial y}=\frac{\partial }{\partial y }\left(2xy\right)=2x \quad \text{y} \quad \frac{\partial F_{2}}{\partial x}=\frac{\partial }{\partial x}\left(x^{2}y^{2}\right)=2xy^{2} .\]
+Como los valores no coinciden, debe ser que $\displaystyle F $ no es conservativo.
+\end{eg}
+\begin{theorem}[Caracterización de campos conservativos]
+Sea $\displaystyle A \subset \R^{n} $ abierto conexo y sea $\displaystyle F : A \to \R^{n} $ continuo en $\displaystyle A $. Entonces son equivalentes:
 \begin{enumerate}
 \item $\displaystyle F $ es conservativo.
-\item $\displaystyle \int _{\gamma }F =0 $ para todo camino cerrado de clase $\displaystyle \mathcal{C}^{1} $. 
-\item $\displaystyle \int _{\gamma }F  $ depende sólamente de los extremos de $\displaystyle \gamma  $, para cualquier camino $\displaystyle \gamma  $ de clase $\displaystyle \mathcal{C}^{1} $. 
-\item *Si $\displaystyle F  $ es de clase $\displaystyle \mathcal{C}^{1} $, entonces $\displaystyle \frac{\partial F_{i}}{\partial x_{j}} = \frac{\partial F_{j}}{\partial x_{i}} $, $\displaystyle \forall i,j \in \left\{ 1, \ldots, n\right\}  $. 
+\item Para cualquier camino $\displaystyle \gamma  $ que sea $\displaystyle \mathcal{C}^{1} $ a trozos con $\displaystyle \Imagen\left(\gamma \right)\subset A $ , $\displaystyle \int _{\gamma }F $ solo depende de los extremos de $\displaystyle \gamma  $. 
+\item Para cualquier camino cerrado que sea $\displaystyle \mathcal{C}^{1} $ a trozos con $\displaystyle \Imagen\left(\gamma \right)\subset A $, $\displaystyle \int _{\gamma}F =0 $. 	
 \end{enumerate}
 \end{theorem}
 \begin{proof}
+Ya hemos visto \textbf{(1)} $\displaystyle \Rightarrow $ \textbf{(2)}. 
 \begin{description}
-\item[(1) $\displaystyle \Rightarrow $ (2)] Trivial a partir de la proposición anterior.
-\item[(2) $\displaystyle \Rightarrow $ (3)] Si tenemos $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ y $\displaystyle \varphi:\left[\alpha, \beta \right] \to \R^{n} $, tales que $\displaystyle \gamma\left(a\right)=\varphi\left(\alpha \right) $ y $\displaystyle \gamma\left(b\right)=\varphi\left(\beta \right) $, entonces considerando el camino cerrado $\displaystyle \gamma \cup \varphi^{-} $,
-	\[0 = \int _{\gamma \cup \varphi^{-}}F = \int _{\gamma }F +\int _{\varphi^{-}}F =\int _{\gamma }F -\int _{\varphi}F \iff \int _{\gamma }F =\int _{\varphi}F  .\]
-\item[(3) $\displaystyle \Rightarrow $ (1)] Tomamos $\displaystyle x_{0} \in A $. Dado $\displaystyle x \in A $ definimos 
+	\item[(2) $\displaystyle \Rightarrow $ (3)] Sea $\displaystyle \gamma  $ un camino de clase $\displaystyle \mathcal{C}^{1} $ a trozos cerrado. Si $\displaystyle \gamma  $ consta de solo un punto el resultado es trivial. Supongamos que tiene más de un punto, es decir $\displaystyle \gamma:\left[a,b\right] \to \R^{n} $ y existe $\displaystyle t_{0}\in\left(a,b\right) $ tal que $\displaystyle \gamma\left(t_{0}\right)\neq \gamma\left(a\right)=\gamma\left(b\right) $. Llamaremos $\displaystyle \mathcal{C}_{1} $ y $\displaystyle \mathcal{C_{2}} $ a las curvas parametrizadas por $\displaystyle \gamma  $ en $\displaystyle \left[a,t_{0}\right]  $ y $\displaystyle \left[t_{0}, b\right]  $, respectivamente. 
+		Así, tenemos que $\displaystyle \mathcal{C}_{1} $ y $\displaystyle \mathcal{C}_{2}^{-} $ son dos curvas contenidas en $\displaystyle U $ con los mismos extremos y por hipótesis tenemos que
+		\[\int _{\mathcal{C}_{1}}F =\int _{\mathcal{C}_{2}^{-}}F  .\]
+		Por tanto, tendremos que 
+		\[\int _{\mathcal{C}}F =\int _{\mathcal{C}_{1}}F +\int _{\mathcal{C}_{2}}F =\int _{\mathcal{C}_{2}^{-}}F +\int _{\mathcal{C}_{2}}F = -\int _{\mathcal{C}_{2}}F +\int _{\mathcal{C}_{2}}F =0 .\]
+	\item[(3) $\displaystyle \Rightarrow $ (2)] Sean $\displaystyle \mathcal{C}_{1} $ y $\displaystyle \mathcal{C}_{2} $ en las hipótesis de \textbf{(2)}. Tomamos $\displaystyle \mathcal{C}=\mathcal{C}_{1}+\mathcal{C}_{2}^{-} $, entonces $\displaystyle \mathcal{C} $ es una curva cerrada contenida en $\displaystyle U $, por lo que 
+		\[0 = \int _{\mathcal{C}}F =\int _{\mathcal{C}_{1}}F +\int _{\mathcal{C}_{2}^{-}}F =\int _{\mathcal{C}_{1}}F -\int _{\mathcal{C}_{2}}F .\]
+		De esta forma, tenemos que $\displaystyle \int _{\mathcal{C}_{1}}F =\int _{\mathcal{C}_{2}}F $. 
+	\item[(2) $\displaystyle \Rightarrow $ (1)] Lo demostramos en $\displaystyle \R^{2} $ puesto que la demostración en $\displaystyle \R^{n} $ es análoga. Como $\displaystyle A $ es abierto y conexo, es conexo por caminos. Tomamos $\displaystyle x_{0} \in A $. Dado $\displaystyle x \in A $ definimos 
 	\[V\left(x\right)=\int _{\gamma }F  ,\]
-	donde $\displaystyle \gamma  $ es un camino en $\displaystyle A $ que va de $\displaystyle x_{0} $ a $\displaystyle x $. Estamos suponiendo que $\displaystyle A $ es conexo por caminos. Realmente, como $\displaystyle A $ es abierto, basta con que sea conexo para que sea conexo por caminos. Tenemos que ver que si $\displaystyle F = \left(F_{1}\left(x,y\right), F_{2}\left(x,y\right)\right) $, entonces
+	donde $\displaystyle \gamma  $ es un camino en $\displaystyle A $ que va de $\displaystyle x_{0} $ a $\displaystyle x $. Tenemos que ver que si $\displaystyle F = \left(F_{1}\left(x,y\right), F_{2}\left(x,y\right)\right) $, entonces
 	\[\frac{\partial V}{\partial x}=F_{1}\left(x,y\right) \quad \text{y} \quad \frac{\partial V}{\partial y} = F_{2}\left(x,y\right) .\]
 Tomamos 
 \[V\left(x+h, y\right)=\int _{\gamma \cup \left[\left(x,y\right), \left(x + h, y\right)\right] } F = \int _{\gamma }F +\int _{\left[\left(x,y\right), \left(x+h,y\right)\right] }F  .\]
@@ -214,32 +576,136 @@ Así,
 	\lim_{h \to 0}\frac{V\left(x+h,y\right)-V\left(x,y\right)}{h} =  \lim_{h \to 0} \frac{1}{h}\int^{h}_{0} F_{1}\left(x+t,y\right) \; dt = F_{1}\left(x,y\right) .
 \end{split}
 \]
-En esta última igualdad hemos epleado el Teorema Fundamental del Cálculo. 
+En esta última igualdad hemos epleado el Teorema Fundamental del Cálculo. La otra igualdad se demuestra de forma análoga.
 \end{description}
 \end{proof}
-\section{Teorema de Green}
-Sea $\displaystyle F = \left(P,Q\right) $, con $\displaystyle P,Q : G \subset \R^{2} \to \R $ de clase $\displaystyle \mathcal{C}^{1} $ y $\displaystyle A $ medible Jordan. Entonces, tenemos que 
-\[\int _{\partial A}P\left(x,y\right) \; dx + Q\left(x,y\right)\; dy=\int _{A}\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y} \; dx \; dy .\]
+\subsection*{Cómo encontrar el potencial de un campo conservativo}
+Podemos distinguir varias formas. \\
+\\
+\underline{Forma 1: A ojo.}
 \begin{eg}
-Sea $\displaystyle F\left(x,y\right)=\left(-y,x\right) $ y $\displaystyle A = B\left(\left(0,0\right), 1\right) $. Tendremos que 
-\[\int _{\partial A}-y \; dx + x \; dy = \int _{A}1 + 1 \; dx \; dy =2\pi .\]
+	Calculemos $\displaystyle \int _{\gamma}x \; dx + y \; dy $ con $\displaystyle \gamma\left(t\right)=\left(\cos \pi t, \sin \pi t\right) $ para $\displaystyle t \in \left[0,2\right]  $. Tenemos que $\displaystyle F\left(x,y\right)=\left(x,y\right) $. Se puede ver a ojo que $\displaystyle f\left(x,y\right)=\frac{x^{2}}{2}+\frac{y^{2}}{2} $ es el potencial para $\displaystyle F $. Así,
+	\[\int _{\gamma }x \; dx + y \; dy = f\left(\gamma\left(2\right)\right)-f\left(\gamma\left(0\right)\right) = 0 .\]
 \end{eg}
+\underline{Forma 2: Buscamos la función potencial con la definición}
+\begin{eg}
+Busquemos una función potencial para $\displaystyle F\left(x,y\right)=\left(x^{2}+y^{2}, 2xy\right) $ en $\displaystyle \R^{2} $. Buscamos $\displaystyle f: \R^{3}\to \R $ tal que 
+\[\frac{\partial f}{\partial x}\left(x,y\right)=x^{2}+y^{2} \Rightarrow f\left(x,y\right)=\frac{x^{3}}{3}+y^{2}x + \varphi\left(y\right) .\]
+\[\frac{\partial f}{\partial y}\left(x,y\right)=2xy \Rightarrow \frac{\partial f}{\partial y}=2xy + \varphi'\left(y\right) \Rightarrow \varphi'\left(y\right)=0 .\]
+Así, $\displaystyle \varphi\left(y\right) $ es constante. Tendremos por tanto que el potencial de $\displaystyle F $ es $\displaystyle f\left(x,y\right)=\frac{x^{3}}{3}+y^{2}x $. 
+\end{eg}
+\begin{prop}
+Sea $\displaystyle A \subset \R^{n} $ abierto y $\displaystyle F:A \to \R^{n} $ un campo vectorial de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle A $. Entonces, si $\displaystyle F $ es conservativo en $\displaystyle U $ entonces
+\[\frac{\partial F_{i}}{\partial x_{j}}=\frac{\partial F_{j}}{\partial x_{i}}, \; \forall i,j \in \left\{ 1, \ldots, n\right\}  .\]
+\end{prop}
 \begin{proof}
-	Sea $\displaystyle A = \left\{ \left(x,y\right)\in \R^{2} \; : \; x \in \left[a,b\right] , \; f_{1}\left(x\right)\leq y \leq f_{2}\left(x\right)\right\}  $. 
+	Si $\displaystyle F $ es conservativo tenemos que existe $\displaystyle f: A \to \R $ tal que $\displaystyle F = \nabla f $. Además, si $\displaystyle F $ es $\displaystyle \mathcal{C}^{1} $ tenemos que $\displaystyle f $ es de clase $\displaystyle \mathcal{C}^{2} $. Por el teorema de Schwarz tenemos que $\displaystyle \forall i,j \in \left\{ 1, \ldots, n\right\}  $, 
+	\[\frac{\partial F_{i}}{\partial x_{j}}= \frac{\partial }{\partial x_{j}}\left(\frac{\partial f}{\partial x_{i}}\right)=\frac{\partial ^{2}f}{\partial x_{j} \partial x_{i}}=\frac{\partial ^{2}f}{\partial x_{i} \partial x_{j}} = \frac{\partial }{\partial x_{i}}\left(\frac{\partial f}{\partial x_{j}}\right)=\frac{\partial F_{j}}{\partial x_{i}} .\]
 \end{proof}
+\begin{eg}
+Veamos que el recíproco en general no es cierto.
+\begin{enumerate}
+	\item En $\displaystyle \R^{2} $ tomamos $\displaystyle F\left(x,y\right)=\left(-\frac{y}{x^{2}+y^{2}}, \frac{x}{x^{2}+y^{2}}\right) $, $\displaystyle \forall \left(x,y\right)\in \R^{2} / \left\{ \left(0,0\right)\right\}  $. Tenemos que 
+		\[\frac{\partial F_{2}}{\partial x}\left(x,y\right)=\frac{\partial }{\partial x}\left(\frac{x}{x^{2}+y^{2}}\right)=\frac{y^{2}-x^{2}}{\left(x^{2}+y^{2}\right)^{2}}  .\]
+		\[\frac{\partial F_{1}}{\partial y}\left(x,y\right)=
+		\frac{\partial }{\partial y}\left(-\frac{y}{x^{2}+y^{2}}\right)=\frac{y^{2}-x^{2}}{\left(x^{2}+y^{2}\right)^{2}} .\]
+		Así, tenemos que $\displaystyle \frac{\partial F_{1}}{\partial y}=\frac{\partial F_{2}}{\partial x} $, $\displaystyle \forall x \in \R^{2}/ \left\{ \left(0,0\right)\right\}  $, pero no es conservativo. En efecto, basta con considerar la curva $\displaystyle \mathcal{C} $, la circunferencia unidad parametrizada como $\displaystyle \gamma\left(t\right)=\left(\cos t, \sin t\right) $, $\displaystyle t \in \left[0,2\pi \right]  $, 
+		\[\int _{\mathcal{C}}F = \int _{\mathcal{C}}F_{1} \; dx + F_{2} \; dy = 2\pi \neq 0 .\]
+	\item En $\displaystyle \R^{3} $ tomamos
+		\[F\left(x,y,z\right)=\left(-\frac{y}{x^{2}+y^{2}}, \frac{x}{x^{2}+y^{2}}, 0\right), \; \forall x \in \left(x,y,z\right)\in \R^{3}/ \left\{ \left(0,0,z\right)\; : \; z \in \R\right\}  .\]
+		Se puede comprobar que $\displaystyle \frac{\partial F_{i}}{\partial x_{j}}=\frac{\partial F_{j}}{\partial x_{i}} $, $\displaystyle \forall i,j \in \left\{ 1,2,3\right\}  $, pero $\displaystyle \int _{\gamma }F \neq 0 $ para $\displaystyle \gamma\left(t\right)=\left(\cos t, \sin t, 0\right) $, $\displaystyle \forall t \in \left[0,2\pi \right]  $. 
+\end{enumerate}
+\end{eg}
+\begin{observation}
+Más adelante veremos que 
+\begin{enumerate}
+\item En $\displaystyle \R^{2} $ , si $\displaystyle A\subset \R^{2} $ es abierto y convexo entonces para $\displaystyle F : A \to \R^{2} $ de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle A $ se tiene que $\displaystyle F $ es conservativo si y solo si $\displaystyle \frac{\partial F_{1}}{\partial y}=\frac{\partial F_{2}}{\partial x} $ en $\displaystyle A $. 
+\item En $\displaystyle \R^{3} $, si $\displaystyle A \subset \R^{3} $ es abierto convexo salvo en un número finito de puntos, entonces para $\displaystyle F : A \to \R^{3} $ de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle A $ se tiene que $\displaystyle F $ es conservativo si y solo si $\displaystyle \frac{ \partial F_{i}}{\partial x_{j}}=\frac{\partial F_{j}}{\partial x_{i}} $, $\displaystyle \forall i,j \in \left\{ 1,2,3\right\}  $. 
+\end{enumerate}
+\end{observation}
+
+\section{Teorema de Green}
+\begin{definition}[Conjunto proyectable sobre un eje]
+Sea $\displaystyle D \subset \R^{2} $, diremos que
+\begin{itemize}
+	\item $\displaystyle D $ es \textbf{proyectable sobre el eje} $\displaystyle OX $ (o de \textbf{tipo I}) si existen $\displaystyle \varphi_{1}, \varphi_{2} : \left[a,b\right] \to \R $ de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle \left[a,b\right]  $ (o $\displaystyle \mathcal{C}^{1} $ a trozos) tal que  
+		\[D = \left\{ \left(x,y\right) \in \R^{2}\; : \; a \leq x \leq b, \; \varphi_{1}\left(x\right)\leq y \leq \varphi_{2}\left(x\right)\right\} .\]
+	\item $\displaystyle D $ es \textbf{proyectable sobre el eje} $\displaystyle OY $ (o de \textbf{tipo II}) si existen $\displaystyle \psi_{1}, \psi_{2} : \left[a,b\right] \to \R $ de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle \left[a,b\right]  $ (o $\displaystyle \mathcal{C}^{1} $ a trozos) tal que 
+		\[D = \left\{ \left(x,y\right)\in \R^{2} \; : \; a \leq y \leq b, \; \psi_{1}\left(y\right)\leq x \leq \psi_{2}\left(y\right)\right\}  .\]
+	\item Si $\displaystyle D $ es proyectable sobre ambos ejes de coordenadas diremos que es de \textbf{tipo III}. 
+\end{itemize}
+\end{definition}
+\begin{theorem}[Teorema de Green]
+Sea $\displaystyle D \subset \R^{2} $ un recinto proyectable sobre ambos ejes de coordenadas y sea $\displaystyle F = \left(P,Q\right) $ un campo vectorial de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle D $. Entonces
+\[\int _{\partial D}F =\int \int _{D}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right) \; dx \; dy ,\]
+siendo $\displaystyle \partial D $ la frontera de $\displaystyle D $ orientada positivamente. 
+\end{theorem}
+\begin{proof}
+Podemos escribir $\displaystyle F = \left(P,Q\right)=\left(P,0\right)+\left(0,Q\right) $. De esta forma tendremos que 
+\[
+\begin{split}
+	\int _{\partial D}F = \int _{\partial D}\left(P,0\right) +\int _{\partial D}\left(0,Q\right) = \int _{\partial D}P\left(x,y\right) \; dx + \int _{\partial D}Q\left(x,y\right) \; dy
+	\end{split}
+\]
+Por otro lado, 
+\[\int \int _{D}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right) \; dx \; dy = -\int \int _{D}\frac{\partial P}{\partial y}\left(x,y\right) \; dx \; dy + \int \int _{D}\frac{\partial Q}{\partial x} \; dx \; dy .\]
+Veamos que $\displaystyle \int _{\partial D}P\left(x,y\right) \; dx = -\int \int _{D}\frac{\partial P}{\partial y}\left(x,y\right) \; dx \; dy $ y que $\displaystyle \int _{\partial D}Q\left(x,y\right) \; dy = \int \int _{D}\frac{\partial Q}{\partial x}\left(x,y\right) \; dx \; dy $. Para la primera igualdad usaremos que $\displaystyle D $ es proyectable sobre el eje $\displaystyle OX $ y en la segunda que lo es sobre el eje $\displaystyle OY $. Como la demostración de la segunda igualdad es análoga a la de la primera, demostramos sólamente la primera.
+Como $\displaystyle D $ es proyectable sobre eje $\displaystyle OX $, tendremos que existen $\displaystyle \varphi_{1}, \varphi_{2} : \left[a,b\right] \to \R $ de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle \left[a,b\right]  $ tales que 
+\[D = \left\{ \left(x,y\right) \in \R^{2} \; : \; a \leq x \leq b, \; \varphi_{1}\left(x\right)\leq y \leq \varphi_{2}\left(x\right)\right\}  .\]
+Tenemos que la frontera de $\displaystyle D $ consta de cuatro curvas a las que llamaremos $\displaystyle \mathcal{C}_{i} $, con $\displaystyle i \in \left\{ 1, 2, 3, 4\right\}  $ de forma que
+\[\int _{\partial D}P\left(x,y\right) \; dx = \sum^{4}_{i = 1}\int _{\mathcal{C}_{i}}P\left(x,y\right) \; dx .\]
+Parametrizamos $\displaystyle \mathcal{C}_{1} $, $\displaystyle \mathcal{C}_{2} $, $\displaystyle \mathcal{C}_{3}^{-} $ y $\displaystyle \mathcal{C}_{4}^{-} $ de la siguiente forma
+\[\gamma_{1}\left(t\right)=\left(t, \varphi_{1}\left(t\right)\right), \; t \in \left[a,b\right] , \quad \gamma_{2}\left(t\right)=\left(b, t\right), \; t \in \left[\varphi_{1}\left(b\right), \varphi_{2}\left(b\right)\right]   .\]
+\[\gamma_{3}\left(t\right)=\left(t, \varphi_{2}\left(t\right)\right), \; t \in \left[a,b\right], \quad \gamma_{4}\left(t\right)=\left(a,t\right), \; t \in \left[\varphi_{1}\left(a\right), \varphi_{2}\left(a\right)\right]  .\]
+Así, tenemos que $\displaystyle \int _{\mathcal{C}_{2}}P\left(x,y\right) \; dx = \int _{\mathcal{C}_{4}^{-}}P\left(x,y\right) \; dx = 0 $, por lo que 
+\[
+\begin{split}
+	\int _{\partial D}P\left(x,y\right) \; dx= &\int _{\mathcal{C}_{1}}P\left(x,y\right) \; dx-\int _{\mathcal{C}_{3}^{-}}P\left(x,y\right) \; dx
+	=  \int^{b}_{a} P\left(t, \varphi_{1}\left(t\right)\right) \; dt - \int^{b}_{a} P\left(t, \varphi_{2}\left(t\right)\right) \; dt \\
+	= &  \int^{b}_{a} \left(P\left(t, \varphi_{1}\left(t\right)\right)-P\left(t, \varphi_{2}\left(t\right)\right)\right) \; dt.
+\end{split}
+\]
+Por otro lado, aplicando el teorema de Fubini
+\[
+\begin{split}
+	&-\int \int _{D}\frac{\partial P}{\partial y}\left(x,y\right) \; dx \; dy =  - \int^{b}_{a} \int^{\varphi_{2}\left(x\right)}_{\varphi_{1}\left(x\right)} \frac{\partial P}{\partial y}\left(x,y\right) \; dy \; dx \\
+	= & -\int^{b}_{a} \left(P\left(x,\varphi_{2}\left(x\right)\right)-P\left(x,\varphi_{1}\left(x\right)\right)\right) \; dx = \int^{b}_{a} \left(P\left(x, \varphi_{1}\left(x\right)\right)-P\left(x,\varphi_{2}\left(x\right)\right)\right) \; dx .
+\end{split}
+\]
+\end{proof}
+\begin{observation}
+En el teorema de Green no podemos rebajar la hipótesis de que $\displaystyle F $ sea $\displaystyle \mathcal{C}^{1} $ en todo $\displaystyle D $. Si falla en sólo un punto, el resultado en general no es cierto.
+\end{observation}
+\begin{eg}
+	Sea $\displaystyle D $ el disco unidad y $\displaystyle F\left(x,y\right)=\left(-\frac{y}{x^{2}+y^{2}}, \frac{x}{x^{2}+y^{2}}\right) $. Tenemos que $\displaystyle F \in \mathcal{C}^{\infty} $ en $\displaystyle \R^{2} / \left\{ \left(0,0\right)\right\}  $, por lo que $\displaystyle F \in \mathcal{C}^{\infty } $ en $\displaystyle D / \left\{ \left(0,0\right)\right\}  $. Podemos ver que
+	\[\int _{\partial D}F =\int _{\partial D}-\frac{y}{x^{2}+y^{2}} \; dx + \frac{x}{x^{2}+y^{2}}\; dy =2\pi.\]
+	Sin embargo tenemos que 
+	\[\int \int _{D}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right) \; dx \; dy = \int \int _{D}\frac{y^{2}-x^{2}}{\left(x^{2}+y^{2}\right)^{2}}-\frac{y^{2}-x^{2}}{\left(x^{2}+y^{2}\right)^{2}} \; dx \; dy = 0 .\]
+\end{eg}
 \begin{observation}[Cálculo de áreas]
 	Sea $\displaystyle A \subset \R^{n} $, queremos calcular su área. Para aplicar el teorema de Green, queremos que 
 	\[\frac{\partial Q}{\partial x}- \frac{\partial P}{\partial y}= 1 .\]
 	Una forma de conseguir esto es
-	\[\frac{\partial Q}{\partial x}=\frac{1}{2} \quad \text{y} \quad \frac{\partial P}{\partial y}=-\frac{1}{2} \Rightarrow Q\left(x,y\right)=\frac{1}{2}x \quad \text{y} \quad P\left(x,y\right)=-\frac{1}{2}y .\]
+	\[\frac{\partial Q}{\partial x}=\frac{1}{2} \quad \text{y} \quad \frac{\partial P}{\partial y}=-\frac{1}{2} \Rightarrow Q\left(x,y\right)=\frac{x}{2} \quad \text{y} \quad P\left(x,y\right)=-\frac{y}{2} .\]
 	Así, tendremos que 
-	\[Area\left(A\right)=\int _{\partial A}-\frac{1}{2}y \; dx + \frac{1}{2}x \; dy .\]
+	\[v\left(A\right)=\int _{\partial A}-\frac{y}{2} \; dx + \frac{x}{2} \; dy .\]
 \end{observation}
-Si $\displaystyle F = \left(F_{1}, \ldots, F_{n}\right) $ es de clase $\displaystyle \mathcal{C}^{1} $, tenemos que si es conservativo entonces
-\[\frac{\partial F_{i}}{\partial x_{j}}=\frac{\partial F_{j}}{\partial x_{i}}, \; \forall i, j = 1, \ldots, n .\]
-El recíproco no tiene por qué ser cierto. Sin embargo, para $\displaystyle n = 2 $ tenemos que por el teorema de Green
-\[\int _{\partial A}P \; dx + Q \; dy = \int _{A}\frac{\partial Q}{\partial x}- \frac{\partial P}{\partial y} \; dx \; dy = 0 .\]
-Es fácil ver que el recíproco en este caso sí es cierto. 
+\begin{eg}
+\begin{enumerate}
+	\item Calculemos el área del recinto limitado por la elipse $\displaystyle \frac{x^{2}}{a^{2}}+ \frac{y^{2}}{b^{2}}=1 $. Por la observación anterior tendremos que si cogemos la parametrización $\displaystyle \gamma\left(t\right)=\left(a\cos t, b \sin t\right) $, $\displaystyle t \in \left[0, 2\pi \right]  $, entonces
+	\[
+	\begin{split}
+		v\left(A\right) = & \int \int _{A} \; dx \; dy = \int _{\partial A}-\frac{y}{2} \; dx + \frac{x}{2}\; dy = \frac{ab}{2}\int^{2\pi }_{0}  \sin ^{2}t + \cos ^{2}t\; dt = ab\pi .
+	\end{split}
+	\]
+\item Calculemos el área del recinto de plano limitado por la hipocilcoide $\displaystyle x^{\frac{2}{3}}+y^{\frac{2}{3}}=a^{\frac{2}{3}} $. Cogiendo la parametrización $\displaystyle \gamma\left(t\right)=\left(a\cos ^{3}t, a \sin ^{3}t\right) $, $\displaystyle t \in \left[0,\pi \right]  $ y cogiendo $\displaystyle F\left(x,y\right)=\left(0,y\right) $,
+\[
+\begin{split}
+	v\left(A\right)= & \int \int _{A} \; dx \; dy = \int _{\partial A}x \; dy = 3a^{2}\int^{2\pi }_{0} \cos ^{4}t \sin ^{2}t \; dt = \cdots = \frac{3}{8}a^{2}\pi .
+\end{split}
+\]
+\end{enumerate}
+\end{eg}
 \begin{theorem}
 Sea $\displaystyle G \subset \R^{2} $ abierto y convexo. Sea $\displaystyle F = \left(P, Q\right) : G \to \R^{2} $ de clase $\displaystyle \mathcal{C}^{1} $. Entonces $\displaystyle F $ es conservativo en $\displaystyle G $ si y solo si 
 \[\frac{\partial Q}{\partial x}\left(x,y\right)=\frac{\partial P}{\partial y}\left(x,y\right), \; \forall \left(x,y\right)\in G .\]
@@ -249,7 +715,7 @@ Sea $\displaystyle G \subset \R^{2} $ abierto y convexo. Sea $\displaystyle F = 
 	\[V\left(x,y\right)=\int _{\left[\left(x_{0}, y_{0}\right), \left(x,y\right)\right] }P\left(x,y\right) \; dx + Q\left(x,y\right)\; dy .\]
 Queremos ver que 
 \[\frac{\partial V}{\partial x}\left(x,y\right)=\lim_{h \to 0}\frac{V\left(x+h, y\right)-V\left(x,y\right)}{h}=P\left(x,y\right) .\]
-Por el teorema de Green, tenemos que para el triángulo formado por los puntos $\displaystyle \left(x_{0}, y_{0}\right) $, $\displaystyle \left(x,y\right) $ y $\displaystyle \left(x + h, y\right) $, al que llamamos $\displaystyle T $
+Por el teorema de Green, tenemos que para el triángulo formado por los puntos $\displaystyle \left(x_{0}, y_{0}\right) $, $\displaystyle \left(x,y\right) $ y $\displaystyle \left(x + h, y\right) $, al que llamamos $\displaystyle T $ \footnote{Podemos aplicar el teorema de Green puesto que $\displaystyle T $ es proyectable sobre ambos ejes.} 
 \[\int _{\partial T}P\left(x,y\right) \; dx + Q\left(x,y\right)\; dy = \int _{T}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right) \; dx \; dy= 0 .\]
 Tenemos que 
 \[\partial T = \underbrace{\left[\left(x_{0}, y_{0}\right), \left(x,y\right)\right]}_{\gamma_{1}} \cup \underbrace{\left[\left(x,y\right), \left(x + h, y\right)\right]}_{\gamma_{2}} \cup \underbrace{\left[\left(x+h,y\right), \left(x_{0}, y_{0}\right)\right]}_{\gamma_{3}}  .\]
@@ -260,58 +726,52 @@ Así, tenemos que
 	\Rightarrow & V\left(x + h,y\right) - V\left(x,y\right) = \int _{\left[\left(x,y\right), \left(x+h,y\right)\right] }P \; dx + Q \; dy  .
 \end{split}
 \]
+Por otro lado, tenemos que podemos parametrizar $\displaystyle \gamma_{2} $ de la siguiente forma:
+\[\gamma_{2} : \left[0,h\right] \to \R^{2} : t \to \left(x + t, y\right) .\]
+De esta forma, tendremos que 
 Aplicando el teorema fundamental del cálculo
-\[\frac{\partial V}{\partial x} = \lim_{h \to 0}\frac{V\left(x+h,y\right)-V\left(x,y\right)}{h}=\lim_{h \to 0}\frac{1}{h} \int _{\left[\left(x,y\right), \left(x+h,y\right)\right] }P \; dx + Q \; dy = P\left(x,y\right).\]
-% terminar en casa
+\[\frac{\partial V}{\partial x} = \lim_{h \to 0}\frac{V\left(x+h,y\right)-V\left(x,y\right)}{h}=\lim_{h \to 0}\frac{1}{h} \int _{\left[\left(x,y\right), \left(x+h,y\right)\right] }P \; dx + Q \; dy = \lim_{h \to 0}\frac{1}{h}\int^{h}_{0} P\left(x + t, y\right) \; dt.\]
+Aplicando el teorema fundamental del cálculo obtenemos que este límite es igual a $\displaystyle P\left(x,y\right) $. La segunda igualdad se demuestra de forma análoga.
 \end{proof}
-\begin{observation}
-Para que sea definitivamente correcta la demostración anterior, debemos escribir
-\[V\left(x,y\right)=\int _{\left[\left(x_{0}, y_{0}\right), \left(x,y\right)\right] }P\left(u,v\right) \; du + Q\left(u,v\right)\; dv .\]
-Así, el resto de la demostración nos queda
-\[
-\begin{split}
-	\lim_{h \to 0}\frac{V\left(x+h,y\right)-V\left(x,y\right)}{h} = & \lim_{h \to 0}\frac{1}{h}\int _{\left[\left(x,y\right), \left(x+h, y\right)\right] }P\left(u,v\right) \; du + Q\left(u,v\right)\; dv .
-\end{split}
-\]
-Tomamos $\displaystyle \left[\left(x,y\right), \left(x+h, y\right)\right] = \gamma : \left[0, h\right] \to \R^{2} : t \to \left(x + t, y\right) $, y así
-\[\gamma_{1}\left(t\right)=x + t \Rightarrow \gamma'\left(t\right)=1 \quad \text{y} \quad \gamma_{2}\left(t\right)=y \Rightarrow \gamma'_{2}\left(t\right)=0 .\]
-De esta forma, como $\displaystyle u = \gamma_{1}\left(t\right) $ y $\displaystyle v = \gamma_{2}\left(t\right) $ tendremos que $\displaystyle du = dt $ y $\displaystyle dv = 0 dt = 0 $, así
-\[\lim_{h \to 0}\frac{V\left(x+h, y\right)-V\left(x,y\right)}{h} = \lim_{h \to 0}\frac{1}{h}\int^{h}_{0} P\left(x+t,y\right) \; dt .\]
-Por el teorema fundamental del cálculo, si tomamos $\displaystyle G\left(r\right)=\int^{r}_{0} g\left(t\right) \; dt $, tendremos que 
-\[\lim_{h \to 0}\frac{G\left(r\right)-G\left(0\right)}{h}=G'\left(0\right)=g\left(0\right)=P\left(x,y\right) .\]
-Luego habría que hacer lo mismo para la $\displaystyle y $. 
-\end{observation}
+
 \begin{observation}
 Dado $\displaystyle G \subset \R^{2} $ y $\displaystyle F = \left(P, Q\right) $ de clase $\displaystyle \mathcal{C}^{1} $ tal que 
 \[\frac{\partial Q}{\partial x}= \frac{\partial P}{\partial y} ,\]
 podemos decir que $\displaystyle F $ es localmente conservativo \footnote{En una bola, puesto que las bolas son convexas.} (pero puede que no sea conservativo en $\displaystyle G $). 
 \end{observation}
-\begin{eg}
-Consideremos el campo
-\[F\left(x,y\right)=\left(P\left(x,y\right), Q\left(x,y\right)\right)=\left(-\frac{y}{x^{2}+y^{2}}, \frac{x}{x^{2}+y^{2}}\right) ,\]
-definido en $\displaystyle G = \R^{2}/ \left\{ \left(0,0\right)\right\}  $. En un ejercicio vimos que no se trata de un campo conservativo puesto que a lo largo de la circunferencia la integral no se anula. 
-\end{eg}
-\begin{theorem}[Teorma de Green-Teorema de la Divergencia]
-Sea $\displaystyle A \subset \R^{2} $ en las condiciones del teorema de Green y $\displaystyle \partial A $ también en las condiciones del teorema de Green. Entonces
-\[\int _{\partial A}F \cdot n = \int _{A}div\left(F\right)  .\]
-Donde $\displaystyle F $ es un campo vectorial de clase $\displaystyle \mathcal{C}^{1} $ definido en un abierto que contiene a $\displaystyle A $; $\displaystyle n $ es el vector normal unitario a $\displaystyle \partial A $ y 
-\[div\left(F\left(x,y\right)\right)=\frac{\partial F_{1}}{\partial x}\left(x,y\right) + \frac{\partial F_{2}}{\partial y}\left(x,y\right) .\]
-\end{theorem}
 \begin{observation}
-Si $\displaystyle \left(x,y\right)\in \partial A $ y $\displaystyle \gamma  $ es una parametrización en $\displaystyle I $ de $\displaystyle \partial A $, entonces existe $\displaystyle t \in I $ tal que $\displaystyle \gamma\left(t\right)=\left(x,y\right) $ y
-\[n\left(x,y\right)=n\left(\gamma\left(t\right)\right)=n\left(\gamma_{1}\left(t\right), \gamma_{2}\left(t\right)\right)=\frac{\left(\gamma'_{2}\left(t\right), -\gamma'_{1}\left(t\right)\right)}{\|\left(\gamma'_{1}\left(t\right), \gamma'_{2}\left(t\right)\right)\|} .\]
+El teorema de Green se puede extender a recintos más generales. En efecto, lo podemos aplicar en recintos que se puedan descomponer en un número finito de recintos proyectables sobre ambos ejes.
 \end{observation}
+\begin{definition}[Divergencia de un campo vectorial]
+Sea $\displaystyle F=\left(F_{1}, \ldots, F_{n}\right): A \to \R^{n} $ un campo vectorial de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle A \subset \R^{n} $ abierto conexo. Decimos que la \textbf{divergencia} de $\displaystyle F $ es el campo escalar
+\[\Div F = \frac{\partial F_{1}}{\partial x_{1}} + \cdots + \frac{\partial F_{n}}{\partial x_{n}} .\]
+\end{definition}
+\begin{observation}
+En particular, tenemos que en $\displaystyle \R^{2} $ para $\displaystyle F = \left(P, Q\right) $, $\displaystyle \Div F = \frac{\partial P}{\partial x}+ \frac{\partial Q}{\partial y} $. Análogamente, en $\displaystyle \R^{3} $ para $\displaystyle F = \left(P, Q, R\right) $ tendremos que $\displaystyle \Div F = \frac{\partial P}{\partial x}+ \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} $. 
+\end{observation}
+\begin{definition}[Normal unitaria exterior]
+	Sea $\displaystyle D \subset \R^{2} $ proyectable sobre ambos ejes y $\displaystyle \gamma: \left[a,b\right] \to D $ una parametrización $\displaystyle \mathcal{C}^{1} $ a trozos que induce la orientación positiva en $\displaystyle \partial D $. Definimos la \textbf{normal unitaria exterior} en $\displaystyle t_{0}\in \left[a,b\right]  $ como
+	\[\hat{n}\left(\gamma\left(t_{0}\right)\right) := \frac{\left(\gamma'_{2}\left(t_{0}\right), -\gamma'_{1}\left(t_{0}\right)\right)}{\|\gamma'\left(t_{0}\right)\|} .\]
+\end{definition}
+\begin{theorem}[Teorema de la divergencia en $\displaystyle \R^2 $]
+Sea $\displaystyle D \subset \R^{2} $ un recinto al que se le puede aplicar el teorema de Green y sea $\displaystyle F = \left(P,Q\right) $ un campo vectorial $\displaystyle \mathcal{C}^{1} $ en $\displaystyle D $. Entonces
+\[\int _{\partial D}F \cdot \hat{n} =\int \int _{D}\left(\frac{\partial P}{\partial x}-\frac{\partial Q}{\partial y}\right) \; dx \; dy ,\]
+donde $\displaystyle \hat{n} $ es la normal unitaria exterior de $\displaystyle F $. 
+\end{theorem}
 \begin{proof}
-	Tenemos que $\displaystyle \gamma:\left[a,b\right] \to \R^{2} : t \to \gamma\left(t\right)=\left(\gamma_{1}\left(t\right), \gamma_{2}\left(t\right)\right)$, además
+Es sencillo ver que
 \[
 \begin{split}
-	& \int^{b}_{a} F\left(\gamma\left(t\right)\right) \cdot \frac{\left(\gamma'_{2}\left(t\right), -\gamma'_{1}\left(t\right)\right)}{\|\left(\gamma'_{1}\left(t\right), \gamma'_{2}\left(t\right)\right)\|} \|\left(\gamma'_{1}\left(t\right), \gamma'_{2}\left(t\right)\right)\|\; dt  \\
-	= & \int^{b}_{a} F_{1}\left(\gamma_{1}\left(t\right), \gamma_{2}\left(t\right)\right)\gamma_{2}'\left(t\right) - F_{2}\left(\gamma_{1}\left(t\right), \gamma_{2}\left(t\right)\right)\gamma_{1}'\left(t\right) \; dt\\
-	= & \int _{\partial A}-F_{2}\left(x,y\right) \; dx + F_{1}\left(x,y\right) \; dy \\
-	= & \int _{A}\left(\frac{\partial F_{1}}{\partial x}\left(x,y\right)+\frac{\partial F_{2}}{\partial y}\left(x,y\right)\right) \; dx\; dy
-	.
+	\int _{\partial D}F \cdot \hat{n} = & \int^{b}_{a} \left\langle F\left(\gamma\left(t\right)\right), \hat{n}\left(\gamma\left(t\right)\right) \right\rangle \|\gamma'\left(t\right)\| \; dt = \int^{b}_{a} \left\langle \left(P\left(\gamma\left(t\right)\right), Q\left(\gamma\left(t\right)\right)\right), \frac{1}{\|\gamma'\left(t\right)\|}\left(\gamma'_{2}\left(t\right), \gamma_{1}'\right) \right\rangle \|\gamma'\left(t\right)\|\; dt\\
+	= & \int^{b}_{a} \left(P\left(\gamma\left(t\right)\right)\gamma_{2}'\left(t\right)-Q\left(\gamma\left(t\right)\right)\gamma'_{1}\left(t\right)\right) \; dt = \int^{b}_{a} \left(-Q\left(\gamma\left(t\right)\right)\gamma_{1}'\left(t\right) + P\left(\gamma\left(t\right)\right)\gamma'_{2}\left(t\right)\right) \; dt \\
+	= & \int _{\partial D}-Q \; dx + P \; dy = \int \int _{D}\left(\frac{\partial P}{\partial x}-\left(-\frac{\partial Q}{\partial y}\right)\right) \; dx \; dy = \int \int _{D}\left(\frac{\partial P}{\partial x}+ \frac{\partial Q}{\partial y}\right) \; dx \; dy \\
+	= & \int \int _{D}\Div F \; dx \; dy.
 \end{split}
 \]
-La tercera igualdad la hemos obtenido parametrizando la curva con $\displaystyle x = \gamma_{1}\left(t\right) $ e $\displaystyle y = \gamma_{2}\left(t\right) $, por lo que $\displaystyle dx = \gamma_{1}'\left(t\right)dt $ y $\displaystyle dy = \gamma_{2}'\left(t\right)dt $. 	
 \end{proof}
+
+\begin{notation}
+Decimos que $\displaystyle F \cdot \hat{n} = \left\langle F, \hat{n} \right\rangle  $ es la \textbf{componente normal} de $\displaystyle F $. 
+\end{notation}
+
 

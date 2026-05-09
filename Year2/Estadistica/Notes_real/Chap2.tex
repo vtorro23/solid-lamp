@@ -1,0 +1,195 @@
+\chapter{Estadísticos muestrales}
+\section{Inferencia exacta bajo normalidad}
+Para muchas variables, podemos asumir que su distribución pertenece a la familia Gaussiana $\displaystyle N\left(\mu, \sigma^{2}\right) $, donde los parámetros $\displaystyle \mu\in \R $ y $\displaystyle \sigma^{2} > 0 $, que determinan el punto de simetría y la anchura de la campana de Gauss, son desconocidos. Es decir, 
+\[\theta = \left(\mu, \sigma^{2}\right)\in \Theta = \R \times \left(0, \infty\right) .\]
+En esta sección asumiremos que la variable de interés satisface $\displaystyle X \sim N\left(\mu, \sigma^{2}\right) $, con $\displaystyle \sigma^{2} > 0 $. 
+\begin{theorem}[Media muestral de v.a.'s normales]
+	Si $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ es una m.a.s. $\displaystyle \left(n\right) $ de $\displaystyle X \sim N\left(\mu, \sigma^{2}\right) $ con $\displaystyle \sigma^{2} > 0 $, entonces 
+	\[\overline{X}_{n}\sim N\left(\mu, \frac{\sigma^{2}}{n}\right) .\]
+\end{theorem}
+\begin{proof}
+Sabemos que $\displaystyle X_{i}\sim N\left(\mu, \sigma^{2}\right) $, $\displaystyle \forall i = 1, \ldots, n $ y que 
+\[\varphi_{X}\left(t\right)=e^{it\mu - \frac{1}{2}t ^{2}\sigma^{2}} .\]
+Así, tendremos que 
+\[
+\begin{split}
+	\varphi_{\overline{X}}\left(t\right)= & E\left[e^{it\frac{1}{n}\sum^{n}_{i = 1}X_{i}}\right] = E\left[\prod^{n}_{i = 1}e^{it\frac{1}{n}X_{i}}\right] =\prod^{n}_{i = 1}\varphi_{X_{i}}\left(\frac{t}{n}\right)\\
+	= & \varphi^{n}_{X}\left(\frac{t}{n}\right)=e^{it\mu - \frac{1}{2}\frac{\sigma^{2}}{n}t ^{2}} .
+\end{split}
+\]
+Así, tenemos que $\displaystyle \overline{X}_{n}\sim N\left(\mu, \frac{\sigma^{2}}{n}\right) $, puesto que sus funciones características coinciden. 
+\end{proof}
+\begin{definition}[Estadístico $\displaystyle Z $]
+El \textbf{estadístico $\displaystyle Z $} se obtiene estandarizando la media muestral
+\[Z = \frac{\overline{X}_{n}-\mu}{\frac{\sigma }{\sqrt{n}}}\sim N\left(0,1\right) .\]
+\end{definition}
+\begin{observation}
+Para ver que esto es cierto basta con aplicar la función característica.
+\end{observation}
+\begin{eg}[Contenido de las botellas]
+Se sabe que la cantidad de líquido (en onzas) que llena una m´aquina en ciertas botellas sigue una $\displaystyle N\left(\mu, 1\right) $. De la producción de un cierto día, obtenemos una m.a.s. de $\displaystyle n = 9 $ botellas y medimos la cantidad de líquido en cada una. Cuál es la probabilidad de que la media muestral esté a una distancia de como mucho $\displaystyle 0,3 $ onzas de $\displaystyle \mu $?\\
+
+Por lo que acabamos de ver la media muestral tiene una distribución normal $\displaystyle N\left(\mu, \frac{\sigma^{2}}{n}\right) $, por lo que tendremos que 
+\[
+\begin{split}
+	P\left( \left|\overline{X}-\mu\right|\leq 0,3\right) = & P\left(-0,3 \leq \overline{X}-\mu \leq 0,3\right)=P\left(\frac{-0,3}{\frac{1}{3}}\leq Z =\frac{\overline{X}-\mu}{\frac{\sigma }{\sqrt{n}}}\leq \frac{0,3}{\frac{1}{3}}\right)\\
+	= & 2P\left(Z \leq 0,3\right)-1.
+\end{split}
+\]
+Para obtener este valor basta con consultar la tabla de los valores de la normal tipificada. \\
+
+Ahora, si usamos la media muestral para estimar $\displaystyle \mu $, qué número de botellas $\displaystyle n $ deberíamos muestrear para conseguir un error absoluto máximo de $\displaystyle 0,3 $ onzas con probabilidad de $\displaystyle 0,95 $? \\
+
+Tendremos que la media muestral sigue la distribución $\displaystyle N\left(\mu, \frac{\sigma ^{2}}{n}\right) $ y sabemos que $\displaystyle P\left( \left|\overline{X}-\mu\right|\leq 0,3\right)=0,95 $. De esta forma,
+\[
+\begin{split}
+	P\left(\left|\overline{X}-\mu\right|\leq 0,3 \right) = & P\left(-0,3 \leq \overline{X}-\mu \leq 0,3\right)=P\left(\frac{-0,3}{\frac{1}{\sqrt{n}}}\leq Z =\frac{\overline{X}-\mu}{\frac{\sigma }{\sqrt{n}}}\leq \frac{0,3}{\frac{1}{\sqrt{n}}}\right) \\
+= & P\left(-0,3\sqrt{n}\leq Z \leq 0,3\sqrt{n}\right)=2P\left(Z \leq 0,3\sqrt{n}\right) - 1=0,95 .
+\end{split}
+\]
+De esta forma, tenemos que $\displaystyle P\left(Z \leq 0,3\sqrt{n}\right)=0,975 $. Ahora basta con consultar con la tabla de la normal para ver qué valor de $\displaystyle Z $ tiene esta probabilidad. 
+\end{eg}
+\begin{definition}[Distribución Chi-cuadrado]
+Una \textbf{distribución Chi-cuadrado} con $\displaystyle n $ grados de libertad, denotado $\displaystyle \chi^{2}_{n} $, es la distribución que resulta de la suma del cuadrado de $\displaystyle n $ variables aleatorias independientes $\displaystyle Z_{1}, \ldots, Z_{n} $ con distribución $\displaystyle N\left(0,1\right) $. Es decir,
+\[Y = \sum^{n}_{i = 1}Z_{i}^{2} \sim \chi^{2}_{n}.\]
+\end{definition}
+\begin{prop}
+Se verifica $\displaystyle \chi_{n}^{2} \sim \gamma\left(a = \frac{1}{2}, p = \frac{n}{2}\right) $. 
+\end{prop}
+\begin{proof}
+Como $\displaystyle Z \sim N\left(0,1\right) $, tenemos que $\displaystyle \varphi_{Z}\left(t\right)=\frac{1}{\sqrt{2\pi }}e^{-\frac{1}{2}t ^{2}} $. En primer lugar, calculamos la distribución de $\displaystyle Z^{2} $:
+\[F_{Z^{2}}\left(y\right)=P\left(Z^{2} \leq y\right) = P\left(-\sqrt{y} \leq Z \leq \sqrt{y} \right) = F_{Z}\left(\sqrt{y}\right)-F_{Z}\left(-\sqrt{y}\right) = 2F_{Z}\left(\sqrt{y}\right)-1.\]
+Así, tenemos que 
+\[f_{Z^{2}}\left(y\right)=2f_{Z}\left(\sqrt{y}\right)\frac{1}{2\sqrt{y}}=\frac{1}{\sqrt{2\pi }}e^{-\frac{1}{2}y}y^{-\frac{1}{2}} .\]
+Por tanto, tenemos que $\displaystyle Z^{2} \sim \gamma \left(a = \frac{1}{2}, p = \frac{1}{2}\right) $. Así, tendremos que $\displaystyle \varphi_{Z^{2}}\left(t\right)=\left(1-2it\right)^{-\frac{1}{2}} $, por lo que 
+\[\varphi_{\chi_{n}^{2}}\left(t\right)=E\left[e^{it\sum^{n}_{i = 1}Z_{i}^{2}}\right] = \prod^{n}_{i = 1}\varphi_{Z_{i}^{2}}\left(t\right)=\varphi_{Z^{2}}^{n}\left(t\right) = \left(1 - 2it\right)^{-\frac{n}{2}} .\]
+Por tanto, tenemos que $\displaystyle \chi_{n}^{2} \sim \gamma\left(a = \frac{1}{2}, p = \frac{n}{2}\right) $. 
+\end{proof}
+\begin{observation}[Propiedades de la distribución $\displaystyle \chi_n^2 $] Las siguientes propiedades son fáciles de comprobar:
+	\begin{itemize}
+	\item A partir de la proposición anterior es sencillo ver que la función de densidad de $\displaystyle \chi_{n}^{2} $ será
+\[f_{\chi_{n}^{2}}\left(x\right)=\frac{1}{2^{\frac{n}{2}}\Gamma\left(\frac{n}{2}\right)}e^{-\frac{1}{2}y}y^{\frac{n}{2}-1}, x > 0 .\]
+\item Se tiene que $\displaystyle E\left[\chi_{n}^{2}\right] =n $ y $\displaystyle V\left(\chi_{n}^{2}\right)=2n $.
+\item \textbf{Propiedad de aditividad.} Si $\displaystyle Y_{i} \sim \chi_{n_{i}}^{2} $, con $\displaystyle i = 1, \ldots, k $, son independientes, entonces
+	\[Y = \sum^{k}_{i = 1}Y_{i} \sim \chi_{n}^{2}, \quad n = \sum^{k}_{i=1}n_{i} .\]
+\item La distribución de $\displaystyle \frac{Y}{n}=\overline{X} $, donde $\displaystyle X_{i}=Z_{i}^{2} $ para $\displaystyle i = 1, \ldots, n $, es
+	\[\frac{Y}{n}=\overline{X}\sim \gamma\left(p = \frac{n}{2}, a = \frac{n}{2}\right) .\]
+	En efecto, basta con ver que
+	\[\varphi_{\overline{X}}\left(t\right)=E\left[e^{it\overline{X}}\right] =E\left[e^{it\frac{Y}{n}}\right] =\varphi_{Y}\left(\frac{t}{n}\right)=\frac{1}{\left(1-2i\frac{t}{n}\right)^{\frac{n}{2}}} .\]
+	\end{itemize} 
+\end{observation}
+\begin{lema}
+Dada una m.a.s. $\displaystyle \left(n\right) $, $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ de una población $\displaystyle N\left(0, \sigma^{2}\right) $, construimos las v.a.'s
+\[Z_{i}:=c_{i}^{t}\vec{X}=\begin{pmatrix} c_{i1} & \cdots & c_{in} \end{pmatrix}\begin{pmatrix} X_{1} \\ \vdots \\ X_{n} \end{pmatrix}, \; i = 1, \ldots, p ,\]
+con $\displaystyle p < n $ y $\displaystyle c_{i}^{t}c_{j}=\delta_{ij} $. La v.a. $\displaystyle Y = \sum^{n}_{i = 1}X_{i}^{2}-\sum^{p}_{i = 1}Z_{i}^{2} $ verifica que $\displaystyle \frac{Y}{\sigma^{2}}\sim \chi^{2}_{n-p} $, siendo independiente de $\displaystyle Z_{1}, \ldots, Z_{p} $. 
+\end{lema}
+\begin{proof}
+	Seleccionamos $\displaystyle n-p $ vectores $\displaystyle c_{p+1}, \ldots, c_{n} $ tales que $\displaystyle \left\{ c_{1}, \ldots, c_{n}\right\}  $ es una base autonormal de $\displaystyle \R^{n} $. Definimos la matriz $\displaystyle C = \left\{ c_{1}, \ldots, c_{n}\right\}  $, que por ser ortonormal verifica 
+	\[C^{t}C =\begin{pmatrix} c_{1}^{t} \\ \vdots \\ c_{n}^{t} \end{pmatrix}\begin{pmatrix} c_{1} \\ \cdots \\ c_{n} \end{pmatrix}=\begin{pmatrix} c_{1}^{t}c_{1} & \cdots & c_{1}'c_{n} \\ \vdots & & \vdots \\ c_{n}^{t}c_{1} & \cdots & c_{n}^{t}c_{n} \end{pmatrix}=I_{n}.\]
+Tomamos 
+\[\vec{Z} := C^{t}\vec{X}= \begin{pmatrix} c_{1}^{t} \\ \vdots \\ c_{n}^{t} \end{pmatrix}\vec{X}=\begin{pmatrix} c_{1}^{t}\vec{X} \\ \vdots \\ c_{n}^{t}\vec{X} \end{pmatrix}=\begin{pmatrix} Z_{1} \\ \vdots \\ Z_{n} \end{pmatrix} .\]
+Tendremos que $\displaystyle E\left[Z_{i}\right] =E\left[c_{i}^{t}\vec{X}\right] =c_{i}^{t}E\left[\vec{X}\right] =0 $, $\displaystyle \forall i = 1, \ldots, n $. De la misma manera
+\[V\left(Z_{i}\right)=V\left(c^{t}_{i}\vec{X}\right)=c_{i}^{t}V\left(\vec{X}\right)=\sigma^{2}c_{i}^{t}c_{i}=\sigma^{2}, \; \forall i = 1, \ldots, n .\]
+Finalmente, 
+\[Cov\left(Z_{i}, Z_{j}\right)=Cov\left(c_{i}^{t}\vec{X}, c_{j}^{t}\vec{X}\right)=c_{i}^{t}V\left(\vec{X}\right)c_{j}=\sigma^{2}c_{i}^{t}c_{j} = 0, \; \forall i \neq j .\]
+Así, tenemos que $\displaystyle Z_{i}=c_{i}^{t}\vec{X} \sim N\left(0, \sigma^{2}\right)$ y son independientes e idénticamente distribuidas. Ahora, como $\displaystyle \vec{Z}=C^{t}\vec{X} $ tendremos que $\displaystyle \vec{X}=C\vec{Z} $, por lo que $\displaystyle \vec{X}^{t}\vec{X}=\vec{Z}^{t}C^{t}C\vec{Z}=\vec{Z}^{t}\vec{Z} $. Así,
+\[Y = \vec{Z}^{t}\vec{Z}-\sum^{p}_{i = 1}Z_{i}^{2}=\sum^{n}_{i = 1}Z_{i}^{2}-\sum^{p}_{i = 1}Z_{i}^{2}=\sum^{n}_{i = p + 1}Z_{i}^{2} .\]
+Por tanto, $\displaystyle Y = \sum^{n}_{i = p + 1}Z_{i}^{2} $ es independiente de $\displaystyle Z_{1}, \ldots, Z_{p} $, y 
+\[\frac{Y}{\sigma^{2}}=\sum^{n}_{i = p + 1}\left(\frac{Z_{i}}{\sigma }\right)^{2}\sim \chi^{2}_{n-p} .\]
+\end{proof}
+
+\begin{theorem}[Teorema de Fisher]
+Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. de una v.a. $\displaystyle N\left(\mu, \sigma^{2}\right) $, con $\displaystyle \mu $ y $\displaystyle \sigma^{2}>0 $ desconocidas. Entonces, se verifica
+\begin{enumerate}
+\item $\displaystyle \overline{X}^{2}_{n} $ y $\displaystyle S'^{2} $ son independientes.
+\item $\displaystyle \frac{\left(n-1\right)S'^{2}}{\sigma^{2}}=\sum^{n}_{i = 1}\left(\frac{X_{i}-\overline{X}_{n}}{\sigma }\right)^{2}\sim \chi^{2}_{n-1} $. 
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Tenemos que 
+\[\left(n-1\right)S'^{2}=\sum^{n}_{i = 1}\left(X_{i}-\overline{X}\right)^{2}=\sum^{n}_{i = 1}X_{i}^{2}-n\overline{X}^{2}=\sum^{n}_{i = 1}X_{i}^{2}-\left(\sqrt{n}\overline{X}\right)^{2}=\sum^{n}_{i = 1}X_{i}^{2}-c_{1}X ,\]
+donde $\displaystyle c_{1}=\frac{1}{n}\sqrt{n}\begin{pmatrix} 1 \\ \vdots \\ 1 \end{pmatrix}=\begin{pmatrix} \frac{1}{\sqrt{n}} \\ \vdots \\ \frac{1}{\sqrt{n}} \end{pmatrix} $. Por tanto, $\displaystyle \left(n-1\right)S'^{2}=S^{2} $ es independiente de $\displaystyle \overline{X}_{n} $ y 
+\[\frac{\left(n-1\right)S'^{2}}{\sigma^{2}} \sim \chi^{2}_{n-1}.\]
+\end{proof}
+\begin{observation}[Interpretación de los grados de libertad]
+Notemos que las v.a.'s $\displaystyle X_{1}, \ldots, X_{n} $ en la suma
+\[\sum^{n}_{i = 1}\left(X_{i}-\overline{X}_{n}\right) \]
+no varían libremente puesto que deben satisfacer la restricción
+\[X_{1} + \cdots + X_{n}=n\overline{X}_{n} .\]
+Entonces, solo $\displaystyle n-1 $ de ellos pueden variar libremente en lugar de $\displaystyle n $. Es decir, si dejamos a $\displaystyle X_{2}, \ldots, X_{n} $ moverse libremente, entonces $\displaystyle X_{1} $ debe ser $\displaystyle X_{1}=n\overline{X}_{n}-\sum^{n}_{i = 2}X_{i} $. Así, los grados de libertad son el número de elementos del vector $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ que son libres para moverse. \\
+
+Por otro lado, al considerar
+\[\frac{\left(n-1\right)S'^{2}}{\sigma^{2}}=\sum^{n}_{i = 1}\frac{\left(X_{i}-\overline{X}\right)^{2}}{\sigma^{2}}=\left(\frac{X_{1}-\overline{X}}{\sigma }\right)^{2} + \cdots + \left(\frac{X_{n}-\overline{X}}{\sigma }\right)^{2} .\]
+Si tomamos $\displaystyle \tilde{Z}_{i} : = \frac{X_{i}-\overline{X}}{\sigma } $, podemos ver que $\displaystyle \tilde{Z}_{1}, \ldots, \tilde{Z}_{n} $ no varían libremente, sólo $\displaystyle n-1 $ de ellos lo hacen. En efecto,
+\[\tilde{Z}_{1} + \cdots + \tilde{Z}_{n} = \sum^{n}_{i = 1}\frac{X_{i}-\overline{X}_{n}}{\sigma }=0 ,\]
+de lo que se sigue
+\[\tilde{Z}_{n}=-\tilde{Z}_{1}-\cdots -\tilde{Z}_{n-1} .\]
+Así, hay $\displaystyle n-1 $ grados de libertad.
+\end{observation}
+\begin{eg}[Contenido de las botellas, continuación]
+Tomamos una m.a.s. de $\displaystyle n = 10 $ botellas y calculamos $\displaystyle S'^{2} $. Encontrar cotas $\displaystyle b_{1} $ y $\displaystyle b_{2} $ tales que 
+\[P\left(b_{1}\leq S'^{2} \leq b_{2}\right)=0,9 .\]
+Por el teorema de Fisher tenemos que 
+\[9S'^{2}\sim \chi^{2}_{9} .\]
+Así, tendremos que 
+\[P\left(b_{1}\leq S'^{2}\leq b_{2}\right)=P\left(9b_{1} \leq \chi^{2}_{9}\leq 9b_{2}\right) = P\left(\chi^{2}_{9}\leq 9b_{2}\right)-P\left(\chi^{2}_{9}\leq 9b_{1}\right)=0,9 .\]
+Hay infinitas soluciones. Sean $\displaystyle a_{1}= 9b_{1} $ y $\displaystyle a_{2}=b_{2} $. Para obtener una solución dividimos la probabilidad $\displaystyle 0,1 $ restante entre 2, de forma que $\displaystyle P\left(\chi_{9}^{2}\leq a_{1}\right)=0,05 $ y $\displaystyle P\left(\chi_{9}^{2}\geq a_{2}\right)=0,05 $. De esta manera, consultando con los valores de la tabla de la distribución $\displaystyle \chi^{2} $ para obtener los valores de $\displaystyle a_{1} $ y $\displaystyle a_{2} $, y en consecuencia los de $\displaystyle b_{1} $ y $\displaystyle b_{2} $. 
+\end{eg}
+\begin{eg}
+Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. de $\displaystyle X \sim N\left(\mu, \sigma^{2}\right) $ con $\displaystyle \mu $ y $\displaystyle \sigma^{2} > 0 $ desconocidas. Calculemos la varianza y el ECM de $\displaystyle S^{2} $ y $\displaystyle S'^{2} $ como estimadores de $\displaystyle \sigma^{2} $. 
+\end{eg}
+% Este hay que terminarlo
+\begin{definition}[Distribución $\displaystyle t $ de Student]
+Sean $\displaystyle X\sim N\left(0,1\right) $ e $\displaystyle Y \sim \chi^{2}_{v} $ independientes. La distribución de la v.a.
+\[T = \frac{X}{\sqrt{\frac{Y}{v}}} \]
+es una \textbf{t de Student} con $\displaystyle v $ grados de libertad, denotada $\displaystyle t_{v} $. 
+\end{definition}
+\begin{prop}
+La función de densidad de $\displaystyle T\sim t_{v} $ es
+\[f_{T}\left(t\right)=\frac{1}{\sqrt{v\pi }}\frac{\Gamma\left(\frac{v+1}{2}\right)}{\Gamma\left(\frac{v}{2}\right)}\left(1 + \frac{t ^{2}}{v}\right)^{-\frac{v+1}{2}}, \; t \in \R .\]
+\end{prop}
+\begin{proof}
+Sabemos que $\displaystyle Y \sim \chi^{2}_{v} $ tiene por función de densidad
+\[f_{Y}\left(y\right)=\frac{1}{2^{\frac{v}{2}}\Gamma\left(\frac{v}{2}\right)}y^{\frac{v}{2}-1}e^{-\frac{y}{2}}, \; y > 0 .\]
+Además, $\displaystyle Z \sim N\left(0,1\right) $, por lo que $\displaystyle T = \frac{Z}{\frac{Y}{v}} $. Aplicando transformación de variables con $\displaystyle U = \sqrt{\frac{Y}{v}} $, obtenemos 
+\[f_{U}\left(u\right)=f_{Y}\left(vu^{2}\right) \left|\frac{2y}{2u}\right|= \frac{1}{2^{\frac{v}{2}}\Gamma\left(\frac{v}{2}\right)}\left(vu^{2}\right)^{\frac{v}{2}-1}e^{-\frac{vu^{2}}{2}}v2u = 
+\frac{1}{2^{\frac{v}{2}-1}\Gamma\left(\frac{v}{2}\right)}v^{\frac{v}{2}}u^{v-1}e^{-v\frac{u^{2}}{2}}.\]
+Como $\displaystyle Z $ y $\displaystyle U $ son independientes tendremos que su función de densidad conjunta será
+\[
+\begin{split}
+	f_{\left(Z,U\right)}\left(Z,U\right)= & f_{Z}\left(z\right)f_{U}\left(u\right)= \frac{1}{\sqrt{2\pi }}e^{-\frac{z^{2}}{2}}\frac{1}{2^{\frac{v}{2}-1}\Gamma\left(\frac{v}{2}\right)}v^{\frac{v}{2}}u^{v-1}e^{-v\frac{u^{2}}{2}}\\
+	= & Ku^{v-1}e^{-\frac{z^{2}+vu^{2}}{2}}, \; K = \frac{v^{\frac{u}{2}}}{\sqrt{2\pi }\Gamma\left(\frac{v}{2}\right)2^{\frac{v}{2}-1}} .
+\end{split}
+\]
+Ahora, haciendo el cambio de variable $\displaystyle \left(Z,U\right)\to \left(W,T\right) $ con $\displaystyle W = U $ y $\displaystyle T=\frac{Z}{W} $, tenemos que el jacobiano correspondiente será
+\[J = \begin{vmatrix} W & T \\ 0 & 1 \end{vmatrix} = W > 0 .\]
+Además, la función de densidad conjunta será
+\[
+\begin{split}
+	f_{\left(W,T\right)}\left(w,t\right) = & f_{\left(Z,U\right)}\left(tw, w\right)w = Kw^{v-1}e^{-\frac{t ^{2}w^{2}+w w^{2}}{2}}w = Kw^{v}e^{-\left(t ^{2}+w\right)\frac{w^{2}}{2}}.
+\end{split}
+\]
+Integramos respecto de $\displaystyle w $ con cambio de variable $\displaystyle s = w^{2} $, para de esta forma calcular la distribución marginal de $\displaystyle T $,
+\[
+\begin{split}
+	f_{T}\left(t\right)= & K\int^{\infty}_{0} w^{w}e^{-\left(t ^{2}+w\right)\frac{w^{2}}{2}} \; dw = K\int^{\infty}_{0} \left(w^{2}\right)^{\frac{v}{2}}e^{-\left(t ^{2}+v\right)\frac{w^{2}}{2}} \; dw \\
+	= & K\int^{\infty}_{0} s^{\frac{v}{2}}e^{-\frac{\left(t ^{2}+v\right)s}{2}}\frac{1}{2\sqrt{s}} \; d s = \frac{K}{2}\int^{\infty}_{0} s^{\frac{v-1}{2}}e^{-\frac{\left(t ^{2}+v\right)s}{2}} \; d s = \frac{v^{\frac{v}{2}}}{2\sqrt{2\pi }\Gamma\left(\frac{v}{2}\right)2^{\frac{v}{2}-1}}\frac{\Gamma\left(v + \frac{1}{2}\right)}{\left(\frac{t ^{2}+v}{2}\right)^{ \frac{v+1}{2}}} \\
+	= & \cdots = \frac{1}{\sqrt{\pi v}}\frac{\Gamma\left(\frac{v+1}{2}\right)}{\Gamma\left(\frac{v}{2}\right)}\left(1 + \frac{t ^{2}}{v}\right)^{\frac{-v+1}{2}}, \; t \in \R.
+\end{split}
+\]
+\end{proof}
+\begin{observation}
+Podemos observar un par de cosas. 
+\begin{itemize}
+\item La distribución $\displaystyle t $ de Student es simétrica. 
+\item La esperanza y vanranza de $\displaystyle T \sim t_{v} $ son:
+	\[E\left(T\right)=0 \quad \text{y} \quad V\left(T\right)=\frac{v}{v-2} .\]
+\item Para $\displaystyle v = 1 $ grados de libertad, también se llama \textbf{distribución de Cauchy}. 	
+\end{itemize}
+\end{observation}
+\begin{theorem}[Teorema de Student]
+Sea $\displaystyle \left(X_{1}, \ldots, X_{n}\right) $ una m.a.s. de una v.a. $\displaystyle N\left(\mu, \sigma^{2}\right) $, con $\displaystyle \mu $ y $\displaystyle \sigma^{2} > 0 $ desconocidas. Entonces,
+\[T = \frac{\overline{X}_{n}-\mu}{\frac{S'}{\sqrt{n}}}\sim t_{n-1} ,\]
+y $\displaystyle T $ es conocido como \textbf{estadístico $\displaystyle T $}. 
+\end{theorem}
+

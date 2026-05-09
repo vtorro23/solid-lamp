@@ -14,7 +14,112 @@ Podríamos haber planteado también la integral
 es decir, cambiar el orden de integración. En este caso, los dos resultados coinciden.
 \end{eg}
 \section{Teorema de Fubini}
-\begin{theorem}[Teorema de Fubini]
+\begin{theorem}[Teorema de Fubini en $\displaystyle \R^2 $]
+	Sea $\displaystyle R = \left[a, b \right] \times \left[c,d\right] \subset \R^{2} $ y $\displaystyle f : R \to \R $ integrable. Supongamos que para cada $\displaystyle x \in \left[a,b\right]  $, la función 
+	\[f_{x} : \left[c,d\right] \to \R : y \to f\left(x,y\right) ,\]
+	es integrable en $\displaystyle \left[c,d\right]  $. Entonces, la función 
+	\[x \to \int^{d}_{c} f_{x}\left(y\right) \; dy ,\]
+	es integrable en $\displaystyle \left[a,b\right]  $ y 
+	\[\int _{\left[a,b\right] \times\left[c,d\right] }f = \int^{b}_{a} \int^{d}_{c} f\left(x,y\right) \; dy \; dx .\]
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle P \in \mathcal{P}\left(\left[a,b\right] \times\left[c,d\right] \right) $. Tenemos que $\displaystyle P $ será de la forma $\displaystyle P = P_{1} \times P_{2} $, donde 
+	\[P_{1}= \left\{ I_{1}, \ldots, I_{m}\right\} \in \mathcal{P}\left(\left[a,b\right] \right)\quad \text{y} \quad P_{2} = \left\{ J_{1}, \ldots, J_{k}\right\} \in \mathcal{P}\left(\left[c,d\right] \right) .\]
+	Así, $\displaystyle P = \left\{ R_{ij}=I_{i} \times J_{j} \; : \; 1 \leq i \leq m, \; 1 \leq j \leq k\right\}  $. Definimos la aplicación
+	\[\phi : \left[a,b\right] \to \R : x \to \int^{d}_{c} f\left(x,y\right) \; dy .\]
+	Veamos que $\displaystyle s\left(f,P\right)\leq s\left(\phi, P_{1}\right) $ y $\displaystyle S\left(\phi,P_{1}\right)\leq S\left(f,P\right) $. Una vez comprobado esto, tendremos que 
+	\[
+	\begin{split}
+		\int _{R}f = & \sup \left\{ s\left(f,P\right) \; : \; P \in \mathcal{P}\left(R\right)\right\} \leq \sup \left\{ s\left(\phi, P_{1}\right) \; : \; P_{1} \in \mathcal{P}\left(\left[a,b\right] \right)\right\} \leq \int _{\left[a,b\right] }\phi \\
+		\leq & \overline{\int _{[a,b]} }\phi = \inf \left\{ S\left(\phi, P_{1}\right) \; : \; P_{1} \in \mathcal{P}\left(\left[a,b\right] \right)\right\} \leq \inf \left\{ S\left(f,P\right)\; : \; P \in \mathcal{P}\left(R\right)\right\} =\int _{R}f  .
+	\end{split}
+	\]
+	Así, $\displaystyle \int _{\left[a,b\right] }\phi =\int _{R}f $. Comprobemos las desigualdades del inicio. Demostramos sólo la primera puesto que la otra se hace de forma análoga. Tenemos que $\displaystyle s\left(\phi, P_{1}\right)=\sum^{m}_{i = 1}\inf_{I_{i}}\phi\; v\left(I_{i}\right) $. Sea $\displaystyle x \in I_{i} $, entonces
+	\[
+	\begin{split}
+		\phi\left(x\right) = & \int^{d}_{c} f_{x}\left(y\right) \; dy \geq s\left(f_{x}, P_{2}\right)=\sum^{k}_{j = 1} \inf_{J_{j}}f \; v\left(J_{j}\right)\geq \sum^{k}_{j = 1}\inf_{R_{ij}}f\; v\left(J_{j}\right) .
+	\end{split}
+	\]
+	Como $\displaystyle x_{i} $ era arbitrario tenemos que $\displaystyle \inf_{I_{i}}\phi \geq  \sum^{k}_{j = 1}\inf_{R_{ij}}f \; v\left(J_{j}\right) $, por lo que
+	\[
+	\begin{split}
+		\inf_{I_{i}}\phi \;v\left(I_{i}\right) \geq & \sum^{k}_{j = 1}\inf_{R_{ij}}f \; v\left(J_{j}\right)v\left(I_{i}\right) = \sum^{k}_{j = 1}\inf_{R_{ij}}f \; v\left(R_{ij}\right)	.
+	\end{split}
+	\]
+	Sumando en $\displaystyle i $ obtenemos
+\[s\left(\phi, P_{1}\right)=\sum^{m}_{i = 1}\inf_{I_{i}}\phi \; v\left(I_{i}\right)\geq \sum^{m}_{i = 1}\sum^{k}_{j = 1}\inf_{R_{ij}}f \; v\left(R_{ij}\right)=s\left(f,P\right) .\]
+\end{proof}
+
+\begin{observation} Podemos hacer un par de observaciones.
+	\begin{itemize}
+	\item Es importante ver la condición de que $\displaystyle f_{x} $ sea integrable es necesaria puesto que el hecho de que $\displaystyle f $ sea integrable no implica siempre que $\displaystyle f_{x} $ lo sea.
+	\item El teorema también se cumple si cambiamos $\displaystyle x $ por $\displaystyle y $.
+	\item Si $\displaystyle f : \left[a,b\right] \times \left[c,d\right] \to \R $ es acotada, existen las dos integrales iteradas y son distintas, entonces $\displaystyle f $ no es integrable.
+	\end{itemize}
+\end{observation}
+\begin{colorary}
+	Si $\displaystyle f : \left[a,b\right] \times \left[c,d\right] \to \R $ es continua en $\displaystyle \left[a,b\right] \times \left[c,d\right]  $, entonces 
+	\[\int _{\left[a,b\right] \times \left[c,d\right] }f =\int^{b}_{a} \int^{d}_{c} f\left(x,y\right) \; dy \; dx =\int^{d}_{c} \int^{b}_{a} f\left(x,y\right) \; dx \; dy.\]
+\end{colorary}
+\begin{proof}
+	Como $\displaystyle f $ es continua en $\displaystyle \left[a,b\right] \times \left[c,d\right]  $, que es un rectángulo de $\displaystyle \R^{2} $, tenemos que $\displaystyle f $ es integrable en $\displaystyle \left[a,b\right] \times \left[c,d\right]  $. Además, $\displaystyle \forall x \in \left[a,b\right]  $, tenemos que $\displaystyle f_{x} : \left[c,d\right] \to \R $ es continua, por lo que es integrable en $\displaystyle \left[c,d\right]  $. 
+	Lo mismo sucede para $\displaystyle f_{y} : \left[a,b\right] \to \R $, $\displaystyle \forall y \in \left[c,d\right]  $. Así, podemos aplicar el teorema de Fubini.
+\end{proof}
+\begin{colorary}
+	Sean $\displaystyle \varphi_{1}, \varphi_{2} : \left[a,b\right] \to \R $ continuas en $\displaystyle \left[a,b\right]  $ tales que $\displaystyle \varphi_{1}\left(x\right)\leq \varphi_{2}\left(x\right) $, $\displaystyle \forall x \in \left[a,b\right]  $. Sea $\displaystyle A = \left\{ \left(x,y\right) \in \R^{2} \; : \; a \leq x \leq b, \; \varphi_{1}\left(x\right)\leq y \leq \varphi_{2}\left(x\right)\right\} $ y sea $\displaystyle f : A \to \R $ continua en $\displaystyle A $. 
+	Entonces $\displaystyle f $ es integrable en $\displaystyle A $ y 
+	\[\int _{A}f = \int^{b}_{a} \int^{\varphi_{2}\left(x\right)}_{\varphi_{1}\left(x\right)} f\left(x,y\right)  \; dy \; dx .\]
+	
+\end{colorary}
+\begin{proof}
+	Tenemos que $\displaystyle A $ es acotado puesto que $\displaystyle \varphi_{1} $ y $\displaystyle \varphi_{2} $ son continuas en $\displaystyle \left[a,b\right]  $. En efecto, tenemos que existen $\displaystyle m=\min \left\{ \varphi_{1}\left(x\right) \; : \; x \in \left[a,b\right] \right\}  $ y $\displaystyle M = \max \left\{ \varphi_{2}\left(x\right) \; : \; x \in \left[a,b\right] \right\}  $, por lo que $\displaystyle \forall x \in \left[a,b\right]  $ se tiene que $\displaystyle m \leq \varphi_{1}\left(x\right)\leq \varphi_{2}\left(x\right)\leq M $. Así, $\displaystyle A \subset \left[a,b\right] \times \left[m,M\right]  $. \\
+	Además, se cumple que
+	\[\partial A \subset G\left(\varphi_{1}\right)\cup G\left(\varphi_{2}\right)\cup\left[\left(b, \varphi_{1}\left(b\right)\right), \left(b, \varphi_{2}\left(b\right)\right)\right] \cup \left[\left(a, \varphi_{1}\left(a\right)\right), \left(a, \varphi_{2}\left(a\right)\right)\right]  .\]
+Como todos estos conjuntos tienen contenido nulo, tienen medida nula y por el teorema de Lebesgue tenemos que $\displaystyle A $ es medible Jordan. También tenemos que $\displaystyle A $ es compacto por ser cerrado y acotado. Como $\displaystyle f $ es continua en $\displaystyle A $ y $\displaystyle A $ es medible Jordan, tenemos que $\displaystyle f $ es integrable en $\displaystyle A $. 
+Ahora, sea $\displaystyle R = \left[a,b\right] \times \left[m,M\right]  $, claramente $\displaystyle \tilde{f} $ es integrable en $\displaystyle R $. Para cada $\displaystyle x \in \left[a,b\right]  $ definimos la función
+\[\tilde{f}_{x} : \left[m,M\right] \to \R : y \to \tilde{f}_{x}\left(y\right)=\tilde{f}\left(x,y\right) .\]
+Tenemos que $\displaystyle \tilde{f}_{x} $ es la extensión de 
+\[f_{x}:\left[\varphi_{1}\left(x\right), \varphi_{2}\left(x\right)\right] \to \R : y \to f\left(x,y\right) .\]
+Como $\displaystyle f_{x} $ es continua en $\displaystyle \left[\varphi_{1}\left(x\right), \varphi_{2}\left(x\right)\right]  $ tenemos que $\displaystyle f_{x} $ es integrable en este intervalo, por lo que $\displaystyle \tilde{f}_{x} $ es integrable en $\displaystyle \left[m,M\right]  $. 
+Por tanto, aplicando el teorema de Fubini tenemos que 
+\[\int _{A}f\left(x,y\right) \; dx \; dy = \int _{\left[a,b\right] \times\left[m,M\right] }\tilde{f}\left(x,y\right) \; dx \; dy= \int^{b}_{a} \int^{M}_{m} \tilde{f}_{x}\left(y\right) \; dy \; dx = \int^{b}_{a} \int^{\varphi_{2}\left(x\right)}_{\varphi_{1}\left(x\right)} f\left(x,y\right) \; dy \; dx .\]
+
+\end{proof}
+\begin{eg}
+	Consideremos los siguientes ejemplos.
+	\begin{enumerate}
+	\item Sea $\displaystyle A = \left\{ \left(x,y\right) \in \R^{2} \; : \; x + y\leq1,\; x \geq 0, \; y \geq 0\right\}  $, queremos calcular
+	\[\int _{A}f\left(x,y\right) \; dx \; dy .\]
+	Si cogemos el rectángulo $\displaystyle R = \left[0,1\right] \times\left[0,1\right]  $, tenemos que
+	\[\int _{A}f\left(x,y\right) \; dx \; dy = \int _{R}\tilde{f}\left(x,y\right) \; dx \; dy .\]
+	Si cogemos un $\displaystyle x_{0} \in \left[a,b\right]  $, podemos considerar  
+	\[ \tilde{f}_{x_{0}} : \left[c,d\right] \to \R: y \to 
+	\begin{cases}
+	f\left(x_{0}, y\right), \; \left(x_{0}, y \right)\in A \\
+	0, \; \left(x_{0}, y \right)\not\in A
+	\end{cases}
+	.\]
+Supongamos que es integrable, entonces tendremos que 
+\[\int _{R}\tilde{f} = \int^{1}_{0} \int^{1}_{0} \tilde{f}\left(x,y\right) \; dy \; dx .\]
+Dado que nos es incómodo calcular la integral de $\displaystyle \tilde{f} $, podemos decir que 
+\[
+\begin{split}
+	\int^{1}_{0} \left(\int^{y}_{0} \tilde{f}\left(x,y\right) \; dy + \int^{1}_{y} \tilde{f}\left(x,y\right) \; dy\right) \; dx = & \int^{1}_{0} \int^{y}_{0} f\left(x,y\right) \; dy \; dx \\
+	= &  \int^{1}_{0} \int^{1-x}_{0} f\left(x,y\right) \; dy \; dx.
+\end{split}
+\]
+Si tomamos por ejemplo $\displaystyle f\left(x,y\right)= x $, tendremos que 
+\[\int _{A}f\left(x,y\right) \; dy \; dx = \int^{1}_{0} \int^{1-x}_{0} x \; dy \; dx = \int^{1}_{0} x\left(1-x\right) \; dx = \frac{1}{6} .\]
+Podemos cambiar el orden de integración:
+\[\int _{A}f\left(x,y\right) \; dx \; dy = \int^{1}_{0} \int^{1-y}_{0} x \; dx \; dy=\int^{1}_{0} \frac{\left(1-y\right)^{2}}{2} \; dy = \frac{1}{6} .\]
+\item Consideremos ahora $\displaystyle A = \left\{ \left(x,y\right) \in \R^{2} \; : \; x^{2} + y^{2} \leq 1, \; y \geq 0\right\}  $. Podemos considerar $\displaystyle R = \left[-1,1\right] \times \left[0,1\right]  $. De esta forma, 
+	\[\int _{A}f\left(x,y\right) \; dy \; dx = \int^{1}_{-1} \int^{1}_{0} \tilde{f}\left(x,y\right) \; dy \; dx = \int^{1}_{-1} \int^{\sqrt{1-x^{2}}}_{0} f\left(x,y\right) \; dy \; dx .\]
+	Podemos cambiar el orden de integración:
+	\[\int _{A}f\left(x,y\right) \; dx \; dy = \int^{1}_{0} \int^{1}_{-1} \tilde{f}\left(x,y\right) \; dx \; dy = \int^{1}_{0} \int^{\sqrt{1-y^{2}}}_{-\sqrt{1-y^{2}}}  f\left(x,y\right)\; dx \; dy.\]
+	\end{enumerate}
+\end{eg}
+
+\begin{theorem}[Teorema de Fubini en $\displaystyle \R ^{n + m} $]
 Sean $\displaystyle Q \subset \R^{n} $ y $\displaystyle R \subset \R^{m} $ rectángulos, y $\displaystyle f : Q \times R \to \R $ una función integrable en $\displaystyle Q \times R \subset \R^{n+m} $. Entonces, si para todo $\displaystyle x \in Q $ la función $\displaystyle f_{x} : R \to \R : y \to f\left(x,y\right) $ es integrable en $\displaystyle R $, entonces la función 
 	\[ F : Q \to \R : x \to \int _{R}f_{x} =\int _{R}f\left(x,y\right) \; dy\]
 	es integrable en $\displaystyle Q $ y además
@@ -53,95 +158,58 @@ Por tanto,
 Se puede hacer un argumento idéntico para fijar $\displaystyle y $ primero y luego $\displaystyle x $. 
 \end{observation}
 \begin{observation}
-Si $\displaystyle f : Q \times R \to \R $ es continua, entonces $\displaystyle f $ es integrable en $\displaystyle Q \times R $ y además $\displaystyle \forall x \in Q $, $\displaystyle f_{x} $ es continua (por lo que es integrable en $\displaystyle R $) al igual que para todo $\displaystyle y \in R $, $\displaystyle f^{y} $ es continua (por lo que es integrable en $\displaystyle Q $). Por tanto, en este caso se aplicaría el teorema.
+Si $\displaystyle f : Q \times R \to \R $ es continua, entonces $\displaystyle f $ es integrable en $\displaystyle Q \times R $ y además $\displaystyle \forall x \in Q $, $\displaystyle f_{x} $ es continua (por lo que es integrable en $\displaystyle R $) al igual que para todo $\displaystyle y \in R $, $\displaystyle f_{y} $ es continua (por lo que es integrable en $\displaystyle Q $). Por tanto, en este caso se aplicaría el teorema.
 \end{observation}
-
-\begin{theorem}[Teorema de Fubini]
-	Sea $\displaystyle R = \left[a, b \right] \times \left[c,d\right] \subset \R^{2} $ y $\displaystyle f : R \to \R $ integrable. Supongamos que para cada $\displaystyle x \in \left[a,b\right]  $, la función 
-	\[f_{x} : \left[c,d\right] \to \R : y \to f\left(x,y\right) ,\]
-	es integrable en $\displaystyle \left[c,d\right]  $. Entonces, la función 
-	\[x \to \int^{d}_{c} f_{x}\left(y\right) \; dy ,\]
-	es integrable en $\displaystyle \left[a,b\right]  $ y 
-	\[\int _{\left[a,b\right] \times\left[c,d\right] }f = \int^{b}_{a} \int^{d}_{c} f\left(x,y\right) \; dy \; dx .\]
-\end{theorem}
-\begin{proof}
-	Como $\displaystyle f $ es integrable, para una partición $\displaystyle P \in \mathcal{P}\left(R\right) $ podemos coger los puntos que queramos dentro de cada rectángulo. Tendremos que si $\displaystyle P = P_{1} \times P_{2} $ con $\displaystyle P_{1}= \left\{ I_{1}, \ldots, I_{N}\right\} \in \mathcal{P}\left(\left[a,b\right] \right) $ y $\displaystyle P_{2}= \left\{ J_{1}, \ldots, J_{M}\right\} \in \mathcal{P}\left(\left[c,d\right] \right) $.
-\[
-\begin{split}
-	\int _{R}f \sim & \sum_{i}\sum_{j}f\left(x_{I_{i}}, y_{J_{j}}\right)v\left(I_{i} \times J_{j}\right)= \sum_{i}\left(\sum_{j}f\left(x_{i}, y_{j}\right)l\left(J_{j}\right)\right)l\left(I_{i}\right)\\
-	\sim & \sum_{i}\int _{J}f\left(x_{I_{i}}, y\right) \; dy  \; l\left(I_{i}\right)  \sim \int _{I}\int _{J}f\left(x,y\right) \; dy \; dx .
-\end{split}
-\]
-Esto no es una demostración pero nos da cierta intuición. 
-\end{proof}
-
-\begin{observation} Podemos hacer un par de observaciones.
-	\begin{itemize}
-	\item Es importante ver la condición de que $\displaystyle f_{x} $ sea integrable es necesaria puesto que el hecho de que $\displaystyle f $ sea integrable no implica siempre que $\displaystyle f_{x} $ lo sea.
-	\item El teorema también se cumple si cambiamos $\displaystyle x $ por $\displaystyle y $.
-	\end{itemize}
-\end{observation}
-\begin{theorem}[Teorema de Fubini en $\displaystyle \R^n $]
-Sea $\displaystyle R = R_{1} \times R_{2} \subset \R^{n}$ un rectángulo con $\displaystyle R_{1} \subset \R^{k} $ rectángulo y $\displaystyle R_{2}\subset \R^{n-k} $ rectángulo. Suponemos que $\displaystyle \forall x \in R_{1} $, $\displaystyle f_{x} : R_{2} \to \R : y \to f\left(x,y\right) $ es integrable en $\displaystyle R_{2} $. Entonces la función 
-\[x \to \int _{R_{2}}f\left(x,y\right)  ,\]
-es integrable en $\displaystyle R_{1} $ y se tiene que 
-\[\int _{R}f=\int_{R_{1}} \int_{R_{2}} f\left(x,y\right) \; dy \; dx .\]
-\end{theorem}
 \begin{eg}
-	Consideremos los siguientes ejemplos.
-	\begin{enumerate}
-	\item Sea $\displaystyle A = \left\{ \left(x,y\right) \in \R^{2} \; : \; x + y\leq1,\; x \geq 0, \; y \geq 0\right\}  $, queremos calcular
-	\[\int _{A}f\left(x,y\right) \; dx \; dy .\]
-	Si cogemos el rectángulo $\displaystyle R = \left[0,1\right] \times\left[0,1\right]  $, tenemos que
-	\[\int _{A}f\left(x,y\right) \; dx \; dy = \int _{R}\tilde{f}\left(x,y\right) \; dx \; dy .\]
-	Si cogemos un $\displaystyle x_{0} \in \left[a,b\right]  $, podemos considerar  
-	\[ \tilde{f}_{x_{0}} : \left[c,d\right] \to \R: y \to 
-	\begin{cases}
-	f\left(x_{0}, y\right), \; \left(x_{0}, y \right)\in A \\
-	0, \; \left(x_{0}, y \right)\not\in A
-	\end{cases}
-	.\]
-Supongamos que es integrable, entonces tendremos que 
-\[\int _{R}\tilde{f} = \int^{1}_{0} \int^{1}_{0} \tilde{f}\left(x,y\right) \; dy \; dx .\]
-Dado que nos es incómodo calcular la integral de $\displaystyle \tilde{f} $, podemos decir que 
+	Dado $\displaystyle A = \left\{ \left(x,y,z\right)\in \R^{3} \; : \; x\geq 0, \; y \geq 0, \; z \geq 0, \; x +y+ z \leq 1\right\}  $, calculemos 
+	\[\int _{A}x^{2}y+z^{2} \; dx \; dy \; dz .\]
+	Si cogemos $\displaystyle D = \left\{ \left(x,y\right) \; : \; 0 \leq x \leq 1, \; 0 \leq y \leq 1- x\right\}  $, tenemos que 
+	\[ A = \left\{ \left(x,y,z\right)\in \R^{3} \; : \; \left(x,y\right)\in D, \; 0 \leq 1 - x - y\right\},\]
+	por lo que 
 \[
 \begin{split}
-	\int^{1}_{0} \left(\int^{y}_{0} \tilde{f}\left(x,y\right) \; dy + \int^{1}_{y} \tilde{f}\left(x,y\right) \; dy\right) \; dx = & \int^{1}_{0} \int^{y}_{0} f\left(x,y\right) \; dy \; dx \\
-	= &  \int^{1}_{0} \int^{1-x}_{0} f\left(x,y\right) \; dy \; dx.
+	\int _{A}x^{2}y+z^{2} \; dx \; dy \; dz= & \int_{D}\int^{1-x-y}_{0} x^{2}y+z^{2} \; dz \; dx \; dy \\
+	= & \int^{1}_{0} \int^{1-x}_{0} \int^{1-x-y}_{0} x^{2}y+z^{2} \; dz \; dy \; dx.
 \end{split}
-\]
-Si tomamos por ejemplo $\displaystyle f\left(x,y\right)= x $, tendremos que 
-\[\int _{A}f\left(x,y\right) \; dy \; dx = \int^{1}_{0} \int^{1-x}_{0} x \; dy \; dx = \int^{1}_{0} x\left(1-x\right) \; dx = \frac{1}{6} .\]
-Podemos cambiar el orden de integración:
-\[\int _{A}f\left(x,y\right) \; dx \; dy = \int^{1}_{0} \int^{1-y}_{0} x \; dx \; dy=\int^{1}_{0} \frac{\left(1-y\right)^{2}}{2} \; dy = \frac{1}{6} .\]
-\item Consideremos ahora $\displaystyle A = \left\{ \left(x,y\right) \in \R^{2} \; : \; x^{2} + y^{2} \leq 1, \; y \geq 0\right\}  $. Podemos considerar $\displaystyle R = \left[-1,1\right] \times \left[0,1\right]  $. De esta forma, 
-	\[\int _{A}f\left(x,y\right) \; dy \; dx = \int^{1}_{-1} \int^{1}_{0} \tilde{f}\left(x,y\right) \; dy \; dx = \int^{1}_{-1} \int^{\sqrt{1-x^{2}}}_{0} f\left(x,y\right) \; dy \; dx .\]
-	Podemos cambiar el orden de integración:
-	\[\int _{A}f\left(x,y\right) \; dx \; dy = \int^{1}_{0} \int^{1}_{-1} \tilde{f}\left(x,y\right) \; dx \; dy = \int^{1}_{0} \int^{\sqrt{1-y^{2}}}_{-\sqrt{1-y^{2}}}  f\left(x,y\right)\; dx \; dy.\]
-\item Sea $\displaystyle A = \left\{ \left(x,y\right) \in \R^{2} \; : \; x \in \left[a,b\right], \; g_{2}\left(x\right) \leq y \leq g_{1}\left(x\right)\right\}  $ para $\displaystyle g_{1}, g_{2} : \R \to \R $ continuas. Tendremos que 
-	\[\int _{A}f\left(x,y\right) \; dy \; dx = \int^{b}_{a} \int^{g_{1}\left(x\right)}_{g_{2}\left(x\right)} f\left(x,y\right) \; dy \; dx  .\]
-	\end{enumerate}
+\]	
 \end{eg}
-\section{Cambio de variable}
-\begin{theorem}[Teorema de cambio de variable]
-Si $\displaystyle \varphi: B\subset \R^{n} \to A \subset \R^{n} $ es de clase $\displaystyle \mathcal{C}^{1} $ y $\displaystyle \varphi^{-1}\in\mathcal{C}^{1} $ \footnote{Buscamos que $\displaystyle \varphi $ sea difeomorfismo.}, tenemos que 
-\[\int _{A}f\left(x\right) \; dx = \int _{B}f\left(\varphi\left(t\right)\right) \left|\det \varphi'\left(t\right)\right| \; dt .\]
-Asumimos que $\displaystyle A $ y $\displaystyle B $ son abiertos.
-\end{theorem}
-\subsection{Coordenadas polares}
-El cambio de coordenadas polares consiste en
-\[x = \rho \cos\theta \quad \text{y} \quad y = \rho\sin\theta .\]
-Para deshacer el cambio es fácil ver que 
-\[\rho = \sqrt{x^{2} + y^{2}} \quad \text{y} \quad \theta = \arctan\left(\frac{y}{x}\right) .\]
-Es sencillo comprobar que 
-\[J\left(\rho, \theta \right) = \begin{pmatrix} \cos\theta & -\rho\sin\theta \\ \sin\theta & \rho\cos\theta \end{pmatrix} \Rightarrow \left|\det J\left(\rho, \theta\right)\right|=\rho	 .\]
-En este caso podemos considerar $\displaystyle \varphi : [0, \infty) \times [0, 2\pi) \to \R^{2} $.
+\begin{observation}[Integración en regiones simples]
+	Sea $\displaystyle A \subset \R^{3} $ acotado y $\displaystyle f : A \to \R $ continua en $\displaystyle A $ y $\displaystyle D := \pi\left(A\right) $ con $\displaystyle \pi: \R^{3}\to \R^{2} : \left(x,y,z\right)\to \left(x,y\right) $.  
+	\begin{enumerate}
+		\item Supongamos que $\displaystyle A = \left\{ \left(x,y,z\right)\in \R^{3} \; : \; \left(x,y\right)\in D, \; \varphi_{1}\left(x,y\right)\leq z \leq \varphi_{2}\left(x,y\right)\right\}  $ con $\displaystyle D \subset \R^{2} $ compacto y medible Jordan y $\displaystyle \varphi_{1}, \varphi_{2} : D \to \R $ continuas y $\displaystyle \varphi_{1}\leq \varphi_{2} $ en $\displaystyle D $. Entonces $\displaystyle A $ es compacto y medible Jordan, y $\displaystyle f $ es integrable en $\displaystyle A $. Además, se cumple que 
+			\[\int _{A}f\left(x,y,z\right) \; dx \; dy \; dz = \int _{D}\int^{\varphi_{2}\left(x,y\right)}_{\varphi_{1}\left(x,y\right)} f\left(x,y,z\right) \; dz \; dx \; dy .\]
+		\item Supongamos que $\displaystyle A $ es compacto y medible Jordan y $\displaystyle A \subset \R^{2} \times \left[a,b\right]  $, con $\displaystyle a < b $. Supongamos también que $\displaystyle \forall z \in \left[a,b\right]  $, el conjunto $\displaystyle A _{z} = \left\{ \left(x,y\right) \in \R^{2} \; : \; \left(x,y,z\right)\in A\right\}  $ es medible Jordan. Entonces $\displaystyle f $ es integrable en $\displaystyle A $ y 
+			\[\int _{A}f\left(x,y,z\right) \; dx \; dy \; dz = \int^{b}_{a} \int _{A_{z}}f\left(x,y,z\right) \; dx \; dy \; dz .\]
+	\end{enumerate}
+\end{observation}
 \begin{eg}
-	Consideremos $\displaystyle A = \left\{ \left(x,y\right) \in \R^{2} \; : \; x^{2} +y^{2}\leq 1\right\}  $. Tenemos que 
-	\[v\left(A\right)=\int _{A} \; dx\; dy = \int^{1}_{-1} \int^{\sqrt{1-x^{2}}}_{-\sqrt{1-x^{2}}}  \; dy \; dx = \int^{1}_{-1} 2\sqrt{1-x^{2}} \; dx=\pi .\]
-Intentemos resolver el problema pero esta vez con un cambio de variable:
-\[v\left(A\right) = \int^{2\pi }_{0} \int^{1}_{0} \rho \; d\rho \; d\theta=\int^{2\pi }_{0} \frac{1}{2} \; d\theta = \pi .\]
-Podemos ver que hemos obtenido el mismo valor por los dos métodos.
+	\begin{enumerate}
+	\item Consideramos $\displaystyle A = \left\{ \left(x,y,z\right)\in \R^{3} \; : \; x \geq 0, \; y \geq 0, \; z \geq 0, \; x+y+z\leq 1\right\}  $ y calculemos 
+	\[\int _{A}xyz \; dx \; dy \; dz .\]
+	Tenemos que $\displaystyle A \subset \R^{2} \times \left[0,1\right]  $ y $\displaystyle \forall z \in \left[0,1\right]  $, $\displaystyle A_{z}= \left\{ \left(x,y\right)\in \R^{2} \; : \; x \geq 0, \; y \geq 0, \; x + y \leq 1 - z\right\}  $, que es compacto y medible Jordan. Por tanto, tenemos que 
+	\[
+	\begin{split}
+		\int _{A}xyz \; dx \; dy \; dz=& \int^{1}_{0} \int _{A_{z}}xyz \; dx \; dy \; dz = \int^{1}_{0} \int^{1-z}_{0} \int^{1-z-x}_{0} xyz \; dy \; dx \; dz .
+	\end{split}
+	\]
+\item Consideremos ahora $\displaystyle A $ limitado por $\displaystyle x^{2}+y^{2}=z $, $\displaystyle z = 0 $ y $\displaystyle z = 2 $, y calculamos
+	\[\int _{A}x^{2}+y^{2} \; dx \; dy \; dz .\]
+	Lo podemos hacer de dos formas, la primera:
+	\[
+	\begin{split}
+		\int _{A}x^{2}+y^{2} \; dx \; dy \; dz = & \int _{D}\int^{2}_{x^{2}+y^{2}} x^{2}+y^{2} \; dz \; dx \; dy = \int _{D}\left(x^{2}+y^{2}\right)\left(2-\left(x^{2}+y^{2}\right)\right) \; dx \; dy \\
+		= & \int^{\sqrt{2}}_{-\sqrt{2}} \int^{\sqrt{2-x^{2}}}_{-\sqrt{2-x^{2}}}  \left(x^{2}+y^{2}\right)\left(2-\left(x^{2}+y^{2}\right)\right) \; dy \; dx .
+	\end{split}
+	\]
+	La segunda forma es:
+	\[
+	\begin{split}
+		\int _{A}x^{2}+y^{2} \; dx \; dy \; dz = & \int^{2}_{0} \int _{A_{z}}x^{2}+y^{2} \; dx \; dy \; dz \\
+		= &  \int^{2}_{0} \int^{\sqrt{z}}_{-\sqrt{z}} \int^{\sqrt{z-x^{2}}}_{-\sqrt{z-x^{2}}} x^{2}+y^{2} \; dy \; dx \; dz   .
+	\end{split}
+	\]
+	
+	\end{enumerate}
 \end{eg}
 \begin{eg}[Cálculo de un volumen]
 	Para calcular un volumen en $\displaystyle \R^{3} $ cogemos un conjunto 
@@ -155,6 +223,203 @@ Podemos ver que hemos obtenido el mismo valor por los dos métodos.
 \end{split}
 \]
 \end{eg}
+\section{Cambio de variable}
+\begin{definition}[Homeomorfismo]
+Dada $\displaystyle f : \R^{n}\to \R^{m} $, decimos que es \textbf{homeomorfismo} si es biyectiva, es continua y su inversa también es continua.
+\end{definition}
+
+\begin{definition}[Difeomorfismo]
+Dacimos que $\displaystyle f : \R^{n}\to \R^{n} $ es un \textbf{difeomorfismo} si es un homeomorfismo diferenciable con inversa diferenciable. Si estas aplicaciones son $\displaystyle r $ veces continuamente diferenciables decimos que $\displaystyle f $ es un $\displaystyle \mathcal{C}^{1} $\textbf{-difeomorfismo}. 
+\end{definition}
+\begin{prop}
+Sean $\displaystyle G, U \subset \R^{n} $ abiertos y sea $\displaystyle \varphi: G \to U $ un $\displaystyle \mathcal{C}^{1} $-difeomorfismo. Entonces para cada $\displaystyle E \subset G $ medible Jordan tal que $\displaystyle \overline{E}\subset G $ tenemos que $\displaystyle \varphi\left(E\right) $ es medible Jordan y
+\[v\left(\varphi\left(E\right)\right)=\int _{E} \left|\det J\varphi\left(x\right)\right| \; dx .\]
+\end{prop}
+\begin{theorem}[Teorema del cambio de variable]
+Sean $\displaystyle G, U \subset \R^{n} $ abiertos y sea $\displaystyle \varphi : G \to U $ un $\displaystyle \mathcal{C}^{1} $-difeomorfismo. Sea $\displaystyle A \subset U $ tal que $\displaystyle \overline{A}\subset U $ y sea $\displaystyle f : A \to \R $ integrable en $\displaystyle A $ \footnote{Suponemos también que $\displaystyle A $ es medible Jordan.}. Entonces $\displaystyle E :=\varphi^{-1}\left(A\right) $ es medible Jordan, $\displaystyle \left(f\circ\varphi\right) \left|\det J\varphi\right| $ es integrable en $\displaystyle E $ y
+\[\int _{A}f =\int _{E}\left(f\circ \varphi\right)\left(x\right) \left|\det J\varphi\left(x\right)\right| \; dx .\]
+\end{theorem}
+\begin{observation}[Teorema de la función inversa]
+Por el teorema de la función inversa tenemos que si $\displaystyle \varphi: G \to U $ es biyectiva y es $\displaystyle \mathcal{C}^{1} $, la condición necesaria y suficiente para que sea $\displaystyle \mathcal{C}^{1} $-difeomorfismo es que $\displaystyle \det J\varphi\left(x\right)\neq 0 $, $\displaystyle \forall x \in G $. 
+\end{observation}
+\begin{eg}
+	Dado $\displaystyle A = \left\{ \left(x,y\right) \in \R^{2} \; : \; x\geq 0,\; y \leq 0, \; y \geq x - 1\right\}  $ calculamos
+	\[\int _{A}e^{\frac{x+y}{x-y}} \; dx \; dy .\]
+	Hacemos el cambio de variable 
+	\[
+	\begin{cases}
+	u = x + y \\
+	v = x-y
+	\end{cases}
+	\iff 
+\begin{cases}
+x = \frac{u + v}{2} \\
+y = \frac{u-v}{2}
+\end{cases}
+.\]
+Así, tenemos que $\displaystyle \varphi : \R^{2}\to \R^{2} : \left(u,v\right) \to \left(\frac{u+v}{2}, \frac{u-v}{2}\right) $ y $\displaystyle \varphi^{-1} : \R^{2} \to \R^{2} : \left(x,y\right) \to \left(x+y, x-y\right) $. Por otro lado,
+\[J\varphi\left(u,v\right) = \begin{pmatrix} \frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & - \frac{1}{2} \end{pmatrix} \Rightarrow \det J\varphi\left(u,v\right)=-\frac{1}{2} .\]
+Así, podemos aplicar el teorema de cambio de variable y tenemos que 
+\[\int _{A}e^{\frac{x+y}{x-y}} \; dx \; dy = \frac{1}{2}\int _{\varphi^{-1}\left(A\right)}e^{\frac{u}{v}} \; du \; dv .\]
+
+\end{eg}
+\subsection{Cambios lineales}
+Sea $\displaystyle L : \R^{n}\to \R^{n} $ lineal con $\displaystyle \det L \neq 0 $, entonces $\displaystyle L  $ es un $\displaystyle \mathcal{C}^{\infty} $-difeomorfismo. Si $\displaystyle A \subset \R^{n} $ es medible Jordan y $\displaystyle f : A \to \R $ es integrable en $\displaystyle A $, entonces 
+\[\int _{A}f =\int _{L^{-1}\left(A\right)}f\left(L\left(x\right)\right) \left|\det L\right| \; dx = \left|\det L\right|\int _{L^{-1}\left(A\right)}f\left(L\left(x\right)\right) \; dx .\]
+\begin{eg}
+Profundicemos más en el ejemplo anterior, donde cogimos $\displaystyle L\left(u,v\right)=\left(\frac{u+v}{2}, \frac{u-v}{2}\right) $ y $\displaystyle \det L = - \frac{1}{2} $. Tenemos que 
+\[y = x-1 \rightarrow \frac{1}{2}\left(u-v\right)=\frac{1}{2}\left(u+v\right)-1\iff u - v=u + v-2 \iff v = 1 .\]
+\[x = 0 \rightarrow \frac{1}{2}\left(u+v\right)=0 \iff v = -u.\]
+\[y = 0 \rightarrow \frac{1}{2}\left(u-v\right)=0 \iff v = u .\]
+Así, la integral nos queda
+\[\int _{A}e^{\frac{x+y}{x-y}} \; dx \; dy = \frac{1}{2}\int _{L^{-1}\left(A\right)}e^{\frac{u}{v}} \; du \; dv = \frac{1}{2}\int^{1}_{0} \int^{v}_{-v} e^{\frac{u}{v}} \; du \; dv .\]
+\end{eg}
+\subsection{Cambio a coordenadas polares}
+En $\displaystyle \R^{2} $ tomamos $\displaystyle x = \rho\cos\theta $ e $\displaystyle y = \rho\sin\theta $, de forma que 
+\[\varphi : \R^{2}\to \R^{2} : \left(\rho, \theta\right)\to \left(\rho\cos\theta, \rho\sin\theta\right) .\]
+Tenemos que $\displaystyle \varphi $ es clase $\displaystyle \mathcal{C}^{\infty} $ en $\displaystyle \R^{2} $ pero no es inyectiva en $\displaystyle \R^{2} $. Por tanto, redefinimos $\displaystyle \varphi $ de forma que
+\[\varphi : \left(0,\infty\right)\times\left(0, 2\pi \right)\to \R^{2} / \left\{ \left(x,0\right) \; : \; x \geq 0\right\}  ,\]
+por lo que $\displaystyle G = \left(0,\infty\right)\times \left(0,2\pi \right) $ y $\displaystyle U = \R / \left\{ \left(x,0\right) \; : \; x \geq 0\right\}  $ son abiertos de $\displaystyle \R^{2} $. Como 
+\[\det J\varphi\left(\rho, \theta \right)= \begin{vmatrix} \cos\theta & \rho\sin\theta \\ \sin\theta & \rho\cos\theta \end{vmatrix} =\rho\cos^{2}\theta + \rho\sin ^{2}\theta = \rho >0,\; \forall\left(\rho, \theta\right)\in G\]
+tenemos que $\displaystyle \varphi $ es un $\displaystyle \mathcal{C}^{\infty} $-difeomorfismo en $\displaystyle G $ y $\displaystyle U $. \\
+Aunque no estamos en las condiciones del TCV sí se cumple que si $\displaystyle A \subset \R^{2} $ es medible Jordan y $\displaystyle f : A \to \R $ es integrable en $\displaystyle A $, entonces
+\[\int _{A}f =\int _{E}f\left(\rho\cos\theta, \rho\sin\theta\right)\rho \; d\rho\; d\theta, \; E = \varphi^{-1}\left(A\right)\subset[0,\infty)\cup\left[0,2\pi \right]  .\]
+Esto lo comprobaremos en el siguiente ejemplo.
+\begin{observation}
+	Si $\displaystyle f : A \to \R $ es integrable en $\displaystyle A $ medible Jordan y $\displaystyle \left\{ A_{r} \; : \; r \in \left(0, r_{0}\right)\right\}  $ es una familia creciente de subconjuntos de $\displaystyle A $ medible Jordan tal que $\displaystyle v\left(A/A_{r}\right)\xrightarrow{r\to 0^{+}} 0$, entonces
+	\[\int _{A}f =\lim_{r \to 0^{+}}\int _{A_{r}}f  .\]
+En efecto, 
+\[ \left|\int _{A}f -\int _{A_{r}}f \right|= \left|\left(\int _{A_{r}}f +\int _{A/A_{r}}f \right)-\int _{A_{r}}f \right|= \left|\int _{A/A_{r}}f \right|\leq \int _{A/A_{r}} \left|f\right| \leq 2Mv\left(A/A_{r}\right)\to 0 ,\]
+siendo $\displaystyle M $ la cota de $\displaystyle f $ en $\displaystyle A $. 
+\end{observation}
+\begin{eg}
+	Dado $\displaystyle A = \left\{ \left(x,y\right)\in \R^{2} \; : \; x^{2}+y^{2} \leq 3\right\}  $, calculemos 
+	\[\int _{A}x^{2}+y^{2} \; dx \; dy .\]
+	Para cada $\displaystyle r \in \left(0,1\right) $ consideramos $\displaystyle A_{r} $ como se muestra en la imagen.
+	% añadir imagen
+	De esta forma tenemos que $\displaystyle A_{r} $ es medible Jordan $\displaystyle \forall r \in \left(0,1\right) $ y $\displaystyle v\left(A/A_{r}\right)\to 0 $. Además, $\displaystyle \overline{A}_{r}=A_{r}\subset U = \R^{2}/ \left\{ \left(x,0\right) \; : \; x \geq 0\right\} $. De esta forma
+\[
+\begin{split}
+	\int _{A}f = &\lim_{r \to 0^{+}}\int _{A_{r}}x^{2}+y^{2} \; dx \; dy = \lim_{r \to 0^{+}}\int _{\varphi^{-1}\left(A\right)}\rho^{2}\rho \; d\rho \; d\theta \\
+	= & \lim_{r \to 0^{+}}\int^{\sqrt{3}}_{r}\int^{2\pi - r}_{r} \rho^{3} \; d\theta   \; d\rho = \int^{\sqrt{3}}_{0} \int^{2\pi }_{0} \rho^{3} \; d\theta  \; d\rho.
+\end{split}
+\]
+\end{eg}
+\begin{eg}
+	Consideremos $\displaystyle A = \left\{ \left(x,y\right) \in \R^{2} \; : \; x^{2} +y^{2}\leq 1\right\}  $. Tenemos que 
+	\[v\left(A\right)=\int _{A} \; dx\; dy = \int^{1}_{-1} \int^{\sqrt{1-x^{2}}}_{-\sqrt{1-x^{2}}}  \; dy \; dx = \int^{1}_{-1} 2\sqrt{1-x^{2}} \; dx=\pi .\]
+Intentemos resolver el problema pero esta vez con un cambio de variable:
+\[v\left(A\right) = \int^{2\pi }_{0} \int^{1}_{0} \rho \; d\rho \; d\theta=\int^{2\pi }_{0} \frac{1}{2} \; d\theta = \pi .\]
+Podemos ver que hemos obtenido el mismo valor por los dos métodos.
+\end{eg}
+
+\subsection{Cambio a coordenadas cilíndricas}
+Todo punto $\displaystyle p =\left(x,y,z\right)\in \R^{3} $ se puede expresar en coordenadas cilíndricas $\displaystyle \left(\rho, \theta, z\right) $. Tendremos que $\displaystyle \left(\rho, \theta \right) $ son las coordandas polares de la proyección de $\displaystyle p $ sobre el plano $\displaystyle XY $. De esta forma, la relación entre las coordenadas cartesianas y las cilíndricas es
+\[
+\begin{cases}
+x = \rho\cos\theta \\
+y = \rho\sin\theta \\
+z = z
+\end{cases}
+.\]
+Sea $\displaystyle g : \R^{3}\to \R^{3} : \left(\rho, \theta, z\right)\to \left(\rho\cos\theta, \rho\sin\theta, z\right) $. Tenemos que $\displaystyle g $ es $\displaystyle \mathcal{C}^{\infty} $, pero no es inyectiva. Sin embargo, sí es inyectiva en $\displaystyle G = \left(0,\infty\right)\times \left(0,2\pi \right) \times \R $. Además, 
+\[g\left(\left(0,\infty\right)\times \left(0,2\pi \right)\times \R\right)=\R^{3} / \left\{ \left(x,0,z\right) \; : \; x \geq 0\right\} =U ,\]
+que es abierto. Tenemos que 
+\[\det Jg\left(\rho, \theta, z\right)=\begin{vmatrix} \cos\theta & -\rho\sin\theta & 0 \\ \sin\theta & \rho\cos\theta & 0 \\ 0 & 0 & 1 \end{vmatrix} =\rho > 0, \; \forall \left(\rho, \theta, z\right)\in G .\]
+Por tanto, $\displaystyle g $ es un $\displaystyle \mathcal{C}^{1} $-difeomorfismo entre $\displaystyle G $ y $\displaystyle U $. \\
+Razonando como hicimos con las coordenadas polares podemos ver que si $\displaystyle A \subset \R^{3} $ es medible Jordan y $\displaystyle f : A \to \R $ es integrable en $\displaystyle A $, entonces
+\[\int _{A}f\left(x,y,z\right) \; dx \; dy \; dz = \int _{E}f\left(\rho\cos\theta, \rho\sin\theta, z\right)\rho \; d\rho \; d\theta \; dz, \; E =g^{-1}\left(A\right) \subset [0,\infty) \times \left[0,2\pi \right] \times \R .\]
+\begin{eg}
+	Dado $\displaystyle A = \left\{ \left(x,y,z\right)\in \R^{3} \; : \; x^{2}+y^{2}\leq 2, \; 1 \leq z \leq 3\right\}  $, calculemos
+	\[\int _{A}x^{2}+y^{2}+z \; dx \; dy \; dz .\]
+	Tendremos que 
+	\[
+	\begin{split}
+		\int _{A}x^{2}+y^{2}+z \; dx \; dy \; dz = & \int _{E}\left(\rho^{2}+z\right)\rho \; d\rho \; d\theta \; dz = \int^{\sqrt{2}}_{0} \int^{2\pi }_{0} \int^{3}_{1} \left(\rho^{2}+z\right)\rho \; d\rho \; d\theta  \; dz.
+	\end{split}
+	\]
+\end{eg}
+\subsection{Cambio a coordenadas esféricas}
+Todo punto $\displaystyle p = \left(x,y,z\right)\in \R^{3} $ se puede expresar en coordenadas esféricas $\displaystyle \left(\rho, \theta, \varphi\right) $ donde 
+\begin{itemize}
+\item $\displaystyle \rho $ es la distancia de $\displaystyle p $ al origen de coordenadas.
+\item $\displaystyle \theta $ es el ángulo que forma el semieje positivo $\displaystyle OX $ con la proyección de $\displaystyle p $ sobre el plano $\displaystyle XY $. 
+\item $\displaystyle \varphi $ es el ángulo que forma el semieje positivo de $\displaystyle OZ $ con el segmento $\displaystyle OP $.
+\end{itemize}
+De esta forma, las ecuaciones de cambio de variable son
+\[
+\begin{cases}
+x = \rho\cos\theta\sin\varphi \\
+y = \rho\sin\theta\sin\varphi \\
+z = \rho\cos\varphi
+\end{cases}
+.\]
+Sea $\displaystyle g : \R^{3}\to \R^{3} : \left(\rho, \theta, \varphi\right)\to \left(\rho\cos\theta \sin\varphi, \rho \sin\theta \sin\varphi, \rho\cos\varphi\right)$. Tenemos que $\displaystyle g $ es $\displaystyle \mathcal{C}^{\infty} $ en $\displaystyle \R^{3} $ pero no es inyectiva. Sin embargo, sí es inyectiva en $\displaystyle G = \left(0,\infty\right)\times \left(0,2\pi \right)\times\left(0,\pi \right) $ y
+\[g\left(G\right)=g\left(\left(0,\infty\right)\times\left(0,2\pi \right)\times \left(0,\pi \right)\right)=\R^{3} / \left\{ \left(x,0,z\right) \; : \; x \geq 0\right\} =U .\]
+Podemos ver que tanto $\displaystyle G $ como $\displaystyle U $ son abiertos. Por otro lado,
+\[\det Jg\left(\rho, \theta, \varphi\right)=\begin{vmatrix} \cos\theta \sin\varphi & -\rho\sin\theta \sin\varphi & \rho\cos\theta \sin\varphi \\ \sin\theta \sin\varphi & \rho\cos\theta \sin\varphi & \rho\sin\theta \cos\varphi \\ \cos\varphi & 0 & -\rho \sin\varphi \end{vmatrix} =\rho^{2}\sin\varphi>0, \; \forall \left(\rho, \theta, \varphi\right)\in G .\]
+Nuevamente, si razonamos como hicimos en el cambio de variable a coordenadas polares, tenemos que si $\displaystyle A \subset \R^{3} $ es medible Jordan y $\displaystyle f : A \to \R $ es integrable en $\displaystyle A $, entonces $\displaystyle  $ 
+\[ \int _{A}f\left(x,y,z\right) \; dx \; dy \; dz = \int _{E}f\left(\rho\cos\theta \sin\varphi, \rho \sin\theta \sin\varphi, \rho \cosvarphi\right) \rho^{2}\sin\varphi \; d\rho \; d\theta \; d\varphi,\]
+con $\displaystyle E =g^{-1}\left(A\right)\subset [0,\infty) \times (0,2\pi] \times \left[0,\pi \right]  $. 
+\begin{eg}
+	Sea $\displaystyle A = \left\{ \left(x,y,z\right)\in \R^{3} \; : \; 1 \leq x^{2}+y^{2}+z^{2}\leq 2\right\}  $, entonces
+	\[
+	\begin{split}
+		\int _{A}\sqrt{x^{2}+y^{2}+z^{2}} \; dx \; dy \; dz = & \int _{E}\rho \rho^{2}\sin\varphi \; d\rho \; d\theta \; d\varphi = \int^{\sqrt{2}}_{1} \int^{2\pi }_{0} \int^{\pi }_{0} \rho^{3}\sin\varphi \; d\varphi \; d\theta  \; d\rho .
+	\end{split}
+	\]
+	
+\end{eg}
+\subsection{Otras aplicaciones del TCV}
+  
+\begin{prop}
+Si $\displaystyle A \subset \R^{3} $ es simétrico respecto al plano $\displaystyle y = 0 $ y $\displaystyle f : A \to \R $ es integrable en $\displaystyle A $ e impar en la variable $\displaystyle y $, es decir, $\displaystyle f\left(x,-y,z\right)=-f\left(x,y,z\right) $, entonces $\displaystyle \int _{A}f =0 $.
+\end{prop}
+\begin{proof}
+Tenemos que $\displaystyle A $ es simétrico respecto del plano $\displaystyle y = 0 $ si y solo si se cumple que 
+\[\left(x,y,z\right)\in A \iff \left(x,-y,z\right)\in A .\]
+De esta forma, tenemos que $\displaystyle A = A_{1}\cup A_{2} $ con 
+\[ A_{1}= A \cap \left\{ \left(x,y,z\right) \; : \; y \geq 0\right\} \quad \text{y} \quad A_{2}= A \cap \left\{ \left(x,y,z\right) \; : \; y \leq 0\right\} .\]
+Tomamos $\displaystyle L : \R^{3}\to \R^{3} : \left(x,y,z\right)\to \left(x,-y,z\right) $ que es lineal y además
+\[\det L = \begin{vmatrix} 1 & 0 & 0 \\ 0 & - 1 & 0 \\ 0 & 0 & 1 \end{vmatrix} =-1 .\]
+Tenemos que $\displaystyle A_{2}=L\left(A_{1}\right) $, por lo que 
+\[
+\begin{split}
+	\int _{A}f = &\int _{A_{1}}f +\int _{A_{2}}f =\int _{A_{1}}f +\int _{L^{-1}\left(A\right)}f\left(L\left(x,y,z\right)\right) \left| \det L\right|= \int _{A_{1}}f +\int _{A_{1}}f\left(x,-y,z\right) \\
+	= & \int _{A_{1}}f +\int _{A_{1}}-f =\int _{A_{1}}f -\int _{A_{1}}f =0.
+\end{split}
+\]
+\end{proof}
+\begin{observation}
+Análogamente, se puede demostrar que si $\displaystyle f $ es par en la variable $\displaystyle y $, esto es $\displaystyle f\left(x,-y,z\right)=f\left(x,y,z\right) $, entonces 
+\[\int _{A}f =2\int _{A_{1}}f .\]
+\end{observation}
+Otra aplicación de la integral es calcular la masa de un sólido conociendo la función de densidad por unidad de volumen.
+\begin{definition}[Centro de masas]
+El \textbf{centro de gravedad} o \textbf{centro de masas} de $\displaystyle S $ es, si $\displaystyle S \subset \R^{2} $ y $\displaystyle \rho : \R^{2}\to \R $ es su función de densidad
+\[\left(x_{0}, y_{0}\right)=\frac{1}{masa\left(S\right)}\left(\int _{S}x\rho\left(x,y\right) \; dx \; dy, \int _{S}y\rho\left(x,y\right) \; dx \; dy\right) .\]
+Análogamente, si $\displaystyle S \subset \R^{3} $ tendremos que su centro de masa será
+\[\left(x_{0}, y_{0}, z_{0}\right)=\frac{1}{masa\left(S\right)}\left(\int _{S}x\rho\left(x,y,z\right) \; dx \; dy \; dz, \int _{S}y\rho\left(x,y,z\right) \; dx \; dy \; dz, \int _{S}z\rho\left(x,y,z\right) \; dx \; dy \; dz\right) .\]
+\end{definition}
+
+\begin{eg}
+Calculemos la masa y el centro de masa de una placa con forma circular de radio 1 y 2 y densidad $\displaystyle \frac{1}{r^{2}} $, en los puntos que distan $\displaystyle r $ del centro. Sea $\displaystyle \rho $ la función de densidad
+\[\rho\left(x,y\right)=\frac{1}{x^{2}+y^{2}} .\]
+Tenemos que la masa será
+\[masa\left(S\right) = \int _{S} \rho\left(x,y\right)\; dx \; dy=\int _{S}\frac{1}{x^{2}+y^{2}} \; dx \; dy = \int^{2}_{1} \int^{2\pi }_{0} \frac{1}{\rho^{2}}\rho \; d\theta  \; d\rho = 2\pi \ln 2 .\]
+Por otro lado, el centro de masa de $\displaystyle S $ será
+\[\left(x_{0}, y_{0}\right)=\frac{1}{masa\left(S\right)}\left(\int _{S}\frac{x}{x^{2}+y^{2}} \; dx \; dy, \int _{S}\frac{y}{x^{2}+y^{2}} \; dx \; dy\right) .\]
+Como $\displaystyle f\left(x,y\right)=\frac{x}{x^{2}+y^{2}} $ es impar respecto al eje $\displaystyle x $ y $\displaystyle S $ es simétrico respecto de la recta $\displaystyle x = 0 $, tenemos que 
+\[x_{0} = \int _{S}\frac{x}{x^{2}+y^{2}} \; dx \; dy = 0 .\]
+De forma análoga podemos ver que $\displaystyle y_{0} = \int _{S}\frac{y}{x^{2}+y^{2}} \; dx \; dy = 0 $. Así, el centro de masa es $\displaystyle \left(x_{0}, y_{0}\right)=\left(0,0\right) $. 
+\end{eg}
+\begin{observation}
+Si no nos dan la función de densidad se sobreentiende que es la constante 1. En este caso el centro de gravedad de $\displaystyle S \subset \R^{2} $ será
+\[\left(x_{0}, y_{0}\right)=\frac{1}{v\left(S\right)}\left(\int _{S}x \; dx \; dy, \int _{S}y \; dx \; dy\right) .\]
+\end{observation}
+
+
+
 \begin{theorem}[Teorema de cambio de variable]
 Sea $\displaystyle A \subset \R^{n} $ un abierto medible Jordan y sea $\displaystyle g : A \to \R^{n} $ es un $\displaystyle \mathcal{C}^{1} $-difeomorfismo sobre su imagen $\displaystyle B = g\left(A\right) $, con $\displaystyle B $ abierto medible Jordan \footnote{Por ser $\displaystyle g $ difeomorfismo se cumple que $\displaystyle \det\left(Jg\right)\neq 0 $.}. Supongamos que existen $\displaystyle M, m > 0 $ con $\displaystyle 0 < m < M $ tal que 
 \[ m \leq \left|\det Jg\left(t\right)\right| \leq M , \; \forall t \in A.\]
@@ -163,22 +428,11 @@ Supongamos que $\displaystyle f $ es integrable en $\displaystyle B $. Entonces,
 es integrable en $\displaystyle A $ y 
 \[\int _{B}f \; dx = \int _{A}f\left(g\left(t\right)\right) \left|\det Jg\right| \; dt .\]
 \end{theorem}
-\subsection{Coordenadas cilíndricas}
-\begin{definition}[Coordenadas cilíndricas]
-Las \textbf{coordenadas cilíndricas} se definen de la forma
-\[x = \rho\cos\theta, \quad y=\rho\sin\theta, \quad z = z ,\]
-con $\displaystyle \rho \in \R^{+} $ y $\displaystyle \theta \in \left[0,2\pi \right]  $. Para deshacer el cambio,
-\[\rho=\sqrt{x^{2}+y^{2}} \quad \text{y} \quad \theta = \arctan\left(\frac{y}{x}\right) .\]
-\end{definition}
-% Adjuntar imagen
-\subsection{Coordenadas esféricas}
-\begin{definition}[Coordenadas esféricas]
-Las \textbf{coordenadas esféricas} se definen de la forma
-\[x = r\sin\varphi\cos\theta, \quad y = r\sin\varphi\sin\theta, \quad z = r\cos\varphi .\]
-\end{definition}
 
-% Adjuntar imagen
 \section{Integrales impropias}
+\begin{observation}
+Suponemos siempre en esta sección que $\displaystyle D\left(f\right) $ tiene medida nula, puesto que para los tipos de convergencia que vamos a ver esta es la necesaria para que $\displaystyle f $ sea integrable.
+\end{observation}
 \begin{definition}
 	Sea $\displaystyle f : \R^{n} \to \R $, con $\displaystyle f \geq 0 $, tal que $\displaystyle f $ es integrable en $\displaystyle \left[-m,m\right] ^{n} $, $\displaystyle \forall m \in \N $. Decimos que $\displaystyle f $ es \textbf{integrable} (en el sentido impropio) si existe
 	\[ \int _{\R^{n}}f :=\lim_{m \to \infty}\int _{\left[-m,m\right] ^{n}}f <\infty.\]
@@ -330,8 +584,33 @@ Diremos que $\displaystyle f $ es \textbf{integrable impropia} si para cada $\di
 	\end{cases}
 	.\]
 \end{eg}
+\begin{prop}
+	Supongamos que $\displaystyle f \geq 0 $ no acotada en $\displaystyle \R^{n} $ y $\displaystyle D\left(f\right) $ tiene medida nula. Si $\displaystyle \left\{ A_{\epsilon }\right\} _{\epsilon > 0} $ es una familia de subconjuntos de $\displaystyle \R^{n} $ que son medibles Jordan y tales que $\displaystyle f $ está acotada en cada $\displaystyle A_{\epsilon } $ y $\displaystyle v\left(\R^{n}/A_{\epsilon }\right)\xrightarrow{\epsilon \to 0^{+}} 0$, entonces
+	\[\int _{\R^{n}}f =\lim_{\epsilon  \to 0^{+}}\int _{A_{\epsilon }}f  .\]
+\end{prop}
+\begin{proof}
+Por definición tenemos que 
+\[\int _{\R^{n}}f =\lim_{M \to \infty}\int _{\R^{n}}f_{M} .\]
+Veamos que 
+\[\lim_{M \to \infty}\int _{\R^{n}} f_{M} = \lim_{\epsilon  \to 0^{+}}\int _{A_{\epsilon }}f .\]
+Llamamos $\displaystyle L_{1} $ al primer límite y $\displaystyle L_{2} $ al segundo. Es fácil comprobar que ambos límites existen (finitos o no), puesto que $\displaystyle M \to \int _{\R^{n}}f_{M}  $ y $\displaystyle \epsilon \to \int _{A_{\epsilon }}f  $ son crecientes. Sea $\displaystyle M > 0 $, entonces
+\[\int _{\R^{n}}f_{M} =\int _{A_{\epsilon }}f_{M} +\int _{\R^{n}/A_{\epsilon }}f_{M} \leq \int _{A_{\epsilon }}f +\int _{\R^{n}/A_{\epsilon }} f \leq \int _{A_{\epsilon }}f +Mv\left(\R^{n}/A_{\epsilon }\right), \; \forall \epsilon > 0 .\]
+De esta forma, tenemos que 
+\[\int _{\R^{n}}f \leq \lim_{\epsilon  \to 0^{+}}\left(\int _{A_{\epsilon }}f +Mv\left(\R^{n}/A_{\epsilon }\right)\right)=L_{2}+0=L_{2} .\]
+Por tanto, $\displaystyle L_{1}\leq L_{2} $. Por otro lado, sea $\displaystyle \epsilon > 0 $, como $\displaystyle f $ está acotada en $\displaystyle A_{\epsilon } $, existe $\displaystyle M_{\epsilon } >0 $ tal que $\displaystyle 0 \leq f\left(x\right)\leq M_{\epsilon } $, $\displaystyle \forall x \in A_{\epsilon } $, por lo que
+\[\int _{A_{\epsilon }}f =\int _{A_{\epsilon }}f_{M_{\epsilon }} \leq \int _{\R^{n}}f_{M_{\epsilon }} \leq L_{1} .\]
+Como $\displaystyle \int _{A_{\epsilon }}f \leq L_{1} $, $\displaystyle \forall \epsilon > 0 $, tenemos que $\displaystyle L_{2}\leq L_{1} $, por lo que $\displaystyle L_{2}=L_{1} $. 
+\end{proof}
+\begin{observation}
+Esta proposición también si sustituimos $\displaystyle \R^{n} $ por un conjunto $\displaystyle A $ medible Jordan.
+\end{observation}
+
 \begin{prop}[Criterio de comparación]
-Sean $\displaystyle f,g : \R^{n} \to \R $ con $\displaystyle 0\leq f\leq g $ no necesariamente acotadas y $\displaystyle g $ integrable en $\displaystyle \R^{n} $. Entonces, $\displaystyle f $ es integrable en $\displaystyle \R^{n} $. 
+Sean $\displaystyle f,g : \R^{n} \to \R $ con $\displaystyle 0\leq f\leq g $ con $\displaystyle m\left(D\left(f\right)\right)=m\left(D\left(g\right)\right)=0 $, no necesariamente acotadas. 
+\begin{enumerate}
+\item Si $\displaystyle \int _{\R^{n}}g  $ converge, entonces $\displaystyle \int _{\R^{n}}f  $ converge.
+\item Si $\displaystyle \int _{\R^{n}}f  $ diverge, entonces $\displaystyle \int _{\R^{n}}g $ diverge.
+\end{enumerate}
 \end{prop}
 Para extender la definición de integral impropia a funciones más generales (concretamente las que no cumplen que $\displaystyle f \geq 0 $), no podemos dar la misma definición puesto que da problemas.
 Dada $\displaystyle f : \R^{n} \to \R $ con $\displaystyle D\left(f\right) $ tiene medida nula, consideramos las funciones
@@ -347,15 +626,11 @@ f\left(x\right), \; f\left(x\right)\geq 0 \\
 -f\left(x\right), \; f\left(x\right)<0
 \end{cases}
 .\]
-Claramente, tendremos que $\displaystyle f = f^{+}-f^{-} $. Decimos que $\displaystyle f $ es integrable en $\displaystyle \R^{n} $ si $\displaystyle f^{+} $ y $\displaystyle f^{-} $ son integrables en $\displaystyle \R^{n} $. Así, 
-\[\int _{\R^{n}}f :=\int _{\R^{n}}f^{+} -\int _{\R^{n}}f^{-}  .\]
+Claramente, tendremos que $\displaystyle f = f^{+}-f^{-} $. 
 \begin{definition}[Integral impropia para funciones no positivas]
-Dada $\displaystyle f : \R^{n} \to \R $ con $\displaystyle D\left(f\right) $ medida nula. % Terminar la definición.
+Dada $\displaystyle f : \R^{n} \to \R $ con $\displaystyle D\left(f\right) $ medida nula, decimos que $\displaystyle f $ es integrable en $\displaystyle \R^{n} $ si $\displaystyle f^{+} $ y $\displaystyle f^{-} $ son integrables en $\displaystyle \R^{n} $. Así, 
+\[\int _{\R^{n}}f :=\int _{\R^{n}}f^{+} -\int _{\R^{n}}f^{-}  .\]. % Terminar la definición.
 \end{definition}
-
-\begin{observation}
-Suponemos siempre en esta sección que $\displaystyle D\left(f\right) $ tiene medida nula.
-\end{observation}
 \begin{prop}
 Dada $\displaystyle f : \R^{n} \to \R $ con $\displaystyle D\left(f\right) $ medida nula, tendremos que $\displaystyle f $ es integrable si y solo si $\displaystyle \left|f\right| $ es integrable.
 \end{prop}
@@ -399,16 +674,192 @@ Como $\displaystyle f $ es integrable, $\displaystyle f^{+} $ es integrable por 
 % Hay que tener cuidado y revisar el signo de $\displaystyle \alpha  $ y $\displaystyle f- $ . 
 \end{enumerate}
 \end{proof}
+\begin{prop}[Monotonía]
+	Si $\displaystyle f, g : \R^{n}\to \R $ son integrables en $\displaystyle \R^{n} $ y $\displaystyle f \leq g $, $\displaystyle \forall x \in \R^{n} $, entonces
+	\[\int _{\R^{n}}f \leq \int _{\R^{n}}g .\]
+\end{prop}
+\begin{observation}
+Es fácil comprobar que con todas las definiciones de integral impropia que hemos dado se cumple la aditividad respecto al recinto de integración, esto es, si $\displaystyle A \subset \R^{n} $ cumple que $\displaystyle m\left(\partial A\right)=0 $ y $\displaystyle A = A_{1}\cup A_{2} $ con $\displaystyle A_{1} $ y $\displaystyle A_{2} $ disjuntos (o $\displaystyle m\left(A_{1}\cap A_{2}\right)=0 $) y tales que $\displaystyle m\left(\partial A_{1}\right)=m\left(\partial A_{2}\right)=0 $, entonces $\displaystyle f : A \to \R $ es integrable en $\displaystyle A $ si y solo si lo es en $\displaystyle A_{1} $ y en $\displaystyle A_{2} $, y en este caso
+\[\int _{A}f =\int _{A_{1}}f +\int _{A_{2}}f .\]
+\end{observation}
+\begin{eg}
+Consideremos los siguientes conjuntos:
+\[D = \left\{ \left(x,y\right) \in \R^{2} \; : \; x^{2}+y^{2}\leq 1\right\} , \; T = \left\{ \left(x,y\right)\in \R^{2} \; : \; x,y \geq 0, \; y + x\leq 1\right\}    .\]
+\[ C = \left\{ \left(x,y\right)\in \R^{2} \; : \; 0\leq x,y\leq 1\right\}.\]
+\begin{enumerate}
+	\item Estudiemos la convergencia de $\displaystyle \int _{D}\frac{1}{x^{2}+y^{2}} \; dx \; dy $. Tenemos que $\displaystyle f $ es continua en $\displaystyle D/ \left\{ \left(0,0\right)\right\}  $ y en es acotada en $\displaystyle D $. Como $\displaystyle f $ es continua en $\displaystyle D/ \left\{ \left(0,0\right)\right\}  $ y $\displaystyle D $ es medible Jordan, tenemos que $\displaystyle m\left(D\left(\tilde{f}\right)\right)=0 $. Por otro lado, $\displaystyle f \geq 0 $ en $\displaystyle D $. 
+		Para $\displaystyle \epsilon \in \left(0,1\right) $ tomamos $\displaystyle D_{\epsilon }:=D/B\left(\left(0,0\right), \epsilon \right) $. Como $\displaystyle f $ es continua en $\displaystyle D_{\epsilon } $ que es compacto, tenemos que $\displaystyle f $ es acotada en $\displaystyle D_{\epsilon } $. Además, $\displaystyle v\left(D/D_{\epsilon }\right)\xrightarrow{\epsilon \to 0}0 $, por lo que
+\[\int _{D}f =\lim_{\epsilon  \to 0^{+}}\int _{D_{\epsilon }}\frac{1}{x^{2}+y^{2}} =\lim_{\epsilon  \to 0^{+}}\int^{2\pi }_{0} \int^{1}_{\epsilon } \frac{1}{\rho ^{2}}\rho \; d\rho \; d\theta = \lim_{\epsilon  \to 0^{+}}2\pi\left(\ln 1 - \ln \epsilon \right)=\infty .\]
+Así, la integral diverge. 	
+\item Estudiemos la convergencia de $\displaystyle \int _{T}\frac{1}{1-\left(x+y\right)} \; dx \; dy $. Tenemos que $\displaystyle f $ es continua en $\displaystyle T/ S $, siendo $\displaystyle S = T \cap \left\{ x+y = 1\right\}  $. Como $\displaystyle S $ es un segmento de $\displaystyle \R^{2} $ tenemos que $\displaystyle m\left(S\right)=0 $. Como $\displaystyle T $ es medible Jordan, $\displaystyle m\left(D\left(\tilde{f}\right)\right)=0 $. Podemos ver también que $\displaystyle f $ no es acotada en $\displaystyle T $ y $\displaystyle f \geq 0 $ en $\displaystyle T $. \\
+	Para cada $\displaystyle \epsilon \in \left(0,1\right) $ tomamos $\displaystyle T_{\epsilon }= \left\{ \left(x,y\right)\in T \; : \; x+y \leq 1-\epsilon \right\}  $. Claramente $\displaystyle f $ es continua en $\displaystyle T_{\epsilon } $ compacto, por lo que está acotada en $\displaystyle T_{\epsilon } $. Además, $\displaystyle v\left(T/T_{\epsilon }\right)\to0 $, por lo que 
+	\[\int _{T}f =\lim_{\epsilon  \to 0^{+}}\int _{T_{\epsilon }}f =\lim_{\epsilon  \to 0^{+}}\int^{1-\epsilon }_{0} \int^{1-\epsilon -x}_{0} \frac{1}{1-\left(x+y\right)} \; dy \; dx =\lim_{\epsilon  \to 0^{+}}-1-\epsilon\ln\epsilon + \epsilon.\]
+\end{enumerate}
+\end{eg}
+\begin{eg}
+	Estudiemos la convergencia de $\displaystyle \int _{\R^{2}} \left|\ln \left(x^{2}+y^{2}\right)\right| \; dx \; dy $. Tenemos que $\displaystyle f $ es continua en $\displaystyle \R^{2} / \left\{ \left(0,0\right)\right\}  $, por lo que $\displaystyle m\left(D\left(\tilde{f}\right)\right)=0 $. Además, $\displaystyle f $ no es acotada en $\displaystyle \R^{2} $ y $\displaystyle f \geq 0 $ en $\displaystyle \R^{2} $. \\
+Como $\displaystyle \lim_{\left(x,y\right) \to \infty}f\left(x,y\right)=\infty $, existe $\displaystyle r > 0 $ tal que $\displaystyle \left|\ln\left(x^{2}+y^{2}\right)\right|\geq 2 $, $\displaystyle \forall \left(x,y\right) $ con $\displaystyle \|\left(x,y\right)\| \geq r $. De esta forma, $\displaystyle 0 \leq 2 \leq \left|\ln\left(x^{2}+y^{2}\right)\right| $, $\displaystyle \forall \left(x,y\right)\in \R^{2} / B\left(\left(0,0\right), r\right) $. \\
+Como $\displaystyle h \equiv 2 $ no es integrable en $\displaystyle \R^{2} / B\left(\left(0,0\right), r\right) $, tenemos que por el criterio de comparación $\displaystyle f $ no es integrable en $\displaystyle \R^{2}/B\left(\left(0,0\right),r\right) $, por lo que no es integrable en $\displaystyle \R^{2} $. 
+\end{eg}
+\begin{eg}
+Estudiemos la convergencia de $\displaystyle \int _{\R^{2}}\cos\left(xy\right)e^{-\left(x^{2}+y^{2}\right)} \; dx \; dy $. Tenemos que $\displaystyle f $ es continua en $\displaystyle \R^{2} $ y es acotada en $\displaystyle \R^{2} $. Además,
+\[0\leq \left|f\left(x,y\right)\right|= \left|\cos\left(xy\right)e^{-\left(x^{2}+y^{2}\right)}\right|\leq e^{-\left(x^{2}+y^{2}\right)} .\]
+Como $\displaystyle \int _{\R^{2}}e^{-\left(x^{2}+y^{2}\right)} \; dx \; dy\leq \infty $, por el criterio de comparación $\displaystyle \left|f\right| $ es integrable en $\displaystyle \R^{2} $ y en consecuencia $\displaystyle f $ es integrable en $\displaystyle \R^{2} $ (la integral converge).
+\end{eg}
+\begin{eg}
+	Estudiemos la convergencia de $\displaystyle \int _{\R^{2}}\frac{1}{\left(x^{2}+y^{2}\right)^{\frac{3}{2}}} \; dx \; dy $. Tenemos que $\displaystyle f  $ es continua en $\displaystyle \R^{2} / \left\{ \left(0,0\right)\right\}  $ y es positiva. Además, es no acotada en $\displaystyle B\left(\left(0,0\right), 1\right) $, puesto que 
+	\[\lim_{\left(x,y\right) \to \left(0,0\right)}f\left(x,y\right) = \infty .\]
+Así, $\displaystyle f $ no es acotada en $\displaystyle \R^{2} $. Tenemos que
+\[0 \leq f\left(x,y\right)=\frac{1}{\left(x^{2}+y^{2}\right)^{\frac{3}{2}}}\leq 1, \; \forall \left(x,y\right)\in \R^{2} \; \text{con}\; \|\left(x,y\right)\| = \sqrt{x^{2}+y^{2}}\geq 1 .\]
+De esta forma, tendremos que $\displaystyle f $ es integrable en $\displaystyle \R^{2} $ si y solo si lo es en $\displaystyle B\left(\left(0,0\right), 1\right) $ y es integrable en $\displaystyle \R^{2} / B\left(\left(0,0\right), 1\right) $. Por un lado
+\[
+\begin{split}
+	\int _{B\left(\left(0,0\right), 1\right)}\frac{1}{\left(x^{2}+y^{2}\right)\frac{3}{2}} \; dx \; dy = & \lim_{\epsilon  \to 0^{+}}\int _{D_{\epsilon }}\frac{1}{\left(x^{2}+y^{2}\right)^{\frac{3}{2}}} \; dx \; dy =\lim_{\epsilon  \to 0^{+}}\int^{1}_{\epsilon } \int^{2\pi }_{0} \frac{1}{\rho^{2 \cdot \frac{3}{2}} } \rho\; d\theta  \; d\rho \\
+	= & \lim_{\epsilon  \to 0^{+}}2\pi\left(-1+\frac{1}{\epsilon }\right) = \infty.
+\end{split}
+\]
+Como $\displaystyle f $ no es integrable en $\displaystyle B\left(\left(0,0\right), 1\right) $ tenemos que tampoco lo es en $\displaystyle \R^{2} $. 
+\end{eg}
+\begin{observation}[Integración en $\displaystyle \R $]
 En el caso de $\displaystyle \R $, estudiamos funciones que cumplen que existe el límite
 \[\int^{\infty}_{a} f\left(x\right) =\lim_{m \to \infty}\int^{m}_{a} f\left(x\right) \; dx ,\]
 pero no existe 
 \[\int^{\infty}_{a} \left|f\left(x\right)\right| \; dx = \lim_{m \to \infty}\int^{m}_{a} \left|f\left(x\right)\right| \; dx .\]
-Así, podemos diferenciar entre funciones integrables pero no absolutamente integrables.
+Así, podemos diferenciar entre funciones \textbf{condicionalmente integrables} pero no \textbf{absolutamente integrables}.
+\end{observation}
+
 \begin{eg}
 La integral
 \[\int^{\infty}_{0} \frac{\sin x}{x} \; dx ,\]
-es convergente pero no absolutamente integrable. Esto se vio el año pasado en el curso de Análisis de Variable Real. Es necesario decir que esta función no es integrable en el sentido impropio con la definición que hemos dado.
+es condicionalmente convergente pero no absolutamente integrable. Esto se vio el año pasado en el curso de Análisis de Variable Real. Es necesario decir que esta función no es integrable en el sentido impropio con la definición que hemos dado. Sin embargo, existe
+\[\lim_{m \to \infty}\int^{m}_{0} \frac{\sin x}{x} \; dx ,\]
+pero no existe 
+\[\lim_{m \to \infty}\int^{m}_{0} \left|\frac{\sin x}{x}\right| \; dx .\]
 \end{eg}
+\section{Sucesiones de funciones}
+\begin{notation}[Convergencia uniforme de una sucesión de funciones]
+	Dado una sucesión de funciones $\displaystyle \left\{ f_{k}\right\} _{k \in \N} $, decíamos que $\displaystyle f_{k}\to f $ uniformemente en $\displaystyle A $ si para cada $\displaystyle \epsilon >0 $ existe $\displaystyle k_{0} \in \N $ tal que $\displaystyle \left|f_{k}\left(x\right)-f\left(x\right)\right|<\epsilon  $, $\displaystyle \forall k \geq k_{0} $, $\displaystyle \forall x \in A $. Esto es equivalente a 
+	\[\forall \epsilon > 0, \exists k_{0}\in \N, \sup_{x\in A} \left|f_{k}\left(x\right)-f\left(x\right)\right|<\epsilon, \; \forall k \geq k_{0} .\]
+\end{notation}
+
+\begin{theorem}
+	Sea $\displaystyle A \subset \R^{n} $ acotado y $\displaystyle \left\{ f_{k}\right\} _{k \in \N} $ una sucesión de funciones $\displaystyle f_{k}: A \to \R $, que son integrables en $\displaystyle A $. Si $\displaystyle \left\{ f_{k}\right\} _{k \in \N} $ converge uniformemente a una función en $\displaystyle f : A \to \R $, entonces $\displaystyle f $ es integrable en $\displaystyle A $ y
+	\[\int _{A}f =\lim_{k \to \infty}\int _{A}f_{k}  .\]
+\end{theorem}
+\begin{proof}
+	Como cada $\displaystyle f_{k} $ es integrable en $\displaystyle A $, por el teorema de Lebesgue tenemos que $\displaystyle m\left(D\left(\tilde{f}_{k}\right)\right)=0 $ y cada $\displaystyle f_{k} $ está acotada en $\displaystyle A $. Diremos que $\displaystyle D : = \bigcup_{k \in \N}D\left(\tilde{f}_{k}\right) $. \\
+	Podemos observar que como $\displaystyle f_{k}\to f $ uniformemente en $\displaystyle A $ y las $\displaystyle f_{k} $ son acotadas en $\displaystyle A $, entonces $\displaystyle f $ es acotada en $\displaystyle A $. Por otro lado, como $\displaystyle f_{k}\to f $ uniformemente en $\displaystyle A $, tendremos que $\displaystyle \tilde{f}_{k}\to \tilde{f} $ uniformemente en $\displaystyle \R^{n} $, por lo que $\displaystyle \tilde{f}_{k}\to \tilde{f} $ uniformemente en $\displaystyle \R^{n}/D $. \\
+	Como $\displaystyle \tilde{f}_{k} $ es continua en $\displaystyle \R^{n}/D $ y la convergencia es uniforme en $\displaystyle \R^{n}/D $, tenemos que $\displaystyle \tilde{f} $ es continua en $\displaystyle \R^{n}/D $, por lo que $\displaystyle D\left(\tilde{f}\right)\subset D $. \\
+	Ahora bien, $\displaystyle D $ tiene medida nula por ser unión numerable de conjuntos de medida nula, por lo que $\displaystyle m\left(D\left(\tilde{f}\right)\right)=0 $ y tenemos que por el teorema de Lebesgue $\displaystyle f $ es integrable en $\displaystyle A $. Sea $\displaystyle B \subset \R^{n} $ un rectángulo tal que $\displaystyle A \subset B $, tendremos que 
+	\[ \left|\int _{A}f -\int _{A}f_{k} \right|= \left|\int _{A}\left(f-f_{k}\right) \right|= \left|\int _{B} \left(\tilde{f}-\tilde{f}_{k}\right) \right|\leq v\left(B\right)\sup_{x\in A} \left|\tilde{f}-\tilde{f}_{k}\right| = v\left(B\right)\sup_{x\in A} \left|f-f_{k}\right| \to 0 .\]
+\end{proof}
+\begin{colorary}
+	Sea $\displaystyle A \subset \R^{n} $ acotado y $\displaystyle \left\{ f_{k}\right\} _{k \in \N} $ una sucesión de funciones integrables en $\displaystyle A $. Si $\displaystyle \sum^{\infty}_{k = 1}f_{k} $ converge uniformemente a una función $\displaystyle f $ en $\displaystyle A $, entonces $\displaystyle f $ es integrable en $\displaystyle A $ y
+	\[\int _{A}f =\int _{A}\sum^{\infty}_{k = 1}f_{k} =\sum^{\infty}_{k = 1}\int _{A}f_{k}  .\]
+\end{colorary}
+\begin{proof}
+Para cada $\displaystyle m \in \N $, tomamos $\displaystyle S_{m}=\sum^{m}_{k=1}f_{k} $. Tenemos que cada $\displaystyle S_{m} $ es integrable y por hipótesis $\displaystyle S_{m}\to f $ uniformemente. Por el teorema anterior, $\displaystyle f $ es integrable en $\displaystyle A $ y
+\[\int _{A}f =\lim_{m \to \infty}\int _{A}S_{m} =\lim_{m \to \infty}\int _{A}\sum^{m}_{k = 1}f_{k}=\lim_{m \to \infty}\sum^{m}_{k = 1}\int _{A}f_{k} =\sum^{\infty}_{k=1}\int _{A}f_{k} .\]
+\end{proof}
+\begin{theorem}
+	Sea $\displaystyle \left[a,b\right] \subset \R $ y $\displaystyle B \subset \R^{n} $ un rectángulo. Sea $\displaystyle f : \left[a,b\right] \times B\to \R $ una función continua en $\displaystyle \left[a,b\right] \times B $. Si definimos $\displaystyle F\left(t\right)=\int _{B}f\left(t,x\right) \; dx $, $\displaystyle \forall t \in \left[a,b\right]  $, tenemos que $\displaystyle F $ es continua en $\displaystyle \left[a,b\right]  $. 
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle t_{0}\in \left[a,b\right]  $ y veamos que $\displaystyle F $ es continua en $\displaystyle t_{0} $, es decir, $\displaystyle \lim_{t \to t_{0}}F\left(t\right)=F\left(t_{0}\right) $. Para ello usamos el criterio de sucesiones. Tomamos $\displaystyle \left\{ t_{m}\right\} _{m\in\N}\subset \left[a,b\right]  $ tal que $\displaystyle t_{m}\to t_{0} $. Tenemos que $\displaystyle \forall m \in \N $ podemos tomar $\displaystyle f_{m} : B \to \R : x \to f\left(t_{m}, x\right) $. \\
+	Como $\displaystyle f_{m} $ es continua en $\displaystyle B $ y ser $\displaystyle B $ un rectángulo en $\displaystyle \R^{n} $, tenemos que $\displaystyle f_{m} $ es integrable en $\displaystyle B $. Si comprobamos que $\displaystyle f_{m}\to f_{t_{0}} $ uniformemente en $\displaystyle B $, entonces tendremos que
+\[\int _{B}f_{t_{0}} =\lim_{m \to \infty}\int _{B}f_{m}  .\]
+Es decir,
+\[ .\]
+\[
+\begin{split}
+	F\left(t_{0}\right)= & \int _{B}f\left(t_{0}, x\right) \; dx = \int _{B}f_{t_{0}}\left(x\right) \; dx=\lim_{m \to \infty}\int _{B}f_{m}\left(x\right) \; dx=\lim_{m \to \infty}\int _{B}f_{t_{m}}\left(x\right) \; dx \\
+	= &  \lim_{m \to \infty}\int _{B}f\left(t_{m}, x\right) \; dx = \lim_{m  \to \infty}F\left(t_{m}\right).
+\end{split}
+\]
+Solo queda ver que $\displaystyle f_{t_{m}}\to f_{t_{0}} $ uniformemente en $\displaystyle B $. Dado $\displaystyle \epsilon > 0 $, buscamos $\displaystyle k_{0} \in \N $ tal que $\displaystyle \left|f_{t_{m}}\left(x\right)-f_{t_{0}}\left(x\right)\right|<\epsilon  $, $\displaystyle \forall k \geq k_{0} $, $\displaystyle \forall x \in B $. Como $\displaystyle f $ es uniformemente continua en $\displaystyle \left[a,b\right] \times B $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \|\left(t,x\right)-\left(t',x'\right)\| < \delta  $, entonces $\displaystyle \left|f\left(t,x\right)-f\left(t',x'\right)\right|<\epsilon  $. 
+Como $\displaystyle t_{m}\to t_{0} $ para ese $\displaystyle \delta > 0 $ existe $\displaystyle k_{0} \in \N $ tal que $\displaystyle \left|t_{k}-t_{0}\right| $, $\displaystyle \forall k \geq k_{0} $. Ahora, si $\displaystyle k \geq k_{0} $, para cualquier $\displaystyle x \in B $ tenemos que 
+\[\|\left(t_{k}, x\right)-\left(t_{0}, x\right)\|= \left|t_{n}-t_{0}\right|<\delta  .\]
+Por tanto, $\displaystyle \left|f\left(t_{k}, x\right)-f\left(t_{0},x\right)\right|<\epsilon  $, por lo que $\displaystyle \left|f_{t_{k}}\left(x\right)-f_{t_{0}}\left(x\right)\right|<\epsilon  $. 
+\end{proof}
+\begin{eg}
+	Calculemos $\displaystyle \lim_{t \to 5}\int^{3}_{0} e^{-tx^{2}} \; dx $. Sea $\displaystyle f\left(t,x\right)=e^{-tx^{2}} $. Tenemos que $\displaystyle f $ es $\displaystyle \mathcal{C}^{\infty} $ en $\displaystyle \R^{2} $, en particular en $\displaystyle \left[0,7\right] \times\left[0,3\right]  $. Consideremos
+	\[F\left(t\right)=\int^{3}_{0} e^{-tx^{2}} \; dx = \int^{3}_{0} f\left(t,x\right) \; dx, \; \forall t \in \left[0,7\right]  .\]
+	Por el teorema anterior, $\displaystyle F $ es continua en $\displaystyle \left[0,7\right]  $, por lo que 
+	\[\lim_{t \to 5}\int^{3}_{0} e^{-tx^{2}} \; dx = \lim_{t \to 5}F\left(t\right)=F\left(5\right)=\int^{3}_{0} e^{-5x^{2}} \; dx .\]
+\end{eg}
+\begin{observation}
+	Es fácil ver que si $\displaystyle I\subset \R $ es un intervalo y $\displaystyle h : I \to \R $ es una función, entonces $\displaystyle h $ es continua en $\displaystyle I $ si y solo si $\displaystyle h $ es continua en cada intervalo cerrado y acotado $\displaystyle \left[a,b\right] \subset I $. 
+\end{observation}
+\begin{theorem}[Derivar dentro de la integral]
+	Sea $\displaystyle B \subset \R^{n} $ un rectángulo e $\displaystyle I\subset \R $ un intervalo. Sea $\displaystyle f : I \times B \to \R $ continua en $\displaystyle I \times B $ tal que existe $\displaystyle \frac{\partial f}{\partial t}\left(t,x\right) $, $\displaystyle \forall \left(t,x\right)\in I \times B $ y es continua en $\displaystyle I \times B $. Definimos $\displaystyle F\left(t\right)=\int _{B}f\left(t,x\right) \; dx $, $\displaystyle \forall t \in I $. 
+	Entonces $\displaystyle F $ es derivable en $\displaystyle I $ y
+	\[F'\left(t\right)=\frac{d}{dt}\int _{B}f\left(t,x\right) \; dx=\int _{B}\frac{\partial f}{\partial t}\left(t,x\right) \; dx, \; \forall t \in I .\]
+\end{theorem}
+\begin{proof}
+	Basta con comprobar que $\displaystyle F $ es derivable en cada intervalo cerrado y acotado $\displaystyle \left[a,b\right] \subset I $. Fijamos $\displaystyle \left[a,b\right] \subset I $ y sea $\displaystyle t_{0} \in I $. Sea $\displaystyle \left\{ t_{m}\right\} _{m\in\N}\subset\left[a,b\right] / \left\{ t_{0}\right\}  $ con $\displaystyle t_{m}\to t_{0} $. Veamos que 
+	\[\lim_{m \to \infty}\frac{F\left(t_{m}\right)-F\left(t_{0}\right)}{t_{m}-t_{0}}=\int _{B}\frac{\partial f}{\partial t}f\left(t_{0},x\right) \; dx .\]
+Es fácil ver que
+\[\frac{F\left(t_{m}\right)-F\left(t_{0}\right)}{t_{m}-t_{0}}=\frac{\int _{B}f\left(t_{m}, x\right) \; dx-\int _{B}f\left(t_{0}, x\right) \; dx}{t_{m}-t_{0}}=\int _{B}\frac{f\left(t_{m}, x\right)-f\left(t_{0},x\right)}{t_{m}-t_{0}} \; dx .\]
+Para cada $\displaystyle m \in \N $ tomamos $\displaystyle g_{m} : B \to \R $ con 
+\[g_{m}\left(x\right)=\frac{f\left(t_{m}, x\right)-f\left(t_{0}, x\right)}{t_{m}-t_{0}} , \; \forall x \in B.\]
+Solo queda demostrar que $\displaystyle g_{m}\to g $ uniformemente en $\displaystyle B $, siendo $\displaystyle g\left(x\right)=\frac{\partial f}{\partial t}\left(t_{0}, x\right) $, $\displaystyle \forall x \in B $. Una vez demostrado esto tendremos que 
+\[\int _{B}g_{m}\left(x\right) \; dx \to \int _{B}g\left(x\right) \; dx \iff \frac{F\left(t_{m}\right)-F\left(t_{0}\right)}{t_{m}-t_{0}}\to \int _{B}\frac{\partial f}{\partial t}\left(t_{0}, x\right) \; dx .\]
+Dado $\displaystyle \epsilon > 0 $, buscamos $\displaystyle m_{0} \in \N $ tal que para $\displaystyle m \geq m_{0} $ entonces $\displaystyle \left|g_{m}\left(x\right)-g\left(x\right)\right|<\epsilon  $, $\displaystyle \forall x \in B $. Como $\displaystyle \frac{\partial f}{\partial t} $ es uniformemente continua en $\displaystyle \left[a,b\right] \times B $, para $\displaystyle \epsilon > 0 $ existe $\displaystyle \delta >0 $ tal que si $\displaystyle \|\left(t,x\right)-\left(t',x'\right)\| < \delta  $ entonces
+\[ \left|\frac{\partial f}{\partial t}\left(t,x\right)-\frac{\partial f}{\partial t}\left(t',x'\right)\right|<\epsilon  .\]
+Para ese $\displaystyle \delta > 0 $, como $\displaystyle t_{m}\to t_{0} $, existe $\displaystyle m_{0} \in \N $ tal que $\displaystyle \left|t_{m}-t_{0}\right|<\delta  $, $\displaystyle \forall m \geq m_{0} $. Ahora, si $\displaystyle m \geq m_{0} $ y $\displaystyle x \in B $,
+\[ \left|g_{m}\left(x\right)-g\left(x\right)\right|= \left|\frac{f\left(t_{m}, x\right)-f\left(t_{0}, x\right)}{t_{m}-t_{0}}-\frac{\partial f}{\partial t}\left(t_{0}, x\right)\right|= \left|\frac{\partial f}{\partial t}\left(c_{m}, x\right)-\frac{\partial f}{\partial t}\left(t_{0}, x\right)\right|<\epsilon  .\]
+Hemos aplicado que por el teorema del valor medio existe $\displaystyle c_{m} $ entre $\displaystyle t_{n} $ y $\displaystyle t_{0} $ tal que 
+\[\frac{f\left(t_{m}\right)-f\left(t_{0}, x\right)}{t_{m}-t_{0}} = \frac{\partial f}{\partial t}\left(c_{m}, x\right) .\]
+Además, $\displaystyle \|\left(c_{m}, x\right)-\left(t_{0}, x\right)\|= \left|c_{m}-t_{0}\right|\leq \left|t_{m}-t_{0}\right|<\delta  $. 
+\end{proof}
+\begin{eg}
+En el ejemplo anterior tenemos que $\displaystyle F\left(t\right)=\int^{3}_{0} e^{-tx^{2}} \; dx $ es derivable en $\displaystyle \R $ puesto que $\displaystyle f\left(t,x\right)=e^{-tx^{2}} $ es $\displaystyle \mathcal{C}^{\infty} $ en $\displaystyle \R^{2} $. Además, 
+\[F'\left(t\right)=\int^{3}_{0} \frac{\partial }{\partial t}e^{-tx^{2}} \; dx = \int^{3}_{0} -x^{2}e^{-tx^{2}} \; dx =-\int^{3}_{0} x^{2}e^{-tx^{2}} \; dx, \; \forall t \in \R .\]
+Tenemos que $\displaystyle F\left(0\right)=3 $, y como $\displaystyle F'\left(t\right)\leq 0 $, $\displaystyle \forall t\in \R $, $\displaystyle F $ es decreciente en $\displaystyle \R $. Además, podemos volver a aplicar el teorema anterior para estudiar la convexidad de $\displaystyle F $ en $\displaystyle \R $ y poder pintar la función.
+\end{eg}
+\begin{colorary}
+Sea $\displaystyle I \subset \R $ un intervalo y $\displaystyle B \subset \R^{n} $ un rectángulo. Si $\displaystyle f : I \times B \to \R $ es de clase $\displaystyle \mathcal{C}^{m} $ en $\displaystyle I \times B $, entonces la función $\displaystyle F\left(t\right)=\int _{B}f\left(t,x\right) \; dx $, $\displaystyle \forall t \in I $, es $\displaystyle \mathcal{C}^{m} $ en $\displaystyle I $ y
+\[F^{\left(k\right)}\left(t\right)=\int _{B}\frac{\partial ^{k}f}{\partial t ^{k}}\left(t,x\right) \; dx, \; \forall t \in I, \; 1 \leq k \leq m .\]
+\end{colorary}
+\begin{eg}
+Calculemos
+\[\lim_{t \to 0}\frac{1}{t ^{2}}\left(\int^{1}_{0} e^{-tx^{2}} \; dx -1\right) .\]
+Consideramos $\displaystyle F\left(t\right)=\int^{1}_{0} e^{-tx^{2}} \; dx $ y $\displaystyle f\left(t,x\right)=e^{-tx^{2}} $, que es $\displaystyle \mathcal{C}^{\infty} $ en $\displaystyle \R^{2} $, por lo que $\displaystyle F $ es $\displaystyle \mathcal{C}^{\infty} $ en $\displaystyle \R $. De esta forma,
+\[\lim_{t \to 0}\int^{1}_{0} e^{-tx^{2}} \; dx = \lim_{t \to 0}F\left(t\right)=F\left(0\right)=\int^{1}_{0} e^{0} \; dx = 1 \Rightarrow \lim_{t \to 0}\left(\int^{1}_{0} e^{-tx^{2}} \; dx-1\right)=0 .\]
+Así, aplicando la regla de L'Hôpital obtenemos
+\[\lim_{t \to 0}\frac{\int^{1}_{0} e^{-tx^{2}} \; dx-1}{t ^{2}}=\lim_{t \to 0}\frac{\int^{1}_{0} -x^{2}e^{-tx^{2}} \; dx}{2t}
+=
+\begin{cases}
+-\infty, \; t \to 0^{+} \\
+\infty, \; t \to 0^{-}
+\end{cases}
+.\]
+Por tanto, el límite no existe. 
+\end{eg}
+\begin{theorem}[Regla de derivación de Leibniz]
+Sea $\displaystyle I \subset \R $ un intervalo y sean $\displaystyle u,v : I \to \R $ funciones en $\displaystyle I $. Sea $\displaystyle J \subset \R $ un intervalo tal que $\displaystyle u\left(I\right), v\left(I\right)\subset J $ y sea $\displaystyle f : I \times J \to \R : \left(t,x\right) \to f\left(t,x\right) $ continuas en $\displaystyle I \times J $ y tal que $\displaystyle \exists \frac{\partial f}{\partial t} $ y es continua en $\displaystyle I \times J $. Entonces, la función 
+\[F\left(t\right)=\int^{v\left(t\right)}_{u\left(t\right)} f\left(t,x\right) \; dx, \; \forall t \in I \]
+es derivable en $\displaystyle I $ y 
+\[F'\left(t\right)=f\left(t, v\left(t\right)\right)v'\left(t\right)-f\left(t,u\left(t\right)\right)u'\left(t\right)+\int^{v\left(t\right)}_{u\left(t\right)} \frac{\partial f}{\partial t}\left(t,x\right) \; dx, \; \forall t \in I .\]
+\end{theorem}
+\begin{proof}
+Basta con aplicar la regla de la cadena puesto que $\displaystyle F = G \circ \phi $ con $\displaystyle \phi : I \to I \times J \times J : t \to \left(t, u\left(t\right), v\left(t\right)\right) $ y $\displaystyle G : I \times J \times J \to \R : \left(t,y,z\right)\to \int^{z}_{y} f\left(t,x\right) \; dx $. Así, tenemos que
+\[\left(G\circ \phi\right)\left(t\right)=G\left(\phi\left(t\right)\right)=G\left(t,u\left(t\right), v\left(t\right)\right)=\int^{v\left(t\right)}_{u\left(t\right)} f\left(t,x\right) \; dx = F\left(t\right) .\]
+Para cada $\displaystyle t \in I $, $\displaystyle \phi $ es diferenciable en $\displaystyle t $ y $\displaystyle G $ es diferenciable ne $\displaystyle \phi\left(t\right) $, por lo que aplicando la regla de la cadena tenemos que $\displaystyle G\circ \phi $ es diferenciable en $\displaystyle t $ y 
+\[
+\begin{split}
+	\left(G\circ \phi\right)'\left(t\right)= &JG\left(\phi\left(t\right)\right) \cdot J\phi\left(t\right)=\left(\frac{\partial G}{\partial t}, \frac{\partial G}{\partial y}, \frac{\partial G}{\partial z}\right)\begin{pmatrix} \phi'_{1}\left(t\right) \\ \phi'_{2}\left(t\right)\\ \phi'_{3}\left(t\right) \end{pmatrix}
+	\\
+	= &   \left(\int^{z}_{y} \frac{\partial f}{\partial t}\left(t,x\right) \; dx, -f\left(t,y\right), f\left(t,z\right)\right)\begin{pmatrix} 1 \\ u'\left(t\right) \\ v'\left(t\right) \end{pmatrix}\\
+	= & \int^{v\left(t\right)}_{u\left(t\right)} \frac{\partial f}{\partial t}\left(t,x\right) \; dx - f\left(t,u\left(t\right)\right)u'\left(t\right)+f\left(t,v\left(t\right)\right)v'\left(t\right).
+\end{split}
+\]
+\end{proof}
+\begin{eg}
+Calculemos la derivada de $\displaystyle F\left(t\right)=\int^{3t ^{5}+\cos t}_{t ^{2}} e^{-tx^{2}} \; dx $. Por la regla de derivación de Leibniz,
+\[F'\left(t\right)=e^{-t\left(3t ^{5}+\cos t\right)^{2}}\left(15 t ^{4}-\sin t\right)-e^{-t\left(t ^{2}\right)^{2}}2t +\int^{3t ^{5}+\cos t}_{t ^{2}} -x^{2}e^{-tx^{2}} \; dx.\]
+\end{eg}
+
 \section{Integral de Lebesgue}
 \begin{definition}[Medida de un conjunto]
 	Dado $\displaystyle \emptyset\neq A \subset \R^{n} $, definimos su \textbf{medida} como \footnote{Las sucesiones $\displaystyle \left\{ R_{k}\right\} _{k \in \N} $ son sucesiones de rectángulos.} 

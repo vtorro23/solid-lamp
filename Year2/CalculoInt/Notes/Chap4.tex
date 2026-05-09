@@ -1,0 +1,138 @@
+\chapter{Integrales de superficie}
+
+\section{Superficies paramétricas}
+\begin{definition}[Superficie parametrizada]
+Sea $\displaystyle S \subset \R^{3} $ tal que existe $\displaystyle \phi : D\subset \R^{2} \to \R^{3} $ continua en $\displaystyle D $ tal que $\displaystyle S = \phi\left(D\right) $. Decimos que $\displaystyle S $ \textbf{está parametrizada por} $\displaystyle \phi $, con
+\[\phi: D \to \R^{3} : \left(u,v\right)\to \left(\phi_{1}\left(u,v\right), \phi_{2}\left(u,v\right), \phi_{3}\left(u,v\right)\right) .\]
+\end{definition}
+\begin{observation}
+En general nos van a interesar superficies $\displaystyle S \subset \R^{3} $ que admitan una buena parametrización $\displaystyle \phi: D \subset \R^{2}\to \R^{3} $, esto es, que se cumpla que
+\begin{enumerate}
+\item $\displaystyle D $ es proyectable sobre algún eje.
+\item $\displaystyle \phi $ es de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle D $. 
+\item $\displaystyle \phi $ es inyectiva en $\displaystyle D $, salvo quizás en $\displaystyle \partial D $. 
+\item Los vectores $\displaystyle \left\{ \frac{\partial \phi}{\partial u}, \frac{\partial \phi}{\partial v}\right\}  $ son linealmente independientes, esto es $\displaystyle \frac{\partial \phi}{\partial u} \times \frac{\partial \phi}{\partial v}\neq 0 $, en todo $\displaystyle S $ (salvo quizás en un número finito de puntos).
+\end{enumerate}
+\end{observation}
+\begin{eg}
+\begin{enumerate}
+\item La esfera de radio $\displaystyle R $ y centro $\displaystyle \left(0,0,0\right) $ se puede parametrizar de la siguiente forma:
+	\[\phi : \left[0,2\pi \right] \times \left[0, \pi \right] \to \R^{3} : \left(\theta, \varphi\right) \to \left(R \cos \theta \sin\varphi, R \sin \theta \sin\varphi, R \cos\varphi\right) .\]
+Tendremos que es una buena parametrización puesto que 
+\[\frac{\partial \phi}{\partial \theta}=\left(-R\sin\theta\sin\varphi, R\cos\theta\sin\varphi, 0\right)\quad \text{y} \quad \frac{\partial \phi}{\partial \varphi} =\left(R\cos\theta \cos\varphi, R \sin \theta \cos\varphi, -R\sin\varphi\right).\]
+Así, podemos ver que
+\[\frac{\partial \phi}{\partial \theta }\times \frac{\partial \phi}{\partial \varphi}=\left(-R^{2}\cos \theta \sin ^{2}\varphi, - R^{2}\sin \theta \sin ^{2}\varphi, - R^{2}\sin \theta \cos \varphi\right) \neq 0 .\]
+\item Sea $\displaystyle f : D \subset \R^{2}\to \R $ de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle D $ con $\displaystyle D $ proyectable sobre algún eje. Una buena parametrización para $\displaystyle G\left(f\right) $ es $\displaystyle \phi : D \to \R^{3} : \left(x,y\right)\to \left(x,y,f\left(x,y\right)\right) $. Tenemos que 
+	\[\frac{\partial \phi}{\partial x}\times \frac{\partial \phi}{\partial y}=\begin{vmatrix} i & j & k \\ 1 & 0 & \frac{\partial f}{\partial x} \\ 0 & 1 & \frac{\partial f}{\partial y} \end{vmatrix} =\left(-\frac{\partial f}{\partial x}, - \frac{\partial f}{\partial y}, 1\right) .\]
+\item El helicoide se puede parametrizar de la forma 
+	\[\phi: \left[0,1\right] \times\left[0, 2\pi \right] \to \R^{3} : \left(t, \theta \right)\to \left(t\cos\theta, t \sin \theta, \theta \right) .\]
+\end{enumerate}
+\end{eg}
+\begin{observation}
+También consideraremos superficies que se pueden descomponer en un número finito de trozos, cada uno de los cuales admiten una buena parametrización.
+\end{observation}
+\begin{definition}[Área de una superficie]
+Si $\displaystyle S \subset \R^{3} $ admite una buena parametrización $\displaystyle \phi: D \to \R^{3} $, definimos el \textbf{área} de $\displaystyle S $ como 
+\[A\left(S\right):=\int \int _{S}\left\|\frac{\partial \phi}{\partial u}\left(u,v\right) \times \frac{\partial\phi}{\partial v}\left(u,v\right)\right\| \; du \; dv .\]
+\end{definition}
+\begin{eg}
+\begin{enumerate}
+	\item Calculemos el área de la superficie de una esfera de radio $\displaystyle R $. Vimos que una buena parametrización es 
+		\[\phi: \left[0, 2\pi \right] \times \left[0, \pi \right] \to \R^{3} : \left(\theta, \varphi\right)\to \left(R\cos\theta \sin \varphi, R \sin \theta \sin \varphi, R \cos \varphi\right) .\]
+		Así, 
+	\[
+	\begin{split}
+		A\left(S\right)= & \int \int _{\left[0, 2\pi \right] \times\left[0, \pi \right] }\left\|\frac{\partial \phi}{\partial \theta} \times \frac{\partial \phi}{\partial \varphi}\right\| \; d\theta  \; d\varphi = R^{2}\int^{2\pi }_{0} \int^{\pi }_{0} \left|\sin \varphi\right| \; d\varphi \; d\theta = 4\pi R^{2} .
+	\end{split}
+	\]
+\item Calculemos el área de una superficie de revolución. Sea $\displaystyle f : \left[a,b\right] \to \R $ de clase $\displaystyle \mathcal{C}^{1} $ y positiva en $\displaystyle \left[a,b\right]  $. Sea $\displaystyle S $ la superficie generada al girar la gráfica de $\displaystyle f $ alrededor del eje $\displaystyle OX $. Consideremos la parametrización
+	\[\phi: \left[a,b\right] \to \R^{3} : \left(x, \theta \right)\to \left(x, f\left(x\right)\cos\theta, f\left(x\right)\sin \theta \right) .\]
+	Tendremos que 
+	\[\frac{\partial \phi}{\partial x}\times\frac{\partial\phi}{\partial \theta }=\left(f\left(x\right)f'\left(x\right), -f\left(x\right)\cos\theta, -f\left(x\right)\sin \theta\right)\neq 0 .\]
+	Así, tendremos que 
+	\[A\left(S\right)=\int \int _{\left[0,1\right] \times\left[0, 2\pi \right] }\left\|\frac{\partial \phi}{\partial x}\times\frac{\partial\phi}{\partial \theta }\right\| \; dx \; d\theta = 2\pi \int^{b}_{a} f\left(x\right)\sqrt{1 + \left[f'\left(x\right)\right] ^{2}} \; dx .\]
+	Análogamente, dado $\displaystyle \left[a,b\right] \subset \R $ con $\displaystyle a > 0 $ y $\displaystyle f : \left[a,b\right] \to \R $ de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle \left[a,b\right]  $, el área de la superficie de revolución generada al girar la gráfica de $\displaystyle f $ alrededor del eje $\displaystyle OY $ es
+	\[A\left(S\right)=2\pi \int^{b}_{a} x\sqrt{1+\left[f'\left(x\right)\right] ^{2}} \; dx ,\]
+	habiendo considerado la parametrización
+	\[\phi: \left[a,b\right]\times\left[0,2\pi\right]  \to \R^{3}: \left(x, \theta \right)\to \left(x\cos \theta, f\left(x\right), x\sin \theta \right) .\]
+\end{enumerate}
+\end{eg}
+\begin{definition}[Superficies equivalentes]
+Dos parametrizaciones $\displaystyle \phi: D \to \R^{3} $ y $\displaystyle \varphi: U \to \R^{3} $ son \textbf{equivalentes} cuando existe $\displaystyle h : U \to D $ $\displaystyle \mathcal{C}^{1} $-difeomorfismo tal que $\displaystyle \varphi = \phi\circ h $. 
+\end{definition}
+\begin{observation}
+Como $\displaystyle h $ es $\displaystyle \mathcal{C}^{1} $-difeomorfismo tendremos que $\displaystyle \forall\left(s,t\right)\in U $, $\displaystyle \det\left(Jh\left(s,t\right)\right)\neq 0 $. 
+\end{observation}
+\section{Integral de superficie}
+\begin{definition}[Integral de superficie]
+Sea $\displaystyle S \subset \R^{3} $ una superficie que admite una buena parametrización $\displaystyle \phi : D \to \R^{3} $. 
+\begin{enumerate}
+\item Dado un campo escalar $\displaystyle f : S \to \R $ continuo en $\displaystyle S $, definimos su \textbf{integral a lo largo de $\displaystyle S $} como
+	\[\int _{S}f : = \int \int _{D}f\left(\phi\left(u,v\right)\right)\left\|\frac{\partial\phi}{\partial u} \left(u,v\right) \times \frac{\partial \phi}{\partial v}\left(u,v\right)\right\| \; du \; dv .\]
+\item Dado un campo vectorial $\displaystyle F = \left(P,Q, R\right) : S \to \R^{3} $ continuo en $\displaystyle S $, definimos su \textbf{integral a lo largo de $\displaystyle S $} como 
+	\[\int _{S}F := \int \int _{D}\left\langle F\left(\phi\left(u,v\right)\right), \frac{\partial \phi}{\partial u}\left(u,v\right) \times \frac{\partial \phi}{\partial v}\left(u,v\right) \right\rangle  \; du \; dv .\]
+\end{enumerate}
+\end{definition}
+\begin{eg}
+\begin{enumerate}
+\item Sea $\displaystyle S $ el helicoide parametrizado por 
+	\[\phi: \left[0,1\right] \times\left[0, 2\pi \right] \to \R^{3} : \left(r, \theta \right) \to \left(r\cos \theta, r \sin \theta, \theta \right) .\]
+	Tenemos que 
+	\[\frac{\partial \phi}{\partial r}\times\frac{\partial \phi}{\partial \theta }=\left(\sin \theta, - \cos \theta, r\right) .\]
+De esta forma, calculamos la integral
+\[
+\begin{split}
+	\int _{S}\sqrt{1 + x^{2}+y^{2}} = & \int \int _{\left[0,1\right] \times\left[0, 2\pi \right] }\sqrt{1 + r^{2}\cos ^{2}\theta + r^{2}\sin ^{2}\theta }\|\left(\sin \theta, -\cos \theta, r\right)\| \; dr \; d\theta \\
+	= & \int^{1}_{0} \int^{2\pi }_{0} \left(1 + r^{2}\right) \; d\theta  \; dr = \int^{1}_{0} 2\pi \left(1 + r^{2}\right) \; dr = \frac{8\pi }{3}  .
+\end{split}
+\]
+\item Sea $\displaystyle S $ parametrizada por 
+	\[\phi:\left[0,2\pi \right] \times\left[0, \pi \right] \to \R^{3} : \left(\theta, \varphi\right) \to \left(\cos \theta \sin \varphi, \sin \theta \sin \varphi, \cos \varphi\right) .\]
+	Dado $\displaystyle F\left(x,y,z\right)=\left(x,y,z\right) $, calculemos la integral 
+	\[
+	\begin{split}
+		\int _{S}F = & \int \int _{\left[0, 2\pi \right] \times\left[0, \pi \right]} \left\langle \left(\cos\theta \sin \varphi, \sin \theta \sin \varphi, \cos \varphi\right),\\
+			     &\left(-\cos\theta \sin ^{2}\varphi, -\sin \theta \sin ^{2}\varphi, -\sin\varphi\cos \varphi\right) \right\rangle  \; d\theta  \; dr \\
+			     = & \int^{2\pi }_{0} \int^{\pi }_{0} \left(-\sin ^{3}\varphi - \sin \varphi\cos ^{2}\varphi\right) \; d\varphi \; d\theta = - 4\pi .
+	\end{split}
+	\]
+\end{enumerate}
+\end{eg}
+\begin{observation}
+Podemos ver que para medir el área de una superficie suficientemente buena lo que estamos haciendo es una integral de un campo escalar $\displaystyle f \equiv 1 $,
+\[A\left(S\right)=\int _{S} 1 .\]
+\end{observation}
+\begin{prop}
+	Sea $\displaystyle S \subset \R^{3} $ una superficie que admite una buena parametrización $\displaystyle \phi: D \to \R^{2} $ y $\displaystyle f_{i} : S \to \R $ y $\displaystyle F_{i} : S \to \R^{3} $ continuas en $\displaystyle S $ para $\displaystyle i \in \left\{ 1,2\right\}  $. 
+\begin{enumerate}
+\item Dados $\displaystyle \alpha, \beta \in \R $, $\displaystyle  $. 
+	\[
+	\begin{split}
+	\int _{S}\alpha f_{1} + \beta f_{2} = \alpha \int _{S}f_{1} +\beta \int _{S}f_{2} \quad \text{y} \quad \int _{S}\alpha F_{1}+\beta F_{2} =\alpha \int _{S}F_{1} +\beta \int _{S}F_{2} .
+	\end{split}
+	\]
+\item Si $\displaystyle f_{1}\leq f_{2} $, entonces
+	\[\int _{S}f_{1} \leq \int _{S}f_{2} .\]
+\end{enumerate}
+\end{prop}
+
+% ---------------------
+
+\begin{prop}
+Se sigue cumpliendo la linealidad, monotonía de la integral. 
+\end{prop}
+Así, si $\displaystyle \left|f\right|\leq M $, tenemos que
+\[ \left|\int _{S}f \right|= \left|\int _{R}f\left(\varphi\left(u,v\right)\right)\left\|\frac{\partial \varphi}{\partial u} \times \frac{\partial \varphi}{\partial v}\right\| \; du \; dv\right| \leq \int _{R} \left|f\left(\varphi\left(u,v\right)\right)\right| \left\|\frac{\partial \varphi}{\partial u} \times \frac{\partial \varphi}{\partial v}\right\|\; du \; dv \leq M \int _{R} \left\|\frac{\partial \varphi}{\partial u} \times \frac{\partial \varphi}{\partial v}\right\| \; du \; dv.\]
+Ahora, si $\displaystyle F $ es un campo vectorial definimos
+\[\int _{S}F = \int _{R}F\left(\varphi\left(u,v\right)\right) \cdot \left(\frac{\partial \varphi}{\partial u}\left(u,v\right) \times \frac{\partial \varphi}{\partial v}\left(u,v\right)\right) \; du \; dv .\]
+Hemos visto el cambio de parametrización y es importante observar que si se trata de un campo escalar el signo no cambia pero si se trata de un campo vectorial el signo sí que puede cambiar. 
+\begin{theorem}[Teorema de Stokes]
+Sea $\displaystyle \phi : A \subset \R^{2}\to \R^{3} $ y tomamos la parametrización de $\displaystyle \partial A $ 
+\[\gamma : \left[a,b\right] \to \R^{2} .\]
+Si $\displaystyle W $ es la parte superior de la superficie ( $\displaystyle \phi $ es una parametrización de $\displaystyle W $), entonces la parametrización de $\displaystyle \partial W $ será $\displaystyle \phi\circ\gamma  $. De esta forma
+\[\int _{\partial W}F =\int _{W}rot F  .\]
+\end{theorem}
+\begin{observation}
+El teorema de Stokes es una aplicación del Teorema de Green y la regla de la cadena.
+\end{observation}
+El Teorema de Stokes es un teorema ampliamente utilizado en muchas disciplinas.

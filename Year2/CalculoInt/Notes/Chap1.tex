@@ -116,6 +116,17 @@ Por otro lado,
 \[ S\left(f,P\right) = \sum_{T \in P}v\left(T\right)\sup \left\{ f\left(t\right) \; : \; t \in T\right\} = \sum_{T \in P}v\left(T\right)c = cv\left(R\right).\]
 Como la integral superior y la inferior coinciden, debe ser que la función es integrable.
 \end{eg}
+\begin{prop}
+	Si existe una sucesión $\displaystyle \left\{ P_{k}\right\} ^{\infty}_{k=1} $ de particiones de $\displaystyle R $ tal que $\displaystyle \lim_{k \to \infty}s\left(f,P_{k}\right)=\lim_{k \to \infty}S\left(f,P_{k}\right) $, entonces $\displaystyle f $ es integrable en $\displaystyle R $ y además
+	\[\int _{R}f =\lim_{k \to \infty}s\left(f,P_{k}\right) .\]
+\end{prop}
+\begin{proof}
+Tendremos que 
+\[\lim_{k \to \infty}s\left(f,P_{k}\right)\leq \sup_{k \in \N}s\left(f,P_{k}\right)\leq \underline{\int _{R} } f \leq \overline{\int _{R}}f \leq \inf_{k \in \N}S\left(f,P_{k}\right)\leq \lim_{k \to \infty}S\left(f,P_{k}\right).\]
+Así, tenemos que $\displaystyle \underline{\int _{R}}f = \overline{\int _{R}}f $, por lo que $\displaystyle f $ es integrable y
+\[\int _{R}f =\lim_{k \to \infty}s\left(f,P_{k}\right) .\]
+\end{proof}
+
 \begin{theorem}[Criterio de integrabilidad de Riemann]
 Una función $\displaystyle f: R \to \R $ acotada es integrable si y solo si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists P_{\epsilon } \in \mathcal{P}\left(R\right) $ tal que 
 \[S\left(f,P_{\epsilon }\right)-s\left(f,P_{\epsilon }\right) < \epsilon  .\]
@@ -160,12 +171,30 @@ Esta noción la podemos generalizar. Consideremos $\displaystyle R = \left[0,1\r
 no es integrable. 
 \end{eg}
 \begin{theorem}[Teorema de Darboux]
-Una función $\displaystyle f : R \to \R $ acotada es integrable en $\displaystyle R $ con integral $\displaystyle I $ si y solo si para todo $\displaystyle \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle P \in \mathcal{P}\left(R\right) $ con $\displaystyle \|P\|<\delta  $ \footnote{Para cualquier $\displaystyle J \in P $, el diámetro de $\displaystyle J $ es menor a $\displaystyle \delta  $.}, entonces
+Una función $\displaystyle f : R \to \R $ acotada es integrable en $\displaystyle R $ con integral $\displaystyle I $ si y solo si para todo $\displaystyle \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle P \in \mathcal{P}\left(R\right) $ con $\displaystyle \|P\|<\delta  $ \footnote{Para cualquier $\displaystyle J \in P $, el diámetro de $\displaystyle J $ es menor a $\displaystyle \delta  $. También podemos definir $\displaystyle \|P\| $ como el máximo de las longitudes de las aristas de los subrectángulos de $\displaystyle P $. }, entonces
 \[ \left|\sum_{J \in P}f\left(x_{J}\right)v\left(J\right) - I\right|< \epsilon , \quad \forall x_{J} \in J .\]
 \end{theorem}
 \begin{proof}
 \begin{description}
-\item[(i)] Se puede mirar en el libro de Marsden y Hoffmann. 
+\item[(i)] Supongamos que $\displaystyle f $ es integrable en $\displaystyle R $ y $\displaystyle \int _{R}f = I $. Como $\displaystyle f $ es acotada en $\displaystyle R $, tenemos que existe $\displaystyle M > 0 $ tal que $\displaystyle \left|f\left(x\right)\right|\leq M $, $\displaystyle \forall x \in R $, es decir
+	\[-M\leq \left|f\left(x\right)\right|\leq M, \; \forall x \in \R .\]
+Sea $\displaystyle \epsilon > 0 $, como $\displaystyle f $ es integrable tenemos que existe $\displaystyle P_{\epsilon }\in \mathcal{P}\left(R\right) $ tal que 
+\[S\left(f,P_{\epsilon }\right)-s\left(f,P_{\epsilon }\right)<\frac{\epsilon }{2} .\]
+Llamaremos $\displaystyle L $ a la unión de los segmentos de los rectángulos de $\displaystyle P_{\epsilon } $ que son comunes a dos subrectángulos, y $\displaystyle l $ a la longitud de $\displaystyle L $. Tomamos $\displaystyle \delta =\frac{\epsilon }{8Ml} >0 $, y veamos que se cumple lo que queremos. Se puede comprobar que la banda centrada en $\displaystyle L $ y de anchura $\displaystyle 2\delta  $ tiene volumen menor a $\displaystyle 2\delta L $. \\
+Ahora, sea $\displaystyle Q \in \mathcal{P}\left(R\right) $ con $\displaystyle \|Q\|<\delta  $ y $\displaystyle \left\{ x_{J} \; : \; J \in Q\right\}  $ una elección de puntos tales que $\displaystyle x_{J}\in J $ para $\displaystyle J \in Q $. Como $\displaystyle \|Q\|<\delta  $, tenemos que $\displaystyle \forall J \in Q $ o bien $\displaystyle J \subset R $ o $\displaystyle J \subset T $ para algún $\displaystyle T \in P_{\epsilon } $. Consideremos el conjunto
+\[Q_{0}:= \left\{ J \in Q \; : \; \exists T \in P_{\epsilon }, \; J \subset T\right\}  \quad \text{y} \quad Q_{1}: = Q/Q_{0}\]
+y llamamos $\displaystyle \tilde{Q} $ a la partición menos fina de $\displaystyle R $ que sea refinamiento de $\displaystyle P_{\epsilon } $ y $\displaystyle Q $. Tendremos entonces que $\displaystyle \tilde{Q} = Q_{0} \cup F $, donde los subrectángulos de $\displaystyle F $ están contenidos en $\displaystyle R $. Ahora, elegimos $\displaystyle y_{J} \in J $ para cada $\displaystyle J \in F $. Así,
+\[
+\begin{split}
+	\sum_{J \in Q}f\left(x_{J}\right)v\left(J\right) = & \sum^{}_{J \in Q_{0}}f\left(x_{J}\right)v\left(J\right) + \sum^{}_{J \in Q_{1}}f\left(x_{J}\right)v\left(J\right) \\
+	= & \sum^{}_{J \in Q_{0}}f\left(x_{J}\right)v\left(J\right) + \sum^{}_{J \in P_{\epsilon }}f\left(y_{J}\right)v\left(J\right) -\sum^{}_{J \in F}f\left(y_{J}\right)v\left(J\right)+\sum^{}_{J \in Q_{1}}f\left(x_{J}\right)v\left(J\right)\\
+	< & S\left(f,\tilde{Q}\right)+\sum^{}_{J \in F} \left|f\left(y_{J}\right)\right|v\left(J\right)+\sum^{}_{J \in Q_{1}} \left|f\left(x_{J}\right)\right|v\left(R\right)\\
+	\leq & S\left(f,P_{\epsilon }\right)+M\sum^{}_{J \in F}v\left(J\right)+M\sum^{}_{J \in Q_{1}}v\left(R\right)\\
+	\leq & S\left(f,P_{\epsilon }\right)+M2\delta l+M2\delta l < I + \frac{\epsilon }{8}+4\delta LM
+	\leq  I + \epsilon .
+\end{split}
+\]
+Análogamente se demuestra $\displaystyle \sum^{}_{J \in Q}f\left(x_{J}\right)v\left(J\right)> I - \epsilon  $. 
 \item[(ii)] Sea $\displaystyle \epsilon > 0 $, entonces existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \|P\| < \delta  $ entonces
 	\[ \left|\sum_{i = 1}^{N}f\left(x_{i}\right)v\left(J_{i}\right) - I\right| < \frac{\epsilon }{2} ,\]
 Donde $\displaystyle J_{1}, \ldots, J_{N} $ son los rectángulos que componen la partición $\displaystyle P $. Cogemos $\displaystyle x_{i} \in J_{i} $ tal que 
@@ -181,6 +210,60 @@ y por el criterio de Riemann tenemos que $\displaystyle f $ es integrable en $\d
 El caso para la integral inferior es análogo. Así, hemos demostrado que $\displaystyle \int _{R}f = I $. 
 \end{description}
 \end{proof}
+\begin{observation}[Consecuencias del teorema de Darboux]
+	Es fácil comprobar que la segunda parte del teorema de Darboux es equivalente a que para cada sucesión de sumas de Riemann $\displaystyle \left\{ S_{m}\right\} _{m\in\N} $ de $\displaystyle f $ asociadas a una sucesión de particiones $\displaystyle \left\{ P_{m}\right\} _{m\in\N} $ de $\displaystyle R $ tal que $\displaystyle \|P_{m}\|\to 0 $, se cumple que $\displaystyle \lim_{m \to \infty}S_{m} = I $. De aquí podemos sacar varias conclusiones:
+	\begin{enumerate}
+	\item Para demostrar que $\displaystyle f $ no es integrable en $\displaystyle R $ basta con encontrar una sucesión de particiones de $\displaystyle R $, $\displaystyle \left\{ P_{m}\right\} _{m\in\N} $, con $\displaystyle \|P_{m}\|\to 0 $, y dos sucesiones de sumas de Riemann asociadas a $\displaystyle \left\{ P_{m}\right\} _{m\in\N} $ que tiendan a límites distintos.
+	\item Si sabemos que $\displaystyle f $ es integrable, podemos calcular el valor de su integral eligiendo una sucesión de particiones $\displaystyle \left\{ P_{m}\right\} _{m\in\N} $ de $\displaystyle R $ con $\displaystyle \|P_{m}\|\to0 $ y unas sumas de Riemann de $\displaystyle f $ asociadas a $\displaystyle \left\{ P_{m}\right\} _{m\in\N} $. De esta forma tendremos que
+		\[\sum^{}_{J\in P_{m}}f\left(x_{J}\right)v\left(J\right)\to\int _{R}f .\]
+	\item Podemos calcular el límite de algunas sucesiones de números reales puesto que si $\displaystyle \left\{ x_{m}\right\} _{m\in\N} \subset \R$ y existe $\displaystyle R \subset \R^{n} $ y $\displaystyle f : R \to \R $ integrable en $\displaystyle R $ tal que cada $\displaystyle x_{n} $ es una suma de Riemann de $\displaystyle f $ asociada a una partición $\displaystyle P_{n} \in \mathcal{P}\left(R\right)$ y $\displaystyle \|P_{n}\| \to 0 $, entonces
+		\[\lim_{m \to \infty}x_{m}=\int _{A}f .\]
+	\end{enumerate}
+\end{observation}
+\begin{eg}
+Vamos a ver un caso de cada una de las conclusiones que hemos hecho anteriormente. 
+\begin{enumerate}
+	\item Sea $\displaystyle f : \left[0,1\right] ^{2} \to \R $ tal que
+		\[f\left(x,y\right)=
+		\begin{cases}
+		x + y , ; \left(x,y\right)\in \Q^{2} \\
+		0, \; \text{resto}
+		\end{cases}
+		.\]
+		Para cada $\displaystyle n\in \N $ tomamos $\displaystyle  $ 
+		\[ P_{n}= \left\{ R_{ij} = \left[\frac{i-1}{n}, \frac{i}{n}\right] \times\left[\frac{j-1}{n}, \frac{j}{n}\right] \; : \; i,j \in \left\{ 1, \ldots, n\right\} \right\}  \]
+		partición de $\displaystyle \left[0,1\right] ^{2} $. Tenemos que $\displaystyle \|P_{n}\|=\frac{1}{n} $, por lo que $\displaystyle \|P_{n}\| \to 0 $. En cada $\displaystyle R_{ij} $ elegimos $\displaystyle p_{ij}=\left(\frac{i}{n}, \alpha ^{n}_{j}\right) $ con
+		\[\alpha ^{n}_{j} \in \left[\frac{j-1}{n}, \frac{j}{n}\right] \cap \left(\R/\Q\right)\quad \text{y} \quad q_{ij}=\left(\frac{i}{n}, \frac{j}{n}\right) .\]
+	Tenemos que $\displaystyle p_{ij}, q_{ij}\in R_{ij} $. Así, tenemos que 
+	\[\sum^{n}_{i,j = 1}f\left(p_{ij}\right)v\left(R_{ij}\right)= \sum^{n}_{i = 1}\sum^{n}_{j = 1}f\left(\frac{1}{n}, \alpha ^{n}_{j}\right)\frac{1}{n^{2}}=\frac{1}{n^{2}}\sum^{n}_{i = 1}\sum^{n}_{j = 1} 0 = 0 \to 0 .\]
+Sin embargo también tenemos que 
+\[
+\begin{split}
+	\sum^{n}_{i,j = 1}f\left(q_{ij}\right)v\left(R_{ij}\right)= &\frac{1}{n^{2}}\sum^{n}_{i = 1}\sum^{n}_{j = 1}f\left(\frac{1}{n}, \frac{j}{n}\right) = \frac{1}{n^{2}}\sum^{n}_{i = 1}\sum^{n}_{j = 1}\left(\frac{i}{n}+\frac{j}{n}\right)\\
+	= & \frac{1}{n^{3}}\sum^{n}_{i = 1}\sum^{n}_{j = 1}\left(i + j\right) = \frac{1}{n^{3}}\sum^{n}_{i = 1}\left(ni + \frac{n\left(n+1\right)}{2}\right)\\
+	= & \frac{1}{n^{3}}\left[n\sum^{n}_{i = 1}i+n\frac{\left(n+1\right)n}{2}\right] =\frac{1}{n^{3}}n^{2}\left(n+1\right)\to 1.
+\end{split}
+\]
+Así, tenemos que la función no es integrable. 
+\item Sea $\displaystyle f:\left[0,1\right] ^{2}\to \R $ definida por $\displaystyle f\left(x,y\right)=xy $, $\displaystyle \forall \left(x,y\right)\in\left[0,1\right] ^{2} $. Como $\displaystyle f $ es continua en un rectángulo de $\displaystyle \R^{2} $ sabemos que es integrable en $\displaystyle \left[0,1\right] ^{2} $. Así, tendremos que
+	\[\int _{\left[0,1\right] ^{2}}f =\lim_{n \to \infty}\sum^{n}_{i = 1}\sum^{n}_{j=1}f\left(\frac{i}{n}, \frac{j}{n}\right)v\left(R_{ij}\right) ,\]
+	cogiendo los $\displaystyle R_{ij} $ como en el ejemplo anterior.
+\item Calculemos el límite
+	\[\lim_{n \to \infty}\left(\frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{2n}\right) .\]
+	Buscamos $\displaystyle f $ continua en $\displaystyle \left[0,1\right]  $ para que sea integrable en $\displaystyle \left[0,1\right]  $ y poder calcular el límite de esta manera. Consideremos $\displaystyle P_{n}= \left\{ 0, \frac{1}{n}, \ldots, \frac{n}{n}\right\}  $, claramente $\displaystyle \|P_{n}\| \to 0 $ y tenemos que 
+	\[\sum^{n}_{i = 1}f\left(\frac{i}{n}\right)v\left(\left[\frac{i-1}{n}, \frac{i}{n}\right] \right)=\frac{1}{n}\sum^{n}_{i = 1}f\left(\frac{i}{n}\right)=\frac{1}{n}\left(f\left(\frac{1}{n}\right)+\cdots + f\left(\frac{n}{n}\right) \right)\to \int^{1}_{0} f\left(t\right) \; dt .\]
+De esta forma, si tomamos $\displaystyle f\left(t\right)=\frac{1}{1 + t} $:
+\[
+\begin{split}
+	\frac{1}{n+1}+\cdots + \frac{1}{n + n} =& \frac{1}{n}\left(\frac{1}{1+\frac{1}{n}}+ \cdots + \frac{1}{1+\frac{n}{n}}\right) \\
+= & \frac{1}{n}\left(f\left(\frac{1}{n}\right)+\cdots + f\left(\frac{n}{n}\right)\right) \to \int^{1}_{0} \frac{1}{1 + t} \; dt = \ln 2.
+\end{split}
+\]
+
+\end{enumerate}
+
+\end{eg}
+
 \section{Propiedades de la integral}
 \begin{theorem}
 Sea $\displaystyle f : R \to \R $ continua, entonces $\displaystyle f $ es integrable. 
@@ -726,6 +809,12 @@ Si $\displaystyle P_{1}= \left\{ R_{1}, \ldots, R_{N}\right\}  $, cogemos rectá
 y además
 \[\sum^{N}_{i=1}v\left(Q_{i}\right)=\sum^{N}_{i=1}v\left(R_{i}\right)\left(M_{R_{i}}\left(\tilde{f}\right)-m_{R_{i}}\left(\tilde{f}\right)\right) < \epsilon  .\]
 Así, $\displaystyle G\left(f\right) $ tiene contenido nulo.
+\end{proof}
+\begin{prop}
+Sea $\displaystyle f $ integrable en $\displaystyle A $ y $\displaystyle E \subset A $. Si $\displaystyle E $ es medible Jordan, entonces $\displaystyle f $ es integrable en $\displaystyle E $.
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle R \subset \R^{n} $ un rectángulo tal que $\displaystyle A \subset \R^{n} $. Tenemos que $\displaystyle \chi_{E} $ es integrable en $\displaystyle R $ y $\displaystyle \tilde{f} $ es integrable en $\displaystyle R $, por lo que $\displaystyle \tilde{f} \cdot \chi_{E} $ es integrable en $\displaystyle R $. De esta forma, $\displaystyle f $ es integrable en $\displaystyle E $. 
 \end{proof}
 
 \section{Demostración del Teorema de Lebesgue}

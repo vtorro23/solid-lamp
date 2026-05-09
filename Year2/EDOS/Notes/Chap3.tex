@@ -34,11 +34,11 @@ Recordamos que $\displaystyle A\left(t\right) $ y $\displaystyle \vec{b}\left(t\
 Si $\displaystyle A\left(t\right) $ y $\displaystyle \vec{b}\left(t\right) $ son continuas en un intervalo $\displaystyle I = \left(\alpha, \omega \right)\subset \R $, entonces el problema de Cauchy
 \[
 \begin{cases}
-\vec{x}' = A\left(t\right)\vec{x} + \vec{b}\\
-\vec{x}\left(t_{0}\right) = \vec{x}_{0}
+\vec{x}' = A\left(t\right)\vec{x} + \vec{b}\left(t\right)\\
+\vec{x}\left(t_{0}\right) = \vec{x}_{0}, \; t_{0} \in \left(\alpha, \omega\right)
 \end{cases}
 \]
-tiene solución única $\displaystyle \vec{x}\left(t\right) $ para $\displaystyle t \in J \subset I \subset \R $. 
+tiene solución única $\displaystyle \vec{x}\left(t\right) $ en $\displaystyle \left(\alpha, \omega\right) $ . 
 \end{theorem}
 \section{Estructura de las soluciones}
 Asumimos que $\displaystyle A\left(t\right) $ y $\displaystyle \vec{b}\left(t\right) $ son continuas en $\displaystyle I = \left(\alpha, \omega \right) \subset \R $. 
@@ -135,7 +135,14 @@ con $\displaystyle c_{i} $ no todos nulos. De esta forma, los $\displaystyle \ph
 \item[(2) $\displaystyle \Rightarrow $ (1)] Trivial. 
 \end{description}
 \end{proof}
-De ahora en adelante, denotamos por $\displaystyle \left(S_{h}\right) $ a la EDO homogénea $\displaystyle \vec{x}'=A\left(t\right)\vec{x} $. 
+\begin{observation}
+Con este resultado se garantiza tener solución en el intervalo entero, es decir, no pueden existir puntos dentro de ese intervalo en el que las soluciones dejen de ser linealmente independientes cuando sé que ya lo son en un cierto punto del intervalo.
+\end{observation}
+
+\begin{notation}
+De ahora en adelante, denotamos por $\displaystyle \left(S_{h}\right) $ a la EDO homogénea $\displaystyle \vec{x}'=A\left(t\right)\vec{x} $.
+\end{notation}
+ 
 \begin{colorary}
 Supongamos que $\displaystyle \phi\left(t\right) $ es matriz fundamental del sistema $\displaystyle \vec{x}'=A\left(t\right)\vec{x} $ con $\displaystyle A\left(t\right) \in C\left(I, \mathcal{M}_{n}\right) $. Entonces, la solución del problema de valor inicial
 \[ \left(P\right)
@@ -152,6 +159,10 @@ Por lo visto anteriormente, tendremos que $\displaystyle \forall t \in I $, $\di
 Por tanto, la única solución de $\displaystyle \left(P\right) $ es
 \[\vec{x}\left(t\right)=\phi\left(t\right)\phi^{-1}\left(t_{0}\right)\vec{x}_{0} .\]
 \end{proof}
+\begin{observation}
+Por tanto, para resolver explícitamente el sistema $\displaystyle \vec{x}' = A\left(t\right)\vec{x} $ basta con hallar la matriz fundamental. 
+\end{observation}
+
 \begin{prop}[Cambio de base]
 	Supongamos que $\displaystyle \phi\left(t\right) $ es matriz fundamental de $\displaystyle \left(S_{h}\right) $ con $\displaystyle A\left(t\right)\in C\left(I, \mathcal{M}_{n}\right) $.
 	\begin{enumerate}
@@ -170,7 +181,7 @@ Ahora veamos que son linealmente independientes. Para $\displaystyle t \in I $, 
 Por tanto, tenemos que $\displaystyle \phi\left(t\right)C $ es matriz fundamental.
 \item Para la segunda parte, como $\displaystyle \left\{ \phi^{1}\left(t\right), \ldots, \phi^{n}\left(t\right)\right\}  $ es una base del conjunto de soluciones de $\displaystyle \left(S_{h}\right) $, cada columna de $\displaystyle \psi\left(t\right) $ se puede escribir de la forma
 \[\psi^{i}\left(t\right)=c_{1i}\phi^{1}\left(t\right)+ \cdots + c_{ni}\phi^{n}\left(t\right) ,\]
-Así, $\displaystyle \psi\left(t\right)=\phi\left(t\right)C $ con $\displaystyle \det\left(C\right)\neq 0 $. En efecto, si tuviésemos $\displaystyle \det\left(C\right)=0 $, $\displaystyle \forall t \in I $ se tendría que
+Así, tenemos que $\displaystyle \psi_{i}\left(t\right)=\phi\left(t\right)\vec{c}_{i} $ con $\displaystyle \vec{c}_{i}\in \R^{n} $, que es equivalente a que $\displaystyle \psi\left(t\right)=\phi\left(t\right)C $ con $\displaystyle \det\left(C\right)\neq 0 $. En efecto, si tuviésemos $\displaystyle \det\left(C\right)=0 $, $\displaystyle \forall t \in I $ se tendría que
 \[\det\left(\psi\left(t\right)\right)=\det\left(\phi\left(t\right)C\right)=\det\left(\phi\left(t\right)\right)\det\left(C\right)=0,\]
 por lo que $\displaystyle \psi\left(t\right) $ no sería matriz fundamental, que es una contradicción. 
 \end{enumerate}
@@ -179,75 +190,143 @@ por lo que $\displaystyle \psi\left(t\right) $ no sería matriz fundamental, que
 Dada una matriz fundamental asociada a $\displaystyle \left(S_{h}\right) $ con $\displaystyle A\left(t\right)\in C\left(I, \mathcal{M}_{n}\right) $, diremos que es \textbf{matriz fundamental principal} o \textbf{canónica} asociada al instante inicial $\displaystyle t_{0} \in I $, si $\displaystyle \psi\left(t_{0}\right)=I$.
 \end{definition}
 \begin{observation}
-Podemos observar que:
-\begin{itemize}
-\item Por el teorema de existencia y unicidad podemos garantizar que la matriz fundamental principal existe y es única. 
-\item De cara a los cálculos que haremos, su uso simplifica notablemente el proceso. En efecto por el corolario anterior tendremos que la solución será
-	\[\vec{x}\left(t\right)=\psi\left(t\right)\psi^{-1}\left(t_{0}\right)\vec{x}_{0}=\psi\left(t\right)\vec{x}_{0} .\]
-En este sentido también se simplifican los cálculos para resolver el problema completo
+Podemos observar que por el teorema de existencia y unicidad podemos garantizar que la matriz fundamental principal existe y es única. \\
+Por otro lado, la matriz fundamental principal es útil puesto que simplifica los cálculos para resolver el problema
 \[
 \begin{cases}
 \vec{x}' = A\left(t\right)\vec{x} + \vec{b}\left(t\right) \\
 \vec{x}\left(t_{0}\right)=\vec{x}_{0}
 \end{cases}
+.\]
+En efecto, por un corolario anterior tendremos que la solución será  
+\[ \vec{x}\left(t\right)=\varphi\left(t\right)\varphi^{-1}\left(t_{0}\right)\vec{x}_{0}=\varphi\left(t\right)\vec{x}_{0}.\]
+\end{observation}
+\begin{prop}
+Sea $\displaystyle \varphi\left(t\right) $ matriz fundamental principal para el problema
+\[
+\begin{cases}
+\vec{x}' = A\left(t\right)\vec{x} \\
+\vec{x}\left(t_{0}\right)=\vec{x}_{0}
+\end{cases}
 ,\]
-cuando es conocida la matriz fundamental y especialmente la canónica por variación de constantes.
-\item Se puede comprobar que 
-	\[\psi^{-1}\left(t\right)=\psi\left(-t\right) \quad \text{y} \quad \psi\left(t + s\right)=\psi\left(t\right)\psi\left(s\right) .\]
-\item Podemos calcular la solución de $\displaystyle \left(S_{h}\right) $ más directamente. En efecto, la solución de $\displaystyle \left(S_{h}\right) $ será $\displaystyle \vec{x}_{h}\left(t\right)=\psi\left(t\right)\vec{c} $. Como $\displaystyle \vec{x}_{h}\left(t\right) $ verifica el dato inicial tenemos que
-	\[\vec{x}_{h}\left(t_{0}\right)=\psi\left(t_{0}\right)\vec{c} \Rightarrow \vec{c}=\psi^{-1}\left(t_{0}\right)\vec{x}_{0} = \vec{x}_{0} .\]
-Así, la solución de $\displaystyle \left(P_{h}\right) $ será $\displaystyle \vec{x}_{h}\left(t\right)=\psi\left(t\right)\vec{x}_{0} $.	
-\end{itemize}
+con $\displaystyle A\left(t\right)=A $, es decir de coeficientes constantes, y $\displaystyle t_{0}=0 $. Entonces
+\begin{enumerate}
+\item $\displaystyle \varphi\left(t+s\right)=\varphi\left(t\right)\varphi\left(s\right) $, $\displaystyle \forall t,s \in \R $. 
+\item $\displaystyle \varphi^{-1}\left(t\right)=\varphi\left(-t\right) $, $\displaystyle \forall t \in \R $. 
+\end{enumerate}
+\end{prop}
+\section{Método de variación de constantes}
+\begin{theorem}
+El problema de valor inicial
+\[
+\begin{cases}
+\vec{x}' = A\left(t\right)\vec{x} + \vec{b}\left(t\right) \\
+\vec{x}\left(t_{0}\right)=\vec{x}_{0}, \; t_{0} \in I
+\end{cases}
+,\]
+con $\displaystyle A\left(t\right) $ y $\displaystyle \vec{b}\left(t\right) $ continuas en $\displaystyle I = \left(\alpha, \omega \right) $, tiene por solución única
+\[\vec{x}\left(t\right)=\phi\left(t\right)\phi^{-1}\left(t_{0}\right)\vec{x}_{0} + \phi\left(t\right)\int^{t}_{t_{0}} \phi^{-1}\left(s\right)\vec{b}\left(s\right) \; d s ,\]
+donde $\displaystyle \phi\left(t\right) $ es matriz fundamental del sistema homogéneo asociado. 
+\end{theorem}
+\begin{proof}
+Dado un sistema lineal no homogéneo $\displaystyle \vec{x}' = A\left(t\right)\vec{x} + \vec{b}\left(t\right) $ y una matriz fundamental $\displaystyle \phi\left(t\right) $ de $\displaystyle \left(S_{h}\right) $, sabemos que $\displaystyle \forall \vec{c} \in \R^{n} $ el vector $\displaystyle \phi\left(t\right)\vec{c} $ es solución de $\displaystyle \left(S_{h}\right) $. \\
+Ahora, podemos generalizar el método de variación de constantes que vimos en el tema anterior para encontrar una solución particular del sistema no homogéneo. Concretamente, buscamos una solución de la forma
+\[\vec{x}_{p}\left(t\right)=\phi\left(t\right)\vec{c}\left(t\right) .\]
+Si forzamos para que $\displaystyle \vec{x}_{p} $ sea solución:
+\[\phi'\left(t\right)\vec{c}\left(t\right) + \phi\left(t\right)\vec{c}'\left(t\right)=A\left(t\right)\phi\left(t\right)\vec{c}\left(t\right)+b\left(t\right)=\phi'\left(t\right)\vec{c}\left(t\right)+\vec{b}\left(t\right)  .\]
+De aquí obtenemos que $\displaystyle \phi\left(t\right)\vec{c}'\left(t\right)=\vec{b}\left(t\right) $, por lo que $\displaystyle \vec{c}'\left(t\right)=\phi^{-1}\left(t\right)\vec{b}\left(t\right) $. Así, tendremos que
+\[\vec{c}\left(t\right)=\int^{t}_{t_{0}} \phi^{-1}\left(s\right)\vec{b}\left(s\right) \; d s .\]
+Así, obtenemos la solución particular será
+\[\vec{x}_{p}\left(t\right)=\phi\left(t\right)\int^{t}_{t_{0}} \phi^{-1}\left(s\right)\vec{b}\left(s\right) \; d s .\]
+La fórmula del teorema se deduce de un teorema anterior que indica la estructura de las soluciones para este tipo de EDOS. 
+\end{proof}
+\begin{observation}
+Podemos ver que no importa la matriz fundamental que escojamos.
 \end{observation}
-\begin{observation}[Método de variación de constantes]
-El método de variación de constantes para hallar una solución particular de $\displaystyle \left(S\right) $ funciona también en este escenario vectorial. En efecto, si $\displaystyle \phi\left(t\right) $ es matriz fundamental de $\displaystyle \left(S_{h}\right) $, entonces $\displaystyle \vec{x}_{h}\left(t\right)=\phi\left(t\right)\vec{c} $, con $\displaystyle \vec{c} \in \R^{n} $, entonces $\displaystyle \vec{x}_{p}\left(t\right)=\phi\left(t\right)\vec{c}\left(t\right) $ \footnote{Observar que ahora $\displaystyle \vec{c}\left(t\right) $ no es constante.} es solución particular de $\displaystyle \left(S\right) $ y por el principio de superposición $\displaystyle \vec{x}=\vec{x}_{h}+\vec{x}_{p} $ es la solución general de $\displaystyle \left(S\right) $.
-Calculamos $\displaystyle \vec{c}\left(t\right) $ forzándolo a que sea solución de $\displaystyle \left(S\right) $:
-\[\vec{x}_{p}'\left(t\right)=A\left(t\right)\vec{x}_{p}+\vec{b}\left(t\right) \Rightarrow \phi'\vec{c}+\phi\vec{c}' = A\phi\vec{c}+\vec{b} .\]
-Hemos usado que por ser $\displaystyle \phi $ matriz fundamental se tiene que $\displaystyle \phi'=A\phi $. Así, nos queda que 
-\[\phi\vec{c}' = \vec{b}\left(t\right)\iff \vec{c}' = \phi^{-1}\left(t\right)\vec{b}\left(t\right) \iff \vec{c}\left(t\right)=\int \phi^{-1}\left(t\right)\vec{b}\left(t\right) \; dt .\]
-Así, nuestro objetivo es construir explícitamente $\displaystyle \phi\left(t\right) $ para construir la solución. 
-\end{observation}
+
+\section{Sistemas lineales con coeficientes constantes}
+
 A partir de ahora consideramos $\displaystyle A\left(t\right)=A $ matriz de coeficientes constantes.
-El problema $\displaystyle \vec{x}'=A\vec{x} $ es muy similar al problema $\displaystyle x' = ax $, que tiene como solución general $\displaystyle x\left(t\right)=Ce^{at} $, $\displaystyle C \in \R $. Veamos que el sistema tiene una solución parecida, concretamente, veremos que $\displaystyle \phi\left(t\right)=e^{At} $. \\
-Otra forma de intentar resolver el problema es ver si hay soluciones de $\displaystyle \left(S_{h}\right) $ que sean del estilo $\displaystyle e^{\lambda t}\vec{v} $. Si queremos que $\displaystyle \vec{x}\left(t\right)=e^{\lambda t}\vec{v} $ sea solución de $\displaystyle \left(S_{h}\right) $, nos preguntamos cómo tienen que ser $\displaystyle \lambda  $ y $\displaystyle \vec{v} $. Tendremos que 
+El problema $\displaystyle \vec{x}'=A\vec{x} $ es muy similar al problema $\displaystyle x' = ax $, que tiene como solución general $\displaystyle x\left(t\right)=Ce^{at} $, $\displaystyle C \in \R $. Veamos que el sistema tiene una solución parecida, concretamente, veremos que $\displaystyle \phi\left(t\right)=e^{At} $. 
+\subsection{$A$ es diagonalizable}
+
+En primer lugar nos podemos preguntar por las condiciones que deben verificar $\displaystyle \vec{v}\in \R^{n} $ y $\displaystyle \lambda \in \R $ para que $\displaystyle e^{\lambda t}\vec{v} $ sea solución del sistema $\displaystyle \left(S_{h}\right)\; \vec{x}'=A\vec{x} $. Tendremos que 
 \[\vec{x}'=A\vec{x} \iff \lambda e^{\lambda t}\vec{v}=Ae^{\lambda t}\vec{v} \iff A\vec{v}-\lambda\vec{v}=0 \iff \left(A-\lambda I\right)\vec{v}=0 .\]
-Si $\displaystyle \lambda  $ es autovalor asociado a $\displaystyle \vec{v} $ autovector de la matriz $\displaystyle A $, entonces $\displaystyle \vec{x}\left(t\right)=e^{\lambda t}\vec{v} $ es una solución de $\displaystyle \left(S_{h}\right) $. Si $\displaystyle A $ es diagonalizable ya sabemos encontrar una matriz fundamental.
+Así, tenemos que $\displaystyle e^{\lambda t}\vec{v} $ es solución si y solo si $\displaystyle \lambda \in \R $ es autovalor de $\displaystyle A $ y $\displaystyle \vec{v} $ es un vector asociado a este autovalor. Por tanto, si $\displaystyle A $ es diagonalizable ya sabemos encontrar una matriz fundamental.
 \begin{prop}
 	Si $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\}  $ son $\displaystyle n $ autovectores linealmente independientes asociados a $\displaystyle \lambda_{1}, \ldots, \lambda_{n} $ autovalores de la matriz $\displaystyle A $, y definimos las matrices
-	\[P = \left(\vec{v}_{1}, \ldots, \vec{v}_{n}\right) \quad \text{y} \quad D\left(t\right)=\begin{pmatrix} e^{\lambda_{1}t} & &0 & \\
+	\[P = \left(\vec{v}_{1}, \ldots, \vec{v}_{n}\right) \quad \text{y} \quad D\left(t\right)=\begin{pmatrix} e^{\lambda_{1}t} & & & \\
 	& e^{\lambda_{2}t} & & \\
-	& 0& & \\
-	& & & e^{\lambda_{n}t}\end{pmatrix} .\]
-Entonces, $\displaystyle \phi\left(t\right)=PD\left(t\right) $ es matriz fundamental de $\displaystyle \left(S_{h}\right) $. Además, la matriz fundamental principal asociada al instante $\displaystyle t_{0}=0 $ es $\displaystyle \psi\left(t\right)=PD\left(t\right)P^{-1} $.
+	& & & \\
+	& & & e^{\lambda_{n}t}\end{pmatrix} ,\]
+	entonces $\displaystyle \phi\left(t\right)=PD\left(t\right) $ es matriz fundamental de $\displaystyle \left(S_{h}\right) $. Además, la matriz fundamental principal asociada al instante $\displaystyle t_{0}=0 $ es $\displaystyle \psi\left(t\right)=PD\left(t\right)P^{-1} $.
 \end{prop}
 \begin{proof}
 	Tenemos que $\displaystyle \phi\left(t\right)=PD\left(t\right) $ es matriz fundamental por la reflexión que hicimos anteriormente y puesto que por hipótesis $\displaystyle \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\}  $ son linealmente independientes. Así, las columnas de $\displaystyle \phi $ son $\displaystyle \left\{ e^{\lambda_{1}t}\vec{v}_{1}, \ldots, e^{\lambda_{n}}\vec{v}_{n}\right\}  $, que son soluciones linealmente independientes. 
-Además, 
+Por otro lado, 
 \[\psi\left(0\right)=PD\left(0\right)P^{-1}=P P^{-1}= I .\]
 \end{proof}
 \begin{observation}
 Si el instante inicial es $\displaystyle t_{0}\neq 0 $, tendremos que la matriz principal será
-\[\psi\left(t\right)=P\begin{pmatrix} e^{\lambda_{1}\left(t-t_{0}\right)} & &0 & \\
+\[\psi\left(t\right)=P\begin{pmatrix} e^{\lambda_{1}\left(t-t_{0}\right)} & & & \\
 	& e^{\lambda_{2}\left(t-t_{0}\right)} & & \\
-	& 0& & \\
+	& & & \\
 	& & & e^{\lambda_{n}\left(t-t_{0}\right)}\end{pmatrix} .\]
 \end{observation}
 Ahora nos preguntamos, qué pasa si $\displaystyle A $ no es diagonalizable. Así, retomamos la primera idea de definir $\displaystyle \phi\left(t\right) $ de la forma $\displaystyle e^{At} $. 
-\begin{definition}[Exponencial de una matriz]
-Recordamos que 
+\subsection{Exponencial de una matriz}
+La forma en la que definimos el exponencial de una matriz es extendiendo la definición de serie de potencias de la función exponencial
 \[e^{x}=1 + x + \frac{x^{2}}{2!} + \cdots = \sum^{\infty}_{k = 0}\frac{x^{k}}{k!} .\]
-Por analogía, definimos
+\begin{definition}[Exponencial de una matriz]
+Dada $\displaystyle A \in \mathcal{M}_{n} $, se define el \textbf{exponencial de $\displaystyle A $} como
 \[\exp\left(A\right)=e^{A}:= I + A + \frac{A^{2}}{2!} + \cdots = \sum^{\infty}_{k = 0}\frac{A^{k}}{k!} .\]
 \end{definition}
 \begin{theorem}
-Dado el sistema $\displaystyle \vec{x}' = A \vec{x} $, la matriz fundamental principal viene dada por
+Dado el sistema $\displaystyle \vec{x}' = A \vec{x} $, la matriz fundamental principal tal que $\displaystyle \psi\left(0\right)=I $ viene dada por
 \[\psi\left(t\right)=\exp\left(At\right)=\sum^{\infty}_{k = 0}\frac{t ^{k}A^{k}}{k!}, \; t \in \R .\]
 Además, la convergencia de la serie es uniforme sobre cada intervalo cerrado y acotado $\displaystyle \left[a,b\right] \subset \R $. 
 \end{theorem}
 \begin{observation}
-Algunas observaciones antes de hacer la demostración.
-\begin{enumerate}
-\item Este resultado es coherente con la proposición que acabamos de ver. Veamos que si $\displaystyle A $ es diagonalizable, $\displaystyle \psi\left(t\right)=PD\left(t\right)P^{-1} $ coincide $\displaystyle \exp\left(At\right)$. Supongamos que $\displaystyle A = PDP^{-1} $ con 
+Los dos siguientes problemas son equivalentes
+\[
+\begin{cases}
+\phi'\left(t\right)=A\phi\left(t\right) \\
+\phi\left(0\right)=I
+\end{cases}
+\]
+y los $\displaystyle n $ problemas de valor inicial de la forma 
+\[
+\begin{cases}
+\vec{x}' = A\vec{x} \\
+\vec{x}\left(0\right)=e_{i}, \; i = 1, \ldots, n
+\end{cases}
+.\]
+De esta forma, está claro que el PVI también tiene una única solución $\displaystyle \phi\left(t\right) $.
+\end{observation}
+
+\begin{proof}
+Si aplicamos el método de las iteradas de Picard tenemos que
+\[\psi_{0}\left(t\right)=I .\]
+\[\psi_{1}\left(t\right)=I + \int^{t}_{0} AI \; d s = I + tA .\]
+\[\psi_{2}\left(t\right)=I + \int^{t}_{0} A\left(I + sA\right) \; d s= I + tA + \frac{t ^{2}}{2}A^{2} .\]
+\[\vdots .\]
+\[\psi_{j}\left(t\right)=I + tA + \cdots + \frac{t ^{j}}{j!}A^{j} .\]
+En un ejercicio del tema 1 vimos que este método converge, por lo que sabemos que existe una matriz $\displaystyle \phi\left(t\right) $ tal que 
+\[\lim_{j  \to \infty}\psi_{j}\left(t\right)=\phi\left(t\right), \; t \in \R .\]
+Además esta convergencia es uniforme en cada intervalo $\displaystyle \left[a,b\right]  $. Por otro lado, la demostración del teorema de existencia y unicidad (la construcción de las iterantes de Picard) nos asegura que las columnas de $\displaystyle \phi\left(t\right) $ son solución del sistema $\displaystyle \vec{x}' = A\vec{x} $.  
+\end{proof}
+\begin{observation}
+Es obvio que $\displaystyle \phi\left(0\right)=I $. De esta forma, la solución del PVI
+\[
+\begin{cases}
+\vec{x}' = A\vec{x}\\
+\vec{x}\left(0\right)=\vec{x}_{0}
+\end{cases}
+\]
+es $\displaystyle \vec{x}\left(t\right)=e^{tA}\vec{x}_{0} $.
+\end{observation}
+\begin{observation}
+Este resultado es coherente con la proposición que acabamos de ver. Veamos que si $\displaystyle A $ es diagonalizable, $\displaystyle \psi\left(t\right)=PD\left(t\right)P^{-1} $ coincide $\displaystyle \exp\left(At\right)$. Supongamos que $\displaystyle A = PDP^{-1} $ con 
 	\[P = \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n}\right\} \quad \text{y} \quad D = \begin{pmatrix} \lambda_{1} & &0 & \\
 	& \lambda_{2} & & \\
 	& 0& & \\
@@ -257,17 +336,65 @@ Entonces,
 \begin{split}
 	\exp\left(At\right) = & I + tA + \frac{t ^{2}}{2!}A^{2} + \cdots + \frac{t ^{j}}{j!}A^{j} + \cdots \\
 	= &  P P^{-1} + t P D P^{-1} + \frac{t ^{2}}{2!}PD^{2}P^{-1} + \cdots + \frac{t ^{j}}{j!}PD^{j}P^{-1} + \cdots\\
- = & P\begin{pmatrix} \sum^{\infty}_{k = 0}\frac{t ^{k}}{k!}\lambda_{1}^{k} & &0 & \\
+ = & P\begin{pmatrix} \sum^{\infty}_{k = 0}\frac{t ^{k}}{k!}\lambda_{1}^{k} & & & \\
 	& \sum^{\infty}_{k = 0}\frac{t ^{k}}{k!}\lambda_{2}^{k} & & \\
-	& 0& & \\
+	& & & \\
 	& & & \sum^{\infty}_{k = 0}\frac{t ^{k}}{k!}\lambda_{n}^{k}\end{pmatrix} P^{-1}\\
-	= & P\begin{pmatrix} e^{\lambda_{1}t} & &0 & \\
+	= & P\begin{pmatrix} e^{\lambda_{1}t} & & & \\
 	& e^{\lambda_{2}t} & & \\
-	& 0& & \\
-	& & & e^{\lambda_{n}t}\end{pmatrix}P^{-1}=PD\left(t\right)P^{-1}.
+	& & & \\
+	& & & e^{\lambda_{n}t}\end{pmatrix}P^{-1}=PD\left(t\right)P^{-1} = \psi\left(t\right).
 \end{split}
 \]
-\item Si $\displaystyle A $ no es diagonal podemos recurrir a la forma canónica de Jordan. Para calcular $\displaystyle \exp\left(At\right) $ me basta con calcular $\displaystyle \exp\left(B_{j}t\right) $, donde $\displaystyle B_{j} $ son los bloques de la matriz de Jordan de $\displaystyle A $. Podemos descomponer $\displaystyle B_{j}=D_{j}+N_{j} $, donde $\displaystyle N_{j} $ es la parte de debajo de la diagonal que es una matriz nilpontente. Nos gustaría que 
+\end{observation}
+\begin{observation}
+Por otro lado, si quisiéramos calcular la matriz fundamental principal asociada al instante $\displaystyle t_{0} \neq 0 $ basta con considerar
+\[\psi\left(t\right)=\exp\left(A\left(t-t_{0}\right)\right) .\]
+\end{observation}
+\begin{prop}
+\begin{enumerate}
+\item Si $\displaystyle P\in \mathcal{M}_{n} $ es tal que $\displaystyle AP = PB $, entonces $\displaystyle e^{tA}P = Pe^{tB} $.
+\item Si $\displaystyle AB = BA $, entonces $\displaystyle e^{tA}B = Be^{tA} $, $\displaystyle \forall t \in \R $. En particular, $\displaystyle AB = BA $. 
+\item Si $\displaystyle AB = BA $, entonces $\displaystyle e^{t\left(A + B\right)}=e^{tA}e^{tB} $, $\displaystyle \forall t \in \R $. En particular, $\displaystyle e^{tA}e^{tB}=e^{tB}e^{tA} $, $\displaystyle \forall t \in \R $. 
+\end{enumerate} 
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Podemos observar que 
+	\[A^{2}P = A\left(AP\right) = A\left(PB\right)=\left(AP\right)B = PB^{2} .\]
+A partir de aquí es sencillo demostrar por inducción que 
+\[A^{k}P = PB^{k}, \; \forall k \in \N .\]
+De esta forma, tenemos que
+\[e^{tA}P = \sum^{\infty}_{k = 0}\frac{t ^{k}A^{k}}{k!}P = \sum^{\infty}_{k = 0}\frac{t ^{k}PB^{k}}{k!}=P\sum^{\infty}_{k = 0}\frac{t ^{k}B^{k}}{k!} = Pe^{tB} .\]
+\item Basta tomar $\displaystyle B = A $ y $\displaystyle P = B $ y aplicar \textbf{(1)}. 
+\item Si planteamos el PVI matricial
+	\[
+	\begin{cases}
+	\phi'\left(t\right)=\left(A + B\right)\phi \\
+	\phi\left(0\right)=I
+	\end{cases}
+	.\]
+Tenemos que $\displaystyle \phi\left(t\right)=e^{t\left(A + B\right)} $ es la única solución (por el teorema de existencia y unicidad). Por otro lado, si tomamos $\displaystyle \psi\left(t\right)=e^{tA}e^{tB} $ tenemos que 
+\[\psi'\left(t\right) = Ae^{tA}e^{tB}+e^{tA}Be^{tB} = Ae^{tA}e^{tB} + Be^{tA}e^{tB}=\left(A + B\right)e^{tA}e^{tB} = \left(A + B\right)\psi\left(t\right) .\]
+Dado que $\displaystyle \psi\left(0\right)=I $, tenemos que por unicidad de soluciones debe ser que $\displaystyle \phi\left(t\right)=\psi\left(t\right) $. La última afirmación se deduce fácilmente a partir de la igualdad $\displaystyle e^{t\left(A + B\right)}=e^{t\left(B + A\right)} $. 
+\end{enumerate}
+\end{proof}
+\begin{eg}
+Consideremos el sistema $\displaystyle \vec{x}' = A \vec{x} $ con 
+\[A = \begin{pmatrix} 0 & 1 & -1 \\ -3 & 4 & -1 \\ -1 & 1 & 2 \end{pmatrix} ,\]
+y calculemos una matriz fundamental. Tendremos que el polinomio característico de $\displaystyle A $ es
+\[P_{A}\left(\lambda \right)= \begin{vmatrix} -\lambda & 1 & -1 \\ -3 & 4-\lambda & -1 \\ -1 & 1 & 2-\lambda \end{vmatrix} =\left(\lambda-1\right)\left(\lambda-2\right)\left(\lambda-3\right).\]
+Así, para cada autovalor se cumple que la multiplicidad geométrica es igual que la algebraica por lo que $\displaystyle A $ es diagonalizable. Tendremos que existe $\displaystyle P \in \mathcal{M}_{n}\left(\R\right) $ tal que 
+\[A = P\begin{pmatrix} 1 & & \\ & 2 & \\ & & 3 \end{pmatrix}P^{-1} .\]
+De esta forma, una matriz fundamental para $\displaystyle A $ será
+\[\exp\left(At\right)=P\begin{pmatrix} e^{t} & & \\ & e^{2t} & \\ & & e^{3t} \end{pmatrix} .\]
+\end{eg}
+
+% --------------------------------------
+\begin{observation}
+Algunas observaciones antes de hacer la demostración.
+\begin{enumerate}
+\item \item Si $\displaystyle A $ no es diagonal podemos recurrir a la forma canónica de Jordan. Para calcular $\displaystyle \exp\left(At\right) $ me basta con calcular $\displaystyle \exp\left(B_{j}t\right) $, donde $\displaystyle B_{j} $ son los bloques de la matriz de Jordan de $\displaystyle A $. Podemos descomponer $\displaystyle B_{j}=D_{j}+N_{j} $, donde $\displaystyle N_{j} $ es la parte de debajo de la diagonal que es una matriz nilpontente. Nos gustaría que 
 	\[\exp\left(B_{j}t\right)=\exp\left(t\left(D_{j}+N_{j}\right)\right)=?\exp\left(tD_{j}\right)\exp\left(tN_{j}\right) .\]
 Una propiedad buena de la exponencial es que si $\displaystyle AB = BA $, entonces
 \[\exp\left(t\left(A + B\right)\right)=\exp\left(tA\right)\exp\left(tB\right) .\]
