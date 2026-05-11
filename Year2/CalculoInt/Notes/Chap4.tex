@@ -57,12 +57,65 @@ Si $\displaystyle S \subset \R^{3} $ admite una buena parametrización $\display
 	\[\phi: \left[a,b\right]\times\left[0,2\pi\right]  \to \R^{3}: \left(x, \theta \right)\to \left(x\cos \theta, f\left(x\right), x\sin \theta \right) .\]
 \end{enumerate}
 \end{eg}
+\begin{definition}[Vector normal unitario]
+Supongamos que $\displaystyle S $ admite una buena parametrización $\displaystyle \phi : D \subset \R^{2} \to \R^{3} $. Entonces decimos que el \textbf{vector normal unitario} a $\displaystyle S $ en el punto $\displaystyle \left(x,y,z\right)=\phi\left(u,v\right) $ es
+\[\hat{n}\left(\phi\left(u,v\right)\right) : = \frac{1}{\left\|\frac{\partial \phi}{\partial u}\left(u,v\right)\times \frac{\partial \phi}{\partial v}\left(u,v\right)\right\|}\left(\frac{\partial \phi}{\partial u}\left(u,v\right)\times \frac{\partial \phi}{\partial v}\left(u,v\right)\right) .\]
+\end{definition}
+\begin{observation}
+Tiene sentido que sea normal a la superficie puesto que los vectores $\displaystyle \frac{\partial \phi}{\partial u} $ y $\displaystyle \frac{\partial \phi}{\partial v} $ son tangentes a la superficie en $\displaystyle \phi\left(u,v\right) $ y son linealmente indepedientes.
+\end{observation}
+\begin{observation}
+Podemos ver que podemos escribir
+\[
+\begin{split}
+	\int _{S}F = & \int \int _{D}\left\langle F\left(\phi\left(u,v\right)\right), \frac{\partial \phi}{\partial u} \times \frac{\partial \phi}{\partial v} \right\rangle  \; du \; dv \\
+	= & \int \int _{D}\left\langle F\left(\phi\left(u,v\right)\right), \hat{n}\left(\phi\left(u,v\right)\right) \right\rangle \left\|\frac{\partial \phi}{\partial u} \times \frac{\partial \phi}{\partial v}\right\| \; du \; dv = \int _{S} \left\langle F, \hat{n} \right\rangle .
+\end{split}
+\]
+\end{observation}
+
 \begin{definition}[Superficies equivalentes]
 Dos parametrizaciones $\displaystyle \phi: D \to \R^{3} $ y $\displaystyle \varphi: U \to \R^{3} $ son \textbf{equivalentes} cuando existe $\displaystyle h : U \to D $ $\displaystyle \mathcal{C}^{1} $-difeomorfismo tal que $\displaystyle \varphi = \phi\circ h $. 
 \end{definition}
 \begin{observation}
 Como $\displaystyle h $ es $\displaystyle \mathcal{C}^{1} $-difeomorfismo tendremos que $\displaystyle \forall\left(s,t\right)\in U $, $\displaystyle \det\left(Jh\left(s,t\right)\right)\neq 0 $. 
 \end{observation}
+\begin{definition}
+	Diremos que $\displaystyle h $ \textbf{conserva} la orientación si $\displaystyle \det\left(Jh\left(s,t\right)\right)>0 $, $\displaystyle \forall \left(s,t\right)\in U $. Análogamente, decimos que $\displaystyle h $ \textbf{invierte} la orientación cuando $\displaystyle \det\left(Jh\left(s,t\right)\right)<0 $, $\displaystyle \forall \left(s,t\right)\in U $. 
+\end{definition}
+\begin{observation}
+Es fácil ver que 
+\[\frac{\partial \varphi}{\partial s}\left(s,t\right) \times \frac{\partial \varphi}{\partial t}\left(s,t\right)=\det\left(Jh\left(s,t\right)\right)\left[\frac{\partial \phi}{\partial s}\left(h\left(s,t\right)\right) \times \frac{\partial \phi}{\partial t}\left(h\left(s,t\right)\right)\right]  .\]
+Por tanto, $\displaystyle \hat{n}_{\varphi}\left(s,t\right)=\det\left(Jh\left(s,t\right)\right)\hat{n}\left(h\left(s,t\right)\right) $. 
+\end{observation}
+\begin{prop}
+La integral de un campo escalar sobre una superficie parametrizada no depende de la parametrización. Sin embargo, la integral de un campo vectorial sobre una superficie parametrizada no depende de la parametrización pero sí de la orientación.
+\end{prop}
+
+\begin{definition}[Superficie orientable]
+Una \textbf{superficie orientable} es aquella que admite una orientación, es decir, es un par $\displaystyle \left(S, \hat{n}\right) $ donde $\displaystyle \hat{n} $ es una normal unitaria en $\displaystyle S $. Es decir, $\displaystyle n : S \to \R^{3} $ es un campo vectorial continuo en $\displaystyle S $ tal que $\displaystyle \forall p \in S $, $\displaystyle \hat{n}\left(p\right) $ es un vector perpendicular a $\displaystyle S $ en $\displaystyle p $ y $\displaystyle \|\hat{n}\left(p\right)\| = 1 $. 
+\end{definition}
+\begin{prop}
+Toda superficie $\displaystyle S $ que admite una buena parametrización $\displaystyle \phi: D \subset \R^{2} \to \R^{3} $ que es inyectiva en todo $\displaystyle D $ es una superficie orientada con 
+\[\hat{n}\left(\phi\left(u,v\right)\right)=\frac{1}{\left\|\frac{\partial \phi}{\partial u} \times \frac{\partial \phi}{\partial v}\right\|}\left(\frac{\partial \phi}{\partial u}\times\frac{\partial \phi}{\partial v}\right) .\]
+\end{prop}
+\begin{observation}
+	\begin{enumerate}
+	\item Un caso particular de la proposición anterior son las gráficas de las funciones $\displaystyle f : D \to \R $. 
+	\item También son orientables las uniones adecuadas de superficies orientables.
+	\item Si $\displaystyle \phi $ no es inyectiva en todo $\displaystyle D $ puede suceder que $\displaystyle S $ no sea orientable (por ejemplo la cinta de Möebius) o que sí lo sea (superficie de un trozo de cilindro). 
+	\end{enumerate}
+\end{observation}
+\begin{prop}
+Si $\displaystyle \phi: D \subset \R^{2}\to \R^{3} $ es una buena parametrización de $\displaystyle S $ que es inyectiva en todo $\displaystyle D $, entonces $\displaystyle \phi\left(\partial D\right) $ es una curva cerrada que limita la superficie $\displaystyle S $, que llamaremos \textbf{borde de $\displaystyle S $} y la denotamos $\displaystyle \partial S $ \footnote{Aunque no es la frontera de $\displaystyle S $.}. 
+\end{prop}
+\begin{definition}
+	Si $\displaystyle \gamma : \left[a,b\right] \to \R^{2} $ es una parametrización de $\displaystyle \partial D $ que le da orientación positiva, entonces $\displaystyle \phi \circ \gamma : \left[a,b\right] \to \R^{2} $ es una parametrización de $\displaystyle \partial S $ que le da una orientación que diremos que es coherente con la de $\displaystyle S $. 
+\end{definition}
+\begin{observation}
+Para que la unión de dos superficies orientadas con borde sea una superficie orientada, hace falta que los trozos con borde que son comunes tengan orientaciones coherentes contrarias.
+\end{observation}
+
 \section{Integral de superficie}
 \begin{definition}[Integral de superficie]
 Sea $\displaystyle S \subset \R^{3} $ una superficie que admite una buena parametrización $\displaystyle \phi : D \to \R^{3} $. 
@@ -105,7 +158,7 @@ Podemos ver que para medir el área de una superficie suficientemente buena lo q
 \begin{prop}
 	Sea $\displaystyle S \subset \R^{3} $ una superficie que admite una buena parametrización $\displaystyle \phi: D \to \R^{2} $ y $\displaystyle f_{i} : S \to \R $ y $\displaystyle F_{i} : S \to \R^{3} $ continuas en $\displaystyle S $ para $\displaystyle i \in \left\{ 1,2\right\}  $. 
 \begin{enumerate}
-\item Dados $\displaystyle \alpha, \beta \in \R $, $\displaystyle  $. 
+\item Dados $\displaystyle \alpha, \beta \in \R $,  
 	\[
 	\begin{split}
 	\int _{S}\alpha f_{1} + \beta f_{2} = \alpha \int _{S}f_{1} +\beta \int _{S}f_{2} \quad \text{y} \quad \int _{S}\alpha F_{1}+\beta F_{2} =\alpha \int _{S}F_{1} +\beta \int _{S}F_{2} .
@@ -115,24 +168,201 @@ Podemos ver que para medir el área de una superficie suficientemente buena lo q
 	\[\int _{S}f_{1} \leq \int _{S}f_{2} .\]
 \end{enumerate}
 \end{prop}
-
-% ---------------------
-
-\begin{prop}
-Se sigue cumpliendo la linealidad, monotonía de la integral. 
-\end{prop}
-Así, si $\displaystyle \left|f\right|\leq M $, tenemos que
-\[ \left|\int _{S}f \right|= \left|\int _{R}f\left(\varphi\left(u,v\right)\right)\left\|\frac{\partial \varphi}{\partial u} \times \frac{\partial \varphi}{\partial v}\right\| \; du \; dv\right| \leq \int _{R} \left|f\left(\varphi\left(u,v\right)\right)\right| \left\|\frac{\partial \varphi}{\partial u} \times \frac{\partial \varphi}{\partial v}\right\|\; du \; dv \leq M \int _{R} \left\|\frac{\partial \varphi}{\partial u} \times \frac{\partial \varphi}{\partial v}\right\| \; du \; dv.\]
-Ahora, si $\displaystyle F $ es un campo vectorial definimos
-\[\int _{S}F = \int _{R}F\left(\varphi\left(u,v\right)\right) \cdot \left(\frac{\partial \varphi}{\partial u}\left(u,v\right) \times \frac{\partial \varphi}{\partial v}\left(u,v\right)\right) \; du \; dv .\]
-Hemos visto el cambio de parametrización y es importante observar que si se trata de un campo escalar el signo no cambia pero si se trata de un campo vectorial el signo sí que puede cambiar. 
-\begin{theorem}[Teorema de Stokes]
-Sea $\displaystyle \phi : A \subset \R^{2}\to \R^{3} $ y tomamos la parametrización de $\displaystyle \partial A $ 
-\[\gamma : \left[a,b\right] \to \R^{2} .\]
-Si $\displaystyle W $ es la parte superior de la superficie ( $\displaystyle \phi $ es una parametrización de $\displaystyle W $), entonces la parametrización de $\displaystyle \partial W $ será $\displaystyle \phi\circ\gamma  $. De esta forma
-\[\int _{\partial W}F =\int _{W}rot F  .\]
-\end{theorem}
+ 
 \begin{observation}
-El teorema de Stokes es una aplicación del Teorema de Green y la regla de la cadena.
+Si tenemos que $\displaystyle \left|f\right|\leq M $, es sencillo ver que
+\[
+\begin{split}
+	\left|\int _{S}f \right|= &  \left|\int _{R}f\left(\varphi\left(u,v\right)\right)\left\|\frac{\partial \varphi}{\partial u} \times \frac{\partial \varphi}{\partial v}\right\| \; du \; dv\right| \leq \int _{R} \left|f\left(\varphi\left(u,v\right)\right)\right| \left\|\frac{\partial \varphi}{\partial u} \times \frac{\partial \varphi}{\partial v}\right\|\; du \; dv \\
+	\leq & M \int _{R} \left\|\frac{\partial \varphi}{\partial u} \times \frac{\partial \varphi}{\partial v}\right\| \; du \; dv = M A\left(S\right).
+\end{split}
+\]
 \end{observation}
-El Teorema de Stokes es un teorema ampliamente utilizado en muchas disciplinas.
+\section{Los teoremas de Stokes}
+\begin{definition}[Rotacional de un campo vectorial]
+Sea $\displaystyle F = \left(P,Q,R\right) : M\subset \R^{3}\to \R^{3} $ un campo vectorial de clase $\displaystyle \mathcal{C}^{1} $ y $\displaystyle M $ abierto conexo. Definimos el \textbf{rotacional} de $\displaystyle F $ como 
+\[\rot F :=\left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}, \frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}, \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right) .\]
+\end{definition}
+\begin{observation}
+Si $\displaystyle \nabla = \left(\frac{\partial }{\partial x}, \frac{\partial }{\partial y}, \frac{\partial }{\partial z}\right) $, entonces
+\[\rot F = \nabla \times F = \begin{vmatrix} \hat{i} & \hat{ j} & \hat{k} \\ \frac{\partial }{\partial x} & \frac{\partial }{\partial y} & \frac{\partial }{\partial z} \\ P & Q & R \end{vmatrix}= \left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}, \frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}, \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)  .\]
+Análogamente, podemos ver que 
+\[\Div F = \nabla F = \left\langle \left(\frac{\partial }{\partial x}, \frac{\partial }{\partial y}, \frac{\partial}{\partial z}\right), \left(P, Q, R\right) \right\rangle  = \frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}.\]
+\end{observation}
+\begin{theorem}[Teorema de Stokes]
+Sea $\displaystyle S \subset \R^{3} $ una superficie parametrizada por $\displaystyle \phi: D \subset \R^{3} $ que es buena e inyectiva en todo $\displaystyle D $ y sea $\displaystyle F = \left(P, Q, R\right) $ un campo vectorial $\displaystyle \mathcal{C}^{1} $ en $\displaystyle S $. Entonces
+\[\int _{\partial S}F =\int _{S}\rot F ,\]
+siendo $\displaystyle \partial S $ el borde de $\displaystyle S $ con orientación coherente con la de $\displaystyle S $. 
+\end{theorem}
+\begin{eg}
+	Sea $\displaystyle F\left(x,y,z\right)=\left(z-x, x + z, -\left(x+y\right)\right) $ con  
+	\[ S = \left\{ \left(x,y,z\right)\in \R^{3} \; :\; z = 4-x^{2}-y^{2}, \; z \geq 0\right\}.\]
+Parametrizamos la curva de la siguiente forma
+\[\phi : D \to \R^{3} : \left(x,y\right) \to \left(x,y,4-x^{2}-y^{2}\right) ,\]
+con $\displaystyle D = \left\{ \left(x,y\right) \in \R^{2} \; : \; x^{2}+y^{2}\leq 4\right\}  $. Gráficamente se puede ver que la superficie es la de un paraboloide cuya proyección sobre el plano $\displaystyle XY $ es la región $\displaystyle x^{2}+y^{2} \leq 4 $. Tendremos que si cogemos $\displaystyle \gamma\left(t\right)=\left(2\cos t, 2 \sin t, 0\right) $ con $\displaystyle t \in \left[0,2\pi \right]  $,
+\[\int _{\partial S} F= \int^{2\pi }_{0} \left\langle F\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle  \; dt = 4\pi  .\]
+Por otro lado, $\displaystyle \rot F = \left(-2,2,1\right) $ y $\displaystyle \frac{\partial \phi}{\partial x}\times \frac{\partial \phi}{\partial y}=\left(2x, 2y, 1\right) $. De esta forma, 
+\[
+\begin{split}
+	\int _{S}\rot F = \int \int _{D}-4x + 4y + 1 \; dx \; dy = \int^{2}_{-2} \int^{\sqrt{2-y^{2}}}_{-\sqrt{2-y^{2}}} -4x + 4y + 1 \; dx \; dy = 4\pi 
+\end{split}
+\]
+\end{eg}
+\begin{eg}
+	Calculemos $\displaystyle \int _{S}\rot F $ para $\displaystyle F\left(x,y,z\right)=\left(y,-x, e^{xz}\right) $ y 
+	\[  S= \left\{ \left(x,y,z\right)\in \R^{3} \; : \; x^{2}+y^{2}+z^{2}=9, \; z \geq 1\right\}.\]
+	Podemos ver que $\displaystyle F \in \mathcal{C}^{\infty}\left(\R^{3}\right) $. Distinguimos dos formas para resolver el problema.
+	\begin{enumerate}
+		\item La primera consiste en hacerlo directamente. Parametricemos $\displaystyle S $. Tenemos que $\displaystyle S $ es la gráfica de $\displaystyle f : D \to \R $ con $\displaystyle D = \left\{ x^{2}+y^{2}\leq \sqrt{8}\right\}  $, de forma que una parametrización para $\displaystyle S $ será
+			\[\phi : B\left(\left(0,0\right), \sqrt{8}\right)\to \R^{3} : \left(x,y\right)\to \left(x,y,f\left(x,y\right)\right)=\left(x,y,\sqrt{9-x^{2}-y^{2}}\right) .\]
+		Tenemos que 
+		\[\frac{\partial \phi}{\partial x}\times \frac{\partial \phi}{\partial y}=\left(-\frac{x}{\sqrt{4-x^{2}-y^{2}}}, -\frac{y}{\sqrt{9 -x^{2}-y^{2}}}, 1\right) .\]
+		\[\rot F = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ \frac{\partial }{\partial x} & \frac{\partial }{\partial y} & \frac{\partial }{\partial z} \\ y & - x & e^{xz} \end{vmatrix} =\left(0, -ze^{xz, - 2}\right) .\]
+		Así, podemos ver que 
+		\[
+		\begin{split}
+			\int _{S}\rot F = & \int \int _{D}\left\langle \rot F\left(\phi\left(x,y\right)\right), \frac{\partial \phi}{\partial x}\times \frac{\partial \phi}{\partial y} \right\rangle  \; dx \; dy \\
+			= & \int \int _{D}ye^{x\sqrt{9-x^{2}-y^{2}}}-2 \; dx \; dy 
+		\end{split}
+		\]
+	Tenemos que la función $\displaystyle ye^{x\sqrt{9-x^{2}-y^{2}}} $ es impar respecto de la variable $\displaystyle y $ y $\displaystyle D $ es simétrica respecto del plano $\displaystyle y = 0 $, de esta forma la integral nos queda
+	\[=-2v\left(D\right)=-16\pi  .\]
+\item Aplicamos el teorema de Stokes. Una parametrización de $\displaystyle \partial S $ es $\displaystyle \gamma\left(t\right)=\left(\sqrt{8}\cos t, \sqrt{8}\sin t, 1\right) $ para $\displaystyle t \in \left[0, 2\pi \right]  $. De esta forma, 
+	\[
+	\begin{split}
+		\int _{\partial S}F = & \int^{2\pi }_{0} \left\langle F\left(\gamma\left(t\right)\right), \gamma'\left(t\right) \right\rangle  \; dt=\int^{2\pi }_{0} -8 \; dt = - 16\pi  .
+	\end{split}
+	\]
+	\end{enumerate}
+\end{eg}
+\begin{observation}
+El teorema de Stokes nos asegura que la integral de $\displaystyle \rot F $ es la misma en todas las superficies orientadas que tengan el mismo borde (con la misma orientación coherente). Este hecho se puede utilizar para agilizar cálculos.
+\end{observation}
+\begin{eg}
+\begin{enumerate}
+\item Calculemos $\displaystyle \int _{\gamma }\left(x+y\right) \; dx + \left(2x-z\right)\; dy + \left(x + y \right)\; dz $, siendo $\displaystyle \gamma  $ el borde del triángulo de vértices $\displaystyle \left(2,0,0\right) $, $\displaystyle \left(0,3,0\right) $ y $\displaystyle \left(0,0,6\right) $. Apliquemos el teorema de Stokes. Tenemos que $\displaystyle F\left(x,y,z\right)=\left(x + y, 2x-z, y + z\right) $, por lo que 
+	\[\rot F=\begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ \frac{\partial }{\partial x} & \frac{\partial }{\partial y} & \frac{\partial }{\partial z} \\ x + y & 2x-z & y + z \end{vmatrix} =\left(2,0,1\right) .\]
+	Por otro lado, un vector normal a $\displaystyle T $ en la dirección $\displaystyle \hat{n} $ será
+	\[\overrightarrow{A_{1}A_{2}}\times \overrightarrow{A_{1}A_{3}}=\begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ - 2 & 3 & 0 \\ - 2 & 0 & 6 \end{vmatrix} =6\left(3, 2, 1\right) .\]
+	Así, $\displaystyle \hat{n}=\left(\frac{3}{\sqrt{14}}, \frac{2}{\sqrt{14}}, \frac{1}{\sqrt{14}}\right) $. De esta forma
+	\[\int _{\gamma }F = \int _{T}\rot F = \int _{T}\left\langle \rot F, \hat{n} \right\rangle  =21 .\]
+\item Dados $\displaystyle S = \left\{ x^{2}+y^{2}=1, \; 1 \leq z \leq 2\right\}  $ y $\displaystyle F \left(x,y,z\right)=\left(y, - x, e^{xz}\right) $, calculemos $\displaystyle \int _{S}\ror F  $. Tenemos que $\displaystyle F \in \mathcal{C}^{\infty} $ en $\displaystyle \R^{3} $ pero $\displaystyle S $ no admite una buena parametrización inyectiva. Así, convertimos $\displaystyle S $ en la unión de dos superficies orientadas: $\displaystyle S_{1} $ y $\displaystyle S_{2} $ cada una de las cuales admite parametrización buena e inyectiva. 
+	Así, 
+	\[
+	\begin{split}
+		\int _{S}\rot F = & \int _{S_{1}}\rot F +\int _{S_{2}}\rot F = \int _{\partial S_{1}}F +\int _{\partial S_{2}}F  .
+	\end{split}
+	\]
+	Cogemos $\displaystyle \gamma_{1}\left(t\right)=\left(\cos t, \sin t, 2\right) $ y $\displaystyle \gamma_{2}\left(t\right)=\left(\cos t, \sin t, 1\right) $ con $\displaystyle t \in \left[0, 2\pi \right]  $, así
+	\[=\int _{\gamma_{1}}F +\int _{\gamma_{2}}F =0 .\]
+\end{enumerate}
+\end{eg}
+\begin{observation}
+Como hemos visto en el ejemplo anterior, el teorema de Stokes se puede aplicar a superficies $\displaystyle S $ que son unión adecuada de un número finito de superficies que admiten parametrización buena e inyectiva en todo su dominio.
+\end{observation}
+\begin{observation}[Deducción del teorema de Green a partir del teorema de Stokes]
+	Sea $\displaystyle D \subset \R^{2} $ y $\displaystyle F = \left(P,Q\right) $. Los podemos incluir en $\displaystyle \R^{3} $ considerando $\displaystyle \tilde{D}= \left\{ \left(x,y,0\right) \; : \; \left(x,y\right)\in D\right\}  $ y $\displaystyle \tilde{F}\left(x,y,z\right)=\left(P\left(x,y\right), Q\left(x,y\right), 0\right) $. El teorema de Stokes nos asegura que
+	\[\int _{\partial \tilde{D}}\tilde{F} =\int _{\tilde{D}}\rot \tilde{F}  .\]
+	Pero tenemos que $\displaystyle \int _{\partial \tilde{D}}\tilde{F} =\int _{\partial D}F  $ y 
+	\[
+	\begin{split}
+		\int _{\tilde{D}}\rot \tilde{F} = & \int _{\tilde{D}}\left\langle \rot \tilde{F}, \hat{n} \right\rangle  =\int _{\tilde{D}}\left\langle \rot \tilde{F}, \left(0,0,1\right) \right\rangle 
+		=  \int _{\tilde{D}}\left(\frac{\partial \tilde{Q}}{\partial x}-\frac{\partial \tilde{P}}{\partial y}\right) =\int \int _{D}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right) \; dx \; dy.
+	\end{split}
+	\]
+Por tanto, obtenemos que 
+\[\int _{\partial D}F =\int \int _{D}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right) \; dx \; dy .\]
+\end{observation}
+\begin{prop}
+Sea $\displaystyle F : U\subset \R^{3} \to \R^{3} $ un campo vectorial de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle U $ convexo. Entonces $\displaystyle F $ es conservativo en $\displaystyle U $ si y solo si $\displaystyle \rot F = 0 $. 
+\end{prop}
+\section{Teorema de Gauss}
+\begin{definition}[Recinto proyectable]
+Diremos que un recinto $\displaystyle W \subset \R^{3} $ es \textbf{proyectable sobre el plano} $\displaystyle z = 0 $ si existe $\displaystyle D \subset \R^{2} $ proyectable sobre ambos ejes y existen $\displaystyle \psi_{1}, \psi_{2} : D \to \R $ de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle D $ tales que 
+\[W = \left\{ \left(x,y,z\right) \in \R^{3} \; : \; \left(x,y\right)\in D, \; \psi_{1}\left(x,y\right)\leq z \leq \psi_{2}\left(x,y\right)\right\}  .\]
+Esta definición se exitiende de forma análoga a los planos $\displaystyle x,y = 0 $. 
+\end{definition}
+\begin{eg}
+	Algunos ejemplos de recintos proyectables son $\displaystyle W = \left\{ x^{2}+y^{2} +z^{2}\leq r^{2}\right\}  $ y $\displaystyle W = \left\{ x^{2}+y^{2}l \leq 1, \; 2 \leq z \leq 3\right\}  $. 
+\end{eg}
+\begin{prop}
+Si $\displaystyle W \subset \R^{3} $ es un recinto proyectable sobre los tres planos coordenados, entonces su frontera es la unión de varias superficies que son gráficas de funciones reales definidas en conjuntos de $\displaystyle \R^{2} $ proyectables sobre ambos ejes. A estas superficies se las llama \textbf{superficies cerradas} y tienen dos orientaciones: la interior y la exterior.
+\end{prop}
+
+\begin{theorem}[Teorema de Gauss]
+Sea $\displaystyle W \subset \R^{3} $ un recinto proyectable sobre los tres planos coordenados y sea $\displaystyle F = \left(P, Q, R\right) $ un campo vectorial de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle W $. Entonces
+\[\int _{\partial W}F =\int \int \int _{W}\Div F \; dx \; dy \; dz ,\]
+siendo $\displaystyle \partial W $ la frontera de $\displaystyle W $ orientada con $\displaystyle \hat{n} $ apuntando hacia afuera.
+\end{theorem}
+\begin{proof}
+Tenemos que 
+\[
+\begin{split}
+	\int _{\partial W}F =  \int _{\partial W}\left(P, 0, 0\right) + \int _{\partial W}\left(0,Q, 0\right) +\int _{\partial W}\left(0,0,R\right)  .
+\end{split}
+\]
+\[\int \int \int _{W}\Div F \; dx \; dy \; dz = \int \int \int _{W}\frac{\partial P}{\partial x} \; dx \; dy \; dz + \int \int \int _{W}\frac{\partial Q}{\partial y} \; dx \; dy \; dz + \int \int \int _{W}\frac{\partial R}{\partial z} \; dx \; dy \; dz .\]
+Veamos que $\displaystyle \int _{\partial W}\left(0,0,R\right) =\int \int \int _{W}\frac{\partial R}{\partial z} \; dx \; dy \; dz $, y las otras igualdades se hacen de forma análoga. 
+Como $\displaystyle W $ es proyectable sobre $\displaystyle z = 0 $, tenemos que existe $\displaystyle D \subset \R^{2} $ proyectable sobre ambos ejes y $\displaystyle \psi_{1}, \psi_{2} : D \to \R $ de clase $\displaystyle \mathcal{C}^{1} $ tales que 
+\[W = \left\{ \left(x,y,z\right) \; : \; \left(x,y\right)\in D, \; \psi_{1}\left(x,y\right)\leq z \leq \psi_{2}\left(x,y\right)\right\}  .\]
+Así, tenemos que $\displaystyle \partial W = G\left(\psi_{1}\right)\cup G\left(\psi_{2}\right)\cup S_{3} = S_{1} \cup S_{2} \cup S_{3}$. Así, tenemos que si utilizamos las parametrizaciones
+\[\phi_{i}\left(x,y\right)=\left(x,y,\psi_{i}\left(x,y\right)\right), \; i \in \left\{ 1,2\right\}  .\]
+Entonces, 
+\[
+\begin{split}
+	\int _{\partial W}\left(0,0,R\right) = & \int _{S_{1}}\left(0,0,R\right) +\int _{S_{2}}\left(0,0,R\right) +\int _{S_{3}}\left(0,0,R\right) \\
+	= & \int _{S_{1}}\left(0,0,R\right) +\int _{S_{2}}\left(0,0,R\right) = \int _{S_{2}}\left\langle \left(0,0,R\right), \hat{n} \right\rangle  -\int _{S_{1}}\left\langle \left(0,0,R\right), -\hat{n} \right\rangle  \\
+	= & \int \int _{D}\left\langle \left(0,0,R\right), \left(-\frac{\partial \psi_{2}}{\partial x}, -\frac{\partial \psi_{2}}{\partial y}, 1\right) \right\rangle  \; dx \; dy - \int \int _{D}\left\langle \left(0,0,R\right), \left(-\frac{\partial \psi_{1}}{\partial x}, - \frac{\partial \psi_{1}}{\partial y}, 1\right) \right\rangle  \; dx \; dy \\
+	= & \int \int _{D}R\left(\psi_{2}\left(x,y\right)\right) \; dx \; dy-\int \int _{D}R\left(\psi_{1}\left(x,y\right)\right) \; dx \; dy \\
+	= & \int \int _{D}\left(R\left(\psi_{2}\left(x,y\right)\right)-R\left(\psi_{1}\left(x,y\right)\right)\right) \; dx \; dy = \int \int _{D}\left(\int^{\psi_{2}\left(x,y\right)}_{\psi_{1}\left(x,y\right)} \frac{\partial R}{\partial z}\left(x,y,z\right) \; dz\right) \; dx \; dy\\
+	= & \int \int \int _{W}\frac{\partial R}{\partial z } \; dx \; dy \; dz .
+\end{split}
+\]
+\end{proof}
+\begin{eg}
+\begin{enumerate}
+\item Calculemos $\displaystyle \int _{S}F  $ siendo $\displaystyle F\left(x,y,z\right)=\left(2x, y^{2}, z^{2}\right) $ y 
+	\[S = \left\{ \left(x,y,z\right)\in \R^{3} \; : \; x^{2}+y^{2}+z^{2}= 1\right\}  .\]
+	Tenemos que $\displaystyle F \in \mathcal{C}^{\infty}\left(\R^{3}\right) $ y orientamos $\displaystyle S $ con $\displaystyle \hat{n} $ apuntando hacia afuera. Como $\displaystyle S = \partial B\left(\left(0,0,0\right), 1\right) $,
+	\[
+	\begin{split}
+		\int _{S}F = & \int _{\partial B\left(\left(0,0,0\right), 1\right)} F = \int \int \int B\left(\left(0,0,0\right), 1\right)\Div F \; dx \; dy \; dz  = \frac{8}{3}\pi .
+	\end{split}
+	\]
+\item Calculemos $\displaystyle \int _{S}F  $ para $\displaystyle F\left(x,y,z\right)=\left(xy^{2}, x^{2}y, y\right) $ y 
+	\[S = \left\{ x^{2}+y^{2} = 1, \; - 1 \leq z \leq 1\right\}  ,\]
+	más las tapas del cilintro. Tenemos que $\displaystyle F \in \mathcal{C}^{\infty}\left(\R^{3}\right) $ y $\displaystyle S $ es la frontera de $\displaystyle W = \left\{ x^{2}+y^{2}\leq 1, \; - 1\leq z \leq 1\right\}  $, con $\displaystyle W $ proyectable sobre los tres planos de coordenadas. Así, aplicando el teorema de Gauss con $\displaystyle \hat{n} $ apuntando hacia afuera
+	\[\int _{S}F = \int _{S}\left\langle F, \hat{n} \right\rangle  =\int \int \int _{W}\div F \; dx \; dy \; dz = \int \int \int _{W}y^{2}+x^{2} \; dx \; dy \; dz = \pi  .\]
+\item Calculemos $\displaystyle \int _{\partial W}x^{2}+y+z  $ donde $\displaystyle W = \left\{ x^{2}+y^{2}\leq z^{2}\leq 1\right\}  $. Encontramos un campo $\displaystyle F $ tal que 
+	\[\left\langle F\left(x,y,z\right), \hat{n}\left(x,y,z\right) \right\rangle =x^{2}+y+z ,\]
+	de forma que 
+	\[\int _{\partial W}x^{2}+y+z = \int \int \int _{W}\Div F \; dx \; dy \; dz .\]
+\end{enumerate}
+\end{eg}
+\begin{observation}
+El teorema de la divergencia es cierto para recintos que se pueden descomponer en un número finito de recintos proyectables sobre los tres planos coordenados.
+\end{observation}
+\begin{eg}
+Usemos el teorema de la divergencia para calcular $\displaystyle \int _{\partial W}x^{2}+y+z $ con $\displaystyle W = B\left(\left(0,0,0\right), 1\right) $. En este caso sabemos qué valor tiene $\displaystyle \hat{n}\left(x,y,z\right) $ apuntando hacia afuera. En efecto, $\displaystyle \hat{n}\left(x,y,z\right)=\left(x,y,z\right) $, $\displaystyle \forall \left(x,y,z\right)\in \partial W $. Así, buscamos $\displaystyle F\in \mathcal{C}^{1}\left(W\right) $ tal que 
+\[\left\langle F\left(x,y,z\right), \hat{n}\left(x,y,z\right) \right\rangle =x^{2}+y+z .\]
+Basta con coger $\displaystyle F\left(x,y,z\right)=\left(x,1,1\right) $ así,
+\[\int _{\partial W}x^{2}+y+z = \int \int \int _{W}\Div F\left(x,y,z\right) \; dx \; dy \; dz = \int \int \int _{W}1 \; dx \; dy \; dz = v\left(W\right)=\frac{4}{3}\pi  .\]
+\end{eg}
+\begin{colorary}
+Si $\displaystyle F = \left(P, Q, R\right) $ es un campo vectorial $\displaystyle \mathcal{C}^{1} $ en $\displaystyle U\subset \R^{3} $ abierto, entonces para cada $\displaystyle p \in U $ se tiene que 
+\[\Div F\left(p\right)= \lim_{r \to 0^{+}}\int _{\partial B\left(p,r\right)}F  ,\]
+donde $\displaystyle \partial B\left(p,r\right) $ están orientadas con $\displaystyle \hat{n} $ apuntando hacia afuera.
+\end{colorary}
+\begin{proof}
+Sea $\displaystyle p \in U $, como $\displaystyle U $ es abierto existe $\displaystyle \delta > 0 $ tal que $\displaystyle B\left(p, \delta \right)\subset U $. Así, $\displaystyle \forall r \in \left(0, \delta \right) $ se tiene que existe un $\displaystyle q_{r}\in B\left(p, r\right) $ tal que
+\[\int _{\partial B\left(p, r\right)}F = \int \int \int _{B\left(p, r\right)}\Div F \; dx \; dy \; dz = \Div F\left(q_{r}\right)v\left(B\left(p, r\right)\right) .\]
+De esta forma, tenemos que 
+\[\frac{1}{v\left(B\left(p,r\right)\right)}\int _{\partial B\left(p,r\right)}F =\Div F\left(q_{r}\right) \Rightarrow \Div F\left(p\right) = \lim_{r \to 0^{+}}\frac{1}{v\left(B\left(p,r\right)\right)}\int _{\partial B\left(p,r\right)}F.\]
+\end{proof}
+\begin{prop}
+Si $\displaystyle \Div F\left(x,y,z\right)=0 $, $\displaystyle \forall \left(x,y,z\right)\in U $ con $\displaystyle U \subset \R^{3} $ abierto conexo, entonces $\displaystyle \int _{S}F =0 $ para toda superficie cerrada que sea la frontera de un recinto de $\displaystyle \R^{3} $ contenido en $\displaystyle U $ al que se le puede aplicar el teorema de Gauss.
+\end{prop}
+\begin{prop}
+Por el teorema de Schwarz, si $\displaystyle F \in \mathcal{C}^{2}\left(U\right) $, con $\displaystyle U \subset \R^{3} $ abierto, entonces $\displaystyle \Div\left(\rot F\right)= 0 $ en $\displaystyle U $. 
+\end{prop}
+
