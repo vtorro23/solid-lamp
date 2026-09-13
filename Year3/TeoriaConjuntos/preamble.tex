@@ -1,0 +1,134 @@
+% Basic commands
+\usepackage[margin=1.5in]{geometry}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{float}
+
+% Tikz
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{intersections, angles, quotes, calc, positioning}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+
+% For math environments
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em}
+
+\theoremstyle{definition}
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily,%\color{Gray!70!black},
+bodyfont=\normalfont,
+    mdframed={nobreak,
+        %linewidth=2pt,
+        %rightline=false, topline=false, bottomline=false, leftline=false, 
+        %linecolor=Bittersweet,
+        backgroundcolor=Gray!10,
+    }
+]{thmredbox}
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily,%\color{RawSienna!70!black}, 
+bodyfont=\normalfont,
+    mdframed={
+        linewidth=0.5pt,
+        %rightline=false, leftline=false, topline=false, bottomline=false,
+        }
+]{thmblueline}
+
+\declaretheoremstyle[
+headfont=\bfseries\sffamily,%\color{Bittersweet!70!black}, 
+bodyfont=\normalfont,
+    %mdframed={nobreak,
+        %roundcorner=8pt,
+        %linewidth=0.5pt,
+        %linecolor=Gray!45,
+        %backgroundcolor=Gray!10,
+        %innerleftmargin=10pt,
+        %innerrightmargin=10pt,
+        %innertopmargin=8pt,
+        %innerbottommargin=9pt,
+    %}
+]{thmgreenbox}
+
+\declaretheoremstyle[headfont=\bfseries\sffamily,%\color{Gray!70!black}, bodyfont=\normalfont, 
+	mdframed={
+	nobreak,
+        %roundcorner=8pt,
+        %linewidth=0.5pt,
+        %linecolor=Gray!45,
+        %backgroundcolor=Gray!5,
+        %innerleftmargin=10pt,
+        %innerrightmargin=10pt,
+        %innertopmargin=8pt,
+        %innerbottommargin=9pt,
+        %shadow=true,
+        %shadowsize=3pt,
+        %shadowcolor=black!15,
+        topline = false, bottomline = false, rightline = false,
+        }]{thmbluebox}
+
+%\declaretheoremstyle[headfont=\bfseries\sffamily\color{Gray!70!black}, bodyfont=\normalfont\color{Gray!70!black}]{thmbluebox}
+
+\declaretheorem[style=thmblueline, name=Definición, numberwithin=chapter]{definition}
+\declaretheorem[style=thmgreenbox, numbered=no, name=Ejemplo]{eg}
+\declaretheorem[style=thmredbox, name=Proposición, numberwithin=chapter]{prop}
+\declaretheorem[style=thmredbox, name=Teorema, numberwithin=chapter]{theorem}
+\declaretheorem[style=thmredbox, name=Lema, numberwithin=chapter]{lema}
+\declaretheorem[style=thmredbox, name=Corolario, numberwithin=chapter]{colorary}
+\declaretheorem[style=thmbluebox, numbered=no, name=Notación]{notation}
+
+\declaretheorem[style=thmbluebox, numbered=no, name=Observación]{observation}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\nouppercase{Victoria Eugenia Torroja}}
+\fancyhead[R]{\sffamily\nouppercase\rightmark}
+\fancyfoot[C]{\sffamily\leftmark}
+\fancyfoot[R]{\sffamily\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+% New commands
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\mcd}{\text{mcd}}
+\newcommand{\mcm}{\text{mcm}}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Imagen}{Im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\sig}{sig}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Adj}{Adj}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\traz}{traz}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Bil}{Bil}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\rot}{rot}
+\let\epsilon\varepsilon
+

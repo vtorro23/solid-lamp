@@ -1,0 +1,279 @@
+\section{Algunas cuestiones básicas y ejemplos}
+
+\subsection{Número de soluciones}
+\begin{eg}
+Consideremos el PVI
+\[
+\begin{cases}
+x' = c\left(t\right)x \\
+x\left(0\right)=1
+\end{cases}
+.\]
+Sabemos que una solución es $\displaystyle x\left(t\right)=\exp\left(\int^{t}_{0} c\left(s\right) \; d s\right) $. Para demostrar la unicidad de las solucioens basta con ver que $\displaystyle \left(\frac{x_{2}\left(t\right)}{x_{1}\left(t\right)}\right)' = 0 $, siendo $\displaystyle x_{1}\left(t\right) $ la solución anterior y $\displaystyle x_{2}\left(t\right) $ otra posible solución. 
+\end{eg}
+\subsection{Dominio de la solución}
+\begin{eg}
+Dado el PVI
+\[
+\begin{cases}
+x' = 2x + 5 \\
+x\left(0\right)=0
+\end{cases}
+.\]
+Sabemos que la solución es $\displaystyle x\left(t\right)=\frac{5}{2}e^{2t}-\frac{5}{2} $ y lo es $\displaystyle \forall x \in \R $. 
+\end{eg}
+\begin{eg}
+Dado el PVI
+\[
+\begin{cases}
+x' = 1 + x^{2} \\
+x\left(0\right)=1
+\end{cases}
+.\]
+Tenemos que una solución es $\displaystyle x\left(t\right)=\tan\left(t + \frac{\pi }{4}\right) $, pero su dominio no es $\displaystyle \R $ sino que es $\displaystyle \left(-\frac{3\pi }{4}, \frac{\pi }{4}\right) $. 
+\end{eg}
+\subsection{Dependencia respecto a condiciones iniciales y parámetros}
+\begin{eg}
+Consideremos el PVI
+\[
+\begin{cases}
+x' = x \\
+x\left(0\right)=1
+\end{cases}
+.\]
+La solución única es $\displaystyle x\left(t\right)=e^{t} $. Nos podemos preguntar qué pasa si cambiamos la condición inicial. Ante el problema
+\[
+\begin{cases}
+x' = x \\
+x\left(0\right)=1 + \epsilon 
+\end{cases}
+,\]
+tenemos que la solución será $\displaystyle x_{\epsilon }\left(t\right)=\left(1 + \epsilon \right)e^{t} $. Tenemos que 
+\[ \left|x\left(t\right)-x_{\epsilon }\left(t\right)\right| = \left|\epsilon \right| e^{t} .\]
+Así, si la condición inicial varía poco, la solución también varía poco, con el matiz del valor de $\displaystyle t $. \\
+Planteemos ahora el problema
+\[
+\begin{cases}
+x' = \left(1 + \epsilon \right)x \\
+x\left(0\right)=1
+\end{cases}
+.\]
+Veamos cómo cambia la solución. Tendremos que la solución será $\displaystyle x_{\epsilon }\left(t\right)=e^{\left(1+\epsilon \right)t} $. Tendremos que 
+\[ \left|x\left(t\right)-x_{\epsilon }\left(t\right)\right| = e^{t} \left|1-e^{\epsilon t}\right| .\]
+Así, si $\displaystyle \epsilon  $ es pequeño la variación en las soluciones también es pequeña.
+\end{eg}
+\subsection{Propiedades cualitativas}
+\begin{eg}
+Consideremos el PVI
+\[
+\begin{cases}
+x' = \cos x \\
+x\left(0\right)=0
+\end{cases}
+.\]
+Veamos que $\displaystyle x\left(t\right)\geq 0 $ para $\displaystyle t \geq 0 $. Esto es cierto para $\displaystyle t = 0 $. Por otro lado, $\displaystyle x'\left(t\right) > 0 $ para $\displaystyle t \in \left(0,\frac{\pi }{2}\right) $. Por tanto, en este intervalo es positiva. Ahora, podemos encontrar un $\displaystyle t_{2} > \frac{\pi }{2} $ tal que $\displaystyle -\frac{\pi }{2} <x\left(t_{2}\right)<0 $. 
+Sea $\displaystyle t_{1} = \sup \left\{ t < t_{2} , \; x\left(t\right) < 0\right\} $. Por continuidad debe ser que $\displaystyle x\left(t_{1}\right) = 0 $. Por tanto, $\displaystyle -\frac{\pi }{2} < x\left(t\right)< 0 $ en $\displaystyle \left(t_{1}, t_{2}\right) $. Por el teorema del valor medio tenemos que existe $\displaystyle \xi \in \left(t_{1}, t_{2}\right) $ tal que
+\[x'\left(\xi\right)= \frac{x\left(t_{1}\right)-x\left(t_{2}\right)}{t_{1}-t_{2}}<0 .\]
+Así, tenemos que $\displaystyle \cos\left(x\left(\xi\right)\right) < 0 $ pero no puede ser porque $\displaystyle -\frac{\pi }{2} < x\left(\xi\right) < 0 $. Así, debe ser que $\displaystyle x\left(t\right)\geq 0 $ para $\displaystyle t \geq 0 $. Análogamente, se puede ver que $\displaystyle x\left(t\right)\leq \frac{\pi }{2} $ para $\displaystyle t \geq 0 $. Así, $\displaystyle x'\geq 0 $ para $\displaystyle t \geq 0 $. 
+\end{eg}
+\subsection{Comportamiento asintótico}
+\begin{eg}
+	En el ejemplo anterior, veamos que $\displaystyle \lim_{t \to \infty}x\left(t\right)=\frac{\pi }{2} $. Por las propiedades anteriores (monotonía y acotación), tenemos que $\displaystyle \lim_{t \to \infty}x\left(t\right)=L \in \left[0, \frac{\pi }{2}\right]  $. Veamos que $\displaystyle L = \frac{\pi }{2} $. Tenemos que $\displaystyle \lim_{t \to \infty}x'\left(t\right)=\cos L $. Si el límite de la derivada no es 0, tendríamos que la función no tiene límite, por lo que debe ser que $\displaystyle \lim_{t \to \infty}x'\left(t\right)=\cos L = 0 $, por lo que $\displaystyle L = \frac{\pi }{2} $. 
+\end{eg}
+\begin{observation}
+Existen funciones que tienen límite cuyas derivadas no tienen límite. Basta con coger $\displaystyle x\left(t\right)=\frac{\cos t ^{2}}{t} $. 
+\end{observation}
+\section{Notación y definiciones básicas}
+\begin{definition}[Sistemas de EDO's]
+Es una relación de la forma  
+\[F\left(t, x_{1}, \ldots, x_{1}^{(m_{1})}, x_{2}, \ldots, x_{2}^{(m_{2})}, \ldots, x_{n}^{(m_{n})}\right)= 0 ,\]
+donde $\displaystyle F : \R \times \R^{m_{1} + 1}\times \cdots \times \R^{m_{n}+1} \to \R^{l} $. Se denomina \textbf{orden} del sistema al máximo de los órdenes de las ecuaciones. 
+\end{definition}
+\begin{definition}[Sistema en forma normal]
+Un sistema de EDO's está en \textbf{forma normal} si $\displaystyle l = n $ y es de la forma siguiente:
+\[
+\begin{cases}
+x_{1}^{(m_{1})}= f_{1}\left(t, x_{1}, \ldots, x^{(m_{1}-1)}_{1}, x_{2}, \ldots, x_{2}^{(m_{2}-1)}, \ldots, x_{n}^{(m_{n}-1)}\right) \\
+\vdots \\
+x_{n}^{(m_{n})}= f_{n}\left(t, x_{1}, \ldots, x^{(m_{1}-1)}_{1}, x_{2}, \ldots, x_{2}^{(m_{2}-1)}, \ldots, x_{n}^{(m_{n}-1)}\right)
+\end{cases}
+.\]
+\end{definition}
+\begin{lema}
+Todo sistema en forma normal se puede transformar en un sistema en forma normal de orden 1.
+\end{lema}
+\begin{proof}
+	Definimos $\displaystyle y_{i,j}:= x_{i}^{\left(j\right)} $ para $\displaystyle i \in \left\{ 1, \ldots, n\right\}  $ y $\displaystyle j \in \left\{ 0, \ldots, m_{i}-1\right\}  $. Así, tenemos que
+	\[ y'_{i,j} = \left(x_{i}^{j}\right)' = x_{i}^{j +1} =
+	\begin{cases}
+	x_{i}^{\left(m_{i}\right)}=f_{i}\left( \ldots\right), \; j = m_{i}-1 \\
+	y_{i, j+1}, \; j \neq m_{i}-1
+	\end{cases}
+	.\]
+	Entonces tenemos $\displaystyle m_{1} + m_{2} + \cdots + m_{n} $ ecuaciones y el sistema es de orden 1. 
+\end{proof}
+
+\begin{eg}
+Consideremos el sistema
+\[
+\begin{cases}
+x_{1}'' = \cos x_{1} + x_{2} + x_{1}' \\
+x_{2}' = x_{2}^{2}+x_{1}+t ^{2}
+\end{cases}
+.\]
+Se trata de un sistema de orden 2. Vamos a transformarlo en uno que sea de orden 1. Para ello, definimos $\displaystyle x = x_{1} $, $\displaystyle y = x_{1}' $ y $\displaystyle z = x_{2} $. Así, el sistema nos queda
+\[
+\begin{cases}
+x' = y \\
+y' = \cos x + z + y \\
+z'= z^{2} + x + t ^{2}
+\end{cases}
+.\]
+\end{eg}
+\begin{observation}
+Una consecuencia muy importante es que esto nos permite de aquí en adelante hablar sólo de sistemas de orden 1. Así, sólo trataremos con sistemas de la forma
+\[
+\begin{cases}
+x_{1}' = f_{1}\left(t, x_{1}, \ldots, x_{n}\right) \\
+\vdots \\
+x_{n}' = f_{n}\left(t, x_{1}, \ldots, x_{n}\right)
+\end{cases}
+.\]
+Para escribirlo de forma compacta lo podemos escribir de forma vectorial:
+\[\vec{x}' = f\left(t, \vec{x}\right) .\]
+\end{observation}
+\begin{definition}[Solución]
+	Una colección $\displaystyle x_{1}, \ldots, x_{n} : I\subset \R \to \R $ es una \textbf{solución} del sistema $\displaystyle \vec{x}' = f\left(t, \vec{x}\right) $ si $\displaystyle x_{i}\in \mathcal{C}^{1}\left(I, \R\right) $ y además $\displaystyle x_{i}' \left(t\right)=f_{i}\left(t, x_{1}\left(t\right), \ldots, x_{n}\left(t\right)\right) $, $\displaystyle \forall t \in I $, $\displaystyle \forall i \in \left\{ 1, \ldots, n\right\}  $. 
+\end{definition}
+Nuestro objetivo a lo largo del curso será estudiar el Problema de Valor Inicial (PVI)
+\[
+\begin{cases}
+\vec{x}' = f\left(t, \vec{x}\right)\\
+\vec{x}\left(t_{0}\right)=\vec{x}_{0}
+\end{cases}
+,\]
+donde $\displaystyle t_{0} \in \R $ y $\displaystyle x_{0}\in \R^{n} $ son dados.
+\section{Interpretación geométrica del problema de valor inicial}
+% Lo de las isoclinas
+% Preguntarle a Andrés que lo pase
+\begin{lema}
+Las gráficas de dos soluciones diferentes de una EDO no pueden cruzarse de forma transversal \footnote{No se pueden cortar en un punto y en ese punto tener vectores tangentes distintos.}.
+\end{lema}
+\begin{proof}
+Supongamos que tenemos dos soluciones $\displaystyle y,z $ tales que $\displaystyle y\left(t_{0}\right)=z\left(t_{0}\right) $ en algún $\displaystyle t_{0} \in \R $. Entonces, $\displaystyle y'\left(t_{0}\right)=f\left(t_{0}, y\left(t_{0}\right)\right)=f\left(t_{0}, z\left(t_{0}\right)\right)=z'\left(t_{0}\right) $. Así, no se cruzan transversalmente.
+\end{proof}
+
+\chapter{Teoría fundamental}
+\section{Existencia y unicidad de soluciones}
+Sea el PVI de la forma
+\[
+\begin{cases}
+x' = f\left(t, x\right) \\
+x\left(t_{0}\right)=x_{0}
+\end{cases}
+\]
+con $\displaystyle f : D \subset \R \times \R^{n} \to \R^{n} $ y $\displaystyle \left(t_{0}, x_{0}\right)\in D $. Nos preguntamos si existe una solución $\displaystyle x \in \mathcal{C}^{1}\left(I \subset \R, \R^{n}\right) $ y si es única.
+\begin{eg}
+	Los siguientes ejemplos ilustran la cuestión.
+	\begin{enumerate}
+	\item Consideremos el PVI siguiente
+\[
+\begin{cases}
+x' = a x \\
+x\left(t_{0}\right)=x_{0}
+\end{cases}
+.\]
+Tenemos que una solución es $\displaystyle x\left(t\right)=x_{0}e^{a\left(t-t_{0}\right)} $. Anteriormente vimos que esta solución es única. Por tanto, en este ejemplo tenemos existencia y unicidad.
+\item Consideremos ahora el PVI
+	\[
+	\begin{cases}
+	x' = 3x^{\frac{2}{3}} \\
+	x\left(t_{0}\right)=x_{0}
+	\end{cases}
+	.\]
+	Consideremos el caso en que $\displaystyle \left(t_{0}, x_{0}\right)=\left(0,0\right) $, entonces $\displaystyle x\left(t\right)=0 $ es solución. Por otro lado, por separación de variables obtenemos que también es solución la función $\displaystyle x\left(t\right)=t ^{3} $. Por otro lado, dados $\displaystyle a < 0 < b $, la función
+	\[x\left(t\right) =
+	\begin{cases}
+		\left(x-a\right)^{3}, \; x \leq a \\
+		0, \; a \leq x \leq b \\
+		\left(x-b\right)^{3}, \; x \geq b
+	\end{cases}
+	,\]
+	también es solución. 
+	Por tanto, aunque hay existencia, no hay unicidad de soluciones. Si $\displaystyle t_{0}\neq 0 $ sí obtenemos unicidad de soluciones.
+\item Consideremos ahora el PVI
+	\[
+	\begin{cases}
+	x' = \frac{x}{t} \\
+	x\left(t_{0}\right)=x_{0}
+	\end{cases}
+	.\]
+Tenemos que podemos distinguir varios casos:
+\begin{itemize}
+\item Si $\displaystyle t_{0}\neq 0 $, entonces la solución única es $\displaystyle x\left(t\right)=\frac{x_{0}}{t_{0}}t $. 
+\item Si $\displaystyle \left(t_{0}, x_{0}\right)=\left(0,0\right) $, tenemos que la solución es $\displaystyle x\left(t\right)=kt $, $\displaystyle \forall k \in \R $, por lo que la solución no es única. 
+\item Si $\displaystyle t_{0}=0 $ y $\displaystyle x_{0}\neq 0 $, tenemos que no puede haber solución.
+\end{itemize}
+	\end{enumerate}
+\end{eg}
+\subsection{Formulación integral del PVI}
+Por el Teorema Fundamental del Cálculo tenemos que 
+\[
+\begin{cases}
+x'\left(t\right)=f\left(t, x\left(t\right)\right) \\
+x\left(t_{0}\right)=x_{0}
+\end{cases}
+\Rightarrow x\left(t\right)=x_{0}+\int^{t}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s.\]
+\begin{prop}
+Sea $\displaystyle f : D \subset \R \times \R^{n} \to \R^{n} $ continua y $\displaystyle \left(t_{0}, x_{0}\right)\in D $. Entonces son equivalentes
+\begin{enumerate}
+\item $x\in \mathcal{C}^{1}\left(I, \R^{n}\right) \; \text{con}\; 
+\begin{cases}
+x'\left(t\right)=f\left(t,x\left(t\right)\right) \\
+x\left(t_{0}\right)=x_{0}. 
+\end{cases}$.
+\item $\displaystyle x \in \mathcal{C}\left(I, \R^{n}\right) \; \text{con}\; x\left(t\right)=x_{0} + \int^{t}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Consideramos ambas implicaciones. 
+\begin{description}
+\item[($\Rightarrow$)] Claramente tenemos que $\displaystyle x \in \mathcal{C}\left(I, \R^{n}\right) $. Integrando tenemos que 
+	\[x\left(t\right)-x_{0}=\int^{t}_{t_{0}} x'\left(s\right) \; d s = \int^{t}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s .\]
+\item[($\Leftarrow$)] Claramente como $\displaystyle x \in \mathcal{C}\left(I, \R^{n}\right) $ tenemos que $\displaystyle f\left(t, x\left(t\right)\right) \in \mathcal{C}\left(I, \R^{n}\right)$. Por el TFC tenemos que 
+	\[\int^{t}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s \in \mathcal{C}^{1}\left(I, \R^{n}\right) .\]
+	Así, tenemos que 
+	\[x\left(t\right)=x_{0} + \int^{t}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s \in \mathcal{C}^{1}\left(I, \R^{n}\right) .\]
+Así, tenemos que $\displaystyle x \in \mathcal{C}^{1} $. Por otro lado, 
+\[x\left(t_{0}\right)=x_{0} + \int^{t_{0}}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s = x_{0} .\]
+Finalmente, derivando $\displaystyle x\left(t\right) $ obtenemos que $\displaystyle x'\left(t\right)=f\left(t, x\left(t\right)\right) $ por el TFC. 
+\end{description}
+\end{proof}
+\begin{notation}
+A partir de ahora vamos a definir el operador $\displaystyle T $ actuando en $\displaystyle \mathcal{C}\left(I, \R^{n}\right) $ cono 
+\[Ty\left(t\right):= x_{0} + \int^{t}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s .\]
+Por la proposición anterior, resolver el PVI es equivalente a encontrar $\displaystyle x \in \mathcal{C}\left(I, \R^{n}\right) $ tal que $\displaystyle Tx = x $. 
+\end{notation}
+\subsection{Teorema del punto fijo de Banach}
+\begin{definition}[Espacio de Banach]
+Diremos que $\displaystyle \left(E, \left| \cdot \right|\right) $ es un \textbf{espacio de Banach} si es un espacio vectorial normado y completo.
+\end{definition}
+\begin{eg}
+Es sencillo ver que $\displaystyle \R^{n} $ es un espacio de banach con todas las normas de la forma
+\[ \left|z\right|_{p}:=\left(\sum^{n}_{i = 1} \left|z_{i}\right|^{p}\right)^{\frac{1}{p}}, \; p \in [1,\infty) .\]
+También lo es con la norma infinito.
+\end{eg}
+\begin{prop}
+	Sea $\displaystyle I \subset \R $ un intervalo cerrado y acotado. Entonces $\displaystyle E = \mathcal{C}\left(I, \R^{n}\right) $ es un espacio de Banach con la norma $\displaystyle \|x\|_{\infty}= \max \left\{ \left|x\left(t\right)\right| \; : \; t \in I\right\}  $.
+\end{prop}
+\begin{proof}
+Claramente $\displaystyle \left(E, \| \cdot \|_{\infty}\right) $ es un espacio vectorial normado. 
+\end{proof}
+\begin{definition}[Aplicación contractiva]
+Sea $\displaystyle E $ un espacio de Banach. Diremos que $\displaystyle f: X \subset E \to X $ es una \textbf{aplicación contractiva} si existe $\displaystyle k \in [0,1) $ tal que 
+\[ \|T\left(x\right)-T\left(y\right)\|\leq k \|x-y\|, \; \forall x,y \in X .\]
+\end{definition}
+\begin{observation}
+Si $\displaystyle f $ es contractiva, entonces es uniformemente continua.
+\end{observation}
+

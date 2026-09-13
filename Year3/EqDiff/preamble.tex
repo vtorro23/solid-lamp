@@ -1,0 +1,291 @@
+% -----------------------------------------------------------------------------
+% Numerical Methods lecture notes preamble — circuit notebook style
+% Structure: thmtools + mdframed
+% Compile with a class that has chapters, e.g. \documentclass{report} or book.
+% -----------------------------------------------------------------------------
+
+% Basic commands
+\usepackage[margin=1.45in]{geometry}
+\usepackage[spanish, es-noquoting]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage{float}
+\usepackage{enumitem}
+\setlist{itemsep=0.15em, topsep=0.35em}
+
+% TikZ and diagrams
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{intersections, angles, quotes, calc, positioning}
+\usetikzlibrary{arrows.meta, decorations.pathmorphing, shadows.blur}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Hyperlinks
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+
+% Theorem machinery
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em, skipbelow=0.2em}
+
+% Useful math commands
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\eps}{\varepsilon}
+\let\epsilon\varepsilon
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ol}{\overline}
+\newcommand{\ul}{\underline}
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+\newcommand{\xfrom}[1]{\xleftarrow{#1}}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Imagen}{Im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\traz}{traz}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\mcd}{mcd}
+\DeclareMathOperator{\mcm}{mcm}
+
+% Header/footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\nouppercase{Victoria Eugenia Torroja}}
+\fancyhead[R]{\sffamily\nouppercase\rightmark}
+\fancyfoot[C]{\sffamily\leftmark}
+\fancyfoot[R]{\sffamily\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Generic proof name in Spanish
+\renewcommand{\proofname}{Demostración}
+
+% -----------------------------------------------------------------------------
+% Numerical Methods — circuit notebook style
+% -----------------------------------------------------------------------------
+
+% Palette: technical orange/blue on clean paper
+\definecolor{NumInk}{HTML}{1F2937}
+\definecolor{NumBlue}{HTML}{1E5A88}
+\definecolor{NumOrange}{HTML}{C45A12}
+\definecolor{NumPaper}{HTML}{F7FAFC}
+\definecolor{NumCream}{HTML}{FFF7EA}
+
+\colorlet{ResultTitle}{NumBlue!85!black}
+\colorlet{DefinitionTitle}{NumOrange!85!black}
+\colorlet{ExampleTitle}{NumInk}
+\colorlet{NotationTitle}{NumBlue!75!black}
+
+% mdframed styles
+\mdfdefinestyle{numresultframe}{%
+    nobreak,
+    roundcorner=0pt,
+    linewidth=0.8pt,
+    linecolor=NumBlue,
+    backgroundcolor=NumPaper,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    innerleftmargin=9pt,
+    innerrightmargin=9pt,
+    innertopmargin=7pt,
+    innerbottommargin=8pt,
+    skipabove=0.85em,
+    skipbelow=0.85em,
+    shadow=true,
+    shadowsize=4pt,
+    shadowcolor=black!16,
+    splittopskip=1.2em,
+    splitbottomskip=0.8em,
+    firstextra={\draw[NumBlue, line width=3pt] (P) -- (P-|O);},
+    middleextra={\draw[NumBlue, line width=3pt] (P) -- (P-|O);},
+    secondextra={\draw[NumBlue, line width=3pt] (P) -- (P-|O);},
+    singleextra={\draw[NumBlue, line width=3pt] (P) -- (P-|O);}
+}
+
+\mdfdefinestyle{numdefinitionframe}{%
+    nobreak,
+    roundcorner=0pt,
+    linewidth=0.8pt,
+    linecolor=NumOrange,
+    backgroundcolor=NumCream,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    innerleftmargin=9pt,
+    innerrightmargin=9pt,
+    innertopmargin=7pt,
+    innerbottommargin=8pt,
+    skipabove=0.85em,
+    skipbelow=0.85em,
+    shadow=true,
+    shadowsize=4pt,
+    shadowcolor=black!16,
+    splittopskip=1.2em,
+    splitbottomskip=0.8em,
+    firstextra={\draw[NumOrange, line width=3pt] (o) -- (P-|O);},
+    middleextra={\draw[NumOrange, line width=3pt] (P) -- (P-|O);},
+    secondextra={\draw[NumOrange, line width=3pt] (P) -- (P-|O);},
+    singleextra={\draw[NumOrange, line width=3pt] (P) -- (P-|O);}
+}
+
+\mdfdefinestyle{numexampleframe}{%
+    roundcorner=0pt,
+    linewidth=0.8pt,
+    linecolor=NumInk!60,
+    backgroundcolor=white,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    innerleftmargin=9pt,
+    innerrightmargin=9pt,
+    innertopmargin=7pt,
+    innerbottommargin=8pt,
+    skipabove=0.85em,
+    skipbelow=0.85em,
+    shadow=true,
+    shadowsize=3pt,
+    shadowcolor=black!9,
+    splittopskip=1.2em,
+    splitbottomskip=0.8em,
+    firstextra={\draw[NumInk!60, line width=2.5pt] (O) -- (P-|O);},
+    middleextra={\draw[NumInk!60, line width=2.5pt] (O) -- (P-|O);},
+    secondextra={\draw[NumInk!60, line width=2.5pt] (O) -- (P-|O);},
+    singleextra={\draw[NumInk!60, line width=2.5pt] (O) -- (P-|O);}
+}
+
+\mdfdefinestyle{numobsframe}{%
+    roundcorner=0pt,
+    linewidth=0.8pt,
+    linecolor=Maroon!60,
+    backgroundcolor=white,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    innerleftmargin=9pt,
+    innerrightmargin=9pt,
+    innertopmargin=7pt,
+    innerbottommargin=8pt,
+    skipabove=0.85em,
+    skipbelow=0.85em,
+    shadow=true,
+    shadowsize=3pt,
+    shadowcolor=black!9,
+    splittopskip=1.2em,
+    splitbottomskip=0.8em,
+    firstextra={\draw[Maroon!60, line width=2.5pt] (O) -- (P-|O);},
+    middleextra={\draw[Maroon!60, line width=2.5pt] (O) -- (P-|O);},
+    secondextra={\draw[Maroon!60, line width=2.5pt] (O) -- (P-|O);},
+    singleextra={\draw[Maroon!60, line width=2.5pt] (O) -- (P-|O);}
+}
+
+\mdfdefinestyle{numnotationframe}{%
+    roundcorner=0pt,
+    linewidth=0.8pt,
+    linecolor=NumBlue!55,
+    backgroundcolor=white,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    innerleftmargin=9pt,
+    innerrightmargin=9pt,
+    innertopmargin=7pt,
+    innerbottommargin=8pt,
+    skipabove=0.85em,
+    skipbelow=0.85em,
+    shadow=true,
+    shadowsize=3pt,
+    shadowcolor=black!9,
+    splittopskip=1.2em,
+    splitbottomskip=0.8em,
+    firstextra={\draw[NumBlue!55, line width=2.5pt] (O) -- (P-|O);},
+    middleextra={\draw[NumBlue!55, line width=2.5pt] (O) -- (P-|O);},
+    secondextra={\draw[NumBlue!55, line width=2.5pt] (O) -- (P-|O);},
+    singleextra={\draw[NumBlue!55, line width=2.5pt] (O) -- (P-|O);}
+}
+
+% Numerical methods helpers
+\DeclareMathOperator{\cond}{cond}
+\DeclareMathOperator{\fl}{fl}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\tol}{tol}
+\newcommand{\Oh}{\mathcal{O}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+
+% Theorem styles
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{DefinitionTitle},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={style=numdefinitionframe}
+]{numdefinitionbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{ResultTitle},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={style=numresultframe}
+]{numresultbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{ExampleTitle},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={style=numexampleframe}
+]{numexamplebox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{Maroon},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={style=numobsframe}
+]{numobsbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NotationTitle},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={style=numnotationframe}
+]{numnotationbox}
+
+% Environments. Same names as your earlier notes.
+\declaretheorem[style=numresultbox, name=Definición, numberwithin=chapter]{definition}
+\declaretheorem[style=numdefinitionbox, name=Teorema, numberwithin=chapter]{theorem}
+\declaretheorem[style=numdefinitionbox, name=Proposición, numberwithin=chapter]{prop}
+\declaretheorem[style=numdefinitionbox, name=Lema, numberwithin=chapter]{lema}
+\declaretheorem[style=numdefinitionbox, name=Corolario, numberwithin=chapter]{colorary}
+\declaretheorem[style=numexamplebox, numbered=no, name=Ejemplo]{eg}
+\declaretheorem[style=numobsbox, numbered=no, name=Observación]{observation}
+\declaretheorem[style=numnotationbox, numbered=no, name=Notación]{notation}
+\declaretheorem[style=numexamplebox, numbered=no, name=Comentario]{remark}
+

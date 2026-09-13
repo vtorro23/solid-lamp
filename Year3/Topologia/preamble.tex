@@ -1,0 +1,291 @@
+% -----------------------------------------------------------------------------
+% Differential Geometry lecture notes preamble — ocean atlas style
+% Structure: thmtools + mdframed
+% Compile with a class that has chapters, e.g. \documentclass{report} or book.
+% -----------------------------------------------------------------------------
+
+% Basic commands
+\usepackage[margin=1.45in]{geometry}
+\usepackage[spanish, es-noquoting]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage{float}
+\usepackage{enumitem}
+\setlist{itemsep=0.15em, topsep=0.35em}
+
+% TikZ and diagrams
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{intersections, angles, quotes, calc, positioning}
+\usetikzlibrary{arrows.meta, decorations.pathmorphing, shadows.blur}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Hyperlinks
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+
+% Theorem machinery
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em, skipbelow=0.2em}
+
+% Useful math commands
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\eps}{\varepsilon}
+\let\epsilon\varepsilon
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ol}{\overline}
+\newcommand{\ul}{\underline}
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+\newcommand{\xfrom}[1]{\xleftarrow{#1}}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Imagen}{Im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\traz}{traz}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\mcd}{mcd}
+\DeclareMathOperator{\mcm}{mcm}
+
+% Header/footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\nouppercase{Victoria Eugenia Torroja}}
+\fancyhead[R]{\sffamily\nouppercase\rightmark}
+\fancyfoot[C]{\sffamily\leftmark}
+\fancyfoot[R]{\sffamily\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Generic proof name in Spanish
+\renewcommand{\proofname}{Demostración}
+
+% Palette: ocean blue and soft seafoam
+\definecolor{GeoOcean}{HTML}{063A5B}
+\definecolor{GeoTeal}{HTML}{087E8B}
+\definecolor{GeoFoam}{HTML}{EEFDFB}
+\definecolor{GeoSky}{HTML}{F0F8FF}
+\definecolor{GeoSand}{HTML}{F8F3E8}
+
+\definecolor{GeoCoral}{HTML}{C44536}
+\definecolor{GeoRose}{HTML}{D95D73}
+\definecolor{GeoBlush}{HTML}{FFF0F2}
+\definecolor{GeoWine}{HTML}{6D213C}
+
+\colorlet{ResultTitle}{GeoOcean}
+\colorlet{DefinitionTitle}{GeoTeal!80!black}
+\colorlet{ExampleTitle}{GeoOcean!70}
+\colorlet{NotationTitle}{GeoTeal!70!black}
+
+% mdframed base styles
+\mdfdefinestyle{georesultframe}{%
+nobreak,
+    roundcorner=12pt,
+    linewidth=0.75pt,
+    linecolor=GeoCoral!20!black,
+    backgroundcolor=GeoBlush,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    innertopmargin=8pt,
+    innerbottommargin=8pt,
+    skipabove=0.95em,
+    skipbelow=0.95em,
+    shadow=true,
+    shadowsize=4pt,
+    shadowcolor=black!18,
+    splittopskip=1.2em,
+    splitbottomskip=0.8em,
+    %firstextra={\draw[GeoOcean, line width=3.5pt] (P) -- (P|-O);\draw[GeoTeal!60, line width=0.7pt] (O) -- (O|-P);},
+    %middleextra={\draw[GeoOcean, line width=3.5pt] (P) -- (P|-O);\draw[GeoTeal!60, line width=0.7pt] (O) -- (O|-P);},
+    %secondextra={\draw[GeoOcean, line width=3.5pt] (P) -- (P|-O);\draw[GeoTeal!60, line width=0.7pt] (O) -- (O|-P);},
+    %singleextra={\draw[GeoOcean, line width=3.5pt] (P) -- (P|-O);\draw[GeoTeal!60, line width=0.7pt] (O) -- (O|-P);}
+}
+
+\mdfdefinestyle{geodefinitionframe}{%
+nobreak,
+    roundcorner=12pt,
+    linewidth=0.75pt,
+    linecolor=GeoTeal,
+    backgroundcolor=GeoFoam,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    innertopmargin=8pt,
+    innerbottommargin=8pt,
+    skipabove=0.95em,
+    skipbelow=0.95em,
+    shadow=true,
+    shadowsize=4pt,
+    shadowcolor=black!18,
+    splittopskip=1.2em,
+    splitbottomskip=0.8em,
+    %firstextra={\draw[GeoTeal, line width=3.5pt] (P) -- (P|-O);},
+    %middleextra={\draw[GeoTeal, line width=3.5pt] (P) -- (P|-O);},
+    %secondextra={\draw[GeoTeal, line width=3.5pt] (P) -- (P|-O);},
+    %singleextra={\draw[GeoTeal, line width=3.5pt] (P) -- (P|-O);}
+}
+
+\mdfdefinestyle{geoexampleframe}{%
+    roundcorner=7pt,
+    linewidth=0.75pt,
+    linecolor=GeoOcean!50,
+    backgroundcolor=GeoSand,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    innertopmargin=8pt,
+    innerbottommargin=8pt,
+    skipabove=0.95em,
+    skipbelow=0.95em,
+    shadow=true,
+    shadowsize=3pt,
+    shadowcolor=black!10,
+    splittopskip=1.2em,
+    splitbottomskip=0.8em
+}
+
+\mdfdefinestyle{geonotationframe}{%
+    roundcorner=7pt,
+    linewidth=0.75pt,
+    linecolor=GeoTeal!60!black,
+    backgroundcolor=white,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    innertopmargin=8pt,
+    innerbottommargin=8pt,
+    skipabove=0.95em,
+    skipbelow=0.95em,
+    shadow=true,
+    shadowsize=3pt,
+    shadowcolor=black!10,
+    splittopskip=1.2em,
+    splitbottomskip=0.8em
+}
+
+% Differential geometry helpers
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\Scal}{Scal}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\Lie}{Lie}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\LieD}{\mathcal{L}}
+\newcommand{\T}{\mathrm{T}}
+
+% Theorem styles
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{DefinitionTitle},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={style=geodefinitionframe}
+]{geodefinitionbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{GeoCoral!80!black},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={style=georesultframe}
+]{georesultbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{Rhodamine!50!black},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={nobreak,
+    roundcorner=12pt,
+    linewidth=0.75pt,
+    linecolor=RoyalPurple!20!black,
+    backgroundcolor=Rhodamine!10,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    innertopmargin=8pt,
+    innerbottommargin=8pt,
+    skipabove=0.95em,
+    skipbelow=0.95em,
+    shadow=true,
+    shadowsize=4pt,
+    shadowcolor=black!18,
+    splittopskip=1.2em,
+    splitbottomskip=0.8em,}
+]{georesultbox1}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{ExampleTitle},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={style=geoexampleframe}
+]{geoexamplebox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{ExampleTitle},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={
+    linecolor = CadetBlue!80!black,
+    linewidth = 2pt,
+    topline = false,
+    bottomline = false, 
+    rightline = false,
+    }
+]{geoobsbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NotationTitle},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={style=geonotationframe}
+]{geonotationbox}
+
+% Environments. Same names as your earlier notes.
+\declaretheorem[style=geodefinitionbox, name=Definición, numberwithin=chapter]{definition}
+\declaretheorem[style=georesultbox, name=Teorema, numberwithin=chapter]{theorem}
+\declaretheorem[style=georesultbox, name=Proposición, numberwithin=chapter]{prop}
+\declaretheorem[style=georesultbox, name=Lema, numberwithin=chapter]{lema}
+\declaretheorem[style=georesultbox, name=Corolario, numberwithin=chapter]{colorary}
+\declaretheorem[style=geoobsbox, numbered=no, name=Ejemplo]{eg}
+\declaretheorem[style=geoexamplebox, numbered=no, name=Observación]{observation}
+\declaretheorem[style=geonotationbox, numbered=no, name=Notación]{notation}
+\declaretheorem[style=geoexamplebox, numbered=no, name=Comentario]{remark}
+

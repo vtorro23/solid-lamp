@@ -1,0 +1,373 @@
+\chapter{Espacios Topológicos}
+\section{Conjuntos abiertos}
+\begin{definition}[Topología]
+Dado un conjunto $\displaystyle X \neq \emptyset $ y $\displaystyle \mathcal{T}\subset \mathcal{P}\left(X\right) $, decimos que $\displaystyle \mathcal{T} $ es una \textbf{topología} de $\displaystyle X $ y que $\displaystyle \left(X, \mathcal{T}\right) $ es un \textbf{espacio topológico} si cumple que 
+\begin{enumerate}
+\item $\displaystyle \emptyset, X \in \mathcal{T} $.
+\item Dado $\displaystyle \left\{ U_{i}\right\} _{i \in I}\subset\mathcal{T} $, entonces $\displaystyle \bigcup_{i \in I}U_{i} \in \mathcal{T} $.
+\item Si $\displaystyle U_{1}, U_{2} \in \mathcal{T} $, entonces $\displaystyle U_{1} \cap U_{2} \in \mathcal{T} $.
+\end{enumerate}
+\end{definition}
+\begin{notation}[Conjunto abierto]
+A los elementos de $\displaystyle \mathcal{T} $ los llamaremos \textbf{abiertos}.
+\end{notation}
+\begin{eg}
+	Consideremos los siguientes ejemplos.
+	\begin{enumerate}
+	\item Dado un conjunto $\displaystyle X $, tomamos $\displaystyle \mathcal{T}= \left\{ \emptyset, X\right\}  $. Es sencillo ver que forman una topología. En particular a esta topología se la llama \textbf{topología trivial} y la denotamos por $\displaystyle \mathcal{T}_{\text{triv}} $.
+	\item Dado un conjunto $\displaystyle X $, podemos tomar $\displaystyle \mathcal{T} = \mathcal{P}\left(X\right) $. A esta topología la llamaremos \textbf{topología discreta} y la denotaremos por $\displaystyle \mathcal{T}_{\text{dis}} $.
+	\end{enumerate}
+\end{eg}
+\begin{eg}[El caso de los espacios métricos]
+Dado un espacio métrico $\displaystyle \left(X,d\right) $, recordamos que se definen la \textbf{bola abierta} de radio $\displaystyle r > 0 $ y centrada en $\displaystyle x \in X $ de esta forma,
+\[ B_{d}\left(x, r\right)= \left\{ y \in X \; : \; d\left(x,y\right) < r\right\} .\]
+Podemos definir una topología $\displaystyle \mathcal{T}_{d} $ en $\displaystyle X $ determinada por la distancia $\displaystyle d $. En esta topología los conjuntos abiertos son aquellos $\displaystyle U \subset X $ tales que para cada $\displaystyle x \in U $, existe $\displaystyle r > 0 $ tal que $\displaystyle B_{d}\left(x,r\right)\subset U $. Comprobemos que efectivamente se trata de una topología:
+\begin{enumerate}
+\item Claramente tenemos que $\displaystyle \emptyset, X \in \mathcal{T}_{d} $. 
+\item Supongamos que $\displaystyle \left\{ U_{i}\right\} _{i \in I}\subset \mathcal{T}_{d} $ y $\displaystyle x \in \bigcup_{i \in I}U_{i} $. Entonces existe $\displaystyle i_{0} \in I $ tal que $\displaystyle x \in U_{i_{0}} $, por lo que existe $\displaystyle r > 0 $ tal que $\displaystyle B_{d}\left(x, r\right)\subset U_{i_{0}}\subset \bigcup_{i \in I}U_{i} \in \mathcal{T}_{d} $. 
+\item Sean $\displaystyle U_{1}, U_{2} \in \mathcal{T}_{d} $. Si $\displaystyle U_{1} \cap U_{2} = \emptyset $ hemos terminado. Supongamos que existe $\displaystyle x \in U_{1} \cap U_{2} $, entonces existen $\displaystyle r_{1}, r_{2} > 0 $ tales que $\displaystyle B_{d}\left(x, r_{1}\right)\subset U_{1} $ y $\displaystyle B_{d}\left(x, r_{2}\right)\subset U_{2} $. Cogiendo $\displaystyle r = \min \left\{ r_{1}, r_{2}\right\} >0 $ tendremos que $\displaystyle B_{d}\left(x, r\right)\subset U_{1}\cap U_{2} \in \mathcal{T}_{d} $.
+\end{enumerate}
+\end{eg}
+\begin{notation}[Topología usual en $\displaystyle \R^n $]
+	En $\displaystyle \R^{n} $ y considerando la métrica euclídea, obtenemos como en el ejemplo anterior una topología que llamaremos la \textbf{topología usual} en $\displaystyle \R^{n} $ y la denotamos por $\displaystyle \mathcal{T}_{u} $.
+\end{notation}
+\begin{definition}[Espacio metrizable]
+El espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ es \textbf{metrizable} si es posible determinar alguna métrica en $\displaystyle X $ tal que la topología determinada por esa métrica sea $\displaystyle \mathcal{T} $.
+\end{definition}
+\begin{observation}
+No todas las topologías son metrizables. En efecto, basta con considerar $\displaystyle \left(X, \mathcal{T}_{\text{triv}}\right) $ con $\displaystyle \left|X\right|\geq 2 $. Tenemos que existen $\displaystyle x_{1}, x_{2} \in X $ con $\displaystyle x_{1}\neq x_{2} $. Así, si existiera una métrica tendríamos que existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle d\left(x_{1}, x_{2}\right)=\epsilon  $. 
+Tendremos entonces que $\displaystyle x_{2}\not\in B_{d}\left(x_{1}, \frac{\epsilon }{2}\right)\in \mathcal{T}_{\text{triv}} $, pero esto no es posible porque esta bola no coincide con el vacío ni con $\displaystyle X $.
+\end{observation}
+\begin{eg}[Topología del punto]
+Dado $\displaystyle a \in X $, consideramos la topología
+\[\mathcal{T}_{a}:= \left\{ \emptyset\right\} \cup \left\{ U \subset X \; : \; a \in U\right\}  .\]
+Veamos que es una topología: 
+\begin{enumerate}
+\item Claramente tenemos que $\displaystyle \emptyset \in \mathcal{T}_{a} $ y como $\displaystyle a \in X $ tendremos que $\displaystyle X \in \mathcal{T}_{a} $. 
+\item Dada $\displaystyle \left\{ U_{i}\right\} _{i \in I}\subset \mathcal{T}_{a} $, tenemos que existe $\displaystyle i_{0}\in I $ tal que $\displaystyle a \in U_{i_{0}} $, por lo que $\displaystyle a \in \bigcup_{i \in I}U_{i} $, así $\displaystyle \bigcup_{i\in I}U_{i} \in \mathcal{T} $.
+\item Dados $\displaystyle U_{1}, U_{2} \in \mathcal{T}_{a} $, claramente $\displaystyle a \in U_{1} \cap U_{2} $, por lo que $\displaystyle U_{1} \cap U_{2} \in \mathcal{T}_{a} $.
+\end{enumerate}
+A esta topología la llamaremos la \textbf{topología del punto}. Podemos ver que si $\displaystyle \left|X\right|\geq 2 $ tendremos que $\displaystyle \mathcal{T}_{a}\subsetneq \mathcal{T}_{\text{dis}} $.
+\end{eg}
+
+\begin{definition}[Topologías comparables]
+Dado un conjunto $\displaystyle X $ y dos topologías $\displaystyle \mathcal{T}_{1} $ y $\displaystyle \mathcal{T}_{2} $, decimos que son \textbf{comparables} si $\displaystyle \mathcal{T}_{1}\subset\mathcal{T}_{2} $ o $\displaystyle \mathcal{T}_{2}\subset\mathcal{T}_{1} $. En el primer caso diremos que $\displaystyle \mathcal{T}_{1} $ es \textbf{menos fina} que $\displaystyle \mathcal{T}_{2} $.
+\end{definition}
+\begin{observation}
+Para cualquier topología $\displaystyle \mathcal{T} $ de un conjunto $\displaystyle X $ es sencillo ver que 
+\[\mathcal{T}_{\text{triv}}\subset \mathcal{T}\subset\mathcal{T}_{\text{disc}} .\]
+Así, las topologías trivial y discreta son comparables con todas las topologías.
+\end{observation}
+
+\begin{eg}[Topología de los complementos finitos]
+	Dado un conjunto $\displaystyle X $ y $\displaystyle \mathcal{T}_{CF}= \left\{ \emptyset\right\} \cup \left\{ A \subset X \; : \; X/A \; \text{finito}\right\}  $, veamos que es una topología.
+\begin{enumerate}
+\item Claramente tendremos que $\displaystyle X, \emptyset \in \mathcal{T}_{CF} $. 
+\item Supongamos que $\displaystyle \left\{ U_{i}\right\} _{i \in I}\subset \mathcal{T}_{CF} $. Tendremos que 
+	\[X/ \left(\bigcup_{i \in I}U_{i}\right)= \bigcap_{i \in I}\left(X/U_{i}\right) .\]
+Como cada $\displaystyle X/U_{i} $ es finito, la intersección también será finita, por lo que $\displaystyle \bigcup_{i \in I}U_{i} \in \mathcal{T}_{CF} $.
+\item Supongamos que $\displaystyle U_{1}, U_{2} \in \mathcal{T}_{CF} $. Tenemos que,
+	\[X / \left(U_{1} \cap U_{2}\right)= \left(X/U_{1}\right) \cup \left(X/U_{2}\right) .\]
+	Como $\displaystyle X/U_{i} $ es finito para $\displaystyle i \in \left\{ 1,2\right\}  $, tenemos que la unión también es finita, por lo que $\displaystyle U_{1} \cap U_{2} \in \mathcal{T}_{CF} $. 
+\end{enumerate}
+
+Si $\displaystyle X $ es finito, tendremos que $\displaystyle \mathcal{T}_{CF} $ es la topología discreta. Sin embargo, si $\displaystyle X $ es infinito esto no es generalmente cierto. Consideremos el caso particular de $\displaystyle \left(\R, \mathcal{T}_{CF}\right) $. Nos preguntamos si es comparable con la topología usual de $\displaystyle \R $. Es sencillo ver que $\displaystyle \mathcal{T}_{CF}\subsetneq \mathcal{T}_{\text{usual}} $. Es fácil ver también que no es metrizable. 
+\end{eg}
+\begin{definition}[Entornos]
+Sean $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\displaystyle x \in X $. 
+\begin{itemize}
+\item Un \textbf{entorno abierto} de $\displaystyle x $ es un conjunto abierto $\displaystyle U $ tal que $\displaystyle x \in U $.
+\item Un \textbf{entorno} de $\displaystyle x $ es un conjunto $\displaystyle V $ tal que existe $\displaystyle U \in \mathcal{T} $ con $\displaystyle x \in U $ y $\displaystyle U \subset V $.
+\end{itemize}
+\end{definition}
+\begin{notation}
+Si queremos destacar que $\displaystyle U \in \mathcal{T} $ es un entorno de $\displaystyle x \in X $, podemos escribir $\displaystyle U^{x} $. 
+\end{notation}
+
+\begin{eg}
+	Consideremos la topología usual $\displaystyle \left(\R^{2}, \mathcal{T}_{u}\right) $. Sea $\displaystyle A = \left[0,1\right] \times\left[0,1\right]  $. Tenemos que $\displaystyle A $ es un entorno de $\displaystyle \left(\frac{1}{2}, \frac{1}{2}\right) $ pero no es un entorno abierto de este punto.
+\end{eg}
+\begin{definition}[Punto interior]
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\displaystyle A \subset X $. Diremos que $\displaystyle x \in X $ es \textbf{interior} a $\displaystyle A $ si $\displaystyle A $ es entorno de $\displaystyle x $. Asimismo, designamos por $\displaystyle \Int A $ al conjunto de todos los puntos interiores de $\displaystyle A $.
+\end{definition}
+
+\begin{observation}
+Claramente tenemos que $\displaystyle \Int A \subset A $. 
+\end{observation}
+\begin{eg}
+	Consideremos los siguientes ejemplos.
+	\begin{enumerate}
+	\item Consideremos el espacio topológico $\displaystyle \left(X, \mathcal{T}_{\text{triv}}\right) $ con $\displaystyle \left|X \right|\geq 2 $. Dado $\displaystyle \emptyset \neq A \subsetneq X $ nos preguntamos por el interior de $\displaystyle A $. Como $\displaystyle \mathcal{T}_{\text{triv}} = \left\{ \emptyset, X\right\}  $, solo puede ser que $\displaystyle \Int A = \emptyset $.
+	\item Si consideramos la topología $\displaystyle \left(X, \mathcal{T}_{a}\right) $, dado $\displaystyle A \subset X $ nos preguntamos por su interior. Distinguimos dos situaciones. Si $\displaystyle a \in A $, tenemos que $\displaystyle \Int A = A $. Si $\displaystyle a \not\in A $, entonces $\displaystyle \Int A = \emptyset $. 
+	\item Consideremos el espacio topológico $\displaystyle \left(\R, \mathcal{T}_{CF}\right) $. Si tomamos $\displaystyle A \subset \left(0,1\right) $ tendremos que $\displaystyle \Int A = \emptyset $. 
+	\end{enumerate}
+\end{eg}
+\begin{prop}
+Si $\displaystyle \left(X, \mathcal{T}\right) $ es un espacio topológico, y $\displaystyle A \subset X $, entonces $\displaystyle \Int A = \bigcup_{U \in \mathcal{T}, \; U \subset A}U $. 
+\end{prop}
+\begin{proof}
+Si $\displaystyle x \in \Int A $, tenemos que existe $\displaystyle U \in \mathcal{T} $ tal que $\displaystyle x \in U \subset A $, por lo que $\displaystyle \Int A \subset \bigcup_{U\in\mathcal{T}, \; U \subset A}U $. Recíprocamente, si $\displaystyle x \in \bigcup_{U \in \mathcal{T}, U \subset A}U $, claramente tendremos que $\displaystyle A $ es un entorno de $\displaystyle x $. 
+\end{proof}
+\begin{colorary}
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\displaystyle A \subset X $. 
+\begin{enumerate}
+\item $\displaystyle \Int A $ es abierto.
+\item $\displaystyle \Int A $ es el mayor abierto contenido en $\displaystyle A $. 
+\end{enumerate}
+\end{colorary}
+
+\begin{prop}
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\displaystyle A,B\subset X $. Supongamos que $\displaystyle A \subset B $. 
+\begin{enumerate}
+\item $\displaystyle \Int A \subset \Int B $. 
+\item $\displaystyle \Int \left(A \cap B\right)= \Int A \cap \Int B $. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle A \subset B $. 
+\begin{enumerate}
+\item Tenemos que $\displaystyle \Int A \subset A \subset B $ y como $\displaystyle \Int B $ es el mayor abierto contenido en $\displaystyle B $ debe ser que $\displaystyle \Int A \subset \Int B $. 
+\item Tenemos que $\displaystyle \Int \left(A \cap B\right)\subset A \cap B \subset A $ y $\displaystyle \Int \left(A \cap B\right)\subset A \cap B \subset B $. Por tanto, $\displaystyle \Int\left(A \cap B\right)\subset \Int A $ y $\displaystyle \Int \left(A \cap B\right)\subset \Int B $, por tanto tendremos que $\displaystyle \Int\left(A \cap B\right)\subset \Int A \cap \Int B $. Recíprocamente, tenemos que $\displaystyle \Int A \cap \Int B $ es abierto y $\displaystyle \Int A \cap \Int B \subset A \cap B $. Así, por ser $\displaystyle \Int \left(A \cap B\right) $ el abierto más grande contenido en $\displaystyle A \cap B $ debe ser que $\displaystyle \Int A \cap \Int B \subset \Int\left(A \cap B\right) $.
+\end{enumerate}	
+\end{proof}
+\section{Conjuntos cerrados}
+\begin{definition}[Conjunto cerrado]
+Dado un espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ y $\displaystyle C \subset X $, decimos que $\displaystyle C $ es \textbf{cerrado} si $\displaystyle X/C \in \mathcal{T} $.
+\end{definition}
+\begin{prop}
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico.
+\begin{enumerate}
+\item Los conjuntos $\displaystyle \emptyset $ y $\displaystyle X $ son cerrados.
+\item Dada $\displaystyle \left\{ C_{i}\right\} _{i \in I}\subset X $ familia de cerrados, $\displaystyle \bigcap_{i \in I}C_{i} $ es cerrado.
+\item Si $\displaystyle C_{1}, C_{2} \subset X $ son cerrados, entonces $\displaystyle C_{1} \cup C_{2} $ son cerrados.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico. 
+\begin{enumerate}
+\item Es trivial puesto que $\displaystyle \emptyset = X / X\in \mathcal{T} $ y $\displaystyle X = X / \emptyset \in \mathcal{T}$. 
+\item Sea $\displaystyle \left\{ C_{i}\right\} _{i \in I}\subset X $ una familia de cerrados, entonces, 
+	\[X / \left(\bigcap_{ i \in I}C_{i}\right)=\bigcup_{i \in I}\left(X/C_{i}\right)\in \mathcal{T} .\]
+\item Sean $\displaystyle C_{1}, C_{2} \subset X $ cerrados, entonces
+	\[X / \left(C_{1} \cup C_{2}\right)=\left(X / C_{1}\right) \cap \left(X / C_{2}\right) \in \mathcal{T} .\]
+\end{enumerate}
+\end{proof}
+\begin{eg}
+Consideremos los siguientes ejemplos.
+\begin{enumerate}
+\item En el espacio topológico $\displaystyle \left(X, \mathcal{T}_{\text{triv}}\right) $ los únicos cerrados son $\displaystyle X $ y $\displaystyle \emptyset $. 
+\item En el espacio topológico $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $, todos los subconjuntos de $\displaystyle X $ son cerrados.
+\item Si $\displaystyle \mathcal{T}_{1}\subset \mathcal{T}_{2} $, todo subconjunto que es cerrado en $\displaystyle \left(X, \mathcal{T}_{1}\right) $ lo es también en $\displaystyle \left(X, \mathcal{T}_{2}\right) $. 
+\end{enumerate}
+\end{eg}
+
+\begin{definition}[Punto adherente]
+Dado un espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ y $\displaystyle A \subset X $, decimos que $\displaystyle x \in X $ es un \textbf{punto adherente} a $\displaystyle A $ si todo entorno de $\displaystyle x $ tiene intersección no vacía con $\displaystyle A $. Designamos por $\displaystyle \overline{A} $ al conjunto de todos los puntos de adherencia de $\displaystyle A $.
+\end{definition}
+\begin{observation}[Definición equivalente]
+La definición es equivalente a pedir que todo entorno abierto de $\displaystyle x $ tenga intersección no vacía con $\displaystyle A $. 
+\end{observation}
+
+\begin{prop}
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\displaystyle A,B\subset X $. 
+\begin{enumerate}
+\item $\displaystyle X / \overline{A} = \Int \left(X / A\right) $.
+\item $\displaystyle X/ \Int B = \overline{X/B} $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Es sencillo ver que 
+\[x \in X / \overline{A} \iff x \not\in \overline{A} \iff \exists V^{x}, \; V^{x}\cap A = \emptyset \iff \exists V^{x}  \subset X / A \iff x \in \Int\left(X/A\right) .\]
+\item De forma análoga a antes
+	\[x \in X / \Int B \iff x \not\in \Int B \iff \forall V^{x}, \; V^{x}\cap \left(X / B\right)\neq \emptyset \iff x \in \overline{X/B} .\]
+\end{enumerate}
+\end{proof}
+
+\begin{prop}
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\displaystyle A \subset X $. Entonces, 
+\[\overline{A}=\bigcap_{F \; \text{cerrado}, A \subset F}F .\]	
+\end{prop}
+\begin{proof}
+Se puede observar que $\displaystyle U \in \mathcal{T} $ y $\displaystyle U \subset X / A $ es equivalente a que $\displaystyle X / U = F $ sea cerrado y $\displaystyle A \subset F $. Así, tenemos que 
+\[X \cap \overline{A}= \Int \left(X / A\right) = \bigcup_{U \in \mathcal{T}, U \subset X / A}U = \bigcup_{F \; \text{cerrado}, A \subset F}\left(X/F\right) .\]
+Así, aplicando las leyes de Morgan tenemos que 
+\[\overline{A}=X / \bigcup_{F \; \text{cerrado}, A \subset F}\left(X / F\right) = \bigcap_{F \; \text{cerrado}, A\subset F}\left(X/\left(X/F\right)\right) = \bigcap_{F \; \text{cerrado}, A\subset F}F .\]
+\end{proof}
+
+\begin{colorary}
+	Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\displaystyle A \subset X $. 
+\begin{enumerate}
+\item $\displaystyle \overline{A} $ es cerrado.
+\item $\displaystyle \overline{A} $ es el cerrado más pequeño que contiene a $\displaystyle A $. 
+\end{enumerate}
+\end{colorary}
+\begin{prop}
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\displaystyle A,B \subset X $.  
+\begin{enumerate}
+\item Si $\displaystyle A \subset B $ entonces $\displaystyle \overline{A}\subset \overline{B} $.
+\item $\displaystyle \overline{A\cup B} = \overline{A} \cup \overline{B}$.
+\end{enumerate}
+\end{prop}
+\begin{proof} Sean $\displaystyle A, B \subset X $.
+\begin{enumerate}
+\item Claramente tenemos que $\displaystyle A \subset B \subset \overline{B} $ y como $\displaystyle \overline{B} $ es cerrado, debe ser que $\displaystyle \overline{A}\subset \overline{B} $.
+\item Tenemos que $\displaystyle A \subset A \cup B \subset \overline{A \cup B}$, por lo que $\displaystyle \overline{A}\subset \overline{A \cup B} $. Análogamente tenemos que $\displaystyle \overline{B}\subset \overline{A\cup B} $. Por tanto, $\displaystyle \overline{A} \cup \overline{B} \subset \overline{A \cup B} $. Por otro lado, como $\displaystyle A \subset \overline{A} \cup \overline{B} $ y $\displaystyle B \subset \overline{A} \cup \overline{B} $, tendremos que $\displaystyle A \cup B \subset \overline{A} \cup \overline{B} $ y por tanto $\displaystyle \overline{A \cup B}\subset \overline{A} \cup \overline{B} $.
+\end{enumerate}
+\end{proof}
+\begin{eg}
+Consideremos los siguientes ejemplos.
+\begin{enumerate}
+\item En $\displaystyle \left(\R^{n}, \mathcal{T}_{u}\right) $ sabemos que para una bola abierta $\displaystyle B\left(x, r\right) $ se tiene que $\displaystyle \overline{B\left(x,r\right)}=\overline{B}\left(x,r\right) $ \footnote{Esto no es cierto en general.}.
+\item En $\displaystyle \left(X, \mathcal{T}_{\text{triv}}\right) $ con $\displaystyle \emptyset \neq A \subset X $, claramente debe ser que $\displaystyle \overline{A}=X $.
+\item En $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ con $\displaystyle A\subset X $, tendremos que $\displaystyle \overline{A}= A $.
+\item En $\displaystyle \left(X, \mathcal{T}_{a}\right) $ para $\displaystyle a \in X $, dado $\displaystyle A \subset X $ podemos distinguir dos casos:
+	\begin{itemize}
+		\item Si $\displaystyle a \in A $ tendremos que $\displaystyle \overline{A}= X $ puesto que para cualquier $\displaystyle x \in X $ y un entorno suyo $\displaystyle V^{x} $ se tiene que $\displaystyle \left\{ a,x\right\} \subset V^{x} $.
+		\item Si $\displaystyle a \not\in A $, tendremos que $\displaystyle \overline{A}= A $, pues si $\displaystyle x \not\in A $ entonces el entorno $\displaystyle \left\{ x,a\right\} \cap A = \emptyset $. 
+	\end{itemize}
+\end{enumerate}
+\end{eg}
+
+\begin{definition}[Punto de acumulación]
+	Dado un espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ y $\displaystyle A \subset X $, decimos que $\displaystyle x \in X $ es un \textbf{punto de acumulación} de $\displaystyle A $ si para todo entorno $\displaystyle V $ de $\displaystyle x $ se tiene que $\displaystyle \left(V/ \left\{ x\right\} \right)\cap A \neq \emptyset $. 
+\end{definition}
+\begin{definition}[Punto aislado]
+	Dado un espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ y $\displaystyle A \subset X $, decimos que $\displaystyle x \in X $ es un \textbf{punto aislado} de $\displaystyle A $ si existe un entorno $\displaystyle V $ de $\displaystyle x $ tal que $\displaystyle V \cap A = \left\{ x\right\}  $. \footnote{Necesariamente debe ser que $\displaystyle x \in A $.} 
+\end{definition}
+\begin{eg}
+En el caso de $\displaystyle \left(\R, \mathcal{T}_{\text{dis}}\right) $ con $\displaystyle A \subset \R^{n} $, tenemos que todos los puntos de $\displaystyle A $ son puntos aislados y $\displaystyle A $ no tiene puntos de acumulación. 
+\end{eg}
+\begin{prop}
+Dado un espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ y $\displaystyle A \subset X $, se tiene que $\displaystyle \overline{A} $ es la unión disjunta del conjunto de puntos aislados de $\displaystyle A $ y del conjunto de puntos de acumulación de $\displaystyle A $.
+\end{prop}
+\begin{proof}
+	Es trivial a partir de la definición ver que los puntos aislados y puntos de acumulación son puntos adherentes. Por otro lado, basta ver que si $\displaystyle x \in \overline{A} $, entonces todos sus entornos tienen intersección no nula con $\displaystyle A $. Si alguno de ellos cumple que su intersección con $\displaystyle A $ es el conjunto $\displaystyle \left\{ x\right\}  $, será aislado, en caso contrario será un punto de acumulación.
+\end{proof}
+\begin{definition}[Punto frontera]
+Dado un espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ y $\displaystyle A \subset X $, decimos que $\displaystyle x \in X $ es un \textbf{punto frontera} de $\displaystyle A $ si todos sus entornos $\displaystyle V $ verifican que $\displaystyle V \cap A \neq \emptyset $ y $\displaystyle V \cap \left(X / A\right)\neq \emptyset $. Al conjunto de puntos frontera de $\displaystyle A \subset X $ lo llamaremos la \textbf{frontera} de $\displaystyle A $ y lo denotamos por $\displaystyle \partial A $.
+\end{definition}
+
+\begin{observation}
+Claramente se tiene que $\displaystyle \partial A = \overline{A} \cap \overline{\left(X / A\right)}= \overline{A}/\Int\left(A\right) $. 
+\end{observation}
+\begin{eg}
+Consideremos los siguientes ejemplos.
+\begin{enumerate}
+\item En $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ claramente tenemos que $\displaystyle \partial \Z = \Z $ y $\displaystyle \partial \Q = \R $. 
+\item En $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $, todos los puntos de cualquier conjunto son aislados y la frontera de cualquier conjunto es vacía. 
+\item En $\displaystyle \left(X, \mathcal{T}_{a}\right) $ con $\displaystyle a \in X $, tenemos quepara $\displaystyle A \subset X $ podemos distinguir dos casos:
+\begin{itemize}
+	\item Si $\displaystyle a \in A $, entonces $\displaystyle \partial A = X/A$. 
+	\item Si $\displaystyle a \not\in A $, entonces $\displaystyle \partial A = A $. 
+\end{itemize}
+\end{enumerate}
+\end{eg}
+
+\section{Bases}
+
+\begin{definition}[Base de entornos de un punto]
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\displaystyle x \in X $. Una colección $\displaystyle \mathcal{V}\left(x\right) $ de entornos de $\displaystyle x $ es una \textbf{base de entornos} de $\displaystyle x $ si todo entorno de $\displaystyle x $ contiene alguno de los elementos de $\displaystyle \mathcal{V}\left(x\right) $.
+\end{definition}
+\begin{observation}[Construcción de una base de entornos abiertos a partir de una base de entornos]
+	Dada una base de entornos de $\displaystyle x $, $\displaystyle \mathcal{V}\left(x\right)= \left\{ V^{x}_{i}\right\} _{i \in I} $, tenemos que para cada $\displaystyle V^{x}_{i} $ existe $\displaystyle U^{x}_{i} $ abierto tal que $\displaystyle x \in U^{x}_{i}\subset V^{x}_{i} $. Así, la colección $\displaystyle \mathcal{U}\left(x\right)= \left\{ U^{x}_{i}\right\} _{i \in I} $ es una base de entornos abiertos de $\displaystyle x $. 
+\end{observation}
+\begin{eg}
+Consideremos los siguientes ejemplos. 
+\begin{enumerate}
+\item En $\displaystyle \left(\R^{n}, \mathcal{T}_{u}\right) $, tenemos que para $\displaystyle p \in \R^{n} $ el conjunto $\displaystyle \left\{ B\left(p, \epsilon \right)\right\} _{\epsilon > 0} $ es una base de entornos de $\displaystyle p $. También valdría el conjunto $\displaystyle \left\{ B\left(p, \frac{1}{n}\right)\right\} _{n\in\N} $.
+\item En $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $, buscamos una base de entornos abiertos para $\displaystyle x \in X $. Tenemos que todos sus conjuntos son abiertos, así todo $\displaystyle W \subset X $ con $\displaystyle \left\{ x\right\} \subset W $. Por tanto, el conjunto $\displaystyle \mathcal{V}\left(x\right)=\left\{ \left\{ x\right\} \right\}  $ es una base de entornos abiertos y además es la más pequeña.
+\item Dado el espacio topológico $\displaystyle \left(X, \mathcal{T}_{a}\right) $, tenemos que $\displaystyle \mathcal{V}\left(a\right)= \left\{ \left\{ a\right\} \right\}  $ es una base de entornos abiertos. Por otro lado, para $\displaystyle x \neq a $ tenemos que $\displaystyle \mathcal{V}\left(x\right)= \left\{ \left\{ x, a\right\} \right\}  $ es una base de entornos abiertos de $\displaystyle x $. Ambas son las más pequeñas.
+\end{enumerate}
+\end{eg}
+
+\begin{prop}
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\displaystyle A \subset X $. Son equivalentes,
+\begin{enumerate}
+\item $\displaystyle x \in \overline{A} $. 
+\item Dada una base de entornos $\displaystyle \mathcal{V}\left(x\right)= \left\{ V_{i}^{x}\right\} _{i \in I} $ de $\displaystyle x $, se tiene que $\displaystyle V_{i}^{x}\cap A \neq \emptyset $, $\displaystyle \forall i \in I $.
+\end{enumerate}
+\end{prop}
+\begin{proof} Supongamos que $\displaystyle A \subset X $.
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Si $\displaystyle x \in \overline{A} $ tendremos que para cualquier entorno $\displaystyle V^{x} \cap A \neq \emptyset $, en particular, $\displaystyle \forall i \in I $, $\displaystyle V^{x}_{i} \cap A \neq \emptyset $. 
+\item[(2) $\displaystyle \Rightarrow $ (1)] Ahora, supongamos que $\displaystyle V^{x} $ es un entorno de $\displaystyle x $, entonces existe $\displaystyle i_{0} \in I $ tal que $\displaystyle V^{x}_{i_{0}}\subset V^{x} $. Así, tendremos que 
+	\[\emptyset \neq V_{i_{0}}^{x} \cap A \subset V^{x} \cap A .\]
+	Por lo que $\displaystyle x \in \overline{A} $.
+\end{description}
+\end{proof}
+
+\begin{definition}[Conjunto denso]
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\displaystyle A \subset X $. Decimos que $\displaystyle A $ es \textbf{denso} si $\displaystyle \overline{A}=X $.
+\end{definition}
+\begin{prop}
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\displaystyle A \subset X $. Tenemos que $\displaystyle A \subset X $ es denso si y solo si $\displaystyle \forall x \in X $, existe una base de entornos de $\displaystyle x $ tal que todos sus elementos tienen intersección no vacía con $\displaystyle A $. 
+\end{prop}
+\begin{proof}
+Se sigue directamente de la proposición anterior.
+\end{proof}
+
+\begin{definition}[Base de una topología]
+	Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico. Decimos que $\displaystyle \mathcal{B} = \left\{ B_{i}\right\} _{i \in I}\subset \mathcal{T} $ es una \textbf{base} de $\displaystyle \mathcal{T} $ si $\displaystyle \forall U \in \mathcal{T} $, existe $\displaystyle J \subset I $ tal que $\displaystyle U = \bigcup_{j \in J}B_{j} $.
+\end{definition}
+\begin{eg}
+Consideremos los siguientes ejemplos:
+\begin{enumerate}
+\item En $\displaystyle \left(\R^{n}, \mathcal{T}_{u}\right) $ tenemos que $\displaystyle \mathcal{B} = \left\{ B\left(x, \epsilon \right) \; : \; x \in \R^{n}, \epsilon > 0\right\}  $ es una base. Además, si tomamos sólo las bolas de radios racionales centradas en cada punto de $\displaystyle \R^{n} $, tendríamos una subcolección de $\displaystyle \mathcal{B} $ que también sería una base. Lo mismo si tomamos los radios de la forma $\displaystyle \frac{1}{n} $ con $\displaystyle n \in \N $.  
+\item En $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ tenemos que $\displaystyle \mathcal{B}= \left\{ \left\{ x\right\}  \; : \; x \in X\right\}  $ es una base y es la más pequeña.
+\item En $\displaystyle \left(X, \mathcal{T}_{a}\right) $ con $\displaystyle a \in X $, tenemos que la base mínima de $\displaystyle \mathcal{T}_{a} $ será $\displaystyle \mathcal{B}= \left\{ \left\{ a,x\right\} \; : \; x \in X \right\}  $. 
+\end{enumerate}
+\end{eg}
+\begin{prop}
+	Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico. Se tiene que $\displaystyle \mathcal{B}\subset \mathcal{P}\left(X\right) $ es una base de $\displaystyle \mathcal{T} $ si y solo si para cada $\displaystyle x \in X $ la colección $\displaystyle \mathcal{B}\left(x\right)= \left\{ B \in \mathcal{B} \; :\; x \in B\right\}  $ es una base de entornos abiertos de $\displaystyle x $.
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle \mathcal{B}\subset \mathcal{P}\left(X\right) $.
+\begin{description}
+	\item[($\displaystyle \Rightarrow $)] Supongamos que $\displaystyle \mathcal{B} $ es una base de $\displaystyle \mathcal{T} $ y sea $\displaystyle U^{x} $ un entorno abierto de $\displaystyle x \in X $. Tenemos que $\displaystyle U^{x}$ es unión de elementos de $\displaystyle \mathcal{B} $, así existe $\displaystyle B^{x} \in \mathcal{B} $ tal que $\displaystyle x \in B^{x} \subset U^{x} $, por lo que $\displaystyle \mathcal{B}\left(x\right) $ es base de entornos abiertos de $\displaystyle x $. 
+	\item[($\displaystyle \Leftarrow $)] Supongamos ahora que $\displaystyle \forall x \in X $, la familia $\displaystyle \mathcal{B}\left(x\right) $ es una base de entornos abiertos de $\displaystyle x $. Si $\displaystyle U \in \mathcal{T} $, para cada $\displaystyle x \in U $ existe $\displaystyle B^{x} \in \mathcal{B}\left(x\right) $ tal que $\displaystyle x \in B^{x}\subset U $. Así, tenemos que podemos escribir
+		\[U = \bigcup_{x \in U}B^{x} .\]
+		Por tanto, $\displaystyle U $ es unión de elementos de la familia $\displaystyle \mathcal{B} $. 
+\end{description}
+\end{proof}
+
+\begin{prop}
+	Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y sea $\displaystyle \mathcal{B} $ una base de $\displaystyle \mathcal{T} $ con $\displaystyle \mathcal{B}= \left\{ B_{i}\right\} _{i \in I} $. 
+	\begin{enumerate}
+	\item $\displaystyle X = \bigcup_{i \in I}B_{i} $.
+	\item Si $\displaystyle B_{1}, B_{2}\in\mathcal{B} $ y $\displaystyle x \in B_{1} \cap B_{2} $, entonces existe $\displaystyle B_{3}\in \mathcal{B} $ tal que $\displaystyle x \in B_{3}\subset B_{1} \cap B_{2} $. 
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+Sea $\displaystyle \mathcal{B} $ una base de $\displaystyle \mathcal{T} $. 
+\begin{enumerate}
+\item Basta recordar que $\displaystyle X $ es un abierto, por lo que $\displaystyle X \subset \bigcup_{j \in J }B_{j} $ con $\displaystyle J \subset I $. 
+\item Tendremos que $\displaystyle B_{1} \cap B_{2} $ es abierto y es unión de conjuntos tomados en $\displaystyle \mathcal{B} $. Así, debe existir $\displaystyle B_{3} \in \mathcal{B} $ que cumpla lo pedido.
+\end{enumerate}
+\end{proof}
+
+\section{Construcción de un topología en $\displaystyle X \neq \emptyset $}
+Dado un conjunto $\displaystyle X $, cogemos $\displaystyle \mathcal{B}\subset \mathcal{P}\left(X\right) $. 
+\begin{definition}[Base de una topología]
+Diremos que $\displaystyle \mathcal{B} $ es base de una topología de $\displaystyle X $ si 
+\begin{enumerate}
+\item $\displaystyle X $ es unión de elementos de $\displaystyle \mathcal{B} $.
+\item Dados $\displaystyle B_{1}, B_{2} \in \mathcal{B} $ y $\displaystyle x \in B_{1} \cap B_{2} $, existe $\displaystyle B_{3}\in \mathcal{B} $ tal que $\displaystyle x \in B_{3}\subset B_{1}\cap B_{2} $. 
+\end{enumerate}
+\end{definition}
+\begin{prop}
+Dado $\displaystyle X \neq \emptyset $ y $\displaystyle \mathcal{B}\subset \mathcal{P}\left(X\right) $ que es base de una topología, existe una única topología en $\displaystyle X $ que tiene a $\displaystyle \mathcal{B} $ por base y es
+\[\mathcal{T}_{\mathcal{B}} = \left\{ U \subset X \; : \; U = \bigcup_{i \in I}B_{i}\right\}  .\]
+\end{prop}
+\begin{proof}
+Verifiquemos primero que $\displaystyle \mathcal{T}_{\mathcal{B}} $ es una topología.
+\begin{enumerate}
+\item Por definición tenemos que $\displaystyle X \in \mathcal{T}_{\mathcal{B}} $. Además, es trivial que $\displaystyle \emptyset \in \mathcal{T}_{\mathcal{B}} $. 
+\item Supongamos que $\displaystyle \left\{ U_{i}\right\} _{i \in I}\subset \mathcal{T}_{\mathcal{B}} $. Por definición tenemos que $\displaystyle \forall i \in I $, $\displaystyle \exists J_{i} $ tal que $\displaystyle U_{i}=\bigcup_{j \in J_{i}}B_{j} $. De esta forma, 
+	\[\bigcup_{i \in I}U_{i}=\bigcup_{i \in I}\left(\bigcup_{j \in J_{i}}B_{j}\right) \in \mathcal{T}_{\mathcal{B}} .\]
+\item Supongamos que $\displaystyle U_{1}, U_{2} \in \mathcal{T}_{\mathcal{B}} $. Para cada $\displaystyle x \in U_{1} \cap U_{2} $, tendremos que existe $\displaystyle B_{1}, B_{2} \in \mathcal{B} $ tales que $\displaystyle x \in B_{1} \cap B_{2} \subset U_{1} \cap U_{2} $. Por el segundo axioma de la definición existe $\displaystyle B^{x}_{3} \in \mathcal{B} $ tal que $\displaystyle x \in B^{x}_{3} \subset U_{1} \cap U_{2} $. De esta forma, 
+	\[U_{1} \cap U_{2} = \bigcup_{x \in U_{1} \cap U_{2}}B^{x}_{3} .\]
+\end{enumerate}
+Comprobemos ahora la unicidad. Si $\displaystyle \mathcal{B} $ es base de otra topología $\displaystyle \mathcal{T}' $ tendremos que sus conjuntos serán los que se pueden expresar como unión de conjuntos de $\displaystyle \mathcal{B} $, pero estos son precisamente los conjuntos de $\displaystyle \mathcal{T} $. 
+\end{proof}
+

@@ -1,0 +1,408 @@
+\chapter{El cuerpo $\displaystyle \C $}
+\section{Definiciones básicas}
+Informalmente, podemos definir el conjunto $\displaystyle \C $ como
+\[ \C = \left\{ a + bi \: : \; a,b \in \R\right\}  ,\]
+tal que $\displaystyle i^{2}=-1 $. Construyamos $\displaystyle \C $ de una manera más satisfactoria.
+\begin{definition}[El conjunto $\displaystyle \C $]
+Definimos $\displaystyle \C $ como el conjunto
+\[ \C : = \R[\mathtt{x}] / \left(\mathtt{x}^{2} + 1\right).\]
+Asímismo, definimos la suma y el producto en $\displaystyle \C $ están definidos como lo están en un cociente de anillos.
+\end{definition}
+Alternativamente, podemos definir $\displaystyle \C $ como un $\displaystyle \R $-espacio vectorial de dimensión 2, con la suma usual de vectores. Añadimos además la operación del \textbf{producto complejo:}
+\[\left(a,b\right) \cdot \left(c,d\right) := \left(ac-bd, ad + bc\right) .\]
+De esta forma tenemos que $\displaystyle \left(0,1\right) \cdot \left(0,1\right)=\left(-1, 0\right) $. Esta notación es engorrosa, por lo que escribiremos $\displaystyle \left(a,b\right)= a + bi $. 
+
+\begin{prop}
+	El trío $\displaystyle \left(\C, +, \cdot \right) $ es un cuerpo conmutativo, del cual $\displaystyle \R $ es un subcuerpo y está identificado por $\displaystyle \left\{ x + iy \in \C \; : \; y = 0\right\}  $.
+\end{prop}
+\begin{proof}
+Sean $\displaystyle z,w,\xi \in \C $.
+\begin{enumerate}
+\item Asociatividad de la suma. Aprovechando la asociatividad de la suma en $\displaystyle \R $,
+	\[
+	\begin{split}
+		z + \left(w + \xi \right) = & \left(a + bi\right) + \left(\left(c + di\right)+\left(e + fi\right)\right) = \left(a + bi\right)+\left(\left(c + e\right)+\left(d + f\right)i\right) \\
+		= & \left(a + c + e\right) + \left(b + d + f\right)i= \left(\left(a + c\right)+\left(b + d\right)i\right)+\left(e + fi\right)\\
+		= &  \left(z + w\right) + \xi .
+	\end{split}
+	\]
+\item Conmutatividad de la suma. Aprovechando la conmutatividad de la suma en $\displaystyle \R $,
+	\[
+	\begin{split}
+		z + w = & \left(a + bi\right)+\left(c + di\right)=\left(a + c\right) + \left(b + d\right)i = \left(c + a\right) + \left(d + b\right)i \\
+		= & \left(c + di\right) + \left(a +bi\right)=w + z  .
+	\end{split}
+	\]
+\item El $\displaystyle 0 $ es el elemento neutro para la suma:
+	\[z + 0 = \left(a + bi\right) + \left(0 + 0i\right)= \left(a + 0\right)+\left(b+0\right)i = a + bi = z.\]
+\item Existencia de opuestos para la suma. Si $\displaystyle z = a + bi $, basta con tomar $\displaystyle -z = -a-bi $, en efecto
+	\[z + \left(-z\right)= \left(a + bi\right)+\left(-a-bi\right)=\left(a-a\right)+\left(b-b\right)i=0 .\]
+\item Asociatividad del producto.
+	\[
+	\begin{split}
+		z\left(w\xi\right) = & \left(a + bi\right)\left(\left(c+di\right)\left(e + fi\right)\right)=\left(a + bi\right)\left(\left(ce-df\right)+\left(cd+ed\right)i\right)\\
+		= & \left(ace - adf -bcd - bed\right) + \left(bce - bdf + acd + aed\right)i \\
+		= & \left(\left(ac-db\right)+\left(ad + bd\right)i\right)\left(e + fi\right) = \left(zw\right)\xi .
+	\end{split}
+	\]
+\item Conmutatividad del producto.
+	\[zw = \left(a + bi\right)\left(c + di\right)=\left(ac - bd\right) + \left(ad + bc\right)i = \left(ca - db\right)+\left(da + cb\right)i = wz .\]
+\item El $\displaystyle 1 $ es el elemento neutro para el producto.
+	\[1z = \left(1 + 0i\right)\left(a + bi\right)=\left(a - 0\right) + \left(b + 0\right)i = a + bi = z .\]
+\item Existencia de inverso para el producto. Si $\displaystyle z = a + bi \neq 0 $, entonces es sencillo comprobar que si tomamos $\displaystyle z^{-1}=\frac{a -bi}{a^{2}+b^{2}} $ se cumple que $\displaystyle zz^{-1}= 1 $.
+\item Propiedad distributiva del producto respecto de la suma. La demostración es engorrosa por lo que no se hará aquí.
+\end{enumerate}
+\end{proof}
+ 
+\begin{definition}
+Dado $\displaystyle z \in \C $, llamamos a $\displaystyle \overline{z} $ su \textbf{complejo conjugado} de forma que si $\displaystyle z = a + bi $, entonces $\displaystyle \overline{z}= a-bi $. 
+\end{definition}
+\begin{observation}
+La conjugación $\displaystyle z \to \overline{z} $ es una reflexión de $\displaystyle \C $ respecto de la recta $\displaystyle \R $. 
+\end{observation}
+\begin{definition}[Módulo]
+El \textbf{módulo} de $\displaystyle z = a + bi \in \C $ viene dado por
+\[ \left|z\right|=\sqrt{a^{2}+b^{2}} .\]
+\end{definition}
+
+\begin{notation}[Plano complejo]
+	Dado un número complejo $\displaystyle z = a + bi $, decimos que su \textbf{parte real} es $\displaystyle a = \Rel z $ y su \textbf{parte imaginaria} es $\displaystyle b = \Imagen z $. Geométricamente, tenemos que $\displaystyle \Rel z $ es la proyección ortogonal de $\displaystyle z $ sobre la recta $\displaystyle \R $ en $\displaystyle \C $, y $\displaystyle i \Imagen z $ es la proyección ortogonal de $\displaystyle z $ sobre la recta $\displaystyle i\R := \left\{ x + iy \: : \; x = 0\right\}  $.
+\end{notation}
+
+\begin{prop}
+	Sean $\displaystyle z,w \in \C $.
+\begin{enumerate}
+\item $\displaystyle z^{-1}=\frac{\overline{z}}{ \left|z\right|^{2}} $.
+\item $\displaystyle \Rel z =\frac{z + \overline{z}}{2} $. 
+\item $\displaystyle \Imagen z=\frac{z-\overline{z}}{2i} $. 
+\item $\displaystyle \overline{z + w}= \overline{z} + \overline{w} $.
+\item $\displaystyle \overline{zw} = \overline{z} \cdot \overline{w} $.
+\item $\displaystyle \left|z\right|= \left|\overline{z}\right| $.
+\item $\displaystyle \left|z\right|^{2} = z \cdot \overline{z} $.
+\item $\displaystyle \left|zw\right| = \left|z\right| \left|w\right| $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Sean $\displaystyle z = a +bi, w = c + di \in \C $. 
+\begin{enumerate}
+\item Es trivial a partir de la definición de inversa que dimos en la demostración anterior.
+\item Si $\displaystyle z = a + bi $ tenemos que 
+	\[\frac{z + \overline{z}}{2}=\frac{\left(a + bi\right)+\left(a-bi\right)}{2}=\frac{2a}{2}=a = \Rel z .\]
+\item Si $\displaystyle z = a + bi $ tenemos que 
+	\[\frac{z -\overline{z}}{2i}=\frac{\left(a+bi\right)-\left(a-bi\right)}{2i}=\frac{2bi}{2i}=b=\Imagen z .\]
+\item Sean $\displaystyle z = a + bi $ y $\displaystyle w = c + di $, entonces
+	\[\overline{z + w}= \left(a + c\right)-\left(b + d\right)i = \left(a - bi\right)+\left(c-di\right) = \overline{z} + \overline{w} .\]
+\item Si $\displaystyle z = a + bi $ y $\displaystyle w = c + di $, entonces
+	\[\overline{zw}=\left(ac - bd\right)-\left(ad + bc\right)i .\]
+	Por otro lado, 
+	\[\overline{z} \cdot \overline{w}= \left(a -bi\right)\left(c -di\right)=\left(ac-bd\right)+\left(-ad-bc\right)i .\]
+\item Supongamos que $\displaystyle z = a + bi $, 
+	\[ \left|\overline{z}\right|=\sqrt{a^{2}+\left(-b\right)^{2}}=\sqrt{a^{2}+b^{2}}= \left|z\right| .\]
+\item Si $\displaystyle z = a + bi $,
+	\[ z \cdot \overline{z}=\left(a + bi\right)\left(a - bi\right)=\left(a^{2}+b^{2}\right)+\left(-ab + ab\right)i = \left(\sqrt{a^{2}+b^{2}}\right)^{2}= \left|z\right|^{2} .\]
+\item Sean $\displaystyle z = a + bi $ y $\displaystyle w = c + di $,
+	\[ \left|zw\right|=\sqrt{\left(ac - bd\right)^{2}+\left(ad + bc\right)^{2}} = \sqrt{a^{2}c^{2} + b^{2}d^{2}+a^{2}d^{2}+b^{2}c^{2}}.\]
+Por otro lado, 
+\[ \left|z\right| \left|w\right|=\sqrt{a^{2}+b^{2}}\sqrt{c^{2}+d^{2}}=\sqrt{a^{2}c^{2}+a^{2}d^{2}+b^{2}c^{2}+b^{2}d^{2}} .\]
+\end{enumerate}
+\end{proof}
+\begin{notation}[Coordenadas polares]
+Las coordenadas polares explotan simetrías radiales, por lo que son muy útiles. Cada número complejo $\displaystyle z = x + yi $ se puede expresar de la forma 
+\[z = x + iy = r\left(\cos\theta + i \sin \theta \right) ,\]
+con $\displaystyle r = \sqrt{x^{2}+y^{2}} $ y $\displaystyle \theta = \arctan\frac{y}{x} $. Podmeos ver que $\displaystyle \theta $ está determinado salvo suma de un múltiplo entero de $\displaystyle 2\pi  $. Para que haya biyección entre ambas representaciones nos restringimos de la siguiente manera
+\[\left(0,\infty\right)\times\left(-\pi, \pi \right] \to \C/ \left\{ 0\right\} : \left(r, \theta \right)\to r\left(\cos\theta + i \sin \theta\right) .\]
+\end{notation}
+
+\section{Funciones elementales}
+\begin{definition}[Exponencial compleja]
+Dado $\displaystyle \theta \in \R $, se define
+\[e^{i\theta }:= \cos \theta + i \sin \theta  .\]
+Más generalmente, si $\displaystyle z = x + iy $ ponemos
+\[e^{z}:= e^{x +iy}=e^{x} \cdot e^{iy} .\]
+\end{definition}
+
+Así, podemos escribir la forma polar de un número complejo como
+\[z = re^{i\theta} ,\]
+siendo $\displaystyle r = \left|z\right| $ y $\displaystyle \theta $ está determinado unívocamente en $\displaystyle \theta \in \left(-\pi , \pi \right]  $ para $\displaystyle z \neq 0 $. 
+\begin{notation}
+Diremos que $\displaystyle \theta = \Arg\left(z \right) $. Diremos que $\displaystyle \arg\left(z\right)= \left\{ \Arg\left(z\right)+2k\pi \; : \; k \in \Z\right\}  $. A la aplicación $\displaystyle z \to \Arg z $ la llamaremos \textbf{rama principal del argumento}. 
+\end{notation}
+\begin{definition}[Logaritmo complejo]
+Definimos la \textbf{rama principal del logaritmo} como
+\[\log : \C / (-\infty, 0] \to \C : z \to \log \left|z\right| + i \Arg\left(z\right) .\]
+\end{definition}
+\begin{observation}
+	Podemos hacer las siguientes observaciones.
+	\begin{enumerate}
+		\item Se tiene que $\displaystyle e ^{\log z}=z $ y que $\displaystyle \log z $ coincide con el logaritmo usual en $\displaystyle \R $ cuando $\displaystyle z \in \left(0, \infty\right) $.
+		\item La función logaritmo definida de esta manera es inyectiva, pero la función exponencial no lo es. En efecto, $\displaystyle e^{z + 2k\pi i}=e^{z} $, $\displaystyle \forall k \in \Z $. 
+	\end{enumerate} 
+\end{observation}
+
+\begin{prop}
+Sean $\displaystyle \theta, \varphi \in \R $ y $\displaystyle z,w \in \C $. 
+\begin{enumerate}
+\item $\displaystyle \left|e^{i\theta }\right|=1 $.
+\item $\displaystyle \overline{e^{i\theta }}=e^{-i\theta }=\frac{1}{e^{i\theta}} $. 
+\item $\displaystyle e^{i\left(\theta + \varphi\right)}=e^{i\theta } \cdot e^{i\varphi} $.
+\item $\displaystyle e^{z + w}=e^{z} \cdot e^{w} $. 
+\item $\displaystyle \arg \overline{z} = - \arg z $ para $\displaystyle z \neq 0 $. 
+\item Si $\displaystyle z \neq 0 $, $\displaystyle \arg\left(\frac{1}{z}\right)=-\arg z $.
+\item $\displaystyle \arg\left(z \cdot w\right)=\arg z + \arg w $. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle \theta, \varphi \in \R $ y $\displaystyle z, w \in \C $.
+\begin{enumerate}
+\item Tenemos que $\displaystyle \left|e^{i\theta }\right|=1 $ es equivalente a que $\displaystyle \cos^{2}\theta + \sin ^{2}\theta = 1 $. 
+\item Es sencillo ver que 
+	\[\overline{e^{i\theta}} = \cos\theta - i \sin \theta = \cos \theta + i \sin \left(-\theta \right)=e^{-i\theta} .\]
+	Además, como $\displaystyle z^{-1}= \frac{\overline{z}}{ \left|z\right|^{2}} $, tenemos que $\displaystyle e^{-i\theta}=\frac{1}{e^{i\theta}} $. 
+\item Aplicando las fórmulas trigonométricas
+	\[
+	\begin{split}
+		e^{i\left(\theta + \varphi\right)} = & \cos\left(\theta + \varphi\right) + i \sin \left(\theta + \varphi\right) = \cos\theta \cos\varphi - \sin \theta \sin \varphi + i \left(\sin\theta \cos\varphi + \sin\varphi \cos \theta\right) \\
+		= & \cos\theta\left(\cos\varphi + i\sin\varphi\right)+i\sin\theta\left(\cos\varphi + i \sin \varphi\right) = \left(\cos\theta + i \sin \theta\right)\left(\cos\varphi + i\sin\varphi\right)\\
+		= & e^{i\theta}e^{i\varphi} .
+	\end{split}
+	\]
+\item Si escribimos $\displaystyle z = a + bi $ y $\displaystyle w = x + iy $ con $\displaystyle a,b,x,y \in \R $, tendremos que aplicando \textbf{(3)} 
+	\[e^{z + w}= e^{\left(a + x\right) + \left(b + y\right)i} = e^{a + x} \cdot e^{\left(b + y\right)i} = e^{a}e^{x} e^{bi}e^{yi}=e^{a + bi} \cdot e^{x + yi}= e^{z} \cdot e^{w}.\]
+\item A partir de \textbf{(2)} es sencillo ver que si $\displaystyle z = re^{i\theta} $, 
+	\[\overline{z}=\overline{re^{i\theta}}=r\overline{e^{i\theta}}=re^{-i\theta} .\]
+\item Es trivial a partir de \textbf{(2)}.
+\item Si $\displaystyle z = \left|z\right|e^{i\theta} $ y $\displaystyle w = \left|w\right|e^{i\varphi} $, por \textbf{(4)} tenemos que 
+	\[z \cdot w = \left|z\right| \left|w\right|e^{i\theta} \cdot e^{i\varphi}= \left|z\right| \left|w\right| e^{i\left(\theta + \varphi\right)} .\]
+\end{enumerate}
+\end{proof}
+
+\begin{observation}[Interpretación geométrica del producto complejo]
+Dado $\displaystyle w \in \C $, consideremos la función $\displaystyle z \to w \cdot z $. Utilizando la forma polar, tenemos que 
+\[w \cdot z = \left(s e^{i\varphi}\right)\left(re^{i\theta }\right)=sre^{i\left(\varphi+\theta \right)} .\]
+Como el producto es conmutativo, tenemos que la composición de homotecias y rotaciones también es conmutativa.
+\end{observation}
+Estos resultados nos permiten calcular las raíces $\displaystyle n $-ésimas de un número complejo $\displaystyle w $ para cualquier $\displaystyle n \in \N $. En efecto, si $\displaystyle w = \rho e^{i\varphi} $ y $\displaystyle z = re^{i\theta} $, planteamos la ecuación $\displaystyle z^{n}= w $ en forma polar,
+\[r^{n}e^{in\theta}=\rho e^{i\varphi} .\]
+Así, igualando módulos y argumentos deducimos que $\displaystyle r = \rho^{\frac{1}{n}} $ y $\displaystyle \varphi = n\theta + 2k\pi  $ con $\displaystyle k \in \Z $. De esta forma, podemos afirmar que las $\displaystyle n $ raíces $\displaystyle n $-ésimas de $\displaystyle w $ son los números $\displaystyle z_{j} $ que tienen la forma
+\[z_{j}=\rho^{\frac{1}{n}}e^{i\theta_{j}}, \; \theta_{j}=\frac{\varphi + 2j\pi }{n}, j = 0, 1, \ldots, n-1 .\]
+
+\begin{definition}[Raíz $\displaystyle n $-ésima compleja]
+Vamos a definir
+\[f_{0} : \C / (-\infty, 0] \to \C : w \to e^{\frac{1}{n}\log w} .\]
+Donde $\displaystyle \log w $ es la rama principal del logaritmo complejo.
+\end{definition}
+Las otras raíces se obtienen según
+\[f_{j}\left(w\right)=f_{0}\left(w\right)e^{i\frac{j2\pi }{n}}, \; j = 1, \ldots, n-1 .\]
+Para todas estas funciones con $\displaystyle j = 0, \ldots, n-1 $ 
+\[f_{j} : \C / (-\infty, 0] \to U_{j} = \left\{ z \in \C \; : \; arg z \in \left(-\frac{\pi }{n}, \frac{\pi }{n}\right)+\frac{2\pi j}{n}\right\}  .\]
+La función $\displaystyle z^{n} $ es inyectiva y $\displaystyle f_{j} $ es su inversa. 
+La función de $\displaystyle f_{0} $ inspira la siguiente definición de $\displaystyle z^{\alpha } $ potencia compleja. Concretamente, dado $\displaystyle \alpha \in \C $, 
+\[\varphi_{\alpha }: \C/ (-\infty, 0] \to \C : z \to z^{\alpha }:=e^{\alpha\log z} ,\]
+es la potencia compleja $\displaystyle \alpha  $. 
+\begin{definition}[Funciones trigonométricas]
+Vamos a definir
+\[\cos z := \frac{e^{iz}+e^{-iz}}{2} \quad \text{y} \quad \sin z : = \frac{e^{iz}-e^{-iz}}{2i} .\]
+\end{definition}
+\begin{observation}
+Para preservar diferenciabilidad (en sentido complejo) es la única manera de definir las funciones trigonométricas.
+\end{observation}
+\begin{observation}
+Las funciones trigonométricas complejas no son acotadas en $\displaystyle \C $.
+\end{observation}
+\begin{prop}
+Sean $\displaystyle k \in \Z $ y $\displaystyle z \in \C $.
+\begin{enumerate}
+\item $\displaystyle \cos\left(-z\right)= \cos z $.
+\item $\displaystyle \sin\left(-z\right)=-\sin z $.
+\item $\displaystyle \sin \left(z + 2k\pi \right)= \sin z $.
+\item $\displaystyle \cos\left(z + 2k\pi \right)= \cos z $.
+\item $\displaystyle \cos z = \sin\left(z + \frac{\pi }{2}\right) $. 
+\end{enumerate}
+\end{prop}
+\begin{notation}
+Las funciones de tangente, cotangente, etc, se definen a partir de la del seno y coseno como lo hacen en el caso real.
+\end{notation}
+\begin{definition}[Funciones hiperbólicas]
+Vamos a definir 
+\[\cosh z := \frac{e^{z}+e^{-z}}{2} \quad \text{y} \quad \sinh z := \frac{e^{z}-e^{-z}}{2} .\]
+\end{definition}
+\section{Métrica y topología}
+Sabemos que $\displaystyle \C \sim \R^{2} $ por lo que va a heredar la topología usual de $\displaystyle \R^{2} $. Recordamos que 
+\[d : \C \times \C \to [0,\infty) : \left(z,w\right) \to \left|z-w\right| ,\]
+es la métrica que usamos. Los abiertos de $\displaystyle \C $ estarán formados por uniones de discos abiertos:
+\[D\left(z,r\right) : = \left\{ w \in \C \; : \: \left|w-z\right| < r\right\} \quad \text{y} \quad \overline{D}\left(z,r\right):= \left\{ w \in \C \; : \; \left|w-z\right|\leq r\right\}  .\]
+Diremos que $\displaystyle \Omega \subset \C $ es abierto si 
+\[\forall z \in \Omega, \; \exists r > 0, \; D\left(z, r\right)\subset \Omega  .\]
+Diremos que la sucesión $\displaystyle \left\{ z_{n}\right\} _{n\in\N}\subset \C $ converge a $\displaystyle z_{0} \in \C $ si $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ se tiene que $\displaystyle \left|z_{n}-z_{0}\right|<\epsilon  $. 
+En particular, dada $\displaystyle \left\{ z_{n}\right\} _{n\in\N}\subset \C $, decimos que $\displaystyle \sum^{\infty}_{n = 1}z_{n}=\infty $ si $\displaystyle \lim_{N \to \infty}\sum^{N}_{n = 1}z_{n} = z_{0} $.
+\begin{definition}[Función continua]
+Dada $\displaystyle f : \Omega \to \C $, diremos que $\displaystyle f $ es \textbf{continua} en $\displaystyle z_{0}\in \Omega  $ si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists\delta > 0 $ tal que si $\displaystyle \left|z-z_{0}\right|<\delta $ entonces $\displaystyle \left|f\left(z\right)-f\left(z_{0}\right)\right|<\epsilon  $. 
+\end{definition}
+\begin{observation}
+El espacio $\displaystyle \C $ es un espacio métrico completo. Es decir, toda sucesión de Cauchy es convergente.
+\end{observation}
+\begin{observation}
+Las operaciones de suma y producto en $\displaystyle \C $ son polinómicas por lo que son continuas. Así, $\displaystyle \left(\C, + , \cdot \right) $ es un \textbf{cuerpo topológico}.
+\end{observation}
+\begin{eg}
+Una consecuencia de este hecho es que si $\displaystyle z_{n} \to \alpha  $ y $\displaystyle w_{n}\to \beta  $, entonces $\displaystyle z_{n}+w_{n}\to \alpha + \beta  $. Lo mismo sucede para el producto. 
+\end{eg}
+\begin{theorem}[Criterio $\displaystyle M $-Weirstrass]
+	Sea $\displaystyle X \neq \emptyset $, sea $\displaystyle \left(E, \left| \cdot \right|\right) $ un espacio normado completo \footnote{A estos se les llama \textbf{Espacios de Banach}.} y sea $\displaystyle f_{n} : X \to E $ una sucesión de funciones tales que existe $\displaystyle \left\{ M_{n}\right\} _{n\in\N}\subset[0,\infty) $ con $\displaystyle \left|f_{n}\left(x\right)\right|\leq M_{n} $, $\displaystyle \forall x \in X $, $\displaystyle \forall n \in \N $ y además $\displaystyle \sum^{\infty}_{n = 1}M_{n}<\infty  $. 
+	Entonces existe $\displaystyle f : X \to E $ tal que $\displaystyle f\left(x\right)=\lim_{N \to \infty}\sum^{N}_{n = 1}f_{n}\left(x\right) $ uniformemente en $\displaystyle X $. Además, si $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ son continuas, $\displaystyle f $ también lo es.
+\end{theorem}
+\begin{proof}
+Sea $\displaystyle \epsilon > 0 $. Entonces existe $\displaystyle N_{0} \in \N $ tal que si $\displaystyle k \geq N_{0} $, tenemos que $\displaystyle \sum_{n \geq k}M_{n}<\epsilon  $. Así, tenemos que $\displaystyle \forall n > m \geq N_{0} $ tenemos que 
+\[ \left|\sum^{n}_{j = 1}f_{j}\left(x\right)-\sum^{m}_{j = 1}f_{j}\left(x\right)\right| \leq \sum^{n}_{j = m + 1} \left|f_{j}\left(x\right)\right| \leq \sum_{j \geq m + 1} \left|f_{j}\left(x\right)\right| \leq \sum_{j \geq m + 1}M_{j}<\epsilon .\]
+Así, la sucesión $\displaystyle \left\{ \sum^{n}_{j = 1}f_{j}\left(x\right)\right\} _{n\in\N}\subset E $ es de Cauchy y por ser $\displaystyle E $ completo converge, por lo que existe
+\[f\left(x\right):=\lim_{n \to \infty}\sum^{n}_{j = 1}f_{j}\left(x\right) .\]
+Veamos ahora que la convergencia es uniforme. Si tomamos el límite en la inecuación anterior tenemos que 
+\[ \left|f\left(x\right)-\sum^{m}_{j = 1}f_{j}\left(x\right)\right| \leq \epsilon, \; \forall x \in X  ,\]
+por lo que la convergencia es uniforme.
+Basta con ver que una sucesión de funciones continuas que convergen uniformemente tiene como límite una función que también es continua. Consideremos que la sucesión $\displaystyle \left\{ g_{n}\right\} _{n\in\N} $ de funciones continuas converge uniformemente a la función $\displaystyle g $. Ahora, sea $\displaystyle x_{0} \in X $ y $\displaystyle \epsilon > 0 $. Por hipótesis existe $\displaystyle n_{0}\in \N $ tal que $\displaystyle \left|g\left(x\right)-g_{n_{0}}\left(x\right)\right|<\frac{\epsilon }{3} $, $\displaystyle \forall x \in X $. 
+Como $\displaystyle g_{n_{0}} $ es continua en $\displaystyle x_{0} $, tenemos que existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \left|x - x_{0}\right| < \delta  $ entonces $\displaystyle \left|g_{n_{0}}\left(x\right)-g_{n_{0}}\left(x_{0}\right)\right|<\frac{\epsilon }{3} $. Así, tenemos que 
+\[ \left|g\left(x\right)-g\left(x_{0}\right)\right|\leq \left|g\left(x\right)-g_{n_{0}}\left(x\right)\right| + \left|g_{n_{0}}\left(x\right)-g_{n_{0}}\left(x_{0}\right)\right|+ \left|g_{n_{0}}\left(x_{0}\right)-g\left(x_{0}\right)\right| < \frac{\epsilon }{3} + \frac{\epsilon }{3} + \frac{\epsilon }{3}=\epsilon  .\]
+\end{proof}
+\section{El plano complejo ampliado}
+\begin{definition}[Esfera de Riemann]
+	Llamaremos \textbf{esfera de Riemann} o \textbf{plano complejo ampliado} al conjunto $\displaystyle \hat{\C} := \C\cup \left\{ \infty\right\}  $ que es la compactificación de Alexandroff o de un punto del espacio topológico $\displaystyle \left(\C, \mathcal{T}_{u}\right) $. 
+\end{definition}
+\begin{observation}
+	Es cierto que $\displaystyle \hat{\C} $ es homeomorfo a $\displaystyle \mathbb{S}^{2}= \left\{ x^{2}+y^{2}+z^{2}=1\right\}  $. 
+\end{observation}
+\begin{observation}
+Se puede comprobar que $\displaystyle \left(x,y,z\right)\to w = \frac{x + yi}{1-z} $ es una biyección. %comprobar en casa.
+Se puede comprobar que la inversa de esta aplicación está dada por
+
+\[x = \frac{w + \overline{w}}{1 + \left|w\right|^{2}} \quad
+y = \frac{w - \overline{w}}{i \left(1 + \left|w\right|^{2}\right)}\quad
+z = \frac{ \left|w\right|^{2}-1}{ \left|w\right|^{2}+1} .\]
+\end{observation}
+\subsection{Topología de $\displaystyle \hat{\C} $}
+Cualquier abierto de $\displaystyle \C $ es abierto de $\displaystyle \widehat{\C} $. Cualquier conjunto de la forma
+\[ \left\{ \infty\right\} \cup \left\{ z \in \C \; : \; \left|z\right| > R\right\}  ,\]
+para algún $\displaystyle R > 0 $ también es abierto.
+\begin{theorem}
+	La proyección esterográfica lleva las circunferencias de $\displaystyle \mathbb{S}^{2} $ ($\displaystyle \widehat{\C} $) a circunferencias de $\displaystyle \C $ o bien rectas del plano complejo (si contiene el polo norte). 
+\end{theorem}
+\begin{proof}
+Demostrar en casa.
+\end{proof}
+\begin{observation}
+\begin{enumerate}
+	\item En $\displaystyle \hat{\C} $ decimos que $\displaystyle \left\{ z_{n}\right\} _{n\in\N}\subset \C $ converge a $\displaystyle \infty $ si $\displaystyle \left|z_{n}\right|\to \infty $.\item Con la convención $\displaystyle \frac{1}{z}=\infty $ y $\displaystyle \frac{1}{\infty}=0 $, la función $\displaystyle w = \varphi\left(z\right)=\frac{1}{z} $ es muy útil para estudiar el punto $\displaystyle \infty \in \hat{\C}$ y $\displaystyle \varphi : \hat{\C} \to \hat{\C} $ así definido es continua en $\displaystyle 0 $ y $\displaystyle \infty $ y biyectiva. 
+Se puede visualizar como una rotación de $\displaystyle \pi  $ radianes en la esfera de Riemann.
+Así, $\displaystyle f : \hat{\C} \to \hat{\C} $ es continua en $\displaystyle \infty $ si y solo si $\displaystyle z \to f\left(\frac{1}{z}\right) $ es continua en $\displaystyle z = 0 $.
+\end{enumerate}
+\end{observation}
+\section{Transformaciones de Möbius}
+\begin{definition}[Transformación de Möebius]
+	Las funciones de la forma $\displaystyle f\left(z\right)=\frac{az + b}{cz + d} $ con $\displaystyle a,b,c,d \in \C $ tales que $\displaystyle \begin{vmatrix} a & b \\ c & d \end{vmatrix} \neq 0 $, se llaman \textbf{transformaciones de Möbius}. 
+\end{definition}
+\begin{notation}
+	Escribiremos, para $\displaystyle A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} $ con $\displaystyle \det A \neq 0 $, $\displaystyle f\left(z\right)=\frac{az+b}{cz+d}=:f_{A}\left(z\right) $.
+\end{notation}
+\begin{observation}
+La hipótesis de que $\displaystyle \det A \neq 0 $ implica que $\displaystyle f $ no es constante.
+\end{observation}
+\begin{eg}
+\begin{enumerate}
+\item Si ponemos $\displaystyle c = 0 $, $\displaystyle d = 1 $ y $\displaystyle a \neq 0 $, tenemos que $\displaystyle f\left(z\right)=az + b $ es una transformación afín. En particular, traslaciones y homotecias son transformaciones de Möbius. 
+\item $\displaystyle f\left(z\right)=\frac{1}{z} $ las llamamos inversiones.
+\end{enumerate}
+\end{eg}
+\begin{prop}
+\begin{enumerate}
+\item Las transformaciones de Möbius $\displaystyle f_{A} $ se pueden extender a $\displaystyle \hat{f}_{A} : \hat{\C} \to \hat{\C} $. Diremos que $\displaystyle \hat{f}_{A}\left(\infty\right) $ si $\displaystyle f_{A} $ es afín y si $\displaystyle c \neq 0 $ ponemos $\displaystyle \hat{f}\left(\infty\right)=\frac{a}{c} $, logrando así que $\displaystyle \hat{f}_{A} $ sea continua en $\displaystyle \infty \in \hat{\C}$. 
+	Asimismo, definimos $\displaystyle \hat{f}_{A}\left(-\frac{d}{c}\right)=\infty \in \hat{\C} $. Así, $\displaystyle \hat{f}_{A} $ es continua.
+\item $\displaystyle f_{A} $ es biyectiva y su inversa es $\displaystyle f_{A^{-1}} $.
+\item $\displaystyle f_{A}\circ f_{B} = f_{A \cdot B} $. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+\textbf{(1)} se sigue de \textbf{(2)} ya que $\displaystyle \GL_{2}\left(\C\right) $ es un grupo. 
+\end{proof}
+
+\begin{observation}
+El conjunto de transformaciones de Möbius forma un grupo bajo composición. La propiedad de grupo se hereda del hecho que $\displaystyle \GL_{2}\left(\C\right) $ es un grupo. 
+\end{observation}
+\begin{observation}
+Consideremos $\displaystyle f_{A}\left(z\right)=\frac{az + b}{cz + d} $. Dado $\displaystyle \lambda \in \C^{\times} $, tenemos que 
+\[f_{\lambda A}\left(z\right)= f_{A}\left(z\right) .\]
+Así, realmente el grupo que actua es $\displaystyle \mathbb{P}\GL_{2}\left(\C\right)= \GL_{2}\left(\C\right)/\C $. 
+\end{observation}
+\begin{theorem}
+Dados $\displaystyle z_{1}, z_{2}, z_{3} \in \hat{\C} $ distintos y otros $\displaystyle w_{1}, w_{2}, w_{3} \in \hat{\C} $ distintos, existe una única $\displaystyle \hat{f}_{A} : \hat{\C} \to \hat{\C} $ tal que $\displaystyle f_{A}\left(z_{j}\right)=w_{j} $ con $\displaystyle j = 1, 2, 3 $.
+\end{theorem}
+\begin{proof}
+Nos basta con encontrar $\displaystyle f_{A} $ tal que 
+\[
+\begin{cases}
+z_{1} \to 0 \\
+z_{2} \to 1 \\
+z_{3} \to \infty
+\end{cases}
+.\]
+En efecto, si podemos construir $\displaystyle f_{A} $ también podemos construir $\displaystyle f_{B} $ tal que 
+\[
+\begin{cases}
+w_{1} \to 0 \\
+w_{2} \to 1 \\
+w_{3} \to \infty
+\end{cases}
+.\]
+Así, tomando $\displaystyle f_{B^{-1}A} $ hemos encontrado la función que buscábamos. Distinguirmos ahora varios casos:
+\begin{description}
+	\item[Caso 1.] Si $\displaystyle \infty \not\in \left\{ z_{1}, z_{2}, z_{3}\right\}  $, podemos coger
+		\[f\left(z\right):= \frac{z - z_{1}}{z-z_{3}} \cdot \frac{z_{2}-z_{3}}{z_{2}-z_{1}} .\]
+	\item[Caso 2.] Si $\displaystyle \infty \in \left\{ z_{1}, z_{2}, z_{3}\right\}  $, supongamos que $\displaystyle z_{1}= \infty $. Ponemos pues
+		\[g_{1}\left(z\right)=\frac{z_{2}-z_{3}}{z-z_{3}} .\]
+		Si $\displaystyle z_{2}=\infty $ cogemos 
+		\[g_{2}\left(z\right)=\frac{z-z_{1}}{z-z_{3}} .\]
+	Finalmente, si $\displaystyle z _{3}= \infty $, tendremos que 
+	\[g_{3}\left(z\right)=\frac{z-z_{1}}{z_{2}-z_{1}} .\]
+\end{description}
+Veamos ahora la unicidad. Supongamos que existen dos soluciones $\displaystyle f $ y $\displaystyle g $. Necesitamos ver primero que si 
+\[h : 
+\begin{cases}
+0 \to 0 \\
+1 \to 1 \\
+\infty \to \infty
+\end{cases}
+,\]
+entonces $\displaystyle h\left(z\right)= z $. Esto es muy fácil de comprobar. Sea $\displaystyle \varphi\circ f^{-1}\circ g \circ \varphi^{-1} $ tal que 
+\[\varphi:
+\begin{cases}
+z_{1} \to 0 \\
+z_{2} \to 1 \\
+z_{3} \to \infty
+\end{cases}
+.\]
+Vemos que 
+\[\varphi \circ f^{-1}\circ g\circ \varphi^{-1} : 
+\begin{cases}
+0 \to 0 \\
+1 \to 1 \\
+\infty \to \infty 
+\end{cases}
+.\]
+Obligatoriamente debe ser que $\displaystyle \varphi\circ f^{-1}\circ g\circ\varphi^{-1}=id\circ \varphi $, por lo que $\displaystyle f^{-1}\circ g = id $ y tenemos que $\displaystyle f = g $.
+\end{proof}
+\begin{theorem}
+Toda función de Möbius $\displaystyle f_{A} $ es composición de homotecias, traslaciones e inversiones. 
+\end{theorem}
+\begin{proof}
+Distinguimos dos casos:
+\begin{description}
+\item[Caso 1.] Si $\displaystyle f\left(\infty\right)=\infty $ entonces $\displaystyle f $ es afín. 
+\item[Caso 2.] Supongamos que $\displaystyle f\left(\infty\right)\neq \infty  $, entonces debe ser que $\displaystyle f\left(z\right)=\frac{az + b}{cz + d} $ con $\displaystyle c \neq 0 $. Sin pérdida de generalidad podemos asumir que $\displaystyle c= 1 $ y obtenemos que $\displaystyle f\left(z\right)=\frac{az + b}{z + d}=a + \frac{b-ad}{z + d} $. 
+\end{description}
+\end{proof}
+\begin{theorem}
+Toda transformación de Möbius $\displaystyle \hat{f}_{A}: \hat{\C} \to \hat{\C} $ lleva circunferencias de $\displaystyle \hat{\C} $ a circunferencias de $\displaystyle \hat{\C} $. 
+\end{theorem}
+\begin{proof}
+Aplicando el teorema anterior nos dice que basta con comprobar que el resultado es cierto para traslaciones, homotecias e inversiones.
+% Ejercicio de la hoja 2
+\end{proof}
+

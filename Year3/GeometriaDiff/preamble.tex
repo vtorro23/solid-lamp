@@ -1,0 +1,247 @@
+% -----------------------------------------------------------------------------
+% Set Theory lecture notes preamble
+% Forest manuscript style, written with thmtools + mdframed.
+% Compile with a class that has chapters, e.g. \documentclass{report} or book.
+% -----------------------------------------------------------------------------
+
+% Basic commands
+\usepackage[margin=1.5in]{geometry}
+\usepackage[spanish, es-noquoting]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage{float}
+\usepackage{enumitem}
+\setlist{itemsep=0.15em, topsep=0.35em}
+
+% TikZ
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{intersections, angles, quotes, calc, positioning}
+\usetikzlibrary{arrows.meta, decorations.pathmorphing, shadows.blur}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Hyperlinks
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+
+% For math environments
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em, skipbelow=0.2em}
+
+% Palette: forest green and parchment
+\definecolor{SetForest}{HTML}{183B2D}
+\definecolor{SetLeaf}{HTML}{2E6B4E}
+\definecolor{SetParchment}{HTML}{FBF8EF}
+\definecolor{SetMint}{HTML}{F0F7F0}
+\definecolor{SetGold}{HTML}{A36F16}
+\definecolor{SetInk}{HTML}{1B1B18}
+\definecolor{DeepGreen}{HTML}{064E3B}
+\definecolor{ChalkGrey}{HTML}{F4F4F0}
+
+\colorlet{ResultTitle}{SetForest}
+\colorlet{DefinitionTitle}{SetLeaf!70!black}
+\colorlet{ExampleTitle}{SetGold!80!black}
+\colorlet{NotationTitle}{SetForest!85}
+
+% Generic mdframed settings shared by the theorem styles below.
+% The vertical manuscript bar is drawn with mdframed's TikZ extras.
+\mdfdefinestyle{setforestbase}{%
+    skipabove=0.9em,
+    skipbelow=0.6em,
+    innertopmargin=7pt,
+    innerbottommargin=8pt,
+    innerleftmargin=11pt,
+    innerrightmargin=9pt,
+    linewidth=0.7pt,
+    roundcorner=0pt,
+    splittopskip=\topskip,
+    splitbottomskip=8pt,
+    %nobreak=false,
+    shadow=true,
+    shadowsize=4pt,
+    shadowcolor=black!18,
+}
+
+\mdfdefinestyle{setforestbase1}{%
+    skipabove=0.9em,
+    skipbelow=0.6em,
+    innertopmargin=7pt,
+    innerbottommargin=8pt,
+    innerleftmargin=11pt,
+    innerrightmargin=9pt,
+    linewidth=0.7pt,
+    roundcorner=0pt,
+    splittopskip=\topskip,
+    splitbottomskip=8pt,
+    %nobreak=false,
+    %shadow=true,
+    %shadowsize=4pt,
+    %shadowcolor=black!18,
+}
+
+\theoremstyle{definition}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{DefinitionTitle},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={nobreak,
+        style=setforestbase,
+        linecolor=SetLeaf,
+        backgroundcolor=SetMint,
+        singleextra={\draw[line width=4pt, color=SetLeaf] (O) -- (O|-P);},
+        firstextra={\draw[line width=4pt, color=SetLeaf] (O) -- (O|-P);},
+        middleextra={\draw[line width=4pt, color=SetLeaf] (O) -- (O|-P);},
+        secondextra={\draw[line width=4pt, color=SetLeaf] (O) -- (O|-P);},
+    }
+]{setdefinitionbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{ResultTitle},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={nobreak,
+        style=setforestbase,
+        linecolor=SetForest,
+        backgroundcolor=SetParchment,
+        singleextra={\draw[line width=4pt, color=SetForest] (O) -- (O|-P);},
+        firstextra={\draw[line width=4pt, color=SetForest] (O) -- (O|-P);},
+        middleextra={\draw[line width=4pt, color=SetForest] (O) -- (O|-P);},
+        secondextra={\draw[line width=4pt, color=SetForest] (O) -- (O|-P);},
+    }
+]{setresultbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{ResultTitle},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={
+        linecolor=black!15,
+        backgroundcolor=ChalkGrey,
+        linewidth=0.5pt,
+        %shadowcolor=black!10,
+        %singleextra={\draw[line width=3pt, color=SetGold!75!black] (O) -- (O|-P);},
+        %firstextra={\draw[line width=3pt, color=SetGold!75!black] (O) -- (O|-P);},
+        %middleextra={\draw[line width=3pt, color=SetGold!75!black] (O) -- (O|-P);},
+        %secondextra={\draw[line width=3pt, color=SetGold!75!black] (O) -- (O|-P);},
+    }
+]{setexamplebox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NotationTitle},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={
+        style=setforestbase,
+        linecolor=SetForest!65,
+        backgroundcolor=white,
+        linewidth=0.5pt,
+        shadowcolor=black!10,
+        singleextra={\draw[line width=3pt, color=SetForest!65] (O) -- (O|-P);},
+        firstextra={\draw[line width=3pt, color=SetForest!65] (O) -- (O|-P);},
+        middleextra={\draw[line width=3pt, color=SetForest!65] (O) -- (O|-P);},
+        secondextra={\draw[line width=3pt, color=SetForest!65] (O) -- (O|-P);},
+    }
+]{setnotationbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NotationTitle},
+    bodyfont=\normalfont,
+    spaceabove=0pt,
+    spacebelow=0pt,
+    mdframed={
+        %style=setforestbase,
+        linecolor=SetForest!65,
+        %backgroundcolor=white,
+        linewidth=0.5pt,
+        rightline = false, 
+        leftline = false,
+    }
+]{setobsbox}
+
+% Environments. Same names as your earlier notes.
+\declaretheorem[style=setdefinitionbox, name=Definición, numberwithin=chapter]{definition}
+
+\declaretheorem[style=setresultbox, name=Teorema, numberwithin=chapter]{theorem}
+\declaretheorem[style=setresultbox, name=Proposición, numberwithin=chapter]{prop}
+\declaretheorem[style=setresultbox, name=Lema, numberwithin=chapter]{lema}
+\declaretheorem[style=setresultbox, name=Corolario, numberwithin=chapter]{colorary}
+
+\declaretheorem[style=setexamplebox, numbered=no, name=Ejemplo]{eg}
+\declaretheorem[style=setobsbox, numbered=no, name=Observación]{observation}
+\declaretheorem[style=setnotationbox, numbered=no, name=Notación]{notation}
+\declaretheorem[style=setexamplebox, numbered=no, name=Comentario]{remark}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\nouppercase{Victoria Eugenia Torroja}}
+\fancyhead[R]{\sffamily\nouppercase\rightmark}
+\fancyfoot[C]{\sffamily\leftmark}
+\fancyfoot[R]{\sffamily\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+% Generic proof name in Spanish
+\renewcommand{\proofname}{Demostración}
+
+% New commands
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\eps}{\varepsilon}
+\let\epsilon\varepsilon
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ol}{\overline}
+\newcommand{\ul}{\underline}
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+\newcommand{\xfrom}[1]{\xleftarrow{#1}}
+
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Imagen}{Im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\traz}{traz}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\mcd}{mcd}
+\DeclareMathOperator{\mcm}{mcm}
+
+% Set-theory helpers
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\On}{\mathrm{On}}
+\newcommand{\Card}{\mathrm{Card}}
+\newcommand{\cf}{\operatorname{cf}}
+\newcommand{\club}{\mathrm{club}}
+
+

@@ -1,0 +1,345 @@
+\chapter{Curvas en el plano y el espacio}
+\section{Curvas planas y curvas regulares}
+\begin{definition}[Curva]
+Una \textbf{curva} (en $\displaystyle \R^{n} $) es una aplicación $\displaystyle \mathcal{C}^{\infty } $ de la forma  
+\[ \alpha : I = \left(a,b\right)\to \R^{n} : t \to \alpha\left(t\right)=\left(x_{1}\left(t\right), \ldots, x_{n}\left(t\right)\right).\]
+\end{definition}
+\begin{notation}
+	Es importante tener en cuenta:
+	\begin{enumerate}
+	\item Si $\displaystyle \alpha : I \to \R^{2} $ diremos que es una \textbf{curva en el plano} o una \textbf{curva plana}. Por otro lado, para $\displaystyle \alpha : I \to \R^{3} $ diremos que es una \textbf{curva en el espacio}.
+	\item Diremos que $\displaystyle f $ es diferenciable si y solo si $\displaystyle f \in \mathcal{C}^{\infty } $.
+	\item Utilizamos $\displaystyle I $ para designar el dominio. Lo tomamos abierto de la forma $\displaystyle \left(a,b\right) $, $\displaystyle \left(-\infty, \infty\right) $ o $\displaystyle \left(-\infty, b\right) $. No lo tomamos de la forma $\displaystyle \left[a,b\right]  $ porque pueden surgir problemas de derivabilidad.
+	\item Cuando hablamos de curva hablamos de \textbf{curvas parametrizadas} y \textbf{curvas diferenciables}.
+	\end{enumerate}
+\end{notation}
+\begin{eg}
+\begin{enumerate}
+\item Recta parametrizada:
+	\[\alpha\left(t\right)=\left(a_{1}+a_{2}\right) + t\left(v_{1}, v_{2}\right) \Rightarrow 
+	\begin{cases}
+	x\left(t\right)= a_{1} + tv_{1} \\
+	y\left(t\right)= a_{2} + tv_{2}
+	\end{cases}
+	.\]
+\item Gráfica de $\displaystyle y = \sin x $, es decir, $\displaystyle \Gamma = \left\{ \left(x, \sin x\right) \; : \; x \in \R\right\}  $. La curva sería
+	\[
+	\begin{cases}
+	x = t \\
+	y = \sin t
+	\end{cases}
+	.\]
+En general, la gráfica de la función $\displaystyle y = f\left(x\right) $ se puede parametrizar de la forma
+\[
+\begin{cases}
+x\left(t\right)=t \\
+y\left(t\right)=f\left(t\right)
+\end{cases}
+.\]
+\end{enumerate}
+
+\end{eg}
+\begin{definition}[Traza]
+	Se llama \textbf{traza de la curva} $\displaystyle \alpha : I \to \R^{2} $ al conjunto imagen $\displaystyle \alpha \left(I\right)= \left\{ \left(x\left(t\right), y\left(t\right)\right) \; : \: t \in I\right\}  $.
+\end{definition}
+\begin{observation}
+Una misma traza puede venir de varias curvas parametrizadas. Por ejemplo, las curvas $\displaystyle \alpha\left(t\right)=\left(t, \sin t\right) $ y $\displaystyle \beta\left(t\right)=\left(t ^{3}, \sin t ^{3}\right) $ tienen la misma traza.
+\end{observation}
+\begin{eg}[Describir la traza de una curva]
+Consideremos la curva $\displaystyle \alpha\left(t\right)=\left(t-1, t\left(t-1\right)\right) $. Para hacer un dibujo primero hacemos un dibujo de la gráfica de $\displaystyle x\left(t\right) $ y de $\displaystyle y\left(t\right) $. A partir de ahí, intentamos hacer la gráfica de $\displaystyle y $ sobre $\displaystyle x $ mediante las dos gráficas anteriores. Otra forma de hacerlo es despejando analíticamente para obtener una expresión de $\displaystyle y\left(x\right) $ o $\displaystyle x\left(y\right) $. 
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{~/Desktop/Images/GeoDiff1.png}
+\end{center}
+\end{eg}
+\begin{eg}
+Consideremos el caso $\displaystyle \alpha\left(t\right)=\left(2,3\right) $. Tendremos que su traza es un único punto.
+\end{eg}
+\begin{eg}[Circunferencia]
+Consideremos la circunferencia $\displaystyle x^{2}+y^{2}=1 $. Una parametrización muy común es
+\[
+\begin{cases}
+x = \cos\theta \\
+y = \sin \theta
+\end{cases}
+.\]
+Así, consideramos la parametrización 
+\[\alpha : \R \to \R^{2} : \theta \to \left(\cos \theta, \sin \theta \right) .\]
+Esta parametrización no es inyectiva puesto que $\displaystyle \alpha\left(\theta\right)=\alpha\left(\theta + 2\pi k\right) $ para $\displaystyle k \in \Z $. Para obtener una parametrización inyectiva cambiamos el dominio. El problema es que tenemos que coger como dominio un intervalo abierto, pero es difícil puesto que si cogemos $\displaystyle I = \left(0, 2\pi \right) $, nos falta por considerar un punto. Sea
+\[\mathbb{S}^{1}= \left\{ x^{2} +y^{2} = 1\right\}  .\]
+No es posible con una parametrización inyectiva conseguir la traza de $\displaystyle \mathbb{S}^{1} $. Una forma de solucionar el problema es coger un intervalo $\displaystyle I = [0, 2\pi ) $, pero esto no es aceptado por la definición, puesto que la inversa de la parametrización no es continua. \footnote{Tendríamos que $\displaystyle \alpha  $ no es un homeomorfismo.}  
+\end{eg}
+
+\begin{definition}
+Sea $\displaystyle \alpha\left(t\right) $ una curva.
+\begin{enumerate}
+	\item Se llama \textbf{rama infinita} cuando $\displaystyle \|\alpha\left(t\right)\| \to \infty $ si $\displaystyle t \to t_{0}^{\pm } $ con $\displaystyle t_{0} \in \R \cup \left\{ \pm \infty \right\}  $. \footnote{Todo el rato usamos la norma euclídea.} 
+	\item Se llama \textbf{rama parabólica} en la dirección $\displaystyle \left(v_{1}, v_{2}\right) \in \R^{2} / \left\{ \left(0,0\right)\right\}  $ unitario si
+		\[\lim_{t \to t_{0}^{\pm }}\frac{\alpha\left(t\right)}{\|\alpha\left(t\right)\|}=\left(v_{1}, v_{2}\right) .\]
+	\item Se llama \textbf{asíntota} si es rama parabólica y hay otra recta $\displaystyle r \equiv \left(v_{1}t + a_{1}, v_{2}t + a_{2}\right) $ llamada \textbf{asíntota} tal que si $\displaystyle t \to t_{0}^{\pm } $,
+		\[d\left(\alpha\left(t\right), r\right) \to 0 .\]
+\end{enumerate}
+\end{definition}
+\begin{observation}
+Las asíntotas son ramas parabólicas y las ramas parabólicas son ramas infinitas.
+\end{observation}
+
+\begin{eg}
+La espiral $\displaystyle \alpha\left(t\right)=\left(e^{t}\cos t, e^{t}\sin t\right) $ no tiene rama parabólica porque se va aproximando al origen.
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{~/Desktop/Images/GeoDiff2.png}
+\end{center}
+Por otro lado, $\displaystyle \alpha\left(t\right)= \left(t,\sin t\right) $ tiene una rama parabólica en el $\displaystyle \left(1,0\right) $.
+\end{eg}
+\begin{eg}
+Consideremos la curva $\displaystyle xy = y^{2} + 1 $. La parametrizamos de la forma
+\[
+\begin{cases}
+x = t + \frac{1}{t} \\
+y = t
+\end{cases}
+,\]
+con $\displaystyle t \in \left(-\infty, 0\right)\cup \left(0, \infty\right) $. Tenemos cuatro ramas infinitas:
+\begin{enumerate}
+\item $\displaystyle t \to -\infty  $, entonces $\displaystyle \left(x,y\right)\to \left(-\infty, -\infty \right) $. 
+\item $\displaystyle t \to 0^{-} $, entonces $\displaystyle \left(x,y\right)\to \left(-\infty, 0\right) $.
+\item $\displaystyle t \to 0^{+} $, entonces $\displaystyle \left(x,y\right)\to \left(\infty, 0\right) $. 
+\item $\displaystyle t \to \infty $, entonces $\displaystyle \left(x,y\right)\to \left(\infty, \infty \right) $. 
+\end{enumerate}
+Estudiemos el caso particular de $\displaystyle t \to - \infty $ para ver el tipo de rama de infinito:
+\[ \frac{\alpha \left(t\right)}{\|\alpha\left(t\right)\|}= \frac{\left(t + \frac{1}{t}, t\right)}{\|\left(t + \frac{1}{t}, t\right)\|} \to \frac{\left(-1,-1\right)}{\sqrt{2}} .\]
+Así, tenemos que $\displaystyle m = 1 $ y 
+\[b = \lim_{t \to -\infty}\left(y-mx\right)=\lim_{t \to -\infty}\left(t + \frac{1}{t}-t\right)=0 .\]
+Así, tiene una asíntota que es $\displaystyle y - x = 0 $. Podemos comprobarlo de esta forma:
+\[d\left(\alpha\left(t\right), r\right)=\frac{ \left|y\left(t\right)-x\left(t\right)\right|}{\sqrt{2}} \to 0 .\]
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{~/Desktop/Images/GeoDiff4.png}
+\end{center}
+\end{eg}
+
+\begin{definition}[Punto doble]
+Se llama \textbf{punto doble (múltiple)} a $\displaystyle P = \alpha\left(t_{1}\right)=\alpha\left(t_{2}\right) $ con $\displaystyle t_{1}\neq t_{2} $. 
+\end{definition}
+\begin{eg}
+	Veamos si $\displaystyle C = \left\{ y^{2}=x^{2}\left(x+1\right)\right\}  $ es la traza de una curva. Podemos comprobar que 
+	\[y = \pm \sqrt{x^{2}\left(x+1\right)} = \pm \left|x\right|\sqrt{x+1} .\]
+Intentemos parametrizar la curva. Una forma de hacerlo es para cada pendiente $\displaystyle m $ buscar la intersección
+\[
+\begin{cases}
+y = mx \\
+y^{2} = x^{2}\left(x+1\right)
+\end{cases}
+.\]
+Obtenemos que
+\[m^{2}x^{2} = x^{2}\left(x+1\right) \Rightarrow x = m^{2}-1 .\]
+Así, obtenemos la parametrización
+\[
+\begin{cases}
+x = m^{2}-1 \\
+y = m\left(m^{2}-1\right)
+\end{cases}
+.\]
+El único punto doble de la curva es $\displaystyle \alpha\left(-1\right)=\left(0,0\right)=\alpha\left(1\right) $.  
+Podemos ver que 
+\[\alpha\left(m\right)=\left(m^{2}-1, m^{3}-m\right), \quad \alpha'\left(m\right)=\left(2m, 3m^{2}-1\right)\neq \left(0,0\right) .\]
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{~/Desktop/Images/GeoDiff3.png}
+\end{center}
+\end{eg}
+\begin{eg}
+	Consideremos $\displaystyle D = \left\{ y^{2}=x^{3}\right\}  $. Algebraicamente podemos escribir
+	\[y = \pm x^{\frac{3}{2}} .\]
+	La podemos parametrizar con $\displaystyle t \in \R $ de la forma
+	\[
+	\begin{cases}
+	x = t ^{2} \\
+	y = t ^{3}
+	\end{cases}
+	.\]
+	Esta es una parametrización inyectiva. Al punto $\displaystyle P = \alpha\left(0\right) = \left(0,0\right) $ se le llama \textbf{pico} o \textbf{cúspide}. Podemos ver que además en este punto
+	\[\alpha'\left(0\right)=\left(0,0\right) .\]
+	\begin{center}
+    \includegraphics[width=0.5\textwidth]{~/Desktop/Images/GeoDiff5.png}
+\end{center}
+
+\end{eg}
+
+\begin{definition}[Vector velocidad]
+Si $\displaystyle \alpha\left(t\right) $ es curva parametrizada, se llama \textbf{vector velocidad} a $\displaystyle \alpha'\left(t\right)=\frac{d\alpha }{dt} $. 
+\end{definition}
+\begin{definition}[Punto regular]
+Decimos que $\displaystyle t_{0}\in I $ es un \textbf{punto regular} si $\displaystyle \alpha'\left(t_{0}\right)\neq 0 $. Decimos que $\displaystyle \alpha  $ es \textbf{regular} si $\displaystyle \alpha'\left(t\right)\neq 0 $, $\displaystyle \forall t \in I $. Decimos que $\displaystyle t_{0} \in I $ es un \textbf{punto singular} si $\displaystyle \alpha'\left(t_{0}\right)=0 $.
+\end{definition}
+
+\begin{eg}
+	Consideremos $\displaystyle \beta\left(t\right)=\left(t ^{2}, t ^{2}\right) $. Es una parametrización no inyectiva y la traza es $\displaystyle \left\{ y = x, \; x \geq 0\right\}  $. Lo interesante de esta parametrización es ver que aunque $\displaystyle \beta'\left(0\right)=\left(0,0\right) $, no se trata de un pico.
+\end{eg}
+\begin{observation}
+Ya vimos en el ejemplo de la curva $\displaystyle y^{2} = x^{2}\left(x + 1\right) $ que no es inyectiva y sin embargo la derivada de la parametrización que dimos no se anula nunca, por lo que es regular. 
+\end{observation}
+\begin{definition}[Recta tangente]
+Se llama \textbf{recta tangente} a $\displaystyle \alpha\left(t\right) $ en $\displaystyle t = t_{0} $ a la recta $\displaystyle T = P_{0}+L\left(\alpha'\left(t_{0}\right)\right) $. Sólo en puntos regulares.
+\end{definition}
+\begin{prop}
+Dada un curva $\displaystyle \alpha : I \to \R^{n} $, si $\displaystyle t_{0} \in I $ es un punto regular, entonces hay una recta $\displaystyle T $ que pasa por $\displaystyle P_{0}=\alpha\left(t_{0}\right) $ tal que 
+\[d\left(\alpha\left(t\right), T\right)\leq C\left(t-t_{0}\right)^{2} , \; C \in \R.\]
+\end{prop}
+\begin{proof}
+Sea $\displaystyle t \in I $. Por el teorema de Taylor existe $\displaystyle \xi \in \left(t, t_{0}\right) $ tal que,
+\[\alpha\left(t\right)=\alpha\left(t_{0}\right)+\alpha'\left(t_{0}\right)\left(t-t_{0}\right)+ \frac{\alpha''\left(\xi\right)}{2}\left(t-t_{0}\right)^{2} .\]
+De esta forma, tenemos que cogiendo $\displaystyle T\left(t\right)=P_{0} + \alpha'\left(t_{0}\right)\left(t-t_{0}\right) $ como la recta tangente, 
+\[
+\begin{split}
+	d\left(\alpha\left(t\right), T\left(t\right)\right) = & \left\|\left(\alpha\left(t_{0}\right)+\alpha'\left(t_{0}\right)\left(t-t_{0}\right)+\frac{\alpha''\left(\xi\right)}{2}\left(t-t_{0}\right)^{2}\right)-\left(P_{0}+\alpha'\left(t_{0}\right)\left(t-t_{0}\right)\right)\right\|\\
+	= & \frac{\|\alpha''\left(\xi\right)\|}{2}\left(t-t_{0}\right)^{2} .
+\end{split}
+\]
+ 
+\end{proof}
+
+\section{Curvas implícitas}
+Sea $\displaystyle U\subset\R^{2} $ un abierto y $\displaystyle F : U \to \R $ una función $\displaystyle \mathcal{C}^{\infty} $. Consideremos el conjunto $\displaystyle C = \left\{ \left(x,y\right)\in U \; : \; F\left(x,y\right)= 0\right\}  $. 
+\begin{lema}
+Si $\displaystyle y = h\left(x\right) $ es $\displaystyle \mathcal{C}^{\infty} $, entonces la gráfica es una curva parametrizada regular. 
+\end{lema}
+\begin{proof}
+Tomando la parametrización $\displaystyle \alpha\left(t\right)=\left(t, h\left(t\right)\right) $, tenemos que $\displaystyle \alpha'\left(t\right)=\left(1, h'\left(t\right)\right)\neq \left(0,0\right) $, $\displaystyle \forall t \in I $.
+\end{proof}
+\begin{observation}[Curvas de nivel]
+	Las curvas de nivel son conjuntos de la forma $\displaystyle C_{\lambda } = \left\{ \left(x,y\right) \; : \; F\left(x,y\right)=\lambda \right\} = \left\{ \left(x,y\right) \; : \; F_{\lambda }\left(x,y\right)=F\left(x,y\right)-\lambda = 0\right\}  $. Claramente $\displaystyle \nabla F_{\lambda }=\nabla F $.
+\end{observation}
+
+\begin{theorem}
+Si $\displaystyle \left(x_{0}, y_{0}\right)\in C $ y $\displaystyle \nabla F\left(x_{0}, y_{0}\right)\neq \left(0,0\right)$, entonces existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle B\left(\left(x_{0}, y_{0}\right), \epsilon \right)\cap C= C_{\epsilon} $ es la traza de una curva parametrizada regular implícita.
+\end{theorem}
+\begin{proof}
+Tenemos que por hipótesis
+\[\nabla F\left(x_{0}, y_{0}\right)=\left(\frac{\partial F}{\partial x}\left(x_{0}, y_{0}\right), \frac{\partial F}{\partial y}\left(x_{0}, y_{0}\right)\right)\neq \left(0,0\right) .\]
+Supongamos sin pérdida de generalidad que $\displaystyle \frac{\partial F}{\partial y}\left(x_{0}, y_{0}\right)\neq 0 $. Consideramos la función $\displaystyle G : U \subset \R^{2}\to \R^{2} $ tal que $\displaystyle G\left(x,y\right)=\left(F\left(x,y\right), x\right) $. Como 
+\[JG=\begin{pmatrix} \frac{\partial F}{\partial x} & \frac{\partial F}{\partial y} \\ 1 & 0 \end{pmatrix} \Rightarrow \left|JG\right|\neq 0 ,\]
+por el teorema de la función inversa tenemos que existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle G : B\left(\left(x_{0}, y_{0}\right), \epsilon \right)\to G\left(B\left(\left(x_{0}, y_{0}\right), \epsilon \right)\right) $ es un difeomorfismo. \footnote{Queremos decir que $\displaystyle G $ es diferenciable $\displaystyle \mathcal{C}^{\infty} $ y biyectiva y $\displaystyle G^{-1} $ es diferenciable $\displaystyle \mathcal{C}^{\infty} $.} Así, tenemos que 
+\[\left(x,y\right)=G^{-1}\left(u,v\right)=\left(x\left(u,v\right), y\left(u,v\right)\right) .\]
+Habiendo cogido $\displaystyle u = F\left(x,y\right) $ y $\displaystyle v = x $, tenemos que 
+\[
+\begin{split}
+	C_{\epsilon }= & \left\{ \left(x,y\right) \in B_{\epsilon }\left(x_{0}, y_{0}\right)\; : \; F\left(x,y\right)=0\right\} = \left\{ \left(x,y\right) \; : \; u = 0\right\} \\
+	= & \left\{ \left(x,y\right) \; : \; y = y\left(u,v\right), u = 0, x = v\right\} \\
+	= & \left\{ \left(x,y\right)\; : \; y = y\left(0,x\right)\right\} = \left\{ \left(x,y\right) \; : \; y = h\left(x\right)\right\}  ,
+\end{split}
+\]
+habiendo tomado $\displaystyle h\left(x\right)=y\left(0,x\right) $. 
+\end{proof}
+\begin{eg}
+	Consideremos $\displaystyle F\left(x,y\right)=x^{2}+y^{2}=1 $ y $\displaystyle C = \left\{ x^{2}+y^{2}=1\right\}  $. Tenemos que $\displaystyle \nabla F = \left(2x, 2y\right) $ y como $\displaystyle \left(0,0\right)\not\in C $ tenemos que $\displaystyle \nabla F\left(x,y\right)\neq 0 $, $\displaystyle \forall\left(x,y\right)\in C $. Tenemos que 
+	% pedirle a Andrés el ejemplo completo
+\end{eg}
+\begin{observation}
+	Recordamos que $\displaystyle \mathbb{S}^{1} $ se puede cubrir con dos parametrizaciones inyectivas, pero no con una. 
+\end{observation}
+\begin{observation}
+Recordamos que la curva $\displaystyle y^{2}-x^{2}\left(x+1\right)=0 $ tiene gradiente nulo en el origen, por lo que en este punto no podemos aplicar el teorema.
+\end{observation}
+\begin{definition}[Curva implícita regular]
+	Si $\displaystyle C = \left\{ \left(x,y\right)\in U \; : \; F\left(x,y\right)=0\right\}  $ y $\displaystyle \nabla F\left(x,y\right)\neq \left(0,0\right) $, $\displaystyle \forall \left(x,y\right)\in C $, llamamos a $\displaystyle C $ \textbf{curva implícita regular}.
+\end{definition}
+\section{Cambios de parámetro y parámetro arco}
+\begin{definition}[Cambio de parámetro]
+Se llama \textbf{cambio de parámetro} a una función $\displaystyle h: I \to J $, $\displaystyle I,J\subset \R $ intervalos, $\displaystyle h $ biyectiva y $\displaystyle h'\left(x\right)\neq 0 $ con $\displaystyle \mathcal{C}^{\infty} $, $\displaystyle \forall x \in I $.
+\end{definition}
+\begin{observation}
+Como $\displaystyle h'\left(x\right)\neq 0 $, la función inversa es derivable $\displaystyle \mathcal{C}^{\infty} $ y además
+\[\left(h^{-1}\right)'\left(h\left(x\right)\right)=\frac{1}{h'\left(x\right)} .\]
+Es decir, los cambios de parámetros son difeomorfismos.
+\end{observation}
+\begin{observation}
+Claramente $\displaystyle h'\left(x\right) $ tiene signo constante por ser biyectiva. Distinguimos dos casos:
+\begin{itemize}
+\item Si $\displaystyle h'\left(x\right) > 0 $, es estrictamente creciente (\textbf{cambio de parámetro positivo}).
+\item Si $\displaystyle h'\left(x\right) < 0 $, es estrictamente decreciente (\textbf{cambio de parámetro negativo}).
+\end{itemize}
+\end{observation}
+\begin{definition}[Reparametrización]
+	Sea $\displaystyle \alpha : I \to \R^{2} $ una curva parametrizada por $\displaystyle t $. Sea $\displaystyle u = h\left(t\right) $ un cambio de parámetros. Se llama \textbf{reparametrización} de $\displaystyle \alpha \left(t\right) $ con $\displaystyle u = h\left(t\right) $ a la curva $\displaystyle \tilde{\alpha}\left(u\right)=\alpha\left(t\right)=\alpha\left(h^{-1}\left(u\right)\right) $. Es decir, $\displaystyle \tilde{\alpha} : J \to \R^{2} $ y $\displaystyle \tilde{\alpha} = \alpha \circ h^{-1} $.
+\end{definition}
+\begin{eg}
+Consideremos la curva $\displaystyle \alpha \left(t\right)=\left(t ^{2}, t ^{3}\right) $ y consideremos el cambio de parámetro 
+\[t = \sin u = h^{-1}\left(u\right) \iff u = \arcsin t = h\left(t\right) .\]
+Así, tenemos que 
+\[\tilde{\alpha}\left(u\right)=\alpha\left(h^{-1}\left(u\right)\right)=\alpha\left(\sin u\right)=\left(\sin ^{2}u, \sin ^{3}u\right) .\]
+Normalmente se abusa de notación de esta forma: $\displaystyle \alpha\left(u\right)=\left(\sin ^{2}u, \sin ^{3}u\right) $. 
+\end{eg}
+\begin{observation}[Recta velocidad]
+\begin{enumerate}
+	\item Supongamos que $\displaystyle u_{0}=h\left(t_{1}\right) $, por lo que $\displaystyle \tilde{\alpha}\left(u_{0}\right)=\alpha\left(t_{1}\right) $. Así, si $\displaystyle \tilde{\alpha} = \alpha \circ h^{-1} $, por lo que $\displaystyle \alpha\left(t\right)=\tilde{\alpha}\left(h\left(t\right)\right) $ y aplicando la regla de la cadena obtenemos que 
+		\[\alpha'\left(t_{0}\right)=\tilde{\alpha}'\left(h\left(t_{0}\right)\right)h'\left(t_{0}\right) \Rightarrow \alpha'\left(t_{0}\right)=\lambda \tilde{\alpha}\left(u_{0}\right) ,\]
+	siendo $\displaystyle \lambda = h'\left(t_{0}\right) $. Así, son proporcionales y si $\displaystyle h'\left(t_{0}\right)>0 $ van en el mismo sentido y si $\displaystyle h'\left(t_{0}\right)<0 $ van en sentido opuesto. 
+\item Así, tenemos que $\displaystyle \alpha\left(u\right)=\alpha\left(t\right) $ con $\displaystyle u = u\left(t\right) $ y aplicando la regla de la cadena
+	\[\frac{d\alpha }{dt}=\frac{d\alpha }{du}\underbrace{\frac{du}{dt}}_{\lambda} .\]
+\end{enumerate}
+\end{observation}
+\subsection{Longitud de una curva parametrizada}
+Sea $\displaystyle \alpha\left(t\right) $ con $\displaystyle \left[a,b\right] \subset I $ una curva parametrizada. Calculamos la longitud entre $\displaystyle t = a $ y $\displaystyle t = b $. Dada la partición $\displaystyle P = \left\{ a < t_{1} < \cdots < t_{n-1}< b\right\}  $ y definimos 
+\[ L_{n} := \sum^{n}_{i = 1} \|\alpha\left(t_{i}\right)-\alpha\left(t_{i-1}\right)\| .\]
+Así, la longitud que buscamos es $\displaystyle \ell^{b}_{a}\left(\alpha \right)= \lim_{n \to \infty}L_{n} $. Tenemos que 
+\[
+\begin{split}
+\ell ^{b}_{a}\left(\alpha \right)=\lim_{n \to \infty}L_{n} = \lim_{n \to \infty}\sum^{n}_{i = 1} \|\alpha'\left(\xi_{i}\right)\left(t_{i}-t_{i-1}\right)\| = \lim_{n \to \infty}\sum^{n}_{i = 1}\|\alpha'\left(\xi_{i}\right)\|h = \int^{b}_{a} \|\alpha'\left(t\right)\| \; dt .
+\end{split}
+\]
+\begin{definition}[Longitud de una curva]
+Se llama \textbf{longitud} de $\displaystyle \alpha \left(t\right) $ entre $\displaystyle a $ y $\displaystyle b $ a
+\[\ell^{b}_{a}\left(\alpha \right):=\int^{b}_{a} \|\alpha'\left(t\right)\| \; dt .\]
+\end{definition}
+\begin{prop}
+	Dada la curva $\displaystyle \alpha\left(t\right) $ reparametrizamos $\displaystyle u = h\left(t\right) $, entonces $\displaystyle \ell^{d}_{c}\left(\tilde{\alpha}\right)=\ell^{b}_{a}\left(\alpha \right) $. 
+\end{prop}
+\begin{proof}
+Tenemos que 
+\[\ell ^{d}_{c}\left(\tilde{\alpha}\right) = & \int^{d}_{c} \|\tilde{\alpha}'\left(u\right)\| \; du = \int^{d}_{c} \left\|\frac{d\alpha}{du}\right\| \; du = \int^{d}_{c} \left\|\frac{d\alpha }{dt} \frac{dt}{du}\right\| \; du = \int^{d}_{c} \left\|\frac{d\alpha }{dt}\right\| \left|\frac{dt}{du}\right|\; du .\]
+% Esta demostración la hicimos con Mendoza, básicamente copiarla
+\end{proof}
+\begin{definition}[Función espacio recorrido]
+Se llama \textbf{función espacio recorrido} $\displaystyle s : I \to \R $ desde $\displaystyle t_{0} \in I $ a 
+\[s\left(t\right)=\int^{t}_{t_{0}} \|\alpha'\left(t\right)\| \; dt .\]
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+	\item Si $\displaystyle t > t_{0} $, $\displaystyle \left[t_{0}, t\right] \subset I $ y tendremos que $\displaystyle s\left(t\right)=\ell^{t}_{t_{0}}\left(\alpha \right)\geq 0 $. 
+	\item Si $\displaystyle t < t_{0} $, $\displaystyle \left[t, t_{0}\right] \subset I $ y tendremos que $\displaystyle s\left(t\right)=-\ell^{t_{0}}_{t}\left(\alpha \right) $. 
+	\item Si $\displaystyle t = t_{0} $ claramente $\displaystyle s\left(t_{0}\right)=0 $.
+	\item Tenemos que $\displaystyle v = \frac{d s}{dt}=\|\alpha'\left(t\right)\| $.
+	\item Si tomamos $\displaystyle t_{i}\in I $, la función $\displaystyle s_{1}\left(t\right)=\int^{t}_{t_{1}} \|\alpha'\|  = \int^{t_{0}}_{t_{1}} \|\alpha' \| + \int^{t}_{t_{0}} \|\alpha'\| = c_{0} + s\left(t\right) $.
+	\item También se llama a $\displaystyle s\left(t\right) $ longitud de arco.
+\end{enumerate}
+\end{observation}
+\begin{lema}
+Si $\displaystyle \alpha\left(t\right)  $ es una curva regular, entonces $\displaystyle s = s\left(t\right) $ eq un cambio de parámetros positivo.
+\end{lema}
+\begin{proof}
+Queda claro que $\displaystyle \frac{d s}{dt}= \|\alpha'\left(t\right)\| > 0 $.
+\end{proof}
+\begin{definition}[Longitud de arco]
+Se llama $\displaystyle s\left(t\right) $ parametrización \textbf{longitud de arco}. Además, $\displaystyle \alpha\left(s\right)=\alpha\left(s\left(t\right)\right) $ es la reparametrización de $\displaystyle \alpha  $ por longitud de arco.
+\end{definition}
+\begin{prop}
+$\displaystyle \alpha\left(s\right) $ verifica que $\displaystyle \left\|\frac{d \alpha }{d s}\right\| =1$. Recíprocamente, si $\displaystyle \alpha\left(t\right) $ verifica que $\displaystyle \left\|\frac{d\alpha }{dt}\right\| =1$, entonces $\displaystyle s = t $ es parámetro arco.
+\end{prop}
+\begin{proof}
+En primer lugar tenemos que 
+\[\left\|\frac{d \alpha }{d s}\right\| = \left\|\frac{d\alpha }{dt}\frac{dt}{d s}\right\| = \left\|\frac{d\alpha }{dt}\right\| \frac{dt }{d s} = \|\alpha'\|\frac{1}{\|\alpha'\|}=1 .\]
+Por otro lado, si $\displaystyle \left\|\frac{d\alpha }{dt}\right\| = 1 $, entonces
+\[s\left(t\right)=\int^{t}_{t_{0}} \left\|\frac{d\alpha }{dt}\right\| = \int^{t}_{t_{0}} 1 =t-t_{0} ,\]
+salvo constante.
+\end{proof}
+\begin{eg}
+	Consideremos la circunferencia $\displaystyle \alpha\left(t\right)=\left(R \cos t, R \sin t\right) $ con $\displaystyle t \in \left[0, 2\pi \right]  $. Tenemos que $\displaystyle \alpha'\left(t\right)=\left(-R\sin t, R \cos t\right) $, por lo que $\displaystyle \|\alpha'\left(t\right)\| = R $ y 
+	\[\ell^{2\pi }_{0}\left(\alpha \right)=\int^{2\pi }_{0} \|\alpha'\left(t\right)\| \; dt = 2\pi R .\]
+Alternativamente, el parámetro arco
+\[s\left(t\right)=\int^{t}_{0} \|\alpha'\| = \int^{t}_{0} R \; d u = Rt .\]
+Así, $\displaystyle t = \frac{s}{R} $ y nos queda que 
+\[\alpha\left(s\right)=\left(R\cos \frac{s}{R}, R\sin \frac{s}{R}\right) .\]
+Esta es la circunferencia reparametrizada por longitud de arco con $\displaystyle s \in \left[0, 2\pi R\right]  $. 
+\end{eg}
+\begin{observation}
+Con el parámetro arco, para cualquier curva se tiene que $\displaystyle \ell^{b}_{a}\left(\alpha\left(s\right)\right) = b-a $. 
+\end{observation}
+

@@ -1,0 +1,176 @@
+% Basic commands
+\usepackage[margin=1.5in]{geometry}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage{enumitem}
+
+% Tikz
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{intersections, angles, quotes, calc, positioning, arrows.meta, shadows}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+
+% For math environments
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0.6em}
+\theoremstyle{definition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% STYLE 1: Midnight Atlas
+% Dark academic blue with rounded cards and soft shadows.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{MidnightInk}{HTML}{10233F}
+\definecolor{AtlasBlue}{HTML}{1E4E8C}
+\definecolor{AtlasSoft}{HTML}{EEF5FF}
+\definecolor{AtlasLine}{HTML}{527BB5}
+\definecolor{AtlasGold}{HTML}{B88A2B}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{MidnightInk},
+    bodyfont=\normalfont,
+    %spaceabove=0.8em,
+    %spacebelow=0.8em,
+    mdframed={
+        nobreak,
+        roundcorner=9pt,
+        linewidth=1.1pt,
+        linecolor=AtlasBlue!85!black,
+        backgroundcolor=AtlasSoft,
+        %innerleftmargin=11pt,
+        %innerrightmargin=11pt,
+        %innertopmargin=9pt,
+        %innerbottommargin=10pt,
+        shadow=true,
+        shadowsize=4pt,
+        shadowcolor=black!18,
+    }
+]{atlasbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{AtlasGold!70!black},
+    bodyfont=\normalfont,
+    %spaceabove=0.7em,
+    %spacebelow=0.7em,
+    mdframed={
+        nobreak,
+        roundcorner=7pt,
+        linewidth=0.9pt,
+        linecolor=AtlasGold!70!black,
+        backgroundcolor=AtlasGold!7,
+        %innerleftmargin=10pt,
+        %innerrightmargin=10pt,
+        %innertopmargin=8pt,
+        innerbottommargin=9pt,
+        shadow=true,
+        shadowsize=3pt,
+        shadowcolor=black!12,
+    }
+]{atlasdef}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{MidnightInk!80},
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=0pt,
+        backgroundcolor=black!3,
+        roundcorner=6pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        innertopmargin=7pt,
+        innerbottommargin=8pt,
+    }
+]{atlasserene}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{AtlasBlue!80!black},
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=1.1pt,
+        linecolor=AtlasLine,
+        rightline=false,
+        topline=false,
+        bottomline=false,
+        innerrightmargin=8pt,
+        innerleftmargin=9pt,
+    }
+]{atlasline}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{BrickRed!60!black},
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=1.1pt,
+        linecolor=BrickRed!60!black,
+        rightline=false,
+        topline=false,
+        bottomline=false,
+        innerrightmargin=8pt,
+        innerleftmargin=9pt,
+    }
+]{obsline}
+
+\declaretheorem[style=atlasdef, name=Definición, numberwithin=chapter]{definition}
+\declaretheorem[style=atlasserene, numbered=no, name=Ejemplo]{eg}
+\declaretheorem[style=atlasbox, name=Proposición, numberwithin=chapter]{prop}
+\declaretheorem[style=atlasbox, name=Teorema, numberwithin=chapter]{theorem}
+\declaretheorem[style=atlasbox, name=Lema, numberwithin=chapter]{lema}
+\declaretheorem[style=atlasbox, name=Corolario, numberwithin=chapter]{colorary}
+\declaretheorem[style=atlasline, numbered=no, name=Notación]{notation}
+\declaretheorem[style=obsline, numbered=no, name=Observación]{observation}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\nouppercase{Victoria Eugenia Torroja}}
+\fancyhead[R]{\sffamily\nouppercase\rightmark}
+\fancyfoot[C]{\sffamily\leftmark}
+\fancyfoot[R]{\sffamily\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% New commands
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\mcd}{\text{mcd}}
+\newcommand{\mcm}{\text{mcm}}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Imagen}{Im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\sig}{sig}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Adj}{Adj}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\traz}{traz}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Bil}{Bil}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\Rel}{Re}
+\DeclareMathOperator{\Arg}{Arg}
+\let\epsilon\varepsilon
+
