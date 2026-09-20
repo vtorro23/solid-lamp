@@ -185,20 +185,27 @@ Estos resultados nos permiten calcular las raíces $\displaystyle n $-ésimas de
 \[r^{n}e^{in\theta}=\rho e^{i\varphi} .\]
 Así, igualando módulos y argumentos deducimos que $\displaystyle r = \rho^{\frac{1}{n}} $ y $\displaystyle \varphi = n\theta + 2k\pi  $ con $\displaystyle k \in \Z $. De esta forma, podemos afirmar que las $\displaystyle n $ raíces $\displaystyle n $-ésimas de $\displaystyle w $ son los números $\displaystyle z_{j} $ que tienen la forma
 \[z_{j}=\rho^{\frac{1}{n}}e^{i\theta_{j}}, \; \theta_{j}=\frac{\varphi + 2j\pi }{n}, j = 0, 1, \ldots, n-1 .\]
-
+Examinemos el caso $\displaystyle n = 2 $. Tenemos que la aplicación $\displaystyle z \to z^{2} $ no es inyectiva. En efecto, para cada $\displaystyle w = \rho e^{i\varphi} \in \C / \left\{ 0\right\}  $, donde $\displaystyle \varphi \in \left(-\pi, \pi \right) $ tenemos dos antimágenes que son $\displaystyle z = \pm\rho^{\frac{1}{2}}e^{i\frac{\varphi}{2}} $. 
+Así, podemos definir dos ramas de la función raíz cuadrada, dadas por 
+\[f_{1} : \C / (-\infty,0] \to \C : \rho e^{i\varphi} \to \rho^{\frac{1}{2}}e^{i\frac{\varphi}{2}}, \quad f_{2}=-f_{1} .\]
+Diremos que $\displaystyle f_{1} $ es la \textbf{rama principal}. Así, tenemos que la función $\displaystyle z^{2} $ restringida al conjunto $\displaystyle U = \left\{ z \in \C \; : \; \Rel z > 0\right\}  $ es inyectiva y tiene como inversa $\displaystyle f_{1} : \C/(-\infty,0] \to U $. 
 \begin{definition}[Raíz $\displaystyle n $-ésima compleja]
-Vamos a definir
+En general, para $\displaystyle n \in \N $ se define la \textbf{rama principal de la raíz $\displaystyle n $-ésima} como
 \[f_{0} : \C / (-\infty, 0] \to \C : w \to e^{\frac{1}{n}\log w} .\]
-Donde $\displaystyle \log w $ es la rama principal del logaritmo complejo.
-\end{definition}
-Las otras raíces se obtienen según
+Donde $\displaystyle \log w $ es la rama principal del logaritmo complejo. Las demás raíces se obtienen de la siguiente manera:
 \[f_{j}\left(w\right)=f_{0}\left(w\right)e^{i\frac{j2\pi }{n}}, \; j = 1, \ldots, n-1 .\]
+\end{definition}
+\begin{observation}
 Para todas estas funciones con $\displaystyle j = 0, \ldots, n-1 $ 
-\[f_{j} : \C / (-\infty, 0] \to U_{j} = \left\{ z \in \C \; : \; arg z \in \left(-\frac{\pi }{n}, \frac{\pi }{n}\right)+\frac{2\pi j}{n}\right\}  .\]
-La función $\displaystyle z^{n} $ es inyectiva y $\displaystyle f_{j} $ es su inversa. 
-La función de $\displaystyle f_{0} $ inspira la siguiente definición de $\displaystyle z^{\alpha } $ potencia compleja. Concretamente, dado $\displaystyle \alpha \in \C $, 
-\[\varphi_{\alpha }: \C/ (-\infty, 0] \to \C : z \to z^{\alpha }:=e^{\alpha\log z} ,\]
-es la potencia compleja $\displaystyle \alpha  $. 
+\[f_{j} : \C / (-\infty, 0] \to U_{j} = \left\{ z \in \C \; : \; \arg z \in \left(-\frac{\pi }{n}, \frac{\pi }{n}\right)+\frac{2\pi j}{n}\right\}  ,\]
+son inyectivas de forma que la función $\displaystyle z^{n} $ restringida a $\displaystyle U_{j} $ tiene a $\displaystyle f_{j} $ como inversa.
+\end{observation}
+\begin{definition}
+	En general, para $\displaystyle \alpha \in \C $ y $\displaystyle z \in \C/(-\infty,0] $ definimos
+	\[z^{\alpha }:= e^{\alpha\log z} ,\]
+	donde $\displaystyle \log  $ es la rama principal del logaritmo. 
+\end{definition}
+ 
 \begin{definition}[Funciones trigonométricas]
 Vamos a definir
 \[\cos z := \frac{e^{iz}+e^{-iz}}{2} \quad \text{y} \quad \sin z : = \frac{e^{iz}-e^{-iz}}{2i} .\]
@@ -219,40 +226,52 @@ Sean $\displaystyle k \in \Z $ y $\displaystyle z \in \C $.
 \item $\displaystyle \cos z = \sin\left(z + \frac{\pi }{2}\right) $. 
 \end{enumerate}
 \end{prop}
-\begin{notation}
-Las funciones de tangente, cotangente, etc, se definen a partir de la del seno y coseno como lo hacen en el caso real.
-\end{notation}
+\begin{proof}
+Sean $\displaystyle k \in \Z $ y $\displaystyle z \in \C $. Es sencillo comprobar \textbf{(1)} y \textbf{(2)} a partir de la definición:
+\[\cos\left(-z\right)=\frac{e^{i\left(-z\right)}+e^{-i\left(-z\right)}}{2} = \frac{e^{iz}+e^{-iz}}{2} = \cos z .\]
+\[\sin\left(-z\right)=\frac{e^{i\left(-z\right)}-e^{-i\left(-z\right)}}{2i}=\frac{e^{-iz}-e^{iz}}{2i}=-\sin z .\]
+Asímismo, \textbf{(3)} y \textbf{(4)} se siguen de la definición:
+\[\sin\left(z + 2k\pi \right)=\frac{e^{i\left(z + 2k\pi \right)}-e^{-i\left(z + 2k\pi \right)}}{2i}=\frac{e^{iz}-e^{-iz}}{2i}=\sin z .\]
+Finalmente, veamos que \textbf{(5)} también se cumple,
+\[\sin\left(z + \frac{\pi }{2}\right)= \frac{e^{i\left(z + \frac{\pi }{2}\right)}-e^{-i\left(z+\frac{\pi }{2}\right)}}{2i} = \frac{e^{iz}e^{i\frac{\pi }{2}}-e^{-iz}e^{-i \frac{\pi }{2}}}{2i}=\frac{e^{iz}i + e^{-iz}i}{2i}=\cos z.\]
+\end{proof}
+
 \begin{definition}[Funciones hiperbólicas]
-Vamos a definir 
+Se definen las funciones hiperbólicas de la siguiente forma: 
 \[\cosh z := \frac{e^{z}+e^{-z}}{2} \quad \text{y} \quad \sinh z := \frac{e^{z}-e^{-z}}{2} .\]
 \end{definition}
+\begin{notation}
+Las funciones de tangente, cotangente, etc, se definen a partir de la del seno y coseno como lo hacen en el caso real. Lo mismo sucede para el resto de funciones hiperbólicas.
+\end{notation}
+
 \section{Métrica y topología}
-Sabemos que $\displaystyle \C \sim \R^{2} $ por lo que va a heredar la topología usual de $\displaystyle \R^{2} $. Recordamos que 
-\[d : \C \times \C \to [0,\infty) : \left(z,w\right) \to \left|z-w\right| ,\]
-es la métrica que usamos. Los abiertos de $\displaystyle \C $ estarán formados por uniones de discos abiertos:
+Dado que $\displaystyle \C $ no es más que $\displaystyle \R^{2} $ más la operación del producto complejo, tiene sentido definir la distancia entre números complejos como 
+\[d : \C \times \C \to [0,\infty) : \left(z,w\right) \to \left|z-w\right| .\]
+Así, $\displaystyle \left(\C, d\right) $ como lo hemos definido es un espacio métrico. Particularmente, es un espacio topológico con esta métrica. Así, es sencillo ver que $\displaystyle \C $ hereda todas las propiedades topológicas y métricas de $\displaystyle \R^{2} $ por lo que los conjuntos abiertos, cerrados, sucesiones convergentes, sucesiones de Cauchy y puntos de acumulación serán los mismos que en $\displaystyle \R^{2} $. \\
+\\
+Así, los abiertos de $\displaystyle \C $ estarán formados por uniones de \textbf{discos abiertos}:
 \[D\left(z,r\right) : = \left\{ w \in \C \; : \: \left|w-z\right| < r\right\} \quad \text{y} \quad \overline{D}\left(z,r\right):= \left\{ w \in \C \; : \; \left|w-z\right|\leq r\right\}  .\]
-Diremos que $\displaystyle \Omega \subset \C $ es abierto si 
+Que es equivalente a decir que $\displaystyle \Omega \subset \C $ es \textbf{abierto} si 
 \[\forall z \in \Omega, \; \exists r > 0, \; D\left(z, r\right)\subset \Omega  .\]
-Diremos que la sucesión $\displaystyle \left\{ z_{n}\right\} _{n\in\N}\subset \C $ converge a $\displaystyle z_{0} \in \C $ si $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ se tiene que $\displaystyle \left|z_{n}-z_{0}\right|<\epsilon  $. 
-En particular, dada $\displaystyle \left\{ z_{n}\right\} _{n\in\N}\subset \C $, decimos que $\displaystyle \sum^{\infty}_{n = 1}z_{n}=\infty $ si $\displaystyle \lim_{N \to \infty}\sum^{N}_{n = 1}z_{n} = z_{0} $.
-\begin{definition}[Función continua]
-Dada $\displaystyle f : \Omega \to \C $, diremos que $\displaystyle f $ es \textbf{continua} en $\displaystyle z_{0}\in \Omega  $ si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists\delta > 0 $ tal que si $\displaystyle \left|z-z_{0}\right|<\delta $ entonces $\displaystyle \left|f\left(z\right)-f\left(z_{0}\right)\right|<\epsilon  $. 
-\end{definition}
-\begin{observation}
-El espacio $\displaystyle \C $ es un espacio métrico completo. Es decir, toda sucesión de Cauchy es convergente.
-\end{observation}
+Como era de esperar, diremos que la sucesión $\displaystyle \left\{ z_{n}\right\} _{n\in\N}\subset \C $ \textbf{converge} a $\displaystyle z_{0} \in \C $ si $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ se tiene que $\displaystyle \left|z_{n}-z_{0}\right|<\epsilon  $. 
+En particular, dada $\displaystyle \left\{ z_{n}\right\} _{n\in\N}\subset \C $, decimos que $\displaystyle \sum^{\infty}_{n = 1}z_{n}=\infty $ si $\displaystyle \lim_{N \to \infty}\sum^{N}_{n = 1}z_{n} = z_{0} $.\\ \\
+Igualmente, dada $\displaystyle f : \Omega \to \C $, diremos que $\displaystyle f $ es \textbf{continua} en $\displaystyle z_{0}\in \Omega  $ si $\displaystyle \forall \epsilon > 0 $, $\displaystyle \exists\delta > 0 $ tal que si $\displaystyle \left|z-z_{0}\right|<\delta $ entonces $\displaystyle \left|f\left(z\right)-f\left(z_{0}\right)\right|<\epsilon  $. \\ \\
+Al ser $\displaystyle \R^{2} $ \textbf{completo}, tendremos que $\displaystyle \C $ también lo es.
+Por otro lado, es sencillo ver que las funciones $\displaystyle S,P : \C \times \C \to \C $ definidas por 
+\[S\left(z,w\right)= z + w \quad \text{y} \quad P\left(z,w\right)=z \cdot w ,\]
+son continuas por lo que si $\displaystyle z_{n} \to z $ y $\displaystyle w_{n} \to w $ se tiene que 
+\[z_{n}+w_{n} \to z + w \quad \text{y} \quad z_{n}w_{n} \to zw .\]
+
 \begin{observation}
 Las operaciones de suma y producto en $\displaystyle \C $ son polinómicas por lo que son continuas. Así, $\displaystyle \left(\C, + , \cdot \right) $ es un \textbf{cuerpo topológico}.
 \end{observation}
-\begin{eg}
-Una consecuencia de este hecho es que si $\displaystyle z_{n} \to \alpha  $ y $\displaystyle w_{n}\to \beta  $, entonces $\displaystyle z_{n}+w_{n}\to \alpha + \beta  $. Lo mismo sucede para el producto. 
-\end{eg}
+
 \begin{theorem}[Criterio $\displaystyle M $-Weirstrass]
 	Sea $\displaystyle X \neq \emptyset $, sea $\displaystyle \left(E, \left| \cdot \right|\right) $ un espacio normado completo \footnote{A estos se les llama \textbf{Espacios de Banach}.} y sea $\displaystyle f_{n} : X \to E $ una sucesión de funciones tales que existe $\displaystyle \left\{ M_{n}\right\} _{n\in\N}\subset[0,\infty) $ con $\displaystyle \left|f_{n}\left(x\right)\right|\leq M_{n} $, $\displaystyle \forall x \in X $, $\displaystyle \forall n \in \N $ y además $\displaystyle \sum^{\infty}_{n = 1}M_{n}<\infty  $. 
 	Entonces existe $\displaystyle f : X \to E $ tal que $\displaystyle f\left(x\right)=\lim_{N \to \infty}\sum^{N}_{n = 1}f_{n}\left(x\right) $ uniformemente en $\displaystyle X $. Además, si $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ son continuas, $\displaystyle f $ también lo es.
 \end{theorem}
 \begin{proof}
-Sea $\displaystyle \epsilon > 0 $. Entonces existe $\displaystyle N_{0} \in \N $ tal que si $\displaystyle k \geq N_{0} $, tenemos que $\displaystyle \sum_{n \geq k}M_{n}<\epsilon  $. Así, tenemos que $\displaystyle \forall n > m \geq N_{0} $ tenemos que 
+Sea $\displaystyle \epsilon > 0 $. Sabemos que existe $\displaystyle N_{0} \in \N $ tal que si $\displaystyle k \geq N_{0} $, tenemos que $\displaystyle \sum_{n \geq k}M_{n}<\epsilon  $. Así, tenemos que $\displaystyle \forall n > m \geq N_{0} $ tenemos que 
 \[ \left|\sum^{n}_{j = 1}f_{j}\left(x\right)-\sum^{m}_{j = 1}f_{j}\left(x\right)\right| \leq \sum^{n}_{j = m + 1} \left|f_{j}\left(x\right)\right| \leq \sum_{j \geq m + 1} \left|f_{j}\left(x\right)\right| \leq \sum_{j \geq m + 1}M_{j}<\epsilon .\]
 Así, la sucesión $\displaystyle \left\{ \sum^{n}_{j = 1}f_{j}\left(x\right)\right\} _{n\in\N}\subset E $ es de Cauchy y por ser $\displaystyle E $ completo converge, por lo que existe
 \[f\left(x\right):=\lim_{n \to \infty}\sum^{n}_{j = 1}f_{j}\left(x\right) .\]
@@ -267,69 +286,107 @@ Como $\displaystyle g_{n_{0}} $ es continua en $\displaystyle x_{0} $, tenemos q
 \begin{definition}[Esfera de Riemann]
 	Llamaremos \textbf{esfera de Riemann} o \textbf{plano complejo ampliado} al conjunto $\displaystyle \hat{\C} := \C\cup \left\{ \infty\right\}  $ que es la compactificación de Alexandroff o de un punto del espacio topológico $\displaystyle \left(\C, \mathcal{T}_{u}\right) $. 
 \end{definition}
-\begin{observation}
-	Es cierto que $\displaystyle \hat{\C} $ es homeomorfo a $\displaystyle \mathbb{S}^{2}= \left\{ x^{2}+y^{2}+z^{2}=1\right\}  $. 
-\end{observation}
-\begin{observation}
-Se puede comprobar que $\displaystyle \left(x,y,z\right)\to w = \frac{x + yi}{1-z} $ es una biyección. %comprobar en casa.
-Se puede comprobar que la inversa de esta aplicación está dada por
-
+La utilidad de la esfera de Riemann se debe a la existencia de una biyección natural, la \textbf{proyección estereográfica}, entre $\displaystyle \mathbb{S}^{2} = \left\{ x^{2} + y^{2}+z^{2}=1\right\}  $ y $\displaystyle \hat{\C} $, que nos permite identificar el polo norte $\displaystyle N = \left(0,0,1\right)\in \mathbb{S}^{2} $ con el punto $\displaystyle \infty \in \hat{\C} $ y cada punto $\displaystyle P = \left(x,y,z\right)\in \mathbb{S}^{2}/ N $ con la intersección de la recta que une $\displaystyle N $ y $\displaystyle P $ en $\displaystyle \R^{3} $ con el plano $\displaystyle z = 0 $ de $\displaystyle \R^{3} $ \footnote{Al plano $\displaystyle z = 0 $ lo identificamos con $\displaystyle \C $ mediante la inclusión natural de $\displaystyle \R^{2} $ en $\displaystyle \R^{3} $, $\displaystyle \left(x,y\right) \to \left(x,y,0\right) $.}. 
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{~/Desktop/Images/Complejo1.png}
+\end{center}
+Se puede comprobar que $\displaystyle \left(x,y,z\right)\to w = \frac{x + yi}{1-z} $ es esta biyección. Además, la inversa de esta aplicación viene dada por
 \[x = \frac{w + \overline{w}}{1 + \left|w\right|^{2}} \quad
 y = \frac{w - \overline{w}}{i \left(1 + \left|w\right|^{2}\right)}\quad
 z = \frac{ \left|w\right|^{2}-1}{ \left|w\right|^{2}+1} .\]
-\end{observation}
-\subsection{Topología de $\displaystyle \hat{\C} $}
-Cualquier abierto de $\displaystyle \C $ es abierto de $\displaystyle \widehat{\C} $. Cualquier conjunto de la forma
-\[ \left\{ \infty\right\} \cup \left\{ z \in \C \; : \; \left|z\right| > R\right\}  ,\]
-para algún $\displaystyle R > 0 $ también es abierto.
+
 \begin{theorem}
-	La proyección esterográfica lleva las circunferencias de $\displaystyle \mathbb{S}^{2} $ ($\displaystyle \widehat{\C} $) a circunferencias de $\displaystyle \C $ o bien rectas del plano complejo (si contiene el polo norte). 
+	La proyección estereográfica lleva circunferencias de la esfera \footnote{Están definidas como intersección de planos afines de $\displaystyle \R^{3} $ con la esfera $\displaystyle \mathbb{S}^{2} $.} en circunferencias o rectas de $\displaystyle \C $. En concreto, lleva las circunferencias de $\displaystyle \mathbb{S}^{2} $ que no contienen a $\displaystyle N $ en circunferencias del plano, y las circunferencias que sí contienen a $\displaystyle N $ en rectas del plano.  
 \end{theorem}
 \begin{proof}
-Demostrar en casa.
+Identificamos el plano $\displaystyle z = 0 $ con $\displaystyle \C $. Recordamos que la proyección estereográfica viene dada por
+\[\pi : \mathbb{S}^{2} / \left\{ N\right\} \to \R^{2} : \left(x,y,z\right) \to \left(\frac{x}{1-z}, \frac{y}{1-z}\right) .\]
+Ahora, consideremos una circunferencia $\displaystyle C \subset \mathbb{S}^{2} $, que por definición es la intersección de $\displaystyle \mathbb{S}^{2} $ con un plano afín de $\displaystyle \R^{3} $, es decir
+\[C = \mathbb{S}^{2} \cap \left\{ ax + by + cz = d\right\}  .\]
+Es sencillo comprobar que 
+\[\pi^{-1}\left(u,v\right)=\left(\frac{2u}{u^{2}+v^{2}+1}, \frac{2v}{u^{2}+v^{2}+1}, \frac{u^{2}+v^{2}-1}{u^{2}+v^{2}+1}\right) .\]
+Como queremos calcular la ecuación que satisfacen los puntos $\displaystyle \left(u,v\right)=\pi^{-1}\left(x,y,z\right) $, sustituyendo en la ecuación del plano obtenemos que 
+\[a\frac{2u}{u^{2}+v^{2}+1} + b\frac{2v}{u^{2}+v^{2}+1}+c\frac{u^{2}+v^{2}-1}{u^{2}+v^{2}+1}=d .\]
+Por tanto, 
+\[\left(c-d\right)\left(u^{2}+v^{2}\right)+2au+2bv-\left(c+d\right)=0 .\] 
+Por otro lado, es sencillo comprobar que $\displaystyle N \in \left\{ ax + by + cz = d\right\}  $ si y solo si $\displaystyle c = d $. 
+Distinguimos ahora dos casos:
+\begin{itemize}
+	\item Si $\displaystyle N \not\in \left\{ ax + by + cz = d\right\}  $, tenemos que $\displaystyle c \neq d $, por lo que podemos escribir
+		\[u^{2}+v^{2}+\frac{2a}{c-d}u+\frac{2b}{c-d}v-\frac{c+d}{c-d}=0 \Rightarrow \left(u + \frac{a}{c-d}\right)^{2}+\left(v + \frac{b}{c-d}\right)^{2} = \frac{a^{2}+b^{2}+c^{2}-d^{2}}{\left(c-d\right)^{2}} .\]
+	Como el plano corta a la esfera en una circunferencia tenemos que el lado derecho es positivo. Así, tenemos que en este caso la imagen de una circunferencia de $\displaystyle \mathbb{S}^{2} $ es una circunferencia en $\displaystyle \C $. 
+\item Si $\displaystyle N \in \left\{ ax + by + cz = d\right\}  $, tenemos que $\displaystyle c = d $, por lo que nos queda
+	\[2au + 2bv - 2c = 0 \Rightarrow a u + bv = c .\]
+	Esta es la ecuación de una recta del plano. Además, no puede ser que $\displaystyle a = b = 0 $, porque entonces el plano afín sería $\displaystyle z = 1 $ que es tangente a la esfera $\displaystyle \mathbb{S}^{2} $. Así, tenemos que en este caso la imagen de una circunferencia de $\displaystyle \mathbb{S}^{2} $ es una recta de $\displaystyle \C $. 
+\end{itemize}
+
 \end{proof}
-\begin{observation}
+Mediante la proyeción estereográfica podemos definir una topología en $\displaystyle \hat{\C} $ que hace que sea \textbf{homeomorfo} a $\displaystyle \mathbb{S}^{2} $ y que sea compacto:
 \begin{enumerate}
-	\item En $\displaystyle \hat{\C} $ decimos que $\displaystyle \left\{ z_{n}\right\} _{n\in\N}\subset \C $ converge a $\displaystyle \infty $ si $\displaystyle \left|z_{n}\right|\to \infty $.\item Con la convención $\displaystyle \frac{1}{z}=\infty $ y $\displaystyle \frac{1}{\infty}=0 $, la función $\displaystyle w = \varphi\left(z\right)=\frac{1}{z} $ es muy útil para estudiar el punto $\displaystyle \infty \in \hat{\C}$ y $\displaystyle \varphi : \hat{\C} \to \hat{\C} $ así definido es continua en $\displaystyle 0 $ y $\displaystyle \infty $ y biyectiva. 
-Se puede visualizar como una rotación de $\displaystyle \pi  $ radianes en la esfera de Riemann.
-Así, $\displaystyle f : \hat{\C} \to \hat{\C} $ es continua en $\displaystyle \infty $ si y solo si $\displaystyle z \to f\left(\frac{1}{z}\right) $ es continua en $\displaystyle z = 0 $.
+	\item Diremos que $\displaystyle W \subset \hat{\C} $ es abierto en $\displaystyle \hat{\C} $ si $\displaystyle F^{-1}\left(W\right) $ es abierto en $\displaystyle \mathbb{S}^{2} $, donde $\displaystyle F : \mathbb{S}^{2} \to \hat{\C} $ es la proyección estereográfica. \\
+		Esto es equivalente a dcir que $\displaystyle W \subset \hat{\C} $ es entorno de $\displaystyle z \in \hat{\C} $ siempre que $\displaystyle W $ contenga un disco abierto de centro $\displaystyle z  $, cuando $\displaystyle z \in \C $, o siempre que $\displaystyle W $ contenga el complementario de un subconjunto acotado de $\displaystyle \C $, cuando $\displaystyle z = \infty  $. \\
+		Así, los entornos típicos de $\displaystyle \infty  $ en $\displaystyle \hat{\C} $ son de la forma $\displaystyle U = \left\{ z \in \C \; : \; \left|z\right|\geq R\right\} \cup \left\{ \infty \right\}  $ con $\displaystyle R \geq 0 $.
+	\item La sucesión $\displaystyle \left\{ z_{n}\right\} _{n\in\N}\subset \C $ converge a $\displaystyle \infty  $ en $\displaystyle \hat{\C} $ si y solo si la sucesión $\displaystyle \left\{ \left|z_{n}\right|\right\} _{n\in\N} $ cumple que $\displaystyle \lim_{n \to \infty} \left|z_{n}\right|=\infty  $. 
+	\item Al manejar funciones definidas en $\displaystyle \hat{\C} $, el cambio de variable $\displaystyle w = \varphi\left(z\right)=\frac{1}{z} $ es útil, conviniendo que $\displaystyle \frac{1}{0}= \infty $ y $\displaystyle \frac{1}{\infty }=0 $. La aplicación $\displaystyle \varphi : \hat{\C }\to \hat{\C} $ así definida intercambia los puntos $\displaystyle 0 $ e $\displaystyle \infty  $, de forma que lleva entornos de $\displaystyle 0 $ a entornos de $\displaystyle \infty  $ y viceversa. Así, es continua en ambos puntos. Además, es continua y biyectiva en todos los demás puntos, por lo que $\displaystyle \varphi $ es un homeomorfismo de $\displaystyle \hat{\C} $ en $\displaystyle \hat{\C} $. \\
+		Así, una función $\displaystyle f : \hat{\C} \to \C $ es continua en $\displaystyle \infty $ si y solo si la función $\displaystyle z \to f\left(\frac{1}{z}\right) $ es continua en 0. \\
+		Geométricamente, este cambio de variable es una rotación de $\displaystyle \pi  $ radianes alrededor del eje $\displaystyle X $ en la esfera $\displaystyle \mathbb{S}^{2} $ (que identificamos con $\displaystyle \hat{\C} $).
 \end{enumerate}
-\end{observation}
+
 \section{Transformaciones de Möbius}
 \begin{definition}[Transformación de Möebius]
-	Las funciones de la forma $\displaystyle f\left(z\right)=\frac{az + b}{cz + d} $ con $\displaystyle a,b,c,d \in \C $ tales que $\displaystyle \begin{vmatrix} a & b \\ c & d \end{vmatrix} \neq 0 $, se llaman \textbf{transformaciones de Möbius}. 
+	Se denomina \textbf{funciones de Möbius} a funciones $\displaystyle f : \C \to \C $ de la forma
+	\[f\left(z\right)= \frac{az + b}{cz + d} , \quad a,b,c,d \in \R, \; \det\begin{pmatrix} a & b \\ c & d \end{pmatrix}\neq 0.\]
 \end{definition}
 \begin{notation}
-	Escribiremos, para $\displaystyle A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} $ con $\displaystyle \det A \neq 0 $, $\displaystyle f\left(z\right)=\frac{az+b}{cz+d}=:f_{A}\left(z\right) $.
+	Dada $\displaystyle A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} $ con $\displaystyle \det A \neq 0 $, diremos que $\displaystyle f_{A}\left(z\right):=\frac{az+b}{cz+d} $.
 \end{notation}
 \begin{observation}
 La hipótesis de que $\displaystyle \det A \neq 0 $ implica que $\displaystyle f $ no es constante.
 \end{observation}
-\begin{eg}
+\begin{eg} Algunos casos especiales.
 \begin{enumerate}
-\item Si ponemos $\displaystyle c = 0 $, $\displaystyle d = 1 $ y $\displaystyle a \neq 0 $, tenemos que $\displaystyle f\left(z\right)=az + b $ es una transformación afín. En particular, traslaciones y homotecias son transformaciones de Möbius. 
-\item $\displaystyle f\left(z\right)=\frac{1}{z} $ las llamamos inversiones.
+\item Si ponemos $\displaystyle c = 0 $, $\displaystyle d = 1 $ y $\displaystyle a \neq 0 $, tenemos que $\displaystyle f\left(z\right)=az + b $ es una transformación afín. En particular, si $\displaystyle a = 1 $, obtenemos una traslación y si $\displaystyle b = 1 $ obtenemos una homotecia.  
+\item Si $\displaystyle a = d = 0 $ y $\displaystyle b = c = 1 $, tenemos que $\displaystyle f\left(z\right)= \frac{1}{z} $ que es una inversión.
 \end{enumerate}
 \end{eg}
+Las transformaciones de Möbius $\displaystyle f : \C \to \C $ se pueden extender a $\displaystyle \hat{\C} $ de la siguiente forma:
+\begin{itemize}
+\item Si $\displaystyle f $ es afín, se define $\displaystyle f\left(\infty\right):= \infty  $. 
+\item Si $\displaystyle c \neq 0 $, se define $\displaystyle f\left(-\frac{d}{c}\right):=\infty  $ y 
+	\[f\left(\infty\right):=\lim_{ \left|z\right| \to \infty }f\left(z\right)=\lim_{ \left|z\right| \to \infty}\frac{a + \frac{b}{z}}{c + \frac{d}{z}} = \frac{a}{c} .\]
+\end{itemize}
 \begin{prop}
+ Las extensiones de las transformaciones de Möbius así definidas son continuas de $\displaystyle \hat{\C} $ en $\displaystyle \hat{\C} $. Además, $\displaystyle f $ es afín si y solo si $\displaystyle f\left(\infty \right) = \infty $.  
+\end{prop}
+\begin{proof}
+En primer lugar, $\displaystyle f $ es afín si y solo si $\displaystyle c = 0 $ y tenemos que $\displaystyle f\left(\infty \right)= \infty  $ si y solo si $\displaystyle c = 0 $. El tema de la continuidad es trivial. 
+\end{proof}
+
+\begin{prop} El conjunto de transformaciones de Möbius forman un grupo. Es decir,
 \begin{enumerate}
-\item Las transformaciones de Möbius $\displaystyle f_{A} $ se pueden extender a $\displaystyle \hat{f}_{A} : \hat{\C} \to \hat{\C} $. Diremos que $\displaystyle \hat{f}_{A}\left(\infty\right) $ si $\displaystyle f_{A} $ es afín y si $\displaystyle c \neq 0 $ ponemos $\displaystyle \hat{f}\left(\infty\right)=\frac{a}{c} $, logrando así que $\displaystyle \hat{f}_{A} $ sea continua en $\displaystyle \infty \in \hat{\C}$. 
-	Asimismo, definimos $\displaystyle \hat{f}_{A}\left(-\frac{d}{c}\right)=\infty \in \hat{\C} $. Así, $\displaystyle \hat{f}_{A} $ es continua.
 \item $\displaystyle f_{A} $ es biyectiva y su inversa es $\displaystyle f_{A^{-1}} $.
 \item $\displaystyle f_{A}\circ f_{B} = f_{A \cdot B} $. 
 \end{enumerate}
 \end{prop}
 \begin{proof}
-\textbf{(1)} se sigue de \textbf{(2)} ya que $\displaystyle \GL_{2}\left(\C\right) $ es un grupo. 
+Supongamos que $\displaystyle f_{A} $ es una transformación de Möbius.
+\begin{enumerate}
+\item Tenemos que $\displaystyle f_{A} $ es biyectiva si y sólo si tiene inversa, por lo que basta con ver que $\displaystyle f_{A^{-1}}=f_{A}^{-1} $. Recordamos que 
+	\[A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \Rightarrow A^{-1}=\frac{1}{ad-bc}\begin{pmatrix} d & - b \\ - c & a \end{pmatrix} .\]
+	De esta forma, 
+	\[f_{A^{-1}}\left(z\right)=f_{ \left|A\right|A^{-1}}\left(z\right) = \frac{dz - b}{-cz + a}.\]
+	Se deja como ejercicio para el lector comprobar que $\displaystyle f_{A}\circ f_{A^{-1}}=f_{A^{-1}}\circ f_{A}=id $. 	
+\item Si $\displaystyle f_{A}\left(z\right)=\frac{az + b}{cz + d} $ y $\displaystyle f_{B}\left(z\right)=\frac{\alpha z + \beta }{\gamma z + \delta } $, entonces
+	\[f_{A}\left(f_{B}\left(z\right)\right)=\frac{\left(a \alpha + b \gamma \right)z + \left(a \beta + b \delta \right)}{\left(c \alpha + d \gamma \right)z + \left(c \beta + d \delta \right)} = f_{AB} .\]
+	
+\end{enumerate}
+
 \end{proof}
 
 \begin{observation}
-El conjunto de transformaciones de Möbius forma un grupo bajo composición. La propiedad de grupo se hereda del hecho que $\displaystyle \GL_{2}\left(\C\right) $ es un grupo. 
-\end{observation}
-\begin{observation}
 Consideremos $\displaystyle f_{A}\left(z\right)=\frac{az + b}{cz + d} $. Dado $\displaystyle \lambda \in \C^{\times} $, tenemos que 
 \[f_{\lambda A}\left(z\right)= f_{A}\left(z\right) .\]
-Así, realmente el grupo que actua es $\displaystyle \mathbb{P}\GL_{2}\left(\C\right)= \GL_{2}\left(\C\right)/\C $. 
+Así, realmente el grupo que actúa es $\displaystyle \mathbb{P}\GL_{2}\left(\C\right)$. 
 \end{observation}
 \begin{theorem}
 Dados $\displaystyle z_{1}, z_{2}, z_{3} \in \hat{\C} $ distintos y otros $\displaystyle w_{1}, w_{2}, w_{3} \in \hat{\C} $ distintos, existe una única $\displaystyle \hat{f}_{A} : \hat{\C} \to \hat{\C} $ tal que $\displaystyle f_{A}\left(z_{j}\right)=w_{j} $ con $\displaystyle j = 1, 2, 3 $.
@@ -370,7 +427,7 @@ Veamos ahora la unicidad. Supongamos que existen dos soluciones $\displaystyle f
 \infty \to \infty
 \end{cases}
 ,\]
-entonces $\displaystyle h\left(z\right)= z $. Esto es muy fácil de comprobar. Sea $\displaystyle \varphi\circ f^{-1}\circ g \circ \varphi^{-1} $ tal que 
+entonces $\displaystyle h\left(z\right)= z $. Esto es muy fácil de comprobar. Sea $\displaystyle \varphi $ tal que 
 \[\varphi:
 \begin{cases}
 z_{1} \to 0 \\
@@ -386,23 +443,36 @@ Vemos que
 \infty \to \infty 
 \end{cases}
 .\]
-Obligatoriamente debe ser que $\displaystyle \varphi\circ f^{-1}\circ g\circ\varphi^{-1}=id\circ \varphi $, por lo que $\displaystyle f^{-1}\circ g = id $ y tenemos que $\displaystyle f = g $.
+Obligatoriamente debe ser que $\displaystyle \varphi\circ f^{-1}\circ g\circ\varphi^{-1}=id $, por lo que $\displaystyle f^{-1}\circ g = id $ y tenemos que $\displaystyle f = g $.
 \end{proof}
 \begin{theorem}
-Toda función de Möbius $\displaystyle f_{A} $ es composición de homotecias, traslaciones e inversiones. 
+Toda transformación de Möbius $\displaystyle f_{A} $ es composición de homotecias, traslaciones e inversiones. 
 \end{theorem}
 \begin{proof}
 Distinguimos dos casos:
 \begin{description}
-\item[Caso 1.] Si $\displaystyle f\left(\infty\right)=\infty $ entonces $\displaystyle f $ es afín. 
-\item[Caso 2.] Supongamos que $\displaystyle f\left(\infty\right)\neq \infty  $, entonces debe ser que $\displaystyle f\left(z\right)=\frac{az + b}{cz + d} $ con $\displaystyle c \neq 0 $. Sin pérdida de generalidad podemos asumir que $\displaystyle c= 1 $ y obtenemos que $\displaystyle f\left(z\right)=\frac{az + b}{z + d}=a + \frac{b-ad}{z + d} $. 
+\item[Caso 1.] Si $\displaystyle f\left(\infty\right)=\infty $, entonces $\displaystyle f $ es afín. 
+\item[Caso 2.] Supongamos que $\displaystyle f\left(\infty\right)\neq \infty  $, entonces debe ser que $\displaystyle f\left(z\right)=\frac{az + b}{cz + d} $ con $\displaystyle c \neq 0 $. Sin pérdida de generalidad podemos asumir que $\displaystyle c= 1 $ y obtenemos que $\displaystyle f\left(z\right)=\frac{az + b}{z + d}=a + \frac{b-ad}{z + d} $,
+	que claramente es composición de una traslación, con una inversión, con una dilatación y otra traslación.
 \end{description}
 \end{proof}
 \begin{theorem}
 Toda transformación de Möbius $\displaystyle \hat{f}_{A}: \hat{\C} \to \hat{\C} $ lleva circunferencias de $\displaystyle \hat{\C} $ a circunferencias de $\displaystyle \hat{\C} $. 
 \end{theorem}
 \begin{proof}
-Aplicando el teorema anterior nos dice que basta con comprobar que el resultado es cierto para traslaciones, homotecias e inversiones.
-% Ejercicio de la hoja 2
+	Gracias al teorema anterior, basta con demostrar que es cierto para traslaciones, dilataciones e inversiones. El resultado es trivial para traslaciones y dilataciones, por lo que únicamente estudiaremos el caso de las inversiones. Distinguimos dos casos:
+	\begin{itemize}
+		\item En primer lugar, consideremos una circunferencia en $\displaystyle \hat{\C} $ que no pasa por $\displaystyle \infty  $, es decir una circunferencia de $\displaystyle \C $. Así, tendremos que su ecuación será de la forma $\displaystyle \left\{ \left|z-a\right|^{2}=r^{2}\right\}  $, que es transformada por $\displaystyle w = \frac{1}{z} $ en $\displaystyle \left\{ \left|1-aw\right|^{2}=r^{2} \left|w\right|^{2}\right\}  $. Escribiendo $\displaystyle w = u + iv $ tenemos que 
+		\[
+		\begin{split}
+			0 = & \left|1-aw\right|^{2}-r^{2} \left|w\right|^{2}=\left(1-aw\right)\overline{\left(1-aw\right)}-r^{2} \left|w\right|^{2} = \left( \left|a\right|^{2} - r^{2}\right) \left|w\right|^{2}-aw-\overline{a}\overline{w} + 1\\
+			= & \left( \left|a\right|^{2}-r^{2}\right)\left(u^{2} + v^{2}\right) + Au + Bv + 1 ,
+		\end{split}
+		\]
+		con $\displaystyle A,B \in \R $. Si $\displaystyle r = \left|a\right| $, este conjunto es una recta en $\displaystyle \C $ y si $\displaystyle r \neq \left|a\right| $, completando cuadrados se ve fácilmente que es una circunferencia en $\displaystyle \C $. 
+	\item Si se trata de una circunferencia de $\displaystyle \hat{\C} $ que pasa por $\displaystyle \infty  $, es decir una recta en $\displaystyle \C $, tendremos que su ecuación es del tipo $\displaystyle Cx + Dy = E $. Así, aplicando la función $\displaystyle w = \frac{1}{z} $ tendremos que, siendo $\displaystyle x = \Rel z $ e $\displaystyle y = \Imagen z $ y $\displaystyle w = u + iv $,
+		\[0 = C \frac{u}{u^{2}+v^{2}} - D\frac{v}{u^{2}+v^{2}} - E \Rightarrow 0 = Cu - vD - E\left(u^{2} + v^{2}\right) .\]
+	Así, tenemos que la imagen por $\displaystyle w = \frac{1}{z} $ de esta recta es una circunferencia si $\displaystyle E \neq 0 $ y una recta en caso contrario. 
+	\end{itemize}
 \end{proof}
 

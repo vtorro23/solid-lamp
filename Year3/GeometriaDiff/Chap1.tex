@@ -177,37 +177,44 @@ Decimos que $\displaystyle t_{0}\in I $ es un \textbf{punto regular} si $\displa
 Ya vimos en el ejemplo de la curva $\displaystyle y^{2} = x^{2}\left(x + 1\right) $ que no es inyectiva y sin embargo la derivada de la parametrización que dimos no se anula nunca, por lo que es regular. 
 \end{observation}
 \begin{definition}[Recta tangente]
-Se llama \textbf{recta tangente} a $\displaystyle \alpha\left(t\right) $ en $\displaystyle t = t_{0} $ a la recta $\displaystyle T = P_{0}+L\left(\alpha'\left(t_{0}\right)\right) $. Sólo en puntos regulares.
+Si $\displaystyle t_{0} $ es un punto regular de $\displaystyle \alpha\left(t\right) $, se llama \textbf{recta tangente} a $\displaystyle \alpha\left(t\right) $ en $\displaystyle t = t_{0} $ a la recta $\displaystyle T = P_{0}+L\left(\alpha'\left(t_{0}\right)\right) $. 
 \end{definition}
 \begin{prop}
 Dada un curva $\displaystyle \alpha : I \to \R^{n} $, si $\displaystyle t_{0} \in I $ es un punto regular, entonces hay una recta $\displaystyle T $ que pasa por $\displaystyle P_{0}=\alpha\left(t_{0}\right) $ tal que 
-\[d\left(\alpha\left(t\right), T\right)\leq C\left(t-t_{0}\right)^{2} , \; C \in \R.\]
+\[d\left(\alpha\left(t\right), T\right)\leq C\left(t-t_{0}\right)^{2} , \; C \in \R,\]
+en un entorno de $\displaystyle t_{0} $. 
 \end{prop}
 \begin{proof}
-Sea $\displaystyle t \in I $. Por el teorema de Taylor existe $\displaystyle \xi \in \left(t, t_{0}\right) $ tal que,
+	Consideremos un entorno $\displaystyle \left[t_{0}-\delta , t_{0} + \delta \right] \subset I $ con $\displaystyle \delta > 0 $ y sea $\displaystyle t \in \left[t_{0}-\delta, t_{0} + \delta \right]  $. Por el teorema de Taylor existe $\displaystyle \xi \in \left(t, t_{0}\right) $ tal que,
 \[\alpha\left(t\right)=\alpha\left(t_{0}\right)+\alpha'\left(t_{0}\right)\left(t-t_{0}\right)+ \frac{\alpha''\left(\xi\right)}{2}\left(t-t_{0}\right)^{2} .\]
 De esta forma, tenemos que cogiendo $\displaystyle T\left(t\right)=P_{0} + \alpha'\left(t_{0}\right)\left(t-t_{0}\right) $ como la recta tangente, 
 \[
 \begin{split}
-	d\left(\alpha\left(t\right), T\left(t\right)\right) = & \left\|\left(\alpha\left(t_{0}\right)+\alpha'\left(t_{0}\right)\left(t-t_{0}\right)+\frac{\alpha''\left(\xi\right)}{2}\left(t-t_{0}\right)^{2}\right)-\left(P_{0}+\alpha'\left(t_{0}\right)\left(t-t_{0}\right)\right)\right\|\\
+	d\left(\alpha\left(t\right), T\left(t\right)\right) \leq & \left\|\left(\alpha\left(t_{0}\right)+\alpha'\left(t_{0}\right)\left(t-t_{0}\right)+\frac{\alpha''\left(\xi\right)}{2}\left(t-t_{0}\right)^{2}\right)-\left(P_{0}+\alpha'\left(t_{0}\right)\left(t-t_{0}\right)\right)\right\|\\
 	= & \frac{\|\alpha''\left(\xi\right)\|}{2}\left(t-t_{0}\right)^{2} .
 \end{split}
 \]
- 
+Finalmente, como $\displaystyle \alpha''\left(t\right) $ es continua tendremos que está acotada en $\displaystyle \left[t_{0}-\delta, t_{0} + \delta \right]  $, por lo que existe $\displaystyle M > 0 $ tal que $\displaystyle \alpha''\left(t\right)\leq M $, $\displaystyle \forall t \in \left[t_{0}-\delta, t_{0} + \delta \right]  $ y entonces $\displaystyle d\left(\alpha\left(t\right), T\left(t\right)\right)\leq \frac{M}{2}\left(t-t_{0}\right)^{2} $.  
 \end{proof}
 
 \section{Curvas implícitas}
 Sea $\displaystyle U\subset\R^{2} $ un abierto y $\displaystyle F : U \to \R $ una función $\displaystyle \mathcal{C}^{\infty} $. Consideremos el conjunto $\displaystyle C = \left\{ \left(x,y\right)\in U \; : \; F\left(x,y\right)= 0\right\}  $. 
+\begin{definition}[Curva de nivel]
+Las \textbf{curvas de nivel} son conjuntos de la forma $\displaystyle C_{\lambda } = \left\{ \left(x,y\right) \; : \; F\left(x,y\right)=\lambda \right\} = \left\{ \left(x,y\right) \; : \; F_{\lambda }\left(x,y\right)=F\left(x,y\right)-\lambda = 0\right\}  $. 
+\end{definition}
+\begin{observation}
+Claramente $\displaystyle \nabla F_{\lambda }=\nabla F $.
+\end{observation}
+
 \begin{lema}
 Si $\displaystyle y = h\left(x\right) $ es $\displaystyle \mathcal{C}^{\infty} $, entonces la gráfica es una curva parametrizada regular. 
 \end{lema}
 \begin{proof}
 Tomando la parametrización $\displaystyle \alpha\left(t\right)=\left(t, h\left(t\right)\right) $, tenemos que $\displaystyle \alpha'\left(t\right)=\left(1, h'\left(t\right)\right)\neq \left(0,0\right) $, $\displaystyle \forall t \in I $.
 \end{proof}
-\begin{observation}[Curvas de nivel]
-	Las curvas de nivel son conjuntos de la forma $\displaystyle C_{\lambda } = \left\{ \left(x,y\right) \; : \; F\left(x,y\right)=\lambda \right\} = \left\{ \left(x,y\right) \; : \; F_{\lambda }\left(x,y\right)=F\left(x,y\right)-\lambda = 0\right\}  $. Claramente $\displaystyle \nabla F_{\lambda }=\nabla F $.
-\end{observation}
-
+\begin{definition}[Curva implícita regular]
+	Si $\displaystyle C = \left\{ \left(x,y\right)\in U \; : \; F\left(x,y\right)=0\right\}  $ y $\displaystyle \nabla F\left(x,y\right)\neq \left(0,0\right) $, $\displaystyle \forall \left(x,y\right)\in C $, llamamos a $\displaystyle C $ \textbf{curva implícita regular}.
+\end{definition}
 \begin{theorem}
 Si $\displaystyle \left(x_{0}, y_{0}\right)\in C $ y $\displaystyle \nabla F\left(x_{0}, y_{0}\right)\neq \left(0,0\right)$, entonces existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle B\left(\left(x_{0}, y_{0}\right), \epsilon \right)\cap C= C_{\epsilon} $ es la traza de una curva parametrizada regular implícita.
 \end{theorem}
@@ -215,18 +222,18 @@ Si $\displaystyle \left(x_{0}, y_{0}\right)\in C $ y $\displaystyle \nabla F\lef
 Tenemos que por hipótesis
 \[\nabla F\left(x_{0}, y_{0}\right)=\left(\frac{\partial F}{\partial x}\left(x_{0}, y_{0}\right), \frac{\partial F}{\partial y}\left(x_{0}, y_{0}\right)\right)\neq \left(0,0\right) .\]
 Supongamos sin pérdida de generalidad que $\displaystyle \frac{\partial F}{\partial y}\left(x_{0}, y_{0}\right)\neq 0 $. Consideramos la función $\displaystyle G : U \subset \R^{2}\to \R^{2} $ tal que $\displaystyle G\left(x,y\right)=\left(F\left(x,y\right), x\right) $. Como 
-\[JG=\begin{pmatrix} \frac{\partial F}{\partial x} & \frac{\partial F}{\partial y} \\ 1 & 0 \end{pmatrix} \Rightarrow \left|JG\right|\neq 0 ,\]
+\[JG\left(x_{0}, y_{0}\right)=\begin{pmatrix} \frac{\partial F}{\partial x}\left(x_{0}, y_{0}\right) & \frac{\partial F}{\partial y}\left(x_{0}, y_{0}\right) \\ 1 & 0 \end{pmatrix} \Rightarrow \left|JG\left(x_{0}, y_{0}\right)\right|\neq 0 ,\]
 por el teorema de la función inversa tenemos que existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle G : B\left(\left(x_{0}, y_{0}\right), \epsilon \right)\to G\left(B\left(\left(x_{0}, y_{0}\right), \epsilon \right)\right) $ es un difeomorfismo. \footnote{Queremos decir que $\displaystyle G $ es diferenciable $\displaystyle \mathcal{C}^{\infty} $ y biyectiva y $\displaystyle G^{-1} $ es diferenciable $\displaystyle \mathcal{C}^{\infty} $.} Así, tenemos que 
 \[\left(x,y\right)=G^{-1}\left(u,v\right)=\left(x\left(u,v\right), y\left(u,v\right)\right) .\]
 Habiendo cogido $\displaystyle u = F\left(x,y\right) $ y $\displaystyle v = x $, tenemos que 
 \[
 \begin{split}
-	C_{\epsilon }= & \left\{ \left(x,y\right) \in B_{\epsilon }\left(x_{0}, y_{0}\right)\; : \; F\left(x,y\right)=0\right\} = \left\{ \left(x,y\right) \; : \; u = 0\right\} \\
+	C_{\epsilon }= & \left\{ \left(x,y\right) \in B_{\epsilon }\left(x_{0}, y_{0}\right)\; : \; F\left(x,y\right)=0\right\}  \\
 	= & \left\{ \left(x,y\right) \; : \; y = y\left(u,v\right), u = 0, x = v\right\} \\
 	= & \left\{ \left(x,y\right)\; : \; y = y\left(0,x\right)\right\} = \left\{ \left(x,y\right) \; : \; y = h\left(x\right)\right\}  ,
 \end{split}
 \]
-habiendo tomado $\displaystyle h\left(x\right)=y\left(0,x\right) $. 
+tomando $\displaystyle h\left(x\right)=y\left(0,x\right) $. 
 \end{proof}
 \begin{eg}
 	Consideremos $\displaystyle F\left(x,y\right)=x^{2}+y^{2}=1 $ y $\displaystyle C = \left\{ x^{2}+y^{2}=1\right\}  $. Tenemos que $\displaystyle \nabla F = \left(2x, 2y\right) $ y como $\displaystyle \left(0,0\right)\not\in C $ tenemos que $\displaystyle \nabla F\left(x,y\right)\neq 0 $, $\displaystyle \forall\left(x,y\right)\in C $. Tenemos que 
@@ -236,29 +243,29 @@ habiendo tomado $\displaystyle h\left(x\right)=y\left(0,x\right) $.
 	Recordamos que $\displaystyle \mathbb{S}^{1} $ se puede cubrir con dos parametrizaciones inyectivas, pero no con una. 
 \end{observation}
 \begin{observation}
-Recordamos que la curva $\displaystyle y^{2}-x^{2}\left(x+1\right)=0 $ tiene gradiente nulo en el origen, por lo que en este punto no podemos aplicar el teorema.
+Recordamos que la curva $\displaystyle y^{2}-x^{2}\left(x+1\right)=0 $ tiene gradiente nulo en el origen y sin embargo se cumplen las conclusiones del teorema.
 \end{observation}
-\begin{definition}[Curva implícita regular]
-	Si $\displaystyle C = \left\{ \left(x,y\right)\in U \; : \; F\left(x,y\right)=0\right\}  $ y $\displaystyle \nabla F\left(x,y\right)\neq \left(0,0\right) $, $\displaystyle \forall \left(x,y\right)\in C $, llamamos a $\displaystyle C $ \textbf{curva implícita regular}.
-\end{definition}
+
 \section{Cambios de parámetro y parámetro arco}
 \begin{definition}[Cambio de parámetro]
-Se llama \textbf{cambio de parámetro} a una función $\displaystyle h: I \to J $, $\displaystyle I,J\subset \R $ intervalos, $\displaystyle h $ biyectiva y $\displaystyle h'\left(x\right)\neq 0 $ con $\displaystyle \mathcal{C}^{\infty} $, $\displaystyle \forall x \in I $.
+Se llama \textbf{cambio de parámetro} a una función $\displaystyle h: I \to J $; $\displaystyle I,J\subset \R $ intervalos, $\displaystyle h \in \mathcal{C}^{\infty} $ biyectiva y $\displaystyle h'\left(x\right)\neq 0 $, $\displaystyle \forall x \in I $.
 \end{definition}
 \begin{observation}
 Como $\displaystyle h'\left(x\right)\neq 0 $, la función inversa es derivable $\displaystyle \mathcal{C}^{\infty} $ y además
 \[\left(h^{-1}\right)'\left(h\left(x\right)\right)=\frac{1}{h'\left(x\right)} .\]
 Es decir, los cambios de parámetros son difeomorfismos.
 \end{observation}
-\begin{observation}
+
+\begin{notation}
 Claramente $\displaystyle h'\left(x\right) $ tiene signo constante por ser biyectiva. Distinguimos dos casos:
 \begin{itemize}
 \item Si $\displaystyle h'\left(x\right) > 0 $, es estrictamente creciente (\textbf{cambio de parámetro positivo}).
 \item Si $\displaystyle h'\left(x\right) < 0 $, es estrictamente decreciente (\textbf{cambio de parámetro negativo}).
 \end{itemize}
-\end{observation}
+\end{notation}
+
 \begin{definition}[Reparametrización]
-	Sea $\displaystyle \alpha : I \to \R^{2} $ una curva parametrizada por $\displaystyle t $. Sea $\displaystyle u = h\left(t\right) $ un cambio de parámetros. Se llama \textbf{reparametrización} de $\displaystyle \alpha \left(t\right) $ con $\displaystyle u = h\left(t\right) $ a la curva $\displaystyle \tilde{\alpha}\left(u\right)=\alpha\left(t\right)=\alpha\left(h^{-1}\left(u\right)\right) $. Es decir, $\displaystyle \tilde{\alpha} : J \to \R^{2} $ y $\displaystyle \tilde{\alpha} = \alpha \circ h^{-1} $.
+	Sea $\displaystyle \alpha : I \to \R^{n} $ una curva parametrizada por $\displaystyle t $. Sea $\displaystyle u = h\left(t\right) $ un cambio de parámetros. Se llama \textbf{reparametrización} de $\displaystyle \alpha \left(t\right) $ con $\displaystyle u = h\left(t\right) $ a la curva $\displaystyle \tilde{\alpha} = \alpha \circ h^{-1} : J \to \R^{n} $ con $\displaystyle \tilde{\alpha}\left(u\right)=\alpha\left(t\right)=\alpha\left(h^{-1}\left(u\right)\right) $.
 \end{definition}
 \begin{eg}
 Consideremos la curva $\displaystyle \alpha \left(t\right)=\left(t ^{2}, t ^{3}\right) $ y consideremos el cambio de parámetro 
@@ -268,68 +275,56 @@ Así, tenemos que
 Normalmente se abusa de notación de esta forma: $\displaystyle \alpha\left(u\right)=\left(\sin ^{2}u, \sin ^{3}u\right) $. 
 \end{eg}
 \begin{observation}[Recta velocidad]
-\begin{enumerate}
-	\item Supongamos que $\displaystyle u_{0}=h\left(t_{1}\right) $, por lo que $\displaystyle \tilde{\alpha}\left(u_{0}\right)=\alpha\left(t_{1}\right) $. Así, si $\displaystyle \tilde{\alpha} = \alpha \circ h^{-1} $, por lo que $\displaystyle \alpha\left(t\right)=\tilde{\alpha}\left(h\left(t\right)\right) $ y aplicando la regla de la cadena obtenemos que 
-		\[\alpha'\left(t_{0}\right)=\tilde{\alpha}'\left(h\left(t_{0}\right)\right)h'\left(t_{0}\right) \Rightarrow \alpha'\left(t_{0}\right)=\lambda \tilde{\alpha}\left(u_{0}\right) ,\]
+ Supongamos que $\displaystyle \tilde{\alpha} = \alpha \circ h^{-1} $, por lo que $\displaystyle \alpha\left(t\right)=\tilde{\alpha}\left(h\left(t\right)\right) $, por lo que si $\displaystyle u_{0}=h\left(t_{0}\right) $, entonces $\displaystyle \tilde{\alpha}\left(u_{0}\right)=\alpha\left(t_{0}\right) $. De esta forma, aplicando la regla de la cadena obtenemos que 
+		\[\alpha'\left(t_{0}\right)=\tilde{\alpha}'\left(h\left(t_{0}\right)\right)h'\left(t_{0}\right) \Rightarrow \alpha'\left(t_{0}\right)=\lambda \tilde{\alpha}'\left(u_{0}\right) ,\]
 	siendo $\displaystyle \lambda = h'\left(t_{0}\right) $. Así, son proporcionales y si $\displaystyle h'\left(t_{0}\right)>0 $ van en el mismo sentido y si $\displaystyle h'\left(t_{0}\right)<0 $ van en sentido opuesto. 
-\item Así, tenemos que $\displaystyle \alpha\left(u\right)=\alpha\left(t\right) $ con $\displaystyle u = u\left(t\right) $ y aplicando la regla de la cadena
-	\[\frac{d\alpha }{dt}=\frac{d\alpha }{du}\underbrace{\frac{du}{dt}}_{\lambda} .\]
-\end{enumerate}
 \end{observation}
-\subsection{Longitud de una curva parametrizada}
-Sea $\displaystyle \alpha\left(t\right) $ con $\displaystyle \left[a,b\right] \subset I $ una curva parametrizada. Calculamos la longitud entre $\displaystyle t = a $ y $\displaystyle t = b $. Dada la partición $\displaystyle P = \left\{ a < t_{1} < \cdots < t_{n-1}< b\right\}  $ y definimos 
+\subsection*{Longitud de una curva parametrizada}
+Sea $\displaystyle \alpha : I\to \R^{n} $ con $\displaystyle \left[a,b\right] \subset I $ una curva parametrizada. Calculamos la longitud entre $\displaystyle t = a $ y $\displaystyle t = b $. Dado $\displaystyle n \in \N $ tomamos la partición $\displaystyle P_{n} = \left\{ a < t_{1} < \cdots < t_{n-1}< b\right\}  $ con $\displaystyle t_{i}-t_{i-1}=\frac{b-a}{n} $ y definimos 
 \[ L_{n} := \sum^{n}_{i = 1} \|\alpha\left(t_{i}\right)-\alpha\left(t_{i-1}\right)\| .\]
-Así, la longitud que buscamos es $\displaystyle \ell^{b}_{a}\left(\alpha \right)= \lim_{n \to \infty}L_{n} $. Tenemos que 
+Una forma razonable de calcular la longitud que buscamos sería $\displaystyle \ell^{b}_{a}\left(\alpha \right)= \lim_{n \to \infty}L_{n} $. Aplicando el teorema del valor medio, $\displaystyle \forall i \in \left\{ 1, \ldots, n\right\}  $, $\displaystyle \exists\xi_{i} \in \left(t_{i-1}, t_{i}\right) $ tal que 
 \[
 \begin{split}
-\ell ^{b}_{a}\left(\alpha \right)=\lim_{n \to \infty}L_{n} = \lim_{n \to \infty}\sum^{n}_{i = 1} \|\alpha'\left(\xi_{i}\right)\left(t_{i}-t_{i-1}\right)\| = \lim_{n \to \infty}\sum^{n}_{i = 1}\|\alpha'\left(\xi_{i}\right)\|h = \int^{b}_{a} \|\alpha'\left(t\right)\| \; dt .
+	\ell ^{b}_{a}\left(\alpha \right)= &\lim_{n \to \infty}L_{n} = \lim_{n \to \infty}\sum^{n}_{i = 1}\|\alpha\left(t_{i}\right)-\alpha\left(t_{i-1}\right)\| = \lim_{n \to \infty}\sum^{n}_{i = 1} \|\alpha'\left(\xi_{i}\right)\left(t_{i}-t_{i-1}\right)\| \\
+	= &  \lim_{n \to \infty}\frac{b-a}{n}\sum^{n}_{i = 1}\|\alpha'\left(\xi_{i}\right)\| = \int^{b}_{a} \|\alpha'\left(t\right)\| \; dt  .
 \end{split}
 \]
 \begin{definition}[Longitud de una curva]
-Se llama \textbf{longitud} de $\displaystyle \alpha \left(t\right) $ entre $\displaystyle a $ y $\displaystyle b $ a
+	Sea $\displaystyle \alpha : I \to \R^{n} $ una curva y $\displaystyle \left[a,b\right] \subset I $. Se llama \textbf{longitud} de $\displaystyle \alpha \left(t\right) $ entre $\displaystyle a $ y $\displaystyle b $ a
 \[\ell^{b}_{a}\left(\alpha \right):=\int^{b}_{a} \|\alpha'\left(t\right)\| \; dt .\]
 \end{definition}
 \begin{prop}
-	Dada la curva $\displaystyle \alpha\left(t\right) $ reparametrizamos $\displaystyle u = h\left(t\right) $, entonces $\displaystyle \ell^{d}_{c}\left(\tilde{\alpha}\right)=\ell^{b}_{a}\left(\alpha \right) $. 
+	Sea $\displaystyle \alpha : I \to \R^{n} $ y $\displaystyle \tilde{\alpha} = \alpha \circ h^{-1} $ su reparametrización con cambio de parámetro $\displaystyle u = h\left(t\right) $. Si $\displaystyle \left[a,b\right] \subset I $ y $\displaystyle h^{-1}\left(\left[a,b\right] \right)=\left[c,d\right]  $, entonces $\displaystyle \ell^{d}_{c}\left(\tilde{\alpha}\right)=\ell^{b}_{a}\left(\alpha \right) $. 
 \end{prop}
 \begin{proof}
-Tenemos que 
-\[\ell ^{d}_{c}\left(\tilde{\alpha}\right) = & \int^{d}_{c} \|\tilde{\alpha}'\left(u\right)\| \; du = \int^{d}_{c} \left\|\frac{d\alpha}{du}\right\| \; du = \int^{d}_{c} \left\|\frac{d\alpha }{dt} \frac{dt}{du}\right\| \; du = \int^{d}_{c} \left\|\frac{d\alpha }{dt}\right\| \left|\frac{dt}{du}\right|\; du .\]
-% Esta demostración la hicimos con Mendoza, básicamente copiarla
+Aplicando el teorema de cambio de variable,
+\[
+	\ell^{b}_{a}\left(\alpha \right)=  \int^{b}_{a} \|\alpha'\left(t\right)\| \; dt = \int^{b}_{a} \|\tilde{\alpha}'\left(h\left(t\right)\right)\| \left|h\left(t\right)\right| \; dt = \int^{d}_{c} \|\tilde{\alpha}'\left(u\right)\| \; du = \ell^{d}_{c}\left(\tilde{\alpha}\right).
+\]
 \end{proof}
 \begin{definition}[Función espacio recorrido]
-Se llama \textbf{función espacio recorrido} $\displaystyle s : I \to \R $ desde $\displaystyle t_{0} \in I $ a 
-\[s\left(t\right)=\int^{t}_{t_{0}} \|\alpha'\left(t\right)\| \; dt .\]
+Dada una curva $\displaystyle \alpha : I \to \R^{n} $, se llama \textbf{función espacio recorrido} $\displaystyle s : I \to \R $ desde $\displaystyle t_{0} \in I $ a 
+\[s\left(t\right):=\int^{t}_{t_{0}} \|\alpha'\left(u\right)\| \; d u .\]
 \end{definition}
 \begin{observation}
 \begin{enumerate}
-	\item Si $\displaystyle t > t_{0} $, $\displaystyle \left[t_{0}, t\right] \subset I $ y tendremos que $\displaystyle s\left(t\right)=\ell^{t}_{t_{0}}\left(\alpha \right)\geq 0 $. 
-	\item Si $\displaystyle t < t_{0} $, $\displaystyle \left[t, t_{0}\right] \subset I $ y tendremos que $\displaystyle s\left(t\right)=-\ell^{t_{0}}_{t}\left(\alpha \right) $. 
+	\item Si $\displaystyle t > t_{0} $ y $\displaystyle \left[t_{0}, t\right] \subset I $, tendremos que $\displaystyle s\left(t\right)=\ell^{t}_{t_{0}}\left(\alpha \right)\geq 0 $. Similarmente, si $\displaystyle t < t_{0} $ y $\displaystyle \left[t, t_{0}\right] \subset I $, tendremos que $\displaystyle s\left(t\right)=-\ell^{t_{0}}_{t}\left(\alpha \right) $.
 	\item Si $\displaystyle t = t_{0} $ claramente $\displaystyle s\left(t_{0}\right)=0 $.
 	\item Tenemos que $\displaystyle v = \frac{d s}{dt}=\|\alpha'\left(t\right)\| $.
 	\item Si tomamos $\displaystyle t_{i}\in I $, la función $\displaystyle s_{1}\left(t\right)=\int^{t}_{t_{1}} \|\alpha'\|  = \int^{t_{0}}_{t_{1}} \|\alpha' \| + \int^{t}_{t_{0}} \|\alpha'\| = c_{0} + s\left(t\right) $.
-	\item También se llama a $\displaystyle s\left(t\right) $ longitud de arco.
+	\item También se llama a $\displaystyle s\left(t\right) $ \textbf{longitud de arco}.
 \end{enumerate}
 \end{observation}
 \begin{lema}
-Si $\displaystyle \alpha\left(t\right)  $ es una curva regular, entonces $\displaystyle s = s\left(t\right) $ eq un cambio de parámetros positivo.
+Si $\displaystyle \alpha\left(t\right)  $ es una curva regular, entonces $\displaystyle s = s\left(t\right) $ es un cambio de parámetros positivo.
 \end{lema}
 \begin{proof}
-Queda claro que $\displaystyle \frac{d s}{dt}= \|\alpha'\left(t\right)\| > 0 $.
+Está claro puesto que $\displaystyle \frac{d s}{dt}= \|\alpha'\left(t\right)\| > 0 $.
 \end{proof}
-\begin{definition}[Longitud de arco]
-Se llama $\displaystyle s\left(t\right) $ parametrización \textbf{longitud de arco}. Además, $\displaystyle \alpha\left(s\right)=\alpha\left(s\left(t\right)\right) $ es la reparametrización de $\displaystyle \alpha  $ por longitud de arco.
+\begin{definition}[Reparametrización longitud de arco]
+Al cambio de parámetros $\displaystyle s\left(t\right) $ se le llama parametrización \textbf{longitud de arco}. Además, $\displaystyle \alpha\left(s\right)=\alpha\left(s\left(t\right)\right) $ es la reparametrización de $\displaystyle \alpha  $ por longitud de arco (p.p.a).
 \end{definition}
-\begin{prop}
-$\displaystyle \alpha\left(s\right) $ verifica que $\displaystyle \left\|\frac{d \alpha }{d s}\right\| =1$. Recíprocamente, si $\displaystyle \alpha\left(t\right) $ verifica que $\displaystyle \left\|\frac{d\alpha }{dt}\right\| =1$, entonces $\displaystyle s = t $ es parámetro arco.
-\end{prop}
-\begin{proof}
-En primer lugar tenemos que 
-\[\left\|\frac{d \alpha }{d s}\right\| = \left\|\frac{d\alpha }{dt}\frac{dt}{d s}\right\| = \left\|\frac{d\alpha }{dt}\right\| \frac{dt }{d s} = \|\alpha'\|\frac{1}{\|\alpha'\|}=1 .\]
-Por otro lado, si $\displaystyle \left\|\frac{d\alpha }{dt}\right\| = 1 $, entonces
-\[s\left(t\right)=\int^{t}_{t_{0}} \left\|\frac{d\alpha }{dt}\right\| = \int^{t}_{t_{0}} 1 =t-t_{0} ,\]
-salvo constante.
-\end{proof}
+
 \begin{eg}
 	Consideremos la circunferencia $\displaystyle \alpha\left(t\right)=\left(R \cos t, R \sin t\right) $ con $\displaystyle t \in \left[0, 2\pi \right]  $. Tenemos que $\displaystyle \alpha'\left(t\right)=\left(-R\sin t, R \cos t\right) $, por lo que $\displaystyle \|\alpha'\left(t\right)\| = R $ y 
 	\[\ell^{2\pi }_{0}\left(\alpha \right)=\int^{2\pi }_{0} \|\alpha'\left(t\right)\| \; dt = 2\pi R .\]
@@ -339,7 +334,301 @@ Así, $\displaystyle t = \frac{s}{R} $ y nos queda que
 \[\alpha\left(s\right)=\left(R\cos \frac{s}{R}, R\sin \frac{s}{R}\right) .\]
 Esta es la circunferencia reparametrizada por longitud de arco con $\displaystyle s \in \left[0, 2\pi R\right]  $. 
 \end{eg}
+\begin{eg}[Cicloide]
+Cogemos $\displaystyle t \in \R $ y la parametrización es
+\[
+\begin{cases}
+x = t - \sin t \\
+y = 1- \cos t
+\end{cases}
+.\]
+Así, tenemos que la curva será $\displaystyle \alpha\left(t\right)=\left(t-t\sin t, 1-\cos t\right) $ y por tanto $\displaystyle \alpha'\left(t\right)=\left(1-\cos t, \sin t\right) $. Así, 
+\[\|\alpha'\left(t\right)\| = \sqrt{\left(1-\cos t\right)^{2}+ \sin ^{2}t} = \sqrt{2 - 2 \cos t} =2\sqrt{\frac{1-\cos t}{2}} = 2 \left|\sin \frac{t}{2}\right| = 2\sin \frac{t}{2}.\]
+Tenemos que $\displaystyle \|\alpha'\left(t\right)\| = 0 $ en $\displaystyle t = 2k\pi  $ con $\displaystyle k \in \Z $. Como la función es $\displaystyle 2\pi  $-periódica, nos restringimos a $\displaystyle t \in \left(0,2\pi \right) $ donde $\displaystyle \alpha\left(t\right) $ es regular. Hallamos el parámetro longitud de arco cogiendo $\displaystyle t_{0} = \pi  $:
+\[s\left(t\right)=\int^{t}_{\pi} \|\alpha'\left(t\right)\| \; dt = -4\cos \frac{t}{2} .\]
+Así, tenemos que para $\displaystyle t \in \left(0,2\pi \right) $, $\displaystyle s \in \left(-4,4\right) $.
+Reparametrizamos por el arco:
+\[\frac{s}{-4}= \cos\frac{t}{2} \iff t = 2\arccos\left(-\frac{s}{4}\right) .\]
+De esta forma, 
+\[\alpha\left(s\right)=\left(2\arccos\left(-\frac{s}{4}\right)+\frac{s\sqrt{16-s^{2}}}{8}, \frac{16- s^{2}}{8}\right) .\]
+\end{eg}
+
+\begin{prop}
+	Sea $\displaystyle \alpha : I \to \R^{n} $ una curva. 
+	\begin{enumerate}
+	\item Si $\displaystyle \alpha  $ es regular, $\displaystyle \alpha\left(s\right) $ verifica que $\displaystyle \left\|\frac{d \alpha }{d s}\right\| =1$.
+	\item Si $\displaystyle \alpha\left(t\right) $ verifica que $\displaystyle \left\|\frac{d\alpha }{dt}\right\| =1$, entonces $\displaystyle s = t $ es parámetro arco (salvo por una constante).
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Supongamos que $\displaystyle \alpha : I \to \R^{n} $ es una curva.
+	\begin{enumerate}
+		\item Como $\displaystyle \tilde{\alpha}\left(s\right)=\alpha \circ s^{-1} $, tendremos que 
+			\[ \|\tilde{\alpha}'\left(s\right)\| = \|\alpha'\left(s^{-1}\left(t\right)\right)\|\frac{1}{ \left|s'\left(s^{-1}\left(t\right)\right)\right|} = 1 .\]
+\item Por otro lado, si $\displaystyle \left\|\frac{d\alpha }{dt}\right\| = 1 $, entonces
+\[s\left(t\right)=\int^{t}_{t_{0}} \left\|\frac{d\alpha }{dt}\right\| = \int^{t}_{t_{0}} 1 =t-t_{0} .\]
+	\end{enumerate}
+\end{proof}
 \begin{observation}
 Con el parámetro arco, para cualquier curva se tiene que $\displaystyle \ell^{b}_{a}\left(\alpha\left(s\right)\right) = b-a $. 
 \end{observation}
+\section{Diedro de Frenet y curvatura}
+\begin{notation}
+	La matriz del giro de $\displaystyle \frac{\pi }{2} $ en sentido positivo es $\displaystyle J = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} $. De esta forma, para $\displaystyle \left(a,b\right)\in \R^{2} $, 
+	\[J\begin{pmatrix} a \\ b \end{pmatrix}=\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} a \\b \end{pmatrix} = \begin{pmatrix} b \\ - a \end{pmatrix} .\]
+	Así, tenemos que $\displaystyle \left\{ \begin{pmatrix} a \\ b \end{pmatrix}, \begin{pmatrix} -b \\ a \end{pmatrix}\right\}  $ es una base positiva \footnote{Esto quiere decir que el determinante es positivo.}.
+\end{notation}
+
+\begin{definition}[Diedro de Frenet]
+Sea $\displaystyle \alpha : I \to \R^{2} $ una curva regular y $\displaystyle t_{0} \in I $.
+\begin{itemize}
+\item Se llama \textbf{vector tangente} a $\displaystyle \alpha  $ en $\displaystyle t_{0} $ a
+	\[\hat{t}_{\alpha }\left(t_{0}\right) = \frac{\alpha'\left(t_{0}\right)}{\|\alpha'\left(t_{0}\right)\|} .\]
+\item Se llama \textbf{vector normal} a $\displaystyle \alpha  $ en $\displaystyle t_{0} $ a
+	\[\hat{n}_{\alpha }\left(t_{0}\right)=J \hat{t}_{\alpha }\left(t_{0}\right) .\]
+\end{itemize}
+Se llama \textbf{diedro de Frénet} a $\displaystyle \left\{ \hat{t}_{\alpha }\left(t\right), \hat{n}_{\alpha }\left(t\right)\right\}  $. 
+\end{definition}
+
+\begin{notation}
+Diedro significa base ortonormal positiva. 
+\end{notation}
+\begin{eg}[Cicloide]
+	Tendremos que el vector tangente a $\displaystyle \alpha  $ en $\displaystyle t_{0} \in I $ será
+	\[\hat{t}_{\alpha }\left(t_{0}\right)=\frac{\left(1-\cos t_{0}, \sin t_{0}\right)}{2\sin \frac{t_{0}}{2}} = \left(\sin \frac{t_{0}}{2}, \cos \frac{t_{0}}{2}\right) .\]
+\end{eg}
+\begin{eg}
+Consideremos 
+\[\alpha\left(s\right)=\left(2\arccos\left(-\frac{s}{4}\right) + \frac{s\sqrt{16-s^{2}}}{8}, \frac{16-s^{2}}{8}\right) .\]
+Tendremos que 
+\[\hat{t}_{\alpha }= \alpha'\left(s\right)= \text{calcular} .\]
+Alternativametne, podemos calcular $\displaystyle \alpha'\left(t\right) $ y $\displaystyle \|\alpha'\left(t\right)\| $ y calcular de esta forma $\displaystyle \hat{t}_{\alpha }\left(t\right) $. 
+\end{eg}
+\begin{lema}
+Dada una curva regular $\displaystyle \alpha : I \to \R^{2} $, los vectores $\displaystyle \hat{t}_{\alpha } $ y $\displaystyle \hat{n}_{\alpha } $ no dependen de reparametrizaciones positivas.
+\end{lema}
+\begin{proof}
+	Sea $\displaystyle u = h\left(t\right) $ un cambio de parámetros positivo y sea $\displaystyle \tilde{\alpha} = \alpha \circ h^{-1} $ la reparametrización correspondiente. Tendremos que 
+	\[\hat{t}_{\alpha }\left(t\right)=\frac{\alpha'\left(t\right)}{\|\alpha'\left(t\right)\|}=\frac{\tilde{\alpha}'\left(h\left(t\right)\right) h'\left(t\right)}{\|\tilde{\alpha}'\left(h\left(t\right)\right) \|h'\left(t\right)} = \hat{t}_{\tilde{\alpha}}\left(u\right) .\]
+	De aquí se sigue la independencia de $\displaystyle \hat{n}_{\alpha } $ respecto de reparametrizaciones puesto que $\displaystyle \hat{n}_{\alpha } = J\hat{t}_{\alpha } $. 
+\end{proof}
+
+\begin{prop}
+Si $\displaystyle \alpha : I \to \R^{2} $ es una curva regular, $\displaystyle \hat{t}_{\alpha }\left(t\right)= \frac{d\alpha }{d s} $. 
+\end{prop}
+\begin{proof}
+	Sabemos que si $\displaystyle \alpha : I \to \R^{2} $ es una curva regular, entonces se puede parametrizar por longitud de arco. Así, podemos coger $\displaystyle \tilde{\alpha}\left(s\left(t\right)\right)=\alpha\left(t\right) $, por lo que 
+	\[\hat{t}_{\alpha }\left(t\right)=\frac{\alpha'\left(t\right)}{\|\alpha'\left(t\right)\|}=\frac{\tilde{\alpha}'\left(s\left(t\right)\right)s'\left(t\right)}{\|\tilde{\alpha}'\left(s\left(t\right)\right)\| s'\left(t\right)} = \frac{\tilde{\alpha}'\left(s\left(t\right)\right)}{\|\tilde{\alpha}'\left(s\left(t\right)\right)\|} .\]
+	Como $\displaystyle \|\tilde{\alpha}'\left(s\left(t\right)\right)\| = 1 $ tendremos que $\displaystyle \hat{t}_{\alpha }\left(t\right)=\tilde{\alpha}'\left(s\left(t\right)\right) $. Otra forma de ver la demostración es con la notación de diferenciales:
+	\[\hat{t}_{\alpha }\left(t\right)=\frac{\frac{d\alpha }{dt}}{\left\|\frac{d\alpha }{dt}\right\|}= \frac{\frac{d\alpha }{d s} \cdot \frac{d s}{dt}}{\left\|\frac{d\alpha }{d s}\right\|\frac{d s}{dt}} = \frac{\frac{d\alpha }{d s}}{\left\|\frac{d\alpha }{d s}\right\|}= \frac{d\alpha }{d s}.\]
+\end{proof}
+
+\begin{observation}
+Si $\displaystyle \alpha \left(s\right) $ está p.p.a entonces $\displaystyle \hat{t}_{\alpha }\left(s\right)=\alpha'\left(s\right) $. 
+\end{observation}
+
+\begin{lema}
+Sea $\displaystyle \hat{v} : J \subset \R \to \R^{n} : \lambda \to \hat{v}\left(\lambda\right)$. Existe $\displaystyle C \geq 0 $ tal que $\displaystyle \|\hat{v}\left(\lambda \right)\| \equiv C $ si y sólo si $\displaystyle \vec{v}'\left(\lambda \right)\perp \vec{v}\left(\lambda \right) $ \footnote{Estamos asumiendo que $\displaystyle \hat{v} $ ni su derivada son idénticamente nulas.} . 
+\end{lema}
+\begin{proof}
+Tenemos que $\displaystyle \|\vec{v}\left(\lambda \right)\|^{2} = C $, es decir, $\displaystyle \left\langle \vec{v}\left(\lambda \right), \vec{v}\left(\lambda \right) \right\rangle = C $. Por tanto, 
+\[\frac{d}{d\lambda }\left\langle \vec{v}\left(\lambda \right), \vec{v}\left(\lambda \right) \right\rangle = \left\langle \frac{d\vec{v}}{d\lambda }, \vec{v} \right\rangle +\left\langle \vec{v},\frac{d\vec{v}}{d\lambda}  \right\rangle =  0 \iff \frac{d\vec{v}}{d\lambda }\perp \vec{v} .\]
+\end{proof}
+\begin{colorary}
+Dada una curva regular $\displaystyle \alpha : I \to \R^{2} $, se tiene que $\displaystyle \frac{d\hat{t}_{\alpha }}{dt}\perp \hat{t}_{\alpha } $.
+\end{colorary}
+\begin{proof}
+Trivial a partir del lema anterior puesto que $\displaystyle \|\hat{t}_{\alpha }\| \equiv 1 $. 
+\end{proof}
+\begin{definition}[Curvatura]
+Dada una curva regular $\displaystyle \alpha : I \to \R^{2} $ p.p.a, se llama \textbf{curvatura} de $\displaystyle \alpha  $ en $\displaystyle s_{0} $ a $\displaystyle \kappa_{\alpha }\left(s_{0}\right) $ tal que
+\[\alpha''\left(s_{0}\right)=\frac{d\hat{t}_{\alpha }}{d s}|_{s_{0}} = \kappa_{\alpha }\left(s_{0}\right) \hat{n}_{\alpha }\left(s_{0}\right) .\]
+\end{definition}
+
+\begin{prop}
+Sea $\displaystyle \alpha : I \to \R^{2} $ una curva regular.
+\begin{enumerate}
+\item $\displaystyle \kappa_{\alpha }=\left\langle \frac{d\hat{t}_{\alpha }}{d s}, \hat{n}_{\alpha } \right\rangle $. 
+\item $\displaystyle \kappa_{\alpha }\hat{n}_{\alpha }=\alpha''\left(s\right)$ y $ \|\kappa_{\alpha }\hat{n}_{\alpha }\|= \left|\kappa_{\alpha}\right| = \|\alpha''\left(s\right)\| $.
+\item $\displaystyle \kappa_{\alpha } \equiv 0 $ si y sólo si $\displaystyle \alpha\left(s\right) $ es una recta.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Sea $\displaystyle \alpha : I \to \R^{2} $ una curva regular.
+\begin{enumerate}
+\item Como $\displaystyle \frac{d\hat{t}_{\alpha }}{d s}= \kappa_{\alpha }\hat{n}_{\alpha } $, tenemos que 
+	\[\left\langle \frac{d\hat{t}_{\alpha }}{d s}, \hat{n}_{\alpha } \right\rangle =\left\langle \kappa_{\alpha }\hat{n}_{\alpha }, \hat{n}_{\alpha } \right\rangle =\kappa_{\alpha } .\]
+\item Si $\displaystyle \alpha\left(s\right) $ está p.p.a, entonces $\displaystyle \hat{t}_{\alpha }\left(s\right)=\alpha'\left(s\right) $ y $\displaystyle \hat{t}_{\alpha}'\left(s\right)=\frac{d\hat{t}_{\alpha }}{d s}=\alpha''\left(s\right) $.
+\item Tenemos que $\displaystyle \kappa_{\alpha }\equiv 0 $ si y solo si $\displaystyle \alpha''\left(s\right)\equiv 0 $ si y solo si $\displaystyle \alpha'\left(s\right)=v_{0} $ si y solo si $\displaystyle \alpha\left(s\right)=P_{0} + v_{0}s $, con $\displaystyle \|v_{0}\| = 1 $.
+\end{enumerate}
+\end{proof}
+\begin{observation}
+En la base canónica, $\displaystyle \hat{t}_{\alpha }\left(s\right)=\left(\cos\theta\left(s\right), \sin\theta\left(s\right)\right) $, siendo $\displaystyle \theta\left(s\right) $ el ángulo que forman los vectores $\displaystyle \hat{t}_{\alpha }\left(s\right) $ y $\displaystyle \vec{e}_{1} $. Así, tendremos que 
+	\[\frac{d\hat{t}_{\alpha }}{d s}=\left(-\sin\theta\left(s\right)\theta'\left(s\right), \cos\theta\left(s\right)\theta'\left(s\right)\right) = \theta'\left(s\right)\hat{n}_{\alpha }\left(s\right) .\]
+Por tanto, 
+\[\kappa_{\alpha }\left(s\right)=\frac{d\theta }{d s} .\]
+Así, si $\displaystyle \frac{d\theta }{d s} > 0 $, tenemos que $\displaystyle \theta\left(s\right) $ es creciente y $\displaystyle \kappa_{\alpha }\left(s\right) > 0 $. Geométricamente, supondría que el cuerpo gira a la izquierda. Análogamente, si $\displaystyle \frac{ d\theta }{d s} < 0 $ tenemos que $\displaystyle \theta\left(s\right) $ es decreciente y $\displaystyle \kappa_{\alpha }\left(s\right) < 0 $. En este caso, el cuerpo gira a la derecha. 
+\end{observation}
+
+\begin{observation}[Parametrización con signo opuesto]
+Si reparametrizamos en sentido opuesto cogiendo $\displaystyle \beta\left(s\right)=\alpha\left(-s\right) $, tenemos que 
+\[
+\begin{cases}
+\hat{t}_{\beta }\left(s\right) = -\hat{t}_{\alpha }\left(-s\right) \\
+\hat{t}_{\beta }\left(s\right)=J\hat{t}_{\beta }=-J\hat{t}_{\alpha }=-\hat{n}_{\alpha }\left(s\right)
+\end{cases}
+.\]
+Así, tenemos que 
+\[\beta''\left(s\right)=\alpha''\left(-s\right)=\kappa_{\alpha }\left(s\right)\hat{n}_{\alpha }\left(-s\right)=-\kappa_{\alpha }\left(-s\right)\hat{n}_{\beta }\left(s\right) .\]
+De esta forma, $\displaystyle \kappa_{\beta }\left(s\right)=-\kappa_{\alpha }\left(-s\right) $. Así, si cambiamos el signo obtenemos la curvatura opuesta.
+\end{observation}
+
+\begin{observation}[Curvatura respecto de $\displaystyle t $]
+Es sencillo ver que 
+\[\frac{d\hat{t}_{\alpha }}{dt} = \frac{d\hat{t}_{\alpha }}{d s}\frac{d s}{dt}=v\kappa_{\alpha }\hat{n}_{\alpha }, \; v = \frac{d s}{dt}= \left\|\frac{d\alpha }{dt}\right\| .\]
+\end{observation}
+
+\begin{eg}[Cicloide]
+Sea $\displaystyle \alpha\left(t\right)=\left(t-\sin t, 1-\cos t\right) $. Tenemos que 
+\[\hat{t}_{\alpha }=\left(\sin \frac{t}{2}, \cos \frac{t}{2}\right), \quad \alpha'\left(t\right)=\left(1-\cos t, \sin t\right), \; v = \|\alpha'\left(t\right)\| = 2 \sin t .\]
+Tendremos que $\displaystyle \hat{n}_{\alpha }=\left(\cos \frac{t}{2}, -\sin \frac{t}{2}\right) $. Por otro lado, 
+\[\frac{d\hat{t}_{\alpha }}{dt}=v\kappa_{\alpha}\hat{n}_{\alpha} .\]
+\[\left(\frac{1}{2}\cos\frac{t}{2}, -\frac{1}{2}\sin \frac{t}{2}\right)=2\sin \frac{t}{2}\kappa_{\alpha }\left(\cos \frac{t}{2}, \sin \frac{t}{2}\right) \Rightarrow \frac{1}{2} = 2\sin \frac{t}{2}\kappa_{\alpha } \Rightarrow \kappa_{\alpha }\left(t\right)=-\frac{1}{4\sin \frac{t}{2}} .\]
+Si lo hacemos con la longitud de arco, 
+\[\cos \frac{t}{2} = - \frac{s}{4}, \quad \sin \frac{t}{2} = \sqrt{1-\left(\frac{s}{4}\right)^{2}} = \frac{\sqrt{16-s^{2}}}{4}, \quad \kappa_{\alpha }=\frac{1}{\sqrt{16-s^{2}}} .\]
+\end{eg}
+\begin{theorem}[Teorema de Frénet]
+	Sea $\displaystyle \alpha : I \to \R^{n} $ una curva regular. Entonces, 
+\[\frac{d\hat{t}_{\alpha }}{d s}= \kappa_{\alpha }\hat{n}_{\alpha} \quad \text{y} \quad
+\frac{d\hat{n}_{\alpha }}{d s}= -\kappa_{\alpha \hat{t}_{\alpha}} .\]
+Equivalentemente, 
+\[\frac{d\hat{t}_{\alpha }}{dt}= v\kappa_{\alpha }\hat{n}_{\alpha } \quad \text{y} \quad \frac{d\hat{n}_{\alpha }}{dt}= - v\kappa_{\alpha }\hat{t}_{\alpha } .\]
+\end{theorem}
+\begin{proof}
+La primera igualdad se sigue por definición. Por otro lado, 
+\[\frac{d\hat{n}_{\alpha }}{d s}= \frac{d\left(J\hat{t}_{\alpha }\right)}{d s}=J\left(\frac{d\hat{t}_{\alpha }}{d s}\right) =J\left(\kappa_{\alpha }\right)=\kappa_{\alpha }\left(J\hat{n}_{\alpha }\right) =\kappa_{\alpha }\left(-\hat{t}_{\alpha }\right)=-\kappa_{\alpha }\hat{t}_{\alpha}.\]
+\end{proof}
+
+\begin{observation}
+Se puede usar la regla pnemotécnica:
+\[\begin{pmatrix} \hat{t}_{\alpha }'\left(s\right) \\ \hat{n}_{\alpha }'\left(s\right) \end{pmatrix}=\begin{pmatrix} 0 & \kappa_{\alpha } \\-\kappa_{\alpha } & 0 \end{pmatrix}\begin{pmatrix} \hat{t}_{\alpha }\\\hat{n}_{\alpha } \end{pmatrix} .\]
+\end{observation}
+
+\begin{prop}
+	Sea $\displaystyle \alpha : I \to \R^{2} $ una curva regular. Entonces,
+	$\displaystyle \alpha\left(t\right) $ es un trozo de circunferencia si y solo si $\displaystyle \kappa_{\alpha }\left(t\right)\equiv k_{0} $ para algún $\displaystyle k_{0} \in \R/ \left\{ 0\right\}  $. 
+\end{prop}
+\begin{proof}
+Vamos a reparametrizar por arco. Tenemos que $\displaystyle \alpha\left(s\right) $ es circunferencia si y solo si $\displaystyle \kappa_{\alpha }\equiv k_{0} $, es decir, $\displaystyle \frac{d\hat{t}_{\alpha }}{d s}\equiv k_{0} $ es lo que queremos demostrar.
+\begin{description}
+\item[($\displaystyle \Rightarrow $)] Supongamos que $\displaystyle \alpha \left(s\right) $ es una circunferencia centrada en el origen de radio $\displaystyle R $. Tenemos que 
+	\[\alpha\left(s\right)=\left(R\cos \frac{s}{R}, R \sin \frac{s}{R}\right) \Rightarrow
+	\begin{cases}
+	\hat{t}_{\alpha }\left(s\right)=\alpha'\left(s\right)=\left(-\sin \frac{s}{R}, \cos \frac{s}{R}\right) \\
+	\hat{n}_{\alpha }=\left(-\cos\frac{s}{R}, -\sin \frac{s}{R}\right)
+	\end{cases}
+	.\]
+	Así, nos queda que 
+	\[\alpha''\left(s\right)=\left(-\frac{1}{R}\cos \frac{s}{R}, -\frac{1}{R}\sin \frac{s}{R}\right)\Rightarrow \kappa_{\alpha }\left(s\right)= \frac{1}{R} .\]
+Ya vimos que $\displaystyle \kappa_{\alpha }\left(-s\right)=-\frac{1}{R} $. En el primer caso, el centro de la circunferencia viene dado por
+\[C_{0}= \alpha\left(s\right) + R \hat{n}\left(s\right)= \alpha\left(s\right)+\frac{1}{\kappa_{\alpha }}\hat{n}\left(s\right) .\]
+En el segundo caso, 
+\[C_{0}=\alpha\left(s\right)-R\hat{n}\left(s\right)=\alpha\left(s\right)+\frac{1}{\kappa_{\alpha }}\hat{n}_{\alpha }\left(s\right) .\]
+\item[($\displaystyle \Leftarrow $)] Defimimos $\displaystyle C\left(s\right)=\alpha\left(s\right)+\frac{1}{\kappa_{\alpha}}\hat{n}_{\alpha }\left(s\right) $ y veamos que $\displaystyle C\left(s\right)=C_{0} $:
+	\[C'\left(s\right)=\alpha'\left(s\right)+\frac{1}{\kappa_{\alpha}}\hat{n}_{\alpha }'=\hat{t}_{\alpha }+\frac{1}{\kappa_{\alpha }}\left(-\kappa_{\alpha }\hat{t}_{\alpha }\right)=0 .\]
+	Así, tenemos que $\displaystyle C\left(s\right) $ es fijo. Ahora, queremos ver que $\displaystyle \|\alpha\left(s\right)-C_{0}\| $ es constante. Tenemos que
+	\[ \alpha\left(s\right)-C_{0}=-\frac{1}{\kappa_{\alpha }}\hat{n}_{\alpha } .\]
+De esta forma, 
+\[\|\alpha\left(s\right)-C_{0}\|=\sqrt{\frac{1}{\kappa_{\alpha }^{2}}} = \frac{1}{ \left|\kappa_{\alpha }\right|} .\]
+Tenemos así que $\displaystyle R = \frac{1}{ \left|\kappa_{\alpha }\right|} $. 
+\end{description}
+\end{proof}
+\begin{definition}[Centro de curvatura y circunferencia osculadora]
+Dada una curva regular $\displaystyle \alpha: I \to \R^{2} $, decimos que el \textbf{centro de curvatura} de $\displaystyle \alpha\left(s\right) $ es el punto
+\[C\left(s\right):=\alpha\left(s\right)+\frac{1}{\kappa_{\alpha }\left(s\right)}\hat{n}_{\alpha }\left(s\right) .\]
+La \textbf{circunferencia osculadora} es la circunferencia de centro $\displaystyle C\left(s_{0}\right) $ y radio $\displaystyle R = \frac{1}{ \left|\kappa_{\alpha }\left(s_{0}\right)\right|} $.
+\end{definition}
+\begin{prop}
+Si $\displaystyle \alpha\left(s\right) $ es regular con $\displaystyle \kappa_{\alpha }\left(s_{0}\right)\neq 0 $ y $\displaystyle \beta\left(s\right) $ es la circunferencia con centro $\displaystyle C_{0}=C\left(s_{0}\right) $ y radio $\displaystyle R = \frac{1}{ \left|\kappa_{\alpha }\left(s_{0}\right)\right|} $ (ajustamos $\displaystyle \beta\left(s_{0}\right)=\alpha\left(s_{0}\right)=P_{0} $, con el mismo sentido de giro en $\displaystyle \alpha  $ y $\displaystyle \beta  $).
+Entonces, existe $\displaystyle C \geq 0 $ tal que $\displaystyle \|\alpha\left(s\right)-\beta\left(s\right)\|\leq C \left|s-s_{0}\right|^{3} $. 
+\end{prop}
+\begin{proof}
+Sea $\displaystyle \alpha\left(s_{0}\right)=\beta\left(s_{0}\right)=P_{0} $. Sea $\displaystyle \beta  $ la circunferencia desde $\displaystyle C_{0} $ a $\displaystyle P_{0} $, por lo que $\displaystyle \hat{n}_{\beta } || \overrightarrow{C_{0}P_{0}} $. Por otro lado, 
+\[\overrightarrow{C_{0}P_{0}}=\alpha\left(s_{0}\right)-C_{0}=\frac{1}{ \left|\kappa_{\alpha }\right|}\hat{n}_{\alpha } ||\hat{n}_{\alpha } .\]
+Así, $\displaystyle \hat{n}_{\beta }\left(s_{0}\right) || \hat{n}_{\alpha }\left(s_{0}\right) $. Por tanto, $\displaystyle \hat{t}_{\alpha }\left(s_{0}\right) || \hat{t}_{\beta }\left(s_{0}\right) $. Como tenemos el mismo sentido de giro debe ser que $\displaystyle \alpha'\left(s_{0}\right)=\beta'\left(s_{0}\right) $, 
+\[\alpha''\left(s_{0}\right)=\kappa_{\alpha }\left(s_{0}\right)\hat{n}_{\alpha }\left(s_{0}\right) = \pm \frac{1}{R}\hat{n}_{\alpha }\left(s_{0}\right) = \kappa_{\beta }\left(s_{0}\right)\hat{n}_{\beta }\left(s_{0}\right)=\beta''\left(s_{0}\right) .\]
+Aplicando el teorema de Taylor, 
+\[\alpha\left(s\right) = \alpha\left(s_{0}\right) + \alpha'\left(s_{0}\right)\left(s-s_{0}\right) + \frac{\alpha''\left(s_{0}\right)}{2} \left(s-s_{0}\right)^{2} + \frac{\alpha'''\left(\xi\right)}{3!}\left(s-s_{0}\right)^{3} .\]
+\[\beta\left(s\right) = \beta\left(s_{0}\right)+\beta'\left(s_{0}\right)\left(s-s_{0}\right) + \frac{\beta''\left(s_{0}\right)}{2!}\left(s-s_{0}\right)^{2} + \frac{\beta'''\left(\xi\right)}{3!} \left(s-s_{0}\right)^{3} .\]
+
+En un intervalo $\displaystyle \left[s_{0}-\epsilon, s_{0} + \epsilon \right]  $ tenemos que $\displaystyle \|\alpha'''\| $ está acotado y $\displaystyle \|\beta'''\| $ también lo esta. Por tanto, 
+\[ \|\alpha\left(s\right)-\beta\left(s\right)\| \leq \frac{C\left(\|\alpha'''\| + \|\beta'''\|\right)}{6} \left|s-s_{0}\right|^{3} .\]
+\end{proof}
+\begin{theorem}
+Dada una curva regular $\displaystyle \alpha : I \to \R^{2} $, tenemos que 
+\[\kappa_{\alpha }\left(t\right)=\frac{\det\left(\alpha', \alpha''\right)}{\|\alpha'\|^{3}} .\]
+\end{theorem}
+\begin{proof}
+Es sencillo ver que 
+\[\det\left(\frac{d\alpha }{ dt}, \frac{d^{2}\alpha }{dt ^{2}}\right) = \det\left(v\hat{t}_{\alpha }, \frac{dv}{dt}\hat{t}_{\alpha } + \kappa_{\alpha }v^{2}\hat{n}_{\alpha }\right) = \begin{vmatrix} v & \frac{dv}{dt} \\ 0 & \kappa_{\alpha }v^{2} \end{vmatrix} =\kappa_{\alpha }v^{2} .\]
+Tenemos que $\displaystyle \kappa_{\alpha }=\frac{1}{v^{3}}\det\left(\frac{d\alpha }{dt}, \frac{d^{2}\alpha }{dt ^{2}}\right) $.
+\end{proof}
+
+\begin{observation}
+En el caso $\displaystyle t = s $ tenemos que como $\displaystyle \|\alpha'\left(s\right)\| = 1 $,
+\[\frac{\det\left(\frac{d\alpha }{d s}, \frac{d ^{2}\alpha }{d s^{2}}\right)}{\|\alpha'\left(s\right)\|^{3}} = \det\left(\hat{t}_{\alpha }, \kappa_{\alpha }\hat{n}_{\alpha }\right)=\kappa_{\alpha } .\]
+\end{observation}
+
+\begin{eg}
+Dada $\displaystyle \alpha\left(t\right)= \left(t, t^{2}\right)$, tenemos que $\displaystyle \alpha'\left(t\right)=\left(1, 2t\right) $ y $\displaystyle \alpha''\left(t\right)=\left(0,2\right) $. De esta forma, 
+\[\|\alpha'\left(t\right)\| = \sqrt{1 + 4t ^{2}} .\]
+Por tanto, 
+\[\kappa_{\alpha } = \frac{\det\left(\alpha', \alpha''\right)}{\|\alpha'\|^{3}} = \frac{1}{\left(\sqrt{1 + 4 t ^{2}}\right)}\begin{vmatrix} 1 & 0 \\ 2t & 2 \end{vmatrix} =\frac{2}{\left(1 + 4t ^{2}\right)^{\frac{3}{2}}} .\]
+Hacer esto con la longitud de arco es horrible, esta es la utilidad del ejemplo. En efecto, 
+\[s = \int \|\alpha'\left(t\right)\| \; dt = \int \sqrt{1 + 4t ^{2}} \; dt = \frac{2t\sqrt{1+4t ^{2}}}{4} + \frac{\log\left(2t + \sqrt{1 + 4t ^{2}}\right)}{4} .\]
+Podemos ver que no se puede despejar la $\displaystyle t $. Podemos calcular $\displaystyle \alpha'\left(s\right) $ de la siguiente forma
+\[\alpha'\left(s\right)=\frac{d\alpha }{d s} = \frac{d\alpha }{d t}\frac{dt}{d s} = \left(1, 2t\right)\frac{1}{\sqrt{1 + 4t ^{2}}} .\]
+Análogamente, 
+\[\alpha''\left(s\right)=\frac{d}{d s}\left(\frac{d\alpha }{d s}\right) = \frac{d}{dt}\left(\frac{d\alpha }{d s}\frac{dt}{d s}\right)=\frac{\left(-4t, 2\right)}{\left(1+4t ^{2}\right)^{2}} = \kappa_{\alpha }\hat{n}_{\alpha } .\]
+Así, nos queda que 
+\[\kappa_{\alpha }\hat{n}_{\alpha }=\kappa_{\alpha }\frac{\left(-2t, 1\right)}{\left(1 + 4t ^{2}\right)^{\frac{1}{2}}} \Rightarrow \kappa_{\alpha }=\frac{2}{\left(1 + 4t ^{2}\right)^{\frac{3}{2}}} .\]
+\end{eg}
+\begin{eg}[Cicloide]
+	Calculemos la curvatura de la cicloide. Recordamos que $\displaystyle \alpha\left(t\right)=\left(t-\sin t, 1- \cos t\right) $ y $\displaystyle \|\alpha'\| = 2\sin \frac{t}{2} $. Además, $\displaystyle s = -4\cos \frac{t}{2} $ por lo que 
+	\[\alpha\left(s\right)=\left(2\arccos\left(-\frac{s}{4}\right)+ s\frac{\sqrt{16-s ^{2}}}{8}, \frac{16-s^{2}}{8}\right) .\]
+Ya habíamos visto que $\displaystyle \hat{t}_{\alpha }=\left(\sin \frac{t}{2}, \cos \frac{t}{2}\right) $ y $\displaystyle \alpha'\left(s\right)=\left(\frac{\sqrt{16-s^{2}}}{4}, - \frac{s}{4}\right) $. Por un lado, 
+\[\hat{t}_{\alpha }\left(s\right)=\alpha'\left(s\right)=\left(\frac{16-s^{2}}{4}, - \frac{s}{4}\right) .\]
+\[\hat{n}_{\alpha }\left(s\right)=\left(-\frac{s}{4}, -\frac{\sqrt{16-s^{2}}}{4}\right) .\]
+\[\alpha''\left(s\right)=\left(-\frac{2s}{24\sqrt{16-s^{2}}}, -\frac{1}{4}\right)=\kappa_{\alpha }\hat{n}_{\alpha } .\]
+Por otro lado, 
+\[\kappa_{\alpha }=\frac{\det\left(\alpha'\left(t\right), \alpha''\left(t\right)\right)}{\|\alpha'\left(t\right)\|^{3}}=-\frac{1}{4\sin \frac{t}{2}} .\]
+\end{eg}
+\section{Curvas congruentes y teorema de congruencia}
+\begin{definition}[Isometría lineal]
+Se define \textbf{isometría lineal} como una aplicación $\displaystyle A : \R^{n} \to \R^{n} $ con $\displaystyle A \in \mathcal{M}_{n \times n}\left(\R\right) $ tal que $\displaystyle A^{t}A = I $ y $\displaystyle A^{-1}=A^{t} $. Además verifican 
+\[\left\langle AX, AY \right\rangle =\left(AX\right)^{t}AY =X^{t}A^{t}AY = X^{t}Y = \left\langle X, Y \right\rangle .\]
+Es decir, preserva el producto escalar. Además $\displaystyle A $ es una matriz ortonormal y $\displaystyle \det\left(A\right)=1 $. Si $\displaystyle \det\left(A\right)=-1 $ decimos que es una isometría negativa. 
+\end{definition}
+\begin{eg}
+En $\displaystyle \R^{2} $, una isometría positiva puede ser un giro de ángulo $\displaystyle \theta $ y tiene la forma
+\[A = \begin{pmatrix}  \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{pmatrix} .\]
+Análogamente, el giro en sentido contrario
+\[A =\begin{pmatrix} \cos \theta & \sin \theta \\ \sin \theta & -\cos\theta  \end{pmatrix} .\]
+\end{eg}
+\begin{definition}[Movimiento rígido]
+Son las isometrías afines. Es decir, son aplicaciones de la forma $\displaystyle \varphi : \R^{n} \to \R^{n} : X \to AX + B $ con $\displaystyle A \in O_{n} $ y $\displaystyle B \in \R^{n} $. En forma matricial son de la forma
+\[\begin{pmatrix} 1 & 0 \\ B & A \end{pmatrix} .\]
+Las distancias se preservan:
+\[ .\]
+\[
+\begin{split}
+	d\left(\varphi\left(X\right), \varphi\left(A\right)\right) = & \|\varphi\left(X\right)-\varphi\left(Y\right)\| \\
+	= &  \|\left(AX + B\right)-\left(AY + B\right)\| = \|A\left(X-Y\right)\| = \|X-Y\| = d\left(X,Y\right).
+\end{split}
+\]
+Hay movimiento rígidos positivos y negativos. 
+\end{definition}
+\begin{definition}[Curvas congruentes]
+Dos curvas $\displaystyle \alpha, \beta : J \to \R^{2} $ son \textbf{congruentes} si existe $\displaystyle \varphi:\R^{2} \to \R^{2} $ movimiento rígido (pos/neg) con $\displaystyle \beta\left(t\right)=\varphi\left(\alpha\left(t\right)\right) $. 
+\end{definition}
 

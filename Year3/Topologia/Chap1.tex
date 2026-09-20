@@ -265,6 +265,7 @@ Consideremos los siguientes ejemplos.
 \end{eg}
 
 \section{Bases}
+\subsection{Bases de entornos}
 
 \begin{definition}[Base de entornos de un punto]
 Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\displaystyle x \in X $. Una colección $\displaystyle \mathcal{V}\left(x\right) $ de entornos de $\displaystyle x $ es una \textbf{base de entornos} de $\displaystyle x $ si todo entorno de $\displaystyle x $ contiene alguno de los elementos de $\displaystyle \mathcal{V}\left(x\right) $.
@@ -306,6 +307,7 @@ Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\disp
 \begin{proof}
 Se sigue directamente de la proposición anterior.
 \end{proof}
+\subsection{Base de una topología}
 
 \begin{definition}[Base de una topología]
 	Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico. Decimos que $\displaystyle \mathcal{B} = \left\{ B_{i}\right\} _{i \in I}\subset \mathcal{T} $ es una \textbf{base} de $\displaystyle \mathcal{T} $ si $\displaystyle \forall U \in \mathcal{T} $, existe $\displaystyle J \subset I $ tal que $\displaystyle U = \bigcup_{j \in J}B_{j} $.
@@ -346,7 +348,6 @@ Sea $\displaystyle \mathcal{B} $ una base de $\displaystyle \mathcal{T} $.
 \end{enumerate}
 \end{proof}
 
-\section{Construcción de un topología en $\displaystyle X \neq \emptyset $}
 Dado un conjunto $\displaystyle X $, cogemos $\displaystyle \mathcal{B}\subset \mathcal{P}\left(X\right) $. 
 \begin{definition}[Base de una topología]
 Diremos que $\displaystyle \mathcal{B} $ es base de una topología de $\displaystyle X $ si 
@@ -370,4 +371,140 @@ Verifiquemos primero que $\displaystyle \mathcal{T}_{\mathcal{B}} $ es una topol
 \end{enumerate}
 Comprobemos ahora la unicidad. Si $\displaystyle \mathcal{B} $ es base de otra topología $\displaystyle \mathcal{T}' $ tendremos que sus conjuntos serán los que se pueden expresar como unión de conjuntos de $\displaystyle \mathcal{B} $, pero estos son precisamente los conjuntos de $\displaystyle \mathcal{T} $. 
 \end{proof}
+\begin{eg}
+	En $\displaystyle \left(\R^{2}, \mathcal{T}_{u}\right) $, sabemos que una base será $\displaystyle \mathcal{B}= \left\{ B\left(x, \epsilon \right) \; : \; x \in \R^{2}, \epsilon > 0\right\}  $. Sin embargo, podemos encontrar una base más pequeña, como por ejemplo  
+\[\left\{ B\left(\left(q_{1}, q_{2}\right), \frac{1}{n}\right) \; : \; \left(q_{1}, q_{2}\right)\in \Q^{2}, n \in \N\right\} .\]
+\end{eg}
+\subsection{Subbases}
+
+\begin{definition}[Subbase]
+Dado un espacio topológico y una colección $\displaystyle \mathcal{S}\subset \mathcal{P}\left(X\right) $, decimos que $\displaystyle \mathcal{S} $ es una \textbf{subbase} de $\displaystyle \mathcal{T} $ si el conjunto formado por todas las intersecciones finitas de conjuntos de $\displaystyle \mathcal{S} $ es una base de $\displaystyle \mathcal{T} $.
+\end{definition}
+\begin{observation}
+Si $\displaystyle \mathcal{B} $ es base, también es subbase. Además, necesariamente debe ser que
+\[\bigcup_{S \in \mathcal{S}}S = X .\]
+\end{observation}
+\begin{eg}
+En $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ tenemos que 
+\[\mathcal{S}= \left\{ \left(-\infty, b\right) \; : \; b \in \R\right\} \cup \left\{ \left(a, \infty \right) \; : \; a \in \R\right\}  ,\]
+es una subbase. En efecto, como $\displaystyle \mathcal{S}\subset \mathcal{T}_{u} $ tenemos que toda intersección finita de elementos de $\displaystyle \mathcal{S} $ es un abierto. Además, todo intervalo $\displaystyle \left(a,b\right) $ se puede expresar como intersección de dos elementos de $\displaystyle \mathcal{S} $:
+\[\left(a,b\right)=\left(-\infty, b\right)\cap \left(a, \infty\right) .\]
+Así, la colección de intersecciones finitas de elementos de $\displaystyle \mathcal{S} $ contiene la base que usamos habitualmente en la topología usual.
+\end{eg}
+\begin{prop}
+Tomando un conjunto arbitrario $\displaystyle X $ y una colección $\displaystyle \mathcal{S}\subset \mathcal{P}\left(X\right) $ tal que $\displaystyle X = \bigcup_{S \in \mathcal{S}}S $, existe una única topología $\displaystyle \mathcal{T}_{\mathcal{S}} $ tal que $\displaystyle \mathcal{S} $ es subbase de $\displaystyle \mathcal{T}_{\mathcal{S}} $. 
+\end{prop}
+\begin{proof}
+	Si tomamos $\displaystyle \mathcal{B} $ como el conjunto de todas las intersecciones finitas en $\displaystyle \mathcal{S} $, bastaría con ver que $\displaystyle \mathcal{B} $ es base de una topología de $\displaystyle X $. 
+	\begin{enumerate}
+	\item Se tiene que $\displaystyle X = \bigcup_{S \in \mathcal{S}}S $ por hipótesis. 
+	\item Sean $\displaystyle B_{1}, B_{2} \in \mathcal{B} $ con $\displaystyle B_{1} \cap B_{2}\neq \emptyset $. Si $\displaystyle x \in B_{1} \cap B_{2} $, podemos poner
+		\[B_{1} = S_{1,1} \cap \cdots \cap S_{1,m} \quad \text{y} \quad B_{2}= S_{2,1} \cap \cdots \cap S_{2,n} .\]
+		Así, tenemos que si tomamos $\displaystyle B_{3}=B_{1} \cap B_{2} $, $\displaystyle \mathcal{B}_{3}\in\mathcal{B} $ por ser intersección finita de elementos de $\displaystyle \mathcal{S} $ y además $\displaystyle x \in B_{3}\subset B_{1}\cap B_{2} $. 
+\end{enumerate}
+La unicidad se sigue de que la única base que puede formar $\displaystyle \mathcal{S} $ es $\displaystyle \mathcal{B} $ y de la unicidad proporcionada por la proposición anterior.
+\end{proof}
+\subsection{Determinación de una topología por entornos}
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y dado $\displaystyle x \in X $ consideramos el conjunto de entornos de $\displaystyle x $ 
+\[\mathcal{E}\left(x\right)= \left\{ V \subset X \; : \; V \; \text{entorno de }x\right\}  .\]
+Así, podemos definir la aplicación 
+\[\mathcal{E} : X \to \mathcal{P}\left(\mathcal{P}\left(X\right)\right) : x \to \mathcal{E}\left(x\right) .\]
+Esta aplicación satisface que:
+\begin{enumerate}
+\item Para cada $\displaystyle x \in X $, $\displaystyle \mathcal{E}\left(x\right)\neq \emptyset $. 
+\item Para todo $\displaystyle x \in X $ y para cada $\displaystyle V \in \mathcal{E}\left(x\right) $, se tiene que $\displaystyle x \in V $. 
+\item Para cada $\displaystyle x \in X $ si existe $\displaystyle M \subset X $ tal que existe $\displaystyle V \in \mathcal{E}\left(x\right) $ con $\displaystyle V \subset M $, entonces $\displaystyle M \in \mathcal{E}\left(x\right) $.
+\item Para cada $\displaystyle x \in X $, si $\displaystyle V_{1}, V_{2}\in \mathcal{E}\left(x\right) $ se tiene que $\displaystyle V_{1} \cap V_{2} \in \mathcal{E}\left(x\right) $. 
+\item Para cada $\displaystyle x \in X $ y para todo $\displaystyle  V \in \mathcal{E}\left(x\right) $, existe $\displaystyle W \in \mathcal{E}\left(x\right) $ tal que $\displaystyle x \in W \subset V $ y $\displaystyle \forall z \in W $, $\displaystyle W \in \mathcal{E}\left(z\right) $. 
+\end{enumerate}
+\begin{observation}
+Sabemos que los abiertos de $\displaystyle \left(X, \mathcal{T}\right) $ son exactamente aquellos que son entornos de todos sus puntos, es decir,
+\[G \in \mathcal{T} \iff \forall x \in G, G \in \mathcal{E}\left(x\right) .\]
+\end{observation}
+\begin{prop}
+Dado un conjunto arbitrario $\displaystyle X \neq \emptyset $, si existe una aplicación 
+\[\mathcal{E} : X \to \mathcal{P}\left(\mathcal{P}\left(X\right)\right) : x \to \mathcal{E}\left(x\right) ,\]
+que cumple las cinco propiedades descritas anteriormente, entonces existe una única topología $\displaystyle \mathcal{T}_{\mathcal{E}} $ en $\displaystyle X $ tal que para cada punto $\displaystyle x \in X $, la familia $\displaystyle \mathcal{E}\left(x\right) $ sea el sistema de entornos del punto $\displaystyle x $ en el espacio $\displaystyle \left(X, \mathcal{T}_{\mathcal{E}}\right) $.
+\end{prop}
+\begin{proof}
+	Consideremos $\displaystyle \mathcal{T}_{\mathcal{E}}= \left\{ G \subset X \; : \; G \in \mathcal{E}\left(x\right), \forall x \in G\right\}  $. Veamos que $\displaystyle \mathcal{T}_{\mathcal{E}} $ es una topología.
+	\begin{enumerate}
+	\item Es trivial que $\displaystyle \emptyset \in \mathcal{T}_{\mathcal{E}} $. Por otro lado, si $\displaystyle x \in X $, tenemos que $\displaystyle \mathcal{E}\left(x\right)\neq \emptyset $ por lo que existe $\displaystyle V \in \mathcal{E}\left(x\right) $ con $\displaystyle x \in V  $ y $\displaystyle V \subset X $. Por \textbf{(3)} tenemos que $\displaystyle X \in \mathcal{E}\left(x\right) $.
+	\item Supongamos que $\displaystyle \left\{ U_{i}\right\} _{i \in I}\subset \mathcal{T}_{\mathcal{E}} $. Sea $\displaystyle x \in \bigcup_{i \in I}U_{i} $. Debe ser que existe $\displaystyle i_{0} \in I $ tal que $\displaystyle x \in U_{i_{0}} $ y como $\displaystyle U_{i_{0}}\in \mathcal{T}_{\mathcal{E}} $ debe ser que $\displaystyle U_{i_{0}}\in \mathcal{E}\left(x\right) $. Por \textbf{(3)}, como $\displaystyle U_{i_{0}}\subset \bigcup_{i \in I}U_{i} $, debe ser que $\displaystyle \bigcup_{i \in I}U_{i} \in \mathcal{E}\left(x\right) $, por lo que $\displaystyle \bigcup_{i \in I}U_{i} \in \mathcal{T}_{\mathcal{E}} $. 
+	\item Sean $\displaystyle U_{1}, U_{2} \in \mathcal{T}_{\mathcal{E}} $ con $\displaystyle U_{1} \cap U_{2} \neq \emptyset $. Tenemos que si $\displaystyle \forall x \in U_{1} \cap U_{2} $, como $\displaystyle U_{1}, U_{2} \in \mathcal{E}\left(x\right) $ por \textbf{(4)} tenemos que $\displaystyle U_{1} \cap U_{2} \in \mathcal{E}\left(x\right) $, por lo que $\displaystyle U_{1} \cap U_{2} \in \mathcal{T}_{\mathcal{E}} $. 
+	\end{enumerate}
+	Veamos ahora que los entornos de un punto $\displaystyle x \in X $ en $\displaystyle \left(X, \mathcal{T}_{\mathcal{E}}\right) $ son exactamente los elementos de $\displaystyle \mathcal{E}\left(x\right) $. Por un lado, supongamos que $\displaystyle V \subset X$ es un entorno de $\displaystyle x \in V $. Entonces, existe $\displaystyle G \in \mathcal{T}_{\mathcal{E}} $ tal que $\displaystyle x \in G \subset V $ y como $\displaystyle G \in \mathcal{E}\left(x\right) $, por \textbf{(3)} tenemos que $\displaystyle V \in \mathcal{E}\left(x\right) $. \\
+	Recíprocamente, supongamos que $\displaystyle V \in \mathcal{E}\left(x\right) $. Consideremos el conjunto  
+	\[G = \left\{ y \in X \; : \; V \in \mathcal{E}\left(y\right)\right\} .\]
+Podemos observar varias cosas:
+\begin{enumerate}
+\item Claramente $\displaystyle G \subset V $ por \textbf{(2)}. 
+\item Se puede ver que $\displaystyle x \in G $ puesto que $\displaystyle V \in \mathcal{E}\left(x\right) $. 
+\item Tenemos que $\displaystyle G \in \mathcal{T}_{\mathcal{E}} $. En efecto, si $\displaystyle x' \in G $ tenemos que $\displaystyle V \in \mathcal{E}\left(x'\right) $ y por \textbf{(5)} tenemos que existe $\displaystyle W \in \mathcal{E}\left(x'\right) $ tal que $\displaystyle \forall z \in W $, $\displaystyle V \in \mathcal{E}\left(z\right) $. Así, tenemos que $\displaystyle W \subset G $ y como $\displaystyle W \in \mathcal{E}\left(x'\right) $ también $\displaystyle G \in \mathcal{E}\left(x'\right) $. 
+\end{enumerate}
+Así, podemos concluir que $\displaystyle V $ es un entorno de $\displaystyle x  $ en $\displaystyle \left(X, \mathcal{T}_{\mathcal{E}}\right) $. 
+\end{proof}
+\section{Topología relativa}
+\begin{definition}[Topología relativa]
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y sea $\displaystyle Y \subset X $. Se define la \textbf{topología relativa a} $\displaystyle Y $ como 
+\[\mathcal{T}_{Y} = \left\{ U \cap Y \; : \; U \in \mathcal{T}\right\} \subset \mathcal{P}\left(Y\right) .\]
+\end{definition}
+Comprobemos que efectivamente se trata de una topología:
+\begin{enumerate}
+\item Claramente $\displaystyle \emptyset \in \mathcal{T}_{Y} $ puesto que $\displaystyle \emptyset = \emptyset \cap Y $. Por otro lado, tenemos que $\displaystyle Y \cap X = Y $, por lo que $\displaystyle Y \in \mathcal{T}_{Y} $. 
+\item Sea $\displaystyle \left\{ V_{i}\right\} _{i \in I}\subset \mathcal{T}_{Y} $, entonces tenemos que $\displaystyle \forall i \in I $, $\displaystyle \exists U_{i} \in \mathcal{T} $ tal que $\displaystyle V_{i} = U_{i} \cap Y $. Así, tenemos que 
+	\[\bigcup_{i \in I}V_{i} = \bigcup_{i \in I}\left(U_{i} \cap Y\right)=\left(\bigcup_{i \in I}U_{i}\right)\cap Y \in \mathcal{T}_{Y} .\]
+\item Sean $\displaystyle V_{1}, V_{2} \in \mathcal{T}_{Y} $. Si $\displaystyle V_{1} \cap V_{2} = \emptyset $, hemos terminado. En caso contrario, existen $\displaystyle U_{1}, U_{2} \in \mathcal{T} $ tales que $\displaystyle V_{1} = U_{1} \cap Y $ y $\displaystyle V_{2} = U_{2} \cap Y $. De esta forma, 
+	\[V_{1} \cap V_{2}=\left(U_{1} \cap Y\right)\cap \left(U_{2} \cap Y\right)=\left(U_{1}\cap U_{2}\right)\cap Y \in \mathcal{T}_{Y} .\]
+\end{enumerate}
+\begin{prop}
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y si $\displaystyle Y \subset X $, consideremos la topología relativa $\displaystyle \left(Y, \mathcal{T}_{Y}\right) $. Dado $\displaystyle F \subset Y $, tenemos que $\displaystyle F $ es cerrado en $\displaystyle \left(Y, \mathcal{T}_{Y}\right) $ si y solo si existe $\displaystyle C \subset X $ cerrado en $\displaystyle \left(X, \mathcal{T}\right) $ tal que $\displaystyle F = C \cap Y $.
+\end{prop}
+\begin{proof}
+Tenemos que $\displaystyle F \subset Y $ es cerrado si y solo si $\displaystyle Y/F $ es abierto si y solo si existe $\displaystyle U \in \mathcal{T} $ tal que $\displaystyle Y/F = U \cap Y $ si y solo si $\displaystyle \left(X/U\right)\cap Y = F $. 
+\end{proof}
+\begin{prop}
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico, $\displaystyle Y \subset X $ y $\displaystyle x \in Y $. Si $\displaystyle \mathcal{V}\left(x\right)= \left\{ W_{i}^{x}\right\} _{i \in I} $ base de entornos de $\displaystyle x $ en $\displaystyle \left(X, \mathcal{T}\right) $, entonces $\displaystyle \mathcal{V}_{Y}\left(x\right)= \left\{ W^{x}_{i} \cap Y\right\} _{i \in I} $ es una base de entornos de $\displaystyle x $ en $\displaystyle \left(Y, \mathcal{T}_{Y}\right) $. 
+\end{prop}
+\begin{proof}
+Si $\displaystyle \Omega \subset Y $ es entorno de $\displaystyle x $ en $\displaystyle \left(Y, \mathcal{T}_{Y}\right) $, tenemos que existe un abierto en $\displaystyle \mathcal{T}_{Y} $ tal que $\displaystyle x \in V \subset \Omega  $. Así, tenemos que existe $\displaystyle U \in \mathcal{T} $ tal que $\displaystyle V = U \cap Y $, por lo que existe $\displaystyle i_{0} \in I $ tal que $\displaystyle W^{x}_{i_{0}}\subset U $, por lo que $\displaystyle W^{x}_{i_{0}}\cap Y \subset U \cap Y = V $. 
+\end{proof}
+\begin{observation}
+Es sencillo ver que $\displaystyle \forall W \subset X $ entorno de $\displaystyle x $ en $\displaystyle \left(X, \mathcal{T}\right) $ se tiene que $\displaystyle W \cap Y $ es entorno de $\displaystyle x $ en $\displaystyle \left(Y, \mathcal{T}_{Y}\right) $. 
+\end{observation}
+\begin{prop}
+	Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico e $\displaystyle Y \subset X $. Si $\displaystyle \mathcal{B}= \left\{ B_{i}\right\} _{i \in I} $ una base de $\displaystyle \mathcal{T} $, entonces $\displaystyle \mathcal{B}_{Y}= \left\{ B_{i} \cap Y\right\} _{i \in I} $ es una base de $\displaystyle \mathcal{T}_{Y} $. 
+\end{prop}
+\begin{proof}
+Sea $\displaystyle V \in \mathcal{T}_{Y} $, entonces existe $\displaystyle U \in \mathcal{T} $ tal que $\displaystyle V = U \cap Y $. También sabemos que existe $\displaystyle J \subset I $ tal que $\displaystyle U = \bigcup_{j \in J}B_{j} $, por lo que 
+\[V = \left(\bigcup_{j \in J}B_{j}\right) \cap Y = \bigcup_{j \in J}\left(B_{j} \cap Y\right) .\]
+\end{proof}
+\begin{eg}
+	Consideremos los siguientes ejemplos.
+	\begin{enumerate}
+	\item Sea $\displaystyle \left(X, \mathcal{T}\right)=\left(\R, \mathcal{T}_{u}\right) $ e $\displaystyle Y = [0,1) $. Tenemos que el conjunto $\displaystyle \left[0, \frac{1}{2}\right) $ es un abierto en $\displaystyle \left([0,1), \mathcal{T}|_{[0,1)}\right) $.
+	\item Dado un espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $, si $\displaystyle y \in X $ es un punto aislado de un conjunto $\displaystyle Y \subset X $, entonces tendremos que $\displaystyle \left\{ y\right\}  $ es un abierto en $\displaystyle \left(Y, \mathcal{T}_{Y}\right) $. Así, si todos los puntos de $\displaystyle Y $ son aislados, entonces $\displaystyle \mathcal{T}_{Y} $ es la topología discreta en $\displaystyle Y $. Se dice entonces que $\displaystyle Y $ es un \textbf{subespacio discreto}. 
+		\begin{enumerate}
+		\item Esto ocurre si tomamos $\displaystyle \Z \subset \R $ con la topología usual.
+		\item Si fijamos $\displaystyle a \in X $ y tomamos $\displaystyle \mathcal{T}_{a} $ en $\displaystyle X $, el subespacio $\displaystyle X / \left\{ a\right\}  $ es discreto.
+		\end{enumerate}
+	\end{enumerate}
+\end{eg}
+\begin{prop}
+	Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico e $\displaystyle Y \subset X $. 
+	\begin{enumerate}
+	\item Si $\displaystyle Y $ es abierto en $\displaystyle X $, entonces $\displaystyle V \subset Y $ es abierto en $\displaystyle \left(Y, \mathcal{T}_{Y}\right) $ si y solo si $\displaystyle V $ es abierto en $\displaystyle \left(X, \mathcal{T}\right) $.
+	\item Si $\displaystyle Y $ es cerrado en $\displaystyle X $, entonces $\displaystyle F\subset Y $ es cerrado en $\displaystyle \left(Y, \mathcal{T}_{Y}\right) $ si y solo si $\displaystyle F $ es cerrado en $\displaystyle \left(X, \mathcal{T}\right) $. 
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Supongamos que $\displaystyle Y \subset X $. 
+	\begin{enumerate}
+	\item Sea $\displaystyle Y $ abierto en $\displaystyle \mathcal{T} $ y sea $\displaystyle V \subset Y $. Si $\displaystyle V $ es abierto en $\displaystyle \mathcal{T}_{Y} $ entonces existe $\displaystyle U \in \mathcal{T} $ tal que $\displaystyle V = U \cap Y \in \mathcal{T} $. Recíprocamente, si $\displaystyle V $ es abierto en $\displaystyle \mathcal{T} $, entonces $\displaystyle V = V \cap Y \in \mathcal{T}_{Y} $. 
+	\item Sea $\displaystyle Y $ cerrado en $\displaystyle \mathcal{T} $ y sea $\displaystyle F \subset Y $. Si $\displaystyle F $ es cerrado en $\displaystyle \mathcal{T}_{Y} $, entonces existe $\displaystyle C \subset X $ cerrado en $\displaystyle \mathcal{T} $ tal que $\displaystyle F = C \cap Y $, que es cerrado en $\displaystyle \mathcal{T} $. Recíprocamente, si $\displaystyle F $ es cerrado en $\displaystyle \mathcal{T} $ tenemos que $\displaystyle F = F \cap Y $ es cerrado en $\displaystyle \mathcal{T}_{Y} $. 
+	\end{enumerate}
+\end{proof}
+\begin{observation}
+Es sencillo ver que $\displaystyle Y \subset X $ es abierto si y sólo si todo subconjunto $\displaystyle W \subset Y $ que es abierto en $\displaystyle Y $ es abierto en $\displaystyle X $. Análogamente, se puede afirmar que $\displaystyle Y \subset X $ es cerrado si y sólo si todo subconjunto $\displaystyle F \subset Y $ que es cerrado en $\displaystyle Y $ es cerrado en $\displaystyle X $. 
+\end{observation}
 

@@ -240,11 +240,11 @@ Consideramos ambas implicaciones.
 \begin{description}
 \item[($\Rightarrow$)] Claramente tenemos que $\displaystyle x \in \mathcal{C}\left(I, \R^{n}\right) $. Integrando tenemos que 
 	\[x\left(t\right)-x_{0}=\int^{t}_{t_{0}} x'\left(s\right) \; d s = \int^{t}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s .\]
-\item[($\Leftarrow$)] Claramente como $\displaystyle x \in \mathcal{C}\left(I, \R^{n}\right) $ tenemos que $\displaystyle f\left(t, x\left(t\right)\right) \in \mathcal{C}\left(I, \R^{n}\right)$. Por el TFC tenemos que 
+\item[($\Leftarrow$)] Como $\displaystyle x \in \mathcal{C}\left(I, \R^{n}\right) $ tenemos que $\displaystyle f\left(t, x\left(t\right)\right) \in \mathcal{C}\left(I, \R^{n}\right)$. Por el TFC tenemos que 
 	\[\int^{t}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s \in \mathcal{C}^{1}\left(I, \R^{n}\right) .\]
-	Así, tenemos que 
+	Así, de esta forma 
 	\[x\left(t\right)=x_{0} + \int^{t}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s \in \mathcal{C}^{1}\left(I, \R^{n}\right) .\]
-Así, tenemos que $\displaystyle x \in \mathcal{C}^{1} $. Por otro lado, 
+Así, tenemos que $\displaystyle x \in \mathcal{C}^{1}\left(I, \R^{n}\right) $. Por otro lado, 
 \[x\left(t_{0}\right)=x_{0} + \int^{t_{0}}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s = x_{0} .\]
 Finalmente, derivando $\displaystyle x\left(t\right) $ obtenemos que $\displaystyle x'\left(t\right)=f\left(t, x\left(t\right)\right) $ por el TFC. 
 \end{description}
@@ -264,16 +264,280 @@ Es sencillo ver que $\displaystyle \R^{n} $ es un espacio de banach con todas la
 También lo es con la norma infinito.
 \end{eg}
 \begin{prop}
-	Sea $\displaystyle I \subset \R $ un intervalo cerrado y acotado. Entonces $\displaystyle E = \mathcal{C}\left(I, \R^{n}\right) $ es un espacio de Banach con la norma $\displaystyle \|x\|_{\infty}= \max \left\{ \left|x\left(t\right)\right| \; : \; t \in I\right\}  $.
+	Sea $\displaystyle I \subset \R $ un intervalo cerrado y acotado. Entonces $\displaystyle E = \mathcal{C}\left(I, \R^{n}\right) $ es un espacio de Banach con la norma $\displaystyle \|x\|_{\infty}= \max \left\{ \|x\left(t\right)\| \; : \; t \in I\right\}  $.
 \end{prop}
 \begin{proof}
-Claramente $\displaystyle \left(E, \| \cdot \|_{\infty}\right) $ es un espacio vectorial normado. 
+	En primer lugar, es fácil comprobar que $\displaystyle E $ es un espacio vectorial sobre $\displaystyle \R $. Veamos ahora que $\displaystyle \| \cdot \|_{\infty} $ es una norma en $\displaystyle E $:
+	\begin{itemize}
+	\item La aplicación está bien definida puesto que al tratarse de funciones continuas definidas sobre un intervalo cerrado y acotado, siempre alcanzan su máximo.
+	\item Es sencillo ver que $\displaystyle \| x\left(t\right)\|_{\infty} \geq 0 $, $\displaystyle \forall x\left(t\right) \in \mathcal{C}\left(I, \R^{n}\right) $. 
+	\item Si $\displaystyle \|x\left(t\right)\|_{\infty}=0 $, tenemos que $\displaystyle \max \left\{ \left|x\left(t\right)\right| \; : \; t \in I\right\} =0  $, por lo que $\displaystyle \left|x\left(t\right)\right|\leq 0 $, $\displaystyle \forall t \in I $ y debe ser que $\displaystyle x \equiv 0 $.
+	\item Dado $\displaystyle \lambda \in \R $ y $\displaystyle x\left(t\right)\in \mathcal{C}\left(I, \R^{n}\right) $, 
+		\[
+		\begin{split}
+			\|\lambda x\left(t\right)\|_{\infty} = & \max \left\{ \left|\lambda x\left(t\right)\right| \; : \; t \in I\right\} = \max \left\{ \left|\lambda \right| \left|x\left(t\right)\right| \; : \; t \in I\right\} \\
+			= &  \left|\lambda \right| \max \left\{ \left|x\left(t\right)\right|\; : \; t \in I\right\} =\left|\lambda \right|  \|x\left(t\right)\|_{\infty} .
+		\end{split}
+		\]
+	\item Sean $\displaystyle x\left(t\right), y\left(t\right), z\left(t\right) \in \mathcal{C}\left(I, \R^{n}\right) $, entonces
+		\[
+		\begin{split}
+			\|x\left(t\right)+z\left(t\right)\|_{\infty} = & \max \left\{ \left|x\left(t\right) + z\left(t\right)\right| \; : \; t \in I\right\} = \max \left\{ \left|x\left(t\right)-y\left(t\right)+y\left(t\right)-z\left(t\right)\right| \; : \; t \in I\right\}\\
+			\leq & \max \left\{ \left|x\left(t\right)-y\left(t\right)\right|\; : \; t \in I\right\} + \max \left\{ \left|y\left(t\right)-z\left(t\right)\right| \; : \; t \in I\right\} \\
+			= &  \|x\left(t\right)-y\left(t\right)\|_{\infty} + \|x\left(t\right)-z\left(t\right)\|_{\infty}.
+		\end{split}
+		\]
+	\end{itemize}
+	Así, tenemos que $\displaystyle \left(E, \| \cdot \|_{\infty}\right) $ es un espacio normado. Finalmente, veamos que es completo. Tenemos que una sucesión $\displaystyle \left\{ f_{m}\right\} _{m\in\N}\subset \mathcal{C}\left(I, \R^{n}\right) $ converge a $\displaystyle f $ si y solo si $\displaystyle \|f_{m}-f\|_{\infty} \to 0 $. Esto es, para cada $\displaystyle \epsilon > 0 $ debe existir un $\displaystyle m_{0} \in \N $ tal que $\displaystyle \forall m \geq m_{0} $ se tiene que 
+	\[\|f_{m}\left(t\right)-f\left(t\right)\|_{\infty} < \epsilon .\]
+	Sea $\displaystyle \left\{ f_{m}\right\} _{m\in\N} $ una sucesión de Cauchy y sea $\displaystyle t_{0} \in I $. Tenemos que la sucesión $\displaystyle \left\{ f_{m}\left(t_{0}\right)\right\} _{m\in\N}\subset \R^{m} $ es de Cauchy y como $\displaystyle \R^{n} $ es completo, es una sucesión convergente. Así, podemos definir $\displaystyle f : I \to \R^{n} $ tal que $\displaystyle \forall t \in I $, 
+	\[f\left(t\right):=\lim_{m \to \infty}f_{m}\left(t\right) .\]
+	Veamos que $\displaystyle \left\{ f_{m}\right\} _{m\in\N} $ converge a $\displaystyle f $ con la norma $\displaystyle \| \cdot \|_{\infty} $. Como $\displaystyle \left\{ f_{m}\right\} _{m\in\N} $ es de Cauchy, dado $\displaystyle \epsilon > 0 $ existe $\displaystyle m_{0} \in \N $ tal que $\displaystyle \forall m,l \geq m_{0} $ se tiene que $\displaystyle \|f_{m}-f_{l}\|_{\infty} < \epsilon  $, por lo que 
+	\[ \|f_{m}\left(t\right)-f_{l}\left(t\right)\| < \epsilon, \; \forall t \in I .\]
+	Tomando el límite cuando $\displaystyle l \to \infty $ obtenemos que
+	\[ \|f_{m}\left(t\right)-f\left(t\right)\|<\epsilon, \; \forall t \in I ,\]
+	por lo que $\displaystyle \|f_{m}-f\|_{\infty}<\epsilon  $ y la sucesión $\displaystyle \left\{ f_{m}\right\} _{m\in\N} $ converge a $\displaystyle f $ en $\displaystyle \| \cdot \|_{\infty} $. Faltaría ver que la función $\displaystyle f $ es continua, pero esto es muy sencillo y se deja como ejercicio para el lector.
 \end{proof}
 \begin{definition}[Aplicación contractiva]
-Sea $\displaystyle E $ un espacio de Banach. Diremos que $\displaystyle f: X \subset E \to X $ es una \textbf{aplicación contractiva} si existe $\displaystyle k \in [0,1) $ tal que 
-\[ \|T\left(x\right)-T\left(y\right)\|\leq k \|x-y\|, \; \forall x,y \in X .\]
+Sea $\displaystyle E $ un espacio de Banach. Diremos que $\displaystyle f: X \subset E \to X $ es una \textbf{aplicación contractiva} si existe $\displaystyle K \in [0,1) $ tal que 
+\[ \|f\left(x\right)-f\left(y\right)\|\leq K \|x-y\|, \; \forall x,y \in X .\]
 \end{definition}
 \begin{observation}
 Si $\displaystyle f $ es contractiva, entonces es uniformemente continua.
 \end{observation}
+\begin{theorem}[Teorema del punto Banach]
+Sea $\displaystyle \emptyset \neq X \subset E$ cerrado, $\displaystyle E $ un espacio de Banach y $\displaystyle T : X \to X $ una aplicación contractiva. Entonces, existe un único punto fijo $\displaystyle x \in X $ y se puede encontrar como el límite de la sucesión $\displaystyle x_{j+1}=Tx_{j} $, $\displaystyle \forall x_{0} \in X $. 
+\end{theorem}
+\begin{proof}
+Demostramos primero la unicidad. Supongamos que existen dos puntos fijos $\displaystyle x,y \in X $. Entonces, existe $\displaystyle K \in [0,1) $ tal que 
+\[ \|x - y \| = \|Tx - Ty\| \leq K \|x-y\| .\]
+Si $\displaystyle K = 0 $ hemos terminado porque tenemos que $\displaystyle x = y $. Si $\displaystyle K \neq 0 $ tenemos que $\displaystyle 0 < K < 1 $, por lo que
+\[\|x-y\| \leq K\|x-y\| < \|x-y\| ,\]
+esto es una contradicción si $\displaystyle x \neq y $. \\
+Ahora demostramos la existencia. Dado $\displaystyle x_{0} \in X $, definimos la sucesión $\displaystyle x_{j+1}=Tx_{j} $. Veamos que se trata de una sucesión de Cauchy. Dados $\displaystyle i > j $ tenemos que 
+\[
+\begin{split}
+	\|x_{i}-x_{j}\| = & \|x_{i}-x_{i-1} + x_{i-1} + \cdots -x_{j}\| \leq \|x_{i}-x_{i-1}\|+ \cdots + \|x_{j+1}-x_{j}\| \\
+	= & \|Tx_{i-1}-Tx_{i-2}\| + \|x_{i-1}-x_{i-2}\| + \cdots + \|x_{j+1}-x_{j}\| \\
+	\leq & \left(K^{i-1} + K^{i-2} + \cdots + K^{j}\right)\|x_{1}-x_{0}\| \leq \left(\sum^{\infty}_{k = j}K^{j}\right)\|x_{1}-x_{0}\| \\
+	= & \frac{K^{j}}{1-K} \|x_{1}-x_{0}\| \xrightarrow{j \to \infty} 0.
+\end{split}
+\]
+Así, como $\displaystyle \left\{ x_{j}\right\} _{j \in \N} $ es una sucesión de Cauchy y $\displaystyle E $ es completo, debe ser que existe $\displaystyle x \in E $ tal que $\displaystyle x_{j}\to x $. Además, como $\displaystyle X $ es cerrado debe ser que $\displaystyle x \in X $. Por otro lado, como $\displaystyle T $ es contractiva tenemos que es continua y por tanto podemos tomar el límite a ambos lados de la igualdad $\displaystyle x_{j+1} = Tx_{j} $, obteniendo $\displaystyle x = Tx $. 
+\end{proof}
+
+\begin{colorary}
+Es suficiente que una potencia \footnote{Entendemos por potencia componer $\displaystyle T $, $\displaystyle n $ veces consigo mismo para algún $\displaystyle n\in \N $.} de $\displaystyle T $ sea contractiva para que se verifique el resultado.
+\end{colorary}
+\begin{proof}
+Supongamos que existe $m \in \mathbb{N}$ tal que $T^m$ es contractiva. Es decir, existe
+$K \in [0,1)$ tal que
+\[\|T^m x - T^m y\| \leq K \|x-y\|,\; \forall x,y \in X.\]
+Definimos $\displaystyle S := T^m $. Como $X$ es cerrado en un espacio de Banach, $X$ es completo. Por el teorema del punto fijo de Banach, $S$ tiene un único punto fijo $x^\ast \in X$, es decir, $\displaystyle T^m x^\ast = x^\ast $.
+Veamos que $x^\ast$ es también punto fijo de $T$. En efecto,
+\[T^m(Tx^\ast)=T(T^m x^\ast)=Tx^\ast.\]
+Por tanto, $Tx^\ast$ es un punto fijo de $T^m$. Como $T^m$ tiene un único punto fijo, se sigue que $\displaystyle Tx^\ast = x^\ast $. 
+Luego $x^\ast$ es un punto fijo de $T$.
+Además, este punto fijo es único. En efecto, si $y \in X$ satisface $\displaystyle Ty = y$, entonces
+\[T^m y=y.\]
+Por tanto, $y$ es también un punto fijo de $T^m$. Por unicidad del punto fijo de $T^m$ se tiene que $\displaystyle y=x^\ast $. 
+Finalmente, veamos que para todo $x_0 \in X$ la sucesión definida por $\displaystyle x_{j+1}=Tx_j $
+converge a $x^\ast$. Como $S=T^m$ es contractiva, por el teorema de Banach tenemos que
+\[S^k z \longrightarrow x^\ast, \; \forall z \in X.\]
+Dado $j \in \mathbb{N}$, por la división euclídea existen $\displaystyle k,r \in \N $ tales que
+\[j=km+r,\quad 0 \leq r < m.\]
+Entonces
+\[x_j=T^j x_0=T^{km+r}x_0=(T^m)^k(T^r x_0)=S^k(T^r x_0).\]
+Fijado $r \in \{0,\dots,m-1\}$, como $T^r x_0 \in X$, se tiene
+\[S^k(T^r x_0)\longrightarrow x^\ast.\]
+Por tanto,
+\[x_{km+r}\longrightarrow x^\ast\quad\forall r=0,\dots,m-1.\]
+Así, todas las subsucesiones correspondientes a los distintos restos módulo $m$
+convergen al mismo límite $x^\ast$. Como sólo hay un número finito de ellas,
+la sucesión completa converge:
+\[
+x_j=T^j x_0 \longrightarrow x^\ast.
+\]
+\end{proof}
+Para que la aplicación 
+\[Tx\left(t\right)=x_{0}+\int^{t}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s ,\]
+sea contractiva, necesitamos que existe $\displaystyle K \in [0,1) $ tal que 
+\[\|Ty-Tz\|_{\infty} \leq K \|y-z\|_{\infty} .\]
+Veamos qué tiene que suceder con $\displaystyle f $ para que $\displaystyle T $ sea contractiva:
+\[
+\begin{split}
+	\|Ty-Tz\|_{\infty} = & \max _{t \in I} \|Ty\left(t\right)-Tz\left(t\right)\| = \max_{t \in I}\left\|\int^{t}_{t_{0}} f\left(s,y\left(s\right)\right)-f\left(s, z\left(s\right)\right) \; d s\right\|  \\
+	\leq & \max _{t \in I}\int^{t}_{t_{0}} \|f\left(s,y\left(s\right)\right)-f\left(s, z\left(s\right)\right) \; d s.
+\end{split}
+\]
+Tenemos que poder comparar esto con 
+\[K \|y -z\|_{\infty} = K\max_{t \in I}\|y\left(t\right)-z\left(t\right)\| .\]
+Tendríamos que poder comparar entonces $\displaystyle \|f\left(s, y\left(s\right)\right)-f\left(s, z\left(s\right)\right)\| $ y $\displaystyle \|y\left(s\right)-z\left(s\right)\| $.
+\begin{definition}[Función Lipschitz]
+Sea $\displaystyle f : \Omega \subset \R^{n} \to \R^{m} $.
+\begin{itemize}
+\item Diremos que $\displaystyle f $ es \textbf{globalmente Lipschitz} si existe $\displaystyle L \geq 0 $ tal que 
+	\[ \|f\left(y\right)-f\left(z\right)\| \leq L \|y-z\|, \; \forall y,z \in \Omega  .\]
+\item Diremos que es \textbf{localmente Lipschitz} si $\displaystyle \forall x \in \Omega  $, existe un entorno $\displaystyle V_{x}\subset \Omega $ y $\displaystyle L _{x}\geq 0 $ tales que 
+	\[\|f\left(y\right)-f\left(z\right)\| \leq L_{x}\|y-z\|, \; \forall y,z \in V_{x} .\]
+\end{itemize}
+\end{definition}
+\begin{observation}
+Si $\displaystyle f : \Omega \subset \R^{n} \to \R^{m} $ es localmente Lipschitz, es globalmente Lipschitz en cualquier compacto contenido en $\displaystyle \Omega  $. 
+\end{observation}
+\begin{prop}
+Sea $\displaystyle I = \left(a,b\right) $ y $\displaystyle f \in \mathcal{C}^{1}\left(I, \R\right) $. Entonces $\displaystyle f $ es Lipschitz en $\displaystyle I $ si y solo si $\displaystyle f' $ está acotada en $\displaystyle I $. 
+\end{prop}
+\begin{proof}
+Consideramos ambas implicaciones.
+\begin{description}
+\item[($\displaystyle \Rightarrow $)] Cogemos $\displaystyle t \in I $ y $\displaystyle h \in \R $ suficientemente pequeño tal que $\displaystyle t + h \in I $. Como $\displaystyle f $ es Lipschitz, existe $\displaystyle L \in [0,1) $ tal que
+	\[ \left|f\left(t + h\right)-f\left(t\right)\right| \leq L \left|h\right| \Rightarrow \left|\frac{f\left(t + h\right)-f\left(t\right)}{h}\right|\leq L.\]
+Así, nos queda que si tomamos el límite cuando $\displaystyle h \to 0 $, $\displaystyle \left|f'\left(t\right)\right|\leq L $. 
+\item[($\displaystyle \Leftarrow $)] Tomamos $\displaystyle x,y \in I $ con $\displaystyle x > y $, entonces
+	\[f\left(x\right)-f\left(y\right)=\int^{x}_{y} f'\left(t\right) \; dt .\]
+	Tomando valores absolutos,
+	\[ \left|f\left(x\right)-f\left(y\right)\right| = \left|\int^{x}_{y} f'\left(t\right) \; dt\right|\leq \int^{x}_{y} \left|f'\left(t\right)\right| \; dt \leq \sup_{t \in I} \left|f'\left(t\right)\right| \left|x-y\right| .\]
+	Esta implicación también se puede demostrar con el teorema del valor medio.
+\end{description}
+\end{proof}
+
+\begin{observation}
+Existen funciones Lipschitz que no son $\displaystyle \mathcal{C}^{1} $. Un ejemplo es la función $\displaystyle f\left(x\right) = \left|x\right| $. 
+\end{observation}
+
+\begin{eg}[Función uniformemente continua que no es Lipschitz]
+Consideremos $\displaystyle f : \left(0,1\right)\to \R : t \to \sqrt{t} $. Tenemos que $\displaystyle f'\left(t\right)=\frac{1}{2\sqrt{t}} $ no está acotada en $\displaystyle \left(0,1\right) $. Por el teorema anterior tenemos que no es Lipschitz, pero veamos que no lo es a partir de la definición. Para ello, supongamos que lo es, es decir, existe $\displaystyle L \geq 0$ tal que 
+\[ \left|\sqrt{x}-\sqrt{y}\right|\leq L \left|x-y\right| .\]
+Si tomamos las sucesiones $\displaystyle x_{k}=\frac{1}{k^{2}} $ e $\displaystyle y_{k}=\frac{1}{\left(k + 1\right)^{2}} $, tenemos que 
+\[ \left|\sqrt{x_{k}}-\sqrt{y_{k}}\right| = \left|\frac{1}{k}-\frac{1}{k + 1}\right|=\frac{1}{k\left(k+1\right)}\leq L\frac{2k+1}{k^{2}\left(k+1\right)^{2}} .\]
+Tendremos entonces que 
+\[L \geq \frac{k\left(k + 1\right)}{2k+1}, \; \forall k \in \N .\]
+Sin embargo, esta sucesión tiende a $\displaystyle \infty $, por lo que hemos llegado a una contradicción. 
+\end{eg}
+\begin{prop}
+	Sea $\displaystyle f\in \mathcal{C}^{1}\left(\Omega\subset \R^{n}, \R^{m}\right) $ con $\displaystyle \Omega  $ convexo. Entonces, $\displaystyle f $ es Lipschitz en $\displaystyle \Omega  $ si y solo si existe $\displaystyle C \geq 0 $ tal que $\displaystyle \left|\frac{\partial f_{k}}{\partial x_{j}}\left(x\right)\right| \leq C $, $\displaystyle \forall k \in \left\{ 1, \ldots, m\right\}  $, $\displaystyle \forall j \in \left\{ 1, \ldots, n\right\}  $, $\displaystyle \forall x \in \Omega  $. 
+\end{prop}
+\begin{proof}
+	Hacer en casa. Una vez fijados $\displaystyle x,y \in \Omega  $, tenemos que $\displaystyle \left[x,y\right] \subset \Omega  $ y cogemos la función 
+	\[\left(0,1\right) \to \R : s \to f_{k}\left(sy + \left(1-s\right)x\right) .\]
+\end{proof}
+\begin{definition}[Lipschitz respecto a la segunda variable]
+Dada $\displaystyle f : D\subset\R\times\R^{n}\to\R^{m} $, diremos que es
+\begin{itemize}
+\item \textbf{globalmente Lipschitz respecto a la segunda variable} si existe $\displaystyle L \geq0 $ 
+	\[ \left|f\left(t, x\right)-f\left(t,y\right)\right| \leq L \left|x-y\right|, \; \forall \left(t,x\right), \left(t,y\right)\in D .\]
+	
+\item \textbf{localmente Lipschitz respecto a la segunda variable} si para $\displaystyle \left(t, x\right)\in D $ existe un entorno $\displaystyle U_{\left(t,x\right)} $ y $\displaystyle L_{\left(t,x\right)}\geq 0  $ tales que 
+	\[ \left|f\left(t,x\right)-f\left(t,y\right)\right|\leq L_{\left(t,x\right)} \left|x-y\right| , \; \forall\left(t,x\right),\left(t,y\right)\in U_{\left(t,x\right)}.\]
+\end{itemize}
+\end{definition}
+\begin{prop}
+Dado $\displaystyle D \subset \R\times\R^{n} $ y $\displaystyle f \in \mathcal{C}\left(D, \R^{m}\right) $ tal que $\displaystyle \frac{\partial f_{k}}{\partial x_{j}} $ existen y están acotadas en $\displaystyle D $. Entonces $\displaystyle f $ es Lipschitz en $\displaystyle D $ respecto a la segunda variable. 
+\end{prop}
+\begin{eg}[Funcionamiento del argumento]
+	Consideremos el siguiente PVI:
+	\[
+	\begin{cases}
+	x' = 2tx \\
+	x\left(0\right)=1
+	\end{cases}
+	.\]
+Consideremos el operador $\displaystyle T $ definido anteriormente,
+\[\left(Ty\right)\left(t\right)= 1 + \int^{t}_{0} 2sy\left(s\right) \; d s .\]
+Aplicamos el teorema del punto fijo para encontrar un punto fijo de $\displaystyle T $. Como $\displaystyle y_{0} $ cogemos la función nula. Así, tendremos que 
+\[y_{1}\left(t\right)=\left(Ty_{0}\right)\left(t\right)=1 + \int^{t}_{0} 2s y_{0}\left(s\right) \; d s = 1 + 0 = 1 .\]
+\[y_{2}\left(t\right)=\left(Ty_{1}\right)\left(t\right)=1 + \int^{t}_{0} 2sy_{1}\left(s\right) \; d s = 1 + t ^{2}.\]
+\[y_{3}\left(t\right)=\left(Ty_{2}\right)\left(t\right)=1 + \int^{t}_{0} 2s\left(1 + s^{2}\right) \; d s = 1 + t ^{2} + \frac{t ^{4}}{2} .\]
+En general, 
+\[y_{k}\left(t\right)=\sum^{k-1}_{j = 0}\frac{t ^{2j}}{j!} \Rightarrow y\left(t\right)=\sum^{\infty}_{j = 0}\frac{t ^{2j}}{j!}=e^{t ^{2}} .\]
+\end{eg}
+\begin{observation}
+$\displaystyle f $ es localmente Lipschitz (respecto a la segunda variable) en un abierto $\displaystyle D $ si y solo si $\displaystyle f $ es globalmente Lipschitz (respecto a la segunda variable) en todo compacto $\displaystyle K \subset D $.
+\end{observation}
+\begin{theorem}[Teorema de Picard-Lindelöf local]
+Sea $\displaystyle f : D \to \R^{n} $ continua y localmente Lipschitz respecto a la segunda variable en un abierto $\displaystyle D \subset \R \times \R^{n} $. Dado $\displaystyle \left(t_{0}, x_{0}\right)\in D $ existe $\displaystyle \epsilon > 0 $ tal que el PVI
+\[
+\begin{cases}
+x' = f\left(t,x\right) \\
+x\left(t_{0}\right)=x_{0}
+\end{cases}
+,\]
+admite una única solución definida en el intervalo $\displaystyle I_{\epsilon } =\left[t_{0}-\epsilon , t_{0} + \epsilon \right]  $. 
+\end{theorem}
+\begin{proof}
+Vamos a aplicar el teorema del punto fijo de Banach de forma adecuada al operador $\displaystyle T $ de la formulación integral del PVI. Si $\displaystyle f \equiv 0 $ el resultado es trival. Así, supongamos que no lo es. Para aplicar el TPF necesitamos que $\displaystyle T : X \subset E \to X$. Como $\displaystyle T $ viene dada por
+\[\left(Ty\right)\left(t\right)=x_{0} + \int^{t}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s .\]
+Como $\displaystyle D $ es abierto, dado $\displaystyle \left(t_{0}, x_{0}\right)\in D $ tenemos que existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(\left(t_{0}, x_{0}\right), r\right)\subset D $. Definimos el cilindro
+\[R := \left\{ \left(t,x\right)\in \R \times \R^{n} \; : \; \left|t-t_{0}\right|\leq r, \|x-x_{0}\|\leq r\right\} \subset D .\]
+Podemos coger $\displaystyle E = \mathcal{C}\left(\left[t_{0}-\epsilon, t_{0} + \epsilon \right] , \R^{n}\right) $ y $\displaystyle X := \left\{ x \in E \; : \; \|x-x_{0}\|_{\infty } \leq r\right\}  $. Ahora hacemos distintos pasos.
+\begin{itemize}
+\item En primer lugar, veamos que $\displaystyle T : X \to E $, es decir, $\displaystyle Ty $ es continua cuando $\displaystyle y \in X $. Tomamos $\displaystyle y \in X $ y $\displaystyle t_{1}, t_{2} \in I_{\epsilon } $ con $\displaystyle t_{1} > t_{2} $, necesitamos $\displaystyle \epsilon < r $,
+\[
+\begin{split}
+	\left|\left(Ty\right)\left(t_{1}\right)-\left(Ty\right)\left(t_{2}\right)\right| = & \left|\int^{t_{1}}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s - \int^{t_{2}}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s\right| = \left|\int^{t_{1}}_{t_{2}} f\left(s, y\left(s\right)\right) \; d s\right| \\
+	\leq & \int^{t_{1}}_{t_{2}} \left|f\underbrace{\left(s, y\left(s\right)\right)}_{\in R}\right| \; d s \leq \int^{t_{1}}_{t_{2}} \max_{R} \left|f\left(t, x\right)\right| \; d s = \max _{R} \left|f\right| \left|t_{1}-t_{2}\right|.
+\end{split}
+\]
+	Así, tenemos que $\displaystyle T_{y} $ es continua. 
+\item Veamos ahora que $\displaystyle T : X \to X $, es decir que $\displaystyle \|Ty-x_{0}\|_{\infty }\leq r $ y $\displaystyle y \in X $. Si $\displaystyle t \in I_{\epsilon } $, 
+	\[
+	\begin{split}
+	\left|\left(Ty\right)\left(t\right)-x_{0}\right| = \left|\int^{t}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s\right|\leq \int^{t}_{t_{0}} \left|f\left(s, y\left(s\right)\right)\right| \; d s \leq \max _{R} \left|f\right| \left|t-t_{0}\right| < \max_{R} \left|f\right|\epsilon  .
+	\end{split}
+	\]
+Por tanto, tenemos que $\displaystyle \|Ty-x_{0}\|_{\infty }\leq \epsilon _{R} \left|f\right| $. Si cogemos $\displaystyle \epsilon \leq \frac{r}{\max_{R} \left|f\right|} $, obtenemos lo que queríamos.
+\item Veamos que $\displaystyle T $ es contractiva, es decir, que $\displaystyle \|Ty-Tz\|_{\infty }\leq K\|y-z\|_{\infty } $ con $\displaystyle K \in [0,1) $, $\displaystyle \forall y,z \in X$. Sean $\displaystyle y,z \in X $ y $\displaystyle t \in I_{\epsilon } $, entonces aplicando que $\displaystyle f $ es Lipschitz
+	\[
+	\begin{split}
+		\left|\left(Ty\right)\left(t\right)-\left(Tz\right)\left(t\right)\right| = & \left|\int^{t}_{t_{0}} f\left(s,y\left(s\right)\right)-f\left(s, z\left(s\right)\right) \; d s\right|\leq \int^{t}_{t_{0}} \left|f\left(s,y\left(s\right)\right)-f\left(s, z\left(s\right)\right)\right| \; d s \\
+		\leq & \int^{t}_{t_{0}} L_{R} \left|y\left(s\right)-y\left(s\right)\right| \; d s \leq \int^{t}_{t_{0}} L_{R}\max _{s\in I_{\epsilon }} \left|y\left(s\right)-z\left(s\right)\right| \; d s \\
+		\leq & L_{R} \|y-z\|_{\infty } \left|t-t_{0}\right| < L_{R} \|y-z\|_{\infty }\epsilon .
+	\end{split}
+	\]
+Así, tenemos que tomando máximos
+\[\|Ty-Tz\|_{\infty }\leq L_{R}\epsilon \|y-z\|_{\infty } .\]
+De esta forma, para garantizar que es contractiva basta con ver que $\displaystyle \epsilon < \frac{1}{L_{R}} $. 
+\end{itemize}
+Por el TPF tenemos que existe una única $\displaystyle y \in X $ tal que $\displaystyle Ty = y $. Sin embargo, tenemos que ver que la unicidad de soluciones se verifica también en $\displaystyle E $, es decir, tenemos que ver que no hay soluciones extra en $\displaystyle E/X $. Supongamos que existe una solución $\displaystyle z \in E/X $, es decir $\displaystyle \|z-x_{0}\|_{\infty} > r $. Así, existe $\displaystyle \xi \in I_{\epsilon } $ tal que $\displaystyle \left|z\left(\xi\right)-x_{0}\right|>r $. Podemos suponer sin pérdida de generalidad que $\displaystyle \xi > t_{0} $. Tomamos $\displaystyle \tilde{t} $ como el primer momento tras $\displaystyle t_{0} $ tal que $\displaystyle \left|z\left(\tilde{t}\right)-x_{0}\right|=r $. 
+Así, tenemos que $\displaystyle \left|z\left(t\right)-x_{0}\right| \leq r $ en $\displaystyle \left[t_{0}, \tilde{t}\right]  $. Por tanto, $\displaystyle \left(t, z\left(t\right)\right)\in R $, $\displaystyle \forall t \in \left[t_{0}, \tilde{t}\right]  $. Deducimos que
+\[
+	\left|z\left(\tilde{t}\right)-x_{0}\right| =  \left|\int^{\tilde{t}}_{t_{0}} f\left(s, z\left(s\right)\right) \; d s\right| \leq \int^{\tilde{t}}_{t_{0}} \left|f\left(s, z\left(s\right)\right)\right| \; d s \leq \max_{R} \left|f\right| \left|\tilde{t}-t_{0}\right| < \max_{R} \left|f\right|\epsilon < r.
+\]
+Esto es una contradicción. 
+\end{proof}
+\begin{observation}
+	\begin{enumerate}
+	\item En la demostración necesitamos que $\displaystyle \epsilon < \max \left\{ r, \frac{r}{\max _{R} \left|f\right|}, \frac{1}{L_{R}}\right\}  $, por lo que $\displaystyle \epsilon  $ depende de $\displaystyle \left(t_{0}, x_{0}\right) $. 
+	\item Se puede eliminar la dependencia quitando la constante de Lipschitz que se puede hacer con el corolario de que el TPF funciona con que una potencia del operador sea contractivo. Basta con ver que 
+		\[\|T^{m}y-T^{m}z\|_{\infty } \leq \frac{\left(L\epsilon \right)^{m}}{n!}\|y-z\|_{\infty } .\]
+		Así, independientemente de los valores de $\displaystyle L $ y $\displaystyle \epsilon  $ podemos coger un valor de $\displaystyle m $ suficientemente grande para que el cociente sea menor que 1.
+	\item Se puede elegir $\displaystyle \epsilon _{K} > 0 $ que sirva para toda condición inicial $\displaystyle \left(t_{0}, x_{0}\right)\in K $ con $\displaystyle K $ compacto. Basta con coger $\displaystyle \tilde{R} = \bigcup_{\left(t_{0}, x_{0}\right)\in K}R $ compacto y cogemos $\displaystyle \epsilon < \max \left\{ r_{\left(t_{0}, x_{0}\right)}, \frac{r_{\left(t_{0}, x_{0}\right)}}{\max_{\tilde{R}}}\right\}  $.
+	\item No merece la pena optimizar el $\displaystyle \epsilon  $ del teorema eligiendo mejores cilindros $\displaystyle \left(r\right) $. 
+	\end{enumerate}
+\end{observation}
+\begin{eg}
+Consideremos el PVI
+\[
+\begin{cases}
+x' = 1 + x^{2} \\
+x\left(0\right)=0
+\end{cases}
+.\]
+Tenemos que en este caso $\displaystyle f\left(t,x\right)=1+x^{2} $ y $\displaystyle D = \R \times \R $. Buscamos el $\displaystyle \epsilon = \min \left\{ r, \frac{r}{\max_{R} \left|f\right|}\right\} =\min \left\{ r, \frac{r}{1+r^{2}}\right\} =\frac{1}{2} $ máximo que optimice el dominio de la solución. Tenemos que la solución explícita es $\displaystyle x\left(t\right)=\tan t $ para $\displaystyle t \in \left(-\frac{\pi }{2}, \frac{\pi }{2}\right) $ que es un intervalo mejor que el que habíamos conseguido.
+\end{eg}
+% obs - en el cilindro R la primera coordenada es \tau, esto va a afectar al resto de los apuntes y hay que arreglarlo
+\begin{theorem}[Teorema Picard-Lindelöf global]
+	Sea $\displaystyle f \in \mathcal{C}\left(\left[a,b\right] \times\R^{n}, \R^{n}\right) $ y global Lipschitz respecto a la segunda variable en $\displaystyle \left[a,b\right] \times \R^{n} $. Dado $\displaystyle \left(t_{0}, x_{0}\right) \in \left[a,b\right] \times \R^{n} $ y el PVI
+	\[
+	\begin{cases}
+	x' = f\left(t,x\right)\\
+	x\left(t_{0}\right)=x_{0}
+	\end{cases}
+	.\]
+	Este sistema tiene solución única definida en todo $\displaystyle \left[a,b\right]  $. 	
+\end{theorem}
+\begin{proof}
+	Cogemos $\displaystyle E = X = \mathcal{C}\left(\left[a,b\right] , \R^{n}\right) $. Tenemos que ver que $\displaystyle T : X \to X $ (ya lo vimos en la otra demostración) y la parte de $\displaystyle T $ contractiva es más sencilla por ser globalmente Lipschitz. 
+\end{proof}
 

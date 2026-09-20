@@ -1,0 +1,127 @@
+\chapter{Funciones holomorfas y ecuaciones de Cauchy-Riemann}
+\section{Funciones holomorfas}
+\begin{definition}[Función holomorfa]
+Sea $\displaystyle \Omega \subset \C $ abierto y $\displaystyle f : \Omega \to \C $. Diremos que $\displaystyle f $ es \textbf{holomorfa} en $\displaystyle z_{0} \in \Omega  $ (o \textbf{diferenciable} en sentido complejo en $\displaystyle z_{0} $) si existe el límite
+\[\lim_{z \to z_{0}}\frac{f\left(z\right)-f\left(z_{0}\right)}{z-z_{0}} .\]
+\end{definition}
+\begin{notation}
+Sea $\displaystyle f : \Omega \to \C $ con $\displaystyle \Omega \subset \C $ abierto. 
+\begin{enumerate}
+\item Si $\displaystyle f $ es holomorfa en $\displaystyle z_{0} \in \Omega  $, al valor del límite anterior lo llamaremos la \textbf{derivada} de $\displaystyle f $ en $\displaystyle z_{0} $ y lo denotamos
+	\[f'\left(z_{0}\right)=\lim_{z \to z_{0}}\frac{f\left(z\right)-f\left(z_{0}\right)}{z-z_{0}} .\]
+\item Diremos que $\displaystyle f $ es \textbf{holomorfa en $\displaystyle \Omega  $} es es holomorfa en todos los puntos de $\displaystyle \Omega  $. Si $\displaystyle g : \C \to \C $ es holomorfa diremos que \textbf{entera}. 
+\item Denotamos el conjunto de todas las funciones holomorfas en un abierto $\displaystyle \Omega \subset \C  $ por $\displaystyle \mathcal{H}\left(\Omega \right) $. Además, si $\displaystyle E \subset \C $ no es abierto, la notación $\displaystyle \mathcal{H}\left(E\right) $ indicará que existe un abierto $\displaystyle U \subset E $ tal que $\displaystyle f $ es holomorfa en $\displaystyle U $. 
+\end{enumerate}
+\end{notation}
+\begin{observation}
+Una función $\displaystyle f : \Omega \subset \C \to \C $ es holomorfa en $\displaystyle z_{0} \in \Omega  $, con $\displaystyle f'\left(z_{0}\right)=a $, si y solo si existe una función $\displaystyle \varphi : \C \to \C $ con $\displaystyle \lim_{h \to 0}\varphi\left(h\right)=0 $ tal que 
+\[f\left(z_{0} + h\right)-f\left(z_{0}\right)-ah = h\varphi\left(h\right) .\]
+De vez en cuando usaremos la notación $\displaystyle o\left(h\right):= h\varphi\left(h\right) $. 
+\end{observation}
+\begin{proof}
+Veamos que la equivalencia anterior es cierta. 
+\begin{description}
+\item[($\displaystyle \Rightarrow $)] Si $\displaystyle f $ es holomorfa en $\displaystyle z_{0} \in \Omega  $, tenemos que existe 
+	\[\lim_{h \to 0}\frac{f\left(z_{0} + h\right)-f\left(z_{0}\right)}{h} = a \iff \lim_{h \to 0}\frac{f\left(z_{0} + h\right)-f\left(z_{0}\right)}{h}-a = 0.\]
+Así, tomando $\displaystyle \varphi\left(h\right):=\frac{f\left(z_{0} + h\right)-f\left(z_{0}\right)}{h}-a $, claramente tenemos que $\displaystyle \lim_{h \to 0}\varphi\left(h\right)=0 $ y además,
+\[f\left(z_{0}+h\right)-f\left(z_{0}\right)-ah = h\varphi\left(h\right) .\]
+\item[($\displaystyle \Leftarrow $)] Si existe $\displaystyle \varphi : \C \to \C $ con $\displaystyle \lim_{h \to 0}\varphi\left(h\right)=0 $ y $\displaystyle h\varphi\left(h\right)=f\left(z_{0}+h\right)-f\left(z_{0}\right)-ah $, tenemos que 
+	\[a = \lim_{h \to 0}\varphi\left(h\right) + a = \lim_{h \to 0}\frac{f\left(z_{0}+h\right)-f\left(z_{0}\right)}{h} .\]
+\end{description}
+\end{proof}
+
+\begin{notation}
+Decimos que $\displaystyle f\left(h\right)=O\left(h\right) $ si existen $\displaystyle M > 0 $ y $\displaystyle \delta >0 $ tales que  $\displaystyle \left|f\left(h\right)\right| \leq M \left|h\right| $, $\displaystyle \forall z \in B\left(0, \delta \right) $. 
+\end{notation}
+\begin{eg} Algunos ejemplos de funciones holomorfas. 
+\begin{enumerate}
+\item La función $\displaystyle f\left(z\right)=z $ es holomorfa en $\displaystyle \C $ con $\displaystyle f'\left(z\right)=1 $.
+\item Toda función constante $\displaystyle z \to c_{0} $ es holomorfa en $\displaystyle \C $ con derivada nula. 
+\item Si $\displaystyle f\left(z\right)=z^{m} $, es sencillo ver que $\displaystyle f $ es holomorfa en $\displaystyle \C $ y además $\displaystyle f'\left(z\right)=mz^{m - 1} $, $\displaystyle \forall m \in \N $.  
+\item La función $\displaystyle f\left(z\right)= \frac{1}{z} $ es holomorfa en $\displaystyle \C / \left\{ 0\right\}  $. Calculemos su derivada:
+	\[
+	\begin{split}
+		\lim_{h \to 0}\frac{f\left(z + h\right)-f\left(z\right)}{h} = & \lim_{h \to 0}\frac{1}{h}\left(\frac{1}{z+h}-\frac{1}{z}\right) =\lim_{h \to 0}-\frac{h}{z\left(z + h\right)h} = -\frac{1}{z^{2}} .
+	\end{split}
+	\]
+\item La función $\displaystyle f\left(z\right)=\overline{z} $ no es holomorfa en ningún punto, a pesar de ser $\displaystyle \R $-lineal y ser $\displaystyle \mathcal{C}^{\infty }\left(\R^{2}, \R^{2}\right) $. En efecto,
+	\[\lim_{h \to 0}\frac{\overline{z+h}-\overline{z}}{h} = \lim_{h \to 0}\frac{\overline{h}}{h} .\]
+	Este límite no existe puesto que si cogemos $\displaystyle h = it $ con $\displaystyle t \in \R $, tenemos que 
+	\[\lim_{t \to 0}\frac{\overline{it}}{it}=\lim_{t \to 0}\frac{-it}{it}=-1 .\]
+	Si cogemos $\displaystyle h = t $ con $\displaystyle t \in \R $, 
+	\[\lim_{t \to 0}\frac{\overline{t}}{t}=\lim_{t \to 0}\frac{t}{t}=1 .\]
+\end{enumerate}
+\end{eg}
+\begin{prop}
+Si $\displaystyle f : \Omega \subset \C \to \C $ es holomorfa en $\displaystyle z_{0} \in \Omega  $, entonces $\displaystyle f $ es continua en $\displaystyle z_{0} $. 
+\end{prop}
+\begin{proof}
+Como $\displaystyle f $ es holomorfa en $\displaystyle z_{0} $, tenemos que
+\[f\left(z_{0}+h\right)-f\left(z_{0}\right)=f'\left(z_{0}\right)h + o\left(h\right)= O\left(h\right) .\]
+Así, claramente tendremos que $\displaystyle \lim_{h \to 0}f\left(z_{0} + h\right)-f\left(z_{0}\right)=0 $, por lo que $\displaystyle \lim_{h \to 0}f\left(z_{0}+h\right)=f\left(z_{0}\right) $. 
+\end{proof}
+\begin{prop}
+Sea $\displaystyle \Omega \subset \C $ un abierto y $\displaystyle f,g : \Omega \to \C $ funciones holomorfas en $\displaystyle z_{0} \in \Omega  $. Entonces, 
+\begin{enumerate}
+	\item $\displaystyle \left(f + g\right)'\left(z_{0}\right)=f'\left(z_{0}\right)+g'\left(z_{0}\right) $.
+	\item $\displaystyle \left(fg\right)'\left(z_{0}\right)=f'\left(z_{0}\right)g\left(z_{0}\right)+f\left(z_{0}\right)g'\left(z_{0}\right) $. 
+	\item Siempre que $\displaystyle g\left(z_{0}\right)\neq 0 $, $\displaystyle \left(\frac{f}{g}\right)'\left(z_{0}\right)=\frac{f'\left(z_{0}\right)g\left(z_{0}\right)-g'\left(z_{0}\right)f\left(z_{0}\right)}{\left[g\left(z_{0}\right)\right] ^{2}} $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Sean $\displaystyle f,g : \Omega \to \C $ holomorfas en $\displaystyle z_{0} \in \C $. 
+\begin{enumerate}
+\item Tendremos que 
+	\[
+		\frac{\left(f + g\right)\left(z\right)-\left(f + g\right)\left(z_{0}\right)}{z-z_{0}} = \frac{f\left(z\right)-f\left(z_{0}\right)}{z-z_{0}} + \frac{g\left(z\right)-g\left(z_{0}\right)}{z-z_{0}} \xrightarrow{z\to z_{0}} f'\left(z_{0}\right) + g'\left(z_{0}\right) .
+	\]
+\item Es sencillo ver que 
+	\[
+	\begin{split}
+		\frac{\left(fg\right)\left(z\right)-\left(fg\right)\left(z_{0}\right)}{z-z_{0}} = & \frac{f\left(z\right)g\left(z\right)-f\left(z\right)g\left(z_{0}\right)+f\left(z\right)g\left(z_{0}\right)-f\left(z_{0}\right)g\left(z_{0}\right)}{z-z_{0}}\\
+		= & \frac{f\left(z\right)\left[g\left(z\right)-g\left(z_{0}\right)\right] +g\left(z_{0}\right)\left[f\left(z\right)-f\left(z_{0}\right)\right] }{z-z_{0}}\\
+		\xrightarrow{z \to z_{0}} & f\left(z_{0}\right)g'\left(z_{0}\right) + f'\left(z_{0}\right)g\left(z_{0}\right).
+	\end{split}
+	\]
+\item Sabemos que $\displaystyle g\left(z_{0}\right) \neq 0 $, como $\displaystyle g $ es holomorfa en $\displaystyle z_{0} $ es continua en este punto, por lo que existe un entorno de $\displaystyle z_{0} $ tal que $\displaystyle g\left(z\right)\neq 0 $ en este entorno. Así, 
+	\[
+	\begin{split}
+		\frac{\left(\frac{f}{g}\right)\left(z\right)-\left(\frac{f}{g}\right)\left(z_{0}\right)}{z-z_{0}} = & \frac{1}{z-z_{0}} \cdot \frac{f\left(z\right)g\left(z_{0}\right)-f\left(z_{0}\right)g\left(z\right)}{g\left(z\right)g\left(z_{0}\right)} \\
+		= & \frac{1}{z-z_{0}}\frac{f\left(z\right)g\left(z_{0}\right)-f\left(z_{0}\right)g\left(z_{0}\right)+f\left(z_{0}\right)g\left(z_{0}\right)-f\left(z_{0}\right)g\left(z\right)}{g\left(z\right)g\left(z_{0}\right)} \\
+		= & \frac{1}{g\left(z\right)} \cdot \frac{f\left(z\right)-f\left(z_{0}\right)}{z-z_{0}} + \frac{f\left(z_{0}\right)}{g\left(z\right)g\left(z_{0}\right)}\frac{g\left(z_{0}\right)-g\left(z\right)}{z-z_{0}} \\
+		\xrightarrow{z \to z_{0}} & \frac{1}{g\left(z_{0}\right)}f'\left(z_{0}\right)-\frac{f\left(z_{0}\right)}{\left[g\left(z_{0}\right)\right] ^{2}} g'\left(z_{0}\right) = \frac{f'\left(z_{0}\right)g\left(z_{0}\right)-f\left(z_{0}\right)g'\left(z_{0}\right)}{\left[g'\left(z_{0}\right)\right] ^{2}}.
+	\end{split}
+	\]
+\end{enumerate}
+\end{proof}
+
+\begin{prop}[Regla de la cadena]
+Si $\displaystyle U, \Omega \subset \C $ son abiertos y $\displaystyle f: \Omega \to U $ es holomorfa en $\displaystyle z_{0} $ y $\displaystyle g : U \to \C $ es holomorfa en $\displaystyle f\left(z_{0}\right) $, entonces $\displaystyle g\circ f $ es holomorfa en $\displaystyle z_{0} $ y
+\[\left(g\circ f\right)'\left(z_{0}\right)=g'\left(f\left(z_{0}\right)\right)f'\left(z_{0}\right) .\]
+\end{prop}
+\begin{proof}
+	Distinguimos dos casos.
+	\begin{itemize}
+	\item Si $\displaystyle f'\left(z_{0}\right)\neq 0 $, tenemos que existe $\displaystyle \delta > 0 $ tal que si $\displaystyle 0 < \left|h\right|<\delta  $, entonces 
+\[ \left|\frac{f\left(z_{0} + h\right)-f\left(z_{0}\right)}{h}\right| \geq \frac{ \left|f'\left(z_{0}\right)\right|}{2} > 0 \Rightarrow \left|f\left(z_{0} + h\right)-f\left(z_{0}\right)\right| > 0 .\]
+Así, tenemos que 
+\[ \frac{g\left(f\left(z_{0}+h\right)\right)-g\left(f\left(z_{0}\right)\right)}{h} =\frac{g\left(f\left(z_{0}+h\right)\right)-g\left(f\left(z_{0}\right)\right)}{f\left(z_{0}+h\right)-f\left(z_{0}\right)}\frac{f\left(z_{0}+h\right)-f\left(z_{0}\right)}{h} \to g'\left(f\left(z_{0}\right)\right)f'\left(z_{0}\right) .\] 
+\item Supongamos ahora que $\displaystyle f'\left(z_{0}\right)=0 $. En este caso, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \left|w-f\left(z_{0}\right)\right|<\delta  $, entonces
+\[ \left|g\left(w\right)-g\left(f\left(z_{0}\right)\right)\right| \leq \left( \left|g'\left(f\left(z_{0}\right)\right)\right|+1\right) \left|w-f\left(z_{0}\right)\right| .\]
+Así, por continuidad de $\displaystyle f $ existe $\displaystyle r > 0 $ tal que si $\displaystyle \left|h\right|<r $, entonces
+\[ \left|f\left(z_{0}+h\right)-f\left(z_{0}\right)\right|\leq \delta  .\]
+Por tanto para $\displaystyle 0 < \left|h\right|<r $, 
+\[ \left|\frac{g\left(f\left(z_{0} + h\right)\right)-g\left(f\left(z\right)\right)}{h}\right| \leq \frac{ \left|f\left(z_{0}+h\right)-f\left(z_{0}\right)\right|}{ \left|h\right|} \left( \left|g'\left(f\left(z_{0}\right)\right)\right|+1\right) \to 0.\]
+	\end{itemize}
+\end{proof}
+\section{Ecuaciones de Cauchy-Riemann}
+Dada $\displaystyle f : \Omega \to \C $, podemos considerar que $\displaystyle f $ viene dada de la forma
+\[f\left(x,y\right) = u\left(x,y\right) + iv\left(x,y\right) .\]
+Es decir, la podemos considerar una función $\displaystyle f : \R^{2} \to \R^{2} $. 
+\begin{theorem}[Ecuaciones de Cauchy-Riemann]
+Sea $\displaystyle f : \Omega \to \C $. Entonces, $\displaystyle f $ es holomorfa en $\displaystyle z_{0}=x_{0} + iy_{0} \in \Omega  $ si y sólo si $\displaystyle u $ y $\displaystyle v $ son diferenciables en $\displaystyle \left(x_{0}, y_{0}\right) $ y cumplen las ecuaciones
+\[\frac{\partial u}{\partial x}\left(x_{0}, y_{0}\right)=\frac{\partial v}{\partial y}\left(x_{0}, y_{0}\right) \quad \text{y} \quad \frac{\partial u}{\partial y}\left(x_{0}, y_{0}\right)=-\frac{\partial v}{\partial x} \left(x_{0}, y_{0}\right).\]
+En este caso, 
+\[f'\left(z_{0}\right)=\frac{\partial u}{\partial x}\left(x_{0}, y_{0}\right) + i\frac{\partial v}{\partial y}\left(x_{0}, y_{0}\right) .\]
+\end{theorem}
+
