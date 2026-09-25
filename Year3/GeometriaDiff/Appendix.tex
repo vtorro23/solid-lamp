@@ -1,0 +1,34 @@
+\chapter{Repaso del producto vectorial}
+\begin{definition}[Producto vectorial] 
+Dados $\displaystyle \vec{u}, \vec{v} \in \R^{3} $, decimos que $\displaystyle \vec{u} \times \vec{v} \in \R^{3} $ es el vector tal que $\displaystyle \left\langle \vec{u} \times \vec{v}, \vec{w} \right\rangle =\det\left(\vec{u}, \vec{v}, \vec{w}\right) $.
+\end{definition}
+Es sencillo ver que dados $\displaystyle \vec{u}=\left(u_{1}, u_{2}, u_{3}\right) $ y $\displaystyle \vec{v}=\left(v_{1}, v_{2}, v_{3}\right) $ tendremos que 
+\[\vec{u} \times \vec{v} = \begin{vmatrix} \vec{e}_{1} & u_{1} & v_{1} \\ \vec{e}_{2} & u_{2} & v_{2} \\ \vec{e}_{3} & u_{3} & v_{3} \end{vmatrix}=\left(\begin{vmatrix} u_{2} & v_{2} \\ u_{3} & v_{3} \end{vmatrix} , - \begin{vmatrix} u_{1} & v_{1} \\ u_{3} & v_{3} \end{vmatrix} , \begin{vmatrix} u_{1} & v_{1} \\ u_{2} & v_{2} \end{vmatrix} \right) .\]
+En efecto, para un $\displaystyle \vec{w} \in \R^{3} $, 
+\[\left\langle \vec{u} \times \vec{v}, \vec{w} \right\rangle =w\begin{vmatrix} u_{2} & v_{2} \\ u_{3} & v_{3} \end{vmatrix}  - w_{2} \begin{vmatrix} u_{1} & v_{1} \\ u_{3} & v_{3}  \end{vmatrix} +w_{3}\begin{vmatrix} u_{1} & v_{1} \\ u_{1} & v_{2} \end{vmatrix} =\begin{vmatrix} u_{1} & v_{1} & w_{1} \\ u_{2} & v_{2} & w_{2} \\ u_{3} & v_{3} & w_{3} \end{vmatrix}  .\]
+\begin{prop} Sean $\displaystyle \vec{u}, \vec{v} \in \R^{3} $. 
+\begin{enumerate}
+	\item Si $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ son linealmente independientes, entonces $\displaystyle \vec{u} \times \vec{v} \perp \vec{u}, \vec{v} $.  
+	\item Si $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ son linealmente dependientes, entonces $\displaystyle \vec{u} \times \vec{v} = 0 $. 
+	\item Se verifica la igualdad $\displaystyle \|\vec{u} \times \vec{v}\|^{2} + \left\langle \vec{u}, \vec{v} \right\rangle =\|\vec{u}\|^{2}\|\vec{v}\|^{2} $.
+	\item Si $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ son linealmente independientes, $\displaystyle \left\{ \vec{u}, \vec{v}, \vec{u} \times \vec{v}\right\}  $ es una base positiva.  
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Sean $\displaystyle \vec{u}, \vec{v} \in \R^{3} $. 
+\begin{enumerate}
+	\item Si $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ son linealmente independientes,
+		\[\left\langle \vec{u}\times\vec{v}, \vec{u} \right\rangle =\det\left(\vec{u}, \vec{v}, \vec{u}\right)=0 .\]
+		Lo mismo sucede con $\displaystyle \left\langle \vec{u} \times \vec{v}, \vec{v} \right\rangle  $, por lo que tendremos que $\displaystyle \vec{u} \times \vec{v} \perp \vec{u} $ y $\displaystyle \vec{u} \times \vec{v} \perp \vec{v} $. 
+	\item Tendremos que $\displaystyle \forall \vec{w} \in \R^{3} $, como $\displaystyle \vec{v}=\lambda \vec{u} $ para algún $\displaystyle \lambda \in \R  $, 
+		\[\left\langle \vec{u} \times \vec{v}, \vec{w} \right\rangle =\det\left(\vec{u}, \vec{v}, \vec{w}\right)=\det\left(\vec{u}, \lambda \vec{u}, \vec{w}\right)=0 .\]
+	Como el producto escalar es una forma bilineal no degenerada, necesariamente debe ser que $\displaystyle \vec{u} \times \vec{v}=0 $. 
+\item Sea $\displaystyle \theta  \in \left[0, \pi \right]  $ el ángulo que forman $\displaystyle \vec{u} $ y $\displaystyle \vec{v} $. Sabemos que 
+		\[\cos\theta = \frac{\left\langle \vec{u}, \vec{v} \right\rangle }{\|\vec{u}\|\|\vec{v}\|}  \quad \text{y} \quad \|\vec{u} \times \vec{v}\|=\|\vec{u}\|\|\vec{v}\|\sin\theta .\]
+		Así, tenemos que 
+\[\|\vec{u} \times \vec{v}\|^{2} + \left\langle \vec{u}, \vec{v} \right\rangle ^{2}= \|\vec{u}\|^{2}\|\vec{v}\|^{2}\left(\sin ^{2}\theta + \cos^{2}\theta \right) \Rightarrow \frac{\|\vec{u} \times \vec{v}\|^{2}+\left\langle \vec{u}, \vec{v} \right\rangle ^{2}}{\|\vec{u}\|^{2}\|\vec{v}\|^{2}} 
+=1.\]
+\item Como $\displaystyle \det\left(\vec{u}, \vec{v}, \vec{u} \times \vec{v}\right)=\left\langle \vec{u} \times \vec{v}, \vec{u}\times\vec{v} \right\rangle =\|\vec{u} \times \vec{v}\|^{2} \geq 0 $, tendremos que si $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ son linealmente independientes debe ser que $\displaystyle \|\vec{u} \times \vec{v}\| > 0 $ y $\displaystyle \mathcal{B}= \left\{ \vec{u}, \vec{v}, \vec{u} \times \vec{v}\right\}  $ es una base positiva.
+\end{enumerate}
+\end{proof}
+

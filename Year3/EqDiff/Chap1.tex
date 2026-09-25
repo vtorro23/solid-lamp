@@ -1,170 +1,18 @@
-\section{Algunas cuestiones básicas y ejemplos}
+\chapter{Existencia y unicidad de soluciones}
 
-\subsection{Número de soluciones}
-\begin{eg}
-Consideremos el PVI
+\begin{definition}[Problema de valor inicial]
+Sea $\displaystyle D \subset \R \times \R^{n} $ un abierto, $\displaystyle f : D \to \R^{n} $ continua y $\displaystyle \left(t_{0}, x_{0}\right) \in D $. Se llama \textbf{problema de valor inicial} al sistema
 \[
 \begin{cases}
-x' = c\left(t\right)x \\
-x\left(0\right)=1
-\end{cases}
-.\]
-Sabemos que una solución es $\displaystyle x\left(t\right)=\exp\left(\int^{t}_{0} c\left(s\right) \; d s\right) $. Para demostrar la unicidad de las solucioens basta con ver que $\displaystyle \left(\frac{x_{2}\left(t\right)}{x_{1}\left(t\right)}\right)' = 0 $, siendo $\displaystyle x_{1}\left(t\right) $ la solución anterior y $\displaystyle x_{2}\left(t\right) $ otra posible solución. 
-\end{eg}
-\subsection{Dominio de la solución}
-\begin{eg}
-Dado el PVI
-\[
-\begin{cases}
-x' = 2x + 5 \\
-x\left(0\right)=0
-\end{cases}
-.\]
-Sabemos que la solución es $\displaystyle x\left(t\right)=\frac{5}{2}e^{2t}-\frac{5}{2} $ y lo es $\displaystyle \forall x \in \R $. 
-\end{eg}
-\begin{eg}
-Dado el PVI
-\[
-\begin{cases}
-x' = 1 + x^{2} \\
-x\left(0\right)=1
-\end{cases}
-.\]
-Tenemos que una solución es $\displaystyle x\left(t\right)=\tan\left(t + \frac{\pi }{4}\right) $, pero su dominio no es $\displaystyle \R $ sino que es $\displaystyle \left(-\frac{3\pi }{4}, \frac{\pi }{4}\right) $. 
-\end{eg}
-\subsection{Dependencia respecto a condiciones iniciales y parámetros}
-\begin{eg}
-Consideremos el PVI
-\[
-\begin{cases}
-x' = x \\
-x\left(0\right)=1
-\end{cases}
-.\]
-La solución única es $\displaystyle x\left(t\right)=e^{t} $. Nos podemos preguntar qué pasa si cambiamos la condición inicial. Ante el problema
-\[
-\begin{cases}
-x' = x \\
-x\left(0\right)=1 + \epsilon 
-\end{cases}
-,\]
-tenemos que la solución será $\displaystyle x_{\epsilon }\left(t\right)=\left(1 + \epsilon \right)e^{t} $. Tenemos que 
-\[ \left|x\left(t\right)-x_{\epsilon }\left(t\right)\right| = \left|\epsilon \right| e^{t} .\]
-Así, si la condición inicial varía poco, la solución también varía poco, con el matiz del valor de $\displaystyle t $. \\
-Planteemos ahora el problema
-\[
-\begin{cases}
-x' = \left(1 + \epsilon \right)x \\
-x\left(0\right)=1
-\end{cases}
-.\]
-Veamos cómo cambia la solución. Tendremos que la solución será $\displaystyle x_{\epsilon }\left(t\right)=e^{\left(1+\epsilon \right)t} $. Tendremos que 
-\[ \left|x\left(t\right)-x_{\epsilon }\left(t\right)\right| = e^{t} \left|1-e^{\epsilon t}\right| .\]
-Así, si $\displaystyle \epsilon  $ es pequeño la variación en las soluciones también es pequeña.
-\end{eg}
-\subsection{Propiedades cualitativas}
-\begin{eg}
-Consideremos el PVI
-\[
-\begin{cases}
-x' = \cos x \\
-x\left(0\right)=0
-\end{cases}
-.\]
-Veamos que $\displaystyle x\left(t\right)\geq 0 $ para $\displaystyle t \geq 0 $. Esto es cierto para $\displaystyle t = 0 $. Por otro lado, $\displaystyle x'\left(t\right) > 0 $ para $\displaystyle t \in \left(0,\frac{\pi }{2}\right) $. Por tanto, en este intervalo es positiva. Ahora, podemos encontrar un $\displaystyle t_{2} > \frac{\pi }{2} $ tal que $\displaystyle -\frac{\pi }{2} <x\left(t_{2}\right)<0 $. 
-Sea $\displaystyle t_{1} = \sup \left\{ t < t_{2} , \; x\left(t\right) < 0\right\} $. Por continuidad debe ser que $\displaystyle x\left(t_{1}\right) = 0 $. Por tanto, $\displaystyle -\frac{\pi }{2} < x\left(t\right)< 0 $ en $\displaystyle \left(t_{1}, t_{2}\right) $. Por el teorema del valor medio tenemos que existe $\displaystyle \xi \in \left(t_{1}, t_{2}\right) $ tal que
-\[x'\left(\xi\right)= \frac{x\left(t_{1}\right)-x\left(t_{2}\right)}{t_{1}-t_{2}}<0 .\]
-Así, tenemos que $\displaystyle \cos\left(x\left(\xi\right)\right) < 0 $ pero no puede ser porque $\displaystyle -\frac{\pi }{2} < x\left(\xi\right) < 0 $. Así, debe ser que $\displaystyle x\left(t\right)\geq 0 $ para $\displaystyle t \geq 0 $. Análogamente, se puede ver que $\displaystyle x\left(t\right)\leq \frac{\pi }{2} $ para $\displaystyle t \geq 0 $. Así, $\displaystyle x'\geq 0 $ para $\displaystyle t \geq 0 $. 
-\end{eg}
-\subsection{Comportamiento asintótico}
-\begin{eg}
-	En el ejemplo anterior, veamos que $\displaystyle \lim_{t \to \infty}x\left(t\right)=\frac{\pi }{2} $. Por las propiedades anteriores (monotonía y acotación), tenemos que $\displaystyle \lim_{t \to \infty}x\left(t\right)=L \in \left[0, \frac{\pi }{2}\right]  $. Veamos que $\displaystyle L = \frac{\pi }{2} $. Tenemos que $\displaystyle \lim_{t \to \infty}x'\left(t\right)=\cos L $. Si el límite de la derivada no es 0, tendríamos que la función no tiene límite, por lo que debe ser que $\displaystyle \lim_{t \to \infty}x'\left(t\right)=\cos L = 0 $, por lo que $\displaystyle L = \frac{\pi }{2} $. 
-\end{eg}
-\begin{observation}
-Existen funciones que tienen límite cuyas derivadas no tienen límite. Basta con coger $\displaystyle x\left(t\right)=\frac{\cos t ^{2}}{t} $. 
-\end{observation}
-\section{Notación y definiciones básicas}
-\begin{definition}[Sistemas de EDO's]
-Es una relación de la forma  
-\[F\left(t, x_{1}, \ldots, x_{1}^{(m_{1})}, x_{2}, \ldots, x_{2}^{(m_{2})}, \ldots, x_{n}^{(m_{n})}\right)= 0 ,\]
-donde $\displaystyle F : \R \times \R^{m_{1} + 1}\times \cdots \times \R^{m_{n}+1} \to \R^{l} $. Se denomina \textbf{orden} del sistema al máximo de los órdenes de las ecuaciones. 
-\end{definition}
-\begin{definition}[Sistema en forma normal]
-Un sistema de EDO's está en \textbf{forma normal} si $\displaystyle l = n $ y es de la forma siguiente:
-\[
-\begin{cases}
-x_{1}^{(m_{1})}= f_{1}\left(t, x_{1}, \ldots, x^{(m_{1}-1)}_{1}, x_{2}, \ldots, x_{2}^{(m_{2}-1)}, \ldots, x_{n}^{(m_{n}-1)}\right) \\
-\vdots \\
-x_{n}^{(m_{n})}= f_{n}\left(t, x_{1}, \ldots, x^{(m_{1}-1)}_{1}, x_{2}, \ldots, x_{2}^{(m_{2}-1)}, \ldots, x_{n}^{(m_{n}-1)}\right)
+x' = f\left(t,x\right) \\
+x\left(t_{0}\right)=x_{0}
 \end{cases}
 .\]
 \end{definition}
-\begin{lema}
-Todo sistema en forma normal se puede transformar en un sistema en forma normal de orden 1.
-\end{lema}
-\begin{proof}
-	Definimos $\displaystyle y_{i,j}:= x_{i}^{\left(j\right)} $ para $\displaystyle i \in \left\{ 1, \ldots, n\right\}  $ y $\displaystyle j \in \left\{ 0, \ldots, m_{i}-1\right\}  $. Así, tenemos que
-	\[ y'_{i,j} = \left(x_{i}^{j}\right)' = x_{i}^{j +1} =
-	\begin{cases}
-	x_{i}^{\left(m_{i}\right)}=f_{i}\left( \ldots\right), \; j = m_{i}-1 \\
-	y_{i, j+1}, \; j \neq m_{i}-1
-	\end{cases}
-	.\]
-	Entonces tenemos $\displaystyle m_{1} + m_{2} + \cdots + m_{n} $ ecuaciones y el sistema es de orden 1. 
-\end{proof}
 
-\begin{eg}
-Consideremos el sistema
-\[
-\begin{cases}
-x_{1}'' = \cos x_{1} + x_{2} + x_{1}' \\
-x_{2}' = x_{2}^{2}+x_{1}+t ^{2}
-\end{cases}
-.\]
-Se trata de un sistema de orden 2. Vamos a transformarlo en uno que sea de orden 1. Para ello, definimos $\displaystyle x = x_{1} $, $\displaystyle y = x_{1}' $ y $\displaystyle z = x_{2} $. Así, el sistema nos queda
-\[
-\begin{cases}
-x' = y \\
-y' = \cos x + z + y \\
-z'= z^{2} + x + t ^{2}
-\end{cases}
-.\]
-\end{eg}
-\begin{observation}
-Una consecuencia muy importante es que esto nos permite de aquí en adelante hablar sólo de sistemas de orden 1. Así, sólo trataremos con sistemas de la forma
-\[
-\begin{cases}
-x_{1}' = f_{1}\left(t, x_{1}, \ldots, x_{n}\right) \\
-\vdots \\
-x_{n}' = f_{n}\left(t, x_{1}, \ldots, x_{n}\right)
-\end{cases}
-.\]
-Para escribirlo de forma compacta lo podemos escribir de forma vectorial:
-\[\vec{x}' = f\left(t, \vec{x}\right) .\]
-\end{observation}
 \begin{definition}[Solución]
-	Una colección $\displaystyle x_{1}, \ldots, x_{n} : I\subset \R \to \R $ es una \textbf{solución} del sistema $\displaystyle \vec{x}' = f\left(t, \vec{x}\right) $ si $\displaystyle x_{i}\in \mathcal{C}^{1}\left(I, \R\right) $ y además $\displaystyle x_{i}' \left(t\right)=f_{i}\left(t, x_{1}\left(t\right), \ldots, x_{n}\left(t\right)\right) $, $\displaystyle \forall t \in I $, $\displaystyle \forall i \in \left\{ 1, \ldots, n\right\}  $. 
+	Una colección $\displaystyle x_{1}, \ldots, x_{n} : I\subset \R \to \R $ es una \textbf{solución} del sistema $\displaystyle x' = f\left(t, x\right) $ si $\displaystyle x_{i}\in \mathcal{C}^{1}\left(I, \R\right) $ y además $\displaystyle x_{i}' \left(t\right)=f_{i}\left(t, x_{1}\left(t\right), \ldots, x_{n}\left(t\right)\right) $, $\displaystyle \forall t \in I $, $\displaystyle \forall i \in \left\{ 1, \ldots, n\right\}  $. 
 \end{definition}
-Nuestro objetivo a lo largo del curso será estudiar el Problema de Valor Inicial (PVI)
-\[
-\begin{cases}
-\vec{x}' = f\left(t, \vec{x}\right)\\
-\vec{x}\left(t_{0}\right)=\vec{x}_{0}
-\end{cases}
-,\]
-donde $\displaystyle t_{0} \in \R $ y $\displaystyle x_{0}\in \R^{n} $ son dados.
-\section{Interpretación geométrica del problema de valor inicial}
-% Lo de las isoclinas
-% Preguntarle a Andrés que lo pase
-\begin{lema}
-Las gráficas de dos soluciones diferentes de una EDO no pueden cruzarse de forma transversal \footnote{No se pueden cortar en un punto y en ese punto tener vectores tangentes distintos.}.
-\end{lema}
-\begin{proof}
-Supongamos que tenemos dos soluciones $\displaystyle y,z $ tales que $\displaystyle y\left(t_{0}\right)=z\left(t_{0}\right) $ en algún $\displaystyle t_{0} \in \R $. Entonces, $\displaystyle y'\left(t_{0}\right)=f\left(t_{0}, y\left(t_{0}\right)\right)=f\left(t_{0}, z\left(t_{0}\right)\right)=z'\left(t_{0}\right) $. Así, no se cruzan transversalmente.
-\end{proof}
-
-\chapter{Teoría fundamental}
-\section{Existencia y unicidad de soluciones}
 Sea el PVI de la forma
 \[
 \begin{cases}
@@ -216,7 +64,7 @@ Tenemos que podemos distinguir varios casos:
 \end{itemize}
 	\end{enumerate}
 \end{eg}
-\subsection{Formulación integral del PVI}
+\section{Formulación integral del PVI}
 Por el Teorema Fundamental del Cálculo tenemos que 
 \[
 \begin{cases}
@@ -249,12 +97,12 @@ Así, tenemos que $\displaystyle x \in \mathcal{C}^{1}\left(I, \R^{n}\right) $. 
 Finalmente, derivando $\displaystyle x\left(t\right) $ obtenemos que $\displaystyle x'\left(t\right)=f\left(t, x\left(t\right)\right) $ por el TFC. 
 \end{description}
 \end{proof}
-\begin{notation}
-A partir de ahora vamos a definir el operador $\displaystyle T $ actuando en $\displaystyle \mathcal{C}\left(I, \R^{n}\right) $ cono 
+\begin{notation}[Operador de Picard]
+A partir de ahora vamos a definir el operador $\displaystyle T $ actuando en $\displaystyle \mathcal{C}\left(I, \R^{n}\right) $ como 
 \[Ty\left(t\right):= x_{0} + \int^{t}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s .\]
-Por la proposición anterior, resolver el PVI es equivalente a encontrar $\displaystyle x \in \mathcal{C}\left(I, \R^{n}\right) $ tal que $\displaystyle Tx = x $. 
+A este operador también se le llama \textbf{operador de Picard}. Por la proposición anterior, resolver el PVI es equivalente a encontrar $\displaystyle x \in \mathcal{C}\left(I, \R^{n}\right) $ tal que $\displaystyle Tx = x $. 
 \end{notation}
-\subsection{Teorema del punto fijo de Banach}
+\section{Teorema del punto fijo de Banach}
 \begin{definition}[Espacio de Banach]
 Diremos que $\displaystyle \left(E, \left| \cdot \right|\right) $ es un \textbf{espacio de Banach} si es un espacio vectorial normado y completo.
 \end{definition}
@@ -359,6 +207,27 @@ la sucesión completa converge:
 x_j=T^j x_0 \longrightarrow x^\ast.
 \]
 \end{proof}
+\section{Condiciones para el teorema de existencia y unicidad}
+\begin{lema}
+	Sea $\displaystyle f \in \mathcal{C}\left(\left[a,b\right] , \R^{n}\right) $. Entonces,
+	\[ \left\|\int^{b}_{a} f\left(t\right) \; dt\right\| \leq \int^{b}_{a} \|f\left(t\right)\| \; dt.\]
+\end{lema}
+\begin{proof}
+Como $\displaystyle f\left(t\right)=\left(f_{1}\left(t\right), \ldots, f_{n}\left(t\right)\right)\in \R^{n} $, la integral de $\displaystyle f $ se define como la integral componente a componente. Es decir, 
+\[\int^{b}_{a} f\left(t\right) \; dt : = \left(\int^{b}_{a} f_{1}\left(t\right) \; dt, \ldots, \int^{b}_{a} f_{n}\left(t\right) \; dt\right) .\]
+Así, tendremos que 
+\[
+\begin{split}
+	\left\|\int^{b}_{a} f\left(t\right) \; dt\right\|^{2} = & \sum^{n}_{i = 1}\left(\int^{b}_{a} f_{i}\left(t\right) \; dt\right)^{2} = \sum^{n}_{i = 1}\left(\int^{b}_{a} f_{i}\left(t\right) \; dt\right)\left(\int^{b}_{a} f_{i}\left(s\right) \; d s\right)\\
+	= & \sum^{n}_{i = 1}\int \int _{\left[a,b\right]\times\left[a,b\right]}f_{i}\left(t\right)f_{i}\left(s\right) \; dt  \; d s = \int \int _{\left[a,b\right]\times\left[a,b\right]}\left(\sum^{n}_{i = 1}f_{i}\left(t\right)f_{i}\left( s\right)\right) \; dt \; d s,
+\end{split}
+\]
+aplicando la desigualdad Cauchy-Swarz,
+\[
+	\leq  \int \int _{\left[a,b\right]\times\left[a,b\right]} \|f\left(t\right)\|\|f\left(s\right)\| \; dt \; d s =\left(\int^{b}_{a} \|f\left(t\right)\| \; dt\right)\left(\int^{b}_{a} \|f\left(s\right)\| \; d s\right)=\left(\int^{b}_{a} \|f\left(t\right)\| \; dt\right)^{2}.
+\]
+\end{proof}
+
 Para que la aplicación 
 \[Tx\left(t\right)=x_{0}+\int^{t}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s ,\]
 sea contractiva, necesitamos que existe $\displaystyle K \in [0,1) $ tal que 
@@ -382,16 +251,32 @@ Sea $\displaystyle f : \Omega \subset \R^{n} \to \R^{m} $.
 	\[\|f\left(y\right)-f\left(z\right)\| \leq L_{x}\|y-z\|, \; \forall y,z \in V_{x} .\]
 \end{itemize}
 \end{definition}
-\begin{observation}
-Si $\displaystyle f : \Omega \subset \R^{n} \to \R^{m} $ es localmente Lipschitz, es globalmente Lipschitz en cualquier compacto contenido en $\displaystyle \Omega  $. 
-\end{observation}
+\begin{prop}
+Sea $\displaystyle f: \Omega\subset \R^{n} \to \R^{m} $ localmente Lipschitz y $\displaystyle K \subset \Omega  $ compacto. Entonces $\displaystyle f $ es globalmente Lipschitz en $\displaystyle K $. 
+\end{prop}
+\begin{proof}
+Supongamos que no es cierto. Entonces para cada $\displaystyle k \in \N $ tenemos que existen $\displaystyle x_{k}, y_{k}\in K $ distintos tales que 
+\[ \|f\left(x_{k}\right)-f\left(y_{k}\right)\| > k \|x_{k}-y_{k}\| .\]
+Como $\displaystyle K $ es compacto, existen subsucesiones $\displaystyle \left\{ x_{k_{j}}\right\} _{j \in \N} $ e $\displaystyle \left\{ y_{k_{j}}\right\} _{j \in \N} $ convergentes, por lo que existen $\displaystyle \overline{x}, \overline{y}\in K $ con $\displaystyle x_{k_{j}}\to \overline{x} $ e $\displaystyle y_{k_{j}}\to \overline{y} $. 
+Como $\displaystyle f $ es continua y $\displaystyle K $ compacto, entonces $\displaystyle f $ está acotada en $\displaystyle K $, de forma que 
+\[\|x_{k_{j}}-y_{k_{j}}\|< \frac{\|f\left(x_{k_{j}}\right)-f\left(y_{k_{j}}\right)\|}{k_{j}}<\frac{2\max_{K} \|f\|}{k_{j}} .\]
+Tomando límites obtenemos que 
+\[\|\overline{x}-\overline{y}\| \leq \lim_{j \to \infty}\frac{2\max_{K} \|f\|}{k_{j}} = 0 ,\]
+por lo que debe ser que $\displaystyle \overline{x}=\overline{y} $. Como $\displaystyle f $ es localmente Lipschitz, existe $\displaystyle V_{\overline{x}}\subset \Omega  $ entorno de $\displaystyle \overline{x} $ y $\displaystyle L_{\overline{x}} \geq 0$ tal que
+\[\|f\left(x\right)-f\left(y\right)\|\leq L_{\overline{x}}\|x-y\|, \; \forall x,y\in V_{\overline{x}} .\]
+Como las sucesiones $\displaystyle \left\{ x_{k_{j}}\right\} _{j \in \N} $ e $\displaystyle \left\{ y_{k_{j}}\right\} _{j \in \N} $ convergen al mismo límite, existe $\displaystyle N \in \N $ tal que $\displaystyle x_{k_{j}}, y_{k_{j}} \in V_{\overline{x}} $, $\displaystyle \forall j \geq N $. 
+Por tanto,
+\[k_{j}\|x_{k_{j}}-y_{k_{j}}\| < \|f\left(x_{k_{j}}\right)-f\left(y_{k_{j}}\right)\| \leq L_{\overline{x}}\|x_{k_{j}}-y_{k_{j}}\|, \; \forall j \geq N .\]
+Como $\displaystyle x_{k_{j}}\neq y_{k_{j}} $ se concluye que $\displaystyle L_{\overline{x}}>k_{j} $, $\displaystyle \forall j \geq N $, que es una contradicción. 
+\end{proof}
+
 \begin{prop}
 Sea $\displaystyle I = \left(a,b\right) $ y $\displaystyle f \in \mathcal{C}^{1}\left(I, \R\right) $. Entonces $\displaystyle f $ es Lipschitz en $\displaystyle I $ si y solo si $\displaystyle f' $ está acotada en $\displaystyle I $. 
 \end{prop}
 \begin{proof}
 Consideramos ambas implicaciones.
 \begin{description}
-\item[($\displaystyle \Rightarrow $)] Cogemos $\displaystyle t \in I $ y $\displaystyle h \in \R $ suficientemente pequeño tal que $\displaystyle t + h \in I $. Como $\displaystyle f $ es Lipschitz, existe $\displaystyle L \in [0,1) $ tal que
+\item[($\displaystyle \Rightarrow $)] Cogemos $\displaystyle t \in I $ y $\displaystyle h \in \R $ suficientemente pequeño tal que $\displaystyle t + h \in I $. Como $\displaystyle f $ es Lipschitz, existe $\displaystyle L \geq0 $ tal que
 	\[ \left|f\left(t + h\right)-f\left(t\right)\right| \leq L \left|h\right| \Rightarrow \left|\frac{f\left(t + h\right)-f\left(t\right)}{h}\right|\leq L.\]
 Así, nos queda que si tomamos el límite cuando $\displaystyle h \to 0 $, $\displaystyle \left|f'\left(t\right)\right|\leq L $. 
 \item[($\displaystyle \Leftarrow $)] Tomamos $\displaystyle x,y \in I $ con $\displaystyle x > y $, entonces
@@ -419,22 +304,103 @@ Sin embargo, esta sucesión tiende a $\displaystyle \infty $, por lo que hemos l
 	Sea $\displaystyle f\in \mathcal{C}^{1}\left(\Omega\subset \R^{n}, \R^{m}\right) $ con $\displaystyle \Omega  $ convexo. Entonces, $\displaystyle f $ es Lipschitz en $\displaystyle \Omega  $ si y solo si existe $\displaystyle C \geq 0 $ tal que $\displaystyle \left|\frac{\partial f_{k}}{\partial x_{j}}\left(x\right)\right| \leq C $, $\displaystyle \forall k \in \left\{ 1, \ldots, m\right\}  $, $\displaystyle \forall j \in \left\{ 1, \ldots, n\right\}  $, $\displaystyle \forall x \in \Omega  $. 
 \end{prop}
 \begin{proof}
-	Hacer en casa. Una vez fijados $\displaystyle x,y \in \Omega  $, tenemos que $\displaystyle \left[x,y\right] \subset \Omega  $ y cogemos la función 
-	\[\left(0,1\right) \to \R : s \to f_{k}\left(sy + \left(1-s\right)x\right) .\]
+	Podemos escribir $\displaystyle f = \left(f_{1}, \ldots, f_{m}\right) $. 
+	\begin{description}
+	\item[($\displaystyle \Rightarrow $)] Supongamos que existe $\displaystyle L \geq 0 $ tal que 
+		\[\|f\left(x\right)-f\left(y\right)\|\leq L\|x-y\|, \; \forall x,y\in \Omega  .\]
+		Fijemos $\displaystyle x \in \Omega  $ y $\displaystyle j\in \left\{ 1, \ldots, n\right\}  $. Como $\displaystyle \Omega  $ es abierto, existe $\displaystyle h\in \R/ \left\{ 0\right\}  $ suficientemente pequeño tal que $\displaystyle x + he_{j}\in \Omega  $. Tendremos que 
+		\[\|f\left(x+he_{j}\right)-f\left(x\right)\|\leq L\|he_{j}\|=L \left|h\right| \Rightarrow \left\|\frac{f\left(x + he_{j}\right)-f\left(x\right)}{h}\right\|\leq L.\]
+		Así, tomando el límite cuando $\displaystyle h \to 0 $, tenemos que $\displaystyle \left\|\frac{\partial f}{\partial x_{j}}\right\| \leq L$. 
+		Como 
+		\[\frac{\partial f}{\partial x_{j}}=\left(\frac{\partial f_{1}}{\partial x_{j}}, \ldots, \frac{\partial f_{m}}{\partial x_{j}}\right) ,\]
+		tenemos que cada componente satisface
+		\[ \left|\frac{\partial f_{k}}{\partial x_{j}}\right|\leq \left\|\frac{\partial f}{\partial x_{j}}\right\|\leq L .\]
+	\item[($\displaystyle \Leftarrow $)] Supongamos ahora que existe $\displaystyle C \geq 0 $ tal que $\displaystyle \left|\frac{\partial f_{k}}{\partial x_{j}}\right|\leq C $, $\displaystyle \forall x \in \Omega  $, $\displaystyle \forall j \in \left\{ 1, \ldots, n\right\}  $, $\displaystyle \forall k \in \left\{ 1, \ldots, m\right\}  $. 
+		Si $\displaystyle x,y\in \Omega  $, por ser $\displaystyle \Omega  $ convexo tenemos que $\displaystyle \left[x,y\right] \subset \Omega  $. Es decir, $\displaystyle x + t\left(y-x\right)\in \Omega  $, $\displaystyle \forall t \in \left[0,1\right]  $. Así, para cada componente $\displaystyle f_{k} $ definimos
+		\[g_{k}\left(t\right)=f_{k}\left(x+t\left(y-x\right)\right) .\]
+		Es sencillo ver que $\displaystyle g_{k}\left(1\right)-g_{k}\left(0\right)=f_{k}\left(y\right)-f_{k}\left(x\right) $. Aplicando la regla de la cadena,
+		\[g'_{k}\left(t\right)=\sum^{n}_{j = 1}\frac{\partial f_{k}}{\partial x_{j}}\left(x+t\left(y-x\right)\right)\left(y_{j}-x_{j}\right) .\]
+		Por el teorema fundamental del cálculo,
+		\[f_{k}\left(y\right)-f_{k}\left(x\right)=\int^{1}_{0} g'_{k}\left(t\right) \; dt .\]
+	Por tanto, 
+	\[ \left|f_{k}\left(y\right)-f_{k}\left(x\right)\right|\leq \int^{1}_{0} \sum^{n}_{j = 1} \left|\frac{\partial f_{k}}{\partial x_{j}}\left(x + t\left(y-x\right)\right)\right| \left|y_{j}-x_{j}\right| \; dt .\]
+	Usando la hipótesis, tenemos que
+	\[ \left|f_{k}\left(y\right)-f_{k}\left(x\right)\right|\leq C\sum^{n}_{j=1} \left|y_{j}-x_{j}\right| ,\]
+	y por Cauchy-Schwarz,
+	\[\sum^{n}_{j = 1} \left|y_{j}-x_{j}\right|\leq \sqrt{n} \|y-x\| .\]
+	Por tanto, nos queda que $\displaystyle \left|f_{k}\left(y\right)-f_{k}\left(x\right)\right|\leq C\sqrt{n} \|y-x\| $. Ahora, para $\displaystyle f = \left(f_{1}, \ldots, f_{m}\right) $ tendremos que 
+	\[\|f\left(y\right)-f\left(x\right)\|^{2}=\sum^{m}_{k = 1} \left|f_{k}\left(y\right)-f_{k}\left(x\right)\right|^{2}\leq \sum^{m}_{k = 1} C^{2}n \|y-x\|^{2}=mnC^{2}\|y-x\|^{2} .\]
+	Tomando raíces obtenemos que $\displaystyle \|f\left(y\right)-f\left(x\right)\|\leq C\sqrt{nm}\|y-x\| $, por lo que $\displaystyle f $ es Lipschitz. 
+	\end{description}
 \end{proof}
+\begin{observation}
+La segunda implicación de la proposición anterior también se puede demostrar utilizando el teorema del valor medio en vez del teorema fundamental del cálculo.
+\end{observation}
+
 \begin{definition}[Lipschitz respecto a la segunda variable]
 Dada $\displaystyle f : D\subset\R\times\R^{n}\to\R^{m} $, diremos que es
 \begin{itemize}
 \item \textbf{globalmente Lipschitz respecto a la segunda variable} si existe $\displaystyle L \geq0 $ 
-	\[ \left|f\left(t, x\right)-f\left(t,y\right)\right| \leq L \left|x-y\right|, \; \forall \left(t,x\right), \left(t,y\right)\in D .\]
+	\[ \left\|f\left(t, x\right)-f\left(t,y\right)\right\| \leq L \left\|x-y\right\|, \; \forall \left(t,x\right), \left(t,y\right)\in D .\]
 	
 \item \textbf{localmente Lipschitz respecto a la segunda variable} si para $\displaystyle \left(t, x\right)\in D $ existe un entorno $\displaystyle U_{\left(t,x\right)} $ y $\displaystyle L_{\left(t,x\right)}\geq 0  $ tales que 
-	\[ \left|f\left(t,x\right)-f\left(t,y\right)\right|\leq L_{\left(t,x\right)} \left|x-y\right| , \; \forall\left(t,x\right),\left(t,y\right)\in U_{\left(t,x\right)}.\]
+	\[ \left\|f\left(t,x\right)-f\left(t,y\right)\right\|\leq L_{\left(t,x\right)} \left\|x-y\right\| , \; \forall\left(t,x\right),\left(t,y\right)\in U_{\left(t,x\right)}.\]
 \end{itemize}
 \end{definition}
 \begin{prop}
 Dado $\displaystyle D \subset \R\times\R^{n} $ y $\displaystyle f \in \mathcal{C}\left(D, \R^{m}\right) $ tal que $\displaystyle \frac{\partial f_{k}}{\partial x_{j}} $ existen y están acotadas en $\displaystyle D $. Entonces $\displaystyle f $ es Lipschitz en $\displaystyle D $ respecto a la segunda variable. 
 \end{prop}
+\begin{proof}
+	Podemos escribir $\displaystyle f = \left(f_{1}, \ldots, f_{m}\right) $ y tenemos que existe $\displaystyle C > 0 $ tal que $\displaystyle \left|\frac{\partial f_{k}}{\partial x_{j}}\left(t, x\right)\right|\leq C $, $\displaystyle \forall\left(t,x\right)\in D $, $\displaystyle \forall k \in \left\{ 1, \ldots, m\right\}  $, $\displaystyle \forall j \in \left\{ 1, \ldots, n\right\}  $. Fijemos $\displaystyle t $ y dos puntos $\displaystyle x = \left(x_{1}, \ldots, x_{n}\right) $ e $\displaystyle y = \left(y_{1}, \ldots, y_{n}\right) $. 
+	Para pasar de $\displaystyle x $ a $\displaystyle y $ vamos cambiando una coordenada cada vez, es decir
+	\[
+	\begin{split}
+		p_{0}=& \left(x_{1}, \ldots, x_{n}\right) \\
+		p_{1} = & \left(y_{1}, x_{2}, \ldots, x_{n}\right)\\
+		\vdots & \\
+		p_{n} =& \left(y_{1}, \ldots, y_{n}\right).
+	\end{split}
+	\]
+	Así, para cada componente $\displaystyle f_{k} $ tendremos que
+	\[f_{k}\left(t,y\right)-f_{k}\left(t,x\right)=\sum^{n}_{j= 1}\left(f_{k}\left(t, p_{j}\right)-f_{k}\left(t,p_{j-1}\right)\right) .\]
+	En el término $\displaystyle j $-ésimo sólo cambia la coordenada $\displaystyle x_{j} $. Aplicando el teorema del valor medio a la función de una variable correspondiente tenemos que existe $\displaystyle \xi_{j} $ tal que 
+	\[f_{k}\left(t, p_{j}\right)-f_{k}\left(t, p_{j-1}\right)=\frac{\partial f_{k}}{\partial x_{j}}\left(t, \xi_{j}\right)\left(y_{j}-x_{j}\right) .\]
+	De esta forma, tendremos que $\displaystyle \left|f_{k}\left(t, p_{j}\right)-f_{k}\left(t, p_{j-1}\right)\right|\leq C \left|y_{j}-x_{j}\right| $. Sumando,
+	\[ \left|f_{k}\left(t,y\right)-f_{k}\left(t,x\right)\right|\leq C\sum^{n}_{j=1} \left|y_{j}-x_{j}\right| .\]
+	Por Cauchy-Schwarz,
+	\[\sum^{n}_{j=1} \left|y_{j}-x_{j}\right| \leq \sqrt{n} \|y-x\|.\]
+	De esta fomra, $\displaystyle \left|f_{k}\left(t,y\right)-f_{k}\left(t,x\right)\right|\leq C\sqrt{n}\|y-x\| $. Si sumamos las $\displaystyle m $ componentes,
+	\[\|f\left(t,y\right)-f\left(t,x\right)\|^{2} = \sum^{m}_{k=1} \left|f_{k}\left(t,y\right)-f_{k}\left(t,x\right)\right|^{2}\leq mC^{2}n\|y-x\|^{2} .\]
+\[\Rightarrow \|f\left(t,y\right)-f\left(t,x\right)\|\leq C\sqrt{mn}\|y-x\| .\]	
+\end{proof}
+\begin{prop}
+Si $\displaystyle f : D \subset \R \times \R^{n} \to \R^{m} $ es continua y localmente Lipschitz respecto a la segunda variable en $\displaystyle D $ abierto, entonces es globalmente Lipschitz respecto a la segunda variable en todo compacto $\displaystyle K \subset D $.
+\end{prop}
+\begin{proof}
+	Para cada $\displaystyle \left(t_{0}, x_{0}\right)\in D $, existe un entorno $\displaystyle U_{\left(t_{0}, x_{0}\right)}\subset D $ y una constante $\displaystyle L_{\left(t_{0}, x_{0}\right)} \geq 0$ tales que
+	\[\|f\left(t,x\right)-f\left(t,y\right)\| \leq L_{\left(t_{0}, x_{0}\right)}\|x-y\| , \; \forall\left(t,x\right), \left(t,y\right)\in U_{\left(t_{0}, x_{0}\right)}.\]
+	Sea $\displaystyle K \subset D $ un compacto. Tenemos que la familia de entornos $\displaystyle \left\{ U_{\left(t_{0}, k_{0}\right)}\; : \; \left(t_{0}, x_{0}\right)\in K\right\}  $ es un recubrimiento abierto de $\displaystyle K $. Por ser $\displaystyle K $ compacto, podemos encontrar un subrecubrimiento finito de forma que 
+	\[K \subset U_{1} \cup \cdots \cup U_{N} .\]
+	Si $\displaystyle L_{i} $ es la constante de Lipschitz asociada a $\displaystyle U_{i} $ para $\displaystyle i \in \left\{ 1, \ldots, N\right\}  $, cogemos 
+	\[L = \max \left\{ L_{1}, \ldots, L_{N}\right\}  .\]
+	Así, si $\displaystyle \left(t,x\right) $ y $\displaystyle \left(t,y\right) $ están en el mismo $\displaystyle U_{i} $ tendremos que 
+	\[\|f\left(t,x\right)-f\left(t,y\right)\|\leq L\|x-y\| .\]
+	Sea $\displaystyle \delta > 0 $ tal que cualquier subconjunto de $\displaystyle K $ de diámetro menor que $\displaystyle \delta  $ está contenido en alguno de los $\displaystyle U_{i} $, con $\displaystyle i \in \left\{ 1, \ldots, N\right\}  $. Distinguimos dos casos:
+	\begin{itemize}
+	\item Si $\displaystyle \left(t,x\right), \left(t,y\right) \in K $ con $\displaystyle \|x-y\|<\delta  $, tendremos que 
+		\[\|\left(t, x\right)-\left(t,y\right)\| = \|x-y\|<\delta  ,\]
+		por lo que pertenecen al mismo $\displaystyle U_{i} $ y por lo que acabamos de ver tendremos que 
+		\[\|f\left(t,x\right)-f\left(t,y\right)\|\leq L\|x-y\| .\]
+	\item Si $\displaystyle \|x-y\|\geq \delta  $, como $\displaystyle f $ es continua y $\displaystyle K $ es compacto tenemos que existe $\displaystyle M \geq 0 $ tal que $\displaystyle \|f\left(t,x\right)\|\leq M $, $\displaystyle \forall\left(t,x\right)\in K $. Por la desigualdad triangular, 
+		\[\|f\left(t,x\right)-f\left(t,y\right)\|\leq \|f\left(t,x\right)\|+\|f\left(t,y\right)\|\leq 2M .\]
+		Como $\displaystyle \|x-y\|\geq \delta  $, tenemos que $\displaystyle 2M \leq \frac{2M}{\delta }\|x-y\| $. De esta forma, 
+		\[\|f\left(t,x\right)-f\left(t,y\right)\|\leq \frac{2M}{\delta }\|x-y \|.\]
+	\end{itemize}
+	Así, basta con coger como constante de Lipschitz $\displaystyle L_{K}=\max \left\{ L, \frac{2M}{\delta }\right\}  $ y tendremos que 
+	\[\|f\left(t,x\right)-f\left(t,y\right)\|\leq L_{K}\|x-y\|, \; \forall\left(t,x\right), \left(t,y\right)\in K .\]
+\end{proof}
+\section{Teorema de existencia y unicidad}
+
 \begin{eg}[Funcionamiento del argumento]
 	Consideremos el siguiente PVI:
 	\[
@@ -452,9 +418,7 @@ Aplicamos el teorema del punto fijo para encontrar un punto fijo de $\displaysty
 En general, 
 \[y_{k}\left(t\right)=\sum^{k-1}_{j = 0}\frac{t ^{2j}}{j!} \Rightarrow y\left(t\right)=\sum^{\infty}_{j = 0}\frac{t ^{2j}}{j!}=e^{t ^{2}} .\]
 \end{eg}
-\begin{observation}
-$\displaystyle f $ es localmente Lipschitz (respecto a la segunda variable) en un abierto $\displaystyle D $ si y solo si $\displaystyle f $ es globalmente Lipschitz (respecto a la segunda variable) en todo compacto $\displaystyle K \subset D $.
-\end{observation}
+
 \begin{theorem}[Teorema de Picard-Lindelöf local]
 Sea $\displaystyle f : D \to \R^{n} $ continua y localmente Lipschitz respecto a la segunda variable en un abierto $\displaystyle D \subset \R \times \R^{n} $. Dado $\displaystyle \left(t_{0}, x_{0}\right)\in D $ existe $\displaystyle \epsilon > 0 $ tal que el PVI
 \[
@@ -466,54 +430,62 @@ x\left(t_{0}\right)=x_{0}
 admite una única solución definida en el intervalo $\displaystyle I_{\epsilon } =\left[t_{0}-\epsilon , t_{0} + \epsilon \right]  $. 
 \end{theorem}
 \begin{proof}
-Vamos a aplicar el teorema del punto fijo de Banach de forma adecuada al operador $\displaystyle T $ de la formulación integral del PVI. Si $\displaystyle f \equiv 0 $ el resultado es trival. Así, supongamos que no lo es. Para aplicar el TPF necesitamos que $\displaystyle T : X \subset E \to X$. Como $\displaystyle T $ viene dada por
+Vamos a aplicar el teorema del punto fijo de Banach de forma adecuada al operador $\displaystyle T $ de la formulación integral del PVI. Si $\displaystyle f \equiv 0 $ el resultado es trival. Así, supongamos que no lo es. Para aplicar el TPF necesitamos encontrar conjuntos $\displaystyle E $ y $\displaystyle X \subset E $ adecuados tales que $\displaystyle T : X \subset E \to X$. Recordamos que $\displaystyle T $ viene dada por
 \[\left(Ty\right)\left(t\right)=x_{0} + \int^{t}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s .\]
-Como $\displaystyle D $ es abierto, dado $\displaystyle \left(t_{0}, x_{0}\right)\in D $ tenemos que existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(\left(t_{0}, x_{0}\right), r\right)\subset D $. Definimos el cilindro
-\[R := \left\{ \left(t,x\right)\in \R \times \R^{n} \; : \; \left|t-t_{0}\right|\leq r, \|x-x_{0}\|\leq r\right\} \subset D .\]
-Podemos coger $\displaystyle E = \mathcal{C}\left(\left[t_{0}-\epsilon, t_{0} + \epsilon \right] , \R^{n}\right) $ y $\displaystyle X := \left\{ x \in E \; : \; \|x-x_{0}\|_{\infty } \leq r\right\}  $. Ahora hacemos distintos pasos.
+Como $\displaystyle D $ es abierto, dado $\displaystyle \left(t_{0}, x_{0}\right)\in D $ tenemos que podemos encontrar $\displaystyle \tau, \rho > 0 $ suficientemente pequeños para que el cilindro
+\[R_{\tau, \rho} := \left\{ \left(t,x\right)\in \R \times \R^{n} \; : \; \left|t-t_{0}\right|\leq \tau, \|x-x_{0}\|_{\infty}\leq \rho\right\} \subset D .\]
+Es sencillo ver que como $\displaystyle f $ es continua y $\displaystyle R_{\tau, \rho} $ es un compacto, debe ser que $\displaystyle f $ está acotada en $\displaystyle R_{\tau, \rho} $ por lo que podemos definir
+\[M := \max_{\left(t,x\right)\in R_{\tau, \rho}} \left|f\left(t,x\right)\right|>0 .\]
+Además, como $\displaystyle f $ es localmente Lipschitz, podemos tomar $\displaystyle L $ como la constante de Lipschitz en el compacto $\displaystyle R_{\tau, \rho} $. Ahora, tomamos $\displaystyle \epsilon >0 $ tal que 
+\[\epsilon < \min \left\{ \tau, \frac{\rho}{M}, \frac{1}{L}\right\}  ,\]
+y definimos los conjuntos $\displaystyle E = \mathcal{C}\left(\left[t_{0}-\epsilon, t_{0} + \epsilon \right] , \R^{n}\right) $ y $\displaystyle X := \left\{ x \in E \; : \; \|x-x_{0}\|_{\infty } \leq \rho\right\}  $. Antes de aplicar el TPF tenemos que comprobar un par de cosas.
 \begin{itemize}
-\item En primer lugar, veamos que $\displaystyle T : X \to E $, es decir, $\displaystyle Ty $ es continua cuando $\displaystyle y \in X $. Tomamos $\displaystyle y \in X $ y $\displaystyle t_{1}, t_{2} \in I_{\epsilon } $ con $\displaystyle t_{1} > t_{2} $, necesitamos $\displaystyle \epsilon < r $,
+\item En primer lugar, veamos que $\displaystyle T : X \to E $, es decir, $\displaystyle Ty $ es continua cuando $\displaystyle y \in X $. Tomamos $\displaystyle y \in X $ y $\displaystyle t_{1}, t_{2} \in I_{\epsilon } $ con $\displaystyle t_{1} > t_{2} $. Como $\displaystyle \epsilon < \tau $,
 \[
 \begin{split}
-	\left|\left(Ty\right)\left(t_{1}\right)-\left(Ty\right)\left(t_{2}\right)\right| = & \left|\int^{t_{1}}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s - \int^{t_{2}}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s\right| = \left|\int^{t_{1}}_{t_{2}} f\left(s, y\left(s\right)\right) \; d s\right| \\
-	\leq & \int^{t_{1}}_{t_{2}} \left|f\underbrace{\left(s, y\left(s\right)\right)}_{\in R}\right| \; d s \leq \int^{t_{1}}_{t_{2}} \max_{R} \left|f\left(t, x\right)\right| \; d s = \max _{R} \left|f\right| \left|t_{1}-t_{2}\right|.
+	\left\|\left(Ty\right)\left(t_{1}\right)-\left(Ty\right)\left(t_{2}\right)\right\| = & \left\|\int^{t_{1}}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s - \int^{t_{2}}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s\right\| = \left\|\int^{t_{1}}_{t_{2}} f\left(s, y\left(s\right)\right) \; d s\right\| \\
+	\leq & \int^{t_{1}}_{t_{2}} \left\|f\underbrace{\left(s, y\left(s\right)\right)}_{\in R_{\tau, \rho}}\right\| \; d s \leq \int^{t_{1}}_{t_{2}} M \; d s = M \left|t_{1}-t_{2}\right|.
 \end{split}
 \]
 	Así, tenemos que $\displaystyle T_{y} $ es continua. 
-\item Veamos ahora que $\displaystyle T : X \to X $, es decir que $\displaystyle \|Ty-x_{0}\|_{\infty }\leq r $ y $\displaystyle y \in X $. Si $\displaystyle t \in I_{\epsilon } $, 
+\item Veamos ahora que $\displaystyle T : X \to X $, es decir que $\displaystyle \|Ty-x_{0}\|_{\infty }\leq \rho $ para $\displaystyle y \in X $. Si $\displaystyle t \in I_{\epsilon } $, 
 	\[
 	\begin{split}
-	\left|\left(Ty\right)\left(t\right)-x_{0}\right| = \left|\int^{t}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s\right|\leq \int^{t}_{t_{0}} \left|f\left(s, y\left(s\right)\right)\right| \; d s \leq \max _{R} \left|f\right| \left|t-t_{0}\right| < \max_{R} \left|f\right|\epsilon  .
+	\left\|\left(Ty\right)\left(t\right)-x_{0}\right\| = \left\|\int^{t}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s\right\|\leq \int^{t}_{t_{0}} \left\|f\left(s, y\left(s\right)\right)\right\| \; d s \leq M \left|t-t_{0}\right| < M\epsilon <\rho .
 	\end{split}
 	\]
-Por tanto, tenemos que $\displaystyle \|Ty-x_{0}\|_{\infty }\leq \epsilon _{R} \left|f\right| $. Si cogemos $\displaystyle \epsilon \leq \frac{r}{\max_{R} \left|f\right|} $, obtenemos lo que queríamos.
+Por tanto, tenemos que $\displaystyle \|Ty-x_{0}\|_{\infty }\leq \rho $, por lo que $\displaystyle Ty \in X $. 
 \item Veamos que $\displaystyle T $ es contractiva, es decir, que $\displaystyle \|Ty-Tz\|_{\infty }\leq K\|y-z\|_{\infty } $ con $\displaystyle K \in [0,1) $, $\displaystyle \forall y,z \in X$. Sean $\displaystyle y,z \in X $ y $\displaystyle t \in I_{\epsilon } $, entonces aplicando que $\displaystyle f $ es Lipschitz
 	\[
 	\begin{split}
-		\left|\left(Ty\right)\left(t\right)-\left(Tz\right)\left(t\right)\right| = & \left|\int^{t}_{t_{0}} f\left(s,y\left(s\right)\right)-f\left(s, z\left(s\right)\right) \; d s\right|\leq \int^{t}_{t_{0}} \left|f\left(s,y\left(s\right)\right)-f\left(s, z\left(s\right)\right)\right| \; d s \\
-		\leq & \int^{t}_{t_{0}} L_{R} \left|y\left(s\right)-y\left(s\right)\right| \; d s \leq \int^{t}_{t_{0}} L_{R}\max _{s\in I_{\epsilon }} \left|y\left(s\right)-z\left(s\right)\right| \; d s \\
-		\leq & L_{R} \|y-z\|_{\infty } \left|t-t_{0}\right| < L_{R} \|y-z\|_{\infty }\epsilon .
+		\left\|\left(Ty\right)\left(t\right)-\left(Tz\right)\left(t\right)\right\| = & \left\|\int^{t}_{t_{0}} f\left(s,y\left(s\right)\right)-f\left(s, z\left(s\right)\right) \; d s\right\|\leq \int^{t}_{t_{0}} \left\|f\left(s,y\left(s\right)\right)-f\left(s, z\left(s\right)\right)\right\| \; d s \\
+		\leq & \int^{t}_{t_{0}} L \left\|y\left(s\right)-z\left(s\right)\right\| \; d s \leq \int^{t}_{t_{0}} L\max _{s\in I_{\epsilon }} \left\|y\left(s\right)-z\left(s\right)\right\| \; d s \\
+		\leq & L \|y-z\|_{\infty } \left|t-t_{0}\right| < L \|y-z\|_{\infty }\epsilon .
 	\end{split}
 	\]
 Así, tenemos que tomando máximos
-\[\|Ty-Tz\|_{\infty }\leq L_{R}\epsilon \|y-z\|_{\infty } .\]
-De esta forma, para garantizar que es contractiva basta con ver que $\displaystyle \epsilon < \frac{1}{L_{R}} $. 
+\[\|Ty-Tz\|_{\infty }\leq L\epsilon \|y-z\|_{\infty } .\]
+Como hemos tomado $\displaystyle \epsilon  $ tal que $\displaystyle L\epsilon < 1 $ tenemos que $\displaystyle T $ es contractiva. 
 \end{itemize}
-Por el TPF tenemos que existe una única $\displaystyle y \in X $ tal que $\displaystyle Ty = y $. Sin embargo, tenemos que ver que la unicidad de soluciones se verifica también en $\displaystyle E $, es decir, tenemos que ver que no hay soluciones extra en $\displaystyle E/X $. Supongamos que existe una solución $\displaystyle z \in E/X $, es decir $\displaystyle \|z-x_{0}\|_{\infty} > r $. Así, existe $\displaystyle \xi \in I_{\epsilon } $ tal que $\displaystyle \left|z\left(\xi\right)-x_{0}\right|>r $. Podemos suponer sin pérdida de generalidad que $\displaystyle \xi > t_{0} $. Tomamos $\displaystyle \tilde{t} $ como el primer momento tras $\displaystyle t_{0} $ tal que $\displaystyle \left|z\left(\tilde{t}\right)-x_{0}\right|=r $. 
-Así, tenemos que $\displaystyle \left|z\left(t\right)-x_{0}\right| \leq r $ en $\displaystyle \left[t_{0}, \tilde{t}\right]  $. Por tanto, $\displaystyle \left(t, z\left(t\right)\right)\in R $, $\displaystyle \forall t \in \left[t_{0}, \tilde{t}\right]  $. Deducimos que
+Por el TPF tenemos que existe una única $\displaystyle y \in X $ tal que $\displaystyle Ty = y $. Sin embargo, tenemos que ver que la unicidad de soluciones se verifica también en $\displaystyle E $, es decir, tenemos que ver que no hay soluciones extra en $\displaystyle E/X $. \\
+
+Supongamos que existe una solución $\displaystyle z \in E/X $, es decir $\displaystyle \|z-x_{0}\|_{\infty} > \rho $. Así, existe $\displaystyle \xi \in I_{\epsilon } $ tal que $\displaystyle \left\|z\left(\xi\right)-x_{0}\left(\xi\right)\right\|>\rho $. Podemos suponer sin pérdida de generalidad que $\displaystyle \xi > t_{0} $. Definimos
+\[\tilde{t} := \inf \left\{ t > t_{0} \; : \; \|z\left(\tilde{t}\right)-x_{0}\| > \rho\right\}\in (t_{0}, \xi]  .\]
+Por continuidad tenemos que $\displaystyle \left|z\left(t\right)-x_{0}\right| \leq \rho $ en $\displaystyle \left[t_{0}, \tilde{t}\right]  $. Por tanto, $\displaystyle \left(t, z\left(t\right)\right)\in R $, $\displaystyle \forall t \in \left[t_{0}, \tilde{t}\right]  $. Deducimos que
 \[
-	\left|z\left(\tilde{t}\right)-x_{0}\right| =  \left|\int^{\tilde{t}}_{t_{0}} f\left(s, z\left(s\right)\right) \; d s\right| \leq \int^{\tilde{t}}_{t_{0}} \left|f\left(s, z\left(s\right)\right)\right| \; d s \leq \max_{R} \left|f\right| \left|\tilde{t}-t_{0}\right| < \max_{R} \left|f\right|\epsilon < r.
+	\left\|z\left(\tilde{t}\right)-x_{0}\right\| =  \left\|\int^{\tilde{t}}_{t_{0}} f\left(s, z\left(s\right)\right) \; d s\right\| \leq \int^{\tilde{t}}_{t_{0}} \left\|f\left(s, z\left(s\right)\right)\right\| \; d s \leq M \left|\tilde{t}-t_{0}\right| < M\epsilon < \rho.
 \]
 Esto es una contradicción. 
 \end{proof}
 \begin{observation}
 	\begin{enumerate}
-	\item En la demostración necesitamos que $\displaystyle \epsilon < \max \left\{ r, \frac{r}{\max _{R} \left|f\right|}, \frac{1}{L_{R}}\right\}  $, por lo que $\displaystyle \epsilon  $ depende de $\displaystyle \left(t_{0}, x_{0}\right) $. 
-	\item Se puede eliminar la dependencia quitando la constante de Lipschitz que se puede hacer con el corolario de que el TPF funciona con que una potencia del operador sea contractivo. Basta con ver que 
-		\[\|T^{m}y-T^{m}z\|_{\infty } \leq \frac{\left(L\epsilon \right)^{m}}{n!}\|y-z\|_{\infty } .\]
-		Así, independientemente de los valores de $\displaystyle L $ y $\displaystyle \epsilon  $ podemos coger un valor de $\displaystyle m $ suficientemente grande para que el cociente sea menor que 1.
-	\item Se puede elegir $\displaystyle \epsilon _{K} > 0 $ que sirva para toda condición inicial $\displaystyle \left(t_{0}, x_{0}\right)\in K $ con $\displaystyle K $ compacto. Basta con coger $\displaystyle \tilde{R} = \bigcup_{\left(t_{0}, x_{0}\right)\in K}R $ compacto y cogemos $\displaystyle \epsilon < \max \left\{ r_{\left(t_{0}, x_{0}\right)}, \frac{r_{\left(t_{0}, x_{0}\right)}}{\max_{\tilde{R}}}\right\}  $.
-	\item No merece la pena optimizar el $\displaystyle \epsilon  $ del teorema eligiendo mejores cilindros $\displaystyle \left(r\right) $. 
+	\item En la demostración necesitamos que $\displaystyle \epsilon < \max \left\{ \tau, \frac{\rho}{M}, \frac{1}{L}\right\}  $, por lo que $\displaystyle \epsilon  $ depende de $\displaystyle \left(t_{0}, x_{0}\right) $. 
+	\item La dependencia de $\displaystyle \epsilon  $ respecto de la constante de Lipschitz no es necesaria. En efecto, se puede hacer con el corolario de que el TPF funciona con que una potencia del operador sea contractivo. Basta con ver que 
+		\[\|T^{m}y-T^{m}z\|_{\infty } \leq \frac{\left(L\epsilon \right)^{m}}{m!}\|y-z\|_{\infty } .\]
+		Como $\displaystyle \frac{\left(L\epsilon \right)^{m}}{m!}\to 0 $ si $\displaystyle m \to \infty $, se puede elegir $\displaystyle m \in \N $ (dependiendo de $\displaystyle \epsilon  $ y $\displaystyle L $) tal que $\displaystyle T^{m} $ es contracción. 
+	\item Se puede elegir $\displaystyle \epsilon _{K} > 0 $ que sirva para toda condición inicial $\displaystyle \left(t_{0}, x_{0}\right)\in K $ con $\displaystyle K $ compacto. Basta con coger $\displaystyle \tilde{R} = \bigcup_{\left(t_{0}, x_{0}\right)\in K}R $ compacto y cogemos 
+		\[0 < \epsilon < \max \left\{ \tau_{\left(t_{0}, x_{0}\right)}, \frac{\tau_{\left(t_{0}, x_{0}\right)}}{\max_{\tilde{R}}\|f\|}\right\} .\]
+	\item No merece la pena optimizar el $\displaystyle \epsilon  $ del teorema eligiendo mejores cilindros. 
 	\end{enumerate}
 \end{observation}
 \begin{eg}
@@ -526,7 +498,7 @@ x\left(0\right)=0
 .\]
 Tenemos que en este caso $\displaystyle f\left(t,x\right)=1+x^{2} $ y $\displaystyle D = \R \times \R $. Buscamos el $\displaystyle \epsilon = \min \left\{ r, \frac{r}{\max_{R} \left|f\right|}\right\} =\min \left\{ r, \frac{r}{1+r^{2}}\right\} =\frac{1}{2} $ máximo que optimice el dominio de la solución. Tenemos que la solución explícita es $\displaystyle x\left(t\right)=\tan t $ para $\displaystyle t \in \left(-\frac{\pi }{2}, \frac{\pi }{2}\right) $ que es un intervalo mejor que el que habíamos conseguido.
 \end{eg}
-% obs - en el cilindro R la primera coordenada es \tau, esto va a afectar al resto de los apuntes y hay que arreglarlo
+
 \begin{theorem}[Teorema Picard-Lindelöf global]
 	Sea $\displaystyle f \in \mathcal{C}\left(\left[a,b\right] \times\R^{n}, \R^{n}\right) $ y global Lipschitz respecto a la segunda variable en $\displaystyle \left[a,b\right] \times \R^{n} $. Dado $\displaystyle \left(t_{0}, x_{0}\right) \in \left[a,b\right] \times \R^{n} $ y el PVI
 	\[
@@ -538,6 +510,50 @@ Tenemos que en este caso $\displaystyle f\left(t,x\right)=1+x^{2} $ y $\displays
 	Este sistema tiene solución única definida en todo $\displaystyle \left[a,b\right]  $. 	
 \end{theorem}
 \begin{proof}
-	Cogemos $\displaystyle E = X = \mathcal{C}\left(\left[a,b\right] , \R^{n}\right) $. Tenemos que ver que $\displaystyle T : X \to X $ (ya lo vimos en la otra demostración) y la parte de $\displaystyle T $ contractiva es más sencilla por ser globalmente Lipschitz. 
+	Basta con probar que el operador $\displaystyle T $ o una potencia suya es contractiva en $\displaystyle E = \mathcal{C}\left(\left[a,b\right] , \R^{n}\right) $. En la demostración anterior ya vimos que $\displaystyle T : E \to E $ está bien definida y que una potencia suya es contractiva. 
+\end{proof}
+\begin{colorary}
+Sea $\displaystyle f \in \mathcal{C}\left(I \times \R^{n}, \R^{n}\right) $ globalmente Lipschitz respecto a la segunda variable en $\displaystyle I \times \R^{n} $, donde $\displaystyle I $ es un intervalo abierto. Dado $\displaystyle t_{0} \in I $ y $\displaystyle x_{0} \in \R^{n} $, el PVI tiene existencia y unicidad de solución definida en todo $\displaystyle I $.
+\end{colorary}
+\begin{proof}
+	Consideramos $\displaystyle I =\left(a,b\right) $ un intervalo abierto con $\displaystyle -\infty\leq a < b \leq \infty $ y $\displaystyle t_{0} \in \left(a,b\right) $. Definimos una sucesión $\displaystyle \left\{ a_{k}\right\} _{k \in \N} $ estrictamente decreciente con $\displaystyle a_{k}\to a $. Análogamente, definimos una sucesión $\displaystyle \left\{ b_{k}\right\} _{k \in \N} $ estrictamente creciente con $\displaystyle b_{k} \to b $. 
+	Así, obtenemos una sucesión de intervalos encajados cerrados tales que $\displaystyle t_{0} \in \left[a_{k}, b_{k}\right] \subset \left(a,b\right) $. En particular tenemos que $\displaystyle f \in \mathcal{C}\left(\left[a_{k}, b_{k}\right] \times \R^{n}, \R^{n}\right) $ es globalmente Lipschitz respecto a la segunda variable. 
+	Aplicando el teorema Picard-Lindelöf global tenemos que existe una única solución al PVI, $\displaystyle x_{k} \in \mathcal{C}^{1}\left(\left[a_{k}, b_{k}\right] , \R^{n}\right) $. Es importante ver que por la unicidad de soluciones en $\displaystyle \left[a_{k}, b_{k}\right]  $ se tiene que
+	\[x_{k+l}|_{\left[a_{k}, b_{k}\right] }=x_{k}, \; l \in \N .\]
+	Dado $\displaystyle t\in I $, tenemos que existe $\displaystyle k \in \N $ tal que $\displaystyle t \in \left[a_{k}, b_{k}\right]  $ y entonces definimos $\displaystyle x\left(t\right):=x_{k}\left(t\right) $. Es sencillo comprobar que esta función es en efecto una solución. Veamos que es única. Supongamos que existe una función $\displaystyle y $ que también es solución. Entonces, tenemos que para un $\displaystyle k \in \N $, $\displaystyle y|_{\left[a_{k}, b_{k}\right] }=x $, por lo que debe ser que $\displaystyle y = x $. 
+\end{proof}
+\begin{observation}
+	Realmente sólo necesitamos que $\displaystyle f $ sea globalmente Lipschitz en conjuntos de la forma $\displaystyle \left[a,b\right] \times \R^{n} $. Por tanto, no se requiere una constante de Lipschitz universal para todo el intervalo $\displaystyle I $.  
+\end{observation}
+\begin{eg}[Problema 2, Hoja 1]
+Sea $\displaystyle f : \R \to \R $ y $\displaystyle -\infty = h_{0} < h_{1} < \cdots < h_{k} = \infty  $ tales que $\displaystyle f|_{\left(h_{j}, h_{j+1}\right)} $ es lineal. Si $\displaystyle f $ es continua, entonces es globalmente Lipschitz en $\displaystyle \R $. Podemos ver que la función $\displaystyle f\left(x\right)= \left|x\right| $ es un caso particular. 
+Dado $\displaystyle x > y $ sean $\displaystyle i\geq j $ tales que $\displaystyle x\in \left[h_{i}, h_{i+1}\right]  $ e $\displaystyle y \in \left[h_{j}, h_{j+1}\right]  $. Así, tenemos que
+\[
+\begin{split}
+	\left|f\left(x\right)-f\left(y\right)\right| = & \left|f\left(x\right)-f\left(h_{i}\right)+f\left(h_{i}\right)-f\left(h_{i-1}\right)+f\left(h_{i-1}\right)-\cdots +f\left(h_{j+1}\right)-f\left(y\right)\right|\\
+	\leq & \left|f\left(x\right)-f\left(h_{1}\right)\right| + \cdots + \left|f\left(h_{j+1}\right)-f\left(y\right)\right| \\
+	= & \left|a_{i}\left(x-h_{i}\right)\right|+ \cdots + \left|a_{j}\left(h_{j+1}\right)-y\right|= \left|a_{i}\right|\left(x-h_{i}\right)+ \cdots + \left|a_{j}\right|\left(h_{j+1}-y\right)\\
+	\leq & \max_{l \in \left\{ j, \ldots, i\right\} } \left|a_{l}\right| \left|x-y\right|.
+\end{split}
+\]
+Así, para terminar cogemos $\displaystyle K = \max_{l \in \left\{ 0, \ldots, k-1\right\} } \left|a_{l}\right| $ como constante de Lipschitz. 
+\end{eg}
+\begin{theorem}[Teorema de Peano]
+	Dado el PVI
+	\[
+	\begin{cases}
+	x'= f\left(t,x\right)\\
+	x\left(t_{0}\right)=x_{0}
+	\end{cases}
+	,\]
+	con $\displaystyle f \in \mathcal{C}\left(D, \R^{n}\right) $ en un abierto $\displaystyle D \subset \R\times \R^{n} $ y $\displaystyle \left(t_{0}, x_{0}\right) \in D $, existe una solución $\displaystyle x \in \mathcal{C}^{1}\left(\left[t_{0}-\epsilon, t_{0} + \epsilon \right] , \R^{n}\right) $ del PVI para cierto $\displaystyle \epsilon > 0 $. 
+\end{theorem}
+\begin{proof}
+No lo vamos a demostrar porque es bastante laborioso pero damos tres estrategias para demostrarlo utilizando el teorema de Ascoli-Arzelá. 
+\begin{enumerate}
+	\item Aproximar $\displaystyle f $ por polinomios (que son localmente Lipschitz) y resolvemos el sistema $\displaystyle x' = f_{\epsilon }\left(t,x\right) $ obteniendo una solución $\displaystyle x_{\epsilon } $ por el teorema de Picard-Lindelöf. Tendríamos que probar que $\displaystyle x_{\epsilon } \xrightarrow{\epsilon \to 0} x$. 
+	\item Construir las poligonales de Euler. 
+	\item Utilizar un teorema del punto fijo (uno mejor que el que tenemos). Concretamente, usar el teorema del punto fijo de Schauder.
+\end{enumerate}
 \end{proof}
 

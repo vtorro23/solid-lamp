@@ -1,0 +1,82 @@
+\chapter{Prolongabilidad de soluciones}
+Consideremos el PVI dado por
+\[
+\begin{cases}
+x' = f\left(t,x\right) \\
+x\left(t_{0}\right)=x_{0}
+\end{cases}
+.\]
+
+\begin{definition}[Prolongación de soluciones]
+Sean $\displaystyle y,z $ soluciones del PVI definidas en $\displaystyle I_{y} $ e $\displaystyle I_{z} $, respectivamente, con $\displaystyle t_{0} \in I_{y}\subset I_{z} $. Diremos que $\displaystyle z $ es una \textbf{prolongación} de $\displaystyle y $ si $\displaystyle y = z $ en $\displaystyle I_{y} $.
+\end{definition}
+\begin{definition}[Solución maximal]
+Una solución del PVI, $\displaystyle y $ definida en $\displaystyle I $, se dice \textbf{maximal} si no existe otra solución distinta que sea prolongación de ella.
+\end{definition}
+\begin{lema}
+Sea $\displaystyle f : D\subset \R \times \R^{n} \to \R^{n} $ continua y localmente Lipschitz respecto a la segunda variable. Si tenemos $\displaystyle y,z $ soluciones del PVI con $\displaystyle \left(t_{0}, x_{0}\right)\in D $ definidas en $\displaystyle I_{y} $ e $\displaystyle I_{z} $, respectivamente, con $\displaystyle t_{0} \in I_{y} \subset I_{z} $. Entonces, $\displaystyle z $ es prolongación de $\displaystyle y $. 
+\end{lema}
+\begin{proof}
+	Si aplicamos el teorema de Picard-Lindelöf local, tenemos que $\displaystyle y = z $ en $\displaystyle I_{y}\cap\left[t_{0}-\epsilon, t_{0} + \epsilon \right]  $ para un $\displaystyle \epsilon > 0 $. Sea $\displaystyle t_{1}:= \inf \left\{ t \geq t_{0} \; : \; y\left(t\right)\neq z\left(t\right)\right\}  $. Si el ínfimo no exite tendremos que $\displaystyle y = z $ en $\displaystyle I_{y} \cap [t_{0}, \infty) $. Supongamos que sí existe. 
+	En este caso, debe ser que $\displaystyle t_{1} > t_{0} + \epsilon  $ y $\displaystyle y\left(t_{1}\right)=z\left(t_{1}\right)=:x^{*} $. Consideremos el PVI
+	\[
+	\begin{cases}
+	x' = f\left(t,x\right) \\
+	x\left(t_{1}\right)=x^{*}
+	\end{cases}
+	.\]
+	Tenemos que $\displaystyle y $ y $\displaystyle z $ son soluciones del sistema. Sin embargo, aplicando el teorema de Picard-Lindelöf local a este PVI, tendríamos que $\displaystyle y = z $ en $\displaystyle \left[t_{1}-\epsilon', t_{1} + \epsilon '\right]  $, que no puede ser por la forma en la que hemos tomado $\displaystyle t_{1} $. El caso para $\displaystyle t \leq t_{0} $ es análogo.	
+\end{proof}
+\begin{theorem}[Existencia y unicidad de solución maximal]
+Sea $\displaystyle f : D \subset \R \times \R^{n}\to \R^{n} $ continua y localmente Lipschitz respecto a la segunda variable en $\displaystyle D $. Para cada $\displaystyle \left(t_{0}, x_{0}\right) \in D$ existe una solución maximal y es única definida en un intervalo abierto $\displaystyle \left(\beta_{-}, \beta_{+}\right) $. 
+\end{theorem}
+\begin{proof}
+	Definimos el conjunto
+	\[S = \left\{ \left(Y_{\alpha }, J_{\alpha }\right) \; : \; Y_{\alpha }\; \text{solución del PVI en }J_{\alpha }\right\}  .\]
+	\begin{itemize}
+	\item Sabemos que $\displaystyle S \neq \emptyset $ puesto que por el teorema Picard-Lindelöf local existe una solución en un intervalo $\displaystyle \left[t_{0}-\epsilon , t_{0} + \epsilon \right]  $. 
+	\item Definimos $\displaystyle I := \bigcup_{\alpha}J_{\alpha } $ y tomamos la función 
+		\[z : I \to \R^{n} : t \to Y_{\alpha }\left(t\right) .\]
+	La función $\displaystyle z $ está bien definida puesto que no depende del índice $\displaystyle \alpha  $ tal que $\displaystyle t\in J_{\alpha } $ (por la proposición anterior). Se puede comprobar que $\displaystyle z $ es solución del PVI en $\displaystyle I $. Por la propia definición de $\displaystyle S $ tenemos que $\displaystyle \left(z,I\right)\in S $ y es la maximal porque si no pdríamos haber definido más allá. Si hubiese otra maximal distinta llegamos a una contradicción. 
+\item Finalmente vemos que $\displaystyle I $ es abierto. Supongamos que $\displaystyle \beta_{+}\in I $, entonces $\displaystyle \left(\beta_{+}, z\left(\beta_{+}\right)\right)\in D $. Si $\displaystyle x^{*} = z\left(\beta_{+}\right) $, consideramos el PVI auxiliar
+\[
+\begin{cases}
+x'= f\left(t,x\right) \\
+x\left(\beta_{+}\right)=x^{*}
+\end{cases}
+.\]
+Por Picard-Lindelöf existe una única solución $\displaystyle w $ en $\displaystyle \left[\beta_{+}-\delta, \beta_{+} + \delta \right]  $. A partir de aquí
+\[\tilde{z}\left(t\right):=
+\begin{cases}
+	z\left(t\right),\quad t \in I=(\beta_{-}, \beta_{+}] \\
+	w\left(t\right), \quad t \in [\beta_{+ }-\delta, \beta_{+} + \delta]
+\end{cases}
+.\]
+Es bien definida porque $\displaystyle z = w $ en $\displaystyle \left[\beta_{+ }-\delta, \beta_{+}\right]  $. Es solución de $\displaystyle x'=f\left(t,x\right) $ definida en $\displaystyle (\beta_{-}, \beta_{+ }+ \delta] $, que es una contradicción con que $\displaystyle I $ sea el intervalo maximal. 
+	\end{itemize}
+\end{proof}
+\begin{theorem}[Fuga de compactos]
+Sea $\displaystyle f \in \mathcal{C}\left(D \subset \R \times \R^{n}, \R^{n}\right) $ localmente Lipschitz respecto a la segunda variable en $\displaystyle D $ y $\displaystyle z $ definida en $\displaystyle I=\left(\beta_{-}, \beta_{+ }\right) $ la solución maximal del PVI con condición inicial $\displaystyle \left(t_{0}, x_{0}\right)\in D $. Entonces, para todo compacto $\displaystyle K \subset D $ existen $\displaystyle t_{+}, t_{-} \in I $ tales que $\displaystyle \left(t, z\left(t\right)\right)\not\in K $, $\displaystyle \forall t \not\in\left(t_{-}, t_{+}\right) $. 
+\end{theorem}
+\begin{proof}
+	Supongamos que no existe $\displaystyle t_{+} $, es decir existe una sucesión $\displaystyle \left\{ t_{j}\right\} _{j \in \N} $ sucesión creciente tal que $\displaystyle t_{j}\to \beta_{+} $ y $\displaystyle \left(t_{j}, z\left(t_{j}\right)\right)\in K $. 
+	Como $\displaystyle K $ es compacto, existe una subsucesión $\displaystyle \left\{ t_{j_{i}}\right\} _{i \in \N} $ de forma que 
+	\[\left(t_{j_{i}}, z\left(t_{j_{i}}\right)\right)\to\left(\beta_{+}, z^{*}\right)\in K .\]
+Tomamos $\displaystyle \epsilon > 0 $ dado por la existencia única en el compacto $\displaystyle K $. Elegimos $\displaystyle i \in \N $ tal que $\displaystyle \beta_{+}-t_{j_{i}}<\epsilon  $. Consideremos el PVI
+\[
+\begin{cases}
+x' = f\left(t,x\right) \\
+x\left(t_{j_{i}}\right)=z\left(t_{j_{i}}\right)
+\end{cases}
+.\]
+Por Picard-Lindelöf, existe una única solución en $\displaystyle \left[t_{j_{i}}-\epsilon, t_{j_{i}}+\epsilon \right]  $. Esto es una contradicción.
+\end{proof}
+\begin{colorary}
+Sea $\displaystyle f \in \mathcal{C}\left(\R \times \R^{n} , \R^{n}\right) $ y localmente Lipschitz respecto a la segunda variable. Entonces, dado $\displaystyle \left(t_{0}, x_{0}\right)\in \R\times\R^{n} $ pueden ocurrir dos cosas:
+\begin{enumerate}
+\item $\displaystyle \beta_{+}=\infty $.
+\item $\displaystyle \beta_{+}<\infty $ y $\displaystyle \|x\left(t\right)\| \xrightarrow{t \to \beta_{+ }} \infty$ para cualquier solución $\displaystyle x\left(t\right) $ del PVI.
+\end{enumerate}
+El resultado es análogo para $\displaystyle \beta_{-} $.
+\end{colorary}
+

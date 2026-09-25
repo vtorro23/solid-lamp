@@ -115,13 +115,270 @@ Por tanto para $\displaystyle 0 < \left|h\right|<r $,
 	\end{itemize}
 \end{proof}
 \section{Ecuaciones de Cauchy-Riemann}
-Dada $\displaystyle f : \Omega \to \C $, podemos considerar que $\displaystyle f $ viene dada de la forma
+Dada $\displaystyle f : \Omega \subset \C\to \C $, podemos considerar que $\displaystyle f $ viene dada de la forma
 \[f\left(x,y\right) = u\left(x,y\right) + iv\left(x,y\right) .\]
 Es decir, la podemos considerar una función $\displaystyle f : \R^{2} \to \R^{2} $. 
 \begin{theorem}[Ecuaciones de Cauchy-Riemann]
-Sea $\displaystyle f : \Omega \to \C $. Entonces, $\displaystyle f $ es holomorfa en $\displaystyle z_{0}=x_{0} + iy_{0} \in \Omega  $ si y sólo si $\displaystyle u $ y $\displaystyle v $ son diferenciables en $\displaystyle \left(x_{0}, y_{0}\right) $ y cumplen las ecuaciones
+Sea $\displaystyle f : \Omega \to \C $ con $\displaystyle \Omega \subset \C $ abierto. Entonces, $\displaystyle f=u + iv $ es holomorfa en $\displaystyle z_{0}=x_{0} + iy_{0} \in \Omega  $ si y sólo si $\displaystyle u $ y $\displaystyle v $ son diferenciables en $\displaystyle \left(x_{0}, y_{0}\right) $ y cumplen las ecuaciones
 \[\frac{\partial u}{\partial x}\left(x_{0}, y_{0}\right)=\frac{\partial v}{\partial y}\left(x_{0}, y_{0}\right) \quad \text{y} \quad \frac{\partial u}{\partial y}\left(x_{0}, y_{0}\right)=-\frac{\partial v}{\partial x} \left(x_{0}, y_{0}\right).\]
 En este caso, 
-\[f'\left(z_{0}\right)=\frac{\partial u}{\partial x}\left(x_{0}, y_{0}\right) + i\frac{\partial v}{\partial y}\left(x_{0}, y_{0}\right) .\]
+\[f'\left(z_{0}\right)=\frac{\partial u}{\partial x}\left(x_{0}, y_{0}\right) + i\frac{\partial v}{\partial x}\left(x_{0}, y_{0}\right) .\]
 \end{theorem}
+\begin{proof}
+Sea $\displaystyle Df\left(x_{0}, y_{0}\right) $ la diferencial real de $\displaystyle f $ en $\displaystyle z_{0} = x_{0} + iy_{0} $ y $\displaystyle f'\left(z_{0}\right) $ la derivada en sentido complejo. El teorema es equivalente a decir que existen $\displaystyle a,b \in \R $ tales que $\displaystyle f'\left(z_{0}\right)=a + bi $ si y solo si $\displaystyle f $ es diferenciable en sentido real y se cumple que 
+\[Df\left(x_{0}, y_{0}\right)=\begin{pmatrix} a & -b \\ b & a \end{pmatrix} .\]
+\begin{description}
+\item[($\displaystyle \Rightarrow $)] Suponemos que $\displaystyle f'\left(z_{0}\right)=a+bi $ para algunos $\displaystyle a,b\in \R $. Sea $\displaystyle A : \R^{2} \to \R^{2} $ una aplicación lineal tal que 
+	\[\mathcal{M}_{\mathcal{C}\mathcal{C}}\left(A\right)=\begin{pmatrix} a & - b \\ b & a \end{pmatrix} .\]
+Observamos que si $\displaystyle h = s + it $ con $\displaystyle s,t \in \R $,
+\[A\begin{pmatrix} s \\ t \end{pmatrix}=\left(as-bt, bs + at\right)=\left(a + ib\right)\left(s + it\right) .\]
+Así, tenemos que 
+\[\lim_{h \to 0}\frac{f\left(z_{0} +h\right)-f\left(z_{0}\right)-Ah}{ \left|h\right|}=\lim_{h \to 0}\frac{f\left(z_{0} + h\right)-f\left(z_{0}\right)-f'\left(z_{0}\right)h}{ \left|h\right|} = 0 .\]
+\item[($\displaystyle \Leftarrow $)] Supongamos ahora que $\displaystyle f $ es diferenciable en sentido real y que $\displaystyle Df\left(x_{0}, y_{0}\right)=\begin{pmatrix} a & - b\\ b & a \end{pmatrix} $. Por los cálculos anteriores tenemos que 
+	\[0 = \lim_{h \to 0}\frac{f\left(z_{0} +h\right)-f\left(z_{0}\right)-Ah}{ \left|h\right|}=\lim_{h \to 0}\frac{f\left(z_{0} + h\right)-f\left(z_{0}\right)-wh}{ \left|h\right|} .\]
+	Así, tendremos que por definición $\displaystyle f'\left(z_{0}\right)=w = a + bi $. 
+\end{description}
+\end{proof}
+\begin{observation}
+\begin{enumerate}
+	\item La función $\displaystyle f\left(z\right)=e^{z} $ es entera. En efecto, tenemos que $\displaystyle e^{x + iy}=e^{x}\left(\cos y + i\sin y\right) $ y se puede comprobar que verifica las ecuaciones de Cauchy-Riemann. Análogamente, el seno y el coseno son enteros. También la tangente es holomorfa en $\displaystyle \C/ \left\{ \cos z = 0\right\}  $, que es un abierto. Lo mismo se aplica para las funciones hiperbólicas. 
+	\item Si $\displaystyle f $ es holomorfa en $\displaystyle z_{0} $ se tiene que $\displaystyle \left|f'\left(z_{0}\right)\right|^{2}=\det\left(Df\left(x_{0}, y_{0}\right)\right) $. 
+\end{enumerate}
+\end{observation}
+\begin{colorary}
+Si $\displaystyle f : \Omega \to \C$ es holomorfa y $\displaystyle \Omega \subset \C $ es abierto conexo y $\displaystyle f'=0 $ en $\displaystyle \Omega  $, entonces $\displaystyle f $ es constante en $\displaystyle \Omega  $. 
+\end{colorary}
+\begin{proof}
+	Por la observación anterior tenemos que $\displaystyle \left|f'\left(z\right)\right|^{2}=\det\left(Df\left(x,y\right)\right)=0 $, $\displaystyle \forall z \in \Omega  $. Vimos que $\displaystyle f\left(x,y\right)=u\left(x,y\right) + iv\left(x,y\right) $ de forma que
+	\[0 = \left|f'\left(z\right)\right|^{2}=\det\left(Df\left(x,y\right)\right)=\begin{vmatrix} \frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} \\ \frac{\partial v}{\partial x} & \frac{\partial v}{\partial y} \end{vmatrix} =\begin{vmatrix} \frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} \\ -\frac{\partial u}{\partial y} & \frac{\partial u}{\partial x} \end{vmatrix} = \left(\frac{\partial u}{\partial x}\right)^{2} + \left(\frac{\partial u}{\partial y}\right)^{2} .\]
+Necesariamente debe ser que $\displaystyle \frac{\partial u}{\partial x}=\frac{\partial u}{\partial y}=0 $, por lo que $\displaystyle \nabla u = 0 $ y tendremos que por tratarse de un conjunto conexo $\displaystyle u  $ es constante. Demostrar que $\displaystyle v $ es constante es análogo. Así, como $\displaystyle u $ y $\displaystyle v $ son constantes y $\displaystyle f = u + iv $ debe ser que $\displaystyle f $ es constante. 	
+\end{proof}
+
+\begin{prop}
+Sea $\displaystyle \gamma:\left(-\epsilon, \epsilon \right)\to \C $ una curva compleja $\displaystyle \mathcal{C}^{1} $ con $\displaystyle \gamma\left(0\right)=z_{0} $ y $\displaystyle f $ es holomorfa en $\displaystyle z_{0} $. Entonces, el vector tangente a la curva compleja $\displaystyle \sigma:=f\circ \gamma  $ en $\displaystyle f\left(z_{0}\right) $ es
+\[\left(f\circ \gamma \right)'\left(0\right)=f'\left(z_{0}\right)\gamma'\left(0\right) .\]
+En general, si $\displaystyle \gamma:\left(a,b\right)\to \Omega  $ es $\displaystyle \mathcal{C}^{1} $ con $\displaystyle \Omega \subset \C  $ abierto, y $\displaystyle f : \Omega \to \C $ es holomorfa en $\displaystyle \Omega  $, entonces
+\[\frac{d}{dt}\left(f\left(\gamma\left(t\right)\right)\right)=f'\left(\gamma\left(t\right)\right)\gamma'\left(t\right) .\]
+\end{prop}
+\begin{proof}
+Primero, por la regla de la cadena en $\displaystyle \R^{n} $ tenemos que 
+\[\left(f\circ \gamma \right)'\left(0\right)=Df\left(z_{0}\right)\gamma'\left(0\right) .\]
+Aplicando las ecuacioens de Cauchy-Riemann, tenemos que
+\[Df\left(z_{0}\right)=\begin{pmatrix} a & -b \\ b & a \end{pmatrix} ,\]
+con $\displaystyle f'\left(z_{0}\right)= a + bi $. Así, si $\displaystyle \gamma\left(t\right)=\alpha\left(t\right) + i\beta\left(t\right) $ tendremos que 
+\[Df\left(z_{0}\right)\gamma'\left(0\right)=\begin{pmatrix} a & -b \\ b & a \end{pmatrix}\begin{pmatrix} \alpha'\left(0\right)\\\beta'\left(0\right) \end{pmatrix}=\left(a + bi\right)\left(\alpha'\left(0\right)+i\beta'\left(0\right)\right)=f'\left(z_{0}\right)\gamma'\left(0\right) .\]
+\end{proof}
+\begin{definition}[Función conforme]
+Decimos que $\displaystyle f : \Omega \subset \R^{2} \to \R^{2} $ es \textbf{conforme} en $\displaystyle z_{0}\in \Omega  $ si
+\begin{enumerate}
+\item $\displaystyle f $ es diferenciable en $\displaystyle z_{0} $ en sentido real.
+\item $\displaystyle f $ preserva ángulos en el punto $\displaystyle z_{0} $, es decir, dadas $\displaystyle \gamma_{1}, \gamma_{2} : \left(-\epsilon, \epsilon \right)\to \Omega  $ dos curvas $\displaystyle \mathcal{C}^{1} $ con $\displaystyle \gamma_{1}\left(0\right)=\gamma_{2}\left(0\right)=z_{0} $ y $\displaystyle \gamma_{1}'\left(0\right), \gamma_{2}'\left(0\right)\neq 0 $, se tiene que 
+	\[\left(f\circ\gamma_{1}\right)'\left(0\right)\neq 0 \neq \left(f\circ\gamma_{2}\right)'\left(0\right) \]
+	y el ángulo entre $\displaystyle \left(f\circ \gamma_{1}\right)'\left(0\right) $ y $\displaystyle \left(f\circ\gamma_{2}\right)'\left(0\right) $ es igual al ángulo entre $\displaystyle \gamma_{1}'\left(0\right) $ y $\displaystyle \gamma_{2}'\left(0\right) $, y con la misma orientación.
+\end{enumerate}
+Dados dos abiertos $\displaystyle U,V \subset \R^{2} $, $\displaystyle f : U \to V $ es \textbf{conforme} en $\displaystyle U $ si es conforme $\displaystyle \forall z_{0} \in \Omega  $ y es biyectiva.
+\end{definition}
+
+\begin{theorem}
+Sea $\displaystyle f: \Omega\subset \R^{2}\to \R^{2} $ con $\displaystyle \Omega  $ abierto. Son equivalentes:
+\begin{enumerate}
+\item $\displaystyle f : \Omega\subset \C \to \C $ es holomorfa en $\displaystyle z_{0} $ con $\displaystyle f'\left(z_{0}\right)\neq 0 $. 
+\item $\displaystyle f $ es conforme en $\displaystyle z_{0} $.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Veamos ambas implicaciones.
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Sean $\displaystyle \gamma_{1}, \gamma_{2} : \left(-\epsilon, \epsilon \right)\to \Omega  $ curvas de clase $\displaystyle \mathcal{C}^{1} $ como en la definición de conforme. Entonces,
+	\[\left(f\circ \gamma_{j}\right)'\left(0\right)=f'\left(z_{0}\right)\gamma'_{j}\left(0\right)\neq 0, \; j \in \left\{ 1,2\right\}  .\]
+Además, tenemos que
+\[
+\begin{split}
+	ang\left(\left(f\circ\gamma_{1}\right)'\left(0\right), \left(f\circ\gamma_{2}\right)'\left(0\right)\right)= & \arg \left(f'\left(z_{0}\right)\gamma'_{1}\left(0\right)\right)-\arg \left(f'\left(z_{0}\right)\gamma_{2}'\left(0\right)\right)\\
+	= & \arg f'\left(z_{0}\right) + \arg \gamma_{1}'\left(0\right)-\arg f'\left(z_{0}\right)-\arg \gamma_{2}'\left(0\right)\\
+	= & \arg \gamma'_{1}\left(0\right)-\arg \gamma'_{2}\left(0\right) \\
+	= & ang\left(\gamma'_{1}\left(0\right), \gamma'_{2}\left(0\right)\right).
+\end{split}
+\]
+\item[(2) $\displaystyle \Rightarrow $ (1)] Por hipótesis $\displaystyle f $ es $\displaystyle \R $-diferenciable. Pongamos que $\displaystyle f = u + iv $ y veamos que $\displaystyle u,v $ satisfacen las ecuacioens Cauchy-Riemann en $\displaystyle z_{0}$. Supongamos sin pérdida de generalidad que $\displaystyle z_{0}=0 $ y sea $\displaystyle Df\left(0\right)=\begin{pmatrix} a & b \\ c & d \end{pmatrix} $ con $\displaystyle a,b,c,d \in \R $. 
+	Vamos a considerar para $\displaystyle \theta \in (-\pi , \pi ] $ la familia de curvas
+	\[\gamma_{\theta }\left(t\right):=\left(t\cos\theta, t\sin\theta\right) .\]
+	Tenemos que 
+	\[\left(f\circ\gamma_{\theta }\right)'\left(0\right)= Df\left(0\right)\gamma'_{\theta }\left(0\right)=\begin{pmatrix} a & b \\ c & d \end{pmatrix}\begin{pmatrix} \cos \theta \\ \sin \theta \end{pmatrix}=\left(a \cos \theta + c \sin \theta, b \cos \theta + d \sin \theta \right) .\]
+	Por hipótesis,
+	\[\arg\left(e^{i\theta }\right)=\theta = ang\left(\left(f\circ \gamma_{0 }\right)'\left(0\right), \left(f\circ\gamma_{\theta }\right)'\left(0\right)\right) \]
+puesto que $\displaystyle ang\left(\gamma'_{0}\left(0\right), \gamma'_{\theta}\left(0\right)\right)=\arg\left(e^{i\theta }\right) $. Así, tenemos que 
+\[
+\begin{split}
+	\arg\left(e^{i\theta }\right)= &\theta = ang\left(\left(f\circ \gamma_{0 }\right)'\left(0\right), \left(f\circ\gamma_{\theta }\right)'\left(0\right)\right) = ang\left(a + bi, a\cos\theta + c \sin \theta + i \left(b\cos \theta + d \sin \theta \right)\right)\\
+	= & \arg\left(\frac{a \cos\theta + c \sin \theta + i \left(b \cos\theta+ d \sin\theta\right)}{a + bi}\right).
+\end{split}
+\]
+De esta forma, tenemos que 
+\[\arg\left(a + bi\right)=\arg\left(\frac{a \cos\theta + c \sin \theta + i\left(b \cos\theta + d \sin\theta \right)}{e^{i\theta }}\right)  .\]
+Si escribimos $\displaystyle \cos\theta = \frac{e^{i\theta }+ e^{-i\theta }}{2} $ y $\displaystyle \sin\theta = \frac{e^{i\theta}-e^{-i\theta}}{2i} $ y operando,
+\[\arg\left(a + bi\right)=\arg\left(\frac{1}{2}\left(a + d + i\left(b-c\right)\right) + \frac{1}{2}e^{-2i\theta }\left(a - d+i\left(c + d\right)\right)\right) .\]
+La única forma que se puede dar esta igualdad para todo $\displaystyle \theta \in (-\pi, \pi] $ es si $\displaystyle a - d + i\left(c + b\right)=0 $, es decir,
+\[
+\begin{cases}
+a = d \\
+b =-c
+\end{cases}
+\iff u,v \; \text{satisfacen C-R en }z_{0}=0
+.\]
+Así, $\displaystyle f $ es holomorfa en $\displaystyle z_{0}=0 $. 
+\end{description}
+\end{proof}
+\section{Teorema de la función inversa}
+\begin{theorem}[Teorema de la función inversa]
+Sea $\displaystyle \Omega \subset \C $ abierto, $\displaystyle z_{0} \in \Omega  $ y $\displaystyle f : \Omega \to \C $ holomorfa en $\displaystyle z_{0} $ con derivada continua tal que $\displaystyle f'\left(z_{0}\right)\neq 0 $. Entonces, existe un abierto $\displaystyle U $ con $\displaystyle z_{0} \in U $ y un abierto $\displaystyle V $ tal que $\displaystyle f\left(z_{0}\right)\in V $ de modo que $\displaystyle f|_{U} : U \to V=f\left(U\right) $ es biyectiva y holomorfa. Además, $\displaystyle \left(f|_{U}\right)^{-1} : V \to U $ es holomorfa en $\displaystyle f\left(z_{0}\right) $ y
+\[\left(f^{-1}\right)'\left(w\right)=\frac{1}{f'\left(f^{-1}\left(w\right)\right)}, \; \forall w \in V .\]
+\end{theorem}
+\begin{proof}
+Por hipótesis $\displaystyle f \in \mathcal{C}^{1}\left(\Omega, \R^{2}\right) $ y $\displaystyle \det\left(Df\left(z_{0}\right)\right)= \left|f'\left(z_{0}\right)\right|\neq0 $. Por el teorema de la función inversa real tenemos que existe un abierto $\displaystyle U $ que contiene a $\displaystyle z_{0} $ y otro abierto $\displaystyle V $ que contiene a $\displaystyle f\left(z_{0}\right) $ tal que $\displaystyle f|_{U}: U \to V=f\left(U\right) $ es una biyección de clase $\displaystyle \mathcal{C}^{1} $ y su inversa también lo es.
+Veamos que $\displaystyle f^{-1} $ es holomorfa. Si $\displaystyle w_{1} \in V $ podemos coger un $\displaystyle z_{1} \in U $ tal que $\displaystyle f\left(z_{1}\right)=w_{1} $. Como $\displaystyle f : U \to V $ es difeomorfismo $\displaystyle \mathcal{C}^{1} $ sabemos que $\displaystyle \det\left(Df\left(z_{1}\right)\right)=f'\left(z_{1}\right)\neq 0 $.
+Si $\displaystyle w = f\left(z\right) $ para $\displaystyle z \in U $, tenemos que 
+\[\frac{f^{-1}\left(w\right)-f^{-1}\left(w_{1}\right)}{w-w_{1}}=\frac{z-z_{1}}{f\left(z\right)-f\left(z_{1}\right)}\xrightarrow{z \to z_{1}} \frac{1}{f'\left(z_{1}\right)}=\frac{1}{f'\left(f^{-1}\left(w_{1}\right)\right)} .\]
+Podemos escribir el cociente puesto que $\displaystyle f'\left(z_{1}\right)\neq 0 $. 
+\end{proof}
+\section{Series de potencias}
+\begin{definition}[Serie de potencias]
+	Se define como \textbf{serie de potencias compleja centrada en $\displaystyle z_{0} $} a $\displaystyle \sum^{\infty}_{n = 0}a_{n}\left(z-z_{0}\right)^{n} $ con $\displaystyle \left\{ a_{n}\right\} _{n\in\N}\subset\C $ y $\displaystyle z_{0}, z\in \C $. 
+\end{definition}
+\begin{definition}[Convergencia]
+Consideremos la serie de potencias compleja $\displaystyle \sum^{\infty}_{n = 0}a_{n}\left(z-z_{0}\right)^{n} $. 
+\begin{itemize}
+\item Decimos que la serie \textbf{converge} a $\displaystyle f\left(z\right)  $ si $\displaystyle f\left(z\right)=\lim_{N \to \infty }\sum^{N}_{n = 0}a_{n}\left(z-z_{0}\right)^{n} $.
+\item Decimos que la serie \textbf{converge absolutamente} si la serie real $\displaystyle \sum^{\infty}_{n = 0} \left|a_{n} \left(z-z_{0}\right)^{n}\right| $ es finita.
+\item Diremos que la serie \textbf{converge uniformemente} a $\displaystyle f\left(z\right) $ en un conjunto $\displaystyle D $ si $\displaystyle f\left(z\right)=\lim_{N \to \infty}\sum^{N}_{n = 0}a_{n}\left(z-z_{0}\right)^{n} $ uniformemente para $\displaystyle z \in D $.
+\end{itemize}
+\end{definition}
+Utilizando el cambio de variable $\displaystyle w = z - z_{0} $ podemos centrar todas las series de potencias en el 0 sin afectar la convergencia o divergencia de las series. Por tanto, nos podemos limitar a estudiar las series centradas en el 0.
+\begin{observation}
+Si $\displaystyle \sum^{\infty}_{n = 0}a_{n}z^{n} $ es absolutamente convergente para $\displaystyle w \in \C $, entonces también lo es para todo $\displaystyle z \in \C $ con $\displaystyle \left|z\right|\leq \left|w\right| $. Además, por el criterio $\displaystyle M $ de Weirstrass tendremos que la convergencia es uniforme en $\displaystyle \overline{B}\left(0, \left|w\right|\right) $.  
+La uniformidad de la convergencia se debe a que para $\displaystyle z \in \overline{B}\left(0, \left|w\right|\right) $, si $\displaystyle f\left(z\right)=\sum^{\infty}_{n = 0}a_{n}z^{n} $,
+\[ \left|f\left(z\right)-\sum^{N}_{n = 0}a_{n}z^{n}\right|= \left|\sum^{\infty}_{n = N + 1}a_{n}z^{n}\right|\leq \sum^{\infty}_{n = N + 1} \left|a_{n}z^{n}\right|\leq \sum^{\infty}_{n = N + 1} \left|a_{n}w^{n}\right|\to 0 .\]
+\end{observation}
+\begin{theorem}
+	Dada una serie de potencias $\displaystyle \sum^{\infty}_{n = 0}a_{n}z^{n} $, existe un único $\displaystyle R \in [0,\infty] $ tal que 
+	\begin{enumerate}
+	\item $\displaystyle \forall \eta \in [0,R) $ tenemos que $\displaystyle \sum^{\infty}_{n = 0}a_{n}z^{n} $ converge absolutamente y uniformemente en $\displaystyle \overline{B}\left(0,\eta\right) $. 
+	\item Si $\displaystyle \left|z\right| > R $, entonces $\displaystyle \sum^{\infty}_{n = 0}a_{n}z^{n} $ diverge.
+	\end{enumerate}
+	Además, $\displaystyle R $ está determinado por la \textbf{fórmula de Hadamard} \footnote{También conocida como fórmula del calamar.}:
+	\[\frac{1}{R}=\lim_{n \to \infty }\sup \left|a_{n}\right|^{\frac{1}{n}} .\]
+Utilizaremos por conveción que $\displaystyle \frac{1}{0}=\infty  $ y $\displaystyle \frac{1}{\infty }=0 $. 	
+\end{theorem}
+\begin{proof}
+Sea $\displaystyle R $ el radio dado por la fórmula de Hadamard. Primero supongamos que $\displaystyle R \in \left(0,\infty\right)  $. Sea 
+\[L :=\frac{1}{R}=\lim_{n \to \infty }\sup \sqrt[n]{ \left|a_{n}\right|} .\]
+\begin{enumerate}
+	\item Si $\displaystyle 0< \eta < R $, existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle r : = \left(L + \epsilon \right)\eta < 1 $. Además, existe $\displaystyle n_{0} \in \N $ tal que $\displaystyle \forall n \geq n_{0} $ se tiene que $\displaystyle \sqrt[n]{ \left|a_{n}\right|} \leq L + \epsilon $. Por tanto, 
+		\[ \left|a_{n}\right|\eta^{n}\leq \left(L + \epsilon \right)^{n}\eta^{n}=r^{n} .\]
+		Así, 
+		\[\sum^{\infty}_{n =n_{0}} \left|a_{n}\right|\eta^{n} = \sum^{\infty}_{n = n_{0}}r^{n}\leq \sum^{\infty}_{n = 0}r^{n}< \infty .\]
+	Usando el criterio $\displaystyle M $ de Weierstrass deducimos que la serie converge absoluta y uniformemente en el disco $\displaystyle \overline{B}\left(0, \eta\right) $. 
+	\item Si $\displaystyle \left|z\right| > R $, existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle s:=\left(L-\epsilon \right) \left|z\right| > 1 $. Por definición de $\displaystyle \lim\sup  $, existe $\displaystyle \left\{ n_{j}\right\} _{j \in \N}\subset\N $ estrictamente creciente tal que 
+		\[ \left|a_{n_{j}}\right|^{\frac{1}{n_{j}}}\geq L-\epsilon  .\]
+		Ahora, 
+		\[ \left|a_{n_{j}}z^{n_{j}}\right|\geq \left(L-\epsilon \right)^{n_{j}} \left|z\right|^{n_{j}} =s^{n_{j}} \to \infty ,\]
+		cuando $\displaystyle j \to \infty $ y en particular la serie diverge. 
+\end{enumerate}
+Supongamos ahora que $\displaystyle R = \infty $. El mismo argumento que antes muestra que la serie converge absoluta y uniformemente en el disco $\displaystyle \overline{B}\left(0, \eta\right) $ para cualquier $\displaystyle \eta > 0 $. \\
+
+Si $\displaystyle R = 0 $, entonces para cualquier $\displaystyle z \in \C $ con $\displaystyle \left|z\right| > 0 $ tendremos que $\displaystyle L = \infty  $ y podemos encontrar una sucesión estrictamente creciente $\displaystyle \left\{ n_{j}\right\} _{j \in \N}\subset \N $ tal que 
+\[ \left|a_{n_{j}}\right|^{\frac{1}{n_{j}}}\geq 2^{n_{j}} \to \infty ,\]
+cuando $\displaystyle j \to \infty $, por lo que la serie diverge.
+\end{proof}
+\begin{notation}[Discos de convergencia]
+Al disco abierto $\displaystyle B\left(0, R\right) $ determinado por el teorema anterior se le llama \textbf{disco de convergencia}. 
+\end{notation}
+\begin{observation}
+Para $\displaystyle \left|z\right|=R $ no podemos asegurar la convergencia ni divergencia de la serie. Esto se ilustra en el siguiente ejemplo.
+\end{observation}
+
+\begin{eg}
+Consideremos las series
+\[\sum^{\infty}_{n = 1}\frac{z^{n}}{n^{2}}, \quad \sum^{\infty}_{n = 1}\frac{z^{n}}{n}, \quad \sum^{\infty}_{n = 1}z^{n} .\]
+Para todas estas series tenemos que el radio de convergencia es $\displaystyle R = 1 $. En el primer caso tenemos que hay convergencia en todos los puntos de la frontera. En el segundo caso para $\displaystyle z \neq 1 $ hay convergencia en la frontera. En el último caso no hay convergencia en ningún punto de la frontera.
+\end{eg}
+\begin{theorem}
+	Si existe $\displaystyle \lim_{n \to \infty}\frac{ \left|a_{n}\right|}{ \left|a_{n+1}\right|}\in [0,\infty] $, entonces el valor de este límite es el radio de convergencia de la serie de potencias $\displaystyle \sum^{\infty}_{n = 0}a_{n}z^{n} $. En general,
+	\begin{enumerate}
+	\item Si $\displaystyle 0 < r < \lim_{n \to \infty}\inf \frac{ \left|a_{n}\right|}{ \left|_{n+1}\right|} $ entonces $\displaystyle \sum^{\infty}_{n = 0}a_{n}z^{n} $ converge absoluta y uniformemente en $\displaystyle \left|z\right|\leq r $.
+	\item Si $\displaystyle \left|z\right|> \lim_{n \to \infty}\sup \frac{ \left|a_{n}\right|}{ \left|a_{n+1}\right|} $ entonces $\displaystyle \sum^{\infty}_{n = 0}a_{n}z^{n} $ diverge.
+	\end{enumerate}
+\end{theorem}
+\begin{eg}
+Es inmediato ver que la serie $\displaystyle \sum^{\infty}_{n = 0}\frac{1}{n!}z^{n} $ tiene radio de convergencia infinito. 
+\end{eg}
+\begin{observation}
+Cualquier criterio de convergencia de series de números erales positivos (la integral, Raabe, Cauchy, etc.) pueden usarse en las ocasiones apropiadas para determinar el radio de convergencia de una serie de potencias, teniendo en cuenta que dicho radio es el supremo de los $\displaystyle r \geq 0 $ tales que la serie $\displaystyle \sum^{\infty}_{n = 0} \left|a_{n}\right| r^{n} $ converge.
+\end{observation}
+\begin{theorem}
+Sea $\displaystyle \sum^{\infty}_{n = 0}a_{n} \left(z-z_{0}\right)^{n} $ una serie de potencias con radio de convergencia $\displaystyle R>0 $. Entonces la función $\displaystyle f : B\left(z_{0}, R\right)\to \C $ definida por
+\[f\left(z\right)=\sum^{\infty}_{n = 0}a_{n}\left(z-z_{0}\right)^{n} ,\]
+es holomorfa en el disco abierto $\displaystyle B\left(z_{0}, R\right) $ y 
+\[f'\left(z\right)=\sum^{\infty}_{n = 1}na_{n}\left(z-z_{0}\right)^{n-1} .\]
+Además, la serie de potencias de $\displaystyle f'\left(z\right) $ tiene el mismo radio de convergencia que la de $\displaystyle f\left(z\right) $. 
+\end{theorem}
+\begin{proof}
+Supongamos sin pérdida de generalidad que $\displaystyle z_{0} = 0 $. La afirmación sobre el radio de convergencia de $\displaystyle \sum^{\infty}_{n = 1}na_{n}\left(z-z_{0}\right)^{n-1} $ se sigue de que, como $\displaystyle \lim_{n \to \infty}n^{\frac{1}{n}}=1 $,
+\[\lim_{n \to \infty}\sup \left|na_{n}\right|^{\frac{1}{n}}=\lim_{n \to \infty}\sup \left|a_{n}\right|^{\frac{1}{n}} ,\]
+y por el teorema anterior tiene el mismo radio de convergencia que la de $\displaystyle f\left(z\right) $. Ahora, definamos la función
+\[g: B\left(0, R\right)\to \C : z \to \sum^{\infty}_{n = 1}na_{n}z^{n-1} ,\]
+y veamos que $\displaystyle f'\left(z\right)=g\left(z\right) $ para cada $\displaystyle z \in B\left(0,R\right) $. Dado $\displaystyle z \in B\left(0, R\right) $ cogemos $\displaystyle r >0$ tal que $\displaystyle \left|z\right|<r<R $. Podemos escribir
+\[f\left(\xi\right)=S_{N}\left(\xi\right) + T_{N}\left(\xi\right) ,\]
+con
+\[S_{N}\left(\xi\right)=\sum^{N}_{n = 0}a_{n}\xi^{n} \quad \text{y} \quad T_{N}\left(\xi\right)=\sum^{\infty}_{n = N + 1}a_{n}\xi^{n} .\]
+Consideremos también $\displaystyle h \in B\left(0, r- \left|z\right|\right) $ tal que $\displaystyle \left|z + h\right|<r $. Tendremos que
+\[\frac{f\left(z + h\right)-f\left(z\right)}{h}-g\left(z\right)=\left(\frac{S_{N}\left(z + h\right)-S_{N}\left(z\right)}{h}-S'_{N}\left(z\right)\right)+\left(S'_{N}\left(z\right)-g\left(z\right)\right)+\left(\frac{T_{N}\left(z + h\right)-T_{N}\left(z\right)}{h}\right) .\]
+Vamos a estimar por separado cada uno de estos tres términos. En primer lugar, utilizando la igualdad,
+\[a^{n}-b^{n}=\left(a-b\right)\sum^{n-1}_{j = 0}a^{n-1-j}b^{j} ,\]
+con $\displaystyle a = z + h $ y $\displaystyle b = z $, tenemos que 
+\[ \left|\frac{T_{N}\left(z + h\right)-T_{N}\left(z\right)}{h}\right|\leq \sum^{\infty}_{n = N + 1} \left|a_{n}\right| \frac{ \left|\left(z + h\right)^{n}-z^{n}\right|}{ \left|h\right|} \leq \sum^{\infty}_{n = N + 1} \left|a_{n}\right|nr^{n-1} \to 0 ,\]
+puesto que $\displaystyle g\left(\xi\right) $ converge absoluta y uniformemente en $\displaystyle \left|\xi\right|\leq r $. Así, para $\displaystyle \epsilon > 0 $ podemos encontrar $\displaystyle N_{1} \in \N $ tal que si $\displaystyle \forall N \geq N_{1} $,
+\[ \left|\frac{T_{N}\left(z+h\right)-T_{N}\left(z\right)}{ \left|h\right|}\right| < \frac{\epsilon }{3} .\]
+En segundo lugar, como $\displaystyle \lim_{N \to \infty}S'_{N}=g\left(z\right) $ existe $\displaystyle N_{2} \in \N $ tal que para $\displaystyle N \geq N_{2} $,
+\[ \left|S'_{N}\left(z\right)-g\left(z\right)\right|\leq \frac{\epsilon }{3} .\]
+Cogemos $\displaystyle N_{0}=\max \left\{ N_{1}, N_{2}\right\}  $. Como $\displaystyle S_{N_{0}} $ es derivable con $\displaystyle S_{N_{0}}'\left(z\right)=\sum^{N_{0}}_{n = 1}na_{n}z^{n-1} $ podemos encontrar $\displaystyle \delta \in \left(0, r - \left|z\right|\right) $ tal que si $\displaystyle 0 < \left|h\right| \leq \delta  $,
+\[ \left|\frac{S_{N_{0}}\left(z+h\right)-S_{N_{0}}\left(z\right)}{h}-S'_{N_{0}}\left(z\right)\right|< \frac{\epsilon }{3} .\]
+De esta forma, tenemos que para $\displaystyle 0 < \left|h\right|\leq \delta  $,
+\[ \left|\frac{f\left(z + h\right)-f\left(z\right)}{h}-g\left(z\right)\right|<\epsilon ,\]
+por lo que existe $\displaystyle f'\left(z\right) $ y es igual a $\displaystyle g\left(z\right) $. 
+\end{proof}
+\begin{theorem}
+	Sean $\displaystyle \sum^{\infty}_{n = 0}z_{n} $ y $\displaystyle \sum^{\infty}_{n = 0}w_{n} $ series de números complejos que convergen absolutamente. Sea $\displaystyle \left\{ c_{n}\right\} _{n\in\N}\subset \C $ cualquier enumeración del conjunto $\displaystyle \left\{ z_{j}w_{k} \; : \; j,k \geq 0\right\}  $. Entonces, $\displaystyle \sum^{\infty}_{n = 0}c_{n} $ converge absolutamente y
+	\[\sum^{\infty}_{n = 0}c_{n}=\left(\sum^{\infty}_{n = 0}z_{n}\right)\left(\sum^{\infty}_{n = 0}w_{n}\right) .\]
+	En particular, se cumple si tomamos $\displaystyle c_{n}=z_{0}w_{n} + z_{1} w_{n-1} + \cdots + z_{n-1}w_{1} + z_{n}w_{0} $ para cada $\displaystyle n \in \N \cup \left\{ 0\right\}  $. 
+\end{theorem}
+\begin{proof}
+La sucesión de productos
+\[q_{N}=\left(\sum^{N}_{n = 0}z_{n}\right)\left(\sum^{N}_{n = 0}w_{n}\right)\]
+converge al producto de los límites de las sumas parciales de cada serie. Así, dado $\displaystyle \epsilon > 0 $, existe $\displaystyle N_{1} \in \N $ tal que si $\displaystyle N \geq N_{1} $,
+\[ \left|\sum^{\infty}_{n = 0}z_{n}\sum^{\infty}_{n = 0}w_{n}-\sum^{N}_{n = 0}z_{n}\sum^{N}_{n = 0}w_{n}\right| < \frac{\epsilon }{2} .\]
+Análogamente, la sucesión de productos
+\[p_{N}=\left(\sum^{N}_{n=0} \left|z_{n}\right|\right)\left(\sum^{N}_{n=0} \left|w_{n}\right|\right) ,\]
+converge al producto de los límites de las sumas parciales de cada serie. En particular, la sucesión $\displaystyle \left\{ p_{N}\right\} _{N\in\N} $ es de Cauchy por lo que existe $\displaystyle N_{2} \in \N $ que podemos suponer mayor que $\displaystyle N_{1} $ tal que si $\displaystyle N,M \geq N_{2}  $,
+\[ \left|\sum^{M}_{n = 0} \left|z_{n}\right| \sum^{M}_{n = 0} \left|w_{n}\right|-\sum^{N}_{n = 0} \left|z_{n}\right| \sum^{N}_{n = 0} \left|w_{n}\right|\right| < \frac{\epsilon }{2} .\]
+Así, para cualquier subconjunto finito $\displaystyle F \subset \N $ tendremos que 
+\[\sum_{j,k\in F, j > N_{2} \; \text{o} \; k > N_{2}} \left|z_{j}\right| \left|w_{j}\right| <\frac{\epsilon }{2} ,\]
+y por tanto también
+\[\sum_{j > N_{2} \; \text{o} \; k > N_{2}} \left|z_{j}\right| \left|w_{k}\right| < \frac{\epsilon }{2} .\]
+Elegimos $\displaystyle N_{3}\geq N_{2}\geq N_{1} $ suficientemente grande para que $\displaystyle \left\{ c_{1}, \ldots, c_{N_{3}}\right\}  $ contenga al conjunto $\displaystyle \left\{ z_{j}w_{k} \; : \; j,k \leq N_{2}\right\}  $. Entonces para $\displaystyle N \geq N_{3} $,
+\[\sum^{N}_{n=0}c_{n}-\sum^{N_{2}}_{j = 0}z_{j}\sum^{N_{2}}_{k = 0}w_{k} ,\]
+contiene exclusivamente términos de la forma $\displaystyle z_{j}w_{k} $ con $\displaystyle j > N_{2} $ o $\displaystyle k > N_{2} $ po lo que 
+\[ \left|\sum^{N}_{n=0}c_{n}-\sum^{N_{2}}_{j = 0}z_{j}\sum^{N_{2}}_{k = 0}w_{k}\right| \leq \sum_{j \geq N_{2} \; \text{o} \; k \geq N_{2}} \left|z_{j}\right| \left|w_{k}\right| < \frac{\epsilon }{2} .\]
+Por tanto, para $\displaystyle N \geq N_{3} $,
+\[ \left|\sum^{\infty}_{n = 0}z_{n}\sum^{\infty}_{n = 0}w_{n}-\sum^{N}_{n = 0}c_{n}\right|\leq \left|\sum^{\infty}_{n = 0}z_{n}\sum^{\infty}_{n = 0}w_{n}-\sum^{N_{2}}_{n = 0}z_{n}\sum^{N_{2}}_{n = 0}w_{n}\right| 
++ \left|\sum^{N_{2}}_{j=0}z_{j}\sum^{N_{2}}_{k=0}w_{k}-\sum^{N}_{n = 0}c_{n}\right|<\epsilon.\]
+Aplicando este resultado con $\displaystyle \left|z_{n}\right| $, $\displaystyle \left|w_{n}\right| $ y $\displaystyle \left|c_{n}\right| $ se obtiene también la convergencia absoluta de $\displaystyle \sum^{\infty}_{n = 0} \left|c_{n}\right| $. 
+\end{proof}
+\begin{observation}
+Con este resultado se puede dmostrar que si 
+\[f\left(z\right)=\sum^{\infty}_{n = 0}a_{n}\left(z-z_{0}\right)^{n} \quad \text{y} \quad g\left(z\right)=\sum^{\infty}_{n=0}b_{n}\left(z-z_{0}\right)^{n} ,\]
+para $\displaystyle z \in B\left(z_{0}, R\right) $, entonces
+\[\left(fg\right)\left(z\right)=\sum^{\infty}_{n = 0}c_{n}\left(z-z_{0}\right)^{n}, \; \forall z \in B\left(z_{0}, R\right) ,\]
+con $\displaystyle c_{n}=a_{n}b_{0} + a_{n-1}b_{1} + \cdots + a_{1}b_{n-1}+a_{0}b_{n} $.
+\end{observation}
 

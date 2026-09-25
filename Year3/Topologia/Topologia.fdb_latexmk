@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1789548333.42195 "Topologia.tex" "Topologia.pdf" "Topologia" 1789548337.39808 0
+["pdflatex"] 1790316737.40504 "Topologia.tex" "Topologia.pdf" "Topologia" 1790316742.53388 0
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -292,11 +292,12 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "Chap1.tex" 1789548327.69916 51086 56adb93bf0536025ed69e216ca218d37 ""
-  "Topologia.aux" 1789548337.11152 15988 8d7b524a6fcd932bf7de4d90c10a146f "pdflatex"
-  "Topologia.out" 1789548337.11486 1400 2345f961a51e2927eca5929a26e11ca1 "pdflatex"
-  "Topologia.tex" 1788791823.59344 1049 5c0e107d4d5bb2f17883150e10bb504d ""
-  "Topologia.toc" 1789548337.11561 785 1a27e46395923e834b3850c9d1037528 "pdflatex"
-  "preamble.tex" 1789251161.66109 8693 9425d528425868e90c3474cada739113 ""
+  "Chap2.tex" 1790316731.03859 20001 4d456968b3cfd75ab438342307460c3c ""
+  "Topologia.aux" 1790316742.22372 21369 c98a423710162e0e3752d807f0b2718a "pdflatex"
+  "Topologia.out" 1790316742.2276 2143 1d3c3c86593dca302910866f75a6ca9e "pdflatex"
+  "Topologia.tex" 1790086213.86236 1067 635f96db62f1510777ebb65cf691c4f1 ""
+  "Topologia.toc" 1790316742.2284 1128 386ef68426c911d4bc0fc5c6a0ccb3cc "pdflatex"
+  "preamble.tex" 1790087142.9695 8693 97f1778b6caf72a526efeb545fe91ca3 ""
   (generated)
   "Topologia.aux"
   "Topologia.log"

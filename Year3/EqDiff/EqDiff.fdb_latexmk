@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1789660214.97577 "EqDiff.tex" "EqDiff.pdf" "EqDiff" 1789660219.91568 0
+["pdflatex"] 1790322288.44361 "EqDiff.tex" "EqDiff.pdf" "EqDiff" 1790322292.42203 0
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -291,11 +291,12 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724666679.39075 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Chap1.tex" 1789660214.00168 39178 54415cf9a2450fca8d4296d0f55140ab ""
-  "EqDiff.aux" 1789660219.55125 10384 45ed5b417ab12eecd9fdba024b35c919 "pdflatex"
-  "EqDiff.out" 1789660219.55455 2732 b2a10eea76860c82645f124dc1adae12 "pdflatex"
-  "EqDiff.tex" 1788879779.62818 594 ea97e634142c4a87905bbf35349adb92 ""
-  "EqDiff.toc" 1789660219.55537 1211 bad92ad2dfabb1640f2b69250d2e7e3a "pdflatex"
+  "Chap1.tex" 1790321667.28638 48737 dbac92fa70ae3173904cac23f9aa092f ""
+  "Chap2.tex" 1790322284.99312 7004 dcf742e5ecf47b06283186558cc1a59b ""
+  "EqDiff.aux" 1790322292.13256 9995 e7ef46b10ad1f93156873e25afeed34f "pdflatex"
+  "EqDiff.out" 1790322292.13535 1582 c9341245e3926312e63a8b09fec7c2ea "pdflatex"
+  "EqDiff.tex" 1790177002.08507 638 4eda878692f77b84a33d003ff3e14172 ""
+  "EqDiff.toc" 1790322292.13603 661 3a27f69c0e45029d0cec7d21607f9c55 "pdflatex"
   "preamble.tex" 1789251248.06128 9092 a9e1946d306b3efa11e64e411fb9e92e ""
   (generated)
   "EqDiff.aux"

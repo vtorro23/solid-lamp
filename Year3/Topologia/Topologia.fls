@@ -496,6 +496,9 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT ./Chap2.tex
+INPUT ./Chap2.tex
+INPUT Chap2.tex
 INPUT Topologia.aux
 INPUT ./Topologia.out
 INPUT ./Topologia.out

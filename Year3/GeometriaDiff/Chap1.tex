@@ -500,7 +500,7 @@ Si lo hacemos con la longitud de arco,
 \begin{theorem}[Teorema de Frénet]
 	Sea $\displaystyle \alpha : I \to \R^{n} $ una curva regular. Entonces, 
 \[\frac{d\hat{t}_{\alpha }}{d s}= \kappa_{\alpha }\hat{n}_{\alpha} \quad \text{y} \quad
-\frac{d\hat{n}_{\alpha }}{d s}= -\kappa_{\alpha \hat{t}_{\alpha}} .\]
+\frac{d\hat{n}_{\alpha }}{d s}= -\kappa_{\alpha }\hat{t}_{\alpha} .\]
 Equivalentemente, 
 \[\frac{d\hat{t}_{\alpha }}{dt}= v\kappa_{\alpha }\hat{n}_{\alpha } \quad \text{y} \quad \frac{d\hat{n}_{\alpha }}{dt}= - v\kappa_{\alpha }\hat{t}_{\alpha } .\]
 \end{theorem}
@@ -521,7 +521,7 @@ Se puede usar la regla pnemotécnica:
 \begin{proof}
 Vamos a reparametrizar por arco. Tenemos que $\displaystyle \alpha\left(s\right) $ es circunferencia si y solo si $\displaystyle \kappa_{\alpha }\equiv k_{0} $, es decir, $\displaystyle \frac{d\hat{t}_{\alpha }}{d s}\equiv k_{0} $ es lo que queremos demostrar.
 \begin{description}
-\item[($\displaystyle \Rightarrow $)] Supongamos que $\displaystyle \alpha \left(s\right) $ es una circunferencia centrada en el origen de radio $\displaystyle R $. Tenemos que 
+\item[($\displaystyle \Rightarrow $)] Sin pérdida de generalidad, supongamos que $\displaystyle \alpha \left(s\right) $ es una circunferencia centrada en el origen de radio $\displaystyle R >0 $. Tenemos que 
 	\[\alpha\left(s\right)=\left(R\cos \frac{s}{R}, R \sin \frac{s}{R}\right) \Rightarrow
 	\begin{cases}
 	\hat{t}_{\alpha }\left(s\right)=\alpha'\left(s\right)=\left(-\sin \frac{s}{R}, \cos \frac{s}{R}\right) \\
@@ -530,13 +530,10 @@ Vamos a reparametrizar por arco. Tenemos que $\displaystyle \alpha\left(s\right)
 	.\]
 	Así, nos queda que 
 	\[\alpha''\left(s\right)=\left(-\frac{1}{R}\cos \frac{s}{R}, -\frac{1}{R}\sin \frac{s}{R}\right)\Rightarrow \kappa_{\alpha }\left(s\right)= \frac{1}{R} .\]
-Ya vimos que $\displaystyle \kappa_{\alpha }\left(-s\right)=-\frac{1}{R} $. En el primer caso, el centro de la circunferencia viene dado por
-\[C_{0}= \alpha\left(s\right) + R \hat{n}\left(s\right)= \alpha\left(s\right)+\frac{1}{\kappa_{\alpha }}\hat{n}\left(s\right) .\]
-En el segundo caso, 
-\[C_{0}=\alpha\left(s\right)-R\hat{n}\left(s\right)=\alpha\left(s\right)+\frac{1}{\kappa_{\alpha }}\hat{n}_{\alpha }\left(s\right) .\]
-\item[($\displaystyle \Leftarrow $)] Defimimos $\displaystyle C\left(s\right)=\alpha\left(s\right)+\frac{1}{\kappa_{\alpha}}\hat{n}_{\alpha }\left(s\right) $ y veamos que $\displaystyle C\left(s\right)=C_{0} $:
+Análogamente, ya vimos que $\displaystyle \kappa_{\alpha }\left(-s\right)=-\frac{1}{R} $. 
+\item[($\displaystyle \Leftarrow $)] Defimimos $\displaystyle C\left(s\right)=\alpha\left(s\right)+\frac{1}{\kappa_{\alpha}}\hat{n}_{\alpha }\left(s\right) $ y veamos que $\displaystyle C\left(s\right)$ es constante:
 	\[C'\left(s\right)=\alpha'\left(s\right)+\frac{1}{\kappa_{\alpha}}\hat{n}_{\alpha }'=\hat{t}_{\alpha }+\frac{1}{\kappa_{\alpha }}\left(-\kappa_{\alpha }\hat{t}_{\alpha }\right)=0 .\]
-	Así, tenemos que $\displaystyle C\left(s\right) $ es fijo. Ahora, queremos ver que $\displaystyle \|\alpha\left(s\right)-C_{0}\| $ es constante. Tenemos que
+	Así, tenemos que existe $\displaystyle C_{0} \in \R^{2} $ tal que $\displaystyle C\left(s\right)=C_{0} $. Ahora, queremos ver que $\displaystyle \|\alpha\left(s\right)-C_{0}\| $ es constante. Tenemos que
 	\[ \alpha\left(s\right)-C_{0}=-\frac{1}{\kappa_{\alpha }}\hat{n}_{\alpha } .\]
 De esta forma, 
 \[\|\alpha\left(s\right)-C_{0}\|=\sqrt{\frac{1}{\kappa_{\alpha }^{2}}} = \frac{1}{ \left|\kappa_{\alpha }\right|} .\]
@@ -549,12 +546,12 @@ Dada una curva regular $\displaystyle \alpha: I \to \R^{2} $, decimos que el \te
 La \textbf{circunferencia osculadora} es la circunferencia de centro $\displaystyle C\left(s_{0}\right) $ y radio $\displaystyle R = \frac{1}{ \left|\kappa_{\alpha }\left(s_{0}\right)\right|} $.
 \end{definition}
 \begin{prop}
-Si $\displaystyle \alpha\left(s\right) $ es regular con $\displaystyle \kappa_{\alpha }\left(s_{0}\right)\neq 0 $ y $\displaystyle \beta\left(s\right) $ es la circunferencia con centro $\displaystyle C_{0}=C\left(s_{0}\right) $ y radio $\displaystyle R = \frac{1}{ \left|\kappa_{\alpha }\left(s_{0}\right)\right|} $ (ajustamos $\displaystyle \beta\left(s_{0}\right)=\alpha\left(s_{0}\right)=P_{0} $, con el mismo sentido de giro en $\displaystyle \alpha  $ y $\displaystyle \beta  $).
-Entonces, existe $\displaystyle C \geq 0 $ tal que $\displaystyle \|\alpha\left(s\right)-\beta\left(s\right)\|\leq C \left|s-s_{0}\right|^{3} $. 
+Si $\displaystyle \alpha\left(s\right) $ es regular con $\displaystyle \kappa_{\alpha }\left(s_{0}\right)\neq 0 $ y $\displaystyle \beta\left(s\right) $ es la circunferencia con centro $\displaystyle C_{0}=C\left(s_{0}\right) $ y radio $\displaystyle R = \frac{1}{ \left|\kappa_{\alpha }\left(s_{0}\right)\right|} $ (ajustamos $\displaystyle \beta\left(s_{0}\right)=\alpha\left(s_{0}\right)=P_{0} $, con el mismo sentido de giro en $\displaystyle \alpha  $ y $\displaystyle \beta  $),
+entonces existe $\displaystyle C \geq 0 $ tal que $\displaystyle \|\alpha\left(s\right)-\beta\left(s\right)\|\leq C \left|s-s_{0}\right|^{3} $ en un entorno de $\displaystyle s_{0} $. 
 \end{prop}
 \begin{proof}
-Sea $\displaystyle \alpha\left(s_{0}\right)=\beta\left(s_{0}\right)=P_{0} $. Sea $\displaystyle \beta  $ la circunferencia desde $\displaystyle C_{0} $ a $\displaystyle P_{0} $, por lo que $\displaystyle \hat{n}_{\beta } || \overrightarrow{C_{0}P_{0}} $. Por otro lado, 
-\[\overrightarrow{C_{0}P_{0}}=\alpha\left(s_{0}\right)-C_{0}=\frac{1}{ \left|\kappa_{\alpha }\right|}\hat{n}_{\alpha } ||\hat{n}_{\alpha } .\]
+Sea $\displaystyle \alpha\left(s_{0}\right)=\beta\left(s_{0}\right)=P_{0} $. Como $\displaystyle \beta  $ es la circunferencia desde $\displaystyle C_{0} $ a $\displaystyle P_{0} $, tendremos que $\displaystyle \hat{n}_{\beta } || \overrightarrow{C_{0}P_{0}} $. Por otro lado, 
+\[\overrightarrow{C_{0}P_{0}}=\alpha\left(s_{0}\right)-C_{0}=\frac{1}{ \left|\kappa_{\alpha }\right|}\hat{n}_{\alpha } \quad ||\quad \hat{n}_{\alpha } .\]
 Así, $\displaystyle \hat{n}_{\beta }\left(s_{0}\right) || \hat{n}_{\alpha }\left(s_{0}\right) $. Por tanto, $\displaystyle \hat{t}_{\alpha }\left(s_{0}\right) || \hat{t}_{\beta }\left(s_{0}\right) $. Como tenemos el mismo sentido de giro debe ser que $\displaystyle \alpha'\left(s_{0}\right)=\beta'\left(s_{0}\right) $, 
 \[\alpha''\left(s_{0}\right)=\kappa_{\alpha }\left(s_{0}\right)\hat{n}_{\alpha }\left(s_{0}\right) = \pm \frac{1}{R}\hat{n}_{\alpha }\left(s_{0}\right) = \kappa_{\beta }\left(s_{0}\right)\hat{n}_{\beta }\left(s_{0}\right)=\beta''\left(s_{0}\right) .\]
 Aplicando el teorema de Taylor, 
@@ -562,7 +559,7 @@ Aplicando el teorema de Taylor,
 \[\beta\left(s\right) = \beta\left(s_{0}\right)+\beta'\left(s_{0}\right)\left(s-s_{0}\right) + \frac{\beta''\left(s_{0}\right)}{2!}\left(s-s_{0}\right)^{2} + \frac{\beta'''\left(\xi\right)}{3!} \left(s-s_{0}\right)^{3} .\]
 
 En un intervalo $\displaystyle \left[s_{0}-\epsilon, s_{0} + \epsilon \right]  $ tenemos que $\displaystyle \|\alpha'''\| $ está acotado y $\displaystyle \|\beta'''\| $ también lo esta. Por tanto, 
-\[ \|\alpha\left(s\right)-\beta\left(s\right)\| \leq \frac{C\left(\|\alpha'''\| + \|\beta'''\|\right)}{6} \left|s-s_{0}\right|^{3} .\]
+\[ \|\alpha\left(s\right)-\beta\left(s\right)\| \leq \left\|\frac{\alpha'''\left(\xi\right)}{3!}-\frac{\beta'''\left(\xi\right)}{3!}\right\| \left|s-s_{0}\right|^{3}\leq \frac{C}{6} \left|s-s_{0}\right|^{3} .\]
 \end{proof}
 \begin{theorem}
 Dada una curva regular $\displaystyle \alpha : I \to \R^{2} $, tenemos que 
@@ -570,8 +567,8 @@ Dada una curva regular $\displaystyle \alpha : I \to \R^{2} $, tenemos que
 \end{theorem}
 \begin{proof}
 Es sencillo ver que 
-\[\det\left(\frac{d\alpha }{ dt}, \frac{d^{2}\alpha }{dt ^{2}}\right) = \det\left(v\hat{t}_{\alpha }, \frac{dv}{dt}\hat{t}_{\alpha } + \kappa_{\alpha }v^{2}\hat{n}_{\alpha }\right) = \begin{vmatrix} v & \frac{dv}{dt} \\ 0 & \kappa_{\alpha }v^{2} \end{vmatrix} =\kappa_{\alpha }v^{2} .\]
-Tenemos que $\displaystyle \kappa_{\alpha }=\frac{1}{v^{3}}\det\left(\frac{d\alpha }{dt}, \frac{d^{2}\alpha }{dt ^{2}}\right) $.
+\[\det\left(\frac{d\alpha }{ dt}, \frac{d^{2}\alpha }{dt ^{2}}\right) = \det\left(v\hat{t}_{\alpha }, \frac{dv}{dt}\hat{t}_{\alpha } + \kappa_{\alpha }v^{2}\hat{n}_{\alpha }\right) = \begin{vmatrix} v & \frac{dv}{dt} \\ 0 & \kappa_{\alpha }v^{2} \end{vmatrix} =\kappa_{\alpha }v^{3} .\]
+Así pues, $\displaystyle \kappa_{\alpha }=\frac{1}{v^{3}}\det\left(\frac{d\alpha }{dt}, \frac{d^{2}\alpha }{dt ^{2}}\right) $.
 \end{proof}
 
 \begin{observation}
@@ -605,30 +602,324 @@ Por otro lado,
 \end{eg}
 \section{Curvas congruentes y teorema de congruencia}
 \begin{definition}[Isometría lineal]
-Se define \textbf{isometría lineal} como una aplicación $\displaystyle A : \R^{n} \to \R^{n} $ con $\displaystyle A \in \mathcal{M}_{n \times n}\left(\R\right) $ tal que $\displaystyle A^{t}A = I $ y $\displaystyle A^{-1}=A^{t} $. Además verifican 
-\[\left\langle AX, AY \right\rangle =\left(AX\right)^{t}AY =X^{t}A^{t}AY = X^{t}Y = \left\langle X, Y \right\rangle .\]
-Es decir, preserva el producto escalar. Además $\displaystyle A $ es una matriz ortonormal y $\displaystyle \det\left(A\right)=1 $. Si $\displaystyle \det\left(A\right)=-1 $ decimos que es una isometría negativa. 
+Se define \textbf{isometría lineal} como una aplicación $\displaystyle A : \R^{n} \to \R^{n} $ con $\displaystyle A \in \mathcal{M}_{n \times n}\left(\R\right) $ tal que $\displaystyle A $ es una matriz ortogonal, es decir, tal que $\displaystyle A^{t}A = I $ y $\displaystyle A^{-1}=A^{t} $. 
 \end{definition}
+\begin{observation}
+Las matrices ortogonales preservan el producto escalar 
+\[\left\langle AX, AY \right\rangle =\left(AX\right)^{t}AY =X^{t}A^{t}AY = X^{t}Y = \left\langle X, Y \right\rangle .\]
+Es sencillo ver que $\displaystyle \det\left(A\right)=\pm1 $. Si $\displaystyle \det\left(A\right)=1 $ diremos que es una \textbf{isometría positiva} y si $\displaystyle \det\left(A\right)=-1 $ diremos que es una isometría negativa. 
+\end{observation}
+
 \begin{eg}
-En $\displaystyle \R^{2} $, una isometría positiva puede ser un giro de ángulo $\displaystyle \theta $ y tiene la forma
+En $\displaystyle \R^{2} $, las isometrías lineales tienen la forma
+\[A = \begin{pmatrix} a & -b \\ b &a \end{pmatrix}\quad \text{o} \quad A = \begin{pmatrix} a &b \\ b & -a \end{pmatrix} .\]
+Si es positiva se trata de un giro de ángulo $\displaystyle \theta $ y tiene la forma
 \[A = \begin{pmatrix}  \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{pmatrix} .\]
-Análogamente, el giro en sentido contrario
+Si es negativa se trata de una simetría
 \[A =\begin{pmatrix} \cos \theta & \sin \theta \\ \sin \theta & -\cos\theta  \end{pmatrix} .\]
 \end{eg}
 \begin{definition}[Movimiento rígido]
-Son las isometrías afines. Es decir, son aplicaciones de la forma $\displaystyle \varphi : \R^{n} \to \R^{n} : X \to AX + B $ con $\displaystyle A \in O_{n} $ y $\displaystyle B \in \R^{n} $. En forma matricial son de la forma
+Son las isometrías afines, es decir, son aplicaciones de la forma $\displaystyle \phi : \R^{n} \to \R^{n} : X \to AX + B $ con $\displaystyle A \in O_{n}\left(\R\right) $ y $\displaystyle B \in \R^{n} $.  
+\end{definition}
+\begin{observation}
+La forma matricial de un movimiento rígido $\displaystyle \phi\left(X\right)=AX + B $ es
 \[\begin{pmatrix} 1 & 0 \\ B & A \end{pmatrix} .\]
-Las distancias se preservan:
-\[ .\]
+Es sencillo ver que los movimientos rígidos preservan las distancias,
 \[
 \begin{split}
-	d\left(\varphi\left(X\right), \varphi\left(A\right)\right) = & \|\varphi\left(X\right)-\varphi\left(Y\right)\| \\
-	= &  \|\left(AX + B\right)-\left(AY + B\right)\| = \|A\left(X-Y\right)\| = \|X-Y\| = d\left(X,Y\right).
+	d\left(\phi\left(X\right), \phi\left(A\right)\right) = & \|\phi\left(X\right)-\phi\left(Y\right)\| 
+	=   \|\left(AX + B\right)-\left(AY + B\right)\| \\
+	= &  \|A\left(X-Y\right)\| = \|X-Y\| = d\left(X,Y\right).
 \end{split}
 \]
-Hay movimiento rígidos positivos y negativos. 
-\end{definition}
+Dependiendo de si $\displaystyle A $ es positiva o negativa, podemos diferenciar entre movimientos rígidos positivos y negativos. 
+\end{observation}
+
 \begin{definition}[Curvas congruentes]
-Dos curvas $\displaystyle \alpha, \beta : J \to \R^{2} $ son \textbf{congruentes} si existe $\displaystyle \varphi:\R^{2} \to \R^{2} $ movimiento rígido (pos/neg) con $\displaystyle \beta\left(t\right)=\varphi\left(\alpha\left(t\right)\right) $. 
+Dos curvas $\displaystyle \alpha, \beta : J \to \R^{2} $ son \textbf{congruentes} si existe $\displaystyle \phi:\R^{2} \to \R^{2} $ movimiento rígido con $\displaystyle \beta\left(t\right)=\phi\left(\alpha\left(t\right)\right) $. 
 \end{definition}
+ 
+\begin{prop}
+Tomamos $\displaystyle \beta\left(t\right)=\phi\left(\alpha\left(t\right)\right)=A\alpha\left(t\right)+B $ de forma que son congruentes.
+\begin{enumerate}
+\item $\displaystyle \alpha\left(t\right) $ p.p.a si y solo si $\displaystyle \beta\left(t\right) $ p.p.a.
+\item Se tiene que
+	\[\hat{t}_{\beta }=\vec{\phi}\left(\hat{t}_{\alpha }\right), \quad \hat{n}_{\beta }=\vec{\phi}\left(\hat{n}_{\alpha }\right), \quad \det\left(A\right)=1.\]
+	Alternativamente, 
+	\[\hat{t}_{\beta }=\vec{\phi}\left(\hat{t}_{\alpha }\right), \quad \hat{n}_{\beta }=-\vec{\phi}\left(\hat{n}_{\alpha }\right), \quad \det\left(A\right)=-1 .\]
+\item Tenemos que $\displaystyle \kappa_{\beta }\left(t\right)=\pm \kappa_{\alpha }\left(t\right) $. 
+\end{enumerate}
+\end{prop}
+\begin{proof} Supongamos que $\displaystyle \beta\left(t\right)=\phi\left(\alpha\left(t\right)\right) $ de forma que $\displaystyle \beta  $ y $\displaystyle \alpha  $ son congruentes. 
+	\begin{enumerate}
+	\item Basta con demostrar una única dirección. Tenemos que $\displaystyle \|\alpha\left(s\right)\| = 1 $ y $\displaystyle \beta\left(s\right)=A\alpha\left(s\right) + B $ por lo que 
+\[\beta'\left(s\right)=A\alpha'\left(s\right)\Rightarrow \|\beta'\left(s\right)\|=\|A\alpha'\left(s\right)\|=\|\alpha'\left(s\right)\|=1 .\]
+Así, $\displaystyle \beta  $ está parametrizada por arco. 
+\item Parametrizamos primero por arco:
+	\[\hat{t}_{\beta }\left(s\right)=\beta'\left(s\right)=A\alpha'\left(s\right)=A\hat{t}_{\alpha }\left(s\right)=\vec{\phi}\left(\hat{t}_{\alpha }\left(s\right)\right) .\]
+	Por otro lado, como $\displaystyle \hat{n}_{\beta }\perp \hat{t}_{\beta } $ y $\displaystyle \vec{\phi}\left(\hat{n}_{\alpha }\right)\perp \vec{\phi}\left(\hat{t}_{\alpha }\right)=\hat{t}_{\beta } $, tenemos que $\displaystyle \hat{n}_{\beta }=\pm\vec{\phi}\left(\hat{n}_{\alpha }\right) $. 
+	Si $\displaystyle \det\left(A\right)=1 $, tenemos que $\displaystyle \left\{ \vec{\phi}\left(\hat{t}_{\alpha }\right), \vec{\phi}\left(\hat{n}_{\alpha }\right)\right\}  $ es una base positiva, por lo que $\displaystyle \left\{ \hat{t}_{\beta }, \hat{n}_{\beta }\right\}  $ también lo es y tendremos que $\displaystyle \vec{\phi}\left(\hat{n}_{\alpha }\right)=\hat{n}_{\beta } $.
+	Si $\displaystyle \det\left(A\right)=-1 $, tenemos que $\displaystyle \left\{ \vec{\phi}\left(\hat{t}_{\alpha }\right), \vec{\phi}\left(\hat{n}_{\alpha }\right)\right\}  $ es una base negativa por lo que $\displaystyle \left\{ \hat{t}_{\beta }, \hat{n}_{\beta }\right\}  $ también es base positiva. Así, $\displaystyle \vec{\phi}\left(\hat{n}_{\alpha }\right)=-\hat{n}_{\beta } $. 
+\item Tenemos que 
+	\[\kappa_{\beta }=\left\langle \frac{d\hat{t}_{\beta }}{d s}, \hat{n}_{\beta } \right\rangle =\left\langle \frac{d\left(A\hat{t}_{\alpha }\right)}{d s}, \pm A\hat{n}_{\alpha } \right\rangle  =\pm \left\langle A\frac{d\hat{t}_{\alpha }}{d s}, A \hat{n}_{\alpha } \right\rangle = \pm \left\langle \frac{d\hat{t}_{\alpha }}{d s}, \hat{n}_{\alpha } \right\rangle =\pm \kappa_{\alpha}.\]
+	\end{enumerate}
+\end{proof}
+\begin{theorem}[Teorema fundamental de las curvas planas]
+Dados $\displaystyle P_{0} \in \R^{2} $, $\displaystyle \vec{v}_{0}\in \R^{2} $ con $\displaystyle \|\vec{v}_{0}\|=1 $, $\displaystyle K : J \to \R $ de clase $\displaystyle \mathcal{C}^{\infty } $ y $\displaystyle s_{0} \in J $, entonces existe una única $\displaystyle \alpha: J \to \R^{2} $ p.p.a, tal que 
+	\[\alpha\left(s_{0}\right)=P_{0}, \quad \alpha'\left(s_{0}\right)=\vec{v}_{0}, \quad \kappa_{\alpha }\left(s\right)\equiv K\left(s\right), \; \forall s \in J .\]
+\end{theorem}
+\begin{proof}
+Sea $\displaystyle \alpha\left(s\right) $ p.p.a Tendremos que 
+	\[\alpha'\left(s\right)=\hat{t}\left(s\right)=\left(\cos\theta\left(s\right), \sin\theta\left(s\right)\right) .\]
+	\[\alpha''\left(s\right)=\theta'\left(s\right)\left(-\sin\theta\left(s\right), \cos\theta\left(s\right)\right)=\kappa_{\alpha }\left(s\right)\hat{n}_{\alpha }\left(s\right) .\] 
+	Si $\displaystyle \theta\left(s_{0}\right)=\theta_{0} $, necesariamente la única solución será $\displaystyle \theta'\left(s\right) =\kappa_{\alpha }\left(s\right)$, por lo que
+	\[\theta\left(s\right)=\int^{s}_{s_{0}} K\left(s\right) \; d s + \theta_{0} .\]
+	Así, el sistema 
+	\[
+	\begin{cases}
+	\alpha'\left(s\right)=\left(\cos\theta\left(s\right), \sin\theta\left(s\right)\right)\\
+	\alpha\left(s_{0}\right)=\left(a,b\right)
+	\end{cases}
+	,\]
+	tiene solución única  
+	\[\alpha\left(s\right)=\int^{s}_{s_{0}} \alpha'\left(s\right) \; d s + P_{0} = \left(\int^{s}_{s_{0}} \cos\theta\left(s\right) \; d s + a, \int^{s}_{s_{0}} \sin\theta\left(s\right) \; d s + b\right) .\]
+\end{proof}
+\begin{colorary}
+Sea $\displaystyle K : J \to \R $ de clase $\displaystyle \mathcal{C}^{\infty } $. Si $\displaystyle \alpha\left(s\right) $ y $\displaystyle \beta\left(s\right) $ son curvas p.p.a con curvaturas iguales a $\displaystyle K\left(s\right) $, entonces existe un movimiento rígido $\displaystyle \phi:\R^{2}\to \R^{2} $ tal que $\displaystyle \beta\left(s\right)=\phi\left(\alpha\left(s\right)\right) $ (preserva orientación). 
+\end{colorary}
+\begin{proof}
+Tenemos que para un $\displaystyle s_{0} \in J $ podemos escribir 
+	\[
+	\begin{cases}
+	\alpha\left(s_{0}\right)=P_{0} \\
+	\alpha'\left(s_{0}\right)=\vec{v}_{0}
+	\end{cases}
+	\quad \text{y} \quad
+\begin{cases}
+\beta\left(s_{0}\right)=Q_{0} \\
+\beta'\left(s_{0}\right)=\vec{w}_{0}
+\end{cases}
+.\]
+Tomamos $\displaystyle \phi: \R^{2}\to \R^{2} $ movimiento rígido positivo con $\displaystyle \phi\left(P_{0}\right)=Q_{0} $ y $\displaystyle \vec{\phi}\left(\vec{v}_{0}\right)=\vec{w}_{0} $. Así, cogemos $\displaystyle \gamma\left(s\right)=\phi\left(\alpha\left(s\right)\right) $. Tenemos que 
+\[\gamma\left(s_{0}\right)=\phi\left(P_{0}\right)=Q_{0}=\beta\left(s_{0}\right) .\]
+Análogamente, 
+\[\gamma'\left(s_{0}\right)=\vec{\phi}\left(\alpha'\left(s_{0}\right)\right)=\vec{\phi}\left(\vec{v}_{0}\right)=\vec{w}_{0}=\beta'\left(s_{0}\right) .\]
+Así, debe ser que 
+\[\kappa_{\gamma }\left(s\right)=\kappa_{\alpha}\left(s\right)=K\left(s\right)=\kappa_{\beta}\left(s\right), \; \forall s \in J.\]
+Por el teorema anterior, debe ser que $\displaystyle \gamma\left(s\right)\equiv \beta\left(s\right) $, $\displaystyle \forall s \in J $ de forma que $\displaystyle \phi\left(\alpha\left(s\right)\right)=\beta\left(s\right) $, $\displaystyle \forall s \in J $. Por la unicidad es sencillo ver que el movimiento rígido que hemos cogido es único.
+\end{proof}
+
+\begin{eg}
+Supongamos que $\displaystyle \theta'\left(s\right)=s $ y $\displaystyle \theta_{0}=0 $, entonces tendremos que $\displaystyle \theta\left(s\right)=\frac{s^{2}}{2} $ y $\displaystyle \alpha\left(0\right)=\left(0,0\right) $ por lo que 
+\[\alpha'\left(s\right)=\left(\cos\theta\left(s\right), \sin\theta\left(s\right)\right)=\left(\cos\left(\frac{s^{2}}{2}\right), \sin\left(\frac{s^{2}}{2}\right)\right) .\]
+De esta manera, 
+\[\alpha\left(s\right)=\left(\int^{s}_{0} \cos\left(\frac{s^{2}}{2}\right) \; d s, \int^{s}_{0} \sin\left(\frac{s^{2}}{2}\right) \; d s\right) ,\]
+que no tiene expresión analítica. Tenemos que $\displaystyle \kappa_{\alpha } $ cambia de signo en $\displaystyle s = 0 $ por lo que es un punto de inflexión. 
+\end{eg}
+
+\begin{prop}
+Dada una curva regular $\displaystyle \alpha: I \to \R^{2} $ p.p.a, si $\displaystyle \kappa_{\alpha }\left(s\right)\equiv C_{0}>0 $, entonces $\displaystyle \alpha\left(s\right) $ es una circunferencia.
+\end{prop}
+
+\begin{proof}
+Si $\displaystyle \beta\left(s\right) $ es circunferencia positiva de radio $\displaystyle R = \frac{1}{C_{0}} $, entonces $\displaystyle \kappa_{\beta }\left(s\right)=C_{0} $. Por el colorario anterior tenemos que $\displaystyle \alpha\left(s\right)=\phi\left(\beta\left(s\right)\right) $ con $\displaystyle \phi $ es un movimiento rígido positivo, por lo que $\displaystyle \alpha\left(s\right) $ es una circunferencia.
+\end{proof}
+ 
+\begin{prop}
+Sea $\displaystyle C = \left\{ \left(x,y\right) \; : \; F\left(x,y\right)=0\right\}  $ una curva regular implícita. Para algún sentido del recorrido se tiene que 
+\[\hat{n}_{C}\left(p\right)=\frac{\nabla F\left(p\right)}{\|\nabla F\left(p\right)\|} ,\]
+y $\displaystyle \hat{t}_{C}=-J\hat{n}_{C} $. 
+\end{prop}
+\begin{proof}
+Ya sabemos que en un entorno de $\displaystyle p $ existe $\displaystyle \alpha\left(s\right)=\left(\alpha_{1}\left(s\right), \alpha_{2}\left(s\right)\right) $ p.p.a con $\displaystyle \alpha\left(0\right)=p $. Tenemos que la traza de $\displaystyle \alpha  $ es igual a $\displaystyle B\left(p, \epsilon \right)\cap C $, para algún $\displaystyle \epsilon > 0 $ suficientemente pequeño. 
+Así, tenemos que $\displaystyle F\left(\alpha_{1}\left(s\right), \alpha_{2}\left(s\right)\right)=0 $ y además,
+\[\frac{\partial F}{\partial x}\alpha_{1}' + \frac{\partial F}{\partial y}\alpha_{2}' = \left\langle \nabla F, \hat{t}_{\alpha } \right\rangle =0, \; \forall s .\]
+En particular $\displaystyle \left\langle \nabla F\left(p\right), \hat{t}_{\alpha }\left(p\right) \right\rangle \equiv 0 $, por lo que $\displaystyle \nabla F\left(p\right)\perp \hat{t}_{\alpha } $ y tendremos que $\displaystyle \hat{n}_{\alpha }=\pm \frac{\nabla F\left(p\right)}{\|\nabla F\left(p\right)\|} $. 
+\end{proof}
+\section{Curvas en el espacio}
+\begin{definition}[Curva en el espacio]
+Una \textbf{curva en el espacio} es una curva de la forma $\displaystyle \alpha : I \to \R^{3} $. 
+\end{definition}
+\begin{eg}[Cúbica alabeada]
+	Sea $\displaystyle \alpha\left(t\right)=\left(t, t ^{2}, t ^{3}\right) $. Tenemos que $\displaystyle \alpha'\left(t\right)=\left(1, 2t, 3t ^{2}\right) $ y $\displaystyle s = \int \sqrt{1 + 4 t ^{2} + 9 t ^{4}} \; d t $, que no tiene expresión en función de funciones elementales. 
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{~/Desktop/Images/GeoDiff6.png}
+\end{center}	
+\end{eg}
+\begin{definition}[Vector tangente]
+Dada $\displaystyle \alpha : I \to \R^{3} $ una curva regular, se define el \textbf{vector tangente} como
+\[\hat{t}_{\alpha }\left(t\right)=\frac{\alpha'\left(t\right)}{\|\alpha'\left(t\right)\|} .\]
+\end{definition}
+
+\begin{definition}[Curvatura]
+Sea $\displaystyle \alpha\left(s\right) $ p.p.a, entonces la \textbf{curvatura} de $\displaystyle \alpha  $ es $\displaystyle \kappa_{\alpha }\left(s\right)=\|\alpha''\left(s\right)\| $. 
+\end{definition}
+\begin{definition}[Curva birregular]
+Una curva $\displaystyle \alpha: I \to \R^{3} $ se llama \textbf{curva birregular} si $\displaystyle \alpha\left(s\right) $ es regular y $\displaystyle \kappa_{\alpha }\left(s\right)\neq 0 $.
+\end{definition}
+\begin{definition}[Vector normal]
+Si $\displaystyle \alpha\left(s\right) $ es birregular, entonces se llama \textbf{vector normal} a $\displaystyle \hat{n}_{\alpha }=\frac{\alpha''\left(s\right)}{\|\alpha''\left(s\right)\|} $. 
+\end{definition}
+\begin{observation} Algunas observaciones rápidas.
+\begin{enumerate}
+\item Toda curva regular tiene $\displaystyle \kappa_{\alpha } $. 
+\item Siempre se tiene que $\displaystyle \kappa_{\alpha }\left(s\right)\geq 0 $, que no ocurría en $\displaystyle \R^{2} $. 
+\item Sólo si $\displaystyle \kappa_{\alpha}>0 $ existe $\displaystyle \hat{n}_{\alpha } $, es decir, sólo en el caso de que sea birregular. 
+\item Es sencillo ver que $\displaystyle \alpha''\left(s\right)=\kappa_{\alpha }\left(s\right)\hat{n}_{\alpha }\left(s\right) $. 
+\item Sabemos que $\displaystyle \left\langle \alpha'\left(s\right), \alpha'\left(s\right) \right\rangle =1 $. Derivando, 
+	\[\left\langle \alpha'\left(s\right), \alpha''\left(s\right) \right\rangle  =0.\]
+Por tanto, $\displaystyle \left\langle \hat{t}_{\alpha }, \kappa_{\alpha }\hat{n}_{\alpha } \right\rangle = 0 $ y como $\displaystyle \kappa_{\alpha } > 0 $ tendremos que $\displaystyle \left\langle \hat{t}_{\alpha }, \hat{n}_{\alpha } \right\rangle =0 $ por lo que $\displaystyle \hat{t}_{\alpha }\perp \hat{n}_{\alpha} $. 	
+\end{enumerate}
+\end{observation}
+\begin{eg} Consideremos los siguientes ejemplos.
+\begin{enumerate}
+\item Una recta en el espacio p.p.a viene dada por 
+	\[\alpha\left(s\right)=\left(a + u_{1}s, b + u_{2}s, c+u_{3}s\right) .\]
+	Tenemos que $\displaystyle \alpha'\left(s\right)=\vec{u} $, $\displaystyle \alpha''\left(s\right)=0 $, por lo que $\displaystyle \kappa_{\alpha }\left(s\right)=0 $. 
+\item Una circunferencia en el espacio la podemos parametrizar como $\displaystyle \alpha\left(s\right)=\vec{u}R\cos\frac{s}{R}+\vec{v}R\sin\frac{s}{R} $ con $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ ortonormales. Tenemos que 
+	\[\alpha'\left(s\right)=-\vec{u}\sin\frac{s}{R} + \vec{v}\cos\frac{s}{R}, \; \|\alpha'\left(s\right)\|^{2}= \sin ^{2}\frac{s}{R} + \cos^{2}\frac{s}{R} = 1 .\]
+	Por otro lado, 
+	\[\alpha''\left(s\right)=-\vec{u}\frac{1}{R}\cos\frac{s}{R}-\vec{v}\frac{1}{R}\sin \frac{s}{R}, \; \|\alpha''\left(s\right)\| = \frac{1}{R} .\]
+Finalmente, 
+\[\hat{n}_{\alpha }\left(s\right)=\frac{\alpha''\left(s\right)}{\frac{1}{R}}= - \vec{u}\cos \frac{s}{R}-\vec{v}\sin \frac{s}{R} .\]
+\end{enumerate}
+\end{eg}
+
+\begin{definition}[Circunferencia osculadora]
+Dada una curva birregular $\displaystyle \alpha  $, se llama \textbf{radio de curvatura} a $\displaystyle R = \frac{1}{\kappa_{\alpha }\left(t_{0}\right)} $ y \textbf{centro de curvatura} al punto $\displaystyle C_{0} = P_{0} + \frac{1}{\kappa_{\alpha }\left(t_{0}\right)}\hat{n}_{\alpha }\left(t_{0}\right) $. Se llama \textbf{circunferencia osculadora} a la circunferencia de centro $\displaystyle C_{0} $ y radio $\displaystyle R $. 
+\end{definition}
+\begin{prop} Sea $\displaystyle \alpha : I \to \R^{3} $ una curva birregular, $\displaystyle t_{0} \in I $ y $\displaystyle P_{0}= \alpha\left(t_{0}\right) $.
+\begin{enumerate} 
+\item Si $\displaystyle T_{P_{0}}=P_{0} + \mathcal{L}\left(\hat{t}_{\alpha }\left(t_{0}\right)\right) $ es recta tangente y parametrizada por arco por $\displaystyle \beta\left(s\right) $ con $\displaystyle \beta\left(s_{0}\right)=P_{0} $ y $\displaystyle \beta'\left(s_{0}\right)=\hat{t}_{\alpha } $, entonces en un entorno de $\displaystyle s_{0} $,
+	\[\|\alpha\left(s\right)-\beta\left(s\right)\|\leq C\left(s-s_{0}\right)^{2} .\]
+\item Si $\displaystyle C_{P_{0}} $ es la circunferencia osculadora parametrizada por arco por $\displaystyle \gamma\left(s_{0}\right)=P_{0} $, $\displaystyle \gamma'\left(s_{0}\right)=\hat{t}_{\alpha } $, entonces en un entorno de $\displaystyle s_{0} $,
+	\[\|\alpha\left(s\right)-\gamma\left(s\right)\|\leq C\left(s-s_{0}\right)^{3} .\]
+\end{enumerate}
+\end{prop}
+
+\begin{prop}
+Sea $\displaystyle \alpha\left(t\right) $ birregular y $\displaystyle v = \left\|\frac{d \alpha}{d t}\right\| $, entonces
+\[\frac{d\alpha }{dt}=v\hat{t}_{\alpha } \quad \text{y} \quad \frac{d^{2}\alpha }{dt ^{2}}=\frac{dv}{dt}\hat{t}_{\alpha }+v^{2}\kappa_{\alpha }\hat{n}_{\alpha } .\]
+\end{prop}
+\begin{proof}
+Es sencillo ver que 
+\[\frac{d\alpha }{d t}=\frac{d\alpha }{d s} \frac{d s}{dt }= \hat{t}_{\alpha }v .\]
+Por otro lado, 
+\[\frac{d^{2}\alpha }{d t^{2}} = \frac{d}{dt}\left(\frac{d\alpha }{dt}\right) = \frac{d}{dt}\hat{t}_{\alpha } + v\frac{d\hat{t}_{\alpha }}{d s}\frac{d s }{d t}=\frac{dv}{dt}\hat{t}_{\alpha }+v^{2}\kappa_{\alpha }\hat{n}_{\alpha } .\]
+\end{proof}
+\begin{colorary} Sea $\displaystyle \alpha  $ una curva regular, entonces 
+\[\kappa_{\alpha }=\frac{\left\|\frac{d\alpha }{dt} \times \frac{d^{2}\alpha }{dt ^{2}}\right\|}{\left\|\frac{d\alpha }{dt}\right\|^{3}} .\]
+\end{colorary}
+\begin{proof}
+Es sencillo ver que 
+\[\frac{d\alpha }{dt} \times \frac{d^{2}\alpha }{dt ^{2}}=\left(v\hat{t}_{\alpha }\right)\times\left(\frac{dv}{dt}\hat{t}_{\alpha } + v^{2}\kappa_{\alpha }\hat{n}_{\alpha }\right)=v^{3}\kappa_{\alpha }\left(\hat{t}_{\alpha}\times\hat{n}_{\alpha}\right) .\]
+\end{proof}
+\begin{eg}[Cúbica alabeada]
+Consideremos $\displaystyle \alpha\left(t\right)=\left(t, t ^{2}, t ^{3}\right) $. Tenemos que 
+\[\alpha'\left(t\right)=\left(1, 2t, 3t ^{2}\right), \quad  \alpha''\left(t\right)=\left(0,2,6t\right).\]
+De esta forma, tenemos que $\displaystyle \left\|\alpha'\left(t\right)\right\|=\sqrt{1 + 4t ^{2} + 9 t ^{4}} $. Por otro lado, 
+\[\alpha'\left(t\right)\times \alpha''\left(t\right)=\begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 1 & 2t & 3t ^{2} \\ 0 & 2 & 6t \end{vmatrix} = \left(6t ^{2}, -6t, 2\right) .\]
+Así, $\displaystyle \|\alpha'\left(t\right) \times \alpha''\left(t\right)\| = \sqrt{36 t ^{4} + 36 t ^{2} + 4} $. Por tanto, la curvatura será,
+\[\kappa_{\alpha }\left(t\right)=\frac{\|\alpha'\left(t\right) \times \alpha''\left(t\right)\|}{\|\alpha'\left(t\right)\|^{3}} = \frac{\sqrt{1 + 4 t ^{2} + 9t ^{4}}}{\left(36t ^{4}+36 t ^{2} + 4\right)^{\frac{3}{2}}} .\]
+\end{eg}
+\begin{colorary}
+	Sea $\displaystyle \alpha : I \to \R^{3} $ una curva. 
+\begin{enumerate}
+	\item $\displaystyle \alpha\left(t\right) $ es birregular si y solo si $\displaystyle \left\{ \frac{d\alpha }{dt}, \frac{d^{2}\alpha }{dt ^{2}}\right\}  $ son linealmente independientes, es decir, si y solo si $\displaystyle \alpha'\left(t\right)\times\alpha''\left(t\right)\neq 0 $.
+	\item Si $\displaystyle \alpha\left(t\right) $ es birregular, 
+		\[\mathcal{L}\left(\left\{\frac{d\alpha }{d t}, \frac{d^{2}\alpha }{dt ^{2}}\right\}\right)=\mathcal{L}\left(\left\{\hat{t}_{\alpha }, \hat{n}_{\alpha }\right\}\right) .\]
+	\item El vector normal sale por Gram-Schmidt de $\displaystyle \left\{ \frac{d\alpha }{dt}, \frac{d^{2}\alpha }{dt ^{2}}\right\}  $. 
+\end{enumerate}
+\end{colorary}
+\begin{proof}
+Sea $\displaystyle \alpha : I \to \R^{3} $ una curva.
+\begin{enumerate}
+\item Si $\displaystyle \alpha\left(t\right) $ es trivial que $\displaystyle \alpha'\left(t\right)\times\alpha''\left(t\right)\neq 0 $, por lo que son linealmente independientes. 
+\end{enumerate}
+
+\end{proof}
+
+\begin{observation}
+Ver que la curva tridimensional de una curva contenida en un plano es el valor absoluto de la curvatura bidimensional.
+\end{observation}
+\begin{definition}[Triedro de Frénet]
+	Dada una curva birregular $\displaystyle \alpha\left(t\right) $, se llama \textbf{vector binormal} a $\displaystyle \hat{b}_{\alpha }=\hat{t}_{\alpha } \times \hat{n}_{\alpha } $. Se llama \textbf{triedro de Frénet} a $\displaystyle \left\{ \hat{t}_{\alpha }, \hat{n}_{\alpha }, \hat{b}_{\alpha }\right\}  $. 
+\end{definition}
+\begin{observation}
+	Es sencillo ver que $\displaystyle \left\{ \hat{t}_{\alpha }, \hat{n}_{\alpha }, \hat{b}_{\alpha }\right\}  $ es una base ortonormal positiva \footnote{Decimos que una base $\displaystyle \left\{ u_{1}, \ldots, u_{n}\right\}  $ es positiva si $\displaystyle \det\left(u_{1}, \ldots, u_{n}\right)>0 $.}. 
+\end{observation}
+
+\begin{definition}[Planos y rectas importantes]
+Sea $\displaystyle \alpha : I \to \R^{3} $ una curva birregular. 
+\begin{itemize}
+	\item \textbf{Plano normal} $\displaystyle P_{0} + \mathcal{L}\left\{\left(\hat{n}_{\alpha }, \hat{b}_{\alpha }\right\}\right) $, $\displaystyle \left\langle X-P_{0}, \hat{t}_{\alpha } \right\rangle =0 $.
+	\item \textbf{Plano osculador} o \textbf{plano tangente} $\displaystyle P_{0} + \mathcal{L}\left(\left\{\hat{t}, \hat{n}\right\}\right) $, $\displaystyle \left\langle X-P_{0}, \hat{b} \right\rangle =0 $.
+	\item \textbf{Plano rectificante} $\displaystyle P_{0} + \mathcal{L}\left(\left\{\hat{t}, \hat{b}\right\}\right) $, $\displaystyle \left\langle X-P_{0}, \hat{n}_{\alpha } \right\rangle =0 $. 
+	\item \textbf{Recta tangente} $\displaystyle P_{0} + \mathcal{L}\left(\left\{\hat{t}_{\alpha }\right\}\right) $. 
+	\item \textbf{Recta normal} $\displaystyle P_{0} + \mathcal{L}\left(\left\{\hat{n}_{\alpha }\right\}\right) $.
+	\item \textbf{Recta binormal} $\displaystyle P_{0} + \mathcal{L}\left(\left\{\hat{b}_{\alpha }\right\}\right) $.
+\end{itemize}
+\end{definition}
+
+\begin{prop} Sea $\displaystyle \alpha : I \to \R^{3} $ una curva birregular, entonces
+\[\hat{b}_{\alpha }=\frac{\frac{d\alpha }{dt}\times \frac{d^{2}\alpha }{dt ^{2}}}{\left\|\frac{d\alpha }{dt} \times \frac{d^{2}\alpha }{dt ^{2}}\right\|} .\]
+\end{prop}
+\begin{proof}
+	Basta con ver que $\displaystyle \hat{b}_{\alpha} $ es perpencular al plano oscilador $\displaystyle \mathcal{L}\left(\left\{\hat{t}, \hat{n}\right\}\right)=\mathcal{L}\left(\left\{\frac{d\alpha }{dt}, \frac{d^{2}\alpha }{dt ^{2}}\right\}\right) $.
+\end{proof}
+\begin{eg}[Cúbica alabeada]
+Calculemos el triedro de Frénet de $\displaystyle \gamma\left(t\right)=\left(t, t ^{2}, t ^{3}\right) $. Recordamos,
+\[\gamma'\left(t\right)=\left(1, 2t, 3t ^{2}\right), \quad \gamma''\left(t\right)=\left(0,2,6t\right), \quad \gamma'\left(t\right)\times\gamma''\left(t\right)=2\left(3t ^{2}, - 3t, 1\right) .\]
+Así, nos queda que 
+\[\hat{t}_{\gamma }=\frac{\gamma'\left(t\right)}{\|\gamma'\left(t\right)\|}=\frac{\left(1,2t,3t ^{2}\right)}{\sqrt{1 + 4t ^{2} + 9t ^{4}}}, \quad \hat{b}_{\gamma }=\frac{\gamma' \times \gamma''}{\|\gamma'\times\gamma''\|}=\frac{\left(3t ^{2}, -3t, 1\right)}{\sqrt{1 + 9t ^{2} + 9t ^{4}}} .\]
+Por tanto, tendremos que 
+\[\hat{n}_{\gamma }=\hat{b}_{\gamma}\times\hat{t}_{\gamma}=\frac{\left(-9t ^{3}-2t, -9t ^{4}+1, 6t ^{3}+3t\right)}{\sqrt{1 + 4t ^{2} + 9t ^{4}}\sqrt{1 + 9t ^{2} + 9t ^{4}}} .\]
+\end{eg}
+\begin{lema}
+Dada una curva birregular, $\displaystyle \frac{d\hat{b}_{\alpha }}{d s}=\lambda \hat{n}_{\alpha } $ con $\displaystyle \lambda \in \R $.
+\end{lema}
+\begin{proof}
+Sabemos que $\displaystyle \hat{b}_{\alpha }=\hat{t}_{\alpha }\times\hat{n}_{\alpha } $, por lo que 
+\[\frac{d\hat{b}_{\alpha }}{d s}=\frac{d\hat{t}_{\alpha }}{d s} \times \hat{n}_{\alpha } + \hat{t}_{\alpha }\times \frac{d\hat{n}_{\alpha }}{d s}=\hat{t}_{\alpha}\times\frac{d\hat{n}_{\alpha }}{d s}=\hat{t}_{\alpha }\left(a\hat{t}_{\alpha }+ b \hat{b}_{\alpha }\right)=b\hat{t}_{\alpha }\times\hat{b}_{\alpha }=-b\hat{n}_{\alpha } .\]
+\end{proof}
+\begin{definition}[Torsión]
+Se llama \textbf{torsión} de $\displaystyle \alpha\left(s\right) $ a $\displaystyle \tau_{\alpha }\left(s\right) $ con
+\[\frac{d\hat{b}_{\alpha }}{d s}=-\tau_{\alpha }\left(s\right)\hat{n}_{\alpha }\left(s\right) .\]
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+\item La torsión puede ser positiva, negativa o nula.
+\item $\displaystyle \left|\tau_{\alpha }\left(s\right)\right|=\left\|\frac{d\hat{b}_{\alpha }}{d s}\right\| $. 
+\item $\displaystyle \tau_{\alpha }\left(s\right)=-\left\langle \frac{d\hat{b}_{\alpha }}{d s}, \hat{n}_{\alpha } \right\rangle  $.
+\item $\displaystyle \left\langle \hat{b}_{\alpha }, \hat{n}_{\alpha } \right\rangle =0 $ y $\displaystyle \tau_{\alpha }\left(s\right)=\left\langle \hat{b}_{\alpha }, \frac{d\hat{n}_{\alpha }}{d s} \right\rangle  $. En efecto, 
+	\[\frac{d}{d s}\left(\left\langle \hat{b}, \hat{n} \right\rangle \right)=\left\langle \frac{d\hat{b}}{d s}, \hat{n} \right\rangle + \left\langle \hat{b}, \frac{d\hat{n}}{d s} \right\rangle =0 .\]
+\end{enumerate}
+\end{observation}
+\begin{prop}
+Sea $\displaystyle \alpha\left(t\right) $ birregular. Tenemos que $\displaystyle \alpha\left(t\right) $ es una curva plana (es decir, su traza está contenida en un plano) si y sólo si $\displaystyle \tau_{\alpha }\left(t\right)\equiv 0 $.
+\end{prop}
+\begin{proof} Sea $\displaystyle \alpha\left(t\right) $ una curva birregular.
+\begin{description}
+\item[($\displaystyle \Rightarrow $)] Consideremos $\displaystyle \Pi \equiv \left\langle X-P_{0}, \vec{w} \right\rangle =0 $. Tenemos que la traza de $\displaystyle \alpha  $ está conteida en $\displaystyle \Pi $ por lo que $\displaystyle \left\langle \alpha\left(s\right)-P_{0}, \vec{w} \right\rangle =0 $, $\displaystyle \forall s $. Derivando
+	\[\left\langle \alpha'\left(s\right), \vec{w} \right\rangle =0 \Rightarrow \left\langle \hat{t}_{\alpha }\left(s\right), \vec{w} \right\rangle =0 \Rightarrow \hat{t}_{\alpha }\left(s\right)\perp w .\]
+	Derivando otra vez,
+	\[\left\langle \alpha''\left(s\right), \vec{w} \right\rangle = 0 \Rightarrow \left\langle \kappa_{\alpha }\hat{n}_{\alpha }, \vec{w} \right\rangle \Rightarrow \hat{n}_{\alpha }\left(s\right)\perp \vec{w} .\]
+	Así, tenemos que $\displaystyle \hat{b}_{\alpha }= \hat{t}_{\alpha } \times \hat{n}_{\alpha } = \pm \vec{w} $ por lo que $\displaystyle \frac{d\hat{b}_{\alpha }}{d s}=0 $ y necesariamente $\displaystyle \tau_{\alpha }\left(s\right)=0 $.
+\item[($\displaystyle \Leftarrow $)] Si $\displaystyle \tau_{\alpha }\left(s\right)=0 $ tenemos que $\displaystyle \frac{d\hat{b}_{\alpha }}{d s}=0 $ por lo que $\displaystyle \hat{b}_{\alpha }\left(s\right)=\vec{w} $. 
+	Tomamos $\displaystyle \Pi \equiv \left\langle X-\alpha\left(s_{0}\right), \vec{w} \right\rangle =0 $. Queremos ver que la traza de $\displaystyle \alpha\left(s\right) $ está contenida en $\displaystyle \Pi $, es decir, que $\displaystyle \left\langle \alpha\left(s\right)-\alpha\left(s_{0}\right), \vec{w} \right\rangle =0 $, $\displaystyle \forall s $. 
+	Si tomamos $\displaystyle F\left(s\right)=\left\langle \alpha\left(s\right)-\alpha\left(s_{0}\right), \vec{w} \right\rangle  $ y derivamos,
+	\[F'\left(s\right)=\left\langle \hat{t}\left(s\right), \vec{w} \right\rangle =\left\langle \hat{t}_{\alpha }\left(s\right), \hat{b}_{\alpha }\left(s\right) \right\rangle =0 .\]
+	Así, $\displaystyle F\left(s\right) $ es constante y como $\displaystyle F\left(s_{0}\right)=0 $ debe ser que $\displaystyle F\left(s\right)=0 $, $\displaystyle \forall s  $, como queríamos demostrar.
+\end{description}
+\end{proof}
+\begin{eg}[Hélice circular]
+Sean $\displaystyle a > 0 $ y $\displaystyle b \in \R $, la ecuación viene dada por $\displaystyle \alpha\left(t\right)=\left(a\cos t, a \sin t, bt\right) $. 
+% Poner dibujo
+Tenemos que 
+\[\alpha'\left(t\right)=\left(-a \sin t, a \cos t, b\right), \quad a''\left(t\right)=\left(-a \cos t, - a \sin t, 0\right), \quad \|\alpha'\left(t\right)\|=\sqrt{a^{2} + b^{2}} .\]
+Así, es sencillo ver que 
+\[\alpha' \times \alpha'' = \left(ab \sin t, - ab \cos t , a^{2}\right) .\]
+Tenemos que $\displaystyle \hat{t}_{\alpha }=\frac{\left(-a \sin t, a \cos t, b\right)}{\sqrt{a^{2} + b^{2}}} $, $\displaystyle \hat{b}_{\alpha }=\frac{\left(b\sin t, - b \cos t, a\right)}{\sqrt{a^{2} + b^{2}}} $ y $\displaystyle \hat{n}_{\alpha }=\left(-\cos t, - \sin t, 0\right) $. Es sencillo ver que si $\displaystyle b = 0 $ se trata de una circunferencia. Si $\displaystyle b > 0 $ es una hélice positiva. Si $\displaystyle b < 0 $ es una hélice negativa.
+% calcular la torsión
+\end{eg}
 

@@ -1,0 +1,179 @@
+\chapter{Aplicaciones continuas}
+\section{Noción de continuidad y caracterizaciones}
+\begin{definition}[Función continua]
+Dados dos espacios topológicos $\displaystyle \left(X, \mathcal{T}\right) $ e $\displaystyle \left(Y, \mathcal{T}'\right) $, decimos que la aplicación $\displaystyle f : X \to Y $ es \textbf{continua} en $\displaystyle x_{0} \in X $ si para cada entorno $\displaystyle W^{f\left(x_{0}\right)} $ de $\displaystyle f\left(x_{0}\right)\in Y $, el conjunto $\displaystyle f^{-1}\left(W^{f\left(x_{0}\right)}\right) $ es un entorno de $\displaystyle x_{0} $. 
+\end{definition}
+\begin{notation}
+Diremos que $\displaystyle f : X \to Y$ es \textbf{continua} si es continua en todo punto $\displaystyle x \in X $. 
+\end{notation}
+
+\begin{prop}
+Si $\displaystyle f : X \to Y $ es continua en $\displaystyle x_{0} \in X $ y $\displaystyle g : Y \to Z $ es continua en $\displaystyle f\left(x_{0}\right)\in Y $, entonces $\displaystyle g\circ f $ es continua en $\displaystyle x_{0} $.
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle h = g\circ f $ y sea $\displaystyle \Omega^{h\left(x_{0}\right)} \subset Z$ un entorno de $\displaystyle h\left(x_{0}\right)=g\left(f\left(x_{0}\right)\right) $. Es sencillo ver que 
+	\[h^{-1}\left(\Omega^{h\left(x_{0}\right)}\right)=f^{-1}\left(g^{-1}\left(\Omega^{h\left(x_{0}\right)}\right)\right) .\]
+Así, como $\displaystyle g $ es continua tenemos que $\displaystyle g^{-1}\left(\Omega^{h\left(x_{0}\right)}\right) $ es un entorno de $\displaystyle f\left(x_{0}\right) $. Análogamente, como $\displaystyle f $ es continua en $\displaystyle x_{0} $ tenemos que $\displaystyle f^{-1}\left(g^{-1}\left(\Omega^{h\left(x_{0}\right)}\right)\right) $ es un entorno de $\displaystyle x_{0} $. Por tanto, $\displaystyle h^{-1}\left(\Omega^{h\left(x_{0}\right)}\right) $ es un entorno de $\displaystyle x_{0} $. 
+\end{proof}
+\begin{eg}
+Se puede observar que:
+\begin{enumerate}
+	\item Toda función $\displaystyle f : \left(X, \mathcal{T}_{\text{dis}}\right) \to \left(Y, \mathcal{T}'\right) $ es continua. En efecto, podemos ver que para cada $\displaystyle x \in X $, el conjunto $\displaystyle \left\{ x\right\}  $ es abierto en $\displaystyle \mathcal{T}_{\text{dis}} $, por lo que para cada entorno $\displaystyle W^{f\left(x\right)} $ tendremos que $\displaystyle \left\{ x\right\} \subset f^{-1}\left(W^{f\left(x\right)}\right) $ por lo que $\displaystyle f^{-1}\left(W^{f\left(x\right)}\right) $ es un entorno de $\displaystyle x $. 
+	\item Toda función $\displaystyle f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}_{\text{triv}}\right) $ es continua. En efecto, dado $\displaystyle x \in X $, tendremos que el único entorno de $\displaystyle f\left(x\right) $ es $\displaystyle Y $, y $\displaystyle f^{-1}\left(Y\right)=X $ es un entorno de $\displaystyle x $.
+	\item Si $\displaystyle f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}_{\text{dis}}\right) $ es continua entonces es \textbf{localmente constante}, es decir, $\displaystyle \forall x \in X $, $\displaystyle \exists V^{x}\subset X $ tal que $\displaystyle f|_{V^{x}} $ es constante. En efecto, para cada $\displaystyle x \in X $ tenemos que el conjunto $\displaystyle \left\{ f\left(x\right)\right\}  $ es un entorno abierto de $\displaystyle f\left(x\right) $ en $\displaystyle Y $. Por tanto, $\displaystyle f^{-1}\left( \left\{ f\left(x\right)\right\} \right) $ es un entorno de $\displaystyle x $ y claramente en este entorno la función es constante. 
+	\item Si la aplicación $\displaystyle f : X \to Y $ es localmente constante, entonces es continua. En efecto, si $\displaystyle x \in X $ y llamamos $\displaystyle U^{x} $ al entorno de $\displaystyle x $ en el que la aplicación toma el valor constante $\displaystyle f\left(x\right) $, tendremos que para cada entorno $\displaystyle W^{f\left(x\right)} $ de $\displaystyle f\left(x\right) $ en $\displaystyle Y $, 
+		\[x \in U^{x} \subset f^{-1}\left(W^{f\left(x\right)}\right) .\]
+		Por tanto, $\displaystyle f^{-1}\left(W^{f\left(x\right)}\right) $ es un entorno de $\displaystyle x $. 
+\end{enumerate}
+\end{eg}
+
+\begin{prop}
+Sean $\displaystyle \left(X, \mathcal{T}\right) $ e $\displaystyle \left(Y, \mathcal{T}'\right) $ espacios topológicos y $\displaystyle f : X \to Y $. Son equivalentes,
+\begin{enumerate}
+\item $\displaystyle f $ es continua. 
+\item Para cada $\displaystyle V \subset Y $ abierto, $\displaystyle f^{-1}\left(V\right)\subset X $ es abierto. 
+\item Para cada $\displaystyle C \subset Y $ cerrado, $\displaystyle f^{-1}\left(C\right)\subset X $ es cerrado. 
+\item Para cada $\displaystyle A \subset Y $, $\displaystyle f^{-1}\left(\Int\left(A\right)\right)\subset\Int\left(f^{-1}\left(A\right)\right) $. 
+\item Para cada $\displaystyle A \subset X $, $\displaystyle f\left(\overline{A}\right)\subset\overline{f\left(A\right)} $. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Sea $\displaystyle f : X \to Y $.
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Supongamos que $\displaystyle f $ es continua y que $\displaystyle V \subset Y $ es abierto. Si $\displaystyle f^{-1}\left(V\right) = \emptyset$ hemos terminado. En caso contrario, tenemos que $\displaystyle \forall x \in f^{-1}\left(V\right) $ se tiene que $\displaystyle f^{-1}\left(V\right) $ es entorno de $\displaystyle x $. Así, $\displaystyle f^{-1}\left(V\right) $ es entorno de todos sus puntos por lo que es abierto. 
+\item[(2) $\displaystyle \Rightarrow $ (3)] Sea $\displaystyle C \subset Y $ cerrado, entonces $\displaystyle Y/C $ es abierto y tendremos que $\displaystyle f^{-1}\left(Y/C\right)\subset X $ es abierto. Como $\displaystyle f^{-1}\left(Y/C\right)=X/f^{-1}\left(C\right) $ es abierto tendremos que $\displaystyle f^{-1}\left(C\right) $ es cerrado.
+\item[(3) $\displaystyle \Rightarrow $ (5)] Sea $\displaystyle C\subset Y $ cerrado que contiene a $\displaystyle f\left(A\right) $. Así, debe ser que $\displaystyle A \subset f^{-1}\left(f\left(A\right)\right)\subset f^{-1}\left(C\right) $ y sabemos que $\displaystyle f^{-1}\left(C\right) $ es cerrado. Como $\displaystyle \overline{A} $ es el menor cerrado que contiene a $\displaystyle A $, tenemos que $\displaystyle \overline{A}\subset f^{-1}\left(C\right) $. Si tomamos $\displaystyle C = \overline{f\left(A\right)} $, tendremos que 
+	\[\overline{A}\subset f^{-1}\left(\overline{f\left(A\right)}\right)\Rightarrow f\left(\overline{A}\right)\subset\overline{f\left(A\right)} ,\]
+	donde la última implicación se obtiene tomando la imagen de los subconjuntos por la aplicación $\displaystyle f $. 
+\item[(5) $\displaystyle \Rightarrow $ (4)] Como $\displaystyle X/\Int\left(f^{-1}\left(A\right)\right)=\overline{X/f^{-1}\left(A\right)} $, tenemos que 
+	\[f\left(X / \Int\left(f^{-1}\left(A\right)\right)\right)=f\left(\overline{X/f^{-1}\left(A\right)}\right)\subset \overline{f\left(X/f^{-1}\left(A\right)\right)}\subset\overline{Y/A}=Y/\Int\left(A\right) ,\]
+	por lo que $\displaystyle f^{-1}\left(\Int\left(A\right)\right)\subset\Int\left(f^{-1}\left(A\right)\right) $. 
+\item[(4) $\displaystyle \Rightarrow $ (1)] Sea $\displaystyle x \in X $ y $\displaystyle W^{f\left(x\right)} $ un entorno de $\displaystyle f\left(x\right) $ en $\displaystyle Y $. Por tanto, $\displaystyle \Int\left(W^{f\left(x\right)}\right) $ es un abierto con $\displaystyle f\left(x\right)\in \Int\left(W^{f\left(x\right)}\right)\subset W^{f\left(x\right)} $. Por hipótesis tenemos que $\displaystyle f^{-1}\left(\Int\left(W^{f\left(x\right)}\right)\right)\subset \Int\left(f^{-1}\left(W^{f\left(x\right)}\right)\right) $ y como $\displaystyle x \in f^{-1}\left(\Int\left(W^{f\left(x\right)}\right)\right) $ tenemos que 
+	\[x \in \Int\left(f^{-1}\left(W^{f\left(x\right)}\right)\right)\subset f^{-1}\left(W^{f\left(x\right)}\right) .\]
+	Así, deducimos que $\displaystyle f^{-1}\left(W^{f\left(x\right)}\right) $ es un entorno de $\displaystyle x $. 
+\end{description}
+\end{proof}
+
+\begin{colorary}
+Si $\displaystyle f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}'\right) $ es una función entre espacios topológicos y $\displaystyle \mathcal{B}' $ es una base de $\displaystyle \mathcal{T}' $, entonces $\displaystyle f $ es continua si y solo si $\displaystyle f^{-1}\left(B'\right)\in \mathcal{T} $, $\displaystyle \forall B' \in \mathcal{B}' $.
+\end{colorary}
+
+\begin{proof}
+	Sea $\displaystyle f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}'\right) $ y $\displaystyle \mathcal{B}' = \left\{ B_{i}'\right\} _{i \in I} $ una base de $\displaystyle \mathcal{T}' $. 
+	\begin{description}
+	\item[($\displaystyle \Rightarrow $)] Si $\displaystyle f $ es continua se tiene que para todo abierto $\displaystyle V \in \mathcal{T}'$, $\displaystyle f^{-1}\left(V\right)\in\mathcal{T}' $. En particular, como $\displaystyle B_{i}'\in \mathcal{T}' $, $\displaystyle \forall i \in I $ tendremos que $\displaystyle f^{-1}\left(B_{i}\right)\in \mathcal{T} $. 
+	\item[($\displaystyle \Leftarrow $)] Supongamos que $\displaystyle f^{-1}\left(B'_{i}\right)\in \mathcal{T} $, $\displaystyle \forall i \in I $ y sea $\displaystyle V \in \mathcal{T}' $. Tendremos que existe $\displaystyle J \subset I $ tal que $\displaystyle V = \bigcup_{ j \in J}B_{j}' $, por lo que 
+		\[f^{-1}\left(V\right)=f^{-1}\left(\bigcup_{j \in J}B_{j}'\right)=\bigcup_{j \in J}f^{-1}\left(B_{j}'\right)\in \mathcal{T} .\]
+	\end{description}
+\end{proof}
+\begin{observation}
+Sea $\displaystyle X \neq \emptyset $ un conjunto arbitrario y $\displaystyle \mathcal{T}_{1} $ y $\displaystyle \mathcal{T}_{2} $ topologías en $\displaystyle X $. Se tiene que la función $\displaystyle id : \left(X, \mathcal{T}_{1}\right)\to \left(X, \mathcal{T}_{2}\right) $ es continua si y solo si $\displaystyle \mathcal{T}_{2}\subset \mathcal{T}_{1} $. 
+\end{observation}
+\section{Continuidad y subespacios}
+\begin{prop}
+Dada una aplicación continua $\displaystyle f : X \to Y $ y un subespacio topológico $\displaystyle Z \subset X $, la restricción $\displaystyle f|_{Z} : Z \to Y $ es continua.
+\end{prop}
+\begin{proof}
+Sea $\displaystyle V \subset Y $ abierto. Como $\displaystyle f $ es continua tendremos que $\displaystyle f^{-1}\left(V\right) $ es abierto en $\displaystyle X $, así
+\[f^{-1}|_{Z} \left(V\right)= Z \cap f^{-1}\left(V\right) ,\]
+que es abierto en $\displaystyle Z $. 
+\end{proof}
+\subsection*{Criterios de continuidad por recubrimientos}
+\begin{prop}
+	Sea $\displaystyle f : X \to Y $. Si $\displaystyle \left\{ U_{i} \right\} _{i \in I} $ es una colección de abiertos de $\displaystyle X $ de manera que $\displaystyle X = \bigcup_{i \in I}U_{i} $ y se tiene que $\displaystyle f |_{U_{i}}:U_{i} \to Y $ es continua para todo $\displaystyle i \in I $, entonces $\displaystyle f $ es continua. 
+\end{prop}
+\begin{proof}
+Sea $\displaystyle V \subset Y $ un abierto. Tendremos que 
+\[f^{-1}\left(V\right)=f^{-1}\left(V\right)\cap\bigcup_{i \in I}U_{i}=\bigcup_{i \in I}\left(f^{-1}\left(V\right)\cap U_{i}\right)=\bigcup_{i \in I}f^{-1}|_{U_{i}}\left(V\right)\in \mathcal{T} .\]
+Hemos usado que $\displaystyle f^{-1}|_{U_{i}}\left(V\right) $ es abierto puesto que es abierto en $\displaystyle U_{i} $ y al ser este abierto en $\displaystyle X $, cualquier abierto suyo también es abierto en $\displaystyle X $.
+\end{proof}
+\begin{prop}
+	Sea $\displaystyle f : X \to Y $. Si $\displaystyle \left\{ C_{1}, \ldots, C_{n}\right\}  $ es una colección finita de cerrados de $\displaystyle X $ de manera que $\displaystyle X = \bigcup_{1 \leq i \leq n}C_{i} $ y tal que $\displaystyle f|_{C_{i}}:C_{i} \to Y $ es continua $\displaystyle \forall i \in \left\{ 1, \ldots, n\right\}  $, entonces $\displaystyle f $ es continua. 
+\end{prop}
+\begin{proof}
+Sea $\displaystyle F \subset Y $ cerrado. Tenemos que 
+\[f^{-1}\left(F\right)=f^{-1}\left(F\right)\cap\bigcup_{1 \leq i \leq n}C_{i}=\bigcup_{1 \leq i \leq n}\left(f^{-1}\left(F\right)\cap C_{i}\right)=\bigcup_{1 \leq i \leq n}f^{-1}|_{C_{i}}\left(F\right) .\]
+Como $\displaystyle f|_{C_{i}} $ es continua, tendremos que $\displaystyle f^{-1}_{C_{i}}\left(F\right) $ es cerrado en $\displaystyle C_{i} $ y como $\displaystyle C_{i} $ es cerrado, $\displaystyle f^{-1}|_{C_{i}} $ también es cerrado en $\displaystyle X $. Así, como $\displaystyle f^{-1}\left(F\right) $ es unión finita de cerrados tendremos que es cerrado. 
+\end{proof}
+\section{Homeomorfismos}
+\begin{definition}[Homeomorfismo]
+Una función entre espacios topológicos $\displaystyle f : X \to Y $ es un \textbf{homeomorfismo} si es biyectiva, es continua y su inversa también es continua.
+\end{definition}
+\begin{observation}[Definición equivalente]
+	Tenemos que una función continua $\displaystyle f : X \to Y $ es homeomorfismo si y solo si $\displaystyle f^{-1} : Y \to X $ es continua. Es decir, para cada abierto $\displaystyle U \subset X $ debe ser que 
+	\[\left(f^{-1}\right)^{-1}\left(U\right)=f\left(U\right) ,\]
+	es abierto. Así, se tiene que $\displaystyle f $ es homeomorfismo si y solo si es continua, biyectiva y para cualquier abierto $\displaystyle U \subset X $ se tiene que $\displaystyle f\left(U\right) \subset Y$ es abierto. 
+\end{observation}
+\begin{definition}[Función abierta y cerrada]
+	Sea $\displaystyle f : X \to Y $ una función entre espacios topológicos.
+	\begin{itemize}
+	\item Diremos que $\displaystyle f $ es \textbf{abierta} si para todo abierto $\displaystyle U \subset X $ se tiene que $\displaystyle f\left(U\right)\subset Y $ es abierto. 
+	\item Diremos que $\displaystyle f $ es \textbf{cerrada} si para todo cerrado $\displaystyle C \subset X $ se tiene que $\displaystyle f\left(C\right)\subset Y $ es cerrado. 
+	\end{itemize}
+\end{definition}
+\begin{prop}
+Sea $\displaystyle f : X \to Y $ una función biyectiva entre espacios topológicos. Son equivalentes:
+\begin{enumerate}
+\item $\displaystyle f $ es abierta. 
+\item $\displaystyle f $ es cerrada.
+\item $\displaystyle f^{-1} $ es continua.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Sea $\displaystyle f : X \to Y $ una función biyectiva entre espacios topológicos. 
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Supongamos que $\displaystyle f $ es abierta. Dado un cerrado $\displaystyle C \subset X $, tenemos que $\displaystyle X / C $ es abierto por lo que $\displaystyle f\left(X/C\right)=Y/f\left(C\right)\subset Y $ es abierto y se tiene que $\displaystyle f\left(C\right) $ es cerrado. 
+\item[(2) $\displaystyle \Rightarrow $ (3)] Sea $\displaystyle C \subset X $ un cerrado, tenemos que $\displaystyle f\left(C\right)=\left(f^{-1}\right)^{-1}\left(C\right) $ que es cerrado en $\displaystyle Y $ por ser $\displaystyle f $ cerrada.
+\item[(3) $\displaystyle \Rightarrow $ (1)] Si $\displaystyle U \subset X$ es abierto tenemos que $\displaystyle f\left(U\right)=\left(f^{-1}\right)^{-1}\left(U\right) $ es abierto, por lo que $\displaystyle f $ es abierta. 
+\end{description}
+\end{proof}
+\begin{prop}
+Sea $\displaystyle f : X \to Y $ una aplicación entre dos espacios topológicos.
+\begin{enumerate}
+\item $\displaystyle f $ es un homeomorfismo si y sólo si es biyectiva, continua y abierta. 
+\item $\displaystyle f $ es un homeomorfismo si y sólo si es biyectiva, continua y cerrada.
+\end{enumerate}
+\end{prop}
+\begin{eg}
+Consideremos los siguientes ejemplos. 
+\begin{enumerate}
+\item Consideremos un conjunto $\displaystyle X $ con $\displaystyle \left|X\right|\geq 2 $. La aplicación identidad
+	\[id : \left(X, \mathcal{T}_{\text{dis}}\right)\to \left(X, \mathcal{T}_{\text{triv}}\right) ,\]
+	es continua, no es abierta y no es cerrada. Análogamente se puede ver que su inversa $\displaystyle id^{-1} : \left(X, \mathcal{T}_{\text{triv}}\right)\to \left(X, \mathcal{T}_{\text{dis}}\right) $ no es continua, pero sí es abierta y también es cerrada.
+\item La aplicación $\displaystyle j : \left[0,1\right] \to \R $ dada por $\displaystyle j\left(x\right)=x $ para $\displaystyle x \in \left[0,1\right]  $ y considerando la topología usual en $\displaystyle \R $ y la relativa en $\displaystyle \left[0,1\right]  $, es continua, no es abierta y sí es cerrada.
+\item La aplicación $\displaystyle i : \left(0,1\right)\to \R $ dada por $\displaystyle i\left(x\right)=x $ para $\displaystyle x \in \left(0,1\right) $ y considerando la topología usual en $\displaystyle \R $ y la relativa en $\displaystyle \left(0,1\right) $ es continua, es abierta, pero no es cerrada. 
+\end{enumerate}
+\end{eg}
+\begin{definition}[Espacios homeomorfos]
+Dos espacios topológicos $\displaystyle \left(X, \mathcal{T}\right) $ e $\displaystyle \left(Y, \mathcal{T}'\right) $ son \textbf{homeomorfos} si existe un homeomorfismo entre ellos.
+\end{definition}
+\begin{observation}
+La relación de espacios homeomorfos es una relación de equivalencia. En efecto, 
+\begin{itemize}
+\item Para cualquier espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ tenemos que es homeomorfo a sí mismo pues basta con tomar la aplicación identidad. 
+\item Si $\displaystyle \left(X, \mathcal{T}\right) $ es homeomorfo a $\displaystyle \left(Y, \mathcal{T}'\right) $, claramente se tiene que $\displaystyle \left(Y, \mathcal{T}'\right) $ es homeomorfo a $\displaystyle \left(X, \mathcal{T}\right) $. Basta con tomar la inversa del homeomorfismo que haya entre $\displaystyle X $ e $\displaystyle Y $.
+\item Si $\displaystyle \left(X, \mathcal{T}\right) $ es homeomorfo a $\displaystyle \left(Y, \mathcal{T}'\right) $ e $\displaystyle \left(Y, \mathcal{T}'\right) $ es homeomorfismo a $\displaystyle \left(Z, \mathcal{T}''\right) $, entonces existen homeomorfismos $\displaystyle f : X \to Y $ y $\displaystyle g : Y \to Z $. Es sencillo ver que $\displaystyle g\circ f $ es homeomorfismo por lo que $\displaystyle \left(X, \mathcal{T}\right) $ es homeomorfo a $\displaystyle \left(Z, \mathcal{T}\right) $. 
+\end{itemize}
+\end{observation}
+\begin{definition}[Homeomorfismo local]
+Una aplicación entre espacios topológicos $\displaystyle f : X \to Y $ es un \textbf{homeomorfismo local} en un punto $\displaystyle x_{0} \in X $ si existe un entorno $\displaystyle V^{x_{0}} $ de $\displaystyle x_{0} $ en $\displaystyle X $ y un entorno $\displaystyle W^{f\left(x_{0}\right)} $ de $\displaystyle f\left(x_{0}\right) $ en $\displaystyle Y $ de forma que 
+\[f|_{V^{x_{0}}}:V^{x_{0}}\to W^{f\left(x_{0}\right)} ,\]
+es un homeomorfismo. Si esta propiedad se cumple en todo $\displaystyle x \in X $ decimos que $\displaystyle f $ es un \textbf{homeomorfismo local}.  
+\end{definition}
+\begin{eg}
+	Consideremos la aplicación $\displaystyle f : \left(\R, \mathcal{T}_{\text{dis}}\right) \to \left(\R, \mathcal{T}_{\text{dis}}\right) $ con $\displaystyle f\left(x\right)=2 $, $\displaystyle \forall x \in X $. Claramente no es un homeomorfismo, pero sí es un homeomorfismo local. En efecto, para cada $\displaystyle x \in X $, $\displaystyle f | _{ \left\{ x\right\} } : \left\{ x\right\} \to \left\{ 2\right\}  $ es un homeomorfismo.
+\end{eg}
+\begin{eg}
+	La aplicación $\displaystyle f : \left(\R, \mathcal{T}_{u}\right)\to \left(\mathbb{S}^{1}, \mathcal{T}_{u} | _{\mathbb{S}^{1}}\right) $ dada por $\displaystyle f\left(t\right)=\left(\cos t, \sin t\right) $ no es un homeomorfismo, pero sí es un homeomorfismo local. 
+\end{eg}
+\begin{eg}
+Consideremos la función
+\[f : \left(\R, \mathcal{T}_{u}\right) \to  \left(\R^{2}, \mathcal{T}_{u}\right) : t \to \left(\frac{t}{1 + t ^{4}}, \frac{t ^{3}}{1 + t ^{4}}\right) .\]
+% poner imagen
+Se puede comprobar que es una función biyectia pero no es homeomorfismo. Nos preguntamos si será homeomorfismo local. No lo es puesto que cualquier entorno del $\displaystyle \left(0,0\right) $ va a contener imágenes de puntos que están arbitrariamente lejos. En cualquier otro punto no hay problema. 
+Sin embargo, dado $\displaystyle M > 0 $ tendremos que 
+\[f|_{\left(-M, M\right)}: \left(-M, M\right)\to \left(f\left(-M,M\right), \mathcal{T}_{u}|_{f\left(-M,M\right)}\right) ,\]
+sí es homeomorfismo local en todos los puntos por lo que es homeomorfismo. 
+% poner imgaen. 
+\end{eg}
+
