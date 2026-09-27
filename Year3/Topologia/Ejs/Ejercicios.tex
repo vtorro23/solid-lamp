@@ -1,0 +1,68 @@
+\documentclass{article}
+
+\input{~/University/hwpreamble.tex}
+
+\begin{document}
+
+\title{Topología - Ejercicios profesor Ruíz}
+\author{Victoria Eugenia Torroja Rubio}
+\date{7/9/26}
+
+\maketitle
+
+\begin{ej}[Número 0.8]
+Sea $\displaystyle X $ un espacio compacto y sea $\displaystyle Y = \mathcal{C}\left(X, \R^{n}\right) $ el conjunto de las funcioens continuas $\displaystyle X \to \R^{n} $. Demostrar que $\displaystyle d\left(f,g\right)=\max \|f-g\| $ es una distancia completa en $\displaystyle Y $.
+\end{ej}
+
+\begin{sol}
+Entendemos que $\displaystyle X $ es un espacio compacto si y solo si todo recubrimiento abierto admite un subrecubrimiento finito. \\ \\
+Veamos primero que $\displaystyle d\left(f,g\right)=\max \|f-g\| $ es una distancia en $\displaystyle Y $.
+\begin{itemize}
+	\item En primer lugar, tenemos que ver que $\displaystyle d : X \times X \to \R $ está bien definida, es decir, que cada función $\displaystyle f \in Y $ alcanza su máximo en $\displaystyle X $. Veamos que si $\displaystyle f\in Y $ y $\displaystyle X $ es compacto, $\displaystyle f\left(X\right) $ es compacto. Sea $\displaystyle \left\{ U_{i}\right\} _{i \in I} $ es un recubrimiento abierto de $\displaystyle f\left(X\right) $. Como $\displaystyle f $ es continua se tiene que $\displaystyle f^{-1}\left(U_{i}\right) $ es abierto $\displaystyle \forall i \in I $. Así, 
+		\[f\left(X\right)\subset \bigcup_{i \in I}U_{i} \Rightarrow X \subset f^{-1}\left(\bigcup_{i \in I}U_{i}\right)=\bigcup_{i \in I}f^{-1}\left(U_{i}\right) .\]
+		Por tanto, $\displaystyle \left\{ f^{-1}\left(U_{i}\right)\right\} _{i \in I} $ es un recubrimiento abierto de $\displaystyle X $. Como $\displaystyle X $ es compacto, existe $\displaystyle J \subset I $ finito tal que $\displaystyle \left\{ f^{-1}\left(U_{j}\right)\right\} _{j\in J} $ es un recubrimiento de $\displaystyle X $, por lo que debe ser que $\displaystyle \left\{ U_{j}\right\} _{j \in J} $ es un recubrimiento finito de $\displaystyle f\left(X\right) $. En efecto,
+		\[f\left(X\right) \subset f\left(\bigcup_{j \in J}f^{-1}\left(U_{j}\right)\right)=\bigcup_{j \in J}f\left(f^{-1}\left(U_{j}\right)\right)=\bigcup_{j \in J}U_{j} .\]
+		Como $\displaystyle f\left(X\right)\subset \R^{n} $ es compacto, tendremos que es cerrado y acotado. En concreto, la función $\displaystyle h = \|f-g\| : X \to \R $ es continua por lo que $\displaystyle h\left(X\right) $ es un compacto de $\displaystyle \R $. Así, existen $\displaystyle \alpha = \inf h\left(X\right) $ y $\displaystyle \beta = \sup h\left(X\right) $ y como $\displaystyle h\left(X\right) $ es cerrado y acotado se tiene que 
+		\[\alpha, \beta \in \overline{h\left(X\right)}=h\left(X\right) .\]
+		Por tanto, la función $\displaystyle h = \|f-g\| $ alcanza su máximo en $\displaystyle X $ y tenemos que la función distancia dada en el enunciado está bien definida.
+	\item Veamos que se trata de una función distancia. 
+		\begin{enumerate}
+		\item En primer lugar, es sencillo ver que como $\displaystyle \|f-g\| \geq 0 $, tendremos que $\displaystyle d\left(f,g\right) \geq 0 $.
+		\item Si $\displaystyle f \equiv g $ claramente $\displaystyle d\left(f,g\right)=0 $. Recíprocamente, si $\displaystyle d\left(f,g\right)=0 $ y existe $\displaystyle x_{0} \in X $ con $\displaystyle f\left(x_{0}\right)\neq g\left(x_{0}\right) $, tendremos que $\displaystyle \max \|f\left(x\right)-g\left(x\right)\| > 0 $ por lo que necesariamente debe ser que $\displaystyle f \equiv g $.
+		\item Es trivial que la propiedad simétrica se cumple.
+		\item Veamos que se cumple la propiedad triangular. Si $\displaystyle f,g,h \in Y $,
+			\[
+			\begin{split}
+				d\left(f,g\right)= &\max \|f-g\|=\max \|f-h+h-g\|\leq \max \left(\|f-h\| + \|h-g\|\right) \\
+				\leq& \max \|f-h\| + \max \|h - g\| = d\left(f,h\right) + d\left(h,g\right) .
+			\end{split}
+			\]
+		\end{enumerate}
+	\item Veamos que es una distancia completa. Sea $\displaystyle \left\{ f_{m}\right\} _{m\in\N}\subset Y $ una sucesión de Cauchy. Tenemos que para $\displaystyle \epsilon > 0 $ existe $\displaystyle n_{0} \in \N $ tal que si $\displaystyle m,k\geq n_{0} $,
+		\[d\left(f_{m}-f_{k}\right)=\max \|f_{m}-f_{k}\|<\epsilon \iff \|f_{m}\left(x\right)-f_{k}\left(x\right)\|<\epsilon, \; \forall x \in X .\]
+		Podemos ver que para cada $\displaystyle x_{0} \in X $ tenemos que $\displaystyle \left\{ f_{m}\left(x_{0}\right)\right\} _{m \in \N} \subset \R^{n} $ también es sucesión de Cauchy. Como $\displaystyle \R^{n} $ es completo, existe 
+		\[f\left(x_{0}\right):=\lim_{m \to \infty}f_{m}\left(x_{0}\right) \in \R^{n} .\]
+		Así, definimos la función $\displaystyle f : X \to \R^{n} $ definida como $\displaystyle f\left(x\right)=\lim_{m \to \infty}f_{m}\left(x\right) $. Veamos que la sucesión $\displaystyle \left\{ f_{m}\right\} _{m\in\N} $ converge a $\displaystyle f $. Dado $\displaystyle \epsilon > 0 $, existe $\displaystyle n_{0} \in \N $ tal que si $\displaystyle m,k \geq n_{0} $ entonces
+		\[\|f_{m}\left(x\right)-f_{k}\left(x\right)\|<\epsilon, \; \forall x \in X .\]
+		Tomando el límite cuando $\displaystyle m \to \infty $ en la desigualdad anterior obtenemos que
+		\[\|f\left(x\right)-f_{k}\left(x\right)\|<\epsilon  .\]
+		Por tanto, $\displaystyle f_{m} \to f $. Finalmente, veamos que $\displaystyle f \in Y $. Sea $\displaystyle V \subset \R^{n} $ un abierto, queremos ver que $\displaystyle f^{-1}\left(V\right) $ es abierto. Sea $\displaystyle x_{0} \in f^{-1}\left(V\right) $, entonces $\displaystyle f\left(x_{0}\right)\in V $ y como $\displaystyle V $ es abierto existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle B\left(f\left(x_{0}\right), \epsilon \right)\subset V $. 
+	Como $\displaystyle f_{m} \to f $, podemos escoger $\displaystyle m \in \N $ suficientemente grande tal que $\displaystyle \|f_{m}\left(x\right)-f\left(x\right)\|<\frac{\epsilon }{3} $, $\displaystyle \forall x \in X $, en particular
+	\[\|f_{m}\left(x_{0}\right)-f\left(x_{0}\right)\|<\frac{\epsilon }{3} .\]
+Como $\displaystyle f_{m} $ es continua, $\displaystyle f^{-1}\left(B\left(f_{m}\left(x_{0}\right), \frac{\epsilon }{3}\right)\right) $ es un abierto en $\displaystyle X $. Definimos
+\[U :=f^{-1}\left(B\left(f_{m}\left(x_{0}\right), \frac{\epsilon }{3}\right)\right) .\]
+Tenemos que $\displaystyle x_{0} \in  U $. Si $\displaystyle x \in U $ tenemos que $\displaystyle \|f_{m}\left(x\right)-f_{m}\left(x_{0}\right)\|<\frac{\epsilon }{3} $, por lo que 
+\[\|f\left(x\right)-f\left(x_{0}\right)\| \leq \|f\left(x\right)-f_{m}\left(x\right)\| + \|f_{m}\left(x\right)-f_{m}\left(x_{0}\right)\| + \|f_{m}\left(x_{0}\right)-f\left(x_{0}\right)\| < \frac{\epsilon }{3} + \frac{\epsilon }{3} + \frac{\epsilon }{3}=\epsilon  .\]
+Por tanto, $\displaystyle f\left(x\right)\in B\left(f\left(x_{0}\right), \epsilon \right)\subset V $. Así, $\displaystyle U \subset f^{-1}\left(V\right) $ y tenemos que $\displaystyle f^{-1}\left(V\right) $ es abierto. 
+\end{itemize}
+\end{sol}
+
+\begin{ej}[Número 1.6]
+	\begin{enumerate}
+	\item Sean $\displaystyle \mathcal{T}_{1} $ y $\displaystyle \mathcal{T}_{2} $ dos topologías en un conjunto $\displaystyle X $. Mostrar que su intersección $\displaystyle \mathcal{T}_{1} \cap \mathcal{T}_{2} $ es también una topología. Se puede decir lo mismo de su unión $\displaystyle \mathcal{T}_{1} \cup \mathcal{T}_{2} $? Construir la topología menos fina que contiene a esa unión.
+	\item Estudiar el caso de intersecciones y uniones arbitrarias de topologías.
+	\item La menor topología que contiene a una colección cualquiera de subconjuntos de $\displaystyle X $ se denomina topología generada por la colección. Describirla. Qué tiene esto que ver con el concepto de base de una topología?
+	\end{enumerate}
+\end{ej}
+
+\end{document}

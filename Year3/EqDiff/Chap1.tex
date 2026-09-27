@@ -525,19 +525,7 @@ Sea $\displaystyle f \in \mathcal{C}\left(I \times \R^{n}, \R^{n}\right) $ globa
 \begin{observation}
 	Realmente sólo necesitamos que $\displaystyle f $ sea globalmente Lipschitz en conjuntos de la forma $\displaystyle \left[a,b\right] \times \R^{n} $. Por tanto, no se requiere una constante de Lipschitz universal para todo el intervalo $\displaystyle I $.  
 \end{observation}
-\begin{eg}[Problema 2, Hoja 1]
-Sea $\displaystyle f : \R \to \R $ y $\displaystyle -\infty = h_{0} < h_{1} < \cdots < h_{k} = \infty  $ tales que $\displaystyle f|_{\left(h_{j}, h_{j+1}\right)} $ es lineal. Si $\displaystyle f $ es continua, entonces es globalmente Lipschitz en $\displaystyle \R $. Podemos ver que la función $\displaystyle f\left(x\right)= \left|x\right| $ es un caso particular. 
-Dado $\displaystyle x > y $ sean $\displaystyle i\geq j $ tales que $\displaystyle x\in \left[h_{i}, h_{i+1}\right]  $ e $\displaystyle y \in \left[h_{j}, h_{j+1}\right]  $. Así, tenemos que
-\[
-\begin{split}
-	\left|f\left(x\right)-f\left(y\right)\right| = & \left|f\left(x\right)-f\left(h_{i}\right)+f\left(h_{i}\right)-f\left(h_{i-1}\right)+f\left(h_{i-1}\right)-\cdots +f\left(h_{j+1}\right)-f\left(y\right)\right|\\
-	\leq & \left|f\left(x\right)-f\left(h_{1}\right)\right| + \cdots + \left|f\left(h_{j+1}\right)-f\left(y\right)\right| \\
-	= & \left|a_{i}\left(x-h_{i}\right)\right|+ \cdots + \left|a_{j}\left(h_{j+1}\right)-y\right|= \left|a_{i}\right|\left(x-h_{i}\right)+ \cdots + \left|a_{j}\right|\left(h_{j+1}-y\right)\\
-	\leq & \max_{l \in \left\{ j, \ldots, i\right\} } \left|a_{l}\right| \left|x-y\right|.
-\end{split}
-\]
-Así, para terminar cogemos $\displaystyle K = \max_{l \in \left\{ 0, \ldots, k-1\right\} } \left|a_{l}\right| $ como constante de Lipschitz. 
-\end{eg}
+
 \begin{theorem}[Teorema de Peano]
 	Dado el PVI
 	\[

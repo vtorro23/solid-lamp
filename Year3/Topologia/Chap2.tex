@@ -166,14 +166,51 @@ es un homeomorfismo. Si esta propiedad se cumple en todo $\displaystyle x \in X 
 \begin{eg}
 	La aplicación $\displaystyle f : \left(\R, \mathcal{T}_{u}\right)\to \left(\mathbb{S}^{1}, \mathcal{T}_{u} | _{\mathbb{S}^{1}}\right) $ dada por $\displaystyle f\left(t\right)=\left(\cos t, \sin t\right) $ no es un homeomorfismo, pero sí es un homeomorfismo local. 
 \end{eg}
+\begin{prop}
+Si $\displaystyle f : X \to Y $ es homeomorfismo local en $\displaystyle x_{0} \in X $, existen entornos abiertos $\displaystyle V^{x_{0}} $ y $\displaystyle W^{f\left(x_{0}\right)} $ tales que $\displaystyle f|_{V^{x_{0}}}: V^{x_{0}} \to W^{f\left(x_{0}\right)} $ es un homeomorfismo. 
+\end{prop}
+\begin{proof}
+	Como $\displaystyle f $ es homeomorfismo local en $\displaystyle x_{0} $, existen entornos $\displaystyle V^{x_{0}}_{1} $ y $\displaystyle W^{f\left(x_{0}\right)}_{1} $ tales que 
+	\[f|V^{x_{0}}_{1} : V ^{x_{0}}_{1}\to W^{f\left(x_{0}\right)}_{1} ,\]
+	es homeomorfismo. 
+	\begin{itemize}
+	\item Por definición de entorno, existe un abierto $\displaystyle U^{x_{0}}\subset X $ tal que $\displaystyle x_{0} \in U^{x_{0}}\subset V^{x_{0}}_{1} $. Análogamente, existe $\displaystyle \Omega^{f\left(x_{0}\right)}\subset Y $ abierto con $\displaystyle f\left(x_{0}\right)\in \Omega^{f\left(x_{0}\right)}\subset W^{f\left(x_{0}\right)}_{1} $.
+	\item Como $\displaystyle f|_{V^{x_{0}}_{1}} $ es homeomorfismo, es una aplicación abierta y $\displaystyle f|_{V^{x_{0}}_{1}}\left(U^{x_{0}}\right) $ es un abierto en $\displaystyle W^{f\left(x_{0}\right)}_{1} $ y es entorno de $\displaystyle f\left(x_{0}\right) $. Así, existe $\displaystyle G^{f\left(x_{0}\right)} $ entorno abierto de $\displaystyle f\left(x_{0}\right) $ en $\displaystyle Y $ con
+		\[G^{f\left(x_{0}\right)}\cap W^{f\left(x_{0}\right)}_{1}=f|_{V^{x_{0}}_{1}}\left(U^{x_{0}}\right) .\]
+	\item Sea $\displaystyle W^{f\left(x_{0}\right)}:=\Omega^{f\left(x_{0}\right)}\cap G^{f\left(x_{0}\right)} $ que es abierto en $\displaystyle Y $. Tenemos que $\displaystyle V^{x_{0}}:= \left(f|_{V^{x_{0}}_{1}}\right)^{-1}\left(W^{f\left(x_{0}\right)}\right) $ es un abierto en $\displaystyle U^{x_{0}} $, por lo que es abierto en $\displaystyle X $. Es claro que $\displaystyle V^{x_{0}} $ es un entorno de $\displaystyle x_{0} $ y que 
+		\[f|_{V^{x_{0}}}:V^{x_{0}}\to W^{f\left(x_{0}\right)} ,\]
+		es homeomorfismo.
+	\end{itemize}
+	\begin{center}
+    \includegraphics[width=1\textwidth]{~/Desktop/Images/Topologia1.png}
+\end{center}
+\end{proof}
+\begin{prop}
+Un homeomorfismo local $\displaystyle f:X \to Y $ es una aplicación abierta.
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle f $ es un homeomorfismo local y sea $\displaystyle U\subset X $ un abierto. Para cada $\displaystyle x \in U $ tenemos que existen entornos abiertos $\displaystyle x \in V^{x}\subset U $ y $\displaystyle f\left(x\right)\in W^{f\left(x\right)} $ tales que
+\[f|_{V^{x}} : V^{x} \to W^{f\left(x\right)} ,\]
+es homeomorfismo. Claramente, $\displaystyle W^{f\left(x\right)}=f|_{V^{x}}\left(V^{x}\right)=f\left(V^{x}\right)\subset f\left(U\right) $, por lo que
+\[f\left(U\right)=\bigcup_{x \in U}W^{f\left(x\right)} .\]
+Así, tenemos que $\displaystyle f\left(U\right) $ es abierto en $\displaystyle Y $ por ser unión de abiertos en $\displaystyle Y $.
+\end{proof}
+
 \begin{eg}
 Consideremos la función
 \[f : \left(\R, \mathcal{T}_{u}\right) \to  \left(\R^{2}, \mathcal{T}_{u}\right) : t \to \left(\frac{t}{1 + t ^{4}}, \frac{t ^{3}}{1 + t ^{4}}\right) .\]
-% poner imagen
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{~/Desktop/Images/Topologia2.png}
+\end{center}
 Se puede comprobar que es una función biyectia pero no es homeomorfismo. Nos preguntamos si será homeomorfismo local. No lo es puesto que cualquier entorno del $\displaystyle \left(0,0\right) $ va a contener imágenes de puntos que están arbitrariamente lejos. En cualquier otro punto no hay problema. 
 Sin embargo, dado $\displaystyle M > 0 $ tendremos que 
 \[f|_{\left(-M, M\right)}: \left(-M, M\right)\to \left(f\left(-M,M\right), \mathcal{T}_{u}|_{f\left(-M,M\right)}\right) ,\]
 sí es homeomorfismo local en todos los puntos por lo que es homeomorfismo. 
-% poner imgaen. 
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{~/Desktop/Images/Topologia3.png}
+\end{center} 
 \end{eg}
+\begin{definition}[Variedad topológica]
+Un espacio topológico $\displaystyle X $ es una \textbf{variedad topológica de dimensión $\displaystyle n $} si cada punto $\displaystyle x \in X $ tiene un entorno homeomorfo a una bola abierta en $\displaystyle \R^{n} $ con la topología usual.
+\end{definition}
 
