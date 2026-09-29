@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  25 SEP 2026 09:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  28 SEP 2026 18:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1048,7 +1048,7 @@ Package hyperref Info: bookmark level for unknown observation defaults to 0 on i
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 48.
-<~/Desktop/Images/GeoDiff1.png, id=114, 2180.145pt x 726.715pt>
+<~/Desktop/Images/GeoDiff1.png, id=119, 2180.145pt x 726.715pt>
 File: ~/Desktop/Images/GeoDiff1.png Graphic file (type png)
 <use ~/Desktop/Images/GeoDiff1.png>
 Package pdftex.def Info: ~/Desktop/Images/GeoDiff1.png  used on input line 51.
@@ -1076,7 +1076,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 87.
-<~/Desktop/Images/GeoDiff2.png, id=129, 2119.92pt x 746.79pt>
+<~/Desktop/Images/GeoDiff2.png, id=134, 2119.92pt x 746.79pt>
 File: ~/Desktop/Images/GeoDiff2.png Graphic file (type png)
 <use ~/Desktop/Images/GeoDiff2.png>
 Package pdftex.def Info: ~/Desktop/Images/GeoDiff2.png  used on input line 89.
@@ -1084,7 +1084,7 @@ Package pdftex.def Info: ~/Desktop/Images/GeoDiff2.png  used on input line 89.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 94.
-<~/Desktop/Images/GeoDiff4.png, id=130, 1541.76pt x 1027.84pt>
+<~/Desktop/Images/GeoDiff4.png, id=135, 1541.76pt x 1027.84pt>
 File: ~/Desktop/Images/GeoDiff4.png Graphic file (type png)
 <use ~/Desktop/Images/GeoDiff4.png>
 Package pdftex.def Info: ~/Desktop/Images/GeoDiff4.png  used on input line 115.
@@ -1106,7 +1106,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 123.
-<~/Desktop/Images/GeoDiff3.png, id=150, 1453.43pt x 1090.0725pt>
+<~/Desktop/Images/GeoDiff3.png, id=155, 1453.43pt x 1090.0725pt>
 File: ~/Desktop/Images/GeoDiff3.png Graphic file (type png)
 <use ~/Desktop/Images/GeoDiff3.png>
 Package pdftex.def Info: ~/Desktop/Images/GeoDiff3.png  used on input line 145.
@@ -1119,7 +1119,7 @@ LaTeX Info: Redefining \% on input line 147.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 149.
-<~/Desktop/Images/GeoDiff5.png, id=165, 1541.76pt x 1027.84pt>
+<~/Desktop/Images/GeoDiff5.png, id=170, 1541.76pt x 1027.84pt>
 File: ~/Desktop/Images/GeoDiff5.png Graphic file (type png)
 <use ~/Desktop/Images/GeoDiff5.png>
 Package pdftex.def Info: ~/Desktop/Images/GeoDiff5.png  used on input line 161.
@@ -1454,7 +1454,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 743.
-<~/Desktop/Images/GeoDiff6.png, id=388, 1453.43pt x 1090.0725pt>
+<~/Desktop/Images/GeoDiff6.png, id=393, 1453.43pt x 1090.0725pt>
 File: ~/Desktop/Images/GeoDiff6.png Graphic file (type png)
 <use ~/Desktop/Images/GeoDiff6.png>
 Package pdftex.def Info: ~/Desktop/Images/GeoDiff6.png  used on input line 746.
@@ -1578,12 +1578,90 @@ LaTeX Info: Redefining \. on input line 924.
 LaTeX Info: Redefining \% on input line 924.
 LaTeX Info: Redefining \. on input line 924.
 LaTeX Info: Redefining \% on input line 924.
-[31]) (./Appendix.tex
+[31]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 926.
+
+Overfull \hbox (1.48058pt too wide) detected at line 939
+[]
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 943.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 947.
+LaTeX Info: Redefining \. on input line 949.
+LaTeX Info: Redefining \% on input line 949.
+LaTeX Info: Redefining \. on input line 949.
+LaTeX Info: Redefining \% on input line 949.
+[32]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 957.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 963.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 974.
+Package mdframed Info: Not enough space on this page on input line 976.
+LaTeX Info: Redefining \. on input line 976.
+LaTeX Info: Redefining \% on input line 976.
+LaTeX Info: Redefining \. on input line 976.
+LaTeX Info: Redefining \% on input line 976.
+ [33]
+Package mdframed Info: Not enough space on this page on input line 976.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 978.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 995.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1006.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 1008.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 1008.
+LaTeX Info: Redefining \. on input line 1008.
+LaTeX Info: Redefining \% on input line 1008.
+LaTeX Info: Redefining \. on input line 1008.
+LaTeX Info: Redefining \% on input line 1008.
+[34]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1010.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1013.
+
+Overfull \hbox (137.90309pt too wide) detected at line 1020
+[] \OT1/lmr/m/n/10 = [] [] = [] [] = \OMS/lmsy/m/n/10 ^^F [] [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^F [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^F [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^F [] \OML/lmm/m/it/10 :
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1022.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1026.
+) (./Appendix.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [32]
+ [35]
 Ap\'{e}ndice A.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -1591,12 +1669,12 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 9.
-[33
+[36
 
 ])
 LaTeX Info: Redefining \. on input line 34.
 LaTeX Info: Redefining \% on input line 34.
- [34] (./GeoDiff.aux
+ [37] (./GeoDiff.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
@@ -1605,21 +1683,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `GeoDiff.out' has not changed.
-(rerunfilecheck)             Checksum: 77D71D0D7A80967D65B233EF87722F00;1702.
+(rerunfilecheck)             Checksum: EBD1A335064365539D536EDB6FE5F42A;1974.
  ) 
 Here is how much of TeX's memory you used:
- 39694 strings out of 474116
- 903551 string characters out of 5743682
+ 39759 strings out of 474116
+ 904706 string characters out of 5743682
  1957187 words of memory out of 5000000
- 60852 multiletter control sequences out of 15000+600000
- 656979 words of font info for 201 fonts, out of 8000000 for 9000
+ 60880 multiletter control sequences out of 15000+600000
+ 657347 words of font info for 205 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,18n,110p,1004b,1122s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on GeoDiff.pdf (35 pages, 1871335 bytes).
+Output written on GeoDiff.pdf (38 pages, 1890639 bytes).
 PDF statistics:
- 678 PDF objects out of 1000 (max. 8388607)
- 554 compressed objects within 6 object streams
- 277 named destinations out of 1000 (max. 500000)
- 55499 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 729 PDF objects out of 1000 (max. 8388607)
+ 601 compressed objects within 7 object streams
+ 306 named destinations out of 1000 (max. 500000)
+ 55507 words of extra memory for PDF output out of 61914 (max. 10000000)
 

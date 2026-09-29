@@ -5,7 +5,7 @@ Sea $\displaystyle S \subset \R^{n} $, $\displaystyle f : S \to \R^{m} $ y sea $
 Denotaremos $\displaystyle  l = \lim_{x \to x_{0}}f\left(x\right) $ (o también $\displaystyle l = \lim_{x \to x_{0}, x \in S}f\left(x\right) $). 
 \end{definition}
 \begin{prop}
-En límite, si existe, es único.
+El límite, si existe, es único.
 \end{prop}
 \begin{proof}
 Si $\displaystyle l,l' \in \R^{m} $ son posibles límites, tenemos que $\displaystyle \forall \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle 0 < \| x - x_{0}\| < \delta  $ entonces $\displaystyle \|f\left(x\right) -l\|,\|f\left(x\right)-l'\| < \frac{\epsilon }{2} $. Así,
@@ -16,14 +16,14 @@ Como esto es cierto $\displaystyle \forall \epsilon > 0 $, debe ser que $\displa
 	Para una función $\displaystyle f : S \subset \R^{n} \to \R^{m} $ y $\displaystyle x_{0} \in S' $, son equivalentes
 	\begin{description}
 	\item[(i)] $\displaystyle l = \lim_{x \to x_{0}, x \in S}f\left(x\right) $. 
-	\item[(ii)] $\displaystyle \forall \left\{ x_{j}\right\} _{j\in \N}\subset S / \left\{ x_{0}\right\}  $ con $\displaystyle x_{j} \to x_{0} $, se tiene que $\displaystyle f\left(x_{j}\right) \to l $.
+	\item[(ii)] $\displaystyle \forall \left\{ x_{j}\right\} _{j\in \N}\subset S \backslash \left\{ x_{0}\right\}  $ con $\displaystyle x_{j} \to x_{0} $, se tiene que $\displaystyle f\left(x_{j}\right) \to l $.
 	\end{description}
 \end{prop}
 \begin{proof}
 \begin{description}
-	\item[(i)] Sea $\displaystyle \left\{ x_{j}\right\} _{j} \in S / \left\{ x_{0}\right\}  $ con $\displaystyle x_{j} \to x_{0} $. Tenemos que $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle  0 < \| x - x_{0}\| < \delta  $, entonces $\displaystyle \|f\left(x\right)-l\| < \epsilon  $. Como $\displaystyle x_{j} \to x_{0} $, tenemos que existe $\displaystyle j _{0} \in \N $ tal que $\displaystyle \forall j \geq j_{0} $, $\displaystyle 0 < \|x_{j}-x_{0}\| < \delta  $, por lo que $\displaystyle \| f\left(x_{j}\right)-l \| < \epsilon  $. 
+	\item[(i)] Sea $\displaystyle \left\{ x_{j}\right\} _{j} \in S \backslash \left\{ x_{0}\right\}  $ con $\displaystyle x_{j} \to x_{0} $. Tenemos que $\displaystyle \forall \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle  0 < \| x - x_{0}\| < \delta  $, entonces $\displaystyle \|f\left(x\right)-l\| < \epsilon  $. Como $\displaystyle x_{j} \to x_{0} $, tenemos que existe $\displaystyle j _{0} \in \N $ tal que $\displaystyle \forall j \geq j_{0} $, $\displaystyle 0 < \|x_{j}-x_{0}\| < \delta  $, por lo que $\displaystyle \| f\left(x_{j}\right)-l \| < \epsilon  $. 
 	\item[(ii)] Supongamos que $\displaystyle \lim_{x \to x_{0}}f\left(x\right) \neq l $, es decir, existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle \forall \delta > 0 $ existe $\displaystyle x \in S $ con $\displaystyle 0 < \|x - x_{0}\|< \delta  $ y $\displaystyle \|f\left(x\right)-l\| \geq \epsilon  $. 
-		Así, podemos tomar $\displaystyle \delta = \frac{1}{j} $ y $\displaystyle x_{j} \in S $ tal que $\displaystyle 0< \|x_{j}-x_{0}\| < \frac{1}{j} $ y $\displaystyle \|f\left(x_{j}\right)-l\| \geq \epsilon  $, para $\displaystyle j \in \N $. Tenemos que la sucesión $\displaystyle \left\{ x_{j}\right\} _{j\in \N} \subset S/ \left\{ x_{0}\right\}  $ converge a $\displaystyle x_{0} $ pero su imagen no converge a $\displaystyle l $.
+		Así, podemos tomar $\displaystyle \delta = \frac{1}{j} $ y $\displaystyle x_{j} \in S $ tal que $\displaystyle 0< \|x_{j}-x_{0}\| < \frac{1}{j} $ y $\displaystyle \|f\left(x_{j}\right)-l\| \geq \epsilon  $, para $\displaystyle j \in \N $. Tenemos que la sucesión $\displaystyle \left\{ x_{j}\right\} _{j\in \N} \subset S\backslash \left\{ x_{0}\right\}  $ converge a $\displaystyle x_{0} $ pero su imagen no converge a $\displaystyle l $.
 \end{description}
 \end{proof}
 \begin{prop}
@@ -36,7 +36,7 @@ Entonces,
 \end{enumerate}
 \end{prop}
 \begin{proof}
-	Basta con tomar una sucesión $\displaystyle \left\{ x_{j}\right\} _{j \in \N} \subset S / \left\{ x_{0}\right\} $ con $\displaystyle x_{j} \to x_{0} $ y aplicar las propiedades de las sucesiones en $\displaystyle \R $. Demostraremos únicamente la tercera afirmación. \\
+	Basta con tomar una sucesión $\displaystyle \left\{ x_{j}\right\} _{j \in \N} \subset S \backslash \left\{ x_{0}\right\} $ con $\displaystyle x_{j} \to x_{0} $ y aplicar las propiedades de las sucesiones en $\displaystyle \R $. Demostraremos únicamente la tercera afirmación. \\
  Sea $\displaystyle \left\{ x_{j}\right\} _{j\in \N}\subset S' $ tal que $\displaystyle x_{j} \to x_{0} $. Sabemos que $\displaystyle f\left(x_{j}\right) \to p $ y $\displaystyle g\left(x_{j}\right) \to q $ en $\displaystyle \R $. Si $\displaystyle q \neq 0 $, existe $\displaystyle j_{0} \in \N $ tal que $\displaystyle \forall j \geq j_{0} $, $\displaystyle g\left(x_{j}\right) \neq 0 $. 
  Dado que $\displaystyle \left\{ \frac{f\left(x_{j}\right)}{g\left(x_{j}\right)}\right\} _{j \in \N} \subset \R $ es una sucesión, podemos aplicar las propiedades de las sucesiones en $\displaystyle \R $ y obtener el resultado deseado: 
  \[ \frac{f\left(x_{j}\right)}{g\left(x_{j}\right)} \to \frac{p}{q} .\]
@@ -63,11 +63,11 @@ Como $\displaystyle x_{0} \in U $, que es abierto, tenemos que existe $\displays
 \item Consideremos la función $\displaystyle f : \R^{2} \to \R $ con 
 	\[f\left(x,y\right) = 
 	\begin{cases}
-	\frac{xy}{x^{2}+y^{2}}\sin\left(x+y\right), \; \left(x,y\right) \neq \left(0,0\right) \\
-	0, \; \left(x,y\right) = \left(0,0\right)
+	\frac{xy}{x^{2}+y^{2}}\sin\left(x+y\right), \; \text{si} \; \left(x,y\right) \neq \left(0,0\right) \\
+	0, \; \text{si}\; \left(x,y\right) = \left(0,0\right)
 	\end{cases}
 	.\]
-	Podemos ver que $\displaystyle h\left(x,y\right) = \sin\left(x+y\right) $ es continua en $\displaystyle \R^{2} $ y $\displaystyle g\left(x,y\right) = \frac{xy}{x^{2}+y^{2}} $ es continua en $\displaystyle \R^{2}/ \left\{ \left(0,0\right)\right\} = U $. Luego $\displaystyle f $ es continua en $\displaystyle \R^{2}/ \left\{ 0,0\right\}  $. Estudiemos la continuidad en $\displaystyle \left(0,0\right) $:
+	Podemos ver que $\displaystyle h\left(x,y\right) = \sin\left(x+y\right) $ es continua en $\displaystyle \R^{2} $ y $\displaystyle g\left(x,y\right) = \frac{xy}{x^{2}+y^{2}} $ es continua en $\displaystyle \R^{2}\backslash \left\{ \left(0,0\right)\right\} = U $. Luego $\displaystyle f $ es continua en $\displaystyle \R^{2}\backslash \left\{ 0,0\right\}  $. Estudiemos la continuidad en $\displaystyle \left(0,0\right) $:
 \[ \left|f\left(x,y\right)\right| = \left|\frac{xy}{x^{2}+y^{2}}\right| \left|\sin\left(x+y\right)\right| \leq \frac{1}{2} \left|\sin\left(x+y\right)\right| \to 0 .\]
 Así, tenemos que $\displaystyle \lim_{\left(x,y\right) \to \left(0,0\right)}f\left(x,y\right) = \left(0,0\right) $ por lo que $\displaystyle f $ es continua en $\displaystyle \left(0,0\right) $. 
 \item Nos preguntamos si existe $\displaystyle \lim_{\left(x,y\right) \to \left(0,0\right)}\frac{xy}{x^{2}+y^{2}} $. Dado $\displaystyle \lambda \in \R $ podemos considerar $\displaystyle S_{\lambda } = \left\{ \left(x,y\right) \; : \; y = \lambda x\right\}  $. Tenemos que
@@ -93,9 +93,9 @@ El último igual no es un igual, estrictamente. Sin embargo dada $\displaystyle 
 Diremos que $\displaystyle \lim_{r \to 0}f\left(r \cos \theta, r \sin \theta\right)= l $ uniformemente en $\displaystyle \theta  $. 
 \begin{eg}
 Tenemos que
-\[\lim_{\left(x,y\right) \to \left(0,0\right)}\frac{ \left|x\right|y}{\sqrt{x^{2}+y^{2}}}  = \lim_{r \to 0} \frac{r \left|\cos \theta\right| \cdot r \sin\theta}{r} = r \left|\cos\theta \sin \theta\right|\leq r \to 0 .\]
+\[\lim_{\left(x,y\right) \to \left(0,0\right)}\frac{ \left|x\right|y}{\sqrt{x^{2}+y^{2}}}  = \lim_{r \to 0} \frac{r \left|\cos \theta\right| \cdot r \sin\theta}{r} = r \left|\cos\theta \sin \theta\right|\leq r \xrightarrow{r \to 0} 0 .\]
 \end{eg}
 \begin{observation}
-	El objetivo del ejemplo anterior es hacer desaparecer el ángulo para que se cumpla $\displaystyle \forall \theta \in [0,2\pi] $. 
+	El objetivo es obtener una cota independiente del ángulo para garantizar que el límite sea uniforme en $\displaystyle \theta $.  
 \end{observation}
 

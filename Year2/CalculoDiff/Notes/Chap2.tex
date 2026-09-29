@@ -2,7 +2,7 @@
 \begin{definition}[Continuidad]
 Sea $\displaystyle f : \left(X,d _{X}\right) \to \left(Y, d _{Y}\right) $ una función entre dos espacios métricos y $\displaystyle x_{0} \in X $. Se dice que $\displaystyle f $ es \textbf{continua} en $\displaystyle x_{0} $ si 
 \[\forall \epsilon > 0, \exists \delta > 0, \; d _{X}\left(x,x_{0}\right) < \delta \Rightarrow d _{Y}\left(f\left(x\right), f\left(x_{0}\right)\right) < \epsilon .\]
-. Decimos que $\displaystyle f $ es continua en un subconjunto $\displaystyle M \subset X $ si es continua en $\displaystyle x_{0} $, $\displaystyle \forall x_{0} \in M $.
+Decimos que $\displaystyle f $ es continua en un subconjunto $\displaystyle M \subset X $ si es continua en $\displaystyle x_{0} $, $\displaystyle \forall x_{0} \in M $.
 \end{definition}
 \begin{observation}
 Una definición equivalente es
@@ -125,11 +125,11 @@ Por ser $\displaystyle f $ continua en $\displaystyle X $ existe $\displaystyle 
 \item[(2) $\displaystyle \Rightarrow $ (1)] Sea $\displaystyle x_{0} \in X $. Dado $\displaystyle \epsilon > 0 $ podemos considerar $\displaystyle V =  B_{Y}\left(f\left(x_{0}\right), \epsilon \right)$, que es abierto en $\displaystyle Y $. Por hipótesis tenemos que $\displaystyle f^{-1}\left(V\right) $ es abierto en $\displaystyle X $, por lo que existe $\displaystyle \delta > 0 $ tal que $\displaystyle B_{X}\left(x_{0}, \delta \right) \subset f^{-1}\left(V\right) $. Así, nos queda que 
 	\[f\left(B_{X}\left(x_{0}, \delta \right)\right) \subset V = B_{Y}\left(f\left(x_{0}\right), \epsilon \right) .\]
 	Es decir, $\displaystyle f $ es continua en $\displaystyle x_{0} $. 
-\item[(2) $\displaystyle  \Rightarrow $ (3)] Sea $\displaystyle H \subset Y $ cerrado, por lo que $\displaystyle V = Y / H $ es abierto. Así, tenemos que $\displaystyle f^{-1}\left(V\right) $ es abierto en $\displaystyle X $, por lo que
-	\[f^{-1}\left(V\right) = \left\{ x \in X \; : \; f\left(x\right) \not\in H\right\} = X / f^{-1}\left(H\right) .\]
+\item[(2) $\displaystyle  \Rightarrow $ (3)] Sea $\displaystyle H \subset Y $ cerrado, por lo que $\displaystyle V = Y \backslash H $ es abierto. Así, tenemos que $\displaystyle f^{-1}\left(V\right) $ es abierto en $\displaystyle X $, por lo que
+	\[f^{-1}\left(V\right) = \left\{ x \in X \; : \; f\left(x\right) \not\in H\right\} = X \backslash f^{-1}\left(H\right) .\]
 	Por tanto, $\displaystyle f^{-1}\left(H\right) $ es cerrado en $\displaystyle Y $.
-\item[(3) $\displaystyle  \Rightarrow $ (2)] Sea $\displaystyle V \subset Y $ abierto. Consideramos $\displaystyle H = Y / V $ cerrado. Tenemos que $\displaystyle f^{-1}\left(H\right) $ es cerrado en $\displaystyle X $. Como  
-	\[f^{-1}\left(H\right) = \left\{ x \in X \; : \; f\left(x\right) \not\in V\right\}  = X / f^{-1}\left(V\right) ,\]
+\item[(3) $\displaystyle  \Rightarrow $ (2)] Sea $\displaystyle V \subset Y $ abierto. Consideramos $\displaystyle H = Y \backslash V $ cerrado. Tenemos que $\displaystyle f^{-1}\left(H\right) $ es cerrado en $\displaystyle X $. Como  
+	\[f^{-1}\left(H\right) = \left\{ x \in X \; : \; f\left(x\right) \not\in V\right\}  = X \backslash f^{-1}\left(V\right) ,\]
 	se sigue que $\displaystyle f^{-1}\left(V\right) $ es abierto en $\displaystyle X $.
 \end{description}
 \end{proof}
@@ -145,7 +145,7 @@ Por ser $\displaystyle f $ continua en $\displaystyle X $ existe $\displaystyle 
 Sea $\displaystyle f : \left(X,d _{X}\right) \to \left(Y, d _{Y}\right) $ es continua en $\displaystyle X $ y sea $\displaystyle M \subset X $. Entonces la restricción de $\displaystyle f $ a $\displaystyle M $ \footnote{Se define la función de $\displaystyle f $ restringida a $\displaystyle M $ como $\displaystyle f|_{M}:\left(M, d _{X}|_{M}\right) \to \left(Y, d _{Y}\right) $} es continua en $\displaystyle M $. 
 \end{prop}
 \begin{proof}
-	Sea $\displaystyle z_{0} \in M \subset X $ y sea $\displaystyle \left\{ x_{k}\right\} _{k \in \N} \subset M $ con $\displaystyle x_{k} \to z_{0} $ en $\displaystyle d _{X} |_{M} $, por lo que $\displaystyle x_{k} \to z_{0} $ en $\displaystyle d _{X} $. Como $\displaystyle f $ es cotinua tenemos que $\displaystyle f\left(x_{k}\right) \to f\left(z_{0}\right) $, por lo que $\displaystyle f|_{M} $ es continua en $\displaystyle z_{0} $.
+	Sea $\displaystyle z_{0} \in M \subset X $ y sea $\displaystyle \left\{ x_{k}\right\} _{k \in \N} \subset M $ con $\displaystyle x_{k} \to z_{0} $ en $\displaystyle d _{X} |_{M} $, por lo que $\displaystyle x_{k} \to z_{0} $ en $\displaystyle d _{X} $. Como $\displaystyle f $ es continua tenemos que $\displaystyle f\left(x_{k}\right) \to f\left(z_{0}\right) $, por lo que $\displaystyle f|_{M} $ es continua en $\displaystyle z_{0} $.
 \end{proof}
 \begin{prop}
 Supongamos que $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ y sea $\displaystyle A \subset X $ abierto. Si $\displaystyle f|_{A} : \left(A, d _{X}|_{A}\right) \to \left(Y, d _{Y}\right) $ es continua en $\displaystyle A $, entonces $\displaystyle f $ es continua en $\displaystyle A $.
@@ -162,7 +162,7 @@ Sea $\displaystyle f : \R^{2} \to \R $ con
 0, \; \left(x,y\right) = \left(0,0\right)
 \end{cases}
 .\]
-Consideremos $\displaystyle A =\R^{2} / \left\{ \left(0,0\right)\right\} = \left\{ \left(x,y\right) \in \R^{2} \; : \; \left(x,y\right) \neq \left(0,0\right)\right\}  $, que es abierto en $\displaystyle \R^{2} $. Tenemos que $\displaystyle f|_{A}\left(x,y\right) = \frac{xy}{x^{2} +y^{2}} $ es continua en $\displaystyle A $. Por la proposición anterior tenemos que $\displaystyle f $ es continua en todos los puntos de $\displaystyle A $. \\
+Consideremos $\displaystyle A =\R^{2} \backslash \left\{ \left(0,0\right)\right\} = \left\{ \left(x,y\right) \in \R^{2} \; : \; \left(x,y\right) \neq \left(0,0\right)\right\}  $, que es abierto en $\displaystyle \R^{2} $. Tenemos que $\displaystyle f|_{A}\left(x,y\right) = \frac{xy}{x^{2} +y^{2}} $ es continua en $\displaystyle A $. Por la proposición anterior tenemos que $\displaystyle f $ es continua en todos los puntos de $\displaystyle A $. \\
 Veamos si es continua en $\displaystyle \left(0,0\right) $. Dado $\displaystyle \lambda \in \R $ consideramos $\displaystyle M_{\lambda } = \left\{ \left(x,y\right) \; : \; y = \lambda x\right\}  $. Tenemos que
 \[f | _{M_{\lambda }}\left(x,y\right) = \frac{xy}{x^{2} + y^{2}} = \frac{\lambda x^{2}}{x^{2} + \lambda^{2}x^{2}} = \frac{\lambda }{1 + \lambda ^{2}} .\]
 Como $\displaystyle f|_{M_{\lambda }} $ es constante en $\displaystyle M_{\lambda } $, tenemos que $\displaystyle f|_{M_{\lambda }} $ es continua. Sin embargo, tenemos que $\displaystyle f $ no es continua en $\displaystyle \left(0,0\right) $, puesto que adopta valores distintios para cada $\displaystyle M_{\lambda} $.
@@ -180,8 +180,8 @@ Tenemos que $\displaystyle \left(f|_{F_{i}}\right)^{-1}\left(H\right) $ es cerra
 \item Sea $\displaystyle f : \R^{3} \to \R $ con 
 	\[ f\left(x,y,z\right) = 
 	\begin{cases}
-	\sqrt{x^{2}+y^{2}+z^{2}}, \; \sqrt{x^{2}+y^{2}+z^{2}}\leq 1 \\
-	\frac{1}{\sqrt{x^{2}+y^{2}+z^{2}}}, \; \sqrt{x^{2}+y^{2}+z^{2}} \geq 1
+	\sqrt{x^{2}+y^{2}+z^{2}}, \; \text{si} \; \sqrt{x^{2}+y^{2}+z^{2}}\leq 1 \\
+	\frac{1}{\sqrt{x^{2}+y^{2}+z^{2}}}, \; \text{si} \; \sqrt{x^{2}+y^{2}+z^{2}} \geq 1
 	\end{cases}
 	.\]
 	Podemos considerar 
@@ -282,7 +282,7 @@ Sea $\displaystyle f : \left(X, d _{X}\right) \to \left(Y, d _{Y}\right) $ una f
 Sean $\displaystyle \left(X,d \right) $ un espacio métrico y $\displaystyle A \subset X $. Consideramos $\displaystyle \chi_{A} : X \to \R $ definida por
 \[\chi_{A}\left(x\right) = 
 \begin{cases}
-0, \; x \in X / A \\
+0, \; x \in X \backslash A \\
 1, \; x \in A
 \end{cases}
 .\]
@@ -293,14 +293,14 @@ Entonces $\displaystyle \chi_{A} $ es continua en $\displaystyle X $ si y solo s
 \item[(i)] Como $\displaystyle \chi_{A} $ es continua, hemos visto anteriormente que el siguiente conjunto es cerrado:
 	\[A = \left\{ x \in X \; : \; \chi_{A}\left(x\right) = 1\right\}  = \chi_{A}^{-1}\left( \left\{ 1\right\} \right) .\]
 	Tenemos que 
-	\[X/A = \left\{ x \in X \; : \; \chi_{A}\left(x\right) = 0\right\}  = \chi_{A}^{-1}\left( \left\{ 0\right\} \right) .\]
+	\[X\backslash A = \left\{ x \in X \; : \; \chi_{A}\left(x\right) = 0\right\}  = \chi_{A}^{-1}\left( \left\{ 0\right\} \right) .\]
 	De esta última igualdad obtenemos que $\displaystyle A $ es abierto, por lo que podemos concluir que $\displaystyle A $ es abierto y cerrado a la vez. 
 \item[(ii)] Sea $\displaystyle U \subset \R $ abierto. 
 	\begin{itemize}
 	\item Si $\displaystyle 0,1 \in U $, entonces $\displaystyle \chi_{A}^{-1}\left(U\right) = X $, que es abierto. 
 	\item Si $\displaystyle 0,1 \not\in U $, entonces $\displaystyle \chi_{A}^{-1}\left(U\right) = \emptyset $, que es abierto.
 	\item Si $\displaystyle 1 \in U $ y $\displaystyle 0 \not\in U $, tenemos que $\displaystyle \chi_{A}^{-1}\left(U\right) = A $, que es abierto.
-	\item Si $\displaystyle 1 \not\in U $ y $\displaystyle 0 \in U $, tenemos que $\displaystyle \chi_{A}^{-1}\left(U\right) = X / A $ que es abierto. 
+	\item Si $\displaystyle 1 \not\in U $ y $\displaystyle 0 \in U $, tenemos que $\displaystyle \chi_{A}^{-1}\left(U\right) = X \backslash A $ que es abierto. 
 	\end{itemize}
 \end{description}
 \end{proof}
@@ -319,13 +319,13 @@ Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle M \s
 \end{theorem}
 \begin{proof}
 \begin{description}
-	\item[(1) $\displaystyle \Rightarrow $ (2)] Si $\displaystyle M $ es desconexo, existe $\displaystyle f : M \to \R $ continua tal que $\displaystyle f\left(M\right) = \left\{ 0,1\right\}  $. Consideramos $\displaystyle A = f^{-1}\left( \left\{ 0\right\} \right) $ y $\displaystyle B = f^{-1}\left( \left\{ 1\right\} \right) $. Es fácil ver que $\displaystyle A $ y $\displaystyle B $ son cerrados relativos en $\displaystyle \left(M, d|_{M}\right) $ y que $\displaystyle A \cap B= \emptyset $. Además, $\displaystyle A = M/B $ y $\displaystyle B = M/A $, por lo que $\displaystyle A $ y $\displaystyle B $ son a la vez abiertos y cerrados relativos en $\displaystyle \left(M, d|_{M}\right) $. 
+	\item[(1) $\displaystyle \Rightarrow $ (2)] Si $\displaystyle M $ es desconexo, existe $\displaystyle f : M \to \R $ continua tal que $\displaystyle f\left(M\right) = \left\{ 0,1\right\}  $. Consideramos $\displaystyle A = f^{-1}\left( \left\{ 0\right\} \right) $ y $\displaystyle B = f^{-1}\left( \left\{ 1\right\} \right) $. Es fácil ver que $\displaystyle A $ y $\displaystyle B $ son cerrados relativos en $\displaystyle \left(M, d|_{M}\right) $ y que $\displaystyle A \cap B= \emptyset $. Además, $\displaystyle A = M\backslash B $ y $\displaystyle B = M\backslash A $, por lo que $\displaystyle A $ y $\displaystyle B $ son a la vez abiertos y cerrados relativos en $\displaystyle \left(M, d|_{M}\right) $. 
 	\item[(2) $\Rightarrow$ (3)] Si $\displaystyle \emptyset \neq A \neq M $, entonces $\displaystyle A $ es abierto y $\displaystyle B = M / A $ es abierto por lo que $\displaystyle A $ también es cerrado. 
 	\item[(3) $\displaystyle \Rightarrow $ (1)] Basta considerar $\displaystyle f = \chi_{A} : M \to \R $ tal que 
 		\[f\left(x\right) = 
 		\begin{cases}
-		0, \; x \in M / A \\
-		1, \; x \in M / B
+		0, \; x \in M \backslash A \\
+		1, \; x \in M \backslash B
 		\end{cases}
 		.\]
 		Por el lema tenemos que $\displaystyle f $ es continua en $\displaystyle M $ y $\displaystyle f\left(M\right) = \left\{ 0,1\right\}  $. 		
@@ -357,7 +357,7 @@ Sea $\displaystyle M = \Q $ subespacio de $\displaystyle X = \left(\R, \left| \c
 Está claro que $\displaystyle A $ es abierto relativo en $\displaystyle \Q $ por ser la intersección de un abierto en $\displaystyle \R $ y $\displaystyle \Q $. Además, tenemos que
 \[A = \Q \cap [\pi , \pi + 1] .\]
 Por la misma razón, $\displaystyle A $ es también cerrado relativo en $\displaystyle \Q $, por lo que $\displaystyle \Q \subset \R $ es desconexo. 
-\item[(b)] Sea $\displaystyle C \subset\Q $ conexo. Nos preguntamos, cuántos elementos puede contener $\displaystyle C $? 
+\item[(b)] Sea $\displaystyle C \subset\Q $ conexo. Nos preguntamos, ¿cuántos elementos puede contener $\displaystyle C $? 
 \end{description}
 \end{eg}
 \begin{lema}[Lema del pivote]
@@ -378,7 +378,7 @@ Por la misma razón, $\displaystyle A $ es también cerrado relativo en $\displa
 	\end{itemize}
 \end{proof}
 \begin{observation}
-La unión de dos conjuntos no tiene por qué se conexa. En efecto, podemos considerar en $\displaystyle \R $ el conjunto $\displaystyle M = \left(0,1\right) \cup \left(3,4\right) $, que claramente no es conexo.
+La unión de dos conjuntos conexos no tiene por qué ser conexa. En efecto, podemos considerar en $\displaystyle \R $ el conjunto $\displaystyle M = \left(0,1\right) \cup \left(3,4\right) $, que claramente no es conexo.
 \end{observation}
 \begin{theorem}
 Sean $\displaystyle \left(X,d\right) $ un espacio métrico y $\displaystyle M \subset X $. Si $\displaystyle M $ es conexo y $\displaystyle M \subset A \subset \overline{M} $, entonces $\displaystyle A $ es conexo. En particular, si $\displaystyle M $ es conexo, $\displaystyle \overline{M} $ también lo es.
@@ -417,8 +417,8 @@ Sea $\displaystyle \left(X,d\right) $ un espacio métrico. Si $\displaystyle M \
 	\begin{itemize}
 	\item Está claro que $\displaystyle A \neq \emptyset $, puesto que $\displaystyle x_{0} \in A $. 
 	\item Veamos que $\displaystyle A $ es abierto relativo en $\displaystyle U $. Si $\displaystyle x \in A \subset U $, tenemos que existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(x,r\right) \subset U $. Tenemos que $\displaystyle \forall y \in B\left(x,r\right) $ podemos conectar $\displaystyle x $ con $\displaystyle y $ mediante un segmento, por lo que existe un camino en $\displaystyle U $ de $\displaystyle x_{0} $ a $\displaystyle x $ y de $\displaystyle x $ a $\displaystyle y $, luego existe uno de $\displaystyle x_{0} $ a $\displaystyle y $. Así, $\displaystyle B\left(x,r\right) \subset A $. 
-	\item Veamos que $\displaystyle A $ es cerrado relativo en $\displaystyle U $. Para ello, veamos que $\displaystyle U/A $ es abierto. Dado $\displaystyle x \in U/A $ existe $\displaystyle r>0 $ tal que $\displaystyle B\left(x,r\right) \subset U $. Tenemos que $\displaystyle \forall y \in B\left(x,r\right) $, no existe camino en $\displaystyle U $ de $\displaystyle x_{0} $ a $\displaystyle y $. 
-		Si existiera, existiría un camino en $\displaystyle U $ de $\displaystyle x_{0} $ a $\displaystyle x $, que es una contradicción. Por tanto, $\displaystyle B\left(x,r\right) \subset U / A $, por lo que $\displaystyle A $ es cerrado relativo en $\displaystyle U $.
+	\item Veamos que $\displaystyle A $ es cerrado relativo en $\displaystyle U $. Para ello, veamos que $\displaystyle U\backslash A $ es abierto. Dado $\displaystyle x \in U\backslash A $ existe $\displaystyle r>0 $ tal que $\displaystyle B\left(x,r\right) \subset U $. Tenemos que $\displaystyle \forall y \in B\left(x,r\right) $, no existe camino en $\displaystyle U $ de $\displaystyle x_{0} $ a $\displaystyle y $. 
+		Si existiera, existiría un camino en $\displaystyle U $ de $\displaystyle x_{0} $ a $\displaystyle x $, que es una contradicción. Por tanto, $\displaystyle B\left(x,r\right) \subset U \backslash A $, por lo que $\displaystyle A $ es cerrado relativo en $\displaystyle U $.
 	\item Por ser $\displaystyle U $ conexo y $\displaystyle A \neq \emptyset $, debe ser que $\displaystyle A = U $.
 	\end{itemize}
 \end{proof}
@@ -426,8 +426,8 @@ Sea $\displaystyle \left(X,d\right) $ un espacio métrico. Si $\displaystyle M \
 	En general, conexo no implica conexo por caminos. En efecto, podemos considerar $\displaystyle M = \left\{ \left(0,0\right)\right\} \cup \left\{ \left(x,\sin \frac{1}{x}\right) \; : \; 0 < x \leq 1\right\} \subset \R^{2} $. Si $\displaystyle f : (0,1] \to \R $ con $\displaystyle f\left(x\right) = \left(x,\sin \frac{1}{x}\right) $, tenemos que
 	\begin{itemize}
 		\item $\displaystyle f $ es continua en $\displaystyle (0,1] $.
-		\item $\displaystyle (0,1] $ es convexo.
-		\item Si $\displaystyle G_{f}\left(x\right) $ es la segunda parte de la unión, entonces $\displaystyle G_{f} = f\left((0,1]\right) $ es convexo.
+		\item $\displaystyle (0,1] $ es convexo y conexo.
+		\item Si $\displaystyle G_{f}\left(x\right) $ es la segunda parte de la unión, entonces $\displaystyle G_{f} = f\left((0,1]\right) $ es conexo por ser imagen de un conexo por una función continua.
 		\item $\displaystyle \left(0,0\right) \in \overline{G}_{f} $.
 		\item $\displaystyle \left(0,0\right)\cup G_{f} = M $ es conexo.
 	\end{itemize}

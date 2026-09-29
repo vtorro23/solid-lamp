@@ -88,8 +88,8 @@ Podemos deducir que $\displaystyle D_{w}f\left(a\right) = \frac{d}{dt}|_{t = 0}f
 Consideremos $\displaystyle f : \R^{2} \to \R $ tal que 
 \[f\left(x,y\right) = 
 \begin{cases}
-x + \frac{xy}{\sqrt{x^{2}+y^{2}}}, \; \left(x,y\right) \neq \left(0,0\right) \\
-0, \; \left(x,y\right) = \left(0,0\right)
+x + \frac{xy}{\sqrt{x^{2}+y^{2}}}, \; \text{si} \; \left(x,y\right) \neq \left(0,0\right) \\
+0, \; \text{si}\; \left(x,y\right) = \left(0,0\right)
 \end{cases}
 .\]
 Calculemos las derivadas parciales en $\displaystyle \left(0,0\right) $:
@@ -130,8 +130,8 @@ Por tanto, existe $\displaystyle \lim_{t \to 0}\frac{1}{t}\left(f\left(a+tv\righ
 Consideremos $\displaystyle f : \R^{2} \to \R $ con 
 \[f\left(x,y\right) = 
 \begin{cases}
-x + \frac{x \left|y\right|}{\sqrt{x^{2}+y^{2}}}, \; \left(x,y\right) \neq \left(0,0\right) \\
-0, \; \left(x,y\right) = \left(0,0\right)
+x + \frac{x \left|y\right|}{\sqrt{x^{2}+y^{2}}}, \; \text{si} \; \left(x,y\right) \neq \left(0,0\right) \\
+0, \; \text{si} \; \left(x,y\right) = \left(0,0\right)
 \end{cases}
 .\]
 Estudiemos si $\displaystyle f $ es diferenciable en $\displaystyle a = \left(0,0\right) $. Tenemos que
@@ -241,7 +241,7 @@ En efecto, para $\displaystyle x = 0 $ es trivial. Si $\displaystyle x \neq 0 $,
 \end{observation}
 \begin{prop}
 Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle a \in U $ y $\displaystyle f : U \to \R^{m} $. Si $\displaystyle f $ es diferenciable en $\displaystyle a $, entonces existen $\displaystyle r > 0 $ y $\displaystyle M > 0 $ tales que
-\[ \|f\left(x\right)-f\left(a\right)\| \leq M \|x-a\|, \;  \|x - a\| \leq r .\]
+\[ \|f\left(x\right)-f\left(a\right)\| \leq M \|x-a\|, \quad \text{para} \;  \|x - a\| \leq r .\]
 \end{prop}
 \begin{proof}
 Dado $\displaystyle \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \|x-a\| \leq \delta  $, entonces 
@@ -573,7 +573,7 @@ Sea $\displaystyle U \subset \R^{n} $ abierto conexo y $\displaystyle f : U \to 
 	\begin{itemize}
 	\item Tenemos que $\displaystyle A \neq \emptyset $ puesto que $\displaystyle x_{0} \in A $. 
 	\item Tenemos que $\displaystyle A $ es abierto en $\displaystyle U $. En efecto, dado $\displaystyle x \in A $, existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(x,r\right) \subset U $ y por el corolario anterior tenemos que $\displaystyle f $ es constante en $\displaystyle B\left(x,r\right) $ por ser esta convexa. Así, $\displaystyle f\left(y\right) = f\left(x_{0}\right) $, $\displaystyle \forall y \in B\left(x,r\right) $ por lo que $\displaystyle B\left(x,r\right)\subset A $.
-	\item Análogamente, tenemos que $\displaystyle A $ es cerrado en $\displaystyle U $. Veamos que $\displaystyle U/A $ es abierto. Dado $\displaystyle x \in U/A $ tenemos que $\displaystyle f\left(x\right) \neq f\left(x_{0}\right) $. Existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(x,r\right)\subset U $ y sabemos que $\displaystyle f|_{B\left(x,r\right)} $ es constante. Por tanto, debe ser que $\displaystyle f\left(y\right) = f\left(x\right) \neq f\left(x_{0}\right) $, $\displaystyle \forall y \in B\left(x,r\right) $. Por lo que $\displaystyle B\left(x,r\right) \subset U/A $.
+	\item Análogamente, tenemos que $\displaystyle A $ es cerrado en $\displaystyle U $. Veamos que $\displaystyle U\backslash A $ es abierto. Dado $\displaystyle x \in U\backslash A $ tenemos que $\displaystyle f\left(x\right) \neq f\left(x_{0}\right) $. Existe $\displaystyle r > 0 $ tal que $\displaystyle B\left(x,r\right)\subset U $ y sabemos que $\displaystyle f|_{B\left(x,r\right)} $ es constante. Por tanto, debe ser que $\displaystyle f\left(y\right) = f\left(x\right) \neq f\left(x_{0}\right) $, $\displaystyle \forall y \in B\left(x,r\right) $. Por lo que $\displaystyle B\left(x,r\right) \subset U\backslash A $.
 	\end{itemize}
 	Por conexión debe ser que $\displaystyle A = U $. 
 \end{proof}

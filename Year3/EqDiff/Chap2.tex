@@ -14,11 +14,11 @@ Sean $\displaystyle y,z $ soluciones del PVI definidas en $\displaystyle I_{y} $
 Una solución del PVI, $\displaystyle y $ definida en $\displaystyle I $, se dice \textbf{maximal} si no existe otra solución distinta que sea prolongación de ella.
 \end{definition}
 \begin{lema}
-Sea $\displaystyle f : D\subset \R \times \R^{n} \to \R^{n} $ continua y localmente Lipschitz respecto a la segunda variable. Si tenemos $\displaystyle y,z $ soluciones del PVI con $\displaystyle \left(t_{0}, x_{0}\right)\in D $ definidas en $\displaystyle I_{y} $ e $\displaystyle I_{z} $, respectivamente, con $\displaystyle t_{0} \in I_{y} \subset I_{z} $. Entonces, $\displaystyle z $ es prolongación de $\displaystyle y $. 
+Sea $\displaystyle f : D\subset \R \times \R^{n} \to \R^{n} $ continua y localmente Lipschitz respecto a la segunda variable. Si tenemos $\displaystyle y,z $ soluciones del PVI con $\displaystyle \left(t_{0}, x_{0}\right)\in D $ definidas en $\displaystyle I_{y} $ e $\displaystyle I_{z} $, respectivamente, con $\displaystyle t_{0} \in I_{y} \subset I_{z} $, entonces $\displaystyle z $ es prolongación de $\displaystyle y $. 
 \end{lema}
 \begin{proof}
 	Si aplicamos el teorema de Picard-Lindelöf local, tenemos que $\displaystyle y = z $ en $\displaystyle I_{y}\cap\left[t_{0}-\epsilon, t_{0} + \epsilon \right]  $ para un $\displaystyle \epsilon > 0 $. Sea $\displaystyle t_{1}:= \inf \left\{ t \geq t_{0} \; : \; y\left(t\right)\neq z\left(t\right)\right\}  $. Si el ínfimo no exite tendremos que $\displaystyle y = z $ en $\displaystyle I_{y} \cap [t_{0}, \infty) $. Supongamos que sí existe. 
-	En este caso, debe ser que $\displaystyle t_{1} > t_{0} + \epsilon  $ y $\displaystyle y\left(t_{1}\right)=z\left(t_{1}\right)=:x^{*} $. Consideremos el PVI
+	En este caso, debe ser que $\displaystyle t_{1} > t_{0} + \epsilon  $ y por continuidad $\displaystyle y\left(t_{1}\right)=z\left(t_{1}\right)=:x^{*} $. Consideremos el PVI
 	\[
 	\begin{cases}
 	x' = f\left(t,x\right) \\
@@ -31,28 +31,28 @@ Sea $\displaystyle f : D\subset \R \times \R^{n} \to \R^{n} $ continua y localme
 Sea $\displaystyle f : D \subset \R \times \R^{n}\to \R^{n} $ continua y localmente Lipschitz respecto a la segunda variable en $\displaystyle D $. Para cada $\displaystyle \left(t_{0}, x_{0}\right) \in D$ existe una solución maximal y es única definida en un intervalo abierto $\displaystyle \left(\beta_{-}, \beta_{+}\right) $. 
 \end{theorem}
 \begin{proof}
-	Definimos el conjunto
+	Sea $\displaystyle \left(t_{0}, x_{0}\right)\in D $. Definimos el conjunto
 	\[S = \left\{ \left(Y_{\alpha }, J_{\alpha }\right) \; : \; Y_{\alpha }\; \text{solución del PVI en }J_{\alpha }\right\}  .\]
 	\begin{itemize}
 	\item Sabemos que $\displaystyle S \neq \emptyset $ puesto que por el teorema Picard-Lindelöf local existe una solución en un intervalo $\displaystyle \left[t_{0}-\epsilon , t_{0} + \epsilon \right]  $. 
 	\item Definimos $\displaystyle I := \bigcup_{\alpha}J_{\alpha } $ y tomamos la función 
 		\[z : I \to \R^{n} : t \to Y_{\alpha }\left(t\right) .\]
-	La función $\displaystyle z $ está bien definida puesto que no depende del índice $\displaystyle \alpha  $ tal que $\displaystyle t\in J_{\alpha } $ (por la proposición anterior). Se puede comprobar que $\displaystyle z $ es solución del PVI en $\displaystyle I $. Por la propia definición de $\displaystyle S $ tenemos que $\displaystyle \left(z,I\right)\in S $ y es la maximal porque si no pdríamos haber definido más allá. Si hubiese otra maximal distinta llegamos a una contradicción. 
-\item Finalmente vemos que $\displaystyle I $ es abierto. Supongamos que $\displaystyle \beta_{+}\in I $, entonces $\displaystyle \left(\beta_{+}, z\left(\beta_{+}\right)\right)\in D $. Si $\displaystyle x^{*} = z\left(\beta_{+}\right) $, consideramos el PVI auxiliar
+	La función $\displaystyle z $ está bien definida puesto que no depende del índice $\displaystyle \alpha  $ tal que $\displaystyle t\in J_{\alpha } $ (por el lema anterior). Se puede comprobar que $\displaystyle z $ es solución del PVI en $\displaystyle I $. Por la propia definición de $\displaystyle S $ tenemos que $\displaystyle \left(z,I\right)\in S $ y es la maximal porque si no pdríamos haber definido más allá. Si hubiese otra maximal distinta llegamos a una contradicción. 
+\item Veamos que $\displaystyle I $ es abierto. Supongamos que $\displaystyle \beta_{+}\in I $, entonces $\displaystyle \left(\beta_{+}, z\left(\beta_{+}\right)\right)\in D $. Si $\displaystyle x^{*} = z\left(\beta_{+}\right) $, consideramos el PVI auxiliar
 \[
 \begin{cases}
 x'= f\left(t,x\right) \\
 x\left(\beta_{+}\right)=x^{*}
 \end{cases}
 .\]
-Por Picard-Lindelöf existe una única solución $\displaystyle w $ en $\displaystyle \left[\beta_{+}-\delta, \beta_{+} + \delta \right]  $. A partir de aquí
+Por Picard-Lindelöf existe una única solución $\displaystyle w\left(t\right) $ en $\displaystyle \left[\beta_{+}-\delta, \beta_{+} + \delta \right]  $. Podemos tomar
 \[\tilde{z}\left(t\right):=
 \begin{cases}
 	z\left(t\right),\quad t \in I=(\beta_{-}, \beta_{+}] \\
 	w\left(t\right), \quad t \in [\beta_{+ }-\delta, \beta_{+} + \delta]
 \end{cases}
-.\]
-Es bien definida porque $\displaystyle z = w $ en $\displaystyle \left[\beta_{+ }-\delta, \beta_{+}\right]  $. Es solución de $\displaystyle x'=f\left(t,x\right) $ definida en $\displaystyle (\beta_{-}, \beta_{+ }+ \delta] $, que es una contradicción con que $\displaystyle I $ sea el intervalo maximal. 
+,\]
+que está bien definida porque $\displaystyle z = w $ en $\displaystyle \left[\beta_{+ }-\delta, \beta_{+}\right]  $. Así, tenemos que $\displaystyle \tilde{z}\left(t\right) $ es solución de $\displaystyle x'=f\left(t,x\right) $ definida en $\displaystyle (\beta_{-}, \beta_{+ }+ \delta] $, que es una contradicción con que $\displaystyle I $ sea el intervalo maximal. 
 	\end{itemize}
 \end{proof}
 \begin{theorem}[Fuga de compactos]
@@ -75,8 +75,51 @@ Por Picard-Lindelöf, existe una única solución en $\displaystyle \left[t_{j_{
 Sea $\displaystyle f \in \mathcal{C}\left(\R \times \R^{n} , \R^{n}\right) $ y localmente Lipschitz respecto a la segunda variable. Entonces, dado $\displaystyle \left(t_{0}, x_{0}\right)\in \R\times\R^{n} $ pueden ocurrir dos cosas:
 \begin{enumerate}
 \item $\displaystyle \beta_{+}=\infty $.
-\item $\displaystyle \beta_{+}<\infty $ y $\displaystyle \|x\left(t\right)\| \xrightarrow{t \to \beta_{+ }} \infty$ para cualquier solución $\displaystyle x\left(t\right) $ del PVI.
+\item $\displaystyle \beta_{+}<\infty $ y $\displaystyle \|x\left(t\right)\| \xrightarrow{t \to \beta_{+ }} \infty$ para cualquier solución $\displaystyle x\left(t\right) $ del PVI. Esto se llama \textbf{explosión en tiempo finito}.
 \end{enumerate}
 El resultado es análogo para $\displaystyle \beta_{-} $.
 \end{colorary}
+\begin{proof}
+	Supongamos que $\displaystyle \beta_{+} <\infty$. Para $\displaystyle R > 0 $ dado tomamos el compacto $\displaystyle K_{R} := \left[t_{0}, \beta_{+}\right] \times\overline{B}_{R} $. Aplicando el teorema anterior, tenemos que existe $\displaystyle t_{+}\left(R\right) $ tal que $\displaystyle \left(t, x\left(t\right)\right)\not\in K_{R} $, $\displaystyle \forall t \in \left(t_{+}, \beta_{+ }\right) $, concretamente $\displaystyle x\left(t\right)\not\in \overline{B}_{R} $, $\displaystyle \forall t \in \left(t_{+}, \beta_{+}\right) $. 
+	De esta forma, 
+	\[ \|x\left(t\right)\| > R, \; \forall t \in \left(t_{+}, \beta_{+}\right) .\]
+	Por tanto, $\displaystyle \|x\left(t\right)\| \xrightarrow{t \to \beta_{+}} \infty$.	
+\end{proof}
+\begin{eg}[Problema 11, Hoja 1]
+Sea $\displaystyle f : \R^{2} \to \R $ de clase $\displaystyle \mathcal{C}^{1} $. Las soluciones del PVI
+\[
+\begin{cases}
+x' = f\left(t,x\right)\\
+x\left(t_{0}\right)=x_{0}
+\end{cases}
+,\]
+cumplen que $\displaystyle \beta_{+} = \infty $. Vamos a probar que si las soluciones están acotadas en $\displaystyle \left(t_{0}, \beta_{+}\right) $ entonces $\displaystyle \beta_{\infty} = \infty $. Distinguimos varios casos:
+\begin{itemize}
+	\item  Si $\displaystyle x_{0}\in [c,d] $, queremos ver que $\displaystyle x\left(t\right)\in [c,d] $, $\displaystyle \forall t \in [t_{0}, \beta_{+}) $. Si no es cierto, supongamos sin pérdida de generalidad que existe $\displaystyle T > t_{0} $ tal que $\displaystyle x\left(T\right)>d $. Tomamos 
+		\[t ^{*}=\sup \left\{ t \in \left[t_{0}, T\right]  \; : \; x\left(t\right)\leq d\right\} \in [t_{0}, T) .\]
+		Por continuidad tendremos que $\displaystyle x\left(t ^{*}\right)=d $ y $\displaystyle x\left(t\right)\geq d $ en $\displaystyle \left[t ^{*}, T\right]  $. Por el teorema del valor medio, existe $\displaystyle \xi \in \left(t ^{*}, T\right) $ tal que 
+		\[x'\left(\xi\right)=\frac{x\left(T\right)-x\left(t ^{*}\right)}{T-t ^{*}} > 0 .\]
+	Como $\displaystyle x'\left(\xi\right)=f\left(\xi, x\left(\xi\right)\right) $ y $\displaystyle x\left(\xi\right)\geq d $ tendremos que $\displaystyle f\left(\xi, x\left(\xi\right)\right)<0 $, que es una contradicción. 
+\item Si $\displaystyle x_{0} > d $, tenemos que ver que $\displaystyle x\left(t\right)\in [c,x_{0}] $, $\displaystyle \forall t \in [t_{0}, \beta_{+}) $. Existen dos posibilidades: o bien estoy siempre por encima de $\displaystyle d $ o bien en algún momento estoy por debajo. 
+\item Si $\displaystyle x_{0} < c $, tenemos que ver que $\displaystyle x\left(t\right)\in [x_{0}, d] $, $\displaystyle \forall t \in [t_{0}, \beta_{+}) $. 
+\end{itemize}
+Es interesante preguntarnos si podemos decir algo de $\displaystyle \beta_{-} $. La respuesta es que no. 
+\end{eg}
+\begin{lema}[Desigualdad de Grönwall]
+Dado un intervalo $\displaystyle I \subset \R $ que contiene $\displaystyle t_{0} \in \R $, sean $\displaystyle \alpha, \beta, u : I \to \R $ funciones continuas con $\displaystyle \beta\geq 0 $ tales que 
+\[u\left(t\right)\leq \alpha\left(t\right) + \left|\int^{t}_{t_{0}} \beta\left(s\right)u\left(s\right) \; d s\right|, \; \forall t \in I .\]
+Entonces, 
+\[u\left(t\right)\leq \alpha\left(t\right) + \left|\int^{t}_{t_{0}} \alpha\left(s\right)\beta\left(s\right)\exp\left( \left|\int^{t}_{s} \beta\left(r\right) \; dr\right|\right) \; d s\right| .\]
+En particular, si $\displaystyle \alpha\left(t\right)\equiv A $,
+\[u\left(t\right)\leq A\exp\left( \left|\int^{t}_{t_{0}} \beta\left(s\right) \; d s\right|\right) .\]
+Además, si además $\displaystyle \beta\left(t\right)\equiv B $,
+\[u\left(t\right)\leq Ae^{B \left|t-t_{0}\right|} .\]
+\end{lema}
+\begin{proof}
+Supongamos sin pérdida de generalidad que $\displaystyle t \geq t_{0} $. Definimos la función auxiliar
+\[v\left(t\right):=\int^{t}_{t_{0}} \beta\left(s\right)u\left(s\right) \; d s .\]
+Es sencillo ver que $\displaystyle v\left(t_{0}\right)=0 $. Tenemos que por el TFC
+\[v'\left(t\right)=\beta\left(t\right)u\left(t\right)\leq \beta\left(t\right)\alpha\left(t\right)+\beta\left(t\right) \left|\int^{t}_{t_{0}} \beta\left(s\right)u\left(s\right) \; d s\right|= \beta\left(t\right)\alpha\left(t\right)+\beta\left(t\right)v\left(t\right) .\]
+
+\end{proof}
 

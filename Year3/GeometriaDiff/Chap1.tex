@@ -70,7 +70,7 @@ No es posible con una parametrización inyectiva conseguir la traza de $\display
 \end{eg}
 
 \begin{definition}
-Sea $\displaystyle \alpha\left(t\right) $ una curva.
+Sea $\displaystyle \alpha\left(t\right) $ una curva plana.
 \begin{enumerate}
 	\item Se llama \textbf{rama infinita} cuando $\displaystyle \|\alpha\left(t\right)\| \to \infty $ si $\displaystyle t \to t_{0}^{\pm } $ con $\displaystyle t_{0} \in \R \cup \left\{ \pm \infty \right\}  $. \footnote{Todo el rato usamos la norma euclídea.} 
 	\item Se llama \textbf{rama parabólica} en la dirección $\displaystyle \left(v_{1}, v_{2}\right) \in \R^{2} / \left\{ \left(0,0\right)\right\}  $ unitario si
@@ -922,4 +922,114 @@ Así, es sencillo ver que
 Tenemos que $\displaystyle \hat{t}_{\alpha }=\frac{\left(-a \sin t, a \cos t, b\right)}{\sqrt{a^{2} + b^{2}}} $, $\displaystyle \hat{b}_{\alpha }=\frac{\left(b\sin t, - b \cos t, a\right)}{\sqrt{a^{2} + b^{2}}} $ y $\displaystyle \hat{n}_{\alpha }=\left(-\cos t, - \sin t, 0\right) $. Es sencillo ver que si $\displaystyle b = 0 $ se trata de una circunferencia. Si $\displaystyle b > 0 $ es una hélice positiva. Si $\displaystyle b < 0 $ es una hélice negativa.
 % calcular la torsión
 \end{eg}
+\begin{prop}
+Dada una curva birregular $\displaystyle \alpha : J \to \R^{3} $, 
+\[\frac{d\alpha }{d t}= v\hat{t}_{\alpha }, \quad \frac{d^{2}\alpha }{dt ^{2}}=\frac{dv}{dt}\hat{t}_{\alpha } + v^{2}\kappa_{\alpha }\hat{n}_{\alpha } .\]
+\[\frac{d^{3}\alpha }{dt ^{3}}=\left(\frac{d^{2}v}{dt ^{2}}-v^{3}\kappa_{\alpha }\right)\hat{t}_{\alpha } + \left(3 v\kappa_{\alpha }\frac{dv}{dt} + v^{2}\frac{d\kappa_{\alpha }}{dt}\right)\hat{n}_{\alpha }+v^{3}\kappa_{\alpha }\tau_{\alpha }\hat{b}_{\alpha } .\]
+\end{prop}
+\begin{proof}
+Las primeras dos igualdades ya las tenemos. Aplicaremos las siguientes igualdades que se demostrarán después:
+\[\frac{d\hat{t}_{\alpha }}{dt} = v\kappa_{\alpha }\hat{n}_{\alpha }\quad \text{y} \quad \frac{d\hat{n}_{\alpha }}{dt}=-v\kappa_{\alpha }\hat{t}_{\alpha } + v\tau_{\alpha }\hat{b}_{\alpha } .\]
+Así, tenemos que 
+\[
+\begin{split}
+	\frac{d^{3}\alpha }{dt ^{3}}= & \frac{d}{dt}\left(\frac{dv}{dt}\hat{t}_{\alpha }+v^{2}\kappa_{\alpha }\hat{n}_{\alpha }\right)=\frac{d^{2}v}{dt ^{2}}\hat{t}_{\alpha }+\frac{dv}{dt}v\kappa_{\alpha }\hat{n}_{\alpha } +\frac{d\left(v^{2}\kappa_{\alpha }\right)}{dt}\hat{n}_{\alpha } + v^{2}\kappa_{\alpha }\left(-v\kappa_{\alpha }\hat{t}_{\alpha }+v\tau_{\alpha }\hat{b}_{\alpha }\right)\\
+	= & \left(\frac{d^{2}v}{dt ^{2}}-v^{3}\kappa_{\alpha }^{2}\right)\hat{t}_{\alpha } + \left(3v\frac{dv}{dt}\kappa_{\alpha }+v^{2}\frac{d\kappa_{\alpha }}{dt}\right)\hat{n}_{\alpha }+v^{3}\kappa_{\alpha }\tau_{\alpha }\hat{b}_{\alpha }.
+\end{split}
+\]
+\end{proof}
+
+\begin{observation}
+Matricialmente podemos escribir, 
+\[\begin{pmatrix} \frac{d\alpha }{dt} \\ \frac{d^{2}\alpha }{dt ^{2}} \\ \frac{d^{3}\alpha }{dt ^{3}} \end{pmatrix}= \begin{pmatrix} v & 0 & 0 \\ * & v^{2}\kappa_{\alpha }& 0 \\ * & * & v^{2}\kappa_{\alpha }\tau_{\alpha } \end{pmatrix} .\]
+\end{observation}
+\begin{colorary}
+Dada una curva birregular $\displaystyle \alpha : J \to \R^{3} $ se tiene que 
+\[\tau_{\alpha }=\frac{\det\left(\alpha', \alpha'', \alpha'''\right)}{\|\alpha' \times \alpha''\|^{2}} .\]
+\end{colorary}
+\begin{proof}
+Tendremos que 
+\[\det\left(\alpha', \alpha'', \alpha'''\right)=\begin{vmatrix} v & \frac{dv}{dt} & * \\ 0 & v^{2} & * \\ 0 & 0 & v^{3}\kappa_{\alpha }\tau_{\alpha } \end{vmatrix} =v^{6}\kappa_{\alpha }^{2}\tau_{\alpha} .\]
+Así, despejando $\displaystyle \tau_{\alpha } $ en la igualdad anterior obtenemos que 
+\[\tau_{\alpha }=\frac{\det\left(\alpha', \alpha'', \alpha'''\right)}{v^{6}\kappa_{\alpha }^{2}}=\frac{\det\left(\alpha', \alpha'', \alpha'''\right)}{\|\alpha'\|^{6}\frac{\|\alpha'\times\alpha''\|^{2}}{\|\alpha'\|^{3}}}=\frac{\det\left(\alpha', \alpha'', \alpha'''\right)}{\|\alpha' \times \alpha''\|^{2}} .\]
+\end{proof}
+\begin{observation}
+\begin{enumerate}
+\item Es sencillo ver que $\displaystyle \tau_{\alpha } $ existe si y sólo si $\displaystyle \|\alpha' \times \alpha''\|\neq 0 $, es decir, si y sólo si es birregular. 
+\item Podemos hacer una comparación entre curvas planas y curvas espaciales:
+	\[\kappa_{\alpha }=\frac{\det\left(\alpha', \alpha''\right)}{\|\alpha'\|^{3}} \quad \text{y} \quad \tau_{\alpha }=\frac{\det\left(\alpha', \alpha '',\alpha '''\right)}{\|\alpha'\times\alpha''\|^{2}} .\]
+\end{enumerate}
+\end{observation}
+\begin{eg}[Cúbica alabeada]
+Dada $\displaystyle \alpha\left(t\right)=\left(t, t ^{2}, t ^{3}\right) $ tendremos que 
+\[\alpha'\left(t\right)=\left(1, 2t, 3t ^{2}\right), \; \alpha''\left(t\right)=\left(0,2,6t\right), \; \alpha'''\left(t\right)=\left(0,0,6\right) .\]
+De esta forma, tendremos que $\displaystyle \det\left(\alpha', \alpha'', \alpha'''\right)=12 $. Por otro lado,
+\[\alpha' \times \alpha'' = \begin{vmatrix} \vec{e}_{1} & 1 & 0 \\ \vec{e}_{2} & 2t & 2 \\ \vec{e}_{3} & 3t ^{2} & 6t \end{vmatrix} =\left(6t ^{2}, - 6t, 2\right) .\]
+Por tanto, 
+\[\tau_{\alpha }=\frac{12}{4 + 36t ^{2} + 36t ^{4}} .\]
+Además, 
+\[\kappa_{\alpha }=\frac{\sqrt{4 + 36t ^{2}+36t ^{4}}}{\sqrt{\left(1 + 4t ^{2} + 9t ^{4}\right)^{3}}} .\]
+Podemos observar que $\displaystyle \kappa_{\alpha } $ y $\displaystyle \tau_{\alpha } $ son pares y ambas tienden a 0 cuando $\displaystyle t \to \infty $. Además, el máximo de $\displaystyle \kappa_{\alpha } $ se alcanza en $\displaystyle \kappa_{\alpha }\left(0\right)=2 $ y el máximo de $\displaystyle \tau_{\alpha } $ se alcanza en $\displaystyle \tau_{\alpha }\left(0\right)=3 $. 
+\end{eg}
+\begin{observation}[Unidades]
+	Las unidades de $\displaystyle \kappa_{\alpha } $ son $\displaystyle \frac{1}{m} $ y las de $\displaystyle \tau_{\alpha } $ también son $\displaystyle \frac{1}{m} $.  
+\end{observation}
+\begin{eg}
+Si $\displaystyle \beta\left(s\right)=\alpha\left(-s\right) $. Tendremos que 
+\[
+\begin{cases}
+\kappa_{\beta }\left(s\right)=\kappa_{\alpha }\left(-s\right) \\
+\tau_{\beta }\left(s\right)=\tau_{\alpha }\left(-s\right)
+\end{cases}
+.\]
+\end{eg}
+\begin{proof}
+Tenemos que 
+\[\beta'\left(s\right)=-\alpha'\left(-s\right), \quad \beta''\left(s\right)=\alpha''\left(-s\right) , \quad \beta'''\left(s\right)=-\alpha'''\left(-s\right).\]
+Así, tenemos que 
+\[\kappa_{\beta }= \frac{\|\beta' \times \beta''\|}{\|\beta'\|^{3}}=\frac{\|-\alpha'\left(-s\right)\times\alpha''\left(-s\right)\|}{\|-\alpha'\left(s\right)\|^{3}} = \frac{\|\alpha'\left(-s\right) \times \alpha''\left(-s\right)\|}{\|\alpha'\left(-s\right)\|^{3}}=\kappa_{\alpha }\left(-s\right) .\]
+Por otro lado, 
+\[\tau_{\beta }=\frac{\det\left(\beta'\left(s\right), \beta''\left(s\right), \beta'''\left(s\right)\right)}{\|\beta'\left(s\right)\times\beta''\left(s\right)\|^{2}} = \frac{\det\left(-\alpha'\left(-s\right), \alpha''\left(-s\right), -\alpha'''\left(-s\right)\right)}{\|\alpha'\left(-s\right)\times\alpha''\left(-s\right)\|^{2}}=\tau_{\alpha } .\]
+\end{proof}
+\section{Fórmulas de Frenet y teorema fundamental}
+\begin{theorem}[Teorema de Frénet]
+Sea $\displaystyle \alpha : J \to \R^{3} $ una curva birregular p.p.a. Entonces,
+\[\frac{d\hat{t}_{\alpha }}{d s}=\kappa_{\alpha }\hat{n}_{\alpha }, \quad \frac{d\hat{n}_{\alpha }}{d s}=-\kappa_{\alpha }\hat{t}_{\alpha } + \tau_{\alpha }\hat{b}_{\alpha }, \quad \frac{d\hat{b}_{\alpha }}{d s}=-\tau_{\alpha }\hat{n}_{\alpha } .\]
+\end{theorem}
+\begin{proof}
+La primera y la última igualdad vienen de la definición. Por otro lado, $\displaystyle \frac{d\hat{n}_{\alpha }}{d s}\perp \hat{n}_{\alpha } $, por lo que $\displaystyle \frac{d\hat{n}_{\alpha }}{d s }=a\hat{t}_{\alpha } + b\hat{b}_{\alpha } $. Así, 
+\[a = \left\langle \frac{d\hat{n}_{\alpha }}{d s}, \hat{t}_{\alpha } \right\rangle =-\left\langle \hat{n}_{\alpha }, \frac{d\hat{t}_{\alpha }}{d s} \right\rangle =-\left\langle \hat{n}_{\alpha }, \kappa_{\alpha }\hat{n}_{\alpha } \right\rangle =-\kappa_{\alpha} .\]
+\[ b = \left\langle \frac{d\hat{n}_{\alpha }}{d s}, \hat{b}_{\alpha } \right\rangle = - \left\langle \hat{n}_{\alpha }, \frac{d\hat{b}_{\alpha }}{d s} \right\rangle =-\left(-\tau_{\alpha}\right)=\tau_{\alpha} .\]
+\end{proof}
+
+\begin{observation}
+Matricialmente tendremos que 
+\[\begin{pmatrix} \hat{t}_{\alpha } \\ \hat{n}_{\alpha }\\ \hat{b}_{\alpha } \end{pmatrix}=\begin{pmatrix} 0 & \kappa_{\alpha } & 0 \\ -\kappa_{\alpha } & 0 & \tau_{\alpha }\\0 & -\tau_{\alpha }& 0 \end{pmatrix}\begin{pmatrix} \hat{t}_{\alpha } \\ \hat{n}_{\alpha } \\ \hat{b}_{\alpha } \end{pmatrix} .\]
+\end{observation}
+\begin{observation}
+Es sencillo ver que $\displaystyle \tau_{\alpha }=\left\langle \frac{d\hat{b}_{\alpha }}{d s}, \hat{n}_{\alpha } \right\rangle =\left\langle \frac{d\hat{n}_{\alpha }}{d s}, \hat{b}_{\alpha } \right\rangle  $. 
+\end{observation}
+\begin{colorary}
+En parámetro $\displaystyle t $, 
+\[\frac{d\hat{t}_{\alpha }}{d t}=v\kappa_{\alpha }\hat{n}_{\alpha }, \quad \frac{d\hat{n}_{\alpha }}{d t}=-v\kappa_{\alpha }\hat{t}_{\alpha } + v\tau_{\alpha }\hat{b}_{\alpha }, \quad \frac{d\hat{b}_{\alpha }}{d t}=-v\tau_{\alpha }\hat{n}_{\alpha } .\]
+\end{colorary}
+Sea $\displaystyle \phi:\R^{3}\to \R^{3} $ un movimiento rígido, es decir $\displaystyle \mathcal{M}\left(\phi\right)=A \in O_{3}\left(\R\right) $. Decimos que el movimiento es positivo si $\displaystyle \det\left(A\right)=1 $ y que es negativo si $\displaystyle \det\left(A\right)=-1 $. Los positivos preservan orientación, es decir, lleva bases positivas en bases positivas. 
+Los negativos invierten orientación, esto es, lleva bases positivas en bases negativas. Podemos observar que 
+\[\det\left(Au, Av, Aw\right)=\pm \det\left(u,v,w\right) .\]
+Además, $\displaystyle A u \times A v = \pm A\left(u \times v\right) $. En efecto, si $\displaystyle z = Aw $
+\[\left\langle Au \times Av, z \right\rangle =\det\left(Au, Av, z\right)=\det\left(Au, Av, Aw\right)=\pm \det\left(u,v,w\right)=\pm\left\langle u \times v, w \right\rangle =\pm \left\langle A\left(u\times v\right), Aw \right\rangle =\pm \left\langle A\left(u \times v\right), z \right\rangle  .\]
+
+\begin{definition}[Curvas congruentes]
+Dos curvas $\displaystyle \alpha\left(t\right) $ y $\displaystyle \beta\left(t\right) $ son congruentes si existe $\displaystyle \phi:\R^{3} \to \R^{3} $ movimiento rígido con $\displaystyle \beta\left(t\right)=\phi\left(\alpha\left(t\right)\right)=A\alpha\left(t\right) + B $.
+\end{definition}
+\begin{lema}
+\begin{enumerate}
+\item $\displaystyle \alpha\left(t\right) $ p.p.a si y solo si $\displaystyle \beta\left(t\right) $ p.p.a. 
+\item $\displaystyle \alpha\left(t\right) $ es birregular si y solo si $\displaystyle \beta\left(t\right) $ es birregular. 
+\item $\displaystyle \kappa_{\beta }\left(t\right)=\kappa_{\alpha }\left(t\right) $, $\displaystyle \forall t $. 
+\item $\displaystyle \tau_{\beta }\left(t\right)=\pm \tau_{\alpha }\left(t\right) $, $\displaystyle \forall t $ con $\displaystyle \det\left(A\right)=\pm 1 $. 
+\end{enumerate}
+
+\end{lema}
+
 
