@@ -106,7 +106,7 @@ cumplen que $\displaystyle \beta_{+} = \infty $. Vamos a probar que si las soluc
 Es interesante preguntarnos si podemos decir algo de $\displaystyle \beta_{-} $. La respuesta es que no. 
 \end{eg}
 \begin{lema}[Desigualdad de Grönwall]
-Dado un intervalo $\displaystyle I \subset \R $ que contiene $\displaystyle t_{0} \in \R $, sean $\displaystyle \alpha, \beta, u : I \to \R $ funciones continuas con $\displaystyle \beta\geq 0 $ tales que 
+Dado un intervalo $\displaystyle I \subset \R $ que contiene $\displaystyle t_{0} \in \R $, sean $\displaystyle \alpha, \beta, u : I \to [0, \infty) $ funciones continuas tales que 
 \[u\left(t\right)\leq \alpha\left(t\right) + \left|\int^{t}_{t_{0}} \beta\left(s\right)u\left(s\right) \; d s\right|, \; \forall t \in I .\]
 Entonces, 
 \[u\left(t\right)\leq \alpha\left(t\right) + \left|\int^{t}_{t_{0}} \alpha\left(s\right)\beta\left(s\right)\exp\left( \left|\int^{t}_{s} \beta\left(r\right) \; dr\right|\right) \; d s\right| .\]
@@ -117,9 +117,59 @@ Además, si además $\displaystyle \beta\left(t\right)\equiv B $,
 \end{lema}
 \begin{proof}
 Supongamos sin pérdida de generalidad que $\displaystyle t \geq t_{0} $. Definimos la función auxiliar
-\[v\left(t\right):=\int^{t}_{t_{0}} \beta\left(s\right)u\left(s\right) \; d s .\]
-Es sencillo ver que $\displaystyle v\left(t_{0}\right)=0 $. Tenemos que por el TFC
-\[v'\left(t\right)=\beta\left(t\right)u\left(t\right)\leq \beta\left(t\right)\alpha\left(t\right)+\beta\left(t\right) \left|\int^{t}_{t_{0}} \beta\left(s\right)u\left(s\right) \; d s\right|= \beta\left(t\right)\alpha\left(t\right)+\beta\left(t\right)v\left(t\right) .\]
-
+\[v\left(t\right):=\int^{t}_{t_{0}} \beta\left(s\right)u\left(s\right) \; d s \geq 0.\]
+Es sencillo ver que $\displaystyle v\left(t_{0}\right)=0 $ y $\displaystyle v'\left(t\right)=\beta\left(t\right)u\left(t\right) $. Así, 
+\[v'\left(t\right)\leq \beta\left(t\right)\left(\alpha\left(t\right)+v\left(t\right)\right) \Rightarrow v'\left(t\right)-\beta\left(t\right)v\left(t\right)\leq \beta\left(t\right)\alpha\left(t\right) .\]
+Multiplicando por $\displaystyle \exp\left(-\int^{t}_{t_{0}} \beta\left(r\right) \; dr\right) $ tenemos que 
+\[v'\left(t\right)\exp\left(-\int^{t}_{t_{0}} \beta\left(r\right) \; dr\right)-\beta\left(t\right)v\left(t\right)\exp\left(-\int^{t}_{t_{0}} \beta\left(r\right) \; dr\right)\leq \beta\left(t\right)\alpha\left(t\right)\exp\left(-\int^{t}_{t_{0}} \beta\left(r\right) \; dr\right) .\]
+\[\Rightarrow \frac{d}{dt}\left(v\left(t\right)\exp\left(-\int^{t}_{t_{0}} \beta\left(r\right) \; dr\right)\right)\leq \beta\left(t\right)\alpha\left(t\right)\exp\left(-\int^{t}_{t_{0}} \beta\left(r\right) \; dr\right) .\]
+Integrando a ambos lados de la desigualdad,
+\[\int^{t}_{t_{0}} \frac{d}{dt}\left(v\left(t\right)\exp\left(-\int^{t}_{t_{0}} \beta\left(r\right) \; dr\right)\right) \; dt \leq \int^{t}_{t_{0}} \beta\left(s\right)\alpha\left(s\right)\exp\left(-\int^{s}_{t_{0}} \beta\left(r\right) \; dr\right) \; d s .\]
+Donde obtenemos que 
+\[
+\begin{split}
+	v\left(t\right)\leq & \exp\left(-\int^{t}_{t_{0}} \beta\left(r\right) \; dr\right)\int^{t}_{t_{0}} \beta\left(s\right)\alpha\left(s\right)\exp\left(-\int^{s}_{t_{0}} \beta\left(r\right) \; dr\right) \; d s \\
+	= &  \int^{t}_{t_{0}} \beta\left(s\right)\alpha\left(s\right)\exp\left(\int^{t}_{s} \beta\left(r\right) \; dr\right) \; d s.
+\end{split}
+\]
+Sustituyendo $\displaystyle u\left(t\right)\leq \alpha\left(t\right) + v\left(t\right) $ obtenemos la desigualdad deseada. \\ \\
+Supongamos ahora que $\displaystyle \alpha\left(t\right)\equiv A $, entonces tendremos que 
+\[
+\begin{split}
+	u\left(t\right)\leq & A + \int^{t}_{t_{0}} A\beta\left(s\right)\exp\left(\left|\int^{t}_{s} \beta\left(r\right) \; dr\right|\right) \; d s = A + A\int^{t}_{t_{0}} - \left(\exp \left|\int^{t}_{s} \beta\left(r\right) \; dr\right|\right)' \; d s \\
+	= & A - A \left[\exp \left|\int^{t}_{s} \beta\left(r\right) \; dr\right|\right] ^{t}_{t_{0}} =  A \exp\left( \left|\int^{t}_{t_{0}} \beta\left(r\right) \; dr\right|\right) .
+\end{split}
+\]
+Si además $\displaystyle \beta\left(t\right)\equiv B $, la desigualdad se sigue de la anterior de forma trivial.
 \end{proof}
+\begin{prop}
+Sea $\displaystyle f : \R \times \R^{n} \to \R^{n} $ continua y localmente Lipschitz respecto a la segunda variable tal que existen $\displaystyle a, b \geq 0 $ con
+\[ \|f\left(t,x\right)\| \leq a + b \|x\|,  \; \forall \left(t,x\right)\in \R \times \R^{n} .\]
+Entonces, para toda condición inicial $\displaystyle \left(t_{0}, x_{0}\right)\in \R \times \R^{n} $, la solución del PVI es tal que $\displaystyle \beta_{+ }= \infty $. El resultado es análogo para $\displaystyle \beta_{-} $. 
+\end{prop}
+\begin{proof}
+Si $\displaystyle x\left(t\right) $ es solución del PVI entonces tendremos que 
+\[x\left(t\right)=x_{0} + \int^{t}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s, \; \forall t \in \left(\beta_{- }, \beta_{+ }\right) .\]
+Tomando módulos y considerando el caso $\displaystyle t \geq t_{0} $,
+\[
+\begin{split}
+	\|x\left(t\right)\| = & \left\|x_{0} +\int^{t}_{t_{0}} f\left(s, x\left(s\right)\right) \; d s\right\|\leq \|x_{0}\| + \int^{t}_{t_{0}} \|f\left(s, x\left(s\right)\right)\| \; d s 
+	\leq  \|x_{0}\| + \int^{t}_{t_{0}} a + b \|x\left(s\right)\| \; d s .
+\end{split}
+\]
+Es sencillo ver que 
+\[a + b\|x\left(t\right)\| \leq a + b\|x_{0}\| + b \int^{t}_{t_{0}} a + b \|x\left(s\right)\| \; d s  .\]
+Aplicando la desigualdad de Grönwall con $\displaystyle u\left(t\right)=a + b \|x\left(t\right)\| $, $\displaystyle B = b $ y $\displaystyle A = a + b\|x_{0}\| $, para $\displaystyle t \in [t_{0}, \beta_{+ }) $
+\[a + b\|x\left(t\right)\| \leq \left(a + b \|x_{0}\|\right)e^{B\left(t-t_{0}\right)} \Rightarrow \|x\left(t\right)\| \leq \frac{a+b\|x_{0}\|}{b}e^{B\left(t-t_{0}\right)}-\frac{a}{b} .\]
+Supongamos que $\displaystyle \beta_{+}<\infty $. Entonces, debe ser que $\displaystyle \lim_{x \to \beta_{+ }}\|x\left(t\right)\| =\infty $ pero por la desigualdad anterior esto no puede ser. Así, debe ser que $\displaystyle \beta_{+ }=\infty  $. 
+\end{proof}
+\begin{eg}[Problema 9, Hoja 1]
+	Nos dan la EDO
+	\[x' = \frac{x^{3}}{1 + x^{2}} .\]
+	Tenemos que demostrar que para cualquier condición inicial la solución está definida en $\displaystyle \R $, es decir, $\displaystyle \left(\beta_{-}, \beta_{+ }\right)=\R $. Se puede demostrar con la versión global del teorema Picard-Lindelöf. Intentemos aplicar la proposición anterior
+	\[ \left|\frac{x^{3}}{1 + x^{2}}\right| = \left|x-\frac{x}{1 + x^{2}}\right| \leq \left|1-\frac{1}{1 + x^{2}}\right| \left|x\right|\leq \left(1 + \frac{1}{ \left|1 + x^{2}\right|}\right) \left|x\right|\leq \left(1 + M\right) \left|x\right| .\]
+También podríamos haber hecho
+\[ \left|\frac{x^{3}}{1 + x^{2}}\right| = \frac{ \left|x\right|^{3}}{ \left|1 + x^{2}\right|}\leq \frac{ \left|x\right|^{3}}{ \left|x\right|^{2}}= \left|x\right| .\]
+Por la proposición tenemos automáticamente que $\displaystyle \left(\beta_{-}, \beta_{+ }\right)=\R $. 
+\end{eg}
 

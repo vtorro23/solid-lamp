@@ -1,0 +1,123 @@
+\chapter{Dependencia continua respecto condiciones iniciales y parámetros}
+\section{Flujo de sistemas de EDOS}
+\begin{definition}[Flujo]
+Sean $\displaystyle f : D \subset \R \times \R^{n} \to \R^{n} $ continua y localmente Lipschitz respecto de la segunda variable. Dado $\displaystyle \left(t_{0}, x_{0}\right)\in D $ definimos el \textbf{flujo} $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ como la única solución del PVI con la condición inicial $\displaystyle \left(t_{0}, x_{0}\right) $. 
+\end{definition}
+\begin{observation}
+	Tenemos que $\displaystyle \varphi : \tilde{D} \subset \R \times \R \times \R^{n} \to \R^{n} $ con 
+	\[\tilde{D} = \left\{ \left(t; t_{0}, x_{0}\right) \; : \; \left(t_{0}, x_{0}\right)\in D, t \in \left(\beta_{-}\left(t_{0}, x_{0}\right), \beta_{+}\left(t_{0}, x_{0}\right)\right)\right\}  \]
+	abierto.
+\end{observation}
+\begin{observation}
+Por definición el flujo satisface
+\[
+\frac{\partial \varphi}{\partial t}\left(t; t_{0}, x_{0}\right)=f\left(t, \varphi\left(t; t_{0}, x_{0}\right)\right) \quad \text{y} \quad \varphi\left(t_{0}; t_{0}, x_{0}\right)=x_{0}
+.\]
+\end{observation}
+\begin{lema}[Propiedad del semigrupo]
+Para todo $\displaystyle \left(t_{0}, x_{0}\right)\in D $ y $\displaystyle s,t\in \left(\beta_{-}\left(t_{0}, x_{0}\right), \beta_{+ }\left(t_{0}, x_{0}\right)\right) $ se cumple que $\displaystyle \varphi\left(t; t_{0}, x_{0}\right)=\varphi\left(t; s, \varphi\left(s; t_{0}, x_{0}\right)\right) $. 
+\end{lema}
+\begin{proof}
+Fijamos $\displaystyle \left(t_{0}, x_{0}\right)\in D $ y $\displaystyle s \in \left(\beta_{- }, \beta_{+ }\right) $. Definimos
+\[y\left(t\right):=\varphi\left(t; t_{0}, x_{0}\right)\quad \text{y} \quad z\left(t\right):=\varphi\left(t; s, \varphi\left(s; t_{0}, x_{0}\right)\right) .\]
+Tomamos también $\displaystyle x^{*} : = \varphi\left(s; t_{0}, x_{0}\right) $. Tenemos que 
+\[y'\left(t\right)=\frac{\partial \varphi}{\partial t}\left(t; t_{0}, x_{0}\right)=f\left(t, y\left(t\right)\right) \quad \text{y} \quad y\left(s\right)=\varphi\left(s; t_{0}, x_{0}\right)=x^{*} .\]
+Por otro lado, 
+\[z'\left(t\right)=\frac{\partial \varphi}{\partial t}\left(t; s, \varphi\left(s; t_{0}, x_{0}\right)\right)=f\left(t, z\left(t\right)\right) .\]
+Además, 
+\[z\left(s\right)=\varphi\left(s; s, \varphi\left(s; t_{0}, x_{0}\right)\right)=\varphi\left(s; t_{0}, x_{0}\right)=x^{*} .\]
+Tanto $\displaystyle y $ como $\displaystyle z $ son solución del mismo PVI y por unicidad de solución debe ser que $\displaystyle y\left(t\right)=z\left(t\right) $. 
+\end{proof}
+\section{Continuidad del flujo}
+\begin{prop}[Dependencia respecto a $\displaystyle x_0 $]
+Sea $\displaystyle f : D \subset \R \times \R^{n} \to \R^{n} $ continua y localmente Lipschitz respecto a la segunda variable y $\displaystyle \left(t_{0}, y_{0}\right), \left(t_{0}, z_{0}\right)\in D $ con
+\[t_{0} \in I = \left[a,b\right] \subset\left(\beta_{-}\left(t_{0}, y_{0}\right), \beta_{+ }\left(t_{0}, y_{0}\right)\right)\cap \left(\beta_{-}\left(t_{0}, z_{0}\right), \beta_{+ }\left(t_{0}, z_{0}\right)\right) \]
+y $\displaystyle K \subset D $ compacto tal que $\displaystyle \left(t, \varphi\left(t; t_{0}, y_{0}\right)\right), \left(t, \varphi\left(t; t_{0}, z_{0}\right)\right)\in K $, $\displaystyle \forall t \in I $. 
+Entonces, 
+\[ \|\varphi\left(t; t_{0}, y_{0}\right)-\varphi\left(t; t_{0}, z_{0}\right)\|\leq \|y_{0}-z_{0}\|e^{L \left|t-t_{0}\right|} , \; \forall t \in I\]
+con $\displaystyle L \geq 0 $ constante de Lipschitz de $\displaystyle f $ en $\displaystyle K $. 
+\end{prop}
+\begin{proof}
+Denominamos 
+\[y\left(t\right):=\varphi\left(t; t_{0}, y_{0}\right)\quad \text{y} \quad z\left(t\right):=\varphi\left(t; t_{0}, z_{0}\right) .\]
+Satisfacen que 
+\[y\left(t\right)=y_{0} + \int^{t}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s \quad \text{y} \quad z\left(t\right)=z_{0}+\int^{t}_{t_{0}} f\left(s, z\left(s\right)\right) \; d s .\]
+Restando ambas igualdades tenemos que 
+\[
+\begin{split}
+	\left\|y\left(t\right)-z\left(t\right)\right\| = & \left\|y_{0}-z_{0} + \int^{t}_{t_{0}} f\left(s,y\left(s\right)\right)-f\left(s,z\left(s\right)\right) \; d s\right\|\\
+	\leq & \left\|y_{0}-z_{0}\right\| + \left\|\int^{t}_{t_{0}} f\left(s, y\left(s\right)\right)-f\left(s, z\left(s\right)\right) \; d s\right\|\\
+	\leq & \|y_{0}-x_{0}\| + L \left\|\int^{t}_{t_{0}} \left\|y\left(s\right)-z\left(s\right)\right\| \; d s\right\|.
+\end{split}
+\]
+Por la desigualdad de Grönwall tenemos que si tomamos $\displaystyle u\left(t\right)= \left\|y\left(t\right)-z\left(t\right)\right\| $, $\displaystyle A = \|y_{0}-z_{0}\| $ y $\displaystyle B = L $, tenemos que 
+\[\|y\left(t\right)-z\left(t\right)\| \leq \|y_{0}-x_{0}\|e^{L \left|t-t_{0}\right|} .\]
+\end{proof}
+\begin{prop}[Dependencia respecto a $\displaystyle t_0 $]
+Sea $\displaystyle f : D \subset \R \times \R^{n} \to \R^{n} $ continua y localmente Lipschitz respecto de la segunda variable, $\displaystyle \left(t_{0}, x_{0}\right), \left(t_{1}, x_{0}\right)\in D $, 
+\[t_{0}, t_{1} \in I = \left[a,b\right] \subset \left(\beta_{-}\left(t_{0}, x_{0}\right), \beta_{+ }\left(t_{0}, x_{0}\right)\right) \cap \left(\beta_{- }\left(t_{1}, x_{0}\right), \beta_{+ }\left(t_{1},x_{0}\right)\right) \]
+y $\displaystyle K \subset D $ compacto tal que $\displaystyle \left(t, \varphi\left(t; t_{0}, x_{0}\right)\right), \left(t, \varphi\left(t; t_{1}, x_{0}\right)\right)\in K $, $\displaystyle \forall t \in I $. Entonces,
+\[\|\varphi\left(t; t_{0}, x_{0}\right)-\varphi\left(t; t_{1}, x_{0}\right)\| \leq M \left|t_{0}-t_{1}\right|e^{L \left|t-t_{1}\right|} ,\]
+con $\displaystyle L \geq 0 $ constante de Lipschitz de $\displaystyle f $ en $\displaystyle K $ y $\displaystyle M $ máximo de $\displaystyle \left|f\right| $ en $\displaystyle K $.
+\end{prop}
+\begin{proof}
+Definimos
+\[y\left(t\right)=\varphi\left(t; t_{0}, x_{0}\right)\quad \text{y} \quad z\left(t\right)=\varphi\left(t; t_{1}, x_{0}\right) .\]
+Tenemos que satisfacen 
+\[ y\left(t\right)=x_{0} + \int^{t}_{t_{0}} f\left(s,y\left(s\right)\right) \; d s \quad \text{y} \quad z\left(t\right)=x_{0} +\int^{t}_{t_{1}} f\left(s, z\left(s\right)\right) \; d s .\]
+Restando ambas expresiones obtenemos, 
+\[
+\begin{split}
+	\left\|y\left(t\right)-z\left(t\right)\right\|= & \left\|\int^{t}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s + \int^{t}_{t_{1}} f\left(s, z\left(s\right)\right) \; d s\right\| \\
+	= & \left\|\int^{t_{1}}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s + \int^{t}_{t_{1}} f\left(s,y\left(s\right)\right) \; d s + \int^{t}_{t_{1}} f\left(s, z\left(s\right)\right) \; d s\right\| \\
+	\leq & \left\|\int^{t_{1}}_{t_{0}} f\left(s,y\left(s\right)\right) \; d s\right\| + \left\|\int^{t}_{t_{1}} f\left(s, y\left(s\right)\right)-f\left(s, z\left(s\right)\right) \; d s \right\| \\
+	\leq & M \left|t_{1}-t_{0}\right| + L \left\|\int^{t}_{t_{1}} \|y\left(s\right)-z\left(s\right)\| \; d s\right\|.
+\end{split}
+\]
+Aplicando la desigualdad de Grönwall, 
+\[\|y\left(t\right)-z\left(t\right)\| \leq M \left|t_{1}-t_{0}\right|e^{L \left|t-t_{1}\right|} .\]
+\end{proof}
+\begin{theorem}[Continuidad del flujo]
+	Sea $\displaystyle f : D \subset \R \times \R^{n} \to \R^{n} $ continua y localmente Lipschitz respecto de la segunda variable. Entonces $\displaystyle \varphi : \tilde{D} \subset \R \times \R \times \R^{n} \to \R^{n} $ es una función continua. 
+\end{theorem}
+\begin{proof}
+	Fijamos $\displaystyle \left(\tau_{0}, t_{0}, x_{0}\right)\in \tilde{D} $ y veamos que $\displaystyle \varphi $ es continua en ese punto. Sea $\displaystyle \left[a,b\right] \subset I_{\left(t_{0}, x_{0}\right)} $ tal que $\displaystyle \tau_{0}, t_{0} \in \left[a,b\right]  $. Tomamos $\displaystyle \epsilon > 0 $ pequeño tal que el compacto
+	\[K_{\epsilon }:= \left\{ \left(t,x\right) \; : \; \|x-\varphi\left(t; t_{0}, x_{0}\right)\| < 2\epsilon , t \in \left[a,b\right] \right\}  \subset D.\]
+Elegimos 
+\[\delta_{1} = \frac{\epsilon }{1+M}\frac{1}{1 + e^{L\left(b-a\right)}} > 0 ,\]
+con $\displaystyle M = \max_{K_{\epsilon }} \left|f\right| $ y $\displaystyle L $ es la constante de Lipschitz de $\displaystyle f $ en $\displaystyle K_{\epsilon } $. Distinguimos varios pasos en lo que queda de demostración.
+\begin{itemize}
+	\item Si $\displaystyle \left|t-t_{0}\right|<\delta _{1} $ y $\displaystyle \|x_{1}-x_{0}\| < \delta _{1} $, queremos ver que $\displaystyle \left(t, \varphi\left(t; t_{1}, x_{1}\right)\right) \in K_{\epsilon } $, $\displaystyle \forall t \in \left[a,b\right]  $. Definimos $\displaystyle \left[c,d\right]  $ tal que sea el intervalo más grande contenido en $\displaystyle \left[a,b\right]  $ en el que se cumple la propiedad deseada. Podemos comprobar que $\displaystyle t_{1}\in \left[c,d\right]  $. 
+Llamamos $\displaystyle z\left(t\right)=\varphi\left(t; t_{1}, x_{1}\right) $. Entonces tenemos que 
+\[z\left(t\right)=x_{1} + \int^{t}_{t_{1}} f\left(s, z\left(s\right)\right) \; d s, \; \forall t \in I_{\left(t_{1}, x_{1}\right)} .\]
+En particular, es cierto en $\displaystyle \left[c,d\right]  $. De esta forma para cada $\displaystyle t \in \left[c,d\right]  $ se tiene que 
+\[
+\begin{split}
+	\|z\left(t\right)-\varphi\left(t; t_{0}, x_{0}\right)\| = & \left\|x_{1}-\varphi\left(t; t_{0}, x_{0}\right)+\int^{t}_{t_{1}} f\left(s,z\left(s\right)\right) \; d s\right\| \\
+	\leq & \|x_{1}-x_{0}\| + \left\|\int^{t}_{t_{1}} f\left(s,z\left(s\right)\right) \; d s-\int^{t}_{t_{0}} f\left(s, \varphi\left(t; t_{0}, x_{0}\right)\right) \; d s\right\| \\
+	\leq & \|x_{1}-x_{0}\| + \left\|\int^{t_{0}}_{t_{1}} \|f\left(s, z\left(s\right)\right)\| \; d s\right\| + \left\|\int^{t}_{t_{0}} \|f\left(s, z\left(s\right)\right)-f\left(s, \varphi\left(s; t_{0}, x_{0}\right)\right)\| \; d s\right\|\\
+	\leq & \|x_{1}-x_{0}\| + M \left|t_{1}-t_{0}\right| + L\left\|\int^{t_{1}}_{t_{0}} \|z\left(s\right)-\varphi\left(s; t_{0}, x_{0}\right) \; d s\right\|
+\end{split}
+\]
+Aplicando la desigualdad de Grönwall nos queda que para todo $\displaystyle t \in \left[c,d\right]  $,
+\[\|z\left(t\right)-\varphi\left(t; t_{0}, x_{0}\right)\| \leq \left(\|x_{1} -x_{0}\| + M \left|t_{0}-t_{1}\right|\right)e^{L \left|t-t_{0}\right|} \leq \delta_{1}\left(1+M\right)e^{L\left(b-a\right)}<\epsilon   .\]
+Si $\displaystyle \left[c,d\right] \neq \left[a,b\right]  $ tenemos que en $\displaystyle t = c $ o $\displaystyle t = d $ tendremos que 
+\[ \|z\left(t\right)-\varphi\left(t; t_{0}, x_{0}\right)\|=2\epsilon  ,\]
+que es una contradicción con la desigualdad que hemos obtenido anteriormente. Así, debe ser que $\displaystyle \left[c,d\right] =\left[a,b\right]  $. 
+\item Tomamos $\displaystyle \delta \in \left(0, \delta _{1}\right) $ de forma que $\displaystyle \left(t_{0}-\delta, t_{0} + \delta \right) $ y $\displaystyle \left(\tau_{0}-\delta, \tau_{0} + \delta \right) $ estén contenidos en $\displaystyle \left[a,b\right]  $.
+	Vamos a ver que si $\displaystyle \|\left(\tau_{0}, t_{0}, x_{0}\right)-\left(\tau_{1}, t_{1}, x_{1}\right)\| < \delta  $, se tiene que 
+	\[
+	\begin{split}
+		\|\varphi\left(\tau_{0}, t_{0}, x_{0}\right)-\varphi\left(\tau_{1}, t_{1}, x_{1}\right)\| \leq & \|\varphi\left(\tau_{0}, t_{0}, x_{0}\right)-\varphi\left(\tau_{1}, t_{0}, x_{0}\right)\| + \|\varphi\left(\tau_{1}, t_{0}, x_{0}\right)-\varphi\left(\tau_{1}, t_{1}, x_{1}\right)\| \\
+		= & \left\|\int^{\tau_{1}}_{\tau_{0}} f\left(s, \varphi\left(s, t_{0}, x_{0}\right)\right) \; d s\right\| + M \left|t_{0}-t_{1}\right|e^{L \left(b-a\right)} + \|x_{0}-x_{1}\|e^{L\left(b-a\right)} \\
+		\leq & M \|\tau_{1} -\tau_{0}\| + M \left|t_{0}-t_{1}\right|e^{L\left(b-a\right)} + \|x_{0}-x_{1}\|e^{L\left(b-a\right)} < \epsilon .
+	\end{split}
+	\]
+	
+\end{itemize}
+\end{proof}
+
+\begin{observation}
+Hemos demostrado que el flujo no es sólo continuo sino que también es localmente Lipschitz. 
+\end{observation}
+

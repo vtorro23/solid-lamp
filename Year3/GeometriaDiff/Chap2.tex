@@ -1,0 +1,107 @@
+\chapter{Teoría local de superficies}
+\section{Superficies parametrizadas}
+\begin{definition}[Superficie parametrizada]
+	Una \textbf{superficie parametrizada} en $\displaystyle \R^{3} $ es  
+	\[\textbf{x} : U \to \R^{3} : \left(u,v\right)\to \left(x\left(u,v\right), y\left(u,v\right), z\left(u,v\right)\right) .\]
+	con $\displaystyle U\subset \R^{2} $ abierto conexo y $\displaystyle \textbf{x} $ de clase $\displaystyle \mathcal{C}^{\infty } $. 
+\end{definition}
+\begin{definition}[Traza]
+Decimos que $\displaystyle S = \textbf{x} \left(U\right) $ es la \textbf{traza} de la superficie parametrizada.
+\end{definition}
+\begin{eg}
+	\begin{enumerate}
+	\item Un plano parametrizado 
+		\[\left(x,y,z\right)=\left(a_{1}, a_{2}, a_{3}\right) + u\left(b_{1}, b_{2}, b_{3}\right)+ v\left(c_{1}, c_{2}, c_{3}\right) .\]
+	De esta forma tenemos que $\displaystyle S = \textbf{x} \left(\R^{2}\right)=A + \mathcal{L}\left(\vec{b}, \vec{c}\right) $. 	
+\item Consideremos la parametrización 
+	\[
+	\begin{cases}
+	x = u + v \\
+	y = 2u + 2v \\
+	z = - u - v
+	\end{cases}
+	.\]
+	En este caso, $\displaystyle S = \left(0,0,0\right) + \mathcal{L}\left(\left(1,2,-1\right)\right) $ por lo que se trata de una recta. Es un ejemplo patológico puesto que no se trata de una parametrización inyectiva. 
+\item Consideremos 
+	\[
+	\begin{cases}
+	x = \sin u \\
+	y = u + v \\
+	z = \log z
+	\end{cases}
+	.\]
+	El dominio de será $\displaystyle U = \R \times \left(0, \infty\right) $. Hay inversa $\displaystyle \phi= \textbf{x} ^{-1} : S \to U $ que a cada punto le da sus coordenadas. 
+	\end{enumerate}
+\end{eg}
+\begin{definition}[Líneas coordenadas]
+Las \textbf{líneas coordenadas horizontales} son las curvas $\displaystyle \textbf{x} \left(u, v_{0}\right) $ con $\displaystyle v_{0} \in \R $ fijo. Si fijamos $\displaystyle u_{0} \in \R $ obteniendo la curva $\displaystyle \textbf{x} \left(u_{0}, v\right) $ decimos que son \textbf{líneas coordenadas verticales}. 
+\end{definition}
+\begin{observation}
+La misma superficies puede tener distintas líneas coordenadas. 
+\end{observation}
+\begin{eg}
+\begin{enumerate}
+\item Gráfica. Dada $\displaystyle z : U\subset \R^{2} \to \R : \left(x,y\right)\to h\left(x,y\right) $ tenemos que podemos hacer la parametrización
+	\[ \textbf{x} \left(x,y\right)=\left(x,y,h\left(x,y\right)\right) .\]
+	Siempre es inyectiva.
+\item Paraboloide, $\displaystyle z=x^{2} +y^{2} $. 
+	% poner imagen
+	La parametrización será $\displaystyle \textbf{x} \left(u,v\right)=\left(u, v, u^{2} + v^{2}\right) $. 
+\item Superficies de revolución.
+	% poner imagen
+\[
+\begin{cases}
+x = r\left(v\right)\cos\varphi \\
+y = r\left(v\right)\sin\varphi \\
+z = z\left(v\right)
+\end{cases}
+.\]
+Con $\displaystyle \left(\varphi, v\right)\in \R \times J $. No es una parametrización inyectiva. Si nos restringimos a $\displaystyle U = \left(0, 2\pi \right)\times J $ es inyectiva pero no completamos todo $\displaystyle S $. 
+\end{enumerate}
+\end{eg}
+Las líneas coordenadas son las curvas
+\[\alpha\left(t\right)= \textbf{x} \left(t, v_{0}\right) \quad \text{y} \quad \beta\left(t\right)= \textbf{x} \left(u_{0}, t\right) ,\]
+con $\displaystyle v_{0}, u_{0} \in \R $ constantes.
+Queremos que las líneas coordenadas sean curvas regulares. Si cogemos $\displaystyle P_{0}= \textbf{x} \left(u_{0}, v_{0}\right) $ tendremos que 
+\[\alpha'\left(u_{0}\right)=\lim_{h \to 0} \frac{ \textbf{x} \left(u_{0} + h\right)- \textbf{x} \left(u_{0}, v_{0}\right)}{h}=\frac{\partial \textbf{x} }{\partial u}\left(u_{0}, v_{0}\right) .\]
+Así, queremos que $\displaystyle \frac{\partial \textbf{x} }{\partial u}\left(u_{0}, v_{0}\right)\neq 0 $. Esto lo quiero en todas las curvas coordenadas, es decir, $\displaystyle \forall \left(u_{0}, v_{0}\right)\in U $. Análogamente, queremos que 
+\[\beta'\left(v_{0}\right)=\frac{\partial \textbf{x} }{\partial v}\left(u_{0}, v_{0}\right)\neq 0, \; \forall \left(u_{0}, v_{0}\right)\in U .\]
+\begin{notation}
+Muchas veces utilizaremos la notación $\displaystyle \textbf{x} _{u}=\frac{\partial \textbf{x} }{\partial u} $. Análogamente escribiremos $\displaystyle \textbf{x} _{uvu}=\frac{\partial ^{3} \textbf{x} }{\partial u \partial v\partial u} $. 
+\end{notation}
+\begin{definition}[Vectores coordenados]
+Se llaman \textbf{vectores coordenados} a los vectores $\displaystyle \textbf{x} _{u}= \frac{\partial \textbf{x} }{\partial u} $ y $\displaystyle \textbf{x} _{v} = \frac{\partial \textbf{x} }{\partial v} $. 
+\end{definition}
+Queremos que $\displaystyle D_{\left(a,b\right)} \textbf{x} \left(u,v\right)\neq 0 $, $\displaystyle \forall \left(a,b\right)\neq \left(0,0\right) $. Tenemos que 
+\[J \textbf{x} =\begin{pmatrix} \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\ \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} \\ \frac{\partial z}{\partial u} & \frac{\partial z}{\partial v} \end{pmatrix}, \quad J \textbf{x}  : \R^{2} \to \R^{3} : \left(a,b\right)\to a \begin{pmatrix}  x_{u} \\ y_{u} \\ z_{u} \end{pmatrix}+b \begin{pmatrix} x_{v} \\ y_{v} \\ z_{v} \end{pmatrix} .\]
+De esta forma, $\displaystyle D_{\left(a,b\right)} \textbf{x} =a \textbf{x} _{u} + b \textbf{x} _{v} $. De esta forma, tendremos que $\displaystyle D_{\left(a,b\right)} \textbf{x} \left(u,v\right) \neq 0 $ si y sólo si $\displaystyle \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ son linealmente independientes, que es equivalente a que $\displaystyle J \textbf{x} = \left( \textbf{x} _{u}, \textbf{x} _{v}\right) $ tenga rango 2.
+\begin{definition}[Superficie regular]
+	Una superficie parametrizada $\displaystyle \textbf{x} \left(u,v\right) $ es \textbf{regular} si $\displaystyle \ran\left(J \textbf{x} \right)=2 $, $\displaystyle \forall \left(u,v\right)\in U $, es decir, $\displaystyle \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ son linealmente independientes $\displaystyle \forall \left(u,v\right)\in U $. Un punto $\displaystyle \left(u_{0}, v_{0}\right) $ es \textbf{regular} si $\displaystyle \ran J \textbf{x} \left(u_{0}, v_{0}\right)=2 $ y es \textbf{singular} en caso contrario.
+\end{definition}
+\begin{eg}[Cono]
+	Consideremos el cono $\displaystyle z^{2}=x^{2} +y^{2} $ con $\displaystyle z\geq 0 $. Podemos coger la parametrización $\displaystyle \textbf{x} \left(u,v\right)=\left(u,v, \sqrt{u^{2} + v^{2}}\right) $ con $\displaystyle U = \R^{2} $. Esta función no es diferenciable en el origen. Así, tenemos que en $\displaystyle U = \R^{2} \backslash \left\{ \left(0,0\right)\right\}  $ es parametrización regular. 
+\end{eg}
+\begin{lema}
+Toda parametrización tipo grafo es regular.
+\end{lema}
+\begin{proof}
+Si $\displaystyle \textbf{x} \left(u,v\right)=\left(u,v, h\left(u,v\right)\right) $ tenemos que 
+\[J \textbf{x} = \left( \textbf{x} _{u}, \textbf{x} _{v}\right)=\begin{pmatrix} 1 & 0 \\ 0 & 1 \\ h_{u} & h_{v} \end{pmatrix} .\]
+Claramente tiene rango 2.
+\end{proof}
+\begin{eg}
+El cono es una superficie de revolución. Dada una curva $\displaystyle \left(r\left(v\right), z\left(v\right)\right) $ podemos conseguir la superficie de revolución
+\[
+\begin{cases}
+x = r\left(v\right)\cos\varphi \\
+y = r\left(v\right)\sin \varphi \\
+z = z\left(v\right)
+\end{cases}
+.\]
+Podemos coger la parametrización $\displaystyle \textbf{x} \left(\varphi, v\right)=\left(v\cos\varphi, v\sin\varphi,v\right) $. Tenemos que 
+\[ \textbf{x} _{\varphi}=\begin{pmatrix} -v\sin\varphi \\ v \cos \varphi \\ 0 \end{pmatrix}\quad \text{y} \quad \textbf{x} _{v}=\begin{pmatrix} \cos \varphi \\ \sin\varphi \\ 1 \end{pmatrix} .\]
+De esta forma, 
+\[J \textbf{x} =\left( \textbf{x} _{\varphi}, \textbf{x} _{v}\right)=\begin{pmatrix} -v\sin\varphi & \cos \varphi\\ v\cos \varphi & \sin \varphi \\ 0 & 1 \end{pmatrix} .\]
+Que tiene rango 2 si $\displaystyle v \neq 0 $. Así, es regular en $\displaystyle \left(\varphi, v\right)\in \R \times \left(0,\infty \right) $, es decir excluyendo el vértice. Podemos ver que hay dos parametrizaciones, por lo que hay un cambio de parámetros. 
+\end{eg}
+

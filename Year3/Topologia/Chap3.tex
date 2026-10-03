@@ -1,0 +1,236 @@
+\chapter{Construcción de espacios topológicos}
+\section{Topología inicial}
+Dado un espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ y una función $\displaystyle f : Y \to \left(X, \mathcal{T}\right) $, nos preguntamos si hay alguna topología $\displaystyle \mathcal{T}' $ en $\displaystyle Y $ que haga que $\displaystyle f $ sea continua. Es trivial que si tomamos $\displaystyle \mathcal{T}' = \mathcal{P}\left(Y\right) $ obtenemos el resultado deseado. En general, buscaremos la topología menos fina que cumpla lo requerido. 
+ 
+\begin{observation}
+Si $\displaystyle f $ es continua tendremos que para todo abierto $\displaystyle U \in \mathcal{T} $ debe ser que $\displaystyle f^{-1}\left(U\right)\in \mathcal{T}' $. Por tanto, la topología que buscamos es $\displaystyle \left\{ f^{-1}\left(U\right) \; : \; U \in \mathcal{T}\right\}  $, que es una topología en $\displaystyle Y $.
+\end{observation}
+\begin{proof}
+	Veamos que la familia $\displaystyle \mathcal{T}^{f}=\left\{ f^{-1}\left(U\right) \; : \; U \in \mathcal{T}\right\}  $ es una topología. 
+	\begin{enumerate}
+	\item Tenemos que $\displaystyle \emptyset = f^{-1}\left(\emptyset \right) $ y $\displaystyle Y = f^{-1}\left(X\right) $, por lo que $\displaystyle \emptyset  $ y $\displaystyle X $ están en $\displaystyle \mathcal{T}^{f} $.  
+	\item Supongamos que $\displaystyle \left\{ U_{i}\right\} _{i \in I}\subset \mathcal{T}^{f}$, entonces existe $\displaystyle V_{i} $ tal que $\displaystyle U_{i} = f^{-1}\left(V_{i}\right) $ para cada $\displaystyle i \in I $. Como $\displaystyle \bigcup_{i \in I}V_{i} \in \mathcal{T} $ tendremos que  
+		\[\bigcup_{i \in I}U_{i}=\bigcup_{i \in I}f^{-1}\left(V_{i}\right)=f^{-1}\left(\bigcup_{i \in I}V_{i}\right) \in \mathcal{T}^{f} .\]
+	\item Supongamos que $\displaystyle U_{1}, U_{2} \in \mathcal{T}^{f} $. Entonces existen $\displaystyle V_{1}, V_{2} \in \mathcal{T} $ tales que $\displaystyle U_{i} = f^{-1}\left(V_{i}\right) $ para $\displaystyle i \in \left\{ 1,2\right\}  $. De esta forma, 
+		\[U_{1} \cap U_{2}=f^{-1}\left(V_{1}\right)\cap f^{-1}\left(V_{2}\right)=f^{-1}\left(V_{1} \cap V_{2}\right)\in \mathcal{T}^{f} .\]
+	\end{enumerate}
+	Veamos que $\displaystyle \mathcal{T}^{f} $ es la topología más fina que cumple lo que queremos. Si tenemos otra topología $\displaystyle \mathcal{T}' $ en $\displaystyle Y $ tal que $\displaystyle f : \left(Y, \mathcal{T}'\right)\to \left(X, \mathcal{T}\right) $ es continua, tendremos que para cada $\displaystyle U \in \mathcal{T} $, $\displaystyle f^{-1}\left(U\right)\in \mathcal{T}' $, de forma que $\displaystyle \mathcal{T}^{f}\subset \mathcal{T}' $. 
+\end{proof}
+
+\begin{definition}[Topología imagen inversa]
+Sea $\displaystyle f : X \to Y $ una aplicación y consideremos fijada en $\displaystyle X $ una topología $\displaystyle \mathcal{T} $. La familia de subconjuntos
+\[ \left\{ f^{-1}\left(U\right) \; : \; U \in \mathcal{T}\right\}  \]
+define una topología que llamaremos \textbf{topología imagen inversa por $\displaystyle f $}, o \textbf{topología inicial para $\displaystyle f $} y la denotaremos por $\displaystyle f^{-1}\left(\mathcal{T}\right) $ o $\displaystyle \mathcal{T}^{f} $. 
+\end{definition}
+\begin{prop}[Propiedad universal]
+Sea $\displaystyle f : Y \to X $ una aplicación y $\displaystyle \mathcal{T} $ una topología fijada en $\displaystyle X $. Las siguientes afirmaciones son equivalentes:
+\begin{enumerate}
+\item La topología $\displaystyle \mathcal{T}' $ en $\displaystyle Y $ es la topología inicial para $\displaystyle f $. 
+\item Para cada espacio topológico $\displaystyle \left(Z, \mathcal{T}''\right) $ y para cada aplicación $\displaystyle g : \left(Z, \mathcal{T}''\right)\to \left(Y, \mathcal{T}'\right) $ se tiene que $\displaystyle g $ es continua si y sólo si 
+	\[f\circ g : \left(Z, \mathcal{T}''\right)\to \left(X, \mathcal{T}\right) \]
+	es continua.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Demostramos cada implicación.
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Supongamos que $\displaystyle \mathcal{T}' = \mathcal{T}^{f} $. Entonces, dado un espacio topológico $\displaystyle \left(Z, \mathcal{T}''\right) $ y una aplicación
+	\[g : \left(Z, \mathcal{T}''\right)\to \left(Y, \mathcal{T}'\right) ,\]
+	se tiene:
+	\begin{itemize}
+	\item Si $\displaystyle g $ es continua, dado un abierto $\displaystyle U \subset X $, tendremos que 
+		\[\left(f\circ g\right)^{-1}\left(U\right)=g^{-1}\left(f^{-1}\left(U\right)\right)\in \mathcal{T}'' ,\]
+		puesto que $\displaystyle f^{-1}\left(U\right)\in \mathcal{T}' =\mathcal{T}^{f} $. Por tanto, $\displaystyle f\circ g $ es continua. 
+	\item Si $\displaystyle f\circ g $ es continua, entonces para cada $\displaystyle V \in \mathcal{T}'=\mathcal{T}^{f} $, se verifica que existe $\displaystyle U \in \mathcal{T} $ tal que $\displaystyle V = f^{-1}\left(U\right) $. Así, 
+		\[g^{-1}\left(V\right)=g^{-1}\left(f^{-1}\left(U\right)\right)=\left(f\circ g\right)^{-1}\left(U\right)\in \mathcal{T}'' ,\]
+		por lo que $\displaystyle g $ es continua. 
+	\end{itemize}
+\item[(2) $\displaystyle \Rightarrow $ (1)] Tomando como $\displaystyle \left(Z, \mathcal{T}''\right) $ el espacio $\displaystyle \left(Y, \mathcal{T}^{f}\right) $ y tomando $\displaystyle g $ como la aplicación identidad en $\displaystyle Y $ tendremos que 
+	\[f\circ g = f\circ id_Y = f : \left(Y, \mathcal{T}^{f}\right)\to \left(X, \mathcal{T}\right) .\]
+	Claramente esta función es continua. Pero entonces, 
+	\[g = id_Y : \left(Y, \mathcal{T}^{f}\right)\to \left(Y, \mathcal{T}'\right) ,\]
+	es continua por lo que debe ser que $\displaystyle \mathcal{T}' \subset \mathcal{T}^{f} $. Por otro lado, tomando como $\displaystyle \left(Z, \mathcal{T}''\right) $ el espacio $\displaystyle \left(Y, \mathcal{T}'\right) $ y como $\displaystyle g $ la identidad en $\displaystyle Y $, 
+	\[g =id_Y : \left(Y, \mathcal{T}'\right) \to \left(Y, \mathcal{T}'\right) ,\]
+	es claramente continua y por hipótesis sabemos que 
+	\[f\circ g = f\circ id_Y = f : \left(Y, \mathcal{T}'\right)\to \left(X, \mathcal{T}\right) ,\]
+	es continua por lo que $\displaystyle \mathcal{T}^{f}\subset \mathcal{T}' $. 
+\end{description}
+\end{proof}
+
+\begin{eg}
+Consideremos un espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ e $\displaystyle Y \subset X $. Con la aplicación $\displaystyle j : Y \to X : y \to y $, tendremos que 
+\[\mathcal{T}^{j}= \left\{ j^{-1}\left(U\right) \; : \; U \in \mathcal{T}\right\} = \left\{ U \cap Y \; : \; U \in \mathcal{T}\right\}  ,\]
+por lo que obtenemos la topología relativa. 
+\end{eg}
+\subsection{Embebimientos topológicos}
+
+\begin{definition}[Embebimiento topológico]
+Un \textbf{embebimiento topológico} es una aplicación inyectiva $\displaystyle f : \left(Y, \mathcal{T}'\right)\to \left(X, \mathcal{T}\right) $ tal que $\displaystyle \mathcal{T}' = \mathcal{T}^{f} $. 
+\end{definition}
+\begin{observation}
+Si $\displaystyle f $ es embebimiento entonces es continua.
+\end{observation}
+
+\begin{eg}
+El ejemplo anterior de la topología relativa es un embebimiento topológico. 
+\end{eg}
+
+\begin{prop}
+Las siguientes afirmaciones son equivalentes. 
+\begin{enumerate}
+\item $\displaystyle f : \left(Y, \mathcal{T}'\right)\to \left(X, \mathcal{T}\right) $ es embebimiento topológico. 
+\item $\displaystyle f : \left(Y, \mathcal{T}'\right)\to \left(f\left(Y\right), \mathcal{T}|_{f\left(Y\right)}\right) $ es homeomorfismo. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Demostramos ambas implicaciones.
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Claramente tendremos que $\displaystyle f : Y \to f\left(Y\right) $ es biyectiva. Sea $\displaystyle U \in \mathcal{T} $ de forma que $\displaystyle U \cap f\left(Y\right)\in \mathcal{T}|_{f\left(Y\right)} $, entonces
+	\[f^{-1}\left(U \cap f\left(Y\right)\right)= f^{-1}\left(U\right) \cap f^{-1}\left(f\left(Y\right)\right)=f^{-1}\left(U\right)\in \mathcal{T}' .\]
+	Así, tenemos que $\displaystyle f $ es continua. Ahora, si cogemos $\displaystyle V \in \mathcal{T}' $ tendremos que existe $\displaystyle U \in \mathcal{T} $ tal que $\displaystyle V = f^{-1}\left(U\right) $. De esta forma, $\displaystyle f\left(V\right)=U \cap f\left(Y\right)\in \mathcal{T}|_{f\left(Y\right)} $ y tenemos que $\displaystyle f : Y \to f\left(Y\right) $ es abierta. Así, es homeomorfismo.
+\item[(2) $\displaystyle \Rightarrow $ (1)] Si $\displaystyle f : \left(Y, \mathcal{T}'\right)\to \left(f\left(Y\right), \mathcal{T}|_{f\left(Y\right)}\right) $ es homeomorfismo tenemos que es biyectiva, por lo que $\displaystyle f:\left(Y, \mathcal{T}'\right)\to \left(X, \mathcal{T}\right) $ es inyectiva. Queremos ver que $\displaystyle \mathcal{T}' = \mathcal{T}^{f} $. Por un lado, dado $\displaystyle U \in \mathcal{T} $ tendremos que $\displaystyle U \cap f\left(Y\right)\in \mathcal{T}|_{f\left(Y\right)} $ por lo que 
+	\[f^{-1}\left(U\cap f\left(Y\right)\right) = f^{-1}\left(U\right) \cap f^{-1}\left(f\left(Y\right)\right)=f^{-1}\left(U\right) \cap Y=f^{-1}\left(U\right) \in \mathcal{T}' .\]
+	Así, debe ser que $\displaystyle \mathcal{T}^{f}\subset \mathcal{T}' $. Por otro lado, dado $\displaystyle U \in \mathcal{T}' $ tenemos que existe $\displaystyle V \in \mathcal{T} $ tal que $\displaystyle f\left(U\right)=V \cap f\left(Y\right) $, por lo que 
+	\[U = f^{-1}\left(V \cap f\left(Y\right)\right)=f^{-1}\left(V\right)\cap f^{-1}\left(f\left(Y\right)\right)=f^{-1}\left(V\right) .\]
+	Así, $\displaystyle \mathcal{T}' \subset \mathcal{T}^{f} $. 
+\end{description}
+\end{proof}
+
+\begin{eg}
+Consideremos $\displaystyle f : \left(\R, \mathcal{T}_{[,)}\right)\to \left(\R^{2}, \mathcal{T}\right): x \to \left(x,x\right) $ con $\displaystyle \mathcal{T} $ la topología del ejercicio 15 de la hoja 1. Esto es un embebimiento de la recta de Sofrengein en el espacio $\displaystyle \left(\R^{2}, \mathcal{T}\right) $.
+En efecto, es sencillo ver que se trata de una función inyectiva y que $\displaystyle \mathcal{T}^{f}=\mathcal{T}_{[,)} $. 
+\end{eg}
+\begin{prop}[Condiciones suficientes para embebimiento topológico]
+Dada una aplicación $\displaystyle f : \left(Y, \mathcal{T}'\right)\to \left(X, \mathcal{T}\right) $, se tiene:
+\begin{enumerate}
+\item Si $\displaystyle f $ es inyectiva, continua y abierta, entonces $\displaystyle f $ es embebimiento topológico. 
+\item Si $\displaystyle f $ es inyectiva, continua y cerrada, entonces $\displaystyle f $ es embebimiento topológico.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle f : \left(Y, \mathcal{T}'\right)\to \left(X, \mathcal{T}\right) $ es una aplicación entre espacios topológicos. Demostramos sólo \textbf{(1)} puesto que \textbf{(2)} es análogo. Tenemos que para cada $\displaystyle V \in \mathcal{T}' $, $\displaystyle f\left(V\right)\in \mathcal{T} $. Como $\displaystyle f $ es abierta tendremos que $\displaystyle f\left(V\right)\subset f\left(Y\right) $ es abierto en $\displaystyle f\left(Y\right) $. De esta forma, la función $\displaystyle f : \left(Y, \mathcal{T}'\right)\to \left(f\left(Y\right), \mathcal{T}|_{f\left(Y\right)}\right) $ es biyectiva, continua y abierta, por lo que es homeomorfismo. Por la proposición anterior tendremos que $\displaystyle f $ es embebimiento topológico.
+\end{proof}
+
+\begin{eg}
+	Consideremos una aplicación $\displaystyle f : \left(\left[0,1\right] , \mathcal{T}_{u}|_{\left[0,1\right] }\right)\to\left(\left(-1,2\right), \mathcal{T}_{u}|_{\left(-1,2\right)}\right) $ que es la inyección $\displaystyle j $ que vimos antes. Es un embebimiento topológico puesto que es inyectiva y $\displaystyle \mathcal{T}^{f}= \mathcal{T}_{u}|_{\left[0,1\right] } $. Claramente tenemos que es un embebimiento topológico. Sin embargo no es una aplicación abierta puesto que $\displaystyle \left[0,1\right]  $ no es abierto en $\displaystyle \mathcal{T}_{u}|_{\left(-1,2\right)} $.
+\end{eg}
+
+\begin{prop}
+Dado un embebimiento topológico $\displaystyle f : Y \to X $ se tiene que:
+\begin{enumerate}
+\item $\displaystyle f $ es abierta si y sólo si $\displaystyle f\left(Y\right) $ es abierto en $\displaystyle X $. 
+\item $\displaystyle f $ es cerrada si y sólo si $\displaystyle f\left(Y\right) $ es cerrado en $\displaystyle X $. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Demostramos sólo \textbf{(1)} puesto que la demostración de \textbf{(2)} es análoga. Como $\displaystyle f $ es embebimiento topológico tendremos que la topología en $\displaystyle Y $ es $\displaystyle \mathcal{T}^{f} $. 
+Si $\displaystyle f $ es abierta tenemos que para todo $\displaystyle V \in \mathcal{T}^{f} $ se tiene que $\displaystyle f\left(V\right)\in \mathcal{T} $. Basta con tomar $\displaystyle V = Y \in \mathcal{T}^{f} $ (porque $\displaystyle Y =f^{-1}\left(X\right) $, $\displaystyle X \in \mathcal{T} $) para ver que $\displaystyle f\left(Y\right)\in \mathcal{T} $.
+Recíprocamente, supongamos que $\displaystyle f\left(Y\right) $ es abierto en $\displaystyle X $. Como para cada abierto $\displaystyle V \subset Y $ se tiene que $\displaystyle V = f^{-1}\left(U\right) $ abierto en $\displaystyle X $, tendremos que $\displaystyle f\left(V\right)=U \cap f\left(Y\right) $ es abierto en $\displaystyle X $. 
+\end{proof}
+
+\begin{observation}
+Los embebimientos topológicos permiten considerar algunos espacios topológicos como subespacios de otros. Que un espacio sea subespacio de otro quiere decir que existe un embebimiento topológico del primero al segundo.
+\end{observation}
+
+\subsection{Productos (finitos) de espacios topológicos}
+Consideremos un número finito de espacios topológicos $\displaystyle \left\{ \left(X_{i}, \mathcal{T}_{i}\right)\right\}_{i = 1, \ldots, r} $ y el conjunto 
+\[Y = \prod^{r}_{i = 1}X_{i} = \left\{ \left(x_{1}, \ldots, x_{r}\right) \; : \; x_{i} \in X_{i}, i \in \left\{ 1, \ldots, r\right\} \right\}  .\]
+Consideramos también las proyecciones
+\[p_{j} : \prod^{r}_{i = 1}X_{i} \to X_{j} : \left(x_{1}, \ldots, x_{r}\right) \to x_{j} \]
+para cada $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $. Buscamos la topología menos fina en $\displaystyle \prod^{r}_{i = 1}X_{i} $ que haga que todas las proyecciones sean continuas. Una posible solución sería coger el conjunto
+\[ \mathcal{S} = \left\{ p_{j}^{-1}\left(U_{j}\right) \; : \; j \in \left\{ 1, \ldots, r\right\} , U_{j}\in \mathcal{T}_{j}\right\}  .\]
+El problema es que este conjunto no es una topología. En efecto, tendremos que 
+\[p_{j}^{-1}\left(U_{j}\right)=X_{1} \times \cdots \times X_{j-1} \times U_{j} \times X_{j + 1} \times \cdots \times X_{r} .\]
+Se puede ver que la intersección de dos preimágenes $\displaystyle p_{1}^{-1}\left(U_{1}\right) \cap p^{-1}\left(U_{2}\right) $ no está en $\displaystyle \mathcal{S} $. 
+	\begin{center}
+    \includegraphics[width=0.4\textwidth]{~/Desktop/Images/Topologia4.png}
+\end{center}
+La solución consiste en coger una base 
+\[\mathcal{B} = \left\{ U_{1} \times \cdots \times U_{r} \; : \; U_{i} \subset X_{i}, i \in \left\{ 1, \ldots, r\right\} \right\}  ,\]
+que es la base determinada por la subbase $\displaystyle \mathcal{S} $.
+\begin{definition}[Topología producto]
+	Dado un conjunto finito de espacios topológicos $\displaystyle \left\{ \left(X_{i}, \mathcal{T}_{i}\right)\right\} _{i = 1, \ldots, r} $, a la topología determinada por la subbase 
+	\[\mathcal{S}= \left\{ p_{j}^{-1}\left(U_{j}\right) \; : \; j \in \left\{ 1, \ldots, r\right\} , U_{j}\in \mathcal{T}_{j}\right\} .\]
+	la denominamos \textbf{topología producto} y la escribimos $\displaystyle \prod^{r}_{i = 1}\mathcal{T}_{i} $. 
+\end{definition}
+ Así, tenemos que 
+\[U_{1} \times \cdots \times U_{r}=p^{-1}_{1}\left(U_{1}\right) \cap \cdots \cap p_{r}^{-1}\left(U_{r}\right) .\]
+% ver que esta topología que hemos definido es la menos fina
+\begin{eg}
+ No tiene por qué ser que el producto de abiertos sea abierto, ni que los abiertos sean producto de abiertos. Además, la topología producto en este caso coincide con la topología usual en $\displaystyle \R^{m} $. 
+\end{eg}
+\begin{prop}
+Se consideran espacios topológicos $\displaystyle \left(X_{i}, \mathcal{T}_{i}\right) $ para $\displaystyle i = 1, \ldots, r $, el conjunto producto $\displaystyle Y = \prod^{r}_{i=1}X_{i} $ y las aplicaciones proyección $\displaystyle p_{i} : Y \to X_{i} $. Las siguientes afirmaciones son equivalentes:
+\begin{enumerate}
+\item La topología $\displaystyle \mathcal{T}' $ en $\displaystyle Y $ es la topología producto.
+\item Para cada espacio topológico $\displaystyle \left(Z, \mathcal{T}''\right) $ y para cada aplicación 
+	\[g = \left(g_{1}, \ldots, g_{r}\right) : \left(Z, \mathcal{T}''\right)\to \left(Y, \mathcal{T}'\right) ,\]
+	se tiene que $\displaystyle g $ es continua si y sólo si todas las aplicaciones 
+	\[g_{i} = p_{i}\circ g : \left(Z, \mathcal{T}''\right)\to \left(X_{i}, \mathcal{T}_{i}\right), \; i = 1, \ldots, r ,\]
+	son continuas.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Consideramos ambas implicaciones.
+\begin{description}
+\item[($\displaystyle \Rightarrow $)] Supongamos que $\displaystyle \mathcal{T}' = \prod^{r}_{i = 1}\mathcal{T}_{i} $. 
+	\begin{itemize}
+		\item Si $\displaystyle g $ es continua tendremos que como $\displaystyle p_{j} $ es continua $\displaystyle \forall j \in \left\{ 1, \ldots, r\right\}  $, tendremos que $\displaystyle p_{j}\circ g $ es continua. 
+		\item Si $\displaystyle p_{j}\circ g $ es continua para cada $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $, cogemos $\displaystyle U_{1} \times \cdots \times U_{r} \in \mathcal{T}' $, entonces tendremos que 
+			\[g^{-1}\left(U_{1} \times \cdots \times U_{r}\right)= \bigcap_{i = 1}^{r}g_{i}^{-1}\left(U_{i}\right) = \bigcap_{i = 1}^{r}\left(p_{i}\circ g\right)^{-1}\left(U_{i}\right) \in \mathcal{T}'' .\]
+		Así, tenemos que $\displaystyle g $ es continua.
+	\end{itemize}
+\item[($\displaystyle \Leftarrow $)] Elegimos $\displaystyle \left(Z, \mathcal{T}''\right)=\left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right) $ y $\displaystyle g = id $. Entonces, 
+	\[p_{j}\circ id = p_{j} : \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right) \to \left(\prod^{r}_{i = 1}X_{i}, \mathcal{T}'\right) \]
+	es continua, por lo que necesariamente debe ser que $\displaystyle \mathcal{T}' \subset \prod^{r}_{i = 1}\mathcal{T}_{i} $. Recíprocamente, cogiendo $\displaystyle \left(Z, \mathcal{T}''\right)=\left(\prod^{r}_{i = 1}X_{i}, \mathcal{T}'\right) $, cogemos $\displaystyle g = id $ y claramente es continua. Por tanto, $\displaystyle p_{j} $ es continua para $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $ y debe ser que $\displaystyle \mathcal{T}' \supset \prod^{r}_{i = 1}X_{i} $. 
+\end{description}
+\end{proof}
+\begin{prop}
+	Las aplicaciones $\displaystyle p_{j} : \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right) \to \left(X_{i}, \mathcal{T}_{i}\right) $ son abiertas $\displaystyle \forall j \in \left\{ 1, \ldots, r\right\}  $. 
+\end{prop}
+\begin{proof}
+	Supongamos que $\displaystyle \Omega \subset \prod^{r}_{i = 1}X_{i} $, entonces exsisten $\displaystyle U_{i}^{\alpha }\in \mathcal{T}_{i} $ con $\displaystyle \Omega = \bigcup_{\alpha \in \Lambda }\left(U_{1}^{\alpha } \times \cdots \times U_{r}^{\alpha }\right) $ y por tanto
+	\[p_{j}\left(\Omega \right)=\bigcup_{\alpha \in \Lambda}p_{j}\left(U_{1}^{\alpha }\times \cdots \times U_{r}^{\alpha }\right) .\]
+\end{proof}
+\begin{observation}
+Las proyecciones no son cerradas en general. 
+\end{observation}
+\begin{eg}
+	Consideremos $\displaystyle \left(\R^{2}, \mathcal{T}_{u}\right)=\left(\R, \mathcal{T}_{u}\right) \times \left(\R, \mathcal{T}_{u}\right) $. Tenemos que $\displaystyle H = \left\{ xy = 1\right\} \subset \R^{2} $ es un conjunto cerrado. Tenemos que $\displaystyle p_{1}\left(H\right)= \R / \left\{ 0\right\}  $ que no es cerrado. 
+\end{eg}
+\begin{eg}
+	Consideremos una familia finita de espacios topológicos $\displaystyle \left\{ \left(X_{i}, \mathcal{T}_{i}\right)\right\} _{i = 1, \ldots, r} $. Fijamos $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $ y $\displaystyle \forall k \in \left\{ 1, \ldots, r\right\} \backslash \left\{ j\right\}  $ escogemos $\displaystyle a_{k}\in X_{k} $ y definimos la aplicación
+	\[\alpha_{j}^{\left(a_{1}, \ldots, a_{r}\right)} : \left(X_{j}, \mathcal{T}_{j}\right)\to \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right) : x_{j} \to \left(a_{1}, \ldots, a_{j-1}, x_{j}, a_{j+1}, \ldots, a_{r}\right) .\]
+	Veremos que esta aplicación es un embebimiento topológico. 
+\end{eg}
+\begin{proof}
+Consideremos $\displaystyle \alpha_{j} : \left(X_{j}, \mathcal{T}_{j}\right)\to \left(\alpha_{j}\left(X_{j}\right), \left(\prod^{r}_{i = 1}\mathcal{T}_{i}\right)|_{\alpha_{j}\left(X_{i}\right)}\right) $. Queremos ver que es un homeomorfismo. Claramente es biyectiva. Si cogemos $\displaystyle U_{1} \times \cdots \times U_{r} \in \prod^{r}_{i=1}\mathcal{T}_{i} $, distinguimos dos casos:
+\begin{itemize}
+	\item Si $\displaystyle \left(U_{1} \times \cdots \times U_{r}\right) \cap \alpha_{j}\left(X_{j}\right)=\emptyset $ es porque debe existir $\displaystyle k \in \left\{ 1, \ldots, r\right\} \backslash \left\{ j\right\}  $ con $\displaystyle a_{k}\not\in U_{k} $. 
+	\item Si no es vacío tendremos que $\displaystyle  $ 
+		\[\left(U_{1}, \times \cdots \times U_{r}\right) \cap \alpha_{j}\left(X_{j}\right) = \left\{ a_{1}\right\} \times \cdots \times\left\{ a_{j - 1}\right\} \times U_{j} \times \left\{ a_{j+1}\right\} \times \cdots \times \left\{ a_{r}\right\}   .\]
+\end{itemize}
+De esta forma, en el segundo caso tendremos que 
+\[\alpha ^{-1}_{j}\left(\left\{ a_{1}\right\} \times \cdots \times\left\{ a_{j - 1}\right\} \times U_{j} \times \left\{ a_{j+1}\right\} \times \cdots \times \left\{ a_{r}\right\}\right) = U_{j}\in \mathcal{T}_{j} .\]
+Finalmente, si $\displaystyle \Omega_{j}\in \mathcal{T}_{j} $ tendremos que 
+\[
+\begin{split}
+	\alpha_{j}\left(\Omega_{j}\right)= & \left\{ a_{1}\right\}  \times \cdots \times \left\{ a_{j-1}\right\}  \times \Omega_{j} \times \left\{ a_{j+1}\right\} \times \cdots \times \left\{ a_{r}\right\} \\
+	= &  \left(X_{1} \times \cdots \times X_{j-1} \times \Omega_{j} \times X_{j+1} \times \cdots \times X_{r}\right)\cap \alpha_{j}\left(X_{j}\right) \in  \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right).
+\end{split}
+\]
+Así, tenemos que $\displaystyle \alpha_{j} $ es abierta por lo que es homeomorfismo.
+\end{proof}
+\begin{eg}
+Nos preguntamos si existen $\displaystyle \mathcal{T}_{1} $ y $\displaystyle \mathcal{T}_{2} $ topologías en $\displaystyle \R $ tales que $\displaystyle \left(\R^{2}, \mathcal{T}\right) = \left(\R, \mathcal{T}_{1}\right) \times \left(\R, \mathcal{T}_{2}\right) $ con $\displaystyle \mathcal{T} $ la topología del ejercicio 15. Necesariamente debe ser que $\displaystyle \mathcal{T}_{1} $ y $\displaystyle \mathcal{T}_{2} $ son la topología discreta. 
+Sin embargo, esto no puede ser porque $\displaystyle \left(\R, \mathcal{T}_{\text{dis}}\right)\times\left(\R, \mathcal{T}_{\text{dis}}\right)=\left(\R^{2}, \mathcal{T}_{\text{dis}} \times \mathcal{T}_{\text{dis}}\right)\neq \left(\R^{2}, \mathcal{T}\right) $. 
+\end{eg}
+\begin{prop}
+	Dados $\displaystyle a_{j}\in X_{j} $ para $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $, si consideramos un entorno $\displaystyle V^{a_{j}}\subset X_{j} $ para $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $ tendremos que $\displaystyle V^{a_{1}} \times \cdots \times V^{a_{r}} $ es un entorno de $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $ en $\displaystyle \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right) $. 
+\end{prop}
+\begin{proof}
+Tendremos que existen abiertos $\displaystyle U_{j} $ tales que $\displaystyle a_{j}\in U_{j}\subset V^{a_{j}} $, de forma que 
+\[\left(a_{1}, \ldots, a_{r}\right)\in U_{1} \times \cdots \times U_{r} \subset V^{a_{1}} \times \cdots \times V^{a_{r}} ,\]
+que es un entorno de $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $ puesto que $\displaystyle U_{1} \times \cdots \times U_{r}\in \prod^{r}_{i = 1}\mathcal{T}_{i} $. 
+\end{proof}
+Si consideramos bases de entornos $\displaystyle \mathcal{V}\left(a_{j}\right)= \left\{ V^{a_{j}}_{i}\right\} _{i \in I_{j}} $, buscamos una base de entornos de $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $. El resultado es el producto de bases de entornos.

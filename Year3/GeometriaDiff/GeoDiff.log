@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  28 SEP 2026 18:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  2 OCT 2026 10:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1048,7 +1048,7 @@ Package hyperref Info: bookmark level for unknown observation defaults to 0 on i
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 48.
-<~/Desktop/Images/GeoDiff1.png, id=119, 2180.145pt x 726.715pt>
+<~/Desktop/Images/GeoDiff1.png, id=134, 2180.145pt x 726.715pt>
 File: ~/Desktop/Images/GeoDiff1.png Graphic file (type png)
 <use ~/Desktop/Images/GeoDiff1.png>
 Package pdftex.def Info: ~/Desktop/Images/GeoDiff1.png  used on input line 51.
@@ -1076,7 +1076,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 87.
-<~/Desktop/Images/GeoDiff2.png, id=134, 2119.92pt x 746.79pt>
+<~/Desktop/Images/GeoDiff2.png, id=149, 2119.92pt x 746.79pt>
 File: ~/Desktop/Images/GeoDiff2.png Graphic file (type png)
 <use ~/Desktop/Images/GeoDiff2.png>
 Package pdftex.def Info: ~/Desktop/Images/GeoDiff2.png  used on input line 89.
@@ -1084,7 +1084,7 @@ Package pdftex.def Info: ~/Desktop/Images/GeoDiff2.png  used on input line 89.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 94.
-<~/Desktop/Images/GeoDiff4.png, id=135, 1541.76pt x 1027.84pt>
+<~/Desktop/Images/GeoDiff4.png, id=150, 1541.76pt x 1027.84pt>
 File: ~/Desktop/Images/GeoDiff4.png Graphic file (type png)
 <use ~/Desktop/Images/GeoDiff4.png>
 Package pdftex.def Info: ~/Desktop/Images/GeoDiff4.png  used on input line 115.
@@ -1106,7 +1106,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 123.
-<~/Desktop/Images/GeoDiff3.png, id=155, 1453.43pt x 1090.0725pt>
+<~/Desktop/Images/GeoDiff3.png, id=170, 1453.43pt x 1090.0725pt>
 File: ~/Desktop/Images/GeoDiff3.png Graphic file (type png)
 <use ~/Desktop/Images/GeoDiff3.png>
 Package pdftex.def Info: ~/Desktop/Images/GeoDiff3.png  used on input line 145.
@@ -1119,7 +1119,7 @@ LaTeX Info: Redefining \% on input line 147.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 149.
-<~/Desktop/Images/GeoDiff5.png, id=170, 1541.76pt x 1027.84pt>
+<~/Desktop/Images/GeoDiff5.png, id=186, 1541.76pt x 1027.84pt>
 File: ~/Desktop/Images/GeoDiff5.png Graphic file (type png)
 <use ~/Desktop/Images/GeoDiff5.png>
 Package pdftex.def Info: ~/Desktop/Images/GeoDiff5.png  used on input line 161.
@@ -1454,7 +1454,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 743.
-<~/Desktop/Images/GeoDiff6.png, id=393, 1453.43pt x 1090.0725pt>
+<~/Desktop/Images/GeoDiff6.png, id=408, 1453.43pt x 1090.0725pt>
 File: ~/Desktop/Images/GeoDiff6.png Graphic file (type png)
 <use ~/Desktop/Images/GeoDiff6.png>
 Package pdftex.def Info: ~/Desktop/Images/GeoDiff6.png  used on input line 746.
@@ -1656,12 +1656,109 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1026.
-) (./Appendix.tex
+
+Overfull \hbox (9.21243pt too wide) in paragraph at lines 1036--1037
+[]\T1/lmr/m/n/10 (-20) Reparametrizamos por ar-co y te-ne-mos que $\OML/lmm/m/it/10 ^^L[] [] \OT1/lmr/m/n/10 (-20) = \OML/lmm/m/it/10 A[] []$\T1/lmr/m/n/10 (-20) . Así, $\OMS/lmsy/m/n/10 k\OML/lmm/m/it/10 ^^L[] [] \OMS/lmsy/m/n/10 k \OT1/lmr/m/n/10 (-20) = \OMS/lmsy/m/n/10 k\OML/lmm/m/it/10 A[] [] \OMS/lmsy/m/n/10 k \OT1/lmr/m/n/10 (-20) =
+ []
+
+LaTeX Info: Redefining \. on input line 1041.
+LaTeX Info: Redefining \% on input line 1041.
+LaTeX Info: Redefining \. on input line 1041.
+LaTeX Info: Redefining \% on input line 1041.
+[35]
+Overfull \hbox (42.46982pt too wide) detected at line 1043
+\OML/lmm/m/it/10 ^^\[] [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^@ [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^@ [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^G [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^G [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^F\OML/lmm/m/it/10 ^^\[] [] :
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1048.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1050.
+LaTeX Info: Redefining \. on input line 1080.
+LaTeX Info: Redefining \% on input line 1080.
+LaTeX Info: Redefining \. on input line 1080.
+LaTeX Info: Redefining \% on input line 1080.
+[36]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1096.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1099.
+LaTeX Info: Redefining \. on input line 1110.
+LaTeX Info: Redefining \% on input line 1110.
+LaTeX Info: Redefining \. on input line 1110.
+LaTeX Info: Redefining \% on input line 1110.
+ [37]) (./Chap2.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [35]
+ [38]
+Cap\'{\i }tulo 2.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 8.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 12.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 35.
+[39
+
+]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 36.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 40.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 43.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 70.
+LaTeX Info: Redefining \. on input line 71.
+LaTeX Info: Redefining \% on input line 71.
+LaTeX Info: Redefining \. on input line 71.
+LaTeX Info: Redefining \% on input line 71.
+ [40]
+Package mdframed Info: Not enough space on this page on input line 71.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 72.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 78.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 81.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 85.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 93.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 106.
+LaTeX Info: Redefining \. on input line 106.
+LaTeX Info: Redefining \% on input line 106.
+LaTeX Info: Redefining \. on input line 106.
+LaTeX Info: Redefining \% on input line 106.
+ [41]) (./Appendix.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [42]
 Ap\'{e}ndice A.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -1669,12 +1766,16 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 9.
-[36
+[43
 
-])
-LaTeX Info: Redefining \. on input line 34.
-LaTeX Info: Redefining \% on input line 34.
- [37] (./GeoDiff.aux
+]
+LaTeX Info: Redefining \. on input line 35.
+LaTeX Info: Redefining \% on input line 35.
+ [44]
+Ap\'{e}ndice B.
+) [45
+
+] (./GeoDiff.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
@@ -1683,21 +1784,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `GeoDiff.out' has not changed.
-(rerunfilecheck)             Checksum: EBD1A335064365539D536EDB6FE5F42A;1974.
+(rerunfilecheck)             Checksum: CE5EDB02829B0585CA1D5171FCFA60FC;2450.
  ) 
 Here is how much of TeX's memory you used:
- 39759 strings out of 474116
- 904706 string characters out of 5743682
- 1957187 words of memory out of 5000000
- 60880 multiletter control sequences out of 15000+600000
- 657347 words of font info for 205 fonts, out of 8000000 for 9000
+ 39901 strings out of 474116
+ 907028 string characters out of 5743682
+ 1961187 words of memory out of 5000000
+ 60932 multiletter control sequences out of 15000+600000
+ 665174 words of font info for 227 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,18n,110p,1004b,1122s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 107i,18n,110p,1004b,1127s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on GeoDiff.pdf (38 pages, 1890639 bytes).
+Output written on GeoDiff.pdf (46 pages, 1921761 bytes).
 PDF statistics:
- 729 PDF objects out of 1000 (max. 8388607)
- 601 compressed objects within 7 object streams
- 306 named destinations out of 1000 (max. 500000)
- 55507 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 820 PDF objects out of 1000 (max. 8388607)
+ 684 compressed objects within 7 object streams
+ 351 named destinations out of 1000 (max. 500000)
+ 59627 words of extra memory for PDF output out of 61914 (max. 10000000)
 

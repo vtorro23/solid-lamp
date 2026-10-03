@@ -1,0 +1,106 @@
+\chapter{Teoría local de Cauchy y aplicaciones}
+\section{Preliminares}
+\begin{definition}[Curva]
+	Una \textbf{curva} es una aplicación continua $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $. 
+\end{definition}
+\begin{notation}
+	Para evitar problemas asumiremos que $\displaystyle \gamma  $ es $\displaystyle \mathcal{C}^{1} $ y que $\displaystyle \gamma'\neq 0 $ en $\displaystyle \left[a,b\right]  $. 
+\end{notation}
+Vamos a establecer la siguiente relación de equivalencia entre curvas:
+\[\gamma_{1} \sim \gamma_{2} \iff \exists\varphi:\left[c,d\right] \to \left[a,b\right] , \; \varphi' > 0, \; \gamma_{2}=\gamma_{1}\circ \varphi .\]
+Podemos observar que $\displaystyle \varphi $ es un difeomorfismo que preserva la orientación de la curva. Así, podemos considerar el conjunto cociente correspondiente obteniendo el \textbf{conjunto de curvas orientadas} $\displaystyle \mathcal{C}^{1} $. Esto nos permite identificar cada curva con su conjunto imagen $\displaystyle \Gamma = \left[\gamma \right]  $. 
+\begin{notation}
+	Si la orientación es la opuesta escribimos $\displaystyle \Gamma^{-}=\left[\gamma^{-}\right]  $. En particular, dada $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ tendremos que $\displaystyle \gamma^{-}\left(t\right)=\gamma\left(b+a-t\right) $. 
+\end{notation}
+\begin{definition}[Curva $\displaystyle \mathcal{C}^1 $ a trozos]
+	Decimos que una curva $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ es $\displaystyle \mathcal{C}^{1} $ \textbf{a trozos} si existe una partición de $\displaystyle \left[a,b\right]  $, $\displaystyle a_{0}= a < a_{1} < \cdots < a_{m} = b $ tal que la restricción de $\displaystyle \gamma  $ a cada subintervalo $\displaystyle \left[a_{j}, a_{j+1}\right]  $ para $\displaystyle j = 0, \ldots, m - 1 $ define una curva parametrizada de clase $\displaystyle \mathcal{C}^{1} $.
+\end{definition}
+
+Como vimos en cálculo integral, todo lo anterior se puede generalizar a curvas que sean $\displaystyle \mathcal{C}^{1} $ a trozos. 
+\begin{definition}[Longitud de una curva]
+	Dada una curva $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1} $ a trozos, se define la \textbf{longitud} de $\displaystyle \gamma  $ como
+	\[\ell\left(\gamma \right)=\int^{b}_{a} \|\gamma'\left(t\right)\| \; dt .\]
+\end{definition}
+Es sencillo comprobar que si $\displaystyle \gamma  $ y $\displaystyle \sigma  $ son curvas equivalentes, entonces $\displaystyle \ell\left(\gamma \right)=\ell\left(\sigma \right) $, también $\displaystyle \ell\left(\gamma \right)=\ell\left(\gamma^{-} \right) $. De esta forma, para cada curva orientada $\displaystyle \Gamma  $ de clase $\displaystyle \mathcal{C}^{1} $ a trozos puede definirse $\displaystyle \ell\left(\Gamma \right)=\ell\left(\gamma \right) $ con $\displaystyle \Gamma = \left[\gamma \right]  $. 
+Además, $\displaystyle \ell\left(\Gamma \right)=\ell\left(\Gamma^{-}\right) $. \\
+
+Una operación que usamos con frecuencia es la \textbf{concatenación de curvas}. Si $\displaystyle \Gamma_{1}, \ldots, \Gamma_{m} $ son curvas de clase $\displaystyle \mathcal{C}^{1} $ a trozos en $\displaystyle \R^{n} $ tales que el punto final de $\displaystyle \Gamma_{j} $ coincide con el punto inicial de $\displaystyle \Gamma_{j + 1} $, se puede definir una curva $\displaystyle \Gamma $ que recorre de manera consecutiva $\displaystyle \Gamma_{1} , \ldots, \Gamma_{m} $ que denotaremos por $\displaystyle \Gamma = \Gamma_{1} \cup \cdots \cup \Gamma_{m} $. 
+Para encontrar una parametrización de $\displaystyle \Gamma  $ basta con tomar parametrizaciones $\displaystyle \gamma_{1}, \ldots, \gamma_{m} $ de $\displaystyle \Gamma_{1}, \ldots, \Gamma_{m} $ definidas en intervalos $\displaystyle \left[a_{j}, b_{j}\right]  $ para $\displaystyle j \in \left\{ 1, \ldots, m\right\}  $ de manera que $\displaystyle b_{j}=a_{j+1} $ y que $\displaystyle \gamma_{j}\left(b_{j}\right)=\gamma_{j+1}\left(a_{j+1}\right) $. Así, definimos
+\[\gamma : [a_{1}, b_{m}] \to \R^{n} : t \to \gamma_{j}\left(t\right), \; t \in \left[a_{j}, b_{j}\right]  .\]
+Claramente $\displaystyle \Gamma $ será la clase de las curvas equivalentes a esta $\displaystyle \gamma  $. 
+\begin{definition}
+Sea $\displaystyle \Gamma $ una curva orientada de clase $\displaystyle \mathcal{C}^{1} $ a trozos en $\displaystyle \R^{n} $. 
+\begin{itemize}
+	\item Diremos que $\displaystyle \Gamma $ es una \textbf{curva cerrada} si admite una parametrización $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ tal que $\displaystyle \gamma\left(a\right)=\gamma\left(b\right) $.
+	\item Diremos que $\displaystyle \Gamma $ es una \textbf{curva simple} si admite una parametrización $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ que es inyectiva.
+	\item Diremos que $\displaystyle \Gamma $ es una \textbf{curva cerrada simple} si admite una parametrización $\displaystyle \gamma : \left[a,b\right] \to \R^{n} $ tal que $\displaystyle \gamma\left(a\right)=\gamma\left(b\right) $ y la restricción de $\displaystyle \gamma  $ a $\displaystyle [a,b) $ es inyectiva.
+\end{itemize}
+\end{definition}
+\begin{observation}
+Para las curvas paramétricas cerradas $\displaystyle \mathcal{C}^{1} $ a trozos se pueden considerar reparametrizaciones $\displaystyle \gamma : \mathbb{S}^{1} \to \R^{n} $ para evitar problemas. Usando este punto de vista
+\[\gamma \sim \sigma \iff \exists \varphi : \mathbb{S}^{1} \to \mathbb{S}^{1} ,\]
+homeomorfismo $\displaystyle \mathcal{C}^{1} $ a trozos que preserva orientación tal que $\displaystyle \sigma =\gamma\circ\varphi $. 
+\end{observation}
+Sea $\displaystyle \varphi : A \subset \R^{d}\to \R^{n} $ abierto, podemos tomar $\displaystyle \varphi = \left(\varphi_{1}, \ldots, \varphi_{n}\right) $ y definir
+\[\int _{A} \varphi \; d x : = \left(\int _{A}\varphi_{1} \; dx, \ldots, \int _{A}\varphi_{n} \; dx\right),\]
+siempre que las integrales $\displaystyle \int _{A}\varphi_{i} \; dx $ estén bien definidas $\displaystyle \forall i \in \left\{ 1, \ldots, n\right\}  $. 
+\begin{prop}[Propiedades de la integral]
+Sean $\displaystyle \varphi, \psi : A \to \R^{n} $ integrables y $\displaystyle \alpha, \beta \in \R $. Entonces, 
+\begin{enumerate}
+\item $\displaystyle \int _{A}\left(\alpha\varphi + \beta\varphi\right) \; dx = \alpha\int _{A}\varphi \; dx + \beta\int _{A}\psi \; dx $. 
+\item $\displaystyle \left\|\int _{A}\varphi \; dx\right\| \leq \int _{A}\|\varphi\| \; dx$. 
+\item \textbf{Teorema fundamental del cálculo}. Para toda $\displaystyle g : \left[a,b\right] \to \R^{n} $ de clase $\displaystyle \mathcal{C}^{1}\left(\left[a,b\right] \right) $ se tiene que 
+	\[g\left(t\right)=g\left(a\right)+\int^{t}_{a} g'\left(x\right) \; dx .\]
+\item Si $\displaystyle A = A_{1} \cup A_{2} $ con $\displaystyle m\left(A_{1} \cap A_{2}\right)=0 $, entonces $\displaystyle \int _{A}\varphi \; dx = \int _{A_{1}}\varphi \; dx + \int _{A_{2}}\varphi \; dx $. 
+\end{enumerate}
+\end{prop}
+\section{Integración de funciones complejas en $\displaystyle \C $}
+Si $\displaystyle \varphi : \left[a,b\right] \to \C $ con $\displaystyle \varphi\left(t\right)=x\left(t\right) + iy\left(t\right) $ definiremos la \textbf{integral compleja} como
+	\[\int^{b}_{a} \varphi\left(t\right) \; dt := \int^{b}_{a} x\left(t\right) \; dt + i\int^{b}_{a} y\left(t\right) \; dt .\]
+	Podemos observar que por la propiedad \textbf{(2)} anterior tendremos que 
+\[ \left|\int^{b}_{a} \varphi\left(t\right) \; dt\right| \leq \int^{b}_{a} \left|\varphi\left(t\right)\right| \; dt .\]
+\begin{definition}[Integral compleja sobre una curva]
+	Sea $\displaystyle f : \Omega\subset \C \to \C $, $\displaystyle f $ continua y $\displaystyle \gamma : \left[a,b\right] \to \Omega  $ una curva parametrizada de clase $\displaystyle \mathcal{C}^{1} $ a trozos. Se define la \textbf{integral de $\displaystyle f $ sobre $\displaystyle \gamma  $} como
+	\[\int _{\gamma }f : = \int^{b}_{a} f\left(\gamma\left(t\right)\right)\gamma'\left(t\right) \; dt .\]
+\end{definition}
+\begin{observation}
+El producto que aparece en la integral anterior \textbf{no es el producto escalar}, es el producto usual definido en $\displaystyle \C $. Por tanto, la desigualdad 
+\[ \left|\int _{\gamma }f \right|\leq \int _{\gamma } \left|f\right|  \]
+\textbf{no es cierta en general}. En efecto, podemos ver que el término de la derecha no tiene por qué ser un número real. Aunque fuese real, la desigualdad no tiene por qué darse. 
+\end{observation}
+\begin{eg}
+	Cogemos $\displaystyle f\left(z\right)=\frac{1}{z} $ en $\displaystyle \mathbb{S}^{1} $. Observamos que si cogemos $\displaystyle \gamma\left(t\right)=e^{it} $ con $\displaystyle t \in \left[0, 2\pi \right]  $, tendremos que 
+	\[\int _{\gamma }\frac{1}{z} \; dz = \int^{2\pi }_{0} \frac{1}{e^{it}}ie^{it} \; dt = 2\pi i .\]
+Podemos ver que $\displaystyle \left|\int _{\gamma }\frac{1}{z} \right|=2\pi  $ mientras que 
+\[\int _{\gamma }1 =\int^{2\pi }_{0} 1 \cdot ie^{it} =0 .\]
+Claramente $\displaystyle 2\pi > 0 $. 
+\end{eg}
+Si $\displaystyle f = u + iv $ y $\displaystyle \gamma = x + iy $ tendremos que 
+\[\int _{\gamma } f=\int^{b}_{a} u\left(x\left(t\right), y\left(t\right)\right)x'\left(t\right)-v\left(x\left(t\right), y)\left(t\right)\right)y'\left(t\right) \; dt+i\int^{b}_{a} u\left(x\left(t\right), y\left(t\right)\right)y'\left(t\right)+v\left(x\left(t\right), y\left(t\right)\right)x'\left(t\right) \; dt .\]
+A partir de esta igualdad es sencillo ver por qué no va a funcionar la integral. 
+
+\begin{prop}[Propiedades de la integral compleja]
+Sean $\displaystyle f, g : \Omega \subset \C \to \C $, $\displaystyle \alpha, \beta \in \C $ y $\displaystyle \gamma : \left[a,b\right] \to \Omega  $ curva parametrizada $\displaystyle \mathcal{C}^{1} $ a trozos. Entonces, 
+	\begin{enumerate}
+	\item $\displaystyle \int _{\gamma }\alpha f + \beta g = \alpha \int f +\beta \int g  $.
+	\item $\displaystyle \int _{\gamma^{-} }f =-\int _{\gamma }f $. 
+	\item $\displaystyle \left|\int _{\gamma }f \right|\leq \sup_{z \in \gamma\left(\left[a,b\right] \right)} \left|f\left(z\right)\right| \ell\left(\gamma \right) $.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+Las propiedades \textbf{(1)} y \textbf{(2)} se vieron en cálculo integral. Demostramos \textbf{(3)}, 
+\[
+\begin{split}
+	\left|\int _{\gamma }f \right|= & \left|\int^{b}_{a} f\left(\gamma\left(t\right)\right)\gamma'\left(t\right) \; dt\right|\leq \int^{b}_{a} \left|f\left(\gamma\left(t\right)\right)\right| \left|\gamma'\left(t\right)\right| \; dt \\
+	\leq & \sup_{z \in \gamma\left(\left[a,b\right] \right)} \left|f\left(z\right)\right| \int^{b}_{a} \left|\gamma'\left(t\right)\right| \; dt = \sup_{z \in \gamma\left(\left[a,b\right] \right)} \left|f\left(z\right)\right| \ell\left(\gamma \right).
+\end{split}
+\]
+\end{proof}
+\begin{observation}
+	Por el teorema de cambio de variable tenemos que si $\displaystyle \gamma : \left[a,b\right] \to \Omega  $ y $\displaystyle \sigma : \left[c,d\right] \to \Omega  $ son curvas parametrizadas $\displaystyle \mathcal{C}^{1} $ equivalentes, entonces $\displaystyle \forall f \in \mathcal{C}\left(\Omega \right) $ tendremos que 
+	\[\int _{\gamma }f =\int _{\sigma }f .\]
+	Debido a este hecho, para cada $\displaystyle \Gamma $ curva orientada de clase $\displaystyle \mathcal{C}^{1} $ tendremos que podemos definir
+	\[\int _{\Gamma}f := \int _{\gamma }f ,\]
+con $\displaystyle \gamma  $ parametrización de $\displaystyle \Gamma  $. 	
+\end{observation}
+

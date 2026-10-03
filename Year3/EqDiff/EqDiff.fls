@@ -499,6 +499,9 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm
 INPUT ./Chap2.tex
 INPUT ./Chap2.tex
 INPUT Chap2.tex
+INPUT ./Chap3.tex
+INPUT ./Chap3.tex
+INPUT Chap3.tex
 INPUT EqDiff.aux
 INPUT ./EqDiff.out
 INPUT ./EqDiff.out

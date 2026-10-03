@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  27 SEP 2026 14:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  2 OCT 2026 16:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1409,7 +1409,7 @@ Overfull \hbox (12.91507pt too wide) in paragraph at lines 180--181
 [] \OMS/lmsy/m/n/10 \ \OML/lmm/m/it/10 G[]$ \T1/lmr/m/n/10 (-20) que es abier-to en $\OML/lmm/m/it/10 Y$\T1/lmr/m/n/10 (-20) . Te-ne-mos que $\OML/lmm/m/it/10 V[] \OT1/lmr/m/n/10 (-20) := [][] []$
  []
 
-<~/Desktop/Images/Topologia1.png, id=472, 1536.74126pt x 735.74875pt>
+<~/Desktop/Images/Topologia1.png, id=492, 1536.74126pt x 735.74875pt>
 File: ~/Desktop/Images/Topologia1.png Graphic file (type png)
 <use ~/Desktop/Images/Topologia1.png>
 Package pdftex.def Info: ~/Desktop/Images/Topologia1.png  used on input line 185.
@@ -1420,12 +1420,12 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 200.
-<~/Desktop/Images/Topologia2.png, id=473, 1456.44125pt x 1088.065pt>
+<~/Desktop/Images/Topologia2.png, id=493, 1456.44125pt x 1088.065pt>
 File: ~/Desktop/Images/Topologia2.png Graphic file (type png)
 <use ~/Desktop/Images/Topologia2.png>
 Package pdftex.def Info: ~/Desktop/Images/Topologia2.png  used on input line 203.
 (pdftex.def)             Requested size: 191.35622pt x 142.94763pt.
-<~/Desktop/Images/Topologia3.png, id=474, 1456.44125pt x 1088.065pt>
+<~/Desktop/Images/Topologia3.png, id=494, 1456.44125pt x 1088.065pt>
 File: ~/Desktop/Images/Topologia3.png Graphic file (type png)
 <use ~/Desktop/Images/Topologia3.png>
 Package pdftex.def Info: ~/Desktop/Images/Topologia3.png  used on input line 210.
@@ -1438,12 +1438,138 @@ LaTeX Info: Redefining \% on input line 212.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 213.
+) (./Chap3.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [25 </Users/victoriatorroja/Desktop/Images/Topologia2.png (PNG copy)> </Users/victoriatorroja/Desktop/Images/Topologia3.png (PNG copy)>]
+Cap\'{\i }tulo 3.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 20.
+[26
+
+]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 25.
+LaTeX Info: Redefining \. on input line 57.
+LaTeX Info: Redefining \% on input line 57.
+LaTeX Info: Redefining \. on input line 57.
+LaTeX Info: Redefining \% on input line 57.
+ [27]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 61.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 67.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 71.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 75.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 79.
+LaTeX Info: Redefining \. on input line 96.
+LaTeX Info: Redefining \% on input line 96.
+LaTeX Info: Redefining \. on input line 96.
+LaTeX Info: Redefining \% on input line 96.
+ [28]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 100.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 103.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 115.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 119.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 132.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 133.
+
+LaTeX Info: Redefining \. on input line 133.
+LaTeX Info: Redefining \% on input line 133.
+LaTeX Info: Redefining \. on input line 133.
+LaTeX Info: Redefining \% on input line 133.
+[29]
+<~/Desktop/Images/Topologia4.png, id=556, 1315.91624pt x 1204.5pt>
+File: ~/Desktop/Images/Topologia4.png Graphic file (type png)
+<use ~/Desktop/Images/Topologia4.png>
+Package pdftex.def Info: ~/Desktop/Images/Topologia4.png  used on input line 146.
+(pdftex.def)             Requested size: 161.8825pt x 148.17284pt.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 151.
+LaTeX Info: Redefining \. on input line 155.
+LaTeX Info: Redefining \% on input line 155.
+LaTeX Info: Redefining \. on input line 155.
+LaTeX Info: Redefining \% on input line 155.
+ [30 </Users/victoriatorroja/Desktop/Images/Topologia4.png (PNG copy)>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 160.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 163.
+LaTeX Info: Redefining \. on input line 184.
+LaTeX Info: Redefining \% on input line 184.
+LaTeX Info: Redefining \. on input line 184.
+LaTeX Info: Redefining \% on input line 184.
+ [31]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 189.
+
+Overfull \hbox (24.10083pt too wide) in paragraph at lines 192--193
+[]\T1/lmr/m/n/10 (-20) Supongamos que $\OT1/lmr/m/n/10 (-20) 
+ \OMS/lmsy/m/n/10 ^^Z [] \OML/lmm/m/it/10 X[]$\T1/lmr/m/n/10 (-20) , en-ton-ces ex-sis-ten $\OML/lmm/m/it/10 U[] \OMS/lmsy/m/n/10 2 T[]$ \T1/lmr/m/n/10 (-20) con $\OT1/lmr/m/n/10 (-20) 
+ = [] []$
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 196.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 199.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 202.
+LaTeX Info: Redefining \. on input line 209.
+LaTeX Info: Redefining \% on input line 209.
+LaTeX Info: Redefining \. on input line 209.
+LaTeX Info: Redefining \% on input line 209.
+[32]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 225.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 229.
 )
-LaTeX Info: Redefining \. on input line 38.
-LaTeX Info: Redefining \% on input line 38.
-LaTeX Info: Redefining \. on input line 38.
-LaTeX Info: Redefining \% on input line 38.
- [25 </Users/victoriatorroja/Desktop/Images/Topologia2.png (PNG copy)> </Users/victoriatorroja/Desktop/Images/Topologia3.png (PNG copy)>] (./Topologia.aux
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
+ [33] (./Topologia.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
@@ -1451,26 +1577,22 @@ LaTeX Info: Redefining \% on input line 9.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Topologia.out' has not changed.
-(rerunfilecheck)             Checksum: 1D3C3C86593DCA302910866F75A6CA9E;2143.
+(rerunfilecheck)             Checksum: 560C479165D34B8DB425163C696F632B;3019.
  ) 
 Here is how much of TeX's memory you used:
- 39698 strings out of 474116
- 901517 string characters out of 5743682
+ 39852 strings out of 474116
+ 904338 string characters out of 5743682
  1955187 words of memory out of 5000000
- 60752 multiletter control sequences out of 15000+600000
- 660940 words of font info for 247 fonts, out of 8000000 for 9000
+ 60820 multiletter control sequences out of 15000+600000
+ 662107 words of font info for 260 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,12n,110p,1006b,1268s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 107i,16n,110p,1006b,1271s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on Topologia.pdf (26 pages, 1985835 bytes).
+Output written on Topologia.pdf (34 pages, 2772800 bytes).
 PDF statistics:
- 654 PDF objects out of 1000 (max. 8388607)
- 555 compressed objects within 6 object streams
- 292 named destinations out of 1000 (max. 500000)
- 53476 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 765 PDF objects out of 1000 (max. 8388607)
+ 656 compressed objects within 7 object streams
+ 349 named destinations out of 1000 (max. 500000)
+ 53513 words of extra memory for PDF output out of 61914 (max. 10000000)
 
