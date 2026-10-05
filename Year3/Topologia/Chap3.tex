@@ -147,18 +147,29 @@ Se puede ver que la intersección de dos preimágenes $\displaystyle p_{1}^{-1}\
 \end{center}
 La solución consiste en coger una base 
 \[\mathcal{B} = \left\{ U_{1} \times \cdots \times U_{r} \; : \; U_{i} \subset X_{i}, i \in \left\{ 1, \ldots, r\right\} \right\}  ,\]
-que es la base determinada por la subbase $\displaystyle \mathcal{S} $.
+que es la base determinada por la subbase $\displaystyle \mathcal{S} $. En efecto, tenemos que 
+\[U_{1} \times \cdots \times U_{r}=p^{-1}_{1}\left(U_{1}\right) \cap \cdots \cap p_{r}^{-1}\left(U_{r}\right) .\] 
+Veamos que $\displaystyle \mathcal{B} $ es en efecto una base:
+\begin{itemize}
+\item Por un lado, como $\displaystyle X_{i}=\bigcup_{j \in J_{i}}U_{j} $ con $\displaystyle U_{j}\in \mathcal{T}_{i} $, tendremos que 
+	\[\prod^{r}_{i = 1}X_{i}=\bigcup_{U_{j}^{i}\in \mathcal{T}_{i}, i \in \left\{ 1, \ldots, r\right\} , j \in J} U_{j}^{1} \times \cdots \times U_{j}^{r},.\]
+\item Por otro lado, supongamos que $\displaystyle B_{1} = U_{1} \times \cdots \times U_{r}\in \mathcal{B} $ y $\displaystyle B_{2} = V_{1} \times \cdots \times V_{r} \in \mathcal{B} $ no son disjuntos, por lo que existe $\displaystyle \left(x_{1}, \ldots, x_{r}\right)\in B_{1} \cap B_{2} $. Tendremos que 
+	\[\left(x_{1}, \ldots, x_{r}\right)\in \left(U_{1} \cap V_{1}\right) \times \cdots \times \left(U_{r} \cap V_{r}\right) \subset B_{1} \cap B_{2}  .\]
+	Además, es sencillo ver que $\displaystyle \left(U_{1} \cap V_{1}\right) \times \cdots \times \left(U_{r} \cap V_{r}\right)\in \mathcal{B} $. 
+\end{itemize}
+Hemos visto que $\displaystyle \mathcal{B} $ es una base, ahora veamos que genera la topología menos fina que hace continuas todas las proyecciones $\displaystyle p_{j} $ para $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $. Si $\displaystyle \mathcal{T} $ es una topología que cumple estas características, tendremos que si $\displaystyle U_{j} \in \mathcal{T}_{j} $ entonces
+\[p_{j}^{-1}\left(U_{j}\right)= X_{1} \times \cdots \times X_{j-1} \times U_{j} \times X_{j+1} \times \cdots \times X_{r} \in \mathcal{T} .\]
+Así, para $\displaystyle U = U_{1} \times \cdots \times U_{r} \in \mathcal{T}_{\mathcal{B}}$ tendremos que $\displaystyle U = p^{-1}_{1}\left(U_{1}\right) \cap \cdots \cap p^{-1}_{r}\left(U_{r}\right) \in \mathcal{T} $, por lo que $\displaystyle \mathcal{T}_{\mathcal{B}}\subset \mathcal{T} $.  
 \begin{definition}[Topología producto]
 	Dado un conjunto finito de espacios topológicos $\displaystyle \left\{ \left(X_{i}, \mathcal{T}_{i}\right)\right\} _{i = 1, \ldots, r} $, a la topología determinada por la subbase 
 	\[\mathcal{S}= \left\{ p_{j}^{-1}\left(U_{j}\right) \; : \; j \in \left\{ 1, \ldots, r\right\} , U_{j}\in \mathcal{T}_{j}\right\} .\]
 	la denominamos \textbf{topología producto} y la escribimos $\displaystyle \prod^{r}_{i = 1}\mathcal{T}_{i} $. 
 \end{definition}
- Así, tenemos que 
-\[U_{1} \times \cdots \times U_{r}=p^{-1}_{1}\left(U_{1}\right) \cap \cdots \cap p_{r}^{-1}\left(U_{r}\right) .\]
-% ver que esta topología que hemos definido es la menos fina
+ 
 \begin{eg}
- No tiene por qué ser que el producto de abiertos sea abierto, ni que los abiertos sean producto de abiertos. Además, la topología producto en este caso coincide con la topología usual en $\displaystyle \R^{m} $. 
+Consideremos el producto de $\displaystyle n $ copias de $\displaystyle \left(\R, \mathcal{T}_{u}\right) $. Es sencillo ver que la topología producto en $\displaystyle \R^{n} $ es la topología usual en $\displaystyle \R^{n} $. En efecto, podemos ver que $\displaystyle \left(a_{1}, b_{1}\right)\times \cdots \times\left(a_{n}, b_{n}\right) $ con $\displaystyle \left(a_{i}, b_{i}\right) $ intervalo de $\displaystyle \R $, es una base de la topología usual en $\displaystyle \R^{n} $. 
 \end{eg}
+
 \begin{prop}
 Se consideran espacios topológicos $\displaystyle \left(X_{i}, \mathcal{T}_{i}\right) $ para $\displaystyle i = 1, \ldots, r $, el conjunto producto $\displaystyle Y = \prod^{r}_{i=1}X_{i} $ y las aplicaciones proyección $\displaystyle p_{i} : Y \to X_{i} $. Las siguientes afirmaciones son equivalentes:
 \begin{enumerate}
@@ -181,42 +192,45 @@ Consideramos ambas implicaciones.
 		Así, tenemos que $\displaystyle g $ es continua.
 	\end{itemize}
 \item[($\displaystyle \Leftarrow $)] Elegimos $\displaystyle \left(Z, \mathcal{T}''\right)=\left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right) $ y $\displaystyle g = id $. Entonces, 
-	\[p_{j}\circ id = p_{j} : \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right) \to \left(\prod^{r}_{i = 1}X_{i}, \mathcal{T}'\right) \]
-	es continua, por lo que necesariamente debe ser que $\displaystyle \mathcal{T}' \subset \prod^{r}_{i = 1}\mathcal{T}_{i} $. Recíprocamente, cogiendo $\displaystyle \left(Z, \mathcal{T}''\right)=\left(\prod^{r}_{i = 1}X_{i}, \mathcal{T}'\right) $, cogemos $\displaystyle g = id $ y claramente es continua. Por tanto, $\displaystyle p_{j} $ es continua para $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $ y debe ser que $\displaystyle \mathcal{T}' \supset \prod^{r}_{i = 1}X_{i} $. 
+	\[p_{j}\circ id = p_{j} : \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right) \to \left(X_{j}, \mathcal{T}_{j}\right) \]
+	es continua, por lo que debe ser que 
+	\[g = id : \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right)\to \left(\prod^{r}_{i = 1}X_{i}, \mathcal{T}'\right) \]
+	es continua y por tanto tenemos que $\displaystyle \mathcal{T}' \subset \prod^{r}_{i = 1}\mathcal{T}_{i} $. Recíprocamente, cogiendo $\displaystyle \left(Z, \mathcal{T}''\right)=\left(\prod^{r}_{i = 1}X_{i}, \mathcal{T}'\right) $, cogemos $\displaystyle g = id $ que claramente es continua. Por tanto, $\displaystyle p_{j} $ es continua para $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $ y debe ser que $\displaystyle \prod^{r}_{i = 1}\mathcal{T}_{i} \subset \mathcal{T}' $ \footnote{Estamos usando el hecho de que $\displaystyle \prod^{r}_{i = 1}\mathcal{T}_{i} $ es la topología menos fina que hace que todas las proyecciones sean continuas.}. 
 \end{description}
 \end{proof}
 \begin{prop}
-	Las aplicaciones $\displaystyle p_{j} : \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right) \to \left(X_{i}, \mathcal{T}_{i}\right) $ son abiertas $\displaystyle \forall j \in \left\{ 1, \ldots, r\right\}  $. 
+	Para cada $\displaystyle j = 1, \ldots, r $ las aplicaciones 
+	\[ p_{j} : \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right) \to \left(X_{j}, \mathcal{T}_{j}\right)\]
+	son abiertas.  
 \end{prop}
 \begin{proof}
-	Supongamos que $\displaystyle \Omega \subset \prod^{r}_{i = 1}X_{i} $, entonces exsisten $\displaystyle U_{i}^{\alpha }\in \mathcal{T}_{i} $ con $\displaystyle \Omega = \bigcup_{\alpha \in \Lambda }\left(U_{1}^{\alpha } \times \cdots \times U_{r}^{\alpha }\right) $ y por tanto
-	\[p_{j}\left(\Omega \right)=\bigcup_{\alpha \in \Lambda}p_{j}\left(U_{1}^{\alpha }\times \cdots \times U_{r}^{\alpha }\right) .\]
+	Supongamos que $\displaystyle \Omega \in \prod^{r}_{i = 1}\mathcal{T}_{i} $, entonces exsisten $\displaystyle U_{i}^{\alpha }\in \mathcal{T}_{i} $ con $\displaystyle \Omega = \bigcup_{\alpha \in \Lambda }\left(U_{1}^{\alpha } \times \cdots \times U_{r}^{\alpha }\right) $ y por tanto
+	\[p_{j}\left(\Omega \right)=\bigcup_{\alpha \in \Lambda}p_{j}\left(U_{1}^{\alpha }\times \cdots \times U_{r}^{\alpha }\right) = \bigcup_{\alpha \in \Lambda }U_{j}^{\alpha} \in \mathcal{T}_{j} .\]
 \end{proof}
 \begin{observation}
-Las proyecciones no son cerradas en general. 
+Las proyecciones no son cerradas en general. Por ejemplo, consideremos en $\displaystyle \left(\R^{2}, \mathcal{T}_{u}\right)=\left(\R, \mathcal{T}_{u}\right) \times \left(\R, \mathcal{T}_{u}\right) $ la hipérbola $\displaystyle H = \left\{ xy = 1\right\} \subset \R^{2} $, que es un conjunto cerrado. Tenemos que $\displaystyle p_{1}\left(H\right)= \R / \left\{ 0\right\}  $ que no es cerrado.
 \end{observation}
-\begin{eg}
-	Consideremos $\displaystyle \left(\R^{2}, \mathcal{T}_{u}\right)=\left(\R, \mathcal{T}_{u}\right) \times \left(\R, \mathcal{T}_{u}\right) $. Tenemos que $\displaystyle H = \left\{ xy = 1\right\} \subset \R^{2} $ es un conjunto cerrado. Tenemos que $\displaystyle p_{1}\left(H\right)= \R / \left\{ 0\right\}  $ que no es cerrado. 
-\end{eg}
-\begin{eg}
-	Consideremos una familia finita de espacios topológicos $\displaystyle \left\{ \left(X_{i}, \mathcal{T}_{i}\right)\right\} _{i = 1, \ldots, r} $. Fijamos $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $ y $\displaystyle \forall k \in \left\{ 1, \ldots, r\right\} \backslash \left\{ j\right\}  $ escogemos $\displaystyle a_{k}\in X_{k} $ y definimos la aplicación
-	\[\alpha_{j}^{\left(a_{1}, \ldots, a_{r}\right)} : \left(X_{j}, \mathcal{T}_{j}\right)\to \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right) : x_{j} \to \left(a_{1}, \ldots, a_{j-1}, x_{j}, a_{j+1}, \ldots, a_{r}\right) .\]
-	Veremos que esta aplicación es un embebimiento topológico. 
-\end{eg}
+
+\begin{prop}
+	Para cada $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $ y para cualesquiera $\displaystyle a_{k}\in X_{k} $ con $\displaystyle k \neq j $, fijados la aplicación
+	\[\alpha_{j} : \left(X_{j}, \mathcal{T}_{j}\right)\to \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right): x_{j}\to \left(a_{1}, \ldots, a_{j-1}, x_{j}, a_{j+1}, \ldots, a_{r}\right) ,\]
+	es un embebimiento topológico.
+\end{prop}
+
 \begin{proof}
-Consideremos $\displaystyle \alpha_{j} : \left(X_{j}, \mathcal{T}_{j}\right)\to \left(\alpha_{j}\left(X_{j}\right), \left(\prod^{r}_{i = 1}\mathcal{T}_{i}\right)|_{\alpha_{j}\left(X_{i}\right)}\right) $. Queremos ver que es un homeomorfismo. Claramente es biyectiva. Si cogemos $\displaystyle U_{1} \times \cdots \times U_{r} \in \prod^{r}_{i=1}\mathcal{T}_{i} $, distinguimos dos casos:
+Consideremos $\displaystyle \alpha_{j} : \left(X_{j}, \mathcal{T}_{j}\right)\to \left(\alpha_{j}\left(X_{j}\right), \left(\prod^{r}_{i = 1}\mathcal{T}_{i}\right)|_{\alpha_{j}\left(X_{j}\right)}\right) $. Queremos ver que es un homeomorfismo. Claramente es biyectiva. Veamos ahora que es continua. Si cogemos $\displaystyle U_{1} \times \cdots \times U_{r} \in \prod^{r}_{i=1}\mathcal{T}_{i} $, distinguimos dos casos:
 \begin{itemize}
-	\item Si $\displaystyle \left(U_{1} \times \cdots \times U_{r}\right) \cap \alpha_{j}\left(X_{j}\right)=\emptyset $ es porque debe existir $\displaystyle k \in \left\{ 1, \ldots, r\right\} \backslash \left\{ j\right\}  $ con $\displaystyle a_{k}\not\in U_{k} $. 
+	\item Si $\displaystyle \left(U_{1} \times \cdots \times U_{r}\right) \cap \alpha_{j}\left(X_{j}\right)=\emptyset $ es porque debe existir $\displaystyle k \in \left\{ 1, \ldots, r\right\} \backslash \left\{ j\right\}  $ con $\displaystyle a_{k}\not\in U_{k} $. En este caso $\displaystyle \alpha _{j}^{-1}\left(\emptyset\right)=\emptyset \in \mathcal{T}_{j} $. 
 	\item Si no es vacío tendremos que $\displaystyle  $ 
 		\[\left(U_{1}, \times \cdots \times U_{r}\right) \cap \alpha_{j}\left(X_{j}\right) = \left\{ a_{1}\right\} \times \cdots \times\left\{ a_{j - 1}\right\} \times U_{j} \times \left\{ a_{j+1}\right\} \times \cdots \times \left\{ a_{r}\right\}   .\]
-\end{itemize}
-De esta forma, en el segundo caso tendremos que 
+De esta forma,  
 \[\alpha ^{-1}_{j}\left(\left\{ a_{1}\right\} \times \cdots \times\left\{ a_{j - 1}\right\} \times U_{j} \times \left\{ a_{j+1}\right\} \times \cdots \times \left\{ a_{r}\right\}\right) = U_{j}\in \mathcal{T}_{j} .\]
-Finalmente, si $\displaystyle \Omega_{j}\in \mathcal{T}_{j} $ tendremos que 
+\end{itemize}
+Por tanto, $\displaystyle \alpha_{j} $ es continua. Finalmente, veamos que es abierta. Si $\displaystyle \Omega_{j}\in \mathcal{T}_{j} $ tendremos que 
 \[
 \begin{split}
 	\alpha_{j}\left(\Omega_{j}\right)= & \left\{ a_{1}\right\}  \times \cdots \times \left\{ a_{j-1}\right\}  \times \Omega_{j} \times \left\{ a_{j+1}\right\} \times \cdots \times \left\{ a_{r}\right\} \\
-	= &  \left(X_{1} \times \cdots \times X_{j-1} \times \Omega_{j} \times X_{j+1} \times \cdots \times X_{r}\right)\cap \alpha_{j}\left(X_{j}\right) \in  \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right).
+	= &  \left(X_{1} \times \cdots \times X_{j-1} \times \Omega_{j} \times X_{j+1} \times \cdots \times X_{r}\right)\cap \alpha_{j}\left(X_{j}\right) \in  \left(\prod^{r}_{i = 1}X_{i}, \left(\prod^{r}_{i = 1}\mathcal{T}_{i}\right)|_{\alpha_{j}\left(X_{j}\right)}\right).
 \end{split}
 \]
 Así, tenemos que $\displaystyle \alpha_{j} $ es abierta por lo que es homeomorfismo.
@@ -226,11 +240,22 @@ Nos preguntamos si existen $\displaystyle \mathcal{T}_{1} $ y $\displaystyle \ma
 Sin embargo, esto no puede ser porque $\displaystyle \left(\R, \mathcal{T}_{\text{dis}}\right)\times\left(\R, \mathcal{T}_{\text{dis}}\right)=\left(\R^{2}, \mathcal{T}_{\text{dis}} \times \mathcal{T}_{\text{dis}}\right)\neq \left(\R^{2}, \mathcal{T}\right) $. 
 \end{eg}
 \begin{prop}
-	Dados $\displaystyle a_{j}\in X_{j} $ para $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $, si consideramos un entorno $\displaystyle V^{a_{j}}\subset X_{j} $ para $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $ tendremos que $\displaystyle V^{a_{1}} \times \cdots \times V^{a_{r}} $ es un entorno de $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $ en $\displaystyle \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right) $. 
+	Consideremos una familia de espacios topológicos $\displaystyle \left\{ X_{i}, \mathcal{T}_{i}\right\} _{i = 1, \ldots, r} $ y el espacio topológico producto $\displaystyle \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right) $. 
+	\begin{enumerate}
+		\item Si $\displaystyle V^{a_{j}}\subset X_{j} $ es entorno de $\displaystyle a_{j}\in X_{j} $ para $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $, entonces
+			\[V^{a_{1}}\times \cdots \times V^{a_{r}}\subset \prod^{r}_{i= 1}X_{i} \]
+			es entorno del punto $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $. 
+		\item Si $\displaystyle \mathcal{V}^{a_{i}} $ es una base de entornos de $\displaystyle a_{i}\in X_{i} $,
+			\[\mathcal{V}^{\left(a_{1}, \ldots, a_{r}\right)}= \left\{ V^{a_{1}} \times \cdots \times V^{a_{r}} \; : \; V^{a_{i}}\in \mathcal{V}^{a_{i}}, i = 1, \ldots, r\right\}  ,\]
+			es una base de entornos de $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $. 
+		\item Si $\displaystyle \mathcal{B}_{i}\subset \mathcal{P}\left(X_{i}\right) $ es una base de $\displaystyle \mathcal{T}_{i} $ para $\displaystyle i = 1, \ldots, r $, entonces
+			\[\mathcal{B}_{1 \times \cdots \times r} = \left\{ U_{1} \times \cdots \times U_{r} \; : \; U_{i} \in \mathcal{B}_{i}, i = 1, \ldots, r\right\}  ,\]
+			es una base de $\displaystyle \prod^{r}_{i = 1}\mathcal{T}_{i} $.
+	\end{enumerate}
 \end{prop}
 \begin{proof}
 Tendremos que existen abiertos $\displaystyle U_{j} $ tales que $\displaystyle a_{j}\in U_{j}\subset V^{a_{j}} $, de forma que 
 \[\left(a_{1}, \ldots, a_{r}\right)\in U_{1} \times \cdots \times U_{r} \subset V^{a_{1}} \times \cdots \times V^{a_{r}} ,\]
 que es un entorno de $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $ puesto que $\displaystyle U_{1} \times \cdots \times U_{r}\in \prod^{r}_{i = 1}\mathcal{T}_{i} $. 
 \end{proof}
-Si consideramos bases de entornos $\displaystyle \mathcal{V}\left(a_{j}\right)= \left\{ V^{a_{j}}_{i}\right\} _{i \in I_{j}} $, buscamos una base de entornos de $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $. El resultado es el producto de bases de entornos.
+

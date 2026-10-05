@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  2 OCT 2026 10:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  5 OCT 2026 12:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1513,86 +1513,75 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 826.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 843.
+(mdframed)              on input line 839.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 841.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 845.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 849.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 852.
-LaTeX Info: Redefining \. on input line 862.
-LaTeX Info: Redefining \% on input line 862.
-LaTeX Info: Redefining \. on input line 862.
-LaTeX Info: Redefining \% on input line 862.
+(mdframed)              on input line 848.
+LaTeX Info: Redefining \. on input line 858.
+LaTeX Info: Redefining \% on input line 858.
+LaTeX Info: Redefining \. on input line 858.
+LaTeX Info: Redefining \% on input line 858.
  [29]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 864.
-
-Overfull \hbox (30.35081pt too wide) in paragraph at lines 868--869
-[]\T1/lmr/m/n/10 (-20) Basta con ver que $[]$ es per-pen-cu-lar al plano os-ci-la-dor $\OMS/lmsy/m/n/10 L [] \OT1/lmr/m/n/10 (-20) = \OMS/lmsy/m/n/10 L []$\T1/lmr/m/n/10 (-20) .
- []
-
+(mdframed)              on input line 860.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 870.
+(mdframed)              on input line 866.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 879.
-LaTeX Info: Redefining \. on input line 884.
-LaTeX Info: Redefining \% on input line 884.
-LaTeX Info: Redefining \. on input line 884.
-LaTeX Info: Redefining \% on input line 884.
-[30]
+(mdframed)              on input line 875.
+LaTeX Info: Redefining \. on input line 880.
+LaTeX Info: Redefining \% on input line 880.
+LaTeX Info: Redefining \. on input line 880.
+LaTeX Info: Redefining \% on input line 880.
+ [30]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 881.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 885.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 890.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 899.
+(mdframed)              on input line 895.
 
-Overfull \hbox (9.07156pt too wide) in paragraph at lines 908--911
-[]\T1/lmr/m/n/10 (-20) Si $\OML/lmm/m/it/10 ^^\[] [] \OT1/lmr/m/n/10 (-20) = 0$ \T1/lmr/m/n/10 (-20) te-ne-mos que $[] \OT1/lmr/m/n/10 (-20) = 0$ \T1/lmr/m/n/10 (-20) por lo que $[] [] \OT1/lmr/m/n/10 (-20) = []$\T1/lmr/m/n/10 (-20) . To-ma-mos $\OT1/lmr/m/n/10 (-20) ^^E \OMS/lmsy/m/n/10 ^^Q [] \OT1/lmr/m/n/10 (-20) =
+Overfull \hbox (3.12552pt too wide) in paragraph at lines 906--909
+\T1/lmr/m/n/10 (-20) Queremos ver que la tra-za de $\OML/lmm/m/it/10  []$ \T1/lmr/m/n/10 (-20) es-tá con-te-ni-da en $\OT1/lmr/m/n/10 (-20) ^^E$\T1/lmr/m/n/10 (-20) , es de-cir, que $[] \OT1/lmr/m/n/10 (-20) =
  []
 
-
-Overfull \hbox (12.97656pt too wide) in paragraph at lines 908--911
-\OT1/lmr/m/n/10 (-20) 0$\T1/lmr/m/n/10 (-20) . Que-re-mos ver que la tra-za de $\OML/lmm/m/it/10  []$ \T1/lmr/m/n/10 (-20) es-tá con-te-ni-da en $\OT1/lmr/m/n/10 (-20) ^^E$\T1/lmr/m/n/10 (-20) , es de-cir, que $[] \OT1/lmr/m/n/10 (-20) =
- []
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 915.
-
-Overfull \hbox (4.31053pt too wide) in paragraph at lines 921--924
-\T1/lmr/m/n/10 (-20) Tenemos que $[] \OT1/lmr/m/n/10 (-20) = []$\T1/lmr/m/n/10 (-20) , $[] \OT1/lmr/m/n/10 (-20) = []$ \T1/lmr/m/n/10 (-20) y $[] \OT1/lmr/m/n/10 (-20) = []$\T1/lmr/m/n/10 (-20) .
- []
-
-LaTeX Info: Redefining \. on input line 924.
-LaTeX Info: Redefining \% on input line 924.
-LaTeX Info: Redefining \. on input line 924.
-LaTeX Info: Redefining \% on input line 924.
+LaTeX Info: Redefining \. on input line 911.
+LaTeX Info: Redefining \% on input line 911.
+LaTeX Info: Redefining \. on input line 911.
+LaTeX Info: Redefining \% on input line 911.
 [31]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 926.
+(mdframed)              on input line 913.
 
-Overfull \hbox (1.48058pt too wide) detected at line 939
+Overfull \hbox (4.31053pt too wide) in paragraph at lines 919--922
+\T1/lmr/m/n/10 (-20) Tenemos que $[] \OT1/lmr/m/n/10 (-20) = []$\T1/lmr/m/n/10 (-20) , $[] \OT1/lmr/m/n/10 (-20) = []$ \T1/lmr/m/n/10 (-20) y $[] \OT1/lmr/m/n/10 (-20) = []$\T1/lmr/m/n/10 (-20) .
+ []
+
+
+Overfull \hbox (0.52449pt too wide) detected at line 932
 []
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 943.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 947.
+(mdframed)              on input line 935.
+
+Overfull \hbox (1.48058pt too wide) detected at line 948
+[]
+ []
+
 LaTeX Info: Redefining \. on input line 949.
 LaTeX Info: Redefining \% on input line 949.
 LaTeX Info: Redefining \. on input line 949.
@@ -1600,97 +1589,91 @@ LaTeX Info: Redefining \% on input line 949.
 [32]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 957.
+(mdframed)              on input line 952.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 963.
+(mdframed)              on input line 956.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 974.
-Package mdframed Info: Not enough space on this page on input line 976.
-LaTeX Info: Redefining \. on input line 976.
-LaTeX Info: Redefining \% on input line 976.
-LaTeX Info: Redefining \. on input line 976.
-LaTeX Info: Redefining \% on input line 976.
+(mdframed)              on input line 966.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 972.
+LaTeX Info: Redefining \. on input line 982.
+LaTeX Info: Redefining \% on input line 982.
+LaTeX Info: Redefining \. on input line 982.
+LaTeX Info: Redefining \% on input line 982.
  [33]
-Package mdframed Info: Not enough space on this page on input line 976.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 978.
+(mdframed)              on input line 983.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 995.
+(mdframed)              on input line 987.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1006.
+(mdframed)              on input line 1004.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1015.
+LaTeX Info: Redefining \. on input line 1017.
+LaTeX Info: Redefining \% on input line 1017.
+LaTeX Info: Redefining \. on input line 1017.
+LaTeX Info: Redefining \% on input line 1017.
+ [34]
+Package mdframed Info: Not enough space on this page on input line 1017.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1019.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1022.
 
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last box will be empty
-(mdframed)                you have to change it manually
-(mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 1008.
-
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 1008.
-LaTeX Info: Redefining \. on input line 1008.
-LaTeX Info: Redefining \% on input line 1008.
-LaTeX Info: Redefining \. on input line 1008.
-LaTeX Info: Redefining \% on input line 1008.
-[34]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1010.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1013.
-
-Overfull \hbox (137.90309pt too wide) detected at line 1020
+Overfull \hbox (137.90309pt too wide) detected at line 1029
 [] \OT1/lmr/m/n/10 = [] [] = [] [] = \OMS/lmsy/m/n/10 ^^F [] [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^F [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^F [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^F [] \OML/lmm/m/it/10 :
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1022.
+(mdframed)              on input line 1031.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1026.
+(mdframed)              on input line 1035.
 
-Overfull \hbox (9.21243pt too wide) in paragraph at lines 1036--1037
+Overfull \hbox (9.21243pt too wide) in paragraph at lines 1045--1046
 []\T1/lmr/m/n/10 (-20) Reparametrizamos por ar-co y te-ne-mos que $\OML/lmm/m/it/10 ^^L[] [] \OT1/lmr/m/n/10 (-20) = \OML/lmm/m/it/10 A[] []$\T1/lmr/m/n/10 (-20) . Así, $\OMS/lmsy/m/n/10 k\OML/lmm/m/it/10 ^^L[] [] \OMS/lmsy/m/n/10 k \OT1/lmr/m/n/10 (-20) = \OMS/lmsy/m/n/10 k\OML/lmm/m/it/10 A[] [] \OMS/lmsy/m/n/10 k \OT1/lmr/m/n/10 (-20) =
  []
 
-LaTeX Info: Redefining \. on input line 1041.
-LaTeX Info: Redefining \% on input line 1041.
-LaTeX Info: Redefining \. on input line 1041.
-LaTeX Info: Redefining \% on input line 1041.
+LaTeX Info: Redefining \. on input line 1050.
+LaTeX Info: Redefining \% on input line 1050.
+LaTeX Info: Redefining \. on input line 1050.
+LaTeX Info: Redefining \% on input line 1050.
 [35]
-Overfull \hbox (42.46982pt too wide) detected at line 1043
+Overfull \hbox (42.46982pt too wide) detected at line 1052
 \OML/lmm/m/it/10 ^^\[] [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^@ [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^@ [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^G [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^G [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^F\OML/lmm/m/it/10 ^^\[] [] :
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1048.
+(mdframed)              on input line 1057.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1050.
-LaTeX Info: Redefining \. on input line 1080.
-LaTeX Info: Redefining \% on input line 1080.
-LaTeX Info: Redefining \. on input line 1080.
-LaTeX Info: Redefining \% on input line 1080.
+(mdframed)              on input line 1059.
+LaTeX Info: Redefining \. on input line 1089.
+LaTeX Info: Redefining \% on input line 1089.
+LaTeX Info: Redefining \. on input line 1089.
+LaTeX Info: Redefining \% on input line 1089.
 [36]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1096.
+(mdframed)              on input line 1105.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1099.
-LaTeX Info: Redefining \. on input line 1110.
-LaTeX Info: Redefining \% on input line 1110.
-LaTeX Info: Redefining \. on input line 1110.
-LaTeX Info: Redefining \% on input line 1110.
+(mdframed)              on input line 1108.
+LaTeX Info: Redefining \. on input line 1119.
+LaTeX Info: Redefining \% on input line 1119.
+LaTeX Info: Redefining \. on input line 1119.
+LaTeX Info: Redefining \% on input line 1119.
  [37]) (./Chap2.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -1787,18 +1770,18 @@ Package rerunfilecheck Info: File `GeoDiff.out' has not changed.
 (rerunfilecheck)             Checksum: CE5EDB02829B0585CA1D5171FCFA60FC;2450.
  ) 
 Here is how much of TeX's memory you used:
- 39901 strings out of 474116
- 907028 string characters out of 5743682
+ 39908 strings out of 474116
+ 907145 string characters out of 5743682
  1961187 words of memory out of 5000000
- 60932 multiletter control sequences out of 15000+600000
+ 60940 multiletter control sequences out of 15000+600000
  665174 words of font info for 227 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,18n,110p,1004b,1127s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 107i,19n,110p,1004b,1125s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on GeoDiff.pdf (46 pages, 1921761 bytes).
+Output written on GeoDiff.pdf (46 pages, 1922919 bytes).
 PDF statistics:
- 820 PDF objects out of 1000 (max. 8388607)
- 684 compressed objects within 7 object streams
- 351 named destinations out of 1000 (max. 500000)
+ 819 PDF objects out of 1000 (max. 8388607)
+ 683 compressed objects within 7 object streams
+ 350 named destinations out of 1000 (max. 500000)
  59627 words of extra memory for PDF output out of 61914 (max. 10000000)
 

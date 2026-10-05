@@ -41,11 +41,12 @@ Para las curvas paramétricas cerradas $\displaystyle \mathcal{C}^{1} $ a trozos
 \[\gamma \sim \sigma \iff \exists \varphi : \mathbb{S}^{1} \to \mathbb{S}^{1} ,\]
 homeomorfismo $\displaystyle \mathcal{C}^{1} $ a trozos que preserva orientación tal que $\displaystyle \sigma =\gamma\circ\varphi $. 
 \end{observation}
-Sea $\displaystyle \varphi : A \subset \R^{d}\to \R^{n} $ abierto, podemos tomar $\displaystyle \varphi = \left(\varphi_{1}, \ldots, \varphi_{n}\right) $ y definir
+\section{Integración de funciones con valores en $\displaystyle \R^n $}
+Sea $\displaystyle \varphi : A \subset \R^{d}\to \R^{n} $, podemos escribir $\displaystyle \varphi = \left(\varphi_{1}, \ldots, \varphi_{n}\right) $ y definir
 \[\int _{A} \varphi \; d x : = \left(\int _{A}\varphi_{1} \; dx, \ldots, \int _{A}\varphi_{n} \; dx\right),\]
 siempre que las integrales $\displaystyle \int _{A}\varphi_{i} \; dx $ estén bien definidas $\displaystyle \forall i \in \left\{ 1, \ldots, n\right\}  $. 
 \begin{prop}[Propiedades de la integral]
-Sean $\displaystyle \varphi, \psi : A \to \R^{n} $ integrables y $\displaystyle \alpha, \beta \in \R $. Entonces, 
+Sean $\displaystyle \varphi, \psi : A\subset \R^{d} \to \R^{n} $ integrables y $\displaystyle \alpha, \beta \in \R $. Entonces, 
 \begin{enumerate}
 \item $\displaystyle \int _{A}\left(\alpha\varphi + \beta\varphi\right) \; dx = \alpha\int _{A}\varphi \; dx + \beta\int _{A}\psi \; dx $. 
 \item $\displaystyle \left\|\int _{A}\varphi \; dx\right\| \leq \int _{A}\|\varphi\| \; dx$. 
@@ -54,33 +55,49 @@ Sean $\displaystyle \varphi, \psi : A \to \R^{n} $ integrables y $\displaystyle 
 \item Si $\displaystyle A = A_{1} \cup A_{2} $ con $\displaystyle m\left(A_{1} \cap A_{2}\right)=0 $, entonces $\displaystyle \int _{A}\varphi \; dx = \int _{A_{1}}\varphi \; dx + \int _{A_{2}}\varphi \; dx $. 
 \end{enumerate}
 \end{prop}
+\begin{proof}
+Las propiedades \textbf{(1)}, \textbf{(3)} y \textbf{(4)} se deducen fácilmente a partir de sus resultados correspondientes para funciones con valores en $\displaystyle \R $. Para demostrar \textbf{(2)} denotamos 
+\[x = \left(x_{1}, \ldots, x_{n}\right)=\left(\int _{A}\varphi_{1} , \ldots, \int _{A}\varphi_{n} \right)=\int _{A}\varphi .\]
+Podemos suponer que $\displaystyle x \neq 0 $. Usando la linealidad de la integral de funciones con valores en $\displaystyle \R $ y la desigualdad Cauchy-Schwarz en $\displaystyle \R^{n} $,
+\[\|x\|^{2}=\left\langle x, x \right\rangle  =\sum^{n}_{j= 1}x_{j}\int _{A}\varphi_{j}\left(t\right) \; dt = \int _{A}\sum^{n}_{j = 1}x_{j}\varphi_{j}\left(t\right) \; dt \leq \int _{A}\|x\| \|\varphi\| \; dt = \|x\|\int _{A}\|\varphi\|,\]
+deducimos \textbf{(2)} al dividir por $\displaystyle \|x\| $. 
+\end{proof}
+
 \section{Integración de funciones complejas en $\displaystyle \C $}
-Si $\displaystyle \varphi : \left[a,b\right] \to \C $ con $\displaystyle \varphi\left(t\right)=x\left(t\right) + iy\left(t\right) $ definiremos la \textbf{integral compleja} como
+Al identificar $\displaystyle \R^{2} $ con $\displaystyle \C $ podemos ver que dada $\displaystyle \varphi : \left[a,b\right] \to \C $ con $\displaystyle \varphi\left(t\right)=x\left(t\right) + iy\left(t\right) $ se define de manera natural la \textbf{integral compleja} como
 	\[\int^{b}_{a} \varphi\left(t\right) \; dt := \int^{b}_{a} x\left(t\right) \; dt + i\int^{b}_{a} y\left(t\right) \; dt .\]
 	Podemos observar que por la propiedad \textbf{(2)} anterior tendremos que 
 \[ \left|\int^{b}_{a} \varphi\left(t\right) \; dt\right| \leq \int^{b}_{a} \left|\varphi\left(t\right)\right| \; dt .\]
 \begin{definition}[Integral compleja sobre una curva]
-	Sea $\displaystyle f : \Omega\subset \C \to \C $, $\displaystyle f $ continua y $\displaystyle \gamma : \left[a,b\right] \to \Omega  $ una curva parametrizada de clase $\displaystyle \mathcal{C}^{1} $ a trozos. Se define la \textbf{integral de $\displaystyle f $ sobre $\displaystyle \gamma  $} como
+	Sea $\displaystyle f : \Omega\subset \C \to \C $ continua y $\displaystyle \gamma : \left[a,b\right] \to \Omega  $ una curva parametrizada de clase $\displaystyle \mathcal{C}^{1} $ a trozos. Se define la \textbf{integral de $\displaystyle f $ sobre $\displaystyle \gamma  $} como
 	\[\int _{\gamma }f : = \int^{b}_{a} f\left(\gamma\left(t\right)\right)\gamma'\left(t\right) \; dt .\]
 \end{definition}
+Si escribimos $\displaystyle f = u + iv $ y $\displaystyle \gamma\left(t\right)=x\left(t\right)+iy\left(t\right) $, obtenemos una expresión equivalente para la integral,
+\[
+\begin{split}
+	\int _{\gamma }f = & \int^{b}_{a} \left(u\left(x\left(t\right), y\left(t\right)\right)x'\left(t\right)-v\left(x\left(t\right), y\left(t\right)\right)y'\left(t\right)\right) \; dt 
+\\
+			  + & i \int^{b}_{a} \left(u\left(x\left(t\right), y\left(t\right)\right)y'\left(t\right) + v\left(x\left(t\right), y\left(t\right)\right)x'\left(t\right)\right) \; dt..
+\end{split}
+\]
+
 \begin{observation}
-El producto que aparece en la integral anterior \textbf{no es el producto escalar}, es el producto usual definido en $\displaystyle \C $. Por tanto, la desigualdad 
-\[ \left|\int _{\gamma }f \right|\leq \int _{\gamma } \left|f\right|  \]
-\textbf{no es cierta en general}. En efecto, podemos ver que el término de la derecha no tiene por qué ser un número real. Aunque fuese real, la desigualdad no tiene por qué darse. 
+El producto que aparece en la integral anterior \textbf{no es el producto escalar}, es el producto usual definido en $\displaystyle \C $. Esto tiene varias consecuencias:
+\begin{enumerate}
+\item El valor de $\displaystyle \int _{\gamma }f $ es en general un número complejo por lo que no coincide con el valor de la integral del campo vectorial $\displaystyle f $ a lo largo de $\displaystyle \gamma  $ en $\displaystyle \R^{2} $ (sería un valor real).
+\item \textbf{No es cierto en general} que $\displaystyle \left|\int _{\gamma }f \right|\leq \int _{\gamma } \left|f\right| $. Esto no tendría sentido puesto que, como hemos dicho antes, el término de la derecha es en general un número complejo. Ni siquiera tiene por qué cumplirse aún suponiendo que ambos términos son reales, como se verá en un ejemplo a continuación. 
+\end{enumerate}
 \end{observation}
 \begin{eg}
-	Cogemos $\displaystyle f\left(z\right)=\frac{1}{z} $ en $\displaystyle \mathbb{S}^{1} $. Observamos que si cogemos $\displaystyle \gamma\left(t\right)=e^{it} $ con $\displaystyle t \in \left[0, 2\pi \right]  $, tendremos que 
-	\[\int _{\gamma }\frac{1}{z} \; dz = \int^{2\pi }_{0} \frac{1}{e^{it}}ie^{it} \; dt = 2\pi i .\]
-Podemos ver que $\displaystyle \left|\int _{\gamma }\frac{1}{z} \right|=2\pi  $ mientras que 
-\[\int _{\gamma }1 =\int^{2\pi }_{0} 1 \cdot ie^{it} =0 .\]
-Claramente $\displaystyle 2\pi > 0 $. 
+	Cogemos $\displaystyle f\left(z\right)=\frac{1}{z} $ en $\displaystyle \mathbb{S}^{1} $. Observamos que si cogemos la parametrización $\displaystyle \gamma\left(t\right)=e^{it} $ con $\displaystyle t \in \left[0, 2\pi \right]  $ tendremos que 
+	\[\int _{\gamma }\frac{1}{z} \; dz = \int^{2\pi }_{0} \frac{1}{e^{it}}ie^{it} \; dt = 2\pi i \Rightarrow  \left|\int _{\gamma }\frac{1}{z} \right|=2\pi.\]
+Sin embargo, 
+\[\int_{\gamma} \left|f\right| = \int _{\gamma }1 =\int^{2\pi }_{0} 1 \cdot ie^{it} =0 .\]
+La desigualdad $\displaystyle \left|\int _{\gamma }f \right|\leq \int _{\gamma } \left|f\right| $ no se cumple puesto que $\displaystyle 2\pi > 0 $. 
 \end{eg}
-Si $\displaystyle f = u + iv $ y $\displaystyle \gamma = x + iy $ tendremos que 
-\[\int _{\gamma } f=\int^{b}_{a} u\left(x\left(t\right), y\left(t\right)\right)x'\left(t\right)-v\left(x\left(t\right), y)\left(t\right)\right)y'\left(t\right) \; dt+i\int^{b}_{a} u\left(x\left(t\right), y\left(t\right)\right)y'\left(t\right)+v\left(x\left(t\right), y\left(t\right)\right)x'\left(t\right) \; dt .\]
-A partir de esta igualdad es sencillo ver por qué no va a funcionar la integral. 
 
 \begin{prop}[Propiedades de la integral compleja]
-Sean $\displaystyle f, g : \Omega \subset \C \to \C $, $\displaystyle \alpha, \beta \in \C $ y $\displaystyle \gamma : \left[a,b\right] \to \Omega  $ curva parametrizada $\displaystyle \mathcal{C}^{1} $ a trozos. Entonces, 
+Sean $\displaystyle f, g : \Omega \subset \C \to \C $ continuas, $\displaystyle \alpha, \beta \in \C $ y $\displaystyle \gamma : \left[a,b\right] \to \Omega  $ curva parametrizada $\displaystyle \mathcal{C}^{1} $ a trozos. Entonces, 
 	\begin{enumerate}
 	\item $\displaystyle \int _{\gamma }\alpha f + \beta g = \alpha \int f +\beta \int g  $.
 	\item $\displaystyle \int _{\gamma^{-} }f =-\int _{\gamma }f $. 
@@ -96,11 +113,15 @@ Las propiedades \textbf{(1)} y \textbf{(2)} se vieron en cálculo integral. Demo
 \end{split}
 \]
 \end{proof}
-\begin{observation}
-	Por el teorema de cambio de variable tenemos que si $\displaystyle \gamma : \left[a,b\right] \to \Omega  $ y $\displaystyle \sigma : \left[c,d\right] \to \Omega  $ son curvas parametrizadas $\displaystyle \mathcal{C}^{1} $ equivalentes, entonces $\displaystyle \forall f \in \mathcal{C}\left(\Omega \right) $ tendremos que 
-	\[\int _{\gamma }f =\int _{\sigma }f .\]
-	Debido a este hecho, para cada $\displaystyle \Gamma $ curva orientada de clase $\displaystyle \mathcal{C}^{1} $ tendremos que podemos definir
-	\[\int _{\Gamma}f := \int _{\gamma }f ,\]
-con $\displaystyle \gamma  $ parametrización de $\displaystyle \Gamma  $. 	
-\end{observation}
+\begin{prop}
+	Sean $\displaystyle \gamma : \left[a,b\right] \to \Omega  $ y $\displaystyle \sigma : \left[c,d\right] \to \Omega  $ curvas parametrizadas de clase $\displaystyle \mathcal{C}^{1} $ a trozos y supongamos que son equivalentes. Entonces, para toda función continua $\displaystyle f : \Omega \subset \C \to \C $ se tiene que 
+	\[\int _{\gamma }f =\int _{\sigma  }f  .\]
+\end{prop}
+\begin{proof}
+	Haremos la demostración suponiendo que $\displaystyle \gamma  $ y $\displaystyle \sigma  $ son $\displaystyle \mathcal{C}^{1} $ puesto que la extensión al caso general es evidente. Supongamos pues que $\displaystyle \phi : \left[c,d\right] \to \left[a,b\right]  $ es biyectiva de clase $\displaystyle \mathcal{C}^{1} $ con $\displaystyle \phi'\left(t\right)>0 $ con $\displaystyle \sigma\left(s\right)=\gamma\left(\phi\left(s\right)\right) $. Aplicando el teorema de cambio de variable tenemos que 
+	\[\int _{\gamma }f =\int^{b}_{a} f\left(\gamma\left(t\right)\right)\gamma'\left(t\right) \; dt = \int^{d}_{c} f\left(\gamma\left(\phi\left(s\right)\right)\right)\gamma'\left(\phi\left(s\right)\right)\phi'\left(s\right) \; d s = \int^{d}_{c} f\left(\sigma\left(s\right)\right) \sigma'\left(s\right) \; d s = \int _{\sigma }f .\]
+\end{proof}
 
+Debido a este hecho, para cada $\displaystyle \Gamma $ curva orientada de clase $\displaystyle \mathcal{C}^{1} $ a trozos contenida en $\displaystyle \C $ tendremos que podemos definir
+	\[\int _{\Gamma}f := \int _{\gamma }f ,\]
+con $\displaystyle \gamma  $ parametrización de $\displaystyle \Gamma  $, para cualquier función continua $\displaystyle f : \Gamma \to \C $. Las propiedades de la proposición anterior tienen análogos obvios para $\displaystyle \int _{\Gamma }f $. 

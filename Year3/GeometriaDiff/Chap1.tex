@@ -790,9 +790,9 @@ Dada una curva birregular $\displaystyle \alpha  $, se llama \textbf{radio de cu
 \end{definition}
 \begin{prop} Sea $\displaystyle \alpha : I \to \R^{3} $ una curva birregular, $\displaystyle t_{0} \in I $ y $\displaystyle P_{0}= \alpha\left(t_{0}\right) $.
 \begin{enumerate} 
-\item Si $\displaystyle T_{P_{0}}=P_{0} + \mathcal{L}\left(\hat{t}_{\alpha }\left(t_{0}\right)\right) $ es recta tangente y parametrizada por arco por $\displaystyle \beta\left(s\right) $ con $\displaystyle \beta\left(s_{0}\right)=P_{0} $ y $\displaystyle \beta'\left(s_{0}\right)=\hat{t}_{\alpha } $, entonces en un entorno de $\displaystyle s_{0} $,
+\item Si $\displaystyle T_{P_{0}}=P_{0} + \mathcal{L}\left(\hat{t}_{\alpha }\left(t_{0}\right)\right) $ es recta tangente y parametrizada por arco por $\displaystyle \beta\left(s\right) $ con $\displaystyle \beta\left(s_{0}\right)=P_{0} $ y $\displaystyle \beta'\left(s_{0}\right)=\hat{t}_{\alpha }\left(t_{0}\right) $, entonces en un entorno de $\displaystyle s_{0} $,
 	\[\|\alpha\left(s\right)-\beta\left(s\right)\|\leq C\left(s-s_{0}\right)^{2} .\]
-\item Si $\displaystyle C_{P_{0}} $ es la circunferencia osculadora parametrizada por arco por $\displaystyle \gamma\left(s_{0}\right)=P_{0} $, $\displaystyle \gamma'\left(s_{0}\right)=\hat{t}_{\alpha } $, entonces en un entorno de $\displaystyle s_{0} $,
+\item Si $\displaystyle C_{P_{0}} $ es la circunferencia osculadora parametrizada por arco por $\displaystyle \gamma  $ con $\displaystyle \gamma\left(s_{0}\right)=P_{0} $, entonces en un entorno de $\displaystyle s_{0} $,
 	\[\|\alpha\left(s\right)-\gamma\left(s\right)\|\leq C\left(s-s_{0}\right)^{3} .\]
 \end{enumerate}
 \end{prop}
@@ -805,7 +805,7 @@ Sea $\displaystyle \alpha\left(t\right) $ birregular y $\displaystyle v = \left\
 Es sencillo ver que 
 \[\frac{d\alpha }{d t}=\frac{d\alpha }{d s} \frac{d s}{dt }= \hat{t}_{\alpha }v .\]
 Por otro lado, 
-\[\frac{d^{2}\alpha }{d t^{2}} = \frac{d}{dt}\left(\frac{d\alpha }{dt}\right) = \frac{d}{dt}\hat{t}_{\alpha } + v\frac{d\hat{t}_{\alpha }}{d s}\frac{d s }{d t}=\frac{dv}{dt}\hat{t}_{\alpha }+v^{2}\kappa_{\alpha }\hat{n}_{\alpha } .\]
+\[\frac{d^{2}\alpha }{d t^{2}} = \frac{dv}{dt}\left(\frac{d\alpha }{dt}\right) = \frac{d}{dt}\hat{t}_{\alpha } + v\frac{d\hat{t}_{\alpha }}{d s}\frac{d s }{d t}=\frac{dv}{dt}\hat{t}_{\alpha }+v^{2}\kappa_{\alpha }\hat{n}_{\alpha } .\]
 \end{proof}
 \begin{colorary} Sea $\displaystyle \alpha  $ una curva regular, entonces 
 \[\kappa_{\alpha }=\frac{\left\|\frac{d\alpha }{dt} \times \frac{d^{2}\alpha }{dt ^{2}}\right\|}{\left\|\frac{d\alpha }{dt}\right\|^{3}} .\]
@@ -832,15 +832,11 @@ Así, $\displaystyle \|\alpha'\left(t\right) \times \alpha''\left(t\right)\| = \
 \end{enumerate}
 \end{colorary}
 \begin{proof}
-Sea $\displaystyle \alpha : I \to \R^{3} $ una curva.
-\begin{enumerate}
-\item Si $\displaystyle \alpha\left(t\right) $ es trivial que $\displaystyle \alpha'\left(t\right)\times\alpha''\left(t\right)\neq 0 $, por lo que son linealmente independientes. 
-\end{enumerate}
-
+Trivial a partir de observaciones anteriores.
 \end{proof}
 
 \begin{observation}
-Ver que la curva tridimensional de una curva contenida en un plano es el valor absoluto de la curvatura bidimensional.
+La curvatura tridimensional de una curva contenida en un plano es el valor absoluto de la curvatura bidimensional.
 \end{observation}
 \begin{definition}[Triedro de Frénet]
 	Dada una curva birregular $\displaystyle \alpha\left(t\right) $, se llama \textbf{vector binormal} a $\displaystyle \hat{b}_{\alpha }=\hat{t}_{\alpha } \times \hat{n}_{\alpha } $. Se llama \textbf{triedro de Frénet} a $\displaystyle \left\{ \hat{t}_{\alpha }, \hat{n}_{\alpha }, \hat{b}_{\alpha }\right\}  $. 
@@ -852,9 +848,9 @@ Ver que la curva tridimensional de una curva contenida en un plano es el valor a
 \begin{definition}[Planos y rectas importantes]
 Sea $\displaystyle \alpha : I \to \R^{3} $ una curva birregular. 
 \begin{itemize}
-	\item \textbf{Plano normal} $\displaystyle P_{0} + \mathcal{L}\left\{\left(\hat{n}_{\alpha }, \hat{b}_{\alpha }\right\}\right) $, $\displaystyle \left\langle X-P_{0}, \hat{t}_{\alpha } \right\rangle =0 $.
-	\item \textbf{Plano osculador} o \textbf{plano tangente} $\displaystyle P_{0} + \mathcal{L}\left(\left\{\hat{t}, \hat{n}\right\}\right) $, $\displaystyle \left\langle X-P_{0}, \hat{b} \right\rangle =0 $.
-	\item \textbf{Plano rectificante} $\displaystyle P_{0} + \mathcal{L}\left(\left\{\hat{t}, \hat{b}\right\}\right) $, $\displaystyle \left\langle X-P_{0}, \hat{n}_{\alpha } \right\rangle =0 $. 
+	\item \textbf{Plano normal} $\displaystyle P_{0} + \mathcal{L}\left(\left\{\hat{n}_{\alpha }, \hat{b}_{\alpha }\right\}\right) $, $\displaystyle \left\langle X-P_{0}, \hat{t}_{\alpha } \right\rangle =0 $.
+	\item \textbf{Plano osculador} o \textbf{plano tangente} $\displaystyle P_{0} + \mathcal{L}\left(\left\{\hat{t}_{\alpha}, \hat{n}_{\alpha }\right\}\right) $, $\displaystyle \left\langle X-P_{0}, \hat{b}_{\alpha} \right\rangle =0 $.
+	\item \textbf{Plano rectificante} $\displaystyle P_{0} + \mathcal{L}\left(\left\{\hat{t}_{\alpha }, \hat{b}_{\alpha}\right\}\right) $, $\displaystyle \left\langle X-P_{0}, \hat{n}_{\alpha } \right\rangle =0 $. 
 	\item \textbf{Recta tangente} $\displaystyle P_{0} + \mathcal{L}\left(\left\{\hat{t}_{\alpha }\right\}\right) $. 
 	\item \textbf{Recta normal} $\displaystyle P_{0} + \mathcal{L}\left(\left\{\hat{n}_{\alpha }\right\}\right) $.
 	\item \textbf{Recta binormal} $\displaystyle P_{0} + \mathcal{L}\left(\left\{\hat{b}_{\alpha }\right\}\right) $.
@@ -862,10 +858,10 @@ Sea $\displaystyle \alpha : I \to \R^{3} $ una curva birregular.
 \end{definition}
 
 \begin{prop} Sea $\displaystyle \alpha : I \to \R^{3} $ una curva birregular, entonces
-\[\hat{b}_{\alpha }=\frac{\frac{d\alpha }{dt}\times \frac{d^{2}\alpha }{dt ^{2}}}{\left\|\frac{d\alpha }{dt} \times \frac{d^{2}\alpha }{dt ^{2}}\right\|} .\]
+\[\hat{b}_{\alpha }\left(t\right)=\frac{\frac{d\alpha }{dt}\times \frac{d^{2}\alpha }{dt ^{2}}}{\left\|\frac{d\alpha }{dt} \times \frac{d^{2}\alpha }{dt ^{2}}\right\|} .\]
 \end{prop}
 \begin{proof}
-	Basta con ver que $\displaystyle \hat{b}_{\alpha} $ es perpencular al plano oscilador $\displaystyle \mathcal{L}\left(\left\{\hat{t}, \hat{n}\right\}\right)=\mathcal{L}\left(\left\{\frac{d\alpha }{dt}, \frac{d^{2}\alpha }{dt ^{2}}\right\}\right) $.
+	Basta con ver que $\displaystyle \hat{b}_{\alpha} $ es perpencular al plano osculador $\displaystyle \mathcal{L}\left(\left\{\hat{t}_{\alpha}, \hat{n}_{\alpha}\right\}\right)=\mathcal{L}\left(\left\{\frac{d\alpha }{dt}, \frac{d^{2}\alpha }{dt ^{2}}\right\}\right) $.
 \end{proof}
 \begin{eg}[Cúbica alabeada]
 Calculemos el triedro de Frénet de $\displaystyle \gamma\left(t\right)=\left(t, t ^{2}, t ^{3}\right) $. Recordamos,
@@ -876,23 +872,23 @@ Por tanto, tendremos que
 \[\hat{n}_{\gamma }=\hat{b}_{\gamma}\times\hat{t}_{\gamma}=\frac{\left(-9t ^{3}-2t, -9t ^{4}+1, 6t ^{3}+3t\right)}{\sqrt{1 + 4t ^{2} + 9t ^{4}}\sqrt{1 + 9t ^{2} + 9t ^{4}}} .\]
 \end{eg}
 \begin{lema}
-Dada una curva birregular, $\displaystyle \frac{d\hat{b}_{\alpha }}{d s}=\lambda \hat{n}_{\alpha } $ con $\displaystyle \lambda \in \R $.
+Sea $\displaystyle \alpha  $ una curva birregular, entonces existe $\displaystyle \lambda \in \R $ tal que $\displaystyle \frac{d\hat{b}_{\alpha }}{d s}=\lambda \hat{n}_{\alpha } $.
 \end{lema}
 \begin{proof}
 Sabemos que $\displaystyle \hat{b}_{\alpha }=\hat{t}_{\alpha }\times\hat{n}_{\alpha } $, por lo que 
-\[\frac{d\hat{b}_{\alpha }}{d s}=\frac{d\hat{t}_{\alpha }}{d s} \times \hat{n}_{\alpha } + \hat{t}_{\alpha }\times \frac{d\hat{n}_{\alpha }}{d s}=\hat{t}_{\alpha}\times\frac{d\hat{n}_{\alpha }}{d s}=\hat{t}_{\alpha }\left(a\hat{t}_{\alpha }+ b \hat{b}_{\alpha }\right)=b\hat{t}_{\alpha }\times\hat{b}_{\alpha }=-b\hat{n}_{\alpha } .\]
+\[\frac{d\hat{b}_{\alpha }}{d s}=\frac{d\hat{t}_{\alpha }}{d s} \times \hat{n}_{\alpha } + \hat{t}_{\alpha }\times \frac{d\hat{n}_{\alpha }}{d s}=\hat{t}_{\alpha}\times\frac{d\hat{n}_{\alpha }}{d s}=\hat{t}_{\alpha } \times\left(\mu\hat{t}_{\alpha }+ \lambda \hat{b}_{\alpha }\right)=\lambda\hat{t}_{\alpha }\times\hat{b}_{\alpha }=-\lambda\hat{n}_{\alpha } .\]
 \end{proof}
 \begin{definition}[Torsión]
-Se llama \textbf{torsión} de $\displaystyle \alpha\left(s\right) $ a $\displaystyle \tau_{\alpha }\left(s\right) $ con
+Dada una curva birregular $\displaystyle \alpha  $ p.p.a, se llama \textbf{torsión} de $\displaystyle \alpha\left(s\right) $ a $\displaystyle \tau_{\alpha }\left(s\right) $ con
 \[\frac{d\hat{b}_{\alpha }}{d s}=-\tau_{\alpha }\left(s\right)\hat{n}_{\alpha }\left(s\right) .\]
 \end{definition}
-\begin{observation}
+\begin{observation} Unas observaciones rápidas.
 \begin{enumerate}
 \item La torsión puede ser positiva, negativa o nula.
 \item $\displaystyle \left|\tau_{\alpha }\left(s\right)\right|=\left\|\frac{d\hat{b}_{\alpha }}{d s}\right\| $. 
 \item $\displaystyle \tau_{\alpha }\left(s\right)=-\left\langle \frac{d\hat{b}_{\alpha }}{d s}, \hat{n}_{\alpha } \right\rangle  $.
-\item $\displaystyle \left\langle \hat{b}_{\alpha }, \hat{n}_{\alpha } \right\rangle =0 $ y $\displaystyle \tau_{\alpha }\left(s\right)=\left\langle \hat{b}_{\alpha }, \frac{d\hat{n}_{\alpha }}{d s} \right\rangle  $. En efecto, 
-	\[\frac{d}{d s}\left(\left\langle \hat{b}, \hat{n} \right\rangle \right)=\left\langle \frac{d\hat{b}}{d s}, \hat{n} \right\rangle + \left\langle \hat{b}, \frac{d\hat{n}}{d s} \right\rangle =0 .\]
+\item $\displaystyle \tau_{\alpha }\left(s\right)=\left\langle \hat{b}_{\alpha }, \frac{d\hat{n}_{\alpha }}{d s} \right\rangle  $. En efecto, 
+	\[0 = \frac{d}{d s}\left(\left\langle \hat{b}_{\alpha}, \hat{n}_{\alpha} \right\rangle \right)=\left\langle \frac{d\hat{b}_{\alpha }}{d s}, \hat{n}_{\alpha } \right\rangle + \left\langle \hat{b}_{\alpha }, \frac{d\hat{n}_{\alpha }}{d s} \right\rangle = -\tau_{\alpha } + \left\langle \hat{b}_{\alpha }, \frac{d \hat{n}_{\alpha} }{d s} \right\rangle  .\]
 \end{enumerate}
 \end{observation}
 \begin{prop}
@@ -900,15 +896,17 @@ Sea $\displaystyle \alpha\left(t\right) $ birregular. Tenemos que $\displaystyle
 \end{prop}
 \begin{proof} Sea $\displaystyle \alpha\left(t\right) $ una curva birregular.
 \begin{description}
-\item[($\displaystyle \Rightarrow $)] Consideremos $\displaystyle \Pi \equiv \left\langle X-P_{0}, \vec{w} \right\rangle =0 $. Tenemos que la traza de $\displaystyle \alpha  $ está conteida en $\displaystyle \Pi $ por lo que $\displaystyle \left\langle \alpha\left(s\right)-P_{0}, \vec{w} \right\rangle =0 $, $\displaystyle \forall s $. Derivando
+\item[($\displaystyle \Rightarrow $)] Consideremos $\displaystyle \Pi \equiv \left\langle X-P_{0}, \vec{w} \right\rangle =0 $, con $\displaystyle \|\vec{w}\| = 1 $. Tenemos que la traza de $\displaystyle \alpha  $ está conteida en $\displaystyle \Pi $ por lo que $\displaystyle \left\langle \alpha\left(s\right)-P_{0}, \vec{w} \right\rangle =0 $, $\displaystyle \forall s $. Derivando
 	\[\left\langle \alpha'\left(s\right), \vec{w} \right\rangle =0 \Rightarrow \left\langle \hat{t}_{\alpha }\left(s\right), \vec{w} \right\rangle =0 \Rightarrow \hat{t}_{\alpha }\left(s\right)\perp w .\]
 	Derivando otra vez,
-	\[\left\langle \alpha''\left(s\right), \vec{w} \right\rangle = 0 \Rightarrow \left\langle \kappa_{\alpha }\hat{n}_{\alpha }, \vec{w} \right\rangle \Rightarrow \hat{n}_{\alpha }\left(s\right)\perp \vec{w} .\]
+	\[\left\langle \alpha''\left(s\right), \vec{w} \right\rangle = 0 \Rightarrow \left\langle \kappa_{\alpha }\hat{n}_{\alpha }, \vec{w} \right\rangle = 0 \Rightarrow \hat{n}_{\alpha }\left(s\right)\perp \vec{w} .\]
 	Así, tenemos que $\displaystyle \hat{b}_{\alpha }= \hat{t}_{\alpha } \times \hat{n}_{\alpha } = \pm \vec{w} $ por lo que $\displaystyle \frac{d\hat{b}_{\alpha }}{d s}=0 $ y necesariamente $\displaystyle \tau_{\alpha }\left(s\right)=0 $.
 \item[($\displaystyle \Leftarrow $)] Si $\displaystyle \tau_{\alpha }\left(s\right)=0 $ tenemos que $\displaystyle \frac{d\hat{b}_{\alpha }}{d s}=0 $ por lo que $\displaystyle \hat{b}_{\alpha }\left(s\right)=\vec{w} $. 
-	Tomamos $\displaystyle \Pi \equiv \left\langle X-\alpha\left(s_{0}\right), \vec{w} \right\rangle =0 $. Queremos ver que la traza de $\displaystyle \alpha\left(s\right) $ está contenida en $\displaystyle \Pi $, es decir, que $\displaystyle \left\langle \alpha\left(s\right)-\alpha\left(s_{0}\right), \vec{w} \right\rangle =0 $, $\displaystyle \forall s $. 
+	Tomamos el plano  
+	\[\Pi \equiv \left\langle X-\alpha\left(s_{0}\right), \vec{w} \right\rangle =0 .\]
+	Queremos ver que la traza de $\displaystyle \alpha\left(s\right) $ está contenida en $\displaystyle \Pi $, es decir, que $\displaystyle \left\langle \alpha\left(s\right)-\alpha\left(s_{0}\right), \vec{w} \right\rangle =0 $, $\displaystyle \forall s $. 
 	Si tomamos $\displaystyle F\left(s\right)=\left\langle \alpha\left(s\right)-\alpha\left(s_{0}\right), \vec{w} \right\rangle  $ y derivamos,
-	\[F'\left(s\right)=\left\langle \hat{t}\left(s\right), \vec{w} \right\rangle =\left\langle \hat{t}_{\alpha }\left(s\right), \hat{b}_{\alpha }\left(s\right) \right\rangle =0 .\]
+	\[F'\left(s\right)=\left\langle \hat{t}_{\alpha }\left(s\right), \vec{w} \right\rangle =\left\langle \hat{t}_{\alpha }\left(s\right), \hat{b}_{\alpha }\left(s\right) \right\rangle =0 .\]
 	Así, $\displaystyle F\left(s\right) $ es constante y como $\displaystyle F\left(s_{0}\right)=0 $ debe ser que $\displaystyle F\left(s\right)=0 $, $\displaystyle \forall s  $, como queríamos demostrar.
 \end{description}
 \end{proof}
@@ -919,8 +917,19 @@ Tenemos que
 \[\alpha'\left(t\right)=\left(-a \sin t, a \cos t, b\right), \quad a''\left(t\right)=\left(-a \cos t, - a \sin t, 0\right), \quad \|\alpha'\left(t\right)\|=\sqrt{a^{2} + b^{2}} .\]
 Así, es sencillo ver que 
 \[\alpha' \times \alpha'' = \left(ab \sin t, - ab \cos t , a^{2}\right) .\]
-Tenemos que $\displaystyle \hat{t}_{\alpha }=\frac{\left(-a \sin t, a \cos t, b\right)}{\sqrt{a^{2} + b^{2}}} $, $\displaystyle \hat{b}_{\alpha }=\frac{\left(b\sin t, - b \cos t, a\right)}{\sqrt{a^{2} + b^{2}}} $ y $\displaystyle \hat{n}_{\alpha }=\left(-\cos t, - \sin t, 0\right) $. Es sencillo ver que si $\displaystyle b = 0 $ se trata de una circunferencia. Si $\displaystyle b > 0 $ es una hélice positiva. Si $\displaystyle b < 0 $ es una hélice negativa.
-% calcular la torsión
+Tenemos que $\displaystyle \hat{t}_{\alpha }=\frac{\left(-a \sin t, a \cos t, b\right)}{\sqrt{a^{2} + b^{2}}} $, $\displaystyle \hat{b}_{\alpha }=\frac{\left(b\sin t, - b \cos t, a\right)}{\sqrt{a^{2} + b^{2}}} $ y $\displaystyle \hat{n}_{\alpha }=\left(-\cos t, - \sin t, 0\right) $. Es sencillo ver que
+\begin{itemize}
+\item Si $\displaystyle b = 0 $ se trata de una circunferencia.
+\item Si $\displaystyle b > 0 $ es una hélice positiva.
+\item Si $\displaystyle b < 0 $ es una hélice negativa.
+\end{itemize}
+Calculamos la torsión" 
+\[
+\begin{split}
+	\tau_{\alpha }\left(t\right)= & \left\langle \hat{b}_{\alpha }, \frac{d\hat{n}_{\alpha }}{d s} \right\rangle = \left\langle \hat{b}_{\alpha }, \frac{d\hat{n}_{\alpha }}{dt}\frac{dt}{d s} \right\rangle = \frac{1}{\|\alpha'\left(t\right)\|} \left\langle \frac{\left(b\sin t, - b\cos t, a\right)}{\sqrt{a^{2}+b^{2}}}, \left(\sin t, -\cos t, 0\right) \right\rangle \\
+	= & \frac{1}{\sqrt{a^{2}+b^{2}}} \cdot \frac{b\sin ^{2}t + b \cos ^{2}t}{\sqrt{a^{2}+b^{2}}} = \frac{b}{a^{2}+b^{2}}.
+\end{split}
+\]
 \end{eg}
 \begin{prop}
 Dada una curva birregular $\displaystyle \alpha : J \to \R^{3} $, 
@@ -928,7 +937,7 @@ Dada una curva birregular $\displaystyle \alpha : J \to \R^{3} $,
 \[\frac{d^{3}\alpha }{dt ^{3}}=\left(\frac{d^{2}v}{dt ^{2}}-v^{3}\kappa_{\alpha }\right)\hat{t}_{\alpha } + \left(3 v\kappa_{\alpha }\frac{dv}{dt} + v^{2}\frac{d\kappa_{\alpha }}{dt}\right)\hat{n}_{\alpha }+v^{3}\kappa_{\alpha }\tau_{\alpha }\hat{b}_{\alpha } .\]
 \end{prop}
 \begin{proof}
-Las primeras dos igualdades ya las tenemos. Aplicaremos las siguientes igualdades que se demostrarán después:
+Las primeras dos igualdades ya las hemos demostrado anteriormente. Aplicaremos las siguientes igualdades que se demostrarán después:
 \[\frac{d\hat{t}_{\alpha }}{dt} = v\kappa_{\alpha }\hat{n}_{\alpha }\quad \text{y} \quad \frac{d\hat{n}_{\alpha }}{dt}=-v\kappa_{\alpha }\hat{t}_{\alpha } + v\tau_{\alpha }\hat{b}_{\alpha } .\]
 Así, tenemos que 
 \[
