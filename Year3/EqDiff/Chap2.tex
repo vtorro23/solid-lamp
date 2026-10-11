@@ -62,7 +62,7 @@ Sea $\displaystyle f \in \mathcal{C}\left(D \subset \R \times \R^{n}, \R^{n}\rig
 	Supongamos que no existe $\displaystyle t_{+} $, es decir existe una sucesión $\displaystyle \left\{ t_{j}\right\} _{j \in \N} $ sucesión creciente tal que $\displaystyle t_{j}\to \beta_{+} $ y $\displaystyle \left(t_{j}, z\left(t_{j}\right)\right)\in K $. 
 	Como $\displaystyle K $ es compacto, existe una subsucesión $\displaystyle \left\{ t_{j_{i}}\right\} _{i \in \N} $ de forma que 
 	\[\left(t_{j_{i}}, z\left(t_{j_{i}}\right)\right)\to\left(\beta_{+}, z^{*}\right)\in K .\]
-Tomamos $\displaystyle \epsilon > 0 $ dado por la existencia única en el compacto $\displaystyle K $. Elegimos $\displaystyle i \in \N $ tal que $\displaystyle \beta_{+}-t_{j_{i}}<\epsilon  $. Consideremos el PVI
+Como $\displaystyle K $ es compacto, existe $\displaystyle \epsilon > 0 $ uniforme de forma que el PVI tiene solución única en un entorno de radio $\displaystyle \epsilon  $ del instante inicial para cualquier condición inicial de $\displaystyle K $. Elegimos $\displaystyle i \in \N $ tal que $\displaystyle \beta_{+}-t_{j_{i}}<\epsilon  $. Consideremos el PVI
 \[
 \begin{cases}
 x' = f\left(t,x\right) \\
@@ -163,13 +163,4 @@ Aplicando la desigualdad de Grönwall con $\displaystyle u\left(t\right)=a + b \
 \[a + b\|x\left(t\right)\| \leq \left(a + b \|x_{0}\|\right)e^{B\left(t-t_{0}\right)} \Rightarrow \|x\left(t\right)\| \leq \frac{a+b\|x_{0}\|}{b}e^{B\left(t-t_{0}\right)}-\frac{a}{b} .\]
 Supongamos que $\displaystyle \beta_{+}<\infty $. Entonces, debe ser que $\displaystyle \lim_{x \to \beta_{+ }}\|x\left(t\right)\| =\infty $ pero por la desigualdad anterior esto no puede ser. Así, debe ser que $\displaystyle \beta_{+ }=\infty  $. 
 \end{proof}
-\begin{eg}[Problema 9, Hoja 1]
-	Nos dan la EDO
-	\[x' = \frac{x^{3}}{1 + x^{2}} .\]
-	Tenemos que demostrar que para cualquier condición inicial la solución está definida en $\displaystyle \R $, es decir, $\displaystyle \left(\beta_{-}, \beta_{+ }\right)=\R $. Se puede demostrar con la versión global del teorema Picard-Lindelöf. Intentemos aplicar la proposición anterior
-	\[ \left|\frac{x^{3}}{1 + x^{2}}\right| = \left|x-\frac{x}{1 + x^{2}}\right| \leq \left|1-\frac{1}{1 + x^{2}}\right| \left|x\right|\leq \left(1 + \frac{1}{ \left|1 + x^{2}\right|}\right) \left|x\right|\leq \left(1 + M\right) \left|x\right| .\]
-También podríamos haber hecho
-\[ \left|\frac{x^{3}}{1 + x^{2}}\right| = \frac{ \left|x\right|^{3}}{ \left|1 + x^{2}\right|}\leq \frac{ \left|x\right|^{3}}{ \left|x\right|^{2}}= \left|x\right| .\]
-Por la proposición tenemos automáticamente que $\displaystyle \left(\beta_{-}, \beta_{+ }\right)=\R $. 
-\end{eg}
 

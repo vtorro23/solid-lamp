@@ -14,7 +14,7 @@ Por definición el flujo satisface
 \frac{\partial \varphi}{\partial t}\left(t; t_{0}, x_{0}\right)=f\left(t, \varphi\left(t; t_{0}, x_{0}\right)\right) \quad \text{y} \quad \varphi\left(t_{0}; t_{0}, x_{0}\right)=x_{0}
 .\]
 \end{observation}
-\begin{lema}[Propiedad del semigrupo]
+\begin{lema}[Propiedad de semigrupo]
 Para todo $\displaystyle \left(t_{0}, x_{0}\right)\in D $ y $\displaystyle s,t\in \left(\beta_{-}\left(t_{0}, x_{0}\right), \beta_{+ }\left(t_{0}, x_{0}\right)\right) $ se cumple que $\displaystyle \varphi\left(t; t_{0}, x_{0}\right)=\varphi\left(t; s, \varphi\left(s; t_{0}, x_{0}\right)\right) $. 
 \end{lema}
 \begin{proof}
@@ -57,7 +57,7 @@ Por la desigualdad de Grönwall tenemos que si tomamos $\displaystyle u\left(t\r
 Sea $\displaystyle f : D \subset \R \times \R^{n} \to \R^{n} $ continua y localmente Lipschitz respecto de la segunda variable, $\displaystyle \left(t_{0}, x_{0}\right), \left(t_{1}, x_{0}\right)\in D $, 
 \[t_{0}, t_{1} \in I = \left[a,b\right] \subset \left(\beta_{-}\left(t_{0}, x_{0}\right), \beta_{+ }\left(t_{0}, x_{0}\right)\right) \cap \left(\beta_{- }\left(t_{1}, x_{0}\right), \beta_{+ }\left(t_{1},x_{0}\right)\right) \]
 y $\displaystyle K \subset D $ compacto tal que $\displaystyle \left(t, \varphi\left(t; t_{0}, x_{0}\right)\right), \left(t, \varphi\left(t; t_{1}, x_{0}\right)\right)\in K $, $\displaystyle \forall t \in I $. Entonces,
-\[\|\varphi\left(t; t_{0}, x_{0}\right)-\varphi\left(t; t_{1}, x_{0}\right)\| \leq M \left|t_{0}-t_{1}\right|e^{L \left|t-t_{1}\right|} ,\]
+\[\|\varphi\left(t; t_{0}, x_{0}\right)-\varphi\left(t; t_{1}, x_{0}\right)\| \leq M \left|t_{0}-t_{1}\right|e^{L \left|t-t_{1}\right|}, \; \forall t \in I ,\]
 con $\displaystyle L \geq 0 $ constante de Lipschitz de $\displaystyle f $ en $\displaystyle K $ y $\displaystyle M $ máximo de $\displaystyle \left|f\right| $ en $\displaystyle K $.
 \end{prop}
 \begin{proof}
@@ -68,8 +68,8 @@ Tenemos que satisfacen
 Restando ambas expresiones obtenemos, 
 \[
 \begin{split}
-	\left\|y\left(t\right)-z\left(t\right)\right\|= & \left\|\int^{t}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s + \int^{t}_{t_{1}} f\left(s, z\left(s\right)\right) \; d s\right\| \\
-	= & \left\|\int^{t_{1}}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s + \int^{t}_{t_{1}} f\left(s,y\left(s\right)\right) \; d s + \int^{t}_{t_{1}} f\left(s, z\left(s\right)\right) \; d s\right\| \\
+	\left\|y\left(t\right)-z\left(t\right)\right\|= & \left\|\int^{t}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s - \int^{t}_{t_{1}} f\left(s, z\left(s\right)\right) \; d s\right\| \\
+	= & \left\|\int^{t_{1}}_{t_{0}} f\left(s, y\left(s\right)\right) \; d s + \int^{t}_{t_{1}} f\left(s, y\left(s\right)\right)-f\left(s,z\left(s\right)\right) \; d s\right\| \\
 	\leq & \left\|\int^{t_{1}}_{t_{0}} f\left(s,y\left(s\right)\right) \; d s\right\| + \left\|\int^{t}_{t_{1}} f\left(s, y\left(s\right)\right)-f\left(s, z\left(s\right)\right) \; d s \right\| \\
 	\leq & M \left|t_{1}-t_{0}\right| + L \left\|\int^{t}_{t_{1}} \|y\left(s\right)-z\left(s\right)\| \; d s\right\|.
 \end{split}
@@ -82,12 +82,12 @@ Aplicando la desigualdad de Grönwall,
 \end{theorem}
 \begin{proof}
 	Fijamos $\displaystyle \left(\tau_{0}, t_{0}, x_{0}\right)\in \tilde{D} $ y veamos que $\displaystyle \varphi $ es continua en ese punto. Sea $\displaystyle \left[a,b\right] \subset I_{\left(t_{0}, x_{0}\right)} $ tal que $\displaystyle \tau_{0}, t_{0} \in \left[a,b\right]  $. Tomamos $\displaystyle \epsilon > 0 $ pequeño tal que el compacto
-	\[K_{\epsilon }:= \left\{ \left(t,x\right) \; : \; \|x-\varphi\left(t; t_{0}, x_{0}\right)\| < 2\epsilon , t \in \left[a,b\right] \right\}  \subset D.\]
+	\[K_{\epsilon }:= \left\{ \left(t,x\right) \; : \; \|x-\varphi\left(t; t_{0}, x_{0}\right)\| \leq 2\epsilon , t \in \left[a,b\right] \right\}  \subset D.\]
 Elegimos 
 \[\delta_{1} = \frac{\epsilon }{1+M}\frac{1}{1 + e^{L\left(b-a\right)}} > 0 ,\]
 con $\displaystyle M = \max_{K_{\epsilon }} \left|f\right| $ y $\displaystyle L $ es la constante de Lipschitz de $\displaystyle f $ en $\displaystyle K_{\epsilon } $. Distinguimos varios pasos en lo que queda de demostración.
 \begin{itemize}
-	\item Si $\displaystyle \left|t-t_{0}\right|<\delta _{1} $ y $\displaystyle \|x_{1}-x_{0}\| < \delta _{1} $, queremos ver que $\displaystyle \left(t, \varphi\left(t; t_{1}, x_{1}\right)\right) \in K_{\epsilon } $, $\displaystyle \forall t \in \left[a,b\right]  $. Definimos $\displaystyle \left[c,d\right]  $ tal que sea el intervalo más grande contenido en $\displaystyle \left[a,b\right]  $ en el que se cumple la propiedad deseada. Podemos comprobar que $\displaystyle t_{1}\in \left[c,d\right]  $. 
+	\item Si $\displaystyle \left|t_{1}-t_{0}\right|<\delta _{1} $ y $\displaystyle \|x_{1}-x_{0}\| < \delta _{1} $, queremos ver que $\displaystyle \left(t, \varphi\left(t; t_{1}, x_{1}\right)\right) \in K_{\epsilon } $, $\displaystyle \forall t \in \left[a,b\right]  $. Definimos $\displaystyle \left[c,d\right] \subset \left[a,b\right]  $ tal que sea el intervalo más grande que contiene a $\displaystyle t_{1} $ tal que $\displaystyle \left(t, \varphi\left(t; t_{1}, x_{1}\right)\right)\in K_{\epsilon } $. Podemos comprobar que $\displaystyle t_{1}\in \left[c,d\right]  $. 
 Llamamos $\displaystyle z\left(t\right)=\varphi\left(t; t_{1}, x_{1}\right) $. Entonces tenemos que 
 \[z\left(t\right)=x_{1} + \int^{t}_{t_{1}} f\left(s, z\left(s\right)\right) \; d s, \; \forall t \in I_{\left(t_{1}, x_{1}\right)} .\]
 En particular, es cierto en $\displaystyle \left[c,d\right]  $. De esta forma para cada $\displaystyle t \in \left[c,d\right]  $ se tiene que 
@@ -101,11 +101,11 @@ En particular, es cierto en $\displaystyle \left[c,d\right]  $. De esta forma pa
 \]
 Aplicando la desigualdad de Grönwall nos queda que para todo $\displaystyle t \in \left[c,d\right]  $,
 \[\|z\left(t\right)-\varphi\left(t; t_{0}, x_{0}\right)\| \leq \left(\|x_{1} -x_{0}\| + M \left|t_{0}-t_{1}\right|\right)e^{L \left|t-t_{0}\right|} \leq \delta_{1}\left(1+M\right)e^{L\left(b-a\right)}<\epsilon   .\]
-Si $\displaystyle \left[c,d\right] \neq \left[a,b\right]  $ tenemos que en $\displaystyle t = c $ o $\displaystyle t = d $ tendremos que 
-\[ \|z\left(t\right)-\varphi\left(t; t_{0}, x_{0}\right)\|=2\epsilon  ,\]
+Si $\displaystyle \left[c,d\right] \neq \left[a,b\right]  $ tenemos que por continuidad, en $\displaystyle t = c $ o $\displaystyle t = d $, 
+\[ \|z\left(t\right)-\varphi\left(t; t_{0}, x_{0}\right)\|\geq 2\epsilon  ,\]
 que es una contradicción con la desigualdad que hemos obtenido anteriormente. Así, debe ser que $\displaystyle \left[c,d\right] =\left[a,b\right]  $. 
 \item Tomamos $\displaystyle \delta \in \left(0, \delta _{1}\right) $ de forma que $\displaystyle \left(t_{0}-\delta, t_{0} + \delta \right) $ y $\displaystyle \left(\tau_{0}-\delta, \tau_{0} + \delta \right) $ estén contenidos en $\displaystyle \left[a,b\right]  $.
-	Vamos a ver que si $\displaystyle \|\left(\tau_{0}, t_{0}, x_{0}\right)-\left(\tau_{1}, t_{1}, x_{1}\right)\| < \delta  $, se tiene que 
+	Si $\displaystyle \|\left(\tau_{0}, t_{0}, x_{0}\right)-\left(\tau_{1}, t_{1}, x_{1}\right)\| < \delta  $, se tiene que 
 	\[
 	\begin{split}
 		\|\varphi\left(\tau_{0}, t_{0}, x_{0}\right)-\varphi\left(\tau_{1}, t_{1}, x_{1}\right)\| \leq & \|\varphi\left(\tau_{0}, t_{0}, x_{0}\right)-\varphi\left(\tau_{1}, t_{0}, x_{0}\right)\| + \|\varphi\left(\tau_{1}, t_{0}, x_{0}\right)-\varphi\left(\tau_{1}, t_{1}, x_{1}\right)\| \\
@@ -113,11 +113,68 @@ que es una contradicción con la desigualdad que hemos obtenido anteriormente. A
 		\leq & M \|\tau_{1} -\tau_{0}\| + M \left|t_{0}-t_{1}\right|e^{L\left(b-a\right)} + \|x_{0}-x_{1}\|e^{L\left(b-a\right)} < \epsilon .
 	\end{split}
 	\]
-	
 \end{itemize}
 \end{proof}
 
 \begin{observation}
 Hemos demostrado que el flujo no es sólo continuo sino que también es localmente Lipschitz. 
 \end{observation}
+\section{Dependencia respecto a parámetros}
+\begin{prop}
+Todo PVI en $\displaystyle \R^{n} $ con $\displaystyle m $ parámetros es equivalente a un PVI sin parámetros en $\displaystyle \R^{n + m} $. 
+\end{prop}
+\begin{proof}
+Tenemos el PVI
+\[
+\begin{cases}
+x' = f\left(t,x,\lambda \right) \\
+x\left(t_{0}\right)=x_{0}
+\end{cases}
+, \]
+con $\displaystyle \lambda \in \R^{m} $. Definimos
+\[y\left(t\right)=\begin{pmatrix} x\left(t\right)\\ \lambda  \end{pmatrix}\in \R^{n+m}, \; \forall t .\]
+Tendremos que 
+\[y'\left(t\right)=\begin{pmatrix} x'\left(t\right) \\ 0 \end{pmatrix}=\begin{pmatrix} f\left(t, x\left(t\right), \lambda \right) \\ 0 \end{pmatrix}=\begin{pmatrix} f\left(t, y\left(t\right)\right) \\ 0 \end{pmatrix} .\]
+Además, $\displaystyle y\left(t_{0}\right) = \left(x_{0}, \lambda \right) $. De esta forma obtenemos el PVI
+\[
+\begin{cases}
+y'\left(t\right)=F\left(t, y\left(t\right)\right) \\
+y\left(t_{0}\right)=\left(x_{0}, \lambda \right)
+\end{cases}
+,\]
+con $\displaystyle F\left(t, y\left(t\right)\right):=\left(f\left(t, y\left(t\right)\right), 0\right) $. Es un PVI en $\displaystyle \R^{n+ m} $ puesto que $\displaystyle F : \R \times \left(\R^{n} \times \R^{m}\right)\to \R^{n+m} $. 
+\end{proof}
+\section{Dependencia diferenciable}
+\begin{theorem}
+	Si $\displaystyle f \in \mathcal{C}^{k}\left(D, \R^{n}\right) $ con $\displaystyle k \in \N $, entonces $\displaystyle \varphi \in \mathcal{C}^{k}\left(\tilde{D}, \R^{n}\right) $. 
+\end{theorem}
+\begin{proof}
+La demostración es bastante laboriosa por lo que sólo daremos una idea de la demostración. Basta con demostrarlo para $\displaystyle k = 1 $ y generalizar usando inducción. Tenemos que ver que existen $\displaystyle \frac{\partial \varphi}{\partial t} $, $\displaystyle \frac{\partial \varphi}{\partial t_{0}} $ y $\displaystyle D\varphi\left(x_{0}\right) $ y son continuas. 
+\begin{itemize}
+\item En primer lugar, 
+\[
+\frac{\partial \varphi}{\partial t}=f\left(t, \varphi\left(t; t_{0}, x_{0}\right)\right) .
+\]
+Como $\displaystyle f $ es continua y localmente Lipschitz, en particular tendremos que $\displaystyle \varphi $ es continua por el teorema de continuidad. Por tanto, $\displaystyle \frac{\partial \varphi}{\partial t} $ es continua por ser composición de funciones continuas.
+\item Supongamos que $\displaystyle D_{x_{0}}\varphi $ existe \footnote{No vamos a demostrar rigurosamente que existe porque requiere el uso de aproximaciones sucesivas.}, entonces
+\[\frac{\partial }{\partial t}\left(D_{x_{0}}\varphi\right)=D_{x_{0}}\left(\frac{\partial \varphi}{\partial t}\right)=D_{x_{0}}\left(f\left(t; \varphi\left(t; t_{0}, x_{0}\right)\right)\right) = D_{x}f\left(f, \varphi\left(t; t_{0}, x_{0}\right)\right)D_{x_{0}}\varphi\left(t; t_{0}, x_{0}\right) .\]
+Por la condición inicial $\displaystyle \varphi\left(t_{0}; t_{0}, x_{0}\right)=x_{0} $, tenemos que $\displaystyle D_{x_{0}}\varphi\left(t_{0}; t_{0}, x_{0}\right)=I $. La función matricial $\displaystyle D_{x_{0}}\varphi $ cumple que 
+\[
+\begin{cases}
+\frac{\partial }{\partial t}\left(D_{x_{0}}\varphi\right)=D_{x}f\left(t, \varphi\right)D_{x_{0}}\varphi \\
+D_{x_{0}}\varphi\left(t_{0}\right)= I
+\end{cases}
+.\]
+Por tanto es solución de un PVI lineal. Como $\displaystyle D_{x}f\left(t, \varphi\right) $ es continua por ser composición de funciones continuas, del teorema de continuidad aplicado a sistemas lineales que la solución $\displaystyle D_{x_{0}}\varphi $ es continua.
+\item Sabemos que $\displaystyle \varphi\left(t; t_{0} + h, x_{0}\right)=\varphi\left(t; t_{0}, \varphi\left(t_{0}; t_{0} + h, x_{0}\right)\right) $. Derivando respecto a $\displaystyle h $,
+\[\frac{\partial\varphi}{\partial t_{0}}\left(t; t_{0} + h, x_{0}\right) = D_{x_{0}}\varphi\left(t; t_{0}, \varphi\left(t_{0}; t_{0} + h, x_{0}\right)\right)\frac{\partial \varphi}{\partial t_{0}}\left(t_{0}; t_{0} + h, x_{0}\right) .\]
+Evaluando en $\displaystyle h = 0 $, 
+\[\frac{\partial \varphi}{\partial t_{0}}\left(t; t_{0}, x_{0}\right)=D_{x_{0}}\varphi\left(t; t_{0}, x_{0}\right)\frac{\partial \varphi}{\partial t_{0}}\left(t_{0}; t_{0}, x_{0}\right) .\]
+Por otro lado, $\displaystyle \varphi\left(t_{0}; t_{0}, x_{0}\right)=x_{0} $ y derivando respecto a $\displaystyle t_{0} $,
+\[0 = \frac{\partial \varphi}{\partial t}\left(t_{0}; t_{0}, x_{0}\right) + \frac{\partial \varphi}{\partial t_{0}}\left(t_{0}; t_{0}, x_{0}\right)=f\left(t_{0}, \varphi\left(t_{0}; t_{0}, x_{0}\right)\right) + \frac{\partial \varphi}{\partial t_{0}}\left(t_{0}; t_{0}, x_{0}\right)=f\left(t_{0}, x_{0}\right) + \frac{\partial \varphi}{\partial t_{0}}\left(t_{0}; t_{0}, x_{0}\right).\]
+Sustituyendo en la ecuación anterior,
+\[\frac{\partial \varphi}{\partial t_{0}}\left(t; t_{0}, x_{0}\right)=-D_{x_{0}}\varphi\left(t; t_{0}, x_{0}\right)f\left(t_{0}, x_{0}\right) ,\]
+que es una función continua por ser producto de funciones continuas. 
+\end{itemize}
+\end{proof}
 

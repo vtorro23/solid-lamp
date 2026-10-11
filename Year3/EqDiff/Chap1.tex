@@ -104,7 +104,7 @@ A este operador también se le llama \textbf{operador de Picard}. Por la proposi
 \end{notation}
 \section{Teorema del punto fijo de Banach}
 \begin{definition}[Espacio de Banach]
-Diremos que $\displaystyle \left(E, \left| \cdot \right|\right) $ es un \textbf{espacio de Banach} si es un espacio vectorial normado y completo.
+Diremos que $\displaystyle \left(E, \left\| \cdot \right\|\right) $ es un \textbf{espacio de Banach} si es un espacio vectorial normado y completo.
 \end{definition}
 \begin{eg}
 Es sencillo ver que $\displaystyle \R^{n} $ es un espacio de banach con todas las normas de la forma
@@ -343,12 +343,12 @@ Dada $\displaystyle f : D\subset\R\times\R^{n}\to\R^{m} $, diremos que es
 \item \textbf{globalmente Lipschitz respecto a la segunda variable} si existe $\displaystyle L \geq0 $ 
 	\[ \left\|f\left(t, x\right)-f\left(t,y\right)\right\| \leq L \left\|x-y\right\|, \; \forall \left(t,x\right), \left(t,y\right)\in D .\]
 	
-\item \textbf{localmente Lipschitz respecto a la segunda variable} si para $\displaystyle \left(t, x\right)\in D $ existe un entorno $\displaystyle U_{\left(t,x\right)} $ y $\displaystyle L_{\left(t,x\right)}\geq 0  $ tales que 
+\item \textbf{localmente Lipschitz respecto a la segunda variable} si para $\displaystyle \left(t, x\right)\in D $ existe un entorno $\displaystyle U_{\left(t,x\right)}\subset D $ y $\displaystyle L_{\left(t,x\right)}\geq 0  $ tales que 
 	\[ \left\|f\left(t,x\right)-f\left(t,y\right)\right\|\leq L_{\left(t,x\right)} \left\|x-y\right\| , \; \forall\left(t,x\right),\left(t,y\right)\in U_{\left(t,x\right)}.\]
 \end{itemize}
 \end{definition}
 \begin{prop}
-Dado $\displaystyle D \subset \R\times\R^{n} $ y $\displaystyle f \in \mathcal{C}\left(D, \R^{m}\right) $ tal que $\displaystyle \frac{\partial f_{k}}{\partial x_{j}} $ existen y están acotadas en $\displaystyle D $. Entonces $\displaystyle f $ es Lipschitz en $\displaystyle D $ respecto a la segunda variable. 
+Dado $\displaystyle D \subset \R\times\R^{n} $ y $\displaystyle f \in \mathcal{C}\left(D, \R^{m}\right) $ tal que $\displaystyle \frac{\partial f_{k}}{\partial x_{j}} $ existen y están acotadas en $\displaystyle D $. Entonces $\displaystyle f $ es Lipschitz en $\displaystyle D $ respecto a la segunda variable. \footnote{Estamos asumiendo que $\displaystyle D $ es convexo puesto que sino sólo se puede decir que $\displaystyle f $ es localmente Lipschitz.}  
 \end{prop}
 \begin{proof}
 	Podemos escribir $\displaystyle f = \left(f_{1}, \ldots, f_{m}\right) $ y tenemos que existe $\displaystyle C > 0 $ tal que $\displaystyle \left|\frac{\partial f_{k}}{\partial x_{j}}\left(t, x\right)\right|\leq C $, $\displaystyle \forall\left(t,x\right)\in D $, $\displaystyle \forall k \in \left\{ 1, \ldots, m\right\}  $, $\displaystyle \forall j \in \left\{ 1, \ldots, n\right\}  $. Fijemos $\displaystyle t $ y dos puntos $\displaystyle x = \left(x_{1}, \ldots, x_{n}\right) $ e $\displaystyle y = \left(y_{1}, \ldots, y_{n}\right) $. 
@@ -500,7 +500,7 @@ Tenemos que en este caso $\displaystyle f\left(t,x\right)=1+x^{2} $ y $\displays
 \end{eg}
 
 \begin{theorem}[Teorema Picard-Lindelöf global]
-	Sea $\displaystyle f \in \mathcal{C}\left(\left[a,b\right] \times\R^{n}, \R^{n}\right) $ y global Lipschitz respecto a la segunda variable en $\displaystyle \left[a,b\right] \times \R^{n} $. Dado $\displaystyle \left(t_{0}, x_{0}\right) \in \left[a,b\right] \times \R^{n} $ y el PVI
+	Sea $\displaystyle f \in \mathcal{C}\left(\left[a,b\right] \times\R^{n}, \R^{n}\right) $ y globalmente Lipschitz respecto a la segunda variable en $\displaystyle \left[a,b\right] \times \R^{n} $. Dado $\displaystyle \left(t_{0}, x_{0}\right) \in \left[a,b\right] \times \R^{n} $ y el PVI
 	\[
 	\begin{cases}
 	x' = f\left(t,x\right)\\

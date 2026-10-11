@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1791197641.25548 "GeoDiff.tex" "GeoDiff.pdf" "GeoDiff" 1791197653.38864 0
+["pdflatex"] 1791564539.93377 "GeoDiff.tex" "GeoDiff.pdf" "GeoDiff" 1791564550.16661 2
   "/Users/victoriatorroja/Desktop/Images/GeoDiff1.png" 1788944587.50854 111904 23c3ab2d2ebbb2aa29e6da7ea4a8c5f5 ""
   "/Users/victoriatorroja/Desktop/Images/GeoDiff2.png" 1788945441.58111 179948 2eb2649aa240b17e3c868f297b18bc26 ""
   "/Users/victoriatorroja/Desktop/Images/GeoDiff3.png" 1789294380.38607 80618 c87a122ee988d79dcd2dceb88dfc79f3 ""
@@ -59,6 +59,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb" 1255129361 116908 1fca96723793882c2e0160350c192fc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb" 1254269338 23055 2e5b42921de910eaa97b85df04ca4891 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb" 1254269338 30388 702fae6a5f0e6e9c48a1d872b442ffcf ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb" 1254269338 31443 ba2241b179aa231f73e052863720cb42 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi6.pfb" 1254269338 31113 04b711c9a4c7f8cb4ed784c6fc4cc1c5 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb" 1254269338 30789 be3ebdf20b6442cc4aaf81a81e17daf4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb" 1254269338 30635 833ec815d446ec453a4913fc26d24cbc ""
@@ -305,12 +306,12 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "Appendix.tex" 1790872541.89207 4941 3e919d6c9e034c538da4a16611f0a250 ""
-  "Chap1.tex" 1791197641.22148 97200 b3c8aaf6fb717f227f245aa0a2931ce8 ""
-  "Chap2.tex" 1790873406.88904 7940 454652bdcfcb81929a356c66cb050348 ""
-  "GeoDiff.aux" 1791197652.94518 33164 8812ab0c4a61cdc7c2640bd21dc74297 "pdflatex"
-  "GeoDiff.out" 1791197652.95057 2450 ce5edb02829b0585ca1d5171fcfa60fc "pdflatex"
+  "Chap1.tex" 1791358058.26175 97405 422facb1612fa94f62053868b5b234eb ""
+  "Chap2.tex" 1791564546.18158 28586 08c6e5734e8aba402b190fddc919cc1a ""
+  "GeoDiff.aux" 1791564549.81114 39371 4e31ae66224c121d6e737791f6eae26a "pdflatex"
+  "GeoDiff.out" 1791564549.81635 2802 211fcb46c26b51b0d06e7aab4d251668 "pdflatex"
   "GeoDiff.tex" 1790784157.39018 842 13a859ea10d02cb45e3a0501a54a02d2 ""
-  "GeoDiff.toc" 1791197652.95156 1098 974938ca974aec192e67ebb33fd8a131 "pdflatex"
+  "GeoDiff.toc" 1791564549.81723 1267 b8395637ab5c1923d6e5dec3045b04b9 "pdflatex"
   "preamble.tex" 1789251281.30503 7991 a813c8dfc400aad480924c1eda726695 ""
   (generated)
   "GeoDiff.aux"

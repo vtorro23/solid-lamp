@@ -948,10 +948,6 @@ Así, tenemos que
 \]
 \end{proof}
 
-\begin{observation}
-Matricialmente podemos escribir, 
-\[\begin{pmatrix} \frac{d\alpha }{dt} \\ \frac{d^{2}\alpha }{dt ^{2}} \\ \frac{d^{3}\alpha }{dt ^{3}} \end{pmatrix}= \begin{pmatrix} v & 0 & 0 \\ * & v^{2}\kappa_{\alpha }& 0 \\ * & * & v^{2}\kappa_{\alpha }\tau_{\alpha } \end{pmatrix} .\]
-\end{observation}
 \begin{colorary}
 Dada una curva birregular $\displaystyle \alpha : J \to \R^{3} $ se tiene que 
 \[\tau_{\alpha }=\frac{\det\left(\alpha', \alpha'', \alpha'''\right)}{\|\alpha' \times \alpha''\|^{2}} .\]
@@ -959,8 +955,8 @@ Dada una curva birregular $\displaystyle \alpha : J \to \R^{3} $ se tiene que
 \begin{proof}
 Tendremos que 
 \[\det\left(\alpha', \alpha'', \alpha'''\right)=\begin{vmatrix} v & \frac{dv}{dt} & * \\ 0 & v^{2} & * \\ 0 & 0 & v^{3}\kappa_{\alpha }\tau_{\alpha } \end{vmatrix} =v^{6}\kappa_{\alpha }^{2}\tau_{\alpha} .\]
-Así, despejando $\displaystyle \tau_{\alpha } $ en la igualdad anterior obtenemos que 
-\[\tau_{\alpha }=\frac{\det\left(\alpha', \alpha'', \alpha'''\right)}{v^{6}\kappa_{\alpha }^{2}}=\frac{\det\left(\alpha', \alpha'', \alpha'''\right)}{\|\alpha'\|^{6}\frac{\|\alpha'\times\alpha''\|^{2}}{\|\alpha'\|^{3}}}=\frac{\det\left(\alpha', \alpha'', \alpha'''\right)}{\|\alpha' \times \alpha''\|^{2}} .\]
+Despejando $\displaystyle \tau_{\alpha } $ en la igualdad anterior obtenemos que 
+\[\tau_{\alpha }=\frac{\det\left(\alpha', \alpha'', \alpha'''\right)}{v^{6}\kappa_{\alpha }^{2}}=\frac{\det\left(\alpha', \alpha'', \alpha'''\right)}{\|\alpha'\|^{6}\frac{\|\alpha'\times\alpha''\|^{2}}{\|\alpha'\|^{6}}}=\frac{\det\left(\alpha', \alpha'', \alpha'''\right)}{\|\alpha' \times \alpha''\|^{2}} .\]
 \end{proof}
 \begin{observation}
 \begin{enumerate}
@@ -983,27 +979,29 @@ Podemos observar que $\displaystyle \kappa_{\alpha } $ y $\displaystyle \tau_{\a
 \begin{observation}[Unidades]
 	Las unidades de $\displaystyle \kappa_{\alpha } $ son $\displaystyle \frac{1}{m} $ y las de $\displaystyle \tau_{\alpha } $ también son $\displaystyle \frac{1}{m} $.  
 \end{observation}
-\begin{eg}
-Si $\displaystyle \beta\left(s\right)=\alpha\left(-s\right) $. Tendremos que 
+
+\begin{observation}[Variación de curvatura y torsión en función de la orientación]
+Sea $\displaystyle \alpha  $ p.p.a una curva birregular y sea $\displaystyle \beta\left(s\right)=\alpha\left(-s\right) $. Tendremos que 
 \[
 \begin{cases}
 \kappa_{\beta }\left(s\right)=\kappa_{\alpha }\left(-s\right) \\
 \tau_{\beta }\left(s\right)=\tau_{\alpha }\left(-s\right)
 \end{cases}
 .\]
-\end{eg}
-\begin{proof}
-Tenemos que 
+En efecto, tenemos que 
 \[\beta'\left(s\right)=-\alpha'\left(-s\right), \quad \beta''\left(s\right)=\alpha''\left(-s\right) , \quad \beta'''\left(s\right)=-\alpha'''\left(-s\right).\]
-Así, tenemos que 
-\[\kappa_{\beta }= \frac{\|\beta' \times \beta''\|}{\|\beta'\|^{3}}=\frac{\|-\alpha'\left(-s\right)\times\alpha''\left(-s\right)\|}{\|-\alpha'\left(s\right)\|^{3}} = \frac{\|\alpha'\left(-s\right) \times \alpha''\left(-s\right)\|}{\|\alpha'\left(-s\right)\|^{3}}=\kappa_{\alpha }\left(-s\right) .\]
+De esta forma, 
+\[\kappa_{\beta }= \frac{\|\beta' \times \beta''\|}{\|\beta'\|^{3}}=\frac{\|-\alpha'\left(-s\right)\times\alpha''\left(-s\right)\|}{\|-\alpha'\left(-s\right)\|^{3}} = \frac{\|\alpha'\left(-s\right) \times \alpha''\left(-s\right)\|}{\|\alpha'\left(-s\right)\|^{3}}=\kappa_{\alpha }\left(-s\right) .\]
 Por otro lado, 
 \[\tau_{\beta }=\frac{\det\left(\beta'\left(s\right), \beta''\left(s\right), \beta'''\left(s\right)\right)}{\|\beta'\left(s\right)\times\beta''\left(s\right)\|^{2}} = \frac{\det\left(-\alpha'\left(-s\right), \alpha''\left(-s\right), -\alpha'''\left(-s\right)\right)}{\|\alpha'\left(-s\right)\times\alpha''\left(-s\right)\|^{2}}=\tau_{\alpha } .\]
-\end{proof}
+\end{observation}
+
 \section{Fórmulas de Frenet y teorema fundamental}
 \begin{theorem}[Teorema de Frénet]
 Sea $\displaystyle \alpha : J \to \R^{3} $ una curva birregular p.p.a. Entonces,
 \[\frac{d\hat{t}_{\alpha }}{d s}=\kappa_{\alpha }\hat{n}_{\alpha }, \quad \frac{d\hat{n}_{\alpha }}{d s}=-\kappa_{\alpha }\hat{t}_{\alpha } + \tau_{\alpha }\hat{b}_{\alpha }, \quad \frac{d\hat{b}_{\alpha }}{d s}=-\tau_{\alpha }\hat{n}_{\alpha } .\]
+Equivalentemente, 
+\[\frac{d\hat{t}_{\alpha }}{d t}=v\kappa_{\alpha }\hat{n}_{\alpha }, \quad \frac{d\hat{n}_{\alpha }}{d t}=-v\kappa_{\alpha }\hat{t}_{\alpha } + v\tau_{\alpha }\hat{b}_{\alpha }, \quad \frac{d\hat{b}_{\alpha }}{d t}=-v\tau_{\alpha }\hat{n}_{\alpha } .\]
 \end{theorem}
 \begin{proof}
 La primera y la última igualdad vienen de la definición. Por otro lado, $\displaystyle \frac{d\hat{n}_{\alpha }}{d s}\perp \hat{n}_{\alpha } $, por lo que $\displaystyle \frac{d\hat{n}_{\alpha }}{d s }=a\hat{t}_{\alpha } + b\hat{b}_{\alpha } $. Así, 
@@ -1012,26 +1010,26 @@ La primera y la última igualdad vienen de la definición. Por otro lado, $\disp
 \end{proof}
 
 \begin{observation}
-Matricialmente tendremos que 
-\[\begin{pmatrix} \hat{t}_{\alpha } \\ \hat{n}_{\alpha }\\ \hat{b}_{\alpha } \end{pmatrix}=\begin{pmatrix} 0 & \kappa_{\alpha } & 0 \\ -\kappa_{\alpha } & 0 & \tau_{\alpha }\\0 & -\tau_{\alpha }& 0 \end{pmatrix}\begin{pmatrix} \hat{t}_{\alpha } \\ \hat{n}_{\alpha } \\ \hat{b}_{\alpha } \end{pmatrix} .\]
+Matricialmente tendremos que, asumiendo parametrización por arco,
+\[\begin{pmatrix} \hat{t}_{\alpha }' \\ \hat{n}_{\alpha }'\\ \hat{b}_{\alpha }' \end{pmatrix}=\begin{pmatrix} 0 & \kappa_{\alpha } & 0 \\ -\kappa_{\alpha } & 0 & \tau_{\alpha }\\0 & -\tau_{\alpha }& 0 \end{pmatrix}\begin{pmatrix} \hat{t}_{\alpha } \\ \hat{n}_{\alpha } \\ \hat{b}_{\alpha } \end{pmatrix} .\]
 \end{observation}
-\begin{observation}
-Es sencillo ver que $\displaystyle \tau_{\alpha }=\left\langle \frac{d\hat{b}_{\alpha }}{d s}, \hat{n}_{\alpha } \right\rangle =\left\langle \frac{d\hat{n}_{\alpha }}{d s}, \hat{b}_{\alpha } \right\rangle  $. 
-\end{observation}
-\begin{colorary}
-En parámetro $\displaystyle t $, 
-\[\frac{d\hat{t}_{\alpha }}{d t}=v\kappa_{\alpha }\hat{n}_{\alpha }, \quad \frac{d\hat{n}_{\alpha }}{d t}=-v\kappa_{\alpha }\hat{t}_{\alpha } + v\tau_{\alpha }\hat{b}_{\alpha }, \quad \frac{d\hat{b}_{\alpha }}{d t}=-v\tau_{\alpha }\hat{n}_{\alpha } .\]
-\end{colorary}
-Sea $\displaystyle \phi:\R^{3}\to \R^{3} $ un movimiento rígido, es decir $\displaystyle \mathcal{M}\left(\phi\right)=A \in O_{3}\left(\R\right) $. Decimos que el movimiento es positivo si $\displaystyle \det\left(A\right)=1 $ y que es negativo si $\displaystyle \det\left(A\right)=-1 $. Los positivos preservan orientación, es decir, lleva bases positivas en bases positivas. 
-Los negativos invierten orientación, esto es, lleva bases positivas en bases negativas. Podemos observar que 
+
+Sea $\displaystyle \phi:\R^{3}\to \R^{3} $ un movimiento rígido, es decir $\displaystyle \phi\left(X\right)=AX + B $ con $\displaystyle A \in O_{3}\left(\R\right) $ y $\displaystyle B \in \R^{3} $. Cabe observar que los \textbf{positivos} (aquellos con $\displaystyle \det A=1 $) preservan orientación, es decir, lleva bases positivas en bases positivas. 
+Los \textbf{negativos} (aquellos con $\displaystyle \det A = -1 $) invierten orientación, esto es, lleva bases positivas en bases negativas. Podemos observar que 
 \[\det\left(Au, Av, Aw\right)=\pm \det\left(u,v,w\right) .\]
-Además, $\displaystyle A u \times A v = \pm A\left(u \times v\right) $. En efecto, si $\displaystyle z = Aw $
-\[\left\langle Au \times Av, z \right\rangle =\det\left(Au, Av, z\right)=\det\left(Au, Av, Aw\right)=\pm \det\left(u,v,w\right)=\pm\left\langle u \times v, w \right\rangle =\pm \left\langle A\left(u\times v\right), Aw \right\rangle =\pm \left\langle A\left(u \times v\right), z \right\rangle  .\]
+En efecto, tenemos que $\displaystyle A u \times A v = \pm A\left(u \times v\right) $ por lo que si $\displaystyle z = Aw $,
+\[
+\begin{split}
+	\left\langle Au \times Av, z \right\rangle = &\det\left(Au, Av, z\right)=\det\left(Au, Av, Aw\right)=\pm \det\left(u,v,w\right)=\pm\left\langle u \times v, w \right\rangle \\
+	= & \pm \left\langle A\left(u\times v\right), Aw \right\rangle =\pm \left\langle A\left(u \times v\right), z \right\rangle.
+\end{split}
+\]
 
 \begin{definition}[Curvas congruentes]
 Dos curvas $\displaystyle \alpha\left(t\right) $ y $\displaystyle \beta\left(t\right) $ son congruentes si existe $\displaystyle \phi:\R^{3} \to \R^{3} $ movimiento rígido con $\displaystyle \beta\left(t\right)=\phi\left(\alpha\left(t\right)\right)=A\alpha\left(t\right) + B $.
 \end{definition}
 \begin{lema}
+	Sean $\displaystyle \alpha  $ y $\displaystyle \beta  $ curvas congruentes. 
 \begin{enumerate}
 \item $\displaystyle \alpha\left(t\right) $ p.p.a si y solo si $\displaystyle \beta\left(t\right) $ p.p.a. 
 \item $\displaystyle \alpha\left(t\right) $ es birregular si y solo si $\displaystyle \beta\left(t\right) $ es birregular. 
@@ -1039,26 +1037,41 @@ Dos curvas $\displaystyle \alpha\left(t\right) $ y $\displaystyle \beta\left(t\r
 \item $\displaystyle \tau_{\beta }\left(t\right)=\pm \tau_{\alpha }\left(t\right) $, $\displaystyle \forall t $ con $\displaystyle \det\left(A\right)=\pm 1 $. 
 \end{enumerate}
 \end{lema}
-\begin{proof}
+\begin{proof} Supongamos que $\displaystyle \alpha  $ y $\displaystyle \beta  $ son curvas congruentes, por lo que existe $\displaystyle \phi : \R^{3}\to \R^{3} $ movimiento rígido con $\displaystyle \beta\left(t\right) = \phi\left(\alpha\left(t\right)\right) = A\alpha\left(t\right) + B$. 
 \begin{enumerate}
-\item Tenemos que $\displaystyle \beta'\left(t\right)=A\alpha'\left(t\right) $ y $\displaystyle \beta''\left(t\right)=A\alpha''\left(t\right) $. Así, $\displaystyle \|\beta'\left(t\right)\| = \|A\alpha'\left(t\right)\| = \|\alpha'\left(t\right)\| $. Así, el parámetro arco es el mismo para $\displaystyle \alpha  $ y $\displaystyle \beta  $. 
-\item Reparametrizamos por arco y tenemos que $\displaystyle \beta''\left(s\right)=A\alpha''\left(s\right) $. Así, $\displaystyle \|\beta''\left(s\right)\| = \|A\alpha''\left(s\right)\| = \|\alpha''\left(s\right)\| $. 
-\item Tenemos que $\displaystyle \kappa_{\beta }\left(s\right)=\kappa_{\alpha }\left(s\right) $ por lo que hemos visto antes. 
+\item Tenemos que $\displaystyle \beta'\left(t\right)=A\alpha'\left(t\right) $ por lo que $\displaystyle \|\beta'\left(t\right)\| = \|A\alpha'\left(t\right)\| = \|\alpha'\left(t\right)\| $. Así, el parámetro arco es el mismo para $\displaystyle \alpha  $ y $\displaystyle \beta  $. 
+\item Reparametrizamos por arco y tenemos que $\displaystyle \beta''\left(s\right)=A\alpha''\left(s\right) $. Así, $\displaystyle \|\beta''\left(s\right)\| = \|A\alpha''\left(s\right)\| = \|\alpha''\left(s\right)\| $, por lo que $\displaystyle \|\beta''\left(s\right)\| $ se anula si y sólo si lo hace $\displaystyle \|\alpha''\left(s\right)\| $ \footnote{Recordamos que $\displaystyle \Ker A = \left\{ 0\right\}  $ por ser invertible.}.
+\item Tenemos que $\displaystyle \kappa_{\beta }\left(s\right)=\kappa_{\alpha }\left(s\right) $ por el cálculo que hemos hecho en \textbf{(2)}. 
 \item Tenemos que 
 	\[\hat{t}_{\beta }\left(s\right)=\beta'\left(s\right)=A\alpha'\left(s\right)=A\hat{t}_{\alpha }\left(s\right) .\]
 	\[\hat{n}_{\beta }\left(s\right)=\frac{\beta''\left(s\right)}{\|\beta\left(s\right)\|}=\frac{A\alpha''\left(s\right)}{\|\alpha''\left(s\right)\|}=A\hat{n}_{\alpha }\left(s\right) .\]
-	\[\beta_{\beta }\left(s\right)=\hat{t}_{\beta }\left(s\right) \times \hat{n}_{\beta }\left(s\right)=A\hat{t}_{\alpha }\left(s\right)\times A \hat{n}_{\alpha }\left(s\right)=\pm A\left(\hat{t}_{\alpha }\times \hat{n}_{\alpha }\right)=\pm A \hat{b}_{\alpha } .\]
+	\[\hat{b}{\beta }\left(s\right)=\hat{t}_{\beta }\left(s\right) \times \hat{n}_{\beta }\left(s\right)=A\hat{t}_{\alpha }\left(s\right)\times A \hat{n}_{\alpha }\left(s\right)=\pm A\left(\hat{t}_{\alpha }\times \hat{n}_{\alpha }\right)=\pm A \hat{b}_{\alpha } .\]
 De esta forma, 
-\[\tau_{\beta }\left(s\right)=-\left\langle \frac{d\hat{b}_{\beta }}{d s}, \hat{n}_{\beta } \right\rangle =-\left\langle \frac{d\left(\pm A \hat{b}_{\alpha }\right)}{d s}, A \hat{n}_{\alpha } \right\rangle =\mp \left\langle A \frac{d\hat{b}_{\alpha }}{d s}, A \hat{n}_{\alpha } \right\rangle = \mp \left\langle \frac{d\hat{b}_{\alpha} }{d s}, \hat{n}_{\alpha } \right\rangle =\pm \tau_{\alpha }\left(s\right) .\]
+\[
+\begin{split}
+	\tau_{\beta }\left(s\right)= &-\left\langle \frac{d\hat{b}_{\beta }}{d s}, \hat{n}_{\beta } \right\rangle =-\left\langle \frac{d\left(\pm A \hat{b}_{\alpha }\right)}{d s}, A \hat{n}_{\alpha } \right\rangle 
+	=  \mp \left\langle A \frac{d\hat{b}_{\alpha }}{d s}, A \hat{n}_{\alpha } \right\rangle \\
+	= &  \mp \left\langle \frac{d\hat{b}_{\alpha} }{d s}, \hat{n}_{\alpha } \right\rangle =\pm \tau_{\alpha }\left(s\right).
+\end{split}
+\]
 \end{enumerate}
 \end{proof}
 
 \begin{eg}
-Consideremos $\displaystyle \alpha\left(t\right)=\left(\sqrt{3}t - \sin t, 2 \cos t, t + \sqrt{3}\sin t\right) $ que es congruente con una hélice circular, por lo que calcular su curvatura y torsión es equivalente a calcularlo para la hélice circular. 
+La curva $\displaystyle \alpha\left(t\right)=\left(\sqrt{3}t - \sin t, 2 \cos t, t + \sqrt{3}\sin t\right) $ es congruente con una hélice circular, por lo que para calcular su curvatura y torsión basta con calcularlo para la hélice circular. 
 \end{eg}
 \begin{theorem}[Teorema fundamental de curvas en el espacio]
-	Sea $\displaystyle J \subset \R $, $\displaystyle s_{0} \in J $. Sean $\displaystyle P_{0} \in \R^{3} $ y $\displaystyle \left\{ \hat{t}_{0}, \hat{n}_{0}, \hat{b}_{0}\right\}  $ una base ortonormal positiva. Sean $\displaystyle K, T : J \to \R $ funciones de clase $\displaystyle \mathcal{C}^{\infty} $ con $\displaystyle K\left(s\right) > 0 $, $\displaystyle \forall s $. 
-	Entonces existe un único $\displaystyle \alpha : J \to \R^{3} $ tal que $\displaystyle \alpha\left(s\right) $ p.p.a. birregular con $\displaystyle \kappa_{\alpha }\left(s\right)=K\left(s\right) $, $\displaystyle \tau_{\alpha }\left(s\right)=T\left(s\right) $, $\displaystyle \alpha\left(s_{0}\right)=P_{0} $ y $\displaystyle \left\{ \hat{t}_{\alpha }\left(s_{0}\right), \hat{n}_{\alpha }\left(s_{0}\right), \hat{b}_{\alpha }\left(s_{0}\right)\right\} = \left\{ \hat{t}_{0}, \hat{n}_{0}, \hat{b}_{0}\right\}  $. 
+	Consideremos
+	\begin{itemize}
+	\item $\displaystyle J \subset \R $ un intervalo y $\displaystyle s_{0} \in J $.
+	\item $\displaystyle P_{0} \in \R^{3} $ y $\displaystyle \left\{ \hat{t}_{0}, \hat{n}_{0}, \hat{b}_{0}\right\}  $ una base ortonormal positiva.
+	\item $\displaystyle K, T : J \to \R $ funciones de clase $\displaystyle \mathcal{C}^{\infty} $ con $\displaystyle K\left(s\right) > 0 $, $\displaystyle \forall s $.
+	\end{itemize}
+	Entonces existe un único $\displaystyle \alpha : J \to \R^{3} $ tal que $\displaystyle \alpha\left(s\right) $ p.p.a. birregular con 
+	\begin{itemize}
+	\item $\displaystyle \kappa_{\alpha }\left(s\right)=K\left(s\right) $ y $\displaystyle \tau_{\alpha }\left(s\right)=T\left(s\right) $.
+	\item $\displaystyle \alpha\left(s_{0}\right)=P_{0} $ y $\displaystyle \left\{ \hat{t}_{\alpha }\left(s_{0}\right), \hat{n}_{\alpha }\left(s_{0}\right), \hat{b}_{\alpha }\left(s_{0}\right)\right\} = \left\{ \hat{t}_{0}, \hat{n}_{0}, \hat{b}_{0}\right\}  $.
+	\end{itemize}
 \end{theorem}
 \begin{proof}
 	Escribimos los vectores $\displaystyle \left\{ \hat{t}\left(s\right), \hat{n}\left(s\right), \hat{b}\left(s\right)\right\}  $ como 
@@ -1071,27 +1084,13 @@ Queremos resolver la EDO
 \hat{b}'\left(s\right)=-T\left(s\right)\hat{n}\left(s\right)
 \end{cases}
 .\]
-Tendremos que el sistema es
-\[
-\begin{cases}
-t_{1}'=K n_{1} \\
-t_{2}' = K n_{2} \\
-t_{3}' = K n_{3} \\
-n_{1}' = - K t_{1} + Tb_{1} \\
-n_{2}' = -K t_{2} + Tb_{2} \\
-n_{3} ' = - K t_{3} + Tb_{3} \\
-b_{1}' = - Tn_{1} \\
-b_{2}' = - Tn_{2} \\
-b_{3} ' = - Tn_{3}
-\end{cases}
-.\]
-Por el teorema de existencia y unicidad, existe un único $\displaystyle \left(t_{1}, t_{2}, \ldots, b_{3}\right) : J \to \R^{9} $ satisfaciendo las ecuaciones anteriores y el dato inicial, de forma que hemos obtenido el triedro de Frenet, pero no sabemos si los vectores $\displaystyle \left\{ \hat{t}\left(s\right), \hat{n}\left(s\right), \hat{b}\left(s\right)\right\}  $ forman una base ortonormal positiva. Definimos
+Por el teorema de existencia y unicidad, existe un único $\displaystyle \left(\hat{t}, \hat{n}, \hat{b}\right) : J \to \R^{9} $ satisfaciendo las ecuaciones anteriores y el dato inicial, de forma que hemos obtenido el triedro de Frenet, pero no sabemos si los vectores $\displaystyle \left\{ \hat{t}\left(s\right), \hat{n}\left(s\right), \hat{b}\left(s\right)\right\}  $ forman una base ortonormal positiva. Definimos
 \[h_{1}\left(s\right)=\left\langle \hat{t}\left(s\right), \hat{t}\left(s\right) \right\rangle , \quad h_{2}\left(s\right)=\left\langle \hat{t}\left(s\right), \hat{n}\left(s\right) \right\rangle , \quad h_{3}\left(s\right)=\left\langle \hat{t}\left(s\right), \hat{b}\left(s\right) \right\rangle  .\]
 \[h_{4}\left(s\right)=\left\langle \hat{n}\left(s\right), \hat{n}\left(s\right) \right\rangle , \quad h_{5}\left(s\right)=\left\langle \hat{n}\left(s\right), \hat{b}\left(s\right) \right\rangle , \quad h_{6}=\left\langle \hat{b}\left(s\right), \hat{b}\left(s\right) \right\rangle  .\]
-% Terminar los detalles en casa
 Tenemos que 
-\[h_{1}' = 2Kh_{2}, \quad h_{2}' = Kh_{4}-Kh_{1}+Th_{3}, \quad h_{3}' =  .\]
-Tenemos que ver que el vector $\displaystyle h' = A h $. Nuevamente, por el teorema de Picard-Lindelöf tenemos que este PVI tiene solución única. Como el vector $\displaystyle \left(1, 0, 0, 1, 0, 1\right) $ es solución del PVI debe ser que es la única solución. Así, tenemos que en verdad los vectores $\displaystyle \left\{ \hat{t}\left(s\right), \hat{n}\left(s\right), \hat{b}\left(s\right)\right\}  $ son base ortonormal. Ahora definimos
+\[h_{1}' = 2Kh_{2}, \quad h_{2}' = Kh_{4}-Kh_{1}+Th_{3}, \quad h_{3}' =  Kh_{5} - Th_{2}.\]
+\[h_{4}' = -2K h_{2} + 2Th_{5}, \quad h_{5}' = -Kh_{3}+Th_{6}-Th_{4}, \quad h_{6}'=-2Th_{5} .\]
+Así, obtenemos una expresión de la forma $\displaystyle h' = A h $. Nuevamente, por el teorema de Picard-Lindelöf tenemos que este PVI tiene solución única. Como el vector $\displaystyle \left(1, 0, 0, 1, 0, 1\right) $ es solución del PVI debe ser que es la única solución. Así, tenemos que en verdad los vectores $\displaystyle \left\{ \hat{t}\left(s\right), \hat{n}\left(s\right), \hat{b}\left(s\right)\right\}  $ son base ortonormal. Ahora definimos
 \[\alpha\left(s\right)=\int^{s}_{s_{0}} \hat{t}\left(s\right) \; d s + P_{0} .\]
 Claramente $\displaystyle \alpha\left(s_{0}\right)=P_{0} $ y $\displaystyle \alpha'\left(s_{0}\right)=\hat{t}\left(s\right) $ y como $\displaystyle \alpha  $ está parametrizada por el arco $\displaystyle \hat{t}_{\alpha }\left(s\right)=\hat{t}\left(s\right) $. 
 Por otro lado, 
@@ -1109,14 +1108,17 @@ Si $\displaystyle \alpha\left(s\right) $ y $\displaystyle \beta\left(s\right) $ 
 entonces existe $\displaystyle \phi\left(X\right)=AX + B $ movimiento rígido positivo con $\displaystyle \beta\left(s\right)=\phi\left(\alpha\left(s\right)\right) $.
 \end{colorary}
 \begin{proof}
-Tomamos $\displaystyle s_{0} \in J $ y $\displaystyle P_{0} = \alpha\left(s_{0}\right) $, $\displaystyle \hat{t}_{0}=\hat{t}_{\alpha }\left(s_{0}\right) $, $\displaystyle \hat{n}_{0}=\hat{n}_{\alpha }\left(s_{0}\right) $ y $\displaystyle \beta_{0}=\hat{\beta }_{\alpha }\left(s_{0}\right) $. 
-Además, tomamos $\displaystyle Q_{0}=\beta\left(s_{0}\right) $, $\displaystyle \hat{t}_{0}' = \hat{t}_{\beta }\left(s_{0}\right) $, $\displaystyle \hat{n}_{0}' = \hat{n}_{\beta }\left(s_{0}\right) $, $\displaystyle \hat{b}_{0}'=\hat{b}_{\beta }\left(s_{0}\right) $. 
+Tomamos $\displaystyle s_{0} \in J $ y
+\begin{itemize}
+\item $\displaystyle P_{0} = \alpha\left(s_{0}\right) $, $\displaystyle \hat{t}_{0}=\hat{t}_{\alpha }\left(s_{0}\right) $, $\displaystyle \hat{n}_{0}=\hat{n}_{\alpha }\left(s_{0}\right) $, $\displaystyle \hat{b}_{0}=\hat{b }_{\alpha }\left(s_{0}\right) $.
+\item $\displaystyle Q_{0}=\beta\left(s_{0}\right) $, $\displaystyle \hat{t}_{0}' = \hat{t}_{\beta }\left(s_{0}\right) $, $\displaystyle \hat{n}_{0}' = \hat{n}_{\beta }\left(s_{0}\right) $, $\displaystyle \hat{b}_{0}'=\hat{b}_{\beta }\left(s_{0}\right) $.
+\end{itemize}
 Existe un único movimiento rígido con $\displaystyle \phi\left(P_{0}\right)=Q_{0} $, $\displaystyle \vec{\phi}\left(\hat{t}_{0}\right)=\hat{t}_{0}' $, $\displaystyle \vec{\phi}\left(\hat{n}_{0}\right)=\hat{n}_{0}' $ y $\displaystyle \vec{\phi}\left(\hat{b}_{0}\right) =\hat{b}_{0}'$. 
-Hay dos curvas $\displaystyle \gamma \left(s\right)=\phi\left(\alpha \left(s\right)\right) $ y $\displaystyle \beta\left(s\right) $. Tenemos que 
+Consideremos las dos curvas $\displaystyle \gamma \left(s\right)=\phi\left(\alpha \left(s\right)\right) $ y $\displaystyle \beta\left(s\right) $. Tenemos que 
 \[\kappa_{\gamma }\left(s\right)=\kappa_{\alpha }\left(s\right)=\kappa_{\beta }\left(s\right) .\]
 \[\tau_{\gamma }\left(s\right)=\tau_{\alpha }\left(s\right)=\tau_{\beta }\left(s\right) .\]
 Como tenemos el mismo dato inicial, $\displaystyle \gamma\left(s_{0}\right)=\phi\left(\alpha\left(s_{0}\right)\right)=\phi\left(P_{0}\right)=Q_{0}=\beta\left(s_{0}\right) $. Tenemos que 
 \[\hat{t}_{\gamma }\left(s_{0}\right)=\vec{\phi}\left(\alpha'\left(s_{0}\right)\right)=\vec{\phi}\left(\hat{t}_{0 }\right)=\hat{t}_{0}' = \beta'\left(s_{0}\right) .\]
-Lo mismo para el normal y el binormal. Así, son la misma curva y debe ser que $\displaystyle \beta\left(s\right)=\phi\left(\alpha\left(s\right)\right) $ por lo que $\displaystyle \alpha\left(s\right) $ y $\displaystyle \beta\left(s\right) $ son congruentes.
+Lo mismo para el normal y el binormal. Por el teorema anterior tenemos que son la misma curva, por lo que debe ser que $\displaystyle \beta\left(s\right)=\phi\left(\alpha\left(s\right)\right) $, es decir, $\displaystyle \alpha\left(s\right) $ y $\displaystyle \beta\left(s\right) $ son congruentes.
 \end{proof}
 

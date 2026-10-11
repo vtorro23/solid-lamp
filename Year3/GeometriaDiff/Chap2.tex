@@ -33,12 +33,6 @@ Decimos que $\displaystyle S = \textbf{x} \left(U\right) $ es la \textbf{traza} 
 	El dominio de será $\displaystyle U = \R \times \left(0, \infty\right) $. Hay inversa $\displaystyle \phi= \textbf{x} ^{-1} : S \to U $ que a cada punto le da sus coordenadas. 
 	\end{enumerate}
 \end{eg}
-\begin{definition}[Líneas coordenadas]
-Las \textbf{líneas coordenadas horizontales} son las curvas $\displaystyle \textbf{x} \left(u, v_{0}\right) $ con $\displaystyle v_{0} \in \R $ fijo. Si fijamos $\displaystyle u_{0} \in \R $ obteniendo la curva $\displaystyle \textbf{x} \left(u_{0}, v\right) $ decimos que son \textbf{líneas coordenadas verticales}. 
-\end{definition}
-\begin{observation}
-La misma superficies puede tener distintas líneas coordenadas. 
-\end{observation}
 \begin{eg}
 \begin{enumerate}
 \item Gráfica. Dada $\displaystyle z : U\subset \R^{2} \to \R : \left(x,y\right)\to h\left(x,y\right) $ tenemos que podemos hacer la parametrización
@@ -59,13 +53,21 @@ z = z\left(v\right)
 Con $\displaystyle \left(\varphi, v\right)\in \R \times J $. No es una parametrización inyectiva. Si nos restringimos a $\displaystyle U = \left(0, 2\pi \right)\times J $ es inyectiva pero no completamos todo $\displaystyle S $. 
 \end{enumerate}
 \end{eg}
-Las líneas coordenadas son las curvas
-\[\alpha\left(t\right)= \textbf{x} \left(t, v_{0}\right) \quad \text{y} \quad \beta\left(t\right)= \textbf{x} \left(u_{0}, t\right) ,\]
-con $\displaystyle v_{0}, u_{0} \in \R $ constantes.
+\begin{definition}[Líneas coordenadas]
+Dada una superficie parametrizada $\displaystyle \textbf{x} \left(u,v\right) $, se llama
+\begin{itemize}
+\item \textbf{líneas coordenadas horizontales} a las curvas $\displaystyle \alpha\left(t\right)= \textbf{x} \left(t, v_{0}\right) $ para cada $\displaystyle v_{0}\in \R $.
+\item \textbf{líneas coordenadas verticales} a las curvas $\displaystyle \beta\left(t\right)= \textbf{x} \left(u_{0}, t\right) $ para cada $\displaystyle u_{0}\in \R $. 
+\end{itemize} 
+\end{definition}
+\begin{observation}
+La misma superficies puede tener distintas líneas coordenadas. 
+\end{observation}
 Queremos que las líneas coordenadas sean curvas regulares. Si cogemos $\displaystyle P_{0}= \textbf{x} \left(u_{0}, v_{0}\right) $ tendremos que 
 \[\alpha'\left(u_{0}\right)=\lim_{h \to 0} \frac{ \textbf{x} \left(u_{0} + h\right)- \textbf{x} \left(u_{0}, v_{0}\right)}{h}=\frac{\partial \textbf{x} }{\partial u}\left(u_{0}, v_{0}\right) .\]
 Así, queremos que $\displaystyle \frac{\partial \textbf{x} }{\partial u}\left(u_{0}, v_{0}\right)\neq 0 $. Esto lo quiero en todas las curvas coordenadas, es decir, $\displaystyle \forall \left(u_{0}, v_{0}\right)\in U $. Análogamente, queremos que 
 \[\beta'\left(v_{0}\right)=\frac{\partial \textbf{x} }{\partial v}\left(u_{0}, v_{0}\right)\neq 0, \; \forall \left(u_{0}, v_{0}\right)\in U .\]
+
 \begin{notation}
 Muchas veces utilizaremos la notación $\displaystyle \textbf{x} _{u}=\frac{\partial \textbf{x} }{\partial u} $. Análogamente escribiremos $\displaystyle \textbf{x} _{uvu}=\frac{\partial ^{3} \textbf{x} }{\partial u \partial v\partial u} $. 
 \end{notation}
@@ -103,5 +105,261 @@ Podemos coger la parametrización $\displaystyle \textbf{x} \left(\varphi, v\rig
 De esta forma, 
 \[J \textbf{x} =\left( \textbf{x} _{\varphi}, \textbf{x} _{v}\right)=\begin{pmatrix} -v\sin\varphi & \cos \varphi\\ v\cos \varphi & \sin \varphi \\ 0 & 1 \end{pmatrix} .\]
 Que tiene rango 2 si $\displaystyle v \neq 0 $. Así, es regular en $\displaystyle \left(\varphi, v\right)\in \R \times \left(0,\infty \right) $, es decir excluyendo el vértice. Podemos ver que hay dos parametrizaciones, por lo que hay un cambio de parámetros. 
+\end{eg}
+\begin{eg}
+	El cono lo podemos parametrizar de dos formas: $\displaystyle \textbf{x} \left(x,y\right)=\left(x,y,\sqrt{x^{2}+y^{2}}\right) $ con $\displaystyle U = \R^{2} \backslash \left\{ \left(0,0\right)\right\}  $. Alternativamente, $\displaystyle \textbf{y} \left(\varphi, v\right)=\left(v\cos\varphi, v\sin\varphi, v\right) $ con $\displaystyle v \in \left(0, \infty\right) $ y $\displaystyle \varphi \in \left(0,2\pi \right) $.
+\end{eg}
+% esto tiene que ver con superficies de revolución y cogemos S = {z^2 = x^2 + y^2, z >=0}
+\begin{lema}
+Sea $\displaystyle \textbf{y} \left(\varphi, v\right)=\left(r\left(v\right)\cos\varphi, r\left(v\right)\sin\varphi, z\left(v\right)\right) $. Si $\displaystyle \gamma\left(v\right) $ es regular y $\displaystyle r \left(v\right) > 0 $, entonces $\displaystyle \textbf{y}  $ es regular.
+\end{lema}
+\begin{proof}
+Tenemos que 
+\[ \textbf{y} _{\varphi} =\begin{pmatrix} -r\left(v\right)\sin\varphi \\ r\left(v\right)\cos\varphi \\ 0\end{pmatrix} \quad \text{y} \quad \textbf{y} _{v}=\begin{pmatrix} r'\left(v\right)\cos\varphi \\ r'\left(v\right)\sin\varphi \\ z'\left(v\right) \end{pmatrix} .\]
+Así, tenemos que si
+\[\ran\begin{pmatrix} -r\left(v\right)\sin\varphi & r'\left(v\right)\cos\varphi \\ r\left(v\right)\cos\varphi & r'\left(v\right)\sin\varphi \\ 0 & z'\left(v\right) \end{pmatrix}\neq 2 ,\]
+debe ser que 
+\[
+\begin{cases}
+r\left(v\right)r'\left(v\right)=0 \Rightarrow r'\left(v\right)=0 \\
+\ran\begin{pmatrix} -r\sin\varphi & 0 \\ r\cos\varphi & 0 \\ 0 & z' \end{pmatrix}\neq 2, \; z'\left(v\right)=0
+\end{cases}
+.\]
+Así, tenemos que $\displaystyle \gamma'\left(v\right)=\left(0,0\right) $ por lo que $\displaystyle \gamma  $ no es regular. 
+\end{proof}
+\begin{eg}
+Consideremos $\displaystyle \textbf{z} \left(u,w\right)=\left(uw, \frac{1}{2}\left(u^{2}-w^{2}\right), \frac{1}{2}\left(u^{2} + w^{2}\right)\right) $. Tenemos 
+\[
+\begin{cases}
+x = uw \\
+y = \frac{1}{2}\left(u^{2}-w^{2}\right) \\
+z = \frac{1}{2}\left(u^{2} + w^{2}\right)
+\end{cases}
+.\]
+De esta forma, 
+\[ 
+\begin{cases}
+x^{2}+y^{2}=u^{2}w^{2}+\frac{1}{2}\left(u^{4}-2u^{2}w^{2}+w^{4}\right)=\frac{1}{4}\left(u^{4}+2u^{2}w^{2}+w^{4}\right) = z^{2} \\
+z \geq 0
+\end{cases}
+.\]
+De esta forma, la traza de $\displaystyle \textbf{z}  $ está contenida en $\displaystyle S $. Recíprocamente, haciendo el cambio de variable 
+\[ 
+\begin{cases}
+y +z =u^{2} \\
+z-y = w^{2}
+\end{cases}
+.\]
+Sea $\displaystyle \left(x,y,z\right)\in S $, entonces $\displaystyle x^{2} +y^{2} = z^{2} $ implica que $\displaystyle z \geq \left|y\right| $ por lo que $\displaystyle z -y \geq 0 $ y $\displaystyle z +y \geq 0 $. Así, existen 
+\[w = \sqrt{z-y}, u = \sqrt{z+y}\in \R .\]
+De esta forma, 
+\[uw = \sqrt{z-y}\sqrt{z +y}=\sqrt{z^{2}-y^{2}}= \left|x\right| .\]
+De esta forma, si $\displaystyle x \geq 0 $, 
+\[
+\begin{cases}
+x = uw \\
+y = \frac{u^{2}-w^{2}}{2} \\
+z = \frac{u^{2}+w^{2}}{2}
+\end{cases}
+.\]
+Por tanto, $\displaystyle \left(x,y,z\right)= \textbf{z} \left(u,v\right) $. Si $\displaystyle x < 0 $, 
+\[
+\begin{cases}
+x = -uw \\
+y = \frac{u^{2}-w^{2}}{2} \\
+z = \frac{u^{2} + w^{2}}{2}
+\end{cases}
+\]
+y tenemos que $\displaystyle \left(x,y,z\right)= \textbf{z} \left(-u,w\right) = \textbf{z} \left(u,-w\right)$. 
+Esta aplicación no es inyectiva. Si la queremos inyectiva usar $\displaystyle u \in \R $ y $\displaystyle w \in \left(0,\infty\right) $. Veamos si $\displaystyle \textbf{z}  $ es regular:
+\[\ran\left( \textbf{z} _{u}, \textbf{z} _{w}\right)=\ran\begin{pmatrix} w & u \\ u & - w \\ u & w \end{pmatrix}=2, \; \left(u,w\right)\neq \left(0,0\right) .\]
+Es regular en todos los puntos salvo en el origen. 
+\end{eg}
+\begin{definition}[Carta]
+Una \textbf{carta} $\displaystyle \left(U, \Phi\right) $ es $\displaystyle \textbf{x}  : U \to S = \textbf{x} \left(U\right) $ parametrización regular e inyectiva, con $\displaystyle \Phi = \textbf{x} ^{-1} : S \to U $ y $\displaystyle \textbf{x}  $ y $\displaystyle \Phi $ son continuas.
+\end{definition}
+\begin{lema}
+Si $\displaystyle \gamma\left(t\right)=\left(x\left(t\right), y\left(t\right)\right) $ es una curva regular plana, entonces $\displaystyle \textbf{x} \left(t, \lambda \right) = \left(x\left(t\right), y\left(t\right), \lambda \right) $ es una parametrización regular.
+\end{lema}
+\begin{proof}
+Tenemos que 
+\[ \textbf{x} _{t}=\begin{pmatrix} x' \\ y ' \\ 0 \end{pmatrix}\quad \text{y} \quad \textbf{x} _{\lambda }= \begin{pmatrix}  0 \\ 0 \\ 1 \end{pmatrix} .\]
+Así, $\displaystyle \ran\begin{pmatrix} x' & 0 \\ y' & 0 \\ 0 & 1 \end{pmatrix}=2 $ puesto que $\displaystyle \gamma'\left(t\right)\neq \left(0,0\right) $.  
+\end{proof}
+
+\begin{eg}
+\begin{enumerate}
+\item Sea $\displaystyle \gamma\left(t\right)=\left(t ^{2}-1, t ^{3}-t\right) $ curva regular que determina el cilindro $\displaystyle \textbf{x} \left(t,v\right)=\left(t ^{2}-1, t ^{3}-t,v\right) $ en $\displaystyle \R^{3} $, que es una parametrización regular no inyectiva. 
+\item Sea $\displaystyle \textbf{x} \left(t,v\right)=\left(t ^{2}-1, t ^{3}-t, v\right) $ con $\displaystyle t \in \left(-1, \infty\right) $ y $\displaystyle v \in \R $. Esto es una parametrización inyectiva. Sin embargo, $\displaystyle \textbf{x} ^{-1} $ no es continua.
+\end{enumerate}
+\end{eg}
+\begin{definition}[Cambio de parametrización]
+Es $\displaystyle h : U \to V $ con $\displaystyle U, V \subset \R^{2} $ abiertos con $\displaystyle \left(u,v\right)=h\left(w,z\right) $ y $\displaystyle h $ difeomorfismo, es decir, $\displaystyle h $ biyectiva de clase $\displaystyle \mathcal{C}^{\infty} $ y $\displaystyle h^{-1} $ es $\displaystyle \mathcal{C}^{\infty} $. 
+\end{definition}
+\begin{eg}
+Consideremos $\displaystyle h : \R^{2} \to \R \times \left(0, \infty\right) : \left(w,z\right)\to \left(u,v\right) $,
+\[
+\begin{cases}
+u = w + z \\
+v = e^{w}
+\end{cases}
+\iff 
+\begin{cases}
+w = \log v \\
+z = u - \log v
+\end{cases}
+.\]
+De esta forma, 
+\[Jh = \begin{pmatrix}  \frac{\partial u}{\partial w} & \frac{\partial u}{\partial z} \\ \frac{\partial v}{\partial w} & \frac{\partial v}{\partial z} \end{pmatrix} ,\]
+entonces $\displaystyle \left|Jh\right|\neq 0 $. Por el teorema de la función inversa $\displaystyle h ^{-1} $ es $\displaystyle \mathcal{C}^{\infty} $ y $\displaystyle J\left(h^{-1}\right)=\left(Jh\right)^{-1} $. 
+\end{eg}
+\begin{definition}[Reparametrización]
+Sea $\displaystyle \textbf{x}  : V \to \R^{3} $ una superficie parametrizada con $\displaystyle \textbf{x} \left(w,s\right) $ y sea $\displaystyle h: U \to V : \left(u,v\right)\to \left(w,s\right)$ un cambio de parámetros. Se llama \textbf{reparametrización} a $\displaystyle \textbf{y} = \textbf{x} \circ h : U \to \R^{3}$. 
+\end{definition}
+\begin{observation}
+Si $\displaystyle \textbf{x}  $ e $\displaystyle \textbf{y}  $ son inyectivas, $\displaystyle h = \textbf{y} ^{-1}\circ \textbf{x}  $. Además, $\displaystyle \textbf{x}  $ es regular si y sólo si $\displaystyle \textbf{y}  $ es regular. Además, 
+\[ \textbf{x}  = \textbf{y} \circ h \Rightarrow J \textbf{x}  = J \textbf{y} Jh .\]
+\end{observation}
+\begin{definition}[]
+Sea $\displaystyle S $ una superficie y sean $\displaystyle \textbf{x} : U \to \textbf{x} \left(U\right)\subset S $ e $\displaystyle \textbf{y}  : V \to \textbf{y} \left(V\right)\subset S $ parametrizaciones de abiertos de $\displaystyle S $. Supongamos que $\displaystyle \textbf{x}  $ es inyectiva, regular y tiene inversa continua y lo mismo para $\displaystyle \textbf{y}  $. Decimos que $\displaystyle \left(U, \textbf{x} \right) $ y $\displaystyle \left(V, \textbf{y} \right) $ son \textbf{compatibles} si $\displaystyle S' = \textbf{x} \left(U\right) \cap \textbf{y} \left(U\right) $. 
+\end{definition}
+\begin{observation}
+Si $\displaystyle h $ es biyectiva y continua tenemos que $\displaystyle h^{-1} = \left( \textbf{x} |_{U}\right)^{-1} \circ \left( \textbf{y} |_{V}\right) $, pedimos que $\displaystyle h $ es $\displaystyle \mathcal{C}^{\infty } $. 
+\end{observation}
+\begin{eg}
+	Consideremos $\displaystyle \mathbb{S}^{2} = \left\{ x^{2}+y^{2}+z^{2}=1\right\}  $. Tenemos que 
+	\[ \textbf{x} \left(u,v\right)=\left(u,v, \sqrt{1-u^{2}-v^{2}}\right), \; U = \left\{ y^{2}+v^{2} < 1\right\}  .\]
+Por otro lado
+\[ \textbf{y} \left(w,s\right)=\left(w,\sqrt{1-w^{2}-s^{2}}, s\right), \; V = \left\{ w^{2} + s^{2} < 1\right\}  .\]
+\end{eg}
+\section{Superficies regulares}
+\begin{eg}
+Para $\displaystyle \mathbb{S}^{2} $ no se puede conseguir una parametrización sea una carta puesto que no hay homeomorfismos $\displaystyle \textbf{x}  : U \to \mathbb{S}^{2} $ porque $\displaystyle U $ es abierto (no compacto) y $\displaystyle \mathbb{S}^{2} $ es compacto. 
+\end{eg}
+\begin{eg}
+Si cogemos 
+\[ \textbf{x}_{1} \left(u,v\right)=\left(u, v, \sqrt{1-u^{2}-v^{2}}\right)\quad \textbf{x}_{2}  \quad \textbf{x} \left(u,v\right)=\left(u,v,-\sqrt{1-u^{2}-v^{2}}\right) .\]
+Para cubrir toda la esfera necesitamos también 
+\[ \textbf{x} _{3}\left(u,v\right)=\left(u,\sqrt{1-u^{2}-v^{2}}, v\right) \quad \text{y} \quad \textbf{x} _{4} \left(u,v\right)=\left(u,-\sqrt{1-u^{2}-v^{2}}, v\right) .\]
+\[ \textbf{x}_{5}\left(u,v\right) = \left(\sqrt{1-u^{2}-v^{2}}, u, v\right) \quad \text{y} \quad \textbf{x} _{6}\left(u,v\right)=\left(-\sqrt{1-u^{2}-v^{2}}, u, v\right).\]
+\end{eg}
+\begin{definition}[Superficie regular]
+	Una \textbf{superficie regular} es un subconjunto $\displaystyle S \subset \R^{3} $ con un atlas $\displaystyle \mathcal{A} = \left\{ \left( \textbf{x} _{i}, U_{i}\right)\right\}  $ tal que 
+	\begin{enumerate}
+	\item $\displaystyle \textbf{x} _{i} : U _{i}\to \textbf{x} _{i}\left(U_{i}\right)=S_{i} \subset S $ es parametrización regular inyectiva, $\displaystyle \Phi_{i} = \textbf{x} _{i}^{-1} $ continua (carta).
+	\item $\displaystyle \textbf{x} _{i} $ y $\displaystyle \textbf{x} _{j} $, $\displaystyle h_{ij}= \textbf{x} _{j}^{-1}\circ \textbf{x} _{i} $ es $\displaystyle \mathcal{C}^{\infty } $. 
+	\item $\displaystyle S = \bigcup_{i}S_{i} $.
+	\end{enumerate}
+\end{definition}
+\begin{eg}
+\begin{enumerate}
+\item $\displaystyle \mathbb{S}^{2} $ es una superficie regular con un atlas de 6 cartas. 
+\item Superficie de revolución 
+	\[ \textbf{x} \left(\varphi, v\right)=\left(r\left(v\right)\cos\varphi, r\left(v\right)\sin\varphi, z\left(v\right)\right) ,\]
+	generada por la curva regular $\displaystyle \gamma\left(v\right)=\left(r\left(v\right), z\left(v\right)\right) $ con $\displaystyle \gamma : I \to \R^{2} $. 
+	\[ \mathcal{A} = \left\{ \left(U = \left(0,2\pi \right) \times J, \textbf{x} _{1}\right), \left(V = \left(\pi , 3\pi \right)\times J\right), \textbf{x} _{2}\right\}  .\] 
+\end{enumerate}
+\end{eg}
+% poner dibujitos
+\begin{lema}
+Un atlas con cartas tipo grafo siempre es compatible.
+\end{lema}
+\begin{proof}
+Cogiendo $\displaystyle \textbf{x} _{1}\left(u,v\right)=\left(u,v,h_{1}\left(u,v\right)\right) $ y $\displaystyle \textbf{x} _{2}\left(u,v\right)=\left(w, h_{2}\left(w,s\right), s\right) $. Sin pérdida de generalidad $\displaystyle z = h_{1}\left(x,y\right) $ y $\displaystyle y = h_{2}\left(x,z\right) $, de esta forma $\displaystyle \textbf{x} _{2}^{-1}\left(x,y,z\right)=\left(x,z\right) $. 
+\end{proof}
+\begin{theorem}
+	Sea $\displaystyle S $ una superficie regular, entonces $\displaystyle S $ tiene un atlas $\displaystyle \mathcal{A} = \left\{ \left(U_{i}, \textbf{x} _{i}\right)\right\}  $ con cartas todas tipo grafo.
+\end{theorem}
+\begin{observation}
+\begin{enumerate}
+	\item Puedo tomar cada $\displaystyle S_{i} $ y trocearlo, es decir, cada carta $\displaystyle \textbf{x} _{i} : U_{i} \to S_{i} $ me da $\displaystyle U_{ij}\subset U_{i} $. Tenemos que $\displaystyle \left( \textbf{x} _{ij} = \textbf{x} _{i}|_{U_{ij}}, U_{ij}\right) $ son cartas. Hay atlas con cartas pequeñas. En particular con $\displaystyle S_{i}= S \cap B_{\epsilon }\left(p\right) $.
+	\item Si para cada $\displaystyle p \in S $, existe $\displaystyle \epsilon > 0 $ y una carta buena 
+		\[ \textbf{x} _{p} : U_{p}\to S \cap B_{\epsilon }\left(p\right) ,\]
+		entonces $\displaystyle \left\{ \left(U_{p}, \textbf{x} _{p}\right)\right\}  $ da un atlas de cartas pequeñas. 
+	\end{enumerate}
+\end{observation}
+
+\begin{proof}
+	Por definición $\displaystyle \mathcal{A}= \left\{ \left(U_{i}, \textbf{x} _{i}\right)\right\}  $ atlas de cartas de $\displaystyle S $. Sea $\displaystyle p \in S \bigcup_{i\in I}S_{i} $, de esta forma existe $\displaystyle i_{0}\in I $ tal que $\displaystyle \p\in S_{i_{0}} $, es decir, existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle B_{\epsilon }\left(p\right)\cap S \subset S_{i_{0}} $. 
+Usamos la parametrización 
+\[ \textbf{x} = \textbf{x} _{0} : U_{i_{0}} \to S_{i_{0}} \subset S ,\]
+con $\displaystyle \textbf{x} \left(u,v\right) $. Como es regular, tenemos que si $\displaystyle p = \textbf{x} \left(u_{0}, v_{0}\right) $ entonces
+\[\ran\begin{pmatrix} \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\ \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} \\ \frac{\partial z}{\partial u} & \frac{\partial z}{\partial v} \end{pmatrix}=2 .\]
+Es decir, un menor $\displaystyle 2 \times 2 $ es no nulo. Por ejemplo, si 
+\[ \begin{vmatrix} \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\ \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} \end{vmatrix} \left(u_{0}, v_{0}\right)\neq 0 .\]
+Veamos que $\displaystyle S _{i_{0}}\cap B_{\epsilon}\left(p\right) $ es un grafo $\displaystyle z = h\left(x,y\right) $. 
+Definimos la función $\displaystyle h : \R^{2} \to \R^{2} : \left(u,v\right)\to \left(x\left(u,v\right), y\left(u,v\right), z\left(u,v\right)\right) $ de clase $\displaystyle \mathcal{C}^{\infty } $. Por el teorema de la función inversa, existe $\displaystyle \delta > 0 $ tal que 
+\[h : B =B_{\delta }\left(u_{0}, v_{0}\right) \to B' = h\left(B_{\delta }\left(u_{0}, v_{0}\right)\right) : \left(u,v\right)\to \left(x,y\right) ,\]
+es $\displaystyle \mathcal{C}^{\infty } $ biyectiva y su inversa también es $\displaystyle \mathcal{C}^{\infty } $. Si cogemos $\displaystyle \textbf{y} = \textbf{x} \circ h^{-1} : B' \to \textbf{x} \left(B\right) $ tenemos que 
+\[ \textbf{y} \left(x,y\right)= \textbf{x} \left(h^{-1}\left(x,y\right)\right) = \textbf{x} \left(u\left(x,y\right), v\left(x,y\right)\right) = \left(x,y, z\left(h^{-1}\left(x,y\right)\right)\right) .\]
+\end{proof}
+\begin{observation}
+En función del menor no nulo que cojamos obtenemos direcciones distintas para el grafo (en vez de ser $\displaystyle z = z\left(x,y\right) $, puede ser $\displaystyle x = x\left(y,z\right) $.)
+\end{observation}
+\section{Superficies en implícitas}
+Sea $\displaystyle N \subset \R^{3} $ abierto y $\displaystyle F : W \to \R $ de clase $\displaystyle \mathcal{C}^{\infty } $. 
+\begin{definition}[Conjuntos de nivel]
+	Llamamos \textbf{conjuntos de nivel} a los conjuntos de la forma $\displaystyle S_{\lambda } = \left\{ F\left(x,y,z\right)=\lambda \right\} = S_{F-\lambda } $. En partiuclar, para $\displaystyle \lambda = 0 $ se llama \textbf{conjunto de ceros} a $\displaystyle S = S_{F} = \left\{ F\left(x,y,z\right)=0\right\}  $.
+\end{definition}
+
+\begin{theorem}
+Si $\displaystyle \nabla F\left(x,y,z\right)\neq 0 $, $\displaystyle \forall \left(x,y,z\right)\in S = S_{F} $, entonces $\displaystyle S $ es una superficie regular.
+\end{theorem}
+\begin{proof}
+Si $\displaystyle \nabla F\left(x,y,z\right)\neq 0 $, entonces $\displaystyle P = \left(x_{0}, y_{0}, z_{0}\right)\in S $ es un punto regular. Vamos a construir un atlas $\displaystyle \mathcal{A} $ de cartas tipo grafo. 
+Necesitamos ver que para cada $\displaystyle p_{0} \in S $, existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle B_{\epsilon }\left(p_{0}\right)\cap S $ sea tipo grafo. Sabemos que 
+\[\nabla F\left(p_{0}\right) = \left(\frac{\partial F}{\partial x}\left(p_{0}\right), \frac{\partial F}{\partial y}\left(p_{0}\right), \frac{\partial F}{\partial z}\left(p_{0}\right)\right)\neq 0 .\]
+Supongamos sin pérdida de generalidad que $\displaystyle \frac{\partial F}{\partial z}\left(p_{0}\right)\neq 0 $. Si cogemos la aplicación
+\[ \phi : W \to \R^{3} : \left(x,y,z\right)\to \left(x,y,F\left(x,y,z\right)\right) .\]
+De esta forma, 
+\[ \left|J\phi\left(p_{0}\right)\right| = \begin{vmatrix} 1 & 0 & \frac{\partial F}{\partial x} \\ 0 & 1 & \frac{\partial F}{\partial y} \\ 0 & 0 & \frac{\partial F}{\partial z} \end{vmatrix} \left(p_{0}\right)\neq 0 .\]
+Por el teorema de la función inversa, existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle \phi : B = B_{\epsilon }\left(p_{0}\right) \to B' = \phi\left(B\right) $ es difeomorfismo $\displaystyle \left(x,y,z\right)\to \left(u,v,w\right)=\phi\left(x,y,z\right) $. Tenemos que 
+\[
+\begin{split}
+	S \cap B = & \left\{ \left(x,y,z\right)\in B \; : \; F\left(x,y,z\right)= 0\right\}  = \left\{ \left(x,y,z\right)\in B \; : \; \phi\left(x,y,z\right)=\left(x,y,0\right)\right\} \\
+	= & \left\{ \left(x,y,z\right)=\phi^{-1}\left(u,v,0\right) \; : \; \left(u,v,0\right)\in B'\right\} = \{\left(u,v,z\left(u,v,0\right)\right)\} \\
+	= & \left\{ \left(x,y,z\left(x,y,0\right)\right)\; : \; \left(x,y,0\right)\in B'\right\} = \left\{ \left(x,y,z\right) \; : \; z = z\left(x,y,0\right), \; \left(x,y,0\right)\in B'\right\} ,
+\end{split}
+\]
+que es tipo grafo.
+\end{proof}
+
+\begin{eg}
+\begin{enumerate}
+	\item Consideremos $\displaystyle \mathbb{S}^{2}= \left\{ x^{2} +y^{2} + z^{2}=1\right\}  $. Tenemos que $\displaystyle F\left(x,y,z\right)=x^{2} + y^{2} +z^{2} $ y $\displaystyle \nabla F = \left(2x, 2y, 2z\right) = 0 \iff x = y = z = 0 $, pero $\displaystyle \left(0,0,0\right)\not\in \mathbb{S}^{2} $. Así, $\displaystyle \mathbb{S}^{2} $ es regular.
+	\item El cono. $\displaystyle S = \left\{ z^{2} = x^{2} +y^{2}\right\}  $. Tenemos que $\displaystyle F\left(x,y,z\right)=x^{2}+y^{2}-z^{2} $ y 
+		\[\nabla F = \left(2x, 2y, -2z\right)= 0 \iff x = y = z = 0 ,\]
+		tenemos que $\displaystyle p = \left(0,0,0\right) $ es un punto singular. 
+\end{enumerate}
+\end{eg}
+\begin{observation}
+En el caso $\displaystyle x^{2} +y^{2}-z^{2} = -1 $, la parametrización dada por la revolución no es regular pero la superficie en si sí lo es. 
+\end{observation}
+\begin{eg}[Parametrizaciones de $\displaystyle \mathbb{S}^2 $]
+	Una parametrización que podemos tomar es
+	\[ \textbf{x} \left(x,y\right)=\left(x,y,\sqrt{1-x^{2}-y^{2}}\right) .\]
+Necesitamos dos cartas. Por otro lado, podemos tomar 
+\[ \textbf{x} \left(\varphi, v\right)=\left(\cos\varphi \cos v, \sin \varphi \cos v, \sin v\right) .\]
+Así, tenemos que $\displaystyle \varphi\in \left(-\pi , \pi \right) $ y $\displaystyle v \in \left(-\frac{\pi }{2}, \frac{\pi }{2}\right) $. Esta carta no es regular en el polo norte ni en el polo sur (por que no lo llena la parametrización), pero la superficie sí es regular en estos puntos.  
+\end{eg}
+\begin{observation}[Superficies de revolución]
+Dada una curva $\displaystyle \gamma\left(v\right)=\left(r\left(v\right), z\left(v\right)\right) $ podemos obtener la superficie de revolución
+\[ \textbf{x} \left(\varphi, v\right)=\left(r\left(v\right)\sin \varphi, r\left(v\right)\sin \varphi, z\left(v\right)\right) .\]
+Podemos parametrizar $\displaystyle \gamma\left(s\right) $ por el arco para obtener una parametrización distinta. También podemos parametrizar $\displaystyle r = r\left(z\right) $ de forma que $\displaystyle \gamma \left(z\right)=\left(r\left(z\right), z\right) $ y
+\[ \textbf{x} \left(\varphi, z\right)=\left(r\left(z\right)\cos\varphi, r\left(z\right)\sin\varphi, z\right) .\]
+\end{observation}
+\begin{eg}[Parametrización de Arquímides, Ejercicio 6a]
+Podemos tomar
+\[ \left(x,y,z\right)\to \left(\frac{x}{\sqrt{x^{2}+y^{2}}}, \frac{y}{\sqrt{x^{2}+y^{2}}}, z\right) .\]
+También tenemos un problema en el polo norte y en el polo sur. Lo podemos hacer en cilíndricas,
+\[ \textbf{x} \left(\varphi, z\right)=\left(\sqrt{1-z^{2}}\cos\varphi, \sqrt{1-z^{2}}\sin\varphi, z\right).\]
+Es de revolución con $\displaystyle \gamma\left(z\right)=\left(\sqrt{1-z^{2}}, z\right) $ y $\displaystyle z \in \left(-1,1\right) $ y $\displaystyle \varphi\in \left(0,2\pi \right) $. Es singular en los polos. 
+\end{eg}
+\begin{eg}[Proyección estereográfica]
+	Queremos parametrizar $\displaystyle \mathbb{S}^{2} \backslash \left\{ P_{N}\right\}  $ con $\displaystyle \phi\left(x,y,z\right)=\left(u,v\right) $. Concretamente, 
+	\[\phi\left(x,y,z\right)=\left(\frac{x}{1-z}, \frac{y}{1-z}\right) .\]
+Si cogemos 
+\[ \textbf{x} \left(u,v\right)=\left(\frac{2u}{u^{2} + v^{2}+1}, \frac{2v}{u^{2}+v^{2}+1}, \frac{u^{2}+v^{2}-1}{u^{2}+v^{2}+1}\right) .\]
+Veamos que $\displaystyle \textbf{x}  $ es regular. Es sencillo ver que el rango del jacobiano es 2. Se puede cubrir la esfera con dos proyecciones estereográficas? Sí, cogemos la misma pero en la última coordenada ponemos un signo menos. 
 \end{eg}
 

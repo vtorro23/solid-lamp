@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1790870051.30259 "EqDiff.tex" "EqDiff.pdf" "EqDiff" 1790870055.84556 0
+["pdflatex"] 1791643996.09165 "EqDiff.tex" "EqDiff.pdf" "EqDiff" 1791644000.85393 0
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -57,6 +57,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb" 1255129361 113634 f99c44d58bae0863375faf0e1d74d612 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb" 1255129361 119752 1bd8d06e4079df624bf59ce3ad7c9aa6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb" 1255129361 120387 212cad1e763d510fc9c3ce2466274a57 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb" 1255129361 123394 d390152bb30feeb496aaaa93299ee9ba ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb" 1255129361 121145 68312a933e2c689ed40ec0aba373e279 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb" 1255129361 122174 a7a08406857c9530a0320a2517f60370 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb" 1255129361 112593 fda2373ba4420af33949610de4c28fe8 ""
@@ -291,13 +292,14 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724666679.39075 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Chap1.tex" 1790519647.19223 47352 5f9a7e9d7eef7ce60f1c68d832177b52 ""
-  "Chap2.tex" 1790761620.20262 16291 bf103dcd1dde4f0484f8827ec97a4059 ""
-  "Chap3.tex" 1790870046.06124 11771 d0a271d8226cc4ed9c71b24b1071f5ad ""
-  "EqDiff.aux" 1790870055.40084 13127 6e51c21c67aa578260f430d80b33cbaa "pdflatex"
-  "EqDiff.out" 1790870055.40615 2329 5a27a7b471d99ff0d301a8cdba1a7e31 "pdflatex"
-  "EqDiff.tex" 1790780784.64774 656 328eb1f94a729b48f2562718bddbfffc ""
-  "EqDiff.toc" 1790870055.40764 951 d5540cef8b3487081a3342ca9a47010f "pdflatex"
+  "Chap1.tex" 1791442137.14023 47517 b781db0e2004f0a91bdc1fbb1a57cd32 ""
+  "Chap2.tex" 1791444196.99416 15506 a69cacecb8900a26dc6c1258678d3320 ""
+  "Chap3.tex" 1791643995.02816 16724 4f322ff9ad02ab31132ff3ecddc15c16 ""
+  "Chap4.tex" 1791474645.25634 10147 8cc509ab10647885f329a71d1046632a ""
+  "EqDiff.aux" 1791644000.53842 16227 652b5370cef09b4addbbff93ed4f56cb "pdflatex"
+  "EqDiff.out" 1791644000.54221 3772 5580201594ccdee92e97adb4b8f8a60b "pdflatex"
+  "EqDiff.tex" 1791385540.99803 707 90341c45cb80d2d1f98837874734481d ""
+  "EqDiff.toc" 1791644000.54301 1515 157144f570848efd2df5301614008570 "pdflatex"
   "preamble.tex" 1789251248.06128 9092 a9e1946d306b3efa11e64e411fb9e92e ""
   (generated)
   "EqDiff.aux"

@@ -110,9 +110,12 @@ Dada una aplicación $\displaystyle f : \left(Y, \mathcal{T}'\right)\to \left(X,
 \begin{proof}
 Supongamos que $\displaystyle f : \left(Y, \mathcal{T}'\right)\to \left(X, \mathcal{T}\right) $ es una aplicación entre espacios topológicos. Demostramos sólo \textbf{(1)} puesto que \textbf{(2)} es análogo. Tenemos que para cada $\displaystyle V \in \mathcal{T}' $, $\displaystyle f\left(V\right)\in \mathcal{T} $. Como $\displaystyle f $ es abierta tendremos que $\displaystyle f\left(V\right)\subset f\left(Y\right) $ es abierto en $\displaystyle f\left(Y\right) $. De esta forma, la función $\displaystyle f : \left(Y, \mathcal{T}'\right)\to \left(f\left(Y\right), \mathcal{T}|_{f\left(Y\right)}\right) $ es biyectiva, continua y abierta, por lo que es homeomorfismo. Por la proposición anterior tendremos que $\displaystyle f $ es embebimiento topológico.
 \end{proof}
+\begin{observation}
+El recíproco en general no es cierto, basta con ver el siguiente ejemplo.
+\end{observation}
 
 \begin{eg}
-	Consideremos una aplicación $\displaystyle f : \left(\left[0,1\right] , \mathcal{T}_{u}|_{\left[0,1\right] }\right)\to\left(\left(-1,2\right), \mathcal{T}_{u}|_{\left(-1,2\right)}\right) $ que es la inyección $\displaystyle j $ que vimos antes. Es un embebimiento topológico puesto que es inyectiva y $\displaystyle \mathcal{T}^{f}= \mathcal{T}_{u}|_{\left[0,1\right] } $. Claramente tenemos que es un embebimiento topológico. Sin embargo no es una aplicación abierta puesto que $\displaystyle \left[0,1\right]  $ no es abierto en $\displaystyle \mathcal{T}_{u}|_{\left(-1,2\right)} $.
+	Consideremos una aplicación $\displaystyle f : \left(\left[0,1\right] , \mathcal{T}_{u}|_{\left[0,1\right] }\right)\to\left(\left(-1,2\right), \mathcal{T}_{u}|_{\left(-1,2\right)}\right) $ que es la inyección $\displaystyle j $ que vimos antes. Es un embebimiento topológico puesto que es inyectiva y $\displaystyle \mathcal{T}^{f}= \mathcal{T}_{u}|_{\left[0,1\right] } $. Sin embargo no es una aplicación abierta puesto que $\displaystyle \left[0,1\right]  $ no es abierto en $\displaystyle \mathcal{T}_{u}|_{\left(-1,2\right)} $.
 \end{eg}
 
 \begin{prop}
@@ -146,7 +149,7 @@ Se puede ver que la intersección de dos preimágenes $\displaystyle p_{1}^{-1}\
     \includegraphics[width=0.4\textwidth]{~/Desktop/Images/Topologia4.png}
 \end{center}
 La solución consiste en coger una base 
-\[\mathcal{B} = \left\{ U_{1} \times \cdots \times U_{r} \; : \; U_{i} \subset X_{i}, i \in \left\{ 1, \ldots, r\right\} \right\}  ,\]
+\[\mathcal{B} = \left\{ U_{1} \times \cdots \times U_{r} \; : \; U_{i} \in \mathcal{T}_{i}, i \in \left\{ 1, \ldots, r\right\} \right\}  ,\]
 que es la base determinada por la subbase $\displaystyle \mathcal{S} $. En efecto, tenemos que 
 \[U_{1} \times \cdots \times U_{r}=p^{-1}_{1}\left(U_{1}\right) \cap \cdots \cap p_{r}^{-1}\left(U_{r}\right) .\] 
 Veamos que $\displaystyle \mathcal{B} $ es en efecto una base:
@@ -245,8 +248,8 @@ Sin embargo, esto no puede ser porque $\displaystyle \left(\R, \mathcal{T}_{\tex
 		\item Si $\displaystyle V^{a_{j}}\subset X_{j} $ es entorno de $\displaystyle a_{j}\in X_{j} $ para $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $, entonces
 			\[V^{a_{1}}\times \cdots \times V^{a_{r}}\subset \prod^{r}_{i= 1}X_{i} \]
 			es entorno del punto $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $. 
-		\item Si $\displaystyle \mathcal{V}^{a_{i}} $ es una base de entornos de $\displaystyle a_{i}\in X_{i} $,
-			\[\mathcal{V}^{\left(a_{1}, \ldots, a_{r}\right)}= \left\{ V^{a_{1}} \times \cdots \times V^{a_{r}} \; : \; V^{a_{i}}\in \mathcal{V}^{a_{i}}, i = 1, \ldots, r\right\}  ,\]
+		\item Si $\displaystyle \mathcal{V}\left(a_{i}\right) $ es una base de entornos de $\displaystyle a_{i}\in X_{i} $,
+			\[\mathcal{V}\left(a_{1}, \ldots, a_{r}\right)= \left\{ V^{a_{1}} \times \cdots \times V^{a_{r}} \; : \; V^{a_{i}}\in \mathcal{V}\left(a_{i}\right), i = 1, \ldots, r\right\}  ,\]
 			es una base de entornos de $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $. 
 		\item Si $\displaystyle \mathcal{B}_{i}\subset \mathcal{P}\left(X_{i}\right) $ es una base de $\displaystyle \mathcal{T}_{i} $ para $\displaystyle i = 1, \ldots, r $, entonces
 			\[\mathcal{B}_{1 \times \cdots \times r} = \left\{ U_{1} \times \cdots \times U_{r} \; : \; U_{i} \in \mathcal{B}_{i}, i = 1, \ldots, r\right\}  ,\]
@@ -254,8 +257,297 @@ Sin embargo, esto no puede ser porque $\displaystyle \left(\R, \mathcal{T}_{\tex
 	\end{enumerate}
 \end{prop}
 \begin{proof}
-Tendremos que existen abiertos $\displaystyle U_{j} $ tales que $\displaystyle a_{j}\in U_{j}\subset V^{a_{j}} $, de forma que 
-\[\left(a_{1}, \ldots, a_{r}\right)\in U_{1} \times \cdots \times U_{r} \subset V^{a_{1}} \times \cdots \times V^{a_{r}} ,\]
-que es un entorno de $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $ puesto que $\displaystyle U_{1} \times \cdots \times U_{r}\in \prod^{r}_{i = 1}\mathcal{T}_{i} $. 
+	Consideremos el espacio topológico producto $\displaystyle \left(\prod^{r}_{i = 1}X_{i}, \prod^{r}_{i = 1}\mathcal{T}_{i}\right) $. 
+	\begin{enumerate}
+	\item Si $\displaystyle V^{a_{j}}\subset X_{j} $ es entorno de $\displaystyle a_{j}\in X_{j} $, existe $\displaystyle U_{j} \in \mathcal{T}_{j} $ tal que $\displaystyle a_{j}\in U_{j}\subset V^{a_{j}} $, así tenemos que 
+		\[\left(a_{1}, \ldots, a_{r}\right)\in U_{1} \times \cdots \times U_{r} \subset V^{a_{1}} \times \cdots \times V^{a_{r}} ,\]
+		como $\displaystyle U_{1} \times \cdots \times U_{r} \in \prod^{r}_{i = 1}\mathcal{T}_{i} $ tenemos que $\displaystyle V^{a_{1}} \times \cdots \times V^{a_{r}} $ es entorno de $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $. 
+	\item Supongamos que $\displaystyle V \subset \prod^{r}_{i = 1}X_{i} $ es un entorno de $\displaystyle \left(a_{1}, \ldots , a_{r}\right) $, entonces existe $\displaystyle U\in\prod^{r}_{i = 1}\mathcal{T}_{i} $ tal que $\displaystyle \left(a_{1}, \ldots, a_{r}\right)\in U\subset V $. Como hemos visto antes, cada proyección $\displaystyle p_{j} $ es abierta por lo que $\displaystyle p_{j}\left(U\right)\in \mathcal{T}_{j} $ y $\displaystyle p_{j}\left(U\right)\subset p_{j}\left(V\right) $. 
+		Así, debe ser que $\displaystyle p_{j}\left(V\right) $ es entorno de $\displaystyle a_{j}\in X_{j} $. Por tanto, existe $\displaystyle V^{a_{j}}\in \mathcal{V}\left(a_{j}\right) $ tal que $\displaystyle V^{a_{j}}\subset p_{j}\left(V\right) $. De esta forma, tendremos que por \textbf{(1)} el conjunto
+		\[\left(a_{1}, \ldots, a_{r}\right)\in V^{a_{1}} \times \cdots \times V^{a_{r}} \subset V,\]
+	es entorno de $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $ por lo que $\displaystyle \mathcal{V}\left(a_{1}, \ldots, a_{r}\right) $ es base de entornos de $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $. 	
+\item Claramente todo elemento de $\displaystyle \mathcal{B}_{1 \times \cdots \times r} $ es abierto. Veamos ahora que todo abierto de la topología producto es unión de elementos de $\mathcal{B}_{1\times\cdots\times r}$. Sea
+\[U\in\prod_{i=1}^r\mathcal{T}_i\]
+y sea $x=(x_1,\ldots,x_r)\in U$. Por definición de la topología producto, existen abiertos $V_i\in\mathcal{T}_i$, $i=1,\ldots,r$, tales que
+\[x\in V_1\times\cdots\times V_r\subset U.\]
+Como $\mathcal{B}_i$ es una base de $\mathcal{T}_i$ y $x_i\in V_i$, para cada $i$ existe $U_i\in\mathcal{B}_i$ tal que
+\[x_i\in U_i\subset V_i.\]
+Por consiguiente,
+\[x\in U_1\times\cdots\times U_r\subset V_1\times\cdots\times V_r
+\subset U,\]
+y además
+\[U_1\times\cdots\times U_r\in\mathcal{B}_{1\times\cdots\times r}.\]
+Así, para todo $x\in U$ existe un elemento de $\mathcal{B}_{1\times\cdots\times r}$ que contiene a $x$ y está contenido en $U$. Por tanto,
+\[U=\bigcup_{\substack{U_1\times\cdots\times U_r\in\mathcal{B}_{1\times\cdots\times r}\\ U_1\times\cdots\times U_r\subset U}}U_1\times\cdots\times U_r.\]
+Concluimos que $\mathcal{B}_{1\times\cdots\times r}$ es una base de
+$\displaystyle \prod^{r}_{i = 1}\mathcal{T}_{i} $. 
+	\end{enumerate}
 \end{proof}
+
+\section{Topología final}
+Dado un espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ y una aplicación $\displaystyle f : X \to Y $, nos preguntamos qué topologías $\displaystyle \mathcal{T}' $ podemos considerar en $\displaystyle Y $ de modo que $\displaystyle f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}'\right) $ sea continua. Una respuesta trivial sería considerar $\displaystyle \mathcal{T}' = \mathcal{T}_{\text{triv}} $. Sin embargo, buscaremos la topología más fina que cumpla la propiedad deseada.
+\begin{definition}[Topología final]
+Dado un espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ y una aplicación $\displaystyle f : X \to Y $, la \textbf{topología final para $\displaystyle f $} es
+\[\mathcal{T}_{f} = \left\{ V \subset Y \; : \; f^{-1}\left(V\right)\in \mathcal{T}\right\}  .\]
+\end{definition}
+Veamos que efectivamente se trata de una topología:
+\begin{itemize}
+\item Tenemos que $\displaystyle f^{-1}\left(Y\right)= X \in \mathcal{T} $, por lo que $\displaystyle Y \in \mathcal{T}_{f} $ y claramente $\displaystyle \emptyset \in \mathcal{T}_{f} $. 
+\item Supongamos que $\displaystyle \left\{ U_{i}\right\} _{i \in I}\subset \mathcal{T}_{f} $, entonces tendremos que 
+	\[f^{-1}\left(\bigcup_{i \in I}U_{i}\right)=\bigcup_{i \in I}f^{-1}\left(U_{i}\right)\in \mathcal{T} ,\]
+	por lo que $\displaystyle \bigcup_{i \in I}U_{i}\in \mathcal{T}_{f} $. 
+\item Supongamos que $\displaystyle U_{1}, U_{2}\in \mathcal{T}_{f} $ no son disjuntos, entonces
+	\[f^{-1}\left(U_{1} \cap U_{2}\right)=f^{-1}\left(U_{1}\right) \cap f^{-1}\left(U_{2}\right)\in \mathcal{T} .\]
+	Así, debe ser que $\displaystyle U_{1} \cap U_{2} \in \mathcal{T}_{f} $. 
+\end{itemize}
+Veamos que es la más fina que cumple que $\displaystyle f : \left(X, \mathcal{T}\right) \to \left(Y, \mathcal{T}'\right) $ es continua. Supongamos que $\displaystyle \mathcal{T}' $ es otra topología en $\displaystyle Y $ que satisface esta propiedad. Si $\displaystyle U \in \mathcal{T}' $ tenemos que $\displaystyle f^{-1}\left(U\right)\in \mathcal{T} $ por ser $\displaystyle f $ continua, por lo que $\displaystyle U \in \mathcal{T}_{f} $. Así, $\displaystyle \mathcal{T}'\subset \mathcal{T}_{f} $.
+\begin{prop}[Propiedad universal]
+	Sea $\displaystyle f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}'\right) $ una aplicación entre espacios topológicos. Las siguientes afirmaciones son equivalentes:
+	\begin{enumerate}
+	\item La topología $\displaystyle \mathcal{T}' $ en $\displaystyle Y $ es la topología final para $\displaystyle f $. 
+	\item Para cada espacio topológico $\displaystyle \left(Z, \mathcal{T}''\right) $ y para cada aplicación 
+		\[g : \left(Y, \mathcal{T}'\right)\to \left(Z, \mathcal{T}''\right), \]
+		se tiene que $\displaystyle g $ es continua si y sólo si 
+		\[g\circ f : \left(X, \mathcal{T}\right)\to \left(Z, \mathcal{T}''\right) ,\]
+		es continua.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+Consideramos ambas implicaciones.
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Si $\displaystyle \mathcal{T}' = \mathcal{T}_{f} $, entonces dado $\displaystyle \left(Z, \mathcal{T}''\right) $ y $\displaystyle g : \left(Y, \mathcal{T}'\right)\to \left(Z, \mathcal{T}''\right) $,
+	\begin{itemize}
+	\item Si $\displaystyle g $ es continua, como $\displaystyle f $ es continua por la manera en que se ha definido la topología final, tenemos que $\displaystyle g\circ f $ es continua por ser composición de funciones continuas.
+	\item Si $\displaystyle g\circ f $ es continua, entonces para cada $\displaystyle W \in \mathcal{T}'' $ tendremos que 
+		\[\left(g\circ f\right)^{-1}\left(W\right)=f^{-1}\left(g^{-1}\left(W\right)\right)\in \mathcal{T} ,\]
+		por lo que $\displaystyle g^{-1}\left(W\right) $ cumple la condición que caracteriza a los subconjuntos en $\displaystyle \mathcal{T}_{f} $. Por tanto, $\displaystyle g $ es continua.
+	\end{itemize}
+\item[(2) $\displaystyle \Rightarrow $ (1)] Tomamos $\displaystyle \left(Z, \mathcal{T}''\right) $ como $\displaystyle \left(Y, \mathcal{T}_{f}\right) $ y $\displaystyle g $ la aplicación identidad en $\displaystyle Y $, por lo que 
+	\[g \circ f = id \circ f = f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}_{f}\right) ,\]
+	que es continua por las propiedades de la topología final para $\displaystyle f $. De esta forma,  
+	\[g = id : \left(Y, \mathcal{T}'\right)\to \left(Y, \mathcal{T}_{f}\right) \]
+	es continua y tenemos que $\displaystyle \mathcal{T}_{f}\subset \mathcal{T}' $. 
+	Por otro lado, tomando $\displaystyle \left(Z, \mathcal{T}''\right) $ como $\displaystyle \left(Y, \mathcal{T}'\right) $ y $\displaystyle g $ como la identidad en $\displaystyle Y $,
+	\[g = id : \left(Y, \mathcal{T}'\right)\to \left(Y, \mathcal{T}'\right) ,\]
+	es claramente continua y por hipótesis tenemos que 
+	\[g\circ f = id \circ f = f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}'\right) ,\]
+	debe ser continua, por lo que $\displaystyle \mathcal{T}' \subset \mathcal{T}_{f} $. 
+\end{description}
+\end{proof}
+
+\begin{prop}
+Un subconjunto $\displaystyle C \subset Y $ es cerrado en $\displaystyle \left(Y, \mathcal{T}_{f}\right) $ si y sólo si $\displaystyle f^{-1}\left(C\right) $ es cerrado en $\displaystyle \left(X, \mathcal{T}\right) $.
+\end{prop}
+
+\begin{proof}
+En efecto, $\displaystyle C \subset Y $ es cerrado si y sólo si $\displaystyle Y\backslash C\in \mathcal{T}_{f} $ si y sólo si
+\[f^{-1}\left(Y \backslash C\right)= X \backslash f^{-1}\left(C\right)\in \mathcal{T} .\]
+\end{proof}
+\begin{observation}
+Por la proposición anterior es sencillo ver que dada $\displaystyle f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}_{f}\right) $, $\displaystyle f\left(X\right)\subset Y $ es abierto y cerrado en $\displaystyle \left(Y, \mathcal{T}_{f}\right) $. 
+\end{observation}
+
+\subsection{Identificaciones}
+
+\begin{definition}[Identificación]
+Una aplicación $\displaystyle f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}'\right) $ es una \textbf{identificación} si $\displaystyle f $ es sobreyectiva y $\displaystyle \mathcal{T}' = \mathcal{T}_{f} $. 
+\end{definition}
+\begin{observation}
+Si $\displaystyle f $ es identificación entonces es continua.
+\end{observation}
+\begin{definition}[Conjunto saturado]
+Dada una aplicación entre dos conjuntos $\displaystyle f : X \to Y $, decimos que $\displaystyle A \subset X $ es \textbf{saturado} respecto de $\displaystyle f $ o \textbf{$\displaystyle f $-saturado} si $\displaystyle f^{-1}\left(f\left(A\right)\right)=A $. 
+\end{definition}
+
+\begin{observation}
+Para cada $\displaystyle B \subset Y $, el conjunto $\displaystyle A = f^{-1}\left(B\right) $ es $\displaystyle f $-saturado. En efecto, $\displaystyle f\left(A\right)=B \cap f\left(X\right) $ y $\displaystyle f^{-1}\left(B \cap f\left(X\right)\right)=f^{-1}\left(B\right) $, por lo que $\displaystyle A = f^{-1}\left(f\left(A\right)\right) $. 
+\end{observation}
+
+\begin{prop}
+Sea $\displaystyle f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}'\right) $ una identificación, entonces:
+\begin{enumerate}
+\item $\displaystyle V \subset Y $ es abierto si y sólo si $\displaystyle V = f\left(U\right) $ con $\displaystyle U \in \mathcal{T} $ y $\displaystyle U $ es $\displaystyle f $-saturado.
+\item $\displaystyle C \subset Y $ es cerrado si y sólo si $\displaystyle C = f\left(H\right) $ con $\displaystyle H $ cerrado en $\displaystyle \left(X, \mathcal{T}\right) $ y $\displaystyle H $ es $\displaystyle f $-saturado.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}'\right) $ es una identificación.
+\begin{enumerate}
+\item Supongamos que $\displaystyle V \subset Y $ es abierto, entonces $\displaystyle f^{-1}\left(V\right)\in \mathcal{T}$. Podemos ver que $\displaystyle U = f^{-1}\left(V\right) $ es abierto y es un conjunto saturado. Por la sobreyectividad de $\displaystyle f $ tenemos que $\displaystyle V = f\left(U\right) $. Recíprocamente, si $\displaystyle V = f\left(U\right) $ con $\displaystyle U \in \mathcal{T} $ y $\displaystyle f $-saturado, tenemos que $\displaystyle f\left(U\right) $ es abierto puesto que $\displaystyle f^{-1}\left(f\left(U\right)\right)=U \in \mathcal{T} $. 
+\item Si $\displaystyle C \subset Y $ es cerrado, entonces $\displaystyle f^{-1}\left(C\right)\subset X $ es cerrado por ser $\displaystyle f $ continua. Además, es un conjunto saturado por $\displaystyle f $. Por la sobreyectividad de $\displaystyle f $ tenemos que $\displaystyle C = f\left(f^{-1}\left(C\right)\right) $. Recíprocamente, si $\displaystyle D \subset X $ es $\displaystyle f $-saturado tenemos que $\displaystyle f\left(D\right) $ es cerrado en $\displaystyle Y $ porque $\displaystyle f^{-1}\left(f\left(D\right)\right)=D $ es cerrado en $\displaystyle X $. 
+\end{enumerate}
+\end{proof}
+\begin{eg}
+	Consideremos $\displaystyle \left(\left[0,1\right] , \mathcal{T}|_{\left[0,1\right] }\right) $ y la aplicación 
+	\[f : \left[0,1\right] \to \mathbb{S}^{1} : t \to \left(\cos2\pi t, \sin2\pi t\right) .\]
+	Si dotamos a $\displaystyle \mathbb{S}^{1} $ con la topología final para $\displaystyle f $ obtenemos la topología que tiene como subespacio de $\displaystyle \left(\R^{2}, \mathcal{T}_{u}\right) $. \\
+
+	En efecto, podemos observar que si usamos la topología usual en $\displaystyle \R^{2} $ $\displaystyle f $ es continua, por lo que debe ser que $\displaystyle \mathcal{T}_{u} | _{\mathbb{S}^{1}}\subset \mathcal{T}_{f} $. Ahora, supongamos que $\displaystyle A \in \mathcal{T}_{f} $. Por definición tenemos que $\displaystyle f^{-1}\left(A\right)\subset\left[0,1\right]  $ es abierto en $\displaystyle \mathcal{T}_{u}|_{\left[0,1\right] } $. Podemos distinguir dos casos:
+	\begin{itemize}
+	\item Si $\displaystyle \left(1,0\right)\not\in A $ tenemos que $\displaystyle 0,1\not\in f^{-1}\left(A\right) $. En este caso tenemos que $\displaystyle f^{-1}\left(A\right) $ es abierto en $\displaystyle \left(0,1\right) $ por lo que es abierto en $\displaystyle \R $. Así, se puede expresar como unión de intervalos abiertos $\displaystyle \left(a,b\right)\subset \left(0,1\right) $ para cada uno de los cuales su imagen es un abierto
+		\[f\left(a,b\right)=\Omega_{\left(a,b\right)}\cap \mathbb{S}^{1}\in \mathcal{T}_{u}|_{\mathbb{S}^{1}} ,\]
+		con $\displaystyle \Omega_{\left(a,b\right)} $ la región abierta del plano usual comprendida entre las rectas $\displaystyle r_{a} $ y $\displaystyle r_{b} $ que unen, respectivamente, el origen de coordenadas con los puntos $\displaystyle f\left(a\right) $ y $\displaystyle f\left(b\right) $. Por tanto, $\displaystyle A \in \mathcal{T}_{u}|_{\mathbb{S}^{1}} $.
+	\item Si $\displaystyle \left(1,0\right)\in A $ tenemos que $\displaystyle 0,1\in f^{-1}\left(A\right) $. Así, existe $\displaystyle 0 < \epsilon < \frac{1}{4} $ tal que $\displaystyle [0,\epsilon) \cup(1-\epsilon, 1 ] \subset f^{-1}\left(A\right) $. Por tanto, $\displaystyle \left(1,0\right)\in f\left([0,\epsilon) \cup(1-\epsilon,1]\right)\subset A $, pero 
+		\[f\left([0,\epsilon)\cup(1-\epsilon,1]\right)= \left\{ \tan\left(-2\pi \epsilon \right)x < y < \tan 2\pi \epsilon x, \; x > 0\right\} \cap \mathbb{S}^{1} \in \mathcal{T}_{u} |_{\mathbb{S}^{1}} .\]
+		Como $\displaystyle f^{-1}\left(A\right)\backslash \left\{ 0,1\right\}  $ es abierto usual en $\displaystyle \left(0,1\right) $, a la vista del caso anterior concluimos que $\displaystyle A $ es abierto en $\displaystyle \mathbb{S}^{1} $. 
+	\end{itemize}
+\end{eg}
+\begin{eg}
+Consideramos el subconjunto 
+\[ C = \left\{ x^{2}+y^{2}=1, \; 0 \leq z \leq 1\right\} \subset \R^{3} ,\]
+y la aplicación 
+\[f : \left[0,1\right] ^{2} \to C : \left(s,t\right)\to \left(\cos 2\pi s, \sin 2\pi s, t\right) .\]
+Tomando la topología final para $\displaystyle f $ en $\displaystyle C $, obtenemos la misma topología que la que hereda $\displaystyle C $ de la usual en $\displaystyle \R^{3} $. Esto se puede razonar de modo análogo a como lo hicimos en el ejemplo anterior. Tampoco en este caso la aplicación $\displaystyle f $ es abierta. 
+\end{eg}
+\begin{prop}
+	Sea $\displaystyle f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}'\right) $ una aplicación. 
+	\begin{enumerate}
+	\item Si $\displaystyle f $ es sobreyectiva, continua y abierta, es una identificación.
+	\item Si $\displaystyle f $ es sobreyectiva, continua y cerrada, es una identificación.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}'\right) $ es una aplicación. 
+\begin{enumerate}
+\item Sólamente tenemos que ver que $\displaystyle \mathcal{T}'=\mathcal{T}_{f} $. Dado $\displaystyle V \subset Y $ tal que $\displaystyle f^{-1}\left(V\right)\subset X $ es abierto, tendremos que por ser $\displaystyle f $ abierta, $\displaystyle f\left(f^{-1}\left(V\right)\right)\in \mathcal{T}' $. Por la sobreyectividad de $\displaystyle f $, $\displaystyle V = f\left(f^{-1}\left(V\right)\right) $. Por tanto, $\displaystyle \mathcal{T}_{f}\subset \mathcal{T}' $. La continuidad de $\displaystyle f $ nos garantiza el otro contenido, por lo que $\displaystyle \mathcal{T}' = \mathcal{T}_{f} $. 
+\item Dado $\displaystyle V \subset Y $ para el que $\displaystyle f^{-1}\left(V\right)\subset X $ sea un abierto, se tiene por tanto que $\displaystyle X\backslash f^{-1}\left(V\right) $ es cerrado en $\displaystyle X $. Como $\displaystyle f $ es cerrada, $\displaystyle f\left(X\backslash f^{-1}\left(V\right)\right) $ es un cerrado en $\displaystyle Y $, pero como $\displaystyle f $ es sobreyectiva $\displaystyle f\left(X \backslash f^{-1}\left(V\right)\right)=Y \backslash V $. Por tanto $\displaystyle V \in \mathcal{T}' $ por lo que $\displaystyle \mathcal{T}_{f}\subset \mathcal{T}' $. El otro contenido viene dado por la continuidad de $\displaystyle f $. 
+\end{enumerate}
+\end{proof}
+
+\begin{observation}
+Hay identificaciones que son abiertas y cerradas; identificaciones abiertas pero no cerradas; identificaciones no abiertas pero sí cerradas; identificaciones no abiertas y no cerradas.
+\end{observation}
+\subsection{Cocientes topológicos}
+Supongamos que tenemos un espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ y que en $\displaystyle X $ tenemos definida una relación de equivalencia $\displaystyle \sim  $. Sea $\displaystyle Y = X / \sim  $, entonces podemos definir una aplicación natural
+\[p : X \to Y : x \to \left[x\right]  .\]
+\begin{definition}[Espacio topológico cociente]
+Si consideramos en el conjunto cociente $\displaystyle Y $ la topología final para la aplicación $\displaystyle p $, obtenemos el \textbf{espacio topológico cociente} $\displaystyle \left(Y, \mathcal{T}_{p}\right) $. Decimos que $\displaystyle \mathcal{T}_{p} $ es la \textbf{topología cociente} de la de $\displaystyle X $.
+\end{definition}
+
+Hay una correspondencia entre identificaciones y cocientes topológicos. Sea $\displaystyle f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}'\right) $ una aplicación sobreyectiva entre dos espacios topológicos. Definimos en $\displaystyle X $ la relación de equivalentcia
+\[x_{1} \sim x_{2} \iff f\left(x_{1}\right)=f\left(x_{2}\right) .\]
+Podemos obtener la factorización canónica de $\displaystyle f $ como la composición de la aplicación $\displaystyle p : X \to X / \sim  $ y de 
+\[\overline{f} : X / \sim \; \to Y : \left[x\right] \to f\left(x\right) .\]
+Claramente esta función está bien definida y es biyectiva.
+\begin{prop}
+En la situación que acabamos de describir, considerando en $\displaystyle X/\sim $ la topología cociente, se tiene que $\displaystyle f $ es una identificación si y sólo si $\displaystyle \overline{f} $ es homeomorfismo.
+\end{prop}
+\begin{proof}
+Empezamos observando que $\displaystyle A \subset X $ es saturado por $\displaystyle f $ si y sólo si es saturado por $\displaystyle p $. En efecto, la relación $\displaystyle \sim $ nos da
+\[p^{-1}\left(p\left(A\right)\right)= \left\{ x \in X \; : \; \exists a \in A, \; x \sim a\right\} = \left\{ x \in X \; : \; \exists a \in A, \; f\left(x\right)=f\left(a\right),\right\} = f^{-1}\left(f\left(A\right)\right) .\]
+\begin{description}
+\item[($\displaystyle \Rightarrow $)] Supongamos que $\displaystyle f $ es una identificación, entonces dado $\displaystyle V \subset Y $ abierto tendremos que 
+\[\overline{f}^{-1}\left(V\right)=p\left(f^{-1}\left(V\right)\right) ,\]
+que es abierto en $\displaystyle X/\sim $, porque es la imagen por $\displaystyle p $ del abierto $\displaystyle f^{-1}\left(V\right) $ que es saturado por $\displaystyle p $. Concluimos que $\displaystyle \overline{f} $ es continua. 
+Por otra parte, $\displaystyle \overline{f} $ es abierta. En efecto, un abierto en $\displaystyle X / \sim  $ es la imagen por $\displaystyle p $ de un abierto $\displaystyle U \subset X $ saturado por $\displaystyle p $. Entonces, $\displaystyle \overline{f}\left(p\left(U\right)\right)=f\left(U\right) $, que es abierto en $\displaystyle Y $ ya que $\displaystyle f^{-1}\left(f\left(U\right)\right)=U $.
+\item[($\displaystyle \Leftarrow $)] Supongamos ahora que $\displaystyle \overline{f} $ es homeomorfismo. Claramente $\displaystyle f $ es sobreyectiva. Por la propiedad universal de la topología final (aplicada a la topología cociente), $\displaystyle f $ es continua, por lo que $\displaystyle \mathcal{T}' \subset \mathcal{T}_{f} $. Dado $\displaystyle B \subset Y $ con $\displaystyle f^{-1}\left(B\right)\in \mathcal{T} $, tenemos que $\displaystyle p\left(f^{-1}\left(B\right)\right) $ es abierto pues $\displaystyle f^{-1}\left(B\right) $ es saturado por $\displaystyle p $. Por tanto $\displaystyle B = \overline{f}\left(p\left(f^{-1}\left(B\right)\right)\right) $ es abierto en $\displaystyle Y $.
+\end{description}
+\end{proof}
+\begin{observation}
+En la situación que acabamos de ver, $\displaystyle Y $ se puede interpretar como un modelo del espacio cociente $\displaystyle X/\sim  $. En general, los cocientes son muy útiles para definir nuevos espacios topológicos. Disponer de un modelo y de una identificación es muy conveniente para estudiar las propiedades de esos cocientes.
+\end{observation}
+\begin{eg}
+	La identificación $\displaystyle f : \left[0,1\right] \to \mathbb{S}^{1} $ nos da un modelo para el cociente $\displaystyle \left[0,1\right] / \sim  $ donde $\displaystyle 0 \sim 1 $ y para $\displaystyle t \in \left(0,1\right) $, $\displaystyle t $ está relacionado con él mismo.
+\end{eg}
+\begin{eg}
+	La identificación $\displaystyle f : \left[0,1\right] \times \left[0,1\right] \to C $ nos da un modelo para el cociente $\displaystyle \left[0,1\right] \times\left[0,1\right] /\sim $, donde $\displaystyle \left(0,t\right)\sim\left(1,t\right) $ para cada $\displaystyle t \in \left[0,1\right]  $, mientras que para cualquier $\displaystyle s \in \left(0,1\right) $ el punto $\displaystyle \left(s,t\right) $ sólo está relacionado con él mismo.
+\end{eg}
+\subsection{Sumas finitas}
+Dado un número finito de espacios topológicos $\displaystyle \left\{ \left(X_{i}, \mathcal{T}_{i}\right)\right\} _{i = 1, \ldots, r} $, consideramos el conjunto
+\[\sum^{r}_{i= 1}X_{i} = X_{1} + \cdots + X_{r} : = \left(X_{1} \times \left\{ 1\right\} \right) \cup \cdots \cup \left(X_{r} \times r\right) .\]
+Podemos pensar en este conjunto como la unión disjunta de los $\displaystyle X_{i} $. Para cada $\displaystyle i \in \left\{ 1, \ldots, r\right\}  $ podemos considerar la aplicación, 
+\[e_{i} : \left(X_{i}, \mathcal{T}_{i}\right)\to \sum^{r}_{j = 1}X_{j} : x_{i} \to \left(x_{i}, i\right) .\]
+Queremos dotar a $\displaystyle \sum^{r}_{j= 1}X_{j} $ de la topología más fina que haga continuas todas las aplicaciones $\displaystyle e_{i} $. La solución a este problema es la que se define a continuación:
+\begin{definition}[Topología suma]
+	El \textbf{espacio topológico suma} de los espacios $\displaystyle \left(X_{i}, \mathcal{T}_{i}\right)  $ para $\displaystyle i = \left\{ 1, \ldots, r\right\}  $ está formado por el conjunto $\displaystyle \sum^{r}_{i = 1}X_{i} $ en el que consideramos la \textbf{topología suma} de las topologías $\displaystyle \mathcal{T}_{i} $, que es la que tiene por base la siguiente familia de subconjuntos
+	\[ \mathcal{B} = \left\{ U_{i} \times \left\{ i\right\} \; : \; U_{i} \in \mathcal{T}_{i}, i \in \left\{ 1, \ldots, r\right\} \right\}  .\]
+	Denotaremos dicha topología por $\displaystyle \sum^{r}_{i=1}\mathcal{T}_{i} $. 
+\end{definition}
+Veamos que esta es la base de una topología en $\displaystyle \sum^{r}_{i=1}X_{i} $ y además es la más fina que consigue que todas las $\displaystyle e_{i} $ sean continuas. 
+\begin{itemize}
+	\item Claramente tenemos que $\displaystyle X_{i} \times \left\{ i\right\} \in \mathcal{B} $, $\displaystyle \forall i \in \left\{ 1, \ldots, r\right\}  $, por lo que 
+		\[\sum^{r}_{i = 1}X_{i} = (X_{1} \times \left\{ 1\right\}) \cup \cdots \cup (X_{r} \times \left\{ r\right\}) \in \mathcal{T}_{\mathcal{B}} .\]
+	\item Supongamos ahora que $\displaystyle B_{1}, B_{2} \in \mathcal{B} $ y $\displaystyle x \in B_{1} \cap B_{2} $. Si $\displaystyle B_{i} = \left(U_{1}^{i} \times \left\{ 1\right\} \right)\cup \cdots \cup \left(U_{r}^{i}\times \left\{ r\right\} \right)  $ para $\displaystyle i \in \left\{ 1,2\right\}  $, tenemos que 
+		\[B_{1} \cap B_{2} = \left(\left(U_{1}^{1}\cap U_{1}^{2}\right)\times \left\{ 1\right\} \right) \cup \cdots \cup \left(\left(U_{r}^{1}\cap U_{r}^{2}\right)\times \left\{ r\right\} \right) \in \mathcal{B}.\]
+\end{itemize}
+Por tanto, tenemos que $\displaystyle \mathcal{B} $ es una base de una topología en $\displaystyle \mathcal{T}_{\mathcal{B}} $. Es sencillo ver que $\displaystyle \mathcal{T}_{\mathcal{B}} $ hace que todas las aplicaciones $\displaystyle e_{i} $ sean continuas. Ahora, veamos que es la topología más fina que hace continuas a $\displaystyle e_{i} $. Supongamos que $\displaystyle \mathcal{T}' $ también cumple esta propiedad. Si $\displaystyle U \in \mathcal{T}' $ tenemos que $\displaystyle e_{i}^{-1}\left(U\right)\in \mathcal{T}_{i} $, por lo que 
+\[e^{-1}_{i} \left(U\right)=\bigcup_{j \in J}V_{j}, \quad V_{j} \in \mathcal{T}_{i}.\]
+Como cada $\displaystyle e_{i} $ es inyectiva, $\displaystyle e_{i}\left(e_{i}^{-1}\left(U\right)\right)= \left(\bigcup_{j \in J_{i}}V_{j}\right) \times \left\{ i\right\} $, de forma que 
+\[U = \bigsqcup_{1 \leq i \leq r}e_{i}\left(e^{-1}_{i}\left(U\right)\right) =\bigsqcup_{1 \leq i \leq r} \left(\left(\bigcup_{j \in J_{i}}V_{j}\right) \times \left\{ i\right\}\right) \in \mathcal{T}_{\mathcal{B}}.\]
+De esta forma, $\displaystyle \mathcal{T}'\subset\mathcal{T}_{\mathcal{B}} $. 
+\begin{prop}
+	La aplicación 
+	\[e_{i} : \left(X_{i}, \mathcal{T}_{i}\right)\to \left(\sum^{r}_{j = 1}X_{j}, \sum^{r}_{j = 1}\mathcal{T}_{j}\right) \]
+	es un embebimiento topológico, es abierta y es cerrada para cada $\displaystyle i \in \left\{ 1, \ldots, r\right\}  $. 
+\end{prop}
+\begin{proof}
+Basta con demostrar que 
+\[e_{i} : \left(X_{i}, \mathcal{T}_{i}\right)\to \left(e_{i}\left(X_{i}\right), \left(\sum^{r}_{j = 1}\mathcal{T}_{j}\right)|_{e_{i}\left(X_{i}\right)}\right) ,\]
+es un homeomorfismo. Está claro que es biyectiva. Además es abierta, puesto que para cada $\displaystyle U_{i} \in \mathcal{T}_{i} $ tenemos que $\displaystyle e_{i}\left(U_{i}\right)=U_{i} \times \left\{ i\right\} \in \sum^{r}_{j = 1}\mathcal{T}_{j} $ y está contenido en $\displaystyle e_{i}\left(X_{i}\right)=X_{i} \times \left\{ i\right\}  $. Está claro que por definición de topología suma $\displaystyle e_{i} $ es continua. Finalmente, para ver que es cerrada podemos ver que si $\displaystyle C_{i} \subset X_{i} $ es cerrado, entonces
+\[\left(\sum^{r}_{j=1}X_{i}\right)\backslash e_{i}\left(C_{i}\right)=\bigcup_{j \neq i}\left(X_{j} \times \left\{ j\right\} \right) \cup \left(\left(X_{i}\backslash C_{i}\right)\times \left\{ i\right\} \right)\in \sum^{r}_{j = 1}\mathcal{T}_{j} .\]
+\end{proof}
+\begin{observation}
+Podemos ver que, en particular, los espacios $\displaystyle X_{i} $ son subespacios abiertos y cerrados de la suma. 
+\end{observation}
+\begin{prop}[Propiedad universal]
+	Dada una familia finita de espacios topológicos $\displaystyle \left\{ \left(X_{i}, \mathcal{T}_{i}\right)\right\} _{i \in \left\{ 1, \ldots, r\right\} } $, dotemos a $\displaystyle \sum^{r}_{i=1}X_{i} $ de una topología $\displaystyle \mathcal{T}' $. Entonces, las siguientes afirmaciones son equivalentes:
+	\begin{enumerate}
+	\item $\displaystyle \mathcal{T}' = \sum^{r}_{i = 1}\mathcal{T}_{i} $.
+	\item Para cada espacio topológico $\displaystyle \left(Z, \mathcal{T}''\right) $ y para cada aplicación
+		\[g : \left(\sum^{r}_{i = 1}X_{i}, \mathcal{T}'\right)\to \left(Z, \mathcal{T}''\right) ,\]
+		$\displaystyle g $ es continua si y sólo si $\displaystyle g \circ e_{i} : \left(X_{i}, \mathcal{T}_{i}\right)\to \left(Z, \mathcal{T}''\right)$ es continua, para $\displaystyle i = 1, \ldots, r $. 
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Demostramos ambas implicaciones. 
+	\begin{description}
+	\item[($\displaystyle \Rightarrow $)] Supongamos que $\displaystyle \mathcal{T}' = \sum^{r}_{i = 1}\mathcal{T}_{i} $. 
+		\begin{itemize}
+		\item Si $\displaystyle g $ es continua, $\displaystyle g\circ e_{i} $ es continua por ser composición de funciones continuas. 
+		\item Si $\displaystyle g\circ e_{i} $ es contiua, para $\displaystyle U \in \mathcal{T}'' $ tenemos que 
+			\[\left(g\circ e_{i}\right)^{-1}\left(U\right)=e^{-1}_{i}\left(g^{-1}\left(U\right)\right)\in \mathcal{T}_{i} ,\]
+		
+	\end{itemize}
+		
+	\end{description}
+\end{proof}
+
+Como idea general, el espacio $\displaystyle \sum^{r}_{j = 1}X_{j} $ es, localmente, como cada uno de los espacios (es decir, $\displaystyle \sum^{r}_{j = 1}X_{j} $ es unión disjunta de subespacios) que son cada uno de ellos como uno de los espacios de partida. Así, para determinar bases de entornos en $\displaystyle \sum^{r}_{j = 1}X_{j} $, consideramos para cada uno de sus puntos una base de entornos en el espacio $\displaystyle X_{i} $ al que pertenece. \\
+
+Globalmente, se trata cada sumando por separado. De esta forma, una base de la topología del espacio suma se puede obtener uniendo bases de abiertos de cada uno de los espacios sumando. 
+\subsection{Espacios proyectivos reales}
+Recordamos que podemos definir el espacio proyectivo real de dimensión $\displaystyle n $, que denotamos por $\displaystyle \mathbb{P}^{n}_{\R} $, como el conjunto cociente $\displaystyle \mathbb{P}^{n}_{\R} = \left(\R^{n+1}\backslash \left\{ 0\right\} \right)/ \sim $, donde $\displaystyle \sim  $ es la relación de equivalencia definida por
+\[\left(x_{0}, \ldots, x_{n}\right)\sim \left(y_{0}, \ldots, y_{n}\right)\iff \exists\lambda\neq 0, \; \left(y_{0}, \ldots, y_{n}\right)=\lambda\left(x_{0}, \ldots, x_{n}\right) .\]
+Consideramos el espacio proyectivo real como espacio topológico, dotándole de la topología cociente, esto es, la topología final para la aplicación
+\[\pi : \R^{n+1} \backslash \left\{ 0\right\} \to \mathbb{P}^{n}_{\R} : \left(x_{0}, \ldots, x_{n}\right) \to \left[x_{0} : \cdots : x_{n}\right]  .\]
+Podemos ver los puntos del espacio proyectivo como rayos, es decir, subespacios vectoriales de dimensión uno en $\displaystyle \R^{n+1} $. \\
+Consideremos un hiperplano proyectivo $\displaystyle H \subset \mathbb{P}^{n}_{\R} $ que viene determinado por un hiperplano vectorial $\displaystyle \hat{H}\subset \R^{n+1} $, que corresponde al subespacio en el que se anula una forma lineal $\displaystyle h $. En otras palabras, $\displaystyle H = \left(\hat{H} \backslash \left\{ 0\right\} \right)/ \sim $ con $\displaystyle \hat{H}=\Ker h $. Observamos que $\displaystyle H $ es cerrado en $\displaystyle \mathbb{P}^{n}_{\R} $. Su complementario $\displaystyle U = \mathbb{P}^{n}_{\R} \backslash  H $ es un abierto, de hecho
+\[U = \pi\left(\R^{n+1} \backslash \hat{H}\right), \quad \hat{H} = \left\{ h = 0\right\} \subset \R^{n+1} ,\]
+y $\displaystyle \R^{n+1} \backslash \hat{H} $ es un abierto $\displaystyle \pi  $-saturado en $\displaystyle \R^{n+1} \backslash \left\{ 0\right\}  $. 
+\begin{definition}[Carta afín]
+Cada subconjunto $\displaystyle U $ definido como acabamos de ver se llama una \textbf{carta afín} de $\displaystyle \mathbb{P}^{n}_{\R} $. El hiperplano $\displaystyle H $ se dice que es el \textbf{hiperplano de infinito} de la carta afín $\displaystyle U $.
+\end{definition}
+Si ahora nos fijamos en el hiperplano afín $\displaystyle \left\{ h = 1\right\} \subset \R^{n+1} \backslash \left\{ 0\right\}  $, podemos establecer una biyección restringiendo la aplicación $\displaystyle \pi  $,
+\[\pi |_{ \left\{ h = 1\right\} } : \left\{ h = 1\right\} \to \mathbb{P}^{n}_{\R} \backslash H = U .\]
+\begin{prop}
+	La aplicación $\displaystyle \pi  $ restringida antes mencionada, considerando en $\displaystyle \left\{ h =1\right\}  $ la topología relativa como subespacio de $\displaystyle \R^{n+1} $ y en $\displaystyle U $ la topología relativa como subespacio de $\displaystyle \mathbb{P}^{n}_{\R} $, es un homeomorfismo.
+\end{prop}
+\begin{proof}
+	Sabemos que $\displaystyle \pi |_{ \left\{ h = 1\right\} } $ es biyectiva. Veamos que es continua. Como $\displaystyle U \subset \mathbb{P}^{n}_{\R} $ es abierto, todo abierto relativo $\displaystyle V \subset U $ es abierto en $\displaystyle \mathbb{P}^{n}_{\R} $. Por la definición de la topología cociente, tenemos entonces que $\displaystyle \pi ^{-1}\left(V\right)\subset \R^{n+1} \backslash \left\{ 0\right\}  $ es abierto. Por tanto, 
+	\[ \left(\pi|_{ \left\{ h=1\right\} }\right)^{-1}\left(V\right) =\pi^{-1}\left(V\right)\cap \left\{ h = 1\right\}  ,\]
+	es abierto en $\displaystyle \left\{ h=1\right\}  $ como subespacio de $\displaystyle \R^{n+1} $. Por otra parte, $\displaystyle \pi| _{ \left\{ h = 1\right\} } $ es abierta. En efecto, si tomamos un abierto básico de $\displaystyle \left\{ h = 1\right\}  $ como subespacio de $\displaystyle \R^{n+1} $, un disco abierto $\displaystyle D $, su imagen es el conjunto de subespacios de dimensión uno determinados por todos los vectores de $\displaystyle \R^{n+1} $ correspondientes a los puntos de $\displaystyle D $, es decir, los rayos del cono sobre $\displaystyle D $. Este conjunto es abierto en $\displaystyle U $ y en $\displaystyle \mathbb{P}^{n}_{\R} $. 
+\end{proof}
+
+Podemos pensar en $\displaystyle \mathbb{P}^{n}_{\R} $ viéndolo a partir del espacio suma de cartas afines. En concreto, basta tomar $\displaystyle n + 1 $ cartas distintas que cubren todo $\displaystyle \mathbb{P}^{n}_{\R} $. Habitualmente, consideramos las cartas afines
+\[U_{i}= \left\{ \left[x_{0} : \cdots : x_{n}\right] \in \mathbb{P}^{n}_{\R} \; : \; x_{i} \neq 0\right\} , \; i \in \left\{ 0, \ldots, n\right\}  .\]
+Para entender el espacio proyectivo tenemos que pegar esas cartas afines. Para ello es fundamental la siguiente observación. 
+\begin{observation}
+	Si $\displaystyle U_{1} $ y $\displaystyle U_{2} $ son dos cartas afines distintas, con hiperplanos de infinito $\displaystyle \left\{ h_{1}=0\right\}  $ y $\displaystyle \left\{ h_{2}=0\right\}  $, respectivamente, tenemos que $\displaystyle U_{1} \cap U_{2} $ es abierto en $\displaystyle U_{1} $ y en $\displaystyle U_{2} $. La topología heredada como subespacio es la misma en ambos casos. \\
+
+	Veámoslo usando los homeomorfismos con espacios afines. Tenemos que $\displaystyle U_{1} $ es homeomorfo a $\displaystyle \left\{ h_{1} = 1\right\}  $. Análogamente, $\displaystyle U_{2}  $ es homeomorfo a $\displaystyle \left\{ h_{2}=1\right\}  $. En $\displaystyle \left\{ h_{1}=1\right\}  $, el abierto correspondiente a $\displaystyle U_{1} \cap U_{2} $ está definido por $\displaystyle h_{2}\neq 0 $. En $\displaystyle \left\{ h_{2}=1\right\}  $ el abierto correspondiente a $\displaystyle U_{1}\cap U_{2} $ está definido por $\displaystyle h_{1}\neq 0 $. Podemos establecer un homeomorfismo explícito entre estos dos abiertos. \\
+
+	Veámoslo para simplificar, tomando $\displaystyle U_{1}= \left\{ x_{1}\neq 0\right\}  $ y $\displaystyle U_{2} = \left\{ x_{2}\neq 0\right\}  $ en $\displaystyle \mathbb{P}^{n}_{\R} $. Entonces, las coordenadas en $\displaystyle U_{1} $ visto como hiperplano afín $\displaystyle \left\{ x_{1} = 1\right\}  $ son $\displaystyle \left(\frac{x_{0}}{x_{1}}, 1, \frac{x_{2}}{x_{1}}, \ldots, \frac{x_{n}}{x_{1}}\right) $, que podemos renombrar $\displaystyle \left(u_{1}, 1, \ldots, u_{n}\right) $. Análogamente, en $\displaystyle U_{2} $ visto como hiperplano afín $\displaystyle \left\{ x_{2}=1\right\}  $ son
+	$\displaystyle \left(\frac{x_{0}}{x_{2}}, \frac{x_{1}}{x_{2}}, 1, \ldots, \frac{x_{n}}{x_{2}}\right) $, que podemos renombrar $\displaystyle \left(\psi_{1}, \psi_{2}, 1, \ldots, \psi_{n}\right) $. El homeomorfismo buscado será
+	\[\varphi_{12} : \left\{ x_{1} = 1, \; x_{2}\neq 0\right\} \to \left\{ x_{1}\neq 0, \; x_{2}=1\right\} : \left(u_{1}, 1, \ldots, u_{n}\right)\to \left(\frac{u_{1}}{u_{2}}, \frac{1}{u_{2}}, 1, \ldots, \frac{u_{n}}{u_{2}}\right) .\]
+\end{observation}
 

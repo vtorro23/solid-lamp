@@ -502,6 +502,9 @@ INPUT Chap2.tex
 INPUT ./Chap3.tex
 INPUT ./Chap3.tex
 INPUT Chap3.tex
+INPUT ./Chap4.tex
+INPUT ./Chap4.tex
+INPUT Chap4.tex
 INPUT EqDiff.aux
 INPUT ./EqDiff.out
 INPUT ./EqDiff.out
@@ -516,6 +519,7 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb

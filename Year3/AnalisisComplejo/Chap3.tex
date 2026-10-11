@@ -125,3 +125,81 @@ Las propiedades \textbf{(1)} y \textbf{(2)} se vieron en cálculo integral. Demo
 Debido a este hecho, para cada $\displaystyle \Gamma $ curva orientada de clase $\displaystyle \mathcal{C}^{1} $ a trozos contenida en $\displaystyle \C $ tendremos que podemos definir
 	\[\int _{\Gamma}f := \int _{\gamma }f ,\]
 con $\displaystyle \gamma  $ parametrización de $\displaystyle \Gamma  $, para cualquier función continua $\displaystyle f : \Gamma \to \C $. Las propiedades de la proposición anterior tienen análogos obvios para $\displaystyle \int _{\Gamma }f $. 
+Asímismo, dada una concatenación de curvas $\displaystyle \Gamma = \bigcup_{m}_{j = 1}\Gamma_{j} $, es sencillo ver que
+\[\int _{\Gamma}f = \sum^{m}_{j =1}\int _{\Gamma_{j}}f .\]
+En el caso particular de $\displaystyle  = 2 $ y de que $\displaystyle \Gamma = \Gamma_{1} \cup\Gamma_{2} $ sea cerrada tenemos que $\displaystyle \int _{\Gamma }f  $ no depende del punto inicial o final. En efecto,
+\[\int _{\Gamma }f =\int _{\Gamma_{1}}f +\int _{\Gamma_{2}}f =  \int _{\Gamma_{2}}f +\int _{\Gamma_{1}}f  .\]
+Entonces, si $\displaystyle \gamma, \omega : \mathbb{S}^{1} \to \C $ son equivalentes 
+\[\int _{\gamma }f =\int _{\sigma } f .\]
+En efecto, si $\displaystyle z = \gamma\left(1\right) $ y $\displaystyle \omega = \sigma\left(1\right) $ son distintos, 
+\[\int _{\gamma }f =\int _{\Gamma_{1}}f +\int _{\Gamma_{2}}f =\int _{\Gamma_{2}}f +\int _{\Gamma_{1}}f =\int _{\sigma }f ,\]
+donde $\displaystyle \Gamma_{1} $ denota el subarco de $\displaystyle \gamma\left(\mathbb{S}^{1}\right)=\sigma\left(\mathbb{S}^{1}\right) $ que comienza en $\displaystyle z $ y acaba en $\displaystyle w $ y se recorre en el mismo sentido que lo hacen $\displaystyle \gamma  $ y $\displaystyle \sigma  $; y $\displaystyle \Gamma_{2} $ es el subarco que comienza en $\displaystyle w $ y acaba en $\displaystyle z $ y se recorre en el mismo sentido que $\displaystyle \gamma  $ y $\displaystyle \sigma  $. 
+\begin{definition}[Función primitiva]
+Dado $\displaystyle \Omega \subset \C $ abierto y $\displaystyle f : \Omega \to \C $, decimos que $\displaystyle F : \Omega \to \C $ con $\displaystyle F \in \mathcal{H}\left(\Omega \right) $ es una \textbf{primitiva} de $\displaystyle f$ si $\displaystyle F'\left(z\right)=f\left(z\right) $, $\displaystyle \forall z \in \Omega  $. 
+\end{definition}
+\begin{observation}
+Si $\displaystyle \Omega \subset \C $ es abierto conexo y $\displaystyle F_{1} $ y $\displaystyle F_{2} $ son primitivas de $\displaystyle f $, debe ser que $\displaystyle F_{1} $ y $\displaystyle F_{2} $ son iguales salvo quizás una constante.  
+\end{observation}
+\begin{theorem}
+Sea $\displaystyle \Omega\subset \C $ abierto, $\displaystyle f \in \mathcal{C}\left(\Omega \right) $ y $\displaystyle F $ una primitiva de $\displaystyle f $ en $\displaystyle \Omega  $. Sea $\displaystyle \Gamma $ una curva de clase $\displaystyle \mathcal{C}^{1} $ a trozos que empieza en $\displaystyle \omega_{1} $ y termina en $\displaystyle \omega_{2} $. Entonces,
+\[\int _{\Gamma }f =F\left(\omega_{2}\right)-F\left(\omega_{1}\right) .\]
+\end{theorem}
+\begin{proof}
+	Supongamos que $\displaystyle \Gamma $ es $\displaystyle \mathcal{C}^{1} $. Sea $\displaystyle \gamma : \left[a,b\right] \to \Omega $ una parametrización de $\displaystyle \Gamma  $. Ahora, aplicando la regla de la cadena compleja 
+	\[
+	\begin{split}
+	\int _{\gamma }f =\int^{b}_{a} f\left(\gamma\left(t\right)\right)\gamma'\left(t\right) \; dt= \int^{b}_{a} \frac{d}{dt}F\left(\gamma\left(t\right)\right) \; dt = F\left(\gamma\left(b\right)\right)-F\left(\gamma\left(a\right)\right)=F\left(\omega_{2}\right)-F\left(\omega_{1}\right) .
+	\end{split}
+	\]
+En el caso de que $\displaystyle \Gamma $ sea $\displaystyle \mathcal{C}^{1} $ a trozos tendremos que 
+\[\int _{\Gamma}f =\sum^{n}_{j = 1}\int _{\Gamma }f =\sum^{n}_{j = 1}\left(F\left(\omega_{2}^{j}\right)-F\left(\omega^{j}_{1}\right)\right) = F\left(\omega_{2}^{n}\right)-F\left(\omega_{1}^{1}\right) .\]
+\end{proof}
+\begin{colorary}
+Si $\displaystyle \Gamma $ es una curva cerrada $\displaystyle \mathcal{C}^{1} $ a trozos, $\displaystyle f : \Omega\subset \C \to \C $, $\displaystyle f \in \mathcal{C}\left(\Omega \right) $ que admite primitiva en $\displaystyle \Omega  $, entonces $\displaystyle \int _{\Gamma }f =0 $. 
+\end{colorary}
+\begin{eg}
+	La función $\displaystyle f\left(z\right)=\frac{1}{z} $ no admite primitiva en $\displaystyle \C\backslash \left\{ 0\right\}  $. En efecto, por el corolario anterior tenemos que 
+	\[\int _{ \left\{ \left|z\right| = 1\right\} }\frac{1}{z} \; dz = \int^{2\pi }_{0} \frac{1}{e^{it}}ie^{it} \; dt =2\pi i .\]
+\end{eg}
+\begin{theorem}[Derivación bajo el signo de la integral]
+Sean $\displaystyle \Omega\subset \C $ abierto, $\displaystyle \Gamma $ una curva orientada de clase $\displaystyle \mathcal{C}^{1} $ a trozos (no pedimos que esté en $\displaystyle \Omega  $). Sea $\displaystyle \varphi : \Gamma \times \Omega \to \C $ continua tal que $\displaystyle \forall \xi \in \Gamma  $ la aplicación $\displaystyle z \to \varphi\left(\xi, z\right)\in \mathcal{H}\left(\Omega \right) $ y tal que $\displaystyle \left(\xi, z\right)\to \frac{\partial }{\partial z}\varphi\left(\xi, z\right) $ es continua en $\displaystyle \Gamma \times \Omega  $.
+Entonces
+\[g\left(z\right):= \int _{\Gamma}\varphi\left(\xi, z\right) \; d\xi ,\]
+es holomorfa en $\displaystyle z \in \Omega  $ y 
+\[g'\left(z\right)=\int _{\Gamma}\frac{\partial\varphi}{\partial z}\left(\xi, z\right) \; d\xi .\]
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle z_{0} \in \Omega  $ y $\displaystyle r > 0 $ tal que $\displaystyle \overline{B}\left(z_{0}, r\right)\subset \Omega  $. Para $\displaystyle \left|h\right|<r $, considerando el segmento $\displaystyle S = \left[z_{0}, z_{0} + h\right] \subset \Omega  $ parametrizado por $\displaystyle S_{h}\left(t\right)=z_{0} + th $, $\displaystyle h \in \left[0,1\right]  $, y aplicando el teorema anterior tenemos que 
+	\[\varphi\left(\xi, z_{0} + h\right)-\varphi\left(\xi, z_{0}\right)=\int _{S_{h}}\frac{\partial\varphi}{\partial z}\left(\xi, z\right) \; dz = \int^{1}_{0} \frac{\partial \varphi}{\partial z}\left(\xi, S_{h}\right)S'_{h}\left(t\right) \; dt = \int^{1}_{0} \frac{\partial\varphi}{\partial z}\left(\xi,z_{0}+th\right)h \; dt \]
+	para cada $\displaystyle \xi \in \Gamma $. Suponiendo que $\displaystyle \gamma : \left[a,b\right] \to \Omega  $ es una parametrización de $\displaystyle \Gamma $ tenemos que
+	\[
+	\begin{split}
+		&\lim_{h \to 0}\frac{g\left(z_{0} + h\right)-g\left(z_{0}\right)}{h} =  \lim_{h \to 0}\frac{1}{h}\int _{\Gamma}\left(\varphi\left(\xi, z_{0} + h\right)-\varphi\left(\xi, z_{0}\right)\right) \; d\xi \\
+		= &  \lim_{h \to 0}\frac{1}{h}\int _{\Gamma }\left(\int^{1}_{0} \frac{\partial\varphi}{\partial z}\left(\xi, z_{0} + sh\right)h \; d s\right) \; d\xi 
+		=  \lim_{h \to 0}\int^{b}_{a} \left(\int^{1}_{0} \frac{\partial \varphi}{\partial z}\left(\gamma\left(t\right), z_{0} + sh\right) \; d s\right)\gamma'\left(t\right) \; dt \\
+		= &  \lim_{h \to 0}\int _{\left[0,1\right] \times\left[a,b\right] }\frac{\partial \varphi}{\partial z}\left(\gamma\left(t\right), z_{0} + sh\right)\gamma'\left(t\right) \; d s \; dt  = \int _{\left[0,1\right] \times\left[a,b\right] }\lim_{h \to 0}\frac{\partial \varphi}{\partial z}\left(\gamma \left(t\right), z_{0} + sh\right)\gamma'\left(t\right) \; d s dt\\
+		= & \int _{\left[0,1\right] \times\left[a,b\right] }\frac{\partial \varphi}{\partial z}\left(\gamma\left(t\right), z_{0}\right)\gamma'\left(t\right) \; d s \; dt = \int^{b}_{a} \frac{\partial \varphi}{\partial z}\left(\gamma\left(t\right), z_{0}\right)\gamma'\left(t\right) \; dt = \int _{\Gamma}\frac{\partial \varphi}{\partial z}\left(\xi, z\right) \; d\xi.
+	\end{split}
+	\]
+En la cuarta igualdad hemos usado el teorema de Fubini y en la quinta el intercambio de la integral y el límite se justifica porque al ser $\displaystyle \frac{\partial \varphi}{\partial z} $ continua en el compacto $\displaystyle \Gamma \times \overline{B}\left(z_{0}, r\right) $ es uniformemente continua en este conjunto y por tanto
+\[\lim_{h \to 0}\frac{\partial \varphi}{\partial z}\left(\gamma\left(t\right), z_{0} + sh\right)\gamma'\left(t\right)=\frac{\partial \varphi}{\partial z}\left(\gamma\left(t\right), z_{0}\right)\gamma'\left(t\right)\]
+uniformemente en $\displaystyle \left(s,t\right)\in \left[0,1\right] \times\left[a,b\right]  $. 
+\end{proof}
+\begin{colorary}
+Sean $\displaystyle z_{0} \in \C $ y $\displaystyle r > 0 $. Para todo $\displaystyle z \in D\left(z_{0}, r\right) $ es
+\[\int _{ \left\{ \left|z-z_{0}\right|=r\right\} }\frac{1}{\xi-z} \; d\xi = 2\pi i ,\]
+con orientación positiva. 
+\end{colorary}
+\begin{proof}
+Tomamos 
+\[\varphi: \partial D\left(z_{0}, r\right)\times \C \backslash \partial D\left(z_{0}, r\right)\to \C : \left(\xi, z \right)\to \frac{1}{\xi - z} .\]
+Por construcción el denominador nunca se anula. En el dominio, la función $\displaystyle \varphi $ es continua y su derivada parcial es $\displaystyle \frac{\partial \varphi}{\partial z}=\frac{1}{\left(\xi-z\right)^{2}} $ que también es continua en el dominio. 
+Así, la función
+\[f\left(z\right):= \int _{ \left\{ \left|z-z_{0}\right|=r\right\} }\frac{1}{\xi-z} \; d\xi ,\]
+está bien definida y por el tema anterior es holomorfa en $\displaystyle D\left(z_{0}, r\right) $ con derivada
+\[f'\left(z\right)=\int _{ \left\{ \left|z-z_{0}\right|=r\right\} }\frac{\partial \varphi}{\partial z} \; d\xi = \int _{ \left\{ \left|z-z_{0}\right|=r\right\} }\frac{1}{ \left(\xi-z\right)^{2}} \; d\xi=0 .\]
+Puesto que $\displaystyle -\frac{1}{\xi-z} $ es una primitiva del integrando. Se sigue que $\displaystyle f $ es constante en $\displaystyle D\left(z_{0}, r\right) $. Por ende, $\displaystyle \forall z \in D\left(a_{0}, r\right) $,
+\[f\left(z\right)=f\left(z_{0}\right)=\int _{ \left\{ \left|z-z_{0}\right|=r\right\} }\frac{1}{\xi-z_{0}} \; d\xi =\int^{2\pi }_{0} \frac{rie^{it}}{re^{it}} \; dt = 2\pi i .\]
+Hemos usdo la parametrización $\displaystyle \gamma\left(t\right)=z_{0} + re^{it} $ con $\displaystyle t \in \left[0,2\pi \right]  $. 
+\end{proof}
+
