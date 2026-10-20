@@ -1,4 +1,4 @@
-\chapter{Prolongabilidad de soluciones}
+Finalmente, tenemos que\chapter{Prolongabilidad de soluciones}
 Consideremos el PVI dado por
 \[
 \begin{cases}
@@ -85,26 +85,7 @@ El resultado es análogo para $\displaystyle \beta_{-} $.
 	\[ \|x\left(t\right)\| > R, \; \forall t \in \left(t_{+}, \beta_{+}\right) .\]
 	Por tanto, $\displaystyle \|x\left(t\right)\| \xrightarrow{t \to \beta_{+}} \infty$.	
 \end{proof}
-\begin{eg}[Problema 11, Hoja 1]
-Sea $\displaystyle f : \R^{2} \to \R $ de clase $\displaystyle \mathcal{C}^{1} $. Las soluciones del PVI
-\[
-\begin{cases}
-x' = f\left(t,x\right)\\
-x\left(t_{0}\right)=x_{0}
-\end{cases}
-,\]
-cumplen que $\displaystyle \beta_{+} = \infty $. Vamos a probar que si las soluciones están acotadas en $\displaystyle \left(t_{0}, \beta_{+}\right) $ entonces $\displaystyle \beta_{\infty} = \infty $. Distinguimos varios casos:
-\begin{itemize}
-	\item  Si $\displaystyle x_{0}\in [c,d] $, queremos ver que $\displaystyle x\left(t\right)\in [c,d] $, $\displaystyle \forall t \in [t_{0}, \beta_{+}) $. Si no es cierto, supongamos sin pérdida de generalidad que existe $\displaystyle T > t_{0} $ tal que $\displaystyle x\left(T\right)>d $. Tomamos 
-		\[t ^{*}=\sup \left\{ t \in \left[t_{0}, T\right]  \; : \; x\left(t\right)\leq d\right\} \in [t_{0}, T) .\]
-		Por continuidad tendremos que $\displaystyle x\left(t ^{*}\right)=d $ y $\displaystyle x\left(t\right)\geq d $ en $\displaystyle \left[t ^{*}, T\right]  $. Por el teorema del valor medio, existe $\displaystyle \xi \in \left(t ^{*}, T\right) $ tal que 
-		\[x'\left(\xi\right)=\frac{x\left(T\right)-x\left(t ^{*}\right)}{T-t ^{*}} > 0 .\]
-	Como $\displaystyle x'\left(\xi\right)=f\left(\xi, x\left(\xi\right)\right) $ y $\displaystyle x\left(\xi\right)\geq d $ tendremos que $\displaystyle f\left(\xi, x\left(\xi\right)\right)<0 $, que es una contradicción. 
-\item Si $\displaystyle x_{0} > d $, tenemos que ver que $\displaystyle x\left(t\right)\in [c,x_{0}] $, $\displaystyle \forall t \in [t_{0}, \beta_{+}) $. Existen dos posibilidades: o bien estoy siempre por encima de $\displaystyle d $ o bien en algún momento estoy por debajo. 
-\item Si $\displaystyle x_{0} < c $, tenemos que ver que $\displaystyle x\left(t\right)\in [x_{0}, d] $, $\displaystyle \forall t \in [t_{0}, \beta_{+}) $. 
-\end{itemize}
-Es interesante preguntarnos si podemos decir algo de $\displaystyle \beta_{-} $. La respuesta es que no. 
-\end{eg}
+
 \begin{lema}[Desigualdad de Grönwall]
 Dado un intervalo $\displaystyle I \subset \R $ que contiene $\displaystyle t_{0} \in \R $, sean $\displaystyle \alpha, \beta, u : I \to [0, \infty) $ funciones continuas tales que 
 \[u\left(t\right)\leq \alpha\left(t\right) + \left|\int^{t}_{t_{0}} \beta\left(s\right)u\left(s\right) \; d s\right|, \; \forall t \in I .\]

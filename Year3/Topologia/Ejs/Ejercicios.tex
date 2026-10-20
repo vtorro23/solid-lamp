@@ -59,10 +59,38 @@ Por tanto, $\displaystyle f\left(x\right)\in B\left(f\left(x_{0}\right), \epsilo
 
 \begin{ej}[Número 1.6]
 	\begin{enumerate}
-	\item Sean $\displaystyle \mathcal{T}_{1} $ y $\displaystyle \mathcal{T}_{2} $ dos topologías en un conjunto $\displaystyle X $. Mostrar que su intersección $\displaystyle \mathcal{T}_{1} \cap \mathcal{T}_{2} $ es también una topología. Se puede decir lo mismo de su unión $\displaystyle \mathcal{T}_{1} \cup \mathcal{T}_{2} $? Construir la topología menos fina que contiene a esa unión.
+	\item Sean $\displaystyle \mathcal{T}_{1} $ y $\displaystyle \mathcal{T}_{2} $ dos topologías en un conjunto $\displaystyle X $. Mostrar que su intersección $\displaystyle \mathcal{T}_{1} \cap \mathcal{T}_{2} $ es también una topología. ¿Se puede decir lo mismo de su unión $\displaystyle \mathcal{T}_{1} \cup \mathcal{T}_{2} $? Construir la topología menos fina que contiene a esa unión.
 	\item Estudiar el caso de intersecciones y uniones arbitrarias de topologías.
-	\item La menor topología que contiene a una colección cualquiera de subconjuntos de $\displaystyle X $ se denomina topología generada por la colección. Describirla. Qué tiene esto que ver con el concepto de base de una topología?
+	\item La menor topología que contiene a una colección cualquiera de subconjuntos de $\displaystyle X $ se denomina topología generada por la colección. Describirla. ¿Qué tiene esto que ver con el concepto de base de una topología?
 	\end{enumerate}
 \end{ej}
+\begin{sol}
+Resolvemos los distintos apartados.
+\begin{enumerate}
+\item Veamos que $\displaystyle \mathcal{T}_{1}\cap \mathcal{T}_{2} $ es una topología en $\displaystyle X $. 
+	\begin{itemize}
+	\item Como $\displaystyle \mathcal{T}_{1} $ y $\displaystyle \mathcal{T}_{2} $ son topologías en $\displaystyle X $, por definición se sigue que $\displaystyle \emptyset, X \in \mathcal{T}_{1} \cap \mathcal{T}_{2} $. 
+	\item Si $\displaystyle \left\{ U_{i}\right\} _{i \in I}\subset \mathcal{T}_{1}\cap \mathcal{T}_{2} $, tenemos que por ser $\displaystyle \mathcal{T}_{1} $ y $\displaystyle \mathcal{T}_{2} $ topologías, 
+		\[\bigcup_{i \in I}U_{i} \in \mathcal{T}_{1} \quad \text{y} \quad \bigcup_{i \in I}U_{i} \in \mathcal{T}_{2} ,\]
+		por lo que $\displaystyle \bigcup_{i \in I}U_{i} \in \mathcal{T}_{1} \cap \mathcal{T}_{2} $. 
+	\item Supongamos que $\displaystyle U_{1}, U_{2}\in \mathcal{T}_{1} \cap \mathcal{T}_{2} $. Tenemos que por ser $\displaystyle \mathcal{T}_{1} $ y $\displaystyle \mathcal{T}_{2} $ topologías, $\displaystyle U_{1} \cap U_{2}\in \mathcal{T}_{j} $ con $\displaystyle j \in \left\{ 1, 2\right\}  $, por lo que $\displaystyle U_{1} \cap U_{2} \in \mathcal{T}_{1} \cap \mathcal{T}_{2} $. 
+	\end{itemize}
+En general, no es cierto que $\displaystyle \mathcal{T}_{1} \cup \mathcal{T}_{2} $ sea una topología. Consideremos un conjunto $\displaystyle X $ infinito y las topologías $\displaystyle \mathcal{T}_{1}=\mathcal{T}_{a} $ para cierto $\displaystyle a \in X $, y $\displaystyle \mathcal{T}_{2}=\mathcal{T}_{CF} $. Dado $\displaystyle x \in X $ con $\displaystyle x \neq a $ podemos considerar los conjuntos 
+\[ A = \left\{ a,x\right\} \in \mathcal{T}_{1} \quad \text{y} \quad B = X \backslash \left\{ a, x_{1}, \ldots, x_{r}\right\} \in \mathcal{T}_{2} .\]
+Tendremos que $\displaystyle A \cap B = \left\{ x\right\}   $, que no pertenece a $\displaystyle \mathcal{T}_{1} $ ni a $\displaystyle \mathcal{T}_{2} $. Por tanto, $\displaystyle \mathcal{T}_{1} \cup \mathcal{T}_{2} $ no es una topología en general. La topología más fina que contiene a $\displaystyle \mathcal{T}_{1}\cup \mathcal{T}_{2} $ es la que la tiene por subbase. Denotemos por $\displaystyle \mathcal{T}_{\mathcal{T}_{1}\cup\mathcal{T}_{2}} $ 
+a la topología generada por la subbase $\displaystyle \mathcal{T}_{1} \cup \mathcal{T}_{2} $ y sea $\displaystyle \mathcal{T} $ una topología que contiene a $\displaystyle \mathcal{T}_{1} \cup \mathcal{T}_{2} $. 
+Si $\displaystyle U \in \mathcal{T}_{\mathcal{T}_{1}\cup\mathcal{T}_{2}} $, tenemos que $\displaystyle U $ es unión de intersecciones finitas de elementos de $\displaystyle \mathcal{T}_{1} \cup \mathcal{T}_{2} $, esto es
+\[U = \bigcup_{i \in I}\left(\bigcap_{j = 1}^{r_{i}}V_{j}\right) , \quad V_{j}\in \mathcal{T}_{1} \cup \mathcal{T}_{2},\]
+Claramente tendremos que $\displaystyle U \in \mathcal{T} $ por ser esta una topología que contiene a $\displaystyle \mathcal{T}_{1} \cup \mathcal{T}_{2} $. Por tanto, hemos visto que $\displaystyle \mathcal{T}_{\mathcal{T}_{1} \cup \mathcal{T}_{2}} $ es la topología más fina que contiene a $\displaystyle \mathcal{T}_{1} \cup \mathcal{T}_{2} $. 
+\item La intersección arbitraria de topologías es una topología, en efecto, consideremos la familia $\displaystyle \left\{ \mathcal{T}_{i}\right\} _{i \in I} $ de topologías en $\displaystyle X $:
+	\begin{itemize}
+	\item Como $\displaystyle \emptyset, X \in \mathcal{T}_{i} $, $\displaystyle \forall i \in I $, tenemos que $\displaystyle \emptyset, X \in \bigcap_{ i \in I}\mathcal{T}_{i} $. 
+	\item Dado $\displaystyle \left\{ U_{j}\right\} _{j \in J} \subset \bigcap_{i \in I}\mathcal{T}_{i}$, tenemos que $\displaystyle \bigcup_{j \in J}U_{j}\in \mathcal{T}_{i} $, $\displaystyle \forall i \in I $, por lo que $\displaystyle \bigcup_{j \in J}U_{j}\in \bigcap_{i \in I}\mathcal{T}_{i} $. 
+	\item Si $\displaystyle U_{1} , U_{2} \in \bigcap_{i \in I}\mathcal{T}_{i} $, entonces $\displaystyle U_{1} \cap U_{2} \in \mathcal{T}_{i} $, $\displaystyle \forall i \in I $, por lo que $\displaystyle U_{1} \cap U_{2} \in \bigcap_{i \in I}\mathcal{T}_{i} $. 
+	\end{itemize}
+	Antes vimos que la unión de topologías en general no es topología, por lo que lo mismo va a suceder con la unión arbitraria de topologías. 
+\item La topología generada por una colección es la topología generada por la subbase que es esa colección. De esta forma, el conjunto de intersecciones finitas de la colección dada nos da una base de una topología, que es precisamente la topología más fina que contiene a la colección. \footnote{Esto es siempre y cuando $\displaystyle X $ se pueda expresar como unión de elementos de la colección.} 
+\end{enumerate}
+\end{sol}
 
 \end{document}

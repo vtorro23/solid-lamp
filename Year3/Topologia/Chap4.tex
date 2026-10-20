@@ -1,0 +1,125 @@
+\chapter{Separación}
+
+\section{Espacios de Hausdorff}
+\begin{definition}[Propiedad de Hausdoff]
+	Decimos que un espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ es de \textbf{Hausdorff} o es $\displaystyle T_{2} $ si para cada par de puntos distintos $\displaystyle x_{1}, x_{2} \in X $, existen $\displaystyle V^{x_{1}} $ y $\displaystyle V^{x_{2}} $ entornos de $\displaystyle x_{1} $ y $\displaystyle x_{2} $, respectivamente, tales que $\displaystyle V^{x_{1}}\cap V^{x_{2}} = \emptyset  $.
+\end{definition}
+\begin{observation}
+Una definición equivalente es decir que $\displaystyle \left(X, \mathcal{T}\right) $ es Hausdorff si existen $\displaystyle U^{x}, U^{y} \in \mathcal{T} $ entornos de $\displaystyle x $ e $\displaystyle y $ tales que $\displaystyle U^{x}\cap U^{y} = \emptyset $. 
+\end{observation}
+\begin{eg}
+$\displaystyle \left(\R^{n}, \mathcal{T}_{u}\right) $ es Hausdorff. En general, cualquier espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ en el que la topología está asociada a una distancia $\displaystyle d $ lo es. En efecto, dados $\displaystyle x_{1} \neq x_{2} $, si $\displaystyle d _{0}= d\left(x_{1}, x_{2}\right)>0 $, tenemos que 
+\[B_{d}\left(x_{1}, \frac{d _{0}}{2}\right)\cap B_{d}\left(x_{2}, \frac{d _{0}}{2}\right)= \emptyset .\]
+\end{eg}
+
+\begin{eg}
+El espacio $\displaystyle \left(\R, \mathcal{T}_{CF}\right) $ no es Hausdorff. En efecto, en esta topología los abiertos son de la forma $\displaystyle \R \backslash A $ con $\displaystyle A $ finito. Dado $\displaystyle x \in \R $ un entorno abierto suyo será de la forma $\displaystyle \R \backslash A $ con $\displaystyle x \not\in A $. Es sencillo ver que dados dos puntos distintos $\displaystyle x,y \in \R $, cualesquiera pares de entornos de esos puntos se cortan. 
+\end{eg}
+
+\begin{eg}
+Sea $\displaystyle X $ un conjunto y $\displaystyle a \in X $. Consideramos $\displaystyle \mathcal{T}_{a} $ en $\displaystyle X $. Claramente tendremos que $\displaystyle \left(X, \mathcal{T}_{a}\right) $ no es Hausdorff puesto que $\displaystyle a \in V^{x_{1}} \cap V^{x_{2}} $ para cualesquiera entornos de dos puntos distintos $\displaystyle x_{1}, x_{2} \in X $. 
+\end{eg}
+
+\begin{observation}
+La propiedad de Hausdorff es topológica, esto es, si un espacio la tiene cualquier espacio que sea homeomorfo a él también la tendrá. 
+\end{observation}
+
+\begin{prop}
+	Si $\displaystyle X $ es Hausdorff, para cada punto $\displaystyle x \in X $ el conjunto $\displaystyle \left\{ x\right\}  $ es cerrado. 
+\end{prop}
+\begin{proof}
+	Veamos que dado $\displaystyle x \in X $, $\displaystyle X \backslash \left\{ x\right\}  $ es abierto. Si $\displaystyle y \in X \backslash \left\{ x\right\}  $ tenemos que existen entornos abiertos $\displaystyle U^{x} $ y $\displaystyle U^{y} $ tales que $\displaystyle U^{x} \cap U^{y} = \emptyset $. En particular $\displaystyle x \not\in U^{y} $ por lo que $\displaystyle U^{y}\subset X \backslash \left\{ x\right\}  $. 
+\end{proof}
+\begin{notation}[Espacio $\displaystyle T_1 $]
+La condición de que todos los conjuntos unipuntuales sean cerrados caracteriza un axioma de separación que se suele denotar por $\displaystyle T_{1} $. 
+\end{notation}
+\begin{eg}
+En $\displaystyle \left(\R, \mathcal{T}_{CF}\right) $ todos los conjuntos unipuntuales son cerrados pero ya vimos que no es Hausdorff.
+\end{eg}
+\begin{eg}
+	El espacio $\displaystyle \left(X, \mathcal{T}_{a}\right) $ no es $\displaystyle T_{1} $ puesto que $\displaystyle \left\{ a\right\}  $ no es cerrado.
+\end{eg}
+\begin{prop}
+	Dadas dos aplicaciones continuas $\displaystyle f,g : \left(X, \mathcal{T}\right) \to \left(Y, \mathcal{T}'\right) $, donde $\displaystyle Y $ es un espacio de Hausdorff, se tiene que el conjunto $\displaystyle \left\{ x \in X \; : \; f\left(x\right) = g\left(x\right)\right\}  $ es un cerrado. 
+\end{prop}
+\begin{proof}
+	Veamos que $\displaystyle X \backslash \left\{ f = g\right\}  $ es abierto. Si $\displaystyle x \in X \backslash \left\{ f = g\right\}  $ entonces $\displaystyle f\left(x\right)\neq g\left(x\right) $. Como $\displaystyle Y $ es Hausdorff tenemos que hay abiertos $\displaystyle U^{f\left(x\right)} $ y $\displaystyle U^{g\left(x\right)} $ tales que $\displaystyle U^{f\left(x\right)} \cap U^{g\left(x\right)} = \emptyset $. 
+	Por la continuidad de $\displaystyle f $ y $\displaystyle g $ tenemos que $\displaystyle f^{-1}\left(U^{f\left(x\right)}\right)\in \mathcal{T} $ y $\displaystyle g^{-1}\left(U^{f\left(y\right)}\right)\in \mathcal{T} $. De esta forma, 
+	\[W^{x} = f^{-1}\left(U^{f\left(x\right)}\right)\cap g^{-1}\left(U^{g\left(x\right)}\right) ,\]
+	es entorno de $\displaystyle x $ y además si $\displaystyle y \in W^{x} $ tendremos que $\displaystyle f\left(y\right)\neq g\left(y\right) $. En efecto, 
+	\[f\left(y\right)\in U^{f\left(x\right)}, \quad g\left(y\right) \in U^{g\left(x\right)} \quad \text{y} \quad  U^{f\left(x\right)} \cap U^{g\left(x\right)}= \emptyset   .\]
+\end{proof}
+\begin{colorary}
+Dadas dos aplicaciones continuas $\displaystyle f,g : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}'\right) $ con $\displaystyle Y $ espacio de Hausdorff, si existe $\displaystyle A \subset X $ denso tal que $\displaystyle f\left(x\right)=g\left(x\right) $, $\displaystyle \forall x \in A $, debe ser que $\displaystyle f = g $.
+\end{colorary}
+\begin{proof}
+	Por la proposición anterior tenemos que $\displaystyle \left\{ f = g\right\}  $ es cerrado y contiene a $\displaystyle A $, por lo que debe contener a $\displaystyle \overline{A}= X $ por ser denso $\displaystyle A $. 
+\end{proof}
+
+\begin{observation}
+Los resultados que acabamos de ver serán especialmente útiles cuando consideremos funciones $\displaystyle f : \left(X, \mathcal{T}\right) \to \left(\R, \mathcal{T}_{u}\right) $. 
+\end{observation}
+\begin{observation}
+Para cada aplicación continua $\displaystyle f : \left(X, \mathcal{T}\right)\to \left(Y, \mathcal{T}'\right) $ con $\displaystyle Y $ Hausdorff, se tiene que para todo $\displaystyle y \in Y $, $\displaystyle f^{-1}\left(y\right) $ es un conjunto cerrado en $\displaystyle X $. Para que se dé esto basta con que $\displaystyle Y $ sea $\displaystyle T_{1} $.
+\end{observation}
+
+\section{Comportamiento del axioma $\displaystyle T_{2} $ en las construcciones}
+\begin{prop}
+Si $\displaystyle \left(X, \mathcal{T}\right) $ es Hausdorff, todos sus subespacios son Hausdorff. 
+\end{prop}
+\begin{proof}
+Sea $\displaystyle Y \subset X $ y consideramos en $\displaystyle Y $ la topología relativa $\displaystyle \mathcal{T}|_{Y} $. Sean $\displaystyle x,y \in Y $ puntos distintos. Existen $\displaystyle U^{x}, U^{y} $ entornos abiertos tales que $\displaystyle U^{x} \cap U^{y} = \emptyset $, de esta forma 
+\[\left(U^{x} \cap Y\right) \cap \left(U^{y} \cap Y\right) = \emptyset .\]
+Así, $\displaystyle Y $ también es espacio de Hausdorff. 
+\end{proof}
+\begin{notation}[Propiedad hereditaria]
+	Decimos que una propiedad de un espacio topológico es \textbf{hereditaria} si la heredan todos sus subespacios. 
+\end{notation}
+
+\begin{prop}
+Sean $\displaystyle \left(X, \mathcal{T}\right) $ e $\displaystyle \left(Y, \mathcal{T}'\right) $ dos espacios topológicos. Consideremos el espacio topológico producto $\displaystyle \left(X \times Y, \mathcal{T} \times \mathcal{T}'\right) $, son equivalentes:
+\begin{enumerate}
+\item $\displaystyle X $ e $\displaystyle Y $ son de Hausdorff.
+\item El espacio $\displaystyle X \times Y $ es de Hausdorff.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Consideremos ambas implicaciones. 
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Supongamos que $\displaystyle X $ e $\displaystyle Y $ son $\displaystyle T_{2} $ y sean $\displaystyle \left(x,y\right), \left(x', y'\right)\in X \times Y $ distintos. Supongamos sin pérdida de generalidad que $\displaystyle x \neq x' $. Como $\displaystyle X $ es Hausdorff tenemos que existen $\displaystyle U^{x}, U^{x'}\in \mathcal{T} $ con $\displaystyle U^{x} \cap U^{x'}= \emptyset  $. 
+	De esta forma tendremos que $\displaystyle U^{x} \times Y $ es entorno de $\displaystyle \left(x,y\right) $ y $\displaystyle U^{x'}\times Y $ de $\displaystyle \left(x', y\right) $. Como
+	\[\left(U^{x} \times Y\right)\cap \left(U^{x'} \times Y\right) = \emptyset .\]
+	se tiene que $\displaystyle X \times Y $ es Hausdorff. 
+\item[(2) $\displaystyle \Rightarrow $ (1)] Basta con ver que para cada $\displaystyle y_{0} \in Y $ el subespacio $\displaystyle X \times \left\{ y_{0}\right\} \subset X \times Y $ es homeomorfo a $\displaystyle X $. Como Hausdorff es hederitaria debe ser que $\displaystyle X $ es Hausdorff. Análogamente, debe ser que $\displaystyle Y $ es también Hausdorff. 
+\end{description}
+\end{proof}
+\begin{observation}
+	Es sencillo demostrar que dados los espacios topológicos $\displaystyle X_{i} $ para $\displaystyle i \in \left\{ 1, \ldots, r\right\}  $, $\displaystyle X_{i} $ es Hausdorff $\displaystyle \forall i \in \left\{ 1, \ldots, r\right\}  $ si y sólo si $\displaystyle \prod^{r}_{i = 1}X_{i} $ es Hausdorff. 
+\end{observation}
+\begin{notation}[Propiedad productiva]
+Cuando una propiedad que comparten los espacios topológicos de una familia finita la tiene también el espacio producto de dichos espacios, se dice que es una \textbf{propiedad productiva}. 
+\end{notation}
+En cuanto al cociente, la propiedad de Hausdorff no se conserva en general, como se muestra en el siguiente ejemplo.
+\begin{eg}
+Consideremos en $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ el cociente $\displaystyle \R / \Q $. Este espacio no es de Hausdorff. Basta con ver que si consideramos la proyección $\displaystyle p : \R \to \R / \Q $, los subconjuntos de $\displaystyle \R $ $\displaystyle p $-saturados son aquellos $\displaystyle A \subset \R $ tales que $\displaystyle A \cap \Q = \emptyset $ o $\displaystyle \Q \subset A $. 
+Como $\displaystyle \Q $ es denso en $\displaystyle \R $, los únicos abiertos $\displaystyle p $-saturados, además del vacío, son aquellos que contienen a $\displaystyle \Q $. Así, dados dos puntos de $\displaystyle \R/\Q $ cualesquiera par de entornos de esos puntos tienen en su intersección al menos al punto $\displaystyle p\left(0\right) $. 
+\end{eg}
+\begin{eg}
+Si consideramos en $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ el cociente $\displaystyle \R / \Z $ que sí es Hausdorff. En efecto, sea $\displaystyle p : \R \to \R/ \Z $. Si $\displaystyle p\left(x\right)\neq p\left(y\right) $ tendremos que existe $\displaystyle k_{x} \in \Z $ tal que $\displaystyle x \in \left(k_{x}, k_{x}+1\right) $. 
+Análogamente, existe $\displaystyle k_{y} \in \Z $ tal que $\displaystyle y \in \left(k_{y}, k_{y}+1\right) $. 
+\end{eg}
+\begin{prop}
+Dados dos espacios topológicos $\displaystyle \left(X, \mathcal{T}\right) $ e $\displaystyle \left(Y, \mathcal{T}'\right) $, son equivalentes:
+\begin{enumerate}
+\item $\displaystyle X $ e $\displaystyle Y $ son Hausdorff. 
+\item $\displaystyle X + Y $ es Hausdorff. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+	Basta recordar que $\displaystyle X + Y = X \times \left\{ 1\right\} \cup Y \times \left\{ 2\right\}  $ y que la topología en este conjunto tiene como base los subconjuntos de la forma $\displaystyle U \times \left\{ 1\right\}  $ con $\displaystyle U \in \mathcal{T} $, junto con los de la forma $\displaystyle V \times \left\{ 2\right\}  $ para $\displaystyle V \in \mathcal{T}' $. 
+\begin{description}
+	\item[(1) $\displaystyle \Rightarrow $ (2)] Supongamos que $\displaystyle X $ e $\displaystyle Y $ son Hausdorff. Consideremos $\displaystyle \left(x_{1}, 1\right), \left(x_{2}, 1\right)\in X + Y $ con $\displaystyle x_{1}, x_{2} \in X $ distintos. Como $\displaystyle X $ es Hausdorff tenemos que existen $\displaystyle U^{x_{1}}, U^{x_{2}} \in \mathcal{T}$ con $\displaystyle U^{x_{1}} \cap U^{x_{2}} = \emptyset $. Así, 
+		tenemos que $\displaystyle U^{x_{1}} \times \left\{ 1\right\}  $ y $\displaystyle U^{x_{2}} \times \left\{ 1\right\}  $ son entornos abiertos de $\displaystyle \left(x_{1}, 1\right) $ y $\displaystyle \left(x_{2}, 1\right) $, respectivamente, y además son disjuntos. De forma análoga se pueden separar dos puntos $\displaystyle \left(y_{1}, 2\right) $, $\displaystyle  \left(y_{2}, 2\right) $ . Para separar dos puntos de la forma $\displaystyle \left(x,1\right) $, $\displaystyle \left(y, 2\right) $, basta con tomar $\displaystyle X \times \left\{ 1\right\}  $ e $\displaystyle Y \times \left\{ 2\right\}  $. 
+	\item[(2) $\displaystyle \Rightarrow $ (1)] Tenemos que $\displaystyle X $ es homeomorfo a $\displaystyle X \times \left\{ 1\right\}  $, que es Hausdorff por ser subespacio de $\displaystyle X + Y $, por lo que $\displaystyle X $ es Hausdorff. Análogamente, $\displaystyle Y $ también es Hausdorff. 
+\end{description}
+\end{proof}

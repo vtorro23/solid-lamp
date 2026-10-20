@@ -9,8 +9,8 @@ Diremos que $\displaystyle \overline{x} $ es una solución \textbf{estable} si p
 Para que una solución sea estable tiene que estar definida en un intervalo $\displaystyle [\tau, \infty )$ para cierto $\displaystyle \tau \in [-\infty, \infty) $. 
 \end{observation}
 \begin{definition}[Estabilidad asintótica]
-Diremos que $\displaystyle \overline{x} $ es una solución \textbf{asintóticamente estable} si es estable y para todo $\displaystyle t_{0}\geq \tau $ eixste $\displaystyle \eta > 0 $ tal que si $\displaystyle \left|x_{0}-\overline{x}\left(t_{0}\right)\right|<\eta  $ entonces
-\[ \left|\varphi\left(t; t_{0}, x_{0}\right)-\overline{x}\left(t_{0}\right)\right|\xrightarrow{t \to \infty} 0 .\]
+Diremos que $\displaystyle \overline{x} $ es una solución \textbf{asintóticamente estable} si es estable y para todo $\displaystyle t_{0}\geq \tau $ eixste $\displaystyle \eta > 0 $ tal que si $\displaystyle \left\|x_{0}-\overline{x}\left(t_{0}\right)\right\|<\eta  $ entonces
+\[ \left\|\varphi\left(t; t_{0}, x_{0}\right)-\overline{x}\left(t_{0}\right)\right\|\xrightarrow{t \to \infty} 0 .\]
 \end{definition}
 \begin{eg}
 Consideremos la EDO $\displaystyle x' = ax $. Tendremos que 
@@ -24,8 +24,8 @@ Distinguimos varios casos:
 		= & e^{a\left(t-t_{0}\right)} \left|x_{0}-\overline{x}_{0}e^{t_{0}-\tau}\right| \leq \left|x_{0}-\overline{x}\left(t\right)\right|<\epsilon  .
 	\end{split}
 	\]
-Basta con coger $\displaystyle \delta = \epsilon  $ para comprobar la estabilidad. 
-Estudiemos ahora la estabilidad asimptótica. Si $\displaystyle a > 0 $, tenemos que 
+Claramente es estable puesto que basta con tomar $\displaystyle \delta = \epsilon  $.  
+Estudiemos ahora la estabilidad asintótica. Si $\displaystyle a > 0 $, tenemos que 
 	\[ \left|\varphi\left(t; t_{0}, x_{0}\right)-\overline{x}\left(t\right)\right|= \left|x_{0}-\overline{x}\left(t_{0}\right)\right|e^{a\left(t-t_{0}\right)} .\]
 Podemos elegir $\displaystyle \eta > 0 $ y obtenemos la estabilidad asintótica. Si $\displaystyle a = 0 $ se puede ver que que es estable pero no asintóticamente estable. 
 \item Si $\displaystyle a > 0 $, sea cual sea $\displaystyle \delta  $, si $\displaystyle \left|x_{0}-\overline{x}\left(t_{0}\right)\right| < \delta  $ tenemos que 
@@ -118,4 +118,144 @@ Consideramos ambas implicaciones.
 \item[($\displaystyle \Leftarrow $)] Sabemos que $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)\| $ está acotada. En particular, la matriz fundamental está acotada. Así, $\displaystyle \|\Phi\left(t, t_{0}\right)\| \leq C $, $\displaystyle \forall t \geq t_{0} $. Entonces, $\displaystyle \forall \epsilon > 0 $ cogemos $\displaystyle \delta = \frac{\epsilon }{C} $ y hacemos un proceso como el anterior. 
 \end{description}
 \end{proof}
+\begin{theorem}
+Un sistema lineal homogéneo es asintóticamente estable si y sólo si todas las soluciones tienden a cero cuando $\displaystyle t \to \infty  $. 
+\end{theorem}
+\begin{proof}
+Consideremos ambas implicaciones.
+\begin{description}
+\item[($\displaystyle \Rightarrow $)] Si es asintóticamente estable, existe $\displaystyle \eta > 0 $ tal que si $\displaystyle \|x_{0}\| < \eta  $, entonces $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)\| \to 0$ si $\displaystyle t \to \infty  $. 
+	Cogemos $\displaystyle x_{0} \in \R $, tenemos que 
+	\[ \|\varphi\left(t; t_{0}, x_{0}\right)\| = \|\Phi\left(t; t_{0}\right)x_{0}\| = \left\|\Phi\left(t, t_{0}\right)\frac{x_{0}}{\|x_{0}\|}\frac{\eta }{2}\right\| \frac{2\|x_{0}\|}{\eta} = \left\|\varphi\left(t; t_{0}, \frac{x_{0}}{\|x_{0}\|} \frac{\eta }{2}\right)\right\| \frac{2\|x_{0}\|}{\eta}\to 0.\]
+\item[($\displaystyle \Leftarrow $)] Como todas las soluciones tienden a cero, en particular las columnas de la matriz fundamental tienden a 0. Es decir, $\displaystyle \Phi_{ij}\left(t, t_{0}\right)\to 0 $ si $\displaystyle t \to \infty  $. Así, $\displaystyle \forall i,j \in \left\{ 1, \ldots, n\right\}  $ y $\displaystyle \forall \epsilon > 0 $, existe $\displaystyle T$ tal que 
+	\[ \left|\Phi_{ij}\left(t, t_{0}\right)\right|<\epsilon, \; \forall t > T .\]
+En general, para cada $\displaystyle \epsilon > 0 $ podemos encontrar $\displaystyle T $ tal que 
+\[ \left|\Phi_{ij}\left(t, t_{0}\right)\right|<\epsilon, \; \forall t > T, \; \forall i,j \in \left\{ 1, \ldots, n\right\}  .\]
+Por tanto, 
+\[ \|\Phi\|_{F}^{2} = \sum^{n}_{i,j = 1} \left|\Phi_{ij}\left(t, t_{0}\right)\right|^{2} < n^{2}\epsilon  ,\]
+donde $\displaystyle \|\Phi\|_{F} $ es la norma de Frobenius de la matriz $\displaystyle \Phi $. Dado $\displaystyle x_{0} \in \R^{n} $, tenemos que 
+\[ \|\varphi\left(t; t_{0}, x_{0}\right)\| = \|\Phi\left(t, t_{0}\right)x_{0}\| \leq \|\Phi\left(t; t_{0}\right)\| \|x_{0}\| \leq n^{2}\epsilon \|x_{0}\|, \; \forall t > T .\]
+Por tanto, da igual cómo elijamos $\displaystyle \eta  $ que tenemos asegurada la convergencia a cero. 
+\end{description}
+\end{proof}
+\begin{eg}[Problema 24, Hoja 2]
+	Tenemos un sistema $\displaystyle x' = A\left(t\right)x $ con $\displaystyle A\left(t\right)=A\left(t + T\right) $ para cierto $\displaystyle T \in \R $. Sabemos que existe una solución $\displaystyle x\left(t\right)\not\equiv 0 $ y que es $\displaystyle T $-periódica. Queremos ver que no es asintóticamente estable. Si lo fuera, por lo que acabamos de ver, tendríamos que tendería a 0 cuando $\displaystyle t \to \infty $, que no sucede al ser $\displaystyle T $-periódica y no idénticamente nula.
+\end{eg}
+Supongamos ahora que tenemos un sistema de la forma
+\[x' = Ax, \; A \in \R^{n \times n} ,\]
+con coeficientes constantes. Tendremos que $\displaystyle \Phi\left(t, t_{0}\right)=e^{A\left(t-t_{0}\right)} $. Recordemos que dada una matriz $\displaystyle M \in \R^{n \times n} $ 
+\[e^{M} = Id + \sum^{\infty}_{k = 1}\frac{M^{k}}{k!}, \; e^{0}= Id .\]
+\begin{prop}[Propiedades de la exponencial de matrices]
+\begin{itemize}
+\item Si $\displaystyle M $ y $\displaystyle N $ son matrices tales que $\displaystyle M N = N M $, entonces $\displaystyle e^{M + N}=e^{M}e^{N} $. 
+\item Si $\displaystyle M = JNJ^{-1} $, entonces $\displaystyle e^{M}=Je^{N}J^{-1} $. 
+\item Si $\displaystyle M = diag\left(M_{1}, \ldots, M_{l}\right) $ es diagonal por bloques, entonces $\displaystyle e^{M}=diag\left(e^{M_{1}}, \ldots, e^{M_{l}}\right) $. 
+\item Si tenemos una matriz 
+	\[D_{r}\left(\lambda \right)=\begin{pmatrix} \lambda & \cdots & 0 \\ 1 & \cdots & 0 \\ \vdots & & \vdots \\ 0 & \cdots & 1\end{pmatrix}\in \R^{r \times r} .\]
+Tendremos que 
+\[e^{D_{r}\left(\lambda \right)t}=e^{\lambda t}  .\]
+% copiar lo del año pasado de EDOS
+\end{itemize}
+\end{prop}
+Si tenemos una matriz $\displaystyle M $, para calcular la exponencial de $\displaystyle M $ calcularíamos primero la forma de Jordan de $\displaystyle M $. A continuación, podemos utilizar \textbf{(2)} y \textbf{(3)} para hacer la exponencial en cada bloque, que tendrá la forma de $\displaystyle e^{D_{r}\left(\lambda \right)t} $ que viene en \textbf{(4)}. \\
+\\
+Si $\displaystyle r $ es la diferencia de multiplicidades más uno, 
+\[\left(e^{tA}\right)_{ij} = \sum_{\lambda \in \sigma \left(A\right)}e^{\lambda t}P_{r, \lambda, i,j}\left(t\right)=\sum_{\lambda \in \sigma \left(A\right)}e^{\Re\left(\lambda \right)t}\left(A \cos \left(\Imagen \lambda t\right) + B\sin \Imagen\lambda t\right) .\]
+
+\begin{prop}
+	Dada una matriz $\displaystyle A\in \R^{n \times n} $ y $\displaystyle \alpha_{\max }= \max_{\lambda \in \sigma \left(A\right)} \left\{ \Re\left(\lambda \right)\right\}  $. Entonces, para todo $\displaystyle \gamma > \alpha_{\max } $, existe $\displaystyle C \geq 0 $ tal que 
+	\[\|e^{tA}\|_{F}\leq Ce^{\gamma t} .\]
+	Si además para todo $\displaystyle \lambda\in \sigma\left(A\right) $ tal que $\displaystyle \Re\left(\lambda \right)=\alpha_{\max } $ se tiene que $\displaystyle m_{g}\left(\lambda \right)=m_{a}\left(\lambda \right) $ entonces
+	\[\|e^{tA}\|_{F}\leq C_{\alpha_{\max }}e^{\alpha_{\max }t} .\]	
+\end{prop}
+\begin{proof}
+Si $\displaystyle \gamma > \alpha_{\max } $ podemos coger $\displaystyle \epsilon = \gamma - \alpha_{\max } $ y tenemos que existe $\displaystyle C > 0 $ tal que 
+\[ \left|P_{r, \lambda, i,j}\left(t\right)\right|\leq Ce^{\epsilon t} .\]
+Entonces, 
+\[ \left|\left(e^{tA}\right)_{ij}\right|\leq \sum_{\lambda \in \sigma\left(A\right)}e^{\Re\left(\lambda \right)t}Ce^{\epsilon t} \leq \sum_{\lambda \in \sigma\left(A\right)}e^{\alpha_{\max }t + \epsilon t}C = C_{\gamma }^{i,j}e^{\left(\alpha_{\max }+\epsilon \right)t}=C^{i,j}_{\gamma }e^{\gamma t} .\]
+Entonces, 
+\[\|e^{tA}\|^{2}_{F}\leq e^{2\gamma t}\sum_{i,j}\left(C_{\gamma }^{ij}\right)^{2} .\]
+Para el otro caso, 
+\[\tilde{\alpha}_{\max }=\max_{\lambda \in \sigma \left(A\right), \Re\left(\lambda \right)<\alpha_{\max }} \left\{ \Re\left(\lambda \right)\right\} < \alpha_{\max } .\]
+Así, tomamos $\displaystyle \epsilon = \alpha_{\max }-\tilde{\alpha}_{\max } > 0 $. Entonces, 
+\[ \left|P_{r,\lambda, i,j}\left(t\right)\right|\leq C_{r,\lambda,i,j,\epsilon }e^{\epsilon t}\quad \text{si} \quad \Re\left(\lambda \right)< \alpha_{\max } .\]
+En particular, $\displaystyle \left|P_{r,x,i,j}\left(t\right)\right|\leq C_{r,\lambda,i,j,\epsilon } $ si $\displaystyle \Re\left(\lambda \right)=\alpha_{\max } $ por lo que el polinomio es constante. Entonces, 
+\[
+\begin{split}
+	\left|\left(e^{tA}\right)_{ij}\right| \leq & \sum_{\lambda \in \sigma\left(A\right), \Re\left(\lambda \right)=\max }e^{\alpha_{\max }t}C + \sum_{ \lambda \in \sigma\left(A\right), \Re\left(\lambda \right)< \alpha_{\max }}e^{\Re\left(\lambda \right)t}Ce^{\epsilon t} 
+	\leq  Ce^{\alpha_{\max }t}.
+\end{split}
+\]
+\end{proof}
+\begin{theorem}
+Dado $\displaystyle A \in \R^{n \times n} $, entonces $\displaystyle x' = Ax $ es
+\begin{itemize}
+\item asintóticamente estable si y sólo si $\displaystyle \Re\left(\lambda \right)<0 $ para todo $\displaystyle \lambda \in \sigma\left(A\right) $. 
+\item estable si y sólo si $\displaystyle \Re\left(\lambda \right)\leq 0 $ para todo $\displaystyle \lambda \in \sigma\left(A\right) $ y además $\displaystyle m_{g}\left(\lambda \right)=m_{a}\left(\lambda \right) $ para todo $\displaystyle \lambda \in \sigma \left(A\right) $ con $\displaystyle \Re\left(\lambda \right)=0 $. 
+\end{itemize}
+\end{theorem}
+\begin{proof}
+\begin{itemize}
+\item $\displaystyle \Re\left(\lambda \right)<0 $ para todo $\displaystyle \lambda \in \sigma\left(A\right) $, entonces 
+	\[\alpha_{\max }=\max _{\lambda \in \sigma\left(A\right)} \left\{ \Re\left(\lambda \right)\right\} <0 \Rightarrow \exists \gamma \in \left(\alpha_{\max }, 0\right) .\]
+Por la propiedad anterior, $\displaystyle \|e^{tA}\|_{F}\leq C_{\gamma }e^{\gamma t} $ por lo que 
+\[ \left|\varphi\left(t; t_{0}, x_{0}\right)\right| = \left|e^{\left(t-t_{0}\right)A}x_{0}\right|\leq \|e^{\left(t-t_{0}\right)A}\|_{F} \left|x_{0}\right| \leq C_{\gamma } \left|x_{0}\right|e^{\gamma\left(t-t_{0}\right)} \xrightarrow{\gamma < 0, t \to \infty }0 .\]
+Así, es asintóticamente estable. 
+\item Si $\displaystyle \Re\left(\lambda \right)\leq 0 $ y $\displaystyle m_{g}\left(\lambda \right) = m_{a}\left(\lambda \right) $, $\displaystyle \forall \lambda \in \sigma\left(A\right) $ tal que $\displaystyle \Re\left(\lambda \right)=0 $, entonces $\displaystyle \alpha_{\max }=0 $ y $\displaystyle m_{g}\left(\lambda \right)=m_{a}\left(\lambda \right) $ para todo $\displaystyle \lambda  $ con $\displaystyle \Re\left(\lambda \right)=\alpha_{\max } $. 
+Así, por la proposición anterior tenemos que 
+\[\|e^{tA}\| \leq C_{\alpha_{\max }}e^{\alpha_{\max }t} = C_{0} .\]
+Entonces, 
+\[ \left|\varphi\left(t; t_{0}, x_{0}\right)\right|\leq \|e^{\left(t-t_{0}\right)A}\|_{F} \left|x_{0}\right| \leq C_{0} \left|x_{0}\right| .\]
+Como todas las sucesiones están acotadas tenemos que el sistema es estable. 
+\end{itemize}
+\end{proof}
+\begin{eg}[Problema 20]
+Sean $\displaystyle A,B \in \R^{n \times n} $ tales que $\displaystyle AB = BA $. Supongamos que los sistemas $\displaystyle x ' = Ax $ e $\displaystyle y' = By $ son asintóticamente estable. Queremos ver que entonces el sistema $\displaystyle z' = \left(A + B\right)z $ también es asintóticamente estable. Podemos ver que
+\[\|e^{tA}\|_{F} \leq C_{\gamma_{A}}e^{\gamma_{A}t}, \; \gamma_{A}\in \left(\alpha_{\max }, 0\right) .\]
+Análogamente, 
+\[ \|e^{tB}\|_{F} \leq C_{\gamma_{B}}e^{\gamma_{B}t}, \; \gamma_{B}\in \left(\tilde{\alpha}_{\max }, 0\right) .\]
+De esta forma, 
+\[ \|e^{t\left(A + B\right)}\|_{F} = \|e^{tA}e^{tB}\|_{F} \leq \|e^{tA}\|_{F}\|e^{tB}\|_{F} \leq Ce^{\left(\gamma_{A} + \gamma_{B}\right)t} .\]
+De aquí se sigue automáticamente que las soluciones van a cero por lo que es asintóticamente estable. 
+% pensar un ejemplo en el que no funcione porque las matrices no funcionen
+\end{eg}
+\begin{prop}[Fórmula de variación de constantes]
+Sea $\displaystyle A \in \R^{n \times n} $ y $\displaystyle g : D \subset \R \times \R^{n} \to \R^{n} $. Dada $\displaystyle x \in \mathcal{C}^{1}\left(I, \R\right) $ tal que $\displaystyle x'\left(t\right)=Ax\left(t\right) + g\left(t, x\left(t\right)\right) $ en $\displaystyle I $. 
+Entonces, si $\displaystyle t_{0} \in I $, la función $\displaystyle x $ satisface 
+\[x\left(t\right)=e^{A\left(t-t_{0}\right)}x\left(t_{0}\right) + \int^{t}_{t_{0}} e^{A\left(t-s\right)}g\left(s, x\left(s\right)\right) \; d s .\]
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle x\left(t\right) $, tenemos que 
+\[x'\left(t\right) - Ax\left(t\right)=g\left(t,x\left(t\right)\right) .\]
+Por tanto, tendremos que 
+\[e^{-At}\left(x'\left(t\right)-Ax\left(t\right)\right) = e^{-At}g\left(t, x\left(t\right)\right) = \frac{d}{dt}\left(e^{At}x\left(t\right)\right).\]
+Integrando, 
+\[e^{-At}x\left(t\right)-e^{-At}x\left(t_{0}\right)=\int^{t}_{t_{0}} \frac{d}{d t}\left(e^{-At}x\left(t\right)\right) \; dt = \int^{t}_{t_{0}} e^{-As}g\left(s, x\left(s\right)\right) \; d s  .\]
+Por tanto, 
+\[x\left(t\right)= .\]
+% completar con apuntes que cuelgue
+\end{proof}
+
+\begin{observation}
+Si $\displaystyle g\left(t, x\right)=b\left(t\right) $, que es un problema lineal no homogéneo, tendremos que 
+\[x\left(t\right)=e^{A\left(t-t_{0}\right)}x\left(t_{0}\right)+\int^{t}_{t_{0}} e^{A\left(t-s\right)}b\left(s\right) \; d s  .\]
+\end{observation}
+\begin{eg}[Problema 25]
+Sea $\displaystyle x ' = Ax $ un sistema estable. Tenemos que $\displaystyle c : [\tau, \infty) \to \R^{n \times n} $ es una función continua tal que 
+\[\int^{\infty}_{\beta } \sum^{n}_{i,j = 1} \left|c_{ij}\left(s\right)\right| \; d s < \infty .\]
+Queremos ver que el sistema $\displaystyle x'=\left(A + c\left(t\right)\right)x $ es estable. La condición que nos dan es equivalente a que 
+\[ \int^{\infty}_{\beta } \|c\left(s\right)\|_{F} \; d s < \infty .\]
+Como $\displaystyle x' = Ax $ es estable existe $\displaystyle C > 0 $ tal que $\displaystyle \|e^{At}\|_{F}\leq C $, $\displaystyle \forall t \geq \tau $. Si tenemos la solución del problema $\displaystyle x' = \left(A + c\left(t\right)\right)x $ que denotamos por $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $, por la proposición
+\[\varphi\left(t; t_{0}, x_{0}\right) = e^{A\left(t-t_{0}\right)}x_{0} + \int^{t}_{t_{0}} e^{A\left(t-s\right)}c\left(s\right)\varphi\left(s; t_{0}, x_{0}\right) \; d s .\]
+Por tanto, $\displaystyle \forall t \in [t_{0}, \beta_{+ }) $,
+\[
+\begin{split}
+	\left|\varphi\left(t; t_{0}, x_{0}\right)\right| \leq & \|e^{A\left(t-t_{0}\right)}\| \left|x_{0}\right| + \int^{t}_{t_{0}} \|e^{A\left(t-s\right)}\| \|c\left(s\right)\| \left|\varphi\left(s; t_{0}, x_{0}\right)\right| \; d s  \\
+	\leq & C \left|x_{0}\right| +C \int^{t}_{t_{0}} \|c\left(s\right)\| \left|\varphi\left(s; t_{0}, x_{0}\right)\right| \; d s .
+\end{split}
+\]
+Aplicando la desigualdad de Grönwall, 
+\[ \left|\varphi\left(t; t_{0}, x_{0}\right)\right| \leq C \left|x_{0}\right|\exp\left(C\int^{t}_{t_{0}} \|c\left(s\right)\| \; d s\right)\leq C \left|x_{0}\right|\exp\left(C\int^{\infty }_{\tau} \|c\left(s\right)\|  \; d s\right) ,\]
+por tanto, tenemos que todas las soluciones están acotadas y por ser un sistema lineal debe ser que el sistema es estable. 
+\end{eg}
 

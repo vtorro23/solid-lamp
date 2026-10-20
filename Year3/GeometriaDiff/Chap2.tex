@@ -8,7 +8,7 @@
 \begin{definition}[Traza]
 Decimos que $\displaystyle S = \textbf{x} \left(U\right) $ es la \textbf{traza} de la superficie parametrizada.
 \end{definition}
-\begin{eg}
+\begin{eg} Consideremos los siguientes ejemplos.
 	\begin{enumerate}
 	\item Un plano parametrizado 
 		\[\left(x,y,z\right)=\left(a_{1}, a_{2}, a_{3}\right) + u\left(b_{1}, b_{2}, b_{3}\right)+ v\left(c_{1}, c_{2}, c_{3}\right) .\]
@@ -33,16 +33,29 @@ Decimos que $\displaystyle S = \textbf{x} \left(U\right) $ es la \textbf{traza} 
 	El dominio de será $\displaystyle U = \R \times \left(0, \infty\right) $. Hay inversa $\displaystyle \phi= \textbf{x} ^{-1} : S \to U $ que a cada punto le da sus coordenadas. 
 	\end{enumerate}
 \end{eg}
-\begin{eg}
+\begin{notation}
+Muchas veces utilizaremos la notación $\displaystyle \textbf{x} _{u}=\frac{\partial \textbf{x} }{\partial u} $. Análogamente escribiremos $\displaystyle \textbf{x} _{uvu}=\frac{\partial ^{3} \textbf{x} }{\partial u \partial v\partial u} $. 
+\end{notation}
+\begin{definition}[Líneas coordenadas]
+Dada una superficie parametrizada $\displaystyle \textbf{x} \left(u,v\right) $, se llama
+\begin{itemize}
+\item \textbf{líneas coordenadas horizontales} a las curvas $\displaystyle \alpha\left(t\right)= \textbf{x} \left(t, v_{0}\right) $ para cada $\displaystyle v_{0}\in \R $.
+\item \textbf{líneas coordenadas verticales} a las curvas $\displaystyle \beta\left(t\right)= \textbf{x} \left(u_{0}, t\right) $ para cada $\displaystyle u_{0}\in \R $. 
+\end{itemize} 
+\end{definition}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{~/Desktop/Images/GeoDiff7.png}
+\end{center}
+\begin{eg} Consideremos los siguientes ejemplos.
 \begin{enumerate}
-\item Gráfica. Dada $\displaystyle z : U\subset \R^{2} \to \R : \left(x,y\right)\to h\left(x,y\right) $ tenemos que podemos hacer la parametrización
+\item \textbf{Gráfica}. Dada $\displaystyle z : U\subset \R^{2} \to \R : \left(x,y\right)\to h\left(x,y\right) $ de clase $\displaystyle \mathcal{C}^{\infty} $ podemos tomar la parametrización
 	\[ \textbf{x} \left(x,y\right)=\left(x,y,h\left(x,y\right)\right) .\]
 	Siempre es inyectiva.
-\item Paraboloide, $\displaystyle z=x^{2} +y^{2} $. 
-	% poner imagen
-	La parametrización será $\displaystyle \textbf{x} \left(u,v\right)=\left(u, v, u^{2} + v^{2}\right) $. 
-\item Superficies de revolución.
-	% poner imagen
+En particular, para el \textbf{paraboloide} $\displaystyle z=x^{2} +y^{2} $ podemos coger la parametrización $\displaystyle \textbf{x} \left(u,v\right)=\left(u, v, u^{2} + v^{2}\right) $. 
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{~/Desktop/Images/GeoDiff8.png}
+\end{center}
+\item \textbf{Superficies de revolución}. Dada una curva $\displaystyle \gamma\left(v\right)=\left(r\left(v\right), z\left(v\right)\right) $ podemos obtener una superficie de revolución parametrizada por	
 \[
 \begin{cases}
 x = r\left(v\right)\cos\varphi \\
@@ -53,35 +66,41 @@ z = z\left(v\right)
 Con $\displaystyle \left(\varphi, v\right)\in \R \times J $. No es una parametrización inyectiva. Si nos restringimos a $\displaystyle U = \left(0, 2\pi \right)\times J $ es inyectiva pero no completamos todo $\displaystyle S $. 
 \end{enumerate}
 \end{eg}
-\begin{definition}[Líneas coordenadas]
-Dada una superficie parametrizada $\displaystyle \textbf{x} \left(u,v\right) $, se llama
-\begin{itemize}
-\item \textbf{líneas coordenadas horizontales} a las curvas $\displaystyle \alpha\left(t\right)= \textbf{x} \left(t, v_{0}\right) $ para cada $\displaystyle v_{0}\in \R $.
-\item \textbf{líneas coordenadas verticales} a las curvas $\displaystyle \beta\left(t\right)= \textbf{x} \left(u_{0}, t\right) $ para cada $\displaystyle u_{0}\in \R $. 
-\end{itemize} 
-\end{definition}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{~/Desktop/Images/GeoDiff9.png}
+\end{center}
 \begin{observation}
 La misma superficies puede tener distintas líneas coordenadas. 
 \end{observation}
-Queremos que las líneas coordenadas sean curvas regulares. Si cogemos $\displaystyle P_{0}= \textbf{x} \left(u_{0}, v_{0}\right) $ tendremos que 
-\[\alpha'\left(u_{0}\right)=\lim_{h \to 0} \frac{ \textbf{x} \left(u_{0} + h\right)- \textbf{x} \left(u_{0}, v_{0}\right)}{h}=\frac{\partial \textbf{x} }{\partial u}\left(u_{0}, v_{0}\right) .\]
-Así, queremos que $\displaystyle \frac{\partial \textbf{x} }{\partial u}\left(u_{0}, v_{0}\right)\neq 0 $. Esto lo quiero en todas las curvas coordenadas, es decir, $\displaystyle \forall \left(u_{0}, v_{0}\right)\in U $. Análogamente, queremos que 
-\[\beta'\left(v_{0}\right)=\frac{\partial \textbf{x} }{\partial v}\left(u_{0}, v_{0}\right)\neq 0, \; \forall \left(u_{0}, v_{0}\right)\in U .\]
-
-\begin{notation}
-Muchas veces utilizaremos la notación $\displaystyle \textbf{x} _{u}=\frac{\partial \textbf{x} }{\partial u} $. Análogamente escribiremos $\displaystyle \textbf{x} _{uvu}=\frac{\partial ^{3} \textbf{x} }{\partial u \partial v\partial u} $. 
-\end{notation}
 \begin{definition}[Vectores coordenados]
 Se llaman \textbf{vectores coordenados} a los vectores $\displaystyle \textbf{x} _{u}= \frac{\partial \textbf{x} }{\partial u} $ y $\displaystyle \textbf{x} _{v} = \frac{\partial \textbf{x} }{\partial v} $. 
 \end{definition}
-Queremos que $\displaystyle D_{\left(a,b\right)} \textbf{x} \left(u,v\right)\neq 0 $, $\displaystyle \forall \left(a,b\right)\neq \left(0,0\right) $. Tenemos que 
+Queremos que las líneas coordenadas sean curvas regulares. Si cogemos $\displaystyle P_{0}= \textbf{x} \left(u_{0}, v_{0}\right) $ tendremos que 
+\[\alpha'\left(u_{0}\right)=\lim_{h \to 0} \frac{ \textbf{x} \left(u_{0} + h\right)- \textbf{x} \left(u_{0}, v_{0}\right)}{h}=\frac{\partial \textbf{x} }{\partial u}\left(u_{0}, v_{0}\right) .\]
+Así, queremos que $\displaystyle \frac{\partial \textbf{x} }{\partial u}\left(u_{0}, v_{0}\right)\neq 0 $. Esto lo queremos en todas las curvas coordenadas, es decir, $\displaystyle \forall \left(u_{0}, v_{0}\right)\in U $. Análogamente, queremos que 
+\[\beta'\left(v_{0}\right)=\frac{\partial \textbf{x} }{\partial v}\left(u_{0}, v_{0}\right)\neq 0, \; \forall \left(u_{0}, v_{0}\right)\in U .\]
+En general, queremos que $\displaystyle D_{\left(a,b\right)} \textbf{x} \left(u,v\right)\neq 0 $, $\displaystyle \forall \left(a,b\right)\neq \left(0,0\right) $. Podemos observar que 
 \[J \textbf{x} =\begin{pmatrix} \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\ \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} \\ \frac{\partial z}{\partial u} & \frac{\partial z}{\partial v} \end{pmatrix}, \quad J \textbf{x}  : \R^{2} \to \R^{3} : \left(a,b\right)\to a \begin{pmatrix}  x_{u} \\ y_{u} \\ z_{u} \end{pmatrix}+b \begin{pmatrix} x_{v} \\ y_{v} \\ z_{v} \end{pmatrix} .\]
-De esta forma, $\displaystyle D_{\left(a,b\right)} \textbf{x} =a \textbf{x} _{u} + b \textbf{x} _{v} $. De esta forma, tendremos que $\displaystyle D_{\left(a,b\right)} \textbf{x} \left(u,v\right) \neq 0 $ si y sólo si $\displaystyle \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ son linealmente independientes, que es equivalente a que $\displaystyle J \textbf{x} = \left( \textbf{x} _{u}, \textbf{x} _{v}\right) $ tenga rango 2.
-\begin{definition}[Superficie regular]
-	Una superficie parametrizada $\displaystyle \textbf{x} \left(u,v\right) $ es \textbf{regular} si $\displaystyle \ran\left(J \textbf{x} \right)=2 $, $\displaystyle \forall \left(u,v\right)\in U $, es decir, $\displaystyle \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ son linealmente independientes $\displaystyle \forall \left(u,v\right)\in U $. Un punto $\displaystyle \left(u_{0}, v_{0}\right) $ es \textbf{regular} si $\displaystyle \ran J \textbf{x} \left(u_{0}, v_{0}\right)=2 $ y es \textbf{singular} en caso contrario.
+Como $\displaystyle D_{\left(a,b\right)} \textbf{x}=J \textbf{x} \left(a,b\right) =a \textbf{x} _{u} + b \textbf{x} _{v} $. Por tanto, tendremos que $\displaystyle D_{\left(a,b\right)} \textbf{x} \left(u,v\right) \neq 0 $ si y sólo si $\displaystyle \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ son linealmente independientes, que es equivalente a que $\displaystyle J \textbf{x} = \left( \textbf{x} _{u}, \textbf{x} _{v}\right) $ tenga rango 2.
+\begin{definition}[Superficie parametrizada regular]
+	Una superficie parametrizada $\displaystyle \textbf{x} \left(u,v\right) $ es \textbf{regular} si $\displaystyle \ran\left(J \textbf{x} \right)=2 $, $\displaystyle \forall \left(u,v\right)\in U $. Decimos que un punto $\displaystyle \left(u_{0}, v_{0}\right) $ es \textbf{regular} si $\displaystyle \ran J \textbf{x} \left(u_{0}, v_{0}\right)=2 $ y es \textbf{singular} en caso contrario.
 \end{definition}
+\begin{observation}[Definiciones equivalentes de superficie regular]
+	Dada una superficie parametrizada $\displaystyle \textbf{x} \left(u,v\right) $, son equivalentes:
+	\begin{itemize}
+	\item $\displaystyle \textbf{x} \left(u,v\right) $ es regular. 
+	\item $\displaystyle \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ son linealmente independientes $\displaystyle \forall \left(u,v\right)\in U $.
+	\item $\displaystyle \textbf{x} _{u} \times \textbf{x} _{v}\neq 0 $, $\displaystyle \forall \left(u,v\right)\in U $.
+	\end{itemize}
+\end{observation}
+
 \begin{eg}[Cono]
-	Consideremos el cono $\displaystyle z^{2}=x^{2} +y^{2} $ con $\displaystyle z\geq 0 $. Podemos coger la parametrización $\displaystyle \textbf{x} \left(u,v\right)=\left(u,v, \sqrt{u^{2} + v^{2}}\right) $ con $\displaystyle U = \R^{2} $. Esta función no es diferenciable en el origen. Así, tenemos que en $\displaystyle U = \R^{2} \backslash \left\{ \left(0,0\right)\right\}  $ es parametrización regular. 
+	Consideremos el cono $\displaystyle z^{2}=x^{2} +y^{2} $ con $\displaystyle z\geq 0 $. Podemos coger la parametrización $\displaystyle \textbf{x} \left(u,v\right)=\left(u,v, \sqrt{u^{2} + v^{2}}\right) $ con $\displaystyle U = \R^{2} $. Esta función no es diferenciable en el origen. Si cogemos $\displaystyle U = \R^{2} \backslash \left\{ \left(0,0\right)\right\}  $ será una parametrización regular. En efecto,
+	\[J \textbf{x} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \\ \frac{u}{\sqrt{u^{2}+v^{2}}} & \frac{v}{\sqrt{u^{2}+v^{2}}} \end{pmatrix} ,\]
+que siempre tiene rango 2. 
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{~/Desktop/Images/GeoDiff10.png}
+\end{center}
 \end{eg}
 \begin{lema}
 Toda parametrización tipo grafo es regular.
@@ -89,34 +108,28 @@ Toda parametrización tipo grafo es regular.
 \begin{proof}
 Si $\displaystyle \textbf{x} \left(u,v\right)=\left(u,v, h\left(u,v\right)\right) $ tenemos que 
 \[J \textbf{x} = \left( \textbf{x} _{u}, \textbf{x} _{v}\right)=\begin{pmatrix} 1 & 0 \\ 0 & 1 \\ h_{u} & h_{v} \end{pmatrix} .\]
-Claramente tiene rango 2.
+Como $\displaystyle \begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix} =1\neq 0 $, tenemos que $\displaystyle \ran J \textbf{x} = 2 $, por lo que $\displaystyle \textbf{x}  $ es una superficie regular. 
 \end{proof}
-\begin{eg}
-El cono es una superficie de revolución. Dada una curva $\displaystyle \left(r\left(v\right), z\left(v\right)\right) $ podemos conseguir la superficie de revolución
-\[
-\begin{cases}
-x = r\left(v\right)\cos\varphi \\
-y = r\left(v\right)\sin \varphi \\
-z = z\left(v\right)
-\end{cases}
-.\]
-Podemos coger la parametrización $\displaystyle \textbf{x} \left(\varphi, v\right)=\left(v\cos\varphi, v\sin\varphi,v\right) $. Tenemos que 
+\begin{eg}[Cono como superficie de revolución]
+El cono es una superficie de revolución. En efecto, basta con tomar una curva $\displaystyle \gamma\left(v\right)= \left(r\left(v\right), z\left(v\right)\right) $ con $\displaystyle r \left(v\right)=z\left(v\right)=v $, de forma que podemos coger la parametrización $\displaystyle \textbf{x} \left(\varphi, v\right)=\left(v\cos\varphi, v\sin\varphi,v\right) $. Tenemos que 
 \[ \textbf{x} _{\varphi}=\begin{pmatrix} -v\sin\varphi \\ v \cos \varphi \\ 0 \end{pmatrix}\quad \text{y} \quad \textbf{x} _{v}=\begin{pmatrix} \cos \varphi \\ \sin\varphi \\ 1 \end{pmatrix} .\]
 De esta forma, 
 \[J \textbf{x} =\left( \textbf{x} _{\varphi}, \textbf{x} _{v}\right)=\begin{pmatrix} -v\sin\varphi & \cos \varphi\\ v\cos \varphi & \sin \varphi \\ 0 & 1 \end{pmatrix} .\]
-Que tiene rango 2 si $\displaystyle v \neq 0 $. Así, es regular en $\displaystyle \left(\varphi, v\right)\in \R \times \left(0,\infty \right) $, es decir excluyendo el vértice. Podemos ver que hay dos parametrizaciones, por lo que hay un cambio de parámetros. 
+Que tiene rango 2 si $\displaystyle v \neq 0 $. Así, es regular en $\displaystyle \left(\varphi, v\right)\in \R \times \left(0,\infty \right) $, es decir, excluyendo el vértice.  \\
+Así, el cono lo podemos parametrizar de dos formas: 
+\begin{itemize}
+\item $\displaystyle \textbf{x} \left(x,y\right)=\left(x,y,\sqrt{x^{2}+y^{2}}\right) $ con $\displaystyle U = \R^{2} \backslash \left\{ \left(0,0\right)\right\}  $.
+\item $\displaystyle \textbf{y} \left(\varphi, v\right)=\left(v\cos\varphi, v\sin\varphi, v\right) $ con $\displaystyle v \in \left(0, \infty\right) $ y $\displaystyle \varphi \in \left(0,2\pi \right) $. \footnote{Tomando $\displaystyle \varphi \in \left(0,2\pi \right) $ es sencillo ver que no cubre todo el cono pero sí sería una parametrización inyectiva. Si sacrificamos la inyectividad para obtener todo el cono podemos tomar $\displaystyle \varphi \in \R $.} 
+\end{itemize}
 \end{eg}
-\begin{eg}
-	El cono lo podemos parametrizar de dos formas: $\displaystyle \textbf{x} \left(x,y\right)=\left(x,y,\sqrt{x^{2}+y^{2}}\right) $ con $\displaystyle U = \R^{2} \backslash \left\{ \left(0,0\right)\right\}  $. Alternativamente, $\displaystyle \textbf{y} \left(\varphi, v\right)=\left(v\cos\varphi, v\sin\varphi, v\right) $ con $\displaystyle v \in \left(0, \infty\right) $ y $\displaystyle \varphi \in \left(0,2\pi \right) $.
-\end{eg}
-% esto tiene que ver con superficies de revolución y cogemos S = {z^2 = x^2 + y^2, z >=0}
+
 \begin{lema}
-Sea $\displaystyle \textbf{y} \left(\varphi, v\right)=\left(r\left(v\right)\cos\varphi, r\left(v\right)\sin\varphi, z\left(v\right)\right) $. Si $\displaystyle \gamma\left(v\right) $ es regular y $\displaystyle r \left(v\right) > 0 $, entonces $\displaystyle \textbf{y}  $ es regular.
+Sea $\displaystyle \textbf{y} \left(\varphi, v\right)=\left(r\left(v\right)\cos\varphi, r\left(v\right)\sin\varphi, z\left(v\right)\right) $ la superficie de revolución generada por la curva $\displaystyle \gamma\left(v\right)=\left(r\left(v\right), z\left(v\right)\right) $. Si $\displaystyle \gamma\left(v\right) $ es regular y $\displaystyle r \left(v\right) > 0 $, entonces $\displaystyle \textbf{y}  $ es regular.
 \end{lema}
 \begin{proof}
 Tenemos que 
 \[ \textbf{y} _{\varphi} =\begin{pmatrix} -r\left(v\right)\sin\varphi \\ r\left(v\right)\cos\varphi \\ 0\end{pmatrix} \quad \text{y} \quad \textbf{y} _{v}=\begin{pmatrix} r'\left(v\right)\cos\varphi \\ r'\left(v\right)\sin\varphi \\ z'\left(v\right) \end{pmatrix} .\]
-Así, tenemos que si
+Si
 \[\ran\begin{pmatrix} -r\left(v\right)\sin\varphi & r'\left(v\right)\cos\varphi \\ r\left(v\right)\cos\varphi & r'\left(v\right)\sin\varphi \\ 0 & z'\left(v\right) \end{pmatrix}\neq 2 ,\]
 debe ser que 
 \[
@@ -125,7 +138,7 @@ r\left(v\right)r'\left(v\right)=0 \Rightarrow r'\left(v\right)=0 \\
 \ran\begin{pmatrix} -r\sin\varphi & 0 \\ r\cos\varphi & 0 \\ 0 & z' \end{pmatrix}\neq 2, \; z'\left(v\right)=0
 \end{cases}
 .\]
-Así, tenemos que $\displaystyle \gamma'\left(v\right)=\left(0,0\right) $ por lo que $\displaystyle \gamma  $ no es regular. 
+Así, tenemos que $\displaystyle \gamma'\left(v\right)=\left(0,0\right) $ por lo que $\displaystyle \gamma  $ no es regular, que contradice nuestras hipótesis. 
 \end{proof}
 \begin{eg}
 Consideremos $\displaystyle \textbf{z} \left(u,w\right)=\left(uw, \frac{1}{2}\left(u^{2}-w^{2}\right), \frac{1}{2}\left(u^{2} + w^{2}\right)\right) $. Tenemos 
@@ -143,7 +156,7 @@ x^{2}+y^{2}=u^{2}w^{2}+\frac{1}{2}\left(u^{4}-2u^{2}w^{2}+w^{4}\right)=\frac{1}{
 z \geq 0
 \end{cases}
 .\]
-De esta forma, la traza de $\displaystyle \textbf{z}  $ está contenida en $\displaystyle S $. Recíprocamente, haciendo el cambio de variable 
+De esta forma, la traza de $\displaystyle \textbf{z}  $ está contenida en un cono $\displaystyle S $. Recíprocamente, haciendo el cambio de variable 
 \[ 
 \begin{cases}
 y +z =u^{2} \\
@@ -171,30 +184,29 @@ z = \frac{u^{2} + w^{2}}{2}
 \end{cases}
 \]
 y tenemos que $\displaystyle \left(x,y,z\right)= \textbf{z} \left(-u,w\right) = \textbf{z} \left(u,-w\right)$. 
-Esta aplicación no es inyectiva. Si la queremos inyectiva usar $\displaystyle u \in \R $ y $\displaystyle w \in \left(0,\infty\right) $. Veamos si $\displaystyle \textbf{z}  $ es regular:
+Por tanto, esta aplicación no es inyectiva. Si la queremos inyectiva debemos usar $\displaystyle u \in \R $ y $\displaystyle w \in \left(0,\infty\right) $. Veamos si $\displaystyle \textbf{z}  $ es regular:
 \[\ran\left( \textbf{z} _{u}, \textbf{z} _{w}\right)=\ran\begin{pmatrix} w & u \\ u & - w \\ u & w \end{pmatrix}=2, \; \left(u,w\right)\neq \left(0,0\right) .\]
-Es regular en todos los puntos salvo en el origen. 
+Es regular en todos los puntos salvo en el origen, como en las otras parametrizaciones que hemos visto del cono. 
 \end{eg}
-\begin{definition}[Carta]
-Una \textbf{carta} $\displaystyle \left(U, \Phi\right) $ es $\displaystyle \textbf{x}  : U \to S = \textbf{x} \left(U\right) $ parametrización regular e inyectiva, con $\displaystyle \Phi = \textbf{x} ^{-1} : S \to U $ y $\displaystyle \textbf{x}  $ y $\displaystyle \Phi $ son continuas.
-\end{definition}
+
 \begin{lema}
 Si $\displaystyle \gamma\left(t\right)=\left(x\left(t\right), y\left(t\right)\right) $ es una curva regular plana, entonces $\displaystyle \textbf{x} \left(t, \lambda \right) = \left(x\left(t\right), y\left(t\right), \lambda \right) $ es una parametrización regular.
 \end{lema}
 \begin{proof}
-Tenemos que 
-\[ \textbf{x} _{t}=\begin{pmatrix} x' \\ y ' \\ 0 \end{pmatrix}\quad \text{y} \quad \textbf{x} _{\lambda }= \begin{pmatrix}  0 \\ 0 \\ 1 \end{pmatrix} .\]
-Así, $\displaystyle \ran\begin{pmatrix} x' & 0 \\ y' & 0 \\ 0 & 1 \end{pmatrix}=2 $ puesto que $\displaystyle \gamma'\left(t\right)\neq \left(0,0\right) $.  
+Tenemos que $\displaystyle \textbf{x} _{t}=\left(x', y', 0\right) $ y $\displaystyle \textbf{x} _{\lambda }=\left(0,0,1\right) $ por lo que
+\[ \ran\begin{pmatrix} x' & 0 \\ y' & 0 \\ 0 & 1 \end{pmatrix}=2 ,\]
+puesto que $\displaystyle \gamma'\left(t\right)\neq \left(0,0\right) $.  
 \end{proof}
 
-\begin{eg}
-\begin{enumerate}
-\item Sea $\displaystyle \gamma\left(t\right)=\left(t ^{2}-1, t ^{3}-t\right) $ curva regular que determina el cilindro $\displaystyle \textbf{x} \left(t,v\right)=\left(t ^{2}-1, t ^{3}-t,v\right) $ en $\displaystyle \R^{3} $, que es una parametrización regular no inyectiva. 
-\item Sea $\displaystyle \textbf{x} \left(t,v\right)=\left(t ^{2}-1, t ^{3}-t, v\right) $ con $\displaystyle t \in \left(-1, \infty\right) $ y $\displaystyle v \in \R $. Esto es una parametrización inyectiva. Sin embargo, $\displaystyle \textbf{x} ^{-1} $ no es continua.
-\end{enumerate}
+\begin{eg} 
+Sea $\displaystyle \gamma\left(t\right)=\left(t ^{2}-1, t ^{3}-t\right) $ una curva regular. Por el lema anterior tenemos que el cilindro determinado por $\displaystyle \gamma \left(t\right) $ que viene parametrizado por  $\displaystyle  $
+	\[\textbf{x} \left(t,v\right)=\left(t ^{2}-1, t ^{3}-t,v\right) ,\]
+	es una parametrización regular no inyectiva. \\
+
+Ahora, consideremos $\displaystyle \textbf{x} \left(t,v\right)=\left(t ^{2}-1, t ^{3}-t, v\right) $ con $\displaystyle t \in \left(-1, \infty\right) $ y $\displaystyle v \in \R $. Esto es una parametrización regular inyectiva. Sin embargo, $\displaystyle \textbf{x} ^{-1} $ no es continua. \footnote{Esta observación es importante para observar que no se trata de una carta, que definiremos posteriormente.} 
 \end{eg}
-\begin{definition}[Cambio de parametrización]
-Es $\displaystyle h : U \to V $ con $\displaystyle U, V \subset \R^{2} $ abiertos con $\displaystyle \left(u,v\right)=h\left(w,z\right) $ y $\displaystyle h $ difeomorfismo, es decir, $\displaystyle h $ biyectiva de clase $\displaystyle \mathcal{C}^{\infty} $ y $\displaystyle h^{-1} $ es $\displaystyle \mathcal{C}^{\infty} $. 
+\begin{definition}[Cambio de parámetros]
+Decimos que $\displaystyle h : U \to V $ con $\displaystyle U, V \subset \R^{2} $ abiertos y $\displaystyle \left(u,v\right)=h\left(w,z\right) $ es un \textbf{cambio de parámetros} si $\displaystyle h $ difeomorfismo, es decir, $\displaystyle h $ biyectiva de clase $\displaystyle \mathcal{C}^{\infty} $ y $\displaystyle h^{-1} $ es $\displaystyle \mathcal{C}^{\infty} $. 
 \end{definition}
 \begin{eg}
 Consideremos $\displaystyle h : \R^{2} \to \R \times \left(0, \infty\right) : \left(w,z\right)\to \left(u,v\right) $,
@@ -216,76 +228,91 @@ entonces $\displaystyle \left|Jh\right|\neq 0 $. Por el teorema de la función i
 \begin{definition}[Reparametrización]
 Sea $\displaystyle \textbf{x}  : V \to \R^{3} $ una superficie parametrizada con $\displaystyle \textbf{x} \left(w,s\right) $ y sea $\displaystyle h: U \to V : \left(u,v\right)\to \left(w,s\right)$ un cambio de parámetros. Se llama \textbf{reparametrización} a $\displaystyle \textbf{y} = \textbf{x} \circ h : U \to \R^{3}$. 
 \end{definition}
-\begin{observation}
-Si $\displaystyle \textbf{x}  $ e $\displaystyle \textbf{y}  $ son inyectivas, $\displaystyle h = \textbf{y} ^{-1}\circ \textbf{x}  $. Además, $\displaystyle \textbf{x}  $ es regular si y sólo si $\displaystyle \textbf{y}  $ es regular. Además, 
-\[ \textbf{x}  = \textbf{y} \circ h \Rightarrow J \textbf{x}  = J \textbf{y} Jh .\]
+\begin{observation} Podemos hacer un par de observaciones.
+	\begin{enumerate}
+	\item Es sencillo ver que $\displaystyle \textbf{y}  $ y $\displaystyle \textbf{x}  $ tienen la misma traza. En efecto, $\displaystyle \textbf{y} \left(U\right)= \textbf{x} \left(V\right)=S $. 
+	\item Si $\displaystyle \textbf{x}  $ e $\displaystyle \textbf{y}  $ son parametrizaciones inyectivas, tendremos que $\displaystyle h = \textbf{y} ^{-1}\circ \textbf{x}  $. 
+	\item Tenemos que $\displaystyle \textbf{x}  $ es regular si y sólo si $\displaystyle \textbf{y}  $ es regular. En efecto, 
+		\[ \textbf{x} = \textbf{y} \circ h^{-1} \Rightarrow J \textbf{x}  = J \textbf{y} \cdot  Jh^{-1} = J \textbf{y} \cdot  \left(Jh\right)^{-1} .\]
+	\end{enumerate}
 \end{observation}
-\begin{definition}[]
-Sea $\displaystyle S $ una superficie y sean $\displaystyle \textbf{x} : U \to \textbf{x} \left(U\right)\subset S $ e $\displaystyle \textbf{y}  : V \to \textbf{y} \left(V\right)\subset S $ parametrizaciones de abiertos de $\displaystyle S $. Supongamos que $\displaystyle \textbf{x}  $ es inyectiva, regular y tiene inversa continua y lo mismo para $\displaystyle \textbf{y}  $. Decimos que $\displaystyle \left(U, \textbf{x} \right) $ y $\displaystyle \left(V, \textbf{y} \right) $ son \textbf{compatibles} si $\displaystyle S' = \textbf{x} \left(U\right) \cap \textbf{y} \left(U\right) $. 
+\begin{definition}[Carta]
+Decimos que  $\displaystyle \left(U, \Phi\right) $ es una \textbf{carta} si
+\begin{itemize}
+\item $\displaystyle \textbf{x} : U \to S = \textbf{x} \left(U\right) $ es una parametrización regular e inyectiva.
+\item $\displaystyle \Phi = \textbf{x} ^{-1} : S \to U $.
+\item $\displaystyle \textbf{x}  $ y $\displaystyle \Phi $ son continuas.
+\end{itemize}
+\end{definition}
+\begin{definition}[Cartas compatibles]
+Sea $\displaystyle S $ una superficie y sean 
+\begin{itemize}
+\item $\displaystyle \textbf{x} : U \to \textbf{x} \left(U\right)\subset S $ e $\displaystyle \textbf{y}  : V \to \textbf{y} \left(V\right)\subset S $ parametrizaciones de abiertos relativos de $\displaystyle S $.
+\item $\displaystyle \textbf{x}  $ es inyectiva, regular y tiene inversa continua y lo mismo para $\displaystyle \textbf{y}  $.
+\end{itemize}
+ Decimos que las cartas $\displaystyle \left(U, \textbf{x} \right) $ y $\displaystyle \left(V, \textbf{y} \right) $ son \textbf{compatibles} si tomando $\displaystyle S' = \textbf{x} \left(U\right) \cap \textbf{y} \left(V\right) $, 
+\[ U'= \textbf{x} ^{-1}\left(S'\right)\subset U \quad \text{y} \quad V' = \textbf{y} ^{-1}\left(S'\right)\subset V ,	\]
+se tiene que $\displaystyle h = \left( \textbf{y} |_{V'}\right)^{-1} \circ \left( \textbf{x} |_{U'}\right) $ es cambio de parámetros.
 \end{definition}
 \begin{observation}
-Si $\displaystyle h $ es biyectiva y continua tenemos que $\displaystyle h^{-1} = \left( \textbf{x} |_{U}\right)^{-1} \circ \left( \textbf{y} |_{V}\right) $, pedimos que $\displaystyle h $ es $\displaystyle \mathcal{C}^{\infty } $. 
+Automáticamente tendremos que $\displaystyle h $ es biyectiva y continua. Como $\displaystyle h^{-1} = \left( \textbf{x} |_{U'}\right)^{-1}\circ \left( \textbf{y} |_{V'}\right) $, basta con pedir que $\displaystyle h $ sea $\displaystyle \mathcal{C}^{\infty} $.  
 \end{observation}
-\begin{eg}
-	Consideremos $\displaystyle \mathbb{S}^{2} = \left\{ x^{2}+y^{2}+z^{2}=1\right\}  $. Tenemos que 
-	\[ \textbf{x} \left(u,v\right)=\left(u,v, \sqrt{1-u^{2}-v^{2}}\right), \; U = \left\{ y^{2}+v^{2} < 1\right\}  .\]
+\begin{eg}[Esfera]
+	Consideremos $\displaystyle \mathbb{S}^{2} = \left\{ x^{2}+y^{2}+z^{2}=1\right\}  $. Tenemos que dos cartas compatibles son
+	\[ \textbf{x} \left(u,v\right)=\left(u,v, \sqrt{1-u^{2}-v^{2}}\right), \; U = \left\{ u^{2}+v^{2} < 1\right\}  .\]
 Por otro lado
 \[ \textbf{y} \left(w,s\right)=\left(w,\sqrt{1-w^{2}-s^{2}}, s\right), \; V = \left\{ w^{2} + s^{2} < 1\right\}  .\]
 \end{eg}
-\section{Superficies regulares}
-\begin{eg}
-Para $\displaystyle \mathbb{S}^{2} $ no se puede conseguir una parametrización sea una carta puesto que no hay homeomorfismos $\displaystyle \textbf{x}  : U \to \mathbb{S}^{2} $ porque $\displaystyle U $ es abierto (no compacto) y $\displaystyle \mathbb{S}^{2} $ es compacto. 
+\section{Superficies regulares y superficies en implícitas}
+\begin{eg}[Cómo cubrir la esfera con cartas compatibles]
+Para $\displaystyle \mathbb{S}^{2} $ no se puede conseguir una parametrización sea una carta puesto que no hay homeomorfismos $\displaystyle \textbf{x}  : U \to \mathbb{S}^{2} $ porque $\displaystyle U $ es abierto (no compacto) y $\displaystyle \mathbb{S}^{2} $ es compacto. \\
+Sin embargo, sí podemos parametrizar la esfera utilizando seis cartas compatibles:
+\[ \textbf{x}_{1} \left(u,v\right)=\left(u, v, \sqrt{1-u^{2}-v^{2}}\right),\quad \textbf{x}_{2}  \left(u,v\right)=\left(u,v,-\sqrt{1-u^{2}-v^{2}}\right) .\]
+\[ \textbf{x} _{3}\left(u,v\right)=\left(u,\sqrt{1-u^{2}-v^{2}}, v\right), \quad \textbf{x} _{4} \left(u,v\right)=\left(u,-\sqrt{1-u^{2}-v^{2}}, v\right) .\]
+\[ \textbf{x}_{5}\left(u,v\right) = \left(\sqrt{1-u^{2}-v^{2}}, u, v\right), \quad \textbf{x} _{6}\left(u,v\right)=\left(-\sqrt{1-u^{2}-v^{2}}, u, v\right).\]
 \end{eg}
-\begin{eg}
-Si cogemos 
-\[ \textbf{x}_{1} \left(u,v\right)=\left(u, v, \sqrt{1-u^{2}-v^{2}}\right)\quad \textbf{x}_{2}  \quad \textbf{x} \left(u,v\right)=\left(u,v,-\sqrt{1-u^{2}-v^{2}}\right) .\]
-Para cubrir toda la esfera necesitamos también 
-\[ \textbf{x} _{3}\left(u,v\right)=\left(u,\sqrt{1-u^{2}-v^{2}}, v\right) \quad \text{y} \quad \textbf{x} _{4} \left(u,v\right)=\left(u,-\sqrt{1-u^{2}-v^{2}}, v\right) .\]
-\[ \textbf{x}_{5}\left(u,v\right) = \left(\sqrt{1-u^{2}-v^{2}}, u, v\right) \quad \text{y} \quad \textbf{x} _{6}\left(u,v\right)=\left(-\sqrt{1-u^{2}-v^{2}}, u, v\right).\]
-\end{eg}
+
 \begin{definition}[Superficie regular]
 	Una \textbf{superficie regular} es un subconjunto $\displaystyle S \subset \R^{3} $ con un atlas $\displaystyle \mathcal{A} = \left\{ \left( \textbf{x} _{i}, U_{i}\right)\right\}  $ tal que 
 	\begin{enumerate}
 	\item $\displaystyle \textbf{x} _{i} : U _{i}\to \textbf{x} _{i}\left(U_{i}\right)=S_{i} \subset S $ es parametrización regular inyectiva, $\displaystyle \Phi_{i} = \textbf{x} _{i}^{-1} $ continua (carta).
-	\item $\displaystyle \textbf{x} _{i} $ y $\displaystyle \textbf{x} _{j} $, $\displaystyle h_{ij}= \textbf{x} _{j}^{-1}\circ \textbf{x} _{i} $ es $\displaystyle \mathcal{C}^{\infty } $. 
+	\item $\displaystyle \textbf{x} _{i} $ y $\displaystyle \textbf{x} _{j} $ son compatibles, es decir, $\displaystyle h_{ij}= \textbf{x} _{j}^{-1}\circ \textbf{x} _{i} $ es $\displaystyle \mathcal{C}^{\infty } $. 
 	\item $\displaystyle S = \bigcup_{i}S_{i} $.
 	\end{enumerate}
 \end{definition}
 \begin{eg}
 \begin{enumerate}
 \item $\displaystyle \mathbb{S}^{2} $ es una superficie regular con un atlas de 6 cartas. 
-\item Superficie de revolución 
+\item La superficie de revolución 
 	\[ \textbf{x} \left(\varphi, v\right)=\left(r\left(v\right)\cos\varphi, r\left(v\right)\sin\varphi, z\left(v\right)\right) ,\]
-	generada por la curva regular $\displaystyle \gamma\left(v\right)=\left(r\left(v\right), z\left(v\right)\right) $ con $\displaystyle \gamma : I \to \R^{2} $. 
+	generada por la curva regular $\displaystyle \gamma\left(v\right)=\left(r\left(v\right), z\left(v\right)\right) $ con $\displaystyle \gamma : I \to \R^{2} $ es regular puesto que admite un atlas 
 	\[ \mathcal{A} = \left\{ \left(U = \left(0,2\pi \right) \times J, \textbf{x} _{1}\right), \left(V = \left(\pi , 3\pi \right)\times J\right), \textbf{x} _{2}\right\}  .\] 
 \end{enumerate}
 \end{eg}
-% poner dibujitos
 \begin{lema}
 Un atlas con cartas tipo grafo siempre es compatible.
 \end{lema}
 \begin{proof}
-Cogiendo $\displaystyle \textbf{x} _{1}\left(u,v\right)=\left(u,v,h_{1}\left(u,v\right)\right) $ y $\displaystyle \textbf{x} _{2}\left(u,v\right)=\left(w, h_{2}\left(w,s\right), s\right) $. Sin pérdida de generalidad $\displaystyle z = h_{1}\left(x,y\right) $ y $\displaystyle y = h_{2}\left(x,z\right) $, de esta forma $\displaystyle \textbf{x} _{2}^{-1}\left(x,y,z\right)=\left(x,z\right) $. 
+Cogiendo $\displaystyle \textbf{x} _{1}\left(u,v\right)=\left(u,v,h_{1}\left(u,v\right)\right) $ y $\displaystyle \textbf{x} _{2}\left(w,s\right)=\left(w, h_{2}\left(w,s\right), s\right) $. Tenemos que $\displaystyle h_{1} $ y $\displaystyle h_{2} $ son biyectivas y $\displaystyle \mathcal{C}^{\infty } $. Sin pérdida de generalidad $\displaystyle z = h_{1}\left(x,y\right) $ e $\displaystyle y = h_{2}\left(x,z\right) $, de esta forma $\displaystyle \textbf{x} _{2}^{-1}\left(x,y,z\right)=\left(x,z\right) $, por lo que 
+\[ h\left(u,v\right) = \textbf{x} _{2}^{-1}\circ \textbf{x} _{1} \left(u,v\right)= \left(x,z\right) \in \mathcal{C}^{\infty }.\]
 \end{proof}
 \begin{theorem}
 	Sea $\displaystyle S $ una superficie regular, entonces $\displaystyle S $ tiene un atlas $\displaystyle \mathcal{A} = \left\{ \left(U_{i}, \textbf{x} _{i}\right)\right\}  $ con cartas todas tipo grafo.
 \end{theorem}
-\begin{observation}
-\begin{enumerate}
-	\item Puedo tomar cada $\displaystyle S_{i} $ y trocearlo, es decir, cada carta $\displaystyle \textbf{x} _{i} : U_{i} \to S_{i} $ me da $\displaystyle U_{ij}\subset U_{i} $. Tenemos que $\displaystyle \left( \textbf{x} _{ij} = \textbf{x} _{i}|_{U_{ij}}, U_{ij}\right) $ son cartas. Hay atlas con cartas pequeñas. En particular con $\displaystyle S_{i}= S \cap B_{\epsilon }\left(p\right) $.
-	\item Si para cada $\displaystyle p \in S $, existe $\displaystyle \epsilon > 0 $ y una carta buena 
-		\[ \textbf{x} _{p} : U_{p}\to S \cap B_{\epsilon }\left(p\right) ,\]
-		entonces $\displaystyle \left\{ \left(U_{p}, \textbf{x} _{p}\right)\right\}  $ da un atlas de cartas pequeñas. 
-	\end{enumerate}
-\end{observation}
-
 \begin{proof}
-	Por definición $\displaystyle \mathcal{A}= \left\{ \left(U_{i}, \textbf{x} _{i}\right)\right\}  $ atlas de cartas de $\displaystyle S $. Sea $\displaystyle p \in S \bigcup_{i\in I}S_{i} $, de esta forma existe $\displaystyle i_{0}\in I $ tal que $\displaystyle \p\in S_{i_{0}} $, es decir, existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle B_{\epsilon }\left(p\right)\cap S \subset S_{i_{0}} $. 
+	Por definición $\displaystyle \mathcal{A}= \left\{ \left(U_{i}, \textbf{x} _{i}\right)\right\}  $ atlas de cartas de $\displaystyle S $. Hagamos algunas observaciones
+	\begin{itemize}
+	\item En primer lugar, observamos que podemos trocear cada $\displaystyle S_{i} $, es decir, de cada carta $\displaystyle \textbf{x} _{i} : U_{i} \to S_{i} $ podemos obtener $\displaystyle U_{ij}\subset U_{i} $ de forma que $\displaystyle \left( \textbf{x} _{ij}= \textbf{x} _{i}|_{U_{i}}, U_{ij}\right) $ son cartas. En particular, con $\displaystyle S_{i}= S \cap B_{\epsilon }\left(p\right) $.
+	\item Si para cada $\displaystyle p \in S $ existe $\displaystyle \epsilon > 0 $ y una carta buena
+		\[ \textbf{x} _{p} : U_{p} \to S \cap B_{\epsilon }\left(p\right) ,\]
+		entonces $\displaystyle \left\{ \left(U_{p}, \textbf{x} _{p}\right)\right\}  $ es un atlas de cartas pequeñas. 
+	\end{itemize}
+	Sea $\displaystyle p \in S \subset \bigcup_{i\in I}S_{i} $, por lo que existe $\displaystyle i_{0}\in I $ tal que $\displaystyle p\in S_{i_{0}} $, es decir, existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle B_{\epsilon }\left(p\right)\cap S \subset S_{i_{0}} $. 
 Usamos la parametrización 
 \[ \textbf{x} = \textbf{x} _{0} : U_{i_{0}} \to S_{i_{0}} \subset S ,\]
 con $\displaystyle \textbf{x} \left(u,v\right) $. Como es regular, tenemos que si $\displaystyle p = \textbf{x} \left(u_{0}, v_{0}\right) $ entonces
 \[\ran\begin{pmatrix} \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\ \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} \\ \frac{\partial z}{\partial u} & \frac{\partial z}{\partial v} \end{pmatrix}=2 .\]
-Es decir, un menor $\displaystyle 2 \times 2 $ es no nulo. Por ejemplo, si 
+Es decir, un menor $\displaystyle 2 \times 2 $ es no nulo. Supongamos sin pérdida de generalidad que 
 \[ \begin{vmatrix} \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\ \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} \end{vmatrix} \left(u_{0}, v_{0}\right)\neq 0 .\]
 Veamos que $\displaystyle S _{i_{0}}\cap B_{\epsilon}\left(p\right) $ es un grafo $\displaystyle z = h\left(x,y\right) $. 
 Definimos la función $\displaystyle h : \R^{2} \to \R^{2} : \left(u,v\right)\to \left(x\left(u,v\right), y\left(u,v\right), z\left(u,v\right)\right) $ de clase $\displaystyle \mathcal{C}^{\infty } $. Por el teorema de la función inversa, existe $\displaystyle \delta > 0 $ tal que 
@@ -296,10 +323,8 @@ es $\displaystyle \mathcal{C}^{\infty } $ biyectiva y su inversa también es $\d
 \begin{observation}
 En función del menor no nulo que cojamos obtenemos direcciones distintas para el grafo (en vez de ser $\displaystyle z = z\left(x,y\right) $, puede ser $\displaystyle x = x\left(y,z\right) $.)
 \end{observation}
-\section{Superficies en implícitas}
-Sea $\displaystyle N \subset \R^{3} $ abierto y $\displaystyle F : W \to \R $ de clase $\displaystyle \mathcal{C}^{\infty } $. 
 \begin{definition}[Conjuntos de nivel]
-	Llamamos \textbf{conjuntos de nivel} a los conjuntos de la forma $\displaystyle S_{\lambda } = \left\{ F\left(x,y,z\right)=\lambda \right\} = S_{F-\lambda } $. En partiuclar, para $\displaystyle \lambda = 0 $ se llama \textbf{conjunto de ceros} a $\displaystyle S = S_{F} = \left\{ F\left(x,y,z\right)=0\right\}  $.
+	Sea $\displaystyle W \subset \R^{3} $ abierto y $\displaystyle F : W \to \R $ de clase $\displaystyle \mathcal{C}^{\infty } $, llamamos \textbf{conjuntos de nivel} a los conjuntos de la forma $\displaystyle S_{\lambda } = \left\{ F\left(x,y,z\right)=\lambda \right\} = S_{F-\lambda } $. En partiuclar, para $\displaystyle \lambda = 0 $ se llama \textbf{conjunto de ceros} a $\displaystyle S = S_{F} = \left\{ F\left(x,y,z\right)=0\right\}  $.
 \end{definition}
 
 \begin{theorem}
@@ -326,8 +351,10 @@ que es tipo grafo.
 
 \begin{eg}
 \begin{enumerate}
-	\item Consideremos $\displaystyle \mathbb{S}^{2}= \left\{ x^{2} +y^{2} + z^{2}=1\right\}  $. Tenemos que $\displaystyle F\left(x,y,z\right)=x^{2} + y^{2} +z^{2} $ y $\displaystyle \nabla F = \left(2x, 2y, 2z\right) = 0 \iff x = y = z = 0 $, pero $\displaystyle \left(0,0,0\right)\not\in \mathbb{S}^{2} $. Así, $\displaystyle \mathbb{S}^{2} $ es regular.
-	\item El cono. $\displaystyle S = \left\{ z^{2} = x^{2} +y^{2}\right\}  $. Tenemos que $\displaystyle F\left(x,y,z\right)=x^{2}+y^{2}-z^{2} $ y 
+	\item Consideremos $\displaystyle \mathbb{S}^{2}= \left\{ x^{2} +y^{2} + z^{2}=1\right\}  $. Tenemos que 
+		\[F\left(x,y,z\right)=x^{2} + y^{2} +z^{2} ,\]
+		de forma que $\displaystyle \nabla F = \left(2x, 2y, 2z\right) = 0 \iff x = y = z = 0 $, pero $\displaystyle \left(0,0,0\right)\not\in \mathbb{S}^{2} $. Así, $\displaystyle \mathbb{S}^{2} $ es regular.
+	\item Podemos ver el cono como una superficie en implícitas como $\displaystyle S = \left\{ z^{2} = x^{2} +y^{2}\right\}  $. Tenemos que $\displaystyle F\left(x,y,z\right)=x^{2}+y^{2}-z^{2} $ y 
 		\[\nabla F = \left(2x, 2y, -2z\right)= 0 \iff x = y = z = 0 ,\]
 		tenemos que $\displaystyle p = \left(0,0,0\right) $ es un punto singular. 
 \end{enumerate}
@@ -362,4 +389,260 @@ Si cogemos
 \[ \textbf{x} \left(u,v\right)=\left(\frac{2u}{u^{2} + v^{2}+1}, \frac{2v}{u^{2}+v^{2}+1}, \frac{u^{2}+v^{2}-1}{u^{2}+v^{2}+1}\right) .\]
 Veamos que $\displaystyle \textbf{x}  $ es regular. Es sencillo ver que el rango del jacobiano es 2. Se puede cubrir la esfera con dos proyecciones estereográficas? Sí, cogemos la misma pero en la última coordenada ponemos un signo menos. 
 \end{eg}
+\section{El plano tangente, campos de vectores y flujos}
+Sea $\displaystyle \textbf{x} : U \to S = \textbf{x} \left(U\right)\subset \R^{3} $ una superficie parametrizada regular, $\displaystyle \left(u_{0}, v_{0}\right)\in U $ y $\displaystyle P_{0}= \textbf{x} \left(u_{0}, v_{0}\right)\in S $. Tenemos que $\displaystyle \left\{ \textbf{x} _{u}\left(u_{0}, v_{0}\right), \textbf{x} _{v}\left(u_{0}, v_{0}\right)\right\}  $ son linealmente independientes. 
+\begin{definition}[Plano tangente]
+Se llama \textbf{plano tangente} a $\displaystyle S $ en $\displaystyle P_{0}= \textbf{x} \left(u_{0}, v_{0}\right) $ a 
+\[T_{P_{0}}S = \mathcal{L}\left( \left\{ \textbf{x} _{u}\left(u_{0}, v_{0}\right), \textbf{x} _{v}\left(u_{0}, v_{0}\right)\right\} \right) .\]
+\end{definition}
+\begin{observation} Podemos hacer un par de observaciones.
+\begin{enumerate}
+\item El plano tangente afín es $\displaystyle P_{0} + \mathcal{L}\left( \textbf{x} _{u}, \textbf{x} _{v}\right) $. 
+\item Interpretad $\displaystyle T_{P_{0}}S $ apoyado en $\displaystyle P_{0} $. 
+\item Una curva $\displaystyle \alpha\left(t\right) $ en $\displaystyle S $ es una curva $\displaystyle \alpha\left(t\right)= \textbf{x} \left(u\left(t\right), v\left(t\right)\right) $ con $\displaystyle \left(u\left(t\right), v\left(t\right)\right) $ de clase $\displaystyle \mathcal{C}^{\infty } $. 
+	Así, dada $\displaystyle \alpha : J \to S \subset \R^{3} $, tenemos que podemos coger $\displaystyle \tilde{\alpha} = \textbf{x} ^{-1}\circ \alpha  $, de forma que 
+	\[\tilde{\alpha} = \left(u\left(t\right), v\left(t\right)\right) : J \to U \subset \R^{2} ,\]
+	es una curva plana. Además, 
+	\[\alpha\left(t\right)= \textbf{x} \left(\tilde{\alpha}\left(t\right)\right)= \textbf{x} \left(u\left(t\right), v\left(t\right)\right) = \left(x\left(u\left(t\right), v\left(t\right)\right), y\left(u\left(t\right), v\left(t\right)\right), z\left(u\left(t\right), v\left(t\right)\right)\right) .\]
+\end{enumerate}
+\end{observation}
+\begin{definition}[Curva en una superficie]
+Una \textbf{curva en una superficie} $\displaystyle S $ es $\displaystyle \alpha\left(t\right)= \textbf{x} \left(u\left(t\right), v\left(t\right)\right) $ con $\displaystyle \left(u\left(t\right), v\left(t\right)\right) $ de clase $\displaystyle \mathcal{C}^{\infty } $. 
+\end{definition}
+\begin{notation}
+Decimos que $\displaystyle \alpha\left(t\right) $ es una curva por $\displaystyle P_{0} $ si $\displaystyle \alpha\left(0\right)=P_{0}=\left(u\left(0\right), v\left(0\right) \right)=\left(u_{0}, v_{0}\right) $. 
+\end{notation}
+\begin{observation}
+Su recta tangente es $\displaystyle \alpha'\left(0\right) $. 
+\end{observation}
+\begin{prop}
+El vector $\displaystyle \alpha'\left(0\right) $ es tangente a $\displaystyle S $, es decir $\displaystyle \alpha'\left(0\right)\in T_{P_{0}}S $. De hecho, 
+\[ T_{P_{0}}S = \left\{ \alpha'\left(0\right)\; : \; \alpha\left(t\right) \; \text{curva en $\displaystyle S $ con }\alpha\left(0\right)=P_{0}\right\}  .\]
+\end{prop}
+\begin{proof}
+Cogemos 
+\[\alpha\left(t\right)=\left(x\left(u\left(t\right), v\left(t\right)\right), y\left(u\left(t\right), v\left(t\right)\right), z\left(u\left(t\right), z\left(t\right)\right)\right) .\]
+Tenemos que 
+\[\alpha'\left(t\right)=\begin{pmatrix} \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\ \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} \\ \frac{\partial z}{\partial u} & \frac{\partial z}{\partial v}\end{pmatrix}\begin{pmatrix} \frac{du}{dt} \\ \frac{dv}{dt} \end{pmatrix}= u' \textbf{x} _{u} + v' \textbf{x} _{v} .\]
+En particular, 
+\[\alpha'\left(0\right)= \textbf{x} _{u}\left(u_{0}, v_{0}\right) a + \textbf{x} _{v}\left(u_{0}, v_{0}\right) b \Rightarrow \alpha'\left(0\right)=\mathcal{L}\left( \textbf{x} _{u}, \textbf{x} _{v}\right) = T_{P_{0}}S .\]
+Ahora, si $\displaystyle \vec{v}\in T_{P_{0}}S $, entonces $\displaystyle \vec{v}= a \textbf{x} _{u} + b \textbf{x} _{v}\in \mathcal{L}\left( \textbf{x} _{u}, \textbf{x} _{v}\right) $. Tomando el segmento
+\[\alpha\left(t\right)=\left(u\left(t\right), v\left(t\right)\right)=\left(u_{0} + at, v_{0} + bt\right),  \]
+tenemos que $\displaystyle \alpha'\left(0\right)=a \textbf{x} _{u} + b \textbf{x} _{v} = \vec{v} $.
+\end{proof}
+\begin{notation}
+	Denotamos por $\displaystyle \mathcal{B}_{ \textbf{x} }= \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ a esta base de $\displaystyle T_{P_{0}}S $. Además, escribimos
+		\[ \tilde{\alpha}'\left(0\right)=\left(a,b\right)=\left(u'\left(0\right), v'\left(0\right)\right) \Rightarrow \alpha'\left(0\right)=\left(a,b\right)_{\mathcal{B}_{ \textbf{x} }}=a \textbf{x} _{u} + b \textbf{x} _{v} .\]
+\end{notation}
+\begin{definition}
+	Decimos que $\displaystyle \mathcal{B}_{ \textbf{x} } = \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ es la \textbf{base} de $\displaystyle T_{P_{0}}S $ con respecto a $\displaystyle \textbf{x} \left(u,v\right) $. 
+\end{definition}
+\begin{prop}
+$\displaystyle T_{P_{0}}S $ no depende de la parametrización.
+\end{prop}
+\begin{proof}
+Sea $\displaystyle h\left(u,v\right)=\left(w,s\right) $ con $\displaystyle \textbf{x} = \textbf{y} \circ h $. Tendremos que $\displaystyle h\left(u_{0}, v_{0}\right)=\left(w_{0}, s_{0}\right) $ de forma que 
+\[P_{0} = \textbf{x} \left(u_{0}, v_{0}\right)= \textbf{y} \left(w_{0}, s_{0}\right) .\]
+Entonces, queremos ver que
+\[ \mathcal{L}\left( \textbf{x} _{u}\left(u_{0}, v_{0}\right), \textbf{x} _{v}\left(u_{0}, v_{0}\right)\right)=\mathcal{L}\left( \textbf{y} _{w}\left(w_{0}, s_{0}\right), \textbf{y} _{s}\left(w_{0}, s_{0}\right)\right) .\]
+Si $\displaystyle \textbf{x} = \textbf{y} \circ h $, tenemos que 
+\[ \textbf{x} \left(u,v\right)= \textbf{y} \left(w,s\right)= \textbf{y} \left(h\left(u,v\right)\right) .\]
+De esta forma, 
+\[ \textbf{x} _{u}= \textbf{y} _{w}\frac{\partial w}{\partial u} + \textbf{y} _{s}\frac{\partial s}{\partial u} \quad \text{y} \quad \textbf{x} _{v} = \textbf{y} _{w}\frac{\partial w}{\partial v} + \textbf{y} _{s}\frac{\partial s}{\partial v}.\]
+Así, $\displaystyle \mathcal{L}\left( \textbf{x} _{u}, \textbf{x} _{v}\right)= \mathcal{L}\left( \textbf{y} _{w}, \textbf{y} _{s}\right) $. 
+\end{proof}
+
+\begin{prop}
+	Sea $\displaystyle S = \left\{ \left(x,y,z\right)\in U\subset \R^{3} \; : \; F\left(x,y,z\right)=0\right\}  $ una superficie regular en implícitas. Entonces $\displaystyle \nabla F\left(p\right) $ es perpendicular $\displaystyle T_{p}S $, $\displaystyle \forall p \in S $, es decir, $\displaystyle T_{p}S = \left(\nabla F\left(p\right)\right)^{\perp} $. 
+\end{prop}
+\begin{proof}
+Tenemos que 
+\[T_{p}S = \left\{ \alpha'\left(0\right) \; : \; \alpha : \left(-\epsilon , \epsilon \right)\to S \; \text{curva con } \alpha\left(0\right)=p\right\}  .\]
+Tenemos que $\displaystyle F\left(\alpha\left(t\right)\right)\equiv 0 $, por lo que 
+\[\left(F\left(\alpha\left(t\right)\right)\right)' = \left\langle \nabla F\left(\alpha\left(t\right)\right), \alpha'\left(t\right) \right\rangle = \left\langle \left(\frac{\partial F}{\partial x}, \frac{\partial F}{\partial y}, \frac{\partial F}{\partial z}\right), \left(x', y', z'\right) \right\rangle =0 .\]
+En particular, en $\displaystyle t = 0 $ tenemos que $\displaystyle \left\langle \nabla F\left(p\right), \alpha'\left(0\right) \right\rangle =0 $ para toda curva $\displaystyle \alpha  $, por lo que $\displaystyle \nabla F\left(p\right)\perp T_{p}S $. Como $\displaystyle \nabla F\left(p\right)\neq 0 $ debe ser que $\displaystyle T_{p}S = \left(\nabla F\left(p\right)\right)^{\perp } $. 
+\end{proof}
+\begin{definition}[Vector normal]
+Se llama \textbf{vector normal} de una superficie parametrizada $\displaystyle \textbf{x} \left(u,v\right) $ a 
+\[N\left(u,v\right)=\frac{ \textbf{x} _{u} \times \textbf{x} _{v}}{\| \textbf{x} _{u} \times \textbf{x} _{v}\|} .\]
+\end{definition}
+\begin{observation}
+\begin{itemize}
+\item $\displaystyle \|N\| = 1 $. 
+\item $\displaystyle N \perp T_{p}S $. 
+\item Hay dos vectores normales: $\displaystyle N $ y $\displaystyle -N $.
+\item $\displaystyle \left\{ \textbf{x} _{u}, \textbf{x} _{v}, N\right\}  $ es una base positiva. 
+\end{itemize}
+\end{observation}
+
+\begin{eg}[Vector normal de la esfera]
+Consideremos $\displaystyle \mathbb{S}^{2} $ tenemos que $\displaystyle \nabla F = \left(2x,2y,2z\right) $. Así, 
+\[N\left(p\right)=\frac{\nabla F\left(p\right)}{\|\nabla F\left(p\right)\|}=\frac{\left(2x, 2y, 2z\right)}{2}=\left(x,y,z\right) ,\]
+para $\displaystyle p = \left(x,y,z\right)\in \mathbb{S}^{2} $. 
+\end{eg}
+\begin{eg}[Vector normal de una superficie de revolución]
+Consideremos la superficie de revolución parametrizada por 
+\[ \textbf{x} \left(\varphi, v\right)=\left(r\left(v\right)\cos\varphi, r\left(v\right)\sin\varphi, z\left(v\right)\right) .\]
+Tenemos que $\displaystyle \mathcal{B}_{ \textbf{x} } = \left\{ \textbf{x} _{\varphi}, \textbf{x} _{v}\right\}  $ con 
+\[ \textbf{x} _{\varphi}=\begin{pmatrix} -r\left(v\right)\sin\varphi \\ r\left(v\right)\cos\varphi \\ 0 \end{pmatrix} \quad \text{y} \quad \textbf{x} _{v}=\begin{pmatrix} r'\left(v\right)\cos\varphi \\ r'\left(v\right)\sin\varphi \\ z'\left(v\right) \end{pmatrix} .\]
+% poner imagen 
+De esta forma,  
+\[ \textbf{x} _{\varphi} \times \textbf{x} _{v}= \left(rz'\cos\varphi, rz'\sin\varphi, -rr'\right) .\]
+Como $\displaystyle \textbf{x}  $ es regular tendremos que $\displaystyle \textbf{x} _{\varphi }\times \textbf{x} _{v}\neq 0 $, por lo que $\displaystyle r \neq 0 $. Así, $\displaystyle \left(r',z'\right)\neq \left(0,0\right) $ y tenemos que 
+\[ \| \textbf{x} _{\varphi}\times \textbf{x} _{v}\| = r\sqrt{z'^{2} + r'^{2}}=r\|\gamma'\| .\]
+Así, tendremos que 
+\[N = \frac{\left(z\cos\varphi, z'\sin\varphi, -r'\right)}{\|\gamma'\|} .\]
+\end{eg}
+\begin{eg}[Esfera como superficie de revolución]
+En $\displaystyle \mathbb{S}^{2} $ con la parametrización 
+\[ \textbf{x} \left(\varphi, v\right)=\left(\cos \varphi \cos v, \sin \varphi \cos v, \sin v\right) .\]
+Podemos tomar $\displaystyle \gamma\left(v\right)=\left(\cos v, \sin v\right) $ con $\displaystyle \|\gamma'\| = 1 $ parametrizada por el arco, de forma que 
+\[N = \left(\cos v \cos \varphi, \cos v \sin \varphi, \sin v\right) \Rightarrow N\left(x,y,z\right)=\left(x,y,z\right) .\]
+\end{eg}
+\subsection{Campos de vectores}
+Sea $\displaystyle S $ una superficie parametrizada regular $\displaystyle \textbf{x} \left(u,v\right) $, $\displaystyle \textbf{x} : U \to \R^{3} $.
+\begin{definition}[Campo de vectores]
+ Un \textbf{campo de vectores} es 
+\[ X : U \to \R^{3} : \left(u,v\right)\to X\left(u,v\right)=\left(X_{1}\left(u,v\right), X_{2}\left(u,v\right), X_{3}\left(u,v\right)\right) ,\]
+que es $\displaystyle \mathcal{C}^{\infty } $.
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+\item Lo interpretamos como $\displaystyle X\left(u,v\right) $ vector en $\displaystyle \textbf{x} \left(u,v\right)\in S $. 
+\item Si $\displaystyle \textbf{x} \left(u,v\right) $ es parametrización inyectiva $\displaystyle X\left(p\right)\in \R^{3} $ para $\displaystyle p \in S $ y además
+	\[X\left(p\right)=X\left( \textbf{x} ^{-1}\left(p\right)\right)=X\left(u,v\right) ,\]
+	con $\displaystyle \textbf{x} ^{-1}\left(p\right)=\left(u,v\right) $. 
+\end{enumerate}
+\end{observation}
+\begin{lema}
+Podemos poner $\displaystyle X\left(p\right)=a\left(p\right) \textbf{x} _{u} + b\left(p\right) \textbf{x} _{v} +f \left(p\right)N $ con $\displaystyle a,b,f\in \mathcal{C}^{\infty }\left(U\right) $. 
+\end{lema}
+\begin{proof}
+	Ya vimos que $\displaystyle \left\{ \textbf{x} _{u}, \textbf{x} _{v}, N\right\}  $ es una base positiva. Si $\displaystyle N = \left(N_{1}, N_{2}, N_{3}\right) $ podemos poner
+\[M_{\mathcal{B}_{C}\mathcal{B}_{M}}=\begin{pmatrix} x_{u} & x_{v} & N_{1} \\ y_{u} & y_{v} & N_{2} \\ z_{u} & z_{v} & N_{3} \end{pmatrix} .\]
+Tenemos que 
+\[M_{\mathcal{B}_{C}\mathcal{B}_{M}}\begin{pmatrix} a \\ b \\ f \end{pmatrix}=\begin{pmatrix} X_{1} \\ X_{2} \\ X_{3} \end{pmatrix} ,\]
+. Como $\displaystyle M_{\mathcal{B}_{C}\mathcal{B}_{M}}\in \mathcal{C}^{\infty } $ y tiene determinante no nulo, debe ser que $\displaystyle \left(a,b,f\right)\in \mathcal{C}^{\infty }\left(U\right) $. 
+\end{proof}
+\begin{definition}[Campo de vectores tangente y normal]
+	Sea $\displaystyle \textbf{x} : U \to S = \textbf{x} \left(U\right)\subset \R^{3} $ una superficie parametrizada regular.
+	\begin{itemize}
+	\item Se llama \textbf{campo de vectores tangentes} a $\displaystyle X = a \textbf{x} _{u} + b \textbf{x} _{v}  $ con $\displaystyle a,b\in \mathcal{C}^{\infty } $. Con $\displaystyle X\left(p\right) \in T_{p}S $, $\displaystyle \forall p \in S $.
+	\item Se llama \textbf{campo de vectores normal} a $\displaystyle X = fN $ con $\displaystyle f \in \mathcal{C}^{\infty } $, tal que $\displaystyle X \left(p\right)\perp T_{p}S $, $\displaystyle \forall p \in S $.
+	\end{itemize}
+\end{definition}
+\begin{prop}
+Todo campo se descompone $\displaystyle X = X^{T} + X^{\perp } $ siendo $\displaystyle X^{T} $ tangente a $\displaystyle S $ y $\displaystyle X^{\perp } $ normal a $\displaystyle S $. 
+\end{prop}
+\begin{proof}
+Dado un campo $\displaystyle X : U \to \R^{3} $ basta con tomar $\displaystyle X^{T}= a \textbf{x} _{u} + b \textbf{x} _{v} $ y $\displaystyle X ^{\perp }=f N $. 
+\end{proof}
+\begin{observation}
+Tenemos que $\displaystyle X^{\perp }= \left\langle X,N \right\rangle N $ es la proyección de $\displaystyle X $ en la dirección de $\displaystyle N $. Así, como $\displaystyle X = a \textbf{x} _{u} + b \textbf{x} _{v} + fN $ tenemos que $\displaystyle \left\langle X, N \right\rangle =f $. Además, $\displaystyle \left\langle \textbf{x} _{u}, N \right\rangle = \left\langle \textbf{x} _{v}, N \right\rangle =0 $ y $\displaystyle \left\langle N, N \right\rangle =1 $. 
+\end{observation}
+\begin{eg}[Esfera]
+En $\displaystyle \mathbb{S}^{2} $ hemos visto que $\displaystyle N\left(x,y,z\right)=\left(x,y,z\right) $. Si cogemos el campo $\displaystyle X\left(x,y,z\right)=\left(0,1,0\right) $, tenemos que $\displaystyle \left\langle X, N \right\rangle =y $, por tanto $\displaystyle X^{\perp } = y\left(x,y,z\right) $. 
+\end{eg}
+\subsection{Flujos de campos}
+Sea $\displaystyle S $ una superficie regular y $\displaystyle X $ un campo de vectores tangente. 
+\begin{definition}[Curva integral]
+Se llama \textbf{curva de flujo} o \textbf{curva integral} de $\displaystyle X $ desde $\displaystyle p_{0} \in S $ a $\displaystyle C_{P_{0}} : J \subset \R \to S $ curva en $\displaystyle S $ tal que 
+\[
+\begin{cases}
+C_{P_{0}}\left(0\right)=P_{0} \\
+C'_{P_{0}}\left(t\right)=X_{C_{P_{0}\left(t\right)}}
+\end{cases}
+.\]
+\end{definition}
+\begin{notation}
+Escribimos $\displaystyle X_{q}= X\left(q\right)\in T_{q}S $.
+\end{notation}
+\begin{definition}[Flujo]
+Se llama \textbf{flujo} de $\displaystyle X $ a 
+\[\Phi : S \times J \to S : \left(p, t\right)\to \Phi\left(p,t\right)=C_{p}\left(t\right) .\]
+\end{definition}
+\begin{observation}
+Técnicamente el intervalo $\displaystyle J $ depende del punto $\displaystyle p \in S $. El dominio de $\displaystyle \Phi $ es un abierto $\displaystyle U \subset S \times \R $. 
+\end{observation}
+\begin{eg}[Esfera]
+En $\displaystyle \mathbb{S}^{2} $ sea $\displaystyle Y\left(x,y,z\right)=\left(0,0,1\right) $ el campo vertical y $\displaystyle X = Y^{T} $ \footnote{Es la proyección de $\displaystyle Y $ sobre la dirección tangente.}, tenemos que 
+\[X = Y^{T} = Y-\left\langle Y, N \right\rangle N = \left(-xz, -yz, 1-z^{2}\right) .\]
+Demos $\displaystyle X $ en coordenadas esféricas:
+\[
+\begin{cases}
+x = \cos\varphi \cos s \\
+y = \sin\varphi \cos s \\
+z = \sin s
+\end{cases}
+,\]
+con $\displaystyle \gamma\left(s\right)=\left(\cos s, \sin s\right) $. Tenemos que 
+\[ \textbf{x} _{\varphi}=\begin{pmatrix} -\sin\varphi\cos s \\ \cos \varphi \cos s \\ 0 \end{pmatrix} \quad \text{y} \quad \textbf{x} _{s}=\begin{pmatrix} -\cos\varphi \sin s \\ -\sin \varphi \sin s \\ \cos s \end{pmatrix} .\]
+Tenemos que 
+\[ X = a \textbf{x} _{\varphi} + b \textbf{x} _{s} .\]
+Por tanto, 
+\[
+\begin{split}
+	X\left(\varphi, s\right)= &\left(-\cos\varphi \cos s \sin s, -\sin\varphi \cos s \sin s, \cos ^{2}s\right)\\
+	= &  a\left(-\sin \varphi \cos s, \cos \varphi \cos s, 0\right)+ b \left(-\cos \varphi \sin s, -\sin \varphi \sin s, \cos s\right).
+\end{split}
+\]
+Tenemos que $\displaystyle b = \cos s $ y $\displaystyle a = 0 $, por lo que $\displaystyle X\left(\varphi, s\right)=\left(0, \cos s\right)_{\mathcal{B}_{ \textbf{x} }} $. \\
+
+Ahora calculemos la curva integral desde el punto $\displaystyle P_{0}= \textbf{x} \left(\varphi_{0}, s_{0}\right)=\left(x_{0}, y_{0}, z_{0}\right) $. Tendremos que las coordenadas de la curva son
+\[c_{P_{0}}\left(t\right)= \textbf{x} \left(\varphi\left(t\right), s\left(t\right)\right) .\]
+Tenemos que $\displaystyle \varphi\left(0\right)=\varphi_{0} $ y $\displaystyle s\left(0\right)=s_{0} $ y además, 
+\[
+\begin{split}
+	c'_{P_{0}}\left(t\right)= & \textbf{x} _{\varphi}\varphi' + \textbf{x} _{s}s' = \textbf{x} _{\varphi}\frac{d\varphi}{dt} + \textbf{x} _{s}\frac{d s}{dt} = \left(\frac{d\varphi}{dt}, \frac{d s}{dt}\right)_{\mathcal{B}_{ \textbf{x} }}\\
+	= & X = \left(a\left(\varphi\left(t\right), s\left(t\right)\right), b\left(\varphi\left(t\right), s\left(t\right)\right)\right)	.
+\end{split}
+\]
+De esta forma obtenemos 
+\[
+\begin{cases}
+\varphi'\left(t\right) = a\left(\varphi\left(t\right), s\left(t\right)\right) \\
+s'\left(t\right) = b\left(\varphi\left(t\right), s\left(t\right)\right) \\
+\varphi\left(0\right)=\varphi_{0} \\
+s\left(0\right)=s_{0}
+\end{cases}
+.\]
+Esto es un sistema de EDO's de orden 1 con valor inicial. Por el teorema de Picard-Lindelöf existe una única solución $\displaystyle \left(\varphi\left(t\right), s\left(t\right)\right) $ en un intervalo maximal $\displaystyle J \subset \R $. En nuestro ejercicio $\displaystyle a = 0 $ y $\displaystyle b = \cos s $, por lo que nos queda
+\[
+\begin{cases}
+\varphi'\left(t\right)= 0 \\
+s'\left(t\right)=\cos s\left(t\right) \\
+\varphi\left(0\right)=\varphi_{0} \\
+s\left(0\right)=s_{0}
+\end{cases}
+.\]
+Tendremos que $\displaystyle \varphi\left(t\right)=\varphi_{0} $. Por otro lado, 
+\[\frac{d s}{dt}= \cos s\left(t\right) \Rightarrow \frac{1}{2}\ln\left(\frac{1 + \sin s}{1 - \sin s}\right) = t + k.\]
+Tendremos que 
+\[k = k_{0} =  \frac{1}{2}\ln\left(\frac{1+\sin s_{0}}{1-\sin s_{0}}\right).\]
+De esta forma, 
+\[\sin s = \frac{e^{2t+2k_{0}}-1}{e^{2t+2k_{0}}+1} = \frac{e^{t+k_{0}}-e^{-\left(t+k_{0}\right)}}{e^{t+k_{0}}+e^{-\left(t+k_{0}\right)}}=\tanh\left(t + k_{0}\right)\Rightarrow s\left(t\right)=\arcsin\left(\tanh\left(t+k_{0}\right)\right) .\]
+La solución $\displaystyle \left(\varphi_{0}, s\left(t\right)\right) $ a lo largo de un meridiano. Podemos ver que cuando $\displaystyle t \to -\infty  $ va al polo sur y cuando $\displaystyle t \to \infty  $ va al polo norte.  
+\\
+
+Calculemos el flujo global:
+\[\Phi : \mathbb{S}^{2} \times \R \to \mathbb{S}^{2} : \left(\varphi_{0}, s_{0}, t\right)\to \left(\varphi_{0}, \arcsin\left(\tanh\left(t + k_{0}\right)\right)\right).\]
+\end{eg}
+\begin{observation}
+Hay un teorema que nos dice que, en el sistema de EDO's, $\displaystyle J = \R $ si $\displaystyle S $ es compacto. 
+\end{observation}
+\begin{theorem}
+El flujo global de un campo $\displaystyle X $, existe, es único y es $\displaystyle \mathcal{C}^{\infty } $. 
+\end{theorem}
+\begin{proof}
+Tenemos un sistema de EDO's con la forma 
+\[
+\begin{cases}
+\frac{d\varphi}{dt}=a\left(\varphi\left(t\right), s\left(t\right)\right) \\
+\frac{d s}{dt}=b\left(\varphi\left(t\right), s\left(t\right)\right) \\
+\varphi\left(0\right) =\varphi_{0} \\
+s\left(0\right)=s_{0}
+\end{cases}
+.\]
+La demostración es la de EDOS que dice que el flujo $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ es $\displaystyle \mathcal{C}^{k} $ si $\displaystyle f  $ es $\displaystyle \mathcal{C}^{k} $. 
+\end{proof}
 

@@ -99,7 +99,7 @@ La desigualdad $\displaystyle \left|\int _{\gamma }f \right|\leq \int _{\gamma }
 \begin{prop}[Propiedades de la integral compleja]
 Sean $\displaystyle f, g : \Omega \subset \C \to \C $ continuas, $\displaystyle \alpha, \beta \in \C $ y $\displaystyle \gamma : \left[a,b\right] \to \Omega  $ curva parametrizada $\displaystyle \mathcal{C}^{1} $ a trozos. Entonces, 
 	\begin{enumerate}
-	\item $\displaystyle \int _{\gamma }\alpha f + \beta g = \alpha \int f +\beta \int g  $.
+	\item $\displaystyle \int _{\gamma }\alpha f + \beta g = \alpha \int_{\gamma } f +\beta \int_{\gamma} g  $.
 	\item $\displaystyle \int _{\gamma^{-} }f =-\int _{\gamma }f $. 
 	\item $\displaystyle \left|\int _{\gamma }f \right|\leq \sup_{z \in \gamma\left(\left[a,b\right] \right)} \left|f\left(z\right)\right| \ell\left(\gamma \right) $.
 	\end{enumerate}
@@ -125,7 +125,7 @@ Las propiedades \textbf{(1)} y \textbf{(2)} se vieron en cálculo integral. Demo
 Debido a este hecho, para cada $\displaystyle \Gamma $ curva orientada de clase $\displaystyle \mathcal{C}^{1} $ a trozos contenida en $\displaystyle \C $ tendremos que podemos definir
 	\[\int _{\Gamma}f := \int _{\gamma }f ,\]
 con $\displaystyle \gamma  $ parametrización de $\displaystyle \Gamma  $, para cualquier función continua $\displaystyle f : \Gamma \to \C $. Las propiedades de la proposición anterior tienen análogos obvios para $\displaystyle \int _{\Gamma }f $. 
-Asímismo, dada una concatenación de curvas $\displaystyle \Gamma = \bigcup_{m}_{j = 1}\Gamma_{j} $, es sencillo ver que
+Asímismo, dada una concatenación de curvas $\displaystyle \Gamma = \bigcup^{m}_{j = 1}\Gamma_{j} $, es sencillo ver que
 \[\int _{\Gamma}f = \sum^{m}_{j =1}\int _{\Gamma_{j}}f .\]
 En el caso particular de $\displaystyle  = 2 $ y de que $\displaystyle \Gamma = \Gamma_{1} \cup\Gamma_{2} $ sea cerrada tenemos que $\displaystyle \int _{\Gamma }f  $ no depende del punto inicial o final. En efecto,
 \[\int _{\Gamma }f =\int _{\Gamma_{1}}f +\int _{\Gamma_{2}}f =  \int _{\Gamma_{2}}f +\int _{\Gamma_{1}}f  .\]
@@ -155,21 +155,21 @@ En el caso de que $\displaystyle \Gamma $ sea $\displaystyle \mathcal{C}^{1} $ a
 \[\int _{\Gamma}f =\sum^{n}_{j = 1}\int _{\Gamma }f =\sum^{n}_{j = 1}\left(F\left(\omega_{2}^{j}\right)-F\left(\omega^{j}_{1}\right)\right) = F\left(\omega_{2}^{n}\right)-F\left(\omega_{1}^{1}\right) .\]
 \end{proof}
 \begin{colorary}
-Si $\displaystyle \Gamma $ es una curva cerrada $\displaystyle \mathcal{C}^{1} $ a trozos, $\displaystyle f : \Omega\subset \C \to \C $, $\displaystyle f \in \mathcal{C}\left(\Omega \right) $ que admite primitiva en $\displaystyle \Omega  $, entonces $\displaystyle \int _{\Gamma }f =0 $. 
+Si $\displaystyle \Gamma $ es una curva cerrada $\displaystyle \mathcal{C}^{1} $ a trozos y $\displaystyle f : \Omega\subset \C \to \C $, $\displaystyle f \in \mathcal{C}\left(\Omega \right) $ que admite primitiva en $\displaystyle \Omega  $, entonces $\displaystyle \int _{\Gamma }f =0 $. 
 \end{colorary}
 \begin{eg}
 	La función $\displaystyle f\left(z\right)=\frac{1}{z} $ no admite primitiva en $\displaystyle \C\backslash \left\{ 0\right\}  $. En efecto, por el corolario anterior tenemos que 
 	\[\int _{ \left\{ \left|z\right| = 1\right\} }\frac{1}{z} \; dz = \int^{2\pi }_{0} \frac{1}{e^{it}}ie^{it} \; dt =2\pi i .\]
 \end{eg}
 \begin{theorem}[Derivación bajo el signo de la integral]
-Sean $\displaystyle \Omega\subset \C $ abierto, $\displaystyle \Gamma $ una curva orientada de clase $\displaystyle \mathcal{C}^{1} $ a trozos (no pedimos que esté en $\displaystyle \Omega  $). Sea $\displaystyle \varphi : \Gamma \times \Omega \to \C $ continua tal que $\displaystyle \forall \xi \in \Gamma  $ la aplicación $\displaystyle z \to \varphi\left(\xi, z\right)\in \mathcal{H}\left(\Omega \right) $ y tal que $\displaystyle \left(\xi, z\right)\to \frac{\partial }{\partial z}\varphi\left(\xi, z\right) $ es continua en $\displaystyle \Gamma \times \Omega  $.
+Sean $\displaystyle \Omega\subset \C $ abierto, $\displaystyle \Gamma $ una curva orientada de clase $\displaystyle \mathcal{C}^{1} $ a trozos (no pedimos que esté en $\displaystyle \Omega  $). Sea $\displaystyle \varphi : \Gamma \times \Omega \to \C $ continua tal que $\displaystyle \forall \xi \in \Gamma  $ la aplicación $\displaystyle z \to \varphi\left(\xi, z\right)\in \mathcal{H}\left(\Omega \right) $ y tal que $\displaystyle \left(\xi, z\right)\to \frac{\partial \varphi}{\partial z}\left(\xi, z\right) $ es continua en $\displaystyle \Gamma \times \Omega  $.
 Entonces
 \[g\left(z\right):= \int _{\Gamma}\varphi\left(\xi, z\right) \; d\xi ,\]
 es holomorfa en $\displaystyle z \in \Omega  $ y 
 \[g'\left(z\right)=\int _{\Gamma}\frac{\partial\varphi}{\partial z}\left(\xi, z\right) \; d\xi .\]
 \end{theorem}
 \begin{proof}
-	Sea $\displaystyle z_{0} \in \Omega  $ y $\displaystyle r > 0 $ tal que $\displaystyle \overline{B}\left(z_{0}, r\right)\subset \Omega  $. Para $\displaystyle \left|h\right|<r $, considerando el segmento $\displaystyle S = \left[z_{0}, z_{0} + h\right] \subset \Omega  $ parametrizado por $\displaystyle S_{h}\left(t\right)=z_{0} + th $, $\displaystyle h \in \left[0,1\right]  $, y aplicando el teorema anterior tenemos que 
+	Sea $\displaystyle z_{0} \in \Omega  $ y $\displaystyle r > 0 $ tal que $\displaystyle \overline{B}\left(z_{0}, r\right)\subset \Omega  $. Para $\displaystyle \left|h\right|<r $, considerando el segmento $\displaystyle S = \left[z_{0}, z_{0} + h\right] \subset \Omega  $ parametrizado por $\displaystyle S_{h}\left(t\right)=z_{0} + th $, $\displaystyle t \in \left[0,1\right]  $, y aplicando el teorema anterior tenemos que 
 	\[\varphi\left(\xi, z_{0} + h\right)-\varphi\left(\xi, z_{0}\right)=\int _{S_{h}}\frac{\partial\varphi}{\partial z}\left(\xi, z\right) \; dz = \int^{1}_{0} \frac{\partial \varphi}{\partial z}\left(\xi, S_{h}\right)S'_{h}\left(t\right) \; dt = \int^{1}_{0} \frac{\partial\varphi}{\partial z}\left(\xi,z_{0}+th\right)h \; dt \]
 	para cada $\displaystyle \xi \in \Gamma $. Suponiendo que $\displaystyle \gamma : \left[a,b\right] \to \Omega  $ es una parametrización de $\displaystyle \Gamma $ tenemos que
 	\[
@@ -196,10 +196,105 @@ Tomamos
 Por construcción el denominador nunca se anula. En el dominio, la función $\displaystyle \varphi $ es continua y su derivada parcial es $\displaystyle \frac{\partial \varphi}{\partial z}=\frac{1}{\left(\xi-z\right)^{2}} $ que también es continua en el dominio. 
 Así, la función
 \[f\left(z\right):= \int _{ \left\{ \left|z-z_{0}\right|=r\right\} }\frac{1}{\xi-z} \; d\xi ,\]
-está bien definida y por el tema anterior es holomorfa en $\displaystyle D\left(z_{0}, r\right) $ con derivada
-\[f'\left(z\right)=\int _{ \left\{ \left|z-z_{0}\right|=r\right\} }\frac{\partial \varphi}{\partial z} \; d\xi = \int _{ \left\{ \left|z-z_{0}\right|=r\right\} }\frac{1}{ \left(\xi-z\right)^{2}} \; d\xi=0 .\]
-Puesto que $\displaystyle -\frac{1}{\xi-z} $ es una primitiva del integrando. Se sigue que $\displaystyle f $ es constante en $\displaystyle D\left(z_{0}, r\right) $. Por ende, $\displaystyle \forall z \in D\left(a_{0}, r\right) $,
+está bien definida y por el teorema anterior es holomorfa en $\displaystyle D\left(z_{0}, r\right) $ con derivada
+\[f'\left(z\right)=\int _{ \left\{ \left|z-z_{0}\right|=r\right\} }\frac{\partial \varphi}{\partial z} \; d\xi = \int _{ \left\{ \left|z-z_{0}\right|=r\right\} }\frac{1}{ \left(\xi-z\right)^{2}} \; d\xi .\]
+Esta integral es nula para cada $\displaystyle z \in D\left(z_{0}, r\right) $ puesto que es la integral en una curva cerrada de una función que es continua y tiene primitiva $\displaystyle -\frac{1}{\xi-z} $. Se sigue que $\displaystyle f $ es constante en $\displaystyle D\left(z_{0}, r\right) $, por ser este un abierto conexo. Por ende, $\displaystyle \forall z \in D\left(z_{0}, r\right) $,
 \[f\left(z\right)=f\left(z_{0}\right)=\int _{ \left\{ \left|z-z_{0}\right|=r\right\} }\frac{1}{\xi-z_{0}} \; d\xi =\int^{2\pi }_{0} \frac{rie^{it}}{re^{it}} \; dt = 2\pi i .\]
 Hemos usdo la parametrización $\displaystyle \gamma\left(t\right)=z_{0} + re^{it} $ con $\displaystyle t \in \left[0,2\pi \right]  $. 
+\end{proof}
+\section{Teorema de Cauchy-Goursat}
+\begin{theorem}[Teorema de Goursat]
+	Sean $\displaystyle \Omega \subset \C $ un abierto, $\displaystyle T \subset \Omega  $ el borde de un triángulo con su interior contenido en $\displaystyle \Omega  $. Sea $\displaystyle f \in \mathcal{H}\left(\Omega \backslash \left\{ p\right\} \right) $ con $\displaystyle p \in \Omega  $. Entonces, $\displaystyle \int _{T}f =0 $.
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle T = T_{0} $ el triángulo dado, con vértices $\displaystyle a,b,c \in \C $ y sea $\displaystyle \mathcal{T} = \mathcal{T}_{0} $ la unión de $\displaystyle T $ con la región interior a $\displaystyle T $ con borden $\displaystyle \partial \mathcal{T}=T $. Podemos suponer que $\displaystyle T $ está orientado positivamente y que sus lados se recorren en este orden: $\displaystyle \left[a,b\right]  $, $\displaystyle \left[b,c\right]  $, $\displaystyle \left[c,a\right]  $. Podemos distinguir varios casos:
+	\begin{description}
+		\item[Caso 1.] Supongamos que $\displaystyle p\not\in \mathcal{T} $. Uniendo los puntos medios de los lados $\displaystyle \left[a,b\right]  $, $\displaystyle \left[b,c\right]  $ y $\displaystyle \left[c,a\right]  $ obtenemos un triángulo que denotamos $\displaystyle T^{4}_{0} $ que divide $\displaystyle \mathcal{T}^{0}_{0} $ en cuatro subtriángulos sólidos $\displaystyle \mathcal{T}^{j}_{0} $ con bordes $\displaystyle T^{j}_{0} $ con $\displaystyle j = 1, \ldots, 4 $, cuyos perímetros son la mitad del perímetro del triángulo original $\displaystyle T $. 
+% añadir imagen
+Elijamos en los triángulos $\displaystyle T^{j}_{0} $ con $\displaystyle 1 \leq j \leq 3 $ las orientaciones inducidas por la orientación de $\displaystyle T $, y orientemos cada lado de $\displaystyle T^{4}_{0} $ de forma opuesta a la del mismo lado considerado como lado de $\displaystyle T^{j}_{0} $ para algún $\displaystyle j = 1, 2, 3 $ (equivalentemente, orientamos todos los triángulos $\displaystyle T^{j}_{0} $ de forma positiva). Entonces, tenemos que 
+\[\int _{T}f =\sum^{4}_{j=1}\int _{T^{j}_{0}}f  ,\]
+puesto que las integrales de la suma de la derecha se cancelan mutuamente en cada lado de $\displaystyle T^{4}_{0} $. Debe existir algún $\displaystyle j \in \left\{ 1, \ldots, 4\right\}  $ tal que 
+\[ \left|\int _{T_{0}^{j}}f \right|\geq \frac{1}{4} \left|\int _{T_{0}}f \right| .\]
+En caso contrario tendríamos que 
+\[ \left|\int _{T_{0}}f \right|= \left|\sum^{4}_{j=1}\int _{T_{0}^{j}}f \right|<\sum^{4}_{j=1}\frac{1}{4} \left|\int _{T_{0}}f \right|= \left|\int _{T_{0}}f \right| .\]
+Al $\displaystyle T^{j}_{0} $ que hemos elegido lo llamamos $\displaystyle T_{1} $, denotando por $\displaystyle \mathcal{T}_{1} $ la región interior a $\displaystyle T_{1} $ junto con el propio $\displaystyle T_{1} $. Repetimos el argumento anterior cambiando $\displaystyle T_{0} $ por $\displaystyle T_{1} $. Dividimos $\displaystyle \mathcal{T}_{1} $ en cuatro subtriángulos sólidos $\displaystyle \mathcal{T}^{j}_{1} $ con bordes $\displaystyle T^{j}_{1} $ con $\displaystyle j = 1, \ldots, 4 $, cuyos perímetros serán un cuerto del perímetro del triángulo original $\displaystyle T $. 
+Elegimos uno de los cuatro triángulos $\displaystyle T^{j}_{1} $ para el que se tenga 
+\[ \left|\int _{T^{j}_{1}}f \right|\geq \frac{1}{4} \left|\int _{T_{1}}f \right| .\]
+De esta forma, 
+\[ \left|\int _{T^{j}_{1}}f \right|\geq \frac{1}{4^{2}} \left|\int _{T}f \right| .\]
+Reiterando este proceso obtenemos por inducción una sucesión $\displaystyle \left\{ \mathcal{T}_{j}\right\} _{j \in \N} $ de triángulos sólidos con bordes $\displaystyle T_{j} $ tales que 
+\begin{enumerate}
+\item $\displaystyle \mathcal{T}_{j}\subset\mathcal{T}_{j-1} $, $\displaystyle \forall j \in \N $ con $\displaystyle \mathcal{T}_{0}=\mathcal{T} $. 
+\item $\displaystyle \left|\int _{T}f \right|\leq 4^{j} \left|\int _{T_{j}}f \right| $. 
+\item $\displaystyle 2^{j}\ell\left(T_{j}\right)=\ell\left(T\right) $. 
+\end{enumerate}
+En particular, como la longitud de un triángulo es mayor o igual que su diámetro, se tiene que $\displaystyle \left\{ \mathcal{T}_{j}\right\} _{j \in \N} $ es una familia de compactos en $\displaystyle \C \equiv \R^{2} $ cuyos diámetros tienden a cero, por lo que existe un único $\displaystyle z_{0} \in \C $ tal que 
+\[z_{0}\in \bigcap_{j \in \N}\mathcal{T}_{j} .\]
+Puesto que estamos suponiendo que $\displaystyle p \not\in \mathcal{T} $, la función $\displaystyle f $ es holomorfa en $\displaystyle z_{0} $ y por tanto, dado cualquier $\displaystyle \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \left|z-z_{0}\right|\leq \delta  $, entonces
+\[ \left|f\left(z\right)-f\left(z_{0}\right)-f'\left(z_{0}\right)\left(z-z_{0}\right)\right|\leq \epsilon \left|z-z_{0}\right| .\]
+Por otro lado, como $\displaystyle \lim_{j \to \infty}\ell\left(T_{j}\right)=0 $, existe $\displaystyle j_{0} \in \N $ tal que si $\displaystyle j \geq j_{0} $ entonces
+\[diam\left(T_{j}\right)\leq \ell\left(T_{j}\right)<\delta ,\]
+luego $\displaystyle \left|z-z_{0}\right|\leq \delta  $ para todo $\displaystyle z \in T_{j} $, de donde deducimos que para $\displaystyle j \geq j_{0} $, 
+\[
+\begin{split}
+	\left|\int _{T_{j}}f \right|= & \left|\int _{T_{j}}f\left(z\right)-f\left(z_{0}\right)-f'\left(z_{0}\right)\left(z-z_{0}\right) \; dz\right|\\
+	\leq& \epsilon \sup_{z\in T_{j}} \left|z-z_{0}\right| \ell\left(T_{j}\right) \leq \epsilon \ell\left(T_{j}\right)^{2}=\frac{\epsilon }{4^{j}}\ell\left(T\right)^{2},
+\end{split}
+\]
+donde en la primera igualdad hemos usado que 
+\[\int _{T_{j}}f\left(z_{0}\right)+f'\left(z_{0}\right)\left(z-z_{0}\right) \; dz = 0 ,\]
+por ser la integral en una curva cerrada de una función que tiene primitiva. En la segunda desigualdad hemos vuelto a usar que el diámetro de un triángulo es menor o igual que su perímetro, y en la última igualdad hemos utilizado la tercera propiedad de la sucesión de triángulos. Combinando la desigualdad anterior con la propiedad \textbf{(2)} de la sucesión de triángulos se obtiene que 
+\[ \frac{1}{4^{j}} \left|\int _{T}f \right|\leq \left|\int _{T_{j}}f \right|\leq \frac{\epsilon }{4^{j}}\ell\left(T\right)^{2} \Rightarrow \left|\int _{T}f \right|\leq \epsilon \ell\left(T\right)^{2} .\]
+Como es cierto para todo $\displaystyle \epsilon > 0 $ debe ser que $\displaystyle \int _{T}f =0 $. 
+\item[Caso 2.] Supongamos que $\displaystyle p \in \mathcal{T} $. Podemos distinguir tres casos. 
+	\begin{description}
+	\item[Caso 2.1.] Si $\displaystyle p $ es un vértice de $\displaystyle T $ podemos suponer sin pérdida de generalidad que $\displaystyle p = a $. Como $\displaystyle f $ es continua en $\displaystyle T $ compacto, existe $\displaystyle M > 0 $ tal que $\displaystyle \left|f\left(z\right)\right|\leq M $, $\displaystyle \forall z \in T $. 
+		Dado $\displaystyle \epsilon > 0 $, consideremos los puntos $\displaystyle x \in \left[a,b\right]  $ e $\displaystyle y \in \left[c,a\right]  $ tales que la longitud del triángulo $\displaystyle T_{1} $ de vértices $\displaystyle a,x,y $ sea menor que $\displaystyle \frac{\epsilon }{M} $. 
+		Denotamos por $\displaystyle T_{2} $ el triángulo de vértices $\displaystyle x,b,y $ y por $\displaystyle \mathcal{T}_{3} $ el de vértices $\displaystyle b,c,y $ con las orientaciones inducidas por la de $\displaystyle T $. Por lo demostrado en el \textbf{caso 1} tenemos que 
+		\[\int _{T_{2}}f =\int _{T_{3}}f =0 .\]
+		Por tanto, 
+		\[ \left|\int _{T}f \right|= \left|\sum^{3}_{j=1}\int _{T_{j}}f \right|= \left|\int _{T_{1}}f \right|\leq M \ell\left(T_{1}\right) \leq \epsilon  .\]
+		Como esto es cierto para todo $\displaystyle \epsilon > 0 $ debe ser que $\displaystyle \int _{T}f =0 $. 
+	\item[Caso 2.2.] Supongamos que $\displaystyle p $ está en un lado de $\displaystyle T $. Digamos por ejemplo que $\displaystyle p \in \left[a,b\right]  $. Sea $\displaystyle T_{1} $ el triángulo de vértices $\displaystyle a,p,c $ y $\displaystyle T_{2} $ el triángulo de vértices $\displaystyle p,b,c $. Usando el caso anterior tenemos que 
+		\[\int _{T}f =\int _{T_{1}}f +\int _{T_{2}}f = 0 + 0 = 0 .\]
+	\item[Caso 2.3.] Supongamos que $\displaystyle p $ está en el interior de $\displaystyle \mathcal{T} $. Definimos $\displaystyle T_{1} $ como el triángulo de vértices $\displaystyle a,p,c $; $\displaystyle T_{2} $ el de vértices $\displaystyle a,b,p $; y $\displaystyle T_{3} $ el de $\displaystyle b,c,p $. 
+		Usando el \textbf{caso 2.1} tenemos que 
+		\[\int _{T}f =\int _{T_{1}}f +\int _{T_{2}}f +\int _{T_{3}}f =0 + 0 + 0 = 0 .\]
+	\end{description}
+	\end{description}
+\end{proof}
+
+\begin{proof}
+Procedemos por inducción. Sea $\displaystyle T_{0} $ el borde del triángulo inicial con vértices $\displaystyle a,b,c \in \C $. Sea $\displaystyle S_{0} $ el triángulo sólido cuyo borde es $\displaystyle \partial S_{0} = T_{0} $. Distinguimos varios casos:
+\begin{itemize}
+	\item Supongamos que $\displaystyle p \not\in S_{0} $. Uniendo los puntos medios de los lados $\displaystyle \left[a,b\right]  $, $\displaystyle \left[b,c\right]  $ y $\displaystyle \left[c,a\right]  $ obtenemos un triángulo que denotamos $\displaystyle T_{0}^{4} $ que divide a su vez $\displaystyle T_{0} $ en cuatro subtriángulos sólidos $\displaystyle T^{j}_{0} $, cuyos perímetros son la mitad del perímetro del triángulo original $\displaystyle T_{0} $. Elegimos en los triángulos $\displaystyle T^{j}_{0} $ con $\displaystyle 1 \leq j \leq 3 $, las orientaciones inducidas por la orientación de $\displaystyle T_{0} $. Entonces, tenemos que
+		\[\int _{T}f =\int _{T_{0}}f =\sum^{4}_{j = 1}\int _{T^{j}_{0}}f .\]
+		Por el principio del palomar debe existir $\displaystyle j \in \left\{ 1, \ldots, 4\right\}  $ con 
+		\[ \left|\int _{T^{j}_{0}}f \right|\geq \frac{1}{4} \left|\int _{T}f \right| .\]
+	Si no fuese así tendríamos que 
+	\[ \left|\int _{T_{0}}f \right|= \left|\sum^{4}_{j = 1}\int _{T^{j}_{0}}f \right|<\sum^{4}_{j = 1}\frac{1}{4} \left|\int _{T_{0}}f \right| = \left|\int _{T_{0}}f \right| ,\]
+	que es una contradicción. Si cogemos ahora $\displaystyle T_{1} = T_{0}^{j} $ con el $\displaystyle j $ que hemos cogido antes y sea $\displaystyle S_{1}  $ el triángulo sólido tal que $\displaystyle \partial S_{1}= T_{1} $. Procediendo inductivamente, se obtiene una sucesión de triángulos sólidos $\displaystyle \left\{ S_{j}\right\} _{j \geq 0} $ con bordes $\displaystyle \partial S_{j}=\partial T_{j} $ que satisface las siguientes propiedades
+	\begin{itemize}
+	\item $\displaystyle \left|\int _{T_{j}}f \right| \geq \frac{1}{4^{j}} \left|\int _{T}f \right| $, $\displaystyle \forall j \geq 0 $. 
+	\item $\displaystyle S_{j + 1}\subset S_{j} $, $\displaystyle \forall j\geq 0 $. 
+	\item $\displaystyle \ell\left(T_{j}\right)=\frac{1}{2^{j}}\ell\left(T\right) $, $\displaystyle \forall j \geq 0 $. 
+	\end{itemize}
+	Además, $\displaystyle diam\left(T_{j}\right)\to 0 $ si $\displaystyle j \to \infty $. Por tanto, 
+	\[\bigcap_{j \geq 0}S_{j}= \left\{ z_{0}\right\}  ,\]
+	para algún $\displaystyle z_{0}\in \overline{B}\left(x_{0}, r\right) $ con $\displaystyle \overline{B}\left(x_{0}, r\right)\subset \Omega  $. Por construcción, 
+	\[diam\left(\bigcap_{j \geq 0}S_{j}\right)\leq diam S_{j} \xrightarrow{j \to \infty}0 .\]
+	Así, $\displaystyle diam \left(\bigcap_{j \geq 0}S_{j}\right) $ tiene a lo sumo un punto. Como $\displaystyle \bigcap_{ j \geq 0}S_{j} $ es una intersección de compactos encajados, tendremos que no es el vacío. Por ser $\displaystyle f \in \mathcal{H}\left(\Omega \backslash \left\{ p\right\} \right) $ entonces $\displaystyle f $ es holomorfa en $\displaystyle z_{0} \in S $ por lo que $\displaystyle z _{0}\neq p $. Para $\displaystyle \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \left|z-z_{0}\right|<\delta  $ entonces
+	\[ \left|f\left(z\right)-f\left(z_{0}\right)-f'\left(z_{0}\right)\left(z-z_{0}\right)\right|\leq \epsilon \left|z-z_{0}\right| .\]
+	Ahora, existe $\displaystyle j_{0} \in \N $ tal que $\displaystyle \ell\left(T_{j}\right)<\delta  $, entonces para $\displaystyle \left|z-z_{0}\right|<\delta  $, $\displaystyle \forall z \in T_{j} $, $\displaystyle \forall j \geq j_{0} $, entonces
+	\[ \left|\int _{T_{j}}f \right|= \left|\int _{T_{j}}f\left(z\right)-f\left(z_{0}\right)-f'\left(z_{0}\right)\left(z-z_{0}\right) \right|\leq \epsilon \sup_{z\in T_{j}} \left|z-z_{0}\right|\ell\left(T_{j}\right) \leq \epsilon \ell\left(T_{j}\right)\frac{\ell\left(T\right)}{2^{j}}\leq\frac{\epsilon }{4^{j}}\ell\left(T\right) .\]
+Por otro lado, 
+\[ \left|\int _{T}f \right| \leq 4^{j} \left|\int _{T_{j}}f \right| \leq \epsilon \ell\left(T\right) .\]
+Así, tendremos que $\displaystyle \int _{T}f =0 $. 
+\item Supongamos que $\displaystyle p \in S $. Distinguimos varios casos.
+	\begin{itemize}
+	\item Si $\displaystyle p $ es un vértice, podemos suponer sin pérdida de generalidad que $\displaystyle p = a $. 
+	\end{itemize}
+	
+\end{itemize}
 \end{proof}
 
