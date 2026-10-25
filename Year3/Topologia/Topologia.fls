@@ -530,6 +530,9 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/lmmi12.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT ./Chap5.tex
+INPUT ./Chap5.tex
+INPUT Chap5.tex
 INPUT Topologia.aux
 INPUT ./Topologia.out
 INPUT ./Topologia.out

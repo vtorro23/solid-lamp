@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1792424957.63306 "EqDiff.tex" "EqDiff.pdf" "EqDiff" 1792424962.0354 0
+["pdflatex"] 1792927097.17808 "EqDiff.tex" "EqDiff.pdf" "EqDiff" 1792927101.69177 0
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -292,15 +292,16 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724666679.39075 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724663362 8221413 960b330834a1409171e752813bd1b94b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Chap1.tex" 1792397175.55655 47517 b781db0e2004f0a91bdc1fbb1a57cd32 ""
+  "Chap1.tex" 1792483072.20377 47532 214a00ec147b5feba98955fec69e972e ""
   "Chap2.tex" 1791873001.31284 13525 bd566b8344d8cbf2ad33955f1faa5f62 ""
   "Chap3.tex" 1791643995.02816 16724 4f322ff9ad02ab31132ff3ecddc15c16 ""
-  "Chap4.tex" 1792424952.5164 23431 c8547facc2cb648dbcaebc9acd2bdbc4 ""
-  "EqDiff.aux" 1792424961.72408 17959 8cd2fd767087776f7c1b50b4d7a6fb14 "pdflatex"
-  "EqDiff.out" 1792424961.72764 3772 5580201594ccdee92e97adb4b8f8a60b "pdflatex"
-  "EqDiff.tex" 1791385540.99803 707 90341c45cb80d2d1f98837874734481d ""
-  "EqDiff.toc" 1792424961.7284 1515 157144f570848efd2df5301614008570 "pdflatex"
-  "preamble.tex" 1789251248.06128 9092 a9e1946d306b3efa11e64e411fb9e92e ""
+  "Chap4.tex" 1792927095.32363 26553 7983bee72dac780e073b844f3c3d7d5f ""
+  "Chap5.tex" 1792683820.37814 15644 a5fc02666860f3480e2a213305193ba1 ""
+  "EqDiff.aux" 1792927101.35171 20809 e8fe83b5942e9ea2101a4bfc0989cdcd "pdflatex"
+  "EqDiff.out" 1792927101.3555 4403 71a873935811ab2e57ecb3954518b3b4 "pdflatex"
+  "EqDiff.tex" 1792508637.87659 725 63ab91a658bfc2eae1673bd09540609d ""
+  "EqDiff.toc" 1792927101.35634 1734 bc4730f42f20f2af3e6d83cbc4dec70c "pdflatex"
+  "preamble.tex" 1792924730.79226 9113 d88679d34a7ad5fee97929a74b690635 ""
   (generated)
   "EqDiff.aux"
   "EqDiff.log"

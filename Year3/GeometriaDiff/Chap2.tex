@@ -645,4 +645,144 @@ s\left(0\right)=s_{0}
 .\]
 La demostración es la de EDOS que dice que el flujo $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ es $\displaystyle \mathcal{C}^{k} $ si $\displaystyle f  $ es $\displaystyle \mathcal{C}^{k} $. 
 \end{proof}
+\section{Orientabilidad}
+En $\displaystyle \R^{2} $ decimos que una base $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ es positiva si $\displaystyle \det\left(\vec{u},\vec{v}\right) > 0 $. En $\displaystyle \R^{3} $ decimos que una base $\displaystyle \left\{ \vec{u}, \vec{v}, \vec{w}\right\}  $ es positiva si $\displaystyle \det\left(\vec{u}, \vec{v}, \vec{w}\right)>0 $. \\
+
+Sea $\displaystyle \Pi\subset \R^{3} $ un plano. Para orientar $\displaystyle \Pi $ necesito fijar una base que declaro positiva, $\displaystyle \mathcal{B}_{\Pi}= \left\{ \vec{u}, \vec{v}\right\}  $. Dada otra base $\displaystyle \mathcal{B}'_{\Pi} = \left\{ \vec{u}', \vec{v}'\right\}  $, podemos encontrar una matriz de cambio de base
+\[M_{\mathcal{B}_{\Pi}\mathcal{B}'_{\Pi}} = \begin{pmatrix} a & b \\ c & d \end{pmatrix} .\]
+Diremos que 
+\begin{itemize}
+\item $\displaystyle \mathcal{B}_{\Pi}' $ es \textbf{positiva} si $\displaystyle \det\left(M_{\mathcal{B}_{\Pi}\mathcal{B}_{\Pi}'}\right) > 0 $.
+\item $\displaystyle \mathcal{B}_{\Pi}' $ es \textbf{negativa} si $\displaystyle \det\left(M_{\mathcal{B}_{\Pi}\mathcal{B}_{\Pi}'}\right) < 0 $.
+\end{itemize}
+Consideramos el conjunto $\displaystyle \mathcal{B}= \left\{ B \; : \; B \text{ base de } \Pi\right\}  $. Tenemos que  
+\[ B \sim B' \iff \det\left(M_{BB'}\right)>0 ,\]
+es una relación de equivalencia. En $\displaystyle \mathcal{B}/\sim $ hay dos clases de equivalencia. 
+\begin{definition}[Orientación de un plano]
+	Una \textbf{orientación} de $\displaystyle \Pi $ es una clase $\displaystyle \mathcal{O}_{\Pi }=\left[B_{\Pi}\right]  $ y decimos que $\displaystyle \left(\Pi, \left[B_{\Pi}\right] \right) $ es un \textbf{plano orientado}. 
+\end{definition}
+\begin{eg}
+Consideremos $\displaystyle \alpha\left(t\right)=\left(x\left(t\right), y\left(t\right), 0\right) $ curva plana. Tenemos que 
+\[\frac{\alpha'\times\alpha''}{\|\alpha'\|^{3}} = \pm\kappa_{\alpha }\vec{e}_{3} .\]
+De esta forma, $\displaystyle \hat{b}_{\alpha }=\pm\vec{e}_{3} $.
+\end{eg}
+\begin{prop}
+	Sea $\displaystyle S $ el plano orientado $\displaystyle \left(\Pi, \left[B_{\Pi}\right] \right) $. Entonces, existe un único $\displaystyle \vec{w} $ vector normal unitario tal que $\displaystyle \det\left(\vec{u}, \vec{v}, \vec{w}\right) > 0 $ para todo $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ base positiva. 
+\end{prop}
+\begin{proof}
+	Equivalentemente, $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ es base positiva de $\displaystyle \Pi $ si y sólo si $\displaystyle \left\{ \vec{u}, \vec{v}, \vec{w}\right\}  $ es base positiva de $\displaystyle \R^{2} $. Basta con tomar
+	\[\vec{w}=\frac{\vec{u} \times \vec{v}}{\|\vec{u} \times \vec{v}\|} .\]
+\end{proof}
+\begin{colorary}
+Si $\displaystyle \left(\Pi, \vec{w}\right) $ es un plano con un vector normal unitario, entonces existe una única orientación compatible. 
+\end{colorary}
+\begin{proof}
+	Sea $\displaystyle \left[B_{\Pi}\right] = \left\{ B = \left\{ \vec{u}, \vec{v}\right\} \; \text{base de }\Pi \text{ con } \det\left(\vec{u}, \vec{v}, \vec{w}\right) > 0\right\}  $. 
+\end{proof}
+\begin{observation}
+Alternativamente, una orientación de $\displaystyle \Pi  $ se puede definir como un vector normal unitario, $\displaystyle \left(\Pi, \vec{w}\right) $. 
+\end{observation}
+Sea $\displaystyle S\subset\R^{3} $ superficie regular conexa. 
+\begin{definition}[Orientación en $\displaystyle S $]
+Se llama \textbf{orientación} en $\displaystyle S $ a una elección 
+\[p \in S \to \mathcal{O}_{T_{p}S} ,\]
+que sea continua. Equivalentemente, $\displaystyle S \to \R^{3} : p \to N_{p} $ continua. 
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+\item $\displaystyle \mathcal{O}_{T_{p}S} $ es continua si para cada $\displaystyle p \in S $ existe $\displaystyle U\subset S $ entorno de $\displaystyle p $ y dos campos $\displaystyle X_{1} $, $\displaystyle X_{2} $ en $\displaystyle U $ tales que 
+	\[B_{p}=\left[ \left\{ X_{1}\left(p\right), X_{2}\left(p\right)\right\} \right] , \; \forall p \in U .\]	
+\end{enumerate}
+\end{observation}
+\begin{eg}
+\begin{enumerate}
+\item Si $\displaystyle S = \textbf{x} \left(U\right) $ superficie parametrizada inyectiva y regular, 
+	\[N\left(u,v\right)=\frac{ \textbf{x} _{u} \times \textbf{x} _{v}}{\| \textbf{x} _{u}\times \textbf{x} _{v}\|} ,\]
+	es una orientación. Basta con declarar $\displaystyle \mathcal{B}_{ \textbf{x} }=\left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ base positiva. 
+\item Sea $\displaystyle \textbf{y} \left(v,u\right)= \textbf{x} \left(u,v\right) $. De esta forma se puede cambiar la orientación. En efecto, 
+	\[N_{ \textbf{y} }= \frac{ \textbf{y} _{v} \times \textbf{y} _{u}}{ \| \textbf{y} _{v} \times \textbf{y} _{u}\|}=-\frac{ \textbf{x} _{u} \times \textbf{x} _{v}}{\| \textbf{x} _{u} \times \textbf{x} _{v}\|}=-N_{ \textbf{x} } .\]
+	\item Sea $\displaystyle \textbf{z} \left(u,v\right)= \textbf{x}\left(-u, v\right)  $, entonces es fácil comprobar que $\displaystyle N _{ \textbf{z} }=- N_{ \textbf{x} } $. 
+	\item Si $\displaystyle h\left(u,v\right)=\left(w,s\right) $ es una reparametrización.
+\end{enumerate}
+\end{eg}
+\begin{prop}
+$\displaystyle \det\left(Jh\right)>0 $ si y sólo si $\displaystyle B_{ \textbf{x} } $ y $\displaystyle B_{ \textbf{y} } $ si y sólo si $\displaystyle N_{ \textbf{x} }= N_{ \textbf{y} } $.  
+\end{prop}
+\begin{definition}[Reparametrizaciones]
+Se llaman reparametrización
+\begin{itemize}
+\item \textbf{positiva} si $\displaystyle \det\left(Jh\right)>0 $. 
+\item \textbf{negativa} si $\displaystyle \det\left(Jh\right)<0 $. 
+\end{itemize}
+\end{definition}
+\begin{observation}
+% 5
+	Sea $\displaystyle S = \left\{ F\left(x,y,z\right)=0\right\}  $ superficie regular en implícitas. Existe una orientación
+	\[N_{F}=\frac{\nabla F}{\|\nabla F\|} .\]
+	La otra orientación es $\displaystyle -F\left(x,y,z\right)=0 $.
+% 7 
+Visualmente podemos ver que una superficie es orientable si se pueden colorear sus caras.	
+\end{observation}
+\begin{definition}[Superficie orientable]
+Una superficie $\displaystyle S $ es \textbf{orientable} si admite una orientación. Una \textbf{superficie orientada} es $\displaystyle \left(S, \mathcal{O}\right) $, $\displaystyle \left(S, N\right) $.
+\end{definition}
+\begin{prop}
+	% 21/10/26
+Si $\displaystyle S $ es orientada y conexa, admite dos orientaciones. 
+\end{prop}
+Sea $\displaystyle S $ superficie regular orientada. 
+\begin{definition}
+	Si $\displaystyle \textbf{x} : U \to S' = \textbf{x} \left(U\right)\subset S $ es una parametrización. Se llama \textbf{positiva} o \textbf{negativa} si $\displaystyle \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ e positiva/negativa y $\displaystyle N_{ \textbf{x} }=N $ o $\displaystyle N_{ \textbf{x} }=-N $.
+\end{definition}
+\begin{lema}
+ Si $\displaystyle S $ es conexa, es orientable tiene dos orientaciones. 
+\end{lema}
+\begin{proof}
+Como $\displaystyle S $ es orientable existe
+\[N : S \to \mathbb{S}^{2}\subset \R^{3} : p \to N\left(p\right) ,\]
+con $\displaystyle \|N\left(p\right)\| = 1 $ y $\displaystyle N\left(p\right)\perp T_{p}S $. Tenemos que $\displaystyle \left(S,N\right) $ es una orientación con $\displaystyle N_{1}=N $ y $\displaystyle \left(S, -N\right) $ es otra orientación con $\displaystyle N_{2}=-N $. Tenemos que $\displaystyle N_{1}\neq N_{2} $, por lo que son orientaciones distintas. 
+Supongamos que existe otra orientación $\displaystyle N_{3} $. Tomamos los conjuntos 
+\[V_{1} = \left\{ p \in S \; : \; N_{3}\left(p\right) = N_{1}\left(p\right)\right\} \quad \text{y} \quad V_{2} = \left\{ p \in S \; : \; N_{3}\left(p\right)=N_{2}\left(p\right)\right\}  .\]
+Tenemos que $\displaystyle \forall p \in S $ 
+\[
+N_{3}\left(p\right)=
+\begin{cases}
+N_{1}\left(p\right) , \; p \in V_{1} \\
+-N_{1}\left(p\right)=N_{2}\left(p\right), \; p \in V_{2}
+\end{cases}
+.\]
+Tenemos que $\displaystyle S = V_{1} \cup V_{2} $, $\displaystyle \emptyset = V_{1} \cap V_{2} $, $\displaystyle V_{1} $ y $\displaystyle V_{2} $ son cerrados, $\displaystyle V_{1}= S-V_{2} $ y $\displaystyle V_{2}=S-V_{1} $ son abiertos. Como $\displaystyle S $ es conexo debe ser que $\displaystyle S = V_{1} $ o $\displaystyle S = V_{2} $. 
+\end{proof}
+\begin{observation}
+La esfera y el toro tienen dos orientaciones cada una, por lo que la unión tiene cuatro orientaciones posibles. 
+\end{observation}
+\begin{theorem}
+	$\displaystyle S $ es orientable si y sólo si tiene un atlas $\displaystyle \mathcal{A} = \left\{ \left(U_{i}, \textbf{x} _{i}\right)\right\}  $ con $\displaystyle h_{ij}= \textbf{x} _{j}^{-1}\circ \textbf{x} _{i} $, $\displaystyle \det\left(J \textbf{x} _{j}^{-1} \circ \textbf{x} _{i}\right)>0 $.
+\end{theorem}
+\begin{observation}
+El atlas $\displaystyle \mathcal{A} $ se va a llamar \textbf{atlas positivo} y a sus cartas se las llama \textbf{cartas positivas}.
+\end{observation}
+\begin{proof}
+Consideramos ambas implicaciones. 
+\begin{description}
+	\item[($\displaystyle \Rightarrow $)] Sea $\displaystyle S $ orientable. Sea $\displaystyle \left(S, \mathcal{O}\right) $ una orientación y sea $\displaystyle \mathcal{A}_{0}= \left\{ \left(V_{i}, \textbf{y} _{i}\right)\right\}  $ un atlas. Sea $\displaystyle S_{i} = \textbf{y} _{i}\left(U_{i}\right) $, de forma que $\displaystyle S = \bigcup_{i}S_{i} $. 
+		Si $\displaystyle \left(V_{i}, \textbf{y} _{i}\right) $ es positiba, cogemos $\displaystyle \left(U_{i}, \textbf{x} _{i}\right)=\left(V_{i}, \textbf{y} _{i}\right) $. Si $\displaystyle \left(V_{i}, \textbf{y} _{i}\right) $ es negativa, cogemos 
+		\[h\left(u,v\right)=\left(v,u\right), \; \det\left(Jh\right)=-1 .\]
+		Así, $\displaystyle \textbf{x} _{i}= \textbf{y} _{i} \circ h $ con $\displaystyle U_{i}=h^{-1}\left(V_{i}\right) $ es positiva. Así, tomamos $\displaystyle \mathcal{A} = \left\{ \left(U_{i}, \textbf{x} _{i}\right)\right\}  $ atlas de cartas positivas. Tenemos que $\displaystyle \forall i,j  $, $\displaystyle \textbf{x} _{j}^{-1}\circ \textbf{x} _{i}=h_{ij} $ y como $\displaystyle N_{ \textbf{x} _{i}}= N_{ \textbf{x} _{j}} $ se tiene que $\displaystyle \det\left(Jh_{ij}\right)>0 $.
+	\item[($\displaystyle \Leftarrow $)] Sea $\displaystyle \mathcal{A}= \left\{ \left(U_{i}, \textbf{x} _{i}\right)\right\}  $ un atlas con $\displaystyle \det\left(Jh_{ij}\right) > 0 $, $\displaystyle \forall i,j $. Tenemos que 
+		\[Jh_{ij}= M_{\mathcal{B}_{ \textbf{x} _{j}}\mathcal{B}_{ \textbf{x} _{i}}} .\]
+		Sea $\displaystyle N|_{S_{i}} = N_{ \textbf{x} _{i}} = \frac{ \textbf{x}_{i_{u}}  \times \textbf{x}_{i_{v}}}{\| \textbf{x} _{i_{u}} \times \textbf{x} _{i_{v}}\|} $. Definimos
+		\[N\left(p\right)=
+				N_{ \textbf{x} _{i}}\left(p\right), \; p \in S_{i}
+			.\]
+		Esta función está bien definida en $\displaystyle S $ y es continua. Así, $\displaystyle \left(S, N\right) $ es una orientación por lo que $\displaystyle S $ es orientable.
+\end{description}
+\end{proof}
+\begin{eg}[Banda de Möbius no es orientable]
+Consideramos 
+\[ \textbf{x} : \R \times \left(-\frac{1}{2}, \frac{1}{2}\right) \to \R^{3} : \left(\varphi, z\right)\to \left(\cos\varphi, \sin \varphi, z\right) .\]
+Claramente es orientable:
+\[ N = \frac{\nabla F}{\|\nabla F\|}=\left(x,y,0\right) .\]
+Ahora la banda de Möbius. 
+\end{eg}
 

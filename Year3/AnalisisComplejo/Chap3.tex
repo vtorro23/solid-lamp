@@ -225,8 +225,8 @@ De esta forma,
 Reiterando este proceso obtenemos por inducción una sucesión $\displaystyle \left\{ \mathcal{T}_{j}\right\} _{j \in \N} $ de triángulos sólidos con bordes $\displaystyle T_{j} $ tales que 
 \begin{enumerate}
 \item $\displaystyle \mathcal{T}_{j}\subset\mathcal{T}_{j-1} $, $\displaystyle \forall j \in \N $ con $\displaystyle \mathcal{T}_{0}=\mathcal{T} $. 
-\item $\displaystyle \left|\int _{T}f \right|\leq 4^{j} \left|\int _{T_{j}}f \right| $. 
-\item $\displaystyle 2^{j}\ell\left(T_{j}\right)=\ell\left(T\right) $. 
+\item $\displaystyle \left|\int _{T_{j}}f \right|\geq \frac{1}{4^{j}} \left|\int _{T}f \right| $. 
+\item $\displaystyle \ell\left(T_{j}\right)=\frac{1}{2^{j}}\ell\left(T\right) $.  
 \end{enumerate}
 En particular, como la longitud de un triángulo es mayor o igual que su diámetro, se tiene que $\displaystyle \left\{ \mathcal{T}_{j}\right\} _{j \in \N} $ es una familia de compactos en $\displaystyle \C \equiv \R^{2} $ cuyos diámetros tienden a cero, por lo que existe un único $\displaystyle z_{0} \in \C $ tal que 
 \[z_{0}\in \bigcap_{j \in \N}\mathcal{T}_{j} .\]
@@ -264,37 +264,302 @@ Como es cierto para todo $\displaystyle \epsilon > 0 $ debe ser que $\displaysty
 	\end{description}
 \end{proof}
 
+\begin{theorem}[Existencia de primitivas en abiertos convexos]
+	Sean $\displaystyle \Omega\subset \C $ abierto convexo, $\displaystyle p \in \Omega  $ y $\displaystyle f : \Omega \to \C $ continua tal que $\displaystyle f $ es holomorfa en $\displaystyle \Omega \backslash \left\{ p\right\}  $. Entonces existe $\displaystyle F : \Omega \to \C $ holomorfa tal que $\displaystyle F'=f $.
+\end{theorem}
 \begin{proof}
-Procedemos por inducción. Sea $\displaystyle T_{0} $ el borde del triángulo inicial con vértices $\displaystyle a,b,c \in \C $. Sea $\displaystyle S_{0} $ el triángulo sólido cuyo borde es $\displaystyle \partial S_{0} = T_{0} $. Distinguimos varios casos:
-\begin{itemize}
-	\item Supongamos que $\displaystyle p \not\in S_{0} $. Uniendo los puntos medios de los lados $\displaystyle \left[a,b\right]  $, $\displaystyle \left[b,c\right]  $ y $\displaystyle \left[c,a\right]  $ obtenemos un triángulo que denotamos $\displaystyle T_{0}^{4} $ que divide a su vez $\displaystyle T_{0} $ en cuatro subtriángulos sólidos $\displaystyle T^{j}_{0} $, cuyos perímetros son la mitad del perímetro del triángulo original $\displaystyle T_{0} $. Elegimos en los triángulos $\displaystyle T^{j}_{0} $ con $\displaystyle 1 \leq j \leq 3 $, las orientaciones inducidas por la orientación de $\displaystyle T_{0} $. Entonces, tenemos que
-		\[\int _{T}f =\int _{T_{0}}f =\sum^{4}_{j = 1}\int _{T^{j}_{0}}f .\]
-		Por el principio del palomar debe existir $\displaystyle j \in \left\{ 1, \ldots, 4\right\}  $ con 
-		\[ \left|\int _{T^{j}_{0}}f \right|\geq \frac{1}{4} \left|\int _{T}f \right| .\]
-	Si no fuese así tendríamos que 
-	\[ \left|\int _{T_{0}}f \right|= \left|\sum^{4}_{j = 1}\int _{T^{j}_{0}}f \right|<\sum^{4}_{j = 1}\frac{1}{4} \left|\int _{T_{0}}f \right| = \left|\int _{T_{0}}f \right| ,\]
-	que es una contradicción. Si cogemos ahora $\displaystyle T_{1} = T_{0}^{j} $ con el $\displaystyle j $ que hemos cogido antes y sea $\displaystyle S_{1}  $ el triángulo sólido tal que $\displaystyle \partial S_{1}= T_{1} $. Procediendo inductivamente, se obtiene una sucesión de triángulos sólidos $\displaystyle \left\{ S_{j}\right\} _{j \geq 0} $ con bordes $\displaystyle \partial S_{j}=\partial T_{j} $ que satisface las siguientes propiedades
-	\begin{itemize}
-	\item $\displaystyle \left|\int _{T_{j}}f \right| \geq \frac{1}{4^{j}} \left|\int _{T}f \right| $, $\displaystyle \forall j \geq 0 $. 
-	\item $\displaystyle S_{j + 1}\subset S_{j} $, $\displaystyle \forall j\geq 0 $. 
-	\item $\displaystyle \ell\left(T_{j}\right)=\frac{1}{2^{j}}\ell\left(T\right) $, $\displaystyle \forall j \geq 0 $. 
-	\end{itemize}
-	Además, $\displaystyle diam\left(T_{j}\right)\to 0 $ si $\displaystyle j \to \infty $. Por tanto, 
-	\[\bigcap_{j \geq 0}S_{j}= \left\{ z_{0}\right\}  ,\]
-	para algún $\displaystyle z_{0}\in \overline{B}\left(x_{0}, r\right) $ con $\displaystyle \overline{B}\left(x_{0}, r\right)\subset \Omega  $. Por construcción, 
-	\[diam\left(\bigcap_{j \geq 0}S_{j}\right)\leq diam S_{j} \xrightarrow{j \to \infty}0 .\]
-	Así, $\displaystyle diam \left(\bigcap_{j \geq 0}S_{j}\right) $ tiene a lo sumo un punto. Como $\displaystyle \bigcap_{ j \geq 0}S_{j} $ es una intersección de compactos encajados, tendremos que no es el vacío. Por ser $\displaystyle f \in \mathcal{H}\left(\Omega \backslash \left\{ p\right\} \right) $ entonces $\displaystyle f $ es holomorfa en $\displaystyle z_{0} \in S $ por lo que $\displaystyle z _{0}\neq p $. Para $\displaystyle \epsilon > 0 $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \left|z-z_{0}\right|<\delta  $ entonces
-	\[ \left|f\left(z\right)-f\left(z_{0}\right)-f'\left(z_{0}\right)\left(z-z_{0}\right)\right|\leq \epsilon \left|z-z_{0}\right| .\]
-	Ahora, existe $\displaystyle j_{0} \in \N $ tal que $\displaystyle \ell\left(T_{j}\right)<\delta  $, entonces para $\displaystyle \left|z-z_{0}\right|<\delta  $, $\displaystyle \forall z \in T_{j} $, $\displaystyle \forall j \geq j_{0} $, entonces
-	\[ \left|\int _{T_{j}}f \right|= \left|\int _{T_{j}}f\left(z\right)-f\left(z_{0}\right)-f'\left(z_{0}\right)\left(z-z_{0}\right) \right|\leq \epsilon \sup_{z\in T_{j}} \left|z-z_{0}\right|\ell\left(T_{j}\right) \leq \epsilon \ell\left(T_{j}\right)\frac{\ell\left(T\right)}{2^{j}}\leq\frac{\epsilon }{4^{j}}\ell\left(T\right) .\]
-Por otro lado, 
-\[ \left|\int _{T}f \right| \leq 4^{j} \left|\int _{T_{j}}f \right| \leq \epsilon \ell\left(T\right) .\]
-Así, tendremos que $\displaystyle \int _{T}f =0 $. 
-\item Supongamos que $\displaystyle p \in S $. Distinguimos varios casos.
-	\begin{itemize}
-	\item Si $\displaystyle p $ es un vértice, podemos suponer sin pérdida de generalidad que $\displaystyle p = a $. 
-	\end{itemize}
-	
-\end{itemize}
+Fijamos $\displaystyle z_{0}\in \Omega  $ y definimos la función
+\[F : \Omega \to \C : z \to \int _{\left[z_{0}, z\right] }f  ,\]
+donde $\displaystyle \left[z_{0}, z\right]  $ es el segmento que une $\displaystyle z_{0} $ con $\displaystyle z $, orientado en la dirección $\displaystyle z-z_{0} $. Además, este conjunto está contenido en $\displaystyle \Omega  $ por ser este convexo. Fijamos ahora $\displaystyle z \in \Omega  $ y tomamos $\displaystyle r > 0 $ tal que $\displaystyle D\left(z,r\right)\subset \Omega  $. Para cada $\displaystyle h \in \C $ con $\displaystyle \left|h\right|<r $ tenemos que, gracias a la convexidad de $\displaystyle \Omega  $, 
+el triángulo $\displaystyle T_{z,h} $ de vértices $\displaystyle z_{0}, z, z+h $, así como su región interio, está contenido en $\displaystyle \Omega  $. Por el teorema de Goursat tenemos que 
+\[\int _{T_{z,h}}f =0 .\]
+Equivalentemente, 
+\[\int _{\left[z_{0}, z\right] }f +\int _{\left[z, z+h\right] }f +\int _{\left[z+h, z_{0}\right] }f =0 \Rightarrow F\left(z + h\right)-F\left(z\right)=\int _{\left[z, z+h\right] }f\left(\xi\right) \; d\xi .\]
+Dado que $\displaystyle f\left(z\right)h=\int _{\left[z, z + h\right] }f\left(z\right) \; d\xi $, tenemos que 
+\[
+\begin{split}
+	\left|F\left(z + h\right)-F\left(z\right)-f\left(z\right)h\right| = & \left|\int _{\left[z, z+h\right] }f\left(\xi\right)-f\left(z\right) \; d\xi\right| \\
+	\leq & \sup_{\xi\in\left[z, z + h\right] } \left|f\left(\xi\right)-f\left(z\right)\right|\ell\left(\left[z , z + h\right] \right)\\
+	= & \sup_{\xi\in \left[z, z+ h\right] } \left|f\left(\xi\right)-f\left(z\right)\right| \left|h\right| = o\left(h\right).
+\end{split}
+\]
+Como $\displaystyle f $ es continua en $\displaystyle z $ tenemos que $\displaystyle \lim_{h \to 0}\sup_{\xi\in [z, z + h]} \left|f\left(\xi\right)-f\left(z\right)\right|=0 $. Esto prueba que existe $\displaystyle F'\left(z\right) $ igual a $\displaystyle f\left(z\right) $. 
 \end{proof}
+\begin{observation}
+	La demostración anterior funciona igual si se cambia la hipótesis de que $\displaystyle f $ sea holomorfa en $\displaystyle \Omega \backslash \left\{ p\right\}  $ por la de que $\displaystyle \int _{T}f =0 $ para cada triángulo $\displaystyle T $ contenido en $\displaystyle \Omega  $. 
+\end{observation}
+\begin{theorem}[Teorema integral de Cauchy, versión 1]
+	Sean $\displaystyle \Omega \subset \C $ abierto convexo, $\displaystyle p \in \Omega  $ y $\displaystyle f : \Omega \to \C $ continua tal que $\displaystyle f $ es holomorfa en $\displaystyle \Omega \backslash \left\{ p\right\}  $. Entonces, para toda curva cerrada $\displaystyle \Gamma $ en $\displaystyle \Omega  $ se tiene que 
+	\[\int _{\Gamma }f =0 .\]
+\end{theorem}
+\begin{proof}
+Por el teorema anterior, existe $\displaystyle F : \Omega \to \C $ holomorfa tal que $\displaystyle F'=f $ en $\displaystyle \Omega  $. Entonces, al ser $\displaystyle \Gamma $ una curva cerrada tendremos que $\displaystyle \int _{\Gamma}f =0 $.
+\end{proof}
+\section{Fórmula integral de Cauchy}
+\begin{theorem}[Fórmula integral de Cauchy]
+Sean $\displaystyle \Omega\subset \C $ un abierto y $\displaystyle f : \Omega \to \C $ holomorfa. Entonces, para cada disco cerrado $\displaystyle D $ contenido en $\displaystyle \Omega  $ se tiene que 
+\[f\left(z\right)=\frac{1}{2\pi i}\int _{\partial D}\frac{f\left(\xi\right)}{\xi-z} \; d\xi ,\]
+donde $\displaystyle \partial D $ está orientado positivamente, para todo $\displaystyle z \in \Int\left(D\right) $. 
+\end{theorem}
+\begin{proof}
+Cambiando $\displaystyle \Omega  $ por un disco abierto ligeramente mayor que $\displaystyle D $ contenido en $\displaystyle \Omega  $, podemos suponer sin pérdida de generalidad que $\displaystyle \Omega  $ es convexo. Fijamos $\displaystyle z \in \Int\left(D\right) $ y definimos
+\[g : \Omega \to \C : w \to 
+\begin{cases}
+\frac{f\left(w\right)-f\left(z\right)}{w-z}, \; \text{si} \; w \neq z \\
+f'\left(z\right), \; \text{si} \; w = z
+\end{cases}
+.\]
+Es sencillo ver que $\displaystyle g $ es continua en $\displaystyle \Omega  $ y holomorfa en $\displaystyle \Omega\backslash \left\{ z\right\}  $. Por el teorema anterior tenemos que 
+\[\int _{\partial D}g\left(w\right) \; dw = 0 \Rightarrow \int _{\partial D}\frac{f\left(w\right)-f\left(z\right)}{w-z} \; dw = 0 .\]
+De esta forma, 
+\[0 = \int _{\partial D}\frac{f\left(w\right)}{w-z} \; dw - f\left(z\right)\int _{\partial D}\frac{1}{w-z} \; dw = \int _{\partial D}\frac{f\left(w\right)}{w-z} \; dw -f\left(z\right)2\pi i.\]
+Despejando obtenemos la igualdad deseada.
+\end{proof}
+\begin{colorary}[Propiedad del valor medio]
+Si $\displaystyle f $ es holomorfa en un entorno abierto de $\displaystyle \overline{D}\left(z_{0}, r\right) $ entonces
+\[ f\left(z_{0}\right)=\frac{1}{2\pi }\int^{2\pi }_{0} f\left(z_{0} + re^{i\theta }\right) \; d\theta  .\]
+\end{colorary}
+\begin{proof}
+	Por el teorema anterior, tenemos que 
+	\[f\left(z_{0}\right)=\frac{1}{2\pi i}\int _{\partial D}\frac{f\left(\xi\right)}{\xi - z_{0}} \; d\xi .\]
+	Cogiendo la parametrización $\displaystyle \gamma\left(\theta \right)=z_{0} + re^{i\theta } $ para $\displaystyle \theta \in \left[0, 2\pi \right]  $, nos queda
+	\[
+		f\left(z_{0}\right)=  \frac{1}{2\pi i}\int _{\partial D} \frac{f\left(\xi\right)}{\xi-z_{0}}\; d\xi  = \frac{1}{2\pi i}\int^{2\pi }_{0} \frac{f\left(z_{0} + re^{i\theta }\right)}{z_{0}+re^{i\theta }-z_{0}}rie^{i\theta } \; d\theta = \frac{1}{2\pi }\int^{2\pi }_{0} f\left(z_{0}+re^{i\theta }\right) \; d\theta.
+	\]
+\end{proof}
+\begin{colorary}[Propiedad del valor medio de las funciones armónicas]
+Si $\displaystyle u $ es armónica en un entorno abierto de $\displaystyle \overline{D}\left(z_{0}, r\right) $ entonces
+\[u\left(z_{0}\right)=\frac{1}{2\pi }\int^{2\pi }_{0} u\left(z_{0}+re^{i\theta }\right) \; d\theta  .\]
+\end{colorary}
+\begin{theorem}[Fórmulas integrales de Cauchy para las derivadas]
+Sean $\displaystyle \Omega \subset \C $ un abierto y $\displaystyle f : \Omega \to \C $ holomorfa. Entonces su derivada $\displaystyle f' $ también es holomorfa y en particular continua. De hecho, $\displaystyle f $ tiene derivadas de todos los órdenes y si $\displaystyle D $ es un disco cerrado contenido en $\displaystyle \Omega  $, la derivada $\displaystyle n $-ésima de $\displaystyle f $ satisface
+\[f^{\left(n\right)}\left(z\right)=\frac{n!}{2\pi i}\int _{\partial D}\frac{f\left(\xi\right)}{\left(\xi-z\right)^{n+1}} \; d\xi ,\; \forall z \in \Int\left(D\right), \; \forall n \in \N \cup \left\{ 0\right\}. \]
+\end{theorem}
+\begin{proof}
+Lo demostramos por inducción. 
+\begin{itemize}
+\item Si $\displaystyle n = 0 $, el enunciado es cierto puesto que se reduce a la fórmula integral de Cauchy.
+\item Supongamos que la fórmula es válida para $\displaystyle n $, entonces aplicando el Teorema de derivación bajo el signo de la integral obtenemos 
+	\[
+	\begin{split}
+		f^{\left(n+1\right)}\left(z\right)=&\frac{d}{dz}f^{\left(n\right)}\left(z\right) =\frac{d}{dz}\left(\frac{n!}{2\pi i}\int _{\partial D}\frac{f\left(\xi\right)}{\left(\xi-z\right)^{n+1}} \; d\xi\right)=\frac{n!}{2\pi i}\int _{\partial D}\frac{d}{dz}\frac{f\left(\xi\right)}{\left(\xi-z\right)^{n+1}} \; d\xi \\
+		= & \frac{n!}{2\pi i}\int _{\partial D}\frac{\left(n+1\right)f\left(\xi\right)}{\left(\xi-z\right)^{n+2}} \; d\xi=\frac{\left(n+1\right)!}{2\pi i}\int _{\partial D}\frac{f\left(\xi\right)}{\left(\xi-z\right)^{n+2}} \; d\xi.
+	\end{split}
+	\]
+\end{itemize}
+Así, por el principio de inducción el enunciado y la fórmula son válidos para cualquier $\displaystyle n \in \N \cup \left\{ 0\right\}  $.
+\end{proof}
+\begin{colorary}[Desigualdades de Cauchy]
+Si $\displaystyle f $ es holomorfa en un abierto de $\displaystyle \C $ que contiene un disco cerrado $\displaystyle D = \overline{D}\left(z_{0}, R\right) $, entonces
+\[ \left|f^{\left(n\right)}\left(z_{0}\right)\right| \leq \frac{n!}{R^{n}}\sup_{z \in \partial D} \left|f\left(z\right)\right| , \; \forall n \in \N\]
+\end{colorary}
+\begin{proof}
+Aplicando el teorema anterior,
+\[
+\begin{split}
+	\left|f^{\left(n\right)}\left(z_{0}\right)\right| = & \left|\frac{n!}{2\pi i}\int _{\partial D}\frac{f\left(\xi\right)}{\left(\xi-z_{0}\right)^{n+1}} \; d\xi\right|=\frac{n!}{2\pi } \left|\int^{2\pi }_{0} \frac{f\left(z_{0}+Re^{it}\right)Rie^{it}}{\left(z_{0}+Re^{it}-z_{0}\right)^{n+1}} \; dt\right| \\
+	\leq & \frac{n!}{2\pi }\int^{2\pi }_{0}  \left|\frac{f\left(z_{0} + Re^{it}\right)Rie^{it}}{\left(Re^{it}\right)^{n+1}}\right| \; dt = \frac{n!}{2\pi }\int^{2\pi }_{0} \frac{ \left|f\left(z_{0} + Re^{it}\right)\right|R}{R^{n+1}} \; dt 
+	\leq \frac{n!}{R^{n}}\sup_{z \in \partial D} \left|f\left(z\right)\right|.
+\end{split}
+\]
+\end{proof}
+\begin{observation}
+Se deduce inmediatamente de este corolario, aplicando el criterio de la raíz, que la serie
+\[\sum^{\infty}_{n = 0}\frac{f^{\left(n\right)}\left(z_{0}\right)}{n!}\left(z-z_{0}\right)^{n} ,\]
+tiene radio de convergencia mayor o igual que el radio de cualquier disco cerrado centrado en $\displaystyle z_{0} $. 
+\end{observation}
+\begin{theorem}[Analiticidad de las funciones holomorfas]
+Sean $\displaystyle \Omega \subset \C $ abierto y $\displaystyle f : \Omega \to \C $ holomorfa. Entonces, para cada disco cerrado $\displaystyle D = \overline{D}\left(z_{0}, R\right) $ contenido en $\displaystyle \Omega  $, la función $\displaystyle f $ tiene una expansión en serie de potencias centrada en $\displaystyle z_{0} $,
+\[f\left(z\right)=\sum^{\infty}_{n = 0}\frac{f^{\left(n\right)}\left(z_{0}\right)}{n!}\left(z-z_{0}\right)^{n} ,\]
+que converge uniformemente a $\displaystyle f\left(z\right) $ en $\displaystyle z \in D $. 
+\end{theorem}
+\begin{proof}
+Fijamos $\displaystyle z \in \Int\left(D\right) $. Para cada $\displaystyle \xi \in \partial D $ se tiene que 
+\[ \left|\frac{z -z_{0}}{\xi -z_{0}}\right| = \frac{ \left|z-z_{0}\right|}{R} < 1 ,\]
+por lo que podemos usar el criterio $\displaystyle M $ de Weierstrass obteniendo, 
+\[\sum^{\infty}_{n = 0}\left(\frac{z-z_{0}}{\xi-z_{0}}\right)^{n}=\frac{1}{1-\left(\frac{z-z_{0}}{\xi-z_{0}}\right)} ,\]
+converge uniformemente en $\displaystyle \xi \in \partial D $. Esto implica que 
+\[\frac{1}{\xi -z}=\frac{1}{\xi-z_{0}-\left(z-z_{0}\right)} = \frac{1}{\xi-z_{0}}\frac{1}{1-\left(\frac{z-z_{0}}{\xi-z_{0}}\right)}=\frac{1}{\xi-z_{0}}\sum^{\infty}_{n = 0}\left(\frac{z-z_{0}}{\xi-z_{0}}\right)^{n}=\sum^{\infty }_{n=0}\frac{\left(z-z_{0}\right)^{n}}{\left(\xi-z_{0}\right)^{n+1}} ,\]
+uniformemente en $\displaystyle \xi \in \partial D $. Por tanto, usando las integrales de Cauchy obtenemos 
+\[
+\begin{split}
+	f\left(z\right)= & \frac{1}{2\pi i}\int _{\partial D}\frac{f\left(\xi\right)}{\xi-z} \; d\xi = \frac{1}{2\pi i}\int _{\partial D}f\left(\xi\right)\left(\sum^{\infty}_{n=0}\frac{\left(z-z_{0}\right)^{n}}{\left(\xi-z_{0}\right)^{n+1}}\right) \; d\xi 
+	= \sum^{\infty}_{n=0}\left(\int _{\partial D}\frac{f\left(\xi\right)\left(z-z_{0}\right)^{n}}{\left(\xi-z_{0}\right)^{n+1}} \; d\xi\right) \\
+	= & \sum^{\infty}_{n = 0}\left(\int _{\partial D}\frac{f\left(\xi\right)}{\left(\xi-z_{0}\right)^{n+1}} \; d\xi\right)\left(z-z_{0}\right)^{n}=\sum^{\infty}_{n=0}\frac{f^{\left(n\right)}\left(z_{0}\right)}{n!}\left(z-z_{0}\right)^{n},
+\end{split}
+\]
+donde el intercambio de suma infinita e integral se justifica gracias a la convergencia uniforme de la suma en $\displaystyle \xi \in \partial D $. Esto prueba que la serie 
+\[\sum^{\infty}_{n=0}\frac{f^{\left(n\right)}\left(z_{0}\right)}{n!}\left(z-z_{0}\right)^{n} ,\]
+converge a $\displaystyle f\left(z\right) $ para cada $\displaystyle z \in \Int\left(D\right) $. Como el mismo argumento vale cambiando $\displaystyle \overline{D}\left(z_{0}, R\right) $ por $\displaystyle \overline{D}\left(z_{0}, R + \epsilon \right) $ para algún $\displaystyle \epsilon > 0 $ suficientemente pequeño tal que $\displaystyle \overline{D}\left(z_{0}, R + \epsilon \right) $ siga estando contenido en $\displaystyle \Omega  $, es obvio que la serie también converge a $\displaystyle f\left(z\right) $ para $\displaystyle z \in \partial D $. 
+Finalmente, para dicho $\displaystyle \epsilon  $, de las desigualdades de Cauchy se deduce que 
+\[ \left|\frac{f^{\left(n\right)}\left(z_{0}\right)}{n!}\right|^{\frac{1}{n}}\leq \frac{C^{\frac{1}{n}}}{\left(R+\epsilon \right)} ,\]
+donde $\displaystyle C = \sup_{z \in \partial D\left(z_{0}, R + \epsilon \right)} \left|f\left(z\right)\right| $ puede suponerse positivo, luego
+\[\frac{1}{\lim_{n \to \infty}\sup \left|\frac{f^{\left(n\right)}\left(z_{0}\right)}{n!}\right|^{\frac{1}{n}}}\geq \lim_{n \to \infty }\frac{R + \epsilon }{C^{\frac{1}{n}}} = R + \epsilon  .\]
+Por la fórmula de Hadamard se deduce que la serie de potencias 
+\[\sum^{\infty}_{n = 0}\frac{f^{\left(n\right)}\left(z_{0}\right)}{n!}\left(z-z_{0}\right)^{n} ,\]
+tiene radio de convergencia mayor o igual que $\displaystyle R + \epsilon  $, y en particular converge uniformemente en el disco cerrrado $\displaystyle \overline{D}\left(z_{0}, R\right) $. 
+\end{proof}
+\begin{colorary}
+El radio de convergencia de la serie de potencias centrada en $\displaystyle z_{0} $, 
+\[\sum^{\infty}_{ n=0}\frac{f^{\left(n\right)}\left(z_{0}\right)}{n!}\left(z-z_{0}\right)^{n} ,\]
+de una función holomorfa $\displaystyle f $ en un abierto $\displaystyle \Omega \subset \C $ es mayor o igual que 
+\[\sup \left\{ r > 0 \; : \; D\left(z_{0}, r\right)\subset \Omega \right\} ,\]
+es decir, mayor o igual que el radio del mayor disco abierto de centro $\displaystyle z_{0} $ que esté contenido en $\displaystyle \Omega  $.
+\end{colorary}
+\begin{observation}
+Si $\displaystyle f : \C \to \C $ es holomorfa entonces para todo $\displaystyle z \in \C $ es
+\[f\left(z\right)=\sum^{\infty}_{n=0}\frac{f^{\left(n\right)}\left(0\right)}{n!}z^{n} ,\]
+la serie de potencias tiene radio de convergencia infinito. 
+\end{observation}
+\begin{eg}
+La observación anterior se puede usar para deducir que las siguientes igualdades se cumplen uniformemente en todo $\displaystyle \C $, 
+\[e^{z}=\sum^{\infty}_{n = 0}\frac{1}{n!}z^{n}, \quad \sin z = \sum^{\infty}_{n = 0}\frac{\left(-1\right)^{n}}{\left(2n+1\right)!}z^{2n+1}, \quad \cos z = \sum^{\infty }_{n = 0}\frac{\left(-1\right)^{n}}{\left(2n\right)!}z^{2n} .\]
+\end{eg}
+\begin{colorary}
+Sean $\displaystyle f,g : \Omega \to \C $ holomorfas, donde $\displaystyle \Omega \subset \C $ es abierto conexo. Supongamos que para algún $\displaystyle z_{0} \in \Omega  $ se tiene que $\displaystyle f\left(z_{0}\right)=g\left(z_{0}\right) $ y que $\displaystyle f^{\left(n\right)}\left(z_{0}\right)=g^{\left(n\right)}\left(z_{0}\right) $ para todo $\displaystyle n\in \N $. Entonces, $\displaystyle f = g $ en $\displaystyle \Omega  $. 
+\end{colorary}
+\begin{proof}
+Considerando la diferencia $\displaystyle f - g $ basta probar el resultado en el caso especial en que $\displaystyle g = 0 $. Consideremos $\displaystyle U \subset \Omega  $ definido por
+\[U = \left\{ z \in \Omega \; : \; f\left(z\right) = 0 \; \text{y} \; f^{\left(n\right)}\left(z\right)=0, \; \forall n \in \N\right\}  .\]
+Por hipótesis $\displaystyle z_{0}\in U $ por lo que $\displaystyle U \neq \emptyset $. Puesto que $\displaystyle f $ y sus derivadas son continuas, es claro que $\displaystyle U $ es un cerrado relativo en $\displaystyle \Omega  $. Por otro lado, si $\displaystyle w_{0}\in U $, entonces $\displaystyle f\left(w_{0}\right)=f^{\left(n\right)}\left(w_{0}\right)=0 $ para todo $\displaystyle n \in \N $, y aplicando el teorema anterior tenemos que
+\[f\left(z\right)=\sum^{\infty}_{n = 0}\frac{f^{\left(n\right)}\left(w_{0}\right)}{n!}\left(z-w_{0}\right)^{n} = 0 ,\; \forall z \in D\left(w_{0}, r\right)\subset \Omega .\]
+Se deduce entonces que $\displaystyle f\left(z\right)=f^{\left(n\right)}\left(z\right)=0 $ para todo $\displaystyle z $ en dicho disco y todo $\displaystyle n \in \N $, luego $\displaystyle D\left(w_{0}, r\right)\subset U $. Esto prueba que $\displaystyle U $ es abierto. Como $\displaystyle U $ es abierto no vacío y cerrado relativo a $\displaystyle \Omega  $, que es conexo, debe ser que $\displaystyle U = \Omega  $ por lo que $\displaystyle f = 0 $ en $\displaystyle \Omega  $. 
+\end{proof}
+\section{Más consecuencias}
+\begin{theorem}[Teorema de identidad]
+Sea $\displaystyle \Omega \subset \C $ un abierto conexo y $\displaystyle f,g : \Omega \to \C $ holomorfas. Supongamos que existe $\displaystyle E \subset \Omega  $ que tiene algún punto de acumulación dentro de $\displaystyle \Omega  $ y tal que $\displaystyle f = g $ en $\displaystyle E $. Entonces $\displaystyle f = g $ en todo $\displaystyle \Omega  $.
+\end{theorem}
+\begin{proof}
+	Cambiando $\displaystyle f $ por $\displaystyle f-g $ podemos suponer $\displaystyle g = 0 $. También podemos suponer que $\displaystyle E $ es una sucesión $\displaystyle \left\{ z_{n}\right\} _{n\in\N } $ que converge a un punto $\displaystyle z_{0}\in \Omega  $, y tal que $\displaystyle f\left(z_{n}\right)=0 $ y $\displaystyle z_{n} \neq z_{0} $, $\displaystyle \forall n \in \N $. 
+	Como $\displaystyle f $ es holomorfa en $\displaystyle \Omega  $, si tomamos $\displaystyle R > 0 $ tal que $\displaystyle \overline{D}\left(z_{0}, R\right)\subset \Omega  $, sabemos que 
+	\[f\left(z\right)=\sum^{\infty}_{n = 0}a_{n}\left(z-z_{0}\right)^{n}, \; \forall z \in D\left(z_{0}, R\right) ,\]
+	donde $\displaystyle a_{n}=\frac{f^{\left(n\right)}\left(z_{0}\right)}{n!} $, para cada $\displaystyle n \in \N \cup \left\{ 0\right\}  $. Afirmamos que $\displaystyle f\left(z\right)=0 $ para todo $\displaystyle z\in D\left(z_{0}, R\right) $. En efecto, supongamos que $\displaystyle f $ no fuera idénticamente nula en este disco. 
+	Entonces eixste algún $\displaystyle n \in \N $ tal que $\displaystyle a_{n} \neq 0 $. Llamemos $\displaystyle m $ al primero de esos números naturales. Entonces,
+	\[f\left(z\right)=\sum^{\infty}_{n = m}a_{n}\left(z-z_{0}\right)^{n}=\left(z-z_{0}\right)^{m}\sum^{\infty}_{k = 0}b_{k}\left(z-z_{0}\right)^{k}=\left(z-z_{0}\right)^{m}g\left(z\right) ,\]
+	donde $\displaystyle b_{j}=a_{m + j} $ para cada $\displaystyle j \in \N \cup \left\{ 0\right\}  $, y $\displaystyle g\left(z\right)=\sum^{\infty}_{ k = 0}b_{k}\left(z-z_{0}\right)^{k} $. 
+	Puesto que $\displaystyle b_{0}=a_{m}\neq 0 $, por continuidad de $\displaystyle g $ existiría $\displaystyle r > 0 $ tal que $\displaystyle g\left(z\right)\neq 0 $, $\displaystyle \forall z \in D\left(z_{0}, r\right) $. Pero entonces
+	\[f\left(z\right)=\left(z-z_{0}\right)^{n}g\left(z\right)\neq 0, \; \forall z \in D\left(z_{0}, r\right) \backslash \left\{ z_{0}\right\}  .\]
+	Esto contradice que $\displaystyle f\left(z_{n}\right)=0 $ y $\displaystyle z_{n} \neq z_{0} $ para todo $\displaystyle n $, con $\displaystyle \lim_{n \to \infty}z_{n}=z_{0} $. Por tanto, debe ser que $\displaystyle f \equiv 0 $ en $\displaystyle D\left(z_{0}, R\right) $, y como este conjunto es abierto se deduce que todas las derivadas de $\displaystyle f $ se anulan en $\displaystyle z_{0} $, y por supuesto también $\displaystyle f\left(z_{0}\right)=0 $. Un corolario anterior nos dice que $\displaystyle f \equiv 0 $ en todo el abierto conexo $\displaystyle \Omega  $.
+\end{proof}
+\begin{colorary}[Principio de permanencia de las ecuaciones funcionales]
+Sean $\displaystyle \Omega\subset \C $ abierto conexo, $\displaystyle E \subset \Omega  $ con algún punto de acumulación dentro de $\displaystyle \Omega  $, y $\displaystyle F : \Omega \times \Omega \to \C $ tal que las funciones $\displaystyle z \in \Omega \to F\left(z,w\right) $ y $\displaystyle w \in \Omega \to F\left(z,w\right) $ son holomorfas para cada $\displaystyle w \in \Omega  $ y cada $\displaystyle z \in \Omega  $, respectivamente. 
+Supongamos que $\displaystyle F\left(z,w\right)=0 $ para todos los $\displaystyle z,w\in E $. Entonces $\displaystyle F\left(z,w\right)=0 $ para todos los $\displaystyle z,w\in \Omega  $.
+\end{colorary}
+\begin{proof}
+Fijemos en primer lugar $\displaystyle z_{0} \in E $. Como $\displaystyle w \to F\left(z_{0}, w\right) $ es holomorfa y se anula en $\displaystyle E $, por el teorema anterior tenemos que $\displaystyle F\left(z_{0}, w\right)=0 $, $\displaystyle \forall w \in \Omega  $. Fijemos ahora $\displaystyle w \in \Omega  $. Sabemos que $\displaystyle F\left(z_{0}, w\right)=0 $, donde $\displaystyle z_{0} \in E $ es arbitrario. 
+Es decir, sabemos que $\displaystyle z \to F\left(z,w\right) $ se anula en $\displaystyle E $ y es holomorfa. Por el teorema anterior deducimos que $\displaystyle F\left(z,w\right)=0 $ para todo $\displaystyle z \in \Omega  $. Y como $\displaystyle w \in \Omega  $ es arbitrario, se concluye que $\displaystyle F\left(z,w\right)=0 $, $\displaystyle \forall z,w \in \Omega $. 
+\end{proof}
+\begin{eg}
+Utilizando el teorema anterior se deduce inmediatamente la validez de las igualdades
+\[\sin\left(z + w\right)=\sin z \cos w + \cos z \sin w , \quad \cos\left(z + w\right)=\cos z \cos w - \sin z \sin w, \quad \cos ^{2}z + \sin ^{2}z = 1 , \; \forall z,w\in \C,\]
+a partir de las correspondientes igualdades para números reales.
+\end{eg}
+\begin{theorem}[Teorema de Liouville]
+Si $\displaystyle f : \C \to \C $ es holomorfa y acotada entonces $\displaystyle f $ es constante. 
+\end{theorem}
+\begin{proof}
+Puesto que $\displaystyle \C $ es abierto y conexo, basta probar que $\displaystyle f' = 0 $. Esto es consecuencia de las desigualdades de Cauchy: para $\displaystyle z_{0}\in \C $ y $\displaystyle R > 0 $ talesquiera, sabemos que
+\[ \left|f^{\left(n\right)}\left(z_{0}\right)\right|\leq \frac{n!}{R^{n}}\sup_{z\in \partial D\left(z_{0}, R\right)} \left|f\left(z\right)\right| .\]
+En particular, para $\displaystyle n = 1 $, usando que $\displaystyle f $ está acotada en $\displaystyle \C $, tenemos 
+\[ \left|f'\left(z_{0}\right)\right|\leq \frac{\|f\|_{\infty }}{R} ,\]
+y haciendo $\displaystyle R \to \infty $ obtenemos que $\displaystyle f'\left(z_{0}\right)=0 $.
+\end{proof}
+\begin{colorary}[Teorema fundamental del álgebra]
+Todo polinomio $\displaystyle P : \C \to \C  $ con coeficientes complejos y de grado $\displaystyle n \in \N $ tiene exactamente $\displaystyle n $ raíces (posiblemente repetidas, contadas con su multiplicidad).
+\end{colorary}
+\begin{proof}
+Supongamos que $\displaystyle P $ no tenga ninguna raíz en $\displaystyle \C $. Entonces
+\[f\left(z\right)=\frac{1}{P\left(z\right)}, \; z \in \C ,\]
+está bien definida y es holomorfa en $\displaystyle \C $. Es inmediato comprobar que 
+\[\lim_{ \left|z\right| \to \infty }f\left(z\right)=0, \]
+y junto con la continuidad de $\displaystyle f $ esto implica que $\displaystyle f $ está acotada en $\displaystyle \C $. Pero entonces, por el teorema anterior, $\displaystyle f $ es constante, por lo que $\displaystyle P $ también lo es y esto contradice que $\displaystyle P $ sea de grado mayor o igual que uno. 
+Por tanto, $\displaystyle P $ tiene al menos una raíz, llamémosla $\displaystyle z_{1} $. Entonces $\displaystyle P $ se puede factorizar en la forma $\displaystyle P\left(z\right)=\left(z-z_{1}\right)Q_{1}\left(z\right) $, donde $\displaystyle Q_{1} $ es un polinomio de grado $\displaystyle n-1 $. 
+Si $\displaystyle n = 1 $ hemos acabado. En caso contrario, aplicamos el argumento anterior para obtener $\displaystyle z_{2}\in \C $ tal que $\displaystyle Q_{1}\left(z_{2}\right)=0 $. En particular, $\displaystyle Q_{1}\left(z\right)=\left(z-z_{2}\right)Q_{2}\left(z\right) $, con $\displaystyle Q_{2} $ es un polinomio de grado $\displaystyle n-2 $. Así,
+\[P\left(z\right)=\left(z-z_{1}\right)\left(z-z_{2}\right)Q_{2}\left(z\right) .\]
+Reiterando $\displaystyle n-2 $ veces llegamos a que
+\[P\left(z\right)=\left(z-z_{1}\right) \cdots \left(z-z_{n}\right)Q_{n} ,\]
+donde $\displaystyle Q_{n} $ es una constante. 
+\end{proof}
+\begin{theorem}[Teorema de Morera]
+Sean $\displaystyle \Omega\subset\C $ abierto y $\displaystyle f : \Omega \to \C $ continua. Supongamos que 
+\[\int _{T}f =0 ,\]
+para todo triángulo $\displaystyle T $ contenido en $\displaystyle \Omega  $ cuya región interior también está contenida en $\displaystyle \Omega  $. Entonces, $\displaystyle f $ es holomorfa en $\displaystyle \Omega  $.
+\end{theorem}
+\begin{proof}
+Supongamos primero que $\displaystyle \Omega  $ es convexo. Entonces tendremos que existe $\displaystyle F : \Omega \to \C $ holomorfa tal que $\displaystyle F' = f $, y como todas las funciones holomorfas tienen derivadas holomorfas debe ser que $\displaystyle f $ es holomorfa. \\
+\indent Supongamos ahora que $\displaystyle \Omega  $ no es convexo. Para $\displaystyle z_{0}\in \Omega  $ consideramos un disco abierto $\displaystyle D\left(z_{0}, r\right)\subset \Omega  $. Como este disco es convexo, el argumento anterior prueba que $\displaystyle f $ es holomorfa en $\displaystyle D\left(z_{0}, r\right) $. Repitiendo el mismo argumento para cada punto tenemos que $\displaystyle f $ es holomorfa en $\displaystyle \Omega  $. 
+\end{proof}
+\begin{theorem}
+	Sean $\displaystyle \left\{ f_{n}\right\} _{n\in\N} $ una sucesión de funciones holomorfas en un abierto $\displaystyle \Omega \subset \C $, $\displaystyle f : \Omega \to \C $ una función y supongamos que $\displaystyle f_{n} \to f $ uniformemente en cada subconjunto compacto de $\displaystyle \Omega  $. Entonces, $\displaystyle f $ es holomorfa. 
+\end{theorem}
+\begin{proof}
+Observemos primero que $\displaystyle f $ es continua en $\displaystyle \Omega  $ por ser límite uniforme de funciones continuas en cada subconjunto compacto de $\displaystyle \Omega  $, y en particular en cada disco cerrado contenido en $\displaystyle \Omega  $. Sea $\displaystyle D $ un disco abierto contenido en $\displaystyle \Omega  $ y sea $\displaystyle T $ un triángulo cualquiera contenido en $\displaystyle D $. Como $\displaystyle f_{n} $ es holomorfa en el abierto convexo $\displaystyle D $, por el teorema de Cauchy sabemos que 
+\[\int _{T}f_{n} , \; \forall n \in \N .\]
+Entonces, dado $\displaystyle T $ uno cualquiera de estos triángulos, como $\displaystyle \lim_{n \to \infty }f_{n}\left(z\right)=f\left(z\right) $ uniformemente en $\displaystyle z\in T $ se tiene que 
+\[\int _{T}f =\int _{T}\lim_{n \to \infty}f_{n} =\lim_{n \to \infty}\int _{T}f_{n} =0 .\]
+Por el teorema de Morera tenemos que $\displaystyle f $ es holomorfa en $\displaystyle D $ y como $\displaystyle D $ es arbitrario podemos deducir que $\displaystyle f $ es holomorfa en $\displaystyle \Omega  $. 
+\end{proof}
+\begin{theorem}
+	Con las mismas hipótesis del teorema anterior, se tiene también que la sucesión de derivadas $\displaystyle \left\{ f'_{n}\right\} _{n\in\N} $ converge a $\displaystyle f' $ uniformemente en cada subconjunto compacto de $\displaystyle \Omega  $. En general, para cualquier $\displaystyle j \in \N $ y cualquier compacto $\displaystyle K \subset \Omega  $, la sucesión de derivadas $\displaystyle j $-ésimas $\displaystyle \left\{ f_{n}^{\left(j\right)}\right\} _{n\in\N} $ converge a la derivada $\displaystyle j $-ésima $\displaystyle f^{\left(j\right)} $ uniformemente en $\displaystyle K $.
+\end{theorem}
+\begin{proof}
+Sea $\displaystyle K \subset \Omega  $ compacto y definimos 
+\[\delta = \frac{1}{3}d\left(K, \partial \Omega \right) ,\]
+si $\displaystyle \Omega \neq \C $ o $\displaystyle \delta = 1 $ si $\displaystyle \Omega = \C $. Entonces el conjunto
+\[K_{\delta }: = \left\{ z \in \Omega \; : \; d\left(z,K\right)\leq \delta \right\}  ,\]
+sigue siendo compacto y está contenido en $\displaystyle \Omega  $, por lo que $\displaystyle f_{n} \to f $ uniformemente en $\displaystyle K_{\delta } $. 
+Para cada $\displaystyle j \in \N $ y cada $\displaystyle z \in K $, tenemos que $\displaystyle \overline{D}\left(z, \delta \right)\subset K_{\delta }\subset \Omega  $ y aplicando las desigualdades de Cauchy a la función holomorfa $\displaystyle f_{n} -f $ obtenemos que 
+\[ \left|f_{n}^{\left(j\right)}\left(z\right)-f^{\left(j\right)}\left(z\right)\right| \leq \frac{j!}{\delta ^{j}}\sup_{\xi\in \partial D\left(z, \delta \right)} \left|f_{n}\left(\xi\right)-f\left(\xi\right)\right| \leq \frac{j!}{\delta ^{j}}\sup_{\xi \in K_{\delta }} \left|f_{n}\left(\xi\right)-f\left(\xi\right)\right| .\]
+Como el miebro de la derecha de la anterior desigualdad tiende a $\displaystyle 0 $ cuando $\displaystyle n \to \infty $ y no depende de $\displaystyle z \in K $, se concluye el resultado. 
+\end{proof}
+\begin{colorary}
+Si $\displaystyle f_{n} : \Omega \subset \C \to \C $ con $\displaystyle n \in \N $, son funciones holomorfas y la serie $\displaystyle F\left(z\right)=\sum^{\infty}_{n = 1}f_{n}\left(z\right) $ converge uniformemente en cada subconjunto compacto de $\displaystyle \Omega  $, entonces $\displaystyle F : \Omega \to \C $ es holomorfa.
+\end{colorary}
+\begin{theorem}[Teorema de derivación bajo el signo de la integral]
+	Sean $\displaystyle \Omega \subset \C $ abierto, $\displaystyle F : \Omega \times \left[a,b\right] \to \C $ continua tal que $\displaystyle z \in \Omega \to F\left(z,s\right) $ es holomorfa para cada $\displaystyle s \in \left[a,b\right]  $. Entonces la función $\displaystyle f : Omeg a\to \C $ definida por
+	\[f\left(z\right)=\int^{b}_{a} F\left(z,s\right) \; d s ,\]
+	es holomorfa en $\displaystyle \Omega  $. Además, para cada $\displaystyle z_{0} \in \Omega  $ la función $\displaystyle s \in \left[a,b\right] \to \frac{\partial F}{\partial z}\left(z_{0}, s\right) $ es integrable y se tiene 
+	\[f'\left(z_{0}\right)=\int^{b}_{a} \frac{\partial F}{\partial z}\left(z_{0}, s\right) \; d s .\]
+\end{theorem}
+\begin{proof}
+	Haciendo un cambio de variable podemos suponer $\displaystyle \left[a,b\right] = \left[0,1\right]  $. Para cada $\displaystyle n \in \N $ consideramos la suma de Riemann, 
+	\[f_{n}\left(z\right)=\frac{1}{n}\sum^{n}_{k = 1}F\left(z, \frac{k }{n}\right) ,\]
+	de forma que 
+	\[f\left(z\right)= \int^{1}_{0} F\left(z,s\right) \; d s = \lim_{n \to \infty}f_{n}\left(z\right) .\]
+Como cada función $\displaystyle z \to F\left(z, \frac{k}{n}\right) $ es holomorfa por hipótesis, está claro que $\displaystyle f_{n} $ es holomorfa para todo $\displaystyle n \in \N $. Por tanto, basta con probar que $\displaystyle f_{n} \to f $ uniformemente en cada disco cerrado contenido en $\displaystyle \Omega  $. 
+En efecto, como $\displaystyle F $ es continua y $\displaystyle \overline{D}\left(z_{0}, r\right)\times \left[0,1\right]  $ es compacto, $\displaystyle F $ es uniformemente continua en este conjunto. Así, para cada $\displaystyle \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle z_{1}, z_{2} \in \overline{D}\left(z_{0}, r\right) $, $\displaystyle s_{1}, s_{2} \in \left[0,1\right]  $ y $\displaystyle \left|z_{1}-z_{2}\right| + \left|s_{1}-s_{2}\right|\leq\delta  $, entonces
+\[ \left|F\left(z_{1}, s_{1}\right)-F\left(z_{2}, s_{2}\right)\right|\leq \epsilon  .\]
+En particular, 
+\[ \left|F\left(z, s_{1}\right)-F\left(z, s_{2}\right)\right|\leq \epsilon, \quad \text{si} \quad z \in \overline{D}\left(z_{0}, r\right), s_{1}, s_{2} \in \left[0,1\right] , \; \text{y} \; \left|s_{1}-s_{2}\right|\leq \delta  .\]
+Por tanto, para todo $\displaystyle n \geq \frac{1}{\delta } $, $\displaystyle z \in \overline{D}\left(z_{0}, r\right) $ se tiene 
+\[
+\begin{split}
+	\left|f_{n}\left(z\right)-f\left(z\right)\right| = & \left|\frac{1}{n}\sum^{n}_{k = 1}F\left(z, \frac{k}{n}\right)-\int^{1}_{0} F\left(z,s\right) \; d s\right| = \left|\sum^{n}_{k = 1}\int^{\frac{k}{n}}_{\frac{k-1}{n}} \left(F\left(z, \frac{k}{n}\right)-F\left(z,s\right)\right) \; d s\right| \\
+	\leq & \sum^{n}_{k = 1}\int^{\frac{k}{n}}_{\frac{k-1}{n}} \left|F\left(z,\frac{k}{n}\right)-F\left(z,s\right)\right| \; d s \leq \sum^{n}_{k = 1}\frac{\epsilon }{n} = \epsilon .
+\end{split}
+\]
+Esto demuestra la convergencia uniforme de $\displaystyle f_{n} $ a $\displaystyle f $ en $\displaystyle \overline{D}\left(z_{0}, r\right) $, por lo que $\displaystyle f $ es holomorfa en $\displaystyle D\left(z_{0}, r\right) $. Por último, sabemos que la sucesión de derivadas $\displaystyle \left\{ f'_{n}\right\} _{n\in\N} $ también converge a $\displaystyle f' $ uniformemente en $\displaystyle \overline{D}\left(z_{0}, r\right) $. 
+En particular, asumiendo que $\displaystyle s \in \left[a,b\right] \to \frac{\partial F}{\partial z}\left(z_{0}, s\right) $ es integrable, tendríamos que 
+\[f'\left(z_{0}\right)=\lim_{n \to \infty}f'_{n}\left(z_{0}\right)=\lim_{n \to \infty}\frac{1}{n}\sum^{n}_{k = 1}\frac{\partial F}{\partial z}\left(z_{0}, \frac{k}{n}\right)=\int^{1}_{0} \frac{\partial F}{\partial z}\left(z_{0}, s\right) \; d s .\]
+Veamos que esta derivada parcial es integrable Riemann con integral $\displaystyle f'\left(z_{0}\right) $. Usando el teorema de Darboux, bastará ver que para cada $\displaystyle \epsilon > 0 $ existe $\displaystyle \delta > 0 $ tal que para cualquier partición $\displaystyle P \in \mathcal{P}\left(\left[0,1\right] \right) $ en subintervalos de longitud menor o igual que $\displaystyle \delta  $, y para cualesquiera $\displaystyle s_{j}\in \left[t_{j-1}, t_{j}\right]  $ con $\displaystyle j = 1, \ldots, n $, se tiene 
+\[ \left|f'\left(z_{0}\right)-\sum^{N}_{j = 1}\frac{\partial F}{\partial z}\left(z_{0}, s_{j}\right)\left(t_{j}-t_{j-1}\right)\right|\leq \epsilon  .\]
+Supongamos que esto no fuera así, entonces existiría $\displaystyle \epsilon _{0} > 0 $, una sucesión de particiones $\displaystyle P_{n} = \left\{ t_{n}_{0}, \ldots, t_{N}^{n}\right\} $ de $\displaystyle \left[0,1\right]  $ en subintervalos de longitudes menores que $\displaystyle \frac{1}{n} $ y puntos $\displaystyle s^{n}_{j} $ en cada subintervalo $\displaystyle \left[t ^{n}_{j-1}, t_{j}^{n}\right]  $, $\displaystyle j = 1, \ldots, N_{n} $ tales que 
+\[ \left|f'\left(z_{0}\right)-\sum^{N_{n}}_{j = 1}\frac{\partial F}{\partial z}\left(z, s^{n}_{j}\right)\left(t_{j}^{n}-t_{j-1}^{n}\right)\right| > \epsilon  .\]
+Para cada $\displaystyle n \in \N $ definimos 
+\[g_{n}\left(z\right)= \sum^{N_{n}}_{ j= 1}F\left(z, s^{n}_{j}\right)\left(t_{j}^{n}-t_{j-1}^{n}\right).\]
+Cada $\displaystyle g_{n} $ es holomorfa. Dado $\displaystyle \epsilon > 0 $ arbitrario tenemos que si $\displaystyle n > \frac{1}{\delta } $ y $\displaystyle z \in \overline{D}\left(z_{0}, r\right) $ entonces
+\[
+\begin{split}
+	\left|g_{n}\left(z\right)-f\left(z\right)\right|= & \left|\sum^{n}_{k = 1}F\left(z, s_{k}^{n}\right)\left(t_{k}^{n}-t_{k-1}^{n}\right)-\int^{1}_{0} F\left(z,s\right) \; d s \right| = \left|\sum^{N_{n}}_{k = 1}\int^{t_{k}^{n}}_{t_{k - 1}^{n}} \left(F\left(z, s^{n}_{k}\right)-F\left(z,s\right)\right) \; d s\right| \\
+	\leq & \sum^{N_{n}}_{k = 1}\int^{t_{k}^{n}}_{t_{k-1}^{n}} \left|F\left(z-s^{n}_{k}\right)-F\left(z,s\right)\right| \; d s \leq \sum^{N_{n}}_{k = 1}\epsilon \left(t_{k}^{n}-t_{k-1}^{n}\right)=\epsilon .
+\end{split}
+\]
+Esto demuestra que $\displaystyle \lim_{n \to \infty}g_{n}\left(z\right)=f\left(z\right) $ uniformemente en $\displaystyle \overline{D}\left(z_{0}, r\right) $. Entonces, tendremos que $\displaystyle g'_{n} $ converge a $\displaystyle f' $ uniformemente en los compactos de $\displaystyle D\left(z_{0}, r\right) $ y en particular $\displaystyle \lim_{n \to \infty}g'\left(z_{0}\right) = f'\left(z_{0}\right) $, lo que contradice una desigualdad anterior. 
+\end{proof}
+\begin{colorary}
+Si $\displaystyle \Omega\subset \C $ es abierto, $\displaystyle \Gamma  $ es una curva de clase $\displaystyle \mathcal{C}^{1} $ a trozos en $\displaystyle \C $ y $\displaystyle \varphi : \Omega \times \Gamma \to \C $ es continua y tal que para todo $\displaystyle \xi \in \Gamma $ la función $\displaystyle z \in \Omega \to \varphi\left(z, \xi\right) $ es holomorfa, entonces la función $\displaystyle g : \Omega \to \C $ definida por 
+\[g\left(z\right)=\int _{\Gamma }\varphi\left(z, \xi\right) \; d\xi ,\]
+es holomorfa. Además, para cada $\displaystyle z_{0} \in \Omega  $ se tiene que 
+\[g'\left(z_{0}\right)=\int _{\Gamma }\frac{\partial \varphi}{\partial z}\left(z_{0}, \xi\right) \; d\xi .\]
+\end{colorary}
 

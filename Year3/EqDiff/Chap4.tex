@@ -1,7 +1,7 @@
 \chapter{Conceptos básicos de estabilidad y estabilidad para sistemas lineales}
 Estabilidad : si cambiando ligeramente las condiciones iniciales la solución cambia poco para todo tiempo $\displaystyle t \geq t_{0} $. 
 \section{Conceptos de estabilidad}
-Supongamos que $\displaystyle f : D \subset \R \times \R^{n} \to \R^{n} $ es una función continua y localmente Lipschitz respecto a la segunda variable. Sea $\displaystyle \overline{x} : [\tau, \infty) \to \R $ que satisface $\displaystyle \overline{x}' = f\left(t, \overline{x}\right) $, $\displaystyle \forall t \geq \tau $. 
+Supongamos que $\displaystyle f : D \subset \R \times \R^{n} \to \R^{n} $ es una función continua y localmente Lipschitz respecto a la segunda variable. Sea $\displaystyle \overline{x} : [\tau, \infty) \to \R $ una solución del sistema $\displaystyle \overline{x}' = f\left(t, \overline{x}\right) $. 
 \begin{definition}[Estabilidad]
 Diremos que $\displaystyle \overline{x} $ es una solución \textbf{estable} si para todo $\displaystyle \epsilon > 0 $ y $\displaystyle t_{0}\geq \tau $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \|x_{0}-\overline{x}\left(t_{0}\right)\| < \delta  $ entonces $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)-\overline{x}\left(t\right)\| < \epsilon  $, $\displaystyle \forall t \geq t_{0} $. Diremos que una solución es \textbf{inestable} si no es estable.  
 \end{definition}
@@ -9,37 +9,43 @@ Diremos que $\displaystyle \overline{x} $ es una solución \textbf{estable} si p
 Para que una solución sea estable tiene que estar definida en un intervalo $\displaystyle [\tau, \infty )$ para cierto $\displaystyle \tau \in [-\infty, \infty) $. 
 \end{observation}
 \begin{definition}[Estabilidad asintótica]
-Diremos que $\displaystyle \overline{x} $ es una solución \textbf{asintóticamente estable} si es estable y para todo $\displaystyle t_{0}\geq \tau $ eixste $\displaystyle \eta > 0 $ tal que si $\displaystyle \left\|x_{0}-\overline{x}\left(t_{0}\right)\right\|<\eta  $ entonces
-\[ \left\|\varphi\left(t; t_{0}, x_{0}\right)-\overline{x}\left(t_{0}\right)\right\|\xrightarrow{t \to \infty} 0 .\]
+Diremos que $\displaystyle \overline{x} $ es una solución \textbf{asintóticamente estable} si es estable y para todo $\displaystyle t_{0}\geq \tau $ existe $\displaystyle \eta > 0 $ tal que si $\displaystyle \left\|x_{0}-\overline{x}\left(t_{0}\right)\right\|<\eta  $ entonces
+\[ \left\|\varphi\left(t; t_{0}, x_{0}\right)-\overline{x}\left(t\right)\right\|\xrightarrow{t \to \infty} 0 .\]
 \end{definition}
 \begin{eg}
-Consideremos la EDO $\displaystyle x' = ax $. Tendremos que 
+Consideremos la EDO $\displaystyle x' = ax $. Tendremos que el flujo se puede obtener explícitamente:
 \[\varphi\left(t; t_{0}, x_{0}\right)=x_{0}e^{a\left(t-t_{0}\right)} .\]
-Distinguimos varios casos:
+Distinguimos varios casos
 \begin{itemize}
-\item Si $\displaystyle a \leq 0 $, cogemos $\displaystyle \overline{x}\left(t\right)=\overline{x}_{0}e^{a\left(t-\tau\right)} $. Entonces, 
-	\[
-	\begin{split}
-		\left|\varphi\left(t; t_{0}, x_{0}\right)-\overline{x}\left(t\right)\right|= & \left|x_{0}e^{a\left(t-t_{0}\right)}-\overline{x}_{0}e^{a\left(t-\tau\right)}\right| \\
-		= & e^{a\left(t-t_{0}\right)} \left|x_{0}-\overline{x}_{0}e^{t_{0}-\tau}\right| \leq \left|x_{0}-\overline{x}\left(t\right)\right|<\epsilon  .
-	\end{split}
-	\]
-Claramente es estable puesto que basta con tomar $\displaystyle \delta = \epsilon  $.  
-Estudiemos ahora la estabilidad asintótica. Si $\displaystyle a > 0 $, tenemos que 
-	\[ \left|\varphi\left(t; t_{0}, x_{0}\right)-\overline{x}\left(t\right)\right|= \left|x_{0}-\overline{x}\left(t_{0}\right)\right|e^{a\left(t-t_{0}\right)} .\]
-Podemos elegir $\displaystyle \eta > 0 $ y obtenemos la estabilidad asintótica. Si $\displaystyle a = 0 $ se puede ver que que es estable pero no asintóticamente estable. 
-\item Si $\displaystyle a > 0 $, sea cual sea $\displaystyle \delta  $, si $\displaystyle \left|x_{0}-\overline{x}\left(t_{0}\right)\right| < \delta  $ tenemos que 
-	\[ \left|\varphi\left(t; t_{0}, x_{0}\right)-\overline{x}\left(t_{0}\right)\right|= \left|x_{0}-\overline{x}\left(t_{0}\right)\right|e^{a\left(t-t_{0}\right)} \to \infty ,\]
-por tanto es una solución inestable. 	
+\item Si $\displaystyle a < 0 $, toda solución es asintóticamente estable. En efecto, consideremos la solución 
+	\[ \overline{x}\left(t\right)= \overline{x}\left(t_{0}\right)e^{a\left(t-t_{0}\right)} .\]
+	Así, dado $\displaystyle \epsilon > 0 $ podemos tomar $\displaystyle \delta = \epsilon  $ y $\displaystyle x_{0} $ tal que $\displaystyle \left|x_{0} - \overline{x}\left(t_{0}\right)\right|< \epsilon  $, entonces
+	\[ \left|\varphi\left(t; t_{0}, x_{0}\right)-\overline{x}\left(t\right)\right|= \left|x_{0}-\overline{x}\left(t_{0}\right)\right|e^{a\left(t-t_{0}\right)} \leq \left|x_{0}-\overline{x}\left(t_{0}\right)\right|<\epsilon  , \; \forall t \geq t_{0}.\]
+	Así, tenemos que la solución es estable. Además, 
+	\[\lim_{t \to \infty} \left|\varphi\left(t; t_{0}, x_{0}\right)-\overline{x}\left(t\right)\right| = \lim_{t \to \infty } \left|x_{0}-\overline{x}\left(t_{0}\right)\right|e^{a\left(t-t_{0}\right)} = 0 ,\]
+	por lo que la solución es asintóticamente estable (tomando $\displaystyle \eta > 0 $ arbitrario).
+\item Si $\displaystyle a = 0 $, las soluciones son estables pero no asintóticamente estables. Esto se sigue trivialmente del hecho de que en este caso toda solución es estable. 
+\item Si $\displaystyle a > 0 $ toda solución es inestable. Independientemente de $\displaystyle x_{0} \in \R \backslash \left\{ \overline{x}\left(t_{0}\right)\right\}  $ se tiene que 
+	\[\lim_{t \to \infty } \left|\varphi\left(t; t_{0}, x_{0}\right)-\overline{x}\left(t\right)\right| = \lim_{t \to \infty } \left|x_{0}-\overline{x}\left(t_{0}\right)\right|e^{a\left(t-t_{0}\right)} = \infty  .\]
 \end{itemize}
 \end{eg}
 \begin{eg}
-Consideremos la EDO $\displaystyle x ' = x^{2} $, podemos coger
+Consideremos la EDO no lineal $\displaystyle x ' = x^{2} $, cuyo flujo se puede obtener explícitamente:
 \[\varphi\left(t; t_{0}, x_{0}\right)=\frac{x_{0}}{1-x_{0}\left(t-t_{0}\right)} .\]
-Otro ejemplo es $\displaystyle x' = x\left(1-x\right) $.
+En este caso la estabilidad depende de la solución cuya estabilidad queremos estudiar. Tomemos 
+\[ \overline{x}\left(t\right)=\frac{\overline{x}\left(t_{0}\right)}{1-\overline{x}\left(t_{0}\right)\left(t-t_{0}\right)} .\]
+Por un lado, si $\displaystyle \overline{x}\left(t_{0}\right) > 0 $ observamos que la solución sólo está definida en el intervalo $\displaystyle \left(-\infty, t_{0} + \frac{1}{x_{0}}\right) $. Como no está definida hasta $\displaystyle \infty  $, no es estable. Esto mismo hace imposible la estabilidad de la solución $\displaystyle \overline{x}\left(t\right)\equiv 0 $. En efecto, por muy cerca que elijamos $\displaystyle x_{0} $, si $\displaystyle x_{0} > 0 $ sabemos que la solución no está definida globalmente hasta $\displaystyle \infty  $. Por otro lado, si $\displaystyle \overline{x}\left(t_{0}\right) < 0 $ se tiene que 
+\[ \left|\overline{x}\left(t\right)-\varphi\left(t; t_{0}, x_{0}\right)\right| = \frac{ \left|\overline{x}\left(t_{0}\right)-x_{0}\right|}{ \left|1-\overline{x}\left(t_{0}\right)\left(t-t_{0}\right)\right| \left|1-x_{0}\left(t-t_{0}\right)\right|} ,\]
+de donde se sigue la estabilidad asintótica tomando $\displaystyle \delta \min \left\{ \epsilon , \left|\overline{x}\left(t_{0}\right)\right|\right\}  $ y $\displaystyle \eta = \left|\overline{x}\left(t_{0}\right)\right| > 0 $. 
 \end{eg}
+\begin{eg}
+Consideremos la EDO no lineal $\displaystyle x '= x\left(1- x\right) $, cuyo flujo se puede obtener de forma explícita:
+\[\varphi\left(t; t_{0}, x_{0}\right)=\frac{x_{0}}{x_{0} + \left(1-x_{0}\right)e^{t-t_{0}}} .\]
+En este caso se puede comprobar que $\displaystyle \overline{y}\left(t\right)\equiv 0 $ es solución inestable mientras que $\displaystyle \overline{z}\left(t\right)\equiv 1 $ es asintóticamente estable.
+\end{eg}
+
 \begin{lema}[Reducción de estabilidad a la trivial]
-Dado el sistema $\displaystyle x' = f\left(t,x\right) $ y una solución $\displaystyle \overline{x} : [\tau, \infty) \to \R^{n} $. Si consideramos la función
+Consideremos el sistema $\displaystyle x' = f\left(t,x\right) $ y una solución $\displaystyle \overline{x} : [\tau, \infty) \to \R^{n} $. Dada la función
 \[g\left(t,y\right)=f\left(t,y + \overline{x}\left(t\right)\right)-f\left(t, \overline{x}\left(t\right)\right) ,\]
 entonces
 \begin{itemize}
@@ -50,7 +56,7 @@ entonces
 \begin{proof}
 En primer lugar, tenemos que 
 \[g\left(t, 0\right)=f\left(t, \overline{x}\left(t\right)\right)-f\left(t, \overline{x}\left(t\right)\right)=0 = \overline{y}'\left(t\right) ,\]
-habiendo tomado $\displaystyle \overline{y}\left(t\right)=0 $. Ahora, sea $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ el flujo de $\displaystyle x' = f\left(t,x\right) $ y $\displaystyle \phi\left(t; t_{0}, x_{0}\right) $ el flujo de $\displaystyle y' = g\left(t,y\right) $. Entonces tenemos que, 
+por lo que $\displaystyle \overline{y}\left(t\right)\equiv 0 $ es solución de $\displaystyle y' = g\left(t,y\right) $, $\displaystyle \forall t \geq \tau $. Ahora, sea $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ el flujo de $\displaystyle x' = f\left(t,x\right) $ y $\displaystyle \phi\left(t; t_{0}, x_{0}\right) $ el flujo de $\displaystyle y' = g\left(t,y\right) $. Entonces es sencillo comprobar que, 
 \[\phi\left(t; t_{0}, y_{0}\right)=\varphi\left(t, t_{0}, y_{0} + \overline{x}\left(t_{0}\right)\right)-\overline{x}\left(t_{0}\right) .\]
 Si cogemos $\displaystyle z\left(t\right):=\varphi\left(t, t_{0}, y_{0} + \overline{x}\left(t_{0}\right)\right)-\overline{x}\left(t\right)  $, tenemos que 
 \[
@@ -63,14 +69,21 @@ Si cogemos $\displaystyle z\left(t\right):=\varphi\left(t, t_{0}, y_{0} + \overl
 \]
 Además, 
 \[z\left(t_{0}\right)=\varphi\left(t_{0}; t_{0}, y_{0} + \overline{x}\left(t_{0}\right)\right)-\overline{x}\left(t_{0}\right)=y_{0} + \overline{x}\left(t_{0}\right)-\overline{x}\left(t_{0}\right)=y_{0} .\]
+Por unicidad de solución del PVI se tiene que $\displaystyle z\left(t\right)=\phi\left(t; t_{0}, y_{0}\right) $. Así, es sencillo ver que 
+\[ \left|\phi\left(t; t_{0}, y_{0}\right)-\overline{y}\left(t\right)\right|= \left|\varphi\left(t; t_{0}, y_{0} + \overline{x}\left(t_{0}\right)\right)-\overline{x}\left(t\right)\right| ,\]
+de donde se sigue inmediatamente la equivalencia de estabilidad.
 \end{proof}
+\begin{observation}
+Gracias a este resultado, a partir de ahora podremos centrarnos en estudiar la estabilidad de la solución trivial $\displaystyle \overline{x}\equiv 0 $ en sistemas cuyo campo satisface $\displaystyle f\left(t,0\right)=0 $.
+\end{observation}
+
 \section{Estabilidad para sistemas lineales}
 Consideremos el sistema 
 \[x' = A\left(t\right)x + b\left(t\right) ,\]
 con $\displaystyle A\in \mathcal{C}\left(I, \R^{n \times m}\right) $ y $\displaystyle b \in \mathcal{C}\left(I, \R^{n}\right) $, con $\displaystyle I $ un intervalo de $\displaystyle \R $. 
 \begin{observation}
-Con estas hipótesis de $\displaystyle A $ y $\displaystyle B $ podemos tomar
-\[f\left(t,x\right)=A\left(t\right)x + b ,\]
+Con estas hipótesis de $\displaystyle A $ y $\displaystyle b $ podemos tomar
+\[f\left(t,x\right)=A\left(t\right)x + b\left(t\right) ,\]
 y $\displaystyle f $ cumple las hipótesis del teorema Picard Lindelöf local. En efecto, 
 \[ \|f\left(t,x\right)-f\left(t,y\right)\| = \|A\left(t\right)\left(x-y\right)\| \leq \|A\left(t\right)\| \|x-y\| .\]
 \end{observation}
@@ -78,18 +91,19 @@ y $\displaystyle f $ cumple las hipótesis del teorema Picard Lindelöf local. E
 Todas las soluciones de un sistema lineal $\displaystyle x' = A\left(t\right)x + b\left(t\right) $ tienen la misma estabilidad y además coincide con la de la solución $\displaystyle y \equiv 0 $ del sistema homogéneo $\displaystyle y' = A\left(t\right)y $. 
 \end{prop}
 \begin{proof}
-Usamos el lema anterior dada una solución $\displaystyle \overline{x}\left(t\right) $. Así, construimos 
+Usando el lema anterior, dada una solución $\displaystyle \overline{x}\left(t\right) $ podemos construir 
 \[
 \begin{split}
 	g\left(t,y\right)= & f\left(t,y+\overline{x}\left(t\right)\right)-f\left(t, \overline{x}\left(t\right)\right) \\
 	= &  \left(A\left(t\right)\left(y + \overline{x}\left(t\right)+b\left(t\right)\right)\right)-\left(A\left(t\right)\overline{x}\left(t\right)+b\left(t\right)\right)=A\left(t\right)y.
 \end{split}
 \]
+El sistema modificado que obtenemos es el homogéneo, por lo que la estabilidad de la solución $\displaystyle \overline{x}\left(t\right) $ equivale a la estabilidad de la solución trivial $\displaystyle \overline{y}\equiv 0 $ del sistema homogéneo. 
 \end{proof}
-\section*{Recordatorio}
+\begin{observation}[Recordatorio]
 El flujo del sistema $\displaystyle x' = A\left(t\right)x $ tiene la forma 
 \[\varphi\left(t; t_{0}, x_{0}\right)=\Phi\left(t; t_{0}\right)x_{0} ,\]
-donde $\displaystyle \Phi\left(t, t_{0}\right) $ es la matriz fundamental. Además, 
+donde $\displaystyle \Phi\left(t, t_{0}\right) $ es la \textbf{matriz fundamental}. Además, 
 \[
 \begin{cases}
 \frac{d\Phi}{dt}\left(t; t_{0}\right)=A\left(t\right)\Phi\left(t; t_{0}\right) \\
@@ -100,8 +114,10 @@ Por la propiedad del semigrupo tenemos que $\displaystyle \varphi\left(t; t_{0},
 \[ \Phi\left(t; t_{0}\right)x_{0}=\Phi\left(t,s\right)\varphi\left(s; t_{0}, x_{0}\right)=\Phi\left(t,s\right)\Phi\left(s;t_{0}\right)x_{0}.\]
 Como esto es cierto para todo $\displaystyle x_{0}\in \R^{n} $, debe ser que $\displaystyle \Phi\left(t; t_{0}\right)=\Phi\left(t; s\right)\Phi\left(s; t_{0}\right) $. En particular, si $\displaystyle t = t_{0} $,
 \[I = \Phi\left(t_{0}; t_{0}\right)=\Phi\left(t_{0}, s\right)\Phi\left(s; t_{0}\right) .\]
+\end{observation}
+
 \begin{theorem}[Criterio de estabilidad para sistemas lineales homogéneos]
-Un sistema lineal homogéneo $\displaystyle y' = A\left(t\right)y $, es estable si y sólo si todas sus soluciones son acotadas. 
+Un sistema lineal homogéneo $\displaystyle y' = A\left(t\right)y $, es estable si y sólo si todas sus soluciones son acotadas en $\displaystyle [t_{0}, \infty) $. 
 \end{theorem}
 \begin{proof}
 Consideramos ambas implicaciones.

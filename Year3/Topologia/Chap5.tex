@@ -1,0 +1,185 @@
+\chapter{Numerabilidad}
+\section{Axiomas de numerabilidad}
+\subsection{Primer axioma de numerabilidad}
+\begin{definition}[Primer axioma de numerabilidad]
+Un espacio topológico $\displaystyle X $ se dice que es \textbf{primer axioma de numerabilidad}, y se escribe \textbf{I AN}, si todo punto $\displaystyle x \in X $ tiene una base de entornos $\displaystyle \mathcal{V}^{x} $ numerable.
+\end{definition}
+\begin{observation}
+	Es fácil ver que si $\displaystyle \mathcal{V}^{x} = \left\{ V_{k}^{x}\right\} _{k \in \N} $, entonces $\displaystyle \left\{ U_{k}^{x}:=\Int\left(V_{k}^{x}\right)\right\} _{k\in \N} $ es una base numerable de entornos abiertos del punto $\displaystyle x $. 
+\end{observation}
+\begin{observation}
+	Si $\displaystyle \mathcal{V}^{x}= \left\{ V_{k}^{x}\right\} _{k \in \N} $ es una base numerable de entornos de $\displaystyle x $, podemos formar una base numerable de entornos encajados
+	\[\mathcal{W}^{x}= \left\{ W^{x}_{k}= V_{1}^{x}\cap \cdots \cap V^{x}_{k}\right\} _{k \in \N} .\]
+	Claramente tenemos que $\displaystyle W^{x}_{k+1}\subset W^{x}_{k} $, $\displaystyle \forall k \in \N $. Análogamente, a partir de una base de entornos abiertos podemos encontrar una base numerable de entornos abiertos encajados. 
+\end{observation}
+\begin{eg}[Topologías metrizables]
+	Todo espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ en el que la topología venga asociada a una distancia $\displaystyle d $ es I AN. En efecto, para cada $\displaystyle x \in X$ la colección $\displaystyle \left\{ B_{d}\left(x, \frac{1}{k}\right)\right\} _{k\in \N} $ es una base numerable de entornos abiertos de $\displaystyle x $. En particular, $\displaystyle \left(\R^{n}, \mathcal{T}_{u}\right) $ es I AN.
+\end{eg}
+\begin{eg}[Topología discreta y topología trivial]
+	Es trivial que $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ es I AN, puesto que para cada punto $\displaystyle x $ una base de entornos es $\displaystyle \left\{ x\right\}  $. Análogamente, $\displaystyle \left(X, \mathcal{T}_{\text{triv}}\right) $.
+\end{eg}
+\begin{eg}
+	Dado un conjunto $\displaystyle X $ y $\displaystyle a \in X $, podemos considerar el espacio topológico $\displaystyle \left(X, \mathcal{T}_{a}\right) $. Claramente este espacio es I AN. En efecto, para $\displaystyle a $ podemos considerar la base de entornos $\displaystyle \left\{ a\right\}  $ y para $\displaystyle x \neq a $ basta con tomar $\displaystyle \left\{ a,x\right\}  $.
+\end{eg}
+\begin{eg}[Recta de Sorgenfrey]
+La recta de Sorgenfrey $\displaystyle \left(\R, \mathcal{T}_{[,)}\right) $ también es I AN. En efecto, para $\displaystyle x \in \R $ basta con considerar la base de entornos $\displaystyle \left\{ \left[x, x + \frac{1}{n}\right)\right\} _{n \in \N} $.
+\end{eg}
+ 
+\begin{eg}[Topología que no es I AN]
+Si $\displaystyle X $ es no numerable, la topología de los complementos finitos $\displaystyle \left(X, \mathcal{T}_{CF}\right) $ no es I AN. En efecto, un entorno abierto de $\displaystyle x\in X $ es de la forma $\displaystyle X \backslash A $ con $\displaystyle A \subset X $ finito y $\displaystyle x \not\in A $. 
+Si tuviéramos una base numerable de entornos abiertos, la podríamos tomar encajada
+\[\mathcal{W}^{x} = \left\{ W^{x}_{k} = X \backslash A_{k}\right\} _{k \in \N} ,\]
+con los $\displaystyle A_{k} $ finitos. Pero entonces, 
+\[\bigcap_{k \in \N}W_{k} = X \backslash \bigcup_{k \in \N}A_{k}\neq \emptyset .\]
+Así, dado $\displaystyle x' \in \bigcap_{k \in \N}W_{k} $ con $\displaystyle x' \neq x $, el entorno abierto $\displaystyle X \backslash \left\{ x'\right\}  $ del punto $\displaystyle x $ no contiene a ninguno de los $\displaystyle W_{k} $, por lo que $\displaystyle \mathcal{W}^{x} $ no puede ser una base de entornos de $\displaystyle x $.
+\end{eg}
+\subsection{Sucesiones en espacios I AN}
+Recordamos que una sucesión $\displaystyle \left\{ x_{k}\right\} _{k \in \N}\subset X $ la podemos ver como una aplicación
+\[ \N \to X : k \to x_{k} .\]
+\begin{definition}[Convergencia de una sucesión]
+	La sucesión $\displaystyle \left\{ x_{k}\right\} _{k \in \N}\subset X $ converge a un punto $\displaystyle x \in X $, y escribimos $\displaystyle x_{k}\to x $, si para cada entorno abierto $\displaystyle U^{x} $ del punto $\displaystyle x $, existe un $\displaystyle k_{0}\in \N $ tal que $\displaystyle \forall k \geq k_{0} $, $\displaystyle x_{k}\in U^{x} $. 
+\end{definition}
+\begin{observation}
+	Si $\displaystyle X $ es Hausdorff el límite de una sucesión, si existe, es único. En efecto, consideremos la sucesión $\displaystyle \left\{ x_{k}\right\} _{k \in \N} $ que converge a $\displaystyle x \in X $ y consideremos $\displaystyle x' \neq x $. Como $\displaystyle X $ es Hausdorff, existen $\displaystyle U^{x} $ y $\displaystyle U^{x'} $ entornos abiertos disjuntos. Como existe un $\displaystyle k_{0} \in \N $ tal que $\displaystyle \forall k \geq k_{0} $, $\displaystyle x_{k}\in U^{x} $, debe ser que $\displaystyle x_{k}\not\in U^{x'} $, $\displaystyle \forall k \geq k_{0} $, por lo que la sucesión no puede converger a $\displaystyle x' $. 
+\end{observation}
+\begin{prop}
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico I AN y $\displaystyle A \subset X $. Las dos afirmaciones siguientes son equivalentes:
+\begin{enumerate}
+\item $\displaystyle x \in \overline{A} $.
+\item Existe una sucesión $\displaystyle \left\{ x_{k}\right\} _{k\in \N}\subset A $ tal que $\displaystyle x_{k}\to x $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+La demostración es análoga a la que conocemos en espacios euclídeos.
+\begin{description}
+	\item[(1) $\displaystyle \Rightarrow $ (2)] Si $\displaystyle x \in \overline{A} $ tomamos una base de entornos abiertos encajados de $\displaystyle x $, $\displaystyle \left\{ U^{x}_{k}\right\} _{k\in \N} $. Para cada $\displaystyle k \in \N $ sabemos que $\displaystyle U^{x}_{k}\cap A\neq \emptyset $, y podemos escoger un elemento $\displaystyle x_{k}\in U^{x}_{k}\cap A $. Así, construimos una sucesión $\displaystyle \left\{ x_{k}\right\} _{k\in \N}\subset A $. 
+	Para cada entorno abierto de $\displaystyle x $, $\displaystyle \Omega ^{x} $, existe $\displaystyle k_{0}\in \N $ tal que $\displaystyle U^{x}_{k}\subset \Omega ^{x} $, $\displaystyle \forall k \geq k_{0} $. Así, $\displaystyle x_{k}\in \Omega ^{x} $, $\displaystyle \forall k \geq k_{0} $ por lo que $\displaystyle x_{k}\to x $. 
+\item[(2) $\displaystyle \Rightarrow $ (1)] Si hay una sucesión $\displaystyle \left\{ x_{k}\right\} _{k \in \N}\subset A $ que converge a $\displaystyle x $, entonces para cada entorno abierto de $\displaystyle x $, $\displaystyle \Omega ^{x} $, este contiene a todos los términos de la sucesión de uno en adelante. Como esos términos están en $\displaystyle A $ debe ser que $\displaystyle \Omega^{x}\cap A \neq \emptyset $.
+\end{description}
+\end{proof}
+\subsection{Segundo axioma de numerabilidad}
+\begin{definition}[Segundo axioma de numerabilidad]
+Decimos que un espacio topológico es \textbf{segundo axioma de numerabilidad}, y lo escribimos \textbf{II AN}, si existe una base $\displaystyle \mathcal{B} $ numerable de abiertos de $\displaystyle X $.
+\end{definition}
+\begin{prop}
+Si un espacio topológico $\displaystyle X $ es II AN, entonces es I AN.
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle \mathcal{B}= \left\{ B_{k}\right\} _{k\in \N } $ una base numerable de la topología. Para cada $\displaystyle x \in X $ el conjunto
+	\[\mathcal{V}_{\mathcal{B}}^{x}= \left\{ B_{k}\in \mathcal{B} \; : \; x \in B_{k}\right\}  ,\]
+	es una base de entornos abiertos de $\displaystyle x $. En efecto, si $\displaystyle \Omega ^{x} $ es entorno abierto de $\displaystyle x $, como todos los abiertos de $\displaystyle X $ debe ser unión de abiertos básicos. Como $\displaystyle x \in \Omega^{x} $ debe existir un $\displaystyle k\in \N $ tal que $\displaystyle x \in B_{k}\subset \Omega^{x} $.
+\end{proof}
+\begin{eg}
+	El recíproco de la propiedad anterior no es cierto. En efecto, sea $\displaystyle X  $ un conjunto no numerable. Vimso que $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ es I AN, pero no es II AN. En efecto, como todos los conjuntos $\displaystyle \left\{ x\right\}  $ son abiertos, una base de la topología debe incluirlos a todos. Como $\displaystyle X $ es no numerable, es imposible la existencia de una base numerable de $\displaystyle \mathcal{T}_{\text{dis}} $.
+\end{eg}
+\begin{eg}
+El espacio topológico $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ es II AN. En efecto, 
+\[ \left\{ B\left(\left(q_{1}, \ldots, q_{n}\right), \frac{1}{k}\right) \; : \; \left(q_{1}, \ldots, q_{n}\right)\in \Q^{n}, \; k \in \N\right\}  ,\]
+es una base numerable de $\displaystyle \mathcal{T}_{u} $. 
+\end{eg}
+\begin{eg}
+	Si $\displaystyle X $ es no numerable y fijamos $\displaystyle a \in X $, tenemos que $\displaystyle \left(X, \mathcal{T}_{a}\right) $ no es II AN. En efecto, si $\displaystyle x \neq a $ tenemos que $\displaystyle \left\{ a,x\right\}  $ debe formar parte de cualquier base de la topología $\displaystyle \mathcal{T}_{a} $.
+\end{eg}
+\begin{eg}
+La recta de Sorgenfrey no es II AN. En efecto, consideremos una base $\displaystyle \mathcal{B} $ para la topología de Sorgenfrey. Como para cada $\displaystyle x\in \R $ el intervalo $\displaystyle [x, x + 1) $ es un entorno abierto de $\displaystyle x $ en $\displaystyle \left(\R, \mathcal{T}_{[,)}\right) $, debe haber un abierto $\displaystyle B_{x}\in \mathcal{B} $ tal que $\displaystyle x \in B_{x}\subset[x,x +1) $. Observamos que $\displaystyle x = \inf B_{x} $. Para cualquier otro punto $\displaystyle x' \in \R $, procedemos igual y hallamos un abierto básico $\displaystyle B_{x'} $ con $\displaystyle x ' \in B_{x'}\subset [x',x'+1 )$. Como quiera que $\displaystyle x' = \inf B_{x'} $, necesariamente $\displaystyle B_{x} \neq B_{x'} $. Así, tenemos una aplicación inyectiva
+\[ \R \to \mathcal{B} : x \to B_{x} ,\]
+por lo que $\displaystyle \mathcal{B} $ no puede ser numerable. 
+\end{eg}
+\subsection{Separabilidad}
+\begin{definition}[Espacio separable]
+Un espacio topológico $\displaystyle X $ es \textbf{separable} si existe un subconjunto $\displaystyle A $ numerable denso.
+\end{definition}
+\begin{prop}
+Si un espacio topológico $\displaystyle X $ es II AN, entonces es separable. 
+\end{prop}
+\begin{proof}
+	Si $\displaystyle X $ es II AN y tomamos una base numerable de la topología $\displaystyle \mathcal{B} = \left\{ B_{k}\right\} _{k \in \N} $, podemos formar un conjunto $\displaystyle A = \left\{ a_{k}\right\} _{k \in \N} $ escogiendo un elemento $\displaystyle a_{k}\in B_{k} $ para cada $\displaystyle k \in \N $. Claramente, $\displaystyle A $ es numerable. Además es denso, puesto que dado un abierto no vacío $\displaystyle U $, como $\displaystyle U $ es unión de abiertos básicos debe ser que existe $\displaystyle k_{0}\in \N $ tal que $\displaystyle B_{k_{0}}\subset U $, por lo que $\displaystyle a_{k_{0}}\in A\cap U \neq \emptyset$.
+\end{proof}
+\begin{eg}
+	Un espacio $\displaystyle X $ puede ser I AN y separable, pero no ser II AN. En efecto, si $\displaystyle X $ es un conjunto no numerable y tomando la topología $\displaystyle \mathcal{T}_{a} $, hemos visto que $\displaystyle \left(X, \mathcal{T}_{a}\right) $ es I AN. Además es numerable puesto que $\displaystyle \left\{ a\right\}  $ es denso y numerable. 
+\end{eg}
+\begin{eg}
+Un espacio puede ser IAN y no separable. En efecto, si $\displaystyle X $ es no numerable basta con tomar $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $. En esta topología todos los subconjuntos son abiertos y cerrados, por lo que el único subconjunto denso es $\displaystyle X $.
+\end{eg}
+\begin{eg}
+Un espacio puede ser separable y no ser I AN. Basta con considerar $\displaystyle \left(\R, \mathcal{T}_{CF}\right) $. Vimos que no era I AN, por otra parte tiene un subconjunto denso y numerable, por ejemplo $\displaystyle \Z $.
+\end{eg}
+\subsection{Espacios Lindelöf}
+\begin{definition}[Recubrimiento y subrecubrimiento]
+	Dada una colección de abiertos $\displaystyle \left\{ U_{i}\right\} _{i \in I}\subset X $ con $\displaystyle i \in I $, decimos que esa colección es un \textbf{recubrimiento por abiertos} de $\displaystyle X $ si $\displaystyle X = \bigcup_{i \in I}U_{i} $. Un \textbf{subrecubrimiento} es una subcolección $\displaystyle \left\{ U_{j} \; : \; j \in J \subset I\right\}  $ de modo que $\displaystyle X = \bigcup_{j \in J}U_{j} $.
+\end{definition}
+\begin{definition}[Espacio Lindelöf]
+Un espacio topológico $\displaystyle X $ es de \textbf{Lindelöf} si cada recubrimiento por abiertos de $\displaystyle X $ admite un subrecubrimiento numerable.
+\end{definition}
+\begin{prop}
+Si un espacio topológico $\displaystyle X $ es II AN, entonces es de Lindelöf. 
+\end{prop}
+\begin{proof}
+	Si tenemos un recubrimiento por abiertos $\displaystyle X = \bigcup_{i \in I}U_{i} $, como sabemos que existe una base $\displaystyle \mathcal{B}= \left\{ B_{k}\right\} _{k\in \N} $ numerable, podemos proceder como sigue: para cada $\displaystyle B_{k} $, si está contenido en alguno de los abiertos del recubrimiento, escogemos uno de esos abiertos que lo contienen y lo denotamos por $\displaystyle U_{i\left(k\right)} $. Afirmamos que 
+	\[X = \bigcup_{k \in \N, B_{k}\subset U_{i}\left(k\right)}U_{i\left(k\right)} .\]
+	Si existiese 
+	\[x_{0} \in X \backslash \bigcup_{k \in \N, B_{k}\subset U_{i\left(k\right)}}U_{i\left(k\right)} ,\]
+	por ser la familia $\displaystyle \left\{ U_{i}\right\} _{i \in I} $ un recubrimiento por abiertos de $\displaystyle X $, debería existir un $\displaystyle U_{i\left(x_{0}\right)} $ de modo que $\displaystyle x_{0}\in U_{i\left(x_{0}\right)} $. Ahora bien, como $\displaystyle \mathcal{B}= \left\{ B_{k}\right\} _{k \in \N} $ es base de la topología, debería existir un $\displaystyle k_{0} $ tal que $\displaystyle x_{0}\in B_{k_{0}}\subset U_{i\left(x_{0}\right)} $. Pero entonces,
+	\[x_{0}\in U_{i\left(k_{0}\right)}\subset \bigcup_{k \in \N, B_{k}\subset U_{i\left(k\right)}}U_{i\left(k\right)} ,\]
+	que contradice nuestra suposición inicial.
+\end{proof}
+\begin{eg}
+	Si $\displaystyle X $ es no numerable, $\displaystyle \left(X, \mathcal{T}_{a}\right) $ no es Lindelöf. En efecto, los conjuntos $\displaystyle U^{x}= \left\{ a,x\right\}  $ son abiertos. Si consideramos el recubrimiento 
+	\[X = \bigcup_{x \in X \backslash \left\{ a\right\} }U^{x} ,\]
+	no admite ningún subrecubrimiento.
+\end{eg}
+\section{Comportamiento por construcciones}
+\begin{observation}
+Es sencillo ver que todas las propiedades anteriores son propiedades topológicas. 
+\end{observation}
+
+\begin{prop} Sea $\displaystyle X $ un espacio topológico. 
+	\begin{enumerate}
+	\item Si $\displaystyle X $ es I AN, todo subespacio $\displaystyle Y \subset X $ es I AN.
+	\item Si $\displaystyle X $ es II AN, todo subespacio $\displaystyle Y \subset X $ es II AN. 
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle X $ un espacio topológico. 
+	\begin{enumerate}
+	\item Basta con observar que dado $\displaystyle y \in Y $, si $\displaystyle \mathcal{V}^{y}= \left\{ V^{y}_{k}\right\} _{k \in \N} $ es una base numerable de entornos abiertos de $\displaystyle y $ en $\displaystyle X $, entonces $\displaystyle \mathcal{W}^{y}= \left\{ V^{y}_{k}\cap Y\right\} _{k\in \N} $ es una base numerable de entornos de $\displaystyle y $ en $\displaystyle Y $.
+	\item Dada una base numerable de la topología en $\displaystyle X $, $\displaystyle \mathcal{B}= \left\{ B_{k}\right\} _{k \in \N} $, sabemos que el conjunto $\displaystyle \mathcal{B}_{Y}= \left\{ B_{k}\cap Y\right\} _{k \in \N} $ es una base de la topología de $\displaystyle Y $ como subespacio.
+	\end{enumerate}
+\end{proof}
+\begin{eg}
+La recta de Sorgenfrey es de Lindelöf. Como cada abierto es unión de abiertos básicos, basta con considerar un recubrimiento de la forma
+\[ \R = \bigcup_{i \in I}[a_{i}, b_{i}) ,\]
+ donde cada uno de los $\displaystyle [a_{i}, b_{i}) $, con $\displaystyle a_{i} < b_{i} $, es un abierto de la base. Supongamos que consideramos la unión 
+ \[\bigcup_{i \in I}\left(a_{i}, b_{i}\right) ,\]
+ y sea $\displaystyle A $ el subconjunto de puntos de $\displaystyle \R $ que no están cubiertos por esa unión, es decir, $\displaystyle A = \R \backslash \bigcup_{i \in I}\left(a_{i}, b_{i}\right) $. 
+ Si $\displaystyle x \in A $ debe existir $\displaystyle i \in I $ tal que $\displaystyle x = a_{i}\in [a_{i}, b_{i}) $. Sea $\displaystyle q_{x}\in \Q $ tal que $\displaystyle x < q_{x} < b_{i} $. Por otra parte, si $\displaystyle x' \neq x $ es otro punto de $\displaystyle A $, y $\displaystyle x < x' $, se tendrá de manera análoga que debe existir $\displaystyle j \in I $ tal que $\displaystyle x' = a_{j}\in [a_{j}, b_{j}) $. Además, podemos determinar un $\displaystyle q_{x'}\in \Q $ con $\displaystyle x' < q_{x'} < b_{j} $. 
+ Se tiene que $\displaystyle q_{x} < q_{x'} $. En efecto, en caso contrario tendríamos que 
+ \[x < x' < q_{x'} \leq q_{x} < b_{i} ,\]
+ por lo que $\displaystyle x' \in \left(a_{i}, b_{i}\right) $, que contradice que $\displaystyle x ' \in A $. Así, hemos establecido una aplicación inyectiva
+ \[A \to \Q : x \to q_{x} ,\]
+ que muestra que $\displaystyle A $ es numerable. Si nos fijamos ahora en $\displaystyle \R\backslash A $, resulta que está recubierto por la unión de los intervalos abiertos $\displaystyle \left(a_{i}, b_{i}\right)\in I $, y pensando en $\displaystyle \R \backslash A $ como subespacio de la recta usual que es II AN, sabemos que nos podemos quedar con un subrecubrimiento numerable, los $\displaystyle \left\{ a_{j}, b_{j}\right\}  $ para $\displaystyle j \in J \subset I $ siendo $\displaystyle J $ numerable. 
+ Hemos terminado, pues del recubrimiento inicial $\displaystyle \R = \bigcup_{i \in I}[a_{i}, b_{i}) $ hemos obtenido el subrecubrimiento numerable
+ \[\R = \bigcup_{x \in A}[a_{i}, b_{i}) \cup \bigcup_{j \in J}[a_{j}, b_{j}) .\]
+\end{eg}
+\begin{prop}
+Si $\displaystyle X $ es un espacio topológico separable y $\displaystyle Y \subset X $ abierto, entonces $\displaystyle Y $ es separable.
+\end{prop}
+\begin{proof}
+Sea $\displaystyle A \subset X $ denso y numerable. Por densidad tenemos que $\displaystyle A \cap Y \neq \emptyset $. Además, el conjunto $\displaystyle A \cap Y $ es numerable y es denso en $\displaystyle Y $. En efecto, todo abierto en $\displaystyle Y $ lo es en $\displaystyle X $, por lo que $\displaystyle W \cap \left(A \cap Y\right)= W \cap A \neq \emptyset $.
+\end{proof}
+\begin{eg}
+	Ser separable no es una propiedad hereditaria en general. Sean $\displaystyle \left(X, \mathcal{T}_{a}\right) $ con $\displaystyle X $ no numerable. Si $\displaystyle Y = X \backslash \left\{ a\right\}  $, entonces $\displaystyle Y $ hereda la topología discreta. Así, el único subconjunto denso es $\displaystyle Y $, que no es numerable. 
+\end{eg}
+\begin{prop}
+Si el espacio topológico $\displaystyle \left(Z, \mathcal{T}\right) $ es Lindelöf y $\displaystyle C \subset X $ es cerrado, entonces $\displaystyle \left(C, \mathcal{T}|_{C}\right) $ es Lindelöf. 
+\end{prop}
+\begin{proof}
+Si tomamos un recubrimiento por abiertos en $\displaystyle C $, 
+\[C = \bigcup_{i \in I}V_{i}, \; V_{i} \in \mathcal{T}|_{C} .\]
+Tenemos que existen $\displaystyle U_{i} \in \mathcal{T} $ tales que $\displaystyle U_{i} \cap C = V_{i} $, $\displaystyle \forall i \in I $. Entonces, $\displaystyle C \subset \bigcup_{i \in I}U_{i} $. Como $\displaystyle X \backslash C $ es abierto,
+\[X = \left(X \backslash C\right)\cup \bigcup_{i \in I}U_{i} .\]
+Como $\displaystyle X $ es Lindelöf, existe un subrecubrimiento numerable
+\[X = \left(X \backslash C\right) \cup \bigcup_{j \in J}U_{j}, \]
+con $\displaystyle J \subset I $ numerable. Claramente, $\displaystyle C = \bigcup_{j \in J}V_{j} $. 
+\end{proof}
+

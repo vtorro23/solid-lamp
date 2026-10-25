@@ -1,0 +1,139 @@
+\chapter{Estabilidad de sistemas no lineales mediante linealización}
+Asumimos $\displaystyle f\left(t,0\right)=0 $. Si $\displaystyle f \in \mathcal{C}^{1} $ tenemos que 
+\[f\left(t,x\right)=f\left(t,0\right) + Df\left(t,0\right)x + H\left(t,x\right) .\]
+Tenemos que por la definición de la matriz diferencial
+\[ \frac{ \left|Hx\right|}{ \left|x\right|} \xrightarrow{ \left|x\right|\to 0}0 .\]
+Si denotamos $\displaystyle A\left(t\right)=Df\left(t,0\right) $, podemos escribir
+\[x' = A\left(t\right)x + H\left(t,x\right) .\]
+Como $\displaystyle H $ es pequeña, realmente nos va a interesar el sistema $\displaystyle y' = A\left(t\right)y $. 
+\section{Estabilidad asintótica por linealización}
+\begin{theorem}
+	Consideremos el sistema $\displaystyle x' = Ax + H\left(t,x\right) $ donde
+	\begin{itemize}
+	\item $\displaystyle A \in \R^{n\times n} $ constante tal que todos sus autovalores tienen parte real estrictamente negativa.
+	\item La función $\displaystyle H : D \subset \R \times \R^{n}\to \R^{n} $ es continua y localmente Lipschitz respecto a la segunda variable y $\displaystyle H\left(t,0\right)=0 $.
+	\item Existe $\displaystyle \left[\tau, T\right] \times B_{r}\subset D $ con $\displaystyle T > \tau $ y $\displaystyle r > 0 $ \footnote{En realidad podemos sustituir $\displaystyle \tau $ por $\displaystyle t_{0} $.}.
+	\item $\displaystyle H\left(t,x\right)=o\left( \left|x\right|\right) $. Es decir, para todo $\displaystyle L > 0 $ existe $\displaystyle R > 0 $ tal que si $\displaystyle \left|x\right|<R $ entonces $\displaystyle \left|H\left(t,x\right)\right| < L \left|x\right| $ para todo $\displaystyle t \in [\tau, T] $.
+	\end{itemize}  
+	Entonces, existen constantes $\displaystyle K \geq 1 $, $\displaystyle \overline{\gamma }>0 $ y $\displaystyle \rho > 0 $ tales que para todo $\displaystyle t_{0}\in [\tau, T] $ y todo $\displaystyle x_{0}\in B_{\rho} $ la solución del sistema satisface que 
+	\[ \left|\varphi\left(t; t_{0}, x_{0}\right)\right| \leq K \left|x_{0}\right|e^{-\overline{\gamma }\left(t-t_{0}\right)}, \; \forall t \in [\tau, T] .\]
+	En particular, si $\displaystyle T = \infty $, la cota anterior se verfica en todo $\displaystyle [\tau, \infty) $ por lo que $\displaystyle \overline{x}\equiv 0 $ es asintóticamente estable para el sistema no lineal. 
+\end{theorem}
+\begin{proof}
+Como $\displaystyle \Re\left(\lambda \right)< 0 $, $\displaystyle \forall \lambda \in \sigma\left(A\right) $ tenemos que existen $\displaystyle K \geq 1 $ y $\displaystyle \gamma > 0 $ tal que 
+\[\|e^{tA}\| \leq Ke^{-\gamma t}, \; \forall t \geq 0 .\]
+Ahora, por la fórmula de variación de constantes tenemos que, 
+\[\varphi\left(t; t_{0}, x_{0}\right)=e^{A\left(t-t_{0}\right)}x_{0} + \int^{t}_{t_{0}} e^{A\left(t-s\right)}H\left(s, \varphi\left(s; t_{0}, x_{0}\right)\right) \; d s .\]
+Entonces, 
+\[
+\begin{split}
+	\|\varphi\left(t; t_{0}, x_{0}\right)\| \leq & \|e^{A\left(t-t_{0}\right)}\| \|x_{0}\| + \int^{t}_{t_{0}} \left\|e^{A\left(t-s\right)}\right\| \left\|H\left(s, \varphi\left(s; t_{0}, x_{0}\right)\right)\right\| \; d s \\
+	\leq & Ke^{-\gamma\left(t-t_{0}\right)}\|x_{0}\| + K\int^{t}_{t_{0}} e^{-\gamma \left(t-s\right)} \|H\left(s, \varphi\left(s; t_{0}, x_{0}\right)\right)\| \; d s .
+\end{split}
+\]
+Elegimos $\displaystyle L \in \left(0, \frac{\gamma }{K}\right) $, por hipótesis tenemos que existe $\displaystyle R > 0  $ tal que si $\displaystyle \|x\|<R $ entonces $\displaystyle \|H\left(t,x\right)\| < L\|x\| $. Tomamos $\displaystyle \|x_{0}\| <\frac{R}{2K+1}=:\rho $. Vamos a probar que $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)\| \leq R $ en todo el intervalo $\displaystyle [t_{0}, \beta_{+ }) $. Supongamos que no es cierto, es decir, podemos tomar
+\[t_{1} = \inf \left\{ t \in \left(t_{0}, \beta_{+ } \right)\; : \; \|\varphi\left(t; t_{0}, x_{0}\right)\| > R\right\}  .\]
+Entonces, tenemos que $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)\| \leq R $ en $\displaystyle \left[t_{0}, t_{1}\right]  $. Por tanto, 
+\[\|\varphi\left(t; t_{0}, x_{0}\right)\| \leq Ke^{-\gamma \left(t-t_{0}\right)}\|x_{0}\| + K\int^{t}_{t_{0}} e^{-\gamma \left(t-s\right)}L \|\varphi\left(s; t_{0}, x_{0}\right)\| \; d s, \; \forall t \in \left[t_{0}, t_{1}\right]  .\]
+Si multiplicamos a ambos lados por $\displaystyle e^{\gamma t} $, 
+\[ e^{\gamma t}\|\varphi\left(t; t_{0}, x_{0}\right)\| \leq Ke^{\gamma t_{0}} \|x_{0}\| + KL\int^{t}_{t_{0}} e^{\gamma s}\|\varphi\left(s; t_{0}, x_{0}\right)\| \; d s  .\]
+Aplicando Grönwall, 
+\[e^{\gamma t}\|\varphi\left(t; t_{0}, x_{0}\right)\| \leq Ke^{\gamma t_{0}}\|x_{0}\| e^{KL\left(t-t_{0}\right)} \Rightarrow \|\varphi\left(t; t_{0}, x_{0}\right)\| \leq K \|x_{0}\| e^{KL\left(t-t_{0}\right)}e^{-\gamma\left(t-t_{0}\right)} .\]
+En particular, si $\displaystyle t = t_{1} $ tenemos que 
+\[\|\varphi\left(t; t_{0}, x_{0}\right)\| \leq K\|x_{0}\| < \frac{K}{2K+1}R \leq R .\]
+Esto es una contradicción. Así, debe ser que 
+\[\|\varphi\left(t; t_{0}, x_{0}\right)\| \leq K\|x_{0}\|e^{-\gamma\left(t-t_{0}\right)}, \; \forall t \in [t_{0}, \beta_{+}) .\]
+Por el resultado de fuga de compactos debe ser que $\displaystyle \beta_{+ }= T $. 
+\end{proof}
+\begin{colorary}
+Sea $\displaystyle f \in \mathcal{C}^{1}\left(\R^{n}, \R^{n}\right) $, $\displaystyle \overline{x}\in \R^{n} $ tal que $\displaystyle f\left(\overline{x}\right)=0 $ y $\displaystyle Df\left(\overline{x}\right)\in \R^{n \times n} $ una matriz cuyos autovalores tienen todos parte real estrictamente negativa. 
+Entonces $\displaystyle \overline{x}\left(t\right)\equiv \overline{x} $ es solución asintóticamente estable de $\displaystyle x'=f\left(x\right) $.
+\end{colorary}
+\begin{proof}
+Lo primero es observar que $\displaystyle \overline{x}\left(t\right)\equiv \overline{x} $ es asintóticamente estable para $\displaystyle x' = f\left(x\right) $ si y sólo si $\displaystyle \overline{z}\left(t\right)\equiv 0 $ es asintóticamente estable para el sistema $\displaystyle z '=g\left(z\right) $ con 
+\[g\left(z\right)=f\left(\overline{x}+z\right)-f\left(\overline{x}\right)=f\left(\overline{x}+z\right) .\]
+Como $\displaystyle f $ es $\displaystyle \mathcal{C}^{1} $ tenemos que $\displaystyle g $ también es $\displaystyle \mathcal{C}^{1} $. Además, 
+\[g\left(z\right)=f\left(\overline{x}+z\right)= Df\left(\overline{x}\right)z+\left(f\left(\overline{x}+z\right)-Df\left(\overline{x}\right)z\right).\]
+Tomamos $\displaystyle A := Df\left(\overline{x}\right) $ y $\displaystyle H\left(z\right):= f\left(\overline{x}+z\right)-Df\left(\overline{x}\right)z$. Tenemos que 
+\[z' = g\left(z\right)=Az + Hz .\]
+Tenemos que $\displaystyle \lambda \in \sigma\left(A\right)=\sigma\left(Df\left(\overline{x}\right)\right) $, por lo que $\displaystyle \Re\left(\lambda \right)< 0 $. Por otro lado
+\[H\left(0\right)=f\left(\overline{x}+0\right)-Df\left(\overline{x}\right)0=0 .\]
+Por la definición de matriz diferencial,
+\[0 = \lim_{z \to 0}\frac{ \left|f\left(\overline{x}+z\right)-f\left(\overline{x}\right)-Df\left(\overline{x}\right)z\right|}{ \left|z\right|}=\lim_{z \to 0}\frac{ \left|H\left(z\right)\right|}{ \left|z\right|} .\]
+Así, para cada $\displaystyle L > 0 $ existe $\displaystyle R > 0 $ tal que $\displaystyle \frac{ \left|H\left(z\right)\right|}{ \left|z\right|} \leq L $ si $\displaystyle \left|z\right|<R $, por lo que $\displaystyle \left|H\left(z\right)\right|\leq L \left|z\right| $. Así, $\displaystyle H\left(z\right)=o\left( \left|z\right|\right) $. 
+Así, podemos aplicar el teorema anterior, por lo que $\displaystyle \overline{z}\equiv 0 $ es solución asintóticamente estable del sistema $\displaystyle z' = g\left(z\right) $. Consecuentemente, $\displaystyle \overline{x}\left(t\right)\equiv \overline{x} $ es asintóticamente estable para $\displaystyle x '= f\left(x\right) $. 
+\end{proof}
+\begin{eg}[Problema 27]
+Sea $\displaystyle \left(\overline{x}, \overline{y}\right)=\left(0,0\right) $. 
+\begin{enumerate}
+\item Consideremos 
+	\[f\left(x,y\right)=\begin{pmatrix} -x-y-\left(x^{2}+y^{2}\right) \\ x-y+\left(x^{2}+y^{2}\right) \end{pmatrix} .\]
+	Claramente $\displaystyle f\left(0,0\right)=\left(0,0\right) $ por lo que la solución que nos dan efectivamente es solución. Podemos observar también que $\displaystyle f \in \mathcal{C}^{\infty } \left(\R^{n}, \R^{n}\right)$. Tenemos que 
+	\[Df\left(x,y\right)=\begin{pmatrix} -1-2x & -1-2y \\ 1 + 2x & -1 + 2y \end{pmatrix} \Rightarrow Df\left(\overline{x}, \overline{y}\right)=\begin{pmatrix} -1 & -1 \\ 1 & - 1 \end{pmatrix} .\]
+	Así, los autovalores de esta matriz son $\displaystyle \sigma\left(Df\left(\overline{x}, \overline{y}\right)\right)= \left\{ -1 \pm i\right\}  $. Como la parte real de los autovalores es estrictamente menor que 0, por el corolario anterior la solución que nos dan es asintóticamente estable. 
+\item Nos dan 
+	\[f\left(x,y\right)=\begin{pmatrix} \cos x - \sin x - 1 \\ x - y - y^{2} \end{pmatrix} .\]
+	Tenemos que $\displaystyle f \in \mathcal{C}^{\infty } $ y la solución que nos dan es solución. Además, 
+	\[Df\left(x,y\right)=\begin{pmatrix} -\sin x - \cos x & 0 \\ 1 & - 1 - 2y \end{pmatrix}\Rightarrow Df\left(\overline{x}, \overline{y}\right)=\begin{pmatrix} -1 & 0 \\ 1 & - 1 \end{pmatrix} .\]
+El único autovalor es $\displaystyle -1 $ que tiene parte real estrictamente negativa por lo que la solución que nos dan es asintóticamente estable.	
+\end{enumerate}
+\end{eg}
+\begin{prop}
+Consideramos el sistema $\displaystyle x' = Ax + H\left(t, x\right) $ donde $\displaystyle A \in \R^{n \times n} $, $\displaystyle H : D \subset \R \times \R^{n}\to \R^{n}$ continua y localmente Lipschitz respecto a la segunda variable tal que $\displaystyle H\left(t, 0\right)=0 $. Cogemos $\displaystyle [\tau, \infty) \times B_{r} \subset D $ y $\displaystyle \left|H\left(t,x\right)\right| = o\left( \left|x\right|\right) $ uniformemente en $\displaystyle t $. 
+Si todos los autovalores de $\displaystyle A $ tienen parte real positiva, entonces existe $\displaystyle B_{\rho }\subset \R^{n} $ tal que si $\displaystyle x_{0}\in B_{\rho }\backslash \left\{ 0\right\}  $ la solución $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ se sale de la bola $\displaystyle B_{\rho } $ en tiempo finito. 
+En particular $\displaystyle \overline{x}=0 $ es solución inestable del sistema. 
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ el flujo del sistema. Fijado $\displaystyle t_{0}, x_{0} $, el flujo está definido en $\displaystyle \left[t_{0}, T\right]  $. Definimos 
+	\[\psi_{T}\left(t\right):=\varphi\left(T-t; t_{0}, x_{0}\right), \; t \in \left[0, T-t_{0}\right]  .\]
+Además, 
+\[.\]
+\[
+\begin{split}
+	\psi_{T}'\left(t\right)= &-\frac{\partial \varphi}{\partial t}\left(T-t; t_{0}, x_{0}\right)=-\left(A\varphi\left(T-t; t_{0}, x_{0}\right)+H\left(T-t; \varphi\left(T-t; t_{0}, x_{0}\right)\right)\right) \\
+	= & -A\psi_{T}\left(t\right)-H\left(T-t; \psi_{T}\left(t\right)\right).
+\end{split}
+\]
+Es decir, $\displaystyle \psi_{T} $ es solución de 
+\[z' = -Az + H_{T}\left(t,z\right) ,\]
+con $\displaystyle H_{T}\left(t,z\right)=-H\left(T-t,z\right) $. 
+Aplicando el teorema de estabilidad asintótica tenemos que existe $\displaystyle k \in \N $, $\displaystyle \overline{\gamma } > 0 $ y $\displaystyle \rho > 0 $ tal que 
+\[ \left|\psi_{T}\left(t\right)\right| \leq Ke^{-\overline{\gamma }t} \left|\psi_{T}\left(0\right)\right|, \; \forall t \in [0,T-t_{0}] .\]
+Tomando $\displaystyle t = T-t_{0} $,
+\[ \left|\psi_{T}\left(T\right)\right|\leq Ke^{-\overline{\gamma }\left(T-t_{0}\right)} \left|\psi_{T}\left(0\right)\right|, \; \text{si} \; \left|\psi_{T}\left(0\right)\right|<\rho .\]
+Supongamos que no es cierta la conclusión de la proposición. Entonces, existe $\displaystyle x_{0}\in B_{p}\backslash \left\{ 0\right\}  $ tal que $\displaystyle \left|\varphi\left(t; t_{0}, x_{0}\right)\right|<\rho $, $\displaystyle \forall t \geq t_{0} $. 
+Elegimos ese $\displaystyle \left(t_{0}, x_{0}\right) $ y tenemos que 
+\[ \left|\psi_{T-t_{0}}\left(0\right)\right|= \left|\varphi\left(T; t_{0}, x_{0}\right)\right|<\rho, \; \forall T \geq t_{0} .\]
+Por tanto, 
+\[ \left|x_{0}\right|=\left|\varphi\left(t_{0}; t_{0}, x_{0}\right)=\right|\left|\psi_{T}\left(T-t_{0}\right)\right|\leq Ke^{-\overline{\gamma }\left(T-t_{0}\right)} \left|\psi_{T}\left(0\right)\right|\leq Ke^{-\overline{\gamma }\left(T-t_{0}\right)} \left|\varphi\left(T; t_{0}, x_{0}\right)\right|, \; \forall T \geq t_{0} .\]
+Así, tenemos que 
+\[ \left|\varphi\left(T; t_{0}, x_{0}\right)\right| \geq \frac{1}{K}e^{\overline{\gamma }\left(T-t_{0}\right)} \left|x_{0}\right|, \; \forall T \geq t_{0} .\]
+Así, $\displaystyle \lim_{T \to \infty} \left|\varphi\left(T; t_{0}, x_{0}\right)\right|=\infty  $, que contradice el hecho que $\displaystyle \left|\varphi\left(t; t_{0}, x_{0}\right)\right|< \rho $ para $\displaystyle t \geq t_{0} $. 
+\end{proof}
+\begin{theorem}
+Consideramos el problema no lineal $\displaystyle x' = Ax + H\left(t,x\right) $ con $\displaystyle A \in \R^{n \times n} $ tal que algún autovalor tiene parte real estrictamente positiva y $\displaystyle H : D \subset \R \times \R^{n} \to \R^{n} $ continua y localmente Lipschitz respecto a la segunda variable con $\displaystyle [\tau, \infty) \times B_{r}\subset D $ y tal que $\displaystyle H\left(t,0\right)=0 $ y $\displaystyle H\left(t,x\right)=o\left( \left|x\right|\right) $ uniformemente en $\displaystyle t $. Entonces $\displaystyle \overline{x}\left(t\right)\equiv 0 $ es inestable.
+\end{theorem}
+\begin{colorary}
+Dada $\displaystyle f \in \mathcal{C}^{1}\left(\R^{n}; \R^{n}\right) $ y $\displaystyle \overline{x}\in \R^{n} $ tal que $\displaystyle f\left(\overline{x}\right)=0 $ y $\displaystyle Df\left(\overline{x}\right) $ tiene algún autovalor con parte real estrictamente positiva, entonces la solución $\displaystyle \overline{x}\left(t\right)\equiv \overline{x} $ es inestable.
+\end{colorary}
+\begin{proof}
+Es idéntica a la de estabilidad asintótica. 
+\end{proof}
+\begin{observation}[Resumen]
+En resumen, si $\displaystyle Df\left(\overline{x}\right) $ tiene todos los autovalores con parte real estrictamente menor que 0, es asintóticamente estable. Si tiene algún autovalor con parte real estrictamente positivo es inestable. En otro caso la linealización no decide. Los otros casos que pueden suceder son:
+\begin{itemize}
+\item La parte real es menor o igual que 0 para todos los autovalores y la parte real es 0 para algún autovalor.
+\end{itemize}
+\end{observation}
+\begin{lema}
+Sea $\displaystyle M \in \R^{n \times n} $ invertible y $\displaystyle f : D \subset \R \times \R^{n}\to \R^{n} $ continua y localmente Lipschitz respecto a la segunda variable y $\displaystyle f\left(t,0\right)=0 $. Entonces, la estabilidad de $\displaystyle \overline{x}\left(t\right)\equiv 0 $ para el problema $\displaystyle x' = f\left(t,x\right) $ es la misma que la de $\displaystyle \overline{y}\left(t\right)\equiv 0 $ para el problema $\displaystyle y'=g\left(t,y\right) $ con $\displaystyle g\left(t,y\right)=M^{-1}f\left(t,My\right) $.  
+\end{lema}
+\begin{proof}
+Si $\displaystyle \varphi $ es el flujo del sistema $\displaystyle x' = f\left(t,x\right) $ y $\displaystyle \psi $ es el del sistema $\displaystyle y' = g\left(t,y\right) $, entonces tenemos que 
+\[\psi\left(t; t_{0}, y_{0}\right)=M^{-1}\varphi\left(t; t_{0}, My_{0}\right) .\]
+% probar esta parte en casa, es un cálculo sencillo, basta con ver que M^-1... satisface el PVI de \psi
+Entonces, 
+\[ \|M\|^{-1} \left|\varphi\left(t; t_{0}, x_{0}\right)\right| \leq \left|\psi\left(t; t_{0}, y_{0}\right)\right|\leq \|M^{-1}\| \left|\varphi\left(t;  t_{0}, My_{0}\right)\right| .\]
+
+\end{proof}
+
