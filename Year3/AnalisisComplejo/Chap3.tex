@@ -451,7 +451,13 @@ Es decir, sabemos que $\displaystyle z \to F\left(z,w\right) $ se anula en $\dis
 \end{proof}
 \begin{eg}
 Utilizando el teorema anterior se deduce inmediatamente la validez de las igualdades
-\[\sin\left(z + w\right)=\sin z \cos w + \cos z \sin w , \quad \cos\left(z + w\right)=\cos z \cos w - \sin z \sin w, \quad \cos ^{2}z + \sin ^{2}z = 1 , \; \forall z,w\in \C,\]
+\[
+\begin{split}
+ \sin\left(z + w\right)=\sin z \cos w + \cos z \sin w \\
+ \cos\left(z + w\right)=\cos z \cos w - \sin z \sin w \\
+ \cos ^{2}z + \sin ^{2}z = 1 , \; \forall z,w\in \C.
+\end{split}
+\]
 a partir de las correspondientes igualdades para números reales.
 \end{eg}
 \begin{theorem}[Teorema de Liouville]
@@ -494,7 +500,7 @@ Supongamos primero que $\displaystyle \Omega  $ es convexo. Entonces tendremos q
 \end{theorem}
 \begin{proof}
 Observemos primero que $\displaystyle f $ es continua en $\displaystyle \Omega  $ por ser límite uniforme de funciones continuas en cada subconjunto compacto de $\displaystyle \Omega  $, y en particular en cada disco cerrado contenido en $\displaystyle \Omega  $. Sea $\displaystyle D $ un disco abierto contenido en $\displaystyle \Omega  $ y sea $\displaystyle T $ un triángulo cualquiera contenido en $\displaystyle D $. Como $\displaystyle f_{n} $ es holomorfa en el abierto convexo $\displaystyle D $, por el teorema de Cauchy sabemos que 
-\[\int _{T}f_{n} , \; \forall n \in \N .\]
+\[\int _{T}f_{n} = 0 , \; \forall n \in \N .\]
 Entonces, dado $\displaystyle T $ uno cualquiera de estos triángulos, como $\displaystyle \lim_{n \to \infty }f_{n}\left(z\right)=f\left(z\right) $ uniformemente en $\displaystyle z\in T $ se tiene que 
 \[\int _{T}f =\int _{T}\lim_{n \to \infty}f_{n} =\lim_{n \to \infty}\int _{T}f_{n} =0 .\]
 Por el teorema de Morera tenemos que $\displaystyle f $ es holomorfa en $\displaystyle D $ y como $\displaystyle D $ es arbitrario podemos deducir que $\displaystyle f $ es holomorfa en $\displaystyle \Omega  $. 
@@ -516,7 +522,7 @@ Como el miebro de la derecha de la anterior desigualdad tiende a $\displaystyle 
 Si $\displaystyle f_{n} : \Omega \subset \C \to \C $ con $\displaystyle n \in \N $, son funciones holomorfas y la serie $\displaystyle F\left(z\right)=\sum^{\infty}_{n = 1}f_{n}\left(z\right) $ converge uniformemente en cada subconjunto compacto de $\displaystyle \Omega  $, entonces $\displaystyle F : \Omega \to \C $ es holomorfa.
 \end{colorary}
 \begin{theorem}[Teorema de derivación bajo el signo de la integral]
-	Sean $\displaystyle \Omega \subset \C $ abierto, $\displaystyle F : \Omega \times \left[a,b\right] \to \C $ continua tal que $\displaystyle z \in \Omega \to F\left(z,s\right) $ es holomorfa para cada $\displaystyle s \in \left[a,b\right]  $. Entonces la función $\displaystyle f : Omeg a\to \C $ definida por
+	Sean $\displaystyle \Omega \subset \C $ abierto, $\displaystyle F : \Omega \times \left[a,b\right] \to \C $ continua tal que $\displaystyle z \in \Omega \to F\left(z,s\right) $ es holomorfa para cada $\displaystyle s \in \left[a,b\right]  $. Entonces la función $\displaystyle f :  \Omega\to \C $ definida por
 	\[f\left(z\right)=\int^{b}_{a} F\left(z,s\right) \; d s ,\]
 	es holomorfa en $\displaystyle \Omega  $. Además, para cada $\displaystyle z_{0} \in \Omega  $ la función $\displaystyle s \in \left[a,b\right] \to \frac{\partial F}{\partial z}\left(z_{0}, s\right) $ es integrable y se tiene 
 	\[f'\left(z_{0}\right)=\int^{b}_{a} \frac{\partial F}{\partial z}\left(z_{0}, s\right) \; d s .\]

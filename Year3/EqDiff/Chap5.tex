@@ -134,6 +134,59 @@ Si $\displaystyle \varphi $ es el flujo del sistema $\displaystyle x' = f\left(t
 % probar esta parte en casa, es un cálculo sencillo, basta con ver que M^-1... satisface el PVI de \psi
 Entonces, 
 \[ \|M\|^{-1} \left|\varphi\left(t; t_{0}, x_{0}\right)\right| \leq \left|\psi\left(t; t_{0}, y_{0}\right)\right|\leq \|M^{-1}\| \left|\varphi\left(t;  t_{0}, My_{0}\right)\right| .\]
-
 \end{proof}
+\begin{proof}
+Demostración del teorema. En el caso $\displaystyle n = 1 $ es trivial. Ahora en el caso $\displaystyle n = 2 $ tenemos que si $\displaystyle \Re\left(\lambda \right) > 0 $, $\displaystyle \forall \lambda \in \sigma \left(A\right) $ ya tenemos el resultado. Por otro lado, si $\displaystyle \Re\left(\lambda \right)\leq 0 $ y $\displaystyle \Re\left(\lambda_{2}\right) > 0 $ podemos diagonalizar $\displaystyle A $ y tenemos que los autovalores $\displaystyle \lambda_{1}, \lambda_{2} \in \R $ con $\displaystyle \lambda_{1} \leq 0 < \lambda_{2} $. 
+Así, existe $\displaystyle M \in \R ^{n \times n} $ tal que 
+\[M^{-1}AM = \begin{pmatrix} \lambda _{1} & 0 \\ 0 & \lambda_{2} \end{pmatrix} .\]
+El problema $\displaystyle x '= A x + H\left(t,x\right) $ es equivalente a 
+\[ y' = \begin{pmatrix} \lambda_{1} & 0 \\ 0 & \lambda_{2} \end{pmatrix}y + \tilde{H}\left(t, y\right) ,\]
+con $\displaystyle \tilde{H}\left(t,y\right) = M^{-1}H\left(t, Mx\right) $, por el lema anterior. Además $\displaystyle \tilde{H}\left(t, y\right)=o \left( \left|y\right|\right) $ uniformemente en $\displaystyle t $. 
+Así, para cada $\displaystyle L > 0 $ existe $\displaystyle \rho > 0 $ tal que si $\displaystyle \left|y\right| \leq \rho  $ entonces $\displaystyle \left|\tilde{H}\left(t,y\right)\right|\leq L \left|y\right| $. Elegimos $\displaystyle L = \frac{\lambda_{2}}{2} > 0 $ obteniendo $\displaystyle \rho > 0 $. Definimos
+\[ \Omega = \left\{ \left(y_{1}, y_{2}\right)\in \R^{2} \; : \; \left|y_{2}\right|^{2}> \left|y_{1}\right|^{2}\right\}  .\]
+Vamos a probar que si $\displaystyle y_{0}= \left(y_{01}, y_{02}\right)\in \Omega \cap B_{\rho } \backslash \left\{ 0\right\}  $, entonces $\displaystyle \psi\left(t; t_{0}, y_{0}\right) $ el flujo del sistema equivalente cumple que $\displaystyle \psi\left(t; t_{0}, y_{0}\right) $ sale de la bola $\displaystyle B_{\rho } $ en tiempo finito. Si probamos esto tenemos la inestabilidad. Distinguimos varios pasos:
+\begin{itemize}
+\item Mientras $\displaystyle \psi\left(t; t_{0}, y_{0}\right)\in B_{\rho } $ queremos ver que $\displaystyle \psi\left(t; t_{0}, y_{0}\right)\in B_{\rho }\cap \Omega  $. Vamos a calcular 
+	\[
+	\begin{split}
+		\frac{d}{dt}\left(\psi_{2}\left(t; t_{0}, y_{0}\right)^{2}-\psi_{1}\left(t; t_{0}, y_{0}\right)^{2}\right) = & 2\psi\left(t; t_{0}, y_{0}\right) \frac{\partial \psi_{2}}{\partial t}\left(t; t_{0}, y_{0}\right)-2\psi_{1}\left(t; t_{0}, y_{0}\right)\frac{\partial \psi_{1}}{\partial t}\left(t; t_{0}, y_{0}\right) .
+	\end{split}
+	\]
+	Tenemos que 
+	\[\frac{\partial \psi_{i}}{\partial t}\left(t; t_{0}, y_{0}\right)=\lambda_{i}\psi_{i}\left(t; t_{0}, y_{0}\right) + \tilde{H}_{i}\left(t; \psi\left(t; t_{0}, y_{0}\right)\right), \; i \in \left\{ 1, 2\right\}  .\]
+	Así, nos queda
+	\[
+	\begin{split}
+		\frac{d}{dt}\left(\psi_{2}\left(t; t_{0}, y_{0}\right)^{2}-\psi_{1}\left(t; t_{0}, y_{0}\right)^{2}\right) = & 2 \lambda_{2}\psi_{2}\left(t; t_{0}, y_{0}\right)^{2}-2\lambda_{1}\psi_{1}\left(t; t_{0}, y_{0}\right)^{2} \\
+															     & + 2 \left\langle \left(-\psi_{1}\left(t; t_{0}, y_{0}\right), \psi_{2}\left(t; t_{0}, y_{0}\right)\right), \tilde{H}\left(t; \psi\left(t; t_{0}, y_{0}\right)\right) \right\rangle \\
+		\geq & 2 \lambda_{2}\psi_{2}\left(t; t_{0}, y_{0}\right)^{2} - 2\lambda_{1}\psi_{1}\left(t; t_{0}, y_{0}\right)^{2} \\
+		     & + 2 \left|\varphi\left(t; t_{0}, y_{0}\right)\right| \left|\tilde{H}\left(t; \psi\left(t; t_{0}, y_{0}\right)\right)\right|.
+	\end{split}
+	\]
+	Aplciando $\displaystyle \left|\tilde{H}\left(t; \psi\left(t; t_{0}, y_{0}\right)\right)\right| \leq \frac{\lambda _{2}}{2} \left|\psi\left(t; t_{0}, y_{0}\right)\right| $,
+	\[
+	\begin{split}
+		\geq & 2\lambda_{2}\psi_{2}\left(t; t_{0}, y_{0}\right)^{2} - 2\lambda_{1}\psi_{1}\left(t; t_{0}, y_{0}\right)^{2} -\lambda_{2}\psi_{2}\left(t; t_{0}, y_{0}\right)^{2}-\lambda_{2}\psi_{1}\left(t; t_{0}, y_{0}\right)^{2} \\
+		= & \lambda_{2}\left(\psi_{2}\left(t; t_{0}, y_{0}\right)^{2}-\psi_{1}\left(t; t_{0}, y_{0}\right)^{2}\right)-2\lambda_{1}\psi_{1}\left(t; t_{0}, y_{0}\right)^{2} \\
+		\geq & \lambda_{2} \left(\psi_{2}\left(t; t_{0}, y_{0}\right)^{2} -\psi_{1}\left(t; t_{0}, y_{0}\right)^{2}\right).
+	\end{split}
+	\]
+Así, tenemos que 
+\[\frac{d}{dt}\left(\psi_{2}\left(t; t_{0}, y_{0}\right)^{2}-\psi_{1}\left(t; t_{0}, y_{0}\right)^{2}\right) \geq \lambda_{2}\left(\psi_{2}\left(t; t_{0}, y_{0}\right)^{2} -\psi_{1}\left(t; t_{0}, y_{0}\right)^{2}\right) .\]
+Por tanto, 
+\[\psi_{2}\left(t; t_{0}, y_{0}\right)^{2}-\psi_{1}\left(t; t_{0}, y_{0}\right)^{2} \geq \left(y_{02}^{2}-y_{01}^{2}\right)e^{\lambda_{2}\left(t-t_{0}\right)} > 0,\]
+puesto que $\displaystyle y_{0} \in \Omega  $. Por tanto, tenemos que $\displaystyle \psi\left(t; t_{0}, y_{0}\right)\in \Omega  $. Finalmente, como $\displaystyle \lambda_{2} > 0 $ además
+\[ \left|\psi\left(t; t_{0}, y_{0}\right)\right|^{2} \geq \psi_{2}\left(t; t_{0} , y_{0}\right)^{2} -\psi_{1}\left(t; t_{0}, y_{0}\right)^{2}\xrightarrow{t \to \infty} \infty .\]
+\end{itemize}
+\end{proof}
+\begin{eg}
+	Consideremos la EDO $\displaystyle x ' = a x^{3} $. Consideremos $\displaystyle f\left(x\right)= ax^{3} $. Tenemos que $\displaystyle f\left(0\right)= 0 $ por lo que $\displaystyle \overline{x}\left(t\right)\equiv 0 $ es solución. Por otro lado, $\displaystyle f'\left(x\right)=3ax^{2} $ y como $\displaystyle f'\left(0\right)=0 $ por lo que $\displaystyle \sigma\left(Df\left(0\right)\right)= \left\{ 0\right\}  $, por lo que no podemos aplicar linealización. Podemos calcular la solución explícitamente, 
+	\[\varphi\left(t; t_{0}, x_{0}\right)=\frac{x_{0}}{\sqrt{1-2ax^{2}_{0}\left(t-t_{0}\right)}} .\]
+	Dependiendo de $\displaystyle a  $ podemos distinguir distintos comportamientos:
+	\begin{itemize}
+	\item Si $\displaystyle a > 0 $, el denominador se va a anular en algún momento por lo que la solución trivial es inestable. 
+	\item Si $\displaystyle a = 0 $, la solución es estable pero no asintóticamente. 
+	\item Si $\displaystyle a < 0 $, se puede demostrar que es asintóticamente estable a partir de la definición. 
+	\end{itemize}
+\end{eg}
 

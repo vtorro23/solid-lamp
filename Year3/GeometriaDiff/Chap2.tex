@@ -502,27 +502,29 @@ Podemos tomar $\displaystyle \gamma\left(v\right)=\left(\cos v, \sin v\right) $ 
 \subsection{Campos de vectores}
 Sea $\displaystyle S $ una superficie parametrizada regular $\displaystyle \textbf{x} \left(u,v\right) $, $\displaystyle \textbf{x} : U \to \R^{3} $.
 \begin{definition}[Campo de vectores]
- Un \textbf{campo de vectores} es 
+ Un \textbf{campo de vectores} es una aplicación
 \[ X : U \to \R^{3} : \left(u,v\right)\to X\left(u,v\right)=\left(X_{1}\left(u,v\right), X_{2}\left(u,v\right), X_{3}\left(u,v\right)\right) ,\]
 que es $\displaystyle \mathcal{C}^{\infty } $.
 \end{definition}
-\begin{observation}
+\begin{observation} Podemos hacer un par de observaciones.
 \begin{enumerate}
-\item Lo interpretamos como $\displaystyle X\left(u,v\right) $ vector en $\displaystyle \textbf{x} \left(u,v\right)\in S $. 
-\item Si $\displaystyle \textbf{x} \left(u,v\right) $ es parametrización inyectiva $\displaystyle X\left(p\right)\in \R^{3} $ para $\displaystyle p \in S $ y además
+\item Interpretamos $\displaystyle X\left(u,v\right) $ como un vector sobre el punto $\displaystyle \textbf{x} \left(u,v\right)\in S $. 
+\item Si $\displaystyle \textbf{x} \left(u,v\right) $ es parametrización inyectiva, como $\displaystyle X\left(p\right)\in \R^{3} $ para $\displaystyle p \in S $ podemos escribir
 	\[X\left(p\right)=X\left( \textbf{x} ^{-1}\left(p\right)\right)=X\left(u,v\right) ,\]
 	con $\displaystyle \textbf{x} ^{-1}\left(p\right)=\left(u,v\right) $. 
 \end{enumerate}
 \end{observation}
 \begin{lema}
-Podemos poner $\displaystyle X\left(p\right)=a\left(p\right) \textbf{x} _{u} + b\left(p\right) \textbf{x} _{v} +f \left(p\right)N $ con $\displaystyle a,b,f\in \mathcal{C}^{\infty }\left(U\right) $. 
+Dado un campo de vectores $\displaystyle X : U \to \R^{3} $, podemos escribir  
+\[X\left(p\right)=a\left(p\right) \textbf{x} _{u} + b\left(p\right) \textbf{x} _{v} +f \left(p\right)N ,\]
+con $\displaystyle a,b,f\in \mathcal{C}^{\infty }\left(U\right) $. 
 \end{lema}
 \begin{proof}
-	Ya vimos que $\displaystyle \left\{ \textbf{x} _{u}, \textbf{x} _{v}, N\right\}  $ es una base positiva. Si $\displaystyle N = \left(N_{1}, N_{2}, N_{3}\right) $ podemos poner
+	Ya vimos que $\displaystyle \left\{ \textbf{x} _{u}, \textbf{x} _{v}, N\right\}  $ es una base positiva. Si $\displaystyle N = \left(N_{1}, N_{2}, N_{3}\right) $ podemos considerar la matriz de cambio de base
 \[M_{\mathcal{B}_{C}\mathcal{B}_{M}}=\begin{pmatrix} x_{u} & x_{v} & N_{1} \\ y_{u} & y_{v} & N_{2} \\ z_{u} & z_{v} & N_{3} \end{pmatrix} .\]
-Tenemos que 
+De esta forma,  
 \[M_{\mathcal{B}_{C}\mathcal{B}_{M}}\begin{pmatrix} a \\ b \\ f \end{pmatrix}=\begin{pmatrix} X_{1} \\ X_{2} \\ X_{3} \end{pmatrix} ,\]
-. Como $\displaystyle M_{\mathcal{B}_{C}\mathcal{B}_{M}}\in \mathcal{C}^{\infty } $ y tiene determinante no nulo, debe ser que $\displaystyle \left(a,b,f\right)\in \mathcal{C}^{\infty }\left(U\right) $. 
+ Como $\displaystyle M_{\mathcal{B}_{C}\mathcal{B}_{M}}\in \mathcal{C}^{\infty } $ y tiene determinante no nulo, debe ser que $\displaystyle \left(a,b,f\right)\in \mathcal{C}^{\infty }\left(U\right) $. 
 \end{proof}
 \begin{definition}[Campo de vectores tangente y normal]
 	Sea $\displaystyle \textbf{x} : U \to S = \textbf{x} \left(U\right)\subset \R^{3} $ una superficie parametrizada regular.
@@ -532,7 +534,7 @@ Tenemos que
 	\end{itemize}
 \end{definition}
 \begin{prop}
-Todo campo se descompone $\displaystyle X = X^{T} + X^{\perp } $ siendo $\displaystyle X^{T} $ tangente a $\displaystyle S $ y $\displaystyle X^{\perp } $ normal a $\displaystyle S $. 
+Todo campo de vectores $\displaystyle X : U \to \R^{3} $ se puede descomponer de la forma $\displaystyle X = X^{T} + X^{\perp } $, siendo $\displaystyle X^{T} $ tangente a $\displaystyle S $ y $\displaystyle X^{\perp } $ normal a $\displaystyle S $. 
 \end{prop}
 \begin{proof}
 Dado un campo $\displaystyle X : U \to \R^{3} $ basta con tomar $\displaystyle X^{T}= a \textbf{x} _{u} + b \textbf{x} _{v} $ y $\displaystyle X ^{\perp }=f N $. 
@@ -648,6 +650,7 @@ La demostración es la de EDOS que dice que el flujo $\displaystyle \varphi\left
 \section{Orientabilidad}
 En $\displaystyle \R^{2} $ decimos que una base $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ es positiva si $\displaystyle \det\left(\vec{u},\vec{v}\right) > 0 $. En $\displaystyle \R^{3} $ decimos que una base $\displaystyle \left\{ \vec{u}, \vec{v}, \vec{w}\right\}  $ es positiva si $\displaystyle \det\left(\vec{u}, \vec{v}, \vec{w}\right)>0 $. \\
 
+\begin{notation}[Orientabilidad en planos]
 Sea $\displaystyle \Pi\subset \R^{3} $ un plano. Para orientar $\displaystyle \Pi $ necesito fijar una base que declaro positiva, $\displaystyle \mathcal{B}_{\Pi}= \left\{ \vec{u}, \vec{v}\right\}  $. Dada otra base $\displaystyle \mathcal{B}'_{\Pi} = \left\{ \vec{u}', \vec{v}'\right\}  $, podemos encontrar una matriz de cambio de base
 \[M_{\mathcal{B}_{\Pi}\mathcal{B}'_{\Pi}} = \begin{pmatrix} a & b \\ c & d \end{pmatrix} .\]
 Diremos que 
@@ -658,8 +661,10 @@ Diremos que
 Consideramos el conjunto $\displaystyle \mathcal{B}= \left\{ B \; : \; B \text{ base de } \Pi\right\}  $. Tenemos que  
 \[ B \sim B' \iff \det\left(M_{BB'}\right)>0 ,\]
 es una relación de equivalencia. En $\displaystyle \mathcal{B}/\sim $ hay dos clases de equivalencia. 
+\end{notation}
+
 \begin{definition}[Orientación de un plano]
-	Una \textbf{orientación} de $\displaystyle \Pi $ es una clase $\displaystyle \mathcal{O}_{\Pi }=\left[B_{\Pi}\right]  $ y decimos que $\displaystyle \left(\Pi, \left[B_{\Pi}\right] \right) $ es un \textbf{plano orientado}. 
+	Una \textbf{orientación} de un plano $\displaystyle \Pi $ es una clase $\displaystyle \mathcal{O}_{\Pi }=\left[B_{\Pi}\right]  $ y decimos que $\displaystyle \left(\Pi, \left[B_{\Pi}\right] \right) $ es un \textbf{plano orientado}. 
 \end{definition}
 \begin{eg}
 Consideremos $\displaystyle \alpha\left(t\right)=\left(x\left(t\right), y\left(t\right), 0\right) $ curva plana. Tenemos que 
@@ -670,44 +675,56 @@ De esta forma, $\displaystyle \hat{b}_{\alpha }=\pm\vec{e}_{3} $.
 	Sea $\displaystyle S $ el plano orientado $\displaystyle \left(\Pi, \left[B_{\Pi}\right] \right) $. Entonces, existe un único $\displaystyle \vec{w} $ vector normal unitario tal que $\displaystyle \det\left(\vec{u}, \vec{v}, \vec{w}\right) > 0 $ para todo $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ base positiva. 
 \end{prop}
 \begin{proof}
-	Equivalentemente, $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ es base positiva de $\displaystyle \Pi $ si y sólo si $\displaystyle \left\{ \vec{u}, \vec{v}, \vec{w}\right\}  $ es base positiva de $\displaystyle \R^{2} $. Basta con tomar
+	 Basta con tomar el vector normal
 	\[\vec{w}=\frac{\vec{u} \times \vec{v}}{\|\vec{u} \times \vec{v}\|} .\]
 \end{proof}
 \begin{colorary}
 Si $\displaystyle \left(\Pi, \vec{w}\right) $ es un plano con un vector normal unitario, entonces existe una única orientación compatible. 
 \end{colorary}
 \begin{proof}
-	Sea $\displaystyle \left[B_{\Pi}\right] = \left\{ B = \left\{ \vec{u}, \vec{v}\right\} \; \text{base de }\Pi \text{ con } \det\left(\vec{u}, \vec{v}, \vec{w}\right) > 0\right\}  $. 
+	Tomamos $\displaystyle \left[B_{\Pi}\right] = \left\{ B = \left\{ \vec{u}, \vec{v}\right\} \; \text{base de }\Pi \text{ con } \det\left(\vec{u}, \vec{v}, \vec{w}\right) > 0\right\}  $. 
 \end{proof}
-\begin{observation}
-Alternativamente, una orientación de $\displaystyle \Pi  $ se puede definir como un vector normal unitario, $\displaystyle \left(\Pi, \vec{w}\right) $. 
+\begin{observation}[Definición equivalente de orientación en un plano]
+Como $\displaystyle \left\{ \vec{u}, \vec{v}\right\}  $ es base positiva de $\displaystyle \Pi $ si y sólo si $\displaystyle \left\{ \vec{u}, \vec{v}, \vec{w}\right\}  $ es base positiva de $\displaystyle \R^{3} $, se puede caracterizar una orientación de $\displaystyle \Pi  $ con un vector normal unitario, $\displaystyle \left(\Pi, \vec{w}\right) $. 
 \end{observation}
-Sea $\displaystyle S\subset\R^{3} $ superficie regular conexa. 
 \begin{definition}[Orientación en $\displaystyle S $]
-Se llama \textbf{orientación} en $\displaystyle S $ a una elección 
+Sea $\displaystyle S\subset\R^{3} $ superficie regular conexa. 
+ Se llama \textbf{orientación} en $\displaystyle S $ a una elección 
 \[p \in S \to \mathcal{O}_{T_{p}S} ,\]
-que sea continua. Equivalentemente, $\displaystyle S \to \R^{3} : p \to N_{p} $ continua. 
+que sea continua. Equivalentemente,  la podemos definir como una aplicación $\displaystyle S \to \R^{3} : p \to N_{p} $ continua. 
 \end{definition}
-\begin{observation}
-\begin{enumerate}
-\item $\displaystyle \mathcal{O}_{T_{p}S} $ es continua si para cada $\displaystyle p \in S $ existe $\displaystyle U\subset S $ entorno de $\displaystyle p $ y dos campos $\displaystyle X_{1} $, $\displaystyle X_{2} $ en $\displaystyle U $ tales que 
-	\[B_{p}=\left[ \left\{ X_{1}\left(p\right), X_{2}\left(p\right)\right\} \right] , \; \forall p \in U .\]	
-\end{enumerate}
-\end{observation}
+\begin{notation}
+Decimos que $\displaystyle \mathcal{O}_{T_{p}S} $ es continua si para cada $\displaystyle p \in S $ existe $\displaystyle U\subset S $ entorno de $\displaystyle p $ y dos campos $\displaystyle X_{1} $, $\displaystyle X_{2} $ en $\displaystyle U $ tales que 
+	\[B_{p}=\left[ \left\{ X_{1}\left(p\right), X_{2}\left(p\right)\right\} \right] , \; \forall p \in U .\]
+\end{notation}
+\begin{definition}[Superficie orientable]
+Una superficie regular conexa $\displaystyle S $ es \textbf{orientable} si admite una orientación. Una \textbf{superficie orientada} es $\displaystyle \left(S, \mathcal{O}\right) $, $\displaystyle \left(S, N\right) $.
+\end{definition}
 \begin{eg}
 \begin{enumerate}
 \item Si $\displaystyle S = \textbf{x} \left(U\right) $ superficie parametrizada inyectiva y regular, 
 	\[N\left(u,v\right)=\frac{ \textbf{x} _{u} \times \textbf{x} _{v}}{\| \textbf{x} _{u}\times \textbf{x} _{v}\|} ,\]
 	es una orientación. Basta con declarar $\displaystyle \mathcal{B}_{ \textbf{x} }=\left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ base positiva. 
-\item Sea $\displaystyle \textbf{y} \left(v,u\right)= \textbf{x} \left(u,v\right) $. De esta forma se puede cambiar la orientación. En efecto, 
+\item Sea $\displaystyle \textbf{y} \left(v,u\right)= \textbf{x} \left(u,v\right) $. La orientación de $\displaystyle \textbf{y}  $ será la opuesta que la de $\displaystyle \textbf{x}  $. En efecto, 
 	\[N_{ \textbf{y} }= \frac{ \textbf{y} _{v} \times \textbf{y} _{u}}{ \| \textbf{y} _{v} \times \textbf{y} _{u}\|}=-\frac{ \textbf{x} _{u} \times \textbf{x} _{v}}{\| \textbf{x} _{u} \times \textbf{x} _{v}\|}=-N_{ \textbf{x} } .\]
 	\item Sea $\displaystyle \textbf{z} \left(u,v\right)= \textbf{x}\left(-u, v\right)  $, entonces es fácil comprobar que $\displaystyle N _{ \textbf{z} }=- N_{ \textbf{x} } $. 
-	\item Si $\displaystyle h\left(u,v\right)=\left(w,s\right) $ es una reparametrización.
 \end{enumerate}
 \end{eg}
 \begin{prop}
-$\displaystyle \det\left(Jh\right)>0 $ si y sólo si $\displaystyle B_{ \textbf{x} } $ y $\displaystyle B_{ \textbf{y} } $ si y sólo si $\displaystyle N_{ \textbf{x} }= N_{ \textbf{y} } $.  
+Sea $\displaystyle h\left(u,v\right)=\left(w,s\right) $ una reparametrización. Tenemos que $\displaystyle \det\left(Jh\right)>0 $ si y sólo si $\displaystyle N_{ \textbf{x} }= N_{ \textbf{y} } $.  
 \end{prop}
+\begin{proof}
+Basta con ver que si $\displaystyle \textbf{x}  = \textbf{y} \circ h $ con $\displaystyle h\left(u,v\right)=\left(w,s\right) $, entonces 
+\[
+\begin{split}
+	\textbf{x} _{u} \times \textbf{x} _{v} = & \left( \textbf{y} _{w}\frac{\partial w}{\partial u} + \textbf{y} _{s}\frac{\partial s}{\partial u}\right) \times \left( \textbf{y} _{w}\frac{\partial w}{\partial v} + \textbf{y} _{s} \frac{\partial s}{\partial v}\right)
+	= \textbf{y} _{w}\frac{\partial w}{\partial u} \times \textbf{y} _{s}\frac{\partial s}{\partial v} + \textbf{y} _{s}\frac{\partial s}{\partial u} \times \textbf{y} _{w}\frac{\partial w}{\partial v} \\
+	= &  \left(\frac{\partial w}{\partial u}  \frac{\partial s}{\partial v}-\frac{\partial w}{\partial v}  \frac{\partial s}{\partial u}\right) \textbf{y} _{w} \times \textbf{y} _{s}  = \det\left(Jh\right) \textbf{y} _{w} \times \textbf{y} _{ s}.
+\end{split}
+\]
+A partir de la igualdad anterior es trivial ver que si $\displaystyle \det\left(Jh\right) > 0$ se conserva la orientación mientras que si $\displaystyle \det\left(Jh\right)<0 $ se invierte. 
+\end{proof}
+
 \begin{definition}[Reparametrizaciones]
 Se llaman reparametrización
 \begin{itemize}
@@ -716,27 +733,15 @@ Se llaman reparametrización
 \end{itemize}
 \end{definition}
 \begin{observation}
-% 5
 	Sea $\displaystyle S = \left\{ F\left(x,y,z\right)=0\right\}  $ superficie regular en implícitas. Existe una orientación
 	\[N_{F}=\frac{\nabla F}{\|\nabla F\|} .\]
-	La otra orientación es $\displaystyle -F\left(x,y,z\right)=0 $.
-% 7 
-Visualmente podemos ver que una superficie es orientable si se pueden colorear sus caras.	
+	La otra orientación viene dada al considerar $\displaystyle -F\left(x,y,z\right)=0 $.
 \end{observation}
-\begin{definition}[Superficie orientable]
-Una superficie $\displaystyle S $ es \textbf{orientable} si admite una orientación. Una \textbf{superficie orientada} es $\displaystyle \left(S, \mathcal{O}\right) $, $\displaystyle \left(S, N\right) $.
-\end{definition}
+
 \begin{prop}
 	% 21/10/26
-Si $\displaystyle S $ es orientada y conexa, admite dos orientaciones. 
+Si $\displaystyle S $ es una superficie orientable y conexa, admite sólo dos orientaciones. 
 \end{prop}
-Sea $\displaystyle S $ superficie regular orientada. 
-\begin{definition}
-	Si $\displaystyle \textbf{x} : U \to S' = \textbf{x} \left(U\right)\subset S $ es una parametrización. Se llama \textbf{positiva} o \textbf{negativa} si $\displaystyle \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ e positiva/negativa y $\displaystyle N_{ \textbf{x} }=N $ o $\displaystyle N_{ \textbf{x} }=-N $.
-\end{definition}
-\begin{lema}
- Si $\displaystyle S $ es conexa, es orientable tiene dos orientaciones. 
-\end{lema}
 \begin{proof}
 Como $\displaystyle S $ es orientable existe
 \[N : S \to \mathbb{S}^{2}\subset \R^{3} : p \to N\left(p\right) ,\]
@@ -751,26 +756,34 @@ N_{1}\left(p\right) , \; p \in V_{1} \\
 -N_{1}\left(p\right)=N_{2}\left(p\right), \; p \in V_{2}
 \end{cases}
 .\]
-Tenemos que $\displaystyle S = V_{1} \cup V_{2} $, $\displaystyle \emptyset = V_{1} \cap V_{2} $, $\displaystyle V_{1} $ y $\displaystyle V_{2} $ son cerrados, $\displaystyle V_{1}= S-V_{2} $ y $\displaystyle V_{2}=S-V_{1} $ son abiertos. Como $\displaystyle S $ es conexo debe ser que $\displaystyle S = V_{1} $ o $\displaystyle S = V_{2} $. 
+De esta forma obtenemos que 
+\begin{itemize}
+\item $\displaystyle S = V_{1} \cup V_{2} $.
+\item  $\displaystyle \emptyset = V_{1} \cap V_{2} $.
+\item $\displaystyle V_{1} $ y $\displaystyle V_{2} $ son cerrados y $\displaystyle V_{1}= S\backslash V_{2} $ y $\displaystyle V_{2}=S\backslash V_{1} $ son abiertos.
+\end{itemize}
+Como $\displaystyle S $ es conexo debe ser que $\displaystyle S = V_{1} $ o $\displaystyle S = V_{2} $. 
 \end{proof}
+\begin{definition}[Parametrización positiva]
+Sea $\displaystyle S $ superficie regular orientada. 
+	Si $\displaystyle \textbf{x} : U \to S' = \textbf{x} \left(U\right)\subset S $ es una parametrización, se llama \textbf{positiva} o \textbf{negativa} si $\displaystyle \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ es positiva/negativa o, equivalentemente, $\displaystyle N_{ \textbf{x} }=N $ o $\displaystyle N_{ \textbf{x} }=-N $, respectivamente.
+\end{definition}
+
 \begin{observation}
 La esfera y el toro tienen dos orientaciones cada una, por lo que la unión tiene cuatro orientaciones posibles. 
 \end{observation}
 \begin{theorem}
-	$\displaystyle S $ es orientable si y sólo si tiene un atlas $\displaystyle \mathcal{A} = \left\{ \left(U_{i}, \textbf{x} _{i}\right)\right\}  $ con $\displaystyle h_{ij}= \textbf{x} _{j}^{-1}\circ \textbf{x} _{i} $, $\displaystyle \det\left(J \textbf{x} _{j}^{-1} \circ \textbf{x} _{i}\right)>0 $.
+	$\displaystyle S $ es orientable si y sólo si tiene un atlas $\displaystyle \mathcal{A} = \left\{ \left(U_{i}, \textbf{x} _{i}\right)\right\}  $ con $\displaystyle h_{ij}= \textbf{x} _{j}^{-1}\circ \textbf{x} _{i} $ tal que $\displaystyle \det\left(J \textbf{x} _{j}^{-1} \circ \textbf{x} _{i}\right)>0 $.
 \end{theorem}
-\begin{observation}
-El atlas $\displaystyle \mathcal{A} $ se va a llamar \textbf{atlas positivo} y a sus cartas se las llama \textbf{cartas positivas}.
-\end{observation}
+
 \begin{proof}
 Consideramos ambas implicaciones. 
 \begin{description}
-	\item[($\displaystyle \Rightarrow $)] Sea $\displaystyle S $ orientable. Sea $\displaystyle \left(S, \mathcal{O}\right) $ una orientación y sea $\displaystyle \mathcal{A}_{0}= \left\{ \left(V_{i}, \textbf{y} _{i}\right)\right\}  $ un atlas. Sea $\displaystyle S_{i} = \textbf{y} _{i}\left(U_{i}\right) $, de forma que $\displaystyle S = \bigcup_{i}S_{i} $. 
-		Si $\displaystyle \left(V_{i}, \textbf{y} _{i}\right) $ es positiba, cogemos $\displaystyle \left(U_{i}, \textbf{x} _{i}\right)=\left(V_{i}, \textbf{y} _{i}\right) $. Si $\displaystyle \left(V_{i}, \textbf{y} _{i}\right) $ es negativa, cogemos 
+	\item[($\displaystyle \Rightarrow $)] Sea $\displaystyle S $ orientable. Sea $\displaystyle \left(S, \mathcal{O}\right) $ una orientación y sea $\displaystyle \mathcal{A}_{0}= \left\{ \left(V_{i}, \textbf{y} _{i}\right)\right\}  $ un atlas. Sea $\displaystyle S_{i} = \textbf{y} _{i}\left(V_{i}\right) $, de forma que $\displaystyle S = \bigcup_{i}S_{i} $. 
+		Si $\displaystyle \left(V_{i}, \textbf{y} _{i}\right) $ es positiva, cogemos $\displaystyle \left(U_{i}, \textbf{x} _{i}\right)=\left(V_{i}, \textbf{y} _{i}\right) $. Si $\displaystyle \left(V_{i}, \textbf{y} _{i}\right) $ es negativa, cogemos 
 		\[h\left(u,v\right)=\left(v,u\right), \; \det\left(Jh\right)=-1 .\]
-		Así, $\displaystyle \textbf{x} _{i}= \textbf{y} _{i} \circ h $ con $\displaystyle U_{i}=h^{-1}\left(V_{i}\right) $ es positiva. Así, tomamos $\displaystyle \mathcal{A} = \left\{ \left(U_{i}, \textbf{x} _{i}\right)\right\}  $ atlas de cartas positivas. Tenemos que $\displaystyle \forall i,j  $, $\displaystyle \textbf{x} _{j}^{-1}\circ \textbf{x} _{i}=h_{ij} $ y como $\displaystyle N_{ \textbf{x} _{i}}= N_{ \textbf{x} _{j}} $ se tiene que $\displaystyle \det\left(Jh_{ij}\right)>0 $.
-	\item[($\displaystyle \Leftarrow $)] Sea $\displaystyle \mathcal{A}= \left\{ \left(U_{i}, \textbf{x} _{i}\right)\right\}  $ un atlas con $\displaystyle \det\left(Jh_{ij}\right) > 0 $, $\displaystyle \forall i,j $. Tenemos que 
-		\[Jh_{ij}= M_{\mathcal{B}_{ \textbf{x} _{j}}\mathcal{B}_{ \textbf{x} _{i}}} .\]
+		Así, la carta $\displaystyle \textbf{x} _{i}= \textbf{y} _{i} \circ h $ con $\displaystyle U_{i}=h^{-1}\left(V_{i}\right) $ es positiva. De esta forma tomamos $\displaystyle \mathcal{A} = \left\{ \left(U_{i}, \textbf{x} _{i}\right)\right\}  $ atlas de cartas positivas. Finalmente, tenemos que $\displaystyle \forall i,j  $, $\displaystyle \textbf{x} _{j}^{-1}\circ \textbf{x} _{i}=h_{ij} $ y como $\displaystyle N_{ \textbf{x} _{i}}= N_{ \textbf{x} _{j}} $ se tiene que $\displaystyle \det\left(Jh_{ij}\right)>0 $.
+	\item[($\displaystyle \Leftarrow $)] Sea $\displaystyle \mathcal{A}= \left\{ \left(U_{i}, \textbf{x} _{i}\right)\right\}  $ un atlas con $\displaystyle \det\left(Jh_{ij}\right) > 0 $, $\displaystyle \forall i,j $. Tenemos que $\displaystyle Jh_{ij}= M_{\mathcal{B}_{ \textbf{x} _{j}}\mathcal{B}_{ \textbf{x} _{i}}} $. 
 		Sea $\displaystyle N|_{S_{i}} = N_{ \textbf{x} _{i}} = \frac{ \textbf{x}_{i_{u}}  \times \textbf{x}_{i_{v}}}{\| \textbf{x} _{i_{u}} \times \textbf{x} _{i_{v}}\|} $. Definimos
 		\[N\left(p\right)=
 				N_{ \textbf{x} _{i}}\left(p\right), \; p \in S_{i}
@@ -778,11 +791,275 @@ Consideramos ambas implicaciones.
 		Esta función está bien definida en $\displaystyle S $ y es continua. Así, $\displaystyle \left(S, N\right) $ es una orientación por lo que $\displaystyle S $ es orientable.
 \end{description}
 \end{proof}
+\begin{notation}[Atlas positivo y cartas positivas]
+El atlas $\displaystyle \mathcal{A} $ se va a llamar \textbf{atlas positivo} y a sus cartas se las llama \textbf{cartas positivas}.
+\end{notation}
+% completar este ejemplo cuando hagas el ejercicio correspondiente de la hoja
+% poner ejemplos de la esfera y el toro
 \begin{eg}[Banda de Möbius no es orientable]
 Consideramos 
 \[ \textbf{x} : \R \times \left(-\frac{1}{2}, \frac{1}{2}\right) \to \R^{3} : \left(\varphi, z\right)\to \left(\cos\varphi, \sin \varphi, z\right) .\]
 Claramente es orientable:
 \[ N = \frac{\nabla F}{\|\nabla F\|}=\left(x,y,0\right) .\]
 Ahora la banda de Möbius. 
+\end{eg}
+\section{Funciones diferenciables y aplicaciones diferenciables}
+Sea $\displaystyle S \subset \R^{3} $ una superficie regular. 
+\begin{definition}[Función diferenciable]
+	Una función $\displaystyle f : S \to \R $ es \textbf{diferenciable} si en cada parametrización $\displaystyle \textbf{x} : U \to S' \subset S $ se tiene que $\displaystyle \tilde{f} = f\circ \textbf{x}  $ es $\displaystyle \mathcal{C}^{\infty } $.
+\end{definition}
+\begin{observation}
+	Queremos $\displaystyle \tilde{f}\left(u,v\right) $ sea $\displaystyle \mathcal{C}^{\infty } $ en las coordenadas. Podemos escribir 
+	\[\tilde{f} = f\left(x\left(u,v\right), y\left(u,v\right), z\left(u,v\right)\right) .\]	
+\end{observation}
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{~/Desktop/Images/GeoDiff11.png}
+\end{center}
+\begin{eg}[Ejercicio 3, Hoja 4]
+	Dado el toro
+	\[ \textbf{x} \left(\varphi, t\right) = \left(\left(2 + \cos t\right)\cos \varphi, \left(2 + \cos t\right)\sin \varphi, \sin t\right) ,\]
+	consideremos $\displaystyle f\left(x,y,z\right)=x $. Tenemos que 
+	\[f\left(\varphi, t\right)=\left(2 + \cos t\right)\cos \varphi ,\]
+	que es $\displaystyle \mathcal{C}^{\infty } $, por lo que $\displaystyle f $ es diferenciable. 
+\end{eg}
+
+\begin{definition}[Diferencial de $\displaystyle f $ en $\displaystyle p $]
+Sea $\displaystyle f : S \to \R $ una función diferenciable y $\displaystyle p \in S $. Se llama \textbf{diferencial de $\displaystyle f $ en $\displaystyle p $} a la aplicación
+\[d _{p}f : T_{p}S \to \R : \vec{v} \to d _{p}f\left(\vec{v}\right)= \lim_{t \to 0}\frac{f\left(c\left(t\right)\right)-f\left(p\right)}{t},\]
+con $\displaystyle c : \left(-\epsilon , \epsilon \right)\to S $ la curva que cumple que $\displaystyle c\left(0\right)=p $ y $\displaystyle c'\left(0\right) = \vec{v} $.
+\end{definition}
+\begin{observation}
+Es sencillo ver que 
+	\[d _{p}f\left(\vec{v}\right)=\frac{d}{dt}|_{t = 0}f\left(c\left(t\right)\right) = \lim_{t \to 0}\frac{f\left(c\left(t\right)\right)-f\left(c\left(0\right)\right)}{t} .\]
+\end{observation}
+\begin{prop} Sea $\displaystyle S $ una superficie regular, $\displaystyle f : S \to \R $ una aplicación diferenciable, y $\displaystyle p \in S $. 
+\begin{enumerate}
+\item La aplicación $\displaystyle d _{p}f $ está bien definida. 
+\item La aplicación $\displaystyle d _{p}f $ es lineal. 
+\item Se cumple que 
+	\[M_{ \mathcal{B}_{ \textbf{x} }}\left(d _{p}f\right)=\left(\frac{\partial \tilde{f}}{\partial u}, \frac{\partial \tilde{f}}{\partial v}\right)=J\tilde{f} ,\]
+	con $\displaystyle \tilde{f} = f\circ \textbf{x}  $. 
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Consideremos 
+\[\tilde{c}\left(t\right)=\left(u\left(t\right), v\left(t\right)\right) ,\]
+de forma que $\displaystyle c\left(t\right)= \textbf{x} \left(\tilde{c}\left(t\right)\right)= \textbf{x} \left(u\left(t\right), v\left(t\right)\right) $. De
+\[f\left(c\left(t\right)\right)=f\left( \textbf{x} \left(u\left(t\right), v\left(t\right)\right)\right) = \left(f\circ \textbf{x} \right)\left(u\left(t\right), v\left(t\right)\right) = \tilde{f}\left(\tilde{c}\left(t\right)\right) ,\]
+ se sigue que
+\[
+\begin{split}
+	d _{p}f\left(\vec{v}\right)= & \frac{d}{dt}\left(f\circ c\right)|_{t = 0} = \frac{d}{dt}\left(\tilde{f}\left(\tilde{c}\left(t\right)\right)\right) = \frac{\partial \tilde{f}}{\partial u}\left(p\right)  \frac{\partial u}{\partial t}\left(0\right) + \frac{\partial \tilde{f}}{\partial v}\left(p\right)\frac{\partial v}{\partial t}\left(0\right) = \left(\frac{\partial \tilde{f}}{\partial u}\left(p\right), \frac{\partial \tilde{f}}{\partial v}\left(p\right)\right)\begin{pmatrix} a\\ b \end{pmatrix}.
+\end{split}
+\]
+con $\displaystyle c\left(0\right)=p $ y $\displaystyle c'\left(0\right)=\vec{v}=\left(a,b\right)_{ \mathcal{B}_{ \textbf{x} }} $. Así, hemos demostrado que $\displaystyle d _{p}\left(f\right) $ es lineal. De aquí se sigue que 
+\[M\left(d _{p}f\right)=\left(\frac{\partial \tilde{f}}{\partial u}\left(p\right), \frac{\partial \tilde{f}}{\partial v}\left(p\right)\right) = J\tilde{f}\left(p\right) .\]
+La fórmula anterior no depende de $\displaystyle c\left(t\right) $ sólo de $\displaystyle \left(a,b\right) $, es decir, de $\displaystyle \vec{v} $, por lo que la aplicación está bien definida. 
+\end{proof}
+\begin{eg}[Toro]
+En el ejemplo anterior tenemos que 
+\[d _{p}f\left(\varphi, t\right)=\left(\frac{\partial f}{\partial \varphi} , \frac{\partial f}{\partial t}\right)=\left(-\left(2 + \cos t\right)\sin \varphi, -\sin t \cos \varphi\right) \footnote{hemos hecho un abuso de notación al escribir $\displaystyle \frac{\partial f}{\partial \varphi} $ en vez de $\displaystyle \frac{\partial \tilde{f}}{\partial \varphi} $.} .\]
+\end{eg}
+\begin{definition}[Punto crítico]
+Se llama \textbf{punto crítico} a $\displaystyle q_{0} \in S $ si $\displaystyle d _{q_{0}}f=0 $. 
+\end{definition}
+\begin{observation}
+	Los máximos y mínimos realtivos de $\displaystyle f $ (que son los máximos y mínimos de $\displaystyle \tilde{f} $) son puntos críticos.
+\end{observation}
+\begin{eg}[Toro]
+En el ejemplo anterior, calculemos los puntos críticos:
+\[d _{p}f = \left(0,0\right) \Rightarrow
+\begin{cases}
+	\left(2 + \cos t\right)\sin \varphi = 0 \\
+	-\sin t \cos \varphi = 0
+\end{cases}
+.\]
+% dibujar el toro con los meridianos y tal
+\end{eg}
+\subsection{Aplicaciones diferenciales}
+Sean $\displaystyle S_{1}, S_{2}\subset \R^{3} $ dos superficies regulares. 
+\begin{definition}[Aplicación diferencial]
+Sea $\displaystyle F : S_{1} \to S_{2} $ una aplicación. Sea $\displaystyle  p \in S_{1} $, $\displaystyle \textbf{x} : U \to S_{1}' \subset S_{1} $, con $\displaystyle p = \textbf{x} \left(u_{0}, v_{0}\right) $. Sea $\displaystyle q = F\left(p\right)\in S_{2} $ y 
+\[ \textbf{y}  : V \to S_{2}' \subset S_{2} ,\]
+de forma que $\displaystyle q = \textbf{y} \left(w_{0}, s_{0}\right) $. 
+\end{definition}
+Por continuidad $\displaystyle F^{-1}\left(S'_{2}\right) $ es abierto. Se puede tomar $\displaystyle S_{1}'\subset F^{-1}\left(S'_{2}\right) $ abierto. Así, $\displaystyle F\left(s_{1}'\right)\subset S_{2}' $. La expresión de $\displaystyle F $ en coordenadas es $\displaystyle \tilde{F} : U \to V $ con $\displaystyle \left(w,s\right)= \tilde{F}\left(u,v\right) $. 
+Definimos $\displaystyle \tilde{F} = \textbf{y} ^{-1}\circ F \circ \textbf{x}  $. Se dice que $\displaystyle F $ es diferenciable si $\displaystyle \tilde{F} $ es $\displaystyle \mathcal{C}^{\infty } $ para todas las cartas. 
+\begin{observation}
+\begin{enumerate}
+	\item $\displaystyle \textbf{y} \circ \tilde{F} = F \circ \textbf{x}  $, $\displaystyle \textbf{y} \left(\tilde{F}\left(u,v\right)\right) = F\left( \textbf{x} \left(u,v\right)\right) $.
+	\item Tenemos que $\displaystyle \left(w,s\right)=\tilde{F}\left(u,v\right) = \left(w\left(u,v\right), s\left(u,v\right)\right)$. En general, $\displaystyle w = w\left(u,v\right) $ y $\displaystyle s = s\left(u,v\right) $. 
+\end{enumerate}
+\end{observation}
+\begin{definition}[Diferencial]
+La \textbf{diferencial} de $\displaystyle F $ en $\displaystyle p $ es
+\[d _{p}F: T_{p}S_{1} \to T_{q}S_{2} : \vec{v}\to d _{p}F\left(\vec{v}\right) = \frac{d}{dt}|_{t = 0}F\left(c\left(t\right)\right) ,\]
+con $\displaystyle c\left(t\right) $ es la curva en $\displaystyle S_{1} $ tal que $\displaystyle c\left(0\right)=p $ y $\displaystyle c'\left(0\right)=\vec{v} $. 
+\end{definition}
+Consideramos $\displaystyle \mathcal{B}_{ \textbf{x} } $ en $\displaystyle T_{p}S_{1} $ y $\displaystyle \mathcal{B}_{ \textbf{y} } $ en $\displaystyle T_{q}S_{2} $.
+\begin{prop}
+\begin{enumerate}
+\item $\displaystyle d _{p}F $ está bien definido.
+\item $\displaystyle d _{p}F $ es lineal.
+\item $\displaystyle M_{\mathcal{B}_{ \textbf{y} }\mathcal{B}_{ \textbf{x} }}\left(d _{p}F\right)=\left(J\tilde{F}\right)_{\left(u_{0}, v_{0}\right)} = \begin{pmatrix} \frac{\partial w}{\partial u} & \frac{\partial w}{\partial v} \\ \frac{\partial s}{\partial u} & \frac{\partial s}{\partial v} \end{pmatrix}_{\left(u_{0}, v_{0}\right)} $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Para \textbf{(1)} tenemos que $\displaystyle \beta\left(t\right)=F\left(c\left(t\right)\right) $ es una curva en $\displaystyle S_{2} $ con $\displaystyle \beta\left(0\right)=F\left(p\right)=q $. Tenemos que 
+	\[\beta'\left(0\right)=\frac{d}{dt}|_{t = 0}\beta\left(t\right)\in T_{q}S_{2} .\]
+	Falta ver que no depende de la curva. Sea $\displaystyle \vec{v} = \left(a,b\right)_{ \mathcal{B}_{ \textbf{x} }} $, con $\displaystyle c\left(t\right)= \textbf{x} \left(u\left(t\right), v\left(t\right)\right) $ y $\displaystyle \left(u\left(0\right), v\left(0\right)\right)=\left(u_{0}, v_{0}\right) $ y $\displaystyle \left(u'\left(0\right), v'\left(0\right)\right) = \left(a,b\right) $. Tenemos que 
+	\[
+	\begin{split}
+		\beta\left(t \right)=F\left(c\left(t\right)\right)= & F\left( \textbf{x} \left(u\left(t\right), v\left(t\right)\right)\right) = \textbf{y} \left(\tilde{F}\left(u\left(t\right), v\left(t\right)\right)\right) = \textbf{y} \left(w\left(t\right), s\left(t\right)\right) .
+	\end{split}
+	\]
+	De esta forma, tomando $\displaystyle \left(w\left(0\right), s\left(0\right)\right)=\left(w_{0}, s_{0}\right) $ y $\displaystyle \left(w'\left(0\right), s'\left(0\right)\right)=\left(c,d\right) $,
+	\[\beta'\left(0\right)=\left(F\circ c\right)'\left(0\right)=\left(w'\left(0\right), s'\left(0\right)\right)_{\mathcal{B}_{ \textbf{y} }} = \left(c,d\right) _{\mathcal{B}_{ \textbf{y} }} .\]
+Calculamos el valor de $\displaystyle \left(c,d\right) $:
+\[
+\begin{split}
+	\begin{pmatrix} c \\ d \end{pmatrix} = & \begin{pmatrix} w'\left(t\right) \\ s'\left(t\right) \end{pmatrix}|_{t = 0} = \begin{pmatrix} \frac{\partial w}{\partial u} & \frac{\partial w}{\partial v} \\ \frac{\partial s}{\partial u} & \frac{\partial s}{\partial v} \end{pmatrix}\begin{pmatrix} u'\left(t\right) \\ v'\left(t\right) \end{pmatrix} = \left(J\tilde{F}\right)_{\left(u_{0}, v_{0}\right)}\begin{pmatrix} a \\ b \end{pmatrix} .
+\end{split}
+\]
+Así, 
+\[\begin{pmatrix} c \\ d \end{pmatrix}_{ \mathcal{B}_{ \textbf{y} }}=\left(F\circ c\right)'\left(0\right) ,\]
+que no depende de $\displaystyle c\left(t\right) $, sólo de $\displaystyle \left(a,b\right)_{\mathcal{B}_{ \textbf{x} }}=\vec{v} $. Así, queda demostrado todo.
+\end{proof}
+\begin{observation}
+\begin{enumerate}
+	\item $\displaystyle M_{\mathcal{B}_{ \textbf{y} }\mathcal{B}_{ \textbf{x} }}\left(d _{p}F\right) = \begin{pmatrix} \frac{\partial w}{\partial u} & \frac{\partial w}{\partial v} \\ \frac{\partial s}{\partial u} & \frac{\partial s}{\partial v} \end{pmatrix} $. Así, 
+		\[\boxed{d _{p}F\left( \textbf{x} _{u}\right)= \frac{\partial w}{\partial u} \textbf{y} _{w} + \frac{\partial s}{\partial u} \textbf{y} _{s} \quad \text{y} \quad
+		d _{p}F\left( \textbf{x} _{v}\right) = \frac{\partial w}{\partial v} \textbf{y} _{w} + \frac{\partial s}{\partial v} \textbf{y} _{s}} .\]
+	\item Un abuso de notación que se hace a veces es identificar los puntos de la superficie $\displaystyle S $ con los de $\displaystyle U $.  
+\end{enumerate}
+\end{observation}
+\begin{eg}
+	Consideremos el toro que denotamos por $\displaystyle \mathbb{T}^{2} $. Podemos dar la parametrización
+	\[ \textbf{x} \left(\varphi, t\right)=\left(\left(2 + \cos t\right)\cos \varphi, \left(2 + \cos t\right)\sin \varphi, \sin t\right) .\]
+	Con $\displaystyle \textbf{y} \left(w,s\right)=\left(w,s,0\right) $, tenemos que 
+	\[\left(w,s\right)=\tilde{F}\left(\varphi, t\right)=\left(\left(2 + \cos t\right)\cos \varphi, \left(2 + \cos t\right)\sin \varphi\right) .\]
+	Tenemos entonces que 
+	\[J\tilde{F} = d _{p}F = \begin{pmatrix} \frac{\partial w}{\partial \varphi} & \frac{\partial w}{\partial t} \\ \frac{\partial s}{\partial \varphi} & \frac{\partial s}{\partial t} \end{pmatrix}=\begin{pmatrix} -\left(2 + \cos t\right)\sin \varphi & -\sin t \cos \varphi \\ \left(2 + \cos t\right)\cos \varphi & -\sin t \sin \varphi \end{pmatrix} .\]
+\end{eg}
+\begin{definition}[Difeomorfismo]
+Decimos que $\displaystyle F : S_{1} \to S_{2} $ es un \textbf{difeomorfismo} si 
+\begin{itemize}
+\item $\displaystyle F $ es diferenciable.
+\item $\displaystyle F $ es biyectiva.
+\item $\displaystyle F^{-1} $ es diferenciable.
+\end{itemize}
+\end{definition}
+\begin{prop}
+$\displaystyle F $ es difeomorfismo si y sólo si $\displaystyle F $ es diferenciable, es biyectiva y $\displaystyle d _{p}F : T_{p}S_{1} \to T_{F\left(p\right)}S_{2}$ sea isomorfismo en todos los puntos. 
+\end{prop}
+\begin{proof}
+Consideremos ambas implicaciones. 
+\begin{description}
+\item[($\displaystyle \Rightarrow $)] Casi igual al revés.
+\item[($\displaystyle \Leftarrow $)] Existe $\displaystyle F^{-1} : S_{2} \to S_{1} $. Como $\displaystyle d _{p}F $ es isomorfismo tenemos que 
+	\[\det\left(J\tilde{F}_{\left(u_{0}, v_{0}\right)}\right)\neq 0 ,\]
+	en un entorno de $\displaystyle \left(u_{0}, v_{0}\right) $ tenemos que $\displaystyle \tilde{F}^{-1} $ es $\displaystyle \mathcal{C}^{\infty} $ por el teorema de la función inversa. Aquí hemos usado que 
+	\[\tilde{F} = \textbf{y} ^{-1}\circ F \circ \textbf{x} \Rightarrow \tilde{F}^{-1} = \textbf{x} ^{-1} F^{-1} \circ \textbf{y}  .\]
+	Así, $\displaystyle F^{-1} $ es diferenciable.
+\end{description}
+\end{proof}
+\begin{eg}
+La aplicación
+\[ F : T^{2} \cap \left\{ z > 0\right\} \to \left\{ \left(x,y,0\right) \; : \; 1 < \sqrt{x^{2} +y^{2}} < 3\right\}  ,\]
+es difeomorfismo, en efecto
+\[F^{-1}\left(x,y,0\right)=\left(x,y,\sqrt{1-\left(\sqrt{x^{2}+y^{2}}-2\right)^{2}}\right) .\]
+\end{eg}
+\begin{colorary}
+Si $\displaystyle F : S_{1}\to S_{2}\subset \R^{3} $ es diferenciable
+\[
+\begin{cases}
+d _{p}F\left( \textbf{x} _{u}\right) = F_{u} \\
+d _{p}F\left( \textbf{x} _{v}\right) = F_{v}
+\end{cases}
+.\]
+\end{colorary}
+\begin{proof}
+Tenemos que 
+\[F_{u}= \frac{\partial f}{\partial u} .\]
+$\displaystyle F \in \R^{3} $, $\displaystyle F \circ \textbf{x}  : U \to \R^{3} $. Así, 
+\[\frac{\partial F}{\partial u}=\frac{\partial \left(F\circ \textbf{x} \right)}{\partial u}\in \R^{3} .\]
+Esto es un abuso de notación. 
+\[d _{p}F\left( \textbf{x} _{u}\right) = \left(F\circ c\right)'\left(0\right)=\frac{d}{dt}|_{t = 0}F\left( \textbf{x} \left(u_{0} + t, v_{0}\right)\right) = \frac{d}{dt}|_{t = 0}F\left(u_{0} + t, v_{0}\right) = \frac{\partial F}{ \partial u}\left(u_{0}, v_{0}\right) ,\]
+con $\displaystyle c\left(t\right)= \textbf{x} \left(u_{0} + t, v_{0}\right) $.
+\end{proof}
+\begin{notation}
+Un abuso de notación que se utiliza a veces es $\displaystyle d _{p}F\left(\frac{\partial }{\partial u}\right)=\frac{\partial F}{\partial u} $.
+\end{notation}
+\begin{eg}[Ejercicio 5]
+	Sea $\displaystyle \mathbb{S}^{2} $ y $\displaystyle \mathcal{E} = \left\{ \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} + \frac{z^{2}}{c^{2}}= 1\right\}  $. Consideremos la aplicación 
+	\[F : \mathbb{S}^{2} \to \mathcal{E} : \left(x,y,z\right)\to \left(ax, by, cz\right) .\]
+	Hay que comprobar que está bien definida. Es fácil comprobar que es biyectiva. Hay que ver que es diferenciable. Aparentemente se puede usar el ejercicio 1. 
+\end{eg}
+\begin{lema}
+Si $\displaystyle F : S_{1} \to S_{2} $ es difeomorfismo puedo conseguir cartas $\displaystyle \left(u,v\right)\to \left(u,v\right) $.
+\end{lema}
+\begin{proof}
+Tomamos $\displaystyle \textbf{x} \left(u,v\right) $ carta de $\displaystyle S_{1} $. Sea $\displaystyle \textbf{y} =F \circ \textbf{x}  $. Tenemos que 
+\[ \textbf{y} _{u}=\left(F\circ \textbf{x} \right)_{u} = F_{u}=dF\left( \textbf{x} _{u}\right) \quad \text{y} \quad \textbf{y} _{v} = \left(F\circ \textbf{x} \right)_{v} = F_{v} = dF\left( \textbf{x} _{v}\right) .\]
+Como $\displaystyle dF $ es isomorfismo tenemos que $\displaystyle \left\{ d F\left( \textbf{x} _{u}\right), d F\left( \textbf{x} _{v}\right)\right\}  $ son linealmente independientes por lo que $\displaystyle \ran\left( \textbf{y} _{u}, \textbf{y} _{v}\right)=2 $ por lo que $\displaystyle \textbf{y}  $ es una parametrización regular. Nos queda que $\displaystyle \tilde{F} = Id $. 
+\end{proof}
+\begin{notation}
+	A este truco lo llamamos trasladar una parametrización $\displaystyle \textbf{x}  $ con $\displaystyle \tilde{F} = Id $, donde $\displaystyle S_{1} $ y $\displaystyle S_{2} $ son superficies con los mismos parámetros. 
+\end{notation}
+\begin{lema}
+Una parametrización $\displaystyle \textbf{x} : U \to S $ es equivalente a un difeomorfismo de $\displaystyle U \subset \R^{2} $ a $\displaystyle S $. 
+\end{lema}
+\begin{proof}
+	Demostramos ambas implicaciones.
+	\begin{description}
+	\item[($\displaystyle \Rightarrow $)] Interpretamos $\displaystyle U $ como una superficie, es decir, lo identificamos con el conjunto
+\[ \left\{ \left(x,y,0\right)\in \R^{3} \; : \; \left(x,y\right)\in U\right\}  .\]
+Entonces $\displaystyle \textbf{x} : U \to S \subset \R^{3} : \left(u,v\right)\to \left(x\left(u,v\right), y\left(u,v\right), z\left(u,v\right)\right) $ se cambia por $\displaystyle F : U \to S : \left(u,v,0\right)\to \left(x,y,z\right) $. Si $\displaystyle \C_{1}\left(u,v\right)=\left(u,v,0\right) $ es la carta del plano, tenemos que $\displaystyle F\circ \C_{1} = \textbf{x}  $ que es un difeomorfismo. 
+\item[($\displaystyle \Leftarrow $)] Ejercicio para el lector.
+	\end{description}
+\end{proof}
+\begin{observation}
+En términos de la demostración anterior, se puede ver que 
+\[d \textbf{x} \left(\vec{e}_{1}\right)= dF\left(\vec{e}_{1}\right) = \frac{d}{dt}|_{t = 0} \textbf{x} \left(u_{0} + t, v_{0}\right)= \textbf{x} _{u} .\]
+Análogamente, $\displaystyle d \textbf{x} \left(\vec{e}_{2}\right)=d F\left(\vec{e}_{2}\right)= \textbf{x} _{v} $. 
+\end{observation}
+\section{Primera forma fundamental}
+Nos vamos a centrar en geometría Riemanniana. 
+\begin{definition}[Primera forma fundamental]
+Se llama \textbf{primera forma fundamental} en $\displaystyle p \in S $ a la aplicación
+\[I _{p} : T_{p}S \times T_{p}S \to \R : \left(\vec{u}, \vec{v}\right)\to \left\langle \vec{u}, \vec{v} \right\rangle  .\]
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+\item $\displaystyle I_{p} $ es una forma bilineal simétrica definida positiva. Es un producto escalar en $\displaystyle T_{p}S $. 
+\item $\displaystyle I_{p} $ es móvil. 
+\item A veces usamos el abuso de notación $\displaystyle I\left(\vec{u}, \vec{v}\right)=I_{p}\left( \vec{u}, \vec{v}\right) $ con $\displaystyle \vec{u}, \vec{v}\in T_{p}S $. 
+\item Podemos obtener la forma cuadrática $\displaystyle I\left(\vec{u}\right)=I\left(\vec{u}, \vec{u}\right)= \|\vec{u}\|^{2} $. 
+\end{enumerate}
+\end{observation}
+\begin{lema}
+	En la base $\displaystyle \mathcal{B}_{ \textbf{x} }= \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ la matriz
+	\[M_{ \mathcal{B}_{x}}I = \begin{pmatrix} E & F \\ F & G \end{pmatrix} ,\]
+	donde $\displaystyle E = \| \textbf{x} _{u}\|^{2} $, $\displaystyle F = \left\langle \textbf{x} _{u}, \textbf{x} _{v} \right\rangle  $ y $\displaystyle G = \| \textbf{x} _{v}\|^{2} $. 
+\end{lema}
+\begin{definition}[Primera forma fundamental de una parametrización]
+	Se llama \textbf{primera forma fundamental de la parametrización} $\displaystyle \textbf{x} = \textbf{x} \left(u,v\right) $ a $\displaystyle I = I_{ \textbf{x} }=\begin{pmatrix} E & F \\ F & G \end{pmatrix} $ con $\displaystyle E = \left\langle  \textbf{x} _{u}, \textbf{x} _{u} \right\rangle $, $\displaystyle F = \left\langle \textbf{x} _{u}, \textbf{x} _{v} \right\rangle  $ y $\displaystyle G = \left\langle \textbf{x} _{u}, \textbf{x} _{v} \right\rangle  $. 
+\end{definition}
+\begin{observation}
+Como $\displaystyle I $ es definida positiva por el criterio de Sylvester se deduce que $\displaystyle E > 0 $ y $\displaystyle EG-F^{2} > 0 $. Se puede observar que 
+\[\cos\left(\hat{ \textbf{x} _{\varphi}, \textbf{x} _{v}}\right) = \frac{F}{\sqrt{E}\sqrt{G}} ,\]
+así obtenemos el ángulo entre los vectores $\displaystyle \textbf{x} _{\varphi} $ y $\displaystyle \textbf{x} _{v} $. 
+\end{observation}
+\begin{eg}
+Consideremos la superficie de revolución generada por la curva $\displaystyle \gamma\left(v\right)=\left(r\left(v\right), z\left(v\right)\right) $,
+\[ \textbf{x} \left(\varphi, v\right)=\left(r\left(v\right)\cos\varphi, r\left(v\right)\sin\varphi, z\left(v\right)\right) .\]
+Tenemos que 
+\[ \textbf{x} _{\varphi} = \begin{pmatrix} -r \sin \varphi \\ r \cos \varphi \\ 0 \end{pmatrix}\quad \text{y} \quad \textbf{x} _{v}=\begin{pmatrix} r'\cos\varphi \\ r'\sin \varphi, z' \end{pmatrix} .\]
+Así, la primera forma fundamental es 
+\[ I = \begin{pmatrix} r\left(v\right)^{2} & 0 \\ 0 & \|\gamma'\left(v\right)\|^{2} \end{pmatrix} .\]
+
+\[E = \left\langle \textbf{x} _{\varphi}, \textbf{x} _{\varphi} \right\rangle =r^{2}, \quad F = \left\langle \textbf{x} _{\varphi}, \textbf{x} _{v} \right\rangle =0, \quad G = \|\gamma'\|^{2} .\]
+
 \end{eg}
 

@@ -1,0 +1,148 @@
+\chapter{Método de Lyapunov para estabilidad}
+\begin{eg}
+Consideremos la EDO $\displaystyle x '' + \sin x = 0 $. Podemos escribirlo como un sistema lineal:
+\[
+\begin{cases}
+x' = y \\
+y' = - \sin x
+\end{cases}
+.\]
+Las soluciones constantes van a cumplir $\displaystyle y = 0 $ y $\displaystyle \sin x = 0 $. Realmente sólo nos aporta información la ecuación $\displaystyle \sin x = 0 $, de forma que las soluciones constantes son de la forma $\displaystyle x = k \pi  $ con $\displaystyle k \in \Z $. Vamos a estudiar la estibilidad de estas soluciones. Tenemos que 
+\[f\left(x,y\right) = \begin{pmatrix} y \\ - \sin x \end{pmatrix} \Rightarrow Df\left(x,y\right)=\begin{pmatrix} 0 & 1 \\ - \cos x & 0 \end{pmatrix} .\]
+Distinguimos dos casos:
+\begin{itemize}
+\item Si $\displaystyle k  $ es par, 
+	\[Df\left(k \pi , 0\right)=\begin{pmatrix}  0 & 1 \\-1 & 0 \end{pmatrix} .\]
+	Los autovalores del polinomio característico son $\displaystyle \sigma\left(A\right)= \left\{ \pm i\right\}  $, por lo que no obtenemos ninguna información por linealización. 	
+\item Si $\displaystyle k $ es impar, 
+	\[Df\left(k\pi, 0\right)=\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} .\]
+	Los autovalores del polinomio característico son $\displaystyle \sigma \left(A\right)= \left\{ \pm1\right\}  $ y por linealización obtenemos que es inestable. 
+\end{itemize}
+En el caso $\displaystyle k  $ par nos limitamos a estudiar $\displaystyle k = 0 $ puesto que en el resto de casos el argumento es análogo. Vamos a definir la función
+\[E\left(x,y\right)=\frac{1}{2}y^{2} + 1 - \cos x .\]
+Esta función cumple las siguientes propiedades:
+\begin{itemize}
+\item $\displaystyle E\left(0,0\right)=0 $.
+\item $\displaystyle E\left(x,y\right) > 0 $ en $\displaystyle \left(\left(-\pi , \pi \right)\times \R\right) \backslash \left\{ \left(0,0\right)\right\}  $. 
+\item Si $\displaystyle \left(x\left(t\right), y\left(t\right)\right) $ es solución del sistema, 
+	\[
+	\begin{split}
+		\frac{d}{dt}\left(E\left(x\left(t\right), y\left(t\right)\right)\right) =& \frac{d}{dt}\left(\frac{1}{2}y^{2}\left(t\right)+1-\cos x\left(t\right)\right) = y\left(t\right)y'\left(t\right) + x'\left(t\right)\sin x\left(t\right) \\
+		= & -y\left(t\right)\sin x\left(t\right) + x'\left(t\right)\sin x\left(t\right) = 0.
+	\end{split}
+	\]
+Así, tenemos que $\displaystyle \frac{1}{2}y^{2}\left(t\right) +1- \cos x\left(t\right) = E\left(x\left(t_{0}\right), y\left(t_{0}\right)\right) $ es constante. Así, la solución $\displaystyle \left(x\left(t\right), y\left(t\right)\right) $ está definida en los conjuntos de nivel de $\displaystyle E $. 
+% Poner imagen de los conjuntos de nivel
+De aquí se deduce que $\displaystyle \left(0,0\right) $ es una solución estable pero no asintóticamente. 
+\end{itemize}
+\end{eg}
+\begin{notation}
+	En algunos sitios denotan $\displaystyle \nabla V\left(x\right) \cdot f\left(x\right)=\dot{V}\left(x\right) $. 
+\end{notation}
+
+\begin{theorem}[Teorema de Cêatev]
+Sea $\displaystyle f \in \mathcal{C}^{1}\left(U, \R^{n}\right) $ con $\displaystyle U \subset \R^{n} $ abierto tal que $\displaystyle f\left(\overline{x}\right)= 0 $ para $\displaystyle \overline{x} \in U $. Supongamos que existe $\displaystyle \Omega\subset\R^{n} $ tal que $\displaystyle \overline{x}\in \partial \Omega  $ y $\displaystyle V \in \mathcal{C}^{1}\left(U, \R\right) $ tal que 
+\begin{itemize}
+\item $\displaystyle V\left(x\right)=0 $, $\displaystyle \forall x \in \partial \Omega \cap U $.
+\item $\displaystyle V\left(x\right)>0 $, $\displaystyle \forall x \in \Omega \cap U $.
+\item $\displaystyle \nabla V\left(x\right) \cdot f\left(x\right) > 0 $, $\displaystyle \forall x \in \Omega \cap U $. 
+\end{itemize}
+Entonces $\displaystyle \overline{x}\left(t\right)\equiv \overline{x} $ es una solución inestable de $\displaystyle x' = f\left(x\right) $. 
+\end{theorem}
+\begin{proof}
+Fijamos $\displaystyle \epsilon > 0 $ tal que $\displaystyle \overline{B}_{\epsilon }\left(\overline{x}\right)\subset U $. Vamos a probar que si $\displaystyle x_{0} \in B_{\epsilon }\left(\overline{x}\right)\cap \Omega  $, entonces $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ sale de la bola $\displaystyle B_{\epsilon }\left(\overline{x}\right) $ en tiempo finito. 
+Supongamos que es falso. Entonces, $\displaystyle \varphi\left(t; t_{0}, x_{0}\right)\in B_{\epsilon }\left(\overline{x}\right) $, $\displaystyle \forall t \in [t_{0}, \beta_{+ }) $, es decir, 
+\[\varphi\left(t; t_{0}, x_{0}\right)\in B_{\epsilon }\left(\overline{x}\right), \; \forall t \in [t_{0}, \infty) .\]
+Probaremos entonces que $\displaystyle \varphi\left(t; t_{0}, x_{0}\right)\in \Omega  $, $\displaystyle \forall t \in [t_{0}, \infty) $. 
+\begin{itemize}
+\item Supongamos que es falso. Tenemos entonces que 
+	\[
+	\begin{cases}
+	\varphi\left(t; t_{0}, x_{0}\right)\in \Omega, \; \forall t \in [t_{0}, t_{1}) \\ 
+	\varphi\left(t_{1}; t_{0}, x_{0}\right)\in \partial \Omega 
+	\end{cases}
+	.\]
+	Tenemos que 
+	\[
+	\begin{split}
+		\frac{d}{dt}\left(V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)\right) = & \nabla V\left(\varphi\left(t; t_{0}, x_{0}\right)\right) \cdot \frac{d\varphi}{dt}\left(t; t_{0}, x_{0}\right)\\
+		= & \nabla V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)f\left(\varphi\left(t; t_{0}, x_{0}\right)\right) > 0 .
+	\end{split}
+	\]
+	Por tanto, la función $\displaystyle V\left(\varphi\left(t; t_{0}, x_{0}\right)\right) $ es creciente en $\displaystyle \left[t_{0}, t_{1}\right]  $. Por tanto, 
+	\[V\left(\varphi\left(t_{1}; t_{0}, x_{0}\right)\right) > V\left(\varphi\left(t_{0}; t_{0}, x_{0}\right)\right) = V\left(x_{0}\right) .\]
+Por hipótesis tenemos que $\displaystyle V\left(\varphi\left(t_{1}; t_{0}, x_{0}\right)\right) =0$, y esto contradice que $\displaystyle x_{0}\in B_{\epsilon }\left(\overline{x }\right)\cap \Omega \subset U \cap \Omega \Rightarrow V\left(x_{0}\right) > 0 $. 
+\end{itemize}
+De hecho sabemos que 
+\[V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)\geq V\left(x_{0}\right), \; \forall t \geq t_{0} .\]
+Definimos el compacto
+\[K = \overline{B_{\epsilon }\left(\overline{x}\right)\cap \Omega} \cap V^{-1}\left(\left[V\left(x_{0}\right), \infty\right)\right) \subset \Omega  ,\]
+tal que $\displaystyle \varphi\left(t; t_{0}, x_{0}\right)\in K $, $\displaystyle \forall t \geq t_{0} $. Sea $\displaystyle m = \min_{K}\nabla V \cdot f > 0$ y $\displaystyle M = \max_{\overline{B}_{\epsilon }\left(\overline{x}\right)}V > 0 $. Ahora $\displaystyle \forall t \geq t_{0} $ se tiene que 
+\[\frac{d}{dt}\left(V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)\right)\geq m \quad \text{y} \quad V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)\leq M .\]
+Integrando,
+\[
+\begin{split}
+	M - V\left(x_{0}\right)\geq & V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)-V\left(x_{0}\right)=\int^{t}_{t_{0}} \frac{d}{dt}\left(V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)\right) \; dt \\
+	\geq & \int^{t}_{t_{0}} m \; dt = m\left(t-t_{0}\right) \xrightarrow{t \to \infty} \infty.
+\end{split}
+\]
+Esto claramente es una contradicción. 
+\end{proof}
+
+\begin{eg}
+Consideremos el sistema 
+\[
+\begin{cases}
+x' = x^{3} + yx^{2} \\
+y' = - y + x^{2}
+\end{cases}
+.\]
+Los puntos de equilibrio son $\displaystyle \left(0,0\right) $ y $\displaystyle \left(-1,1\right) $. Se puede comprobar que para $\displaystyle \left(0,0\right) $ el método de linealización no decide la estabilidad. 
+% Comprobar en casa
+Veamos que 
+\[V\left(x,y\right)=\frac{x^{2}}{2}-\frac{y^{2}}{2} ,\]
+nos va a funcionar y $\displaystyle \Omega = \left\{ V\left(x,y\right)>0\right\} = \left\{ x^{2} > y^{2}\right\}  $. Tal y como hemos definido $\displaystyle V $, tenemos que cumple las dos primeras propiedades. Veamos que cumple la tercera:
+\[\nabla V\left(x,y\right) = \left(x, -y\right) \Rightarrow \nabla V\left(x,y\right) \cdot f\left(x,y\right)= x^{4}+yx^{3}+y^{2}-yx^{2}.\]
+Para definir $\displaystyle U $ queremos encontrar un entorno de $\displaystyle \left(0,0\right) $ tal que el producto escalar anterior sea positivo en este entorno. De esta forma, 
+\[
+\begin{split}
+	x^{4}+yx^{3}+y^{2}-yx^{2} = & \left(x^{2}- \left|y\right|\right)^{2}+2x^{2} \left|y\right|+yx^{3}-yx^{2} \\
+	\geq & \left(x^{2}- \left|y\right|\right)^{2} + 2x^{2} \left|y\right|- \left|y\right| \left|x^{3}\right|- \left|y\right|x^{2}.
+\end{split}
+\]
+Vamos a coger $\displaystyle U = \left(-1,1\right)\times \R $. Veamos que efectivamente $\displaystyle \nabla V \cdot f > 0 $ en $\displaystyle U \backslash \left\{ \left(0,0\right)\right\}  $:
+\begin{itemize}
+\item Si $\displaystyle x = 0 $ tenemos que $\displaystyle \nabla V \cdot f  = y^{2} > 0$, puesto que $\displaystyle y \neq 0 $.
+\item Si $\displaystyle y = 0 $ tenemos que $\displaystyle \nabla V \cdot f = x^{4} > 0 $ puesto que $\displaystyle x \neq 0 $. 
+\item Si $\displaystyle x,y\neq 0 $, retomamos la inecuación anterior
+	\[
+	\begin{split}
+		\nabla V \cdot f \geq & \left(x^{2}- \left|y\right|\right)^{2}+2x^{2} \left|y\right|- \left|y\right|x^{2}- \left|y\right| \left|x\right|^{3}  \\
+	= &  \left( \left|x\right|^{2}- \left|y\right|\right)^{2} + x^{2} \left|y\right|\left(1- \left|x\right|\right) \geq 0.
+	\end{split}
+	\]
+\end{itemize}
+
+\end{eg}
+\begin{observation}
+	Un caso particular típico es $\displaystyle \Omega = \R^{n} \backslash \left\{ \overline{x}\right\}  $. 
+\end{observation}
+\begin{theorem}[Teorema de estabilidad de Lyapunov]
+Sea $\displaystyle U \subset\R^{n} $ abierto, $\displaystyle f \in \mathcal{C}^{1}\left(U, \R^{n}\right) $ y $\displaystyle \overline{x}\in U $ tal que $\displaystyle f\left(\overline{x}\right)=0 $. Entonces, si existe $\displaystyle V\in \mathcal{C}^{1}\left(U, \R\right) $ tal que 
+\begin{itemize}
+\item $\displaystyle V\left(\overline{x}\right)=0 $.
+\item $\displaystyle V > 0 $ en $\displaystyle U \backslash \left\{ \overline{x}\right\}  $. 
+\item $\displaystyle \nabla V \cdot f \leq 0 $ en $\displaystyle U \backslash \left\{ \overline{x}\right\}  $. 
+\end{itemize}
+Entonces $\displaystyle \overline{x}\left(t\right)\equiv \overline{x} $ es solución estable del sistema $\displaystyle x ' = f\left(x\right) $. 
+\end{theorem}
+\begin{theorem}[Teorema de estabilidad asintótica de Lyapunov]
+Sea $\displaystyle U \subset\R^{n} $ abierto, $\displaystyle f \in \mathcal{C}^{1}\left(U, \R^{n}\right) $ y $\displaystyle \overline{x}\in U $ tal que $\displaystyle f\left(\overline{x}\right)=0 $. Entonces, si existe $\displaystyle V\in \mathcal{C}^{1}\left(U, \R\right) $ tal que 
+\begin{itemize}
+\item $\displaystyle V\left(\overline{x}\right)=0 $.
+\item $\displaystyle V > 0 $ en $\displaystyle U \backslash \left\{ \overline{x}\right\}  $. 
+\item $\displaystyle \nabla V \cdot f < 0 $ en $\displaystyle U \backslash \left\{ \overline{x}\right\} $. 
+\end{itemize}
+Entonces $\displaystyle \overline{x}\left(t\right)\equiv \overline{x} $ es solución asintóticamente estable del sistema $\displaystyle x ' = f\left(x\right) $. 
+\end{theorem}
+

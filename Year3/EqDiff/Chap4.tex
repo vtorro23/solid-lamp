@@ -15,7 +15,7 @@ Diremos que $\displaystyle \overline{x} $ es una solución \textbf{asintóticame
 \begin{eg}
 Consideremos la EDO $\displaystyle x' = ax $. Tendremos que el flujo se puede obtener explícitamente:
 \[\varphi\left(t; t_{0}, x_{0}\right)=x_{0}e^{a\left(t-t_{0}\right)} .\]
-Distinguimos varios casos
+Distinguimos varios casos:
 \begin{itemize}
 \item Si $\displaystyle a < 0 $, toda solución es asintóticamente estable. En efecto, consideremos la solución 
 	\[ \overline{x}\left(t\right)= \overline{x}\left(t_{0}\right)e^{a\left(t-t_{0}\right)} .\]
@@ -84,8 +84,11 @@ con $\displaystyle A\in \mathcal{C}\left(I, \R^{n \times m}\right) $ y $\display
 \begin{observation}
 Con estas hipótesis de $\displaystyle A $ y $\displaystyle b $ podemos tomar
 \[f\left(t,x\right)=A\left(t\right)x + b\left(t\right) ,\]
-y $\displaystyle f $ cumple las hipótesis del teorema Picard Lindelöf local. En efecto, 
+y tenemos que $\displaystyle f $ es continua y localmente Lipschitz. En efecto, 
 \[ \|f\left(t,x\right)-f\left(t,y\right)\| = \|A\left(t\right)\left(x-y\right)\| \leq \|A\left(t\right)\| \|x-y\| .\]
+Si tomamos $\displaystyle J \subset I $ compacto, tenemos que como $\displaystyle A\left(t\right) $ es continua existe $\displaystyle M_{J} $ tal que $\displaystyle \|A\left(t\right)\| \leq M_{J}$, $\displaystyle \forall t \in J $. Así, 
+\[ \|f\left(t,x\right)-f\left(t,y\right)\| \leq M_{J} \|x-y\|, \; \forall \left(t,x\right), \left(t,y\right)\in J \times \R^{n} .\]
+Por el teorema de Picard-Lindelöf global tenemos que hay unicidad de solución en $\displaystyle J $, y además podemos extender esta solución al intervalo original $\displaystyle I $ por un teorema que se vio.
 \end{observation}
 \begin{prop}
 Todas las soluciones de un sistema lineal $\displaystyle x' = A\left(t\right)x + b\left(t\right) $ tienen la misma estabilidad y además coincide con la de la solución $\displaystyle y \equiv 0 $ del sistema homogéneo $\displaystyle y' = A\left(t\right)y $. 
@@ -98,7 +101,7 @@ Usando el lema anterior, dada una solución $\displaystyle \overline{x}\left(t\r
 	= &  \left(A\left(t\right)\left(y + \overline{x}\left(t\right)+b\left(t\right)\right)\right)-\left(A\left(t\right)\overline{x}\left(t\right)+b\left(t\right)\right)=A\left(t\right)y.
 \end{split}
 \]
-El sistema modificado que obtenemos es el homogéneo, por lo que la estabilidad de la solución $\displaystyle \overline{x}\left(t\right) $ equivale a la estabilidad de la solución trivial $\displaystyle \overline{y}\equiv 0 $ del sistema homogéneo. 
+El sistema modificado que obtenemos es el homogéneo, por lo que la estabilidad de la solución $\displaystyle \overline{x}\left(t\right) $ equivale a la estabilidad de la solución trivial $\displaystyle \overline{y}\equiv 0 $ del sistema homogéneo. Como este razonamiento es válido para cualquier solución $\displaystyle \overline{x}\left(t\right) $, concluimos que todas las soluciones tienen el mismo comportamiento de estabilidad.
 \end{proof}
 \begin{observation}[Recordatorio]
 El flujo del sistema $\displaystyle x' = A\left(t\right)x $ tiene la forma 
@@ -113,7 +116,7 @@ donde $\displaystyle \Phi\left(t, t_{0}\right) $ es la \textbf{matriz fundamenta
 Por la propiedad del semigrupo tenemos que $\displaystyle \varphi\left(t; t_{0}, x_{0}\right)=\varphi\left(t; s, \varphi\left(s; t_{0}, x_{0}\right)\right)  $ por lo que
 \[ \Phi\left(t; t_{0}\right)x_{0}=\Phi\left(t,s\right)\varphi\left(s; t_{0}, x_{0}\right)=\Phi\left(t,s\right)\Phi\left(s;t_{0}\right)x_{0}.\]
 Como esto es cierto para todo $\displaystyle x_{0}\in \R^{n} $, debe ser que $\displaystyle \Phi\left(t; t_{0}\right)=\Phi\left(t; s\right)\Phi\left(s; t_{0}\right) $. En particular, si $\displaystyle t = t_{0} $,
-\[I = \Phi\left(t_{0}; t_{0}\right)=\Phi\left(t_{0}, s\right)\Phi\left(s; t_{0}\right) .\]
+\[I = \Phi\left(t_{0}; t_{0}\right)=\Phi\left(t_{0}; s\right)\Phi\left(s; t_{0}\right) .\]
 \end{observation}
 
 \begin{theorem}[Criterio de estabilidad para sistemas lineales homogéneos]
@@ -122,26 +125,28 @@ Un sistema lineal homogéneo $\displaystyle y' = A\left(t\right)y $, es estable 
 \begin{proof}
 Consideramos ambas implicaciones.
 \begin{description}
-\item[($\displaystyle \Rightarrow $)] Como el sistema es estable, tenemos que para cada $\displaystyle \epsilon > 0 $ y para cada $\displaystyle t_{0} \in \R $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \|x_{0}\| < \delta  $ entonces $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)\|< \epsilon  $. Estamos cogiendo $\displaystyle \overline{x}\equiv 0 $. Elegimos $\displaystyle \epsilon = 1 $, por tanto existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \|x_{0}\| < \delta  $ entonces $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)\| < 1 $. 
-	Si $\displaystyle x_{0}\in \R^{n} $,
+\item[($\displaystyle \Rightarrow $)] Como el sistema es estable, tenemos que para cada $\displaystyle \epsilon > 0 $ y para cada $\displaystyle t_{0} \in \R $, existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \|x_{0}\| < \delta  $ entonces $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)\|< \epsilon  $. Todas las soluciones van a tener la misma estabilidad por lo que podemos escoger $\displaystyle \overline{x}\equiv 0 $ la solución. Elegimos $\displaystyle \epsilon = 1 $, por tanto existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \|x_{0}\| < \delta  $ entonces $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)\| < 1 $. 
+	Ahora, si $\displaystyle x_{0}\in \R^{n} \backslash \left\{ 0\right\}  $,
 	\[
 	\begin{split}
-		\|\varphi\left(t; t_{0}, x_{0}\right)\| = & \|\Phi\left(t; t_{0}, x_{0}\right)\| = \left\|\Phi\left(t; t_{0}\right)\frac{x_{0}}{\|x_{0}\|}\frac{\delta }{2}\right\|\frac{2\|x_{0}\|}{\delta } \\
+		\|\varphi\left(t; t_{0}, x_{0}\right)\| = & \|\Phi\left(t; t_{0}\right)x_{0}\| = \left\|\Phi\left(t; t_{0}\right)\frac{x_{0}}{\|x_{0}\|}\frac{\delta }{2}\right\|\frac{2\|x_{0}\|}{\delta } \\
 		= &  \left\|\varphi\left(t; t_{0}, \frac{x_{0}\delta }{2\|x_{0}\|}\right)\right\|\frac{2\|x_{0}\|}{\delta } < \frac{2\|x_{0}\|}{\delta }.
 	\end{split}
 	\]
-	Así, la solución está acotada. 
-\item[($\displaystyle \Leftarrow $)] Sabemos que $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)\| $ está acotada. En particular, la matriz fundamental está acotada. Así, $\displaystyle \|\Phi\left(t, t_{0}\right)\| \leq C $, $\displaystyle \forall t \geq t_{0} $. Entonces, $\displaystyle \forall \epsilon > 0 $ cogemos $\displaystyle \delta = \frac{\epsilon }{C} $ y hacemos un proceso como el anterior. 
+	Así, toda solución está acotada. 
+\item[($\displaystyle \Leftarrow $)] Sabemos que $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)\| $ está acotada. En particular, la matriz fundamental está acotada. Así, $\displaystyle \|\Phi\left(t, t_{0}\right)\| \leq C $, $\displaystyle \forall t \geq t_{0} $. Entonces, para $\displaystyle  \epsilon > 0 $ cogemos $\displaystyle \delta = \frac{\epsilon }{C} $ de forma que si $\displaystyle \|x_{0}\| < \delta  $ entonces, 
+	\[ \|\varphi\left(t; t_{0}, x_{0}\right)\| = \left\|\Phi\left(t, t_{0}\right)x_{0}\right\| \leq C \|x_{0}\| < \epsilon, \; \forall t \geq t_{0} .\]
+	Así, el sistema es estable.
 \end{description}
 \end{proof}
-\begin{theorem}
+\begin{theorem}[Criterio de estabilidad asintótica para sistemas lineales homogéneos]
 Un sistema lineal homogéneo es asintóticamente estable si y sólo si todas las soluciones tienden a cero cuando $\displaystyle t \to \infty  $. 
 \end{theorem}
 \begin{proof}
 Consideremos ambas implicaciones.
 \begin{description}
 \item[($\displaystyle \Rightarrow $)] Si es asintóticamente estable, existe $\displaystyle \eta > 0 $ tal que si $\displaystyle \|x_{0}\| < \eta  $, entonces $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)\| \to 0$ si $\displaystyle t \to \infty  $. 
-	Cogemos $\displaystyle x_{0} \in \R $, tenemos que 
+	Ahora, para $\displaystyle x_{0} \in \R^{n} \backslash \left\{ 0\right\}  $, tenemos que 
 	\[ \|\varphi\left(t; t_{0}, x_{0}\right)\| = \|\Phi\left(t; t_{0}\right)x_{0}\| = \left\|\Phi\left(t, t_{0}\right)\frac{x_{0}}{\|x_{0}\|}\frac{\eta }{2}\right\| \frac{2\|x_{0}\|}{\eta} = \left\|\varphi\left(t; t_{0}, \frac{x_{0}}{\|x_{0}\|} \frac{\eta }{2}\right)\right\| \frac{2\|x_{0}\|}{\eta}\to 0.\]
 \item[($\displaystyle \Leftarrow $)] Como todas las soluciones tienden a cero, en particular las columnas de la matriz fundamental tienden a 0. Es decir, $\displaystyle \Phi_{ij}\left(t, t_{0}\right)\to 0 $ si $\displaystyle t \to \infty  $. Así, $\displaystyle \forall i,j \in \left\{ 1, \ldots, n\right\}  $ y $\displaystyle \forall \epsilon > 0 $, existe $\displaystyle T$ tal que 
 	\[ \left|\Phi_{ij}\left(t, t_{0}\right)\right|<\epsilon, \; \forall t > T .\]
@@ -157,29 +162,57 @@ Por tanto, da igual cómo elijamos $\displaystyle \eta  $ que tenemos asegurada 
 \begin{eg}[Problema 24, Hoja 2]
 	Tenemos un sistema $\displaystyle x' = A\left(t\right)x $ con $\displaystyle A\left(t\right)=A\left(t + T\right) $ para cierto $\displaystyle T \in \R $. Sabemos que existe una solución $\displaystyle x\left(t\right)\not\equiv 0 $ y que es $\displaystyle T $-periódica. Queremos ver que no es asintóticamente estable. Si lo fuera, por lo que acabamos de ver, tendríamos que tendería a 0 cuando $\displaystyle t \to \infty $, que no sucede al ser $\displaystyle T $-periódica y no idénticamente nula.
 \end{eg}
-Supongamos ahora que tenemos un sistema de la forma
+Supongamos ahora que tenemos un sistema lineal homogéneo autónomo, es decir,
 \[x' = Ax, \; A \in \R^{n \times n} ,\]
-con coeficientes constantes. Tendremos que $\displaystyle \Phi\left(t, t_{0}\right)=e^{A\left(t-t_{0}\right)} $. Recordemos que dada una matriz $\displaystyle M \in \R^{n \times n} $ 
+tal que $\displaystyle A $ tiene coeficientes constantes. 
+\begin{observation}[Recordatorio]
+En este caso la matriz fundamental la podemos obtener explícitamente: $\displaystyle \Phi\left(t, t_{0}\right)=e^{A\left(t-t_{0}\right)} $. Recordemos que dada una matriz $\displaystyle M \in \R^{n \times n} $ se definía su exponencial como
 \[e^{M} = Id + \sum^{\infty}_{k = 1}\frac{M^{k}}{k!}, \; e^{0}= Id .\]
-\begin{prop}[Propiedades de la exponencial de matrices]
-\begin{itemize}
-\item Si $\displaystyle M $ y $\displaystyle N $ son matrices tales que $\displaystyle M N = N M $, entonces $\displaystyle e^{M + N}=e^{M}e^{N} $. 
+\end{observation}
+
+\begin{prop}[Propiedades de la exponencial de matrices] Sean $\displaystyle M, N \in \R ^{n \times n} $ matrices. 
+\begin{enumerate}
+\item Si $\displaystyle M $ y $\displaystyle N $ cumplen que $\displaystyle M N = N M $, entonces $\displaystyle e^{M + N}=e^{M}e^{N} $. 
 \item Si $\displaystyle M = JNJ^{-1} $, entonces $\displaystyle e^{M}=Je^{N}J^{-1} $. 
 \item Si $\displaystyle M = diag\left(M_{1}, \ldots, M_{l}\right) $ es diagonal por bloques, entonces $\displaystyle e^{M}=diag\left(e^{M_{1}}, \ldots, e^{M_{l}}\right) $. 
 \item Si tenemos una matriz 
-	\[D_{r}\left(\lambda \right)=\begin{pmatrix} \lambda & \cdots & 0 \\ 1 & \cdots & 0 \\ \vdots & & \vdots \\ 0 & \cdots & 1\end{pmatrix}\in \R^{r \times r} .\]
+	\[D_{r}\left(\lambda \right)=\begin{pmatrix} \lambda & \cdots & \cdots & 0 \\ 1 & \lambda & \cdots & 0 \\ \vdots & \vdots & \vdots & \vdots \\ 0 & \cdots & 1 &  \lambda  \end{pmatrix}\in \R^{r \times r} .\]
 Tendremos que 
-\[e^{D_{r}\left(\lambda \right)t}=e^{\lambda t}  .\]
-% copiar lo del año pasado de EDOS
-\end{itemize}
+	\[e^{D_{r}\left(\lambda \right)t}=e^{\lambda t}\begin{pmatrix} 1 &  &  & &  \\ t & 1 &  & &  \\ \frac{t ^{2}}{2!} &  &  & &  \\ \vdots & & & & \\ \frac{t ^{r-1}}{\left(r-1\right)!} & \cdots & & \frac{t ^{2}}{2}& t& 1  \end{pmatrix}  .\]
+\end{enumerate}
 \end{prop}
-Si tenemos una matriz $\displaystyle M $, para calcular la exponencial de $\displaystyle M $ calcularíamos primero la forma de Jordan de $\displaystyle M $. A continuación, podemos utilizar \textbf{(2)} y \textbf{(3)} para hacer la exponencial en cada bloque, que tendrá la forma de $\displaystyle e^{D_{r}\left(\lambda \right)t} $ que viene en \textbf{(4)}. \\
-\\
-Si $\displaystyle r $ es la diferencia de multiplicidades más uno, 
-\[\left(e^{tA}\right)_{ij} = \sum_{\lambda \in \sigma \left(A\right)}e^{\lambda t}P_{r, \lambda, i,j}\left(t\right)=\sum_{\lambda \in \sigma \left(A\right)}e^{\Re\left(\lambda \right)t}\left(A \cos \left(\Imagen \lambda t\right) + B\sin \Imagen\lambda t\right) .\]
-
+\begin{proof}
+Sean $\displaystyle M, N \in \R^{n \times n} $ matrices. 
+\begin{enumerate}
+\item Como $\displaystyle M $ y $\displaystyle N $ conmutan, se puede ver que 
+	\[\left(M + N\right)^{k}= \sum^{k}_{j = 0}\begin{pmatrix} k \\ j \end{pmatrix}M^{j}N^{k-j}, \; \forall k \in \N .\]
+	Así, 
+	\[
+	\begin{split}
+		e^{M}e^{N} = & \left(\sum^{\infty}_{j = 0}\frac{M^{j}}{j!}\right)\left(\sum^{\infty}_{i = 0}\frac{N^{i}}{i!}\right) = \sum^{\infty }_{k = 0}\sum^{k }_{j = 0}\frac{M^{j}}{j!}\frac{N^{k-j}}{\left(k-j\right)!} = \sum^{\infty }_{k = 0}\frac{1}{k!}\sum^{k}_{j = 0}\frac{k!}{j!\left(k-j\right)!}M^{j}N^{k-j} \\
+		= & \sum^{\infty}_{k = 0}\frac{1}{k!}\sum^{k}_{j = 0}\begin{pmatrix} k \\ j \end{pmatrix}M^{j}N^{k-j}=\sum^{\infty}_{k = 0}\frac{\left(M + N\right)^{k}}{k!}= e^{M + N} .
+	\end{split}
+	\]
+\end{enumerate}
+\end{proof}
+\begin{observation}[Cómo calcular el exponencial de una matriz]
+Dada una matriz $\displaystyle M \in \R ^{n \times n} $, el procedimiento a seguir para calcular la exponencial $\displaystyle e^{Mt} $ es el siguiente:
+\begin{enumerate}
+\item En primer lugar calculamos su forma canónica de Jordan, es decir, encontramos $\displaystyle J \in \GL_{n}\left(\R\right) $ tal que $\displaystyle M = J N J^{-1} $ donde $\displaystyle J $ es una matriz diagonal por bloques, cuyos bloques son de la forma $\displaystyle D_{r}\left(\lambda \right) $ para cada autovalor $\displaystyle \lambda  $. 
+\item Aplicando \textbf{(2)}-\textbf{(4)}, tendremos que cada bloque de la exponencial tendrá la forma $\displaystyle e^{D_{r}\left(\lambda \right)t} $. 
+\item Así, podemos expresar explícitamente $\displaystyle e^{tM} $ de la forma:
+	\[
+		\left(e^{tM}\right)_{ij} = \sum^{}_{\lambda \in \sigma\left(A\right)}\sum^{r_{\lambda }-1}_{k = 0}t ^{k}e^{\Re\left(\lambda \right)t} \left(A_{i,j,k,\lambda }\cos\left(\Imagen \lambda t\right) + B_{i,j,k,\lambda }\sin\left(\Imagen \lambda t\right)\right) ,
+		\]
+	donde 
+	\begin{itemize}
+	\item $\displaystyle r_{\lambda }\in \N $ denota el tamaño máximo de los bloques de Jordan asociados al autovalor $\displaystyle \lambda  $.
+	\item $\displaystyle A_{i,j,k,\lambda }, B_{i,j,k,\lambda }\in \R $ son coeficientes reales constantes. 
+	\end{itemize}
+\end{enumerate}
+\end{observation}
 \begin{prop}
-	Dada una matriz $\displaystyle A\in \R^{n \times n} $ y $\displaystyle \alpha_{\max }= \max_{\lambda \in \sigma \left(A\right)} \left\{ \Re\left(\lambda \right)\right\}  $. Entonces, para todo $\displaystyle \gamma > \alpha_{\max } $, existe $\displaystyle C \geq 0 $ tal que 
+	Sea $\displaystyle A\in \R^{n \times n} $ una matriz y $\displaystyle \alpha_{\max }= \max_{\lambda \in \sigma \left(A\right)} \left\{ \Re\left(\lambda \right)\right\}  $. Entonces, para todo $\displaystyle \gamma > \alpha_{\max } $, existe $\displaystyle C \geq 0 $ tal que 
 	\[\|e^{tA}\|_{F}\leq Ce^{\gamma t} .\]
 	Si además para todo $\displaystyle \lambda\in \sigma\left(A\right) $ tal que $\displaystyle \Re\left(\lambda \right)=\alpha_{\max } $ se tiene que $\displaystyle m_{g}\left(\lambda \right)=m_{a}\left(\lambda \right) $ entonces
 	\[\|e^{tA}\|_{F}\leq C_{\alpha_{\max }}e^{\alpha_{\max }t} .\]	
@@ -211,8 +244,9 @@ Dado $\displaystyle A \in \R^{n \times n} $, entonces $\displaystyle x' = Ax $ e
 \end{itemize}
 \end{theorem}
 \begin{proof}
+	Consideremos el sistema $\displaystyle x '= Ax $ con $\displaystyle A \in \R ^{n \times n} $. 
 \begin{itemize}
-\item $\displaystyle \Re\left(\lambda \right)<0 $ para todo $\displaystyle \lambda \in \sigma\left(A\right) $, entonces 
+\item Si $\displaystyle \Re\left(\lambda \right)<0 $ para todo $\displaystyle \lambda \in \sigma\left(A\right) $, entonces 
 	\[\alpha_{\max }=\max _{\lambda \in \sigma\left(A\right)} \left\{ \Re\left(\lambda \right)\right\} <0 \Rightarrow \exists \gamma \in \left(\alpha_{\max }, 0\right) .\]
 Por la propiedad anterior, $\displaystyle \|e^{tA}\|_{F}\leq C_{\gamma }e^{\gamma t} $ por lo que 
 \[ \left|\varphi\left(t; t_{0}, x_{0}\right)\right| = \left|e^{\left(t-t_{0}\right)A}x_{0}\right|\leq \|e^{\left(t-t_{0}\right)A}\|_{F} \left|x_{0}\right| \leq C_{\gamma } \left|x_{0}\right|e^{\gamma\left(t-t_{0}\right)} \xrightarrow{\gamma < 0, t \to \infty }0 .\]
@@ -241,15 +275,18 @@ Entonces, si $\displaystyle t_{0} \in I $, la función $\displaystyle x $ satisf
 \[x\left(t\right)=e^{A\left(t-t_{0}\right)}x\left(t_{0}\right) + \int^{t}_{t_{0}} e^{A\left(t-s\right)}g\left(s, x\left(s\right)\right) \; d s .\]
 \end{prop}
 \begin{proof}
-Supongamos que $\displaystyle x\left(t\right) $, tenemos que 
+Supongamos que $\displaystyle x\left(t\right) $ es solución del sistema, tenemos que 
 \[x'\left(t\right) - Ax\left(t\right)=g\left(t,x\left(t\right)\right) .\]
 Por tanto, tendremos que 
-\[e^{-At}\left(x'\left(t\right)-Ax\left(t\right)\right) = e^{-At}g\left(t, x\left(t\right)\right) = \frac{d}{dt}\left(e^{At}x\left(t\right)\right).\]
+\[e^{-At}\left(x'\left(t\right)-Ax\left(t\right)\right) = e^{-At}g\left(t, x\left(t\right)\right) = \frac{d}{dt}\left(e^{-At}x\left(t\right)\right).\]
 Integrando, 
-\[e^{-At}x\left(t\right)-e^{-At}x\left(t_{0}\right)=\int^{t}_{t_{0}} \frac{d}{d t}\left(e^{-At}x\left(t\right)\right) \; dt = \int^{t}_{t_{0}} e^{-As}g\left(s, x\left(s\right)\right) \; d s  .\]
+\[e^{-At}x\left(t\right)-e^{-At_{0}}x\left(t_{0}\right)=\int^{t}_{t_{0}} \frac{d}{d t}\left(e^{-At}x\left(t\right)\right) \; dt = \int^{t}_{t_{0}} e^{-As}g\left(s, x\left(s\right)\right) \; d s  .\]
 Por tanto, 
-\[x\left(t\right)= .\]
-% completar con apuntes que cuelgue
+\[e^{-At}x\left(t\right)-e^{-At_{0}}x\left(t_{0}\right)=\int^{t}_{t_{0}} e^{-As}g\left(s, x\left(s\right)\right) \; d s  .\]
+Por tanto, 
+\[e^{-At}x\left(t\right)=e^{-At_{0}}x\left(t_{0}\right) + \int^{t}_{t_{0}} e^{-As} g\left(s, x\left(s\right)\right)\; d s .\]
+Multiplicando toda la ecuación por la izquierda por la matriz $\displaystyle e^{At} $, 
+\[x\left(t\right)= e^{At}e^{-At_{0}}x\left(t_{0}\right)+e^{At}\int^{t}_{t_{0}} e^{-As}g\left(s, x\left(s\right)\right) \; d s= e^{A\left(t-t_{0}\right)}x\left(t_{0}\right)+\int^{t}_{t_{0}} e^{A\left(t- s\right)}g\left(s, x\left(s\right)\right) \; d s  .\]
 \end{proof}
 
 \begin{observation}

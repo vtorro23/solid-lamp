@@ -16,9 +16,9 @@ Un espacio topológico $\displaystyle X $ se dice que es \textbf{primer axioma d
 	Todo espacio topológico $\displaystyle \left(X, \mathcal{T}\right) $ en el que la topología venga asociada a una distancia $\displaystyle d $ es I AN. En efecto, para cada $\displaystyle x \in X$ la colección $\displaystyle \left\{ B_{d}\left(x, \frac{1}{k}\right)\right\} _{k\in \N} $ es una base numerable de entornos abiertos de $\displaystyle x $. En particular, $\displaystyle \left(\R^{n}, \mathcal{T}_{u}\right) $ es I AN.
 \end{eg}
 \begin{eg}[Topología discreta y topología trivial]
-	Es trivial que $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ es I AN, puesto que para cada punto $\displaystyle x $ una base de entornos es $\displaystyle \left\{ x\right\}  $. Análogamente, $\displaystyle \left(X, \mathcal{T}_{\text{triv}}\right) $.
+	Es trivial que $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ es I AN, puesto que para cada punto $\displaystyle x $ una base de entornos es $\displaystyle \left\{ x\right\}  $. Análogamente, $\displaystyle \left(X, \mathcal{T}_{\text{triv}}\right) $ también es I AN.
 \end{eg}
-\begin{eg}
+\begin{eg}[Topología del punto]
 	Dado un conjunto $\displaystyle X $ y $\displaystyle a \in X $, podemos considerar el espacio topológico $\displaystyle \left(X, \mathcal{T}_{a}\right) $. Claramente este espacio es I AN. En efecto, para $\displaystyle a $ podemos considerar la base de entornos $\displaystyle \left\{ a\right\}  $ y para $\displaystyle x \neq a $ basta con tomar $\displaystyle \left\{ a,x\right\}  $.
 \end{eg}
 \begin{eg}[Recta de Sorgenfrey]
@@ -69,7 +69,7 @@ Si un espacio topológico $\displaystyle X $ es II AN, entonces es I AN.
 	\[\mathcal{V}_{\mathcal{B}}^{x}= \left\{ B_{k}\in \mathcal{B} \; : \; x \in B_{k}\right\}  ,\]
 	es una base de entornos abiertos de $\displaystyle x $. En efecto, si $\displaystyle \Omega ^{x} $ es entorno abierto de $\displaystyle x $, como todos los abiertos de $\displaystyle X $ debe ser unión de abiertos básicos. Como $\displaystyle x \in \Omega^{x} $ debe existir un $\displaystyle k\in \N $ tal que $\displaystyle x \in B_{k}\subset \Omega^{x} $.
 \end{proof}
-\begin{eg}
+\begin{eg}[Falsedad del recíproco]
 	El recíproco de la propiedad anterior no es cierto. En efecto, sea $\displaystyle X  $ un conjunto no numerable. Vimso que $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ es I AN, pero no es II AN. En efecto, como todos los conjuntos $\displaystyle \left\{ x\right\}  $ son abiertos, una base de la topología debe incluirlos a todos. Como $\displaystyle X $ es no numerable, es imposible la existencia de una base numerable de $\displaystyle \mathcal{T}_{\text{dis}} $.
 \end{eg}
 \begin{eg}
@@ -130,7 +130,7 @@ Si un espacio topológico $\displaystyle X $ es II AN, entonces es de Lindelöf.
 \end{eg}
 \section{Comportamiento por construcciones}
 \begin{observation}
-Es sencillo ver que todas las propiedades anteriores son propiedades topológicas. 
+Es sencillo ver que todas las propiedades anteriores son propiedades topológicas, es decir, se conservan por homeomorfismos. 
 \end{observation}
 
 \begin{prop} Sea $\displaystyle X $ un espacio topológico. 
@@ -182,4 +182,127 @@ Como $\displaystyle X $ es Lindelöf, existe un subrecubrimiento numerable
 \[X = \left(X \backslash C\right) \cup \bigcup_{j \in J}U_{j}, \]
 con $\displaystyle J \subset I $ numerable. Claramente, $\displaystyle C = \bigcup_{j \in J}V_{j} $. 
 \end{proof}
+\begin{eg}[Lindelöf no es hereditaria]
+	Sea $\displaystyle \left(Y, \mathcal{T}\right) $ un espacio topológico que sea $\displaystyle T_{1} $ pero no Lindelöf \footnote{Podría ser que $\displaystyle Y $ fuese no numerable y $\displaystyle \mathcal{T} =\mathcal{T}_{\text{dis}} $.} Consideramos $\displaystyle \omega \not\in Y $ y tomamos en $\displaystyle X = Y \cup \left\{ \omega \right\}  $ la topología $\displaystyle \tilde{\mathcal{T}} $ que tiene por abiertos los $\displaystyle U \subset X $ tales que o bien $\displaystyle U \in \mathcal{T} $ o bien $\displaystyle \omega \in U $ y $\displaystyle X \backslash U \subset Y $ es finito. \\
+\indent Es obvio que de todo recubrimiento por abiertos de $\displaystyle X $ se puede encontrar uno numerable. En efecto, si 
+\[ X = \bigcup_{i \in I}U_{i} ,\]
+con $\displaystyle U_{i}\in \tilde{\mathcal{T}} $, $\displaystyle \forall i \in I $. Hay un $\displaystyle i_{0} \in I $ tal que $\displaystyle \omega \in U_{i_{0}} $, pero $\displaystyle X \backslash U_{i_{0}} $ es finito, por lo que además del $\displaystyle U_{i_{0}} $ para recubrir $\displaystyle X $ basta escoger $\displaystyle U_{i} $ en el que se encuentre cada punto de $\displaystyle X\backslash U_{i_{0}} $. \\
+\indent Podemos observar que $\displaystyle Y $ con la topología que recibe como subespacio de $\displaystyle \left(X, \tilde{\mathcal{T}}\right) $ es el espacio $\displaystyle \left(Y, \mathcal{T}\right) $ de partida, que sabemos que no es Lindelöf. \\
+\indent Para ver que $\displaystyle Y $ como subespacio no es de Lindelöf podemos tomar un recubrimiento de $\displaystyle Y $ por abiertos en $\displaystyle \mathcal{T} $,
+\[Y = \bigcup_{\alpha \in \Lambda }V_{\alpha }, \; V_{\alpha }\in \mathcal{T} ,\]
+que no admite subrecubrimiento numerable. Ahora bien, cada $\displaystyle V_{\alpha } $ es también abierto en $\displaystyle \left(X, \tilde{\mathcal{T}}\right) $. 
+\end{eg}
+\begin{eg}[I AN y II AN no es divisible]
+Consideremos la relación de equivalencia en la que todos los enteros se identifican a un punto, y el correspondiente espacio cociente $\displaystyle \R / \Z $. Sea $\displaystyle p : \R \to \R/\Z $ la aplicación identificación de paso al cociente. Vamos a ver que $\displaystyle p\left(0\right) $ no tiene una base numerable de entornos abiertos, por lo que $\displaystyle \R / \Z $ no es I AN y tampoco es II AN. \\
+\indent Si tomamos una familia numerable $\displaystyle \left\{ V_{k}^{p\left(0\right)}\right\} _{k \in \N} $ de entornos abiertos de $\displaystyle p\left(0\right) $, sabemos que para cada $\displaystyle k \in \N  $, $\displaystyle V_{k}^{p\left(0\right)}=p\left(U_{k}\right) $ donde $\displaystyle U_{k}\subset \R $ es un abierto usual de la recta $\displaystyle p $-saturado, es decir, con $\displaystyle \Z \subset U $. 
+En particular, tenemos que existe un intervalo $\displaystyle \left(a_{k}, b_{k}\right)\subset U_{k} $ con 
+\[k-1 < a_{k} < k < b_{k} < k+1 .\]
+Tomemos un punto $\displaystyle x_{k}\neq k $ de forma que $\displaystyle x_{k}\in \left(a_{k}, b_{k}\right) $. Consideramos $\displaystyle \R \backslash \left\{ x_{k} \right\} _{k \in \N} $. Se trata de un conjunto abierto en la topología usual. Es $\displaystyle p $-saturado. Por tanto, $\displaystyle W^{p\left(0\right)}:= p\left(\R \backslash \left\{ x_{k}\right\} _{k \in \N}\right) $ es un entorno abierto de $\displaystyle p\left(0\right) $. 
+Además, no contiene a ninguno de los $\displaystyle V^{p\left(0\right)}_{k} $, pues $\displaystyle p\left(x_{k}\right)\in V_{k}^{p\left(0\right)} $, pero $\displaystyle p\left(x_{k}\right)\not\in W^{p\left(0\right)} $. Así, es imposible que $\displaystyle p\left(0\right) $ tenga una base numerable de entornos abiertos. 
+\end{eg}
+\begin{prop}
+Sea $\displaystyle f : X \to Y $ una aplicación continua, sobreyectiva y abierta.
+\begin{enumerate}
+\item Si $\displaystyle X $ es I AN, también lo es $\displaystyle Y $.
+\item Si $\displaystyle X $ es II AN, también lo es $\displaystyle Y $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+	Supongamos que $\displaystyle f $ es una identificación abierta. 
+	\begin{enumerate}
+	\item Tomemos $\displaystyle y \in Y $. Por ser $\displaystyle f $ sobreyectiva tenemos que existe $\displaystyle x \in X $ tal que $\displaystyle f\left(x\right)=y $. Sea $\displaystyle \left\{ V_{k}^{x}\right\} _{k \in \N} $ una base numerable de entornos abiertos de $\displaystyle x $ en $\displaystyle X $. Como $\displaystyle f $ es abierta, tenemos que $\displaystyle \left\{ f\left(V_{k}^{x}\right)\right\} _{k\in \N} $ es una colección numerable de entornos abiertos de $\displaystyle y $. Veamos que es una base de entornos abiertos de $\displaystyle y $. 
+		Si $\displaystyle \Omega^{y} $ es un entorno abierto de $\displaystyle y $, por continuidad de $\displaystyle f $ sabemos que $\displaystyle f^{-1}\left(\Omega ^{y}\right) $ es entorno abierto de $\displaystyle x $, por lo que existe $\displaystyle k_{0} \in \N $ tal que $\displaystyle V^{x}_{k_{0}}\subset f^{-1}\left(\Omega ^{y}\right) $, por lo que $\displaystyle f\left(V^{x}_{k_{0}}\right)\subset \Omega^{y} $.
+	\item Sea $\displaystyle \mathcal{B}= \left\{ B_{k}\right\} _{k \in \N} $ una base numerable de la topología en $\displaystyle X $. Por ser $\displaystyle f $ abierta tenemos que $\displaystyle \mathcal{B}\left(f\right):= \left\{ f\left(B_{k}\right)\right\} _{k \in \N} $ es una colección numerable de abiertos en $\displaystyle Y $. Además, si $\displaystyle V \subset Y $ es abierto por la continuidad de $\displaystyle f $ se sigue que $\displaystyle f^{-1}\left(V\right)\subset X $ es abierto, por lo que se puede expresar como la unión de una subfamilia de los abiertos de $\displaystyle \mathcal{B} $. 
+		Como $\displaystyle f $ es sobreyectiva se tiene que $\displaystyle f\left(f^{-1}\left(V\right)\right)=V $ y por tanto $\displaystyle V $ se expresa como unión de elementos de $\displaystyle \mathcal{B}\left(f\right) $. 
+	\end{enumerate}
+\end{proof}
+\begin{prop}
+Sea $\displaystyle f : X \to Y $ una aplicación continua y sobreyectiva. 
+\begin{enumerate}
+\item Si $\displaystyle X $ es separable, $\displaystyle Y $ también lo es. 
+\item Si $\displaystyle X $ es Lindelöf, $\displaystyle Y $ también lo es.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Sea $\displaystyle f : X \to Y $ una aplicación continua y sobreyectiva. 
+\begin{enumerate}
+\item Sea $\displaystyle A \subset X $ numerable y denso. Se tiene que $\displaystyle f\left(A\right) $ es numerable. Por la continuidad de $\displaystyle f $, $\displaystyle f\left(\overline{A}\right)\subset \overline{f\left(A\right)} $ y como $\displaystyle \overline{A} = X $ y $\displaystyle f $ es sobreyectiva tenemos que $\displaystyle \overline{f\left(A\right)}= Y $, por lo que $\displaystyle f\left(A\right) $ es denso en $\displaystyle Y $.
+\item Sea $\displaystyle Y = \bigcup_{i \in I}V_{i} $ un recubrimiento por abiertos de $\displaystyle Y $.
+	Como $\displaystyle f $ es continua tenemos que $\displaystyle f^{-1}\left(V_{i}\right) $ es abierto en $\displaystyle X $. Además, $\displaystyle X = \bigcup_{i \in I}f^{-1}\left(V_{i}\right) $.
+	Como $\displaystyle X $ es Lindelöf, existe $\displaystyle J \subset I $ numerable tal que $\displaystyle X = \bigcup_{j \in J}f^{-1}\left(V_{j}\right) $. Como $\displaystyle f $ es sobreyectiva se sigue que $\displaystyle Y = \bigcup_{j \in J}V_{j} $. 
+\end{enumerate}
+\end{proof}
+\begin{prop}
+Sean $\displaystyle X_{i} $, $\displaystyle i = 1, \ldots, r $ espacios topológicos. Las siguientes afirmaciones son equivalentes:
+\begin{enumerate}
+\item Los espacios $\displaystyle X_{i} $ son I AN para cada $\displaystyle i = 1, \ldots, r $. 
+\item El producto $\displaystyle \prod^{r}_{i = 1}X_{i} $ es I AN. 
+\end{enumerate}	
+\end{prop}
+\begin{proof}
+Demostramos ambas implicaciones:
+\begin{description}
+	\item[(1) $\displaystyle \Rightarrow $ (2)] Si $\displaystyle \left(x_{1}, \ldots, x_{r}\right)\in \prod^{r}_{ i= 1}X_{i} $, podemos escoger bases numerables de entornos abiertos encajados $\displaystyle \mathcal{V}^{x_{i}}= \left\{ V_{k}^{x_{i}}\right\} _{k \in \N} $ para cada $\displaystyle x_{i} \in X_{i} $. Se puede comprobar que 
+		\[ \left\{ W_{1} \times \cdots \times W_{r} \; : \; W_{i} \in \mathcal{V}^{x_{i}}\right\}  ,\]
+		es una base numerable de entornos abiertos de $\displaystyle \left(x_{1}, \ldots, x_{r}\right) $. Es sencillo ver que es una colección numerable. Veamos que es base de entornos abiertos. Sea $\displaystyle \Omega^{\left(x_{1}, \ldots, x_{r}\right)} $ un entorno abierto de $\displaystyle \left(x_{1}, \ldots, x_{r}\right) $. Como las proyecciones son aplicaciones abiertas tenemos que $\displaystyle p_{i}\left(\Omega^{\left(x_{1}, \ldots, x_{r}\right)}\right) $ es entorno abierto de $\displaystyle x_{i} $ en $\displaystyle X_{i} $.
+		Por tanto, existe $\displaystyle k_{i} \in \N $ tal que $\displaystyle V^{x_{i}}_{k}\subset p_{i}\left(\Omega^{\left(x_{1}, \ldots, x_{r}\right)}\right) $ para $\displaystyle k \geq k_{i} $. Claramente, 
+		\[V^{x_{1}}_{k_{1}} \times \cdots \times V^{x_{r}}_{k_{r}}\subset \Omega^{\left(x_{1}, \ldots, x_{r}\right)} .\]
+	\item[(2) $\displaystyle \Rightarrow $ (1)] Cogemos puntos $\displaystyle x_{i} \in X_{i} $. Tomemos una base numerable de entornos abiertos encajados de $\displaystyle \left(x_{1}, \ldots, x_{r}\right) $,
+		\[\mathcal{W}^{\left(x_{1}, \ldots, x_{r}\right)} = \left\{ \Omega_{k}^{\left(x_{1}, \ldots, x_{r}\right)} \; \right\} _{k \in \N} .\]
+		Por ser las proyecciones abiertas, para cada $\displaystyle i \in \left\{ 1, \ldots, r\right\}  $ se tiene que $\displaystyle V^{x_{i}}:=p_{i}\left(\Omega_{k}^{\left(x_{1}, \ldots, x_{r}\right)}\right) $ es un entorno abierto de $\displaystyle x_{i} $ en $\displaystyle X_{i} $. Es más, 
+		\[ \left\{ p_{i}\left(\Omega_{k}^{\left(x_{1}, \ldots, x_{r}\right)}\right)\right\} _{k \in \N} ,\]
+	es una base encajada de abiertos de $\displaystyle x_{i} $. Es sencillo ver que están encajados. Veamos que efectivamente es base de entornos: si $\displaystyle U^{x_{i}} $ es entorno abierto de $\displaystyle x_{i} $ se tiene que 
+	\[p^{-1}_{i}\left(U^{x_{i}}\right)= X_{1} \times \cdots \times X_{i-1} \times U^{x_{i}} \times X_{i+1} \times \cdots \times X_{r} ,\]
+	es abierto y es entorno de $\displaystyle \left(x_{1}, \ldots, x_{r}\right) $ por lo que existe $\displaystyle k \in \N $ tal que $\displaystyle \Omega_{k}^{\left(x_{1}, \ldots, x_{r}\right)}\subset p^{-1}_{i}\left(U^{x_{i}}\right) $. Proyectando sobre el factor $\displaystyle i $-ésimo obtenemos que $\displaystyle p_{i}\left(\Omega^{\left(x_{1}, \ldots, x_{r}\right)}_{k}\right)\subset U^{x_{i}} $.
+\end{description}
+\end{proof}
+\begin{prop}
+Sean $\displaystyle X_{i} $ espacios topológicos para $\displaystyle i = 1, \ldots, r $. Son equivalentes:
+\begin{enumerate}
+\item Los espacios $\displaystyle X_{i} $ son II AN para cada $\displaystyle i = 1, \ldots, r $.
+\item El producto $\displaystyle \prod^{r}_{i = 1}X_{i} $ es II AN.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Consideramos ambas implicaciones.
+\begin{description}
+	\item[(1) $\displaystyle \Rightarrow $ (2)] Si tomamos bases numerables $\displaystyle \mathcal{B}_{i} = \left\{ B^{i}_{k}\right\} _{k \in \N} $ para las topologías en $\displaystyle X_{i} $, sabemos que 
+		\[\mathcal{B} = \left\{ B^{1}_{k_{1}} \times \cdots \times B^{r}_{k_{r}} \right\} _{k_{1}, \ldots, k_{r} \in \N} ,\]
+		es una base de la topología producto y claramente es numerable. 
+	\item[(2) $\displaystyle \Rightarrow $ (1)] Sea $\displaystyle \mathcal{B} $ es una base numerable de la topología producto con la forma
+		\[\mathcal{B}= \left\{ W_{k}\right\} _{k\in \N} .\]
+		Por ser las proyecciones abiertas tenemos que $\displaystyle p_{i}\left(W_{k}\right) $ es abierto en $\displaystyle X_{i} $, $\displaystyle \forall k \in \N $. Además, $\displaystyle \left\{ p_{i}\left(W_{k}\right)\right\} _{k \in \N} $ es base de la topología en $\displaystyle X_{i} $. En efecto, si $\displaystyle \Omega_{i} $ es abierto en $\displaystyle X_{i} $ tenemos que $\displaystyle p^{-1}_{i}\left(\Omega_{i}\right) $ es abierto en $\displaystyle \prod^{r}_{ i= 1}X_{i} $. 
+		Por tanto, podemos escribir
+		\[p^{-1}_{i}\left(\Omega_{i}\right)=\bigcup_{n\in \Lambda \subset \N}W_{n} .\]
+		Tenemos claramente que 
+		\[\Omega_{i}=\bigcup_{n \in \Lambda \subset \N}p_{i}\left(W_{n}\right) .\]
+\end{description}
+\end{proof}
+\begin{prop}
+Sean $\displaystyle X_{i} $ espacios topológicos con $\displaystyle i = 1, \ldots, r $. Son equivalentes:
+\begin{enumerate}
+\item Los espacios $\displaystyle X_{i} $ son separables para cada $\displaystyle i = 1, \ldots, r $. 
+\item El producto $\displaystyle \prod^{r}_{i = 1}X_{i} $ es separable. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Consideramos ambas implicaciones.
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Si para cada $\displaystyle i = 1, \ldots, r $ existe un conjunto $\displaystyle A_{i}\subset X_{i} $ que es denso y numerable, entonces claramente tendremos que $\displaystyle A_{1} \times A_{r} $ es numerable y denso en $\displaystyle \prod^{r}_{i = 1}X_{i} $ puesto que 
+	\[ \overline{A_{1} \times \cdots \times A_{r}}= \overline{A}_{1} \times \cdots \times \overline{A}_{r} = X_{1} \times \cdots \times X_{r} = \prod^{r}_{i = 1}X_{i} .\]
+\item[(2) $\displaystyle \Rightarrow $ (1)] Si $\displaystyle A \subset \prod^{r}_{i= 1}X_{i} $ es numerable y denso, para cada $\displaystyle i \in \left\{ 1, \ldots, r\right\}  $ tenemos que $\displaystyle p_{i}\left(A\right) $ es numerable. Tomemos $\displaystyle U_{i}\subset X_{i} $ un abierto no vacío. Tenemos que $\displaystyle p^{-1}_{i}\left(U_{i}\right) $ es un abierto no vacío de $\displaystyle \prod^{r}_{i = 1}X_{i} $. Por tanto $\displaystyle p^{-1}_{i}\left(U_{i}\right)\cap A \neq \emptyset $. Si $\displaystyle a = \left(a_{1}, \ldots, a_{r}\right)\in p^{-1}_{i}\left(U_{i}\right)\cap A $, entonces $\displaystyle a_{i} \in U_{i} \cap p_{i}\left(A\right) $. 
+\end{description}
+\end{proof}
+\begin{eg}[Lindelöf no es productiva]
+	Consideramos la recta de Sorgenfrey $\displaystyle \left(\R, \mathcal{T}_{[,)}\right) $, que sabemos que es Lindelöf. Veamos que $\displaystyle \left(\R, \mathcal{T}_{[,)}\right) \times \left(\R, \mathcal{T}_{[,)}\right) $ no es Lindelöf. Si lo fuera el subconjunto cerrado $\displaystyle y = \left\{ x + y = 0\right\}  $ sería Lindelöf. Sin embargo, hereda la topología discreta y es no numerable por lo que no es Lindelöf.
+\end{eg}
+\begin{prop}
+Sean $\displaystyle X_{i} $ espacios topológicos con $\displaystyle i = 1, \ldots, r $ y consideremos el espacio suma $\displaystyle \sum^{r}_{i = 1}X_{i} $. 
+\begin{enumerate}
+	\item $\displaystyle X_{i} $ es I AN $\displaystyle \forall i \in \left\{ 1, \ldots, r\right\}  $ $\displaystyle \iff  $ $\displaystyle \sum^{r}_{i = 1}X_{i} $ es I AN. 
+	\item $\displaystyle X_{i} $ es II AN $\displaystyle \forall i \in \left\{ 1, \ldots, r\right\}  $ $\displaystyle \iff  $ $\displaystyle \sum^{r}_{i = 1}X_{i} $ es II AN. 
+	\item $\displaystyle X_{i} $ es separable $\displaystyle \forall i \in \left\{ 1, \ldots, r\right\}  $ $\displaystyle \iff  $ $\displaystyle \sum^{r}_{i = 1}X_{i} $ es separable.
+	\item $\displaystyle X_{i} $ es Lindelöf $\displaystyle \forall i \in \left\{ 1, \ldots, r\right\}  $ $\displaystyle \iff  $ $\displaystyle \sum^{r}_{i = 1}X_{i} $ es Lindelöf. 
+\end{enumerate}
+\end{prop}
 
