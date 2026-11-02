@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  28 OCT 2026 17:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  2 NOV 2026 11:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1535,86 +1535,76 @@ LaTeX Info: Redefining \% on input line 1.
 Cap\'{\i }tulo 5.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 11.
+(mdframed)              on input line 10.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 13.
 [43
 
 ]
-LaTeX Info: Redefining \. on input line 41.
-LaTeX Info: Redefining \% on input line 41.
-LaTeX Info: Redefining \. on input line 41.
-LaTeX Info: Redefining \% on input line 41.
+LaTeX Info: Redefining \. on input line 43.
+LaTeX Info: Redefining \% on input line 43.
  [44]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 49.
+(mdframed)              on input line 51.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 66.
-LaTeX Info: Redefining \. on input line 80.
-LaTeX Info: Redefining \% on input line 80.
-LaTeX Info: Redefining \. on input line 80.
-LaTeX Info: Redefining \% on input line 80.
+(mdframed)              on input line 68.
+LaTeX Info: Redefining \. on input line 82.
+LaTeX Info: Redefining \% on input line 82.
  [45]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 82.
-
-Overfull \hbox (14.39053pt too wide) detected at line 108
+(mdframed)              on input line 84.
+LaTeX Info: Redefining \. on input line 111.
+LaTeX Info: Redefining \% on input line 111.
+ [46]
+Overfull \hbox (14.39053pt too wide) detected at line 116
 [] \OT1/lmr/m/n/10 = [] [] \OMS/lmsy/m/n/10 ^^T \OML/lmm/m/it/10 Ke[] [] \OMS/lmsy/m/n/10 ^^T \OML/lmm/m/it/10 Ke[] [] ;  \OMS/lmsy/m/n/10 8\OML/lmm/m/it/10 T \OMS/lmsy/m/n/10 ^^U \OML/lmm/m/it/10 t[]:
  []
 
-LaTeX Info: Redefining \. on input line 108.
-LaTeX Info: Redefining \% on input line 108.
-LaTeX Info: Redefining \. on input line 108.
-LaTeX Info: Redefining \% on input line 108.
-[46]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 114.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 117.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 122.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 129.
-LaTeX Info: Redefining \. on input line 141.
-LaTeX Info: Redefining \% on input line 141.
-LaTeX Info: Redefining \. on input line 141.
-LaTeX Info: Redefining \% on input line 141.
- [47]
-Overfull \hbox (21.84843pt too wide) detected at line 154
+(mdframed)              on input line 132.
+LaTeX Info: Redefining \. on input line 146.
+LaTeX Info: Redefining \% on input line 146.
+[47]
+Overfull \hbox (21.84843pt too wide) detected at line 157
 []
  []
 
 
-Overfull \hbox (25.00003pt too wide) detected at line 154
+Overfull \hbox (25.00003pt too wide) detected at line 157
 []
  []
 
 
-Overfull \hbox (7.62552pt too wide) detected at line 165
+Overfull \hbox (7.62552pt too wide) detected at line 168
 []
  []
 
 
-Overfull \hbox (25.00003pt too wide) detected at line 165
+Overfull \hbox (25.00003pt too wide) detected at line 168
 []
  []
 
-LaTeX Info: Redefining \. on input line 179.
-LaTeX Info: Redefining \% on input line 179.
-LaTeX Info: Redefining \. on input line 179.
-LaTeX Info: Redefining \% on input line 179.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 186.
+LaTeX Info: Redefining \. on input line 187.
+LaTeX Info: Redefining \% on input line 187.
 [48]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 183.
+(mdframed)              on input line 191.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 205.
 ) (./Chap6.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [49]
@@ -1664,21 +1654,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `EqDiff.out' has not changed.
-(rerunfilecheck)             Checksum: CA74B07A00D85082BBDBA4E65EF7CD73;4643.
+(rerunfilecheck)             Checksum: E1243147BAB72011E908756A5AC7A5B4;4373.
  ) 
 Here is how much of TeX's memory you used:
- 39671 strings out of 474116
- 901305 string characters out of 5743682
+ 39664 strings out of 474116
+ 901254 string characters out of 5743682
  1956187 words of memory out of 5000000
- 60769 multiletter control sequences out of 15000+600000
- 660458 words of font info for 243 fonts, out of 8000000 for 9000
+ 60770 multiletter control sequences out of 15000+600000
+ 660090 words of font info for 239 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,25n,110p,1003b,1156s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on EqDiff.pdf (54 pages, 589071 bytes).
+Output written on EqDiff.pdf (54 pages, 589274 bytes).
 PDF statistics:
- 722 PDF objects out of 1000 (max. 8388607)
- 593 compressed objects within 6 object streams
+ 718 PDF objects out of 1000 (max. 8388607)
+ 589 compressed objects within 6 object streams
  244 named destinations out of 1000 (max. 500000)
- 53509 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 53501 words of extra memory for PDF output out of 61914 (max. 10000000)
 

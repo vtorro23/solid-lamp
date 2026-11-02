@@ -808,9 +808,12 @@ Sea $\displaystyle S \subset \R^{3} $ una superficie regular.
 \begin{definition}[Función diferenciable]
 	Una función $\displaystyle f : S \to \R $ es \textbf{diferenciable} si en cada parametrización $\displaystyle \textbf{x} : U \to S' \subset S $ se tiene que $\displaystyle \tilde{f} = f\circ \textbf{x}  $ es $\displaystyle \mathcal{C}^{\infty } $.
 \end{definition}
-\begin{observation}
-	Queremos $\displaystyle \tilde{f}\left(u,v\right) $ sea $\displaystyle \mathcal{C}^{\infty } $ en las coordenadas. Podemos escribir 
-	\[\tilde{f} = f\left(x\left(u,v\right), y\left(u,v\right), z\left(u,v\right)\right) .\]	
+\begin{observation} Podemos hacer algunas observaciones.
+	\begin{itemize}
+	\item Basta que sea $\displaystyle \mathcal{C}^{\infty } $ con una parametrización puesto que la condición de ser $\displaystyle \mathcal{C}^{\infty } $ se conserva bajo cambio de parámetros.
+	\item Queremos $\displaystyle \tilde{f}\left(u,v\right) $ sea $\displaystyle \mathcal{C}^{\infty } $ en las coordenadas. Podemos escribir 
+	\[\tilde{f} = f\left(x\left(u,v\right), y\left(u,v\right), z\left(u,v\right)\right) .\]
+	\end{itemize}	
 \end{observation}
 \begin{center}
     \includegraphics[width=0.6\textwidth]{~/Desktop/Images/GeoDiff11.png}
@@ -878,27 +881,35 @@ En el ejemplo anterior, calculemos los puntos críticos:
 % dibujar el toro con los meridianos y tal
 \end{eg}
 \subsection{Aplicaciones diferenciales}
-Sean $\displaystyle S_{1}, S_{2}\subset \R^{3} $ dos superficies regulares. 
+ 
 \begin{definition}[Aplicación diferencial]
-Sea $\displaystyle F : S_{1} \to S_{2} $ una aplicación. Sea $\displaystyle  p \in S_{1} $, $\displaystyle \textbf{x} : U \to S_{1}' \subset S_{1} $, con $\displaystyle p = \textbf{x} \left(u_{0}, v_{0}\right) $. Sea $\displaystyle q = F\left(p\right)\in S_{2} $ y 
-\[ \textbf{y}  : V \to S_{2}' \subset S_{2} ,\]
-de forma que $\displaystyle q = \textbf{y} \left(w_{0}, s_{0}\right) $. 
+Sean $\displaystyle S_{1}, S_{2}\subset \R^{3} $ dos superficies regulares, $\displaystyle F : S_{1} \to S_{2} $ una aplicación y $\displaystyle  p \in S_{1} $. 
+\begin{itemize}
+\item Sea $\displaystyle \textbf{x} : U \to S_{1}' \subset S_{1} $, con $\displaystyle p = \textbf{x} \left(u_{0}, v_{0}\right) $.
+\item Sea $\displaystyle q = F\left(p\right)\in S_{2} $ e $\displaystyle \textbf{y}  : V \to S_{2}' \subset S_{2} $ de forma que $\displaystyle q = \textbf{y} \left(w_{0}, s_{0}\right) $.
+\item Por continuidad $\displaystyle F^{-1}\left(S'_{2}\right) $ es abierto por lo que se puede tomar $\displaystyle S_{1}'\subset F^{-1}\left(S'_{2}\right) $ abierto de forma que $\displaystyle F\left(S_{1}'\right)\subset S_{2}' $.
+\item La expresión de $\displaystyle F $ en coordenadas es $\displaystyle \tilde{F} : U \to V $ con $\displaystyle \left(w,s\right)= \tilde{F}\left(u,v\right) $. 
+Definimos $\displaystyle \tilde{F} = \textbf{y} ^{-1}\circ F \circ \textbf{x}  $.
+\end{itemize}
+ Se dice que $\displaystyle F $ es \textbf{diferenciable} si $\displaystyle \tilde{F} $ es $\displaystyle \mathcal{C}^{\infty } $ para todas las cartas.
 \end{definition}
-Por continuidad $\displaystyle F^{-1}\left(S'_{2}\right) $ es abierto. Se puede tomar $\displaystyle S_{1}'\subset F^{-1}\left(S'_{2}\right) $ abierto. Así, $\displaystyle F\left(s_{1}'\right)\subset S_{2}' $. La expresión de $\displaystyle F $ en coordenadas es $\displaystyle \tilde{F} : U \to V $ con $\displaystyle \left(w,s\right)= \tilde{F}\left(u,v\right) $. 
-Definimos $\displaystyle \tilde{F} = \textbf{y} ^{-1}\circ F \circ \textbf{x}  $. Se dice que $\displaystyle F $ es diferenciable si $\displaystyle \tilde{F} $ es $\displaystyle \mathcal{C}^{\infty } $ para todas las cartas. 
-\begin{observation}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{~/Desktop/Images/GeoDiff12.png}
+\end{center}
+\begin{observation} Podemos hacer algunas observaciones.
 \begin{enumerate}
-	\item $\displaystyle \textbf{y} \circ \tilde{F} = F \circ \textbf{x}  $, $\displaystyle \textbf{y} \left(\tilde{F}\left(u,v\right)\right) = F\left( \textbf{x} \left(u,v\right)\right) $.
+	\item La diferenciabilidad no depende de las parametrizaciones puesto que cambiando de parametrización se tiene que sigue siendo $\displaystyle \mathcal{C}^{\infty } $. 
+	\item Es sencillo ver que $\displaystyle \textbf{y} \circ \tilde{F} = F \circ \textbf{x}  $, es decir, $\displaystyle \textbf{y} \left(\tilde{F}\left(u,v\right)\right) = F\left( \textbf{x} \left(u,v\right)\right) $.
 	\item Tenemos que $\displaystyle \left(w,s\right)=\tilde{F}\left(u,v\right) = \left(w\left(u,v\right), s\left(u,v\right)\right)$. En general, $\displaystyle w = w\left(u,v\right) $ y $\displaystyle s = s\left(u,v\right) $. 
 \end{enumerate}
 \end{observation}
 \begin{definition}[Diferencial]
-La \textbf{diferencial} de $\displaystyle F $ en $\displaystyle p $ es
+Se llama \textbf{diferencial} de $\displaystyle F $ en $\displaystyle p $ a
 \[d _{p}F: T_{p}S_{1} \to T_{q}S_{2} : \vec{v}\to d _{p}F\left(\vec{v}\right) = \frac{d}{dt}|_{t = 0}F\left(c\left(t\right)\right) ,\]
 con $\displaystyle c\left(t\right) $ es la curva en $\displaystyle S_{1} $ tal que $\displaystyle c\left(0\right)=p $ y $\displaystyle c'\left(0\right)=\vec{v} $. 
 \end{definition}
-Consideramos $\displaystyle \mathcal{B}_{ \textbf{x} } $ en $\displaystyle T_{p}S_{1} $ y $\displaystyle \mathcal{B}_{ \textbf{y} } $ en $\displaystyle T_{q}S_{2} $.
 \begin{prop}
+Consideramos $\displaystyle \mathcal{B}_{ \textbf{x} } $ en $\displaystyle T_{p}S_{1} $ y $\displaystyle \mathcal{B}_{ \textbf{y} } $ en $\displaystyle T_{q}S_{2} $.
 \begin{enumerate}
 \item $\displaystyle d _{p}F $ está bien definido.
 \item $\displaystyle d _{p}F $ es lineal.
@@ -906,9 +917,9 @@ Consideramos $\displaystyle \mathcal{B}_{ \textbf{x} } $ en $\displaystyle T_{p}
 \end{enumerate}
 \end{prop}
 \begin{proof}
-Para \textbf{(1)} tenemos que $\displaystyle \beta\left(t\right)=F\left(c\left(t\right)\right) $ es una curva en $\displaystyle S_{2} $ con $\displaystyle \beta\left(0\right)=F\left(p\right)=q $. Tenemos que 
+Tenemos que $\displaystyle \beta\left(t\right)=F\left(c\left(t\right)\right) $ es una curva en $\displaystyle S_{2} $ con $\displaystyle \beta\left(0\right)=F\left(p\right)=q $. De esta forma, 
 	\[\beta'\left(0\right)=\frac{d}{dt}|_{t = 0}\beta\left(t\right)\in T_{q}S_{2} .\]
-	Falta ver que no depende de la curva. Sea $\displaystyle \vec{v} = \left(a,b\right)_{ \mathcal{B}_{ \textbf{x} }} $, con $\displaystyle c\left(t\right)= \textbf{x} \left(u\left(t\right), v\left(t\right)\right) $ y $\displaystyle \left(u\left(0\right), v\left(0\right)\right)=\left(u_{0}, v_{0}\right) $ y $\displaystyle \left(u'\left(0\right), v'\left(0\right)\right) = \left(a,b\right) $. Tenemos que 
+	Para ver que está bien definida falta ver que no depende de la curva. Sea $\displaystyle \vec{v} = \left(a,b\right)_{ \mathcal{B}_{ \textbf{x} }} $, con $\displaystyle c\left(t\right)= \textbf{x} \left(u\left(t\right), v\left(t\right)\right) $ una curva en $\displaystyle S_{1} $ tal que $\displaystyle c\left(0\right)=\left(u\left(0\right), v\left(0\right)\right)=\left(u_{0}, v_{0}\right) $ y $\displaystyle c'\left(0\right)=\left(u'\left(0\right), v'\left(0\right)\right) = \left(a,b\right) $. Tenemos que 
 	\[
 	\begin{split}
 		\beta\left(t \right)=F\left(c\left(t\right)\right)= & F\left( \textbf{x} \left(u\left(t\right), v\left(t\right)\right)\right) = \textbf{y} \left(\tilde{F}\left(u\left(t\right), v\left(t\right)\right)\right) = \textbf{y} \left(w\left(t\right), s\left(t\right)\right) .
@@ -926,18 +937,18 @@ Así,
 \[\begin{pmatrix} c \\ d \end{pmatrix}_{ \mathcal{B}_{ \textbf{y} }}=\left(F\circ c\right)'\left(0\right) ,\]
 que no depende de $\displaystyle c\left(t\right) $, sólo de $\displaystyle \left(a,b\right)_{\mathcal{B}_{ \textbf{x} }}=\vec{v} $. Así, queda demostrado todo.
 \end{proof}
-\begin{observation}
+\begin{observation} Podemos hacer un par de observaciones.
 \begin{enumerate}
-	\item $\displaystyle M_{\mathcal{B}_{ \textbf{y} }\mathcal{B}_{ \textbf{x} }}\left(d _{p}F\right) = \begin{pmatrix} \frac{\partial w}{\partial u} & \frac{\partial w}{\partial v} \\ \frac{\partial s}{\partial u} & \frac{\partial s}{\partial v} \end{pmatrix} $. Así, 
+	\item Por la proposición anterior tenemos que $\displaystyle M_{\mathcal{B}_{ \textbf{y} }\mathcal{B}_{ \textbf{x} }}\left(d _{p}F\right) = \begin{pmatrix} \frac{\partial w}{\partial u} & \frac{\partial w}{\partial v} \\ \frac{\partial s}{\partial u} & \frac{\partial s}{\partial v} \end{pmatrix} $, por lo que 
 		\[\boxed{d _{p}F\left( \textbf{x} _{u}\right)= \frac{\partial w}{\partial u} \textbf{y} _{w} + \frac{\partial s}{\partial u} \textbf{y} _{s} \quad \text{y} \quad
 		d _{p}F\left( \textbf{x} _{v}\right) = \frac{\partial w}{\partial v} \textbf{y} _{w} + \frac{\partial s}{\partial v} \textbf{y} _{s}} .\]
 	\item Un abuso de notación que se hace a veces es identificar los puntos de la superficie $\displaystyle S $ con los de $\displaystyle U $.  
 \end{enumerate}
 \end{observation}
-\begin{eg}
+\begin{eg}[Toro]
 	Consideremos el toro que denotamos por $\displaystyle \mathbb{T}^{2} $. Podemos dar la parametrización
 	\[ \textbf{x} \left(\varphi, t\right)=\left(\left(2 + \cos t\right)\cos \varphi, \left(2 + \cos t\right)\sin \varphi, \sin t\right) .\]
-	Con $\displaystyle \textbf{y} \left(w,s\right)=\left(w,s,0\right) $, tenemos que 
+	Con $\displaystyle \textbf{y} \left(w,s\right)=\left(w,s,0\right) $ consideremos la aplicación diferenciable 
 	\[\left(w,s\right)=\tilde{F}\left(\varphi, t\right)=\left(\left(2 + \cos t\right)\cos \varphi, \left(2 + \cos t\right)\sin \varphi\right) .\]
 	Tenemos entonces que 
 	\[J\tilde{F} = d _{p}F = \begin{pmatrix} \frac{\partial w}{\partial \varphi} & \frac{\partial w}{\partial t} \\ \frac{\partial s}{\partial \varphi} & \frac{\partial s}{\partial t} \end{pmatrix}=\begin{pmatrix} -\left(2 + \cos t\right)\sin \varphi & -\sin t \cos \varphi \\ \left(2 + \cos t\right)\cos \varphi & -\sin t \sin \varphi \end{pmatrix} .\]
@@ -951,23 +962,26 @@ Decimos que $\displaystyle F : S_{1} \to S_{2} $ es un \textbf{difeomorfismo} si
 \end{itemize}
 \end{definition}
 \begin{prop}
-$\displaystyle F $ es difeomorfismo si y sólo si $\displaystyle F $ es diferenciable, es biyectiva y $\displaystyle d _{p}F : T_{p}S_{1} \to T_{F\left(p\right)}S_{2}$ sea isomorfismo en todos los puntos. 
+$\displaystyle F $ es difeomorfismo si y sólo si $\displaystyle F $ es diferenciable, es biyectiva y $\displaystyle d _{p}F : T_{p}S_{1} \to T_{F\left(p\right)}S_{2}$ es isomorfismo en todos los puntos. 
 \end{prop}
 \begin{proof}
 Consideremos ambas implicaciones. 
 \begin{description}
-\item[($\displaystyle \Rightarrow $)] Casi igual al revés.
-\item[($\displaystyle \Leftarrow $)] Existe $\displaystyle F^{-1} : S_{2} \to S_{1} $. Como $\displaystyle d _{p}F $ es isomorfismo tenemos que 
+	\item[($\displaystyle \Rightarrow $)] Si $\displaystyle F $ es difeomorfismo sabemos que es diferenciable y biyectiva, por lo que sólo nos falta ver que $\displaystyle \forall p \in S_{1} $ la aplicación $\displaystyle d _{p}F : T_{p}S_{1}\to T_{F\left(p\right)}S_{2} $ es isomorfismo.
+		Por el teorema de la función inversa tenemos que 
+		\[\det\left(J\tilde{F}\left(p\right)\right) \det\left(J\tilde{F}^{-1}\left(f\left(p\right)\right)\right)=1 ,\]
+		por lo que $\displaystyle \det\left(J\tilde{F}\left(p\right)\right)\neq 0 $ y en consecuencia $\displaystyle d _{p}F $ es isomorfismo. 
+\item[($\displaystyle \Leftarrow $)] Como es biyectiva sabemos que existe $\displaystyle F^{-1} : S_{2} \to S_{1} $. Como $\displaystyle d _{p}F $ es isomorfismo tenemos que 
 	\[\det\left(J\tilde{F}_{\left(u_{0}, v_{0}\right)}\right)\neq 0 ,\]
-	en un entorno de $\displaystyle \left(u_{0}, v_{0}\right) $ tenemos que $\displaystyle \tilde{F}^{-1} $ es $\displaystyle \mathcal{C}^{\infty} $ por el teorema de la función inversa. Aquí hemos usado que 
-	\[\tilde{F} = \textbf{y} ^{-1}\circ F \circ \textbf{x} \Rightarrow \tilde{F}^{-1} = \textbf{x} ^{-1} F^{-1} \circ \textbf{y}  .\]
+	y por el teorema de la función inversa sabemos que en un entorno de $\displaystyle \left(u_{0}, v_{0}\right) $ la aplicación $\displaystyle \tilde{F}^{-1} $ es $\displaystyle \mathcal{C}^{\infty} $. Aquí hemos usado que 
+	\[\tilde{F} = \textbf{y} ^{-1}\circ F \circ \textbf{x} \Rightarrow \tilde{F}^{-1} = \textbf{x} ^{-1}\circ F^{-1} \circ \textbf{y}  .\]
 	Así, $\displaystyle F^{-1} $ es diferenciable.
 \end{description}
 \end{proof}
 \begin{eg}
 La aplicación
-\[ F : T^{2} \cap \left\{ z > 0\right\} \to \left\{ \left(x,y,0\right) \; : \; 1 < \sqrt{x^{2} +y^{2}} < 3\right\}  ,\]
-es difeomorfismo, en efecto
+\[ F : \mathbb{T}^{2} \cap \left\{ z > 0\right\} \to \left\{ \left(x,y,0\right) \; : \; 1 < \sqrt{x^{2} +y^{2}} < 3\right\}  ,\]
+es difeomorfismo. En efecto
 \[F^{-1}\left(x,y,0\right)=\left(x,y,\sqrt{1-\left(\sqrt{x^{2}+y^{2}}-2\right)^{2}}\right) .\]
 \end{eg}
 \begin{colorary}
@@ -980,11 +994,10 @@ d _{p}F\left( \textbf{x} _{v}\right) = F_{v}
 .\]
 \end{colorary}
 \begin{proof}
-Tenemos que 
-\[F_{u}= \frac{\partial f}{\partial u} .\]
-$\displaystyle F \in \R^{3} $, $\displaystyle F \circ \textbf{x}  : U \to \R^{3} $. Así, 
-\[\frac{\partial F}{\partial u}=\frac{\partial \left(F\circ \textbf{x} \right)}{\partial u}\in \R^{3} .\]
-Esto es un abuso de notación. 
+	Sin pérdida de generalidad demostramos que $\displaystyle d _{p}F\left( \textbf{x} _{u}\right)=F_{u} $, donde $\displaystyle F_{u}=\frac{\partial \tilde{F}}{\partial u} $. 
+Sabemos que $\displaystyle F \in \R^{3} $ y $\displaystyle F \circ \textbf{x}  : U \to \R^{3} $. Así, 
+\[\frac{\partial \tilde{F}}{\partial u}=\frac{\partial \left(F\circ \textbf{x} \right)}{\partial u}\in \R^{3} .\]
+De ahora en adelante utilizaremos el abuso de notación $\displaystyle \frac{\partial \tilde{F}}{\partial u}=\frac{\partial F}{\partial u} $.  
 \[d _{p}F\left( \textbf{x} _{u}\right) = \left(F\circ c\right)'\left(0\right)=\frac{d}{dt}|_{t = 0}F\left( \textbf{x} \left(u_{0} + t, v_{0}\right)\right) = \frac{d}{dt}|_{t = 0}F\left(u_{0} + t, v_{0}\right) = \frac{\partial F}{ \partial u}\left(u_{0}, v_{0}\right) ,\]
 con $\displaystyle c\left(t\right)= \textbf{x} \left(u_{0} + t, v_{0}\right) $.
 \end{proof}
@@ -1060,6 +1073,154 @@ Así, la primera forma fundamental es
 \[ I = \begin{pmatrix} r\left(v\right)^{2} & 0 \\ 0 & \|\gamma'\left(v\right)\|^{2} \end{pmatrix} .\]
 
 \[E = \left\langle \textbf{x} _{\varphi}, \textbf{x} _{\varphi} \right\rangle =r^{2}, \quad F = \left\langle \textbf{x} _{\varphi}, \textbf{x} _{v} \right\rangle =0, \quad G = \|\gamma'\|^{2} .\]
+\end{eg}
+\begin{eg}
+Si $\displaystyle \textbf{x} \left(u,v\right)=\left(u,v,uv\right) $ tenemos que $\displaystyle \textbf{x} _{u}= \left(1,0,v\right) $ y $\displaystyle \textbf{x} _{v} = \left(0,1,u\right) $, por lo que 
+\[\begin{pmatrix} E & F \\ F & G \end{pmatrix}=\begin{pmatrix} 1 + v^{2} & uv \\ uv & 1 + u^{2} \end{pmatrix} .\]
+\end{eg}
+\begin{prop}
+	Si $\displaystyle I = \begin{pmatrix} E & F \\ F & G \end{pmatrix} $, entonces
+	\[\det I = EG-F^{2}=\| \textbf{x} _{u} \times \textbf{x} _{v}\|^{2} .\]
+\end{prop}
+\begin{proof}
+Hacer cuentas. 
+\end{proof}
+\begin{observation}
+Se puede observar que 
+\begin{itemize}
+\item El determinante $\displaystyle EG-F^{2} $ es intrínseco (planito lo puede ver).
+\item El valor $\displaystyle \| \textbf{x} _{u} \times \textbf{x} _{v}\| $ es extrínseco (planito no lo puede ver).
+\end{itemize}
+Por otro lado se puede observar que $\displaystyle \textbf{x}  $ es regular si y sólo si $\displaystyle \det\left(I\right)\neq 0 $.
+\end{observation}
+\begin{observation}[Cálculo de la norma de un vector]
+	Dado $\displaystyle \vec{v} = \left(a,b\right)_{\mathcal{B}_{ \textbf{x} }} $ podemos calcular su norma:
+	\[ \|\vec{v}\| = \sqrt{\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a \\ b \end{pmatrix}} .\]
+\end{observation}
+\begin{eg}
+Con la parametrización del último ejemplo, consideremos $\displaystyle p = \textbf{x} \left(1,0\right) = \left(1,0,0\right) $ de forma que 
+\[ \textbf{x} _{u}\left(p\right)=\left(1,0,0\right) \quad \text{y} \quad \textbf{x} _{v}\left(p\right)=\left(0,1,1\right) .\]
+Por tanto, $\displaystyle T_{p}S = \mathcal{L}\left(\left(1,0,0\right), \left(0,1,1\right)\right) $, de forma que si $\displaystyle \vec{v}=\left(a,b\right)_{ \mathcal{B}_{ \textbf{x} }} $, 
+\[ \|\vec{v}\| = \sqrt{\left(a,b\right)\begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}\begin{pmatrix} a \\ b \end{pmatrix}} = \sqrt{a^{2}+2b^{2}} .\]
+Así, podemos trabajar en las parametrizaciones (como si fuéramos planito).
+\end{eg}
+\begin{notation}
+A veces se escribe $\displaystyle \vec{v}=\left(a,b\right)_{\mathcal{B}_{ \textbf{x} }} = \left(du, dv\right) $ de forma que 
+\[I = \left(du, dv\right) \begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} du \\ dv \end{pmatrix}=Edu^{2} + 2Fdudv + Gdv^{2} .\]
+\end{notation}
+\begin{observation}[Longitud de una curva]
+	Dada una curva $\displaystyle \gamma\left(t\right)= \textbf{x} \left(u\left(t\right), v\left(t\right)\right) $ con $\displaystyle \tilde{\gamma}\left(t\right)=\left(u\left(t\right), v\left(t\right)\right) $ y $\displaystyle t \in [a,b] $. Tenemos que 
+	\[\ell^{b}_{a}\left(\gamma \right)=\int^{b}_{a} \|\gamma'\left(t\right)\| \; dt  .\]
+Como $\displaystyle \gamma'\left(t\right)=\left(u'\left(t\right), v'\left(t\right)\right)_{\mathcal{B}_{ \textbf{x} }} $,
+\[\ell^{b}_{a}\left(\gamma \right)=\int^{b}_{a} \sqrt{\left(u',v'\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} u' \\ v' \end{pmatrix}} \; dt .\]
+\end{observation}
+\begin{eg}
+Consideremos la superficie parametrizada por $\displaystyle \textbf{x} \left(\varphi, s\right)=\left(\cos \varphi \cos s, \sin\varphi \cos s, \sin \varphi\right) $ y la curva $\displaystyle \gamma\left(t\right)= \textbf{x} \left(t, \frac{t}{4}\right)=\left(\varphi, s\right) $. Tenemos que $\displaystyle \gamma'\left(t\right)=\left(1, \frac{1}{4}\right)_{\mathcal{B}_{ \textbf{x} }} $. Así, nos queda que
+\[I = \begin{pmatrix} \cos ^{2}s & 0 \\ 0 & \|\gamma'\|^{2} \end{pmatrix} ,\]
+de forma que sustituyendo $\displaystyle s = \frac{t}{4} $, 
+\[\|\gamma'\| = \sqrt{\left(1, \frac{1}{4}\right)\begin{pmatrix}  \cos ^{2}\left(\frac{t}{4}\right) & 0 \\ 0 & 1 \end{pmatrix}\begin{pmatrix} 1 \\ \frac{1}{4} \end{pmatrix}} ,\]
+y concluimos que 
+\[\ell\left(\gamma \right)=\int^{2\pi }_{0} \sqrt{\cos ^{2}\left(\frac{t}{4}\right) + \frac{1}{16}} \; dt .\]
+% poner dibujo de la curva
+\end{eg}
+\begin{observation}[Ángulos]
+Dado $\displaystyle p = \left(u_{0}, v_{0}\right) $ y $\displaystyle \vec{v}=\left(a,b\right)_{ \mathcal{B}_{ \textbf{x} }} $ y $\displaystyle \vec{w}= \left(c,d\right)_{\mathcal{B}_{ \textbf{x} }} $. Tenemos que 
+\[\cos \theta = \frac{\left\langle \vec{v}, \vec{w} \right\rangle }{\|\vec{v}\|\|\vec{w}\|} = \frac{\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} c \\ d \end{pmatrix}}{\sqrt{\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a \\ b \end{pmatrix} \cdot 
+\left(c,d\right)\begin{pmatrix}  E & F \\ F & G \end{pmatrix}\begin{pmatrix} c\\ d \end{pmatrix}}} .\]
+\end{observation}
+\begin{eg}
+	% seguimos con el ejemplo anterior
+Consideremos las curvas $\displaystyle \beta\left(t\right)= \textbf{x} \left(t, \frac{t}{4}\right) $ y $\displaystyle \eta\left(v\right)= \textbf{x} \left(2\pi-v, \frac{v}{4}\right) $. Tenemos que $\displaystyle \beta\left(t\right)=\eta\left(v\right) $ si $\displaystyle t = v = \pi  $ y 
+\[\begin{pmatrix} E & F \\ F & G \end{pmatrix}=\begin{pmatrix} \cos ^{2}\frac{\pi }{4} & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} \frac{1}{2} & 0 \\ 0 & 1 \end{pmatrix} .\]
+Como $\displaystyle \beta'\left(t\right)=\left(1, \frac{1}{4}\right)_{\mathcal{B}_{ \textbf{x} }} $ y $\displaystyle \eta'\left(t\right)=\left(-1, \frac{1}{4}\right)_{\mathcal{B}_{ \textbf{x} }} $, 
+\[I \left(\beta', \eta'\right) = \left(1, \frac{1}{4}\right)\begin{pmatrix} \frac{1}{2} & 0 \\ 0 & 1 \end{pmatrix}\begin{pmatrix} -1 \\ \frac{1}{4} \end{pmatrix} = -\frac{7}{16} .\]
+Así, como $\displaystyle \|\beta'\|=\|\eta'\| = \frac{3}{4} $, 
+\[\cos \theta = \frac{-\frac{3}{16}}{\frac{3}{4} \cdot \frac{3}{4}}=-\frac{1}{3} .\]
+\end{eg}
+\begin{eg}[Ángulo entre campo de vectores]
+	Dados dos campos de vectores $\displaystyle X = \left(X_{1}, X_{2}\right) $ e $\displaystyle Y = \left(Y_{1}, Y_{2}\right) $, tenemos que 
+	\[\theta\left(u,v\right)=\left\langle X\left(u,v\right), Y\left(u,v\right) \right\rangle =\left(X_{1}, X_{2}\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} Y_{1} \\ Y_{2} \end{pmatrix} .\]
+\end{eg}
+\begin{prop}
+Sean $\displaystyle \textbf{x} \left(u,v\right) $ e $\displaystyle \textbf{y} \left(w,s\right) $ dos parametrizaciones buenas de $\displaystyle S $. Tenemos un cambio de parámetros $\displaystyle \left(w,s\right)=h\left(u,v\right) $ tal que $\displaystyle h = \textbf{y} ^{-1} \circ \textbf{x}  $.
+\end{prop}
+\begin{proof}
+Tenemos que 
+\[J h = B_{\mathcal{B}_{ \textbf{y} }\mathcal{B}_{ \textbf{x} }} ,\]
+de forma que 
+\[M_{\mathcal{B}_{ \textbf{x} }}\left(I\right)=\left(M_{ \mathcal{B}_{ \textbf{y} }\mathcal{B}_{ \textbf{x} }}\right)^{T}M_{ \mathcal{B}_{ \textbf{y} }}\left(I\right)\left(M_{\mathcal{B} _{ \textbf{y} }\mathcal{B} _{ \textbf{x} }}\right) .\]
+Así, 
+\[I_{ \textbf{x} }= \left(Jh\right)^{T}I _{ \textbf{y} } \cdot Jh.\]
+\end{proof}
+\begin{eg}
+Sea $\displaystyle \textbf{x} \left(\varphi, s\right)=\left(\cos\varphi\cos s, \sin\varphi \cos s, \sin s\right) $ y 
+\[ \textbf{y} \left(\hat{\varphi}, z\right)=\left(\sqrt{1-z^{2}}\cos\hat{\varphi}, \sqrt{1-z^{2}}\sin\hat{\varphi }, z\right) .\]
+Tenemos que 
+\[I = \begin{pmatrix} r\left(v\right)^{2} & 0 \\ 0 & \|\gamma'\left(v\right)\|^{2} \end{pmatrix} .\]
+Distinguimos dos casos:
+\begin{itemize}
+	\item Si $\displaystyle \gamma  $ p.p.a, $\displaystyle I = \begin{pmatrix} r\left(v\right)^{2} & 0 \\ 0 & 1 \end{pmatrix} $. 
+	\item En caso contrario, $\displaystyle \gamma\left(z\right)=\left(z, v\left(z\right)\right) $, $\displaystyle I = \begin{pmatrix} r\left(v\right) & 0 \\ 0 & \sqrt{1 + v'\left(z\right)} \end{pmatrix} $.
+\end{itemize}
+\end{eg}
+\begin{observation}
+Vale para hallar $\displaystyle I _{ \textbf{y} } $ si tengo $\displaystyle I _{ \textbf{x} } $ sin hacer cálculos.  
+\end{observation}
+Nos preguntamos cuáles son las primeras formas fundamentales de $\displaystyle \mathbb{S}^{2} $. La respuesta:
+\[\begin{pmatrix} E' & F' \\ F' & G' \end{pmatrix}=\begin{pmatrix} \frac{\partial w}{\partial u} & \frac{\partial s}{\partial u} \\ \frac{\partial w}{\partial v} & \frac{\partial s}{\partial v} \end{pmatrix}\begin{pmatrix} E & F \\ F & G\end{pmatrix}\begin{pmatrix} \frac{\partial w}{\partial u} & \frac{\partial w}{\partial v} \\ \frac{\partial s}{\partial w} & \frac{\partial u}{\partial v} \end{pmatrix} .\]
+Si tengo $\displaystyle \begin{pmatrix} E & F \\ F& G \end{pmatrix}=\begin{pmatrix} \cos ^{2} s & 0 \\ 0 & 1 \end{pmatrix} $ lo que nos sale poniendo $\displaystyle Jh $ con $\displaystyle u = u\left(w,s\right) $ y $\displaystyle v = v\left(w,s\right) $. Puede salir $\displaystyle \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} $ y sea $\displaystyle S $ el plano $\displaystyle \textbf{x} \left(u,v\right)=\left(u,v,0\right) $. Tenemos 
+\[ \textbf{x} _{u}= \left(1,0,0\right)\quad \text{y} \quad \textbf{x} _{v}=\left(0,1,0\right) \Rightarrow \begin{pmatrix} E & F \\ F & G \end{pmatrix}=\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} .\]
+Las primeras formas fundamentales son 
+\[\begin{pmatrix} E & F \\ F & G \end{pmatrix}=\left(Jh\right)^{T}\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}\left(Jh\right) .\]
+Si cogemos $\displaystyle \textbf{y} \left(\theta, r\right)=\left(r \cos \theta, r \sin \theta, 0\right) $ con $\displaystyle \gamma\left(r\right)=\left(r,0\right) $, tenemos que 
+\[I _{ \textbf{y} } =\begin{pmatrix} r^{2} & 0 \\ 0 & \|\gamma'\|^{2} \end{pmatrix}=\begin{pmatrix} r^{2} & 0 \\ 0 & 1 \end{pmatrix}.\]
+Nos preguntamos si $\displaystyle \begin{pmatrix} \cos ^{2}u & 0 \\ 0 & 1 \end{pmatrix} $ la $\displaystyle I $ del plano.
+% después de la foto
+Si tiene solución, es $\displaystyle I $ del plano. 
+\section{Áreas}
+Sea $\displaystyle S $ una superficie parametrizada. Para cada división de $\displaystyle U $ en cuadrados de lado $\displaystyle \epsilon > 0 $ tenemos que $\displaystyle S = \bigcup_{j}Q_{j} $, con $\displaystyle Q_{j} $ de vértices $\displaystyle v_{j1} $, $\displaystyle v_{j2} $, $\displaystyle v_{j3} $ y $\displaystyle v_{j4} $ y 
+\[P_{j1} = \textbf{x} \left(v_{j1}\right), \ldots, P_{j4}= \textbf{x} \left(v_{j4}\right) .\]
+Tomamos $\displaystyle R \subset S $ una región compacta y $\displaystyle D \subset U $ compacto de forma que $\displaystyle R = \textbf{x} \left(D\right) $. Consideramos los paralelogramos
+\[\Pi_{j} = \left\{ P_{i1} + t_{1} \overrightarrow{P_{j1}P_{j2}} + t_{2}\overrightarrow{P_{j1}P_{j3}}\; : \; t_{1}, t_{2} \in \left[0,1\right] \right\} .\]
+Tenemos que 
+\[A_{\epsilon }=\sum^{N}_{j = 1}A\left(\Pi_{j}\right) .\]
+\begin{prop}
+\[\lim_{\epsilon  \to 0}A_{\epsilon }=\int \int _{D}\| \textbf{x} _{u} \times \textbf{x} _{v}\| \; du \; dv .\]
+\end{prop}
+\begin{eg}
+Si $\displaystyle \textbf{x} \left(x,y\right)=\left(x,y,h\left(x,y\right)\right) $ es parametrización tipo grafo, 
+\[\lim_{\epsilon  \to 0}A_{\epsilon }=\int \int _{D}\sqrt{1 + h_{x}^{2} + h_{y}^{2}} \; dx \; dy .\]
+\end{eg}
+\begin{observation}
+\begin{enumerate}
+\item $\displaystyle \| \textbf{x} _{u} \times \textbf{x} _{v}\| = \sqrt{EG-F^{2}}=\sqrt{\det\left(I\right)} $ intrínseco. Para tipo grafo, $\displaystyle \| \textbf{x} _{y} \times \textbf{x} _{y}\| = \sqrt{1 + h_{x}^{2}+h_{y}^{2}} $.
+\item Se llama \textbf{elemento del área} $\displaystyle dA = \| \textbf{x} _{u} \times \textbf{x} _{v}\| du\; dv $. 
+\end{enumerate}
+\end{observation}
+\begin{proof}
+Sea $\displaystyle \left(w,s\right)=h\left(u,v\right) $ con $\displaystyle \textbf{y} \circ h = \textbf{x}  $ y $\displaystyle h = \textbf{y} ^{-1} \circ \textbf{x}  $. Tenemos que 
+\[\left(Jh\right)^{T}I _{ \textbf{y} }\left(Jh\right)= I _{ \textbf{x} } .\]
+\[\det\left(\left(Jh\right)^{T}I _{ \textbf{y} } \left(Jh\right)\right) = \det\left(I _{ \textbf{x} }\right) \Rightarrow \sqrt{\left(\det\left(Jh\right)\right)^{2}\det\left(I _{ \textbf{y} }\right)} = \sqrt{\det\left(I _{ \textbf{x} }\right)} \Rightarrow \left|\det\left(Jh\right)\right|\sqrt{ \det\left(I_{ \textbf{y} }\right)} = \sqrt{\det\left(I _{ \textbf{x} }\right)}.\]
+Entonces, 
+\[\int \int _{D}\sqrt{\det\left(I_{ \textbf{x} }\right)} \; du \; dv = \int \int _{D'}\sqrt{\det\left(I _{ \textbf{x} }\right)\left(w,s\right)}\frac{\partial \left(u,v\right)}{\partial \left(w,s\right)} \; dw \;  d s = \int \int _{D} \left|\det\left(Jh\right)\right| \sqrt{\det\left(I _{ \textbf{y} }\right)}\frac{1}{|\det\left(Jh\right)|} \; dw \; d s .\]
+\end{proof}
+\begin{observation}
+\begin{enumerate}
+\item Si $\displaystyle S $ es orientada, tomamos todas las cartas positivas, y los cambios de cartas tienen el tipo $\displaystyle \det\left(Jh\right)>0 $. 
+\item Si $\displaystyle S $ tiene un atlas y $\displaystyle R \subset S $ compacto, definimos
+	\[A\left(S\right)=\sum^{n}_{i = 1}A\left(R_{i}\right) ,\]
+	con $\displaystyle S = \bigcup_{1 \leq i \leq n}A\left(R_{i}\right) $, $\displaystyle R_{i}\subset \textbf{x} _{i}\left(U_{i}\right) $, $\displaystyle R_{i} \cap R_{j} $ tiene medida nula $\displaystyle \forall i \neq j $. 
+\end{enumerate}
 
+\end{observation}
+\begin{definition}[Integral de funcioens]
+Si $\displaystyle f : S \to \R $ es diferenciable, $\displaystyle R \subset S $ compacto y $\displaystyle D \subset U $ compacto y $\displaystyle R = \textbf{x} \left(D\right) $,
+\[\int \int _{R}f : = \int \int _{D}f\left(u,v\right)\| \textbf{x} _{u} \times \textbf{x} _{v}\| \; du \; dv.\]
+\end{definition}
+\begin{eg}[Área de $\displaystyle \mathbb{S}^2 $]
+	Consideremos $\displaystyle \textbf{x} \left(\varphi, z\right)=\left(\sqrt{1-z^{2}}\cos \varphi, \sqrt{1-z^{2}}\sin \varphi, z\right) $. Tenemos que 
+	\[I _{ \textbf{x} } = \begin{pmatrix} 1-z^{2} & 0 \\ 0 & \frac{1}{1-z^{2}}\end{pmatrix} ,\]
+	con $\displaystyle z \in \left[-1,1\right]  $ y $\displaystyle \varphi\in\left[0,2\pi \right]  $. De esta forma $\displaystyle \det\left(I_{ \textbf{x} }\right) = 1 $. 
+	% calcular la integral
 \end{eg}
 

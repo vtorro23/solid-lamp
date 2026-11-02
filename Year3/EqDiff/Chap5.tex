@@ -6,14 +6,16 @@ Tenemos que por la definición de la matriz diferencial
 Si denotamos $\displaystyle A\left(t\right)=Df\left(t,0\right) $, podemos escribir
 \[x' = A\left(t\right)x + H\left(t,x\right) .\]
 Como $\displaystyle H $ es pequeña, realmente nos va a interesar el sistema $\displaystyle y' = A\left(t\right)y $. 
-\section{Estabilidad asintótica por linealización}
+\begin{notation}
+Decimos que $\displaystyle H\left(t,x\right)=o\left( \left|x\right|\right) $ en $\displaystyle t \in I $ si para cada $\displaystyle L > 0 $ existe $\displaystyle R > 0 $ tal que si $\displaystyle \left|x\right| < R $ entonces $\displaystyle \left|H\left(t,x\right)\right|< L \left|x\right| $ para todo $\displaystyle t \in I $. 
+\end{notation}
 \begin{theorem}
 	Consideremos el sistema $\displaystyle x' = Ax + H\left(t,x\right) $ donde
 	\begin{itemize}
 	\item $\displaystyle A \in \R^{n\times n} $ constante tal que todos sus autovalores tienen parte real estrictamente negativa.
 	\item La función $\displaystyle H : D \subset \R \times \R^{n}\to \R^{n} $ es continua y localmente Lipschitz respecto a la segunda variable y $\displaystyle H\left(t,0\right)=0 $.
 	\item Existe $\displaystyle \left[\tau, T\right] \times B_{r}\subset D $ con $\displaystyle T > \tau $ y $\displaystyle r > 0 $ \footnote{En realidad podemos sustituir $\displaystyle \tau $ por $\displaystyle t_{0} $.}.
-	\item $\displaystyle H\left(t,x\right)=o\left( \left|x\right|\right) $. Es decir, para todo $\displaystyle L > 0 $ existe $\displaystyle R > 0 $ tal que si $\displaystyle \left|x\right|<R $ entonces $\displaystyle \left|H\left(t,x\right)\right| < L \left|x\right| $ para todo $\displaystyle t \in [\tau, T] $.
+	\item $\displaystyle H\left(t,x\right)=o\left( \left|x\right|\right) $ en $\displaystyle [\tau, T] $. 
 	\end{itemize}  
 	Entonces, existen constantes $\displaystyle K \geq 1 $, $\displaystyle \overline{\gamma }>0 $ y $\displaystyle \rho > 0 $ tales que para todo $\displaystyle t_{0}\in [\tau, T] $ y todo $\displaystyle x_{0}\in B_{\rho} $ la solución del sistema satisface que 
 	\[ \left|\varphi\left(t; t_{0}, x_{0}\right)\right| \leq K \left|x_{0}\right|e^{-\overline{\gamma }\left(t-t_{0}\right)}, \; \forall t \in [\tau, T] .\]
@@ -79,8 +81,14 @@ El único autovalor es $\displaystyle -1 $ que tiene parte real estrictamente ne
 \end{enumerate}
 \end{eg}
 \begin{prop}
-Consideramos el sistema $\displaystyle x' = Ax + H\left(t, x\right) $ donde $\displaystyle A \in \R^{n \times n} $, $\displaystyle H : D \subset \R \times \R^{n}\to \R^{n}$ continua y localmente Lipschitz respecto a la segunda variable tal que $\displaystyle H\left(t, 0\right)=0 $. Cogemos $\displaystyle [\tau, \infty) \times B_{r} \subset D $ y $\displaystyle \left|H\left(t,x\right)\right| = o\left( \left|x\right|\right) $ uniformemente en $\displaystyle t $. 
-Si todos los autovalores de $\displaystyle A $ tienen parte real positiva, entonces existe $\displaystyle B_{\rho }\subset \R^{n} $ tal que si $\displaystyle x_{0}\in B_{\rho }\backslash \left\{ 0\right\}  $ la solución $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ se sale de la bola $\displaystyle B_{\rho } $ en tiempo finito. 
+Consideramos el sistema $\displaystyle x' = Ax + H\left(t, x\right) $ donde
+\begin{itemize}
+	\item $\displaystyle A \in \R^{n \times n} $ cumple que todos sus autovalores tienen parte real positiva.
+\item $\displaystyle H : D \subset \R \times \R^{n}\to \R^{n}$ es continua y localmente Lipschitz respecto a la segunda variable tal que $\displaystyle H\left(t, 0\right)=0 $.
+\item Existe $\displaystyle [\tau, \infty) \times B_{r} \subset D $. 
+\item $\displaystyle \left|H\left(t,x\right)\right| = o\left( \left|x\right|\right) $ uniformemente en $\displaystyle t $.
+\end{itemize}
+Entonces, existe $\displaystyle B_{\rho }\subset \R^{n} $ tal que si $\displaystyle x_{0}\in B_{\rho }\backslash \left\{ 0\right\}  $ la solución $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ se sale de la bola $\displaystyle B_{\rho } $ en tiempo finito. 
 En particular $\displaystyle \overline{x}=0 $ es solución inestable del sistema. 
 \end{prop}
 \begin{proof}
@@ -110,23 +118,8 @@ Así, tenemos que
 \[ \left|\varphi\left(T; t_{0}, x_{0}\right)\right| \geq \frac{1}{K}e^{\overline{\gamma }\left(T-t_{0}\right)} \left|x_{0}\right|, \; \forall T \geq t_{0} .\]
 Así, $\displaystyle \lim_{T \to \infty} \left|\varphi\left(T; t_{0}, x_{0}\right)\right|=\infty  $, que contradice el hecho que $\displaystyle \left|\varphi\left(t; t_{0}, x_{0}\right)\right|< \rho $ para $\displaystyle t \geq t_{0} $. 
 \end{proof}
-\begin{theorem}
-Consideramos el problema no lineal $\displaystyle x' = Ax + H\left(t,x\right) $ con $\displaystyle A \in \R^{n \times n} $ tal que algún autovalor tiene parte real estrictamente positiva y $\displaystyle H : D \subset \R \times \R^{n} \to \R^{n} $ continua y localmente Lipschitz respecto a la segunda variable con $\displaystyle [\tau, \infty) \times B_{r}\subset D $ y tal que $\displaystyle H\left(t,0\right)=0 $ y $\displaystyle H\left(t,x\right)=o\left( \left|x\right|\right) $ uniformemente en $\displaystyle t $. Entonces $\displaystyle \overline{x}\left(t\right)\equiv 0 $ es inestable.
-\end{theorem}
-\begin{colorary}
-Dada $\displaystyle f \in \mathcal{C}^{1}\left(\R^{n}; \R^{n}\right) $ y $\displaystyle \overline{x}\in \R^{n} $ tal que $\displaystyle f\left(\overline{x}\right)=0 $ y $\displaystyle Df\left(\overline{x}\right) $ tiene algún autovalor con parte real estrictamente positiva, entonces la solución $\displaystyle \overline{x}\left(t\right)\equiv \overline{x} $ es inestable.
-\end{colorary}
-\begin{proof}
-Es idéntica a la de estabilidad asintótica. 
-\end{proof}
-\begin{observation}[Resumen]
-En resumen, si $\displaystyle Df\left(\overline{x}\right) $ tiene todos los autovalores con parte real estrictamente menor que 0, es asintóticamente estable. Si tiene algún autovalor con parte real estrictamente positivo es inestable. En otro caso la linealización no decide. Los otros casos que pueden suceder son:
-\begin{itemize}
-\item La parte real es menor o igual que 0 para todos los autovalores y la parte real es 0 para algún autovalor.
-\end{itemize}
-\end{observation}
 \begin{lema}
-Sea $\displaystyle M \in \R^{n \times n} $ invertible y $\displaystyle f : D \subset \R \times \R^{n}\to \R^{n} $ continua y localmente Lipschitz respecto a la segunda variable y $\displaystyle f\left(t,0\right)=0 $. Entonces, la estabilidad de $\displaystyle \overline{x}\left(t\right)\equiv 0 $ para el problema $\displaystyle x' = f\left(t,x\right) $ es la misma que la de $\displaystyle \overline{y}\left(t\right)\equiv 0 $ para el problema $\displaystyle y'=g\left(t,y\right) $ con $\displaystyle g\left(t,y\right)=M^{-1}f\left(t,My\right) $.  
+Sea $\displaystyle M \in \R^{n \times n} $ invertible y $\displaystyle f : D \subset \R \times \R^{n}\to \R^{n} $ continua y localmente Lipschitz respecto a la segunda variable con $\displaystyle f\left(t,0\right)=0 $. Entonces, la estabilidad de $\displaystyle \overline{x}\left(t\right)\equiv 0 $ para el problema $\displaystyle x' = f\left(t,x\right) $ es la misma que la de $\displaystyle \overline{y}\left(t\right)\equiv 0 $ para el problema $\displaystyle y'=g\left(t,y\right) $ con $\displaystyle g\left(t,y\right)=M^{-1}f\left(t,My\right) $.  
 \end{lema}
 \begin{proof}
 Si $\displaystyle \varphi $ es el flujo del sistema $\displaystyle x' = f\left(t,x\right) $ y $\displaystyle \psi $ es el del sistema $\displaystyle y' = g\left(t,y\right) $, entonces tenemos que 
@@ -135,6 +128,16 @@ Si $\displaystyle \varphi $ es el flujo del sistema $\displaystyle x' = f\left(t
 Entonces, 
 \[ \|M\|^{-1} \left|\varphi\left(t; t_{0}, x_{0}\right)\right| \leq \left|\psi\left(t; t_{0}, y_{0}\right)\right|\leq \|M^{-1}\| \left|\varphi\left(t;  t_{0}, My_{0}\right)\right| .\]
 \end{proof}
+\begin{theorem}
+Consideramos el problema no lineal $\displaystyle x' = Ax + H\left(t,x\right) $ donde
+\begin{itemize}
+\item $\displaystyle A \in \R^{n \times n} $ tiene algún autovalor con parte real estrictamente positiva.
+\item $\displaystyle H : D \subset \R \times \R^{n} \to \R^{n} $ es continua y localmente Lipschitz respecto a la segunda variable y $\displaystyle H\left(t,0\right)=0 $.
+\item Existe $\displaystyle [\tau, \infty) \times B_{r}\subset D $.
+\item $\displaystyle H\left(t,x\right)=o\left( \left|x\right|\right) $ uniformemente en $\displaystyle t $.
+\end{itemize}
+Entonces $\displaystyle \overline{x}\left(t\right)\equiv 0 $ es inestable.
+\end{theorem}
 \begin{proof}
 Demostración del teorema. En el caso $\displaystyle n = 1 $ es trivial. Ahora en el caso $\displaystyle n = 2 $ tenemos que si $\displaystyle \Re\left(\lambda \right) > 0 $, $\displaystyle \forall \lambda \in \sigma \left(A\right) $ ya tenemos el resultado. Por otro lado, si $\displaystyle \Re\left(\lambda \right)\leq 0 $ y $\displaystyle \Re\left(\lambda_{2}\right) > 0 $ podemos diagonalizar $\displaystyle A $ y tenemos que los autovalores $\displaystyle \lambda_{1}, \lambda_{2} \in \R $ con $\displaystyle \lambda_{1} \leq 0 < \lambda_{2} $. 
 Así, existe $\displaystyle M \in \R ^{n \times n} $ tal que 
@@ -179,6 +182,25 @@ puesto que $\displaystyle y_{0} \in \Omega  $. Por tanto, tenemos que $\displays
 \[ \left|\psi\left(t; t_{0}, y_{0}\right)\right|^{2} \geq \psi_{2}\left(t; t_{0} , y_{0}\right)^{2} -\psi_{1}\left(t; t_{0}, y_{0}\right)^{2}\xrightarrow{t \to \infty} \infty .\]
 \end{itemize}
 \end{proof}
+\begin{colorary}
+Dada $\displaystyle f \in \mathcal{C}^{1}\left(\R^{n}; \R^{n}\right) $ y $\displaystyle \overline{x}\in \R^{n} $ tal que $\displaystyle f\left(\overline{x}\right)=0 $ y $\displaystyle Df\left(\overline{x}\right) $ tiene algún autovalor con parte real estrictamente positiva, entonces la solución $\displaystyle \overline{x}\left(t\right)\equiv \overline{x} $ es inestable.
+\end{colorary}
+\begin{proof}
+Es idéntica a la de estabilidad asintótica. 
+\end{proof}
+\begin{observation}[Resumen]
+Dado el sistema $\displaystyle x' = f\left(x\right) $ y $\displaystyle \overline{x}\in \R^{n} $ con $\displaystyle f\left(\overline{x}\right)=0 $:
+\begin{itemize}
+\item Si $\displaystyle Df\left(\overline{x}\right) $ tiene todos los autovalores con parte real estrictamente menor que 0, la solución $\displaystyle \overline{x} $ es asintóticamente estable.
+\item Si tiene algún autovalor con parte real estrictamente positivo la solución $\displaystyle \overline{x} $ es inestable.
+\end{itemize}
+  En otro caso la linealización no decide. Los otros casos que pueden suceder son:
+\begin{itemize}
+\item La parte real es menor o igual que 0 para todos los autovalores y la parte real es 0 para algún autovalor.
+\end{itemize}
+\end{observation}
+
+
 \begin{eg}
 	Consideremos la EDO $\displaystyle x ' = a x^{3} $. Consideremos $\displaystyle f\left(x\right)= ax^{3} $. Tenemos que $\displaystyle f\left(0\right)= 0 $ por lo que $\displaystyle \overline{x}\left(t\right)\equiv 0 $ es solución. Por otro lado, $\displaystyle f'\left(x\right)=3ax^{2} $ y como $\displaystyle f'\left(0\right)=0 $ por lo que $\displaystyle \sigma\left(Df\left(0\right)\right)= \left\{ 0\right\}  $, por lo que no podemos aplicar linealización. Podemos calcular la solución explícitamente, 
 	\[\varphi\left(t; t_{0}, x_{0}\right)=\frac{x_{0}}{\sqrt{1-2ax^{2}_{0}\left(t-t_{0}\right)}} .\]

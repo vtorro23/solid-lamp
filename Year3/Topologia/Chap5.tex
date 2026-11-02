@@ -69,18 +69,19 @@ Si un espacio topológico $\displaystyle X $ es II AN, entonces es I AN.
 	\[\mathcal{V}_{\mathcal{B}}^{x}= \left\{ B_{k}\in \mathcal{B} \; : \; x \in B_{k}\right\}  ,\]
 	es una base de entornos abiertos de $\displaystyle x $. En efecto, si $\displaystyle \Omega ^{x} $ es entorno abierto de $\displaystyle x $, como todos los abiertos de $\displaystyle X $ debe ser unión de abiertos básicos. Como $\displaystyle x \in \Omega^{x} $ debe existir un $\displaystyle k\in \N $ tal que $\displaystyle x \in B_{k}\subset \Omega^{x} $.
 \end{proof}
-\begin{eg}[Falsedad del recíproco]
-	El recíproco de la propiedad anterior no es cierto. En efecto, sea $\displaystyle X  $ un conjunto no numerable. Vimso que $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ es I AN, pero no es II AN. En efecto, como todos los conjuntos $\displaystyle \left\{ x\right\}  $ son abiertos, una base de la topología debe incluirlos a todos. Como $\displaystyle X $ es no numerable, es imposible la existencia de una base numerable de $\displaystyle \mathcal{T}_{\text{dis}} $.
-\end{eg}
+\begin{observation}
+El recíproco de la propiedad anterior no es cierto. En efecto, sea $\displaystyle X  $ un conjunto no numerable. Vimos que $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ es I AN, pero no es II AN. En efecto, como todos los conjuntos $\displaystyle \left\{ x\right\}  $ son abiertos, una base de la topología debe incluirlos a todos. Como $\displaystyle X $ es no numerable, es imposible la existencia de una base numerable de $\displaystyle \mathcal{T}_{\text{dis}} $.
+\end{observation}
+
 \begin{eg}
 El espacio topológico $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ es II AN. En efecto, 
 \[ \left\{ B\left(\left(q_{1}, \ldots, q_{n}\right), \frac{1}{k}\right) \; : \; \left(q_{1}, \ldots, q_{n}\right)\in \Q^{n}, \; k \in \N\right\}  ,\]
 es una base numerable de $\displaystyle \mathcal{T}_{u} $. 
 \end{eg}
-\begin{eg}
+\begin{eg}[Topología del punto no es II AN]
 	Si $\displaystyle X $ es no numerable y fijamos $\displaystyle a \in X $, tenemos que $\displaystyle \left(X, \mathcal{T}_{a}\right) $ no es II AN. En efecto, si $\displaystyle x \neq a $ tenemos que $\displaystyle \left\{ a,x\right\}  $ debe formar parte de cualquier base de la topología $\displaystyle \mathcal{T}_{a} $.
 \end{eg}
-\begin{eg}
+\begin{eg}[Recta de Sorgenfrey no es II AN]
 La recta de Sorgenfrey no es II AN. En efecto, consideremos una base $\displaystyle \mathcal{B} $ para la topología de Sorgenfrey. Como para cada $\displaystyle x\in \R $ el intervalo $\displaystyle [x, x + 1) $ es un entorno abierto de $\displaystyle x $ en $\displaystyle \left(\R, \mathcal{T}_{[,)}\right) $, debe haber un abierto $\displaystyle B_{x}\in \mathcal{B} $ tal que $\displaystyle x \in B_{x}\subset[x,x +1) $. Observamos que $\displaystyle x = \inf B_{x} $. Para cualquier otro punto $\displaystyle x' \in \R $, procedemos igual y hallamos un abierto básico $\displaystyle B_{x'} $ con $\displaystyle x ' \in B_{x'}\subset [x',x'+1 )$. Como quiera que $\displaystyle x' = \inf B_{x'} $, necesariamente $\displaystyle B_{x} \neq B_{x'} $. Así, tenemos una aplicación inyectiva
 \[ \R \to \mathcal{B} : x \to B_{x} ,\]
 por lo que $\displaystyle \mathcal{B} $ no puede ser numerable. 
