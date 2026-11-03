@@ -129,10 +129,26 @@ Si un espacio topológico $\displaystyle X $ es II AN, entonces es de Lindelöf.
 	\[X = \bigcup_{x \in X \backslash \left\{ a\right\} }U^{x} ,\]
 	no admite ningún subrecubrimiento.
 \end{eg}
+\begin{eg}
+La recta de Sorgenfrey es de Lindelöf. Como cada abierto es unión de abiertos básicos, basta con considerar un recubrimiento de la forma
+\[ \R = \bigcup_{i \in I}[a_{i}, b_{i}) ,\]
+ donde cada uno de los $\displaystyle [a_{i}, b_{i}) $, con $\displaystyle a_{i} < b_{i} $, es un abierto de la base. Consideremos la unión 
+ \[\bigcup_{i \in I}\left(a_{i}, b_{i}\right) ,\]
+ y sea $\displaystyle A = \R \backslash \bigcup_{i \in I}\left(a_{i}, b_{i}\right) $. 
+ Si $\displaystyle x \in A $ debe existir $\displaystyle i \in I $ tal que $\displaystyle x = a_{i}\in [a_{i}, b_{i}) $. Sea $\displaystyle q_{x}\in \Q $ tal que $\displaystyle x < q_{x} < b_{i} $. Por otra parte, si $\displaystyle x' \neq x $ es otro punto de $\displaystyle A $, y $\displaystyle x < x' $, se tendrá de manera análoga que debe existir $\displaystyle j \in I $ tal que $\displaystyle x' = a_{j}\in [a_{j}, b_{j}) $. Además, podemos determinar un $\displaystyle q_{x'}\in \Q $ con $\displaystyle x' < q_{x'} < b_{j} $. 
+ Se tiene que $\displaystyle q_{x} < q_{x'} $. En efecto, en caso contrario tendríamos que 
+ \[x < x' < q_{x'} \leq q_{x} < b_{i} ,\]
+ por lo que $\displaystyle x' \in \left(a_{i}, b_{i}\right) $, que contradice que $\displaystyle x ' \in A $. Así, hemos establecido una aplicación inyectiva
+ \[A \to \Q : x \to q_{x} ,\]
+ que muestra que $\displaystyle A $ es numerable. Si nos fijamos ahora en $\displaystyle \R\backslash A $, resulta que está recubierto por la unión de los intervalos abiertos $\displaystyle \left(a_{i}, b_{i}\right)\in I $, y pensando en $\displaystyle \R \backslash A $ como subespacio de la recta usual que es II AN, sabemos que nos podemos quedar con un subrecubrimiento numerable, los $\displaystyle \left( a_{j}, b_{j}\right)  $ para $\displaystyle j \in J \subset I $ siendo $\displaystyle J $ numerable. 
+ Hemos terminado, pues del recubrimiento inicial $\displaystyle \R = \bigcup_{i \in I}[a_{i}, b_{i}) $ hemos obtenido el subrecubrimiento numerable
+ \[\R = \bigcup_{x \in A}[a_{i}, b_{i}) \cup \bigcup_{j \in J}[a_{j}, b_{j}) .\]
+\end{eg}
 \section{Comportamiento por construcciones}
 \begin{observation}
 Es sencillo ver que todas las propiedades anteriores son propiedades topológicas, es decir, se conservan por homeomorfismos. 
 \end{observation}
+\subsection*{Propiedades hereditarias}
 
 \begin{prop} Sea $\displaystyle X $ un espacio topológico. 
 	\begin{enumerate}
@@ -147,23 +163,9 @@ Es sencillo ver que todas las propiedades anteriores son propiedades topológica
 	\item Dada una base numerable de la topología en $\displaystyle X $, $\displaystyle \mathcal{B}= \left\{ B_{k}\right\} _{k \in \N} $, sabemos que el conjunto $\displaystyle \mathcal{B}_{Y}= \left\{ B_{k}\cap Y\right\} _{k \in \N} $ es una base de la topología de $\displaystyle Y $ como subespacio.
 	\end{enumerate}
 \end{proof}
-\begin{eg}
-La recta de Sorgenfrey es de Lindelöf. Como cada abierto es unión de abiertos básicos, basta con considerar un recubrimiento de la forma
-\[ \R = \bigcup_{i \in I}[a_{i}, b_{i}) ,\]
- donde cada uno de los $\displaystyle [a_{i}, b_{i}) $, con $\displaystyle a_{i} < b_{i} $, es un abierto de la base. Supongamos que consideramos la unión 
- \[\bigcup_{i \in I}\left(a_{i}, b_{i}\right) ,\]
- y sea $\displaystyle A $ el subconjunto de puntos de $\displaystyle \R $ que no están cubiertos por esa unión, es decir, $\displaystyle A = \R \backslash \bigcup_{i \in I}\left(a_{i}, b_{i}\right) $. 
- Si $\displaystyle x \in A $ debe existir $\displaystyle i \in I $ tal que $\displaystyle x = a_{i}\in [a_{i}, b_{i}) $. Sea $\displaystyle q_{x}\in \Q $ tal que $\displaystyle x < q_{x} < b_{i} $. Por otra parte, si $\displaystyle x' \neq x $ es otro punto de $\displaystyle A $, y $\displaystyle x < x' $, se tendrá de manera análoga que debe existir $\displaystyle j \in I $ tal que $\displaystyle x' = a_{j}\in [a_{j}, b_{j}) $. Además, podemos determinar un $\displaystyle q_{x'}\in \Q $ con $\displaystyle x' < q_{x'} < b_{j} $. 
- Se tiene que $\displaystyle q_{x} < q_{x'} $. En efecto, en caso contrario tendríamos que 
- \[x < x' < q_{x'} \leq q_{x} < b_{i} ,\]
- por lo que $\displaystyle x' \in \left(a_{i}, b_{i}\right) $, que contradice que $\displaystyle x ' \in A $. Así, hemos establecido una aplicación inyectiva
- \[A \to \Q : x \to q_{x} ,\]
- que muestra que $\displaystyle A $ es numerable. Si nos fijamos ahora en $\displaystyle \R\backslash A $, resulta que está recubierto por la unión de los intervalos abiertos $\displaystyle \left(a_{i}, b_{i}\right)\in I $, y pensando en $\displaystyle \R \backslash A $ como subespacio de la recta usual que es II AN, sabemos que nos podemos quedar con un subrecubrimiento numerable, los $\displaystyle \left\{ a_{j}, b_{j}\right\}  $ para $\displaystyle j \in J \subset I $ siendo $\displaystyle J $ numerable. 
- Hemos terminado, pues del recubrimiento inicial $\displaystyle \R = \bigcup_{i \in I}[a_{i}, b_{i}) $ hemos obtenido el subrecubrimiento numerable
- \[\R = \bigcup_{x \in A}[a_{i}, b_{i}) \cup \bigcup_{j \in J}[a_{j}, b_{j}) .\]
-\end{eg}
+
 \begin{prop}
-Si $\displaystyle X $ es un espacio topológico separable y $\displaystyle Y \subset X $ abierto, entonces $\displaystyle Y $ es separable.
+Si $\displaystyle X $ es un espacio topológico separable y $\displaystyle Y \subset X $ abierto, entonces el subespacio $\displaystyle Y $ es separable.
 \end{prop}
 \begin{proof}
 Sea $\displaystyle A \subset X $ denso y numerable. Por densidad tenemos que $\displaystyle A \cap Y \neq \emptyset $. Además, el conjunto $\displaystyle A \cap Y $ es numerable y es denso en $\displaystyle Y $. En efecto, todo abierto en $\displaystyle Y $ lo es en $\displaystyle X $, por lo que $\displaystyle W \cap \left(A \cap Y\right)= W \cap A \neq \emptyset $.
@@ -172,7 +174,7 @@ Sea $\displaystyle A \subset X $ denso y numerable. Por densidad tenemos que $\d
 	Ser separable no es una propiedad hereditaria en general. Sean $\displaystyle \left(X, \mathcal{T}_{a}\right) $ con $\displaystyle X $ no numerable. Si $\displaystyle Y = X \backslash \left\{ a\right\}  $, entonces $\displaystyle Y $ hereda la topología discreta. Así, el único subconjunto denso es $\displaystyle Y $, que no es numerable. 
 \end{eg}
 \begin{prop}
-Si el espacio topológico $\displaystyle \left(Z, \mathcal{T}\right) $ es Lindelöf y $\displaystyle C \subset X $ es cerrado, entonces $\displaystyle \left(C, \mathcal{T}|_{C}\right) $ es Lindelöf. 
+Si $\displaystyle X $ es Lindelöf y $\displaystyle C \subset X $ es cerrado, entonces el subespacio $\displaystyle C $ es Lindelöf.  
 \end{prop}
 \begin{proof}
 Si tomamos un recubrimiento por abiertos en $\displaystyle C $, 
@@ -184,21 +186,23 @@ Como $\displaystyle X $ es Lindelöf, existe un subrecubrimiento numerable
 con $\displaystyle J \subset I $ numerable. Claramente, $\displaystyle C = \bigcup_{j \in J}V_{j} $. 
 \end{proof}
 \begin{eg}[Lindelöf no es hereditaria]
-	Sea $\displaystyle \left(Y, \mathcal{T}\right) $ un espacio topológico que sea $\displaystyle T_{1} $ pero no Lindelöf \footnote{Podría ser que $\displaystyle Y $ fuese no numerable y $\displaystyle \mathcal{T} =\mathcal{T}_{\text{dis}} $.} Consideramos $\displaystyle \omega \not\in Y $ y tomamos en $\displaystyle X = Y \cup \left\{ \omega \right\}  $ la topología $\displaystyle \tilde{\mathcal{T}} $ que tiene por abiertos los $\displaystyle U \subset X $ tales que o bien $\displaystyle U \in \mathcal{T} $ o bien $\displaystyle \omega \in U $ y $\displaystyle X \backslash U \subset Y $ es finito. \\
-\indent Es obvio que de todo recubrimiento por abiertos de $\displaystyle X $ se puede encontrar uno numerable. En efecto, si 
+	Sea $\displaystyle \left(Y, \mathcal{T}\right) $ un espacio topológico que sea $\displaystyle T_{1} $ pero no Lindelöf \footnote{Podría ser que $\displaystyle Y $ fuese no numerable y $\displaystyle \mathcal{T} =\mathcal{T}_{\text{dis}} $.}. Consideramos $\displaystyle \omega \not\in Y $ y tomamos en $\displaystyle X = Y \cup \left\{ \omega \right\}  $ la topología $\displaystyle \widetilde{\mathcal{T}} $ que tiene por abiertos los $\displaystyle U \subset X $ tales que o bien $\displaystyle U \in \mathcal{T} $ o bien $\displaystyle \omega \in U $ y $\displaystyle X \backslash U \subset Y $ es finito. \\
+\indent Es obvio que de todo recubrimiento por abiertos de $\displaystyle X $ se puede encontrar uno numerable. En efecto, supongamos que 
 \[ X = \bigcup_{i \in I}U_{i} ,\]
-con $\displaystyle U_{i}\in \tilde{\mathcal{T}} $, $\displaystyle \forall i \in I $. Hay un $\displaystyle i_{0} \in I $ tal que $\displaystyle \omega \in U_{i_{0}} $, pero $\displaystyle X \backslash U_{i_{0}} $ es finito, por lo que además del $\displaystyle U_{i_{0}} $ para recubrir $\displaystyle X $ basta escoger $\displaystyle U_{i} $ en el que se encuentre cada punto de $\displaystyle X\backslash U_{i_{0}} $. \\
-\indent Podemos observar que $\displaystyle Y $ con la topología que recibe como subespacio de $\displaystyle \left(X, \tilde{\mathcal{T}}\right) $ es el espacio $\displaystyle \left(Y, \mathcal{T}\right) $ de partida, que sabemos que no es Lindelöf. \\
+con $\displaystyle U_{i}\in \widetilde{\mathcal{T}} $, $\displaystyle \forall i \in I $. Existe $\displaystyle i_{0} \in I $ tal que $\displaystyle \omega \in U_{i_{0}} $, pero $\displaystyle X \backslash U_{i_{0}} $ es finito, por lo que además del $\displaystyle U_{i_{0}} $ para recubrir $\displaystyle X $ basta escoger $\displaystyle U_{i} $ en el que se encuentre cada punto de $\displaystyle X\backslash U_{i_{0}} $. \\
+\indent Podemos observar que $\displaystyle Y $ con la topología que recibe como subespacio de $\displaystyle \left(X, \widetilde{\mathcal{T}}\right) $ es el espacio $\displaystyle \left(Y, \mathcal{T}\right) $ de partida, que sabemos que no es Lindelöf. \\
 \indent Para ver que $\displaystyle Y $ como subespacio no es de Lindelöf podemos tomar un recubrimiento de $\displaystyle Y $ por abiertos en $\displaystyle \mathcal{T} $,
 \[Y = \bigcup_{\alpha \in \Lambda }V_{\alpha }, \; V_{\alpha }\in \mathcal{T} ,\]
-que no admite subrecubrimiento numerable. Ahora bien, cada $\displaystyle V_{\alpha } $ es también abierto en $\displaystyle \left(X, \tilde{\mathcal{T}}\right) $. 
+que no admite subrecubrimiento numerable. Ahora bien, cada $\displaystyle V_{\alpha } $ es también abierto en $\displaystyle \left(X, \widetilde{\mathcal{T}}\right) $. 
 \end{eg}
-\begin{eg}[I AN y II AN no es divisible]
+\subsection*{Divisibilidad}
+
+\begin{eg}[I AN y II AN no son divisibles]
 Consideremos la relación de equivalencia en la que todos los enteros se identifican a un punto, y el correspondiente espacio cociente $\displaystyle \R / \Z $. Sea $\displaystyle p : \R \to \R/\Z $ la aplicación identificación de paso al cociente. Vamos a ver que $\displaystyle p\left(0\right) $ no tiene una base numerable de entornos abiertos, por lo que $\displaystyle \R / \Z $ no es I AN y tampoco es II AN. \\
 \indent Si tomamos una familia numerable $\displaystyle \left\{ V_{k}^{p\left(0\right)}\right\} _{k \in \N} $ de entornos abiertos de $\displaystyle p\left(0\right) $, sabemos que para cada $\displaystyle k \in \N  $, $\displaystyle V_{k}^{p\left(0\right)}=p\left(U_{k}\right) $ donde $\displaystyle U_{k}\subset \R $ es un abierto usual de la recta $\displaystyle p $-saturado, es decir, con $\displaystyle \Z \subset U $. 
 En particular, tenemos que existe un intervalo $\displaystyle \left(a_{k}, b_{k}\right)\subset U_{k} $ con 
 \[k-1 < a_{k} < k < b_{k} < k+1 .\]
-Tomemos un punto $\displaystyle x_{k}\neq k $ de forma que $\displaystyle x_{k}\in \left(a_{k}, b_{k}\right) $. Consideramos $\displaystyle \R \backslash \left\{ x_{k} \right\} _{k \in \N} $. Se trata de un conjunto abierto en la topología usual. Es $\displaystyle p $-saturado. Por tanto, $\displaystyle W^{p\left(0\right)}:= p\left(\R \backslash \left\{ x_{k}\right\} _{k \in \N}\right) $ es un entorno abierto de $\displaystyle p\left(0\right) $. 
+Tomemos un punto $\displaystyle x_{k}\neq k $ de forma que $\displaystyle x_{k}\in \left(a_{k}, b_{k}\right) $. Consideramos $\displaystyle \R \backslash \left\{ x_{k} \right\} _{k \in \N} $. Se trata de un conjunto abierto en la topología usual y además es $\displaystyle p $-saturado. Por tanto, $\displaystyle W^{p\left(0\right)}:= p\left(\R \backslash \left\{ x_{k}\right\} _{k \in \N}\right) $ es un entorno abierto de $\displaystyle p\left(0\right) $. 
 Además, no contiene a ninguno de los $\displaystyle V^{p\left(0\right)}_{k} $, pues $\displaystyle p\left(x_{k}\right)\in V_{k}^{p\left(0\right)} $, pero $\displaystyle p\left(x_{k}\right)\not\in W^{p\left(0\right)} $. Así, es imposible que $\displaystyle p\left(0\right) $ tenga una base numerable de entornos abiertos. 
 \end{eg}
 \begin{prop}
@@ -209,7 +213,7 @@ Sea $\displaystyle f : X \to Y $ una aplicación continua, sobreyectiva y abiert
 \end{enumerate}
 \end{prop}
 \begin{proof}
-	Supongamos que $\displaystyle f $ es una identificación abierta. 
+	Supongamos que $\displaystyle f $ es una aplicación que cumple las hipótesis de la proposición. 
 	\begin{enumerate}
 	\item Tomemos $\displaystyle y \in Y $. Por ser $\displaystyle f $ sobreyectiva tenemos que existe $\displaystyle x \in X $ tal que $\displaystyle f\left(x\right)=y $. Sea $\displaystyle \left\{ V_{k}^{x}\right\} _{k \in \N} $ una base numerable de entornos abiertos de $\displaystyle x $ en $\displaystyle X $. Como $\displaystyle f $ es abierta, tenemos que $\displaystyle \left\{ f\left(V_{k}^{x}\right)\right\} _{k\in \N} $ es una colección numerable de entornos abiertos de $\displaystyle y $. Veamos que es una base de entornos abiertos de $\displaystyle y $. 
 		Si $\displaystyle \Omega^{y} $ es un entorno abierto de $\displaystyle y $, por continuidad de $\displaystyle f $ sabemos que $\displaystyle f^{-1}\left(\Omega ^{y}\right) $ es entorno abierto de $\displaystyle x $, por lo que existe $\displaystyle k_{0} \in \N $ tal que $\displaystyle V^{x}_{k_{0}}\subset f^{-1}\left(\Omega ^{y}\right) $, por lo que $\displaystyle f\left(V^{x}_{k_{0}}\right)\subset \Omega^{y} $.
@@ -217,7 +221,7 @@ Sea $\displaystyle f : X \to Y $ una aplicación continua, sobreyectiva y abiert
 		Como $\displaystyle f $ es sobreyectiva se tiene que $\displaystyle f\left(f^{-1}\left(V\right)\right)=V $ y por tanto $\displaystyle V $ se expresa como unión de elementos de $\displaystyle \mathcal{B}\left(f\right) $. 
 	\end{enumerate}
 \end{proof}
-\begin{prop}
+\begin{prop}[Separabilidad y Lindelöf son divisibles]
 Sea $\displaystyle f : X \to Y $ una aplicación continua y sobreyectiva. 
 \begin{enumerate}
 \item Si $\displaystyle X $ es separable, $\displaystyle Y $ también lo es. 
@@ -233,6 +237,8 @@ Sea $\displaystyle f : X \to Y $ una aplicación continua y sobreyectiva.
 	Como $\displaystyle X $ es Lindelöf, existe $\displaystyle J \subset I $ numerable tal que $\displaystyle X = \bigcup_{j \in J}f^{-1}\left(V_{j}\right) $. Como $\displaystyle f $ es sobreyectiva se sigue que $\displaystyle Y = \bigcup_{j \in J}V_{j} $. 
 \end{enumerate}
 \end{proof}
+\subsection*{Productividad}
+
 \begin{prop}
 Sean $\displaystyle X_{i} $, $\displaystyle i = 1, \ldots, r $ espacios topológicos. Las siguientes afirmaciones son equivalentes:
 \begin{enumerate}
@@ -297,6 +303,8 @@ Consideramos ambas implicaciones.
 \begin{eg}[Lindelöf no es productiva]
 	Consideramos la recta de Sorgenfrey $\displaystyle \left(\R, \mathcal{T}_{[,)}\right) $, que sabemos que es Lindelöf. Veamos que $\displaystyle \left(\R, \mathcal{T}_{[,)}\right) \times \left(\R, \mathcal{T}_{[,)}\right) $ no es Lindelöf. Si lo fuera el subconjunto cerrado $\displaystyle y = \left\{ x + y = 0\right\}  $ sería Lindelöf. Sin embargo, hereda la topología discreta y es no numerable por lo que no es Lindelöf.
 \end{eg}
+\subsection*{Aditividad}
+
 \begin{prop}
 Sean $\displaystyle X_{i} $ espacios topológicos con $\displaystyle i = 1, \ldots, r $ y consideremos el espacio suma $\displaystyle \sum^{r}_{i = 1}X_{i} $. 
 \begin{enumerate}
@@ -306,4 +314,21 @@ Sean $\displaystyle X_{i} $ espacios topológicos con $\displaystyle i = 1, \ldo
 	\item $\displaystyle X_{i} $ es Lindelöf $\displaystyle \forall i \in \left\{ 1, \ldots, r\right\}  $ $\displaystyle \iff  $ $\displaystyle \sum^{r}_{i = 1}X_{i} $ es Lindelöf. 
 \end{enumerate}
 \end{prop}
+\subsection*{Resumen}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	& I AN & II AN & Separable & Lindelöf \\
+	\hline
+	Hereditaria & Sí & Sí & Sólo en abiertos & Sólo en cerrados \\
+	\hline
+	Aditividad & Sí & Sí & Sí & Sí \\
+	\hline
+	Productividad & Sí & Sí & Sí & No \\
+	\hline
+	Divisibilidad & Sólo si $\displaystyle p $ abierta & Sólo si $\displaystyle p $ abierta & Sí & Sí \\
+	\hline
+\end{tabular}
+
+\end{center}
 
