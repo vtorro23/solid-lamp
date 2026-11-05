@@ -1,0 +1,173 @@
+\chapter{Compacidad}
+\section{Concepto y resultados fundamentales}
+\begin{definition}[Espacio compacto]
+Un espacio topológico $\displaystyle X $ es \textbf{compacto} si cada recubrimiento abierto de $\displaystyle X $ admite un subrecubrimiento finito. 
+\end{definition}
+\begin{prop}
+	Dado un espacio topológico compacto $\displaystyle X $ y una familia de cerrados $\displaystyle \left\{ F_{i}\right\} _{i \in I} $ tal que $\displaystyle \bigcap_{ i \in I}F_{i}= \emptyset $, existe una subfamilia finita $\displaystyle F_{i_{1}}, \ldots, F_{i_{r}} $ tal que $\displaystyle F_{i_{1}}\cap \cdots \cap F_{i_{r}}= \emptyset $.
+\end{prop}
+\begin{proof}
+Es trivial tomando complementarios en la definición de compacidad.
+\end{proof}
+\begin{observation}
+	Una consecuencia de la proposición anterior es que si en un espacio compacto tenemos una familia de cerrados $\displaystyle \left\{ F_{i}\right\} _{i \in I} $ tal que para cada familia finita $\displaystyle F_{i_{1}}, \ldots, F_{i_{r}} $ se tiene que $\displaystyle F_{i_{1}} \cap \cdots \cap F_{i_{r}} \neq \emptyset $, entonces $\displaystyle \bigcap_{i \in I}F_{i}\neq \emptyset $. En particular, dada una sucesión de conjuntos cerrados nos vacíos $\displaystyle \left\{ F_{k}\right\} _{k \in \N} $ en un espacio compacto tenemos que $\displaystyle \bigcap_{k \in \N}F_{k}\neq \emptyset $.
+\end{observation}
+\begin{prop}
+Un subespacio $\displaystyle K\subset X $ es compacto si y sólo si cada recubrimiento de $\displaystyle K $ por abiertos de $\displaystyle X $ admite un subrecubrimiento finito. 
+\end{prop}
+\begin{proof}
+Demostramos ambas implicaciones.
+\begin{description}
+	\item[($\displaystyle \Rightarrow $)] Supongamos que $\displaystyle K \subset X $ es compacto y sea $\displaystyle \left\{ U_{i}\right\} _{i \in I} $ un recubrimiento abierto de $\displaystyle K $. Entonces, 
+		\[K = K \cap \bigcup_{i \in I}U_{i} = \bigcup_{i \in I}\left(K \cap U_{i}\right) ,\]
+		que es un recubrimiento de $\displaystyle K $ por abiertos relativos de $\displaystyle K $, y como $\displaystyle K $ es compacto se tiene que existe $\displaystyle J \subset I $ finito tal que 
+		\[K = \bigcup_{j \in J}\left(K \cap U_{j}\right) \Rightarrow K \subset \bigcup_{j \in J}U_{j} .\]
+	\item[($\displaystyle \Leftarrow $)] Ahora, sea $\displaystyle \left\{ V_{i}\right\} _{i \in I} $ un recubrimiento por abiertos de $\displaystyle K $. Entonces existen $\displaystyle \left\{ U_{i}\right\} _{i \in I} $ abiertos en $\displaystyle X $ tal que 
+		\[K= \bigcup_{i \in I}V_{i}= \bigcup_{i \in I}\left(K \cap U_{i}\right)= K \cap \left(\bigcup_{i \in I}U_{i}\right) .\]
+		Por tanto, $\displaystyle K \subset \bigcup_{i \in I}U_{i} $ y por hipótesis tenemos que existe $\displaystyle J \subset I $ finito tal que 
+		\[K \subset \bigcup_{j \in J}U_{i} \Rightarrow K = K \cap \left(\bigcup_{j \in J}U_{i}\right)=\bigcup_{j \in J}\left(K \cap U_{i}\right)=\bigcup_{j \in J}V_{j} .\]
+		Por tanto, tenemos que $\displaystyle K $ es compacto.
+\end{description}
+\end{proof}
+\begin{eg}
+Sabemos que en $\displaystyle \left(\R^{n}, \mathcal{T}_{u}\right) $ los subespacios compactos son aquellos subconjuntos que son cerrados y acotados (con la distancia euclídea).
+\end{eg}
+\begin{eg}
+Un espacio con topología discreta $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ es compacto si y sólo si $\displaystyle X $ es finito. Para verlo basta con considerar el recubrimiento abierto 
+\[X = \bigcup_{x \in X} \left\{ x\right\}  .\]
+\end{eg}
+\begin{eg}
+	Si en un espacio topológico $\displaystyle X $ tenemos una sucesión $\displaystyle \left\{ x_{k}\right\} _{k \in \N} $ tal que $\displaystyle x_{k}\to x $, entonces $\displaystyle K = \left\{ x\right\} \cup \left\{ x_{k} \; : \; k \in \N\right\} $ es un compacto. En efecto, sea $\displaystyle \left\{ U_{i}\right\} _{ i \in I} $ un recubrimiento abierto de $\displaystyle K $, entonces existe $\displaystyle i_{0}\in I $ tal que $\displaystyle x \in U_{i_{0}} $. 
+	Como $\displaystyle x_{k}\to x $, existe $\displaystyle k_{0}\in \N $ tal que $\displaystyle \forall k \geq k_{0} $ se tiene que $\displaystyle x_{k}\in U_{i_{0}} $. Si para $\displaystyle j \in \left\{ 1, \ldots, k_{0}-1\right\}  $ se tiene que $\displaystyle x_{j}\in U_{i_{j}} $, tenemos que 
+	\[K \subset U_{i_{0}}\cup \bigcup_{j = 1}^{k_{0}-1}U_{i_{j}} ,\]
+	que es un subrecubrimiento finito de $\displaystyle K $. 
+\end{eg}
+\begin{prop}
+Sea $\displaystyle X $ un espacio compacto y $\displaystyle K\subset X $ cerrado. Entonces $\displaystyle K $ es compacto. 
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle \left\{ U_{i}\right\} _{i \in I} $ un recubrimiento abierto de $\displaystyle K $. Como $\displaystyle X \backslash K $ es abierto tenemos que 
+	\[X = \left(X \backslash K\right)\cup \bigcup_{i \in I}U_{i} ,\]
+	que es un recubrimiento por abiertos de $\displaystyle X $ y como $\displaystyle X $ es compacto existen $\displaystyle U_{i_{1}}, \ldots, U_{i_{r}} $ tales que 
+	\[X = \left(X \backslash K\right)\cup \bigcup_{j = 1}^{r}U_{i_{j}} .\]
+Así, tenemos que $\displaystyle K \subset \bigcup_{j = 1}^{r}U_{i_{j}} $ que es un subrecubrimiento de $\displaystyle K $, por lo que $\displaystyle K $ es compacto.	
+\end{proof}
+\begin{prop}
+Sea $\displaystyle X $ un espacio topológico de Hausdorff. Si $\displaystyle K \subset X $ es compacto, entonces $\displaystyle K $ es cerrado.
+\end{prop}
+\begin{proof}
+	Veamos que $\displaystyle X \backslash K $ es abierto. Sea $\displaystyle y \in X \backslash K $ y $\displaystyle x \in K $. Como $\displaystyle X $ es Hausdorff se tiene que existen entornos $\displaystyle U^{x} $ y $\displaystyle U^{y}_{x} $ tales que $\displaystyle U^{x} \cap U^{y}_{x}= \emptyset $. Consideremos la familia de todos los abiertos $\displaystyle \left\{ U^{x} \; : \; x \in K\right\}  $ que hemos obtenido de esta forma. Así, 
+	\[K \subset \bigcup_{x \in K}U^{x} .\]
+	Como $\displaystyle K $ es compacto, existen $\displaystyle x_{1}, \ldots, x_{r}\in K $ tal que $\displaystyle K \subset U^{x_{1}} \cup \cdots \cup U^{x_{r}} $. Consideremos 
+	\[U^{y} := U^{y}_{x_{1}}\cap \cdots \cap U^{y}_{x_{r}} .\]
+	Es un entorno de $\displaystyle y $ y además, $\displaystyle U^{y} \cap \left(U^{x_{1}} \cup \cdots \cup U^{x_{r}}\right)= \emptyset $ por lo que $\displaystyle U^{y} \cap K = \emptyset $.
+\end{proof}
+% buscar un ejemplo de un espacio que no sea Hausdorff y que no se cumpla el teorema
+\begin{observation}
+Podemos ver que si $\displaystyle X $ es Hausdorff, $\displaystyle K\subset X $ es compacto y tomamos $\displaystyle x \in X \backslash K $, existe $\displaystyle U $ entorno abierto de $\displaystyle x $ y $\displaystyle V \supset K $ abierto tal que $\displaystyle U \cap V = \emptyset$. 
+\end{observation}
+\begin{prop}
+Sea $\displaystyle X $ un espacio topológico Hausdorff y $\displaystyle K_{1} $ y $\displaystyle K_{2} $ compactos disjuntos en $\displaystyle X $. Entonces, existen abiertos $\displaystyle U_{1} $ y $\displaystyle U_{2} $ tales que 
+\[K_{1}\subset U_{1}, \quad K_{2}\subset U_{2}\quad \text{y} \quad U_{1} \cap U_{2} = \emptyset .\]
+\end{prop}
+\begin{proof}
+	Por la observación anterior tenemos que para cada $\displaystyle y \in K_{1} $ existen $\displaystyle U^{y} $ y $\displaystyle V_{y} $ abiertos tales que $\displaystyle U^{y} $ es entorno de $\displaystyle y $ y $\displaystyle V_{y}\supset K_{2} $ con $\displaystyle U^{y}\cap V_{y}= \emptyset $. La colección de los abiertos de la forma $\displaystyle \left\{ U^{y}\right\} _{y \in K_{1}} $ es un recubrimiento de $\displaystyle K_{1} $ por lo que podemos encontrar un subrecubrimiento $\displaystyle K _{1}\subset U^{y_{1}} \cup \cdots \cup U^{y_{r}} $. Basta con tomar $\displaystyle U_{1}=U^{y_{1}} \cup \cdots \cup U^{y_{r}} $ y $\displaystyle U_{2}=V_{y_{1}} \cap \cdots \cap V_{y_{r}} $.
+\end{proof}
+En el caso de los compactos en espacios euclídeos, un resultado bien conocido (que veremos que se puede sólo parcialmente trasladar a espacios topológicos arbitrarios) es el siguiente:
+\begin{theorem}[Teorema de Bolzano-Weierstrass]
+Consideremos en $\displaystyle \R^{n} $ la topología usual, entonces $\displaystyle K\subset \R^{n} $ es compacto si y sólo si para todo conjunto infinito $\displaystyle A\subset K $ se tiene que $\displaystyle A' \cap K \neq \emptyset $. 
+\end{theorem}
+En el caso de que consideremos un espacio topológico cualquiera $\displaystyle \left(X, \mathcal{T}\right) $ lo que podemos probar es:
+\begin{prop}
+Sea $\displaystyle \left(X, \mathcal{T}\right) $ un espacio topológico y $\displaystyle K\subset X $ un compacto. Todo conjunto $\displaystyle A \subset K $ tiene al menos un punto de acumulación en $\displaystyle K $. 
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle A \subset K $ no tiene puntos de acumulación en $\displaystyle K $, esto es, $\displaystyle A' \cap K = \emptyset $. Entonces como 
+\[\overline{A} = Ais\left(A\right)\cup A' ,\]
+debe ser que $\displaystyle \overline{A}\cap K = Ais\left(A\right)=A $. De esta forma $\displaystyle A $ es cerrado en $\displaystyle K $ y por tanto compacto. Como todos los puntos de $\displaystyle A $ son aislados tenemos que $\displaystyle A $ es discreto que contradice nuestra hipótesis de que $\displaystyle A $ sea infinito.
+\end{proof}
+\begin{eg}
+	El recíproco de la proposición anterior no es cierto. En efecto, consideremos un conjunto infinito $\displaystyle X $ en el que tomamos la topología discreta. Sea $\displaystyle Y = \left\{ y_{1}, y_{2}\right\}  $ e introduzcamos en él la topología trivial. Todos los subconjuntos infinitos en $\displaystyle X \times Y $ tienen algún punto de acumulación en $\displaystyle X \times Y $ y sin embargo $\displaystyle X \times Y $ no es compacto. 
+\end{eg}
+\begin{prop}
+Sea $\displaystyle f : X \to Y $ una aplicación continua, con $\displaystyle X $ compacto. Entonces, $\displaystyle f\left(X\right)\subset Y $ es compacto. 
+\end{prop}
+\begin{proof}
+	Sea $\displaystyle \left\{ U_{i}\right\} _{i \in I} $ un recubrimiento por abiertos de $\displaystyle f\left(X\right) $. Entonces, 
+	\[f\left(X\right)\subset \bigcup_{i \in I}U_{i} .\]
+Así, tenemos que 
+\[X = f^{-1}\left(f\left(X\right)\right)\subset f^{-1}\left(\bigcup_{i \in I}U_{i}\right)=\bigcup_{i \in I}f^{-1}\left(U_{i}\right) .\]
+Como $\displaystyle f $ es continua hemos obtenido un recubrimiento abierto de $\displaystyle X $ y por la compacidad de $\displaystyle X $ tenemos que existe un subrecubrimiento finito
+\[X = \bigcup_{j = 1}^{r}f^{-1}\left(U_{i_{j}}\right) \Rightarrow f\left(X\right)\subset \bigcup_{j = 1}^{r}U_{i_{j}} .\]
+\end{proof}
+\begin{prop}
+Sea $\displaystyle f : X \to Y $ una aplicación continua, con $\displaystyle X $ compacto e $\displaystyle Y $ Hausdorff. Entonces $\displaystyle f $ es cerrada.
+\end{prop}
+\begin{proof}
+Sea $\displaystyle C \subset X $ cerrado. Entonces, por ser $\displaystyle X $ compacto se tiene que $\displaystyle C $ es compacto. Por la proposición anterior tenemos que $\displaystyle f\left(C\right) $ es compacto y al ser $\displaystyle Y $ Hausdorff concluimos que $\displaystyle f\left(C\right) $ es cerrado. 
+\end{proof}
+\begin{colorary}
+Sea $\displaystyle f : X \to Y $ una aplicación continua, con $\displaystyle X $ compacto e $\displaystyle Y $ Hausdorff.
+\begin{enumerate}
+\item Si $\displaystyle f $ es inyectiva, es cerrada y es un embebimiento topológico cerrado.
+\item Si $\displaystyle f $ es sobreyectiva, es una identificación cerrada.
+\item Si $\displaystyle f $ es biyectiva, es un homeomorfismo.
+\end{enumerate}
+\end{colorary}
+\section{Comportamiento bajo construcciones}
+\subsection*{Hederitaria}
+Es sencillo ver que la compacidad en general no es hereditaria. Basta con ver que $\displaystyle \left[a,b\right] \subset \R $ es compacto con la topología usual pero $\displaystyle \left(a,b\right) $ no lo es. Sin embargo, por una proposición anterior hemos visto que sí es hereditaria en subespacios que sean cerrados. 
+\subsection*{Divisibilidad}
+Como consecuencia inmediata de la \textbf{Proposición 6.7} se tiene que la compacidad sí se conserva al hacer el cociente. 
+\subsection*{Aditividad}
+Es muy sencillo ver que la suma finita de espacios compactos es compacta. 
+\subsection*{Productividad}
+\begin{lema}[Lema del tubo]
+	Dados $\displaystyle X $ espacio topológico e $\displaystyle Y $ espacio topológico compacto, y un abierto $\displaystyle \Omega \subset X \times Y $ tal que $\displaystyle \left\{ x_{0}\right\} \times Y \subset \Omega$, existe un entorno abierto $\displaystyle U^{x_{0}} $ de $\displaystyle x_{0} $ en $\displaystyle X $ tal que $\displaystyle U^{x_{0}}\times Y\subset \Omega  $.
+\end{lema}
+\begin{proof}
+Para cada $\displaystyle y \in Y $ consideremos un entorno abierto $\displaystyle V^{y} $ y un entorno abierto $\displaystyle U^{x_{0}}_{y} $ de $\displaystyle x_{0} $ tales que $\displaystyle U^{x_{0}}_{y}\times V^{y}\subset \Omega  $. Claramente, $\displaystyle Y = \bigcup_{y \in Y}V^{y} $ y por la compacidad de $\displaystyle Y $ existe un subrecubrimiento finito de forma que $\displaystyle Y = V^{y_{1}} \cup \cdots \cup V^{y_{r}} $. 
+Si consideramos $\displaystyle U^{x_{0}}: = U^{x_{0}}_{y_{1}} \cap \cdots \cap U^{x_{0}}_{y_{r}} $, tenemos que $\displaystyle U^{x_{0}}\times Y \subset \Omega  $.  
+\end{proof}
+\begin{theorem}[Teorema de Tychonoff]
+Sean $\displaystyle X $ e $\displaystyle Y $ espacios topológicos y $\displaystyle X \times Y $ el espacio topológico producto. Se tiene que $\displaystyle X \times Y $ es compacto si y sólo si $\displaystyle X $ e $\displaystyle Y $ son compactos.
+\end{theorem}
+\begin{proof}
+Consideramos ambas implicaciones.
+\begin{description}
+\item[($\displaystyle \Rightarrow $)] Como las proyecciones son continuas y sobreyectivas, si $\displaystyle X \times Y $ es compacto, como $\displaystyle p_{1}\left(X \times Y\right)= X $ se tiene que $\displaystyle X $ es compacto. De forma análoga se concluye que $\displaystyle Y $ es compacto. 
+\item[($\displaystyle \Leftarrow $)] Consideremos un recubrimiento abierto 
+	\[X \times Y = \bigcup_{i \in I}W_{i} ,\]
+	donde $\displaystyle W_{i} $ son abiertos en $\displaystyle X \times Y $. Fijemos $\displaystyle x_{0}\in X $ y consideremos el subespacio $\displaystyle \left\{ x_{0}\right\} \times Y $ que es homeomorfo a $\displaystyle Y $ y por tanto compacto. Así, podemos escoger $\displaystyle J_{x_{0}}\subset I $ finito tal que 
+	\[ \left\{ x_{0}\right\} \times Y \subset \bigcup_{j \in J_{x_{0}}}W_{j} .\]
+	Por el lema anterior tenemos que existe un entorno abierto $\displaystyle U^{x_{0}} $ de $\displaystyle x_{0} $ tal que $\displaystyle U^{x_{0}}\times Y \subset \bigcup_{j \in J_{x_{0}}}W_{j} $. Así, escogiendo un entorno como el $\displaystyle U^{x_{0}} $ para cada $\displaystyle x \in X $, tenemos un recubrimiento abierto 
+	\[X = \bigcup_{x \in X}U^{x} .\]
+	Por la compacidad de $\displaystyle X $ podemos obtener un subrecubrimiento finito,
+	\[X = U^{x_{1}} \cup \cdots \cup U^{x_{s}} .\]
+	Pero para cada $\displaystyle k = 1, \ldots, s $ se tiene que $\displaystyle U^{x_{k}}\times Y \subset \bigcup_{i \in J_{x_{k}}}W_{i} $, por lo que 
+	\[X \times Y = \bigcup_{k \in \left\{ 1, \ldots, s\right\} , i \in J_{x_{k}}}W_{i} .\]
+\end{description}
+\end{proof}
+\section{Compacidad local}
+\begin{notation}
+Supongamos que $\displaystyle \mathcal{P} $ es una propiedad topológica en un espacio topológico $\displaystyle X $. Podemos entender la \textbf{localización de la propiedad} $\displaystyle \mathcal{P} $ de dos formas:
+\begin{enumerate}
+\item Pidiendo que cada punto $\displaystyle x \in X $ tenga un entorno $\displaystyle V^{x} $ que verfique la propiedad $\displaystyle \mathcal{P} $.
+\item Pidiendo que cada punto $\displaystyle x \in X $ tenga una base de entornos que verifique la propiedad $\displaystyle \mathcal{P} $. 
+\end{enumerate}
+Es sencillo ver que en general la segunda es más restrictiva que la primera. Será la forma en la que entendamos usualmente la localización. En algunos casos, para algunas propiedades, ambas son equivalentes. 
+\end{notation}
+\begin{definition}[Compacidad local]
+Un espacio topológico $\displaystyle X $ es \textbf{localmente compacto} si para cada punto $\displaystyle x \in X $ existe una base de entornos $\displaystyle \mathcal{V}^{x} $ que son compactos. 
+\end{definition}
+\begin{eg}
+Se puede ver que $\displaystyle \left(\R^{n}, \mathcal{T}_{u}\right) $ es localmente compacto. En efecto, dado $\displaystyle \left(a_{1}, \ldots, a_{n}\right)\in \R^{n} $ podemos considerar la base de entornos compactos
+\[\mathcal{V}^{\left(a_{1}, \ldots, a_{n}\right)} = \left\{ \overline{B}\left(\left(a_{1}, \ldots, a_{n}\right)\; : \; \frac{1}{n}\right)\right\} _{n \in \N} .\]
+\end{eg}
+\begin{eg}
+	Todo espacio $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ es localmente compacto puesto que $\displaystyle \left\{ x\right\}  $ es una base de entornos compactos $\displaystyle \forall x \in X $.
+\end{eg}
+\begin{eg}
+Se puede ver que $\displaystyle \Q $ como subespacio de $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ no es localmente compacto. 
+\end{eg}
+

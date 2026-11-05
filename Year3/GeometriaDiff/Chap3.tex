@@ -1,0 +1,103 @@
+\chapter{Geometría extrínseca}
+Consiste en el estudio de una superficie como está dentro de $\displaystyle \R^{3} $, es decir, el estudio del vector normal $\displaystyle N $.
+\section{Curvatura normal, aplicaciones de Gauss y Weingarte}
+Sea $\displaystyle S\subset \R^{3} $ una superficie regular y $\displaystyle p \in S $. Consideremos el conjunto 
+\[\mathbb{S}\left(T_{p}S\right)= \left\{ \vec{v} \in T_{p}S \; : \; \|\vec{v}\| = 1\right\}  ,\]
+que es el conjunto de direcciones de $\displaystyle T_{p}S $. Para $\displaystyle \vec{v} $ consideramos el plano
+\[\Pi_{\vec{v}} =p + \mathcal{L}\left(\vec{v}, N_{p}\right) ,\]
+que es el plano normanl en la dirección $\displaystyle \vec{v} $. 
+% poner imagen
+\begin{lema}
+La intersección $\displaystyle \Pi_{\vec{v}}\cap S $ es una curva regular, esto es, una curva de $\displaystyle p $.
+\end{lema}
+\begin{proof}
+Cambiando de coordenadas en $\displaystyle \R^{3} $ tomamos $\displaystyle p = \left(0,0,0\right) $ y $\displaystyle \mathcal{T}_{p}S = \mathcal{L}\left(e_{1}, e_{2}\right) $ y $\displaystyle N_{p}=\left(0,0,1\right) $. Tomamos cartas tipo grafo $\displaystyle \textbf{x} \left(x,y\right)=\left(x,y,h\left(x,y\right)\right) $. De esta forma, 
+\[N_{p}=\frac{\left(-h_{x}\left(0,0\right), -h_{y}\left(0,0\right), 1\right)}{\sqrt{1 + h_{x}^{2}+h_{y}^{2}}} .\]
+De esta forma $\displaystyle h_{x}\left(0,0\right)=h_{y}\left(0,0\right)=0 $. Por otro lado, $\displaystyle \vec{v}=\left(\cos \theta, \sin \theta, 0\right) $ con $\displaystyle \theta \in [0,2\pi] $ por lo que 
+\[\Pi_{\vec{v}}\cap S = \left\{\left(t \cos \theta, t \sin \theta, th\left(\cos \theta, \sin \theta \right)\right) \; : \; t \in \left(-\epsilon, \epsilon \right) \right\}  .\]
+\end{proof}
+\begin{definition}[Sección normal]
+A la curva $\displaystyle \Pi_{\vec{v}}\cap S $ se la llama \textbf{sección normal} de $\displaystyle S $ en la dirección $\displaystyle \vec{v} $.
+\end{definition}
+Sea $\displaystyle \alpha\left(s\right) $ una curva p.p.a tal que $\displaystyle \tr\left(\alpha \right)=\left(\Pi_{\vec{v}}\cap S\right)\cap B_{\epsilon }\left(p\right) $ tal que $\displaystyle \alpha\left(0\right)=p $ y $\displaystyle \alpha'\left(0\right)=\vec{v} $.
+\begin{definition}[Curvatura normal]
+Se llama \textbf{curvatura normal} (en la dirección $\displaystyle \vec{v} $) a $\displaystyle \kappa_{n}\left(\vec{v}\right)=\kappa_{\alpha }^{pl}\left(0\right) = \left\langle \alpha''\left(0\right), N \right\rangle  $ (con signo).
+\end{definition}
+\begin{observation}
+Podemos hacer un par de observaciones:
+\begin{itemize}
+\item $\displaystyle \alpha\left(s\right) $ es una curva en el plano $\displaystyle \Pi_{\vec{v}} $. 
+\item $\displaystyle \alpha\left(s\right) $ es una curva plana en $\displaystyle \Pi_{\vec{v}} = \mathcal{L}\left(\hat{t}_{\alpha }, N_{p}\right) $ orientado con $\displaystyle \left\{ \hat{t}_{\alpha }, N_{p}\right\}  $. 
+\item $\displaystyle \alpha  $ verifica que $\displaystyle \alpha'\left(0\right)=\vec{v}=\hat{t}_{\alpha } $ y $\displaystyle \alpha''\left(0\right)=\kappa_{\alpha }^{pl}N $. 
+\item Se cumple que $\displaystyle \kappa_{\alpha }\left(0\right)= \left|\kappa_{\alpha }^{pl}\left(0\right)\right| $.
+\item Ojo! $\displaystyle \kappa_{n}\left(-\vec{v}\right)=\kappa_{n}\left(\vec{v}\right) $.
+\item Si cambio la orientación de $\displaystyle S $, es decir tomamos $\displaystyle \tilde{N} = - N $, entonces $\displaystyle \kappa_{n}^{\tilde{N}}\left(\vec{v}\right)=-\kappa_{n}^{N}\left(\vec{v}\right) $.
+\item $\displaystyle \kappa_{n}\left(\vec{v}\right)=\kappa_{\alpha }^{pl}\left(0\right)=\left\langle \alpha''\left(0\right), N \right\rangle  $. 
+\end{itemize}
+\end{observation}
+\begin{eg}[Plano]
+Las secciones normales de un plano son rectas de forma que $\displaystyle \kappa_{n}\left(\vec{v}\right)\equiv 0 $, $\displaystyle \forall \vec{v} $. Recíprocamente, se puede demostrar que si para todo punto $\displaystyle p  $ y todo vector $\displaystyle \vec{v} $ se tiene que $\displaystyle \kappa_{n}\left(\vec{v}\right)=0 $, entonces $\displaystyle S $ es un plano.
+\end{eg}
+Tenemos la función 
+\[\kappa_{n}: \mathbb{S}\left(T_{p}S\right)\to \R : \vec{v} \to \kappa_{n}\left(\vec{v}\right)=\left\langle \alpha''\left(0\right), N_{p} \right\rangle  .\]
+\begin{definition}[Aplicación de Gauss]
+Se llama \textbf{aplicación de Gauss} de $\displaystyle S $ a 
+\[N : S \to \mathbb{S}^{2} : p \to N\left(p\right)=N_{p} .\]
+\end{definition}
+\begin{eg}
+Se puede demostrar que $\displaystyle N_{p} $ es constante para todo $\displaystyle p \in S $ si sólo si $\displaystyle S $ es un plano. En efecto, si tomamos cartas tipo grafo tenemos que 
+\[N_{p}=\frac{\left(-h_{x}, -h_{y}, 1\right)}{\sqrt{1+h_{x}^{2}+h_{y}^{2}}}=\left(0,0,1\right) .\]
+Necesariamente debe ser que $\displaystyle h_{x}=0 $ y $\displaystyle h_{y}=0 $ que es equivalente a que $\displaystyle h\left(x,y\right)=c_{0} $. 
+\end{eg}
+\begin{observation}
+Podemos hacer algunas observaciones:
+\begin{enumerate}
+\item Si tomo una parametrización $\displaystyle \textbf{x} \left(u,v\right) $ entonces, 
+	\[N\left(u,v\right)= \frac{ \textbf{x} _{u} \times \textbf{x} _{v}}{\| \textbf{x} _{u} \times \textbf{x} _{v}\|} ,\]
+	es $\displaystyle \mathcal{C}^{\infty } $. Se tiene que $\displaystyle N $ es una aplicación diferencial entre dos superficies.
+\item $\displaystyle d _{p}N : T_{p}S \to T_{N_{p}}\mathbb{S}^{2} $ nos dice si vamos en la dirección $\displaystyle \vec{v} $ y miramos a la bóveda celeste (dirección $\displaystyle N $). $\displaystyle - d _{p}N $ nos da el momento de la de la estrella cénit.
+\end{enumerate}
+\end{observation}
+\begin{lema}
+$\displaystyle T_{N_{p}}\mathbb{S}^{2} = T_{p}S $.
+\end{lema}
+\begin{proof}
+Es sencillo ver que 
+\[T_{p}S = \left\langle N\left(p\right) \right\rangle ^{\perp }=T_{N\left(p\right)}\mathbb{S}^{2} .\]
+\end{proof}
+\begin{observation}
+Por tanto $\displaystyle d _{p}N : T_{p}S \to T_{p}S $ es un endomorfismo. 
+\end{observation}
+\begin{definition}[Aplicación Weingarten]
+Se llama \textbf{aplicación de Weingarten} u \textbf{operador forma} a 
+\[\mathcal{W} := - d _{p}N : T _{p}S \to T_{p} S .\]
+\end{definition}
+\begin{observation}
+Podemos hacer algunas observaciones:
+\begin{itemize}
+\item $\displaystyle \mathcal{W}\left(\vec{v}\right)=-d _{p}N\left(\vec{v}\right) $ movimiento bóveda celeste si vamos en dirección $\displaystyle \vec{v} $.
+\item Si $\displaystyle \alpha: \left(-\epsilon , \epsilon \right)\to S $ con $\displaystyle \alpha\left(0\right)=p $ y $\displaystyle \alpha'\left(0\right)=\vec{v} $, tenemos que 
+	\[d _{p}N\left(\vec{v}\right)=\frac{d}{dt}|_{t = 0}N\left(\alpha\left(t\right)\right)= \left(N\circ \alpha \right)\left(0\right) .\]
+	Por tanto, $\displaystyle \mathcal{W}\left(\vec{v}\right)=-\left(N\circ \alpha \right)'\left(0\right) $. 
+\end{itemize}
+\end{observation}
+\begin{prop}
+Se cumple que 
+\[M_{\mathcal{B}_{ \textbf{x} }}\left(\mathcal{W}\right) = \begin{pmatrix} a & b \\ c & d \end{pmatrix} ,\]
+con 
+\[
+\begin{cases}
+-N_{u} = a \textbf{x} _{u} + b \textbf{x} _{v} \\
+-N_{ v} = c \textbf{x} _{u} + d \textbf{x} _{v}
+\end{cases}
+.\]
+\end{prop}
+\begin{proof}
+Ya vimos que $\displaystyle dN_{p}\left( \textbf{x} _{u}\right)=N_{u} $ y $\displaystyle dN_{p}\left( \textbf{x} _{v}\right)=N_{v} $. Como $\displaystyle \mathcal{W}=-dN $ tenemos que  
+\[M_{\mathcal{B}_{ \textbf{x} }}\left(\mathcal{M}\right) = M_{ \mathcal{B}_{ \textbf{x} }}\left(-dN\right)=\begin{pmatrix} a & b \\ c & d \end{pmatrix}.\]
+\end{proof}
+\begin{theorem}
+Si $\displaystyle \vec{v}\in \mathbb{S}\left(T_{p}S\right) $, 
+\[\kappa_{n}\left(\vec{v}\right)=\left\langle \vec{v}, \mathcal{W}\left(\vec{v}\right) \right\rangle =\left\langle \vec{v}, - d _{p}N\left(\vec{v}\right) \right\rangle  .\]
+\end{theorem}
+

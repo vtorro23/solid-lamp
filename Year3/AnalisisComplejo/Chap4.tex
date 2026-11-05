@@ -1,0 +1,84 @@
+\chapter{Series de Laurent y singularidades aisladas}
+\section{Preliminares}
+\begin{definition}[Conjunto simplemente conexo]
+Un \textbf{conjunto simplemente conexo} es un abierto con un número finito de agujeros. Además, su frontera es una curva de clase $\displaystyle \mathcal{C}^{1} $ cerrada con un número finito de agujeros en medio. 
+\end{definition}
+Necesitamos una forma más general de la fórmula de Cauchy para recintos simplemente conexos.  
+\begin{theorem}[Teorema de Green]
+	Sea $\displaystyle \Omega \subset \R^{2} $ un conjunto simplemente conexo, $\displaystyle \partial \Omega  $ una curva cerrada simple, $\displaystyle U_{1}, \ldots, U_{n} $ abiertos simplemente conexos con $\displaystyle \overline{U}_{1}\subset \Omega  $ y $\displaystyle \partial U_{j} $ es una curva cerrada simple $\displaystyle \mathcal{C}^{1} $ a trozos para $\displaystyle j \in \left\{ 1, \ldots, n\right\}  $, y $\displaystyle \overline{U}_{j} \cap \overline{U}_{k} \neq \emptyset $. Sean $\displaystyle P,Q \in \mathcal{C}^{1}\left(\overline{\Omega }\backslash \bigcup_{j = 1}^{n}U_{j}\right) $, entonces
+	\[\int _{\partial \Omega }P \; dx + Q \; dy = \sum^{m}_{j= 1}\int _{\partial U_{j}}P \; dx + Q \; dy = \int _{\Omega \backslash \bigcup_{j = 1}^{n}U_{j}}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right) \; dx \; dy .\]
+\end{theorem}
+
+\begin{theorem}[Teorema de Cauchy para conjuntos simplemente conexos]
+	Sean $\displaystyle \Omega  $, $\displaystyle U_{1} $, \ldots, $\displaystyle U_{m} $ abiertos simplemente conexos con $\displaystyle \overline{U}_{j}\cap \overline{U}_{k} = \emptyset $ para $\displaystyle j \neq k $ y con $\displaystyle \overline{U}_{j}\subset \Omega  $, $\displaystyle \forall j \in \left\{ 1, \ldots, m\right\}  $ y $\displaystyle \partial \Omega  $, $\displaystyle \partial U_{1} $, \ldots, $\displaystyle \partial U_{m} $ curvas cerradas simples $\displaystyle \mathcal{C}^{1} $ a trozos. Entonces, 
+	\[\int _{\partial \Omega }f -\sum^{m}_{j = 1}\int _{\partial U_{j}}f =0 .\]
+\end{theorem}
+\begin{proof}
+Damos una idea de la demostración. Si $\displaystyle f = u + iv $, con $\displaystyle u,v\in \mathcal{C}^{1}\left(W\right) $ con $\displaystyle W \supset \overline{\Omega }\backslash \bigcup_{j = 1}^{m}\overline{U}_{j} $. Además, $\displaystyle \gamma\left(t\right)=x\left(t\right) + iy\left(t\right) $. Expandir la definición de $\displaystyle \int _{\gamma }f  $ da:
+\[\int _{\partial \Omega }f = \int _{\partial \Omega }u \; dx - v \; dy + i \int _{\partial \Omega }v \; dx + u \; dy .\]
+Asímismo tenemos,
+\[\sum^{m}_{j = 1}\int _{\partial U_{j}}f =\sum^{m}_{j = 1}\left(\int _{\partial U_{j}}u \; dx - v \; dy + i\int _{\partial U_{j}}v \; dx + u \; dy\right) .\]
+Las ecuaciones Cauchy-Riemann ganarntizan que
+\[\int _{\Omega \backslash \bigcup_{j = 1}^{m}U_{j}}\left(-\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\right)+i\left(\frac{\partial u}{\partial x}-\frac{\partial v}{\partial y}\right) \; dx \; dy .\]
+Si tomamos $\displaystyle g = \left(-\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\right)+i\left(\frac{\partial u}{\partial x}-\frac{\partial v}{\partial y}\right) $ por el teorema de Green tenemos que 
+\[\int _{\partial \Omega }f - \sum^{m}_{j = 1}\int _{\partial U_{j}}f = \int _{\Omega \backslash \bigcup_{j = 1}^{m}U_{j}}g \; dx \; dy= 0 .\]
+Por tanto, 
+\[\int _{\partial \Omega }f = \sum^{m}_{j=1}\int _{\partial U_{j}}f .\]
+\end{proof}
+\begin{theorem}[Fórmula de Cauchy para simplemente conexos]
+Sean $\displaystyle \Omega, U_{1}, \ldots, U_{m} $ abiertos simplemente conexos satisfaciendo las condiciones del teorema de Cauchy. Sea $\displaystyle f \in \mathcal{H}\left(\overline{\Omega } \backslash \bigcup_{j = 1}^{m}U_{j}\right) $. Luego para cada $\displaystyle z \in \Omega \backslash \bigcup_{j = 1}^{m}\overline{U}_{j} $ se tiene que 
+\[f\left(z\right)=\frac{1}{2\pi i}\int _{\partial \Omega }\frac{f\left(\xi\right)}{\xi - z} \; d\xi - \sum^{m}_{j = 1}\int _{\partial U_{j}}\frac{f\left(\xi\right)}{\xi - z} \; d\xi .\]
+Y además, 
+\[f^{\left(n\right)}\left(z\right)=\frac{n!}{2\pi i}\int _{\partial \Omega }\frac{f\left(\xi\right)}{\left(\xi - z\right)^{n+1}} \; d\xi - \frac{n!}{2\pi i}\sum^{m}_{j = 1}\int _{\partial U_{j}}\frac{f\left(\xi\right)}{\left(\xi-z\right)^{n+1}} \; d\xi .\]
+\end{theorem}
+\begin{proof}
+Existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle D\left(z, \epsilon \right)\subset \Omega \backslash \bigcup_{j = 1}^{m}\overline{U}_{j} $. La función $\displaystyle g\left(\xi\right):=\frac{f\left(\xi\right)}{\xi-z} $ (más generalmente $\displaystyle \frac{f\left(\xi\right)}{\left(\xi-z\right)^{n+1}} $)
+es $\displaystyle g \in \mathcal{H}\left(\overline{\Omega } \backslash \left(\bigcup_{j = 1}^{m}\overline{U}_{j}\cup D\left(z, \epsilon \right)\right)\right) $. Por tanto, 
+\[0 = \int _{\partial \Omega }g -\int _{\partial D\left(z, \epsilon \right)}g -\sum^{m}_{j = 1}\int _{\partial U_{j}}g  .\]
+Terminamos observando que por la fórmula integral de Cauchy se tiene que en $\displaystyle \partial D\left(z, \epsilon \right) $,
+\[\int _{\partial D\left(z, \epsilon \right)}g = f\left(z\right)2\pi i .\]
+Análogamente se tiene la segunda igualdad del teorema usando $\displaystyle \frac{f\left(\xi\right)}{\left(\xi-z\right)^{n+1}} $.
+\end{proof}
+\begin{observation}
+Podemos ver que 
+\[f\left(z\right)=e^{\frac{1}{z}} = \sum^{\infty}_{n = 0}\frac{1}{n}\left(\frac{1}{z}\right)^{n} .\]
+\end{observation}
+\section{Series de Laurent}
+Vamos a obtener representaciones de $\displaystyle f \in \mathcal{H}\left(D\left(z_{0}, r\right)\backslash \left\{ z_{0}\right\} \right) $ con singularidades en $\displaystyle z_{0} $ de la forma 
+\[f\left(z\right)=\sum^{\infty}_{-\infty }a_{n}\left(z-z_{0}\right)^{n} .\]
+\begin{definition}
+Una función $\displaystyle f $ definida en $\displaystyle \hat{C} $ es holomorfa en $\displaystyle +\infty  $ si $\displaystyle g\left(z\right):=f\left(\frac{1}{z}\right) $ es holomorfa en $\displaystyle z = 0 $.
+\end{definition}
+\begin{eg}
+La función $\displaystyle f\left(z\right)=\frac{1}{z} $ es holomorfa en $\displaystyle \infty $ y $\displaystyle g\left(z\right)=e^{\frac{1}{z}} $ es holomorfa en $\displaystyle \infty  $. 
+\end{eg}
+\begin{theorem}[Descomposición de Laurent]
+Sean $\displaystyle 0 \leq \rho < \sigma \leq \infty  $, $\displaystyle f \in \mathcal{H}\left(\Omega \right) $ con 
+\[\Omega = D\left(z_{0}, \sigma \right) \backslash \overline{D}\left(z_{0}, \rho\right) .\]
+Entonces existen funciones 
+\[f_{0} : D\left(z_{0}, \sigma \right)\to \C \quad \text{y} \quad f_{1} : \hat{\C} \backslash \overline{D}\left(z_{0}, \rho \right)\to \C ,\]
+holomorfas tales que 
+\[f\left(z\right)=f_{0}\left(z\right) + f_{1}\left(z\right), \; \forall z \in \Omega  .\]
+Si $\displaystyle f_{1}\left(\infty \right)=0 $ la descripción es única. 
+\end{theorem}
+\begin{proof}
+Demostramos primero la unicidad. Supongamos que 
+\[f\left(z\right)=f_{0}\left(z\right)+f_{1}\left(z\right)=g_{0}\left(z\right)+g_{1}\left(z\right) ,\]
+con $\displaystyle f_{j} $ y $\displaystyle g_{j} $ satisfaciendo las condiciones del teorema con $\displaystyle j \in \left\{ 0,1\right\}  $. Definimos
+\[h\left(z\right)=
+\begin{cases}
+f_{0}\left(z\right)-g_{0}\left(z\right) , \; \text{si } z \in D\left(z_{0}, \rho \right)\\
+g_{1}\left(z\right)-f_{1}\left(z\right), \; \text{si } z\in \hat{\C } \backslash \overline{D}\left(z_{0}, \rho \right)
+\end{cases}
+.\]
+Por construcción tenemos que $\displaystyle h $ está bien definida y es $\displaystyle h : \hat{\C}\to \C $ holomorfa en su dominio. Además, 
+\[h\left(\infty \right)=g_{1}\left(\infty \right)-f_{1}\left(\infty \right)=0 .\]
+Por construcción tiene que ser 
+\[\lim_{z \to \infty }h\left(z\right)=h\left(\infty \right)=0 .\]
+Se sigue pues que $\displaystyle \left|h\left(z\right)\right|\leq 1 $ si $\displaystyle  \left|z \right|> R $ y $\displaystyle f $ es holomorfa en $\displaystyle \C $, por lo que $\displaystyle h $ está acotada en $\displaystyle \left|z\right|\leq \R $. 
+Así, $\displaystyle h $ está acotada y es entera y por el teorema de Liuville tenemos que es constante. Ya que $\displaystyle h\left(\infty \right)=0 $ debe ser que $\displaystyle h \equiv 0 $ por lo que $\displaystyle f_{0}=g_{0} $ y $\displaystyle f_{1}=g_{1} $. \\
+\indent Demostramos ahora la existencia. Fórmula de Cauchy aplicada a $\displaystyle f $ en $\displaystyle \Omega _{r,s}= \left\{ z \; : \; r < \left|z-z_{0}\right|<s\right\}  $ con $\displaystyle \rho < r < s < \sigma  $:
+\[f\left(z\right)=\underbrace{\frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right| = s}\frac{f\left(\xi\right)}{\xi - z} \; d\xi}_{f_{0,r}\left(z\right)} - \underbrace{\frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right|=s}\frac{f\left(\xi\right)}{\xi - z} \; d\xi}_{f_{1,s}\left(z\right)} .\]
+
+\end{proof}
+

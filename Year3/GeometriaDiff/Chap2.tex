@@ -804,9 +804,8 @@ Claramente es orientable:
 Ahora la banda de Möbius. 
 \end{eg}
 \section{Funciones diferenciables y aplicaciones diferenciables}
-Sea $\displaystyle S \subset \R^{3} $ una superficie regular. 
 \begin{definition}[Función diferenciable]
-	Una función $\displaystyle f : S \to \R $ es \textbf{diferenciable} si en cada parametrización $\displaystyle \textbf{x} : U \to S' \subset S $ se tiene que $\displaystyle \tilde{f} = f\circ \textbf{x}  $ es $\displaystyle \mathcal{C}^{\infty } $.
+Sea $\displaystyle S \subset \R^{3} $ una superficie regular. Una función $\displaystyle f : S \to \R $ es \textbf{diferenciable} si en cada parametrización $\displaystyle \textbf{x} : U \to S' \subset S $ se tiene que $\displaystyle \tilde{f} = f\circ \textbf{x}  $ es $\displaystyle \mathcal{C}^{\infty } $.
 \end{definition}
 \begin{observation} Podemos hacer algunas observaciones.
 	\begin{itemize}
@@ -1001,6 +1000,10 @@ De ahora en adelante utilizaremos el abuso de notación $\displaystyle \frac{\pa
 \[d _{p}F\left( \textbf{x} _{u}\right) = \left(F\circ c\right)'\left(0\right)=\frac{d}{dt}|_{t = 0}F\left( \textbf{x} \left(u_{0} + t, v_{0}\right)\right) = \frac{d}{dt}|_{t = 0}F\left(u_{0} + t, v_{0}\right) = \frac{\partial F}{ \partial u}\left(u_{0}, v_{0}\right) ,\]
 con $\displaystyle c\left(t\right)= \textbf{x} \left(u_{0} + t, v_{0}\right) $.
 \end{proof}
+\begin{observation}
+También podríamos haber demostrado este corolario utilizando la expresión matricial de $\displaystyle d _{p}F $.
+\end{observation}
+
 \begin{notation}
 Un abuso de notación que se utiliza a veces es $\displaystyle d _{p}F\left(\frac{\partial }{\partial u}\right)=\frac{\partial F}{\partial u} $.
 \end{notation}
@@ -1013,9 +1016,9 @@ Un abuso de notación que se utiliza a veces es $\displaystyle d _{p}F\left(\fra
 Si $\displaystyle F : S_{1} \to S_{2} $ es difeomorfismo puedo conseguir cartas $\displaystyle \left(u,v\right)\to \left(u,v\right) $.
 \end{lema}
 \begin{proof}
-Tomamos $\displaystyle \textbf{x} \left(u,v\right) $ carta de $\displaystyle S_{1} $. Sea $\displaystyle \textbf{y} =F \circ \textbf{x}  $. Tenemos que 
+	Tomamos $\displaystyle \textbf{x} \left(u,v\right) $ carta de $\displaystyle S_{1} $. Tomando $\displaystyle \tilde{F} = Id $ e $\displaystyle \textbf{y} =F \circ \textbf{x}  $, tenemos que 
 \[ \textbf{y} _{u}=\left(F\circ \textbf{x} \right)_{u} = F_{u}=dF\left( \textbf{x} _{u}\right) \quad \text{e} \quad \textbf{y} _{v} = \left(F\circ \textbf{x} \right)_{v} = F_{v} = dF\left( \textbf{x} _{v}\right) .\]
-Como $\displaystyle dF $ es isomorfismo tenemos que $\displaystyle \left\{ d F\left( \textbf{x} _{u}\right), d F\left( \textbf{x} _{v}\right)\right\}  $ son linealmente independientes por lo que $\displaystyle \ran\left( \textbf{y} _{u}, \textbf{y} _{v}\right)=2 $ por lo que $\displaystyle \textbf{y}  $ es una parametrización regular. Nos queda que $\displaystyle \tilde{F} = Id $. 
+Como $\displaystyle dF $ es isomorfismo tenemos que $\displaystyle \left\{ d F\left( \textbf{x} _{u}\right), d F\left( \textbf{x} _{v}\right)\right\}  $ son linealmente independientes por lo que $\displaystyle \ran\left( \textbf{y} _{u}, \textbf{y} _{v}\right)=2 $. Así, concluimos que $\displaystyle \textbf{y}  $ es una parametrización regular de $\displaystyle S_{2} $.  
 \end{proof}
 \begin{notation}
 	A este truco lo llamamos trasladar una parametrización $\displaystyle \textbf{x}  $ con $\displaystyle \tilde{F} = Id $, donde $\displaystyle S_{1} $ y $\displaystyle S_{2} $ son superficies con los mismos parámetros. 
@@ -1027,11 +1030,12 @@ Una parametrización $\displaystyle \textbf{x} : U \to S $ es equivalente a un d
 	Demostramos ambas implicaciones.
 	\begin{description}
 	\item[($\displaystyle \Rightarrow $)] Interpretamos $\displaystyle U $ como una superficie, es decir, lo identificamos con el conjunto
-\[ \left\{ \left(x,y,0\right)\in \R^{3} \; : \; \left(x,y\right)\in U\right\}  .\]
-Entonces $\displaystyle \textbf{x} : U \to S \subset \R^{3} : \left(u,v\right)\to \left(x\left(u,v\right), y\left(u,v\right), z\left(u,v\right)\right) $ se cambia por $\displaystyle F : U \to S : \left(u,v,0\right)\to \left(x,y,z\right) $. Si $\displaystyle \C_{1}\left(u,v\right)=\left(u,v,0\right) $ es la carta del plano, tenemos que $\displaystyle F\circ \C_{1} = \textbf{x}  $ que es un difeomorfismo. 
+\[ \left\{ \left(x,y,0\right)\in \R^{3} \; : \; \left(x,y\right)\in U\right\} \subset \R^{3} .\]
+Entonces podemos cambiar $\displaystyle \textbf{x} : U \to S \subset \R^{3} : \left(u,v\right)\to \left(x\left(u,v\right), y\left(u,v\right), z\left(u,v\right)\right) $ por $\displaystyle F : U \to S : \left(u,v,0\right)\to \left(x,y,z\right) $. Si $\displaystyle \C_{1}\left(u,v\right)=\left(u,v,0\right) $ es la carta del plano, tenemos que $\displaystyle F\circ \C_{1} = \textbf{x}  $ que es un difeomorfismo. 
 \item[($\displaystyle \Leftarrow $)] Ejercicio para el lector.
 	\end{description}
 \end{proof}
+% poner imagen para ayudar a entender lo que está pasando
 \begin{observation}
 En términos de la demostración anterior, se puede ver que 
 \[d \textbf{x} \left(\vec{e}_{1}\right)= dF\left(\vec{e}_{1}\right) = \frac{d}{dt}|_{t = 0} \textbf{x} \left(u_{0} + t, v_{0}\right)= \textbf{x} _{u} .\]

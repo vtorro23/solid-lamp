@@ -136,6 +136,23 @@ Sea $\displaystyle U \subset\R^{n} $ abierto, $\displaystyle f \in \mathcal{C}^{
 \end{itemize}
 Entonces $\displaystyle \overline{x}\left(t\right)\equiv \overline{x} $ es solución estable del sistema $\displaystyle x ' = f\left(x\right) $. 
 \end{theorem}
+\begin{proof}
+Tomamos $\displaystyle \epsilon > 0 $ tal que $\displaystyle \overline{B}_{\epsilon }\left(\overline{x}\right)\subset U$. Definimos $\displaystyle m : = \min_{\partial B_{\epsilon }\left(\overline{x}\right)}V > 0 $. Por otro lado, como $\displaystyle V $ es continua y $\displaystyle V\left(\overline{x}\right) = 0 $, existe $\displaystyle \delta \in \left(0,\epsilon \right) $ tal que $\displaystyle V < \frac{m}{2} $ en $\displaystyle B_{\delta }\left(\overline{x}\right) $. 
+Probamos ahora que si $\displaystyle x_{0} \in B_{\delta }\left(\overline{x}\right) $ entonces $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) \in B_{\epsilon }\left(\overline{x}\right) $, $\displaystyle \forall t \geq t_{0} $. 
+La cuestión es que como $\displaystyle \nabla \cdot f \leq 0 $ en $\displaystyle B_{\epsilon }\left(\overline{x}\right) $, tenemos que 
+\[\frac{d}{dt}\left(V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)\right)=\nabla V\left(\varphi\left(t; t_{0}, x_{0}\right)\right) \cdot f\left(\varphi\left(t; t_{0}, x_{0}\right)\right) .\]
+Supongamos que $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ se sale de la bola $\displaystyle B_{\epsilon }\left(\overline{x}\right) $. Entonces existe $\displaystyle t_{1} > t_{0} $ tal que para todo $\displaystyle t \in [t_{0}, t_{1}) $,
+\[
+\varphi\left(t; t_{0}, x_{0}\right)\in \partial B_{\epsilon }\left(\overline{x}\right) \quad \text{y} \quad 
+\varphi\left(t; t_{0}, x_{0}\right)\in B_{\epsilon }\left(\overline{x}\right)
+.\]
+En particular tenemos que 
+\[\frac{d}{dt}\left(V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)\right)\leq 0, \; t \in [t_{0}, t_{1}] .\]
+Por tanto, tenemos que 
+\[m \leq V\left(\varphi\left(t_{1}; t_{0}, x_{0}\right)\right)\leq V\left(\varphi\left(t_{0}; t_{0}, x_{0}\right)\right) = V\left(x_{0}\right)<\frac{m }{2} .\]
+Esto es una contradicción. 
+\end{proof}
+
 \begin{theorem}[Teorema de estabilidad asintótica de Lyapunov]
 Sea $\displaystyle U \subset\R^{n} $ abierto, $\displaystyle f \in \mathcal{C}^{1}\left(U, \R^{n}\right) $ y $\displaystyle \overline{x}\in U $ tal que $\displaystyle f\left(\overline{x}\right)=0 $. Entonces, si existe $\displaystyle V\in \mathcal{C}^{1}\left(U, \R\right) $ tal que 
 \begin{itemize}
@@ -145,4 +162,32 @@ Sea $\displaystyle U \subset\R^{n} $ abierto, $\displaystyle f \in \mathcal{C}^{
 \end{itemize}
 Entonces $\displaystyle \overline{x}\left(t\right)\equiv \overline{x} $ es solución asintóticamente estable del sistema $\displaystyle x ' = f\left(x\right) $. 
 \end{theorem}
+\begin{proof}
+Por el teorema anterior sabemos que $\displaystyle \overline{x} $ es estable. Tomamos $\displaystyle \epsilon > 0 $ tal que $\displaystyle \overline{B}_{\epsilon }\left(\overline{x}\right)\subset U $. Por el teroema anterior sabemos que existe $\displaystyle \delta > 0 $ tal que si $\displaystyle x_{0}\in B_{\delta }\left(\overline{x}\right) $, entonces $\displaystyle \varphi\left(t; t_{0}, x_{0}\right)\in B_{\epsilon }\left(\overline{x}\right) $, $\displaystyle \forall t \geq t_{0} $.
+Vamos a probar que si $\displaystyle x_{0}\in B_{\delta }\left(\overline{x}\right) $, entonces $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) \xrightarrow{t \to \infty}\overline{x} $. Como $\displaystyle \varphi\left(t; t_{0}, x_{0}\right)\in B_{\epsilon }\left(\overline{x}\right)\subset U $, sabemos que 
+\[\nabla V\left(\varphi\left(t; t_{0}, x_{0}\right)\right) \cdot f\left(\varphi\left(t; t_{0}, x_{0}\right)\right) < 0 .\]
+Así, tenemos que $\displaystyle V\left(\varphi\left(t; t_{0}, x_{0}\right)\right) $ es estrictamente decreciente en $\displaystyle [t_{0}, \infty) $. 
+Como $\displaystyle V \geq 0 $ tenemos que existe $\displaystyle L \geq 0 $ tal que 
+\[V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)\xrightarrow{t \to \infty }L .\]
+Veamos que $\displaystyle L = 0 $. Supongamos que $\displaystyle L > 0 $, entonces
+\[V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)\in [L, V\left(x_{0}\right)], \; \forall t \geq t_{0} .\]
+Entonces, tomamos $\displaystyle r > 0 $ tal que $\displaystyle V < \frac{L}{2} $ en $\displaystyle B_{r}\left(\overline{x}\right) $ de forma que
+\[\varphi\left(t; t_{0}, x_{0}\right)\in \overline{B}_{\epsilon }\left(\overline{x}\right) \backslash B_{r}\left(\overline{x}\right) .\]
+Definimos $\displaystyle M : = - \max_{\overline{B}_{\epsilon }\left(\overline{x}\right) \backslash B_{r}\left(\overline{x}\right)} \nabla V \cdot f <0 $. Entonces, 
+\[\frac{d}{dt}\left(V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)\right) = \nabla V\left(\varphi\left(t; t_{0}, x_{0}\right)\right) \cdot f\left(\varphi\left(t; t_{0}, x_{0}\right)\right) \leq \max_{\overline{B}_{\epsilon }\left(\overline{x}\right) \backslash B_{r}\left(\overline{x}\right)}\nabla V \cdot f = - M, \; \forall t \geq t_{0}.\]
+De esta forma, 
+\[V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)-V\left(x_{0}\right) \leq M\left(t-t_{0}\right) \Rightarrow V\left(\varphi\left(t; t_{0}, x_{0}\right)\right) \leq V\left(x_{0}\right)-M\left(t-t_{0}\right) .\]
+Tenemos que $\displaystyle V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)\xrightarrow{t \to \infty} 0 $. Supongamos que $\displaystyle \varphi\left(t; t_{0}, x_{0}\right)\not \to \overline{x} $. Entonces existe $\displaystyle \rho > 0 $ y $\displaystyle t_{x} \to \infty $ tal que $\displaystyle \varphi\left(t_{x}; t_{0}, x_{0}\right)\not\in B_{\rho }\left(\overline{x}\right) $. 
+Por tanto, 
+\[\varphi\left(t_{x}; t_{0}, x_{0}\right)\in \overline{B}_{\epsilon }\left(\overline{x}\right)\backslash B_{\rho }\left(\overline{x}\right) .\]
+Existe una subsucesión $\displaystyle t_{x_{j}}\to \infty $ tal que $\displaystyle \varphi\left(t_{x}; t_{0}, x_{0}\right) \to x^{*}\in \overline{B}_{\epsilon }\backslash B_{\rho }\left(\overline{x}\right) $. Por tanto, 
+\[V\left(\varphi\left(t_{x_{j}}; t_{0}, x_{0}\right)\right)\xrightarrow{j \to \infty} V\left(x^{*}\right) > 0 ,\]
+pero antes hemos visto que el límite era 0, por lo que hemos llegado a una contradicción. 
+\end{proof}
+\begin{observation}
+Existe un escenario en el que se puede dar estabilidad no asintótica. Esto sucede si $\displaystyle \nabla V \cdot f \equiv 0 $ en $\displaystyle U $. La razón es que $\displaystyle V\left(\varphi\left(t; t_{0}, x_{0}\right)\right) $ es constante. Tomamos $\displaystyle x \neq \overline{x} $ y supongamos que $\displaystyle V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)\to \overline{x} $. Entonces tenemos que $\displaystyle V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)\to V\left(\overline{x}\right) = 0 $. 
+Por otro lado, 
+\[V\left(\varphi\left(t; t_{0}, x_{0}\right)\right)= V\left(\varphi\left(t_{0}; t_{0}, x_{0}\right)\right) = V\left(x_{0}\right) > 0 .\]
+Así, hemos obtenido una contradicción.
+\end{observation}
 
