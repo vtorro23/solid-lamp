@@ -78,7 +78,50 @@ Por construcción tiene que ser
 Se sigue pues que $\displaystyle \left|h\left(z\right)\right|\leq 1 $ si $\displaystyle  \left|z \right|> R $ y $\displaystyle f $ es holomorfa en $\displaystyle \C $, por lo que $\displaystyle h $ está acotada en $\displaystyle \left|z\right|\leq \R $. 
 Así, $\displaystyle h $ está acotada y es entera y por el teorema de Liuville tenemos que es constante. Ya que $\displaystyle h\left(\infty \right)=0 $ debe ser que $\displaystyle h \equiv 0 $ por lo que $\displaystyle f_{0}=g_{0} $ y $\displaystyle f_{1}=g_{1} $. \\
 \indent Demostramos ahora la existencia. Fórmula de Cauchy aplicada a $\displaystyle f $ en $\displaystyle \Omega _{r,s}= \left\{ z \; : \; r < \left|z-z_{0}\right|<s\right\}  $ con $\displaystyle \rho < r < s < \sigma  $:
-\[f\left(z\right)=\underbrace{\frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right| = s}\frac{f\left(\xi\right)}{\xi - z} \; d\xi}_{f_{0,r}\left(z\right)} - \underbrace{\frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right|=s}\frac{f\left(\xi\right)}{\xi - z} \; d\xi}_{f_{1,s}\left(z\right)} .\]
-
+\[f\left(z\right)=\underbrace{\frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right| = s}\frac{f\left(\xi\right)}{\xi - z} \; d\xi}_{f_{0,s}\left(z\right)} - \underbrace{\frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right|=s}\frac{f\left(\xi\right)}{\xi - z} \; d\xi}_{f_{1,r}\left(z\right)} .\]
+Podemos observar que $\displaystyle f_{0,s} : D\left(z_{0}, s\right)\to \C$ y $\displaystyle f_{1,r} : \hat{\C} \backslash \overline{D}\left(z_{0}, r\right)\to \C $ con $\displaystyle f_{1,r}\left(\infty \right)= 0 $. Por el teorema de derivación bajo el signo de la integral, las funciones $\displaystyle f_{0,s}: D\left(z_{0}, s\right)\to \C $ y $\displaystyle f_{1,r} : \C\backslash \overline{D}\left(z_{0}, r\right)\to \C $ son holomorfas en su dominio.
+Además, por el TCD se puede comprobar que 
+\[\lim_{z \to \infty}f_{1,r}\left(z\right)=0 .\]
+Se sigue que $\displaystyle f_{1,r} $ es continua en el punto $\displaystyle z = \infty $ de $\displaystyle \hat{\C} $. Así, $\displaystyle f_{1,r} $ es holomorfa en $\displaystyle \hat{\C}\backslash\overline{D}\left(z_{0}, r\right) $ por ser holomorfa en $\displaystyle \C\backslash\overline{D}\left(z_{0}, r\right) $ y continua en $\displaystyle \hat{\C} \backslash \overline{D}\left(z_{0}, r\right) $. 
+Se comprueba para la función 
+\[g_{1,r}\left(z\right):=
+\begin{cases}
+f_{1,r}\left(\frac{1}{z}\right), \; \text{si} \; z \neq 0 \\
+0 = f_{1,r}\left(\frac{1}{0}\right)=f_{1,r}\left(\infty\right), \; \text{si} \; z = 0
+\end{cases}
+,\]
+usando los teoremas de Goursat y Morera. Dados $\displaystyle \rho < s < s' < \sigma  $, por el teorema de Cauchy para recintos múltiplemente conexos, $\displaystyle \Omega _{s,s'}=\left\{ w \in \C \; : \; s < \left|w-z_{0}\right|<s'\right\}  $, es
+\[\frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right|= s'}\frac{f\left(\xi\right)}{\xi-z} \; d\xi = \frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right| = s}\frac{f\left(\xi\right)}{\xi-z} \; d\xi ,\]
+por ser la función $\displaystyle \xi \to \frac{f\left(\xi\right)}{\xi - z} $ holomorfa en $\displaystyle \Omega_{s,s'} $. Por tanto, $\displaystyle f_{0,s}\left(z\right)=f_{0,s'}\left(z\right) $, $\displaystyle \forall \left|z-z_{0}\right|<s $. Por un argumento análogo tenemos que $\displaystyle f_{1,r}\left(z\right)=f_{1,r'}\left(z\right) $, $\displaystyle \forall r < \left|z-z_{0}\right| $ donde estén definidas las funciones, siempre que $\displaystyle \rho < r' < r < \sigma  $. Esto permite definir
+\[f_{0}\left(z\right)=f_{0,s}\left(z\right), \; \forall \left|z-z_{0}\right|<s < \sigma \quad \text{y}\quad f_{1}\left(z\right)=f_{1,r}\left(z\right), \; \forall \rho < r < \left|z-z_{0}\right| .\]
+Finalmente, $\displaystyle f_{0}\in \mathcal{H}\left(D\left(z_{0}, \sigma\right)\right) $ puesto que $\displaystyle f_{0,s}\in \mathcal{H}\left(D\left(z_{0}, s\right)\right) $, $\displaystyle \forall s < \sigma  $. Además, $\displaystyle f_{1}\in \mathcal{H}\left(\hat{\C}\backslash\overline{D}\left(z_{0}, \rho\right)\right) $ por el mismo argumento que para $\displaystyle f_{0} $. Además, $\displaystyle f\left(z\right) = f_{0}\left(z\right) + f_{1}\left(z\right) $, $\displaystyle \forall z \in \Omega_{r,s} $. 
+\end{proof}
+\begin{theorem}[Teorema de desarrollo Laurent]
+Sean $\displaystyle 0 \leq \rho < \sigma \leq \infty  $ y $\displaystyle f \in \mathcal{H}\left(D\left(z_{0}, \sigma \right) \backslash \overline{D}\left(z_{0}, \rho\right)\right) $. Luego, 
+\[f\left(z\right)=\sum^{\infty}_{-\infty }a_{n}\left(z-z_{0}\right)^{n}, \; \forall \rho < \left|z-z_{0}\right|<\sigma  ,\]
+converge absoluta y uniformemente $\displaystyle \forall z \in \left\{ w \in \Omega \; : \; r \leq \left|w-z_{0}\right|\leq s\right\}  $ con $\displaystyle \rho < r < s < \sigma  $. Además, 
+\[a_{n} = \frac{1}{2\pi i}\int _{ \left|z-z_{0}\right|=r}\frac{f\left(\xi\right)}{\left(\xi-z_{0}\right)^{n+1}} \; d\xi, \; \forall n \in \N ,\]
+y siguiendo la notación introducida
+\[f_{0}\left(z\right)=\sum^{\infty}_{n = 0}a_{n}\left(z-z_{0}\right)^{n}, \; \forall \left|z-z_{0}\right|<\sigma \quad \text{y} \quad f_{1}\left(z\right)=\sum^{-1}_{-\infty }a_{n}\left(z-z_{0}\right)^{n}, \; \forall \rho < \left|z-z_{0}\right| .\]	
+\end{theorem}
+\begin{proof}
+Para simplificar vamos a suponer que $\displaystyle z_{0}= 0 $. Primero, por el teorema anterior sean $\displaystyle f_{0} $ y $\displaystyle f_{1} $ con las propiedades del teorema anterior tales que $\displaystyle f\left(z\right)=f_{0}\left(z\right)+f_{1}\left(z\right) $. Sabemos que $\displaystyle f_{0}\in \mathcal{H}\left(D\left(0, \sigma \right)\right) $, luego
+\[f_{0}\left(z\right)=\sum^{\infty}_{n = 0}a_{n}z^{n} ,\]
+con las convergencias prometidas. Ahora, ya que $\displaystyle f_{1}\in \mathcal{H}\left(\hat{\C}\backslash \overline{D}\left(0, \rho\right)\right) $ se sigue que 
+\[g_{1}\left(z\right):=
+\begin{cases}
+f_{1}\left(\frac{1}{z}\right), \; z \neq 0 \\
+0, \; z = 0
+\end{cases}
+,\]
+será $\displaystyle g_{1}\in \mathcal{H}\left(D\left(0, \frac{1}{\rho }\right)\right) $. Así, $\displaystyle g_{1}\left(z\right)=\sum^{\infty}_{n = 1}b_{n}z^{n} $ con $\displaystyle b_{0}=0 $ puesto que $\displaystyle g_{1}\left(0\right)=0 $. Luego si ponemos $\displaystyle w = \frac{1}{z} $, será
+\[f_{1}\left(w\right)=\sum^{\infty }_{n = 1}b_{n}w^{-n}, \; \forall \left|w\right|> \rho .\]
+Se pone $\displaystyle a_{n}=b_{-n} $, $\displaystyle \forall n < 0 $ y $\displaystyle n \in \Z $ y tenemos la descomposición con las convergencias prometidas. Finalmente, para el cálculo de coeficientes observamos que 
+\[
+\begin{split}
+	\int _{ \left|z-z_{0}\right|=r}\frac{f\left(z\right)}{\left(z-z_{0}\right)^{n+1}} \; dz = & \int _{ \left|z-z_{0}\right|=r}\frac{1}{\left(z-z_{0}\right)^{n+1}}\sum^{\infty }_{k=-\infty }a_{k}\left(z-z_{0}\right)^{k} \; dz \\
+	= & \sum^{\infty }_{k = - \infty }a_{k}\int _{ \left|z-z_{0}\right|=r}\left(z-z_{0}\right)^{k-n-1} \; dz = \sum^{\infty }_{k = - \infty }a_{k}\delta_{kn}2\pi i =2\pi ia_{n}, \; \forall n \in\Z.
+\end{split}
+\]
 \end{proof}
 

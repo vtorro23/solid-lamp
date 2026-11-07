@@ -1035,40 +1035,42 @@ Entonces podemos cambiar $\displaystyle \textbf{x} : U \to S \subset \R^{3} : \l
 \item[($\displaystyle \Leftarrow $)] Ejercicio para el lector.
 	\end{description}
 \end{proof}
-% poner imagen para ayudar a entender lo que está pasando
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{~/Desktop/Images/GeoDiff13.png}
+\end{center}
 \begin{observation}
 En términos de la demostración anterior, se puede ver que 
 \[d \textbf{x} \left(\vec{e}_{1}\right)= dF\left(\vec{e}_{1}\right) = \frac{d}{dt}|_{t = 0} \textbf{x} \left(u_{0} + t, v_{0}\right)= \textbf{x} _{u} .\]
 Análogamente, $\displaystyle d \textbf{x} \left(\vec{e}_{2}\right)=d F\left(\vec{e}_{2}\right)= \textbf{x} _{v} $. 
 \end{observation}
 \section{Primera forma fundamental}
-Nos vamos a centrar en geometría Riemanniana. 
 \begin{definition}[Primera forma fundamental]
-Se llama \textbf{primera forma fundamental} en $\displaystyle p \in S $ a la aplicación
+Dada una superficie regular $\displaystyle S $, se llama \textbf{primera forma fundamental} en $\displaystyle p \in S $ a la aplicación
 \[I _{p} : T_{p}S \times T_{p}S \to \R : \left(\vec{u}, \vec{v}\right)\to \left\langle \vec{u}, \vec{v} \right\rangle  .\]
 \end{definition}
-\begin{observation}
+\begin{observation} Podemos hacer algunas observaciones:
 \begin{enumerate}
-\item $\displaystyle I_{p} $ es una forma bilineal simétrica definida positiva. Es un producto escalar en $\displaystyle T_{p}S $. 
-\item $\displaystyle I_{p} $ es móvil. 
+\item $\displaystyle I_{p} $ es una forma bilineal simétrica definida positiva. En efecto, es un producto escalar en $\displaystyle T_{p}S $. 
+\item $\displaystyle I_{p} $ es móvil, esto es, depende de $\displaystyle p \in S $.
 \item A veces usamos el abuso de notación $\displaystyle I\left(\vec{u}, \vec{v}\right)=I_{p}\left( \vec{u}, \vec{v}\right) $ con $\displaystyle \vec{u}, \vec{v}\in T_{p}S $. 
 \item Podemos obtener la forma cuadrática $\displaystyle I\left(\vec{u}\right)=I\left(\vec{u}, \vec{u}\right)= \|\vec{u}\|^{2} $. 
 \end{enumerate}
 \end{observation}
-\begin{lema}
-	En la base $\displaystyle \mathcal{B}_{ \textbf{x} }= \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ la matriz
-	\[M_{ \mathcal{B}_{x}}I = \begin{pmatrix} E & F \\ F & G \end{pmatrix} ,\]
-	donde $\displaystyle E = \| \textbf{x} _{u}\|^{2} $, $\displaystyle F = \left\langle \textbf{x} _{u}, \textbf{x} _{v} \right\rangle  $ y $\displaystyle G = \| \textbf{x} _{v}\|^{2} $. 
-\end{lema}
+
 \begin{definition}[Primera forma fundamental de una parametrización]
 	Se llama \textbf{primera forma fundamental de la parametrización} $\displaystyle \textbf{x} = \textbf{x} \left(u,v\right) $ a $\displaystyle I = I_{ \textbf{x} }=\begin{pmatrix} E & F \\ F & G \end{pmatrix} $ con $\displaystyle E = \left\langle  \textbf{x} _{u}, \textbf{x} _{u} \right\rangle $, $\displaystyle F = \left\langle \textbf{x} _{u}, \textbf{x} _{v} \right\rangle  $ y $\displaystyle G = \left\langle \textbf{x} _{u}, \textbf{x} _{v} \right\rangle  $. 
 \end{definition}
-\begin{observation}
-Como $\displaystyle I $ es definida positiva por el criterio de Sylvester se deduce que $\displaystyle E > 0 $ y $\displaystyle EG-F^{2} > 0 $. Se puede observar que 
-\[\cos\left(\widehat{ \textbf{x} _{\varphi}, \textbf{x} _{v}}\right) = \frac{F}{\sqrt{E}\sqrt{G}} ,\]
-así obtenemos el ángulo entre los vectores $\displaystyle \textbf{x} _{\varphi} $ y $\displaystyle \textbf{x} _{v} $. 
+\begin{observation} Podemos hacer algunas observaciones:
+	\begin{enumerate}
+	\item Como $\displaystyle I $ es definida positiva por el criterio de Sylvester se deduce que $\displaystyle E > 0 $ y $\displaystyle EG-F^{2} > 0 $.
+	\item 	En la base $\displaystyle \mathcal{B}_{ \textbf{x} }= \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ la matriz de la primera forma fundamental viene dada por
+	\[M_{ \mathcal{B}_{x}}I = \begin{pmatrix} E & F \\ F & G \end{pmatrix} ,\]
+	donde $\displaystyle E = \| \textbf{x} _{u}\|^{2} $, $\displaystyle F = \left\langle \textbf{x} _{u}, \textbf{x} _{v} \right\rangle  $ y $\displaystyle G = \| \textbf{x} _{v}\|^{2} $.
+\item $\displaystyle I $ es intrínseca, esto es, no depende de las parametrizaciones (planito lo puede ver).
+	\end{enumerate}
 \end{observation}
-\begin{eg}
+
+\begin{eg}[Primera forma fundamental de una superficie de revolución]
 Consideremos la superficie de revolución generada por la curva $\displaystyle \gamma\left(v\right)=\left(r\left(v\right), z\left(v\right)\right) $,
 \[ \textbf{x} \left(\varphi, v\right)=\left(r\left(v\right)\cos\varphi, r\left(v\right)\sin\varphi, z\left(v\right)\right) .\]
 Tenemos que 
@@ -1080,26 +1082,36 @@ Así, la primera forma fundamental es
 \end{eg}
 \begin{eg}
 Si $\displaystyle \textbf{x} \left(u,v\right)=\left(u,v,uv\right) $ tenemos que $\displaystyle \textbf{x} _{u}= \left(1,0,v\right) $ y $\displaystyle \textbf{x} _{v} = \left(0,1,u\right) $, por lo que 
-\[\begin{pmatrix} E & F \\ F & G \end{pmatrix}=\begin{pmatrix} 1 + v^{2} & uv \\ uv & 1 + u^{2} \end{pmatrix} .\]
+\[I = \begin{pmatrix} E & F \\ F & G \end{pmatrix}=\begin{pmatrix} 1 + v^{2} & uv \\ uv & 1 + u^{2} \end{pmatrix} .\]
 \end{eg}
+
 \begin{prop}
 	Si $\displaystyle I = \begin{pmatrix} E & F \\ F & G \end{pmatrix} $, entonces
 	\[\det I = EG-F^{2}=\| \textbf{x} _{u} \times \textbf{x} _{v}\|^{2} .\]
 \end{prop}
 \begin{proof}
-Hacer cuentas. 
+Es sencillo ver que
+\[
+\begin{split}
+	\det I = & EG-F^{2} = \| \textbf{x} _{u}\|^{2} \| \textbf{x} _{v}\|^{2}-\left\langle \textbf{x} _{u}, \textbf{x} _{v} \right\rangle ^{2} \\
+	= &  \| \textbf{x} _{u} \|^{2}\| \textbf{x} _{v}\|^{2}-\| \textbf{x} _{u}\|^{2}\| \textbf{x} _{v}\|^{2}\cos ^{2}\theta \\
+	= & \| \textbf{x} _{u}\|^{2}\| \textbf{x} _{v}\|^{2}\sin ^{2}\theta = \| \textbf{x} _{u} \times \textbf{x} _{v}\|^{2}.
+\end{split}
+\]
 \end{proof}
 \begin{observation}
-Se puede observar que 
+Se puede observar que: 
 \begin{itemize}
 \item El determinante $\displaystyle EG-F^{2} $ es intrínseco (planito lo puede ver).
 \item El valor $\displaystyle \| \textbf{x} _{u} \times \textbf{x} _{v}\| $ es extrínseco (planito no lo puede ver).
+\item $\displaystyle \textbf{x}  $ es regular si y sólo si $\displaystyle \det\left(I\right)\neq 0 $.
 \end{itemize}
-Por otro lado se puede observar que $\displaystyle \textbf{x}  $ es regular si y sólo si $\displaystyle \det\left(I\right)\neq 0 $.
 \end{observation}
+\subsection*{Algunos usos de la primera forma fundamental}
+
 \begin{observation}[Cálculo de la norma de un vector]
 	Dado $\displaystyle \vec{v} = \left(a,b\right)_{\mathcal{B}_{ \textbf{x} }} $ podemos calcular su norma:
-	\[ \|\vec{v}\| = \sqrt{\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a \\ b \end{pmatrix}} .\]
+	\[ \|\vec{v}\| = \sqrt{\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a \\ b \end{pmatrix}} = \sqrt{a^{2}E + 2ab F + b^{2}G} .\]
 \end{observation}
 \begin{eg}
 Con la parametrización del último ejemplo, consideremos $\displaystyle p = \textbf{x} \left(1,0\right) = \left(1,0,0\right) $ de forma que 
@@ -1116,29 +1128,33 @@ A veces se escribe $\displaystyle \vec{v}=\left(a,b\right)_{\mathcal{B}_{ \textb
 	Dada una curva $\displaystyle \gamma\left(t\right)= \textbf{x} \left(u\left(t\right), v\left(t\right)\right) $ con $\displaystyle \tilde{\gamma}\left(t\right)=\left(u\left(t\right), v\left(t\right)\right) $ y $\displaystyle t \in [a,b] $. Tenemos que 
 	\[\ell^{b}_{a}\left(\gamma \right)=\int^{b}_{a} \|\gamma'\left(t\right)\| \; dt  .\]
 Como $\displaystyle \gamma'\left(t\right)=\left(u'\left(t\right), v'\left(t\right)\right)_{\mathcal{B}_{ \textbf{x} }} $,
-\[\ell^{b}_{a}\left(\gamma \right)=\int^{b}_{a} \sqrt{\left(u',v'\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} u' \\ v' \end{pmatrix}} \; dt .\]
+\[\ell^{b}_{a}\left(\gamma \right)=\int^{b}_{a} \sqrt{\left(u',v'\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} u' \\ v' \end{pmatrix}} \; dt = \int^{b}_{a} \sqrt{u'^{2}E + 2u'v'F + v'^{2}G} \; dt .\]
 \end{observation}
 \begin{eg}
-Consideremos la superficie parametrizada por $\displaystyle \textbf{x} \left(\varphi, s\right)=\left(\cos \varphi \cos s, \sin\varphi \cos s, \sin \varphi\right) $ y la curva $\displaystyle \gamma\left(t\right)= \textbf{x} \left(t, \frac{t}{4}\right)=\left(\varphi, s\right) $. Tenemos que $\displaystyle \gamma'\left(t\right)=\left(1, \frac{1}{4}\right)_{\mathcal{B}_{ \textbf{x} }} $. Así, nos queda que
-\[I = \begin{pmatrix} \cos ^{2}s & 0 \\ 0 & \|\gamma'\|^{2} \end{pmatrix} ,\]
+Consideremos la superficie parametrizada por 
+\[\textbf{x} \left(\varphi, s\right)=\left(\cos \varphi \cos s, \sin\varphi \cos s, \sin \varphi\right) \]
+y la curva $\displaystyle \gamma\left(t\right)= \textbf{x} \left(t, \frac{t}{4}\right)=\left(\varphi, s\right) $. Tenemos que $\displaystyle \gamma'\left(t\right)=\left(1, \frac{1}{4}\right)_{\mathcal{B}_{ \textbf{x} }} $. Puesto que $\displaystyle \textbf{x} \left(\varphi, s\right) $ es parametrización de una superficie de revolución,
+\[I = \begin{pmatrix} \cos ^{2}s & 0 \\ 0 & 1 \end{pmatrix} ,\]
 de forma que sustituyendo $\displaystyle s = \frac{t}{4} $, 
 \[\|\gamma'\| = \sqrt{\left(1, \frac{1}{4}\right)\begin{pmatrix}  \cos ^{2}\left(\frac{t}{4}\right) & 0 \\ 0 & 1 \end{pmatrix}\begin{pmatrix} 1 \\ \frac{1}{4} \end{pmatrix}} ,\]
-y concluimos que 
+y concluimos que la longitud de $\displaystyle \gamma  $ será
 \[\ell\left(\gamma \right)=\int^{2\pi }_{0} \sqrt{\cos ^{2}\left(\frac{t}{4}\right) + \frac{1}{16}} \; dt .\]
 % poner dibujo de la curva
 \end{eg}
-\begin{observation}[Ángulos]
-Dado $\displaystyle p = \left(u_{0}, v_{0}\right) $ y $\displaystyle \vec{v}=\left(a,b\right)_{ \mathcal{B}_{ \textbf{x} }} $ y $\displaystyle \vec{w}= \left(c,d\right)_{\mathcal{B}_{ \textbf{x} }} $. Tenemos que 
-\[\cos \theta = \frac{\left\langle \vec{v}, \vec{w} \right\rangle }{\|\vec{v}\|\|\vec{w}\|} = \frac{\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} c \\ d \end{pmatrix}}{\sqrt{\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a \\ b \end{pmatrix} \cdot 
+\begin{observation}[Medición de ángulos]
+Se puede observar que 
+\[\cos\left(\widehat{ \textbf{x} _{u}, \textbf{x} _{v}}\right) = \frac{F}{\sqrt{E}\sqrt{G}} ,\]
+así obtenemos el ángulo entre los vectores $\displaystyle \textbf{x} _{u} $ y $\displaystyle \textbf{x} _{v} $.
+En general, dados $\displaystyle p = \left(u_{0}, v_{0}\right) $, $\displaystyle \vec{v}=\left(a,b\right)_{ \mathcal{B}_{ \textbf{x} }} $ y $\displaystyle \vec{w}= \left(c,d\right)_{\mathcal{B}_{ \textbf{x} }} $ se tiene que 
+\[\cos \left(\widehat{\vec{u}, \vec{v}}\right) = \frac{F}{\sqrt{E}\sqrt{G}} =\frac{\left\langle \vec{v}, \vec{w} \right\rangle }{\|\vec{v}\|\|\vec{w}\|} = \frac{\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} c \\ d \end{pmatrix}}{\sqrt{\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a \\ b \end{pmatrix} \cdot 
 \left(c,d\right)\begin{pmatrix}  E & F \\ F & G \end{pmatrix}\begin{pmatrix} c\\ d \end{pmatrix}}} .\]
 \end{observation}
-\begin{eg}
-	% seguimos con el ejemplo anterior
-Consideremos las curvas $\displaystyle \beta\left(t\right)= \textbf{x} \left(t, \frac{t}{4}\right) $ y $\displaystyle \eta\left(v\right)= \textbf{x} \left(2\pi-v, \frac{v}{4}\right) $. Tenemos que $\displaystyle \beta\left(t\right)=\eta\left(v\right) $ si $\displaystyle t = v = \pi  $ y 
-\[\begin{pmatrix} E & F \\ F & G \end{pmatrix}=\begin{pmatrix} \cos ^{2}\frac{\pi }{4} & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} \frac{1}{2} & 0 \\ 0 & 1 \end{pmatrix} .\]
+\begin{eg}[Ángulo entre dos rectas]
+Continuando con el ejemplo anterior consideremos las curvas $\displaystyle \beta\left(t\right)= \textbf{x} \left(t, \frac{t}{4}\right) $ y $\displaystyle \eta\left(v\right)= \textbf{x} \left(2\pi-v, \frac{v}{4}\right) $. Tenemos que $\displaystyle \beta\left(t\right)=\eta\left(v\right) $ si $\displaystyle t = v = \pi  $ y en este punto
+\[I_{ \textbf{x} \left(\pi , \frac{\pi }{4}\right)}=\begin{pmatrix} E & F \\ F & G \end{pmatrix}=\begin{pmatrix} \cos ^{2}\frac{\pi }{4} & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} \frac{1}{2} & 0 \\ 0 & 1 \end{pmatrix} .\]
 Como $\displaystyle \beta'\left(t\right)=\left(1, \frac{1}{4}\right)_{\mathcal{B}_{ \textbf{x} }} $ y $\displaystyle \eta'\left(t\right)=\left(-1, \frac{1}{4}\right)_{\mathcal{B}_{ \textbf{x} }} $, 
 \[I \left(\beta', \eta'\right) = \left(1, \frac{1}{4}\right)\begin{pmatrix} \frac{1}{2} & 0 \\ 0 & 1 \end{pmatrix}\begin{pmatrix} -1 \\ \frac{1}{4} \end{pmatrix} = -\frac{7}{16} .\]
-Así, como $\displaystyle \|\beta'\|=\|\eta'\| = \frac{3}{4} $, 
+Así, como $\displaystyle \|\beta'\|=\|\eta'\| = \frac{3}{4} $, el ángulo entre estas rectas viene dado por 
 \[\cos \theta = \frac{-\frac{3}{16}}{\frac{3}{4} \cdot \frac{3}{4}}=-\frac{1}{3} .\]
 \end{eg}
 \begin{eg}[Ángulo entre campo de vectores]

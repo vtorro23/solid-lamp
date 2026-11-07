@@ -98,6 +98,88 @@ Ya vimos que $\displaystyle dN_{p}\left( \textbf{x} _{u}\right)=N_{u} $ y $\disp
 \end{proof}
 \begin{theorem}
 Si $\displaystyle \vec{v}\in \mathbb{S}\left(T_{p}S\right) $, 
-\[\kappa_{n}\left(\vec{v}\right)=\left\langle \vec{v}, \mathcal{W}\left(\vec{v}\right) \right\rangle =\left\langle \vec{v}, - d _{p}N\left(\vec{v}\right) \right\rangle  .\]
+\[\kappa_{n}\left(\vec{v}\right)=\left\langle \vec{v}, \mathcal{W}\left(\vec{v}\right) \right\rangle =\left\langle \vec{v}, - d _{p}N\left(\vec{v}\right) \right\rangle = \left\langle \alpha''\left(0\right), N \right\rangle   .\]
 \end{theorem}
+\begin{proof}
+Tenemos que $\displaystyle \kappa_{n}\left(\vec{v}\right)=\kappa_{\alpha }\left(0\right)=\left\langle \alpha''\left(0\right), N_{p} \right\rangle  $. Recordamos que
+\[N : S \to \mathbb{S}^{2} \quad \text{y} \quad \mathcal{W} = - dN : T_{p}S \to T_{N\left(p\right)}\mathbb{S}^{2} = T_{p}N .\]
+En efecto, 
+\[\left\langle \vec{v}, -dN\left(\vec{v}\right) \right\rangle = \left\langle \vec{v}, \mathcal{W}\left(\vec{v}\right) \right\rangle = I\left(\vec{v}, \mathcal{W}\left(\vec{v}\right)\right) .\]
+Tenemos que $\displaystyle \kappa_{n}\left(\vec{v}\right)=\left\langle \alpha''\left(0\right), N\left(p\right) \right\rangle  $ y de $\displaystyle \left\langle \alpha'\left(s\right), N\left(\alpha\left(s\right)\right) \right\rangle = 0 $ se sigue que, derivando, 
+\[\left\langle \alpha'', N\circ \alpha \right\rangle + \left\langle \alpha', \left(N\circ \alpha \right)' \right\rangle \equiv 0 .\]
+De aquí se sigue que $\displaystyle \left\langle \alpha'', N \right\rangle =-\left\langle \alpha', \left(N\circ \alpha \right)' \right\rangle  $ por lo que en $\displaystyle s=0  $,
+\[\left\langle \alpha''\left(0\right), N\left(\alpha\left(0\right)\right) \right\rangle =-\left\langle \alpha'\left(0\right), \left(N\circ \alpha \right)'\left(0\right) \right\rangle =\left\langle \alpha''\left(0\right), N\left(p\right) \right\rangle =\left\langle \vec{v}, -dN\left(\vec{v}\right) \right\rangle =\left\langle \vec{v}, \mathcal{W}\left(\vec{v}\right) \right\rangle  .\]
+\end{proof}
+\begin{definition}
+Extendemos la definición $\displaystyle \kappa_{n}\left(\vec{v}\right):=\left\langle \vec{v}-dN\left(\vec{v}\right) \right\rangle  $, $\displaystyle \forall \vec{v}\in T_{p}S $.
+\end{definition}
+\begin{observation}
+Es sencillo ver que 
+\[\kappa_{n}\left(\lambda \vec{v}\right)=\lambda^{2}\left\langle \vec{v}-dN\left(\vec{v}\right) \right\rangle  .\]
+Así, $\displaystyle \kappa_{n}\left(\vec{w}\right)=\|\vec{w}\|^{2}\kappa_{n}\left(\frac{\vec{w}}{\|\vec{w}\|}\right) $. 
+\end{observation}
 
+\begin{prop}
+Si $\displaystyle \alpha\left(t\right) $ es una curva regular $\displaystyle \alpha\left(0\right)=p $ y $\displaystyle \alpha'\left(0\right)=\vec{w} $. Entonces, 
+\[\kappa_{n}\left(\vec{w}\right) = \left\langle \alpha''\left(0\right), N_{p} \right\rangle =\left\langle \vec{w}-dN\left(\vec{w}\right) \right\rangle  .\]
+\end{prop}
+\begin{proof}
+\[\kappa_{n}\left(\vec{w}\right):=\left\langle \vec{w}, -dN\left(\vec{w}\right) \right\rangle =\left\langle \alpha'\left(0\right), -\left(N\circ \alpha \right)'\left(0\right) \right\rangle =\left\langle \alpha''\left(0\right), N\left(\alpha\left(0\right)\right) \right\rangle =\left\langle \alpha''\left(0\right), N\left(p\right) \right\rangle  .\]
+Hemos usado en la penúltima igualdad que $\displaystyle \left\langle \alpha', N\circ \alpha  \right\rangle \equiv 0 $.
+\end{proof}
+\section{Teorema de Meusnier y segunda forma fundamental}
+\begin{theorem}[Teorema de Meusnier]
+	Sea $\displaystyle p \in S $, $\displaystyle \vec{v}\in . \mathbb{S}\left(T_{p}S\right) $ y $\displaystyle \Pi = p + \mathcal{L}\left(\vec{v}, \vec{w}\right) $ tal que $\displaystyle \left\{ \vec{v}, \vec{w}\right\}  $ son ortonormales y $\displaystyle \theta = L\left(N_{p}, \vec{w}\right) $. Sección $\displaystyle \Pi \cap S $ es una curva en un entorno de $\displaystyle p $, $\displaystyle \beta\left(s\right) $ p.p.a de forma que $\displaystyle \beta \left(-\epsilon , \epsilon \right)\to S $ con $\displaystyle \beta\left(0\right)=p $ y $\displaystyle \beta'\left(0\right)=\vec{v} $.
+	% donde \alpha es la sección normal
+	Entonces
+	\[\kappa_{\beta }\left(0\right)=\frac{\kappa_{\alpha }\left(0\right)}{\cos \theta} = \frac{\kappa_{n}\left(\vec{v}\right)}{\cos \theta } .\]	
+\end{theorem}
+\begin{proof}
+Tenemos que $\displaystyle \beta''\left(0\right)=\kappa_{\beta }^{es p}\hat{n}_{\beta } $ con $\displaystyle \hat{n}_{\beta }=\pm \vec{w} $ y $\displaystyle \beta''\left(0\right)=\kappa_{\beta }^{pl}\vec{w} $.
+Cogemos $\displaystyle \Pi $ orientado con la base ortonormal $\displaystyle \left\{ \vec{v}, \vec{w}\right\}  $. Además, $\displaystyle \kappa_{\beta }\left(0\right)=\left\langle \beta''\left(0\right), \vec{w} \right\rangle  $. Consideramos la base $\displaystyle \left\{ \vec{v}, N, \vec{u} = \vec{v} \times N\right\}  $ con $\displaystyle \vec{w} = \cos \theta N + \sin \theta \vec{u} $. Así, 
+\[\kappa_{\beta }\left(0\right)=\left\langle \beta''\left(0\right), \vec{w} \right\rangle =\left\langle \beta''\left(0\right), \cos N + \sin \theta \vec{u} \right\rangle  .\]
+% esta es la demostración de verdad
+\[\kappa_{n}\left(\vec{v}\right)= \left\langle \beta''\left(0\right), N \right\rangle =\left\langle \kappa_{\beta}\left(0\right)\vec{w}, N \right\rangle =\kappa_{\beta }\left(0\right)\cos \theta .\]
+\end{proof}
+
+\begin{observation}
+Si $\displaystyle \theta = 0 $, sección normal $\displaystyle \alpha\left(s\right) $. 
+\end{observation}
+Se puede observar que hasta $\displaystyle \theta = \frac{\pi }{2} $ las curvas son regulares. 
+\begin{colorary}
+De todas las curvas $\displaystyle \kappa_{\beta }\left(0\right) $, la de menor curvatura (en valor absoluto) es $\displaystyle \kappa_{\alpha }\left(0\right)=\kappa_{n}\left(\vec{v}\right) $. 
+\end{colorary}
+\begin{definition}[Segunda forma fundamental]
+Sea $\displaystyle p \in S $. Llamamos \textbf{segunda forma fundamental} a 
+\[ II_{p} : T_{p}S \times T_{p}S \to \R : \left(\vec{v}, \vec{w}\right)\to \left\langle \vec{v}, -dN\left(\vec{w}\right) \right\rangle  .\]
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+\item Es sencillo ver que 
+	\[II\left(\vec{v}, \vec{w}\right)= II_{p}\left(\vec{v}, \vec{w}\right)=\left\langle \vec{v}, \mathcal{W}\left(\vec{w}\right) \right\rangle  .\]
+\item $\displaystyle II\left(\vec{v}, \vec{w}\right) $ es una forma bilineal.
+\item Varía con $\displaystyle p \in S $.
+\end{enumerate}
+\end{observation}
+\begin{prop}
+$\displaystyle II\left(\vec{v}, \vec{w}\right) $ es simétrica y además, 
+\[M_{\mathcal{B}_{ \textbf{x} }}\left(II\right)=\begin{pmatrix} e & f \\ f & g \end{pmatrix} ,\]
+con 
+\[
+\begin{cases}
+e = \left\langle \textbf{x} _{uu}, N \right\rangle =-\left\langle \textbf{x} _{u}, N_{u} \right\rangle \\
+f = \left\langle \textbf{x} _{uv}, N \right\rangle =-\left\langle \textbf{x} _{u}, N_{v} \right\rangle =-\left\langle \textbf{x} _{v}, N_{u} \right\rangle  \\
+g = \left\langle \textbf{x} _{vv}, N \right\rangle =-\left\langle \textbf{x} _{v}, N_{v} \right\rangle 
+\end{cases}
+.\]
+\end{prop}
+\begin{proof}
+Tenemos que 
+\[M_{ \mathcal{B}_{ \textbf{x} }}II = \begin{pmatrix} II\left( \textbf{x} _{u}, \textbf{x} _{u}\right) & II\left( \textbf{x} _{u}, \textbf{x} _{v}\right) \\
+II\left( \textbf{x} _{v}, \textbf{x} _{u}\right) & II\left( \textbf{x} _{v}, \textbf{x} _{v}\right)\end{pmatrix} .\]
+Tenemos que 
+\[II\left( \textbf{x} _{u}, \textbf{x} _{u}\right)=\left\langle \textbf{x} _{u}, -N\left( \textbf{x} _{u}\right) \right\rangle  = \left\langle \textbf{x} _{u}, -N_{u} \right\rangle = \left\langle \textbf{x} _{uu}, N \right\rangle  ,\]
+puesto que 
+\[\left\langle \textbf{x} _{u}, N \right\rangle \equiv 0 \Rightarrow \frac{d}{du}\left(\left\langle \textbf{x} _{u}, N \right\rangle \right)=\left\langle \textbf{x} _{uu}, N \right\rangle + \left\langle \textbf{x} _{u}, N_{u} \right\rangle \equiv 0.\]
+\end{proof}
+% observación que no me ha dado tiempo a copiar y está en las fotos

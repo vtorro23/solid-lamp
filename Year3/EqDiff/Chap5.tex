@@ -1,11 +1,11 @@
 \chapter{Estabilidad de sistemas no lineales mediante linealización}
-Asumimos $\displaystyle f\left(t,0\right)=0 $. Si $\displaystyle f \in \mathcal{C}^{1} $ tenemos que 
+Vamos a estudiar la estabilidad de la solución trivial en un sistema $\displaystyle x' = f\left(t,x\right) $ con $\displaystyle f\left(t,0\right)=0 $. Si $\displaystyle f \in \mathcal{C}^{1} $ tenemos que 
 \[f\left(t,x\right)=f\left(t,0\right) + Df\left(t,0\right)x + H\left(t,x\right) .\]
-Tenemos que por la definición de la matriz diferencial
-\[ \frac{ \left|Hx\right|}{ \left|x\right|} \xrightarrow{ \left|x\right|\to 0}0 .\]
+donde $\displaystyle H $ es la matriz fundamental que también es $\displaystyle \mathcal{C}^{1} $ y por definición cumple que para cada $\displaystyle t $
+\[ \frac{ \left|H\left(t,x\right)\right|}{ \left|x\right|} \xrightarrow{ \left|x\right|\to 0}0 .\]
 Si denotamos $\displaystyle A\left(t\right)=Df\left(t,0\right) $, podemos escribir
 \[x' = A\left(t\right)x + H\left(t,x\right) .\]
-Como $\displaystyle H $ es pequeña, realmente nos va a interesar el sistema $\displaystyle y' = A\left(t\right)y $. 
+Como $\displaystyle H $ es pequeña, realmente nos va a interesar el sistema $\displaystyle y' = A\left(t\right)y $ para comparar la estabilidad de sus soluciones con las del sistema no lineal original.
 \begin{notation}
 Decimos que $\displaystyle H\left(t,x\right)=o\left( \left|x\right|\right) $ en $\displaystyle t \in I $ si para cada $\displaystyle L > 0 $ existe $\displaystyle R > 0 $ tal que si $\displaystyle \left|x\right| < R $ entonces $\displaystyle \left|H\left(t,x\right)\right|< L \left|x\right| $ para todo $\displaystyle t \in I $. 
 \end{notation}
@@ -29,22 +29,22 @@ Ahora, por la fórmula de variación de constantes tenemos que,
 Entonces, 
 \[
 \begin{split}
-	\|\varphi\left(t; t_{0}, x_{0}\right)\| \leq & \|e^{A\left(t-t_{0}\right)}\| \|x_{0}\| + \int^{t}_{t_{0}} \left\|e^{A\left(t-s\right)}\right\| \left\|H\left(s, \varphi\left(s; t_{0}, x_{0}\right)\right)\right\| \; d s \\
-	\leq & Ke^{-\gamma\left(t-t_{0}\right)}\|x_{0}\| + K\int^{t}_{t_{0}} e^{-\gamma \left(t-s\right)} \|H\left(s, \varphi\left(s; t_{0}, x_{0}\right)\right)\| \; d s .
+	|\varphi\left(t; t_{0}, x_{0}\right)| \leq & \|e^{A\left(t-t_{0}\right)}\| |x_{0}| + \int^{t}_{t_{0}} \left\|e^{A\left(t-s\right)}\right\| |H\left(s, \varphi\left(s; t_{0}, x_{0}\right)\right)| \; d s \\
+	\leq & Ke^{-\gamma\left(t-t_{0}\right)}|x_{0}| + K\int^{t}_{t_{0}} e^{-\gamma \left(t-s\right)} |H\left(s, \varphi\left(s; t_{0}, x_{0}\right)\right)| \; d s .
 \end{split}
 \]
-Elegimos $\displaystyle L \in \left(0, \frac{\gamma }{K}\right) $, por hipótesis tenemos que existe $\displaystyle R > 0  $ tal que si $\displaystyle \|x\|<R $ entonces $\displaystyle \|H\left(t,x\right)\| < L\|x\| $. Tomamos $\displaystyle \|x_{0}\| <\frac{R}{2K+1}=:\rho $. Vamos a probar que $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)\| \leq R $ en todo el intervalo $\displaystyle [t_{0}, \beta_{+ }) $. Supongamos que no es cierto, es decir, podemos tomar
-\[t_{1} = \inf \left\{ t \in \left(t_{0}, \beta_{+ } \right)\; : \; \|\varphi\left(t; t_{0}, x_{0}\right)\| > R\right\}  .\]
-Entonces, tenemos que $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)\| \leq R $ en $\displaystyle \left[t_{0}, t_{1}\right]  $. Por tanto, 
-\[\|\varphi\left(t; t_{0}, x_{0}\right)\| \leq Ke^{-\gamma \left(t-t_{0}\right)}\|x_{0}\| + K\int^{t}_{t_{0}} e^{-\gamma \left(t-s\right)}L \|\varphi\left(s; t_{0}, x_{0}\right)\| \; d s, \; \forall t \in \left[t_{0}, t_{1}\right]  .\]
+Elegimos $\displaystyle L \in \left(0, \frac{\gamma }{K}\right) $, por hipótesis tenemos que existe $\displaystyle R > 0  $ tal que si $\displaystyle |x|<R $ entonces $\displaystyle |H\left(t,x\right)| < L|x| $. Tomamos $\displaystyle |x_{0}| <\frac{R}{2K+1}=:\rho $. Vamos a probar que $\displaystyle |\varphi\left(t; t_{0}, x_{0}\right)| \leq R $ en todo el intervalo $\displaystyle [t_{0}, \beta_{+ }) $. Supongamos que no es cierto, es decir, podemos tomar
+\[t_{1} = \inf \left\{ t \in \left(t_{0}, \beta_{+ } \right)\; : \; |\varphi\left(t; t_{0}, x_{0}\right)| > R\right\}  .\]
+Entonces, tenemos que $\displaystyle |\varphi\left(t; t_{0}, x_{0}\right)| \leq R $ en $\displaystyle \left[t_{0}, t_{1}\right]  $. Por tanto, 
+\[|\varphi\left(t; t_{0}, x_{0}\right)| \leq Ke^{-\gamma \left(t-t_{0}\right)}|x_{0}| + K\int^{t}_{t_{0}} e^{-\gamma \left(t-s\right)}L |\varphi\left(s; t_{0}, x_{0}\right)| \; d s, \; \forall t \in \left[t_{0}, t_{1}\right]  .\]
 Si multiplicamos a ambos lados por $\displaystyle e^{\gamma t} $, 
-\[ e^{\gamma t}\|\varphi\left(t; t_{0}, x_{0}\right)\| \leq Ke^{\gamma t_{0}} \|x_{0}\| + KL\int^{t}_{t_{0}} e^{\gamma s}\|\varphi\left(s; t_{0}, x_{0}\right)\| \; d s  .\]
+\[ e^{\gamma t}|\varphi\left(t; t_{0}, x_{0}\right)| \leq Ke^{\gamma t_{0}} |x_{0}| + KL\int^{t}_{t_{0}} e^{\gamma s}|\varphi\left(s; t_{0}, x_{0}\right)| \; d s  .\]
 Aplicando Grönwall, 
-\[e^{\gamma t}\|\varphi\left(t; t_{0}, x_{0}\right)\| \leq Ke^{\gamma t_{0}}\|x_{0}\| e^{KL\left(t-t_{0}\right)} \Rightarrow \|\varphi\left(t; t_{0}, x_{0}\right)\| \leq K \|x_{0}\| e^{KL\left(t-t_{0}\right)}e^{-\gamma\left(t-t_{0}\right)} .\]
+\[e^{\gamma t}|\varphi\left(t; t_{0}, x_{0}\right)| \leq Ke^{\gamma t_{0}}|x_{0}| e^{KL\left(t-t_{0}\right)} \Rightarrow |\varphi\left(t; t_{0}, x_{0}\right)| \leq K |x_{0}| e^{KL\left(t-t_{0}\right)}e^{-\gamma\left(t-t_{0}\right)} .\]
 En particular, si $\displaystyle t = t_{1} $ tenemos que 
-\[\|\varphi\left(t; t_{0}, x_{0}\right)\| \leq K\|x_{0}\| < \frac{K}{2K+1}R \leq R .\]
+\[|\varphi\left(t; t_{0}, x_{0}\right)| \leq K|x_{0}| < \frac{K}{2K+1}R < R .\]
 Esto es una contradicción. Así, debe ser que 
-\[\|\varphi\left(t; t_{0}, x_{0}\right)\| \leq K\|x_{0}\|e^{-\gamma\left(t-t_{0}\right)}, \; \forall t \in [t_{0}, \beta_{+}) .\]
+\[|\varphi\left(t; t_{0}, x_{0}\right)| \leq K|x_{0}|e^{-\gamma\left(t-t_{0}\right)}, \; \forall t \in [t_{0}, \beta_{+}) .\]
 Por el resultado de fuga de compactos debe ser que $\displaystyle \beta_{+ }= T $. 
 \end{proof}
 \begin{colorary}

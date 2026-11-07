@@ -1,0 +1,79 @@
+\chapter{Conceptos básicos}
+\begin{definition}[Sistema autónomo]
+Un \textbf{sistema autónomo} es un sistema de ecuaciones diferenciales de la forma $\displaystyle x' = f\left(x\right) $ donde $\displaystyle f : \Omega \subset \R^{n}\to \R^{n} $.
+\end{definition}
+\begin{observation}
+Cualquier sistema no autónomo se puede transformar en uno autónomo. En efecto, dado $\displaystyle x' = f\left(t,x\right) $, cogiendo $\displaystyle y\left(t\right)=\left(x\left(t\right), t\right) $ tenemos que 
+\[y'\left(t\right)=\begin{pmatrix} f\left(t,x\right) \\ 1 \end{pmatrix}=\begin{pmatrix} f\left(y\right) \\ 1 \end{pmatrix} = : g\left(y\right) .\]
+\end{observation}
+\begin{notation}
+En todo lo que sigue para esta parte, si no se dice lo contrario asumiremos que $\displaystyle f\in \mathcal{C}^{1}\left(\Omega , \R^{n}\right) $. 
+\end{notation}
+\begin{observation}
+Es sencillo comprobar que $\displaystyle y: \left(\beta_{-}, \beta_{+ }\right)\to \R^{n} $ es solución del sistema autónomo, entonces $\displaystyle z\left(t\right)=y\left(t + c\right) $ es solución para todo $\displaystyle c \in \R $. En efecto, 
+\[z'\left(t\right)=y'\left(t + c\right)=f\left(y\left(t + c\right)\right) = f\left(z\left(t\right)\right) .\]
+Además, $\displaystyle z : \left(\beta_{-}-c, \beta_{+}-c\right)\to \R^{n} $. 
+\end{observation}
+\begin{prop}
+El flujo de un sistema autónomo cumple que $\displaystyle \varphi\left(t; t_{0}, x_{0}\right)=\varphi\left(t-t_{0}; 0, x_{0}\right) $. 
+\end{prop}
+\begin{proof}
+Hay que utilizar el teorema de existencia y unicidad junto con la observación. 
+\end{proof}
+\begin{observation}
+Una conclusión que se puede sacar de la conclusión anterior es que en sistemas autónomos no tiene importancia $\displaystyle t_{0} $. Por tanto, siempre vamos a asumir $\displaystyle t_{0}=0 $, que nos permite escribir $\displaystyle \varphi\left(t; x_{0}\right) = \varphi\left(t; 0, x_{0}\right) $.
+\end{observation}
+\chapter{Órbitas y diagramas de fase}
+\begin{definition}[Punto de equilibrio]
+Diremos que $\displaystyle x^{*}\in \Omega  $ es un \textbf{punto de equilibrio} del sitema autónomo $\displaystyle x' = f\left(x\right) $ si $\displaystyle f\left(x^{*}\right)=0 $.
+\end{definition}
+\begin{observation}
+Es sencillo ver que $\displaystyle \overline{x}\left(t\right)\equiv x^{*} $ es solución de $\displaystyle x' =f\left(x\right) $ si y sólo si $\displaystyle x^{*} $ es punto de equilibrio. Por tanto tenemos que $\displaystyle \varphi\left(t; x^{*}\right)=x^{*} $. Además, si $\displaystyle x_{0} $ no es punto de equilibrio, podemos asegurar que $\displaystyle \varphi\left(t; x_{0}\right) $ nunca tendrá el valor de un punto de equilibrio.
+\end{observation}
+\begin{definition}[Órbita o Trayectoria]
+Dado un sistema autónomo $\displaystyle x ' = f\left(x\right) $:
+\begin{itemize}
+\item Llamamos \textbf{semiórbita positiva} de una solución $\displaystyle y\left(t\right) $ del sistema a 
+	\[\gamma^{+ }\left(y\right)= \left\{ y\left(t\right)\; : \; t \in [0, \beta_{+})\right\}  .\]
+\item Llamamos \textbf{semiórbita negativa} de una solución $\displaystyle y\left(t\right) $ del sistema a
+	\[\gamma^{-}\left(y\right) = \left\{ y\left(t\right) \; : \; t \in (\beta_{-}, 0]\right\}  .\]
+\item Llamamos \textbf{órbita} de una solución $\displaystyle y\left(t\right) $ del sistema a 
+	\[\gamma\left(y\right)=\gamma^{+}\left(y\right)\cup \gamma^{-}\left(y\right) .\]
+\end{itemize}
+\end{definition}
+\begin{observation}[Diferencia entre la órbita y la gráfica]
+	La órbita de una solución es un subconjunto de $\displaystyle \R^{n} $. Por otro lado, la gráfica de una solución es el conjunto 
+	\[\left\{ \left(t,y\left(t\right)\right)\; : \; t \in \left(\beta_{-}, \beta_{+ }\right)\right\} \subset \R^{n+1} .\]
+\end{observation}
+\begin{observation}
+Dadas dos soluciones tales que $\displaystyle y\left(t\right)=z\left(t + c\right) $, entonces $\displaystyle \gamma\left(y\right)=\gamma\left(z\right) $. No podemos afirmar lo mismo con las semiórbitas puesto que estamos desplazando el 0. 
+\end{observation}
+\begin{definition}[Diagrama de fases]
+Dado un sistema autónomo, el \textbf{diagrama de fases} es el conjunto de todas sus órbitas. 
+\end{definition}
+\begin{lema}
+Si tenemos dos soluciones de un sistema autónomo tales que $\displaystyle \gamma\left(y\right)\cap \gamma\left(z\right)\neq \emptyset $, entonces $\displaystyle \gamma\left(y\right)=\gamma\left(z\right) $ y además existe $\displaystyle c \in \R $ tal que $\displaystyle y\left(t\right)=z\left(t + c\right) $. 
+\end{lema}
+\begin{proof}
+Si $\displaystyle \gamma\left(y\right)\cap \gamma\left(z\right)\neq \emptyset $, existe $\displaystyle x_{0}\in \gamma\left(y\right)\cap \gamma\left(z\right) $. Así, existen $\displaystyle t_{1}, t_{2}\in \R $ tales que $\displaystyle y\left(t_{1}\right)=z\left(t_{2}\right)=x_{0} $. Así, tenemos que $\displaystyle y\left(t\right)=\varphi\left(t; t_{1}, x_{0}\right) $ y $\displaystyle z\left(t\right)=\varphi\left(t; t_{2}, x_{0}\right) $, por lo que 
+\[y\left(t\right)=\varphi\left(t-t_{1}; x_{0}\right) \quad \text{y} \quad z\left(t\right)=\varphi\left(t-t_{2}; x_{0}\right) .\]
+Nos quea que 
+\[y\left(t\right)=\varphi\left(t-t_{1}; x_{0}\right)=\varphi\left(t-t_{1}+t_{2}-t_{2}; x_{0}\right)=z\left(t-t_{1}+t_{2}\right) .\]
+Por la observación anterior tenemos que $\displaystyle \gamma\left(y\right)=\gamma\left(z\right) $. 
+\end{proof}
+\begin{observation}
+Como $\displaystyle f : \Omega \to \R^{n} $, cualquier solución del sistema $\displaystyle x' = f\left(x\right) $ toma valores sólamente en $\displaystyle \Omega  $. En particular, $\displaystyle \gamma\left(y\right)\subset \Omega  $ para cada solución $\displaystyle y\left(t\right) $ del sistea. 
+\end{observation}
+\begin{colorary}
+Para todo $\displaystyle x_{0}\in \Omega  $, existe una única órbita que contiene a ese punto.
+\end{colorary}
+\begin{proof}
+La unicidad es consecuencia inmediata del lema anterior. La existencia se deduce de que $\displaystyle x_{0}\in \gamma\left(\varphi\left(t; x_{0}\right)\right) $. 
+\end{proof}
+\begin{notation}
+Por el corolario anterior podemos denotar por $\displaystyle \gamma_{x_{0}} $ a la única órbita que contiene a $\displaystyle x_{0}\in \Omega  $. 
+\end{notation}
+\begin{observation}
+	Si $\displaystyle x_{0} $ es un punto de equilibrio, tendremos que $\displaystyle \gamma_{x_{0}} = \left\{ x_{0}\right\}  $. En caso contrario, $\displaystyle \gamma_{x_{0}} $ no puede incluir ningún punto de equilibrio. Además, en este caso tendríamos que $\displaystyle f\left(x\right)\neq 0 $, $\displaystyle \forall x \in \gamma_{x_{0}} $. 
+\end{observation}
+

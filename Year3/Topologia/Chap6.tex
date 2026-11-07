@@ -168,6 +168,25 @@ Se puede ver que $\displaystyle \left(\R^{n}, \mathcal{T}_{u}\right) $ es localm
 	Todo espacio $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ es localmente compacto puesto que $\displaystyle \left\{ x\right\}  $ es una base de entornos compactos $\displaystyle \forall x \in X $.
 \end{eg}
 \begin{eg}
-Se puede ver que $\displaystyle \Q $ como subespacio de $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ no es localmente compacto. 
+Se puede ver que $\displaystyle \Q $ como subespacio de $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ no es localmente compacto. En efecto, consideremos $\displaystyle 0 \in \Q $. Si hay un entorno compacto $\displaystyle V^{0} $ de $\displaystyle 0 $, podemos encontrar $\displaystyle \epsilon > 0 $ irracional tal que $\displaystyle \left(-\epsilon, \epsilon \right)\cap \Q \subset V^{0} $. Pero, por ser $\displaystyle \epsilon > 0 $ irracional tenemos que 
+\[\left(-\epsilon, \epsilon \right)\cap \Q = \left[-\epsilon, \epsilon \right] \cap \Q ,\]
+que es un cerrado en $\displaystyle V^{0} $. Por ser $\displaystyle V^{0} $ compacto tenemos que $\displaystyle \left[-\epsilon, \epsilon \right] \cap \Q $ es compacto que es una contradicción puesto que contiene sucesiones sin puntos de acumulación en $\displaystyle \Q $. 
 \end{eg}
+\begin{eg}
+	Consideremos $\displaystyle Z = B\left(0,1\right)\cup \left\{ p\right\} \in \R^{n} $ en $\displaystyle \left(\R^{n}, \mathcal{T}_{u}\right) $ y $\displaystyle p \in \mathbb{S}^{1} $. Se puede ver que $\displaystyle Z $ no es localmente compacto. En efecto, todos los puntos salvo el $\displaystyle p $ tienen una base de entornos compactos (basta con tomar las bolas cerradas centradas en esos puntos de radios suficientemente pequeños). Sin embargo, $\displaystyle p $ no tiene ni un sólo entorno compacto en $\displaystyle Z $. En efecto, si existe un entorno compacto $\displaystyle K^{p} $ de $\displaystyle p $ en $\displaystyle Z $ tenemos que debe existir $\displaystyle \epsilon > 0 $ pequeño tal que $\displaystyle Z \cap B\left(p,\epsilon \right)\subset K^{p} $. 
+	Es fácil tomar una sucesión de puntos en $\displaystyle B\left(p, \epsilon \right)\cap Z $ sin puntos de acumulación en $\displaystyle Z $.
+\end{eg}
+\begin{eg}
+	Volviendo al ejemplo anterior, si consideramos $\displaystyle q \not\in Z $ formamos el conjunto $\displaystyle \tilde{Z} = Z \cup \left\{ q\right\}  $. Podemos introducir una topología en $\displaystyle \tilde{Z} $ de la siguiente forma: todos los subconjuntos contenidos en $\displaystyle Z $ que son abiertos con la topología heredada de la usual de $\displaystyle \R^{n} $ son abiertos en $\displaystyle \tilde{Z} $; por lo que se refiere a los entornos del punto $\displaystyle q $, son los $\displaystyle W \subset \tilde{Z} $ tales que $\displaystyle q \in W $ y $\displaystyle \tilde{Z}\backslash W $ es finito. 
+	Claramente tenemos que $\displaystyle \tilde{Z} $ es compacto. En efecto, dado un recubrimiento opr abiertos, habrá uno de esos abiertos que contenga al punto $\displaystyle q $, por lo que cubre a todo el espacio $\displaystyle \tilde{Z} $ menos un conjunto finito de puntos. 
+	Sin embargo, $\displaystyle \tilde{Z} $ no es localmente compacto, pues el punto $\displaystyle p $ no tiene una base de entornos compactos: sólo tiene un entorno compacto (el espacio total $\displaystyle \tilde{Z} $), pero los entornos de $\displaystyle p $ contenidos en $\displaystyle Z $ nunca son compactos. 
+\end{eg}
+\begin{observation}
+Del ejemplo anterior podemos sacar algunas conclusiones importantes:
+\begin{enumerate}
+\item Un espacio compacto puede no ser localmente compacto.
+\item La existencia de un entorno compacto es una condición estrictamente más débil que la de existencia de una base de entornos compactos.
+\item Podemos observar que $\displaystyle \tilde{Z} $ no es Hausdorff. Veremos que en el caso de espacios que sí lo son, no se dan estas circunstancias. 
+\end{enumerate}
+\end{observation}
 
