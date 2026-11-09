@@ -92,10 +92,9 @@ Entonces, existe $\displaystyle B_{\rho }\subset \R^{n} $ tal que si $\displayst
 En particular $\displaystyle \overline{x}=0 $ es solución inestable del sistema. 
 \end{prop}
 \begin{proof}
-	Sea $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ el flujo del sistema. Fijado $\displaystyle t_{0}, x_{0} $, el flujo está definido en $\displaystyle \left[t_{0}, T\right]  $. Definimos 
+	Sea $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ el flujo del sistema. Fijados $\displaystyle t_{0}, x_{0} $, el flujo está definido en $\displaystyle \left[t_{0}, T\right]  $. Definimos 
 	\[\psi_{T}\left(t\right):=\varphi\left(T-t; t_{0}, x_{0}\right), \; t \in \left[0, T-t_{0}\right]  .\]
-Además, 
-\[.\]
+Esta función cumple que, 
 \[
 \begin{split}
 	\psi_{T}'\left(t\right)= &-\frac{\partial \varphi}{\partial t}\left(T-t; t_{0}, x_{0}\right)=-\left(A\varphi\left(T-t; t_{0}, x_{0}\right)+H\left(T-t; \varphi\left(T-t; t_{0}, x_{0}\right)\right)\right) \\
@@ -124,7 +123,10 @@ Sea $\displaystyle M \in \R^{n \times n} $ invertible y $\displaystyle f : D \su
 \begin{proof}
 Si $\displaystyle \varphi $ es el flujo del sistema $\displaystyle x' = f\left(t,x\right) $ y $\displaystyle \psi $ es el del sistema $\displaystyle y' = g\left(t,y\right) $, entonces tenemos que 
 \[\psi\left(t; t_{0}, y_{0}\right)=M^{-1}\varphi\left(t; t_{0}, My_{0}\right) .\]
-% probar esta parte en casa, es un cálculo sencillo, basta con ver que M^-1... satisface el PVI de \psi
+En efecto, 
+\[\frac{d}{dt}\left(M^{-1}\varphi\left(t; t_{0}, My_{0}\right)\right) = M^{-1}f\left(t, M\varphi\left(t; t_{0}, My_{0}\right)\right) = g\left(t, \varphi\left(t; t_{0}, My_{0}\right)\right).\]
+\[M^{-1}\varphi\left(t_{0}; t_{0}, My_{0}\right)=M^{-1}\left(My_{0}\right)=y_{0} .\]
+Por unicidad de soluciones se obtiene la igualdad anterior. 
 Entonces, 
 \[ \|M\|^{-1} \left|\varphi\left(t; t_{0}, x_{0}\right)\right| \leq \left|\psi\left(t; t_{0}, y_{0}\right)\right|\leq \|M^{-1}\| \left|\varphi\left(t;  t_{0}, My_{0}\right)\right| .\]
 \end{proof}
@@ -139,17 +141,17 @@ Consideramos el problema no lineal $\displaystyle x' = Ax + H\left(t,x\right) $ 
 Entonces $\displaystyle \overline{x}\left(t\right)\equiv 0 $ es inestable.
 \end{theorem}
 \begin{proof}
-Demostración del teorema. En el caso $\displaystyle n = 1 $ es trivial. Ahora en el caso $\displaystyle n = 2 $ tenemos que si $\displaystyle \Re\left(\lambda \right) > 0 $, $\displaystyle \forall \lambda \in \sigma \left(A\right) $ ya tenemos el resultado. Por otro lado, si $\displaystyle \Re\left(\lambda \right)\leq 0 $ y $\displaystyle \Re\left(\lambda_{2}\right) > 0 $ podemos diagonalizar $\displaystyle A $ y tenemos que los autovalores $\displaystyle \lambda_{1}, \lambda_{2} \in \R $ con $\displaystyle \lambda_{1} \leq 0 < \lambda_{2} $. 
+Demostración del teorema. El caso $\displaystyle n = 1 $ se sigue directamente de la proposición anterior. Similarmente, en el caso $\displaystyle n = 2 $ donde $\displaystyle \Re\left(\lambda \right) > 0 $, $\displaystyle \forall \lambda \in \sigma \left(A\right) $ ya ha sido demostrado por la proposición anterior. Consideremos entonces el caso en el que $\displaystyle \Re\left(\lambda \right)\leq 0 $ y $\displaystyle \Re\left(\lambda_{2}\right) > 0 $. Podemos diagonalizar $\displaystyle A $ y tenemos que los autovalores $\displaystyle \lambda_{1}, \lambda_{2} \in \R $ con $\displaystyle \lambda_{1} \leq 0 < \lambda_{2} $. 
 Así, existe $\displaystyle M \in \R ^{n \times n} $ tal que 
 \[M^{-1}AM = \begin{pmatrix} \lambda _{1} & 0 \\ 0 & \lambda_{2} \end{pmatrix} .\]
 El problema $\displaystyle x '= A x + H\left(t,x\right) $ es equivalente a 
 \[ y' = \begin{pmatrix} \lambda_{1} & 0 \\ 0 & \lambda_{2} \end{pmatrix}y + \tilde{H}\left(t, y\right) ,\]
-con $\displaystyle \tilde{H}\left(t,y\right) = M^{-1}H\left(t, Mx\right) $, por el lema anterior. Además $\displaystyle \tilde{H}\left(t, y\right)=o \left( \left|y\right|\right) $ uniformemente en $\displaystyle t $. 
-Así, para cada $\displaystyle L > 0 $ existe $\displaystyle \rho > 0 $ tal que si $\displaystyle \left|y\right| \leq \rho  $ entonces $\displaystyle \left|\tilde{H}\left(t,y\right)\right|\leq L \left|y\right| $. Elegimos $\displaystyle L = \frac{\lambda_{2}}{2} > 0 $ obteniendo $\displaystyle \rho > 0 $. Definimos
+con $\displaystyle \tilde{H}\left(t,y\right) = M^{-1}H\left(t, Mx\right) $, por el lema anterior. Además $\displaystyle \tilde{H}\left(t, y\right)=o \left( \left|y\right|\right) $ uniformemente en $\displaystyle t $, por lo que si elegimos $\displaystyle L = \frac{\lambda_{2}}{2} > 0 $, existe $\displaystyle \rho > 0 $ tal que 
+\[ \left|y\right|\leq \rho \Rightarrow \left|\tilde{H}\left(t,y\right)\right|\leq L \left|y\right| .\]
+Definimos
 \[ \Omega = \left\{ \left(y_{1}, y_{2}\right)\in \R^{2} \; : \; \left|y_{2}\right|^{2}> \left|y_{1}\right|^{2}\right\}  .\]
-Vamos a probar que si $\displaystyle y_{0}= \left(y_{01}, y_{02}\right)\in \Omega \cap B_{\rho } \backslash \left\{ 0\right\}  $, entonces $\displaystyle \psi\left(t; t_{0}, y_{0}\right) $ el flujo del sistema equivalente cumple que $\displaystyle \psi\left(t; t_{0}, y_{0}\right) $ sale de la bola $\displaystyle B_{\rho } $ en tiempo finito. Si probamos esto tenemos la inestabilidad. Distinguimos varios pasos:
-\begin{itemize}
-\item Mientras $\displaystyle \psi\left(t; t_{0}, y_{0}\right)\in B_{\rho } $ queremos ver que $\displaystyle \psi\left(t; t_{0}, y_{0}\right)\in B_{\rho }\cap \Omega  $. Vamos a calcular 
+Vamos a probar que si $\displaystyle y_{0}= \left(y_{01}, y_{02}\right)\in \Omega \cap \left(B_{\rho } \backslash \left\{ 0\right\} \right) $, entonces $\displaystyle \psi\left(t; t_{0}, y_{0}\right) $ el flujo del sistema equivalente sale de la bola $\displaystyle B_{\rho } $ en tiempo finito. Si probamos esto tenemos la inestabilidad. \\
+\indent Mientras $\displaystyle \psi\left(t; t_{0}, y_{0}\right)\in B_{\rho } $ queremos ver que $\displaystyle \psi\left(t; t_{0}, y_{0}\right)\in B_{\rho }\cap \Omega  $. Vamos a calcular 
 	\[
 	\begin{split}
 		\frac{d}{dt}\left(\psi_{2}\left(t; t_{0}, y_{0}\right)^{2}-\psi_{1}\left(t; t_{0}, y_{0}\right)^{2}\right) = & 2\psi\left(t; t_{0}, y_{0}\right) \frac{\partial \psi_{2}}{\partial t}\left(t; t_{0}, y_{0}\right)-2\psi_{1}\left(t; t_{0}, y_{0}\right)\frac{\partial \psi_{1}}{\partial t}\left(t; t_{0}, y_{0}\right) .
@@ -180,13 +182,18 @@ Por tanto,
 \[\psi_{2}\left(t; t_{0}, y_{0}\right)^{2}-\psi_{1}\left(t; t_{0}, y_{0}\right)^{2} \geq \left(y_{02}^{2}-y_{01}^{2}\right)e^{\lambda_{2}\left(t-t_{0}\right)} > 0,\]
 puesto que $\displaystyle y_{0} \in \Omega  $. Por tanto, tenemos que $\displaystyle \psi\left(t; t_{0}, y_{0}\right)\in \Omega  $. Finalmente, como $\displaystyle \lambda_{2} > 0 $ además
 \[ \left|\psi\left(t; t_{0}, y_{0}\right)\right|^{2} \geq \psi_{2}\left(t; t_{0} , y_{0}\right)^{2} -\psi_{1}\left(t; t_{0}, y_{0}\right)^{2}\xrightarrow{t \to \infty} \infty .\]
-\end{itemize}
 \end{proof}
 \begin{colorary}
 Dada $\displaystyle f \in \mathcal{C}^{1}\left(\R^{n}; \R^{n}\right) $ y $\displaystyle \overline{x}\in \R^{n} $ tal que $\displaystyle f\left(\overline{x}\right)=0 $ y $\displaystyle Df\left(\overline{x}\right) $ tiene algún autovalor con parte real estrictamente positiva, entonces la solución $\displaystyle \overline{x}\left(t\right)\equiv \overline{x} $ es inestable.
 \end{colorary}
 \begin{proof}
-Es idéntica a la de estabilidad asintótica. 
+Sabemos que la estabilidad de la solución $\displaystyle \overline{x}\left(t\right)\equiv \overline{x} $ del sistema $\displaystyle x' = f\left(t\right) $ es equivalente a la estabilidad de la solución trivial $\displaystyle \overline{y}\left(t\right)\equiv 0 $ del sistema $\displaystyle y' = g\left(y\right) $ con 
+\[g\left(y\right)=f\left(\overline{x}+y\right)-f\left(\overline{x}\right)=f\left(\overline{x}+y\right) .\]
+Como $\displaystyle f \in \mathcal{C}^{1}\left(\R^{n}; \R^{n}\right) $ podemos escribir
+\[g\left(y\right)=f\left(\overline{x}\right) + Df\left(\overline{x}\right)y + H\left(y\right) ,\]
+con $\displaystyle H\left(y\right)=f\left(\overline{x}+z\right)-Df\left(\overline{x}\right)z $. Por definición de diferenciabilidad de $\displaystyle f $ en $\displaystyle \overline{x} $ se sigue que 
+\[0 = \lim_{y \to 0}\frac{ \left|f\left(\overline{x}+y\right)-f\left(\overline{x}\right)-Df\left(\overline{x}\right)\right|}{ \left|y\right|}= \lim_{y \to 0}\frac{ \left|H\left(y\right)\right|}{ \left|y\right|} ,\]
+por lo que $\displaystyle H\left(y\right)=o\left( \left|y\right|\right) $. Por otro lado, $\displaystyle A = Df\left(\overline{x}\right) $ cumple por hipótesis que tiene algún autovalor con parte real estrictamente positiva. Así, por el teorema anterior tenemos que la solución $\displaystyle \overline{y}\left(t\right)\equiv 0 $ es inestable para el sistema $\displaystyle y' = Ay + H\left(z\right) $ y en consecuencia $\displaystyle \overline{x}\left(t\right)\equiv \overline{x} $ es solución inestable del sistema original. 
 \end{proof}
 \begin{observation}[Resumen]
 Dado el sistema $\displaystyle x' = f\left(x\right) $ y $\displaystyle \overline{x}\in \R^{n} $ con $\displaystyle f\left(\overline{x}\right)=0 $:

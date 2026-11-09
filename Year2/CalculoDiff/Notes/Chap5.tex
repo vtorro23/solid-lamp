@@ -77,7 +77,7 @@ Por tanto, tenemos que
 \[ \|f\left(x\right)-f\left(a\right)\| \geq d, \; \forall x \in S .\]
 \item[Paso 3.] Consideremos $\displaystyle W = B\left(f\left(a\right), \frac{d}{2}\right) $ y $\displaystyle B = B\left(a,r\right) $. Tenemos que ver que $\displaystyle W \subset f\left(B\right) $. Sea $\displaystyle \hat{y} \in W $ y consideremos la función
 	\[ h : \overline{B}\left(a,r\right) \to \R : x \to \|f\left(x\right)-\hat{y}\|^{2} .\]
-Como $\displaystyle \overline{B}\left(a,r\right) $ es complacto y $\displaystyle h $ es continua, existe $\displaystyle \hat{x} \in \overline{B}\left(a,r\right) $ donde $\displaystyle h $ alcanza un mínimo. Veamos que $\displaystyle \hat{x} \not\in S $. En efecto, si $\displaystyle x \in S $ tenemos que 
+Como $\displaystyle \overline{B}\left(a,r\right) $ es compacto y $\displaystyle h $ es continua, existe $\displaystyle \hat{x} \in \overline{B}\left(a,r\right) $ donde $\displaystyle h $ alcanza un mínimo. Veamos que $\displaystyle \hat{x} \not\in S $. En efecto, si $\displaystyle x \in S $ tenemos que 
 \[\|f\left(x\right)-\hat{y}\| \geq \|f\left(x\right)-f\left(a\right)\| - \|f\left(a\right)-\hat{y}\| \geq d -\frac{d}{2} = \frac{d}{2} > \|f\left(a\right)-\hat{y}\| .\]
 Así, tenemos que si $\displaystyle x \in S $, $\displaystyle h\left(x\right) > h\left(a\right) $, por lo que $\displaystyle \hat{x} \not\in S $ y debe ser que $\displaystyle \hat{x} \in B $, por lo que $\displaystyle \hat{x} $ es un mínimo local de $\displaystyle h $. Así, debe ser que $\displaystyle \nabla h\left(\hat{x}\right) = 0 $. Si denotamos $\displaystyle \hat{y} = \left(y_{1}, \ldots, y_{n}\right) $, tenemos que 
 \[h\left(x\right) = \sum^{n}_{j = 1}\left(f_{j}\left(x\right)-y_{j}\right)^{2} .\]
@@ -93,7 +93,7 @@ a_{n1}u_{1} + \cdots + a_{nn}u_{n} = 0
 .\]
 Tenemos que 
 \[\det\begin{pmatrix} a_{11} & \cdots & a_{1n} \\ \vdots & & \vdots \\ a_{n1} & \cdots & a_{nn} \end{pmatrix} = \det\left(\frac{\partial f_{j}}{\partial x_{i}}\left(\hat{x}\right)\right) = \det\left(Jf\left(\hat{x}\right)\right) \neq 0 .\]
-Así, debe ser que es sistema tiene sólo una solución, la solución trivial, por lo que $\displaystyle u_{1} = u_{2} = \cdots = u_{n} = 0 $. Por tanto, $\displaystyle f_{j}\left(\hat{x}\right) = y_{j} $, $\displaystyle \forall j = 1, \ldots,n $. Así, tenemos que $\displaystyle f\left(\hat{x}\right) = \hat{y} $. 
+Así, debe ser que el sistema tiene sólo una solución, la solución trivial, por lo que $\displaystyle u_{1} = u_{2} = \cdots = u_{n} = 0 $. Por tanto, $\displaystyle f_{j}\left(\hat{x}\right) = y_{j} $, $\displaystyle \forall j = 1, \ldots,n $. Así, tenemos que $\displaystyle f\left(\hat{x}\right) = \hat{y} $. 
 \item[Paso 4.] Definimos $\displaystyle V = B\left(a,r\right) \cap f^{-1}\left(W\right) = \left\{ x \in B\left(a,r\right) \; : \; f\left(x\right) \in W\right\}  $ que es abierto y $\displaystyle a \in V $. Por construcción tenemos que $\displaystyle f|_{V} : V \to W $, que es inyectiva y sobreyectiva, por lo que es biyectiva. 
 \item[Paso 5.] Veamos que $\displaystyle g $ es diferenciable con $\displaystyle Dg\left(f\left(x\right)\right) = \left(Df\left(x\right)\right)^{-1} $, $\displaystyle \forall x \in V $. Sea $\displaystyle x_{0} \in V $, $\displaystyle  x \in V $ y denotamos $\displaystyle y_{0} = f\left(x_{0}\right) $ e $\displaystyle y = f\left(x\right) $, así como $\displaystyle L = Df\left(x_{0}\right) $. Tenemos que 
 	\[
@@ -160,7 +160,7 @@ No veremos la demostración pero daremos una idea de cómo se demuestra. Definim
 \[H:U \subset \R^{n} \times \R^{m} \to \R^{n} \times \R^{m} : \left(x,y\right) \to \left(x, F\left(x,y\right)\right) .\]
 Tendremos pues
 \[JH\left(x_{0},y_{0}\right) = \begin{pmatrix} Id & 0 \\ D_{1}F\left(x_{0}, y_{0}\right) & D_{2}F\left(x_{0}, y_{0}\right) \end{pmatrix} .\]
-Por tanto, obtenemos que $\displaystyle \det\left(DH\left(x_{0}, y_{0}\right)\right) \neq 0 $, por lo que $\displaystyle H $ es localmente invertible alrededor de $\displaystyle \left(x_{0}, y_{0}\right) $ y $\displaystyle F\left(x,y\right) = 0 \iff H\left(x,y\right) = \left(x,0\right) $. Si consideramos $\displaystyle A = \left\{ \left(x,y\right) \; : \; F\left(x,y\right) = 0\right\}  \subset U$, tenemos que $\displaystyle H|_{A} : A \to B $ es invertivle y podemos considerar $\displaystyle G = \left(H|_{A}\right)^{-1} $.
+Por tanto, obtenemos que $\displaystyle \det\left(DH\left(x_{0}, y_{0}\right)\right) \neq 0 $, por lo que $\displaystyle H $ es localmente invertible alrededor de $\displaystyle \left(x_{0}, y_{0}\right) $ y $\displaystyle F\left(x,y\right) = 0 \iff H\left(x,y\right) = \left(x,0\right) $. Si consideramos $\displaystyle A = \left\{ \left(x,y\right) \; : \; F\left(x,y\right) = 0\right\}  \subset U$, tenemos que $\displaystyle H|_{A} : A \to B $ es invertible y podemos considerar $\displaystyle G = \left(H|_{A}\right)^{-1} $.
 \end{proof}
 \begin{eg}
 \begin{enumerate}
@@ -189,7 +189,7 @@ Podemos calcular también las derivadas de segundo orden.
 \[\frac{\partial^{2}f}{\partial x^{2}} = \frac{\partial }{\partial x}\left(\frac{\partial f}{\partial x}\right) = \frac{\partial }{\partial x}\left(\frac{y-z}{3z^{2}+x}\right) = \frac{-\frac{\partial f}{\partial x}\left(3z^{2}+x\right)-\left(y-z\right)\left(6z\frac{\partial f}{\partial x}+1\right)}{\left(3z^{2}+x\right)^{2}}  .\]
 En $\displaystyle p $, es fácil ver que la derivada segunda será 0. El resto de derivadas segundas se calculan de forma análoga. \\ 
 Otra manera de calcular las derivadas es de forma implícita:
-\[\frac{\partial }{\partial x}\left(z^{3}+x\left(z-y\right)\right) = 0 \Rightarrow 3z^{2}\frac{\partial f}{\partial x} + \left(z-1\right) + x \frac{\partial f}{\partial x} = 0 .\]
+\[\frac{\partial }{\partial x}\left(z^{3}+x\left(z-y\right)\right) = 0 \Rightarrow 3z^{2}\frac{\partial f}{\partial x} + \left(z-y\right) + x \frac{\partial f}{\partial x} = 0 .\]
 \[\frac{\partial }{\partial y}\left(z^{3}+x\left(z-y\right)\right)= 0 \Rightarrow 3z^{2}\frac{\partial f}{\partial y}+x\left(\frac{\partial f}{\partial y }-1\right)= 0 .\]
 \item Consideremos el sistema 
 	\[
@@ -263,7 +263,7 @@ son las \textbf{ecuaciones implícitas} de $\displaystyle M $.
 \begin{eg}
 \begin{enumerate}
 	\item Consideremos $\displaystyle M = \left\{ \left(x,y,z\right) \; : \; x^{2}+y^{2}+z^{2} = 1\right\} \subset \R^{3} $ y 
-		\[F\left(x,y,z\right) = x^{3}+y^{3}+z^{3}-1 .\]
+		\[F\left(x,y,z\right) = x^{2}+y^{2}+z^{2}-1 .\]
 Para que sea variedad debe ser que $\displaystyle \nabla F = \left(2x, 2y, 2z\right) $ tenga rango máximo en $\displaystyle M $, que lo tiene puesto que es 0 si y solo si $\displaystyle \left(x,y,z\right)=\left(0,0,0\right) $. 
 \item Consideremos $\displaystyle M = \left\{ \left(x,y,z\right) \;  :\; x^{2}+xy+y^{2}+z^{2} = 1\right\} \subset \R^{3} $ y 
 	\[F\left(x,y,z\right)=x^{2}+xy+y^{2}+z^{2}-1 ,\]
@@ -279,7 +279,7 @@ F_{2}\left(x,y,z\right)=x+y+z
 .\]
 Queremos ver si el rango es máximo,
 \[\ran\begin{pmatrix} \nabla F_{1} \\ \nabla F_{2} \end{pmatrix} = \begin{pmatrix} 2x & 2y & 2z \\ 1 & 1 & 1 \end{pmatrix} .\]
-Como $\displaystyle \left(x,y,z\right) = \left(0,0,0\right) \in M $, no se trata de una variedad diferenciable.	
+Como $\displaystyle \ran\left(\nabla F_{1}, \nabla F_{2}\right)=2 $, $\displaystyle \forall \left(x,y,z\right)\in M $, se trata de una variedad diferenciable.	
 \end{enumerate}
 \end{eg}
 \begin{theorem}[Teorema de los multiplicadores de Lagrange]

@@ -1,5 +1,5 @@
 \chapter{Cálculo diferencial}
-Consideremos, en primer lugar, funciones de la forma $\displaystyle f : \R \to \R^{m} $, que podemos considerar curvas paramétricas.
+Consideremos, en primer lugar, funciones de la forma $\displaystyle f : I \to \R^{m} $, con $\displaystyle I\subset \R $ un intervalo, que podemos considerar curvas paramétricas.
 \section{Caso $\displaystyle f: \R \to \R^{m} $}
 \begin{definition}[Curva paramétrica]
 Una \textbf{curva} en $\displaystyle \R^{m} $ es una función continua $\displaystyle \sigma : I \to \R^{m} $, donde $\displaystyle I $ es un intervalo de $\displaystyle \R $. 
@@ -120,8 +120,8 @@ Podemos observar que $\displaystyle f\left(a+h\right) = f\left(a\right) + L\left
 Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{m} $ y $\displaystyle a \in U $. Si $\displaystyle f $ es diferenciable en $\displaystyle a $ con aplicación lineal $\displaystyle L $, entonces $\displaystyle \forall v \in \R^{n} $ existe $\displaystyle D_{v}f\left(a\right) = L\left(v\right) $. Por tanto, la aplicación $\displaystyle L $ es única y la denotaremos $\displaystyle L = Df\left(a\right) $ y la llamaremos \textbf{diferencial} de $\displaystyle f $ en $\displaystyle a $.
 \end{prop}
 \begin{proof}
-Tomamos $\displaystyle v \in \R^{n} $ con $\displaystyle v \neq 0 $, y consieramos $\displaystyle h = tv $ con $\displaystyle t \in \R $. Entonces, 
-\[0 = \lim_{t \to 0}\frac{f\left(a+tv\right)-f\left(a\right)-L\left(tv\right)}{ \|tv\|} = \lim_{t \to 0}\frac{f\left(a+tv\right)-f\left(a\right)-tL\left(v\right)}{ \left|t\right|} .\]
+Tomamos $\displaystyle v \in \R^{n} $ con $\displaystyle v \neq 0 $, y consideremos $\displaystyle h = tv $ con $\displaystyle t \in \R $. Entonces, 
+\[0 = \lim_{t \to 0}\frac{f\left(a+tv\right)-f\left(a\right)-L\left(tv\right)}{ \|tv\|} = \lim_{t \to 0}\frac{f\left(a+tv\right)-f\left(a\right)-tL\left(v\right)}{ \left|t\right|\|v\|} .\]
 Por tanto, tenemos que 
 \[0 = \lim_{t \to 0} \left|\frac{f\left(a+tv\right)-f\left(a\right)-tL\left(v\right)}{t}\right| = \lim_{t \to 0} \left|\frac{f\left(a+tv\right)-f\left(a\right)}{t}-L\left(v\right)\right| .\]
 Por tanto, existe $\displaystyle \lim_{t \to 0}\frac{1}{t}\left(f\left(a+tv\right)-f\left(a\right)\right) = L\left(v\right) $. Por otro lado, si $\displaystyle v = 0 $, tenemos que $\displaystyle D_{v}f\left(a\right) = \lim_{t \to 0}\left(f\left(a\right)-f\left(a\right)\right) = 0 = L\left(0\right) $.
@@ -373,7 +373,7 @@ Es trivial ver que
 Como son continuas en $\displaystyle A $ tenemos que $\displaystyle q $ es diferenciable en $\displaystyle A $. Por otro lado,
 \[Dq\left(x_{0}, y_{0}\right)\left(u,v\right) = \left(\frac{1}{y_{0}}, -\frac{x_{0}}{y_{0}^{2}}\right)\begin{pmatrix} u \\ v \end{pmatrix} = \frac{y_{0}u - x_{0}v}{y_{0}^{2}} .\]
 \end{proof}
-\begin{colorary}[de la Regla de la Cadena]
+\begin{colorary}[Reglas del producto y cociente para funciones escalares]
 Sean $\displaystyle U \subset \R^{n} $ abierto y $\displaystyle f, g : U \to \R $ diferenciables en $\displaystyle a $. 
 \begin{enumerate}
 \item Entonces, $\displaystyle f \cdot g $ es diferenciable en $\displaystyle a $ y 
@@ -453,7 +453,7 @@ Sean $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R $ di
 \[\nabla f\left(a\right)= \left(\frac{\partial f}{\partial x_{1}}\left(a\right), \ldots, \frac{\partial f}{\partial x_{n}}\left(a\right)\right) \in \R^{n} .\]
 \end{definition}
 \begin{observation}
-Tenemos que $\displaystyle \forall w \in \R^{n} $,
+Tenemos que $\displaystyle \forall w \in \R^{n} $, si $\displaystyle f $ es diferenciable en $\displaystyle a $, entonces
 \[Df\left(a\right)\left(w\right) =D_{w}f\left(a\right) = \sum^{n}_{i = 1}\frac{\partial f\left(a\right)}{\partial x_{i}}w_{i} = \left\langle \nabla f\left(a\right), w \right\rangle  .\]
 \end{observation}
 \begin{observation}
@@ -484,7 +484,7 @@ Sean $\displaystyle U \subset \R^{n} $ abierto y $\displaystyle F : U \to \R $ d
 	.\]
 \item Consideremos $\displaystyle F\left(x,y\right) = xy $. Tenemos que sus curvas de nivel son hipérbolas si $\displaystyle r \neq 0 $ y los ejes de coordenadas en el caso de que $\displaystyle r = 0 $. 	
 \item Si tomamos $\displaystyle F\left(x,y,z\right) = x^{2}+y^{2}+z^{2} $, obtenemos superficies esféricas para $\displaystyle r > 0 $; el origen si $\displaystyle r = 0 $; y el conjunto vacío si $\displaystyle r < 0 $.
-\item Consideremos $\displaystyle F : \R^{3} \to \R $ con $\displaystyle F\left(x,y,z\right)= x^{2}+y^{2} -z^{2} $. En el caso $\displaystyle r = 0 $ tenemos el conjunto de nivel dado por la ecuación $\displaystyle z^{2} = x^{2} +y^{2} $, que es un cono. Si $\displaystyle r = 1 $, tenemos el conjunto de nivel dado por la ecuación $\displaystyle x^{2}+y^{2} = r + z^{2} $ por lo que obtenemos un hiperboloide. Si $\displaystyle r = -1 $, obtenemos el conjunto de nivel dado por la ecuación $\displaystyle x^{2} +y^{2} - r = + z^{2} $, es decir, $\displaystyle z = \pm\sqrt{x^{2}+y^{2}-r} $, que es un paraboloide.
+\item Consideremos $\displaystyle F : \R^{3} \to \R $ con $\displaystyle F\left(x,y,z\right)= x^{2}+y^{2} -z^{2} $. En el caso $\displaystyle r = 0 $ tenemos el conjunto de nivel dado por la ecuación $\displaystyle z^{2} = x^{2} +y^{2} $, que es un cono. Si $\displaystyle r = 1 $, tenemos el conjunto de nivel dado por la ecuación $\displaystyle x^{2}+y^{2} = r + z^{2} $ por lo que obtenemos un hiperboloide. Si $\displaystyle r = -1 $, obtenemos el conjunto de nivel dado por la ecuación $\displaystyle x^{2} +y^{2} - r = + z^{2} $, es decir, $\displaystyle z = \pm\sqrt{x^{2}+y^{2}-r} $, que es un hiperboloide de dos hojas.
 \end{enumerate}
 \end{eg}
 \begin{prop}
@@ -515,12 +515,12 @@ Tomando $\displaystyle z_{0} = f\left(x_{0}, y_{0}\right) $ tendremos que el pla
 \[\left(x-x_{0}\right)\frac{\partial f}{\partial x}\left(x_{0}, y_{0}\right) + \left(y - y_{0}\right)\frac{\partial f}{\partial y}\left(x_{0}, y_{0}\right) - \left(z - z_{0}\right) = 0.\]
 Es decir,
 \[z = f\left(x_{0}, y_{0}\right) + \left(x-x_{0}\right)\frac{\partial f}{\partial x}\left(x_{0}, y_{0}\right) + \left(y - y_{0}\right)\frac{\partial f}{\partial y}\left(x_{0}, y_{0}\right) .\]
-Otra forma de calcular el hiperplano tangente es, dada $\displaystyle f : U\subset \R^{2} \to \R $ diferenciable, considerar su gráfica $\displaystyle z = f\left(x,y\right) $. Dado $\displaystyle p=\left(x_{0},y_{0}\right) \in \Imagen\left(z\right) $, podemos considerar la curva
+Otra forma de calcular el hiperplano tangente es, dada $\displaystyle f : U\subset \R^{2} \to \R $ diferenciable, considerar su gráfica $\displaystyle z = f\left(x,y\right) $. Dado $\displaystyle p=\left(x_{0},y_{0}, f\left(x_{0}, y_{0}\right)\right) \in \R^{3}$, podemos considerar la curva
 \[\sigma\left(t\right) = \left(x_{0}+t, y_{0}, f\left(x_{0}+t,y_{0}\right)\right) , \; \sigma\left(0\right) = p\]
 Así, tenemos que 
 \[\sigma'\left(0\right) = \left(1,0, \frac{\partial f}{\partial x}\left(x_{0}, y_{0}\right)\right).\]
 De manera análoga, podemos fijar $\displaystyle x_{0} $ y obtener la curva
-\[\gamma \left(t\right)= \left(x_{0}, y_{0}+t, f\left(x_{0}, y_{0}+t\right)\right), \; \gamma\left(0\right) = t .\]
+\[\gamma \left(t\right)= \left(x_{0}, y_{0}+t, f\left(x_{0}, y_{0}+t\right)\right), \; \gamma\left(0\right) = p .\]
 Así, tendremos que el vector tangente a la superficie será 
 \[\gamma'\left(0\right) = \left(0,1,\frac{\partial f}{\partial y}\left(x_{0}, y_{0}\right)\right) .\]
 Así, el plano tangente será el que viene dado por las ecuaciones
@@ -549,12 +549,16 @@ Aplicando el teorema del valor medio en $\displaystyle \R $, tenemos que existe 
 Llamando $\displaystyle z = \left(1-c\right)x + cy \in \left[x,y\right]  $, tenemos que 
 \[f\left(x\right)-f\left(y\right) = \left\langle \nabla f\left(z\right), y - x \right\rangle  .\]
 \end{proof}
+\begin{observation}
+En el resto de la sección se utiliza la norma euclídea.
+\end{observation}
+
 \begin{colorary}
-Sean $\displaystyle U \subset \R^{n} $ abierto convexo, $\displaystyle f : U \to \R $ diferenciable en $\displaystyle U $ y supongamos que $\displaystyle \|\nabla f\left(z\right) \| \leq K $, $\displaystyle \forall z \in U $ \footnote{Consideramos la norma euclídea.}. Entonces
+Sean $\displaystyle U \subset \R^{n} $ abierto convexo, $\displaystyle f : U \to \R $ diferenciable en $\displaystyle U $ y supongamos que $\displaystyle \|\nabla f\left(z\right) \| \leq K $, $\displaystyle \forall z \in U $. Entonces
 \[|f\left(x\right)-f\left(y\right)|\leq K \|x-y\|, \; \forall x,y \in U .\]
 \end{colorary}
 \begin{proof}
-	Dados $\displaystyle x,y \in U $, tenemos que $\displaystyle \left[x,y\right] \subset U $ y por el teorema anterior existe $\displaystyle z \in \left[x,y\right]  $ tal que, aplicando la desigualdad Cauchy-Swartz,
+	Dados $\displaystyle x,y \in U $, tenemos que $\displaystyle \left[x,y\right] \subset U $ y por el teorema anterior existe $\displaystyle z \in \left[x,y\right]  $ tal que, aplicando la desigualdad Cauchy-Schwarz,
 	\[|f\left(y\right)-f\left(x\right)| = |\left\langle \nabla f\left(z\right), y-x \right\rangle| \leq \|\nabla f\left(z\right)\| \|y -x\| \leq K \|y-x\|  .\]
 \end{proof}
 \begin{colorary}
@@ -579,7 +583,7 @@ Sea $\displaystyle U \subset \R^{n} $ abierto conexo y $\displaystyle f : U \to 
 \end{proof}
 
 \begin{theorem}[Desigualdad del valor medio]
-	Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{m} $ diferenciable en $\displaystyle U $. Supongamos que $\displaystyle \left|\frac{\partial f_{j}}{\partial x_{i}}\left(z\right)\right|\leq K $, $\displaystyle \forall i = 1, \ldots, n $, $\displaystyle \forall j = 1, \ldots, m $, $\displaystyle \forall z \in [x,y] \subset U $. Entonces \footnote{Consideramos la norma euclídea.},
+	Sea $\displaystyle U \subset \R^{n} $ abierto, $\displaystyle f : U \to \R^{m} $ diferenciable en $\displaystyle U $. Supongamos que $\displaystyle \left|\frac{\partial f_{j}}{\partial x_{i}}\left(z\right)\right|\leq K $, $\displaystyle \forall i = 1, \ldots, n $, $\displaystyle \forall j = 1, \ldots, m $, $\displaystyle \forall z \in [x,y] \subset U $. Entonces,
 	\[\|f\left(x\right)-f\left(y\right)\| \leq K\sqrt{n \cdot m}\|y-x\| .\]
 \end{theorem}
 \begin{proof}
@@ -607,7 +611,7 @@ Así, podemos calcular las derivadas:
 \[\frac{\partial^{2} f}{\partial x \partial y} = \frac{\partial }{\partial x}\left(\frac{\partial f}{\partial y}\right)=6x^{2}y +2y\sin\left(x-y^{2}\right) .\]
 \end{eg}
 \begin{definition}[Derivadas parciales de orden 2]
-Sean $\displaystyle U \subset \R^{n} $ abierto, consideremos $\displaystyle f : U \to \R $ y $\displaystyle a \in U $. Se define, cuando exixte, la \textbf{derivada parcial de orden 2} de la forma
+Sean $\displaystyle U \subset \R^{n} $ abierto, consideremos $\displaystyle f : U \to \R $ y $\displaystyle a \in U $. Se define, cuando existe, la \textbf{derivada parcial de orden 2} de la forma
 \[\frac{\partial^{2}f}{\partial x_{i}x_{j}}\left(a\right) = \frac{\partial }{\partial x_{i}}\left(\frac{\partial f}{\partial x_{j}}\left(a\right)\right), \; \forall i,j = 1, \ldots, n .\]
 \end{definition}
 \begin{definition}
@@ -623,7 +627,7 @@ Dados $\displaystyle \left(h,k\right) \in B_{\infty}\left(\left(0,0\right), r\ri
 Consideramos 
 \[S\left(h,k\right) = f\left(x_{0}+h, y_{0}+k\right)-f\left(x_{0}+h, y_{0}\right) - f\left(x_{0}, y_{0}+k\right)+f\left(x_{0},y_{0}\right) .\]
 Consideremos $\displaystyle \varphi_{k}\left(t\right)= f\left(t,y_{0}+k\right) -f\left(t,y_{0}\right) $, así, tenemos que
-\[S\left(h,k\right)=\varphi_{k}\left(x_{0} + h\right)-\varphi\left(x_{0}\right) = \varphi_{k}'\left(\alpha\left(h,k\right)\right)h .\]
+\[S\left(h,k\right)=\varphi_{k}\left(x_{0} + h\right)-\varphi_{k}\left(x_{0}\right) = \varphi_{k}'\left(\alpha\left(h,k\right)\right)h .\]
 En efecto, tenemos que 
 \[\varphi'_{k}\left(t\right)= \frac{\partial f}{\partial x}\left(t, y_{0}+k\right) - \frac{\partial f}{\partial x}\left(t, y_{0}\right) ,\]
 que existe por hipótesis. Así, nos queda que 
@@ -680,12 +684,12 @@ Sean $\displaystyle U\subset \R^{n} $ abierto y $\displaystyle f : U \to \R $. S
 \item $\displaystyle \forall i= 1, \ldots, n $, $\displaystyle \exists \frac{\partial f}{\partial x_{i}} \in \mathcal{C}^{k-1}\left(U\right) $.
 \end{enumerate}
 \end{lema}
-\begin{proof}
-\begin{description}
-	\item[(i)] Tenemos que $\displaystyle \forall i_{1}, \ldots, i_{k-1} \in \left\{ 1, \ldots, n\right\}  $,
+\begin{proof}Demostramos ambas implicaciones.
+\begin{description} 
+	\item[(1) $\displaystyle \Rightarrow $ (2)] Tenemos que $\displaystyle \forall i_{1}, \ldots, i_{k-1} \in \left\{ 1, \ldots, n\right\}  $,
 		\[\frac{\partial^{k}f}{\partial x_{i_{1}} \cdots \partial x_{i_{k-1}}\partial x_{i}} = \frac{\partial ^{k-1}}{\partial x_{i_{1}} \cdots \partial x_{i_{k-1}}}\left(\frac{\partial f}{\partial x_{i}}\right) ,\]
 estas últimas existen y son continuas $\displaystyle \forall i = 1, \ldots, n $.
-\item[(ii)] Por otro lado, $\displaystyle \forall i_{1}, \ldots, i_{k} \in \left\{ 1, \ldots, n\right\}  $, tenemos que 
+\item[(2) $\displaystyle \Rightarrow $ (1)] Por otro lado, $\displaystyle \forall i_{1}, \ldots, i_{k} \in \left\{ 1, \ldots, n\right\}  $, tenemos que 
 	\[\frac{\partial^{k}f}{\partial x_{i_{1}} \cdots \partial x_{i_{k}}} = \frac{\partial ^{k-1}}{\partial x_{i_{1}} \cdots \partial x_{i_{k-1}}}\left(\frac{\partial f}{\partial x_{i_{k}}}\right) ,\]
 estas últimas existen y son continuas.	
 \end{description}
@@ -720,7 +724,7 @@ Consideremos varios casos:
 Sean $\displaystyle U \subset \R^{n} $ abierto y $\displaystyle f \in \mathcal{C}^{2}\left(U, \R\right) $. Para cada $\displaystyle a \in U $, se define la \textbf{diferencial segunda} de $\displaystyle f $ en $\displaystyle a $ como la forma cuadrática $\displaystyle D^{2}f\left(a\right) : \R^{n} \to \R $ definida por 
 \[D^{2}f\left(a\right)\left(h\right) = \sum^{n}_{i,j = 1}\frac{\partial^{2}f\left(a\right)}{\partial x_{i}\partial x_{j}}h_{i}h_{j} .\]
 Es decir, 
-\[Df^{2}\left(a\right) \left(h_{1}, \ldots h_{n}\right) = \left(h_{1}, \ldots, h_{n}\right)\begin{pmatrix} \frac{\partial^{2}f\left(a\right)}{\partial x_{1}\partial x_{n}} & \cdots & \frac{\partial^{2}f\left(a\right)}{\partial x_{1}\partial x_{n}} \\ 
+\[Df^{2}\left(a\right) \left(h_{1}, \ldots h_{n}\right) = \left(h_{1}, \ldots, h_{n}\right)\begin{pmatrix} \frac{\partial^{2}f\left(a\right)}{\partial x_{1}\partial x_{1}} & \cdots & \frac{\partial^{2}f\left(a\right)}{\partial x_{1}\partial x_{n}} \\ 
 \vdots & & \vdots \\
 \frac{\partial^{2}f\left(a\right)}{\partial x_{n}\partial x_{1}} & \cdots & \frac{\partial^{2}f\left(a\right)}{\partial x_{n}\partial x_{n}}\end{pmatrix}\begin{pmatrix} h_{1} \\ \vdots \\ h_{n}\end{pmatrix} .\]
 \end{definition}
@@ -834,8 +838,8 @@ Así, podemos escribir
 \begin{definition}[Extremos locales]
 Sea $\displaystyle M \subset \R^{n} $, $\displaystyle a \in M $ y $\displaystyle f : M \to \R $. Se dice que 
 \begin{itemize}
-\item $\displaystyle a $ es un \textbf{máximo local} de $\displaystyle f $ si existe $\displaystyle r > 0 $ tal que $\displaystyle f\left(a\right) \geq f\left(x\right) $, $\displaystyle \forall x \in M \cap B\left(a,r\right) $. Se dice que es \textbf{estricto} si $\displaystyle f\left(a\right) > f\left(x\right) $, $\displaystyle \forall x \in M \cap B\left(a,r\right) $. 
-\item $\displaystyle a $ es un \textbf{mínimo local} de $\displaystyle f $ si existe $\displaystyle r > 0 $ tal que $\displaystyle f\left(a\right) \leq f\left(x\right) $, $\displaystyle \forall x \in M \cap B\left(a,r\right) $. Se dice que es \textbf{estricto} si $\displaystyle f\left(a\right) < f\left(x\right) $, $\displaystyle \forall x\in M \cap B\left(a,r\right) $.
+	\item $\displaystyle a $ es un \textbf{máximo local} de $\displaystyle f $ si existe $\displaystyle r > 0 $ tal que $\displaystyle f\left(a\right) \geq f\left(x\right) $, $\displaystyle \forall x \in M \cap B\left(a,r\right) $. Se dice que es \textbf{estricto} si $\displaystyle f\left(a\right) > f\left(x\right) $, $\displaystyle \forall x \in \left(M \cap B\left(a,r\right)\right)\backslash \left\{ a\right\}  $. 
+	\item $\displaystyle a $ es un \textbf{mínimo local} de $\displaystyle f $ si existe $\displaystyle r > 0 $ tal que $\displaystyle f\left(a\right) \leq f\left(x\right) $, $\displaystyle \forall x \in M \cap B\left(a,r\right) $. Se dice que es \textbf{estricto} si $\displaystyle f\left(a\right) < f\left(x\right) $, $\displaystyle \forall x\in \left(M \cap B\left(a,r\right)\right)\backslash \left\{ a\right\}  $.
 \end{itemize}
 Se dice que $\displaystyle a $ es un \textbf{extremo local} de $\displaystyle f $ si es un máximo o un mínimo local.
 \end{definition}

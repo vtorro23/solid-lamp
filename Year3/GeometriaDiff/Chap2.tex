@@ -1162,85 +1162,95 @@ Así, como $\displaystyle \|\beta'\|=\|\eta'\| = \frac{3}{4} $, el ángulo entre
 	\[\theta\left(u,v\right)=\left\langle X\left(u,v\right), Y\left(u,v\right) \right\rangle =\left(X_{1}, X_{2}\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} Y_{1} \\ Y_{2} \end{pmatrix} .\]
 \end{eg}
 \begin{prop}
-Sean $\displaystyle \textbf{x} \left(u,v\right) $ e $\displaystyle \textbf{y} \left(w,s\right) $ dos parametrizaciones buenas de $\displaystyle S $. Tenemos un cambio de parámetros $\displaystyle \left(w,s\right)=h\left(u,v\right) $ tal que $\displaystyle h = \textbf{y} ^{-1} \circ \textbf{x}  $.
+Sean $\displaystyle \textbf{x} \left(u,v\right) $ e $\displaystyle \textbf{y} \left(w,s\right) $ dos parametrizaciones buenas de $\displaystyle S $, es decir, existe un cambio de parámetros $\displaystyle \left(w,s\right)=h\left(u,v\right) $ tal que $\displaystyle h = \textbf{y} ^{-1} \circ \textbf{x}  $. Entonces, 
+\[I _{ \textbf{x} } = \left(Jh\right)^{T}I_{ \textbf{y} } \cdot Jh .\]
 \end{prop}
 \begin{proof}
 Tenemos que 
-\[J h = B_{\mathcal{B}_{ \textbf{y} }\mathcal{B}_{ \textbf{x} }} ,\]
+\[J h = M_{\mathcal{B}_{ \textbf{y} }\mathcal{B}_{ \textbf{x} }} ,\]
 de forma que 
 \[M_{\mathcal{B}_{ \textbf{x} }}\left(I\right)=\left(M_{ \mathcal{B}_{ \textbf{y} }\mathcal{B}_{ \textbf{x} }}\right)^{T}M_{ \mathcal{B}_{ \textbf{y} }}\left(I\right)\left(M_{\mathcal{B} _{ \textbf{y} }\mathcal{B} _{ \textbf{x} }}\right) .\]
 Así, 
 \[I_{ \textbf{x} }= \left(Jh\right)^{T}I _{ \textbf{y} } \cdot Jh.\]
 \end{proof}
-\begin{eg}
-Sea $\displaystyle \textbf{x} \left(\varphi, s\right)=\left(\cos\varphi\cos s, \sin\varphi \cos s, \sin s\right) $ y 
-\[ \textbf{y} \left(\hat{\varphi}, z\right)=\left(\sqrt{1-z^{2}}\cos\hat{\varphi}, \sqrt{1-z^{2}}\sin\hat{\varphi }, z\right) .\]
-Tenemos que 
-\[I = \begin{pmatrix} r\left(v\right)^{2} & 0 \\ 0 & \|\gamma'\left(v\right)\|^{2} \end{pmatrix} .\]
-Distinguimos dos casos:
-\begin{itemize}
-	\item Si $\displaystyle \gamma  $ p.p.a, $\displaystyle I = \begin{pmatrix} r\left(v\right)^{2} & 0 \\ 0 & 1 \end{pmatrix} $. 
-	\item En caso contrario, $\displaystyle \gamma\left(z\right)=\left(z, v\left(z\right)\right) $, $\displaystyle I = \begin{pmatrix} r\left(v\right) & 0 \\ 0 & \sqrt{1 + v'\left(z\right)} \end{pmatrix} $.
-\end{itemize}
+\begin{eg}[Esfera]
+Sean  
+\[\textbf{x} \left(\varphi, s\right)=\left(\cos\varphi\cos s, \sin\varphi \cos s, \sin s\right)\quad \text{e}\quad  \textbf{y} \left(\hat{\varphi}, z\right)=\left(\sqrt{1-z^{2}}\cos\hat{\varphi}, \sqrt{1-z^{2}}\sin\hat{\varphi }, z\right) ,\]
+parametrizaciones de la esfera. Por un lado tenemos que 
+\[I _{ \textbf{x} }=\begin{pmatrix} \cos ^{2} & 0 \\ 0 & 1 \end{pmatrix}\quad \text{y} \quad I_{ \textbf{y} }=\begin{pmatrix} 1-z^{2} & 0 \\ 0 & \frac{1}{1-z^{2}} \end{pmatrix} .\]
+Por otro lado, tenemos que como $\displaystyle h: \left(\varphi, s\right)\to \left(\hat{\varphi }, z\right) $, 
+\[
+\begin{cases}
+\hat{\varphi} = \varphi \\
+z = \sin s
+\end{cases}
+.\]
+Así, 
+\[Jh = \begin{pmatrix} \frac{\partial \hat{\varphi}}{\partial \varphi} & \frac{\partial \hat{\varphi}}{\partial s} \\ \frac{\partial z}{\partial \varphi} & \frac{\partial z}{\partial s} \end{pmatrix}=\begin{pmatrix} 1 & 0 \\ 0 & \cos s \end{pmatrix} .\]
+Aplicando la proposición anterior, 
+\[
+\begin{split}
+	I _{ \textbf{x} }= &\left(Jh\right)^{T} I_{ \textbf{y} } \cdot Jh = \begin{pmatrix} 1 & 0 \\ 0 & \cos s \end{pmatrix}\begin{pmatrix} 1-z^{2} & 0 \\ 0 & \frac{1}{1-z^{2}}  \end{pmatrix}\begin{pmatrix} 1 & 0 \\ 0 & \cos s \end{pmatrix}=\begin{pmatrix}  \end{pmatrix} \\
+	= & \begin{pmatrix} 1-z^{2} & 0 \\ 0 & 1 \end{pmatrix}=\begin{pmatrix} \cos ^{2}s & 0 \\ 0 & 1 \end{pmatrix}.
+\end{split}
+\]
 \end{eg}
-\begin{observation}
-Vale para hallar $\displaystyle I _{ \textbf{y} } $ si tengo $\displaystyle I _{ \textbf{x} } $ sin hacer cálculos.  
-\end{observation}
-Nos preguntamos cuáles son las primeras formas fundamentales de $\displaystyle \mathbb{S}^{2} $. La respuesta:
-\[\begin{pmatrix} E' & F' \\ F' & G' \end{pmatrix}=\begin{pmatrix} \frac{\partial w}{\partial u} & \frac{\partial s}{\partial u} \\ \frac{\partial w}{\partial v} & \frac{\partial s}{\partial v} \end{pmatrix}\begin{pmatrix} E & F \\ F & G\end{pmatrix}\begin{pmatrix} \frac{\partial w}{\partial u} & \frac{\partial w}{\partial v} \\ \frac{\partial s}{\partial w} & \frac{\partial u}{\partial v} \end{pmatrix} .\]
-Si tengo $\displaystyle \begin{pmatrix} E & F \\ F& G \end{pmatrix}=\begin{pmatrix} \cos ^{2} s & 0 \\ 0 & 1 \end{pmatrix} $ lo que nos sale poniendo $\displaystyle Jh $ con $\displaystyle u = u\left(w,s\right) $ y $\displaystyle v = v\left(w,s\right) $. Puede salir $\displaystyle \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} $ y sea $\displaystyle S $ el plano $\displaystyle \textbf{x} \left(u,v\right)=\left(u,v,0\right) $. Tenemos 
-\[ \textbf{x} _{u}= \left(1,0,0\right)\quad \text{y} \quad \textbf{x} _{v}=\left(0,1,0\right) \Rightarrow \begin{pmatrix} E & F \\ F & G \end{pmatrix}=\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} .\]
-Las primeras formas fundamentales son 
-\[\begin{pmatrix} E & F \\ F & G \end{pmatrix}=\left(Jh\right)^{T}\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}\left(Jh\right) .\]
-Si cogemos $\displaystyle \textbf{y} \left(\theta, r\right)=\left(r \cos \theta, r \sin \theta, 0\right) $ con $\displaystyle \gamma\left(r\right)=\left(r,0\right) $, tenemos que 
-\[I _{ \textbf{y} } =\begin{pmatrix} r^{2} & 0 \\ 0 & \|\gamma'\|^{2} \end{pmatrix}=\begin{pmatrix} r^{2} & 0 \\ 0 & 1 \end{pmatrix}.\]
-Nos preguntamos si $\displaystyle \begin{pmatrix} \cos ^{2}u & 0 \\ 0 & 1 \end{pmatrix} $ la $\displaystyle I $ del plano.
-% después de la foto
-Si tiene solución, es $\displaystyle I $ del plano. 
+
 \section{Áreas}
-Sea $\displaystyle S $ una superficie parametrizada. Para cada división de $\displaystyle U $ en cuadrados de lado $\displaystyle \epsilon > 0 $ tenemos que $\displaystyle S = \bigcup_{j}Q_{j} $, con $\displaystyle Q_{j} $ de vértices $\displaystyle v_{j1} $, $\displaystyle v_{j2} $, $\displaystyle v_{j3} $ y $\displaystyle v_{j4} $ y 
+Sea $\displaystyle S $ una superficie parametrizada. Tomamos $\displaystyle R \subset S $ una región compacta y $\displaystyle D \subset U $ compacto de forma que $\displaystyle R = \textbf{x} \left(D\right) $. Para cada división de $\displaystyle D $ en cuadrados de lado $\displaystyle \epsilon > 0 $ tenemos que $\displaystyle D = \bigcup_{j}Q_{j} $, con $\displaystyle Q_{j} $ un cuadrado de vértices $\displaystyle v_{j1} $, $\displaystyle v_{j2} $, $\displaystyle v_{j3} $ y $\displaystyle v_{j4} $ y 
 \[P_{j1} = \textbf{x} \left(v_{j1}\right), \ldots, P_{j4}= \textbf{x} \left(v_{j4}\right) .\]
-Tomamos $\displaystyle R \subset S $ una región compacta y $\displaystyle D \subset U $ compacto de forma que $\displaystyle R = \textbf{x} \left(D\right) $. Consideramos los paralelogramos
+ Consideramos los paralelogramos
 \[\Pi_{j} = \left\{ P_{i1} + t_{1} \overrightarrow{P_{j1}P_{j2}} + t_{2}\overrightarrow{P_{j1}P_{j3}}\; : \; t_{1}, t_{2} \in \left[0,1\right] \right\} .\]
-Tenemos que 
-\[A_{\epsilon }=\sum^{N}_{j = 1}A\left(\Pi_{j}\right) .\]
-\begin{prop}
+Definimos $\displaystyle A_{\epsilon }=\sum^{N}_{j = 1}A\left(\Pi_{j}\right) $. Se puede ver que 
 \[\lim_{\epsilon  \to 0}A_{\epsilon }=\int \int _{D}\| \textbf{x} _{u} \times \textbf{x} _{v}\| \; du \; dv .\]
-\end{prop}
 \begin{eg}
 Si $\displaystyle \textbf{x} \left(x,y\right)=\left(x,y,h\left(x,y\right)\right) $ es parametrización tipo grafo, 
 \[\lim_{\epsilon  \to 0}A_{\epsilon }=\int \int _{D}\sqrt{1 + h_{x}^{2} + h_{y}^{2}} \; dx \; dy .\]
 \end{eg}
-\begin{observation}
+\begin{observation} Podemos hacer algunas observaciones:
 \begin{enumerate}
-\item $\displaystyle \| \textbf{x} _{u} \times \textbf{x} _{v}\| = \sqrt{EG-F^{2}}=\sqrt{\det\left(I\right)} $ intrínseco. Para tipo grafo, $\displaystyle \| \textbf{x} _{y} \times \textbf{x} _{y}\| = \sqrt{1 + h_{x}^{2}+h_{y}^{2}} $.
-\item Se llama \textbf{elemento del área} $\displaystyle dA = \| \textbf{x} _{u} \times \textbf{x} _{v}\| du\; dv $. 
+\item $\displaystyle \| \textbf{x} _{u} \times \textbf{x} _{v}\| = \sqrt{EG-F^{2}}=\sqrt{\det\left(I\right)} $ es intrínseco. 
+\item Se llama \textbf{elemento del área} $\displaystyle dA = \| \textbf{x} _{u} \times \textbf{x} _{v}\| du\; dv $. Esto está bien definido, es decir, no depende de la parametrización. En efecto, si $\displaystyle \left(w,s\right)=h\left(u,v\right) $ con $\displaystyle \textbf{y} \circ h = \textbf{x}  $ y $\displaystyle h = \textbf{y} ^{-1} \circ \textbf{x}  $, tenemos que, como $\displaystyle \left(Jh\right)^{T}I _{ \textbf{y} }\left(Jh\right)= I _{ \textbf{x} } $, 
+\[
+	\sqrt{\det\left(I_{ \textbf{x} }\right)} =  \sqrt{\det\left(\left(Jh\right)^{T}I_{ \textbf{y} }Jh\right)} = \sqrt{\left(\det\left(Jh\right)^{2}\det\left(I_{ \textbf{y} }\right)\right)} = \left|\det\left(Jh\right)\right|\sqrt{\det\left(I_{ \textbf{y} }\right)} .
+\]
+De aquí se deduce que 
+\[
+\begin{split}
+	\int \int _{D}\sqrt{\det\left(I_{ \textbf{x} }\right)} \; du \; dv = & \int \int _{D'}\sqrt{\det\left(I _{ \textbf{x} }\right)\left(w,s\right)}\frac{\partial \left(u,v\right)}{\partial \left(w,s\right)} \; dw \;  d s \\
+	= &  \int \int _{D'} \left|\det\left(Jh\right)\right| \sqrt{\det\left(I _{ \textbf{y} }\right)}\frac{1}{|\det\left(Jh\right)|} \; dw \; d s\\
+	= & \int \int _{D'}\sqrt{\det\left(I_{ \textbf{y} }\right)} \; dw \; d s.
+\end{split}
+\]
+\item Si $\displaystyle S $ es orientada, tomamos todas las cartas positivas, y los cambios de cartas tienen el tipo $\displaystyle \det\left(Jh\right)>0 $.
 \end{enumerate}
 \end{observation}
-\begin{proof}
-Sea $\displaystyle \left(w,s\right)=h\left(u,v\right) $ con $\displaystyle \textbf{y} \circ h = \textbf{x}  $ y $\displaystyle h = \textbf{y} ^{-1} \circ \textbf{x}  $. Tenemos que 
-\[\left(Jh\right)^{T}I _{ \textbf{y} }\left(Jh\right)= I _{ \textbf{x} } .\]
-\[\det\left(\left(Jh\right)^{T}I _{ \textbf{y} } \left(Jh\right)\right) = \det\left(I _{ \textbf{x} }\right) \Rightarrow \sqrt{\left(\det\left(Jh\right)\right)^{2}\det\left(I _{ \textbf{y} }\right)} = \sqrt{\det\left(I _{ \textbf{x} }\right)} \Rightarrow \left|\det\left(Jh\right)\right|\sqrt{ \det\left(I_{ \textbf{y} }\right)} = \sqrt{\det\left(I _{ \textbf{x} }\right)}.\]
-Entonces, 
-\[\int \int _{D}\sqrt{\det\left(I_{ \textbf{x} }\right)} \; du \; dv = \int \int _{D'}\sqrt{\det\left(I _{ \textbf{x} }\right)\left(w,s\right)}\frac{\partial \left(u,v\right)}{\partial \left(w,s\right)} \; dw \;  d s = \int \int _{D} \left|\det\left(Jh\right)\right| \sqrt{\det\left(I _{ \textbf{y} }\right)}\frac{1}{|\det\left(Jh\right)|} \; dw \; d s .\]
-\end{proof}
-\begin{observation}
-\begin{enumerate}
-\item Si $\displaystyle S $ es orientada, tomamos todas las cartas positivas, y los cambios de cartas tienen el tipo $\displaystyle \det\left(Jh\right)>0 $. 
-\item Si $\displaystyle S $ tiene un atlas y $\displaystyle R \subset S $ compacto, definimos
+\begin{definition}[Área de una superficie]
+Si $\displaystyle S $ es una superficie compacta que admite un atlas definimos
 	\[A\left(S\right)=\sum^{n}_{i = 1}A\left(R_{i}\right) ,\]
-	con $\displaystyle S = \bigcup_{1 \leq i \leq n}A\left(R_{i}\right) $, $\displaystyle R_{i}\subset \textbf{x} _{i}\left(U_{i}\right) $, $\displaystyle R_{i} \cap R_{j} $ tiene medida nula $\displaystyle \forall i \neq j $. 
-\end{enumerate}
-
-\end{observation}
-\begin{definition}[Integral de funcioens]
-Si $\displaystyle f : S \to \R $ es diferenciable, $\displaystyle R \subset S $ compacto y $\displaystyle D \subset U $ compacto y $\displaystyle R = \textbf{x} \left(D\right) $,
-\[\int \int _{R}f : = \int \int _{D}f\left(u,v\right)\| \textbf{x} _{u} \times \textbf{x} _{v}\| \; du \; dv.\]
+	con $\displaystyle S = \bigcup_{1 \leq i \leq n}A\left(R_{i}\right) $, $\displaystyle R_{i}\subset \textbf{x} _{i}\left(U_{i}\right) $ compacto y $\displaystyle R_{i} \cap R_{j} $ tiene medida nula $\displaystyle \forall i \neq j $.
 \end{definition}
 \begin{eg}[Área de $\displaystyle \mathbb{S}^2 $]
 	Consideremos $\displaystyle \textbf{x} \left(\varphi, z\right)=\left(\sqrt{1-z^{2}}\cos \varphi, \sqrt{1-z^{2}}\sin \varphi, z\right) $. Tenemos que 
 	\[I _{ \textbf{x} } = \begin{pmatrix} 1-z^{2} & 0 \\ 0 & \frac{1}{1-z^{2}}\end{pmatrix} ,\]
-	con $\displaystyle z \in \left[-1,1\right]  $ y $\displaystyle \varphi\in\left[0,2\pi \right]  $. De esta forma $\displaystyle \det\left(I_{ \textbf{x} }\right) = 1 $. 
-	% calcular la integral
+	con $\displaystyle z \in \left[-1,1\right]  $ y $\displaystyle \varphi\in\left[0,2\pi \right]  $. Como $\displaystyle \det\left(I_{ \textbf{x} }\right) = 1 $ tenemos que 
+	\[A\left(\mathbb{S}^{2}\right)=\int \int _{\left[-1,1\right] \times\left[0,2\pi \right] }\sqrt{1} \; d\varphi \; dz = 4\pi .\]
 \end{eg}
+
+\begin{definition}[Integral de superficie]
+Si $\displaystyle f : S \to \R $ es diferenciable, $\displaystyle R \subset S $ compacto y $\displaystyle D \subset U $ compacto tales que $\displaystyle R = \textbf{x} \left(D\right) $, se define la \textbf{integral} de $\displaystyle f $ a lo largo de $\displaystyle R $ como
+\[\int \int _{R}f : = \int \int _{D}f\left(u,v\right)\| \textbf{x} _{u} \times \textbf{x} _{v}\| \; du \; dv.\]
+\end{definition}
+\begin{observation}
+Es sencillo ver, a partir de una observación anterior, que la integral es intrínseca. Esto es, no depende de la parametrización. 
+\end{observation}
+\begin{eg}
+Continuando con el ejemplo anterior consideremos $\displaystyle f \left(x,y,z\right)=z $ y calculemos su integral de superficie a lo largo de $\displaystyle \mathbb{S}^{2} $:
+\[
+\begin{split}
+	\int \int _{\mathbb{S}^{2}}z = & \int \int _{\left[-1,1\right] \times\left[0,2\pi \right] }z \; d\varphi \; dz = 2\pi \int^{1}_{-1} z \; dz = 0	 .
+\end{split}
+\]
+\end{eg}
+
 
