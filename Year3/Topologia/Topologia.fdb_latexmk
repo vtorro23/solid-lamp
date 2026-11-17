@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1794214736.24787 "Topologia.tex" "Topologia.pdf" "Topologia" 1794214746.96101 0
+["pdflatex"] 1794903738.49157 "Topologia.tex" "Topologia.pdf" "Topologia" 1794903751.67565 0
   "/Users/victoriatorroja/Desktop/Images/Topologia1.png" 1790512530.09788 737979 bf699281a744c3e9ce350bc7a176bf78 ""
   "/Users/victoriatorroja/Desktop/Images/Topologia2.png" 1790511518.75771 613542 6a8ffd913079052d6ef3502a166d03c9 ""
   "/Users/victoriatorroja/Desktop/Images/Topologia3.png" 1790511615.49229 484654 f7a2e4b43bed51bc3b2aefe4c602b7a2 ""
@@ -9,6 +9,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1202520719 2327 9d6df24f9c4f7368395224341a95523a ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc" 1254269338 3031 6c4d3515bf7115d8518af1c9ab97ca44 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -48,6 +49,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmr6.tfm" 1254269338 11836 e3b6ce3e601aec94f64a536e7f4224d5 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmr7.tfm" 1254269338 11852 5a9022f105fd1ee2797df861e79ae9a0 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm" 1254269338 11864 309fd7f43e4a0ba39f6f7644d76e8edf ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm" 1254269338 1556 b86d923e6b2f9aab2e313098a95cb0b8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1248133631 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb" 1255129361 121021 1bf809ce4a594679006bd72263eba59b ""
@@ -253,6 +255,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd" 1616454256 1882 28c08db1407ebff35a658fd141753d16 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd" 1616454256 1867 996fe743d88a01aca041ed22cc10e1bb ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmss.fd" 1616454256 1641 f48673bce41ac279099d0c9523459753 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd" 1616454256 1914 884882d7ebb0fd65cea93fca77ff6f5a ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/mathtools/mathtools.sty" 1710187076 62672 9ff036bc89365461cc2bd482cc1e4879 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/mathtools/mhsetup.sty" 1616101747 5582 a43dedf8e5ec418356f1e9dfe5d29fc3 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/mdframed/md-frame-1.mdf" 1372805434 24632 760c4c81e779e6958bac43417deb524f ""
@@ -304,11 +307,12 @@
   "Chap3.tex" 1791710627.63528 63107 b075f607c5d655735decac7991934edb ""
   "Chap4.tex" 1792318249.50835 12813 8434e2f36d825a98cc4df3fcfa68fdb1 ""
   "Chap5.tex" 1793689716.99816 35899 604cf50037083a38c61a5ccdc9cf9a6d ""
-  "Chap6.tex" 1794214723.65284 20791 aee9a152e50437b60f35f34869b47714 ""
-  "Topologia.aux" 1794214746.58576 55748 230273324abed2c6fa9f20a7660dbde0 "pdflatex"
-  "Topologia.out" 1794214746.59281 6551 64645577e1a828067b4d38e35b9f4197 "pdflatex"
-  "Topologia.tex" 1793719917.00531 1139 bc9591087328d7720f74f8cf7f8028cf ""
-  "Topologia.toc" 1794214746.59344 3292 58482d1b061b0aafa214ba459e712fc6 "pdflatex"
+  "Chap6.tex" 1794903727.52118 47830 9009735b310dfd0b60b407441695a614 ""
+  "Chap7.tex" 1794844164.1244 8794 40accc5642c77c93f56732fc7d44be98 ""
+  "Topologia.aux" 1794903751.28372 63532 db03de12d71278d5b97f6fc2d17bc667 "pdflatex"
+  "Topologia.out" 1794903751.29141 8387 bdffab5d5aee9b65a7ac0b5418198678 "pdflatex"
+  "Topologia.tex" 1794841813.8725 1157 40337de1f659c304c24fd2ab98f56a4c ""
+  "Topologia.toc" 1794903751.29232 4018 b0877dd9be9caccd27a9c5f41d9f82d1 "pdflatex"
   "preamble.tex" 1790087142.9695 8693 97f1778b6caf72a526efeb545fe91ca3 ""
   (generated)
   "Topologia.aux"

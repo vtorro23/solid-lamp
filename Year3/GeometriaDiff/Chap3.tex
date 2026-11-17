@@ -3,15 +3,16 @@ Consiste en el estudio de una superficie como está dentro de $\displaystyle \R^
 \section{Curvatura normal, aplicaciones de Gauss y Weingarte}
 Sea $\displaystyle S\subset \R^{3} $ una superficie regular y $\displaystyle p \in S $. Consideremos el conjunto 
 \[\mathbb{S}\left(T_{p}S\right)= \left\{ \vec{v} \in T_{p}S \; : \; \|\vec{v}\| = 1\right\}  ,\]
-que es el conjunto de direcciones de $\displaystyle T_{p}S $. Para $\displaystyle \vec{v} $ consideramos el plano
+que es el \textbf{conjunto de direcciones de} $\displaystyle T_{p}S $. Para $\displaystyle \vec{v} $ consideramos el plano
 \[\Pi_{\vec{v}} =p + \mathcal{L}\left(\vec{v}, N_{p}\right) ,\]
-que es el plano normanl en la dirección $\displaystyle \vec{v} $. 
-% poner imagen
-\begin{lema}
+que es \textbf{el plano normal en la dirección} $\displaystyle \vec{v} $. 
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{~/Desktop/Images/GeoDiff14.png}
+\end{center}\begin{lema}
 La intersección $\displaystyle \Pi_{\vec{v}}\cap S $ es una curva regular, esto es, una curva de $\displaystyle p $.
 \end{lema}
 \begin{proof}
-Cambiando de coordenadas en $\displaystyle \R^{3} $ tomamos $\displaystyle p = \left(0,0,0\right) $ y $\displaystyle \mathcal{T}_{p}S = \mathcal{L}\left(e_{1}, e_{2}\right) $ y $\displaystyle N_{p}=\left(0,0,1\right) $. Tomamos cartas tipo grafo $\displaystyle \textbf{x} \left(x,y\right)=\left(x,y,h\left(x,y\right)\right) $. De esta forma, 
+Cambiando de coordenadas en $\displaystyle \R^{3} $ tomamos $\displaystyle p = \left(0,0,0\right) $ y $\displaystyle T_{p}S = \mathcal{L}\left(e_{1}, e_{2}\right) $ y $\displaystyle N_{p}=\left(0,0,1\right) $. Tomamos cartas tipo grafo $\displaystyle \textbf{x} \left(x,y\right)=\left(x,y,h\left(x,y\right)\right) $. De esta forma, 
 \[N_{p}=\frac{\left(-h_{x}\left(0,0\right), -h_{y}\left(0,0\right), 1\right)}{\sqrt{1 + h_{x}^{2}+h_{y}^{2}}} .\]
 De esta forma $\displaystyle h_{x}\left(0,0\right)=h_{y}\left(0,0\right)=0 $. Por otro lado, $\displaystyle \vec{v}=\left(\cos \theta, \sin \theta, 0\right) $ con $\displaystyle \theta \in [0,2\pi] $ por lo que 
 \[\Pi_{\vec{v}}\cap S = \left\{\left(t \cos \theta, t \sin \theta, th\left(\cos \theta, \sin \theta \right)\right) \; : \; t \in \left(-\epsilon, \epsilon \right) \right\}  .\]
@@ -19,14 +20,16 @@ De esta forma $\displaystyle h_{x}\left(0,0\right)=h_{y}\left(0,0\right)=0 $. Po
 \begin{definition}[Sección normal]
 A la curva $\displaystyle \Pi_{\vec{v}}\cap S $ se la llama \textbf{sección normal} de $\displaystyle S $ en la dirección $\displaystyle \vec{v} $.
 \end{definition}
-Sea $\displaystyle \alpha\left(s\right) $ una curva p.p.a tal que $\displaystyle \tr\left(\alpha \right)=\left(\Pi_{\vec{v}}\cap S\right)\cap B_{\epsilon }\left(p\right) $ tal que $\displaystyle \alpha\left(0\right)=p $ y $\displaystyle \alpha'\left(0\right)=\vec{v} $.
+\begin{notation}
+De ahora en adelante denotaremos la sección normal por $\displaystyle \alpha\left(s\right) $. Es decir, $\displaystyle \alpha\left(s\right) $ es una curva p.p.a tal que $\displaystyle \tr\left(\alpha \right)=\left(\Pi_{\vec{v}}\cap S\right)\cap B_{\epsilon }\left(p\right) $, de forma que $\displaystyle \alpha\left(0\right)=p $ y $\displaystyle \alpha'\left(0\right)=\vec{v} $.
+\end{notation}
+
 \begin{definition}[Curvatura normal]
 Se llama \textbf{curvatura normal} (en la dirección $\displaystyle \vec{v} $) a $\displaystyle \kappa_{n}\left(\vec{v}\right)=\kappa_{\alpha }^{pl}\left(0\right) = \left\langle \alpha''\left(0\right), N \right\rangle  $ (con signo).
 \end{definition}
 \begin{observation}
 Podemos hacer un par de observaciones:
 \begin{itemize}
-\item $\displaystyle \alpha\left(s\right) $ es una curva en el plano $\displaystyle \Pi_{\vec{v}} $. 
 \item $\displaystyle \alpha\left(s\right) $ es una curva plana en $\displaystyle \Pi_{\vec{v}} = \mathcal{L}\left(\hat{t}_{\alpha }, N_{p}\right) $ orientado con $\displaystyle \left\{ \hat{t}_{\alpha }, N_{p}\right\}  $. 
 \item $\displaystyle \alpha  $ verifica que $\displaystyle \alpha'\left(0\right)=\vec{v}=\hat{t}_{\alpha } $ y $\displaystyle \alpha''\left(0\right)=\kappa_{\alpha }^{pl}N $. 
 \item Se cumple que $\displaystyle \kappa_{\alpha }\left(0\right)= \left|\kappa_{\alpha }^{pl}\left(0\right)\right| $.
@@ -38,13 +41,15 @@ Podemos hacer un par de observaciones:
 \begin{eg}[Plano]
 Las secciones normales de un plano son rectas de forma que $\displaystyle \kappa_{n}\left(\vec{v}\right)\equiv 0 $, $\displaystyle \forall \vec{v} $. Recíprocamente, se puede demostrar que si para todo punto $\displaystyle p  $ y todo vector $\displaystyle \vec{v} $ se tiene que $\displaystyle \kappa_{n}\left(\vec{v}\right)=0 $, entonces $\displaystyle S $ es un plano.
 \end{eg}
-Tenemos la función 
+\begin{observation}
+Dada una superficie regular $\displaystyle S $ y $\displaystyle p \in S $ podemos considerar la función 
 \[\kappa_{n}: \mathbb{S}\left(T_{p}S\right)\to \R : \vec{v} \to \kappa_{n}\left(\vec{v}\right)=\left\langle \alpha''\left(0\right), N_{p} \right\rangle  .\]
+\end{observation}
 \begin{definition}[Aplicación de Gauss]
-Se llama \textbf{aplicación de Gauss} de $\displaystyle S $ a 
+Dada una superficie regular $\displaystyle S $, se define la \textbf{aplicación de Gauss} como
 \[N : S \to \mathbb{S}^{2} : p \to N\left(p\right)=N_{p} .\]
 \end{definition}
-\begin{eg}
+\begin{eg}[Plano]
 Se puede demostrar que $\displaystyle N_{p} $ es constante para todo $\displaystyle p \in S $ si sólo si $\displaystyle S $ es un plano. En efecto, si tomamos cartas tipo grafo tenemos que 
 \[N_{p}=\frac{\left(-h_{x}, -h_{y}, 1\right)}{\sqrt{1+h_{x}^{2}+h_{y}^{2}}}=\left(0,0,1\right) .\]
 Necesariamente debe ser que $\displaystyle h_{x}=0 $ y $\displaystyle h_{y}=0 $ que es equivalente a que $\displaystyle h\left(x,y\right)=c_{0} $. 
@@ -59,17 +64,15 @@ Podemos hacer algunas observaciones:
 \end{enumerate}
 \end{observation}
 \begin{lema}
-$\displaystyle T_{N_{p}}\mathbb{S}^{2} = T_{p}S $.
+La diferencial $\displaystyle d _{p}N : T_{p}S \to T_{N_{p}}\mathbb{S}^{2} $ es un endomorfismo, es decir, $\displaystyle T_{N_{p}}\mathbb{S}^{2} = T_{p}S $.
 \end{lema}
 \begin{proof}
 Es sencillo ver que 
 \[T_{p}S = \left\langle N\left(p\right) \right\rangle ^{\perp }=T_{N\left(p\right)}\mathbb{S}^{2} .\]
 \end{proof}
-\begin{observation}
-Por tanto $\displaystyle d _{p}N : T_{p}S \to T_{p}S $ es un endomorfismo. 
-\end{observation}
+
 \begin{definition}[Aplicación Weingarten]
-Se llama \textbf{aplicación de Weingarten} u \textbf{operador forma} a 
+Dada una superficie regular $\displaystyle S $ y $\displaystyle p \in S $, se llama \textbf{aplicación de Weingarten} u \textbf{operador forma} a 
 \[\mathcal{W} := - d _{p}N : T _{p}S \to T_{p} S .\]
 \end{definition}
 \begin{observation}
@@ -82,7 +85,7 @@ Podemos hacer algunas observaciones:
 \end{itemize}
 \end{observation}
 \begin{prop}
-Se cumple que 
+La expresión matricial de la aplicación de Weingarten es 
 \[M_{\mathcal{B}_{ \textbf{x} }}\left(\mathcal{W}\right) = \begin{pmatrix} a & b \\ c & d \end{pmatrix} ,\]
 con 
 \[
@@ -94,7 +97,7 @@ con
 \end{prop}
 \begin{proof}
 Ya vimos que $\displaystyle dN_{p}\left( \textbf{x} _{u}\right)=N_{u} $ y $\displaystyle dN_{p}\left( \textbf{x} _{v}\right)=N_{v} $. Como $\displaystyle \mathcal{W}=-dN $ tenemos que  
-\[M_{\mathcal{B}_{ \textbf{x} }}\left(\mathcal{M}\right) = M_{ \mathcal{B}_{ \textbf{x} }}\left(-dN\right)=\begin{pmatrix} a & b \\ c & d \end{pmatrix}.\]
+\[M_{\mathcal{B}_{ \textbf{x} }}\left(\mathcal{W}\right) = M_{ \mathcal{B}_{ \textbf{x} }}\left(-dN\right)=\begin{pmatrix} a & b \\ c & d \end{pmatrix}.\]
 \end{proof}
 \begin{theorem}
 Si $\displaystyle \vec{v}\in \mathbb{S}\left(T_{p}S\right) $, 
@@ -103,66 +106,73 @@ Si $\displaystyle \vec{v}\in \mathbb{S}\left(T_{p}S\right) $,
 \begin{proof}
 Tenemos que $\displaystyle \kappa_{n}\left(\vec{v}\right)=\kappa_{\alpha }\left(0\right)=\left\langle \alpha''\left(0\right), N_{p} \right\rangle  $. Recordamos que
 \[N : S \to \mathbb{S}^{2} \quad \text{y} \quad \mathcal{W} = - dN : T_{p}S \to T_{N\left(p\right)}\mathbb{S}^{2} = T_{p}N .\]
-En efecto, 
-\[\left\langle \vec{v}, -dN\left(\vec{v}\right) \right\rangle = \left\langle \vec{v}, \mathcal{W}\left(\vec{v}\right) \right\rangle = I\left(\vec{v}, \mathcal{W}\left(\vec{v}\right)\right) .\]
-Tenemos que $\displaystyle \kappa_{n}\left(\vec{v}\right)=\left\langle \alpha''\left(0\right), N\left(p\right) \right\rangle  $ y de $\displaystyle \left\langle \alpha'\left(s\right), N\left(\alpha\left(s\right)\right) \right\rangle = 0 $ se sigue que, derivando, 
+
+Tenemos que $\displaystyle \kappa_{n}\left(\vec{v}\right)=\left\langle \alpha''\left(0\right), N\left(p\right) \right\rangle  $. Como $\displaystyle \left\langle \alpha'\left(s\right), N\left(\alpha\left(s\right)\right) \right\rangle = 0 $ derivando obtenemos que
 \[\left\langle \alpha'', N\circ \alpha \right\rangle + \left\langle \alpha', \left(N\circ \alpha \right)' \right\rangle \equiv 0 .\]
 De aquí se sigue que $\displaystyle \left\langle \alpha'', N \right\rangle =-\left\langle \alpha', \left(N\circ \alpha \right)' \right\rangle  $ por lo que en $\displaystyle s=0  $,
-\[\left\langle \alpha''\left(0\right), N\left(\alpha\left(0\right)\right) \right\rangle =-\left\langle \alpha'\left(0\right), \left(N\circ \alpha \right)'\left(0\right) \right\rangle =\left\langle \alpha''\left(0\right), N\left(p\right) \right\rangle =\left\langle \vec{v}, -dN\left(\vec{v}\right) \right\rangle =\left\langle \vec{v}, \mathcal{W}\left(\vec{v}\right) \right\rangle  .\]
+\[\left\langle \alpha''\left(0\right), N\left(\alpha\left(0\right)\right) \right\rangle = \left\langle \alpha''\left(0\right), N\left(p\right) \right\rangle =-\left\langle \alpha'\left(0\right), \left(N\circ \alpha \right)'\left(0\right) \right\rangle =\left\langle \vec{v}, -dN\left(\vec{v}\right) \right\rangle =\left\langle \vec{v}, \mathcal{W}\left(\vec{v}\right) \right\rangle  .\]
 \end{proof}
 \begin{definition}
-Extendemos la definición $\displaystyle \kappa_{n}\left(\vec{v}\right):=\left\langle \vec{v}-dN\left(\vec{v}\right) \right\rangle  $, $\displaystyle \forall \vec{v}\in T_{p}S $.
+Extendemos la definición $\displaystyle \kappa_{n}\left(\vec{v}\right):=\left\langle \vec{v},-dN\left(\vec{v}\right) \right\rangle  $, $\displaystyle \forall \vec{v}\in T_{p}S $.
 \end{definition}
-\begin{observation}
+\begin{observation}[Curvatura para vectores no unitarios]
 Es sencillo ver que 
-\[\kappa_{n}\left(\lambda \vec{v}\right)=\lambda^{2}\left\langle \vec{v}-dN\left(\vec{v}\right) \right\rangle  .\]
-Así, $\displaystyle \kappa_{n}\left(\vec{w}\right)=\|\vec{w}\|^{2}\kappa_{n}\left(\frac{\vec{w}}{\|\vec{w}\|}\right) $. 
+\[\kappa_{n}\left(\lambda \vec{v}\right)=\lambda^{2}\left\langle \vec{v},-dN\left(\vec{v}\right) \right\rangle  .\]
+Así, para $\displaystyle \vec{w}\neq 0 $, $\displaystyle \kappa_{n}\left(\vec{w}\right)=\|\vec{w}\|^{2}\kappa_{n}\left(\frac{\vec{w}}{\|\vec{w}\|}\right) $. 
 \end{observation}
 
 \begin{prop}
-Si $\displaystyle \alpha\left(t\right) $ es una curva regular $\displaystyle \alpha\left(0\right)=p $ y $\displaystyle \alpha'\left(0\right)=\vec{w} $. Entonces, 
-\[\kappa_{n}\left(\vec{w}\right) = \left\langle \alpha''\left(0\right), N_{p} \right\rangle =\left\langle \vec{w}-dN\left(\vec{w}\right) \right\rangle  .\]
+Si $\displaystyle \alpha\left(t\right) $ es una curva regular $\displaystyle \alpha\left(0\right)=p $ y $\displaystyle \alpha'\left(0\right)=\vec{w} $ entonces, 
+\[\kappa_{n}\left(\vec{w}\right) = \left\langle \alpha''\left(0\right), N_{p} \right\rangle =\left\langle \vec{w},-dN\left(\vec{w}\right) \right\rangle  .\]
 \end{prop}
 \begin{proof}
 \[\kappa_{n}\left(\vec{w}\right):=\left\langle \vec{w}, -dN\left(\vec{w}\right) \right\rangle =\left\langle \alpha'\left(0\right), -\left(N\circ \alpha \right)'\left(0\right) \right\rangle =\left\langle \alpha''\left(0\right), N\left(\alpha\left(0\right)\right) \right\rangle =\left\langle \alpha''\left(0\right), N\left(p\right) \right\rangle  .\]
 Hemos usado en la penúltima igualdad que $\displaystyle \left\langle \alpha', N\circ \alpha  \right\rangle \equiv 0 $.
 \end{proof}
+\begin{observation}
+Así, hemos demostrado que la curvatura normal de una superficie en la dirección $\displaystyle \vec{v} $ es la proyección de la aceleración de caulquier curva que pase por $\displaystyle p $ con velocidad $\displaystyle \vec{v} $ sobre el vector normal. 
+\end{observation}
+
 \section{Teorema de Meusnier y segunda forma fundamental}
 \begin{theorem}[Teorema de Meusnier]
-	Sea $\displaystyle p \in S $, $\displaystyle \vec{v}\in . \mathbb{S}\left(T_{p}S\right) $ y $\displaystyle \Pi = p + \mathcal{L}\left(\vec{v}, \vec{w}\right) $ tal que $\displaystyle \left\{ \vec{v}, \vec{w}\right\}  $ son ortonormales y $\displaystyle \theta = L\left(N_{p}, \vec{w}\right) $. Sección $\displaystyle \Pi \cap S $ es una curva en un entorno de $\displaystyle p $, $\displaystyle \beta\left(s\right) $ p.p.a de forma que $\displaystyle \beta \left(-\epsilon , \epsilon \right)\to S $ con $\displaystyle \beta\left(0\right)=p $ y $\displaystyle \beta'\left(0\right)=\vec{v} $.
-	% donde \alpha es la sección normal
+	Sea $\displaystyle p \in S $, $\displaystyle \vec{v}\in  \mathbb{S}\left(T_{p}S\right) $ y $\displaystyle \Pi = p + \mathcal{L}\left(\vec{v}, \vec{w}\right) $ tal que $\displaystyle \left\{ \vec{v}, \vec{w}\right\}  $ son ortonormales y $\displaystyle \theta = L\left(N_{p}, \vec{w}\right) $. La sección $\displaystyle \Pi \cap S $ es una curva en un entorno de $\displaystyle p $, $\displaystyle \beta\left(s\right) $ p.p.a de forma que $\displaystyle \beta : \left(-\epsilon , \epsilon \right)\to S $ con $\displaystyle \beta\left(0\right)=p $ y $\displaystyle \beta'\left(0\right)=\vec{v} $.
 	Entonces
-	\[\kappa_{\beta }\left(0\right)=\frac{\kappa_{\alpha }\left(0\right)}{\cos \theta} = \frac{\kappa_{n}\left(\vec{v}\right)}{\cos \theta } .\]	
+	\[\kappa_{\beta }\left(0\right)=\frac{\kappa_{\alpha }^{pl}\left(0\right)}{\cos \theta} = \frac{\kappa_{n}\left(\vec{v}\right)}{\cos \theta } .\]	
+	Donde $\displaystyle \alpha  $ es la sección normal.
 \end{theorem}
+
 \begin{proof}
-Tenemos que $\displaystyle \beta''\left(0\right)=\kappa_{\beta }^{es p}\hat{n}_{\beta } $ con $\displaystyle \hat{n}_{\beta }=\pm \vec{w} $ y $\displaystyle \beta''\left(0\right)=\kappa_{\beta }^{pl}\vec{w} $.
-Cogemos $\displaystyle \Pi $ orientado con la base ortonormal $\displaystyle \left\{ \vec{v}, \vec{w}\right\}  $. Además, $\displaystyle \kappa_{\beta }\left(0\right)=\left\langle \beta''\left(0\right), \vec{w} \right\rangle  $. Consideramos la base $\displaystyle \left\{ \vec{v}, N, \vec{u} = \vec{v} \times N\right\}  $ con $\displaystyle \vec{w} = \cos \theta N + \sin \theta \vec{u} $. Así, 
-\[\kappa_{\beta }\left(0\right)=\left\langle \beta''\left(0\right), \vec{w} \right\rangle =\left\langle \beta''\left(0\right), \cos N + \sin \theta \vec{u} \right\rangle  .\]
-% esta es la demostración de verdad
-\[\kappa_{n}\left(\vec{v}\right)= \left\langle \beta''\left(0\right), N \right\rangle =\left\langle \kappa_{\beta}\left(0\right)\vec{w}, N \right\rangle =\kappa_{\beta }\left(0\right)\cos \theta .\]
+Tenemos que $\displaystyle \beta\left(s\right) $ es una curva plana p.p.a contenida en $\displaystyle \Pi $. Tenemos que $\displaystyle \hat{t}_{\beta }\left(0\right)=\vec{v} $, por lo que su $\displaystyle \beta''\left(0\right) $ debe ser perpendicular a $\displaystyle \vec{v} $ y estar contenido en $\displaystyle \Pi $. De esta forma, debe ser que 
+\[\beta''\left(0\right)=\kappa_{\beta }^{pl}\left(0\right)\vec{w} \Rightarrow \kappa_{\beta }\left(0\right)=\left\langle \beta''\left(0\right), \vec{w} \right\rangle  .\]
+Ahora, tomamos una base ortonormal de $\displaystyle \R^{3} $ en $\displaystyle p $:
+\[ \left\{ \vec{v}, N, \vec{u}= \vec{v} \times N\right\}  .\]
+Como $\displaystyle \vec{w} $ es perpendicular a $\displaystyle \vec{v} $, tenemos que está contenido en el plano generado por $\displaystyle N $ y $\displaystyle u $. Sabiendo que el ángulo entre $\displaystyle N $ y $\displaystyle \vec{w} $ es $\displaystyle \theta  $ podemos escribir
+\[\vec{w}=\cos\theta N + \sin \theta \vec{u} .\]
+Ahora, por definición sabemos que curvatura normal de una superficie en la dirección $\displaystyle \vec{v} $ es la proyección de la aceleración de cualquier curva que pase por $\displaystyle p $ con velocidad $\displaystyle \vec{v} $ sobre el vector $\displaystyle N $. Esto es,
+\[\kappa_{n}\left(\vec{v}\right)=\left\langle \beta''\left(0\right), N \right\rangle =\left\langle \kappa_{\beta }\left(0\right)\vec{w}, N \right\rangle =\kappa_{\beta}\left(0\right)\left\langle \cos \theta N + \sin \theta \vec{u}, N \right\rangle =\kappa_{\beta }\left(0\right)\cos \theta .\]
 \end{proof}
 
 \begin{observation}
-Si $\displaystyle \theta = 0 $, sección normal $\displaystyle \alpha\left(s\right) $. 
+Si $\displaystyle \theta = 0 $, obtenemos la sección normal $\displaystyle \alpha\left(s\right) $. También se puede observar que hasta $\displaystyle \theta = \frac{\pi }{2} $ las curvas son regulares. Tiene sentido puesto que en $\displaystyle \theta = \frac{\pi }{2} $ obtenemos el plano tangente. 
 \end{observation}
-Se puede observar que hasta $\displaystyle \theta = \frac{\pi }{2} $ las curvas son regulares. 
+ 
 \begin{colorary}
 De todas las curvas $\displaystyle \kappa_{\beta }\left(0\right) $, la de menor curvatura (en valor absoluto) es $\displaystyle \kappa_{\alpha }\left(0\right)=\kappa_{n}\left(\vec{v}\right) $. 
 \end{colorary}
 \begin{definition}[Segunda forma fundamental]
-Sea $\displaystyle p \in S $. Llamamos \textbf{segunda forma fundamental} a 
+Dada una superficie regular $\displaystyle S $ y $\displaystyle p \in S $, llamamos \textbf{segunda forma fundamental} a 
 \[ II_{p} : T_{p}S \times T_{p}S \to \R : \left(\vec{v}, \vec{w}\right)\to \left\langle \vec{v}, -dN\left(\vec{w}\right) \right\rangle  .\]
 \end{definition}
-\begin{observation}
+\begin{observation} Se pueden hacer algunas observaciones:
 \begin{enumerate}
 \item Es sencillo ver que 
 	\[II\left(\vec{v}, \vec{w}\right)= II_{p}\left(\vec{v}, \vec{w}\right)=\left\langle \vec{v}, \mathcal{W}\left(\vec{w}\right) \right\rangle  .\]
-\item $\displaystyle II\left(\vec{v}, \vec{w}\right) $ es una forma bilineal.
-\item Varía con $\displaystyle p \in S $.
+\item Dado que $\displaystyle \mathcal{W} $ es una aplicación lineal, se tiene que $\displaystyle II\left(\vec{v}, \vec{w}\right) $ es una forma bilineal y $\displaystyle II\left(\vec{v}, \vec{v}\right) $ es una forma cuadrática.
+\item Se puede ver que $\displaystyle \kappa_{n}\left(\vec{v}\right)=II\left(\vec{v}\right) $. 
+\item La segunda forma fundamental varía en función de $\displaystyle p \in S $.
 \end{enumerate}
 \end{observation}
-\begin{prop}
-$\displaystyle II\left(\vec{v}, \vec{w}\right) $ es simétrica y además, 
+\begin{prop} Sea $\displaystyle \textbf{x} \left(u,v\right) $ una parametrización de $\displaystyle S $. Entonces, $\displaystyle II\left(\vec{v}, \vec{w}\right) $ es simétrica y además, 
 \[M_{\mathcal{B}_{ \textbf{x} }}\left(II\right)=\begin{pmatrix} e & f \\ f & g \end{pmatrix} ,\]
 con 
 \[
@@ -174,12 +184,247 @@ g = \left\langle \textbf{x} _{vv}, N \right\rangle =-\left\langle \textbf{x} _{v
 .\]
 \end{prop}
 \begin{proof}
-Tenemos que 
+	Basta con calcular la forma matricial de la segunda forma fundamental para demostrar ambas cosas.
+Tendremos que 
 \[M_{ \mathcal{B}_{ \textbf{x} }}II = \begin{pmatrix} II\left( \textbf{x} _{u}, \textbf{x} _{u}\right) & II\left( \textbf{x} _{u}, \textbf{x} _{v}\right) \\
 II\left( \textbf{x} _{v}, \textbf{x} _{u}\right) & II\left( \textbf{x} _{v}, \textbf{x} _{v}\right)\end{pmatrix} .\]
-Tenemos que 
-\[II\left( \textbf{x} _{u}, \textbf{x} _{u}\right)=\left\langle \textbf{x} _{u}, -N\left( \textbf{x} _{u}\right) \right\rangle  = \left\langle \textbf{x} _{u}, -N_{u} \right\rangle = \left\langle \textbf{x} _{uu}, N \right\rangle  ,\]
-puesto que 
+Calculando cada componente,
+\[II\left( \textbf{x} _{u}, \textbf{x} _{u}\right)=\left\langle \textbf{x} _{u}, -N\left( \textbf{x} _{u}\right) \right\rangle  = \left\langle \textbf{x} _{u}, -N_{u} \right\rangle = \left\langle \textbf{x} _{uu}, N \right\rangle  .\]
+La última igualdad se debe a que
 \[\left\langle \textbf{x} _{u}, N \right\rangle \equiv 0 \Rightarrow \frac{d}{du}\left(\left\langle \textbf{x} _{u}, N \right\rangle \right)=\left\langle \textbf{x} _{uu}, N \right\rangle + \left\langle \textbf{x} _{u}, N_{u} \right\rangle \equiv 0.\]
+El resto de componentes se calculan de forma análoga.
 \end{proof}
-% observación que no me ha dado tiempo a copiar y está en las fotos
+\begin{observation}
+	Se puede ver que 
+	\[II\left(\vec{v}, \vec{w}\right)=II\left(\vec{w}, \vec{v}\right)\iff \left\langle \vec{v}, -dN\left(\vec{w}\right) \right\rangle = \left\langle \vec{w}, -dN\left(\vec{v}\right) \right\rangle \iff \left\langle \vec{v}, \mathcal{W}\left(\vec{w}\right) \right\rangle =\left\langle \mathcal{W}\left(\vec{v}\right), \vec{w} \right\rangle  .\]
+Así, la aplicación $\displaystyle \mathcal{W} $ es autoadjunta.	
+\end{observation}
+\begin{eg}[Tipo grafo]
+Consideremos 
+\[ \textbf{x} \left(x,y\right)=\left(x,y,h\left(x,y\right)\right) ,\]
+con $\displaystyle \textbf{x} _{x}=\left(1, 0, h_{x}\right) $, $\displaystyle \textbf{x} _{y} = \left(0,1,h_{y}\right) $ y $\displaystyle N=\frac{\left(-h_{x}, -h_{y}, 1\right)}{\sqrt{1 + h_{x}^{2}+h_{y}^{2}}} $. Entonces, 
+\[E = 1 + h_{x}^{2}, \quad F = h_{x}h_{y} \quad G=1+h_{y}^{2} ,\]
+por lo que 
+\[I = \begin{pmatrix} 1 + h_{x}^{2} & h_{x}h_{y} \\ h_{x}h_{y}& 1 + h_{y}^{2} \end{pmatrix} .\]
+Por otro lado
+\[ \textbf{x} _{x x} = \left(0,0, h_{x x}\right), \quad \textbf{x} _{xy} = \left(0,0,h_{xy}\right), \quad \textbf{x} _{yy}= \left(0,0,h_{yy}\right) .\]
+Así, nos queda que 
+\[ e = \left\langle \textbf{x} _{x x}, N \right\rangle =\frac{h_{x x}}{\sqrt{1+h_{x}^{2}+h_{y}^{2}}}, \quad f=\left\langle \textbf{x} _{xy}, N \right\rangle =\frac{h_{xy}}{\sqrt{1 + h_{x}^{2}+h_{y}^{2}}} .\]
+\[g = \left\langle \textbf{x} _{yy}, N \right\rangle =\frac{h_{yy}}{\sqrt{1 + h_{x}^{2}+h_{y}^{2}}} .\]
+De esta forma, 
+\[II = \frac{1}{\sqrt{1 + h_{x}^{2}+h_{y}^{2}}}\begin{pmatrix} h_{x x} & h_{xy} \\ h_{xy} & h_{yy} \end{pmatrix} .\]
+\end{eg}
+\begin{eg}[Paraboloide]
+Consideremos el paraboloide $\displaystyle z = x^{2}+ y^{2} $, podemos tomar la parametrización $\displaystyle \textbf{x} \left(x,y\right)=\left(x,y,x^{2}+y^{2}\right) $ y por el ejemplo anterior tendremos que 
+\[I = \begin{pmatrix} 1 + 4x^{2} & 4xy \\ 4xy & 1 + 4y^{2} \end{pmatrix}\quad \text{y} \quad II = \frac{1}{\sqrt{1 + 4x^{2}+4y^{2}}}\begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix} .\]
+Concretamente, si tomamos $\displaystyle p = \textbf{x} \left(0,0\right)=\left(0,0,0\right) $, tenemos que $\displaystyle \textbf{x} _{x}\left(p\right)=\left(1,0,0\right) $ y $\displaystyle \textbf{x} _{y}\left(p\right)=\left(0,1,0\right) $ por lo que $\displaystyle N = \left(0,0,1\right) $. Así, nos queda que 
+\[II = \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix} .\]
+Por tanto, $\displaystyle \kappa_{n}\left( \textbf{x} _{x}\right)=\kappa_{n}\left(\left(1,0\right)_{ \mathcal{B}_{ \textbf{x} }}\right)=2$. Hay que coger la curva $\displaystyle \alpha\left(t\right)=\left(t, 0, t ^{2}\right) $ y parametrizar por arco. Se tiene que $\displaystyle \kappa_{n}\left(\vec{v}\right)=2 $ si $\displaystyle \|\vec{v}\| = 2 $. 
+\end{eg}
+\begin{eg}[Silla de montar]
+Consideremos $\displaystyle h\left(x,y\right)=xy $. 
+% calcular plano tangente y normal
+En este caso 
+\[ II = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} .\]
+Así, 
+\[\kappa_{n}\left(\left(1,1\right)_{\mathcal{B}_{ \textbf{x} }}\right)=\left(1,1\right)\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} 1 \\ 1 \end{pmatrix} .\]
+No se cumple que $\displaystyle \|\left(1,1\right)\|=\sqrt{2} $ puesto que 
+\[\|\vec{v}\| = \sqrt{\left(1,1\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} 1 \\ 1 \end{pmatrix}} = 2 .\]
+% completar con la foto
+\end{eg}
+\begin{observation} Se puede observar que
+\begin{enumerate}
+	\item La matriz $\displaystyle \begin{pmatrix} E & F \\ F & G \end{pmatrix} $ invertible.
+	\item Como $\displaystyle \mathcal{W}= - dN $ tenemos que 
+		\[dN = \begin{pmatrix} -a & - b \\ - c & - d \end{pmatrix} ,\]
+		con 
+		\[N_{u}=-a \textbf{x} _{u}-c \textbf{x} _{v} = \left(-a,-c\right)_{ \mathcal{B}_{ \textbf{x} }} \quad \text{y} \quad N_{v}=-b \textbf{x} _{u}-d \textbf{x} _{v}= \left(- b, - d\right)_{\mathcal{B}_{ \textbf{x} }}.\]
+	\item $\displaystyle \mathcal{W}=I^{-1}II $.
+	\item Ojo con el orden! En efecto
+		\[\begin{pmatrix} a & b \\ c & d \end{pmatrix}\neq \begin{pmatrix} e & f \\ f& g \end{pmatrix}\begin{pmatrix} E & F\\ F & G \end{pmatrix}^{-1} .\]
+	\item La matriz $\displaystyle \begin{pmatrix} a & b \\ c & d \end{pmatrix} $ en general no es simétrica.
+		% considerar como contraejemplo h(x,y)=x^2+y^2 en el (1,0)
+\end{enumerate}
+\end{observation}
+
+\begin{prop}
+En $\displaystyle \mathcal{B}_{ \textbf{x} } $, 
+\[M_{ \mathcal{B}_{ \textbf{x} }}\left(\mathcal{W}\right)=\begin{pmatrix} a & b \\ c & d \end{pmatrix}=\begin{pmatrix} E & F \\ F & G \end{pmatrix}^{-1}\begin{pmatrix} e & f \\ f & g \end{pmatrix} .\]
+\end{prop}
+\begin{proof}
+Tenemos que 
+\[II\left(\left(\alpha, \beta \right), \left(\gamma, \delta \right)\right)=\left(\alpha, \beta \right)\begin{pmatrix} e & f \\ f & g \end{pmatrix}\begin{pmatrix} \gamma \\ \delta  \end{pmatrix} .\]
+Entonces
+\[I\left(\left(\alpha, \beta \right), \mathcal{W}\left(\gamma, \delta \right)\right)=\left(\alpha, \beta \right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a & b \\ c & d \end{pmatrix}\begin{pmatrix} \gamma \\ \delta  \end{pmatrix} .\]
+Por tanto, 
+\[\begin{pmatrix} e & f \\ f & g \end{pmatrix}=\begin{pmatrix}  E & F \\ F & G \end{pmatrix}\begin{pmatrix} a & b \\ c & d \end{pmatrix} .\]
+\end{proof}
+
+\begin{eg}[Tipo grafo]
+Consideremos una parametrización tipo grafo
+\[\mathcal{W}=\begin{pmatrix} a & b \\ c & d \end{pmatrix}=\begin{pmatrix} 1 + h_{x}^{2} & h_{xy}\\ h_{xy} & 1 + h_{y}^{2} \end{pmatrix}^{-1}\frac{1}{\sqrt{1 + h_{x}^{2}+h_{y}^{2}}}\begin{pmatrix} h_{x x} & h_{xy} \\ h_{xy} & h_{yy} \end{pmatrix} .\]
+\end{eg}
+\begin{eg}[Superficie de revolución]
+% copiar de la foto
+	% calcular II
+	% calcular la curvatura
+\end{eg}
+\section{Curvaturas principales}
+\begin{theorem}
+	$\displaystyle p \in S $, entonces existe $\displaystyle B_{p}= \left\{ \vec{e}_{1}, \vec{e}_{2}\right\}  $ base ortonormal de $\displaystyle T_{p}S $ tal que $\displaystyle M_{B_{p}}\left(\mathcal{W}\right)=\begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix} $. 
+\end{theorem}
+\begin{proof}
+Sea $\displaystyle \vec{e}_{1}\in T_{p}S $ un autvalor unitario de $\displaystyle \mathcal{W} $, de forma que $\displaystyle \mathcal{W}\left(\vec{e}_{1}\right)=K_{1}\vec{e}_{1} $. Tomamos $\displaystyle \vec{e}_{2}\perp \vec{e}_{1} $ unitario y usamos
+\[0 = \left\langle \vec{e}_{2}, K_{1}\vec{e}_{1} \right\rangle \left\langle \vec{e}_{2}, \mathcal{W}\left(\vec{e}_{1}\right) \right\rangle =\left\langle \mathcal{W}\left(\vec{e}_{2}\right), \vec{e}_{1} \right\rangle  ,\]
+por lo que $\displaystyle \mathcal{W}\left(\vec{e}_{2}\right)\perp \vec{e}_{1} $. Así, existe $\displaystyle K_{2}\in \R $ tal que $\displaystyle \mathcal{W}\left(\vec{e}_{2}\right)=K_{2}\vec{e}_{2} $. 
+\end{proof}
+
+\begin{definition}[Curvaturas y direcciones principales]
+Se llaman \textbf{curvaturas principales} a $\displaystyle K_{1} $ y $\displaystyle K_{2} $; y \textbf{direcciones principales} a $\displaystyle \vec{e}_{1} $ y $\displaystyle \vec{e}_{2} $. 
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+\item Lo interesante es que la base $\displaystyle B_{p} $ es base ortonormal. 
+\item Es un teorema que se llama espectral sobre endomorfismos autoadjuntos. 
+\item La $\displaystyle p $ de $\displaystyle B_{p} $ viene de 'principal'.
+\item Se puede ver que $\displaystyle M_{B_{p}}\left(I\right)=Id $ si y sólo si es base ortonormal. 
+\item Diagonalizamos $\displaystyle I, II, \mathcal{W} $ a la vez.
+\item Los endomorfismos tienen autovalores pero las formas cuadráticas no.
+\end{enumerate}
+\end{observation}
+\begin{observation}[Observaciones de la demostración]
+	\begin{enumerate}
+	\item Podemos tomar una base ortonormal positiva si quisiéramos.
+	\item Se puede cambiar el orden $\displaystyle \left\{ \vec{e}_{2}, \vec{e}_{1}\right\}  $ y coger $\displaystyle \begin{pmatrix} K_{2} & 0 \\ 0 & K_{1} \end{pmatrix} $. Se puede elegir $\displaystyle K_{1}\geq K_{2} $ y quedan ordenados. 
+	\item Si pido las curvaturas y direcciones principales, podemos dar 
+		\begin{itemize}
+		\item $\displaystyle K_{1} $, $\displaystyle K_{2} $ en cualquier orden.
+		\item $\displaystyle \vec{u}_{1} $, $\displaystyle \vec{u}_{2} $, autovectores, entendiendo que $\displaystyle \vec{e}_{1}=\frac{\vec{u}_{1}}{\|\vec{u}_{1}\|} $ y $\displaystyle \vec{e}_{2}=\frac{\vec{u}_{2}}{\|\vec{u}_{2}\|} $ y $\displaystyle B_{p}= \left\{ \vec{u}_{1}, \vec{u}_{2}\right\}  $.
+		\end{itemize}
+	\end{enumerate}
+\end{observation}
+\begin{eg}[Superficie de revolución]
+Consideremos la superficie de revolución parametrizada por
+\[ \textbf{x} \left(\varphi, v\right)=\left(\cos \varphi r\left(v\right), \sin \varphi r\left(v\right), z\left(v\right)\right) .\]
+Antes calculamos que $\displaystyle I = \begin{pmatrix} r\left(v\right)^{2} & 0 \\ 0 & \|\gamma'\|^{2} \end{pmatrix} $, $\displaystyle II = \begin{pmatrix} -\frac{z'r}{\|\gamma'\|}& 0 \\ 0 & \frac{r''z'-r'z''}{\|\gamma'\|} \end{pmatrix} $. Así, 
+\[\mathcal{W} = \begin{pmatrix} \frac{1}{r^{2}} & 0 \\ 0 & \frac{1}{\|\gamma'\|^{2}} \end{pmatrix}\begin{pmatrix} -\frac{z'r}{\|\gamma'\|}& 0 \\ 0 & \frac{r''z'-r'z''}{\|\gamma'\|} \end{pmatrix} = \begin{pmatrix} -\frac{z'}{r\|\gamma'\|} & 0 \\ 0 & \frac{r''z'-r'z''}{\|\gamma'\|^{3}} \end{pmatrix} = \begin{pmatrix} -\frac{z'}{r\|\gamma'\|} & 0 \\ 0 & -\kappa_{\gamma} \end{pmatrix}.\]
+Como ya ha salido diagonal tenemos que $\displaystyle B_{p}= \left\{ \textbf{x} _{\varphi}, \textbf{x} _{v}\right\} =\mathcal{B}_{ \textbf{x} } $. Ojo! No hemos normalizado. Así, nos queda que
+\[K_{1}=-\frac{z'}{r\|\gamma'\|}\quad \text{y} \quad K_{2}=-\kappa_{\gamma } .\]
+Nos ha dado $\displaystyle K_{2}=-\kappa_{\gamma } $ porque $\displaystyle N =-\hat{n}_{\gamma } $. Por otro lado, $\displaystyle K_{1}=\kappa_{n}\left( \textbf{x} _{u}\right) $. \\
+Algunas observaciones:
+\begin{itemize}
+	\item Si $\displaystyle \|\gamma'\|=1 $, se tiene que $\displaystyle \mathcal{W}=\begin{pmatrix} -\frac{z'}{r} & 0 \\ 0 & -\kappa_{\gamma } \end{pmatrix} $.
+	\item En el caso de $\displaystyle \mathbb{S}^{2} $, como $\displaystyle \gamma\left(v\right)=\left(\cos v, \sin v\right) $, $\displaystyle \mathcal{W}=\begin{pmatrix} -1 & 0 \\ 0 & - 1 \end{pmatrix} $. Así, $\displaystyle \kappa_{n}\left(\vec{v}\right)=-1 $, $\displaystyle \forall \vec{v}\in T_{p}\mathbb{S}^{2} $ con $\displaystyle \|\vec{v}\| = 1 $. 
+\end{itemize}
+\end{eg}
+\begin{observation}
+	\begin{enumerate}
+	\item Si $\displaystyle M_{B_{p}}\left(\mathcal{W}\right)=\begin{pmatrix} K_{1} & 0 \\ 0 & K_{1} \end{pmatrix} $, es decir, $\displaystyle K_{2}=K_{1} $, la base es arbitraria.
+	\item Cambiando la orientación, $\displaystyle K_{1}, K_{2} $ se convierten en $\displaystyle -K_{1}, -K_{2} $. En efecto, $\displaystyle \tilde{N} = - N $ puesto que cogiendo $\displaystyle \tilde{ \textbf{x} }\left(u,v\right)= \textbf{x} \left(u,-v\right) $, tenemos que 
+		\[ \tilde{ \textbf{x} }_{u}= \textbf{x} _{u} \quad \text{y} \quad \tilde{ \textbf{x} }_{v}= -\textbf{x} _{v}.\]
+	Así, 
+	\[\tilde{N} = \frac{\tilde{ \textbf{x} }_{u}\times \tilde{ \textbf{x} }_{v}}{\|\tilde{ \textbf{x} }_{u} \times \tilde{ \textbf{x} }_{v}\|} = \frac{- \textbf{x} _{u} \times \textbf{x} _{v}}{\| \textbf{x} _{u}\times \textbf{x} _{v}\|}=-N.\]
+	Así, tenemos que 
+	\[\tilde{I} = \begin{pmatrix}  E & -F \\ - F & G \end{pmatrix}, \quad \widetilde{II} = \begin{pmatrix} -e & f \\ f & - g \end{pmatrix} \quad \text{y} \quad \widetilde{ \mathcal{W}} = \begin{pmatrix} a & - b \\ - c & d \end{pmatrix} .\]
+% hacer los cálculos en casa	
+	\end{enumerate}
+	Así, si $\displaystyle \mathcal{W}\sim \begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix} $, tendremos que $\displaystyle \widetilde{\mathcal{W}}\sim\begin{pmatrix} -K_{1} & 0 \\ 0 & K_{2} \end{pmatrix} $.  
+\end{observation}
+\begin{eg}
+Consideremos $\displaystyle \textbf{x} \left(u,v\right)=\left(u,v, uv\right) $. Recordamos que 
+\[ I = \begin{pmatrix} 1 + v^{2} & uv \\ uv & 1 + u^{2} \end{pmatrix} \quad \text{y} \quad II = \frac{1}{\sqrt{1+u^{2}+v^{2}}}\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} .\]
+Así, 
+\[\mathcal{W}=\frac{1}{\left(1 + u^{2}+v^{2}\right)^{\frac{3}{2}}}\begin{pmatrix} -uv & 1 + u^{2} \\ 1 + v^{2} & -uv \end{pmatrix} .\]
+Los autovalores son
+\[\lambda = uv \pm \sqrt{u^{2}v^{2}+1+u^{2}+v^{2}}=uv \pm \sqrt{\left(1 + u^{2}\right)\left(1 + v^{2}\right)} .\]
+Estas son las curvaturas principales. Ojo! Para calcular los autovectores lo hacemos sin el factor del denominador. Calculamos las direcciones principales con el núcleo
+% hacer en casa
+Se puede comprobar que 
+\[\vec{u}_{1}=\left(1 + v^{2}, \sqrt{\left(1 + u^{2}\right)\left(1 + v^{2}\right)}\right) \quad \text{y} \quad \vec{u}_{2}=\left(1 + v^{2}, -\sqrt{\left(1 + u^{2}\right)\left(1 + v^{2}\right)}\right) .\]
+Ojo! No hemos normalizado los vectores.
+\end{eg}
+\begin{theorem}
+	Dada una superficie regular $\displaystyle S $ y $\displaystyle p \in S $, existe una base $\displaystyle B_{p} = \left\{ \vec{e}_{1}, \vec{e}_{2}\right\}  $ base de lass direcciones principales que es ortonormal y 
+	\[M_{ B_{p}}\left(II\right)=M_{B_{p}}\left(\mathcal{W}\right)=\begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix}, \; K_{1} \geq K_{2} .\]
+\end{theorem}
+\begin{observation}
+$\displaystyle P = M_{ B_{p}\mathcal{B}_{ \textbf{x} }} $ entonces
+\[\begin{pmatrix} a & b \\ c & d \end{pmatrix}=P^{t}\begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix}P .\]
+\[\begin{pmatrix} e & f \\ f & g \end{pmatrix}=P^{-1}\begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix}P .\]
+\[\begin{pmatrix} E & F \\ F & G \end{pmatrix}=P^{t}P .\]
+\end{observation}
+\begin{colorary}
+La función curvatura normal 
+\[\kappa_{n} : \mathbb{S}\left(T_{p}S\right)\to \R : \vec{v}_{0}=\cos \theta \vec{e}_{1} + \sin \theta \vec{e}_{2} \to \kappa_{n}\left(\vec{v}_{\theta }\right)=K_{1}\cos ^{2}\theta + K_{2}\sin ^{2}\theta ,\]
+con $\displaystyle \theta = L\left(\vec{v}, \vec{e}_{1}\right) $. 
+\end{colorary}
+\begin{proof}
+Basta con ver que 
+\[\kappa_{n}\left(\vec{v}\right)=II\left(\vec{v}, \vec{v}\right)= \left(\cos \theta , \sin \theta \right)\begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix}\begin{pmatrix} \cos \theta \\ \sin \theta  \end{pmatrix}= K_{1} \cos ^{2}\theta + K_{2}\sin ^{2}\theta  .\]
+\end{proof}
+\begin{observation}
+\begin{enumerate}
+	%cambiar K_n por kappa
+\item $\displaystyle \kappa_{n}\left(\vec{v}\right)=\kappa_{n}\left(-\vec{v}\right) $ y $\displaystyle K_{n}\left(\theta \right)=K{n}\left(\theta + \pi \right) $. 
+\item $\displaystyle K_{1}= \max \left\{ K_{n}\left(\theta \right)\right\}  $, $\displaystyle \theta = 0, \pi  $, $\displaystyle K_{2}=\min \left\{ K_{n}\left(\theta\right)\right\}  $ con $\displaystyle \theta = \frac{\pi }{2}, \frac{3\pi }{2} $. 
+\item El máximo y mínimo se alcanzan en las direcciones principales $\displaystyle \pm\vec{e}_{1} $ y $\displaystyle \pm\vec{e}_{2} $ y son las curvaturas principales $\displaystyle K_{1} $ y $\displaystyle K_{2} $. 
+\item Cada $\displaystyle \kappa_{n}\left(\vec{v}\right) $ en $\displaystyle \left(K_{2}, K_{1}\right) $ se alcanza cuatro veces.
+\item $\displaystyle \kappa_{n}\left(\pi -\theta \right)=\kappa_{n}\left(\theta \right) $, tenemos entonces que $\displaystyle \left\{ \theta_{1}, \pi - \theta_{1}, \theta_{1}+\pi , 2\pi -\theta_{1}\right\}  $. 
+\item En el caso especial $\displaystyle K_{1} = K_{2} $, se tiene que $\displaystyle \kappa_{n}\left(\theta \right)=K_{1} = K_{2} $ constante. En este caso, 
+	\[\mathcal{W}_{p}=\begin{pmatrix} K_{1} & 0 \\ 0 & K_{1} \end{pmatrix}\quad \text{y} \quad II_{p} = \begin{pmatrix} K_{1} & 0 \\ 0 & K_{1} \end{pmatrix} .\]
+	Decimos que en este caso no hay direcciones principales o bien todas son direcciones principales. 
+\item Si $\displaystyle K_{1}\neq K_{2} $, entonces existe una base única salvo signo. Cómo calcular $\displaystyle K_{1} $ y $\displaystyle K_{2} $ sin diagonalizar: sabemos que
+	\[\mathcal{W}=\begin{pmatrix} a & b \\ c & d \end{pmatrix}\sim \begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix} .\]
+	Así, tenemos que son los autovalores de $\displaystyle \mathcal{W} $, es decir, calculamos $\displaystyle \det\left(\mathcal{W}-\lambda Id\right)=0 $. También lo podemos calcular resolviendo el sistema
+	\[
+	\begin{cases}
+	traza\left(\mathcal{W}\right)=K_{1}+K_{2} \\
+	\det\left(\mathcal{W}\right)=K_{1}K_{2}
+	\end{cases}
+	.\]
+\end{enumerate}
+\end{observation}
+\begin{definition}[Curvatura media y curvatura de Gauss]
+Se llama \textbf{curvatura media} a $\displaystyle H = \frac{K_{1} + K_{2}}{2} $. Se llama \textbf{curvatura de Gauss} o \textbf{curvatura de $\displaystyle S $} a $\displaystyle K=K_{1}K_{2} $.
+\end{definition}
+\begin{colorary}
+$\displaystyle K_{1} $ y $\displaystyle K_{2} $ son las raíces de $\displaystyle \lambda^{2}-2H\lambda + K = 0 $, de forma que 
+\[K_{1} = H+\sqrt{H^{2}-K} \quad \text{y} \quad K_{2}=H-\sqrt{H^{2}-K} ,\]
+donde $\displaystyle H = \frac{a + d}{2}=\frac{traza\left(\mathcal{W}\right)}{2} $ y $\displaystyle K = \det\left(\mathcal{W}\right)=ad - bd $.
+\end{colorary}
+\begin{theorem}
+Se cumple que 
+\[K = \frac{eg-f^{2}}{EG-F^{2}} .\]
+\end{theorem}
+\begin{proof}
+Es sencillo ver que 
+\[K = \det\left(\mathcal{W}\right) = \frac{\det\left(II\right)}{\det\left(I\right)}=\frac{eg-f^{2}}{EG-F^{2}} .\]
+\end{proof}
+\begin{eg}[Paraguas de Whitney]
+	Cogemos $\displaystyle zy^{2}=x^{6} $ que podemos parametrizar por 
+	\[ \textbf{x} \left(u,v\right)=\left(uv,u,v^{2}\right) .\]
+	Tenemos que $\displaystyle \textbf{x} _{u}=\left(v,1,0\right) $ y $\displaystyle \textbf{x} _{v}=\left(u,0,2v\right) $ de forma que 
+	\[N = \frac{\left(2v, -2v^{3}, -u\right)}{u^{2}+4v^{2}+4v^{4}} .\]
+	También, 
+	\[\begin{pmatrix} E & F \\ F & G \end{pmatrix}=\begin{pmatrix} 1 + v^{2} & uv \\ uv & u^{2} + 4v^{2} \end{pmatrix} \quad \text{y} \quad II =\frac{1}{\sqrt{u^{2}+4v^{2}+4uv}}\begin{pmatrix} 0 & 2v \\ 2v & - 2u \end{pmatrix} .\]
+De esta forma, 
+\[K = \frac{eg-f^{2}}{EG-F^{2}}=\frac{-4v^{2}}{\left(u^{2}+4v^{2}+4v^{4}\right)^{2}} .\]
+En general, 
+\begin{itemize}
+\item Si $\displaystyle v \neq 0 $, $\displaystyle K < 0 $. 
+\item Si $\displaystyle v = 0 $, $\displaystyle K = 0 $. 
+\end{itemize}
+\end{eg}
+\section{Clasificación de puntos según curvatura de Gauss}
+\begin{observation}
+\begin{enumerate}
+\item Sea $\displaystyle S $ una superficie regular y $\displaystyle p \in S $. En un punto de silla de toda la vida se puede ver que $\displaystyle \kappa_{n}\left(\vec{e}_{1}\right)= K_{1} > 0 $ y $\displaystyle \kappa_{n}\left(\vec{e}_{2}\right)=K_{2} < 0 $. 
+% poner foto
+Si cambio la orientación, entonces $\displaystyle K_{1} $ y $\displaystyle K_{2} $ cambian de signo, pero la curvatura de Gauss no cambia de signo. A estos puntos los llamaremos \textbf{hiperbólicos}. 
+\item Consideremos un paraboloide. Tenemos que $\displaystyle \kappa_{n}\left(\vec{e}_{1}\right)= K_{1} > 0 $ y $\displaystyle \kappa_{n}\left(\vec{e}_{2}\right)=K_{2} > 0 $. A estos puntos los llamaremos \textbf{elípticos}. 
+\item Si $\displaystyle K_{1} = K_{2} $ tendremos que $\displaystyle \kappa_{n}\left(\vec{v}\right) $ es constante y $\displaystyle K = K_{1}^{2} > 0 $. Diremos que estos puntos son \textbf{cilíndriclos}. 
+\item Si $\displaystyle K_{1}=K_{2}=0 $ se llaman \textbf{puntos plano} y la segunda forma fundamental es idénticamente nula. 
+\item Si $\displaystyle K_{1} > 0 $ y $\displaystyle K_{2}=0 $, diremos que hablamos de \textbf{puntos parabólicos}. 
+\end{enumerate}
+\end{observation}
+ 

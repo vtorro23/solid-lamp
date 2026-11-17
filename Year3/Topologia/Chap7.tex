@@ -1,0 +1,81 @@
+\chapter{Conexión}
+\section{Concepto y primeros resultados}
+\begin{definition}[Espacio conexo]
+Un espacio topológico $\displaystyle X $ es \textbf{conexo} si cuando $\displaystyle X = U \sqcup V $ con $\displaystyle U,V\subset X $ abiertos disjuntos, entonces $\displaystyle U = \emptyset $ o $\displaystyle V = \emptyset $. 
+\end{definition}
+\begin{prop}
+Dado un espacio topológico $\displaystyle X $, son equivalentes
+\begin{enumerate}
+\item $\displaystyle X $ es conexo.
+\item Si $\displaystyle X = C \sqcup F $ con $\displaystyle C,F \subset X$ cerrados disjuntos, entonces $\displaystyle C = \emptyset $ o $\displaystyle F = \emptyset $.
+\item Si $\displaystyle A\subset X $ es abierto y cerrado, entonces $\displaystyle A = \emptyset  $ o $\displaystyle A = X $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Demostramos las distintas implicaciones.
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Si $\displaystyle X = C \sqcup F $, tenemos que $\displaystyle X = \left(X \backslash C\right)\sqcup \left(X \backslash F\right) $ que es una unión disjunta de abiertos por lo que debe ser que $\displaystyle X \backslash C = \emptyset \iff C = X $ o $\displaystyle X \backslash F = \emptyset \iff F = X $. 
+\item[(2) $\displaystyle \Rightarrow $ (3)] Si $\displaystyle A \subset X$ es abierto y cerrado podemos escribir $\displaystyle X = A \sqcup \left(X \backslash A\right)$ y por hipótesis debe ser que $\displaystyle A = \emptyset  $ o $\displaystyle X \backslash A = \emptyset \iff A = X$. 
+\item[(3) $\displaystyle \Rightarrow $ (1)] Si $\displaystyle X = U \sqcup V $ unión disjunta de abiertos, tenemos que $\displaystyle A = U $ y $\displaystyle V = X \backslash A $ y por hipótesis debe ser que $\displaystyle U = \emptyset $ o $\displaystyle V = \emptyset $. 
+\end{description}
+\end{proof}
+\begin{eg}
+Un ejemplo fundamental es $\displaystyle \left(\R, \mathcal{T}_{u}\right) $, que se demostrará posteriormente que efectivamente es conexo. En el caso de $\displaystyle \R $, todos los intervalos son conexos. Veámoslo por ejemplo para el intervalo $\displaystyle \left(0,1\right) $. Si $\displaystyle \left(0,1\right)=U \sqcup V $ unión disjunta de abiertos no vacíos, podemos tomar $\displaystyle a \in U $ y $\displaystyle b \in V $. 
+Supongamos sin pérdida de generalidad que $\displaystyle a < b $ y sea $\displaystyle c = \sup \left\{ x \; : \; x \in U \cap \left[a,b\right] \right\}  $. Claramente, $\displaystyle a \leq c \leq b $. Distinguimos dos casos:
+\begin{itemize}
+\item Si $\displaystyle c \in U \cap \left[a,b\right]  $ tenemos una contradicción puesto que existe $\displaystyle \epsilon > 0 $ tal que 
+\[\left(c-\epsilon , c + \epsilon \right)\cap \left[a,b\right] \subset U \cap \left[a,b\right]  ,\]
+pero entonces $\displaystyle c + \frac{\epsilon }{2}\in U \cap \left[a,b\right]  $ y $\displaystyle c  $ no puede ser cota superior del conjunto que hemos definido antes.
+\item Si $\displaystyle c \in V \cap \left[a,b\right]  $ tenemos que existe $\displaystyle \epsilon > 0 $ tal que 
+	\[\left(c-\epsilon, c + \epsilon \right)\cap \left[a,b\right] \subset V \cap \left[a,b\right]  ,\]
+	pero entonces $\displaystyle c - \frac{\epsilon }{2}\in V \cap \left[a,b\right]  $ y $\displaystyle c $ no puede ser supremo del conjunto que definimos antes por ser $\displaystyle c-\frac{\epsilon }{2} $ cota superior.
+\end{itemize}
+\end{eg}
+\begin{eg}
+El espacio $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ no es conexo si $\displaystyle \left|X\right|\geq 2 $. En efecto, para cualquier partición $\displaystyle X = A \sqcup B $ de conjuntos no vacíos, tendremos que estamos expresando $\displaystyle X $ como unión de dos abiertos disjuntos propios.
+\end{eg}
+\begin{eg}
+El espacio $\displaystyle \left(\R, \mathcal{T}_{[,)}\right) $ no es conexo. En efecto, para cada $\displaystyle x \in \R $ se tiene que $\displaystyle \R = \left(-\infty, x\right)\sqcup[x, \infty) $ que es una partición de la recta de Sorgenfrey por abiertos no vacíos.
+\end{eg}
+\begin{theorem}[Teorema del pivote]
+Si $\displaystyle X = \bigcup_{i \in I}A_{i} $, con $\displaystyle A_{i} $ subespacios conexos tales que $\displaystyle \bigcap_{i \in I}A_{i}\neq \emptyset  $, entonces $\displaystyle X $ es conexo.
+\end{theorem}
+\begin{proof}
+Si $\displaystyle X = U \sqcup V $ unión disjunta de abiertos no vacíos, para cada $\displaystyle i \in I $ se tiene que $\displaystyle A_{i}\subset U $ o $\displaystyle A_{i}\subset V $. En caso contrario tendríamos que 
+\[A_{i}=\left(U\cap A_{i}\right)\sqcup\left(V\cap A_{i}\right) ,\]
+que contradice el hecho de que los $\displaystyle A_{i} $ sean conexos. Como $\displaystyle U $ y $\displaystyle V $ no son vacíos, debe existir $\displaystyle i_{1}\in I $ tal que $\displaystyle A_{i_{1}}\subset U $ e $\displaystyle i_{2}\in I $ tal que $\displaystyle A_{i_{2}}\subset V $. Pero como $\displaystyle U \cap V = \emptyset $ tendremos que $\displaystyle A_{i_{1}}\cap A_{i_{2}}= \emptyset $, por lo que $\displaystyle \bigcap_{ i \in I}A_{i}= \emptyset $ que es una contradicción.
+\end{proof}
+\begin{theorem}[Variantes del teorema del pivote]
+Sea $\displaystyle X $ un espacio topológico. 
+\begin{enumerate}
+\item Supongamos que $\displaystyle X = \bigcup_{i \in I}A_{i} $, con los $\displaystyle A_{i} $ conexos y tales que existe $\displaystyle i_{0}\in I $ tal que $\displaystyle A_{i_{0}}\cap A_{i}\neq \emptyset $, $\displaystyle \forall i \in I $. Entonces $\displaystyle X $ es conexo.
+\item \textbf{Cadenas de conexos.} Sea $\displaystyle \left\{ A_{k}\right\} _{k \in \N}\subset X $ una familia de subespacios conexos de modo que $\displaystyle A _{k}\cap A_{k+1}\neq \emptyset $, $\displaystyle \forall k \in \N $. Entonces $\displaystyle \bigcup_{k \in \N}A_{k} $ es conexo.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Sea $\displaystyle X $ un espacio topológico.
+\begin{enumerate}
+\item Consideremos $\displaystyle B_{i}=A_{i}\cup A_{i_{0}} \neq \emptyset $, que es conexo por el teorema del pivote. Tenemos que $\displaystyle \bigcap_{ i \in I}B_{i}\neq \emptyset $ por lo que $\displaystyle \bigcup_{i \in I}B_{i}=\bigcup_{i \in I}A_{i} $ es conexo. 
+\item Por el teorema del pivote se tiene que $\displaystyle A_{1} \cup A_{2}  $ es conexo. Supongamos que $\displaystyle A_{1} \cup \cdots \cup A_{k} $ es conexo. Entonces, por el teorema del pivote tenemos que $\displaystyle \emptyset \neq A_{k}\cap A_{k+1}\subset \left(A_{1}\cup \cdots \cup A_{k}\right)\cap A_{k+1} $, por lo que $\displaystyle A_{1} \cup \cdots \cup A_{k + 1} $ es conexo. 
+	De esta forma, para todo $\displaystyle \ell \in \N $ se tiene que $\displaystyle A_{1} \cup \cdots \cup A_{\ell} $ es conexo. \\
+	Así, si $\displaystyle X = U \sqcup V $ unión disjunta de abiertos no vacíos, tomando $\displaystyle x \in U $ y $\displaystyle x' \in V $, existen $\displaystyle k,k'\in \N $ tales que $\displaystyle x\in A_{k} $ y $\displaystyle x'\in A_{k'} $. Cogiendo $\displaystyle k_{0}=\max \left\{ k,k'\right\}  $ tenemos que 
+	\[A_{1} \cup \cdots \cup A_{k_{0}}=\left(U \cap \left(A_{1} \cup \cdots \cup A_{k_{0}}\right)\right)\sqcup \left(V \cap \left(A_{1} \cup \cdots \cup A_{k_{0}}\right)\right) ,\]
+	es una descomposición de $\displaystyle A_{1} \cup \cdots \cup A_{k_{0}} $ como unión de dos abiertos no vacíos disjuntos, que contradice que dicho conjunto sea conexo. 
+\end{enumerate}
+\end{proof}
+\begin{prop}[Construcción de cadenas]
+	Sea $\displaystyle X $ un espacio topológico conexo, y $\displaystyle X = \bigcup_{i \in I}U_{i} $ un recubrimiento abierto de $\displaystyle X $. Tomemos $\displaystyle p,q \in X $. Existe una cadena finita de abiertos $\displaystyle \mathcal{C}_{p,q}= \left\{ U_{i_{0}}, \ldots, U_{i_{r}}\right\}  $ de $\displaystyle p $ a $\displaystyle q $, es decir
+	\[p \in U_{i_{0}}, \; q \in U_{i_{r}}, \; U_{i_{k}}\cap U_{i_{k+1}}\neq \emptyset, \; k = 0, \ldots, r-1 .\]
+\end{prop}
+\begin{proof}
+Consideremos el conjunto
+\[A = \left\{ x \in X\; : \; \exists\mathcal{C}_{p,x}= \left\{ U_{i_{0}}, \ldots, U_{i_{r}}\right\} \; \text{de }p\text{ a } x\right\}  .\]
+Se pueden comprobar una serie de cosas:
+\begin{itemize}
+\item $\displaystyle A\neq \emptyset $ puesto que $\displaystyle p \in A $. En efecto, existe $\displaystyle U_{i_{0}} $ tal que $\displaystyle p \in U_{i_{0}} $. Todos los elementos de $\displaystyle U_{i_{0}} $ se pueden unir con $\displaystyle p $ por una cadena de un eslabón. 
+\item $\displaystyle A $ es abierto. En efecto, dado $\displaystyle z\in A $ tenemos que existe $\displaystyle U_{i_{r}} $ tal que $\displaystyle z \in U_{i_{r}} $ y todos los puntos del abierto $\displaystyle U_{i_{r}} $ se pueden unir con $\displaystyle p $ por la misma cadena que $\displaystyle z $. 
+\item $\displaystyle A $ es cerrado. 
+\end{itemize}
+
+\end{proof}
+

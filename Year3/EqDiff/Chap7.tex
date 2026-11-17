@@ -1,4 +1,5 @@
-\chapter{Conceptos básicos}
+\chapter{Órbitas y diagramas de fase}
+\section{Conceptos básicos}
 \begin{definition}[Sistema autónomo]
 Un \textbf{sistema autónomo} es un sistema de ecuaciones diferenciales de la forma $\displaystyle x' = f\left(x\right) $ donde $\displaystyle f : \Omega \subset \R^{n}\to \R^{n} $.
 \end{definition}
@@ -23,7 +24,6 @@ Hay que utilizar el teorema de existencia y unicidad junto con la observación.
 \begin{observation}
 Una conclusión que se puede sacar de la conclusión anterior es que en sistemas autónomos no tiene importancia $\displaystyle t_{0} $. Por tanto, siempre vamos a asumir $\displaystyle t_{0}=0 $, que nos permite escribir $\displaystyle \varphi\left(t; x_{0}\right) = \varphi\left(t; 0, x_{0}\right) $.
 \end{observation}
-\chapter{Órbitas y diagramas de fase}
 \begin{definition}[Punto de equilibrio]
 Diremos que $\displaystyle x^{*}\in \Omega  $ es un \textbf{punto de equilibrio} del sitema autónomo $\displaystyle x' = f\left(x\right) $ si $\displaystyle f\left(x^{*}\right)=0 $.
 \end{definition}
@@ -38,7 +38,7 @@ Dado un sistema autónomo $\displaystyle x ' = f\left(x\right) $:
 \item Llamamos \textbf{semiórbita negativa} de una solución $\displaystyle y\left(t\right) $ del sistema a
 	\[\gamma^{-}\left(y\right) = \left\{ y\left(t\right) \; : \; t \in (\beta_{-}, 0]\right\}  .\]
 \item Llamamos \textbf{órbita} de una solución $\displaystyle y\left(t\right) $ del sistema a 
-	\[\gamma\left(y\right)=\gamma^{+}\left(y\right)\cup \gamma^{-}\left(y\right) .\]
+	\[\gamma\left(y\right)=\gamma^{+}\left(y\right)\cup \gamma^{-}\left(y\right) = \left\{ y\left(t\right)\; : \; t \in \left(\beta_{-}, \beta_{+ }\right)\right\}  .\]
 \end{itemize}
 \end{definition}
 \begin{observation}[Diferencia entre la órbita y la gráfica]
@@ -62,7 +62,7 @@ Nos quea que
 Por la observación anterior tenemos que $\displaystyle \gamma\left(y\right)=\gamma\left(z\right) $. 
 \end{proof}
 \begin{observation}
-Como $\displaystyle f : \Omega \to \R^{n} $, cualquier solución del sistema $\displaystyle x' = f\left(x\right) $ toma valores sólamente en $\displaystyle \Omega  $. En particular, $\displaystyle \gamma\left(y\right)\subset \Omega  $ para cada solución $\displaystyle y\left(t\right) $ del sistea. 
+Como $\displaystyle f : \Omega \to \R^{n} $, cualquier solución del sistema $\displaystyle x' = f\left(x\right) $ toma valores sólamente en $\displaystyle \Omega  $. En particular, $\displaystyle \gamma\left(y\right)\subset \Omega  $ para cada solución $\displaystyle y\left(t\right) $ del sistema. 
 \end{observation}
 \begin{colorary}
 Para todo $\displaystyle x_{0}\in \Omega  $, existe una única órbita que contiene a ese punto.
@@ -76,4 +76,174 @@ Por el corolario anterior podemos denotar por $\displaystyle \gamma_{x_{0}} $ a 
 \begin{observation}
 	Si $\displaystyle x_{0} $ es un punto de equilibrio, tendremos que $\displaystyle \gamma_{x_{0}} = \left\{ x_{0}\right\}  $. En caso contrario, $\displaystyle \gamma_{x_{0}} $ no puede incluir ningún punto de equilibrio. Además, en este caso tendríamos que $\displaystyle f\left(x\right)\neq 0 $, $\displaystyle \forall x \in \gamma_{x_{0}} $. 
 \end{observation}
+\begin{prop}
+Si $\displaystyle x_{0}\in \Omega  $ no es un punto de equilibrio entonces $\displaystyle \gamma_{x_{0}} $ es una curva regular $\displaystyle \mathcal{C}^{2} $ cuyo vector tangente unitario en $\displaystyle \overline{x}\in \gamma_{x_{0}} $ es $\displaystyle \frac{f\left(\overline{x}\right)}{ \left|f\left(\overline{x}\right)\right|} $. 
+\end{prop}
+\begin{proof}
+Es claro que $\displaystyle \gamma_{x_{0}}=\gamma\left(\varphi\left(t; x_{0}\right)\right) $ y $\displaystyle \varphi\left(t; x_{0}\right) $ es una parametrización de $\displaystyle \gamma_{x_{0}} $. Por un lado, $\displaystyle \varphi\left(t; x_{0}\right)\in \mathcal{C}^{1} $ por ser solución del sistema. Por otro lado, 
+\[\frac{\partial \varphi}{\partial t}\left(t; x_{0}\right)=f\left(\varphi\left(t; x_{0}\right)\right)\in \mathcal{C}^{1} .\]
+Entonces $\displaystyle \varphi\in \mathcal{C}^{2} $ por lo que $\displaystyle \gamma_{x_{0}} $ es una curva $\displaystyle \mathcal{C}^{2} $. Falta ver que es regular, esto es, que $\displaystyle \frac{\partial \varphi}{\partial t}\neq 0 $. Tenemos que 
+\[\frac{\partial \varphi}{\partial t}\left(t; x_{0}\right)=f\left(\varphi\left(t; x_{0}\right)\right) \neq 0 ,\]
+puesto que $\displaystyle \varphi\left(t; x_{0}\right) $ nunca es punto de equilibrio. El vector tangente unitario en $\displaystyle \varphi\left(t; x_{0}\right) $ será
+\[\frac{\frac{\partial \varphi}{\partial t}\left(t; x_{0}\right)}{ \left|\frac{\partial \varphi}{\partial t}\left(t; x_{0}\right)\right|}=\frac{f\left(\varphi\left(t; x_{0}\right)\right)}{ \left|f\left(\varphi\left(t; x_{0}\right)\right)\right|} .\]
+\end{proof}
+\begin{prop}
+	Si $\displaystyle y\left(t\right) $ es solución del sistema autónomo $\displaystyle x' = f\left(x\right) $ tal que $\displaystyle y\left(t\right)\xrightarrow{t \to \beta_{+ }} \xi \in \Omega $, entonces $\displaystyle \xi $ es un punto de equilibrio del sistema. 
+\end{prop}
+\begin{proof}
+Por definición de convergencia, tenemos que existe $\displaystyle T \in [0, \beta_{+}) $ tal que $\displaystyle \left|y\left(t\right)-\xi\right|<1 $, $\displaystyle \forall t \in [T, \beta_{+}) $. Aplicando la desigualdad triangular, 
+\[ \left|y\left(t\right)\right|\leq 1 + \left|\xi\right|, \; \forall t \in [T, \beta_{+}) .\]
+Por otro lado, como $\displaystyle y $ es continua tenemos que $\displaystyle \left|y\right| $ está a cotado en $\displaystyle t \in \left[0, T\right]  $. Así, $\displaystyle y\left(t\right) $ está acotada en $\displaystyle [0, \beta_{+}) $ por lo que existe $\displaystyle C \in \R $ tal que 
+\[ \left|y\left(t\right)\right|\leq C, \; \forall t \in [0, \beta_{+}) .\]
+Como consecuencia del teorema de fuga de compactos debe ser que $\displaystyle \beta_{+ }= \infty $. Fijando $\displaystyle h > 0 $ tenemos que para cada $\displaystyle j \in \left\{ 1, \ldots, n\right\}  $ 
+\[y_{j}\left(t + h\right)-y_{j}\left(t\right) = hy_{j}'\left(\tau_{th}\right),\]
+donde $\displaystyle \tau_{th}\in \left(t, t+ h\right) $ viene dado por el teorema del valor medio. Así, 
+\[y_{j}\left(t + h\right)-y_{j}\left(t\right)=hf_{j}\left(y\left(\tau_{th}\right)\right).\]
+Haciendo $\displaystyle t \to \infty $, 
+\[0 = \xi_{j}-\xi_{j} = hf_{j}\left(\xi\right), \; \forall j \in \left\{ 1, \ldots, n\right\}  .\]
+Así, tenemos que $\displaystyle f\left(\xi\right)=0 $ por lo que $\displaystyle \xi $ es un punto de equilibrio.
+\end{proof}
+\begin{definition}[Órbitas homoclínicas y heteroclínicas]
+Sea $\displaystyle \gamma = \gamma\left(y\right) $ una órbita del sistema $\displaystyle x' = f\left(x\right) $, entonces decimos que es
+\begin{itemize}
+	\item una \textbf{órbita homoclínica} si existe $\displaystyle \xi \in \Omega  $ tal que  
+		\[ y\left(t\right)\xrightarrow{t \to \infty } \xi\quad \text{e} \quad y\left(t\right)\xrightarrow{t \to -\infty } \xi .\]
+	\item una \textbf{órbita heteroclínica} si existen $\displaystyle \xi_{+ }, \xi_{- }\in \Omega  $ distintos tales que  
+		\[ y\left(t\right)\xrightarrow{t \to \infty}\xi_{+ }\quad \text{e}\quad y\left(t\right)\xrightarrow{t \to - \infty}\xi_{- }.\]	
+\end{itemize}
+\end{definition}
+\begin{definition}[Función $\displaystyle T $-periódica y periodo minimal]
+Diremos que una función $\displaystyle y : \R \to \R^{n} $ es 
+\begin{itemize}
+\item \textbf{$\displaystyle T $-periódica} con $\displaystyle T > 0 $ si $\displaystyle y\left(t + T\right)= y\left(t\right) $, $\displaystyle \forall t \in \R $.
+\item \textbf{periódica con periodo minimal} $\displaystyle \tilde{T} $ si es $\displaystyle \tilde{T} $-periódica pero no $\displaystyle T $-periódica con $\displaystyle T \in \left(0, \tilde{T}\right) $. 
+\end{itemize}
+\end{definition}
+\begin{observation}
+Si $\displaystyle y $ no es continua, puede no tener periodo minimal. Basta con considerar la función de Dirichlet
+\[x \to 
+\begin{cases}
+0, \; x \not\in \Q \\
+1, \; x \in \Q
+\end{cases}
+.\]
+Sin embargo, si $\displaystyle y $ es continua o bien $\displaystyle y $ es constante o bien $\displaystyle y $ tiene periodo minimal. 
+\end{observation}
+\begin{prop}
+Si $\displaystyle y\left(t\right) $ es solución de un sistema autónomo tal que $\displaystyle y\left(t_{1}\right)=y\left(t_{2}\right) $ para $\displaystyle t_{1}\neq t_{2} $. Entonces $\displaystyle y\left(t\right) $ es una función $\displaystyle \left|t_{1}-t_{2}\right| $-periódica.
+\end{prop}
+\begin{proof}
+Si $\displaystyle x_{0}:=y\left(t_{1}\right)=y\left(t_{2}\right) $, tenemos que 
+\[y\left(t\right)=\varphi\left(t; t_{1}, x_{0}\right)=\varphi\left(t-t_{1}; x_{0}\right)\quad \text{y} \quad y\left(t\right)=\varphi\left(t; t_{2}, x_{0}\right)=\varphi\left(t_{1}-t_{2}; x_{0}\right) .\]
+De esta forma, $\displaystyle y\left(t\right)=y\left(t+t_{1}-t_{2}\right) $, $\displaystyle \forall t  $, por lo que $\displaystyle y $ es $\displaystyle \left|t_{1}-t_{2}\right| $-periódica. 
+\end{proof}
+\begin{observation}
+Como las soluciones $\displaystyle y : \R \to \R^{n} $ tales que $\displaystyle y\left(t_{1}\right)=y\left(t_{2}\right) $, las $\displaystyle n $ componentes de $\displaystyle y\left(t_{1}\right) $ coinciden con las de $\displaystyle y\left(t_{2}\right) $.
+\end{observation}
+\begin{eg}
+Consideremos $\displaystyle y\left(t\right)=\sin t $ solución de $\displaystyle x'' + x = 0 $. Tenemos que $\displaystyle y\left(0\right)=y\left(\pi \right) $ pero $\displaystyle y\left(t\right) $ no es $\displaystyle \pi  $-periódica. Escribiendo el sistema de forma lineal
+\[
+\begin{cases}
+x' = y\\
+y' = x
+\end{cases}
+,\]
+obtenemos la solución $\displaystyle \left(x\left(t\right), y\left(t\right)\right)=\left(\sin t, \cos t\right) $. Podemos ver que 
+\[\begin{pmatrix} \sin 0 \\ \cos 0  \end{pmatrix}=\begin{pmatrix} 0 \\ 1 \end{pmatrix}\neq \begin{pmatrix} 0 \\ - 1 \end{pmatrix}=\begin{pmatrix} \sin \pi \\ \cos \pi \end{pmatrix} .\]
+\end{eg}
+\begin{definition}[Curva simple]
+Decimos $\displaystyle \Gamma \subset \R^{n} $ es una \textbf{curva simple} si $\displaystyle \forall p \in \gamma  $, existe $\displaystyle \epsilon > 0 $ y $\displaystyle g \in \mathcal{C}\left(\left(0,1\right), \R^{n}\right) $ tal que $\displaystyle \Gamma \cap B_{\epsilon }\left(p\right)=\Imagen\left(g\right) $. Además, diremos que es:
+\begin{itemize}
+\item \textbf{simple abierta} si existe $\displaystyle g \in \mathcal{C}\left(\left(0,1\right), \R^{n}\right) $ inyectiva tal que $\displaystyle \Gamma = \Imagen\left(g\right) $.
+\item \textbf{simple cerrada} si existe $\displaystyle g \in \mathcal{C}\left(\left[0,1\right] , \R^{n}\right) $ inyectiva en $\displaystyle [0,1) $ con $\displaystyle g\left(0\right)=g\left(1\right) $ y $\displaystyle \Gamma = \Imagen\left(g\right) $. 
+\end{itemize}
+
+\end{definition}
+\begin{observation}
+La definición de curva simple es equivalente a que $\displaystyle \Gamma  $ no tiene autointersecciones. 
+\end{observation}
+\begin{theorem}[Clasificación de órbitas]
+Sea $\displaystyle \gamma\subset \R^{n} $ órbita de un sistema autónomo, entonces se puede dar una de estas tres posibilidades:
+\begin{enumerate}
+	\item $\displaystyle \gamma = \left\{ p\right\}  $.
+	\item $\displaystyle \gamma  $ es una curva simple abierta.
+	\item $\displaystyle \gamma  $ es una curva simple cerrada.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Damos una idea de la demostración. Dada una órbita $\displaystyle \gamma  $ podemos encontrar una solución $\displaystyle y $ tal que $\displaystyle \gamma  $ es la órbita asociada a $\displaystyle y $. Distinguimos ahora varios casos:
+\begin{itemize}
+\item Si $\displaystyle y $ es inyectiva, tenemos que $\displaystyle \gamma  $ es simple abierta.
+	% construir g haciendo y : (\beta-, \beta+) -> \gamma, (0,1) to (\beta-, \beta+) y obtener g componiendo
+\item Si $\displaystyle y $ no es inyectiva, tenemos que $\displaystyle y $ es periodica. Entonces, puede ser que sea constante, en cuyo caso $\displaystyle \gamma = \left\{ p\right\}  $; o puede ser $\displaystyle T $-periodica con $\displaystyle T > 0 $. Sabemos que $\displaystyle y : \left[0,T\right] \to \gamma  $, sólo tendríamos que encontrar una función $\displaystyle \left[0,1\right] \to \left[0,T\right]  $ y componer para obtener $\displaystyle g $. Por tanto, en este caso es simple cerrada. 
+\end{itemize}
+\end{proof}
+\begin{prop}
+Si tenemos una curva simple regular $\displaystyle \Gamma  $ que es $\displaystyle \mathcal{C}^{2} $ tal que $\displaystyle \gamma\subset \Gamma $ es la órbita de una solución de un sistema autónomo. Si $\displaystyle \Gamma $ no tiene puntos de equilibrio del sistema, entonces $\displaystyle \Gamma = \gamma  $. 
+\end{prop}
+\begin{proof}
+Damos sólo la idea. Consideremos $\displaystyle \Gamma $ abierta, entonces debe ser que $\displaystyle \gamma  $ es una curva abierta. 
+% completar en casa
+\end{proof}
+\section{Diagrama de fase en una dimensión}
+Tenemos $\displaystyle f : I \subset \R \to \R $ con $\displaystyle I $ abierto, y el sistema autónomo $\displaystyle x' = f\left(x\right) $. 
+\begin{itemize}
+	\item Si $\displaystyle \overline{x} $ con $\displaystyle f\left(\overline{x}\right)=0 $, sabmeos que $\displaystyle \gamma_{\overline{x}}= \left\{ \overline{x}\right\}  $.
+	\item Si $\displaystyle \overline{x} $ tal que $\displaystyle f\left(\overline{x}\right) $, podemos distinguir varios casos:
+		\begin{itemize}
+		\item $\displaystyle \overline{x}\in \left(x_{k}, x_{k+1}\right) $ con $\displaystyle f\left(x_{k}\right)=f\left(x_{k+1}\right)=0 $. 
+		\item $\displaystyle \overline{x}\in \left(x_{k}, \infty \right) $ con $\displaystyle f\left(x_{k}\right)=0 $ y $\displaystyle f\neq 0 $ en $\displaystyle \left(x_{k}, \infty \right) $. 
+		\item $\displaystyle \overline{x}\in \left(-\infty, x_{k}\right) $ con $\displaystyle f\left(x_{k}\right)=0 $ y $\displaystyle f \neq 0 $ en $\displaystyle (-\infty, x_{k}) $.
+		\item $\displaystyle \overline{x}\in \R $ con $\displaystyle f \neq 0 $ en $\displaystyle \R $. 
+		\end{itemize}
+\end{itemize}
+% las órbitas se pueden saber fácilmente
+\section{Ecuación de las órbitas}
+\begin{theorem}
+	Sea $\displaystyle \overline{x}\in \Omega  $ tal que $\displaystyle f\left(\overline{x}\right)\neq0 $, entonces existe $\displaystyle i \in \left\{ 1, \ldots, n\right\}  $ y $\displaystyle \epsilon > 0 $ y $\displaystyle h : \left(\overline{x}_{i}-\epsilon, \overline{x}_{i}+\epsilon \right)\to \R^{n} $ tal que $\displaystyle \Imagen\left(h\right)\subset \gamma_{\overline{x}} $. Además, $\displaystyle h $ satisface
+	\[
+	\begin{cases}
+	\frac{dh}{d\tau}\left(\tau\right)=G\left(h\left(\tau\right)\right)\\
+	h\left(0\right)=\overline{x}
+	\end{cases}
+	,\]
+	con $\displaystyle G_{j}\left(z\right)=\frac{f_{j}\left(z\right)}{f_{i}\left(z\right)} $. 
+\end{theorem}
+\begin{observation}
+Hemos transformado el PVi pero tenemos una ecuación trivial $\displaystyle \frac{dh_{i}}{d\tau }= 1 $, por lo que $\displaystyle h_{i}\left(\tau\right)=\tau + \overline{x}_{i} $. 
+\end{observation}
+\begin{proof}
+	Como $\displaystyle f\left(\overline{x}\right)\neq \emptyset $, entonces existe $\displaystyle i \in \left\{ 1, \ldots, n\right\}  $ tal que $\displaystyle f_{i}\left(\overline{x}\right)\neq 0 $. Por tanto, 
+	\[\frac{\partial \varphi_{i}}{\partial t}\left(t; \overline{x}\right)=f_{i}\left(\varphi\left(t; \overline{x}\right)\right) .\]
+	\[\frac{\partial \varphi_{i}}{\partial t}\left(0; \overline{x}\right)=f\left(\varphi\left(0; \overline{x}\right)\right)=f\left(\overline{x}\right)\neq 0 .\]
+	Además, $\displaystyle \varphi_{i}\in \mathcal{C}^{2} $, por lo que existe $\displaystyle \delta > 0 $ tal que $\displaystyle \varphi_{i} $ es invertible en $\displaystyle \left(-\delta, \delta \right) $. Sea $\displaystyle \sigma : \left(\overline{x}-\epsilon , \overline{x}+\epsilon \right)\to \left(-\delta, \delta \right) $ la inversa, por definición
+	\[\varphi_{i}\left(\sigma\left(\tau\right), \overline{x}\right)=\tau , \; \forall \tau \in \left(\overline{x}-\epsilon, \overline{x}+\epsilon \right),\]
+	y $\displaystyle \sigma \in \mathcal{C}^{1} $. Derivando $\displaystyle \varphi_{i}\left(\sigma\left(\tau\right), \overline{x}\right)=\tau $, 
+	\[\frac{\partial \varphi_{i}}{\partial t}\left(\sigma\left(\tau\right); \overline{x}\right)\sigma'\left(\tau \right)=f_{i}\left(\sigma\left(\tau\right); \overline{x}\right)=1 .\]
+	Entonces, 
+	\[\sigma'\left(\tau \right)=\frac{1}{f_{i}\left(\varphi\left(\sigma\left(\tau\right); \overline{x}\right)\right)} .\]
+	Definimos $\displaystyle h\left(\tau\right):=\varphi\left(\sigma\left(\tau\right); \overline{x}\right) $. Tenemos que 
+	\[h'\left(\tau\right)=\frac{\partial\varphi}{\partial t}\left(\sigma\left(\tau\right); \overline{x}\right)\sigma'\left(\tau\right) = \frac{f\left(\varphi\left(\sigma \left(\tau\right); \overline{x}\right)\right)}{f_{i}\left(\varphi\left(\sigma\left(\tau\right)\right); \overline{x}\right)}=G\left(h\left(\tau\right)\right) .\]	
+\end{proof}
+\section{Caso $\displaystyle n = 2 $}
+Tenemos un sistema de la forma 
+\[
+\begin{cases}
+x ' = f_{1}\left(x,y\right) \\
+y' = f_{2}\left(x,y\right)
+\end{cases}
+.\]
+Tendremos $\displaystyle \frac{dx}{dy}=\frac{f_{1}\left(x,y\right)}{f_{2}\left(x,y\right)} $ o $\displaystyle \frac{dy}{dx}=\frac{f_{2}\left(x,y\right)}{f_{1}\left(x,y\right)} $, en función de cuál se anula; obteniendo una EDO de primera dimensión. 
+\begin{eg}
+Consideremos el sistema
+\[
+\begin{cases}
+x' = y\left(1-x^{2}-y^{2}\right) \\
+y' = -x\left(1-x^{2}-y^{2}\right)
+\end{cases}
+.\]
+Los puntos de equilibrio son el origen y $\displaystyle \mathbb{S}^{1} $. La linealización no nos dice nada de la estabilidad. La ecuación de órbitas será
+\[\frac{dx}{dy}=\frac{y\left(1-x^{2}-y^{2}\right)}{-x\left(1-x^{2}-y^{2}\right)}=-\frac{y}{x} .\]
+La solución de esta EDO son las curvas de la forma $\displaystyle x^{2}+y^{2}=K $ con $\displaystyle K >0 $. Así, se puede ver que $\displaystyle \gamma_{\left(x_{0}, y_{0}\right)}\subset\partial B\left(0, \sqrt{x_{0}^{2}+y^{2}_{0}}\right)$. Tenemos $\displaystyle \Gamma = \partial B\left(0, \sqrt{x_{0}^{2}+y^{2}_{0}}\right) $ y $\displaystyle \gamma_{\left(x_{0}, y_{0}\right)}\subset \Gamma  $. En verdad, se puede ver que $\displaystyle \gamma_{\left(x_{0}, y_{0}\right)}=\Gamma  $. 
+\end{eg}
 

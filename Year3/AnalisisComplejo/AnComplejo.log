@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  6 NOV 2026 19:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.26)  17 NOV 2026 07:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1545,12 +1545,6 @@ LaTeX Info: Redefining \% on input line 551.
 LaTeX Info: Redefining \. on input line 551.
 LaTeX Info: Redefining \% on input line 551.
 [53]
-./Chap3.tex:552: Double subscript.
-l.552 ...nes $\displaystyle P_{n} = \left\{ t_{n}_
-                                                  {0}, \ldots, t_{N}^{n}\rig...
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-
 Overfull \hbox (25.55061pt too wide) detected at line 562
 []
  []
@@ -1572,73 +1566,151 @@ Cap\'{\i }tulo 4.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 3.
+<~/Desktop/Images/AComplejo1.png, id=237, 1178.4025pt x 1344.02126pt>
+File: ~/Desktop/Images/AComplejo1.png Graphic file (type png)
+<use ~/Desktop/Images/AComplejo1.png>
+Package pdftex.def Info: ~/Desktop/Images/AComplejo1.png  used on input line 7.
+(pdftex.def)             Requested size: 119.2467pt x 135.98912pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 7.
+(mdframed)              on input line 9.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 12.
+(mdframed)              on input line 15.
 [56
 
-]
+ </Users/victoriatorroja/Desktop/Images/AComplejo1.png (PNG copy)>]
+<~/Desktop/Images/AComplejo2.png, id=241, 1541.76pt x 1027.84pt>
+File: ~/Desktop/Images/AComplejo2.png Graphic file (type png)
+<use ~/Desktop/Images/AComplejo2.png>
+Package pdftex.def Info: ~/Desktop/Images/AComplejo2.png  used on input line 19.
+(pdftex.def)             Requested size: 119.2467pt x 79.48425pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 28.
-LaTeX Info: Redefining \. on input line 37.
-LaTeX Info: Redefining \% on input line 37.
-LaTeX Info: Redefining \. on input line 37.
-LaTeX Info: Redefining \% on input line 37.
- [57]
+(mdframed)              on input line 21.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 43.
+(mdframed)              on input line 27.
+LaTeX Info: Redefining \. on input line 36.
+LaTeX Info: Redefining \% on input line 36.
+LaTeX Info: Redefining \. on input line 36.
+LaTeX Info: Redefining \% on input line 36.
+ [57 </Users/victoriatorroja/Desktop/Images/AComplejo2.png (PNG copy)>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 50.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 53.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 55.
-LaTeX Info: Redefining \. on input line 63.
-LaTeX Info: Redefining \% on input line 63.
-LaTeX Info: Redefining \. on input line 63.
-LaTeX Info: Redefining \% on input line 63.
+(mdframed)              on input line 46.
+LaTeX Info: Redefining \. on input line 62.
+LaTeX Info: Redefining \% on input line 62.
+LaTeX Info: Redefining \. on input line 62.
+LaTeX Info: Redefining \% on input line 62.
  [58]
-Overfull \hbox (37.47423pt too wide) in paragraph at lines 77--81
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 77.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 81.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 84.
+Package mdframed Info: Not enough space on this page on input line 85.
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
+ [59]
+Package mdframed Info: Not enough space on this page on input line 85.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 87.
+
+Overfull \hbox (37.47423pt too wide) in paragraph at lines 109--113
 []\OT1/cmr/m/n/10 (-20) Demostramos aho-ra la exis-ten-cia. F^^Sormu-la de Cauchy apli-ca-da a $\OML/cmm/m/it/10 f$ \OT1/cmr/m/n/10 (-20) en $
 [] = []$
  []
 
-LaTeX Info: Redefining \. on input line 94.
-LaTeX Info: Redefining \% on input line 94.
-LaTeX Info: Redefining \. on input line 94.
-LaTeX Info: Redefining \% on input line 94.
-[59]
+LaTeX Info: Redefining \. on input line 124.
+LaTeX Info: Redefining \% on input line 124.
+LaTeX Info: Redefining \. on input line 124.
+LaTeX Info: Redefining \% on input line 124.
+[60]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 99.
+(mdframed)              on input line 131.
 
-Overfull \hbox (34.44817pt too wide) in paragraph at lines 100--101
-[][]\OT1/cmss/bx/n/10 (-20) Teorema 4.5 \OT1/cmss/m/n/10 (-20) (Teo-re-ma de de-sa-rro-llo Lau-rent)\OT1/cmss/bx/n/10 (-20) . [][]\OT1/cmr/m/n/10 (-20) Sean $0 \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 ^^Z < ^^[ \OMS/cmsy/m/n/10 ^^T 1$ \OT1/cmr/m/n/10 (-20) y $\OML/cmm/m/it/10 f \OMS/cmsy/m/n/10 2 H []$\OT1/cmr/m/n/10 (-20) .
+Overfull \hbox (34.44817pt too wide) in paragraph at lines 132--133
+[][]\OT1/cmss/bx/n/10 (-20) Teorema 4.6 \OT1/cmss/m/n/10 (-20) (Teo-re-ma de de-sa-rro-llo Lau-rent)\OT1/cmss/bx/n/10 (-20) . [][]\OT1/cmr/m/n/10 (-20) Sean $0 \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 ^^Z < ^^[ \OMS/cmsy/m/n/10 ^^T 1$ \OT1/cmr/m/n/10 (-20) y $\OML/cmm/m/it/10 f \OMS/cmsy/m/n/10 2 H []$\OT1/cmr/m/n/10 (-20) .
  []
 
-LaTeX Info: Redefining \. on input line 118.
-LaTeX Info: Redefining \% on input line 118.
-LaTeX Info: Redefining \. on input line 118.
-LaTeX Info: Redefining \% on input line 118.
-[60]
-Overfull \hbox (32.69565pt too wide) detected at line 125
+LaTeX Info: Redefining \. on input line 150.
+LaTeX Info: Redefining \% on input line 150.
+LaTeX Info: Redefining \. on input line 150.
+LaTeX Info: Redefining \% on input line 150.
+[61]
+Overfull \hbox (32.69565pt too wide) detected at line 157
 []
  []
 
-)
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 160.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 164.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 167.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 169.
+
+Overfull \hbox (11.89664pt too wide) in paragraph at lines 171--172
+[]
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 176.
+LaTeX Info: Redefining \. on input line 178.
+LaTeX Info: Redefining \% on input line 178.
+LaTeX Info: Redefining \. on input line 178.
+LaTeX Info: Redefining \% on input line 178.
+[62]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 195.
+
+Overfull \hbox (25.87898pt too wide) detected at line 220
+[]
+ []
+
+
+Overfull \hbox (25.00003pt too wide) detected at line 220
+[]
+ []
+
+LaTeX Info: Redefining \. on input line 220.
+LaTeX Info: Redefining \% on input line 220.
+LaTeX Info: Redefining \. on input line 220.
+LaTeX Info: Redefining \% on input line 220.
+[63]
+Overfull \hbox (17.76956pt too wide) detected at line 241
+\OML/cmm/m/it/10 f [] \OT1/cmr/m/n/10 = [] [] \OML/cmm/m/it/10 a[] [][] \OT1/cmr/m/n/10 = [] + [] + [] + \OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 + [] \OML/cmm/m/it/10 a[] [][] :
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 245.
+LaTeX Info: Redefining \. on input line 251.
+LaTeX Info: Redefining \% on input line 251.
+LaTeX Info: Redefining \. on input line 251.
+LaTeX Info: Redefining \% on input line 251.
+[64])
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
- [61] (./AnComplejo.aux
+ [65] (./AnComplejo.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
@@ -1648,19 +1720,19 @@ L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 32855 strings out of 474116
- 795428 string characters out of 5743682
+ 32916 strings out of 474116
+ 796943 string characters out of 5743682
  1956187 words of memory out of 5000000
- 54389 multiletter control sequences out of 15000+600000
- 581789 words of font info for 223 fonts, out of 8000000 for 9000
+ 54432 multiletter control sequences out of 15000+600000
+ 582334 words of font info for 232 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,25n,110p,1007b,1251s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on AnComplejo.pdf (62 pages, 832408 bytes).
+Output written on AnComplejo.pdf (66 pages, 3187864 bytes).
 PDF statistics:
- 371 PDF objects out of 1000 (max. 8388607)
- 232 compressed objects within 3 object streams
+ 385 PDF objects out of 1000 (max. 8388607)
+ 240 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 44146 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 44156 words of extra memory for PDF output out of 51595 (max. 10000000)
 

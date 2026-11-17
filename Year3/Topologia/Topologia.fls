@@ -536,6 +536,14 @@ INPUT Chap5.tex
 INPUT ./Chap6.tex
 INPUT ./Chap6.tex
 INPUT Chap6.tex
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
+INPUT ./Chap7.tex
+INPUT ./Chap7.tex
+INPUT Chap7.tex
 INPUT Topologia.aux
 INPUT ./Topologia.out
 INPUT ./Topologia.out

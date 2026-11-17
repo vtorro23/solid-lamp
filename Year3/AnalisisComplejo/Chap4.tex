@@ -1,57 +1,89 @@
 \chapter{Series de Laurent y singularidades aisladas}
 \section{Preliminares}
 \begin{definition}[Conjunto simplemente conexo]
-Un \textbf{conjunto simplemente conexo} es un abierto con un número finito de agujeros. Además, su frontera es una curva de clase $\displaystyle \mathcal{C}^{1} $ cerrada con un número finito de agujeros en medio. 
+Diremos que un abierto conexo $\displaystyle \Omega\subset \C $ es \textbf{simplemente conexo} si no tiene agujeros. Es decir, dadas dos curvas continuas en $\displaystyle \Omega  $ con los mismos puntos inicial y final, se pueden deformar una continuamente en la otra dentro de $\displaystyle \Omega  $.
 \end{definition}
-Necesitamos una forma más general de la fórmula de Cauchy para recintos simplemente conexos.  
-\begin{theorem}[Teorema de Green]
-	Sea $\displaystyle \Omega \subset \R^{2} $ un conjunto simplemente conexo, $\displaystyle \partial \Omega  $ una curva cerrada simple, $\displaystyle U_{1}, \ldots, U_{n} $ abiertos simplemente conexos con $\displaystyle \overline{U}_{1}\subset \Omega  $ y $\displaystyle \partial U_{j} $ es una curva cerrada simple $\displaystyle \mathcal{C}^{1} $ a trozos para $\displaystyle j \in \left\{ 1, \ldots, n\right\}  $, y $\displaystyle \overline{U}_{j} \cap \overline{U}_{k} \neq \emptyset $. Sean $\displaystyle P,Q \in \mathcal{C}^{1}\left(\overline{\Omega }\backslash \bigcup_{j = 1}^{n}U_{j}\right) $, entonces
-	\[\int _{\partial \Omega }P \; dx + Q \; dy = \sum^{m}_{j= 1}\int _{\partial U_{j}}P \; dx + Q \; dy = \int _{\Omega \backslash \bigcup_{j = 1}^{n}U_{j}}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right) \; dx \; dy .\]
+\begin{center}
+    \includegraphics[width=0.3\textwidth]{~/Desktop/Images/AComplejo1.png}
+\end{center}
+\begin{theorem}[Teorema de Cauchy, versión 2]
+Si $\displaystyle \Omega\subset \C $ es un abierto simplemente conexo y $\displaystyle f : \Omega \to \C $ es holomorfa, entonces
+\[\int _{\gamma }f = 0 ,\]
+para cada curva cerrada $\displaystyle \gamma  $ de clase $\displaystyle \mathcal{C}^{1} $ a trozos.
 \end{theorem}
 
-\begin{theorem}[Teorema de Cauchy para conjuntos simplemente conexos]
-	Sean $\displaystyle \Omega  $, $\displaystyle U_{1} $, \ldots, $\displaystyle U_{m} $ abiertos simplemente conexos con $\displaystyle \overline{U}_{j}\cap \overline{U}_{k} = \emptyset $ para $\displaystyle j \neq k $ y con $\displaystyle \overline{U}_{j}\subset \Omega  $, $\displaystyle \forall j \in \left\{ 1, \ldots, m\right\}  $ y $\displaystyle \partial \Omega  $, $\displaystyle \partial U_{1} $, \ldots, $\displaystyle \partial U_{m} $ curvas cerradas simples $\displaystyle \mathcal{C}^{1} $ a trozos. Entonces, 
-	\[\int _{\partial \Omega }f -\sum^{m}_{j = 1}\int _{\partial U_{j}}f =0 .\]
+\begin{definition}[Conjunto múltiplemente conexo]
+Se llama \textbf{conjunto múltiplemente conexo} a un abierto limitado exteriormente por una curva cerrada simple de clase $\displaystyle \mathcal{C}^{1} $ a trozos, en interiormente por una cantidad finita de curvas del mismo tipo, que los los bordes de los agujeros del abierto. 
+\end{definition}
+\begin{center}
+    \includegraphics[width=0.3\textwidth]{~/Desktop/Images/AComplejo2.png}
+\end{center}
+\begin{theorem}[Teorema de Green]
+	Sea $\displaystyle \Omega \subset \R^{2} $ un conjunto simplemente conexo, $\displaystyle \partial \Omega  $ una curva cerrada simple $\displaystyle \mathcal{C}^{1} $ a trozos, $\displaystyle U_{1}, \ldots, U_{m} $ abiertos simplemente conexos con $\displaystyle \overline{U}_{j}\subset \Omega  $ y $\displaystyle \partial U_{j} $ es una curva cerrada simple $\displaystyle \mathcal{C}^{1} $ a trozos para $\displaystyle j \in \left\{ 1, \ldots, m\right\}  $, y $\displaystyle \overline{U}_{j} \cap \overline{U}_{k} \neq \emptyset $. Sean $\displaystyle P,Q \in \mathcal{C}^{1}\left(\overline{\Omega }\backslash \bigcup_{j = 1}^{m}U_{j}\right) $, entonces
+	\[\int _{\partial \Omega }P \; dx + Q \; dy - \sum^{m}_{j= 1}\int _{\partial U_{j}}P \; dx + Q \; dy = \int _{\Omega \backslash \bigcup_{j = 1}^{m}U_{j}}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right) \; dx \; dy ,\]
+	con $\displaystyle \partial \Omega  $ y $\displaystyle \partial U_{j} $ están orientadas positivamente para cada $\displaystyle j \in \left\{ 1, \ldots, m\right\}  $. 
+\end{theorem}
+
+\begin{theorem}[Teorema de Cauchy, versión 3]
+	Sean $\displaystyle \Omega  $, $\displaystyle U_{1} $, \ldots, $\displaystyle U_{m} $ abiertos simplemente conexos con $\displaystyle \overline{U}_{j}\cap \overline{U}_{k} = \emptyset $ para $\displaystyle j \neq k $ y con $\displaystyle \overline{U}_{j}\subset \Omega  $, $\displaystyle \forall j \in \left\{ 1, \ldots, m\right\}  $ y $\displaystyle \partial \Omega  $, $\displaystyle \partial U_{1} $, \ldots, $\displaystyle \partial U_{m} $ curvas cerradas simples $\displaystyle \mathcal{C}^{1} $ a trozos. Entonces, si $\displaystyle f $ es una función holomorfa en un entorno abierto de $\displaystyle \overline{\Omega }\backslash \bigcup_{j = 1}^{m}U_{j} $,
+	\[\int _{\partial \Omega }f -\sum^{m}_{j = 1}\int _{\partial U_{j}}f =0 ,\]
+	donde $\displaystyle \partial \Omega  $ y $\displaystyle \partial U_{j} $ están orientadas positivamente para cada $\displaystyle j \in \left\{ 1, \ldots, m\right\}  $. 
 \end{theorem}
 \begin{proof}
-Damos una idea de la demostración. Si $\displaystyle f = u + iv $, con $\displaystyle u,v\in \mathcal{C}^{1}\left(W\right) $ con $\displaystyle W \supset \overline{\Omega }\backslash \bigcup_{j = 1}^{m}\overline{U}_{j} $. Además, $\displaystyle \gamma\left(t\right)=x\left(t\right) + iy\left(t\right) $. Expandir la definición de $\displaystyle \int _{\gamma }f  $ da:
+Escribimos $\displaystyle f = u + iv $ de forma que $\displaystyle u,v\in \mathcal{C}^{1}\left(W\right) $ con $\displaystyle W \supset \overline{\Omega }\backslash \bigcup_{j = 1}^{m}\overline{U}_{j} $ abierto. También podemos escribir $\displaystyle \gamma\left(t\right)=x\left(t\right) + iy\left(t\right) $. Expandiendo la definición de $\displaystyle \int _{\gamma }f  $ tenemos que
 \[\int _{\partial \Omega }f = \int _{\partial \Omega }u \; dx - v \; dy + i \int _{\partial \Omega }v \; dx + u \; dy .\]
 Asímismo tenemos,
 \[\sum^{m}_{j = 1}\int _{\partial U_{j}}f =\sum^{m}_{j = 1}\left(\int _{\partial U_{j}}u \; dx - v \; dy + i\int _{\partial U_{j}}v \; dx + u \; dy\right) .\]
-Las ecuaciones Cauchy-Riemann ganarntizan que
-\[\int _{\Omega \backslash \bigcup_{j = 1}^{m}U_{j}}\left(-\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\right)+i\left(\frac{\partial u}{\partial x}-\frac{\partial v}{\partial y}\right) \; dx \; dy .\]
-Si tomamos $\displaystyle g = \left(-\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\right)+i\left(\frac{\partial u}{\partial x}-\frac{\partial v}{\partial y}\right) $ por el teorema de Green tenemos que 
-\[\int _{\partial \Omega }f - \sum^{m}_{j = 1}\int _{\partial U_{j}}f = \int _{\Omega \backslash \bigcup_{j = 1}^{m}U_{j}}g \; dx \; dy= 0 .\]
-Por tanto, 
-\[\int _{\partial \Omega }f = \sum^{m}_{j=1}\int _{\partial U_{j}}f .\]
+Aplicando el teorema de Green y las ecuaciones de Cauchy-Riemann,
+\[
+\begin{split}
+	& \int _{\partial \Omega }f -\sum^{m}_{j = 1}\int _{\partial U_{j}}f \\
+	= & \int _{\partial \Omega }u \; dx - v\; dy -\sum^{m}_{j = 1}\int _{\partial U_{j}}u \; dx - v\; dy + i\left(\int _{\partial \Omega }v \; dx + u\; dy-\sum^{m}_{j = 1}\int _{\partial U_{j}}v \; dx + u\; dy\right)\\
+	= & \int _{\Omega \backslash \bigcup_{j = 1}^{m}U_{j}}\left(-\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\right) \; dx \; dy + i \int _{\Omega \backslash \bigcup_{j = 1}^{m}U_{j}}\left(\frac{\partial u}{\partial x}-\frac{\partial v}{\partial y}\right) \; dx \; dy = 0.
+\end{split}
+\]
 \end{proof}
-\begin{theorem}[Fórmula de Cauchy para simplemente conexos]
-Sean $\displaystyle \Omega, U_{1}, \ldots, U_{m} $ abiertos simplemente conexos satisfaciendo las condiciones del teorema de Cauchy. Sea $\displaystyle f \in \mathcal{H}\left(\overline{\Omega } \backslash \bigcup_{j = 1}^{m}U_{j}\right) $. Luego para cada $\displaystyle z \in \Omega \backslash \bigcup_{j = 1}^{m}\overline{U}_{j} $ se tiene que 
+\begin{theorem}[Fórmula integral de Cauchy para conjuntos múltiplemente conexos]
+Sean $\displaystyle \Omega, U_{1}, \ldots, U_{m} $ satisfaciendo las condiciones del teorema anterior y $\displaystyle f \in \mathcal{H}\left(\overline{\Omega } \backslash \bigcup_{j = 1}^{m}U_{j}\right) $. Entonces, para cada $\displaystyle z \in \Omega \backslash \bigcup_{j = 1}^{m}\overline{U}_{j} $ se tiene que 
 \[f\left(z\right)=\frac{1}{2\pi i}\int _{\partial \Omega }\frac{f\left(\xi\right)}{\xi - z} \; d\xi - \sum^{m}_{j = 1}\int _{\partial U_{j}}\frac{f\left(\xi\right)}{\xi - z} \; d\xi .\]
 Y además, 
-\[f^{\left(n\right)}\left(z\right)=\frac{n!}{2\pi i}\int _{\partial \Omega }\frac{f\left(\xi\right)}{\left(\xi - z\right)^{n+1}} \; d\xi - \frac{n!}{2\pi i}\sum^{m}_{j = 1}\int _{\partial U_{j}}\frac{f\left(\xi\right)}{\left(\xi-z\right)^{n+1}} \; d\xi .\]
+\[f^{\left(n\right)}\left(z\right)=\frac{n!}{2\pi i}\int _{\partial \Omega }\frac{f\left(\xi\right)}{\left(\xi - z\right)^{n+1}} \; d\xi - \frac{n!}{2\pi i}\sum^{m}_{j = 1}\int _{\partial U_{j}}\frac{f\left(\xi\right)}{\left(\xi-z\right)^{n+1}} \; d\xi ,\]
+para todo $\displaystyle n \in \N $, con $\displaystyle \partial \Omega  $ y $\displaystyle \partial U_{j} $ orientadas positivamente para cada $\displaystyle j \in \left\{ 1, \ldots, m\right\}  $. 
 \end{theorem}
 \begin{proof}
-Existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle D\left(z, \epsilon \right)\subset \Omega \backslash \bigcup_{j = 1}^{m}\overline{U}_{j} $. La función $\displaystyle g\left(\xi\right):=\frac{f\left(\xi\right)}{\xi-z} $ (más generalmente $\displaystyle \frac{f\left(\xi\right)}{\left(\xi-z\right)^{n+1}} $)
-es $\displaystyle g \in \mathcal{H}\left(\overline{\Omega } \backslash \left(\bigcup_{j = 1}^{m}\overline{U}_{j}\cup D\left(z, \epsilon \right)\right)\right) $. Por tanto, 
-\[0 = \int _{\partial \Omega }g -\int _{\partial D\left(z, \epsilon \right)}g -\sum^{m}_{j = 1}\int _{\partial U_{j}}g  .\]
-Terminamos observando que por la fórmula integral de Cauchy se tiene que en $\displaystyle \partial D\left(z, \epsilon \right) $,
-\[\int _{\partial D\left(z, \epsilon \right)}g = f\left(z\right)2\pi i .\]
-Análogamente se tiene la segunda igualdad del teorema usando $\displaystyle \frac{f\left(\xi\right)}{\left(\xi-z\right)^{n+1}} $.
+Fijamos $\displaystyle z \in \Omega\backslash \bigcup_{j = 1}^{m}\overline{U}_{j} $ y sea $\displaystyle \epsilon > 0 $ tal que $\displaystyle \overline{D}\left(z,\epsilon \right)\subset \Omega \backslash \bigcup_{j = 1}^{m}\overline{U}_{j} $. Consideremos la función
+\[g\left(\xi\right)=\frac{f\left(\xi\right)}{\xi-z}\in \mathcal{H}\left(\overline{\Omega }\backslash \left(D\left(z, \epsilon \right)\cup \bigcup_{j = 1}^{m}U_{j}\right)\right) .\]
+Aplicando el teorema anterior tenemos que
+\[
+\begin{split}
+	0 = & \int _{\partial \Omega }g -\int _{\partial D\left(z, \epsilon \right)}g -\sum^{m}_{j = 1}\int _{\partial U_{j}}g\\
+	= & \int _{\partial \Omega }\frac{f\left(\xi\right)}{\xi-z} \; d\xi -\int _{\partial D\left(z, \epsilon \right)}\frac{f\left(\xi\right)}{\xi - z} \; d\xi - \sum^{m}_{j = 1}\int _{\partial U_{j}}\frac{f\left(\xi\right)}{\xi - z} \; d\xi.
+\end{split}
+\]
+Por la fórmula integral de Cauchy para un disco sabemos que 
+\[2\pi i f\left(z\right)=\int _{\partial D\left(z, \epsilon \right)}\frac{f\left(\xi\right)}{\xi-z} \; d\xi ,\]
+y combinando esto con la igualdad anterior tenemos que 
+\[f\left(z\right)=\frac{1}{2\pi i}\int _{\partial \Omega }\frac{f\left(\xi\right)}{\xi-z} \; d\xi -\frac{1}{2\pi i}\sum^{m}_{j = 1}\int _{\partial U_{j}}\frac{f\left(\xi\right)}{\xi-z} \; d\xi .\]
+La segunda igualdad del teorema se demuestra análogamente usando $\displaystyle g\left(\xi\right)=\frac{f\left(\xi\right)}{\left(\xi-z\right)^{n+1}} $. 
 \end{proof}
-\begin{observation}
-Podemos ver que 
-\[f\left(z\right)=e^{\frac{1}{z}} = \sum^{\infty}_{n = 0}\frac{1}{n}\left(\frac{1}{z}\right)^{n} .\]
-\end{observation}
+
 \section{Series de Laurent}
-Vamos a obtener representaciones de $\displaystyle f \in \mathcal{H}\left(D\left(z_{0}, r\right)\backslash \left\{ z_{0}\right\} \right) $ con singularidades en $\displaystyle z_{0} $ de la forma 
+Vamos a estudiar funciones que son holomorfas en un entorno de un punto $\displaystyle z_{0} $ salvo quizás en $\displaystyle z_{0} $. Veremos que estas funciones se pueden expresar de la forma 
 \[f\left(z\right)=\sum^{\infty}_{-\infty }a_{n}\left(z-z_{0}\right)^{n} .\]
-\begin{definition}
-Una función $\displaystyle f $ definida en $\displaystyle \hat{C} $ es holomorfa en $\displaystyle +\infty  $ si $\displaystyle g\left(z\right):=f\left(\frac{1}{z}\right) $ es holomorfa en $\displaystyle z = 0 $.
+Por ejemplo, se puede ver que 
+\[f\left(z\right)=e^{\frac{1}{z}} = \sum^{\infty}_{n = 0}\frac{1}{n}\left(\frac{1}{z}\right)^{n} .\]
+Además, veremos que una fórmula similar a la de Cauchy nos permite calcular los coeficientes $\displaystyle a_{n} $ en función de los valores de $\displaystyle f $ en una circunferencia de centro $\displaystyle z_{0} $. 
+
+\begin{definition}[Holomorfía en $\displaystyle \hat{\C}$]
+Una función $\displaystyle f $ definida en $\displaystyle \hat{\C} $ es holomorfa en $\displaystyle \infty  $ si $\displaystyle g\left(z\right):=f\left(\frac{1}{z}\right) $ es holomorfa en $\displaystyle z = 0 $.
 \end{definition}
 \begin{eg}
-La función $\displaystyle f\left(z\right)=\frac{1}{z} $ es holomorfa en $\displaystyle \infty $ y $\displaystyle g\left(z\right)=e^{\frac{1}{z}} $ es holomorfa en $\displaystyle \infty  $. 
+Las funciones $\displaystyle f\left(z\right)=\frac{1}{z} $ y $\displaystyle g\left(z\right)=e^{\frac{1}{z}} $ son holomorfas en $\displaystyle \infty  $. 
 \end{eg}
+\begin{observation}
+Podemos ver que si $\displaystyle f $ es holomorfa en $\displaystyle \infty $, entonces $\displaystyle f $ está acotada en un entorno de $\displaystyle \infty  $ en $\displaystyle \hat{\C} $, es decir, está acotada fuera de algún disco centrado en $\displaystyle 0 $. 
+\end{observation}
+
 \begin{theorem}[Descomposición de Laurent]
 Sean $\displaystyle 0 \leq \rho < \sigma \leq \infty  $, $\displaystyle f \in \mathcal{H}\left(\Omega \right) $ con 
 \[\Omega = D\left(z_{0}, \sigma \right) \backslash \overline{D}\left(z_{0}, \rho\right) .\]
@@ -59,7 +91,7 @@ Entonces existen funciones
 \[f_{0} : D\left(z_{0}, \sigma \right)\to \C \quad \text{y} \quad f_{1} : \hat{\C} \backslash \overline{D}\left(z_{0}, \rho \right)\to \C ,\]
 holomorfas tales que 
 \[f\left(z\right)=f_{0}\left(z\right) + f_{1}\left(z\right), \; \forall z \in \Omega  .\]
-Si $\displaystyle f_{1}\left(\infty \right)=0 $ la descripción es única. 
+Además, si $\displaystyle f_{1}\left(\infty \right)=0 $ la descripción es única. 
 \end{theorem}
 \begin{proof}
 Demostramos primero la unicidad. Supongamos que 
@@ -123,5 +155,121 @@ Se pone $\displaystyle a_{n}=b_{-n} $, $\displaystyle \forall n < 0 $ y $\displa
 	= & \sum^{\infty }_{k = - \infty }a_{k}\int _{ \left|z-z_{0}\right|=r}\left(z-z_{0}\right)^{k-n-1} \; dz = \sum^{\infty }_{k = - \infty }a_{k}\delta_{kn}2\pi i =2\pi ia_{n}, \; \forall n \in\Z.
 \end{split}
 \]
+\end{proof}
+\section{Singularidades aisladas}
+\begin{definition}[Singularidad aislada]
+	Se dice que $\displaystyle z_{0} $ es una \textbf{singularidad aislada de $\displaystyle f $} si existe $\displaystyle r > 0 $ tal que $\displaystyle D\left(z_{0}, r\right)\backslash \left\{ z_{0}\right\} \subset \dom\left(f\right) $ y $\displaystyle z_{0}\not\in\dom\left(f\right) $ con $\displaystyle f \in \mathcal{H}\left(D\left(z_{0}, r\right)\backslash \left\{ z_{0}\right\} \right) $. 
+\end{definition}
+\begin{eg}
+La función $\displaystyle \frac{1}{z-a} $ tiene una singularidad aislada en $\displaystyle z = a $. Lo mismo es cierto para $\displaystyle \frac{1}{\left(z-a\right)^{n}} $ con $\displaystyle n \in \N $. 
+\end{eg}
+\begin{eg}
+	La función $\displaystyle \frac{1}{\sin\left(\frac{\pi }{z}\right)}$ no está definida en $\displaystyle z = \frac{1}{k} $ para $\displaystyle k \in \Z\backslash \left\{ 0\right\}  $ y $\displaystyle z = 0 $. En este caso, $\displaystyle z = 0 $ no es una singularidad aislada, sin embargo las singularidades de la forma $\displaystyle z = \frac{1}{k} $ con $\displaystyle k \in \Z\backslash \left\{ 0\right\}  $ sí son aisladas.
+\end{eg}
+\begin{definition}[Tipos de singularidades - Clasificación según serie de Laurent en $\displaystyle z_0 $]
+\begin{enumerate}
+\item \textbf{Evitable} si $\displaystyle a_{n}=0 $, $\displaystyle \forall n < 0 $ con $\displaystyle n \in \Z  $ en la serie de Laurent. 
+\item \textbf{Polo de orden $\displaystyle N\in\N $} si $\displaystyle a_{n}=0 $ $\displaystyle \forall n <-N $ y $\displaystyle n \in \Z $. Asumimos $\displaystyle a_{-N}\neq 0 $. 
+\item \textbf{Esencial} si existen infinitos $\displaystyle a_{n}\neq 0 $ con $\displaystyle n < 0 $ y $\displaystyle n \in \Z $. 
+\end{enumerate}
+\end{definition}
+\begin{theorem}[Teorema de Riemann]
+	Si $\displaystyle f\in\mathcal{H}\left(D\left(z_{0}, r\right)\backslash \left\{ z_{0}\right\} \right) $ está acotada, entonces $\displaystyle f $ tiene una singularidad evitable en $\displaystyle z = z_{0} $.
+\end{theorem}
+\begin{proof}
+	Supongamos que $\displaystyle f \in \mathcal{H}\left(D\left(z_{0}, r\right)\backslash \left\{ z_{0}\right\} \right) $ y sea $\displaystyle \epsilon > 0 $. Consideramos el conjunto
+	\[\Omega_{r,\epsilon }= \left\{ z \in \C \; : \; \epsilon < \left|z-z_{0}\right|<r\right\}  .\]
+	Como $\displaystyle f $ es holomorfa en $\displaystyle \Omega_{r,\epsilon } $, podemos aplicar la fórmula integral de Cauchy al conjunto múltiplemente conexo $\displaystyle \Omega_{r,\epsilon } $. Se sigue que para cada $\displaystyle z \in \Omega_{r,\epsilon } $,
+	\[f\left(z\right)=\frac{1}{2\pi i}\int _{ \left|z-z_{0}\right|=r}\frac{f\left(\xi\right)}{\xi-z} \; d\xi-\frac{1}{2\pi i}\int _{ \left|z-z_{0}\right|=\epsilon }\frac{f\left(\xi\right)}{\xi-z} \; d\xi .\]
+Vamos a ver ahora que el segundo término va a 0 si $\displaystyle \epsilon \to 0^{+ } $. Tenemos la siguiente cota
+\[
+\begin{split}
+	\left|\frac{1}{2\pi i}\int _{ \left|z-z_{0}\right|= \epsilon }\frac{f\left(\xi\right)}{\xi-z} \; d\xi\right|\leq & \frac{1}{2\pi }\|f\|_{\infty }2\pi \epsilon \sup_{\xi\in \partial D\left(z_{0}, \epsilon \right)}\frac{1}{ \left|\xi-z\right|} \\
+	\leq &\frac{\|f\|_{\infty} \epsilon }{d\left(z, \partial D\left(z_{0}, \epsilon \right)\right)} \xrightarrow{\epsilon \to 0^{+}} 0.
+\end{split}
+\]
+Hemos usado que $\displaystyle \left|\xi-z\right|\geq d\left(z, \partial D\left(z_{0}, \epsilon \right)\right) $. Así, nos queda que si $\displaystyle \epsilon \to 0^{+} $, 
+\[f\left(z\right)=\frac{1}{2\pi i}\int _{ \left|z-z_{0}\right|=r}\frac{f\left(\xi\right)}{\xi-z} \; d\xi, \; \forall z \in D\left(z_{0}, r\right)\backslash \left\{ z_{0}\right\}  .\]
+Por el teorema de derivación bajo el signo de la integral, la parte derecha de la igualdad anterior están en $\displaystyle \mathcal{H}\left(D\left(z_{0}, r\right)\right) $, coincide con $\displaystyle f $ en $\displaystyle D\left(z_{0}, r\right)\backslash \left\{ z_{0}\right\}  $. 
+\end{proof}
+\begin{theorem}[Caracterización de polos]
+Sea $\displaystyle z_{0} $ una singularidad aislada de $\displaystyle f $. Son equivalentes:
+\begin{enumerate}
+\item $\displaystyle z_{0} $ es polo de $\displaystyle f $. 
+\item $\displaystyle \lim_{z \to z_{0}} \left|f\left(z\right)\right|=\infty  $.
+\item La función 
+	\[g\left(z\right)=
+	\begin{cases}
+	\frac{1}{f\left(z\right)}, \; z \neq z_{0} \\
+	0, \; z = z_{0}
+	\end{cases}
+	,\]
+	es holomorfa en $\displaystyle D\left(z_{0}, \epsilon \right) $ para algún $\displaystyle \epsilon > 0 $. 
+\item $\displaystyle f\left(z\right)=\frac{h\left(z\right)}{\left(z-z_{0}\right)^{N}} $ para algún $\displaystyle N \in \N $ (orden del polo) y $\displaystyle h \in \mathcal{H}\left(D\left(z_{0}, \epsilon \right)\right) $ para algún $\displaystyle \epsilon > 0 $ y $\displaystyle h\left(z_{0}\right)\neq 0 $.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Demostramos las distintas implicaciones.
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Por hipótesis, existe $\displaystyle N \in \N $ tal que $\displaystyle a_{-N}\neq 0 $ y $\displaystyle a_{-k}=0 $, $\displaystyle \forall k > N $. Así, podemos escribir
+	\[
+	\begin{split}
+		f\left(z\right)= & \frac{a_{-N}}{\left(z-z_{0}\right)^{N}}+ \cdots + \frac{a_{-1}}{z-z_{0}} + \sum^{\infty}_{n=0}a_{n}\left(z-z_{0}\right)^{n}\\
+		= & \frac{a_{-N}}{\left(z-z_{0}\right)^{N}}\left(1 + \frac{a_{-N+1}}{a_{-N}}\left(z-z_{0}\right) + \cdots + \frac{a_{1}}{a_{-N}}\left(z-z_{0}\right)^{N-1}+\sum^{\infty}_{n = 0}\frac{a_{n}}{a_{-N}}\left(z-z_{0}\right)^{n + N}\right) .
+	\end{split}
+	\]
+Si llamamos $\displaystyle h\left(z\right) $ a la expresión dentro del paréntesis tenemos que $\displaystyle h $ es holomorfa en $\displaystyle D\left(z_{0}, \epsilon \right) $ para algún $\displaystyle \epsilon > 0 $, en particular es continua. Ya que $\displaystyle h\left(z_{0}\right)=1 $, si $\displaystyle \left|z-z_{0}\right|< \delta_{1} $ se asegura que $\displaystyle \left|h\left(z\right)\right|\geq \frac{1}{2} $. 
+Así, si $\displaystyle 0 < \left|z-z_{0}\right|<\delta_{1} $, es 
+\[ \left|f\left(z\right)\right|\geq \left|\frac{a_{-N}}{2\left(z-z_{0}\right)^{N}}\right|\xrightarrow{z \to z_{0}}\infty .\]
+\item[(2) $\displaystyle \Rightarrow $ (3)] La función 
+	\[g\left(z\right)=
+	\begin{cases}
+	\frac{1}{f\left(z\right)}, \; z \neq z_{0} \\
+	0, \; z = z_{0}
+	\end{cases}
+	,\]
+	es tal que $\displaystyle g \in \mathcal{H}\left(D\left(z_{0}, \epsilon \right)\backslash \left\{ z_{0}\right\} \right) $ puesto que $\displaystyle \lim_{z \to z_{0}} \left|f\left(z\right)\right|=\infty  $. Además, $\displaystyle g $ es continua en $\displaystyle z_{0} $ por lo que está acotada en $\displaystyle D\left(z_{0}, \epsilon \right)\backslash \left\{ z_{0}\right\}  $. Por el teorema de Riemann, se tiene que 
+	\[g\in \mathcal{H}\left(D\left(z_{0}, \epsilon \right)\right) .\]
+\item[(3) $\displaystyle \Rightarrow $ (4)] Puesto que $\displaystyle g $ no es idénticamente nula podemos escribir
+	\[g\left(z\right)=\left(z-z_{0}\right)^{N}\sum^{\infty}_{k = 0}c_{k}\left(z-z_{0}\right)^{k}, \; c_{0}\neq 0 .\]
+Así, 
+\[f\left(z\right)=\frac{1}{\left(z-z_{0}\right)^{n}\sum^{\infty}_{k = 0}c_{k}\left(z-z_{0}\right)tdk} .\]
+Así, ya que $\displaystyle \frac{1}{\sum^{\infty}_{k = 0}c_{k}\left(z-z_{0}\right)^{k}} $ es holomorfa en $\displaystyle D\left(z_{0}, \epsilon \right) $ para algún $\displaystyle \epsilon > 0 $ (puesto que $\displaystyle c_{0}\neq 0 $), tenemos que 
+\[f\left(z\right)=\frac{h\left(z\right)}{\left(z-z_{0}\right)^{N}}\quad \text{y} \quad h\left(z_{0}\right)\neq 0 .\]
+\item[(4) $\displaystyle \Rightarrow $ (1)] Si $\displaystyle f \left(z\right)=\frac{h\left(z\right)}{\left(z-z_{0}\right)^{N}} $ con $\displaystyle h \in \mathcal{H}\left(D\left(z_{0}, \epsilon \right)\right) $ y $\displaystyle h\left(z_{0}\right)\neq 0 $, expandiendo en serie tenemos que 
+	\[f\left(z\right)=\frac{1}{\left(z-z_{0}\right)^{N}}\sum^{\infty}_{n = 0}a_{n}\left(z-z_{0}\right)^{n} = \frac{a_{0}}{\left(z-z_{0}\right)^{N}}+ \cdots + 
+	\frac{a_{N-1}}{z-z_{0}}+a_{N}+\sum^{\infty }_{n = 1}a_{n+ N}\left(z-z_{0}\right)^{n + N}.\]
+	Por tanto, $\displaystyle f $ tiene un polo de orden $\displaystyle N $ en $\displaystyle z = z_{0} $. 
+\end{description}
+\end{proof}
+\begin{theorem}[Teorema de Casorati-Weierstrass]
+Sea $\displaystyle z_{0} $ una singularidad aislada de $\displaystyle f $. Son equivalentes:
+\begin{enumerate}
+\item $\displaystyle z_{0} $ es singularidad esencial de $\displaystyle f $.
+\item $\displaystyle \forall \epsilon > 0 $ suficientemente pequeño, $\displaystyle \overline{f\left(D\left(z_{0}, \epsilon \right) \backslash \left\{ z_{0}\right\} \right)}=\C $ \footnote{Esto quiere decir que la imagen bajo $\displaystyle f $ de $\displaystyle D\left(z_{0}, \epsilon \right) $ es denso en $\displaystyle \C $.}. 
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Sea $\displaystyle z_{0} $ una singularidad asilada de $\displaystyle f $. 
+\begin{description}
+	\item[(1) $\displaystyle \Rightarrow $ (2)] Supongamos que $\displaystyle f\left(D\left(z_{0}, \epsilon \right)\backslash \left\{ z_{0}\right\} \right) $ no es denso, es decir, existe $\displaystyle \delta  > 0 $ y existe $\displaystyle w \in \C $ tal que $\displaystyle \left|f\left(z\right)-w\right|> \delta  $, $\displaystyle \forall z \in D\left(z_{0}, r\right) $, $\displaystyle \forall r \leq \delta  $. 
+		Consideramos la función $\displaystyle g\left(z\right):=\frac{1}{f\left(z\right)-w} $, que está bien definida y $\displaystyle g \in \mathcal{H}\left(D\left(z_{0}, \delta \right)\backslash \left\{ z_{0}\right\} \right) $. Además, 
+		\[ \left|g\left(z\right)\right| = \frac{1}{ \left|f\left(z\right)-w\right|}<\frac{1}{\delta } .\]
+	Así, por el teorema de Riemann se puede extender a una $\displaystyle g \in \mathcal{H}\left(D\left(z_{0}, \delta \right)\right) $. Podemos observar que $\displaystyle g $ no es idénticamente nula. Distinguimos varios casos:
+	\begin{itemize}
+	\item Supongamos que $\displaystyle g\left(z_{0}\right)\neq 0 $. Tenemos que $\displaystyle f\left(z\right)=\frac{1}{g\left(z\right)}+w $ es holomorfa y está bien definida en $\displaystyle D\left(z_{0}, \delta \right) $, de forma que $\displaystyle z_{0} $ es singularidad evitable que es una contradicción. 
+	\item Si $\displaystyle g\left(z_{0}\right)=0 $, como $\displaystyle g\not\equiv 0 $ debe ser que $\displaystyle z_{0} $ es cero de orden $\displaystyle N $. Podemos escribir $\displaystyle g\left(z\right)=\left(z-z_{0}\right)^{N}h\left(z\right) $ con $\displaystyle h\left(z_{0}\right)\neq 0 $ y $\displaystyle h\in \mathcal{H}\left(D\left(z_{0}, \delta \right)\right) $.
+		Entonces $\displaystyle f\left(z\right)=\frac{h\left(z\right)}{\left(z-z_{0}\right)^{N}+w} $, por lo que $\displaystyle f $ tiene un polo de orden $\displaystyle N $ en $\displaystyle z_{0} $ que contradice nuestras hipótesis. 
+	\end{itemize}
+	Así, debe ser que $\displaystyle \overline{f\left(D\left(z_{0}, \epsilon \right)\backslash \left\{ z_{0}\right\} \right)} = \C $. 
+\item[(2) $\displaystyle \Rightarrow $ (1)] Veamos que no puede ser singularidad evitable ni un polo. 
+	\begin{itemize}
+		\item Si fuese una singularidad evitable tendríamos que $\displaystyle \lim_{z \to z_{0}}f\left(z\right) = l$ con $\displaystyle l \in \C $. Se sigue que existe $\displaystyle \epsilon > 0 $ tal que $\displaystyle f\left(D\left(z_{0}, \epsilon \right)\backslash \left\{ z_{0}\right\} \right)\subset D\left(l, 1\right) $, que contradice nuestra hipótesis.
+		\item Vimos que ser $\displaystyle z_{0} $ un polo es equivalente a $\displaystyle \lim_{z \to \infty} \left|f\left(z\right)\right|=\infty  $. Existe $\displaystyle \epsilon > 0 $ tal que 
+			\[f\left(D\left(z_{0}, \epsilon \right)\backslash \left\{ z_{0}\right\} \right)\subset D\left(0,67\right) .\]
+			Así, la imagen no es densa.
+	\end{itemize}
+Por tanto, sólo puee ser que $\displaystyle z_{0} $ sea una singularidad esencial.	
+\end{description}
 \end{proof}
 

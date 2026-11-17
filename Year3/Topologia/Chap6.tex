@@ -177,8 +177,12 @@ que es un cerrado en $\displaystyle V^{0} $. Por ser $\displaystyle V^{0} $ comp
 	Es fácil tomar una sucesión de puntos en $\displaystyle B\left(p, \epsilon \right)\cap Z $ sin puntos de acumulación en $\displaystyle Z $. Por ejemplo, se pueden tomar $\displaystyle x_{k} $ a distancia $\displaystyle \frac{\epsilon }{2} $ de $\displaystyle p $ en $\displaystyle B\left(p, \epsilon \right)\cap Z $ que converjan a un punto en $\displaystyle \partial B\left(p, \frac{\epsilon }{2}\right)\cap \partial B\left(0,1\right) $. 
 \end{eg}
 \begin{eg}
-	Volviendo al ejemplo anterior, si consideramos $\displaystyle q \not\in Z $ formamos el conjunto $\displaystyle \tilde{Z} = Z \cup \left\{ q\right\}  $. Podemos introducir una topología en $\displaystyle \tilde{Z} $ de la siguiente forma: todos los subconjuntos contenidos en $\displaystyle Z $ que son abiertos con la topología heredada de la usual de $\displaystyle \R^{n} $ son abiertos en $\displaystyle \tilde{Z} $; por lo que se refiere a los entornos del punto $\displaystyle q $, son los $\displaystyle W \subset \tilde{Z} $ tales que $\displaystyle q \in W $ y $\displaystyle \tilde{Z}\backslash W $ es finito. 
-	Claramente tenemos que $\displaystyle \tilde{Z} $ es compacto. En efecto, dado un recubrimiento opr abiertos, habrá uno de esos abiertos que contenga al punto $\displaystyle q $, por lo que cubre a todo el espacio $\displaystyle \tilde{Z} $ menos un conjunto finito de puntos. 
+	Volviendo al ejemplo anterior, si consideramos $\displaystyle q \not\in Z $ podemos formar el conjunto $\displaystyle \tilde{Z} = Z \cup \left\{ q\right\}  $. Podemos introducir una topología en $\displaystyle \tilde{Z} $ de la siguiente forma: 
+	\begin{itemize}
+	\item Todos los subconjuntos contenidos en $\displaystyle Z $ que son abiertos con la topología heredada de la usual de $\displaystyle \R^{n} $ son abiertos en $\displaystyle \tilde{Z} $.
+	\item Los entornos de $\displaystyle q $ son los $\displaystyle W \subset \tilde{Z} $ tales que $\displaystyle q \in W $ y $\displaystyle \tilde{Z}\backslash W $ es finito.
+	\end{itemize}
+	Claramente tenemos que $\displaystyle \tilde{Z} $ es compacto. En efecto, dado un recubrimiento por abiertos, habrá uno de esos abiertos que contenga al punto $\displaystyle q $, por lo que cubre a todo el espacio $\displaystyle \tilde{Z} $ menos un conjunto finito de puntos. 
 	Sin embargo, $\displaystyle \tilde{Z} $ no es localmente compacto, pues el punto $\displaystyle p $ no tiene una base de entornos compactos: sólo tiene un entorno compacto (el espacio total $\displaystyle \tilde{Z} $), pero los entornos de $\displaystyle p $ contenidos en $\displaystyle Z $ nunca son compactos. 
 \end{eg}
 \begin{observation}
@@ -188,5 +192,223 @@ Del ejemplo anterior podemos sacar algunas conclusiones importantes:
 \item La existencia de un entorno compacto es una condición estrictamente más débil que la de existencia de una base de entornos compactos.
 \item Podemos observar que $\displaystyle \tilde{Z} $ no es Hausdorff. Veremos que en el caso de espacios que sí lo son, no se dan estas circunstancias. 
 \end{enumerate}
+\end{observation}
+\begin{prop}
+Si $\displaystyle X $ es un espacio Hausdorff y $\displaystyle x \in X $ tiene un entorno compacto, entonces $\displaystyle x $ tiene una base de entornos compactos. 
+\end{prop}
+\begin{proof}
+Sea $\displaystyle V^{x} $ un entorno compacto de $\displaystyle x $. Tenemos que $\displaystyle V^{x} $ es cerrado por ser $\displaystyle X $ Hausdorff. Por definición de entorno tenemos que existe $\displaystyle W^{x} $ abierto tal que $\displaystyle x \in W^{x}\subset V^{x} $. Consideremos un entorno abierto cualquiera $\displaystyle U^{x} $ de $\displaystyle x $ y veamos que existe $\displaystyle K^{x} $ entorno compacto de $\displaystyle x $ contenido en $\displaystyle U^{x} $. Claramente $\displaystyle V^{x} \backslash U^{x} $ es cerrado en $\displaystyle V^{x} $, por lo que $\displaystyle V^{x} \backslash U^{x} $ es compacto. \\
+
+Como $\displaystyle x\not\in V^{x} \backslash U^{x} $ y $\displaystyle X $ es Hausdorff, sabemos que existen $\displaystyle U^{x}_{1} $ y $\displaystyle \Omega  $ abiertos de $\displaystyle X $ tales que $\displaystyle x\in U^{x}_{1} $, $\displaystyle V^{x} \backslash U^{x}\subset \Omega  $ y $\displaystyle U^{x}_{1}\cap \Omega = \emptyset  $. Observamos que podemos tomar $\displaystyle U^{x}_{1}\subset U^{x}\cap W^{x} $. Afirmamos que $\displaystyle K^{x}:=\overline{U}^{x}_{1} $ es compacto. En efecto, basta con observar que es cerrado y que $\displaystyle K^{x}\subset \overline{W}^{x}\subset\overline{V}^{x}= V^{x} $ y recordar que $\displaystyle V^{x} $ es compacto. 
+Así, $\displaystyle K^{x} $ es entorno compacto de $\displaystyle x $. Pero además, $\displaystyle K^{x}\subset U^{x} $. 
+En efecto, por una parte tenemos que $\displaystyle U^{x}_{1}\subset V^{x} $ y por otra $\displaystyle U^{x}_{1}\cap \Omega = \emptyset $ y como $\displaystyle V^{x}\backslash U^{x} \subset \Omega  $ se tiene que $\displaystyle \overline{U}^{x}_{1}\cap \left(V^{x}\backslash U^{x}\right)=\emptyset $, por lo que $\displaystyle \overline{U}^{x}_{1}\subset U^{x} $.
+\end{proof}
+\begin{colorary}
+Dado un espacio de Hausdorff $\displaystyle X $, se tiene que $\displaystyle X $ es localmente compacto si y sólo si cada uno de sus puntos tiene un entorno compacto. 
+\end{colorary}
+\begin{colorary}
+Si $\displaystyle X $ es un espacio compacto y Hausdorff, $\displaystyle X $ es localmente compacto. 
+\end{colorary}
+\begin{proof}
+Cada punto tiene un entorno compacto, en concreto el espacio $\displaystyle X $. Así, basta con aplicar la proposición anterior.
+\end{proof}
+% y el recíproco?
+\begin{colorary}
+Si $\displaystyle X $ es un espacio localmente compacto y Hausdorff, dado un entorno cualquiera $\displaystyle V^{x} $ de $\displaystyle x \in X $, existe un entorno abierto $\displaystyle U^{x} $ de $\displaystyle x $ tal que $\displaystyle x\in U^{x}\subset \overline{U}^{x}\subset V^{x} $ y $\displaystyle \overline{U}^{x} $ es compacto.
+\end{colorary}
+\section{Comportamiento bajo construcciones}
+Ya hemos visto que la propiedad de ser localmente compacto no es hereditaria para conjuntos arbitrarios, pero sí la heredan un tipo de subconjuntos que incluye tanto a los abiertos como a los cerrados. 
+\subsection{Conjuntos localmente cerrados}
+\begin{definition}[Conjunto localmente cerrado]
+Dado un espacio topológico $\displaystyle X $, decimos que un subespacio $\displaystyle Y\subset X $ es \textbf{localmente cerrado} si $\displaystyle Y $ es abierto en su adherencia.
+\end{definition}
+\begin{prop}
+Dado un espacio topológico $\displaystyle X $ y un subespacio $\displaystyle Y \subset X$, son equivalentes:
+\begin{enumerate}
+\item Para cada $\displaystyle y \in Y $ existe un entorno abierto $\displaystyle U^{y}\subset X $ tal que $\displaystyle U^{y}\cap Y $ es cerrado en $\displaystyle U^{y} $. 
+\item $\displaystyle Y $ es localmente cerrado.
+\item Existe un cerrado $\displaystyle F \subset X $ y un abierto $\displaystyle U \subset X $ tal que $\displaystyle Y = F \cap U $.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Demostramos cada implicación.
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Comprobemos que se cumple la igualdad
+	\[Y = \overline{Y}\cap \bigcup_{y \in Y}U^{y} \]
+	con $\displaystyle U^{y} $ como en la condición \textbf{(1)}. 
+	\begin{itemize}
+	\item Si $\displaystyle y \in Y $ es sencillo ver que $\displaystyle y \in \overline{Y} $ e $\displaystyle y \in U^{y} $. 
+	\item Si $\displaystyle y \in \overline{Y}\cap \bigcup_{y \in Y}U^{y} $, debe ser que existe $\displaystyle y_{0}\in Y $ tal que $\displaystyle y \in \overline{Y}\cap U^{y_{0}} $. Como por \textbf{(1)} se tiene que $\displaystyle U^{y_{0}}\cap Y $ es cerrado en $\displaystyle U^{y_{0}} $, el conjunto $\displaystyle N = U^{y_{0}} \backslash \left(U^{y_{0}} \cap Y\right) $ es abierto en $\displaystyle U^{y_{0}} $ y también en $\displaystyle X $. 
+		Si $\displaystyle y \not\in Y $ tendríamos que $\displaystyle y\in N $ y $\displaystyle N \cap Y = \emptyset $ por lo que $\displaystyle y \not\in \overline{Y} $ que es una contradicción. 
+	\end{itemize}
+	Como la igualdad anterior se da, tenemos que $\displaystyle Y $ es abierto en $\displaystyle \overline{Y} $.
+\item[(2) $\displaystyle \Rightarrow $ (3)] Tenemos que existe un abierto $\displaystyle U \subset X $ tal que $\displaystyle Y = \overline{Y}\cap U $ y como $\displaystyle \overline{Y} $ es cerrado en $\displaystyle X $ se deduce \textbf{(3)} tomando $\displaystyle F = \overline{Y} $.
+\item[(3) $\displaystyle \Rightarrow $ (1)] Si $\displaystyle Y = F \cap U $ con $\displaystyle F \subset X $ cerrado y $\displaystyle U\subset X $ abierto, entonces para cada $\displaystyle y \in Y $ podemos tomar $\displaystyle U^{y}= U $. Claramente, $\displaystyle U^{y}\cap Y = U^{y}\cap F $ que es cerrado en $\displaystyle U^{y} $.
+\end{description}
+\end{proof}
+\begin{observation}
+Podemos hacer un par de observaciones:
+\begin{itemize}
+\item La condición \textbf{(1)} se cumple para cada $\displaystyle V^{y} $ entorno de $\displaystyle y $ que esté contenido en $\displaystyle U^{y} $. En efecto, que $\displaystyle U^{y}\cap Y $ sea cerrado en $\displaystyle U^{y} $ quiere decir que existe $\displaystyle C \subset X $ cerrado tal que $\displaystyle U^{y}\cap C = U^{y} \cap Y $. Por tanto, si $\displaystyle V^{y}\subset U^{y} $ se tiene que $\displaystyle V^{y}\cap Y = V^{y}\cap C $ y por ello $\displaystyle V^{y}\cap Y $ es cerrado en $\displaystyle V^{y} $. 
+	Así, para la condición de que $\displaystyle Y\subset X $ sea localmente cerrado, pedir la condición en un entorno abierto de un punto nos lleva a tener la condición para toda una base de entornos de ese punto.
+\item La condición \textbf{(3)} se puede reescribir tomando $\displaystyle F= \overline{Y} $ puesto que todo cerrado $\displaystyle F\subset X $ que contiene a $\displaystyle Y $ contiene a su adherencia. 
+\end{itemize}
+\end{observation}
+\begin{eg}
+Todo abierto es localmente cerrado. En efecto, si $\displaystyle U\subset X $ es abierto, tenemos que $\displaystyle U = U \cap X $ y $\displaystyle X $ es cerrado. Análogamente, todo cerrado es localmente cerrado. 
+\end{eg}
+\begin{eg}
+	En $\displaystyle \left(\R, \mathcal{T}_{u}\right) $, todo intervalo es localmente cerrado. Para los intervalos $\displaystyle \left(a,b\right) $ o $\displaystyle [a,b] $ se deduce del ejemplo anterior. Si consideramos un intervalo $\displaystyle [a,b) $ se tiene que 
+	\[[a,b) = \left[a,b\right] \cap \left(a-\frac{1}{2}, b\right) .\]
+\end{eg}
+\begin{eg}
+En $\displaystyle \Q  $ en $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ no es localmente cerrado. En efecto, supongamos que $\displaystyle \Q = F \cap U $ con $\displaystyle F $ cerrado y $\displaystyle U $ abierto en $\displaystyle \R $. Como $\displaystyle F $ es cerrado y contiene a $\displaystyle \Q $ debe ser que $\displaystyle F = \R $ por ser $\displaystyle \Q $ denso. Pero entonces, $\displaystyle \Q = U \subset \R $ es abierto, pero esto claramente es una contradicción.
+\end{eg}
+\begin{prop}
+Sea $\displaystyle X $ un espacio topológico localmente compacto e $\displaystyle Y\subset X $ localmente cerrado. Entonces, $\displaystyle Y $ es localmente compacto.
+\end{prop}
+\begin{proof}
+Sea $\displaystyle y \in Y $ y $\displaystyle U^{y}\subset X $ un abierto tal que $\displaystyle Y\cap U^{y} $ sea cerrado en $\displaystyle U^{y} $. Como $\displaystyle X $ es localmente compacto, existe una base de entornos compactos del punto $\displaystyle y \in X $. En particular, tomamos un entorno compacto $\displaystyle K^{y} $ de $\displaystyle y $ tal que $\displaystyle K^{y}\subset U^{y} $. Podemos ver que $\displaystyle L^{y}:= K^{y}\cap U^{y}\cap Y $ es un entorno de $\displaystyle y $ en $\displaystyle Y $. 
+Como $\displaystyle L^{y} $ es cerrado en un compacto \footnote{Hemos usado que $\displaystyle U^{y}\cap Y $ es cerrado en $\displaystyle U^{y} $ y $\displaystyle K^{y}\subset U^{y} $ es compacto.} , tenemos que es compacto. 
+\end{proof}
+\begin{prop}
+Sea $\displaystyle X $ un espacio topológico Hausdorff e $\displaystyle Y\subset X $ localmente compacto. Entonces, $\displaystyle Y $ es localmente cerrado.
+\end{prop}
+\begin{proof}
+Sea $\displaystyle y \in Y $. Por ser $\displaystyle Y $ localmente compacto sabemos que existe un entorno compacto $\displaystyle K^{y} $ de $\displaystyle y $ en $\displaystyle Y $. Así, existe un entorno $\displaystyle V^{y} $ de $\displaystyle y $ en $\displaystyle X $ tal que $\displaystyle V^{y}\cap Y $ es cerrado en $\displaystyle V^{y} $, puesto que $\displaystyle V^{y}\cap Y = K^{y} $ que es compacto en un espacio Hausdorff es cerrado. 
+\end{proof}
+\begin{observation}
+En la demostración anterior, es sencillo ver que la existencia de $\displaystyle V^{y} $ implica la existencia de un entorno abierto de $\displaystyle y $, por ejemplo $\displaystyle \Int\left(V^{y}\right) $ con $\displaystyle \Int\left(V^{y}\right)\cap Y $ cerrado en $\displaystyle \Int\left(V^{y}\right) $. 
+En efecto, si $\displaystyle V^{y}\cap Y = F \cap V^{y} $ con $\displaystyle F \subset X $ cerrado, entonces $\displaystyle \Int\left(V^{y}\right)\cap Y = F \cap \Int\left(V^{y}\right) $. 
+\end{observation}
+\subsection{Productos finitos, sumas finitas y paso al cociente de espacios localmente compactos}
+\begin{prop}
+Sea $\displaystyle X_{1}, \ldots, X_{r} $ una colección finita de espacios topológicos. Son equivalentes
+\begin{enumerate}
+\item $\displaystyle \prod^{r}_{i = 1}X_{i} $ es localmente compacto.
+\item $\displaystyle X_{i} $ es localmente compacto para $\displaystyle i \in \left\{ 1, \ldots, r\right\}  $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Consideramos ambas implicaciones.
+\begin{description}
+	\item[(1) $\displaystyle \Rightarrow $ (2)] Para cada $\displaystyle \left(a_{1}, \ldots, a_{r}\right)\in \prod^{r}_{i = 1}X_{i} $ sabemos que podemos tomar una base de entornos compactos de $\displaystyle a_{j} $ en $\displaystyle X_{j} $ para $\displaystyle j \in \left\{ 1, \ldots, r\right\}  $. Tomando el producto de un entorno de esos para cada $\displaystyle a_{j} $, como consecuencia del teorema de Tychonoff, tenemos una base de entornos compactos de $\displaystyle \left(a_{1}, \ldots, a_{r}\right) $ en el espacio producto.
+	\item[(2) $\displaystyle \Rightarrow $ (1)] Basta con considerar las proyecciones.
+\end{description}
+\end{proof}
+\begin{prop}
+Sea $\displaystyle X_{1}, \ldots, X_{r} $ una colección finita de espacios topológicos. Son equivalentes
+\begin{enumerate}
+\item $\displaystyle \sum^{r}_{i = 1}X_{i} $ es localmente compacto.
+\item $\displaystyle X_{i} $ es localmente compacto para cada $\displaystyle i \in \left\{ 1, \ldots, r\right\}  $. 
+\end{enumerate}
+\end{prop}
+\begin{eg}[El paso al cociente falla en general]
+Consideremos $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ que sabemos que es localmente compacto. Consideremos la relación de equivalencia que identifica todos los enteros obteniendo $\displaystyle \R / \Z $. Este espacio no es localmente compacto. En efecto, veamos que $\displaystyle p\left(0\right) $ no tiene ningún entorno compacto. Un entorno abierto de $\displaystyle p\left(0\right) $ es $\displaystyle p\left(U\right) $ con $\displaystyle U\subset \R $ abierto y $\displaystyle \Z\subset U $. 
+Así, para cada $\displaystyle k \in \Z $ existe $\displaystyle r_{k}\in\left(0, \frac{1}{2}\right) $ tal que $\displaystyle \left(k-r_{k}, k + r_{k}\right)\subset U $. Tomemos $\displaystyle k + \epsilon _{k}\in \left(k , k + r_{k}\right) $ para cada $\displaystyle k \in \Z $. 
+El conjunto $\displaystyle A = \left\{ k + \epsilon _{k} \; : \; k \in \N\right\}  $ no tiene ningún punto de acumulación en $\displaystyle \R $. Con la topología relativa tenemos que $\displaystyle A $ es un subespacio discreto e infinito, por lo que no es compacto. 
+Podemos observar que $\displaystyle p\left(A\right)\subset p\left(U\right) $ es un conjunto infinito sin puntos de acumulación en $\displaystyle \R/ \Z $, por lo que no puede estar contenido en ningún subconjunto compacto de $\displaystyle \R / \Z $. En efecto, $\displaystyle p\left(A\right) $ no se puede acumular en ningún punto $\displaystyle p\left(x\right) $ con $\displaystyle x \not\in \Z $, pues en este caso $\displaystyle A $ debería acumularse en $\displaystyle x $, lo que no ocurre. 
+Por otra parte, $\displaystyle p\left(0\right) $ no es un punto de acumulación de $\displaystyle p\left(A\right) $. Podemos observar que 
+\[W = \bigcup_{k \in \N}\left(k-\frac{\epsilon _{k}}{2}, k + \frac{\epsilon_{k}}{2}\right) ,\]
+es un abierto $\displaystyle p $-saturado de $\displaystyle \R $ y que $\displaystyle p\left(A\right)\cap p\left(W\right)= \emptyset $.
+\end{eg}
+\begin{prop}
+Si $\displaystyle f : X \to Y $ es una identificación abierta, y $\displaystyle X $ es localmente compacto, también $\displaystyle Y $ es localmente compacto.
+\end{prop}
+\begin{proof}
+Basta ver que, por ser $\displaystyle f $ abierta, si $\displaystyle V^{x} $ es un entorno de $\displaystyle x $ en $\displaystyle X $, $\displaystyle f\left(V^{x}\right) $ lo es de $\displaystyle f\left(x\right) $ en $\displaystyle Y $. Análogamente, si $\displaystyle \mathcal{V}^{x} $ es base de entornos de $\displaystyle x $, la familia formada por las imágenes de los entornos de $\displaystyle \mathcal{V}^{x} $ es base de entornos de $\displaystyle f\left(x\right) $. 
+Como $\displaystyle f $ es sobreyectiva y como una aplicación continua transforma compactos en compactos, el hecho de que todo punto $\displaystyle x \in X $ tenga una base de entornos compactos implica que lo mismo es cierto para todo punto $\displaystyle y \in Y $.
+\end{proof}
+\section{Compactificación de un espacio topológico}
+Nos preguntamos si es posible sumergir, es decir, embeber, un espacio topológico no compacto como subespacio abierto y denso de un espacio compacto.
+\begin{eg}
+	El espacio $\displaystyle \left(\R^{n}, \mathcal{T}_{u}\right) $ es homeomorfo a $\displaystyle \mathbb{S}^{n} \backslash \left\{ p\right\}  $. Basta con considerar el homeomorfismo $\displaystyle \mathbb{S}^{n} \backslash \left\{ p\right\} \to \R^{n} $ dado por la proyección esterográfica.
+	En este caso, basta con añadir un punto al espacio no compacto para obtener el espacio compacto que lo contiene como un subespacio abierto y denso.
+\end{eg}
+\begin{eg}
+Se puede ver que $\displaystyle \mathbb{P}^{n}_{\R} $ también nos da una compactificación de $\displaystyle \R^{n} $. En efecto, podemos ver mediante cartas afines $\displaystyle \R^{n} = \mathbb{P}^{n}_{\R}\backslash H $, siendo $\displaystyle H $ un hiperplano. En este caso añadimos un hiperplano proyectivo a los puntos de $\displaystyle \R^{n} $ para obtener el espacio compacto en el que sumergimos $\displaystyle \R^{n} $. 
+Así, es claro que $\displaystyle \R^{n} $ queda embebido como abierto denso en $\displaystyle \mathbb{P}^{n}_{\R} $. 
+\end{eg}
+\subsection{Compactificación por un punto (Alexandroff)}
+\begin{prop}[Compactificación de Alexandroff]
+Sea $\displaystyle X $ un espacio localmente compacto, no compacto y Hausdorff. 
+\begin{enumerate}
+	\item \textbf{Existencia de compactificación por un punto.} Existe un espacio $\displaystyle X^{*} $ compacto y Hausdorff y un embebimiento abierto $\displaystyle j : X \to X^{*} $ tal que $\displaystyle X^{*}\backslash j\left(X\right)= \left\{ \omega \right\}  $.
+	\item \textbf{Unicidad.} Sean $\displaystyle X_{1}^{*} $ y $\displaystyle X_{2}^{*} $ dos espacios topológicos compactos y Hausdorff, y dos embebimientos abiertos $\displaystyle j_{i}: X \to X_{i}^{*} $ para $\displaystyle i \in \left\{ 1,2\right\}  $, tales que $\displaystyle X_{i}^{*}\backslash j_{i}\left(X\right) = \left\{ \omega _{i}\right\} $ para $\displaystyle i \in \left\{ 1,2\right\}  $. Entonces, existe un homeomorfismo $\displaystyle h : X_{1}^{*}\to X_{2}^{*} $ tal que 
+		\[h\circ j_{1} = j_{2} \quad \text{y} \quad h\left(\omega_{1}\right)=\omega_{2} .\]
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle X $ es Hausdorff, localmente compacto y no es compacto.
+\begin{enumerate}
+	\item Sea $\displaystyle \omega \not\in X $ de forma que podemos considerar el conjunto $\displaystyle X^{*}=X \cup \left\{ \omega \right\}  $ y definimos una topología en él
+		\[\mathcal{T}^{*}=\mathcal{T}\cup \left\{ X^{*}\backslash K \; :\; K \subset X \; \text{compacto}\right\}  .\]
+	A los abiertos de $\displaystyle \mathcal{T} $ los llamaremos 'abiertos tipo 1' mientras que a los que contienen a $\displaystyle \omega  $ y son de la forma $\displaystyle X^{*} \backslash K $ con $\displaystyle K\subset X $ compacto, los llamaremos 'abiertos tipo 2'. Comprobemos que se trata de una topología:
+	\begin{itemize}
+	\item Es sencillo ver que $\displaystyle \emptyset \in \mathcal{T}\subset \mathcal{T}^{*} $. Por otro lado, $\displaystyle X^{*}\in \mathcal{T}^{*} $ puesto que $\displaystyle X^{*}=X^{*}\backslash \emptyset  $ donde $\displaystyle \emptyset \subset X $ es compacto.
+	\item Consideremos $\displaystyle \left\{ V_{i}\right\} _{i \in I}\subset \mathcal{T}^{*} $. Si todos los $\displaystyle V_{i} $ son abiertos de tipo 1 su unión también será abierta tipo 1. Si todos los $\displaystyle V_{i} $ son abiertos tipo 2, son de la forma $\displaystyle V_{i}= X^{*}\backslash K_{i} $ con $\displaystyle K_{i} $ compacto en $\displaystyle X $. Así, 
+		\[\bigcup_{i \in I}V_{i}=X^{*} \backslash \bigcap_{ i \in I}K_{i} .\]
+	Como $\displaystyle X $ es Hausdorff, los $\displaystyle K_{i} $ son cerrados por ser compactos, y lo es también $\displaystyle \bigcap_{i \in I}K_{i} $, que además es compacto por estar contenido en un compacto. \\
+	En el caso general, supongamos que algunos $\displaystyle V_{i} $ son abiertos tipo 1 y otros son tipo 2. Podemos escribir, 
+	\[\bigcup_{i \in I}V_{i} = \bigcup_{j \in I , \omega\in V_{j}}V_{j}\sqcup\bigcup_{k \in I, \omega\not\in V_{k}}V_{k} .\]
+Por el estudio que hemos hecho antes, tenemos que $\displaystyle \bigcup_{i \in I}V_{i} $ es la unión de un abierto tipo 1 y otro tipo 2, tomando
+\[ U = \bigcup_{k \in I, \omega\not\in V_{k}}V_{k} \quad \text{y} \quad W =\bigcup_{j \in I , \omega\in V_{j}}V_{j} ,\]
+se tiene que 
+\[U \cup W = U \cup \left(X^{*}\backslash K\right)=X^{*}\backslash\left(K\backslash U\right),\]
+como $\displaystyle K\backslash U $ es cerrado en $\displaystyle K $, que es compacto, $\displaystyle K\backslash U $ es compacto, y la unión que estudiamos es un abierto tipo 2.
+\item Sean $\displaystyle V_{1}, V_{2}\in \mathcal{T}^{*} $ y veamos que $\displaystyle V_{1}\cap V_{2}\in \mathcal{T}^{*} $. Distinguimos tres casos:
+	\begin{itemize}
+	\item Si $\displaystyle V_{1} $ y $\displaystyle V_{2} $ son de tipo 1 sabemos que $\displaystyle V_{1}\cap V_{2}\in \mathcal{T} $.
+	\item Si $\displaystyle V_{1} $ es de tipo 1 y $\displaystyle V_{2} $ es de tipo 2, tenemos que 
+		\[V_{1}\cap V_{2} = V_{1}\cap \left(V_{2} \backslash \left\{ \omega \right\} \right)\in \mathcal{T} ,\]
+		puesto que $\displaystyle V_{2}= X^{*}\backslash K $ con $\displaystyle K\subset X $ compacto y por tanto cerrado por ser $\displaystyle X $ Hausdorff. Así, 
+		\[V_{1}\cap\left(V_{2} \backslash \left\{ \omega \right\} \right)=V_{1}\cap \left(X\backslash K\right) ,\]
+		que es un abierto tipo 1.
+	\item Si $\displaystyle V_{1} $ y $\displaystyle V_{2} $ son tipo 2 y $\displaystyle V_{i}=X^{*}\backslash K_{i} $ con $\displaystyle K_{i}\subset X $ compacto para $\displaystyle i \in \left\{ 1,2\right\}  $, tenemos que 
+		\[V_{1}\cap V_{2}=X^{*}\backslash \left(K_{1}\cup K_{2}\right) ,\]
+		que es tipo 2.
+	\end{itemize}
+	\end{itemize}
+Ahora comprobemos que este espacio que hemos construido es compacto. Si 
+\[X^{*}=\bigcup_{i \in I}W_{i}, \; W_{i}\in \mathcal{T}^{*} ,\]
+se tiene que existe $\displaystyle i_{0}\in I $ tal que $\displaystyle \omega \in W_{i_{0}} $. Como $\displaystyle W_{i_{0}}= X^{*}\backslash K $ siendo $\displaystyle K \subset X $ compacto, entonces para recubrir $\displaystyle X^{*} $ además de $\displaystyle W_{i_{0}} $ hemos de escoger abiertos que recubran $\displaystyle K $. Como $\displaystyle K $ es compacto en $\displaystyle X $ tenemos que hay un número finito de abiertos $\displaystyle W_{i_{1}}, \ldots, W_{i_{r}} $ tales que $\displaystyle K \subset W_{i_{1}} \cup \cdots \cup W_{i_{r}} $. Por tanto, 
+\[X^{*}=W_{i_{0}}\cup W_{i_{1}}\cup \cdots \cup W_{i_{r}} .\]
+Por otro lado, $\displaystyle X^{*} $ es Hausdorff. En efecto, dados $\displaystyle x ,y\in X $ distintos, como $\displaystyle X $ es Hausdorff, existen entornos disjuntos en $\displaystyle X $ por lo que existen también en $\displaystyle X^{*} $. Si queremos separar $\displaystyle x \in X $ de $\displaystyle \omega  $, basta recordar que 
+por ser $\displaystyle X $ localmente compacto, $\displaystyle x  $ tiene un entorno compacto $\displaystyle K^{x}\subset X $. Ahora tomamos $\displaystyle X^{*}\backslash K^{x} $ que es abierto tipo 2, entorno de $\displaystyle \omega  $ y claramente disjunto de $\displaystyle K^{x} $. \\
+Finalmente, consideremos la inclusión $\displaystyle j : X \to X^{*} $ con $\displaystyle j\left(x\right)=x $ para cada $\displaystyle x \in X $. Claramente es inyectiva y abierta. Además, es continua. En efecto,
+si $\displaystyle W $ es abierto de $\displaystyle X^{*} $ y es de tipo 1 tenemos que $\displaystyle j^{-1}\left(W\right)=W $. Si $\displaystyle W $ es de tipo 2 tenemos que $\displaystyle W = X^{*}\backslash K $ y $\displaystyle j^{-1}\left(W\right)=X\backslash K $ que es abierto. Concluimos que $\displaystyle j $ es un embebimiento abierto. \\
+De lo anterior, sabemos que $\displaystyle j\left(X\right) $ es un abierto en $\displaystyle X^{*} $. Veamos que es denso. Dado $\displaystyle U\subset X^{*} $ abierto no vacío, si es de tipo 1 se sigue que $\displaystyle U\subset j\left(X\right) $; si es de tipo 2, $\displaystyle X^{*}\backslash U $ es compacto en $\displaystyle j\left(X\right) $ por lo que no puede coincidir con $\displaystyle j\left(X\right) $ puesto que $\displaystyle j\left(X\right) $ no es compacto.
+\item Demostramos la unicidad. Supongamos que tenemos dos espacios topológicos compactos y Hausdorff, $\displaystyle X_{1}^{*} $ y $\displaystyle X_{2}^{*} $, y dos embebimientos abiertos
+	\[j_{1}: X \to X_{1}^{*} \quad \text{y} \quad j_{2}:X\to X_{2}^{*} ,\]
+	con $\displaystyle X^{*}\backslash j_{1}\left(X\right)= \left\{ \omega _{1}\right\}  $ y $\displaystyle X^{*}\backslash j_{2}\left(X\right)= \left\{ \omega_{2}\right\}  $. En este caso podemos definir un homeomorfismo
+	\[h' : j_{1}\left(X\right)\to j_{2}\left(X\right) ,\]
+	de forma que cada para cada $\displaystyle x \in X $ se tiene que $\displaystyle h'\left(j_{1}\left(x\right)\right)=j_{2}\left(x\right) $. Por tanto, $\displaystyle h $ queda definida de la siguiente manera:
+	\[h = h' \quad \text{en }j_{1}\left(X\right), \quad \text{y}\; h\left(\omega_{1}\right)=\omega_{2} .\]
+Claramente $\displaystyle h $ es homeomorfismo. Basta comprobar que es continua en $\displaystyle \omega_{1} $. Si $\displaystyle W_{2}\subset X^{*}_{2} $ es entorno abierto de $\displaystyle \omega_{2} $ se tiene que $\displaystyle X_{2}^{*}\backslash W_{2} $ es cerrado en $\displaystyle X^{*}_{2} $; por ello es compacto y como $\displaystyle X^{*}_{2}\backslash W_{2}\subset j_{2}\left(X\right) $, es compacto en $\displaystyle j_{2}\left(X\right) $. 
+Como $\displaystyle h' $ es homeomorfismo, $\displaystyle \left(h'\right)^{-1}\left(X^{*}_{2}\backslash W_{2}\right)=K $ es compacto en $\displaystyle j_{1}\left(X\right) $ y por ello también en $\displaystyle X_{1}^{*} $. Como este espacio es Hausdorff, $\displaystyle K\subset X^{*}_{1} $ es cerrado. Por tanto, $\displaystyle h^{-1}\left(W_{2}\right)=X^{*}_{1}\backslash K : = W_{1} $ es abierto en $\displaystyle X^{*}_{1} $. 
+El argumento para demostrar que $\displaystyle h^{-1} $ es continua en $\displaystyle \omega_{2} $ es simétrico.
+\end{enumerate}
+\end{proof}
+\begin{prop}
+Un espacio de Hausdorff es localmente compacto si y sólo si es un subespacio abierto de un espacio de Hausdorff compacto.
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle X $ es localmente compacto. 
+\begin{description}
+\item[($\displaystyle \Rightarrow $)] Si $\displaystyle X $ es compacto, entonces es un subespacio abierto de un espacio de Hausdorf compacto. Si no es compacto, construimos su compactificación de Alexandroff.
+\item[($\displaystyle \Leftarrow $)] Si $\displaystyle X $ es un subespacio abierto de un espacio de Hausdorff compacto $\displaystyle \tilde{X} $, por un corolario anterior tenemos que $\displaystyle \tilde{X} $ es localmente compacto. Como los abiertos son localmente cerrados, tenemos que $\displaystyle X $ hereda la compacidad local de $\displaystyle \tilde{X} $.
+\end{description}
+\end{proof}
+\begin{prop}
+Si dos espacios topológicos localmente compactos, no compactos y de Hausdorff son homeomorfos, sus compactificaciones de Alexandroff son homeomorfas.
+\end{prop}
+\begin{proof}
+Sean $\displaystyle X $ e $\displaystyle Y $ dos espacios con las hipótesis de la proposición. Sea $\displaystyle f : X \to Y $ un homeomorfismo. Si $\displaystyle j_{1} : Y \to Y^{*} $ es el embebimiento de $\displaystyle Y $ en su compactificación de Alexandroff, $\displaystyle j_{1}\circ f : X \to Y^{*} $ es embebimiento abierto, $\displaystyle Y^{*}\backslash \left(j_{1}\circ f\right)\left(X\right) $ es un punto, y por tanto $\displaystyle Y^{*} $ es homeomorfo a la compactificación de Alexandroff de $\displaystyle X $. 
+\end{proof}
+\begin{observation}
+Sin embargo, dos espacios no compactos $\displaystyle X $ e $\displaystyle Y $ que son localmente compactos y Hausdorff pueden tener compactificaciones de Alexandroff homeomorfas sin que $\displaystyle X $ e $\displaystyle Y $ sean homeomorfos. Podemos considerar por ejemplo, los subespacios de la recta usual
+\[X = (0,1] \quad \text{y} \quad Y = \left[0, \frac{1}{2}\right)\cup\left(\frac{1}{2}, 1\right] .\]
+El intervalo cerrado $\displaystyle \left[0,1\right]  $ es la compactificación de Alexandroff de ambos.
 \end{observation}
 
