@@ -544,11 +544,13 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT ./Chap7.tex
 INPUT ./Chap7.tex
 INPUT Chap7.tex
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmbx8.tfm
 INPUT Topologia.aux
 INPUT ./Topologia.out
 INPUT ./Topologia.out
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx8.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi12.pfb

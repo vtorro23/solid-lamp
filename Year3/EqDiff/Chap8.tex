@@ -1,0 +1,227 @@
+\chapter{Invarianza y conjuntos límite}
+\begin{definition}[Invarianza]
+Dado un sistema $\displaystyle x' = f\left(x\right) $ y un conjunto $\displaystyle P \subset \Omega  $, diremos que 
+\begin{itemize}
+\item $\displaystyle P $ es \textbf{positivamente invariante} si $\displaystyle \gamma^{+}_{\overline{x}}\subset P $, $\displaystyle \forall \overline{x}\in P $. Esto es equivalente a que
+	\[\varphi\left(t; \overline{x}\right)\in P, \; \forall t \in [0, \beta_{+}) .\]
+\item $\displaystyle P $ es \textbf{negativamente invariante} si $\displaystyle \gamma^{-}_{\overline{x}}\subset P $, $\displaystyle \forall \overline{x}\in P $. 
+\item $\displaystyle P $ es \textbf{invariante} si es positiva y negativamente invariante.
+\end{itemize}
+\end{definition}
+\begin{eg}
+Una órbita es un conjunto invariante. De hecho son los conjuntos invariantes más simples. 
+\end{eg}
+\begin{observation}
+Podemos hacer algunas observaciones:
+\begin{enumerate}
+\item La unión e intersección de conjuntos invariantes (positivamente/negativamente invariante) es invariante (positivamente/negativamente invariante). 
+\item Cada componente conexa de un conjunto invariante (positivamente/negativamente invariante) también es invariante (positivamente/negativamente invariante). Esto se debe a que las órbitas y semiórbitas son conjuntos conexos. 
+\item Si $\displaystyle P $ es positivamente/negativamente invariante, $\displaystyle \Omega \backslash P $ es negativamente/positivamente invariante. 
+\item Si $\displaystyle P $ es positivamente/negativamente invariante, $\displaystyle \overline{P}\cap \Omega  $ es positivamente/negativamente invariante. 
+\item Si $\displaystyle P\subset \Omega  $ es invariante, $\displaystyle \Int\left(P\right) $ y $\displaystyle \partial P\cap \Omega  $ son invariantes. 
+\end{enumerate}
+\end{observation}
+\begin{eg}[Problema 40]
+Consideremos el sistema 
+\[
+\begin{cases}
+x' = - x\left(2-3x^{2}-y^{2}\right)\\
+y' = y\left(2 - 3x^{2}-y^{2}\right)
+\end{cases}
+.\]
+Los puntos de equilibrio son el origen y $\displaystyle \left\{ 3x^{2}+y^{2}=2\right\}  $, que es una elipse. Podemos ver que el interior de la elipse es un conjunto invariante. Es decir, el conjunto $\displaystyle \left\{ 3x^{2}+y^{2}< 2\right\}  $ es invariante. Por otro lado, la ecuación de órbitas nos queda
+\[\frac{dx}{dy}=-\frac{x}{y} \Rightarrow xy = K, \; K \in \R .\]
+% hacer dibujito
+Se puede ver gráficamente que el origen es inestable.
+\end{eg}
+Cómo encontrar conjuntos positivamente o negativamente invariantes?
+\begin{prop}
+	Sea $\displaystyle V \in \mathcal{C}^{1}\left(\Omega, \R\right) $ tal que $\displaystyle \nabla V \cdot f \leq 0 $ en $\displaystyle \Omega  $. Entonces, para cualquier $\displaystyle C \in \R $, el conjunto $\displaystyle \left\{ x \in \Omega \; : \; V\left(x\right)\leq C\right\}  $ es positivamente invariante y el conjunto $\displaystyle \left\{ x \in \Omega \; : \; V\left(x\right)\geq C\right\}  $ es negativamente invariante \footnote{Estamos asumiendo que trabajamos con el sistema $\displaystyle x' = f\left(x\right) $.}.
+\end{prop}
+\begin{proof}
+	Fijamos $\displaystyle \overline{x}\in \left\{ V \leq C\right\}  $ y definimos 
+	\[h : \left(\beta_{-}, \beta_{+ }\right)\to \R : t \to V\left(\varphi\left(t; \overline{x}\right)\right) .\]
+Se tiene que $\displaystyle h\left(0\right)=V\left(\varphi\left(0; \overline{x}\right)\right)=V\left(\overline{x}\right)\leq C $. Por otro lado, para cada $\displaystyle t \in \left(\beta_{-}, \beta_{+ }\right) $ se tiene que
+\[
+\begin{split}
+	h'\left(t\right)= & \nabla V\left(\varphi\left(t; \overline{x}\right)\right)\varphi'\left(t; \overline{x}\right) = \nabla V\left(\varphi\left(t; \overline{x}\right)\right) \cdot f\left(\varphi\left(t; \overline{x}\right)\right)\leq 0 .
+\end{split}
+\]
+Para $\displaystyle t \in [0, \beta_{+ }) $, 
+\[V\left(\varphi\left(t; \overline{x}\right)\right)=h\left(t\right)\leq h\left(0\right)\leq C .\]
+Por tanto, $\displaystyle \varphi\left(t; \overline{x}\right)\in \left\{ V \leq C\right\}  $, $\displaystyle \forall t \in [0, \beta_{+ }) $. 
+\end{proof}
+\begin{colorary}
+	Sea $\displaystyle E \in \mathcal{C}^{1}\left(\Omega, \R\right) $ tal que $\displaystyle \nabla E \cdot f = 0 $. Entonces, dado $\displaystyle e_{0}\in \R $, el conjunto $\displaystyle \left\{ E = e_{0}\right\}  $ es invariante. 
+\end{colorary}
+\begin{prop}
+	Sea $\displaystyle V \in \mathcal{C}^{1}\left(\Omega, \R\right) $ y $\displaystyle V_{0}\in \R $ tal que $\displaystyle \nabla V \cdot f \leq 0 $ es $\displaystyle \left\{ V > V_{0}\right\}  $. Entonces, $\displaystyle \left\{ x \in \Omega \; : \; V\left(x\right)\leq V_{0}\right\}  $ es positivamente invariante. 
+\end{prop}
+\begin{proof}
+	Supongamos que no es cierto, entonces existe $\displaystyle \overline{x}\in \left\{ V \leq V_{0}\right\}  $ y $\displaystyle T > 0 $ tal que $\displaystyle \varphi\left(T; \overline{x}\right)\not\in \left\{ V \leq V_{0}\right\}  $. Definimos 
+	\[\tau = \sup \left\{ t \in [0,T] \; : \; \varphi\left(t; \overline{x}\right)\in \left\{ V \leq V_{0}\right\} \right\}  .\]
+	Entonces tenemos que  
+	\[
+	\begin{cases}
+	\varphi\left(\tau; \overline{x}\right)\in \partial \left\{ V\leq V_{0}\right\} = \left\{ V = V_{0}\right\} \\
+	\varphi\left(t; \overline{x}\right)\in \left\{ V > V_{0}\right\} \; \text{si}\; t \in (\tau, T]
+	\end{cases} \Rightarrow 
+	\begin{cases}
+	V\left(\varphi\left(\tau; \overline{x}\right)\right)=V_{0}\\
+	V\left(\varphi\left(t; \overline{x}\right)\right) > V_{0}, \; t \in (\tau, T]
+	\end{cases}
+	.\]
+	Definimos $\displaystyle h\left(t\right)=V\left(\varphi\left(t; \overline{x}\right)\right) $, de forma que 
+	\[
+	\begin{cases}
+	h\left(\tau\right)=V_{0} \\
+	h\left(T\right) > V_{0} \\
+h'\left(t\right)=\nabla V\left(\varphi\left(t; \overline{x}\right)\right)f\left(\varphi\left(t; \overline{x}\right)\right)\leq 0, \; t \in \left(\tau, T\right)
+	\end{cases}
+	.\]
+	Por el teorema del valor medio en $\displaystyle \left[\tau, T\right]  $ existe $\displaystyle t ^{*}\in \left(\tau, T\right) $ tal que 
+	\[0 \geq h'\left(t ^{*}\right) = \frac{h\left(T\right)-h\left(\tau\right)}{T-\tau}>\frac{V_{0}-V_{0}}{T-\tau}=0 .\]
+	Claramente, esto es una contradicción. 
+\end{proof}
+\begin{colorary}
+Sea $\displaystyle V \in \mathcal{C}^{1}\left(\Omega , \R\right) $ y $\displaystyle m \leq M $ tales que  
+\[
+\begin{cases}
+\nabla V \cdot f \leq 0, \; \text{si} \; V \geq M \\
+\nabla V \cdot f \geq 0, \; \text{si} \; V \leq m
+\end{cases}
+.\]
+Entonces, $\displaystyle \left\{ m \leq V \leq M\right\}  $ es positivamente invariante. 
+\end{colorary}
+\begin{eg}[Problema 47]
+Consideremos el sistema 
+\[
+\begin{cases}
+x' = - x y ^{2} \\ 
+y' = - y x^{2}
+\end{cases}
+.\]
+Queremos ver que $\displaystyle B_{R} $ es positivamente invariante para todo $\displaystyle R \geq 0 $. Definimos $\displaystyle V\left(x,y\right)=x^{2}+y^{2} $. Tenemos que 
+\[\nabla V\left(x,y\right) f\left(x,y\right)=\left(2x,2y\right)\begin{pmatrix} -xy^{2} \\ -yx^{2} \end{pmatrix}=-4x^{2}y^{2}\leq 0 .\]
+Así, tenemos que $\displaystyle \left\{ V \leq R^{2}\right\}  $ es invariante para todo $\displaystyle R \geq 0 $, por lo que $\displaystyle \overline{B}_{R} $ es positivamente invariante y en consecuencia $\displaystyle B_{R} $ es positivamente invariante. \\
+Consideremos ahora el sistema
+\[
+\begin{cases}
+x' = -y -x\left(x^{2}+y^{2}\right)\\
+y' = x - y \left(x^{2}+y^{2}\right)
+\end{cases}
+.\]
+Cogiendo $\displaystyle V\left(x,y\right)=x^{2}+y^{2} $ tenemos que 
+\[\nabla V\left(x,y\right)f\left(x,y\right)=\left(2x,2y\right)\begin{pmatrix} -y-x\left(x^{2}+y^{2}\right)\\ x-y\left(x^{2}+y^{2}\right) \end{pmatrix}=-2\left(x^{2}+y^{2}\right)^{2}\leq 0 .\]
+Podemos concluir lo mismo que antes. Además, hemos visto que 
+\[\nabla V \left(x,y\right) \cdot f\left(x,y\right)=-2V\left(x,y\right)^{2} .\]
+Cogiendo $\displaystyle h\left(t\right)=V\left(\varphi\left(t; \left(\overline{x}, \overline{y}\right)\right)\right) $, nos queda 
+\[h'\left(t\right)=-2h^{2}\left(t\right) ,\]
+que es una EDO que sabemos resolver. Así, obtenemos una fórmula implícita de las soluciones. 
+\end{eg}
+\begin{eg}
+Consideremos la EDO
+\[x'' + x - \left(1-x-x'^{2}\right)x' = 0 .\]
+Convirtiéndolo en un sistema lineal,
+\[
+\begin{cases}
+x' = y \\
+y' = - x + y\left(1-x^{2}-y^{2}\right)
+\end{cases}
+.\]
+Veamos que $\displaystyle B_{R} $ es positivamente invariante para $\displaystyle R \geq 1 $. Tenemos que, cogiendo $\displaystyle V\left(x,y\right)=x^{2}+y^{2} $, 
+\[\nabla V \cdot f = 2y^{2}\left(1-x^{2}-y^{2}\right) \leq 0,\]
+si $\displaystyle R \geq 1 $. 
+\end{eg}
+\section{Criterios geométricos}
+\begin{definition}[Abierto $\displaystyle \mathcal{C}^k $]
+Se dice que un abierto $\displaystyle U\subset \R^{n} $ es de \textbf{clase} $\displaystyle \mathcal{C}^{k} $, con $\displaystyle k \in \N $, en el punto $\displaystyle \overline{z}\in \partial U $ si existe $\displaystyle \epsilon > 0 $ y $\displaystyle H \in \mathcal{C}^{k}\left(\R^{n}, \R\right) $ tal que $\displaystyle \nabla H\left(\overline{z}\right)\neq 0 $ y 
+\[
+\begin{cases}
+	U \cap B_{\epsilon }\left(\overline{z}\right)= \left\{ H < 0\right\} \cap B_{\epsilon }\left(\overline{z}\right) \\
+	\partial U \cap B_{\epsilon }\left(\overline{z}\right)= \left\{ H = 0\right\} \cap B_{\epsilon }\left(\overline{z}\right)
+\end{cases}
+.\]
+\end{definition}
+\begin{observation}
+El vector normal (exterior unitario) a $\displaystyle U $ en $\displaystyle \overline{z} $ es
+\[\nu\left(\overline{z}\right)=\frac{\nabla H\left(\overline{z}\right)}{ \left|\nabla H\left(\overline{z}\right)\right|} .\]
+\end{observation}
+\begin{notation}
+Decimos que el abierto $\displaystyle U $ es de clase $\displaystyle \mathcal{C}^{k} $ si lo es en cada punto de $\displaystyle \partial U $.
+\end{notation}
+\begin{eg}
+Un cuadrado en $\displaystyle \R^{2} $ no es $\displaystyle \mathcal{C}^{k} $ por los vértices. 
+% Desarrollar más el ejemplo.
+\end{eg}
+\begin{prop}
+Sea $\displaystyle U\subset \Omega  $ un abierto de clase $\displaystyle \mathcal{C}^{1} $ en $\displaystyle \overline{z}\in \partial U \cap \Omega  $ tal que $\displaystyle f\left(\overline{z}\right) \cdot \nu\left(\overline{z}\right)<0 $. Entonces, existe $\displaystyle \delta > 0 $ tal que 
+\[
+\begin{cases}
+\varphi\left(t; \overline{z}\right)\in U, \; \text{si } t \in \left(0, \delta \right) \\
+\varphi\left(t; \overline{z}\right)\in \Omega \backslash \overline{U}, \; \text{si } t \in \left(-\delta, 0\right)
+\end{cases}
+.\]
+\end{prop}
+\begin{proof}
+Como $\displaystyle U $ es abierto $\displaystyle \mathcal{C}^{1} $ en $\displaystyle \overline{z} $, existe $\displaystyle \epsilon > 0 $ y $\displaystyle H \in\mathcal{C}^{1}\left(\R^{n}, \R\right) $ que cumpele las propiedades de la definición. Sea $\displaystyle \delta > 0 $ tal que $\displaystyle \varphi\left(t; \overline{z}\right)\in B_{\epsilon }\left(\overline{z}\right) $ si $\displaystyle t \in \left(- \delta, \delta \right) $. 
+Hemos conseguido este $\displaystyle \delta  $ por contuidad del flujo. Definimos
+\[ h : \left(-\delta, \delta \right)\to \R : t \to H\left(\varphi\left(t; \overline{z}\right)\right) .\]
+Esta función cumple que $\displaystyle h\left(0\right)=H\left(\overline{z}\right)=0 $. Además, 
+\[h'\left(0\right)=\nabla H\left(\varphi\left(0; \overline{z}\right)\right)f\left(\varphi\left(0; \overline{z}\right)\right)=\nabla H\left(\overline{z}\right)f\left(\overline{z}\right) = \left|H\left(\overline{z}\right)\right|f\left(\overline{z}\right)\nu\left(\overline{z}\right) < 0 .\]
+Así, existe $\displaystyle \tilde{\delta} > 0 $ tal que $\displaystyle h\left(t\right) > 0 $ si $\displaystyle t \in \left(-\tilde{\delta }, 0\right) $ y $\displaystyle h\left(t\right) > 0 $ si $\displaystyle t \in \left(0, \tilde{\delta}\right) $. 
+Así, tenemos que 
+\[
+\begin{cases}
+	H\left(\varphi\left(t; \overline{z}\right)\right) > 0, \; \text{si} \; t \in \left(- \tilde{\delta}, 0\right) \\
+	H\left(\varphi\left(t; \overline{z}\right)\right) < 0, \; \text{si} \; t \in \left(0, \tilde{\delta}\right)
+\end{cases}
+.\]
+Además sabemos que $\displaystyle \varphi\left(t; \overline{z}\right)\in B_{\epsilon }\left(\overline{z}\right) $, $\displaystyle \forall t \in \left(-\tilde{\delta}, \tilde{\delta}\right) $. De aquí se deduce que 
+\[
+\begin{cases}
+	\varphi\left(t; \overline{z}\right)\in U, \; t \in \left(0, \tilde{\delta}\right) \\
+	\varphi\left(t; \overline{z}\right)\in \Omega \backslash \overline{U}, \; t \in \left(-\tilde{\delta}, 0\right)
+\end{cases}
+.\]
+\end{proof}
+\begin{colorary}
+Sea $\displaystyle U\subset \Omega  $ de clase $\displaystyle \mathcal{C}^{1} $ tal que $\displaystyle f \cdot \nu < 0 $ en $\displaystyle \partial U \cap \Omega  $. Entonces, $\displaystyle U $ es positivamente invariante. 
+\end{colorary}
+\begin{proof}
+Si no fuese cierto, entramos en contradicción con la proposición anterior.
+\end{proof}
+\begin{observation}
+Si en un punto $\displaystyle \overline{z}\in \partial U $ tenemos que $\displaystyle f\left(\overline{z}\right) \cdot \nu\left(\overline{z}\right)= 0 $, las órbitas se pueden salir de $\displaystyle U $ por el punto $\displaystyle \overline{z} $. 
+\end{observation}
+\begin{eg}
+Un ejemplo del comportamiento de la observación anterior sería el sistema
+\[
+\begin{cases}
+x' = 1 \\
+y' = 3x^{2}
+\end{cases}
+,\]
+cogiendo $\displaystyle U = \left\{ y < 0\right\}  $. Tenemos que la solución explícita del sistema es $\displaystyle \left(x\left(t\right), y\left(t\right)\right)=\left(x_{0} + t, \left(x_{0} + t\right)^{3}+y_{0}-x_{0}^{3}\right) $. La órbita que pasa por el $\displaystyle \left(0,0\right) $ es $\displaystyle y = x^{3} $ cumple que el vector normal es perpendicular a $\displaystyle f\left(0\right) $ y la solución sale afuera de $\displaystyle U $. 
+% hacer dibujo
+\end{eg}
+\begin{prop}
+	Si $\displaystyle U $ es un abierto de clase $\displaystyle \mathcal{C}^{1} $ en un punto $\displaystyle \overline{z}\in \partial U \cap \Omega  $ y $\displaystyle f \cdot \nu\leq 0 $ en $\displaystyle B_{\epsilon }\left(\overline{z}\right)\cap \partial U \cap \Omega  $, entonces existe $\displaystyle \delta > 0 $ tal que $\displaystyle \varphi\left(t; \overline{z}\right)\in \overline{U}\cap \Omega  $ si $\displaystyle t \in \left[0, \delta \right)  $. 
+\end{prop}
+\begin{colorary}
+Sea $\displaystyle U\subset \Omega  $ un abierto de clase $\displaystyle \mathcal{C}^{1} $ tal que $\displaystyle f \cdot \nu \leq 0 $ en $\displaystyle \partial U \cap \Omega  $. Entonces, $\displaystyle \overline{U} $ es positivamente invariante. 
+\end{colorary}
+\begin{colorary}
+Sea $\displaystyle U \subset \Omega  $ abierto de clase $\displaystyle \mathcal{C}^{1} $ tal que $\displaystyle f \cdot \nu = 0 $ en $\displaystyle \partial U \cap \Omega  $. Entonces, $\displaystyle \partial U $ es invariante. 
+\end{colorary}
+\begin{eg}[Problema 44]
+Dado el sistema
+\[
+\begin{cases}
+x' = -y-xy \\
+y' = x + x^{2}
+\end{cases}
+.\]
+La recta $\displaystyle x = - 1 $ es invariante. Definimos $\displaystyle U = \left\{ x < - 1\right\}  $. Tenemos que $\displaystyle \partial U = \left\{ x = - 1\right\}  $. Tenemos que $\displaystyle \nu\left(-1,y\right)=\left(1,0\right) $ y $\displaystyle f\left(-1,y\right)=\left(0,0\right) $. De esta forma, $\displaystyle f \cdot \nu = 0 $ en $\displaystyle \partial U $. Aplicando el corolario anterior tenemos que $\displaystyle \partial U $ es invariante. 
+\end{eg}
+

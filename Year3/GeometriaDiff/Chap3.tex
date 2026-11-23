@@ -271,7 +271,7 @@ Consideremos una parametrización tipo grafo
 \end{eg}
 \section{Curvaturas principales}
 \begin{theorem}
-	$\displaystyle p \in S $, entonces existe $\displaystyle B_{p}= \left\{ \vec{e}_{1}, \vec{e}_{2}\right\}  $ base ortonormal de $\displaystyle T_{p}S $ tal que $\displaystyle M_{B_{p}}\left(\mathcal{W}\right)=\begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix} $. 
+	Dada una superficie regular $\displaystyle S $ y $\displaystyle p \in S $, existe $\displaystyle \mathcal{B}_{p}= \left\{ \vec{e}_{1}, \vec{e}_{2}\right\}  $ base ortonormal de $\displaystyle T_{p}S $ tal que $\displaystyle M_{\mathcal{B}_{p}}\left(\mathcal{W}\right)=\begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix} $. 
 \end{theorem}
 \begin{proof}
 Sea $\displaystyle \vec{e}_{1}\in T_{p}S $ un autvalor unitario de $\displaystyle \mathcal{W} $, de forma que $\displaystyle \mathcal{W}\left(\vec{e}_{1}\right)=K_{1}\vec{e}_{1} $. Tomamos $\displaystyle \vec{e}_{2}\perp \vec{e}_{1} $ unitario y usamos
@@ -279,30 +279,35 @@ Sea $\displaystyle \vec{e}_{1}\in T_{p}S $ un autvalor unitario de $\displaystyl
 por lo que $\displaystyle \mathcal{W}\left(\vec{e}_{2}\right)\perp \vec{e}_{1} $. Así, existe $\displaystyle K_{2}\in \R $ tal que $\displaystyle \mathcal{W}\left(\vec{e}_{2}\right)=K_{2}\vec{e}_{2} $. 
 \end{proof}
 
-\begin{definition}[Curvaturas y direcciones principales]
-Se llaman \textbf{curvaturas principales} a $\displaystyle K_{1} $ y $\displaystyle K_{2} $; y \textbf{direcciones principales} a $\displaystyle \vec{e}_{1} $ y $\displaystyle \vec{e}_{2} $. 
-\end{definition}
-\begin{observation}
+\begin{observation} Podemos hacer algunas observaciones:
 \begin{enumerate}
-\item Lo interesante es que la base $\displaystyle B_{p} $ es base ortonormal. 
+\item Lo interesante es que la base $\displaystyle \mathcal{B}_{p} $ es base ortonormal. 
 \item Es un teorema que se llama espectral sobre endomorfismos autoadjuntos. 
-\item La $\displaystyle p $ de $\displaystyle B_{p} $ viene de 'principal'.
-\item Se puede ver que $\displaystyle M_{B_{p}}\left(I\right)=Id $ si y sólo si es base ortonormal. 
+\item La $\displaystyle p $ de $\displaystyle \mathcal{B}_{p} $ viene de 'principal'.
+\item Se puede ver que $\displaystyle M_{\mathcal{B}_{p}}\left(I\right)=Id $ si y sólo si es base ortonormal. 
 \item Diagonalizamos $\displaystyle I, II, \mathcal{W} $ a la vez.
 \item Los endomorfismos tienen autovalores pero las formas cuadráticas no.
 \end{enumerate}
 \end{observation}
-\begin{observation}[Observaciones de la demostración]
+\begin{definition}[Curvaturas y direcciones principales]
+Usando la notación del teorema anterior diremos que 
+\begin{itemize}
+\item $\displaystyle K_{1} $ y $\displaystyle K_{2} $ son las \textbf{curvaturas principales}. 
+\item $\displaystyle \left\{ \vec{e}_{1}, \vec{e}_{2}\right\}  $ son las \textbf{direcciones principales}. 
+\end{itemize} 
+\end{definition}
+\begin{observation} Se pueden hacer algunas observaciones: 
 	\begin{enumerate}
 	\item Podemos tomar una base ortonormal positiva si quisiéramos.
 	\item Se puede cambiar el orden $\displaystyle \left\{ \vec{e}_{2}, \vec{e}_{1}\right\}  $ y coger $\displaystyle \begin{pmatrix} K_{2} & 0 \\ 0 & K_{1} \end{pmatrix} $. Se puede elegir $\displaystyle K_{1}\geq K_{2} $ y quedan ordenados. 
-	\item Si pido las curvaturas y direcciones principales, podemos dar 
+	\item De cara al examen, si se piden las curvaturas y direcciones principales, podemos dar 
 		\begin{itemize}
 		\item $\displaystyle K_{1} $, $\displaystyle K_{2} $ en cualquier orden.
-		\item $\displaystyle \vec{u}_{1} $, $\displaystyle \vec{u}_{2} $, autovectores, entendiendo que $\displaystyle \vec{e}_{1}=\frac{\vec{u}_{1}}{\|\vec{u}_{1}\|} $ y $\displaystyle \vec{e}_{2}=\frac{\vec{u}_{2}}{\|\vec{u}_{2}\|} $ y $\displaystyle B_{p}= \left\{ \vec{u}_{1}, \vec{u}_{2}\right\}  $.
+		\item $\displaystyle \vec{u}_{1} $, $\displaystyle \vec{u}_{2} $, autovectores, entendiendo que $\displaystyle \vec{e}_{1}=\frac{\vec{u}_{1}}{\|\vec{u}_{1}\|} $ y $\displaystyle \vec{e}_{2}=\frac{\vec{u}_{2}}{\|\vec{u}_{2}\|} $ y $\displaystyle \mathcal{B}_{p}= \left\{ \vec{u}_{1}, \vec{u}_{2}\right\}  $.
 		\end{itemize}
 	\end{enumerate}
 \end{observation}
+
 \begin{eg}[Superficie de revolución]
 Consideremos la superficie de revolución parametrizada por
 \[ \textbf{x} \left(\varphi, v\right)=\left(\cos \varphi r\left(v\right), \sin \varphi r\left(v\right), z\left(v\right)\right) .\]
@@ -317,9 +322,9 @@ Algunas observaciones:
 	\item En el caso de $\displaystyle \mathbb{S}^{2} $, como $\displaystyle \gamma\left(v\right)=\left(\cos v, \sin v\right) $, $\displaystyle \mathcal{W}=\begin{pmatrix} -1 & 0 \\ 0 & - 1 \end{pmatrix} $. Así, $\displaystyle \kappa_{n}\left(\vec{v}\right)=-1 $, $\displaystyle \forall \vec{v}\in T_{p}\mathbb{S}^{2} $ con $\displaystyle \|\vec{v}\| = 1 $. 
 \end{itemize}
 \end{eg}
-\begin{observation}
+\begin{observation} Se pueden hacer un par de observaciones:
 	\begin{enumerate}
-	\item Si $\displaystyle M_{B_{p}}\left(\mathcal{W}\right)=\begin{pmatrix} K_{1} & 0 \\ 0 & K_{1} \end{pmatrix} $, es decir, $\displaystyle K_{2}=K_{1} $, la base es arbitraria.
+	\item Si $\displaystyle M_{\mathcal{B}_{p}}\left(\mathcal{W}\right)=\begin{pmatrix} K_{1} & 0 \\ 0 & K_{1} \end{pmatrix} $, es decir, $\displaystyle K_{2}=K_{1} $, la base es arbitraria.
 	\item Cambiando la orientación, $\displaystyle K_{1}, K_{2} $ se convierten en $\displaystyle -K_{1}, -K_{2} $. En efecto, $\displaystyle \tilde{N} = - N $ puesto que cogiendo $\displaystyle \tilde{ \textbf{x} }\left(u,v\right)= \textbf{x} \left(u,-v\right) $, tenemos que 
 		\[ \tilde{ \textbf{x} }_{u}= \textbf{x} _{u} \quad \text{y} \quad \tilde{ \textbf{x} }_{v}= -\textbf{x} _{v}.\]
 	Así, 
@@ -330,7 +335,7 @@ Algunas observaciones:
 	\end{enumerate}
 	Así, si $\displaystyle \mathcal{W}\sim \begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix} $, tendremos que $\displaystyle \widetilde{\mathcal{W}}\sim\begin{pmatrix} -K_{1} & 0 \\ 0 & K_{2} \end{pmatrix} $.  
 \end{observation}
-\begin{eg}
+\begin{eg}[Silla de montar]
 Consideremos $\displaystyle \textbf{x} \left(u,v\right)=\left(u,v, uv\right) $. Recordamos que 
 \[ I = \begin{pmatrix} 1 + v^{2} & uv \\ uv & 1 + u^{2} \end{pmatrix} \quad \text{y} \quad II = \frac{1}{\sqrt{1+u^{2}+v^{2}}}\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} .\]
 Así, 
@@ -344,17 +349,18 @@ Se puede comprobar que
 Ojo! No hemos normalizado los vectores.
 \end{eg}
 \begin{theorem}
-	Dada una superficie regular $\displaystyle S $ y $\displaystyle p \in S $, existe una base $\displaystyle B_{p} = \left\{ \vec{e}_{1}, \vec{e}_{2}\right\}  $ base de lass direcciones principales que es ortonormal y 
-	\[M_{ B_{p}}\left(II\right)=M_{B_{p}}\left(\mathcal{W}\right)=\begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix}, \; K_{1} \geq K_{2} .\]
+	Dada una superficie regular $\displaystyle S $ y $\displaystyle p \in S $, existe una base $\displaystyle \mathcal{B}_{p} = \left\{ \vec{e}_{1}, \vec{e}_{2}\right\}  $ base de las direcciones principales que es ortonormal y 
+	\[M_{ \mathcal{B}_{p}}\left(II\right)=M_{\mathcal{B}_{p}}\left(\mathcal{W}\right)=\begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix}, \; K_{1} \geq K_{2} .\]
 \end{theorem}
-\begin{observation}
-$\displaystyle P = M_{ B_{p}\mathcal{B}_{ \textbf{x} }} $ entonces
-\[\begin{pmatrix} a & b \\ c & d \end{pmatrix}=P^{t}\begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix}P .\]
-\[\begin{pmatrix} e & f \\ f & g \end{pmatrix}=P^{-1}\begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix}P .\]
+\begin{proof}
+Tomando la matriz de cambio de base $\displaystyle P = M_{ \mathcal{B}_{p}\mathcal{B}_{ \textbf{x} }} $ entonces
+\[\begin{pmatrix} a & b \\ c & d \end{pmatrix}=P^{t}\begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix}P \quad \text{y} \quad \begin{pmatrix} e & f \\ f & g \end{pmatrix}=P^{-1}\begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix}P .\]
+Además, tenemos que 
 \[\begin{pmatrix} E & F \\ F & G \end{pmatrix}=P^{t}P .\]
-\end{observation}
+\end{proof}
+
 \begin{colorary}
-La función curvatura normal 
+La función curvatura normal se puede definir como
 \[\kappa_{n} : \mathbb{S}\left(T_{p}S\right)\to \R : \vec{v}_{0}=\cos \theta \vec{e}_{1} + \sin \theta \vec{e}_{2} \to \kappa_{n}\left(\vec{v}_{\theta }\right)=K_{1}\cos ^{2}\theta + K_{2}\sin ^{2}\theta ,\]
 con $\displaystyle \theta = L\left(\vec{v}, \vec{e}_{1}\right) $. 
 \end{colorary}
@@ -362,14 +368,12 @@ con $\displaystyle \theta = L\left(\vec{v}, \vec{e}_{1}\right) $.
 Basta con ver que 
 \[\kappa_{n}\left(\vec{v}\right)=II\left(\vec{v}, \vec{v}\right)= \left(\cos \theta , \sin \theta \right)\begin{pmatrix} K_{1} & 0 \\ 0 & K_{2} \end{pmatrix}\begin{pmatrix} \cos \theta \\ \sin \theta  \end{pmatrix}= K_{1} \cos ^{2}\theta + K_{2}\sin ^{2}\theta  .\]
 \end{proof}
-\begin{observation}
+\begin{observation} Se pueden hacer algunas observaciones:
 \begin{enumerate}
-	%cambiar K_n por kappa
-\item $\displaystyle \kappa_{n}\left(\vec{v}\right)=\kappa_{n}\left(-\vec{v}\right) $ y $\displaystyle K_{n}\left(\theta \right)=K{n}\left(\theta + \pi \right) $. 
-\item $\displaystyle K_{1}= \max \left\{ K_{n}\left(\theta \right)\right\}  $, $\displaystyle \theta = 0, \pi  $, $\displaystyle K_{2}=\min \left\{ K_{n}\left(\theta\right)\right\}  $ con $\displaystyle \theta = \frac{\pi }{2}, \frac{3\pi }{2} $. 
+\item $\displaystyle \kappa_{n}\left(\vec{v}\right)=\kappa_{n}\left(-\vec{v}\right) $ es equivalente a que $\displaystyle \kappa_{n}\left(\theta \right) = \kappa_{n}\left(\theta + \pi \right) $. 
+\item $\displaystyle K_{1}= \max \left\{ \kappa_{n}\left(\theta \right)\right\}  $ se alcanza en $\displaystyle \theta = 0, \pi  $. Análogamente, $\displaystyle K_{2}=\min \left\{ \kappa_{n}\left(\theta\right)\right\}  $ se alcanza en $\displaystyle \theta = \frac{\pi }{2}, \frac{3\pi }{2} $. 
 \item El máximo y mínimo se alcanzan en las direcciones principales $\displaystyle \pm\vec{e}_{1} $ y $\displaystyle \pm\vec{e}_{2} $ y son las curvaturas principales $\displaystyle K_{1} $ y $\displaystyle K_{2} $. 
-\item Cada $\displaystyle \kappa_{n}\left(\vec{v}\right) $ en $\displaystyle \left(K_{2}, K_{1}\right) $ se alcanza cuatro veces.
-\item $\displaystyle \kappa_{n}\left(\pi -\theta \right)=\kappa_{n}\left(\theta \right) $, tenemos entonces que $\displaystyle \left\{ \theta_{1}, \pi - \theta_{1}, \theta_{1}+\pi , 2\pi -\theta_{1}\right\}  $. 
+\item Cada $\displaystyle \kappa_{n}\left(\vec{v}\right) $ en $\displaystyle \left(K_{2}, K_{1}\right) $ se alcanza cuatro veces. En efecto, como $\displaystyle \kappa_{n}\left(\pi -\theta \right)=\kappa_{n}\left(\theta \right) $ se alcanza en $\displaystyle \left\{ \theta_{1}, \pi - \theta_{1}, \theta_{1}+\pi , 2\pi -\theta_{1}\right\}  $. 
 \item En el caso especial $\displaystyle K_{1} = K_{2} $, se tiene que $\displaystyle \kappa_{n}\left(\theta \right)=K_{1} = K_{2} $ constante. En este caso, 
 	\[\mathcal{W}_{p}=\begin{pmatrix} K_{1} & 0 \\ 0 & K_{1} \end{pmatrix}\quad \text{y} \quad II_{p} = \begin{pmatrix} K_{1} & 0 \\ 0 & K_{1} \end{pmatrix} .\]
 	Decimos que en este caso no hay direcciones principales o bien todas son direcciones principales. 
@@ -385,13 +389,18 @@ Basta con ver que
 \end{enumerate}
 \end{observation}
 \begin{definition}[Curvatura media y curvatura de Gauss]
-Se llama \textbf{curvatura media} a $\displaystyle H = \frac{K_{1} + K_{2}}{2} $. Se llama \textbf{curvatura de Gauss} o \textbf{curvatura de $\displaystyle S $} a $\displaystyle K=K_{1}K_{2} $.
+Dada una superficie regular $\displaystyle S $, se llama 
+\begin{itemize}
+\item \textbf{curvatura media} a $\displaystyle H = \frac{K_{1} + K_{2}}{2} $.
+\item \textbf{curvatura de Gauss} o \textbf{curvatura de $\displaystyle S $} a $\displaystyle K=K_{1}K_{2} $.
+\end{itemize}
 \end{definition}
 \begin{colorary}
-$\displaystyle K_{1} $ y $\displaystyle K_{2} $ son las raíces de $\displaystyle \lambda^{2}-2H\lambda + K = 0 $, de forma que 
+$\displaystyle K_{1} $ y $\displaystyle K_{2} $ son las soluciones de la ecuación $\displaystyle \lambda^{2}-2H\lambda + K = 0 $, de forma que 
 \[K_{1} = H+\sqrt{H^{2}-K} \quad \text{y} \quad K_{2}=H-\sqrt{H^{2}-K} ,\]
 donde $\displaystyle H = \frac{a + d}{2}=\frac{traza\left(\mathcal{W}\right)}{2} $ y $\displaystyle K = \det\left(\mathcal{W}\right)=ad - bd $.
 \end{colorary}
+% Hay que demostrar que estas cosas existen
 \begin{theorem}
 Se cumple que 
 \[K = \frac{eg-f^{2}}{EG-F^{2}} .\]
@@ -416,15 +425,308 @@ En general,
 \end{itemize}
 \end{eg}
 \section{Clasificación de puntos según curvatura de Gauss}
+\begin{definition}[Clasificación]
+Sea $\displaystyle S $ una superficie regular y $\displaystyle p \in S $. 
+\begin{enumerate}
+\item Si $\displaystyle K\left(p\right) < 0 $, decimos que $\displaystyle p $ es un \textbf{punto hiperbólico}. 
+\item Si $\displaystyle K\left(p\right) = 0 $, decimos que $\displaystyle p $ es un \textbf{punto parabólico}. 	
+\item Si $\displaystyle K\left(p\right)> 0 $, decimos que $\displaystyle p $ es un \textbf{punto elíptico}. 
+\end{enumerate}
+\end{definition}
+\begin{definition}[Punto umbílico]
+Dada una superficie regular $\displaystyle S $ y $\displaystyle p \in S $, diremos que $\displaystyle p $ es un \textbf{punto umbílico} si $\displaystyle K_{1}= K_{2} $, esto es, $\displaystyle K = H^{2} $. Además:
+\begin{enumerate}
+\item Si $\displaystyle K_{1} > 0 $ diremos que $\displaystyle p $ es un \textbf{punto cilíndrico} \footnote{En este caso tenemos que $\displaystyle \kappa_{n}\left(\vec{v}\right) $ es constante.}. 
+\item Si $\displaystyle K_{1}= 0 $ diremos que $\displaystyle p $ es un \textbf{punto plano} \footnote{En estos casos la segunda forma fundamental es idénticamente nula.}. 
+\end{enumerate}
+\end{definition}
+\begin{eg}[Silla de montar]
+En un punto de silla de toda la vida se puede ver que $\displaystyle \kappa_{n}\left(\vec{e}_{1}\right)= K_{1} > 0 $ y $\displaystyle \kappa_{n}\left(\vec{e}_{2}\right)=K_{2} < 0 $. 
+% poner foto
+Si cambio la orientación, entonces $\displaystyle K_{1} $ y $\displaystyle K_{2} $ cambian de signo, pero la curvatura de Gauss no cambia de signo. Se trata de un punto hiperbólico.
+\end{eg}
+\begin{eg}
+Dado un paraboloide. Tenemos que $\displaystyle \kappa_{n}\left(\vec{e}_{1}\right)= K_{1} > 0 $ y $\displaystyle \kappa_{n}\left(\vec{e}_{2}\right)=K_{2} > 0 $. Tenemos un punto elíptico. 
+\end{eg}
+% completar los ejemplos y poner dibujos
+
+\begin{eg}[Superficie de revolución]
+Cogemos la superficie de revolución generada por la curva $\displaystyle \gamma\left(v\right)=\left(r\left(v\right), z\left(v\right)\right) $. Tenemos que 
+\[ \textbf{x} \left(\varphi, v\right)=\left(r\left(v\right)\cos\varphi, r\left(v\right)\sin\varphi, z\left(v\right)\right) .\]
+Recordamos que 
+\[I = \begin{pmatrix} r\left(v\right)^{2} & 0 \\ 0 & \|\gamma'\|^{2} \end{pmatrix}\quad \text{y} \quad II =\begin{pmatrix} -\frac{z'r}{\|\gamma'\|} & 0 \\ 0 & -\kappa_{\gamma }\|\gamma'\|^{2} \end{pmatrix} .\]
+Así, 
+\[\mathcal{W}=\begin{pmatrix} -\frac{z'}{r\|\gamma'\|} & 0 \\ 0 & -\kappa_{\gamma } \end{pmatrix} .\]
+Así, tenemos que 
+\[K_{1}=\frac{-z'}{r\|\gamma'\|} \quad \text{y} \quad K_{2}=-\kappa_{\gamma } .\]
+\end{eg}
+\begin{eg}
+Consideremos el toro generado por $\displaystyle \gamma\left(v\right)=\left(2+\cos v, \sin v\right) $. Tenemos que $\displaystyle \kappa_{\gamma }=1 $ y $\displaystyle \|\gamma'\|=1 $. Así, 
+\[\mathcal{W}=\begin{pmatrix} -\frac{\cos v}{2 + \cos v} & 0 \\ 0 & - 1 \end{pmatrix}\Rightarrow K = \frac{\cos v}{2 + \cos v} .\]
+Distinguimos varios casos:
+\begin{itemize}
+\item Si $\displaystyle v \in \left(-\frac{\pi }{2}, \frac{\pi }{2}\right) $ es elíptico puesto que $\displaystyle K > 0 $. 
+\item Si $\displaystyle v \in \left\{ \pm \frac{\pi }{2}\right\}  $ es parabólico puesto que $\displaystyle K = 0 $. 
+\item Si $\displaystyle v \in \left(\frac{\pi }{2}, \frac{3\pi }{2}\right) $ es hiperbólico puesto que $\displaystyle K < 0 $. 
+\end{itemize}
+Estudiamos ahora los umbilicales. No hay puesto que 
+\[K_{1}=K_{2}\iff -\frac{\cos v}{2 + \cos v}= - 1 \iff \cos v = 2 + \cos v !.\]
+Si $\displaystyle K < 0 $ no hay umbílicos. 
+\end{eg}
+\begin{eg}[Ejercicio 1, Hoja 5]
+Se define la curvatura total de $\displaystyle S $ como
+\[\int \int _{S}K  .\]
+Es sencillo ver que en el caso de una superficie de revolución
+\[
+\begin{split}
+	\int \int _{S}K = & \int^{b}_{a} \int^{2\pi }_{0} K\left(\varphi, v\right)\sqrt{EG-F^{2}} \; d\varphi \; dv = \int^{b}_{a} \int^{2\pi }_{0} \frac{z'\kappa_{\gamma }}{r\|\gamma'\|}r\|\gamma'\| \; d\varphi \; dv\\
+	= & \int^{b}_{a} \int^{2\pi }_{0} z'\kappa_{\gamma } \; d\varphi \; dv = 2\pi \int^{b}_{a} z'\kappa_{\gamma } \; dv.
+\end{split}
+\]
+En particular para el toro se tiene que 
+\[\int \int _{T}K =2\pi \int^{2\pi }_{0} \cos v \; dv = 0 .\]
+\end{eg}
+ \begin{eg}
+ En la esfera todos los puntos son elípticos puesto que $\displaystyle K > 0 $. De hecho todos son umbílicos. Tenemos que $\displaystyle \gamma\left(v\right)=\left(\cos v, \sin v\right) $. Es sencillo calcular que $\displaystyle K\equiv 1 $. En este caso la curvatura total no se anula. 
+ \end{eg}
+\begin{eg}[Ejercicio 2, Hoja 5]
+	Demostrar que 
+	\[K = \frac{\det\left(N_{u}, N_{v}, N\right)}{\| \textbf{x} _{u} \times \textbf{x} _{v}\|} .\]
+	Tenemos que $\displaystyle N_{u}= a \textbf{x} _{u} + b \textbf{x} _{v} $ y $\displaystyle N_{v}= c \textbf{x} _{u} + d \textbf{x} _{v}$. De esta forma, 
+	\[
+	\begin{split}
+		\det\left(N_{u}, N_{v}, N\right)= & \begin{pmatrix} a & b & 0 \\ c & d & 0 \\ 0 & 0 & \frac{1}{\| \textbf{x} _{u} \times \textbf{x} _{v}\|} \end{pmatrix}\det\left( \textbf{x} _{u}, \textbf{x} _{v}, \textbf{x} _{u}\times \textbf{x} _{v}\right) = \det\left(\mathcal{W}\right)\frac{1}{\| \textbf{x} _{u}\times \textbf{x} _{v}\|}\| \textbf{x} _{u} \times \textbf{x} _{v}\|^{2}\\
+		= & K\| \textbf{x} _{u} \times \textbf{x} _{v}\| .
+	\end{split}
+	\]
+	El corolario es 
+	\[K = \frac{\left\langle N_{u} \times N_{v}, N \right\rangle }{\| \textbf{x} _{u} \times \textbf{x} _{v}\|}= \frac{\lambda }{\| \textbf{x} _{u} \times \textbf{x} _{v}\|} .\]
+	Tenemos que $\displaystyle N_{u}\perp N $ y $\displaystyle N_{v}\perp N $ por lo que $\displaystyle N_{u}\times N_{v}$ paralelo a $\displaystyle N $. Así, $\displaystyle N_{u} \times N_{v}=\lambda N $. Así, 
+	\[N_{u} \times N_{v} = K\| \textbf{x} _{u} \times \textbf{x} _{v}\|N .\]
+\end{eg}
+% poner aquí lo de las superficies minimales aunque no entra 
+
+\section{Líneas de curvatura y líneas asintóticas}
+\begin{definition}[Línea de curvatura]
+Dada una superficie regular $\displaystyle S $, se llama \textbf{línea de curvatura} a una curva regular $\displaystyle \alpha : I \to S $ en $\displaystyle S $ con $\displaystyle \alpha'\left(t\right) $ dirección principal para todo $\displaystyle t \in I $.
+\end{definition}
 \begin{observation}
 \begin{enumerate}
-\item Sea $\displaystyle S $ una superficie regular y $\displaystyle p \in S $. En un punto de silla de toda la vida se puede ver que $\displaystyle \kappa_{n}\left(\vec{e}_{1}\right)= K_{1} > 0 $ y $\displaystyle \kappa_{n}\left(\vec{e}_{2}\right)=K_{2} < 0 $. 
-% poner foto
-Si cambio la orientación, entonces $\displaystyle K_{1} $ y $\displaystyle K_{2} $ cambian de signo, pero la curvatura de Gauss no cambia de signo. A estos puntos los llamaremos \textbf{hiperbólicos}. 
-\item Consideremos un paraboloide. Tenemos que $\displaystyle \kappa_{n}\left(\vec{e}_{1}\right)= K_{1} > 0 $ y $\displaystyle \kappa_{n}\left(\vec{e}_{2}\right)=K_{2} > 0 $. A estos puntos los llamaremos \textbf{elípticos}. 
-\item Si $\displaystyle K_{1} = K_{2} $ tendremos que $\displaystyle \kappa_{n}\left(\vec{v}\right) $ es constante y $\displaystyle K = K_{1}^{2} > 0 $. Diremos que estos puntos son \textbf{cilíndriclos}. 
-\item Si $\displaystyle K_{1}=K_{2}=0 $ se llaman \textbf{puntos plano} y la segunda forma fundamental es idénticamente nula. 
-\item Si $\displaystyle K_{1} > 0 $ y $\displaystyle K_{2}=0 $, diremos que hablamos de \textbf{puntos parabólicos}. 
+	\item Sea $\displaystyle Umb = \left\{ p \in S \; : \; p \; \text{umbilical}\right\}  $. Para todo $\displaystyle p \in S \backslash Umb $ se tiene que existen $\displaystyle \left\{ \vec{e}_{1}\left(p\right), \vec{e}_{2}\left(p\right)\right\}  $ direcciones principales y $\displaystyle K_{1}\left(p\right), K_{2}\left(p\right) $ curvaturas principales. 
+	Así, $\displaystyle \alpha\left(t\right) $ es la línea de curvatura si $\displaystyle \alpha'\left(t\right)=\lambda\left(t\right)\vec{e}_{i}\left(\alpha\left(t\right)\right) $. 
+\item Se pueden tomar campos de vectores $\displaystyle E_{1}, E_{2} $ en $\displaystyle S \backslash Umb $ que son $\displaystyle \mathcal{C}^{\infty } $ y dan las direcciones principales. La forma de sacarlos es, $\displaystyle \mathcal{W}\left(p\right)\vec{v}=\lambda \vec{v} $, esto es, 
+	\[\begin{pmatrix} a & b \\ c & d \end{pmatrix}_{p}\begin{pmatrix} v_{1} \\ v_{2} \end{pmatrix}=\lambda \begin{pmatrix} v_{1} \\ v_{2} \end{pmatrix} ,\]
+	con $\displaystyle \lambda = H\pm \sqrt{H^{2}-K} $ que son $\displaystyle \mathcal{C}^{\infty } $. Así, para $\displaystyle i = 1,2 $, 
+	\[\begin{pmatrix} a-K_{i} & b \\ c & d-K_{i} \end{pmatrix}\begin{pmatrix} v_{1} \\ v_{2} \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \end{pmatrix}\Rightarrow \begin{pmatrix} v_{1} \\ v_{2} \end{pmatrix}=\begin{pmatrix} -b \\ a - K_{1} \end{pmatrix} .\]
+	Así, tenemos que 
+	\[\tilde{E}_{i}=\begin{pmatrix} -b \\ a - K_{i} \end{pmatrix}\quad \text{y} \quad E_{i}=\frac{\tilde{E}_{i}}{\|\tilde{E}_{i}\|} ,\]
+	que son ambas $\displaystyle \mathcal{C}^{\infty } $. Además, $\displaystyle E_{1}\perp E_{2} $. Las líneas de flujos de $\displaystyle E_{1} $ y las de $\displaystyle E_{2} $ dan dos familias de curvas que son lineales de curvatura y que se cortan perpendicularmente. 
+\item En cada $\displaystyle p \in S\backslash Umb $ hay dos líneas de curvatura. 
+\item Con esta definición podemos reparametrizar por arco si y sólo si $\displaystyle \alpha'  $ es unitario y $\displaystyle \alpha'\left(s\right)=E_{i}\left(\alpha\left(s\right)\right) $. Si tomamos $\displaystyle \tilde{E}_{i} $ no unitarios, son curvas no parametrizadas por arco. 
+\item Queremos que $\displaystyle -dN\left(\alpha'\left(t\right)\right) $ sea paralelo a $\displaystyle \alpha'\left(t\right) $, que es equivalente a que $\displaystyle \left(N\circ \alpha \right)' $ sea paralelo a $\displaystyle \alpha'\left(t\right) $ o que $\displaystyle \alpha'\left(t\right) $ es autovalor de $\displaystyle \mathcal{W} $. La bóveda celeste cabecea de alante a atrás según movemos. 
 \end{enumerate}
 \end{observation}
- 
+\begin{eg}
+Consideremos una superficie de revolución
+\[ \textbf{x} \left(\varphi, v\right)=\left(r\left(v\right)\cos \varphi, r\left(v\right)\sin \varphi, z\left(v\right)\right) .\]
+Tenemos que 
+\[\mathcal{W}=\begin{pmatrix} -\frac{z'}{r\|\gamma'\|} & 0 \\ 0 & -\kappa_{\gamma } \end{pmatrix} .\]
+Si $\displaystyle F = f = 0 $, el caso en el que $\displaystyle \mathcal{W} $ es diagonal, se tiene que $\displaystyle \tilde{E}_{1}= \textbf{x} _{\varphi} $ y $\displaystyle \tilde{E}_{2}= \textbf{x} _{v} $ son las direcciones principales. Así, en este caso las líneas coordenadas $\displaystyle \alpha\left(t\right)= \textbf{x} \left(t, c_{0}\right) $ y $\displaystyle \alpha\left(t\right)= \textbf{x} \left(c_{0}, t\right) $ son las líneas de curvatura.
+\end{eg}
+\begin{eg}[Silla de montar]
+Consideremos la silla de montar parametrizada por $\displaystyle \textbf{x} \left(u,v\right)=\left(u,v,uv\right) $. Habíamos visto que 
+\[K_{i}=\frac{-uv \pm \sqrt{\left(1 + u^{2}\right)\left(1 + v^{2}\right)}}{\left(1 + u^{2}+v^{2}\right)^{\frac{3}{2}}} .\]
+De esta forma, 
+\[\tilde{E}_{i}=\begin{pmatrix} \sqrt{1 + u^{2}} \\ \pm \sqrt{1 + v^{2}} \end{pmatrix} .\]
+Así, nos queda que la línea de curvatura de $\displaystyle E_{i} $ es $\displaystyle \alpha\left(t\right)= \textbf{x} \left(u\left(t\right), v\left(t\right)\right) $ con $\displaystyle \alpha'\left(t\right)=\left(u', v'\right)_{\mathcal{B}_{ \textbf{x} }} $. Así, tenemos que $\displaystyle \alpha'\left(t\right)=E_{i}\left(\alpha \left(t\right)\right) $. Nos queda el sistema de EDOS, 
+\[
+\begin{cases}
+u' = \sqrt{1 + u^{2}} \\
+v' = \sqrt{1 + v^{2}}
+\end{cases}
+.\]
+La solución es
+\[
+\begin{cases}
+u\left(t\right)=\sinh\left(t + K_{1}\right) \\
+v\left(t\right)=\sinh\left(t + K_{2}\right)
+\end{cases}
+.\]
+\end{eg}
+% ejercicio 6 resuelto en foto
+\begin{definition}[Direcciones asintóticas]
+Sea $\displaystyle p \in S $ un punto hiperbólico $\displaystyle K\left(p\right)<0 $. Las direcciones $\displaystyle \vec{v}_{1} $, $\displaystyle \vec{v}_{2} $ on $\displaystyle \kappa_{n}\left(\vec{v}_{i}\right)=0 $ y $\displaystyle II\left(\vec{v}_{i}\right)=0 $ se llaman \textbf{direcciones asintóticas}. 
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+\item En general, $\displaystyle \vec{v}_{1} $ y $\displaystyle \vec{v}_{2} $ no son perpendiculares, pero $\displaystyle \vec{e}_{1} $ y $\displaystyle \vec{e}_{2} $ bisecan a $\displaystyle \mathcal{L}\left(\vec{v}_{1}\right) $, $\displaystyle \mathcal{L}\left(\vec{v}_{2}\right) $. 
+\item Sólo hay en puntos hiperbólicos. En efecto, si $\displaystyle K > 0 $ no tenemos que $\displaystyle \kappa_{n}\left(\vec{v}\right)=0 $. Si $\displaystyle K = 0 $ hay una dirección principal en $\displaystyle \kappa_{n}\left(\vec{e}_{1}\right)=0 $. 
+\item En $\displaystyle Hip = \left\{ p \in S \; : \; K\left(p\right)< 0\right\}  $ hay dos cambos de vectores $\displaystyle \mathcal{C}^{\infty } $, $\displaystyle V_{1} $ y $\displaystyle V_{2} $ con $\displaystyle II\left(V_{i}, V_{i}\right)=0 $ y $\displaystyle V_{i}=\left(a_{i}, b_{i}\right) $. En efecto, vienen dadas como solución de la ecuación
+	\[\left(a_{i}, b_{i}\right)\begin{pmatrix} e & f \\ f & g \end{pmatrix}\begin{pmatrix}  a_{i} \\ b_{i} \end{pmatrix}=0 \Rightarrow  a_{i}^{2}e + 2a_{i}b_{i} f + b_{i}^{2}g = 0.\]
+	Así, nos queda que 
+	\[e + \frac{2b_{i}}{a_{i}}f + \frac{b_{i}^{2}}{a_{i}^{2}}g = 0 \Rightarrow \frac{b_{i}}{a_{i}}=-f \pm \sqrt{f^{2}-eg} .\]
+Así, tenemos que $\displaystyle V_{i}=\left(1, -f \pm \sqrt{f^{2}-eg}\right) $ es $\displaystyle \mathcal{C}^{\infty } $ puesto que la raíz nunca se anula (porque es el numerador de la curvatura).
+\end{enumerate}
+\end{observation}
+\begin{eg}[Silla de montar]
+	Recordamos que para $\displaystyle \textbf{x} \left(u,v\right)=\left(u,v,uv\right) $ teníamos que 
+	\[ II = \frac{1}{1 + u^{2}+v^{2}}\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} .\]
+	Tenemos que 
+	\[\left(a,b\right)\begin{pmatrix} e & f \\ f & g \end{pmatrix}\begin{pmatrix}  a \\ b \end{pmatrix} = 0 \Rightarrow ab = 0 .\]
+Obtenemos $\displaystyle V_{1} = \left(0,1\right)_{\mathcal{B}_{ \textbf{x} }} $ y $\displaystyle V_{2}=\left(1,0\right)_{\mathcal{B}_{ \textbf{x} }} $. 
+\end{eg}
+\begin{definition}[Línea asintótica]
+Se llama \textbf{línea asintótica} a $\displaystyle \alpha : J \to Hip\subset S $ regular con $\displaystyle II\left(\alpha'\left(t\right)\right)\equiv 0 $, $\displaystyle \forall t \in J $. 
+\end{definition}
+\begin{observation}
+Podemos hacer algunas observaciones:
+\begin{enumerate}
+\item $\displaystyle \alpha\left(t\right) $ línea asintótica suge direcciones principales.
+\item $\displaystyle V_{1} $, $\displaystyle V_{2} $ campos $\displaystyle \mathcal{C}^{\infty } $ linealmente independientes en $\displaystyle Hip\subset S $, las lineas asintóticas son las líneas de flujo de $\displaystyle V_{1} $ y $\displaystyle V_{2} $ (existen y son $\displaystyle \mathcal{C}^{\infty } $).
+\item $\displaystyle \kappa_{n}\left(\alpha'\left(t\right)\right)\equiv 0 $, $\displaystyle \forall t \in J $ y $\displaystyle \left\langle \alpha''\left(t\right), N \right\rangle \equiv 0 $, $\displaystyle \forall t \in J $.
+\item No existen si $\displaystyle K \geq 0 $. 
+\item Interpretación geométrica. Recordamos que cuando hablábamos de líneas de curvatura $\displaystyle \mathcal{W} \cdot \alpha' | | \alpha' $. Cuando hablamos de líneas asintóticas $\displaystyle \mathcal{W} \cdot \alpha' \perp \alpha ' $. Esto es equivalente a que 
+	\[ II\left(\alpha'\right)=\left\langle \mathcal{W} \cdot \alpha', \alpha' \right\rangle \equiv 0 \iff -dN\left(\alpha'\right)\perp \alpha' \iff \left(N\circ \alpha \right)'\left(t\right)\perp \alpha'\left(t\right), \; \forall t \in J .\]
+\item La EDO a resolver es 
+	\[\left(u', v'\right)\begin{pmatrix} e & f \\ f & g \end{pmatrix}\begin{pmatrix} u'\\ v' \end{pmatrix}\equiv 0 .\]
+	Nos queda
+	\[e\left(u'\right)^{2}+2fu'v' + g\left(v'\right)^{2}=0 .\]
+\end{enumerate}
+\end{observation}
+\begin{eg}[Superficie de revolución]
+Consideremos la superficie de revolución generada por $\displaystyle \gamma\left(v\right)=\left(r\left(v\right), z\left(v\right)\right) $, 
+\[ \textbf{x} \left(u,v\right)=\left(r\left(v\right)\cos \varphi, r\left(v\right)\sin \varphi, z\left(v\right)\right) .\]
+Recordamos que 
+\[ I = \begin{pmatrix} r^{2} & 0 \\ 0 & \|\gamma'\|^{2}, \quad \end{pmatrix}II = \begin{pmatrix} -\frac{z'r}{\|\gamma'\|} & 0 \\ 0 & -\kappa_{\gamma }\|\gamma'\|^{2} \end{pmatrix} .\]
+Además, 
+\[K = \frac{eg-f^{2}}{EG-F^{2}}=\frac{\frac{z'r\kappa_{\gamma }\|\gamma'\|^{2}}{\|\gamma'\|}}{r^{2}\|\gamma'\|^{2}}=\frac{z'\kappa_{\gamma }}{r\|\gamma'\|} .\]
+Por otro lado
+\[N = \left(\frac{z'}{\|\gamma'\|}\cos \varphi, \frac{z'}{\|\gamma'\|}\sin \varphi, -\frac{\gamma'}{\|\gamma'\|}\right)\quad \text{y} \quad \kappa^{pl}_{\gamma } = \frac{\begin{vmatrix} r' & r'' \\ z' & z'' \end{vmatrix} }{\|\gamma'\|^{3}} .\]
+Tenemos que $\displaystyle \alpha' = \left(\varphi', v'\right)_{\mathcal{B}_{ \textbf{x} }} $. Esto es, 
+\[e\left(\varphi'\right)^{2} + 2f\varphi' v' g\left(v'\right)^{2}=0 .\]
+\[ -\frac{z'r}{\|\gamma'\|}\left(\gamma'\right)^{2}-\kappa_{\gamma }\|\gamma'\|^{2}\left(v'\right)^{2}=0 \Rightarrow \left(v'\right)^{2} = -\frac{z'r}{\|\gamma'\|^{3}\kappa_{\gamma }}\left(\varphi'\right)^{2}.\]
+De donde se deduce
+\[\frac{dv}{dt}=\pm \sqrt{-\frac{z'r}{\|\gamma'\|^{3}\kappa_{\gamma }}}\frac{d\varphi}{dt} \iff \int \frac{1}{\sqrt{-\frac{z'\left(v\right)r\left(v\right)}{\|\gamma'\left(v\right)\|^{3}\kappa_{\gamma }\left(v\right)}}} \; dv = \pm \int  \; d\varphi .\]
+\end{eg}
+\begin{eg}[Hiperboloide]
+	Aplicar lo del ejemplo anterior con la curva $\displaystyle \gamma\left(v\right)=\left(\cosh v, \sinh v\right) $. 
+	% terminar el ejemplo
+	La solución nos da $\displaystyle \varphi = \pm 2\arctan\left(e^{v}\right) + K $ y $\displaystyle v = \log\left(\tan\left(\frac{\varphi-K}{2}\right)\right) $. La $\displaystyle K $ traslada a la derecha, es decir, es la rotación en el hiperboloide. Por tanto, podemos limitarnos a estudiar el caso $\displaystyle K = 0 $, esto es $\displaystyle v = \log\left(\tan \frac{\varphi}{2}\right) $, $\displaystyle \varphi\left(0, \pi \right) $. Tenemos que 
+	\[\cosh v=\frac{e^{v}+e^{-v}}{2}=\frac{\tan\frac{\varphi}{2}+c\tan\frac{\varphi}{2}}{2} \quad \text{y} \quad \sinh v = \frac{e^{v}-e^{-v}}{2}=\frac{\tan\frac{\varphi}{2}-c\tan\frac{\varphi}{2}}{2} .\]
+	Así, nos queda
+	\[\alpha\left(\varphi\right)=\left(\cosh v \cos \varphi, \cosh v \sin \varphi, \sinh v\right)= \ldots .\]
+	% rellenar con lo de la ecuación anterior
+	% supuestamente esto es una recta
+	% completar con foto
+\end{eg}
+% completar con el lema de la foto
+\section{Curvatura geodésica. Geodésicas}
+Sea $\displaystyle S $ una superficie regular y $\displaystyle \alpha : J \to S $ una curva regular p.p.a. 
+\begin{definition}[Triedro de Darboux]
+	Se llama \textbf{triedro de Darboux} de $\displaystyle \alpha\left(s\right) $ al triedro $\displaystyle \left\{ \hat{t}, v, N\right\} = \left\{ \hat{t}\left(s\right), v\left(s\right), N\left(s\right)\right\}  $ base ortonormal positiva en $\displaystyle \alpha \left(t\right) $. 
+\end{definition}
+\begin{observation}
+En la definición anterior:
+\[\hat{t}\left(s\right)=\frac{d\alpha }{d s}, \; N\left(s\right)=N\left(\alpha\left(s\right)\right), \; v\left(s\right)=N\left(s\right)\times \hat{t}\left(s\right), \; T_{\alpha\left(s\right)}S = \mathcal{L}\left(\hat{t},v\right) .\]
+\end{observation}
+\begin{prop}[Ecuaciones de Darboux]
+Se cumples las ecuaciones
+\[
+\begin{cases}
+\frac{d\hat{t}}{d s} = \lambda v + \mu N \\
+\frac{dv}{d s} = -\lambda \hat{t} + \gamma N \\
+\frac{d N}{d s}=-\mu \hat{t} - \gamma v
+\end{cases}
+.\]
+\end{prop}
+\begin{proof}
+% hacer en casa
+\end{proof}
+\begin{observation}
+\begin{enumerate}
+\item $\displaystyle - \frac{dN}{d s} = -\left(N\circ\alpha \right)' = - dN\left(\alpha'\left(s\right)\right) = \mathcal{W}\left(\alpha'\left(s\right)\right) $ es paralelo a $\displaystyle \alpha'\left(s\right)=\hat{t} $, línea de curvatura. Además, $\displaystyle -\frac{dN}{d s }=\mu \hat{t} $, por lo que $\displaystyle \gamma\left(s\right)\equiv 0 $ en las líneas de curvatura. Así, $\displaystyle \gamma\left(s\right) $ nos dice si es línea de curvatura. 
+\item Si $\displaystyle -\frac{dN}{d s }=\mathcal{W}\left(\alpha'\left(s\right)\right)\perp \alpha'\left(s\right)=\hat{t} $, es línea asintótica. Equivalentemente, 
+	\[-\frac{dN}{d s}=\gamma v \iff \mu\left(s\right)\equiv 0 .\]
+	Así, el valor de $\displaystyle \mu $ nos dice si es o no línea asintótica. De hecho, $\displaystyle \kappa_{n} = \left\langle \mathcal{W}\left(\alpha'\left(s\right)\right), \alpha'\left(s\right) \right\rangle  =\left\langle -\frac{dN}{d s}, \hat{t} \right\rangle =\mu\left(s\right)$.
+\item Qué significa $\displaystyle \lambda\left(s\right) $? Tenemos que 
+	\[\frac{d\hat{t}}{d s}=\frac{d ^{2}\alpha }{d s^{2}}=\alpha''\left(s\right)=k_{\alpha }=\lambda v+ \kappa_{n}N ,\]
+	donde $\displaystyle k_{\alpha }=\kappa_{\alpha }\hat{n}_{\alpha } $ es el vector curvatura y $\displaystyle k_{n}:=\kappa_{n}N $ es el vector curvatura normal. 
+\end{enumerate}
+\end{observation}
+\begin{definition}[Curvatura geodésica y vector curvatura geodésica]
+Se llama \textbf{vector curvatura geodésica} a $\displaystyle k_{g}= \kappa_{g}v $ y se llama \textbf{curvatura geodésica} a $\displaystyle k_{g}=\left\langle \alpha''\left(s\right), v \right\rangle  $. 
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+\item $\displaystyle \textbf{k} _{\alpha }= \textbf{k}_{n} + \textbf{k} _{g} $, además $\displaystyle \kappa_{\alpha }=\sqrt{\kappa_{n}^{2} + \kappa_{g}^{2}} $. Coloquialmente decimos que $\displaystyle \kappa_{n} $ es la curvatura que se nota en la dirección $\displaystyle N $ y $\displaystyle \kappa_{g} $ es la que nota planito en $\displaystyle S $. 
+\item $\displaystyle \kappa_{g}=\left\langle \alpha''\left(s\right), N \times \hat{t} \right\rangle =\det\left(\alpha'', N, \alpha'\right) $, va a ser intrínsica pero por ahora es extrínseca. 
+\end{enumerate}
+\end{observation}
+\begin{prop}
+Si $\displaystyle \alpha \left(t\right) $ no es p.p.a
+\[\kappa_{g}=\frac{\det\left(\alpha, \alpha'', N\right)}{\|\alpha'\|^{3}} .\]
+\end{prop}
+% poner la v de antes en mayúscula
+\begin{proof}
+Si $\displaystyle v = \|\alpha'\| $, entonces
+\[
+\begin{cases}
+\frac{d\alpha }{dt}=v\frac{d\alpha }{d s } \\
+\frac{d ^{2}\alpha }{d t ^{2}}= \frac{dv}{d s}\frac{d\alpha }{d s}+v^{2}\frac{d ^{2}\alpha }{d s^{2}}
+\end{cases}
+.\]
+Así, nos queda que 
+\[\det\left(\frac{d\alpha }{d t}, \frac{d^{2}\alpha }{d t ^{2}}, N\right)=\det\left(v\frac{d\alpha }{d s}, v^{2}\frac{d^{2}\alpha }{d s^{2}}, N\right)=v^{3}\kappa_{g} .\]
+\end{proof}
+\begin{observation}
+Qué pasa cuando $\displaystyle \lambda\left(s\right)\equiv 0 $, $\displaystyle \kappa_{g}\equiv 0 $? Planito no nota la curvatura dentro de $\displaystyle S $, que es análogo a moverse en línea recta (sin torcerse) dentro de $\displaystyle S $. 
+\end{observation}
+\begin{definition}
+Sea $\displaystyle \alpha\left(t\right) $ una curva regular. 
+\begin{enumerate}
+\item Se dice que $\displaystyle \alpha\left(t\right) $ es \textbf{pregeodésica} si $\displaystyle \kappa_{g}\equiv 0 $.
+\item Se dice que es \textbf{geodésica} si $\displaystyle \alpha''\left(s\right) $ es paralelo a $\displaystyle N $. 
+\item Se dice que es \textbf{geodésica unitaria} si $\displaystyle \kappa_{g}\equiv 0 $ y $\displaystyle \alpha\left(s\right) $ p.p.a.
+\end{enumerate}
+\end{definition}
+\begin{prop}
+\begin{enumerate}
+\item La p.p.a de una pregeodésica es geodésica unitaria. 
+\item Una geodésica es una pregeodésica con velocidad constante. 
+\item Toda parametrización de una geodésica es pregeodésica.
+\end{enumerate} 
+\end{prop}
+\begin{proof}
+\begin{enumerate}
+\item Si $\displaystyle \kappa_{g}=0 $ y $\displaystyle v = \|\alpha'\| =1 $, entonces es geodésica por definición. Tenemos que $\displaystyle \kappa_{g}=\lambda \equiv 0 $ por lo que $\displaystyle \frac{d \hat{t}}{d s}= \mu N  $ por lo que $\displaystyle \alpha''\left(s\right) $ es paralelo a $\displaystyle N $. 
+\item Si $\displaystyle \alpha'' $ es paralelo a $\displaystyle N $, entonces 
+	\[\frac{d^{2}\alpha }{dt ^{2}}=a_{t}\hat{t}+v^{2}\mu N ,\]
+	es paralelo a $\displaystyle N $. Esto ocurre sí y sólo si $\displaystyle a_{t}=0 $, es decir, $\displaystyle v  $ es constante. En general, 
+	\[\frac{d^{2}\alpha }{dt ^{2}}=a_{t}\hat{t}+v^{2}\kappa_{g}V + v^{2}\kappa_{n}N ,\]
+	de forma que $\displaystyle v \equiv cte $ y $\displaystyle \kappa_{g} $ si y sólo si $\displaystyle \frac{d^{2}\alpha }{dt ^{2}} = v^{2}\kappa_{n}N $ es paralelo a $\displaystyle N $.
+\item Es obvio porque $\displaystyle \kappa_{g}=0 $.
+\end{enumerate}
+\end{proof}
+\begin{eg}
+\begin{enumerate}
+\item En el plano $\displaystyle \textbf{x} \left(u,v\right)=\left(u,v,0\right) $, tenemos que 
+	\[\alpha\left(t\right)=\left(u\left(t\right), v\left(t\right), 0\right) \Rightarrow \alpha'' = \left(u'', v'', 0\right) | | N = \left(0,0,1\right) .\]
+	Entonces, $\displaystyle u'' \equiv 0 $ y $\displaystyle v' \equiv 0 $ por lo que $\displaystyle u\left(t\right)=at + b $ y $\displaystyle v\left(t\right)=ct + d $ es equivalente a que $\displaystyle \alpha\left(t\right) $ sea una recta.
+\item Esfera. Consideremos $\displaystyle \alpha\left(t\right)=\left(x\left(t\right), y\left(t\right), z\left(t\right)\right) $ con $\displaystyle \|\alpha\left(t\right)\| = 1 $. Tenemos que 
+	\[\alpha''\left(t\right)=\left(x'', y'', z''\right) | | N = \left(x,y,z\right) ,\]
+	que es equivalente al sistema 
+	\[
+	\begin{cases}
+	x'' = \lambda x \\
+	y'' = \lambda y\\
+	z'' = \lambda z
+	\end{cases}
+	\Rightarrow \frac{x''}{x}= \frac{y''}{y} = \frac{z''}{z}.\]
+Así, tenemos que, como $\displaystyle \|\alpha\| = 1 $, 
+\[x x' + y y' + z z' = 0 .\]
+La solución es un corte plano con $\displaystyle \mathbb{S}^{2} $, es decir, una circunferencia. Sin pérdida de genealidad se puede tomar $\displaystyle \left\{ z = z_{0}\right\} \cap \mathbb{S}^{2} $. 
+% completar con foto para ver que efectivamente la solución son los círculos máximos
+Todo círculo máximo es geodésica (basta con hacer la rotación). Veremos posteriormente que $\displaystyle \forall p \in S $, $\displaystyle \forall \vec{v}\in T_{p}S $, $\displaystyle \exists !\gamma\left(t\right) $ geodésica tal que $\displaystyle \gamma\left(0\right)=p $ y $\displaystyle \gamma'\left(0\right)=\vec{v} $. 
+\end{enumerate}
+\end{eg}
+

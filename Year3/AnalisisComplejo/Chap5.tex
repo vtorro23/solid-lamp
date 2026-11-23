@@ -1,0 +1,55 @@
+\chapter{Funciones meromorfas y teorema de los residuos}
+\section{Básicos de funciones meromorfa}
+\begin{definition}[Función meromorfa]
+Decimos que dado $\displaystyle \Omega \subset \C $ abierto, $\displaystyle f $ es \textbf{meromorfa} en $\displaystyle \Omega  $ si tiene un conjunto $\displaystyle \Lambda \subset \Omega  $ de singularidades aisladas donde $\displaystyle f $ tiene un polo y $\displaystyle f $ es holomorfa en $\displaystyle \Omega \backslash \Lambda  $.
+\end{definition}
+\begin{observation}
+Hagamos un par de observaciones:
+\begin{enumerate}
+\item $\displaystyle \Lambda  $ puede ser vacío.
+\item $\displaystyle \Lambda $ es un conjunto a lo sumo numberable puesto que las singularidades tienen que ser aisladas.
+\end{enumerate}
+\end{observation}
+\begin{eg}
+Las funciones de la forma $\displaystyle f\left(z\right)=\frac{P\left(z\right)}{Q\left(z\right)} $ con $\displaystyle P $ y $\displaystyle Q $ son polinomios son funciones meromorfas. Otro ejemplo son funciones de la forma 
+\[g\left(z\right)=\frac{P\left(\sin z, \cos z\right)}{Q\left(\sin z, \cos z\right)} ,\]
+con $\displaystyle P $ y $\displaystyle Q $ polinomios. También lo es la función $\displaystyle \zeta\left(z\right) $ de Riemann. Recordamos que esta función se define como
+\[\zeta\left(z\right)=\sum^{\infty}_{n = 1}\frac{1}{n^{z}}, \; \Re\left(z\right) > 1 .\]
+\end{eg}
+\begin{eg}
+No son ejemplos funciones como $\displaystyle e^{\frac{1}{z}} $ o $\displaystyle \sin\left(\frac{1}{z}\right) $ puesto que presentan singularidades esenciales en $\displaystyle z = 0 $ y no polos.
+\end{eg}
+\begin{observation}
+Dado $\displaystyle \Omega\subset \C $ abierto conexo, el conjunto de funciones meromorfas en $\displaystyle \Omega  $, $\displaystyle \mathcal{M}\left(\Omega \right) $ es un cuerpo con las operaciones punto a punto. También es un dominio de integridad.
+\end{observation}
+Si $\displaystyle f $ es tal que sus singularidades tienen puntos de acumulación, dichos puntos de acumulación están en $\displaystyle \partial \Omega  $. 
+\begin{definition}
+En $\displaystyle \hat{\C} $ el punto $\displaystyle \infty  $ puede ser una singularidad aislada si existe $\displaystyle R > 0 $ tal que $\displaystyle \C \backslash \overline{D}\left(0,R\right) $ no contiene ninguna singularidad de $\displaystyle f $. 
+\end{definition}
+Para clasificar la singularidad en $\displaystyle \infty_{\C} $ la clasificamos según la singularidad de $\displaystyle f\left(\frac{1}{z}\right) $ en $\displaystyle z = 0 $.
+\begin{observation}
+La serie de Laurent en $\displaystyle \infty $ 'va al revés'. Esto es, dado
+\[f\left(z\right)=\sum^{\infty}_{-\infty}a_{n}z^{n}, \]
+\begin{enumerate}
+\item Si $\displaystyle \exists N \in \N $ tal que $\displaystyle a_{N}\neq 0 $ y $\displaystyle a_{k}=0 $, $\displaystyle \forall k > N $, $\displaystyle \infty $ es un polo de orden $\displaystyle N $. 
+\item Si $\displaystyle a_{k}= 0 $, $\displaystyle \forall k \in \N $, $\displaystyle \infty  $ es una singularidad evitable.
+\item Si existen infinitos $\displaystyle a_{n}\neq 0 $ con $\displaystyle n \in \N $, entonces $\displaystyle \infty $ es una singularidad esencial. 
+\end{enumerate}
+\end{observation}
+\begin{notation}
+Si $\displaystyle f $ tiene un polo de orden $\displaystyle N \in \N $ en $\displaystyle \infty $ es
+\[P_{\infty}\left(z\right)=\sum^{N}_{k=0}b_{k}z^{k} ,\]
+la \textbf{parte principal} de $\displaystyle f $ en $\displaystyle \infty  $. 
+\end{notation}
+\begin{definition}
+Decimos que $\displaystyle f $ es meromorfa en $\displaystyle \Omega\subset \hat{\C} $ si $\displaystyle f $ es holomorfa en $\displaystyle \Omega  $ excepto un conjunto aislado de singularidades que serán polos.
+\end{definition}
+\begin{observation}
+	Supongamos que $\displaystyle f \in \mathcal{M}\left(\hat{\C}\right)$, entonces $\displaystyle \mathcal{S}_{f}= \left\{ w \in \hat{\C} \; : \; w \; \text{polo de }f\right\}  $ es $\displaystyle \left|\mathcal{S}_{f}\right|<\infty  $. Esto se debe a la compacidad de $\displaystyle \hat{\C} $ y que no puede haber puntos de acumulación.
+\end{observation}
+\begin{eg}
+Las funciones racionales $\displaystyle \frac{P\left(z\right)}{Q\left(z\right)} $ son meromorfas en $\displaystyle \hat{\C} $. Ya sabemos que las funciones racionales son meromorfas en $\displaystyle \C $ y sus potenciales polos son finitos, pues son las raíces de $\displaystyle Q\left(z\right) $. Comprobamos la singularidad de $\displaystyle \frac{P\left(z\right)}{Q\left(z\right)} $ en $\displaystyle \infty  $. Sea $\displaystyle P\left(z\right)=\sum^{n}_{k = 0}a_{k}z^{k} $ y $\displaystyle Q\left(z\right)=\sum^{m}_{j = 0}b_{j}z^{j} $. Ahora estudiamos qué ocurre en $\displaystyle z = 0 $ para la función 
+\[\frac{P\left(\frac{1}{z}\right)}{Q\left(\frac{1}{z}\right)} = \frac{a_{0} + a_{1}\frac{1}{z}+ \cdots + a_{n}\frac{1}{z^{n}}}{b_{0} + b_{1}\frac{1}{z}+ \cdots + b_{m}\frac{1}{z^{m}}}  = \frac{z^{m}}{z^{n}}\frac{a_{n}+a_{n-1}z+ \cdots + z_{0}z^{n}}{b_{m}+b_{m -1}z + \cdots + b_{0}z^{m}}.\]
+La segunda parte de la función es holomorfa cerca de 0 y no se anula en 0. Puede ser potencia del polo o singularidad evitable dependiendo de si $\displaystyle n \geq m $ o $\displaystyle n < m $. 
+\end{eg}
+

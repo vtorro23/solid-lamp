@@ -1,5 +1,5 @@
 \chapter{Series de Laurent y singularidades aisladas}
-\section{Preliminares}
+\section{Preliminares y más versiones del teorema de Cauchy}
 \begin{definition}[Conjunto simplemente conexo]
 Diremos que un abierto conexo $\displaystyle \Omega\subset \C $ es \textbf{simplemente conexo} si no tiene agujeros. Es decir, dadas dos curvas continuas en $\displaystyle \Omega  $ con los mismos puntos inicial y final, se pueden deformar una continuamente en la otra dentro de $\displaystyle \Omega  $.
 \end{definition}
@@ -94,65 +94,74 @@ holomorfas tales que
 Además, si $\displaystyle f_{1}\left(\infty \right)=0 $ la descripción es única. 
 \end{theorem}
 \begin{proof}
-Demostramos primero la unicidad. Supongamos que 
+	Distinguimos dos partes.
+	\begin{description}
+	\item[Unicidad.] Supongamos que 
 \[f\left(z\right)=f_{0}\left(z\right)+f_{1}\left(z\right)=g_{0}\left(z\right)+g_{1}\left(z\right) ,\]
-con $\displaystyle f_{j} $ y $\displaystyle g_{j} $ satisfaciendo las condiciones del teorema con $\displaystyle j \in \left\{ 0,1\right\}  $. Definimos
+con $\displaystyle f_{j} $ y $\displaystyle g_{j} $ satisfaciendo las condiciones del teorema con $\displaystyle j \in \left\{ 0,1\right\}  $. Tenemos entonces que $\displaystyle g_{0}-f_{0}=f_{1}-g_{1} $ en $\displaystyle \Omega  $. Definimos
 \[h\left(z\right)=
 \begin{cases}
 f_{0}\left(z\right)-g_{0}\left(z\right) , \; \text{si } z \in D\left(z_{0}, \rho \right)\\
 g_{1}\left(z\right)-f_{1}\left(z\right), \; \text{si } z\in \hat{\C } \backslash \overline{D}\left(z_{0}, \rho \right)
 \end{cases}
 .\]
-Por construcción tenemos que $\displaystyle h $ está bien definida y es $\displaystyle h : \hat{\C}\to \C $ holomorfa en su dominio. Además, 
+Por lo que acabamos de ver tenemos que $\displaystyle h: \hat{\C}\to \C $ está bien definida y es holomorfa en su dominio. Además, 
 \[h\left(\infty \right)=g_{1}\left(\infty \right)-f_{1}\left(\infty \right)=0 .\]
 Por construcción tiene que ser 
 \[\lim_{z \to \infty }h\left(z\right)=h\left(\infty \right)=0 .\]
-Se sigue pues que $\displaystyle \left|h\left(z\right)\right|\leq 1 $ si $\displaystyle  \left|z \right|> R $ y $\displaystyle f $ es holomorfa en $\displaystyle \C $, por lo que $\displaystyle h $ está acotada en $\displaystyle \left|z\right|\leq \R $. 
-Así, $\displaystyle h $ está acotada y es entera y por el teorema de Liuville tenemos que es constante. Ya que $\displaystyle h\left(\infty \right)=0 $ debe ser que $\displaystyle h \equiv 0 $ por lo que $\displaystyle f_{0}=g_{0} $ y $\displaystyle f_{1}=g_{1} $. \\
-\indent Demostramos ahora la existencia. Fórmula de Cauchy aplicada a $\displaystyle f $ en $\displaystyle \Omega _{r,s}= \left\{ z \; : \; r < \left|z-z_{0}\right|<s\right\}  $ con $\displaystyle \rho < r < s < \sigma  $:
-\[f\left(z\right)=\underbrace{\frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right| = s}\frac{f\left(\xi\right)}{\xi - z} \; d\xi}_{f_{0,s}\left(z\right)} - \underbrace{\frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right|=s}\frac{f\left(\xi\right)}{\xi - z} \; d\xi}_{f_{1,r}\left(z\right)} .\]
-Podemos observar que $\displaystyle f_{0,s} : D\left(z_{0}, s\right)\to \C$ y $\displaystyle f_{1,r} : \hat{\C} \backslash \overline{D}\left(z_{0}, r\right)\to \C $ con $\displaystyle f_{1,r}\left(\infty \right)= 0 $. Por el teorema de derivación bajo el signo de la integral, las funciones $\displaystyle f_{0,s}: D\left(z_{0}, s\right)\to \C $ y $\displaystyle f_{1,r} : \C\backslash \overline{D}\left(z_{0}, r\right)\to \C $ son holomorfas en su dominio.
+Se sigue que $\displaystyle h $ está acotada en $\displaystyle \C $ y como es holomorfa, por el teorema de Liouville tenemos que es constante, y no puede ser otra constante que 0. Por tanto, se sigue que $\displaystyle f_{0}=g_{0} $ y $\displaystyle f_{1}=g_{1} $.  
+\item[Existencia.] Aplicamos la fórmula de Cauchy a $\displaystyle f $ en $\displaystyle \Omega _{r,s}= \left\{ z \; : \; r < \left|z-z_{0}\right|<s\right\}  $ con $\displaystyle \rho < r < s < \sigma  $:
+\[f\left(z\right)=\underbrace{\frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right| = s}\frac{f\left(\xi\right)}{\xi - z} \; d\xi}_{f_{0,s}\left(z\right)} - \underbrace{\frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right|=r}\frac{f\left(\xi\right)}{\xi - z} \; d\xi}_{f_{1,r}\left(z\right)} .\]
+Definimos las funciones 
+\[f_{0,s} : D\left(z_{0}, s\right)\to \C: z \to\frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right| = s}\frac{f\left(\xi\right)}{\xi - z} \; d\xi  .\]
+\[f_{1,r}\left(z\right): \hat{\C} \backslash \overline{D}\left(z_{0}, r\right)\to \C : z \to \frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right|=r}\frac{f\left(\xi\right)}{\xi - z} \; d\xi\]
+con $\displaystyle f_{1,r}\left(\infty \right)= 0 $. Por el teorema de derivación bajo el signo de la integral, las funciones $\displaystyle f_{0,s} $ y $\displaystyle f_{1,r}  $ son holomorfas en $\displaystyle D\left(z_{0}\right) $ y $\displaystyle \C\backslash \overline{D}\left(z_{0}, r\right) $, respectivamente.
 Además, por el TCD se puede comprobar que 
 \[\lim_{z \to \infty}f_{1,r}\left(z\right)=0 .\]
-Se sigue que $\displaystyle f_{1,r} $ es continua en el punto $\displaystyle z = \infty $ de $\displaystyle \hat{\C} $. Así, $\displaystyle f_{1,r} $ es holomorfa en $\displaystyle \hat{\C}\backslash\overline{D}\left(z_{0}, r\right) $ por ser holomorfa en $\displaystyle \C\backslash\overline{D}\left(z_{0}, r\right) $ y continua en $\displaystyle \hat{\C} \backslash \overline{D}\left(z_{0}, r\right) $. 
-Se comprueba para la función 
+Por tanto, la función
 \[g_{1,r}\left(z\right):=
 \begin{cases}
 f_{1,r}\left(\frac{1}{z}\right), \; \text{si} \; z \neq 0 \\
-0 = f_{1,r}\left(\frac{1}{0}\right)=f_{1,r}\left(\infty\right), \; \text{si} \; z = 0
+0 = f_{1,r}\left(\infty\right), \; \text{si} \; z = 0
 \end{cases}
 ,\]
-usando los teoremas de Goursat y Morera. Dados $\displaystyle \rho < s < s' < \sigma  $, por el teorema de Cauchy para recintos múltiplemente conexos, $\displaystyle \Omega _{s,s'}=\left\{ w \in \C \; : \; s < \left|w-z_{0}\right|<s'\right\}  $, es
+es continua en un entorno de 0 y holomorfa en dicho entorno menos 0. Por tanto, combinando los teoremas de Goursat y Morera, tenemos que $\displaystyle f_{1} $ es holomorfa en $\displaystyle \infty  $. En consecuencia, $\displaystyle f_{1,r} $ es holomorfa en todo su dominio. 
+Ahora, dados $\displaystyle \rho < s < s' < \sigma  $, por el teorema de Cauchy para recintos múltiplemente conexos aplicado al conjunto $\displaystyle \Omega _{s,s'}=\left\{ w \in \C \; : \; s < \left|w-z_{0}\right|<s'\right\}  $, se tiene que
 \[\frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right|= s'}\frac{f\left(\xi\right)}{\xi-z} \; d\xi = \frac{1}{2\pi i}\int _{ \left|\xi-z_{0}\right| = s}\frac{f\left(\xi\right)}{\xi-z} \; d\xi ,\]
 por ser la función $\displaystyle \xi \to \frac{f\left(\xi\right)}{\xi - z} $ holomorfa en $\displaystyle \Omega_{s,s'} $. Por tanto, $\displaystyle f_{0,s}\left(z\right)=f_{0,s'}\left(z\right) $, $\displaystyle \forall \left|z-z_{0}\right|<s $. Por un argumento análogo tenemos que $\displaystyle f_{1,r}\left(z\right)=f_{1,r'}\left(z\right) $, $\displaystyle \forall r < \left|z-z_{0}\right| $ donde estén definidas las funciones, siempre que $\displaystyle \rho < r' < r < \sigma  $. Esto permite definir
 \[f_{0}\left(z\right)=f_{0,s}\left(z\right), \; \forall \left|z-z_{0}\right|<s < \sigma \quad \text{y}\quad f_{1}\left(z\right)=f_{1,r}\left(z\right), \; \forall \rho < r < \left|z-z_{0}\right| .\]
-Finalmente, $\displaystyle f_{0}\in \mathcal{H}\left(D\left(z_{0}, \sigma\right)\right) $ puesto que $\displaystyle f_{0,s}\in \mathcal{H}\left(D\left(z_{0}, s\right)\right) $, $\displaystyle \forall s < \sigma  $. Además, $\displaystyle f_{1}\in \mathcal{H}\left(\hat{\C}\backslash\overline{D}\left(z_{0}, \rho\right)\right) $ por el mismo argumento que para $\displaystyle f_{0} $. Además, $\displaystyle f\left(z\right) = f_{0}\left(z\right) + f_{1}\left(z\right) $, $\displaystyle \forall z \in \Omega_{r,s} $. 
+Finalmente, $\displaystyle f_{0}\in \mathcal{H}\left(D\left(z_{0}, \sigma\right)\right) $ puesto que $\displaystyle f_{0,s}\in \mathcal{H}\left(D\left(z_{0}, s\right)\right) $, $\displaystyle \forall s < \sigma  $. Además, $\displaystyle f_{1}\in \mathcal{H}\left(\hat{\C}\backslash\overline{D}\left(z_{0}, \rho\right)\right) $ por el mismo argumento que para $\displaystyle f_{0} $. Además, $\displaystyle f\left(z\right) = f_{0}\left(z\right) + f_{1}\left(z\right) $, $\displaystyle \forall z \in \Omega_{r,s} $.
+	\end{description}
 \end{proof}
 \begin{theorem}[Teorema de desarrollo Laurent]
-Sean $\displaystyle 0 \leq \rho < \sigma \leq \infty  $ y $\displaystyle f \in \mathcal{H}\left(D\left(z_{0}, \sigma \right) \backslash \overline{D}\left(z_{0}, \rho\right)\right) $. Luego, 
+Sea $\displaystyle f \in \mathcal{H}\left(D\left(z_{0}, \sigma \right) \backslash \overline{D}\left(z_{0}, \rho\right)\right) $ con $\displaystyle 0 \leq \rho < \sigma \leq \infty  $. Luego se puede escribir, 
 \[f\left(z\right)=\sum^{\infty}_{-\infty }a_{n}\left(z-z_{0}\right)^{n}, \; \forall \rho < \left|z-z_{0}\right|<\sigma  ,\]
-converge absoluta y uniformemente $\displaystyle \forall z \in \left\{ w \in \Omega \; : \; r \leq \left|w-z_{0}\right|\leq s\right\}  $ con $\displaystyle \rho < r < s < \sigma  $. Además, 
+que converge absoluta y uniformemente en cada conjunto $\displaystyle  \left\{ w \in \Omega \; : \; r \leq \left|w-z_{0}\right|\leq s\right\}  $ con $\displaystyle \rho < r < s < \sigma  $. Los coeficientes $\displaystyle a_{n} $ vienen dados por, 
 \[a_{n} = \frac{1}{2\pi i}\int _{ \left|z-z_{0}\right|=r}\frac{f\left(\xi\right)}{\left(\xi-z_{0}\right)^{n+1}} \; d\xi, \; \forall n \in \N ,\]
-y siguiendo la notación introducida
-\[f_{0}\left(z\right)=\sum^{\infty}_{n = 0}a_{n}\left(z-z_{0}\right)^{n}, \; \forall \left|z-z_{0}\right|<\sigma \quad \text{y} \quad f_{1}\left(z\right)=\sum^{-1}_{-\infty }a_{n}\left(z-z_{0}\right)^{n}, \; \forall \rho < \left|z-z_{0}\right| .\]	
+con $\displaystyle \rho < r < \sigma  $. Además, las funciones $\displaystyle f_{0} $ y $\displaystyle f_{1} $ del teorema anterior son
+\[f_{0}\left(z\right)=\sum^{\infty}_{n = 0}a_{n}\left(z-z_{0}\right)^{n}, \;  \left|z-z_{0}\right|<\sigma \quad \text{y} \quad f_{1}\left(z\right)=\sum^{-1}_{-\infty }a_{n}\left(z-z_{0}\right)^{n}, \;  \rho < \left|z-z_{0}\right| .\]	
 \end{theorem}
 \begin{proof}
-Para simplificar vamos a suponer que $\displaystyle z_{0}= 0 $. Primero, por el teorema anterior sean $\displaystyle f_{0} $ y $\displaystyle f_{1} $ con las propiedades del teorema anterior tales que $\displaystyle f\left(z\right)=f_{0}\left(z\right)+f_{1}\left(z\right) $. Sabemos que $\displaystyle f_{0}\in \mathcal{H}\left(D\left(0, \sigma \right)\right) $, luego
+Para simplificar vamos a suponer que $\displaystyle z_{0}= 0 $. Aplicando el teorema anterior consideremos $\displaystyle f_{0} $ y $\displaystyle f_{1} $ tales que $\displaystyle f\left(z\right)=f_{0}\left(z\right)+f_{1}\left(z\right) $. Sabemos que $\displaystyle f_{0}\in \mathcal{H}\left(D\left(0, \sigma \right)\right) $, luego
 \[f_{0}\left(z\right)=\sum^{\infty}_{n = 0}a_{n}z^{n} ,\]
-con las convergencias prometidas. Ahora, ya que $\displaystyle f_{1}\in \mathcal{H}\left(\hat{\C}\backslash \overline{D}\left(0, \rho\right)\right) $ se sigue que 
+converge absoluta y uniformemente en cada disco $\displaystyle D\left(0, r\right) $ con $\displaystyle r < \sigma  $. Por otro lado, ya que $\displaystyle f_{1}\in \mathcal{H}\left(\hat{\C}\backslash \overline{D}\left(0, \rho\right)\right) $ se sigue que 
 \[g_{1}\left(z\right):=
 \begin{cases}
 f_{1}\left(\frac{1}{z}\right), \; z \neq 0 \\
 0, \; z = 0
 \end{cases}
 ,\]
-será $\displaystyle g_{1}\in \mathcal{H}\left(D\left(0, \frac{1}{\rho }\right)\right) $. Así, $\displaystyle g_{1}\left(z\right)=\sum^{\infty}_{n = 1}b_{n}z^{n} $ con $\displaystyle b_{0}=0 $ puesto que $\displaystyle g_{1}\left(0\right)=0 $. Luego si ponemos $\displaystyle w = \frac{1}{z} $, será
-\[f_{1}\left(w\right)=\sum^{\infty }_{n = 1}b_{n}w^{-n}, \; \forall \left|w\right|> \rho .\]
-Se pone $\displaystyle a_{n}=b_{-n} $, $\displaystyle \forall n < 0 $ y $\displaystyle n \in \Z $ y tenemos la descomposición con las convergencias prometidas. Finalmente, para el cálculo de coeficientes observamos que 
+es holomorfa en $\displaystyle D\left(0, \frac{1}{\rho }\right) $ y por el mismo argumento que antes se puede escribir 
+\[g_{1}\left(z\right)=\sum^{\infty}_{n = 1}b_{n}z^{n} ,\]
+que converge absoluta y uniformemente en cada disco $\displaystyle D\left(0, \alpha \right) $ con $\displaystyle \alpha < \frac{1}{\rho } $. Poniendo $\displaystyle w = \frac{1}{z} $, 
+\[f_{1}\left(w\right)=\sum^{\infty }_{n = 1}b_{n}w^{-n}, \; \forall \left|w\right|> \rho ,\]
+con convergencia absoluta y uniforme en cada conjunto $\displaystyle \hat{\C} \backslash \overline{D}\left(0, r\right) $ con $\displaystyle r > \rho  $. Además, $\displaystyle b_{0}= 0 $ puesto que $\displaystyle f_{1}\left(\infty\right) = 0 $. Poiendo $\displaystyle a_{n}=b_{-n} $, $\displaystyle \forall n < 0 $ y $\displaystyle n \in \Z $ se tiene que
+\[f\left(z\right)=\sum^{\infty}_{-\infty }a_{n}z^{n}, \; \rho < \left|z\right|< \sigma  ,\]
+con convergencia absoluta y uniforme en cualquier conjunto de la forma $\displaystyle r \leq \left|z\right|\leq s $ con $\displaystyle \rho < r < s < \sigma  $. Finalmente, para el cálculo de coeficientes observamos que para cada $\displaystyle n \in \Z $,
 \[
 \begin{split}
 	\int _{ \left|z-z_{0}\right|=r}\frac{f\left(z\right)}{\left(z-z_{0}\right)^{n+1}} \; dz = & \int _{ \left|z-z_{0}\right|=r}\frac{1}{\left(z-z_{0}\right)^{n+1}}\sum^{\infty }_{k=-\infty }a_{k}\left(z-z_{0}\right)^{k} \; dz \\
-	= & \sum^{\infty }_{k = - \infty }a_{k}\int _{ \left|z-z_{0}\right|=r}\left(z-z_{0}\right)^{k-n-1} \; dz = \sum^{\infty }_{k = - \infty }a_{k}\delta_{kn}2\pi i =2\pi ia_{n}, \; \forall n \in\Z.
+	= & \sum^{\infty }_{k = - \infty }a_{k}\int _{ \left|z-z_{0}\right|=r}\left(z-z_{0}\right)^{k-n-1} \; dz = \sum^{\infty }_{k = - \infty }a_{k}\delta_{kn}2\pi i =2\pi ia_{n}.
 \end{split}
 \]
 \end{proof}
@@ -166,13 +175,28 @@ La función $\displaystyle \frac{1}{z-a} $ tiene una singularidad aislada en $\d
 \begin{eg}
 	La función $\displaystyle \frac{1}{\sin\left(\frac{\pi }{z}\right)}$ no está definida en $\displaystyle z = \frac{1}{k} $ para $\displaystyle k \in \Z\backslash \left\{ 0\right\}  $ y $\displaystyle z = 0 $. En este caso, $\displaystyle z = 0 $ no es una singularidad aislada, sin embargo las singularidades de la forma $\displaystyle z = \frac{1}{k} $ con $\displaystyle k \in \Z\backslash \left\{ 0\right\}  $ sí son aisladas.
 \end{eg}
-\begin{definition}[Tipos de singularidades - Clasificación según serie de Laurent en $\displaystyle z_0 $]
+Por el teorema anterior sabemos que si $\displaystyle f $ tiene una singularidad aislada en $\displaystyle z_{0} $, se puede escribir
+\[f\left(z\right)=\sum^{\infty}_{-\infty}a_{n}\left(z-z_{0}\right)^{n}, \; 0 < \left|z-z_{0}\right|<r .\]
+\begin{definition}[Tipos de singularidades - Clasificación según serie de Laurent en $\displaystyle z_0 $] Sea $\displaystyle z_{0} $ una singularidad aislada de $\displaystyle f $, diremos que es:
 \begin{enumerate}
-\item \textbf{Evitable} si $\displaystyle a_{n}=0 $, $\displaystyle \forall n < 0 $ con $\displaystyle n \in \Z  $ en la serie de Laurent. 
-\item \textbf{Polo de orden $\displaystyle N\in\N $} si $\displaystyle a_{n}=0 $ $\displaystyle \forall n <-N $ y $\displaystyle n \in \Z $. Asumimos $\displaystyle a_{-N}\neq 0 $. 
-\item \textbf{Esencial} si existen infinitos $\displaystyle a_{n}\neq 0 $ con $\displaystyle n < 0 $ y $\displaystyle n \in \Z $. 
+\item \textbf{Evitable} si $\displaystyle a_{n}=0 $, $\displaystyle \forall n < 0 $ en la serie de Laurent. 
+\item \textbf{Polo de orden $\displaystyle N $} si existe $\displaystyle N \in \N $ tal que $\displaystyle a_{-N}\neq 0 $ y $\displaystyle a_{n}=0 $, $\displaystyle \forall n <-N $ en la serie de Laurent.  
+\item \textbf{Esencial} si existen infinitos $\displaystyle a_{n}\neq 0 $ con $\displaystyle n < 0 $ en la serie de Laurent. 
 \end{enumerate}
 \end{definition}
+\begin{observation}
+Sea $\displaystyle z_{0} $ una singularidad aislada de $\displaystyle f $. 
+\begin{enumerate}
+\item Claramente las tres posibilidades dadas en la definición anterior son exhaustivas y mutuamente excluyentes.
+\item Si es una singularidad evitable tendremos que 
+	\[f\left(z\right)=\sum^{\infty}_{n = 0}a_{n}\left(z-z_{0}\right)^{n} ,\]
+	y definiendo $\displaystyle f\left(z_{0}\right)=a_{0} $, entonces $\displaystyle f $ es holomorfa en $\displaystyle D\left(z_{0}, r\right) $. 
+\item Si es un polo de orden $\displaystyle N $ tendremos que 
+	\[f\left(z\right)=\frac{a_{-N}}{\left(z-z_{0}\right)^{N}} + \cdots + \frac{a_{-1}}{z-z_{0}}+\sum^{\infty}_{n = 0}a_{n}\left(z-z_{0}\right)^{n} ,\]
+	donde a $\displaystyle P\left(z\right)=\frac{a_{-N}}{\left(z-z_{0}\right)^{N}} + \cdots + \frac{a_{-1}}{z-z_{0}} $ se le llama \textbf{parte principal} de $\displaystyle f $ en $\displaystyle z_{0} $. 
+\end{enumerate}
+\end{observation}
+
 \begin{theorem}[Teorema de Riemann]
 	Si $\displaystyle f\in\mathcal{H}\left(D\left(z_{0}, r\right)\backslash \left\{ z_{0}\right\} \right) $ está acotada, entonces $\displaystyle f $ tiene una singularidad evitable en $\displaystyle z = z_{0} $.
 \end{theorem}
@@ -190,8 +214,12 @@ Vamos a ver ahora que el segundo término va a 0 si $\displaystyle \epsilon \to 
 \]
 Hemos usado que $\displaystyle \left|\xi-z\right|\geq d\left(z, \partial D\left(z_{0}, \epsilon \right)\right) $. Así, nos queda que si $\displaystyle \epsilon \to 0^{+} $, 
 \[f\left(z\right)=\frac{1}{2\pi i}\int _{ \left|z-z_{0}\right|=r}\frac{f\left(\xi\right)}{\xi-z} \; d\xi, \; \forall z \in D\left(z_{0}, r\right)\backslash \left\{ z_{0}\right\}  .\]
-Por el teorema de derivación bajo el signo de la integral, la parte derecha de la igualdad anterior están en $\displaystyle \mathcal{H}\left(D\left(z_{0}, r\right)\right) $, coincide con $\displaystyle f $ en $\displaystyle D\left(z_{0}, r\right)\backslash \left\{ z_{0}\right\}  $. 
+Por el teorema de derivación bajo el signo de la integral, la parte derecha de la igualdad anteriores una función holomorfa en $\displaystyle D\left(z_{0}, r\right) $ y coincide con $\displaystyle f $ en $\displaystyle D\left(z_{0}, r\right)\backslash \left\{ z_{0}\right\}  $. 
 \end{proof}
+\begin{observation}
+El recíproco del teorema anterior es obvio por lo que obtenemos una caracterización de las singularidades evitables para funciones holomorfas.
+\end{observation}
+
 \begin{theorem}[Caracterización de polos]
 Sea $\displaystyle z_{0} $ una singularidad aislada de $\displaystyle f $. Son equivalentes:
 \begin{enumerate}

@@ -74,8 +74,211 @@ Se pueden comprobar una serie de cosas:
 \begin{itemize}
 \item $\displaystyle A\neq \emptyset $ puesto que $\displaystyle p \in A $. En efecto, existe $\displaystyle U_{i_{0}} $ tal que $\displaystyle p \in U_{i_{0}} $. Todos los elementos de $\displaystyle U_{i_{0}} $ se pueden unir con $\displaystyle p $ por una cadena de un eslabón. 
 \item $\displaystyle A $ es abierto. En efecto, dado $\displaystyle z\in A $ tenemos que existe $\displaystyle U_{i_{r}} $ tal que $\displaystyle z \in U_{i_{r}} $ y todos los puntos del abierto $\displaystyle U_{i_{r}} $ se pueden unir con $\displaystyle p $ por la misma cadena que $\displaystyle z $. 
-\item $\displaystyle A $ es cerrado. 
+\item $\displaystyle A $ es cerrado, es decir, $\displaystyle X \backslash A $ es abierto. En efecto, si $\displaystyle x \not\in A $ y $\displaystyle x\in U_{j} $, entonces $\displaystyle U_{j}\cap A = \emptyset $ puesto que si existiese $\displaystyle z \in U_{j}\cap A $, $\displaystyle z $ se podría unir con $\displaystyle p $ por una cadena finita $\displaystyle U_{i_{k}} $, $\displaystyle k = 0, \ldots, r $ y así, $\displaystyle x $ se puede unir por la cadena $\displaystyle U_{i_{0}}, \ldots, U_{i_{r}}, U_{j} $. 
 \end{itemize}
+Como $\displaystyle X $ es conexo y $\displaystyle A \neq \emptyset $ es abierto y cerrado, debe ser que $\displaystyle A = X $.
+\end{proof}
+\begin{prop}
+Sea $\displaystyle f : X \to Y $ una aplicación continua con $\displaystyle X $ conexo. Entonces, $\displaystyle f\left(X\right) $ es conexo. 
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle f\left(X\right)=U\sqcup V$ con $\displaystyle U $ y $\displaystyle V $ abiertos disjuntos de la topología relativa de $\displaystyle f\left(X\right) $. Así, existen $\displaystyle U_{0} $ y $\displaystyle V_{0} $ abiertos en $\displaystyle Y $ tales que 
+\[U = U_{0}\cap f\left(X\right) \quad \text{y} \quad V = V_{0} \cap f\left(X\right) ,\]
+y además $\displaystyle U_{0}\cap V_{0}\cap f\left(X\right)= \emptyset $. Por continuidad de $\displaystyle f $ se tiene que $\displaystyle f^{-1}\left(U\right)=f^{-1}\left(U_{0}\right) $ y $\displaystyle f^{-1}\left(V\right)=f^{-1}\left(V_{0}\right) $ son abiertos en $\displaystyle X $. Además, 
+\[f^{-1}\left(U\right)\cup f^{-1}\left(V\right)= X \quad \text{y} \quad f^{-1}\left(U\right)\cap f^{-1}\left(V\right)= \emptyset .\]
+Por ser $\displaystyle X $ conexo debe ser que $\displaystyle f^{-1}\left(U\right)= \emptyset \Rightarrow U = \emptyset $ o bien $\displaystyle f^{-1}\left(V\right)=\emptyset \Rightarrow V = \emptyset $. 
+\end{proof}
+\begin{prop}
+	Sea $\displaystyle X $ un espacio topológico, $\displaystyle A $ un subespacio conexo y $\displaystyle Z $ tal que $\displaystyle A \subset Z \subset \overline{A} $. Entonces, $\displaystyle Z $ es un subespacio conexo. En particular, $\displaystyle \overline{A} $ es conexo.
+\end{prop}
+\begin{proof}
+Sea $\displaystyle Z = U_{Z}\sqcup V_{Z} $ unión disjunta de abiertos en $\displaystyle Z $. Entonces existen $\displaystyle U,V\subset X $ abiertos tales que 
+\[U_{Z}= U\cap Z \quad \text{y} \quad V_{Z}= V \cap Z .\]
+Como $\displaystyle Z\subset \overline{A} $, si $\displaystyle U_{Z}\neq \emptyset $ se tiene que $\displaystyle U \cap A \neq \emptyset $ y lo mismo para $\displaystyle V_{Z} $. 
+Como $\displaystyle A $ es conexo y $\displaystyle A = \left(U \cap A\right)\sqcup\left(V \cap A\right) $, debe ser que $\displaystyle U \cap A = \emptyset $ y por tanto $\displaystyle U_{Z}= \emptyset $; o bien $\displaystyle V \cap A = \emptyset $ y entonces $\displaystyle V_{Z}= \emptyset $.
+\end{proof}
+\begin{eg}
+	En $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ los intervalos cerrados son conexos por ser la clausura de intervalos abiertos. En particular, $\displaystyle \left[0,1\right]  $ es conexo.
+\end{eg}
+\begin{eg}
+	Si tomamos $\displaystyle p,q\in \R^{n} $, el segmento que los une $\displaystyle \left[p,q\right]  $ es un conexo por ser la imagen de la aplicación continua
+	\[ \left[0,1\right] \to \R^{n} : t \to tp + \left(1-t\right)q .\]
+	Si $\displaystyle A \subset \R^{n} $ es estrellado, es decir, existe $\displaystyle p \in A $ tal que para todo $\displaystyle x \in A $ el segmento que une $\displaystyle p $ con $\displaystyle x $ está contenido en $\displaystyle A $, entonces $\displaystyle A $ es conexo. En efecto, basta con combinar la observación anterior con el teorema del pivote, $\displaystyle A = \bigcup_{x \in A}\left[p,x\right]  $. 
+	Podemos ver que las bolas abiertas y cerradas, los cubos abiertos y cerrados, son estrellados \footnote{Lo que aquí llama estrellado normalmente se le llama \textbf{convexo}.} y por tanto conexos. 
+\end{eg}
+\begin{eg}
+	Para cada función continua $\displaystyle f : \left[0,1\right] \to \R^{n} $, su gráfica es conexa. 
+\end{eg}
+\begin{eg}
+	La gráfica $\displaystyle \Gamma $ de la función continua definida por $\displaystyle \left(0, \infty\right) \to \R : t \to \sin \frac{1}{t} $ es conexa, y como hemos visto que la adherencia de un conexo es conexo, también lo es $\displaystyle \overline{\Gamma }=\Gamma \cup J $ con $\displaystyle J = \left\{ 0\right\} \times \left[-1,1\right]  $. Este conjunto se suele llama el \textbf{seno del topólogo}. 
+\end{eg}
+\section{Comportamiento por construcciones}
+La conexión no es una propiedad hereditaria. En efecto, tenemos que $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ es conexo pero $\displaystyle \Q\subset \R $ no lo es. \\
 
+La conexión se porta bien con el cociente. En efecto, basta ver que como una identificación $\displaystyle f :X \to Y $ es continua y sobreyectiva, si $\displaystyle X $ es conexo también lo será $\displaystyle Y $. 
+\begin{prop}
+Sean $\displaystyle X $ e $\displaystyle Y $ espacios topológicos. Son equivalentes:
+\begin{enumerate}
+\item $\displaystyle X $ e $\displaystyle Y $ son conexos. 
+\item $\displaystyle X \times Y $ es conexo.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Demostramos ambas implicaciones.
+\begin{description}
+	\item[(1) $\displaystyle \Rightarrow $ (2)] Fijando $\displaystyle x_{0}\in X $ tenemos que $\displaystyle \left\{ x_{0}\right\} \times Y $ es conexo por ser homeomorfo a $\displaystyle Y $. Para cada $\displaystyle y \in Y $ se tiene que, análogamente, $\displaystyle X \times \left\{ y\right\}  $ es conexo. Ahora, tenemos que 
+	\[X \times Y = \bigcup_{y \in Y}X \times \left\{ y\right\} \cup \left\{ x_{0}\right\}\times Y .\]
+		Por ser la unión de una familia de conjuntos conexos, es un conexo, de manera que hay uno, el $\displaystyle \left\{ x_{0}\right\} \times Y $ concretamente, que corta a todos los demás. 
+	\item[(2) $\displaystyle \Rightarrow $ (1)] Basta con ver que las proyecciones son continuas y sobreyectivas.
+\end{description}
+\end{proof}
+En general, las sumas finitas de espacios conexos no es un espacio conexo. Basta con ver que cada uno de los espacios $\displaystyle X_{i} $ es abierto y cerrado en $\displaystyle X_{1} + \cdots + X_{r} $. 
+\section{Componentes conexas}
+\begin{definition}[Componente conexa]
+	Una \textbf{componente conexa} de un espacio topológico $\displaystyle X $ es un subespacio conexo maximal del mismo. Es decir, $\displaystyle E \subset X $ es \textbf{componente conexa} si $\displaystyle E $ es conexo y para todo $\displaystyle \tilde{E} $ conexo con $\displaystyle E\subset \tilde{E} $ se tiene que $\displaystyle E = \tilde{E} $. 
+\end{definition}
+\begin{notation}
+Para describir las componentes conexas, vamos a ver cuál es la \textbf{componente conexa que contiene a un punto} $\displaystyle a \in X $, a la que denotaremos por $\displaystyle C\left(a\right) $, esto es
+\[C\left(a\right)=\bigcup_{a \in A, A\; \text{conexo}}A .\]
+\end{notation}
+En efecto, observamos que, por el teorema del pivote, el conjunto definido arriba es conexo. Por otra parte, si $\displaystyle E $ es conexo y $\displaystyle E \cap C\left(a\right)\neq \emptyset $, entonces $\displaystyle C\left(a\right)\cup E $ es conexo, por el teorema del pivote. Como $\displaystyle a \in C\left(a\right)\cup E $ se tiene que $\displaystyle C\left(a\right)\cup E \subset C\left(a\right) $ por lo que $\displaystyle C\left(a\right) $ es un conexo maximal y por tanto $\displaystyle C\left(a\right) $ es una componente conexa de $\displaystyle X $. \\
+
+Si $\displaystyle a,b \in X $, entonces o bien $\displaystyle C\left(a\right)=C\left(b\right) $ o bien $\displaystyle C\left(a\right)\cap C\left(b\right)= \emptyset $. Esto es consecuencia de que si $\displaystyle C\left(a\right)\cap C\left(b\right)\neq \emptyset $, entonces $\displaystyle C\left(a\right)\cup C\left(b\right) $ es conexo y contiene a $\displaystyle C\left(a\right) $. \\
+
+Como la clausura de un conexo es conexo, para cada $\displaystyle a \in X $ se tiene que $\displaystyle \overline{C}\left(a\right) $ es conexo y contiene a $\displaystyle C\left(a\right) $, por lo que debe ser que $\displaystyle C\left(a\right)=\overline{C\left(a\right)} $. \\
+
+Juntado todo lo anterior, deducimos que si $\displaystyle \left\{ C_{i} \; :\; i \in I\right\}  $ es el conjunto de todas las componentes conexas de $\displaystyle X $, 
+\[X = \bigcup_{i \in I}C_{i} ,\]
+es una partición de $\displaystyle X $ por conjuntos cerrados.
+\begin{observation}
+Una forma alternativa de definir las componentes conexas de un espacio topológico $\displaystyle X $ es como las clases de equivalencia por la relación de equivalencia inducida por la partición anterior. 
+\end{observation}
+\begin{eg}
+	Sea $\displaystyle X = \left[0,1\right] \cup \left(2,3\right) $ subespacio de la recta real. Se tiene que $\displaystyle C_{1}=\left[0,1\right]  $ y $\displaystyle C_{2} =\left(2,3\right)$ son sus componentes conexas. En efecto, si $\displaystyle a \in \left[0,1\right]  $ se tiene que $\displaystyle C\left(a\right)=\left[0,1\right] =C_{1} $. Si $\displaystyle a' \in\left[0,1\right]  $ con $\displaystyle a ' \neq a $, $\displaystyle C\left(a\right)=C\left(a'\right)=\left[0,1\right]  $. 
+	Análogamente, si $\displaystyle b \in \left(2,3\right) $ entonces $\displaystyle C\left(b\right)=\left(2,3\right)=C_{2} $, y si $\displaystyle b'\in \left(2,3\right)\backslash \left\{ b\right\}  $ se tiene que $\displaystyle C\left(b'\right)=C\left(b\right)=C_{2} $.
+\end{eg}
+\begin{definition}[Espacio totamente disconexo]
+Un espacio topológico $\displaystyle X $ es \textbf{totalmente disconexo} si sus componentes conexas son los puntos.
+\end{definition}
+\begin{eg}
+Si consideramos $\displaystyle \Q $ como subespacio de $\displaystyle \left(\R, \mathcal{T}_{u}\right) $, es totalmente disconexo. En efecto, si $\displaystyle A \subset \Q $ tiene dos o más puntos, tomando $\displaystyle q_{1}<q_{2} $ dos puntos en $\displaystyle A $, se tiene que tomando $\displaystyle x \in \R \backslash \Q $ tal que $\displaystyle q_{1} < x < q_{2} $,
+\[A = \left(\left(-\infty, x\right)\cap A\right)\sqcup\left(\left(x, \infty\right)\cap A\right) ,\]
+es una partición de $\displaystyle A $ en dos abiertos disjuntos no vacíos. Por tanto, $\displaystyle A $ no es conexo.	
+\end{eg}
+\begin{eg}
+El espacio $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ es totalmente disconexo. También lo es la recta de Sorgenfrey. 
+\end{eg}
+\begin{eg}
+	Consideremos $\displaystyle X = \left\{ 0\right\} \cup \left\{ \frac{1}{n} \; : \; n \in \N\right\}  $ como subespacio de $\displaystyle \left(\R, \mathcal{T}_{u}\right) $. Para cada punto $\displaystyle x \in X $ se tiene que $\displaystyle C\left(x\right)= \left\{ x\right\}  $. La componente conexa de 0, $\displaystyle C\left(0\right)= \left\{ 0\right\}  $, es cerrada pero no es abierta. Basta con ver que no contiene ningún entorno de 0, o también que $\displaystyle X \backslash \left\{ 0\right\}  $ no es cerrado puesto que su adherencia contiene a 0. 
+	Sin embargo, si tomamos $\displaystyle \frac{1}{n_{0}}\in X $, entonces $\displaystyle C\left(\frac{1}{n_{0}}\right)= \left\{ \frac{1}{n_{0}}\right\}  $ es cerrada y abierta puesto que $\displaystyle X \backslash \left\{ \frac{1}{n_{0}}\right\}  $ es cerrado.
+\end{eg}
+\begin{prop}
+Las componentes conexas del espacio $\displaystyle X \times Y $ son los productos de las componentes conexas de $\displaystyle X $ e $\displaystyle Y $.
+\end{prop}
+\begin{proof}
+Sea $\displaystyle \left(x_{0}, y_{0}\right)\in X \times Y $ y sea $\displaystyle E \subset X \times Y $ un conexo tal que $\displaystyle \left(x_{0}, y_{0}\right)\in E $. Como las proyecciones son continuas, $\displaystyle p_{1}\left(E\right) $ es conexo, y como $\displaystyle x_{0}\in p_{1}\left(E\right) $ se tiene que la componente conexa de $\displaystyle x_{0} $ en $\displaystyle X $, que denotaremos por $\displaystyle C_{X}\left(x_{0}\right) $, contiene a $\displaystyle p_{1}\left(E\right) $. 
+Análogamente, $\displaystyle p_{2}\left(E\right) $ es conexo y como $\displaystyle y_{0}\in p_{2}\left(E\right) $ se tiene que la componente conexa de $\displaystyle y_{0} $ en $\displaystyle Y $, que denotaremos por $\displaystyle C_{Y}\left(y_{0}\right) $, contiene a $\displaystyle p_{2}\left(E\right) $. Por tanto, $\displaystyle C_{X}\left(x_{0}\right)\times C_{Y}\left(y_{0}\right) $ es un conexo por ser producto de conexos y como $\displaystyle E \subset C_{X}\left(x_{0}\right)\times C_{Y}\left(y_{0}\right) $ es el conexo maximal que contiene al punto $\displaystyle \left(x_{0}, y_{0}\right) $. 
+\end{proof}
+\section{Conexión local}
+\begin{definition}[Conjunto localmente conexo]
+Un espacio topológico $\displaystyle X $ es \textbf{localmente conexo} si cada punto $\displaystyle x \in X $ tiene una base $\displaystyle \mathcal{B}^{x} $ de entornos abiertos que son conexos. 
+\end{definition}
+\begin{eg}
+El espacio $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ es localmente conexo puesto que los intervalos abiertos son abiertos conexos. Sin embargo, $\displaystyle \Q \subset \R $ no es localmente conexo puesto que los únicos subconjuntos conexos de $\displaystyle \Q $ son los unipuntuales, que no son entornos.
+\end{eg}
+\begin{prop}
+$\displaystyle X $ es localmente conexo si y sólo si para todo subconjunto abierto $\displaystyle U \subset X $ las componentes conexas de $\displaystyle U $ son abiertas.
+\end{prop}
+\begin{proof}
+Demostramos ambas implicaciones.
+\begin{description}
+\item[($\displaystyle \Rightarrow $)] Supongamos que $\displaystyle X $ es localmente conexo. Sea $\displaystyle U\subset X $ abierto y $\displaystyle C\subset U $ una componente conexa de $\displaystyle U $. Si $\displaystyle x \in C $, por ser $\displaystyle X $ localmente conexo existe una base $\displaystyle \mathcal{B}^{x} $ de entornos abiertos conexos de $\displaystyle x $ en $\displaystyle X $. Como $\displaystyle U $ es entorno abierto de $\displaystyle x $, debe existir $\displaystyle U^{x}\in \mathcal{B}^{x} $ tal que $\displaystyle U^{x}\subset U $. Como $\displaystyle x \in U^{x}\cap C $, por el teorema del pivote $\displaystyle U^{x}\cup C $ es conexo. Por maximalidad de $\displaystyle C $ debe ser que $\displaystyle U^{x}\cup C = C $ por lo que $\displaystyle U^{x}\subset C $. Así, debe ser que $\displaystyle C $ es entorno de $\displaystyle x $ y como es entorno de todos sus puntos, es abierto.
+\item[($\displaystyle \Leftarrow $)] Supongamos ahora que las componentes conexas de los abiertos son abiertas. Sea $\displaystyle U $ un entorno de $\displaystyle x $. Si $\displaystyle C $ es la componente conexa de $\displaystyle x $ en $\displaystyle U $, $\displaystyle C $ es abierta en $\displaystyle U $ y por tanto en $\displaystyle X $. Hemos demostrado así que el conjunto 
+	\[ \left\{ W\subset X \; : \; x \in W, \; W \; \text{abierto y conexo}\right\}  ,\]
+	es una base de entornos abiertos del punto $\displaystyle x $ en el espacio topológico $\displaystyle X $. 
+\end{description}
+\end{proof}
+\begin{colorary}
+Si $\displaystyle X $ es un espacio localmente conexo, sus componentes conexas son abiertas.
+\end{colorary}
+\begin{proof}
+Como $\displaystyle X $ es abierto, basta con aplicar la condición anterior.
+\end{proof}
+
+\begin{eg}
+	Un espacio conexo puede no ser localmente conexo. En efecto, el seno topológico es conexo, como vimos anteriormente, pero no es localmente conexo. Basta con ver que los puntos $\displaystyle \left\{ 0\right\} \times \left[-1,1\right]  $ no tienen una base de entornos conexos.
+\end{eg}
+\begin{prop}
+Dado un espacio topológico $\displaystyle X $, son equivalentes:
+\begin{enumerate}
+\item $\displaystyle X $ es localmente conexo.
+\item Para cada $\displaystyle x \in X $, existe una base $\displaystyle \mathcal{V}^{x} $ de entornos de $\displaystyle x $ que son conexos.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Demostramos ambas implicaciones.
+\begin{description}
+\item[(1) $\displaystyle \Rightarrow $ (2)] Basta con considerar la definición que hemos dado de la conexión local.
+\item[(2) $\displaystyle \Rightarrow $ (1)] Sea $\displaystyle U\subset X $ abierto. Sea $\displaystyle C $ una componente conexa de $\displaystyle U $ y tomemos un punto $\displaystyle x \in C $. Como $\displaystyle U $ es entorno abierto de $\displaystyle x $ en $\displaystyle X $, existe $\displaystyle V^{x}\in \mathcal{V}^{x} $ tal que $\displaystyle x \in V^{x}\subset U $. Por maximalidad de las componentes conexas se tiene que $\displaystyle V^{x}\subset C $. Entonces, $\displaystyle C $ es entorno de $\displaystyle x $. Así, hemos concluido que $\displaystyle C $ es entorno de todos sus puntos por lo que es abierto. Aplicar la proposición anterior.
+\end{description}
+\end{proof}
+\subsection{Comportamiento bajo construcciones de la conexión local}
+Es sencillo ver que no es hereditaria puesto que $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ es localmente conexo pero $\displaystyle \Q\subset \R $ no lo es. Sin embargo, por la proposición anterior tenemos que la conexión local la heredan los subconjuntos abiertos de $\displaystyle X $. \\
+
+La conexión es productiva. Esto es, si dos espacios $\displaystyle X $ e $\displaystyle Y $ son localmente conexos, lo es también su producto $\displaystyle X \times Y $. En efecto, si $\displaystyle \left(x_{0}, y_{0}\right)\in X \times Y $ podemos obtener una base de entornos abiertos conexos formando los productos de los entornos de una base $\displaystyle \mathcal{U}^{x_{0}} $ de entornos abiertos conexos de $\displaystyle x_{0}\in X $, y los entornos de una base $\displaystyle \mathcal{V}^{y_{0}} $ de entornos abiertos conexos de $\displaystyle y_{0}\in Y $. \\
+
+La suma finita de espacios localmente conexos es un espacio localmente conexo. Esto es consecuencia de que localmente la suma es como los espacios sumandos. 
+\begin{prop}
+Sea $\displaystyle f : X \to Y $ una identificación con $\displaystyle X $ un espacio localmente conexo. Entonces, $\displaystyle Y $ es localmente conexo. 
+\end{prop}
+\begin{proof}
+Sea $\displaystyle U\subset Y $ un abierto. Por una proposición anterior debemos mostrar que las componentes conexas de $\displaystyle U $ son abiertas. Sea $\displaystyle C \subset U $ una componente conexa de $\displaystyle U $. Tomemos $\displaystyle x \in f^{-1}\left(C\right)\subset f^{-1}\left(U\right) $, donde $\displaystyle f^{-1}\left(U\right)\subset X $ es abierto por ser $\displaystyle f $ continua. 
+Por ser $\displaystyle X $ localmente conexo y ser $\displaystyle f^{-1}\left(U\right) $ entorno abierto de $\displaystyle x $, existe $\displaystyle U^{x}\subset f^{-1}\left(U\right) $ entorno abierto conexo de $\displaystyle x $.
+La continuidad de $\displaystyle f $ implica que $\displaystyle f\left(U^{x}\right) $ es conexo. Además $\displaystyle C \cap f\left(U^{x}\right)\neq \emptyset $ y como $\displaystyle C \cap f\left(U^{x}\right)\subset U $, dada la maximalidad de $\displaystyle C $ como conexo en $\displaystyle U $ debe ser que $\displaystyle f\left(U^{x}\right)\subset C $. Pero eso implica que $\displaystyle x \in U^{x}\subset f^{-1}\left(C\right) $. Así, hemos visto que $\displaystyle f^{-1}\left(C\right) $ es entorno de todos sus puntos, por lo que es abierto en $\displaystyle X $. Puesto que $\displaystyle f $ es una identificación, esta es la condición necesaria y suficiente para asegurar que $\displaystyle C\subset Y $ es abierto.
+\end{proof}
+\section{Conexión por caminos}
+\subsection{Caminos en un espacio topológico}
+\begin{definition}[Camino]
+	Dado un espacio topológico $\displaystyle X $, el \textbf{camino} que une un punto $\displaystyle p \in X $ con otro punto $\displaystyle q \in X $ es una aplicación continua $\displaystyle \alpha:\left[0,1\right] \to X $ tal que $\displaystyle \alpha\left(0\right)=p $ y $\displaystyle \alpha\left(1\right)=q $.
+\end{definition}
+\begin{notation}
+	La imagen $\displaystyle \alpha\left(\left[0,1\right] \right) $, que es un subespacio conexo de $\displaystyle X $, la denominaremos \textbf{traza} del camino. 
+\end{notation}
+\begin{observation}
+Es sencillo ver que si $\displaystyle p $ y $\displaystyle q $ se pueden unir por un camino en $\displaystyle X $ están en la misma componente conexa.
+\end{observation}
+\begin{observation}
+	Es inmediato observar que cualquier aplicación continua $\displaystyle \alpha : \left[a,b\right] \to X $ tal que $\displaystyle \alpha\left(a\right)=p $ y $\displaystyle \alpha\left(b\right)=q $ da lugar, por medio de una reparametrización a un camino. En efecto, si $\displaystyle \varphi : \left[0,1\right] \to \left[a,b\right]  $ es un homeomorfismo, y consideremos la aplicación
+	\[\alpha \circ \varphi : \left[0,1\right] \to X : t \to \alpha\left(\varphi\left(t\right)\right) ,\]
+obtenemos un camino en $\displaystyle X $ de $\displaystyle p $ a $\displaystyle q $. Aunque el homeomorfismo $\displaystyle \varphi $ no es único, podemos considerar uno especialmente sencillo: $\displaystyle \varphi\left(t\right)=\left(1-t\right)a + tb $. 	
+\end{observation}
+\begin{definition}[Producto de caminos]
+Sean $\displaystyle \alpha  $ y $\displaystyle \beta  $ dos caminos en $\displaystyle X $ con $\displaystyle \alpha\left(0\right)=p_{1} $, $\displaystyle \alpha\left(1\right)=\beta\left(0\right)=p_{2} $ y $\displaystyle \beta\left(1\right)=p_{3} $. Decimos que el camino
+\[\alpha * \beta : \left[0,1\right] \to X : t \to 
+\begin{cases}
+\alpha\left(2t\right), \; 0 \leq t \leq \frac{1}{2} \\
+\beta\left(2t-1\right), \; \frac{1}{2}\leq t\leq 1
+\end{cases}
+,\]
+que une $\displaystyle p_{1} $ con $\displaystyle p_{3} $ es el \textbf{producto de los caminos} $\displaystyle \alpha  $ y $\displaystyle \beta  $. 
+\end{definition}
+\begin{definition}[Espacio conexo por caminos]
+Un espacio topológico $\displaystyle X $ es \textbf{conexo por caminos} si dados dos puntos cualesquiera $\displaystyle p,q\in X $ existe un camino en $\displaystyle X $ que une $\displaystyle p $ con $\displaystyle q $.
+\end{definition}
+\begin{prop}
+Si $\displaystyle X $ es conexo por caminos, es conexo.
+\end{prop}
+\begin{proof}
+Usamos el teorema del pivote. Fijamos $\displaystyle p \in X $. Para cada $\displaystyle x \in X $ existe un camino que une $\displaystyle p $ con $\displaystyle x $. Denotamos por $\displaystyle \Gamma_{p,x} $ su traza, que es un subespacio conexo de $\displaystyle X $ que contiene a $\displaystyle p $ y $\displaystyle x $. Como 
+\[X = \bigcup_{x \in X}\Gamma_{p,x} \quad \text{y} \quad p \in \bigcap_{x \in X}\Gamma_{p,x}\neq \emptyset ,\]
+se tiene que $\displaystyle X $ es conexo.
+\end{proof}
+\begin{prop}
+Sea $\displaystyle X $ un espacio conexo por caminos y $\displaystyle f : X \to Y $ una aplicación continua. Entonces $\displaystyle f\left(X\right)\subset Y $ es conexo por caminos. 
+\end{prop}
+\begin{proof}
+	Dados $\displaystyle y_{1}, y_{2}\in f\left(X\right) $, escogemos $\displaystyle x_{1}\in X $ tal que $\displaystyle f\left(x_{1}\right)=y_{1} $ y $\displaystyle x_{2}\in X $ con $\displaystyle f\left(x_{2}\right)=y_{2} $. Como $\displaystyle X $ es conexo por caminos, existe $\displaystyle \alpha : \left[0,1\right] \to X $ continua con $\displaystyle \alpha\left(0\right)=x_{1} $ y $\displaystyle \alpha\left(1\right)=x_{2} $. Claramente, 
+	\[f\circ \alpha : \left[0,1\right] \to f\left(X\right)\subset Y : t \to f\left(\alpha\left(t\right)\right) ,\]
+	es un camino en $\displaystyle f\left(X\right) $ que une $\displaystyle y_{1} $ con $\displaystyle y_{2} $.
 \end{proof}
 

@@ -1,7 +1,7 @@
 \chapter{Conceptos básicos de estabilidad y estabilidad para sistemas lineales}
 Estabilidad : si cambiando ligeramente las condiciones iniciales la solución cambia poco para todo tiempo $\displaystyle t \geq t_{0} $. 
 \section{Conceptos de estabilidad}
-Supongamos que $\displaystyle f : D \subset \R \times \R^{n} \to \R^{n} $ es una función continua y localmente Lipschitz respecto a la segunda variable. Sea $\displaystyle \overline{x} : [\tau, \infty) \to \R $ una solución del sistema $\displaystyle \overline{x}' = f\left(t, \overline{x}\right) $. 
+Supongamos que $\displaystyle f : D \subset \R \times \R^{n} \to \R^{n} $ es una función continua y localmente Lipschitz respecto a la segunda variable. Sea $\displaystyle \overline{x} : [\tau, \infty) \to \R^{n} $ una solución del sistema $\displaystyle \overline{x}' = f\left(t, \overline{x}\right) $. 
 \begin{definition}[Estabilidad]
 Diremos que $\displaystyle \overline{x} $ es una solución \textbf{estable} si para todo $\displaystyle \epsilon > 0 $ y $\displaystyle t_{0}\geq \tau $ existe $\displaystyle \delta > 0 $ tal que si $\displaystyle \|x_{0}-\overline{x}\left(t_{0}\right)\| < \delta  $ entonces $\displaystyle \|\varphi\left(t; t_{0}, x_{0}\right)-\overline{x}\left(t\right)\| < \epsilon  $, $\displaystyle \forall t \geq t_{0} $. Diremos que una solución es \textbf{inestable} si no es estable.  
 \end{definition}
@@ -34,9 +34,13 @@ Consideremos la EDO no lineal $\displaystyle x ' = x^{2} $, cuyo flujo se puede 
 \[\varphi\left(t; t_{0}, x_{0}\right)=\frac{x_{0}}{1-x_{0}\left(t-t_{0}\right)} .\]
 En este caso la estabilidad depende de la solución cuya estabilidad queremos estudiar. Tomemos 
 \[ \overline{x}\left(t\right)=\frac{\overline{x}\left(t_{0}\right)}{1-\overline{x}\left(t_{0}\right)\left(t-t_{0}\right)} .\]
-Por un lado, si $\displaystyle \overline{x}\left(t_{0}\right) > 0 $ observamos que la solución sólo está definida en el intervalo $\displaystyle \left(-\infty, t_{0} + \frac{1}{x_{0}}\right) $. Como no está definida hasta $\displaystyle \infty  $, no es estable. Esto mismo hace imposible la estabilidad de la solución $\displaystyle \overline{x}\left(t\right)\equiv 0 $. En efecto, por muy cerca que elijamos $\displaystyle x_{0} $, si $\displaystyle x_{0} > 0 $ sabemos que la solución no está definida globalmente hasta $\displaystyle \infty  $. Por otro lado, si $\displaystyle \overline{x}\left(t_{0}\right) < 0 $ se tiene que 
+Distinguimos dos casos:
+\begin{itemize}
+\item Por un lado, si $\displaystyle \overline{x}\left(t_{0}\right) > 0 $ observamos que la solución sólo está definida en el intervalo $\displaystyle \left(-\infty, t_{0} + \frac{1}{x_{0}}\right) $. Como no está definida hasta $\displaystyle \infty  $, no es estable. Esto mismo hace imposible la estabilidad de la solución $\displaystyle \overline{x}\left(t\right)\equiv 0 $. En efecto, por muy cerca que elijamos $\displaystyle x_{0} $, si $\displaystyle x_{0} > 0 $ sabemos que la solución no está definida globalmente hasta $\displaystyle \infty  $.
+\item Por otro lado, si $\displaystyle \overline{x}\left(t_{0}\right) < 0 $ se tiene que 
 \[ \left|\overline{x}\left(t\right)-\varphi\left(t; t_{0}, x_{0}\right)\right| = \frac{ \left|\overline{x}\left(t_{0}\right)-x_{0}\right|}{ \left|1-\overline{x}\left(t_{0}\right)\left(t-t_{0}\right)\right| \left|1-x_{0}\left(t-t_{0}\right)\right|} ,\]
-de donde se sigue la estabilidad asintótica tomando $\displaystyle \delta \min \left\{ \epsilon , \left|\overline{x}\left(t_{0}\right)\right|\right\}  $ y $\displaystyle \eta = \left|\overline{x}\left(t_{0}\right)\right| > 0 $. 
+de donde se sigue la estabilidad asintótica tomando $\displaystyle \delta \min \left\{ \epsilon , \left|\overline{x}\left(t_{0}\right)\right|\right\}  $ y $\displaystyle \eta = \left|\overline{x}\left(t_{0}\right)\right| > 0 $.
+\end{itemize} 
 \end{eg}
 \begin{eg}
 Consideremos la EDO no lineal $\displaystyle x '= x\left(1- x\right) $, cuyo flujo se puede obtener de forma explícita:
@@ -56,9 +60,9 @@ entonces
 \begin{proof}
 En primer lugar, tenemos que 
 \[g\left(t, 0\right)=f\left(t, \overline{x}\left(t\right)\right)-f\left(t, \overline{x}\left(t\right)\right)=0 = \overline{y}'\left(t\right) ,\]
-por lo que $\displaystyle \overline{y}\left(t\right)\equiv 0 $ es solución de $\displaystyle y' = g\left(t,y\right) $, $\displaystyle \forall t \geq \tau $. Ahora, sea $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ el flujo de $\displaystyle x' = f\left(t,x\right) $ y $\displaystyle \phi\left(t; t_{0}, x_{0}\right) $ el flujo de $\displaystyle y' = g\left(t,y\right) $. Entonces es sencillo comprobar que, 
-\[\phi\left(t; t_{0}, y_{0}\right)=\varphi\left(t, t_{0}, y_{0} + \overline{x}\left(t_{0}\right)\right)-\overline{x}\left(t_{0}\right) .\]
-Si cogemos $\displaystyle z\left(t\right):=\varphi\left(t, t_{0}, y_{0} + \overline{x}\left(t_{0}\right)\right)-\overline{x}\left(t\right)  $, tenemos que 
+por lo que $\displaystyle \overline{y}\left(t\right)\equiv 0 $ es solución de $\displaystyle y' = g\left(t,y\right) $, $\displaystyle \forall t \geq \tau $. Ahora, sea $\displaystyle \varphi\left(t; t_{0}, x_{0}\right) $ el flujo de $\displaystyle x' = f\left(t,x\right) $ y $\displaystyle \phi\left(t; t_{0}, y_{0}\right) $ el flujo de $\displaystyle y' = g\left(t,y\right) $. Entonces es sencillo comprobar que, 
+\[\phi\left(t; t_{0}, y_{0}\right)=\varphi\left(t, t_{0}, y_{0} + \overline{x}\left(t_{0}\right)\right)-\overline{x}\left(t\right) .\]
+Una vez fijados $\displaystyle t_{0} $ e $\displaystyle y_{0} $, si cogemos $\displaystyle z\left(t\right):=\varphi\left(t, t_{0}, y_{0} + \overline{x}\left(t_{0}\right)\right)-\overline{x}\left(t\right)  $, tenemos que 
 \[
 \begin{split}
 	z'\left(t\right)= &\frac{d}{dt}\left(\varphi\left(t, t_{0}, y_{0} + \overline{x}\left(t_{0}\right)\right)-\overline{x}\left(t\right) \right)=\frac{d\varphi}{dt}\left(t; t_{0}, y_{0}+\overline{x}\left(t_{0}\right)\right)-\overline{x}'\left(t\right)\\
@@ -80,7 +84,7 @@ Gracias a este resultado, a partir de ahora podremos centrarnos en estudiar la e
 \section{Estabilidad para sistemas lineales}
 Consideremos el sistema 
 \[x' = A\left(t\right)x + b\left(t\right) ,\]
-con $\displaystyle A\in \mathcal{C}\left(I, \R^{n \times m}\right) $ y $\displaystyle b \in \mathcal{C}\left(I, \R^{n}\right) $, con $\displaystyle I $ un intervalo de $\displaystyle \R $. 
+con $\displaystyle A\in \mathcal{C}\left(I, \R^{n \times n}\right) $ y $\displaystyle b \in \mathcal{C}\left(I, \R^{n}\right) $, con $\displaystyle I $ un intervalo de $\displaystyle \R $. 
 \begin{observation}
 Con estas hipótesis de $\displaystyle A $ y $\displaystyle b $ podemos tomar
 \[f\left(t,x\right)=A\left(t\right)x + b\left(t\right) ,\]
@@ -159,10 +163,8 @@ donde $\displaystyle \|\Phi\|_{F} $ es la norma de Frobenius de la matriz $\disp
 Por tanto, da igual cómo elijamos $\displaystyle \eta  $ que tenemos asegurada la convergencia a cero. 
 \end{description}
 \end{proof}
-\begin{eg}[Problema 24, Hoja 2]
-	Tenemos un sistema $\displaystyle x' = A\left(t\right)x $ con $\displaystyle A\left(t\right)=A\left(t + T\right) $ para cierto $\displaystyle T \in \R $. Sabemos que existe una solución $\displaystyle x\left(t\right)\not\equiv 0 $ y que es $\displaystyle T $-periódica. Queremos ver que no es asintóticamente estable. Si lo fuera, por lo que acabamos de ver, tendríamos que tendería a 0 cuando $\displaystyle t \to \infty $, que no sucede al ser $\displaystyle T $-periódica y no idénticamente nula.
-\end{eg}
-Supongamos ahora que tenemos un sistema lineal homogéneo autónomo, es decir,
+\section{Estabilidad para sistemas lineales con coeficientes constantes}
+\noindent Supongamos ahora que tenemos un sistema lineal homogéneo autónomo, es decir,
 \[x' = Ax, \; A \in \R^{n \times n} ,\]
 tal que $\displaystyle A $ tiene coeficientes constantes. 
 \begin{observation}[Recordatorio]
