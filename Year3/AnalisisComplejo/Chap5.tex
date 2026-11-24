@@ -52,4 +52,67 @@ Las funciones racionales $\displaystyle \frac{P\left(z\right)}{Q\left(z\right)} 
 \[\frac{P\left(\frac{1}{z}\right)}{Q\left(\frac{1}{z}\right)} = \frac{a_{0} + a_{1}\frac{1}{z}+ \cdots + a_{n}\frac{1}{z^{n}}}{b_{0} + b_{1}\frac{1}{z}+ \cdots + b_{m}\frac{1}{z^{m}}}  = \frac{z^{m}}{z^{n}}\frac{a_{n}+a_{n-1}z+ \cdots + z_{0}z^{n}}{b_{m}+b_{m -1}z + \cdots + b_{0}z^{m}}.\]
 La segunda parte de la función es holomorfa cerca de 0 y no se anula en 0. Puede ser potencia del polo o singularidad evitable dependiendo de si $\displaystyle n \geq m $ o $\displaystyle n < m $. 
 \end{eg}
+\begin{theorem}
+sea $\displaystyle f \in \mathcal{M}\left(\hat{\C}\right) $. Entonces, $\displaystyle f $ es una función racional.
+\end{theorem}
+\begin{proof}
+Ya vimos anteriormente que si $\displaystyle f\in \mathcal{M}\left(\hat{\C}\right) $ tiene un número finito de polos. Sean $\displaystyle z_{1}, \ldots, z_{m} $ los polos en $\displaystyle \C $ de $\displaystyle f $. Definimos la función
+\[P_{\infty}\left(z\right)=
+\begin{cases}
+f\left(\infty\right), \; \text{si} \; f \; \text{holomorfa en }\infty \\
+\text{parte principal de $\displaystyle f $ en $\displaystyle \infty $}, \; \text{en caso contrario}
+\end{cases}
+.\]
+Habiendo definido así $\displaystyle P_{\infty}\left(z\right) $, tenemos que 
+\[\lim_{ \left|z\right| \to \infty }f\left(z\right)-P_{\infty}\left(z\right)=0 .\]
+Similarmente, si ponemos
+\[P_{k}\left(z\right)=\frac{a_{k,1}}{z-z_{k}} + \frac{a_{k,2}}{\left(z-z_{k}\right)^{2}} + \cdots + \frac{a_{k,N}}{\left(z-z_{k}\right)^{N}}, \; \forall k \in \left\{ 1, \ldots, m\right\}  ,\]
+para las partes principales de $\displaystyle f $ alrededor de los polos $\displaystyle z_{1}, \ldots, z_{m} $. Las funciones $\displaystyle P_{k}\in \mathcal{H}\left(\hat{\C}\backslash \overline{D}\left(0,R\right)\right) $ para algún $\displaystyle R > 0 $ lo suficientemente grande. Además, $\displaystyle P_{k}\left(\infty \right)=0 $, $\displaystyle \forall k \in \left\{ 1, \ldots, m\right\}  $. Consideremos ahora 
+\[g\left(z\right):=f\left(z\right)-P_{\infty}\left(z\right)-\sum^{m}_{j = 1}P_{j}\left(z\right) .\]
+Por construcción tenemos que $\displaystyle g \in \mathcal{H}\left(\C\right) $ y además $\displaystyle \lim_{ \left|z\right| \to \infty}g\left(z\right)=0 $. Por tanto, es sencillo ver que $\displaystyle g $ está acotada en $\displaystyle \C $. 
+Por Liouville tenemos que $\displaystyle g $ es constante. Como $\displaystyle \lim_{ \left|z\right| \to \infty }g\left(z\right)=0 $ debe ser que $\displaystyle g \equiv 0 $. Por tanto, 
+\[f\left(z\right)=P_{\infty}\left(z\right)+\sum^{\infty}_{j = 1}P_{j}\left(z\right) ,\]
+es racional.
+\end{proof}
+\section{Teorema de los resíduos y consecuencias}
+\begin{definition}[Resíduo de una función en un punto]
+Sea $\displaystyle z_{0} $ una singularidad aislada de $\displaystyle f $ y póngase que 
+\[f\left(z\right)=\sum^{\infty}_{-\infty}a_{n}\left(z-z_{0}\right)^{n}, \; 0 < \left|z-z_{0}\right|<\sigma  ,\]
+para un $\displaystyle \sigma > 0 $. Llamamos \textbf{resíduo de $\displaystyle f $ en $\displaystyle z_{0} $}, denotado por $\displaystyle Res\left(f, z_{0}\right) $, al coeficiente $\displaystyle a_{-1} $. Es decir, 
+\[Res\left(f, z_{0}\right)=\frac{1}{2\pi i}\int _{ \left|z\right|=r}f\left(z\right) \; dz, \; \forall r < \sigma  .\]
+\end{definition}
+\begin{eg}
+Consideremos los siguientes ejemplos:
+\begin{enumerate}
+\item $\displaystyle Res\left(\frac{1}{z}, 0\right)=1 $. 
+\item $\displaystyle Res\left(\frac{1}{z^{n}}, 0\right) $ es $\displaystyle 1 $ si $\displaystyle n = - 1 $ y $\displaystyle 0  $ si $\displaystyle n \in \Z \backslash \left\{ -1\right\}  $. 
+\item $\displaystyle Res\left(e^{\frac{1}{z}}, 0\right)=1 $. 
+\item $\displaystyle Res\left(\frac{1}{1+z^{2}}, i\right)= -\frac{i}{2}$.
+\end{enumerate}
+\end{eg}
+\begin{theorem}[Teorema de los resíduos]
+	Sean $\displaystyle \Omega, U_{1}, \ldots, U_{m} $ abiertos simplemente conexos acotados con $\displaystyle \partial \Omega, \partial U_{1}, \ldots, \partial U_{m} $ curvas cerradas simples de clase $\displaystyle \mathcal{C}^{1} $ a trozos con $\displaystyle \overline{U}_{j}\subset \Omega  $, $\displaystyle \forall j \in \left\{ 1, \ldots, m\right\}  $ y $\displaystyle \overline{U}_{j}\cap \overline{U}_{k}= \emptyset $ si $\displaystyle j \neq k $. 
+	Sea $\displaystyle D = \Omega \backslash \bigcup_{j = 1}^{m}\overline{U}_{j} $ y $\displaystyle f \in \mathcal{H}\left(\overline{D}\right) $ excepto por singularidades aisladas $\displaystyle z_{1}, \ldots, z_{n}\in D $. 
+	Entonces, 
+	\[\int _{D} f = \int _{\partial \Omega }f -\sum^{m}_{j = 1}\int _{\partial U_{j}}f =2\pi i\sum^{n}_{k = 1}Res\left(f, z_{k}\right) .\]
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle \epsilon > 0 $ de modo que $\displaystyle \overline{D}\left(z_{j}, \epsilon \right)\subset D $, $\displaystyle \forall j \in \left\{ 1, \ldots, n\right\}  $ y sea
+	\[D_{\epsilon }=\Omega \backslash \left(\bigcup_{j = 1}^{m}\overline{U}_{j}\cup \bigcup_{k = 1}^{n}\overline{D}\left(z_{j}, \epsilon \right)\right) .\]
+	Por la fórmula de Cauchy para recintos múltiplemente conexos tenemos que 
+	\[0 = \int _{\partial D_{\epsilon }} f = \int _{\partial \Omega }f -\sum^{m}_{j = 1}\int _{\partial U_{j}}f -\sum^{m}_{k = 1}\int _{\partial D\left(z_{k}, \epsilon \right)}f  .\]
+	De donde se sigue que
+	\[\int _{\partial \Omega }f -\sum^{m}_{j = 1}\int _{\partial U_{j}}f =\sum^{n}_{k = 1}\int _{\partial D\left(z_{k}, \epsilon \right)}f =2\pi i\sum^{n}_{k = 1}Res\left(f, z_{k}\right) .\]
+\end{proof}
+\subsection*{Reglas útiles para cálculo de resíduos}
+\begin{prop}
+\begin{enumerate}
+\item Si $\displaystyle f $ tiene un polo simple en $\displaystyle z_{0} $, 
+	\[Res\left(f, z_{0}\right)=\lim_{z \to z_{0}}\left(z-z_{0}\right)f\left(z\right) .\]
+\item Si $\displaystyle f $ tiene un polo doble
+	\[Res\left(f, z_{0}\right)=\lim_{z \to z_{0}}\frac{d}{dz}\left(\left(z-z_{0}\right)^{2}f\left(z\right)\right) .\]
+\item Si $\displaystyle f $ y $\displaystyle g $ son holomorfas en $\displaystyle z_{0} $ con $\displaystyle g $ tiene un cero de orden $\displaystyle 1 $, entonces
+	\[Res\left(\frac{f}{g}, z_{0}\right)=\frac{f\left(z_{0}\right)}{g'\left(z_{0}\right)} .\]
+\end{enumerate}
+\end{prop}
 

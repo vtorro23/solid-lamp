@@ -725,8 +725,8 @@ Basta con ver que si $\displaystyle \textbf{x}  = \textbf{y} \circ h $ con $\dis
 A partir de la igualdad anterior es trivial ver que si $\displaystyle \det\left(Jh\right) > 0$ se conserva la orientación mientras que si $\displaystyle \det\left(Jh\right)<0 $ se invierte. 
 \end{proof}
 
-\begin{definition}[Reparametrizaciones]
-Se llaman reparametrización
+\begin{definition}[Tipos de reparametrizaciones]
+Dada una reparametrización $\displaystyle h $, decimos que es
 \begin{itemize}
 \item \textbf{positiva} si $\displaystyle \det\left(Jh\right)>0 $. 
 \item \textbf{negativa} si $\displaystyle \det\left(Jh\right)<0 $. 
@@ -968,7 +968,7 @@ Consideremos ambas implicaciones.
 \begin{description}
 	\item[($\displaystyle \Rightarrow $)] Si $\displaystyle F $ es difeomorfismo sabemos que es diferenciable y biyectiva, por lo que sólo nos falta ver que $\displaystyle \forall p \in S_{1} $ la aplicación $\displaystyle d _{p}F : T_{p}S_{1}\to T_{F\left(p\right)}S_{2} $ es isomorfismo.
 		Por el teorema de la función inversa tenemos que 
-		\[\det\left(J\tilde{F}\left(p\right)\right) \det\left(J\tilde{F}^{-1}\left(f\left(p\right)\right)\right)=1 ,\]
+		\[\det\left(J\tilde{F}\left(p\right)\right) \det\left(J\tilde{F}^{-1}\left(F\left(p\right)\right)\right)=1 ,\]
 		por lo que $\displaystyle \det\left(J\tilde{F}\left(p\right)\right)\neq 0 $ y en consecuencia $\displaystyle d _{p}F $ es isomorfismo. 
 \item[($\displaystyle \Leftarrow $)] Como es biyectiva sabemos que existe $\displaystyle F^{-1} : S_{2} \to S_{1} $. Como $\displaystyle d _{p}F $ es isomorfismo tenemos que 
 	\[\det\left(J\tilde{F}_{\left(u_{0}, v_{0}\right)}\right)\neq 0 ,\]
@@ -1007,11 +1007,7 @@ También podríamos haber demostrado este corolario utilizando la expresión mat
 \begin{notation}
 Un abuso de notación que se utiliza a veces es $\displaystyle d _{p}F\left(\frac{\partial }{\partial u}\right)=\frac{\partial F}{\partial u} $.
 \end{notation}
-\begin{eg}[Ejercicio 5]
-	Sea $\displaystyle \mathbb{S}^{2} $ y $\displaystyle \mathcal{E} = \left\{ \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} + \frac{z^{2}}{c^{2}}= 1\right\}  $. Consideremos la aplicación 
-	\[F : \mathbb{S}^{2} \to \mathcal{E} : \left(x,y,z\right)\to \left(ax, by, cz\right) .\]
-	Hay que comprobar que está bien definida. Es fácil comprobar que es biyectiva. Hay que ver que es diferenciable. Aparentemente se puede usar el ejercicio 1. 
-\end{eg}
+
 \begin{lema}
 Si $\displaystyle F : S_{1} \to S_{2} $ es difeomorfismo puedo conseguir cartas $\displaystyle \left(u,v\right)\to \left(u,v\right) $.
 \end{lema}

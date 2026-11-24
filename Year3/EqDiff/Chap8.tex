@@ -224,4 +224,72 @@ y' = x + x^{2}
 .\]
 La recta $\displaystyle x = - 1 $ es invariante. Definimos $\displaystyle U = \left\{ x < - 1\right\}  $. Tenemos que $\displaystyle \partial U = \left\{ x = - 1\right\}  $. Tenemos que $\displaystyle \nu\left(-1,y\right)=\left(1,0\right) $ y $\displaystyle f\left(-1,y\right)=\left(0,0\right) $. De esta forma, $\displaystyle f \cdot \nu = 0 $ en $\displaystyle \partial U $. Aplicando el corolario anterior tenemos que $\displaystyle \partial U $ es invariante. 
 \end{eg}
+\begin{prop}[Fórmula de Liouville]
+Sea $\displaystyle M \in \mathcal{C}^{1}\left(I, \R^{n \times n}\right) $ función matricial tal que $\displaystyle M' = AM $ con $\displaystyle A \in \mathcal{C}\left(I, \R^{n \times n}\right) $. Entonces, 
+\[\det\left(M\left(t\right)\right)=\det\left(M\left(0\right)\right)\exp\left(\int^{t}_{0} \traz\left(A\left(s\right)\right) \; d s\right) .\]
+\end{prop}
+\begin{proof}
+Consideremos $\displaystyle x\left(t\right):=\det\left(M\left(t\right)\right) $. Se puede comprobar a partir de la definición de determinante que $\displaystyle x'\left(t\right)=\traz\left(A\left(t\right)\right)x\left(t\right) $. Esto es una EDO separable y podemos obtener la solución explícitamente, obteniendo la expresión deseada
+\[\det\left(M\left(t\right)\right)=\det\left(M\left(0\right)\right)\exp\left(\int^{t}_{0} \traz\left(A\left(s\right)\right) \; d s \right) .\]	
+\end{proof}
+\begin{theorem}
+Dado un sistema autónomo $\displaystyle x' = f\left(x\right) $, con flujo $\displaystyle \varphi\left(t; x_{0}\right) $. Si $\displaystyle E \subset \Omega  $ es medible y $\displaystyle t \in \R $ tal que $\displaystyle t \in \left(\beta_{-}\left(y\right), \beta_{+ }\left(y\right)\right) $, $\displaystyle \forall y \in E $. 
+Entonces, 
+\[\varphi_{t}\left(E\right):= \left\{ \varphi\left(t; y\right) \; : \; y \in E\right\}  ,\]
+también es medible y además
+\[ \left|\varphi_{t}\left(E\right)\right|=\int _{E}\exp\left(\int^{t}_{0} \Div f\left(\varphi\left(s; z\right)\right) \; d s\right) \; dz .\]
+\end{theorem}
+\begin{proof}
+Damos una idea de la demostración. 
+\begin{itemize}
+\item Por un lado, sabemos que 
+	\[ \left|\varphi_{t}\left(E\right)\right|=\int _{\varphi_{t}\left(E\right)}1 \; dy .\]
+	Haciendo el cambio de variable $\displaystyle y = \varphi\left(t; z\right) $ se tiene que 
+	\[ \left|\varphi_{t}\left(E\right)\right|=\int _{E}\det\left(D_{x_{0}}\varphi\left(t; z\right)\right) \; dz .\]
+\item Por otro las ecuaciones variacionales teníamos que 
+	\[
+	\begin{cases}
+	\frac{d}{dt}D_{x_{0}}\varphi = Df\left(\varphi\right)D_{x_{0}}\varphi \\
+	D_{x_{0}}\varphi\left(0\right)=Id
+	\end{cases}
+	.\]
+\item Aplicando la fórmula de Liouville a la integral con el apartado anterior,
+	\[\int _{E}\det\left(D_{x_{0}}\varphi\left(t; z\right)\right) \; dz = \int _{E}\exp\left(\int^{t}_{0} \traz\left(D\left(f\left(\varphi\left(s;z\right)\right)\right)\right) \; d s\right) \; dz .\]
+	Para terminar, basta con ver que $\displaystyle \Div f\left(\varphi\left(s; z\right)\right)=\traz\left(Df\left(\varphi\left(s; z\right)\right)\right) $. 
+\end{itemize}
+\end{proof}
+\begin{colorary}
+Sea $\displaystyle f\in \mathcal{C}^{1}\left(\Omega , \R^{n}\right) $ es tal que $\displaystyle \Div f > 0 $ en $\displaystyle U\subset \Omega  $. Entonces, no existe ningún conjunto compacto $\displaystyle P \subset U $ de medida estrictamente positiva que sea positivamente invariante. 
+\end{colorary}
+\begin{proof}
+Supongamos que sí existe este conjunto. Algunas conclusiones que podemos sacar:
+\begin{itemize}
+\item Dado $\displaystyle x_{0}\in P $, tenemos que $\displaystyle \gamma_{x_{0}}^{+ }\subset P $ por lo que $\displaystyle \beta_{+}\left(x_{0}\right)=\infty  $. También se tiene que $\displaystyle \varphi_{t}\left(P\right)\subset P $, $\displaystyle \forall t \geq 0 $. Así, debe ser que $\displaystyle \left|\varphi_{t}\left(P\right)\right|\leq \left|P\right| $. 
+\item Por otro lado, $\displaystyle \varphi\left(s; x_{0}\right)\in P $, $\displaystyle \forall s \geq 0 $ y $\displaystyle \forall x_{0}\in P \subset U $. Así, tendremos que
+	\[\Div f\left(\varphi\left(s; z\right)\right)>0, \; \forall s \geq 0, \forall z \in P .\]
+	Por tanto, 
+	\[\exp\left(\int^{t}_{0} \Div f\left(\varphi\left(s; z\right)\right) \; d s\right) > 1, \; \forall t \geq 0, \forall z \in P .\]
+Como $\displaystyle \left|P\right|> 0 $ se tiene que 
+\[ \left|\varphi_{t}\left(P\right)\right| = \int _{P}\exp\left(\int^{t}_{0} \Div f\left(\varphi\left(s; z\right)\right) \; d s\right) \; dz > \int _{P}1 = \left|P\right|.\]
+Así, hemos obtenido una contradicción. 
+\end{itemize}
+\end{proof}
+\section{Conjuntos $\displaystyle \omega  $-límite}
+\begin{definition}[Conjunto $\displaystyle \omega  $-límite]
+Dado $\displaystyle \overline{x}\in \Omega  $, se define el \textbf{conjunto $\displaystyle \omega_{\pm} $-límite} de $\displaystyle \overline{x} $ para el sistema autónomo $\displaystyle x' = f\left(x\right) $ como
+\[\omega_{\pm}\left(\overline{x}\right) = \left\{ y \in \Omega \; : \; y = \lim_{k \to \infty}\varphi\left(t_{k}; \overline{x}\right) \; \text{con }t_{k}\to \pm \infty\right\}  .\]
+\end{definition}
+\begin{observation}
+Podemos hacer un par de observaciones:
+\begin{itemize}
+\item Si $\displaystyle \beta_{+}\left(\overline{x}\right)<\infty $, se tiene que $\displaystyle \omega_{+}\left(\overline{x}\right)=\emptyset $. 
+\item Si tenemos $\displaystyle \overline{x} $ e $\displaystyle \overline{y} $ tales que $\displaystyle \gamma_{\overline{x}}=\gamma_{\overline{y}} $, entonces $\displaystyle \omega_{\pm}\left(\overline{x}\right)=\omega_{\pm}\left(\overline{y}\right) $. 
+\item Si $\displaystyle \overline{x} $ es punto de equilibrio se tiene que $\displaystyle \omega_{\pm}\left(\overline{x}\right)= \left\{ \overline{x}\right\}  $. 
+\item Si $\displaystyle x_{0}\in \Omega  $ es tal que $\displaystyle \varphi\left(t; x_{0}\right)\xrightarrow{t \to \infty}\overline{x} $, entonces $\displaystyle \omega_{+ }\left(x_{0}\right)= \left\{ \overline{x}\right\}  $. 
+\item Si $\displaystyle \gamma  $ es una órbita periódica y $\displaystyle x_{0}\in \gamma  $, tendremos que $\displaystyle \omega_{\pm}\left(x_{0}\right)=\gamma  $. 
+\end{itemize}
+\end{observation}
+\begin{observation}
+Los conjuntos $\displaystyle \omega  $-límite pueden ser complicados. 
+\end{observation}
 

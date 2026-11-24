@@ -48,7 +48,7 @@ que contradice el hecho de que los $\displaystyle A_{i} $ sean conexos. Como $\d
 \begin{theorem}[Variantes del teorema del pivote]
 Sea $\displaystyle X $ un espacio topológico. 
 \begin{enumerate}
-\item Supongamos que $\displaystyle X = \bigcup_{i \in I}A_{i} $, con los $\displaystyle A_{i} $ conexos y tales que existe $\displaystyle i_{0}\in I $ tal que $\displaystyle A_{i_{0}}\cap A_{i}\neq \emptyset $, $\displaystyle \forall i \in I $. Entonces $\displaystyle X $ es conexo.
+\item \textbf{Lema de la percha.} Supongamos que $\displaystyle X = \bigcup_{i \in I}A_{i} $, con los $\displaystyle A_{i} $ conexos y tales que existe $\displaystyle i_{0}\in I $ tal que $\displaystyle A_{i_{0}}\cap A_{i}\neq \emptyset $, $\displaystyle \forall i \in I $. Entonces $\displaystyle X $ es conexo.
 \item \textbf{Cadenas de conexos.} Sea $\displaystyle \left\{ A_{k}\right\} _{k \in \N}\subset X $ una familia de subespacios conexos de modo que $\displaystyle A _{k}\cap A_{k+1}\neq \emptyset $, $\displaystyle \forall k \in \N $. Entonces $\displaystyle \bigcup_{k \in \N}A_{k} $ es conexo.
 \end{enumerate}
 \end{theorem}
@@ -103,19 +103,24 @@ Como $\displaystyle A $ es conexo y $\displaystyle A = \left(U \cap A\right)\sqc
 \begin{eg}
 	Si tomamos $\displaystyle p,q\in \R^{n} $, el segmento que los une $\displaystyle \left[p,q\right]  $ es un conexo por ser la imagen de la aplicación continua
 	\[ \left[0,1\right] \to \R^{n} : t \to tp + \left(1-t\right)q .\]
-	Si $\displaystyle A \subset \R^{n} $ es estrellado, es decir, existe $\displaystyle p \in A $ tal que para todo $\displaystyle x \in A $ el segmento que une $\displaystyle p $ con $\displaystyle x $ está contenido en $\displaystyle A $, entonces $\displaystyle A $ es conexo. En efecto, basta con combinar la observación anterior con el teorema del pivote, $\displaystyle A = \bigcup_{x \in A}\left[p,x\right]  $. 
-	Podemos ver que las bolas abiertas y cerradas, los cubos abiertos y cerrados, son estrellados \footnote{Lo que aquí llama estrellado normalmente se le llama \textbf{convexo}.} y por tanto conexos. 
+	Si $\displaystyle A \subset \R^{n} $ es estrellado, es decir, existe $\displaystyle p \in A $ tal que para todo $\displaystyle x \in A $ el segmento que une $\displaystyle p $ con $\displaystyle x $ está contenido en $\displaystyle A $, entonces $\displaystyle A $ es conexo. En efecto, basta con combinar la observación anterior con el teorema del pivote a
+	\[A = \bigcup_{x \in A}\left[p,x\right]  .\]
+	Podemos ver que las bolas abiertas y cerradas, los cubos abiertos y cerrados, son estrellados y por tanto conexos. 
 \end{eg}
 \begin{eg}
 	Para cada función continua $\displaystyle f : \left[0,1\right] \to \R^{n} $, su gráfica es conexa. 
 \end{eg}
-\begin{eg}
-	La gráfica $\displaystyle \Gamma $ de la función continua definida por $\displaystyle \left(0, \infty\right) \to \R : t \to \sin \frac{1}{t} $ es conexa, y como hemos visto que la adherencia de un conexo es conexo, también lo es $\displaystyle \overline{\Gamma }=\Gamma \cup J $ con $\displaystyle J = \left\{ 0\right\} \times \left[-1,1\right]  $. Este conjunto se suele llama el \textbf{seno del topólogo}. 
+\begin{eg}[Seno topológico]
+	La gráfica $\displaystyle \Gamma $ de la función continua definida por $\displaystyle \left(0, \infty\right) \to \R : t \to \sin \frac{1}{t} $ es conexa, y como hemos visto que la adherencia de un conexo es conexa, también lo es $\displaystyle \overline{\Gamma }=\Gamma \cup J $ con $\displaystyle J = \left\{ 0\right\} \times \left[-1,1\right]  $. Este conjunto se suele llama el \textbf{seno del topólogo}. 
 \end{eg}
 \section{Comportamiento por construcciones}
-La conexión no es una propiedad hereditaria. En efecto, tenemos que $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ es conexo pero $\displaystyle \Q\subset \R $ no lo es. \\
-
-La conexión se porta bien con el cociente. En efecto, basta ver que como una identificación $\displaystyle f :X \to Y $ es continua y sobreyectiva, si $\displaystyle X $ es conexo también lo será $\displaystyle Y $. 
+\begin{observation}[No es hereditaria]
+La conexión no es una propiedad hereditaria. En efecto, tenemos que $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ es conexo pero $\displaystyle \Q\subset \R $ no lo es.
+\end{observation}
+\begin{observation}[Sí pasa al cociente]
+La conexión se porta bien con el cociente. En efecto, basta ver que como una identificación $\displaystyle f :X \to Y $ es continua y sobreyectiva, si $\displaystyle X $ es conexo también lo será $\displaystyle Y $.
+\end{observation}
+ 
 \begin{prop}
 Sean $\displaystyle X $ e $\displaystyle Y $ espacios topológicos. Son equivalentes:
 \begin{enumerate}
@@ -127,12 +132,15 @@ Sean $\displaystyle X $ e $\displaystyle Y $ espacios topológicos. Son equivale
 Demostramos ambas implicaciones.
 \begin{description}
 	\item[(1) $\displaystyle \Rightarrow $ (2)] Fijando $\displaystyle x_{0}\in X $ tenemos que $\displaystyle \left\{ x_{0}\right\} \times Y $ es conexo por ser homeomorfo a $\displaystyle Y $. Para cada $\displaystyle y \in Y $ se tiene que, análogamente, $\displaystyle X \times \left\{ y\right\}  $ es conexo. Ahora, tenemos que 
-	\[X \times Y = \bigcup_{y \in Y}X \times \left\{ y\right\} \cup \left\{ x_{0}\right\}\times Y .\]
-		Por ser la unión de una familia de conjuntos conexos, es un conexo, de manera que hay uno, el $\displaystyle \left\{ x_{0}\right\} \times Y $ concretamente, que corta a todos los demás. 
-	\item[(2) $\displaystyle \Rightarrow $ (1)] Basta con ver que las proyecciones son continuas y sobreyectivas.
+		\[X \times Y = \bigcup_{y \in Y}X \times \left\{ y\right\} \cup \left\{ x_{0}\right\} \times Y .\]
+	Tenemos que $\displaystyle X \times Y $ es unión de una familia de conexos cuyos miembros intersecan a $\displaystyle \left\{ x_{0}\right\} \times Y $, que es conexo. Por el lema de la percha se tiene que $\displaystyle X\times Y $ es conexo. 
+\item[(2) $\displaystyle \Rightarrow $ (1)] Basta con ver que las proyecciones son continuas y sobreyectivas.
 \end{description}
 \end{proof}
-En general, las sumas finitas de espacios conexos no es un espacio conexo. Basta con ver que cada uno de los espacios $\displaystyle X_{i} $ es abierto y cerrado en $\displaystyle X_{1} + \cdots + X_{r} $. 
+\begin{observation}[Suma finita no es conexa]
+En general, las sumas finitas de espacios conexos no es un espacio conexo. Basta con ver que cada uno de los espacios $\displaystyle X_{i} $ es abierto y cerrado en $\displaystyle X_{1} + \cdots + X_{r} $.
+\end{observation}
+ 
 \section{Componentes conexas}
 \begin{definition}[Componente conexa]
 	Una \textbf{componente conexa} de un espacio topológico $\displaystyle X $ es un subespacio conexo maximal del mismo. Es decir, $\displaystyle E \subset X $ es \textbf{componente conexa} si $\displaystyle E $ es conexo y para todo $\displaystyle \tilde{E} $ conexo con $\displaystyle E\subset \tilde{E} $ se tiene que $\displaystyle E = \tilde{E} $. 
@@ -141,15 +149,29 @@ En general, las sumas finitas de espacios conexos no es un espacio conexo. Basta
 Para describir las componentes conexas, vamos a ver cuál es la \textbf{componente conexa que contiene a un punto} $\displaystyle a \in X $, a la que denotaremos por $\displaystyle C\left(a\right) $, esto es
 \[C\left(a\right)=\bigcup_{a \in A, A\; \text{conexo}}A .\]
 \end{notation}
-En efecto, observamos que, por el teorema del pivote, el conjunto definido arriba es conexo. Por otra parte, si $\displaystyle E $ es conexo y $\displaystyle E \cap C\left(a\right)\neq \emptyset $, entonces $\displaystyle C\left(a\right)\cup E $ es conexo, por el teorema del pivote. Como $\displaystyle a \in C\left(a\right)\cup E $ se tiene que $\displaystyle C\left(a\right)\cup E \subset C\left(a\right) $ por lo que $\displaystyle C\left(a\right) $ es un conexo maximal y por tanto $\displaystyle C\left(a\right) $ es una componente conexa de $\displaystyle X $. \\
+\begin{prop}
+Sea $\displaystyle X $ es un espacio topológico y $\displaystyle a \in X $.
+\begin{enumerate}
+\item $\displaystyle C\left(a\right) $ es conexo.
+\item $\displaystyle C\left(a\right) $ es una componente conexa de $\displaystyle X $. 
+\item Si $\displaystyle \left\{ C_{i} \; : \; i \in I\right\}  $ es el conjunto de todas las componentes conexas de $\displaystyle X $, $\displaystyle X = \bigcup_{i \in I}C_{i} $ es una partición de $\displaystyle X $ por conjuntos cerrados.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Sea $\displaystyle a \in X $ con $\displaystyle X $ espacio topológico.
+\begin{enumerate}
+\item Por el teorema del pivote y por la construcción de $\displaystyle C\left(a\right) $, se tiene que $\displaystyle C\left(a\right) $ es conexo. 
+\item Si $\displaystyle E $ es conexo y $\displaystyle E \cap C\left(a\right)\neq \emptyset $, entonces $\displaystyle C\left(a\right)\cup E $ es conexo, por el teorema del pivote. Como $\displaystyle a \in C\left(a\right)\cup E $ se tiene que $\displaystyle C\left(a\right)\cup E \subset C\left(a\right) $ por lo que $\displaystyle C\left(a\right) $ es un conexo maximal y por tanto $\displaystyle C\left(a\right) $ es una componente conexa de $\displaystyle X $.
+\item Si $\displaystyle a,b \in X $, entonces o bien $\displaystyle C\left(a\right)=C\left(b\right) $ o bien $\displaystyle C\left(a\right)\cap C\left(b\right)= \emptyset $. Esto es consecuencia de que si $\displaystyle C\left(a\right)\cap C\left(b\right)\neq \emptyset $, entonces $\displaystyle C\left(a\right)\cup C\left(b\right) $ es conexo y contiene a $\displaystyle C\left(a\right) $ y a $\displaystyle C\left(b\right) $. 
 
-Si $\displaystyle a,b \in X $, entonces o bien $\displaystyle C\left(a\right)=C\left(b\right) $ o bien $\displaystyle C\left(a\right)\cap C\left(b\right)= \emptyset $. Esto es consecuencia de que si $\displaystyle C\left(a\right)\cap C\left(b\right)\neq \emptyset $, entonces $\displaystyle C\left(a\right)\cup C\left(b\right) $ es conexo y contiene a $\displaystyle C\left(a\right) $. \\
-
-Como la clausura de un conexo es conexo, para cada $\displaystyle a \in X $ se tiene que $\displaystyle \overline{C}\left(a\right) $ es conexo y contiene a $\displaystyle C\left(a\right) $, por lo que debe ser que $\displaystyle C\left(a\right)=\overline{C\left(a\right)} $. \\
+Por otro lado, como la clausura de un conexo es conexo, para cada $\displaystyle a \in X $ se tiene que $\displaystyle \overline{C}\left(a\right) $ es conexo y contiene a $\displaystyle C\left(a\right) $, por lo que debe ser que $\displaystyle C\left(a\right)=\overline{C\left(a\right)} $. 
 
 Juntado todo lo anterior, deducimos que si $\displaystyle \left\{ C_{i} \; :\; i \in I\right\}  $ es el conjunto de todas las componentes conexas de $\displaystyle X $, 
 \[X = \bigcup_{i \in I}C_{i} ,\]
 es una partición de $\displaystyle X $ por conjuntos cerrados.
+\end{enumerate}
+\end{proof}
+
 \begin{observation}
 Una forma alternativa de definir las componentes conexas de un espacio topológico $\displaystyle X $ es como las clases de equivalencia por la relación de equivalencia inducida por la partición anterior. 
 \end{observation}
@@ -281,4 +303,64 @@ Sea $\displaystyle X $ un espacio conexo por caminos y $\displaystyle f : X \to 
 	\[f\circ \alpha : \left[0,1\right] \to f\left(X\right)\subset Y : t \to f\left(\alpha\left(t\right)\right) ,\]
 	es un camino en $\displaystyle f\left(X\right) $ que une $\displaystyle y_{1} $ con $\displaystyle y_{2} $.
 \end{proof}
+\begin{eg}
+Los subconjuntos convexos $\displaystyle A \subset \R^{n} $ en $\displaystyle \left(\R^{n}, \mathcal{T}_{u}\right) $ son conexos por caminos. 
+\end{eg}
+
+\begin{definition}[Conjunto conexo por poligonales]
+Un subconjunto $\displaystyle A \subset \R^{n} $ es \textbf{conexo por poligonales} si dos puntos cualesquiera de $\displaystyle A $ se puede unir por una poligonal. Una \textbf{poligonal} es una cadena finita de segmentos, de modo que cuando parametrizamos, el extremo final de uno es el inicial del siguiente. 
+\end{definition}
+\begin{eg}
+Los subconjuntos estrellados son conexos por caminos, es decir, por poligonales formadas por un sólo segmento. En efecto, $\displaystyle E \subset \R^{n} $ es estrellado si existe un punto $\displaystyle p \in E $ tal que $\displaystyle \forall x \in E $, el segmento que une $\displaystyle p $ con $\displaystyle X $ está contenido en $\displaystyle E $.
+\end{eg}
+\begin{theorem}[Teorema del pivote para cpc]
+	Sea $\displaystyle \left\{ A_{i}\right\} _{i \in I} $ una familia de subespacios conexos por caminos tales que $\displaystyle \bigcap_{i \in I}A_{i}= \emptyset $. Entonces, $\displaystyle X = \bigcup_{i \in I}A_{i} $ es conexo por caminos.
+\end{theorem}
+\begin{proof}
+Tomemos $\displaystyle p \in \bigcap_{i \in I}A_{i} $. Para cada par de puntos $\displaystyle x,y \in X $ existe $\displaystyle i_{1}\in I $ tal que $\displaystyle x \in A_{i_{1}} $ e $\displaystyle i_{2}\in I $ tal que $\displaystyle y \in A_{i_{2}} $. 
+Como $\displaystyle A_{i_{1}} $ es conexo por caminos, podemos unir $\displaystyle x $ con $\displaystyle p $ por un camino $\displaystyle \alpha  $ en $\displaystyle A_{i_{1}} $. Análogamente, podemos unir $\displaystyle p $ con $\displaystyle y $ por un camino $\displaystyle \beta  $ en $\displaystyle A_{i_{2}} $. El producto de caminos $\displaystyle \alpha * \beta  $ es un camino en $\displaystyle X $ que une $\displaystyle x $ con $\displaystyle y $.
+\end{proof}
+\begin{prop}
+	Sea $\displaystyle \left\{ A_{i}\right\} _{i \in I} $ una familia de subespacios conexos por caminos, de modo que existe $\displaystyle i_{0}\in I $ tal que $\displaystyle A_{i_{0}}\cap A_{i}\neq \emptyset $, $\displaystyle \forall i \in I $. Entonces, $\displaystyle X = \bigcup_{i \in I}A_{i} $ es conexo por caminos.
+\end{prop}
+\begin{proof}
+Dados $\displaystyle x,y\in X $, existen $\displaystyle i_{1}, i_{2}\in I $ tales que $\displaystyle x \in A_{i_{1}} $ e $\displaystyle y \in A_{i_{2}} $. Tomamos $\displaystyle p \in A_{i_{1}}\cap A_{i_{0}} $ y $\displaystyle q \in A_{i_{2}}\cap A_{i_{0}} $. 
+Dado que todos los $\displaystyle A_{i} $ son conexos por caminos, tenemos que existen:
+\begin{itemize}
+\item Un camino $\displaystyle \alpha  $ en $\displaystyle A_{i_{1}} $ que une $\displaystyle x $ con $\displaystyle p $.
+\item un camino $\displaystyle \beta  $ en $\displaystyle A_{i_{0}} $ que une $\displaystyle p $ con $\displaystyle q $.
+\item Un camino $\displaystyle \Gamma $ en $\displaystyle A_{i_{2}} $ que une $\displaystyle q $ con $\displaystyle y $.
+\end{itemize}
+El camino $\displaystyle \left(\alpha * \beta \right)* \gamma  $ en $\displaystyle X $ une $\displaystyle x $ con $\displaystyle y $. 
+\end{proof}
+\begin{observation}
+Vimos que si $\displaystyle A \subset X $ es conexo, entonces $\displaystyle \overline{A} $ también lo es. Sin embargo, esto no es cierto en general para la conexión por caminos, como se ve en el siguiente ejemplo.
+\end{observation}
+\begin{eg}
+	Consideramos el seno topológico $\displaystyle \overline{\Gamma}=\Gamma \cup J $ con $\displaystyle \Gamma $ el grafo de la función continua definida en $\displaystyle \left(0, \infty \right) $ por $\displaystyle t \to \sin \frac{1}{t} $ y $\displaystyle J = \left\{ 0\right\} \times \left[-1,1\right]  $. \\
+	Podemos observar que $\displaystyle \Gamma $ es claramente conexa por caminos. Sin embargo, $\displaystyle \overline{\Gamma } $ no lo es. En efecto, veamos que no hay un camino en $\displaystyle \overline{\Gamma} $ que una un punto $\displaystyle p \in J $ con un punto $\displaystyle q \in \Gamma  $. Supongamos que existiese un camino $\displaystyle \alpha : \left[0,1\right] \to \overline{\Gamma } $ con $\displaystyle \alpha\left(0\right)=p $ y $\displaystyle \alpha\left(1\right)=q $. 
+	Escribimos $\displaystyle \alpha\left(t\right)=\left(x\left(t\right), y\left(t\right)\right) $, donde $\displaystyle x\left(t\right) $ e $\displaystyle y\left(t\right) $ son funciones continuas. El conjunto
+	\[A = \left\{ t \in \left[0,1\right] \; : \; \alpha\left(t\right)\in J\right\} = \left\{ t \in \left[0,1\right]  \; : \; x\left(t\right)=0\right\}  ,\]
+	es compacto por ser cerrado en un compacto. Por tanto, existe $\displaystyle t_{0}=\max A $. Claramente tendremos que $\displaystyle t_{0} < 1 $. Así, $\displaystyle \alpha\left(t_{0}\right)=\left(0, y\left(t_{0}\right)\right)=p_{0} $. 
+	Como $\displaystyle y\left(t\right) $ es continua en $\displaystyle t_{0} $, dado un $\displaystyle \epsilon > 0 $ existe un $\displaystyle \delta > 0 $ tal que si $\displaystyle \left|t-t_{0}\right|<\delta  $ entonces $\displaystyle \left|y\left(t\right)-y\left(t_{0}\right)\right|< \epsilon  $. Tomemos 
+	\[\epsilon = \max \left\{ \frac{1-y\left(t_{0}\right)}{2}, \frac{y\left(t_{0}\right)+1}{2}\right\}  .\]
+Para cualquier $\displaystyle \delta > 0 $ y para todo $\displaystyle t_{1}\in \left(t_{0}, t_{0} + \delta \right) $ tendremos que $\displaystyle x\left(t_{1}\right) > 0 $. Por continuidad de la función $\displaystyle x\left(t\right) $, esta tomará todos los valores intermedios $\displaystyle \left(0, x\left(t_{1}\right)\right) $ en el intervalo $\displaystyle \left(t_{0}, t_{1}\right) $. 
+Sin embargo, tomando $\displaystyle n $ suficientemente grande, tenemos que  
+\[\frac{1}{2\pi n + \frac{\pi }{2}}\in \left(0, x\left(t_{1}\right)\right) \quad \text{y} \quad \frac{1}{2\pi n + \frac{3\pi }{2}}\in \left(0, x\left(t_{1}\right)\right) .\]
+Si $\displaystyle \tau\in\left(t_{0}, t_{1}\right) $ es el punto en el que $\displaystyle x\left(\tau\right) $ toma uno de esos valores, se tendrá $\displaystyle y\left(\tau\right) $ e $\displaystyle y\left(\tau\right)=-1 $. En todo caso, sea cual sea el $\displaystyle \delta > 0 $ podemos encontrar valores de $\displaystyle t $ con $\displaystyle \left|t-t_{0}\right| < \delta  $ tales que $\displaystyle \left|y\left(t\right)-y\left(t_{0}\right)\right|\geq \epsilon  $. 
+Así, hemos obtenido una contradicción, por lo que no puede existir un camino que una $\displaystyle p $ con $\displaystyle q $ en $\displaystyle \overline{\Gamma } $. 
+\end{eg}
+\subsection{Comportamiento bajo construcciones}
+La conexión por caminos no es hereditaria. En efecto, $\displaystyle \R $ es conexo por caminos pero, dados $\displaystyle I = \left[1,2\right]  $ y $\displaystyle J = \left[3,4\right]  $, el subespacio $\displaystyle I \cup J $ no es conexo por caminos. \\
+
+Por una proposición anterior se tiene que si $\displaystyle X $ es conexo por caminos, al pasar al cociente por cualquier relación de equivalencia obtendremos un espacio que será también conexo por caminos. Así, la conexión por caminos pasa al cociente. \\
+
+En cuanto a las sumas finitas, la suma de espacios conexos por caminos no es conexa por caminos en general. % buscar ejemplo de esto
+\begin{prop}
+Sean $\displaystyle X $ e $\displaystyle Y $ dos espacios topológicos. Son equivalentes:
+\begin{enumerate}
+\item $\displaystyle X $ e $\displaystyle Y $ son conexos por caminos.
+\item $\displaystyle X \times Y $ es conexo por caminos.
+\end{enumerate}
+\end{prop}
 

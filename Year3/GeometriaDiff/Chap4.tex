@@ -1,0 +1,88 @@
+\chapter{Geometría intrínseca}
+% 23/10/26
+Estudia $\displaystyle S $ desde dentro. Lo que mide Planito. Lo que sale de conocer la primera forma fundamental.
+\begin{definition}[Distancia dentro de una superficie]
+Dados $\displaystyle P,Q\in S $ en $\displaystyle S $ conexa se define la distancia entre $\displaystyle P $ y $\displaystyle Q $ como
+\[d _{S}\left(P,Q\right)=\inf \left\{ \ell^{1}_{0}\left(\alpha \right) \; : \; \alpha: \left[0,1\right] \to S, \; \alpha\left(0\right)=P, \; \alpha\left(1\right)=Q\right\}  .\]
+\end{definition}
+% tabla de cualidades intrínsecas y extrínsecas
+\begin{definition}[Intrínseco y extrínseco]
+Una noción es \textbf{intrínseca} si se escribe como $\displaystyle \mathcal{F}\left(E, F, G\right) $. Es \textbf{extrínseca} si se escribe como $\displaystyle \mathcal{F}\left(E, F, G, e, f, g\right) $ pero no como $\displaystyle \mathcal{F}\left(E, F, G\right) $. 
+\end{definition}
+\section{Isometrías}
+\begin{definition}[Isometría]
+Una aplicación $\displaystyle F : S_{1}\to S_{2} $ diferenciable es:
+\begin{enumerate}
+\item \textbf{isometría local} si $\displaystyle d _{p}F : T_{p}S_{1}\to T_{F\left(p\right)}S_{2} $ es isometría lineal para todo $\displaystyle p \in S_{1} $. 
+\item \textbf{isometría} si $\displaystyle F $ es isometría local y es biyectiva.
+\end{enumerate}
+\end{definition}
+\begin{definition}[Difeomorfismo local y difeomorfismo]
+Dada una aplicación diferenciable $\displaystyle F $ decimos que 
+\begin{enumerate}
+\item $\displaystyle F $ es difeomorfismo local si $\displaystyle d _{p}F : T_{p}S_{1}\to T_{F\left(p\right)}S_{2} $ es isomorfismo local en cada $\displaystyle p \in S_{1} $. 
+\item $\displaystyle F $ es difeomorfismo si es difeomorfismo local y además es biyectiva.
+\end{enumerate}
+\end{definition}
+\begin{observation}
+\begin{enumerate}
+\item A efectos de derivabilidad de objetos son equivalentes. 
+	% esto es lo que se ve con la primera parte de la definición anterior
+	% poner imagen
+\item Si $\displaystyle F $ es difeomorfismo, entonces $\displaystyle S_{1} $ y $\displaystyle S_{2} $ son equivalentes desde el punto de vista de la geometría diferencial.
+\item Si $\displaystyle F: S_{1}\to S_{2} $ es isometría local, entonces $\displaystyle d _{p}F : T_{p}S_{1} \to T_{F\left(P\right)}S_{2} $ es isometría. Es decir, $\displaystyle \|d _{p}F\left(\vec{v}\right)\|_{S_{2}}=\|\vec{v}\|_{S_{1}} $, $\displaystyle \forall \vec{v}\in T_{p}S_{1} $, $\displaystyle \forall p \in S_{1} $. 
+\item Cuando se preservan las normas se preservan los ángulos, por lo que 
+	\[L\left(d _{p}F\left(\vec{v}\right), d _{p}F\left(\vec{w}\right)\right)=L\left(\vec{v}, \vec{w}\right) .\]
+\item Se tiene que 
+	\[\ell^{b}_{a}\left(F\circ \alpha \right)=\int^{b}_{a} \|\left(F\circ \alpha \right)'\left(t\right)\| \; dt = \int^{b}_{a} \| dF\left(\alpha'\left(t\right)\right)\| \; dt = \int^{b}_{a} \|\alpha'\left(t\right)\| \; dt = \ell^{b}_{a}\left(\alpha \right) .\]
+\end{enumerate}
+\end{observation}
+
+\begin{theorem}
+Si $\displaystyle F $ es isometría local, existe coordenadas locales $\displaystyle \textbf{x} \left(u,v\right) $ en $\displaystyle U^{p}\subset S_{1} $, $\displaystyle \textbf{y} \left(u,v\right) $ en $\displaystyle F\left(U^{p}\right)\subset S_{2} $ (con los mismo parámetros $\displaystyle \left(u,v\right) $) tales que 
+\[ \begin{pmatrix} E_{ \textbf{x} } & F _{ \textbf{x} } \\ F_{ \textbf{x} } & G _{ \textbf{x} } \end{pmatrix}=\begin{pmatrix} E_{ \textbf{y} } & F_{ \textbf{y} } \\ F_{ \textbf{y} } & G_{ \textbf{y} } \end{pmatrix} ,\]
+y conversamente.
+\end{theorem}
+
+\begin{proof}
+% poner foto del diagrama
+% aparentemente toda la demostración es una foto
+	Tenemos que existen $\displaystyle \mathcal{B}_{ \textbf{x} } = \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ y $\displaystyle \mathcal{B}_{ \textbf{y} }= \left\{ \textbf{y} _{ w}, \textbf{y} _{s}\right\}  $, de forma que 
+	\[M_{ \mathcal{B}_{ \textbf{x} }}\left(I_{S_{1}}\right)=\begin{pmatrix} E_{ \textbf{x} } & F_{ \textbf{x} } \\ F_{ \textbf{x} } & G_{ \textbf{x} } \end{pmatrix} \quad \text{y} \quad M_{ \mathcal{B}_{ \textbf{y} }}\left(I_{S_{2}}\right)=\begin{pmatrix} E_{ \textbf{y} } & F_{ \textbf{y} } \\ F_{ \textbf{y} } & G_{ \textbf{y} } \end{pmatrix} .\]
+	Si tomamos la base $\displaystyle \mathcal{B}_{1}= \left\{ \oplu_{p}F\left( \textbf{x} _{u}\right), d _{p}F\left( \textbf{x} _{v}\right)\right\}  $, tenemos que $\displaystyle d _{p}F $ es isometría lineal si y sólo si $\displaystyle M_{ \mathcal{B}_{ \textbf{x} }}\left(\left\langle ,  \right\rangle \right)=M_{ \mathcal{B}_{1}}\left(\left\langle ,  \right\rangle \right) $. De esta forma, 
+	\[M_{ \mathcal{B}_{ \textbf{y} }}\left(\left\langle ,  \right\rangle \right) = M_{\mathcal{B}_{1}\mathcal{B}_{ \textbf{y} }}^{t}M_{\mathcal{B}_{1}}\left(\left\langle ,  \right\rangle \right)M_{\mathcal{B}_{1}\mathcal{B}_{ \textbf{y} }} .\]
+Se sigue que 
+\[
+\begin{cases}
+d _{p}F\left( \textbf{x} _{u}\right)=\frac{\partial w}{\partial u} \textbf{y} _{w} + \frac{\partial s}{\partial u} \textbf{y} _{s} \\
+d _{p}F\left( \textbf{x} _{v}\right)=\frac{\partial w}{\partial v} \textbf{y} _{w} + \frac{\partial s}{\partial v} \textbf{y} _{s}
+\end{cases}
+.\]
+Como $\displaystyle M_{ \mathcal{B}_{ \textbf{y} }\mathcal{B}_{1}} = J\tilde{F} $. Se sigue que 
+\[M_{\mathcal{B}_{ \textbf{x} }}\left(\left\langle ,  \right\rangle \right)=M_{ \mathcal{B}_{1}}\left(\left\langle ,  \right\rangle \right)=\left(J\tilde{F}\right)^{t}M_{ \mathcal{B}_{ \textbf{y} }}\left(\left\langle ,  \right\rangle \right)\left(J\tilde{F}\right) .\]
+Así, 
+\[I_{ \textbf{x} }=\left(J\tilde{F}\right)^{t}I_{ \textbf{y} }\left(J\tilde{F}\right) .\]
+Por tanto $\displaystyle I_{ \textbf{x} }= I_{ \textbf{y} } $ si tomo $\displaystyle \textbf{y} =F\circ \textbf{x}  $.
+\end{proof}
+\begin{observation}
+\begin{enumerate}
+\item Una isometría local puede no ser sobreyectiva. % considerar la foto
+\item Una isometría local puede no ser inyectiva. Consideremos el plano $\displaystyle S_{1}= \left\{ \left(u,v,0\right)\right\}  $ y $\displaystyle \left\{ x^{2}+y^{2} = 1\right\}  $. Tenemos que el difeomorfismo local es $\displaystyle F\left(u,v\right)=\left(\cos u, \sin u, v\right) $. Tenemos que, cogiendo $\displaystyle \textbf{y} \left(\varphi,w\right)=\left(\cos \varphi, \sin \varphi, w\right) $, tenemos que 
+	\[I_{S_{1}}=\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}\quad \text{y} \quad I_{S_{2}}=\begin{pmatrix} r\left(v\right)^{2} & 0 \\ 0 & \|\gamma'\left(v\right)\|^{2} \end{pmatrix}=\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} .\]
+	Es isometría local. En el caso de que no sea inyectiva no se respetan las áreas. 
+	%poner foto del cilindro
+	% el ejemplo continua con algo de longitudes, foto de lo hecho en clase
+	% no se conserva la curva más corta
+\end{enumerate}
+\end{observation}
+\begin{prop}
+Si $\displaystyle F : S_{1}\to S_{2} $ es isometría (global) entonces:
+\begin{enumerate}
+\item $\displaystyle Area\left(R\right)=Area\left(F\left(R\right)\right) $ para todo $\displaystyle R \subset S_{1} $ compacto. 
+\item $\displaystyle d _{S_{1}}\left(p,q\right)=d _{S_{2}}\left(F\left(p\right), F\left(q\right)\right) $.
+\end{enumerate}
+\end{prop}
+\begin{definition}
+Una noción es intrínseca si es invariante por isometría local. 
+\end{definition}
+Estas sutilezas son de carácter global.
