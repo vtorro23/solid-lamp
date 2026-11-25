@@ -292,4 +292,45 @@ Podemos hacer un par de observaciones:
 \begin{observation}
 Los conjuntos $\displaystyle \omega  $-límite pueden ser complicados. 
 \end{observation}
+\begin{prop}
+Sea $\displaystyle \overline{x}\in \Omega  $ tal que $\displaystyle \gamma^{+}_{\overline{x}}\subset K\subset \Omega  $ con $\displaystyle K $ compacto. Entonces
+\begin{enumerate}
+\item $\displaystyle \omega_{+}\left(\overline{x}\right)\neq \emptyset $. 
+\item $\displaystyle \omega_{+}\left(\overline{x}\right) $ es cerrado y acotado y conexo. 
+\item $\displaystyle \omega_{+ }\left(\overline{x}\right) $ es invariante. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Supongamos que $\displaystyle \gamma_{\overline{x}}^{+}\subset K\subset \Omega  $. 
+\begin{enumerate}
+	\item Tomamos la sucesión de puntos $\displaystyle \left\{ \varphi\left(k; \overline{x}\right)\right\} _{k \in \N}\subset \gamma^{+}_{\overline{x}}\subset K $. Por ser $\displaystyle K $ compacto tenemos que existe una subsucesión convergente cuyo límite está en $\displaystyle K $. De esta forma $\displaystyle \omega_{+}\left(\overline{x}\right)\neq \emptyset $. 
+	\item Demostramos que el conjunto $\displaystyle \omega_{+}\left(\overline{x}\right) $ cumple cada propiedad:
+	\begin{itemize}
+	\item Veamos que es acotado. Tenemos que, por definición, $\displaystyle \omega_{+}\left(\overline{x}\right)\subset \overline{\gamma }^{+}_{\overline{x}} \subset K$, con $\displaystyle K $ acotado. 
+	\item Veamos que es cerrado. Sea $\displaystyle \left\{ z_{k}\right\} _{k \in \N}\subset \omega_{+}\left(\overline{x}\right) $ tal que $\displaystyle z_{k}\to \overline{z} $. Queremos ver que $\displaystyle \overline{z}\in \omega_{+}\left(\overline{x}\right) $. Como $\displaystyle z_{k}\in \omega_{+}\left(\overline{x}\right) $, entonces existe $\displaystyle t_{k} > k $ tal que $\displaystyle \left|\varphi\left(t_{k}; \overline{x}\right)-z_{k}\right|<\frac{1}{k} $. 
+		Así, hemos construido la sucesión $\displaystyle \left\{ t_{k}\right\} _{k \in \N} $ que cumple que $\displaystyle t_{k}\to \infty $. Así, tenemos que 
+		\[ \left|\varphi\left(t_{k}; \overline{x}\right)\right| \leq \left|\varphi\left(t_{k}; \overline{x}\right)-z_{k}\right|+ \left|z_{k}-\overline{z}\right|< \frac{1}{k} + \left|z_{k}-\overline{z}\right|\to 0,\]
+		de donde concluimos que $\displaystyle \lim_{k \to \infty}\varphi\left(t_{k}; \overline{x}\right)=\overline{z}\in \omega_{+}\left(\overline{x}\right) $. 
+	\item Veamos que es conexo. Supongamos que $\displaystyle \omega_{+ }\left(\overline{x}\right) $ no es conexo. Entonces podemos escribir $\displaystyle \omega_{+}\left(\overline{x}\right)=U\sqcup V $ unión disjunta de abiertos no vacíos. Como $\displaystyle U \cap \omega_{+}\left(\overline{x}\right)\neq \emptyset $, existe $\displaystyle z_{U}\in U \cap \omega_{+}\left(\overline{x}\right) $. 
+		En consecuencia, existe una sucesión $\displaystyle \left\{ t_{k}\right\} _{k\in \N} $ con $\displaystyle t_{k}\to \infty $ tal que $\displaystyle \varphi\left(t_{k}; \overline{x}\right)\to z_{U} $. Podemos suponer que $\displaystyle \left\{ \varphi\left(t_{k}; \overline{x}\right)\right\} _{k \in \N}\subset U $. 
+		Análogamente, existe $\displaystyle \left\{ \tau_{k}\right\} _{k \in \N} $ con $\displaystyle \tau_{k}\to \infty $ tal que $\displaystyle \varphi\left(\tau_{k}; \overline{x}\right)\to z_{V}\in V \cap \omega_{+}\left(\overline{x}\right) $, con $\displaystyle \left\{ \varphi\left(\tau_{k}; \overline{x}\right)\right\} _{k \in\N}\subset V $. 
+	Sin pérdida de generalidad podemos suponer que las sucesiones $\displaystyle t_{k} < \tau_{k} < t_{k+1} $ están ordenadas de esta forma. 
+	Como $\displaystyle \varphi\left(t_{k}; \overline{x}\right)\in U $ y $\displaystyle \varphi\left(\tau_{k}; \overline{x}\right)\in V $, por continuidad tenemos que existe $\displaystyle T_{k}\in \left(t_{k}, \tau_{k}\right) $ tal que $\displaystyle \varphi\left(T_{k}; \overline{x}\right)\not\in U \cup V $. Así, la sucesión $\displaystyle \left\{ \varphi\left(T_{k}; \overline{x}\right)\right\} _{k \in \N}\subset\gamma^{+}_{\overline{x}}\subset K $, por lo que 
+	$\displaystyle \varphi\left(T_{k}; \overline{x}\right)\in K \backslash \left(U \cup V\right) $, que es compacto. Así, existe una subsucesión $\displaystyle \left\{ \varphi\left(T_{k_{j}}; \overline{x}\right)\right\} \to z_{\infty}\in K \backslash \left(U \cup V\right) $. Pero entonces $\displaystyle z_{\infty}\in \omega_{+}\left(\overline{x}\right)\backslash\left(U \cup V\right) $ que es una contradicción. 
+	\end{itemize}
+\item Veamos que es invariante. Sea $\displaystyle z \in \omega_{+}\left(\overline{x}\right) $, entonces existe $\displaystyle \left\{ t_{k}\right\} _{k\in\N} $ tal que $\displaystyle t_{k}\to \infty $ con $\displaystyle \varphi\left(t_{k}; \overline{x}\right)\to z $. Tomamos $\displaystyle \tau\in \left(\beta_{-}\left(z\right), \beta_{+}\left(z\right)\right) $. 
+	Queremos ver que $\displaystyle \varphi\left(\tau; z\right)\in \omega_{+}\left(\overline{x}\right) $. Por continuidad del flujo se tiene que $\displaystyle \varphi\left(t_{k}; \overline{x}\right)\to z $ y de aquí se sigue que para $\displaystyle t_{k} $ suficientemente grande 
+	\[\tau\in \left(\beta_{-}\left(\varphi\left(t_{k}; \overline{x}\right)\right), \beta_{+}\left(\varphi\left(t_{k}; \overline{x}\right)\right)\right) .\]
+	Por tanto, aplicando la propiedad del semigrupo
+	\[\varphi\left(t_{k}+\tau; \overline{x}\right)=\varphi\left(\tau; \varphi\left(t_{k}; \overline{x}\right)\right)\xrightarrow{k \to \infty} \varphi\left(\tau, z\right) \in \omega_{+}\left(\overline{x}\right)	.\]
+\end{enumerate}
+\end{proof}
+
+\begin{observation}
+Podemos hacer un par de observaciones:
+\begin{itemize}
+\item Si $\displaystyle \Omega=\R^{n} $, la condición $\displaystyle \gamma^{+}_{\overline{x}}\subset K\subset \Omega  $, se reduce a que $\displaystyle \gamma^{+}_{\overline{x}} $ esté acotada. En este caso podemos tomar $\displaystyle K = \overline{\gamma} ^{+}_{\overline{x}}$.
+\item La condición $\displaystyle \gamma^{+}_{\overline{x}}\subset K\subset \Omega  $, nos dice que $\displaystyle \varphi\left(t; \overline{x}\right)\in K\subset \Omega  $, $\displaystyle \forall t \in [0, \beta_{+}\left(\overline{x}\right)) $ y por el teorema de fuga de compactos detenmos que $\displaystyle \beta_{+ }\left(\overline{x}\right)= \infty $.
+\end{itemize}
+\end{observation}
 

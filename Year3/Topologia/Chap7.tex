@@ -191,8 +191,11 @@ es una partición de $\displaystyle A $ en dos abiertos disjuntos no vacíos. Po
 El espacio $\displaystyle \left(X, \mathcal{T}_{\text{dis}}\right) $ es totalmente disconexo. También lo es la recta de Sorgenfrey. 
 \end{eg}
 \begin{eg}
-	Consideremos $\displaystyle X = \left\{ 0\right\} \cup \left\{ \frac{1}{n} \; : \; n \in \N\right\}  $ como subespacio de $\displaystyle \left(\R, \mathcal{T}_{u}\right) $. Para cada punto $\displaystyle x \in X $ se tiene que $\displaystyle C\left(x\right)= \left\{ x\right\}  $. La componente conexa de 0, $\displaystyle C\left(0\right)= \left\{ 0\right\}  $, es cerrada pero no es abierta. Basta con ver que no contiene ningún entorno de 0, o también que $\displaystyle X \backslash \left\{ 0\right\}  $ no es cerrado puesto que su adherencia contiene a 0. 
-	Sin embargo, si tomamos $\displaystyle \frac{1}{n_{0}}\in X $, entonces $\displaystyle C\left(\frac{1}{n_{0}}\right)= \left\{ \frac{1}{n_{0}}\right\}  $ es cerrada y abierta puesto que $\displaystyle X \backslash \left\{ \frac{1}{n_{0}}\right\}  $ es cerrado.
+	Consideremos $\displaystyle X = \left\{ 0\right\} \cup \left\{ \frac{1}{n} \; : \; n \in \N\right\}  $ como subespacio de $\displaystyle \left(\R, \mathcal{T}_{u}\right) $. Para cada punto $\displaystyle x \in X $ se tiene que $\displaystyle C\left(x\right)= \left\{ x\right\}  $. Podemos hacer un par de observaciones:
+	\begin{itemize}
+	\item La componente conexa de 0, $\displaystyle C\left(0\right)= \left\{ 0\right\}  $, es cerrada pero no es abierta. Basta con ver que no contiene ningún entorno de 0, o también que $\displaystyle X \backslash \left\{ 0\right\}  $ no es cerrado puesto que su adherencia contiene a 0. 
+	\item Sin embargo, si tomamos $\displaystyle \frac{1}{n_{0}}\in X $, entonces $\displaystyle C\left(\frac{1}{n_{0}}\right)= \left\{ \frac{1}{n_{0}}\right\}  $ es cerrada y abierta puesto que $\displaystyle X \backslash \left\{ \frac{1}{n_{0}}\right\}  $ es cerrado.
+	\end{itemize}
 \end{eg}
 \begin{prop}
 Las componentes conexas del espacio $\displaystyle X \times Y $ son los productos de las componentes conexas de $\displaystyle X $ e $\displaystyle Y $.
@@ -241,15 +244,21 @@ Dado un espacio topológico $\displaystyle X $, son equivalentes:
 Demostramos ambas implicaciones.
 \begin{description}
 \item[(1) $\displaystyle \Rightarrow $ (2)] Basta con considerar la definición que hemos dado de la conexión local.
-\item[(2) $\displaystyle \Rightarrow $ (1)] Sea $\displaystyle U\subset X $ abierto. Sea $\displaystyle C $ una componente conexa de $\displaystyle U $ y tomemos un punto $\displaystyle x \in C $. Como $\displaystyle U $ es entorno abierto de $\displaystyle x $ en $\displaystyle X $, existe $\displaystyle V^{x}\in \mathcal{V}^{x} $ tal que $\displaystyle x \in V^{x}\subset U $. Por maximalidad de las componentes conexas se tiene que $\displaystyle V^{x}\subset C $. Entonces, $\displaystyle C $ es entorno de $\displaystyle x $. Así, hemos concluido que $\displaystyle C $ es entorno de todos sus puntos por lo que es abierto. Aplicar la proposición anterior.
+\item[(2) $\displaystyle \Rightarrow $ (1)] Sea $\displaystyle U\subset X $ abierto. Sea $\displaystyle C $ una componente conexa de $\displaystyle U $ y tomemos un punto $\displaystyle x \in C $. Como $\displaystyle U $ es entorno abierto de $\displaystyle x $ en $\displaystyle X $, existe $\displaystyle V^{x}\in \mathcal{V}^{x} $ tal que $\displaystyle x \in V^{x}\subset U $. Por maximalidad de las componentes conexas se tiene que $\displaystyle V^{x}\subset C $. Entonces, $\displaystyle C $ es entorno de $\displaystyle x $. Así, hemos concluido que $\displaystyle C $ es entorno de todos sus puntos por lo que es abierto. Para ver que hemos terminado basta con aplicar la proposición anterior.
 \end{description}
 \end{proof}
 \subsection{Comportamiento bajo construcciones de la conexión local}
-Es sencillo ver que no es hereditaria puesto que $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ es localmente conexo pero $\displaystyle \Q\subset \R $ no lo es. Sin embargo, por la proposición anterior tenemos que la conexión local la heredan los subconjuntos abiertos de $\displaystyle X $. \\
+\begin{observation}[No es hereditaria]
+Es sencillo ver que no es hereditaria puesto que $\displaystyle \left(\R, \mathcal{T}_{u}\right) $ es localmente conexo pero $\displaystyle \Q\subset \R $ no lo es. Sin embargo, por una proposición anterior tenemos que la conexión local la heredan los subconjuntos abiertos de $\displaystyle X $.
+\end{observation}
+\begin{observation}[Sí es productiva]
+La conexión es productiva. Esto es, si dos espacios $\displaystyle X $ e $\displaystyle Y $ son localmente conexos, lo es también su producto $\displaystyle X \times Y $. En efecto, si $\displaystyle \left(x_{0}, y_{0}\right)\in X \times Y $ podemos obtener una base de entornos abiertos conexos formando los productos de los entornos de una base $\displaystyle \mathcal{U}^{x_{0}} $ de entornos abiertos conexos de $\displaystyle x_{0}\in X $, y los entornos de una base $\displaystyle \mathcal{V}^{y_{0}} $ de entornos abiertos conexos de $\displaystyle y_{0}\in Y $.
+\end{observation}
 
-La conexión es productiva. Esto es, si dos espacios $\displaystyle X $ e $\displaystyle Y $ son localmente conexos, lo es también su producto $\displaystyle X \times Y $. En efecto, si $\displaystyle \left(x_{0}, y_{0}\right)\in X \times Y $ podemos obtener una base de entornos abiertos conexos formando los productos de los entornos de una base $\displaystyle \mathcal{U}^{x_{0}} $ de entornos abiertos conexos de $\displaystyle x_{0}\in X $, y los entornos de una base $\displaystyle \mathcal{V}^{y_{0}} $ de entornos abiertos conexos de $\displaystyle y_{0}\in Y $. \\
-
-La suma finita de espacios localmente conexos es un espacio localmente conexo. Esto es consecuencia de que localmente la suma es como los espacios sumandos. 
+\begin{observation}[Sí es aditiva]
+La suma finita de espacios localmente conexos es un espacio localmente conexo. Esto es consecuencia de que localmente la suma es como los espacios sumandos.
+\end{observation}
+ 
 \begin{prop}
 Sea $\displaystyle f : X \to Y $ una identificación con $\displaystyle X $ un espacio localmente conexo. Entonces, $\displaystyle Y $ es localmente conexo. 
 \end{prop}

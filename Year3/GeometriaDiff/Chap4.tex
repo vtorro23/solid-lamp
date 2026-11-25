@@ -86,3 +86,69 @@ Si $\displaystyle F : S_{1}\to S_{2} $ es isometría (global) entonces:
 Una noción es intrínseca si es invariante por isometría local. 
 \end{definition}
 Estas sutilezas son de carácter global.
+% 24/11/26
+Sea $\displaystyle T : \R^{3}\to \R^{3} $ un movimiento rígido, esto es, $\displaystyle T\left(X\right)=AX + B $ con $\displaystyle A^{t}A = I $ y $\displaystyle A \in O_{3}\left(\R\right) $. 
+\begin{definition}[Superficies congruentes]
+Decimos que dos superficies $\displaystyle S_{1} $ y $\displaystyle S_{2} $ son \textbf{congruentes} si existe un movimiento rígido $\displaystyle T $ tal que $\displaystyle T\left(S_{1}\right)=S_{2} $.
+\end{definition}
+% poner dibujo de la foto
+\begin{observation}
+Si tomamos la parametrización $\displaystyle \textbf{x} \left(u,v\right) $ de $\displaystyle S_{1} $ y entonces 
+\[ \textbf{y} \left(u,v\right)=T\left( \textbf{x} \left(u,v\right)\right)=A \textbf{x} \left(u,v\right)+B ,\]
+es parametrización de $\displaystyle S_{2} $. En este caso podemos observar que tenemos las igualdades:
+\[ \textbf{y} _{u}= A \textbf{x} _{u} , \quad \textbf{y} _{v}= A \textbf{x} _{v}, \quad \textbf{y} _{u}\times \textbf{y} _{v}= A \textbf{x} _{u} \times A \textbf{x} _{v} = \epsilon A\left( \textbf{x} _{u} \times \textbf{x} _{v}\right) .\]
+Así, 
+\[ N_{ \textbf{y} }= \frac{ \textbf{y} _{u} \times \textbf{y} _{v}}{\| \textbf{y} _{u} \times \textbf{y} _{v}\|}=\frac{\epsilon A\left( \textbf{x} _{u}\times \textbf{x} _{v}\right)}{\| \textbf{x} _{u}\times \textbf{x} _{v}\|}=\epsilon AN_{ \textbf{x} } .\]
+También se puede ver
+% hacer cálculos
+\[\begin{pmatrix} E_{ \textbf{x} } & F_{ \textbf{x} } \\ F_{ \textbf{x} } & G_{ \textbf{x} } \end{pmatrix}=\begin{pmatrix} E_{ \textbf{y} } & F _{ \textbf{y} } \\ F_{ \textbf{y} } & G_{ \textbf{y} } \end{pmatrix}\quad \text{y} \quad \begin{pmatrix} e_{ \textbf{y} } & f_{ \textbf{y} } \\ f_{ \textbf{y} } & g_{ \textbf{y} } \end{pmatrix}=\pm \begin{pmatrix} e_{ \textbf{x} } & f_{ \textbf{x} } \\ f_{ \textbf{x} } & g_{ \textbf{x} } \end{pmatrix} .\]
+\end{observation}
+\begin{colorary}
+Si $\displaystyle S_{1} $ y $\displaystyle S_{2} $ son contruentes, entonces son isométricas. 
+\end{colorary}
+\begin{colorary}
+Las superficies congruentes comparten (con cartas adoptadas) la primera y segunda forma fundamental.
+\end{colorary}
+% demostraciones están en la observación anterior
+% copiar el esquema de implicaciones de la foto
+% que no tengan la misma primera forma fundamental no garantizan que no sean isométricas, hay que resolver el sistema $\displaystyle I_S1 \neq (Jh)^t I_S2 (Jh) $ 
+% (c) es cierto para n=2 superficie, pero es un tema muy complicado
+\begin{eg}[Hoja 4, Catenoide]
+Es la superficie de revolución dada por la curva $\displaystyle \gamma\left(v\right)=\left(\cosh v, v\right) $. Así, podemos tomar la parametrización
+\[ \textbf{x} \left(\varphi, v\right)=\left(\cosh v \cos \varphi, \cosh v\sin\varphi, v\right) .\]
+Es sencillo ver que
+\[I = \begin{pmatrix} \cosh^{2}v & 0 \\ 0 & \cosh^{2}v \end{pmatrix}=\begin{pmatrix} r^{2} & 0 \\ 0 & \|\gamma'\|^{2} \end{pmatrix} \quad \text{y} \quad II = \begin{pmatrix} -\frac{r}{\|\gamma'\|} & 0 \\ 0 & \frac{r''}{\|\gamma'\|} \end{pmatrix}=\begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}.\]
+De esta forma, obtenemos que 
+\[K = -\frac{r''}{r\|\gamma'\|^{4}} .\]
+Por otro lado, 
+\[\mathcal{W}=\begin{pmatrix} -\frac{1}{\cosh^{2}v} & 0 \\ 0 & \frac{1}{\cosh^{2}v} \end{pmatrix} .\]
+De aquí se deduce que $\displaystyle H = 0 $ y $\displaystyle K = -\frac{1}{\cosh^{4}v} $. Se puede observar que esta superficie es minimal. 
+\end{eg}
+\begin{eg}[Hoja 4, Helicoide]
+Se construye mediante la hélice dada por $\displaystyle \alpha\left(t\right)=\left(\cos t, \sin t, t\right) $. La podemos parametrizar por
+\[ \textbf{x} \left(t, \lambda \right)=\left(\lambda \cos t, \lambda \sin t, t\right) .\]
+Se puede observar que es una superficie reglada. Tenemos que 
+\[ \textbf{x} _{t}=\begin{pmatrix} -\lambda\sin t \\ \lambda \cos t \\ 1 \end{pmatrix}\quad \text{y} \quad \textbf{x} _{\lambda }=\begin{pmatrix} \cos t \\ \sin t \\ 0 \end{pmatrix} .\]
+Así, 
+\[I = \begin{pmatrix} \lambda^{2} + 1 & 0 \\ 0 & 1\end{pmatrix} .\]
+Resulta que es isométrica a la catenoide. En efecto, tomamos 
+\[
+\begin{cases}
+t = \varphi \\
+\lambda = \sinh v
+\end{cases}
+.\]
+tenemos que, 
+\[\left(t, \lambda \right)=\tilde{F}\left(\varphi, v\right)=\left(\varphi, \sinh v\right) .\]
+Por tanto, $\displaystyle \textbf{y} \left(u,v\right)=\left(\sinh v \cos \varphi, \sinh v \sin \varphi, \varphi\right) $. 
+% poner dibujo de la foto
+Tenemos que 
+\[I _{ \textbf{y} \left(\varphi, t\right)}=\left(J\tilde{F}\right)^{t}\begin{pmatrix} \lambda^{2} + 1 & 0 \\ 0 & 1 \end{pmatrix}\left(J\tilde{F}\right)=\begin{pmatrix} 1& 0 \\ 0 & \cosh v \end{pmatrix}\begin{pmatrix} \sinh^{2}v+1 & 0 \\ 0 & 1 \end{pmatrix}\begin{pmatrix} 1 & 0 \\ 0 & \cosh v \end{pmatrix}=\begin{pmatrix} \cosh^{2}v & 0 \\ 0 & \cosh^{2}v \end{pmatrix},\]
+que es la primera forma fundamental del cateoride. Tenemos que $\displaystyle F : S_{1} \to S_{2} $ (con $\displaystyle S_{1} $ el cateroide y $\displaystyle S_{2}$ el helicoide) es una isometría local. Si cogemos $\displaystyle \varphi\left(0, 2\pi \right) $ y $\displaystyle v \in \left(0, \infty\right) $ tenemos que la aplicación $\displaystyle F $ es biyectiva. 
+% calcular la segunda forma fundamental que viene dada en la foto
+% en la foto de la pizarra hay algo con el signo mal, hacerlo desde cero y ver que da bien como en la otra foto
+Las dos que acabamos de ver son isométricas, no son congruentes, comparten la misma curvatura, es decir $\displaystyle K_{S_{1}}=K_{S_{2}} $. Además, $\displaystyle H_{S_{1}}=H_{S_{2}}=0 $. La curvatura media no es intrínseca, como se verá posteriormente. Sin embargo, sí se puede ver que $\displaystyle \vec{e}_{1}=\left(1,0\right)_{\mathcal{B}_{ \textbf{x} }} $ y $\displaystyle \vec{e}_{2}=\left(0,1\right)_{\mathcal{B}_{ \textbf{x} }} $ de $\displaystyle S_{1} $. Por otro lado, $\displaystyle \vec{e}_{1}=\left(1,-1\right)_{\mathcal{B}_{ \textbf{y} }} $ y $\displaystyle \vec{e}_{2}=\left(1,1\right)_{\mathcal{B}_{ \textbf{y} }} $ en $\displaystyle S_{2} $. 
+Por tanto, las direcciones principales, las direcciones asintóticas, las líneas de curvatura y las líneas asintóticas no son intrínsecas, sino extrínsecas. 
+% poner esto último como teorema
+\end{eg}
+

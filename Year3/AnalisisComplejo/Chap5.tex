@@ -115,4 +115,65 @@ Consideremos los siguientes ejemplos:
 	\[Res\left(\frac{f}{g}, z_{0}\right)=\frac{f\left(z_{0}\right)}{g'\left(z_{0}\right)} .\]
 \end{enumerate}
 \end{prop}
+\begin{proof}
+\textbf{(1)} y \textbf{(2)} se siguen de la definición. En efecto, basta con escribir
+\[f\left(z\right)=\frac{a_{-1}}{z-z_{0}}+h\left(z\right) .\]
+Similarmente, si tiene polo doble escribiríamos 
+\[f\left(z\right)=\frac{a_{-2}}{\left(z-z_{0}\right)^{2}}+\frac{a_{-1}}{z-z_{0}}+h\left(z\right) .\]
+Para \textbf{(3)}, observamos que 
+\[\frac{f\left(z\right)}{g\left(z\right)}=\frac{f\left(z\right)}{z-z_{0}}\frac{z-z_{0}}{g\left(z\right)} .\]
+Ahora vemos que el polo es de orden $\displaystyle 1 $ en $\displaystyle z_{0} $ y aplicando \textbf{(1)}, 
+\[\lim_{z \to \infty}\left(z-z_{0}\right)\frac{f\left(z\right)}{g\left(z\right)}=\lim_{z \to z_{0}}\frac{f\left(z\right)}{\frac{g\left(z\right)-g\left(z_{0}\right)}{z-z_{0}}}=\frac{f\left(z_{0}\right)}{g'\left(z_{0}\right)} .\]
+\end{proof}
+\begin{theorem}[Principio del argumento]
+Sea $\displaystyle D $ como en el teorema de los resíduos y sea $\displaystyle f \in \mathcal{M}\left(\overline{D}\right) $ tal que $\displaystyle f\left(z\right)\neq 0 $ si $\displaystyle z \in \partial D $ y que no tenga polos en $\displaystyle \partial D $. Entonces, 
+\[\frac{1}{2\pi i}\int _{\partial D}\frac{f'\left(z\right)}{f\left(z\right)} \; dz = N_{0}-N_{\infty} ,\]
+donde $\displaystyle N_{0} $ es el número de ceros en $\displaystyle D $ y $\displaystyle N_{\infty} $ es el número de polos en $\displaystyle D $. 
+\end{theorem}
+\begin{proof}
+Vamos a usar el teorema de los resíduos para $\displaystyle g\left(z\right):=\frac{f'\left(z\right)}{f\left(z\right)} $. Observamos que $\displaystyle g $ será holomorfa excepto en los ceros y polos de $\displaystyle f $. Bien sea por ser $\displaystyle f $ meromorfa o bien por el teorema de la identidad, tanto $\displaystyle N_{0} $ como $\displaystyle N_{\infty} $ son finitos. Ahora, sea $\displaystyle z_{0} $ un cero o polo de $\displaystyle f $. Definimos 
+\[N_{z_{0}}:= 
+\begin{cases}
+\text{orden de cero en $\displaystyle z_{0} $}, \; \text{si} \; z_{0}\; \text{es cero} \\
+-\text{orden de polo en $\displaystyle z_{0} $}, \; \text{si} \; z_{0} \; \text{es polo}
+\end{cases}
+.\]
+Así, tenemos que 
+\[f\left(z\right)=\left(z-z_{0}\right)^{N}h\left(z\right) ,\]
+con $\displaystyle h $ holomorfa en un entorno de $\displaystyle z_{0} $ y $\displaystyle h\left(z_{0}\right)\neq 0 $. Así, podemos escribir
+\[\frac{f'\left(z\right)}{f\left(z\right)} = \frac{N\left(z-z_{0}\right)^{N-1}h\left(z\right)+\left(z-z_{0}\right)^{N}h\left(z\right)}{\left(z-z_{0}\right)^{N}h\left(z\right)} = \frac{N}{z-z_{0}} + \frac{h'\left(z\right)}{h\left(z\right)} .\]
+Tenemos que $\displaystyle \frac{h'}{h} $ es holomorfa en un entorno lo bastante pequeño de $\displaystyle z_{0} $. Así, $\displaystyle N = Res\left(\frac{f'}{f}, z_{0}\right) $. Se sigue que 
+\[\int _{\partial D}\frac{f'\left(z\right)}{f\left(z\right)} \; dz = 2\pi i\sum_{z_{j} \; \text{cero o polo}}Res\left(f; z_{j}\right) .\]
+Por tanto, 
+\[\frac{1}{2\pi i}\int _{\partial D}\frac{f'\left(z\right)}{f\left(z\right)} \; dz= N_{0}-N_{\infty} ,\]
+contando la multiplicidad.
+\end{proof}
+A continuación veremos el teorema de Rouché. La idea de este teorema es que los ceros de funciones holomorfas contados con multiplicidad son estables bajo pequeñas perturbaciones. 
+\begin{theorem}[Teorema de Rouché]
+Sea $\displaystyle \Omega\subset\C $ abierto simplemente conexo y acotado con $\displaystyle \partial \Omega  $ curva cerrada simple de clase $\displaystyle \mathcal{C}^{1} $ a trozos. Sea $\displaystyle f,g \in \mathcal{H}\left(\overline{\Omega }\right) $ tales que 
+\[ \left|g\left(z\right)\right| < \left|f\left(z\right)\right|, \; \forall z \in \partial \Omega  .\]
+Entonces $\displaystyle f $ y $\displaystyle f + g $ tienen el mismo número de ceros (con multiplicidad) en $\displaystyle \Omega  $. 
+\end{theorem}
+\begin{proof}
+	Sea $\displaystyle f_{t}\left(z\right):=f\left(z\right)+tg\left(z\right) $, $\displaystyle \forall t \in \left[0,1\right]  $. Sea $\displaystyle n_{t}:\left[0,1\right] \to \Z $ el número de ceros (con multiplicidad) de $\displaystyle f_{t} $ en $\displaystyle \Omega  $. Obsérvese que 
+	\[ \left|f_{t}\left(z\right)\right|= \left|f\left(z\right)+tg\left(z\right)\right|\geq \left|f\left(z\right)\right|-t \left|g\left(z\right)\right| \geq \left|f\left(z\right)\right|- \left|g\left(z\right)\right| > 0, \; \forall t \in \left[0,1\right] , \; \forall z \in \partial \Omega  .\]
+	Se sigue que $\displaystyle f_{t} $ no tiene ceros en $\displaystyle \partial \Omega  $ para todo $\displaystyle t \in \left[0,1\right]  $. Luego, por el principio del argumento tenemos que 
+	\[n_{t}=\frac{1}{2\pi i}\int _{\partial \Omega }\frac{f'_{t}\left(z\right)}{f_{t}\left(z\right)} \; dz .\]
+	Parametrizando $\displaystyle \partial \Omega  $ se tiene que
+	\[ = \frac{1}{2\pi i}\int^{b}_{a} H\left(t, \gamma\left(s\right)\right)\gamma'\left(s\right) \; d s,\]
+con 
+\[H\left(t, \gamma\left(s\right)\right)=\frac{f'\left(\gamma\left(s\right)\right)+tg'\left(\gamma\left(s\right)\right)}{f\left(\gamma\left(s\right)\right)+tg\left(\gamma\left(s\right)\right)}, \; \forall t \in \left[0,1\right] , \; \forall s \in \left[a,b\right]  .\]
+Por el TCD se sigue que $\displaystyle n_{t} $ es continua como función de $\displaystyle t $ y toma valores en $\displaystyle \Z $, por lo que es constante. Así, tenemos que $\displaystyle n_{0}=n_{1} $, que es lo que queríamos ver. 
+\end{proof}
+\begin{eg}
+Considérese para $\displaystyle n,m\in \N $, 
+\[p\left(z\right)=1 + z + \frac{z^{2}}{2!} + \cdots + \frac{z^{m}}{m!} + 3z^{n} .\]
+Nos preguntamos por el número de ceros que tiene $\displaystyle p\left(z\right) $ en $\displaystyle D\left(0,1\right) $. Cogemos las funciones
+\[g\left(z\right)=1 + z + \frac{z^{2}}{2!} + \cdots + \frac{z^{m}}{m!} .\]
+Esta función se parece a la exponencial, podemos ver que 
+\[ \left|g\left(z\right)\right| \leq \sum^{m}_{j = 0}\frac{ \left|z\right|^{j}}{j!} = \sum^{m}_{j = 0}\frac{1}{j!}<e<3 .\]
+Poniendo $\displaystyle f\left(z\right)=3z^{n} $, tenemos que 
+\[ \left|g\left(z\right)\right| < 3 = \left|f\left(z\right)\right|, \; \forall z \in \partial D\left(0,1\right) .\]
+Así, por el teorema de Rouché, $\displaystyle f $ y $\displaystyle f + g $ tienen el mismo número de ceros en el disco unitario, que en este caso es $\displaystyle n $. 
+\end{eg}
 

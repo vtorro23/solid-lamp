@@ -1053,16 +1053,14 @@ Dada una superficie regular $\displaystyle S $, se llama \textbf{primera forma f
 \end{enumerate}
 \end{observation}
 
-\begin{definition}[Primera forma fundamental de una parametrización]
-	Se llama \textbf{primera forma fundamental de la parametrización} $\displaystyle \textbf{x} = \textbf{x} \left(u,v\right) $ a $\displaystyle I = I_{ \textbf{x} }=\begin{pmatrix} E & F \\ F & G \end{pmatrix} $ con $\displaystyle E = \left\langle  \textbf{x} _{u}, \textbf{x} _{u} \right\rangle $, $\displaystyle F = \left\langle \textbf{x} _{u}, \textbf{x} _{v} \right\rangle  $ y $\displaystyle G = \left\langle \textbf{x} _{u}, \textbf{x} _{v} \right\rangle  $. 
-\end{definition}
-\begin{observation} Podemos hacer algunas observaciones:
+\begin{observation}[Expresión matricial de la primera forma fundamental] Dada una parametrización $\displaystyle \textbf{x} = \textbf{x} \left(u,v\right) $ de $\displaystyle S $, tenemos que la matriz de $\displaystyle I $ en la base $\displaystyle \mathcal{B}_{ \textbf{x} } $ es 
+	\[M_{ \mathcal{B}_{x}}I = \begin{pmatrix} E & F \\ F & G \end{pmatrix} ,\]
+	donde $\displaystyle E = \left\langle \textbf{x} _{u}, \textbf{x} _{u} \right\rangle =\| \textbf{x} _{u}\|^{2} $, $\displaystyle F = \left\langle \textbf{x} _{u}, \textbf{x} _{v} \right\rangle  $ y $\displaystyle G = \left\langle \textbf{x} _{v}, \textbf{x} _{v} \right\rangle =\| \textbf{x} _{v}\|^{2} $. Además, podemos hacer un par de observaciones:
 	\begin{enumerate}
 	\item Como $\displaystyle I $ es definida positiva por el criterio de Sylvester se deduce que $\displaystyle E > 0 $ y $\displaystyle EG-F^{2} > 0 $.
-	\item 	En la base $\displaystyle \mathcal{B}_{ \textbf{x} }= \left\{ \textbf{x} _{u}, \textbf{x} _{v}\right\}  $ la matriz de la primera forma fundamental viene dada por
-	\[M_{ \mathcal{B}_{x}}I = \begin{pmatrix} E & F \\ F & G \end{pmatrix} ,\]
-	donde $\displaystyle E = \| \textbf{x} _{u}\|^{2} $, $\displaystyle F = \left\langle \textbf{x} _{u}, \textbf{x} _{v} \right\rangle  $ y $\displaystyle G = \| \textbf{x} _{v}\|^{2} $.
 \item $\displaystyle I $ es intrínseca, esto es, no depende de las parametrizaciones (planito lo puede ver).
+\item Dado $\displaystyle \left(a,b\right)_{\mathcal{B}_{ \textbf{x} }} \in T_{p}S$, tendremos que 
+	\[I\left(a,b\right)=\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a \\ b \end{pmatrix} = a^{2}E + 2ab F + b^{2}G.\]
 	\end{enumerate}
 \end{observation}
 
@@ -1070,7 +1068,7 @@ Dada una superficie regular $\displaystyle S $, se llama \textbf{primera forma f
 Consideremos la superficie de revolución generada por la curva $\displaystyle \gamma\left(v\right)=\left(r\left(v\right), z\left(v\right)\right) $,
 \[ \textbf{x} \left(\varphi, v\right)=\left(r\left(v\right)\cos\varphi, r\left(v\right)\sin\varphi, z\left(v\right)\right) .\]
 Tenemos que 
-\[ \textbf{x} _{\varphi} = \begin{pmatrix} -r \sin \varphi \\ r \cos \varphi \\ 0 \end{pmatrix}\quad \text{y} \quad \textbf{x} _{v}=\begin{pmatrix} r'\cos\varphi \\ r'\sin \varphi, z' \end{pmatrix} .\]
+\[ \textbf{x} _{\varphi} = \begin{pmatrix} -r \sin \varphi \\ r \cos \varphi \\ 0 \end{pmatrix}\quad \text{y} \quad \textbf{x} _{v}=\begin{pmatrix} r'\cos\varphi \\ r'\sin \varphi \\ z' \end{pmatrix} .\]
 Así, la primera forma fundamental es 
 \[ I = \begin{pmatrix} r\left(v\right)^{2} & 0 \\ 0 & \|\gamma'\left(v\right)\|^{2} \end{pmatrix} .\]
 
@@ -1106,7 +1104,7 @@ Se puede observar que:
 \subsection*{Algunos usos de la primera forma fundamental}
 
 \begin{observation}[Cálculo de la norma de un vector]
-	Dado $\displaystyle \vec{v} = \left(a,b\right)_{\mathcal{B}_{ \textbf{x} }} $ podemos calcular su norma:
+	Dado $\displaystyle \vec{v} = \left(a,b\right)_{\mathcal{B}_{ \textbf{x} }}\in T_{p}S $ podemos calcular su norma:
 	\[ \|\vec{v}\| = \sqrt{\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a \\ b \end{pmatrix}} = \sqrt{a^{2}E + 2ab F + b^{2}G} .\]
 \end{observation}
 \begin{eg}
@@ -1127,7 +1125,7 @@ Como $\displaystyle \gamma'\left(t\right)=\left(u'\left(t\right), v'\left(t\righ
 \[\ell^{b}_{a}\left(\gamma \right)=\int^{b}_{a} \sqrt{\left(u',v'\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} u' \\ v' \end{pmatrix}} \; dt = \int^{b}_{a} \sqrt{u'^{2}E + 2u'v'F + v'^{2}G} \; dt .\]
 \end{observation}
 \begin{eg}
-Consideremos la superficie parametrizada por 
+Consideremos $\displaystyle \mathbb{S}^{2} $ parametrizada por 
 \[\textbf{x} \left(\varphi, s\right)=\left(\cos \varphi \cos s, \sin\varphi \cos s, \sin \varphi\right) \]
 y la curva $\displaystyle \gamma\left(t\right)= \textbf{x} \left(t, \frac{t}{4}\right)=\left(\varphi, s\right) $. Tenemos que $\displaystyle \gamma'\left(t\right)=\left(1, \frac{1}{4}\right)_{\mathcal{B}_{ \textbf{x} }} $. Puesto que $\displaystyle \textbf{x} \left(\varphi, s\right) $ es parametrización de una superficie de revolución,
 \[I = \begin{pmatrix} \cos ^{2}s & 0 \\ 0 & 1 \end{pmatrix} ,\]
@@ -1142,7 +1140,7 @@ Se puede observar que
 \[\cos\left(\widehat{ \textbf{x} _{u}, \textbf{x} _{v}}\right) = \frac{F}{\sqrt{E}\sqrt{G}} ,\]
 así obtenemos el ángulo entre los vectores $\displaystyle \textbf{x} _{u} $ y $\displaystyle \textbf{x} _{v} $.
 En general, dados $\displaystyle p = \left(u_{0}, v_{0}\right) $, $\displaystyle \vec{v}=\left(a,b\right)_{ \mathcal{B}_{ \textbf{x} }} $ y $\displaystyle \vec{w}= \left(c,d\right)_{\mathcal{B}_{ \textbf{x} }} $ se tiene que 
-\[\cos \left(\widehat{\vec{u}, \vec{v}}\right) = \frac{F}{\sqrt{E}\sqrt{G}} =\frac{\left\langle \vec{v}, \vec{w} \right\rangle }{\|\vec{v}\|\|\vec{w}\|} = \frac{\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} c \\ d \end{pmatrix}}{\sqrt{\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a \\ b \end{pmatrix} \cdot 
+\[\cos \left(\widehat{\vec{u}, \vec{v}}\right)  =\frac{\left\langle \vec{v}, \vec{w} \right\rangle }{\|\vec{v}\|\|\vec{w}\|} = \frac{\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} c \\ d \end{pmatrix}}{\sqrt{\left(a,b\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a \\ b \end{pmatrix} \cdot 
 \left(c,d\right)\begin{pmatrix}  E & F \\ F & G \end{pmatrix}\begin{pmatrix} c\\ d \end{pmatrix}}} .\]
 \end{observation}
 \begin{eg}[Ángulo entre dos rectas]
@@ -1157,14 +1155,12 @@ Así, como $\displaystyle \|\beta'\|=\|\eta'\| = \frac{3}{4} $, el ángulo entre
 	Dados dos campos de vectores $\displaystyle X = \left(X_{1}, X_{2}\right) $ e $\displaystyle Y = \left(Y_{1}, Y_{2}\right) $, tenemos que 
 	\[\theta\left(u,v\right)=\left\langle X\left(u,v\right), Y\left(u,v\right) \right\rangle =\left(X_{1}, X_{2}\right)\begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} Y_{1} \\ Y_{2} \end{pmatrix} .\]
 \end{eg}
-\begin{prop}
+\begin{prop}[Cambio de parámetros]
 Sean $\displaystyle \textbf{x} \left(u,v\right) $ e $\displaystyle \textbf{y} \left(w,s\right) $ dos parametrizaciones buenas de $\displaystyle S $, es decir, existe un cambio de parámetros $\displaystyle \left(w,s\right)=h\left(u,v\right) $ tal que $\displaystyle h = \textbf{y} ^{-1} \circ \textbf{x}  $. Entonces, 
 \[I _{ \textbf{x} } = \left(Jh\right)^{T}I_{ \textbf{y} } \cdot Jh .\]
 \end{prop}
 \begin{proof}
-Tenemos que 
-\[J h = M_{\mathcal{B}_{ \textbf{y} }\mathcal{B}_{ \textbf{x} }} ,\]
-de forma que 
+Tenemos que $\displaystyle J h = M_{\mathcal{B}_{ \textbf{y} }\mathcal{B}_{ \textbf{x} }}  $, de forma que 
 \[M_{\mathcal{B}_{ \textbf{x} }}\left(I\right)=\left(M_{ \mathcal{B}_{ \textbf{y} }\mathcal{B}_{ \textbf{x} }}\right)^{T}M_{ \mathcal{B}_{ \textbf{y} }}\left(I\right)\left(M_{\mathcal{B} _{ \textbf{y} }\mathcal{B} _{ \textbf{x} }}\right) .\]
 Así, 
 \[I_{ \textbf{x} }= \left(Jh\right)^{T}I _{ \textbf{y} } \cdot Jh.\]
